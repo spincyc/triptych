@@ -1,0 +1,148 @@
+Independent bounded source/content review, iteration 0, 2026-11-05
+Verdict: CHANGES_REQUIRED. Sole required repair: ASR-001, another SYN-001 recurrence.
+
+Identity and authority
+
+Baseline HEAD: 62bfdaf252785840ef13a7600ca8012f51dee704.
+Leaf: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.
+Reviewed the actual uncommitted working diff against HEAD. The original
+proper-study v19 run 64c60ef0cfd8f349 remains historical ACCEPTED. No changed
+prose is claimed to match or inherit its accepted input identities.
+
+The review follows guidance/editorial.md, guidance/sources.md,
+guidance/liturgy/postconciliar-propers.md and the complete three-document
+profile, particularly its affected-closure explicit re-review provision.
+Applicable personal/workspace/repository instructions and external-review
+handoff guidance were read. This lane supplies review results only inside its
+assigned scratch directory; the coordinator owns any transport package,
+durable evaluation integration and publication work. No nested agent used.
+
+Actual candidate reading
+
+Read all seven changed substantive sections, all of homily-90-notes.tex,
+generation-metadata.tex and production-review.md. Compared the full focused
+diff with HEAD, then read the changed sentences within their complete
+paragraphs and the surrounding arguments. Read the full spoken homily
+continuously and again with paragraph/line positions. Read the actual archived
+synthesis-review-0000.json and homily-review-0000.json advisories, not just the
+coordinator's summary. The old homily review evidence log was read as a lead
+to sources and their limits; its judgments do not substitute for this review.
+
+Searched the leaf's canonical TeX for hands, Spirit, needy, Psalm 62 and
+related attribution forms; inspected every relevant hit. Additional unmodified
+sections (maps, text locator and comparison) were checked at those matching
+loci only, not submitted to a new comprehensive research review.
+
+SYN-001
+
+The original four targets pass individually:
+- sections/10-treatment.tex:21: good works is Augustine's explanation;
+  practical mercy is the connection's application here. Its exact §10
+  footnote is corrected from prayer-and-mercy to prayer-and-good-works.
+- sections/30-mercy.tex:31: good works is attributed to Augustine, then
+  Applied to mercy introduces the food, hospitality and suffering examples.
+- sections/synthesis-04-themes.tex:10: exercise in good works is attributed
+  to Augustine, then Here that connection supports practical care marks the
+  particular application.
+- sections/synthesis-05-commentary.tex:36: good works is attributed to
+  Augustine; acts of mercy considered here identifies the study's application.
+
+The remaining occurrence is sections/40-charity-within.tex:35. Following
+Augustine on Psalm 62 at line 33, His conjunction of raised hands and mercy
+again assigns the particular mercy conjunction to him before immediately
+applying it to action toward a neighbor. The inspected §10 speaks of good
+works generally. It also speaks of Christ's Cross bringing divine mercy, which
+does not make this particular neighbor-directed explanation his own. Replace
+mercy with good works in that first sentence and retain the actual practical
+consequence as the study's argument. This is within the requested attribution
+repair; it requires no change to source witnesses, interpretations or research.
+
+Direct Augustine reading: registered CCEL NPNF1-8 source.txt,
+Psalm 62 / heading Psalm LXIII, retained §§1-12, physical lines 26740-27028.
+Section 10 was read completely and directly, including the Cross, lifted
+hands in prayer, repeated good-works language and the reason hands must be
+fit to be lifted. §§2, 4-5 and 12 supply the bodily sleep, resurrection and
+remembrance context retained in the corrected paragraphs. This is an
+abridged historical English witness, as its edition record states; no Latin
+collation or whole-work reading is claimed. The displayed opening of §13
+was not used. Edition and artifact identity/rights records were read.
+
+HOM-001
+
+All five direct addressee statements pass: sections/00-opening.tex:6,
+30-mercy.tex:53, 40-charity-within.tex:55, synthesis-05-commentary.tex:69,
+and homily-10-spoken.tex:27. Each asks the Lord and places preservation or
+sustaining through his Spirit. The underlying distinction is visible in the
+Latin prayer across physical pages 294-295 and in the FDLC approved English
+excerpt on page 9. The qualified U.S. 2011 candidate agrees on printed p. 492.
+
+Actual view_image inspection covered the five preexisting raster witnesses:
+latin-294.png, latin-295.png, fdlc-08.png, fdlc-09.png and
+usmissal-week32-0490.png under .scratch/pc-s58-research-0/. Read the complete
+Week 32 post-Communion prayer in each relevant witness; the Collect and
+Offerings and alternative-antiphon context visible on these pages were also
+inspected. The FDLC approval notice belongs to the excerpt, not to all its
+reflection prose. No protected body is copied into these review outputs.
+No new rasterization or original-PDF-byte comparison occurred in this lane;
+the exact image bytes actually inspected are hashed in result.json.
+
+Other descriptions of a petition for the Spirit to preserve integrity or
+the Spirit's preservation describe what is sought rather than naming whom
+the Church addresses. They do not retain the direct addressee error. The
+source qualifications remain explicit in the homily's terminal note: no full
+2008 altar-book authentication and no authentication of the publisher
+transmission of the U.S. 2011 candidate. The correction upgrades neither.
+
+Argument, standalone reading and oral flow
+
+The expansive and concise studies still distinguish Chrysostom's neglected
+neighbor from Augustine's inward charity within actual good deeds, and retain
+their different sellers and the Communion/second-reading alternatives. The
+four corrected Augustine paragraphs preserve their inference and do not
+remove the application. Except for ASR-001, no other equivalent false
+attribution was found in the reviewed paragraphs and scoped TeX search.
+
+The complete homily remains continuous preaching about charity within
+service, arising from the common sleep, lamps and vessels; Wisdom's prior
+approach and Eucharistic dependence remain compatible, and Paul's hope
+returns the argument to Christ beyond death. The corrected line 27 is a
+speakable sentence: Lord supplies the addressee before the short parenthetic
+through his Spirit. It does not interrupt the passage from reception to
+continued conversion. The terminal note keeps scholarly and source limits
+outside the speech and does not invent a human performance.
+
+wc -w returned 1,284 spoken words (exit 0). The body has no TeX control tokens
+or headings. 1284/125 = 10.272; 1284/110 = 11.672727..., agreeing with the
+rounded 10.3-11.7-minute note. This is textual estimation and silent reading,
+not timed human or audible delivery. Unchanged Augustine Sermon 93, Aquinas
+and biblical claims were checked for continuity with the study text but were
+not independently re-researched in this bounded correction.
+
+Identity checks, changes during review and limits
+
+candidate-start.sha256 pins the initial ten candidate files. Its comparison
+returned exit 1 solely because the coordinator disclosed and removed the
+invalid metadata qualifier scope=bounded advisory corrections during review;
+all nine other files were unchanged. The final metadata is read and recorded
+in candidate-reviewed.sha256 and result.json. The original workflow
+provenance is untouched; the new contribution claims the correction without
+claiming a new workflow run or exposed reasoning setting.
+
+The reviewed-snapshot check at final return succeeds for all ten files.
+result.json contains every reviewed candidate hash, every source image/text
+actually used and the two Augustine identity-record hashes. Candidate and
+source hashes were computed from local bytes with sha256sum. The original
+source text hash agrees with its registered artifact SHA-256.
+
+git diff --quiet HEAD for research/interpretations.md, scope.md,
+source-bindings.toml, chronology.toml, chronology-inputs.toml,
+chronology-annotations.tex and chronology-table.tex returned exit 0. This
+proves preservation of those files; it is not a fresh evidence-closure seal.
+
+The coordinator separately owns source/content/schema gates. None is claimed
+as run by this lane or as a substitute for judgment. No browser product,
+rendered reader, web layout, print export, currentness audit, workflow engine
+write, seal, Git commit, push or deployment was performed. Only this lane's
+assigned scratch directory was written. Fresh rendered inspection and any
+later publication decision remain separate work. Historical accepted review
+results were not edited, restamped or manufactured.

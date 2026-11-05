@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "gpt-pc-s58-advisory-corrections-2026-11-05"
+owner = "PROJECT-WORK.md"
+promise = "Apply SYN-001 and HOM-001 consistently across the PC-S58-A study, synthesis and homily, freshly review the bounded corrections and readers, and push the validated update to main with successful deployment and live verification."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "corrected-wording"
+  criterion = "Augustine's general good-works statement is distinguished from the application to the needy, and every direct misstatement of the post-Communion prayer's addressee is corrected across the three outputs."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/recheck-result.json", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/recheck-evidence.txt"]
+
+  [[deliverables.requirements]]
+  id = "fresh-review-and-publication"
+  criterion = "Fresh independent scoped review checks the changed claims and current readers; source/content, conversion, inventory, product and release checks pass without carrying old approval across changed prose."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/README.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/web-edition.toml"]
+
+  [[deliverables.requirements]]
+  id = "main-and-live"
+  criterion = "The validated corrections reach main without history rewriting; Pages build, full compile and deploy pass, and the three live readers contain the corrections."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "gpt-pc-s58-production-2026-11-05"
 owner = "PROJECT-WORK.md"
 promise = "Complete and publish the GPT three-document proper study for the Thirty-second Sunday in Ordinary Time, Year A, 8 November 2026; verify the no-PDF workflow migration and push the validated result to main."
@@ -58,6 +82,7 @@ state = "candidate"
   id = "main-publication"
   criterion = "The validated changes are committed, reconciled with current main and pushed without force; deployment state is verified and reported accurately."
   status = "open"
+  evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "single-source-print-followup-2026-11-04"

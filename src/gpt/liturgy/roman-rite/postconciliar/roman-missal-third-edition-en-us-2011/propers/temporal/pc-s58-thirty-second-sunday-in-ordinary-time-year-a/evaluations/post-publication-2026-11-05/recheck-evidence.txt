@@ -1,0 +1,112 @@
+Independent bounded correction recheck, iteration 1, 2026-11-05
+Verdict: PASS. SYN-001, HOM-001 and the iteration-0 finding ASR-001 are resolved.
+
+Baseline: 62bfdaf252785840ef13a7600ca8012f51dee704.
+Candidate root: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.
+This is a working-tree correction review, not new proper-study engine
+acceptance. Run 64c60ef0cfd8f349 / version 19 remains historical ACCEPTED.
+
+Actual comparison and reading
+
+Compared all ten current candidate files with candidate-reviewed.sha256 from
+the genuine iteration-0 review. The checksum command exited 1 for exactly two
+expected changed files; the other eight are byte-identical. The changed files
+are sections/40-charity-within.tex and research/production-review.md.
+
+Read the corrected passage and its context at 40-charity-within.tex:25-62.
+Line 35 now attributes the conjunction of raised hands and good works to
+Augustine. This agrees with the material text of Psalm 62.10 / NPNF heading
+Psalm LXIII, directly reread at registered source.txt lines 26950-26968.
+The following sentence applies that general account to the neighbor; it
+does not represent the practical application as Augustine's specific wording.
+The surrounding discussion of inward purpose, outward acts and Aquinas stays
+intact. No new issue appears in the repaired paragraph.
+
+Read the full appended correction record at production-review.md:315-339.
+Its count is now five Augustine passages, correctly including ASR-001's locus.
+Its scope and acknowledgment of historical acceptance remain accurate.
+
+Proved the exact change set without writing canonical files:
+- A read-only sed stream changing His conjunction of raised hands and good
+  works back to His conjunction of raised hands and mercy hashes to
+  c8a83247d32d66fa5fa9fec7b7a9d65c0788528acfe2ec1ac3071498f7dca8a5,
+  the iteration-0 whole-file hash. Exit 0.
+- A read-only sed stream changing The five Augustine passages back to The
+  four Augustine passages hashes to
+  c00c5aaa0febe44b50a3818576b247ba048510b7b91fdac0627df977f3f830ab,
+  the iteration-0 whole-file hash. Exit 0.
+Thus these are the only two byte changes since iteration 0, rather than
+merely the only visible differences found by inspection.
+
+SYN-001 now passes at all five loci: 10-treatment.tex:21 and its footnote,
+30-mercy.tex:31, 40-charity-within.tex:35, synthesis-04-themes.tex:10 and
+synthesis-05-commentary.tex:36. The other four remain exactly as reviewed.
+The scoped recurrence search for raised hands, hands with mercy/needy and
+direct asks-the-Spirit wording returned no equivalent remaining attribution
+error. The four-senses application of hands extended in mercy is the study's
+conclusion, not a claim of Augustine's exact wording at the disputed locus.
+
+HOM-001's five corrections remain intact at 00-opening.tex:6, 30-mercy.tex:53,
+40-charity-within.tex:55, synthesis-05-commentary.tex:69 and
+homily-10-spoken.tex:27. The one file changed elsewhere, 40-charity-within.tex,
+was shown by inverse-substitution hashing to retain all its other bytes.
+The whole homily and delivery note retain the iteration-0 hashes, so the
+actual full homily reading and 1,284-word/10.3-11.7-minute checks remain
+applicable. They were not relabeled as a new human rehearsal or performance.
+
+Source and provenance preservation
+
+Recomputed all six source witness hashes and both Augustine identity-record
+hashes. Every value equals iteration 0. The exact maps are in
+recheck-result.json; no source changed. The material Augustine passage was
+reread for this correction. The five prayer image witnesses were not viewed
+again; their direct iteration-0 inspection and unchanged identity support
+continuity of the already resolved HOM-001 judgment.
+
+Verified the current AIGenerationProvenance declaration against baseline
+using the exact first line from each. Both line-byte hashes are
+8382d4a526a6797c1e8a6a64c3eada8cba90264c42d5acd2d015d80365be78c9.
+The complete metadata diff has only the previously reviewed appended
+contribution. Existing workflow/version/digest/run/seed/install fields are
+unchanged. No engine verdict, seal or archive was refreshed.
+
+The genuine initial result and evidence report are preserved unchanged:
+result.json SHA-256
+39a1542027b6f65e9d84307da72f5e477cd8c1a2c190770fc524b97e3d9c42b1;
+evidence-report.txt SHA-256
+e9cc347f3c747b5057dc9c22c9f7d23ab3e0b4224507c76d3bdac6ad6670d0b6.
+
+Final identity and limits
+
+candidate-recheck.sha256 pins all ten current files, including the accurate
+audit delta. Final checksum validation succeeds for all ten. Current
+40-charity-within.tex is
+de142e1c66d1eb6b0435596363214cf816038d94d274fe28cbd1c4d4000de850;
+current production-review.md is
+db4bf366f421acf3407499f35a16cc5b57f1801645f3a85a19131d86c808c5f6.
+
+This PASS completes bounded source/content correction review only. The
+iteration-0 actual reading extent and limits remain controlling: abridged
+historical English Augustine, no new patristic facsimile collation, Latin
+reproduction, incomplete full-2008-altar-book authentication and qualified
+U.S. 2011 candidate transmission. No new research/currentness/chronology
+audit or source-registration event was performed. No generated reader,
+browser layout or print artifact has been inspected by this lane, and no
+publication/deployment acceptance follows from this verdict alone.
+
+Only .scratch/pc-s58-advisory-source-review/ received new review outputs.
+No canonical changes, engine or seal writes, Git operations that mutate
+state, nested agents or shared-cache writes were made.
+
+Coordinator handoff comparison
+
+Read candidate-inputs.json in
+.scratch/agent-handoffs/20261105T200303Z-pc-s58-advisory-source/ and compared
+each path and hash with this independent final map: all ten match. Its hash
+is 8cadeb608e33d498eaf9db95ec26fcec09c2d35f5e9abcdc27153cd6f933cd68.
+The sibling archive exists with SHA-256
+9c6dcbe9c4060b15c213f71dd59a3007ab3daa6e168e3749068acdbea140a6af.
+Only candidate identity was checked from this package; its other contents
+and the coordinator's mechanical-gate results do not substitute for the
+actual review above. The coordinator owns archive inventory verification;
+this reviewer did not create or extract the ZIP.

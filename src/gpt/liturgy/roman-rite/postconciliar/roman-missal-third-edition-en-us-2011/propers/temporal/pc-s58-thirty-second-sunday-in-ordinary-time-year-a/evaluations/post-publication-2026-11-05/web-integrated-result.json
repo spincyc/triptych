@@ -1,0 +1,246 @@
+{
+  "schema": "triptych-bounded-web-inspection/v1",
+  "document": "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+  "review_date": "2026-11-05",
+  "reviewer": "OpenAI GPT (Codex; exact model variant not exposed), independent post-publication web-review lane",
+  "decision": "pass",
+  "scope": "Independent scoped postmerge recheck of live chronology conversion delta and retained SYN-001/HOM-001 reader integrity across all three outputs",
+  "source_checkpoint": "baced82298220931a8f004ecfc6acc2cee5b4295",
+  "prior_source_checkpoint": "628cf63b508d0194aec82a27d2a717c8b485fa8d",
+  "prior_review_records_sha256": {
+    "result.json": "eef08e46c94eee67fe92d8b889005eeb4786212e18c8e6b396dd19cd3a8c6fbb",
+    "evidence-report.txt": "f6f1be8a94c7b08d57f9b15b72a3636e50bf26419ebfd19111fc8d8149fdae0f",
+    "inspection-receipts.json": "c217169dfb4877d802c12efea041a7c18a4abfc557b3dd183606d320073101c0",
+    "screenshot-manifest.json": "df651ed66d7100ea29266ef05047ce97216b18836a1fad98157d94492441f73b"
+  },
+  "target_leaf_tracked_files_unchanged_by_merge": true,
+  "checked_authored_source_matches_checkpoint": true,
+  "canonical_generated_markdown_matches_product": true,
+  "products": {
+    "main": {
+      "id": "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+      "markdown_sha256": "9b75ec63ea9c2622b3646451c67e55ade5fda6391df35cc29fde027ff8f55565",
+      "product_json_sha256": "b7e8057962eab557c84a36938720fb9322b810516f31945945319b5f9fd8709b"
+    },
+    "synthesis": {
+      "id": "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis",
+      "markdown_sha256": "e23c852a48d7a598b0ee4ebc23e4fc870f285af899d8e57b2bd620a8bdd9b809",
+      "product_json_sha256": "5a6de71cbb4531278502851b8ed2ac0158ffcb3d5f482af7dff4f5aa01d00d47"
+    },
+    "homily": {
+      "id": "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily",
+      "markdown_sha256": "9ff56d29403b28250b5394ac8128ecb95590077e8d0af6da75c8611f2691fd0c",
+      "product_json_sha256": "200f9480af93008b2de051c20d7664f92eba92e3e62c5ae438d7453cbefb632f"
+    }
+  },
+  "checked_source_files_sha256": {
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/00-opening.tex": "9130ead6fbdaf0d43a0ebd08b2577808d82186c5f6ef0639c05786f80333b07d",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/10-treatment.tex": "86f104ebc3608dc09e1b80512954138b35db8d4e3390935c8a07b0ec19c3c4cb",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/30-mercy.tex": "083e8296022d7546aa77e9c30cbfc720d1aaebdeb4d238c52685182653361f36",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/40-charity-within.tex": "de142e1c66d1eb6b0435596363214cf816038d94d274fe28cbd1c4d4000de850",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex": "efb06960fa20690688aa1f4cd8e66d84bac354718ef878bfc441d05ca2d69ba6",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex": "0cd4f35f0194ea03aeef89ae4c31b9d681c93cefc612d94956ec6dd07c655166",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex": "314004a0fac805d0b329525afbd58b103e11984363d27f67d272ea9546eb4b48",
+    "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex": "def7a9230399d7ea26e4f2dd3295d4f4be9f642c0a0457c8a6016485ade6316d"
+  },
+  "renderer_inputs_sha256": {
+    "scripts/_markdown_render.py": "be0ffcd9d3d0b789f633be2938c07c9076d44d72eb3b6c5eb65b93307e6fa648",
+    "scripts/_web_reader_markup.py": "96f9a86d465025957973536ca68e3c1921ecf06214b599ea475af3ffd67eda82",
+    "scripts/_publication_reader.py": "36bfb001459604bf06313648d38a5e1d46be1312e9c25a78d8339cd5fe5cb7ac",
+    "release/public-alpha/assets/site.css": "01e7578ed42a04500f7e7d34b9b56e8739e76408962d4abb780d0eb722af9f68",
+    "src/web/browser/shared/publication-reader.css": "e4e75d6ad48097e188f2ffa249ed7cf33aacc62643e0665554f889d3c9d4b231",
+    "src/web/browser/shared/publication-reader.js": "c2467f25f3d6abc4da726e6a1b8d8932c78ff30d626584b4396a045511ef3e84",
+    "src/web/browser/shared/catalogue-navigation.js": "0487d8b82c6fc1114745a55498336e8feeba9dabde088c2bf19bc241e6569e24"
+  },
+  "shared_pipeline_inputs_sha256": {
+    "tools/web-edition": "687eb8e62c5ee7b50c5187dafc60b163af7ac933501ca66f5a5116b6d8efb6f3",
+    "tools/document-schema": "f3c612c7b9763a853391184423f2a139d9928647a2325e243ff36730abc3ddaf",
+    "scripts/_document_types.py": "f43224938fd618e7ff4c6ee33d04596c505df07f3d7c7263eef0ac8ca2b1a28a",
+    "scripts/_proper_chronology_page.py": "70aa66f00ac84d8af9241a0ed0ef51c11e1f8f241b27891ec34047c83afe41b2",
+    "scripts/_edition_revision.py": "f1851e1d57e1372e80fe62c35c5e4baa40d9def93f54eb6ba2063ebd0ad76855",
+    "scripts/_chronology.py": "d17a6d5f1b345af2e9069dd3482ee3822be78ae743e1940b124262bba6c64f15",
+    "scripts/_proper_chronology.py": "f47cad9c6e4bf01029ac9d251ab10b332ebbb21fdda2884016bb7ff92c266d72",
+    "scripts/document_projections/scriptural_date_location.py": "9f4f20483721afe00c528c327a83d2db9f6cbe83768e6bbfe4196281998179f6"
+  },
+  "document_schema_identity": {
+    "content": "33fd69c55dc1c85c6faa8c69dbec1b02a94480593c069c6dd8d8bfddbf8b58e1",
+    "evidence": "6d41927ffe05138aad02f92498e3a0b8aa00cc22d18bc8519658d3f2f86325eb",
+    "render": "2510b32e49fd840a7258fd0a9d37414552ec097ad4ebab5a4190f89e7ed199dc"
+  },
+  "document_schema_identity_limitations": [
+    "Source identity does not establish semantic or rendered review acceptance.",
+    "Evidence identity covers audit/binding metadata and controlling source-record ancestry, not external witness payload verification."
+  ],
+  "delta_proof": {
+    "main": {
+      "outside_chronology_and_revision_byte_equal": true,
+      "previous_markdown_sha256": "249808c048569bf87c319d17ffa0cfc02ac458a36ebde2d8918e692acd35ca85",
+      "current_markdown_sha256": "9b75ec63ea9c2622b3646451c67e55ade5fda6391df35cc29fde027ff8f55565",
+      "chronology_body_rows_before": 15,
+      "chronology_body_rows_after": 12
+    },
+    "synthesis": {
+      "outside_chronology_and_revision_byte_equal": true,
+      "previous_markdown_sha256": "40b81f0e9440e6d619f38db3c53e5d2e60e4e6ca0274bde87207b8488cd4c3f3",
+      "current_markdown_sha256": "e23c852a48d7a598b0ee4ebc23e4fc870f285af899d8e57b2bd620a8bdd9b809",
+      "chronology_body_rows_before": 15,
+      "chronology_body_rows_after": 12
+    },
+    "homily": {
+      "byte_equal_to_initial": {
+        "homily.md": true,
+        "homily-product.json": true,
+        "preview/homily.html": true
+      },
+      "rendered_dom_text_equal_to_initial": true
+    }
+  },
+  "findings": [],
+  "correction_loci": {
+    "SYN-001": [
+      "sections/10-treatment.tex:21",
+      "sections/30-mercy.tex:31",
+      "sections/40-charity-within.tex:35",
+      "sections/synthesis-04-themes.tex:10",
+      "sections/synthesis-05-commentary.tex:36"
+    ],
+    "HOM-001": [
+      "sections/00-opening.tex:6",
+      "sections/30-mercy.tex:53",
+      "sections/40-charity-within.tex:57",
+      "sections/synthesis-05-commentary.tex:69",
+      "sections/homily-10-spoken.tex:27"
+    ]
+  },
+  "source_comparison": {
+    "prose_paragraphs": 142,
+    "files": 8,
+    "unresolved_paragraph_mismatches": [],
+    "unresolved_note_mismatches": [],
+    "normalization_adaptations": [
+      "Typography, inline formatting and footnote markers normalized; the sole source ref{sec:date-location} resolves to visible Appendix 8 and an existing target."
+    ]
+  },
+  "homily": {
+    "prior_continuous_spoken_reading_checkpoint": "628cf63b508d0194aec82a27d2a717c8b485fa8d",
+    "continuous_reading_preserved_by_exact_byte_and_rendered_text_identity": true,
+    "fresh_current_spoken_source_paragraphs_compared": 19,
+    "fresh_current_source_note_paragraphs_compared": 3,
+    "spoken_whitespace_words": 1284,
+    "fresh_visual_extent": "Corrected prayer and footer at desktop and mobile; four screenshots opened."
+  },
+  "browser": {
+    "main": {
+      "viewports": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 1000
+          },
+          "body_width": 1265,
+          "document_width": 1265
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "body_width": 375,
+          "document_width": 375
+        }
+      ],
+      "resolved_internal_links_including_navigation": 111,
+      "note_count": 34,
+      "appointed_anchor_count": 12,
+      "table_count": 4,
+      "duplicate_ids": [],
+      "missing_targets": [],
+      "page_overflow": false,
+      "rights_notice_count": 1,
+      "revision_timestamp": "2026-11-05T20:12:56Z",
+      "desktop_mobile_source_text_equal": true
+    },
+    "synthesis": {
+      "viewports": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 1000
+          },
+          "body_width": 1265,
+          "document_width": 1265
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "body_width": 375,
+          "document_width": 375
+        }
+      ],
+      "resolved_internal_links_including_navigation": 64,
+      "note_count": 24,
+      "appointed_anchor_count": 0,
+      "table_count": 3,
+      "duplicate_ids": [],
+      "missing_targets": [],
+      "page_overflow": false,
+      "rights_notice_count": 1,
+      "revision_timestamp": "2026-11-05T20:12:56Z",
+      "desktop_mobile_source_text_equal": true
+    },
+    "homily": {
+      "viewports": [
+        {
+          "viewport": {
+            "width": 1280,
+            "height": 1000
+          },
+          "body_width": 1265,
+          "document_width": 1265
+        },
+        {
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "body_width": 375,
+          "document_width": 375
+        }
+      ],
+      "resolved_internal_links_including_navigation": 2,
+      "note_count": 0,
+      "appointed_anchor_count": 0,
+      "table_count": 0,
+      "duplicate_ids": [],
+      "missing_targets": [],
+      "page_overflow": false,
+      "rights_notice_count": 1,
+      "revision_timestamp": "2026-11-05T20:05:55Z",
+      "desktop_mobile_source_text_equal": true
+    }
+  },
+  "visual_evidence": {
+    "opened_screenshots": 40,
+    "per_output": {
+      "main": 22,
+      "synthesis": 14,
+      "homily": 4
+    },
+    "manifest": "screenshot-manifest.json",
+    "manifest_sha256": "e4c5c6da6c7a352015601bd7e93bbe1bf4d13d44c01ba9c2682acc3929892dc0",
+    "coverage": "Both study chronology tables from opening through final Thessalonians rows, main David/Absalom/Korah/Gospel evidence, selected unchanged corrected paragraphs, every rights/revision footer; both viewports."
+  },
+  "chronology_render_judgment": "Twelve compact body rows preserve passage grouping and distinguish traditional attribution, historical setting and composition. Date-span and proposed-association qualifications remain visible; the full main evidence retains undated occasions and detailed alternatives. Long and short Thessalonians remain separate. No clipping, lost prose or ambiguous row association observed.",
+  "interaction": "Study chronology section links, homily source-note section link, and footnote 3/backlinks in both studies activated at both widths; all land below the sticky toolbar.",
+  "processes_closed": true,
+  "execution_note": "An initial screenshot-plan selector missed a Gospel-evidence paragraph and stopped the harness. The selector was corrected; the complete 40-image plan then exited successfully. This was an inspection-helper error, not a reader defect.",
+  "limits": [
+    "Scoped postmerge web-reader recheck; no fresh whole-source scholarly acceptance or primary-source authentication of chronology claims.",
+    "Current supported live assembly is authoritative. Saved generated leaf files were not materialized or treated as current assembled content.",
+    "An isolated three-reader preview used actual renderer/CSS/JS and simplified local navigation, not a full publication-site build, deployment or print approval.",
+    "The current screenshots cover the changed chronology and selected unchanged correction/footer regions; initial screenshots remain historical to the earlier checkpoint.",
+    "Continuous reading of the full spoken homily belongs to the initial review; its exact Markdown, product JSON, preview HTML and rendered DOM text are unchanged, with fresh current source/DOM integrity and selected visual checks."
+  ]
+}

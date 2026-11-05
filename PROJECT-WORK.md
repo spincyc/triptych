@@ -37,19 +37,27 @@ browser-product builds agree on 27,697 files. Scoped release refresh updated
 92 existing bindings and admitted 88 reviewed dependencies, without changing
 authorization terms.
 
-This is a pre-integration checkpoint. Main subsequently advanced to
-`39acdf4332` with separate PC-S58 advisory corrections. The maintainer authorized
-main integration; publication awaits reconciliation, current product and site
-verification, exact outgoing-range review and deployment gates. Research records
+Main subsequently advanced to `39acdf4332` with separate PC-S58 advisory
+corrections. Reconciliation preserves both source histories; browser products
+must be refreshed against the combined tree before site verification and
+publication. The maintainer authorized main integration. Research records
 distinguish source, figure, consumer, print and live-deployment evidence.
+
+The upstream [Pages build](https://github.com/spincyc/triptych/actions/runs/42099806134/job/127500251862)
+passed source checks and site assembly, then exceeded its two-hour limit during
+independent artifact verification. The build allowance is now three hours;
+all gates, permissions and other job limits are unchanged. Nineteen existing
+bootstrap/workflow tests and independent review pass. The next complete cold
+CI run must demonstrate that the allowance is sufficient.
 
 ## Altar-server and sanctuary guide revision — 5 November 2026
 
 <!-- promised-deliverable: altar-server-grounded-visual-revision-2026-11 -->
 
-**Implementation and review complete for this bounded revision.** The source
-checkpoint is on `feature/altar-server`; this work does not update
-`main` or establish a live-site deployment. The request covered the existing
+**Historical checkpoint: implementation and review complete for this bounded
+revision.** The source checkpoint was on `feature/altar-server`, without a
+main update or live-site deployment. The continuation above supersedes this
+checkpoint's publication and source-inventory state. The request covered the existing
 seven GPT 1962 guide/card editions and six sanctuary dictionaries, with better
 source grounding, visual consistency, coverage and actual reader usability.
 
@@ -97,10 +105,68 @@ not closed: server/choir clothing, cope/humeral veil, further appointments and
 vessel families, Requiem, ritual Masses and Holy Week remain incomplete. Four
 older bounded guide close-ups retain stylistic variation. These source and
 screen checks are not physical-print trials or ecclesiastical approval.
-The global source inventory still has four inherited stale proper-apparatus
+At that checkpoint the global source inventory had four inherited stale proper-apparatus
 hashes (GPT pc-s27/pc-s41; Claude 1962 temporal 59 and postconciliar pc-s51).
 Only this revision's owned inventory rows were refreshed; unrelated baselines
 were preserved.
+
+## PC-S58-A advisory corrections, 2026-11-05
+
+<!-- promised-deliverable: gpt-pc-s58-advisory-corrections-2026-11-05 -->
+
+**In progress: validated corrections pushed to main; deployment verification pending.**
+The maintainer requested applying SYN-001 and HOM-001 and pushing to main.
+Five Augustine passages now distinguish his general good-works explanation
+from the studies' practical-mercy application. Five direct post-Communion
+statements name the Lord as addressee and preservation through his Spirit.
+The homily has 1,284 spoken words, with a textual estimate of 10.3–11.7 minutes.
+Both advisories pass independent bounded source review, including the additional
+recurrence found and repaired during that review. Current standing advisories
+are zero. The genuine initial and passing recheck results are preserved in the
+leaf's `evaluations/post-publication-2026-11-05/`.
+
+Source checkpoint `628cf63b508d0194aec82a27d2a717c8b485fa8d` preserved the
+original 1,732-file research boundary. Main subsequently advanced with shared
+chronology and assembly changes through `4bcc8c80fe`; merge
+`baced82298220931a8f004ecfc6acc2cee5b4295` preserves both histories. Current
+research inputs comprise 1,741 files, and a separate independent bounded
+integration review passes. All 39 appointed passage pairs and candidate claims
+remain intact, with the full evidence behind the 12-row compact table.
+Historical runs, seals and original judgments remain unchanged.
+
+All three current readers pass fresh independent inspection. Exact source-impact
+and web results, limits and a clerical review-locator correction are indexed in
+the evaluation README. Full and concise revision stamps are committed at
+`2026-11-05T20:12:56Z`; the homily retains `2026-11-05T20:05:55Z`.
+The independent rebuilds and cache check pass for thirteen browser-product
+families, 27,690 files and 227,473,491 bytes. Their identity is
+`7061eb0e269f66fe963062d8ff56e7a6e37aecbbbcb5bae7df28e26f11743bae`.
+All three recorded reader hashes match the independent rendered review.
+
+Source/content, live assembly, conversion, the proper-study publication gate,
+target catalogue and complete catalogue structure pass. Only eleven reviewed
+release-input bindings and two derived rights-record values were refreshed;
+authorization terms and source membership are unchanged. Both classifications
+and all 166 pending migration states are preserved. No PDFs or binary archives
+are tracked; the review handoff stays ignored. The final release check reports
+zero stale bindings. `make public-site` and `public-alpha verify
+--deployment-target github-pages` both pass. The assembled readers contain all
+corrected claims and revision stamps at 1280- and 390-pixel widths without page
+overflow. All three print pages stay idle without fetching native TeX assets;
+the artifact declares 647 native editions and `stored_pdfs: false`.
+
+Publication commit `2f94728d075029a8a043021eb2006a5a9925f9d5` reached both
+the workspace branch and main without rewriting history. Its push triggered
+[Pages run 42117986012](https://github.com/spincyc/triptych/actions/runs/42117986012),
+initially queued behind the preceding run. The new run's build, full native
+compile, deployment and live reader verification remain pending. Earlier runs
+are not evidence of this correction's deployment.
+No new engine-run acceptance, print-layout approval or human delivery is claimed.
+
+The merged chronology task had an open publication requirement without the
+evidence pointer required by the ledger schema. Its evidence now points to
+this register; its candidate/open status and acceptance criterion are unchanged.
+The ledger validates with 118 tracked deliverables, 93 complete.
 
 ## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
 
@@ -108,7 +174,7 @@ were preserved.
 
 **Complete: pushed to main, deployed and verified live.** The United States
 PC-S58-A production covers 8 November 2026, Thirty-second Sunday in Ordinary
-Time, Year A, Lectionary 154. The expansive study has 6,346 substantive words,
+Time, Year A, Lectionary 154. At original production, the expansive study had 6,346 substantive words,
 the concise study 3,389, and the homily 1,281 spoken words. The homily's
 10.25–11.65-minute estimate is based on 110–125 words per minute; it does not
 claim a human delivery or timed rehearsal.
@@ -162,8 +228,8 @@ compatibility verification pass. The final task-status-only commit changes
 this register and the promise ledger; those two files are excluded from the
 Pages trigger and do not change the deployed publication snapshot.
 
-Limits remain explicit. SYN-001 and HOM-001 are nonblocking precision
-advisories for the next revision, not unresolved required repairs. Missal
+The original release carried SYN-001 and HOM-001 as nonblocking precision
+advisories. The later advisory-correction entry above records their resolution. Missal
 witness authentication and rights qualifications remain in the source dossier;
 no protected full prayer text was reconstructed. Thirty existing chronology
 consumers received the shared qualification correction: their generated

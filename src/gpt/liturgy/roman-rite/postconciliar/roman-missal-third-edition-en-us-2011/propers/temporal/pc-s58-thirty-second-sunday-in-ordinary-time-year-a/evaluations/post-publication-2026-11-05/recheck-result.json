@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "review_kind": "bounded-post-publication-content-recheck",
+  "iteration": 1,
+  "disposition": "PASS",
+  "reviewed_on": "2026-11-05",
+  "baseline_commit": "62bfdaf252785840ef13a7600ca8012f51dee704",
+  "candidate_root": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+  "candidate_state": "Uncommitted correction; final ten-file candidate hash map below.",
+  "prior_review": {
+    "result": ".scratch/pc-s58-advisory-source-review/result.json",
+    "result_sha256": "39a1542027b6f65e9d84307da72f5e477cd8c1a2c190770fc524b97e3d9c42b1",
+    "report": ".scratch/pc-s58-advisory-source-review/evidence-report.txt",
+    "report_sha256": "e9cc347f3c747b5057dc9c22c9f7d23ab3e0b4224507c76d3bdac6ad6670d0b6",
+    "disposition": "CHANGES_REQUIRED",
+    "preserved_unchanged": true
+  },
+  "summary": "PASS for the bounded correction. ASR-001 is resolved: the remaining Augustine sentence now says good works. All five SYN-001 occurrences and the detailed footnote preserve the distinction between Augustine's explanation and the study's practical application. All five HOM-001 addressee corrections remain intact. Only the requested sentence and the audit count changed since iteration 0.",
+  "finding_resolutions": [
+    {
+      "id": "ASR-001",
+      "related_advisory": "SYN-001",
+      "resolution": "RESOLVED",
+      "location": "sections/40-charity-within.tex:35, first sentence",
+      "rationale": "Raised hands and good works now accurately identifies Augustine's conjunction in Psalm 62.10 / NPNF heading Psalm LXIII. The following neighbor-directed application remains the study's reasoning. The whole paragraph and context at lines 25-62 were reread, and the relevant section 10 language was directly reread from the same registered witness. No argument or source qualification was lost."
+    },
+    {
+      "id": "SYN-001",
+      "resolution": "RESOLVED",
+      "loci": ["sections/10-treatment.tex:21 (including footnote)", "sections/30-mercy.tex:31", "sections/40-charity-within.tex:35", "sections/synthesis-04-themes.tex:10", "sections/synthesis-05-commentary.tex:36"],
+      "rationale": "The four passages accepted in iteration 0 remain byte-identical; the fifth now removes the same mistaken attribution. The scoped recurrence search finds no remaining equivalent false attribution. The production audit correctly counts five Augustine passages."
+    },
+    {
+      "id": "HOM-001",
+      "resolution": "RESOLVED",
+      "loci": ["sections/00-opening.tex:6", "sections/30-mercy.tex:53", "sections/40-charity-within.tex:55", "sections/synthesis-05-commentary.tex:69", "sections/homily-10-spoken.tex:27"],
+      "rationale": "All five accepted prayer-addressee corrections remain unchanged. The Lord is addressed; preservation or sustaining comes through his Spirit. The prayer images used for iteration 0 remain exactly the same. No new full-image inspection is claimed for this recheck."
+    }
+  ],
+  "findings": [],
+  "comparison_with_iteration_0": {
+    "unchanged_candidate_files": 8,
+    "changed_candidate_files": 2,
+    "exact_deltas": [
+      {
+        "path": "sections/40-charity-within.tex",
+        "change": "Line 35: His conjunction of raised hands and mercy -> His conjunction of raised hands and good works",
+        "iteration_0_sha256": "c8a83247d32d66fa5fa9fec7b7a9d65c0788528acfe2ec1ac3071498f7dca8a5",
+        "proof": "Reversing only that literal replacement in a read-only sed stream reproduces the iteration-0 whole-file SHA-256."
+      },
+      {
+        "path": "research/production-review.md",
+        "change": "Line 320: The four Augustine passages -> The five Augustine passages",
+        "iteration_0_sha256": "c00c5aaa0febe44b50a3818576b247ba048510b7b91fdac0627df977f3f830ab",
+        "proof": "Reversing only that literal replacement in a read-only sed stream reproduces the iteration-0 whole-file SHA-256."
+      }
+    ],
+    "source_witness_and_identity_records": "All six witness hashes and both Augustine identity-record hashes recomputed and equal to iteration 0."
+  },
+  "provenance": {
+    "unchanged_from_baseline": true,
+    "method": "Compared the exact first-line AIGenerationProvenance bytes in the current metadata and git show of baseline; both SHA-256 values equal the value below. The full metadata diff shows only the previously reviewed added contribution.",
+    "provenance_line_sha256": "8382d4a526a6797c1e8a6a64c3eada8cba90264c42d5acd2d015d80365be78c9",
+    "historical_run": "proper-study v19, 64c60ef0cfd8f349, historical ACCEPTED only",
+    "new_engine_acceptance_claimed": false
+  },
+  "candidate_sha256": {
+    "generation-metadata.tex": "4fdd629cd1c7f7a6598af98811ecf8c706c595edd60ff0edf428134eae8e4d41",
+    "research/production-review.md": "db4bf366f421acf3407499f35a16cc5b57f1801645f3a85a19131d86c808c5f6",
+    "sections/00-opening.tex": "9130ead6fbdaf0d43a0ebd08b2577808d82186c5f6ef0639c05786f80333b07d",
+    "sections/10-treatment.tex": "86f104ebc3608dc09e1b80512954138b35db8d4e3390935c8a07b0ec19c3c4cb",
+    "sections/30-mercy.tex": "083e8296022d7546aa77e9c30cbfc720d1aaebdeb4d238c52685182653361f36",
+    "sections/40-charity-within.tex": "de142e1c66d1eb6b0435596363214cf816038d94d274fe28cbd1c4d4000de850",
+    "sections/synthesis-04-themes.tex": "efb06960fa20690688aa1f4cd8e66d84bac354718ef878bfc441d05ca2d69ba6",
+    "sections/synthesis-05-commentary.tex": "0cd4f35f0194ea03aeef89ae4c31b9d681c93cefc612d94956ec6dd07c655166",
+    "sections/homily-10-spoken.tex": "314004a0fac805d0b329525afbd58b103e11984363d27f67d272ea9546eb4b48",
+    "sections/homily-90-notes.tex": "def7a9230399d7ea26e4f2dd3295d4f4be9f642c0a0457c8a6016485ade6316d"
+  },
+  "source_witness_sha256": {
+    "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+    ".scratch/pc-s58-research-0/latin-294.png": "499411ef427011e7e3f0f100394cbf7b01ff678348fa8f87024aa1fd4ae9f724",
+    ".scratch/pc-s58-research-0/latin-295.png": "8e06cfd28355efee632ce22fde48ba26f55e7eb1241479146cf3fb2cbe85f796",
+    ".scratch/pc-s58-research-0/fdlc-08.png": "17cad057016d9f68c8a8339e4fd6a4cb18830d60393b2c8609fd1449af02e2a0",
+    ".scratch/pc-s58-research-0/fdlc-09.png": "8b630f7b5baae746d75a7098e9166f5563b2da7a4a7587951df91a20233acecd",
+    ".scratch/pc-s58-research-0/usmissal-week32-0490.png": "5fbcebb08ce65fa7cdab37ec74eaedc02ec9c959f14ec837ce358f5a7d95c581"
+  },
+  "source_identity_record_sha256": {
+    "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/edition.toml": "ca66a1598f692914e7c16f7a3200ed3be8f03c4e08246b87055c4d83929e2ab4",
+    "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml": "6bee6f13dd757842ceeb86ef5fd06b6fb0251a5ab75590fa793f324aef07b79f"
+  },
+  "scope_and_limits": [
+    "The recheck tests the exact two-file repair against the genuine iteration-0 review; it does not redo unchanged reading or image-inspection events.",
+    "Reread sections/40-charity-within.tex lines 25-62 and production-review.md lines 315-339; directly reread the material Psalm 62.10 source text at lines 26950-26968, with surrounding section 11 displayed but not needed.",
+    "The unchanged complete homily remains 1,284 spoken words with the previously checked 10.3-11.7-minute estimate. No human delivery is claimed.",
+    "The NPNF abridgment, Latin reproduction, incomplete full-2008 authentication and qualified U.S. 2011 transmission limits remain as recorded in iteration 0.",
+    "No generated reader, browser layout, print artifact, currentness audit, source registration or publication acceptance was reviewed or created.",
+    "No canonical edit, workflow engine/seal write, Git mutation or shared-cache operation occurred in this lane. Only assigned scratch outputs were written."
+  ],
+  "final_freeze_check": {
+    "snapshot": ".scratch/pc-s58-advisory-source-review/candidate-recheck.sha256",
+    "result": "All ten entries unchanged at final return."
+  },
+  "coordinator_handoff_comparison": {
+    "directory": ".scratch/agent-handoffs/20261105T200303Z-pc-s58-advisory-source/",
+    "archive": ".scratch/agent-handoffs/20261105T200303Z-pc-s58-advisory-source.zip",
+    "candidate_map_sha256": "8cadeb608e33d498eaf9db95ec26fcec09c2d35f5e9abcdc27153cd6f933cd68",
+    "archive_sha256": "9c6dcbe9c4060b15c213f71dd59a3007ab3daa6e168e3749068acdbea140a6af",
+    "result": "Read candidate-inputs.json and compared every path/hash with the independent recheck map: all ten match. Package existence and hashes checked; archive extraction/inventory validation belongs to the coordinator and is not claimed here."
+  },
+  "evidence_report": ".scratch/pc-s58-advisory-source-review/recheck-evidence.txt"
+}

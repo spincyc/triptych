@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "review_kind": "bounded-post-publication-content-review",
+  "iteration": 0,
+  "disposition": "CHANGES_REQUIRED",
+  "reviewed_on": "2026-11-05",
+  "baseline_commit": "62bfdaf252785840ef13a7600ca8012f51dee704",
+  "candidate_root": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+  "candidate_state": "Uncommitted working diff against baseline; exact reviewed bytes are pinned below.",
+  "historical_workflow": {
+    "workflow": "proper-study",
+    "version": 19,
+    "run_id": "64c60ef0cfd8f349",
+    "status": "Historical ACCEPTED; not refreshed or extended by this review"
+  },
+  "summary": "The four originally cited SYN-001 paragraphs and detailed footnote now distinguish Augustine's general good-works explanation from the study's practical-mercy application. One equivalent attribution remains in 40-charity-within.tex:35. All five HOM-001 addressee recurrences are corrected, and the complete homily remains intelligible with accurate delivery estimates and source limits.",
+  "advisories": [
+    {
+      "id": "SYN-001",
+      "resolution": "PARTIAL",
+      "corrected_loci": [
+        "sections/10-treatment.tex:21 (including footnote)",
+        "sections/30-mercy.tex:31",
+        "sections/synthesis-04-themes.tex:10",
+        "sections/synthesis-05-commentary.tex:36"
+      ],
+      "rationale": "The inspected NPNF Psalm LXIII section 10 links hands lifted in prayer with exercise in good works, after discussing Christ's outstretched hands and mercy through the Cross. It does not specify aid to the needy at that locus. Each corrected paragraph now credits Augustine with good works and marks practical mercy as the application considered here. Bodily resurrection and ordinary sleep remain supported in sections 2, 4-5 and 12. The remaining recurrence is finding ASR-001."
+    },
+    {
+      "id": "HOM-001",
+      "resolution": "RESOLVED",
+      "corrected_loci": [
+        "sections/00-opening.tex:6",
+        "sections/30-mercy.tex:53",
+        "sections/40-charity-within.tex:55",
+        "sections/synthesis-05-commentary.tex:69",
+        "sections/homily-10-spoken.tex:27"
+      ],
+      "rationale": "All five direct requests now identify the Lord as addressee and his Spirit as the means of sustaining or preserving integrity. The Latin page images explicitly carry Domine and per infusionem Spiritus tui; the FDLC approved English excerpt distinguishes O Lord from your Spirit. The qualified U.S. 2011 image agrees. Remaining descriptions such as petition for the Spirit's preservation describe the requested work without assigning the prayer to the Spirit as addressee."
+    }
+  ],
+  "findings": [
+    {
+      "id": "ASR-001",
+      "related_advisory": "SYN-001",
+      "severity": "required-minor-correction",
+      "location": "sections/40-charity-within.tex:35, first sentence (antecedent at line 33)",
+      "problem": "His conjunction of raised hands and mercy attributes the practical-mercy conjunction directly to Augustine, immediately after his Psalm 62 exposition and before action toward a neighbor. The checked section 10 states good works generally, with divine mercy through Christ's Cross; it does not make the particular neighbor-directed application as phrased here. This is an additional occurrence of the same attribution precision issue the requested correction is meant to resolve.",
+      "required_result": "Credit Augustine here with joining raised hands and good works, preserving the following neighbor-directed consequence as the study's application. A local change from mercy to good works in the first sentence will remove the specific false attribution without altering the argument.",
+      "owner": "Expansive-study author; bounded correction coordinator"
+    }
+  ],
+  "homily_review": {
+    "read_extent": "All 37 lines of spoken body continuously and by paragraph; all 14 lines of source-and-delivery note and References.",
+    "spoken_words": 1284,
+    "count_method": "wc -w on sections/homily-10-spoken.tex; spoken body contains no TeX commands or headings",
+    "minutes_at_125_wpm": 10.272,
+    "minutes_at_110_wpm": 11.6727272727,
+    "rounded_note": "10.3-11.7 minutes before longer pauses",
+    "judgment": "The changed sentence is speakable, identifies the Lord before its short through-his-Spirit qualification, and preserves the argument from inward charity to continued dependence after Communion. No new oral-flow defect was found. No timed or audible human performance was performed or claimed."
+  },
+  "source_inspection": [
+    {
+      "source": "Augustine, Expositions on Psalm 62, NPNF heading Psalm LXIII",
+      "artifact": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt",
+      "extent": "Sections 1-12 as retained in the NPNF digital witness, physical lines 26740-27028; direct full reading of section 10. The tool also displayed the beginning of section 13, not used for the judgment.",
+      "limits": "Historical English witness contains explicit editorial abridgments; no Latin or patristic facsimile collation and no whole-work claim. Edition and artifact manifests read."
+    },
+    {
+      "source": "Latin third-typical-edition digital reproduction",
+      "artifacts": [".scratch/pc-s58-research-0/latin-294.png", ".scratch/pc-s58-research-0/latin-295.png"],
+      "extent": "Visually inspected Week 32 heading, Collect, Offerings, Communion alternatives and complete post-Communion prayer across physical pages 294-295.",
+      "limits": "Existing raster witnesses inspected directly with view_image; no new rasterization, complete-book inspection or full 2008 altar-book authentication."
+    },
+    {
+      "source": "FDLC Mystagogical Reflections, Ordinary Time 31-Christ the King",
+      "artifacts": [".scratch/pc-s58-research-0/fdlc-08.png", ".scratch/pc-s58-research-0/fdlc-09.png"],
+      "extent": "Visually inspected page 8 Collect and page 9 Prayer after Communion, including printed reprint-approval and ICEL notices. Reflection prose was visible but is not evidence for the prayer's wording.",
+      "limits": "Existing page rasters; source use is limited to the approved prayer excerpts, without a new rights determination or redistribution."
+    },
+    {
+      "source": "Qualified U.S. 2011 digital-book candidate",
+      "artifacts": [".scratch/pc-s58-research-0/usmissal-week32-0490.png"],
+      "extent": "Visually inspected Week 32, physical page 490 / printed page 492, especially complete post-Communion prayer.",
+      "limits": "Corroborating candidate with publisher transmission still unauthenticated; no expanded authority claim."
+    }
+  ],
+  "candidate_sha256": {
+    "generation-metadata.tex": "4fdd629cd1c7f7a6598af98811ecf8c706c595edd60ff0edf428134eae8e4d41",
+    "research/production-review.md": "c00c5aaa0febe44b50a3818576b247ba048510b7b91fdac0627df977f3f830ab",
+    "sections/00-opening.tex": "9130ead6fbdaf0d43a0ebd08b2577808d82186c5f6ef0639c05786f80333b07d",
+    "sections/10-treatment.tex": "86f104ebc3608dc09e1b80512954138b35db8d4e3390935c8a07b0ec19c3c4cb",
+    "sections/30-mercy.tex": "083e8296022d7546aa77e9c30cbfc720d1aaebdeb4d238c52685182653361f36",
+    "sections/40-charity-within.tex": "c8a83247d32d66fa5fa9fec7b7a9d65c0788528acfe2ec1ac3071498f7dca8a5",
+    "sections/synthesis-04-themes.tex": "efb06960fa20690688aa1f4cd8e66d84bac354718ef878bfc441d05ca2d69ba6",
+    "sections/synthesis-05-commentary.tex": "0cd4f35f0194ea03aeef89ae4c31b9d681c93cefc612d94956ec6dd07c655166",
+    "sections/homily-10-spoken.tex": "314004a0fac805d0b329525afbd58b103e11984363d27f67d272ea9546eb4b48",
+    "sections/homily-90-notes.tex": "def7a9230399d7ea26e4f2dd3295d4f4be9f642c0a0457c8a6016485ade6316d"
+  },
+  "source_witness_sha256": {
+    "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+    ".scratch/pc-s58-research-0/latin-294.png": "499411ef427011e7e3f0f100394cbf7b01ff678348fa8f87024aa1fd4ae9f724",
+    ".scratch/pc-s58-research-0/latin-295.png": "8e06cfd28355efee632ce22fde48ba26f55e7eb1241479146cf3fb2cbe85f796",
+    ".scratch/pc-s58-research-0/fdlc-08.png": "17cad057016d9f68c8a8339e4fd6a4cb18830d60393b2c8609fd1449af02e2a0",
+    ".scratch/pc-s58-research-0/fdlc-09.png": "8b630f7b5baae746d75a7098e9166f5563b2da7a4a7587951df91a20233acecd",
+    ".scratch/pc-s58-research-0/usmissal-week32-0490.png": "5fbcebb08ce65fa7cdab37ec74eaedc02ec9c959f14ec837ce358f5a7d95c581"
+  },
+  "source_identity_record_sha256": {
+    "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/edition.toml": "ca66a1598f692914e7c16f7a3200ed3be8f03c4e08246b87055c4d83929e2ab4",
+    "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/artifact.toml": "6bee6f13dd757842ceeb86ef5fd06b6fb0251a5ab75590fa793f324aef07b79f"
+  },
+  "freeze_verification": {
+    "initial_snapshot": ".scratch/pc-s58-advisory-source-review/candidate-start.sha256",
+    "disclosed_exception": "After initial hashing, the coordinator removed the syntactically invalid scope=bounded advisory corrections qualifier from the new metadata contribution. No substantive prose, note or production record changed. The corrected final metadata was read and pinned in candidate-reviewed.sha256.",
+    "reviewed_snapshot": ".scratch/pc-s58-advisory-source-review/candidate-reviewed.sha256",
+    "final_check": "All ten reviewed-snapshot entries checked unchanged before final return."
+  },
+  "limits": [
+    "This is affected-content re-review under the explicit re-review provision, not a new engine acceptance or an extension of historical sealed judgments.",
+    "No new research/currentness audit, chronology review, full patristic corpus audit, source registration, evidence-state update or seal was performed.",
+    "Unchanged homily sources other than the prayer witnesses were assessed for continuity with the study text, not independently revalidated in this bounded correction.",
+    "No generated reader, browser layout, print artifact, deployment or human delivery was reviewed.",
+    "Global work-register and promised-deliverable changes are outside this content verdict. The coordinator's mechanical gates are separate evidence."
+  ],
+  "mutations": ["Only .scratch/pc-s58-advisory-source-review/ review outputs; no canonical edits, engine writes, Git mutation or shared-cache operation."],
+  "evidence_report": ".scratch/pc-s58-advisory-source-review/evidence-report.txt"
+}
