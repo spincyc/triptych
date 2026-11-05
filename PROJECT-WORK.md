@@ -132,16 +132,24 @@ identity rules. All 34 schema tests and an independent combined-identity review
 pass. The newly explicit Davidic qualification is retained in the compact
 estimate; nine estimate tests and independent source review pass. The new proper
 preserves all 39 appointed passage pairs and both reading forms through shared
-assembly. Source-library, inventory, family-ledger, coverage and review-manifest
-checks pass on the combined source tree. Release proofs will be refreshed for
-this reconciled snapshot.
+assembly. Its actual synthesis print is ten pages, with all twelve compact date
+rows on page two; body continuity, anchors, metadata, components and recorder
+checks pass without overflow. Source-library, inventory, family-ledger, coverage
+and review-manifest checks pass on the combined source tree. Independent cold
+builds matched for all thirteen product families (27,690 files). The reconciled
+descriptor has identity
+`e5fd68be1dc1a5885e02f9a8a86333acef23e248bfb8a88892f775440528ac4d`;
+106 web editions change from upstream, with no output removals and all three
+new PC-S58 readers retained.
 Release verification then identified redundant per-edition chronology traces in
 native revision stamping. Revision calculation now shares the catalog's existing
 Assembly, retaining a fresh Assembly for each new operation. Independent cold
 review and 37 focused revision/bundle tests passed. A real GPT 66 main/synthesis
 comparison reduced three chronology traces to one and 27.992 seconds to 8.195
-seconds; both complete catalogs were byte-identical. Refreshed release proof,
-final site checks and main publication remain pending.
+seconds; both complete catalogs were byte-identical. The scoped release refresh
+verified all 24,029 source hashes, updating 19 and adopting 17 dependencies with
+none retired or outside the reviewed scope. Upstream authorization is preserved.
+Final site checks and main publication remain pending.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 
