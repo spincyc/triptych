@@ -2,22 +2,22 @@
  "editorial_approval": false,
  "inputs": {
   "families": {
-   "act-history": "3b1b25b4f38f7efe96473d15a02823dd573f187b310f74ae15d11dddc1ca18c4",
-   "bibles": "aa53dcefb8e3044c2fc3bc5d19ba351328fd6919dbb9bfab3b71c1658087104e",
-   "calendar": "18265e2fd2d1d875ed790163d9dfa70c416d7a3559719cfeeef343b080da6c06",
-   "catena": "853c51ad34a38ee4672ddd079870f7ff7bd8d0108055b924bb1efe20b5c4fdca",
-   "documents": "0ee3295fbc1a18e1119c6e00249185aa560552ebb78b0de84dc62cfe968bcae2",
+   "act-history": "e65cad2a4df9b773fda26aad6406cdb2e6e0baa24f1e8487dbfd94be662c6175",
+   "bibles": "be602898e5c78b3d5a9e6932310f4bfaa4a7aabb871522b15c5cdfdea5c0a1af",
+   "calendar": "7b536bf1b55275bbd8924fec900f37220a77fcbf246518228af7a597b9792d05",
+   "catena": "bcd133cb60dbaf96572b982bb7fd41bc7d5c98491fd535dd6372592c07966dc1",
+   "documents": "5e3db6055f5ea6b1086e370b3476645ec287f45ee49b1cb5b65233ec646e4144",
    "encyclicals": "5c277e1835ce87d1effecec4c8b29f4e62ee659460395712e4504dff13e56c0c",
-   "ordinary": "ad49497fd736a7c24b2393df4796d3cc71b135e8999731e80a98ff37c6138bcf",
-   "paragraphs": "c25cca8c20812199bbe738864c764301815fb3b20ab4c6c747e6b04807dcfc3b",
-   "propers": "e9c55b0a1b3a01d84fa5af0a7c4239cf1589fd991bebd27b1796c093526e499e",
-   "readings": "af3a7454ce8f2174d449045468845f668111166e1d5f85db661a666f1fd38c2a",
-   "rubrics": "3ff960a8f7764b66eadfbf0d1d230ff1d480bc02fbcd7e5abf68f6c1808ac780",
-   "sources": "ac16cd2a6787f4c173b1fbbce419145534286506eb2ff01ff72f077beee64b4d",
-   "web-editions": "d3f18f742aa1bc63d454a0173fd7cb737bf0c8d52994e41787e4fec1fdc6d163"
+   "ordinary": "ce4f8783f2ad18725999cd77029e6bce85527aa100aa2505180ebde7771e770a",
+   "paragraphs": "4e55c63a9ef90ab51ca5f1dd0fdf48e85aa5cedf59151e5ed6d16490d5d0edfd",
+   "propers": "19d163f4b94d180b7857fd5e017bfa907edbfaf842c8371f873c960b4c7ac6a3",
+   "readings": "c5644ba4511c935344945329980692f2671dbf9e01511f581d645e8021aab9f9",
+   "rubrics": "720ca09ff1f76cf39db1e82d79de505ce6e1f11bce0ea7bad9774caeee190324",
+   "sources": "9142f8ab4569d6f5fd10162295f75f065a3c496af741d2c1d8ae2e2446bd283a",
+   "web-editions": "c8e82ce66cd26655cd3471a7b4f365da5daca89cbb440519d03cc65bb16da356"
   },
   "schema": "triptych-browser-product-aggregate-inputs/v1",
-  "sha256": "2d92726bad246f9de41887e440b38c881fc0505301ac5295410f32c3be01c57e"
+  "sha256": "fe828b66c7731c7901af04f15a5b50474d15a6f4471eafb3b0424f394302af17"
  },
  "products": [
   {
@@ -31,16 +31,16 @@
    },
    "id": "bibles",
    "inputs": {
-    "content": "7bdcaa238ba61f4f83403fe5c9d6b1e6587a15d3ec642f2120afd1d37862ad55",
+    "content": "0af76ab6e7f95253e5eefbe85df553de7386da693afbbee3461f8a1eb4b4651b",
     "count": 70667,
     "generator": "493841f3a8afe16ad2e1a222312730560ff93bae6c5cd585fe1dd2e22b3cfbc6",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "001de2664ae2b3fd27c032f5f7623f9b41123738805e0f63e4279d4688d5a7eb",
     "rights": "e20eed0df4a78fd121d6564beeeb004c9193ff41b4f4e6b04c1fe63b6142659b",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "aa53dcefb8e3044c2fc3bc5d19ba351328fd6919dbb9bfab3b71c1658087104e"
+    "sha256": "be602898e5c78b3d5a9e6932310f4bfaa4a7aabb871522b15c5cdfdea5c0a1af"
    },
-   "key": "239fd4ca9ea1256be6ca4dec9b9c06b636ecb617f7fbbba63edc6f6a6bfb2ca4",
+   "key": "d5f47765762ac8893ccbbc980a7eb513d6177bdcd84cc9ecef65b282690da2be",
    "path_set_sha256": "14d56894543c1e5457683c8b4a392258e6dfd6703dd6afbf8ffd704a9b039014"
   },
   {
@@ -2301,16 +2301,16 @@
    },
    "id": "act-history",
    "inputs": {
-    "content": "68831a61f88fc99777c77c14a2d0a78ba08ceb3c011136fb0aaa17939376de7e",
-    "count": 78442,
+    "content": "2d92c7aafb77a01510d811ec71625b9b2b9b055489d5fca737cf3ad37cbad6f6",
+    "count": 78462,
     "generator": "d0ff742433ac5f327da09b8010f642782d23339fa5067e0f33d309a9a9b2cca1",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "c16a7367384d3a5ae75a194dd2226aa84f47e34fba15b68103f8ace708d7b166",
-    "rights": "492d22554bc5495885b2cc7fc42321b5fa5f2de79e2d97e12960c5e527f82ec1",
+    "membership": "431fb6af2c28c59fe6caf9208bd870a24f81e10cf0756cd5df431e045c20e847",
+    "rights": "58d7494229217ee99ab6f7dc7dc7025a7f686a30c6b65e4be8cb0856005bf370",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "3b1b25b4f38f7efe96473d15a02823dd573f187b310f74ae15d11dddc1ca18c4"
+    "sha256": "e65cad2a4df9b773fda26aad6406cdb2e6e0baa24f1e8487dbfd94be662c6175"
    },
-   "key": "2c0ab4c0344aac4c817b4d0acb128383526a9bfee4a86f942f8821b405c4a1c2",
+   "key": "a4991e4c5f48d082efefecaea8a9c4b950d27f4b60ad9cce2a42ea2e31550904",
    "path_set_sha256": "6c79229e3b84cc13de7dec10eb7e12bccf9e7f43de5a0b920b2ac014966e1eee"
   },
   {
@@ -3536,16 +3536,16 @@
    },
    "id": "calendar",
    "inputs": {
-    "content": "645363762a74c88e567abde7d09e0c9b173493565bc9f03bf78291bad184fa8d",
+    "content": "7353d05c240890b2c6ece9eda63796dd426df1766001b774d620a5fc30013be5",
     "count": 376,
     "generator": "afbbcc62abf2809c18c84ccc274fb4346d1d55b9943bca955be642c90fbb7ac7",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
     "membership": "a8bb5c3697e5ef506c6e77fbb9ac4878d4bf003f7a5d82222f4c0fcc9500c9cd",
     "rights": "0df8fe64379e4dfd01f7b37319661c12762c9582df21f45148be359883d051e8",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "18265e2fd2d1d875ed790163d9dfa70c416d7a3559719cfeeef343b080da6c06"
+    "sha256": "7b536bf1b55275bbd8924fec900f37220a77fcbf246518228af7a597b9792d05"
    },
-   "key": "4260c0e66b7dae13df0268bd7fc65d1210c791091bb7ae018132eae0278bfdc3",
+   "key": "e124a20c74f72bf708836ef930482b9f96d0b1ba0601e08e6c4882505132403f",
    "path_set_sha256": "a0c13f328642fecd9fec07952be9cfeef0ab13fa0e58633f104eea29995974a9"
   },
   {
@@ -11759,39 +11759,39 @@
    },
    "id": "catena",
    "inputs": {
-    "content": "6294cc63a59fe03ef35767e6e07087edfc9473d35f3ab2092550def7c62a7ade",
+    "content": "3bb5d9c48b26750f9a2fcc8b3a5ee50ffa526770d3d1b1d73b982c34c5f6f8dc",
     "count": 70671,
     "generator": "e74b687dbb01e216c2595fab4e6b0c76a0be0cb5f313516f2dc0861c96d83cea",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "10379f3be3304340ba73a00f3eeb92dbb334ceb4992af51ac891b9d839b0b69f",
     "rights": "e20eed0df4a78fd121d6564beeeb004c9193ff41b4f4e6b04c1fe63b6142659b",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "853c51ad34a38ee4672ddd079870f7ff7bd8d0108055b924bb1efe20b5c4fdca"
+    "sha256": "bcd133cb60dbaf96572b982bb7fd41bc7d5c98491fd535dd6372592c07966dc1"
    },
-   "key": "b079c7dc2dabdb8f12e2e39227b06f3a08380812330f4f49f3956fea0c6d67c2",
+   "key": "c5fa060c0d6ad613a5dd25428c9a605d3569d08a5c6f7763ac328b63ad693847",
    "path_set_sha256": "9b9fbba9ed683949aad288fb41ff4f90cfe49fdcbd4203c3aba71137c34b68fd"
   },
   {
-   "bytes": 1225535,
+   "bytes": 1226044,
    "count": 1,
    "files": {
     "structure/documents/corpus.json": {
-     "bytes": 1225535,
-     "sha256": "63e927143514a9e44c1428ccdfad8fbbc3d67fbe0a65e0a5bb456d97ac0b679d"
+     "bytes": 1226044,
+     "sha256": "ca52fbcb5797f8504acd31c660b44c0b647f4cdafe09c1b61d088e36056cfd2b"
     }
    },
    "id": "documents",
    "inputs": {
-    "content": "4cfc8f9961e8ace6b03926f6cc9519bdf6172ec622ff9d0a91dea69e98cfd8ae",
-    "count": 79631,
+    "content": "4d417cb2ea03f02a6951e4bc7338f16bdce9586d4456b9a84de285dc825cd272",
+    "count": 79651,
     "generator": "9865a1a97a2c83bd59576daf280b86d4d7c4d1a2bc12fc1961379b65c7095d59",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "ddccd27c7b967f51aefc7a363acbd079da6bc93c793dfe2c2c385b9e10eb00a2",
-    "rights": "25ebc539068bd4b2b7d392c33a9d934a1d29fa7c2fde8c527e1b549fbc240bf7",
+    "membership": "3a9e0b3a59f8233414b7c57fdeb202d021a06790a3ea9682015e3d483b5653b9",
+    "rights": "35801226176542aa7e9e3760ee942cc29cb414aa9a9b77e473b70ae61314d2af",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "0ee3295fbc1a18e1119c6e00249185aa560552ebb78b0de84dc62cfe968bcae2"
+    "sha256": "5e3db6055f5ea6b1086e370b3476645ec287f45ee49b1cb5b65233ec646e4144"
    },
-   "key": "08484371884db64d83014c2f46cf7eba82b3b455043ee2566ee77108da72cf63",
+   "key": "05de641ed82cb077daa5e53e3148aa69a32989bdabe0b1c9dd5b26efe579b8a6",
    "path_set_sha256": "0ec113e99b049bb781b04b2631e34ca3f3d0a90d0fdf95112ab234089debe48b"
   },
   {
@@ -11817,16 +11817,16 @@
    },
    "id": "ordinary",
    "inputs": {
-    "content": "7bdcaa238ba61f4f83403fe5c9d6b1e6587a15d3ec642f2120afd1d37862ad55",
+    "content": "0af76ab6e7f95253e5eefbe85df553de7386da693afbbee3461f8a1eb4b4651b",
     "count": 70650,
     "generator": "e491a48f0a3007b9e1a12f090ccfa532f730f5d27aa3de906d3a3bbb9d23d13d",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "4c8c6de3b977d2be1172174f8f1a57666d8391493b72be49955529582a2cff19",
     "rights": "e20eed0df4a78fd121d6564beeeb004c9193ff41b4f4e6b04c1fe63b6142659b",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "ad49497fd736a7c24b2393df4796d3cc71b135e8999731e80a98ff37c6138bcf"
+    "sha256": "ce4f8783f2ad18725999cd77029e6bce85527aa100aa2505180ebde7771e770a"
    },
-   "key": "85bf160d36834dd5251ede1eafb9e2417c5d3e7287fff4bfa8a56af0bc73565f",
+   "key": "df3932c89834664fd1f54a57b519c11f6dd8783aee1b95d1172a650fcef4263a",
    "path_set_sha256": "8d6628d20ee36a40306d533a98efeaafbdf1ff3b8fd15fcaa53e9afc4ae63513"
   },
   {
@@ -34028,16 +34028,16 @@
    },
    "id": "paragraphs",
    "inputs": {
-    "content": "7bdcaa238ba61f4f83403fe5c9d6b1e6587a15d3ec642f2120afd1d37862ad55",
+    "content": "0af76ab6e7f95253e5eefbe85df553de7386da693afbbee3461f8a1eb4b4651b",
     "count": 70670,
     "generator": "e74b687dbb01e216c2595fab4e6b0c76a0be0cb5f313516f2dc0861c96d83cea",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "bac6a72bb99f0be2d3063342e6f5a21ae94d4ad9c509c83e6f5045d83b65cb78",
     "rights": "e20eed0df4a78fd121d6564beeeb004c9193ff41b4f4e6b04c1fe63b6142659b",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "c25cca8c20812199bbe738864c764301815fb3b20ab4c6c747e6b04807dcfc3b"
+    "sha256": "4e55c63a9ef90ab51ca5f1dd0fdf48e85aa5cedf59151e5ed6d16490d5d0edfd"
    },
-   "key": "d2fe9532b30b585e92cb6931742f2b1405a31ca55cbf605a1d3650c2b23b2e9d",
+   "key": "09f4d896e54593acf63d503501d27ecacfa30a4df81ab40c5a09cc1d08635385",
    "path_set_sha256": "9de3712da5253ae1811b47967cb17448685f69729faff8a58c640179f9049796"
   },
   {
@@ -36043,16 +36043,16 @@
    },
    "id": "propers",
    "inputs": {
-    "content": "9925eb4c62568acb431f9a95014e27eb97d6643cfd5c727f472dda273e9ccd21",
-    "count": 78231,
+    "content": "dd93f5b1e489f6ba2dde587b3eefaa5262a94b91334402eb4bfec13eedbaca81",
+    "count": 78251,
     "generator": "493841f3a8afe16ad2e1a222312730560ff93bae6c5cd585fe1dd2e22b3cfbc6",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "6e6d061ecf9b5227bd6903f7e4204f0d34f877a29e71990667fb8db24de7d7f5",
-    "rights": "3fd14849dfde3e5213f8dbc9b71ab49738ce088a77461a7a2223c041aa22a951",
+    "membership": "8a67d72ef7661b79ccb549bde39fb4a25a5b43c3779b56baf49b505f12f0b6c9",
+    "rights": "a74e2bea2cf3003e783b745c36ff689b43310cf9d218aef0b1622b2fb14a9e62",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "e9c55b0a1b3a01d84fa5af0a7c4239cf1589fd991bebd27b1796c093526e499e"
+    "sha256": "19d163f4b94d180b7857fd5e017bfa907edbfaf842c8371f873c960b4c7ac6a3"
    },
-   "key": "f0663a3eae9d74b53685c3e92c1d0d367068be64cd2a13b15433ae1eb28f1cf8",
+   "key": "8966e2e8630f4b6a77db3bb3d05f8eea9f489da3dc36678df178b8d3ea9cf73c",
    "path_set_sha256": "b53fa6715bff5bcbf2f849d69c9dcf20923c4c0fc6cd0695f735724209265f97"
   },
   {
@@ -36066,16 +36066,16 @@
    },
    "id": "readings",
    "inputs": {
-    "content": "7bdcaa238ba61f4f83403fe5c9d6b1e6587a15d3ec642f2120afd1d37862ad55",
+    "content": "0af76ab6e7f95253e5eefbe85df553de7386da693afbbee3461f8a1eb4b4651b",
     "count": 70668,
     "generator": "eadd5366cf1c72896994938cc7d46323d3cd9d90ad72a245c588f858dd16ae01",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
     "membership": "bd715699b4eebdc286729394a30f2f0542fdeb9ec4f4b653a1ed37fce677710b",
     "rights": "e20eed0df4a78fd121d6564beeeb004c9193ff41b4f4e6b04c1fe63b6142659b",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "af3a7454ce8f2174d449045468845f668111166e1d5f85db661a666f1fd38c2a"
+    "sha256": "c5644ba4511c935344945329980692f2671dbf9e01511f581d645e8021aab9f9"
    },
-   "key": "27e87a92e49c12b7c9a29f738a0e789ec6d14fa4356b4b66f04f854296b01f88",
+   "key": "6b411107ac6d33fc357d7bf1b34044c0bb3ed7b9daa250e9b678187327a6c6f1",
    "path_set_sha256": "508b7a8e33c837e26653f6d32011065feafebd126ee7022fefa70a2cccadeabf"
   },
   {
@@ -36101,16 +36101,16 @@
    },
    "id": "rubrics",
    "inputs": {
-    "content": "645363762a74c88e567abde7d09e0c9b173493565bc9f03bf78291bad184fa8d",
+    "content": "7353d05c240890b2c6ece9eda63796dd426df1766001b774d620a5fc30013be5",
     "count": 376,
     "generator": "39f2c06855ebebe34d66c0b0803c2c07966110f1cc0fbee352d9f4f396ca363b",
     "lock": "df90b33394fba5ec5a5b141260e3e918e6b0acbe3083dd27beed29a155cf0780",
     "membership": "3e66944863aa5f42173769da65ac8252aa8409f6f4b15419c794d379cc955dd6",
     "rights": "0df8fe64379e4dfd01f7b37319661c12762c9582df21f45148be359883d051e8",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "3ff960a8f7764b66eadfbf0d1d230ff1d480bc02fbcd7e5abf68f6c1808ac780"
+    "sha256": "720ca09ff1f76cf39db1e82d79de505ce6e1f11bce0ea7bad9774caeee190324"
    },
-   "key": "b022422ee2ca8d75c23ab9d31341d8fe3d6e8eee976d19976d9c053f5090b10d",
+   "key": "ad38864d6b78b75fe6c0333ab9083d5da4fc3cba4c8ef19eb216730f38a581f3",
    "path_set_sha256": "b33143518fe47bc2375691f3ef5f78ffee0bc633c3fbb8507344ae056d6b7216"
   },
   {
@@ -109944,20 +109944,20 @@
    },
    "id": "sources",
    "inputs": {
-    "content": "df8b2df74747ba6ca48723919b51c0d878c875777cc9605bcd73a1075ee0c8d0",
-    "count": 78361,
+    "content": "3d30fe2c19c9c06b5eb5c3ed5ecb7d9a4a2db9d1937882fac1ca5de9634629ef",
+    "count": 78381,
     "generator": "5313d9164bfc4972eec153a640f2366b201728eae9e4c9e0550cb7b688311740",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "0500bd2ec585b140a73d5814561c315d649da615aeea3bff1a2ee3fc648ce082",
-    "rights": "5312afa539d347a319c7f731e217bd13ceede2f67277dc4b8343b62ef11740d3",
+    "membership": "ba2f53c232b90b88fb7f8acef37975cc7687074fa4d6579abf3eb62b65e2a663",
+    "rights": "d158fe9eef552243c38aaaef232a727ef3a18e1377beada76e2ed7053740d05c",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "ac16cd2a6787f4c173b1fbbce419145534286506eb2ff01ff72f077beee64b4d"
+    "sha256": "9142f8ab4569d6f5fd10162295f75f065a3c496af741d2c1d8ae2e2446bd283a"
    },
-   "key": "56db9a87880272e6da1d49758fe602fa8eec20cc29594d42157f1b72f853cb4c",
+   "key": "cc5e91cace97e5361fc42b270a815e9652fbebbb6afd478654b2b369e2d7aa7e",
    "path_set_sha256": "faf6bb7fa72af105f4e782f16bfb39f697a2c7e305b294cca7f769fec995a57e"
   },
   {
-   "bytes": 26648067,
+   "bytes": 26648366,
    "count": 270,
    "files": {
     "web-editions/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.json": {
@@ -110957,16 +110957,16 @@
      "sha256": "6eec00c666daf5373b96480b73d43e5d7a6dd46aa25d763a3fe9edb8fef88405"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.json": {
-     "bytes": 13046,
-     "sha256": "ed8235c5e7560cb68b80d62f9a6aabd72713f26dba863c8574efb25bb1c10876"
+     "bytes": 13064,
+     "sha256": "f7d2cc20c1b06f9dfcc1a92c743f7b25b322c7154c248afd420db2e7fabbac1e"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.json": {
-     "bytes": 37959,
-     "sha256": "81a8e2ea0ea60fc74a54194be1563778b2e96657ed7e437f1a5ef412e2b41934"
+     "bytes": 38092,
+     "sha256": "7be844ca6aa3483e81ec14e32e158036e54d8a1c6eda19c2c6eccdb6bc2e6994"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.json": {
-     "bytes": 74121,
-     "sha256": "784c8e4fab7e74ce0b5328a55e968751bedd7df534243a9bc44f9729307e843a"
+     "bytes": 74269,
+     "sha256": "e31494eb31a6d8e35f64a4c4770797444cfbf39392c6b1a257caf38fef87f501"
     },
     "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/reference/liturgical-calendar.json": {
      "bytes": 86113,
@@ -111038,21 +111038,21 @@
     },
     "web-editions/index.json": {
      "bytes": 166489,
-     "sha256": "99178c75ebe63bf77e9ee207e0368508f07315e801397be54306f59f1c3d33f0"
+     "sha256": "e033fc69ba1976e3c70dc511322a61ed5efef3ae462ff044d54ea010f266ea56"
     }
    },
    "id": "web-editions",
    "inputs": {
-    "content": "158e4b2f1186ea95e76d17372f2fdf9faccbb9dda9c239d2c2d353e25d988026",
-    "count": 79550,
+    "content": "9506ba84dcaca6632e69bd2fd5189a1b4959d0e1cae68879203102c3a8c37215",
+    "count": 79570,
     "generator": "e24c88e155cde329392aa562550dce759d31973e2432ab748ce17c23b2f5fb4d",
     "lock": "6c6eda474a89034d269aa46b14eee465c1e6d4f751384b2290aed652ecc0450e",
-    "membership": "f506b918982527bb72157d85784da6a60899d1845a7e678487f059a9e0bac92f",
-    "rights": "25ebc539068bd4b2b7d392c33a9d934a1d29fa7c2fde8c527e1b549fbc240bf7",
+    "membership": "64052efa2756eecd0c3a8da022a0f6cbac147bf850dd1c4759616204bb776317",
+    "rights": "35801226176542aa7e9e3760ee942cc29cb414aa9a9b77e473b70ae61314d2af",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "d3f18f742aa1bc63d454a0173fd7cb737bf0c8d52994e41787e4fec1fdc6d163"
+    "sha256": "c8e82ce66cd26655cd3471a7b4f365da5daca89cbb440519d03cc65bb16da356"
    },
-   "key": "aa4ef75a2c5383a3ea5bbfff9f2d6539e8758d7959b2aa2cb78fb5e4fb20f2e7",
+   "key": "3464a76b60c60a9290c74c9c238ade0c7d6fe2b7ee91f1a18d9eeed18027c743",
    "path_set_sha256": "ea73cfed3513c3765af49777bdc6cde0498ea75acf6236cf69f474d12ade28d6"
   }
  ],

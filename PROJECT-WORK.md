@@ -11,7 +11,7 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: sanctuary-dictionary-continuation-2026-11 -->
 
-**Reviewed source checkpoint; publication checks in progress.** The remaining-work plan
+**Reviewed release candidate; final deployment verification pending.** The remaining-work plan
 now distinguishes the original bounded repairs from the full open corpus.
 Two canonical records for cassock and surplice bring the inventory to 82;
 three source-controlled drawings show the separate garments and their worn
@@ -47,9 +47,25 @@ Only the incoming three readers, their index and one catalog contribution
 record differ from the earlier product checkpoint. Two incoming reader
 revision timestamps follow the chronology-helper repair; independent comparison
 proves that their full products otherwise retain the previously reviewed bytes.
-Current site and rendered revision-region checks remain pending. The maintainer
-authorized main integration. Research records distinguish source, figure,
-consumer, print and live-deployment evidence.
+The candidate site at `f1dd135c81` passes independent browser review: all 70
+gallery images load, clothing qualifications remain visible, mobile layouts
+fit, and six dictionary print pages stay idle until requested. The three
+incoming readers' revision and rights regions pass at desktop and mobile widths.
+All thirteen bundles emitted by that site compile in two passes to 255 pages;
+their mounted inputs, render identities and PDFs match the accepted proofs.
+The six dictionary proofs cover 100 pages and 1,165 resolving numbered links.
+
+The [release review](workflows/reviews/sanctuary-dictionary-2026-11-05/release-verification.json)
+pins those artifacts and the historical source, audit and compilation scopes.
+A separate [complete comparison](workflows/reviews/sanctuary-dictionary-2026-11-05/all-reader-revision-transfer.json)
+proves that all 105 proper readers changed from current main differ only in
+revision timestamps and their derived hashes; the web index differs only in
+those hashes. This mechanical equality renews no editorial or print approval.
+Main's subsequent changes through `53d90dbc69` affect operational records and
+the matching workflow test, with no changed publication inputs. The final
+committed site rebuild, full Pages verification and main push remain pending.
+The maintainer authorized main integration. Research records distinguish
+source, figure, consumer, print and live-deployment evidence.
 
 The upstream [Pages build](https://github.com/spincyc/triptych/actions/runs/42099806134/job/127500251862)
 passed source checks and site assembly, then exceeded its two-hour limit during
