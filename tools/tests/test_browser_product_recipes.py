@@ -36,7 +36,7 @@ class RecipeTests(unittest.TestCase):
         recipe = next(recipe for recipe in products._recipes() if recipe["id"] == "web-editions")
         self.assertEqual(recipe["argv"], ["tools/web-edition", "products"])
         self.assertEqual(recipe["output_prefixes"], ["web-editions"])
-        self.assertEqual(recipe["input_trees"], ["src"])
+        self.assertEqual(recipe["input_trees"], ["src", "release/publications"])
 
     def test_recipe_factory_requires_delivery_and_runner_expands_out_once(self):
         with self.assertRaises(TypeError):

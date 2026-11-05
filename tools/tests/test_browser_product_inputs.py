@@ -149,7 +149,7 @@ class RepositoryClosureTests(unittest.TestCase):
         cls.harness = inputs.code_closure(ROOT, inputs.HARNESS, literals=False)
 
     def test_every_family_closure_has_its_producer_and_the_harness(self):
-        self.assertEqual(len(self.recipes), 12)
+        self.assertEqual(len(self.recipes), 13)
         for recipe in self.recipes:
             with self.subTest(family=recipe["id"]):
                 code = self.code[recipe["id"]]
@@ -231,7 +231,7 @@ class AuditHookTests(unittest.TestCase):
 class FullAuditTests(unittest.TestCase):
     def test_every_family_reads_only_its_key(self):
         report = inputs.audit(ROOT)
-        self.assertEqual(len(report), 12)
+        self.assertEqual(len(report), 13)
         failures = {family: {key: result[key] for key in ("outside", "non_canonical", "unaudited_children")}
                     for family, result in report.items() if not result["ok"]}
         self.assertEqual(failures, {}, json.dumps(failures, indent=1)[:4000])

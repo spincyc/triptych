@@ -76,7 +76,10 @@ RECIPES = (
     # Every web reader's Markdown, converted at build time from canonical TeX
     # (guidance/web-editions.md). Consumed by the site build, never published as
     # browser data; the pinned Pandoc lock lives under src/common.
-    _recipe("web-editions", "web-editions", ["tools/web-edition", "products"], ["src"], delivery="site-build"),
+    # Release records decide each reader's publication status, so they are
+    # inputs too (the cold audit found the read).
+    _recipe("web-editions", "web-editions", ["tools/web-edition", "products"], ["src", "release/publications"],
+            delivery="site-build"),
 )
 
 
