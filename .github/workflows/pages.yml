@@ -32,7 +32,7 @@ env:
     texlive-fontsextra texlive-xetex texlive-langeuropean gnu-free-fonts
     poppler python
     python-yaml make git diffutils
-  TEXLIVE_IMAGE: ghcr.io/spincyc/triptych-texlive@sha256:45dbaaa9ba1eccff8621c8ed5ff614363384ccd5bc1b72d3b708f8eb2d2d057a
+  TEXLIVE_IMAGE: ghcr.io/spincyc/triptych-texlive@sha256:4098e7c164c67b3e7abf78ef2748716926f5f935b25e54d1e8d98bdd1314c6ec
 
 jobs:
   build:
