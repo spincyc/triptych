@@ -37,8 +37,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    # A cold run exhausted two hours during independent artifact verification
-    # after source checks and site assembly passed. Allow both full-corpus passes.
+    # Cold shared-assembly builds can consume most of a two-hour budget before
+    # independent artifact verification. Allow both full-corpus passes to finish.
     timeout-minutes: 180
     permissions:
       contents: read

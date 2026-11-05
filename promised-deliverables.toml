@@ -19,6 +19,12 @@ state = "in_progress"
   evidence = ["PROJECT-WORK.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/README.md", "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/web-edition.toml"]
 
   [[deliverables.requirements]]
+  id = "ci-verification-budget"
+  criterion = "The Pages build budget accommodates the observed full-corpus workload while retaining the source, independent artifact and native compile gates, with unchanged reader and product identities."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
+
+  [[deliverables.requirements]]
   id = "main-and-live"
   criterion = "The validated corrections reach main without history rewriting; Pages build, full compile and deploy pass, and the three live readers contain the corrections."
   status = "open"
