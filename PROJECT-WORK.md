@@ -5,7 +5,27 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-04.
+Last reconciled: 2026-11-05.
+
+## Claude 1962 resumed Fifth Sunday after the Epiphany, 2026-11-08
+
+<!-- promised-deliverable: claude-1962-66-resumed-fifth-three-documents-2026-11-08 -->
+
+**In progress: authorized; the workflow audit runs before seeding.** On
+2026-11-05 the maintainer asked for the Claude 1962 proper-study documents
+for the upcoming Sunday and authorized publication to `main`. Sunday,
+8 November 2026 is the Fifth Sunday after the Epiphany resumed after
+Pentecost, permanent identity `66`,
+`liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
+The production plan records the one-provider authorization. This is an
+independent Claude production: the published GPT leaf for the same identity is
+not an input.
+
+This is the first run at `proper-study` version 17, the source-and-reader path
+that the no-PDF work introduced; no run had been seeded at version 16 or 17.
+The maintainer therefore also asked that the no-PDF work be checked for every
+part of this workflow it should have updated. Fixes land before the run is
+seeded, because the research seal covers the tooling.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 

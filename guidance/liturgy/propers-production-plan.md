@@ -137,6 +137,13 @@ provider and nothing else, and it is an independent Claude production, not a
 companion to or a derivative of the published GPT leaf for the same
 identity. It does not open the commemorated Twenty-third Sunday after
 Pentecost.
+On 2026-11-05 the maintainer authorized the Claude 1962 resumed Fifth
+Sunday after the Epiphany target, identity `66`, for Sunday, 8 November 2026,
+on the same terms and under the same three-document contract. It opens that
+one identity for that one provider and nothing else, and it is an independent
+Claude production, not a companion to or a derivative of the published GPT
+leaf for the same identity. It does not open the ordinary Fifth Sunday after
+the Epiphany or any other resumed Sunday.
 
 Each line below records one maintainer decision to open the boundary for
 one provider and one permanent identity. A line is the whole
@@ -180,6 +187,8 @@ and an identity with no line here is closed.
 - Authorized 2026-10-26: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/f02-all-saints`.
 
 - Authorized 2026-11-02: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
+
+- Authorized 2026-11-05: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
 
 ### Reference-only publication scope
 
