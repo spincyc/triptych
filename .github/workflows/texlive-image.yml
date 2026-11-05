@@ -108,6 +108,8 @@ jobs:
           RUN printf 'Server=https://archive.archlinux.org/repos/${SNAPSHOT}/\$repo/os/\$arch\n' > /etc/pacman.d/mirrorlist \\
            && pacman -Sy --noconfirm --needed archlinux-keyring \\
            && pacman -Syu --noconfirm --needed ${PACKAGES} \\
+           && fmtutil-sys --byfmt xelatex \\
+           && fc-cache -f \\
            && pacman -Scc --noconfirm
           EOF
           cat "${RUNNER_TEMP}/texlive-image/Dockerfile"
@@ -148,7 +150,12 @@ jobs:
           # Deliberately unquoted: the package set is a word list.
           # shellcheck disable=SC2086
           pacman -Q ${PACKAGES}
-          command -v pdftotext pdfinfo make git
+          command -v pdftotext pdfinfo make git xelatex xdvipdfmx
+          # The print-compile job typesets XeTeX editions and Latin hyphenation
+          # from this image without installing anything.
+          test -n "$(kpsewhich -engine=xetex xelatex.fmt)"
+          test -n "$(kpsewhich latin.ldf)"
+          test -n "$(kpsewhich hyph-la.tex)"
           SH
 
       - name: Publish the image and report its digest
