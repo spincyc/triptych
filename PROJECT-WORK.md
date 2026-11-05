@@ -11,86 +11,73 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: gpt-pc-s58-production-2026-11-05 -->
 
-**In progress.** Complete the proper-study workflow for PC-S58-A in the
-United States edition: an expansive study, concise study and homily, with
-independent source/content and web reviews. The requested occurrence is
-8 November 2026; calendar computation and the USCCB dated readings identify
-the Thirty-second Sunday in Ordinary Time, Year A, Lectionary 154.
+**Complete: pushed to main, deployed and verified live.** The United States
+PC-S58-A production covers 8 November 2026, Thirty-second Sunday in Ordinary
+Time, Year A, Lectionary 154. The expansive study has 6,346 substantive words,
+the concise study 3,389, and the homily 1,281 spoken words. The homily's
+10.25–11.65-minute estimate is based on 110–125 words per minute; it does not
+claim a human delivery or timed rehearsal.
 
-The request also requires verifying the no-PDF migration throughout this
-workflow and publishing the validated work to main. The pre-seed audit is
-complete: version 18 repairs derived-field duplication, component placement,
-hand-written timestamp instructions and companion-reader wording. A runtime
-repair keeps completed inspection receipts from invalidating their own web
-review; source and reader changes still invalidate acceptance. The coordinator
-checkpoints sources before conversion so Git-derived revision stamps remain
-stable. All 62 schema and focused workflow regressions pass. The durable audit is
-`workflows/reviews/gpt-pc-s58-production-2026-11-05/WORKFLOW-AUDIT.md`.
-Run `35340f9844352478` passed scope, context resolution and research authoring.
-Registration completed its source work and full source audits but the run ended
-BLOCKED on an aggregate browser-product request for the unfinished reader.
-Its four results and packets are archived. Version 19 corrects that dependency:
-research checks the strict working source projection; installation records and
-checks the complete browser products after declarations and release records
-exist. All 62 regressions and the strict source projection check pass. Fresh
-run `64c60ef0cfd8f349` passes scope, context, research, source registration and
-research preflight. The cold review requested explicit Wisdom numbering and
-the full concise qualification of David's reported dates. Research repaired
-both through existing source fields. Repeated source registration and preflight
-pass; cold research-review iteration 1 passes with no findings. The expansive
-study is authored with 6,463 substantive words, two interpretations and all
-twelve appointed-text anchors. Its component/content checks, canonical web
-probe and engine study preflight pass. Cold study review confirms the substantive
-arguments and source support, and requests one focused repair of recurring
-editorial-process prose. Author-study iteration 1 repairs STU-001 in the six
-cited passages, preserving the evidence and 6,346 substantive words. Repeated
-study preflight passes. Fresh cold study-review iteration 1 passes with no
-findings, clearing STU-001. The concise companion is authored with 3,389 words
-of substantive exposition and passes its component, content, metadata,
-generated-source and conversion checks. All 25 accepted study and evidence
-files are unchanged. Engine synthesis preflight and cold synthesis review pass.
-The review retains SYN-001 as a nonblocking attribution-precision advisory for
-the next revision: Augustine's general good-works explanation should remain
-distinct from the study's specific application to helping the needy. The
-homily is authored with 1,281 spoken words, estimated at 10.25–11.65 minutes
-at 110–125 words per minute. Its component/content, provenance, metadata,
-complete three-output schema, generated-source and converter checks pass;
-fifty baseline files are unchanged. Engine homily preflight and cold review
-pass. HOM-001 remains a nonblocking precision advisory about the post-Communion
-prayer's addressee and the requested work of the Spirit. Complete source-family
-validation and engine artifact gates pass; all four upstream review records
-and current input objects match. Source checkpoint `2db4948252` commits all
-three editions, whose revisions report committed inputs. Canonical reader
-conversion passes its fidelity checks and records the exact Markdown receipt.
-Independent web review passes with no findings after complete text/note
-comparison and isolated desktop/mobile renderer checks. Installation passes all six checks, complete browser reproduction and scoped
-release bindings. The engine publication gate passes and run `64c60ef0cfd8f349`
-is terminal ACCEPTED, with all twenty-eight results and packets archived.
-The archive-dependent inventory/product refresh, full site build and GitHub
-Pages artifact verification pass. All three assembled readers pass desktop and
-phone-width browser checks; their print pages remain idle on arrival. Main
-push, CI deployment and live verification remain pending.
-No gate or publication
-check is bypassed. The source handoff has 45 bindings and 57
-dispositions, and the strict working projection and full source audits pass.
-Its context records ten ritual units, twelve element keys, both second-reading
-forms and both Communion alternatives under the canonical Week 32 owner.
-The research dossier retains distinct patristic interpretations, source
-authentication limits and both reading forms. The shared qualification correction
-reaches thirty existing chronology consumers. Their generated currentness,
-schema and reader conversions pass; nine inherited content-gate failures remain
-in unchanged authored sources. Two additional GPT leaves require only registry
-dependency-hash updates.
-All three documents have passed their independent content reviews and terminal
-source/reader publication acceptance. The
-exact provider/identity authorization is recorded in
-`guidance/liturgy/propers-production-plan.md`; the driver's ongoing record is
-`workflows/reviews/gpt-pc-s58-production-2026-11-05/CYCLES.md`.
+Live readers:
 
-Completion requires terminal workflow acceptance, all three reader outputs and
-their catalog/release records, a durable workflow audit, passing publication
-checks, a main push, and verification of the resulting Pages deployment and
-live readers. Source/HTML acceptance does not assert a print-layout review.
+- [Full study](https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.html)
+- [Concise study](https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.html)
+- [Homily](https://mystago.gy/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.html)
+
+Proper-study version 19 run `64c60ef0cfd8f349` reached terminal ACCEPTED through
+genuine independent research, study, synthesis, homily and canonical web
+reviews and the engine's publication gate. All twenty-eight results and
+packets are archived under the leaf's
+`evaluations/proper-study-results/64c60ef0cfd8f349/`. The repair rounds, exact
+inspection evidence and scope are retained in
+[the production record](workflows/reviews/gpt-pc-s58-production-2026-11-05/CYCLES.md).
+The blocked v18 run remains honestly archived without acceptance.
+
+The [no-PDF workflow audit](workflows/reviews/gpt-pc-s58-production-2026-11-05/WORKFLOW-AUDIT.md)
+repairs derived-field duplication, component placement, Git-derived revision
+instructions, companion readers, inspection receipt identity and the ordering
+of source registration versus complete browser products. Release documentation
+now describes the actual reader/native-source publication boundary. All 62
+focused schema/workflow regressions and six native admission tests pass. The
+reviewed-source checkpoint is `2db4948252`; all three edition stamps remain
+committed at `2026-11-05T16:09:40Z` after the operational publication commit.
+
+Publication commit `3d00a7ef7b4c1fa47a5ca4353566e2e6221f35ed` was pushed without
+history rewriting to main and the workspace branch. Pages run
+[42079272387](https://github.com/spincyc/triptych/actions/runs/42079272387)
+passed build, print-compile and deploy. Its downloaded compile receipt binds
+the exact commit and confirms all 647 admitted editions passed with zero
+failures (297 pdfTeX, 350 XeTeX). These are disposable mechanical compiles,
+not a maintained PDF corpus or print-layout approval.
+
+Live verification on 5 November 2026 confirms that the publication manifest
+names that exact commit, all 647 native editions and `stored_pdfs: false`.
+Its SHA-256 is
+`bad2f5da6105be8a0142875757c0e89f180a06f522940db760d1366b3d71dc14`.
+All three reader routes return HTTP 200 and match the locally verified HTML
+byte for byte, including the edition stamps. Chromium checks at 1280 and 390
+pixels reproduce the local reader text without page-wide overflow or native
+runtime requests. The three linked print pages, including arrival with
+`?print=1`, remain idle and bind the deployed source commit. Their controls
+require an explicit generation action.
+
+The complete browser snapshot reproduces thirteen families and 27,689 files.
+Source and publication gates, full local site assembly and GitHub Pages
+compatibility verification pass. The final task-status-only commit changes
+this register and the promise ledger; those two files are excluded from the
+Pages trigger and do not change the deployed publication snapshot.
+
+Limits remain explicit. SYN-001 and HOM-001 are nonblocking precision
+advisories for the next revision, not unresolved required repairs. Missal
+witness authentication and rights qualifications remain in the source dossier;
+no protected full prayer text was reconstructed. Thirty existing chronology
+consumers received the shared qualification correction: their generated
+currency, schemas and all 76 reader conversions pass, while nine inherited
+content-gate failures remain in unchanged authored sources. No old scholarly
+or visual acceptance was renewed. Both source classifications and all 166
+pending migration units remain unchanged. These browser checks
+supplement the recorded content reviews; they do not add an independent
+companion web review or print-layout approval.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 
