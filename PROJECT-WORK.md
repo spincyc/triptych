@@ -7,6 +7,83 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-04.
 
+## Review follow-up: single-source corpus and gated printing, 2026-11-04
+
+<!-- promised-deliverable: single-source-print-followup-2026-11-04 -->
+
+**Complete: pushed to main, deployed and verified live.** A cold review of the
+no-PDF series (84c2f7e041..e7cd47fb2d) led the maintainer to direct these
+changes. They landed in 95 commits through `b196716229`. Pages run
+[41968744170](https://github.com/spincyc/triptych/actions/runs/41968744170)
+ran build ∥ print-compile → deploy, and all three jobs succeeded. The earlier
+run 41962462203 was correctly stopped by the new print gate.
+
+- **Generate PDF controls.** Ctrl/Cmd+P stays with the browser. In-page
+  navigation no longer cancels or discards a PDF. All 644 download filenames
+  are unique. Focus follows the job and announcements are throttled.
+- **Print gate.** `tools/native-print-compile` typesets every admitted edition
+  from its served bundle alone and checks that it opens only bundle and
+  runtime files. Deploy waits on it. The TeX Live image was republished with
+  XeTeX, Latin babel (`texlive-langeuropean`, not `texlive-langother`) and
+  fontconfig-visible fonts; its digest is pinned.
+- **Product keys.** Browser-product keys cover only what each producer reads,
+  checked by an audit hook. The aggregate is derived from the family keys.
+  Guidance, test and review edits no longer stale deploys.
+- **Deleted.** The browser-reflow print path (about 24.6k lines). Tracked
+  `web/*.md` copies (141). Projection receipts. Three papal snapshots that are
+  projections of the live file (62 MB, now git references). The `pdf/`
+  install machinery. The `proper`/`proper-finish` pipelines are retired: no
+  seeding, replay kept.
+- **Document types.** 216 of 217 publications generate their entrypoints from
+  document types in `src/common/document-types/`. The section list lives once,
+  in `[document]` regions, and path- and kind-derived fields are no longer
+  stored.
+- **Generated date page.** Scriptural Date and Location is a generated
+  projection for all 62 proper leaves. Agents no longer author it.
+- **Web readers.** They are converted from canonical TeX at build time: 266
+  readers (141 eligible, 60 conditional, 65 companions). The 15 ineligible
+  publications stay print-only.
+- **Revision stamps.** "Last revised" derives from git author time. Commits
+  that only move text carry `Edition-Revision: none`.
+- **Single copies.** The rights record binds its site sources by one digest.
+  The propers census lives in one place.
+
+Live verification on 2026-11-05 UTC:
+
+- **Manifest.** `PUBLICATION-MANIFEST.json` (SHA-256
+  `f13631c95138bf9111197aea56945d02520cfe9c3d2d45ead41cbb5f1e2d523c`) names
+  source `b196716229`, 644 editions and `stored_pdfs: false`.
+- **Live PDFs.** Headless Chromium generated the Claude All Saints synthesis
+  (pdfTeX, 11 pages) in 4.6 s cold and a Latin Acta document (XeTeX) in
+  4.1 s, with unique filenames.
+- **Readers.** The curriculum, companion and figure readers are served with
+  their answer keys and SVG figures. Print pages are thin: angelology is
+  7 KB, down from 408 KB.
+- **Byte comparison.** Sampled routes match the locally verified build byte
+  for byte. The exception is bundle URLs and source revision, which embed the
+  git revision.
+
+The full suite has 416 distinct failures against 496 at base. Every new
+failure was traced to a cause: two fixed regressions, environment
+(unhydrated artifacts, no built browser data at base), test pollution, or a
+pre-existing problem.
+
+Limits and open items:
+
+- **Chronology records** stay per leaf. 7 of 17 Masses differ by provider,
+  and the v3–v5 seals pin per-leaf paths.
+- **Absent date state.** 15 proper leaves show it: 14 await postconciliar
+  appointment inputs, and GPT m01 has no calendar formulary.
+- **References** for authors: Claude pc-s51 (2:14) and pc-s54 (Sermo 95.5).
+- **Old dates.** Two already-pushed typesetting commits (5c8aec23fc,
+  89422cd524) still date some editions to 2026-10-01.
+- **Manifests.** Nine schema-1 proper manifests keep stale `main.tex`
+  component paths.
+- **Workflow fragments** still mention declaring outputs; update them at the
+  next proper-study version.
+- **Not yet observed:** the docker figure runner, physical devices, and
+  Safari/Firefox.
+
 ## Explicit printing and passage-level chronology correction, 2026-11-03
 
 <!-- promised-deliverable: explicit-print-and-proper-quality-2026-11-03 -->

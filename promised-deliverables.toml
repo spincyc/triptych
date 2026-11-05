@@ -1,6 +1,48 @@
 schema_version = 1
 
 [[deliverables]]
+id = "single-source-print-followup-2026-11-04"
+owner = "PROJECT-WORK.md"
+promise = "Act on the cold review of the no-PDF series as the maintainer directed: fix the Generate PDF controls, narrow browser-product keys, gate deploys on compiling every edition, generate the Scriptural Date and Location page for all proper leaves, retire the pdf/ machinery and delete the browser-reflow print path, move publications onto document types, build web readers from canonical sources, remove duplicated tracked tables and copies, and deploy to main."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "print-controls"
+  criterion = "Browser print and in-page navigation are left alone; download names are unique across all admitted editions; focus and announcements follow the job."
+  status = "pass"
+  evidence = ["src/web/browser/shared/native-print.js", "tools/tests/test_native_print_frontend.py"]
+
+  [[deliverables.requirements]]
+  id = "compile-gate"
+  criterion = "Deploy waits on a job that typesets every admitted edition from its served bundle in the pinned toolchain and refuses files outside the bundle and runtime."
+  status = "pass"
+  evidence = [".github/workflows/pages.yml", "scripts/_native_print_compile.py", "tools/tests/test_native_print_compile.py"]
+
+  [[deliverables.requirements]]
+  id = "narrowed-product-keys"
+  criterion = "Each browser-product family is keyed on the inputs its producer actually reads, with an audit that fails on any read outside the key."
+  status = "pass"
+  evidence = ["scripts/_browser_product_inputs.py", "guidance/web-data.md", "tools/tests/test_browser_product_inputs.py"]
+
+  [[deliverables.requirements]]
+  id = "single-source-documents"
+  criterion = "Publication entrypoints are generated from document types; the Scriptural Date and Location page is a generated projection; web readers are converted at build time with no tracked copy."
+  status = "pass"
+  evidence = ["guidance/document-schemas.md", "scripts/_document_types.py", "scripts/document_projections/scriptural_date_location.py", "guidance/web-editions.md", "tools/tests/test_document_types.py"]
+
+  [[deliverables.requirements]]
+  id = "retired-duplicates"
+  criterion = "The pdf/ install machinery and browser-reflow print path are gone; projection receipts, the rights record's copied site table and projected papal snapshots are replaced by the single source, a digest or a verified reference."
+  status = "pass"
+  evidence = ["guidance/repository.md", "src/sources/artifact-delivery.json", "release/README.md", "src/sources/calendars/README.md"]
+
+  [[deliverables.requirements]]
+  id = "deployed-and-verified"
+  criterion = "The work is on main, the Pages run's build, print-compile and deploy jobs succeed, and the live manifest, generated PDFs and readers are verified."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "explicit-print-and-proper-quality-2026-11-03"
 owner = "PROJECT-WORK.md"
 promise = "Require an explicit user action before PDF generation, repair grouped and repeated proper chronology tables across their current consumers, improve measured browser performance without quality loss, and independently cold-review source correctness and actual rendered output."
