@@ -32,8 +32,10 @@ class NativeAdmissionTests(unittest.TestCase):
         for path in (ROOT / "release/publications").glob("**/*.json"):
             record = json.loads(path.read_bytes())
             if record["status"] == "hold":
-                provider = path.relative_to(ROOT / "release/publications").parts[0]
-                self.assertNotIn("publication:" + provider + "/" + record["id"], self.documents)
+                # A release record's id is derived from its path, not stored.
+                relative = path.relative_to(ROOT / "release/publications")
+                provider, leaf = relative.parts[0], relative.relative_to(relative.parts[0]).with_suffix("").as_posix()
+                self.assertNotIn("publication:" + provider + "/" + leaf, self.documents)
 
     def test_companion_request_uses_canonical_owner_and_exact_edition(self):
         row = self.documents["publication:gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis"]
