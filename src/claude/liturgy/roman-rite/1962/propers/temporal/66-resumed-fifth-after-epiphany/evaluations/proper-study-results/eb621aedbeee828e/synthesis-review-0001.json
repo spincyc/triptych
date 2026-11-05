@@ -1,0 +1,376 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "SYN-005",
+      "location": "sections/concise/04-themes.tex lines 19-21 and 38-42; sections/concise/10-commentary.tex lines 175-180 and 212-223",
+      "problem": "Twice in this round's text, a point is stated again just after the reader has been given it (guidance/editorial.md, 'Say it once'). (1) Jerome's answer on Jer 29:12 is that the Lord could have fulfilled his promise without the captives' prayer, but urges them to pray so that they may be worthy to receive it. The opening thesis gives it (04-themes 19-21). The Introit paragraph fifteen lines later gives it again (38-42). The commentary gives it a third time, in Latin and English (10-commentary 175-180). Page 1 and the compared senses also summarise it. The commentary's version adds the Latin and its context: the false prophets, Futurorum scientia and Mt 7:7. The Introit paragraph adds nothing to the thesis on the same page. (2) The commentary quotes Bede's two statements on Mk 11:23-25 (212-219): the unclean spirit is driven out when the word is preached, and the perfect in faith move such mountains by praying. The next sentence restates both in a relative clause to reach its inference (219-223): 'the unclean spirit that Bede says is driven from the heart when the word is preached, and that the perfect in faith move by praying, is the parable's enemy'. This paraphrases what the reader has just read, and it leaves 'move' without its object, which is Bede's mountain. These are two instances, not a pattern that recurs through a section. Neither changes an attribution or a claim, and both attributions were checked against PL 24 col. 893 and Bede's Migne text.",
+      "required_result": "Each point is given once, at its fullest place. Plain rewrites: (1) 04-themes 38-42: 'God has promised the return and still tells the captives to call on him; that is the difficulty St Jerome answers (In Hieremiam V, PL 24 col. 893).' This leaves his answer to the thesis above it, and its Latin and reasoning to the commentary. (2) 10-commentary 219-223: 'Since the Lord names the devil as the enemy who sowed the cockle (Mt 13:39), Bede's mountain is the parable's enemy, and the Communion makes its promise to the faith that moves it by praying.'",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "generated/scriptural-date-location-page.tex and research/chronology-table.tex, row 'Communion: Mark 11:24'; research/chronology.toml, element 'communion' (status 'composition-only')",
+      "note": "The page-2 lookup for the Communion finds only the composition of Mark: Rome traditionally, Egypt reported by Chrysostom; disputed A.D. 38-40 to after Matthew. There is no narrated-event row for the saying itself, which Jesus spoke to the disciples beside the withered fig tree the morning after he cursed it (Mk 11:20-24). A reader therefore cannot pair this passage with its occurrence and place, as the Gospel row allows ('Jesus tells the parable of the wheat and cockle beside the sea'). The gap belongs to the shared corpus and projection, not to this synthesis."
+    },
+    {
+      "location": "generated/scriptural-date-location-page.tex and research/chronology-table.tex, row group 'Introit: Jer. 29:11--12,14'",
+      "note": "As round 0 recorded, and still true on this round's render: the composition row of Jeremias's letter gives only the relative answer 'After Jechonias and the deportees had departed from Jerusalem', with no year or range. The 1962 profile asks for a conventional date wherever the received chronology supplies one. This is for the shared corpus."
+    },
+    {
+      "location": "tools/check-content-preflight, references-used locus test (the section headed 'The loci a References entry names')",
+      "note": "Still true, and stated in the tool's own comments as a deliberate trade-off. The test judges a commentary's psalms only where the body cites the entry by a word of its title followed by a number, so the abbreviated '\\work{Enarr.\\ in Ps.} 84.2' does not bring the 'Enarrationes in Psalmos' entry under test. A single-verse Bible-list locus also passes when its chapter is named whole anywhere. This round's References were therefore checked by hand, and every locus is cited. The missing criterion is for the tool's owner."
+    },
+    {
+      "location": "sections/30-cry-from-captivity.tex line 276 (the second interpretation's anagogical sense); sections/90-apparatus.tex line 53 (Reception paragraph of the expansive scope appendix)",
+      "note": "The study owner still has two items that the concise has now repaired in its own text. First, the study's anagogical sense compresses Bellarmine to 'the deliverance is accomplished \"in the resurrection only\"'; his text reads 'complete delivery from captivity, which will be thoroughly accomplished in the resurrection only ... We are at present only partially free'. Second, the expansive scope appendix leaves Bede out of the authors read in web text, although the study quotes his Latin from the Wikisource Migne text."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Rabanus Maurus",
+            "Thomas Aquinas",
+            "Bede",
+            "Honorius Augustodunensis"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Rabanus Maurus"
+          ],
+          "component_keys": [
+            "patience-of-the-field"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "patience-of-the-field",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Ambrose of Milan",
+            "Thomas Aquinas",
+            "Bede",
+            "Cassiodorus",
+            "Athanasius of Alexandria",
+            "Alfredo Ildefonso Schuster",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "cry-from-captivity"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "cry-from-captivity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Rabanus Maurus",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Bede",
+            "Theodoret of Cyrus",
+            "Theophylact of Ohrid"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "word-in-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-in-the-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generated/scriptural-date-location-page.tex": "d66950a451d83b0ac72006d45c273182e5d4d13eabf007ebeeb94f5976d755e8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/propers/verified.md": "0148e2cd3b59892e0e65a5ab0dc73a77fbccad98f30b3928a7ce079a23bc6c93",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-annotations.tex": "42e39890b39d8c49a5878b92539b880b24dff6c76d85012ea093ce6f9f599190",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-table.tex": "e962afb1d88969ccf8eec6a2b3d57d1f03b05a3979bc5d9bd1f7d6befd2c00a3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology.toml": "fd975f7066d182cd7d55ea2f6a6395acbca027255d840f096c68f2fc907bfb9c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md": "bb9c50a6f7cb4cdc549af32692d876a75e5c7dc89d96351032085c34d959fedb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md": "b7830fcce0176077363c1df9809deb0d6a72d62bc1b2bcb41b208fff4351773c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/concise/01-inventory.tex": "5b45a5115795b47eaefa422d3163a9095ec44f5d264dbcf66a7abbca7d7373bd",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/concise/02-overview.tex": "e6bc59e3c4a89833379e82f16d7321f2b07e13fb3c71d2fb6a7d7d5c7dead80d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/concise/04-themes.tex": "c6691f1e247035a9e0cf1fe952fbcea4b1ee9ce76d909c7930cc3c23b943f441",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/concise/10-commentary.tex": "1d58661025d356352fa70e7f288505d11cb2239730af39de03b64b1e5fde1fbb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/concise/90-apparatus.tex": "66d320b4d8350c8c4435c8f9a7e571bc54d88e87f537131b16736794cacc6d3d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/synthesis.tex": "386cfaab61c6a7673e80a9e91813582648306fea6beeb17574c1ce0607c836f9",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "17",
+            "8b70fb811bc31b50d68df79c7631ccb13b547293cce47ef82f9e8b7a6b659748",
+            "eb621aedbeee828e",
+            "2629d99f4848b3be111d792a88a48635cd4edc97",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Cold review, iteration 1, of the concise study (synthesis.tex: sections/concise/01-inventory, 02-overview, 04-themes, 10-commentary and 90-apparatus, with the generated page 2) of the Claude 1962 leaf liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany. The whole concise was read first, and each interpretation's answer was recovered from it alone. (1) The householder forbids the weeding because those who would weed may be deceived, the two plants look alike and the cockle may change, so the separation waits for the angels at the harvest; meanwhile the servants bear with others, forgive, pray for enemies and forgive in order to be heard. (2) God, who could keep his promise without the captives' prayer, urges them to pray so that they may be worthy to receive it; faith asks to be heard; and those who sing are sinners in the deep, giving thanks before the deliverance is complete. (3) The enemy sows while men sleep, and moral sleep can be avoided; the field is kept by the word dwelling richly, by the peace that settles the inner contest, and by prayer and song from the heart. All three match the expansive study (sections 10-50), and the authors meet at the texts they share. The REVIEW_SCOPE files were then compared line by line with their round-0 text. That text was the reviser's saved copies, whose hashes match the round-0 seal. SYN-001 is repaired: the References now name Enarrationes in Psalmos 42, 43, 84 and 129 and Ps 43:7-10, 22, and every locus of every References entry was checked by hand against the body. SYN-002 (a)-(h), SYN-003 and SYN-004 are cleared. No repaired sentence moves an inference into a Father's mouth or drops a qualification. Checks: the packet hash was verified. All 16 sealed inputs re-hash to REVIEW_INPUTS, and the recomputed synthesis seal equals it. check-content-preflight --edition synthesis ran all twelve checks with exit 0 (references-used: 19 entries, 14 loci held), and provenance-matches-run against this run also exited 0. scripts/_proper_study.py check --phase content --edition synthesis --mode source, with the presentation, format, authority, orientation, orientation-v3 and source-dispositions requirements, exited 0. tools/document-types refresh --check reports the leaf current. The new generation-metadata line matches the derive-synthesis-1 packet (effort high). No print edition is requested, so no pagination is claimed. A local proof built from uncommitted sources runs 11 pages: the map and four sense rows on page 1, the generated date page alone on page 2, Themes and Movement filling pages 3-4, commentary from page 5, and the References with the colophon on page 11. Page-2 lookup. Gospel Mt 13:24-30: narrated event 'Jesus tells the parable of the wheat and cockle beside the sea', date unresolved; composition of Matthew disputed, c. A.D. 38-45 to c. A.D. 50. Epistle Col 3:12-17: Colossians, Rome traditionally, addressed to Colossae; disputed A.D. 61 or 61-63. Gradual Ps 43:8-9: occasion unresolved; composition between the days of Isaias and the return from exile. Each of these passages pairs with its occurrence, place and date without crossing columns. The Communion, Mk 11:24, gives only the composition of Mark, with no row for the saying's occasion or place; that gap belongs to the shared corpus (see observations). Witnesses re-read at the loci that the changed text uses: Jerome, In Hier. V, PL 24 cols. 891-893, and In Mt. II, PL 26 cols. 93-94, on page renders kept from the previous round, because the Internet Archive was offline. Augustine, Enarr. in Ps. 43.1-8, 84.2-4 and 129.1-3, Sermo 73 and Ep. 93.10, 17 and 34 (NPNF). Chrysostom, Hom. in Mt. 46.1 and Hom. in Col. 8-9 (NPNF). Bellarmine on Pss 43, 84 and 129 (O'Sullivan). Bede on Mk 11:22-25 (Migne Latin). Hilary, PL 9 cols. 719-720 (tracked OCR). Aquinas, Super Col. c. 3 lect. 3 (Corpus Thomisticum page and Dessain OCR), and ST II-II q. 10 a. 8 and q. 11 a. 3 (English Dominican). Rupert, De div. off. XII.23, and Sicard, Mitrale VI.23 (PL OCR). The Lasance chant and oration English. Every quotation checked stands. Limits: Cassiodorus, Ambrose, Durandus, Honorius, Theodoret, Theophylact, Chrysostom on the Psalms (PG 55) and Aquinas on Matthew and the Psalms were taken from the accepted study and not re-read. The PL 24 renders were not re-hashed against the remote PDF. One advisory, SYN-005, covers two restatements in this round's text: Jerome's answer is given three times between pages 3 and 7, and Bede's two statements are restated in the sentence after they are quoted. No blocking defect remains. Verdict: PASS."
+}

@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v17
+WORKFLOW_DIGEST: 8b70fb811bc31b50d68df79c7631ccb13b547293cce47ef82f9e8b7a6b659748
+RUN_ID: eb621aedbeee828e
+COMMIT: 2629d99f4848b3be111d792a88a48635cd4edc97
+STAGE: homily-preflight
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-08","proper":"liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

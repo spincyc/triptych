@@ -1,0 +1,20 @@
+{
+  "bootstrap_version": 1,
+  "instructions": "EXECUTION POLICY: PROGRAM GATE\n\nThis stage is run by tpt. Do not start any subagent for it.\n\n1. This stage is a program gate. No AI worker runs it.\n2. Run: tools/tpt proper-study liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany advance eb621aedbeee828e --run-gate\n3. Follow the next packet tpt emits.\n4. Stop only at ACCEPTED or BLOCKED.",
+  "iteration": 0,
+  "normalized_args": {
+    "audience": "adult parish assembly",
+    "date": "2026-11-08",
+    "proper": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+    "provider": "claude",
+    "research_handoff": "none"
+  },
+  "packet_hash": "5c01b6da5f6a5260f9b46d9282edd55d85c8d48c79fac6df5271bbfcd5f98a49",
+  "packet_path": "build/tpt-runs/eb621aedbeee828e/packets/scope-gate-0000.txt",
+  "repo_commit": "2629d99f4848b3be111d792a88a48635cd4edc97",
+  "run_id": "eb621aedbeee828e",
+  "stage": "scope-gate",
+  "workflow_digest": "8b70fb811bc31b50d68df79c7631ccb13b547293cce47ef82f9e8b7a6b659748",
+  "workflow_id": "proper-study",
+  "workflow_version": 17
+}

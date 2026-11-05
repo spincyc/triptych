@@ -1,0 +1,300 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex lines 57-60, 62-69, 101-110 and 112-120 (also the turns at lines 98 and 113)",
+      "problem": "In four of the fourteen paragraphs, the preacher does not make the step himself. He passes it to a string of named authorities, or restates it. guidance/editorial.md ('Plain is not flat', 'Say it once') and the three-document profile's homily section ('the preacher's voice carries the argument ... a speech that hands every point to an authority is a lecture assembled from quotations') both exclude this. (1) Lines 62-69. The paragraph has already said 'men can change'. It then gives that same point three times, as three one-sentence verdicts under three names. Jerome: one corrupted today 'may tomorrow come to his senses'. Chrysostom: 'many of the cockle may change and become wheat'. Augustine: 'they who to-day are tares, may to-morrow be wheat'. Chrysostom's sentence tells the listener nothing new. (2) Lines 112-120. Chrysostom, the Collect, the Gradual and Aquinas follow one another, a sentence each, and the paragraph stops on Aquinas's sentence. The step they were brought in for is never said: God frees the wheat from the trouble the cockle gives it, so the servants' anxiety goes to him in prayer and not into the field. The study's own paragraph says it (sections/20-patience-of-the-field.tex, 'Who frees the field'). The note claims the speech reads Aquinas 'of the wheat beside the cockle' (90-note.tex lines 61-62), but the speech leaves that reading for the listener to supply. (3) Lines 101-110. The point that the would-be weeders are sinners themselves is made three times. First 'Those who would like the field cleared are the ones who make that cry'. Then 'and the sins are ours', which restates the quoted 'our sins'. Then the closer 'Even the servants who wanted the cockle gone are not told how the harvest will find them'. Meanwhile the inference that ties Augustine's 'A sinner' to the people present is never stated: they themselves sing this cry. (4) Lines 57-60. Two Augustine quotations are strung together with 'And again:'. A lesser instance: the turn 'may not ... may still' / 'Forbidden to weed, they can still' (lines 98, 113) recurs as a formula. The argument as a whole is sound and belongs to this Mass. But six Fathers are named about twenty times in some 1,400 words, and in these passages a listener hears one authority after another instead of the preacher's reasoning.",
+      "repair_target": "homily",
+      "required_result": "Each step is made once, in the preacher's voice. A Father is named where his reasoning is the step, and each paragraph ends on the conclusion the preacher draws from what it has brought in. No attribution or qualification moves into a Father's mouth, and the note's 'Connections that are the homily's own' is brought into line with the rewritten speech. Plain rewrites: (1) Lines 64-69: 'Jerome reads in \"lest perhaps\" that room is left for repentance, because one who today is corrupted by false teaching may tomorrow come to his senses; St John Chrysostom reads the same there. So St Augustine, in the same sermon, told the tares in his own church to amend before the harvest came: \"it may so be, that they who to-day are tares, may to-morrow be wheat.\"' (2) Lines 112-120: 'St John Chrysostom says the servants' haste showed their anxiety for the crop. They may not weed, but they may bring that anxiety to God, as we did in the Collect when we asked him to keep his family with continual mercy and defend it by his protection. The Gradual thanked him: \"Thou hast delivered us, O Lord, from them that afflict us.\" St Thomas Aquinas, expounding that psalm, counts among the afflictions of the saints the sins of those who live among them, and says that God frees them from it. So it is God, whom the Collect asks to guard his family, who frees the wheat from the cockle's trouble, and not the servants' hands.' (3) Lines 103-110: 'St Augustine asks of that psalm, \"Who is it then who crieth?\" and he answers, \"A sinner.\" We sing that cry ourselves, so by his answer those of us who would like the field cleared are sinners asking pardon; in the Secret the priest will ask God to \"mercifully forgive our sins.\" When Augustine gives the Lord's words to the zealous servants, he puts a wish among them: \"That time will come, may it only find you wheat!\"' (4) Lines 57-60: '... and gives the reason they were refused: \"ye are such as may be deceived.\" We are men, he says, and the reapers are the angels.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex lines 107-108",
+      "problem": "'When Augustine gives the Lord's words to the zealous servants, he ends them with a wish' misdescribes Sermo 73.1. This was checked in the NPNF I.6 CCEL text bound to the leaf. The wish 'That time will come, may it only find you wheat!' stands in the middle of the Lord's words, which go on: 'Why do ye vex yourselves? Why bear impatiently the mixture of the evil with the good? In the field they may be with you, but they will not be so in the barn.' The wish and its attribution are correct, and only 'ends' is false. This is a single instance and changes no claim.",
+      "required_result": "The sentence states truly where the wish stands, e.g. 'When Augustine gives the Lord's words to the zealous servants, he puts a wish among them: ...' HOM-001's rewrite (3) already does this.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-003",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex lines 33-36 and 114-116",
+      "problem": "Two sentences are hard to follow on one hearing. (a) Lines 33-36 are one 35-word sentence with three ideas: Augustine takes the cockle for bad Christians, he will not let his people think it grew only among them, and other translations call it tares. The translation aside sits inside the clause, so the listener has to hold the main clause across it. (b) Lines 114-116, 'In the Collect we asked him to keep his family \"with Thy continual mercy that, ... it may ever be defended by Thy protection\"', switch from 'him/his' to the quoted 'Thy' mid-sentence. Read aloud, the listener hears the change of person but cannot hear where the quotation begins.",
+      "required_result": "(a) Split the sentence, e.g. 'St Augustine, preaching on this Gospel, took the cockle for bad Christians among the good. Other translations call it tares, and he would not let his people think the tares grew only among them.' (b) Quote the Collect from its opening, 'Keep Thy family, we beseech Thee, O Lord, with Thy continual mercy ...' (Lasance p. 196), or describe it without the quotation, as HOM-001's rewrite (2) does.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-004",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/90-note.tex lines 34-37, 42-44 and 101-104",
+      "problem": "The note makes four source claims without a locus: Aquinas takes the servants for good men (Super Mt. c. 13); Honorius takes them for prelates (Speculum Ecclesiae); Jerome takes them for angels (PL 26 col. 93, 'Servos patrisfamilias, ne alios accipias quam angelos', read on the page image); and Augustine accepts 'exile and fines' (Ep. 93.10). For Ep. 93 the note's only locus is 93.34, and its loci list does not itemise the angels gloss under Jerome. Separately, the exact-loci list cites the Offertory as 'Ps 129:1--2'. It omits the Hebrew '(130:1--2)' that it gives for the Alleluia beside it, against the 1962 profile's rule: Vulgate number first, modern number in parentheses.",
+      "required_result": "Every claim the note names carries its locus: Aquinas, Super Mt. c. 13 on 13:24-30; Honorius, Speculum Ecclesiae, the sermon headed Dominica tercia, PL 172; Jerome, In Mt. II, PL 26 col. 93; Augustine, Ep. 93.10. Alternatively, the unlocated claims are removed. The Offertory locus reads 'Ps 129:1--2 (130:1--2)'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-005",
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/90-note.tex lines 68-126",
+      "problem": "The profile asks for 'a brief source-and-delivery note'. This one runs to about 1,340 words, against a speech of 1,403. Much of the length is repetition between two paragraphs, 'Texts quoted, and their translations' and 'Exact loci', which list the same material twice. The Sermo 73 quotations and their sections appear at lines 83-91 and again at 105-109. Jerome's points appear as paraphrase at lines 93-96 and again as Latin at lines 110-114. Chrysostom appears at lines 96-97 and again at 117-119.",
+      "required_result": "The note gives each required fact once: audience, length and pace, the relation to the study, the homily's own connections, the translation used for each quotation, and its locus. One way is to fold the translation attribution into a single loci list, for example 'Augustine, Sermo 73 (NPNF I.6 English), n. 1: ...'. Nothing the note now records is dropped.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml (Douay-Rheims bindings); src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex lines 41-42; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/90-note.tex line 138; sections/concise/90-apparatus.tex lines 77-80",
+      "note": "The leaf binds Challoner verse texts for Jeremias, Psalms, Colossians, Matthew and Mark only. The homily quotes the Douay at 1 Cor 5:13, and the concise References already cite the Douay for Gen 50:17, Mt 7:7, Rom 8:36, 1 Cor 5:13 and 2 Pet 2:8. Those books' registered verse-text artifacts are unbound in this leaf (e.g. verse-text-53-1-corinthians-ffc4f260), and bindings-valid passes because it checks only declared bindings. This is for the research/source-registration owner, if the version-15 rule that every source used receives a binding reaches Scripture verse texts. If it does, the bindings check is missing a criterion."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Rabanus Maurus",
+            "Thomas Aquinas",
+            "Bede",
+            "Honorius Augustodunensis"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Rabanus Maurus"
+          ],
+          "component_keys": [
+            "patience-of-the-field"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "patience-of-the-field",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Ambrose of Milan",
+            "Thomas Aquinas",
+            "Bede",
+            "Cassiodorus",
+            "Athanasius of Alexandria",
+            "Alfredo Ildefonso Schuster",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "cry-from-captivity"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "cry-from-captivity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Rabanus Maurus",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Bede",
+            "Theodoret of Cyrus",
+            "Theophylact of Ohrid"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "word-in-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-in-the-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/homily.tex": "c445cfe2a806454b341c9dbac4c898a2db7850e850c78c63ca917fb41026fab9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/propers/verified.md": "0148e2cd3b59892e0e65a5ab0dc73a77fbccad98f30b3928a7ce079a23bc6c93",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md": "bb9c50a6f7cb4cdc549af32692d876a75e5c7dc89d96351032085c34d959fedb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md": "b7830fcce0176077363c1df9809deb0d6a72d62bc1b2bcb41b208fff4351773c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex": "21cd327591cbfb7df51bde3b028904796a96eba551d80d6e727208b70b8c84de",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/90-note.tex": "5d86f5e0b38abfea62aa21e279c588e03457792f777bdc3af9065713b8a5f052",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "17",
+            "8b70fb811bc31b50d68df79c7631ccb13b547293cce47ef82f9e8b7a6b659748",
+            "eb621aedbeee828e",
+            "2629d99f4848b3be111d792a88a48635cd4edc97",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the homily 'Suffer Both to Grow' (src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/homily.tex: the spoken body sections/homily/10-homily.tex and the note sections/homily/90-note.tex). The body is 1,403 spoken words by a plain count with comments and LaTeX removed, which comes to about 10.8 to 11.7 minutes at 120 to 130 words a minute. That figure is arithmetic only: no one has delivered or timed the homily. Every quotation and attribution in the speech was checked at its locus. Scripture was checked in the Challoner verse texts (Mt 13:27-30, 38, 43; 1 Cor 5:13; Col 3:13; Jer 29:1, 7; Mk 11:24-25). The chants and orations were checked in Lasance 1945, p. 196 and pp. 744-746, using the text layer of the hash-matched registered PDF. The NPNF English was checked for Sermo 73.1-4, Ep. 93.34, Enarr. in Ps. 129.2, Hom. in Mt. 46.1 and Hom. in Col. 8. Jerome was read on page images of PL 26 cols. 93-94 and PL 24 col. 892, rendered from hash-matched PDFs. Rabanus was checked in the PL 107 cols. 947-948 OCR, Bede in the Migne text on Mk 11:22-25, and Aquinas, Super Ps. 43 n. 3, in the Parma vol. 14 OCR. All of these hold, except that one sentence misdescribes where Augustine's wish stands in the Lord's words (HOM-002). The speech is specific to this Mass and passes the substitution test. Its argument turns on the householder's ne forte and on the likeness of wheat and darnel in the blade, which the parable's own 'then appeared also the cockle' supports. It moves from the servants' offer to forbearance, forgiveness and prayer for the cockle, and to the would-be weeders as sinners. It closes on one response drawn from Col 3:13 and Mk 11:25 as Bede reads them, and on the harvest. It fails on register in four paragraphs. There, named authorities are stacked on one point, a point is restated, or the step is left to Aquinas's sentence without the preacher's conclusion (HOM-001, blocking, owned by the homily). Four advisories cover the one misdescription, oral clarity, missing loci in the note, and the note's length and duplication. Mechanical checks: check-content-preflight on the homily edition passes all checks, and provenance-matches-run against run eb621aedbeee828e passes. Limits: no audible delivery, and no print build of my own; I only glanced at the author's proof page 1. The restricted Corpus Thomisticum response for Super Ps. was not opened, and Aquinas was checked in the registered Parma OCR instead."
+}

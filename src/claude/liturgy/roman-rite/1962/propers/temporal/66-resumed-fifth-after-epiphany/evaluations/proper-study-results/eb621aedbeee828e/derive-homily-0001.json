@@ -1,0 +1,23 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/homily.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "HOM-001",
+      "note": "Rewrote the four paragraphs and both formula turns. The note's 'Connections that are the homily's own' now records the two new conclusions as the preacher's.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": [
+    "Files changed, for the driver to commit (sha256): src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex 89e74480c7955f944f6472c4b120d8fdb9d718f781ecab78536940d29b598193; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/90-note.tex 6f123831aa8a6588d5d954b99388981807065ade289cdbbf98304e5afc04ba1c; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generation-metadata.tex c18e3b7f7d1f6538d16f9fa0d0bc8c7168c764afc380d2e42ac881bf122a12a7 (one contribution line for derive-homily iteration 1); src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/production-review.md ce06fe4be7956752088cb4cab20ae982d7fcfa76268fdee9174b5d4fcf463f4f (Derive-homily iteration 1 entry). homily.tex, publication.toml, the research records, proper-components.toml and both studies are unchanged; document-types refresh --check reports the leaf current.",
+    "Advisories: HOM-002, the wish now stands 'among' the Lord's words. HOM-003, (a) the sentence is split; (b) the Collect is described without quotation. HOM-004, the note gives loci for Jerome on the servants as angels (PL 26 col. 93), Aquinas Super Mt. c. 13, Honorius Speculum Ecclesiae 'Dominica tercia' PL 172, Chrysostom Hom. in Mt. 46.1 and Augustine Ep. 93.10, and the Offertory reads Ps 129:1--2 (130:1--2). The References gain Honorius, Aquinas Super Matthaeum and the Summa articles, and Ep. 93 nn. 10 and 34; all are the study's loci. HOM-005, the two duplicate paragraphs are merged into one 'Sources, translations and loci' list. The note is about 1,250 words, down from about 1,340, and nothing it recorded is dropped.",
+    "Observation (Douay 1 Cor 5:13): the speech now gives Paul's command as Jerome quotes it, 'Auferte malum de medio vestrum', in the expansive study's English 'take away the evil from among you', from the bound PL 26 text. The incest of 1 Cor 5:1 is told in the speech's own words. 1 Cor 5:13 is removed from the homily's Douay References entry. No research record or shared source was edited.",
+    "Spoken body 1,398 words by a plain count, about 10.8-11.7 minutes at 120-130 wpm. This is arithmetic only; no audible or timed delivery took place. Single response unchanged: forgive before coming to the altar (Mk 11:25 with Bede).",
+    "Author proof via make doc into this stage's scratch area: 4 pages, no overfull or underfull boxes or undefined references, all fonts embedded, every page inspected. PDF sha256 3d4e78818b1c6c9b84f40902676e4e4aaaa35e9095e66cd574e7a8afa66fe8e9 (uncommitted-sources revision line).",
+    "Checks passed: tpt document-types refresh --check; _proper_study.py check content, homily, source mode, with presentation/format/authority/orientation/orientation-v3/source-dispositions; check-proper-components content, and artifacts on the proof; document-schema check content; check-content-preflight on the homily edition, all checks including references-used (10 entries) and provenance-matches-run for run eb621aedbeee828e.",
+    "For other owners, not repaired here: whether the bindings check should require bindings for every quoted Scripture verse text belongs to the source-registration owner and the check's owner. The concise References still cite the Douay for 1 Cor 5:13 and other unbound books; that is for the concise study's owner."
+  ],
+  "stage": "derive-homily",
+  "summary": "Repaired HOM-001 in the homily's four flagged paragraphs: each step is now made once, in the preacher's voice, and each paragraph ends on its conclusion. The ne forte paragraph ends on the householder waiting for the cockle's sake. The Aquinas paragraph ends on God, not the servants, freeing the wheat. The Psalm 129 paragraph states 'we sing that cry' and ends on Augustine's wish as meant for us. The plant paragraph drops the stacked 'And again' and ends on Jerome's answer. The 'may not ... may still' formula is gone. Advisories HOM-002..HOM-005 are cleared, and the 1 Cor 5:13 Douay quotation is replaced by Jerome's bound Latin in the study's English. Spoken body 1,398 words; author proof 4 pages; every content check passes."
+}

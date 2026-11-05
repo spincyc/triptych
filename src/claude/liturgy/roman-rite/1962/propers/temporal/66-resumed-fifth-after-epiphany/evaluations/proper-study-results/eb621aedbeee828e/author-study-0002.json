@@ -1,0 +1,35 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "The cited sentences are replaced by clauses that state the reason: the third interpretation's Collect follows the review's rewrite at Chrysostom's continual watch, its Secret stands with Aquinas's directio in opere, Mk 11:23 is replaced by the Communion's own words with Bede's reading of the mountain as the devil driven from the heart; the second interpretation's Postcommunion follows Augustine on Ps 84.4, its Collect states Bellarmine's and Chrysostom's ground, and the closing 'lessons in a time of waiting' subsection is removed, its Epistle and Gospel placed at Jerome's patientiam gloss and at the letter's seventy years.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-013",
+      "note": "First interpretation adds the Introit's invocabitis me (Jerome on Jer 29:7, same letter), the Collect (after Aquinas's liberantur a Deo) and the Postcommunion (Augustine's 'may it only find you wheat'); third adds the Gradual (Chrysostom on tota die, Expositio in Ps. 43 sec. 6), Postcommunion (Chrysostom's 'endureth to the end'), Introit (cogitationes pacis beside Chrysostom's umpire) and the Communion antiphon's own words (Bede on Mk 11:23, bound locus line 338); all ten texts verified in each of the three interpretations.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-004",
+      "note": "All cited sentences deleted or rewritten as required (40:33, 40:45-46, 40:66, 40:133-134 first sentence, 30:31, 20:52-54); also cut the restatements at 20:61-63, 20:226-227 and the two facts at 'How far correction may go', and a paraphrase of Bellarmine and Chrysostom in the second interpretation's Collect sentence; 'the subjects too' quoted once in the third interpretation.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-006",
+      "note": "'From this he draws his own conclusion' removed; q. 11 a. 3 re-read in the bound English Dominican text and given with its grounds (the sin, graver than forging money; mercy with two admonitions, then the salvation of others; Jerome on Gal 5:9), the parable answered in ad 3 by the reading of q. 10 a. 8 ad 1. The comparison states the position in the same terms, without the conditional reading as premise and without grading.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-015",
+      "note": "The hinge now grounds each hearer's field in Rabanus's seed of good will, states the Lord's gloss on the seed (Mt 13:38) and Aquinas's adherence to it (Super Mt. c. 13, 'accipitur ipse homo, in quo seminatur'), and makes the indwelling word what keeps the field, with Chrysostom's Scriptures as arms as the reason; the allegorical sense follows the gloss and credits Chrysostom and Aquinas only with the dwelling word, and the anagogy gathers the children of the kingdom.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "notes": "Files changed (repository path, sha256): src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/05-appointed-texts.tex 96bde6cc3a1c972c0abd7f3cbd0f0b6f4411cad38265eb425789da7a5d70b36b; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/10-each-element.tex ae5fd863a82a79b4e2c1e0471d0e64f99c195c8dee865b3966b8ff447c7a0f47; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/20-patience-of-the-field.tex fba791324685415baec6b425f4968cf6264be91471c46ad00e08bbc77360021d; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/30-cry-from-captivity.tex 4871b6e37564134e9430ab6939573cf012be8d16fa6f37c3a85ef1a6e521c703; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/40-word-in-the-heart.tex 6f245bbd47b829a6bd3a1db95d80feac471f1402726db01ba805a7d77c453006; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/50-comparison.tex f1fc45390d7911317949ffb9d1bb8a81238196003409ce88d736fbf1077252a1; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/proper-components.toml 43dbb09b748e9de803fea6291bed3cad469db91b5a14af437e8c3fa5f405f10c; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generation-metadata.tex 1cb588ff658de6d07c73b026fb9fa714f712f4251eef0af9a7dd020395a89be2; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/production-review.md 48876620a331a733a2db841edf30b73a10d35a4d7b4dde29508461048b38c02c. Unchanged: publication.toml, web-edition.toml, sections/00-opening.tex, sections/90-apparatus.tex, main.tex and generated/ (document-types refresh --check: current). proper-components.toml adds Bede to the word-in-the-heart lane's authors, since the third interpretation now uses Bede on Mk 11:23 from the bound locus (In Marc. III on 11:22-25, physical lines 338-339); the binding's context records his use in the first two interpretations only, and production-review.md says so. Sources re-read by this stage: ST II-II q. 11 a. 3 (English Dominican, lines 5880-5935); Durandus VI.140 (Lyon 1612 OCR); Sicard VI.23-24 (PL 213 OCR); Rupert XII.23 (PL 170 OCR); Rabanus PL 107 col. 947 on the page image (PDF p. 478, rendered from the hash-matched file); Aquinas Super Mt. c. 13 (Venice 1745 OCR lines 24000-24025) and Super Col. c. 3 lect. 3 (Dessain OCR); Bede on Mk 11:23-25; Chrysostom Expositio in Ps. 43 sec. 6 (PG 55 Greek). Approximate length: exposition about 13,900 words (interpretations about 3,590, 2,810 and 2,900); author proof 31 pages, no overfull or underfull boxes, no undefined references (scratch proof PDF sha256 2add646256bd350b0e8e7c61f1f53f75f065451c8a9516395f2bf4838470ef75; not a cold print review). Checks: document-types refresh --check current; scripts/_proper_study.py check content/research with all --require flags pass; check-content-preflight, every check and provenance-matches-run, pass; check-web-edition valid; tpt web-edition probe to build/tpt-runs/eb621aedbeee828e/artifacts/author-study-2/web-probe completed (pandoc, Markdown 3.10.3). No shared-tool or shared-data defect found. For the research owner (not repaired): research/interpretations.md still proposes the field 'in which the word is sown' that STU-015 corrects in the study.",
+  "stage": "author-study",
+  "summary": "Repaired the expansive study for STU-001, STU-004, STU-006, STU-013 and STU-015: every one of the ten texts now contributes to each interpretation where its argument uses it, with a Father's reasoning or a once-marked inference as its ground and no closing roll call; restatements cut; Aquinas's q. 11 a. 3 conclusion given with his own grounds and the parable answered only in ad 3; the third interpretation follows Mt 13:38 and Aquinas on the seed and grounds each hearer's field in Rabanus. Advisories STU-014 (a-k) and STU-016 cleared; research records unchanged."
+}

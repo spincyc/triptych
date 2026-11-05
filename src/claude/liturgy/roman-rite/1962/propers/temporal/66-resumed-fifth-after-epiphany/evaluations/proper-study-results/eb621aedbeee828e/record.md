@@ -1,0 +1,55 @@
+# Actual engine results
+
+Workflow `proper-study`, version 17, digest `8b70fb811bc31b50d68df79c7631ccb13b547293cce47ef82f9e8b7a6b659748`.
+Run `eb621aedbeee828e`; seed commit `2629d99f4848b3be111d792a88a48635cd4edc97`. Terminal disposition **ACCEPTED**.
+
+The result JSON files are explicitly declared public derivatives of the verified engine-retained bytes. Only current-repository-root prefixes in top-level `notes` strings were removed. The native run is unchanged; original and archived hashes and every changed JSON pointer/count are in `redaction-receipt.json`. All other input files remain exact. A stage's PASS records only its own completed work; publication acceptance is the terminal gate's. The engine supplies any `review_inputs` seal; workers do not author it. The interventions are the driver's records of host facts the packets do not carry, and the driver's account of every cycle is in `workflows/reviews/claude-1962-66-production-2026-11-05/CYCLES.md`.
+
+| Stage | Iteration | Disposition | Packet SHA-256 | Accepted result SHA-256 | Archived result SHA-256 |
+| --- | ---: | --- | --- | --- | --- |
+| scope-gate | 0 | PASS | `5c01b6da5f6a5260f9b46d9282edd55d85c8d48c79fac6df5271bbfcd5f98a49` | `c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d` | `c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d` |
+| resolve-context | 0 | PASS | `91b91f2d01e1f7012e2298cc1364e71f77fd8a47180849cbacacaf2d273d91ef` | `3daff8b293a251215cc0f1e07b22c713c65fedf060294c9d69489895fd8086cd` | `3daff8b293a251215cc0f1e07b22c713c65fedf060294c9d69489895fd8086cd` |
+| research | 0 | PASS | `16681078920c0b4471d0bb594176742d56af3e31a5eee87876ebf1492a731308` | `42e100fe484bee3b18be260a644588e12074c9e104edfe81ae2c8febdfafb7ad` | `42e100fe484bee3b18be260a644588e12074c9e104edfe81ae2c8febdfafb7ad` |
+| source-registration | 0 | PASS | `3188cd17f90ccb6c41907a67a31699c354f8454dac08d705ac134aabb8a387f9` | `accd6f3a535d5efa6ee289568464cb9c02728c9f8dbf1bbe75168a41b942932d` | `accd6f3a535d5efa6ee289568464cb9c02728c9f8dbf1bbe75168a41b942932d` |
+| research-preflight | 0 | PASS | `d6217847347471a163de3f7ee0f49d7e5a2e8a5bc0af9d1a795a58fcc1ec21b5` | `d9c4c5d71ce61eb0186e720a8b7c42807d1ab40d1053516f4841a9f45c9468f1` | `d9c4c5d71ce61eb0186e720a8b7c42807d1ab40d1053516f4841a9f45c9468f1` |
+| research-review | 0 | CHANGES_REQUIRED | `e9c638b4960f61198b717f0a6d545cb67a975e31ab8750e1458f5b75e497476c` | `198aa45149c4e9923c250d89203481c57226083cd362beda5f3ca1eb0030d029` | `198aa45149c4e9923c250d89203481c57226083cd362beda5f3ca1eb0030d029` |
+| research | 1 | PASS | `cc4c974c2f4489d1e4ac4e76e58d2510428c62f2c3edb4d001eb74b4561cb0c6` | `9eaee6cd0c8289cb429b8cc79fd9e390c3805d9ac11914b43ebb9c74c6518b63` | `9eaee6cd0c8289cb429b8cc79fd9e390c3805d9ac11914b43ebb9c74c6518b63` |
+| source-registration | 1 | PASS | `c7c22261fca6d90470ec711aa587e0420f11dac270f13f19b33b55a76c8c8c8a` | `2f1c05629feac3301b64238463f3fff608de41bac37010d7992d26f3aa234455` | `2f1c05629feac3301b64238463f3fff608de41bac37010d7992d26f3aa234455` |
+| research-preflight | 1 | PASS | `4e6c9ec1e198c7bcfab169830549fc2628c28140c649b29ee594eba821476e9a` | `3d41e3743c4cd6ecf837fcb791516f7a053ba74c59eeb7aa7a2100847f40b2c9` | `3d41e3743c4cd6ecf837fcb791516f7a053ba74c59eeb7aa7a2100847f40b2c9` |
+| research-review | 1 | PASS | `be8e561565507d7c987c5def0017bdd8b4da3f1efdae72d7712b8b5d3726cb4b` | `e31e1324db3fb82fec2ca85196dee61c98e53e33a91925a6983d77f7bcad9d2b` | `e31e1324db3fb82fec2ca85196dee61c98e53e33a91925a6983d77f7bcad9d2b` |
+| author-study | 0 | PASS | `5e4312d126f4b8c6d2f865a13c3e2d9cbb925a65e30eb7472d40ad04467b8aa0` | `fa7aaa0673afcf7cbf3db52ef2bec412d95dfe96d8bed7bbedc47128386d5f4b` | `fa7aaa0673afcf7cbf3db52ef2bec412d95dfe96d8bed7bbedc47128386d5f4b` |
+| study-preflight | 0 | PASS | `e90614263f695b6dbbf0e7534226e3f4bd1502a21248996a57f352111ddeb36f` | `db4f430efb6baf21bb53a26e3ace3bc17674c5b6c4e65d8af259ee8366a0f0ae` | `db4f430efb6baf21bb53a26e3ace3bc17674c5b6c4e65d8af259ee8366a0f0ae` |
+| study-review | 0 | CHANGES_REQUIRED | `4026097ea92d23b1442cf8a7995aa5d4bbc49ae93f592cab9d9e64b7d3fd1cf1` | `cc6666e1f8c7daa67610594974d413a10e887e08b421516b1fbd3928aa9fa87a` | `cc6666e1f8c7daa67610594974d413a10e887e08b421516b1fbd3928aa9fa87a` |
+| author-study | 1 | PASS | `e24b25db437a2820bb3254088e97d0194df2e493fbcae64d47c7c482df316e1a` | `b92ad2bc907e1ff2b3a881ed4b28b09ddf24541af24b59cdeeb8e94b5e06ebda` | `b92ad2bc907e1ff2b3a881ed4b28b09ddf24541af24b59cdeeb8e94b5e06ebda` |
+| study-preflight | 1 | PASS | `94d080853101349bb9362f3034efc4472003cea7b31a83a95b56fd04145193f1` | `64cc916498497445157cff08a5427e9162b4d673fa3d872e7e211df5c9e04202` | `64cc916498497445157cff08a5427e9162b4d673fa3d872e7e211df5c9e04202` |
+| study-review | 1 | CHANGES_REQUIRED | `e4a9906f29844a853b2291872af1561b755fef333a039990bcd40939046a8175` | `bcde06fdc1c1c9acdd846bac6a02493c7fb994e13546e3a8ba7608850960753d` | `bcde06fdc1c1c9acdd846bac6a02493c7fb994e13546e3a8ba7608850960753d` |
+| author-study | 2 | PASS | `95836bb0764a079a139090c1d2dda24eb34d4aaf31dec37ba798441abb6b667e` | `c1dca16fa69b8c641e7323d93643fd44e5dc989c371e5001b29ebfafcfe1f41f` | `c1dca16fa69b8c641e7323d93643fd44e5dc989c371e5001b29ebfafcfe1f41f` |
+| study-preflight | 2 | PASS | `c532afa0288aff3d4a973e59c260f7c24a4de9d934656693660c957713b8924d` | `fa1f37edf322caf9a8086d37c76932f39c21fd61b9e8cb561d319d286391c9bd` | `fa1f37edf322caf9a8086d37c76932f39c21fd61b9e8cb561d319d286391c9bd` |
+| study-review | 2 | CHANGES_REQUIRED | `df3d91f4d45e34b60a3bd0f3cb2ef7c2ab207733f5d890c8940073d699be908b` | `e86c6b3a6132515e1ca32c158d9d608ff83fca97cf25c7acbb0e30fc7dd1688e` | `e86c6b3a6132515e1ca32c158d9d608ff83fca97cf25c7acbb0e30fc7dd1688e` |
+| author-study | 3 | PASS | `73c153767d90fdd3645465718042cd33ac4e3185a6da300d3a7c7d333ca6e90f` | `9ddf65eb50ed0de73543cbb58ea1bc2986088af5d89debf88a999dac8edf85dd` | `9ddf65eb50ed0de73543cbb58ea1bc2986088af5d89debf88a999dac8edf85dd` |
+| study-preflight | 3 | PASS | `a298f913480343b8c0c40ae4fa3e6b8643bba2ea70016ba12d18e854a7952382` | `d2e347b6068fe56c569ec03f02e85d8a024348a190dcc3b30b097603c418c8b8` | `d2e347b6068fe56c569ec03f02e85d8a024348a190dcc3b30b097603c418c8b8` |
+| study-review | 3 | PASS | `a48da1ef11729954b265fbddb557d28f90b497593deefea0bcb707551f723ffa` | `627cc98cb1e7634d15a36f5abcbbb2ac737787c1d2bfdf3b49d769d44ee42e27` | `627cc98cb1e7634d15a36f5abcbbb2ac737787c1d2bfdf3b49d769d44ee42e27` |
+| derive-synthesis | 0 | PASS | `f6ffea9d3a45ab0bc883f1fef8d355e53afff839acf0887330b945fba3eba370` | `e2f7cc5456c661a03f57c5cf05d0556feb661dd77e0c56cfa62ea60c53c2a844` | `e2f7cc5456c661a03f57c5cf05d0556feb661dd77e0c56cfa62ea60c53c2a844` |
+| synthesis-preflight | 0 | PASS | `2d623dbd96f9e373fce74f4757e5d639056f2bd50d12367cfa38b5848a665f2a` | `67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3` | `67b87db41056e0690c03027475a5706f18334b8a627effc6e088c72dc2725ad3` |
+| synthesis-review | 0 | CHANGES_REQUIRED | `4be13c7ab13a1a885c03e3dae894497abfe76e4b19696385c3a2ca854ed1422a` | `4b7add313d14e12fe9010cfc93022459f42f819ff05f987278610e55e20a9328` | `4b7add313d14e12fe9010cfc93022459f42f819ff05f987278610e55e20a9328` |
+| derive-synthesis | 1 | PASS | `0242bc1431392d1a38ac3bf7b570936dacb27ff1d9dfee092271be52ca4995a0` | `75109d099bab705df07e9e96e6c9d2f9ecae1f5bb1dc8bab8ca26106d47b5c08` | `75109d099bab705df07e9e96e6c9d2f9ecae1f5bb1dc8bab8ca26106d47b5c08` |
+| synthesis-preflight | 1 | PASS | `1987edb6fbc61d6105fe37c2712701f89f9af14d38ff23b83784325847aeb548` | `6e1973b0386d22a673b2f14206bbd01007c3c41624ed78abd9fac4f7055f4055` | `6e1973b0386d22a673b2f14206bbd01007c3c41624ed78abd9fac4f7055f4055` |
+| synthesis-review | 1 | PASS | `cac3b2bc456c61e5a44fb0225ee9d0d9430b949c957b29841b14d926b51efeb1` | `70277d6fa07bf5012c70395a4f843fb49a636850756bda480d1c83649c4d48c8` | `70277d6fa07bf5012c70395a4f843fb49a636850756bda480d1c83649c4d48c8` |
+| derive-homily | 0 | PASS | `fbd220bce2fa04e140a7f9929d19ff033502a224f288ee64b3896a45cab3a832` | `72af55f04d09d7c401ec27db23a283846ae8b97be60c1d442dec00c25d0768ee` | `72af55f04d09d7c401ec27db23a283846ae8b97be60c1d442dec00c25d0768ee` |
+| homily-preflight | 0 | PASS | `377bd8f10a1b1175a4a4a2aaae7e2c95018e75b2e4f23733015a397647ffe523` | `38c3abc374b62eb01fe47799b263dc88821ecda5d4aac8a36d1adbda83d9b628` | `38c3abc374b62eb01fe47799b263dc88821ecda5d4aac8a36d1adbda83d9b628` |
+| homily-review | 0 | CHANGES_REQUIRED | `18b3030dc1dc30702a4135c02cc5e251292a3b13c5bad5bc028c4757b078aed8` | `5fe964ef115263fe43248c84fd92bddfd0c4fcfc37ba88926c77b990766d5799` | `5fe964ef115263fe43248c84fd92bddfd0c4fcfc37ba88926c77b990766d5799` |
+| derive-homily | 1 | PASS | `1a7e2e0607c66e7d216d20a39815239b6ee2c8a09bcb63cc561429090ec3e224` | `751ae007c7b5aa21e056b442284b5158e8ed2c7e55aef6af7b47b0605e2c9449` | `751ae007c7b5aa21e056b442284b5158e8ed2c7e55aef6af7b47b0605e2c9449` |
+| homily-preflight | 1 | PASS | `d492b796b343f0dd774f59d062cee34e2a8c661832f279daf36ae061ef5252e9` | `dd64e18d636bf105c5b251444195d128462ca7f80ffb809f123598fc42bea5de` | `dd64e18d636bf105c5b251444195d128462ca7f80ffb809f123598fc42bea5de` |
+| homily-review | 1 | PASS | `ba685752ffdc9f961950e8efbe89a0232d594b45054f4d4eb2d73aa387728516` | `f2edb5cff3d6449c04f4d9dcc9acc106d623b3d2d55590f88c980fe083d1af65` | `f2edb5cff3d6449c04f4d9dcc9acc106d623b3d2d55590f88c980fe083d1af65` |
+| build-artifacts | 0 | PASS | `fdbb2b3c5b580042f0ba1a00b0af63772969e75f1b74e83e6eb592d74b23daee` | `c5fa3bbf1438b54e5462f1eb33f9f8b3ca67347a39e0d18b73056b1c396f79d4` | `c5fa3bbf1438b54e5462f1eb33f9f8b3ca67347a39e0d18b73056b1c396f79d4` |
+| artifact-gates | 0 | PASS | `2e9feffe8ea1e727859415f407968a4db99bd541d59b91ebe7b59450cd6468af` | `97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c` | `97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c` |
+| generate-web | 0 | PASS | `865e29f35e78c2be994c1b55a6a4a3c696a206f3cd97dd53aea89bdf40d4865e` | `c18cbc3b65678437a2e4c23bed35ff9e1023b571d37208ee9cf4c3d17cb9e50e` | `c18cbc3b65678437a2e4c23bed35ff9e1023b571d37208ee9cf4c3d17cb9e50e` |
+| web-review | 0 | PASS | `c360bf1586894f3970f2445c5214044f5e51f5f58d2b08b1f5cbdf5873522d4c` | `94c2d33c7ee1cd248561dd7feef74b0c537ad35747efbed5bdb7579fa7ad220f` | `94c2d33c7ee1cd248561dd7feef74b0c537ad35747efbed5bdb7579fa7ad220f` |
+| install-publication | 0 | PASS | `2807fd061c18080341661baae62efdfd0af337f0d60f0732005f31ac3133da5c` | `7f386e0ba617884a9e3a76f551eefe9197bf213aac33af5749002ead0753d9da` | `7f386e0ba617884a9e3a76f551eefe9197bf213aac33af5749002ead0753d9da` |
+| publication-gates | 0 | PASS | `7a886c48ae8cd11426172b650f1dade488a409ef63d19a8b485792aacfb7fb6e` | `87e27f47187bceefeff0205ab007611fe381e50491f82a337afa2b2f1cdd7d2a` | `87e27f47187bceefeff0205ab007611fe381e50491f82a337afa2b2f1cdd7d2a` |
+
+The run recorded 40 results over 40 packets, all of which are preserved verbatim under `packets/`.
+
+`interventions/` holds the 3 manual interventions this run recorded. They are unencoded workflow debt, not acceptances.
+
+`terminal-status.json` and `terminal-replay.json` are the engine's own terminal records. A terminal replay reports `deterministic: null` by design and checks the saved packet's integrity, which it confirms.

@@ -1,0 +1,466 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-019",
+      "location": "sections/20-patience-of-the-field.tex lines 257-258 (the Introit paragraph under 'Bearing with one another')",
+      "problem": "The register repair turned the round-2 sentence 'Because the command and the promise stand in one letter, this interpretation takes the promise to cover the prayer Jerome finds in verse 7' into 'Since the command and the promise stand in one letter, the promise of a hearing covers the prayer for the city that the letter commands.' The study's take has become a deduction about the scope of Jeremias's promise, and the ground given does not carry it. In the letter the hearing of v. 12 follows v. 10 ('When the seventy years shall begin to be accomplished in Babylon, I will visit you ... to bring you again to this place') and leads into the seeking, finding and return of vv. 13-14, while v. 7 gives the prayer for the city its own reason, 'for in the peace thereof shall be your peace.' Jerome, at the locus the second interpretation quotes (In Hier. V on 29:10-14, PL 24 col. 893, read on the page image), glosses 'Tunc invocabitis me, et ibitis Jerusalem: et orabitis, et exaudiam vos' and says that God urges the captives to pray 'ut quod promissum est, mereantur accipere'. In his reading the call that God hears is the prayer for the promised return. The sentence is the Introit's only contribution to this interpretation. It is advisory because it is a single sentence whose ground the reader can see and judge, and the interpretation's argument does not rest on it. The review fragment classes a repair that drops a qualification as a source defect, not a style one.",
+      "required_result": "The sentence says what the letter does and does not assert that the promise of v. 12 covers the prayer of v. 7. If the extension is kept, it is stated as the study's own and given a ground that carries it. Plain rewrite: 'The same letter that commands this prayer promises a hearing to those who call on God, invoc\u00e1bitis me, et ego ex\u00e1udiam vos; servants who may not weed the field can still pray for the cockle, asking for the change Augustine's sermon asks of the tares.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-020",
+      "location": "sections/30-cry-from-captivity.tex lines 36-37 (the closing sentence of the paragraph 'In the letter the exiles are told to call on God ...')",
+      "problem": "The repair replaced the labelled sentence 'This interpretation takes the harvest of the parable as a term of the same kind as the letter's seventy years ...' with 'In the parable as in the letter, the one who promises fixes the term and tells those who wait what to do until it comes.' The two preceding sentences already give the letter's term and instruction and the householder's: he 'also tells his servants beforehand what he will do and when ... and until then both are to grow.' The closer restates them as a general formula, and deleting it loses nothing (guidance/editorial.md, 'Each sentence adds something'). The defect is a single instance, so it is advisory.",
+      "required_result": "The paragraph ends on the householder's words and instruction, or its closing sentence adds something the paragraph has not yet said. Plain rewrite: delete the sentence, so that the paragraph closes on '... and until then both are to grow.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-021",
+      "location": "proper-components.toml line 207 (lane cry-from-captivity, authors); research/production-review.md, 'Author-study, iteration 3', Repairs paragraph",
+      "problem": "(a) The cry-from-captivity lane lists Bede and Alfredo Ildefonso Schuster among its authors, but sections/30-cry-from-captivity.tex cites neither. Bede left the second interpretation in the iteration-1 repair and is used in the first and third (20:262-269, 40:238-249). Schuster appears only in section 10. The manifest therefore credits the second interpretation with two contributors whose reasoning it does not use. The file is unchanged this round, and no reader sees the defect. (b) The production record says 'Each interpretation names its own step once, in its opening'. The first and third openings do (20:16-17, 40:13-17). The second carries no such statement, as the author's own result note ('1, 0 and 1') records.",
+      "required_result": "(a) The lane's authors name only those whose reasoning section 30 uses: Bede and Schuster are removed, or their contribution is restored in the prose where the argument needs it. (b) The record says that the first and third openings name the study's step and the second carries no such statement.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 3,
+  "observations": [
+    {
+      "location": "research/source-bindings.toml, the Bede binding (In Marc. III on Mk 11:22-25), context field; research/interpretations.md lines 448, 558 and 594",
+      "note": "Research records still disagree with the study, as round 2 observed. The Bede context says his locus is used in interpretations 1 and 2, but the study uses it in 1 and 3. interpretations.md still frames the third reading as the heart 'as a field in which the word is sown', which the study corrected under STU-015. Its comparison table lists Schuster among the second interpretation's witnesses, and section 30 does not cite him. All three are for the research owner at its next revision."
+    },
+    {
+      "location": "workflows/fragments/proper-study/study-review.md, the paragraph on element treatment and roll calls",
+      "note": "The label pattern cleared this round because the author took over the light clauses that the round-2 required result wrote out (rewrites 1-5). The fragment states the roll-call ban and the coverage floor but gives no model of the permitted light clause. This round supports the round-2 observation that a criterion may be missing there."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "patience-of-the-field",
+          "kind": "interpretive-lane",
+          "path": "sections/20-patience-of-the-field.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "cry-from-captivity",
+          "kind": "interpretive-lane",
+          "path": "sections/30-cry-from-captivity.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-in-the-heart",
+          "kind": "interpretive-lane",
+          "path": "sections/40-word-in-the-heart.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "patience-of-the-field",
+            "cry-from-captivity",
+            "word-in-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Rabanus Maurus",
+            "Thomas Aquinas",
+            "Bede",
+            "Honorius Augustodunensis"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Rabanus Maurus"
+          ],
+          "component_keys": [
+            "patience-of-the-field"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "patience-of-the-field",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Ambrose of Milan",
+            "Thomas Aquinas",
+            "Bede",
+            "Cassiodorus",
+            "Athanasius of Alexandria",
+            "Alfredo Ildefonso Schuster",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "cry-from-captivity"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "cry-from-captivity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Rabanus Maurus",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Bede",
+            "Theodoret of Cyrus",
+            "Theophylact of Ohrid"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "word-in-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-in-the-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generated/scriptural-date-location.tex": "0ca7f27743885d341a973606fc70887cc8f0204246ec3c6055e5bd1e54931b5d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/main.tex": "d94e809f6ee714ec4f10b0d013b988e0d7e141f23708d3e75eddd0f997096cb1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/propers/verified.md": "0148e2cd3b59892e0e65a5ab0dc73a77fbccad98f30b3928a7ce079a23bc6c93",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-annotations.tex": "42e39890b39d8c49a5878b92539b880b24dff6c76d85012ea093ce6f9f599190",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-table.tex": "e962afb1d88969ccf8eec6a2b3d57d1f03b05a3979bc5d9bd1f7d6befd2c00a3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology.toml": "fd975f7066d182cd7d55ea2f6a6395acbca027255d840f096c68f2fc907bfb9c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/context.md": "8d14e49c78b8146d2ac1dc8ee2930e504c7a36498e35de388ba94e76bd7b2988",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md": "bb9c50a6f7cb4cdc549af32692d876a75e5c7dc89d96351032085c34d959fedb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md": "b7830fcce0176077363c1df9809deb0d6a72d62bc1b2bcb41b208fff4351773c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml": "be821134b020fd0dea9da54b0880b5ad5375ffbad597782d4e094333770b9dd0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/00-opening.tex": "69af6207201adcb7304fa82a438765840b3237164f87aec0cc187317dcb873b8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/05-appointed-texts.tex": "96bde6cc3a1c972c0abd7f3cbd0f0b6f4411cad38265eb425789da7a5d70b36b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/10-each-element.tex": "ae5fd863a82a79b4e2c1e0471d0e64f99c195c8dee865b3966b8ff447c7a0f47",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/20-patience-of-the-field.tex": "0949f1b59ddf885ed5eb16d15ea7a6671a1c456089f55c5c6bda89fc4d46c1ba",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/30-cry-from-captivity.tex": "b9e95f759472f8216f267eb40a58c2075cbeb70ec4972d303f93c6e800f44b88",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/40-word-in-the-heart.tex": "71e5345140f4133f8e2eb837c6590338cd3e033db2df4e9a367eb3f4800eda67",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/50-comparison.tex": "f1fc45390d7911317949ffb9d1bb8a81238196003409ce88d736fbf1077252a1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/90-apparatus.tex": "5213a0655c6dc2be3683bd438505df1a04bcbc8a635f00c0c56c2c600e5775b0",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "17",
+            "8b70fb811bc31b50d68df79c7631ccb13b547293cce47ef82f9e8b7a6b659748",
+            "eb621aedbeee828e",
+            "2629d99f4848b3be111d792a88a48635cd4edc97",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review, iteration 3, of the expansive study of the Claude 1962 leaf liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany (main.tex; sections 00, 05, 10, 20, 30, 40, 50 and the scope appendix of 90 read for context). The REVIEW_SCOPE files (sections 20, 30 and 40, generation-metadata.tex and research/production-review.md) were compared paragraph by paragraph with the round-2 text, recovered from the run's author-study-2 web probe: 23 paragraphs changed, and each rewritten sentence was checked against its earlier form for attribution and for a dropped qualification. The generated Scriptural Date and Location appendix was not reviewed as prose, and no changed sentence restates or contradicts its dates. All 21 sealed REVIEW_INPUTS files re-hash to their seal. check-content-preflight (every check, and provenance-matches-run against this run's header), scripts/_proper_study.py check --phase content with every study --require flag, and document-types refresh --check pass. Mode: appointed_text_completeness = complete, matching research/context.md and the absence of a reference-only authorization; sections 05 and 10 are unchanged. Witnesses read at the loci the changed prose uses: Jerome, In Hier. V, PL 24 cols. 892-893 (own renders of PDF pp. 450-451 of the hash-matched file); Jerome, In Mt. II, PL 26 cols. 93-94 (own render of PDF p. 54); Chrysostom, Expositio in Ps. 43 sec. 6 (PG 55 Greek OCR, hash-matched), Hom. in Mt. 46.1 and Hom. in Col. 9 (NPNF); Theodoret on Col 3:15-16 (PG 82 Greek OCR) and Theophylact on Col 3:15 (PG 124 col. 1262, Latin OCR), both hash-matched; Rabanus, In Mt. IV, PL 107 col. 947 (tracked OCR); Augustine, Enarr. in Ps. 84.4 and 129.1-3 (NPNF); Bede, In Marc. III on 11:23-25; Douay Jer 29:7-14. Consequential-difficulty tests: (1) Sinite utraque crescere against Auferte malum, Jerome PL 26 cols. 93-94 on the page image: wheat and lolium alike 'quamdiu herba est', 'ne ubi quid ambiguum est, cito sententiam proferamus; sed Deo judicii terminum reservemus', with 1 Cor 5:11 echoed in 'societatem ... cum his qui fratres nominentur'; holds, and 20:24-61 teaches the question and the inference. (2) Why God, having promised, commands prayer: Jerome PL 24 col. 893 on the page image, 'Certe absque invocatione et oratione captivorum, poterat implere Dominus quod promiserat; sed hortatur eos ad preces, ut quod promissum est, mereantur accipere'; holds, taught at 30:39-113. (3) The third interpretation's rebuilt Gradual and Collect links: Chrysostom, PG 55, at Ps 43:7 'when you fight the devil, say: I trust not in my arms', that is not in my strength or my righteousness 'but in the mercy of God', and Hom. in Mt. 46.1 on natural and moral sleep; holds, and 40:48-63 attributes each step correctly. Previous rounds: STU-003 is repaired. Two inference labels remain, one in each of the first and third openings (20:16-17, 40:13-17); every other link of the study's is a plain because, since or so; the five shared-word links of the third interpretation now rest on the text's own content or on a Father's reading of that text, following the round-2 rewrites; all ten texts still contribute in each interpretation; and no rewritten sentence moves the study's inference into a Father's mouth. Advisories STU-017 (a)-(d) and STU-018 are cleared; (a) and (b) were checked in the Greek and Latin. Earlier findings STU-001, 002 and 004-016 stay cleared in the changed paragraphs. New this round: one rewritten sentence drops the round-2 qualification and overstates what Jeremias's promise covers (STU-019); one replacement closer restates its paragraph (STU-020); the manifest and the production record each misstate the study in one place (STU-021). All three are advisory. Verdict PASS: no blocking finding. Limits: no print export was built, so physical extent was not judged; the Greek of PG 55 and PG 82 was read in uncorrected OCR, not on page images; Ambrose, Aquinas, Hilary and the Lasance and 1962 facsimiles were not re-read this round; unchanged prose was read for context and not re-litigated."
+}

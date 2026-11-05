@@ -1,0 +1,45 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-001",
+      "note": "Roll-call passages removed in all three interpretations; each oration or chant now appears once where the argument uses it (or not at all), the 'Postcommunion's effectus is that gathering' line and the congregabo/congregate ending are deleted, and the Collect at the sleepers uses the review's plain sentence.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-002",
+      "note": "Opening, second-interpretation lead/Collect/Communion, first-interpretation Epistle and chants sentences, and third-interpretation lead and 'Epistle's answer' rewritten; Jerome credited only with joining Jer 29:13 to Mt 7:7.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-003",
+      "note": "No 'On this interpretation', 'Read with', 'Taken so/together', 'Set beside', 'taken with', 'in the parable's terms' or 'is read here' remains; surviving inferences are marked once in varied words with their reason.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-004",
+      "note": "Cited closers deleted or reduced per the review's rewrites; the first interpretation's ground stated once in the interpretation and once in the comparison; the plain restatement of Augustine's grounds and the Chrysostom/Jerome summary also cut.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-005",
+      "note": "New anagogical item from Chrysostom's 'He that endureth to the end' (now quoted at the sleepers), Aquinas's canticles referred ad promissa aeterna (now quoted in the singing subsection, Dessain OCR read) and Mt 13:30; no Sermo 73 or Rabanus.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-006",
+      "note": "ST II-II q.10 a.8 ad 1 and q.11 a.3/ad 3 re-read in the bound English Dominican text and reported as given, Contra ep. Parmeniani only as Aquinas cites it; the comparison names all four positions, Jerome's in the body's terms, with no grading.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-007",
+      "note": "Now: with the Alleluia before the Gospel, the words are heard three times before the Secret.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Files changed (repository paths, sha256): src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/00-opening.tex 69af6207201adcb7304fa82a438765840b3237164f87aec0cc187317dcb873b8; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/05-appointed-texts.tex dc079c274b7f3fd9169657b943ee991e594a5f24c2408efea75f48cacd8d8c6f; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/10-each-element.tex b07cb42150c2251acb86dda8592777bcac8d314da89c2a725a0ecb6f58d04274; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/20-patience-of-the-field.tex 02df6e0677d51c22283cf9af91995108645646926e20c91f4ef2899fa9799415; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/30-cry-from-captivity.tex 298c419b8ae01fbd86a86b6b15aa97539a5bf6f989d4fcdae201ace43cb20637; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/40-word-in-the-heart.tex cbe80d743fddd25e282e1d5a3249110e9a760d84db28dceb9a9f75651e2032bb; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/50-comparison.tex 005e5ab0637bc100521d988799268b81ae85ae4eef09734cc576c6085cfdcc65; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/90-apparatus.tex 5213a0655c6dc2be3683bd438505df1a04bcbc8a635f00c0c56c2c600e5775b0; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generation-metadata.tex 6ce33c40688c501a8890d3367de6aecafdefd1bd0d9eef8072ca88e2c02788a7; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/production-review.md ad8abf1e12879ebf7362d584ae1b07b85c89902173fa57408afbb7098f153985. Unchanged: publication.toml, proper-components.toml, web-edition.toml, main.tex and generated/ (document-types refresh --check: current). Advisories acted on: STU-008 (Jerome's servants as angels read on the bound PL 26 page image, col. 93; Augustine, Aquinas homines boni, Honorius), STU-009 (all six loci corrected), STU-010 (col. 94, 43.21, verse/sermon loci for Cassiodorus, Athanasian exposition, Theodoret, Honorius; Theophylact cols. 1261-1264; Cassiodorus-on-Ps-129 removed from apparatus and References), STU-011 (section-10 pointers removed), STU-012 (Introit note names Et inveniar a vobis; Offertory Douay location stated). Approximate length: exposition about 12,800 words (whole study about 16,200 by a markup-stripped count); author proof 30 pages, no overfull/underfull boxes, no undefined references (proof PDF sha256 b1d554439a70381f328e28742965161f102cd1a25dfcbfe6fd6ef92dca5408b0, scratch only, not a cold print review). Checks: document-types refresh --check current; scripts/_proper_study.py check content/research with all --require flags pass; check-content-preflight all checks and provenance-matches-run pass; check-web-edition valid; tpt web-edition probe to build/tpt-runs/eb621aedbeee828e/artifacts/author-study-1/web-probe completed (pandoc, Markdown 3.10.3); document-schema check --phase source and tpt web-edition check fail only on the absent synthesis.tex (concise stage's file, expected). No shared-tool or shared-data defect found. For the research owner (not repaired): research/interpretations.md still proposes the old third anagogy and phrases controlling claims with texts as subjects, as the study review observed.",
+  "stage": "author-study",
+  "summary": "Repaired the expansive study for STU-001..STU-007 at every site of each pattern and cleared advisories STU-008..STU-012: the interpretations no longer end in roll calls, texts and Jerome are no longer credited with the study's links, the fixed inference markers and closing restatements are gone, the third interpretation has its own anagogy from Chrysostom (Hom. in Mt. 46.1) and Aquinas (Super Col. c. 3 lect. 3), Aquinas's Summa position is reported as given with his conclusion stated, and the Offertory count is corrected; research records unchanged."
+}

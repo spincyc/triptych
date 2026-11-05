@@ -1,0 +1,498 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "STU-001",
+      "location": "sections/40-word-in-the-heart.tex lines 45-47, 71-72, 182-184; sections/30-cry-from-captivity.tex lines 120-121, 182-184, 230-242",
+      "problem": "The closing roll calls of round 0 are gone, but the texts they named have been put back as single sentences set beside a Father's material with no stated reason, which leaves the original required result ('whose reasoning connects it ... the reason it holds') unmet and is the failure guidance/editorial.md names for a reviser who 'does not leave the quotations side by side'. Instances: 40:45-47 ends the paragraph on Chrysostom's 'continual watchfulness' with 'The Collect asks God to keep his family cont\u00ednua piet\u00e1te, without interruption.', leaving the reader to infer the link from the adjective; 40:71-72 appends 'In the Secret the Mass asks God to direct nut\u00e1ntia corda' to the paragraph on the heart as a field with no connecting step; 40:182-184 inserts Mk 11:23's 'shall not stagger in his heart' between Chrysostom and Bellarmine on Ps 129 because both use the word 'heart' (Mk 11:23 is about not doubting, Chrysostom about prayer from the depth of the heart), a verbal echo left to imply significance; 30:120-121 'The Postcommunion prays from that position' and 30:182-184 'The Collect asks protection on the same ground' are inserted mid-paragraph with the prayer as the subject of the study's link; 30:230-242, the last subsection before the four senses, is still the only place the Epistle and the Gospel enter the second interpretation and gives each a sentence on waiting ('In the Gospel the waiting has a term'), the round-0 closing pattern in shorter form.",
+      "repair_target": "study",
+      "required_result": "Each of these sentences either states why the text bears on the argument (a Father's reasoning, or the study's inference marked once with its ground) or is replaced by such a clause where the argument uses the text; none is left beside a quotation for the reader to connect, and no interpretation ends with a passage that gives the remaining texts their parts. Dropping a text is not the repair (STU-013). Plain rewrites: (1) 40:45-47 becomes 'Chrysostom asks for a watch that does not lapse. The Collect asks God for a keeping that does not lapse either, cont\u00ednua piet\u00e1te, for a family that leans on the hope of heavenly grace alone; this interpretation hears in it the prayer of people who cannot keep that watch by their own strength.' (2) 40:71-72 becomes 'If each hearer's heart is a field, the Secret's petition that God direct nut\u00e1ntia corda, hearts that sway like a thing not firmly set, asks God for the steadiness that Chrysostom's sleeper, asleep in his moral faculty, lacks.' (3) 40:182-184 is deleted, or the Communion enters where the argument concerns faith that asks, with the reason stated. (4) In 30:230-242 the Epistle and Gospel are placed where the second interpretation's argument uses them, for example the Epistle's pati\u00e9ntiam beside Jerome's gloss on the omitted finem et patientiam as patientiam laborum praesentium, sive spem futurorum (PL 24 col. 893, already at 30:42-45), stated once as the study's link.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-013",
+      "location": "sections/20-patience-of-the-field.tex (the whole interpretation, lines 1-338); sections/40-word-in-the-heart.tex (the whole interpretation, lines 1-221)",
+      "problem": "guidance/liturgy/propers-three-documents.md requires each interpretation to 'let every appointed element contribute, including orations and minor chants', a text touched lightly getting 'a clause, not a manufactured role', and the study-review criterion requires each reading to engage the entire formulary; the manifest's lanes declare all ten element keys for both. In removing the round-0 roll calls the revision removed the texts as well (research/production-review.md records the Introit and Postcommunion as now appearing in the third interpretation 'not at all'). First interpretation: the Collect and the Postcommunion are mentioned nowhere, in the body or the four senses; the Introit appears only through Jerome's comment on Jer 29:7 (20:250-255), a verse of the letter that the antiphon does not sing, and the paragraph neither names the Introit nor uses its words. Third interpretation: the Introit, the Gradual and the Postcommunion are not mentioned (the Introit's psalm verse and the Gradual are reached only as 'the three psalms this Mass sings', 40:164), and the Communion antiphon's own words are not used, only Mk 11:23, the verse before it (40:182-184).",
+      "repair_target": "study",
+      "required_result": "Every appointed element contributes at least a clause to the first and third interpretations at the point where its argument uses the text: what the text says and the reason it bears, as a Father's reasoning or the study's stated inference, without reinstating a closing roll call (STU-001). Plain examples from loci already bound: (1) third interpretation, Gradual, beside Chrysostom's 'continual watchfulness': 'Chrysostom reads the Gradual's In Deo laud\u00e1bimur tota die as praise that lasts the whole of life, given when God helps and when he forsakes (Expositio in Ps. 43, sec. 6); this interpretation takes that \"all the day\" as the length of the watch he asks for at the parable.' (2) first interpretation, Collect, in 'Who frees the field' after Aquinas's liberantur a Deo: 'The Collect asks God, not the servants, to keep the family, qu\u00e6 in sola spe gr\u00e1ti\u00e6 c\u00e6l\u00e9stis inn\u00edtitur, which leans on the hope of heavenly grace alone; servants refused the weeding ask for the deliverance Aquinas assigns to God.' The Postcommunion (in both), the Introit's own words (in both) and the Communion antiphon (third) receive comparable clauses, each with its ground; what the records do not support is stated as the study's inference or left unsaid.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-004",
+      "location": "sections/40-word-in-the-heart.tex lines 33, 45-46, 66-67, 133-134; sections/30-cry-from-captivity.tex line 31; sections/20-patience-of-the-field.tex lines 52-54 (against sections/10-each-element.tex lines 176-177)",
+      "problem": "The restatements cited in round 0 are gone, but the pattern recurs in the revised prose, four times in the third interpretation alone, against 'Each sentence adds something' and 'Say it once'. 40:33 'On Jerome's answer the warning is for pastors.' paraphrases the two Latin sentences just quoted; 40:45-46 'Chrysostom's distinction removes the difficulty that the parable describes something no one can avoid.' paraphrases the answer just quoted ('as to natural sleep, it is not possible; but as to that of our moral faculty, it is possible'); 40:66 'Jerome's answer alone would make the parable a rule for clergy.' says 40:33 again, and Chrysostom's 'not the rulers only, but the subjects too' is quoted or paraphrased four times (00:100, 40:9-10, 40:37, 40:67); 40:133-134 'Chrysostom's umpire belongs to his Greek and Aquinas's joy to the Latin the Mass sings, and neither comments on the other's word.' restates 40:109-112 and 127 (and 10:87-92); 30:31 'The promise comes first and the prayer after it, and the Introit's words keep that order.' restates 30:26-27 ('in that order'); 20:52-54 'The parable's own detail supports him: the cockle \"appeared\" only when the blade had sprung up and borne fruit.' repeats 10:176-177 almost word for word.",
+      "repair_target": "study",
+      "required_result": "Each paragraph ends where its information ends; no sentence paraphrases a quotation just given or repeats a sentence already on the page, and Chrysostom's 'the subjects too' is quoted once in the third interpretation. Plain rewrites: (1) 40:45-46 is deleted. (2) 40:33 is deleted and 40:35 begins 'St John Chrysostom also reads the words as a warning to those who keep the field, and goes further:'. (3) 40:66-68 becomes 'Because Chrysostom extends the warning to every member of the Church, and Rabanus speaks of \"our field\" and of the seed each sows in his own body, each hearer's heart can be treated as a field' (see STU-015 for the rest of that sentence). (4) 30:31 and 20:52-54 are deleted; the 40:133-134 sentence is deleted and its second sentence kept.",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-006",
+      "location": "sections/20-patience-of-the-field.tex lines 183-192; sections/50-comparison.tex lines 64-67",
+      "problem": "The repair now reports II-II q. 10 a. 8 ad 1 accurately, then writes 'From this he draws his own conclusion about heretics', making the conditional reading of the parable the premise of Aquinas's conclusion at q. 11 a. 3. In the bound English Dominican text (II-II q. 11 a. 3, artifact lines 5889-5935) the conclusion rests on other grounds: on the heretics' side 'the sin, whereby they deserve not only to be separated from the Church by excommunication, but also to be severed from the world by death. For it is a much graver matter to corrupt the faith which quickens the soul, than to forge money'; on the Church's side mercy that admonishes twice and then, 'no longer hoping for his conversion, looks to the salvation of others' (with Jerome on Gal 5:9). The conditional reading enters only in ad 3, to answer the objection from the parable, by reference back to q. 10 a. 8 ad 1. The rewritten sentence thus puts the study's 'from this' into a Doctor's reasoning on the gravest question the study reports and drops the ground he gives, the source defect the review fragment names for a rewritten sentence. The comparison (50:64-67) keeps the same construction, the conditional reading as the premise and the conclusion as the main verb, and softens his 'deserve' and 'delivers' to 'may be'.",
+      "repair_target": "study",
+      "required_result": "20:183-190 states the conclusion of q. 11 a. 3 with the ground Aquinas gives and says that he answers the parable in ad 3 by the conditional reading of q. 10 a. 8 ad 1; 'From this he draws his own conclusion about heretics' is removed. The comparison gives his position in the same terms, without presenting the conditional reading as its premise. Nothing is added that grades any position. For example: 'In the next question he concludes that heretics deserve not only excommunication but death, \"for it is a much graver matter to corrupt the faith which quickens the soul, than to forge money\"; the Church admonishes twice and then, \"no longer hoping for his conversion,\" excommunicates him and delivers him to the secular tribunal (q. 11 a. 3). He meets the parable with the reading he has already given: the command concerns \"the case when the cockle cannot be plucked up without plucking up the wheat\" (ad 3).'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-015",
+      "location": "sections/40-word-in-the-heart.tex lines 66-72, 204-205, 219-220",
+      "problem": "The third interpretation's hinge is that 'each hearer's heart can be treated as a field in which the word is sown' (40:69-70); its allegorical sense reads 'Christ's word is sown in his Church and is to dwell in each of her members richly (Chrysostom, Aquinas)' and its anagogy speaks of 'what the word has grown in the field'. The Lord's gloss, quoted at 10:159-162, makes the good seed 'the children of the kingdom' (Mt 13:38), and Aquinas, in the Super Mt. c. 13 lecture this interpretation cites at 40:59-64, says so against the word-as-seed reading: 'aliter quam supra accipitur semen ... Hic autem accipitur ipse homo, in quo seminatur ... quia infra dicit quod semen illud sunt filii regni: unde non est alia facienda expositio ab ea quam Dominus fecit' (Venice 1745 OCR, artifact lines 24011-24018). The interpretation addresses the Lord's gloss on the field ('beside the Lord's own gloss, \"the field is the world\"') but not his gloss on the seed, so a consequential difficulty at its hinge is passed over, and the allegorical item credits Aquinas (and Chrysostom, whose Hom. in Col. 9 speaks of the word dwelling, not sown) with an allegory Aquinas rejects for this parable, which the 1962 profile forbids ('Never put an editorial proposal in a source's mouth ... or use the four-senses table to conceal an unsupported inference'). Rabanus, the reviewed warrant for applying the field to each person (PL 107 col. 947), names the seed 'semen bonae voluntatis', not the word.",
+      "repair_target": "study",
+      "required_result": "Where the third interpretation applies the field to each hearer it states the Lord's gloss on the seed and Aquinas's adherence to it in this parable, grounds its moral application in Rabanus's seed of good will, and gives any link between the parable's seed or crop and the word of Christ once as the study's inference with its reason (for instance Chrysostom's Scriptures as arms, Hom. in Col. 9). The allegorical item credits Chrysostom and Aquinas only with what they say (the word of Christ dwelling richly: Hom. in Col. 9; Super Col. c. 3 lect. 3) and follows the Lord's gloss or is the study's; the anagogical clause is revised to agree. Example for 40:68-70: '... each hearer's heart can be treated as a field, as Rabanus treats it, in which each sows \"the seed of good will\" and the enemy sows his own. The Lord's gloss makes the good seed \"the children of the kingdom\" (Mt 13:38), and Aquinas holds to it here: in this parable the seed is the man himself (Super Mt. c. 13). Paul's indwelling word enters this interpretation as what keeps that field, Chrysostom's arms for the battle (Hom. in Col. 9), not as its seed.'",
+      "severity": "blocking"
+    },
+    {
+      "id": "STU-014",
+      "location": "sections/40-word-in-the-heart.tex lines 53-54, 205-206; sections/30-cry-from-captivity.tex lines 96, 219-223, 260-266; sections/20-patience-of-the-field.tex lines 7-10, 61-63; sections/05-appointed-texts.tex lines 33-34, 298-303; sections/10-each-element.tex lines 121-123, 235-236",
+      "problem": "Small departures from the cited loci, found while re-reading them. (a) 40:53-54 quotes Rabanus as 'germinare volumus, inimici seminibus caveamus'; the page image of PL 107 col. 947 (PDF p. 478) reads 'germinare velimus, inimici semina caveamus'. (b) 30:219-221: in Durandus VI.140 (Lyon 1612 p. 412) 'quia liberalis est Dominus, et cito dimittit' is his reason why the Communion follows Joseph's 'Nolite timere, ego pascam vos', not words of Joseph; the study puts it in Christ's mouth. (c) 30:221-223 cites Sicard's 'recipiunt certificationem' to Mitrale VI.23; in the bound text it stands in VI.24, VI.23 having 'Quos denuo Dominus in communione certificat de salute'; and the anagogical item (30:264-266) credits Sicard with the reconciliation of the true Joseph, which he does not give, while the remnant of Israel that he does give ('Israelis reliquiae salvabuntur') is credited in the body only to Rupert. (d) 20:61-63 credits the ne forte clause with 'the uncertainty of the case'; at PL 26 col. 93 Jerome draws only locus poenitentiae from it, the uncertainty coming from the likeness of wheat and lolium (col. 94). (e) 20:7-10 has Augustine and Jerome both read both facts 'in that reason'; Augustine reads 'ye are such as may be deceived' in ne forte (Sermo 73.4) but says 'they who to-day are tares, may to-morrow be wheat' to the tares (73.3), and Jerome reads the conversion in ne forte and the indistinguishability in the plant. (f) 30:96 'Their question is Jerome's, asked of a different text.' reasserts for Hilary the 'why pray' question that 30:69-71 correctly replaces with his own (whether exaudi vocem meam and fiant aures tuae intendentes say the same thing). (g) 40:205-206 'the peace in the heart is Christ's, \"that He hath made peace with us\" (Chrysostom)': Chrysostom's text is the peace of God, 'God is Peace, that He hath made peace with us' (Hom. in Col. 8), as 40:112 says. (h) 30:260-261 'After the confusion of this age and the rest of the number seven': Jerome has us remain in the confusion until we are found worthy to receive the rest, as 30:58-61 renders. (i) 05:298-303 'it gives verse 24's quidquid or\u00e1ntes p\u00e9titis': the Vulgate's verse 24, quoted in the same note, reads omnia quaecumque; quidquid is the antiphon's word (10:235-236 likewise). (j) 10:121-123 'The Fathers differ ...' names no Father. (k) 05:33-34 says psalms are cited with the Hebrew number in parentheses; the prose of sections 10-40 cites Pss 43, 84 and 129 without it (e.g. 10:104, 30:150, 40:192), against the 1962 profile's citation rule.",
+      "required_result": "(a) The Latin as printed. (b) Durandus's reason given as his. (c) VI.24 cited for recipiunt certificationem, or VI.23's certificat de salute quoted, and each commentator credited in the four senses only with what he says. (d) The clause credited with locus poenitentiae only. (e) Each Father credited with the fact he reads in ne forte. (f) The sentence says that their answers bear on Jerome's question. (g) 'The peace of God' for Chrysostom. (h) 'until'. (i) quidquid named as the antiphon's word for omnia quaecumque. (j) The Fathers named, or the sentence removed. (k) The Hebrew number given at a psalm's first citation in each section, or the 05 sentence narrowed to the appointed-text headings.",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-016",
+      "location": "sections/50-comparison.tex lines 33-37",
+      "problem": "'Each takes the harvest as the end that sets the terms of the present: ... the second because the return is promised and not yet complete'. The second interpretation's end is the return, read by Jerome as reducamur ad locum nostrum Ecclesiam, by Bellarmine as deliverance 'in the resurrection only', and by the medieval commentators as Israel's; the harvest enters it only in the closing clause of 30:240-242. The comparison names as shared a feature one interpretation does not hold (research/interpretations.md proposes the same sentence).",
+      "required_result": "The comparison states what the three share in terms each holds, for example 'Each places the present before a fulfilment not yet given: the harvest in the first and third, the return in the second', or names the second interpretation's end as its own.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "observations": [
+    {
+      "location": "research/interpretations.md, third interpretation, 'Controlling claim' and 'Four senses' (Allegorical), and 'Limits'",
+      "note": "The accepted brief proposes 'a field in which the word is sown' and 'Christ's word is sown in his Church' and records the field's extension to the single soul as a limit, but not that Mt 13:38 and Aquinas at Super Mt. c. 13 make the good seed the children of the kingdom; the study inherited the identification (STU-015)."
+    },
+    {
+      "location": "research/production-review.md, 'Author-study, iteration 1', Repairs, STU-001",
+      "note": "The round-0 STU-001 required_result allowed a lightly touched text 'a clause at that point, or nothing', and the reviser removed the Collect, Postcommunion and Introit from the first and third interpretations under it (STU-013); the study-review fragment states the roll-call ban without the profile's coverage floor beside it, which may be a missing criterion there."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "patience-of-the-field",
+          "kind": "interpretive-lane",
+          "path": "sections/20-patience-of-the-field.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "cry-from-captivity",
+          "kind": "interpretive-lane",
+          "path": "sections/30-cry-from-captivity.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-in-the-heart",
+          "kind": "interpretive-lane",
+          "path": "sections/40-word-in-the-heart.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "patience-of-the-field",
+            "cry-from-captivity",
+            "word-in-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Rabanus Maurus",
+            "Thomas Aquinas",
+            "Bede",
+            "Honorius Augustodunensis"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Rabanus Maurus"
+          ],
+          "component_keys": [
+            "patience-of-the-field"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "patience-of-the-field",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "John Chrysostom",
+            "Robert Bellarmine",
+            "Ambrose of Milan",
+            "Thomas Aquinas",
+            "Bede",
+            "Cassiodorus",
+            "Athanasius of Alexandria",
+            "Alfredo Ildefonso Schuster",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Hilary of Poitiers",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "cry-from-captivity"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "cry-from-captivity",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Jerome",
+            "Rabanus Maurus",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Theodoret of Cyrus",
+            "Theophylact of Ohrid"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers"
+          ],
+          "component_keys": [
+            "word-in-the-heart"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-in-the-heart",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generated/scriptural-date-location.tex": "0ca7f27743885d341a973606fc70887cc8f0204246ec3c6055e5bd1e54931b5d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/main.tex": "d94e809f6ee714ec4f10b0d013b988e0d7e141f23708d3e75eddd0f997096cb1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/propers/verified.md": "0148e2cd3b59892e0e65a5ab0dc73a77fbccad98f30b3928a7ce079a23bc6c93",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-annotations.tex": "42e39890b39d8c49a5878b92539b880b24dff6c76d85012ea093ce6f9f599190",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-table.tex": "e962afb1d88969ccf8eec6a2b3d57d1f03b05a3979bc5d9bd1f7d6befd2c00a3",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology.toml": "fd975f7066d182cd7d55ea2f6a6395acbca027255d840f096c68f2fc907bfb9c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/context.md": "8d14e49c78b8146d2ac1dc8ee2930e504c7a36498e35de388ba94e76bd7b2988",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md": "bb9c50a6f7cb4cdc549af32692d876a75e5c7dc89d96351032085c34d959fedb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md": "b7830fcce0176077363c1df9809deb0d6a72d62bc1b2bcb41b208fff4351773c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml": "be821134b020fd0dea9da54b0880b5ad5375ffbad597782d4e094333770b9dd0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/00-opening.tex": "69af6207201adcb7304fa82a438765840b3237164f87aec0cc187317dcb873b8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/05-appointed-texts.tex": "dc079c274b7f3fd9169657b943ee991e594a5f24c2408efea75f48cacd8d8c6f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/10-each-element.tex": "b07cb42150c2251acb86dda8592777bcac8d314da89c2a725a0ecb6f58d04274",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/20-patience-of-the-field.tex": "02df6e0677d51c22283cf9af91995108645646926e20c91f4ef2899fa9799415",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/30-cry-from-captivity.tex": "298c419b8ae01fbd86a86b6b15aa97539a5bf6f989d4fcdae201ace43cb20637",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/40-word-in-the-heart.tex": "cbe80d743fddd25e282e1d5a3249110e9a760d84db28dceb9a9f75651e2032bb",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/50-comparison.tex": "005e5ab0637bc100521d988799268b81ae85ae4eef09734cc576c6085cfdcc65",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/90-apparatus.tex": "5213a0655c6dc2be3683bd438505df1a04bcbc8a635f00c0c56c2c600e5775b0",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "17",
+            "8b70fb811bc31b50d68df79c7631ccb13b547293cce47ef82f9e8b7a6b659748",
+            "eb621aedbeee828e",
+            "2629d99f4848b3be111d792a88a48635cd4edc97",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold review, iteration 1, of the expansive study of the Claude 1962 leaf liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany (main.tex with sections 00, 05, 10, 20, 30, 40, 50 and 90, research/production-review.md and generation-metadata.tex; the generated Scriptural Date and Location appendix was not reviewed as prose, and no authored sentence re-dates or contradicts it). All 21 sealed REVIEW_INPUTS files re-hash to their seal; check-content-preflight (every check, and provenance-matches-run against this run's header), check-proper-components --phase content --edition research and document-types refresh --check all pass. Mode: appointed_text_completeness = complete, consistent with research/context.md and the absence of any reference-only authorization; the ten Latin texts match propers/verified.md exactly, with attributed Lasance 1945 and Douay-Rheims English. Witnesses re-read at their loci by this review: Jerome, In Mt. II, PL 26 cols. 89 and 93-94 (own 300-dpi renders of PDF pp. 52 and 54 of the hash-matched file), and In Hier. V, PL 24 cols. 891-893 (tracked OCR); Rabanus, In Mt. IV, PL 107 cols. 947-948 (OCR and own render of PDF p. 478); Ambrose on Ps 43, PL 14 col. 1154 (own render); Hilary, Tract. in Ps. 129.2-3 and In Mt. 13.1 (PL 9 OCR); Chrysostom, Hom. in Mt. 46.1 and 67, Hom. in Col. 8-9 (NPNF), Expositio in Ps. 43 sec. 6 and 129 sec. 1 (PG 55 Greek); Augustine, Sermo 73, Ep. 93.10, 17, 31-36, Enarr. in Ps. 42, 43, 64, 84, 129 (NPNF), Quaest. Ev. I.10; Aquinas, Super Mt. c. 13 (Venice 1745 OCR), Super Col. c. 3 lect. 3 (Dessain OCR and Corpus Thomisticum), Super Ps. 43 n. 3, ST II-II q. 10 a. 8 ad 1 and q. 11 a. 3 (English Dominican text); Bellarmine on Pss 43, 84, 129; Bede on Mk 11:22-25; Schuster III pp. 186-188; Rupert XII.23; Durandus VI.140; Sicard VI.23-24; Honorius, Speculum Ecclesiae; Theophylact on Col 3:15; Cassiodorus on Ps 84:2; the Athanasian exposition on Ps 84. Consequential-difficulty tests: (1) Sinite utraque crescere against Auferte malum, Jerome PL 26 cols. 93-94: the likeness of wheat and lolium in the blade ('ne ubi quid ambiguum est, cito sententiam proferamus; sed Deo judicii terminum reservemus') and locus poenitentiae from ne forte; 20:21-63 teaches the question and his inference (one sentence over-credits ne forte, STU-014). (2) Why a God who has promised commands prayer, Jerome PL 24 col. 893 'Certe absque invocatione et oratione captivorum, poterat implere Dominus quod promiserat; sed hortatur eos ad preces' and Hilary Tract. 129.3 'Naturae suae est ut audiat; sed fidei nostrae est ut precemur audiri': holds and is well taught (30:33-99). (3) Whose sleep lets the enemy in, Chrysostom Hom. in Mt. 46.1 'not the rulers only, but the subjects too' and natural against moral sleep: holds (40:19-47); but the third interpretation's hinge, the word as the seed sown in each heart, is contradicted by Mt 13:38 and by Aquinas at the Super Mt. c. 13 locus it cites, and is not addressed (STU-015). The three interpretations remain distinct, each with at least two developed contributions from Fathers or saints. Previous round: STU-002, STU-003, STU-005 and STU-007 are cleared, as are advisories STU-008, STU-010, STU-011, STU-012 and the cited instances of STU-009; STU-001 stands in a new form (the roll calls are gone, but the texts they named now stand beside the Fathers' material with no stated reason) and its repair dropped several texts from two interpretations (new STU-013); STU-004 stands with new instances; STU-006 stands for a derivation its repair attributes to Aquinas. Verdict CHANGES_REQUIRED; every repair is study-owned and the evidence for it is already bound. Limits: Theodoret on Col 3:15-16, Cassiodorus on Ps 43:8 (not located in the PL 70 OCR), Augustine's Contra ep. Parmeniani, and the Lasance and 1962 page images (verified.md was compared, not the facsimile) were not re-read; no print export was built, so physical extent was not judged."
+}

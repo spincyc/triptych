@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "install-publication",
+  "text": "Driver decision at install-publication 0: the install fragment asks the installer to record the passed web review in web-edition.toml (inspected, inspected_by, inspection). At this run's seed commit web-edition.toml is a content and render identity input (checked on a scratch worktree: adding the three fields changes content 0bcae686... to 980d2b12... and render 22b71653... to 41cf9cb6...), and the web review binds those identities, so writing the record would stale the web review the record describes. No v17 gate requires the fields. The installer therefore leaves web-edition.toml unchanged; the driver records the inspection after ACCEPTED, once the merge of origin/main brings 858760b867, which keeps those three fields outside the reviewed source identity. The driver also keeps the source inventories and the browser-product and release-binding records to itself, as the fragment's driver steps state.",
+  "timestamp": "2026-11-05T21:04:50Z"
+}
