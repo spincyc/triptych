@@ -179,8 +179,10 @@ should be confirmed there].
 
 Two existing routes fall outside condition (4), and this is not qualified:
 
-- **Downloadable files.** `pdf/` holds installed PDFs, the browser builds
-  explicit `download` links to them, and the release authorization's
+- **Downloadable files.** Print pages typeset PDFs in the reader's browser from
+  canonical sources and hand them over through explicit `download` links (no
+  PDF is tracked or installed since 2026-11-04), archived earlier PDFs remain
+  downloadable from the print archive, and the release authorization's
   `authority_scope` includes `public-web-hosting-and-download`. A file handed to
   a reader is a publication in another form. Free does not cure it.
 - **The corpus as data, and the public Git repository.** `src/web/data/` is
