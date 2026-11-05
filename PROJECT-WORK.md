@@ -96,7 +96,7 @@ regressions; and reconciliation, commit and non-force publication to main.
 The requested examples include Psalms 43, 84 and 129 (Vulgate numbering),
 Jeremias 29, Matthew 13, Mark 11 and Colossians 3. Shared assembly now supplies
 current generated content to web conversion, native bundles and local print
-for all 62 proper leaves (128 declared outputs); no provider-leaf source has
+for all 63 proper leaves; no provider-leaf source has
 been regenerated. Existing missing appointment inputs remain explicit.
 
 The sample date sheet now has separate event and composition dates, sourced
@@ -110,7 +110,7 @@ revision tests pass. Independent review identified and verified repairs to
 staging-directory safety, stale process caches, suppressed Davidic source
 qualifications and estimate scope. The source review checked the sample, joined
 Psalm/Daniel passages and David's distinct Geth, Maon and Absalom settings against
-their evidence. The final census covers all 62 proper leaves: 48 can query
+their evidence. The reconciled census covers all 63 proper leaves: 49 can query
 chronology (including the nuptial leaf's explicit no-formulary result); 14
 postconciliar leaves still lack reviewed appointment inputs. Remaining nonnumeric
 subjects are Sinai's unresolved calendar date, David's unspecified deliverance
@@ -126,10 +126,15 @@ implementation are unchanged; both payload paths are absent at the base commit
 `c57e60ef3d`. This is an evidence-availability limitation, not a claimed baseline
 test replay. The focused source, rendering and assembly checks above passed.
 The registered web-editions input audit passed with no undeclared or scratch
-inputs. Two independent cold builds matched across all 13 browser-product
-families (27,682 files); 104 web editions changed, with no output removals.
-That initial proof had product identity
-`cd5bc9911799d3d2b338161aa43a2a0e546a9d6e116f063603ffd87de05e5043`.
+inputs, and the initial browser-product cold builds matched. Reconciliation
+onto `3d00a7ef7b` preserves the new PC-S58 proper and upstream reader-inspection
+identity rules. All 34 schema tests and an independent combined-identity review
+pass. The newly explicit Davidic qualification is retained in the compact
+estimate; nine estimate tests and independent source review pass. The new proper
+preserves all 39 appointed passage pairs and both reading forms through shared
+assembly. Source-library, inventory, family-ledger, coverage and review-manifest
+checks pass on the combined source tree. Release proofs will be refreshed for
+this reconciled snapshot.
 Release verification then identified redundant per-edition chronology traces in
 native revision stamping. Revision calculation now shares the catalog's existing
 Assembly, retaining a fresh Assembly for each new operation. Independent cold

@@ -122,6 +122,24 @@ class CalendarEstimateTests(unittest.TestCase):
         self.assertGreater(stages["israel.monarchy.david-traditional-era"],
                            stages["israel.monarchy.david-flight-from-absalom"])
 
+    def test_new_proper_davidic_rows_keep_the_later_chronology_caveat(self):
+        import _proper_chronology as wiring
+
+        document = ("liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/"
+                    "propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a")
+        found = wiring.dossier(document, provider="gpt")
+        rows = [row for row in wiring.orientation_rows(found)
+                if any(claim.subject == "israel.monarchy.david-traditional-era"
+                       for claim in row.group.claims)]
+        self.assertEqual({passage.element_key for row in rows for passage in row.passages},
+                         {"psalm", "communion-psalm"})
+        for row in rows:
+            self.assertEqual(row.group.relation, "traditional-attribution")
+            value = wiring.orientation_date(row, compact=True)
+            self.assertIn("c. 1055–1015 B.C.", value)
+            self.assertIn("Corbett", value)
+            self.assertIn("30–50 years later", value)
+
     def test_gospel_teaching_dates_are_event_dates_with_bounded_scopes(self):
         for locus, outside, subject, year in (
             ("Matt.13.24", "Matt.13.54", "life-of-christ.parables-by-the-sea", 27),
