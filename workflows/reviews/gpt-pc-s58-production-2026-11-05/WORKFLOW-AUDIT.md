@@ -96,3 +96,12 @@ The same 62 schema and focused workflow tests pass against version 19, with
 zero skips. The actual strict working source projection also passes its
 currentness check, and `git diff --check` passes. These checks support seeding
 the corrected run; they are not production or deployment acceptance.
+
+An independent read-only follow-up reviewed `858760b867..7aad8c957d`, the
+failed producer and the actual consumers. It found no remaining ordering
+blocker in this repair: the strict working source check and source Make target
+do not invoke aggregate products; installation supplies releases before reader
+enumeration, then records products before refreshing release bindings. The
+authorization manifest and rights record refreshed last are not product inputs,
+so that ordering introduces no refresh cycle. The reviewer did not rerun the
+reported tests or claim production acceptance.

@@ -1,0 +1,89 @@
+{
+  "files": [
+    {
+      "archived_sha256": "98bcb6150cc562c96cfdd81dfdc9df0752b1cf2597f209aaa91d5af1505e2286",
+      "changes": [],
+      "native_sha256": "98bcb6150cc562c96cfdd81dfdc9df0752b1cf2597f209aaa91d5af1505e2286",
+      "path": "packets/research-0000.txt"
+    },
+    {
+      "archived_sha256": "9c76dcb8c18080ae661bd5f3d4148ee62879ef6b711896be33b7ef54812639cc",
+      "changes": [],
+      "native_sha256": "9c76dcb8c18080ae661bd5f3d4148ee62879ef6b711896be33b7ef54812639cc",
+      "path": "packets/resolve-context-0000.txt"
+    },
+    {
+      "archived_sha256": "7a6118538d23c6c395c914b415d1db32a9c20fb8ccce084fb94ab523815b1705",
+      "changes": [],
+      "native_sha256": "7a6118538d23c6c395c914b415d1db32a9c20fb8ccce084fb94ab523815b1705",
+      "path": "packets/scope-gate-0000.txt"
+    },
+    {
+      "archived_sha256": "c37d4f96077a94eb7a5e7d5fd7e18e3d8d0f98d2dc902db3cde3df96c1a44e15",
+      "changes": [],
+      "native_sha256": "c37d4f96077a94eb7a5e7d5fd7e18e3d8d0f98d2dc902db3cde3df96c1a44e15",
+      "path": "packets/source-registration-0000.txt"
+    },
+    {
+      "archived_sha256": "e66916080d23237ecb5793752516f8804b95813251f4755493aefd64284b8714",
+      "changes": [],
+      "native_sha256": "e66916080d23237ecb5793752516f8804b95813251f4755493aefd64284b8714",
+      "path": "research-0000.json"
+    },
+    {
+      "archived_sha256": "20951cf13e7d13299915c2edc72136aeef3cd29bd7a1e244345c9c4ac18e3713",
+      "changes": [],
+      "native_sha256": "20951cf13e7d13299915c2edc72136aeef3cd29bd7a1e244345c9c4ac18e3713",
+      "path": "resolve-context-0000.json"
+    },
+    {
+      "archived_sha256": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "changes": [],
+      "native_sha256": "c2c5dc73384dcaa82e6a0b0b6d655a49fd9f0d8345607513add762f6826c4e2d",
+      "path": "scope-gate-0000.json"
+    },
+    {
+      "archived_sha256": "947955edf2b520fe3f7ef68a3773040a4ad18a3c406ec656f407421a8268c323",
+      "changes": [],
+      "native_sha256": "947955edf2b520fe3f7ef68a3773040a4ad18a3c406ec656f407421a8268c323",
+      "path": "seed-bootstrap.json"
+    },
+    {
+      "archived_sha256": "dd0200425d2908813e10c158796b756e8747485d40fca309abc4b7b439b82db0",
+      "changes": [],
+      "native_sha256": "dd0200425d2908813e10c158796b756e8747485d40fca309abc4b7b439b82db0",
+      "path": "seed-manifest.json"
+    },
+    {
+      "archived_sha256": "2c892b97d6f1356db82c852e55bbff755253f139a42af0d57e52ad2f5812ba17",
+      "changes": [],
+      "native_sha256": "2c892b97d6f1356db82c852e55bbff755253f139a42af0d57e52ad2f5812ba17",
+      "path": "source-registration-0000.json"
+    },
+    {
+      "archived_sha256": "11d9dfbbbc96284ca3b6751d9020524ba4be16127b451b1cba5579ad1ca409e7",
+      "changes": [],
+      "native_sha256": "11d9dfbbbc96284ca3b6751d9020524ba4be16127b451b1cba5579ad1ca409e7",
+      "path": "terminal-replay.json"
+    },
+    {
+      "archived_sha256": "7114463ccb4f4e53bb1e834912e81019bd761fad58f7bbd0b84b063f5a97e7ac",
+      "changes": [],
+      "native_sha256": "7114463ccb4f4e53bb1e834912e81019bd761fad58f7bbd0b84b063f5a97e7ac",
+      "path": "terminal-status.json"
+    }
+  ],
+  "operations": [
+    {
+      "operation": "remove current repository root plus separator from result notes path tokens",
+      "policy": "repository-root-prefix-in-result-notes-v1"
+    },
+    {
+      "operation": "replace aggregate session decimal handles in result notes with <operation-handle>",
+      "policy": "aggregate-session-handle-in-result-notes-v1"
+    }
+  ],
+  "record_type": "proper-study-run-archive-derivative",
+  "run_id": "35340f9844352478",
+  "schema": 2
+}

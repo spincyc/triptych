@@ -22,6 +22,18 @@ subject_labels:
   critical.gospel-of-matthew: Greek Matthew
   critical.gospel-of-mark: Mark
 contexts:
+  - scope: {book: Matt, chapter: 25, first: 1, last: 13}
+    label: Jesus tells the ten virgins parable; Mount Olivet by narrative continuity
+    sources:
+      - bible:douay-rheims:Matt.24.3
+      - bible:douay-rheims:Matt.25.1
+      - bible:douay-rheims:Matt.25.13
+    basis: >-
+      Inspected 2026-11-05. Matthew 24:3 places Jesus with the disciples on
+      Mount Olivet; the discourse continues into the parable at 25:1-13.
+      This identifies Jesus' telling of the parable, not an independently
+      dated wedding or an absolute date for the return it depicts. The
+      geographic continuity is an inference from the narrative sequence.
   - scope: {book: Matt, chapter: 5, first: 1, last: 12}
     label: Jesus teaches the Beatitudes on an unnamed mountain in Galilee
     sources:

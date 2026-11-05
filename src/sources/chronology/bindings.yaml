@@ -10,6 +10,23 @@ bindings:
   - relation: traditional-attribution
     event: israel.monarchy.david-traditional-era
     scope:
+      - {book: Ps, chapter: 22}
+      - {book: Ps, chapter: 62}
+    note: >-
+      Inspected 2026-11-05 for PC-S58-A. The held Challoner titles explicitly
+      name David: Ps.22.1 and Ps.62.1. This is a traditional attribution to
+      the figure identified by the shared, qualified regnal reference era;
+      it dates neither composition nor a particular occasion. Psalm 22's
+      title names no occasion. Psalm 62's title names the desert of Edom,
+      not Absalom: the existing Absalom historical-setting binding remains
+      the separately sourced traditional association. Psalm 87's heading
+      names the sons of Core and Eman and is not made Davidic by this entry.
+    sources:
+      - bible:douay-rheims:Ps.22.1
+      - bible:douay-rheims:Ps.62.1
+  - relation: traditional-attribution
+    event: israel.monarchy.david-traditional-era
+    scope:
       - {book: Ps, chapter: 2, first: 8, last: 8}
       - {book: Ps, chapter: 28, first: 10, last: 11}
       - {book: Ps, chapter: 71, first: 1, last: 1}

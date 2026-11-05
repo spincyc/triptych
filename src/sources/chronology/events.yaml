@@ -4218,7 +4218,7 @@ events:
 
   - id: israel.monarchy.david-traditional-era
     title: David (reign in the usual chronology)
-    orientation_title: "David's reign"
+    orientation_title: "David's reign in the usual chronology"
     note: >-
       A reference era for an explicitly witnessed traditional attribution to
       David. The regnal span orients the reader to the attributed figure; it
@@ -4252,6 +4252,8 @@ events:
           is not converted into new endpoints. Only an explicit
           traditional-attribution binding may use this contextual subject;
           the date is neither a composition interval nor a narrated event.
+        orientation_qualification: >-
+          Corbett also reports writers dating the reign 30–50 years later
         date:
           precision: range
           from: {year: 1055, era: bc}

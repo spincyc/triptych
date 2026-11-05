@@ -32,14 +32,24 @@ BLOCKED on an aggregate browser-product request for the unfinished reader.
 Its four results and packets are archived. Version 19 corrects that dependency:
 research checks the strict working source projection; installation records and
 checks the complete browser products after declarations and release records
-exist. All 62 regressions and the strict source projection check pass. A fresh
-production is being seeded; no gate or publication check is bypassed.
+exist. All 62 regressions and the strict source projection check pass. Fresh
+run `64c60ef0cfd8f349` passes scope, context, research, source registration and
+research preflight. The cold review requested explicit Wisdom numbering and
+the full concise qualification of David's reported dates. Research repaired
+both through existing source fields. Repeated source registration and preflight
+pass; cold research-review iteration 1 passes with no findings. The expansive
+study is ready for authoring. No gate or publication
+check is bypassed. The source handoff has 45 bindings and 57
+dispositions, and the strict working projection and full source audits pass.
 Its context records ten ritual units, twelve element keys, both second-reading
 forms and both Communion alternatives under the canonical Week 32 owner.
 The research dossier retains distinct patristic interpretations, source
-authentication limits and both reading forms. Six existing chronology consumers
-were refreshed and checked; four changed only registry dependency hashes.
-No cold research/content review or publication has yet been completed. The
+authentication limits and both reading forms. The shared qualification correction
+reaches thirty existing chronology consumers. Their generated currentness,
+schema and reader conversions pass; nine inherited content-gate failures remain
+in unchanged authored sources. Two additional GPT leaves require only registry
+dependency-hash updates.
+No study, synthesis, homily or publication acceptance is yet claimed. The
 exact provider/identity authorization is recorded in
 `guidance/liturgy/propers-production-plan.md`; the driver's ongoing record is
 `workflows/reviews/gpt-pc-s58-production-2026-11-05/CYCLES.md`.

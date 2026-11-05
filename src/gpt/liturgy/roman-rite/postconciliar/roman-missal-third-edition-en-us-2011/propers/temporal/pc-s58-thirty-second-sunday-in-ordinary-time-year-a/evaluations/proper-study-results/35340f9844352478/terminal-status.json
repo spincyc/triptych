@@ -1,0 +1,54 @@
+{
+  "awaiting_result_for": null,
+  "current_stage": "BLOCKED",
+  "disposition": "BLOCKED",
+  "escalations": [],
+  "iteration": 4,
+  "packet_hash": "c37d4f96077a94eb7a5e7d5fd7e18e3d8d0f98d2dc902db3cde3df96c1a44e15",
+  "packet_path": "build/tpt-runs/35340f9844352478/packets/source-registration-0000.txt",
+  "packets_emitted": 4,
+  "repo_commit": "858760b8678a913ea21c7100d2058c5fd6beae4b",
+  "results_received": 4,
+  "run_id": "35340f9844352478",
+  "stage_failures": {
+    "scope-gate": 0
+  },
+  "stage_iterations": {
+    "research": 1,
+    "resolve-context": 1,
+    "scope-gate": 1,
+    "source-registration": 1
+  },
+  "stage_novel": {
+    "scope-gate": 0
+  },
+  "stage_repeats": {
+    "scope-gate": 0
+  },
+  "standing_findings": [],
+  "transitions": [
+    {
+      "disposition": "PASS",
+      "from": "scope-gate",
+      "to": "resolve-context"
+    },
+    {
+      "disposition": "PASS",
+      "from": "resolve-context",
+      "to": "research"
+    },
+    {
+      "disposition": "PASS",
+      "from": "research",
+      "to": "source-registration"
+    },
+    {
+      "disposition": "BLOCKED",
+      "from": "source-registration",
+      "to": "BLOCKED"
+    }
+  ],
+  "workflow_digest": "f3a0f769d5fabb31f191f1cadcc2ab674aed3e7a1d84ddfdb294ecd1fc4b5f39",
+  "workflow_id": "proper-study",
+  "workflow_version": 18
+}
