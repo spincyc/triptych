@@ -1,8 +1,8 @@
 classification_schema = 1
 record_type = "publication-source-classification-review"
-audited_on = "2026-10-27"
-publication_snapshot = "sha256:0db36815f30d5e885d3455f601515d056d74c41b8a7cb7010ba5fdf3266c6fb4"
-classification_snapshot = "sha256:6c74e6e34761d9fa16a926debcfb140cb5ea6efdc7be2f527390963e9c6c9128"
+audited_on = "2026-11-05"
+publication_snapshot = "sha256:3911e3a75bf4854b2410ad82908e14ba274259d43e60a694a71a32ab5007c0c5"
+classification_snapshot = "sha256:d4feafd7f7d15c833cdddcbfe7e3b307275eb5b35e0ebfb07744c30ff72a30fc"
 
 [[classifications]]
 document = "articles/canon-law/clerical-celibacy-chastity-and-continence"
@@ -170,6 +170,10 @@ source_categories = ["finding-aid", "historical-primary", "institutional-current
 
 [[classifications]]
 document = "liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+
+[[classifications]]
+document = "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 
 [[classifications]]
