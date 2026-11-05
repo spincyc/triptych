@@ -1,0 +1,236 @@
+{
+  "record_type": "independent-post-publication-chronology-integration-review",
+  "disposition": "PASS",
+  "findings": [],
+  "reviewed_commit": "baced82298220931a8f004ecfc6acc2cee5b4295",
+  "authored_source_checkpoint": "628cf63b508d0194aec82a27d2a717c8b485fa8d",
+  "upstream_range": "62bfdaf252..4bcc8c80fe",
+  "provider": "gpt",
+  "document": "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+  "reviewer": "OpenAI GPT-6, Codex API agent; exact model variant and runtime version unexposed",
+  "scope": "Bounded independent review of the shared chronology and document-assembly changes as applied to PC-S58-A after integration. This supplements the separate advisory source review and separate post-merge web review; it is not an engine-run acceptance.",
+  "judgment": "The unchanged appointed loci and candidate claims, the source-grounded and visibly qualified calendar estimates, and the complete retained alternatives and unresolved occasions support publication of this integrated target within the existing study scope. No target authored-prose or shared-chronology correction is required by this review.",
+  "direct_inspection": [
+    {
+      "artifact": "src/sources/chronology/orientation.yaml",
+      "extent": "Read the exact Davidic attribution, Absalom historical-setting, and Korahite composition estimate records, their subjects/relations/profiles, qualifications, source lists, and derivation bases; compared their application to the target live projection."
+    },
+    {
+      "artifact": "src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/passages/corbett-david-usual-chronology.toml",
+      "locus": "Corbett, David, King, printed p. 642, opening paragraph",
+      "extent": "Read the previously verified passage record: usual reign chronology 1055–1015 B.C. and its immediate qualification that other writers date it 30–50 years later. Did not newly inspect the facsimile."
+    },
+    {
+      "artifact": "src/sources/works/george-leo-haydock/douay-rheims-with-haydock-commentary/editions/2014-loreto-feeney-memorial/passages/second-kings-15-absalom-conspiracy-chronology.toml",
+      "locus": "2 Kings 15:1–13; recorded artifact page 430, printed p. 400",
+      "extent": "Read the previously verified record of the chapter-opening A.C. 1025 marker and verse-7 A.C. 1024 marker; the estimate preserves the adjacent frame rather than selecting a precise flight year. Did not newly inspect the facsimile."
+    },
+    {
+      "artifact": "src/sources/works/george-leo-haydock/douay-rheims-with-haydock-commentary/editions/2014-loreto-feeney-memorial/passages/psalm-70-captivities-usher-chronology.toml",
+      "locus": "Psalm 70:1; recorded artifact page 776, printed p. 740",
+      "extent": "Read the registered reporting-attribution context and its limits. The current estimate retains Haydock edition reporting Ussher; this review neither reattributes the uninitialled marginal markers personally to Haydock nor makes an Anno Mundi conversion."
+    },
+    {
+      "artifact": "src/sources/works/catholic-encyclopedia/volume-12/editions/new-york-1911/artifacts/newadvent-12533a-cb9d9a25-article-text/newadvent-12533a-cb9d9a25-article-text.txt",
+      "locus": "Psalms, The sons of Korah",
+      "extent": "Directly read the registered article text stating the interval between the days of Isaias and the return from exile, and its composition-versus-collection alternatives."
+    },
+    {
+      "artifact": "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd-article-text/newadvent-08179b-d4ee13fd-article-text.txt",
+      "locus": "Souvay, Isaias, Life, ministry paragraph and calling paragraph",
+      "extent": "Directly read the registered article text locating the beginning of the ministry at the closing year of Ozias and the death of that king at 740 B.C.; compared the existing isaias-traditional-era record."
+    },
+    {
+      "artifact": "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03315a-9cb437e2-article-text/newadvent-03315a-9cb437e2-article-text.txt",
+      "locus": "Reid, Captivities of the Israelites, return under Cyrus",
+      "extent": "Directly read the registered article text dating the return edict to the first year of Cyrus at Babylon, 538 B.C."
+    },
+    {
+      "artifact": "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03731a-f5f96f04-article-text/newadvent-03731a-f5f96f04-article-text.txt",
+      "locus": "Howlett, Biblical Chronology, From the destruction of Jerusalem to the birth of Jesus Christ",
+      "extent": "Directly read the registered article text dating the first returning band under Zorobabel to 536 B.C. This is the return statement, not the separate anomalous 536 B.C. destruction statement elsewhere in the article."
+    }
+  ],
+  "upstream_review_relied_on": {
+    "record": "PROJECT-WORK.md at 4bcc8c80fe, Useful shared biblical dates, 2026-11-05",
+    "facts": "Upstream records independent cold source/assembly review, Davidic qualification repairs, focused regressions, a PC-S58 census preserving 39 appointed passage pairs and both reading forms, and a ten-page synthesis print with 12 compact rows on page two.",
+    "limit": "Those are upstream recorded review facts. This lane did not reproduce that print, inspect its pages, rerun the upstream full test suite, or independently inspect the original binary witnesses."
+  },
+  "verified_invariants": {
+    "authored_section_diff_from_source_checkpoint": [],
+    "chronology_record_byte_identical": true,
+    "chronology_record_sha256": "af62aaa18ead7a15cb30d29af0818e3a2f601a2acf77e9885ee6605d9cd35d8c",
+    "appointment_pairs_before": 39,
+    "appointment_pairs_after": 39,
+    "appointment_pairs_in_compact_rows": 39,
+    "canonical_record_and_candidate_claims_equal": true,
+    "full_orientation_rows": 15,
+    "compact_orientation_rows": 12,
+    "both_second_reading_forms_retained": true,
+    "rows_moved_to_evidence": [
+      {
+        "key": "row-4f6da3e110136fb3",
+        "passage": "Communion: Psalm: Cf. Ps. 22:1–2 (Vg.; Heb. 23)",
+        "relation": "historical-setting",
+        "subject": ""
+      },
+      {
+        "key": "row-60bba31394be5ffc",
+        "passage": "Entrance antiphon: Cf. Ps. 87:3 (Vg.; Heb. 88)",
+        "relation": "historical-setting",
+        "subject": ""
+      },
+      {
+        "key": "row-9a58e0defb61e161",
+        "passage": "Gospel: Matt. 25:1–13",
+        "relation": "narrated-event",
+        "subject": ""
+      }
+    ],
+    "full_original_claims_and_qualifications_retained_in_evidence": true
+  },
+  "current_compact_rows": [
+    {
+      "key": "row-85017d44138f4354",
+      "passage": "Communion: Psalm: Cf. Ps. 22:1–2 (Vg.; Heb. 23)",
+      "subject": "Traditional attribution: David's reign in the usual chronology; Hebron, then Jerusalem",
+      "date": "c. 1055–1015 B.C. (usual chronology; Corbett also reports dates 30–50 years later)"
+    },
+    {
+      "key": "row-53baae847fde63b6",
+      "passage": "Communion: Psalm: Cf. Ps. 22:1–2 (Vg.; Heb. 23)",
+      "subject": "Composition: Psalms",
+      "date": "Before c. 165 B.C."
+    },
+    {
+      "key": "row-b79aa84c431dec69",
+      "passage": "Responsorial psalm: Ps. 63:2,3–4,5–6,7–8 (Heb.; Vg. 62), Ps. 63:2b (Heb.; Vg. 62)",
+      "subject": "Traditional attribution: David's reign in the usual chronology; Hebron, then Jerusalem",
+      "date": "c. 1055–1015 B.C. (usual chronology; Corbett also reports dates 30–50 years later)"
+    },
+    {
+      "key": "row-eb1055c5f42de2df",
+      "passage": "Responsorial psalm: Ps. 63:2,3–4,5–6,7–8 (Heb.; Vg. 62), Ps. 63:2b (Heb.; Vg. 62)",
+      "subject": "Historical setting: David's flight from the face of Absalom",
+      "date": "c. 1025–1024 B.C. (proposed association; Absalom's rebellion; Haydock edition reporting Ussher)"
+    },
+    {
+      "key": "row-241ec7af94bd3fd9",
+      "passage": "Responsorial psalm: Ps. 63:2,3–4,5–6,7–8 (Heb.; Vg. 62), Ps. 63:2b (Heb.; Vg. 62)",
+      "subject": "Composition: Psalms",
+      "date": "Before c. 165 B.C."
+    },
+    {
+      "key": "row-bddc3f22bf76bc58",
+      "passage": "Entrance antiphon: Cf. Ps. 87:3 (Vg.; Heb. 88)",
+      "subject": "Composition: The Psalms of the Sons of Korah",
+      "date": "c. 740–536 B.C. (Korahite collection estimate)"
+    },
+    {
+      "key": "row-34bb557c92c501a0",
+      "passage": "First reading (appointed Wisdom 6:12–16); Vulgate equivalent: Wis. 6:13–17",
+      "subject": "Composition: Wisdom; Alexandria in Gigot's account",
+      "date": "Disputed: In or after the time of Ptolemy IV Philopator (221–204 B.C.); In or after the time of Ptolemy VII Physicon (145–117 B.C.)"
+    },
+    {
+      "key": "row-9680220f312b5308",
+      "passage": "Gospel acclamation: Cf. Matt. 24:42a,44",
+      "subject": "Composition: Matthew; Semitic original associated with Palestine",
+      "date": "Proposals span c. A.D. 38–68"
+    },
+    {
+      "key": "row-350a2728de63efa5",
+      "passage": "Gospel: Matt. 25:1–13",
+      "subject": "Composition: Matthew; Semitic original associated with Palestine",
+      "date": "Proposals span c. A.D. 38–68"
+    },
+    {
+      "key": "row-3b13838d29e99b34",
+      "passage": "Communion: Luke: Cf. Luke 24:35",
+      "subject": "Composition: The Gospel of St Luke",
+      "date": "Numerical proposal: c. A.D. 70"
+    },
+    {
+      "key": "row-0d44e9c16cb25df7",
+      "passage": "Second reading: long: 1 Thess. 4:13–18",
+      "subject": "Composition: First Thessalonians; Corinth to Thessalonica",
+      "date": "Proposals span A.D. 52–54"
+    },
+    {
+      "key": "row-7f7959c8dd983b9e",
+      "passage": "Second reading: short: 1 Thess. 4:13–14",
+      "subject": "Composition: First Thessalonians; Corinth to Thessalonica",
+      "date": "Proposals span A.D. 52–54"
+    }
+  ],
+  "research_boundary_changes": {
+    "files": {
+      "old_count": 1732,
+      "new_count": 1741,
+      "changed": [
+        "src/sources/chronology/bindings.yaml",
+        "src/sources/chronology/composition.yaml",
+        "src/sources/chronology/events.yaml",
+        "src/sources/chronology/orientation.yaml"
+      ],
+      "added": [
+        "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03315a-9cb437e2/artifact.toml",
+        "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/artifacts/newadvent-03731a-f5f96f04/artifact.toml",
+        "src/sources/works/catholic-encyclopedia/volume-3/editions/new-york-1908/edition.toml",
+        "src/sources/works/catholic-encyclopedia/volume-3/work.toml",
+        "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd-article-text/artifact.toml",
+        "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/artifacts/newadvent-08179b-d4ee13fd/artifact.toml",
+        "src/sources/works/catholic-encyclopedia/volume-8/editions/new-york-1910/edition.toml",
+        "src/sources/works/catholic-encyclopedia/volume-8/work.toml",
+        "src/sources/works/george-leo-haydock/douay-rheims-with-haydock-commentary/editions/2014-loreto-feeney-memorial/passages/second-kings-15-absalom-conspiracy-chronology.toml"
+      ],
+      "removed": []
+    },
+    "chronology_computation_inputs": {
+      "old_count": 18,
+      "new_count": 18,
+      "changed": [
+        "scripts/_chronology.py",
+        "scripts/_proper_chronology.py"
+      ],
+      "added": [],
+      "removed": []
+    },
+    "source_admission_computation_inputs": {
+      "old_count": 8,
+      "new_count": 8,
+      "changed": [],
+      "added": [],
+      "removed": []
+    },
+    "cited_sources_added": [
+      "artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text",
+      "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03315a-9cb437e2",
+      "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-03731a-f5f96f04",
+      "artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08179b-d4ee13fd-article-text",
+      "passage.george-leo-haydock.douay-rheims-with-haydock-commentary.2014-loreto-feeney-memorial.second-kings-15-absalom-conspiracy-chronology"
+    ],
+    "cited_sources_removed": []
+  },
+  "identity_limits": [
+    "The old research review seal does not match the integrated research dependency boundary: four shared chronology YAML files, two chronology computation modules, and additional cited source metadata are involved. Preserve the historical seal and its accepted result unchanged.",
+    "The unchanged leaf chronology record does not imply unchanged generated chronology or source/publication identities. Current Assembly supplies the projection, and saved generated files are snapshots rather than current rendering authority.",
+    "The Korahite 740–536 B.C. interval is an approximate outer frame across cited alternatives, not a date assigned to an individual psalm. Davidic reign dates identify the attributed author era; the Absalom date is expressly a proposed association.",
+    "Matthew and First Thessalonians proposal spans summarize their numerical alternatives, including gaps; Luke retains its nonnumeric alternative in the evidence. No fictional parable event receives a date.",
+    "This review is an inspection of current registered evidence, derivation and target integration. It creates no new primary-source acquisition, binary-witness verification, research admission, historical workflow acceptance or print-layout approval."
+  ],
+  "publication_requirements": [
+    "Keep tracked chronology snapshots and archived accepted runs unchanged; do not materialize shared projection updates into the leaf.",
+    "Record this bounded integration review and the current research/source/publication identities separately from the old sealed run.",
+    "Complete the fresh post-merge web review against current assembled canonical and companion reader bytes; pre-merge conversion acceptance covers only the prior conversion.",
+    "Run the normal current source/content, live-assembly, reader fidelity, aggregate browser-product, release-binding and deployment gates before publication. No new full proper-study run is required by this bounded integration finding."
+  ],
+  "reproduction_commands": [
+    "tools/tpt document-types refresh --check --leaf gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+    "tools/tpt proper-chronology annotations --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a --format json",
+    "python3 scripts/_proper_study.py seal --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a --review research --review-contract proper-study-v5 --mode source",
+    "tools/tpt document-schema check --provider gpt --document liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a --phase content --run-gates --json",
+    "tools/tpt web-edition check --leaf gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"
+  ],
+  "mutation_scope": "Only this lane’s scratch evidence was written. No canonical sources, engine state, seals, product cache, Git objects or refs were mutated."
+}

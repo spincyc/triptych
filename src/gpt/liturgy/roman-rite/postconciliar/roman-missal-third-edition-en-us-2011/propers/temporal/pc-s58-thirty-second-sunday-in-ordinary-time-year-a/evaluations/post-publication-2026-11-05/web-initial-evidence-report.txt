@@ -1,0 +1,51 @@
+PC-S58-A bounded post-publication web inspection — PASS
+Date: 2026-11-05
+Source checkpoint: 628cf63b508d0194aec82a27d2a717c8b485fa8d
+Branch: feature/propers/codex
+All eight inspected source files match the committed checkpoint. The coordinator-owned research/web-artifact.json is the sole dirty tracked path observed; it is not a reader source.
+
+Scope and disposition
+SYN-001: all five study/synthesis recurrences preserve Augustine’s general connection of prayer and good works, with practical mercy stated as the present application. The sentence in 40-charity-within.tex:35 is included. The rendered paragraphs preserve the attribution/application distinction and their surrounding arguments.
+HOM-001: all five direct recurrences identify the Lord as the prayer’s addressee and his Spirit as the means of preservation or sustaining. The homily sentence reads naturally in the complete spoken argument.
+No blocking or advisory finding arose within this bounded reader scope. The separate source review owns source acceptance.
+
+Exact reader identities
+main:
+  Markdown SHA-256 249808c048569bf87c319d17ffa0cfc02ac458a36ebde2d8918e692acd35ca85
+  Product JSON SHA-256 d96ab3fdac906cf674ea81a105ff4f9d26bd97d62e1c1a741e9f62ba74c48fde
+synthesis:
+  Markdown SHA-256 40b81f0e9440e6d619f38db3c53e5d2e60e4e6ca0274bde87207b8488cd4c3f3
+  Product JSON SHA-256 e314c81043ffd98a19d438a7772627ddaed928c296cdb323b5aff35a3cf3c0ef
+homily:
+  Markdown SHA-256 9ff56d29403b28250b5394ac8128ecb95590077e8d0af6da75c8611f2691fd0c
+  Product JSON SHA-256 200f9480af93008b2de051c20d7664f92eba92e3e62c5ae438d7453cbefb632f
+
+Source and conversion evidence
+Each supported tools/web-edition --product-json conversion exited 0. Main is byte-identical to the coordinator’s canonical build/web/gpt/<proper>.md. Source and renderer file SHA-256 values are recorded in result.json.
+The normalized DOM comparison covered 142 prose paragraphs in eight changed files, including every changed paragraph, its unchanged local context, all spoken homily paragraphs and the three note paragraphs. Both widths preserve the same text; attached source notes match.
+The initial comparison helper’s sole difference was the source Appendix reference rendered as visible linked number 8. Checking its existing target and resolved text removed that helper false positive; no text mismatch remains.
+The whole homily was read continuously: 19 paragraphs, 1,284 whitespace-delimited source words. Its terminal delivery estimate is 10.3–11.7 minutes at the stated assumed pace, explicitly an estimate.
+
+Actual browser and visual evidence
+Pandoc 3.11; Python-Markdown 3.10.3; Chromium 156.0.8078.79. Isolated canonical rendering uses scripts/_markdown_render.py, _web_reader_markup.py, _publication_reader.py and the actual site/reader CSS/JS.
+Desktop 1280x1000 and mobile 390x844 were inspected for all three products. All 48 screenshots listed in screenshot-manifest.json were opened. The corpus of images covers all ten changed loci at both widths, openings, source notes, rights/revision, and rendered chronology lookup.
+No page overflow, duplicate IDs, broken internal targets or residual TeX appeared. Each reader shows exactly one rights notice and the committed revision 2026-11-05T20:05:55Z.
+Canonical: 111 internal links including navigation; 34 notes; all 12 appointed-text anchors; four tables and both four-sense definition lists. Synthesis: 64 internal links; 24 notes; three tables. Homily: two section links; no scholarly footnotes within the spoken body.
+Footnote 3 and its backlink were activated in both studies at both widths. Actual section-link activations reached Gospel, Scriptural Date and Location, and Note on sources and delivery below the sticky toolbar.
+Chronology lookup in both studies, desktop and mobile: Matthew 25:1–13 → Jesus tells the ten virgins parable → Mount Olivet by narrative continuity → Date unresolved. Composition is a distinct row with disputed dates. Long and short Thessalonians remain distinct, with Corinth to Thessalonica and A.D. 52 / 53–54.
+The first screenshot attempt aligned target paragraphs behind the sticky toolbar. The capture helper was corrected to offset that toolbar and all primary images were recaptured before final inspection; this was an inspection-position issue, not a source or reader defect.
+Chromium and the temporary HTTP server closed after both browser runs; no lane-owned browser or server remains.
+
+Limitations
+Bounded post-publication correction and current rendered-reader inspection; no fresh whole-source scholarly acceptance or reopened historical v19 run.
+No full-site assembly, deployed-route, external-link reachability, native print, PDF, physical-print, or deployment approval.
+Isolated preview uses the pinned Markdown renderer, reader wrapper and current reader CSS/JS, with local treatment URLs and one celebration selector; global site chrome and other celebrations are outside this preview.
+Silent continuous reading of the homily is not a timed or audible human delivery.
+Source acceptance belongs to the separate source review; no primary-source reauthentication is claimed here.
+
+Receipt proposals
+inspection-receipts.json supplies separate accurate top-level, synthesis and homily inspection text. The historical v19 run and its former acceptance are not edited or restamped.
+
+Evidence inventory
+result.json; evidence-report.txt; inspection-receipts.json; source-comparison.json; identities.json; screenshot-manifest.json; screenshots/*.png; browser-plan-results.json; supplement-plan-results.json; main/synthesis/homily-product.json; preview/main.html, preview/synthesis.html, preview/homily.html.
+No shared cache, engine state, canonical source, declaration or Git history was written by this lane.

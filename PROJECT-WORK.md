@@ -39,13 +39,83 @@ the driver's account is
 [CYCLES.md](workflows/reviews/claude-1962-66-production-2026-11-05/CYCLES.md).
 `origin/main` was merged only after acceptance, so no seal went stale.
 
+## PC-S58-A advisory corrections, 2026-11-05
+
+<!-- promised-deliverable: gpt-pc-s58-advisory-corrections-2026-11-05 -->
+
+**In progress: validated corrections pushed to main; deployment verification pending.**
+The maintainer requested applying SYN-001 and HOM-001 and pushing to main.
+Five Augustine passages now distinguish his general good-works explanation
+from the studies' practical-mercy application. Five direct post-Communion
+statements name the Lord as addressee and preservation through his Spirit.
+The homily has 1,284 spoken words, with a textual estimate of 10.3–11.7 minutes.
+Both advisories pass independent bounded source review, including the additional
+recurrence found and repaired during that review. Current standing advisories
+are zero. The genuine initial and passing recheck results are preserved in the
+leaf's `evaluations/post-publication-2026-11-05/`.
+
+Source checkpoint `628cf63b508d0194aec82a27d2a717c8b485fa8d` preserved the
+original 1,732-file research boundary. Main subsequently advanced with shared
+chronology and assembly changes through `4bcc8c80fe`; merge
+`baced82298220931a8f004ecfc6acc2cee5b4295` preserves both histories. Current
+research inputs comprise 1,741 files, and a separate independent bounded
+integration review passes. All 39 appointed passage pairs and candidate claims
+remain intact, with the full evidence behind the 12-row compact table.
+Historical runs, seals and original judgments remain unchanged.
+
+All three current readers pass fresh independent inspection. Exact source-impact
+and web results, limits and a clerical review-locator correction are indexed in
+the evaluation README. Full and concise revision stamps are committed at
+`2026-11-05T20:12:56Z`; the homily retains `2026-11-05T20:05:55Z`.
+The independent rebuilds and cache check pass for thirteen browser-product
+families, 27,690 files and 227,473,491 bytes. Their identity is
+`7061eb0e269f66fe963062d8ff56e7a6e37aecbbbcb5bae7df28e26f11743bae`.
+All three recorded reader hashes match the independent rendered review.
+
+Source/content, live assembly, conversion, the proper-study publication gate,
+target catalogue and complete catalogue structure pass. Only eleven reviewed
+release-input bindings and two derived rights-record values were refreshed;
+authorization terms and source membership are unchanged. Both classifications
+and all 166 pending migration states are preserved. No PDFs or binary archives
+are tracked; the review handoff stays ignored. The final release check reports
+zero stale bindings. `make public-site` and `public-alpha verify
+--deployment-target github-pages` both pass. The assembled readers contain all
+corrected claims and revision stamps at 1280- and 390-pixel widths without page
+overflow. All three print pages stay idle without fetching native TeX assets;
+the artifact declares 647 native editions and `stored_pdfs: false`.
+
+Publication commit `2f94728d075029a8a043021eb2006a5a9925f9d5` reached both
+the workspace branch and main without rewriting history. Its push triggered
+[Pages run 42117986012](https://github.com/spincyc/triptych/actions/runs/42117986012),
+initially queued behind the preceding run. That predecessor,
+[42099806134](https://github.com/spincyc/triptych/actions/runs/42099806134),
+built its site after roughly 96 minutes, saved its products and then exhausted
+the two-hour job budget during independent artifact verification. Twelve of
+thirteen family input identities differ for this correction, while only the
+documents and web-editions output bytes differ. Local preparation with the
+saved prior candidates reused ten families, generated two and retained one
+already current; all thirteen match the committed proof. The Pages build limit
+is now three hours;
+all source, artifact and print gates remain intact. The semantic workflow diff
+changes only that timeout, and the browser-product identity above is unchanged.
+The first correction run is being superseded by this timeout-only repair.
+Replacement CI, deployment
+and live reader verification remain pending. Earlier runs are not evidence of
+this correction's deployment.
+No new engine-run acceptance, print-layout approval or human delivery is claimed.
+
+The merged chronology task had an open publication requirement without the
+evidence pointer required by the ledger schema. Its evidence now points to
+this register; its candidate/open status and acceptance criterion are unchanged.
+The ledger validates with 118 tracked deliverables, 93 complete.
+
 ## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
 
 <!-- promised-deliverable: gpt-pc-s58-production-2026-11-05 -->
 
 **Complete: pushed to main, deployed and verified live.** The United States
 PC-S58-A production covers 8 November 2026, Thirty-second Sunday in Ordinary
-Time, Year A, Lectionary 154. The expansive study has 6,346 substantive words,
+Time, Year A, Lectionary 154. At original production, the expansive study had 6,346 substantive words,
 the concise study 3,389, and the homily 1,281 spoken words. The homily's
 10.25–11.65-minute estimate is based on 110–125 words per minute; it does not
 claim a human delivery or timed rehearsal.
@@ -99,8 +169,8 @@ compatibility verification pass. The final task-status-only commit changes
 this register and the promise ledger; those two files are excluded from the
 Pages trigger and do not change the deployed publication snapshot.
 
-Limits remain explicit. SYN-001 and HOM-001 are nonblocking precision
-advisories for the next revision, not unresolved required repairs. Missal
+The original release carried SYN-001 and HOM-001 as nonblocking precision
+advisories. The later advisory-correction entry above records their resolution. Missal
 witness authentication and rights qualifications remain in the source dossier;
 no protected full prayer text was reconstructed. Thirty existing chronology
 consumers received the shared qualification correction: their generated
@@ -181,7 +251,16 @@ comparison reduced three chronology traces to one and 27.992 seconds to 8.195
 seconds; both complete catalogs were byte-identical. The scoped release refresh
 verified all 24,029 source hashes, updating 19 and adopting 17 dependencies with
 none retired or outside the reviewed scope. Upstream authorization is preserved.
-Final site checks and main publication remain pending.
+The chronology implementation reached main through `4bcc8c80fe`. Its full local
+site build and independent deployment verification passed. Pages run
+`42099806134` passed source/site generation and all 647 native compiles, then
+hit the two-hour limit during independent verification; the current browser
+products had already been saved. Main subsequently incorporated the reviewed
+PC-S58 advisory corrections without changing chronology data or machinery,
+and increased the build budget to three hours in `19a7e266ec`. The workflow
+contract test is reconciled with that budget. The combined descriptor is
+`7061eb0e269f66fe963062d8ff56e7a6e37aecbbbcb5bae7df28e26f11743bae`.
+Final combined deployment and live verification remain pending.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 

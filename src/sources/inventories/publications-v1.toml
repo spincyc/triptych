@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-11-05"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 154
-source_surface_file_count = 3601
-snapshot = "sha256:ef4e1606f667ac2634085d94ea5e5ac2c1cdd2be722d97fdc83c9be61a74bf56"
+source_surface_file_count = 3606
+snapshot = "sha256:3d7ba3b62ba101b5c864a2f366769142596dcde7c893fee3c1a5826b65e18d47"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -20516,7 +20516,37 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/blocking-findings-v1.toml"
-sha256 = "6357c6952493dd3149c77a6d9142a2fd2f1368e255b5c1328eebcf725ce82f8b"
+sha256 = "c854642eb461f7b27466a5c57ccca2e06a5ac3f358b22f073dbb6dbc6c7edc6e"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/README.md"
+sha256 = "3ae5020ead45cfb273457cbecd81e1bb37ee291896cc1f15ce6753bf73ca0fc5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/evidence-report.txt"
+sha256 = "e9cc347f3c747b5057dc9c22c9f7d23ab3e0b4224507c76d3bdac6ad6670d0b6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/recheck-evidence.txt"
+sha256 = "4da62daee79ff0909187de3f688d608aa8cd83f6b9e6a14b4dac53a5eace07fb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/web-initial-evidence-report.txt"
+sha256 = "f6f1be8a94c7b08d57f9b15b72a3636e50bf26419ebfd19111fc8d8149fdae0f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/evaluations/post-publication-2026-11-05/web-integrated-evidence-report.txt"
+sha256 = "0392b5452dc2c340f3f6b9877fa3b7ace2b17f74d5b0bd68e1ee33f3608dbc9b"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
@@ -20828,7 +20858,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/research/production-review.md"
-sha256 = "1c3d54f194621db6ea573fde28ba1e66702b4ebbf4f7762b88906f4431c63b30"
+sha256 = "3a431e929a11acc22f61c3ab6aa4ac7e4b7c1bb1e5788cfa07245396cb856521"
 kind = "research-record"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
@@ -20864,7 +20894,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/00-opening.tex"
-sha256 = "303f948baafe051455d2ab24b94f94266bb2f82a54e8f9a2e1f22e8f5c69d8b9"
+sha256 = "9130ead6fbdaf0d43a0ebd08b2577808d82186c5f6ef0639c05786f80333b07d"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
@@ -20876,7 +20906,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/10-treatment.tex"
-sha256 = "5493243d4e94dd27bafb6eb694d66928107ec39b22ff0e143e7abcf65821c32f"
+sha256 = "86f104ebc3608dc09e1b80512954138b35db8d4e3390935c8a07b0ec19c3c4cb"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
@@ -20888,13 +20918,13 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/30-mercy.tex"
-sha256 = "60d94c88560bcec21a437137a5919b82ed4aeee1404e980551ead0bc9b1c58e5"
+sha256 = "083e8296022d7546aa77e9c30cbfc720d1aaebdeb4d238c52685182653361f36"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/40-charity-within.tex"
-sha256 = "07d44b08afb2137387239d72e3ecd1cea112334df9cbe04cbb90ca39a08f9360"
+sha256 = "de142e1c66d1eb6b0435596363214cf816038d94d274fe28cbd1c4d4000de850"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
@@ -20912,13 +20942,13 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/homily-10-spoken.tex"
-sha256 = "be258ddda6b8ada592903fd89928278980c4fe484ccfcb97b24768c0dc651430"
+sha256 = "314004a0fac805d0b329525afbd58b103e11984363d27f67d272ea9546eb4b48"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/homily-90-notes.tex"
-sha256 = "c8e1eace6eab59f1c0239a6f215f1a22bef5d7cc51d5940e022d4535286dde75"
+sha256 = "def7a9230399d7ea26e4f2dd3295d4f4be9f642c0a0457c8a6016485ade6316d"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
@@ -20936,13 +20966,13 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex"
-sha256 = "258738668c0761d8b6ddd7ff341e69c1784a76704bc38b6096b59b0f33dd2784"
+sha256 = "efb06960fa20690688aa1f4cd8e66d84bac354718ef878bfc441d05ca2d69ba6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-05-commentary.tex"
-sha256 = "25726e1414fe190aefcb82d3af0b0d3f030f166b5b1c4f9173d870ba86ef2575"
+sha256 = "0cd4f35f0194ea03aeef89ae4c31b9d681c93cefc612d94956ec6dd07c655166"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
@@ -20960,7 +20990,7 @@ owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-201
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/web-edition.toml"
-sha256 = "47ca8ba96a731a0abb368b8da87867cac59ae752d2848a033604f447e47be869"
+sha256 = "ac6e1b8e620b1ca89b225308431ea3fba3f6f884a062f36c8655514be44ffecb"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"]
 
