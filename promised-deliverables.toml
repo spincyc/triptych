@@ -18,20 +18,23 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-66-no-pdf-workflow-audit"
   criterion = "Before the run is seeded, every proper-study version-17 stage, gate and post-acceptance step is checked against the no-PDF publication contract, and each defect found is fixed and committed or recorded with its reason."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-66-production-2026-11-05/CYCLES.md", "workflows/OPERATOR.md", "scripts/_proper_study.py", "tools/tests/test_workflow_proper_study.py"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-66-native-acceptance"
   criterion = "A real proper-study version-17 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany, date 2026-11-08, audience adult parish assembly, reaches ACCEPTED with every required fresh cold review, and its results are archived in the leaf with a cycles record."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-66-production-2026-11-05/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/evaluations/proper-study-results/eb621aedbeee828e/record.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-66-reviewed-publications"
   criterion = "The expansive study, concise study and homily sources pass their gates and reviews; the web reader conversion is reviewed and current; the catalog, inventories and release records are current and the publication gates pass."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/production-review.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/evaluations/blocking-findings-v1.toml", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-66-main-and-pages"

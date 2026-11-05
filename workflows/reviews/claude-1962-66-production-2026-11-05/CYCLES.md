@@ -96,6 +96,34 @@ The host carries Python Markdown 3.11 and the repository pins 3.10.3. Every
 stage, web probe and gate ran under a scratch virtualenv built from the two
 requirements files, with `PYTHONDONTWRITEBYTECODE=1`.
 
+## After acceptance
+
+`origin/main` gained 15 commits while the run was live, including the GPT
+Thirty-second Sunday, `proper-study` versions 18 and 19, and shared chronology
+assembly (`bed31a0498`). They were merged after acceptance (`4c71a96ad6`). The
+merge takes main's v19 fragments and regenerates the inventories, descriptor
+and bindings on main's base.
+
+Main assembles the Scriptural Date and Location page from the shared corpus at
+build time, and the reader's revision stamp now counts those inputs. The
+reader conversion therefore changed after its web review, from `a447f895…` to
+`b9b8216f…`, with the stamp now the merge's author time. A fresh re-inspection
+confirmed that every difference lies in that generated section and the stamp,
+word-compared the section with the live projection, and rendered it again at
+1280 and 390 px. The `web-edition.toml` inspection records both looks. On
+main's base the three inspection fields no longer enter the reviewed
+identities, which was checked before and after writing them.
+
+`tools/proper-chronology record --check` reports this leaf's tracked
+`research/chronology.toml` as behind main's corpus, as it does the GPT leaf
+for the same identity. Their loci are the same. All chronology preflight checks
+(record, annotations and claims supported) still pass for all three editions.
+The pages assemble the live corpus, so the published date table is current;
+the tracked research record is left for the chronology owner.
+
+The three print editions compile in a bounded local `native-print-compile`
+with pdfTeX, in two passes each: 31, 11 and 4 pages.
+
 ## Sources the run settled
 
 - **Latin.** The 1962 Missal, read on the page images of the resumed printing
@@ -140,3 +168,5 @@ for, and both studies compress it the same way.
 | `check-content-preflight references-used` misses abbreviated titles and lets any mention of a psalm satisfy a single-verse locus. | synthesis-review 0 observation | Shared tool. |
 | `tools/document-schema check` prints "use --run-gates" even when the gates ran. | build-artifacts 0 | Shared tool. |
 | Nested `'''` closing quotes print in the wrong order in the native PDF; the reader is correct. | web-review 0 observation | Shared print format. |
+| The date page's evidence renders Catholic Encyclopedia article titles with a closing quote where the opening one belongs ("article ’David, King,’"), from ASCII quotes in shared locators. | post-merge re-inspection | Shared source locators. |
+| This leaf's and the GPT 66 leaf's tracked `research/chronology.toml` lag main's chronology corpus (`proper-chronology record --check`). | post-merge re-inspection | Shared chronology refresh across leaves. |

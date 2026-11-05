@@ -11,21 +11,33 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: claude-1962-66-resumed-fifth-three-documents-2026-11-08 -->
 
-**In progress: authorized; the workflow audit runs before seeding.** On
-2026-11-05 the maintainer asked for the Claude 1962 proper-study documents
-for the upcoming Sunday and authorized publication to `main`. Sunday,
-8 November 2026 is the Fifth Sunday after the Epiphany resumed after
-Pentecost, permanent identity `66`,
+**Accepted and merged; deployment pending.** On 2026-11-05 the maintainer
+asked for the Claude 1962 proper-study documents for the upcoming Sunday,
+asked that the no-PDF work be checked for every part of this workflow it
+should have updated, and authorized publication to `main`. Sunday, 8 November
+2026 is the Fifth Sunday after the Epiphany resumed after Pentecost, permanent
+identity `66`,
 `liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
 The production plan records the one-provider authorization. This is an
-independent Claude production: the published GPT leaf for the same identity is
-not an input.
+independent Claude production. No stage opened the published GPT leaf for the
+same identity or its records.
 
-This is the first run at `proper-study` version 17, the source-and-reader path
-that the no-PDF work introduced; no run had been seeded at version 16 or 17.
-The maintainer therefore also asked that the no-PDF work be checked for every
-part of this workflow it should have updated. Fixes land before the run is
-seeded, because the research seal covers the tooling.
+The workflow audit ran before seeding, because the research seal covers the
+tooling. It found three defects that would have stopped a version-17 run
+part-way, plus driver steps no stage stated. Fixes landed in `600bffa461` and
+`a7017bba3b`, and inherited inventory staleness in `f8a555b7c0`. A parallel GPT
+session found the same gaps independently and moved `main` to
+`proper-study` version 19; the merge takes main's v19 fragments.
+
+Run `eb621aedbeee828e` (`proper-study` v17, the first run at that version)
+reached ACCEPTED: 40 packets, 40 results and 3 interventions. Six real cycles
+came from cold reviews: research once, the study three times, the concise
+study once and the homily once. The published family is a 31-page expansive
+study, an 11-page concise study and a 4-page homily (1,398 spoken words), each
+compiling with pdfTeX, plus their readers. The run is archived in the leaf, and
+the driver's account is
+[CYCLES.md](workflows/reviews/claude-1962-66-production-2026-11-05/CYCLES.md).
+`origin/main` was merged only after acceptance, so no seal went stale.
 
 ## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
 
