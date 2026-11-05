@@ -55,9 +55,18 @@ the artifact declares 647 native editions and `stored_pdfs: false`.
 Publication commit `2f94728d075029a8a043021eb2006a5a9925f9d5` reached both
 the workspace branch and main without rewriting history. Its push triggered
 [Pages run 42117986012](https://github.com/spincyc/triptych/actions/runs/42117986012),
-initially queued behind the preceding run. The new run's build, full native
-compile, deployment and live reader verification remain pending. Earlier runs
-are not evidence of this correction's deployment.
+initially queued behind the preceding run. That predecessor,
+[42099806134](https://github.com/spincyc/triptych/actions/runs/42099806134),
+built its site after roughly 96 minutes, saved its products and then exhausted
+the two-hour job budget during independent artifact verification. Twelve of
+thirteen family input identities differ for this correction, so its build
+cannot reuse most of those families. The Pages build limit is now three hours;
+all source, artifact and print gates remain intact. The semantic workflow diff
+changes only that timeout, and the browser-product identity above is unchanged.
+The first correction run is being superseded by this timeout-only repair.
+Replacement CI, deployment
+and live reader verification remain pending. Earlier runs are not evidence of
+this correction's deployment.
 No new engine-run acceptance, print-layout approval or human delivery is claimed.
 
 The merged chronology task had an open publication requirement without the
