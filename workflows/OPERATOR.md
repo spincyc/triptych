@@ -82,6 +82,21 @@ conversion receives the workflow's cold web review; companions are converter-ver
 unless their own inspection is recorded. Active version-17 runs must be reseeded;
 historical terminal records retain their original identities.
 
+Before dispatching `generate-web`, the coordinator commits the reviewed source
+and evidence checkpoint. Workers check all three edition revisions with
+`scripts/_edition_revision.py show --json` and require `uncommitted: false`;
+they have no commit authority. Dirty source closures receive the conversion's
+current time, so their web bytes cannot be compared across later conversions.
+Keep the checkpoint stable through web review and publication, and repeat the
+checkpoint and review after a source repair.
+
+Recording a completed web inspection does not change its own source seal.
+Source identities project only `inspected`, `inspected_by` and `inspection` out
+of the leaf's web declaration and its recognized companion inspection tables.
+The declaration's `reviewed` date, eligibility, constructs, contents and withdrawal
+remain sealed, as do actual source and converted reader bytes. The full original
+declaration still passes its owning validator.
+
 Version 17 starts every leaf from a document type (the convention is owned by
 `guidance/document-schemas.md`). Authors write section files and the
 `publication.toml` `[document]` declaration; `tools/tpt document-types refresh`

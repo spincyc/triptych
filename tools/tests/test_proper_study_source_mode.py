@@ -163,6 +163,21 @@ class SourceFixture(unittest.TestCase):
         self.assertNotEqual(before, seal())
         self.assertNotIn("source_publication", study.review_inputs(self.root, "gpt", DOCUMENT, "web"))
 
+    def test_recording_web_inspection_preserves_seal_but_reader_changes_do_not(self):
+        declaration = self.leaf / "web-edition.toml"
+        declaration.write_text('eligibility="eligible"\nreviewed="2026-11-04"\n')
+        seal = lambda: study.review_inputs(self.root, "gpt", DOCUMENT, "web", mode="source")
+        before = seal()
+        declaration.write_text(declaration.read_text() +
+                               'inspected="2026-11-05"\ninspected_by="gpt fixture"\n'
+                               'inspection="Compared exact converted bytes with source."\n')
+        self.assertEqual(before, seal())
+        self.generated.write_text("Changed reader bytes after inspection.\n")
+        self.assertNotEqual(before, seal())
+        self.generated.write_text(self.fresh_conversion)
+        (self.leaf / "sermon.tex").write_text("Changed source after inspection.\n")
+        self.assertNotEqual(before, seal())
+
     def test_research_source_seal_tracks_rights_metadata_without_witness_io(self):
         artifact = self.root / "src/sources/works/author/book/editions/edition/artifacts/witness"
         artifact.mkdir(parents=True)

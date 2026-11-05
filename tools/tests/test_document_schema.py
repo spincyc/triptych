@@ -291,6 +291,58 @@ class DocumentSchemaTests(unittest.TestCase):
         self.assertEqual(before["evidence"]["sha256"], after["evidence"]["sha256"])
         self.assertEqual(before["outputs"]["canonical"]["sha256"], after["outputs"]["canonical"]["sha256"])
 
+    def test_web_inspection_receipts_do_not_invalidate_the_reviewed_identity(self):
+        path = self.leaf / "web-edition.toml"
+        declaration = 'eligibility="eligible"\nreviewed="2026-11-04"\n'
+        path.write_text(declaration)
+        record = self.load()
+        before = schema.identities(self.root, record)
+        inspection = ('inspected="2026-11-05"\ninspected_by="gpt fixture"\n'
+                      'inspection="Compared exact reader bytes with source."\n')
+        for tables in ("", "[companions.synthesis]\n", "[companions.homily]\n"):
+            with self.subTest(table=tables):
+                path.write_text(declaration + tables + inspection)
+                self.assertEqual(before, schema.identities(self.root, record))
+                path.write_text(path.read_text().replace("gpt fixture", "updated actual reviewer"))
+                self.assertEqual(before, schema.identities(self.root, record))
+
+    def test_reader_declaration_decisions_remain_part_of_identity(self):
+        path = self.leaf / "web-edition.toml"
+        declaration = ('eligibility="eligible"\nreviewed="2026-11-04"\n'
+                       'blocking_constructs=[]\ncontents=false\n')
+        path.write_text(declaration)
+        record = self.load()
+        before = schema.identities(self.root, record)
+        for changed in (
+            declaration.replace('"eligible"', '"conditional"'),
+            declaration.replace("2026-11-04", "2026-11-05"),
+            declaration.replace("[]", '["wide-table"]'),
+            declaration.replace("false", "true"),
+            declaration + 'withdrawn="2026-11-05"\n',
+        ):
+            with self.subTest(declaration=changed):
+                path.write_text(changed)
+                after = schema.identities(self.root, record)
+                for identity in ("content", "render", "outputs"):
+                    self.assertNotEqual(before[identity], after[identity])
+
+    def test_inspection_named_fields_outside_recognized_receipts_remain_sealed(self):
+        path = self.leaf / "web-edition.toml"
+        declaration = 'eligibility="eligible"\n'
+        path.write_text(declaration)
+        record = self.load()
+        before = schema.identities(self.root, record)
+        for table in ("unrelated", "companions.other", "companions.synthesis.unrelated"):
+            with self.subTest(table=table):
+                path.write_text(declaration + f'[{table}]\ninspection="Content, not a receipt."\n')
+                self.assertNotEqual(before, schema.identities(self.root, record))
+        path.write_text(declaration)
+        unrelated = self.leaf / "research/other.toml"
+        unrelated.write_text('inspection="First evidence judgment."\n')
+        before = schema.identities(self.root, record)
+        unrelated.write_text('inspection="Changed evidence judgment."\n')
+        self.assertNotEqual(before, schema.identities(self.root, record))
+
     def test_declared_dependencies_cannot_smuggle_other_provider_or_scratch(self):
         other = self.root / "src/claude/shared.tex"
         other.parent.mkdir(parents=True)

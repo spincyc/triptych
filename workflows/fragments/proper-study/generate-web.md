@@ -1,5 +1,18 @@
 # Convert the canonical web edition
 
+Before conversion, the coordinator must commit the reviewed source and evidence
+checkpoint. Workers do not commit. Confirm each edition's revision reports
+`uncommitted: false` with the existing revision command, using the bare ID and
+the `-synthesis` and `-homily` IDs:
+
+    python3 scripts/_edition_revision.py show --provider {provider} --document {proper} --json
+
+If any relevant source closure is uncommitted, report the missing coordinator
+checkpoint instead of preparing review bytes. Dirty sources receive a build-time
+timestamp, so two conversions can differ even when their text is unchanged.
+A source repair after this checkpoint needs a new commit before conversion and
+review; never replace an accepted conversion's hash to conceal a changed stamp.
+
 Convert only the canonical study with the repository tool:
 
     tools/tpt web-edition --provider {provider} --output build/web {proper}

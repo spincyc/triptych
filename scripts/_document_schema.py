@@ -918,7 +918,40 @@ def _file_hash(path: Path) -> bytes:
     raise SchemaError(f"source changed while its identity was being read: {path.name}")
 
 
-def _digest(root: Path, paths: set[Path], declaration=None) -> dict:
+def _web_declaration_identity(path: Path) -> bytes:
+    """Seal reader decisions without the inspection this seal lets us record.
+
+    `reviewed` dates the eligibility declaration and remains part of identity.
+    Only the three inspection fields at their admitted locations are receipts;
+    same-named fields elsewhere, and all reader-affecting values, remain sealed.
+    The owning web-declaration gate still validates the complete original record.
+    """
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).digest() != _file_hash(path):
+        raise SchemaError(f"source changed while its identity was being read: {path.name}")
+    try:
+        data = tomllib.loads(raw.decode("utf-8"))
+        fields = ("inspected", "inspected_by", "inspection")
+        for key in fields:
+            data.pop(key, None)
+        companions = data.get("companions")
+        if isinstance(companions, dict):
+            for edition in ("synthesis", "homily"):
+                table = companions.get(edition)
+                if isinstance(table, dict):
+                    for key in fields:
+                        table.pop(key, None)
+                    if not table:
+                        companions.pop(edition)
+            if not companions:
+                data.pop("companions")
+        payload = json.dumps(data, sort_keys=True, separators=(",", ":")).encode()
+    except (UnicodeError, tomllib.TOMLDecodeError, TypeError) as error:
+        raise SchemaError(f"invalid web declaration identity: {error}") from error
+    return hashlib.sha256(payload).digest()
+
+
+def _digest(root: Path, paths: set[Path], declaration=None, *, projections=None) -> dict:
     digest = hashlib.sha256()
     if declaration is not None:
         digest.update(json.dumps(declaration, sort_keys=True, separators=(",", ":")).encode())
@@ -929,7 +962,7 @@ def _digest(root: Path, paths: set[Path], declaration=None) -> dict:
         names.append(name)
         digest.update(name.encode())
         digest.update(b"\0")
-        digest.update(_file_hash(path))
+        digest.update(projections[path] if projections and path in projections else _file_hash(path))
     return {"sha256": digest.hexdigest(), "inputs": names}
 
 
@@ -1118,8 +1151,12 @@ def identities(root: Path, record: dict, *, output: str | None = None) -> dict:
     # witness blobs. Exhaustive source-byte validation remains an owning gate.
     evidence = _evidence_ancestry(root, {p for p in evidence if _metadata_path(p, root)})
     declaration = _raw_manifest(record)
-    result = {"content": _digest(root, content, declaration),
-              "evidence": _digest(root, evidence), "render": _digest(root, render),
+    web_declaration = leaf_dir / "web-edition.toml"
+    projections = ({web_declaration: _web_declaration_identity(web_declaration)}
+                   if web_declaration.is_file() else {})
+    result = {"content": _digest(root, content, declaration, projections=projections),
+              "evidence": _digest(root, evidence, projections=projections),
+              "render": _digest(root, render, projections=projections),
               "outputs": {}, "limitations": [
                   "Source identity does not establish semantic or rendered review acceptance.",
                   "Evidence identity covers audit/binding metadata and controlling source-record ancestry, not external witness payload verification.",

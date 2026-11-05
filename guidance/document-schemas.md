@@ -219,6 +219,14 @@ unhydrated witness bytes. Render identity additionally covers the discovered
 format and build inputs. Output identities bind a selected output to those
 inputs; none is a PDF hash or an editorial PASS.
 
+The owning `web-edition.toml` contributes its reader decisions to these
+identities, excluding only the operational `inspected`, `inspected_by` and
+`inspection` receipts at the root and in its recognized synthesis/homily
+inspection tables. Recording an inspection must not invalidate that same
+review. Eligibility, declaration `reviewed` date, constructs, contents,
+withdrawal and all other values remain bound; the full declaration still
+passes its validator. Converted reader bytes remain independently sealed.
+
 Keep source/evidence review, print-template review, and actual render
 inspection distinct. An existing full-page receipt remains a fact about its
 exact old output. A current schema PASS cannot extend it to changed sources,

@@ -20,8 +20,11 @@ the Thirty-second Sunday in Ordinary Time, Year A, Lectionary 154.
 The request also requires verifying the no-PDF migration throughout this
 workflow and publishing the validated work to main. The pre-seed audit is
 complete: version 18 repairs derived-field duplication, component placement,
-hand-written timestamp instructions and companion-reader wording. All 28
-focused regressions pass. The durable audit is
+hand-written timestamp instructions and companion-reader wording. A runtime
+repair keeps completed inspection receipts from invalidating their own web
+review; source and reader changes still invalidate acceptance. The coordinator
+checkpoints sources before conversion so Git-derived revision stamps remain
+stable. All 62 schema and focused workflow regressions pass. The durable audit is
 `workflows/reviews/gpt-pc-s58-production-2026-11-05/WORKFLOW-AUDIT.md`.
 No production review or publication has yet been completed. The exact
 provider/identity authorization is recorded in
