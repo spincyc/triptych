@@ -7,13 +7,36 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-05.
 
+## PC-S58-A advisory corrections, 2026-11-05
+
+<!-- promised-deliverable: gpt-pc-s58-advisory-corrections-2026-11-05 -->
+
+**In progress.** The maintainer requested applying SYN-001 and HOM-001 and
+pushing the corrections to main. Distinguish Augustine's general connection
+between prayer and good works from the studies' application to helping the
+needy, and distinguish the Prayer after Communion's addressee, the Lord,
+from preservation through his Spirit. Align recurrences across the expansive
+study, concise study and homily. Preserve the original production's archived
+results as historical evidence; changed prose needs fresh scoped review and
+current reader/publication checks. Completion requires the corrected sources,
+reviewed readers and current release products to reach main, with successful
+Pages gates and live verification. No new research claim or print review is
+requested.
+
+The corrected prose now passes independent bounded review, including a fifth
+Augustine recurrence found and repaired during that review. Both initial and
+recheck results are preserved under the leaf's
+`evaluations/post-publication-2026-11-05/`. All three source/content checks and
+the complete content/schema gates pass. The research boundary remains exactly
+unchanged at 1,732 files. Reader and deployment requirements remain open.
+
 ## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
 
 <!-- promised-deliverable: gpt-pc-s58-production-2026-11-05 -->
 
 **Complete: pushed to main, deployed and verified live.** The United States
 PC-S58-A production covers 8 November 2026, Thirty-second Sunday in Ordinary
-Time, Year A, Lectionary 154. The expansive study has 6,346 substantive words,
+Time, Year A, Lectionary 154. At original production, the expansive study had 6,346 substantive words,
 the concise study 3,389, and the homily 1,281 spoken words. The homily's
 10.25–11.65-minute estimate is based on 110–125 words per minute; it does not
 claim a human delivery or timed rehearsal.
@@ -67,8 +90,8 @@ compatibility verification pass. The final task-status-only commit changes
 this register and the promise ledger; those two files are excluded from the
 Pages trigger and do not change the deployed publication snapshot.
 
-Limits remain explicit. SYN-001 and HOM-001 are nonblocking precision
-advisories for the next revision, not unresolved required repairs. Missal
+The original release carried SYN-001 and HOM-001 as nonblocking precision
+advisories. The later advisory-correction entry above records their resolution. Missal
 witness authentication and rights qualifications remain in the source dossier;
 no protected full prayer text was reconstructed. Thirty existing chronology
 consumers received the shared qualification correction: their generated

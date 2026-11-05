@@ -311,3 +311,49 @@ The accepted source checkpoint, witness limitations and two nonblocking
 precision advisories remain as recorded above. Final artifact assembly and
 live deployment are recorded separately in the project work register; no
 print-layout approval or renewed review of another publication is implied.
+
+## Maintainer-requested advisory corrections, 5 November 2026
+
+The maintainer requested applying SYN-001 and HOM-001 after the original
+publication. This bounded correction changes seven substantive section files and updates
+the homily note to the new spoken count.
+The five Augustine passages now distinguish his connection between prayer
+and good works from the studies' application to practical mercy; the detailed
+commentary's corresponding footnote is aligned. All five direct statements
+that the post-Communion prayer asks the Spirit now name the Lord as addressee
+and describe preservation through his Spirit. The related prayers, source
+witnesses, interpretation arguments and chronology are unchanged.
+
+This is a nonsubstantial post-publication correction under the three-document
+profile's explicit re-review provision. The original run and its archived
+verdicts remain historical records of their exact inputs; none is rewritten
+or represented as acceptance of the changed prose. Fresh scoped content and
+web review, source/content and publication checks, and live verification are
+required for this correction. Their actual results will be retained under
+`evaluations/post-publication-2026-11-05/`. No new workflow run or print-layout
+approval is claimed.
+
+The corrected homily has 1,284 whitespace-delimited spoken words. At the
+existing assumed 110--125 words per minute, that is 10.27--11.67 minutes
+before longer pauses; the reader note rounds this to 10.3--11.7 minutes.
+The correction makes no new human-performance claim.
+
+Independent bounded source review first returned CHANGES_REQUIRED for one
+additional SYN-001 recurrence at `40-charity-within.tex:35`. After its exact
+replacement of “mercy” with “good works,” the independent recheck returned
+PASS with no findings. Both genuine outcomes and evidence reports are retained
+under `evaluations/post-publication-2026-11-05/`. The recheck pins all ten
+reviewed files; this operational result append follows that reviewed candidate
+and does not alter its substantive source bytes. The original workflow
+provenance line and all inspected witnesses remain unchanged.
+
+The standing-findings record is manually reconciled to zero outstanding
+advisories, explicitly distinguishing the historical engine verdicts from
+this new bounded review. No engine result or historical archive is rewritten.
+Current source/content gates pass for research, synthesis and homily; complete
+content/schema gates report one document, three outputs and zero errors.
+The complete research input object still equals the historical reviewed object
+at all 1,732 files. This is preservation evidence, not renewed research review.
+Current source input objects are retained with the new evaluation records.
+Reader conversion, fresh reader inspection, publication checks and deployment
+verification remain outstanding at this source checkpoint.
