@@ -61,7 +61,7 @@ ARCH_CORE_PACKAGES := make bash findutils coreutils diffutils
 ARCH_PYTHON_PACKAGES := python tzdata python-markdown python-yaml
 ARCH_TEX_PACKAGES := texlive-bin texlive-basic texlive-latex \
 	texlive-latexrecommended texlive-latexextra texlive-pictures \
-	texlive-fontsrecommended texlive-fontsextra texlive-langeuropean
+	texlive-fontsrecommended texlive-fontsextra texlive-langeuropean gnu-free-fonts
 ARCH_PDF_PACKAGES := poppler imagemagick
 ARCH_WEB_PACKAGES := pandoc
 # The browser's own derivation, replayed under node against each source's

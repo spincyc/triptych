@@ -108,6 +108,7 @@ jobs:
           RUN printf 'Server=https://archive.archlinux.org/repos/${SNAPSHOT}/\$repo/os/\$arch\n' > /etc/pacman.d/mirrorlist \\
            && pacman -Sy --noconfirm --needed archlinux-keyring \\
            && pacman -Syu --noconfirm --needed ${PACKAGES} \\
+           && ln -sf /usr/share/fontconfig/conf.avail/09-texlive-fonts.conf /etc/fonts/conf.d/09-texlive-fonts.conf \\
            && fmtutil-sys --byfmt xelatex \\
            && mktexlsr \\
            && fc-cache -f \\
@@ -161,6 +162,12 @@ jobs:
             || { tail -n 40 /tmp/xetex-probe.log; kpsewhich -all xelatex.fmt; exit 1; }
           test -n "$(kpsewhich latin.ldf)"
           test -n "$(kpsewhich hyph-la.tex)"
+          # XeTeX editions name these families through system fontconfig.
+          for family in 'Latin Modern Roman' 'Libertinus Serif' 'Libertinus Sans' \
+              'Libertinus Mono' Junicode FreeSerif; do
+            found="$(fc-match --format '%{family[0]}' "$family")"
+            test "$found" = "$family" || { echo "font family $family resolves to $found" >&2; exit 1; }
+          done
           SH
 
       - name: Publish the image and report its digest

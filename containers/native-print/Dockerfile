@@ -14,12 +14,13 @@ ARG ARCH_SNAPSHOT=2026/09/04
 # support before compiling anything. No package installer runs at request time.
 RUN printf '%s\n' "$PRINT_BASE" | grep -Eq '^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}$' \
  && printf '%s\n' "$ARCH_SNAPSHOT" | grep -Eq '^[0-9]{4}/[0-9]{2}/[0-9]{2}$' \
- && if ! pacman -Q texlive-langeuropean texlive-xetex > /dev/null 2>&1; then \
+ && if ! pacman -Q texlive-langeuropean texlive-xetex gnu-free-fonts > /dev/null 2>&1; then \
       printf 'Server=https://archive.archlinux.org/repos/%s/$repo/os/$arch\n' "$ARCH_SNAPSHOT" > /etc/pacman.d/mirrorlist \
       && pacman -Sy --noconfirm --needed archlinux-keyring \
-      && pacman -Syu --noconfirm --needed texlive-langeuropean texlive-xetex; \
+      && pacman -Syu --noconfirm --needed texlive-langeuropean texlive-xetex gnu-free-fonts; \
     fi \
  && { test -n "$(kpsewhich -engine=xetex xelatex.fmt)" || fmtutil-sys --byfmt xelatex; } \
+ && ln -sf /usr/share/fontconfig/conf.avail/09-texlive-fonts.conf /etc/fonts/conf.d/09-texlive-fonts.conf \
  && fc-cache -f \
  && command -v pdflatex xelatex pdfinfo pdftotext pdffonts make git python \
  && python -c 'import yaml' \
@@ -30,11 +31,11 @@ RUN printf '%s\n' "$PRINT_BASE" | grep -Eq '^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a
       graphicx hyperref inputenc libertinus lmodern longtable microtype multicol \
       needspace parskip pdflscape ragged2e tabularx tcolorbox tikz tipa titlesec \
       xcolor xltabular xstring xurl zref-abspage zref-user; do \
-      test -n "$(kpsewhich "$package.sty")" || exit 1; \
+      test -n "$(kpsewhich "$package.sty")" || { echo "missing $package.sty" >&2; exit 1; }; \
     done \
  && for family in 'Latin Modern Roman' 'Libertinus Serif' 'Libertinus Sans' \
       'Libertinus Mono' Junicode FreeSerif; do \
-      test "$(fc-match --format '%{family[0]}' "$family")" = "$family" || exit 1; \
+      test "$(fc-match --format '%{family[0]}' "$family")" = "$family" || { echo "font family $family not found" >&2; exit 1; }; \
     done \
  && install -d /usr/share/triptych-print \
  && pacman -Q > /usr/share/triptych-print/packages.txt \
