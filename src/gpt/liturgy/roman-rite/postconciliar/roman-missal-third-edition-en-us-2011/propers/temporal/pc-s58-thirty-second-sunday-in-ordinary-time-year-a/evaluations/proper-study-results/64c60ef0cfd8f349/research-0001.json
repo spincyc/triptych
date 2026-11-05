@@ -1,0 +1,27 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Changed only the descriptive first-reading element name in chronology-inputs.toml. Generated passage cell now reads First reading (appointed Wisdom 6:12\u201316); Vulgate equivalent: Wis. 6:13\u201317. Citation/ref and canonical query remain Wisdom 6:13-17, system vulgate, with exactly Wis.6.13 through Wis.6.17. Reread OLM no. 154 printed p. 85/PDF p. 139, retained dated USCCB first reading, and held Challoner Wisdom 6. Regenerated record, annotations and table through their owners; currency and explicit visible-row/query assertions passed.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "note": "Corrected shared event israel.monarchy.david-traditional-era orientation_title and added its existing supported orientation_qualification. Both generated attribution rows print David's reign in the usual chronology and Disputed: B.C. 1055\u20131015 (Corbett also reports writers dating the reign 30\u201350 years later). The retained Corbett opening and exact registered printed-page passage were reread. No numeric date, source label, source-library fingerprint, attribution binding, composition bound, or known/unresolved occasion was changed. Full source basis remains recoverable from the shared subject and its exact source references.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": [
+    "Changed target research files: chronology-inputs.toml, chronology-review.md, scope.md; regenerated chronology.toml, chronology-annotations.tex and chronology-table.tex. Shared authored change: src/sources/chronology/events.yaml, two existing presentation fields only. Shared generated change: src/sources/chronology/coverage.tsv, exactly two stale rows from the earlier Psalm 22/62 attribution bindings. No code, workflow, other leaf, source payload, binding pin, commit or push was changed by this worker.",
+    "Validation evidence in .scratch/pc-s58-v19-research-1: chronology-validate.json has status ok/problems []; record-check.txt and annotations-check.txt are current; coverage-build.json and coverage-check.txt show 1,898 current rows; source-validate.txt passes; annotation-tests.txt reports all 44 tests passing; repair-assertions.txt is true; diff-check.txt is empty. annotations.json and repaired-rows.json preserve the exact visible cells and canonical loci. David row keys are row-85017d44138f4354 and row-b79aa84c431dec69; Wisdom remains row-34bb557c92c501a0.",
+    "Exact existing-consumer census: .scratch/pc-s58-v19-research-1/affected-chronology-records.txt, 31 records including target and 30 others. Shared source bytes were announced stable before coordinator-serialized integration. Coordinator reports all 30 other leaves generated-current (226 artifacts), all 74 admitted reader outputs passing isolated converter/fidelity checks, two held/withdrawn Claude 1962 Fourteenth outputs excluded, and all 2,578 protected files identical to baseline. Exactly 90 generated files changed as expected; the other leaves' chronology TOML bytes are unchanged. Their remaining per-leaf schema/content gate assessment is coordinator-owned and was still running at this handoff; no clean content verdict or renewed independent review is implied.",
+    "No new acquisition or registration is required for this repair. Existing complete acquisition receipts and bytes remain at .scratch/pc-s58-v19-research-0/all-acquisition-outcomes.json and its named payloads; reconciled exact registration identities remain at .scratch/pc-s58-v19-registration-0/reconciled-receipts.json; earlier complete evidence remains in .scratch/pc-s58-research-0 and context-0. Preserve these through the following registration stage. This worker's inspected-payload-hashes.txt records exact checked OLM, USCCB, Corbett and held Wisdom payload hashes. No facsimile collation of Corbett was newly claimed: the retained article opening and existing exact passage record were read.",
+    "Research scope and chronology review supersede their earlier acceptance of unqualified visible labels. Existing interpretations, twelve appointment keys, long/short and Communion alternatives, evidence limits and publication mode remain. Source inventory/family bookkeeping and make check-sources after changed research hashes belong to the following registration/integration boundary; this worker did not refresh shared inventories concurrently with other-leaf generation.",
+    "Limits retained: complete 2008 altar-book authentication remains unavailable; qualified 2011 U.S. digital transmission does not lift source-text holds; no new currentness, rights clearance, local-calendar selection, scholarly consensus, source acquisition, finished study, print inspection or publication acceptance is asserted. The relative alternative is Corbett's report of other writers and is not promoted to an independently answerable absolute chronology."
+  ],
+  "stage": "research",
+  "summary": "Repaired both forwarded chronology findings through existing source-owned fields. The target visibly identifies the appointed Wisdom range and its unchanged Vulgate query equivalent, and both David-attribution rows preserve Corbett's usual chronology and reported 30\u201350-years-later alternative without invented endpoints."
+}

@@ -1,6 +1,6 @@
 {
   "id": "proper-study",
-  "version": 17,
+  "version": 19,
   "description": "Source-first proper study, concise study and standalone homily, with independent reviews",
   "default_effort": "high",
   "document_argument": "proper",
@@ -127,8 +127,8 @@
         },
         {
           "id": "source-projection-current",
-          "command": "tools/tpt source-reader structure --check",
-          "required_result": "The source-library reading projection must reflect the registered records. Run make source-projection after source registration."
+          "command": "tools/tpt source-reader structure --strict --check",
+          "required_result": "The strict working source-library projection must reflect the registered records. Generate it after source registration; aggregate browser products wait until publication declarations and release records exist."
         }
       ],
       "pass_transition": "research-review",

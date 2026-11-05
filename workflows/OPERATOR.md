@@ -16,7 +16,7 @@ preserves the established first four pages for the concise companion when
 printed, while its remaining argument and the expansive study follow their
 distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 17. Its current path publishes source
+`proper-study` workflow is at version 19. Its current path publishes source
 and reader editions; optional print rendering is separate. The version
 paragraphs below retain the contracts of earlier runs.
 
@@ -47,7 +47,7 @@ complete adopted expansion; mixed or partial shapes fail closed. Other
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 
-### Current source and reader path: version 17
+### Current source and reader path: version 19
 
 The sequence is context, research, reusable source registration, cold research
 review, expansive study and cold review, concise study and cold review, homily
@@ -70,6 +70,43 @@ new worker with no authoring conversation history, exactly the compiled packet
 and its result destination. Never prefill a PASS from preparatory work or use
 an author as the cold reviewer of that work. Follow each packet's repair route;
 the linear diagram shows the passing path, not permission to bypass a loop.
+
+Version 19 separates the research projection from aggregate publication
+products. Source registration generates and checks the strict ordinary working
+source-reader projection and runs the source audits. Its preflight repeats the
+strict projection check. The complete browser descriptor is recorded and checked
+at installation, after all output declarations and release records exist.
+Version 18's registration instruction asked the web-editions producer to read
+an unfinished scaffold before those later stages could create its inputs.
+Do not invent release placeholders or partial descriptors to cross that boundary.
+The complete publication checks remain mandatory. Active version-18 runs must
+be reseeded; their recorded work supplies evidence, never inherited acceptance.
+
+Version 18 aligns authoring packets with the single-source schema and reader
+contracts. Proper regions place components by key; their paths and membership
+stay in `proper-components.toml`. Publication identities, output IDs and labels,
+and release IDs and owning catalogs are derived rather than copied into records.
+Component contract pins remain explicit. Revision timestamps come from Git;
+authors record provenance and contributions without writing timestamp declarations.
+All three outputs have readers under one leaf's web declaration. The canonical
+conversion receives the workflow's cold web review; companions are converter-verified
+unless their own inspection is recorded. Active version-17 runs must be reseeded;
+historical terminal records retain their original identities.
+
+Before dispatching `generate-web`, the coordinator commits the reviewed source
+and evidence checkpoint. Workers check all three edition revisions with
+`scripts/_edition_revision.py show --json` and require `uncommitted: false`;
+they have no commit authority. Dirty source closures receive the conversion's
+current time, so their web bytes cannot be compared across later conversions.
+Keep the checkpoint stable through web review and publication, and repeat the
+checkpoint and review after a source repair.
+
+Recording a completed web inspection does not change its own source seal.
+Source identities project only `inspected`, `inspected_by` and `inspection` out
+of the leaf's web declaration and its recognized companion inspection tables.
+The declaration's `reviewed` date, eligibility, constructs, contents and withdrawal
+remain sealed, as do actual source and converted reader bytes. The full original
+declaration still passes its owning validator.
 
 Version 17 starts every leaf from a document type (the convention is owned by
 `guidance/document-schemas.md`). Authors write section files and the
@@ -116,31 +153,15 @@ release concerns remain checked, while document-specific checks stay scoped to
 the owner. These are currentness checks against their declared inputs, not a new
 scholarly review or a clearance of inherited chronology/currentness findings.
 
-The source-and-reader path gives the driver four steps that no stage owns,
-first exercised by the Claude resumed Fifth Sunday run on 2026-11-05:
-
-- Run every stage, gate and worker with `PYTHONDONTWRITEBYTECODE=1`, the
-  workspace `TRIPTYCH_BROWSER_DATA_ROOT`, and Python with the pinned
-  Markdown first on `PATH`; the web probes refuse an unpinned Markdown.
-- After the `source-registration` result, run `make source-projection`
-  before advancing into `research-preflight`, whose
-  `source-projection-current` check compares the working projection.
-- Commit the leaf after `artifact-gates` passes, and again after any later
-  source repair, before `generate-web` converts it. A reader's revision stamp
-  derives from git history, so a conversion of uncommitted sources carries
-  the conversion time; `snapshot-web` and the publication gate refuse it.
-- After `install-publication`, commit its listed paths, run
-  `tools/browser-products record` and `check`, then `make
-  refresh-release-bindings ADOPT=1 ONLY="<this production's paths>"`, and
-  commit the descriptor and binding records before `advance --run-gate`. A
-  new leaf changes the inputs of several product families, and the
-  `release-bindings`, `public-alpha` and `document-catalogue` gates read the
-  re-recorded descriptor.
-
-No stage builds a PDF, but the Pages `print-compile` job typesets every
-admitted edition, the new leaf's three included, and deploy waits on it.
-Before pushing, compile them with `tools/native-print-compile prepare --only
-publication:<provider>/<leaf>` (one `--only` per output) and `compile`.
+Two driver practices hold for every source-and-reader run. Run every stage,
+gate and worker with `PYTHONDONTWRITEBYTECODE=1`, the workspace
+`TRIPTYCH_BROWSER_DATA_ROOT`, and Python with the pinned Markdown first on
+`PATH`. The web probes refuse an unpinned Markdown, and a bytecode cache
+written under `src/` counts as a browser-product input. No stage builds a PDF,
+but the Pages `print-compile` job typesets every admitted edition, the new
+leaf's three included, and deploy waits on it. Before pushing, compile them
+with `tools/native-print-compile prepare --only publication:<provider>/<output>`
+(one `--only` per output) and `compile`.
 
 Print one selected edition with `tools/print-document`, as described in
 `docs/printing.md`, or use the separate manual print CI path. Browser printing
@@ -157,7 +178,7 @@ replay remain available with their original identity and `deterministic: null`.
 ### Historical proper-study print path: through version 15
 
 The following receipt behavior and version narratives describe earlier print
-runs. They do not add PDF stages or approvals to version 17. Omitting `--mode`
+runs. They do not add PDF stages or approvals to the current source path. Omitting `--mode`
 from the standalone `_proper_study.py` CLI, or passing `--mode print`, retains
 the historical exact-PDF checks; every current engine invocation opts into
 source mode explicitly.
@@ -1289,7 +1310,7 @@ and it applies to runs seeded after it.
 
 The following diagram and lifecycle describe the legacy `proper` workflow
 (1962 propers synthesis production), with its historical print contract. They
-are not the current `proper-study` version-17 path shown above. `proper` and
+are not the current `proper-study` source path shown above. `proper` and
 `proper-finish` were retired on 2026-11-04 and seed no new run; this section
 and the version history below it are the record their existing runs are read
 against. Its stages are:
@@ -1684,8 +1705,9 @@ companion-conformance lane owns them. `check-proper-components --aux` requires
 the brief synthesis to begin on page 3: it verified only that three anchors
 were adjacent, and accepted a whole reader order displaced by a page-1
 overflow. That version made `source-registration` regenerate the then-tracked
-source projection it changed. Current source-only runs instead use the
-outside-Git browser products and descriptor checks in `guidance/web-data.md`.
+source projection it changed. Current source-only runs instead check the
+outside-Git working source projection during research and the complete browser
+descriptor at installation, as the current `proper-study` path above explains.
 Every agent's brief says it is the whole of its dispatch and spawns
 nothing, after a lane that fanned out inside itself exhausted a host's budget
 and took four siblings down with it. And `author-proper` and

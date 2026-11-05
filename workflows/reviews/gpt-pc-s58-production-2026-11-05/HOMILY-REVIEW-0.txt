@@ -1,0 +1,106 @@
+Coordinator retention note: the worker record below is copied verbatim from
+`.scratch/pc-s58-v19-homily-review-0/review-evidence.txt`. References to the assigned
+directory describe that original scratch workspace; the engine owns the
+structured verdict and its terminal archive.
+
+Independent homily source review: proper-study v19, run 64c60ef0cfd8f349,
+homily-review iteration 0. Verdict: PASS with advisory HOM-001.
+
+Artifact and reading extent
+
+Read the complete 736-line compiled packet in three sequential ranges; read
+the applicable personal and repository guidance, the complete three-document
+profile, postconciliar profile, editorial standard, document schemas and
+source-library guidance. No nested agent was used.
+
+Read sections/homily-10-spoken.tex continuously, then reread every paragraph
+with line numbers. Read all of sections/homily-90-notes.tex and homily.tex.
+Read research/interpretations.md, scope.md, acquisition-handoff.md and the
+relevant source bindings. Compared the speech with the complete expansive
+sections/40-charity-within.tex and sections/50-comparison.tex and the relevant
+arguments throughout synthesis-05-commentary.tex. Read the production audit
+to distinguish its source count and silent textual rehearsal from a human
+delivery. The upstream study/synthesis PASS metadata corroborates only the
+note's historical acceptance statement; it was not used as source proof.
+
+Direct source checks actually performed
+
+* Augustine, NPNF first series volume 6, Sermon XLIII / Benedictine XCIII,
+  §§1–17, complete, in the registered CCEL source.txt, physical lines
+  38760–39095. SHA-256 ce37179876e5e5c9d8e7a6f1f17b8796c4fdf3ffd2815acb82a1c734c57ecd18.
+  Checked actual beneficial works among the foolish (§§3–5), charity as oil
+  (§5), shared death rather than cooled charity (§6), God's gift and olive
+  (§9), dependence on praise (§§10–12), humility and forgiveness (§§13–14),
+  the closed door and divine recognition (§§15–16), and enduring watchfulness
+  (§17). The homily preserves these claims without attributing the modern
+  Mass connections to Augustine.
+* Aquinas, Super I Thessalonicenses 4 lectio 2, paragraph 87867, complete.
+  Independently converted the retained complete HTML using Pandoc 3.11 and
+  read lines 541–655 of this lane's aquinas-thess.txt. Source HTML SHA-256
+  fe77f056e47df4d73eab61c0c496d465b657d35b60e7fc201f9e0579bab2ef95.
+  The account explicitly permits sorrow for bodily loss and separation and
+  grounds resurrection in Christ; the homily does not import the lecture's
+  detailed long-form material into the short appointment.
+* Read Wisdom 5–7, Matthew 25 and 1 Thessalonians 4 from the registered
+  Challoner/Gutenberg verse files; all three whole-file hashes match the
+  dossier witness map. The relevant native loci are Wisdom 6:13–17,
+  Matthew 25:1–13 and 1 Thessalonians 4:12–13. Independently converted and
+  read the retained official USCCB 8 November page's full reading body,
+  including both second-reading forms and Gospel, from exact HTML hash
+  a8557d96d2f11d294fa76abbbf801834efccf5985a33ad33c20f7263a7bee61d.
+  The homily stays within the common second-reading verses and does not
+  add the Challoner Gospel's bride to the approved appointment.
+* Independently rasterized and visually inspected Latin digital Missal
+  physical pp. 294–295, FDLC pp. 8–9 (prayer excerpts), and qualified U.S.
+  2011 digital-book physical p. 490 / printed p. 492. Complete PDF hashes:
+  0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7;
+  70fb1ff333ef512ea97469776f70255d5d95facead78ffe45afbc05f5db6727a;
+  1cf11339cb0c3a25d78dd8d1fd94c88a50e7175d7122cd562cfb02863df9cb7b.
+  The Collect's freedom for whole-person service, offerings prayer's
+  sacramental Passion and devout inward response, and post-Communion
+  preservation through the Spirit support the analytical descriptions.
+  HOM-001 records the single addressee imprecision. No source text is being
+  admitted or redistributed by this review.
+
+Judgment checks
+
+The argument would materially change under unrelated readings: common sleep
+removes physical stamina as the distinction, the shared lamps expose the
+purpose of actual service, and the vessels/request for oil expose the failure
+of borrowed approval. Wisdom's prior approach and Augustine's olive image
+make charity a received gift; the prayers connect this conversion to service
+and Eucharistic participation. Paul's grief and resurrection then return the
+sleeping virgins to hope beyond death. The concrete second-person response
+at line 35 follows this argument: continue needed help while seeking the
+other person's good when thanks are absent.
+
+The speech explains charity, gives recoverable scenes and transitions, and
+contains no scholarly apparatus, stage directions, invented experience,
+clerical identity, recited prayer, stock response formula, question answered
+in the next breath, recurring slogan or authority-only lecture. Its conclusion
+reaches welcome in Christ while retaining judgment and the need for mercy.
+I found no recurring register defect or blocking source defect.
+
+The independent wc -w result is 1,281. Division by the declared rates gives
+10.248–11.645 minutes before longer pauses. This is a text-based estimate,
+not a timed or audible performance. No source/HTML or print rendering of the
+homily was built or visually inspected in this lane.
+
+Identity, limits and mutations
+
+input-check.json records a fresh read-only comparison of all eight files in
+the packet's immutable REVIEW_INPUTS.files map: all match. Packet SHA-256:
+8a50c2e6db1ebb393b44c921420c7b6e7c72243e280bb429493ee6eed5486e92.
+No engine seal was created or refreshed.
+
+This check does not authenticate the complete 2008 altar book or the publisher
+transmission of the U.S. 2011 candidate; the terminal note keeps those bounds.
+It does not claim whole-work Aquinas review, patristic facsimile collation,
+fresh calendar research, intended-reader testing, human delivery, publication
+approval or a print/web acceptance. Existing mechanical content gates were
+not rerun as substitutes for this review.
+
+Only this lane's assigned scratch directory was written: result.json,
+review-evidence.txt, input-check.json, two HTML-to-text derivatives and five
+source-page PNGs. Canonical prose/evidence, engine files/seals, workflow/code,
+publication records, Git index/history and remote refs were not changed.

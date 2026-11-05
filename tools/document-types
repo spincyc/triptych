@@ -112,9 +112,9 @@ EXAMPLES = {
             (
                 "claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints: current",
             ),
-            "--check writes nothing and exits 1 on any generated file that "
-            "differs from its regeneration, an orphaned generated file, or an "
-            "authored copy of a generated page",
+            "--check validates the current assembly without writing snapshots; "
+            "malformed inputs, orphaned generated files, and authored copies "
+            "of generated pages are refused",
         ),
         Example(
             "tools/document-types refresh --check --leaf gpt/liturgy/roman-rite/"
@@ -180,33 +180,32 @@ def render_verb(arguments: argparse.Namespace) -> dict[str, object]:
 
 
 def refresh_verb(arguments: argparse.Namespace) -> dict[str, object]:
-    """Write or check every generated file of the selected leaves."""
+    """Write optional snapshots, or validate the current source assembly."""
     if arguments.all == bool(arguments.leaf):
         raise ValueError("name leaves with --leaf, or use --all")
     leaves = types.opted_in_leaves(ROOT) if arguments.all else [_leaf(item) for item in arguments.leaf]
-    results = types.refresh(ROOT, leaves, check=arguments.check)
-    stale = sum(len(result.changed) for result in results)
+    if arguments.check:
+        assembly = types.Assembly(ROOT)
+        results = []
+        for leaf in leaves:
+            if types.declaration(ROOT, leaf) is None:
+                raise ValueError(f"{leaf.relative_to(ROOT / 'src')}: declares no [{types.DECLARATION}] type")
+            files = assembly.files(leaf)
+            results.append({"leaf": leaf.relative_to(ROOT / "src").as_posix(),
+                            "changed": [], "current": len(files), "removed": []})
+        return {"status": "ok", "stale": 0, "leaves": results}
+    results = types.refresh(ROOT, leaves, check=False)
     conflicts = [f"src/{result.leaf}/{path}" for result in results for path in result.conflicts]
-    orphans = [f"src/{result.leaf}/{path}" for result in results for path in result.orphans]
-    if arguments.check and orphans:
-        raise ValueError("generated files nothing generates any more: " + ", ".join(orphans)
-                         + "; run `tools/tpt document-types refresh` to remove them")
     if conflicts:
         raise ValueError("authored copies of generated pages: " + ", ".join(conflicts)
                          + "; delete them and let the document type's slot place the page")
     payload: dict[str, object] = {
         "status": "ok",
-        "stale": stale if arguments.check else 0,
+        "stale": 0,
         "leaves": [{"leaf": result.leaf, "changed": list(result.changed),
                     "current": len(result.current), "removed": list(result.orphans)}
                    for result in results],
     }
-    if arguments.check and stale:
-        names = [f"src/{result.leaf.split('/', 1)[0]}/{result.leaf.split('/', 1)[1]}/{path}"
-                 for result in results for path in result.changed]
-        raise ValueError(
-            f"{stale} generated file(s) differ from regeneration; run "
-            f"`tools/tpt document-types refresh` rather than editing them: " + ", ".join(names))
     return payload
 
 
@@ -264,10 +263,10 @@ def main(argv: list[str] | None = None) -> int:
     show.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
     with_examples(show, EXAMPLES["render"])
 
-    writer = sub.add_parser("refresh", help="write, or --check, every generated file of opted-in leaves")
+    writer = sub.add_parser("refresh", help="write optional snapshots, or --check the live assembly")
     writer.add_argument("--leaf", action="append", default=[], help="<provider>/<document>; repeatable")
     writer.add_argument("--all", action="store_true", help="every leaf whose publication.toml declares a type")
-    writer.add_argument("--check", action="store_true", help="write nothing; fail on any stale generated file")
+    writer.add_argument("--check", action="store_true", help="validate live assembly without requiring current snapshots")
     writer.add_argument("--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)")
     with_examples(writer, EXAMPLES["refresh"])
 

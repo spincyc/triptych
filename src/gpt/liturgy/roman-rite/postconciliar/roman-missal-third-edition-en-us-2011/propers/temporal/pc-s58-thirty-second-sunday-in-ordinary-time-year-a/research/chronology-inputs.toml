@@ -1,0 +1,81 @@
+schema = 1
+record_type = "proper-chronology-inputs"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"
+calendar = "postconciliar"
+formula = "PC-S58-A"
+shared_owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/32/propers/verified.md"
+
+[[elements]]
+key = "entrance"
+name = "Entrance antiphon"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/32/propers/verified.md"
+citations = [{ ref = "Cf. Psalm 87:3", citation = "Psalm 87:3", system = "vulgate", kind = "adaptation" }]
+
+[[elements]]
+key = "collect"
+name = "Collect"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/32/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal oration with no appointed biblical citation; thematic affinities create no additional Scripture appointment."
+
+[[elements]]
+key = "first-reading"
+name = "First reading (appointed Wisdom 6:12–16); Vulgate equivalent"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [{ ref = "Wisdom 6:13-17", citation = "Wisdom 6:13-17", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "psalm"
+name = "Responsorial psalm"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [{ ref = "Psalm 63:2,3-4,5-6,7-8", citation = "Psalm 63:2,3-4,5-6,7-8", system = "hebrew", kind = "appointed" }, { ref = "Psalm 63:2b", citation = "Psalm 63:2b", system = "hebrew", kind = "response" }]
+
+[[elements]]
+key = "second-reading-long"
+name = "Second reading: long"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [{ ref = "1 Thessalonians 4:13-18", citation = "1 Thessalonians 4:13-18", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "second-reading-short"
+name = "Second reading: short"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [{ ref = "1 Thessalonians 4:13-14", citation = "1 Thessalonians 4:13-14", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "acclamation"
+name = "Gospel acclamation"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [{ ref = "Cf. Matthew 24:42a,44", citation = "Matthew 24:42a,44", system = "vulgate", kind = "adaptation" }]
+
+[[elements]]
+key = "gospel"
+name = "Gospel"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/propers/verified.md"
+citations = [{ ref = "Matthew 25:1-13", citation = "Matthew 25:1-13", system = "vulgate", kind = "appointed" }]
+
+[[elements]]
+key = "offerings"
+name = "Prayer over the Offerings"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/32/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal oration with no appointed biblical citation; thematic affinities create no additional Scripture appointment."
+
+[[elements]]
+key = "communion-psalm"
+name = "Communion: Psalm"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/32/propers/verified.md"
+citations = [{ ref = "Cf. Psalm 22:1-2", citation = "Psalm 22:1-2", system = "vulgate", kind = "adaptation" }]
+
+[[elements]]
+key = "communion-luke"
+name = "Communion: Luke"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/32/propers/verified.md"
+citations = [{ ref = "Cf. Luke 24:35", citation = "Luke 24:35", system = "vulgate", kind = "adaptation" }]
+
+[[elements]]
+key = "after-communion"
+name = "Prayer after Communion"
+owner = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/shared/ordinary-time/weeks/32/propers/verified.md"
+citations = []
+non_scriptural_reason = "Composed Missal oration with no appointed biblical citation; thematic affinities create no additional Scripture appointment."

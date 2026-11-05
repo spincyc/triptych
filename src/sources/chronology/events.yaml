@@ -37,6 +37,75 @@ events:
           to: {year: 701, era: bc}
           label: "from the closing year of Ozias, King of Juda (740 B.C.); no prophecies appear to be later than 701 B.C."
   # --- life-of-christ ----------------------------------------------------
+  - id: life-of-christ.parables-by-the-sea
+    title: Jesus teaches the parables beside the Sea of Galilee
+    orientation_title: "Jesus teaches in parables"
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        orientation_qualification: "Maas's chronology"
+        basis: >-
+          A. J. Maas, Jesus Christ, Catholic Encyclopedia VIII (1910),
+          III.B, places the Lake Sermon of seven parables in his Third
+          Journey, headed "About Pentecost, A.U.C. 780- Autumn, 780", with
+          Matthew 13 among its explicit references. The same article's
+          chronological discussion equates A.U.C. 782 and A.D. 29. Applying
+          that source-internal equivalence gives A.D. 27 for the teaching.
+          Matthew 13:1-3 and 13:24 identify Jesus' teaching and its location;
+          the date belongs to his telling, not the fictional harvest.
+        sources:
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+          - bible:douay-rheims:Matt.13.1
+          - bible:douay-rheims:Matt.13.24
+        note: >-
+          One identified traditional harmony's chronology. The derived year
+          does not settle the wider disputes about the public ministry or
+          date the Gospel's later composition. The seven-parable grouping
+          includes explanation given inside the house at Matthew 13:36.
+        date:
+          precision: year
+          from: {year: 27, era: ad}
+          label: "A.D. 27, derived from Maas's A.U.C. 780 Lake Sermon"
+          derivation:
+            rule: "Maas explicitly equates A.U.C. 782 with A.D. 29; 780 - (782 - 29) = 27."
+            inputs: [chronology.maas-auc-782-ad-29-calibration]
+
+  - id: life-of-christ.faith-and-prayer-after-the-fig-tree
+    title: Jesus teaches faith and prayer after the withered fig tree
+    orientation_title: "Jesus teaches faith and prayer"
+    dates:
+      - profile: catholic-traditional-v1
+        disposition: preferred
+        basis_class: derived
+        orientation_qualification: "Maas's chronology"
+        basis: >-
+          A. J. Maas, Jesus Christ, Catholic Encyclopedia VIII (1910),
+          III.B, heads the Ninth Journey "February, A.U.C. 782- Passover,
+          782". Its concluding Holy Week sequence places on Tuesday the
+          disciples' wonder at the withered fig tree and Jesus' instruction
+          on the efficacy of faith. Mark 11:20-25 gives that episode and
+          instruction. Maas's express A.U.C. 782 = A.D. 29 equivalence
+          supplies the calendar year within this harmony.
+        sources:
+          - artifact.catholic-encyclopedia.volume-8.new-york-1910.newadvent-08377a-f81e2c23-article-text
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-ninth-journey-fig-tree
+          - passage.catholic-encyclopedia.volume-8.new-york-1910.maas-journeys-three-five
+          - bible:douay-rheims:Mark.11.20
+          - bible:douay-rheims:Mark.11.24
+        note: >-
+          The event belongs to the final Jerusalem visit, not the whole
+          ministry and not the writing of Mark. The named harmony's year is
+          preserved without resolving other traditional Passion chronologies.
+        date:
+          precision: year
+          from: {year: 29, era: ad}
+          label: "A.D. 29, derived from Maas's A.U.C. 782 final Jerusalem visit"
+          derivation:
+            rule: "Apply Maas's explicit A.U.C. 782 = A.D. 29 equivalence to his dated Ninth Journey."
+            inputs: [chronology.maas-auc-782-ad-29-calibration]
+
   - id: life-of-christ.nativity
     title: The Nativity of Our Lord
     note: >-
@@ -4218,7 +4287,7 @@ events:
 
   - id: israel.monarchy.david-traditional-era
     title: David (reign in the usual chronology)
-    orientation_title: "David's reign"
+    orientation_title: "David's reign in the usual chronology"
     note: >-
       A reference era for an explicitly witnessed traditional attribution to
       David. The regnal span orients the reader to the attributed figure; it
@@ -4252,6 +4321,8 @@ events:
           is not converted into new endpoints. Only an explicit
           traditional-attribution binding may use this contextual subject;
           the date is neither a composition interval nor a narrated event.
+        orientation_qualification: >-
+          Corbett also reports writers dating the reign 30–50 years later
         date:
           precision: range
           from: {year: 1055, era: bc}
@@ -4368,6 +4439,7 @@ events:
         disposition: preferred
         basis_class: reported-excluded
         reporting_exception: ussher-reported-by-a-ranked-catholic-source
+        orientation_qualification: Haydock edition reporting Ussher
         basis: >-
           The same Haydock edition marks the opening of 1 Kings 23 "A. M. 2945,
           A. C. 1059"; verses 24-25 of that chapter place David and his men in
@@ -11297,6 +11369,7 @@ events:
         disposition: preferred
         basis_class: reported-excluded
         reporting_exception: ussher-reported-by-a-ranked-catholic-source
+        orientation_qualification: Haydock edition reporting Ussher
         basis: >-
           The 2014 Loreto / Feeney Memorial printing of the Douay-Rheims with
           Haydock's commentary carries a continuous marginal chronology in the

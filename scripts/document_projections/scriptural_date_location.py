@@ -10,6 +10,7 @@ model is ``scripts/_proper_chronology_page.py``.
 from __future__ import annotations
 
 import re
+from pathlib import Path
 
 import _proper_chronology as wiring
 import _proper_chronology_page as page
@@ -23,16 +24,89 @@ OUTPUTS = {
 }
 KINDS = ("proper-1962", "proper-postconciliar")
 
+_INPUT_STATE: dict[Path, tuple] = {}
+
+
+def prepare(root: Path) -> None:
+    """Invalidate the readers' process caches when canonical inputs change.
+
+    These modules predate operation-scoped document assembly. Their caches
+    may be reused between operations only while every chronology, calendar,
+    concordance, Bible and bibliography input still has the same file identity.
+    No data hash is replaced by these stats: output and provenance seals still
+    hash the actual bytes. This only decides whether parsed objects may be reused.
+    """
+    import _chronology
+    import _deuterocanon
+    import _psalms
+    import _psalter
+
+    sources = root / "src/sources"
+    paths = set()
+    for tree, suffixes in (
+        ("chronology", {".yaml", ".toml"}), ("calendars", {".yaml"}),
+        ("bibles", {".yaml", ".json"}), ("works", {".toml", ".tsv"}),
+    ):
+        paths.update(path for path in (sources / tree).rglob("*")
+                     if path.suffix in suffixes and path.is_file())
+    state = tuple((str(path), stat.st_dev, stat.st_ino, stat.st_size,
+                   stat.st_mtime_ns, stat.st_ctime_ns)
+                  for path in sorted(paths) for stat in (path.stat(),))
+    if _INPUT_STATE.get(root) == state:
+        return
+    for module in (_chronology, wiring, page, _deuterocanon, _psalms, _psalter):
+        for value in vars(module).values():
+            clear = getattr(value, "cache_clear", None)
+            if getattr(value, "__module__", None) == module.__name__ and callable(clear):
+                clear()
+    if root not in _INPUT_STATE and len(_INPUT_STATE) >= 4:
+        _INPUT_STATE.pop(next(iter(_INPUT_STATE)))
+    _INPUT_STATE[root] = state
+
+
+def dependencies(context) -> set[Path]:
+    """Canonical inputs of the computation, including cited bibliography.
+
+    The chronology adapter owns the cold read trace; the source graph owns
+    citation ancestry. Neither a hand-maintained date list nor a generated
+    leaf snapshot serves as the dependency authority.
+    """
+    from _document_schema import _evidence_ancestry
+
+    try:
+        reads = wiring.computation_reads(context.document, root=context.root,
+                                        provider=context.provider)
+    except wiring.ChronologyWiringError as exc:
+        if ("missing appointment dependency:" not in str(exc)
+                or not str(exc).endswith("research/chronology-inputs.toml")):
+            raise
+        # The absent-input page is intentional. Adding the appointment input
+        # changes assembly bytes and therefore the render identity.
+        reads = {"reads": [], "modules": [], "source_files": [], "sources": []}
+    paths = {context.root / value for key in ("reads", "modules", "source_files")
+             for value in reads[key]}
+    paths.update(_evidence_ancestry(context.root, set(), source_ids=reads["sources"]))
+    paths.update(context.root / name for name in (
+        "scripts/document_projections/scriptural_date_location.py",
+        "scripts/_proper_chronology_page.py", "scripts/_proper_chronology.py")
+                 if (context.root / name).is_file())
+    return paths
+
 
 def render(context) -> dict[str, str]:
     if context.kind not in KINDS:
         raise ValueError(f"{context.document}: {NAME} serves proper leaves, not {context.kind!r}")
-    found, projected, absent = page.projection(
-        context.document, root=context.root, provider=context.provider)
+    import yaml
+    corpus_root = context.root / "src/sources/chronology"
+    try:
+        found, projected, absent = page.projection(
+            context.document, root=context.root, provider=context.provider, corpus_root=corpus_root)
+    except yaml.YAMLError as exc:
+        raise ValueError(f"{context.document}: malformed Scripture chronology input: {exc}") from exc
     wanted = context.outputs or tuple(OUTPUTS)
     files = {
         OUTPUTS[variant]: page.render(projected, document=context.document, variant=variant,
-                                      root=context.root, absent=absent)
+                                      root=context.root, corpus_root=corpus_root, absent=absent)
         for variant in wanted
     }
     if found is not None and projected is not None:

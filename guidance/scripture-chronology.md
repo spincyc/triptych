@@ -339,8 +339,10 @@ a load error, and two claims with neither is a load error, because silence
 about which is which is the thing that later reads as a decision nobody made.
 The rank judgment itself remains reviewed authored data, as §4.2 states.
 
-Forbidden: numeric confidence, model scores, and harmonising two claims into a
-third nobody asserted.
+Forbidden in the candidate set: numeric confidence, model scores, and
+harmonising two claims into a third nobody asserted. The separately reviewed
+reader estimates of §10.3 orient the reader without becoming candidates or
+settling their disagreement.
 
 ### 4.5 Admissibility, which is not rank, and is decided before it
 
@@ -1111,6 +1113,50 @@ for lengths — the whole Judges family among them, each anchored on
 `israel.judges.period` as though counted from its start. Nothing computed with
 them, which is the only reason no wrong date had yet been produced.
 
+### 10.3 Calendar orientation for readers
+
+On 2026-11-05 the maintainer asked for useful approximate B.C./A.D. orientation
+instead of unresolved labels and exhaustive competing dates on the short
+date page. `orientation.yaml` now holds `calendar_estimates` alongside its
+date-free descriptions. This is a presentation layer over the evidence, not
+a new evidence profile or a replacement query answer.
+
+Each estimate names one existing subject, its actual relation and evidence
+profile, a structured calendar date, an explicitly approximate label, a
+visible qualification, source IDs, a source-grounded basis and existing
+temporal subjects as derivation inputs. The loader refuses unknown subjects,
+relations not held by that subject, cascade profiles, profiles with no
+answerable subject claim, missing inputs, duplicate keys and unqualified exact
+labels. Source audit checks the added evidence identities. The estimate is
+used only when that subject, relation and leaf profile reach the passage;
+sharing a biblical book or liturgical component supplies no inheritance.
+
+An estimate may express a broad source interval in calendar years, with its
+rounding or outer-frame rule recorded. It may not invent a specific occasion,
+turn a figure's lifetime into composition, date fictional events inside a
+parable, or use excluded evidence through presentation metadata. David's
+flight from Saul, his regnal reference era, his Jerusalem penitence and
+Absalom's rebellion remain distinct temporal subjects and qualified phases.
+The source's printed A.C. coordinate may orient an A.M. claim without any
+epoch conversion, but the reporting attribution must accompany it.
+
+`kind: anchor-context` dates the named anchor, not the subject. Its `anchor`
+must be an event in the subject's answer and in its input list. The label
+states the relationship and the event: “After the deportation of c. 598–597
+B.C.” remains compatible with composition in the deportation's own year.
+Neither that date nor the first scroll's date becomes a completion year for
+the received Book of Jeremias.
+
+The compact table may consolidate overlapping absolute estimates for the
+same subject, relation, profile, disposition and qualification, or give an
+explicitly labelled span of their proposals. A span describes the spread of
+proposals, not continuous candidate support for every intervening year. It
+may not merge different temporal subjects or silently select a disputed candidate. Full claim
+labels, sources, qualifications and disagreements stay in the evidence
+appendix and audit output. An explicit sourced estimate takes the short
+table's place; it never deletes the underlying candidates. Honest absence
+remains when neither evidence nor a reviewed estimate supports orientation.
+
 ### 10.2 An interval lands on the endpoint its source names
 
 A source that states an interval states what it runs to. Attach it there, and
@@ -1450,7 +1496,8 @@ Descriptions are not chronology assertions: Jesus telling a parable is the
 narrated episode, not a date assigned to its fictional characters. Different
 episodes do not merge just because both dates are unresolved. New labels need
 source review; they may never supply dates or overwrite the original claim
-labels. `_chronology.py` alone reads and validates this metadata. Source seals
+labels. Its separate calendar estimates follow §10.3. `_chronology.py` alone
+reads and validates this metadata. Source seals
 include the descriptive sources actually used by a projection.
 
 Retain concise geographic context in the Context cell, with its uncertainty;
@@ -1478,7 +1525,7 @@ location, or attribution's geographic frame are different facts. Empty or
 uncertain geography does not authorize an invented place. Source review still
 judges that prose; generated pairing is not geographic verification.
 
-Each row describes one relation and temporal subject. It carries all answerable
+Each row describes one relation and temporal subject. Its evidence carries all answerable
 alternatives for exactly the loci printed beside it, with approximation,
 derived dates, durations, dispute and named profile comparisons kept visible.
 Equal answers may share a row across appointed elements, including Gospel

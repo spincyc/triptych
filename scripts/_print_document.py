@@ -343,8 +343,8 @@ def _declared_dependencies(root: Path, recipe: dict) -> list[str]:
 def _dependencies_from_line(root: Path, recipe: dict, prerequisites: str) -> list[str]:
     dependencies = set(recipe["dependencies"])
     for value in prerequisites.split("|", 1)[0].split():
-        if value.endswith(".revision.tex"):
-            continue  # the build's derived stamp (scripts/_edition_revision.py), not a source
+        if value.endswith(".revision.tex") or "/.assembly/" in value:
+            continue  # derived stamp/assembly manifest, never canonical source
         path = Path(value)
         if not path.is_absolute():
             path = root / path
@@ -572,6 +572,14 @@ def _build(recipe: dict, *, output_format: str = "pdf", out: Path | None = None,
     work = _work_root(root, recipe)
     destination = _destination(out if out is not None else work / "output", root)
     recipe = check(recipe, root=root)
+    if recipe["family"] == "publication":
+        from _document_types import Assembly
+        assembly = Assembly(root)
+        leaf = root / "src" / recipe["provider"] / recipe["canonical"]
+        if assembly.files(leaf):
+            from _native_print_bundles import _publication_inputs
+            dependencies, _, _, _ = _publication_inputs(root, recipe, assembly)
+            recipe["dependencies"] = sorted(dependencies)
     software = ("Makefile", "tools/print-document", "scripts/_print_document.py")
     if recipe["family"] == "papal":
         software += ("scripts/_typeset_papal.py", "scripts/_papal_collection.py")
@@ -609,6 +617,10 @@ def _build(recipe: dict, *, output_format: str = "pdf", out: Path | None = None,
     if not product.is_file() or product.stat().st_size == 0:
         raise PrintError("selected recipe did not create its expected nonempty output")
     render_environment = _render_environment(recipe, product, output_format)
+    if family == "publication":
+        manifest = work / "build" / recipe["provider"] / ".assembly" / recipe["document"] / "manifest.json"
+        if manifest.is_file():
+            render_environment["assembly_sha256"] = hashlib.sha256(manifest.read_bytes()).hexdigest()
     if family == "papal":
         generated_source = work / "build" / generated["tex"]
     elif family in {"bible", "reading-plan"}:

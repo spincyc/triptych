@@ -188,6 +188,13 @@ and an identity with no line here is closed.
 
 - Authorized 2026-11-02: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
 
+- Authorized 2026-11-05: provider `gpt`, identity `liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a`.
+
+The 5 November authorization is for Sunday, 8 November 2026, under the
+three-document source/reader contract. It includes completing the proper-study
+workflow, checking its adoption of the no-PDF changes, and publishing the
+validated result to main. It opens only this provider and identity.
+
 - Authorized 2026-11-05: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
 
 ### Reference-only publication scope

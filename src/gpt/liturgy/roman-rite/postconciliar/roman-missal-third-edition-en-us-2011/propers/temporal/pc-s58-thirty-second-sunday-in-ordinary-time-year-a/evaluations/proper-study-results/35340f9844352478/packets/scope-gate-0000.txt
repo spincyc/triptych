@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v18
+WORKFLOW_DIGEST: f3a0f769d5fabb31f191f1cadcc2ab674aed3e7a1d84ddfdb294ecd1fc4b5f39
+RUN_ID: 35340f9844352478
+COMMIT: 858760b8678a913ea21c7100d2058c5fd6beae4b
+STAGE: scope-gate
+ITERATION: 0
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-08","proper":"liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a","provider":"gpt","research_handoff":"none"}
+DOCUMENT_ROOT: src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: []
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

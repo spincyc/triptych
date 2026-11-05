@@ -1,0 +1,53 @@
+Coordinator retention note: the worker record below is copied verbatim from
+`.scratch/pc-s58-v19-web-review-0/evidence-report.txt`. References to the assigned
+directory describe that original scratch workspace; the engine owns the
+structured verdict and its terminal archive.
+
+Independent canonical web conversion review
+Run: 64c60ef0cfd8f349; workflow: proper-study v19; stage: web-review; iteration: 0.
+Disposition: PASS; findings: none.
+
+Reviewed artifact
+build/web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.md
+SHA-256: f67bd573ced15f680948a7f47dad677e7cb5b057a4d319dd3b3c1ba9e9d56bbc
+The scratch reviewed.md is an exact byte copy. The packet.txt copy is also exact.
+Packet SHA-256: 2a2600bd1bf769904fab814f467279309c6fcc17d22280f0615c6b9cce63bfd5.
+No preferred verdict or authoring conversation was used. No other reviewer verdict was consulted.
+
+Actual inspection
+Read the complete compiled packet and governing personal/repository guidance, document schemas, external review handoffs, editorial register requirements, web editions, repository guidance, postconciliar propers, and propers three-document contract. Read all 613 canonical Markdown lines, all 34 endnotes and 12 References. Reviewed the complete argument and register, both interpretation boundaries, both four-sense treatments, appointed text inventory and alternatives, prayer locators, chronology, source apparatus, rights, and revision notices.
+
+Compared all eight canonical authored components with the generated Markdown, with formatting and typography normalized and relocated notes compared separately. There are 214 substantive source lines: 00-opening (6), 01-map (12), 10-treatment (30), 20-texts (61), 30-mercy (34), 40-charity-within (35), 50-comparison (8), 90-apparatus (28). All 34 footnotes match. The one automated unmatched source line is 00-opening.tex:10: its TeX reference becomes Appendix [8](#sec:date-location); the target and actual browser click are correct. This is not a missing-text defect. See source-comparison.json. Read main.tex, web-edition.toml, scope.md, review-dependencies.toml, source-bindings metadata, and chronology-review material. The generated chronology and supporting distinctions were retained; no source rewriting or resealing occurred.
+
+Independently read these exact underlying source loci:
+- Augustine, Sermon 93 (NPNF Sermon XLIII), sections 1-17; source lines 38760-39184 in src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-6/editions/2026-09-17-ccel-web/artifacts/ccel-text-ce371798/source.txt. Checked the Church, lamps/works, interior charity and conscience, sleep/death, flatterers as sellers, gift, and judgment recognition.
+- Chrysostom, Matthew Homily 78.1-2; source lines 43502-43672 in src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt. Checked mercy as oil, lack of abundance, inability to transfer, sellers as poor, urgency before death, and qualified midnight interpretation.
+- Gregory, Gospel Homily 12.1-6 and 23.1-2; source lines 130-137 and 275-281 in src/sources/works/gregory-the-great/homiliae-in-evangelia/editions/2026-09-17-wikisource/artifacts/complete-extracted-text-dc25dd69/gregory-whole.txt. Read actual Latin concerning external works/praise, interior conscience, flatterers as sellers, the Emmaus disciples' love and doubt, hospitality before recognition, and understanding through doing.
+Other supporting authorities, including Aquinas, Bonaventure, and Bellarmine, were checked through the reader notes and dossier rather than a fresh complete reading of their underlying witnesses. This is a bounded conversion review, not a renewed comprehensive research acceptance.
+
+Existing-renderer browser inspection
+Attempting the full tools/public-alpha render_page path was blocked by stale browser-product descriptors (act-history, bibles, calendar, catena, documents, ordinary, paragraphs, propers, readings, rubrics, sources, web-editions). The precise error is retained in preview-build-status.json and preview-build.log. No products, releases, sealed inputs, or declarations were refreshed.
+
+The isolated preview uses the exact canonical Markdown with existing _markdown_render.render_markdown (pinned Markdown 3.10.3), _web_reader_markup.expand, _publication_reader.wrap, and copied existing site/reader CSS and JavaScript. Preview HTML is preview/reader.html. The main wrapper uses the site page classes. It does not reproduce the full site chrome, print action, companion/collection routes, route resolution, or deployment environment. Therefore observations establish the canonical text's behavior under the existing renderer and reader styling, not successful full-site assembly or publication. Coordinator owns that later validation.
+
+Chromium was inspected at desktop 1280x1000 and mobile 390x844. Evidence: browser-desktop.json, browser-mobile.json, clicks.json, table-scroll.json, sense-dom.json, and screenshots. Both widths have 43 meaningful headings, 12 appointed-text anchors, two four-sense definition lists, 34 notes, no duplicate IDs, no broken internal fragment targets among 69 references, no TeX debris, and no body horizontal overflow. Four tables retain their 11/6/16/7 rows and 3/4/3/5 columns. Chronology reflows at mobile width; inventory, comparison, and branching tables scroll horizontally. Actual scrolls reached their last columns (client/scroll widths: 341/561, 341/737, 341/913). Actual clicks reached the Appendix chronology target, first note, and note return target.
+
+Viewed 29 screenshots covering opening, inventory, Gospel, both four-sense treatments, comparison, chronology, branching table, References, last note, and rights at both widths, plus mobile last-column positions and a dedicated desktop confirmation of all charity senses. Three earlier screenshots (mercy-senses-mobile.png, charity-senses-mobile.png, rights-mobile.png) were generated but not viewed separately; their full variants were viewed. An early charity capture omitted the top label because of capture position; the DOM check and charity-senses-confirmed-desktop.png explicitly verified all four labels. No defect was inferred from the incomplete capture.
+
+External URLs
+Probed all 10 distinct source/license links. Eight returned HTTP 200 through requests including redirects. The official GIRM chapter 2 and 7 pages returned 403 to a raw HEAD request, but both were successfully opened by the web browser tool with their correct official content; they were not classified as broken links. See external-link-probes.json. URLs:
+https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-2
+https://www.usccb.org/prayer-and-worship/the-mass/general-instruction-of-the-roman-missal/girm-chapter-7
+This is point-in-time link inspection, not a guarantee of future external availability.
+
+Identity and mutation check
+All 294 monitored paths (292 source/dependency paths plus canonical Markdown and packet) have unchanged SHA-256 values after review; unchanged-inputs.json records an empty changed list. The read-only document-schema identities command reports status ok and these unchanged seals:
+content: 0cfcf63011d82ed1cdb6c0b02e596452832e69e7c20ebe4547f6a04bf08b915b
+evidence: daf43700f5467af002b5a234c72633e1a3f1d5e7670a74478ea7a9cc661b6747
+render: 4abd25ea8f732fe59d415bff2c3198f6b83130a01b6d5e1e24fd7a28f93b82bc
+canonical output: 05b24848eecdf84027e2b1bd88d75172c7ddd9d40cb84d1a4b06118550468e02
+homily output: 2290dd1d18f1bd76c2353a45790d6d29321c5d230fff85102a631d3d6a5e9cb1
+synthesis output: e9d41bf7ac3abb4c13ea0afbeff5ed21a444f9459da088f5e9f75b82b0e4e9b7
+See current-identities.json and input-hashes-before.json.
+
+Only this review's exclusive scratch directory was written. No canonical reader, source, evidence, declaration, workflow, engine/seal, production record, or publication record was changed by this reviewer. No nested agents, commits, or pushes. The isolated Chromium was closed through its own debugging connection. Companion readers, PDFs, full-site assembly, and deployment were not approved.

@@ -11,7 +11,8 @@ Write the research-mode components only from reviewed research. Start the
 leaf from the `proper-study-v1` document type (`guidance/document-schemas.md`,
 Document types): declare `[document]` and `[document.main]` in
 `publication.toml` with the study's metadata fields and the ordered `body` and
-`apparatus` region lists of its own section files, then run
+`apparatus` regions. Place components by key (`{ component = 'opening' }`), with
+their section paths stated only in `proper-components.toml`, then run
 `tools/tpt document-types refresh --leaf {provider}/{proper}`. That command
 writes `main.tex` and the Scriptural Date and Location appendix; never write or
 edit either by hand. Author the complete source-first study: substantive
@@ -87,7 +88,7 @@ Do not repeat the concise four-page opening for every interpretation.
 Every component appears once in a region list; a template macro may format
 its arguments but never choose or import a component dynamically. Put
 work-wide scope and used references in the `apparatus` region; the type
-prints the one canonical generation timestamp and compact rights colophon. Set
+prints this edition's derived revision timestamp and compact rights colophon. Set
 exact provenance from this packet and declare canonical web eligibility.
 
 Before submission, run the research-mode source/component checks and validate

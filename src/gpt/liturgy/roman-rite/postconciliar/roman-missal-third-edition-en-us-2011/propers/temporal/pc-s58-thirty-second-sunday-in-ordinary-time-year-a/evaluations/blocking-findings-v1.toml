@@ -1,0 +1,134 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a"
+provider = "gpt"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 1
+disposition = "PASS"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "sections/homily-10-spoken.tex:27, second sentence"
+problem = "The sentence says the Church 'asks the Spirit to preserve' those who have received, but the Prayer after Communion addresses the Lord and asks for preservation through the outpouring of his Spirit. This distinction is explicit in the inspected Latin witness, physical pp. 294–295, and FDLC's approved English excerpt, p. 9. The requested work of the Spirit is correctly described; the isolated imprecision concerns the prayer's addressee and does not compromise the homily's argument."
+required_result = "When revising this sentence, distinguish the addressee from the requested action: for example, 'The Church gives thanks and asks the Lord to sustain, through his Spirit, the integrity of those who have received.'"
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-001"
+severity = "advisory"
+location = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex:10; sections/synthesis-05-commentary.tex:36 (inherited from sections/10-treatment.tex:21 and sections/30-mercy.tex:31)"
+problem = "The thematic opening says Augustine specifically connects hands raised in prayer with hands extended to the needy. In the checked NPNF witness of Expositions on Psalm 62.10 (heading Psalm LXIII), he repeatedly connects prayer with good works generally and explains Christ’s outstretched hands and mercy; he does not specify the needy in that locus. Applying his point to aid for the needy is reasonable, but that application should remain the study’s rather than being presented as his exact explanation. The related commentary sentence can retain the application with clearer attribution. This narrow precision issue does not change either interpretation or its substantial direct support."
+required_result = "When next editing these passages, distinguish Augustine’s general statement from the study’s application: for example, “He connects the hands raised in prayer with their exercise in good works. Here that connection supports practical care for a neighbor.” In the commentary, “Augustine joins raised hands in prayer to good works; this includes the acts of mercy considered here” would preserve the reasoning. Align the corresponding expansive-study sentences at the same time, without changing the approved source evidence."

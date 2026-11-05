@@ -44,6 +44,8 @@ for each Lectionary cycle. Provider columns link available editions or say
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a -->
 <!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a -->
 
+<!-- triptych-publication-id: liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a -->
+
 | Sunday | Cycle | ChatGPT | Claude |
 | --- | --- | --- | --- |
 | **First Sunday of Advent** | A, B, C | Planned | Planned |
@@ -122,7 +124,8 @@ for each Lectionary cycle. Provider columns link available editions or say
 | **Twenty-ninth Sunday in Ordinary Time** | B, C | Planned | Planned |
 | **Thirtieth Sunday in Ordinary Time** | A, B, C | Planned | Planned |
 | **Thirty-first Sunday in Ordinary Time** | A, B, C | Planned | Planned |
-| **Thirty-second Sunday in Ordinary Time** | A, B, C | Planned | Planned |
+| **Thirty-second Sunday in Ordinary Time** | A | [Full Study Guide](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.html) · [Synthesis](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.html) · [Homily](../web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.html) | Planned |
+| **Thirty-second Sunday in Ordinary Time** | B, C | Planned | Planned |
 | **Thirty-third Sunday in Ordinary Time** | A, B, C | Planned | Planned |
 | **Our Lord Jesus Christ, King of the Universe, the Last Sunday in Ordinary Time** | A, B, C | Planned | Planned |
 

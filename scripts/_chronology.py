@@ -1499,6 +1499,25 @@ class OrientationSetting(NamedTuple):
     basis: str
 
 
+class OrientationCalendarEstimate(NamedTuple):
+    """Reviewed calendar orientation; the underlying candidates remain unchanged."""
+
+    subject: str
+    relation: str
+    profile: str
+    date: Date
+    qualification: str
+    sources: tuple[str, ...]
+    basis: str
+    inputs: tuple[str, ...]
+    kind: str = "estimate"
+    anchor: str = ""
+
+    @property
+    def label(self) -> str:
+        return self.date.label
+
+
 class Corpus(NamedTuple):
     """Everything authored, validated, and keyed the way a query asks for it."""
 
@@ -1514,6 +1533,7 @@ class Corpus(NamedTuple):
     orientation_contexts: tuple[OrientationContext, ...] = ()
     orientation_subject_labels: dict[str, str] = {}
     orientation_settings: dict[str, OrientationSetting] = {}
+    orientation_calendar_estimates: dict[tuple[str, str, str], OrientationCalendarEstimate] = {}
 
     def answers_with(self, claim: Claim) -> bool:
         """Whether the profile the claim was authored under answers with it.
@@ -1993,7 +2013,7 @@ def _load_orientation_contexts(root: Path, books: dict[str, int]) -> tuple[Orien
     if not (root / "orientation.yaml").is_file():
         return ()
     data = _document("orientation", root)
-    _keys(data, {"schema", "numbering", "contexts", "subject_labels", "settings"}, "orientation")
+    _keys(data, {"schema", "numbering", "contexts", "subject_labels", "settings", "calendar_estimates"}, "orientation")
     if not isinstance(data.get("contexts"), list):
         raise ChronologyError("orientation: contexts must be a list")
     contexts = []
@@ -2059,6 +2079,73 @@ def _load_orientation_settings(root: Path, subjects: set[str]) -> dict[str, Orie
     return settings
 
 
+def _load_orientation_calendar_estimates(
+    root: Path, events: dict[str, Event], units: dict[str, Unit],
+    bindings: tuple[Binding, ...], policies: dict[str, Policy],
+) -> dict[tuple[str, str, str], OrientationCalendarEstimate]:
+    if not (root / "orientation.yaml").is_file():
+        return {}
+    raw = _document("orientation", root).get("calendar_estimates", [])
+    if not isinstance(raw, list):
+        raise ChronologyError("orientation: calendar_estimates must be a list")
+    subjects = {**events, **units}
+    estimates = {}
+    for index, item in enumerate(raw, 1):
+        where = f"orientation calendar estimate {index}"
+        if not isinstance(item, dict):
+            raise ChronologyError(f"{where}: expected a mapping")
+        _keys(item, {"subject", "relation", "profile", "date", "qualification",
+            "sources", "basis", "inputs", "kind", "anchor"}, where)
+        subject = _text(item, "subject", where, required=True)
+        relation = _text(item, "relation", where, required=True)
+        profile = _text(item, "profile", where, required=True)
+        if subject not in subjects:
+            raise ChronologyError(f"{where}: unknown temporal subject {subject!r}")
+        if profile not in policies:
+            raise ChronologyError(f"{where}: expected an evidence profile")
+        if not any(c.profile == profile and policies[profile].answers_with(c)
+                   for c in subjects[subject].claims):
+            raise ChronologyError(f"{where}: subject has no answerable claim in this profile")
+        relations = ({units[subject].relation} if subject in units else
+                     {b.relation for b in bindings if b.event == subject})
+        if relation not in relations:
+            raise ChronologyError(f"{where}: relation does not apply to this subject")
+        date = parse_date(item.get("date"), where)
+        if date.precision not in {"approximate-year", "range", "interval", "boundary"}:
+            raise ChronologyError(f"{where}: expected an approximate calendar position or bound")
+        if not re.search(r"(?<![A-Za-z.])c\.\s*(?=(?:A\.\s*D\.|B\.\s*C\.)?\s*[0-9])|\bapprox", date.label):
+            raise ChronologyError(f"{where}: label must state approximation")
+        if not date.begin or date.begin.era not in {"bc", "ad"}:
+            raise ChronologyError(f"{where}: calendar estimate needs an absolute endpoint")
+        years = {str(endpoint.year) for endpoint in (date.begin, date.end) if endpoint}
+        if set(re.findall(r"\d+", date.label)) != years:
+            raise ChronologyError(f"{where}: label years must match its typed endpoints")
+        inputs = item.get("inputs")
+        if (not isinstance(inputs, list) or not inputs or
+                any(not isinstance(value, str) or value not in subjects for value in inputs)):
+            raise ChronologyError(f"{where}: inputs must name existing temporal subjects")
+        kind = item.get("kind", "estimate")
+        anchor = item.get("anchor", "")
+        if kind not in {"estimate", "anchor-context"}:
+            raise ChronologyError(f"{where}: unknown estimate kind")
+        if kind == "anchor-context":
+            if anchor not in inputs or anchor not in events:
+                raise ChronologyError(f"{where}: anchor context needs its event among inputs")
+            if not any(c.profile == profile and c.date.anchor == anchor
+                       and policies[profile].answers_with(c) for c in subjects[subject].claims):
+                raise ChronologyError(f"{where}: anchor does not belong to the subject's answer")
+        elif anchor:
+            raise ChronologyError(f"{where}: only anchor context may name an anchor")
+        key = (subject, relation, profile)
+        if key in estimates:
+            raise ChronologyError(f"{where}: duplicate subject/relation/profile estimate")
+        estimates[key] = OrientationCalendarEstimate(subject, relation, profile, date,
+            _text(item, "qualification", where, required=True),
+            _sources(item, where, required=True), _text(item, "basis", where, required=True),
+            tuple(inputs), kind, anchor)
+    return estimates
+
+
 @lru_cache(maxsize=4)
 def load(root: Path | None = None) -> Corpus:
     """Read and validate the whole corpus, or refuse with the reason."""
@@ -2076,6 +2163,7 @@ def load(root: Path | None = None) -> Corpus:
         default_profile, _load_orientation_contexts(where, books),
         _load_orientation_subject_labels(where, set(events) | set(units)),
         _load_orientation_settings(where, set(events) | set(units)),
+        _load_orientation_calendar_estimates(where, events, units, bindings, policies),
     )
 
 
@@ -3928,6 +4016,8 @@ def audit(root: Path | None = None, repo: Path | None = None) -> list[str]:
         *(("orientation", context.label, context.sources) for context in corpus.orientation_contexts),
         *(("orientation setting", subject, setting.sources)
           for subject, setting in corpus.orientation_settings.items()),
+        *(("orientation calendar estimate", estimate.subject, estimate.sources)
+          for estimate in corpus.orientation_calendar_estimates.values()),
         *(
             (kind, identifier, claim.sources)
             for kind, identifier, claims in holders
