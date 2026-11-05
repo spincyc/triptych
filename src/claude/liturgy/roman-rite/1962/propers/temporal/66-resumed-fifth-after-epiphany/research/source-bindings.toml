@@ -1,0 +1,469 @@
+schema = 2
+record_type = "bindings"
+document = "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"
+
+# Publication-local record of how this leaf's research used the reusable source
+# library. It supplements, and does not replace, propers/verified.md (text control,
+# publication basis and English), research/scope.md (reception matrix, witness
+# register, difficulties, disagreements, negative results and bounds) and
+# research/interpretations.md.
+#
+# States describe what the research stage (iteration 0) of run eb621aedbeee828e
+# did with each record on 2026-11-05. 'inspected' means this stage read the bound
+# locus itself in the bytes named; 'verified' is claimed only for page images read
+# to control a form, a publication basis or quoted English (the 1962 facsimile,
+# Pustet 1862, Lasance 1945). Remote artifacts were fetched whole and matched to
+# their registered SHA-256 before any page was read. Nothing was retained in the
+# library and no source was registered by this stage. Fingerprints were taken
+# from tools/source-library fingerprint on 2026-11-05. The Scripture chronology
+# sources are cited by research/chronology.toml and sealed with it.
+#
+# The source-registration stage (iteration 0) of the same run rebound the
+# Honorius use from the PL 172 text layer filed under Gemma animae to the
+# Speculum Ecclesiae segment it registered over the same bytes, and recorded each
+# binding's reusable-source disposition in research/source-dispositions.toml.
+#
+# The research stage (iteration 1) of the same run, answering the research
+# review's RES-001 to RES-004 on 2026-11-05, extended the Chrysostom Colossians
+# and Rupert loci and added the bindings that follow the Rupert binding. Remote
+# and restricted artifacts were fetched whole on 2026-11-05 and matched to their
+# registered SHA-256 before any locus was read; page images are named where a
+# reading was controlled on them. It registered the two dated Ordo passages for
+# 8 November 2026 and the Corpus Thomisticum witness of Aquinas's Colossians
+# lectures (work, edition and restricted artifact) that three of these bindings
+# name. Their disposition rows belong to the source-registration stage.
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+loci = ["Dominica quinta quae superfuit post Epiphaniam, printed pp. 420-421 = artifact PDF pp. 501-502, marginal nos. 1749-1758", "Dominica V post Epiphaniam (Epiphany-season printing), printed p. 48 = PDF p. 129, nos. 333 and 335 (Secret, Postcommunion)"]
+role = "textual-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-05"
+source_fingerprint = "sha256:489586789f24da05ee18ba23686f134dd71e18c7a91bd4b22190fa922d10dd76"
+context = "The exact remote facsimile controls every Latin form, heading, rank, citation, marginal number, conclusion cue and boundary of this formulary. A copy of the whole file was re-hashed on 2026-11-05 and matched the registered SHA-256 and byte length before any page was read. PDF pp. 501-502 were read whole at 200 dpi and in 400-dpi crops of each column section; PDF p. 129 was read at 200 dpi to compare the Epiphany-season Secret and Postcommunion conclusions (propers/verified.md). The rubrics cited for occurrence, rank and the Preface are those research/context.md records from the same file."
+
+[[bindings]]
+source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-epiphany-5-orations"
+loci = ["Collect at printed p. 47, no. 327; artifact PDF p. 128; Secret at printed p. 48, no. 333; artifact PDF p. 129; Postcommunion at printed p. 48, no. 335; artifact PDF p. 129"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:6d8d3c20921967a2f37cb36a4dc4713ae2ce5746d7c75d9f065fe7826d771df1"
+context = "The 1962 owner record of the Epiphany-season printing of this formulary's three orations, on which the Latin ledger's epiphany-5 rows rest. Its loci were read and agree with this stage's own reading of PDF p. 129; the wording in propers/verified.md was read on the resumed printing's page images, not taken from this record."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+loci = ["Dominica V. post Epiphaniam, printed pp. 42-44 = PDF pp. 128-130: Collect (p. 42), Epistle and Gospel (p. 43), Secret (p. 43), Postcommunion (p. 44)", "Dominica XXIII. post Pentecosten, printed pp. 357-358 = PDF pp. 443-444: Introit, Gradual, Alleluia, Offertory, Communion, and the rubric for the Sundays left over after the Epiphany (p. 358 to p. 359)"]
+role = "rights-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-05"
+source_fingerprint = "sha256:53cf8c027d0647a872a62d51ef6884807380f4b5050ae98f65506b3578ce4fd8"
+context = "The public-domain antecedent on which the Latin of all ten elements is published under 17 U.S.C. 103(b). The whole remote PDF was fetched on 2026-11-05 and matched its registered SHA-256 and byte length; the five pages were rendered and read whole, and the Collect again in a zoomed crop. Every word of every element stands on these pages; the differences are orthography, pointing and conclusion cues (propers/verified.md, The publication basis of the Latin). The page image prints a comma after innititur where the text layer reads a colon."
+
+[[bindings]]
+source_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+loci = ["physical lines 18015-18184 (Dominica V. post Epiphaniam, fol. 42-44)", "physical lines 52500-52733 (Dominica XXIII. post Pentecosten and the resumed-Sunday rubric, pp. 357-359)"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:efd4426beabe5385be4e5df4542255c488fe460dee069ab999231255702d5b0f"
+context = "The tracked text layer of the 1862 Missal, recomputed and matched; it located the pages read on images and is reproduced unedited in propers/retrieved.txt pulls 2 and 3. It controls no form."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+loci = ["Fifth Sunday after Epiphany, printed pp. 196-198 = PDF pp. 196-198 (Collect, Gospel, Secret, Postcommunion)", "Supplementary Mass No. 2, Mass of the Fifth Sunday after Epiphany, printed pp. 744-747 = PDF pp. 742-745 (the whole resumed formulary in Latin and English, with its rubric)"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-05"
+source_fingerprint = "sha256:376ca4e5db5bd3291c6c11b085c73dafdd1a09a8a7af523652257183cc25d645"
+context = "The registered public-domain hand missal whose English the study may quote for the orations and for the Missal's chant forms. The whole remote PDF was fetched on 2026-11-05 and matched its registered SHA-256 and byte length; the seven pages were read on rendered images. Pp. 744-747 print this exact resumed formulary under the heading Supplementary Mass No. 2; p. 746 is in No. 2, not No. 3; p. 198 misprints the Latin Secret mutantia; the resumed Postcommunion English omits 'in these mysteries', which p. 198 carries (propers/verified.md, English; research/scope.md 2.4)."
+
+[[bindings]]
+source_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759"
+loci = ["physical lines 17421-17640 (Fifth Sunday after Epiphany)", "physical lines 79620-80040 (Supplementary Masses Nos. 2 and 3, opening)"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:244feaa4640a598b268f6a3c82130d020246340db5f96e6b147ce2ba800e4c88"
+context = "The tracked text layer of the Lasance missal; it located the supplementary Mass, which was then read on page images. It controls no English quoted."
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-publish-epiphany-5--main--collect--all--1"
+loci = ["Lasance/Walsh revised-1945: Fifth Sunday after the Epiphany, Collect. Own source section and full continuation inspected.; printed p. 196; PDF p. 196"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:cf48f007d1ceae9b397051ba318f0668b479ee68cbd6de135337a3b91c8f4622"
+context = "The overlay's publication passage for the Lasance English of the Collect. Its English was compared with the page image read in this stage and agrees; it is the record through which the study's English for the Collect is published."
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-publish-epiphany-5--main--postcommunion--all--1"
+loci = ["Lasance/Walsh revised-1945: Fifth Sunday after the Epiphany, Postcommunion. Above the Sixth Sunday heading; running head anticipates Sixth Sunday.; printed p. 198; PDF p. 198"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:d152aed6f84f98ebf66b73fd02946e4bb11e7fecca126deb8490c95da7d5f59d"
+context = "The overlay's publication passage for the Lasance English of the Postcommunion. Its English was compared with the page image read in this stage and agrees; it is the record through which the study's English for the Postcommunion is published."
+
+[[bindings]]
+source_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.publish-phase4-en31-epiphany-5--main--secret--all--1"
+loci = ["Supplementary Mass No. 3, Secret; printed pp.746; PDF pp.744"]
+role = "context"
+states = ["cataloged", "inspected"]
+source_fingerprint = "sha256:75cbf5c6cfc818ba26281b7142f97c3b7102db5a9a453d5604436fff2e1831f3"
+context = "The overlay's publication passage for the Lasance English of the Secret. Its English was compared with the page image read in this stage and agrees; it is the record through which the study's English for the Secret is published."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-28-jeremias-85cef8bb"
+loci = ["Jer.29.1-14"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aa0acf8fc81c44623550f83716eee76a3204969b5ad52d80d9304596862d1d07"
+context = "Douay-Rheims (Challoner), the profile's English of the Vulgate, read at Jeremias 29:1-14 for the complete literary context of the appointed verses and for which elements it can carry in the Missal's form (propers/verified.md, English)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-28-jeremias-b95e824b"
+loci = ["Jer.29.1-14"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c98fbf3b45d0574987077decf419c93dd9b50901a4a298cd7df79eb64a54cdbe"
+context = "Clementine Vulgate, read at Jeremias 29:1-14 for the word-by-word comparison of the Missal's chants and lessons with the Vulgate (propers/verified.md, The chants and lessons against the Clementine Vulgate)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
+loci = ["Ps.43.1-26", "Ps.84.1-14", "Ps.129.1-8"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
+context = "Douay-Rheims (Challoner), the profile's English of the Vulgate, read at Psalms 43, 84 and 129 whole (Vulgate numbering) for the complete literary context of the appointed verses and for which elements it can carry in the Missal's form (propers/verified.md, English)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-21-psalms-d20e21f8"
+loci = ["Ps.43.1-26", "Ps.84.1-14", "Ps.129.1-8"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1481d71b5253d2bf9644408f82c40a7cd90fce2191d6586d9fa24b0f62d49130"
+context = "Clementine Vulgate, read at Psalms 43, 84 and 129 whole (Vulgate numbering) for the word-by-word comparison of the Missal's chants and lessons with the Vulgate (propers/verified.md, The chants and lessons against the Clementine Vulgate)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-58-colossians-d17592ce"
+loci = ["Col.3.1-17"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5cf6c513d39ffc83a9faab86e624dd181f93dfa845f96437b40365ff711ed0ca"
+context = "Douay-Rheims (Challoner), the profile's English of the Vulgate, read at Colossians 3:1-17 for the complete literary context of the appointed verses and for which elements it can carry in the Missal's form (propers/verified.md, English)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-58-colossians-f1d99c90"
+loci = ["Col.3.1-17"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:06c3c5e04fba34cae98e1467242b5e3fc63bbef88a55a37845bf7527b33da821"
+context = "Clementine Vulgate, read at Colossians 3:1-17 for the word-by-word comparison of the Missal's chants and lessons with the Vulgate (propers/verified.md, The chants and lessons against the Clementine Vulgate)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-47-matthew-dd0ba183"
+loci = ["Matt.13.1-3", "Matt.13.24-43", "Matt.21.21-22"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:ed47ecb092ecb6256fb84450e8ad39d0debf2efe6c65442199a76a7fb1a8b98b"
+context = "Douay-Rheims (Challoner), the profile's English of the Vulgate, read at Matthew 13:1-3, 24-43 and 21:21-22 for the complete literary context of the appointed verses and for which elements it can carry in the Missal's form (propers/verified.md, English)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-47-matthew-2d02758d"
+loci = ["Matt.13.1-3", "Matt.13.24-43", "Matt.21.21-22"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:da1db83ff564af32d9e8dab7773456aa467a354ded799029638be74368323843"
+context = "Clementine Vulgate, read at Matthew 13:1-3, 24-43 and 21:21-22 for the word-by-word comparison of the Missal's chants and lessons with the Vulgate (propers/verified.md, The chants and lessons against the Clementine Vulgate)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-48-mark-69b4cb75"
+loci = ["Mark.11.12-26"]
+role = "translation-control"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:2b4848908df9163a705b6532d1b80e55d35bc75bf2826f2ba03cb69b9f7ff025"
+context = "Douay-Rheims (Challoner), the profile's English of the Vulgate, read at Mark 11:12-26 for the complete literary context of the appointed verses and for which elements it can carry in the Missal's form (propers/verified.md, English)."
+
+[[bindings]]
+source_id = "artifact.catholic-church.vulgata-clementina.ebible-latvuc.verse-text-48-mark-ab7b8b95"
+loci = ["Mark.11.12-26"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:b735f8e604c3e75982f2a5b38d3f9340c60bf3764ae851e54be2a26cc50846fe"
+context = "Clementine Vulgate, read at Mark 11:12-26 for the word-by-word comparison of the Missal's chants and lessons with the Vulgate (propers/verified.md, The chants and lessons against the Clementine Vulgate)."
+
+[[bindings]]
+source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.psalm-numbering-ee3c7757"
+loci = ["Ps.43.8-9", "Ps.84.2", "Ps.129.1-2"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c3702f219d6641eb66186bd7d3d557375aec2843467d0d54aabe3397ec7e8fb7"
+context = "The repository's psalm concordance, read for the Hebrew numbers given in parentheses and the verse offsets of Pss 43 and 84."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9"
+loci = ["Chrysostom, Homiliae in Matthaeum 46.1 on Mt 13:24-30, physical lines 27066-27201", "Chrysostom, Homiliae in Matthaeum 67.1-2 on Mt 21:18-22, physical lines 37939-37995"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0209917237dc0599614ab5b3a70d1563de63045007c4a8d4eb7776dd6ec37992"
+context = "Chrysostom's direct exegesis of the Gospel (tares as heretical societies; the sleepers; the prohibition of killing and its two reasons; tares that may become wheat) carried in interpretations 1 and 3, and his comment on the Matthaean parallel of Mk 11:22-24 (confidence in prayer), used as an analogue for the Communion. English of NPNF I.10; the Greek was not collated (research/scope.md 5, 7.1, 7.2)."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9"
+loci = ["Chrysostom, Homiliae in Colossenses 8 on Col 3:12-15, physical lines 26655-26775", "Homily 9 on Col 3:16-17, physical lines 27136-27215, 27325-27346 (on singing in the heart) and 27347-27380"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:374d296602c0a52e4c252ad0e7704b9c9952d06f6b66b891bb391c8509c390db"
+context = "Chrysostom's direct exegesis of the Epistle (forbearance and forgiveness after Christ; love the bond; the peace of God as umpire between two thoughts; the word dwelling richly; doing all in the Name), carried in interpretations 1 and 3; and, at Col 3:16 (lines 27336-27346, read in iteration 1), singing in the heart not simply with the mouth but with heedfulness, Moses crying in thought (Ex 14:15), and prayer in the heart while walking, carried in interpretation 3. He reads Greek brabeueto where the Missal sings exsultet (research/scope.md 7.6)."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-26.paris-1845.internet-archive-google-pdf-0d889bd6"
+loci = ["column-89", "column-90", "column-93", "column-94", "pdf-page-52", "pdf-page-54"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1095d1f783cd68bdc017e71a2df9c85944875aa2184fa80ee60de0475e13b7df"
+context = "Jerome's direct exegesis of the Gospel, read on page images rendered from the whole remote PDF, fetched on 2026-11-05 and matched to its registered SHA-256 (no text layer). At 13:24-30 he defers to the Lord's explanation; at 13:36-43 he names the sleepers as teachers, gives locus poenitentiae, states the conflict with Auferte malum and resolves it from the likeness of wheat and lolium. Carries interpretation 1 and supports interpretation 3."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.internet-archive-pdf-e55e8bd2"
+loci = ["column-891", "column-892", "column-893", "column-894", "pdf-page-450", "pdf-page-451"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:c6fb33bd194ee93902e3c4fa9109a1ee8938e91070b51ef6794d8a119a51a682"
+context = "Jerome's direct exegesis of the Introit's chapter, read on page images rendered from the whole remote PDF, fetched on 2026-11-05 and matched to its registered SHA-256: God alone knows the future; finem et patientiam; God could fulfil his promise without the captives' prayer but commands it so that they may receive; Mt 7:7 at v. 13; the anagogy of return to the Church; and, at v. 7, seeking the peace of the Church and praying for enemies. Carries interpretation 2; supports 1 and 3."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-24.paris-1865.ia-djvu-ocr-7be28ebd"
+loci = ["column-893", "column-894"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:80a89a5452671287575c7cc8f44008906ff16cbcc370048c23fe2db70bff2284"
+context = "The tracked raw OCR of PL 24, used only to locate Jerome on Jer 29; its recognition is poor and it controls no reading."
+
+[[bindings]]
+source_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+loci = ["Quaestiones Evangeliorum I.10 on Mt 13:25-30, physical line 15"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:09a10c393684ed493bbf5201cc5e886d0b259ae88f5aa8ea6343618f43ce6a8b"
+context = "Augustine's direct exegesis of the Gospel's harvest (all uncleanness in the crop; the prior separation by tribulation; the good angels as reapers), carried in interpretation 1."
+
+[[bindings]]
+source_id = "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950"
+loci = ["42.1-4", "43.1-8", "64.15-16", "84.1-5", "129.1-3"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0a8fd6a45c963c52d5c8d09497820cfb88e5bf59d3a86a8a573856782e822f37"
+context = "Augustine's direct exegesis of the Gradual (Ps 43: the martyrs' voice; the future spoken as past), the Introit verse (Ps 84: captivity of sin turned by Christ; prophecy and petition) and the Alleluia and Offertory (Ps 129: this life the deep; the sinner's cry; propitiation as sacrifice), carried in interpretation 2; and his reception of the tares in En. in Ps. 42 and 64 (distinction without separation; endurance increases the wheat's fruit), carried in interpretation 1. English of NPNF I.8, abridged in places; the Latin was not collated."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-editio-altera-veneta-tomus-3.venice-bettinelli-1745.ia-djvu-ocr-10aa155e"
+loci = ["Super Evangelium Matthaei c. 13 on vv. 24-30, physical lines 23995-24275 (printed pp. 183-185)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9fcd48561f23ea12b2a7271b5cbcdeaee88f85652a5194fe6756bfb2b4aa558f"
+context = "Aquinas's direct exegesis of the Gospel read in OCR: tares as wicked children, specially heretics; the enemy's secrecy; four reasons the wicked are not uprooted; the objection from Auferte malum with Chrysostom's and Augustine's answers. Supports interpretation 1 and carries interpretation 3 with his Colossians lecture."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.summa-theologiae.2006-english-dominicans-gutenberg-secunda-secundae.pg18755-body-13b14d17"
+loci = ["II-II.10.8.objection-1", "II-II.10.8.reply-1", "II-II.11.3.objection-3", "II-II.11.3.reply-3", "II-II.64.2.objection-1", "II-II.64.2.reply-1"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a85980f155106dc475c0a698619c509a12e9ec9f175ff42dd4f11734323234e9"
+context = "Aquinas's doctrinal reception of Mt 13:29-30 (the command read through ne forte), with his citations of Chrysostom and of Augustine, Contra Ep. Parmen. iii.2 and Ep. 93. Recorded as the tradition's disagreement over coercion (research/scope.md 8.1); not a carrying locus for any reading."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.in-omnes-pauli-epistolas-commentaria.dessain-volume-2-1857.book-ocr-2b7b11dc"
+loci = ["Super ad Colossenses c. 3 lect. 3 on 3:15b-17, physical lines 46776-46880"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:fc0fe651fc1f34b1d124831a6538442a81cd47acb7ec6161c19a7bfb4269aadf"
+context = "Aquinas's direct exegesis of the Epistle's close read in OCR: the word of Christ as the origin of wisdom; its three uses; songs of the heart, the mouth singing to rouse the heart; referring all to God habitually. Carries interpretation 3. The OCR lacks his comment on 3:12-15a."
+
+[[bindings]]
+source_id = "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1"
+loci = ["Explanatio in Ps. 43, paragraphs 1 and 7-8, physical lines 1603-1625", "Ps. 84, v. 2, lines 2987-2995", "Ps. 129, vv. 1-5, lines 4679-4690"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:85b019a495120f1320c91743bdd127eef0ccb54126e0247bcb0298f9fb7c3344"
+context = "Bellarmine's direct exegesis of the Gradual (the Church and the martyrs of both Testaments; deliverance not by our own strength), the Introit verse (captivity ended fully in the resurrection) and the Alleluia and Offertory (two depths; Deut 4:29). Supports interpretations 1, 2 and 3. O'Sullivan's English; the Latin was not collated."
+
+[[bindings]]
+source_id = "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:838ec2d9bdd3872f40f104399e97325542dc20fc47dd3b1b4d576e018c618fc2"
+context = "Locus: In Marci evangelium expositio III, on Mk 11:22-25 (the comment on 11:25, Notanda distinctio deprecantium), physical lines 338-339 of this Latin text; it is stated here because the work record's locus_pattern admits only Mc.10.32-45. Bede's direct exegesis of the Communion's verse in its chapter: the distinction of those who pray; the not-yet-perfect obtain forgiveness on condition of forgiving. Used in interpretations 1 and 2."
+
+[[bindings]]
+source_id = "artifact.sicard-of-cremona.mitrale.latin-migne-pl-213.ia-djvu-ocr-ea9fd813"
+loci = ["Mitrale VI.23 Dominica vicesima tertia post Pentecosten and VI.24, physical lines 29945-29990"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f7ef227833c6454f7bea588021ba7c000d14f6dc1220746e710f6f3d8a19f761"
+context = "A liturgical commentator's exposition, read in OCR, of the Dicit Dominus chants as a sequence (Introit, Gradual, Offertory, Communion); his Mass had another Epistle and Gospel, so he is evidence for the chants only (research/scope.md 6). Ecclesiastical writer; principal witness to the chants in interpretation 2, not a carrying author."
+
+[[bindings]]
+source_id = "artifact.ildefonso-schuster.the-sacramentary.burns-oates-washbourne-english-1927.ia-volume-3-ocr-4d8c8988"
+loci = ["Twenty-third and Twenty-fourth Sundays after Pentecost, printed pp. 186-190, physical lines 11586-11830"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:04f9c86491a663faa60eb325af91ca9056441e83aadb4608fbb0d8b87136a32f"
+context = "Bl. Ildefonso Schuster on the Dicit Dominus chants (Introit as God's answer; Gradual and the martyrs; Alleluia and mercy in misery; Offertory and humility) and on the repetition of these chants on the resumed Sundays; his Collect, Epistle and Gospel differ (research/scope.md 6). Supports interpretation 2. His remark on the Communion's place is recorded and not used."
+
+[[bindings]]
+source_id = "segment.honorius-augustodunensis.speculum-ecclesiae.1895-garnier-migne-pl-172.whole-work"
+loci = ["sermon headed Dominica tercia, under the running head Dominica III in Quadrages., physical lines 70286-70395 of the PL 172 text layer"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:3169f039907f526dc65ad11455a64c935002a9e039028d02a7e7b72c33adeae7"
+context = "Honorius's sermon, read in OCR, opening on Ps 84:9 and expounding the tares: the servants are prelates; the mixture is willed so that the good are exercised and rewarded for patience. Ecclesiastical writer; supports interpretation 1 only. The sermon's Sunday is not identified and it is not used as a witness to any Mass. The research stage bound the whole PL 172 text layer filed under Gemma animae; the source-registration stage registered the Speculum Ecclesiae as its own work, with an edition and a whole-work segment of that same layer (lines 63969-86480), re-read these lines and rebound the use to the segment."
+
+[[bindings]]
+source_id = "artifact.rupert-of-deutz.de-divinis-officiis.latin-migne-pl-170.ia-djvu-ocr-2e2ca850"
+loci = ["De divinis officiis XII.23, De Dominica vicesima tertia post Pentecosten, PL 170 cols. 329-330: heading at physical lines 23762-23763, text interleaved with XII.22 at lines 23697-23750 and 23765-23778", "physical lines 49966-49975 (Chronicon S. Laurentii Leodiensis, printed in the same volume)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7ec56124e31762f147f8aed197516894e92dc2d5ec7de99bcc91a9f11d1a98d3"
+context = "Rupert of Deutz (ecclesiastical writer) on the Dicit Dominus chants, read in OCR in iteration 1 (the OCR's 'cogilationes' defeated the iteration-0 literal search): the Church gives thanks in this last office of the year for the future salvation of the remnant of Israel (1 Tim 2:1; Rom 9:27); the Introit's thoughts of peace are the promise of the banquet of grace with his brethren according to the flesh, prefigured in Joseph; freed from the captivity of souls they give thanks in the Gradual Liberasti; the Offertory De profundis is the brothers' plea to Joseph (Gen 50:17); the Communion Amen dico vobis is Joseph's answer, Nolite timere (Gen 50:19-21). His Mass read Jer 23:5-8 before the Gospel of the five loaves (Jn 6), so he is evidence for the four chants only (research/scope.md 6). Supports interpretation 2's account of the chants as a sequence; not a carrying author. The chronicle sighting at lines 49966-49975 is not Rupert and supports no claim."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-6.ccel-web-2026-09-17.ccel-text-ce371798"
+loci = ["Augustine, Sermo 73 (NPNF Sermon XXIII [LXXIII Ben.]) on Mt 13:24-30, physical lines 32064-32218", "De consensu evangelistarum II.68 (sections 130-131) on the withered fig tree, physical lines 15721-15880"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7f21e16b88aa6eba6556891bfa99280fd5662bf42ef391de140ad6d2960b329a"
+context = "Augustine's own sermon on the tares, read whole in the NPNF English: the tares are bad Christians; the servants are bidden be quiet because it is not the time of harvest; they who today are tares may tomorrow be wheat; Let both grow, because 'ye are such as may be deceived'; the reapers are angels who can make the separation and cannot make mistakes; there are wheat and tares in the high seats and among the laity; Let the good tolerate the bad, let the bad change themselves. Carries interpretation 1 and grounds the anagogy of interpretations 1 and 3. De consensu II.68 was opened at the Communion's chapter and settles only the order of the fig-tree narrative between Matthew and Mark; it does not expound Mk 11:24 (a negative recorded in research/scope.md 4). The Latin was not collated."
+
+[[bindings]]
+source_id = "artifact.nicene-and-post-nicene-fathers.series-1-volume-1.ccel-web-2026-10-13.ccel-text-21000696"
+loci = ["Augustine, Ep. 93 to Vincentius (NPNF Letter XCIII), physical lines 36024-37868: sections 1 (36024-36060), 10 (36301-36338), 15 (36453-36507), 16-17 (36508-36562), 31-36 (36957-37100)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8107c8312db683f3a6bfab04fe1f0992df14d62972def172358894ca9f8ac889"
+context = "Augustine's own account of coercion and of the tares, read in the NPNF English: section 17, that originally his opinion was that no one should be coerced into the unity of Christ, that we must act only by words and arguments lest we have feigned Catholics, and that he yielded to the examples his colleagues set before him, his own town first; section 10, that the penalties applied, exile and fines, are a moderate severity or rather clemency aimed at admonition rather than punishment, unlike the death appointed by imperial law for pagan sacrifice; sections 15, 31 and 33-34, that the Church sown in the world grows among the tares until the harvest, correcting whom she can and bearing with whom she cannot, and looks for the visible separation only at the end; section 36, that Cyprian censured those who would gather the tares before the harvest, which the Lord did not concede even to apostles. Restates research/scope.md 8.1 from Augustine's own words; not a carrying locus for any reading's claim. The Latin was not collated."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.internet-archive-pdf-eab6d2f4"
+loci = ["column-717", "column-718", "column-719", "column-720", "pdf-page-375", "pdf-page-376", "column-993", "pdf-page-511"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:aac0b6000cf35e826d415d4ee14e20e0a040b318ff7ddd776e3803ceec1f46eb"
+context = "Hilary of Poitiers read on page images rendered at 200 dpi from the whole remote PDF, fetched on 2026-11-05 and matched to its registered SHA-256 and byte length. Tractatus in Ps. 129, sections 1-3 (cols. 717-720, PDF pp. 375-376): the prophet cries ex interno cordis sui secreto; existima illum non labiis, sed secreto, ut jussum est, cordis orare (Mt 6:6); the cry fits ignorance, suffering or prayer; God, present everywhere, hears by nature, sed orandus a nobis est, ut secundum precem nostram adsit; Naturae suae est ut audiat; sed fidei nostrae est ut precemur audiri, ut qui per naturam suam audit, per orantis precem dignetur audire (section 3, col. 720). Commentarius in Matthaeum 13.1 (col. 993, PDF p. 511): De parabolis autem jam a Domino absolutis loqui otiosum est, and the Maurist note (c) that the parables of the sower and of the tares are among those Hilary so leaves. Carries interpretations 2 and 3 for the Alleluia and Offertory; records Hilary's deferral at the Gospel."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.ia-djvu-text-db389fea"
+loci = ["column-717", "column-718", "column-719", "column-720", "column-993"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1ffb9ec5d69f6ca5e9957af74962f6045bdead5118c600449e3c1fce55bee5bd"
+context = "The tracked OCR of PL 9, used to locate Hilary's Tractatus in Ps. 129 (physical lines 57478-57720) and his Commentarius in Matthaeum 13.1 (lines 78715-78745, with the Maurist note at 78785-78790, and the Elenchus note at 72240-72262 that the commentary says hardly a word on these parables). Every reading relied on was controlled on the page images (binding for the PDF); this layer controls no wording. The iteration-0 statement that the OCR was not located at Ps 129 is withdrawn."
+
+[[bindings]]
+source_id = "artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd"
+loci = ["Rationale VI.140 De xxiij Dominica post Pentec., physical lines 17384-17432 (printed p. 412)", "VI.141 De Dominica vigesimaquarta, lines 17443-17482 (pp. 412-413)", "VI.142 De xxv dominica, lines 17484-17535 (p. 413)"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5be12620687e1829e19de144d3c79009d8b9dce221c126174799a60e3facbb4a"
+context = "William Durandus (ecclesiastical writer) read in OCR: in the last three Sundays one office, in which the Church shows the wedding garment of charity by praying for the conversion of the Jews at the end, signified in Joseph; the Introit concerns their conversion and the Lord's promise, quia ad hoc tendunt mala quae vobis infero: ut reconciliem vos mihi; the Gradual is David's thanks for deliverance from spiritual and bodily captivity; the Offertory asks pardon as Joseph's brothers did; the Communion is Christ-Joseph's answer, Nolite timere, because the Lord is liberal and quickly forgives. His Mass for this Sunday has Phil 3 and the Gospel of the tribute money (Abeuntes), and an Alleluia Qui sanat contritos corde in some churches; VI.141 says the twenty-fourth Sunday has no chant office of its own; VI.142 sets the same chants with the Epistle Jer 23 and the Gospel of the five loaves. Evidence for the four chants only (research/scope.md 6). The file opens with LIBER SEXTVS; the iteration-0 doubt that it held book VI is withdrawn."
+
+[[bindings]]
+source_id = "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1883-volume-11.ia-djvu-text-95cdb0fc"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:5704de4921a1ed8c6da6c88bc1235f8aa14d39ef3973edc2061508aaf727c16d"
+context = "Locus: Twenty-third Sunday after Pentecost, printed pp. 486-490, physical lines 29150-29345; Twenty-fourth and Last Sunday after Pentecost, pp. 501-502, lines 29990-30025; The Fifth Sunday after the Epiphany, pp. 524-528, lines 31552-31930; stated here because the work record's locus grammar does not admit a line-numbered locus of this volume. The Liturgical Year, English volume 11 (the continuation credited to Lucien Fromage, ecclesiastical writer; Shepherd's translation), read in its text layer: pp. 486-489 explain the Dicit Dominus chants by quoting Rupert, De div. off. XII.23, at length (Israel's remnant, the Joseph typology) and say that the Introits, Graduals and Communions are repeated on each Sunday till Advent; pp. 501-502 state that the intervening Sundays are taken from the Sundays after the Epiphany, the Introit, Gradual, Offertory and Communion being repeated from the twenty-third, and that with twenty-six Sundays the Fifth after the Epiphany becomes the twenty-fourth; pp. 524-528 print this exact resumed formulary in Latin and English, with the Magnificat antiphon Colligite primum zizania, and add no commentary. A second witness to the commentator tradition (research/scope.md 6) and a further public-domain English printing of the chant forms (scope 2.4). The iteration-0 statement that the held volumes contain neither these Sundays nor this formulary is withdrawn."
+
+[[bindings]]
+source_id = "artifact.john-chrysostom.expositio-in-psalmos.migne-pg-55-paris.ia-djvu-ocr-d9b83186"
+loci = ["Expositio in Ps. 43, section 6 on vv. 5-9, physical lines 20880-20990 (Montfaucon page mark [165])", "Expositio in Ps. 129, section 1 on vv. 1-2, physical lines 49325-49440 (Montfaucon page marks [507]-[508])"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:cba162b4f3fbc1418675bd030ea07524d2fa16b3814cb78905b2735eb4be6b6e"
+context = "Chrysostom's Greek read in the uncorrected OCR of the whole remote layer, fetched on 2026-11-05 and matched to its registered SHA-256; no column figure is claimed and no page image was read. Ps 43:7-9: when you fight the devil, say I trust not in my arms, my strength or my righteousness but in God's mercy (Dan 9:18); at 'For thou hast saved us': why speak of the old things of our forefathers? we ourselves hold many pledges of his providence and can count trophies; 'put to shame' means rescued with the shame of the attackers; 'all the day' is the whole life, and we boast not only when you help but also when you forsake us (Gal 6:14; Rom 5:11). Ps 129:1-2: 'out of the depths' is not simply from the mouth or tongue, for words pour out while the mind wanders, but from the deepest heart; such prayers, rooted like a tree, stand against the devil's assault, while those from mouth and lips cannot rise to God; seek in prayer not only to receive what you ask but to make the soul better; and two lessons: it is not possible simply to obtain from God unless our part be supplied, so he first says I cried and then Hear, and intent prayer full of compunction has great power to persuade God. Carries interpretations 2 and 3 for the Gradual and the Alleluia and Offertory."
+
+[[bindings]]
+source_id = "artifact.athanasius-of-alexandria.expositiones-in-psalmos.migne-pg-27-paris.ia-djvu-ocr-969a381f"
+loci = ["Expositio in Ps. 84, hypothesis and vv. 2-3, physical lines 28660-28800"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:9279ccbfb0fa0acf382af6fa5ac592e89a63317cf9f7c0ba7221b5f2982d2c31"
+context = "The Psalm expositions printed under Athanasius's name (the attribution is the printing's; no standing row exists for him in author-standing-v1.toml), Greek read in the uncorrected OCR of the whole remote layer, fetched on 2026-11-05 and matched to its registered SHA-256; no page image read. The hypothesis: the psalm shows the calling of the gentiles, and then brings in the Jewish people confessing its sins after that calling and asking for mercy through Christ. At v. 2: the Father was well pleased to sum up all things in Christ; preaching first to the Jews, he redeemed many from the spiritual captivity that held them, as the Saviour showed in reading Isaiah, preaching release to captives (Lk 4:18-21); he ended our slavery to idolatry and demons and loosed the chains of sins; both the return from Babylon and the salvation of the world are prophesied here. Greek witness at the Introit verse; supporting only."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-70.paris-1865.ia-djvu-ocr-patrologiaecurs27goog"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:8dc2a4aa5c993e4168e5347d42f1447fcd2af13740ad23c324acbf5246ae4840"
+context = "Locus: Cassiodorus, Expositio Psalmorum 43, vv. 7-9, physical lines 24590-24660; Psalm 84, division and vv. 1-2, lines 46770-46840; Psalm 129, preface, lines 72423-72520; stated here because the work record's locus grammar does not admit a line-numbered locus of this volume. Cassiodorus (ecclesiastical writer) read in the uncorrected OCR of the whole remote layer, fetched on 2026-11-05 and matched to its registered SHA-256; no page image read. At Ps 43:8 his lemma reads Liberasti enim nos ex affligentibus nos, the Missal's verb and preposition: the martyrs speak the future for the past in the confidence of faith, to be freed at the second coming from the spirits who afflict them, which cannot come about generally in this age; v. 9 'tota die' is perpetual time. At Ps 84:2 the psalmist, foreseeing, rejoices as of the past; Jacob is the faithful people freed from the devil's captivity; the captivity was of sin when the world served idols. At Ps 129 no one in a frail body escapes sin, so the one security in this age is to bow continually in prayer. Supporting witness on the tense of Liberasti and on the captivity; a datum on the chant form (research/scope.md 2.3)."
+
+[[bindings]]
+source_id = "artifact.ambrose.enarrationes-in-xii-psalmos-davidicos.migne-pl-14-paris-1845.documenta-catholica-omnia-facsimile-pdf-096925e4"
+loci = ["43.20-22"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:7b2a9b113725067609d88dd3eb3f675294961bc8c6002fd05f9923000e65ffc7"
+context = "Ambrose, Enarratio in Ps. 43, sections 20-22 (PL 14 cols. 1153-1154, artifact PDF p. 96), read on a page image rendered at 170 dpi from the whole restricted facsimile, fetched on 2026-11-05 and matched to its registered SHA-256 and byte length. His lemma reads Liberasti enim nos ex affligentibus nos: God frees us by the arrows he shoots from heaven into the interior of our earth, so that every earthly motion dies; the hostile powers are confounded, or the wisdom of the flesh blushes at its crimes; the wicked are confounded here, but far more when they see the saints rise (Jn 5:28-29); the saint is praised not in this life but in God (section 22). Doctor; supporting witness on the Gradual and its tense; a datum on the chant form (research/scope.md 2.3)."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-psalmos.latin-corpusthomisticum-web-2026-07-28.cps41-html-7879ef13"
+loci = ["43.n1", "43.n2", "43.n3", "43.n4"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:66f744004772a893ddc99e1fee0448e40bd7be7facf17846018a6edfdd0269e5"
+context = "Aquinas's lectures on Ps 43 (Reginald's reportatio), read in the exact registered Corpus Thomisticum response, fetched again on 2026-11-05 and matched to its registered SHA-256 and byte length. n. 1: the sons of Core are the sons of Christ's passion, properly the martyrs; the psalm turns from past prosperity to present adversity (Nunc autem repulisti) to petition. n. 3, at Salvasti enim nos: vel in praesenti, quia etsi corporaliter nobis noceant, spiritualiter tamen nocere non possunt; vel in futuro; Sancti dupliciter affliguntur ... quandoque affliguntur spiritualiter, quando peccant illi qui habitant apud eos, and from these afflictions God frees them; the haters are confounded here and will be hereafter. n. 4: tota die means eternity; the saints will be praised in God. Doctor; direct exegesis of the Gradual, supporting interpretations 1 and 2."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.opera-omnia-volume-14.1863-parma.ia-complete-ocr-02c6dc25"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:31b59669c8b760c4cdad3cd9e682a73e60b6f9f94fda17edb12e01095c3ae5cc"
+context = "Locus: Super Psalmos, Psalmus XLIII nn. 1-4 (Parma 1863 vol. 14, printed pp. 515-516), physical lines 50488-50720 of this tracked OCR; stated here rather than as a locus because a line-numbered locus of this OCR is not a printed-page locus. Read to corroborate the Corpus Thomisticum text of Super Ps. 43 n. 3; the two agree in the sentences used. Controls no wording."
+
+[[bindings]]
+source_id = "artifact.thomas-aquinas.super-colossenses.latin-corpusthomisticum-web-2026-11-05.ccl-html-d055308f"
+loci = ["Super Col. cap. 3 lectio 3, paragraph [87858], on Col 3:12-17"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:1181b99646ceacb96e1ba4f36adbc6f23277001fcf4c4ba8471d1160c54e951f"
+context = "The proportionate second search for Aquinas on Col 3:12-15a, which the held Dessain OCR and its facsimile derivative lack (printed p. 439 passes to p. 442). Read in the exact Corpus Thomisticum response acquired and registered by this stage on 2026-11-05. Patience keeps the mind from being moved by adversity; supportantes invicem because, though one does not himself leave justice, aliorum mores sunt ei importabiles (2 Pet 2:8, Lot among the Sodomites); donantes: one forgives an injury when he holds no rancour and procures no evil against the offender, sed quando necessitas puniendi est, tunc puniendus est; sicut et Dominus donavit vobis with Mt 18:32. Charity is the bond; from charity arises peace, Augustine's tranquillity of order; Exultet, quia charitatis effectus est gaudium, quod sequitur ex pace (Prov 12:20); the peace is Christ's, which he made between God and man. Doctor; carries interpretation 3 at the Epistle with Chrysostom, supports interpretation 1, and supplies the Latin witness to exsultet missing from research/scope.md 7.6."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.internet-archive-pdf-249f1795"
+loci = ["column-947", "column-948", "pdf-page-478"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:d94d27795b12cf99ada8c4842d56e1c549897e7c40433509798e72c6f280bf09"
+context = "Rabanus Maurus (saint), Commentaria in Matthaeum IV on Mt 13:24-30, read on page images rendered at 200 dpi from the whole remote PDF, fetched on 2026-11-05 and matched to its registered SHA-256 and byte length. The good seed is sown by one who in his own body strives to bring the seed of good will to the fruit of good works; Cum autem dormirent homines warns us to beware the enemy's seed, ne dum somno inertiae torpemus, fructum laboris nostri perdamus; the householder did not blaze into anger or seek quick revenge but waited patiently, so we, when injured by enemies, must not rush to vengeance but have recourse to patience; Ecce habes exemplum discretionis. Aequanimiter ergo debemus sufferre malos propter bonos, lest by retaliating we give the good occasion of scandal; Sinite utraque crescere builds longanimity to the end of life (Mt 24:13); at the harvest he who bore patiently repays by justice, ut in patiendo justitiam meditemur, et in judicando patientiam habere non negligamus; then (Aug.) the bundles are the sects of heretics, and many who are first tares afterwards become wheat. Carries interpretation 1's moral sense and supports interpretation 3."
+
+[[bindings]]
+source_id = "artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.ia-djvu-text-5b8a4b8b"
+loci = ["column-947", "column-948"]
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f46dd80fe29ddd52cbaf7d81009b328bf011400b6917c0473b5f04f9bb443bae"
+context = "The tracked OCR of PL 107, used to locate Rabanus on Mt 13:24-30 (physical lines 103440-103560; book IV begins at line 100509). Its recognition is poor; the page images (binding for the PDF) control every reading."
+
+[[bindings]]
+source_id = "artifact.theodoret-of-cyrus.interpretatio-epistolae-ad-galatas.1864-migne-pg82-paris.ia-djvu-ocr-db2067fd"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:a87476c2b0a367a5ea19bffcd2900f76722fb54389febaaa91e58f5606dfc2fa"
+context = "Locus: Theodoret, Interpretatio Epistolae ad Colossenses 3:12-17, physical lines 47120-47215 of the PG 82 layer; stated here because the work record's locus grammar does not admit a line-numbered locus of this volume. Theodoret (ecclesiastical writer) on the Epistle, Greek read in the uncorrected OCR of the whole remote PG 82 layer filed under his Galatians commentary, fetched on 2026-11-05 and matched to its registered SHA-256; no column figure claimed. At 3:13: look to the Master's love of man and how many sins he forgave you; imitate him and forgive each the faults of a brother. At 3:14: love is guardian and fellow-worker of the other commandments, as tie-beams hold a building. At 3:15 (his text reads the peace of God, brabeueto): God made one body of you; do not divide it; if any is tried by another's offence, let him keep peace in his heart acting as umpire and judge of the contest. At 3:16: continual meditation on the divine oracles (Deut 6:7); 'in your hearts' means not with the mouth only. Greek witness at the Epistle; supports interpretation 3."
+
+[[bindings]]
+source_id = "artifact.theophylact-of-ohrid.enarratio-in-evangelium-ioannis.migne-pg-124-latin-column-1864.ia-djvu-ocr-9a1fc730"
+role = "reception"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:f613b2b003f7e7556a5cb9d38b84d668d3095cab69b4191dfe925907f05416b4"
+context = "Locus: Theophylact, Expositio in Epistolam ad Colossenses 3:13-16, PG 124 cols. 1261-1264, physical lines 103300-103560 of the PG 124 layer; stated here because the work record's locus grammar does not admit a line-numbered locus of this volume. Theophylact (ecclesiastical writer) read in the legible Latin column of the uncorrected OCR of the whole remote PG 124 layer, fetched on 2026-11-05 and matched to its registered SHA-256; the Greek column is not quoted. At 3:15, Et pax Dei palmam ferat: when injured, two thoughts contend, one to revenge and one to long-suffering; if the peace of God stands in us as just arbiter of the contest and gives the palm to the one that bids long-suffering, the adversary ceases; the peace is God's, who out of clemency and love dissolved his enmity toward us. At 3:16, the word dwells abundantly when we are rich in the knowledge of the Scriptures. Follows Chrysostom; Greek witness at the Epistle, supporting only."
+
+[[bindings]]
+source_id = "passage.fssp-france.ordo-du-mois.web-2026-11-05.2026-11-08"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:0c27ea7508aa37aa2b1bc4604375fc752bcb039b670de4fc6b2a43601d2b7c4c"
+context = "One of the two dated official witnesses that research/context.md adopts for the occurrence: the FSSP Province de France Ordo du mois lists 8 November 2026 as the 5e dimanche après l'Épiphanie (transféré), second class, green. Registered by the research stage (iteration 1) from the response the resolve-context stage fetched and hashed on 2026-11-05 (165,240 bytes), re-hashed and read in locally parsed response text. It names no commemoration; that silence is not used."
+
+[[bindings]]
+source_id = "passage.icrsp-france.ordo.web-2026-11-05.2026-11-08"
+role = "context"
+states = ["cataloged", "acquired", "inspected"]
+source_fingerprint = "sha256:317c54acaf11bf280088e82af94e6d7d5b50707f38c9f0664a2f7b2abc11380d"
+context = "The second dated official witness that research/context.md adopts: the ICRSP France Ordo gives 8 November 2026 as the XXIVᵉ Dimanche après la Pentecôte (3ᵉ de nov., 5ᵉ après l'Épiph.), second class, green, Gloria, Credo, Trinity Preface, no memorial, Messe propre (Dicit Dominus). Registered by the research stage (iteration 1) from the response the resolve-context stage fetched and hashed on 2026-11-05 (110,141 bytes), re-hashed and read in locally parsed response text. Its Oratio pro Papa and its Office numbering of the November Sundays belong to the institute and are not imported."

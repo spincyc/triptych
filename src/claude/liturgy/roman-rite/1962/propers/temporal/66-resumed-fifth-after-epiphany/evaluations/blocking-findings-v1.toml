@@ -1,0 +1,265 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"
+provider = "claude"
+run_id = "eb621aedbeee828e"
+workflow = "proper-study"
+workflow_version = 17
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 13
+observation_count = 11
+
+[[stages]]
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+run_id = "eb621aedbeee828e"
+workflow = "proper-study"
+workflow_version = 17
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 2
+
+[[stages]]
+stage = "research-review"
+iteration = 1
+disposition = "PASS"
+run_id = "eb621aedbeee828e"
+workflow = "proper-study"
+workflow_version = 17
+standing = 0
+accepted_count = 0
+advisory_count = 6
+observation_count = 3
+
+[[stages]]
+stage = "study-review"
+iteration = 3
+disposition = "PASS"
+run_id = "eb621aedbeee828e"
+workflow = "proper-study"
+workflow_version = 17
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 2
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 1
+disposition = "PASS"
+run_id = "eb621aedbeee828e"
+workflow = "proper-study"
+workflow_version = 17
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 4
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-003"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex lines 34-36 and 106-108"
+problem = "Two sentences are hard to follow on one hearing. The two instances this id named in round 0 are repaired: the 35-word sentence was split, and the Collect is now described without a quotation. (a) Lines 34-36 are the second sentence of that split: 'Other translations call it tares, and he would not let his people think the tares grew only among them.' It joins a remark about translation and Augustine's argument with 'and', so a listener hears the second as following from the first. (b) Lines 106-108: 'The wish that Augustine puts among the Lord's words to the zealous servants is therefore meant for us as well: \"That time will come, may it only find you wheat!\"' The sentence opens with a fifteen-word subject that names words the listener has not heard. The speech has not said that Augustine, in Sermo 73.1, retells the householder's answer in the Lord's voice. The wish itself arrives only after the verb."
+required_result = "Each sentence carries one idea a listener can hold. Plain rewrites: (a) 'Other translations call the cockle tares. Augustine would not let his people think the tares grew only among them.' (b) 'When Augustine gives the Lord's answer to the zealous servants, he puts a wish among the words: \"That time will come, may it only find you wheat!\" We are those servants, and the wish is for us as well.'"
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-006"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex line 82; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/90-note.tex lines 55-57"
+problem = "'St Rabanus Maurus finds the same patience in the householder himself' puts the identification of his patience with the bearing-with of Col 3:13, just quoted, inside Rabanus's finding. Rabanus (In Matthaeum IV on Mt 13:24-30, PL 107 col. 947, read on the page image) finds patience in the injured householder and draws the moral for us, but he does not mention Colossians. The note records the identification as the preacher's: 'Rabanus's patience in the householder is said to be the same patience; neither Rabanus nor Paul mentions the other's text.' The speech's grammar and the note disagree. This is a single instance, and the rest of the paragraph renders Rabanus exactly."
+required_result = "The preacher states the identification in his own voice, and Rabanus is credited only with what he says. Plain rewrites: 'The householder himself shows that patience. St Rabanus Maurus points out that he had been wronged, and he knew who had done it: \"An enemy hath done this.\" ...' or 'St Rabanus Maurus finds patience in the householder himself.'"
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-007"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/homily/10-homily.tex lines 126-128"
+problem = "Bede's comment on Mk 11:25 (In Marci evangelium expositio III, bound Migne Latin text, the paragraph beginning 'Notanda distinctio deprecantium') distinguishes two kinds of people who pray. Faith made perfect moves mountains. Those not yet so perfect are to ask that their sins be forgiven them ('postulent sibi peccata dimitti'), and 'without doubt they will obtain what they ask, provided that they first forgive others who sin against them'. The speech keeps 'will obtain what they ask' but drops what they ask, and it does so directly after the Communion's 'whatsoever you ask'. A listener therefore hears Bede promising the not-yet-perfect whatever they ask on that condition. The expansive study's element section (sections/10-each-element.tex lines 237-242) gives the clause. The first interpretation (sections/20-patience-of-the-field.tex lines 265-267) and the concise study compress it in the same way, so the homily inherits the compression. The response that follows stays true to Bede, whose next sentence says that those who refuse to forgive can neither work mighty deeds by prayer nor obtain pardon. This is a single instance."
+required_result = "The sentence keeps the object of the petition. Plain rewrite: 'Those who are not yet perfect, he says, should ask for the forgiveness of their own sins, and they will obtain what they ask, \"provided that they first forgive others who sin against them.\"'"
+
+[[advisories]]
+stage = "research-review"
+id = "RES-008"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md, interpretation 3 `word-in-the-heart`, 'Four senses', Anagogical (lines 567-573, the clause at line 570)"
+problem = "The anagogy rewritten in repair of RES-007 says 'the one who bore patiently is repaid by justice (Rabanus)'. Rabanus, In Mt. IV on Mt 13:30 (PL 107 cols. 947-948, binding 50; tracked OCR artifact.jacques-paul-migne.patrologia-latina-volume-107.1864-paris.ia-djvu-text-5b8a4b8b about lines 103520-103527) writes 'Qui ante per longanimitatem patienter sustinuit, modo per justitiam meritis condigna rependit. Nobisque exemplum in hoc tribuit, ut in patiendo justitiam meditemur ...': the subject is the long-suffering householder, who bore the tares patiently and now repays each by justice. It is not the patient one who is repaid. Scope section 5 (line 328) and interpretation 1 (lines 100-102) read him correctly; this clause inverts him and credits a saint with a reward-of-the-patient anagogy he does not state."
+required_result = "Restate the clause as Rabanus says it, e.g. 'the householder who bore the tares with long-suffering repays each at the harvest by justice, and gives us the example ut in patiendo justitiam meditemur, et in judicando patientiam habere non negligamus (Rabanus)'. If the anagogy wants the reward of the patient, cite Honorius, Speculum Ecclesiae (binding 35), 'pro patientia habundantius remunerari mereantur', as a supporting ecclesiastical writer, or drop the clause."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-009"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md, interpretation 2 `cry-from-captivity`, end of 'Carrying authors and their reasoning' (lines 314-319)"
+problem = "'Jerome, Augustine, Hilary and Chrysostom agree on the controlling claim: the captivity is turned by God, the people are commanded to pray within a promise already made, and the full return is still to come.' Jerome (In Hier. V on 29:10-14) and Augustine (En. in Ps. 84.2-4; 43.6-8) state these clauses. Hilary (Tract. in Ps. 129.2-3) says nothing of captivity, a promise or a return to come; he says God hears by nature and faith asks to be heard. Chrysostom on Ps 129:1-2 says one's own part comes first; on Ps 43:8-9 he speaks of present pledges and of glorying even when forsaken (scope 7.5 records his reading as a present experience), not of a return still to come. The sentence has the form the three-document profile names ('these Fathers carry it: <thesis>'), and a study drafted from it would credit Hilary and Chrysostom with the whole synthesis."
+required_result = "Credit each author with the clause he states, e.g. 'Jerome and Augustine state the controlling claim: God turns the captivity and commands prayer within a promise already made (Jerome), and the full deliverance is still to come (Augustine; Jerome's anagogy). On the Mass's own Ps 129 Hilary and Chrysostom give the reason prayer is commanded: God hears by nature and faith asks to be heard (Hilary); one's own part comes first (Chrysostom). Chrysostom's reading of Ps 43:8 as present pledges is compatible with the claim but does not state it.'"
+
+[[advisories]]
+stage = "research-review"
+id = "RES-010"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md sections 7.1 (lines 372-418) and 8 (lines 562-634); src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md, interpretation 1, Jerome entry (lines 73-84), Limits (lines 215-227) and the comparison row 'The people' (line 598)"
+problem = "Jerome, In Mt. II on 13:36-43 (PL 26 col. 93, PDF p. 54, page image; binding 23) identifies the householder's servants: 'Servos patrisfamilias, ne alios accipias quam angelos, qui quotidie vident faciem Patris'. Augustine, Sermo 73.4, likens us to the servants ('We in this time present are like those servants'); Honorius makes them prelates; Aquinas, Super Mt. c. 13, praises their zeal as acting at the lord's command. The record keeps the witnesses' differences over the tares (8.5) and the sleepers (8.3) but not this one, although interpretation 1 builds its application on the servants' question ('servants tempted to uproot'; the Alleluia contribution at line 161). Jerome draws his lesson for the hearer from ne forte and locus poenitentiae ('monemur ne cito amputemus fratrem'), not from identifying the hearer with the servants."
+required_result = "Record, in 7.1 or a new 8.6, who the servants are for each witness (Jerome: angels; Augustine, Sermo 73.4: we, men who may be deceived; Honorius: prelates; Aquinas: servants zealous at the lord's command), and add to interpretation 1's Limits that Jerome's application to the hearer rests on ne forte, not on the servants, so that no study credits Jerome with making the servants the Church's members."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-011"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md section 3, third bullet (lines 187-197), section 6 (lines 333-364) and section 10; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml binding 41"
+problem = "Durandus, Rationale VI.22 'De dominica quinta post Epiphan.' (1612 tomus secundus OCR, artifact.william-durandus.rationale-divinorum-officiorum.1612-lyon-tomus-secundus.ia-djvu-ocr-b9b266dd, from line 3883; the same chapter in the 1568 composite OCR ia-djvu-ocr-2bd5ccb5 from line 42630) expounds this formulary's Epistle: 'bene convenit epistola ad Coloss. 3 c. induite mansuetudinem, et pietatem, id est, induite vos nova veste: ut cum novo Rege novi sitis'. His own Gospel is Mt 11:25 (Confiteor tibi), and he reports 'Aliae vero ecclesiae legunt Evangelium: Simile est regnum caelorum, quod est Matthaei 13'. research/context.md directed that a commentator's 'Fifth Sunday after the Epiphany' be identified by its elements, but the section 3 heading search used only the English 'Fifth Sunday after the Epiphany' for that Mass, and section 6 records no commentator's Epiphany-season chapter. A held commentator's locus on a shared element is therefore missing from the record. Rupert and Sicard treat only the first three or four Sundays after the Epiphany, and the held Honorius text has none; the Epiphany-season volumes of The Liturgical Year and of Schuster are not held. The omission changes no reading."
+required_result = "Enter Durandus VI.22 in section 6 by elements (shared: the Epistle, Col 3:12-17; differing: his Gospel Mt 11:25-30 and the Epiphany chants), with his gloss on Col 3:12 and his report that other churches read the tares Gospel, cited for the Epistle only; bind the locus (extend binding 41's loci or add a binding) with a disposition row; and record in sections 3 and 10 the Latin heading search for the Fifth Sunday after the Epiphany in each held commentator, with its results, and that the Epiphany-season volumes of Gueranger and Schuster are not held."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-012"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md section 2.3 (lines 120-127), section 3.1 rows for Ps 129:1-2, Augustine and Cassiodorus (lines 244-245), section 10 (lines 693-700) and section 13.4 (lines 897-901); src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml binding 45; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-dispositions.toml row cassiodorus-expositio-ps-129-1"
+problem = "A narrow residue of RES-003, which required a concrete reason wherever a held artifact reaching an appointed passage was not opened. (a) Cassiodorus on Ps 129:1-2 (PL 70 OCR, lines 72518-72590, immediately after the bound range 72423-72520 in a layer already fetched and hash-matched) is recorded 'not read' with no reason. It expounds the Mass's Alleluia and Offertory verse (the deep as the deep of sins; Jonah 'tacitus vociferabatur'; prayer heard 'quanto de imis penetralibus clamabat'), and its lemma reads 'Domine, exaudi orationem [mss. A., B., et ed., vocem] meam', the chant's form against the Clementine 'vocem'. The disposition row nevertheless gives the preface that was read the extent Ps 129:1 as direct exegesis. (b) Section 13.4 says 'Ps 129 is not held in Latin', but section 3.1 says the PL 37 container reaches it and 'PL 37 not opened', and the library holds PL 37 (Psalms 80-150) as a remote scan; Augustine on Ps 129, a carrying locus of interpretation 2, was read only in the abridged NPNF English, with no reason given for not opening the Latin. (c) The section 2.3 datum is narrower than its evidence: Ambrose's lemma at PL 14 col. 1154 (page image read) also reads 'et eos qui oderunt nos, confudisti ... in saecula', the Gradual's other two departures from the Clementine."
+required_result = "Read Cassiodorus on Ps 129:1-2 and record what he says, or give the concrete reason it was not read; correct the disposition row's extent and relationship to the lines actually read; reconcile section 13.4 with section 3.1 and either read Augustine's Latin of Ps 129 in PL 37 or state why it was not opened; and extend the section 2.3 datum to Ambrose's full lemma and to Cassiodorus's 'orationem meam' with its recorded variant, still asserting no origin for the chant forms."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-013"
+severity = "advisory"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/context.md lines 215-222 and line 359; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md section 5, Ambrose row (line 321), and src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/interpretations.md line 287; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md section 9 (lines 658-675)"
+problem = "Record inconsistencies left by the iteration-1 repair. (a) context.md still says of the two Ordos 'Neither response is retained or registered, and neither changes any registration; both are held only in this run's scratch area', and only a following parenthesis says research registered and bound both; line 359 still calls the ICRSP entry 'an unadopted lead' although it is now a bound context witness of the adopted occurrence chain. (b) Scope section 5 and interpretations.md give Ambrose's standing as 'doctor'; author-standing-v1.toml, which section 5 says it follows, records 'father'. (c) Section 9's Maccabean statement rests on the Catholic Encyclopedia 'Psalms' article-text derivative (artifact.catholic-encyclopedia.volume-12.new-york-1911.newadvent-12533a-cb9d9a25-article-text, line 218), which is neither bound nor among the sealed chronology sources; only the remote base artifact is sealed."
+required_result = "Rewrite context.md lines 215-222 to state the present fact once (registered as dated editions with 8 November passages, bound with role context, no bytes retained) and make line 359 name the ICRSP entry as a bound witness; set Ambrose's standing to 'father' in both places; bind the CE 'Psalms' article-text locus read for section 9 (role context), or cite the sealed base artifact for that statement."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-019"
+severity = "advisory"
+location = "sections/20-patience-of-the-field.tex lines 257-258 (the Introit paragraph under 'Bearing with one another')"
+problem = "The register repair turned the round-2 sentence 'Because the command and the promise stand in one letter, this interpretation takes the promise to cover the prayer Jerome finds in verse 7' into 'Since the command and the promise stand in one letter, the promise of a hearing covers the prayer for the city that the letter commands.' The study's take has become a deduction about the scope of Jeremias's promise, and the ground given does not carry it. In the letter the hearing of v. 12 follows v. 10 ('When the seventy years shall begin to be accomplished in Babylon, I will visit you ... to bring you again to this place') and leads into the seeking, finding and return of vv. 13-14, while v. 7 gives the prayer for the city its own reason, 'for in the peace thereof shall be your peace.' Jerome, at the locus the second interpretation quotes (In Hier. V on 29:10-14, PL 24 col. 893, read on the page image), glosses 'Tunc invocabitis me, et ibitis Jerusalem: et orabitis, et exaudiam vos' and says that God urges the captives to pray 'ut quod promissum est, mereantur accipere'. In his reading the call that God hears is the prayer for the promised return. The sentence is the Introit's only contribution to this interpretation. It is advisory because it is a single sentence whose ground the reader can see and judge, and the interpretation's argument does not rest on it. The review fragment classes a repair that drops a qualification as a source defect, not a style one."
+required_result = "The sentence says what the letter does and does not assert that the promise of v. 12 covers the prayer of v. 7. If the extension is kept, it is stated as the study's own and given a ground that carries it. Plain rewrite: 'The same letter that commands this prayer promises a hearing to those who call on God, invocábitis me, et ego exáudiam vos; servants who may not weed the field can still pray for the cockle, asking for the change Augustine's sermon asks of the tares.'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-020"
+severity = "advisory"
+location = "sections/30-cry-from-captivity.tex lines 36-37 (the closing sentence of the paragraph 'In the letter the exiles are told to call on God ...')"
+problem = "The repair replaced the labelled sentence 'This interpretation takes the harvest of the parable as a term of the same kind as the letter's seventy years ...' with 'In the parable as in the letter, the one who promises fixes the term and tells those who wait what to do until it comes.' The two preceding sentences already give the letter's term and instruction and the householder's: he 'also tells his servants beforehand what he will do and when ... and until then both are to grow.' The closer restates them as a general formula, and deleting it loses nothing (guidance/editorial.md, 'Each sentence adds something'). The defect is a single instance, so it is advisory."
+required_result = "The paragraph ends on the householder's words and instruction, or its closing sentence adds something the paragraph has not yet said. Plain rewrite: delete the sentence, so that the paragraph closes on '... and until then both are to grow.'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-021"
+severity = "advisory"
+location = "proper-components.toml line 207 (lane cry-from-captivity, authors); research/production-review.md, 'Author-study, iteration 3', Repairs paragraph"
+problem = "(a) The cry-from-captivity lane lists Bede and Alfredo Ildefonso Schuster among its authors, but sections/30-cry-from-captivity.tex cites neither. Bede left the second interpretation in the iteration-1 repair and is used in the first and third (20:262-269, 40:238-249). Schuster appears only in section 10. The manifest therefore credits the second interpretation with two contributors whose reasoning it does not use. The file is unchanged this round, and no reader sees the defect. (b) The production record says 'Each interpretation names its own step once, in its opening'. The first and third openings do (20:16-17, 40:13-17). The second carries no such statement, as the author's own result note ('1, 0 and 1') records."
+required_result = "(a) The lane's authors name only those whose reasoning section 30 uses: Bede and Schuster are removed, or their contribution is restored in the prose where the argument needs it. (b) The record says that the first and third openings name the study's step and the second carries no such statement."
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-005"
+severity = "advisory"
+location = "sections/concise/04-themes.tex lines 19-21 and 38-42; sections/concise/10-commentary.tex lines 175-180 and 212-223"
+problem = "Twice in this round's text, a point is stated again just after the reader has been given it (guidance/editorial.md, 'Say it once'). (1) Jerome's answer on Jer 29:12 is that the Lord could have fulfilled his promise without the captives' prayer, but urges them to pray so that they may be worthy to receive it. The opening thesis gives it (04-themes 19-21). The Introit paragraph fifteen lines later gives it again (38-42). The commentary gives it a third time, in Latin and English (10-commentary 175-180). Page 1 and the compared senses also summarise it. The commentary's version adds the Latin and its context: the false prophets, Futurorum scientia and Mt 7:7. The Introit paragraph adds nothing to the thesis on the same page. (2) The commentary quotes Bede's two statements on Mk 11:23-25 (212-219): the unclean spirit is driven out when the word is preached, and the perfect in faith move such mountains by praying. The next sentence restates both in a relative clause to reach its inference (219-223): 'the unclean spirit that Bede says is driven from the heart when the word is preached, and that the perfect in faith move by praying, is the parable's enemy'. This paraphrases what the reader has just read, and it leaves 'move' without its object, which is Bede's mountain. These are two instances, not a pattern that recurs through a section. Neither changes an attribution or a claim, and both attributions were checked against PL 24 col. 893 and Bede's Migne text."
+required_result = "Each point is given once, at its fullest place. Plain rewrites: (1) 04-themes 38-42: 'God has promised the return and still tells the captives to call on him; that is the difficulty St Jerome answers (In Hieremiam V, PL 24 col. 893).' This leaves his answer to the thesis above it, and its Latin and reasoning to the commentary. (2) 10-commentary 219-223: 'Since the Lord names the devil as the enemy who sowed the cockle (Mt 13:39), Bede's mountain is the parable's enemy, and the Communion makes its promise to the faith that moves it by praying.'"
+
+[[observations]]
+stage = "homily-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/concise/90-apparatus.tex lines 77-80; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/source-bindings.toml (Douay-Rheims verse-text bindings)"
+note = "Carried from round 0 and narrowed. The homily now quotes the Douay only for books whose verse texts the leaf binds (Jeremias, Matthew, Mark, Colossians), and it gives 1 Cor 5:13 through Jerome's Latin. The concise References still cite the Douay for Gen 50:17, 19, Rom 8:36, 1 Cor 5:13 and 2 Pet 2:8, whose registered verse texts this leaf does not bind, and bindings-valid checks only declared bindings. This is for the source-registration owner and the bindings check's owner, if the version-15 binding rule reaches Scripture verse texts."
+
+[[observations]]
+stage = "homily-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/20-patience-of-the-field.tex lines 265-267; src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/sections/concise/10-commentary.tex lines 154-157"
+note = "The study's first interpretation and the concise study give Bede on Mk 11:25 as 'those not yet perfect obtain what they ask', without his 'postulent sibi peccata dimitti'. The expansive element section keeps that clause. This is the same compression HOM-007 reports in the homily, and it is for the study and concise owners at their next revision."
+
+[[observations]]
+stage = "research-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/chronology-table.tex, Alleluia and Offertory rows (Ps 129:1-2 Vg.; Heb. 130)"
+note = "The rows print only the collection-wide bound 'Before c. 165 B.C.' and 'Occasion date unresolved', which is honest; but the controlling Catholic Encyclopedia 'Psalms' article (article text line 126) places the Songs of Ascents (Pss 119-133 Vg.) as a pilgrim psalter, 'now commonly received', with the return from exile as a less likely setting, and the shared corpus has no group record for them. A corpus gap for its owner, not a defect of this research."
+
+[[observations]]
+stage = "research-review"
+location = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany/research/scope.md section 2.4 (lines 158-169); guidance/liturgy/roman-1962-propers.md, Published Text and English"
+note = "The profile says scriptural elements take the Douay and allows 'say so and give the Latin' only where no public-domain English exists; it does not say which English carries a chant whose Missal form departs from the Vulgate when a registered public-domain hand missal prints it. The research's recommendation of Lasance's attributed chant English composes nothing and is lawful, but it rests on reading between two rules: a missing criterion in the profile."
+
+[[observations]]
+stage = "research-review"
+location = "src/sources/commentary/formulary-loci.yaml; tools/commentary-work-index formulary --calendar roman-1962 --mass resumed-epiphany-5 and --mass epiphany-5"
+note = "Both queries report 0 of 40 loci. The index cannot surface a commentator's Epiphany-season chapter (Durandus, Rationale VI.22) for the lessons this resumed formulary shares, any more than his Twenty-third Sunday for its chants; the same missing criterion the previous round observed, now on the lessons' side."
+
+[[observations]]
+stage = "study-review"
+location = "research/source-bindings.toml, the Bede binding (In Marc. III on Mk 11:22-25), context field; research/interpretations.md lines 448, 558 and 594"
+note = "Research records still disagree with the study, as round 2 observed. The Bede context says his locus is used in interpretations 1 and 2, but the study uses it in 1 and 3. interpretations.md still frames the third reading as the heart 'as a field in which the word is sown', which the study corrected under STU-015. Its comparison table lists Schuster among the second interpretation's witnesses, and section 30 does not cite him. All three are for the research owner at its next revision."
+
+[[observations]]
+stage = "study-review"
+location = "workflows/fragments/proper-study/study-review.md, the paragraph on element treatment and roll calls"
+note = "The label pattern cleared this round because the author took over the light clauses that the round-2 required result wrote out (rewrites 1-5). The fragment states the roll-call ban and the coverage floor but gives no model of the permitted light clause. This round supports the round-2 observation that a criterion may be missing there."
+
+[[observations]]
+stage = "synthesis-review"
+location = "generated/scriptural-date-location-page.tex and research/chronology-table.tex, row 'Communion: Mark 11:24'; research/chronology.toml, element 'communion' (status 'composition-only')"
+note = "The page-2 lookup for the Communion finds only the composition of Mark: Rome traditionally, Egypt reported by Chrysostom; disputed A.D. 38-40 to after Matthew. There is no narrated-event row for the saying itself, which Jesus spoke to the disciples beside the withered fig tree the morning after he cursed it (Mk 11:20-24). A reader therefore cannot pair this passage with its occurrence and place, as the Gospel row allows ('Jesus tells the parable of the wheat and cockle beside the sea'). The gap belongs to the shared corpus and projection, not to this synthesis."
+
+[[observations]]
+stage = "synthesis-review"
+location = "generated/scriptural-date-location-page.tex and research/chronology-table.tex, row group 'Introit: Jer. 29:11--12,14'"
+note = "As round 0 recorded, and still true on this round's render: the composition row of Jeremias's letter gives only the relative answer 'After Jechonias and the deportees had departed from Jerusalem', with no year or range. The 1962 profile asks for a conventional date wherever the received chronology supplies one. This is for the shared corpus."
+
+[[observations]]
+stage = "synthesis-review"
+location = "tools/check-content-preflight, references-used locus test (the section headed 'The loci a References entry names')"
+note = "Still true, and stated in the tool's own comments as a deliberate trade-off. The test judges a commentary's psalms only where the body cites the entry by a word of its title followed by a number, so the abbreviated '\\work{Enarr.\\ in Ps.} 84.2' does not bring the 'Enarrationes in Psalmos' entry under test. A single-verse Bible-list locus also passes when its chapter is named whole anywhere. This round's References were therefore checked by hand, and every locus is cited. The missing criterion is for the tool's owner."
+
+[[observations]]
+stage = "synthesis-review"
+location = "sections/30-cry-from-captivity.tex line 276 (the second interpretation's anagogical sense); sections/90-apparatus.tex line 53 (Reception paragraph of the expansive scope appendix)"
+note = "The study owner still has two items that the concise has now repaired in its own text. First, the study's anagogical sense compresses Bellarmine to 'the deliverance is accomplished \"in the resurrection only\"'; his text reads 'complete delivery from captivity, which will be thoroughly accomplished in the resurrection only ... We are at present only partially free'. Second, the expansive scope appendix leaves Bede out of the authors read in web text, although the study quotes his Latin from the Wikisource Migne text."
