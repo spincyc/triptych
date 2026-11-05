@@ -37,7 +37,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    # Shared document assembly is replayed independently during the cold build
+    # and artifact verification; allow both full-corpus passes to finish.
+    timeout-minutes: 120
     permissions:
       contents: read
       pages: read
