@@ -69,21 +69,33 @@ PUBLIC_ARTWORK_HOLD_IDS = {
     "art-service-objects-0106-lavabo-basin-manuterge-alpha-canonical",
 }
 SECTION_PLATE_PLANS = {
+    ("ed-altar-server", "sanctuary-orientation"): (
+        ("dense-six-v1", (
+            "obj-altar", "obj-credence-table", "obj-lectern",
+            "obj-sacristy-cross", "obj-sanctuary-lamp", "obj-sedilia",
+        )),
+        ("dense-seven-v1", (
+            "obj-tabernacle", "obj-altar-candle", "obj-altar-candlestick",
+            "obj-altar-cross", "obj-altar-cloths", "obj-missal-cushion",
+            "obj-missal-stand",
+        )),
+    ),
     ("ed-comprehensive", "church-and-sanctuary"): (
+        ("balanced-two-tall-v1", ("obj-altar", "obj-tabernacle")),
         ("heterodox-five-v1", (
             "obj-credence-table", "obj-lectern", "obj-sacristy-cross",
             "obj-sanctuary-lamp", "obj-sedilia",
         )),
     ),
     ("ed-comprehensive", "altar-and-appointments"): (
-        ("heterodox-five-v1", (
+        ("dense-six-v1", (
             "obj-altar-candle", "obj-altar-candlestick", "obj-altar-cloths",
-            "obj-missal-cushion", "obj-missal-stand",
+            "obj-missal-cushion", "obj-missal-stand", "obj-altar-cross",
         )),
     ),
     ("ed-comprehensive", "linens-and-textiles"): (
-        ("balanced-four-filled-v1", (
-            "obj-chalice", "obj-paten", "obj-burse", "obj-chalice-pall",
+        ("heterodox-five-v1", (
+            "obj-chalice", "obj-paten", "obj-burse", "obj-chalice-pall", "obj-ciborium",
         )),
         ("balanced-four-filled-v1", (
             "obj-chalice-veil", "obj-corporal", "obj-purificator",
@@ -145,6 +157,7 @@ SECTION_PLATE_PLANS = {
         ),
     ),
     ("ed-mc-trainer", "stations-and-furnishings"): (
+        ("balanced-three-v1", ("obj-altar", "obj-altar-cross", "obj-tabernacle")),
         (
             "story-spread-v1",
             (
@@ -199,12 +212,13 @@ SECTION_PLATE_PLANS = {
     ),
     ("ed-mc-trainer", "water-and-ablutions"): (
         (
-            "balanced-four-filled-v1",
+            "heterodox-five-v1",
             (
                 "obj-altar-cruet",
                 "obj-lavabo-basin",
                 "obj-lavabo-towel",
                 "obj-communion-plate",
+                "obj-ciborium",
             ),
         ),
     ),
@@ -223,6 +237,7 @@ SECTION_PLATE_PLANS = {
         ),
     ),
     ("ed-general-reader", "sanctuary"): (
+        ("balanced-three-v1", ("obj-altar", "obj-altar-cross", "obj-tabernacle")),
         (
             "dense-six-v1",
             (
@@ -244,6 +259,7 @@ SECTION_PLATE_PLANS = {
         ),
     ),
     ("ed-sacristan", "sanctuary-and-altar-preparation"): (
+        ("balanced-three-v1", ("obj-altar", "obj-altar-cross", "obj-tabernacle")),
         (
             "dense-six-v1",
             (
@@ -286,7 +302,7 @@ SECTION_PLATE_PLANS = {
     ),
     ("ed-sacristan", "vessels-linens-and-books"): (
         (
-            "dense-six-v1",
+            "dense-seven-v1",
             (
                 "obj-chalice",
                 "obj-paten",
@@ -294,6 +310,7 @@ SECTION_PLATE_PLANS = {
                 "obj-chalice-pall",
                 "obj-chalice-veil",
                 "obj-corporal",
+                "obj-ciborium",
             ),
         ),
         (
@@ -348,7 +365,7 @@ SECTION_PLATE_PLANS = {
     ),
     ("ed-general-reader", "objects-and-linens"): (
         (
-            "dense-six-v1",
+            "dense-seven-v1",
             (
                 "obj-chalice",
                 "obj-paten",
@@ -356,6 +373,7 @@ SECTION_PLATE_PLANS = {
                 "obj-chalice-pall",
                 "obj-chalice-veil",
                 "obj-corporal",
+                "obj-ciborium",
             ),
         ),
         (
@@ -466,6 +484,7 @@ SECTION_PLATE_PLANS = {
         ),
     ),
     ("ed-pontifical", "furnishings-and-books"): (
+        ("balanced-three-v1", ("obj-altar", "obj-altar-cross", "obj-tabernacle")),
         (
             "balanced-two-tall-v1",
             (
@@ -506,7 +525,7 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "dense-six-v1",
+            "dense-seven-v1",
             (
                 "obj-chalice",
                 "obj-paten",
@@ -514,6 +533,7 @@ SECTION_PLATE_PLANS = {
                 "obj-chalice-pall",
                 "obj-chalice-veil",
                 "obj-corporal",
+                "obj-ciborium",
             ),
         ),
         (
@@ -909,6 +929,11 @@ def section_for(record: dict, edition: dict) -> str:
 
 
 def section_label(section: str) -> str:
+    if section == "linens-and-textiles":
+        # The comprehensive section also collects the sacred-vessel records.
+        return "Vessels and linens"
+    if section == "water-and-ablutions":
+        return "Water and Communion vessels"
     return section.replace("-", " ").title()
 
 
@@ -1345,7 +1370,9 @@ def main() -> int:
                     "% Canonical altar-server sacred-minister vestment alpha slice.",
                     "% edition: ed-altar-server",
                     *dense_edition_tex(
-                        vestments, edition, artwork_render_owners
+                        vestments,
+                        {**edition, "section_order": ["vestments-ministers-and-insignia"]},
+                        artwork_render_owners,
                     ),
                 ]
                 (args.output / "ed-altar-server-vestments.tex").write_text(

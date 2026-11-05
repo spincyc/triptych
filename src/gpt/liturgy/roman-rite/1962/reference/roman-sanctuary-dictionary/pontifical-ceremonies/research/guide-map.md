@@ -1,5 +1,43 @@
 # Pontifical-ceremonies edition guide map
 
+Status: **bounded canonical selection; wider inventory remains open**
+Current reconciliation: 2026-11-05
+Edition selection: `ed-pontifical`
+
+The current generated edition admits **60 records and omits 20 of the 80
+canonical records**. It has 15 generated object plates. These are record
+and plate counts, not PDF page counts; current rendered receipts belong to
+`../../research/production-manifest.md`.
+
+The four newly admitted ordinary Mass records are altar, altar crucifix,
+tabernacle, and ciborium. The amice and maniple now use the replacement
+central-cross figures. The bare altar and unveiled reservation-object studies
+carry their preparation qualifications in the printed use text. They do not
+teach a complete prepared altar or reserved-Sacrament scene.
+
+Exact admissions and omission reasons are generated from the canonical
+objects, `shared/schema/edition-selections.toml`, and the artwork manifest into
+`ed-pontifical.alpha-admissions.toml`. The renderer's `SECTION_PLATE_PLANS`
+owns current grouping; the object and source gates still apply to every
+selection. Current explicit layouts include:
+
+- `pontifical-vesture`: `story-spread-v1` (5 records); `balanced-two-tall-v1` (2 records); `balanced-four-filled-v1` (4 records); `story-tall-v1` (4 records).
+- `insignia`: `balanced-two-tall-v1` (2 records).
+- `furnishings-and-books`: `balanced-three-v1` (3 records); `balanced-two-tall-v1` (2 records); `dense-six-v1` (6 records); `dense-six-v1` (6 records).
+- `ministers-and-object-transfers`: `relationship-three-feature-v1` (3 records); `dense-seven-v1` (7 records); `dense-six-v1` (6 records); `dense-six-v1` (6 records); `balanced-two-tall-v1` (2 records); `balanced-two-tall-v1` (2 records).
+
+The remaining records are omitted by audience selection or unresolved source,
+artwork, or admission requirements; the admission file preserves each reason.
+A published selection does not close the wider Holy Week, ritual Mass,
+pontifical, historical, or handling corpus. `completeness-matrix.md` owns those
+open research boundaries.
+
+## Historical guide-map checkpoints through 2026-07-29
+
+The following accumulated narrative preserves earlier selections, presentation,
+and release vocabulary. Its counts, pagination, bespoke imports, and review
+statements describe those checkpoints, not the current generated edition.
+
 Status: **bounded public alpha**
 Audit date: 2026-07-29
 Edition selection: `ed-pontifical`

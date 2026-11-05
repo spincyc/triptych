@@ -1309,6 +1309,8 @@ $(BUILD_ROOT)/%$(EDITION_REVISION_SUFFIX): FORCE_EDITION_REVISION
 # Argument 1 is the -jobname, argument 2 the TeX input relative to
 # $(SOURCE_ROOT), and argument 3 the build-tree prefix the job's auxiliary
 # files share.
+# Dictionary generated inputs follow BUILD_ROOT, including isolated print jobs;
+# their source default remains the virtual build tree used by browser bundles.
 define PDFLATEX_TO_FIXED_POINT
 set -eu; \
 	rm -f -- '$(3).fls'; \
@@ -1320,7 +1322,7 @@ set -eu; \
 		( cd $(SOURCE_ROOT) && TEXINPUTS='..:$(abspath $(@D)):' $(PDFLATEX) -no-shell-escape -recorder \
 			-interaction=nonstopmode \
 			-halt-on-error -jobname='$(1)' \
-			-output-directory='$(abspath $(@D))' '$(2)' ); \
+			-output-directory='$(abspath $(@D))' '$(if $(filter $@,$(ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS)),\def\RSDGeneratedRoot{$(abspath $(ROMAN_SANCTUARY_DICTIONARY_GENERATED))}\input{$(2)},$(2))' ); \
 		previous="$$fingerprint"; \
 		fingerprint=''; \
 		for auxiliary in '$(3).'*; do \

@@ -10,6 +10,13 @@
   \node[sung role tag,anchor=south]
     at ($(#1.south west)!#2!(#1.south east)+(0,#3)$) {#4};}
 
+\newcommand{\SungAboveTag}[3]{%
+  \node[sung role tag,anchor=south] at
+    ($(#1.north west)!#2!(#1.north east)+(0,1mm)$) {#3};}
+\newcommand{\SungBelowTag}[3]{%
+  \node[sung role tag,anchor=north] at
+    ($(#1.south west)!#2!(#1.south east)+(0,-1mm)$) {#3};}
+
 \newcommand{\CommunionPatenSafetyDiagram}{%
   \begin{center}
   \begin{tikzpicture}
@@ -28,22 +35,21 @@
   \end{center}}
 
 \newcommand{\MCGospelFormationDiagram}{%
-  \begin{center}
-  \begin{tikzpicture}
-    \node[inner sep=0pt] (scene)
-      {\includegraphics[width=.82\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-009-mc-gospel-formation-corrected-v3-alpha.png}};
-    \SungRoleTag{scene}{.14}{43mm}{A1}
-    \SungRoleTag{scene}{.39}{48mm}{P}
-    \SungRoleTag{scene}{.56}{43mm}{A2}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (scene) {\includegraphics[width=.90\linewidth]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-009-mc-gospel-formation-2026.png}};
+    \SungAboveTag{scene}{.164}{P}
+    \SungBelowTag{scene}{.105}{A1}
+    \SungBelowTag{scene}{.261}{A2}
+    \SungBelowTag{scene}{.305}{MC}
   \end{tikzpicture}
 
-  \parbox{.82\linewidth}{\small\textbf{Gospel-side stations.} At the parish
-  cue, A1 and A2 take the assigned places flanking the altar book and remain
-  stationary with their candles throughout the Gospel; P chants at the book.
-  This panel shows the incense-omitted route; on the incense route MC attends
-  and TH waits outward with the closed thurible. The
-  drawing identifies roles; use the parish's marked distances.}
+  \parbox{.90\linewidth}{\small\textbf{Stationary Gospel service, without incense.}
+  The Missal remains on its altar stand at the Gospel side. P chants at the
+  book; A1 and A2 remain at their assigned candle stations; MC attends beside
+  the book. This model selects six altar candles and local predella places. On the incense route,
+  TH also waits outward with the closed thurible. Mark the actual distances
+  and route before rehearsal.}
   \end{center}}
 
 \newcommand{\MCEntranceHandoffsDiagram}{%
@@ -95,69 +101,49 @@
   \end{center}}
 
 \newcommand{\SolemnGospelStationDiagram}{%
-  \begin{center}
-  \begin{tikzpicture}
-    \node[inner sep=0pt] (scene)
-      {\includegraphics[width=.82\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-010-so-gospel-station-corrected-v2-alpha.png}};
-    \SungRoleTag{scene}{.105}{43mm}{A1}
-    \SungRoleTag{scene}{.255}{44mm}{SD}
-    \SungRoleTag{scene}{.370}{47mm}{D}
-    \SungRoleTag{scene}{.496}{43mm}{MC}
-    \SungRoleTag{scene}{.676}{42mm}{A2}
-    \SungRoleTag{scene}{.806}{40mm}{TH}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (scene) {\includegraphics[width=.62\linewidth]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-010-so-gospel-station-2026.png}};
+    \SungAboveTag{scene}{.22}{A1}
+    \SungAboveTag{scene}{.40}{SD}
+    \SungAboveTag{scene}{.63}{A2}
+    \SungBelowTag{scene}{.21}{TH}
+    \SungBelowTag{scene}{.56}{D}
+    \SungBelowTag{scene}{.79}{MC}
   \end{tikzpicture}
 
-  \parbox{.82\linewidth}{\small\textbf{Solemn Gospel stations.} At the parish
-  cue, A1 and A2 take the assigned places flanking the book; SD supports it
-  for D, MC attends, and TH waits outward with the closed thurible. The
-  drawing identifies roles; use the parish's marked distances.}
+  \parbox{.90\linewidth}{\small \textbf{Stationary Gospel group.} SD faces D and supports the open book between A1 and A2. D chants with joined hands; MC attends at D\textquotesingle s right and TH waits with the closed thurible at his left. This close view identifies the roles and their relation to the book; mark distances and the route locally.}
   \end{center}}
 
 \newcommand{\SolemnGospelDepartureDiagram}{%
-  \begin{center}
-  \begin{tikzpicture}
-    \node[inner sep=0pt] (scene)
-      {\includegraphics[width=.90\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-025-so-gospel-departure-v3-alpha.png}};
-    \SungRoleTag{scene}{.102}{40mm}{MC}
-    \SungRoleTag{scene}{.292}{40mm}{TH}
-    \SungRoleTag{scene}{.438}{40mm}{A1}
-    \SungRoleTag{scene}{.578}{40mm}{A2}
-    \SungRoleTag{scene}{.752}{40mm}{D}
-    \SungRoleTag{scene}{.910}{40mm}{SD}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (scene) {\includegraphics[width=.90\linewidth]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-025-so-gospel-departure-2026.png}};
+    \SungBelowTag{scene}{.12}{MC}
+    \SungBelowTag{scene}{.27}{TH}
+    \SungBelowTag{scene}{.41}{A1}
+    \SungBelowTag{scene}{.55}{A2}
+    \SungBelowTag{scene}{.70}{SD}
+    \SungBelowTag{scene}{.87}{D}
   \end{tikzpicture}
 
-  \parbox{.90\linewidth}{\small\textbf{Gospel departure
-  (SO-020--021).} At MC's signal, MC leads; TH follows with the closed
-  thurible; A1 and A2 follow together with the two lighted candles; D and SD
-  follow with the Gospel book. Bb has already returned the boat and remains
-  at base. The drawing fixes the model order, not the local route, distances,
-  architecture, or common-reverence place.}
+  \parbox{.90\linewidth}{\small \textbf{Single-file Gospel departure (SO-020--021).} MC leads; TH follows with the closed thurible; A1 and A2 follow in successive places with lighted candles; SD follows empty-handed, then D carries the closed Gospel book with both hands. Bb has returned the boat and remains at base. This shows the model order; mark the route, distances, and common-reverence place locally.}
   \end{center}}
 
 \newcommand{\SolemnEntranceHandoffsDiagram}{%
-  \begin{center}
-  \begin{tikzpicture}
-    \node[inner sep=0pt] (scene)
-      {\includegraphics[width=.95\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-023-so-entrance-handoffs-v2-alpha.png}};
-    \SungRoleTag{scene}{.090}{58mm}{ADULT}
-    \SungRoleTag{scene}{.275}{58mm}{A1}
-    \SungRoleTag{scene}{.395}{58mm}{A2}
-    \SungRoleTag{scene}{.570}{58mm}{C}
-    \SungRoleTag{scene}{.655}{58mm}{D}
-    \SungRoleTag{scene}{.742}{58mm}{SD}
-    \SungRoleTag{scene}{.913}{58mm}{MC}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (scene) {\includegraphics[width=.95\linewidth]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-023-so-entrance-handoffs-2026.png}};
+    \SungAboveTag{scene}{.10}{ADULT}
+    \SungAboveTag{scene}{.21}{A1}
+    \SungAboveTag{scene}{.29}{A2}
+    \SungAboveTag{scene}{.49}{C}
+    \SungAboveTag{scene}{.63}{D}
+    \SungAboveTag{scene}{.75}{SD}
+    \SungAboveTag{scene}{.92}{MC}
   \end{tikzpicture}
 
-  \parbox{.95\linewidth}{\small\textbf{Two controlled handoffs.}
-  \textit{Before the entrance:} the adult lights the two candles and gives one
-  to each acolyte. \textit{After the sacred ministers uncover at the
-  sanctuary:} C, D, and SD give their three birettas to MC, who receives them
-  with both hands before placing them at the marked sedilia places. The
-  drawing does not prescribe procession order, arrival reverence, distances,
-  or church layout; mark those locally before rehearsal.}
+  \parbox{.90\linewidth}{\small \textbf{Two separate handoff moments.} Before the entrance, the adult gives a lighted candle to each acolyte. After the sacred ministers uncover at the sanctuary, MC receives their birettas one at a time with both hands and places each at its marked sedilia place. Here SD hands his to MC while C and D retain theirs. This is a handoff study; rehearse procession order, arrival reverence, and distances at the actual church.}
   \end{center}}
 
 \newcommand{\MCFirstAblutionDiagram}{%
@@ -177,59 +163,47 @@
   \end{center}}
 
 \newcommand{\MCFingerAblutionDiagram}{%
-  \begin{center}
-  \begin{tikzpicture}
-    \node[inner sep=0pt] (scene)
-      {\includegraphics[width=.62\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-018-lm-mc-ablution-fingers-v3-alpha.png}};
-    \SungRoleTag{scene}{.18}{1mm}{A1: WINE}
-    \SungRoleTag{scene}{.50}{40mm}{P}
-    \SungRoleTag{scene}{.82}{1mm}{A2: WATER}
+  \begin{center}\begin{tikzpicture}
+    \node[inner sep=0pt] (scene) {\includegraphics[width=.90\linewidth]{%
+      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-018-mc-finger-ablutions-2026.png}};
+    \SungAboveTag{scene}{.23}{P}
+    \SungAboveTag{scene}{.75}{P}
+    \SungBelowTag{scene}{.08}{A1: WINE}
+    \SungBelowTag{scene}{.40}{A2: WAITS}
+    \SungBelowTag{scene}{.59}{A1: DONE}
+    \SungBelowTag{scene}{.92}{A2: WATER}
   \end{tikzpicture}
 
-  \parbox{.82\linewidth}{\small\textbf{Finger ablution (MC-049; MODEL).}
-  A1 pours wine and A2 pours water over the priest's fingers into the
-  chalice; exact standing points and pouring signals are LOCAL.}
+  \parbox{.90\linewidth}{\small \textbf{Finger ablution (MC-049; MODEL), two successive moments.} Left: A1 pours wine over the priest\textquotesingle s thumbs and index fingers into the chalice while A2 waits. Right: A1 has stopped; A2 then pours water over the same fingertips. Mark standing places and pouring signals locally.}
   \end{center}}
 
 \newcommand{\MCAblutionsDiagram}{%
-  \begin{center}
-  \begin{tikzpicture}
-    \node[inner sep=0pt] (first)
-      {\includegraphics[width=.39\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-017-lm-mc-first-ablution-wine-v2-alpha.png}};
-    \node[inner sep=0pt,right=5mm of first] (fingers)
-      {\includegraphics[width=.36\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-018-lm-mc-ablution-fingers-v3-alpha.png}};
-    \SungRoleTag{first}{.18}{1mm}{A1: WINE}
-    \SungRoleTag{first}{.50}{24mm}{P}
-    \SungRoleTag{first}{.82}{1mm}{A2: WAITS}
-    \SungRoleTag{fingers}{.18}{1mm}{A1: WINE}
-    \SungRoleTag{fingers}{.50}{26mm}{P}
-    \SungRoleTag{fingers}{.82}{1mm}{A2: WATER}
-  \end{tikzpicture}
-
-  \parbox{.90\linewidth}{\small\textbf{Two ablutions
-  (MC-048--049; MODEL).} First, A1 pours wine into the priest-held chalice
-  while A2 waits with water. Then A1 pours wine and A2 pours water over the
-  priest's fingers into the chalice. Exact standing points and pouring signals
-  are LOCAL.}
-  \end{center}}
+  \MCFirstAblutionDiagram
+  \MCFingerAblutionDiagram}
 
 \newcommand{\SolemnAblutionsDiagram}{%
-  \begin{center}
-  \begin{tikzpicture}
+  \par\noindent\begin{minipage}{\linewidth}
+  \begin{center}\begin{tikzpicture}
     \node[inner sep=0pt] (scene)
-      {\includegraphics[width=.88\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-030-so-subdeacon-ablutions-v1-alpha.png}};
-    \SungRoleTag{scene}{.14}{1mm}{A1: CRUETS}
-    \SungRoleTag{scene}{.33}{35mm}{SD: FIRST WINE}
-    \SungRoleTag{scene}{.64}{1mm}{A1: CRUETS}
-    \SungRoleTag{scene}{.82}{35mm}{SD: WINE, THEN WATER}
+      {\includegraphics[width=.96\linewidth]{%
+        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-030-so-subdeacon-ablutions-2026.png}};
+    \SungAboveTag{scene}{.167}{FIRST WINE}
+    \SungAboveTag{scene}{.50}{FINGER ABLUTION: WINE}
+    \SungAboveTag{scene}{.833}{THEN WATER}
+    \SungBelowTag{scene}{.05}{A1}
+    \SungBelowTag{scene}{.17}{C}
+    \SungBelowTag{scene}{.28}{SD}
+    \SungBelowTag{scene}{.38}{A1}
+    \SungBelowTag{scene}{.50}{C}
+    \SungBelowTag{scene}{.61}{SD}
+    \SungBelowTag{scene}{.71}{A1}
+    \SungBelowTag{scene}{.84}{C}
+    \SungBelowTag{scene}{.94}{SD}
   \end{tikzpicture}
 
-  \parbox{.88\linewidth}{\small\textbf{Two Solemn-Mass moments
-  (SO-057--058; MODEL).} A1 supplies and receives both cruets at the LOCAL
-  handoff point. The subdeacon—not A1—pours the first wine into the chalice,
-  then pours wine and water over the celebrant's fingers.}
-  \end{center}}
+  \parbox{.96\linewidth}{\small\textbf{Three successive Solemn-Mass moments
+  (SO-057--058; MODEL), hand-action close-ups.} A1 supplies and receives both
+  cruets at the LOCAL handoff point. The subdeacon pours the first wine directly
+  into the priest-held chalice. He then pours wine, followed by water, over the
+  celebrant's thumbs and index fingers into the chalice.}
+  \end{center}\end{minipage}\par}

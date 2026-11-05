@@ -1,6 +1,6 @@
 # Artwork manifest: 1962 altar-server guides
 
-Audit date: 2026-07-27 (America/Chicago).
+Original audit: 2026-07-27 (America/Chicago). Current replacement audit: 2026-11-05.
 
 The illustrations are project-created editorial teaching aids showing a
 generic ad-orientem Roman altar frontally from the nave. They do not establish
@@ -14,7 +14,44 @@ Alpha admission gates. Only a concrete source, rights, safety,
 reproducibility, mechanical, or visual defect remains operative; nothing in
 this manifest implies external approval.
 
-## Provenance boundary
+## Current replacement set — 2026-11-05
+
+The following nineteen files supersede the earlier image states for these logical
+IDs. Earlier image files listed here have no current consumers. The corresponding
+diagram references use the selected files. The older sections below are dated historical
+records: their “current” wording, consumer lists and review status describe that
+earlier snapshot, not this replacement set.
+
+Exact received and normalized identities, saved generation/correction prompts,
+reference identities, source controls and review limits are preserved in
+[Artwork revision, 5 November 2026](artwork-revision-2026-11-05.md).
+The built-in generator did not expose its model/version. All selected files use
+the repository's technical 8-bit grayscale normalization; no semantic retouching
+was performed by that operation. TeX continues to own all role/cue labels.
+
+| Logical ID | Selected file | Replaced earlier image | Consumers |
+| --- | --- | --- | --- |
+| ASG-ART-001 | `shared/artwork/pencil/ASG-ART-001-lm-start-2026.png` | `ASG-ART-001-lm-start-v2-alpha.png` | Low Mass child and trainer |
+| ASG-ART-002 | `shared/artwork/pencil/ASG-ART-002-lm-foot-kneel-2026.png` | `ASG-ART-002-lm-foot-kneel-v2-alpha.png` | Low Mass child and trainer |
+| ASG-ART-005 | `shared/artwork/pencil/ASG-ART-005-lm-missal-move-2026.png` | `ASG-ART-005-lm-missal-move-corrected-v2-alpha.png` | Low Mass child and trainer |
+| ASG-ART-006 | `shared/artwork/pencil/ASG-ART-006-lm-lavabo-2026.png` | `ASG-ART-006-lm-lavabo-corrected-v3-alpha.png` | Low Mass child and trainer |
+| ASG-ART-009 | `shared/artwork/pencil/ASG-ART-009-mc-gospel-formation-2026.png` | `ASG-ART-009-mc-gospel-formation-corrected-v3-alpha.png` | Missa Cantata |
+| ASG-ART-010 | `shared/artwork/pencil/ASG-ART-010-so-gospel-station-2026.png` | `ASG-ART-010-so-gospel-station-corrected-v2-alpha.png` | Solemn Mass |
+| ASG-ART-011 | `shared/artwork/pencil/ASG-ART-011-lm-normal-places-2026.png` | `ASG-ART-011-lm-normal-places-v2-alpha.png` | Low Mass child and trainer |
+| ASG-ART-014 | `shared/artwork/pencil/ASG-ART-014-lm-bell-station-2026.png` | `ASG-ART-014-lm-bell-station-v2-alpha.png` | Low Mass child and trainer |
+| ASG-ART-015 | `shared/artwork/pencil/ASG-ART-015-lm-elevation-stations-2026.png` | `ASG-ART-015-lm-elevation-stations-v2-alpha.png` | Low Mass child and trainer |
+| ASG-ART-018 | `shared/artwork/pencil/ASG-ART-018-mc-finger-ablutions-2026.png` | `ASG-ART-018-lm-mc-ablution-fingers-v3-alpha.png` | Missa Cantata |
+| ASG-ART-020 | `shared/artwork/pencil/ASG-ART-020-lm-last-gospel-2026.png` | earlier schematic/pencil state | Low Mass child and trainer |
+| ASG-ART-021 | `shared/artwork/pencil/ASG-ART-021-lm-recession-2026.png` | `ASG-ART-021-lm-recession-v3-alpha.png` | Low Mass child and trainer |
+| ASG-ART-023 | `shared/artwork/pencil/ASG-ART-023-so-entrance-handoffs-2026.png` | `ASG-ART-023-so-entrance-handoffs-v2-alpha.png` | Solemn Mass |
+| ASG-ART-025 | `shared/artwork/pencil/ASG-ART-025-so-gospel-departure-2026.png` | `ASG-ART-025-so-gospel-departure-v3-alpha.png` | Solemn Mass |
+| ASG-ART-027 | `shared/artwork/pencil/ASG-ART-027-lm-gospel-opening-2026.png` | `ASG-ART-027-lm-gospel-opening-v1-alpha.png` | Low Mass child and trainer |
+| ASG-ART-028 | `shared/artwork/pencil/ASG-ART-028-lm-offertory-formation-2026.png` | `ASG-ART-028-lm-offertory-formation-v1-alpha.png` | Low Mass child and trainer |
+| ASG-ART-029 | `shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-2026.png` | `ASG-ART-029-lm-first-only-ablutions-v1-alpha.png` | Low Mass child and trainer |
+| ASG-ART-030 | `shared/artwork/pencil/ASG-ART-030-so-subdeacon-ablutions-2026.png` | `ASG-ART-030-so-subdeacon-ablutions-v1-alpha.png` | Solemn Mass |
+| ASG-ART-031 | `shared/artwork/pencil/ASG-ART-031-lm-veil-missal-exchange-2026.png` | `ASG-ART-031-lm-veil-missal-exchange-v1-alpha.png` | Low Mass child and trainer |
+
+## Historical provenance boundary — earlier 2026 artwork
 
 The built-in OpenAI image-generation interface produced the received raster
 outputs. It did not expose a generator model or version. Exact verbatim

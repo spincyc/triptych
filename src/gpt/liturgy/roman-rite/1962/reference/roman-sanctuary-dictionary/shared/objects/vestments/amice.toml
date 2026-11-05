@@ -1,6 +1,6 @@
 schema_version = 1
 id = "obj-amice"
-workflow_state = "publication-ready"
+workflow_state = "art-reviewed"
 preferred_english_name = "Amice"
 latin_headword = "amictus"
 sort_name = "01 Amice"
@@ -11,7 +11,7 @@ ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "re
 related_objects = ["obj-alb", "obj-cincture", "obj-maniple", "obj-priest-stole", "obj-chasuble"]
 
 [presence]
-locations = ["First vestment put on by the priest before Mass."]
+locations = ["Worn around the neck and shoulders beneath the alb; put on first before Mass."]
 contexts = ["The first layer in the ordinary priest's six-vestment sequence."]
 
 [handling]
@@ -38,14 +38,14 @@ source_ids = ["src-amice-missal-1962"]
 [[claims]]
 id = "clm-amice-appearance"
 kind = "appearance"
-text = "A checked contemporary ceremonial describes it as a rectangular linen cloth with two long ties; the plate does not prescribe dimensions, fold, cross, apparel, ornament, or tying method."
+text = "A rectangular linen cloth with ties; the Missal describes a cross at its middle. The cited Missal passage gives no dimensions or decorative scheme."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-amice-fortescue-1943", "src-amice-fortescue-1917", "src-amice-casanowicz"]
+source_ids = ["src-amice-missal-1962", "src-amice-fortescue-1943"]
 
 [[claims]]
 id = "clm-amice-use"
 kind = "liturgical-use"
-text = "The priest puts on the amice before the alb."
+text = "Before the alb, the priest briefly lays the amice on his head, lowers it around his neck to cover the clothing collar, and secures its ties."
 evidence_state = "checked-paraphrase"
 source_ids = ["src-amice-missal-1962"]
 
@@ -66,10 +66,10 @@ source_ids = ["src-amice-fortescue-1943"]
 [[sources]]
 id = "src-amice-missal-1962"
 binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-locus = "Ritus servandus I.2-3, printed p. LII, artifact PDF p. 56."
+locus = "Ritus servandus I.2-3, opening Ritus page (no printed folio visible), artifact PDF p. 56."
 role = "governing-liturgical-book"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
 
 [[sources]]
 id = "src-amice-fortescue-1943"
@@ -95,13 +95,6 @@ role = "catalog-or-museum-record"
 verification_state = "claim-verified"
 checked_on = 2026-07-28
 
-[[artwork]]
-id = "art-vestments-0001-amice-v3-alpha"
-view = "isolated"
-asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png"
-review_state = "approved"
-depicts = ["obj-amice"]
-review_note = "One complete plain rectangular cloth and two complete ties. Natural folds, proportions, linen texture, and tie placement are representative only."
 
 [[audience_note]]
 audience = "altar-server"
@@ -120,10 +113,18 @@ claim_ids = ["clm-amice-use", "clm-amice-assistance"]
 
 [[audience_note]]
 audience = "general-reader"
-text = "The amice is the first, rectangular linen layer in the ordinary priestly sequence."
-claim_ids = ["clm-amice-identity", "clm-amice-appearance"]
+text = "The rectangular linen amice covers the neck and clothing collar beneath the alb."
+claim_ids = ["clm-amice-identity", "clm-amice-appearance", "clm-amice-use"]
 
 [[audience_note]]
 audience = "pontifical"
 text = "Use this as the ordinary priestly baseline only; it does not establish an episcopal vesting sequence."
 claim_ids = ["clm-amice-presence"]
+
+[[artwork]]
+id = "art-amice-central-cross-study"
+view = "isolated"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-cross-2026.png"
+review_state = "liturgically-checked"
+depicts = ["obj-amice"]
+review_note = "One cross is centered between tie attachments with ample fabric margin, depicted as thread in graphite. Rectangle, two ties, and fold arrangement remain recognizably those of input; generation rescaled and modestly redrew texture, so this is not a pixel-exact edit. Upper-central coordinate and exact embroidery size are illustrative. Full-size and small white-ground inspection passed; use on white only. Current plate, consumer, and print review are recorded separately in research/artwork-revision-2026-11-05.md."

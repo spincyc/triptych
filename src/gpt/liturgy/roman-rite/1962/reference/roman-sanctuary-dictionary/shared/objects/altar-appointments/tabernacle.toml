@@ -1,0 +1,127 @@
+schema_version = 1
+id = "obj-tabernacle"
+workflow_state = "art-reviewed"
+preferred_english_name = "Tabernacle"
+latin_headword = "tabernaculum"
+categories = ["altar-and-appointments", "church-and-sanctuary"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+related_objects = ["obj-altar", "obj-ciborium", "obj-sanctuary-lamp"]
+confusable_with = []
+
+[presence]
+locations = ["Fixed in the middle part of the altar at which the Blessed Sacrament is reserved."]
+contexts = ["Reservation furniture; its presence is conditional on reservation at that altar, not on every celebration of Mass."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "recognizes-only"
+warnings = ["The celebrant opens and closes the tabernacle in the Communion rite. Recognize it without opening it or handling its key."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-tabernacle-identity"
+kind = "identity"
+text = "The tabernacle is the secure enclosure in which the Blessed Sacrament is reserved."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tabernacle-code", "src-tabernacle-fortescue"]
+
+[[claims]]
+id = "clm-tabernacle-appearance"
+kind = "appearance"
+text = "The contemporary ceremonial describes a fixed safe or casket, usually with outward-opening doors, leaving space in front for the vessels used at the altar."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tabernacle-fortescue"]
+
+[[claims]]
+id = "clm-tabernacle-placement"
+kind = "placement"
+text = "At the 1962 horizon canon 1269 requires an immovable tabernacle in the middle part of the altar, solidly closed and guarded, and empty of unrelated things."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tabernacle-code"]
+
+[[claims]]
+id = "clm-tabernacle-use"
+kind = "liturgical-use"
+text = "The unveiled study shows the enclosure; a veil covers it where the Blessed Sacrament is reserved. When Communion is given from reserved Hosts, the celebrant opens the tabernacle and takes out the ciborium; after Communion he covers and replaces it, genuflects, and closes the door."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tabernacle-fortescue", "src-tabernacle-missal"]
+
+[[claims]]
+id = "clm-tabernacle-veil"
+kind = "appearance"
+text = "The contemporary ceremonial describes a veil covering the tabernacle where the Blessed Sacrament is reserved; an unveiled identification view does not show the complete prepared arrangement."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tabernacle-fortescue"]
+
+[[claims]]
+id = "clm-tabernacle-key"
+kind = "handling-boundary"
+text = "Canon 1269 places the serious responsibility for safeguarding the tabernacle key on the priest in charge of the church or oratory."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-tabernacle-code"]
+
+[[sources]]
+id = "src-tabernacle-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus X.6–7, printed pp. LXII–LXIII, artifact PDF pp. 64–65."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[sources]]
+id = "src-tabernacle-code"
+binding = "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.leaf-424-image"
+locus = "Canon 1269 §§1–4, printed p. 366, complete registered page image."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[sources]]
+id = "src-tabernacle-fortescue"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 6 and notes 2–4, artifact PDF p. 27."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[audience_note]]
+audience = "altar-server"
+text = "The celebrant opens and closes the tabernacle in the Communion rite. Recognize it without opening it or handling its key."
+claim_ids = ["clm-tabernacle-identity", "clm-tabernacle-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The tabernacle is the secure enclosure in which the Blessed Sacrament is reserved."
+claim_ids = ["clm-tabernacle-identity"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Leave sufficient space before the tabernacle for the altar vessels, and follow the responsible priest’s direction for access and the key."
+claim_ids = ["clm-tabernacle-appearance", "clm-tabernacle-key"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Distinguish the fixed enclosure from the ciborium the celebrant removes and returns during Communion."
+claim_ids = ["clm-tabernacle-identity", "clm-tabernacle-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Identify the actual place of reservation; a tabernacle is not inferred on every altar from the presence of pontifical furnishings."
+claim_ids = ["clm-tabernacle-identity", "clm-tabernacle-placement"]
+
+[[artwork]]
+id = "art-tabernacle-casket-study"
+view = "isolated"
+asset = "shared/artwork/pencil/furnishings/RPD-FIG-tabernacle-study.png"
+review_state = "liturgically-checked"
+depicts = ["obj-tabernacle"]
+review_note = "Two doors attach to visible side hinges and open outward. Keyhole is clear; interior empty. No handles, rays, throne, Eucharistic contents, or surrounding architecture. This isolated study cannot depict permanent mounting. Full-size and small white-ground inspection passed; use on white only. Current plate, consumer, and print review are recorded separately in research/artwork-revision-2026-11-05.md."

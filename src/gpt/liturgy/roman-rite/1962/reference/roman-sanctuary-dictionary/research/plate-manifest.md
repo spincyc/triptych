@@ -1,5 +1,38 @@
 # Plate manifest
 
+Current reconciliation: 2026-11-05
+Status: **bounded generated plates; complete ceremonial compositions remain open**
+
+Current canonical inventory: **80 records**. Selection is edition-specific:
+
+| Edition | Admitted records | Omitted records | Generated plates |
+| --- | ---: | ---: | ---: |
+| `ed-altar-server` | 48 | 32 | 9 |
+| `ed-comprehensive` | 49 | 31 | 11 |
+| `ed-general-reader` | 47 | 33 | 10 |
+| `ed-mc-trainer` | 49 | 31 | 9 |
+| `ed-pontifical` | 60 | 20 | 15 |
+| `ed-sacristan` | 49 | 31 | 11 |
+
+`tools/render-sanctuary-dictionary` owns exact `SECTION_PLATE_PLANS`, ordering,
+layout IDs, and object membership. Generated `ed-*.tex` and
+`ed-*.alpha-admissions.toml` are the reproducible plate and omission projections;
+this narrative does not authorize a figure that fails those gates.
+
+The altar-server sanctuary now uses six-record and seven-record plates, avoiding
+a lone Missal-stand page. Four isolated studies add altar, altar crucifix,
+tabernacle, and ciborium; they do not release the held complete altar or
+reservation composition. Replacement amice/maniple figures retain their required
+central crosses. The bare/unveiled study qualifications are visible in the
+canonical use text. `artwork-revision-2026-11-05.md` and the production manifest
+own actual figure and consumer review receipts; plate counts establish no
+physical print or photocopy review.
+
+## Historical plate proposals and checkpoints, 2026-07-28
+
+The table below preserves historical proposals and bounded review states.
+It is not the current generated plate order or a fresh release of those assets.
+
 Status: **mixed planning and bounded consumer-alpha plates**
 Audit date: 2026-07-28
 

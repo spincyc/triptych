@@ -1,7 +1,32 @@
 # Production manifest
 
-Status: **bounded public alphas**
-Audit date: 2026-07-28
+Current source checkpoint: **2026-11-05, bounded illustrated editions**.
+
+The canonical inventory now contains 80 records. Four newly checked objects
+(altar, altar crucifix, tabernacle and ciborium) have current illustrations;
+the amice and maniple now show the central crosses described in *Ritus
+servandus* I.3. The six edition selections and remaining coverage gaps are
+owned by `plate-manifest.md`, the leaf guide maps and
+`completeness-matrix.md`. The added objects do not close those broader gaps.
+
+Native printing now resolves generated body and omission files inside the
+selected build directory. The browser gallery uses exactly the native
+editions' positive artwork selection, rather than admitting obsolete figures
+because they have historical review receipts. Its 66 images preserve checked
+qualifications and handling warnings; further use notes and source loci are
+available under each object's disclosure.
+
+The current figure and assembled-page inspection record, including exact
+reviewed PDF identities and its limits, is
+[`artwork-revision-2026-11-05.md`](artwork-revision-2026-11-05.md).
+PDFs are disposable on-demand outputs, not installed or tracked publication
+inputs. The dated entries below are historical: their references to a
+"current" or "installed" PDF do not identify the present source edition or
+transfer approval to changed inputs.
+
+## Historical production records
+
+The following records retain their original dates and observed identities.
 
 ## Canonical-record reconciliation — 2026-07-29
 

@@ -1,7 +1,7 @@
 # Completeness matrix
 
-Status: **open in every row; publication and completeness claims held**
-Audit date: 2026-07-27
+Status: **every corpus row remains open; only individually admitted records may publish**
+Inventory reconciliation: 2026-11-05
 
 The final column distinguishes recorded preliminary work from an exhaustive
 category audit. `Records populated; row open` means canonical records exist
@@ -15,7 +15,7 @@ recorded here. None of these open states is evidence of completeness.
 | Church and sanctuary | No | No | No | No | No | No | No | Records populated; row open |
 | Altar and appointments | No | No | No | No | No | No | No | Records populated; row open |
 | Sacred vessels | No | No | No | No | No | No | No | Records populated; row open |
-| Linens and textiles | No | No | No | No | No | No | No | Targeted research recorded; row open |
+| Linens and textiles | No | No | No | No | No | No | No | Seven core linen records populated; row open |
 | Books and printed objects | No | No | No | No | No | No | No | Records populated; row open |
 | Service objects | No | No | No | No | No | No | No | Records populated; row open |
 | Incense | No | No | No | No | No | No | No | Records populated; row open |
@@ -55,3 +55,23 @@ The initial beyond-insignia discovery pass is recorded in
 records a bounded inspection of one 1948 witness, but it closes no pontifical
 row: no operative 1962 corpus or claim-level category inventory has yet been
 closed.
+
+
+## Present coverage and concrete omissions, 2026-11-05
+
+This is a reconciliation of canonical record files and their source states,
+not a new exhaustive search of each official book. Category membership and
+artwork admission are distinct: an object in a composition or discovery queue
+does not have a canonical entry merely because it is pictured or named.
+
+| Section | Present canonical foothold | Material work still absent or unclosed |
+| --- | --- | --- |
+| Church, sanctuary and ordinary altar | Added `obj-altar`, `obj-altar-cross`, and `obj-tabernacle` with exact 1962 Missal and historical Code controls; existing credence, seating, sacristy and lamp records remain separately bounded | Whole-sanctuary topology, altar-stone/antimension variants, altar cards, frontal, tabernacle veil as an independent textile, and every placed-object relationship |
+| Sacred vessels | Added `obj-ciborium`; chalice, paten, cruets and Communion plate already have records | Communion/reservation versus exposition pyxes, lunette, monstrance, sacred-oil containers, and the related-ceremony boundaries |
+| Vestments | Six priestly and three sacred-minister records; corrected amice/maniple cross evidence, stole arrangements, and subdeacon's absence of a stole | Cope, humeral veil, biretta, server cassock and surplice, choir/prelatial dress and privilege boundaries; artwork must follow corrected record facts |
+| Requiem and ritual Masses | Ordinary Mass objects can recur in these ceremonies | Distinct bier/catafalque/pall and absolution equipment; Nuptial custom and ceremony-specific preparations have no exhausted category inventory |
+| Holy Week | Historical triple candle and folded chasuble records mark earlier states | The four operative 1962 ceremony inventories and transitions are still unclosed; historical pictures cannot substitute for them |
+
+The source audit of 2026-11-05 records the directly inspected loci supporting
+this addition. No row's `No` is changed to `Yes` merely because one omitted
+object has now received a record.

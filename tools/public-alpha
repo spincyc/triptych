@@ -1217,6 +1217,9 @@ PICTORIAL_UNAVAILABLE_DEFINITION = (
     "A source-verified definition is not yet available; this pictured record "
     "remains under audit."
 )
+PICTORIAL_CHECKED_STATES = {
+    "checked-paraphrase", "checked-quotation", "source-grounded-synthesis", "verified-source-text",
+}
 
 
 def _checked_definition(record: dict) -> tuple[str, bool]:
@@ -1232,12 +1235,7 @@ def _checked_definition(record: dict) -> tuple[str, bool]:
             if (
                 claim.get("kind") == kind
                 and claim.get("evidence_state")
-                in {
-                    "checked-paraphrase",
-                    "checked-quotation",
-                    "source-grounded-synthesis",
-                    "verified-source-text",
-                }
+                in PICTORIAL_CHECKED_STATES
                 and isinstance(claim.get("text"), str)
                 and claim["text"].strip()
             ):
@@ -1245,8 +1243,98 @@ def _checked_definition(record: dict) -> tuple[str, bool]:
     return PICTORIAL_UNAVAILABLE_DEFINITION, True
 
 
-def pictorial_gallery_data() -> list[dict]:
-    """Load the release-reviewed, canonical dictionary artwork exactly once."""
+def _pictorial_source_reference(source: dict, cache: dict) -> dict:
+    """Use a registered edition's own bibliography, retaining an exact fallback.
+
+    Canonical work/edition namespaces identify their metadata directory. A
+    matching metadata ID is required before using its title; a legacy binding
+    remains printed verbatim rather than acquiring an inferred bibliography.
+    """
+    binding = source["binding"]
+    if binding not in cache:
+        label, inputs = binding, set()
+        parts = binding.split(".")
+        if len(parts) >= 3 and all(re.fullmatch(r"[a-z0-9][a-z0-9-]*", part) for part in parts):
+            base = ROOT / "src/sources/works" / parts[1] / parts[2]
+            if parts[0] in {"edition", "artifact", "passage", "segment"} and len(parts) >= 4:
+                path = base / "editions" / parts[3] / "edition.toml"
+                identity = "edition." + ".".join(parts[1:4])
+            elif parts[0] == "work" and len(parts) == 3:
+                path, identity = base / "work.toml", binding
+            else:
+                path, identity = None, ""
+            if path is not None and path.is_file():
+                metadata = tomllib.loads(path.read_text(encoding="utf-8"))
+                if metadata.get("id") == identity:
+                    title, publication = metadata.get("title", ""), metadata.get("publication", "")
+                    label = publication if title and title in publication else ". ".join(
+                        value for value in (title, publication or metadata.get("date", "")) if value)
+                    label = label or binding
+                    inputs.add(path.relative_to(ROOT).as_posix())
+        cache[binding] = (label, inputs)
+    label, inputs = cache[binding]
+    return {"label": label, "locus": source["locus"], "inputs": inputs}
+
+
+def _pictorial_object_details(record: dict, definition: str, references: dict) -> dict:
+    """Project source-owned qualifications and directions without editing prose."""
+    sources = {source["id"]: source for source in record.get("sources", [])}
+    claims = [claim for claim in record.get("claims", [])
+              if claim.get("evidence_state") in PICTORIAL_CHECKED_STATES
+              and all(source in sources and sources[source].get("verification_state") == "claim-verified"
+                      for source in claim.get("source_ids", []))]
+    claim_ids = {claim["id"] for claim in claims}
+    visible_kinds = {"appearance", "construction", "variation", "placement", "handler", "handling-boundary", "safety"}
+    qualifications = list(dict.fromkeys(claim["text"] for claim in claims
+                                       if claim["kind"] in visible_kinds and claim["text"] != definition))
+    use = [{"label": claim["kind"].replace("-", " ").capitalize(), "text": claim["text"]}
+           for claim in claims if claim["kind"] not in visible_kinds and claim["text"] != definition]
+    seen = {definition, *qualifications, *(claim["text"] for claim in use)}
+    seen.update(record.get("handling", {}).get("warnings", []))
+    for note in record.get("audience_note", []):
+        if set(note.get("claim_ids", [])) <= claim_ids and note["text"] not in seen:
+            use.append({"label": note["audience"].replace("-", " ").capitalize(), "text": note["text"]})
+            seen.add(note["text"])
+    source_ids = {source for claim in claims for source in claim.get("source_ids", [])}
+    citations = [_pictorial_source_reference(source, references)
+                 for source in sources.values() if source["id"] in source_ids]
+    return {
+        "qualifications": qualifications,
+        "locations": record.get("presence", {}).get("locations", []) if claims else [],
+        "contexts": record.get("presence", {}).get("contexts", []) if claims else [],
+        "statuses": record.get("statuses", []) if claims else [],
+        "handling": record.get("handling", {}) if claims else {},
+        "use": use,
+        "citations": citations,
+    }
+
+
+def pictorial_gallery_selection() -> tuple[dict[str, set[str]], set[str]]:
+    """Use the native editions' positive artwork selection and its source closure."""
+    from _native_print_artwork import DICTIONARY, DICTIONARY_LEAVES, dictionary_artwork
+
+    editions, inputs = {}, set()
+    for leaf in DICTIONARY_LEAVES:
+        try:
+            editions[leaf], sources = dictionary_artwork(ROOT, "gpt", DICTIONARY + "/" + leaf)
+        except (OSError, ValueError) as exc:
+            raise ReleaseError(f"cannot select dictionary artwork for {leaf}: {exc}") from exc
+        inputs.update(sources)
+    return editions, inputs
+
+
+def pictorial_gallery_data(edition: str | None = None) -> list[dict]:
+    """Describe exactly the artwork typeset by one edition, or the family union.
+
+    An old artwork's review receipt does not make it a current illustration.
+    The native selector owns record admission, replacements, plate layout and
+    fixed historical illustrations; the manifest supplies their descriptions
+    and exact image identities, not a second publication-selection policy.
+    """
+    editions, _ = pictorial_gallery_selection()
+    if edition is not None and edition not in editions:
+        raise ReleaseError(f"unknown pictorial dictionary edition: {edition}")
+    selected = editions[edition] if edition is not None else set().union(*editions.values())
     manifest_path = ROOT / PICTORIAL_MANIFEST_RELATIVE
     try:
         manifest = tomllib.loads(manifest_path.read_text(encoding="utf-8"))
@@ -1255,31 +1343,17 @@ def pictorial_gallery_data() -> list[dict]:
 
     asset_files = {item["id"]: item for item in manifest.get("asset_files", [])}
     admitted: list[tuple[dict, dict]] = []
-    required_reviews = {
-        "factual": "passed",
-        "visual": "passed",
-        "print": "passed",
-        "rights": "passed",
-        "consumer": "passed",
-        "release": "passed",
-    }
     for artwork in manifest.get("artworks", []):
-        if (
-            artwork.get("workflow_state") == "consumer-review-passed"
-            and artwork.get("reviews") == required_reviews
-        ):
-            asset_path = artwork.get("asset") or artwork.get("normalized", {}).get("path")
-            matching = [item for item in asset_files.values() if item.get("path") == asset_path]
-            if len(matching) != 1:
-                raise ReleaseError(f"{artwork.get('id')}: full artwork has no unique asset-file record")
-            admitted.append((artwork, matching[0]))
+        asset_path = artwork.get("asset") or artwork.get("normalized", {}).get("path")
+        if (PICTORIAL_ROOT_RELATIVE / str(asset_path)).as_posix() not in selected:
+            continue
+        matching = [item for item in asset_files.values() if item.get("path") == asset_path]
+        if len(matching) != 1:
+            raise ReleaseError(f"{artwork.get('id')}: selected artwork has no unique asset-file record")
+        admitted.append((artwork, matching[0]))
     for artwork in manifest.get("artwork_links", []):
         asset = asset_files.get(artwork.get("asset_file_id"))
-        if (
-            artwork.get("workflow_state") == "consumer-review-passed"
-            and asset
-            and asset.get("state") in {"canonical-alpha-eligible", "consumer-eligible"}
-        ):
+        if asset and (PICTORIAL_ROOT_RELATIVE / str(asset.get("path"))).as_posix() in selected:
             admitted.append((artwork, asset))
 
     objects: dict[str, dict] = {}
@@ -1330,14 +1404,23 @@ def pictorial_gallery_data() -> list[dict]:
         if isinstance(artwork.get("rights"), str) and artwork["rights"].strip():
             entry["rights"].add(artwork["rights"].strip())
 
+    missing = selected - grouped.keys()
+    if missing:
+        raise ReleaseError("selected dictionary artwork has no gallery description: " + ", ".join(sorted(missing)))
+
     cards: list[dict] = []
+    references: dict = {}
     for source_relative, entry in grouped.items():
         definitions = []
+        scale_modes = set()
         for object_id in sorted(entry["object_ids"]):
             record = objects.get(object_id)
             if record is None:
                 raise ReleaseError(f"{source_relative}: unknown object id {object_id}")
             definition, under_audit = _checked_definition(record)
+            for artwork in record.get("artwork", []):
+                if artwork["asset"] == source_relative or (PICTORIAL_ROOT_RELATIVE / artwork["asset"]).as_posix() == source_relative:
+                    scale_modes.add(artwork.get("scale_mode", "not-applicable"))
             definitions.append(
                 {
                     "id": object_id,
@@ -1346,6 +1429,7 @@ def pictorial_gallery_data() -> list[dict]:
                     "category": (record.get("categories") or ["other"])[0],
                     "definition": definition,
                     "under_audit": under_audit,
+                    **_pictorial_object_details(record, definition, references),
                 }
             )
         if not definitions:
@@ -1362,6 +1446,7 @@ def pictorial_gallery_data() -> list[dict]:
                 "source_relative": source_relative,
                 "destination": destination,
                 "definitions": definitions,
+                "scale_modes": scale_modes,
                 "sort_name": definitions[0]["name"].casefold(),
             }
         )
@@ -1373,7 +1458,12 @@ def pictorial_gallery_source_paths() -> set[str]:
     if not (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         return set()
     paths = {PICTORIAL_MANIFEST_RELATIVE.as_posix()} | pictorial_object_source_paths()
-    paths.update(card["source_relative"] for card in pictorial_gallery_data())
+    _, selection_inputs = pictorial_gallery_selection()
+    paths.update(selection_inputs)
+    for card in pictorial_gallery_data():
+        paths.add(card["source_relative"])
+        paths.update(source for definition in card["definitions"]
+                     for citation in definition["citations"] for source in citation["inputs"])
     return paths
 
 
@@ -5333,7 +5423,8 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
         (
             "Explore the checked monochrome drawings used across Triptych’s 1962 "
             "Roman sanctuary dictionaries. Each image appears once, even when several "
-            "objects or teaching views share it. "
+            "objects or teaching views share it. Images are fitted to their cards; "
+            "sizes across separate images are not a common scale. "
             f"{under_audit_count} pictured object record"
             f"{'s remain' if under_audit_count != 1 else ' remains'} under definition audit; "
             "those cards say so directly."
@@ -5359,15 +5450,46 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
                 if latin and latin != "Latin term not asserted"
                 else ""
             )
-            descriptions.append(
-                f'<dt>{html.escape(definition["name"])}{latin_text}</dt>'
-                f'<dd>{html.escape(definition["definition"])}</dd>'
-            )
+            paragraphs = [f'<p>{html.escape(definition["definition"])}</p>']
+            paragraphs.extend(f'<p>{html.escape(text)}</p>' for text in definition["qualifications"])
+            handling = definition["handling"]
+            paragraphs.extend(f'<p><strong>Handling:</strong> {html.escape(warning)}</p>'
+                              for warning in handling.get("warnings", [])
+                              if warning not in definition["qualifications"])
+            has_details = any(definition[key] for key in ("statuses", "locations", "handling", "use", "citations"))
+            if has_details:
+                paragraphs.append('<details><summary>Use and sources</summary>')
+            if definition["statuses"]:
+                status = ", ".join(definition["statuses"]).replace("-", " ").title()
+                paragraphs.append(f'<p><strong>Status:</strong> {html.escape(status)}.</p>')
+            if definition["locations"]:
+                location = " ".join(definition["locations"] + definition["contexts"])
+                paragraphs.append(f'<p><strong>Location:</strong> {html.escape(location)}</p>')
+            if handling:
+                handlers = ", ".join(handling["ordinary_handlers"]).replace("-", " ")
+                relation = handling["server_relation"].replace("-", " ")
+                paragraphs.append(f'<p><strong>Ordinary handler:</strong> {html.escape(handlers)}. '
+                                  f'<strong>Server:</strong> {html.escape(relation)}.</p>')
+            if has_details:
+                paragraphs.extend(f'<p><strong>{html.escape(item["label"])}:</strong> '
+                                  f'{html.escape(item["text"])}</p>' for item in definition["use"])
+                if definition["citations"]:
+                    paragraphs.append('<ul aria-label="Sources">')
+                    paragraphs.extend(f'<li>{html.escape(source["label"])} — {html.escape(source["locus"])}</li>'
+                                      for source in definition["citations"])
+                    paragraphs.append('</ul>')
+                paragraphs.append('</details>')
+            descriptions.append(f'<dt>{html.escape(definition["name"])}{latin_text}</dt>'
+                                f'<dd>{"".join(paragraphs)}</dd>')
         views = ", ".join(sorted(card["views"])).replace("-", " ")
         rights = "".join(
             f'<p class="gallery-rights">{html.escape(statement)}</p>'
             for statement in sorted(card["rights"])
         )
+        scale_labels = {"common-scale": "Objects within this image share a common scale.",
+                        "scale-bar": "Use the scale bar within this image.",
+                        "not-to-common-scale": "Objects within this image are not to common scale."}
+        scale = " ".join(scale_labels[mode] for mode in sorted(card["scale_modes"]) if mode in scale_labels)
         blocks.extend(
             [
                 f'<figure class="gallery-card"{category_id}>',
@@ -5381,6 +5503,7 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
                 "<figcaption>",
                 f"<h2>{html.escape(title)}</h2>",
                 f'<p class="gallery-view">{html.escape(views.title())}</p>',
+                f'<p class="gallery-view">{html.escape(scale)}</p>' if scale else "",
                 f'<dl>{"".join(descriptions)}</dl>',
                 rights,
                 "</figcaption>",

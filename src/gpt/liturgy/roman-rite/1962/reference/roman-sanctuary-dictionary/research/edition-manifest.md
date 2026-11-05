@@ -1,7 +1,8 @@
 # Edition manifest
 
-Status: **provisional; source acquisition and locus audit pending**
-Audit date: 2026-07-27
+Status: **bounded source editions verified; broader source-family audit open**
+Initial audit: 2026-07-27
+Current reconciliation: 2026-11-05
 
 The table distinguishes governing editions from supporting artifacts. Several
 supporting artifacts have now been acquired and inspected at bounded loci, as
@@ -12,15 +13,15 @@ use.
 
 | Key | Required source family | Intended control | Present state | Hold condition |
 | --- | --- | --- | --- | --- |
-| `ED-MR-1962` | 1962 typical edition of the *Missale Romanum* | Ordinary Mass, ritual Masses, Requiem, relevant altar, vessel, vestment, and ministerial relationships | edition lead only | Bind exact artifact and inspect every relied-on locus |
-| `ED-RG-1960` | 1960 *Rubricae generales* and *Ritus servandus* as incorporated at the 1962 horizon | Rubrical status and ceremonial branches | edition lead only | Resolve incorporated versus separately promulgated witnesses and exact loci |
+| `ED-MR-1962` | 1962 typical edition of the *Missale Romanum* | Ordinary Mass, ritual Masses, Requiem, relevant altar, vessel, vestment, and ministerial relationships | Exact CMAA Vatican-typical 1962 facsimile registered, reacquired, and inspected at bounded loci; see the 2026-11-05 source audit | Broader Mass and Holy Week coverage remains open; full retrieval is not full-volume verification |
+| `ED-RG-1960` | 1960 *Rubricae generales* and *Ritus servandus* as incorporated at the 1962 horizon | Rubrical status and ceremonial branches | Incorporated 1962 Missal witness inspected at General Rubrics 133–137, General Rubrics of the Missal 525–529, and Ritus I.1–5, II.1–4, X.6–7 in the current pass | Separately promulgated witnesses and every additional claimed branch still require their own exact evidence |
 | `ED-OHS-1962` | Holy Week texts and rubrics operative at the 1962 horizon | Palm Sunday, Holy Thursday, Good Friday, Easter Vigil object presence and compositions | corpus unresolved | Identify every governing edition and amendment; avoid silently using pre-1955 or post-1962 practice |
 | `ED-CE` | *Caeremoniale Episcoporum* edition(s) operative at the horizon | Pontifical Mass, episcopal vesture, insignia, furnishings, ministers, and compositions | Marietti 1948 third edition after the typical acquired and partially inspected at I.XI--XII and XXI; local retrieval/hash record in `pontifical-ceremony-candidate-audit.md` | Establish whether this edition controls at the 1962 horizon, identify later amendments, bind a canonical source record, and inspect every relied-on locus |
 | `ED-PR-1961-62` | *Pontificale Romanum*, editio typica 1961--1962, three parts: Pars secunda, editio typica emendata (Typis Polyglottis Vaticanis, 1961); Pars prima and Pars tertia et Appendix (Typis Polyglottis Vaticanis, 1962) | Pontifical functions, blessings, consecrations, and objects not controlled by the Missal | Edition identity and three-part structure checked in the publicly hosted introduction to the 2008 Vatican facsimile; full liturgical volumes not acquired or inspected | Acquire or consult exact full facsimile; inspect the decree, rubric, and rite locus for every object claim |
 | `ED-RR` | *Rituale Romanum* edition(s) operative at the horizon | Related ceremonies, Communion outside Mass, processions, blessings, and ritual objects | edition unresolved | Establish edition, supplements, territory, and applicable loci |
 | `ED-MC` | Official chant and music books used by named ceremonies | Book identities, stands, processional use, and choir objects | source family unresolved | Separate official books from practical choir compilations |
 | `ED-AAS` | Promulgating decrees and official acts | Effective dates, reforms, privileges, and material amendments | source family unresolved | Bind exact acts and loci rather than inferring currentness from book dates |
-| `ED-CONTEMP-CER` | Checked pre- or near-1962 ceremonials | Practical details omitted by higher sources | bibliography unresolved | Record author, edition, competence, jurisdiction, disagreements, and claim role |
+| `ED-CONTEMP-CER` | Checked pre- or near-1962 ceremonials | Practical details omitted by higher sources | Fortescue–O’Connell, seventh revised edition (1943), exact DLI/Internet Archive facsimile reacquired and checked at printed pp. 3, 6, 10–11, 16 in the current pass | This practical/morphological source remains subordinate to the 1962 books; its folded-chasuble material is superseded |
 | `ED-ORDO-LOCAL` | Documented regional, institutional, and religious-community ordines or customary sources | Narrow variants | no candidates admitted | Admit only materially distinct, source-supported cases and label their scope |
 | `ED-MATERIAL` | Dated museum, archive, cathedral, manufacturer, inventory, and specialist records | Construction, morphology, dimensions, and material history | corpus unresolved | Rights and provenance review for every image/reference; ritual status must come from competent liturgical evidence |
 | `ED-HIST-EARLY` | Primary and specialist evidence for early Roman and late-antique material culture | Historical section | corpus unresolved | Define dates, terminology, survival limits, and evidence quality |
@@ -30,6 +31,19 @@ use.
 | `ED-HIST-C20` | Primary and specialist evidence for pre-1962 twentieth-century reforms | Historical section | corpus unresolved | Record exact cessation or transition evidence |
 | `ED-LEX` | Latin liturgical dictionaries and indices tied to governing books | Latin headwords and aliases | corpus unresolved | Verify form, gender where displayed, variant terminology, and period |
 | `ED-SYMB` | Competent, dated symbolic commentaries | Optional brief symbolism | corpus unresolved | Label traditional associations and omit unsupported universalizing claims |
+
+## Current bounded edition evidence, 2026-11-05
+
+The exact Missal, 1943 ceremonial, and 1918 Vatican Code page identities,
+checksums, inspected pages, claims, and contrary evidence are recorded in
+`source-audit.md`, under “Ordinary Mass setting and vestment corrections”.
+The Code evidence is the registered complete leaf at printed p. 366, canons
+1269–1270; it does not represent a new full-Code inspection. These findings
+support the four new ordinary Mass objects and vestment corrections without
+closing the other source-family requirements in the table.
+
+The Pontifical acquisition history below is preserved as its dated checkpoint;
+no fresh full-volume acquisition or verification is asserted by this revision.
 
 ## Acquired finding aid for `ED-PR-1961-62`
 

@@ -1,0 +1,105 @@
+schema_version = 1
+id = "obj-altar"
+workflow_state = "art-reviewed"
+preferred_english_name = "Altar"
+latin_headword = "altare"
+categories = ["church-and-sanctuary", "altar-and-appointments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+related_objects = ["obj-altar-cross", "obj-altar-cloths", "obj-altar-candlestick", "obj-tabernacle"]
+confusable_with = ["obj-credence-table"]
+
+[presence]
+locations = ["The place in the sanctuary where the priest celebrates Mass."]
+contexts = ["The altar is distinct from the credence table and from the furnishings placed upon it."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "recognizes-only"
+warnings = ["Recognize the altar and keep its surface for the Mass and its appointed adornment; arranging or moving furnishings requires direction."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-altar-identity"
+kind = "identity"
+text = "The altar is the place on which the Sacrifice of the Mass is celebrated."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-missal"]
+
+[[claims]]
+id = "clm-altar-construction"
+kind = "construction"
+text = "The 1962 Missal requires a consecrated stone altar, or at least a consecrated altar stone large enough for the Host and most of the chalice; a blessed antimension is an alternative only by Apostolic indult."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-missal"]
+
+[[claims]]
+id = "clm-altar-appearance"
+kind = "appearance"
+text = "A fixed altar has its stone top, or mensa, permanently joined to its base; an altar stone may instead rest in a supporting table or framework."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-fortescue"]
+
+[[claims]]
+id = "clm-altar-use"
+kind = "liturgical-use"
+text = "The bare study shows the altar’s construction before preparation. For Mass the altar has three blessed cloths, one reaching the ground at the sides, a central crucifix, and the appointed lighted candles; only things belonging to the sacrifice or the altar adornment are placed upon it."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-fortescue", "src-altar-missal"]
+
+[[sources]]
+id = "src-altar-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales Missalis romani 525–529, printed p. XXXVI, artifact PDF p. 34."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[sources]]
+id = "src-altar-fortescue"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 3, artifact PDF p. 24; fixed altar and altar-stone distinction."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the altar and keep its surface for the Mass and its appointed adornment; arranging or moving furnishings requires direction."
+claim_ids = ["clm-altar-identity", "clm-altar-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The altar is the place on which the Sacrifice of the Mass is celebrated."
+claim_ids = ["clm-altar-identity"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the three altar cloths and the appointed cross and lights; keep unrelated objects off the mensa."
+claim_ids = ["clm-altar-use"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Distinguish the altar from its appointments and from the credence. The altar-stone and indult-antimension branches require their own preparation."
+claim_ids = ["clm-altar-identity", "clm-altar-construction", "clm-altar-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "The ordinary altar requirements remain the starting point; this entry supplies no complete pontifical arrangement."
+claim_ids = ["clm-altar-construction", "clm-altar-use"]
+
+[[artwork]]
+id = "art-altar-stone-study"
+view = "isolated"
+asset = "shared/artwork/pencil/furnishings/RPD-FIG-altar-study.png"
+review_state = "liturgically-checked"
+depicts = ["obj-altar"]
+review_note = "One solid stone base beneath an overhanging mensa. No cupboards, panels, textile, ornament, or extraneous appointment. The representative support silhouette does not establish a sole permitted construction. Full-size and small white-ground inspection passed; use on white only. Current plate, consumer, and print review are recorded separately in research/artwork-revision-2026-11-05.md."

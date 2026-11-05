@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 from pathlib import Path
@@ -352,6 +353,62 @@ class RecipeTests(unittest.TestCase):
         with patch.object(printing, "_papal_plan", return_value={"documents": []}):
             with self.assertRaisesRegex(printing.PrintError, "withdrawn during printing"):
                 printing._assert_papal_current(recipe, self.root)
+
+
+@unittest.skipUnless(shutil.which("pdflatex") and shutil.which("make"), "requires the native TeX toolchain")
+class DictionaryGeneratedRootTests(unittest.TestCase):
+    def test_make_selects_isolated_generated_body_and_omissions_without_losing_bundle_default(self):
+        scratch = printing._scratch_root(ROOT) / "tests"
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=scratch) as temporary:
+            root = Path(temporary)
+            source = root / "src/gpt"
+            source.mkdir(parents=True)
+            template_root = ROOT / "src/common/document-types/sanctuary-dictionary-v1"
+            template = (template_root / "main.template.tex").read_text()
+            definitions = "\n".join(line for line in template.splitlines()
+                                    if r"\RSDGeneratedRoot" in line or r"\RSDGeneratedFile" in line)
+            definitions += "\n" + (template_root / "omissions/generated.tex").read_text()
+            definitions = definitions.replace("@{selection}", "ed-fixture")
+            (source / "main.tex").write_text(
+                "\\documentclass{article}\n" + definitions + "\n\\begin{document}\n"
+                "\\input{\\RSDGeneratedFile}\n\\input{\\RSDOmissionFile}\n\\end{document}\n")
+            default = root / "build/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated"
+            isolated = root / "isolated/generated"
+            for directory, marker in ((default, "DEFAULT"), (isolated, "ISOLATED")):
+                directory.mkdir(parents=True)
+                (directory / "ed-fixture.tex").write_text(f"\\typeout{{{marker}BODY}}Body.\n")
+                (directory / "ed-fixture.review-omissions.tex").write_text(f"\\typeout{{{marker}OMISSIONS}}Omissions.\n")
+
+            # Browser bundles retain the original relative virtual build tree.
+            default_out = root / "default-output"
+            default_out.mkdir()
+            result = subprocess.run([shutil.which("pdflatex"), "-halt-on-error", "-interaction=nonstopmode",
+                                     "-output-directory=" + str(default_out), "main.tex"],
+                                    cwd=source, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stdout[-3000:])
+            self.assertIn("DEFAULTBODY", result.stdout)
+            self.assertIn("DEFAULTOMISSIONS", result.stdout)
+
+            # Exercise the production Make compiler macro, with both trees
+            # present: an accidental fallback must not silently render stale data.
+            make = (ROOT / "Makefile").read_text()
+            macro = "define PDFLATEX_TO_FIXED_POINT\n" + make.split(
+                "define PDFLATEX_TO_FIXED_POINT\n", 1)[1].split("\nendef", 1)[0] + "\nendef\n"
+            (root / "Makefile").write_text(
+                "SOURCE_ROOT := src/gpt\nPDFLATEX := " + shutil.which("pdflatex") + "\n"
+                "PDFLATEX_MAX_PASSES := 4\nSHA256 := sha256sum\n"
+                "ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS := isolated/output/selected.pdf\n"
+                "ROMAN_SANCTUARY_DICTIONARY_GENERATED := isolated/generated\n" + macro +
+                "isolated/output/selected.pdf:\n\t@mkdir -p $(@D)\n"
+                "\t@$(call PDFLATEX_TO_FIXED_POINT,selected,main.tex,isolated/output/selected)\n")
+            result = subprocess.run([shutil.which("make"), "--no-print-directory", "isolated/output/selected.pdf"],
+                                    cwd=root, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, (result.stdout + result.stderr)[-3000:])
+            self.assertIn("ISOLATEDBODY", result.stdout)
+            self.assertIn("ISOLATEDOMISSIONS", result.stdout)
+            self.assertNotIn("DEFAULTBODY", result.stdout)
+            self.assertNotIn("DEFAULTOMISSIONS", result.stdout)
 
 
 if __name__ == "__main__":

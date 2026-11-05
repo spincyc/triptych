@@ -1,7 +1,7 @@
 # Source audit
 
-Status: **initial gap audit with bounded object-family and sanctuary-component passes**
-Audit date: 2026-07-27
+Status: **bounded object-family audits; complete corpus remains open**
+Latest bounded source check: 2026-11-05
 
 ## Minimum sanctuary-component corpus, 2026-07-28
 
@@ -64,7 +64,11 @@ inspected the publicly hosted introduction to the 2008 Vatican facsimile of
 the *Pontificale Romanum* 1961--1962, and inspected two catalog records. It did
 not acquire or inspect the three full liturgical volumes.
 
-## Findings
+## Initial findings, 2026-07-27 (historical checkpoint)
+
+These findings describe the initial scaffold. Subsequent dated sections and
+the canonical records supersede the absence-of-record and absence-of-evidence
+claims below; they do not establish closure of the full declared corpus.
 
 - The declared corpus is far broader than the existing altar-server-guide
   evidence and cannot inherit verification from those guides.
@@ -201,8 +205,11 @@ What the second pass changed:
 
 ## Publication state
 
-Source-audited, independently reviewed, complete, approved, and release-ready
-labels are prohibited at this stage.
+The initial scaffold was not source-audited or release-ready. Later bounded
+object records and exact artwork may pass their own admission gates; that
+admission establishes neither complete coverage nor independent or
+ecclesiastical approval. Current eligibility is derived from the canonical
+records and artwork manifest, not from this historical checkpoint.
 
 ## Initial vessel and cruet pass — 2026-07-27
 
@@ -244,7 +251,7 @@ checked material exemplar, and leaves the other sacristy candidates held.
 
 | Binding ID | Witness and exact locus | Claim use and limit |
 | --- | --- | --- |
-| `passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-sacristy-preparation-and-reverence` | *Missale Romanum*, Vatican typical edition (1962), *Ritus servandus* I.1 and II.1, printed pp. LII and LIV / artifact PDF pp. 56 and 58 | Governing evidence for the priest's preparatory handwashing action and departure bow toward the sacristy cross or image. It prescribes neither a lavatory object name or morphology nor a crucifix-only form. |
+| `passage.catholic-church.missale-romanum.vatican-typica-1962.ritus-servandus-sacristy-preparation-and-reverence` | *Missale Romanum*, Vatican typical edition (1962), *Ritus servandus* I.1 and II.1, opening Ritus page (no printed folio visible) / artifact PDF p. 56 | Governing evidence for the priest's preparatory handwashing action and departure reverence toward the sacristy cross or image. It prescribes neither a lavatory object name or morphology nor a crucifix-only form. |
 | `passage.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.p-37-40` and `.p-59` | Fortescue, revised by J. B. O'Connell, *The Ceremonies of the Roman Rite Described*, seventh ed. (1943), printed pp. 37--40 and 59 | Contemporary ceremonial witness for the return bow and for a departure bell as practice in many churches. It does not make the bell universal or prescribe its mechanism, placement, operator, or morphology. |
 | `passage.catholic-encyclopedia.volume-13.new-york-1912.sacristy` | Andrew Meehan, “Sacristy,” *Catholic Encyclopedia* 13 (1912), exact New Advent HTML artifact, furnishing paragraph | Dated specialist evidence for the room's function, cross-or-suitable-image focus, lavatory, and customary bell. It is not an official 1962 furnishing code. |
 | `rsd-catholic-encyclopedia-piscina` | Francis Mershman, “Piscina,” *Catholic Encyclopedia* 12 (1911), New Advent transcription, lines 12--14, <https://www.newadvent.org/cathen/12115a.htm>, inspected 2026-07-27 | Specialist historical synthesis for names, disposal function, variable location, and materially different forms. It does not prove that every 1962 sacristy had one. |
@@ -387,15 +394,17 @@ combined treatment and is not regenerated.
 Six canonical records now preserve the exact 1962 ordinary-priest vesting
 sequence and its handling boundaries: amice, alb, cincture, left-arm maniple,
 crossed and cincture-secured priest's stole, and chasuble. The governing
-controls are *Ritus servandus* I.2--4, printed p. LII / artifact PDF p. 56,
+controls are *Ritus servandus* I.2--4, opening Ritus page (no printed folio visible) / artifact PDF p. 56,
 and General Rubrics 117 and 133--137, printed pp. XIX--XX / PDF pp. 17--18.
 
 Fortescue--O'Connell 1943 p. 10 / PDF p. 31 controls only contemporary gross
 recognition forms; pp. 38--39 / PDF pp. 59--60 control a practical/custom
 preparation and assistance model. Fortescue 1917 pp. 9--10, Casanowicz 1929
 p. 30, and the exact Met records are dated morphology witnesses only. No
-source universalizes dimensions, tassels, crosses, fringe, ornament, exact
-cut, folding, storage, or a general server assignment. The full evidence,
+source universalizes dimensions, tassels, fringe, ornament, exact cut,
+folding, storage, or a general server assignment. The former inclusion of
+crosses in this exclusion was incorrect: *Ritus* I.3 presupposes a central
+cross on the amice and maniple, as corrected in the 2026-11-05 section below. The full evidence,
 routing, artwork, and exclusion boundary is recorded in
 `priestly-vestments-alpha-audit-2026-07-28.md`.
 
@@ -414,3 +423,83 @@ No source universalizes dimensions, textile, ornament, exact cut, fastening,
 folding, storage, or an exhaustive visual dalmatic/tunicle distinction. The
 full evidence and artwork boundary is recorded in
 `sacred-minister-vestments-alpha-audit-2026-07-28.md`.
+
+
+## Ordinary Mass setting and vestment corrections, 2026-11-05
+
+This pass directly reread source page images rather than inheriting prior
+artwork approvals or the older audit summaries. It adds four canonical object
+records: altar, altar crucifix, tabernacle, and ciborium. Their separately
+registered figures and the corrected amice/maniple figures have passed
+figure-level review; `artwork-revision-2026-11-05.md` owns the current consumer
+review and print limits.
+
+| Exact witness | Acquisition and inspected extent | Claim boundary |
+| --- | --- | --- |
+| Registered CMAA 1962 *Missale Romanum* facsimile | Complete 82,815,941-byte PDF reacquired; SHA-256 `648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a` matches the registered artifact. Images inspected at PDF 18, 34, 56, 64–65. | General Rubrics 133–137; General Rubrics of the Missal 525–529; *Ritus servandus* I.1–5, II.1–4, X.6–7. These govern 1962 vesting, altar preparation, and Communion/reservation relationships. |
+| Registered Fortescue–O'Connell, seventh edition (1943), DLI/Internet Archive facsimile | Complete 60,347,644-byte PDF reacquired; SHA-256 `10acb8de9b161ed2c08be7ce767515418bca5d1ed7ddfff2de902179e1b62c7a` matches. Images inspected at printed pp. 3, 6, 10–11, 16 / PDF 24, 27, 31–32, 37. | Contemporary descriptions of fixed altar and altar-stone construction, tabernacle enclosure, ordinary vestments, and covered chalice-like ciborium. The 1943 folded-chasuble paragraph on p. 11 is superseded by 1962 General Rubrics 137 and is not imported. |
+| Registered 1918 Vatican Code, leaf-424 image | Exact complete registered page response reacquired; 500,277 bytes; SHA-256 `8d2f8427a96e0095c7ea4638fc316a7d25403d80f7993c092c637676b1cedf30` matches. Printed p. 366 viewed. | Canons 1269–1270 control the fixed and secure tabernacle, key responsibility, closed reservation vessel and white silk veil at the historical horizon. This is a bounded registered-page check, not a new full-Code acquisition or a statement of present law. |
+
+The source URLs, artifact identity and rights remain owned by the existing
+source-library records. Complete PDF retrieval does not mean complete-volume
+inspection. No source PDF, page image, prayer, or received translation is added
+to the publication. The new prose is original factual paraphrase; scan
+redistribution rights remain unchanged.
+
+### Corrections and contrary evidence
+
+- *Ritus* I.3 expressly describes a cross at the middle of both amice and
+  maniple. Earlier records said that crosses were unprescribed, and their
+  approved plain drawings omitted them. Those claims are corrected. The old
+  figures remain rejected. Replacements `art-amice-central-cross-study` and
+  `art-maniple-central-cross-study` are installed and recorded as
+  liturgically checked, with one representative central cross each.
+  `artwork-revision-2026-11-05.md` records the separate figure and consumer
+  reviews; a generic disclaimer cannot excuse the missing diagnostic feature.
+- The amice is briefly laid on the head and then lowered around the neck to
+  cover the clothing collar. Its place beneath the alb is now stated instead
+  of identifying it only by its number in the vesting sequence.
+- The deacon's general-reader note incorrectly contrasted his diagonal stole
+  with a priest's hanging stole. Fortescue pp. 10–11 and *Ritus* I.3–4 distinguish
+  the ordinary priest's crossed breast arrangement, the deacon's left-shoulder
+  arrangement, and the bishop's hanging ends. The corrected comparison has its
+  own canonical claim.
+- The tunicle entry now states the subdeacon's absence of a stole, directly
+  described on Fortescue p. 11. This is a more useful identification cue than
+  treating a slight sleeve difference as universally diagnostic.
+- The bishop/privileged abbot's maniple timing, including the Requiem
+  exception, is now an explicit claim from *Ritus* I.4 instead of an unsupported
+  audience-note assertion.
+- The new altar record preserves all three branches of General Rubrics of
+  the Missal 525: consecrated stone altar, consecrated altar stone, and blessed
+  antimension by Apostolic indult. A plain fixed-altar study does not exhaust
+  these legal forms.
+- The new tabernacle and ciborium records distinguish the secure enclosure
+  from the portable covered vessel. Their identification drawings, if
+  unveiled, are not complete prepared-reservation scenes. Canon 1270 requires
+  a white silk covering for the reserved vessel. Fortescue p. 16 note 1 records
+  disagreement about veiling an empty ciborium exposed before Mass; no
+  universal empty-vessel veiling rule is asserted.
+
+### Locator correction
+
+The six ordinary-priest records now cite the opening *Ritus* page as artifact
+PDF 56, whose printed folio is not visible, rather than repeating the older
+unverified printed-page label LII. This page contains I.1–5 and II.1–4;
+II.1 is not on artifact PDF 58. The central sacristy-preparation-and-reverence
+passage and its direct sacristy-cross/lavatory records now use that corrected
+locus. The passage also says to make a reverence without prescribing a head
+bow. Source-library `uses` and `impact` found no fingerprinted binding consumers
+of this passage; therefore no binding pins were refreshed. The exact artifact
+identity remains unchanged. The source-library validator passed after this
+bounded correction; the suspended historical staleness baseline was preserved.
+
+### Remaining extent
+
+Four source-audited records do not close the church, sanctuary, or sacred-vessel
+categories. Server/choir clothing, cope and humeral veil, altar cards and
+frontal, the reservation/exposition vessel family beyond the ciborium, and
+ceremony-specific equipment remain important unclosed inventory work.
+Requiem, Nuptial/ritual Mass, and the four Holy Week families retain the open
+states in the completeness matrix. Existing composition images cannot supply
+missing object identities, evidence, or handling claims.

@@ -1,5 +1,9 @@
 # Guide map: Missa Cantata
 
+Current source and screen-review checkpoint: 2026-11-05, 36 guide pages and
+13 companion pages. The production manifest owns exact reviewed identities.
+Older dated page counts below are historical snapshots.
+
 - Stable guide ID: liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata
 - Form: Missa Cantata, a sung Mass without deacon and subdeacon, according to
   the 1962 Roman Missal
@@ -66,9 +70,10 @@ lines, and stationary partner geometry remain local rehearsal data.
 The Gospel-side formation drawing uses corrected pencil asset `ASG-ART-009`
 for the incense-omitted state of MC-023--MC-025. Its TeX-owned labels identify
 A1 and A2 flanking the altar book and remaining stationary with their candles
-through the Gospel, with the priest at the book. Adjacent prose accounts for
-MC and conditional TH on the incense route rather than inventing figures not
-present in the raster. It is a schematic role-and-formation aid, not a scale plan:
+through the Gospel, with the priest at the altar-mounted book and MC attending.
+The corrected four-actor image shows the incense-omitted state; TH is added
+only by the written incense branch. Its six altar candles are a selected
+permitted sung-Mass arrangement. It is a role-and-formation aid, not a scale plan:
 the parish's marked distances, exact stations, and traffic route remain local
 rehearsal data. The series artwork manifest owns the asset's provenance,
 identity, rights, consumers, and review state.
@@ -104,9 +109,11 @@ place. This core model assumes no clergy seated in choir; any such clergy need
 a separate rank-and-count sheet. After A1/A2 rejoin, TH uses one double swing
 for MC, the A1/A2 pair, BB, each torchbearer pair, and optional CB and L
 separately before the people, with the named bows, closure, and reset. At
-MC-056 free-handed T1--T4 and L genuflect if the Blessed
-Sacrament is reserved and make a profound bow if it is not; the named
-object-bearers remain upright and bow the head.
+MC-056 MC, TH, BB, T1--T4 and L genuflect in the declared manual model,
+whether or not the Blessed Sacrament is reserved. Biretta, closed thurible and
+boat remain secure; the cross and candle bearers remain standing. The priest's
+own reserved/unreserved reverence is distinct. At MC-049 A1 pours wine first;
+after he stops, A2 pours water over the priest's thumbs and index fingers.
 
 The paired companion has twenty-four integrated response cards, one for each
 stable A-bank response or A8 study chunk. R01--R07, R08A--R08C, and R09--R22
@@ -173,7 +180,7 @@ Series-wide source, response, pronunciation, ceremonial, card, rights, and
 production records are owned by the non-publishable altar-server-guides
 research directory.
 
-The 2026-07-28 installed Alpha snapshot is thirty-four pages; its companion
-remains twelve pages. Exact artifact identities and every-page screen-review
+The 2026-07-28 installed Alpha snapshot was thirty-four pages; its companion
+was twelve pages. Exact artifact identities and every-page screen-review
 evidence are recorded in the series production manifest. Neither publication
 claims official or ecclesiastical approval.

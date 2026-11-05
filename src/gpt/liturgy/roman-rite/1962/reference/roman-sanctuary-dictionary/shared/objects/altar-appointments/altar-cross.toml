@@ -1,0 +1,99 @@
+schema_version = 1
+id = "obj-altar-cross"
+workflow_state = "art-reviewed"
+preferred_english_name = "Altar crucifix"
+latin_headword = "crux cum Crucifixo"
+categories = ["altar-and-appointments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+related_objects = ["obj-altar", "obj-altar-candlestick"]
+confusable_with = ["obj-processional-cross", "obj-sacristy-cross"]
+
+[presence]
+locations = ["At the middle of the altar, with the appointed lighted candles to either side."]
+contexts = ["The crucifix is an altar appointment; a processional cross is a separate carried object."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["sacristan"]
+server_relation = "recognizes-only"
+warnings = ["Recognize the altar crucifix by the figure of the crucified Christ; leave its arrangement to the appointed preparation."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-altar-cross-identity"
+kind = "identity"
+text = "The altar crucifix is the cross bearing the figure of the crucified Christ at the middle of the altar."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-cross-missal"]
+
+[[claims]]
+id = "clm-altar-cross-appearance"
+kind = "appearance"
+text = "The required identifying feature is the crucified figure on the cross; the Missal calls for a cross of sufficient size without giving a measurement or prescribing ornament."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-cross-missal"]
+
+[[claims]]
+id = "clm-altar-cross-use"
+kind = "placement"
+text = "For Mass the crucifix stands centrally on the altar, with the required candlesticks and lighted candles to either side."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-altar-cross-missal"]
+
+[[sources]]
+id = "src-altar-cross-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales Missalis romani 527, printed p. XXXVI, artifact PDF p. 34."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the altar crucifix by the figure of the crucified Christ; leave its arrangement to the appointed preparation."
+claim_ids = ["clm-altar-cross-identity", "clm-altar-cross-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The altar crucifix is the cross bearing the figure of the crucified Christ at the middle of the altar."
+claim_ids = ["clm-altar-cross-identity"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Place the crucifix centrally with the appointed lights on either side. The required number of candles depends on the Mass."
+claim_ids = ["clm-altar-cross-use"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Recognize the crucified figure and central placement; do not confuse the altar crucifix with the carried processional cross."
+claim_ids = ["clm-altar-cross-identity", "clm-altar-cross-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use the central altar crucifix as an ordinary altar appointment; rank-specific light arrangements require their own source."
+claim_ids = ["clm-altar-cross-use"]
+
+[[artwork]]
+id = "art-altar-crucifix-standing-study"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-altar-crucifix-study.png"
+review_state = "liturgically-checked"
+depicts = ["obj-altar-cross"]
+review_note = "One cross, one anatomically coherent small corpus with loincloth, one stem, one broad stepped base. No processional pole, candles, title plaque, INRI, halo, rays, skull, or other figure. Base and style are representative, not a reconstruction of the medieval museum object. Full-size and small white-ground inspection passed; use on white only. Current plate, consumer, and print review are recorded separately in research/artwork-revision-2026-11-05.md."
+
+[[sources]]
+id = "src-altar-cross-standing-example"
+binding = "artifact.metropolitan-museum-of-art.crucifix-469881.met-collection-record-2025-12-20.met-api-json-8f49e27d"
+locus = "Registered Metropolitan Museum collection record, object 469881: separate cross, corpus, and base measurements."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+note = "Component morphology only; a medieval example, not a 1962 normative design. No photograph supplied to generation or claimed as inspected."

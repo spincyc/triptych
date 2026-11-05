@@ -1163,8 +1163,8 @@ release = "passed"
 [[asset_files]]
 id = "file-rpd-vestments-amice-v2"
 path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v2.png"
-state = "canonical-alpha-eligible"
-audit_record = "research/priestly-vestments-alpha-audit-2026-07-28.md"
+state = "rejected"
+audit_record = "research/artwork-revision-2026-11-05.md"
 technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 574117, sha256 = "3215b44d265c2a2452a46285989c75c043837b2806912287bb037882199ac902" }
 
 [[asset_files]]
@@ -1184,8 +1184,8 @@ technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "gra
 [[asset_files]]
 id = "file-rpd-vestments-maniple-v2"
 path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v2.png"
-state = "canonical-alpha-eligible"
-audit_record = "research/priestly-vestments-alpha-audit-2026-07-28.md"
+state = "rejected"
+audit_record = "research/artwork-revision-2026-11-05.md"
 technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 532115, sha256 = "d7cd099e4ab1ccb38b3b7d5e19451178e6bb900fe04303eef70c091b0b816286" }
 
 [[asset_files]]
@@ -1207,7 +1207,7 @@ id = "art-vestments-0001-amice"
 object_ids = ["obj-amice"]
 variant_ids = []
 view = "isolated"
-workflow_state = "consumer-review-passed"
+workflow_state = "rejected"
 purpose = "Teach recognition of one source-bounded amice without turning illustrative folds or tie placement into a universal prescription."
 depicted_state = "One complete plain rectangular cloth with two complete long ties, isolated on warm-white paper."
 source_controlled_features = ["The checked 1943 ceremonial controls the rectangular linen cloth and long-tie recognition class.", "The 1962 Missal controls identity and first place in the priestly vesting sequence."]
@@ -1229,11 +1229,11 @@ generated_on = "2026-07-28"
 asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v2.png"
 reference_ids = ["src-amice-missal-1962", "src-amice-fortescue-1943", "src-amice-fortescue-1917", "src-amice-casanowicz"]
 precursor_ids = []
-corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate isolated plate replaces reliance on the rejected legacy composite without overwriting it."]
+corrections = ["Rejected 2026-11-05: the drawing omits the central cross presupposed by Missal Ritus servandus I.3; superseded by the central-cross study. Earlier review statements are historical, not current acceptance.", "The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate isolated plate replaces reliance on the rejected legacy composite without overwriting it."]
 baked_content_audit = ["One complete rectangular cloth and two uninterrupted ties are visible.", "No neck cutout, cross, lace, apparel, embroidery, text, person, other object, crop, color, or watermark is visible.", "Folds, proportions, weave, and tie placement remain illustrative."]
 tex_overlays = ["English and Latin headwords, stable ID, sequence, handling boundary, source keys, and morphology ceiling remain TeX-owned."]
-consumer_plate_ids = ["plt-priestly-vesture"]
-consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+consumer_plate_ids = []
+consumer_edition_ids = []
 rights = "Project-generated raster made without a supplied reference image; exact prompt, built-in mode, received and normalized hashes, transformation, controls, and checks are recorded."
 [artworks.received]
 width_px = 1024
@@ -1254,12 +1254,12 @@ max_placement_width_in = 3.0
 max_placement_height_in = 4.5
 effective_dpi = 300.0
 [artworks.reviews]
-factual = "passed"
+factual = "failed"
 visual = "passed"
 print = "passed"
 rights = "passed"
-consumer = "passed"
-release = "passed"
+consumer = "failed"
+release = "failed"
 
 [[artworks]]
 id = "art-vestments-0002-alb"
@@ -1383,7 +1383,7 @@ id = "art-vestments-0004-maniple"
 object_ids = ["obj-maniple"]
 variant_ids = []
 view = "isolated"
-workflow_state = "consumer-review-passed"
+workflow_state = "rejected"
 purpose = "Teach the maniple as a short narrow band distinct from the longer stole."
 depicted_state = "One short plain narrow flexible band in a shallow fold with both ends visible."
 source_controlled_features = ["The checked 1943 ceremonial controls the short silk-band recognition class.", "The 1962 Missal controls left-arm placement and sequence."]
@@ -1404,11 +1404,11 @@ generated_on = "2026-07-28"
 asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v2.png"
 reference_ids = ["src-maniple-missal-1962", "src-maniple-rubrics-1962", "src-maniple-fortescue-1943", "src-maniple-fortescue-1917", "src-maniple-casanowicz", "src-maniple-met"]
 precursor_ids = []
-corrections = ["The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate isolated plate replaces reliance on the rejected legacy composite without overwriting it."]
+corrections = ["Rejected 2026-11-05: the drawing omits the central cross presupposed by Missal Ritus servandus I.3; superseded by the central-cross study. Earlier review statements are historical, not current acceptance.", "The received RGB PNG was stripped, converted to 8-bit grayscale, and reduced to 900 by 1350 pixels without a content edit.", "A separate isolated plate replaces reliance on the rejected legacy composite without overwriting it."]
 baked_content_audit = ["One complete short plain narrow band in a shallow fold with both ends visible.", "No person, arm, cross, fringe, pointed end, embroidery, clasp, text, other object, crop, color, or watermark is visible.", "Length, width, fold, fabric, and end shape remain illustrative."]
 tex_overlays = ["English and Latin headwords, stable ID, left-arm use, sequence, cope branch, source keys, and morphology ceiling remain TeX-owned."]
-consumer_plate_ids = ["plt-priestly-vesture"]
-consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+consumer_plate_ids = []
+consumer_edition_ids = []
 rights = "Project-generated raster made without a supplied reference image; exact prompt, built-in mode, received and normalized hashes, transformation, controls, and checks are recorded."
 [artworks.received]
 width_px = 1024
@@ -1429,12 +1429,12 @@ max_placement_width_in = 3.0
 max_placement_height_in = 4.5
 effective_dpi = 300.0
 [artworks.reviews]
-factual = "passed"
+factual = "failed"
 visual = "passed"
 print = "passed"
 rights = "passed"
-consumer = "passed"
-release = "passed"
+consumer = "failed"
+release = "failed"
 
 [[artworks]]
 id = "art-vestments-0005-priest-stole"
@@ -4613,7 +4613,7 @@ id = "art-vestments-0001-amice-v3-alpha"
 object_ids = ["obj-amice"]
 variant_ids = []
 view = "isolated"
-workflow_state = "consumer-review-passed"
+workflow_state = "rejected"
 purpose = "Preserve the reviewed amice drawing without a rectangular paper boundary."
 depicted_state = "The complete predecessor drawing with proportional transparency."
 source_controlled_features = ["The predecessor's checked identity and morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
@@ -4625,15 +4625,15 @@ generated_on = "2026-07-28"
 asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png"
 reference_ids = ["src-amice-missal-1962", "src-amice-fortescue-1943", "src-amice-fortescue-1917", "src-amice-casanowicz"]
 precursor_ids = ["art-vestments-0001-amice"]
-corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+corrections = ["Rejected 2026-11-05: the drawing omits the central cross presupposed by Missal Ritus servandus I.3; superseded by the central-cross study. Earlier review statements are historical, not current acceptance.", "Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
 baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
 tex_overlays = ["All names, source keys, and qualifications remain TeX-owned."]
-consumer_plate_ids = ["plt-priestly-vesture"]
-consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+consumer_plate_ids = []
+consumer_edition_ids = []
 rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
 received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 574117, sha256 = "3215b44d265c2a2452a46285989c75c043837b2806912287bb037882199ac902" }
 normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 454193, sha256 = "e83d557d9c5d755f675d7cb4997d10adf44e0a8061742825e260928062f13dd9", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
-reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+reviews = { factual = "failed", visual = "passed", print = "passed", rights = "passed", consumer = "failed", release = "failed" }
 
 [[artworks]]
 id = "art-vestments-0002-alb-v3-alpha"
@@ -4694,7 +4694,7 @@ id = "art-vestments-0004-maniple-v3-alpha"
 object_ids = ["obj-maniple"]
 variant_ids = []
 view = "isolated"
-workflow_state = "consumer-review-passed"
+workflow_state = "rejected"
 purpose = "Preserve the reviewed maniple drawing without a rectangular paper boundary."
 depicted_state = "The complete predecessor drawing with proportional transparency."
 source_controlled_features = ["The predecessor's checked identity and morphology ceiling are unchanged.", "Only grayscale values were represented as opacity."]
@@ -4706,15 +4706,15 @@ generated_on = "2026-07-28"
 asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v3-alpha.png"
 reference_ids = ["src-maniple-missal-1962", "src-maniple-rubrics-1962", "src-maniple-fortescue-1943", "src-maniple-fortescue-1917", "src-maniple-casanowicz", "src-maniple-met"]
 precursor_ids = ["art-vestments-0004-maniple"]
-corrections = ["Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
+corrections = ["Rejected 2026-11-05: the drawing omits the central cross presupposed by Missal Ritus servandus I.3; superseded by the central-cross study. Earlier review statements are historical, not current acceptance.", "Converted inverse predecessor grayscale to opacity without crop or geometry change.", "Refined only opacity: alpha at or below 20/255 is zero, alpha between 20/255 and 40/255 is tapered by cubic smoothstep, and alpha at or above 40/255 is unchanged."]
 baked_content_audit = ["White compositing reproduces the predecessor exactly; no floating rectangle was introduced."]
 tex_overlays = ["All names, source keys, and qualifications remain TeX-owned."]
-consumer_plate_ids = ["plt-priestly-vesture"]
-consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+consumer_plate_ids = []
+consumer_edition_ids = []
 rights = "Deterministic alpha derivative of the project-generated predecessor; its provenance and rights disposition remain recorded."
 received = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale", bytes = 532115, sha256 = "d7cd099e4ab1ccb38b3b7d5e19451178e6bb900fe04303eef70c091b0b816286" }
 normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v3-alpha.png", width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 244212, sha256 = "47cf77323f3a1548f2b5556894fbdb7834c42cfbce5f8c7b018d629ed4b87724", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 300.0 }
-reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+reviews = { factual = "failed", visual = "passed", print = "passed", rights = "passed", consumer = "failed", release = "failed" }
 
 [[artworks]]
 id = "art-vestments-0005-priest-stole-v3-alpha"
@@ -4781,8 +4781,8 @@ technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "gr
 [[asset_files]]
 id = "file-rpd-vestments-amice-v3-alpha"
 path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png"
-state = "canonical-alpha-eligible"
-audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+state = "rejected"
+audit_record = "research/artwork-revision-2026-11-05.md"
 boundary_treatment = "transparent"
 technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 454193, sha256 = "e83d557d9c5d755f675d7cb4997d10adf44e0a8061742825e260928062f13dd9" }
 
@@ -4805,8 +4805,8 @@ technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "gra
 [[asset_files]]
 id = "file-rpd-vestments-maniple-v3-alpha"
 path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v3-alpha.png"
-state = "canonical-alpha-eligible"
-audit_record = "research/vestment-boundary-audit-2026-07-28.md"
+state = "rejected"
+audit_record = "research/artwork-revision-2026-11-05.md"
 boundary_treatment = "transparent"
 technical = { width_px = 900, height_px = 1350, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 244212, sha256 = "47cf77323f3a1548f2b5556894fbdb7834c42cfbce5f8c7b018d629ed4b87724" }
 
@@ -5344,3 +5344,281 @@ rights = "Project-generated graphite derivative of a retained Public Domain Rijk
 received = { width_px = 1077, height_px = 1461, bit_depth = 8, color_mode = "rgb", bytes = 2670634, sha256 = "99c04373de35bbf0d4775bedecf962e752d4a826ae2b14eb6a2fe93c895d5141" }
 normalized = { path = "shared/artwork/pencil/compositions/RPD-FIG-sanctuary-0001-ecce-homo-chapel-rijks-graphite.png", width_px = 1077, height_px = 1461, bit_depth = 8, color_mode = "grayscale", bytes = 932512, sha256 = "d58e4ccc76d96612af6e918e89bae19c81f8143876fb7e31b181a1d5518a8fd3", max_placement_width_in = 3.5, max_placement_height_in = 4.748, effective_dpi = 307.7 }
 reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+
+[[asset_files]]
+id = "file-altar-stone-study"
+path = "shared/artwork/pencil/furnishings/RPD-FIG-altar-study.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/artwork-revision-2026-11-05.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 901790, sha256 = "3665a1b431bcde307ed97deec915cb879e8672574711c46c58740cc3e505ac7a" }
+
+[[artworks]]
+id = "art-altar-stone-study"
+object_ids = ["obj-altar"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded graphite identification study."
+depicted_state = "Bare fixed-stone altar in three-quarter view; no prepared appointments."
+source_controlled_features = ["stone mensa permanently joined to substantial stable base"]
+deliberate_omissions = ["universal dimensions or ornament claim", "ceremonial action", "historical specimen reproduction"]
+brief = "Bare fixed-stone altar in three-quarter view; no prepared appointments."
+exact_prompt = """Use case: scientific-educational
+Asset type: isolated monochrome reference figure for the Roman Sanctuary Dictionary at the 1962 horizon.
+Input images: the supplied project-created chalice and paten images are STYLE REFERENCES ONLY. Match their fine graphite texture, controlled contour, pale gray tonal modelling, calm object-study presentation, and clear silhouette. Do not copy their shapes or decorative ornament.
+Style/medium: elegant restrained graphite pencil drawing, hand-drawn fine hatching and paper-like texture within the subject, grayscale only. A small library reference study with confident outlines, recognizable at a three-inch printed placement.
+Scene/backdrop: genuine transparent background with no visible paper rectangle, ground plane, cast shadow, scenery, border, or color.
+Composition/framing: one complete isolated object, gently elevated three-quarter view, centered with generous transparent margin and no clipped parts. Render only the object described below.
+TeX-owned additions: all names and explanations will be typeset separately; put no text or graphic annotations inside the image.
+Avoid: all words, letters, pseudo-lettering, numbers, labels, arrows, caption, watermark, border, extra objects, exaggerated ornament, and photorealistic or glossy 3D-render treatment.
+Primary request: draw one plain fixed stone altar as a bare construction study.
+Required construction: one solid thick rectangular stone mensa permanently united to a substantial stable stone base. The mensa projects modestly beyond the support. Render plain uncarved stone surfaces and restrained fine stone texture. Show the top and two adjoining faces sufficiently to understand the solid construction.
+Required state: bare, empty, isolated morphology study, without any liturgical appointments or textile.
+Constraints: no cabinetry, cupboards, doors, drawers, panels, handles, shelves, reredos, architectural backdrop, columns, canopy, steps, cloth, cross, symbolic ornament, candles, book, or other objects. This is one representative fixed-altar construction; do not depict or imply a sole permitted altar form.
+Source-controlled brief: fixed stone mensa and permanently joined base from Fortescue 1943 p.3; bare diagnostic state rather than prepared-for-Mass arrangement. The Missal's RG525 distinguishes other lawful constructions."""
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-05"
+asset = "shared/artwork/pencil/furnishings/RPD-FIG-altar-study.png"
+reference_ids = ["src-altar-missal", "src-altar-fortescue", "art-chalice-isolated-v2", "art-paten-isolated-v2"]
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale-alpha with ImageMagick; alpha absolute error 0; normalized RGBA RMSE 0.00247798. No geometry or alpha modification during normalization."]
+baked_content_audit = ["One solid stone base beneath an overhanging mensa. No cupboards, panels, textile, ornament, or extraneous appointment. The representative support silhouette does not establish a sole permitted construction.", "No baked-in letters, numerals, captions, arrows, borders, or watermark.", "White-ground full-size and 360-pixel previews inspected. White alpha fringe is visible on dark backgrounds but invisible on white; white-ground use only.", "Input roles: style reference only: shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png; style reference only: shared/artwork/pencil/RPD-FIG-sacred-vessels-0006-iso-paten-v2.png"]
+tex_overlays = ["English and Latin names", "representative morphology/state qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated content; project-created artwork input only. No third-party image supplied."
+received = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "rgba", bytes = 2186679, sha256 = "f2d9375fc6865f6b2c3b56a6b55025ad84f7432937a4073cdb4132f7502981b0" }
+normalized = { path = "shared/artwork/pencil/furnishings/RPD-FIG-altar-study.png", width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 901790, sha256 = "3665a1b431bcde307ed97deec915cb879e8672574711c46c58740cc3e505ac7a", max_placement_width_in = 3.0, max_placement_height_in = 2.0, effective_dpi = 512.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+
+[[asset_files]]
+id = "file-tabernacle-casket-study"
+path = "shared/artwork/pencil/furnishings/RPD-FIG-tabernacle-study.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/artwork-revision-2026-11-05.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1491, height_px = 1055, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 646445, sha256 = "8ec776e106a32b580826621bd645df70856e7de581548555a5a444f6bbd6c235" }
+
+[[artworks]]
+id = "art-tabernacle-casket-study"
+object_ids = ["obj-tabernacle"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded graphite identification study."
+depicted_state = "Empty unveiled representative casket with both doors open."
+source_controlled_features = ["solid secure casket", "two outward-opening doors"]
+deliberate_omissions = ["universal dimensions or ornament claim", "ceremonial action", "historical specimen reproduction"]
+brief = "Empty unveiled representative casket with both doors open."
+exact_prompt = """Use case: scientific-educational
+Asset type: isolated monochrome reference figure for the Roman Sanctuary Dictionary at the 1962 horizon.
+Input images: the supplied project-created chalice and paten images are STYLE REFERENCES ONLY. Match their fine graphite texture, controlled contour, pale gray tonal modelling, calm object-study presentation, and clear silhouette. Do not copy their shapes or decorative ornament.
+Style/medium: elegant restrained graphite pencil drawing, hand-drawn fine hatching and paper-like texture within the subject, grayscale only. A small library reference study with confident outlines, recognizable at a three-inch printed placement.
+Scene/backdrop: genuine transparent background with no visible paper rectangle, ground plane, cast shadow, scenery, border, or color.
+Composition/framing: one complete isolated object, gently elevated three-quarter view, centered with generous transparent margin and no clipped parts. Render only the object described below.
+TeX-owned additions: all names and explanations will be typeset separately; put no text or graphic annotations inside the image.
+Avoid: all words, letters, pseudo-lettering, numbers, labels, arrows, caption, watermark, border, extra objects, exaggerated ornament, and photorealistic or glossy 3D-render treatment.
+Primary request: draw one modest solid tabernacle casket, a secure altar-mounted safe, as an empty unveiled construction study.
+Required construction: compact solid rectangular casket, plain robust body and flat top; two modest outward-opening front doors on visible side hinges. Show both doors slightly open so their thickness and opening direction are clear and a narrow unoccupied interior is visible. A small ordinary keyhole can appear near the meeting edge; no key. The solid base sits directly on its mounting plane, without portable carrying handles or feet.
+Required state: empty and unveiled, detached from its setting for morphological clarity. Show no sacred contents.
+Constraints: keep this a small unornamented casket, not vast architecture or a portable travel box. No dome, rays, throne, spire, columns, architectural façade, cross, engraving, cloth, curtains, host, ciborium, lamp, altar, wall, pediment, decorative finials, or scene.
+Source-controlled brief: solid secure fixed casket with outward-opening doors from Fortescue 1943 p.6 and 1917 CIC1269. Mounting and reservation use will be described outside the isolated study."""
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-05"
+asset = "shared/artwork/pencil/furnishings/RPD-FIG-tabernacle-study.png"
+reference_ids = ["src-tabernacle-code", "src-tabernacle-fortescue", "art-chalice-isolated-v2", "art-paten-isolated-v2"]
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale-alpha with ImageMagick; alpha absolute error 0; normalized RGBA RMSE 0.00232689. No geometry or alpha modification during normalization."]
+baked_content_audit = ["Two doors attach to visible side hinges and open outward. Keyhole is clear; interior empty. No handles, rays, throne, Eucharistic contents, or surrounding architecture. This isolated study cannot depict permanent mounting.", "No baked-in letters, numerals, captions, arrows, borders, or watermark.", "White-ground full-size and 360-pixel previews inspected. White alpha fringe is visible on dark backgrounds but invisible on white; white-ground use only.", "Input roles: style reference only: shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png; style reference only: shared/artwork/pencil/RPD-FIG-sacred-vessels-0006-iso-paten-v2.png"]
+tex_overlays = ["English and Latin names", "representative morphology/state qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated content; project-created artwork input only. No third-party image supplied."
+received = { width_px = 1491, height_px = 1055, bit_depth = 8, color_mode = "rgba", bytes = 1771904, sha256 = "95624c5920315c75b0760f42e03bc326856efc277dfb49a0909805181ecea20e" }
+normalized = { path = "shared/artwork/pencil/furnishings/RPD-FIG-tabernacle-study.png", width_px = 1491, height_px = 1055, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 646445, sha256 = "8ec776e106a32b580826621bd645df70856e7de581548555a5a444f6bbd6c235", max_placement_width_in = 3.0, max_placement_height_in = 2.122736, effective_dpi = 497.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+
+[[asset_files]]
+id = "file-ciborium-covered-study"
+path = "shared/artwork/pencil/RPD-FIG-ciborium-study.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/artwork-revision-2026-11-05.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1055, height_px = 1491, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 525581, sha256 = "f252fb3ec8abee2d94720bdec648c0bc8029d30341ae480b3bf0e479edcf5739" }
+
+[[artworks]]
+id = "art-ciborium-covered-study"
+object_ids = ["obj-ciborium"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded graphite identification study."
+depicted_state = "One closed covered vessel, externally unveiled for morphology."
+source_controlled_features = ["chalice-like vessel", "fitted removable lid"]
+deliberate_omissions = ["universal dimensions or ornament claim", "ceremonial action", "historical specimen reproduction"]
+brief = "One closed covered vessel, externally unveiled for morphology."
+exact_prompt = """Use case: scientific-educational
+Asset type: isolated monochrome reference figure for the Roman Sanctuary Dictionary at the 1962 horizon.
+Input images: the supplied project-created chalice and paten images are STYLE REFERENCES ONLY. Match their fine graphite texture, controlled contour, pale gray tonal modelling, calm object-study presentation, and clear silhouette. Do not copy their shapes or decorative ornament.
+Style/medium: elegant restrained graphite pencil drawing, hand-drawn fine hatching and paper-like texture within the subject, grayscale only. A small library reference study with confident outlines, recognizable at a three-inch printed placement.
+Scene/backdrop: genuine transparent background with no visible paper rectangle, ground plane, cast shadow, scenery, border, or color.
+Composition/framing: one complete isolated object, gently elevated three-quarter view, centered with generous transparent margin and no clipped parts. Render only the object described below.
+TeX-owned additions: all names and explanations will be typeset separately; put no text or graphic annotations inside the image.
+Avoid: all words, letters, pseudo-lettering, numbers, labels, arrows, caption, watermark, border, extra objects, exaggerated ornament, and photorealistic or glossy 3D-render treatment.
+Primary request: draw one covered ciborium, a chalice-like sacred vessel with a fitted removable lid, as an isolated morphology study.
+Required construction: one broad stable circular spreading foot; one upright stem with a modest central knop; one broad rounded cup; one clearly separable fitted low domed lid seated evenly on the cup rim. Give the lid a small plain round lifting knob. Make the junction between cup and fitted lid visible and mechanically plausible. The simple smooth metal form has fine graphite contour and soft tonal shading, with no decorative engraving.
+Required state: closed and empty; no external veil because this is a diagnostic construction study.
+Constraints: exactly one vessel and one fitted lid; no separate inset, no handles, spout, chain, extra stems or feet, host, hands, cloth, rays, engraved religious symbols, lettering, or other objects.
+Source-controlled brief: covered chalice-like vessel from Fortescue 1943 p.16 and the removable-cover handling in Missal Ritus servandus X6–7. This morphology study does not show the veiled state used for reservation."""
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-05"
+asset = "shared/artwork/pencil/RPD-FIG-ciborium-study.png"
+reference_ids = ["src-ciborium-missal", "src-ciborium-fortescue", "art-chalice-isolated-v2", "art-paten-isolated-v2"]
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale-alpha with ImageMagick; alpha absolute error 0; normalized RGBA RMSE 0.00207467. No geometry or alpha modification during normalization."]
+baked_content_audit = ["One circular foot, stem, knop, broad rounded bowl, and fitted removable lid. Lid has plain round knob; closure seam is visible. No hosts, hands, cloth, duplicate foot, handle, or spout.", "No baked-in letters, numerals, captions, arrows, borders, or watermark.", "White-ground full-size and 360-pixel previews inspected. White alpha fringe is visible on dark backgrounds but invisible on white; white-ground use only.", "Input roles: style reference only: shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png; style reference only: shared/artwork/pencil/RPD-FIG-sacred-vessels-0006-iso-paten-v2.png"]
+tex_overlays = ["English and Latin names", "representative morphology/state qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated content; project-created artwork input only. No third-party image supplied."
+received = { width_px = 1055, height_px = 1491, bit_depth = 8, color_mode = "rgba", bytes = 1393277, sha256 = "cb8971693b6131aa36060d8393c7756e0a0edbb4c3d04e7f3e938415fe343a55" }
+normalized = { path = "shared/artwork/pencil/RPD-FIG-ciborium-study.png", width_px = 1055, height_px = 1491, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 525581, sha256 = "f252fb3ec8abee2d94720bdec648c0bc8029d30341ae480b3bf0e479edcf5739", max_placement_width_in = 2.122736, max_placement_height_in = 3.0, effective_dpi = 497.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+
+[[asset_files]]
+id = "file-altar-crucifix-standing-study"
+path = "shared/artwork/pencil/RPD-FIG-altar-crucifix-study.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/artwork-revision-2026-11-05.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 645318, sha256 = "0800e2a4e8d372dba5072a32387450deac4fdb6747c279c4d4f95327fd4426e1" }
+
+[[artworks]]
+id = "art-altar-crucifix-standing-study"
+object_ids = ["obj-altar-cross"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded graphite identification study."
+depicted_state = "One freestanding cross with corpus, short stem, and stable foot."
+source_controlled_features = ["cross bearing crucified figure", "representative stable foot"]
+deliberate_omissions = ["universal dimensions or ornament claim", "ceremonial action", "historical specimen reproduction"]
+brief = "One freestanding cross with corpus, short stem, and stable foot."
+exact_prompt = """Use case: scientific-educational
+Asset type: isolated monochrome reference figure for the Roman Sanctuary Dictionary at the 1962 horizon.
+Input images: the supplied project-created chalice and paten images are STYLE REFERENCES ONLY. Match their fine graphite texture, controlled contour, pale gray tonal modelling, calm object-study presentation, and clear silhouette. Do not copy their shapes or decorative ornament.
+Style/medium: elegant restrained graphite pencil drawing, hand-drawn fine hatching and paper-like texture within the subject, grayscale only. A small library reference study with confident outlines, recognizable at a three-inch printed placement.
+Scene/backdrop: genuine transparent background with no visible paper rectangle, ground plane, cast shadow, scenery, border, or color.
+Composition/framing: one complete isolated object, gently elevated three-quarter view, centered with generous transparent margin and no clipped parts. Render only the object described below.
+TeX-owned additions: all names and explanations will be typeset separately; put no text or graphic annotations inside the image.
+Avoid: all words, letters, pseudo-lettering, numbers, labels, arrows, caption, watermark, border, extra objects, exaggerated ornament, and photorealistic or glossy 3D-render treatment.
+Primary request: draw one standing altar crucifix, consisting of a cross bearing the sculpted figure of Christ, a short supporting stem, and a broad stable foot.
+Required construction: plain upright Latin cross with straight arms; one small dignified corpus attached naturally to the cross, both arms extended toward the crossbar, head inclined, legs and feet together, modest draped loincloth. The lower cross shaft rises from one restrained short stem supported by one broad stable stepped base. Render carved sculptural form with restrained graphite modelling, without graphic wounds.
+Required state: one complete freestanding crucifix, isolated from all other altar appointments.
+Constraints: no processional pole, carrying socket, candles, candleholders, flowers, altar, backdrop, rays, halo, additional figures, skull, scroll ornament, plaque, INRI, any other lettering, or extra objects. Keep the cross, corpus, and base coherent and fully visible. This is a generic explanatory form, not a reproduction of any specific museum artifact.
+Source-controlled brief: altar cross with Crucified figure from Missal RG527; standing cross/corpus/base construction corroborated by the registered Metropolitan Museum object 469881 record, used for morphology only, without adopting its date, dimensions, or exact ornamental design."""
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-05"
+asset = "shared/artwork/pencil/RPD-FIG-altar-crucifix-study.png"
+reference_ids = ["src-altar-cross-missal", "src-altar-cross-standing-example", "art-chalice-isolated-v2", "art-paten-isolated-v2"]
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale-alpha with ImageMagick; alpha absolute error 0; normalized RGBA RMSE 0.00167021. No geometry or alpha modification during normalization."]
+baked_content_audit = ["One cross, one anatomically coherent small corpus with loincloth, one stem, one broad stepped base. No processional pole, candles, title plaque, INRI, halo, rays, skull, or other figure. Base and style are representative, not a reconstruction of the medieval museum object.", "No baked-in letters, numerals, captions, arrows, borders, or watermark.", "White-ground full-size and 360-pixel previews inspected. White alpha fringe is visible on dark backgrounds but invisible on white; white-ground use only.", "Input roles: style reference only: shared/artwork/pencil/RPD-FIG-sacred-vessels-0005-iso-chalice-v2.png; style reference only: shared/artwork/pencil/RPD-FIG-sacred-vessels-0006-iso-paten-v2.png"]
+tex_overlays = ["English and Latin names", "representative morphology/state qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated content; project-created artwork input only. No third-party image supplied."
+received = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "rgba", bytes = 1647760, sha256 = "14d6d3e833e5ebbdfbdd6ff10c90cea44e1d5c1d38b792ddfb63acfda6796634" }
+normalized = { path = "shared/artwork/pencil/RPD-FIG-altar-crucifix-study.png", width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 645318, sha256 = "0800e2a4e8d372dba5072a32387450deac4fdb6747c279c4d4f95327fd4426e1", max_placement_width_in = 2.0, max_placement_height_in = 3.0, effective_dpi = 512.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+
+[[asset_files]]
+id = "file-amice-central-cross-study"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-cross-2026.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/artwork-revision-2026-11-05.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 837736, sha256 = "e762b2a92dc8f5e509ed7dcb9f715e951e2e31f459556833361e84eb6e11fb9e" }
+
+[[artworks]]
+id = "art-amice-central-cross-study"
+object_ids = ["obj-amice"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded graphite identification study."
+depicted_state = "One laid-flat rectangular amice with two ties and one cross centered across the cloth near the upper edge."
+source_controlled_features = ["central cross on amice"]
+deliberate_omissions = ["universal dimensions or ornament claim", "ceremonial action", "historical specimen reproduction"]
+brief = "One laid-flat rectangular amice with two ties and one cross centered across the cloth near the upper edge."
+exact_prompt = """Use case: precise-object-edit
+Asset type: corrected graphite reference figure for a Roman Sanctuary Dictionary.
+Input images: Image 1 is the original project amice artwork to edit; Image 2 is a white-background preview of the same image to make the pale graphite marks easier to see.
+Primary request: add one small plain embroidered cross to the central upper part of the rectangular amice, centered horizontally just below the upper edge between the two tie attachments. The cross belongs to the fabric, rendered in matching gray graphite thread strokes. It must be clear at small print size yet modest, approximately one-tenth the cloth width.
+Source-controlled correction: Missal Ritus servandus I.3 describes kissing the amice in the middle where its cross is. Show a representative central cross, without prescribing its exact size or embroidery style.
+Edit boundary: change only the missing cross. Preserve the complete original rectangular cloth, both ties, exact overall silhouette, fold shading, weave texture, orientation, scale, whitespace, and fine pale graphite pencil style. Keep this one laid-flat view; no second view or new objects.
+Scene/backdrop: retain genuine transparent background. No halo, glow, cast shadow, solid paper rectangle, or scenery.
+Constraints: one embroidered cross only; no letters, words, labels, arrows, borders, numerals, captions, colored thread, new folds, or additional ornament."""
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-05"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-cross-2026.png"
+reference_ids = ["src-amice-missal-1962", "art-vestments-0001-amice-v3-alpha"]
+precursor_ids = ["art-vestments-0001-amice-v3-alpha"]
+corrections = ["Added one central cross; image-generation redraw changes are reported in review.", "Normalized to stripped 8-bit grayscale-alpha with ImageMagick; alpha absolute error 0; normalized RGBA RMSE 0.00140682. No geometry or alpha modification during normalization."]
+baked_content_audit = ["One cross is centered between tie attachments with ample fabric margin, depicted as thread in graphite. Rectangle, two ties, and fold arrangement remain recognizably those of input; generation rescaled and modestly redrew texture, so this is not a pixel-exact edit. Upper-central coordinate and exact embroidery size are illustrative.", "No baked-in letters, numerals, captions, arrows, borders, or watermark.", "White-ground full-size and 360-pixel previews inspected. White alpha fringe is visible on dark backgrounds but invisible on white; white-ground use only.", "Input roles: edit target: shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-v3-alpha.png; white-background technical preview of same target: .scratch/dictionary-art/amice-before-white.png"]
+tex_overlays = ["English and Latin names", "representative morphology/state qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated content; project-created artwork input only. No third-party image supplied."
+received = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "rgba", bytes = 1896026, sha256 = "6877816579fea2ada3df9b24d7fc86768f16284ad290102f49b822fee8c4fb84" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0001-amice-cross-2026.png", width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 837736, sha256 = "e762b2a92dc8f5e509ed7dcb9f715e951e2e31f459556833361e84eb6e11fb9e", max_placement_width_in = 2.0, max_placement_height_in = 3.0, effective_dpi = 512.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+
+[[asset_files]]
+id = "file-maniple-central-cross-study"
+path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-cross-2026.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/artwork-revision-2026-11-05.md"
+boundary_treatment = "transparent"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 607131, sha256 = "a2d785886af9652e12a7ed5ffde673b5c5cdbed8c6be9caf10e9a1769c18f787" }
+
+[[artworks]]
+id = "art-maniple-central-cross-study"
+object_ids = ["obj-maniple"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded graphite identification study."
+depicted_state = "One folded inverted-U maniple with one cross on the outer midpoint crown."
+source_controlled_features = ["central cross on maniple"]
+deliberate_omissions = ["universal dimensions or ornament claim", "ceremonial action", "historical specimen reproduction"]
+brief = "One folded inverted-U maniple with one cross on the outer midpoint crown."
+exact_prompt = """Use case: precise-object-edit
+Asset type: corrected graphite reference figure for a Roman Sanctuary Dictionary.
+Input images: Image 1 is the original project maniple artwork to edit; Image 2 is a white-background preview of the same image to make the pale graphite marks easier to see.
+Primary request: add one small plain embroidered cross at the central fold of the maniple, on the visible outside near the top crown of the folded inverted-U band. The cross belongs to the textile and follows the bend of the fabric, rendered in matching gray graphite thread strokes. Keep it clear at small print size and modest, fitting comfortably within the band width.
+Source-controlled correction: Missal Ritus servandus I.3 describes kissing the cross in the middle of the maniple before putting it on the left arm. Show that central cross on the visible outside of the midpoint fold, not on the hanging ends.
+Edit boundary: change only the missing cross. Preserve the two hanging ends, band width, fold crown, exact silhouette, weave texture, orientation, scale, crop, and fine pale graphite pencil style. Keep this one folded view; no hands, arms, second view, or new objects.
+Scene/backdrop: retain genuine transparent background. No halo, glow, cast shadow, solid paper rectangle, or scenery.
+Constraints: one embroidered cross only; no letters, words, labels, arrows, borders, numerals, captions, colored thread, added fringe, new folds, or additional ornament."""
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-05"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-cross-2026.png"
+reference_ids = ["src-maniple-missal-1962", "art-vestments-0004-maniple-v3-alpha"]
+precursor_ids = ["art-vestments-0004-maniple-v3-alpha"]
+corrections = ["Added one central cross; image-generation redraw changes are reported in review.", "Normalized to stripped 8-bit grayscale-alpha with ImageMagick; alpha absolute error 0; normalized RGBA RMSE 0.00108334. No geometry or alpha modification during normalization."]
+baked_content_audit = ["Cross sits on and follows the visible outer crown of the fold. Two unfringed hanging ends and band width remain recognizably those of input. Generation rescaled and modestly redrew texture, so this is not a pixel-exact edit. No added terminal crosses, arms, hands, or ornaments.", "No baked-in letters, numerals, captions, arrows, borders, or watermark.", "White-ground full-size and 360-pixel previews inspected. White alpha fringe is visible on dark backgrounds but invisible on white; white-ground use only.", "Input roles: edit target: shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-v3-alpha.png; white-background technical preview of same target: .scratch/dictionary-art/maniple-before-white.png"]
+tex_overlays = ["English and Latin names", "representative morphology/state qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated content; project-created artwork input only. No third-party image supplied."
+received = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "rgba", bytes = 1492314, sha256 = "f32c2a8bcd007f6a6a2561c62bb834c1eaadc2d4d63c167976753731243123f8" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-vestments-0004-maniple-cross-2026.png", width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 607131, sha256 = "a2d785886af9652e12a7ed5ffde673b5c5cdbed8c6be9caf10e9a1769c18f787", max_placement_width_in = 2.0, max_placement_height_in = 3.0, effective_dpi = 512.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }

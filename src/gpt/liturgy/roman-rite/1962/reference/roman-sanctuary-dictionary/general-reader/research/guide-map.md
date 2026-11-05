@@ -1,5 +1,42 @@
 # General-reader edition guide map
 
+Status: **bounded canonical selection; wider inventory remains open**
+Current reconciliation: 2026-11-05
+Edition selection: `ed-general-reader`
+
+The current generated edition admits **47 records and omits 33 of the 80
+canonical records**. It has 10 generated object plates. These are record
+and plate counts, not PDF page counts; current rendered receipts belong to
+`../../research/production-manifest.md`.
+
+The four newly admitted ordinary Mass records are altar, altar crucifix,
+tabernacle, and ciborium. The amice and maniple now use the replacement
+central-cross figures. The bare altar and unveiled reservation-object studies
+carry their preparation qualifications in the printed use text. They do not
+teach a complete prepared altar or reserved-Sacrament scene.
+
+Exact admissions and omission reasons are generated from the canonical
+objects, `shared/schema/edition-selections.toml`, and the artwork manifest into
+`ed-general-reader.alpha-admissions.toml`. The renderer's `SECTION_PLATE_PLANS`
+owns current grouping; the object and source gates still apply to every
+selection. Current explicit layouts include:
+
+- `sanctuary`: `balanced-three-v1` (3 records); `dense-six-v1` (6 records); `relationship-three-feature-v1` (3 records).
+- `objects-and-linens`: `dense-seven-v1` (7 records); `heterodox-five-v1` (5 records); `dense-six-v1` (6 records); `story-tall-v1` (4 records); `balanced-four-filled-v1` (4 records).
+- `vestments-and-insignia`: `story-spread-v1` (5 records); `story-tall-v1` (4 records).
+
+The remaining records are omitted by audience selection or unresolved source,
+artwork, or admission requirements; the admission file preserves each reason.
+A published selection does not close the wider Holy Week, ritual Mass,
+pontifical, historical, or handling corpus. `completeness-matrix.md` owns those
+open research boundaries.
+
+## Historical guide-map checkpoints through 2026-07-29
+
+The following accumulated narrative preserves earlier selections, presentation,
+and release vocabulary. Its counts, pagination, bespoke imports, and review
+statements describe those checkpoints, not the current generated edition.
+
 Status: **bounded public alpha**
 Audit date: 2026-07-29
 Edition selection: `ed-general-reader`

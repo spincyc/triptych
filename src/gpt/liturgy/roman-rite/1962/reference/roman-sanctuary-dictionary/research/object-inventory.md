@@ -1,7 +1,7 @@
 # Object inventory
 
-Status: **76 canonical records populated; 45 records in the current comprehensive alpha**
-Audit date: 2026-07-29
+Status: **canonical inventory expanded; whole-corpus completeness remains open**
+Inventory reconciliation: 2026-11-05
 
 The authoritative format is the structured contract under `shared/schema/`.
 This Markdown file is the human audit index for the populated TOML records and
@@ -9,30 +9,40 @@ their validator. The names in the discovery queue below are **candidate search
 terms**, not verified identities, prescribed forms, exhaustive lists, or
 authorization to render an entry.
 
-## Workflow counts
+## Canonical counts and admission
 
-| State | Count |
-| --- | ---: |
-| Lead | 2 canonical records |
-| Identified | 8 |
-| Source-audited | 30 |
-| Art-reviewed | 2 |
-| Publication-ready | 28 |
-| Held | 6 canonical records |
+`shared/objects/` owns every object identity and workflow state. The inventory
+validator reported 80 conforming canonical records at the 2026-11-05 content
+checkpoint. This is a structural result, not closure of the source corpus,
+completeness matrix, variants, artwork review, rights, or publication gates.
+`shared/schema/object.example.toml` is a syntax fixture and is excluded.
 
-`shared/schema/object.example.toml` is a syntax fixture and is excluded from
-all counts. These counts describe canonical workflow labels. The canonical
-alpha path separately admits a source-audited or later record only when
-identity and status are resolved and every rendered factual claim has a
-claim-verified binding. Illustrated records additionally require recorded
-artwork rights, provenance, exact asset identity, and passed identity and
-basic-usability checks. A validated text-only record registers no artwork.
-There is no external-review admission path.
+Current counts and selections must be derived from the TOML rather than
+copied from a prior audit. Run `shared/schema/validate_inventory.py
+shared/objects` from the owner root for the structural census. The canonical
+`tools/render-sanctuary-dictionary` emits each edition's
+`ed-*.alpha-admissions.toml`, including exact selected object IDs, count and
+artwork paths; the accompanying omission register explains exclusions.
 
-The structured inventory validator accepts all 76 records as conforming to
-the current TOML contract. That is a structural result only: it does not close
-the source corpus, the completeness matrix, variants, artwork review, rights,
-or any publication gate.
+A source-audited or later object enters an illustrated edition only when its
+identity/status and printed claims are supported and its exact artwork passes
+rights, provenance, identity and usability checks. A text-only record registers
+no artwork. No external-review admission path exists. A workflow label alone
+never proves rendered admission, and an unlabeled object inside a composition
+never substitutes for a canonical record.
+
+## Ordinary-setting additions, 2026-11-05
+
+| Stable record | Concrete coverage | Preserved limit |
+| --- | --- | --- |
+| `obj-altar` | Place of the Mass; fixed mensa/base, altar-stone and indult-antimension branches; ordinary appointments | No claim that a fixed-stone drawing exhausts altar forms or supplies a complete sanctuary arrangement |
+| `obj-altar-cross` | Central cross with crucified figure; relationship to appointed lights | No universal measurement, decorative form or fixed candle count |
+| `obj-tabernacle` | Fixed secure reservation enclosure, outward-opening-door model, key responsibility and Communion relationship | Conditional on reservation at that altar; an unveiled study is not the complete prepared arrangement |
+| `obj-ciborium` | Covered Host vessel, Missal `pyxis`, priest's Communion handling and reservation veil | Does not identify every pyx form or exposition vessel, and does not authorize server handling |
+
+Their exact source loci, evidence states and audience wording live in those
+records. The source audit records directly inspected pages and contrary
+findings. Artwork identity remains a separate gate.
 
 ## Candidate discovery queue
 
@@ -103,13 +113,11 @@ episcopal office and cites the 1962 Pontifical, Pars prima, p. 92. This
 supports a focused identity-class lead and exact locus target; it does not
 make the later 1978 discipline the inventory's 1962 status rule.
 
-This evidence adds search targets but does not itself advance any record.
-The workflow counts above supersede earlier tranche snapshots. Canonical alpha
-admission is evaluated separately from the workflow label and presently
-admits forty-five records to the comprehensive bounded edition. The current
-derived-edition admissions are forty-four altar-server, forty-five sacristan,
-forty-five MC/trainer, forty-three general-reader, and fifty-six pontifical
-records. These are selection counts, not completeness claims.
+This Pontifical evidence adds search targets but does not itself advance any
+record. Later claims about the altar, tabernacle and ciborium use the separately
+identified Missal, Code and contemporary ceremonial loci, not these
+uninspected Pontifical rites. Edition admissions are derived as described above
+and must not be confused with exhaustive category coverage.
 
 ## Alpha boundary
 

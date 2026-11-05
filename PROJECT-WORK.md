@@ -5,7 +5,55 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-04.
+Last reconciled: 2026-11-05.
+
+## Altar-server and sanctuary guide revision — 5 November 2026
+
+<!-- promised-deliverable: altar-server-grounded-visual-revision-2026-11 -->
+
+**Implementation and review complete for this bounded revision.** The intended
+workspace checkpoint is `feature/altar-server`; this work does not update
+`main` or establish a live-site deployment. The request covered the existing
+seven GPT 1962 guide/card editions and six sanctuary dictionaries, with better
+source grounding, visual consistency, coverage and actual reader usability.
+
+- Corrected child-facing gestures, lay-server reverences, Gospel stations,
+  bell hand and elevation assistance, sequential ablutions, sacred-minister
+  vesture and Solemn Gospel procession order. The 1962 Missal remains
+  controlling; manual allocations and local geometry remain explicitly distinct.
+  The purported original Fortescue scan was correctly identified as a modern
+  transcription, and a central Missal passage's incorrect page locator was fixed.
+- Produced nineteen corrected guide scenes and six dictionary figures, with
+  exact prompt histories, image identities, source controls and bounded review.
+  New altar, altar crucifix, tabernacle and ciborium records bring the inventory
+  to 80. Amice/maniple crosses and priest/deacon/subdeacon distinctions are repaired.
+- The gallery now selects the native editions' 66 actual images, excludes
+  superseded art and preserves material qualifications, handling warnings and
+  source loci. Isolated native dictionary builds resolve their generated files.
+- Rebuilt and reviewed all thirteen editions: 233 pages, including page-matched
+  28-page Low Mass books and 22/36/36 correctly paired cards. Fixed orphaned
+  lessons/captions, a cut-line intrusion and clipped terminal text. All thirteen
+  served source bundles compile in two passes with the runtime boundary intact.
+  The 82 focused tests and all 39 metadata/source/content checks pass.
+
+The current production and exact artifact evidence is in the
+[guide production manifest](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md)
+and the [dictionary production manifest](src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/production-manifest.md).
+Historical PDF approvals apply only to their named snapshots; newly generated
+PDFs remain disposable outputs, not tracked publication inputs.
+The prior Low Mass artifact-consistency debt is now closed by actual paired-book
+review. Historical sung-guide promises that also cover release inventories and
+catalogs retain their separate state; this checkpoint makes no deployment claim.
+
+Remaining limits are explicit. The dictionary's broader category inventory is
+not closed: server/choir clothing, cope/humeral veil, further appointments and
+vessel families, Requiem, ritual Masses and Holy Week remain incomplete. Four
+older bounded guide close-ups retain stylistic variation. These source and
+screen checks are not physical-print trials or ecclesiastical approval.
+The global source inventory still has four inherited stale proper-apparatus
+hashes (GPT pc-s27/pc-s41; Claude 1962 temporal 59 and postconciliar pc-s51).
+Only this revision's owned inventory rows were refreshed; unrelated baselines
+were preserved.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 
