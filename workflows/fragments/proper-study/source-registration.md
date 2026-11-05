@@ -100,20 +100,23 @@ Run the handoff check after writing the records:
 python3 scripts/_proper_study.py source-dispositions --mode source --provider {provider} --document {proper}
 ```
 
-After source-registration changes, run `tools/source-library validate` and
-refresh the browser products under `guidance/web-data.md`. An intentional input
-change requires `tools/browser-products record`, followed by
-`tools/browser-products check`; the source and affected Catena/paragraph families
-are derived from their canonical inputs. Generated JSON stays outside Git in
-the descriptor-verified cache (`.scratch/browser-data` in a workspace), never
-as a tracked source projection. Run `make check-sources` for the full research
-audit. The following preflight mechanically requires the descriptor-bound source
-projection to be current; it does not grant source or publication approval.
+After source-registration changes, run `tools/source-library validate`, then
+`make source-projection`, which writes the source-reader projection into the
+unsealed working destination (`.scratch/browser-data-work` in a workspace).
+The following preflight compares that projection with a fresh one
+(`tools/tpt source-reader structure --check`); it does not grant source or
+publication approval. Do not run `tools/browser-products record` here: the
+leaf is still a reserved scaffold that is not yet a publication, so the
+document-library producer refuses it, and the descriptor is re-recorded once by
+the driver after installation, before the publication gates
+(`guidance/web-data.md`). Generated JSON stays outside Git, never as a tracked
+source projection. Run `make check-sources` for the full research audit and
+report any failure that names another owner's record rather than repairing it.
 Return the actual registered source and admitted passage IDs,
 the retained deferred or rejected keys and missing criteria, and the checks
 performed. Missing research evidence goes back to research; do not invent it.
 
-This handoff is mandatory in new `proper-study` version-15 runs and research
+This handoff is mandatory in `proper-study` runs from version 15 and research
 seal v5. Historical bindings and v3/v4 seals keep their original meaning; do not
 restamp old accepted work or bulk-promote historical leads. A substantive new
 research run adopts the new contract by independently checking reused evidence.

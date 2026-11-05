@@ -72,8 +72,9 @@ Three producers feed it.
 **Markdown to HTML.** Twenty-five fixed pages from `PAGE_MAP`
 (`tools/public-alpha:168`) — `README.md`, `ABOUT.md`, `CONTRIBUTING.md`,
 `LICENSE`, `THIRD_PARTY.md`, three `docs/*.md`, sixteen `library/*.md`, and
-`release/public-alpha/404.md` — plus 105 web editions from tracked
-`web/<provider>/<leaf>.md`. The Markdown pipeline is `render_page`
+`release/public-alpha/404.md` — plus the web editions, which are converted
+from canonical TeX when the site is built and are not tracked
+(`guidance/web-editions.md`). The Markdown pipeline is `render_page`
 (`:2381`): Python-Markdown with six extensions (`tables`, `sane_lists`, `toc`,
 `footnotes`, `attr_list`, `fenced_code`) and no third-party extension. The
 `Markdown==3.10.3` pin is enforced at render time by

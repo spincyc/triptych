@@ -728,6 +728,16 @@ class SnapshotTests(unittest.TestCase):
         self.assertEqual(stored["web"], str(web.relative_to(self.root)))
         self.assertFalse((self.root / "web").exists())
 
+    def test_web_snapshot_refuses_a_conversion_of_uncommitted_sources(self):
+        # The reader stamp of uncommitted sources is the conversion time, so
+        # the publication gate's fresh conversion could never match it.
+        web = self.root / "build/web/gpt" / f"{TLM}.md"
+        web.parent.mkdir(parents=True)
+        web.write_text("Last revised (UTC): 2026-11-05 11:26:30 (uncommitted sources)\n")
+        with self.assertRaisesRegex(ValueError, "uncommitted sources"):
+            study.snapshot(self.root, "gpt", TLM, web=True)
+        self.assertFalse((self.leaf / study.WEB_RECEIPT).exists())
+
 
 class PublicationTests(unittest.TestCase):
     def setUp(self):
@@ -776,6 +786,30 @@ class PublicationTests(unittest.TestCase):
 
     def test_three_installed_and_reviewed_outputs_pass(self):
         self.check()
+
+    def test_a_cross_reference_row_is_not_a_second_owning_row(self):
+        catalog = self.root / self.catalog
+        owning = catalog.read_text().splitlines()[1]
+        catalog.write_text(catalog.read_text() + owning + "\n")
+        with self.assertRaisesRegex(ValueError, "one catalog row"):
+            self.check()
+        reference = owning.rstrip(" |") + f" <!-- triptych-publication-reference: {TLM} --> |"
+        catalog.write_text(catalog.read_text().rsplit(owning + "\n", 1)[0] + reference + "\n")
+        self.check()
+        other = owning.rstrip(" |") + " <!-- triptych-publication-reference: claude:" + TLM + " --> |"
+        catalog.write_text(catalog.read_text().replace(reference, other))
+        with self.assertRaisesRegex(ValueError, "one catalog row"):
+            self.check()
+
+    def test_a_reviewed_conversion_of_uncommitted_sources_fails(self):
+        web = self.root / "build/web/gpt" / f"{TLM}.md"
+        web.write_text("Last revised (UTC): 2026-11-05 11:26:30 (uncommitted sources)\n")
+        receipt = self.leaf / study.WEB_RECEIPT
+        stored = json.loads(receipt.read_text())
+        stored["sha256"] = study.digest(web)
+        receipt.write_text(json.dumps(stored))
+        with self.assertRaisesRegex(ValueError, "uncommitted sources"):
+            self.check()
 
     def test_changed_installed_homily_fails(self):
         (self.root / "pdf/gpt" / f"{TLM}-homily.pdf").write_bytes(b"unreviewed")

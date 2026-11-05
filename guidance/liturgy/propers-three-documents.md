@@ -745,8 +745,8 @@ on which an interpretation turns against the actual cited witness, including
 the reasoning that makes the
 answer persuasive. The concise reviewer must recover each reading's distinct
 answer from the concise prose alone before comparing it with the full study.
-The visual reviewer must perform the passage-to-occurrence/place/date lookup
-on the rendered table. Record the concrete locus and outcome in the review;
+The concise reviewer must perform the passage-to-occurrence/place/date lookup
+on the generated date table. Record the concrete locus and outcome in the review;
 a manifest declaration, a source count, physical page markers or the absence
 of overflow does not answer these questions.
 From `proper-study` version 12, the preflight `references-used` check also

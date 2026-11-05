@@ -25,6 +25,21 @@ RECEIPT = "research/artifacts.json"
 # Schema 2 (2026-09-23) stopped digesting the TeX .log; see artifact_state().
 RECEIPT_SCHEMA = 2
 WEB_RECEIPT = "research/web-artifact.json"
+# A catalog row that only cross-references a publication owned by another row
+# (tools/public-alpha CATALOG_PUBLICATION_REFERENCE_RE) is not that row.
+CATALOG_REFERENCE_RE = re.compile(
+    r"<!--\s*triptych-publication-reference:\s*(?:([a-z0-9-]+):)?([a-z0-9][a-z0-9./-]*[a-z0-9])\s*-->")
+# _edition_revision.UNCOMMITTED: a conversion of uncommitted sources stamps
+# the current time, so no later conversion can reproduce its bytes.
+UNCOMMITTED_STAMP = "(uncommitted sources)"
+
+
+def require_committed_conversion(path: Path) -> None:
+    if UNCOMMITTED_STAMP in path.read_text(encoding="utf-8"):
+        raise ValueError(
+            f"{path.name} was converted from uncommitted sources: its revision stamp is the "
+            "conversion time, which no later conversion reproduces. Commit the leaf's "
+            "sources, then convert and snapshot again")
 RESEARCH_REVIEW_CONTRACT = "proper-study-v3"
 # v4 (selected from proper-study version 8) also seals what v3 names only by
 # its code: every file the leaf's chronology computation opens outside the
@@ -760,6 +775,7 @@ def snapshot(root: Path, provider: str, document: str, *, web: bool = False) -> 
     leaf = leaf_path(root, provider, document)
     if web:
         path = root / "build/web" / provider / f"{document}.md"
+        require_committed_conversion(path)
         data = {"schema": 1, "provider": provider, "document": document,
                 "web": str(path.relative_to(root)), "sha256": digest(path)}
         target = leaf / WEB_RECEIPT
@@ -896,7 +912,10 @@ def publication(root: Path, provider: str, document: str, *, mode: str = "print"
         if mode == "print":
             row_links.append(f"](../pdf/{provider}/{output}.pdf)")
     row_links.append(f"](../web/{provider}/{document}.html)")
-    rows = [line for line in text.splitlines() if all(link in line for link in row_links)]
+    primary = release.get("provider")
+    rows = [line for line in text.splitlines() if all(link in line for link in row_links)
+            and (provider, document) not in {(named or primary, leaf_id)
+                                             for named, leaf_id in CATALOG_REFERENCE_RE.findall(line)}]
     if len(rows) != 1:
         raise ValueError("one catalog row must link " + (
             "all three PDFs and canonical web edition" if mode == "print" else "the canonical web edition"))
@@ -919,6 +938,7 @@ def publication(root: Path, provider: str, document: str, *, mode: str = "print"
     if receipt != {"schema": 1, "provider": provider, "document": document,
                    "web": str(generated.relative_to(root)), "sha256": digest(generated)}:
         raise ValueError("web edition differs from the snapshot prepared for web review")
+    require_committed_conversion(generated)
     fresh_root = root / ".scratch/proper-study-web" / provider
     fresh = fresh_root / provider / f"{document}.md"
     fresh.unlink(missing_ok=True)

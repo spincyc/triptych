@@ -58,7 +58,7 @@ STUDY_REVIEW = "study-review"
 RESEARCH_REVIEW = "research-review"
 REVIEW_STAGES = [
     "research-review", "study-review", "synthesis-review",
-    "homily-review", "visual-review", "web-review",
+    "homily-review", "web-review",
 ]
 
 

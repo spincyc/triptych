@@ -204,7 +204,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                        check=True, capture_output=True)
         result = self.shell("make")
         self.assertNotEqual(result.returncode, 0)
-        self.assertIn("Tracked PDFs must be preserved outside Git", result.stderr)
+        self.assertIn("Generated PDFs must remain untracked", result.stderr)
         self.assertFalse((self.root / "build/public-alpha/site/index.html").exists())
 
     def test_tracked_archives_block_source_publication(self):

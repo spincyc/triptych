@@ -19,8 +19,9 @@ conversion hash), following `guidance/web-editions.md`. A companion reader is
 converter-verified unless a review of its own conversion passed.
 
 Create or confirm one per-publication release record for each declared source
-output using the repository's release tooling. The catalog is
-`library/traditional-latin-mass.md` for 1962 and
+output, the study and its `-synthesis` and `-homily` companions, with
+`make add-publication ID=<output id> CATALOG=<catalog> PROVIDER={provider}
+STATUS=alpha`. The catalog is `library/traditional-latin-mass.md` for 1962 and
 `library/novus-ordo-liturgy.md` for postconciliar. Read and preserve correct
 existing records. All three records must name the exact IDs, owning catalog,
 and applicable standing authorization; generated print hashes are separate.
@@ -31,12 +32,19 @@ and review apparatus in its owning records. Change only this provider's entries
 in the correct cycle cell; preserve other providers and cycles. Add exactly one
 canonical publication marker using the primary-provider rule in
 `release/public-alpha.json`. Do not create extra rows for companions or links
-to absent PDFs.
+to absent PDFs. A cross-reference to this study from another row needs its
+own `triptych-publication-reference` marker and is not part of this stage;
+the gate requires exactly one owning row.
 
 Refresh the deterministic document catalog and source/release inventories with
 their owning tools. Serialize shared catalog and release-manifest writes with
 the coordinator when other productions are active. Follow the repository's
 scoped release-refresh rule; do not adopt unrelated concurrent changes.
+Return the exact paths this stage changed, with their hashes. The driver then
+commits them, re-records the browser products (`tools/browser-products
+record`, then `check`), because the new leaf changes their inputs, and adopts
+the scoped release bindings (`make refresh-release-bindings ADOPT=1
+ONLY="<this production's paths>"`) before advancing to the terminal gate.
 Record completed source and web reviews and publication facts in the production
 audit using actual engine results and receipts, never invented acceptance.
 

@@ -1051,7 +1051,8 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         if target.read_text(encoding="utf-8") != serialised:
             raise CorpusError(
                 f"{target} has drifted from the sources; "
-                "run `document-library structure` and commit the result"
+                "re-record the verified browser products with `browser-products record` "
+                "(guidance/web-data.md)"
             )
         return {**built["counted"], "current": str(target), "status": "ok"}
     target.parent.mkdir(parents=True, exist_ok=True)

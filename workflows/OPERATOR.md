@@ -116,6 +116,32 @@ release concerns remain checked, while document-specific checks stay scoped to
 the owner. These are currentness checks against their declared inputs, not a new
 scholarly review or a clearance of inherited chronology/currentness findings.
 
+The source-and-reader path gives the driver four steps that no stage owns,
+first exercised by the Claude resumed Fifth Sunday run on 2026-11-05:
+
+- Run every stage, gate and worker with `PYTHONDONTWRITEBYTECODE=1`, the
+  workspace `TRIPTYCH_BROWSER_DATA_ROOT`, and Python with the pinned
+  Markdown first on `PATH`; the web probes refuse an unpinned Markdown.
+- After the `source-registration` result, run `make source-projection`
+  before advancing into `research-preflight`, whose
+  `source-projection-current` check compares the working projection.
+- Commit the leaf after `artifact-gates` passes, and again after any later
+  source repair, before `generate-web` converts it. A reader's revision stamp
+  derives from git history, so a conversion of uncommitted sources carries
+  the conversion time; `snapshot-web` and the publication gate refuse it.
+- After `install-publication`, commit its listed paths, run
+  `tools/browser-products record` and `check`, then `make
+  refresh-release-bindings ADOPT=1 ONLY="<this production's paths>"`, and
+  commit the descriptor and binding records before `advance --run-gate`. A
+  new leaf changes the inputs of several product families, and the
+  `release-bindings`, `public-alpha` and `document-catalogue` gates read the
+  re-recorded descriptor.
+
+No stage builds a PDF, but the Pages `print-compile` job typesets every
+admitted edition, the new leaf's three included, and deploy waits on it.
+Before pushing, compile them with `tools/native-print-compile prepare --only
+publication:<provider>/<leaf>` (one `--only` per output) and `compile`.
+
 Print one selected edition with `tools/print-document`, as described in
 `docs/printing.md`, or use the separate manual print CI path. Browser printing
 flows the reader page; it does not reproduce the exact fixed layout of a prior
@@ -1263,7 +1289,7 @@ and it applies to runs seeded after it.
 
 The following diagram and lifecycle describe the legacy `proper` workflow
 (1962 propers synthesis production), with its historical print contract. They
-are not the current `proper-study` version-16 path shown above. `proper` and
+are not the current `proper-study` version-17 path shown above. `proper` and
 `proper-finish` were retired on 2026-11-04 and seed no new run; this section
 and the version history below it are the record their existing runs are read
 against. Its stages are:
