@@ -24638,6 +24638,20 @@ locator = "the Appendix, as the volume's Elenchus lists it"
 basis = "The Elenchus."
 
 [[containers]]
+id = "work.honorius-augustodunensis.gemma-animae"
+manifest_sha256 = "47851b8ae38de79ae6689679c102dfa0fd58209063bd28592c5b62ac85f922cc"
+status = "partial"
+basis = "Container-shaped by derivation: its 1895 edition's whole-volume PL 172 text layer (artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f) carries the separately registered Speculum Ecclesiae, whose segment points into it. Gemma animae itself is the record's own work. The volume's other works are entered under that artifact's own entry below, from its Elenchus."
+unresolved = "Only the constituent registered through a segment is listed here; the volume's remaining works are listed under the whole-volume artifact's entry and are not repeated."
+
+[[containers.constituents]]
+author = "Honorius Augustodunensis"
+title = "Speculum Ecclesiae"
+work_id = "work.honorius-augustodunensis.speculum-ecclesiae"
+locator = "PL 172 (Paris: Garnier, 1895), cols. 807-1108; physical lines 63969-86480 of the whole-volume text layer"
+basis = "segment segment.honorius-augustodunensis.speculum-ecclesiae.1895-garnier-migne-pl-172.whole-work: the work's heading at column 807 and its closing rubric 'Finis ecclesiastici divi speculi Honorii' before the Elucidarium at column 1109 were located in the layer on 2026-11-05. Not marked whole: the editor's notice at the head (layer lines 63987-63995, damaged) describes the manuscript printed as defective at the end (the layer reads 'mutilus in flne'), and the printing's completeness against other witnesses was not examined."
+
+[[containers]]
 id = "artifact.honorius-augustodunensis.gemma-animae.1895-garnier-migne-pl-172.ia-djvu-ocr-2ebfcb5f"
 manifest_sha256 = "a45668c1b80e08c294546dd4d3f727a712719d481e77aa0fd2402bf9e00ff8cc"
 status = "resolved"

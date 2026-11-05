@@ -78,7 +78,7 @@ author_aliases:
     Migne's Patrologia Latina 52 does ('SANCTI PETRI CHRYSOLOGI ARCHIEPISCOPI RAVENNATIS'), and the
     harvest names him without it. Both name the bishop of Ravenna whose sermons that volume prints.
 schema: triptych-commentary-fragment-loci/v1
-updated: '2026-10-25'
+updated: '2026-11-05'
 numbering: vulgate
 # ONE TEXT UNDER TWO NAMES (Rule 15). Where the library holds one text as two or
 # more passage records under disputed attributions, the catena hangs it once,
@@ -22268,3 +22268,21 @@ fragments:
     reference or the study’s appointment by inference. Embedded supporting quotations receive no separate
     Scripture edges. English translation and revision remain attributed to the named human translators/editors;
     no original-Greek wording is represented.
+- passage_id: passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-10
+  work_id: work.augustine.quaestiones-euangeliorum
+  work_alias:
+    author: Augustine of Hippo
+    work: Quaestiones evangeliorum
+  numbering: vulgate
+  extent:
+    token: Matt
+    first_chapter: 13
+    first_verse: 25
+    last_chapter: 13
+    last_verse: 30
+  basis: Book I of the retained transcription is headed In Evangelium secundum Matthaeum (physical line 5), and
+    question X stands on line 15 under the printing's own reference [Ib. XIII, 25-30.]; the answer expounds the
+    tares sown in the crop and the order of the harvest in which they are gathered first. The whole answer is the
+    natural unit and that reference is its extent; question IX (13:13, 23) precedes it and question XI (13:31)
+    follows. Augustine's own Latin in a dated digital transcription of Migne, PL 35, not collated with a page
+    image. The date is the work record's composed range.
