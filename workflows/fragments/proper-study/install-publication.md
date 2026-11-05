@@ -11,8 +11,7 @@ There is no web edition to install. The site converts this study and its
 synthesis and homily companions from their canonical TeX whenever it is built,
 and no copy of their text is tracked (`guidance/web-editions.md`). Confirm that
 the reviewed conversion `build/web/{provider}/{proper}.md` is still exactly what
-current sources convert to and that `tools/tpt web-edition check --leaf
-{provider}/{proper}` passes. Record the passed web review in the leaf's
+current sources convert to. Record the passed web review in the leaf's
 `web-edition.toml` as its inspection: `inspected` (the review date),
 `inspected_by` (the reviewing provider and run) and `inspection` (the method and
 conversion hash), following `guidance/web-editions.md`. A companion reader is
@@ -39,6 +38,15 @@ Refresh the deterministic document catalog and source/release inventories with
 their owning tools. Serialize shared catalog and release-manifest writes with
 the coordinator when other productions are active. Follow the repository's
 scoped release-refresh rule; do not adopt unrelated concurrent changes.
+Once all three output declarations and release decisions exist, run
+`tools/tpt web-edition check --leaf {provider}/{proper}`. Then record and check
+the complete browser products with `tools/browser-products record` and
+`tools/browser-products check`, following `guidance/web-data.md`. This is the
+aggregate publication checkpoint, including source, Catena/paragraph and web
+reader families; source registration checked only its strict working projection.
+Do not adopt a partial descriptor or bypass a failed family. Complete the
+scoped release-binding refresh against the resulting current products before
+the terminal publication gates.
 Record completed source and web reviews and publication facts in the production
 audit using actual engine results and receipts, never invented acceptance.
 

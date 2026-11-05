@@ -26,9 +26,23 @@ review; source and reader changes still invalidate acceptance. The coordinator
 checkpoints sources before conversion so Git-derived revision stamps remain
 stable. All 62 schema and focused workflow regressions pass. The durable audit is
 `workflows/reviews/gpt-pc-s58-production-2026-11-05/WORKFLOW-AUDIT.md`.
-No production review or publication has yet been completed. The exact
-provider/identity authorization is recorded in
-`guidance/liturgy/propers-production-plan.md`.
+Run `35340f9844352478` passed scope, context resolution and research authoring.
+Registration completed its source work and full source audits but the run ended
+BLOCKED on an aggregate browser-product request for the unfinished reader.
+Its four results and packets are archived. Version 19 corrects that dependency:
+research checks the strict working source projection; installation records and
+checks the complete browser products after declarations and release records
+exist. All 62 regressions and the strict source projection check pass. A fresh
+production is being seeded; no gate or publication check is bypassed.
+Its context records ten ritual units, twelve element keys, both second-reading
+forms and both Communion alternatives under the canonical Week 32 owner.
+The research dossier retains distinct patristic interpretations, source
+authentication limits and both reading forms. Six existing chronology consumers
+were refreshed and checked; four changed only registry dependency hashes.
+No cold research/content review or publication has yet been completed. The
+exact provider/identity authorization is recorded in
+`guidance/liturgy/propers-production-plan.md`; the driver's ongoing record is
+`workflows/reviews/gpt-pc-s58-production-2026-11-05/CYCLES.md`.
 
 Completion requires terminal workflow acceptance, all three reader outputs and
 their catalog/release records, a durable workflow audit, passing publication

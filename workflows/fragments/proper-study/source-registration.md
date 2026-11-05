@@ -100,15 +100,27 @@ Run the handoff check after writing the records:
 python3 scripts/_proper_study.py source-dispositions --mode source --provider {provider} --document {proper}
 ```
 
-After source-registration changes, run `tools/source-library validate` and
-refresh the browser products under `guidance/web-data.md`. An intentional input
-change requires `tools/browser-products record`, followed by
-`tools/browser-products check`; the source and affected Catena/paragraph families
-are derived from their canonical inputs. Generated JSON stays outside Git in
-the descriptor-verified cache (`.scratch/browser-data` in a workspace), never
-as a tracked source projection. Run `make check-sources` for the full research
-audit. The following preflight mechanically requires the descriptor-bound source
-projection to be current; it does not grant source or publication approval.
+After source-registration changes, run `tools/source-library validate`, then
+generate and check the strict working source projection under
+`guidance/web-data.md`:
+
+```sh
+tools/tpt source-reader structure --strict
+tools/tpt source-reader structure --strict --check
+make check-sources
+```
+
+Generated JSON stays outside Git in the ordinary working destination
+(`.scratch/browser-data-work` in a workspace). It is not a sealed product or
+publication approval. The following preflight checks this working projection
+against the registered sources. Preserve honest inventory classifications and
+pending review states when refreshing source inventories.
+
+The complete browser-product descriptor is recorded and checked by
+`install-publication`, after authoring and review have supplied the publication
+declarations and release records. Its web-editions family cannot be generated
+from this unfinished research scaffold. Do not create publication placeholders,
+publish a partial descriptor or treat the working projection as a sealed cache.
 Return the actual registered source and admitted passage IDs,
 the retained deferred or rejected keys and missing criteria, and the checks
 performed. Missing research evidence goes back to research; do not invent it.

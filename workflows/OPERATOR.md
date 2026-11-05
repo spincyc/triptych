@@ -16,7 +16,7 @@ preserves the established first four pages for the concise companion when
 printed, while its remaining argument and the expansive study follow their
 distinct roles. Read
 `guidance/liturgy/propers-three-documents.md` for the owning standard. The
-`proper-study` workflow is at version 18. Its current path publishes source
+`proper-study` workflow is at version 19. Its current path publishes source
 and reader editions; optional print rendering is separate. The version
 paragraphs below retain the contracts of earlier runs.
 
@@ -47,7 +47,7 @@ complete adopted expansion; mixed or partial shapes fail closed. Other
 postconciliar families require an explicit registry resolver rather than a
 grammar-only pass.
 
-### Current source and reader path: version 18
+### Current source and reader path: version 19
 
 The sequence is context, research, reusable source registration, cold research
 review, expansive study and cold review, concise study and cold review, homily
@@ -70,6 +70,17 @@ new worker with no authoring conversation history, exactly the compiled packet
 and its result destination. Never prefill a PASS from preparatory work or use
 an author as the cold reviewer of that work. Follow each packet's repair route;
 the linear diagram shows the passing path, not permission to bypass a loop.
+
+Version 19 separates the research projection from aggregate publication
+products. Source registration generates and checks the strict ordinary working
+source-reader projection and runs the source audits. Its preflight repeats the
+strict projection check. The complete browser descriptor is recorded and checked
+at installation, after all output declarations and release records exist.
+Version 18's registration instruction asked the web-editions producer to read
+an unfinished scaffold before those later stages could create its inputs.
+Do not invent release placeholders or partial descriptors to cross that boundary.
+The complete publication checks remain mandatory. Active version-18 runs must
+be reseeded; their recorded work supplies evidence, never inherited acceptance.
 
 Version 18 aligns authoring packets with the single-source schema and reader
 contracts. Proper regions place components by key; their paths and membership
@@ -1684,8 +1695,9 @@ companion-conformance lane owns them. `check-proper-components --aux` requires
 the brief synthesis to begin on page 3: it verified only that three anchors
 were adjacent, and accepted a whole reader order displaced by a page-1
 overflow. That version made `source-registration` regenerate the then-tracked
-source projection it changed. Current source-only runs instead use the
-outside-Git browser products and descriptor checks in `guidance/web-data.md`.
+source projection it changed. Current source-only runs instead check the
+outside-Git working source projection during research and the complete browser
+descriptor at installation, as the current `proper-study` path above explains.
 Every agent's brief says it is the whole of its dispatch and spawns
 nothing, after a lane that fanned out inside itself exhausted a host's budget
 and took four siblings down with it. And `author-proper` and

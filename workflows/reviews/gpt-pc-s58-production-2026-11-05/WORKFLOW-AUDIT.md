@@ -64,5 +64,35 @@ repair, the complete document-schema suite and the focused selections passed
 scope gate before any production dispatch; the corrected source checkpoint
 receives a fresh run identity.
 
-This audit approves starting the corrected workflow. It supplies no research,
+Those checks supported starting version 18. They supplied no research,
 content, web, print or deployment acceptance for the new Sunday publication.
+
+## Registration dependency found by the first production
+
+The first v18 production completed source registration but exposed a second
+single-source migration boundary. Registration demanded an aggregate
+`browser-products record` before authoring and installation had supplied the
+new leaf's web declaration, manifest and release records. The exact
+`web-edition products` producer failed on the missing declaration. Creating
+placeholder publication decisions would have concealed the dependency.
+
+Run `35340f9844352478` therefore ended BLOCKED and was archived with its actual
+results and packets. Registration itself passed source validation, all-binding
+dispositions, its ordinary working projection (18,447 files), and the full
+`make check-sources`. Inventory refresh preserved classifications and pending
+review states. Four inherited apparatus inventory hashes were refreshed after
+their source bytes were confirmed unchanged from the starting tree.
+
+Version 19 makes research generate and check the strict working source-reader
+projection. Installation now explicitly records and checks the complete browser
+products after all output declarations, release decisions and catalog wiring
+exist, and refreshes release bindings against those current products. The
+scoped three-reader check likewise follows the release declarations it reads.
+No partial descriptor, publication placeholder or weaker publication gate is
+introduced. The corrected production receives a fresh identity and independent
+stage dispatches; the blocked run's evidence carries no acceptance forward.
+
+The same 62 schema and focused workflow tests pass against version 19, with
+zero skips. The actual strict working source projection also passes its
+currentness check, and `git diff --check` passes. These checks support seeding
+the corrected run; they are not production or deployment acceptance.
