@@ -149,6 +149,16 @@ module in its code closure, the harness, a dependency pin, or a recipe, and
 only then. An edit to guidance, tests, docs, an unread review record or
 unrelated code leaves every key, and so the deployment, as it was.
 
+When changed inputs include edition content, commit those sources before
+recording. An uncommitted edition's revision stamp uses the build time, so
+independent document-catalog generations differ. Committed sources supply
+the stable author-time stamp required by the byte comparison.
+
+Keep test and validator bytecode out of canonical data trees, using
+`PYTHONDONTWRITEBYTECODE=1` or a scratch `PYTHONPYCACHEPREFIX`. Input membership
+includes ignored files there: a stray source-tree cache can bind the descriptor
+to a file that a fresh clone does not contain.
+
 ## A property that is global to the project lives once, at project level
 
 A section is downstream of the universals it sits on. If a section defines

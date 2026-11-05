@@ -11,8 +11,8 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: altar-server-grounded-visual-revision-2026-11 -->
 
-**Implementation and review complete for this bounded revision.** The intended
-workspace checkpoint is `feature/altar-server`; this work does not update
+**Implementation and review complete for this bounded revision.** The source
+checkpoint is on `feature/altar-server`; this work does not update
 `main` or establish a live-site deployment. The request covered the existing
 seven GPT 1962 guide/card editions and six sanctuary dictionaries, with better
 source grounding, visual consistency, coverage and actual reader usability.
@@ -40,6 +40,12 @@ source grounding, visual consistency, coverage and actual reader usability.
   object data supplied by the document schema. It now uses the effective
   manifest; all six dictionaries derive the content commit's date. Fifteen
   revision tests pass, including derived and leaf-relative data regressions.
+- The final served bundles compile all thirteen editions at 233 pages. The
+  seven guide/card PDFs are byte-identical to their committed review copies;
+  the dictionaries preserve all words and their page coordinates except the
+  corrected revision-date glyphs. Two independent browser-product builds agree
+  on all 27,681 files; only the document catalog and corrected Missal passage
+  projection changed. The verified cache build and promised-deliverable gate pass.
 
 The current production and exact artifact evidence is in the
 [guide production manifest](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md)
