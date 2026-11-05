@@ -10,6 +10,13 @@ historical records and were not rewritten. The separate deployment
 `print-compile` job tests admitted native source bundles and discards its PDFs;
 it is not a maintained PDF publication corpus or print-layout approval.
 
+A later release-boundary check found `release/README.md` still describing
+installed PDF trees and PDFs in the public artifact. It now describes the
+actual source-owner discovery, reader routes, native source bundles,
+`stored_pdfs: false`, explicit printing and separate compile gate. This is a
+documentation correction verified against `tools/public-alpha` and the owning
+repository guidance; it changes no active workflow definition or review seal.
+
 Version 18 corrects the remaining authoring instructions inherited from the
 earlier publication model:
 

@@ -1,0 +1,57 @@
+[[structure]]
+role = "source-bindings"
+source = "research/source-bindings.toml"
+
+[[structure]]
+role = "review-dependencies"
+source = "research/review-dependencies.toml"
+
+[[structure]]
+role = "chronology-inputs"
+source = "research/chronology-inputs.toml"
+
+[document]
+type = "proper-study-v1"
+title = 'Thirty-second Sunday in Ordinary Time'
+source-line = 'Roman Missal, Third Edition --- United States, Year A'
+running-head = 'Thirty-second Sunday in Ordinary Time, Year A'
+
+[document.main]
+pdftitle = 'Thirty-second Sunday in Ordinary Time, Year A: Ready to meet the Bridegroom'
+pdfsubject = 'Expansive study of the postconciliar Roman Rite propers for 8 November 2026, United States'
+subtitle = 'Ready to meet the Bridegroom'
+occasion-line = '8 November 2026'
+front = 'none'
+body = [
+  { component = 'opening' },
+  { component = 'study-map' },
+  { component = 'treatment' },
+  { component = 'texts' },
+  { component = 'mercy' },
+  { component = 'charity-within' },
+  { component = 'comparison' },
+]
+apparatus = [{ component = 'apparatus' }]
+
+[document.synthesis]
+pdftitle = 'Thirty-second Sunday in Ordinary Time, Year A: Concise study'
+pdfsubject = 'Concise comparison of mercy and inward charity in the propers for 8 November 2026'
+subtitle = 'Mercy and the charity within it'
+occasion-line = 'Concise study --- 8 November 2026'
+opening = [
+  { component = 'concise-inventory' },
+  { component = 'concise-overview' },
+]
+body = [
+  { component = 'concise-themes' },
+  { component = 'concise-commentary' },
+  { component = 'concise-apparatus' },
+]
+
+[document.homily]
+pdftitle = 'Thirty-second Sunday in Ordinary Time, Year A: Homily'
+pdfsubject = 'Inward charity and readiness to meet Christ; an adult parish homily for 8 November 2026'
+subtitle = 'The love within our service'
+occasion-line = 'Homily --- 8 November 2026'
+homily = [{ component = 'spoken' }]
+apparatus = [{ component = 'homily-notes' }]

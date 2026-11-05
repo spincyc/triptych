@@ -13,7 +13,65 @@ qualification and relative alternative for David's regnal reference era. The
 research repair, source-registration iteration 1 and repeated research preflight
 pass. Cold research-review iteration 1 passes with no findings after checking
 the actual witnesses, all fifteen generated rows, chronology currency and the
-1,752-path seal. The expansive study is the next authoring stage. The
+1,752-path seal. Expansive author-study iteration 0 passes with 6,463
+substantive words, two distinct interpretations and all twelve appointed-text
+anchors. Research-edition component/content checks, available source-role and
+provenance validation, generated-entrypoint currentness and the canonical web
+probe pass. The future companions remain absent at this stage. All 31
+pre-existing non-entrypoint files remain byte-identical. Engine study preflight
+passes and dispatches fresh cold study-review iteration 0. Two worker turns
+failed with model-capacity errors before any review result was produced;
+the same cold-review assignment was retried at its required `xhigh` level.
+These host failures are not workflow verdicts. The completed cold review
+checks both interpretations, all twelve branches, four senses, cited Fathers
+and saints, nine biblical quotation blocks and retained liturgical witnesses.
+Its actual inspection record is retained in [STUDY-REVIEW-0.md](STUDY-REVIEW-0.md).
+It returns CHANGES_REQUIRED for STU-001: recurring editorial-process prose at
+six specified passages. The source distinctions remain necessary, but the
+connections and short-form boundary must be stated directly. Fresh
+author-study iteration 1 repairs the six cited paragraphs in three section
+files and updates the operational production record. The study has 6,346
+substantive words; sixteen existing evidence files retain their hashes.
+Components, ordinary research preflight, metadata, generated-source currentness
+and canonical web probe pass. Whole-leaf schema still awaits the companions,
+and shared publication inventories await their installation-stage refresh.
+Repeated engine study preflight passes. Fresh cold study-review iteration 1
+passes with no findings, clearing STU-001 after inspecting the repair and its
+supporting witnesses. Its bounded evidence record is retained in
+[STUDY-REVIEW-1.txt](STUDY-REVIEW-1.txt). Fresh derive-synthesis iteration 0
+passes with five concise components and 3,389 words of substantive exposition.
+Its component, content-preflight, metadata, generated-currentness and selected
+conversion checks pass; all 25 accepted study and evidence files are unchanged.
+The complete family schema still awaits the homily, and publication inventories
+await installation. Engine synthesis preflight and cold synthesis-review
+iteration 0 pass. The review retains SYN-001 as an advisory for the next
+revision: distinguish Augustine's general good-works explanation from the
+study's specific application to helping the needy in the corresponding
+expansive and concise passages. It does not change either interpretation's
+substantial support or block production. The actual inspection record is
+[SYNTHESIS-REVIEW-0.txt](SYNTHESIS-REVIEW-0.txt). All thirteen sealed files match;
+no PDF or completed browser-layout inspection is claimed. The engine advances
+to fresh derive-homily iteration 0, which passes with 1,281 spoken words and
+a separate source-and-delivery note. The 10.25–11.65-minute estimate uses
+110–125 words per minute; only silent textual rehearsal is claimed. Homily
+components, ordinary preflight, exact provenance, metadata, the complete
+three-output schema, generated currentness and converter fidelity pass.
+Fifty baseline files outside the authorized mutations remain byte-identical.
+Shared inventories and release dispositions still await installation. Engine
+homily preflight and fresh cold homily-review iteration 0 pass. The review
+retains HOM-001 as a nonblocking precision advisory: the post-Communion prayer
+addresses the Lord and asks preservation through his Spirit. The requested
+work of the Spirit and the homily's argument remain supported. Actual source
+inspections and limits are retained in [HOMILY-REVIEW-0.txt](HOMILY-REVIEW-0.txt).
+All eight sealed files match. Fresh build-artifacts iteration 0 passes the
+three-output content/schema gates, generated currentness and exact comparison
+of all four upstream accepted review records and current input objects.
+Only the operational production record changed; 55 other leaf files remained
+unchanged. Engine artifact gates pass and dispatch generate-web iteration 0.
+The coordinator will commit this reviewed source checkpoint before conversion
+so all three edition revisions have committed inputs. Reader review and
+installation remain subsequent stages; no print approval is claimed.
+The
 retained same-owner research is an explicit handoff for independent checking,
 not an inherited approval. Registration reconciles 45 bindings and 57 source
 dispositions, with 21 deferred and two rejected commentary candidates and no

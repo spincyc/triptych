@@ -49,12 +49,24 @@ provider = "gpt"
 run_id = "64c60ef0cfd8f349"
 workflow = "proper-study"
 workflow_version = 19
-stage = "research-review"
-iteration = 1
+stage = "homily-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 0
+advisory_count = 2
+observation_count = 0
+
+[[stages]]
+stage = "homily-review"
+iteration = 0
+disposition = "PASS"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
 observation_count = 0
 
 [[stages]]
@@ -68,3 +80,43 @@ standing = 0
 accepted_count = 0
 advisory_count = 0
 observation_count = 0
+
+[[stages]]
+stage = "study-review"
+iteration = 1
+disposition = "PASS"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 0
+observation_count = 0
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 0
+disposition = "PASS"
+run_id = "64c60ef0cfd8f349"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-001"
+severity = "advisory"
+location = "sections/homily-10-spoken.tex:27, second sentence"
+problem = "The sentence says the Church 'asks the Spirit to preserve' those who have received, but the Prayer after Communion addresses the Lord and asks for preservation through the outpouring of his Spirit. This distinction is explicit in the inspected Latin witness, physical pp. 294–295, and FDLC's approved English excerpt, p. 9. The requested work of the Spirit is correctly described; the isolated imprecision concerns the prayer's addressee and does not compromise the homily's argument."
+required_result = "When revising this sentence, distinguish the addressee from the requested action: for example, 'The Church gives thanks and asks the Lord to sustain, through his Spirit, the integrity of those who have received.'"
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-001"
+severity = "advisory"
+location = "src/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a/sections/synthesis-04-themes.tex:10; sections/synthesis-05-commentary.tex:36 (inherited from sections/10-treatment.tex:21 and sections/30-mercy.tex:31)"
+problem = "The thematic opening says Augustine specifically connects hands raised in prayer with hands extended to the needy. In the checked NPNF witness of Expositions on Psalm 62.10 (heading Psalm LXIII), he repeatedly connects prayer with good works generally and explains Christ’s outstretched hands and mercy; he does not specify the needy in that locus. Applying his point to aid for the needy is reasonable, but that application should remain the study’s rather than being presented as his exact explanation. The related commentary sentence can retain the application with clearer attribution. This narrow precision issue does not change either interpretation or its substantial direct support."
+required_result = "When next editing these passages, distinguish Augustine’s general statement from the study’s application: for example, “He connects the hands raised in prayer with their exercise in good works. Here that connection supports practical care for a neighbor.” In the commentary, “Augustine joins raised hands in prayer to good works; this includes the acts of mercy considered here” would preserve the reasoning. Align the corresponding expansive-study sentences at the same time, without changing the approved source evidence."

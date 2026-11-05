@@ -38,7 +38,30 @@ research preflight. The cold review requested explicit Wisdom numbering and
 the full concise qualification of David's reported dates. Research repaired
 both through existing source fields. Repeated source registration and preflight
 pass; cold research-review iteration 1 passes with no findings. The expansive
-study is ready for authoring. No gate or publication
+study is authored with 6,463 substantive words, two interpretations and all
+twelve appointed-text anchors. Its component/content checks, canonical web
+probe and engine study preflight pass. Cold study review confirms the substantive
+arguments and source support, and requests one focused repair of recurring
+editorial-process prose. Author-study iteration 1 repairs STU-001 in the six
+cited passages, preserving the evidence and 6,346 substantive words. Repeated
+study preflight passes. Fresh cold study-review iteration 1 passes with no
+findings, clearing STU-001. The concise companion is authored with 3,389 words
+of substantive exposition and passes its component, content, metadata,
+generated-source and conversion checks. All 25 accepted study and evidence
+files are unchanged. Engine synthesis preflight and cold synthesis review pass.
+The review retains SYN-001 as a nonblocking attribution-precision advisory for
+the next revision: Augustine's general good-works explanation should remain
+distinct from the study's specific application to helping the needy. The
+homily is authored with 1,281 spoken words, estimated at 10.25–11.65 minutes
+at 110–125 words per minute. Its component/content, provenance, metadata,
+complete three-output schema, generated-source and converter checks pass;
+fifty baseline files are unchanged. Engine homily preflight and cold review
+pass. HOM-001 remains a nonblocking precision advisory about the post-Communion
+prayer's addressee and the requested work of the Spirit. Complete source-family
+validation and engine artifact gates pass; all four upstream review records
+and current input objects match. The reviewed sources are ready for their
+required commit checkpoint and canonical reader conversion.
+No gate or publication
 check is bypassed. The source handoff has 45 bindings and 57
 dispositions, and the strict working projection and full source audits pass.
 Its context records ten ritual units, twelve element keys, both second-reading
@@ -49,7 +72,8 @@ reaches thirty existing chronology consumers. Their generated currentness,
 schema and reader conversions pass; nine inherited content-gate failures remain
 in unchanged authored sources. Two additional GPT leaves require only registry
 dependency-hash updates.
-No study, synthesis, homily or publication acceptance is yet claimed. The
+All three documents have passed their independent content reviews;
+publication acceptance remains pending. The
 exact provider/identity authorization is recorded in
 `guidance/liturgy/propers-production-plan.md`; the driver's ongoing record is
 `workflows/reviews/gpt-pc-s58-production-2026-11-05/CYCLES.md`.
