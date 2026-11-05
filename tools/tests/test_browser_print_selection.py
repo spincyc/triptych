@@ -280,7 +280,7 @@ class PublicationTargetTests(unittest.TestCase):
             wait("document.querySelector('.edition-links a')"),
             eval_js("({links: [...document.querySelectorAll('.edition-links a')].map(a => ({label:a.textContent, path:a.getAttribute('href'), download:a.hasAttribute('download')})), tally: document.querySelector('#tally').textContent})", "result")
         ]})["result"]
-        self.assertEqual([link["label"] for link in seen["links"]], ["Read here", "Print view"])
+        self.assertEqual([link["label"] for link in seen["links"]], ["Read here", "Print / Generate PDF"])
         self.assertEqual([link["path"] for link in seen["links"]],
                          ["../web/gpt/real-reader.html", "../print/gpt/real-print.html"])
         self.assertFalse(any(link["download"] for link in seen["links"]))
