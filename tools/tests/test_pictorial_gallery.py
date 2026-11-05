@@ -74,8 +74,8 @@ class PictorialGalleryTest(unittest.TestCase):
         self.assertIn("RPD-FIG-sanctuary-0001-ecce-homo-chapel-rijks-graphite.png", names)
         pontifical = "RPD-FIG-pontifical-0001-three-mitre-forms-v1-alpha-canonical.png"
         self.assertIn(pontifical, names)
-        ordinary = self.tool.pictorial_gallery_data("comprehensive")
-        self.assertNotIn(pontifical, {Path(card["source_relative"]).name for card in ordinary})
+        comprehensive = self.tool.pictorial_gallery_data("comprehensive")
+        self.assertIn(pontifical, {Path(card["source_relative"]).name for card in comprehensive})
 
     def test_selected_artwork_without_description_is_refused(self) -> None:
         selected, inputs = self.tool.pictorial_gallery_selection()

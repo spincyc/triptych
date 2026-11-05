@@ -33,8 +33,8 @@ identity, and visual-usability checks at the intended placement size.
 
 `artwork-manifest.toml` is authoritative for exact current asset and artwork
 counts, links, rejection states, and review receipts. The object inventory has
-80 records, with edition-specific selections recorded in `plate-manifest.md`;
-Comprehensive admits 49 and omits 31. This is not a count of approved rasters.
+82 records, with edition-specific selections recorded in `plate-manifest.md`.
+This is not a count of approved rasters.
 
 The 2026-11-05 revision adds four isolated studies (altar, standing altar
 crucifix, tabernacle, ciborium) and replaces the plain amice/maniple studies
@@ -42,6 +42,15 @@ with central-cross figures. The old vestment figures remain rejected. Exact
 figure IDs, provenance, input limits, technical review, and consumer review
 are recorded in `artwork-revision-2026-11-05.md`. The four new object records
 do not admit the older held multi-object Communion/reservation compositions.
+
+
+The continuation adds isolated cassock and surplice figures and one worn
+cassock/surplice relationship. Their exact prompts, generated and normalized
+hashes, source controls and review limits are in the machine manifest and
+`slices/server-choir-clothing-2026-11-05.md`. The ensemble does not establish a
+complete choir-dress composition. The cold review also restores printed scale
+notices and source references and reviews admitted pontifical figures in the
+comprehensive edition; see `cold-review-2026-11-05.md`.
 
 
 The canonical manifest's `[[asset_files]]` inventory covers every tracked

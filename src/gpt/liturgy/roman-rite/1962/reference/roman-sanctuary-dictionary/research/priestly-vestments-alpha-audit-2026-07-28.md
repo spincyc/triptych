@@ -2,6 +2,16 @@
 
 Audit date: 2026-07-28
 
+
+**Source correction, 2026-11-05:**
+[`slices/vestment-source-bindings-2026-11-05.md`](slices/vestment-source-bindings-2026-11-05.md)
+supersedes the old Casanowicz title, coarse museum references and purported
+1917 line-art witness below. The inspected Fortescue facsimile was printed
+in 1918 and those pages contain prose, not vestment illustrations. Exact
+Hirten 1952 catalog pages now support the narrow/full chasuble comparison.
+The following audit remains a historical receipt, not a fresh verification
+of its superseded source descriptions.
+
 ## Bounded result
 
 This tranche admits six ordinary priestly vestment records: amice, alb,

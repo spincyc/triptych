@@ -1,28 +1,43 @@
 # Production manifest
 
-Current source checkpoint: **2026-11-05, bounded illustrated editions**.
+Current source checkpoint: **2026-11-05, clothing and source-apparatus continuation**.
 
-The canonical inventory now contains 80 records. Four newly checked objects
-(altar, altar crucifix, tabernacle and ciborium) have current illustrations;
-the amice and maniple now show the central crosses described in *Ritus
-servandus* I.3. The six edition selections and remaining coverage gaps are
-owned by `plate-manifest.md`, the leaf guide maps and
-`completeness-matrix.md`. The added objects do not close those broader gaps.
+The canonical inventory contains 82 records. Cassock and surplice have separate
+records and three original graphite figures, including their worn relationship.
+The comprehensive edition now includes thirteen existing pontifical objects
+previously excluded from its selection. The exact audience counts and remaining
+holds are owned by [`plate-manifest.md`](plate-manifest.md); every row of
+[`completeness-matrix.md`](completeness-matrix.md) remains open.
 
-Native printing now resolves generated body and omission files inside the
-selected build directory. The browser gallery uses exactly the native
-editions' positive artwork selection, rather than admitting obsolete figures
-because they have historical review receipts. Its 66 images preserve checked
-qualifications and handling warnings; further use notes and source loci are
-available under each object's disclosure.
+All six editions now print numbered object notes with exact source loci and a
+selected bibliography. This exposed and prompted correction of the vestment,
+cruet, conopaeum and ombrellino bindings; the checked witnesses and their limits
+are recorded in [`source-audit.md`](source-audit.md). Every plate identifies
+independently fitted figures as not to common scale. Canonical care warnings
+remain beside the figures, and the server edition includes its assigned
+handling boundaries. Larger captions, guarded removal of seven exact repeated
+sentences, and revised spacing improve readability. A single keyed cutaway
+explains the pontifical vestment layers without duplicating the shared figure.
 
-The current figure and assembled-page inspection record, including exact
-reviewed PDF identities and its limits, is
+Native printing resolves generated body, omission and source-note files inside
+the selected build directory. Source metadata participates in the revision and
+bundle dependency closures. The browser gallery continues to use the native
+editions' positive artwork selection and preserves qualifications, handling
+warnings and source loci. No held object becomes admitted merely by appearing
+in historical artwork or a review receipt.
+
+The current findings, final screen-proof identities and inspection coverage
+are recorded in [`cold-review-2026-11-05.md`](cold-review-2026-11-05.md).
+The new figures' source, rights and consumer checks are in
+[`slices/server-choir-clothing-2026-11-05.md`](slices/server-choir-clothing-2026-11-05.md).
+The earlier altar and sacred-vessel figure checkpoint remains in
 [`artwork-revision-2026-11-05.md`](artwork-revision-2026-11-05.md).
 PDFs are disposable on-demand outputs, not installed or tracked publication
 inputs. The dated entries below are historical: their references to a
 "current" or "installed" PDF do not identify the present source edition or
-transfer approval to changed inputs.
+transfer approval to changed inputs. Screen inspection is not a physical-print
+trial or external ecclesiastical approval. Publication and deployment state
+are recorded in the current `PROJECT-WORK.md` continuation entry.
 
 ## Historical production records
 

@@ -1,7 +1,7 @@
 schema_version = 1
 id = "obj-altar-cruet"
 workflow_state = "publication-ready"
-editorial_note = "The checked Missal and disclosed server-manual synthesis support the wine-and-water service. A dated manufacturer catalog and two cataloged museum witnesses support a small paired-cruet teaching plate while demonstrating substantial variation in material, body, ornament, marking, closure, and handle. A Latin headword is deliberately not asserted because the present audit did not close the lexical question; any universal arrangement remains open."
+editorial_note = "The checked Missal and Fortescue–O’Connell (1943) support the wine-and-water service. A dated manufacturer catalog and two cataloged museum witnesses support a small paired-cruet teaching plate while demonstrating substantial variation in material, body, ornament, marking, closure, and handle. A Latin headword is deliberately not asserted because the present audit did not close the lexical question; any universal arrangement remains open."
 preferred_english_name = "Altar cruet"
 latin_headword = "Latin term not asserted"
 alternate_english_names = ["Cruet", "Paired altar cruets"]
@@ -42,15 +42,15 @@ id = "clm-altar-cruet-identity"
 kind = "identity"
 text = "An altar cruet is a small pouring vessel prepared to supply wine or water for the Mass; two are ordinarily prepared together for the wine-and-water service."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-missale-1962-ritus-vii-x", "src-asg-source-audit-cruets", "src-gorham-1914-cruets", "src-met-200141-cruet-pair"]
+source_ids = ["src-missale-1962-ritus-vii-x", "src-fortescue-1943-cruets", "src-gorham-1914-cruets", "src-met-200141-cruet-pair"]
 as_of = 1962-01-01
 
 [[claims]]
 id = "clm-altar-cruet-presence-use"
 kind = "liturgical-use"
-text = "The 1962 Offertory and ablution rites require wine and water to be supplied to the celebrant; the checked server model uses two altar cruets for that service."
+text = "The 1962 Offertory and ablution rites require wine and water to be supplied to the celebrant; Fortescue–O’Connell (1943) describes preparing two cruets for wine and water."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-missale-1962-ritus-vii-x", "src-asg-source-audit-cruets"]
+source_ids = ["src-missale-1962-ritus-vii-x", "src-fortescue-1943-cruets"]
 as_of = 1962-01-01
 
 [[claims]]
@@ -58,7 +58,7 @@ id = "clm-altar-cruet-ceremonial-presence"
 kind = "ceremonial-presence"
 text = "The pair is prepared near the altar for the Offertory and later ablutions."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-missale-1962-ritus-vii-x", "src-asg-source-audit-cruets"]
+source_ids = ["src-missale-1962-ritus-vii-x", "src-fortescue-1943-cruets"]
 as_of = 1962-01-01
 
 [[claims]]
@@ -86,13 +86,13 @@ verification_state = "claim-verified"
 checked_on = 2026-07-27
 
 [[sources]]
-id = "src-asg-source-audit-cruets"
-binding = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md"
-locus = "Selected Low-Mass model and lines discussing First's wine, Second's water, and the paired cruet service"
+id = "src-fortescue-1943-cruets"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Seventh revised edition (1943), chapter X, section 2, Preparation, printed p. 70; artifact PDF p. 91."
 role = "manual"
 verification_state = "claim-verified"
-checked_on = 2026-07-27
-note = "Supports the server-facing two-cruet service model, not a universal vessel shape or Latin headword."
+checked_on = 2026-11-05
+note = "The page image explicitly places two cruets, one containing wine and the other water, at the credence before Mass. This supports paired preparation, not a universal vessel shape, numbered bearer assignment or Latin headword."
 
 [[sources]]
 id = "src-gorham-1914-cruets"

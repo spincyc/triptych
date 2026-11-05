@@ -12,7 +12,7 @@ authorization to render an entry.
 ## Canonical counts and admission
 
 `shared/objects/` owns every object identity and workflow state. The inventory
-validator reported 80 conforming canonical records at the 2026-11-05 content
+validator reported 82 conforming canonical records at the 2026-11-05 content
 checkpoint. This is a structural result, not closure of the source corpus,
 completeness matrix, variants, artwork review, rights, or publication gates.
 `shared/schema/object.example.toml` is a syntax fixture and is excluded.
@@ -43,6 +43,19 @@ never substitutes for a canonical record.
 Their exact source loci, evidence states and audience wording live in those
 records. The source audit records directly inspected pages and contrary
 findings. Artwork identity remains a separate gate.
+
+## Ordinary server clothing, 2026-11-05
+
+`obj-cassock` and `obj-surplice` add the long lower garment, short white upper
+garment and their worn relationship. The 1962 Missal, Fortescue–O’Connell's
+seventh revised edition (1943), and Hirten's 1952 catalog control distinct
+ritual, terminology/custom and morphology claims. Cotta is an alias under the
+checked ceremonial; no separate object is inferred. The ordinary ensemble
+assigns no clerical rank, privilege, universal tailoring or mandatory black
+cassock to every server. The ceremonial's recorded lay-dress custom remains
+visible. Exact loci and image provenance are in
+[`slices/server-choir-clothing-2026-11-05.md`](slices/server-choir-clothing-2026-11-05.md).
+Cope, humeral veil, rochet and the wider choir-dress corpus remain open.
 
 ## Candidate discovery queue
 

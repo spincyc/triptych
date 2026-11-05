@@ -208,6 +208,7 @@ def dictionary_artwork(root: Path, provider: str, canonical: str) -> tuple[set[s
         owner / "shared/generated-record-renderer.tex", owner / "shared/schema/object-record-api.tex",
         owner / "shared/publication-shell.tex", root / "src/common/preamble.tex", owner / leaf / "main.tex",
         owner / leaf / "generation-metadata.tex", owner / leaf / "publication.toml")}
+    inputs.update(_relative(root, path) for path in generator.source_note_inputs(root, chosen))
     return selected, inputs | {HELPER}
 
 

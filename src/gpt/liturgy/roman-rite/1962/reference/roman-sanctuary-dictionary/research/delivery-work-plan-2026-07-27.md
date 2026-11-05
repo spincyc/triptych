@@ -12,15 +12,16 @@ completed; neither promise establishes a complete dictionary corpus.
 
 ## Current baseline and finish line
 
-The canonical inventory contains 80 objects. The six audience selections,
+The canonical inventory contains 82 objects. The six audience selections,
 ordered plates and omissions are derived from the shared records, not
 independently authored copies. Current selection counts are maintained in
 [`plate-manifest.md`](plate-manifest.md); exact reviewed render identities
-and inspection limits are in
-[`artwork-revision-2026-11-05.md`](artwork-revision-2026-11-05.md).
-The comprehensive edition currently admits 49 objects; the pontifical edition
-admits 60. The comprehensive selection therefore does not yet contain every
-admitted object in the family.
+and inspection limits are in the production manifest and
+[`cold-review-2026-11-05.md`](cold-review-2026-11-05.md); the earlier figure
+checkpoint remains in `artwork-revision-2026-11-05.md`.
+The comprehensive edition now admits 64 objects, including thirteen existing
+pontifical entries and the new cassock/surplice pair. The pontifical edition
+admits 62. These are audience selections, not exhausted corpus counts.
 
 Every row of [`completeness-matrix.md`](completeness-matrix.md) remains open.
 An admitted record, an exhausted category, and a reviewed composition are
@@ -41,7 +42,7 @@ the profile; never describe that inspection as a physical print trial.
 - [x] Identify current review evidence separately from historical installed
   PDF receipts. The production manifest and six guide maps record the
   November source checkpoint.
-- [ ] Independently check the current six rendered editions against their
+- [x] Independently check the current six rendered editions against their
   canonical records, captions, source notes, guide maps and omission rules;
   resolve concrete consistency, correctness, clarity and visual defects.
 
@@ -52,9 +53,9 @@ the profile; never describe that inspection as a physical print trial.
   on the 80-record checkpoint. Unsupported assets remain held or rejected.
 - [x] Preserve exact provenance, source controls, rights, asset hashes and
   bounded review in the artwork manifest and its linked audits.
-- [ ] Re-run the gate for each new figure and inspect its actual consumers.
-  Zero notices proves structural consistency, not exhaustive source coverage
-  or an independent visual judgment.
+- [x] Re-run the gate for the three new clothing figures and inspect all six
+  actual consumers. Zero notices proves structural consistency, not exhaustive
+  source coverage or an independent visual judgment. Repeat for future figures.
 
 ## D3 — close the corpus category by category
 
@@ -69,9 +70,10 @@ For each row of the completeness matrix:
   object; a figure in a composition does not substitute for an object record.
 - [ ] Close the row only when every matrix column has supporting evidence.
 
-The next bounded slice is missing clothing or vestments: server cassock and
-surplice, cope and humeral veil. Treat a cotta as a separate object only if
-sources establish a substantive distinction. Preserve the distinction among
+The ordinary server cassock and surplice now have separate canonical records,
+three source-controlled figures and six audience selections; cotta is a
+sourced alias. The next clothing slice is cope and humeral veil, followed by
+the still-open choir/prelatial dress inventory. Preserve the distinction among
 ordinary server dress, sacred-minister vesture and privileged choir dress.
 Then pursue altar cards, frontal and tabernacle veil; remaining reservation
 and exposition vessels; Requiem and ritual Masses; and the four operative
@@ -80,14 +82,15 @@ Holy Week ceremony inventories. The matrix owns the full outstanding scope.
 ## D4 — audience editions and useful reader apparatus
 
 - [x] Derive six distinct selections and audience notes from one inventory.
-- [ ] Reconcile the comprehensive selection with every admitted pontifical
+- [x] Reconcile the comprehensive selection with every admitted pontifical
   object. Consumer-specific artwork eligibility must be reviewed before
   broadening a selection; a blanket exclusion is not corpus closure.
-- [ ] Recheck smaller editions against their stated use and canonical facts,
+- [x] Recheck smaller editions against their stated use and canonical facts,
   including recognition-only objects and immediate handling warnings.
-- [ ] Supply only populated, useful indexes, pronunciation or terminology
-  aids. Keep exact source references accessible without production jargon
-  dominating the recognition plates.
+- [x] Supply linked object source notes and a populated edition bibliography
+  without production jargon dominating the recognition plates.
+- [ ] Add further indexes, pronunciation or terminology aids only when their
+  checked contents serve the named audience.
 - [ ] Verify the gallery and print-source transport against the actual
   positive artwork selection after each content change.
 
@@ -101,9 +104,9 @@ Holy Week ceremony inventories. The matrix owns the full outstanding scope.
 - [ ] Complete the linen, vessel, incense, pontifical and special-ceremony
   relationships still held in the plate manifest. Check simultaneous use,
   object scale, handlers and placement as well as isolated silhouettes.
-- [ ] Inspect every new figure at its intended size for identity, construction,
+- [x] Inspect this continuation's three new figures at their intended sizes for identity, construction,
   folds, wearing, scale, duplicate companions, monochrome clarity and edges.
-- [ ] Build all affected selected editions, settle references and layout,
+- [x] Build this continuation's six selected editions, settle references and layout,
   check metadata, fonts and text, and inspect every changed page. Record
   complete inspection coverage when issuing a reviewed print edition.
 

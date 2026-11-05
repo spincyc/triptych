@@ -22,7 +22,7 @@ recorded here. None of these open states is evidence of completeness.
 | Priestly vestments | No | No | No | No | No | No | No | Six ordinary-priest records populated; row open |
 | Deacon and subdeacon | No | No | No | No | No | No | No | Deacon's stole, dalmatic, and tunicle populated; row open |
 | Pontifical and prelatial | No | No | No | No | No | No | No | Records populated; row open |
-| Servers, ministers, and choir | No | No | No | No | No | No | No | Targeted research recorded; row open |
+| Servers, ministers, and choir | No | No | No | No | No | No | No | Cassock and surplice records populated; row open |
 | Requiem | No | No | No | No | No | No | No | Not started |
 | Nuptial and ritual Masses | No | No | No | No | No | No | No | Not started |
 | Holy Week: Palm Sunday | No | No | No | No | No | No | No | Not started |
@@ -68,7 +68,8 @@ does not have a canonical entry merely because it is pictured or named.
 | --- | --- | --- |
 | Church, sanctuary and ordinary altar | Added `obj-altar`, `obj-altar-cross`, and `obj-tabernacle` with exact 1962 Missal and historical Code controls; existing credence, seating, sacristy and lamp records remain separately bounded | Whole-sanctuary topology, altar-stone/antimension variants, altar cards, frontal, tabernacle veil as an independent textile, and every placed-object relationship |
 | Sacred vessels | Added `obj-ciborium`; chalice, paten, cruets and Communion plate already have records | Communion/reservation versus exposition pyxes, lunette, monstrance, sacred-oil containers, and the related-ceremony boundaries |
-| Vestments | Six priestly and three sacred-minister records; corrected amice/maniple cross evidence, stole arrangements, and subdeacon's absence of a stole | Cope, humeral veil, biretta, server cassock and surplice, choir/prelatial dress and privilege boundaries; artwork must follow corrected record facts |
+| Vestments | Six priestly and three sacred-minister records; corrected amice/maniple cross evidence, stole arrangements, and subdeacon's absence of a stole | Cope, humeral veil, biretta, choir/prelatial dress and privilege boundaries; artwork must follow corrected record facts |
+| Servers, ministers and choir | Added `obj-cassock` and `obj-surplice`, isolated figures and their worn relationship; cotta retained as a sourced alias | Rochet, rank-specific and privileged dress, regional/institutional variants, and the complete choir corpus |
 | Requiem and ritual Masses | Ordinary Mass objects can recur in these ceremonies | Distinct bier/catafalque/pall and absolution equipment; Nuptial custom and ceremony-specific preparations have no exhausted category inventory |
 | Holy Week | Historical triple candle and folded chasuble records mark earlier states | The four operative 1962 ceremony inventories and transitions are still unclosed; historical pictures cannot substitute for them |
 

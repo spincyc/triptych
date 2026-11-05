@@ -3,16 +3,16 @@
 Current reconciliation: 2026-11-05
 Status: **bounded generated plates; complete ceremonial compositions remain open**
 
-Current canonical inventory: **80 records**. Selection is edition-specific:
+Current canonical inventory: **82 records**. Selection is edition-specific:
 
 | Edition | Admitted records | Omitted records | Generated plates |
 | --- | ---: | ---: | ---: |
-| `ed-altar-server` | 48 | 32 | 9 |
-| `ed-comprehensive` | 49 | 31 | 11 |
-| `ed-general-reader` | 47 | 33 | 10 |
-| `ed-mc-trainer` | 49 | 31 | 9 |
-| `ed-pontifical` | 60 | 20 | 15 |
-| `ed-sacristan` | 49 | 31 | 11 |
+| `ed-altar-server` | 50 | 32 | 10 |
+| `ed-comprehensive` | 64 | 18 | 16 |
+| `ed-general-reader` | 49 | 33 | 11 |
+| `ed-mc-trainer` | 51 | 31 | 10 |
+| `ed-pontifical` | 62 | 20 | 16 |
+| `ed-sacristan` | 51 | 31 | 12 |
 
 `tools/render-sanctuary-dictionary` owns exact `SECTION_PLATE_PLANS`, ordering,
 layout IDs, and object membership. Generated `ed-*.tex` and
@@ -27,6 +27,14 @@ central crosses. The bare/unveiled study qualifications are visible in the
 canonical use text. `artwork-revision-2026-11-05.md` and the production manifest
 own actual figure and consumer review receipts; plate counts establish no
 physical print or photocopy review.
+
+The continuation adds one server-clothing plate in every edition: isolated
+cassock and surplice plus their shared worn relationship. The comprehensive
+edition also adds four pontifical comparisons covering thirteen previously
+admitted records. These comparisons do not release gremial or pectoral-cross
+records, and the still-held complete pontifical compositions remain separate.
+Exact source corrections and reader-apparatus review are in
+`cold-review-2026-11-05.md` and the linked clothing/source slices.
 
 ## Historical plate proposals and checkpoints, 2026-07-28
 
@@ -77,7 +85,10 @@ Audit date: 2026-07-28
 ## Plate release gate
 
 Each plate must declare ordered object, variant, artwork, label, scale, note,
-and edition consumers. Release requires every rendered claim and object to be
-publication-ready, every artwork asset approved, every label generated from
-canonical data, ambiguity checked at full size, and actual-size monochrome
-print review recorded.
+and edition consumers. Release requires every rendered claim and object to pass the canonical
+source, rights, identity and usability gates, every label to come from
+canonical data, and every selected artwork to have its bounded consumer
+review. Inspect ambiguity, scale and monochrome clarity in the actual output.
+A print export receives complete page-by-page screen review; do not describe
+it as a physical printer or photocopy trial. Workflow labels and historical
+approvals alone cannot authorize changed inputs.

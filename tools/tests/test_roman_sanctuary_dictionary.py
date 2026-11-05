@@ -4,7 +4,9 @@ import importlib.util
 import tempfile
 import textwrap
 import unittest
+from copy import deepcopy
 from pathlib import Path
+from types import SimpleNamespace
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -29,6 +31,116 @@ GENERATOR = load_generator()
 
 
 class DictionaryGeneratorTests(unittest.TestCase):
+    def test_caption_dedup_preserves_changed_or_distinct_information(self):
+        records = {record["id"]: record for path in RECORDS.rglob("*.toml")
+                   if (record := GENERATOR.load(path))}
+        for object_id in GENERATOR.REDUNDANT_CAPTION_PAIRS:
+            with self.subTest(object=object_id):
+                record = records[object_id]
+                identity, use = GENERATOR.caption_claims(record)
+                self.assertTrue(identity)
+                self.assertEqual(use, "")
+                changed = deepcopy(record)
+                claim = next(claim for claim in reversed(changed["claims"])
+                             if claim["kind"] in {"liturgical-use", "ceremonial-presence"}
+                             and claim["evidence_state"] != "editorial-proposal")
+                claim["text"] += " A distinct qualification must remain visible."
+                self.assertEqual(GENERATOR.caption_claims(changed)[1], claim["text"])
+        self.assertTrue(all(GENERATOR.caption_claims(records["obj-paten"])))
+
+    def test_source_notes_resolve_exact_edition_locus_and_dependency_paths(self):
+        artifact = SimpleNamespace(record_id="artifact.test", record_type="artifact",
+                                   path=ROOT / ".scratch/test-artifact.toml",
+                                   data={"edition_id": "edition.test"})
+        edition = SimpleNamespace(record_id="edition.test", record_type="edition",
+                                  path=ROOT / ".scratch/test-edition.toml",
+                                  data={"title": "Exact source title", "publication": "Third edition, 1943"})
+        library = SimpleNamespace(records={artifact.record_id: artifact, edition.record_id: edition})
+        records = [{"id": "obj-test", "preferred_english_name": "Test object",
+                    "sources": [{"binding": artifact.record_id, "locus": "Book II, p. 70."},
+                                {"binding": edition.record_id, "locus": "Book II, p. 70."}]}]
+        _, _, inputs = GENERATOR.source_note_metadata(ROOT, records, library)
+        self.assertEqual(inputs, {artifact.path, edition.path, ROOT / "tools/source-library"})
+        notes = "\n".join(GENERATOR.source_notes_tex(records, {}, ROOT, library))
+        self.assertIn(r"\RSDSourceNote{1}{Test object}{\RSDReferenceLink{1} Book II, p. 70.}", notes)
+        self.assertIn(r"\RSDReference{1}{Exact source title}{Third edition, 1943}", notes)
+        self.assertNotIn(artifact.record_id, notes)
+        edition.data["title"] = "Corrected source title"
+        self.assertNotEqual(notes, "\n".join(GENERATOR.source_notes_tex(records, {}, ROOT, library)))
+
+    def test_source_notes_refuse_unknown_or_unidentified_sources(self):
+        records = [{"id": "obj-test", "sources": [{"binding": "missing"}]}]
+        with self.assertRaisesRegex(GENERATOR.ContractError, "unknown source-note binding missing"):
+            GENERATOR.source_note_metadata(ROOT, records, SimpleNamespace(records={}))
+        unknown_edition = SimpleNamespace(record_id="missing", record_type="work",
+                                         path=ROOT / ".scratch/test-work.toml", data={})
+        with self.assertRaisesRegex(GENERATOR.ContractError, "no identified edition"):
+            GENERATOR.source_note_metadata(ROOT, records, SimpleNamespace(records={"missing": unknown_edition}))
+
+    def test_structured_publication_renders_bibliography_without_audit_fields(self):
+        statement = {"edition": "Acta Apostolicae Sedis 16 (1924).",
+                     "imprint": "Rome: Typis Polyglottis Vaticanis.",
+                     "basis": "Internal collation evidence", "page_ranges": [[1, 200]]}
+        expected = ("Acta Apostolicae Sedis 16 (1924)", "Rome: Typis Polyglottis Vaticanis.")
+        edition = {"title": "Machine witness aas.016", "publication": statement}
+        self.assertEqual(GENERATOR.source_reference_text(edition), expected)
+        self.assertEqual(GENERATOR.source_reference_text({**edition, "publication": GENERATOR.json.dumps(statement)}), expected)
+        for unsupported in ({"basis": "No bibliography"}, ["edition"], None, "{broken}"):
+            with self.subTest(value=unsupported), self.assertRaises(GENERATOR.ContractError):
+                GENERATOR.source_reference_text({"title": "Source", "publication": unsupported})
+
+    def test_clothing_comparison_keeps_shared_ensemble_with_one_owner(self):
+        records = [GENERATOR.load(RECORDS / "servers-ministers-and-choir" / f"{name}.toml")
+                   for name in ("cassock", "surplice")]
+        owners = GENERATOR.resolve_artwork_render_owners({row["id"]: row for row in records})
+        self.assertEqual(owners["art-cassock-surplice-worn"], "obj-cassock")
+        edition = next(row for row in GENERATOR.load(SELECTIONS)["editions"]
+                       if row["id"] == "ed-altar-server")
+        edition = {**edition, "section_order": ["servers-ministers-and-choir"]}
+        rendered = "\n".join(GENERATOR.dense_edition_tex(records, edition, owners))
+        self.assertEqual(rendered.count(r"\RSDPairedCardNext"), 2)
+        self.assertEqual(rendered.count(r"\RSDObjectNoteNumber"), 2)
+        self.assertEqual(rendered.count(r"\RSDObjectRecord{obj-cassock}"), 1)
+        self.assertEqual(rendered.count(r"\RSDObjectRecord{obj-surplice}"), 1)
+
+    def test_handling_warnings_survive_every_audience_selection(self):
+        records = {row["id"]: row for path in RECORDS.rglob("*.toml")
+                   if (row := GENERATOR.load(path))}
+        owners = GENERATOR.resolve_artwork_render_owners(records)
+        for edition in GENERATOR.load(SELECTIONS)["editions"]:
+            for object_id in ("obj-communion-plate", "obj-thurible", "obj-cassock", "obj-surplice"):
+                with self.subTest(edition=edition["id"], object=object_id):
+                    record = records[object_id]
+                    rendered = GENERATOR.record_tex(record, edition, owners)
+                    expected = GENERATOR.tex(" ".join(record["handling"]["warnings"]))
+                    self.assertIn(f"\\RSDHandlingWarnings{{{expected}}}", rendered)
+
+    def test_exact_warning_duplicate_displays_once_and_distinct_note_survives(self):
+        record = GENERATOR.load(RECORDS / "ciborium.toml")
+        owners = GENERATOR.resolve_artwork_render_owners({record["id"]: record})
+        edition = next(row for row in GENERATOR.load(SELECTIONS)["editions"]
+                       if row["id"] == "ed-altar-server")
+        rendered = GENERATOR.record_tex(record, edition, owners)
+        self.assertNotIn(r"\RSDSelectedAudienceNote", rendered)
+        changed = deepcopy(record)
+        note = next(row for row in changed["audience_note"] if row["audience"] == "altar-server")
+        note["text"] += " A distinct qualification remains."
+        self.assertIn(f"\\RSDSelectedAudienceNote{{{GENERATOR.tex(note['text'])}}}",
+                      GENERATOR.record_tex(changed, edition, owners))
+
+    def test_pontifical_layer_study_keeps_one_figure_and_both_entries(self):
+        records = [GENERATOR.load(RECORDS / "pontifical" / f"pontifical-{name}.toml")
+                   for name in ("dalmatic", "tunicle")]
+        owners = GENERATOR.resolve_artwork_render_owners({row["id"]: row for row in records})
+        for edition in GENERATOR.load(SELECTIONS)["editions"]:
+            if edition["id"] not in {"ed-pontifical", "ed-comprehensive"}:
+                continue
+            for record in records:
+                rendered = GENERATOR.record_tex(record, edition, owners)
+                artwork_line = next(line for line in rendered.splitlines() if line.startswith(r"\RSDArtwork"))
+                self.assertTrue(artwork_line.endswith("{obj-pontifical-dalmatic}"))
+                self.assertEqual(r"\RSDSharedLayerKey" in rendered, record["id"] == "obj-pontifical-tunicle")
+
     def test_only_canonical_alpha_assets_are_selectable(self):
         manifest = {
             "asset_files": [
@@ -523,8 +635,10 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 for line in text.splitlines()
                 if line.startswith(r"\RSDObjectRecord{")
             ]
-            self.assertEqual(len(rendered_ids), 47)
-            self.assertEqual(len(set(rendered_ids)), 47)
+            self.assertEqual(len(rendered_ids), 49)
+            self.assertEqual(len(set(rendered_ids)), 49)
+            self.assertIn("obj-cassock", rendered_ids)
+            self.assertIn("obj-surplice", rendered_ids)
             for object_id in story_ids + dalmatic_story_ids:
                 self.assertEqual(
                     text.count(f"\\RSDObjectRecord{{{object_id}}}"), 1, object_id
@@ -579,10 +693,10 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             expected_ids = tuple(
                 object_id for plate in expected_plates for object_id in plate
-            )
+            ) + ("obj-cassock", "obj-surplice")
             self.assertEqual(actual_ids, expected_ids)
-            self.assertEqual(len(actual_ids), 49)
-            self.assertEqual(len(set(actual_ids)), 49)
+            self.assertEqual(len(actual_ids), 51)
+            self.assertEqual(len(set(actual_ids)), 51)
             self.assertEqual(text.count(r"\RSDDensePlateStart"), 1)
             self.assertEqual(text.count(r"\RSDStoryPlateStart"), 1)
             self.assertEqual(text.count(r"\RSDRelationshipThreePlateStart"), 0)

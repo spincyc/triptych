@@ -4,30 +4,26 @@ Status: **bounded canonical selection; wider inventory remains open**
 Current reconciliation: 2026-11-05
 Edition selection: `ed-altar-server`
 
-The current generated edition admits **48 records and omits 32 of the 80
-canonical records**. It has 9 generated object plates. These are record
-and plate counts, not PDF page counts; current rendered receipts belong to
-`../../research/production-manifest.md`.
+Recognition and the canonical handling relation stay beside each object. The cassock and surplice are shown separately and together. Ordinary server dress is distinguished from sacred-minister vesture; seeing an object does not authorize a server to handle it.
 
-The four newly admitted ordinary Mass records are altar, altar crucifix,
-tabernacle, and ciborium. The amice and maniple now use the replacement
-central-cross figures. The bare altar and unveiled reservation-object studies
-carry their preparation qualifications in the printed use text. They do not
-teach a complete prepared altar or reserved-Sacrament scene.
+Current inventory, admitted and omitted counts, and generated plate counts
+are recorded once in [`plate-manifest.md`](../../research/plate-manifest.md).
+The generator's `ed-altar-server.alpha-admissions.toml` identifies every selected
+record and artwork; the accompanying omission register gives each exclusion.
+`tools/render-sanctuary-dictionary` owns exact grouping and ordering through
+`SECTION_PLATE_PLANS`. A guide map does not independently restate that layout.
 
-Exact admissions and omission reasons are generated from the canonical
-objects, `shared/schema/edition-selections.toml`, and the artwork manifest into
-`ed-altar-server.alpha-admissions.toml`. The renderer's `SECTION_PLATE_PLANS`
-owns current grouping; the object and source gates still apply to every
-selection. Current explicit layouts include:
+Names, use, qualifications, source notes and audience text come from the
+canonical records. Scale and immediate handling information belong beside the
+figures; numbered source notes retain the exact cited editions and loci.
+Current screen-review evidence and its limits belong to
+[`production-manifest.md`](../../research/production-manifest.md), separately
+from historical rendered snapshots below.
 
-- `sanctuary-orientation`: `dense-six-v1` (6 records); `dense-seven-v1` (7 records).
-
-The remaining records are omitted by audience selection or unresolved source,
-artwork, or admission requirements; the admission file preserves each reason.
-A published selection does not close the wider Holy Week, ritual Mass,
-pontifical, historical, or handling corpus. `completeness-matrix.md` owns those
-open research boundaries.
+The bare-altar and unveiled reservation studies retain their preparation
+qualifications. No selection closes the wider Holy Week, ritual Mass,
+pontifical, historical or handling corpus; the
+[`completeness matrix`](../../research/completeness-matrix.md) owns those gaps.
 
 ## Historical guide-map checkpoints through 2026-07-29
 

@@ -1,7 +1,28 @@
 # Rights audit
 
 Status: **project-generated alpha artwork reconciled; external materials remain artifact-specific**
-Audit date: 2026-07-28
+Initial audit: 2026-07-28
+Current continuation: 2026-11-05
+
+
+## Current continuation
+
+The cassock, surplice and worn-ensemble drawings are original generated
+artwork with no supplied reference image. No source scan pixels or extended
+source text are redistributed. Exact prompts, original and normalized hashes,
+transformations and source ceilings are recorded in `artwork-manifest.toml`
+and `slices/server-choir-clothing-2026-11-05.md`. They fall under the
+repository's project-content terms; the external witnesses retain their
+artifact-specific remote dispositions. The source-note apparatus adds
+bibliographic metadata and precise loci, not source payloads.
+
+The dated entries below preserve earlier audit findings. Current publication
+is source-first: selected print exports are disposable outputs. Their rights
+notices must distinguish project-created content from exclusions; no tracked
+or installed PDF is required. The plate manifest and current consumer review
+control changed illustrations and selection.
+
+## Earlier bounded artwork audits
 
 The holy-water pair uses project-generated pencil assets. Two newly generated
 high-resolution siblings replace held low-resolution predecessors for
@@ -143,12 +164,12 @@ is old or public domain. Every retained external byte requires an affirmative
 artifact-level distribution basis under `guidance/sources.md`; otherwise keep
 only lawful metadata or a remote/restricted disposition.
 
-## Release hold
+## Rights boundary
 
-No plate may be installed until every depicted asset and reproduced text has a
-recorded rights disposition, the final-page colophon is present without a
-spill page, and the installed PDF's local notices accurately distinguish
-project-created material from exclusions.
+Every published asset and reproduced text needs a recorded rights
+disposition. A print export must include legible local notices distinguishing
+project-created material from exclusions; its final-page rights notice must
+not create an accidental spill page.
 
 The acquired 10-page 2008 introduction remains remote. Its public availability
 does not establish repository redistribution

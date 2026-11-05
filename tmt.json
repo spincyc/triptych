@@ -670,7 +670,8 @@
       "origin": "local",
       "purpose": "Validate sanctuary dictionary fixtures and render deterministic TeX views.",
       "requires": [
-        "public-alpha"
+        "public-alpha",
+        "source-library"
       ],
       "stage": "draft",
       "usage": "render-sanctuary-dictionary --schema F --selections F --artwork-manifest F --records F --output F"

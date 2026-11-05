@@ -8,8 +8,11 @@ the publication gate in the schema are emitted.
 from __future__ import annotations
 
 import argparse
+import functools
 import hashlib
+import importlib.machinery
 import importlib.util
+import json
 import re
 import sys
 import tomllib
@@ -68,7 +71,19 @@ PUBLIC_RENDER_HOLD_IDS = {"obj-book-marker"}
 PUBLIC_ARTWORK_HOLD_IDS = {
     "art-service-objects-0106-lavabo-basin-manuterge-alpha-canonical",
 }
+LAYER_STUDY_ARTWORK_ID = "art-pontifical-tunicle-dalmatic-chasuble-worn-cutaway"
 SECTION_PLATE_PLANS = {
+    ("ed-comprehensive", "pontifical-and-prelatial"): (
+        ("balanced-four-filled-v1", (
+            "obj-pontifical-tunicle", "obj-pontifical-dalmatic",
+            "obj-pontifical-buskin", "obj-pontifical-sandal",
+        )),
+        ("balanced-four-filled-v1", (
+            "obj-mitre", "obj-pontifical-gloves", "obj-crosier", "obj-pontifical-ring",
+        )),
+        ("balanced-two-tall-v1", ("obj-episcopal-throne", "obj-faldstool")),
+        ("relationship-three-feature-v1", ("obj-vimpa", "obj-mitre-minister-veil", "obj-bugia")),
+    ),
     ("ed-altar-server", "sanctuary-orientation"): (
         ("dense-six-v1", (
             "obj-altar", "obj-credence-table", "obj-lectern",
@@ -618,6 +633,130 @@ def tex(value: object) -> str:
     return str(value).translate(TEX_ESCAPE)
 
 
+# These seven use claims restate their identity captions. Changed wording falls
+# back to the full caption; the review is never transferred to a new claim.
+REDUNDANT_CAPTION_PAIRS = {
+    "obj-chalice": "c9809aac5e4f8bf6dbafb73c48fc9f0cef9ee30588110a8424145fae443e76f7",
+    "obj-sanctuary-lamp": "1840a060a4d576122a3a8db1d401ec608e864e3a81bda014aabe04df3657fb72",
+    "obj-purificator": "6cbbb829a88d648379c3346d935fc2e472c58b8d960bf1a3f663037c39c76829",
+    "obj-corporal": "f4d80fcd9fc8ae2b754304fb3f1e6db1de34c7e841c234e43d1caf12dffd821c",
+    "obj-chalice-pall": "8321ad2255c498a138ca6486303d8bd3ca3b5cb51f276b363fc3ed0fedf54f29",
+    "obj-burse": "1830db96271471aec0d5df5be1101aecdf180c64e715899a07baa944ea0f7559",
+    "obj-altar-cloths": "b7a99473b1d1c86e909a4a720d087d1349e6ad31df092c6192088699e1c1e6e6",
+}
+
+
+def caption_claims(record: dict) -> tuple[str, str]:
+    identity, use = "", ""
+    for claim in record["claims"]:
+        if claim["evidence_state"] == "editorial-proposal":
+            continue
+        if claim["kind"] == "identity":
+            identity = claim["text"]
+        elif claim["kind"] in {"liturgical-use", "ceremonial-presence"}:
+            use = claim["text"]
+    digest = hashlib.sha256((identity + "\0" + use).encode()).hexdigest()
+    if REDUNDANT_CAPTION_PAIRS.get(record["id"]) == digest:
+        use = ""
+    return identity, use
+
+
+@functools.lru_cache(maxsize=4)
+def _source_note_library(root: Path):
+    path = root / "tools/source-library"
+    loader = importlib.machinery.SourceFileLoader("rsd_source_library", str(path))
+    spec = importlib.util.spec_from_loader(loader.name, loader)
+    require(spec is not None, "cannot load source library")
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    loader.exec_module(module)
+    return module.load_library(root, check_binding_fingerprints=False)
+
+
+def source_reference_text(edition: dict) -> tuple[str, str]:
+    """Keep bibliographic prose, not a structured publication's audit ledger."""
+    value = edition.get("publication")
+    if isinstance(value, str) and value.lstrip().startswith("{"):
+        try:
+            value = json.loads(value)
+        except json.JSONDecodeError as error:
+            raise ContractError("invalid structured source publication metadata") from error
+    if isinstance(value, str):
+        require(bool(value.strip()), "source publication statement is empty")
+        return edition["title"].strip().removesuffix("."), value.strip()
+    require(isinstance(value, dict), "unsupported source publication metadata shape")
+    require(isinstance(value.get("edition"), str) and bool(value["edition"].strip()),
+            "structured source publication needs an edition statement")
+    require(value.get("imprint") is None or isinstance(value["imprint"], str),
+            "unsupported structured source publication imprint")
+    return value["edition"].strip().removesuffix("."), (value.get("imprint") or "").strip()
+
+
+def source_note_metadata(root: Path, records: list[dict], library=None) -> tuple[dict, dict, set[Path]]:
+    """Resolve exact source metadata, without acquiring or reading witness bytes."""
+    library = library if library is not None else _source_note_library(root.resolve())
+    editions, bindings = {}, {}
+    inputs = {root.resolve() / "tools/source-library"}
+    for record in records:
+        for source in record["sources"]:
+            binding = source["binding"]
+            target = library.records.get(binding)
+            require(target is not None, f"{record['id']}: unknown source-note binding {binding}")
+            inputs.add(target.path.resolve())
+            edition_id = target.record_id if target.record_type == "edition" else target.data.get("edition_id")
+            edition = library.records.get(edition_id)
+            require(edition is not None and edition.record_type == "edition",
+                    f"{binding}: source note has no identified edition")
+            require(isinstance(edition.data.get("title"), str) and bool(edition.data["title"].strip()),
+                    f"{edition_id}: source note needs title and publication metadata")
+            source_reference_text(edition.data)
+            inputs.add(edition.path.resolve())
+            editions[edition_id] = edition.data
+            bindings[binding] = edition_id
+    return editions, bindings, inputs
+
+
+def source_note_inputs(root: Path, records: list[dict]) -> set[Path]:
+    """Metadata affecting notes; object TOML bindings remain the caller's inputs."""
+    return source_note_metadata(root, records)[2]
+
+
+def edition_source_note_inputs(root: Path, owner: Path, selection_id: str) -> set[Path]:
+    selections = load(owner / "shared/schema/edition-selections.toml")
+    editions = [row for row in selections["editions"] if row["id"] == selection_id]
+    require(len(editions) == 1, f"unknown source-note selection: {selection_id}")
+    alpha = canonical_alpha_assets(load(owner / "research/artwork-manifest.toml"))
+    records = [load(path) for path in sorted((owner / "shared/objects").rglob("*.toml"))]
+    selected_records = [record for record in records if alpha_selected(record, editions[0], alpha)
+                        and record["id"] not in PUBLIC_RENDER_HOLD_IDS]
+    return source_note_inputs(root, selected_records)
+
+
+def source_notes_tex(records: list[dict], edition: dict, root: Path, library=None) -> list[str]:
+    editions, bindings, _ = source_note_metadata(root, records, library)
+    source_numbers = {key: number for number, key in enumerate(sorted(editions), 1)}
+    lines = ["\\gdef\\RSDPrintSourceNotes{%", "\\RSDSourceNotesStart"]
+    for number, record in enumerate(records, 1):
+        references = list(dict.fromkeys(
+            (source_numbers[bindings[source["binding"]]], source["locus"])
+            for source in record["sources"]
+        ))
+        source_labels = "; ".join(
+            f"\\RSDReferenceLink{{{source_number}}} {tex(locus.strip().removesuffix('.'))}"
+            for source_number, locus in references
+        ) + "."
+        lines.append(f"\\RSDSourceNote{{{number}}}{{{tex(record['preferred_english_name'])}}}"
+                     f"{{{source_labels}}}")
+    lines.append("\\RSDSourceNotesEnd")
+    lines.append("\\RSDReferencesStart")
+    for edition_id, number in source_numbers.items():
+        source_edition = editions[edition_id]
+        title, publication = source_reference_text(source_edition)
+        lines.append(f"\\RSDReference{{{number}}}{{{tex(title)}}}{{{tex(publication)}}}")
+    lines.extend(["\\RSDReferencesEnd", "}"])
+    return lines
+
+
 def canonical_asset_path(value: str) -> str:
     """Return the manifest/TeX path relative to the dictionary root."""
     return value[len(DICTIONARY_PREFIX):] if value.startswith(DICTIONARY_PREFIX) else value
@@ -786,6 +925,11 @@ def record_tex(record: dict, edition: dict, artwork_render_owners: dict[str, str
         if public_artwork and not has_owned_artwork
         else None
     )
+    shared_layer_key = record["id"] == "obj-pontifical-tunicle" and any(
+        artwork["id"] == LAYER_STUDY_ARTWORK_ID for artwork in public_artwork)
+    if shared_layer_key:
+        require(artwork_render_owners[LAYER_STUDY_ARTWORK_ID] == "obj-pontifical-dalmatic",
+                "shared pontifical layer study needs its declared dalmatic owner")
     lines = [
         f"\\RSDObjectRecord{{{tex(record['id'])}}}"
         f"{{{tex(record['preferred_english_name'])}}}{{{tex(record['latin_headword'])}}}",
@@ -809,6 +953,20 @@ def record_tex(record: dict, edition: dict, artwork_render_owners: dict[str, str
                      f"{{{tex(claim['id'])}}}{{{tex(claim['kind'])}}}{{{tex(claim['text'])}}}"
                      f"{{{tex(claim['evidence_state'])}}}{{{tex(claim['source_ids'])}}}"
                      f"{{{tex(claim.get('applies_to_variants', []))}}}")
+    identity, use = caption_claims(record)
+    lines.append(f"\\RSDDisplayCaption{{{tex(identity)}}}{{{tex(use)}}}")
+    warnings = " ".join(record["handling"].get("warnings", []))
+    lines.append(f"\\RSDHandlingWarnings{{{tex(warnings)}}}")
+    note_number = edition.get("_source_note_numbers", {}).get(record["id"], "")
+    lines.append(f"\\RSDObjectNoteNumber{{{note_number}}}")
+    if edition["audience"] == "altar-server":
+        label = {
+            "must-not-handle": "Recognize; do not handle.",
+            "recognizes-only": "Recognize only.",
+            "moves-only-by-direction": "Move only as directed.",
+        }.get(record["handling"]["server_relation"], "")
+        if label:
+            lines.append(f"\\RSDHandlingCaption{{{tex(label)}}}")
     for variant in record.get("variants", []):
         lines.append("\\RSDVariant"
                      f"{{{tex(variant['id'])}}}{{{tex(variant['preferred_name'])}}}"
@@ -829,7 +987,9 @@ def record_tex(record: dict, edition: dict, artwork_render_owners: dict[str, str
         # object as a blank card when that comparison is its only approved
         # view. The repeated rendering remains explicitly tied to the same
         # artwork identity and is preferable to inventing an isolated form.
-        if artwork["id"] == fallback_artwork_id:
+        if artwork["id"] == fallback_artwork_id and not (
+            shared_layer_key and artwork["id"] == LAYER_STUDY_ARTWORK_ID
+        ):
             render_owner = record["id"]
         lines.append("\\RSDArtwork"
                      f"{{{tex(artwork['id'])}}}{{{tex(artwork['view'])}}}"
@@ -838,12 +998,15 @@ def record_tex(record: dict, edition: dict, artwork_render_owners: dict[str, str
                      f"{{{tex(artwork.get('variant_id', ''))}}}"
                      f"{{{tex(artwork.get('scale_mode', 'not-applicable'))}}}"
                      f"{{{tex(render_owner)}}}")
+    if shared_layer_key:
+        lines.append("\\RSDSharedLayerKey")
     for note in record.get("audience_note", []):
         lines.append("\\RSDAudienceNote"
                      f"{{{tex(note['audience'])}}}{{{tex(note['text'])}}}"
                      f"{{{tex(note['claim_ids'])}}}{{{tex(record['id'])}}}")
         if note["audience"] == edition["audience"]:
-            lines.append(f"\\RSDSelectedAudienceNote{{{tex(note['text'])}}}")
+            if note["text"] not in record["handling"].get("warnings", []) and note["text"] != warnings:
+                lines.append(f"\\RSDSelectedAudienceNote{{{tex(note['text'])}}}")
     lines.append("\\RSDEndObjectRecord")
     return "\n".join(lines)
 
@@ -867,7 +1030,11 @@ def section_for(record: dict, edition: dict) -> str:
     """Route an admitted record through the edition's declared reader order."""
     category = primary_category(record)
     edition_id = edition["id"]
+    if category == "servers-ministers-and-choir":
+        return "servers-ministers-and-choir"
     if edition_id == "ed-comprehensive":
+        if any(record["id"] in ids for _, ids in SECTION_PLATE_PLANS[(edition_id, "pontifical-and-prelatial")]):
+            return "pontifical-and-prelatial"
         if category == "sacred-vessels":
             return "linens-and-textiles"
         if category == "incense":
@@ -929,6 +1096,8 @@ def section_for(record: dict, edition: dict) -> str:
 
 
 def section_label(section: str) -> str:
+    if section == "servers-ministers-and-choir":
+        return "Servers, ministers and choir"
     if section == "linens-and-textiles":
         # The comprehensive section also collects the sacred-vessel records.
         return "Vessels and linens"
@@ -945,6 +1114,9 @@ def dense_edition_tex(
     Records remain canonical and audience notes remain edition-selected; this
     function changes only their comparison grouping and page architecture.
     """
+    edition = {**edition, "_source_note_numbers": {
+        record["id"]: number for number, record in enumerate(chosen, 1)
+    }}
     if edition["id"] == "ed-mc-trainer":
         section_order = [
             section
@@ -960,6 +1132,12 @@ def dense_edition_tex(
                 "status-and-relationship-key", "terminal-apparatus",
             }
         ]
+    if any(primary_category(record) == "servers-ministers-and-choir" for record in chosen):
+        if "servers-ministers-and-choir" not in section_order:
+            before = next((index for index, section in enumerate(section_order)
+                           if section in {"special-masses-and-related-ceremonies", "special-ceremony-equipment",
+                                          "historical-perspective", "ministers-and-object-transfers"}), len(section_order))
+            section_order.insert(before, "servers-ministers-and-choir")
     grouped = {section: [] for section in section_order}
     for record in chosen:
         section = section_for(record, edition)
@@ -985,6 +1163,8 @@ def dense_edition_tex(
             record["id"],
         ))
         plan = SECTION_PLATE_PLANS.get((edition["id"], section))
+        if section == "servers-ministers-and-choir" and records:
+            plan = (("paired-studies-v1", ("obj-cassock", "obj-surplice")),)
         if plan is None:
             plan_parts = []
             for offset in range(0, len(records), 6):
@@ -1019,6 +1199,9 @@ def dense_edition_tex(
         records_by_id = {record["id"]: record for record in records}
         for plate_number, (layout, object_ids) in enumerate(plan, start=1):
             plate = [records_by_id[object_id] for object_id in object_ids]
+            if "obj-pontifical-tunicle" in object_ids:
+                require("obj-pontifical-dalmatic" in object_ids,
+                        "the shared pontifical layer study must keep both entries on one plate")
             if layout in {"story-spread-v1", "story-tall-v1"}:
                 require(
                     (
@@ -1129,7 +1312,7 @@ def dense_edition_tex(
                     else "\\RSDBalancedThreePlateEnd"
                 )
                 continue
-            if layout == "balanced-two-tall-v1":
+            if layout in {"balanced-two-tall-v1", "paired-studies-v1"}:
                 require(
                     len(plate) == 2,
                     f"{edition['id']} {section}: balanced-two-tall-v1 must "
@@ -1142,7 +1325,7 @@ def dense_edition_tex(
                 for index, record in enumerate(plate):
                     if index:
                         lines.append("\\RSDBalancedTwoTallPlateCellBreak")
-                    lines.append("\\RSDTallCardNext")
+                    lines.append("\\RSDPairedCardNext" if layout == "paired-studies-v1" else "\\RSDTallCardNext")
                     lines.append(record_tex(record, edition, artwork_render_owners))
                 lines.append("\\RSDBalancedTwoTallPlateEnd")
                 continue
@@ -1357,6 +1540,7 @@ def main() -> int:
                 f"% edition: {edition['id']}",
             ]
             body.extend(dense_edition_tex(chosen, edition, artwork_render_owners))
+            body.extend(source_notes_tex(chosen, edition, REPOSITORY_ROOT))
             data = ("\n".join(body) + "\n").encode()
             (args.output / f"{edition['id']}.tex").write_bytes(data)
             if edition["id"] == "ed-altar-server":

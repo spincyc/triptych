@@ -11,20 +11,29 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: sanctuary-dictionary-continuation-2026-11 -->
 
-**In progress.** Continue the dictionary's remaining-work plan, independently
-review consistency, correctness, clarity and visual quality, and integrate
-validated work in coherent commits. The July delivery plan still describes
-an obsolete six-entry prototype; the current structured inventory has 80
-records and six differentiated selections. Reconcile that plan with actual
-evidence before claiming any category closed. The next source-controlled
-addition addresses a missing clothing or vestment family. Keep the larger
-Requiem, ritual Mass, Holy Week and whole-composition work explicit.
+**Reviewed source checkpoint; publication checks in progress.** The remaining-work plan
+now distinguishes the original bounded repairs from the full open corpus.
+Two canonical records for cassock and surplice bring the inventory to 82;
+three source-controlled drawings show the separate garments and their worn
+relationship. Cotta is a sourced alias, and the ceremonial's recorded
+lay-dress custom remains explicit. No completeness-matrix row is closed.
 
-The work stays on `feature/altar-server`. The maintainer has authorized
-reconciliation/rebase and publication to `main` where reasonable; integration
-must preserve published history and pass the affected release gates.
-Current review and implementation evidence belongs in the dictionary's
-`research/` records and its existing delivery plan.
+Cold review repaired missing printed source references, suppressed handling
+boundaries, absent scale notices, small/repeated captions and page collisions.
+The comprehensive selection now includes thirteen already-admitted pontifical
+objects. The six screen proofs contain 100 pages, with exact identities and
+review coverage in the dictionary's current cold-review record. Source checks
+also corrected false vestment editions and illustration claims, the ombrellino's
+purported 1952 witness, and the conopaeum's grant dates and source limits.
+Cope/humeral veil,
+remaining appointments and vessels, Requiem, ritual Masses, Holy Week and
+whole-composition work remain in the delivery plan.
+
+Published branch history has been merged with current upstream source
+assembly on `feature/altar-server`. The maintainer authorized main integration;
+publication awaits the remaining source/product validation, exact outgoing-range
+review and deployment gates. Research records distinguish source, figure, consumer,
+print and live-deployment evidence.
 
 ## Altar-server and sanctuary guide revision — 5 November 2026
 

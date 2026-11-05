@@ -1,0 +1,145 @@
+schema_version = 1
+id = "obj-surplice"
+workflow_state = "publication-ready"
+preferred_english_name = "Surplice"
+latin_headword = "superpelliceum"
+alternate_english_names = ["Cotta"]
+sort_name = "02 Surplice"
+categories = ["servers-ministers-and-choir"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass"]
+related_objects = ["obj-cassock"]
+confusable_with = ["obj-alb"]
+editorial_note = "Cotta is retained as the Italian name explicitly supplied by the checked ceremonial, not a separate object or a claim that every regional use of the term is identical. This bounded entry does not establish rochet, rank-specific choir dress or an exhaustive clothing corpus."
+
+[presence]
+locations = ["Worn over the cassock in the ordinary server-clothing arrangement."]
+contexts = ["The 1962 Missal describes the minister preceding the priest to the altar wearing a surplice."]
+composition_ids = ["plt-server-clothing"]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["other-server", "cleric", "choir-member"]
+server_relation = "handles"
+warnings = ["The pictured neckline, gathers, sleeve length and hem are representative; the source does not prescribe one pattern for every surplice."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "useful"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "useful"
+
+[[claims]]
+id = "clm-surplice-identity"
+kind = "identity"
+text = "The surplice is the short, loose white garment worn over the cassock in ordinary server dress."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-surplice-fortescue-1943", "src-surplice-hirten-1952"]
+
+[[claims]]
+id = "clm-surplice-appearance"
+kind = "appearance"
+text = "The 1952 catalog's plain surplice has a short gathered body, broad open sleeves and no waist girdle. Its neckline and proportions are representative."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-surplice-hirten-1952"]
+
+[[claims]]
+id = "clm-surplice-use"
+kind = "liturgical-use"
+text = "The 1962 Missal describes the minister preceding the priest to the altar wearing a surplice."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-surplice-missal-1962"]
+
+[[claims]]
+id = "clm-surplice-presence"
+kind = "ceremonial-presence"
+text = "Fortescue–O'Connell identifies white linen surplice over black cassock as common server and choir dress and describes this dressing before Low Mass."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-surplice-fortescue-1943"]
+
+[[claims]]
+id = "clm-surplice-cotta"
+kind = "terminology"
+text = "Fortescue–O'Connell gives cotta as the Italian name for the surplice."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-surplice-fortescue-1943"]
+
+[[claims]]
+id = "clm-surplice-custom"
+kind = "variation"
+text = "The ceremonial also records a recognized custom of serving Low Mass in lay dress in several countries, including England."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-surplice-fortescue-1943"]
+
+[[sources]]
+id = "src-surplice-missal-1962"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus II.1, opening Ritus page (no printed folio visible); artifact PDF p. 56."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+note = "The exact clause names the minister wearing superpelliceum; it does not prescribe the illustrated cut, textile or decorative treatment."
+
+[[sources]]
+id = "src-surplice-fortescue-1943"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Seventh revised edition (1943), printed p. 10 and note 1 (common dress, Latin headword and Italian cotta), and p. 70, Preparation and note 4 (server dressing and lay-dress custom); artifact PDF pp. 31 and 91."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+note = "The 1943 title page was checked at PDF p. 6. The source's reported lay-dress custom is attributed to this edition; its cited decrees were not separately inspected."
+
+[[sources]]
+id = "src-surplice-hirten-1952"
+binding = "artifact.william-j-hirten-company.hirten-church-goods.hirten-1952.internet-archive-text-pdf-ccd22db7"
+locus = "Hirten (1952), printed p. 125, No. 9607 boys' lawn surplice and the worn altar-boy ensemble; artifact PDF p. 127."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+note = "Dated front-view morphology and the visible layer relationship only; the adjacent lace example is not a separate substantive object in this slice."
+
+[[artwork]]
+id = "art-surplice-front"
+view = "front"
+asset = "shared/artwork/pencil/server-clothing/RSD-surplice-front-2026-11-05.png"
+review_state = "approved"
+depicts = ["obj-surplice"]
+scale_mode = "not-to-common-scale"
+review_note = "Complete plain frontal surplice, broad open sleeves and ungirdled gathered body; no underlying garment or wearer."
+
+[[artwork]]
+id = "art-cassock-surplice-worn"
+view = "worn"
+asset = "shared/artwork/pencil/server-clothing/RSD-cassock-surplice-worn-2026-11-05.png"
+review_state = "approved"
+depicts = ["obj-cassock", "obj-surplice"]
+scale_mode = "not-to-common-scale"
+render_owner = "obj-cassock"
+review_note = "One representative wearer with the surplice over the cassock; empty relaxed hands teach no ceremonial gesture."
+
+[[audience_note]]
+audience = "altar-server"
+text = "The surplice is the short white upper garment; the cassock remains visible below it."
+claim_ids = ["clm-surplice-identity"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "The plain example shows the surplice as a separate garment worn over the cassock."
+claim_ids = ["clm-surplice-identity", "clm-surplice-appearance"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "The Missal names the minister's surplice. The ceremonial describes the common ensemble and records a lay-dress custom."
+claim_ids = ["clm-surplice-use", "clm-surplice-presence", "clm-surplice-custom"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "Cotta is the Italian name given for this garment by the checked ceremonial."
+claim_ids = ["clm-surplice-cotta"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This ordinary server-clothing example establishes no rank-specific vesture or privilege."
+claim_ids = ["clm-surplice-presence"]

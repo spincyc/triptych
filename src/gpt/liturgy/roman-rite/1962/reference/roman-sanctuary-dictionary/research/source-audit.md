@@ -3,6 +3,42 @@
 Status: **bounded object-family audits; complete corpus remains open**
 Latest bounded source check: 2026-11-05
 
+## Legacy source-binding corrections — 2026-11-05
+
+Printing exact source notes exposed bibliography and attribution defects in
+previously admitted objects. The bounded conopaeum and Eucharistic ombrellino
+corrections are owned by `slices/conopaeum-source-correction-2026-11-05.md`
+and `slices/ombrellino-source-correction-2026-11-05.md`. They preserve failed
+source leads and contrary findings while correcting actual reader claims;
+canonical source registration does not itself renew the historical artwork
+or establish a complete ceremonial corpus.
+
+The six ordinary-priest vestments now bind the exact Casanowicz title and
+inspected page, and exact Met accession records. The original title and coarse
+museum-reference defects, new artifact identities and morphology limits are
+recorded in `slices/vestment-source-bindings-2026-11-05.md`.
+
+## Server clothing and cruet source bindings — 2026-11-05
+
+The bounded cassock/surplice source and illustration audit is recorded in
+[`slices/server-choir-clothing-2026-11-05.md`](slices/server-choir-clothing-2026-11-05.md).
+It establishes ordinary server clothing and its representative worn
+relationship, without closing choir or prelatial dress.
+
+The printed source-note pass also exposed a cruet binding to a project audit
+rather than its external witness. The exact registered Fortescue–O’Connell
+seventh revised edition (1943), printed p. 70 / PDF p. 91, was independently
+read from its page image: preparation includes two cruets, one wine and one
+water, at the credence. `src-fortescue-1943-cruets` now binds directly to that
+artifact. The 1962 Missal remains the rite control; this replacement asserts
+no numbered bearer allocation, universal morphology or unverified Latin name.
+
+The episcopal-throne, faldstool and crosier records also used hyphenated
+passage IDs where the canonical library uses `book-1.chapter-13`,
+`book-1.chapter-12` and `book-1.chapter-17`. Their edition, artifact, loci and
+claim boundaries match the registered inspected passages. The bindings are
+corrected without claiming a new full collation of the 1948 Ceremonial.
+
 ## Minimum sanctuary-component corpus, 2026-07-28
 
 The comprehensive edition now binds the exact 1962 Missal controls for the

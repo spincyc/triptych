@@ -2,13 +2,13 @@ migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
 audited_on = "2026-11-05"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:ef4e1606f667ac2634085d94ea5e5ac2c1cdd2be722d97fdc83c9be61a74bf56"
+inventory_snapshot = "sha256:e292cfc79092d2a7167e2f6b536bcaa5b857d830dba242ee66587ce8624c5181"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:b608e607e338fcb02ff5e29a2c317bd2271a50e3679373e4903f6028b1dae2d4"
-canonical_catalog_snapshot = "sha256:9d0ceabbcc334044e5f81d8db825ec67b66ffe383cb81807d490f8940eac6c13"
+canonical_catalog_snapshot = "sha256:682b6defa64be06f6ac1ae145c7f1615afb76c03f1c2266558f6bff1df192d6e"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:f571adbad9812fff81534ed431c08b7013defff159b6e421ce13676789f7cd1c"
+snapshot = "sha256:c47ed5e2d0a33859e97eeb9a187d1122cc221f2e863f4ecd7d2d65e73dd25322"
 families = []
 
 [[review_units]]
@@ -518,7 +518,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"
-surface_snapshot = "sha256:2d475489e61d9f8077cee94e929e28eaaeefb78311ff798e19cb3218ef4ea5bc"
+surface_snapshot = "sha256:901186b8abdd5e1db6de861f4888d1e1738b162c65c444ac8389d994716e2da1"
 review_state = "pending"
 
 [[review_units]]
@@ -528,12 +528,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"
-surface_snapshot = "sha256:52d012a9f79dd18479fa5a733c4e2adf4454f9459c5abfea3b5f5539d7ad83c6"
+surface_snapshot = "sha256:cdfdd2e70fff473428f6c2f0ec736fc568c125c163a705bb22390dfc08013d78"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"
-surface_snapshot = "sha256:07972c973ce13a3bde6f7efba31989551417f89c8c69be1a6533a135fcdd323b"
+surface_snapshot = "sha256:f6d4aa2096b20361fa8e54c75260ffc6db06811ab690daaaff3964e5c27ad49b"
 review_state = "pending"
 
 [[review_units]]
@@ -543,7 +543,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
-surface_snapshot = "sha256:b73cd3cfaaa05a7788382318f1c55884d7bbcee085f18300e70710a3d2028e3c"
+surface_snapshot = "sha256:972681138adb5cb1d454b00edd4ac046ba499873c27b8d35765bc7a712009bc2"
 review_state = "pending"
 
 [[review_units]]
@@ -563,32 +563,32 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
-surface_snapshot = "sha256:6b911268662fe91e8d7592a27afd968e122c42e74db1460174fea26c3388d37b"
+surface_snapshot = "sha256:39b1ff5bbec1861f00207c113d7e36aab08eb38d148fc918168a4079a7d18631"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"
-surface_snapshot = "sha256:f4dd06f5dc124fb55cda61ff21c4956e1fe923a3bddac9b04d967d49da954f98"
+surface_snapshot = "sha256:9dffdde7f5f097f772e730158d4fffcae41f6a26c6806657c100ae772ca9c884"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader"
-surface_snapshot = "sha256:bdb5c3f90138129b0c576791a6ad89bc481ae49588456437417b6b9324052a20"
+surface_snapshot = "sha256:d8fb38af58147ca9d47a5d8a39016ff802b98e7f06daeb496721f2ae8e5b3259"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer"
-surface_snapshot = "sha256:713b570237a47b9b58e1d4ade2572f97eb5d6e0617916b9a339377e1d9c4e866"
+surface_snapshot = "sha256:ad46c1f2278943ba5a0cebbf7c0a416eeb036ef643acc0e7a797a31a7545604e"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies"
-surface_snapshot = "sha256:c5ff72a642d7836b5611ff56ea4ca7c8f74752720d4f554643c579e9aa05f17d"
+surface_snapshot = "sha256:b2c0bee2f478f32e54f4d1502b514e41532d8a3a0896a24115b8b02c8c783b1f"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"
-surface_snapshot = "sha256:64dd07aafc374de39aca0b0c5de07fe3202f7de79518d1b14df085a600fbd688"
+surface_snapshot = "sha256:3f6eaf84357cb6a2208c8fd142db6a9a41ba57bbab146de9c9edce52d784952e"
 review_state = "pending"
 
 [[review_units]]
@@ -733,12 +733,12 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.altar-server-guides"
-surface_snapshot = "sha256:59bfd7716d7b975e2036d1803c4dc1d300e9502d8cf08ba25ac86dad64d56a10"
+surface_snapshot = "sha256:bff1500372d526a2f54a5534f5471a92bda6c271c14cb240ebf170faaaceee17"
 review_state = "pending"
 
 [[review_units]]
 owner_id = "owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"
-surface_snapshot = "sha256:cec0f2cb5aec1c03a05769ae08b7b0b171d6452b04e7fed9fb2360dcdcbcc9ee"
+surface_snapshot = "sha256:4f5ea8d4fc2612599373d83192efca0c92f2ae9c9154699ae5ca93d5458afefe"
 review_state = "pending"
 
 [[review_units]]

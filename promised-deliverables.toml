@@ -4784,7 +4784,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "source-controlled-progress"
   criterion = "A missing clothing or vestment family has checked claims, canonical records, source-controlled illustrations and validated audience selections, without claiming full category closure."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/server-choir-clothing-2026-11-05.md"]
 
   [[deliverables.requirements]]
   id = "cold-review-and-integration"

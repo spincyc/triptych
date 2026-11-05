@@ -2,6 +2,16 @@
 
 Audit date: 2026-07-28
 
+
+**Correction, 2026-11-05:** the source-identity and claim corrections in
+[`slices/conopaeum-source-correction-2026-11-05.md`](slices/conopaeum-source-correction-2026-11-05.md)
+and [`slices/ombrellino-source-correction-2026-11-05.md`](slices/ombrellino-source-correction-2026-11-05.md)
+supersede the bibliography and source claims below. The 1962 AAS examples do
+not name the insignia; the untraced Macalisang attribution is replaced by an
+exact Chow witness; the Ritual delivery represents 1925, with its cited text
+at PDF pp. 71–72, and the encyclopedia article is **Canopy**. The historical
+record below is preserved rather than treated as a new verification event.
+
 ## Corrected identity boundary
 
 The former `obj-ombrellino` candidate combined two objects whose similar
