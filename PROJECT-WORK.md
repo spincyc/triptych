@@ -313,82 +313,104 @@ companion web review or print-layout approval.
 
 <!-- promised-deliverable: useful-shared-biblical-dates-2026-11-05 -->
 
-**Reviewed candidate; publication pending.** Revise the shared chronology projection to give useful
-approximate calendar dates, distinguish events from composition, and distinguish
-David's periods where the evidence does. Preserve substantive uncertainty in
-concise wording and the underlying source records. The change must reach all
-existing proper documents when their own text is assembled with shared templates
-and machinery, without regenerating each publication's tracked files.
+**Complete: pushed to main, deployed and verified live.** Dates now recompute
+when proper-specific text joins the shared templates for web conversion, native
+bundles and local print. No per-publication regeneration of tracked date pages
+or entrypoints is required. All 63 proper leaves were checked: 49 can query
+chronology, including the nuptial leaf's explicit no-formulary result; 14
+postconciliar leaves still lack reviewed appointment inputs.
 
-Acceptance includes independent cold review for conciseness, informativeness,
-clarity and composition of multiple passages; focused source and assembly
-regressions; and reconciliation, commit and non-force publication to main.
-The requested examples include Psalms 43, 84 and 129 (Vulgate numbering),
-Jeremias 29, Matthew 13, Mark 11 and Colossians 3. Shared assembly now supplies
-current generated content to web conversion, native bundles and local print
-for all 63 proper leaves; no provider-leaf source has
-been regenerated. Existing missing appointment inputs remain explicit.
+The 23 sourced calendar estimates and compact proposal spans provide useful
+numerical orientation for the reported Psalms 43, 84 and 129 (Vulgate numbering),
+Jeremias 29, Matthew 13, Mark 11 and Colossians 3, and other current consumers.
+Event and composition dates remain separate. Compact proposal spans replace
+long competing lists; full alternatives and qualifications remain in the
+evidence appendix. David's distinct settings retain their own dates and
+Corbett's qualification that
+another chronology places them 30–50 years later. Sinai's calendar date and
+David's unspecified deliverance remain unresolved; Job's and Tobias's useful
+century wording and existing source-qualification gaps remain explicit.
 
-The sample date sheet now has separate event and composition dates, sourced
-calendar estimates and concise numerical proposal spans. Distinct Davidic
-settings retain their own dates. Original claims, alternatives and qualifications
-remain in the evidence appendix. The sample GPT 66 synthesis and GPT 54 synthesis
-were actually typeset; their date sheets fit page two without overflow.
+Independent cold review covered conciseness, informativeness, clarity, joined
+passage scope, source evidence and assembly. Findings about staging safety,
+cache freshness, estimate scope and Davidic qualifications were repaired and
+reviewed again. Actual GPT 54, GPT 66 and PC-S58 synthesis date sheets fit page
+two without overflow; body continuity, anchors, metadata, components and
+recorder checks passed. Reconciliation preserves upstream inspection-identity
+rules, all 39 PC-S58 appointed passage pairs and both reading forms. After the
+later PC-S58 prose corrections, all six sampled generated date/evidence assets
+remain byte-identical to the earlier reviewed output.
 
-Focused renderer, assembly, legacy chronology, freshness, source-identity and
-revision tests pass. Independent review identified and verified repairs to
-staging-directory safety, stale process caches, suppressed Davidic source
-qualifications and estimate scope. The source review checked the sample, joined
-Psalm/Daniel passages and David's distinct Geth, Maon and Absalom settings against
-their evidence. The reconciled census covers all 63 proper leaves: 49 can query
-chronology (including the nuptial leaf's explicit no-formulary result); 14
-postconciliar leaves still lack reviewed appointment inputs. Remaining nonnumeric
-subjects are Sinai's unresolved calendar date, David's unspecified deliverance
-occasion, and Job's and Tobias's already useful century wording. Existing
-source-qualification gaps remain explicit. Source-library, publication-inventory,
-family-ledger, coverage and review-manifest checks pass. The ordinary generated
-document gate now checks live assembly across every typed leaf; explicit legacy
-snapshot checks retain their original contract.
-
-Two full read-suite tests could not replay because the archived Aquinas PDF and
-Gregory EPUB payloads are unavailable in this checkout. Their failing tests and
-implementation are unchanged; both payload paths are absent at the base commit
-`c57e60ef3d`. This is an evidence-availability limitation, not a claimed baseline
-test replay. The focused source, rendering and assembly checks above passed.
-The registered web-editions input audit passed with no undeclared or scratch
-inputs, and the initial browser-product cold builds matched. Reconciliation
-onto `3d00a7ef7b` preserves the new PC-S58 proper and upstream reader-inspection
-identity rules. All 34 schema tests and an independent combined-identity review
-pass. The newly explicit Davidic qualification is retained in the compact
-estimate; nine estimate tests and independent source review pass. The new proper
-preserves all 39 appointed passage pairs and both reading forms through shared
-assembly. Its actual synthesis print is ten pages, with all twelve compact date
-rows on page two; body continuity, anchors, metadata, components and recorder
-checks pass without overflow. Source-library, inventory, family-ledger, coverage
-and review-manifest checks pass on the combined source tree. Independent cold
-builds matched for all thirteen product families (27,690 files). The reconciled
-descriptor has identity
-`e5fd68be1dc1a5885e02f9a8a86333acef23e248bfb8a88892f775440528ac4d`;
-106 web editions change from upstream, with no output removals and all three
-new PC-S58 readers retained.
-Release verification then identified redundant per-edition chronology traces in
-native revision stamping. Revision calculation now shares the catalog's existing
-Assembly, retaining a fresh Assembly for each new operation. Independent cold
-review and 37 focused revision/bundle tests passed. A real GPT 66 main/synthesis
-comparison reduced three chronology traces to one and 27.992 seconds to 8.195
-seconds; both complete catalogs were byte-identical. The scoped release refresh
-verified all 24,029 source hashes, updating 19 and adopting 17 dependencies with
-none retired or outside the reviewed scope. Upstream authorization is preserved.
-The chronology implementation reached main through `4bcc8c80fe`. Its full local
-site build and independent deployment verification passed. Pages run
-`42099806134` passed source/site generation and all 647 native compiles, then
-hit the two-hour limit during independent verification; the current browser
-products had already been saved. Main subsequently incorporated the reviewed
-PC-S58 advisory corrections without changing chronology data or machinery,
-and increased the build budget to three hours in `19a7e266ec`. The workflow
-contract test is reconciled with that budget. The combined descriptor is
+Focused regressions for the source, estimate, renderer, assembly, revision,
+bundle and identity changes pass, along with the required source, schema,
+inventory, family-ledger, coverage, review-manifest and live-assembly freshness
+gates. The registered web-editions input audit found no undeclared or scratch
+inputs. Independent cold builds matched for all 13 browser-product families.
+The verified chronology checkpoint's descriptor contains 27,690 files and has
+identity
 `7061eb0e269f66fe963062d8ff56e7a6e37aecbbbcb5bae7df28e26f11743bae`.
-Final combined deployment and live verification remain pending.
+The chronology release refresh verified 24,029 source hashes, updating 19 and
+adopting 17 dependencies with none retired or outside its reviewed scope;
+upstream's later scoped refresh preserves authorization and source membership.
+
+Two read-suite methods could not replay because the archived Aquinas PDF and
+Gregory EPUB payloads are unavailable. Both failing methods and
+`_proper_study.py` are unchanged, and both payload paths are absent at base
+`c57e60ef3d`; this is an evidence-availability limitation, not a claimed baseline
+test replay. Separately, an earlier renderer run found three stale v1 golden
+subcases: Claude 61, GPT 61 and PC-S55. Isolated upstream `62bfdaf252` code and
+chronology inputs reproduced all three observed hashes exactly. Upstream
+Davidic wording and registry fingerprints explain them; restoring those old
+inputs reproduced the historical goldens. Production output was not changed
+to conceal these inherited issues.
+
+The changes reached main without force and preserve the newer PC-S58 advisory
+corrections. An earlier deployment attempt built its site but reached the
+120-minute limit during independent verification. Main raised the budget to
+180 minutes; `1e2669f5fb` reconciles the existing test with that policy. All
+19 workflow/bootstrap tests and independent review pass, with every source,
+artifact and print gate retained. The chronology checkpoint's product check
+reused ten candidates, generated two families and retained one already current.
+
+On exact commit `1e2669f5fb`, the local artifact build passed in 14m01s and
+independent deployment-target verification passed in 12m44s, with a clean
+worktree. [Pages run
+42122381067](https://github.com/spincyc/triptych/actions/runs/42122381067)
+compiled all 647 editions with zero failures in 29m00s: 15,357 pages,
+297 pdfTeX and 350 XeTeX editions. Repository hygiene passed.
+The source/public-site step passed in 92m57s and independent artifact
+verification in 27m34s; the complete build job took 2h03m47s. Deployment
+succeeded. At 2026-11-06 00:38:49 UTC, all 17 canonical live files returned
+HTTP 200 and matched the verified local artifact byte for byte, with no
+cache-busting or retries: the publication and runtime manifests, GPT 54,
+GPT 66 and PC-S58 synthesis readers and print routes, their three bundles,
+and six generated chronology assets. The served manifest reports
+`1e2669f5fb`, the `7061eb0e` product identity, 647 native editions and
+`stored_pdfs: false`; its SHA-256 is
+`36d9da8334872a04e536cdf701196f0c524f6292f48cd1e163a6b9b5ab997401`.
+
+Final reconciliation preserves newer main through `62f006ef20`, including
+the separate sanctuary dictionary work. Independent comparison reconstructs
+all 105 changed proper readers and their index using only revision timestamps
+and derived-hash substitutions, matching the tracked
+[comparison](workflows/reviews/sanctuary-dictionary-2026-11-05/all-reader-revision-transfer.json);
+the other 164 web-edition files are unchanged.
+Chronology data, passage scope and shared assembly are preserved. The live
+proof above covers the deployed chronology checkpoint. The later sanctuary
+[Pages run 42131423670](https://github.com/spincyc/triptych/actions/runs/42131423670)
+failed at identifying browser products and had not deployed at this check;
+its publication is not claimed by this completion record.
+
+The completion validator with
+`--require-complete useful-shared-biblical-dates-2026-11-05` passes against the
+exact deployed `1e2669f5fb` sources with these completion records applied:
+118 tracked deliverables, 94 complete. On newer main, the global validator
+stops before checking the ledger because five incoming product families have
+changed content and membership hashes, with one fewer member each. The exact
+path differences remain unknown. Clean CI reproduces that mismatch before
+cache restoration; neither completion-record file is a product input. The
+later release's global check is therefore not reported as passing, and its
+descriptor has not been rewritten by this task.
 
 ## Review follow-up: single-source corpus and gated printing, 2026-11-04
 
