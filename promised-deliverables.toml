@@ -4,7 +4,7 @@ schema_version = 1
 id = "sanctuary-dictionary-table-2026-11"
 owner = "tools/public-alpha"
 promise = "Present the website Sanctuary Picture Dictionary as one cohesive grouped table with small expandable illustrations, quiet default rows, preserved source boundaries and full cold organization/presentation review."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "grouped-table"
@@ -27,7 +27,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "live-table"
   criterion = "Pages deployment succeeds and the live website serves the verified grouped table and working expand/collapse controls."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]

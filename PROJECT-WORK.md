@@ -11,7 +11,8 @@ Last reconciled: 2026-11-06.
 
 <!-- promised-deliverable: sanctuary-dictionary-table-2026-11 -->
 
-**Validated and pushed to main; deployment running.** The maintainer requests one cohesive website table with
+**Complete: pushed to main, deployed and verified live.** The maintainer requests
+one cohesive website table with
 multiple columns, including a useful grouping column; small in-row pictures
 expand and collapse on demand. Default organization follows setting and use,
 not alphabetical names. Repeated generic view and scale labels are removed
@@ -83,10 +84,37 @@ native edition PDFs locally.
 
 The reviewed source commit reached the workspace branch and `main` by normal
 pushes without a rebase. [Pages run 42262705717](https://github.com/spincyc/triptych/actions/runs/42262705717)
-is running for that exact source commit. Hosted build, native compilation,
-deployment and the exact live HTML/CSS/JavaScript and interaction checks remain
-pending. This status update changes only the two operational files excluded
-from the Pages trigger.
+completed successfully for that exact source commit on 6 November. Build job
+`128046494504`, native compilation job `128046493859` and deployment job
+`128103010574` all passed. Native compilation covered 650 editions and 15,437
+pages with no failures. The final hosted receipt has SHA-256
+`ae787d41c6bf568fdb0e807f2851576d094cfdb7eaf30492801abee8f67b0dea`.
+
+After deployment, the [live dictionary](https://mystago.gy/library/sanctuary-picture-dictionary.html),
+stylesheet and enhancement script each returned HTTP 200 and matched the
+reviewed local bytes exactly:
+
+| Live artifact | SHA-256 |
+| --- | --- |
+| Dictionary HTML | `d6a3b3ff6b80acb6190f9aaf93c07bc0b696c8392b8b251e3c1ac4eff2fad81c` |
+| Site stylesheet | `21c45816c86cc53cadba8b9236cdd063111976d1a59c30420ba670df818dde63` |
+| Dictionary JavaScript | `a462c6bb39146673a5e25d1e6359cc469e236bc32396cd79a0f0b079f0501ddb` |
+
+The live Chromium smoke passed all twelve checks at 19:25 UTC: the single
+64-row table, live script, image expansion and repeated-click collapse,
+search/group filtering and reset, and the 320-pixel table and prose layout.
+There were no HTTP, network, console or runtime errors. Desktop and narrow
+screenshots were inspected after visible images decoded. The final live report
+has SHA-256
+`5661249705c7439494e9ba63315cb7960f336017440e14c421e1cb84ac4282a1`;
+the desktop and narrow screenshots have SHA-256
+`fa6bced334d2377deacba3aa6d5b47009b8039996dfb0175153ead1b8edb0844`
+and `eaf56d0b1082a6dfb145b053749dbb483eea50a9827b44efd913e42c5406601d`.
+Raw hosted and live receipts remain disposable scratch evidence; these
+identities and the tracked cold review preserve the acceptance record.
+This completion update changes only the two operational files excluded from
+the Pages trigger. It completes the website presentation request; the broader
+dictionary corpus plan retains its existing open work.
 
 ## Sanctuary picture gallery repeated entries — 5 November 2026
 
