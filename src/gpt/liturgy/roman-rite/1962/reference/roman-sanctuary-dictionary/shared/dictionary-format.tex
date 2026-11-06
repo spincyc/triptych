@@ -171,7 +171,7 @@
   \end{minipage}}
 
 \newcommand{\DictionaryScaleNotice}{%
-  {\fontsize{7}{8}\selectfont\bfseries NOT TO COMMON SCALE}}
+  {\fontsize{7}{8}\selectfont\bfseries FIGURES NOT TO COMMON SCALE}}
 \newcommand{\DictionarySameScaleNotice}{%
   {\fontsize{7}{8}\selectfont\bfseries SHOWN AT COMMON SCALE}}
 
@@ -311,6 +311,7 @@
     one, a Latin headword. A \textbf{Reader note} marks the preparation or
     recognition boundary supported for this audience; it is not a general
     direction for every ceremony or sacristy.
+    Superscript numbers lead to the source notes below.
   \end{minipage}\hfill
   \begin{minipage}[t]{0.47\linewidth}
     \textbf{Representative, not universal.}\par
@@ -327,16 +328,31 @@
   study reference, not an official liturgical book or local ceremonial
   direction. The governing books and competent local direction control actual
   preparation and handling.
-  \vfill
-  \begin{center}
-    {\fontsize{18}{21}\selectfont\bfseries
-      LOOK\quad\(\diamond\)\quad NAME\quad\(\diamond\)\quad COMPARE\par}
-    \vspace{0.12in}
-    {\small Follow the pictured relationship; do not infer an unprinted one.\par}
-  \end{center}
-  \vfill
-  \begin{center}
-    \rule{0.20\linewidth}{0.4pt}\enspace\(\diamond\)\enspace
-    \rule{0.20\linewidth}{0.4pt}
-  \end{center}
+  \par\vspace{0.22in}
 }
+
+\providecommand{\RSDPrintSourceNotes}{}
+\newcommand{\RSDSourceNotesStart}{%
+  \section*{Source notes}
+  {\small Each note identifies the sources for the object and its drawing.
+  Bracketed reference numbers name the editions listed after the notes.\par}
+  \begin{multicols}{2}
+  \fontsize{8}{9.5}\selectfont\raggedright
+  \clubpenalty=10000 \widowpenalty=10000
+  \setlength{\parskip}{4pt}}
+\newcommand{\RSDSourceNote}[3]{%
+  \par
+  \hypertarget{rsd-note-#1}{\textbf{#1. #2.}}\enspace #3\par}
+\newcommand{\RSDSourceNotesEnd}{\end{multicols}}
+\newcommand{\RSDReferenceLink}[1]{\hyperlink{rsd-ref-#1}{[#1]}}
+\newcommand{\RSDReferencesStart}{%
+  \Needspace{6\baselineskip}% Keep the heading with the opening reference rows.
+  \section*{References}
+  \begin{multicols}{2}
+  \fontsize{8}{9.5}\selectfont\raggedright
+  \clubpenalty=10000 \widowpenalty=10000
+  \setlength{\parskip}{4pt}}
+\newcommand{\RSDReference}[3]{%
+  \par
+  \hypertarget{rsd-ref-#1}{\textbf{[#1]}}\enspace\textit{#2}. #3\par}
+\newcommand{\RSDReferencesEnd}{\end{multicols}}

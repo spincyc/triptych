@@ -34,8 +34,10 @@ The source closure of an edition (one declared entrypoint: ``main.tex``,
    be expanded fails, rather than leaving a source out;
 2. the literal ``\\includegraphics``/``\\pgfimage`` artwork of those files;
 3. the publication's declared build-time render data (the
-   ``RENDER_DATA_ROLES`` structure entries of ``publication.toml``), which a
-   generator turns into TeX that no tracked ``\\input`` names;
+   ``RENDER_DATA_ROLES`` structure entries of the effective publication
+   manifest, including roles derived by its owning schema), which a
+   generator turns into TeX that no tracked ``\\input`` names, together with
+   the selected canonical source metadata and generator used for dictionary notes;
 4. the canonical content and generator dependencies of any assembled
    projection this edition actually reads. Saved generated copies contribute
    neither history nor uncommitted state; current assembly supplies their text.
@@ -74,20 +76,23 @@ from __future__ import annotations
 import argparse
 import dataclasses
 import datetime as dt
+import functools
 import hashlib
+import importlib.machinery
+import importlib.util
 import itertools
 import json
 import os
 import re
 import subprocess
 import sys
-import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from _corpus import active_tex  # noqa: E402
+from _document_schema import SchemaError, load_manifest, _structure_paths  # noqa: E402
 from _document_types import Assembly, GENERATED_BY  # noqa: E402
 from _proper_components import companion_owner  # noqa: E402
 
@@ -205,13 +210,13 @@ class Repository:
             changed = set()
             if parents:
                 changed = {line for line in _git(self.root, "diff", "--name-only", "--no-renames", "-z",
-                                                 parents[0], commit, "--", "src", "scripts").split("\0") if line}
+                                                 parents[0], commit, "--", "src", "scripts", "tools").split("\0") if line}
             self._pre_images[commit] = (parents[0] if parents else None, changed)
         return self._pre_images[commit]
 
     def tracked(self) -> set[str]:
         if self._tracked is None:
-            output = _git(self.root, "ls-files", "-z", "--", "src", "scripts")
+            output = _git(self.root, "ls-files", "-z", "--", "src", "scripts", "tools")
             self._tracked = {value for value in output.split("\0") if value}
         return self._tracked
 
@@ -219,7 +224,7 @@ class Repository:
         """Content and generator paths differing from HEAD, including untracked files."""
         if self._changed is None:
             output = _git(self.root, "status", "--porcelain=v1", "-z", "--untracked-files=all",
-                          "--no-renames", "--", "src", "scripts")
+                          "--no-renames", "--", "src", "scripts", "tools")
             self._changed = {entry[3:] for entry in output.split("\0") if len(entry) > 3}
         return self._changed
 
@@ -286,27 +291,51 @@ def _expand(argument: str, definitions: dict[str, set[str]]) -> list[str] | None
     return None
 
 
+@functools.cache
+def _dictionary_generator(root: Path):
+    path = root / "tools" / "render-sanctuary-dictionary"
+    name = "_revision_dictionary_" + hashlib.sha256(str(root).encode()).hexdigest()
+    loader = importlib.machinery.SourceFileLoader(name, str(path))
+    module = importlib.util.module_from_spec(importlib.util.spec_from_loader(name, loader))
+    sys.modules[name] = module
+    loader.exec_module(module)
+    return module
+
+
 def _render_data(root: Path, provider_root: Path, entry: Path) -> set[Path]:
     manifest = entry.parent / "publication.toml"
     if not manifest.is_file():
         return set()
     try:
-        data = tomllib.loads(manifest.read_text(encoding="utf-8"))
-    except (OSError, tomllib.TOMLDecodeError) as error:
+        data = load_manifest(root, manifest)
+    except (OSError, SchemaError, ValueError) as error:
         raise RevisionError(f"cannot read {manifest.relative_to(root)}: {error}") from error
     role = next((output.get("role") for output in data.get("outputs", [])
                  if output.get("entrypoint") == entry.name), ENTRYPOINTS.get(entry.name))
     result = set()
     for item in data.get("structure", []):
-        if item.get("role") not in RENDER_DATA_ROLES or not isinstance(item.get("data"), str):
+        if item.get("role") not in RENDER_DATA_ROLES:
             continue
         if item.get("outputs") and role not in item["outputs"]:
             continue
-        for path in root.glob(item["data"]):
+        for path in _structure_paths(root, data, item):
             if path.is_file() and path.suffix in RENDER_DATA_SUFFIXES:
                 resolved = path.resolve()
                 if resolved.is_relative_to(provider_root):
                     result.add(resolved)
+    declaration = data.get("document", {})
+    if declaration.get("type") == "sanctuary-dictionary-v1":
+        selection = declaration.get(entry.stem, {}).get("selection", declaration.get("selection"))
+        generator = _dictionary_generator(root)
+        try:
+            notes = generator.edition_source_note_inputs(root, entry.parent.parent, selection)
+        except (OSError, ValueError) as error:
+            raise RevisionError(f"cannot resolve dictionary source notes: {error}") from error
+        for path in {*notes, root / "tools" / "render-sanctuary-dictionary"}:
+            resolved = path.resolve()
+            if not resolved.is_relative_to(root) or not resolved.is_file():
+                raise RevisionError(f"dictionary source-note input is missing or outside the repository: {path}")
+            result.add(resolved)
     return result
 
 
@@ -388,8 +417,9 @@ def closure(root: Path, provider: str, entry: Path, *, assembly=None) -> Closure
             f"{entry.relative_to(root)}: cannot expand computed input(s) {', '.join(unresolved)}; "
             "an edition's revision stamp needs every source it reads")
 
-    members = {path for path in seen | graphics | _render_data(root, provider_root, entry)
+    members = {path for path in seen | graphics
                if path.is_relative_to(provider_root) and path.name != GENERATION_METADATA}
+    members.update(_render_data(root, provider_root, entry))
     virtual = {path for path in members if assembly.generated(path) is not None}
     for path in virtual:
         members.update(assembly.content_dependencies(path))

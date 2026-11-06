@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.metropolitan-museum-of-art.chasuble-226962.collection-record-2026-11-05.met-api-json-18de2d8e"
+edition_id = "edition.metropolitan-museum-of-art.chasuble-226962.collection-record-2026-11-05"
+artifact_type = "collection-metadata-json"
+media_type = "application/json"
+storage = "remote"
+rights_status = "licensed"
+license = "CC0-1.0"
+rights_basis = "The Met Open Access policy (https://www.metmuseum.org/hubs/open-access), inspected 2026-11-05, releases basic collection data and images of public-domain works under CC0. The exact API record for object 226962 marks isPublicDomain true and supplies this image route. This registration retains metadata only."
+source_url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/226962"
+provenance = "Accession 43.22.4a resolved through the public Met collection page https://www.metmuseum.org/art/collection/search/226962; the corresponding official API record and its image link were downloaded in full and hashed. Exact-accession web searches identified the individual French maniple and stole records, replacing the former undifferentiated 43.22.4a-d locator."
+retrieved = "2026-11-05"
+sha256 = "18de2d8e5bde91de685af469efa3aadbf4c07f28d2f231853edcf402a1c90fc5"
+byte_size = 1735
+notes = "Complete original API response acquired and read; no normalization or correction. The culture field is empty; other catalogue views may carry additional information. Exact bytes are not retained by this source library; the public remote route is required for reacquisition."

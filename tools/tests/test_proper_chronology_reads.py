@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import json
 import shutil
+import subprocess
 import sys
 import tempfile
 import tomllib
@@ -163,6 +164,45 @@ class InterpreterBoundaryTests(unittest.TestCase):
                 )
             self.assertEqual(traced["modules"], ["scripts/computation.py"])
             self.assertEqual(traced["reads"], [])
+
+
+class ProbeFailureTests(unittest.TestCase):
+    def probe(self, failure):
+        scratch = ROOT / ".scratch/pagination-contract"
+        scratch.mkdir(parents=True, exist_ok=True)
+        temporary = tempfile.TemporaryDirectory(dir=scratch)
+        self.addCleanup(temporary.cleanup)
+        directory = Path(temporary.name)
+        module = directory / "_proper_chronology.py"
+        module.write_text(
+            "class ChronologyWiringError(ValueError): pass\n"
+            "def _traced(*args):\n"
+            f"    raise {failure}\n", encoding="utf-8")
+        result = subprocess.run(
+            [sys.executable, "-B", "-c", _proper_chronology._READS_PROBE,
+             str(directory), str(ROOT), NINETEENTH, "gpt"],
+            capture_output=True, text=True, check=False)
+        return result, module
+
+    def test_expected_refusal_preserves_status_and_public_error_without_traceback(self):
+        message = "missing appointment dependency: src/gpt/example/research/chronology-inputs.toml"
+        result, module = self.probe(f"ChronologyWiringError({message!r})")
+        diagnostic = "_proper_chronology.ChronologyWiringError: " + message
+        self.assertEqual(result.returncode, 1)
+        self.assertEqual(result.stdout, "")
+        self.assertEqual(result.stderr, diagnostic + "\n")
+        with patch.object(_proper_chronology, "__file__", str(module)):
+            with self.assertRaises(_proper_chronology.ChronologyWiringError) as caught:
+                _proper_chronology.computation_reads(NINETEENTH, ROOT, "gpt")
+        self.assertEqual(str(caught.exception),
+                         f"{NINETEENTH}: the chronology computation could not be traced: {diagnostic}")
+
+    def test_unexpected_exception_keeps_its_traceback(self):
+        result, _ = self.probe("RuntimeError('unexpected computation defect')")
+        self.assertEqual(result.returncode, 1)
+        self.assertEqual(result.stdout, "")
+        self.assertIn("Traceback (most recent call last):", result.stderr)
+        self.assertTrue(result.stderr.endswith("RuntimeError: unexpected computation defect\n"))
 
 
 class RealLeafSealTests(unittest.TestCase):

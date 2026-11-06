@@ -4,8 +4,8 @@ provider = "gpt"
 audited_on = "2026-11-05"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 154
-source_surface_file_count = 3606
-snapshot = "sha256:3d7ba3b62ba101b5c864a2f366769142596dcde7c893fee3c1a5826b65e18d47"
+source_surface_file_count = 3619
+snapshot = "sha256:729cb887340cd0ec1da5ae0c50570d5d164b3175c2679c411bf9b14bd5f536c4"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -15008,7 +15008,7 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-tra
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual/research/guide-map.md"
-sha256 = "eee90abb80a0e7a2b6a2e6319a1ee3f59157d417e516e46f04fd236330869c22"
+sha256 = "c271e967c62e41f33a35a70ef5d4a271accc9baed7f54c31c4e190f4ff72a239"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual"]
 
@@ -15038,7 +15038,7 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass/research/guide-map.md"
-sha256 = "1a58c2d3885d4c6a0fac7976d57967002f4e4194c61043d3af5117ccd2260dd9"
+sha256 = "00aa258860fee7badaffaf7b229f00223e70a71ff6c7b4a4347b297520fef7c7"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass"]
 
@@ -15098,7 +15098,7 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantat
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/research/guide-map.md"
-sha256 = "e906d1ca7f3afa18e5df1919f8baa4ccf91d3728fd85aedd9ca09249dc320586"
+sha256 = "b9c250058cbba54e8c954440bf587cb4489b22f3ad4686ce7bdc186a1bed0fb5"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"]
 
@@ -15110,7 +15110,7 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantat
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata/sections/00-begin.tex"
-sha256 = "d7b37b1d865c8e7f20e91da5ce9e5ad587c2277a8d41b0ee25e98023be4e1acf"
+sha256 = "31b51068eaa064afa5f5b76a89ebd7adf468b567108d444c05c332b24e79c7b4"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata"]
 
@@ -15164,7 +15164,7 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/research/guide-map.md"
-sha256 = "28d3db00513906a10613b98f48fd1b77c8ec5beb9c319c866f81cbbc9d32f93e"
+sha256 = "b64da897198132d228382746fb125b88a4a8f81520662257cc90edbf3f9fc504"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"]
 
@@ -15176,7 +15176,7 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass/sections/00-begin.tex"
-sha256 = "6e400c307e3c80f35b19bf7205a33fae47100454cec50c78b1b747ded78e34b3"
+sha256 = "6c2999e9b86c85c73bb5b1bae3f159f5b99754e3e872956356d1cc94658258c1"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"]
 
@@ -15194,13 +15194,19 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"
-sha256 = "0354302d290bbf7f89402f9672859e838be7a982fe35a0a63ad6137eebc567b4"
+sha256 = "9dfe267efdf7406bfd25cbe700258978ce20f539ee47f265b055ce8c7b1a4e03"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-revision-2026-11-05.md"
+sha256 = "01052ccd22d6c7aba823fb34f10a102e0aeb5593a70f7fecda18a54db25ec7bc"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/ceremonial-inventory.md"
-sha256 = "d01027d873a6bfca2ccfcb5b8d2592d747eeff4be93f84420831413cc11a4a18"
+sha256 = "23f03eabf176496d4394413725a5ca37fe7a8efb9d8fcdde7047e4bed95be4be"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15212,7 +15218,7 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/edition-manifest.md"
-sha256 = "a6c9b1b13610e7e9f6758d451f3e00f2e1445e8a28c0eb42d6b3223a58b671b8"
+sha256 = "03276f80fe235c527f1d27448b02d25bafc447dd16e3b82e454ca59c27cad329"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15236,7 +15242,7 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"
-sha256 = "9b2c94e3175253acaeb41c5f3c64749689d3f4fc13be621fd56f558b2f66ed14"
+sha256 = "92f0a82995950a1a258c037e4e7dea2c348eb628cc9bf5f52fd670b56cdcabb6"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15266,85 +15272,85 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md"
-sha256 = "40545b07f4cac9ccfc9474a2a846629739889a6c92e60feb62cc64182dd81b18"
+sha256 = "1a345d0cba8fbfd07ce8c5be1ed2b989520a602a0bf1533f7166e755479904c7"
 kind = "legacy-source-audit"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-book-format.tex"
-sha256 = "fb436b0bae740c94e170f2beb619174875e9d4090023171571b19116eb0fb054"
+sha256 = "7affd045cbda77c7db7b88c521dbd96feab948db82a628ffd6d1455413c8f301"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-ceremony.tex"
-sha256 = "35c5b2397d4d1766bc67184cdf071c7364880a6ed5d7d8fd4d93b120c5406ae2"
+sha256 = "fa782d48508feb5201c37d97024eacc0c8c2c546524ce6c8c0d4e1bda3720808"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-diagrams.tex"
-sha256 = "1faa11614ac28fe76240496b606947d65033d6b95b72ab7caf95223179701543"
+sha256 = "c3f199fe698f3cd7eeece9272f43f93eb6ca25470c98c618b44a97b621d93815"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-action-cards.tex"
-sha256 = "a7750caf664e69b90fea16cbbda3de473be238cdc369d7445e2ca3ed29a813e1"
+sha256 = "0b145aeabfc907f1b14e7403f289757d8ab97d81e9ee81ec258f7409a036d40d"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-ceremony.tex"
-sha256 = "4b4405b9c38b12517c3c29b35fc523ebc6cdc05ef1ca784707063667d1d6cca9"
+sha256 = "b98c8d7dd49f00ba2e812ea80ef40a6d93861ff7c726707cd104293fd0e6e906"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/missa-cantata-role-sheets.tex"
-sha256 = "8fbd13cccebc75e0dde0c4e978b6d7555b4fe3a096463fbcbcdc581f164e2465"
+sha256 = "9db98f8e67ca3474ae0550b25ade68159a86631d4cbf65f034174da3ae3582d7"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/response-reference.tex"
-sha256 = "344577186e882f3342a56a5c0aff38e918396ccd3373a00e1f7d82d96f563137"
+sha256 = "e06281437931ca211d5f0c2e9bba819ed6ae09aa80c48d62132c5e5079ae1576"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/server-guide-format.tex"
-sha256 = "0d4590b50292b80804f380ac572cfa6299b052e5d01a45abaad53e7fc3fce24d"
+sha256 = "b6be32472b4f1f222cd289192777f7694ed68ad019e9c8d08f4ba0aaf7114689"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-action-cards.tex"
-sha256 = "419c5c5fec49439be38753267e9a38a4fd76d3f15238c7e6ed11fda233a671c4"
+sha256 = "b04d5f37b216e45f4897dde1f4e45ac818a947d8abf50ac28b681647610e8f7a"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-ceremony.tex"
-sha256 = "ff4dafcab744f35898c6086a032c0f1757fe8cc77e42c08818e7989f361a8030"
+sha256 = "5340fd1f992aaf7640c5b3b04e0e607f4fc668db3eab0915f8a61b0558bd570d"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/solemn-role-sheets.tex"
-sha256 = "598df64e27a2eb41a30b22c805e17235b986ff3418e7393c2204259958eef57d"
+sha256 = "cb9ce776f99a174320d429516ace5e886b4b8bfb5878c1ae890c7c7c3ef7b541"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/sung-mass-diagrams.tex"
-sha256 = "818bc17146363a3857d82dc47c3232c4ae25ac6c5142419d318c0c7a241dbfc5"
+sha256 = "9a9b84ef1911154e4c84782342df71c644147ea5f2fe0033b33a32b9adfa85d4"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/terminal-apparatus.tex"
-sha256 = "d76a9ea75333e686d01be43a244cc8d08a4dfe185cbb32e33398229a983dd7d9"
+sha256 = "6a953208dee3154a7563661b571b61162c0324ee2b97f69436f6cf50c2a3ffcf"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15626,7 +15632,7 @@ owners = ["liturgy/roman-rite/1962/reference/liturgical-calendar"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/main.tex"
-sha256 = "2af475431b97fb9009a1745b6d7592e35426c03cbe5019dbc338f08262572113"
+sha256 = "6430d35acd90e1cada1e82f49ba356c90f7f4930868b04ff3d44ce1b4da8d827"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"]
 
@@ -15638,7 +15644,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-se
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server/research/guide-map.md"
-sha256 = "000708511472779c3c5459bfa27a49e0188c1a4df1a9a196e9b51562180d7422"
+sha256 = "f17de63671ae4a7de946dac3b32ca88b4250b58446b530052300a0cf14036c42"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"]
 
@@ -15674,7 +15680,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-se
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive/main.tex"
-sha256 = "5764ae6c06ce025b57593a9378f939074f421116b70e6f211fad645eb27f4f59"
+sha256 = "c63323673147730baea84b3bc0791268f48890425fa7731988a615bc1c095a8b"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"]
 
@@ -15686,7 +15692,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehe
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive/research/guide-map.md"
-sha256 = "df8b86bb22f1d569d437410267bfc5d41c17461c23ee908e0c9b7d5a948657ec"
+sha256 = "e7f3719a2b9537f0af2654b6ed438e3e529301b98a53876feb61918412381c59"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive"]
 
@@ -15716,7 +15722,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehe
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader/main.tex"
-sha256 = "df9e9e0e4b259d7d98938986990fbd3c57346d9679768fceb16a8f0dbe2c4990"
+sha256 = "7bcf25c2b9335ae5bd4e98fcaa9099691527aa5f9600d5c647326ad9d76262aa"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader"]
 
@@ -15740,7 +15746,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader/research/guide-map.md"
-sha256 = "7cf87f4af44cb07ff9173ccba535acf939eff08b408df3e142e25f5a42f971df"
+sha256 = "6f417d21339fb7581e25e4eb72173b440d698aff8b51870a7bc34c9138875db7"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader"]
 
@@ -15764,7 +15770,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer/main.tex"
-sha256 = "0bdef9e495210afcbc8cf9261d99594dbfa388c15eb1278d00ebfe7b2c99dd17"
+sha256 = "93e0a176169bcd1441bf412320c2c04ab74cfbd89e958f2c3a35871f52028b68"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer"]
 
@@ -15776,7 +15782,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-train
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer/research/guide-map.md"
-sha256 = "71faa9f0f48a75186858b63eec0362cf1ae84072fc1105eb6f991d494d1b8e8c"
+sha256 = "06759639c3118a440ef7e2013434c54de9b0b2ded43d90c9b5041e791cb1846b"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer"]
 
@@ -15800,7 +15806,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-train
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies/main.tex"
-sha256 = "8ae74a168e19eca69e282558df76278b242e12008c780ff7fe56c87e7d2a14a2"
+sha256 = "e197a7c39e29defc5e132425f63cef0b1f27a756b8187ef726fcfbae06813e80"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies"]
 
@@ -15812,7 +15818,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontific
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies/research/guide-map.md"
-sha256 = "f5563c05acb81ff742201ccb19c1943a4dba8c3dba9512d90f753d5d66599e01"
+sha256 = "79668c6cf322c86dff213f0b206b08b605e7331925141172aef9e6a6b2c47da4"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies"]
 
@@ -15842,19 +15848,25 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.md"
-sha256 = "de9c19b455066b0a1f47d5dd44f6c1a83d03d5e41c10dc788601de4c6eb2c976"
+sha256 = "2862d99404dc920d0c6067db8ba3c58d33a0395d134460a3c6253d409ae98633"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.toml"
-sha256 = "901834175d4ee543b15248928a473b96cff89d38ed1be74ed8be9d453daff4fe"
+sha256 = "326e498df6c68307f87efa10b82eaeb59f559f049e2316d1792cfc80055f6c74"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-review-workflow.md"
 sha256 = "c63b43dd8a9714aa9cbc90fa93cdc9278f3d73b0bad1f9af64bfd80c23c409be"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-revision-2026-11-05.md"
+sha256 = "b89b450ef4740176444a7fbfbde059869e95d562fdb2e2a0bbf9d73703d63add"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -15907,6 +15919,12 @@ kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/cold-review-2026-11-05.md"
+sha256 = "a4f34cbc45836cd116b479fdd358eb5d6b6989bbb1963d64ed82b64e77dd81ce"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/communion-plate-source-audit-2026-07-28.md"
 sha256 = "2b68164afc5ef0a5fa1b3a895d68a9e975a894e8fea3a417a7d22bc83feca4b0"
 kind = "research-record"
@@ -15914,7 +15932,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/completeness-matrix.md"
-sha256 = "73c51245653105e3983264fcfdf99184059def3193d35f397bd883eceb13e265"
+sha256 = "3c31e8bbebe1b5c000ff2fcd70f5f3c811c8fa2cd576c3793195bd379787eea6"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -15932,13 +15950,13 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md"
-sha256 = "6444d7d43398578270a4a7f16c177b713d577627debbc6d223e48321b723ba29"
+sha256 = "bbe4cd80819a6c678948703d1fbb6e797b5998f566fdb3d528b1881f2e22cc36"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/edition-manifest.md"
-sha256 = "7fc32743296fc0426c68e1fa02249bf71a75cdcbb26216858fd62f689ade7101"
+sha256 = "e6fa06e6d9f0b27535965d30f2e317bea1172fd691d8a35192793ad4d597f044"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16010,13 +16028,13 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/object-inventory.md"
-sha256 = "28e815655040d716831910bfd4872b9aee859e4840a66b6ecf93a42080d19854"
+sha256 = "b849af1decaa38074bf67cb388e21a7bc874b5eaad63094e33d0ee8e080d46f7"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/ombrellino-taxonomy-and-artwork-audit-2026-07-28.md"
-sha256 = "9ec03d20e6253d77ba024574cafb110b9d790b41db81e30002d16742a4f284f0"
+sha256 = "5ec45932754ee69eebe4c28840354bf454d0e42bc6ca3dca6f1bf4ff28f1408a"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16034,7 +16052,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/plate-manifest.md"
-sha256 = "b16e4294cc1102346705555565153ad3af87d76b5ab27495d82446a36dc2579c"
+sha256 = "49444cbc79444a12210d268d5c383c814db14bf2836e9abc212dd9abb7f62bc5"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16070,7 +16088,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/priestly-vestments-alpha-audit-2026-07-28.md"
-sha256 = "ce875b52d0cb960addf2477e63137520d4dc3972bb4b98914fca16aa38ba04db"
+sha256 = "de3ab9f7a17116a1d1e041b997dbceb9cde0ca4536ceecf3ac374f03750a2f68"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16082,7 +16100,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/production-manifest.md"
-sha256 = "50791f3b3b4bb436c00b048dada7cc3d937cd0106c33ee80b0231be7a7ef74e7"
+sha256 = "3bb44824aa117d4695ff53dd63c4369a04c62ec0fa8c106b3380fb7d975a3eba"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16196,7 +16214,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/rights-audit.md"
-sha256 = "8e4afac20e4e5424a35df48c8329487927883af430268f2064992b55263f5e9b"
+sha256 = "8352b20b45c716e182e852ddc5f76eb9fd5c747aff2ffafa31ef5c01be1c926a"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16255,8 +16273,20 @@ kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/conopaeum-source-correction-2026-11-05.md"
+sha256 = "3e3daf8303ad11d03e57696783b1cb856511b0209223141f73254223b426c4af"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/furnishings-priest-review.md"
 sha256 = "c84ad9192f5fe1c28197edd15288fc76960cafa24cb8178e773ffafaca186157"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/ombrellino-source-correction-2026-11-05.md"
+sha256 = "25457b254b2b06c862a2dbb26014dcb16d4fc70aae5a1e46905c5565972033ba"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16279,8 +16309,20 @@ kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/server-choir-clothing-2026-11-05.md"
+sha256 = "170786c44636d83c119f51502444e8ac319cdf742b22e3a4ceab37e77b9433b1"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/vestment-source-bindings-2026-11-05.md"
+sha256 = "3a6c0f3e4f6821fd6586031ba122f7e912d7379fba8c9a35779516fce06a925f"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/source-audit.md"
-sha256 = "8afe7f89a6d1edf29964748084a363c76cdeb7d736c5432dd1ef617ab1494389"
+sha256 = "82b1dee69b4b080db20136bf0627b874202828b237b420eab4c40958082ebb00"
 kind = "legacy-source-audit"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16304,7 +16346,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/variant-register.md"
-sha256 = "9a48c8c036b78615ba07e0c678274fde8e541512f36e28897b6d90761fa06c10"
+sha256 = "e5408814c645ab17367b5819954826603ba84cc011a9e073495046cded7428a0"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16328,7 +16370,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan/main.tex"
-sha256 = "a8f8632c5a2b13c36a663fd85a63c2d19d1c4a2736837eb1bfb351ef953c6c74"
+sha256 = "293490bec7e82b691841ffe32e42b38d2b13e45ed8eeedced1a60bd3ac39bdc1"
 kind = "publication-main"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"]
 
@@ -16340,7 +16382,7 @@ owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacrista
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan/research/guide-map.md"
-sha256 = "4e3f017f577ad213b2fa7832f1d59031ffa938f25567dc19eec40867aef2209b"
+sha256 = "0881d50da4bfca3d1292046665a940efdcf49f84f34358f5793f86d63080b019"
 kind = "research-record"
 owners = ["liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan"]
 
@@ -16508,13 +16550,13 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/dictionary-format.tex"
-sha256 = "5f5f81aceb024c94c957d765f1d5892d4fc7ae971ae404252f4daf6dffdc553a"
+sha256 = "4f5045a121c66920fe8fb4abb1bbc7fb4ffe6ac9528769772d4e22edbcbd3f86"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/generated-record-renderer.tex"
-sha256 = "5e1a8afffb8dee9c39c4d317758f6a333a40eed4a6e3ebc27a6635318b7687a4"
+sha256 = "dd02e6e62d110334a0522c4276e111437935098e0bfaeb3f514e261af743b067"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16543,14 +16585,32 @@ kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/altar-cross.toml"
+sha256 = "7dc4258c8baa42c7ceb2d4f4b011f6ccfc53420474ea7e45268db37f68cb8393"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/altar.toml"
+sha256 = "d04230324897ac007084ef10375e036713f07202e71a039928495d96c4f2bf52"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/sanctuary-lamp.toml"
 sha256 = "ab4c3b195d2a9d7b774dd57a669751ea16cc9077562350fd30cd479c79983fc8"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-appointments/tabernacle.toml"
+sha256 = "115c75ef66aeb77ec224d5af166b14acbd3b2801cfe2a1ec7211cf0dd72eda07"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/altar-cruet.toml"
-sha256 = "b906092f443847a806c7250e17684657eb3f584450a52bd10193b57ae0986d72"
+sha256 = "725067872d8dcf21a3dd5cd6955499b21413ce3314b4e532fe6f156894fc59be"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16569,6 +16629,12 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/chalice.toml"
 sha256 = "52ac944eaf52c338f89db4b87edcebb4f792b89dbca817f21f7fff2a8e23ed35"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/ciborium.toml"
+sha256 = "31001c9f18e9961df3abd7a3fd35da7d5146ca24c09dc509ae58eec6cea26e9c"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16604,13 +16670,13 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/episcopal-throne.toml"
-sha256 = "f405ce0bc13b0dc1bfc208bf14985ba3df61057ab131e3cc9a69a0730175c9c3"
+sha256 = "fa52ea1c1cbd48a637a2f420cebfe8e40b36c6786b268d40dfc0c01c98b9ccc8"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/furnishings/faldstool.toml"
-sha256 = "62c701721ace07fe519bfc21e27a20f0bd3fabf6be7313e53e3b0a6b2f90eff6"
+sha256 = "ab5e6f34fe84579c18d24480c1c8b5837166e570cf740d878b4d36ffa4857877"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16742,7 +16808,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/crosier.toml"
-sha256 = "d0775314820b69063100063ae9ff872fc5e0b8b7185d8550432adfbd4060a467"
+sha256 = "52ec8f51f6bc4dc9f78f68ab604b21c891da2bf1ad6d2d477b95f48156955756"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16772,13 +16838,13 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-buskin.toml"
-sha256 = "b5be3129d376e40a481c8b6eab461aefd4361bdfafb2bec335ea7fd9ebd36738"
+sha256 = "f58279c2fec54751a3fa457e37bf6d9af6b3e85335d20a231c28341d4c1ae415"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-dalmatic.toml"
-sha256 = "496da5cd3f1ed9110c9e60368cf1268375e6322bbdd648489a71d44d8041726b"
+sha256 = "7a1fd05fffa09956273a5a30ec52a07b8ea03d65cc945a5a33b0f52fa6374deb"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16802,7 +16868,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/pontifical/pontifical-tunicle.toml"
-sha256 = "749dd409fdf4716355b9bcf04bebd366d7fdf24a3134549fdc220e7b2554235e"
+sha256 = "4d7fca87be480e55936d5b81b36032c99aa69d999430e8538713f3b7d09cffae"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16826,7 +16892,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/basilical-conopaeum.toml"
-sha256 = "3c9e8e8d88473f06ffa8a2ef18c5918964ec43ef55e4e1d1bfcd532b78a1af6f"
+sha256 = "f552a892ad6aec25d99a966c9579a6e8452b4850cf97ec05a60603b36c23f028"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16844,7 +16910,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/processional/ombrellino.toml"
-sha256 = "144c919ea55c93be7cc4a26d91c8268643f5d0ebdbeb6c7b7c3dbb379b6cadc8"
+sha256 = "69673e2375591dbf996094f59874c4d5d0391b436b995d983183ac3d7f080c1d"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16880,13 +16946,13 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-cross.toml"
-sha256 = "81ad27f830bb54624aa697bdea74bf2be001c47b88ff3b36c8c81e4abcb91636"
+sha256 = "bca470b7982b5f9962ae314f3a57f37bf690b6b22bb36d3d63b95a46ab758055"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/sacristy-lavatory.toml"
-sha256 = "92f2063aa486996ea332715f883ed6af2bf5b9e55a43e306acb8b94a117a4a5a"
+sha256 = "763b8b71d9065c35d6a97a5a46d68630d2c81d263b8f6618e352056dd972480b"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16905,6 +16971,18 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/sacristy/vestment-case.toml"
 sha256 = "96add00473157c64fb103c7bc40894a5b71aad6d7a97e708ac93e052b4bc4ce5"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/servers-ministers-and-choir/cassock.toml"
+sha256 = "04be0914bf3c47b098d7a27d217f6a841dd221d65b7cdeddd6c7f5b0b11b48ff"
+kind = "shared-source-or-render"
+owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/servers-ministers-and-choir/surplice.toml"
+sha256 = "e211c39e90304ca33c6cbca1a31af50fb3f88174531a160c3361f3d679e71b92"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16934,25 +17012,25 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/alb.toml"
-sha256 = "3add6a50bfbb983f1bc1710f3944722d9f5e914e1d2a1e7f7456076790e43a9a"
+sha256 = "f1a1b848095589de798461657b7fb166b506e163a64fdf1ea63720938fa6e79a"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/amice.toml"
-sha256 = "b1509fffe1bcabc488dcec5d5fe1f218944aace6ead86e2127cc97c66de6d6de"
+sha256 = "09746868d818030dc4782b9145f6daaa8fc4c1f6982c88ba89794a9e0dd36f76"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/chasuble.toml"
-sha256 = "7146b598178a3eaf8af6818835fc9cb714aa011d314fabb6901b7387db202378"
+sha256 = "23dccaebd145098d10aa121d8b4a5fff4d62a0a2d0442fac5416ab7ed0089d7e"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/cincture.toml"
-sha256 = "e363f75fe9028238f911045198bcaf5fa9046724c601bd7268741490c2380c0f"
+sha256 = "8aa4669b44f766c7683cfb3250cf503f944739908a53fa489a09e45f04711546"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -16964,31 +17042,31 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/deacon-stole.toml"
-sha256 = "e67fce6284b199e1744d52523d1ead59cbed365296aa49d1ad9d88bde0a4af04"
+sha256 = "0753e0c2eae65d3eab650572143ab74fa26f3169c2033fa75cf098b6778f98d6"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/maniple.toml"
-sha256 = "f2f451ddc7c0b7a5bc01751411f99816818a58d6f7ff5ef58bc1221054c6a0ce"
+sha256 = "67922c2e5ec44c6258bf720592484e9e27cd49deebc40c8802e6a74b2dce903a"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/priest-stole.toml"
-sha256 = "5c3f574d850498a159c6f6d3909ec821194983227fae0d2ab316091f05667dec"
+sha256 = "530a9795a8fc96a1f0eeb762b0b65cb70e362903f00dc83dcc7ca7e2eed9bbb8"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/objects/vestments/tunicle.toml"
-sha256 = "c5783b74f453bf7206f001f79c4a30a2c2b5a46e0f14307340267843d1027520"
+sha256 = "333cd40d4e11bc3cdf3bbacfd58ad3b791ad6db6cb6aa4e3f57f620c843751e6"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/publication-shell.tex"
-sha256 = "29458e8c4930603d367b0a45e60e90f50bc63bf03f10b522acacbc266f954dce"
+sha256 = "6ebfdd426e60cf33a493b2db78d46d57ba3217236b7bee01f0c2c3965f5dd173"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
@@ -17012,7 +17090,7 @@ owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/shared/schema/edition-selections.toml"
-sha256 = "19e89e0e53aeffea12569fb5e637d15b7133acd69af6d62a5ac20dd945e2c5dd"
+sha256 = "8f5b24042e9163431a24345e7be5a0f02ff51933aec2af32fe93ae77cefc75dd"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.roman-sanctuary-dictionary"]
 

@@ -1,6 +1,161 @@
 # Production manifest: 1962 altar-server guides
 
-Audit record updated through 2026-07-29 (America/Chicago).
+Latest source revision: 2026-11-05. The seven current source editions retain
+their shared owners and source-first, on-demand native printing. Generated
+PDFs are review artifacts, not tracked or installed publication inputs.
+
+This revision corrects child-facing gestures, the lay-server reverence model,
+sequential ablutions and the Solemn Gospel procession. New illustrations and
+their TeX labels are checked against the declared rubric/manual distinction.
+Exact generation provenance and the bounded independent scene review are in
+[`artwork-revision-2026-11-05.md`](artwork-revision-2026-11-05.md); source loci
+and conflicting manual allocations remain in `source-audit.md` and
+`ceremonial-inventory.md`.
+
+All dated production records below describe their named historical snapshots.
+Their references to "current" or "installed" PDFs apply only within those
+records and do not establish the identity or approval of the present edition.
+
+<!-- current-print-review-2026-11-05 -->
+
+## Final source and consumer checks — 2026-11-05
+
+All thirteen metadata/source/content selections pass their owning checks
+(39 checks). The focused artwork, dictionary renderer, gallery selection,
+native artwork, print recipe and card-apparatus suite passes all 82 tests.
+The dictionary gallery was inspected in desktop and mobile Chromium views;
+its positive selection matches the native editions and keeps qualifications
+and warnings visible. Its use/source disclosures project canonical records.
+
+The final served-source preparation and host compilation gate passes all
+thirteen editions in two passes each, 233 pages total. All 29 runtime fonts
+are located; there are no missing or disallowed opened files and no differing
+host bytes among opened runtime members. This uses the unchanged runtime
+boundary and actual browser source bundles, not an interactive browser-WASM
+execution claim. Receipts and the summary are disposable under
+`.scratch/native-proof-final/`. The two production manifests separately record
+actual screen review of the native PDFs, rather than inferring it from compilation.
+
+The required aggregate `make check-sources` remains blocked by inherited
+proper-apparatus inventory hashes outside these two publication owners:
+GPT postconciliar pc-s27 and pc-s41, Claude 1962 temporal 59, and Claude
+postconciliar pc-s51. Their source bytes and baseline inventory fingerprints
+were preserved. The scoped guide/dictionary inventory was refreshed; no owned
+stale row is accepted as a waiver. This is not a claim that the aggregate
+repository check passed.
+
+## Sung-guide print review — 2026-11-05
+
+The Missa Cantata guide has 36 pages and Solemn Mass has 31. Every page is
+covered by direct screen inspection or exact raster identity with the
+individually inspected preceding build. The final Missa Cantata correction
+changed only pages 35–36; both were inspected again. The four retained older
+close-view illustrations (`017`, `022`, `024`, `026`) have bounded correct
+actions but are not an identical character cast. The nineteen new scenes
+establish the common architecture and drawing conventions, with the sung
+six-candle option explicitly distinguished from the two-candle Low Mass model.
+
+Print review corrected false initial "continued" role headers, orphaned
+section headings, a separated ablution caption and short response lessons
+split from their pronunciation or meaning. Short sung lessons now remain
+intact; the longer Confiteor can break between its complete learning parts.
+Solemn celebrant labels consistently use C. No received response words or
+type sizes were changed. Real ragged-right terminal flow removes the
+underfull metadata paragraph; no warning threshold was raised to hide it.
+
+| Leaf | Pages | Bytes | Reviewed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| `02-missa-cantata` | 36 | 3105985 | `baf95e0cb0eb34298662e0629f3e793db44586b2d931c423ad75490115f2f880` |
+| `03-solemn-mass` | 31 | 3805833 | `47adbbc0f3fed395467b4b9fbe0041039ee44ade61a3230bad2732ccb70ca0cf` |
+
+Final fonts are embedded and text extracts successfully. There are no final
+overfull, underfull or tcolorbox warnings, missing glyphs, clipping or orphaned
+teaching units. The only retained toolchain warning concerns disabled
+epstopdf shell escape; these outputs require no EPS conversion. Exact PDFs
+and input receipts are under `.scratch/low-mass-art/print/final3-missa/` and
+`print/final2-solemn/`; the corresponding page reports identify their inspection
+extent and comparisons. These are screen checks, not physical-print trials.
+
+## Paired Low Mass print review — 2026-11-05
+
+The child booklet and trainer manual each have 28 pages. Their new preparation
+page teaches dress and the gestures subsequently named in the action lane.
+Both editions import the same canonical ceremony. Full-page review identified
+and repaired a split foot-prayer unit that had put different material on the
+corresponding pages, and a clipped child-edition terminal rights notice that
+had produced no TeX box warning. The fixes give the foot-prayer finish its own
+shared page and restore real terminal space rather than concealing warnings.
+
+The independent PDF extraction compares the word multiset of every main-lane
+page 2–28, including headings, figure labels and rights text, while excluding
+the left trainer rail by its actual coordinates. Only the intended edition
+labels and build timestamp are normalized. Every page matches. This mechanical
+check accompanies inspection of all 56 full-page rasters: rail stays left,
+shared action order is preserved, figures and labels are legible, and no
+clipping, accidental blank, collision or missing glyph remains. After the
+final sung-only shared-format repairs, all 54 nonterminal page rasters remained
+identical to the accepted Low Mass pair. The two updated terminal timestamp
+pages were inspected again, and the per-page word comparison passed again.
+
+| Leaf | Pages | Bytes | Reviewed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| `01-low-mass` | 28 | 8075659 | `768b7998834b2c21d61f0401b987b0f1d9a5d781befba77c7c67445f9217aae1` |
+| `01-low-mass-trainer-manual` | 28 | 8091638 | `621acd51ef6f81abbc876eccfa7fa5bb6cd00b1868492604fd19c90ead02f558` |
+
+Final logs contain no overfull or underfull boxes; all nine font rows report
+embedding. Exact PDFs, hashed input receipts, extraction comparison and rasters
+are disposable under `.scratch/server-rubrics/post-sung-layout/` and the
+corresponding comparison and review paths in `.scratch/server-rubrics/`.
+The larger shared scenes use
+the available page space to keep hands, objects and supporting steps readable.
+This is screen inspection and electronic page matching, without a physical
+printer or child-reader trial.
+
+## Card print review — 2026-11-05
+
+All 32 full-page rasters of the three newly generated card companions were
+inspected. The Low Mass and Missa Cantata terminal sheets remain uncut on
+pages 7 and 13; Solemn remains cards-only, with its notice below the final
+grid. There is no inserted cover or parity leaf. The actual PDF coordinates
+recover all 22/36/36 front/back pairs, with odd-page fronts and mirrored backs.
+The maximum reflected cut-border disagreement is 0.008 pt; every printed
+card's word bounding boxes remain inside its assigned cut boundary.
+
+This inspection caught SO-A08's trainer-reference line below the cut border,
+despite a clean TeX layout log. The exit wording was shortened without changing
+role assignments or the 10.5 pt action type. Source review accepted the retained
+reverence and object instructions. The repaired line clears its cut by 5.323 pt.
+Solemn pages 1–11 remain raster-identical; repaired page 12 was inspected again.
+
+| Leaf | Pages | Physical cards | Bytes | Reviewed PDF SHA-256 |
+| --- | ---: | ---: | ---: | --- |
+| `01-low-mass-flash-cards` | 7 | 22 | 353534 | `06a6b03519c32ae6ed937a6f485bd80857f98211e2eb9d7cc72c5d7fb4713377` |
+| `02-missa-cantata-cue-cards` | 13 | 36 | 634535 | `722ef9b328184f423a643677b70f89ce1134ca5767c1c9cc68a4df8f1a5ff145` |
+| `03-solemn-mass-cue-cards` | 12 | 36 | 636792 | `e49f4108ef88613fb1ce210d9243f868318bb48483cb83a45eb4f4c2d20c3a89` |
+
+The Low Mass eight-up 11.5 pt contract and sung six-up grids are unchanged.
+Full-size inspection found no clipping, overlap, missing glyph or accidental
+blank. Fonts are embedded and subsetted with Unicode mappings, and text is
+extractable on every page. Final logs contain no box, missing-character,
+undefined-reference or unresolved-rerun warnings. The toolchain reports only
+the epstopdf shell-escape warning; these card outputs use no EPS images and
+require no EPS conversion. Six focused apparatus/type tests and the final
+Solemn content and rendered-metadata checks pass.
+
+The final sung-format regression rebuild changed only the three revision
+notices (Low Mass page 6 and sung page 12). Those full pages were inspected;
+all card-region pixels remain identical. Replayed geometry and all three
+rendered-metadata checks pass for the identities above.
+
+Exact outputs and complete input receipts are disposable under
+`.scratch/card-review/post-layout-prints/`; measurements and full-page review
+are recorded in `.scratch/card-review/post-layout-measurements/` and its
+comparison raster sets.
+The render used pdfTeX 1.40.29 / TeX Live 2026 and the repository's bounded
+2200-pixel page-review helper. This establishes electronic geometry and screen
+legibility for these bytes, not physical duplex alignment, photocopy quality,
+a new collation of unchanged Latin, or ecclesiastical approval. These cards
+contain no IPA, and no new IPA review is claimed.
 
 Current policy reconciliation (2026-07-29): older checkpoints may record
 unperformed physical-use, intended-reader, independent ceremonial, priestly,
@@ -91,14 +246,14 @@ installed after review and byte-compared against their build sources. No
 external, intended-reader, physical-use, rights, priestly, or ecclesiastical
 approval is claimed.
 
-## Current installed public-review snapshot
+## Historical installed public-review snapshot — July 2026
 
-This table is the sole current identity ledger for the seven installed
+This table was the identity ledger for the seven then-installed
 altar-server publications. Every row is a publicly discoverable alpha review
 copy. Public visibility does not represent actual-size, physical-duplex,
 photocopy, intended-reader, independent, rights, or ecclesiastical-suitability
 review as complete. Older tables below are dated historical snapshots and do
-not control the current installed files.
+did not control that July snapshot. It is not a current print-output ledger.
 
 | Publication | Revision UTC | Pages | Physical cards | Bytes | SHA-256 | Current review state |
 |---|---|---:|---:|---:|---|---|

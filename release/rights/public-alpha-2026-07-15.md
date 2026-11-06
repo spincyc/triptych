@@ -1764,7 +1764,7 @@ To recompute it:
 
 | Inventory | SHA-256 |
 | --- | --- |
-| `release/public-alpha.json:site_sources` | `b54df5b55ffd1aa7807b1778669140d0691690312d01bdfa66fb0aff8e259978` |
+| `release/public-alpha.json:site_sources` | `bc4f57e21c994a618dc1110f0ef73b3911bc42c6c1011c362e73c16ec43a5f95` |
 
 ## Operational controls
 

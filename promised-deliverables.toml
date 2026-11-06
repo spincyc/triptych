@@ -4796,7 +4796,7 @@ state = "complete"
 id = "task-1-altar-server-guides"
 owner = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
 promise = "Repair and hard-review the seven altar-server guides and card companions, including the four retained old Low Mass images."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "four-assets"
@@ -4804,18 +4804,67 @@ state = "candidate"
   status = "pass"
   check = "path_exists"
   evidence = [
-    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-001-lm-start.png",
-    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-002-lm-foot-kneel.png",
-    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-005-lm-missal-move-corrected.png",
-    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-006-lm-lavabo-corrected.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-001-lm-start-2026.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-002-lm-foot-kneel-2026.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-005-lm-missal-move-2026.png",
+    "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-006-lm-lavabo-2026.png",
   ]
+  note = "2026-11-05: the consumed replacements supersede the four historical assets; exact prompts, identities and consumer review are recorded in artwork-revision-2026-11-05.md."
 
   [[deliverables.requirements]]
   id = "artifact-and-visual-consistency"
   criterion = "Low Mass and trainer PDFs, maps, hashes, artwork records, and every-page visual evidence agree on one exact snapshot."
-  status = "open"
-  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"]
-  note = "2026-10-01, KI-057: the 2026-07-31 retirement of six-concern scoring is not proof that these actual artifact records agree. Retain this concrete consistency requirement open; no new artwork or planned guide revision is started by the recovery pass."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"]
+  note = "2026-11-05: the current 28-page pair has exact PDF identities, all-page inspection or raster equality, page-matched main-lane text comparison, aligned guide maps and nineteen checked replacement assets. This resolves the concrete consistency debt retained by KI-057; it does not confer physical-print or ecclesiastical approval or update historical release snapshots."
+
+[[deliverables]]
+id = "altar-server-grounded-visual-revision-2026-11"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides"
+promise = "Improve the existing 1962 server guides and sanctuary dictionaries through source-grounded ceremonial and object corrections, fuller coverage, and consistent instructional imagery."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "source-grounded-corrections"
+  criterion = "Actions, gestures, vesture, placements and object claims changed in this revision have checked source loci and correctly identified rubric or model status; known remaining gaps are explicit."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/source-audit.md"]
+
+  [[deliverables.requirements]]
+  id = "consistent-visual-instruction"
+  criterion = "Consumed artwork and labels have been reviewed for coherent style, object and actor identity, posture, placement and source agreement; corrections have provenance and actual consumer checks."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/artwork-manifest.md"]
+
+  [[deliverables.requirements]]
+  id = "consumer-validation"
+  criterion = "All affected source selections and reader editions validate, including child/trainer shared content and dictionary audience selections; remaining scope and print limits are accurately recorded."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/production-manifest.md"]
+
+[[deliverables]]
+id = "sanctuary-dictionary-continuation-2026-11"
+owner = "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+promise = "Advance the sanctuary dictionary remaining-work plan, cold-review the six editions, and integrate verified improvements coherently."
+state = "complete"
+
+  [[deliverables.requirements]]
+  id = "current-plan"
+  criterion = "The remaining-work plan distinguishes completed baseline repairs, current selections, and open corpus and composition work under the source-first publication contract."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/delivery-work-plan-2026-07-27.md"]
+
+  [[deliverables.requirements]]
+  id = "source-controlled-progress"
+  criterion = "A missing clothing or vestment family has checked claims, canonical records, source-controlled illustrations and validated audience selections, without claiming full category closure."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/server-choir-clothing-2026-11-05.md"]
+
+  [[deliverables.requirements]]
+  id = "cold-review-and-integration"
+  criterion = "Independent review findings on consistency, correctness, clarity and visual quality are resolved or explicitly bounded; affected consumers are validated and coherent commits are published with the exact integration state recorded."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/cold-review-2026-11-05.md", "workflows/reviews/sanctuary-dictionary-2026-11-05/release-verification.json"]
 
 [[deliverables]]
 id = "task-3-sanctuary-dictionaries"

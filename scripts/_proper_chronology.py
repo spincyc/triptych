@@ -2899,8 +2899,16 @@ def _hook(event, args):
 sys.addaudithook(_hook)
 sys.path.insert(0, sys.argv[1])
 import _proper_chronology
-print(json.dumps(_proper_chronology._traced(
-    sys.argv[2], sys.argv[3], sys.argv[4], opened, compiled)))
+try:
+    traced = _proper_chronology._traced(
+        sys.argv[2], sys.argv[3], sys.argv[4], opened, compiled)
+except _proper_chronology.ChronologyWiringError as error:
+    # Expected source refusals keep the diagnostic computation_reads consumes,
+    # without traceback formatting probing a synthetic source filename.
+    kind = type(error)
+    print(f"{kind.__module__}.{kind.__qualname__}: {error}", file=sys.stderr)
+    raise SystemExit(1) from None
+print(json.dumps(traced))
 """
 
 

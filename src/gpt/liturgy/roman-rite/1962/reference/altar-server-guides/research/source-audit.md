@@ -1,6 +1,6 @@
 # Source audit
 
-Audit date: 2026-07-24. This record separates page-image verification,
+Initial audit date: 2026-07-24; bounded corrective audit: 2026-11-05. This record separates page-image verification,
 searchable navigation, secondary ceremonial evidence, and original teaching
 layers. The edition manifest gives full bibliographic and access data.
 
@@ -54,15 +54,17 @@ metadata, but its protected page text was not available for full direct
 collation. It therefore names the selected ceremonial model lineage and is not
 cited for an unverified page-specific rule.
 
-The directly read 1917 Fortescue edition supplied a historical traffic and
-role baseline where the official books do not specify every lay-server path.
-Its printed pp. 24, 69, 80, 86, and 89 were checked for the Low-Mass
-two-server division, pax gesture, departure of extended torches after the
-first ablution, the MC/thurifer/acolyte pax chain, and the subdeacon's
-Last-Gospel assistance and responses. On p. 69 Fortescue assigns the
-post-Communion Missal move to First and says Second may carry the chalice
-veil. That manual convention materially differs from the allocation selected
-below.
+The Goretti delivery of Fortescue's 1917 text is a modern typeset
+transcription, not a scan of the historical edition. The 2026-11-05 correction
+uses chapter IV for gestures and pax; chapter X §§1--4 and 6 for Low-Mass
+preparation, reverences, gesture sequence, sacristy return and the two-server
+allocation; chapter XI §6 for extended torches after the first ablution,
+§7 for the MC's pax route, and §8 for the subdeacon's Last-Gospel assistance
+and replies. These passages were read in the retrieved transcription. This
+supersedes the earlier description of original printed-page image checks.
+Chapter X §6 assigns the post-Communion Missal move to First and allows Second
+to carry the veil, unlike the selected O'Connell allocation. The disagreement
+is retained; this modern delivery is not promoted to the 1962 controlling book.
 
 Laurence J. O’Connell's 1943 *Book of Ceremonies*, printed pp. 170--174, was
 also checked directly. It places First on the Epistle side, gives First the
@@ -157,15 +159,15 @@ stopping line, and stationary geometry remain local rehearsal decisions.
 | Historical or local Low-Mass bell charts treated as if every listed ring were a universal rubric | The Missal supplies the controlling Sanctus, warning, and elevation framework but not every extra ring found in Carmody or a community sheet | The Low-Mass core omits Carmody's additional uncovering and presentation signals. When the faithful will receive, its separately labeled model rings once after each of the priest's three *Domine non sum dignus*; it adds no spoken server response |
 | Communion plate handed from First to Second without a printed transfer, or returned before the priest clears it | Ritus servandus X.7 distinguishes the plate held under communicants' chins and has the celebrant clear its fragments; O’Connell pp. 173--174 gives that plate to First through its post-ablution return; Carmody p. 87 and pp. 91--93 place removal after the second wine and water | First owns the Communion plate continuously in the selected model, leaves it at the altar for the priest, and returns it only after clearance. “Communion plate” distinguishes this object from the priest's paten |
 | A model diagram treated as proof of a universal number of altar steps | The ordinary rubrics do not determine every sanctuary's construction or route | The floor, first step, second step, and predella are a declared teaching model. Trainer notes require mapping the levels and centre reverence to the actual church |
-| Every Missal move assigned to the same server, or Missal-and-veil traffic left as generic “change the book” | The Missal establishes the Epistle-to-Gospel-to-Epistle sequence but names no First or Second; O’Connell p. 172 assigns the Gospel move to First and p. 174 the post-ablution return to Second; Fortescue 1917, p. 69 instead assigns the latter move to First | The selected MODEL deliberately splits the book service: First moves it for the Gospel and Second returns it after the ablutions and plate clearance. The Fortescue disagreement remains recorded rather than harmonized |
-| A lay server assigned the priest's paten or chalice because he carries the folded chalice veil | Ritus servandus X.5 has the celebrant reassemble, veil, burse, and center the chalice; XII.6 has him carry it out. O’Connell p. 174 assigns First the folded veil while Fortescue 1917, p. 69 records a contrary allocation | The selected model assigns First only the folded ornamental veil E→G. The priest alone handles the paten, chalice, reassembly, covering, centering, and exit; the manual role allocation is labeled `MODEL` |
+| Every Missal move assigned to the same server, or Missal-and-veil traffic left as generic “change the book” | The Missal establishes the Epistle-to-Gospel-to-Epistle sequence but names no First or Second; O’Connell p. 172 assigns the Gospel move to First and p. 174 the post-ablution return to Second; Fortescue 1917 text, ch. X §6 (modern transcription) instead assigns the latter move to First | The selected MODEL deliberately splits the book service: First moves it for the Gospel and Second returns it after the ablutions and plate clearance. The Fortescue disagreement remains recorded rather than harmonized |
+| A lay server assigned the priest's paten or chalice because he carries the folded chalice veil | Ritus servandus X.5 has the celebrant reassemble, veil, burse, and center the chalice; XII.6 has him carry it out. O’Connell p. 174 assigns First the folded veil while Fortescue 1917 text, ch. X §6 (modern transcription) records a contrary allocation | The selected model assigns First only the folded ornamental veil E→G. The priest alone handles the paten, chalice, reassembly, covering, centering, and exit; the manual role allocation is labeled `MODEL` |
 | All sung-form Collects and Postcommunions treated as standing occasions | General Rubric 521 prescribes kneeling at the named ferial Masses and also governs the Prayer-over-the-People posture | Both sung routes name the ferial Collect and Postcommunion branches; the applicable Ash-Wednesday-through-Holy-Wednesday route remains kneeling for *Humiliate capita vestra Deo* and the Prayer over the People |
 | The Lavabo delayed until every Offertory incensation was complete, or left without a cue when incense is omitted | Ritus servandus VII.6 gives the ordinary post-offering washing; VII.10 places it after the celebrant has been incensed while remaining incensation continues | Missa Cantata gives both explicit cues; both incense routes give A1 and A2 an inner Lavabo lane concurrent with the remaining outer incense route, a return cue before their own incensation, and an explicit collision-recovery hold |
 | Candle acolytes' Gospel exception presented without the positive action for everyone else | General Rubrics 519 and 521(d) require the celebrant and applicable ministers or choir to make genuflections marked in sung text, while Gospel candle acolytes remain standing | Both sung guides positively cue free-handed servers toward the altar and state the Gospel candle exception; a general checkpoint covers other properly marked sung words |
-| Torch count or departure left to an unnamed rehearsal choice | Ritus servandus VIII.8 requires at least two at Solemn Mass and gives the ordinary, communicant, and fast-day durations; Fortescue 1917, p. 80, supplies the selected after-first-ablution traffic detail | Each sung model names four torchbearers, an adult flame handoff, exact return stands, ordinary post-elevation departure, and extended departure after the first ablution; the Missa-Cantata use remains labeled MODEL where the Missal states the Solemn baseline |
+| Torch count or departure left to an unnamed rehearsal choice | Ritus servandus VIII.8 requires at least two at Solemn Mass and gives the ordinary, communicant, and fast-day durations; Fortescue 1917 text, ch. XI §6 (modern transcription), supplies the selected after-first-ablution traffic detail | Each sung model names four torchbearers, an adult flame handoff, exact return stands, ordinary post-elevation departure, and extended departure after the first ablution; the Missa-Cantata use remains labeled MODEL where the Missal states the Solemn baseline |
 | Psalm 42 and Easter double-*alleluia* conditions generalized to every Mass within a date range | General Rubrics 425 and 507(b) limit the respective calendar branches to Masses *de Tempore* | Every sequence, action row, summary, inventory row, and response card now says “Mass of the season” at the affected branch |
-| Lay MC assigned the quiet Solemn Last-Gospel responses | The selected Fortescue baseline, printed p. 89, has the subdeacon assist and make the responses | SO-065 and shared A13/A15/A16 voice data retain this as a sacred-minister office; no lay server duplicates it |
-| Pax reduced to an undefined handoff or handshake warning | Ritus servandus X.8 and Fortescue 1917, p. 24, supply the personal transmission and its bows, arm position, formula, and response | SO-053 teaches the complete model gesture without handshake or face contact and keeps the fixed subdeacon--A1--A2 chain |
+| Lay MC assigned the quiet Solemn Last-Gospel responses | The selected Fortescue baseline, ch. XI §8 (modern transcription), has the subdeacon assist and make the responses | SO-065 and shared A13/A15/A16 voice data retain this as a sacred-minister office; no lay server duplicates it |
+| Pax reduced to an undefined handoff or handshake warning | Ritus servandus X.8 and Fortescue 1917 text, ch. IV (modern transcription), supply the personal transmission and its bows, arm position, formula, and response | SO-053 teaches the complete model gesture without handshake or face contact and keeps the fixed subdeacon--A1--A2 chain |
 | Last Gospel assumed after every blessing | General Rubrics 509--510 prescribe proper and omitted cases, including omission at the third Christmas Mass | The ordinary guides teach the normal Gospel and the third-Christmas omission; special proper or omitted cases require their own checked sheet |
 | Ordinary Last-Gospel art invents a moved Missal | LM-039 returns the Missal to the Epistle side after the ablutions; MR-RS XII.1 appoints the priest at the Gospel side but does not supply another ordinary Missal move | The 2026-07-28 generated Last-Gospel panel was rejected because it visibly placed an open book at picture-left. The ordinary scene must keep the Missal at picture-right unless a separately checked proper-Gospel sheet appoints a move |
 
@@ -215,3 +217,35 @@ branches, and every site-dependent handoff. The 23 July 2026 exact-byte
 exception remains a historical decision only for the six immutable predecessor
 PDF hashes it named; it does not extend to any changed or new Low-Mass
 snapshot.
+
+## Corrective source and continuity check — 2026-11-05
+
+The newly downloaded Missal matches the edition-manifest witness (the same
+1,088-page CMAA delivery). Displayed PDF pages 56, 57, 64, and 66 were inspected
+at full reading size for these bounded claims (PDF pages 60--61 were also
+inspected for the Gospel and Lavabo controls below):
+
+| Witness / locus actually inspected | Finding and correction |
+| --- | --- |
+| Missal PDF p. 56, *Ritus servandus* I.3 and II.1--2 | The minister wears a surplice; the celebrant's vesting sequence and reserved/unreserved arrival reverence belong to the priest. The guides now identify cassock/surplice as server dress in their selected manual model. |
+| Missal PDF p. 57, III.4--10 | Opening sign, cross direction, Psalm doxology bow, *Adiutorium* sign, the server's turns at *tibi/te pater*, and the two absolution prayers were checked. The child lane now prints the gestures already assigned in its inventory instead of hiding them only in the trainer rail. The manual's posture detail remains distinguished from the priest's rubric. |
+| Missal PDF pp. 60--61, VI.5 and VII.6 | At the Solemn Gospel the subdeacon holds the book between the candle acolytes; the deacon chants. The Lavabo washes the extremities of thumbs and index fingers. These are actor/object controls for the scene review. |
+| Missal PDF p. 64, X.5 | First wine purification and subsequent wine-and-water washing are distinct. Missa Cantata role sheets and cards formerly said that A2 poured water **while** A1 poured wine. The selected manual sequence is now wine first, then water, consistently in route, roles, card and inventory; the Missal's phrase itself does not allocate A1/A2. |
+| Missal PDF p. 66, XII.1, 6--7 | Last-Gospel genuflection and response checked. XII.6's reserved/unreserved reverence has the priest as subject; it cannot support the former instruction that every free-handed lay server bows at an unreserved altar. |
+| ACSS two-server sheet, displayed PDF p. 6, especially note 27 | Explicitly distinguishes priest's bow at an unreserved altar from the servers' genuflection. The sheet's foot-prayer turns and bows were also inspected. This remains a current community manual, not a 1962 official witness. |
+| Fortescue 1917 text, modern transcription, ch. IV and X §§1--4 | Read the named paragraphs for joined hands, free hand on breast, two bow depths, right-knee genuflection, Sign of the Cross, cassock/surplice, sacristy cross, Gospel thumb-crosses, kneeling Creed bow, Last-Gospel genuflection and final unvesting. Low-Mass preparation and finish now state these observable actions. |
+| Same transcription, ch. IV and XI §§3--6 | The common server genuflection and cross/candle exceptions do not exempt the MC merely for holding a biretta or the boat bearer for holding the boat. Sung arrival and exit rows, role summaries, action card and inventory now agree. A cold-object rehearsal is the safety application. |
+| Same transcription, ch. I, “The Church and its Furniture,” paragraph beginning “The rules about candles on the altar” | A sung Mass without ministers may use four or six candles. The revised Missa Cantata Gospel scene selects six as its model appointment, rather than teaching that six are the only permitted number. |
+| Same transcription, ch. XI §§7--8 | The Gospel procession order is MC, thurifer, candle acolytes, subdeacon, then deacon carrying the Gospel book. At the station the subdeacon holds the open book toward the deacon; MC and thurifer attend on the deacon's right and left respectively. The procession and stationary scene captions distinguish these separate moments. |
+
+The change does not claim a new full Latin collation, a full original-edition
+facsimile comparison of Fortescue, or approval by a liturgical authority.
+Earlier page-image checks for other sources remain historical audit entries,
+not newly performed events. The priest's reserved/unreserved distinction is
+preserved; the manual's lay-server convention is expressly named. Exposed-
+Sacrament service remains outside the model. No illustration has been treated
+as source evidence. The sung opening sheets also identify the model cassock/surplice and the
+sacred ministers’ vesture from the inspected opening paragraphs of Fortescue
+chapter II, without importing that chapter’s superseded folded-chasuble
+branches. The new Low-Mass preparation page is shared by the child
+and trainer; current print-layout verification is a separate production task.

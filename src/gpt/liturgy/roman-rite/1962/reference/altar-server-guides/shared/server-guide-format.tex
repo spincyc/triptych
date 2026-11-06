@@ -216,7 +216,7 @@
   after skip=5pt
 }
 
-\newtcolorbox{learnerbox}[1]{
+\newtcolorbox{learnerbox}[2][]{
   enhanced,
   breakable,
   colback=white,
@@ -227,12 +227,13 @@
   right=7pt,
   top=4pt,
   bottom=4pt,
-  title={FOR THE SERVER: #1},
+  title={FOR THE SERVER: #2},
   fonttitle=\normalsize\bfseries,
   fontupper=\small,
   before upper={\setlength{\parskip}{0.18em}},
   before skip=5pt,
-  after skip=5pt
+  after skip=5pt,
+  #1
 }
 
 \newcommand{\coachreference}{\par\smallskip\noindent\textbf{TRAINER REFERENCE}\par\smallskip}
@@ -246,6 +247,7 @@
 % Keep a trainer-chart heading with its repeated column head and at least one
 % action row. Longtable cannot by itself reserve that space before a heading.
 \newcommand{\actionsection}[1]{%
+  \ifLowMassGuide\else\Needspace{0.24\textheight}\fi
   \subsection{#1}}
 
 \newenvironment{actiontable}{%

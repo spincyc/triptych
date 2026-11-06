@@ -62,9 +62,11 @@ RECIPES = (
     _recipe("calendar", "structure/calendar", ["tools/calendar-days", "structure", "--root", "{root}/src/sources/calendars", "--first", "2020", "--last", "2120"], _CALENDAR, delivery="browser-data"),
     _recipe("catena", "structure/catena", ["scripts/_catena.py", "--root", "{root}", "structure"], _SOURCE,
             ["src/web/browser/catena/catena-model.js"], delivery="browser-data"),
+    # Assembly resolves both provider-owned inputs and fallbacks under src/;
+    # its postconciliar projection also reads the fixed registry authority.
     _recipe("documents", "structure/documents", ["tools/document-library", "structure"],
-            ["src/gpt", "src/claude", "src/common", "web", "workflows/fragments", "workflows/pipelines",
-             "workflows/schema", "release/publications"], delivery="browser-data"),
+            ["src", "web", "workflows/fragments", "workflows/pipelines", "workflows/schema", "release/publications"],
+            ["guidance/liturgy/postconciliar-propers-registry.md"], delivery="browser-data"),
     _recipe("ordinary", "structure/ordinary", ["tools/mass-ordinary", "structure", "--root", "{root}/src/sources"], _SOURCE, delivery="browser-data"),
     _recipe("paragraphs", "structure/paragraphs", ["scripts/_catena.py", "--root", "{root}", "paragraphs"], _SOURCE, delivery="browser-data"),
     _recipe("propers", "structure/propers", ["tools/mass-propers", "structure", "--root", "{root}/src/sources/calendars"], _LIBRARY,

@@ -1,0 +1,16 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.metropolitan-museum-of-art.chasuble-stole-and-maniple-157834.collection-record-2026-11-05.met-api-json-8c62711b"
+edition_id = "edition.metropolitan-museum-of-art.chasuble-stole-and-maniple-157834.collection-record-2026-11-05"
+artifact_type = "collection-metadata-json"
+media_type = "application/json"
+storage = "remote"
+rights_status = "licensed"
+license = "CC0-1.0"
+rights_basis = "The Met Open Access policy (https://www.metmuseum.org/hubs/open-access), inspected 2026-11-05, releases basic collection data and images of public-domain works under CC0. The exact API record for object 157834 marks isPublicDomain true and supplies this image route. This registration retains metadata only."
+source_url = "https://collectionapi.metmuseum.org/public/collection/v1/objects/157834"
+provenance = "Accession 2009.300.2952a–c resolved through the public Met collection page https://www.metmuseum.org/art/collection/search/157834; the corresponding official API record and its image link were downloaded in full and hashed. Exact-accession web searches identified the individual French maniple and stole records, replacing the former undifferentiated 43.22.4a-d locator."
+retrieved = "2026-11-05"
+sha256 = "8c62711b078f7a2d21b5e83a103b429e2a5525925f190d67babb54ed9e8735d4"
+byte_size = 2384
+notes = "Complete original API response acquired and read; no normalization or correction. The culture field is empty; other catalogue views may carry additional information. Exact bytes are not retained by this source library; the public remote route is required for reacquisition."

@@ -33,14 +33,14 @@ pontifical = "useful"
 [[claims]]
 id = "clm-basilical-conopaeum-identity"
 kind = "identity"
-text = "Official twentieth-century basilica grants identify the conopaeum and tintinnabulum as institutional basilical insignia; they do not make the conopaeum a generic Mass implement or Eucharistic canopy."
+text = "The checked 1918 and 1923 basilica grants identify the conopaeum and tintinnabulum as institutional basilical insignia; they do not make the conopaeum a generic Mass implement or Eucharistic canopy."
 evidence_state = "checked-paraphrase"
-source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi", "src-basilical-conopaeum-aas-1962"]
+source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi"]
 
 [[claims]]
 id = "clm-basilical-conopaeum-presence"
 kind = "ceremonial-presence"
-text = "The checked grants authorize the conopaeum and tintinnabulum to be carried before the basilical chapter in solemn processions under the granted institutional privilege."
+text = "The checked grants confer the privilege of carrying the conopaeum and tintinnabulum; these passages do not specify a full processional order."
 evidence_state = "checked-paraphrase"
 source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi"]
 
@@ -49,12 +49,12 @@ id = "clm-basilical-conopaeum-use"
 kind = "liturgical-use"
 text = "Its use belongs to the basilica's institutional privilege and exact ceremonial context; the official acts do not establish it as an ordinary altar, Mass, pontifical, or Eucharistic implement."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi", "src-basilical-conopaeum-aas-1962"]
+source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi"]
 
 [[claims]]
 id = "clm-basilical-conopaeum-ornament"
 kind = "variation"
-text = "The checked grants permit the basilica's arms on the conopaeum and exclude gold or silver ornament in the granted Roman minor-basilica form; the present unheralded graphite plate does not universalize those act-specific particulars."
+text = "The 1918 grant permits the church's arms on the conopaeum; both checked grants exclude gold or silver ornament. The present unheralded graphite plate does not universalize those act-specific particulars."
 evidence_state = "checked-paraphrase"
 source_ids = ["src-basilical-conopaeum-benedict-xv", "src-basilical-conopaeum-pius-xi"]
 
@@ -63,39 +63,31 @@ id = "clm-basilical-conopaeum-appearance"
 kind = "appearance"
 text = "The plate shows one representative partially opened, conical, alternating-panel form on a single staff. That morphology is a historical secondary control and does not establish universal color, fabric, panel count, finial, dimensions, ornament, opening state, or construction."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-basilical-conopaeum-macalisang"]
+source_ids = ["src-basilical-conopaeum-chow"]
 
 [[sources]]
 id = "src-basilical-conopaeum-benedict-xv"
-binding = "act.benedict-xv.molis-amplitudine.1918"
-locus = "AAS 10 (1918), pp. 475-477; Vatican HTML, privilege paragraph."
+binding = "artifact.papal.benedict-xv.hf-ben-xv-apl-19180819-molis-amplitudine.2026-10-26-vatican-la.latin-text-738f1fe19099"
+locus = "Molis amplitudine, 19 August 1918, privilege paragraph beginning Quae cum ita sint; exact extracted text of the Vatican web delivery. Historical printing: AAS 10 (1918), pp. 475-477."
 role = "historical-primary"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
 
 [[sources]]
 id = "src-basilical-conopaeum-pius-xi"
-binding = "act.pius-xi.marija-bistrica-minor-basilica.1924"
-locus = "AAS 16 (1924), pp. 33-34."
+binding = "artifact.acta-papal-archives.aas.016.vatican-pdf-ff70624d"
+locus = "Marija Bistrica grant dated 4 December 1923, published in AAS 16 (1924), printed and PDF pp. 33-34; privilege paragraph on p. 34."
 role = "historical-primary"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
 
 [[sources]]
-id = "src-basilical-conopaeum-aas-1962"
-binding = "act.catholic-church.minor-basilica-grants.1962"
-locus = "AAS 54 (1962), pp. 844-846."
-role = "historical-primary"
-verification_state = "claim-verified"
-checked_on = 2026-07-28
-
-[[sources]]
-id = "src-basilical-conopaeum-macalisang"
-binding = "thesis.macalisang.papal-symbols-of-the-minor-basilica"
-locus = "Pp. 43-44; secondary morphology discussion citing an 1836 decree."
+id = "src-basilical-conopaeum-chow"
+binding = "artifact.gabriel-chow-hoi-yan.basilicas-historical-and-canonical-development.2003-revised-june-24.gcatholic-excerpts-pdf"
+locus = "Section 4.2.2, Basilica Canopy, printed p. 43 (excerpt PDF p. 14); secondary account of the 1836 decree, not a direct decree collation."
 role = "specialist-secondary"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
 
 [[artwork]]
 id = "art-related-ceremonies-0003-basilical-conopaeum"

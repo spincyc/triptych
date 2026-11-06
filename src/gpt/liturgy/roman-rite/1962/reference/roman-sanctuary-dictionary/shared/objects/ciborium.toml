@@ -1,0 +1,120 @@
+schema_version = 1
+id = "obj-ciborium"
+workflow_state = "art-reviewed"
+preferred_english_name = "Ciborium"
+latin_headword = "pyxis"
+categories = ["sacred-vessels"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+related_objects = ["obj-tabernacle", "obj-paten", "obj-corporal"]
+confusable_with = ["obj-chalice"]
+
+[presence]
+locations = ["On the corporal when used at Mass, and within the tabernacle when reserved."]
+contexts = ["The covered vessel for the small Hosts distributed in Communion; the Missal calls it pyxis."]
+local_variability = "common"
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "recognizes-only"
+warnings = ["The celebrant handles the ciborium in the Communion rite. A server recognizes it and does not open, carry, or distribute its sacred contents."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-ciborium-identity"
+kind = "identity"
+text = "The ciborium is the covered vessel containing the small Hosts for Holy Communion and reservation."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-ciborium-missal", "src-ciborium-fortescue"]
+
+[[claims]]
+id = "clm-ciborium-appearance"
+kind = "appearance"
+text = "The contemporary ceremonial describes a chalice-like vessel with a fitted cover; the cover distinguishes this form from the open chalice."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-ciborium-fortescue"]
+
+[[claims]]
+id = "clm-ciborium-use"
+kind = "liturgical-use"
+text = "The unveiled study shows the vessel’s form; for reservation it is covered with a white silk veil. In the Communion rite the celebrant holds the ciborium or paten in his left hand and takes a Host with his right; when Hosts remain in the ciborium, he covers it and replaces it in the tabernacle."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-ciborium-code", "src-ciborium-missal"]
+
+[[claims]]
+id = "clm-ciborium-reservation"
+kind = "appearance"
+text = "For reservation, canon 1270 describes a clean vessel of solid, suitable material, closed with its own lid and covered with a white silk veil."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-ciborium-code"]
+
+[[claims]]
+id = "clm-ciborium-terminology"
+kind = "terminology"
+text = "Pyxis is the Missal term at this locus. The contemporary English ceremonial calls the chalice-like covered vessel a ciborium and also uses pyx for smaller containers with distinct uses."
+evidence_state = "checked-paraphrase"
+source_ids = ["src-ciborium-missal", "src-ciborium-fortescue"]
+
+[[sources]]
+id = "src-ciborium-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus X.6–7, printed pp. LXII–LXIII, artifact PDF pp. 64–65."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[sources]]
+id = "src-ciborium-fortescue"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 16 and note 1, artifact PDF p. 37."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[sources]]
+id = "src-ciborium-code"
+binding = "artifact.catholic-church.codex-iuris-canonici-1917.vatican-polyglot-1918.leaf-424-image"
+locus = "Canon 1270, printed p. 366, complete registered page image."
+role = "historical-primary"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
+
+[[audience_note]]
+audience = "altar-server"
+text = "The celebrant handles the ciborium in the Communion rite. A server recognizes it and does not open, carry, or distribute its sacred contents."
+claim_ids = ["clm-ciborium-identity", "clm-ciborium-use"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The ciborium is the covered vessel containing the small Hosts for Holy Communion and reservation."
+claim_ids = ["clm-ciborium-identity"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Distinguish the vessel’s own fitted lid from the white silk veil used for reservation. An unveiled study shows the vessel’s form."
+claim_ids = ["clm-ciborium-appearance", "clm-ciborium-reservation"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach vessel and enclosure separately: the ciborium is held for Communion and returned to the tabernacle by the celebrant."
+claim_ids = ["clm-ciborium-use"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Recognize this as a Communion and reservation vessel, distinct from the chalice used for the consecrated wine."
+claim_ids = ["clm-ciborium-identity", "clm-ciborium-appearance"]
+
+[[artwork]]
+id = "art-ciborium-covered-study"
+view = "isolated"
+asset = "shared/artwork/pencil/RPD-FIG-ciborium-study.png"
+review_state = "liturgically-checked"
+depicts = ["obj-ciborium"]
+review_note = "One circular foot, stem, knop, broad rounded bowl, and fitted removable lid. Lid has plain round knob; closure seam is visible. No hosts, hands, cloth, duplicate foot, handle, or spout. Full-size and small white-ground inspection passed; use on white only. Current plate, consumer, and print review are recorded separately in research/artwork-revision-2026-11-05.md."

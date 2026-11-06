@@ -127,6 +127,12 @@ class ArtworkSelectionTests(unittest.TestCase):
                 self.assertTrue(all(path.startswith(owner) and (ROOT / path).is_file() for path in selected))
                 self.assertIn(owner + leaf + "/main.tex", inputs)
                 self.assertIn(artwork.HELPER, inputs)
+                self.assertIn("tools/source-library", inputs)
+                self.assertTrue(any(path.startswith("src/sources/") and path.endswith("/edition.toml")
+                                    for path in inputs), "exact source edition labels must affect bundle identity")
+                self.assertTrue(any(path.startswith("src/sources/") and "/artifacts/" in path
+                                    and path.endswith(".toml") for path in inputs),
+                                "source binding metadata must affect bundle identity")
         with self.assertRaises(artwork.ArtworkError):
             artwork.dictionary_artwork(ROOT, "gpt", artwork.DICTIONARY + "/unknown")
 

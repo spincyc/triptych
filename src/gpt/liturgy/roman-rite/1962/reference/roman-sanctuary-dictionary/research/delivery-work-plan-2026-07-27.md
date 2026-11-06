@@ -1,109 +1,128 @@
 # Delivery work plan
 
-Status: active plan for `task-3-sanctuary-dictionaries` and
-`project-dictionary-artwork-holds`
+Reconciled: 2026-11-05. Active corpus work under
+`sanctuary-dictionary-continuation-2026-11`.
 
 This plan sequences work under
-`guidance/liturgy/roman-1962-pictorial-dictionaries.md`.
+`guidance/liturgy/roman-1962-pictorial-dictionaries.md`. It supersedes the
+obsolete six-entry baseline and ten-notice count formerly recorded here.
+The earlier `task-3-sanctuary-dictionaries` and
+`project-dictionary-artwork-holds` promises concern bounded repairs, now
+completed; neither promise establishes a complete dictionary corpus.
 
-## Baseline and finish line
+## Current baseline and finish line
 
-- Six bounded dictionary PDFs form the current alpha baseline.
-- Each installed snapshot renders the same six admitted records and a
-  32-record omission register from the then-current 38-record inventory. The
-  canonical structured inventory now contains 43 records; a fresh render with
-  the unchanged review admission would omit 37. No such rebuild is recorded
-  here. Neither state is a complete inventory or differentiated final family.
-- Every row of `completeness-matrix.md` remains open.
-- The artwork validator reports 10 held notices: two effective-resolution
-  notices, one unresolved broad-stole identity, and seven unsupported
-  Communion/reservation depicted-object links.
-- Alpha publication requires source integrity, rights, safety, reproducibility
-  and identity, mechanical validity, and basic visual usability. Corpus and
-  variant closure remain completeness work.
+The canonical inventory contains 82 objects. The six audience selections,
+ordered plates and omissions are derived from the shared records, not
+independently authored copies. Current selection counts are maintained in
+[`plate-manifest.md`](plate-manifest.md); exact reviewed render identities
+and inspection limits are in the production manifest and
+[`cold-review-2026-11-05.md`](cold-review-2026-11-05.md); the earlier figure
+checkpoint remains in `artwork-revision-2026-11-05.md`.
+The comprehensive edition now admits 64 objects, including thirteen existing
+pontifical entries and the new cassock/surplice pair. The pontifical edition
+admits 62. These are audience selections, not exhausted corpus counts.
 
-## Work unit D1 — freeze and reconcile the review baseline
+Every row of [`completeness-matrix.md`](completeness-matrix.md) remains open.
+An admitted record, an exhausted category, and a reviewed composition are
+three separate achievements. The finish line is the declared corpus and
+variant audit, source-controlled artwork and compositions, six useful
+canonical audience projections, and verification of the actual reader surfaces.
 
-- [ ] Recheck the six installed hashes, page counts, selected record IDs,
-  omission counts, visible review labels, and installed/build identity.
-- [ ] Reconcile the production manifest, six guide maps, object inventory,
-  artwork and plate manifests, and completeness matrix for the same snapshot.
-- [ ] Preserve review-copy evidence as snapshot-specific; do not carry its
-  installation or distribution state into an authoritative-release candidate.
+PDFs are generated on demand. Historical installed-file hashes remain facts
+about those snapshots; they are not current release inputs. Physical printer,
+photocopy, specialist and ecclesiastical review are not publication gates.
+Any actual print export receives its own full-page screen inspection under
+the profile; never describe that inspection as a physical print trial.
 
-## Work unit D2 — resolve the 10 held artwork notices
+## D1 — reconcile the baseline
 
-- [ ] For each low-resolution historical asset, either replace it with a
-  rights-controlled, source-controlled asset that passes effective-resolution
-  review or retain an explicit hold.
-- [ ] For each unknown depicted-object link, identify the object from checked
-  evidence and create/reconcile its canonical record, or remove the unsupported
-  link/asset from eligibility while preserving the negative result.
-- [ ] Re-run the artwork validator after each coherent resolution group and
-  record exact asset hashes, consumers, provenance, rights, and review state.
-- [ ] Require factual morphology and object identity to come from checked
-  sources, never from generated-art plausibility.
+- [x] Replace the obsolete six-entry/43-record baseline with the current
+  inventory, selections and source-first publication boundary.
+- [x] Identify current review evidence separately from historical installed
+  PDF receipts. The production manifest and six guide maps record the
+  November source checkpoint.
+- [x] Independently check the current six rendered editions against their
+  canonical records, captions, source notes, guide maps and omission rules;
+  resolve concrete consistency, correctness, clarity and visual defects.
 
-Owning records: `artwork-manifest.toml`, `artwork-manifest.md`,
-`historical-artwork-manifest.md`, canonical object records, and the applicable
-review records.
+## D2 — artwork identification and resolution
 
-## Work unit D3 — close the corpus category by category
+- [x] Close the original ten validator notices without inventing identities.
+  `tools/check-roman-sanctuary-artwork` reports zero held object-link notices
+  on the 80-record checkpoint. Unsupported assets remain held or rejected.
+- [x] Preserve exact provenance, source controls, rights, asset hashes and
+  bounded review in the artwork manifest and its linked audits.
+- [x] Re-run the gate for the three new clothing figures and inspect all six
+  actual consumers. Zero notices proves structural consistency, not exhaustive
+  source coverage or an independent visual judgment. Repeat for future figures.
 
-Use the row order in `completeness-matrix.md`; parallel research is permitted,
-but a row closes only as one evidence-controlled unit.
+## D3 — close the corpus category by category
 
-- [ ] Identify the operative official and material-culture corpus for the row.
-- [ ] Exhaust candidate terminology and record the required second pass for
-  material gaps.
-- [ ] Reconcile included objects, excluded candidates, names, status/use,
-  handlers, ceremonies, variants, confusables, and source loci.
-- [ ] Reconcile artwork, rights, and audience eligibility for every included
-  record.
-- [ ] Record closure only when every matrix column is supported; a populated
-  or short row is not a closed row.
+For each row of the completeness matrix:
 
-Give early priority to already populated or targeted rows so existing evidence
-can be converted into audited canonical records. Keep Requiem, ritual Masses,
-the Holy Week days, and other not-started rows visible rather than letting the
-current six-record packet define the corpus.
+- [ ] Identify the operative official and material-culture corpus.
+- [ ] Exhaust candidate terminology; make and record a second targeted source
+  pass for material gaps before removing or narrowing a claim.
+- [ ] Reconcile included and excluded candidates, preferred names, status,
+  use, handler, ceremony, variants, confusables and exact claim-level loci.
+- [ ] Reconcile artwork, rights and audience relevance for every included
+  object; a figure in a composition does not substitute for an object record.
+- [ ] Close the row only when every matrix column has supporting evidence.
 
-## Work unit D4 — derive genuinely different audience editions
+The ordinary server cassock and surplice now have separate canonical records,
+three source-controlled figures and six audience selections; cotta is a
+sourced alias. The next clothing slice is cope and humeral veil, followed by
+the still-open choir/prelatial dress inventory. Preserve the distinction among
+ordinary server dress, sacred-minister vesture and privileged choir dress.
+Then pursue altar cards, frontal and tabernacle veil; remaining reservation
+and exposition vessels; Requiem and ritual Masses; and the four operative
+Holy Week ceremony inventories. The matrix owns the full outstanding scope.
 
-- [ ] Close the comprehensive selection and plate order first.
-- [ ] Reconcile each leaf's guide map against canonical data: altar server,
-  sacristan, MC/trainer, general reader, and pontifical ceremonies.
-- [ ] Prove every included record and omission from stable selection rules.
-- [ ] Check that smaller editions contain no editable fact or artwork copy and
-  no audience claim absent from canonical records.
-- [ ] Build web editions only after their declarations and reading order
-  describe the actual reviewed publications.
+## D4 — audience editions and useful reader apparatus
 
-## Work unit D5 — plates and production
+- [x] Derive six distinct selections and audience notes from one inventory.
+- [x] Reconcile the comprehensive selection with every admitted pontifical
+  object. Consumer-specific artwork eligibility must be reviewed before
+  broadening a selection; a blanket exclusion is not corpus closure.
+- [x] Recheck smaller editions against their stated use and canonical facts,
+  including recognition-only objects and immediate handling warnings.
+- [x] Supply linked object source notes and a populated edition bibliography
+  without production jargon dominating the recognition plates.
+- [ ] Add further indexes, pronunciation or terminology aids only when their
+  checked contents serve the named audience.
+- [ ] Verify the gallery and print-source transport against the actual
+  positive artwork selection after each content change.
 
-- [ ] Reconcile every artwork and plate ID, composition, scale treatment,
-  candidate mark, and consumer.
-- [ ] Inspect every figure at full size for identity, morphology, impossible
-  construction, false ornament, scale, duplication, placement, and monochrome
-  ambiguity.
-- [ ] Print representative dense, linen, vestment, and composition plates at
-  actual size and inspect monochrome photocopies.
-- [ ] Build all affected leaves after any shared-data or artwork change and
-  settle references, indexes, logs, PDF metadata, fonts, and extracted text.
-- [ ] Raster and inspect every page with repository review tooling.
+## D5 — compositions and visual production
 
-## Work unit D6 — alpha states
+- [x] Current dense plates have deterministic object coverage and the
+  November figures have exact assembled-consumer screen reviews.
+- [ ] Replace the comprehensive opening's historical witness with, or
+  supplement it by, an actual source-controlled sanctuary composition.
+  The historical witness is not evidence of a universal 1962 arrangement.
+- [ ] Complete the linen, vessel, incense, pontifical and special-ceremony
+  relationships still held in the plate manifest. Check simultaneous use,
+  object scale, handlers and placement as well as isolated silhouettes.
+- [x] Inspect this continuation's three new figures at their intended sizes for identity, construction,
+  folds, wearing, scale, duplicate companions, monochrome clarity and edges.
+- [x] Build this continuation's six selected editions, settle references and layout,
+  check metadata, fonts and text, and inspect every changed page. Record
+  complete inspection coverage when issuing a reviewed print edition.
 
-- [ ] Record source, rights, safety, reproducibility and identity, mechanical
-  validity, basic visual usability, alpha status, and deployment separately.
-- [ ] Verify exact PDF/web/catalog identities before publication.
+## D6 — validation and integration
 
-Historical priestly-review packets and recorded review snapshots remain
-immutable evidence of the earlier workflow. They are non-operative and confer
-no current publication status.
+- [ ] Record source, rights, safety, reproducibility, mechanical validity,
+  visual usability and deployment separately for the current change.
+- [ ] Validate object and artwork records, all affected source/content gates,
+  audience selections and actual reader output. Record inherited failures
+  separately from regressions.
+- [ ] Commit coherent units on the workspace branch, reconcile upstream
+  without rewriting published history, and publish validated checkpoints.
+  A main push requires the deployment gates and exact outgoing-range review;
+  verify the triggered workflow before claiming live deployment.
 
-## Stop conditions
-
-Do not claim completeness while a matrix row is open, render a held or
-identity-unknown record as an entry, infer ritual status from material culture,
-or describe a generated or internal check as human review.
+No completeness claim is permitted while a category remains open. Generated
+visual plausibility never establishes an object's identity or ritual status.
+Historical priestly-review packets remain dated evidence of the earlier
+workflow and confer no present external approval.

@@ -39,6 +39,162 @@ the driver's account is
 [CYCLES.md](workflows/reviews/claude-1962-66-production-2026-11-05/CYCLES.md).
 `origin/main` was merged only after acceptance, so no seal went stale.
 
+## Sanctuary dictionary continuation — 5 November 2026
+
+<!-- promised-deliverable: sanctuary-dictionary-continuation-2026-11 -->
+
+**Bounded continuation complete: verified sources pushed to main; Pages deployment pending.** The remaining-work plan
+now distinguishes the original bounded repairs from the full open corpus.
+Two canonical records for cassock and surplice bring the inventory to 82;
+three source-controlled drawings show the separate garments and their worn
+relationship. Cotta is a sourced alias, and the ceremonial's recorded
+lay-dress custom remains explicit. No completeness-matrix row is closed.
+
+Cold review repaired missing printed source references, suppressed handling
+boundaries, absent scale notices, small/repeated captions and page collisions.
+The comprehensive selection now contains 64 objects, including thirteen
+previously excluded but already-admitted pontifical objects. The six screen proofs contain 100 pages, with exact identities and
+review coverage in the dictionary's current cold-review record. Source checks
+also corrected false vestment editions and illustration claims, the ombrellino's
+purported 1952 witness, and the conopaeum's grant dates and source limits.
+Cope/humeral veil,
+remaining appointments and vessels, Requiem, ritual Masses, Holy Week and
+whole-composition work remain in the delivery plan.
+
+Standalone source-maintenance checks passed at `b5baadeaa7`; the later combined
+deployment-source gates passed at `63d7d94867`. Thirteen selected
+native bundles compile in two passes to 255 pages; the seven guide/card PDFs
+match their accepted baseline exactly, and the six dictionaries preserve the
+reviewed pages apart from their committed revision lines. Two independent cold
+browser-product builds agree on 27,697 files. Scoped release refresh updated
+92 existing bindings and admitted 88 reviewed dependencies, without changing
+authorization terms.
+
+Main subsequently advanced with separate PC-S58 advisory corrections and the
+same timeout repair through `19a7e266ec`. Reconciliation preserves both source
+histories. Combined deployment-source gates pass at `63d7d94867`; twelve product
+families pass two fresh cold builds, and one retains its verified proof. The
+13-family result contains 27,697 files and 227,505,481 bytes, identity
+`c06a735a8f2e2213e4fb609de757e6b9557bde23883aace399befe00d5291c1f`.
+Only the incoming three readers, their index and one catalog contribution
+record differ from the earlier product checkpoint. Two incoming reader
+revision timestamps follow the chronology-helper repair; independent comparison
+proves that their full products otherwise retain the previously reviewed bytes.
+The candidate site at `f1dd135c81` passes independent browser review: all 70
+gallery images load, clothing qualifications remain visible, mobile layouts
+fit, and six dictionary print pages stay idle until requested. The three
+incoming readers' revision and rights regions pass at desktop and mobile widths.
+All thirteen bundles emitted by that site compile in two passes to 255 pages;
+their mounted inputs, render identities and PDFs match the accepted proofs.
+The six dictionary proofs cover 100 pages and 1,165 resolving numbered links.
+
+The [release review](workflows/reviews/sanctuary-dictionary-2026-11-05/release-verification.json)
+pins those artifacts and the historical source, audit and compilation scopes.
+A separate [complete comparison](workflows/reviews/sanctuary-dictionary-2026-11-05/all-reader-revision-transfer.json)
+proves that all 105 proper readers changed from `19a7e266ec` differ only in
+revision timestamps and their derived hashes; the web index differs only in
+those hashes. This mechanical equality renews no editorial or print approval.
+Main's subsequent changes through `53d90dbc69` affect operational records and
+the matching workflow test, with no changed publication inputs. They were
+reconciled without rewriting history. Final publication commit
+`76e0fa8c54135d43f1ed90bf0a2fa7190c6de3ff` passed a fresh committed-site build
+and full `public-alpha verify --deployment-target github-pages`, then reached
+main and the workspace branch by ordinary pushes.
+
+The final site has 43,666 files including its checksum manifest and 647 native
+catalog selections. Twenty HTML routes and sixteen referenced bundle descriptors
+match the inspected candidate after only validated global-commit and derived
+transport substitutions; the gallery and three readers are byte-identical.
+All thirteen final served native selections were freshly compiled again:
+255 pages, two passes each, all 29 runtime fonts, no runtime-byte mismatches,
+and exact accepted PDF and render hashes. This is a selected compile proof;
+the complete 647-edition CI compile remains separate.
+
+| Final local evidence at `76e0fa8c54` | SHA-256 |
+| --- | --- |
+| Publication manifest | `b6735fdc0ba9ac8e21246a20947ee74a2c52cf40d3a3cea89f61364233173190` |
+| Site checksum manifest | `cbfefca0f8d4f236cb793f6ee034ebbaa826a6592316e9451535020ef7d2df6f` |
+| Full Pages verifier log (exit 0) | `3c927c76052f1d0296da487cfb40da550159e21d4a1702aa8aed78abe00dec44` |
+| Final selected native compile summary | `1e10c200d677df33a11947094e4d1fb6e0e398732d2b84b7381c758d2fe02e91` |
+| Final served-content transfer | `212230a7f15964da8e95014ca57f63717c2626c4b5074097772d085fc3fa13cd` |
+| Composite final local verification summary | `72fd6722acbb63ad5b22c50105eaa6e4d2de74333202e552e076486499636999` |
+
+The push triggered [Pages run 42131423670](https://github.com/spincyc/triptych/actions/runs/42131423670),
+confirmed pending for that exact source commit; repository hygiene passed.
+CI compilation, deployment and live-site verification are not claimed.
+The final status-only commit changes this register and the promise ledger,
+which are excluded from the Pages trigger. The immutable candidate receipts
+retain their original scope. This checkpoint completes the plan's current
+gallery/transport and validation/integration pass; future corpus slices repeat
+those checks, and every completeness-matrix row remains open.
+
+The upstream [Pages build](https://github.com/spincyc/triptych/actions/runs/42099806134/job/127500251862)
+passed source checks and site assembly, then exceeded its two-hour limit during
+independent artifact verification. The build allowance is now three hours;
+all gates, permissions and other job limits are unchanged. Nineteen existing
+bootstrap/workflow tests and independent review pass. The next complete cold
+CI run must demonstrate that the allowance is sufficient.
+
+## Altar-server and sanctuary guide revision — 5 November 2026
+
+<!-- promised-deliverable: altar-server-grounded-visual-revision-2026-11 -->
+
+**Historical checkpoint: implementation and review complete for this bounded
+revision.** The source checkpoint was on `feature/altar-server`, without a
+main update or live-site deployment. The continuation above supersedes this
+checkpoint's publication and source-inventory state. The request covered the existing
+seven GPT 1962 guide/card editions and six sanctuary dictionaries, with better
+source grounding, visual consistency, coverage and actual reader usability.
+
+- Corrected child-facing gestures, lay-server reverences, Gospel stations,
+  bell hand and elevation assistance, sequential ablutions, sacred-minister
+  vesture and Solemn Gospel procession order. The 1962 Missal remains
+  controlling; manual allocations and local geometry remain explicitly distinct.
+  The purported original Fortescue scan was correctly identified as a modern
+  transcription, and a central Missal passage's incorrect page locator was fixed.
+- Produced nineteen corrected guide scenes and six dictionary figures, with
+  exact prompt histories, image identities, source controls and bounded review.
+  New altar, altar crucifix, tabernacle and ciborium records bring the inventory
+  to 80. Amice/maniple crosses and priest/deacon/subdeacon distinctions are repaired.
+- The gallery now selects the native editions' 66 actual images, excludes
+  superseded art and preserves material qualifications, handling warnings and
+  source loci. Isolated native dictionary builds resolve their generated files.
+- Rebuilt and reviewed all thirteen editions: 233 pages, including page-matched
+  28-page Low Mass books and 22/36/36 correctly paired cards. Fixed orphaned
+  lessons/captions, a cut-line intrusion and clipped terminal text. All thirteen
+  served source bundles compile in two passes with the runtime boundary intact.
+  The 82 focused tests and all 39 metadata/source/content checks pass.
+- Post-commit verification exposed stale dictionary revision dates: the date
+  resolver read only explicitly written manifest roles and missed the canonical
+  object data supplied by the document schema. It now uses the effective
+  manifest; all six dictionaries derive the content commit's date. Fifteen
+  revision tests pass, including derived and leaf-relative data regressions.
+- The final served bundles compile all thirteen editions at 233 pages. The
+  seven guide/card PDFs are byte-identical to their committed review copies;
+  the dictionaries preserve all words and their page coordinates except the
+  corrected revision-date glyphs. Two independent browser-product builds agree
+  on all 27,681 files; only the document catalog and corrected Missal passage
+  projection changed. The verified cache build and promised-deliverable gate pass.
+
+The current production and exact artifact evidence is in the
+[guide production manifest](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md)
+and the [dictionary production manifest](src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/production-manifest.md).
+Historical PDF approvals apply only to their named snapshots; newly generated
+PDFs remain disposable outputs, not tracked publication inputs.
+The prior Low Mass artifact-consistency debt is now closed by actual paired-book
+review. Historical sung-guide promises that also cover release inventories and
+catalogs retain their separate state; this checkpoint makes no deployment claim.
+
+Remaining limits are explicit. The dictionary's broader category inventory is
+not closed: server/choir clothing, cope/humeral veil, further appointments and
+vessel families, Requiem, ritual Masses and Holy Week remain incomplete. Four
+older bounded guide close-ups retain stylistic variation. These source and
+screen checks are not physical-print trials or ecclesiastical approval.
+At that checkpoint the global source inventory had four inherited stale proper-apparatus
+hashes (GPT pc-s27/pc-s41; Claude 1962 temporal 59 and postconciliar pc-s51).
+Only this revision's owned inventory rows were refreshed; unrelated baselines
+were preserved.
+
 ## PC-S58-A advisory corrections, 2026-11-05
 
 <!-- promised-deliverable: gpt-pc-s58-advisory-corrections-2026-11-05 -->
@@ -85,23 +241,27 @@ overflow. All three print pages stay idle without fetching native TeX assets;
 the artifact declares 647 native editions and `stored_pdfs: false`.
 
 Publication commit `2f94728d075029a8a043021eb2006a5a9925f9d5` reached both
-the workspace branch and main without rewriting history. Its push triggered
-[Pages run 42117986012](https://github.com/spincyc/triptych/actions/runs/42117986012),
-initially queued behind the preceding run. That predecessor,
+the workspace branch and main without rewriting history. The combined commit
+`1e2669f5fba8a01a37985785d3493d087e50d4a1` preserves the reviewed content and
+product identity and includes the timeout repair and its reconciled contract
+test. All 19 bootstrap/workflow tests pass. Its
+[Pages run 42122381067](https://github.com/spincyc/triptych/actions/runs/42122381067)
+has passed the complete native compile gate: 647 editions, zero failures and
+15,357 compiled pages. The three PC-S58 receipts pass, each settling in two
+passes, and the summary binds the exact combined commit. The site build,
+independent artifact verification, deployment and live checks remain pending.
+
+The budget repair follows predecessor
 [42099806134](https://github.com/spincyc/triptych/actions/runs/42099806134),
-built its site after roughly 96 minutes, saved its products and then exhausted
-the two-hour job budget during independent artifact verification. Twelve of
-thirteen family input identities differ for this correction, while only the
-documents and web-editions output bytes differ. Local preparation with the
-saved prior candidates reused ten families, generated two and retained one
-already current; all thirteen match the committed proof. The Pages build limit
-is now three hours;
-all source, artifact and print gates remain intact. The semantic workflow diff
-changes only that timeout, and the browser-product identity above is unchanged.
-The first correction run is being superseded by this timeout-only repair.
-Replacement CI, deployment
-and live reader verification remain pending. Earlier runs are not evidence of
-this correction's deployment.
+which built its site after roughly 96 minutes and then exhausted its two-hour
+job limit during independent verification, as GitHub's failure annotation
+confirms. Commit `19a7e266ec` changes only the build timeout to three hours;
+every source, artifact and print gate remains intact. Only documents and
+web-editions output bytes differ from the prior products. Upstream preparation
+with the saved candidates verified ten reused families, two generated families
+and one already current family against the committed proof. Earlier correction
+runs `42117986012` and `42121273497` were superseded and cancelled; neither is
+claimed as deployment evidence.
 No new engine-run acceptance, print-layout approval or human delivery is claimed.
 
 The merged chronology task had an open publication requirement without the

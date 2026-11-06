@@ -1326,6 +1326,8 @@ $(BUILD_ROOT)/.assembly/%/manifest.json: FORCE_DOCUMENT_ASSEMBLY
 # Argument 1 is the -jobname, argument 2 the TeX input relative to
 # $(SOURCE_ROOT), and argument 3 the build-tree prefix the job's auxiliary
 # files share.
+# Dictionary generated inputs follow BUILD_ROOT, including isolated print jobs;
+# their source default remains the virtual build tree used by browser bundles.
 define PDFLATEX_TO_FIXED_POINT
 set -eu; \
 	rm -f -- '$(3).fls'; \
@@ -1339,7 +1341,7 @@ set -eu; \
 		( cd $(SOURCE_ROOT) && TEXINPUTS="$$assembly/src/$(PROVIDER):..:$(abspath $(@D)):" $(PDFLATEX) -no-shell-escape -recorder \
 			-interaction=nonstopmode \
 			-halt-on-error -jobname='$(1)' \
-			-output-directory='$(abspath $(@D))' "$$entry" ); \
+			-output-directory='$(abspath $(@D))' "$(if $(filter $@,$(ROMAN_SANCTUARY_DICTIONARY_BUILD_PDFS)),\def\RSDGeneratedRoot{$(abspath $(ROMAN_SANCTUARY_DICTIONARY_GENERATED))}\input{$$entry},$$entry)" ); \
 		previous="$$fingerprint"; \
 		fingerprint=''; \
 		for auxiliary in '$(3).'*; do \

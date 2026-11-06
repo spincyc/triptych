@@ -1,5 +1,9 @@
 # Guide map: Solemn Mass
 
+Current source and screen-review checkpoint: 2026-11-05, 31 guide pages and
+12 companion pages. The production manifest owns exact reviewed identities.
+Older dated page counts below are historical snapshots.
+
 - Stable guide ID: liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass
 - Form: ordinary non-pontifical Solemn Mass with celebrant, deacon, and
   subdeacon according to the 1962 Roman Missal
@@ -70,8 +74,9 @@ state.
 
 The Gospel-departure drawing uses pencil asset `ASG-ART-025` for SO-020--021.
 Its TeX-owned labels identify the model order: MC; Th with the closed
-thurible; A1/A2 together with the two lighted candles; then D and SD with the
-Gospel book. Bb is expressly absent after returning the boat and remaining at
+thurible; A1 and A2 in successive single-file places with the two lighted
+candles; SD empty-handed; then D carrying the Gospel book with both hands.
+Bb is expressly absent after returning the boat and remaining at
 base. The scene does not prescribe the local route, distances, architecture,
 or common-reverence place. The series artwork manifest owns its generation,
 normalization, identity, rights, consumer, and review record.
@@ -106,9 +111,10 @@ takes the boat for the normal or third-Christmas exit. The single-file order
 is empty-handed Th, Bb with the boat, optional Cb, A1, A2, Tb1--Tb4, MC, and
 the sacred ministers; locally marked paired formations apply only while
 stationary for the final reverence. At
-SO-068 free-handed Th, torchbearers, and MC genuflect if the Sacrament is
-reserved and make a profound bow if it is not; boat, candle, and cross bearers
-remain upright and bow the head. Bb gives the boat to the adult at SO-070.
+SO-068 Th, Bb, torchbearers and MC genuflect in the declared manual model,
+whether or not the Sacrament is reserved. Bb keeps the boat secure; candle
+and cross bearers remain standing. The sacred ministers' own appointed
+reverence remains distinct. Bb gives the boat to the adult at SO-070.
 Special rites require separate sheets. When SO-063 sends the team to the
 parish's separate procession sheet, that sheet must carry every role through
 its object, route, final reverence, and sacristy return. The team then rejoins

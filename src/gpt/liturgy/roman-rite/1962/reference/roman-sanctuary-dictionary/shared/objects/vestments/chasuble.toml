@@ -42,7 +42,7 @@ id = "clm-chasuble-appearance"
 kind = "appearance"
 text = "The comparison plate shows representative narrower Roman-cut and fuller Gothic silhouettes as material-culture variation; neither form is normative or exhaustive, and no orphrey, neckline, length, textile, ornament, tie, or exact proportion is prescribed."
 evidence_state = "source-grounded-synthesis"
-source_ids = ["src-chasuble-fortescue-1943", "src-chasuble-fortescue-1917", "src-chasuble-casanowicz", "src-chasuble-met-french", "src-chasuble-met-spanish"]
+source_ids = ["src-chasuble-fortescue-1943", "src-chasuble-fortescue-1917", "src-chasuble-casanowicz", "src-chasuble-met-french", "src-chasuble-met-spanish", "src-chasuble-hirten-1952"]
 
 [[claims]]
 id = "clm-chasuble-use"
@@ -75,10 +75,10 @@ source_ids = ["src-chasuble-missal-1962", "src-chasuble-fortescue-1943"]
 [[sources]]
 id = "src-chasuble-missal-1962"
 binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
-locus = "Ritus servandus I.2, printed p. LII, artifact PDF p. 56."
+locus = "Ritus servandus I.2–4, opening Ritus page (no printed folio visible), artifact PDF p. 56."
 role = "governing-liturgical-book"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
 
 [[sources]]
 id = "src-chasuble-rubrics-1962"
@@ -106,35 +106,43 @@ checked_on = 2026-07-28
 
 [[sources]]
 id = "src-chasuble-fortescue-1917"
-binding = "edition.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-washbourne-1917"
-locus = "Printed pp. 9-10; Wikisource scan leaves 43-44."
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.burns-oates-1918.internet-archive-pdf-5b267dc0"
+locus = "The Vestments of the Roman Rite, printed p. 10; artifact PDF p. 44. Prose recognition description, without vestment illustrations."
 role = "ceremonial-book"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
 
 [[sources]]
 id = "src-chasuble-casanowicz"
-binding = "work.immanuel-moses-casanowicz.ecclesiastical-vestments-usnm-bulletin-148-1929"
-locus = "Printed p. 30."
+binding = "artifact.immanuel-moses-casanowicz.collections-of-objects-of-religious-ceremonial.usnm-bulletin-148-1929.internet-archive-pdf-02d06b3c"
+locus = "Vestments of the Mass, item (7), printed p. 30; artifact PDF p. 44."
 role = "catalog-or-museum-record"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
 
 [[sources]]
 id = "src-chasuble-met-french"
-binding = "museum.metropolitan-museum-of-art.43.22.4a-d"
-locus = "Object 43.22.4a-d, French, nineteenth century, public-domain object record."
+binding = "edition.metropolitan-museum-of-art.chasuble-226962.collection-record-2026-11-05"
+locus = "Object 43.22.4a, collection record 226962, French, nineteenth century; catalogue and full-object photograph."
 role = "catalog-or-museum-record"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
 
 [[sources]]
 id = "src-chasuble-met-spanish"
-binding = "museum.metropolitan-museum-of-art.2009.300.2952a-c"
-locus = "Object 2009.300.2952a-c, Spanish, public-domain object record; altered set."
+binding = "edition.metropolitan-museum-of-art.chasuble-stole-and-maniple-157834.collection-record-2026-11-05"
+locus = "Object 2009.300.2952a-c, collection record 157834, Spanish; sixteenth-century embroidery, seventeenth-century velvet, later cut, patched and reshaped; catalogue and front photograph."
 role = "catalog-or-museum-record"
 verification_state = "claim-verified"
-checked_on = 2026-07-28
+checked_on = 2026-11-05
+
+[[sources]]
+id = "src-chasuble-hirten-1952"
+binding = "artifact.william-j-hirten-company.hirten-church-goods.hirten-1952.internet-archive-text-pdf-ccd22db7"
+locus = "Vestments, printed pp. 122-123; artifact PDF pp. 124-125. Illustrated fuller and narrower cuts, with Roman and Gothic product offerings; representative silhouettes only, without prescribed pattern, ornament or proportions."
+role = "catalog-or-museum-record"
+verification_state = "claim-verified"
+checked_on = 2026-11-05
 
 [[artwork]]
 id = "art-vestments-0006-chasuble-comparison-v3-alpha"

@@ -1783,9 +1783,16 @@ unresolved = "The volume prints an alphabetical run of signed articles and its r
 [[containers]]
 id = "work.catholic-encyclopedia.volume-3"
 manifest_sha256 = "776a3788103c1eb9d04658885e5fa9ffe518a2c9e07b84cfb484455a43c1e0f6"
-status = "unresolved"
-basis = "Description: Volume 3 of the original Catholic Encyclopedia (New York: Robert Appleton Company, 1907-1912). Its articles are signed scholarship of their date and are cited as early twentieth-century reference works, not as magisterial or current stateme..."
-unresolved = "The volume prints an alphabetical run of signed articles and its record names none. The 17 artifacts registered on it are per-article deliveries held under the volume's own record; they are not enumerated here because none is a separately registered work."
+status = "partial"
+basis = "The volume's work record identifies the third volume of the Catholic Encyclopedia. The separately registered New Advent Canopy delivery identifies Patrick Morrisroe, the article title, volume 3 and 1908 publication."
+unresolved = "Other signed articles in the volume and its remaining per-article deliveries have not been enumerated here. The Canopy delivery is a modern transcription; the original printed article was not collated."
+
+[[containers.constituents]]
+author = "Patrick Morrisroe"
+title = "Canopy"
+locator = "artifact.catholic-encyclopedia.volume-3.new-york-1908.newadvent-canopy-html; complete displayed article"
+extent_unresolved = "The displayed transcription was read in full; original 1908 print extent and wording remain uncollated."
+basis = "The artifact's recorded provenance and notes identify its signed article, volume and delivery extent. Exact HTML is restricted; this entry records identity and extent only."
 
 [[containers]]
 id = "work.catholic-encyclopedia.volume-4"

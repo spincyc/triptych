@@ -1,0 +1,985 @@
+{
+  "status": "pass",
+  "source_commit": "f1dd135c815644a7c13ba0914b5410220d9af18a",
+  "comparison_main": "19a7e266ec3e5f1a0e111575ddaf2063f5090986",
+  "method": "Read actual current product bytes; for each changed reader replace only its single Last revised timestamp and derived Markdown hash in memory, and require exact upstream descriptor byte hash. Candidate old timestamps are real upstream author dates. Do not modify products. Replace only these proven derived hashes in the index and require its exact upstream hash.",
+  "changed_readers": 105,
+  "timestamp_pairs": {
+    "2026-11-05T18:09:00Z -> 2026-11-05T21:00:12Z": 84,
+    "2026-11-05T15:56:46Z -> 2026-11-05T21:00:12Z": 19,
+    "2026-11-05T20:12:56Z -> 2026-11-05T21:00:12Z": 2
+  },
+  "unmatched_readers": [],
+  "index_matches_after_proven_derived_hash_substitutions_only": true,
+  "readers": [
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "308037d255a34ff936cf194eda02c9b64c666eb78234e76afd2f89028ecb8f9d",
+      "upstream_json_sha256": "4cb745d773454d8dae2932eff79f4109c003931d4d43d6807a4b484353f9a1fa",
+      "current_markdown_sha256": "4031b9fed8f8d994de21dc93ba2bb3515e644b9c04eab5e175a48f9801bad929",
+      "upstream_markdown_sha256": "c0ee7497151a1ad5c6b16829ac824cb8169369317a8ce31381e5be5dfd1011ab"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "808c0822b8c9966ae13c2b396fd459d6d430ceb6ed8e972f5892bd3e60148689",
+      "upstream_json_sha256": "9c62b2ec097b771379f8fdecdf1b3b38d4c914bd7aa95d785c5401e61bb5bff0",
+      "current_markdown_sha256": "90058895555861ec8ad6fd0822218bd6a9771f27f227eaaa641b3a2c96fb251f",
+      "upstream_markdown_sha256": "27d5ab425f64aca9fac37352b1e0f166f7f472b2c1ba24785eeafd2be3cbc71b"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "a6f1d37189b7346b1208b33cfb86283e56a60bb67742016ab17b663ee60865d0",
+      "upstream_json_sha256": "64d095bb23e7064db19fc367f83ffcb01a1f7b25f500e067fe5d34c5badcdce5",
+      "current_markdown_sha256": "2cdbf7c093ffd8f5c485175615d03624f1b7d07393f96c375147bfbea0b1912f",
+      "upstream_markdown_sha256": "ce154d62ae85a7385d2eb678c2d6b80b16b9e7c7e6c86acb9182c935f579ac41"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "2188e26ca7230957b84b2d5e3f34b6ca2384b9eb2580cabdec108ca1fb72bf11",
+      "upstream_json_sha256": "13bdccbd5adf49bcdd466d194ade9468e28f18b33373380777325445c52717d8",
+      "current_markdown_sha256": "dd242c9f9baa8d8ad48aa0df763583c2077df97fdd87d348a6409f0a7cd109a0",
+      "upstream_markdown_sha256": "4614e1432753fd602357ae931d76898e41927811d01e0244e4180ccc76323a56"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "1a5d6143fcc8d7c46a861dd7aaf0c12892c8eab3391acf8d621448b183a9488e",
+      "upstream_json_sha256": "ffe163eabfaceb53d480a5814c996a6315237fd5f78600d6349d6eefe9d519fd",
+      "current_markdown_sha256": "84990811b73643feb02db77c37c83a21631110e71f6454cb442635e5f00b7133",
+      "upstream_markdown_sha256": "8c061d47ae0db2167d688eb5ea9e3317202bdb190d91a4f0ebd96a0b6bcfd735"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "16dba9482deddd9dc918a1a2dae1fbe207abfa6a5a2ee1fa5c2fc65e5eedf58b",
+      "upstream_json_sha256": "5d9f63c8a0bb8d7c55b2c1c8398dff4642e6303288c43cfc5505edb0c24935c2",
+      "current_markdown_sha256": "996fbad3e6065b5da270801ffca937e6883a32e0256f72bf8840303aefcf8736",
+      "upstream_markdown_sha256": "d667f52bc9257c59897f8eac9887afb4918959e3f72b68e5a9e2ebee2752ef74"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "f7790a51c853a89864f80c9b22537b531a0f919c84234ab98b948b1c75a3dd7a",
+      "upstream_json_sha256": "abad57b47bfb4f8c6ce6e1ca930dfdca8b4a7478084f9d20254ad25be97281b8",
+      "current_markdown_sha256": "24cf950a03fe2ad0a7efbe936c6e4b409a44b5e59ae98bd015404c9fd5f1d8bd",
+      "upstream_markdown_sha256": "a1bde60932d3922695fae0c1acf9fb4d851b585bab5d3a97c6e6b8166c68ce1d"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "f71cf15ec0b9865beb0b428de0d08f493614b5f5c7af150b01bc40ff4cbbcbf5",
+      "upstream_json_sha256": "36a361b62fac87eb384edff39b111abc4f2d2b6e024bfc1f38ebd158d7d1d77a",
+      "current_markdown_sha256": "ef8d0f3dd7fd84ef2c9d9916e53e4fbb4d78c5fe19c18418df357172bea2631e",
+      "upstream_markdown_sha256": "69efd8e9d2dbc3e401bd58bec89b62f9b9f090dea7b79c7e3720efc776d678ed"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "e35e8a6ed72fe317a8347611c4121bd19c2565d1668a1ea573e6524873166ba2",
+      "upstream_json_sha256": "54843d6cdbcbfdb126967b4da82544856e0ba789fd0c715af73409198a24e340",
+      "current_markdown_sha256": "4e531d12454f9c440a83bea20340fe5740271017ac0a0dfbc77e0de6feb6997a",
+      "upstream_markdown_sha256": "ae7c9e70c402ac4e943ca3517e9281b00c41477bdae9785272160b46d4b1629c"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "2901d90150831f2427c93eeb784f6e2b26db5c701ef61a6797fef013a5c1aa9c",
+      "upstream_json_sha256": "68b59b25d5f9bda4bf55da4f3f662a1881d1c8720b333c8903acd6cf3feae9e0",
+      "current_markdown_sha256": "c2a2749c275bf072a63c607e91a5d73964689b7194caa51facc90df8abf4c71b",
+      "upstream_markdown_sha256": "fe7b35fe1a86f2b497226b0badb2d3c9429eedc5dc795173e2c61f2accc30991"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "c9a0d98bff4103cfa4e9f81fe82f448176ee47353788d5a1f8235785153d27e5",
+      "upstream_json_sha256": "3e108f855163c0562d6cf7a32cf758de05336ccb3544bab415c1a89136fc3c2d",
+      "current_markdown_sha256": "895248baa8ebf36b23950f01eba62cb312663553775d3e24ec7d323de4f7ad11",
+      "upstream_markdown_sha256": "211335a84e36ab147be55e77c6f98d228f4152e48cc1d5435c38da3d4fbb55a9"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "240b4f723f19cff2e083f68419c27691ff7835aeaee78c7e4d8131add02e2ef9",
+      "upstream_json_sha256": "157103f52a90520dec978cf2c71f7b5fdf2a9a8ae2c437a5e1ce27c2fe722bf0",
+      "current_markdown_sha256": "58a2f94387f9e25860f7cb24322f67a22cbb3bafb0d1a8db8dfcea318f521612",
+      "upstream_markdown_sha256": "5d7a689837284cd07a7dcc3a78997dfb3ef52103e1f14452a4196b778c843d6e"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "de53116ea7c5692920a9d984abbc0a85c7be357782c370e92eae6d326bb2c8c1",
+      "upstream_json_sha256": "d61af636bce29bab1b0edbe67b4a626c68ddd0444dd4e7f5fe7af849ee1a61e4",
+      "current_markdown_sha256": "9b72f937bfa64e19b78d2838e781dca979b09bae2eea31e36042078860651e40",
+      "upstream_markdown_sha256": "cf3f4f30f14f3cf16b567e0c977de2551a267029a1dd332a74a088c3425e2063"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "83becee877954d56464d1b227c836defe2fd002c8b86b879ae6a6a73c2ddc500",
+      "upstream_json_sha256": "c10d69ea4aac46e12a0f798bef40991f8c743a72cb913d3567fdce577bd3e7f2",
+      "current_markdown_sha256": "58acee9040bcc5d3b33f1a2824896b64da689d13618406f799898a4118210af4",
+      "upstream_markdown_sha256": "899adad292e2735d69d9e06d83d6720f758a04b7966dab9f2818c32bb54ae92c"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "5be2913bb0ec3feff4a7063892d05eb63353f0d130dfec67903b3b144d631934",
+      "upstream_json_sha256": "f1d7750040d71fc746caf360ea81f85c82ddb61aa874158038412e9634dc5999",
+      "current_markdown_sha256": "82004eef60d355b4bf0985dfdfbbe1b66f7b7b1153a933b146786da0d3a07792",
+      "upstream_markdown_sha256": "f37e87425c85db4c45d0fec888bca3bf4712d855b78f8b76c4d5909f09690268"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "7bc349ebbce825f80b75cbfdd0e587ddb0186a95a5838ef9ce83b00d36e264fd",
+      "upstream_json_sha256": "3531b87969290ebc9278cd154842c615844bf87ae400e39a01a7c48a841ea95d",
+      "current_markdown_sha256": "568ec1779dfe98334904330b4651b4d7e8512f66e167ffe47213b24805690465",
+      "upstream_markdown_sha256": "c8f9e5ad5e7b4633f073ce96b252245cff50c1e789b6c567c7b46318c1a388dc"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/58-eighteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "23494566baed81b2199964b9ceb40aa9361e94358dbb895b60bd022a1d02df9c",
+      "upstream_json_sha256": "c7471eb378a2db3c30fe383f209934c8b4b8305a160d4697a86d4a5a4dd9650d",
+      "current_markdown_sha256": "25c8772fd769e85de6f931b2f22eea189b3a0e7215c8ea0f9f3e29bd265adb73",
+      "upstream_markdown_sha256": "367663c8ff6bdcafa62c63de73090495c92cb6fe88692064678501e7f4fcac5b"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "7f808d4051647a2444f2458bd0df721181c4619deb3a515682e0e9ad7762fd5b",
+      "upstream_json_sha256": "ff6a0aad923652cf58fad600190c888a8797d46aa579057d6e50600dec483905",
+      "current_markdown_sha256": "6b31890a49d8441a2100a170e9842cf4186bc25a43de75425c9a58dece837ff5",
+      "upstream_markdown_sha256": "0736c94714030b72a0134b028779c90cc527a9ad882875812144012e5544d16f"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "ab31ff38aa7686a34bccca1e02b134cc51fcb5d4715a29230dcab2440809f192",
+      "upstream_json_sha256": "0a0bfa6d359a7e054bc3a7d20243e5eade95fb11fee2ccfdfe3a27d2f5ff0f16",
+      "current_markdown_sha256": "17e12f1d6bfd9954008b41cead0c65890887969899b3c57189550498559cc553",
+      "upstream_markdown_sha256": "eb743a9b160139ea96d34f1f7ce390a3add74bfd297f56c8a2b091f0afb16c4a"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "80d0ddbed3614dd745d067e3321e8d387a21dd574d5bfeaef41dd47b3b48dd0c",
+      "upstream_json_sha256": "921634e4eb1ca6883d1be4b6206992ffac0442790122bad94ebb04ab56d5b83e",
+      "current_markdown_sha256": "f4b91cb796be257e0d4148b38605d259ad4176214efd15eb58e7b50ffc496412",
+      "upstream_markdown_sha256": "2bd70e78672ad44cd49b250fdc84d8b897689da384529122c0929c341c451562"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "672a244d1e403fcb3517b13d305a80d7652eee7cc3b34f99fccb8f99d3e5fba2",
+      "upstream_json_sha256": "0622bb353922de0eca11a956b360af5bf75725aa54bc5328b4387030805a2dd9",
+      "current_markdown_sha256": "2534693e7c7a235aa6e782880ed1b3785974a4cbf5a7bf241f8d297faf7eb047",
+      "upstream_markdown_sha256": "a704aa556bf584b5b27b2756226b1d8c27012a4f2f85fa07535eec6b4464da64"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "becbe97a90365d694359c9776d715cf91f2ca5b8e0c82bb23957ddc1cc54ece5",
+      "upstream_json_sha256": "d57121e768842a33e442066d514f681175a64dfdacb70183dff7699616012e77",
+      "current_markdown_sha256": "5df6bc34b7dab927c3d9d97a7fd0bc35429dfb115942721447c854922c76f7de",
+      "upstream_markdown_sha256": "798fa945dae13fe353ac874e390780bc85d49ad52f483946ad3c05f2b257d6c8"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "c3b325a89e0c510da98acebec00aabf2ec59d8ecdce5cee6ac1503f6e14ecac8",
+      "upstream_json_sha256": "dc247263210ea370dc09e75c0b1994fbe12fdfae99aec0b5b997b3d621dc12bb",
+      "current_markdown_sha256": "c599a58faf2151b0f2dc9ba640be1825b6a2a2de06649a2ebef0ea4dd52a9a35",
+      "upstream_markdown_sha256": "3618c3f766b426fc64bf5173f9411fefee1922e39f44d2d0e78aafed6ee095cd"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "4ea46563f7769cecb15ae33eda6bd143fb6d6e6b82635340e3b14e6c3e7ed3a8",
+      "upstream_json_sha256": "cd9fb632f989987dad32117545a3a76a2ddce1b3190a26516133a1c1f5d9edf6",
+      "current_markdown_sha256": "bfcbfebb9528c617e49a7ab1c34b02a5db1eb15bcbd79821772ecf54448f8809",
+      "upstream_markdown_sha256": "b8a9486d1de4db51a690624bc2a2dcc54e2aa2896297c5c5c0339f2f1fe74d49"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "b65ec7124308dd42e6316a4e9c351aa3a19e45632c22754da98b23747cee3df7",
+      "upstream_json_sha256": "2d46dec53ffc93e3035f1091f54312105d940fb23e1de70ef9634b3c3ead78a2",
+      "current_markdown_sha256": "6cc4b732f21c0da247b9e278adf2ba54fe562bdc444deeec7c72e94431410e5a",
+      "upstream_markdown_sha256": "224eec0901137c235d49d7bff7d3b9b9675e79778f4340d55509bb7094445cad"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "9d28b4b94db748c5ba4f8aec368d9b8a99c00a379b2cf65efff0a4875761e7a9",
+      "upstream_json_sha256": "444eb8fa729089134920200a6ec8b6a18f4c0638f7ac914e5ddd77fa72134346",
+      "current_markdown_sha256": "943513a1e1c3d8177f76b85ecdfaa8361f6b8e32832ef8aafbeed20c8372454e",
+      "upstream_markdown_sha256": "dfa416b0db1ac4f66e009cd3c333edb6f78a657c8f3b9e1a587c0c9beda1c958"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "28fc6e4642503c563abaae8b7c9f1e4cfce9381c0fad844ac26cac9010aa14a1",
+      "upstream_json_sha256": "27cc16e0a0f080f06c85b52accef68c72478f3b0da8d53461627edacd4493755",
+      "current_markdown_sha256": "f6a0b9481176f84a0343a60290efbde4b44b6ae397a83e3e7f4f0dd640c5ebd8",
+      "upstream_markdown_sha256": "879c860751536a1655d4ea9727cf057b039b43707418fff64c5afb8ccd7f7ed1"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "c6a014a5a81a8aeeef90c50413f24ec840d7bf53ecd2d9cfeeeb7f42414d5eb8",
+      "upstream_json_sha256": "c6c9c0dd2206806e08135ab10cc2d4c8a84139ab26d035ce6afc21ad64c4ed43",
+      "current_markdown_sha256": "fa1c001615f9b5602902ce32785f0ef62db4b2a0671a5fc0dc77ecbc458e92d0",
+      "upstream_markdown_sha256": "198b1dae106713f65957713df7dc6062bf49c25993038fc376989f63078c850c"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "9a4f3b57293e8ebdc8930ef65968d2b1fd1e5b70c5fb08ed24a72fce8cbb4e91",
+      "upstream_json_sha256": "dec64c6e34ad6429e8ee1ca7cbcfdd8c5e70e7f7e0293aae65b6eb33299a63a2",
+      "current_markdown_sha256": "47d0e9b5e1ef9fa7f6714935b57f14d041f43e81f64f424d026c8fd59c22ad5a",
+      "upstream_markdown_sha256": "496777cf9c389411044931f91d30947649b72993a3cd3d2c12b2185cbace2103"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "68775ee041f01bca5682928ad3ba5b462d88ded57522fbed951dafb8c88fa31b",
+      "upstream_json_sha256": "6c0b602bf424f7f45c34ce68de1e0c63cc99db36be4a493359fc611fb2455383",
+      "current_markdown_sha256": "59e3f73be88c308eb3ccf7de87463be9ad57c3b4a0074406a382968af87d7be3",
+      "upstream_markdown_sha256": "bb305f6b1bdd9e6e9cdc3e28bb81d689d25fae3c040e6fd5cf648e6e0ee05d5f"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "0086f9b229a7b6b10712351e79ea7689039c5cb0a98bb3870476deb7d40051bc",
+      "upstream_json_sha256": "af0a076678acb4bb7389fb14cbdcddb5373abd2c8c2be72f4f6abe4c1c18c5a7",
+      "current_markdown_sha256": "4ccfaf6389660a728640502c860fa2e93572d1d654cdf70ccfac7c5acf9fec8c",
+      "upstream_markdown_sha256": "db95908e10c2dad41d8e2bc5cd6731778f2d741907ef9c7e665816db037d3f80"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "6f1f2e9640ba5749054c7de89438605f43edda438e0d3b0a2aed4d193229de67",
+      "upstream_json_sha256": "ad5723ec8178a0355da0b50ea7e71571370ef51cc76372500a1652529fb39fb6",
+      "current_markdown_sha256": "d0a66815e0e79419c9163982a9f234500b007c6a0380354b8b46dc13bf6f3e36",
+      "upstream_markdown_sha256": "90636c7630745ea79ea3bbf098727cb6175835c28f9350e9e359c0d7f786fa07"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "3bc9063c07b5c201688da0e346f5a47377fd744e46d421f713797dead43cab32",
+      "upstream_json_sha256": "37293d3eb67ee96001efaffbcc2d02895b060647bab182fc98d12bb20eb060dc",
+      "current_markdown_sha256": "90bc894685b30c3995a93f45f4bb84b8c41deb717945ca1282b9f2239f718a43",
+      "upstream_markdown_sha256": "baf90abcc047202573f4a202e84caf624a5e600613832062144a23045ee5deef"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s52-twenty-sixth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "242eec2307eaa775cb9799d43e4e5e3b2245f94cc75011ddec570bde9fbb709e",
+      "upstream_json_sha256": "e2180b7cec4e12ceeffdee898f473df342036d3e5645cb6d4df6a77379550e5e",
+      "current_markdown_sha256": "5941c4cd3889335509e1ab37d070a69e7d4845f9f426ab020734c7b44889ed3d",
+      "upstream_markdown_sha256": "8d820bafabdbca1df5b3bbe89e1fb3861a8acb2486e5cd3dcbb718fe8a719d89"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "55a890eeb992aaf816a2a8fc63930f50a21ba63c0f9319a261cb6a0f76e869d6",
+      "upstream_json_sha256": "9b46c09de0ddf99432bac0958babab7b4df445bf252538af87d5bd3d3b54aabd",
+      "current_markdown_sha256": "074d0eb219de96d8fce1fff18bcdbc01390c44e8736c073ee2f3edb951115ddd",
+      "upstream_markdown_sha256": "f34ebc7948f6f07e6585ff60fbeba523f81dc4ba6cc1a6d2a1c19b55dec42e1c"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "3bb1346876f73214de502dddeaaa577914e04c92332d94402e5b5cddf07df9ea",
+      "upstream_json_sha256": "d034e62698158819a25db9ed773250911a24594d4adf2254028daf6af43b115e",
+      "current_markdown_sha256": "d7ce46bd88d9f05227fb375565fc6a77300579b4385d36cf73ea14bf13a60d9c",
+      "upstream_markdown_sha256": "4150c9adf8625e0514b2cc3ac3385fb35ee9de05541efa23c0a04aa911c2043d"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "7df2f76af058d35d6d3ca0cb289cb32a9292d9f446f1ad6706b041a9f8b09f70",
+      "upstream_json_sha256": "eb2db3a1575a553d4ad781be4724f4d3525f74c7f5fc2c04c11b3f67a175d38a",
+      "current_markdown_sha256": "8dc38b19dbf1c18b46c2509e86f85612c8b724c09b7949ac7ab1ce19166f045a",
+      "upstream_markdown_sha256": "8af1f05327c8d8b212dfb4bfaa616a2bf795af63b04ce4bf6024d81cee6d9862"
+    },
+    {
+      "path": "web-editions/claude/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "9c92c4ac27a551c6a3b78150887174d35741647e33556fc0b582fb1149a75b11",
+      "upstream_json_sha256": "418c55a83f4e5450672eebc66266e7bb3bb7963531e99f3ced5637344e7094f6",
+      "current_markdown_sha256": "b1b970c4c92b7e9c01ede7e9e2fe0bb02c7e02f03fc6be3102a010bde5a80961",
+      "upstream_markdown_sha256": "28187952400daf39590b918bbc5aec0e303da7c0ffe698b33e6a280271bcb6b5"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/ritual/m01-nuptial-mass.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "d0e341f82c08b045c561286909ea1f9c9c51c8cb6703e71b43bac8e55e2992ff",
+      "upstream_json_sha256": "65cf454426864e7e659dd6aa85f2c9fed816f407f7d589393ceaf61d6b6a1863",
+      "current_markdown_sha256": "0bc981f4eb88b03854ddd609b8e58acf712c62699557d933ab4d433134dd26bd",
+      "upstream_markdown_sha256": "464044dc8f743112aabcc3c5adccc1eae02e2f74f5bdb5cef2392b7dcd65c17d"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/39-trinity-sunday.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "2ec67392a6638b408e73b0ff47e1ed8a8d899c1bbbff9ad2cc2c1cf0e17ff507",
+      "upstream_json_sha256": "f90b13204403eff0d8319e52b8b75ed50ecfe3d448c07c4d80d5a08f811dc2f3",
+      "current_markdown_sha256": "76f40f2a7cbc0c5e5b31d1e52d75b1d95afd2664898ccd1932b90ace3497dde4",
+      "upstream_markdown_sha256": "f1930726cc7850ed079f3888470d39579ee9a1a8a6be451c4304104124bff745"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/41-second-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "1bea9cbbceec6bbaa2ff4a3651a92374aba767648094d34dd26587684f3139a2",
+      "upstream_json_sha256": "1a409fb786c2c7f0c05ae3301fcac63e54a0b6d46ae86bf4987312abb9ed071d",
+      "current_markdown_sha256": "5ae52cc3b6965c000ba64f8eed6514b9cf7cf954fd34a1ca0562f2e3d3c79b59",
+      "upstream_markdown_sha256": "b14d955709f7eea16139d73bbaed48f404a391baa2722bd7651967869eb39b64"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/43-third-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "302403e69931b83c4dbdacca01fccc956277f3309ec5a4a2c623643243659d6b",
+      "upstream_json_sha256": "bf61fe398f304db7be3b2bd4c6cecf7774bf8e201dae555e5d4280a3aade74e7",
+      "current_markdown_sha256": "dae767ef3158e1dc0053c4953e5e2d99b9d605364921deecfc847fcc35b5638b",
+      "upstream_markdown_sha256": "5534a573de1b18950039c84c5b3a56b9d96a1f5808fc928708f2cbe89330ccca"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/44-fourth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "3a123f300e06d0b703aeef1c708763aaee9102889c8fe1ceabe7f5222c7e84c5",
+      "upstream_json_sha256": "806482d61d19c3535b2e35a0186e761871ddbb382bdb6b9b785c9eb27d33f319",
+      "current_markdown_sha256": "e08dab336d0eb82eaf4717eecb9531b4ea5b9056213c44f13277f5f8b53174b4",
+      "upstream_markdown_sha256": "474c3f5d67cac1681032908b7b5ed5d99a0d56b0b2bbaa804c9c59b6d9ba741c"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/45-fifth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "280bd4e89354c2e46e335750f3f2d278c53e9a72b77cbae1247c595c953c9966",
+      "upstream_json_sha256": "a82b4f36f886421c310584aa6ba098b8c88741c07b523ee795eba440ea117fb2",
+      "current_markdown_sha256": "f5346ca9169802bbb169797f2a9fb7724d1c58b9e9ca17172c5f3da52136b01f",
+      "upstream_markdown_sha256": "4042b6e1a9b6565e50447b07aed299117d8c706a453483685cd0326cb677409a"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/46-sixth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "a0e14ba1358cc165d1825a2c8538e49b9a3dbff26cc56e737a60d764fa459a2e",
+      "upstream_json_sha256": "013f58c9e57a91e97e122621821efcfba21f3fc0f7a4ebcb461d709e86180501",
+      "current_markdown_sha256": "fa893d98dadc3b58b0919e5f96bdd694b55e74fe9ba029884a13e2a7ba20657d",
+      "upstream_markdown_sha256": "42656cd855783465da01e49374c13cbcb1ccb29ac23077a01968e1dadb9ec6c9"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/47-seventh-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "9d81dc907dc95109b93693928263cfc995cbbe84eab5c2e6a12537fceb506787",
+      "upstream_json_sha256": "14fbdc8d3c0fab746dd8840dbb48b55cea8b32c88418ee9f2abca7805d9fc541",
+      "current_markdown_sha256": "8c16122d70bd152cf6fc9a9b7a4cc6dd272a82ca7d8ec05aeceaf59d90efa03b",
+      "upstream_markdown_sha256": "dc2db8327a79da44e210ed0895dc9a22e630e79228ec371c1368ee5a61724854"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/48-eighth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "2e7b6b231e806e621c001cc9c1157b71e184c649b0f0883b85d7ab094520ec53",
+      "upstream_json_sha256": "fea8fe861dabc57e465f9d2b8d32349c4c688cc2bba17ddcbf4a1677593dc5ec",
+      "current_markdown_sha256": "48c6e90822edf5289524536718805e57b9d5776dcd436d096d3eadea6bf90f3c",
+      "upstream_markdown_sha256": "4fdd81f47d794af8adfb9711098c8b02d55078193b8739e662968fdb19dcf382"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "eced603cb7417d8da58d77045f44d4193ddf147c01bf619635131da80b7d7a55",
+      "upstream_json_sha256": "6de5f4b9d1876c9c22868bc910585b6b668b1ecf8affa511b5dfdbc7203ba0f1",
+      "current_markdown_sha256": "babecde499462e9f998d082bf54a667d4c08b45d74e9d7110362fd92809bf1c6",
+      "upstream_markdown_sha256": "4262119184f098eb66bf6366e87a73a22035f6197c6b3753fad110083ec675b9"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/49-ninth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "525566dece8f1081ae586100c73f2e60a8ec2f106dfec1ad5ca99ff89803bbee",
+      "upstream_json_sha256": "f074345edf7e2465352414017bfcccfb25cc7b4597f84d70fb6c5f2b79ac0580",
+      "current_markdown_sha256": "3142b10a419d66142b93e7b1cabcd37cc8b849d6aa47d973878d56b9f9528739",
+      "upstream_markdown_sha256": "dc3ca20ef6415476e79c3da970cc1edf51d43f635dc69253c85002f8d8206c06"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "72a6eea8fe5ed0ea36746f2ff98e4a9639d847315d475847cbbabf8dd867b383",
+      "upstream_json_sha256": "57e903c0939dc079a13277649154114ce4f9faa871e2184249ac7c7649d046eb",
+      "current_markdown_sha256": "1d3fb4c52c0702619f6ad4aa9c7a3e84a3767c06102b201af6664b27ebc19599",
+      "upstream_markdown_sha256": "c92cdcf28d7a3996ea2b72fc5c7a14324b844a6c686cb8b73b0ddd522e975b94"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/50-tenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "40aca6d061a18b1f800faa8ffb0ea64b6c984c5e648a9fee3c0be1df35e78143",
+      "upstream_json_sha256": "12abb64aca3836a8737d2dbad6278ca7955967108afad0a52a6b284753cdab24",
+      "current_markdown_sha256": "57476a4501a08ad0e9d3f91204ccf213699ded97ae0a7e8dc4ee88c0de18a517",
+      "upstream_markdown_sha256": "0bed8197b7f85b01522bf7cf583285977a27feb98a6b68b13f4c7c765a7a8b14"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "6e6da059d26ed9c6683632d1161b5e21f2386a262ca7dc21159436101ff994d5",
+      "upstream_json_sha256": "443a4dd917d70a7de6c4fd6b43d76834cc01ba888b13521f975f34d9af1b30e5",
+      "current_markdown_sha256": "bc251a135d01d8dbc4ecdd53bad09187252c75ff0e7142f5b59d749e46546829",
+      "upstream_markdown_sha256": "cc7824a3947f3eda968f89a229443d5b71652c3551bee366daaecf15ed8c59b0"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/51-eleventh-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "0c548100da2f84a87798f9a2d8427a1950ed4ba595083c1d5aa06f6331a702a8",
+      "upstream_json_sha256": "c3289e4d0c537b1ada54e2224c8107573bf0823161aee53dce3dc0c9443e1078",
+      "current_markdown_sha256": "320d0a620667e475aa4dca4ad49a7661bbf670c95ba16e33ff15b787b808ead2",
+      "upstream_markdown_sha256": "f3f7376f2b1295aae361b5db952b78d827d80d15a3b24f9cbd855b932a9895cf"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "55f1dec479454f4ddd12fe83dd4cd53b37ab46ed0c79b7052ef1af8a464d17a2",
+      "upstream_json_sha256": "e2c9e50f4b8d301eb75ef5fddcd8c6fd7342b24401ee8753ab1d1f980c399ad8",
+      "current_markdown_sha256": "39aea37fe8bf956ef9cbc947439cc0d52bd20d18173d86cc83be564269fe3ff9",
+      "upstream_markdown_sha256": "293c5b9567d6dbb73e6c13bdabdd63fc8f54442c3fe1809e4b6bfaf43a1efb3d"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/52-twelfth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "74c67e31065a6cedc4de9ee6ac557ecdf2f019e15aa52fea9b1db90e7815b30c",
+      "upstream_json_sha256": "b7f85ee7495470105a8e2af03ff4750ca06f512ec6ff5af6410ee05c5c27c947",
+      "current_markdown_sha256": "689ffa54df9f42439051f210d1fea896760f724e69102d5bfc6292c91b351d75",
+      "upstream_markdown_sha256": "335e6a0071ecd0ace23eb31906b37aa5fb916fa5a102b3a63e2d5f559942f2fd"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "6ca1dab373ec1673c8232d288dffd71cebeaa9ad09e15973276ecae3aece8e93",
+      "upstream_json_sha256": "f38028660aa77fd273379c8e3b9fcef4142db7e63b7578a2ad2b1293ed53c770",
+      "current_markdown_sha256": "1cf2146660ce025a7dbec40ed6f1dca2dc5157318968ac9c043182f46d2c8bd2",
+      "upstream_markdown_sha256": "04eb8e01a31562599be87d7ae6bcd60c9a7d5c8763954a388bc970f74ccf0e92"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/53-thirteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "fe6631254c30b0e648f412b76109c68126ec681f31f6049f41b1266a0ad90dbb",
+      "upstream_json_sha256": "5f3a3a8d32dc1c2c5927253c7d0ff44cd291a6875d9e09785c1377b2dac1a10b",
+      "current_markdown_sha256": "49945832f74afe87b67234369d4a775b8fb7c3fe6b3326f4f605af0aff8e3798",
+      "upstream_markdown_sha256": "9c56d00cd9938641bb05988706b7af9001fee606e49ea408198cc3e0d39ffab9"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "07347b6e0890222642c432d3189af1cd14eef29f433df6f069a19b984eeab15d",
+      "upstream_json_sha256": "e1f2cd80ce2ee5adebbc37ab9622d96d1ba89046eed5d72f92421012842645ad",
+      "current_markdown_sha256": "f9ee1651cd32821b2aaf1d826b22e8d66d4e831682c4d76e433fd863f35d8ede",
+      "upstream_markdown_sha256": "9ba1f9351245bbcd949f0e2ac0f85008f468694333ed38a7e03093b9531c360c"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/54-fourteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "ab696f3f567359b230e4f7492439c1f00dfe1d820f684f7b09d59dcee90b0d9b",
+      "upstream_json_sha256": "ff8c11dc9377304faf99224b8975f86349a1b15c7587f322ccee5e30bcba42ff",
+      "current_markdown_sha256": "bd7bdc88ec70103382f4f70f8d2fd7bb62bd5971ffd78821e541f05e8ae1a1c9",
+      "upstream_markdown_sha256": "a593cf8f15b415bf8b846dce707640603fb144be71d23db494342f151f028007"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "225f9a41c9b2236b83935fa4dd806e4480b25e4e91f3dde4987cde5831c4b1e4",
+      "upstream_json_sha256": "606bb6764407f21beada765027b3c50e3676e33fe02e8925a700f7b43625fbfc",
+      "current_markdown_sha256": "7cb1471c5fdffe082e04df68375c8b76fb5de5cf4eaf3c6c296bc93c294c3995",
+      "upstream_markdown_sha256": "0c236d607a85f73d65c0e92f04fcb8e4371520adcc52e6ddb61cf842e18d69b0"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/55-fifteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "8422b06a39a58e7d17a14e7eee41aff8336424a90e5faa7e6d5c99400a011bd1",
+      "upstream_json_sha256": "b6542713065ed8adc94fd5140139773a7bf27c75e1f3d24b119099612b3a70ec",
+      "current_markdown_sha256": "218d943f8eefae0f0365f5dc8a92b140d8dcab2ea6bf71974e901cb0b9f364bc",
+      "upstream_markdown_sha256": "dfba0f2caa2fd0a24968351c3481c2d1a4d079e2487dca6185917afd0dda054f"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "25d3657949dfff1caddaf36a6087c4efb072acedac70093dbd866261b0f0d53c",
+      "upstream_json_sha256": "6009af0b0bd7561ffc49a10030335f4c8e03a19df1b91257cf28e96e76e792a2",
+      "current_markdown_sha256": "cb6b0a91709f7e7d96ce24ccfa1ee2fcf4adf1e7fa3e5298d7d632bae97ba2f2",
+      "upstream_markdown_sha256": "1fb08c55f9f25e1e71a40dd511430960b9351ac4e5ae32a7cc4ef0725ae4375e"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/56-sixteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "689a788b3eb79bd120c124d1a1da1905040e40cbf1a0849983671b2c2e8a65b4",
+      "upstream_json_sha256": "9e2cd9eda02bae8026e8c01507b695b95b16f0fa48482270878081f95d4db38d",
+      "current_markdown_sha256": "70a9f9f1e738e5b582210158232c037c62528ee29500210ec33e01bcacc05c9b",
+      "upstream_markdown_sha256": "69f8005cc25d74ac02059f1fccc28461ce5aca0f9cc2b18fa46bea44aea7adfe"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "7fb0e01d5f2a2c083d2ac14d1f44cde2fa4a35160d3c79d22d7058950fec19c6",
+      "upstream_json_sha256": "82496a8f3f6b88dfda1acca0a030115f540b0186cfdc178f3fffdbdc5cdde92d",
+      "current_markdown_sha256": "8efa5c83a6b71998f77bde85b868f7f182ebf3e90d54d0869ea15ad7b237ef0f",
+      "upstream_markdown_sha256": "bd4a22d8f8c601e4f1ba14e9a9f05ef393bc1aa3635eb9168e26c5f02a561a9e"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/57-seventeenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "3f9170c6a0362f72bee5a445f62b454034d459ae47783059d10d9dbc6934593a",
+      "upstream_json_sha256": "b3758890b00a4dd0d6aa823c95374fd350859c25eaa9b63ec67d6ac856d95409",
+      "current_markdown_sha256": "bd0cd40f568057d8e6de5287b6957660cb5a9107d624d6e10b3d0bffe1916516",
+      "upstream_markdown_sha256": "12e19ef1c8ecfd582f848d75d6ba9c8c5fec074d6adbac34113413f012553eac"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "1afc1731bd8b44709887a599780684c7cacad1cd42d7457f3f95dd0e547d8818",
+      "upstream_json_sha256": "a073241262a1b3b7f4c63bb0aa87f50fb4f36528e13b82c89c55cb4dd3b9f324",
+      "current_markdown_sha256": "60282112ed32f1eee682fca3c4e7cfc52f00626b8b73ee58a2845a47e038ce74",
+      "upstream_markdown_sha256": "a68b8011ae906444df189412b4beb923f086eb51a74904098d43171a176ae2bc"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/59-nineteenth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "8bacd25acfd4691e140bb0a48d24d0c4b9b9c6c70a2e9b854c67922769462c40",
+      "upstream_json_sha256": "fac7247d712ee7d0697319bc1eb0fd6cfa327be0e39bafd366b80a74f29a8962",
+      "current_markdown_sha256": "655cdd9864ab109ff796f9d5d0ef44243247947dd3acfc89e708b2deb4275ef0",
+      "upstream_markdown_sha256": "97dfe6777dadada114c6f47071000e8774c49e5db2dbb4772269e4d59495ac86"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "d7fc7bfb914bfd2c442867f5e7b3d50d50117704aaaefe270624824ca25264b3",
+      "upstream_json_sha256": "dacadbb5a1f1ada689aa6a5f25deda9f1dfc6dc1ffefb8fea66fc7a3b512b502",
+      "current_markdown_sha256": "9ba71490def7566edfef217fafda1beb91d723482226c00306a0d5863893792c",
+      "upstream_markdown_sha256": "29d0a6ea789ee50809fe50bde3182d973e39f32b91828098717e5d489980fd7e"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/60-twentieth-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "03fb3b8597f49434c45ae994fe1ac277cbcb7474e1b65a11b543610786816f89",
+      "upstream_json_sha256": "d5eed348945e6a95efa5444c0cf64afcdfdc1c7dde61916e97896947a5afa890",
+      "current_markdown_sha256": "399810ecf94d8df7dff2813d7e93a0e44ff792a29771c787ce167238ea4fc67b",
+      "upstream_markdown_sha256": "f3ae099e9fa207288242a2150d1d69946d70f78526851e00b5024f97f2645b0d"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "6479953da70a1684dbb28828323b0377061dc12fe1d1b5ec7a0cded7b558be84",
+      "upstream_json_sha256": "19f50ca69587db5459b004699fef4d8aa81980efc9030bf6c4d3ca497a41c9f9",
+      "current_markdown_sha256": "da1a44a5265e94a2b93bacf0bbed7fd6ca9d2dd8e5bd674d309d5d688ecdb3cb",
+      "upstream_markdown_sha256": "1059559f4916caad35da490acdc0f955f4a64eb556293860b7e5259fc614f5a2"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/61-twenty-first-after-pentecost.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "258b621801ca7a9c7a7509ede0d3a94aed2ce9a8358af98b46de5b72a44e2e7a",
+      "upstream_json_sha256": "35622cb40dae0e459d8cf1ba8da335ffc82eb4b8c79127d6c38a0543ad2b031f",
+      "current_markdown_sha256": "6a141eedcad525db17e24cdd8f6ef7d4e763fe55e60266313e192c75eb9cb6ba",
+      "upstream_markdown_sha256": "94d5548483ef645582a51fa7b8dd471ffd8f6543820b515d241d6e8af5f4b46f"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "d9f7cbe03a3b5aa993da1a4f7ff0e2acc2bc9bf3db903fa174ac6a9123377ab1",
+      "upstream_json_sha256": "b112e5a07befd4a0c2070c4f17046f83cd5d0998a10c3dc96ea9273365e2161b",
+      "current_markdown_sha256": "0d51d92110be7e767fe397243e11f5c5049d8ec14a3748731e0ebba5d2d4eee8",
+      "upstream_markdown_sha256": "41ade8fb8e5ca4b0beb46c66298dfda70418b0a2ba5901127b0e63b82a77bca6"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "c9736d1bc25da892c0f03c5302a7838b9c4b9e31eb5ff8962ca37e79205c0ff6",
+      "upstream_json_sha256": "24bd68f603dab6a6d0499929763f64b9eaa72d32c42233bc0c4498412e319fdb",
+      "current_markdown_sha256": "a6b84e566c7fa41936214b28fd57c071e55aa6728c59cbdaa58f864e4d2f6531",
+      "upstream_markdown_sha256": "b734e5444551c67ef58349f3606bdc0e35461f0f9d5f6ff333e041a1902450a0"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "fdca54c29c3221e95b98b70eff97fed8c847d3dff138693b38d5ad45343b58c2",
+      "upstream_json_sha256": "4aa2f913baaa4ac2fd841ef6179ef8c571adcb8243a66e54650b2c50f859426c",
+      "current_markdown_sha256": "b7517a6d33d06fbdc042c4a0c195de0fb3c040358992e042da2dbacf78f8e106",
+      "upstream_markdown_sha256": "65308dc8aacf248e9f9e2fac318ff8b4ee759470f25bfcbf6cb0252e98b344c9"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "28dd56efbb362f20bc4b727ff7fd230eaf049b3648aeca579a5dca380174fe69",
+      "upstream_json_sha256": "2c0e5346e82429d77e23e0821846de9f6f35156730170589b347779f318ff78e",
+      "current_markdown_sha256": "456fc04df166738cb2ab930316df6ed0693d39da01cbc3f74b4b95c3e4a905c1",
+      "upstream_markdown_sha256": "58ab9203d4c071172ca173eb383d6eba296c188ab81a9990c61f6dddc1014c72"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "5a2e9d7874ceef3c88c234a00edcbaad116e99b77b770d02e60ee30e8c421691",
+      "upstream_json_sha256": "9ad4e05aade2fb1954d157cdd3bafcc71ddf5d2f787d058fd6b76a43f9738518",
+      "current_markdown_sha256": "3bdaf9cf4c6fb492f6a6fe7491a95eb2401cce5b9441d3012340677b0c4fc50e",
+      "upstream_markdown_sha256": "1b7d0ce2fce903df3adc12f65838c8d1cb4fc4297cc61d0f6fec58ace212e9c3"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/1962/propers/temporal/f02-all-saints.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "05da9c87c508574c7ccc6b091951d7a7a0495f96cff08bdb73721392b5dacf8a",
+      "upstream_json_sha256": "3ae9656f3d6bd65c0fc1b72094b060d3a4ab7599cfbd69c99adbd560469f3698",
+      "current_markdown_sha256": "8374890c1fdf95b4ccb8c285d4ec6e92825ce4212b0d6eea67a6a430a676862d",
+      "upstream_markdown_sha256": "49374a63899c8dfd9152e85831d5a31c3914d5b7c83c63878bdb7b6287422e1d"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "8ab2b0d4d6709706172f4e0993bca8d42e2abea04f89cba46e9c3e9170549b99",
+      "upstream_json_sha256": "7fa6928d4aa5547c2954825f1f5a076a2cafdb0e9d72852ad114f7f6c924c660",
+      "current_markdown_sha256": "0c4d84e64a40dd4e87dc2f7e7b2111ddf6afa7316b6cb0a9af99b288ecf1e49e",
+      "upstream_markdown_sha256": "131f82ea380abe4d5f9698fcb3a6afabf43fe02e678a5cfd34d6be815c709851"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/general-calendar/pc-r07-all-saints-abc.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "6b6a429b42727e7874998520e8bedd962f8d001e53d556a267932b384781db25",
+      "upstream_json_sha256": "d7897d028aeb1378d32a7f9faa0f56d5fa0d993c7cf37dc07caa74e5a900c4ab",
+      "current_markdown_sha256": "cee1c091b03e76f3ad11ecb6a425fe5aa59193087ec1edf9044d673526493e41",
+      "upstream_markdown_sha256": "50ac765bfeb3beb51801a2735e3eb61efcff3945e27e42e0826ba6847e5cf775"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s26-most-holy-trinity-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "a1792b2dd855b61f1805c0731869bb5ae0bbe31099ab7d91aa84527a5655de8f",
+      "upstream_json_sha256": "a59847de30c2a10ab1667fd7130bb3ce4188360c9a68dd4a599ffa354330ab79",
+      "current_markdown_sha256": "ca1a81e7722f4523f62efc4a543866e2bfa43a7432cd4ec8d7ba73faa463ea51",
+      "upstream_markdown_sha256": "769ac1deb5be3ea7ed0dc3ce9c57a797a0e422ff63c1e5cab846269e2e604558"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s27-most-holy-body-and-blood-of-christ-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "81ed7cf77d5fd36297cd178d066d31198cba34188f0715228e03b167e0ec51f8",
+      "upstream_json_sha256": "d00043c6bec67f94f1c321784f2467ddc5901624460eb968f6bf679a8c1c0463",
+      "current_markdown_sha256": "3241a66f0a5f5d785d42f5f624f85394af057441132b1eb70cab6e7a11246b2a",
+      "upstream_markdown_sha256": "ccb34d4e98a1bad346fc82a51d65b48db291619972a2eb8bf8a7c468b20884b8"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s37-eleventh-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "26cbe6deb8d4a79e00af1985aecfc591ce228e62ffb5a0f2d3c59f7b51ea18aa",
+      "upstream_json_sha256": "9849cd0ab25923b87c4fcf1d54cbd9afcaf43ac8837aa4bbccaac09ec827f85f",
+      "current_markdown_sha256": "7f65cd1e33059a24be02b901bdbc0782a21677a8f13e9ecaaba7d7264128980b",
+      "upstream_markdown_sha256": "e6e879944d38bf7c30830063066a186aa98d379a865da7d6f136ec1e3f481313"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s38-twelfth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "116b6a20e780d8db0a503ad1bee675fa575c4e13c3dcd34476acf61ed61f87ee",
+      "upstream_json_sha256": "82ab5a5c21f96ba121c320918b7a67763c3b06c1dd62820230640a93b0c323a1",
+      "current_markdown_sha256": "9e6552b270272c2ba6fb4876ad7587caa6b3456d0dbe57e289f6bb68be4dc89b",
+      "upstream_markdown_sha256": "d8c7d732a8d6e8a63243ab5a54b0d152c6453529b74b435f9afbb4a1a74dde28"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s39-thirteenth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "6f8431c786255529b5efcc26825443b498767546c0e07800d7893dcb3017c02c",
+      "upstream_json_sha256": "3ef8f315520d405274fd6ee5dfbbbd5b75dc0f3902b040409ab6648f6d1fd904",
+      "current_markdown_sha256": "827c129cdc6b89fc5292a566ee1783d8c76a28eb3189c67182ae46c7bf81e2e7",
+      "upstream_markdown_sha256": "2b82e3e7b8e5c1055ecdd96f16136177a1e3cb1a21667a3c13c5aaa5c20831ba"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s40-fourteenth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "bfd5f9d3a6cd0a0822fadeb97581b4920228441d8cdc0402bc77ec5de1a3498f",
+      "upstream_json_sha256": "d3f5912288e15a5e02e64b9c2f0c8fbd772b26a2e3e128edfd8bb5b31a5d6af7",
+      "current_markdown_sha256": "f85198b0faa16fa70802a04c66ceb0cf0725513827afd7b66642b5ecc2ccf0a3",
+      "upstream_markdown_sha256": "ab64551d5016373c7780a19bb43a134380f168aa01f49d6fa136eff0b649054f"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s41-fifteenth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "35e44d4cd898a6d662d940d07a2fd0b2e34ef82cb56ef22ff0166d3199b35e15",
+      "upstream_json_sha256": "11c78dd1266671895d044d635f718f3e9a1d66276bcac8b884f9e75a639bdceb",
+      "current_markdown_sha256": "b31d2c557023efa3cbaa472381d138412785566d3a8e6199f0a397888a29a3d0",
+      "upstream_markdown_sha256": "845125c6217c8b99c8c04971b9d273f80a06bdf6f4e8bb7f3ff1116de779249c"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s42-sixteenth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "6f6fa513d74f73e64ee1df83e0bb41ee6b7a196efe20a7625522b2ed68c8fbe4",
+      "upstream_json_sha256": "152489df568456aabb44951eedbe30fff4aa9a52f1d67f3dca655570fe14d137",
+      "current_markdown_sha256": "1e83ac605a310d929e6d468132556b2ff1960ed744c337d40b45d7bce05ecc2a",
+      "upstream_markdown_sha256": "abebbb7cca3a178d66f6716118b71219e42aaa26ef7728828879a5e40c083405"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "b3301a750c3730b2b4c40f7d53dadf574a78f5e75502d411bcc0e90a249d7015",
+      "upstream_json_sha256": "c48f73992384c33dc8338ab29ca46bdfd05be1175461c1ea23ebbd2b5b266be5",
+      "current_markdown_sha256": "a182f318fb1b0c0cc0af0c05b1c496815abc636dd43301abc3b40cc736cb9e60",
+      "upstream_markdown_sha256": "7a0960834beb6a915b19e8f7d6e0250826b4be6eda73ed54680c88fc71cd8b52"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s43-seventeenth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "beef96a1890f87d981ccc69bcc7ab88ce88e8d9909dd35a34b72480b7ae5d37b",
+      "upstream_json_sha256": "fe01bcd020d53725f4e2072608042e800841341f042c81cbdb738a29173d12fd",
+      "current_markdown_sha256": "f0e03144bbe05d11cb74988db159f3752474c46d9b1ff3ee8f9733545b4f2738",
+      "upstream_markdown_sha256": "c629c68e42ec16ae3f80df3881dbae94ac9c97b868e1477ba190741fb46d05ea"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "b08cc7d1eb1520cfea9a9e724356ffec587e9b40ca5c67990d2a2b0a320c08ef",
+      "upstream_json_sha256": "4e7e4ff37c80b9896e709e467b9c38c06319e3c0572b2aadffe8d89db91f2192",
+      "current_markdown_sha256": "23b8f04d1774220cb85f8ae6899626d834e22b178f29c5b3445fae67e89995b3",
+      "upstream_markdown_sha256": "d7b78da77da2a64576d4d7f538f762a9776770012f6d1e478d2c7971121265cf"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "cc652fd82c651a04bf66393f4b5df49d452d42cf39b8048787cc3d4157b50100",
+      "upstream_json_sha256": "9b5d234a626d1aadde781f382c872170d3237290d71437c182065778aaf3c25a",
+      "current_markdown_sha256": "cc4803b41c559f8a88e9eb3373ac745dd24480dc2c3f5bf8465bbb54a177ee9a",
+      "upstream_markdown_sha256": "9be9b80f3f4a31d7c56a427442c88ac0544fff21c0b655683f778333f409d77b"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "d0686b6b5a186db375ff51884584427a09db55fae6dc582e81c7787bef271cde",
+      "upstream_json_sha256": "6bac39779e4b4c2e891bd808d064d3ae9c4089115ba950eb9626ff56fa5ef9e4",
+      "current_markdown_sha256": "2705f4176d27c5f81b40f89d6ab0d1bdf81ae198446d0029de690ed256367799",
+      "upstream_markdown_sha256": "4b170d77985b72882c0297e38cf16e38ebcc6272aa9614a6b24d31b687fa5875"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-b.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "c5bdc1f15a6851adeec4e2154d5bead9b95e6ff97cf26454d99d795ca9dbfd9a",
+      "upstream_json_sha256": "c8c1952493823fcdd60b9762a89c3c13f9d1927cd894128552ed30e3bae6e8ae",
+      "current_markdown_sha256": "f6f243241304f44623f503519218f39db945ff4d889555dd587df61a7665eb4b",
+      "upstream_markdown_sha256": "a9b8408d0a3e537b82b9540c587e5be8844bae3e605e54b8174a92e7148612bd"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "2ace92b656ff8243d74d763573810ce672a3a67e9de456dd57cabb6767e3014f",
+      "upstream_json_sha256": "bd1eafbe22600f8ae0575531297c58023774c6466eb8b0e475849abb4d438428",
+      "current_markdown_sha256": "b32eaf200480b64ee4d4233ce04987672f931565627f80f9ad99b8932e753ce4",
+      "upstream_markdown_sha256": "d29694a01c3383ffb7d933a57c86f2b0d8af872cce53ee2c54322d8bbc0288af"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s44-eighteenth-sunday-in-ordinary-time-year-c.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T15:56:46Z",
+      "current_json_sha256": "e26d77b64908fbbbb4c89fe70593cb7f6679b5fe0ecb714fcdccc9c71af30f92",
+      "upstream_json_sha256": "a8344d05e90f0c70858f41ceab1a72af20bb534f6b37f812cfc1349739f26cd0",
+      "current_markdown_sha256": "a30aafb2a0d644d643cfb242b7a250d56e33aae72885dcee335c20f6b8fb177f",
+      "upstream_markdown_sha256": "4e7e43388980d91715d5bccd0e40ccd29b7ae426c71ef4a42836120ab692d574"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "5170d0f812b752d2358852b0d306e4d0e8989f806bfe6d5a56d5bf984bab91c1",
+      "upstream_json_sha256": "aa022f9ecc62c526f98760b61425d948b7c69878a290ddef337c41eea0bd51d6",
+      "current_markdown_sha256": "43f0d54c76f2b10abb4ad266052ab50deb22462aaf81fe4d843af5d1bab144d5",
+      "upstream_markdown_sha256": "44dce5b59c62b2a681c5dc79a45c2e4f7d6fc09cbe8ca6067a936b7ab30f5efd"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s51-twenty-fifth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "f4883497716a7efe30af45eaaf23c0e49cd357687731f33f4e64ce8d264ee339",
+      "upstream_json_sha256": "414122c64f53742bbd2dcf1cb6fb9053f92cccaadeeda5d6f2b7341bef8a9ce2",
+      "current_markdown_sha256": "c5e58226bd8c2296b5f2d808df389a8554af80e34d4a9ffb7ccc687289348ae5",
+      "upstream_markdown_sha256": "de524af7719b70f1f3812b80a9c5747cdeccf50f8c10d0a7458b8dc7f2b1c12b"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "d6e6c94bb7e6b07c6d1ac88b726cc1caa953ddd44abaac549f2f50b0c7f6970b",
+      "upstream_json_sha256": "9b8f82dd9585dbde7232930b7ef07405299a96f621115497dff2d18185343826",
+      "current_markdown_sha256": "97c7ccf79c2a30e164b5f8e795102f7baae315c9e21d844f29e4b48bb4bb824c",
+      "upstream_markdown_sha256": "b09c1bad31074ca24ffb4b46085b1577ad38790bf65a8ece998df06d296b0aa0"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s53-twenty-seventh-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "920d2efbc9c465ce27e17ca706fb9409ba6d89fe8dd8619d6a0e739bd0898cad",
+      "upstream_json_sha256": "f9fa3486a4314b809ea9cda294ae6ebdffa40b0b9b5979dabfa565c6da555805",
+      "current_markdown_sha256": "fc27ea8e1121a5282e272607c01f515bcb09a7ca418771fadb9ea854f6285425",
+      "upstream_markdown_sha256": "3668cab1e841fe67b0ed65659849a15a1cde70408f4d877014f1adea9a7f296a"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "6f7dd0794c238b5319b311196c98d5833a368e8f1837222d643eb7f753d7f909",
+      "upstream_json_sha256": "f223fed127a57717bc8a2fc2c7ca37a8ce50f13c9c5a85e60c1d57ebe998615b",
+      "current_markdown_sha256": "17b3ca49937ad03b821f777c32c8aa7e591b30b81cd8b8dec50b6c5586710ee0",
+      "upstream_markdown_sha256": "730cf275ddc3a751450864f07303c0bb8f785d780ba6721847e25c85b7db5751"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s54-twenty-eighth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "a31050d73a69498e28c80a4bda889ac0b0bc37a23ae31ac984bf516dd153c822",
+      "upstream_json_sha256": "99fb8d96b83803fe6609ee32b5ba5ecb232ec6323ff65f6a194549306c1cd9eb",
+      "current_markdown_sha256": "74df6f25936ea69dbd718c47d57c2eb3e0d4d574cae30ff05545ce3ef9002604",
+      "upstream_markdown_sha256": "8aab4032edc641e5ea6f9e53a37f427f7317e8a06ee810b5dd8e87f1fd522de7"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "10c884bc6ba321006f24adb257ba38d2cf0dccbd36a0c03e5da258032f0fab43",
+      "upstream_json_sha256": "d7cd98bba7ebe8d41929f35f0386c6be5da49c60ae1bf3c0646dd9c47aa7954c",
+      "current_markdown_sha256": "5334708d7597c11d1f9c513df97d47c67121784501d67bf2df4d7e57d94a3340",
+      "upstream_markdown_sha256": "3edd509e0fe634ee8bab13c4733ca13419c6fdbc366f4b421ae1c17bb0a0271a"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s55-twenty-ninth-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T18:09:00Z",
+      "current_json_sha256": "6eec00c666daf5373b96480b73d43e5d7a6dd46aa25d763a3fe9edb8fef88405",
+      "upstream_json_sha256": "7a2193326e8f1c6bb1dfa92e91e9d33b17c80e6f0aded1512cb53b83d9fa07dd",
+      "current_markdown_sha256": "4844b6f4cc7865975487b5177099491250d74a63756566413a18598559e8579d",
+      "upstream_markdown_sha256": "b6bfaa67a42fc42950b455b54e6839efb507fbaefe3e51db3f63ea1676e81acc"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T20:12:56Z",
+      "current_json_sha256": "7be844ca6aa3483e81ec14e32e158036e54d8a1c6eda19c2c6eccdb6bc2e6994",
+      "upstream_json_sha256": "1408701befd4ecda0ffd3a1b92fe336f259acac92ca0a2cc7f6bc5b5393eb7b8",
+      "current_markdown_sha256": "9c642c5e4e8d7b2339f5f4eb149b53864437aaaec5dd3a0084c7d45abfac6a9c",
+      "upstream_markdown_sha256": "e23c852a48d7a598b0ee4ebc23e4fc870f285af899d8e57b2bd620a8bdd9b809"
+    },
+    {
+      "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.json",
+      "current_timestamp": "2026-11-05T21:00:12Z",
+      "upstream_timestamp": "2026-11-05T20:12:56Z",
+      "current_json_sha256": "e31494eb31a6d8e35f64a4c4770797444cfbf39392c6b1a257caf38fef87f501",
+      "upstream_json_sha256": "6c60bc583dbaabf22e4775385f63f6074d4cc26a0f7cd141737cdf2d131952c8",
+      "current_markdown_sha256": "dd421a5b03716bde27cc48d5fa2f081648abe8d86ce632df344bc4f3ff819038",
+      "upstream_markdown_sha256": "9b75ec63ea9c2622b3646451c67e55ade5fda6391df35cc29fde027ff8f55565"
+    }
+  ],
+  "boundary": "Mechanical timestamp/content equality proof, not renewed content, source or print-layout approval for these pre-existing readers.",
+  "independent_review": {
+    "status": "pass",
+    "scope": "Mechanical revision metadata equality only; no renewed editorial, source, print-layout or deployment approval.",
+    "source_commit": "f1dd135c815644a7c13ba0914b5410220d9af18a",
+    "comparison_main": "19a7e266ec3e5f1a0e111575ddaf2063f5090986",
+    "product_key": "3464a76b60c60a9290c74c9c238ade0c7d6fe2b7ee91f1a18d9eeed18027c743",
+    "product_files": 270,
+    "unchanged_products_byte_identical": 164,
+    "changed_readers": 105,
+    "changed_reader_coverage_exact": true,
+    "all_current_files_match_current_descriptor": true,
+    "timestamp_pairs": {
+      "2026-11-05T18:09:00Z -> 2026-11-05T21:00:12Z": 84,
+      "2026-11-05T15:56:46Z -> 2026-11-05T21:00:12Z": 19,
+      "2026-11-05T20:12:56Z -> 2026-11-05T21:00:12Z": 2
+    },
+    "index_derived_hash_substitutions": 105,
+    "index_current_sha256": "e033fc69ba1976e3c70dc511322a61ed5efef3ae462ff044d54ea010f266ea56",
+    "index_reconstructed_upstream_sha256": "891334ca19d3bf49de18f33697734f9d5a01c7dbc0a2e149fad2446402c5b105",
+    "all_exact_upstream_json_reconstruction": true,
+    "reviewer": "final_cold_review",
+    "full_report_sha256": "0a4452d24ded97689b5ebd0c93a1c2868714460733d6fc4e8e5be052d93bd51c"
+  }
+}

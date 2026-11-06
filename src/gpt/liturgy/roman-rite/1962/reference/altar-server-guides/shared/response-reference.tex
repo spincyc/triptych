@@ -191,8 +191,25 @@ Evangelii secundum N.}}
 \DefineResponseCue{A22}{The Easter-octave dismissal ends
 \CanonLatin{alleluia, alleluia}.}
 
+% Keep each short sung lesson intact. The long Confiteor below instead keeps
+% its individual teaching parts intact, allowing breaks between those parts.
+\newenvironment{serverlessonunit}{%
+  \ifLowMassGuide\else\par\noindent\begin{minipage}{\linewidth}\fi
+}{%
+  \ifLowMassGuide\else\end{minipage}\par\fi
+}
+
+\newenvironment{serverlessonbox}[1]{%
+  \ifLowMassGuide
+    \begin{learnerbox}{#1}%
+  \else
+    \begin{learnerbox}[unbreakable]{#1}%
+  \fi
+}{\end{learnerbox}}
+
 \newcommand{\PrintServerAnswer}[1]{%
-  \begin{learnerbox}{\ServerTitleData{#1}}
+  \begin{serverlessonunit}
+  \begin{serverlessonbox}{\ServerTitleData{#1}}
   \small
   {\scriptsize\bfseries YOUR JOB}\quad \ServerJobData{#1}\par
   {\scriptsize\bfseries HEAR}\quad
@@ -204,7 +221,8 @@ Evangelii secundum N.}}
   {\scriptsize\bfseries SAY IT LIKE}\quad
   \SoundLine{\ServerSoundData{#1}}\par
   {\scriptsize\bfseries MEANING}\quad \ServerMeaningData{#1}\par
-  \end{learnerbox}%
+  \end{serverlessonbox}%
+  \end{serverlessonunit}
 }
 
 \newenvironment{servervoicetable}{%
@@ -241,14 +259,16 @@ model, not a claim that every competent singer has the same fine accent. Give
 every vowel its full sound, keep every syllable, and make the stressed syllable
 firm without doubling it.
 
-\begin{learnerbox}{Say these five sounds}
+\begin{serverlessonunit}
+\begin{serverlessonbox}{Say these five sounds}
 \textbf{a = ah}\quad \textbf{e = eh}\quad \textbf{i = ee}\quad
 \textbf{o = oh}\quad \textbf{u = oo}
 
 Point to each one and say it three times. Then try
 \CanonLatin{Amen}: \SoundLine{AH-mehn}. Capitals show the strong syllable;
 they are not extra letters to say.
-\end{learnerbox}
+\end{serverlessonbox}
+\end{serverlessonunit}
 
 \begin{center}
 \small
@@ -351,6 +371,7 @@ The Leonine Prayers are prayers after Low Mass, not part of the Order of Mass,
 and are outside all three guides.
 \end{coachbox}
 
+\ifLowMassGuide\else\Needspace{0.24\textheight}\fi
 \subsection{Sequence map: prayers at the foot of the altar}
 
 Where the ordinary Order taught here is otherwise applicable, the psalm and
@@ -379,6 +400,7 @@ book and the master of ceremonies.
 \servervoicerow{\CanonLatin{Dominus vobiscum.}}{A13}{S}{QT}{SM}
 \end{servervoicetable}
 
+\ifLowMassGuide\else\Needspace{0.24\textheight}\fi
 \subsection{Sequence map: from the Kyrie through the Last Gospel}
 
 \begin{servervoicetable}
@@ -667,6 +689,7 @@ Father, to pray for me.}
   {\scriptsize\bfseries COMPLETE RESPONSE}\quad
   {\footnotesize\CanonLatin{\SpokenResponse{\ServerLatinData{A8}}}}\par
   \smallskip
+  \begin{serverlessonunit}
   {\scriptsize\bfseries LEARN IT IN THREE PARTS}\par
   \textbf{1. I confess.}\quad
   {\footnotesize\CanonLatin{\AightOneLatin}}\par
@@ -675,7 +698,9 @@ Father, to pray for me.}
   {\scriptsize\bfseries SAY IT LIKE}\quad
   {\scriptsize\SoundLine{\AightOneSound}}\par
   {\scriptsize\bfseries MEANING}\quad \AightOneMeaning\par
+  \end{serverlessonunit}
   \smallskip
+  \begin{serverlessonunit}
   \textbf{2. Because I sinned, I begin to ask.}\quad
   {\footnotesize\CanonLatin{\AightTwoLatin}}\par
   {\scriptsize\bfseries LATIN CHUNKS}\quad
@@ -683,14 +708,17 @@ Father, to pray for me.}
   {\scriptsize\bfseries SAY IT LIKE}\quad
   {\scriptsize\SoundLine{\AightTwoSound}}\par
   {\scriptsize\bfseries MEANING}\quad \AightTwoMeaning\par
+  \end{serverlessonunit}
   \smallskip
+  \begin{serverlessonunit}
   \textbf{3. I finish the petition.}\quad
   {\footnotesize\CanonLatin{\AightThreeLatin}}\par
   {\scriptsize\bfseries LATIN CHUNKS}\quad
   {\scriptsize\ServerLearnerLine{\AightThreeLearner}}\par
   {\scriptsize\bfseries SAY IT LIKE}\quad
   {\scriptsize\SoundLine{\AightThreeSound}}\par
-  {\scriptsize\bfseries MEANING}\quad \AightThreeMeaning
+  {\scriptsize\bfseries MEANING}\quad \AightThreeMeaning\par
+  \end{serverlessonunit}
   \end{learnerbox}%
 }
 

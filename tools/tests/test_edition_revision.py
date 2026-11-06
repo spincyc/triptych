@@ -77,6 +77,52 @@ class Fixture(unittest.TestCase):
 
 
 class ClosureAndHistoryTests(Fixture):
+    def test_explicit_leaf_relative_render_data_is_part_of_the_revision(self) -> None:
+        document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
+        leaf = "src/claude/" + document
+        self.write(leaf + "/main.tex", GENERATED + "\\input{doc/sections/body}\n")
+        self.write(leaf + "/publication.toml",
+                   '[[structure]]\nrole = "object-records"\nsource = "objects/*.toml"\n')
+        record = leaf + "/objects/chalice.toml"
+        self.write(record, 'description = "Original data"\n')
+        self.commit("declare leaf-relative render data")
+        self.write(record, 'description = "Corrected definition"\n')
+        edited = self.commit("correct the rendered object")
+        value = self.derive(document)
+        self.assertEqual(value.timestamp, stamp(edited))
+        self.assertIn(record, value.closure)
+
+    def test_derived_dictionary_render_data_revises_a_minimal_manifest_edition(self) -> None:
+        owner = "src/claude/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+        leaf = owner + "/altar-server"
+        document = leaf.removeprefix("src/claude/")
+        self.write(leaf + "/main.tex", GENERATED + "\\input{" +
+                   owner.removeprefix("src/claude/") + "/shared/body}\n")
+        self.write(owner + "/shared/body.tex", "Dictionary shell.\n")
+        # These roles are supplied by the owning schema, so a minimized
+        # publication manifest deliberately carries none of them.
+        self.write(leaf + "/publication.toml", "# All structure roles are derived.\n")
+        paths = [owner + "/shared/schema/inventory-schema.toml",
+                 owner + "/shared/schema/edition-selections.toml",
+                 owner + "/shared/objects/chalice.toml",
+                 owner + "/research/artwork-manifest.toml"]
+        for path in paths:
+            self.write(path, 'description = "Original data"\n')
+        self.commit("create dictionary")
+        self.write(paths[2], 'description = "Corrected chalice definition"\n')
+        edited = self.commit("correct the rendered object")
+        # Generated entrypoints and common templates still cannot move stamps.
+        self.write(leaf + "/main.tex", (self.root / (leaf + "/main.tex")).read_text() +
+                   "% template change\n")
+        self.write("src/common/dictionary-template.tex", "% typesetting only\n")
+        self.commit("retune dictionary template")
+        value = self.derive(document)
+        self.assertEqual(value.timestamp, stamp(edited))
+        self.assertTrue(set(paths).issubset(value.closure))
+        self.assertNotIn(leaf + "/publication.toml", value.closure)
+        self.write(paths[1], 'description = "Changed selection"\n')
+        self.assertTrue(self.derive(document).uncommitted)
+
     def test_shared_projection_revises_only_editions_reading_it_without_refresh(self):
         self.write("src/common/document-types/fixture-v1/type.toml", '''schema = 1
 record_type = "document-type"
@@ -120,7 +166,9 @@ body = ["sections/homily"]
             NAME="fake", OUTPUTS={"page": "generated/date.tex"},
             render=lambda context: {"generated/date.tex": dates.read_text()},
             dependencies=lambda context: {dates, generator})
-        with patch("_document_types.discover_projections", return_value={"fake": projection}):
+        # This projection fixture has no registered publication genre or render data.
+        with patch.object(revision, "_render_data", return_value=set()), \
+                patch("_document_types.discover_projections", return_value={"fake": projection}):
             with patch.object(projection, "render", wraps=projection.render) as render:
                 self.assertEqual(self.derive().timestamp, stamp(adopted))
             self.assertEqual(render.call_count, 1)
@@ -146,6 +194,56 @@ body = ["sections/homily"]
             self.assertEqual(self.derive("doc-homily").timestamp, stamp(self.first))
             generator.write_text("# clearer date prose generator\n")
             self.assertTrue(self.derive().uncommitted)
+
+    def test_dictionary_notes_revise_only_editions_using_the_selected_source_metadata(self):
+        owner = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary"
+        self.write("src/common/document-types/sanctuary-dictionary-v1/type.toml", '''schema = 1
+record_type = "document-type"
+id = "sanctuary-dictionary-v1"
+description = "Dictionary note revision fixture"
+kinds = ["pictorial-dictionary"]
+[editions.main]
+role = "canonical"
+template = "main.template.tex"
+entrypoint = "main.tex"
+fields = ["selection"]
+regions = ["body"]
+''')
+        self.write("src/common/document-types/sanctuary-dictionary-v1/main.template.tex", "%@ region body\n")
+        self.write("tools/render-sanctuary-dictionary", '''def edition_source_note_inputs(root, owner, selection_id):
+    return {root / "src/sources" / (selection_id + ".toml")}
+''')
+        for leaf in ("altar-server", "sacristan"):
+            base = "src/claude/" + owner + "/" + leaf
+            self.write(base + "/main.tex", GENERATED)
+            self.write(base + "/body.tex", "Dictionary body.\n")
+            self.write(base + "/publication.toml", '''[document]
+type = "sanctuary-dictionary-v1"
+[document.main]
+selection = "''' + leaf + '''"
+body = ["body"]
+''')
+            self.write("src/sources/" + leaf + ".toml", 'title = "Original source title"\n')
+        original = self.commit("create selected source notes")
+        note = "src/sources/altar-server.toml"
+        other = "src/sources/sacristan.toml"
+        self.write(note, 'title = "Corrected source title"\n')
+        self.assertTrue(self.derive(owner + "/altar-server").uncommitted)
+        other_value = self.derive(owner + "/sacristan")
+        self.assertFalse(other_value.uncommitted)
+        edited = self.commit("correct a rendered source title")
+        value = self.derive(owner + "/altar-server")
+        self.assertEqual(value.timestamp, stamp(edited))
+        self.assertIn(note, value.closure)
+        self.assertNotIn(other, value.closure)
+        self.assertIn("tools/render-sanctuary-dictionary", value.closure)
+        self.assertEqual(self.derive(owner + "/sacristan").timestamp, stamp(original))
+        generator = self.root / "tools/render-sanctuary-dictionary"
+        generator.write_text(generator.read_text() + "# revised note rendering\n")
+        self.assertTrue(self.derive(owner + "/sacristan").uncommitted)
+        (self.root / note).unlink()
+        with self.assertRaisesRegex(revision.RevisionError, "source-note input is missing"):
+            self.derive(owner + "/altar-server")
 
     def test_the_stamp_is_the_last_commit_to_the_editions_own_sources(self) -> None:
         self.assertEqual(self.derive().timestamp, stamp(self.first))

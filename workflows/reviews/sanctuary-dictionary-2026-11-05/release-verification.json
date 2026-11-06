@@ -1,0 +1,863 @@
+{
+  "schema": "triptych-sanctuary-dictionary-release-review/v1",
+  "status": "pass-within-recorded-review-scope",
+  "source_commit": "f1dd135c815644a7c13ba0914b5410220d9af18a",
+  "dictionary_content_commit": "b5baadeaa747750e20eb82eac371be4a0b6cd188",
+  "scope": "Thirteen outgoing guide, card and dictionary native proofs; mechanical revision-transfer equality for 105 existing readers and bounded incoming PC-S58 desktop/mobile terminal checks; exact local product identity and the emitted site at the recorded source commit with pinned release-record overlay. This receipt records no main publication, CI result, or full 647-edition native deployment proof.",
+  "environment": {
+    "python": "3.14.9",
+    "Markdown": "3.10.3",
+    "PyYAML": "6.0.3",
+    "requirements_public_alpha_sha256": "59bd4c5252324612c6ce5a27f4a4ba4e62aa4cc76bc3d974a29b45491c97c762",
+    "requirements_tools_sha256": "0969da99a0bc2a1b71ed50584560f4588a37567ac63af3ddbaf3c4617ca5621a",
+    "gallery_tests": "All 15 methods pass: 11 initially, four methods (five missing-Markdown error instances) rerun successfully with the pinned interpreter."
+  },
+  "native_compile": {
+    "status": "pass",
+    "editions": 13,
+    "pages": 255,
+    "passes": {
+      "2": 13
+    },
+    "runtime": "wasmtex-2026-47ff73bab1a2e548",
+    "runtime_manifest_sha256": "21b64bdfb58d20045ce940af42f0723e8cf5d6f20693d24ba343085cb7d9369d",
+    "toolchain": {
+      "pdflatex": "pdfTeX 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux)"
+    },
+    "runtime_fonts_located": 29,
+    "runtime_fonts": 29,
+    "runtime_members_with_other_host_bytes": [],
+    "editions_receipts": [
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass",
+        "status": "pass",
+        "pages": 28,
+        "passes": 2,
+        "pdf_sha256": "ed57ecf7c347f7f00c21cd011c9ffc8825e6cb6913d2023ade71bf800f34405e",
+        "bundle_sha256": "ca853e915e5b29ee372dfdea4dc90b1a8c6eae6157865e8f177e17d8d6e2bfe7",
+        "render_sha256": "5d014443e663acaa766a5019c4ff3aec0ee955f3ff9c86b95d64cc488d0e04f5",
+        "closure": {
+          "bundle_files": 156,
+          "bundle_files_opened": 23,
+          "runtime_members_opened": 247,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "ed57ecf7c347f7f00c21cd011c9ffc8825e6cb6913d2023ade71bf800f34405e",
+        "pdf_bytes_identical_to_reviewed": true,
+        "changed_pages_from_reviewed": [],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 8075645,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass.html",
+        "print_page_sha256": "332e6cd2b96fb711ccd004463d5ca0f7d66fa732068d4c1cdda9f7993f684216"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual",
+        "status": "pass",
+        "pages": 28,
+        "passes": 2,
+        "pdf_sha256": "7c98d75ef4f584c66bb8e9cdb0d081ecbf33b6cab9f36f18fadf9ff76c58a6c2",
+        "bundle_sha256": "6a21fcaaecddf9f7f50e90fb17a75cc6374dfa0ca25ba78c6d05c00b2946475e",
+        "render_sha256": "80f0ff8b884ae6f5a0a55ae35d531533c8fcd77b83be7b10ac482b69aaab4a6f",
+        "closure": {
+          "bundle_files": 156,
+          "bundle_files_opened": 23,
+          "runtime_members_opened": 247,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "7c98d75ef4f584c66bb8e9cdb0d081ecbf33b6cab9f36f18fadf9ff76c58a6c2",
+        "pdf_bytes_identical_to_reviewed": true,
+        "changed_pages_from_reviewed": [],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 8091618,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-trainer-manual.html",
+        "print_page_sha256": "8bc73475e4b5088adab8fc56b3bae467414919a35d9d158b90d4b08170c6d4ac"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards",
+        "status": "pass",
+        "pages": 7,
+        "passes": 2,
+        "pdf_sha256": "5ec572dde24a4469504e51588d56e739d16aef2fc3471275649afa5faf501a16",
+        "bundle_sha256": "02fc2b91a338565f71b7ee54e75b8e1b37c8178df2edfd01d6e9a8980488f1f5",
+        "render_sha256": "36f7f9b7f7f5b83a05ae1f95697e4c714b24d55f5e2c6d25cd963118fa6cb2d4",
+        "closure": {
+          "bundle_files": 144,
+          "bundle_files_opened": 8,
+          "runtime_members_opened": 219,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "5ec572dde24a4469504e51588d56e739d16aef2fc3471275649afa5faf501a16",
+        "pdf_bytes_identical_to_reviewed": true,
+        "changed_pages_from_reviewed": [],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 353584,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/01-low-mass-flash-cards.html",
+        "print_page_sha256": "e843749574e0a9b9ad54a5ba799534db9a5806852f9e7c0d671d6fc5fa9b0b7e"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards",
+        "status": "pass",
+        "pages": 13,
+        "passes": 2,
+        "pdf_sha256": "5c7a97fd1397c87b4f5da4118e9a76b46d938154fad9822295fe51c56747d7af",
+        "bundle_sha256": "4641954afb8f80cbce4657ae1a7ab41c935b23a7f80f153bc5f1b353226cd409",
+        "render_sha256": "76ad6abd97af611bbc325fbf6b104e23ddb9d2b5b8b6ad148f0feb79b8b40242",
+        "closure": {
+          "bundle_files": 142,
+          "bundle_files_opened": 7,
+          "runtime_members_opened": 249,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "5c7a97fd1397c87b4f5da4118e9a76b46d938154fad9822295fe51c56747d7af",
+        "pdf_bytes_identical_to_reviewed": true,
+        "changed_pages_from_reviewed": [],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 634334,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata-cue-cards.html",
+        "print_page_sha256": "e7a4d9ed9a3e051178567933f4d25a823b3654db61005b713c7e16ebedc715ca"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata",
+        "status": "pass",
+        "pages": 36,
+        "passes": 2,
+        "pdf_sha256": "a922033e5da1901e82cbc926a82c3d51233f10553fb72910f0b3bdbc2f3b6c24",
+        "bundle_sha256": "c07018fa892c974888bbd2f1e95e4f9447570fca6f765b97558ea3479b5ed650",
+        "render_sha256": "c2961900183b0c48964b6914bae2478c9bcb67b33d1507d1c675b2c9300577d9",
+        "closure": {
+          "bundle_files": 149,
+          "bundle_files_opened": 17,
+          "runtime_members_opened": 265,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "a922033e5da1901e82cbc926a82c3d51233f10553fb72910f0b3bdbc2f3b6c24",
+        "pdf_bytes_identical_to_reviewed": true,
+        "changed_pages_from_reviewed": [],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 3105970,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/02-missa-cantata.html",
+        "print_page_sha256": "c8d2eaafa243398391d7ae2d6e4b442446eacd8101de82c7cc8057072ea76993"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass",
+        "status": "pass",
+        "pages": 31,
+        "passes": 2,
+        "pdf_sha256": "45b1048dd99ee707525121eabe5ba9de59dd6c238015b3dc113b9229eed8339d",
+        "bundle_sha256": "14c61bd5b5c4ba90fb9581527561876433bbef9d08c5bcf2f616aab54a1a7977",
+        "render_sha256": "a42bb9d24e2e46db25e429f4be88cf67c8b36e9a8aeb6b730c63cc17c39b9461",
+        "closure": {
+          "bundle_files": 149,
+          "bundle_files_opened": 17,
+          "runtime_members_opened": 260,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "45b1048dd99ee707525121eabe5ba9de59dd6c238015b3dc113b9229eed8339d",
+        "pdf_bytes_identical_to_reviewed": true,
+        "changed_pages_from_reviewed": [],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 3805813,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass.html",
+        "print_page_sha256": "8397d9f96871f67ba6b00913f9e46efef6bf310e3e7de41697cebaf85395da23"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards",
+        "status": "pass",
+        "pages": 12,
+        "passes": 2,
+        "pdf_sha256": "90519e45d61f824673cc5d2c31fbeec57b52f9876d9eed0efbdd34eaccac9a2d",
+        "bundle_sha256": "d9683905d2f29988ba5dd8ec231c89142bd40dcb2d907309fc0defaf6723e679",
+        "render_sha256": "8373b1c04850a1a9a848fa8f785522bc669831d52ccea1fb323afb68c5a1c859",
+        "closure": {
+          "bundle_files": 142,
+          "bundle_files_opened": 7,
+          "runtime_members_opened": 249,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "90519e45d61f824673cc5d2c31fbeec57b52f9876d9eed0efbdd34eaccac9a2d",
+        "pdf_bytes_identical_to_reviewed": true,
+        "changed_pages_from_reviewed": [],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 636773,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass-cue-cards.html",
+        "print_page_sha256": "fb7846956095b4988d8328ee0cd9e9b54f0fd5da79c6ab0a53263c4886e0d341"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server",
+        "status": "pass",
+        "pages": 14,
+        "passes": 2,
+        "pdf_sha256": "378daea168f5405b8523dde6299d8aa4fbd4a4ec7d8f87b596d8ef045b4c5e46",
+        "bundle_sha256": "79a6c7e976b5f27c4c590a0f01deae3ae45c3884d60868674454363956e67604",
+        "render_sha256": "8def78e9042c0176293317ede7cd8d85c9e234c6b2e29333b4240a1a7d1e0b78",
+        "closure": {
+          "bundle_files": 206,
+          "bundle_files_opened": 64,
+          "runtime_members_opened": 227,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "12914d86260d6d6efcfb2fb1c58dcc9cfd8b7ce4e94775affdac981522343db6",
+        "pdf_bytes_identical_to_reviewed": false,
+        "changed_pages_from_reviewed": [
+          14
+        ],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 27275592,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.html",
+        "print_page_sha256": "4e82db13cbbcd9f03866dc2311e41c170c479816567929d816044ea78fb0c3b3"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive",
+        "status": "pass",
+        "pages": 21,
+        "passes": 2,
+        "pdf_sha256": "2bf31c6d246870a5524ee7a9924a42a5e39fa160a862cc8c2567eec77343fafa",
+        "bundle_sha256": "d98f5968747de8e312d30bcb60891227511c138ee1e23d52172a5b1581afaf6a",
+        "render_sha256": "7e0427d0025ad89b96fe90e33cba65ece8e408258eb24f355f26651613a58af0",
+        "closure": {
+          "bundle_files": 219,
+          "bundle_files_opened": 77,
+          "runtime_members_opened": 231,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "52ccf0670077634ac1d3ba65f846175a4662d99ee20353f2a4a711ea49e57002",
+        "pdf_bytes_identical_to_reviewed": false,
+        "changed_pages_from_reviewed": [
+          21
+        ],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 35143484,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.html",
+        "print_page_sha256": "d9f5867f9c30c4ea09038f4340876efc8e4260decd298679fdfe72d190a0d930"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader",
+        "status": "pass",
+        "pages": 15,
+        "passes": 2,
+        "pdf_sha256": "c93055d4ad76c60ab92e07cffe0cb68ce9b3ab678775bd4e975d2f8c904471dd",
+        "bundle_sha256": "0bfc0622943934cf54965c6fa2e1634c2d8d23a7c57e90044373b66b7cd19c90",
+        "render_sha256": "fa753de1703893521610a0e202118e800996fe4762b2d0f842eb66226b45b58f",
+        "closure": {
+          "bundle_files": 207,
+          "bundle_files_opened": 63,
+          "runtime_members_opened": 233,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "d1a73ea89ef0764e313647b66a270240ddd75947dfc89c6c4fb76af558fec3d6",
+        "pdf_bytes_identical_to_reviewed": false,
+        "changed_pages_from_reviewed": [
+          15
+        ],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 27105392,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.html",
+        "print_page_sha256": "36a2ef92668015493c8f47a2f81a76e87c423260326bfcc3a14d378ef392ef78"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer",
+        "status": "pass",
+        "pages": 14,
+        "passes": 2,
+        "pdf_sha256": "76263ccf7831ecbdf2436d2dec4324f8ad4f7b179ce77d0db2d3f4013499230c",
+        "bundle_sha256": "43ba0374b21d068571b586ed76a272d031cb1c50387dd867fc87a63a762282f2",
+        "render_sha256": "02de2ffdce22b19f92073537eb35c75d88b0258f6ed41624bb3526e31b1dd933",
+        "closure": {
+          "bundle_files": 207,
+          "bundle_files_opened": 65,
+          "runtime_members_opened": 230,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "30a5bac53e748e12334b11b332abd94c292ae05381e46316d93e5d88bb007931",
+        "pdf_bytes_identical_to_reviewed": false,
+        "changed_pages_from_reviewed": [
+          14
+        ],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 27458822,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.html",
+        "print_page_sha256": "c0f83c6f41c7b30ae7ddc97272cdd57a2f9e004b1183ff67949542656def1c3a"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies",
+        "status": "pass",
+        "pages": 20,
+        "passes": 2,
+        "pdf_sha256": "f9914bcf0753edfb7aa4f8b31fec1f55b644935e23549024730f26ec9268cb9f",
+        "bundle_sha256": "af0c098761f92b2ee6d9362d7754708176468e61645bc1a6b31625b78726438a",
+        "render_sha256": "2ed0cbaf7e2eaed4c87a3f2f9bae38d2348fafb399fd6da386895d66d2368253",
+        "closure": {
+          "bundle_files": 217,
+          "bundle_files_opened": 75,
+          "runtime_members_opened": 234,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "922c3390a7f4adc63c112c57ad0947b1c225623e804be791e28126ba1707167c",
+        "pdf_bytes_identical_to_reviewed": false,
+        "changed_pages_from_reviewed": [
+          20
+        ],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 34291247,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.html",
+        "print_page_sha256": "573baf3a2e57728356691da5ca5a8c79ac970b5c2b49bf549e4056193851c094"
+      },
+      {
+        "id": "publication:gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan",
+        "status": "pass",
+        "pages": 16,
+        "passes": 2,
+        "pdf_sha256": "bdd655e50585f31c3f3af99479f0b31e0d83dce77bfc9f7b653837fd981aa258",
+        "bundle_sha256": "72e3036b43c25cbc6944e6f75d893390387d24af4c4c4a1e420c83365704967b",
+        "render_sha256": "d322cf3859a7f176275900897af07964202c1e57d30cb7a79f8889c561886d7e",
+        "closure": {
+          "bundle_files": 207,
+          "bundle_files_opened": 65,
+          "runtime_members_opened": 233,
+          "runtime_members_with_other_host_bytes": []
+        },
+        "reviewed_pdf_sha256": "2393b5f0f7213a62d6925840370fd9df97584bcbdbb4f95a6356aed5e1aa82f7",
+        "pdf_bytes_identical_to_reviewed": false,
+        "changed_pages_from_reviewed": [
+          16
+        ],
+        "changes_outside_revision_line": [],
+        "pdf_bytes": 27501033,
+        "print_page": "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.html",
+        "print_page_sha256": "502aea04e81955013aec9e24050b720efaa821b50fb62b8076e7a58613bd5878"
+      }
+    ],
+    "transport_boundary": "Exact bundle transport bytes named by the emitted print pages, with every URL asset and compressed source pack verified before isolated materialization.",
+    "source_commit": "f1dd135c815644a7c13ba0914b5410220d9af18a",
+    "mounted_inputs_equal_prior_compile": true,
+    "summary_sha256": "87d20a1683726d8906120c962bad85a40eb7c03d9820a6112447115c47f16705"
+  },
+  "pdf_comparison": {
+    "status": "pass",
+    "guide_baseline_source_commit": "ff89fdfae225a24e4cfe35832a38ab802e113d23",
+    "guide_card_pdf_byte_identity_count": 7,
+    "dictionary_pages": 100,
+    "boundary": "Seven guides/cards match accepted committed baseline PDF bytes exactly. Six dictionaries match all extracted lines and all grayscale pixels at 110 dpi outside only the Last revised (UTC) line bounds, expanded by two pixels. The six changed terminal pages were separately inspected by the coordinator.",
+    "comparison_proof_commit": "0e59a17a916254af6f9a5a3e75c1447eca042c0d",
+    "current_proof_transfer": "All thirteen current PDFs and render identities exactly equal the compared proof. Current source-bundle transport hashes were recorded anew.",
+    "coordinator_terminal_inspection": {
+      "status": "pass",
+      "pages": {
+        "altar-server": 14,
+        "comprehensive": 21,
+        "general-reader": 15,
+        "mc-trainer": 14,
+        "pontifical-ceremonies": 20,
+        "sacristan": 16
+      },
+      "findings": "Committed timestamp visible without uncommitted marker; references and complete rights notice fit; no collision, clipping or new spill."
+    }
+  },
+  "owned_selection_checks": {
+    "status": "pass",
+    "selections": 13,
+    "metadata": 13,
+    "source": 13,
+    "content": 13,
+    "owning_generation_gate_executions": 26,
+    "report_sha256": "a7af4a80a5da18dcb700ce23206619eb7fc50068f96aafbdde05eb091687dc04",
+    "source_commit": "0e59a17a916254af6f9a5a3e75c1447eca042c0d",
+    "transfer_boundary": "Selected guide/dictionary source trees remain unchanged; final served-input equality and fresh selected compilation are recorded separately."
+  },
+  "source_maintenance": {
+    "status": "pass",
+    "command": "make check-sources",
+    "log_sha256": "3770bf27aa3641c8a1c2ebb04c6b054ffc1f9cb00ff3f47439797f5f2c8df430",
+    "family_migration": {
+      "families": 0,
+      "review_units": 166,
+      "screened": 0,
+      "pending": 166,
+      "atomic_citation_coverage": false
+    },
+    "merged_inventory_checks": {
+      "status": "pass",
+      "publications": 154,
+      "source_surface_files": 3619,
+      "families": 0,
+      "review_units": 166,
+      "screened": 0,
+      "pending": 166,
+      "canonical_source_work_tree_unchanged_from_ours": true,
+      "classifications_unchanged_across_parents": true
+    },
+    "historical_scope": "Standalone make check-sources covers the frozen dictionary/guide/source changes and refreshed source inventories corresponding to source checkpoint b5baadeaa747750e20eb82eac371be4a0b6cd188. It was not rerun at the top-level final site source_commit. Current merged inventory/family-ledger validation and the combined deployment-source gate at 63d7d94867 are recorded separately."
+  },
+  "chronology_probe_fix": {
+    "status": "pass",
+    "scope": "Only expected ChronologyWiringError is formatted as its unchanged qualified last error line and exit status 1. Unexpected exceptions retain tracebacks; unavailable appointment output remains explicitly pending.",
+    "regressions": 3,
+    "independent_review": "Cold reviewer and coordinator accepted the exact exception boundary; the cold reviewer independently checked success JSON, typed refusal, and unexpected traceback in subprocesses."
+  },
+  "bounded_outgoing_disclosure": {
+    "review_commit": "0e59a17a916254af6f9a5a3e75c1447eca042c0d",
+    "comparison_main": "4bcc8c80fe7b2a8c3e5f6c96f38fbe4feb702644",
+    "changed_paths": 170,
+    "binary_paths": 28,
+    "binary_scope": "Project-created guide/dictionary PNGs covered by the two artwork manifests",
+    "changed_source_work_paths": 27,
+    "source_work_scope": "TOML metadata only: 26 new records and the prior Missal locus repair; no evidence PDF, download or runtime payload bytes."
+  },
+  "browser_products": {
+    "bytes": 227505481,
+    "family_keys": {
+      "act-history": "a4991e4c5f48d082efefecaea8a9c4b950d27f4b60ad9cce2a42ea2e31550904",
+      "bibles": "d5f47765762ac8893ccbbc980a7eb513d6177bdcd84cc9ecef65b282690da2be",
+      "calendar": "e124a20c74f72bf708836ef930482b9f96d0b1ba0601e08e6c4882505132403f",
+      "catena": "c5fa060c0d6ad613a5dd25428c9a605d3569d08a5c6f7763ac328b63ad693847",
+      "documents": "05de641ed82cb077daa5e53e3148aa69a32989bdabe0b1c9dd5b26efe579b8a6",
+      "encyclicals": "d15747a0bf53c3373906c95f688b5c5c30514bbd71ea8746c0fd6ba62c859ef7",
+      "ordinary": "df3932c89834664fd1f54a57b519c11f6dd8783aee1b95d1172a650fcef4263a",
+      "paragraphs": "09f4d896e54593acf63d503501d27ecacfa30a4df81ab40c5a09cc1d08635385",
+      "propers": "8966e2e8630f4b6a77db3bb3d05f8eea9f489da3dc36678df178b8d3ea9cf73c",
+      "readings": "6b411107ac6d33fc357d7bf1b34044c0bb3ed7b9daa250e9b678187327a6c6f1",
+      "rubrics": "ad38864d6b78b75fe6c0333ab9083d5da4fc3cba4c8ef19eb216730f38a581f3",
+      "sources": "cc5e91cace97e5361fc42b270a815e9652fbebbb6afd478654b2b369e2d7aa7e",
+      "web-editions": "3464a76b60c60a9290c74c9c238ade0c7d6fe2b7ee91f1a18d9eeed18027c743"
+    },
+    "files": 27697,
+    "products": 13,
+    "products_identity": "c06a735a8f2e2213e4fb609de757e6b9557bde23883aace399befe00d5291c1f",
+    "status": "ok",
+    "record_source_commit": "63d7d948677dbbcdbed229f989f85d31142ce7b4",
+    "descriptor_sha256": "f4f90ab26edd593457e18c8c052be688697179bff81059bda512fef67193f604",
+    "proof": "Twelve changed families passed two independent cold builds; encyclicals retained its exact prior two-build proof after current input/recipe and complete cached-byte verification.",
+    "independent_output_delta_review": {
+      "status": "pass",
+      "reviewer": "coordinator",
+      "baseline_commit": "63d7d948677dbbcdbed229f989f85d31142ce7b4",
+      "added_outputs": 0,
+      "removed_outputs": 0,
+      "changed_outputs": 5,
+      "boundary": "Only the documents corpus, three incoming PC-S58 readers and web-editions/index.json changed. Every other product output is byte-identical."
+    },
+    "post_binding_current_key_check": "pass; identical aggregate and all thirteen family keys, with every cached output verified"
+  },
+  "site": {
+    "release_record_overlay": {
+      "release/browser-products.json": "f4f90ab26edd593457e18c8c052be688697179bff81059bda512fef67193f604",
+      "release/public-alpha.json": "ed7b5a8f6d16b63116ff8f56cdac37bc6b056cceb6eed689dea4702aba09f0bd",
+      "release/rights/public-alpha-2026-07-15.md": "33430cf104daaaf13608b3128d56e310d6c5463bb50400797dfd50480a942943"
+    },
+    "provenance_boundary": "Source code/content at source_commit plus the exact mechanical release-record working-tree overlay listed here. The final coordinator rebuild binds these records to its release commit.",
+    "status": "built with bounded browser and served-native checks",
+    "source_commit": "f1dd135c815644a7c13ba0914b5410220d9af18a",
+    "build_command": "tools/public-alpha build",
+    "build_log_sha256": "42c768c301c1e8d5301225c1313d95a9a057901ba28009ea62389a358774e0ed",
+    "native_runtime_manifest": {
+      "sha256": "21b64bdfb58d20045ce940af42f0723e8cf5d6f20693d24ba343085cb7d9369d",
+      "bytes": 1865406
+    },
+    "full_deployment_verification": "Reserved for the coordinator final-commit rebuild and tools/public-alpha verify --deployment-target github-pages; outside this precommit bounded review receipt."
+  },
+  "browser_smoke": {
+    "schema": "triptych-bounded-independent-browser-review/v1",
+    "status": "pass",
+    "reviewed_at_utc": "2026-11-05T23:09:28.504201+00:00",
+    "source_commit": "f1dd135c815644a7c13ba0914b5410220d9af18a",
+    "browser_product_identity": "c06a735a8f2e2213e4fb609de757e6b9557bde23883aace399befe00d5291c1f",
+    "browser": "Chromium 156.0.8078.79 Arch Linux",
+    "viewport_sizes": [
+      [
+        1280,
+        1000
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "method": "Serve the exact candidate site over loopback HTTP; passive browser navigation and scroll only. Disable smooth scrolling for deterministic screenshots. Inspect all 18 final screenshots. No Generate PDF click, compiler activity, product regeneration or tracked-file edit.",
+    "gallery": {
+      "status": "pass",
+      "images": 70,
+      "unique_images": 70,
+      "all_images_loaded": true,
+      "all_alt_text_present": true,
+      "clothing_figures": 3,
+      "clothing_qualifications_and_handling_warnings_visible_outside_closed_details": true,
+      "scale_qualification_visible": true,
+      "mobile_horizontal_overflow": false
+    },
+    "dictionary_print_pages": {
+      "status": "pass",
+      "editions": [
+        "altar-server",
+        "comprehensive",
+        "general-reader",
+        "mc-trainer",
+        "pontifical-ceremonies",
+        "sacristan"
+      ],
+      "normal_and_print_query_idle": true,
+      "generate_controls_enabled": true,
+      "uncreated_downloads_hidden": true,
+      "desktop_all_six_visually_inspected": true,
+      "sacristan_mobile_visually_inspected": true
+    },
+    "pc_s58_terminal_review": {
+      "status": "pass",
+      "editions": [
+        "main",
+        "synthesis",
+        "homily"
+      ],
+      "widths": [
+        1280,
+        390
+      ],
+      "revision_and_rights_regions_visually_inspected": true,
+      "main_and_synthesis_revision": "2026-11-05T21:00:12Z",
+      "homily_revision": "2026-11-05T20:05:55Z",
+      "horizontal_overflow": false,
+      "all_three_print_query_idle": true,
+      "prior_content_equality_proof_sha256": "e7cb74b478207a629185f7f236b66dc82fd22d9fa18cafebb82df229899cf86c",
+      "historical_inspection_receipts_unchanged": true
+    },
+    "reader_transfer": {
+      "status": "pass",
+      "changed_readers": 105,
+      "unchanged_products": 164,
+      "timestamp_only_entire_json_reconstruction": true,
+      "web_index_reconstruction": true,
+      "independent_proof_sha256": "0a4452d24ded97689b5ebd0c93a1c2868714460733d6fc4e8e5be052d93bd51c",
+      "boundary": "Mechanical metadata equality only; no renewed editorial, source or print-layout approval."
+    },
+    "runtime_observations": {
+      "http_errors": 0,
+      "javascript_exceptions": 0,
+      "console_errors": 0,
+      "automatic_compiler_asset_or_bundle_requests": 0,
+      "automatic_pdf_requests": 0,
+      "workers_created": 0,
+      "window_print_calls": 0
+    },
+    "routes": {
+      "library/sanctuary-picture-dictionary.html": {
+        "sha256": "4513506bd40b7f08798a8b6359c337ab9497e0c546a1cee51d1b2881c653541e",
+        "bytes": 244691
+      },
+      "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server.html": {
+        "sha256": "4e82db13cbbcd9f03866dc2311e41c170c479816567929d816044ea78fb0c3b3",
+        "bytes": 7898
+      },
+      "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/comprehensive.html": {
+        "sha256": "d9f5867f9c30c4ea09038f4340876efc8e4260decd298679fdfe72d190a0d930",
+        "bytes": 8093
+      },
+      "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/general-reader.html": {
+        "sha256": "36a2ef92668015493c8f47a2f81a76e87c423260326bfcc3a14d378ef392ef78",
+        "bytes": 8071
+      },
+      "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/mc-trainer.html": {
+        "sha256": "c0f83c6f41c7b30ae7ddc97272cdd57a2f9e004b1183ff67949542656def1c3a",
+        "bytes": 8040
+      },
+      "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/pontifical-ceremonies.html": {
+        "sha256": "573baf3a2e57728356691da5ca5a8c79ac970b5c2b49bf549e4056193851c094",
+        "bytes": 8092
+      },
+      "print/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/sacristan.html": {
+        "sha256": "502aea04e81955013aec9e24050b720efaa821b50fb62b8076e7a58613bd5878",
+        "bytes": 7860
+      },
+      "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.html": {
+        "sha256": "8700f289237f0e4cd48edfab0304cad2e3644f0a0cd3cd94c4fd0e2f95fc4ee0",
+        "bytes": 102153
+      },
+      "print/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.html": {
+        "sha256": "2bac4e980b37743c7ac741e791058bf6c8e9c2239c3089f35939c38a413af393",
+        "bytes": 13030
+      },
+      "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.html": {
+        "sha256": "01b83bee89e21d21b631b0bb62545c86d6648ca280dda4f1053294407924baee",
+        "bytes": 55827
+      },
+      "print/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.html": {
+        "sha256": "7d2573085aaa828f633242bdedff4c7543fdff0df38ab767aa6fc4efcda739a0",
+        "bytes": 13274
+      },
+      "web/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.html": {
+        "sha256": "c3476c3e92f7bfb1d049835af5b90a7bb91aa9b386963adfaad3375ecf796773",
+        "bytes": 20823
+      },
+      "print/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.html": {
+        "sha256": "2ff3dd8b26974a150fa3b63b1762c443c87bd4c29422e61ebc35661ebb1b0cc7",
+        "bytes": 13238
+      }
+    },
+    "screenshots": {
+      "gallery-desktop-clothing.png": {
+        "sha256": "3c9d32c1ba8321466f946e0c937e3af8a02886dc85bec7396b6f0dd5394a63f2",
+        "bytes": 462373
+      },
+      "gallery-desktop-top.png": {
+        "sha256": "0ff3336267b152c2e526da8c2eba7fe71651b6e59a4136c0b4b10020418341cc",
+        "bytes": 459906
+      },
+      "gallery-mobile-clothing-1.png": {
+        "sha256": "662f52d012966214861f8841db8f778e7cc347cddd1a88026394cffc6ef424db",
+        "bytes": 178909
+      },
+      "gallery-mobile-clothing-2.png": {
+        "sha256": "4a70708f014ff2cb766fc10cec94b34f732569b1747a2578a03ff84e2a2e09e6",
+        "bytes": 145305
+      },
+      "gallery-mobile-clothing-3.png": {
+        "sha256": "0571f8f8deed4bc6b90cac401705b6cdadfcffee2d53fad4bb98e45b55ed540f",
+        "bytes": 146653
+      },
+      "pc-s58-homily-revision-1280.png": {
+        "sha256": "d853383d62c8a5971f7f4f1cfaf716cb05e2c89f8cf41f11e9ba9b86352a1557",
+        "bytes": 166027
+      },
+      "pc-s58-homily-revision-390.png": {
+        "sha256": "88d312b8db7fa38ecb06f25f83f1fd430db994289c9d99a79e9ebb28d34e3467",
+        "bytes": 89518
+      },
+      "pc-s58-main-revision-1280.png": {
+        "sha256": "b4ea2fc4b4eacf092a9a8bd322bd83f4c76cf84280f4d05cbfc3f4127406d3eb",
+        "bytes": 205908
+      },
+      "pc-s58-main-revision-390.png": {
+        "sha256": "40d8de81b89dde41927eade0a2e8fc29773e2e8a0ecab5f479f81ee66c6db11b",
+        "bytes": 88369
+      },
+      "pc-s58-synthesis-revision-1280.png": {
+        "sha256": "d9427144e080af48cba44d56a71faba0131f9e1513c6e122f22f2dfe16744e7d",
+        "bytes": 215018
+      },
+      "pc-s58-synthesis-revision-390.png": {
+        "sha256": "f559780e070606b6f73b84a4632665734c6c6e560fa199b90a47cba3932e8484",
+        "bytes": 94755
+      },
+      "print-altar-server.png": {
+        "sha256": "e4349fb616a70577be744af4030e70f6bf8da6987d26caf3b21c8ab8f1dc6e32",
+        "bytes": 92468
+      },
+      "print-comprehensive.png": {
+        "sha256": "7ebf9dd0567f26acdcba5d393d7b866faaac8ac6b79bf09ab8504e8014641a94",
+        "bytes": 97824
+      },
+      "print-general-reader.png": {
+        "sha256": "ed09b6f013d8ef97d3dc8a2c69c23ce5587013d128074a144809887d299bd0d4",
+        "bytes": 94101
+      },
+      "print-mc-trainer.png": {
+        "sha256": "6e03b6b98f17744f8491c974e2fed6fd8532c83adbeca309c39139fe326605f7",
+        "bytes": 93654
+      },
+      "print-pontifical-ceremonies.png": {
+        "sha256": "2d86c7721cde04344c7e4780b74f19355b2a44c8bca95d1f165fddd00a814dd5",
+        "bytes": 94098
+      },
+      "print-sacristan-mobile.png": {
+        "sha256": "7dcca0e8c99019e24d84087e47890806238048bb51db40e5db1f849cb419c7f8",
+        "bytes": 52105
+      },
+      "print-sacristan.png": {
+        "sha256": "6ecfd7ac84ba7272006297be5a8c878a9a0a271d2367c2dae0b3714428e6bb78",
+        "bytes": 91095
+      }
+    },
+    "raw_browser_report_sha256": "c4c66504e1c5c1a836bfb94bab2097784e9464de85af74918980f5cb213e8771",
+    "harness_sha256": "9d9897d0d5000e17571733abac117407a11516c56a1c707b66235eaab816988d",
+    "boundary": "Bounded candidate-site browser smoke and visual review. Does not claim live deployment, full-site verification, browser PDF generation, physical print trials or expanded editorial approval."
+  },
+  "browser_input_audit": {
+    "status": "pass",
+    "family": "documents",
+    "interpreter": "system CPython 3.14.9 with PyYAML 6.0.3; no Markdown import observed",
+    "result": {
+      "listed": 92521,
+      "listed_outside": [],
+      "members": 79631,
+      "non_canonical": [],
+      "ok": true,
+      "opened": 65579,
+      "outside": [],
+      "probed": 153619,
+      "unaudited_children": [],
+      "where": {}
+    },
+    "outputs": {
+      "structure/documents/corpus.json": {
+        "bytes": 1225535,
+        "sha256": "63e927143514a9e44c1428ccdfad8fbbc3d67fbe0a65e0a5bb456d97ac0b679d"
+      }
+    },
+    "pinned_environment_output_equality": "Exact equality of the audited documents output with both pinned cold builds and the recorded descriptor/cache.",
+    "source_commit": "632ddac93175dc31ec6de33d24a7a731663f8017",
+    "comparison_product_identity": "7ac44c1e069463cb0efbe36ed8032fbfec52dac7f6d7612b15ad754e940bd600",
+    "boundary": "The successful input audit and system-versus-pinned output equality were established before the source-only PC-S58 merge. Audit/generator code and declared input scopes remain identical; this earlier output hash is historical evidence, not a claim about the merged final catalog.",
+    "postmerge_transfer": {
+      "basis": "Inference: the source-only PC-S58 merge changes inputs inside the already declared src scope; producer/audit code and the declared scopes are unchanged.",
+      "new_trace_run": false
+    },
+    "merged_catalog_delta": {
+      "status": "pass: both cold outputs, final descriptor and cache agree",
+      "previous_sha256": "63e927143514a9e44c1428ccdfad8fbbc3d67fbe0a65e0a5bb456d97ac0b679d",
+      "merged_sha256": "ca52fbcb5797f8504acd31c660b44c0b647f4cdafe09c1b61d088e36056cfd2b",
+      "change": "One appended contribution record for the GPT PC-S58 study edition; all remaining parsed JSON is exactly equal.",
+      "edition": "gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a",
+      "entire_remaining_json_equal": true
+    }
+  },
+  "deployment_source_gates": {
+    "status": "pass",
+    "source_commit": "63d7d948677dbbcdbed229f989f85d31142ce7b4",
+    "command": "make check-deployment-sources",
+    "exit_code": 0,
+    "log_sha256": "1d5dd0d3bd6fd78e9a196d07446230e55dbbbf5e54c808a230cd033d2e1185c1"
+  },
+  "merge_boundary": {
+    "source_commit": "63d7d948677dbbcdbed229f989f85d31142ce7b4",
+    "incoming_main": "39acdf4332eba621fd8c536d5f85f966a52c5df5",
+    "guide_dictionary_compiler_inputs": "Unchanged from the premerge proof; every mounted input from the final served bundles is exactly equal, and all thirteen freshly compiled PDF and render identities match.",
+    "incoming_pc_s58": "Canonical source tree is byte-identical to incoming main; ten bound hashes retained. Reader products are compared separately below.",
+    "bound_hashes_checked": 24117,
+    "bound_hash_mismatches": 0,
+    "independent_review": {
+      "status": "pass",
+      "reviewer": "final_cold_review",
+      "findings": [],
+      "boundary": "Exact source-parent equality, complete 24,117-entry policy union and rights digests, inventory row union of 3,619, unchanged classifications, 166 honestly pending review units, and explicitly historical descriptor."
+    }
+  },
+  "workflow_contract": {
+    "build_timeout_minutes": 180,
+    "tests": 19,
+    "status": "pass",
+    "boundary": "Coordinator ran the browser-cache/workflow module after the narrow timeout and assertion change; no deployment gates removed."
+  },
+  "postmerge_outgoing_hygiene": {
+    "status": "pass",
+    "review_commit": "63d7d948677dbbcdbed229f989f85d31142ce7b4",
+    "comparison_main": "19a7e266ec3e5f1a0e111575ddaf2063f5090986",
+    "reviewer": "coordinator",
+    "boundary": "Newly reachable object paths contain no generated PDF, archive, bytecode or scratch payloads; whitespace checks pass."
+  },
+  "incoming_reader_revision_transfer": {
+    "status": "pass",
+    "source_commit": "63d7d948677dbbcdbed229f989f85d31142ce7b4",
+    "comparison_main": "19a7e266ec3e5f1a0e111575ddaf2063f5090986",
+    "method": "Compare exact upstream descriptor hashes after in-memory substitution of the Last revised timestamp and its derived Markdown digest only; no product or source bytes are changed.",
+    "timestamp_current": "2026-11-05T21:00:12Z",
+    "timestamp_reviewed": "2026-11-05T20:12:56Z",
+    "cause_commit": "632ddac93175dc31ec6de33d24a7a731663f8017",
+    "readers": [
+      {
+        "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-homily.json",
+        "bytes": 13064,
+        "current_sha256": "f7d2cc20c1b06f9dfcc1a92c743f7b25b322c7154c248afd420db2e7fabbac1e",
+        "upstream_sha256": "f7d2cc20c1b06f9dfcc1a92c743f7b25b322c7154c248afd420db2e7fabbac1e",
+        "current_markdown_sha256": "9ff56d29403b28250b5394ac8128ecb95590077e8d0af6da75c8611f2691fd0c",
+        "upstream_markdown_sha256": "9ff56d29403b28250b5394ac8128ecb95590077e8d0af6da75c8611f2691fd0c",
+        "byte_identical": true,
+        "timestamp_occurrences_changed_for_comparison": 0,
+        "matches_upstream_after_timestamp_and_derived_hash_only": true
+      },
+      {
+        "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a-synthesis.json",
+        "bytes": 38092,
+        "current_sha256": "7be844ca6aa3483e81ec14e32e158036e54d8a1c6eda19c2c6eccdb6bc2e6994",
+        "upstream_sha256": "1408701befd4ecda0ffd3a1b92fe336f259acac92ca0a2cc7f6bc5b5393eb7b8",
+        "current_markdown_sha256": "9c642c5e4e8d7b2339f5f4eb149b53864437aaaec5dd3a0084c7d45abfac6a9c",
+        "upstream_markdown_sha256": "e23c852a48d7a598b0ee4ebc23e4fc870f285af899d8e57b2bd620a8bdd9b809",
+        "byte_identical": false,
+        "timestamp_occurrences_changed_for_comparison": 1,
+        "matches_upstream_after_timestamp_and_derived_hash_only": true
+      },
+      {
+        "path": "web-editions/gpt/liturgy/roman-rite/postconciliar/roman-missal-third-edition-en-us-2011/propers/temporal/pc-s58-thirty-second-sunday-in-ordinary-time-year-a.json",
+        "bytes": 74269,
+        "current_sha256": "e31494eb31a6d8e35f64a4c4770797444cfbf39392c6b1a257caf38fef87f501",
+        "upstream_sha256": "6c60bc583dbaabf22e4775385f63f6074d4cc26a0f7cd141737cdf2d131952c8",
+        "current_markdown_sha256": "dd421a5b03716bde27cc48d5fa2f081648abe8d86ce632df344bc4f3ff819038",
+        "upstream_markdown_sha256": "9b75ec63ea9c2622b3646451c67e55ade5fda6391df35cc29fde027ff8f55565",
+        "byte_identical": false,
+        "timestamp_occurrences_changed_for_comparison": 1,
+        "matches_upstream_after_timestamp_and_derived_hash_only": true
+      }
+    ],
+    "screen_review": {
+      "status": "pass",
+      "editions": [
+        "main",
+        "synthesis",
+        "homily"
+      ],
+      "widths": [
+        1280,
+        390
+      ],
+      "revision_and_rights_regions_visually_inspected": true,
+      "main_and_synthesis_revision": "2026-11-05T21:00:12Z",
+      "homily_revision": "2026-11-05T20:05:55Z",
+      "horizontal_overflow": false,
+      "all_three_print_query_idle": true,
+      "prior_content_equality_proof_sha256": "e7cb74b478207a629185f7f236b66dc82fd22d9fa18cafebb82df229899cf86c",
+      "historical_inspection_receipts_unchanged": true
+    },
+    "independent_review": {
+      "status": "pass",
+      "reviewer": "final_cold_review",
+      "source_commit": "63d7d948677dbbcdbed229f989f85d31142ce7b4",
+      "report_sha256": "e7cb74b478207a629185f7f236b66dc82fd22d9fa18cafebb82df229899cf86c",
+      "method": "Independent exact cache-byte verification against upstream descriptor; substitute one revision timestamp plus derived Markdown SHA only in memory, then hash entire JSON; compare Markdown digest with existing historical inspection receipts. Static dependency chain confirms chronology helper joins main/synthesis revision closure, not homily. No source/product mutation or regeneration.",
+      "all_historical_markdown_receipts_match": true
+    }
+  },
+  "web_figures": {
+    "status": "pass",
+    "figures": 21,
+    "boundary": "Existing compiled SVGs verified against every figure identity in the merged web-editions index by the repository checker; no regeneration required."
+  },
+  "workflow_only_merge_transfer": {
+    "source_commit": "f1dd135c815644a7c13ba0914b5410220d9af18a",
+    "previous_source_commit": "63d7d948677dbbcdbed229f989f85d31142ce7b4",
+    "incoming_main": "19a7e266ec3e5f1a0e111575ddaf2063f5090986",
+    "boundary": "Workflow comment/status-only merge; official current product keys and all cached bytes remain exactly equal. Coordinator reran 19 browser-cache/workflow tests successfully. No repeated source trace or deployment-source run is claimed."
+  },
+  "all_reader_revision_transfer": {
+    "status": "pass",
+    "source_commit": "f1dd135c815644a7c13ba0914b5410220d9af18a",
+    "comparison_main": "19a7e266ec3e5f1a0e111575ddaf2063f5090986",
+    "changed_readers": 105,
+    "unchanged_products_byte_identical": 164,
+    "web_edition_product_files": 270,
+    "index_matches_after_proven_derived_hash_substitutions_only": true,
+    "evidence": "workflows/reviews/sanctuary-dictionary-2026-11-05/all-reader-revision-transfer.json",
+    "evidence_sha256": "196bbb76a48781d4e38ec701ece3d3f39b1b633c74d60bf04b001f5af3331d10",
+    "independent_review": "pass; exact changed-reader coverage and every current product hash verified",
+    "boundary": "Mechanical timestamp/content equality proof, not renewed content, source or print-layout approval for these pre-existing readers."
+  },
+  "release_bindings": {
+    "status": "exact descriptor binding and source hashes; recognized coverage validated by the site build",
+    "premerge_scoped_refresh": {
+      "source_commit": "632ddac93175dc31ec6de33d24a7a731663f8017",
+      "stale_paths": 92,
+      "adopted_paths": 88,
+      "unchanged_main_metadata_paths": 35,
+      "scope": "All 180 paths are reviewed outgoing changes or exact source-note inputs selected by the six dictionaries. The 35 pre-existing metadata records are byte-identical to the then-current main. No publication-record mutation.",
+      "log_sha256": "31645de6dbf2796a3de5275d161fc22f5ae4e7940a63fe224f6ec859ee1d58b7"
+    },
+    "postmerge_descriptor_refresh": {
+      "status": "pass",
+      "method": "Existing release-bindings compute_site_hashes(adopt=False, only=[descriptor]), site_source_digest, rewrite_site_section, sha256_file and save_manifest helpers; no recognized-set adoption or authorization change.",
+      "path": "release/browser-products.json",
+      "previous_sha256": "1eb857f57386bfb75050e2d76a670fcfec41cb5119f358deb72cf38f42bcf5d1",
+      "sha256": "f4f90ab26edd593457e18c8c052be688697179bff81059bda512fef67193f604",
+      "bound_paths": 24117,
+      "bound_hash_mismatches": [],
+      "policy_sha256": "ed7b5a8f6d16b63116ff8f56cdac37bc6b056cceb6eed689dea4702aba09f0bd",
+      "rights_record": "release/rights/public-alpha-2026-07-15.md",
+      "rights_record_sha256": "33430cf104daaaf13608b3128d56e310d6c5463bb50400797dfd50480a942943"
+    }
+  }
+}
