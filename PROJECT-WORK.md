@@ -167,7 +167,7 @@ were preserved.
 
 <!-- promised-deliverable: gpt-pc-s58-advisory-corrections-2026-11-05 -->
 
-**In progress: validated corrections pushed to main; deployment verification pending.**
+**Complete: both advisories resolved, pushed to main, deployed and verified live.**
 The maintainer requested applying SYN-001 and HOM-001 and pushing to main.
 Five Augustine passages now distinguish his general good-works explanation
 from the studies' practical-mercy application. Five direct post-Communion
@@ -181,27 +181,29 @@ leaf's `evaluations/post-publication-2026-11-05/`.
 Source checkpoint `628cf63b508d0194aec82a27d2a717c8b485fa8d` preserved the
 original 1,732-file research boundary. Main subsequently advanced with shared
 chronology and assembly changes through `4bcc8c80fe`; merge
-`baced82298220931a8f004ecfc6acc2cee5b4295` preserves both histories. Current
-research inputs comprise 1,741 files, and a separate independent bounded
+`baced82298220931a8f004ecfc6acc2cee5b4295` preserves both histories. The reviewed
+research snapshot comprises 1,741 files, and a separate independent bounded
 integration review passes. All 39 appointed passage pairs and candidate claims
 remain intact, with the full evidence behind the 12-row compact table.
 Historical runs, seals and original judgments remain unchanged.
 
-All three current readers pass fresh independent inspection. Exact source-impact
-and web results, limits and a clerical review-locator correction are indexed in
-the evaluation README. Full and concise revision stamps are committed at
+All three rendered editions received fresh independent inspection before
+publication. Exact source-impact and web results, limits and a clerical
+review-locator correction are indexed in
+the evaluation README. The verified full and concise revision stamps are
 `2026-11-05T20:12:56Z`; the homily retains `2026-11-05T20:05:55Z`.
-The independent rebuilds and cache check pass for thirteen browser-product
-families, 27,690 files and 227,473,491 bytes. Their identity is
+The independent rebuilds and cache check pass for that deployment's thirteen
+browser-product families, 27,690 files and 227,473,491 bytes. Their identity is
 `7061eb0e269f66fe963062d8ff56e7a6e37aecbbbcb5bae7df28e26f11743bae`.
 All three recorded reader hashes match the independent rendered review.
 
-Source/content, live assembly, conversion, the proper-study publication gate,
-target catalogue and complete catalogue structure pass. Only eleven reviewed
-release-input bindings and two derived rights-record values were refreshed;
+The publication checkpoint passed source/content, live assembly, conversion,
+the proper-study publication gate, target catalogue and complete catalogue
+structure checks. Only eleven reviewed release-input bindings and two derived
+rights-record values were refreshed;
 authorization terms and source membership are unchanged. Both classifications
 and all 166 pending migration states are preserved. No PDFs or binary archives
-are tracked; the review handoff stays ignored. The final release check reports
+were added to Git; the review handoff stays ignored. The final release check reports
 zero stale bindings. `make public-site` and `public-alpha verify
 --deployment-target github-pages` both pass. The assembled readers contain all
 corrected claims and revision stamps at 1280- and 390-pixel widths without page
@@ -216,8 +218,20 @@ test. All 19 bootstrap/workflow tests pass. Its
 [Pages run 42122381067](https://github.com/spincyc/triptych/actions/runs/42122381067)
 has passed the complete native compile gate: 647 editions, zero failures and
 15,357 compiled pages. The three PC-S58 receipts pass, each settling in two
-passes, and the summary binds the exact combined commit. The site build,
-independent artifact verification, deployment and live checks remain pending.
+passes, and the summary binds the exact combined commit. Site generation,
+independent artifact verification and deployment also pass. The build job
+finished in 123 minutes 47 seconds, within the expanded budget; deployment
+completed at `2026-11-06T00:38:13Z`.
+
+The normal public manifest identifies `1e2669f5fb`, the product identity above,
+647 native editions and `stored_pdfs: false`; its SHA-256 is
+`36d9da8334872a04e536cdf701196f0c524f6292f48cd1e163a6b9b5ab997401`.
+All three reader routes return HTTP 200 and byte-identical locally reviewed
+HTML. Live browser checks at 1280- and 390-pixel widths confirm every corrected
+claim, revision stamp and homily estimate, exact local/live text parity and no
+page overflow. The nine captured live reader/print views were inspected. All
+three print controls remain idle without native asset requests, bind the
+deployed commit, and name bundle hashes matching their successful CI receipts.
 
 The budget repair follows predecessor
 [42099806134](https://github.com/spincyc/triptych/actions/runs/42099806134),
@@ -232,10 +246,26 @@ runs `42117986012` and `42121273497` were superseded and cancelled; neither is
 claimed as deployment evidence.
 No new engine-run acceptance, print-layout approval or human delivery is claimed.
 
-The merged chronology task had an open publication requirement without the
-evidence pointer required by the ledger schema. Its evidence now points to
-this register; its candidate/open status and acceptance criterion are unchanged.
-The ledger validates with 118 tracked deliverables, 93 complete.
+Before recording completion, later main through `81a14a5795` was preserved by
+fast-forward. Its separate sanctuary-dictionary work leaves the entire PC-S58
+source leaf unchanged. The independently checked
+[reader transfer record](workflows/reviews/sanctuary-dictionary-2026-11-05/all-reader-revision-transfer.json)
+matches the exact reviewed PC-S58 hashes: the homily product is byte-identical,
+and the full and concise readers differ only in their derived revision stamp
+(`2026-11-05T21:00:12Z`) and its hash. This preservation check does not approve
+that later deployment; the completed CI and live checks above bind `1e2669f5fb`.
+
+The completion validator with
+`--require-complete gpt-pc-s58-advisory-corrections-2026-11-05` passes against the
+exact deployed `1e2669f5fb` sources and ledger, with only this task's completion
+records applied.
+On later main, the global validator stops before checking the ledger: five
+incoming browser-product families each have one fewer input member and changed
+content and membership hashes. Clean CI independently reproduces this failure
+in [42131423670](https://github.com/spincyc/triptych/actions/runs/42131423670),
+before restoring any product cache. Neither completion-record file is a product
+input. The later release's descriptor has not been rewritten, and its global
+check and deployment are not claimed as passing by this task.
 
 ## GPT Thirty-second Sunday in Ordinary Time, 2026-11-08
 

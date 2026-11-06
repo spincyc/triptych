@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-pc-s58-advisory-corrections-2026-11-05"
 owner = "PROJECT-WORK.md"
 promise = "Apply SYN-001 and HOM-001 consistently across the PC-S58-A study, synthesis and homily, freshly review the bounded corrections and readers, and push the validated update to main with successful deployment and live verification."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "corrected-wording"
@@ -21,13 +21,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "ci-verification-budget"
   criterion = "The Pages build budget accommodates the observed full-corpus workload while retaining the source, independent artifact and native compile gates, with unchanged reader and product identities."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", ".github/workflows/pages.yml"]
 
   [[deliverables.requirements]]
   id = "main-and-live"
   criterion = "The validated corrections reach main without history rewriting; Pages build, full compile and deploy pass, and the three live readers contain the corrections."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
