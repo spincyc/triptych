@@ -4,7 +4,7 @@ schema_version = 1
 id = "claude-1962-66-resumed-fifth-three-documents-2026-11-08"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 resumed Fifth Sunday after the Epiphany (66) proper-study workflow for Sunday 8 November 2026 as the first proper-study version-17 run: verify beforehand that the no-PDF work updated every part of the workflow it touches, then produce the expansive study, concise study and homily with independent cold reviews and their web readers, publish to main by fast-forward and verify the deployment."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "claude-66-authorized"
@@ -39,8 +39,11 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-66-main-and-pages"
   criterion = "The validated work reaches origin/main by fast-forward after the deploy gates pass locally, the Pages run (build, print-compile and deploy) succeeds, and the live reader routes match the local site build."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
+  check = "contains"
+  path = "PROJECT-WORK.md"
+  needle = "Pages run\n[42150090266](https://github.com/spincyc/triptych/actions/runs/42150090266)"
 
 [[deliverables]]
 id = "gpt-pc-s58-advisory-corrections-2026-11-05"

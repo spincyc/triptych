@@ -5,13 +5,13 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-05.
+Last reconciled: 2026-11-06.
 
 ## Claude 1962 resumed Fifth Sunday after the Epiphany, 2026-11-08
 
 <!-- promised-deliverable: claude-1962-66-resumed-fifth-three-documents-2026-11-08 -->
 
-**Accepted and merged; deployment pending.** On 2026-11-05 the maintainer
+**Complete: pushed to `main`, deployed and verified live.** On 2026-11-05 the maintainer
 asked for the Claude 1962 proper-study documents for the upcoming Sunday,
 asked that the no-PDF work be checked for every part of this workflow it
 should have updated, and authorized publication to `main`. Sunday, 8 November
@@ -38,6 +38,36 @@ compiling with pdfTeX, plus their readers. The run is archived in the leaf, and
 the driver's account is
 [CYCLES.md](workflows/reviews/claude-1962-66-production-2026-11-05/CYCLES.md).
 `origin/main` was merged only after acceptance, so no seal went stale.
+
+`origin/main` was merged four times in all; each merge is recorded in its
+commit message, and none rebased or forced. The local gates then passed on
+`6b2beaab40`: native compile of the three editions,
+`make check-deployment-sources`, `make public-site`,
+`tools/tpt public-alpha verify --deployment-target github-pages` and
+`make check-release-bindings` (log sha256 `9dddfa0b54f82f10…`). Then
+`origin/main` was fast-forwarded from `ea4a25dc90` to `6b2beaab40`, and the
+workspace branch was pushed to the same commit. Pages run
+[42150090266](https://github.com/spincyc/triptych/actions/runs/42150090266)
+ran build, print-compile and deploy, and all three succeeded; repository
+hygiene run 42150090359 succeeded. On 2026-11-06 each route below was fetched
+from `https://mystago.gy/` and compared with `build/public-alpha/site/` built
+from the same commit:
+
+| Route | HTTP | SHA-256 | Match |
+| --- | ---: | --- | --- |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html` | 200 | `c3c37889140e5ea8…` | byte-identical |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html` | 200 | `7d576fe95b6b4bad…` | byte-identical |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html` | 200 | `2db854a19ebaefca…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.html` | 200 | `685f44923413f338…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-synthesis.html` | 200 | `3e543d4405202cdf…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany-homily.html` | 200 | `742f1278bc3a1dfd…` | byte-identical |
+| `library/traditional-latin-mass.html` | 200 | `8e53e6c9a2aa6774…` | byte-identical |
+
+The added lines of the outgoing range were scanned for machine paths,
+usernames, hosts, addresses and credentials, with no match. The run archive's
+notes carry repository-relative paths only. This evidence lives here, not in
+a review file, because a commit under `workflows/` would trigger a full Pages
+rebuild without changing the site.
 
 ## Sanctuary dictionary continuation — 5 November 2026
 
