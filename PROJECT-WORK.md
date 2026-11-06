@@ -11,7 +11,7 @@ Last reconciled: 2026-11-06.
 
 <!-- promised-deliverable: sanctuary-dictionary-table-2026-11 -->
 
-**Implemented; release verification in progress.** The maintainer requests one cohesive website table with
+**Validated and pushed to main; deployment running.** The maintainer requests one cohesive website table with
 multiple columns, including a useful grouping column; small in-row pictures
 expand and collapse on demand. Default organization follows setting and use,
 not alphabetical names. Repeated generic view and scale labels are removed
@@ -63,8 +63,30 @@ Scoped release reconciliation refreshes four existing hashes and admits only
 `release/public-alpha/assets/sanctuary-dictionary.js` through the renderer's
 recognized input set. All 24,173 bound source hashes match; authorization and
 rights terms are unchanged. A fresh post-binding product check matches the
-record exactly, and no source bytecode is present. The exact-commit site build,
-Pages verification, main push and live check remain pending.
+record exactly, and no source bytecode is present.
+
+At source commit `7c7483a046ff263e2018572181e6159a9ba01599`, the full
+`make public-site`, separate `public-alpha verify --deployment-target
+github-pages`, and fresh browser-product check pass. The 43,710-file site
+contains 650 native source selections. Its dictionary HTML, stylesheet and
+script match the independent review exactly. The working tree was clean, no
+canonical input was removed after verification, and `src/` is unchanged from
+the incoming baseline. This presentation change did not compile figures or
+native edition PDFs locally.
+
+| Local evidence at `7c7483a046` | SHA-256 |
+| --- | --- |
+| Publication manifest | `90bdca325dafd9b4d9f47b8d6547f8b3d7eb4eaea51db7844cbb2c4c00dc0c22` |
+| Site checksum manifest | `2c43d271af4fd3dc23d815f93957f804122ca0563f62355715c4e04f565afe7e` |
+| Full Pages verifier log (exit 0) | `d21bafbbf2b46f16efbacd9e2031200e580abf0fd3b844699a30934f232715fe` |
+| Composite local verification summary | `3795f00310f00e37fbb384879cd97f9206023f89deccf34265b13d7c0100cc1e` |
+
+The reviewed source commit reached the workspace branch and `main` by normal
+pushes without a rebase. [Pages run 42262705717](https://github.com/spincyc/triptych/actions/runs/42262705717)
+is running for that exact source commit. Hosted build, native compilation,
+deployment and the exact live HTML/CSS/JavaScript and interaction checks remain
+pending. This status update changes only the two operational files excluded
+from the Pages trigger.
 
 ## Sanctuary picture gallery repeated entries — 5 November 2026
 

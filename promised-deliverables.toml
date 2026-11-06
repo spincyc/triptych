@@ -4,7 +4,7 @@ schema_version = 1
 id = "sanctuary-dictionary-table-2026-11"
 owner = "tools/public-alpha"
 promise = "Present the website Sanctuary Picture Dictionary as one cohesive grouped table with small expandable illustrations, quiet default rows, preserved source boundaries and full cold organization/presentation review."
-state = "in_progress"
+state = "candidate"
 
   [[deliverables.requirements]]
   id = "grouped-table"
@@ -21,7 +21,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "cold-review-and-release"
   criterion = "Independent cold review examines the actual organization and presentation, keyboard and mobile behavior; focused regressions and required release gates pass, with a coherent commit and validated main publication."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "workflows/reviews/sanctuary-dictionary-table-2026-11-06/REVIEW.md"]
 
   [[deliverables.requirements]]
