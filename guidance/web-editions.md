@@ -441,8 +441,18 @@ reader presentation change.
 
 The complete-edition **Generate PDF** action renders the selected canonical
 TeX output with its original engine, templates and fonts. It lives on the
-output's print page, `print/<provider>/<output>.html`; each web reader
-carries a Print action that navigates there. The selected source includes its
+output's print page, `print/<provider>/<output>.html`. Each web reader carries
+a Print action that links there with `?print=1`, as does every other link that
+requests an edition's PDF: rewritten catalogue PDF links, the Texts catalogue
+and the Sources reader's complete-Bible print. Since the maintainer's
+2026-11-06 request such a link does not leave the page. On a plain click
+[`native-print.js`](../src/web/browser/shared/native-print.js) reads the
+edition's selection from its print page and generates the PDF in place, under
+a small progress popover beside the link: stage, progress bar, cancel, then the
+finished PDF, or on failure a link to the print page. A new-tab or modified
+click, or a page without JavaScript, still opens the print page. The
+publisher loads the controller on every page whose content carries such a
+link. The selected source includes its
 declared body, notes, appendices, references, revision, and rights notices.
 Existing rights and hold/withdrawal rules still govern admission. The print
 page and its route rule are owned by [web data](web-data.md#native-print-pages-and-source-bundles).

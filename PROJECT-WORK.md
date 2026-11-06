@@ -7,6 +7,45 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-06.
 
+## Generate PDF links work in place — 6 November 2026
+
+<!-- promised-deliverable: in-place-pdf-generation-2026-11-06 -->
+
+**Committed on the Claude workspace branch; not pushed.** The maintainer
+asked that the Generate PDF links stop changing to a different page and show a
+minimal, unintrusive progress bar in place. Every link that requests an
+edition's PDF is a `print/…html?print=1` link: the reader Print action, the
+publisher's rewritten catalogue PDF links, the Texts catalogue and the Sources
+complete-Bible print. A plain click on one now stays on the page. The shared
+controller fetches the edition's print page and reads its selection there,
+which keeps a single copy of each selection. It resolves the compiler resources
+against that page and lazy-loads the compiler. It then typesets the verified
+PDF under a small popover anchored beside the link: stage, MiB while
+downloading, a monotone bar and a cancel control. When ready it saves the PDF
+and fades. On failure it offers the print page. Modified, new-tab, download and
+foreign clicks, and pages without JavaScript, still open the print page, whose
+controls are unchanged. The publisher adds the controller to every page whose
+content carries such a link; Texts and Sources load it themselves.
+
+Eight real-Chromium regressions cover in-place generation, compiler reuse,
+supersession, cancel, Escape, page exit, ignored clicks, the failure paths, the
+print-page action and viewport placement (`tools/tests/test_native_print_links.py`).
+Each was shown to fail against a deliberately broken controller. They found one
+defect before commit: the popover's own "Open print page" link was intercepted
+as a print link. It is fixed. Publisher injection is pinned in
+`test_browser_static`, and link detection in `test_native_print_pages`. An
+end-to-end run on a copy of the built site under `/triptych/`, with the real
+WebAssembly TeX, generated real PDFs in place in a reader page at 1280 pixels
+and in Texts at 390 pixels. The URL was unchanged and the console stayed clean.
+Two inherited failures outside this change fail identically at the base: the
+`publication-reader.css` shared-name collision and the stale 284-publication
+admission count.
+
+Changing `scripts/_native_print.py` and `tools/public-alpha` changes the code
+inputs of the `act-history`, `documents` and `web-editions` browser products,
+which therefore need a new record before the release gates. Publication to
+main and live verification are open and await the maintainer's authorization.
+
 ## Sanctuary dictionary table — 6 November 2026
 
 <!-- promised-deliverable: sanctuary-dictionary-table-2026-11 -->

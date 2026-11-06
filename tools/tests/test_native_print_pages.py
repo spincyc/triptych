@@ -82,6 +82,25 @@ class PrintPageTests(unittest.TestCase):
         with self.assertRaises(native.NativePrintError):
             native.reader_action("web/gpt/x.html", "web/gpt/x.html")
 
+    def test_pdf_request_links_and_only_those_load_the_in_place_controller(self):
+        route = "papal-documents/x.html"
+        requests = (native.reader_action(route, "print/papal-documents/x.html"),
+                    '<a href="print/gpt/a/b.html?print=1#part">PDF</a>',
+                    '<a href="../print/bibles/x.html?edition=a&amp;print=1">PDF</a>',
+                    "<a href='print/gpt/a.html?print=1'>PDF</a>")
+        others = ('<a href="print/gpt/a.html">Print page</a>', '<a href="print/gpt/a.html?print=10">x</a>',
+                  '<a href="web/gpt/a.html?print=1">x</a>', '<a href="print/gpt/a.pdf?print=1">x</a>',
+                  '<p>print/gpt/a.html?print=1</p>')
+        for content in requests:
+            with self.subTest(content=content):
+                head, body = native.link_extras(route, content)
+                self.assertEqual(head, '<link rel="stylesheet" href="../shared/native-print.css">')
+                self.assertEqual(body, '<script src="../shared/native-print.js" defer></script>')
+                self.assertNotIn("native-tex.js", body)
+        for content in others:
+            with self.subTest(content=content):
+                self.assertEqual(native.link_extras(route, content), ("", ""))
+
 
 class AdmissionTests(unittest.TestCase):
     def test_admission_inputs_name_every_declaration_and_disposition(self):

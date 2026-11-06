@@ -1,6 +1,36 @@
 schema_version = 1
 
 [[deliverables]]
+id = "in-place-pdf-generation-2026-11-06"
+owner = "src/web/browser/shared/native-print.js"
+promise = "Generate PDF links no longer change to a different page: a plain click typesets the edition in place under a minimal, unintrusive progress popover beside the link."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "in-place-links"
+  criterion = "A plain click on any `print/...html?print=1` link (reader Print action, rewritten catalogue PDF links, Texts catalogue, Sources complete-Bible print) stays on the page, reads the edition's selection from its print page and generates the verified PDF there; modified, new-tab, download and foreign clicks keep the browser default; the print page and its controls are unchanged."
+  status = "pass"
+  evidence = ["src/web/browser/shared/native-print.js", "tools/tests/test_native_print_links.py"]
+
+  [[deliverables.requirements]]
+  id = "minimal-progress-popover"
+  criterion = "A small popover anchored beside the link, within the viewport and without moving the page, shows the stage, a monotone progress bar and a cancel control; when ready it saves the PDF and fades, and on failure it offers the print page."
+  status = "pass"
+  evidence = ["src/web/browser/shared/native-print.css", "tools/tests/test_native_print_links.py", "PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "controller-on-every-link-page"
+  criterion = "The publisher loads the controller on every page whose content carries such a link, and the browser apps that write such links load it themselves; guidance and the printing guide describe the in-place behaviour."
+  status = "pass"
+  evidence = ["scripts/_native_print.py", "tools/tests/test_browser_static.py", "guidance/web-editions.md"]
+
+  [[deliverables.requirements]]
+  id = "live-in-place-generation"
+  criterion = "After maintainer authorization to publish, the change reaches main, the Pages build and deployment succeed, and live Print links generate in place."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "sanctuary-dictionary-table-2026-11"
 owner = "tools/public-alpha"
 promise = "Present the website Sanctuary Picture Dictionary as one cohesive grouped table with small expandable illustrations, quiet default rows, preserved source boundaries and full cold organization/presentation review."

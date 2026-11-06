@@ -4,7 +4,9 @@ The native typesetters can build more documents than the public site admits.
 This module narrows them to the site's publication dispositions, declared
 reading volumes, publishable Bible editions and advertised papal witnesses.
 Each admitted edition has one thin print page that carries the Generate PDF
-controls; a reader page carries only a Print action that leads there.
+controls and the edition's selection. A reader page carries a Print action
+linking there; on a plain click the controller reads that selection and
+generates the PDF in place, so the reader stays on the page.
 It never builds a PDF, fetches a source, or treats an archive as current text.
 """
 from __future__ import annotations
@@ -26,6 +28,9 @@ STYLE = "shared/native-print.css"
 HELPERS = ("scripts/_native_print.py", CONFIG,
            "src/web/browser/shared/native-print.js", "src/web/browser/shared/native-print.css")
 _REVISION = re.compile(r"[0-9a-f]{40}\Z")
+# A link to an edition's print page that carries `print=1` requests its PDF:
+# the reader Print action, and the publisher's rewritten PDF links.
+_PRINT_LINK = re.compile(r"""\bhref=(["'])[^"']*?\bprint/[^"'?#]+\.html\?(?:[^"'#]*?&(?:amp;)?)?print=1(?:[&#]|\1)""")
 _RELATIVE = re.compile(r"[a-z0-9][a-z0-9./-]*\Z")
 
 
@@ -235,7 +240,11 @@ def _link(route: str, target: str) -> str:
 
 
 def reader_action(route: str, target: str) -> str:
-    """The Print action a reader page carries to its edition's print page."""
+    """The Print action a reader page carries to its edition's print page.
+
+    A plain click generates the PDF in place (`link_extras`); the link itself
+    still opens the print page in a new tab or without JavaScript.
+    """
     _need(target.startswith("print/") and target.endswith(".html"), "invalid print page route")
     return ('<p class="print-actions"><a href="' + _link(route, target) + '?print=1">'
             'Print / Generate PDF</a></p>')
@@ -378,6 +387,15 @@ def controls(identity: str, route: str, context: dict) -> str:
             + '<p class="native-print-progress" data-native-print-progress></p>' + historical
             + '<noscript><p>JavaScript is required to request a newly typeset PDF.</p></noscript>'
             + '<script type="application/json" data-native-print-manifest>' + descriptor + '</script></section>')
+
+
+def link_extras(route: str, content: str) -> tuple[str, str]:
+    """The controller a page loads when its content carries a PDF request link.
+
+    The controller generates on a plain click without leaving the page, and
+    loads the compiler only when a reader asks for a PDF.
+    """
+    return extras(route) if _PRINT_LINK.search(content) else ("", "")
 
 
 def extras(route: str, *, wasm=False):

@@ -187,6 +187,34 @@ class BrowserPagePublishabilityTest(unittest.TestCase):
     self.assertEqual(prose.count("<main"), 1)
     self.assertNotIn("{{CONTENT_ELEMENT}}", prose)
 
+  def test_a_page_with_a_pdf_link_loads_the_in_place_controller_once(self):
+    """A print link generates in place only where the page loads the controller."""
+    action = '<p class="print-actions"><a href="../../print/gpt/a/b.html?print=1">Print / Generate PDF</a></p>'
+    reader = self.module.wrap_in_layout(
+      "README.md", "web/gpt/a/b.html", "page-shell", "Reader", "", action + "<p>Text.</p>", False, {},
+    )
+    self.assertEqual(reader.count('<script src="../../../shared/native-print.js" defer></script>'), 1)
+    self.assertEqual(reader.count('<link rel="stylesheet" href="../../../shared/native-print.css">'), 1)
+    plain = self.module.wrap_in_layout(
+      "ABOUT.md", "about.html", "page-shell", "About", "", '<p><a href="print/gpt/a.html">Print page</a></p>',
+      False, {},
+    )
+    self.assertNotIn("native-print", plain)
+    # A print page already loads the controller beside its own controls.
+    printed = self.module.wrap_in_layout(
+      "README.md", "print/gpt/a.html", "page-shell", "Print", "", action, False, {},
+      head_extra='<link rel="stylesheet" href="../../shared/native-print.css">',
+      body_extra='<script src="../../shared/native-print.js" defer></script>',
+    )
+    self.assertEqual(printed.count("native-print.js"), 1)
+    self.assertEqual(printed.count("native-print.css"), 1)
+    # Browser apps whose scripts write such links load it themselves.
+    for app in ("texts", "sources"):
+      with self.subTest(app=app):
+        parts = self.module.browser_page_parts(BROWSER / app / "index.html", app + "/index.html")
+        self.assertIn('<script src="../shared/native-print.js"></script>', parts["body_extra"])
+        self.assertIn('<link rel="stylesheet" href="../shared/native-print.css">', parts["head_extra"])
+
   def test_every_browser_source_keeps_one_page_heading(self):
     for page in self.pages:
       with self.subTest(page=page.relative_to(ROOT).as_posix()):

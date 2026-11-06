@@ -949,8 +949,9 @@ and a source reader's edition from its reader path under `print/`. The page is
 small and carries no edition text: title and edition or companion label, what
 Generate PDF does, the native controls, any earlier TeX PDF in the
 [print archive](../release/print-archive.json), and a link to the edition's web
-reader where one exists. Reader pages carry only a Print action that leads
-there. Since 2026-11-04 every admitted output of an eligible or conditional
+reader where one exists. Reader pages carry only a Print action that links
+there; a plain click generates the PDF in place from this page's selection
+([web editions](web-editions.md#browser-printing)). Since 2026-11-04 every admitted output of an eligible or conditional
 leaf, companions included, has a web reader; the outputs of the 15 ineligible
 leaves (cards, workbooks, server guides) have no HTML reading surface, and their
 print page is their only page. The publisher refuses a build whose native
@@ -992,8 +993,8 @@ their existing meaning. Only a completed, verified result may enter the
 disposable requested-PDF cache. Deferral changes transfer timing, never font
 selection, source rights or the pinned bytes.
 
-Web readers keep their reading layout and navigate their Print action to their
-print page. Bundle render identity is owned by
+Web readers keep their reading layout; their Print action generates from their
+print page's selection without leaving the reader. Bundle render identity is owned by
 [document schemas](document-schemas.md#native-print-sources). Neither confers
 editorial approval nor certification of a physical printer's pagination or
 duplex alignment; native recipes retain their separate profile and

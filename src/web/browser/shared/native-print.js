@@ -50,9 +50,11 @@
     return Object.freeze({...value});
   }
 
-  function resourceURL(value) {
+  // `base` is the page that carried the selection: this page, or the print
+  // page whose selection a print link read in place.
+  function resourceURL(value, base) {
     need(typeof value === 'string' && value && !/[\s\\]/u.test(value), 'A TeX compiler resource address is invalid.');
-    const url = new URL(value, location.href);
+    const url = new URL(value, base || location.href);
     need(url.origin === location.origin && !url.username && !url.password && !url.search && !url.hash,
       'A TeX compiler resource must belong to this site.');
     return url.href;
@@ -62,7 +64,7 @@
     need(chosen.wasm && window.TriptychNativeTeX && typeof window.TriptychNativeTeX.generate === 'function',
       'The native TeX compiler could not be loaded. Please reload this page.');
     const generated = await window.TriptychNativeTeX.generate({
-      bundleURL: resourceURL(chosen.wasm.bundle), runtimeURL: resourceURL(chosen.wasm.runtime),
+      bundleURL: resourceURL(chosen.wasm.bundle, options.base), runtimeURL: resourceURL(chosen.wasm.runtime, options.base),
       bundleSHA256: chosen.wasm.bundle_sha256, bundleBytes: chosen.wasm.bundle_bytes,
       runtimeSHA256: chosen.wasm.runtime_sha256, runtimeBytes: chosen.wasm.runtime_bytes,
       signal: options.signal, onProgress: (value) => {
@@ -161,6 +163,21 @@
     return (value / (1024 * 1024)).toFixed(1);
   }
 
+  async function produce(chosen, options) {
+    const transport = options.transport || (chosen.wasm ? wasmTransport : serviceTransport);
+    return transport(chosen, options);
+  }
+
+  // A typesetter result names its PDF; accept only an address this page may offer.
+  function pdfAddress(result) {
+    need(result && typeof result.url === 'string', 'The typesetter returned no PDF.');
+    const target = new URL(result.url, location.href);
+    need(target.protocol === 'blob:' || target.protocol === 'https:' ||
+      target.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(target.hostname),
+    'The typesetter returned an invalid PDF address.');
+    return target.href;
+  }
+
   function install(root, descriptor, options) {
     if (installations.has(root)) return installations.get(root);
     options = options || {};
@@ -250,19 +267,14 @@
       announce('Preparing the TeX PDF…');
       focus(cancel);
       try {
-        const transport = options.transport || (chosen.wasm ? wasmTransport : serviceTransport);
-        const result = await transport(chosen, {
+        const result = await produce(chosen, {
           ...options, signal: controller.signal,
           onStatus: (message, detail) => { if (generation === ownGeneration) report(message, detail); }
         });
         if (generation !== ownGeneration || controller.signal.aborted) return false;
-        need(result && typeof result.url === 'string', 'The typesetter returned no PDF.');
-        const target = new URL(result.url, location.href);
-        need(target.protocol === 'blob:' || target.protocol === 'https:' ||
-          target.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(target.hostname),
-        'The typesetter returned an invalid PDF address.');
+        const address = pdfAddress(result);
         active = null;
-        currentURL = target.href;
+        currentURL = address;
         download.href = currentURL;
         download.download = filename;
         download.setAttribute('aria-label', 'Download PDF — ' + chosen.title);
@@ -308,7 +320,362 @@
     return controls;
   }
 
+  /* ------------------------------------------------------------------------
+   * Print links generate in place
+   *
+   * A link to an edition's print page that carries `?print=1` asks for that
+   * edition's PDF. A plain primary click typesets it here, under a small
+   * progress popover beside the link, and the reader stays on this page. The
+   * print page remains the link's target for a new tab, a modified click or a
+   * page without this script. It alone carries the edition's selection, so
+   * the click reads the selection from there rather than from a copy here.
+   * --------------------------------------------------------------------- */
+  const SCRIPT_URL = document.currentScript ? document.currentScript.src : '';
+  const POPOVER_API = typeof HTMLElement === 'function' && 'showPopover' in HTMLElement.prototype;
+  const EDGE = 8;
+  const LINGER = 8000;
+  let compiler = null;
+  let inline = null;
+  let parts = null;
+  let placing = 0;
+
+  function printLink(event) {
+    if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey ||
+        event.shiftKey || event.altKey) return null;
+    const link = event.target instanceof Element ? event.target.closest('a[href]') : null;
+    // The popover's own "Open print page" means exactly that.
+    if (!(link instanceof HTMLAnchorElement) || link.hasAttribute('download') ||
+        link.target && link.target !== '_self' || link.closest('[data-native-print-popover]')) return null;
+    let url;
+    try { url = new URL(link.href, location.href); } catch (_) { return null; }
+    if (url.origin !== location.origin || url.searchParams.get('print') !== '1' ||
+        !/\/print\/(?:[^/]+\/)*[^/]+\.html$/.test(url.pathname)) return null;
+    return {link, url};
+  }
+
+  async function linkedSelection(url, signal) {
+    const page = new URL(url.href);
+    page.search = '';
+    page.hash = '';
+    const response = await fetch(page.href, {signal});
+    need(response.ok && new URL(response.url || page.href).origin === location.origin,
+      'The print page for this edition could not be loaded.');
+    const parsed = new DOMParser().parseFromString(await response.text(), 'text/html');
+    const manifest = parsed.querySelector('[data-native-print] script[data-native-print-manifest]');
+    need(manifest && manifest.type === 'application/json', 'The print page carries no PDF selection.');
+    let value;
+    try { value = JSON.parse(manifest.textContent); } catch (_) { value = null; }
+    const chosen = selection(value);
+    need(manifest.closest('[data-native-print]').dataset.nativePrint === chosen.id,
+      'The PDF controls identify another edition.');
+    return {chosen, base: response.url || page.href};
+  }
+
+  // Print pages load the compiler themselves; elsewhere it loads on first use.
+  function loadCompiler() {
+    if (window.TriptychNativeTeX) return Promise.resolve();
+    if (!compiler) {
+      compiler = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = new URL('native-tex.js', SCRIPT_URL || location.href).href;
+        script.addEventListener('load', () => resolve(), {once: true});
+        script.addEventListener('error', () => {
+          compiler = null;
+          script.remove();
+          reject(new Error('The native TeX compiler could not be loaded. Please reload this page.'));
+        }, {once: true});
+        document.head.appendChild(script);
+      });
+    }
+    return compiler;
+  }
+
+  /* Where each stage the compiler reports sits in a whole run. These shares
+     are a rough guide for the bar, not a measurement; the bar never moves
+     back, so a retry that fetches more fonts keeps its place. A stage this
+     table does not know keeps the bar where it is. */
+  const STAGES = [
+    [/^Checking the original sources/, 'Checking sources', 0, .1],
+    [/^Downloading original fonts and packages/, 'Downloading fonts', .1, .35],
+    [/^Downloading the typesetter/, 'Downloading typesetter', .35, .45],
+    [/^Starting the typesetter/, 'Starting typesetter', .45, .45],
+    [/^Downloading original font support/, 'Downloading font support', .45, .5],
+    [/^Loading original fonts and sources/, 'Loading sources', .5, .5],
+    [/^Downloading the print format/, 'Downloading print format', .5, .6],
+    [/^Typesetting with the original TeX layout \(pass (\d+)\)/, 'Typesetting', .6, .9],
+    [/^Loading the original fonts selected/, 'Loading fonts', null, null],
+    [/^Embedding the original fonts/, 'Embedding fonts', .95, .95],
+    [/^Waiting for the typesetter/, 'Waiting for typesetter', null, null],
+    [/^Typesetting the original TeX edition/, 'Typesetting', null, null]
+  ];
+
+  function stage(message, detail) {
+    const text = String(detail && typeof detail.stage === 'string' ? detail.stage : message || '');
+    const bytes = detail && Number.isFinite(detail.loadedBytes) && Number.isFinite(detail.totalBytes) &&
+      detail.totalBytes > 0 ? Math.min(1, Math.max(0, detail.loadedBytes / detail.totalBytes)) : null;
+    const amount = bytes === null ? '' : mebibytes(detail.loadedBytes) + ' of ' + mebibytes(detail.totalBytes) + ' MiB';
+    for (const [pattern, label, from, to] of STAGES) {
+      const match = pattern.exec(text);
+      if (!match) continue;
+      if (from === null) return {label, share: null, amount};
+      if (match[1]) {
+        const pass = Number(match[1]);
+        return {label: label + ' · pass ' + pass, share: from + (to - from) * (1 - Math.pow(.6, pass - 1)), amount};
+      }
+      return {label, share: from + (to - from) * (bytes === null ? 0 : bytes), amount};
+    }
+    return {label: text.replace(/\s*Keep this page visible until it finishes\.$/, ''), share: null, amount};
+  }
+
+  function popoverOpen() {
+    return Boolean(parts) && parts.root.dataset.state !== 'closed';
+  }
+
+  function popover() {
+    if (parts) return parts;
+    const make = (tag, name) => {
+      const node = document.createElement(tag);
+      node.className = 'native-print-popover__' + name;
+      return node;
+    };
+    const root = document.createElement('div');
+    root.className = 'native-print-popover';
+    root.setAttribute('data-native-print-popover', '');
+    root.setAttribute('role', 'group');
+    root.dataset.state = 'closed';
+    if (POPOVER_API) root.setAttribute('popover', 'manual');
+    else root.hidden = true;
+    const head = make('div', 'head');
+    // Stage changes are announced; byte counts change too often and are not.
+    const status = make('p', 'status');
+    status.setAttribute('role', 'status');
+    const amount = make('span', 'amount');
+    const action = make('a', 'action');
+    action.hidden = true;
+    const close = make('button', 'close');
+    close.type = 'button';
+    close.textContent = '×';
+    const bar = make('div', 'bar');
+    bar.setAttribute('role', 'progressbar');
+    bar.setAttribute('aria-label', 'PDF generation progress');
+    bar.setAttribute('aria-valuemin', '0');
+    bar.setAttribute('aria-valuemax', '100');
+    const fill = make('span', 'fill');
+    bar.appendChild(fill);
+    // Hidden tabs throttle the compiler's downloads and checks to a crawl.
+    const hint = make('p', 'hint');
+    hint.textContent = 'Keep this tab visible until it finishes.';
+    head.append(status, amount, action, close);
+    root.append(head, bar, hint);
+    parts = {root, status, amount, action, close, bar, fill, timer: 0, announce: 0};
+    close.addEventListener('click', () => closeInline());
+    root.addEventListener('pointerenter', () => clearTimeout(parts.timer));
+    root.addEventListener('focusin', () => clearTimeout(parts.timer));
+    root.addEventListener('pointerleave', () => { if (!root.contains(document.activeElement)) linger(); });
+    root.addEventListener('focusout', (event) => {
+      if (!root.contains(event.relatedTarget) && !root.matches(':hover')) linger();
+    });
+    window.addEventListener('scroll', schedulePlace, {passive: true, capture: true});
+    window.addEventListener('resize', schedulePlace, {passive: true});
+    return parts;
+  }
+
+  // Beside the link, below it where there is room, and always within the
+  // viewport, so a reader who scrolls on still sees the bar at the edge.
+  function place() {
+    if (!popoverOpen() || !inline) return;
+    const view = document.documentElement;
+    const width = view.clientWidth || window.innerWidth;
+    const height = view.clientHeight || window.innerHeight;
+    const box = parts.root.getBoundingClientRect();
+    const anchor = inline.link.isConnected ? inline.link.getBoundingClientRect() : null;
+    let top;
+    let left;
+    if (anchor && (anchor.width || anchor.height)) {
+      top = anchor.bottom + 6;
+      if (top + box.height > height - EDGE && anchor.top - 6 - box.height >= EDGE) top = anchor.top - 6 - box.height;
+      left = anchor.left;
+    } else {
+      top = height - box.height - EDGE;
+      left = width - box.width - EDGE;
+    }
+    parts.root.style.top = Math.round(Math.max(EDGE, Math.min(top, height - box.height - EDGE))) + 'px';
+    parts.root.style.left = Math.round(Math.max(EDGE, Math.min(left, width - box.width - EDGE))) + 'px';
+  }
+
+  function schedulePlace() {
+    if (!placing && popoverOpen()) placing = requestAnimationFrame(() => { placing = 0; place(); });
+  }
+
+  function showPopover(link) {
+    popover();
+    if (!parts.root.isConnected) document.body.appendChild(parts.root);
+    if (POPOVER_API) {
+      if (parts.root.matches(':popover-open')) parts.root.hidePopover();
+      // `source` puts the popover next to its link in the focus order where supported.
+      try { parts.root.showPopover({source: link}); } catch (_) { parts.root.showPopover(); }
+    } else {
+      parts.root.hidden = false;
+    }
+  }
+
+  function hidePopover() {
+    if (!parts) return;
+    clearTimeout(parts.timer);
+    clearTimeout(parts.announce);
+    const focused = parts.root.contains(document.activeElement);
+    if (POPOVER_API) { if (parts.root.matches(':popover-open')) parts.root.hidePopover(); }
+    else parts.root.hidden = true;
+    parts.root.dataset.state = 'closed';
+    if (focused && inline && inline.link.isConnected) inline.link.focus({preventScroll: true});
+  }
+
+  function linger() {
+    if (!parts || !inline || inline.state !== 'ready' || parts.root.dataset.state !== 'ready') return;
+    clearTimeout(parts.timer);
+    parts.timer = setTimeout(() => { if (inline && inline.state === 'ready') hidePopover(); }, LINGER);
+  }
+
+  function setShare(job, value) {
+    if (value === null) {
+      parts.root.dataset.progress = 'indeterminate';
+      parts.bar.removeAttribute('aria-valuenow');
+      parts.fill.style.removeProperty('width');
+      return;
+    }
+    job.share = Math.max(job.share === null ? 0 : job.share, value);
+    parts.root.dataset.progress = 'determinate';
+    parts.bar.setAttribute('aria-valuenow', String(Math.round(job.share * 100)));
+    parts.fill.style.width = (job.share * 100).toFixed(1) + '%';
+  }
+
+  function announce(text) {
+    clearTimeout(parts.announce);
+    if (parts.status.textContent !== text) parts.status.textContent = text;
+  }
+
+  function release(job) {
+    if (job && job.address && job.address.startsWith('blob:')) URL.revokeObjectURL(job.address);
+    if (job) job.address = null;
+  }
+
+  // Close the popover; a build still running is cancelled with it.
+  function closeInline() {
+    const job = inline;
+    if (job && job.state === 'preparing') {
+      job.state = 'cancelled';
+      job.controller.abort();
+    }
+    hidePopover();
+  }
+
+  async function generateInline(link, url) {
+    if (inline && inline.state === 'preparing' && inline.link === link && inline.url.href === url.href) {
+      place();
+      return;
+    }
+    if (inline && inline.state === 'preparing') {
+      inline.state = 'cancelled';
+      inline.controller.abort();
+    }
+    release(inline);
+    const job = {link, url, controller: new AbortController(), state: 'preparing', share: null, address: null};
+    const signal = job.controller.signal;
+    inline = job;
+    hidePopover();
+    popover();
+    parts.root.dataset.state = 'preparing';
+    parts.root.setAttribute('aria-label', 'Generate PDF');
+    parts.status.textContent = '';
+    parts.amount.textContent = '';
+    parts.action.hidden = true;
+    parts.action.removeAttribute('href');
+    for (const name of ['download', 'aria-label', 'target', 'rel']) parts.action.removeAttribute(name);
+    parts.close.setAttribute('aria-label', 'Cancel PDF generation');
+    setShare(job, null);
+    showPopover(link);
+    place();
+    // A live region shown a moment ago may not be heard yet; speak after it is.
+    parts.announce = setTimeout(() => {
+      if (inline === job && job.state === 'preparing' && !parts.status.textContent) parts.status.textContent = 'Preparing PDF…';
+    }, 100);
+    const current = () => inline === job && job.state === 'preparing' && !signal.aborted;
+    try {
+      const {chosen, base} = await linkedSelection(url, signal);
+      if (!current()) return;
+      parts.root.setAttribute('aria-label', 'Generate PDF — ' + chosen.title);
+      if (chosen.wasm) await loadCompiler();
+      if (!current()) return;
+      const result = await produce(chosen, {signal, base, onStatus: (message, detail) => {
+        if (!current() || detail && detail.stage === 'ready') return;
+        const next = stage(message, detail);
+        announce(next.label);
+        parts.amount.textContent = next.amount;
+        if (next.share !== null) setShare(job, next.share);
+        place();
+      }});
+      if (!current()) {
+        if (result && typeof result.url === 'string' && result.url.startsWith('blob:')) URL.revokeObjectURL(result.url);
+        return;
+      }
+      job.address = pdfAddress(result);
+      job.state = 'ready';
+      parts.root.dataset.state = 'ready';
+      announce('PDF ready');
+      parts.amount.textContent = '';
+      setShare(job, 1);
+      parts.action.href = job.address;
+      parts.action.download = chosen.filename || fallbackName(chosen.id);
+      parts.action.textContent = 'Save PDF';
+      parts.action.setAttribute('aria-label', 'Save PDF — ' + chosen.title);
+      // A service PDF is another origin, where `download` is ignored: open it
+      // beside this page rather than in place of it.
+      if (!job.address.startsWith('blob:')) {
+        parts.action.target = '_blank';
+        parts.action.rel = 'noopener';
+      }
+      parts.action.hidden = false;
+      parts.close.setAttribute('aria-label', 'Close');
+      place();
+      // The visible link stays for a browser that blocks the automatic download.
+      parts.action.click();
+      if (!parts.root.matches(':hover') && !parts.root.contains(document.activeElement)) linger();
+    } catch (error) {
+      if (!current()) return;
+      job.state = 'error';
+      parts.root.dataset.state = 'error';
+      announce('PDF unavailable: ' + (error && error.message || error));
+      parts.amount.textContent = '';
+      // The print page offers the same request, and any earlier printed edition.
+      parts.action.href = url.href;
+      parts.action.textContent = 'Open print page';
+      parts.action.hidden = false;
+      parts.close.setAttribute('aria-label', 'Close');
+      place();
+    }
+  }
+
+  function installLinks() {
+    document.addEventListener('click', (event) => {
+      const found = printLink(event);
+      if (!found) return;
+      event.preventDefault();
+      generateInline(found.link, found.url);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape' || !inline || !popoverOpen()) return;
+      const focused = document.activeElement;
+      if (focused === inline.link || parts.root.contains(focused)) {
+        event.preventDefault();
+        closeInline();
+      }
+    });
+    // Leaving the page stops an unfinished build, as on the print page.
+    window.addEventListener('pagehide', () => { if (inline && inline.state === 'preparing') closeInline(); });
+  }
+
   function bootstrap() {
+    installLinks();
     for (const root of document.querySelectorAll('[data-native-print]')) {
       try {
         const manifest = root.querySelector('script[data-native-print-manifest]');
@@ -322,7 +689,7 @@
     }
   }
 
-  window.TriptychNativePrint = Object.freeze({install, selection, endpoint, job, serviceTransport, wasmTransport});
+  window.TriptychNativePrint = Object.freeze({install, selection, endpoint, job, serviceTransport, wasmTransport, stage});
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', bootstrap, {once: true});
   else bootstrap();
 }());

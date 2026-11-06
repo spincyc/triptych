@@ -44,9 +44,96 @@
 .native-print-progress { margin-block: .25rem 0; color: var(--muted, #6a635a); font-size: .9em; font-variant-numeric: tabular-nums; }
 .native-print-progress:empty { display: none; }
 .native-print-archive { font-size: .9em; margin-block: .75rem 0; }
+
+/* The small popover a print link opens beside itself while it generates in
+   place. The root never sets `display`, which would override the closed
+   popover's (or the `hidden` fallback's) `display: none`. */
+.native-print-popover {
+  position: fixed;
+  inset: auto;
+  z-index: 1000;
+  box-sizing: border-box;
+  width: min(19rem, calc(100vw - 16px));
+  margin: 0;
+  padding: .4rem .45rem .5rem .65rem;
+  border: 1px solid var(--line, #d2c8ba);
+  border-radius: .3rem;
+  background: var(--surface, #f8f5ef);
+  box-shadow: 0 .4rem 1.2rem rgba(63, 52, 42, .16);
+  color: var(--ink, #302d29);
+  font: .8125rem/1.4 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow: visible;
+}
+.native-print-popover__head { display: flex; align-items: center; gap: .5rem; }
+.native-print-popover__status { flex: 1 1 auto; min-width: 0; margin: 0; }
+.native-print-popover__amount {
+  color: var(--muted, #6a635a);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.native-print-popover__amount:empty { display: none; }
+.native-print-popover__action {
+  color: var(--rubric-dark, #6f2831);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.native-print-popover__action[hidden] { display: none; }
+.native-print-popover__close {
+  flex: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: .2rem;
+  background: transparent;
+  color: var(--muted, #6a635a);
+  font: 1.15rem/1 system-ui, sans-serif;
+  cursor: pointer;
+}
+.native-print-popover__close:hover { color: var(--ink, #302d29); background: var(--line, #d2c8ba); }
+.native-print-popover :is(a, button):focus-visible { outline: 2px solid #1f5d8b; outline-offset: 1px; }
+.native-print-popover__bar {
+  height: 4px;
+  margin-top: .3rem;
+  border-radius: 2px;
+  background: var(--line, #d2c8ba);
+  overflow: hidden;
+}
+.native-print-popover__fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--rubric-dark, #6f2831);
+  transition: width .3s ease-out;
+}
+.native-print-popover[data-progress="indeterminate"] .native-print-popover__fill {
+  width: 35%;
+  animation: native-print-sweep 1.3s ease-in-out infinite;
+}
+@keyframes native-print-sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(290%); }
+}
+.native-print-popover[data-state="error"] .native-print-popover__bar { display: none; }
+.native-print-popover__hint { margin: .3rem 0 0; color: var(--muted, #6a635a); font-size: .75rem; }
+.native-print-popover:not([data-state="preparing"]) .native-print-popover__hint { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .native-print-popover__fill { transition: none; }
+  .native-print-popover[data-progress="indeterminate"] .native-print-popover__fill {
+    width: 100%;
+    animation: none;
+    opacity: .35;
+  }
+}
+
 @media (forced-colors: active) {
   .native-print-actions :is(button, [data-native-print-download]) { border-color: ButtonText; }
   .native-print-actions button:disabled { border-color: GrayText; color: GrayText; }
   .native-print-actions :is(button, [data-native-print-download]):focus-visible { outline-color: Highlight; }
+  .native-print-popover { border-color: CanvasText; }
+  .native-print-popover__bar { border: 1px solid CanvasText; }
+  .native-print-popover__fill { background: Highlight; }
+  .native-print-popover :is(a, button):focus-visible { outline-color: Highlight; }
 }
-@media print { .native-print-actions { display: none !important; } }
+@media print { :is(.native-print-actions, .native-print-popover) { display: none !important; } }

@@ -4860,6 +4860,13 @@ def wrap_in_layout(
     """
     if content_element not in ("main", "div"):
         raise ReleaseError(f"unsupported layout content element: {content_element!r}")
+    # A page whose content links to a print page with `print=1` generates that
+    # PDF in place. Print pages and browser apps load the controller themselves.
+    from _native_print import SCRIPT as NATIVE_PRINT_SCRIPT, link_extras
+    if NATIVE_PRINT_SCRIPT not in body_extra:
+        print_head, print_body = link_extras(output_relative, content)
+        head_extra += print_head
+        body_extra += print_body
     template = (TEMPLATE_ROOT / "layout.html").read_text(encoding="utf-8")
     if declared_robots:
         robots = f'<meta name="robots" content="{html.escape(declared_robots)}">'
