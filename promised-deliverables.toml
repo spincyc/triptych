@@ -15,6 +15,12 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "verified-publication"
   criterion = "Focused regression checks, independent desktop/mobile review and required release gates pass; the correction reaches main and deployment state is reported accurately."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "live-gallery"
+  criterion = "The Pages build, native compile and deployment gates succeed, and the live Sanctuary Picture Dictionary serves the corrected gallery with one full definition per pictured identity and no superseded illustrations."
   status = "open"
   evidence = ["PROJECT-WORK.md"]
 

@@ -11,7 +11,7 @@ Last reconciled: 2026-11-05.
 
 <!-- promised-deliverable: sanctuary-gallery-unique-entries-2026-11 -->
 
-**Reviewed candidate; release checks in progress.** The reported surface is the
+**Correction verified and pushed to main; live deployment pending.** The reported surface is the
 website picture gallery. Its current source printed 87 definitions for 66
 pictured identities across 70 distinct drawings: 21 objects received the same
 full entry twice, usually in isolated and combined views. The native dictionary
@@ -54,7 +54,29 @@ changes. Product identity is
 The generator, gallery CSS and descriptor bindings were refreshed narrowly;
 all 24,172 bound source hashes match and authorization remains unchanged.
 A fresh process verifies the current product cache without source bytecode.
-The committed full-site build and Pages artifact verification remain pending.
+At `bc2fceb50d7c99acb463a3eb85dcee6398b47f06`, the full `make public-site`
+including required source gates, `public-alpha verify --deployment-target
+github-pages`, and a fresh separate-process product check all pass. The tree is
+clean and no source bytecode exists; no canonical input was removed after
+verification. The final 43,709-file site contains 650 native source selections;
+the gallery HTML and CSS exactly match the independently inspected preview.
+This website correction does not change or rebuild native edition PDFs.
+
+| Final local evidence at `bc2fceb50d` | SHA-256 |
+| --- | --- |
+| Publication manifest | `380b17acf72a488d15ac593fc45ba4867dd1ab60685525841ec439b2d013c0a3` |
+| Site checksum manifest | `a87f8f3dd87c5598e5289e62ef317fdfe63b046da9164f6d5666cf75e5678f70` |
+| Full Pages verifier log (exit 0) | `31685efdb64cbf4ed29f118fd10f86ab93b1d6c995c143cbf80a6f22fc1e3b5c` |
+| Composite local verification summary | `e8f8119ae0d0d7bc97475ee0840b3cfcfa9b248be324a7ea76fe40fbf8bb4fce` |
+
+The reviewed commit reached main and the workspace branch by normal pushes.
+[Pages run 42158267467](https://github.com/spincyc/triptych/actions/runs/42158267467)
+is confirmed pending for that exact commit, queued behind the earlier main run.
+A live fetch after the push still returns the original gallery bytes, SHA-256
+`9afa71ef5d9eb6af32bc231efd4c6c9927c2d6687121ec0c7fa37ae9486ab23a`.
+The live-delivery requirement remains open: CI must finish and the served
+gallery must show the corrected entries before this website fix is called
+deployed. This status-only record is excluded from the Pages trigger.
 
 ## Claude 1962 resumed Fifth Sunday after the Epiphany, 2026-11-08
 
