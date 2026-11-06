@@ -1,6 +1,30 @@
 schema_version = 1
 
 [[deliverables]]
+id = "sanctuary-gallery-unique-entries-2026-11"
+owner = "tools/public-alpha"
+promise = "Correct repeated object entries in the website Sanctuary Picture Dictionary while preserving useful alternate and combined views, qualifications and sources."
+state = "candidate"
+
+  [[deliverables.requirements]]
+  id = "unique-entries"
+  criterion = "Every pictured identity has one definition; alternate views are grouped and combined scenes link to their owning entries without repeating full descriptions or losing selected artwork, warnings, qualifications or rights."
+  status = "pass"
+  evidence = ["tools/public-alpha", "tools/tests/test_pictorial_gallery.py"]
+
+  [[deliverables.requirements]]
+  id = "verified-publication"
+  criterion = "Focused regression checks, independent desktop/mobile review and required release gates pass; the correction reaches main and deployment state is reported accurately."
+  status = "pass"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "live-gallery"
+  criterion = "The Pages build, native compile and deployment gates succeed, and the live Sanctuary Picture Dictionary serves the corrected gallery with one full definition per pictured identity and no superseded illustrations."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "claude-1962-66-resumed-fifth-three-documents-2026-11-08"
 owner = "PROJECT-WORK.md"
 promise = "Complete the Claude 1962 resumed Fifth Sunday after the Epiphany (66) proper-study workflow for Sunday 8 November 2026 as the first proper-study version-17 run: verify beforehand that the no-PDF work updated every part of the workflow it touches, then produce the expansive study, concise study and homily with independent cold reviews and their web readers, publish to main by fast-forward and verify the deployment."

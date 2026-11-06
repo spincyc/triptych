@@ -7,6 +7,77 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-06.
 
+## Sanctuary picture gallery repeated entries — 5 November 2026
+
+<!-- promised-deliverable: sanctuary-gallery-unique-entries-2026-11 -->
+
+**Correction verified and pushed to main; live deployment pending.** The reported surface is the
+website picture gallery. Its current source printed 87 definitions for 66
+pictured identities across 70 distinct drawings: 21 objects received the same
+full entry twice, usually in isolated and combined views. The native dictionary
+editions have no repeated canonical record IDs. The corrected gallery gives
+each pictured identity one definition, groups alternate views, and links
+combined scenes to their owning entries. All selected drawings, source
+qualifications, immediate handling warnings and per-image rights remain.
+Contextual identities under audit remain qualified; no dictionary record is
+newly admitted by this display correction.
+
+Sixteen focused gallery regressions pass, including exact artwork preservation,
+one definition per identity, alternate-view ownership, ensemble links, rights,
+qualifications and source references. The final navigation addition also passes
+its targeted markup regression. Independent source/render review and actual
+Chromium inspection at 1280, 390 and 320 pixels pass: 70 loaded unique drawings,
+66 unique definition anchors in 64 entry cards, four separate combined scenes,
+33 resolving fragment links, and no overflow, HTTP or browser errors. Twenty-seven
+inspected screenshots cover the selected garment, chalice, cruet, book and
+pontifical-layer cards and navigation. The visual-review summary SHA-256 is
+`cae9a131d97d660e9de6d1e5fa65d490c01983b75e5e40f1bb0c39afdb4c0eb2`;
+the rendered gallery SHA-256 is
+`ef340b325fdcf5acad85b5eb078720742ca3c6471a84e57794c34cf87852779a`.
+
+The live page was still the older `1e2669f5fb` release, with 100 drawings and
+46 repeated headwords, including superseded illustrations. The prior dictionary
+run at `76e0fa8c54` passed native compilation but failed the browser-product
+input check and never deployed. Upstream `600bffa461` prevents the source
+bytecode cache that caused that mismatch; the current upstream CI run has passed
+the formerly failing check. One old ignored bytecode file in this workspace was
+quarantined before the new product record or release verification. No source
+closure exemption was added. The unrelated existing `tmt check` failure is the
+missing `browser-products` dependency declaration for `document-library`;
+neither file is changed by this correction.
+
+The changed generator's browser product passed two independent cold builds;
+all thirteen output inventories remain byte-identical to current main:
+27,706 files and 227,721,861 bytes. Only the `act-history` code-input identity
+changes. Product identity is
+`d74bee77e62df807e88b46b98176837174bb8c8b5af67f040ff5c46afe951801`.
+The generator, gallery CSS and descriptor bindings were refreshed narrowly;
+all 24,172 bound source hashes match and authorization remains unchanged.
+A fresh process verifies the current product cache without source bytecode.
+At `bc2fceb50d7c99acb463a3eb85dcee6398b47f06`, the full `make public-site`
+including required source gates, `public-alpha verify --deployment-target
+github-pages`, and a fresh separate-process product check all pass. The tree is
+clean and no source bytecode exists; no canonical input was removed after
+verification. The final 43,709-file site contains 650 native source selections;
+the gallery HTML and CSS exactly match the independently inspected preview.
+This website correction does not change or rebuild native edition PDFs.
+
+| Final local evidence at `bc2fceb50d` | SHA-256 |
+| --- | --- |
+| Publication manifest | `380b17acf72a488d15ac593fc45ba4867dd1ab60685525841ec439b2d013c0a3` |
+| Site checksum manifest | `a87f8f3dd87c5598e5289e62ef317fdfe63b046da9164f6d5666cf75e5678f70` |
+| Full Pages verifier log (exit 0) | `31685efdb64cbf4ed29f118fd10f86ab93b1d6c995c143cbf80a6f22fc1e3b5c` |
+| Composite local verification summary | `e8f8119ae0d0d7bc97475ee0840b3cfcfa9b248be324a7ea76fe40fbf8bb4fce` |
+
+The reviewed commit reached main and the workspace branch by normal pushes.
+[Pages run 42158267467](https://github.com/spincyc/triptych/actions/runs/42158267467)
+is confirmed pending for that exact commit, queued behind the earlier main run.
+A live fetch after the push still returns the original gallery bytes, SHA-256
+`9afa71ef5d9eb6af32bc231efd4c6c9927c2d6687121ec0c7fa37ae9486ab23a`.
+The live-delivery requirement remains open: CI must finish and the served
+gallery must show the corrected entries before this website fix is called
+deployed. This status-only record is excluded from the Pages trigger.
+
 ## Claude 1962 resumed Fifth Sunday after the Epiphany, 2026-11-08
 
 <!-- promised-deliverable: claude-1962-66-resumed-fifth-three-documents-2026-11-08 -->
@@ -73,7 +144,7 @@ rebuild without changing the site.
 
 <!-- promised-deliverable: sanctuary-dictionary-continuation-2026-11 -->
 
-**Bounded continuation complete: verified sources pushed to main; Pages deployment pending.** The remaining-work plan
+**Bounded continuation complete: verified sources pushed to main; initial Pages deployment failed.** The remaining-work plan
 now distinguishes the original bounded repairs from the full open corpus.
 Two canonical records for cassock and surplice bring the inventory to 82;
 three source-controlled drawings show the separate garments and their worn
@@ -150,8 +221,10 @@ the complete 647-edition CI compile remains separate.
 | Composite final local verification summary | `72fd6722acbb63ad5b22c50105eaa6e4d2de74333202e552e076486499636999` |
 
 The push triggered [Pages run 42131423670](https://github.com/spincyc/triptych/actions/runs/42131423670),
-confirmed pending for that exact source commit; repository hygiene passed.
-CI compilation, deployment and live-site verification are not claimed.
+initially confirmed pending for that exact source commit; repository hygiene
+passed. Subsequent inspection during the gallery-duplication correction found
+native compilation passed, but stale browser-product inputs rejected the build.
+That source commit did not deploy; the correction above records the disposition.
 The final status-only commit changes this register and the promise ledger,
 which are excluded from the Pages trigger. The immutable candidate receipts
 retain their original scope. This checkpoint completes the plan's current

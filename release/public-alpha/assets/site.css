@@ -360,7 +360,12 @@ img { max-width: 100%; height: auto; }
   filter: contrast(1.03);
   mix-blend-mode: multiply;
 }
-.gallery-card figcaption { padding: 0 1.1rem 1.2rem; }
+.gallery-study { margin: 0; }
+.gallery-card figcaption { padding: 0 1.1rem; }
+.gallery-description { padding: 0 1.1rem 1.2rem; }
+.gallery-definition + .gallery-definition,
+.gallery-related { margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--line); }
+.gallery-definition { scroll-margin-top: 1rem; }
 .gallery-card h2 { margin: 0; padding: 0; color: var(--ink); font-size: 1.28rem; }
 .gallery-view {
   margin: 0.35rem 0 0.8rem;

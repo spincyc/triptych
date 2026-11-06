@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import html
+from collections import Counter
 from contextlib import ExitStack
 import importlib.machinery
 import importlib.util
@@ -166,7 +167,8 @@ class PictorialGalleryTest(unittest.TestCase):
     def test_gallery_markup_is_semantic_accessible_and_has_no_backlink(self) -> None:
         with mock.patch.object(self.tool, "native_print_pages", return_value={"readers": {}}):
             rendered = self.tool.render_pictorial_gallery(False, {})
-        self.assertEqual(rendered.count('class="gallery-card"'), len(self.cards))
+        entries, compositions = self.tool.pictorial_gallery_entries(self.cards)
+        self.assertEqual(rendered.count('class="gallery-card"'), len(entries) + len(compositions))
         self.assertEqual(rendered.count('loading="lazy"'), len(self.cards))
         self.assertEqual(rendered.count("<figure"), len(self.cards))
         self.assertEqual(rendered.count("<figcaption>"), len(self.cards))
@@ -178,6 +180,47 @@ class PictorialGalleryTest(unittest.TestCase):
         self.assertIn("Public Domain Rijksmuseum image", rendered)
         self.assertIn("sizes across separate images are not a common scale", rendered)
         self.assertIn("<summary>Use and sources</summary>", rendered)
+        self.assertIn('id="objects-together"', rendered)
+        objects = {definition["id"]: definition for card in self.cards for definition in card["definitions"]}
+        self.assertEqual(rendered.count('class="gallery-definition"'), len(objects))
+        for object_id, definition in objects.items():
+            self.assertEqual(rendered.count(f'id="gallery-{object_id}"'), 1)
+            # A repeated depiction may repeat its immediate warnings, but not
+            # the object's complete definition or its use/source apparatus.
+            if not definition["under_audit"]:
+                self.assertEqual(rendered.count(f'<p>{html.escape(definition["definition"])}</p>'), 1, object_id)
+        for group in entries + compositions:
+            for definition in group["related"]:
+                self.assertIn(f'href="#gallery-{definition["id"]}"', rendered)
+
+    def test_object_entries_group_alternates_without_absorbing_ensembles(self) -> None:
+        entries, compositions = self.tool.pictorial_gallery_entries(self.cards)
+        objects = {definition["id"] for card in self.cards for definition in card["definitions"]}
+        occurrences = Counter(definition["id"] for entry in entries for definition in entry["definitions"])
+        self.assertEqual(occurrences, Counter({object_id: 1 for object_id in objects}))
+        self.assertEqual(
+            Counter(image["destination"] for entry in entries + compositions for image in entry["images"]),
+            Counter(card["destination"] for card in self.cards),
+        )
+        for name in ("Altar cruet", "Epistle book"):
+            entry = next(entry for entry in entries if entry["definitions"][0]["name"] == name)
+            self.assertEqual(len(entry["images"]), 2)
+            self.assertEqual(len(entry["definitions"]), 1)
+            self.assertIn("isolated", entry["images"][0]["views"])
+        for filename, names in (
+            ("RPD-FIG-prepared-chalice-0001-formation-alpha.png",
+             {"Burse", "Chalice", "Chalice pall", "Chalice veil", "Corporal", "Paten", "Purificator"}),
+            ("RSD-cassock-surplice-worn-2026-11-05.png", {"Cassock", "Surplice"}),
+            ("RPD-FIG-pontifical-0103-ring-over-right-glove-alpha-canonical.png",
+             {"Pontifical gloves", "Pontifical ring"}),
+        ):
+            group = next(group for group in compositions if any(
+                Path(image["source_relative"]).name == filename for image in group["images"]))
+            self.assertFalse(group["definitions"])
+            self.assertEqual({definition["name"] for definition in group["related"]}, names)
+        # Input order must not decide where an object's entry lives.
+        reverse_entries, reverse_compositions = self.tool.pictorial_gallery_entries(list(reversed(self.cards)))
+        self.assertEqual((entries, compositions), (reverse_entries, reverse_compositions))
 
     def test_gallery_css_blends_image_boundaries_on_the_light_paper(self) -> None:
         css = (
@@ -218,7 +261,7 @@ class PictorialObjectDetailsTest(unittest.TestCase):
         definition, under_audit = self.tool._checked_definition(record)
         details = self.tool._pictorial_object_details(record, definition, {})
         card = {
-            "definitions": [{"name": record["preferred_english_name"], "latin": record["latin_headword"],
+            "definitions": [{"id": record["id"], "name": record["preferred_english_name"], "latin": record["latin_headword"],
                              "category": record["categories"][0], "definition": definition,
                              "under_audit": under_audit, **details}],
             "views": {"isolated"}, "rights": set(), "scale_modes": {"not-to-common-scale"},

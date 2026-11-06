@@ -5399,17 +5399,52 @@ def render_source_print_page(
     return render_print_page(relative, page, preview, authorization)
 
 
+def pictorial_gallery_entries(cards: list[dict]) -> tuple[list[dict], list[dict]]:
+    """Own each definition once, without discarding any selected teaching view.
+
+    Exact object sets share an entry's alternate views. Prefer the smallest
+    pictured set for an object's definition, so a solo study owns its entry
+    and an ensemble links to it. Do not merge intersecting sets transitively:
+    the prepared chalice must not absorb its seven individual objects.
+    """
+    groups: dict[tuple[str, ...], dict] = {}
+    owners: dict[str, tuple[str, ...]] = {}
+    for card in cards:
+        key = tuple(sorted(definition["id"] for definition in card["definitions"]))
+        group = groups.setdefault(key, {"images": [], "pictured": card["definitions"]})
+        group["images"].append(card)
+        for object_id in key:
+            if object_id not in owners or (len(key), key) < (len(owners[object_id]), owners[object_id]):
+                owners[object_id] = key
+    entries, compositions = [], []
+    for key, group in groups.items():
+        group["definitions"] = sorted(
+            (definition for definition in group["pictured"] if owners[definition["id"]] == key),
+            key=lambda definition: (definition["name"].casefold(), definition["id"]),
+        )
+        group["related"] = [definition for definition in group["pictured"]
+                            if owners[definition["id"]] != key]
+        group["images"].sort(key=lambda card: (
+            "isolated" not in card["views"], card["destination"]))
+        (entries if group["definitions"] else compositions).append(group)
+    for collection in (entries, compositions):
+        collection.sort(key=lambda group: tuple(
+            (definition["name"].casefold(), definition["id"])
+            for definition in (group["definitions"] or group["pictured"])))
+    return entries, compositions
+
+
 def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
-    cards = pictorial_gallery_data()
+    entries, compositions = pictorial_gallery_entries(pictorial_gallery_data())
     under_audit_count = sum(
         definition["under_audit"]
-        for card in cards
-        for definition in card["definitions"]
+        for entry in entries
+        for definition in entry["definitions"]
     )
     categories = sorted(
         {
-            card["definitions"][0]["category"]
-            for card in cards
+            entry["definitions"][0]["category"]
+            for entry in entries
         }
     )
     category_links = " · ".join(
@@ -5417,13 +5452,16 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
         f'{html.escape(category.replace("-", " ").title())}</a>'
         for category in categories
     )
+    if compositions:
+        category_links += ' · <a href="#objects-together">Objects together</a>'
     blocks = [
         "# Sanctuary Picture Dictionary",
         "",
         (
             "Explore the checked monochrome drawings used across Triptych’s 1962 "
-            "Roman sanctuary dictionaries. Each image appears once, even when several "
-            "objects or teaching views share it. Images are fitted to their cards; "
+            "Roman sanctuary dictionaries. Each object has one entry, with alternate "
+            "views together. Combined scenes link to those entries. Each drawing "
+            "appears once. Images are fitted to their cards; "
             "sizes across separate images are not a common scale. "
             f"{under_audit_count} pictured object record"
             f"{'s remain' if under_audit_count != 1 else ' remains'} under definition audit; "
@@ -5435,15 +5473,39 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
         '<div class="pictorial-gallery">',
     ]
     seen_categories: set[str] = set()
-    for card in cards:
-        primary_category = card["definitions"][0]["category"]
+    for entry in entries + compositions:
+        if compositions and entry is compositions[0]:
+            blocks.extend(['</div>', '<h2 id="objects-together">Objects together</h2>',
+                           '<p>Combined views show how the objects relate. Follow an object’s name '
+                           'to its dictionary entry.</p>', '<div class="pictorial-gallery">'])
         category_id = ""
-        if primary_category not in seen_categories:
-            category_id = f' id="category-{html.escape(primary_category)}"'
-            seen_categories.add(primary_category)
-        title = " · ".join(definition["name"] for definition in card["definitions"])
+        if entry["definitions"]:
+            primary_category = entry["definitions"][0]["category"]
+            if primary_category not in seen_categories:
+                category_id = f' id="category-{html.escape(primary_category)}"'
+                seen_categories.add(primary_category)
+        blocks.append(f'<article class="gallery-card"{category_id}>')
+        for card in entry["images"]:
+            title = " · ".join(definition["name"] for definition in card["definitions"])
+            views = ", ".join(sorted(card["views"])).replace("-", " ")
+            scale_labels = {"common-scale": "Objects within this image share a common scale.",
+                            "scale-bar": "Use the scale bar within this image.",
+                            "not-to-common-scale": "Objects within this image are not to common scale."}
+            scale = " ".join(scale_labels[mode] for mode in sorted(card["scale_modes"]) if mode in scale_labels)
+            rights = "".join(f'<p class="gallery-rights">{html.escape(statement)}</p>'
+                             for statement in sorted(card["rights"]))
+            blocks.extend([
+                '<figure class="gallery-study">', '<div class="gallery-image">',
+                f'<img src="../{html.escape(card["destination"], quote=True)}" '
+                f'width="{card["width"]}" height="{card["height"]}" loading="lazy" '
+                f'decoding="async" alt="{html.escape("Pencil study: " + title + " — " + views, quote=True)}">',
+                '</div>', '<figcaption>',
+                f'<p class="gallery-view">{html.escape(views.title())}</p>',
+                f'<p class="gallery-view">{html.escape(scale)}</p>' if scale else "",
+                rights, '</figcaption>', '</figure>',
+            ])
         descriptions = []
-        for definition in card["definitions"]:
+        for definition in entry["definitions"]:
             latin = definition["latin"]
             latin_text = (
                 f' <span class="gallery-latin" lang="la">({html.escape(latin)})</span>'
@@ -5479,37 +5541,19 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
                                       for source in definition["citations"])
                     paragraphs.append('</ul>')
                 paragraphs.append('</details>')
-            descriptions.append(f'<dt>{html.escape(definition["name"])}{latin_text}</dt>'
-                                f'<dd>{"".join(paragraphs)}</dd>')
-        views = ", ".join(sorted(card["views"])).replace("-", " ")
-        rights = "".join(
-            f'<p class="gallery-rights">{html.escape(statement)}</p>'
-            for statement in sorted(card["rights"])
-        )
-        scale_labels = {"common-scale": "Objects within this image share a common scale.",
-                        "scale-bar": "Use the scale bar within this image.",
-                        "not-to-common-scale": "Objects within this image are not to common scale."}
-        scale = " ".join(scale_labels[mode] for mode in sorted(card["scale_modes"]) if mode in scale_labels)
-        blocks.extend(
-            [
-                f'<figure class="gallery-card"{category_id}>',
-                '<div class="gallery-image">',
-                (
-                    f'<img src="../{html.escape(card["destination"], quote=True)}" '
-                    f'width="{card["width"]}" height="{card["height"]}" loading="lazy" '
-                    f'decoding="async" alt="{html.escape("Pencil study: " + title, quote=True)}">'
-                ),
-                "</div>",
-                "<figcaption>",
-                f"<h2>{html.escape(title)}</h2>",
-                f'<p class="gallery-view">{html.escape(views.title())}</p>',
-                f'<p class="gallery-view">{html.escape(scale)}</p>' if scale else "",
-                f'<dl>{"".join(descriptions)}</dl>',
-                rights,
-                "</figcaption>",
-                "</figure>",
-            ]
-        )
+            descriptions.append(
+                f'<section class="gallery-definition" id="gallery-{html.escape(definition["id"], quote=True)}">'
+                f'<h2>{html.escape(definition["name"])}{latin_text}</h2>{"".join(paragraphs)}</section>')
+        for definition in entry["related"]:
+            # Contextual qualifications and immediate handling warnings stay
+            # beside every depiction; the definition and full apparatus do not.
+            context = list(dict.fromkeys(definition["qualifications"] + definition["handling"].get("warnings", [])))
+            descriptions.append(
+                '<div class="gallery-related">'
+                f'<p><a href="#gallery-{html.escape(definition["id"], quote=True)}">'
+                f'{html.escape(definition["name"])} — see entry</a></p>'
+                + "".join(f'<p>{html.escape(text)}</p>' for text in context) + '</div>')
+        blocks.extend(['<div class="gallery-description">', *descriptions, '</div>', '</article>'])
     blocks.extend(
         [
             "</div>",
