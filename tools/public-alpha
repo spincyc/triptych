@@ -143,6 +143,7 @@ PICTORIAL_MANIFEST_RELATIVE = (
 )
 PICTORIAL_OBJECTS_RELATIVE = PICTORIAL_ROOT_RELATIVE / "shared/objects"
 PICTORIAL_GALLERY_OUTPUT = "library/sanctuary-picture-dictionary.html"
+PICTORIAL_SCRIPT_ASSET = "assets/sanctuary-dictionary.js"
 PICTORIAL_GALLERY_ASSET_ROOT = PurePosixPath("assets/pictorial-gallery")
 
 # The browser resolves bibles.json, structure/<kind>/<id>.json and
@@ -1214,8 +1215,7 @@ def _resolve_pictorial_asset_path(value: str, label: str) -> Path:
 
 
 PICTORIAL_UNAVAILABLE_DEFINITION = (
-    "A source-verified definition is not yet available; this pictured record "
-    "remains under audit."
+    "The checked sources do not yet establish this identification."
 )
 PICTORIAL_CHECKED_STATES = {
     "checked-paraphrase", "checked-quotation", "source-grounded-synthesis", "verified-source-text",
@@ -1457,7 +1457,8 @@ def pictorial_gallery_data(edition: str | None = None) -> list[dict]:
 def pictorial_gallery_source_paths() -> set[str]:
     if not (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         return set()
-    paths = {PICTORIAL_MANIFEST_RELATIVE.as_posix()} | pictorial_object_source_paths()
+    paths = {PICTORIAL_MANIFEST_RELATIVE.as_posix(),
+             "release/public-alpha/" + PICTORIAL_SCRIPT_ASSET} | pictorial_object_source_paths()
     _, selection_inputs = pictorial_gallery_selection()
     paths.update(selection_inputs)
     for card in pictorial_gallery_data():
@@ -4040,6 +4041,7 @@ def expected_artifact_files(
     expected = set(PAGE_MAP.values())
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
         expected.add(PICTORIAL_GALLERY_OUTPUT)
+        expected.add(PICTORIAL_SCRIPT_ASSET)
         expected.update(card["destination"] for card in pictorial_gallery_data())
     expected.update(included_document_pages(set(included)).values())
     expected.update(web_figure_route(figure) for figure in included_web_figures(set(included)))
@@ -4788,6 +4790,8 @@ def render_page(
     output_relative: str,
     preview: bool,
     authorization: dict,
+    *,
+    body_extra: str = "",
 ) -> str:
     try:
         content = add_table_header_scopes(drop_empty_table_heads(render_markdown(
@@ -4823,7 +4827,7 @@ def render_page(
         body_extra=(
             '<script src="' + relative_link(output_relative, "shared/catalogue-navigation.js")
             + '"></script>' if catalogue else ""
-        ) + reader_body,
+        ) + reader_body + body_extra,
     )
 
 
@@ -5399,190 +5403,307 @@ def render_source_print_page(
     return render_print_page(relative, page, preview, authorization)
 
 
-def pictorial_gallery_entries(cards: list[dict]) -> tuple[list[dict], list[dict]]:
-    """Own each definition once, without discarding any selected teaching view.
+# Presentation order only: canonical object records continue to own names,
+# definitions, qualifications and admission. New pictured identities require an
+# explicit editorial placement instead of silently falling back to A–Z.
+PICTORIAL_DICTIONARY_GROUPS = (
+    ('Sanctuary and altar', (
+        'obj-altar',
+        'obj-altar-cloths',
+        'obj-altar-cross',
+        'obj-altar-candle',
+        'obj-altar-candlestick',
+        'obj-tabernacle',
+        'obj-sanctuary-lamp',
+        'obj-credence-table',
+        'obj-lectern',
+        'obj-sedilia',
+        'obj-sacristy-cross',
+        'obj-communion-rail',
+    )),
+    ('Vessels and chalice cloths', (
+        'obj-chalice',
+        'obj-paten',
+        'obj-corporal',
+        'obj-purificator',
+        'obj-chalice-pall',
+        'obj-chalice-veil',
+        'obj-burse',
+        'obj-ciborium',
+        'obj-communion-plate',
+    )),
+    ('Books and supports', (
+        'obj-altar-missal',
+        'obj-book-marker',
+        'obj-missal-stand',
+        'obj-missal-cushion',
+        'obj-epistle-book',
+        'obj-gospel-book',
+    )),
+    ('Service and procession', (
+        'obj-altar-cruet',
+        'obj-lavabo-basin',
+        'obj-lavabo-towel',
+        'obj-altar-bells',
+        'obj-sacristy-bell',
+        'obj-candle-lighter-extinguisher',
+        'obj-processional-cross',
+        'obj-acolyte-candlestick',
+        'obj-elevation-torch',
+    )),
+    ('Incense', (
+        'obj-thurible',
+        'obj-incense-boat-and-spoon',
+    )),
+    ('Priest’s vestments', (
+        'obj-amice',
+        'obj-alb',
+        'obj-cincture',
+        'obj-maniple',
+        'obj-priest-stole',
+        'obj-chasuble',
+    )),
+    ('Deacon and subdeacon', (
+        'obj-deacon-stole',
+        'obj-dalmatic',
+        'obj-tunicle',
+    )),
+    ('Bishop’s vestments and insignia', (
+        'obj-pontifical-tunicle',
+        'obj-pontifical-dalmatic',
+        'obj-pontifical-buskin',
+        'obj-pontifical-sandal',
+        'obj-pontifical-gloves',
+        'obj-pontifical-ring',
+        'obj-mitre',
+        'obj-crosier',
+        'obj-episcopal-throne',
+        'obj-faldstool',
+        'obj-mitre-minister-veil',
+        'obj-vimpa',
+        'obj-bugia',
+    )),
+    ('Servers and choir', (
+        'obj-cassock',
+        'obj-surplice',
+    )),
+    ('Related rites and insignia', (
+        'obj-holy-water-vessel',
+        'obj-aspergillum',
+        'obj-ombrellino',
+        'obj-basilical-conopaeum',
+    )),
+)
 
-    Exact object sets share an entry's alternate views. Prefer the smallest
-    pictured set for an object's definition, so a solo study owns its entry
-    and an ensemble links to it. Do not merge intersecting sets transitively:
-    the prepared chalice must not absorb its seven individual objects.
-    """
-    groups: dict[tuple[str, ...], dict] = {}
-    owners: dict[str, tuple[str, ...]] = {}
+
+PICTORIAL_CONTEXT_OWNERS = {
+    "obj-book-marker": "obj-altar-missal",
+    "obj-communion-rail": "obj-altar-candlestick",
+}
+PICTORIAL_SHARED_VIEWS = (
+    ("obj-gospel-book", "Gospel book in use", ("obj-acolyte-candlestick", "obj-gospel-book")),
+    ("obj-altar-candlestick", "Historical chapel", ("obj-altar-candle", "obj-altar-candlestick", "obj-communion-rail")),
+    ("obj-altar-missal", "Missal on its stand", ("obj-altar-missal", "obj-book-marker", "obj-missal-stand")),
+    ("obj-chalice", "Prepared chalice", ("obj-burse", "obj-chalice", "obj-chalice-pall", "obj-chalice-veil", "obj-corporal", "obj-paten", "obj-purificator")),
+    ("obj-cassock", "Cassock and surplice worn together", ("obj-cassock", "obj-surplice")),
+    ("obj-pontifical-tunicle", "Layered pontifical vestments", ("obj-chasuble", "obj-pontifical-dalmatic", "obj-pontifical-tunicle")),
+    ("obj-mitre-minister-veil", "Mitre and minister’s veil", ("obj-mitre", "obj-mitre-minister-veil")),
+    ("obj-pontifical-buskin", "Buskin and sandal", ("obj-pontifical-buskin", "obj-pontifical-sandal")),
+    ("obj-pontifical-gloves", "Glove and ring", ("obj-pontifical-gloves", "obj-pontifical-ring")),
+)
+
+
+def pictorial_view_identity(card: dict) -> tuple[str, str, str]:
+    ids = {definition["id"] for definition in card["definitions"]}
+    view_id = "view-" + PurePosixPath(card["destination"]).stem
+    if len(ids) == 1:
+        definition = card["definitions"][0]
+        caption = definition["name"]
+        if "in-use" in card["views"]:
+            caption += " in use"
+        elif definition["id"] == "obj-altar-cruet" and "comparison" in card["views"]:
+            caption = "Pair of altar cruets"
+        return definition["id"], view_id, caption
+    for owner, caption, members in PICTORIAL_SHARED_VIEWS:
+        if ids == set(members):
+            return owner, view_id, caption
+    raise ReleaseError(f"dictionary view has no editorial placement: {sorted(ids)}")
+
+
+def pictorial_dictionary_rows(cards: list[dict]) -> list[dict]:
+    definitions = {}
     for card in cards:
-        key = tuple(sorted(definition["id"] for definition in card["definitions"]))
-        group = groups.setdefault(key, {"images": [], "pictured": card["definitions"]})
-        group["images"].append(card)
-        for object_id in key:
-            if object_id not in owners or (len(key), key) < (len(owners[object_id]), owners[object_id]):
-                owners[object_id] = key
-    entries, compositions = [], []
-    for key, group in groups.items():
-        group["definitions"] = sorted(
-            (definition for definition in group["pictured"] if owners[definition["id"]] == key),
-            key=lambda definition: (definition["name"].casefold(), definition["id"]),
-        )
-        group["related"] = [definition for definition in group["pictured"]
-                            if owners[definition["id"]] != key]
-        group["images"].sort(key=lambda card: (
-            "isolated" not in card["views"], card["destination"]))
-        (entries if group["definitions"] else compositions).append(group)
-    for collection in (entries, compositions):
-        collection.sort(key=lambda group: tuple(
-            (definition["name"].casefold(), definition["id"])
-            for definition in (group["definitions"] or group["pictured"])))
-    return entries, compositions
+        for definition in card["definitions"]:
+            previous = definitions.setdefault(definition["id"], definition)
+            if previous != definition:
+                raise ReleaseError(f"dictionary has conflicting definitions: {definition['id']}")
+    placements = {}
+    for group_order, (label, members) in enumerate(PICTORIAL_DICTIONARY_GROUPS):
+        slug = re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-")
+        for object_order, object_id in enumerate(members):
+            if object_id in placements:
+                raise ReleaseError(f"dictionary repeats an editorial placement: {object_id}")
+            placements[object_id] = (label, slug, group_order, object_order)
+    unknown = definitions.keys() - placements.keys()
+    if unknown:
+        raise ReleaseError(f"dictionary objects have no editorial placement: {sorted(unknown)}")
+    rows = {}
+    for object_id, definition in definitions.items():
+        if object_id in PICTORIAL_CONTEXT_OWNERS:
+            continue
+        label, slug, group_order, object_order = placements[object_id]
+        rows[object_id] = dict(definition=definition, group=label, group_id=slug,
+                              group_order=group_order, object_order=object_order,
+                              images=[], contexts=[], shared=[])
+    for object_id, owner in PICTORIAL_CONTEXT_OWNERS.items():
+        if object_id in definitions:
+            if owner not in rows:
+                raise ReleaseError(f"dictionary context has no owning entry: {object_id}")
+            rows[owner]["contexts"].append(definitions[object_id])
+    for card in cards:
+        owner, _, _ = pictorial_view_identity(card)
+        if owner not in rows:
+            raise ReleaseError(f"dictionary view has no owning entry: {owner}")
+        rows[owner]["images"].append(card)
+        for definition in card["definitions"]:
+            if definition["id"] != owner and definition["id"] in rows:
+                rows[definition["id"]]["shared"].append(card)
+    for row in rows.values():
+        row["images"].sort(key=lambda card: (
+            len(card["definitions"]) != 1, "isolated" not in card["views"], card["destination"]))
+    return sorted(rows.values(), key=lambda row: (row["group_order"], row["object_order"]))
+
+
+def pictorial_definition_notes(definition: dict) -> str:
+    paragraphs = [f'<p>{html.escape(text)}</p>' for text in definition["qualifications"]]
+    handling = definition["handling"]
+    paragraphs.extend(f'<p><strong>Handling:</strong> {html.escape(warning)}</p>'
+                      for warning in handling.get("warnings", [])
+                      if warning not in definition["qualifications"])
+    paragraphs.append('<details><summary>Use and sources</summary>')
+    if definition["statuses"]:
+        status = ", ".join(definition["statuses"]).replace("-", " ").title()
+        paragraphs.append(f'<p><strong>Status:</strong> {html.escape(status)}.</p>')
+    if definition["locations"] or definition["contexts"]:
+        location = " ".join(definition["locations"] + definition["contexts"])
+        paragraphs.append(f'<p><strong>Location:</strong> {html.escape(location)}</p>')
+    if handling:
+        handlers = ", ".join(handling["ordinary_handlers"]).replace("-", " ")
+        relation = handling["server_relation"].replace("-", " ")
+        paragraphs.append(f'<p><strong>Ordinary handler:</strong> {html.escape(handlers)}. '
+                          f'<strong>Server:</strong> {html.escape(relation)}.</p>')
+    paragraphs.extend(f'<p><strong>{html.escape(item["label"])}:</strong> '
+                      f'{html.escape(item["text"])}</p>' for item in definition["use"])
+    if definition["citations"]:
+        paragraphs.append('<ul aria-label="Sources">')
+        paragraphs.extend(f'<li>{html.escape(source["label"])} — {html.escape(source["locus"])}</li>'
+                          for source in definition["citations"])
+        paragraphs.append('</ul>')
+    paragraphs.append('</details>')
+    return "".join(paragraphs)
 
 
 def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
-    entries, compositions = pictorial_gallery_entries(pictorial_gallery_data())
-    under_audit_count = sum(
-        definition["under_audit"]
-        for entry in entries
-        for definition in entry["definitions"]
-    )
-    categories = sorted(
-        {
-            entry["definitions"][0]["category"]
-            for entry in entries
-        }
-    )
-    category_links = " · ".join(
-        f'<a href="#category-{html.escape(category)}">'
-        f'{html.escape(category.replace("-", " ").title())}</a>'
-        for category in categories
-    )
-    if compositions:
-        category_links += ' · <a href="#objects-together">Objects together</a>'
+    rows = pictorial_dictionary_rows(pictorial_gallery_data())
+    escape = html.escape
+    options = ''.join(f'<option value="{escape(row["group_id"])}">{escape(row["group"])}</option>'
+                      for index, row in enumerate(rows)
+                      if index == 0 or row["group_id"] != rows[index - 1]["group_id"])
     blocks = [
-        "# Sanctuary Picture Dictionary",
-        "",
-        (
-            "Explore the checked monochrome drawings used across Triptych’s 1962 "
-            "Roman sanctuary dictionaries. Each object has one entry, with alternate "
-            "views together. Combined scenes link to those entries. Each drawing "
-            "appears once. Images are fitted to their cards; "
-            "sizes across separate images are not a common scale. "
-            f"{under_audit_count} pictured object record"
-            f"{'s remain' if under_audit_count != 1 else ' remains'} under definition audit; "
-            "those cards say so directly."
-        ),
-        "",
-        f'<nav class="gallery-categories" aria-label="Picture categories">{category_links}</nav>',
-        "",
-        '<div class="pictorial-gallery">',
+        '# Sanctuary Picture Dictionary', '',
+        'Objects of the Roman sanctuary at the 1962 horizon, arranged by use. '
+        'Select a drawing to enlarge it. Details include related views, qualifications, and sources.', '',
+        '<div class="dictionary-toolbar" hidden>',
+        '<label>Find an entry<input type="search" data-dictionary-search placeholder="English or Latin name, or use" autocomplete="off"></label>',
+        '<label>Grouping<select data-dictionary-group><option value="">All groupings</option>' + options + '</select></label>',
+        '</div>',
+        '<p class="dictionary-scroll-hint" id="dictionary-scroll-hint">Scroll horizontally for identification and use.</p>',
+        '<div class="dictionary-table-region" role="region" tabindex="0" aria-label="Sanctuary dictionary" aria-describedby="dictionary-scroll-hint">',
+        '<table class="sanctuary-table" aria-label="Sanctuary picture dictionary entries">',
+        f'<caption><output id="dictionary-result-count">{len(rows)} entries</output></caption>',
+        '<thead><tr><th scope="col">Picture</th><th scope="col"><button data-dictionary-sort="name" disabled>Object</button></th>',
+        '<th scope="col" aria-sort="ascending"><button data-dictionary-sort="group" disabled>Grouping</button></th><th scope="col">Identification / use</th></tr></thead><tbody>',
     ]
-    seen_categories: set[str] = set()
-    for entry in entries + compositions:
-        if compositions and entry is compositions[0]:
-            blocks.extend(['</div>', '<h2 id="objects-together">Objects together</h2>',
-                           '<p>Combined views show how the objects relate. Follow an object’s name '
-                           'to its dictionary entry.</p>', '<div class="pictorial-gallery">'])
-        category_id = ""
-        if entry["definitions"]:
-            primary_category = entry["definitions"][0]["category"]
-            if primary_category not in seen_categories:
-                category_id = f' id="category-{html.escape(primary_category)}"'
-                seen_categories.add(primary_category)
-        blocks.append(f'<article class="gallery-card"{category_id}>')
-        for card in entry["images"]:
-            title = " · ".join(definition["name"] for definition in card["definitions"])
-            views = ", ".join(sorted(card["views"])).replace("-", " ")
-            scale_labels = {"common-scale": "Objects within this image share a common scale.",
-                            "scale-bar": "Use the scale bar within this image.",
-                            "not-to-common-scale": "Objects within this image are not to common scale."}
-            scale = " ".join(scale_labels[mode] for mode in sorted(card["scale_modes"]) if mode in scale_labels)
-            rights = "".join(f'<p class="gallery-rights">{html.escape(statement)}</p>'
-                             for statement in sorted(card["rights"]))
-            blocks.extend([
-                '<figure class="gallery-study">', '<div class="gallery-image">',
-                f'<img src="../{html.escape(card["destination"], quote=True)}" '
-                f'width="{card["width"]}" height="{card["height"]}" loading="lazy" '
-                f'decoding="async" alt="{html.escape("Pencil study: " + title + " — " + views, quote=True)}">',
-                '</div>', '<figcaption>',
-                f'<p class="gallery-view">{html.escape(views.title())}</p>',
-                f'<p class="gallery-view">{html.escape(scale)}</p>' if scale else "",
-                rights, '</figcaption>', '</figure>',
-            ])
-        descriptions = []
-        for definition in entry["definitions"]:
-            latin = definition["latin"]
-            latin_text = (
-                f' <span class="gallery-latin" lang="la">({html.escape(latin)})</span>'
-                if latin and latin != "Latin term not asserted"
-                else ""
-            )
-            paragraphs = [f'<p>{html.escape(definition["definition"])}</p>']
-            paragraphs.extend(f'<p>{html.escape(text)}</p>' for text in definition["qualifications"])
-            handling = definition["handling"]
-            paragraphs.extend(f'<p><strong>Handling:</strong> {html.escape(warning)}</p>'
-                              for warning in handling.get("warnings", [])
-                              if warning not in definition["qualifications"])
-            has_details = any(definition[key] for key in ("statuses", "locations", "handling", "use", "citations"))
-            if has_details:
-                paragraphs.append('<details><summary>Use and sources</summary>')
-            if definition["statuses"]:
-                status = ", ".join(definition["statuses"]).replace("-", " ").title()
-                paragraphs.append(f'<p><strong>Status:</strong> {html.escape(status)}.</p>')
-            if definition["locations"]:
-                location = " ".join(definition["locations"] + definition["contexts"])
-                paragraphs.append(f'<p><strong>Location:</strong> {html.escape(location)}</p>')
-            if handling:
-                handlers = ", ".join(handling["ordinary_handlers"]).replace("-", " ")
-                relation = handling["server_relation"].replace("-", " ")
-                paragraphs.append(f'<p><strong>Ordinary handler:</strong> {html.escape(handlers)}. '
-                                  f'<strong>Server:</strong> {html.escape(relation)}.</p>')
-            if has_details:
-                paragraphs.extend(f'<p><strong>{html.escape(item["label"])}:</strong> '
-                                  f'{html.escape(item["text"])}</p>' for item in definition["use"])
-                if definition["citations"]:
-                    paragraphs.append('<ul aria-label="Sources">')
-                    paragraphs.extend(f'<li>{html.escape(source["label"])} — {html.escape(source["locus"])}</li>'
-                                      for source in definition["citations"])
-                    paragraphs.append('</ul>')
-                paragraphs.append('</details>')
-            descriptions.append(
-                f'<section class="gallery-definition" id="gallery-{html.escape(definition["id"], quote=True)}">'
-                f'<h2>{html.escape(definition["name"])}{latin_text}</h2>{"".join(paragraphs)}</section>')
-        for definition in entry["related"]:
-            # Contextual qualifications and immediate handling warnings stay
-            # beside every depiction; the definition and full apparatus do not.
-            context = list(dict.fromkeys(definition["qualifications"] + definition["handling"].get("warnings", [])))
-            descriptions.append(
-                '<div class="gallery-related">'
-                f'<p><a href="#gallery-{html.escape(definition["id"], quote=True)}">'
-                f'{html.escape(definition["name"])} — see entry</a></p>'
-                + "".join(f'<p>{html.escape(text)}</p>' for text in context) + '</div>')
-        blocks.extend(['<div class="gallery-description">', *descriptions, '</div>', '</article>'])
-    blocks.extend(
-        [
-            "</div>",
-            "",
-            (
-                '<p class="gallery-note">Definitions are drawn only from verified claims '
-                "in the canonical object records, preferring identity and liturgical-use "
-                "claims before narrower ceremonial or appearance descriptions. The drawings "
-                "are study aids, not substitutes for the governing liturgical books or "
-                "local direction.</p>"
-            ),
-            (
-                '<p class="gallery-note gallery-rights-context">Each image follows its '
-                "tracked artwork audit. Project-created content follows the "
-                '<a href="../license.html">Triptych licensing statement</a>; source and '
-                "third-party boundaries, including required attributions, remain governed "
-                'by the <a href="../third-party.html">third-party material notice</a>. '
-                "A card prints an additional rights statement only when its structured "
-                "artwork record supplies one.</p>"
-            ),
-        ]
-    )
-    return render_page(
-        PICTORIAL_MANIFEST_RELATIVE.as_posix(),
-        "\n".join(blocks) + "\n",
-        PICTORIAL_GALLERY_OUTPUT,
-        preview,
-        authorization,
-    )
+    for row in rows:
+        definition = row['definition']
+        object_id, name = definition['id'], definition['name']
+        detail_id = 'details-' + object_id
+        thumbnails, figures = [], []
+        for card in row['images']:
+            _, view_id, caption = pictorial_view_identity(card)
+            url = '../' + escape(card['destination'], quote=True)
+            img = (f'<img src="{url}" width="{card["width"]}" height="{card["height"]}" '
+                   f'loading="lazy" decoding="async" alt="{escape(caption, quote=True)}">')
+            thumbnails.append(f'<a class="dictionary-image-toggle" href="{url}" '
+                              f'data-detail="{detail_id}" data-image="{view_id}" '
+                              f'aria-label="{escape("View " + caption, quote=True)}">{img}</a>')
+            related = ' · '.join(f'<a href="#gallery-{escape(d["id"])}">{escape(d["name"])}</a>'
+                                 for d in card['definitions'] if d['id'] != object_id)
+            rights = ''.join(f'<p class="gallery-rights">{escape(statement)}</p>'
+                             for statement in sorted(card['rights']))
+            if rights:
+                rights = '<details class="gallery-rights"><summary>Image credit</summary>' + rights + '</details>'
+            qualifications = []
+            owner_notes = set(definition['qualifications'] + definition['handling'].get('warnings', []))
+            for pictured in card['definitions']:
+                if pictured['id'] == object_id:
+                    continue
+                notes = list(dict.fromkeys(pictured['qualifications'] + pictured['handling'].get('warnings', [])))
+                notes = [note for note in notes if note not in owner_notes]
+                if notes:
+                    qualifications.append(f'<p><strong>{escape(pictured["name"])}:</strong> '
+                                          + ' '.join(escape(note) for note in notes) + '</p>')
+            figures.append(f'<figure id="{view_id}">{img}<figcaption><strong>{escape(caption)}</strong>'
+                           + (f'<p>Also shown: {related}.</p>' if related else '')
+                           + ''.join(qualifications) + rights + '</figcaption></figure>')
+        shared = []
+        for card in row['shared']:
+            _, view_id, caption = pictorial_view_identity(card)
+            shared.append(f'<a href="#{view_id}">{escape(caption)}</a>')
+        # A shared composition is linked rather than copied into a second row.
+        picture = '<div class="dictionary-thumbnails">' + ''.join(thumbnails) + '</div>' if thumbnails else (
+            '<span class="dictionary-shared-picture">Shown in ' + ' · '.join(shared) + '</span>')
+        latin = definition['latin']
+        latin_text = (f'<span class="gallery-latin" lang="la">{escape(latin)}</span>'
+                      if latin and latin != 'Latin term not asserted' else '')
+        search = ' '.join([name, latin, row['group'], definition['definition']]
+                          + [text for context in row['contexts']
+                             for text in (context['name'], context['latin'])])
+        blocks.extend([
+            f'<tr class="dictionary-row" id="gallery-{object_id}" data-name="{escape(name, quote=True)}" '
+            f'data-group="{row["group_id"]}" data-group-order="{row["group_order"]}" '
+            f'data-object-order="{row["object_order"]}" data-search="{escape(search, quote=True)}">',
+            f'<td>{picture}</td><th scope="row">{escape(name)} {latin_text}<br>'
+            f'<a class="dictionary-row-toggle" href="#{detail_id}" aria-label="{escape("Details about " + name, quote=True)}">Details</a></th>',
+            f'<td>{escape(row["group"])}</td><td><p class="dictionary-definition">{escape(definition["definition"])}</p></td></tr>',
+            f'<tr class="dictionary-detail-row" id="{detail_id}"><td colspan="4">',
+            '<details class="dictionary-details">'
+            f'<summary>More about {escape(name)}</summary><div class="dictionary-detail-content">',
+            '<div class="dictionary-views">' + ''.join(figures) + '</div><div class="dictionary-notes">',
+            pictorial_definition_notes(definition),
+        ])
+        if shared and thumbnails:
+            blocks.append('<p>Related views: ' + ' · '.join(shared) + '.</p>')
+        for context in row['contexts']:
+            blocks.append(f'<section class="gallery-related" id="gallery-{context["id"]}">'
+                          f'<h3>{escape(context["name"])} <small>— shown in context</small></h3>'
+                          f'<p>{escape(context["definition"])}</p>' + pictorial_definition_notes(context) + '</section>')
+        blocks.append('</div></div></details></td></tr>')
+    blocks.extend([
+        '<tr class="dictionary-empty" hidden><td colspan="4"><p class="dictionary-empty-message">No entries match. Try a shorter search or another grouping.</p></td></tr>',
+        '</tbody></table></div>',
+        '<details class="gallery-note"><summary>About the illustrations and sources</summary>',
+        '<p>This selection covers the checked, illustrated portion of the dictionary. '
+        'Drawings are resized independently. The book marker and Communion rail are identified within their illustrated settings. '
+        'Definitions and qualifications follow the cited sources; this is a study reference, not an official liturgical book or local direction.</p>',
+        '<p>Project-created content follows the <a href="../license.html">Triptych licensing statement</a>. '
+        'Source and third-party material follows the <a href="../third-party.html">third-party material notice</a>; '
+        'individual image credits appear with the enlarged drawings.</p></details>',
+    ])
+    script = relative_link(PICTORIAL_GALLERY_OUTPUT, PICTORIAL_SCRIPT_ASSET)
+    return render_page(PICTORIAL_MANIFEST_RELATIVE.as_posix(), '\n'.join(blocks) + '\n',
+                       PICTORIAL_GALLERY_OUTPUT, preview, authorization,
+                       body_extra=f'<script src="{script}" defer></script>')
 
 
 class LinkParser(HTMLParser):
@@ -6260,6 +6381,8 @@ def _verify_snapshot_contents(
             for source_relative in artifact_license_source_paths()
         ],
     ]
+    if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+        static_sources.append((TEMPLATE_ROOT / PICTORIAL_SCRIPT_ASSET, output / PICTORIAL_SCRIPT_ASSET))
     for source_path, artifact_path in static_sources:
         if artifact_path.is_file() and sha256(artifact_path) != sha256(source_path):
             errors.append(
@@ -6849,6 +6972,7 @@ def _build_site_contents(
         writer.copy(license_path, source_relative)
 
     if (ROOT / PICTORIAL_MANIFEST_RELATIVE).is_file():
+        writer.copy(TEMPLATE_ROOT / PICTORIAL_SCRIPT_ASSET, PICTORIAL_SCRIPT_ASSET)
         for card in pictorial_gallery_data():
             writer.copy(card["source"], card["destination"])
 

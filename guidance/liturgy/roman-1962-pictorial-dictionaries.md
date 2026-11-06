@@ -146,6 +146,29 @@ consumers, rights, and validation state. Audit invented or missing parts,
 impossible folds or wearing, false ornament, incorrect scale, duplicate
 figures, impossible placement, and ambiguous monochrome identification.
 
+## Website dictionary
+
+The website presents the illustrated selection in one semantic table, with
+small expandable drawings, English and Latin headwords, a grouping column,
+and a concise identification and use. Its default order follows practical
+relationships: sanctuary furnishings, vessels and cloths, books, service
+objects, incense, vestments, ministers, and related rites. Alphabetical order
+is an optional aid, not the organizing principle.
+
+Each object has one primary row. Alternate and combined views belong beside
+the objects they explain, with links to the other entries rather than repeated
+definitions. Contextual identifications remain explicitly contextual and do
+not become independently admitted objects. Expanded views retain the source
+qualifications, handling warnings, and applicable image credits. Longer use
+and source apparatus belongs in disclosures. Keep a single quiet explanation
+of independently resized drawings; omit repetitive generic view and scale
+labels from the rows. Search, grouping, sorting, and expansion must preserve
+keyboard access, stable entry links, and a usable native HTML fallback.
+
+This website presentation follows the user's 6 November 2026 direction. The
+image-dominant page composition and scale requirements above continue to
+govern print editions.
+
 ## Reader order
 
 The comprehensive volume begins with a compact title, a short plate and symbol

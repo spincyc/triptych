@@ -1,10 +1,40 @@
 schema_version = 1
 
 [[deliverables]]
+id = "sanctuary-dictionary-table-2026-11"
+owner = "tools/public-alpha"
+promise = "Present the website Sanctuary Picture Dictionary as one cohesive grouped table with small expandable illustrations, quiet default rows, preserved source boundaries and full cold organization/presentation review."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "grouped-table"
+  criterion = "One semantic multi-column table includes a grouping column and follows a useful functional order; each object identity appears once, and all selected illustrations and combined views remain accessible beside their related objects."
+  status = "pass"
+  evidence = ["tools/public-alpha", "tools/tests/test_pictorial_gallery.py"]
+
+  [[deliverables.requirements]]
+  id = "compact-interaction"
+  criterion = "Rows use small images with accessible expand/collapse; repeated generic view/scale labels do not clutter the table, and full qualifications, handling boundaries and rights remain available in appropriate disclosures."
+  status = "pass"
+  evidence = ["guidance/liturgy/roman-1962-pictorial-dictionaries.md", "tools/public-alpha"]
+
+  [[deliverables.requirements]]
+  id = "cold-review-and-release"
+  criterion = "Independent cold review examines the actual organization and presentation, keyboard and mobile behavior; focused regressions and required release gates pass, with a coherent commit and validated main publication."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/sanctuary-dictionary-table-2026-11-06/REVIEW.md"]
+
+  [[deliverables.requirements]]
+  id = "live-table"
+  criterion = "Pages deployment succeeds and the live website serves the verified grouped table and working expand/collapse controls."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "sanctuary-gallery-unique-entries-2026-11"
 owner = "tools/public-alpha"
 promise = "Correct repeated object entries in the website Sanctuary Picture Dictionary while preserving useful alternate and combined views, qualifications and sources."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "unique-entries"
@@ -21,7 +51,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "live-gallery"
   criterion = "The Pages build, native compile and deployment gates succeed, and the live Sanctuary Picture Dictionary serves the corrected gallery with one full definition per pictured identity and no superseded illustrations."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]

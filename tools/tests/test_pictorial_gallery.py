@@ -4,6 +4,8 @@ import hashlib
 import html
 from collections import Counter
 from contextlib import ExitStack
+from copy import deepcopy
+from html.parser import HTMLParser
 import importlib.machinery
 import importlib.util
 from pathlib import Path
@@ -27,6 +29,42 @@ def load_tool():
     module = importlib.util.module_from_spec(spec)
     loader.exec_module(module)
     return module
+
+
+class DictionaryMarkup(HTMLParser):
+    """Small structural reader so the table tests do not rely on string layout."""
+
+    def __init__(self, source: str) -> None:
+        super().__init__(convert_charrefs=True)
+        self.nodes: list[dict] = []
+        self.stack: list[dict] = []
+        self.feed(source)
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        node = {"tag": tag, "attrs": dict(attrs), "parents": tuple(self.stack), "text": []}
+        self.nodes.append(node)
+        if tag not in {"area", "base", "br", "col", "embed", "hr", "img", "input",
+                       "link", "meta", "param", "source", "track", "wbr"}:
+            self.stack.append(node)
+
+    def handle_endtag(self, tag: str) -> None:
+        for index in range(len(self.stack) - 1, -1, -1):
+            if self.stack[index]["tag"] == tag:
+                del self.stack[index:]
+                break
+
+    def handle_data(self, data: str) -> None:
+        for node in self.stack:
+            node["text"].append(data)
+
+    def find(self, tag: str | None = None, css_class: str | None = None) -> list[dict]:
+        return [node for node in self.nodes
+                if (tag is None or node["tag"] == tag)
+                and (css_class is None or css_class in node["attrs"].get("class", "").split())]
+
+    @staticmethod
+    def text(node: dict) -> str:
+        return " ".join(" ".join(node["text"]).split())
 
 
 class PictorialGalleryTest(unittest.TestCase):
@@ -123,6 +161,7 @@ class PictorialGalleryTest(unittest.TestCase):
         self.assertTrue(self.tool.pictorial_object_source_paths() <= bound)
         self.assertIn("scripts/_native_print_artwork.py", bound)
         self.assertIn("tools/render-sanctuary-dictionary", bound)
+        self.assertIn("release/public-alpha/" + self.tool.PICTORIAL_SCRIPT_ASSET, bound)
         owner = self.tool.PICTORIAL_ROOT_RELATIVE.as_posix()
         for source in ("shared/schema/edition-selections.toml", "shared/generated-record-renderer.tex",
                        "shared/dictionary-format.tex", "comprehensive/main.tex",
@@ -151,6 +190,7 @@ class PictorialGalleryTest(unittest.TestCase):
         )
         self.assertEqual(len(expected_pngs), len(self.cards))
         self.assertIn(self.tool.PICTORIAL_GALLERY_OUTPUT, expected)
+        self.assertIn(self.tool.PICTORIAL_SCRIPT_ASSET, expected)
 
     def test_tlm_shelf_gallery_link_resolves_to_generated_route(self) -> None:
         with mock.patch.object(self.tool, "web_data_manifest_path", return_value=REPOSITORY_ROOT):
@@ -164,69 +204,185 @@ class PictorialGalleryTest(unittest.TestCase):
                 "sanctuary-picture-dictionary.html",
             )
 
-    def test_gallery_markup_is_semantic_accessible_and_has_no_backlink(self) -> None:
-        with mock.patch.object(self.tool, "native_print_pages", return_value={"readers": {}}):
-            rendered = self.tool.render_pictorial_gallery(False, {})
-        entries, compositions = self.tool.pictorial_gallery_entries(self.cards)
-        self.assertEqual(rendered.count('class="gallery-card"'), len(entries) + len(compositions))
-        self.assertEqual(rendered.count('loading="lazy"'), len(self.cards))
-        self.assertEqual(rendered.count("<figure"), len(self.cards))
-        self.assertEqual(rendered.count("<figcaption>"), len(self.cards))
+    def render_dictionary(self) -> str:
+        with (mock.patch.object(self.tool, "pictorial_gallery_data", return_value=self.cards),
+              mock.patch.object(self.tool, "native_print_pages", return_value={"readers": {}})):
+            return self.tool.render_pictorial_gallery(False, {})
+
+    def test_dictionary_is_one_semantic_table_with_compact_object_rows(self) -> None:
+        rendered = self.render_dictionary()
+        markup = DictionaryMarkup(rendered)
+        tables = markup.find("table")
+        self.assertEqual(len(tables), 1)
+        table = tables[0]
+        headers = [DictionaryMarkup.text(node) for node in markup.find("th")
+                   if node["attrs"].get("scope") == "col"]
+        self.assertEqual(headers[:3], ["Picture", "Object", "Grouping"])
+        self.assertEqual(headers[3].replace(" ", "").casefold(), "identification/use")
+        self.assertEqual(len(headers), 4)
+        rows = self.tool.pictorial_dictionary_rows(self.cards)
+        primary = markup.find("tr", "dictionary-row")
+        detail = markup.find("tr", "dictionary-detail-row")
+        self.assertEqual(len(primary), len(rows))
+        self.assertEqual(len(detail), len(rows))
+        self.assertTrue(all(any(parent is table for parent in row["parents"])
+                            for row in primary + detail))
+        for row in primary:
+            cells = [node for node in markup.nodes if node["tag"] in {"td", "th"}
+                     and node["parents"] and node["parents"][-1] is row]
+            self.assertEqual(len(cells), 4)
+            self.assertTrue(any(cell["tag"] == "th" and cell["attrs"].get("scope") == "row"
+                                for cell in cells))
+        for row in detail:
+            cells = [node for node in markup.find("td")
+                     if node["parents"] and node["parents"][-1] is row]
+            self.assertEqual(len(cells), 1)
+            self.assertEqual(cells[0]["attrs"].get("colspan"), "4")
+            disclosure = [node for node in markup.find("details", "dictionary-details")
+                          if any(parent is row for parent in node["parents"])]
+            self.assertEqual(len(disclosure), 1)
+            self.assertNotIn("open", disclosure[0]["attrs"])
+        self.assertFalse(markup.find(css_class="gallery-card"))
+        self.assertNotIn('id="objects-together"', rendered)
+        self.assertNotIn("Objects within this image are not to common scale", rendered)
+        self.assertFalse(markup.find(css_class="gallery-view"))
         self.assertNotIn("Return to", rendered)
-        self.assertIn("Definitions are drawn only from verified claims", rendered)
         self.assertIn('href="../license.html"', rendered)
         self.assertIn('href="../third-party.html"', rendered)
-        self.assertIn("Each image follows its tracked artwork audit", rendered)
         self.assertIn("Public Domain Rijksmuseum image", rendered)
-        self.assertIn("sizes across separate images are not a common scale", rendered)
-        self.assertIn("<summary>Use and sources</summary>", rendered)
-        self.assertIn('id="objects-together"', rendered)
-        objects = {definition["id"]: definition for card in self.cards for definition in card["definitions"]}
-        self.assertEqual(rendered.count('class="gallery-definition"'), len(objects))
-        for object_id, definition in objects.items():
-            self.assertEqual(rendered.count(f'id="gallery-{object_id}"'), 1)
-            # A repeated depiction may repeat its immediate warnings, but not
-            # the object's complete definition or its use/source apparatus.
-            if not definition["under_audit"]:
-                self.assertEqual(rendered.count(f'<p>{html.escape(definition["definition"])}</p>'), 1, object_id)
-        for group in entries + compositions:
-            for definition in group["related"]:
-                self.assertIn(f'href="#gallery-{definition["id"]}"', rendered)
+        scripts = [node for node in markup.find("script")
+                   if node["attrs"].get("src") == "../" + self.tool.PICTORIAL_SCRIPT_ASSET]
+        self.assertEqual(len(scripts), 1)
+        self.assertIn("defer", scripts[0]["attrs"])
 
-    def test_object_entries_group_alternates_without_absorbing_ensembles(self) -> None:
-        entries, compositions = self.tool.pictorial_gallery_entries(self.cards)
+    def test_table_definitions_and_image_expansions_have_unique_resolvable_targets(self) -> None:
+        rendered = self.render_dictionary()
+        markup = DictionaryMarkup(rendered)
+        ids = [node["attrs"]["id"] for node in markup.nodes if "id" in node["attrs"]]
+        self.assertEqual(len(ids), len(set(ids)))
+        for node in markup.find("a"):
+            href = node["attrs"].get("href", "")
+            if href.startswith("#"):
+                self.assertIn(href[1:], ids)
+        objects = {definition["id"]: definition for card in self.cards for definition in card["definitions"]}
+        paragraphs = Counter(DictionaryMarkup.text(node) for node in markup.find("p"))
+        for object_id, definition in objects.items():
+            self.assertEqual(ids.count(f"gallery-{object_id}"), 1)
+            self.assertEqual(paragraphs[" ".join(definition["definition"].split())], 1, object_id)
+        image_sources = {node["attrs"]["src"] for node in markup.find("img")}
+        self.assertEqual(image_sources, {"../" + card["destination"] for card in self.cards})
+        for card in self.cards:
+            view_id = "view-" + Path(card["destination"]).stem
+            toggles = [node for node in markup.find("a", "dictionary-image-toggle")
+                       if node["attrs"].get("data-image") == view_id]
+            self.assertEqual(len(toggles), 1, view_id)
+            toggle = toggles[0]
+            url = "../" + card["destination"]
+            self.assertEqual(toggle["attrs"].get("href"), url, "no-JavaScript fallback must open the drawing")
+            self.assertTrue(toggle["attrs"].get("aria-label"))
+            self.assertIn(toggle["attrs"].get("data-detail"), ids)
+            figures = [node for node in markup.find("figure") if node["attrs"].get("id") == view_id]
+            self.assertEqual(len(figures), 1)
+            figure = figures[0]
+            self.assertTrue(any(parent["attrs"].get("id") == toggle["attrs"]["data-detail"]
+                                for parent in figure["parents"]))
+            panel = next(parent for parent in figure["parents"]
+                         if parent["attrs"].get("id") == toggle["attrs"]["data-detail"])
+            for pictured in card["definitions"]:
+                # Opening a shared view must carry the other pictured objects'
+                # qualifications, even when their full entries live elsewhere.
+                for text in pictured["qualifications"] + pictured["handling"].get("warnings", []):
+                    self.assertIn(" ".join(text.split()), DictionaryMarkup.text(panel))
+            disclosures = [parent for parent in figure["parents"] if parent["tag"] == "details"]
+            self.assertTrue(disclosures)
+            self.assertTrue(all("open" not in node["attrs"] for node in disclosures))
+            images = [node for node in markup.find("img") if node["attrs"].get("src") == url]
+            self.assertEqual(len(images), 2, "one thumbnail and one expanded drawing")
+            self.assertTrue(all(node["attrs"].get("alt") and node["attrs"].get("width")
+                                and node["attrs"].get("height") for node in images))
+            self.assertTrue(any(any(parent is toggle for parent in node["parents"]) for node in images))
+            self.assertTrue(any(any(parent is figure for parent in node["parents"]) for node in images))
+            for statement in card["rights"]:
+                self.assertIn(" ".join(statement.split()), DictionaryMarkup.text(figure))
+
+    def test_table_owns_objects_and_context_without_losing_or_repeating_images(self) -> None:
+        rows = self.tool.pictorial_dictionary_rows(self.cards)
         objects = {definition["id"] for card in self.cards for definition in card["definitions"]}
-        occurrences = Counter(definition["id"] for entry in entries for definition in entry["definitions"])
+        primary = {row["definition"]["id"]: row for row in rows}
+        self.assertEqual(set(primary), objects - {"obj-book-marker", "obj-communion-rail"})
+        occurrences = Counter(definition["id"] for row in rows
+                              for definition in [row["definition"], *row["contexts"]])
         self.assertEqual(occurrences, Counter({object_id: 1 for object_id in objects}))
+        self.assertEqual([item["id"] for item in primary["obj-altar-missal"]["contexts"]], ["obj-book-marker"])
+        self.assertEqual([item["id"] for item in primary["obj-altar-candlestick"]["contexts"]], ["obj-communion-rail"])
         self.assertEqual(
-            Counter(image["destination"] for entry in entries + compositions for image in entry["images"]),
+            Counter(image["destination"] for row in rows for image in row["images"]),
             Counter(card["destination"] for card in self.cards),
         )
-        for name in ("Altar cruet", "Epistle book"):
-            entry = next(entry for entry in entries if entry["definitions"][0]["name"] == name)
-            self.assertEqual(len(entry["images"]), 2)
-            self.assertEqual(len(entry["definitions"]), 1)
-            self.assertIn("isolated", entry["images"][0]["views"])
-        for filename, names in (
-            ("RPD-FIG-prepared-chalice-0001-formation-alpha.png",
-             {"Burse", "Chalice", "Chalice pall", "Chalice veil", "Corporal", "Paten", "Purificator"}),
-            ("RSD-cassock-surplice-worn-2026-11-05.png", {"Cassock", "Surplice"}),
-            ("RPD-FIG-pontifical-0103-ring-over-right-glove-alpha-canonical.png",
-             {"Pontifical gloves", "Pontifical ring"}),
+        for object_id in ("obj-altar-cruet", "obj-epistle-book"):
+            self.assertEqual(len(primary[object_id]["images"]), 2)
+        for filename, owner in (
+            ("RPD-FIG-prepared-chalice-0001-formation-alpha.png", "obj-chalice"),
+            ("RSD-cassock-surplice-worn-2026-11-05.png", "obj-cassock"),
+            ("RPD-FIG-pontifical-0103-ring-over-right-glove-alpha-canonical.png", "obj-pontifical-gloves"),
         ):
-            group = next(group for group in compositions if any(
-                Path(image["source_relative"]).name == filename for image in group["images"]))
-            self.assertFalse(group["definitions"])
-            self.assertEqual({definition["name"] for definition in group["related"]}, names)
-        # Input order must not decide where an object's entry lives.
-        reverse_entries, reverse_compositions = self.tool.pictorial_gallery_entries(list(reversed(self.cards)))
-        self.assertEqual((entries, compositions), (reverse_entries, reverse_compositions))
+            self.assertIn(filename, {Path(image["source_relative"]).name for image in primary[owner]["images"]})
+        owned = {image["destination"]: row["definition"]["id"] for row in rows for image in row["images"]}
+        for row in rows:
+            for image in row["shared"]:
+                self.assertIn(image["destination"], owned)
+                self.assertNotEqual(owned[image["destination"]], row["definition"]["id"])
+                self.assertIn(row["definition"]["id"], {item["id"] for item in image["definitions"]})
+        self.assertTrue(primary["obj-pontifical-tunicle"]["images"] or primary["obj-pontifical-tunicle"]["shared"])
+        self.assertEqual(rows, self.tool.pictorial_dictionary_rows(list(reversed(self.cards))))
 
-    def test_gallery_css_blends_image_boundaries_on_the_light_paper(self) -> None:
+    def test_table_order_follows_object_relationships_instead_of_alphabetical_names(self) -> None:
+        rows = self.tool.pictorial_dictionary_rows(self.cards)
+        positions = {row["definition"]["id"]: index for index, row in enumerate(rows)}
+        self.assertEqual(rows[0]["definition"]["id"], "obj-altar")
+        self.assertNotEqual([row["definition"]["name"] for row in rows],
+                            sorted(row["definition"]["name"] for row in rows))
+        for earlier, later in (("obj-altar-candle", "obj-altar-candlestick"),
+                               ("obj-lavabo-basin", "obj-lavabo-towel"),
+                               ("obj-amice", "obj-alb"), ("obj-alb", "obj-cincture"),
+                               ("obj-pontifical-buskin", "obj-pontifical-sandal"),
+                               ("obj-cassock", "obj-surplice")):
+            self.assertLess(positions[earlier], positions[later])
+        groups = [row["group_id"] for row in rows]
+        for group in set(groups):
+            indices = [index for index, value in enumerate(groups) if value == group]
+            self.assertEqual(indices, list(range(min(indices), max(indices) + 1)))
+        self.assertTrue(all(row["group"].strip() and row["group"] != row["group_id"] for row in rows))
+
+    def test_table_refuses_undefined_organization_and_conflicting_identity(self) -> None:
+        unknown = deepcopy(self.cards[0])
+        unknown["definitions"][0]["id"] = "obj-unmapped-test-object"
+        with self.assertRaises(self.tool.ReleaseError):
+            self.tool.pictorial_dictionary_rows([unknown])
+        conflicting = deepcopy(self.cards[0])
+        conflicting["definitions"][0]["definition"] += " A contradictory definition."
+        with self.assertRaises(self.tool.ReleaseError):
+            self.tool.pictorial_dictionary_rows([*self.cards, conflicting])
+
+    def test_contextual_identity_without_its_object_owner_is_refused(self) -> None:
+        for object_id in ("obj-book-marker", "obj-communion-rail"):
+            card = deepcopy(next(card for card in self.cards
+                                 if object_id in {item["id"] for item in card["definitions"]}))
+            card["definitions"] = [item for item in card["definitions"] if item["id"] == object_id]
+            with self.subTest(object=object_id), self.assertRaises(self.tool.ReleaseError):
+                self.tool.pictorial_dictionary_rows([card])
+
+    def test_new_combined_view_requires_an_explicit_placement(self) -> None:
+        objects = {definition["id"]: definition for card in self.cards for definition in card["definitions"]}
+        unsupported = deepcopy(self.cards[0])
+        unsupported["definitions"] = [objects["obj-altar"], objects["obj-chalice"]]
+        with self.assertRaisesRegex(self.tool.ReleaseError, "view has no editorial placement"):
+            self.tool.pictorial_dictionary_rows([unsupported])
+
+    def test_dictionary_keeps_light_paper_and_monochrome_image_contrast(self) -> None:
         css = (
             REPOSITORY_ROOT / "release/public-alpha/assets/site.css"
         ).read_text(encoding="utf-8")
-        self.assertIn("mix-blend-mode: multiply", css)
         self.assertNotIn("mix-blend-mode: screen", css)
         self.assertIn("color-scheme: only light", css)
         self.assertNotIn("prefers-color-scheme: dark", css)
@@ -266,10 +422,23 @@ class PictorialObjectDetailsTest(unittest.TestCase):
                              "under_audit": under_audit, **details}],
             "views": {"isolated"}, "rights": set(), "scale_modes": {"not-to-common-scale"},
             "destination": "assets/pictorial-gallery/fixture.png", "width": 100, "height": 100,
+            "source_relative": "src/gpt/fixture.png",
         }
         with (mock.patch.object(self.tool, "pictorial_gallery_data", return_value=[card]),
               mock.patch.object(self.tool, "native_print_pages", return_value={"readers": {}})):
             return self.tool.render_pictorial_gallery(False, {})
+
+    def test_print_reader_keeps_its_own_assets_without_dictionary_injection(self) -> None:
+        page = {"title": "Other print reader", "html": "<p>Print content</p>",
+                "body_extra": '<script src="print-specific.js"></script>'}
+        reader_body = '<script src="publication-reader.js"></script>'
+        with (mock.patch.object(self.tool, "publication_reader_shell",
+                                return_value=(page["html"], "", reader_body)),
+              mock.patch.object(self.tool, "wrap_in_layout", return_value="<html>Print reader</html>") as wrap):
+            rendered = self.tool.render_print_page("print/gpt/fixture.html", page, False, {})
+        self.assertEqual(rendered, "<html>Print reader</html>")
+        self.assertEqual(wrap.call_args.kwargs["body_extra"], page["body_extra"] + reader_body)
+        self.assertNotIn("dictionary", wrap.call_args.kwargs["body_extra"])
 
     def test_reservation_and_unveiled_view_qualifications_survive(self) -> None:
         for relative, qualifier in (
@@ -279,17 +448,17 @@ class PictorialObjectDetailsTest(unittest.TestCase):
             with self.subTest(record=relative):
                 record = self.record(relative)
                 rendered = self.render_record(record)
-                self.assertIn(qualifier, rendered.split("<details>")[0])
+                self.assertIn(qualifier, rendered)
                 self.assertIn("recognizes only", rendered)
                 self.assertIn("Ordinary handler:", rendered)
-                self.assertIn("Objects within this image are not to common scale", rendered)
+                self.assertNotIn("Objects within this image are not to common scale", rendered)
                 self.assertRegex(rendered, r"Canon 12(?:69|70)")
                 self.assertIn("Missale Romanum", rendered)
                 self.assertIn("1962", rendered)
                 self.assertNotIn("src-ciborium-", rendered)
                 self.assertNotIn("src-tabernacle-", rendered)
                 for warning in record["handling"]["warnings"]:
-                    self.assertIn(html.escape(warning), rendered.split("<details>")[0])
+                    self.assertIn(html.escape(warning), rendered)
                 self.assertIn("The Ceremonies of the Roman Rite Described, seventh edition", rendered)
                 self.assertIn("1943", rendered)
 

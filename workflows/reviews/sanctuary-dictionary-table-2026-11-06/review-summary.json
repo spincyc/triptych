@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "status": "pass",
+  "recommendation": "accept exact candidate for integration",
+  "review_date": "2026-11-06",
+  "publication_status": "not assessed; integration and live publication remain coordinator-owned",
+  "inputs_sha256": {
+    "tools/public-alpha": "8a9c657046ce8ab499c481dc10c52c9678c1c7ac6ca82b63b299af7ca5bdd1ef",
+    "release/public-alpha/assets/site.css": "21c45816c86cc53cadba8b9236cdd063111976d1a59c30420ba670df818dde63",
+    "release/public-alpha/assets/sanctuary-dictionary.js": "a462c6bb39146673a5e25d1e6359cc469e236bc32396cd79a0f0b079f0501ddb",
+    "library/sanctuary-picture-dictionary.html": "d6a3b3ff6b80acb6190f9aaf93c07bc0b696c8392b8b251e3c1ac4eff2fad81c"
+  },
+  "browser": "Chromium 156.0.8078.79, desktop scrollbar retained at all viewport widths",
+  "independent_browser_assertions": 43,
+  "viewport_widths": [
+    1440,
+    1024,
+    768,
+    390,
+    320
+  ],
+  "coverage": {
+    "primary_rows": 64,
+    "contextual_anchors": 2,
+    "logical_assets": 70,
+    "functional_groups": 10,
+    "screenshot_views": 35,
+    "direct_final_views": 10,
+    "byte_identical_review_transfers": 25,
+    "expanded_compositions": [
+      "prepared chalice",
+      "pontifical layers",
+      "historical chapel",
+      "Missal on its stand",
+      "cassock and surplice worn together",
+      "paired altar cruets"
+    ],
+    "keyboard": true,
+    "no_javascript": true
+  },
+  "canonical_preservation": {
+    "canonical_objects": 66,
+    "unique_primary_definitions_plus_context": 66,
+    "logical_assets": 70,
+    "credits_checked": 35,
+    "immediate_note_occurrences_checked": 185,
+    "all_source_citations_and_qualifications_retained_in_owner_panel": true,
+    "each_image_credit_retained_in_adjacent_native_disclosure": true,
+    "all_pictured_immediate_notes_retained_in_expanded_panel": true
+  },
+  "asset_integrity": "All 70 served PNGs match canonical SHA-256 values.",
+  "narrow_readability": {
+    "viewport": 320,
+    "table_viewport": 273,
+    "prose_column": 271,
+    "no_javascript_complete_lines": true
+  },
+  "runtime": {
+    "print_calls": 0,
+    "workers_created": 0,
+    "enhanced_gallery_http_errors": 0,
+    "javascript_exceptions": 0,
+    "direct_png_fallback_note": "After successful direct PNG navigation Chromium requested optional /favicon.ico; the minimal preview returned 404. No gallery image request failed."
+  },
+  "resolved_findings": [
+    "native print renderer undefined body_extra regression",
+    "shared-image nonowner qualifications and warnings omitted",
+    "cruet Details action inline with headword",
+    "320px prose column wider than visible table region",
+    "baseline close instruction inaccurate without JavaScript"
+  ],
+  "unresolved_findings": [],
+  "evidence_sha256": {
+    "browser.mjs": "db077ef7a6f0b50fd0c3f96471a7e66673a618fc6d71e4c963d41d6ac085f689",
+    "final/browser-report.json": "643517a75628c37ef9aaad78dfab8098ede7dcde055d5a07f814c71ab4a86f65",
+    "source-audit.py": "922f22e7b796f09f20ecddd46b3c1ebcf57592974b63839e9344ba976078d9a6",
+    "source-projection.json": "39418265ffb88a3d8fa15923f97a423b1219e20ece2a34d949d554181b46128e",
+    "verify-projection.py": "2eae2447cee61b048ee4367bbeb465cd28fff2b861c53e41b0122d0814a871bb",
+    "projection-verification.json": "869ea133dd5244e5b479e80a9096efd1ac4ba552fb3939a212f689f9badd577b",
+    "canonical-asset-verification.json": "2573c2e3b682d93d01681b5a4f92412414aa00899be0ccbab6dc5fae8f17a435",
+    "screenshots.json": "6f0bfacfe9d3a5cd00c17bcc1249323b13e34e846602a68dbf0fd18e215c8936",
+    "visual-transfer.json": "fdd61b5782a2a16b3d1a4d9bc28f34aa558e98207f08d4394995ff9afe6ef3fe"
+  }
+}

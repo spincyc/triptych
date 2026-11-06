@@ -323,86 +323,176 @@ li > ul, li > ol { margin: 0.35rem 0; }
 
 img { max-width: 100%; height: auto; }
 
-.gallery-categories {
+/* The picture dictionary is one table. Its native disclosures remain usable
+   without enhancement; only the table, never the page, scrolls horizontally. */
+html:has(.sanctuary-table) { scroll-behavior: auto; }
+.dictionary-toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem 0.9rem;
-  margin: 1.5rem 0 2rem;
-  padding: 0.8rem 1rem;
-  border-block: 1px solid var(--line);
+  align-items: end;
+  gap: 0.7rem 1rem;
+  margin: 1.25rem 0 0.6rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.88rem;
 }
-.pictorial-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
-  gap: clamp(1rem, 2.5vw, 1.7rem);
-  align-items: start;
-}
-.gallery-card {
-  break-inside: avoid;
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  border-radius: 0.45rem;
-  background: linear-gradient(145deg, rgba(184, 138, 67, 0.08), transparent 35%), var(--surface);
-  box-shadow: 0 0.35rem 1.2rem rgba(65, 48, 33, 0.09);
-}
-.gallery-image {
-  display: grid;
-  min-height: 14rem;
-  padding: 1rem;
-  place-items: center;
-  background: radial-gradient(ellipse at center, rgba(255, 253, 249, 0.96), rgba(248, 245, 239, 0.45) 70%, transparent);
-}
-.gallery-image img {
+.dictionary-toolbar label { display: grid; gap: 0.25rem; min-width: 0; }
+.dictionary-toolbar label:has(input) { flex: 1 1 14rem; }
+.dictionary-toolbar :is(input, select) {
   width: 100%;
-  max-height: 22rem;
-  object-fit: contain;
-  filter: contrast(1.03);
-  mix-blend-mode: multiply;
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--surface);
+  color: var(--ink);
+  font: inherit;
 }
-.gallery-study { margin: 0; }
-.gallery-card figcaption { padding: 0 1.1rem; }
-.gallery-description { padding: 0 1.1rem 1.2rem; }
-.gallery-definition + .gallery-definition,
-.gallery-related { margin-top: 1rem; padding-top: 0.75rem; border-top: 1px solid var(--line); }
-.gallery-definition { scroll-margin-top: 1rem; }
-.gallery-card h2 { margin: 0; padding: 0; color: var(--ink); font-size: 1.28rem; }
-.gallery-view {
-  margin: 0.35rem 0 0.8rem;
-  color: var(--rubric);
-  font-family: system-ui, sans-serif;
-  font-size: 0.76rem;
-  font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+.dictionary-toolbar output { padding-block: 0.6rem; font-variant-numeric: tabular-nums; }
+.dictionary-scroll-hint { margin: 0.4rem 0; color: var(--muted); font-size: 0.88rem; }
+.dictionary-table-region { max-width: 100%; overflow-x: auto; margin-block: 0.8rem 1.5rem; }
+.dictionary-table-region:focus-visible,
+.dictionary-toolbar :is(input, select):focus-visible,
+.sanctuary-table :is(a, button, summary):focus-visible {
+  outline: 3px solid #245a99;
+  outline-offset: -3px;
 }
-.gallery-card dl { margin: 0; }
-.gallery-card dt { margin-top: 0.8rem; font-weight: 700; }
-.gallery-card dd { margin: 0.18rem 0 0; color: var(--muted); }
-.gallery-latin { color: var(--muted); font-weight: 400; font-style: italic; }
-.gallery-rights {
-  margin-top: 1rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-family: system-ui, sans-serif;
-  font-size: 0.78rem;
+.sanctuary-table {
+  display: table;
+  width: 100%;
+  min-width: 46rem;
+  margin: 0;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: visible;
+  font-size: 0.94rem;
   line-height: 1.45;
 }
-.gallery-note { margin-top: 2rem; padding: 1rem 1.2rem; border-left: 0.25rem solid var(--gold); background: #f5efe6; }
-
-.section-toned .gallery-categories { border-color: var(--section-line); }
-.section-toned .gallery-card {
-  border-color: var(--section-line);
-  background:
-    linear-gradient(145deg, var(--section-pale), transparent 38%),
-    var(--surface);
+.sanctuary-table :is(th, td) {
+  padding: 0.65rem 0.7rem;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  overflow-wrap: anywhere;
 }
-.section-toned .gallery-view { color: var(--section-ink); }
-.section-toned .gallery-rights { border-color: var(--section-line); }
-.section-toned .gallery-note {
-  border-color: var(--section-accent);
-  background: var(--section-pale);
+.sanctuary-table thead th {
+  padding-block: 0.35rem;
+  border-block: 1px solid var(--line);
+  color: var(--ink);
+  background: #eeeae3;
+  vertical-align: middle;
+}
+.sanctuary-table thead th:nth-child(1) { width: 104px; }
+.sanctuary-table thead th:nth-child(2) { width: 11rem; }
+.sanctuary-table thead th:nth-child(3) { width: 10rem; }
+.sanctuary-table caption { padding: 0.25rem 0 0.6rem; color: var(--muted); font-size: 0.88rem; text-align: left; font-variant-numeric: tabular-nums; }
+.sanctuary-table [data-dictionary-sort] {
+  min-height: 2.75rem;
+  padding: 0.25rem 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 650;
+  text-align: left;
+  cursor: pointer;
+}
+.sanctuary-table [data-dictionary-sort]:disabled { cursor: default; }
+.sanctuary-table th[aria-sort="ascending"] button::after { content: " ↑"; }
+.dictionary-table-region .sanctuary-table .dictionary-row { background: transparent; }
+.dictionary-table-region .sanctuary-table .dictionary-row.is-expanded { background: #efebe4; }
+.sanctuary-table .dictionary-row > :nth-child(2) { font-weight: 650; }
+.sanctuary-table .dictionary-row > th { color: var(--ink); background: transparent; }
+.sanctuary-table .dictionary-row .gallery-latin { display: block; margin-top: 0.2rem; font-size: 0.86rem; }
+.sanctuary-table .dictionary-row > th > br { display: none; }
+.sanctuary-table .dictionary-row > :nth-child(3) { color: var(--muted); font-size: 0.88rem; }
+.sanctuary-table .dictionary-row p { margin: 0 0 0.35rem; }
+.dictionary-thumbnails { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.dictionary-image-toggle {
+  display: grid;
+  grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+  width: 80px;
+  height: 80px;
+  padding: 2px;
+  place-items: center;
+  background: #fff;
+}
+.dictionary-image-toggle img { display: block; width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; }
+.dictionary-image-toggle[aria-expanded="true"] { outline: 2px solid var(--ink); outline-offset: -2px; }
+.dictionary-row-toggle { display: flex; align-items: center; min-height: 2.75rem; font-size: 0.85rem; font-weight: 400; }
+.dictionary-table-region .sanctuary-table .dictionary-detail-row { background: #f3f0ea; }
+.sanctuary-table .dictionary-detail-row > td { padding: 0; }
+.dictionary-details { margin: 0; }
+.dictionary-details > summary {
+  position: sticky;
+  left: 0;
+  width: var(--dictionary-visible-width, calc(100vw - 3rem));
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.dictionary-detail-content {
+  position: sticky;
+  left: 0;
+  width: var(--dictionary-visible-width, calc(100vw - 3rem));
+  max-width: 100%;
+  padding: 0 1rem 1.2rem;
+}
+.dictionary-views {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  align-items: start;
+  gap: 1.5rem;
+}
+.dictionary-views figure { min-width: 0; margin: 0; scroll-margin-top: 1rem; }
+.dictionary-views figure img { display: block; width: 100%; height: auto; max-height: 36rem; object-fit: contain; background: #fff; }
+.dictionary-views figcaption { margin-block: 0.6rem 0.9rem; font-size: 0.9rem; }
+.dictionary-notes { max-width: 75ch; }
+.dictionary-notes :is(h2, h3, h4) { margin: 1.2rem 0 0.5rem; padding: 0; color: var(--ink); font-size: 1.1rem; }
+.dictionary-notes dl { margin: 0; }
+.dictionary-notes dt { margin-top: 0.8rem; font-weight: 650; }
+.dictionary-notes dd { margin: 0.25rem 0 0; }
+.dictionary-notes p { margin: 0.6rem 0; }
+.dictionary-notes summary,
+.dictionary-views summary { min-height: 2.75rem; padding-block: 0.6rem; cursor: pointer; }
+.dictionary-notes :is(.gallery-definition, .gallery-related) { scroll-margin-top: 1rem; }
+.dictionary-notes .gallery-related { margin-top: 1rem; padding-top: 0.6rem; border-top: 1px solid var(--line); }
+.sanctuary-table .dictionary-empty td { padding: 1.2rem 0.7rem; }
+.dictionary-empty-message {
+  position: sticky;
+  left: 0;
+  width: calc(var(--dictionary-visible-width, 100vw - 3rem) - 1.4rem);
+  max-width: 100%;
+  margin: 0;
+}
+.sanctuary-table [hidden], .dictionary-toolbar[hidden], .dictionary-scroll-hint[hidden] { display: none !important; }
+.gallery-latin { color: var(--muted); font-weight: 400; font-style: italic; }
+.gallery-rights { color: var(--muted); font-size: 0.85rem; }
+.gallery-note { margin-top: 1.5rem; padding-top: 0.8rem; border-top: 1px solid var(--line); }
+
+@media (max-width: 760px) {
+  .page-shell:has(.sanctuary-table) { padding-inline: 1rem; }
+  .dictionary-toolbar label { flex: 1 1 100%; }
+  .dictionary-toolbar output { padding-block: 0; }
+  /* A prose cell must fit at one scroll position, even on a 320px viewport. */
+  .sanctuary-table { min-width: min(38rem, calc(74px + 12.375rem + var(--dictionary-visible-width, calc(100vw - 3rem)))); }
+  .sanctuary-table :is(th, td) { padding: 0.55rem 0.3rem; }
+  .sanctuary-table thead th { font-size: 0.82rem; }
+  .sanctuary-table thead th:nth-child(1) { width: 74px; }
+  .sanctuary-table thead th:nth-child(2) { width: 7.125rem; }
+  .sanctuary-table thead th:nth-child(3) { width: 5.25rem; }
+  .sanctuary-table [data-dictionary-sort] { font-size: 0.78rem; white-space: nowrap; }
+  .sanctuary-table .dictionary-row > :nth-child(3) { padding-inline: 0.1rem; }
+  .dictionary-image-toggle { width: 64px; height: 72px; }
+  .dictionary-details > summary { padding-inline: 0.6rem; }
+  .dictionary-detail-content { padding-inline: 0.6rem; }
+}
+@media (forced-colors: active) {
+  .sanctuary-table .dictionary-row.is-expanded { outline: 1px solid CanvasText; outline-offset: -1px; }
+  .dictionary-image-toggle[aria-expanded="true"] { outline-color: Highlight; }
 }
 
 .smallcaps { font-variant: small-caps; }

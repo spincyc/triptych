@@ -7,11 +7,70 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-06.
 
+## Sanctuary dictionary table — 6 November 2026
+
+<!-- promised-deliverable: sanctuary-dictionary-table-2026-11 -->
+
+**Implemented; release verification in progress.** The maintainer requests one cohesive website table with
+multiple columns, including a useful grouping column; small in-row pictures
+expand and collapse on demand. Default organization follows setting and use,
+not alphabetical names. Repeated generic view and scale labels are removed
+from rows. Longer notes, alternate/combined views and source apparatus use
+progressive disclosure while preserving object identity, material qualifications,
+handling boundaries, image rights and all selected drawings. This replaces the
+previous gallery-card presentation, not the native print editions. Independent
+review assesses organization, visual clarity, keyboard operation and narrow
+screens against the actual generated table.
+
+The table has 64 primary object rows in ten functional groups, with all 70
+selected drawings. Book marker and Communion rail remain two contextual
+identifications, not newly admitted standalone objects. Shared drawings link
+the related entries without repeating their definitions. Search includes
+English, Latin, use and contextual names; grouping is the default order and
+name sorting is optional. Native disclosures and image links remain usable
+without JavaScript. Expanded views retain source qualifications and handling
+warnings; image credits and fuller source apparatus use separate disclosures.
+
+All 22 focused regressions pass on the final implementation. The frontend
+Chromium pass covers 34 checks at 1440, 1024, 768, 393 and 320 pixels, including
+paired-row filtering/sorting, repeated and alternate image toggles, keyboard
+activation and focus return, stable fragment links, image containment, forced
+colors and no-JavaScript operation. It reports no runtime, console or HTTP
+errors. The complete generated table has SHA-256
+`d6a3b3ff6b80acb6190f9aaf93c07bc0b696c8392b8b251e3c1ac4eff2fad81c`.
+The native PDF sources and selected artwork bytes are unchanged.
+
+The [independent cold review](workflows/reviews/sanctuary-dictionary-table-2026-11-06/REVIEW.md)
+passes all 64 rows and six expanded compositions, with 43 independent browser
+assertions and 35 inspected or exact-transferred screenshot views. It verifies
+all 66 identity definitions, source citations, 35 image-credit occurrences and
+185 immediate qualification/warning occurrences. Findings corrected before
+acceptance include a print-reader regression, missing local qualifications in
+shared views, thumbnail overflow, action alignment, and a narrow description
+column that required horizontal scrolling within each line. At 320 pixels,
+the final 271-pixel description column fits the 273-pixel visible region,
+including the no-JavaScript fallback. No review finding remains open.
+
+Two cold browser-product generations for the final renderer agree. All thirteen
+families retain their baseline output inventories: 27,706 files and 227,721,861
+bytes. Only the `act-history` generator-input identity changes. The final
+product identity is
+`c525eb9c925027e7e1f676302facca0e3f9b2ecc355bebc7dcb2e62e965a358e`.
+Earlier candidate proofs were superseded after review corrections; acceptance
+uses the final reviewed renderer, stylesheet and script.
+
+Scoped release reconciliation refreshes four existing hashes and admits only
+`release/public-alpha/assets/sanctuary-dictionary.js` through the renderer's
+recognized input set. All 24,173 bound source hashes match; authorization and
+rights terms are unchanged. A fresh post-binding product check matches the
+record exactly, and no source bytecode is present. The exact-commit site build,
+Pages verification, main push and live check remain pending.
+
 ## Sanctuary picture gallery repeated entries — 5 November 2026
 
 <!-- promised-deliverable: sanctuary-gallery-unique-entries-2026-11 -->
 
-**Correction verified and pushed to main; live deployment pending.** The reported surface is the
+**Correction deployed and live-verified on 6 November.** The reported surface is the
 website picture gallery. Its current source printed 87 definitions for 66
 pictured identities across 70 distinct drawings: 21 objects received the same
 full entry twice, usually in isolated and combined views. The native dictionary
@@ -71,12 +130,11 @@ This website correction does not change or rebuild native edition PDFs.
 
 The reviewed commit reached main and the workspace branch by normal pushes.
 [Pages run 42158267467](https://github.com/spincyc/triptych/actions/runs/42158267467)
-is confirmed pending for that exact commit, queued behind the earlier main run.
-A live fetch after the push still returns the original gallery bytes, SHA-256
-`9afa71ef5d9eb6af32bc231efd4c6c9927c2d6687121ec0c7fa37ae9486ab23a`.
-The live-delivery requirement remains open: CI must finish and the served
-gallery must show the corrected entries before this website fix is called
-deployed. This status-only record is excluded from the Pages trigger.
+subsequently completed build, native compilation and deployment successfully.
+A live fetch on 6 November exactly matches the reviewed gallery HTML,
+`ef340b325fdcf5acad85b5eb078720742ca3c6471a84e57794c34cf87852779a`.
+The duplicate-entry delivery is complete. The newer table request above
+changes presentation while retaining that identity correction.
 
 ## Claude 1962 resumed Fifth Sunday after the Epiphany, 2026-11-08
 
