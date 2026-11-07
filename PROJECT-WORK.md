@@ -11,7 +11,7 @@ Last reconciled: 2026-11-06.
 
 <!-- promised-deliverable: in-place-pdf-generation-2026-11-06 -->
 
-**Committed on the Claude workspace branch; not pushed.** The maintainer
+**Live and verified.** The maintainer
 asked that the Generate PDF links stop changing to a different page and show a
 minimal, unintrusive progress bar in place. Every link that requests an
 edition's PDF is a `print/…html?print=1` link: the reader Print action, the
@@ -42,9 +42,27 @@ Two inherited failures outside this change fail identically at the base: the
 admission count.
 
 Changing `scripts/_native_print.py` and `tools/public-alpha` changes the code
-inputs of the `act-history`, `documents` and `web-editions` browser products,
-which therefore need a new record before the release gates. Publication to
-main and live verification are open and await the maintainer's authorization.
+inputs of the `act-history`, `documents` and `web-editions` browser products.
+At the maintainer's request the change was rebased onto main's sanctuary-table
+work and pushed to main. Commit `b2c6aa8cea` re-records the browser products
+from the committed sources with two cold builds: 13 products and 27,706 files,
+byte parity. It also refreshes only the change's seven site-source bindings and
+the rights digest. At that commit, `make public-site`, including
+`check-deployment-sources`, passes, and so does `public-alpha verify
+--deployment-target github-pages`. In the built site all 640 pages that carry a
+PDF request link load the controller, and none loads it twice. The other
+failures in the affected test modules fail identically at the base. They are
+the dossier-conversion helper's `assembly` keyword `TypeError` in
+`test_web_edition_conversion`, besides the two named above.
+
+Pages run 42305055077 (build, print-compile, deploy) and repository hygiene
+42305055290 succeeded for `b2c6aa8cea`. These live routes are byte-identical to
+the locally verified site: the controller script and stylesheet, Texts,
+Sources, the Claude 66 reader and print page, and the Traditional Latin Mass
+catalogue. On the live site, headless Chromium clicked the Claude 66 reader's
+Print action at 1280 pixels and a Texts Generate PDF link at 390 pixels. Each
+stayed on its page, showed the stage and bar, and saved a real native PDF,
+485,875 and 719,164 bytes, with no console errors.
 
 ## Sanctuary dictionary table — 6 November 2026
 

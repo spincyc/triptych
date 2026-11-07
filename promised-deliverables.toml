@@ -4,7 +4,7 @@ schema_version = 1
 id = "in-place-pdf-generation-2026-11-06"
 owner = "src/web/browser/shared/native-print.js"
 promise = "Generate PDF links no longer change to a different page: a plain click typesets the edition in place under a minimal, unintrusive progress popover beside the link."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "in-place-links"
@@ -27,7 +27,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "live-in-place-generation"
   criterion = "After maintainer authorization to publish, the change reaches main, the Pages build and deployment succeed, and live Print links generate in place."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
