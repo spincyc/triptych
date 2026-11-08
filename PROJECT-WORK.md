@@ -11,7 +11,7 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Implementation complete; integration validation in progress.** The maintainer reports Lectern refusing to start with
+**Validated publication candidate; main deployment pending.** The maintainer reports Lectern refusing to start with
 “published browser data is unavailable: missing or unsafe browser product”.
 The requested source work prioritizes existing English translations of the
 already known Catena Omnia works. The earlier acquisition of new holdings does
@@ -88,13 +88,33 @@ complete notice. All deployment source gates pass; the already verified
 product check and separate chronology/document freshness checks are reused
 instead of taking an exclusive rebuild lock while reader tests hold snapshots.
 
-The scoped release refresh changes exactly fourteen reviewed source bindings
+Release checkpoint `8416e4f17f` is committed and pushed on the workspace branch.
+The scoped refresh changes exactly fourteen reviewed source bindings
 (including the two new helper modules), their inventory digest and the rights
 record digest. It changes no publication authorization prose. The committed
 descriptor seals the independently reproduced products; all 21 web figures
-are current. Packaged-site acceptance, main publication and live verification
-remain pending. Existing 200% text enlargement overflow at 320 pixels
-reproduces unchanged at the baseline and remains separate from this correction.
+are current. The public site builds successfully.
+
+Packaged browser acceptance passes ten inspected states: Philippians 1:21 at
+widths 320, 393, 768, 1024 and 1440, keyboard full-context expansion, Augustine
+Genesis 1:3 at desktop and mobile widths, and Origen Ezekiel 1:1–3 at both
+widths with each complete notice before its prose. Exact excerpt and parent
+text, named controls, accessibility-tree names, reflow, console and network
+checks pass. The broader Catena browser gate has 104 passes, twelve skips and
+five existing navigation-target-size failures. Baseline assets from
+`df2735445625c9aba290f83cd17138ed171c7e12` reproduce all five failure objects
+exactly, with unchanged shared header/footer inputs. Existing 200% text
+enlargement overflow at 320 pixels also reproduces at baseline. Neither is
+introduced by this correction.
+
+A local HTTP byte audit checks 134 packaged files: all 89 fragment-bearing
+chapter spines account for 1,578 unique fragments; all eighteen new English
+Catena bodies equal their Source Reader bodies; Origen's notices match in both;
+and all six snippet-bearing parents carry the 24 reviewed excerpts. Independent
+`public-alpha verify --deployment-target github-pages` passes. The accepted
+package's `SHA256SUMS` digest is
+`a1ab14b205cef1c3a6beb44c0bf59a62f9b524e49cc14beb1a2c8fe421d0c9cb`.
+Main publication, deployment and live acceptance remain pending.
 
 ## Catena Omnia corpus and passage recovery — 7 November 2026
 
