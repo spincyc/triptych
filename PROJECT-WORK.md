@@ -117,7 +117,10 @@ package's `SHA256SUMS` digest is
 The validated candidate `5412d7e1afdb97546cf81ef8182148222f70df29` is pushed to
 both the workspace branch and main by fast-forward. The
 [Pages run](https://github.com/spincyc/triptych/actions/runs/42496691138)
-is in progress; successful deployment and live acceptance remain pending.
+passes source/build, artifact verification, all 650 print editions and deployment.
+The first live byte audit passes all 134 affected files, including all 18 new
+English passages and 24 reviewed snippets. Final dependency-follow-up deployment
+and live acceptance remain pending below.
 
 A final standalone-install audit found an introduced dependency gap: automatic
 cold preparation calls the YAML source producers, but `requirements-tui.txt`
@@ -159,11 +162,15 @@ sessions to retain their read snapshots. The accepted Catena HTML, scripts,
 styles and checked excerpt payload remain byte-identical; the final package's
 `SHA256SUMS` digest is
 `b77092592853beed4a8a8d86a659cf4a38c6d7951b15b4d5bc69be8c30e72c6f`.
-Follow-up main publication, deployment and live acceptance remain pending.
+The complete follow-up `a9165ce33056de53415d82294f85037b5bf52d0a` is pushed to
+main and the workspace branch by fast-forward. Repository hygiene passes. Its
+[final Pages run](https://github.com/spincyc/triptych/actions/runs/42503381587)
+has started after the successful initial publication; final deployment and live
+acceptance remain pending.
 The website workflow already installs source-tool dependencies and is unaffected
 by this standalone-install gap. Existing reader and source results remain
-recorded; the new dependency closure is validated and final publication is still
-pending.
+recorded; the new dependency closure is validated and pushed, with deployment
+verification still pending.
 
 ## Catena Omnia corpus and passage recovery — 7 November 2026
 
