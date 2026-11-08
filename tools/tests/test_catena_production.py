@@ -419,6 +419,11 @@ SEVERIAN_EDITION = json.loads(
      "in-cosmogoniam-homiliae/2018-pta-grc1-2018.json").read_text(encoding="utf-8"))
 
 SEVERIAN_BASIS = SEVERIAN_EDITION["artifacts"][0]["rights_basis"]
+SEVERIAN_GREEK_PREFIX = (
+    "passage.severian-of-gabala.in-cosmogoniam-homiliae.pta-grc1-2018.")
+SEVERIAN_ENGLISH_ID = (
+    "passage.severian-of-gabala.in-cosmogoniam-homiliae."
+    "2010-pearse-bareille-sermon-1.homilia-1")
 
 # EXPLICITLY SYNTHETIC sparse-author edge case. The current Genesis 42
 # corpus also has Alcuin's recovered chapter-spanning fragment. Retain just
@@ -1567,10 +1572,10 @@ SCENARIOS = [
      "files": {"structure/catena/01-gen/042.json": SOLE_AUTHOR_FIXTURE}},
     {"name": "held-unrenderable", "hash": GEN1,
      "files": {"structure/catena/01-gen/001.json": BLOCKED_FIXTURE}},
-    # The real licensed source: six Severian/PTA fragments under rights
+    # The real licensed source: five Genesis 1 Severian/PTA fragments under rights
     # "licensed", their attribution carried today in edition_published.
     {"name": "severian-open", "hash": GEN1,
-     "steps": [{"do": "openFragmentOf", "author": "Severian of Gabala", "label": "opened"}]},
+     "steps": [{"do": "openFragmentOf", "id": SEVERIAN_GREEK_PREFIX + "homilia-1", "label": "opened"}]},
     {"name": "synthetic-licence", "hash": GEN1,
      "files": {
          "structure/catena/01-gen/001.json": LICENCE_FIXTURE,
@@ -1600,10 +1605,12 @@ SCENARIOS = [
     # files supply the central licence notice; no scenario injects a notice.
     {"name": "severian-projected", "hash": GEN1,
      "steps": [
-         {"do": "openFragmentOf", "author": "Severian of Gabala", "index": index,
+         {"do": "openFragmentOf", "id": SEVERIAN_GREEK_PREFIX + f"homilia-{index + 1}",
           "label": "opened" if index == 0 else "all-opened"}
          for index in range(5)
      ]},
+    {"name": "severian-english", "hash": GEN1 + "&voice=translation:en",
+     "steps": [{"do": "openFragmentOf", "id": SEVERIAN_ENGLISH_ID, "label": "opened"}]},
     # An expected spine that 404s: an integrity error, never "nothing held".
     {"name": "integrity-404", "hash": GEN1,
      "files": {"structure/catena/01-gen/001.json": None}},
@@ -3424,8 +3431,10 @@ async function run(scenario) {
     } else if (step.do === 'openFragmentOf') {
       const item = page.reading.descendants().filter(
         (one) => new ClassList(one).contains('fragment')
-          && one.descendants().some((deep) =>
-            new ClassList(deep).contains('fragment-author')
+          && one.descendants().some((deep) => step.id
+            ? new ClassList(deep).contains('fragment-whole')
+              && decodeURIComponent(String(deep.href).replace('../sources/#passage=', '')) === step.id
+            : new ClassList(deep).contains('fragment-author')
               && deep.textContent === step.author))[step.index || 0];
       const body = item && item.descendants().find(
         (one) => new ClassList(one).contains('fragment-body'));
@@ -3606,15 +3615,16 @@ class ChronologyTest(ReplayTest):
         ("Ambrose of Milan", "386", 6),
         ("Jerome", "391", 2),
         ("Augustine of Hippo", "401", 4),
-        ("Severian of Gabala", "401", 5),
+        ("Severian of Gabala", "401", 6),
         ("Augustine of Hippo", "413", 3),
         ("Bede", "717", 35),
         ("Alcuin of York", "796", 17),
         ("Angelomus of Luxeuil", "845", 17),
         ("Remigius of Auxerre", "890", 11),
+        ("Augustine of Hippo", None, 14),
     ]
 
-    def test_genesis_1_renders_eleven_groups_in_text_date_order(self):
+    def test_genesis_1_renders_dated_groups_then_the_undated_work(self):
         groups = self.page("default")["authorGroups"]
         self.assertEqual(
             [(one["author"], one["date"]) for one in groups],
@@ -3634,8 +3644,8 @@ class ChronologyTest(ReplayTest):
         groups = self.page("default")["authorGroups"]
         counts = [int(re.match(r"(\d+)", one["count"]).group(1)) for one in groups]
         self.assertEqual(counts, [count for _, _, count in self.EXPECTED])
-        self.assertEqual(sum(counts), 119)
-        self.assertEqual(self.page("default")["fragmentCount"], 119)
+        self.assertEqual(sum(counts), 134)
+        self.assertEqual(self.page("default")["fragmentCount"], 134)
 
     def test_every_expected_fragment_id_renders_exactly_once_in_order(self):
         # The correction review asked chronology to be proved by IDENTITY,
@@ -3686,13 +3696,13 @@ class VoiceCountTruthTest(ReplayTest):
         page = self.page("voice-held")
         self.assertEqual(
             page["tallyText"],
-            "119 fragments held · 13 in English translation"
-            " · 27 lead entries on the acquisition list")
+            "134 fragments held · 28 in English translation"
+            " · 29 lead entries on the acquisition list")
 
     def test_the_unfiltered_tally_counts_the_corpus(self):
         self.assertEqual(
             self.page("default")["tallyText"],
-            "119 fragments held · 27 lead entries on the acquisition list")
+            "134 fragments held · 29 lead entries on the acquisition list")
 
     def test_a_chapter_with_nothing_says_nothing_held(self):
         self.assertEqual(self.page("nothing-held")["tallyText"], "Nothing held here")
@@ -3701,7 +3711,7 @@ class VoiceCountTruthTest(ReplayTest):
 class AbsenceCountTest(ReplayTest):
     """Finding 8b — partial-public-domain findings are counted apart.
 
-    Two of Genesis 1's eight recorded English absences are partly public
+    One of Genesis 1's seven recorded English absences is partly public
     domain; filing them under "no English this project may publish" overstated
     the bar the record actually sets.
     """
@@ -3711,13 +3721,13 @@ class AbsenceCountTest(ReplayTest):
         self.assertEqual(
             page["absenceSummary"],
             "6 works standing here have no English this project may publish; "
-            "2 have only a partly public domain English, not yet taken")
+            "1 has only a partly public domain English, not yet taken")
 
     def test_every_absence_still_carries_its_reason_and_partials_their_offer(self):
         page = self.page("voice-held")
-        self.assertEqual(len(page["absenceReasons"]), 8)
+        self.assertEqual(len(page["absenceReasons"]), 7)
         self.assertTrue(all(one.strip() for one in page["absenceReasons"]))
-        self.assertEqual(len(page["absencePartials"]), 2)
+        self.assertEqual(len(page["absencePartials"]), 1)
         self.assertTrue(all(one.startswith("Partly public domain — ")
                             for one in page["absencePartials"]))
 
@@ -3766,7 +3776,7 @@ class AuthorFilterRecoveryTest(ReplayTest):
 
     def test_a_partial_filter_is_reported_against_the_held_total(self):
         hidden = self.snapshot("hidden-author-carry", "hidden")
-        self.assertIn("119 fragments held here — 108 shown", hidden["sectionHeadings"])
+        self.assertIn("134 fragments held here — 123 shown", hidden["sectionHeadings"])
 
     def test_a_carried_exclusion_still_offers_the_switch_on_a_sole_author(self):
         gen42 = self.snapshot("hidden-author-carry", "gen42")
@@ -3833,8 +3843,8 @@ class LeadsCopyTest(ReplayTest):
     generator's. Rows render unhidden, unreordered, by exact identity.
     """
 
-    NOTE_13 = (
-        "13 unreconciled lead entries on the acquisition record for this "
+    NOTE_14 = (
+        "14 unreconciled lead entries on the acquisition record for this "
         "chapter, which omits its confidence. An entry establishes no "
         "distinct work, no possession and nothing renderable, and the list "
         "is not checked against the commentary above.")
@@ -3848,7 +3858,7 @@ class LeadsCopyTest(ReplayTest):
                       page["sectionHeadings"])
         note = next(one for one in page["asideNotes"]
                     if "acquisition record" in one)
-        self.assertEqual(note, self.NOTE_13)
+        self.assertEqual(note, self.NOTE_14)
 
     def test_the_old_overclaims_are_gone(self):
         script = held(CATENA / "catena.js")
@@ -3864,9 +3874,9 @@ class LeadsCopyTest(ReplayTest):
     def test_the_rows_render_unhidden(self):
         page = self.page("acquisition-only")
         self.assertEqual(page["fragmentCount"], 0)
-        self.assertEqual(len(page["leads"]), 13)
-        # Genesis 1's 27 rows include held works; they are not hidden here.
-        self.assertEqual(len(self.page("default")["leads"]), 27)
+        self.assertEqual(len(page["leads"]), 14)
+        # Genesis 1's 29 rows include held works; they are not hidden here.
+        self.assertEqual(len(self.page("default")["leads"]), 29)
 
     def test_the_rows_render_exact_identity_in_record_order(self):
         # The review demanded exact row identity/order, not counts alone:
@@ -3880,7 +3890,7 @@ class LeadsCopyTest(ReplayTest):
             (lead.get("title") or "") +
             (" (" + str(lead["date"]) + ")" if lead.get("date") else "")
             for lead in spine["leads"]]
-        self.assertEqual(len(expected), 27)
+        self.assertEqual(len(expected), 29)
         self.assertEqual(
             expected[0],
             "Alcuin of York — Interrogationes et responsiones in Genesim (804)")
@@ -3940,9 +3950,9 @@ class RightsRenderingTest(ReplayTest):
                             for one in self.page("default")["sourceLines"]))
 
     def test_provenance_stands_whether_or_not_the_text_loads(self):
-        # Source lines exist for all 119 fragments before any text is fetched.
+        # Source lines exist for all 134 fragments before any text is fetched.
         self.assertEqual(len(self.page("voice-held")["snapshots"]["start"]["fetched"]), 7)
-        self.assertEqual(len(self.page("default")["sourceLines"]), 119)
+        self.assertEqual(len(self.page("default")["sourceLines"]), 134)
 
     def test_a_recorded_acknowledgement_renders_above_the_prose(self):
         """SYNTHETIC fixture: the notice arrives through the spine channel."""
@@ -4111,7 +4121,7 @@ class HashValidationTest(ReplayTest):
         recovered = self.snapshot("invalid-recovery", "recovered")
         self.assertFalse(recovered["errorSections"])
         self.assertEqual(recovered["referenceText"], "Genesis 1")
-        self.assertEqual(recovered["fragmentCount"], 119)
+        self.assertEqual(recovered["fragmentCount"], 134)
 
     def test_an_invalid_hashchange_replaces_rather_than_leaves_stale_content(self):
         broken = self.snapshot("hashchange-invalid", "broken")
@@ -4141,7 +4151,7 @@ class VoiceDeepLinkTest(ReplayTest):
         # byte for byte — no canonicalising rewrite, no extra history entry.
         self.assertEqual(page["hash"], GEN1 + "&voice=translation:en")
         self.assertEqual(page["hashWrites"], [])
-        self.assertEqual(page["fragmentCount"], 13)
+        self.assertEqual(page["fragmentCount"], 28)
         self.assertTrue(any("Showing English translation only" in one
                             for one in page["asideNotes"]))
 
@@ -4228,13 +4238,13 @@ class UnsupportedVoiceTest(ReplayTest):
         # supported -> unsupported -> supported, over one live document.
         first = self.snapshot("unsupported-voice-change", "start")
         self.assertEqual(first["voice"], "translation:en")
-        self.assertEqual(first["fragmentCount"], 13)
+        self.assertEqual(first["fragmentCount"], 28)
         broken = self.snapshot("unsupported-voice-change", "unsupported")
         self.assertEqual(broken["referenceText"], "Address not used")
         self.assertEqual(broken["fragmentCount"], 0)
         back = self.snapshot("unsupported-voice-change", "supported-again")
         self.assertEqual(back["voice"], "translation:en")
-        self.assertEqual(back["fragmentCount"], 13)
+        self.assertEqual(back["fragmentCount"], 28)
         self.assertEqual(back["hash"], GEN1 + "&voice=translation:en")
 
     def test_the_supported_set_is_read_from_the_index_not_from_the_key(self):
@@ -4445,7 +4455,7 @@ class RecoveryFocusTest(ReplayTest):
         recovered = self.snapshot("keyboard-recovery", "recovered")
         self.assertFalse(recovered["errorSections"])
         self.assertEqual(recovered["referenceText"], "Genesis 1")
-        self.assertEqual(recovered["fragmentCount"], 119)
+        self.assertEqual(recovered["fragmentCount"], 134)
         self.assertEqual(recovered["activeElement"], "reading",
                          "focus must not be stranded on the removed link")
 
@@ -4542,7 +4552,7 @@ class CacheRecoveryTest(ReplayTest):
         self.assertTrue(any("could not be loaded" in one for one in failed["statusWrites"]))
         recovered = self.snapshot("spine-retry", "recovered")
         self.assertEqual(recovered["referenceText"], "Genesis 1")
-        self.assertEqual(recovered["fragmentCount"], 119)
+        self.assertEqual(recovered["fragmentCount"], 134)
         asked = [one for one in recovered["fetched"]
                  if one == "structure/catena/01-gen/001.json"]
         self.assertEqual(len(asked), 2, "the return visit must really ask again")
@@ -4624,10 +4634,10 @@ class TypedTruthStateTest(ReplayTest):
         page = self.page("blocked-with-held")
         self.assertEqual(
             page["tallyText"],
-            "119 fragments held · 1 work held, not renderable yet"
-            " · 27 lead entries on the acquisition list")
+            "134 fragments held · 1 work held, not renderable yet"
+            " · 29 lead entries on the acquisition list")
         self.assertIn("Held, and not renderable yet", page["sectionHeadings"])
-        self.assertEqual(page["fragmentCount"], 119)
+        self.assertEqual(page["fragmentCount"], 134)
         self.assertEqual(len(page["blocked"]), 1)
 
     def test_true_absence_still_says_nothing_held(self):
@@ -4721,7 +4731,14 @@ class SeverianRightsTraceTest(ReplayTest):
         spine = json.loads(
             (browser_data_root(ROOT) / 'structure/catena/01-gen/001.json')
             .read_text(encoding="utf-8"))
-        severian = spine["sources"]["6"]
+        greek = [one for one in spine["fragments"]
+                 if one["id"].startswith(SEVERIAN_GREEK_PREFIX)]
+        self.assertEqual([one["id"] for one in greek],
+                         [SEVERIAN_GREEK_PREFIX + f"homilia-{n}" for n in range(1, 6)])
+        severian = spine["sources"][greek[0]["source"]]
+        self.assertTrue(all(spine["sources"][one["source"]]["rights"] == "licensed"
+                            for one in greek))
+        self.assertEqual(severian["language"], "grc")
         self.assertEqual(severian["rights"], "licensed")
         self.assertNotIn("acknowledgement", severian)
         self.assertNotIn("rights_basis", severian)
@@ -4732,6 +4749,20 @@ class SeverianRightsTraceTest(ReplayTest):
             payload = json.loads(path.read_text(encoding="utf-8"))
             self.assertEqual(payload["acknowledgement"], SEVERIAN_BASIS)
             self.assertGreater(len(payload["text"]), 100)
+
+    def test_the_english_translation_has_its_own_public_domain_rights(self):
+        spine = json.loads((browser_data_root(ROOT) /
+            'structure/catena/01-gen/001.json').read_text(encoding="utf-8"))
+        fragment = next(one for one in spine["fragments"] if one["id"] == SEVERIAN_ENGLISH_ID)
+        source = spine["sources"][fragment["source"]]
+        self.assertEqual(source["language"], "en")
+        self.assertEqual(source["rights"], "public-domain")
+        self.assertIn("Bareille", source["edition"])
+        opened = self.snapshot("severian-english", "opened")
+        self.assertEqual(opened["acknowledgements"], [])
+        payload = json.loads((browser_data_root(ROOT) / 'structure/catena/text' /
+            (SEVERIAN_ENGLISH_ID + '.json')).read_text(encoding="utf-8"))
+        self.assertIn(payload["text"], opened["fragmentTexts"])
 
     def test_the_projected_acknowledgement_renders_verbatim_once_per_fragment(self):
         opened = self.snapshot("severian-projected", "all-opened")
@@ -4764,8 +4795,8 @@ class AbsenceDisclosureTest(ReplayTest):
         self.assertTrue(page["absenceSummary"])
         self.assertTrue(page["absenceOpen"],
                         "the reasons must be visible without interaction")
-        self.assertEqual(len(page["absenceReasons"]), 8)
-        self.assertEqual(len(page["absencePartials"]), 2)
+        self.assertEqual(len(page["absenceReasons"]), 7)
+        self.assertEqual(len(page["absencePartials"]), 1)
 
     def test_the_empty_voice_chapter_also_opens_its_absences(self):
         page = self.page("voice-empty-chapter")
@@ -5008,7 +5039,7 @@ class SupersededArrivalVoiceTest(ReplayTest):
             self.rendered_state(self.snapshot("parked-voice-superseded", "reader")))
         self.assertEqual(
             self.page("parked-voice-superseded")["tallyText"],
-            "92 fragments held · 23 lead entries on the acquisition list")
+            "92 fragments held · 24 lead entries on the acquisition list")
 
 
 class SelfWriteEchoTest(ReplayTest):
@@ -5117,7 +5148,7 @@ class BlockedVoiceClaimTest(ReplayTest):
         # Reached without an arrival to reseed anything: English chosen where
         # it IS held, then a move onto the blocked-only chapter.
         chosen = self.snapshot("blocked-voice-control", "chosen")
-        self.assertIn("13 in English translation", chosen["tallyText"])
+        self.assertIn("28 in English translation", chosen["tallyText"])
         moved = self.snapshot("blocked-voice-control", "moved")
         self.assertEqual(moved["voice"], "translation:en")
         self.assertEqual(moved["voiceLabels"],
@@ -5947,7 +5978,7 @@ class ExactVoiceKeyTest(ReplayTest):
         self.assertNotIn("Greek translation — none here", greek["voiceLabels"])
         back = self.snapshot("unsupported-greek-change", "supported-again")
         self.assertEqual(back["voice"], "translation:en")
-        self.assertEqual(back["fragmentCount"], 13)
+        self.assertEqual(back["fragmentCount"], 28)
         self.assertEqual(back["busy"], "false")
 
     def test_the_published_projection_is_the_exact_key_set(self):
@@ -6231,7 +6262,7 @@ class NumericVerseAndPathTest(ReplayTest):
         self.assertEqual(page["verseTexts"], [])
         self.assertEqual(page["chapterCounts"], [])
         self.assertTrue(any("extent is not present" in note for note in page["notices"]))
-        self.assertEqual(page["fragmentCount"], 119)
+        self.assertEqual(page["fragmentCount"], 134)
 
     def test_no_verse_value_is_coerced_into_scripture(self):
         # CORRECTED ORACLE (V6). This read `fragmentTexts` — the COMMENTARY —
@@ -6744,10 +6775,10 @@ class UnregressedScriptureTest(ReplayTest):
                          ["31 verses", "8 paragraphs"])
 
     def test_every_real_fragment_still_prints_its_tally(self):
-        # 119 fragments, 119 chips — asserted as a count of the chips
+        # 134 fragments, 134 chips — asserted as a count of the chips
         # THEMSELVES, which the deduplicated projection could never express.
         page = self.page("default")
-        self.assertEqual(page["fragmentCount"], 119)
+        self.assertEqual(page["fragmentCount"], 134)
         self.assertEqual(len(page["lengths"]), page["fragmentCount"])
 
 
@@ -7133,11 +7164,11 @@ class AbsenceRowFlatteningTest(ReplayTest):
 
     def test_every_absence_row_states_the_author_apart_from_the_work(self):
         # The real production route, not a fixture: Genesis 1 under
-        # `translation:en`, whose eight absence rows are the rows the review
+        # `translation:en`, whose seven absence rows are the rows the review
         # read `Ambrose of MilanHexameron` off.
         page = self.page("voice-held")
         rows = page["absenceRowTexts"]
-        self.assertEqual(len(rows), 8, "the eight recorded absences must stand")
+        self.assertEqual(len(rows), 7, "the seven recorded absences must stand")
         for author, work, said in zip(page["absenceAuthors"],
                                       page["absenceWorks"], rows):
             with self.subTest(work=work):
@@ -7159,7 +7190,7 @@ class AbsenceRowFlatteningTest(ReplayTest):
     def test_a_row_about_another_author_is_separated_the_same_way(self):
         # THE ADJACENT-IDENTITY CONTROL. A fix written for one row would pass
         # the assertion above and fail here. Two further real rows are named:
-        # one whose author is a single word, and the last row of the eight —
+        # one whose author is a single word, and the last row of the seven —
         # the two shapes a positional patch is most likely to miss.
         rows = self.page("voice-held")["absenceRowTexts"]
         for opening in ("Jerome — Liber quaestionum hebraicarum in Genesim",
@@ -7200,9 +7231,9 @@ class AbsenceRowFlatteningTest(ReplayTest):
         self.assertEqual(
             page["absenceSummary"],
             "6 works standing here have no English this project may publish; "
-            "2 have only a partly public domain English, not yet taken")
-        self.assertEqual(len(page["absenceReasons"]), 8)
-        self.assertEqual(len(page["absencePartials"]), 2)
+            "1 has only a partly public domain English, not yet taken")
+        self.assertEqual(len(page["absenceReasons"]), 7)
+        self.assertEqual(len(page["absencePartials"]), 1)
         self.assertIn("absence", page["dataStates"])
 
     def test_the_delimiter_matches_the_convention_the_leads_already_keep(self):
@@ -7281,20 +7312,20 @@ class RootLanguageIdentityTest(ReplayTest):
             ["passage=en"])
 
     def test_every_language_attribute_written_is_a_language_subtag(self):
-        # The fragment sink, counted rather than deduplicated: 119 fragments
+        # The fragment sink, counted rather than deduplicated: 134 fragments
         # under Everything held, each carrying its own source's sound code,
-        # and 13 under the English translation. `classes` and `dataStates`
+        # and 28 under the English translation. `classes` and `dataStates`
         # are sets and would read the same for one attribute and for a
         # hundred; `langAttributes` is the whole journal in rendered order.
         held = self.page("bible-language-forms")["langAttributes"]
-        self.assertEqual(len(held), 119)
-        # Counted, so the three sinks account for all 119 and none is a
-        # substitute for another: 101 Latin, 13 English, 5 Greek.
+        self.assertEqual(len(held), 134)
+        # Counted, so the three sinks account for all 134 and none is a
+        # substitute for another: 101 Latin, 28 English, 5 Greek.
         self.assertEqual([held.count(one) for one in
                           ("fragment-text=la", "fragment-text=en", "fragment-text=grc")],
-                         [101, 13, 5])
+                         [101, 28, 5])
         voiced = self.page("bible-language-forms-voice")["langAttributes"]
-        self.assertEqual(voiced, ["fragment-text=en"] * 13)
+        self.assertEqual(voiced, ["fragment-text=en"] * 28)
         for written in held + voiced:
             code = written.split("=", 1)[1]
             self.assertRegex(code, r"^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$", written)
@@ -7339,16 +7370,16 @@ class RootLanguageIdentityTest(ReplayTest):
         self.assertEqual(page["voiceLabels"],
                          ["Everything held", "The author’s own language",
                           "English translation", "Latin translation"])
-        self.assertEqual(page["fragmentCount"], 13)
+        self.assertEqual(page["fragmentCount"], 28)
         self.assertEqual(page["tallyText"],
-                         "119 fragments held · 13 in English translation · "
-                         "27 lead entries on the acquisition list")
+                         "134 fragments held · 28 in English translation · "
+                         "29 lead entries on the acquisition list")
         self.assertEqual(page["filterLabels"],
                          ["Basil of Caesarea", "Gregory of Nyssa",
-                          "Augustine of Hippo"])
+                          "Severian of Gabala", "Augustine of Hippo"])
         self.assertEqual(page["absenceSummary"],
                          "6 works standing here have no English this project may "
-                         "publish; 2 have only a partly public domain English, "
+                         "publish; 1 has only a partly public domain English, "
                          "not yet taken")
         self.assertEqual(page["referenceBookText"], "Old Testament")
 
@@ -7424,16 +7455,16 @@ class EditionIdentityTest(ReplayTest):
         self.assertEqual(page["verseNumbers"], [str(n) for n in range(1, 32)])
         self.assertEqual(page["referenceText"], "Genesis 1")
         self.assertEqual(page["referenceBookText"], "Old Testament")
-        self.assertEqual(page["fragmentCount"], 119)
+        self.assertEqual(page["fragmentCount"], 134)
         self.assertEqual(page["tallyText"],
-                         "119 fragments held · 27 lead entries on the acquisition list")
+                         "134 fragments held · 29 lead entries on the acquisition list")
 
     def test_the_page_terminates(self):
         page = self.page("bible-identity-forms")
         self.assertEqual(page["busy"], "false")
         self.assertEqual(page["statusWrites"],
-                         ["Genesis 1, Douay-Rheims, 119 fragments held, "
-                          "27 lead entries on the acquisition list."])
+                         ["Genesis 1, Douay-Rheims, 134 fragments held, "
+                          "29 lead entries on the acquisition list."])
         self.assertEqual(page["errorSections"], [])
 
 
@@ -7623,11 +7654,11 @@ class GenuinelyLateStaleWorkTest(ReplayTest):
                "blocked", "voice", "voiceLabels", "stepButtons", "classes",
                "langAttributes", "acknowledgements", "authorGroups")
 
-    GEN1_SPOKEN = ("Genesis 1, Douay-Rheims (Challoner), 119 fragments held,"
-                   " 27 lead entries on the acquisition list.")
+    GEN1_SPOKEN = ("Genesis 1, Douay-Rheims (Challoner), 134 fragments held,"
+                   " 29 lead entries on the acquisition list.")
     GEN2_SPOKEN = ("Genesis 2, Douay-Rheims (Challoner), 108 fragments held,"
-                   " 22 lead entries on the acquisition list.")
-    GEN2_TALLY = "108 fragments held · 22 lead entries on the acquisition list"
+                   " 24 lead entries on the acquisition list.")
+    GEN2_TALLY = "108 fragments held · 24 lead entries on the acquisition list"
     GEN2_HEADINGS = ["108 fragments held here",
                      "Believed to comment here — the acquisition list"]
 
@@ -9878,7 +9909,7 @@ class V7UnreadableRootDomainClaimTest(ReplayTest):
         # commentary: the catena is rendered, counted and announced in full.
         page = self.page("v7-verses-list")
         self.assertEqual(page["tallyText"],
-                         "119 fragments held · 27 lead entries"
+                         "134 fragments held · 29 lead entries"
                          " on the acquisition list")
         self.assertEqual(page["errorSections"], [])
         self.assertEqual(page["hashWrites"], [])

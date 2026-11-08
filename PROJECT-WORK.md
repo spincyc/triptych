@@ -55,8 +55,10 @@ texts. It caught and corrected a Chrysostom excerpt that separated an objection
 from its answer, and rejected corrupted Origen Word footnotes in favor of the
 publisher PDF. English editions of Augustine's Galatians, Bede's Genesis and
 Ambrose's Hexameron remain identified leads with their specific access/rights
-gaps recorded. Work stays on the assigned workspace branch; no new main
-publication is part of this correction request.
+gaps recorded. The maintainer subsequently authorized committing consistent
+work and pushing coherent changes to main. Implementation remains on the
+assigned workspace branch; publish the validated result to main without
+rewriting history, then verify deployment and the affected live routes.
 
 The source gate passes after regenerating the commentary worklist and adding
 the mixed Origen volume's partial containment record. The unchanged chronology
@@ -65,6 +67,34 @@ library schema checks pass all 67 tests. Focused linkage, permission and Lectern
 tests pass, and browser excerpt checks preserve keyboard, print and exact-text
 parity. The reviewed source/implementation checkpoint precedes the final
 browser-product descriptor, sealed-reader tests and packaged-site validation.
+
+Implementation checkpoint `3c92df7f98` is committed and pushed on the workspace
+branch. Two independent cold builds agree: thirteen products, 27,915 files and
+227,285,321 bytes, identity
+`a838af7ab5b9f1aa8f5f2c1e829d016ce21697a49ff6988e387c91943e8d3ba0`.
+Catena, paragraph and Source Reader input audits report no undeclared reads.
+The host Markdown version differed from the lock; validation uses the existing
+locked dependencies in an isolated environment, without changing the lock.
+
+The sealed browser suite passes 451 tests; backend and Source Reader checks
+pass 124. The full Lectern run exercises 141 tests, with one expected skip and
+two inherited count failures: the old assertions said 154 works / 216 documents,
+although the baseline's hash-verified catalogue already held 156 / 219. The
+tests now compare the display against the independent sealed catalogue; both
+corrected cases pass their focused rerun, and all other cases passed the full
+run. Five actual CLI snapshots verify Day, Philippians 1:21 excerpts and compact
+full context, and Origen's commentary and Source Library navigation with its
+complete notice. All deployment source gates pass; the already verified
+product check and separate chronology/document freshness checks are reused
+instead of taking an exclusive rebuild lock while reader tests hold snapshots.
+
+The scoped release refresh changes exactly fourteen reviewed source bindings
+(including the two new helper modules), their inventory digest and the rights
+record digest. It changes no publication authorization prose. The committed
+descriptor seals the independently reproduced products; all 21 web figures
+are current. Packaged-site acceptance, main publication and live verification
+remain pending. Existing 200% text enlargement overflow at 320 pixels
+reproduces unchanged at the baseline and remains separate from this correction.
 
 ## Catena Omnia corpus and passage recovery — 7 November 2026
 

@@ -9,22 +9,32 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "lectern-missing-products"
   criterion = "Lectern prepares absent generated products through their canonical offline builder before starting, retains integrity refusals, and passes focused startup regression and real-data reader checks."
-  status = "open"
+  status = "pass"
+  evidence = ["tools/lectern", "tools/tests/test_lectern_products.py", "tools/tests/test_lectern.py", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "known-work-english-editions"
   criterion = "An auditable census identifies English availability for known Catena works, incorporates recoverable admissible editions with exact provenance and rights, and distinguishes remaining leads, unavailable texts and unchecked transcription."
-  status = "open"
+  status = "pass"
+  evidence = ["src/sources/commentary/acquisitions/2026-11-08-known-genesis-english.json", "src/sources/commentary/fragment-loci.yaml", "src/sources/commentary/translation-absences.yaml", "src/sources/inventories/noncommercial-permissions-v1.json", "THIRD_PARTY.md"]
 
   [[deliverables.requirements]]
   id = "verse-source-excerpts"
   criterion = "A reproducible linkage pass exposes bounded source excerpts for selected scripture verses with source anchors, truthful language and extent, and checks that incidental citations and unsupported boundaries do not become direct commentary."
-  status = "open"
+  status = "pass"
+  evidence = ["src/sources/commentary/passage-snippets.yaml", "scripts/_catena_snippets.py", "tools/tests/test_catena_linkage.py", "tools/tests/test_catena_snippets_reader.py", "tools/tests/test_lectern_catena_snippets.py"]
 
   [[deliverables.requirements]]
   id = "integrated-validation"
   criterion = "Affected source, producer and reader checks pass against the integrated corpus; the change is committed on the workspace branch with concrete coverage and remaining gaps recorded."
   status = "open"
+  evidence = ["PROJECT-WORK.md", "release/browser-products.json", "tools/tests/test_catena_production.py", "tools/tests/test_lectern.py"]
+
+  [[deliverables.requirements]]
+  id = "coherent-main-publication"
+  criterion = "The validated correction is published coherently to main without history rewriting, the Pages deployment succeeds, and affected live Catena routes expose the reviewed English passages and verse excerpts."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "release/public-alpha.json", "release/browser-products.json"]
 
 [[deliverables]]
 id = "catena-omnia-recovery-2026-11-07"

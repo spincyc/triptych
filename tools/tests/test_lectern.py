@@ -369,9 +369,8 @@ class TextsAdapterTests(unittest.TestCase):
 
     def test_the_tally_is_the_models(self) -> None:
         found = bridge.call("texts", "find", {"edition": "claude", "reading": "browser", "find": "origen"})
-        # 216 since the All Saints studies (a141a9185, 215) and the Claude
-        # All Saints documents (04561be42, 216).
-        self.assertEqual(found["tally"], "1 work · 1 document · 0 pages of 216")
+        catalogue = json.loads(structure_path("documents/corpus.json").read_text(encoding="utf-8"))
+        self.assertEqual(found["tally"], f"1 work · 1 document · 0 pages of {catalogue['counted']['documents']:,}")
 
 
 @unittest.skipUnless(NODE, "node is not installed; the reader's derivations run the browser's models under node")
@@ -500,7 +499,7 @@ class DrawingTests(unittest.TestCase):
         "propers": "form-qualified formularies",
         "catena": "▸ Basil of Caesarea",
         "scripture": "The Full Account",
-        "texts": "154 works",  # 154 since the All Saints studies (a141a9185)
+        "texts": lambda: f"{json.loads(structure_path('documents/corpus.json').read_text())['counted']['works']:,} works",
         "sources": lambda: f"{json.loads(structure_path('sources/index.json').read_text())['counted']['works']:,} works",
         "history": "How the Missal Changed",
         "law": "The Code, Canon by Canon",

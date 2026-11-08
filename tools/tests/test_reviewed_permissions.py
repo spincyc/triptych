@@ -70,7 +70,9 @@ class ReviewedPermissionTests(unittest.TestCase):
         self.assertFalse(self.reader.reading_of(self.library(artifact), passage)['readable'])
 
     def test_missing_changed_inventory_or_payload_refused(self):
-        with tempfile.TemporaryDirectory(dir=ROOT / '.scratch/lane-linkage') as tmp:
+        scratch = ROOT / '.scratch'
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix='reviewed-permissions-', dir=scratch) as tmp:
             root = Path(tmp)
             inventory = root / policy.INVENTORY
             inventory.parent.mkdir(parents=True)
