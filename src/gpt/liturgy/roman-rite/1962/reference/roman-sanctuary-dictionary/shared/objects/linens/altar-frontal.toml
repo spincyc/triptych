@@ -1,0 +1,132 @@
+schema_version = 1
+id = "obj-altar-frontal"
+workflow_state = "art-reviewed"
+preferred_english_name = "Altar frontal"
+latin_headword = "antependium"
+alternate_english_names = ["frontal", "antependium"]
+alternate_latin_names = ["pallium"]
+categories = ["linens-and-textiles", "altar-and-appointments"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-altar-cloths"]
+related_objects = ["obj-altar"]
+
+[presence]
+locations = ["Hanging in front of the altar, below its working surface."]
+contexts = ["The frontal is an altar hanging described in the contemporary ceremonial; this entry does not assert that every altar must have one."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["sacristan"]
+server_relation = "recognizes-only"
+warnings = ["Placement study only; the inset is not a complete prepared altar."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-altar-frontal-identity"
+kind = "identity"
+text = "An altar frontal is the hanging in front of the altar, also called an antependium or pallium."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-frontal-manual"]
+
+[[claims]]
+id = "clm-altar-frontal-appearance"
+kind = "appearance"
+text = "Its identifying relationship is a hanging across the altar front. The isolated rectangle is representative; the checked text does not prescribe its ornament, fringe, dimensions, attachment or exact shape."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-frontal-manual"]
+
+[[claims]]
+id = "clm-altar-frontal-placement"
+kind = "placement"
+text = "The frontal hangs in front; the altar cloths cover the altar from above. These are separate textile identities."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-frontal-manual", "src-altar-frontal-missal"]
+
+[[claims]]
+id = "clm-altar-frontal-liturgical-use"
+kind = "liturgical-use"
+text = "The frontal forms the visible altar-front hanging. Its identification does not make it one of the three cloths required to cover the altar for Mass."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-frontal-manual", "src-altar-frontal-missal"]
+
+[[claims]]
+id = "clm-altar-frontal-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "The 1943 ceremonial describes the frontal among altar appointments. This bounded record does not convert that description into a universal 1962 requirement."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-frontal-manual"]
+
+[[claims]]
+id = "clm-altar-frontal-handling-boundary"
+kind = "handling-boundary"
+text = "The checked description supplies no attachment or changeover procedure; the illustration therefore gives recognition without a server handling sequence."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-frontal-manual"]
+
+[[sources]]
+id = "src-altar-frontal-manual"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 6 / PDF p. 27."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[sources]]
+id = "src-altar-frontal-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 526; printed XXXVI / PDF 34."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the front hanging separately from the cloths covering the altar top."
+claim_ids = ["clm-altar-frontal-identity", "clm-altar-frontal-appearance", "clm-altar-frontal-placement", "clm-altar-frontal-liturgical-use", "clm-altar-frontal-ceremonial-presence", "clm-altar-frontal-handling-boundary"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Distinguish the front hanging from the three altar cloths; this entry supplies no fastening or changing method."
+claim_ids = ["clm-altar-frontal-identity", "clm-altar-frontal-appearance", "clm-altar-frontal-placement", "clm-altar-frontal-liturgical-use", "clm-altar-frontal-ceremonial-presence", "clm-altar-frontal-handling-boundary"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Use the front-versus-top relationship for identification; no universal changeover sequence is established here."
+claim_ids = ["clm-altar-frontal-identity", "clm-altar-frontal-appearance", "clm-altar-frontal-placement", "clm-altar-frontal-liturgical-use", "clm-altar-frontal-ceremonial-presence", "clm-altar-frontal-handling-boundary"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "The frontal hangs down the front of the altar; it is separate from the cloths on top."
+claim_ids = ["clm-altar-frontal-identity", "clm-altar-frontal-appearance", "clm-altar-frontal-placement", "clm-altar-frontal-liturgical-use", "clm-altar-frontal-ceremonial-presence", "clm-altar-frontal-handling-boundary"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This is an ordinary altar appointment, not a pontifical garment or insignia."
+claim_ids = ["clm-altar-frontal-identity", "clm-altar-frontal-appearance", "clm-altar-frontal-placement", "clm-altar-frontal-liturgical-use", "clm-altar-frontal-ceremonial-presence", "clm-altar-frontal-handling-boundary"]
+
+[[artwork]]
+id = "art-altar-frontal-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/linens/RPD-FIG-altar-frontal-isolated.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-frontal"]
+scale_mode = "not-to-common-scale"
+review_note = "One broad plain hanging textile seen frontally with its complete lower edge and slight gravity folds. The front-hanging identity comes from the adjacent caption; proportions, hem and folds are representative."
+
+[[artwork]]
+id = "art-altar-frontal-context"
+view = "context-inset"
+asset = "shared/artwork/pencil/linens/RPD-FIG-altar-frontal-context.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-frontal"]
+scale_mode = "not-to-common-scale"
+review_note = "A plain frontal hangs down the front of a simple altar support, visibly separate from a top covering and an uncovered side. The arrangement is a placement study, not a complete altar prepared for Mass."
+context_object_ids = ["obj-altar"]

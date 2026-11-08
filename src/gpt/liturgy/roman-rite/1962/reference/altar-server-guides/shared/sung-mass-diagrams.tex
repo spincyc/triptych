@@ -1,4 +1,112 @@
 % Pencil scenes are illustrative teaching aids. TeX owns the role labels.
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/sanctuary-scenes}
+
+\newcommand{\SungPositionScene}[1]{%
+  \ASGBeginScene{.98\linewidth}\ASGSungCandles #1\ASGEndScene}
+\newcommand{\SungMovementPanel}[7]{%
+  \par\medskip\Needspace{7cm}
+  \noindent\textbf{#1}\par\smallskip
+  \noindent\begin{minipage}[t]{.49\linewidth}\vspace{0pt}
+    \SungPositionScene{#2}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+    \ASGMovementFields{#3}{#4}{#5}{#6}{#7}
+  \end{minipage}\par\medskip}
+
+\newcommand{\MCFootPositions}{%
+  \ASGPriest{50}{11.3}{P}
+  \ASGKneelingServer{31}{11.3}{A2}
+  \ASGKneelingServer{69}{11.3}{A1}
+  \ASGStation{80}{7}{MC: FOOT}
+  \ASGStation{20}{39}{T1--T4: BASE}
+  \ASGStation{83}{40}{TH + BB:\\SAFE STATION}}
+\newcommand{\MCGospelPositions}{%
+  \ASGMissalGospel
+  \ASGPriest{39}{26.5}{P}
+  \ASGStation{29}{25}{MC}
+  \ASGStation{25}{19}{A1 + A2\\CANDLES}
+  \ASGStation{16}{8}{TH: OUTWARD}
+  \draw[asg route] (94,12) -- (68,6) -- (50,6) -- (19,6) -- (19,14);
+  \ASGStop{50}{6}{A}}
+\newcommand{\MCCruetPositions}{%
+  \ASGMissalGospel
+  \ASGPriestFacingRight{68}{26.5}{P}
+  \ASGServerFacingLeft{77}{22.5}{A1}
+  \ASGServerFacingLeft[4]{83}{22.5}{A2}
+  \ASGStation{50}{5}{A1: WINE\quad A2: WATER}
+  \ASGPairPlan{A1}{A2}
+  \draw[asg route] (94,12) -- (94,20) -- (91,22);}
+\newcommand{\SungLavaboPositions}{%
+  \ASGMissalGospel
+  \ASGPriestFacingRight{68}{26.5}{P / C}
+  \ASGServerFacingLeft{76}{22.5}{A2}
+  \ASGServerFacingLeft[4]{83}{22.5}{A1}
+  \draw[asg route] (94,12) -- (94,18) -- (91,20);
+  \ASGStation{60}{4}{INNER LANE:\\WATER / BOWL / TOWEL}
+  \draw[asg route] (82,0) -- (50,0) -- (20,0);
+  \ASGStation{25}{5}{OUTER LANE:\\INCENSE}
+  \ASGPairPlan{A2}{A1}}
+\newcommand{\SungCanonPositions}{%
+  \ASGMissalGospel
+  \ASGPriest{50}{26.5}{P / C}
+  \ASGStation{24}{24}{T1}\ASGStation{37}{24}{T2}
+  \ASGStation{63}{24}{T3}\ASGStation{76}{24}{T4}
+  \ASGStation{50}{12}{FOUR TORCH STATIONS}
+  \ASGKneelingServer{83}{18.3}{A1}
+  \ASGStation{94}{33}{TH}
+  \ASGStation{76}{5}{BELL}
+  \ASGStation{18}{40}{OTHER SERVERS:\\KNEEL AT BASE}}
+\newcommand{\MCAblutionPositions}{%
+  \ASGMissalGospel
+  \ASGPriestFacingRight{68}{26.5}{P}
+  \ASGServerFacingLeft{77}{22.5}{A1}
+  \ASGServerFacingLeft[4]{83}{22.5}{A2}
+  \ASGStation{49}{5}{WINE FIRST; WATER WAITS}
+  \ASGPairPlan{A1}{A2}}
+\newcommand{\MCBookReturnPositions}{%
+  \ASGPriest{50}{26.5}{P}
+  \ASGStandingServer{29}{26.5}{MC}
+  \ASGStation{37}{43}{MISSAL: START}
+  \ASGStation{66}{43}{FINISH}
+  \draw[asg route] (29,23) -- (24,8) -- (50,8) -- (78,8) -- (78,25);
+  \ASGStop{50}{8}{A}}
+\newcommand{\SolemnFootPositions}{%
+  \ASGStation{50}{12}{C\quad D\quad SD: FOOT}
+  \ASGKneelingServer{25}{11.3}{A2}
+  \ASGKneelingServer{76}{11.3}{A1}
+  \ASGStation{18}{40}{MC, TH, BB,\\TB1--TB4, CB:\\MARKED BASE}}
+\newcommand{\SolemnBookPositions}{%
+  \ASGStation{50}{27}{C + D: ALTAR}
+  \ASGStation{67}{20}{SD + MC}
+  \ASGStation{82}{16}{EPISTLE BOOK}
+  \draw[asg route] (92,12) -- (72,7) -- (50,7) -- (66,18);
+  \ASGStop{50}{7}{A}\ASGStation{20}{39}{OTHERS:\\SERVER BENCH}}
+\newcommand{\SolemnGospelRoutePositions}{%
+  \ASGPriest{50}{26.5}{C}
+  \ASGStation{20}{31}{GOSPEL\\STATION}
+  \ASGStation{50}{9}{MC, TH, A1, A2, SD, D}
+  \draw[asg route] (47,5) -- (17,5) -- (17,24);
+  \ASGStation{82}{38}{BB + TB1--TB4\\+ CB: BASE}}
+\newcommand{\SolemnOffertoryPositions}{%
+  \ASGStation{50}{27}{C + D: ALTAR}
+  \ASGStation{74}{20}{SD}
+  \ASGServerFacingLeft{85}{18.3}{A1}
+  \ASGStation{84}{5}{A2: VEIL}
+  \ASGStation{55}{8}{MC: HUMERAL VEIL, THEN CLEAR}
+  \draw[asg route] (94,16) -- (83,21) -- (71,25);}
+\newcommand{\SolemnAblutionPositions}{%
+  \ASGPriestFacingRight{63}{26.5}{C}
+  \ASGStation{73}{39}{SD:\\POURS}
+  \ASGServerFacingLeft{82}{22.5}{A1}
+  \ASGStation{84}{5}{A2: VEIL}
+  \ASGStation{38}{43}{GOSPEL-SIDE\\VEIL PLACE}
+  \ASGStation{49}{5}{A1 SUPPLIES BOTH CRUETS}}
+\newcommand{\SungDeparturePositions}{%
+  \ASGStation{50}{13}{FINAL REVERENCE LINE}
+  \ASGStation{50}{38}{ALTAR CLEAR OF SERVER OBJECTS}
+  \ASGStation{77}{4}{TAKE ONLY\\EXIT OBJECTS}
+  \draw[asg route] (50,10) -- (50,2) -- (12,2);
+  \ASGStation{22}{8}{SINGLE FILE}}
 
 \tikzset{
   sung role tag/.style={
@@ -35,22 +143,15 @@
   \end{center}}
 
 \newcommand{\MCGospelFormationDiagram}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (scene) {\includegraphics[width=.90\linewidth]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-009-mc-gospel-formation-2026.png}};
-    \SungAboveTag{scene}{.164}{P}
-    \SungBelowTag{scene}{.105}{A1}
-    \SungBelowTag{scene}{.261}{A2}
-    \SungBelowTag{scene}{.305}{MC}
-  \end{tikzpicture}
-
-  \parbox{.90\linewidth}{\small\textbf{Stationary Gospel service, without incense.}
-  The Missal remains on its altar stand at the Gospel side. P chants at the
-  book; A1 and A2 remain at their assigned candle stations; MC attends beside
-  the book. This model selects six altar candles and local predella places. On the incense route,
-  TH also waits outward with the closed thurible. Mark the actual distances
-  and route before rehearsal.}
-  \end{center}}
+  \begin{center}\begin{minipage}{.62\linewidth}
+    \SungPositionScene{\MCGospelPositions}
+  \end{minipage}\end{center}
+  \noindent\textbf{Stationary Gospel service (MC-023--026).}
+  The altar Missal is at the Gospel side. P sings at the book; MC attends
+  beside it. A1 and A2 stand with candles at their marked stations and
+  remain there throughout the Gospel. On the incense branch TH waits
+  outward with the closed thurible. The dashed line shows the completed
+  arrival route, not movement during the reading.\par}
 
 \newcommand{\MCEntranceHandoffsDiagram}{%
   \begin{center}
@@ -101,6 +202,7 @@
   \end{center}}
 
 \newcommand{\SolemnGospelStationDiagram}{%
+  \par\noindent\begin{minipage}{\linewidth}
   \begin{center}\begin{tikzpicture}
     \node[inner sep=0pt] (scene) {\includegraphics[width=.62\linewidth]{%
       liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-010-so-gospel-station-2026.png}};
@@ -113,7 +215,7 @@
   \end{tikzpicture}
 
   \parbox{.90\linewidth}{\small \textbf{Stationary Gospel group.} SD faces D and supports the open book between A1 and A2. D chants with joined hands; MC attends at D\textquotesingle s right and TH waits with the closed thurible at his left. This close view identifies the roles and their relation to the book; mark distances and the route locally.}
-  \end{center}}
+  \end{center}\end{minipage}\par}
 
 \newcommand{\SolemnGospelDepartureDiagram}{%
   \begin{center}\begin{tikzpicture}

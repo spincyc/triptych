@@ -1,0 +1,114 @@
+schema_version = 1
+id = "obj-cope"
+workflow_state = "art-reviewed"
+preferred_english_name = "Cope"
+latin_headword = "pluviale"
+alternate_english_names = []
+alternate_latin_names = []
+categories = ["priestly-vestments", "related-ceremonies"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["asperges", "benediction", "procession", "ceremony-surrounding-mass", "pontifical-mass", "good-friday", "easter-vigil"]
+confusable_with = ["obj-chasuble"]
+related_objects = ["obj-priest-stole", "obj-humeral-veil"]
+
+[presence]
+locations = ["Worn as a long cape, joined at the front rather than pulled over the head."]
+contexts = ["Used in specified solemn rites and related ceremonies; its use must be distinguished from the priest’s chasuble at Mass."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["priest"]
+server_relation = "recognizes-only"
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-cope-identity"
+kind = "identity"
+text = "The cope is a large semicircular cape joined at the front, called pluviale in the rubrics."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-cope-manual", "src-cope-missal"]
+
+[[claims]]
+id = "clm-cope-appearance"
+kind = "appearance"
+text = "Laid open, its main body is semicircular. When worn it reaches toward the feet behind and closes across the front with a band and fastening. The diagram omits ornament and treats the exact cut and fastening design as representative."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-cope-manual"]
+
+[[claims]]
+id = "clm-cope-liturgical-use"
+kind = "liturgical-use"
+text = "The 1962 General Rubrics assign the cope to specified solemn rites, including processions, absolution over a body or tomb, the assistant priest at pontifical Mass, the solemn prayers of Good Friday and the Easter Vigil."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-cope-missal"]
+
+[[claims]]
+id = "clm-cope-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "The contemporary ceremonial also identifies the cope with Asperges and Benediction. The 1962 rubric excludes the maniple when the celebrant wears a cope."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-cope-manual", "src-cope-missal"]
+
+[[claims]]
+id = "clm-cope-handling-boundary"
+kind = "handling-boundary"
+text = "The 1962 rubrics distinguish the priest’s chasuble for Mass from the cope used in its appointed rites; resemblance as outer vestments does not make them interchangeable."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-cope-missal"]
+
+[[sources]]
+id = "src-cope-manual"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 12 / PDF p. 33."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[sources]]
+id = "src-cope-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 133, 135–136; printed XX / PDF 18."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[audience_note]]
+audience = "altar-server"
+text = "Identify the front-fastened cape separately from the priest’s Mass chasuble."
+claim_ids = ["clm-cope-identity", "clm-cope-appearance", "clm-cope-liturgical-use", "clm-cope-ceremonial-presence", "clm-cope-handling-boundary"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Distinguish the cope from the chasuble and follow the specific rite for its use; no folding or storage procedure is given here."
+claim_ids = ["clm-cope-identity", "clm-cope-appearance", "clm-cope-liturgical-use", "clm-cope-ceremonial-presence", "clm-cope-handling-boundary"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the cope’s appointed ceremonial uses and the celebrant’s absence of a maniple while wearing it."
+claim_ids = ["clm-cope-identity", "clm-cope-appearance", "clm-cope-liturgical-use", "clm-cope-ceremonial-presence", "clm-cope-handling-boundary"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "This front-fastened cape appears in processions and other specified rites, including Asperges and Benediction."
+claim_ids = ["clm-cope-identity", "clm-cope-appearance", "clm-cope-liturgical-use", "clm-cope-ceremonial-presence", "clm-cope-handling-boundary"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "The 1962 rubrics name the assistant priest at pontifical Mass among the cope’s uses; the drawing does not show a privileged clasp."
+claim_ids = ["clm-cope-identity", "clm-cope-appearance", "clm-cope-liturgical-use", "clm-cope-ceremonial-presence", "clm-cope-handling-boundary"]
+
+[[artwork]]
+id = "art-cope-open"
+view = "open"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-cope-open.png"
+review_state = "identity-checked"
+depicts = ["obj-cope"]
+scale_mode = "not-to-common-scale"
+review_note = "One large semicircular cape laid open with curved hem and simple plain front fastening. No wearer, sleeves or invented ornament; exact cut and fastening design are representative."

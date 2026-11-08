@@ -11,6 +11,8 @@ statuses = ["universal-roman"]
 ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
 related_objects = ["obj-priest-stole", "obj-maniple"]
 
+confusable_with = ["obj-cope"]
+
 [presence]
 locations = ["Outermost ordinary priestly vestment for Mass."]
 contexts = ["Put on last over the stole."]

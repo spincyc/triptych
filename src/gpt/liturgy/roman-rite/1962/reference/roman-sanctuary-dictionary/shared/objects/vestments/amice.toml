@@ -10,6 +10,8 @@ statuses = ["universal-roman"]
 ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
 related_objects = ["obj-alb", "obj-cincture", "obj-maniple", "obj-priest-stole", "obj-chasuble"]
 
+confusable_with = ["obj-humeral-veil"]
+
 [presence]
 locations = ["Worn around the neck and shoulders beneath the alb; put on first before Mass."]
 contexts = ["The first layer in the ordinary priest's six-vestment sequence."]

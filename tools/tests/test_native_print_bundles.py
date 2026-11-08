@@ -249,6 +249,68 @@ class NativeSourceBundleTests(unittest.TestCase):
         result = self.prepare(recipe=recipe)
         self.assertNotIn(image.relative_to(self.root).as_posix(), [row["path"] for row in result["files"]])
 
+    def test_server_scene_arguments_select_only_used_actors_and_geometry_binds_bundle(self):
+        import _native_print_artwork as artwork
+        canonical = artwork.SERVER + "/02-missa-cantata"
+        owner = self.root / "src/gpt" / artwork.SERVER
+        leaf = owner / "02-missa-cantata"
+        leaf.mkdir(parents=True)
+        shared = owner / "shared"
+        shared.mkdir()
+        prefix = artwork.SERVER + "/shared/"
+        (leaf / "main.tex").write_text(
+            "\\input{common/preamble}\n\\input{" + prefix + "sung-mass-diagrams}\n"
+            "\\begin{document}\n\\ifMissaCantataGuide\n"
+            "\\MovementPanel{caption}{\\SelectedPositions}\n"
+            "\\else\n\\UnusedPositions\n\\fi\n\\end{document}\n", encoding="utf-8")
+        (shared / "sung-mass-diagrams.tex").write_text(
+            "\\input{" + prefix + "sanctuary-scenes}\n"
+            "\\newcommand{\\MovementPanel}[2]{\\Scene{#2}}\n"
+            "\\newcommand{\\SelectedPositions}{\\StandingActor}\n"
+            "\\newcommand{\\UnusedPositions}{\\UnusedActor}\n", encoding="utf-8")
+        scene = shared / "sanctuary-scenes.tex"
+        scene.write_text(
+            "\\newcommand{\\Scene}[1]{\\begin{tikzpicture}[x=1cm]"
+            "\\includegraphics{" + prefix + "artwork/pencil/backdrop.png}#1\\end{tikzpicture}}\n"
+            "\\newcommand{\\StandingActor}[1][1cm]{\\includegraphics[width=#1]{" + prefix + "artwork/pencil/standing.png}}\n"
+            "\\newcommand{\\UnusedActor}{\\includegraphics{" + prefix + "artwork/pencil/unused.png}}\n"
+            "% \\newcommand{\\StandingActor}{\\includegraphics{" + prefix + "artwork/pencil/rejected.png}}\n",
+            encoding="utf-8")
+        images = shared / "artwork/pencil"
+        images.mkdir(parents=True)
+        for name in ("backdrop", "standing", "unused"):
+            (images / (name + ".png")).write_bytes(b"\x89PNG\xff" + name.encode("ascii"))
+        for path in (artwork.HELPER, "tools/web-edition", "scripts/document_schema_checks/liturgy.py"):
+            target = self.root / path
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes((ROOT / path).read_bytes())
+        (leaf / "publication.toml").write_text(
+            schema.dumps_manifest(schema.adapter_manifest(self.root, leaf)), encoding="utf-8")
+        identity = "publication:gpt/" + canonical
+        documents = {identity: {"id": identity, "document": identity, "edition": "main", "title": "Fixture Mass"}}
+        recipe = dict(self.recipe, id=identity, canonical=canonical, document=canonical,
+                      entrypoint="src/gpt/" + canonical + "/main.tex", dependencies=["Makefile"])
+
+        def prepare():
+            with patch.object(printing, "check", side_effect=lambda recipe, **_: recipe):
+                return bundles.prepare_bundle(identity, root=self.root, documents=documents,
+                                              recipe=recipe, revision=self.revision)
+
+        first = prepare()
+        files = {row["path"]: bundles.file_bytes(row) for row in first["files"]}
+        expected = {"src/gpt/" + prefix + "artwork/pencil/" + name + ".png" for name in ("backdrop", "standing")}
+        self.assertEqual({path for path in files if path.endswith(".png")}, expected)
+        scene_path = scene.relative_to(self.root).as_posix()
+        self.assertEqual(files[scene_path], scene.read_bytes())
+        selected, inputs = artwork.server_artwork(self.root, "gpt", canonical)
+        self.assertEqual(selected, expected)
+        self.assertIn(scene_path, inputs)
+        self.assertIn(scene_path, {row["path"] for row in first["source_inputs"]})
+        scene.write_text(scene.read_text(encoding="utf-8").replace("x=1cm", "x=2cm"), encoding="utf-8")
+        changed = prepare()
+        self.assertNotEqual(first["content_sha256"], changed["content_sha256"])
+        self.assertNotEqual(first["render_sha256"], changed["render_sha256"])
+
     def test_unknown_computed_image_selection_requires_an_owner(self):
         image = self.leaf / "selected.png"
         image.write_bytes(b"\x89PNG\xffimage")

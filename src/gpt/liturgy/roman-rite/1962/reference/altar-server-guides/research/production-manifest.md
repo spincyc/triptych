@@ -1,20 +1,90 @@
 # Production manifest: 1962 altar-server guides
 
-Latest source revision: 2026-11-05. The seven current source editions retain
+Latest source revision: 2026-11-07. The seven current source editions retain
 their shared owners and source-first, on-demand native printing. Generated
 PDFs are review artifacts, not tracked or installed publication inputs.
 
-This revision corrects child-facing gestures, the lay-server reverence model,
-sequential ablutions and the Solemn Gospel procession. New illustrations and
-their TeX labels are checked against the declared rubric/manual distinction.
-Exact generation provenance and the bounded independent scene review are in
-[`artwork-revision-2026-11-05.md`](artwork-revision-2026-11-05.md); source loci
+This revision replaces varying sanctuary position images with one reusable
+architectural backdrop and figure system, adds distinct Low Mass movement
+states and sixteen sung movement panels, and retains separate action details.
+The new asset identities, composition rules and review bounds are in
+[`scene-revision-2026-11-07.md`](scene-revision-2026-11-07.md). Source loci
 and conflicting manual allocations remain in `source-audit.md` and
 `ceremonial-inventory.md`.
 
 All dated production records below describe their named historical snapshots.
 Their references to "current" or "installed" PDFs apply only within those
 records and do not establish the identity or approval of the present edition.
+
+## Shared sanctuary revision — 2026-11-07
+
+The four teaching guides share one fixed altar, three numbered levels and
+credence. Position views distinguish stationary actors from route arrows and
+from hand-action close views. Every sung atlas panel gives cue, actor/object,
+route, finish and waiting state; the Low Mass route adds explicit return
+states and a local give-way point for the book/veil crossing.
+
+The native print page and bundle suite passes all 32 tests, including active
+macro selection through panel arguments, exclusion of unused actors and
+geometry-change invalidation. Actual preparation of all seven native bundles
+passes the owning metadata and Make-graph checks. The four guides select
+11, 11, 12 and 11 PNGs respectively; the three card decks select none.
+Source-assembly evidence is disposable under `.scratch/native-assets/`.
+
+All four guide proofs received every-page full-size screen review, 140 pages
+in total. The Low Mass pair has matching 33-page extents and matching page
+titles; both sets of 33 full-page rasters were inspected. A page-by-page
+word-multiset comparison of the main lanes on pages 2–33 agrees after the
+trainer rail is excluded. Three full-width continuation headings on pages
+7, 8 and 19 require explicit accounting because the rail-coordinate filter
+excludes their leftmost words; those complete headings were verified visually.
+The trainer rail remains on the left and no main-lane text was lost or added.
+
+All 39 Missa Cantata pages were inspected individually. The independent
+Solemn review covered all 35 final pages through direct inspection or exact
+raster identity with the preceding individually reviewed candidate. Its final
+Gospel-group correction keeps the caption with the illustration on page 18;
+changed pages 11 and 17–35 were inspected again, while pages 1–10 and 12–16
+were identical to the already inspected rasters. The review corrected
+orphaned action material, label occlusions, an ambiguous stationary pair,
+the book/veil route crossing and the arrival-state chalice timing. The final
+views preserve the common architecture, explicit waiting states, legible
+role labels and separate hand-action details.
+
+| Leaf | Pages | Bytes | Final reviewed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| `01-low-mass` | 33 | 3962961 | `b691396813d55189c991b41da9915044f1f5cc2f8f2ab9c916a2e47705c7bb41` |
+| `01-low-mass-trainer-manual` | 33 | 3980310 | `47f96fbc621e5bf5a4b79c7c69a92982cd21d93585d48d2017d3ac91c773614d` |
+| `02-missa-cantata` | 39 | 3528740 | `6f49e953c9308a25500b9232f2c42e0b6a9bfa354fb82824ccb09d18911cf451` |
+| `03-solemn-mass` | 35 | 4694065 | `325c63d0b437afecb30cefccb9088a335d1d1bb786eed6dfe7ebaeda7bba7e67` |
+
+The final source-frozen rebuilds passed their owning build gates. In Low
+Mass, the trainer manual and Missa Cantata, respectively 32/33, 32/33 and
+38/39 full-page PNGs are byte-identical to the accepted proofs. Only each
+terminal UTC revision-stamp page changed; all three were inspected again at
+full size. Extracted text agrees after substituting only that stamp. The
+final Solemn PDF and all 35 rasters are byte-identical to the accepted
+joined-caption proof. These candidates explicitly carry an uncommitted-source
+stamp; their hashes identify the reviewed bytes, not a later committed build.
+
+All font rows report embedding, subsetting and Unicode mappings; text
+extracts from the proofs. No final overfull or underfull box remains. The
+Low Mass, trainer and Missa Cantata builds retain only the disabled-shell-escape
+epstopdf warning; their source uses no EPS conversion. The final content/schema
+gates pass for all seven guide leaves as part of the thirteen-edition
+guide/dictionary check.
+
+Exact PDF and source-input receipts are disposable under
+`.scratch/mass-guides/refreshed-{low,trainer,cantata,solemn}/`.
+`.scratch/mass-guides/final-raster-transfer.json` records the byte comparisons
+and raster locations; `compare-main-lanes.py` records the Low Mass comparison
+method. The independent review is consolidated in
+`workflows/reviews/sanctuary-visual-expansion-2026-11-07/REVIEW.md`.
+This establishes electronic page usability and source-output identity. It
+does not claim physical printing, a fresh independent liturgical source-locus
+verification, or ecclesiastical approval. The three card companions have
+source-bundle checks in this revision; no new card-page or physical duplex
+review is claimed. The dated 5 November tables below remain historical.
 
 <!-- current-print-review-2026-11-05 -->
 

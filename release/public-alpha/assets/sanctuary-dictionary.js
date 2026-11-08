@@ -173,6 +173,12 @@
 
     search?.addEventListener("input", filter);
     group?.addEventListener("change", filter);
+    document.querySelector("[data-dictionary-reset]")?.addEventListener("click", () => {
+      if (search) search.value = "";
+      if (group) group.selectedIndex = 0;
+      filter();
+      search?.focus({ preventScroll: true });
+    });
     for (const button of sortButtons) {
       button.disabled = false;
       button.addEventListener("click", () => sort(button.dataset.dictionarySort));

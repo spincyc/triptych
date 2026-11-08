@@ -2,7 +2,7 @@
 
 Status: **bounded source editions verified; broader source-family audit open**
 Initial audit: 2026-07-27
-Current reconciliation: 2026-11-05
+Current reconciliation: 2026-11-07
 
 The table distinguishes governing editions from supporting artifacts. Several
 supporting artifacts have now been acquired and inspected at bounded loci, as
@@ -32,7 +32,14 @@ use.
 | `ED-LEX` | Latin liturgical dictionaries and indices tied to governing books | Latin headwords and aliases | corpus unresolved | Verify form, gender where displayed, variant terminology, and period |
 | `ED-SYMB` | Competent, dated symbolic commentaries | Optional brief symbolism | corpus unresolved | Label traditional associations and omit unsupported universalizing claims |
 
-## Current bounded edition evidence, 2026-11-05
+## Recognition expansion, 2026-11-07
+
+The same registered 1962 Missal and 1943 ceremonial artifacts support five
+additional records. Their exact checked loci, identities, hashes and limits are
+in [`slices/recognition-expansion-2026-11-07.md`](slices/recognition-expansion-2026-11-07.md).
+This adds no new source edition and closes no broader source-family requirement.
+
+## Bounded edition evidence, 2026-11-05
 
 The exact Missal, 1943 ceremonial, and 1918 Vatican Code page identities,
 checksums, inspected pages, claims, and contrary evidence are recorded in

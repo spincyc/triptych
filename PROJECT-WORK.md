@@ -5,7 +5,62 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-06.
+Last reconciled: 2026-11-07.
+
+## Sanctuary dictionary and server-guide visual expansion — 7 November 2026
+
+<!-- promised-deliverable: sanctuary-visual-expansion-2026-11 -->
+
+**In progress on the assigned workspace branch.** Expand the pictorial
+dictionary's useful object coverage, identification, catalogue relationships
+and table content. Expand the Low Mass, Missa Cantata and Solemn Mass teaching
+diagrams and make movement descriptions, role positions and sanctuary
+architecture consistent. Canonical object and ceremonial records control
+facts; one reusable architectural scene controls the depicted setting.
+New drawings remain project-created illustrations, with generated provenance
+and source-bounded briefs, rather than evidence for ritual facts.
+
+The dictionary expands from 82 to 87 canonical object records with altar cards,
+altar frontal, biretta, cope and humeral veil. Seven new illustrations include
+placed and worn context views for the two otherwise ambiguous textiles. The
+website selection has 69 primary entries, 71 identified objects and 77 drawings.
+It exposes stable catalogue IDs, aliases, diagnostic appearance, location,
+handling, and related/confusable objects; those fields also support search.
+All six native dictionary selections consume the same source records.
+
+Seven new reusable guide assets provide one sanctuary, standing and kneeling
+servers, a priest, facing variants and a candle. TeX places those figures and
+labels on fixed architectural coordinates. Sixteen new sung-form panels teach
+cue, actor/object, route, finish and waiting states; the Low Mass sequence gains
+larger position views and distinct stages where actions require them. Retained
+close views teach hand actions without introducing another sanctuary setting.
+
+Provenance and content gates pass for all thirteen affected consumers. Focused
+checks pass: 29 dictionary tests, 27 reader tests, 32 native-print tests and
+four Low Mass model tests. The browser review passes 58 checks, including all
+77 drawings, keyboard navigation, narrow screens, enlarged text, forced colors
+and no-JavaScript operation, with no HTTP, console or runtime errors.
+
+Independent visual review found and prompted corrections to obscured labels,
+crossing routes, page breaks and ambiguous isolated textile drawings. The four
+guide proofs have 33, 33, 39 and 35 pages. Every page was visually inspected;
+rebuilds transfer acceptance only for identical page rasters, with changed pages
+inspected again. The Low Mass booklet and trainer manual retain page-title and
+main-text parity. All six dictionary editions build, totaling 105 pages, and all their pages
+have visual acceptance. Release reconciliation is in progress. Exact proof
+identities and attributed inspection are recorded in the research manifests and
+[review record](workflows/reviews/sanctuary-visual-expansion-2026-11-07/REVIEW.md).
+
+A broader 57-test artwork/schema run has 55 passes and two failures in the
+unrelated proper-study chronology mutation tests. Both failures reproduce in an
+isolated copy of baseline `589da93da7`; their tests, validator and proper sources
+are unchanged. The unchanged `tmt` registry also reports that `document-library`
+uses `browser-products` without declaring that dependency. Neither result is
+reported as a successful check.
+
+Existing print and deployment receipts describe their historical snapshots
+only. This task does not claim a new live deployment or the closure of every
+historical dictionary omission.
 
 ## Sanctuary dictionary table — 6 November 2026
 

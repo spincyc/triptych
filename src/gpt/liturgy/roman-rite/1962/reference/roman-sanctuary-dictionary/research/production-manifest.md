@@ -1,43 +1,37 @@
 # Production manifest
 
-Current source checkpoint: **2026-11-05, clothing and source-apparatus continuation**.
+Current source checkpoint: **2026-11-07, recognition and catalogue expansion**.
 
-The canonical inventory contains 82 records. Cassock and surplice have separate
-records and three original graphite figures, including their worn relationship.
-The comprehensive edition now includes thirteen existing pontifical objects
-previously excluded from its selection. The exact audience counts and remaining
-holds are owned by [`plate-manifest.md`](plate-manifest.md); every row of
+The canonical inventory contains 87 records. Five source-grounded additions
+identify altar cards, the altar frontal, the biretta, the cope, and the humeral
+veil. Seven original graphite drawings include isolated forms and two textile
+placement studies. Fourteen existing records receive reciprocal relationship
+links. The browser catalogue exposes canonical names and aliases, stable object
+IDs, location and handling, ceremony categories, and related/confusable objects.
+The exact audience counts and remaining holds are owned by
+[`plate-manifest.md`](plate-manifest.md); every row of
 [`completeness-matrix.md`](completeness-matrix.md) remains open.
 
-All six editions now print numbered object notes with exact source loci and a
-selected bibliography. This exposed and prompted correction of the vestment,
-cruet, conopaeum and ombrellino bindings; the checked witnesses and their limits
-are recorded in [`source-audit.md`](source-audit.md). Every plate identifies
-independently fitted figures as not to common scale. Canonical care warnings
-remain beside the figures, and the server edition includes its assigned
-handling boundaries. Larger captions, guarded removal of seven exact repeated
-sentences, and revised spacing improve readability. A single keyed cutaway
-explains the pontifical vestment layers without duplicating the shared figure.
+All six editions consume the same canonical records and artwork selection.
+Cards join book plates, the frontal joins altar appointments, and the three
+wearable objects share comparison space. The frontal and humeral-veil insets
+teach placement only; their adjacent captions exclude a complete prepared
+altar or minister-specific vesture claim. Numbered object notes and the
+bibliography preserve exact source loci. Source-note spacing and the MC's
+four-object furnishing layout are adjusted to keep terminal matter and object
+captions together without reducing type size.
 
-Native printing resolves generated body, omission and source-note files inside
-the selected build directory. Source metadata participates in the revision and
-bundle dependency closures. The browser gallery continues to use the native
-editions' positive artwork selection and preserves qualifications, handling
-warnings and source loci. No held object becomes admitted merely by appearing
-in historical artwork or a review receipt.
-
-The current findings, final screen-proof identities and inspection coverage
-are recorded in [`cold-review-2026-11-05.md`](cold-review-2026-11-05.md).
-The new figures' source, rights and consumer checks are in
-[`slices/server-choir-clothing-2026-11-05.md`](slices/server-choir-clothing-2026-11-05.md).
-The earlier altar and sacred-vessel figure checkpoint remains in
+The exact source witnesses, claim limits, asset identities and final proof
+review are recorded in
+[`slices/recognition-expansion-2026-11-07.md`](slices/recognition-expansion-2026-11-07.md).
+The earlier clothing, altar and sacred-vessel checkpoints remain historical in
+[`cold-review-2026-11-05.md`](cold-review-2026-11-05.md) and
 [`artwork-revision-2026-11-05.md`](artwork-revision-2026-11-05.md).
-PDFs are disposable on-demand outputs, not installed or tracked publication
-inputs. The dated entries below are historical: their references to a
-"current" or "installed" PDF do not identify the present source edition or
-transfer approval to changed inputs. Screen inspection is not a physical-print
-trial or external ecclesiastical approval. Publication and deployment state
-are recorded in the current `PROJECT-WORK.md` continuation entry.
+No held object becomes admitted merely by appearing in historical artwork or
+a review receipt. PDFs are disposable on-demand outputs, not installed or
+tracked publication inputs. Screen review is not a physical-print trial or
+external ecclesiastical approval. Publication and deployment state are recorded
+in the current `PROJECT-WORK.md` continuation entry.
 
 ## Historical production records
 

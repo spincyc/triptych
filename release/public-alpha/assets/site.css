@@ -337,7 +337,7 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 }
 .dictionary-toolbar label { display: grid; gap: 0.25rem; min-width: 0; }
 .dictionary-toolbar label:has(input) { flex: 1 1 14rem; }
-.dictionary-toolbar :is(input, select) {
+.dictionary-toolbar :is(input, select, button) {
   width: 100%;
   max-width: 100%;
   min-height: 2.75rem;
@@ -348,11 +348,12 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
   color: var(--ink);
   font: inherit;
 }
+.dictionary-toolbar button { width: auto; cursor: pointer; }
 .dictionary-toolbar output { padding-block: 0.6rem; font-variant-numeric: tabular-nums; }
 .dictionary-scroll-hint { margin: 0.4rem 0; color: var(--muted); font-size: 0.88rem; }
 .dictionary-table-region { max-width: 100%; overflow-x: auto; margin-block: 0.8rem 1.5rem; }
 .dictionary-table-region:focus-visible,
-.dictionary-toolbar :is(input, select):focus-visible,
+.dictionary-toolbar :is(input, select, button):focus-visible,
 .sanctuary-table :is(a, button, summary):focus-visible {
   outline: 3px solid #245a99;
   outline-offset: -3px;
@@ -408,6 +409,7 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 .sanctuary-table .dictionary-row > th > br { display: none; }
 .sanctuary-table .dictionary-row > :nth-child(3) { color: var(--muted); font-size: 0.88rem; }
 .sanctuary-table .dictionary-row p { margin: 0 0 0.35rem; }
+.sanctuary-table .dictionary-server { font-size: 0.85rem; }
 .dictionary-thumbnails { display: flex; flex-wrap: wrap; gap: 0.35rem; }
 .dictionary-image-toggle {
   display: grid;
@@ -455,6 +457,16 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
 .dictionary-notes dl { margin: 0; }
 .dictionary-notes dt { margin-top: 0.8rem; font-weight: 650; }
 .dictionary-notes dd { margin: 0.25rem 0 0; }
+.dictionary-notes .dictionary-facts {
+  display: grid;
+  grid-template-columns: minmax(8rem, 1fr) minmax(0, 3fr);
+  gap: 0.5rem 1rem;
+  margin-block: 1rem;
+  padding-block: 1rem;
+  border-block: 1px solid var(--line);
+}
+.dictionary-notes .dictionary-facts :is(dt, dd) { margin: 0; }
+.dictionary-facts a { overflow-wrap: anywhere; }
 .dictionary-notes p { margin: 0.6rem 0; }
 .dictionary-notes summary,
 .dictionary-views summary { min-height: 2.75rem; padding-block: 0.6rem; cursor: pointer; }
@@ -489,6 +501,8 @@ html:has(.sanctuary-table) { scroll-behavior: auto; }
   .dictionary-image-toggle { width: 64px; height: 72px; }
   .dictionary-details > summary { padding-inline: 0.6rem; }
   .dictionary-detail-content { padding-inline: 0.6rem; }
+  .dictionary-notes .dictionary-facts { grid-template-columns: 1fr; gap: 0.2rem; }
+  .dictionary-notes .dictionary-facts dd + dt { margin-top: 0.6rem; }
 }
 @media (forced-colors: active) {
   .sanctuary-table .dictionary-row.is-expanded { outline: 1px solid CanvasText; outline-offset: -1px; }

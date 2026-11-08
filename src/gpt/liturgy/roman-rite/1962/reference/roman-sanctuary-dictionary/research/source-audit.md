@@ -1,7 +1,18 @@
 # Source audit
 
 Status: **bounded object-family audits; complete corpus remains open**
-Latest bounded source check: 2026-11-05
+Latest bounded source check: 2026-11-07
+
+## Five recognition entries — 2026-11-07
+
+Altar cards, altar frontal, biretta, cope and humeral veil now have independent
+records and original isolated figures. The exact registered 1962 Missal and
+Fortescue–O’Connell seventh revised edition (1943) supply distinct ritual and
+recognition controls. Their page images were directly inspected, including
+contrary 1943 color and obsolete vestment directions that are not imported.
+The source loci, hashed witness identities, claim limits and figure review
+are recorded in [`slices/recognition-expansion-2026-11-07.md`](slices/recognition-expansion-2026-11-07.md).
+No source pages or received prayer texts are redistributed by this expansion.
 
 ## Legacy source-binding corrections — 2026-11-05
 

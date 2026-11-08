@@ -36,14 +36,23 @@ class LowMassModelTests(unittest.TestCase):
         self.assertIn("not an invented universal", self.ceremony)
 
     def test_corrected_low_mass_plates_replace_superseded_assets(self) -> None:
-        for asset in (27, 28, 29, 31):
-            self.assertIn(f"ASG-ART-0{asset}", self.diagrams)
+        shared_scene = (OWNER / "shared/sanctuary-scenes.tex").read_text()
+        self.assertIn("shared/sanctuary-scenes}", self.diagrams)
+        self.assertIn("ASG-ART-032-sanctuary-master.png", shared_scene)
+        self.assertIn(r"\ASGBeginScene{\LMPositionWidth}", self.diagrams)
+        self.assertIn("ASG-ART-029-lm-first-only-ablutions", self.diagrams)
+        for moment in ("GospelReturn", "ElevationReturn", "BookReturnComplete"):
+            self.assertIn(r"\newcommand{\LMScene" + moment + "}", self.diagrams)
+            self.assertIn(r"\LMScene" + moment, self.ceremony)
         for asset in (
             "ASG-ART-012-lm-gospel-stations",
             "ASG-ART-013-lm-offertory-cruets",
             "ASG-ART-017-lm-mc-first-ablution",
             "ASG-ART-018-lm-mc-ablution",
             "ASG-ART-019-lm-book-and-veil-return",
+            "ASG-ART-027-lm-gospel-opening",
+            "ASG-ART-028-lm-offertory-formation",
+            "ASG-ART-031-lm-veil-missal-exchange",
         ):
             self.assertNotIn(asset, self.diagrams)
 

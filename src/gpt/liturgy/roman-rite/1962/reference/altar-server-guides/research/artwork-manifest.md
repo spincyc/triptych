@@ -1,6 +1,6 @@
 # Artwork manifest: 1962 altar-server guides
 
-Original audit: 2026-07-27 (America/Chicago). Current replacement audit: 2026-11-05.
+Original audit: 2026-07-27 (America/Chicago). Current scene revision: 2026-11-07.
 
 The illustrations are project-created editorial teaching aids showing a
 generic ad-orientem Roman altar frontally from the nave. They do not establish
@@ -14,13 +14,41 @@ Alpha admission gates. Only a concrete source, rights, safety,
 reproducibility, mechanical, or visual defect remains operative; nothing in
 this manifest implies external approval.
 
-## Current replacement set — 2026-11-05
+## Current shared sanctuary and figure set — 2026-11-07
 
-The following nineteen files supersede the earlier image states for these logical
-IDs. Earlier image files listed here have no current consumers. The corresponding
-diagram references use the selected files. The older sections below are dated historical
-records: their “current” wording, consumer lists and review status describe that
-earlier snapshot, not this replacement set.
+The four teaching guides now compose their position views from one architectural
+backdrop, reusable standing and kneeling figures, and form-specific candle
+counts. `shared/sanctuary-scenes.tex` owns the common coordinates, side names,
+level markers, role labels and route grammar. Low Mass uses two altar candles;
+the two sung models use six. The architecture does not change between states.
+
+Seven new files, `ASG-ART-032` through `ASG-ART-038`, provide these reusable
+layers. The asset catalogue, received and normalized hashes, technical
+transformations, source controls, selected consumers and review limits are in
+[Scene revision, 7 November 2026](scene-revision-2026-11-07.md). Those records
+distinguish the neutral position figures from close views of actual hand
+actions; the former do not depict every gesture performed at a station.
+
+| Consumer | Retained action/detail artwork | Shared layers |
+| --- | --- | --- |
+| Low Mass child and trainer | `006` Lavabo; `015` cropped elevation hands; `026` Communion plate; `029` cropped ablution hands | `032`–`038` |
+| Missa Cantata | `017` first ablution; `018` finger ablutions; `022` entrance handoffs; `024` torch/bell group; `026` Communion plate | `032`–`038` |
+| Solemn Mass | `010` Gospel group; `023` entrance handoffs; `025` Gospel departure; `026` Communion plate; `030` ablutions | `032`, `034`–`038` |
+| Three card companions | None | None |
+
+Numeric IDs in this table have the `ASG-ART-` prefix. The retained action
+studies do not supply the architectural backdrop for the new position views.
+The older complete Low Mass altar scenes and the `009` Missa Cantata Gospel
+scene have no active position-view consumers. Earlier assets and dated
+receipts remain historical evidence; retaining their files does not select
+them for native printing or carry forward approval of an obsolete rendering.
+
+## Historical replacement set — 2026-11-05
+
+At this checkpoint the following nineteen files superseded the earlier image
+states for these logical IDs. The consumer column describes the 5 November
+snapshot. The 7 November selection above controls present use. The older
+sections below likewise describe their named historical snapshots.
 
 Exact received and normalized identities, saved generation/correction prompts,
 reference identities, source controls and review limits are preserved in

@@ -1,0 +1,131 @@
+schema_version = 1
+id = "obj-humeral-veil"
+workflow_state = "art-reviewed"
+preferred_english_name = "Humeral veil"
+latin_headword = "velum humerale"
+alternate_english_names = ["shoulder veil"]
+alternate_latin_names = []
+categories = ["deacon-and-subdeacon", "related-ceremonies"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["solemn-mass"]
+confusable_with = ["obj-amice", "obj-priest-stole", "obj-deacon-stole", "obj-vimpa"]
+related_objects = ["obj-paten", "obj-chalice", "obj-cope"]
+
+[presence]
+locations = ["Across the shoulders, with its ends extending over the hands for the appointed carrying or holding action."]
+contexts = ["This record verifies the subdeacon’s use in Solemn Mass; related-ceremony uses require their own precise rite controls."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["subdeacon", "deacon"]
+server_relation = "recognizes-only"
+warnings = ["Shoulder-and-hand study only; the wearer’s plain clothing is illustrative."]
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-humeral-veil-identity"
+kind = "identity"
+text = "The humeral veil is a broad oblong shoulder textile whose ends cover the hands for the appointed use."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-humeral-veil-manual"]
+
+[[claims]]
+id = "clm-humeral-veil-appearance"
+kind = "appearance"
+text = "The ceremonial describes a broad oblong of silk, worn over the shoulders. Width and hand-covering purpose distinguish it from a narrow stole; the isolated study prescribes no dimensions, ornament, pockets or fastener."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-humeral-veil-manual"]
+
+[[claims]]
+id = "clm-humeral-veil-placement"
+kind = "placement"
+text = "In Solemn Mass the veil is suspended from the subdeacon’s neck and covers the left hand as he brings the chalice from the credence."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-humeral-veil-missal"]
+
+[[claims]]
+id = "clm-humeral-veil-liturgical-use"
+kind = "liturgical-use"
+text = "After the Offertory preparation, the deacon gives the paten into the subdeacon’s right hand and covers it with the end of the shoulder veil; the subdeacon holds it behind the celebrant."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-humeral-veil-missal"]
+
+[[claims]]
+id = "clm-humeral-veil-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "The 1962 Ritus servandus describes this use at Solemn Mass and expressly excludes the subdeacon’s holding of the paten in Masses for the dead."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-humeral-veil-missal"]
+
+[[claims]]
+id = "clm-humeral-veil-handling-boundary"
+kind = "handling-boundary"
+text = "The described paten handoff belongs to the deacon and subdeacon. Recognition of the veil gives a lay server no assignment to carry the chalice or hold the paten in this role."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-humeral-veil-missal"]
+
+[[sources]]
+id = "src-humeral-veil-manual"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 11 / PDF p. 32."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[sources]]
+id = "src-humeral-veil-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus VII.9; printed LIX / PDF 61."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[audience_note]]
+audience = "altar-server"
+text = "Recognize the broad shoulder veil and the subdeacon’s role; this entry assigns no sacred-vessel handling to a lay server."
+claim_ids = ["clm-humeral-veil-identity", "clm-humeral-veil-appearance", "clm-humeral-veil-placement", "clm-humeral-veil-liturgical-use", "clm-humeral-veil-ceremonial-presence", "clm-humeral-veil-handling-boundary"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Keep the humeral veil distinct from an amice or stole; the present record controls its Solemn Mass use only."
+claim_ids = ["clm-humeral-veil-identity", "clm-humeral-veil-appearance", "clm-humeral-veil-placement", "clm-humeral-veil-liturgical-use", "clm-humeral-veil-ceremonial-presence", "clm-humeral-veil-handling-boundary"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the chalice approach and deacon-to-subdeacon paten handoff from Ritus servandus VII.9; keep the Requiem exception visible."
+claim_ids = ["clm-humeral-veil-identity", "clm-humeral-veil-appearance", "clm-humeral-veil-placement", "clm-humeral-veil-liturgical-use", "clm-humeral-veil-ceremonial-presence", "clm-humeral-veil-handling-boundary"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "This broad shoulder veil covers the hands during the appointed use; it is distinct from the narrow stole."
+claim_ids = ["clm-humeral-veil-identity", "clm-humeral-veil-appearance", "clm-humeral-veil-placement", "clm-humeral-veil-liturgical-use", "clm-humeral-veil-ceremonial-presence", "clm-humeral-veil-handling-boundary"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "Use this ordinary Solemn Mass relationship without substituting the humeral veil for the separately documented vimpa."
+claim_ids = ["clm-humeral-veil-identity", "clm-humeral-veil-appearance", "clm-humeral-veil-placement", "clm-humeral-veil-liturgical-use", "clm-humeral-veil-ceremonial-presence", "clm-humeral-veil-handling-boundary"]
+
+[[artwork]]
+id = "art-humeral-veil-open"
+view = "open"
+asset = "shared/artwork/pencil/linens/RPD-FIG-humeral-veil-open.png"
+review_state = "identity-checked"
+depicts = ["obj-humeral-veil"]
+scale_mode = "not-to-common-scale"
+review_note = "One broad oblong silk shoulder veil laid open, with full rectangle visible and light folds. No hands, vessel, person, pockets, fastener or ornament; proportions are representative."
+
+[[artwork]]
+id = "art-humeral-veil-context"
+view = "context-inset"
+asset = "shared/artwork/pencil/linens/RPD-FIG-humeral-veil-context.png"
+review_state = "identity-checked"
+depicts = ["obj-humeral-veil"]
+scale_mode = "not-to-common-scale"
+review_note = "A broad veil lies over an anonymous wearer’s shoulders, with its ends covering the hands. The plain underlying garment is representative; this is a shoulder-and-hand study, not a minister’s complete ceremonial vesture or an action with a sacred vessel."

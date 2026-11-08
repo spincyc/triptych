@@ -50,6 +50,10 @@ both. Carry nothing on this entrance; the Missal is already at the altar.}
 \LMPageIntro{First stays on the priest's right. Second stays on his left.
 The priest needs the centre.}
 \LMModelKeyLine
+\LMDiagramNote{Every position view uses the same sanctuary. Face the altar:
+Gospel is picture-left, Epistle picture-right. Levels 1, 2 and 3 are the
+lowest step, second step and predella. Dashed arrows show a route;
+lettered stops are successive moments, not extra people.}
 \vspace{4pt}
 \LMSceneStart
 \vspace{2pt}
@@ -58,7 +62,11 @@ leads and Second follows. At the foot, form side by side: First is
 picture-right and Second is picture-left. Leave room for the priest.}
 \LMAction{2}{Both}{Genuflect together at the foot.}{Remain standing while the
 priest places the chalice, opens the Missal, and returns to the foot.}
-\vspace{3pt}
+\EndLMPage
+\BeginLMPage{FOOT/ALTAR}{KNEEL FOR THE OPENING PRAYERS}{%
+  \LMTrainerNote{Cue}{Both remain standing while the priest sets the chalice and Missal, then returns. Kneel only as he begins the prayers.}
+  \LMTrainerNote{Practice}{Name the floor, first step, second step and predella before walking. Keep the centre free.}}
+\LMPageIntro{The priest has returned to the foot. Watch him begin the prayers.}
 \LMSceneFootKneel
 \vspace{2pt}
 \LMDiagramNote{When the priest begins the prayers, lower together onto
@@ -301,7 +309,7 @@ and bow the head at its \emph{Gloria Patri}.}
 % ---------------------------------------------------------------------------
 % PAGE 15 — LM-012 and LM-013
 % ---------------------------------------------------------------------------
-\ContinueLMPairedScene{READINGS}{SAY THE NINE KYRIES}{%
+\BeginLMPage{READINGS}{SAY THE NINE KYRIES}{%
   \LMTrainerNote{Pattern}{Low Mass uses three groups of three. Both acolytes
     speak every server position together.}
   \LMTrainerNote{Cards}{Flash cards 13 and 14 teach the two priest-to-server
@@ -435,12 +443,13 @@ Both genuflect with him.}
   fratri tuo: et tunc veniens offeres munus tuum.}}
   {A17}
 \LMSuppressTrainerMeaningfalse
+\LMSceneGospelReturn
 \EndLMPage
 
 % ---------------------------------------------------------------------------
 % PAGE 19 — LM-018 and LM-019
 % ---------------------------------------------------------------------------
-\ContinueLMPairedScene{READINGS}{AFTER THE GOSPEL}{%
+\BeginLMPage{READINGS}{AFTER THE GOSPEL}{%
   \LMTrainerNote{Sermon}{Fix the actual seating place and return signal before
     rehearsal. Keep First and Second together.}
   \LMTrainerNote{Creed}{This core model keeps both kneeling. Teach the
@@ -516,7 +525,8 @@ the credence for the Lavabo.}
     and place it silently on the second step at the normal place.}}
 \LMPageIntro{First takes the towel. Second keeps the water and takes the bowl.}
 \LMModelKeyLine
-\vspace{5pt}
+\LMSceneLavaboPlaces
+\vspace{2pt}
 \LMSceneLavabo
 \vspace{4pt}
 \LMDiagramNote{\textbf{Second step, outside the altar edge:}
@@ -624,14 +634,22 @@ not every movement made by the priest.}
 \vspace{4pt}
 \LMDiagramNote{Second kneels picture-left; First kneels picture-right with the
 bell. Both are on the \textbf{predella}.}
+\LMElevationHandDetail
 
 \LMAction{1}{Both}{At the Host elevation.}{Lift the lower chasuble edges.
 First rings three distinct times. Release the chasuble as the Host is lowered.}
 \LMAction{2}{Both}{Repeat at the Chalice elevation.}{Lift, ring three,
 release, and remain still until the priest's final reverence is complete.}
+\EndLMPage
+\BeginLMPage{CANON}{RETURN AFTER THE ELEVATIONS}{%
+  \LMTrainerNote{Cue}{Wait until the priest has completed his final reverence.}
+  \LMTrainerNote{Bell}{First carries the bell quietly. The descent and centre meeting are rehearsed with empty hands first.}}
+\LMPageIntro{Both start kneeling on the predella. The priest remains at the altar.}
+\LMSceneElevationReturn
 \LMAction{3}{Both}{Return to the normal places.}{Rise, face inward, descend
 the short way, genuflect at the foot, and kneel on the first
 step. First carries the bell without ringing it.}
+\ASGMovementFields{The priest has finished his final reverence.}{Both; First carries the bell.}{Descend the short way and meet at the centre stop A.}{After the centre genuflection, First kneels Epistle and Second Gospel on Step 1.}{The priest stays at the altar; neither server adds a bell signal.}
 \EndLMPage
 
 % ---------------------------------------------------------------------------
@@ -762,19 +780,27 @@ positions. Fix the exact lanes at the actual altar.}
 \LMSceneBookReturn
 \vspace{4pt}
 \LMDiagramNote{Second takes the Missal and stand to the Epistle side. At the
-same time First takes the folded chalice veil to the Gospel side. Neither
-acolyte carries the chalice. Use separate lanes and do not cross behind the
-priest.}
+same time First prepares the folded veil. In this route model, First waits
+before crossing A until Second has passed with the book, then continues to
+Gospel. Neither carries the chalice or crosses behind the priest.}
 
 \LMAction{1}{Both}{Take the assigned objects.}{First takes the folded chalice
 veil at the Epistle side. Second takes the Missal and stand at the Gospel side
 with a secure two-handed grip.}
 \LMAction{2}{Both}{Change sides and place the objects.}{First places the veil
 at its rehearsed Gospel-side point. Second places the Missal and stand straight
-on the Epistle side. Keep separate lanes and leave the chalice to the priest.}
+on the Epistle side. First gives way at crossing A; keep the marked lanes
+and leave the chalice to the priest.}
+\EndLMPage
+\BeginLMPage{COMMUNION}{FINISH THE EXCHANGE}{%
+  \LMTrainerNote{Check}{The veil is at its Gospel point and the Missal stands straight on Epistle. The priest alone handles the chalice.}
+  \LMTrainerNote{Route}{Rehearse the two lanes at the actual church. Wait whenever the lane is occupied.}}
+\LMPageIntro{Both objects have reached their destinations. Now return empty-handed.}
+\LMSceneBookReturnComplete
 \LMAction{3}{Both}{Switch back to the normal places.}{After both placements,
 genuflect at the centre, pass by the rehearsed lanes, and kneel:
 First Epistle side, Second Gospel side.}
+\ASGMovementFields{Both assigned objects are placed.}{Both, now empty-handed.}{Meet at the centre; genuflect and pass by the rehearsed lanes.}{Kneel at the normal places on Step 1.}{The priest reassembles and covers the chalice; the servers leave it alone.}
 \EndLMPage
 
 % ---------------------------------------------------------------------------

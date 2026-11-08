@@ -212,3 +212,23 @@ The 23 July 2026 exact-byte exception remains a historical decision for the
 six immutable PDFs and hashes it named. Current alpha records do not imply
 official, ecclesiastical, or specialist approval. Unresolved received-text and
 font rights questions remain substantive and must stay explicit.
+
+
+### Fixed sanctuary and movement atlas, 2026-11-07
+
+The Low-Mass child and trainer books share one sanctuary source and the same
+explicit page boundaries, including separate return-state pages after the
+elevations and the veil/book exchange. Gospel and Epistle remain picture-left
+and picture-right in every nave-facing view. The shared three-level altar is a
+teaching model, with two candles for Low Mass and six for the sung model; its
+architecture does not change between actions. Lettered route stops represent
+successive moments, never additional people.
+
+Each sung guide adds eight movement panels with the same cue, actor/object,
+route, finish and waiting fields, tied to the existing chronological row IDs.
+Station capsules identify omitted people and objects; they do not depict D or
+SD in lay-server vesture. Retained close views teach hand actions and relations
+to objects without substituting a different sanctuary. The Low-Mass side-pair
+inset explains the overhead relation that a nave-facing projection cannot show.
+The labelled crossing A in LM-037 is a local give-way example: First waits while
+Second passes with the book; the trainer marks the actual lanes before use.

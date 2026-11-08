@@ -249,3 +249,22 @@ sacred ministers’ vesture from the inspected opening paragraphs of Fortescue
 chapter II, without importing that chapter’s superseded folded-chasuble
 branches. The new Low-Mass preparation page is shared by the child
 and trainer; current print-layout verification is a separate production task.
+
+
+### Shared-scene audit, 2026-11-07
+
+The new position plates and sixteen sung movement panels are presentations of
+the existing LM, MC and SO inventory rows, not additional ritual authorities.
+The same generated background and actor assets are composed by TeX; the drawing
+provides no evidence for a universal stair count, sanctuary dimensions, or
+reverence location. Low-Mass LM-016/017 and LM-028/029/037 now expose the start
+and return state separately. At LM-037 crossing A, the illustrated give-way
+sequence is explicitly LOCAL and is recorded in the inventory.
+
+The sung atlas retains the audited distinctions: MC-048/049 assigns wine to A1
+and water to A2; SO-057/058 has SD pour while A1 supplies both cruets; the Low
+Mass model LM-036 has First serve both. SO-067/070 departure leaves TH empty
+handed after his earlier safe return and assigns the boat to BB. Neutral priest
+figures indicate a station only. The elevation hand inset retains the actual
+raised Host and chasuble-edge action; no joined-hands figure is claimed to
+depict the elevation itself. Source locators remain those of the inventory.

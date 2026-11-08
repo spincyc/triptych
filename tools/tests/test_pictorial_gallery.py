@@ -345,6 +345,7 @@ class PictorialGalleryTest(unittest.TestCase):
         for earlier, later in (("obj-altar-candle", "obj-altar-candlestick"),
                                ("obj-lavabo-basin", "obj-lavabo-towel"),
                                ("obj-amice", "obj-alb"), ("obj-alb", "obj-cincture"),
+                               ("obj-tunicle", "obj-humeral-veil"),
                                ("obj-pontifical-buskin", "obj-pontifical-sandal"),
                                ("obj-cassock", "obj-surplice")):
             self.assertLess(positions[earlier], positions[later])
@@ -353,6 +354,77 @@ class PictorialGalleryTest(unittest.TestCase):
             indices = [index for index, value in enumerate(groups) if value == group]
             self.assertEqual(indices, list(range(min(indices), max(indices) + 1)))
         self.assertTrue(all(row["group"].strip() and row["group"] != row["group_id"] for row in rows))
+
+    def test_search_covers_canonical_alias_identity_and_location(self) -> None:
+        markup = DictionaryMarkup(self.render_dictionary())
+        rows = {row['attrs']['id']: row for row in markup.find('tr', 'dictionary-row')}
+        for object_id, terms in (
+            ('obj-surplice', ('Cotta', 'obj-surplice')),
+            ('obj-altar-missal', ('Missal marker', 'ribbon marker', 'signacula')),
+            ('obj-missal-stand', ('altar bookstand', 'moves only by direction')),
+        ):
+            with self.subTest(object=object_id):
+                for term in terms:
+                    self.assertIn(term, rows['gallery-' + object_id]['attrs']['data-search'])
+        for row in self.tool.pictorial_dictionary_rows(self.cards):
+            definition = row['definition']
+            text = rows['gallery-' + definition['id']]['attrs']['data-search']
+            for location in definition['locations']:
+                self.assertIn(location, text)
+
+    def test_identification_facts_and_confusable_links_remain_source_owned(self) -> None:
+        markup = DictionaryMarkup(self.render_dictionary())
+        details = {row['attrs']['id']: row for row in markup.find('tr', 'dictionary-detail-row')}
+        corporal = details['details-obj-corporal']
+        facts = next(node for node in markup.find('dl', 'dictionary-facts')
+                     if corporal in node['parents'])
+        self.assertIn('Catalogue ID obj-corporal', markup.text(facts))
+        self.assertIn('Where found', markup.text(facts))
+        self.assertIn('Server: must not handle', markup.text(facts))
+        self.assertIn('Distinguish from', markup.text(facts))
+        targets = {node['attrs'].get('href') for node in markup.find('a') if facts in node['parents']}
+        self.assertIn('#gallery-obj-purificator', targets)
+        self.assertIn('#gallery-obj-chalice-pall', targets)
+        # Facts are available as soon as the object opens, outside source apparatus.
+        self.assertEqual(len([node for node in facts['parents'] if node['tag'] == 'details']), 1)
+        for row in markup.find('tr', 'dictionary-row'):
+            self.assertIn('Server:', markup.text(row))
+        surplice = details['details-obj-surplice']
+        features = next(node for node in markup.find('dl', 'dictionary-facts')
+                        if any(parent is surplice for parent in node['parents']))
+        feature_text = markup.text(features)
+        self.assertIn('Appearance', feature_text)
+        definition = next(item for card in self.cards for item in card['definitions']
+                          if item['id'] == 'obj-surplice')
+        for feature in definition['identification']:
+            self.assertIn(' '.join(feature['text'].split()), feature_text)
+
+    def test_relationships_never_admit_missing_objects(self) -> None:
+        definition = {'id': 'obj-test', 'confusable_with': ['obj-test', 'obj-present', 'obj-held', 'obj-present']}
+        rendered = self.tool.pictorial_relationship_links(
+            definition, {'obj-present': {'name': 'Present & visible'}}, 'confusable_with')
+        self.assertEqual(rendered, '<a href="#gallery-obj-present">Present &amp; visible</a>')
+
+    def test_filter_reset_and_result_announcement_have_native_semantics(self) -> None:
+        markup = DictionaryMarkup(self.render_dictionary())
+        reset = next(node for node in markup.find('button') if 'data-dictionary-reset' in node['attrs'])
+        self.assertEqual(reset['attrs']['type'], 'button')
+        self.assertEqual(markup.text(reset), 'Clear filters')
+        count = next(node for node in markup.find('output')
+                     if node['attrs'].get('id') == 'dictionary-result-count')
+        self.assertEqual(count['attrs']['aria-live'], 'polite')
+        self.assertEqual(count['attrs']['aria-atomic'], 'true')
+
+    def test_ambiguous_textiles_keep_distinct_flat_and_context_views(self) -> None:
+        rows = {row['definition']['id']: row for row in self.tool.pictorial_dictionary_rows(self.cards)}
+        for object_id in ('obj-altar-frontal', 'obj-humeral-veil'):
+            with self.subTest(object=object_id):
+                row = rows[object_id]
+                captions = [self.tool.pictorial_view_identity(card)[2] for card in row['images']]
+                self.assertEqual(captions, [row['definition']['name'],
+                                            row['definition']['name'] + ' in context'])
+                self.assertTrue(all([item['id'] for item in card['definitions']] == [object_id]
+                                    for card in row['images']))
 
     def test_table_refuses_undefined_organization_and_conflicting_identity(self) -> None:
         unknown = deepcopy(self.cards[0])

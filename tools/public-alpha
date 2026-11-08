@@ -1300,6 +1300,15 @@ def _pictorial_object_details(record: dict, definition: str, references: dict) -
                  for source in sources.values() if source["id"] in source_ids]
     return {
         "qualifications": qualifications,
+        "identification": [{"label": claim["kind"].replace("-", " ").capitalize(), "text": claim["text"]}
+                           for claim in claims if claim["kind"] in visible_kinds
+                           and claim["text"] != definition],
+        "aliases": record.get("alternate_english_names", []) if claims else [],
+        "latin_aliases": record.get("alternate_latin_names", []) if claims else [],
+        "confusable_with": record.get("confusable_with", []) if claims else [],
+        "related_objects": record.get("related_objects", []) if claims else [],
+        "categories": record.get("categories", []) if claims else [],
+        "ceremonies": record.get("ceremonies", []) if claims else [],
         "locations": record.get("presence", {}).get("locations", []) if claims else [],
         "contexts": record.get("presence", {}).get("contexts", []) if claims else [],
         "statuses": record.get("statuses", []) if claims else [],
@@ -5410,6 +5419,7 @@ PICTORIAL_DICTIONARY_GROUPS = (
     ('Sanctuary and altar', (
         'obj-altar',
         'obj-altar-cloths',
+        'obj-altar-frontal',
         'obj-altar-cross',
         'obj-altar-candle',
         'obj-altar-candlestick',
@@ -5434,6 +5444,7 @@ PICTORIAL_DICTIONARY_GROUPS = (
     )),
     ('Books and supports', (
         'obj-altar-missal',
+        'obj-altar-cards',
         'obj-book-marker',
         'obj-missal-stand',
         'obj-missal-cushion',
@@ -5462,11 +5473,14 @@ PICTORIAL_DICTIONARY_GROUPS = (
         'obj-maniple',
         'obj-priest-stole',
         'obj-chasuble',
+        'obj-biretta',
+        'obj-cope',
     )),
     ('Deacon and subdeacon', (
         'obj-deacon-stole',
         'obj-dalmatic',
         'obj-tunicle',
+        'obj-humeral-veil',
     )),
     ('Bishop’s vestments and insignia', (
         'obj-pontifical-tunicle',
@@ -5521,6 +5535,8 @@ def pictorial_view_identity(card: dict) -> tuple[str, str, str]:
         caption = definition["name"]
         if "in-use" in card["views"]:
             caption += " in use"
+        elif "context-inset" in card["views"]:
+            caption += " in context"
         elif definition["id"] == "obj-altar-cruet" and "comparison" in card["views"]:
             caption = "Pair of altar cruets"
         return definition["id"], view_id, caption
@@ -5570,13 +5586,62 @@ def pictorial_dictionary_rows(cards: list[dict]) -> list[dict]:
                 rows[definition["id"]]["shared"].append(card)
     for row in rows.values():
         row["images"].sort(key=lambda card: (
-            len(card["definitions"]) != 1, "isolated" not in card["views"], card["destination"]))
+            len(card["definitions"]) != 1, "isolated" not in card["views"],
+            bool({"in-use", "context-inset"} & set(card["views"])), card["destination"]))
     return sorted(rows.values(), key=lambda row: (row["group_order"], row["object_order"]))
 
 
-def pictorial_definition_notes(definition: dict) -> str:
-    paragraphs = [f'<p>{html.escape(text)}</p>' for text in definition["qualifications"]]
+def pictorial_relationship_links(definition: dict, definitions: dict, field: str) -> str:
+    """Link only explicit relationships to identities present in this selection."""
+    return ' · '.join(
+        f'<a href="#gallery-{html.escape(object_id)}">{html.escape(definitions[object_id]["name"])}</a>'
+        for object_id in dict.fromkeys(definition.get(field, []))
+        if object_id in definitions and object_id != definition['id'])
+
+
+def pictorial_search_text(definition: dict, definitions: dict) -> str:
+    handling = definition['handling']
+    related_names = [definitions[object_id]['name']
+                     for field in ('confusable_with', 'related_objects')
+                     for object_id in definition.get(field, []) if object_id in definitions]
+    return ' '.join([
+        definition['id'], definition['name'], definition['latin'], definition['definition'],
+        *definition.get('aliases', []), *definition.get('latin_aliases', []),
+        *(value.replace('-', ' ') for value in definition.get('categories', [])),
+        *(value.replace('-', ' ') for value in definition.get('ceremonies', [])),
+        *definition['qualifications'], *definition['locations'], *definition['contexts'],
+        *handling.get('ordinary_handlers', []), handling.get('server_relation', '').replace('-', ' '),
+        *handling.get('warnings', []), *(item['text'] for item in definition['use']), *related_names,
+    ])
+
+
+def pictorial_definition_notes(definition: dict, definitions: dict | None = None) -> str:
+    escape = html.escape
+    definitions = definitions or {}
+    facts = [f'<dt>Catalogue ID</dt><dd><a href="#gallery-{escape(definition["id"])}">'
+             f'{escape(definition["id"])}</a></dd>']
+    if definition.get('aliases'):
+        facts.append('<dt>Also called</dt><dd>' + escape('; '.join(definition['aliases'])) + '</dd>')
+    if definition.get('latin_aliases'):
+        facts.append('<dt>Other Latin names</dt><dd lang="la">'
+                     + escape('; '.join(definition['latin_aliases'])) + '</dd>')
+    if definition['locations']:
+        facts.append('<dt>Where found</dt><dd>' + escape(' '.join(definition['locations'])) + '</dd>')
+    if definition['contexts']:
+        facts.append('<dt>Used for</dt><dd>' + escape(' '.join(definition['contexts'])) + '</dd>')
     handling = definition["handling"]
+    if handling:
+        handlers = ', '.join(handling.get('ordinary_handlers', [])).replace('-', ' ')
+        relation = handling.get('server_relation', '').replace('-', ' ')
+        facts.append(f'<dt>Ordinary handler:</dt><dd>{escape(handlers)}</dd>'
+                     f'<dt>Server:</dt><dd>{escape(relation)}</dd>')
+    for label, field in (('Distinguish from', 'confusable_with'), ('Related objects', 'related_objects')):
+        links = pictorial_relationship_links(definition, definitions, field)
+        if links:
+            facts.append(f'<dt>{label}</dt><dd>{links}</dd>')
+    for feature in definition.get('identification', []):
+        facts.append(f'<dt>{escape(feature["label"])}</dt><dd>{escape(feature["text"])}</dd>')
+    paragraphs = ['<dl class="dictionary-facts">' + ''.join(facts) + '</dl>']
     paragraphs.extend(f'<p><strong>Handling:</strong> {html.escape(warning)}</p>'
                       for warning in handling.get("warnings", [])
                       if warning not in definition["qualifications"])
@@ -5584,14 +5649,12 @@ def pictorial_definition_notes(definition: dict) -> str:
     if definition["statuses"]:
         status = ", ".join(definition["statuses"]).replace("-", " ").title()
         paragraphs.append(f'<p><strong>Status:</strong> {html.escape(status)}.</p>')
-    if definition["locations"] or definition["contexts"]:
-        location = " ".join(definition["locations"] + definition["contexts"])
-        paragraphs.append(f'<p><strong>Location:</strong> {html.escape(location)}</p>')
-    if handling:
-        handlers = ", ".join(handling["ordinary_handlers"]).replace("-", " ")
-        relation = handling["server_relation"].replace("-", " ")
-        paragraphs.append(f'<p><strong>Ordinary handler:</strong> {html.escape(handlers)}. '
-                          f'<strong>Server:</strong> {html.escape(relation)}.</p>')
+    if definition.get('categories'):
+        categories = ', '.join(definition['categories']).replace('-', ' ')
+        paragraphs.append(f'<p><strong>Categories:</strong> {escape(categories)}.</p>')
+    if definition.get('ceremonies'):
+        ceremonies = ', '.join(definition['ceremonies']).replace('-', ' ')
+        paragraphs.append(f'<p><strong>Ceremonies:</strong> {escape(ceremonies)}.</p>')
     paragraphs.extend(f'<p><strong>{html.escape(item["label"])}:</strong> '
                       f'{html.escape(item["text"])}</p>' for item in definition["use"])
     if definition["citations"]:
@@ -5605,6 +5668,7 @@ def pictorial_definition_notes(definition: dict) -> str:
 
 def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
     rows = pictorial_dictionary_rows(pictorial_gallery_data())
+    definitions = {item['id']: item for row in rows for item in [row['definition'], *row['contexts']]}
     escape = html.escape
     options = ''.join(f'<option value="{escape(row["group_id"])}">{escape(row["group"])}</option>'
                       for index, row in enumerate(rows)
@@ -5612,15 +5676,17 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
     blocks = [
         '# Sanctuary Picture Dictionary', '',
         'Objects of the Roman sanctuary at the 1962 horizon, arranged by use. '
-        'Select a drawing to enlarge it. Details include related views, qualifications, and sources.', '',
+        'Select a drawing to enlarge it. Details give alternative names, location, handling, '
+        'related objects, and sources.', '',
         '<div class="dictionary-toolbar" hidden>',
-        '<label>Find an entry<input type="search" data-dictionary-search placeholder="English or Latin name, or use" autocomplete="off"></label>',
+        '<label>Find an entry<input type="search" data-dictionary-search placeholder="Name, alias, ID, location or use" autocomplete="off"></label>',
         '<label>Grouping<select data-dictionary-group><option value="">All groupings</option>' + options + '</select></label>',
+        '<button type="button" data-dictionary-reset>Clear filters</button>',
         '</div>',
         '<p class="dictionary-scroll-hint" id="dictionary-scroll-hint">Scroll horizontally for identification and use.</p>',
         '<div class="dictionary-table-region" role="region" tabindex="0" aria-label="Sanctuary dictionary" aria-describedby="dictionary-scroll-hint">',
         '<table class="sanctuary-table" aria-label="Sanctuary picture dictionary entries">',
-        f'<caption><output id="dictionary-result-count">{len(rows)} entries</output></caption>',
+        f'<caption><output id="dictionary-result-count" aria-live="polite" aria-atomic="true">{len(rows)} entries</output></caption>',
         '<thead><tr><th scope="col">Picture</th><th scope="col"><button data-dictionary-sort="name" disabled>Object</button></th>',
         '<th scope="col" aria-sort="ascending"><button data-dictionary-sort="group" disabled>Grouping</button></th><th scope="col">Identification / use</th></tr></thead><tbody>',
     ]
@@ -5666,28 +5732,29 @@ def render_pictorial_gallery(preview: bool, authorization: dict) -> str:
         latin = definition['latin']
         latin_text = (f'<span class="gallery-latin" lang="la">{escape(latin)}</span>'
                       if latin and latin != 'Latin term not asserted' else '')
-        search = ' '.join([name, latin, row['group'], definition['definition']]
-                          + [text for context in row['contexts']
-                             for text in (context['name'], context['latin'])])
+        search = row['group'] + ' ' + ' '.join(pictorial_search_text(item, definitions)
+                                              for item in [definition, *row['contexts']])
+        relation = definition['handling'].get('server_relation', '').replace('-', ' ')
+        server = f'<p class="dictionary-server"><strong>Server:</strong> {escape(relation)}.</p>' if relation else ''
         blocks.extend([
             f'<tr class="dictionary-row" id="gallery-{object_id}" data-name="{escape(name, quote=True)}" '
             f'data-group="{row["group_id"]}" data-group-order="{row["group_order"]}" '
             f'data-object-order="{row["object_order"]}" data-search="{escape(search, quote=True)}">',
             f'<td>{picture}</td><th scope="row">{escape(name)} {latin_text}<br>'
             f'<a class="dictionary-row-toggle" href="#{detail_id}" aria-label="{escape("Details about " + name, quote=True)}">Details</a></th>',
-            f'<td>{escape(row["group"])}</td><td><p class="dictionary-definition">{escape(definition["definition"])}</p></td></tr>',
+            f'<td>{escape(row["group"])}</td><td><p class="dictionary-definition">{escape(definition["definition"])}</p>{server}</td></tr>',
             f'<tr class="dictionary-detail-row" id="{detail_id}"><td colspan="4">',
             '<details class="dictionary-details">'
             f'<summary>More about {escape(name)}</summary><div class="dictionary-detail-content">',
             '<div class="dictionary-views">' + ''.join(figures) + '</div><div class="dictionary-notes">',
-            pictorial_definition_notes(definition),
+            pictorial_definition_notes(definition, definitions),
         ])
         if shared and thumbnails:
             blocks.append('<p>Related views: ' + ' · '.join(shared) + '.</p>')
         for context in row['contexts']:
             blocks.append(f'<section class="gallery-related" id="gallery-{context["id"]}">'
                           f'<h3>{escape(context["name"])} <small>— shown in context</small></h3>'
-                          f'<p>{escape(context["definition"])}</p>' + pictorial_definition_notes(context) + '</section>')
+                          f'<p>{escape(context["definition"])}</p>' + pictorial_definition_notes(context, definitions) + '</section>')
         blocks.append('</div></div></details></td></tr>')
     blocks.extend([
         '<tr class="dictionary-empty" hidden><td colspan="4"><p class="dictionary-empty-message">No entries match. Try a shorter search or another grouping.</p></td></tr>',

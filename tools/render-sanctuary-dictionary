@@ -85,9 +85,9 @@ SECTION_PLATE_PLANS = {
         ("relationship-three-feature-v1", ("obj-vimpa", "obj-mitre-minister-veil", "obj-bugia")),
     ),
     ("ed-altar-server", "sanctuary-orientation"): (
-        ("dense-six-v1", (
+        ("dense-seven-v1", (
             "obj-altar", "obj-credence-table", "obj-lectern",
-            "obj-sacristy-cross", "obj-sanctuary-lamp", "obj-sedilia",
+            "obj-sacristy-cross", "obj-sanctuary-lamp", "obj-sedilia", "obj-altar-frontal",
         )),
         ("dense-seven-v1", (
             "obj-tabernacle", "obj-altar-candle", "obj-altar-candlestick",
@@ -103,9 +103,9 @@ SECTION_PLATE_PLANS = {
         )),
     ),
     ("ed-comprehensive", "altar-and-appointments"): (
-        ("dense-six-v1", (
+        ("dense-seven-v1", (
             "obj-altar-candle", "obj-altar-candlestick", "obj-altar-cloths",
-            "obj-missal-cushion", "obj-missal-stand", "obj-altar-cross",
+            "obj-missal-cushion", "obj-missal-stand", "obj-altar-cross", "obj-altar-frontal",
         )),
     ),
     ("ed-comprehensive", "linens-and-textiles"): (
@@ -118,8 +118,8 @@ SECTION_PLATE_PLANS = {
         )),
     ),
     ("ed-comprehensive", "books-and-printed-objects"): (
-        ("balanced-three-tall-v1", (
-            "obj-epistle-book", "obj-gospel-book", "obj-altar-missal",
+        ("balanced-four-filled-v1", (
+            "obj-epistle-book", "obj-gospel-book", "obj-altar-missal", "obj-altar-cards",
         )),
     ),
     ("ed-comprehensive", "service-objects"): (
@@ -143,6 +143,7 @@ SECTION_PLATE_PLANS = {
             "obj-chasuble", "obj-deacon-stole", "obj-dalmatic",
             "obj-tunicle",
         )),
+        ("balanced-three-v1", ("obj-cope", "obj-humeral-veil", "obj-biretta")),
     ),
     ("ed-comprehensive", "related-ceremonies"): (
         ("balanced-four-v1", (
@@ -170,9 +171,10 @@ SECTION_PLATE_PLANS = {
                 "obj-tunicle",
             ),
         ),
+        ("balanced-three-v1", ("obj-cope", "obj-humeral-veil", "obj-biretta")),
     ),
     ("ed-mc-trainer", "stations-and-furnishings"): (
-        ("balanced-three-v1", ("obj-altar", "obj-altar-cross", "obj-tabernacle")),
+        ("balanced-four-v1", ("obj-altar", "obj-altar-cross", "obj-tabernacle", "obj-altar-frontal")),
         (
             "story-spread-v1",
             (
@@ -186,7 +188,7 @@ SECTION_PLATE_PLANS = {
     ),
     ("ed-mc-trainer", "books-and-supports"): (
         (
-            "dense-six-v1",
+            "dense-seven-v1",
             (
                 "obj-altar-missal",
                 "obj-missal-stand",
@@ -194,6 +196,7 @@ SECTION_PLATE_PLANS = {
                 "obj-altar-cloths",
                 "obj-epistle-book",
                 "obj-gospel-book",
+                "obj-altar-cards",
             ),
         ),
     ),
@@ -265,9 +268,10 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "relationship-three-feature-v1",
+            "balanced-four-filled-v1",
             (
                 "obj-altar-cloths",
+                "obj-altar-frontal",
                 "obj-missal-cushion",
                 "obj-missal-stand",
             ),
@@ -287,10 +291,11 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "dense-six-v1",
+            "dense-seven-v1",
             (
                 "obj-altar-candlestick",
                 "obj-altar-cloths",
+                "obj-altar-frontal",
                 "obj-missal-cushion",
                 "obj-missal-stand",
                 "obj-acolyte-candlestick",
@@ -329,13 +334,14 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "heterodox-five-v1",
+            "dense-six-v1",
             (
                 "obj-purificator",
                 "obj-lavabo-towel",
                 "obj-epistle-book",
                 "obj-gospel-book",
                 "obj-altar-missal",
+                "obj-altar-cards",
             ),
         ),
         (
@@ -366,6 +372,7 @@ SECTION_PLATE_PLANS = {
                 "obj-tunicle",
             ),
         ),
+        ("balanced-three-v1", ("obj-cope", "obj-humeral-veil", "obj-biretta")),
     ),
     ("ed-sacristan", "special-ceremony-equipment"): (
         (
@@ -392,13 +399,14 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "heterodox-five-v1",
+            "dense-six-v1",
             (
                 "obj-purificator",
                 "obj-lavabo-towel",
                 "obj-epistle-book",
                 "obj-gospel-book",
                 "obj-altar-missal",
+                "obj-altar-cards",
             ),
         ),
         (
@@ -451,6 +459,7 @@ SECTION_PLATE_PLANS = {
                 "obj-tunicle",
             ),
         ),
+        ("balanced-three-v1", ("obj-cope", "obj-humeral-veil", "obj-biretta")),
     ),
     ("ed-pontifical", "pontifical-vesture"): (
         (
@@ -488,6 +497,7 @@ SECTION_PLATE_PLANS = {
                 "obj-tunicle",
             ),
         ),
+        ("balanced-three-v1", ("obj-cope", "obj-humeral-veil", "obj-biretta")),
     ),
     ("ed-pontifical", "insignia"): (
         (
@@ -499,7 +509,7 @@ SECTION_PLATE_PLANS = {
         ),
     ),
     ("ed-pontifical", "furnishings-and-books"): (
-        ("balanced-three-v1", ("obj-altar", "obj-altar-cross", "obj-tabernacle")),
+        ("balanced-four-filled-v1", ("obj-altar", "obj-altar-cross", "obj-tabernacle", "obj-altar-frontal")),
         (
             "balanced-two-tall-v1",
             (
@@ -519,12 +529,13 @@ SECTION_PLATE_PLANS = {
             ),
         ),
         (
-            "dense-six-v1",
+            "dense-seven-v1",
             (
                 "obj-altar-cloths",
                 "obj-missal-cushion",
                 "obj-missal-stand",
                 "obj-altar-missal",
+                "obj-altar-cards",
                 "obj-epistle-book",
                 "obj-gospel-book",
             ),

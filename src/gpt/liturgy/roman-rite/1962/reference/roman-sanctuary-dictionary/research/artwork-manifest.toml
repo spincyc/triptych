@@ -5747,3 +5747,250 @@ rights = "Project-generated artwork without supplied third-party image inputs; e
 received = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "rgba", bytes = 1863011, sha256 = "9c03560c234aea531afdb689960c07c9f97a6edd24f0db0014271926e125fbc1" }
 normalized = { path = "shared/artwork/pencil/server-clothing/RSD-cassock-surplice-worn-2026-11-05.png", width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale-alpha", bytes = 785960, sha256 = "9af60f4ff527292c0821bce4767f502956d8979b12b569af1dfc914cd6f2c689", max_placement_width_in = 3.0, max_placement_height_in = 4.5, effective_dpi = 341.3333333333 }
 reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "passed" }
+
+# Source-bounded recognition additions, 2026-11-07.
+
+[[asset_files]]
+id = "file-altar-cards-2026-11-07"
+path = "shared/artwork/pencil/books/RPD-FIG-altar-cards-isolated.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/slices/recognition-expansion-2026-11-07.md"
+boundary_treatment = "page-ground"
+technical = { width_px = 1774, height_px = 887, bit_depth = 8, color_mode = "grayscale", bytes = 364853, sha256 = "978a8e4247ced193e66946bc1cdd323dfe01e9fb0b9dbede2d9ace0cbf10f232" }
+
+[[artworks]]
+id = "art-altar-cards-isolated"
+object_ids = ["obj-altar-cards"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded isolated recognition study for the six dictionary editions."
+depicted_state = "Three separate upright prayer-card panels, a broad larger middle panel and two smaller side panels. Blank faces deliberately omit the received texts; narrow frames and supports are representative. No altar or people."
+source_controlled_features = ["three-card set", "larger middle card and two smaller side cards"]
+deliberate_omissions = ["received prayer text", "ceremonial action", "prescribed dimensions or ornament", "unverified variants"]
+brief = "Three separate upright prayer-card panels, a broad larger middle panel and two smaller side panels. Blank faces deliberately omit the received texts; narrow frames and supports are representative. No altar or people."
+exact_prompt = "Not retained in tracked files under the editorial publication boundary; the source-constrained generation brief is recorded here."
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-07"
+asset = "shared/artwork/pencil/books/RPD-FIG-altar-cards-isolated.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale; no geometry or morphology edit. No third-party image was supplied to generation."]
+baked_content_audit = ["Full-size source-bounded identity and visual checks by the generating and dictionary agents. Complete silhouettes and expected counts are visible; no clipping, embedded text, arrows, numbers, labels, watermark or unrelated objects.", "The white page-ground field is intentional; monochrome pencil marks and plain forms remain representative within the recorded source ceiling."]
+tex_overlays = ["English and Latin headwords", "canonical identity and use captions", "not-to-common-scale qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated original artwork, without third-party image input. Checked remote source books supply facts only; no source page image or received prayer text is reproduced. Project-content terms apply."
+received = { width_px = 1774, height_px = 887, bit_depth = 8, color_mode = "non-grayscale", bytes = 1240531, sha256 = "0b959ce3727843f523a6819995a08d0d09a06ba9b29ed7d36eb4983623590f78" }
+normalized = { path = "shared/artwork/pencil/books/RPD-FIG-altar-cards-isolated.png", width_px = 1774, height_px = 887, bit_depth = 8, color_mode = "grayscale", bytes = 364853, sha256 = "978a8e4247ced193e66946bc1cdd323dfe01e9fb0b9dbede2d9ace0cbf10f232", max_placement_width_in = 5.5, max_placement_height_in = 2.75, effective_dpi = 322.54545454545456 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+[[asset_files]]
+id = "file-altar-frontal-2026-11-07"
+path = "shared/artwork/pencil/linens/RPD-FIG-altar-frontal-isolated.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/slices/recognition-expansion-2026-11-07.md"
+boundary_treatment = "page-ground"
+technical = { width_px = 1983, height_px = 793, bit_depth = 8, color_mode = "grayscale", bytes = 892688, sha256 = "bae944912ab6b4c73f82cdf7c411e54cce1ee06acf69361c5d37b323811c76e2" }
+
+[[artworks]]
+id = "art-altar-frontal-isolated"
+object_ids = ["obj-altar-frontal"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded isolated recognition study for the six dictionary editions."
+depicted_state = "One broad plain hanging textile seen frontally with its complete lower edge and slight gravity folds. The front-hanging identity comes from the adjacent caption; proportions, hem and folds are representative."
+source_controlled_features = ["altar-front hanging, distinguished from top covering"]
+deliberate_omissions = ["received prayer text", "ceremonial action", "prescribed dimensions or ornament", "unverified variants"]
+brief = "One broad plain hanging textile seen frontally with its complete lower edge and slight gravity folds. The front-hanging identity comes from the adjacent caption; proportions, hem and folds are representative."
+exact_prompt = "Not retained in tracked files under the editorial publication boundary; the source-constrained generation brief is recorded here."
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-07"
+asset = "shared/artwork/pencil/linens/RPD-FIG-altar-frontal-isolated.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale; no geometry or morphology edit. No third-party image was supplied to generation."]
+baked_content_audit = ["Full-size source-bounded identity and visual checks by the generating and dictionary agents. Complete silhouettes and expected counts are visible; no clipping, embedded text, arrows, numbers, labels, watermark or unrelated objects.", "The white page-ground field is intentional; monochrome pencil marks and plain forms remain representative within the recorded source ceiling."]
+tex_overlays = ["English and Latin headwords", "canonical identity and use captions", "not-to-common-scale qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated original artwork, without third-party image input. Checked remote source books supply facts only; no source page image or received prayer text is reproduced. Project-content terms apply."
+received = { width_px = 1983, height_px = 793, bit_depth = 8, color_mode = "non-grayscale", bytes = 2995143, sha256 = "604f8075eb5dc37f069191f307e418c4f8ce34ef63fe3c810663c0e089805f85" }
+normalized = { path = "shared/artwork/pencil/linens/RPD-FIG-altar-frontal-isolated.png", width_px = 1983, height_px = 793, bit_depth = 8, color_mode = "grayscale", bytes = 892688, sha256 = "bae944912ab6b4c73f82cdf7c411e54cce1ee06acf69361c5d37b323811c76e2", max_placement_width_in = 5.5, max_placement_height_in = 2.1994452849218358, effective_dpi = 360.54545454545456 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+[[asset_files]]
+id = "file-biretta-2026-11-07"
+path = "shared/artwork/pencil/vestments/RPD-FIG-biretta-isolated.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/slices/recognition-expansion-2026-11-07.md"
+boundary_treatment = "page-ground"
+technical = { width_px = 1312, height_px = 1199, bit_depth = 8, color_mode = "grayscale", bytes = 714477, sha256 = "10a47e82f4c91a5350fd1e84b6ef7cd6a3b53b603872dcf66fe9b782a5f0d297" }
+
+[[artworks]]
+id = "art-biretta-isolated"
+object_ids = ["obj-biretta"]
+variant_ids = []
+view = "isolated"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded isolated recognition study for the six dictionary editions."
+depicted_state = "One black cloth square cap seen from above at three-quarter angle, with three raised ridges and one ridge-free side. No pompom, wearer or rank insignia."
+source_controlled_features = ["square black cloth cap", "three ridges and fourth side without ridge"]
+deliberate_omissions = ["received prayer text", "ceremonial action", "prescribed dimensions or ornament", "unverified variants"]
+brief = "One black cloth square cap seen from above at three-quarter angle, with three raised ridges and one ridge-free side. No pompom, wearer or rank insignia."
+exact_prompt = "Not retained in tracked files under the editorial publication boundary; the source-constrained generation brief is recorded here."
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-07"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-biretta-isolated.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale; no geometry or morphology edit. No third-party image was supplied to generation."]
+baked_content_audit = ["Full-size source-bounded identity and visual checks by the generating and dictionary agents. Complete silhouettes and expected counts are visible; no clipping, embedded text, arrows, numbers, labels, watermark or unrelated objects.", "The white page-ground field is intentional; monochrome pencil marks and plain forms remain representative within the recorded source ceiling."]
+tex_overlays = ["English and Latin headwords", "canonical identity and use captions", "not-to-common-scale qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated original artwork, without third-party image input. Checked remote source books supply facts only; no source page image or received prayer text is reproduced. Project-content terms apply."
+received = { width_px = 1312, height_px = 1199, bit_depth = 8, color_mode = "non-grayscale", bytes = 2406454, sha256 = "5c39190a1ed0e786de4f5e3756f325d10507fb572663bc0d1b69b1697467c482" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-biretta-isolated.png", width_px = 1312, height_px = 1199, bit_depth = 8, color_mode = "grayscale", bytes = 714477, sha256 = "10a47e82f4c91a5350fd1e84b6ef7cd6a3b53b603872dcf66fe9b782a5f0d297", max_placement_width_in = 4.373333333333333, max_placement_height_in = 3.996666666666666, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+[[asset_files]]
+id = "file-cope-2026-11-07"
+path = "shared/artwork/pencil/vestments/RPD-FIG-cope-open.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/slices/recognition-expansion-2026-11-07.md"
+boundary_treatment = "page-ground"
+technical = { width_px = 1774, height_px = 887, bit_depth = 8, color_mode = "grayscale", bytes = 742350, sha256 = "a59453c2bf335965dd35ca920d0e7ab9497839c280490fb499790edb1c968694" }
+
+[[artworks]]
+id = "art-cope-open"
+object_ids = ["obj-cope"]
+variant_ids = []
+view = "open"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded isolated recognition study for the six dictionary editions."
+depicted_state = "One large semicircular cape laid open with curved hem and simple plain front fastening. No wearer, sleeves or invented ornament; exact cut and fastening design are representative."
+source_controlled_features = ["semicircular cape body", "plain front band fastening"]
+deliberate_omissions = ["received prayer text", "ceremonial action", "prescribed dimensions or ornament", "unverified variants"]
+brief = "One large semicircular cape laid open with curved hem and simple plain front fastening. No wearer, sleeves or invented ornament; exact cut and fastening design are representative."
+exact_prompt = "Not retained in tracked files under the editorial publication boundary; the source-constrained generation brief is recorded here."
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-07"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-cope-open.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale; no geometry or morphology edit. No third-party image was supplied to generation."]
+baked_content_audit = ["Full-size source-bounded identity and visual checks by the generating and dictionary agents. Complete silhouettes and expected counts are visible; no clipping, embedded text, arrows, numbers, labels, watermark or unrelated objects.", "The white page-ground field is intentional; monochrome pencil marks and plain forms remain representative within the recorded source ceiling."]
+tex_overlays = ["English and Latin headwords", "canonical identity and use captions", "not-to-common-scale qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated original artwork, without third-party image input. Checked remote source books supply facts only; no source page image or received prayer text is reproduced. Project-content terms apply."
+received = { width_px = 1774, height_px = 887, bit_depth = 8, color_mode = "non-grayscale", bytes = 2417541, sha256 = "3beedd96730b1f00d1be824706dc43d4be240af5ddf6b81a6dfe73c31c12831b" }
+normalized = { path = "shared/artwork/pencil/vestments/RPD-FIG-cope-open.png", width_px = 1774, height_px = 887, bit_depth = 8, color_mode = "grayscale", bytes = 742350, sha256 = "a59453c2bf335965dd35ca920d0e7ab9497839c280490fb499790edb1c968694", max_placement_width_in = 5.5, max_placement_height_in = 2.75, effective_dpi = 322.54545454545456 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+[[asset_files]]
+id = "file-humeral-veil-2026-11-07"
+path = "shared/artwork/pencil/linens/RPD-FIG-humeral-veil-open.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/slices/recognition-expansion-2026-11-07.md"
+boundary_treatment = "page-ground"
+technical = { width_px = 2172, height_px = 724, bit_depth = 8, color_mode = "grayscale", bytes = 542766, sha256 = "f4f397003b21802b006669b12d201a189831f5ab004f2018c59622aff35167c0" }
+
+[[artworks]]
+id = "art-humeral-veil-open"
+object_ids = ["obj-humeral-veil"]
+variant_ids = []
+view = "open"
+workflow_state = "consumer-review-passed"
+purpose = "Source-bounded isolated recognition study for the six dictionary editions."
+depicted_state = "One broad oblong silk shoulder veil laid open, with full rectangle visible and light folds. No hands, vessel, person, pockets, fastener or ornament; proportions are representative."
+source_controlled_features = ["broad oblong silk shoulder textile", "ends available to cover the hands in use"]
+deliberate_omissions = ["received prayer text", "ceremonial action", "prescribed dimensions or ornament", "unverified variants"]
+brief = "One broad oblong silk shoulder veil laid open, with full rectangle visible and light folds. No hands, vessel, person, pockets, fastener or ornament; proportions are representative."
+exact_prompt = "Not retained in tracked files under the editorial publication boundary; the source-constrained generation brief is recorded here."
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-07"
+asset = "shared/artwork/pencil/linens/RPD-FIG-humeral-veil-open.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale; no geometry or morphology edit. No third-party image was supplied to generation."]
+baked_content_audit = ["Full-size source-bounded identity and visual checks by the generating and dictionary agents. Complete silhouettes and expected counts are visible; no clipping, embedded text, arrows, numbers, labels, watermark or unrelated objects.", "The white page-ground field is intentional; monochrome pencil marks and plain forms remain representative within the recorded source ceiling."]
+tex_overlays = ["English and Latin headwords", "canonical identity and use captions", "not-to-common-scale qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated original artwork, without third-party image input. Checked remote source books supply facts only; no source page image or received prayer text is reproduced. Project-content terms apply."
+received = { width_px = 2172, height_px = 724, bit_depth = 8, color_mode = "non-grayscale", bytes = 1778559, sha256 = "ea4c38406189b47dc208a4ae93076392abce7b3b06055e7735fbbb9a3ddc9c18" }
+normalized = { path = "shared/artwork/pencil/linens/RPD-FIG-humeral-veil-open.png", width_px = 2172, height_px = 724, bit_depth = 8, color_mode = "grayscale", bytes = 542766, sha256 = "f4f397003b21802b006669b12d201a189831f5ab004f2018c59622aff35167c0", max_placement_width_in = 5.5, max_placement_height_in = 1.8333333333333333, effective_dpi = 394.90909090909093 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+[[asset_files]]
+id = "file-altar-frontal-context-2026-11-07"
+path = "shared/artwork/pencil/linens/RPD-FIG-altar-frontal-context.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/slices/recognition-expansion-2026-11-07.md"
+boundary_treatment = "page-ground"
+technical = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 669319, sha256 = "b01b3f7c883d10d93f84c2d6377ec133b8fc0cdb377e22a077421510f3a6ce68" }
+
+[[artworks]]
+id = "art-altar-frontal-context"
+object_ids = ["obj-altar-frontal"]
+variant_ids = []
+view = "context-inset"
+workflow_state = "consumer-review-passed"
+purpose = "Disambiguate the isolated textile through its source-controlled placement relationship."
+depicted_state = "A plain frontal hangs down the front of a simple altar support, visibly separate from a top covering and an uncovered side. The arrangement is a placement study, not a complete altar prepared for Mass."
+source_controlled_features = ["hanging in front of altar", "distinction from covering on top"]
+deliberate_omissions = ["complete prepared altar or ceremonial ensemble", "ritual action sequence", "sacred vessel", "prescribed proportions, ornament or tailoring"]
+brief = "A plain frontal hangs down the front of a simple altar support, visibly separate from a top covering and an uncovered side. The arrangement is a placement study, not a complete altar prepared for Mass."
+exact_prompt = "Not retained in tracked files under the editorial publication boundary; the source-constrained generation brief is recorded here."
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-07"
+asset = "shared/artwork/pencil/linens/RPD-FIG-altar-frontal-context.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale; no geometry or morphology edit. No third-party image supplied to generation."]
+baked_content_audit = ["Full-size source-bounded identity and visual checks by the generating, dictionary and independent review agents. Placement relationship is legible; no embedded text, labels, arrows, numerals, watermark or unrelated ritual objects.", "The simple altar support and plain clothing are illustrative context, not complete prepared states or normative construction."]
+tex_overlays = ["English and Latin headwords", "placement/shoulder-and-hand study limitation", "not-to-common-scale qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated original artwork without third-party image inputs. Checked remote source books supply bounded facts only; no source page image or received prayer text is reproduced. Project-content terms apply."
+received = { width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "non-grayscale", bytes = 2205383, sha256 = "d28efbe998734700cdb33cb88edf8d59c4394afb9b872c2a3c02e53994c19094" }
+normalized = { path = "shared/artwork/pencil/linens/RPD-FIG-altar-frontal-context.png", width_px = 1536, height_px = 1024, bit_depth = 8, color_mode = "grayscale", bytes = 669319, sha256 = "b01b3f7c883d10d93f84c2d6377ec133b8fc0cdb377e22a077421510f3a6ce68", max_placement_width_in = 4.5, max_placement_height_in = 3.0, effective_dpi = 341.3333333333333 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }
+
+[[asset_files]]
+id = "file-humeral-veil-context-2026-11-07"
+path = "shared/artwork/pencil/linens/RPD-FIG-humeral-veil-context.png"
+state = "canonical-alpha-eligible"
+audit_record = "research/slices/recognition-expansion-2026-11-07.md"
+boundary_treatment = "page-ground"
+technical = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 703869, sha256 = "2f627579aa75098fe740ef283dafa69d2bb37d90c50b0ea709bd44e550b2d1a5" }
+
+[[artworks]]
+id = "art-humeral-veil-context"
+object_ids = ["obj-humeral-veil"]
+variant_ids = []
+view = "context-inset"
+workflow_state = "consumer-review-passed"
+purpose = "Disambiguate the isolated textile through its source-controlled placement relationship."
+depicted_state = "A broad veil lies over an anonymous wearer’s shoulders, with its ends covering the hands. The plain underlying garment is representative; this is a shoulder-and-hand study, not a minister’s complete ceremonial vesture or an action with a sacred vessel."
+source_controlled_features = ["broad shoulder textile", "ends covering hands"]
+deliberate_omissions = ["complete prepared altar or ceremonial ensemble", "ritual action sequence", "sacred vessel", "prescribed proportions, ornament or tailoring"]
+brief = "A broad veil lies over an anonymous wearer’s shoulders, with its ends covering the hands. The plain underlying garment is representative; this is a shoulder-and-hand study, not a minister’s complete ceremonial vesture or an action with a sacred vessel."
+exact_prompt = "Not retained in tracked files under the editorial publication boundary; the source-constrained generation brief is recorded here."
+generator = "OpenAI built-in image-generation interface; exact model/version and runtime not exposed."
+generated_on = "2026-11-07"
+asset = "shared/artwork/pencil/linens/RPD-FIG-humeral-veil-context.png"
+reference_ids = []
+precursor_ids = []
+corrections = ["Normalized to stripped 8-bit grayscale; no geometry or morphology edit. No third-party image supplied to generation."]
+baked_content_audit = ["Full-size source-bounded identity and visual checks by the generating, dictionary and independent review agents. Placement relationship is legible; no embedded text, labels, arrows, numerals, watermark or unrelated ritual objects.", "The simple altar support and plain clothing are illustrative context, not complete prepared states or normative construction."]
+tex_overlays = ["English and Latin headwords", "placement/shoulder-and-hand study limitation", "not-to-common-scale qualification"]
+consumer_plate_ids = []
+consumer_edition_ids = ["ed-comprehensive", "ed-altar-server", "ed-sacristan", "ed-mc-trainer", "ed-general-reader", "ed-pontifical"]
+rights = "Project-generated original artwork without third-party image inputs. Checked remote source books supply bounded facts only; no source page image or received prayer text is reproduced. Project-content terms apply."
+received = { width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "non-grayscale", bytes = 2244697, sha256 = "673e69e9c12f9330ddc1fc4c470254f68841c798bb415cb0fce05d3b3ed0e24e" }
+normalized = { path = "shared/artwork/pencil/linens/RPD-FIG-humeral-veil-context.png", width_px = 1024, height_px = 1536, bit_depth = 8, color_mode = "grayscale", bytes = 703869, sha256 = "2f627579aa75098fe740ef283dafa69d2bb37d90c50b0ea709bd44e550b2d1a5", max_placement_width_in = 3.4133333333333336, max_placement_height_in = 5.12, effective_dpi = 300.0 }
+reviews = { factual = "passed", visual = "passed", print = "passed", rights = "passed", consumer = "passed", release = "pending" }

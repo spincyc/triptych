@@ -1,25 +1,25 @@
 # Plate manifest
 
-Current reconciliation: 2026-11-05
+Current reconciliation: 2026-11-07
 Status: **bounded generated plates; complete ceremonial compositions remain open**
 
-Current canonical inventory: **82 records**. Selection is edition-specific:
+Current canonical inventory: **87 records**. Selection is edition-specific:
 
 | Edition | Admitted records | Omitted records | Generated plates |
 | --- | ---: | ---: | ---: |
-| `ed-altar-server` | 50 | 32 | 10 |
-| `ed-comprehensive` | 64 | 18 | 16 |
-| `ed-general-reader` | 49 | 33 | 11 |
-| `ed-mc-trainer` | 51 | 31 | 10 |
-| `ed-pontifical` | 62 | 20 | 16 |
-| `ed-sacristan` | 51 | 31 | 12 |
+| `ed-altar-server` | 55 | 32 | 10 |
+| `ed-comprehensive` | 69 | 18 | 17 |
+| `ed-general-reader` | 54 | 33 | 12 |
+| `ed-mc-trainer` | 56 | 31 | 11 |
+| `ed-pontifical` | 67 | 20 | 17 |
+| `ed-sacristan` | 56 | 31 | 13 |
 
 `tools/render-sanctuary-dictionary` owns exact `SECTION_PLATE_PLANS`, ordering,
 layout IDs, and object membership. Generated `ed-*.tex` and
 `ed-*.alpha-admissions.toml` are the reproducible plate and omission projections;
 this narrative does not authorize a figure that fails those gates.
 
-The altar-server sanctuary now uses six-record and seven-record plates, avoiding
+The altar-server sanctuary now uses two seven-record plates, avoiding
 a lone Missal-stand page. Four isolated studies add altar, altar crucifix,
 tabernacle, and ciborium; they do not release the held complete altar or
 reservation composition. Replacement amice/maniple figures retain their required
@@ -35,6 +35,15 @@ admitted records. These comparisons do not release gremial or pectoral-cross
 records, and the still-held complete pontifical compositions remain separate.
 Exact source corrections and reader-apparatus review are in
 `cold-review-2026-11-05.md` and the linked clothing/source slices.
+
+The 2026-11-07 recognition expansion adds altar cards to book plates, the
+frontal to altar-appointment plates, and a cope/humeral-veil/biretta comparison
+to every edition. The frontal and humeral veil pair isolated drawings with
+placement studies whose limits print beside the figures. Seven original
+drawings support the five new canonical records; the complete altar and
+ceremonial action sequences remain outside this bounded addition. Exact source
+controls and final consumer proof identities are in
+[`slices/recognition-expansion-2026-11-07.md`](slices/recognition-expansion-2026-11-07.md).
 
 ## Historical plate proposals and checkpoints, 2026-07-28
 

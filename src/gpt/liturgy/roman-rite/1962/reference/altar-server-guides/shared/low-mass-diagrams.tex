@@ -1,483 +1,3 @@
-% Original monochrome front-view diagrams for the Low-Mass child booklet and
-% trainer manual. They show a declared three-level model sanctuary. Stable
-% positions and object-safe routes are pictured; the exact centre reverence is
-% selected and demonstrated at the actual altar before these diagrams are used.
-
-\tikzset{
-  lm architecture/.style={
-    draw=black,fill=white,line width=0.9pt,line cap=round,line join=round},
-  lm structure/.style={
-    draw=black,fill=white,line width=1.15pt,line cap=round,line join=round},
-  lm detail/.style={
-    draw=black,line width=0.55pt,line cap=round,line join=round},
-  lm route/.style={
-    draw=black,line width=1.15pt,dash pattern=on 4pt off 2.4pt,
-    -{Stealth[length=3mm,width=2.2mm]}},
-  lm sightline/.style={
-    draw=black,line width=0.95pt,-{Stealth[length=2.6mm,width=2mm]}},
-  lm transfer/.style={
-    draw=black,line width=1.05pt,-{Stealth[length=2.8mm,width=2.1mm]}},
-  lm role tag/.style={
-    draw=black,fill=white,line width=0.55pt,rounded corners=1.5pt,
-    inner xsep=3.2pt,inner ysep=1.7pt,align=center,
-    font=\fontsize{8.6}{10}\selectfont\bfseries},
-  lm object tag/.style={
-    fill=white,inner xsep=2.2pt,inner ysep=1.2pt,align=center,
-    font=\fontsize{8.1}{9.6}\selectfont\bfseries},
-  lm transfer tag/.style={
-    draw=black,fill=white,line width=0.55pt,rounded corners=1.2pt,
-    inner xsep=3pt,inner ysep=0.7pt,align=center,
-    font=\fontsize{8.2}{9.4}\selectfont\bfseries}}
-
-% Coordinate units change with the page lane, but type and line weights do
-% not. This avoids shrinking already-small labels in the trainer manual.
-\ifTrainerManualGuide
-  \newcommand{\LMSceneXUnit}{0.55cm}
-  \newcommand{\LMSceneYUnit}{0.45cm}
-\else
-  \newcommand{\LMSceneXUnit}{0.75cm}
-  \newcommand{\LMSceneYUnit}{0.60cm}
-\fi
-
-\newcommand{\LMBeginScene}{%
-  \par\noindent\hfill
-  \begin{tikzpicture}[
-    x=\LMSceneXUnit,y=\LMSceneYUnit,line cap=round,line join=round,
-    >={Stealth[length=3mm,width=2.2mm]}]
-    \path[use as bounding box] (0.35,0.10) rectangle (23.65,8.75);}
-
-\newcommand{\LMBeginRouteScene}{%
-  \par\noindent\hfill
-  \begin{tikzpicture}[
-    x=\LMSceneXUnit,y=\LMSceneYUnit,line cap=round,line join=round,
-    >={Stealth[length=3mm,width=2.2mm]}]
-    \path[use as bounding box] (0.35,-0.82) rectangle (23.65,8.75);}
-
-\newcommand{\LMBeginTransferScene}{%
-  \par\noindent\hfill
-  \begin{tikzpicture}[
-    x=\LMSceneXUnit,y=\LMSceneYUnit,line cap=round,line join=round,
-    >={Stealth[length=3mm,width=2.2mm]}]
-    \path[use as bounding box] (0.35,0.10) rectangle (23.65,9.85);}
-
-\newcommand{\LMBeginStripScene}{%
-  \par\noindent\hfill
-  \begin{tikzpicture}[
-    x=\LMSceneXUnit,y=\LMSceneYUnit,line cap=round,line join=round,
-    >={Stealth[length=3mm,width=2.2mm]}]
-    \path[use as bounding box] (0.35,-0.32) rectangle (23.65,5.72);}
-
-\newcommand{\LMEndScene}{%
-  \end{tikzpicture}\hfill\null\par}
-
-\newcommand{\LMAltarBackdrop}{%
-  % Sanctuary floor and three explicit riser/tread pairs. White faces and a
-  % disciplined line hierarchy keep the stairs legible without heavy bands.
-  \draw[line width=1.15pt] (0.35,0.18) -- (23.65,0.18);
-  \path[lm structure]
-    (0.65,0.25) -- (23.35,0.25) -- (23.05,0.58)
-    -- (0.95,0.58) -- cycle;
-  \path[lm architecture]
-    (0.95,0.58) -- (23.05,0.58) -- (21.65,0.96)
-    -- (2.35,0.96) -- cycle;
-  \path[lm structure]
-    (2.35,0.96) -- (21.65,0.96) -- (21.65,1.28)
-    -- (2.35,1.28) -- cycle;
-  \path[lm architecture]
-    (2.35,1.28) -- (21.65,1.28) -- (20.15,1.66)
-    -- (3.85,1.66) -- cycle;
-  \path[lm structure]
-    (3.85,1.66) -- (20.15,1.66) -- (20.15,1.98)
-    -- (3.85,1.98) -- cycle;
-  \path[lm architecture]
-    (3.85,1.98) -- (20.15,1.98) -- (19.05,2.40)
-    -- (4.95,2.40) -- cycle;
-  % Short vertical joints make the three risers read as architecture rather
-  % than stacked bars, even when reproduced on a basic monochrome printer.
-  \foreach \x in {1.35,22.65}
-    {\draw[lm detail] (\x,0.29) -- (\x,0.54);}
-  \foreach \x in {3.05,20.95}
-    {\draw[lm detail] (\x,1.00) -- (\x,1.24);}
-  \foreach \x in {4.55,19.45}
-    {\draw[lm detail] (\x,1.70) -- (\x,1.94);}
-
-  % Altar frontal, linen, and restrained architectural panels.
-  \path[lm structure] (5.05,2.40) rectangle (18.95,5.14);
-  \draw[lm detail] (5.48,2.40) -- (5.48,4.82)
-    (18.52,2.40) -- (18.52,4.82);
-  \path[lm architecture] (6.00,2.78) rectangle (18.00,4.72);
-  \draw[lm detail] (8.35,2.78) -- (8.35,4.72)
-    (15.65,2.78) -- (15.65,4.72);
-  \path[lm detail]
-    (9.02,3.04) rectangle (14.98,4.46);
-  \draw[lm detail]
-    (11.70,3.76) -- (12.30,3.76)
-    (12,3.46) -- (12,4.06);
-  % Mensa and linen ends.
-  \path[lm structure] (4.55,5.14) rectangle (19.45,5.50);
-  \draw[lm detail] (4.78,5.02) -- (19.22,5.02);
-  \path[lm architecture]
-    (4.82,5.14) -- (5.62,5.14) -- (5.54,4.48)
-    -- (4.90,4.48) -- cycle;
-  \path[lm architecture]
-    (18.38,5.14) -- (19.18,5.14) -- (19.10,4.48)
-    -- (18.46,4.48) -- cycle;
-  \draw[lm detail] (4.98,4.70) -- (5.46,4.70)
-    (18.54,4.70) -- (19.02,4.70);
-
-  % Tabernacle with cornice, arched door, and an anchored crucifix base.
-  \path[lm structure] (10.20,5.50) rectangle (13.80,6.66);
-  \path[lm architecture] (9.92,5.50) rectangle (14.08,5.68);
-  \path[lm architecture] (10.36,6.66) rectangle (13.64,6.82);
-  \draw[lm detail]
-    (10.92,5.50) -- (10.92,5.98)
-    arc[start angle=180,end angle=0,x radius=1.08,y radius=0.58]
-    -- (13.08,5.50);
-  \draw[lm detail]
-    (11.68,6.15) -- (12.32,6.15)
-    (12,5.83) -- (12,6.47);
-  \path[lm architecture] (11.42,6.82) rectangle (12.58,6.98);
-  \path[lm architecture] (11.65,6.98) rectangle (12.35,7.12);
-
-  % Crucifix: visibly supported by the tabernacle, with clear air below it.
-  \draw[line width=1.25pt] (12,7.12) -- (12,8.58);
-  \draw[line width=1.25pt] (11.25,8.05) -- (12.75,8.05);
-  \path[lm detail] (11.70,8.48) rectangle (12.30,8.67);
-  \fill (12,8.29) circle (0.095);
-  \draw[line width=0.62pt]
-    (12,8.19) -- (12,7.67)
-    (11.50,8.02) -- (12,7.86) -- (12.50,8.02)
-    (12,7.67) -- (11.79,7.36)
-    (12,7.67) -- (12.21,7.36);
-
-  % Two model altar candles with stepped bases and outlined flames.
-  \foreach \x in {7.45,16.55}{%
-    \path[lm architecture]
-      (\x-0.34,5.50) -- (\x+0.34,5.50)
-      -- (\x+0.22,5.68) -- (\x-0.22,5.68) -- cycle;
-    \path[lm architecture]
-      (\x-0.12,5.68) rectangle (\x+0.12,6.58);
-    \path[lm architecture]
-      (\x-0.24,6.58) -- (\x+0.24,6.58)
-      -- (\x+0.14,6.74) -- (\x-0.14,6.74) -- cycle;
-    \path[draw=black,fill=white,line width=0.65pt]
-      (\x,6.98)
-      .. controls (\x-0.15,6.83) and (\x-0.08,6.73) .. (\x,6.78)
-      .. controls (\x+0.08,6.73) and (\x+0.15,6.83) .. cycle;
-  }}
-
-\newcommand{\LMLevelMarkers}{%
-  \foreach \n/\x/\y in {1/22.45/0.77,2/20.95/1.47,3/20.15/2.17}{%
-    \node[circle,draw=black,fill=white,line width=0.7pt,
-      minimum size=0.43cm,inner sep=0pt,
-      font=\fontsize{7}{8}\selectfont\bfseries] at (\x,\y) {\n};}}
-
-\newcommand{\LMLevelMarkersLeft}{%
-  \foreach \n/\x/\y in {1/1.55/0.77,2/3.05/1.47,3/3.85/2.17}{%
-    \node[circle,draw=black,fill=white,line width=0.7pt,
-      minimum size=0.43cm,inner sep=0pt,
-      font=\fontsize{7}{8}\selectfont\bfseries] at (\x,\y) {\n};}}
-
-\newcommand{\LMDrawMissal}[2]{%
-  \begin{scope}[shift={(#1,#2)}]
-    % Sloped stand and open book are kept distinct so the Missal remains
-    % recognizable when it moves from side to side.
-    \path[lm architecture]
-      (-0.78,0.06) -- (0.78,0.06) -- (0.58,0.23)
-      -- (-0.58,0.23) -- cycle;
-    \draw[line width=0.72pt] (0,0.06) -- (0,-0.25);
-    \draw[line width=0.72pt] (-0.40,-0.25) -- (0.40,-0.25);
-    \path[draw=black,fill=white,line width=1.0pt,line join=round]
-      (0,0.24) -- (-0.82,0.43) -- (-0.75,1.10)
-      .. controls (-0.46,1.04) and (-0.20,0.96) .. (0,0.88) -- cycle;
-    \path[draw=black,fill=white,line width=1.0pt,line join=round]
-      (0,0.24) -- (0.82,0.43) -- (0.75,1.10)
-      .. controls (0.46,1.04) and (0.20,0.96) .. (0,0.88) -- cycle;
-    \draw[lm detail] (0,0.24) -- (0,0.88);
-    \foreach \y in {0.52,0.70,0.88}{%
-      \draw[lm detail] (-0.61,\y+0.10) -- (-0.15,\y);
-      \draw[lm detail] (0.15,\y) -- (0.61,\y+0.10);}
-  \end{scope}}
-
-\newcommand{\LMMissalEpistle}{\LMDrawMissal{14.75}{5.53}}
-\newcommand{\LMMissalGospel}{\LMDrawMissal{9.25}{5.53}}
-
-\newcommand{\LMRoleTag}[2]{%
-  \if\relax\detokenize{#2}\relax\else
-    \node[lm role tag,anchor=south] at (0,#1) {#2};
-  \fi}
-
-\newcommand{\LMStandingServerAt}[3]{%
-  \begin{scope}[shift={(#1,#2)}]
-    % Shoes and cassock.
-    \fill (-0.43,0.08) ellipse (0.28 and 0.10);
-    \fill (0.43,0.08) ellipse (0.28 and 0.10);
-    \path[draw=black,fill=black,line width=0.9pt,line join=round]
-      (-0.27,2.33) -- (-0.43,1.70) -- (-0.63,0.18)
-      -- (0.63,0.18) -- (0.43,1.70) -- (0.27,2.33) -- cycle;
-    % Surplice: broad sleeves, straight body, and a softly scalloped hem.
-    \path[draw=black,fill=white,line width=0.95pt,line join=round]
-      (-0.29,2.34)
-      .. controls (-0.53,2.31) and (-0.72,2.17) .. (-0.79,1.88)
-      -- (-0.63,1.62)
-      .. controls (-0.53,1.68) and (-0.45,1.75) .. (-0.38,1.84)
-      -- (-0.34,1.22)
-      .. controls (-0.18,1.14) and (-0.08,1.18) .. (0,1.13)
-      .. controls (0.08,1.18) and (0.18,1.14) .. (0.34,1.22)
-      -- (0.38,1.84)
-      .. controls (0.45,1.75) and (0.53,1.68) .. (0.63,1.62)
-      -- (0.79,1.88)
-      .. controls (0.72,2.17) and (0.53,2.31) .. (0.29,2.34)
-      -- cycle;
-    \draw[lm detail] (-0.55,2.00) -- (-0.13,1.67)
-      (0.55,2.00) -- (0.13,1.67);
-    \path[draw=black,fill=white,line width=0.65pt]
-      (-0.14,1.62) .. controls (-0.08,1.74) and (0.08,1.74) ..
-      (0.14,1.62) .. controls (0.05,1.49) and (-0.05,1.49) .. cycle;
-    \foreach \y in {0.42,0.66,0.90}
-      {\fill[white] (0,\y) circle (0.027);}
-    % Neck, head, ears, and restrained hairline.
-    \path[lm architecture] (-0.13,2.32) rectangle (0.13,2.48);
-    \path[lm architecture] (0,2.79) ellipse (0.31 and 0.37);
-    \draw[lm detail] (-0.30,2.80) -- (-0.35,2.80)
-      (0.30,2.80) -- (0.35,2.80);
-    \draw[lm detail] (-0.25,2.93)
-      arc[start angle=160,end angle=20,x radius=0.27,y radius=0.19];
-    \LMRoleTag{3.22}{#3}
-  \end{scope}}
-
-\newcommand{\LMStandingServerBackAt}[3]{%
-  \LMStandingServerAt{#1}{#2}{#3}
-  \begin{scope}[shift={(#1,#2)}]
-    % Remove the front collar and buttons, then add a plain back seam.
-    \path[fill=white,draw=none] (-0.19,1.43) rectangle (0.19,1.80);
-    \draw[lm detail] (0,2.25) -- (0,1.24);
-    \draw[lm detail] (-0.22,2.19) .. controls (-0.10,2.10) and
-      (0.10,2.10) .. (0.22,2.19);
-    \foreach \y in {0.42,0.66,0.90}
-      {\fill[black] (0,\y) circle (0.045);}
-  \end{scope}}
-
-\newcommand{\LMStandingServerFacingLeftAt}[3]{%
-  \LMStandingServerAt{#1}{#2}{#3}
-  \begin{scope}[shift={(#1,#2)}]
-    % A small profile nose and eye make the leftward facing explicit without
-    % changing the established standing silhouette.
-    \path[lm architecture]
-      (-0.28,2.88) -- (-0.43,2.78) -- (-0.28,2.72) -- cycle;
-    \fill (-0.13,2.84) circle (0.028);
-  \end{scope}}
-
-\newcommand{\LMKneelingServerAt}[3]{%
-  \begin{scope}[shift={(#1,#2)}]
-    % Rearward shoes and two distinct knees make this impossible to mistake
-    % for the standing pose.
-    \fill (-0.66,0.09) ellipse (0.32 and 0.10);
-    \fill (0.66,0.09) ellipse (0.32 and 0.10);
-    \path[draw=black,fill=black,line width=0.9pt,line join=round]
-      (-0.25,1.62) -- (-0.45,1.10) -- (-0.82,0.16)
-      -- (0.82,0.16) -- (0.45,1.10) -- (0.25,1.62) -- cycle;
-    \path[draw=black,fill=white,line width=0.95pt,line join=round]
-      (-0.27,1.62)
-      .. controls (-0.50,1.59) and (-0.68,1.45) .. (-0.75,1.20)
-      -- (-0.59,0.96)
-      .. controls (-0.49,1.01) and (-0.42,1.08) .. (-0.35,1.16)
-      -- (-0.32,0.64)
-      .. controls (-0.16,0.57) and (-0.07,0.61) .. (0,0.56)
-      .. controls (0.07,0.61) and (0.16,0.57) .. (0.32,0.64)
-      -- (0.35,1.16)
-      .. controls (0.42,1.08) and (0.49,1.01) .. (0.59,0.96)
-      -- (0.75,1.20)
-      .. controls (0.68,1.45) and (0.50,1.59) .. (0.27,1.62)
-      -- cycle;
-    \draw[lm detail] (-0.51,1.34) -- (-0.13,1.05)
-      (0.51,1.34) -- (0.13,1.05);
-    \path[draw=black,fill=white,line width=0.65pt]
-      (-0.14,1.01) .. controls (-0.08,1.13) and (0.08,1.13) ..
-      (0.14,1.01) .. controls (0.05,0.88) and (-0.05,0.88) .. cycle;
-    \path[draw=black,fill=white,line width=0.85pt]
-      (-0.34,0.20) ellipse (0.20 and 0.14);
-    \path[draw=black,fill=white,line width=0.85pt]
-      (0.34,0.20) ellipse (0.20 and 0.14);
-    \draw[lm detail] (-0.50,0.20) -- (-0.18,0.20)
-      (0.18,0.20) -- (0.50,0.20);
-    \path[lm architecture] (-0.13,1.60) rectangle (0.13,1.76);
-    \path[lm architecture] (0,2.07) ellipse (0.30 and 0.36);
-    \draw[lm detail] (-0.29,2.08) -- (-0.34,2.08)
-      (0.29,2.08) -- (0.34,2.08);
-    \draw[lm detail] (-0.24,2.20)
-      arc[start angle=160,end angle=20,x radius=0.26,y radius=0.18];
-    \LMRoleTag{2.49}{#3\\KNEELING}
-  \end{scope}}
-
-\newcommand{\LMStandingPriestAt}[3][0]{%
-  \begin{scope}[shift={(#2,#3)}]
-    \fill (-0.56,0.08) ellipse (0.32 and 0.10);
-    \fill (0.56,0.08) ellipse (0.32 and 0.10);
-    % Alb beneath the chasuble.
-    \path[draw=black,fill=white,line width=1.0pt,line join=round]
-      (-0.31,2.68) -- (-0.63,1.90) -- (-0.94,0.18)
-      -- (0.94,0.18) -- (0.63,1.90) -- (0.31,2.68) -- cycle;
-    \draw[lm detail] (-0.71,0.46) -- (0.71,0.46);
-    % Rounded chasuble with a restrained orphrey.
-    \path[draw=black,fill=white,line width=1.05pt,line join=round]
-      (-0.28,2.70)
-      .. controls (-0.72,2.48) and (-0.91,1.90) .. (-0.84,1.13)
-      .. controls (-0.65,0.78) and (-0.34,0.59) .. (0,0.54)
-      .. controls (0.34,0.59) and (0.65,0.78) .. (0.84,1.13)
-      .. controls (0.91,1.90) and (0.72,2.48) .. (0.28,2.70)
-      -- cycle;
-    \path[draw=black,fill=white,line width=0.68pt]
-      (-0.12,2.55) -- (-0.17,0.73) -- (0.17,0.73) -- (0.12,2.55)
-      -- cycle;
-    \draw[line width=0.75pt] (-0.43,1.83) -- (0.43,1.83)
-      (0,1.48) -- (0,2.18);
-    \path[lm architecture] (-0.15,2.68) rectangle (0.15,2.87);
-    \path[lm architecture] (0,3.23) ellipse (0.36 and 0.42);
-    \draw[lm detail] (-0.31,3.37)
-      arc[start angle=160,end angle=20,x radius=0.33,y radius=0.22];
-    % The optional first argument moves only the label when an active object
-    % needs clear space; the priest's ceremonial position remains unchanged.
-    \node[lm role tag,anchor=south] at (#1,3.72) {PRIEST};
-  \end{scope}}
-
-\newcommand{\LMCredence}{%
-  \path[lm structure] (20.35,1.46) rectangle (23.50,1.64);
-  \path[lm architecture]
-    (20.55,1.46) -- (23.30,1.46) -- (23.15,0.42)
-    -- (20.70,0.42) -- cycle;
-  \draw[lm detail] (20.82,0.42) -- (20.82,0.10)
-    (23.03,0.42) -- (23.03,0.10);
-  \node[lm object tag] at (21.93,0.93) {CREDENCE};}
-
-\newcommand{\LMCruet}[3]{%
-  \begin{scope}[shift={(#1,#2)}]
-    \path[lm architecture]
-      (-0.24,0) -- (-0.32,0.56)
-      .. controls (-0.31,0.70) and (-0.22,0.79) .. (-0.14,0.84)
-      -- (0.14,0.84)
-      .. controls (0.22,0.79) and (0.31,0.70) .. (0.32,0.56)
-      -- (0.24,0) -- cycle;
-    \path[lm architecture] (-0.13,0.84) rectangle (0.13,1.02);
-    \draw[lm detail] (0.13,0.92) -- (0.31,0.86);
-    \draw[lm detail] (0.22,0.70)
-      arc[start angle=130,end angle=-130,x radius=0.25,y radius=0.25];
-    \node[font=\fontsize{7}{8}\selectfont\bfseries] at (0,0.43) {#3};
-  \end{scope}}
-
-\newcommand{\LMBell}[2]{%
-  \begin{scope}[shift={(#1,#2)}]
-    \path[lm architecture]
-      (-0.42,0) .. controls (-0.36,0.55) and (-0.25,0.82) ..
-      (0,0.88) .. controls (0.25,0.82) and (0.36,0.55) ..
-      (0.42,0) -- cycle;
-    \draw[line width=0.85pt] (-0.52,0) -- (0.52,0);
-    \draw[lm detail] (0,-0.02) -- (0,-0.18);
-    \fill (0,-0.19) circle (0.07);
-    \draw[line width=0.8pt] (0,0.88) -- (0,1.12);
-    \fill (0,1.18) circle (0.10);
-  \end{scope}}
-
-\newcommand{\LMPlate}[2]{%
-  \begin{scope}[shift={(#1,#2)}]
-    \path[lm architecture] (0,0.48) ellipse (0.62 and 0.25);
-    \draw[lm detail] (0,0.48) ellipse (0.39 and 0.13);
-    \path[lm architecture]
-      (-0.10,0.23) -- (-0.12,-0.43) -- (0.12,-0.43)
-      -- (0.10,0.23) -- cycle;
-    \draw[line width=0.8pt] (-0.23,-0.43) -- (0.23,-0.43);
-  \end{scope}}
-
-\newcommand{\LMRestingPlate}[2]{%
-  \begin{scope}[shift={(#1,#2)}]
-    \path[lm architecture] (0,0.12) ellipse (0.62 and 0.18);
-    \draw[lm detail] (0,0.12) ellipse (0.40 and 0.09);
-    \draw[line width=0.8pt] (0.56,0.12) -- (1.02,0.12);
-  \end{scope}}
-
-\newcommand{\LMCarriedMissal}[2]{%
-  \begin{scope}[shift={(#1,#2)},scale=0.78]
-    \LMDrawMissal{0}{0}
-    \path[lm architecture] (-0.74,0.31) circle (0.11);
-    \path[lm architecture] (0.74,0.31) circle (0.11);
-  \end{scope}}
-
-\newcommand{\LMPreparedChalice}[2]{%
-  \begin{scope}[shift={(#1,#2)}]
-    % The foot remains visible beneath the veil, while the square burse and
-    % the shallow cup rim distinguish a prepared chalice from a loose veil.
-    \path[fill=white,draw=none] (-1.02,-0.06) rectangle (1.02,1.38);
-    \path[lm structure]
-      (-0.50,0.03) -- (0.50,0.03) -- (0.33,0.18)
-      -- (-0.33,0.18) -- cycle;
-    \draw[line width=0.82pt] (0,0.16) -- (0,0.39);
-    \path[lm architecture]
-      (-0.35,0.42) .. controls (-0.31,0.65) and (-0.20,0.72) ..
-      (0,0.73) .. controls (0.20,0.72) and (0.31,0.65) ..
-      (0.35,0.42) -- cycle;
-    \path[draw=black,fill=white,line width=1.45pt,line join=round]
-      (-0.84,0.22)
-      .. controls (-0.75,0.54) and (-0.67,0.76) .. (-0.55,0.89)
-      -- (0.55,0.89)
-      .. controls (0.67,0.76) and (0.75,0.54) .. (0.84,0.22)
-      -- cycle;
-    \draw[lm detail] (-0.57,0.35) .. controls (-0.29,0.47) and
-      (-0.12,0.42) .. (0,0.48)
-      .. controls (0.12,0.42) and (0.29,0.47) .. (0.57,0.35);
-    \draw[line width=0.8pt] (-0.25,0.63) -- (0.25,0.63)
-      (0,0.43) -- (0,0.76);
-    \path[draw=black,fill=white,line width=1.45pt]
-      (-0.69,0.86) rectangle (0.69,1.22);
-    \draw[black,line width=0.95pt]
-      (-0.24,1.04) -- (0.24,1.04)
-      (0,0.91) -- (0,1.17);
-  \end{scope}}
-
-\newcommand{\LMPreparedChaliceCallout}{%
-  \draw[lm detail] (12.78,5.78) -- (13.00,4.78);
-  \node[lm object tag,anchor=north] at (13.00,4.70)
-    {COVERED\\CHALICE};}
-
-\newcommand{\LMHeldPreparedChalice}[2]{%
-  \begin{scope}[shift={(#1,#2)},scale=0.92]
-    \LMPreparedChalice{0}{0}
-    \path[lm architecture] (-0.70,0.55) circle (0.12);
-    \path[lm architecture] (0.70,0.55) circle (0.12);
-    \draw[lm detail] (-0.82,0.55) -- (-0.58,0.55)
-      (0.58,0.55) -- (0.82,0.55);
-  \end{scope}}
-
-\newcommand{\LMVeil}[2]{%
-  \begin{scope}[shift={(#1,#2)}]
-    \path[lm architecture]
-      (-0.72,0.10) -- (-0.52,0.90) -- (0.52,0.90)
-      -- (0.72,0.10) -- cycle;
-    \draw[lm detail] (-0.50,0.22) -- (0.50,0.22);
-    \draw[lm detail] (-0.24,0.54) -- (0.24,0.54)
-      (0,0.31) -- (0,0.77);
-  \end{scope}}
-
-\newcommand{\LMTowel}[2]{%
-  \begin{scope}[shift={(#1,#2)}]
-    \path[lm architecture]
-      (-0.72,0.72) -- (0.72,0.72) -- (0.58,0.02)
-      .. controls (0.30,0.11) and (0.12,0.04) .. (0,0.12)
-      .. controls (-0.12,0.04) and (-0.30,0.11) .. (-0.58,0.02)
-      -- cycle;
-    \draw[lm detail] (-0.55,0.54) -- (0.55,0.54)
-      (-0.23,0.54) -- (-0.19,0.15)
-      (0.23,0.54) -- (0.19,0.15);
-  \end{scope}}
-
-\newcommand{\LMBowl}[2]{%
-  \begin{scope}[shift={(#1,#2)}]
-    \path[lm architecture] (0,0.34) ellipse (0.68 and 0.22);
-    \draw[lm detail]
-      (-0.58,0.28) .. controls (-0.42,-0.10) and (0.42,-0.10) ..
-      (0.58,0.28);
-    \draw[lm detail] (-0.34,-0.03) -- (0.34,-0.03);
-  \end{scope}}
-
 \newcommand{\LMModelKeyLine}{%
   \par\vspace{5pt}
   {\fontsize{8.7}{10.5}\selectfont\bfseries
@@ -501,77 +21,163 @@
       {\fontsize{12}{15}\selectfont\RaggedRight #1\par}
     \fi}}}
 
-% Pencil plates occupy the same compact vertical lane as the diagrams they
-% replace.  Height-driven sizing prevents portrait source canvases from
-% expanding a lesson while `keepaspectratio` preserves the drawings.
+% Position views reuse one sanctuary and one figure per actor. Hand-action
+% closeups retain their separately audited artwork below.
+\input{liturgy/roman-rite/1962/reference/altar-server-guides/shared/sanctuary-scenes}
+\tikzset{lm role tag/.style={asg label},lm object tag/.style={asg label},lm transfer tag/.style={asg label}}
 \ifTrainerManualGuide
-  \newcommand{\LMPencilSceneHeight}{3.40cm}
-  \newcommand{\LMPencilPairHeight}{2.40cm}
+  \newcommand{\LMPencilSceneHeight}{4.05cm}
   \newcommand{\LMLavaboHeight}{4.20cm}
+  \newcommand{\LMPositionWidth}{9.5cm}
 \else
   \newcommand{\LMPencilSceneHeight}{5.00cm}
-  \newcommand{\LMPencilPairHeight}{3.60cm}
   \newcommand{\LMLavaboHeight}{5.20cm}
+  \newcommand{\LMPositionWidth}{10.5cm}
 \fi
+\newcommand{\LMPositionScene}[2]{%
+  \par\smallskip\noindent\makebox[\linewidth][c]{%
+    \ASGBeginScene{\LMPositionWidth}\ASGLowCandles #1\ASGEndScene}%
+  \par\noindent{\small\centering #2\par}\smallskip}
+\newcommand{\LMMissalAtEpistle}{\ASGStation{63}{43}{MISSAL}}
+\newcommand{\LMMissalAtGospel}{\ASGMissalGospel}
+\newcommand{\LMCoveredChalice}{\ASGStation{50}{44}{COVERED\\CHALICE}}
 
 \newcommand{\LMSceneStart}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[width=.85\linewidth,height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-001-lm-start-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.34!(art.south east)+(0,-1mm)$) {SECOND};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.50!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.67!(art.south east)+(0,-1mm)$) {FIRST};
-  \end{tikzpicture}\end{center}}
-
+  \LMPositionScene{%
+    \LMMissalAtEpistle
+    \ASGPriest{50}{11.3}{PRIEST}
+    \ASGStandingServer{33}{11.3}{SECOND}
+    \ASGStandingServer{67}{11.3}{FIRST}
+  }{1. Arrival complete: all three stand on the floor.}}
 \newcommand{\LMSceneFootKneel}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[width=.85\linewidth,height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-002-lm-foot-kneel-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.34!(art.south east)+(0,-1mm)$) {SECOND};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.50!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.67!(art.south east)+(0,-1mm)$) {FIRST};
-  \end{tikzpicture}\end{center}}
-
+  \LMPositionScene{%
+    \LMMissalAtEpistle\LMCoveredChalice
+    \ASGPriest{50}{11.3}{PRIEST}
+    \ASGKneelingServer{33}{11.3}{SECOND}
+    \ASGKneelingServer{67}{11.3}{FIRST}
+  }{2. At the opening prayers: both servers kneel on the floor.}}
 \newcommand{\LMSceneNormalPlaces}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-011-lm-normal-places-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.18!(art.south east)+(0,-1mm)$) {SECOND};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.50!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.82!(art.south east)+(0,-1mm)$) {FIRST};
-  \end{tikzpicture}\end{center}}
-
+  \LMPositionScene{%
+    \LMMissalAtEpistle
+    \ASGPriest{50}{26.5}{PRIEST}
+    \ASGKneelingServer{25}{18.3}{SECOND}
+    \ASGKneelingServer{75}{18.3}{FIRST}
+    \draw[asg route] (33,12) -- (25,12) -- (25,17);
+    \draw[asg route] (67,12) -- (75,12) -- (75,17);
+  }{After the priest ascends: kneel at the two normal places on Step 1.}}
 \newcommand{\LMSceneMissalMove}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-005-lm-missal-move-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.17!(art.south east)+(0,-1mm)$) {SECOND\\STANDS CLEAR};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.50!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.75!(art.south east)+(0,-1mm)$) {FIRST\\MISSAL + STAND};
-  \end{tikzpicture}
-  \par\small Departure moment; follow the rehearsed route to the Gospel side.\end{center}}
-
+  \LMPositionScene{%
+    \ASGPriest{50}{26.5}{PRIEST}
+    \ASGStandingServer{20}{18.3}{SECOND\\CLEAR}
+    \ASGStandingServer{69}{26.5}{FIRST}
+    \ASGStation{74}{43}{BOOK + STAND}
+    \draw[asg route] (73,25) -- (82,18) -- (82,9) -- (50,9);
+    \draw[asg route] (48,9) -- (28,9) -- (28,22) -- (35,25);
+    \ASGStop{82}{9}{A}\ASGStop{50}{9}{B}\ASGStop{28}{22}{C}
+  }{1. First takes the book down the Epistle side; B marks the centre stop.}}
 \newcommand{\LMSceneGospel}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-027-lm-gospel-opening-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.165!(art.south east)+(0,-1mm)$) {SECOND};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.235!(art.south east)+(0,-7mm)$) {FIRST};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.30!(art.north east)+(0,1mm)$) {PRIEST};
-  \end{tikzpicture}
-  \par\small Both servers stand on Step 2 at the Gospel side.\end{center}}
-
+  \LMPositionScene{%
+    \LMMissalAtGospel
+    \ASGPriest{39}{26.5}{PRIEST}
+    \ASGStandingServer{18}{22.5}{SECOND}
+    \ASGStandingServer{29}{22.5}{FIRST}
+  }{2. Book placed: both stand on Step 2 at the Gospel side; Second stays outward.}}
+\newcommand{\LMSceneGospelReturn}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriest{39}{26.5}{PRIEST}
+    \ASGStandingServer{20}{22.5}{SECOND}
+    \ASGStandingServer{75}{18.3}{FIRST}
+    \draw[asg route] (29,22) -- (29,9) -- (50,9) -- (75,9) -- (75,17);
+    \ASGStop{29}{22}{A}\ASGStop{50}{9}{B}
+  }{3. After the Gospel text begins: First returns to Epistle; Second stays clear.}}
 \newcommand{\LMSceneCruetService}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-028-lm-offertory-formation-2026.png}};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.802!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.854!(art.south east)+(0,-1mm)$) {FIRST: WINE};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.915!(art.south east)+(0,-7mm)$) {SECOND: WATER};
-  \end{tikzpicture}
-  \par\small Side by side on Step 2; the priest stands on the predella.\end{center}}
-
+  \LMPositionScene{%
+    \LMMissalAtGospel
+    \ASGPriestFacingRight{68}{26.5}{PRIEST}
+    \ASGServerFacingLeft{76}{22.5}{FIRST}
+    \ASGServerFacingLeft[4]{83}{22.5}{SECOND}
+    \ASGStation{73}{5}{FIRST: WINE\quad SECOND: WATER}
+    \ASGPairPlan{FIRST}{SECOND}
+    \draw[asg route] (94,13) -- (91,18) -- (88,21);
+  }{At the Offertory handoff: both servers stand side by side on Step 2.}}
 \newcommand{\LMSceneCruets}{\LMSceneCruetService}
+\newcommand{\LMSceneLavaboPlaces}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriestFacingRight{66}{26.5}{PRIEST}
+    \ASGServerFacingLeft{76}{22.5}{SECOND}
+    \ASGServerFacingLeft[4]{83}{22.5}{FIRST}
+    \ASGStation{70}{5}{SECOND: WATER + BOWL\\FIRST: TOWEL}
+    \ASGPairPlan{SECOND}{FIRST}
+  }{At the Lavabo: Step 2, outside the Epistle edge.}}
+\newcommand{\LMSceneBell}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
+    \ASGKneelingServer{25}{18.3}{SECOND}
+    \ASGKneelingServer{75}{18.3}{FIRST}
+    \ASGStation{84}{23}{BELL}
+  }{Both kneel on Step 1; the bell rests on Step 2 in front of First.}}
+\newcommand{\LMSceneElevation}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
+    \ASGKneelingServer{39}{25.5}{SECOND}
+    \ASGKneelingServer{61}{25.5}{FIRST}
+    \ASGStation{73}{28}{BELL}
+    \draw[asg route] (25,18) -- (31,18) -- (35,25);
+    \draw[asg route] (75,18) -- (69,18) -- (65,25);
+  }{Before the elevations: both are kneeling, slightly behind the priest on the predella.}}
+\newcommand{\LMSceneElevationReturn}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
+    \ASGKneelingServer{25}{18.3}{SECOND}
+    \ASGKneelingServer{75}{18.3}{FIRST}
+    \draw[asg route] (39,25) -- (35,15) -- (46,9);
+    \draw[asg route] (61,25) -- (65,15) -- (54,9);
+    \ASGStop{50}{9}{A}
+    \ASGStation{50}{3}{CENTRE REVERENCE, THEN NORMAL PLACES}
+  }{After the priest's final reverence: descend, meet at the foot, then return to Step 1.}}
+\newcommand{\LMElevationHandDetail}{%
+  \par\smallskip\noindent\begin{minipage}[t]{.48\linewidth}
+    \centering\includegraphics[height=1.7cm,trim=580 630 580 145,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations-2026.png}
+    \par\small The priest raises the Host.
+  \end{minipage}\hfill\begin{minipage}[t]{.48\linewidth}
+    \centering\includegraphics[height=1.7cm,trim=490 320 480 510,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations-2026.png}
+    \par\small Each server lifts the nearest lower chasuble edge.
+  \end{minipage}\par\smallskip}
+\newcommand{\LMSceneBookReturn}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
+    \ASGStandingServer{29}{26.5}{SECOND}
+    \ASGStandingServer{72}{22.5}{FIRST}
+    \draw[asg route] (29,23) -- (29,9) -- (76,9) -- (76,25);
+    \draw[asg route] (72,20) -- (67,5) -- (22,5) -- (22,23);
+    \ASGStation{45}{16}{BOOK TO EPISTLE}
+    \ASGStop{68.3}{9}{A}
+    \ASGStation{83}{33}{FIRST WAITS\\UNTIL A IS CLEAR}
+    \ASGStation{46}{2}{FOLDED VEIL TO GOSPEL}
+  }{1. Two routes: First gives way while Second passes the crossing A.}}
+\newcommand{\LMSceneBookReturnComplete}{%
+  \LMPositionScene{%
+    \LMMissalAtEpistle\ASGPriest{50}{26.5}{PRIEST}
+    \ASGStation{31}{43}{FOLDED VEIL}
+    \ASGKneelingServer{25}{18.3}{SECOND}
+    \ASGKneelingServer{75}{18.3}{FIRST}
+  }{2. Objects placed and centre reverence complete: both kneel at their normal places.}}
+\newcommand{\LMSceneLastGospel}{%
+  \LMPositionScene{%
+    \LMMissalAtEpistle\LMCoveredChalice
+    \ASGPriest{38}{26.5}{PRIEST}
+    \ASGStandingServer{25}{18.3}{SECOND}
+    \ASGServerFacingLeft{75}{18.3}{FIRST}
+    \draw[asg route,solid] (68,31) -- (47,34);
+  }{Last Gospel: Second faces the altar; First turns toward the priest.}}
+\newcommand{\LMSceneExit}{%
+  \LMPositionScene{%
+    \LMMissalAtEpistle
+    \ASGPriest{50}{11.3}{PRIEST}
+    \ASGStandingServer{33}{11.3}{SECOND}
+    \ASGStandingServer{67}{11.3}{FIRST}
+    \ASGStation{50}{2}{LEAVE SINGLE FILE: FIRST, SECOND, PRIEST}
+  }{After the final common reverence: turn inward and take the rehearsed sacristy route.}}
 
 \newcommand{\LMSceneLavabo}{%
   \begin{center}
@@ -588,25 +194,6 @@
       ($(art.south west)!.83!(art.south east)+(0,-1mm)$) {FIRST\\TOWEL};
   \end{tikzpicture}
   \end{center}}
-
-\newcommand{\LMSceneBell}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-014-lm-bell-station-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.184!(art.south east)+(0,-1mm)$) {SECOND};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.502!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.820!(art.south east)+(0,-1mm)$) {FIRST\\BELL READY};
-  \end{tikzpicture}\end{center}}
-
-\newcommand{\LMSceneElevation}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.28!(art.south east)+(0,-1mm)$) {SECOND};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.50!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.72!(art.south east)+(0,-1mm)$) {FIRST\\BELL};
-  \end{tikzpicture}
-  \par\small Close view: both servers kneel on the predella.\end{center}}
 
 \newcommand{\LMScenePlate}{%
   \begin{center}\begin{tikzpicture}
@@ -629,90 +216,17 @@
   \end{tikzpicture}\end{center}}
 
 \newcommand{\LMSceneAblutions}{%
-  \ifTrainerManualGuide\def\LMAblutionArtHeight{4.6cm}\else\def\LMAblutionArtHeight{6.5cm}\fi
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[
-      height=\LMAblutionArtHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-2026.png}};
-    \node[lm role tag,anchor=south] at
-      ($(art.north west)!.25!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=south] at
-      ($(art.north west)!.81!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at
-      ($(art.south west)!.15!(art.south east)+(0,-1mm)$)
-      {1\quad FIRST:\\WINE};
-    \node[lm role tag,anchor=north] at
-      ($(art.south west)!.72!(art.south east)+(0,-1mm)$)
-      {2\quad FIRST:\\WINE, THEN WATER};
-  \end{tikzpicture}\end{center}}
+  \par\medskip\noindent\begin{minipage}[t]{.48\linewidth}
+  \centering\textbf{1. FIRST: WINE}\par\smallskip
+  \includegraphics[width=.94\linewidth,trim=170 440 1175 120,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-2026.png}
+  \par\small Into the priest-held chalice.
+  \end{minipage}\hfill
+  \begin{minipage}[t]{.48\linewidth}
+  \centering\textbf{2. FIRST: WINE, THEN WATER}\par\smallskip
+  \includegraphics[width=.94\linewidth,trim=1130 420 180 140,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-2026.png}
+  \par\small Over the joined thumbs and index fingers.
+  \end{minipage}\par\medskip}
 
 % Both hand-action moments now share the same side-by-side plate above.
+
 \newcommand{\LMSceneFingerWashing}{}
-
-\newcommand{\LMScenePlateReturn}{%
-  \LMBeginStripScene
-    \begin{scope}
-      \clip (0.20,-0.40) rectangle (23.80,5.52);
-      \LMAltarBackdrop
-    \end{scope}
-    \LMLevelMarkersLeft
-    \LMCredence
-    \LMStandingServerAt{6.1}{0.18}{SECOND\\WAITS}
-    \LMStandingServerAt{17.45}{0.73}{FIRST\\WITH PLATE}
-    \LMPlate{17.45}{1.97}
-    \path[lm architecture] (16.88,2.09) circle (0.11);
-    \path[lm architecture] (18.02,2.09) circle (0.11);
-    \draw[lm route]
-      (18.35,1.28) .. controls (19.05,1.10) and (19.75,1.10) ..
-      (20.48,1.35);
-  \LMEndScene}
-
-\newcommand{\LMSceneBookReturn}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-031-lm-veil-missal-exchange-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.198!(art.south east)+(0,-1mm)$) {SECOND\\MISSAL + STAND};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.502!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.890!(art.south east)+(0,-1mm)$) {FIRST\\FOLDED VEIL};
-  \end{tikzpicture}
-  \par\small Departure moment; Second takes the Missal to Epistle, First the veil to Gospel.\end{center}}
-
-\newcommand{\LMSceneBookReturnComplete}{%
-  \LMBeginScene
-    \LMAltarBackdrop
-    \LMMissalEpistle
-    \LMPreparedChalice{12}{5.51}
-    \LMPreparedChaliceCallout
-    \LMLevelMarkersLeft
-    \LMCredence
-    \LMRestingPlate{21.45}{1.76}
-    \LMKneelingServerAt{4.9}{0.73}{SECOND}
-    \LMKneelingServerAt{19.1}{0.73}{FIRST}
-  \LMEndScene}
-
-\newcommand{\LMSceneLastGospel}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-020-lm-last-gospel-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.18!(art.south east)+(0,-1mm)$) {SECOND\\FACES ALTAR};
-    \node[lm role tag,anchor=south] at ($(art.north west)!.30!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.82!(art.south east)+(0,-1mm)$) {FIRST\\FACES PRIEST};
-  \end{tikzpicture}
-  \par\small Standing on the lowest step; the Missal remains at the Epistle side.\end{center}}
-
-\newcommand{\LMSceneExit}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (art) {\includegraphics[height=\LMPencilSceneHeight,keepaspectratio]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-021-lm-recession-2026.png}};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.447!(art.south east)+(0,-1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.650!(art.south east)+(0,-1mm)$) {SECOND};
-    \node[lm role tag,anchor=north] at ($(art.south west)!.835!(art.south east)+(0,-1mm)$) {FIRST};
-  \end{tikzpicture}
-  \par\small Single-file departure: First leads, then Second, then the priest.\end{center}%
-  % The shared ceremony historically inserts a trainer-only null page before
-  % the appendices.  With compact matched plates that spacer is no longer
-  % needed; consume only that immediately following \null, then restore it.
-  \ifTrainerManualGuide
-    \global\let\LMSavedNull\null
-    \gdef\null{\global\let\null\LMSavedNull}%
-  \fi}

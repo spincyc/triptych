@@ -2,11 +2,11 @@
 
 Status: **canonical alpha assets and held research leads recorded**
 Initial audit: 2026-07-27
-Current reconciliation: 2026-11-05
+Current reconciliation: 2026-11-07
 
 The canonical machine-readable manifest is `artwork-manifest.toml`. Its format
 is governed by `shared/schema/artwork-manifest-schema.toml` and checked by
-`scripts/check-roman-sanctuary-artwork`. This Markdown record explains the
+`tools/check-roman-sanctuary-artwork`. This Markdown record explains the
 human audit boundary; it does not duplicate asset rows.
 
 The altar-server-guide pencil assets elsewhere in the repository are not
@@ -33,8 +33,18 @@ identity, and visual-usability checks at the intended placement size.
 
 `artwork-manifest.toml` is authoritative for exact current asset and artwork
 counts, links, rejection states, and review receipts. The object inventory has
-82 records, with edition-specific selections recorded in `plate-manifest.md`.
+87 records, with edition-specific selections recorded in `plate-manifest.md`.
 This is not a count of approved rasters.
+
+The 2026-11-07 recognition expansion adds five isolated, source-bounded
+figures: altar cards, altar frontal, biretta, cope and humeral veil, plus
+placement/shoulder-and-hand context insets for the two ambiguous textiles. The exact
+received and normalized identities are in the machine manifest; source,
+rights, image review and consumer evidence are in
+[`slices/recognition-expansion-2026-11-07.md`](slices/recognition-expansion-2026-11-07.md).
+Raw prompts are not retained in tracked records; the manifest retains the
+source-constrained brief. These figures do not release a complete sanctuary
+composition or a full ceremonial motion sequence.
 
 The 2026-11-05 revision adds four isolated studies (altar, standing altar
 crucifix, tabernacle, ciborium) and replaces the plain amice/maniple studies

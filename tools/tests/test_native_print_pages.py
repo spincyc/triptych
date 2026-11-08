@@ -137,13 +137,21 @@ class ArtworkSelectionTests(unittest.TestCase):
             artwork.dictionary_artwork(ROOT, "gpt", artwork.DICTIONARY + "/unknown")
 
     def test_server_guides_select_pencil_plates_through_active_diagrams_and_cards_none(self):
-        pencil = re.compile(r"src/gpt/" + re.escape(artwork.SERVER) + r"/shared/artwork/pencil/[A-Za-z0-9._-]+\.png")
+        owner = "src/gpt/" + artwork.SERVER + "/"
+        pencil = re.compile(re.escape(owner) + r"shared/artwork/pencil/[A-Za-z0-9._-]+\.png")
         for leaf in ("01-low-mass", "01-low-mass-trainer-manual", "02-missa-cantata", "03-solemn-mass"):
             with self.subTest(leaf=leaf):
                 selected, inputs = artwork.server_artwork(ROOT, "gpt", artwork.SERVER + "/" + leaf)
                 self.assertTrue(selected)
                 self.assertTrue(all(pencil.fullmatch(path) for path in selected))
-                self.assertIn("src/gpt/" + artwork.SERVER + "/" + leaf + "/main.tex", inputs)
+                self.assertIn(owner + leaf + "/main.tex", inputs)
+                self.assertIn(owner + "shared/sanctuary-scenes.tex", inputs)
+                low = leaf.startswith("01-")
+                self.assertIn(owner + "shared/" + ("low" if low else "sung") + "-mass-diagrams.tex", inputs)
+                self.assertNotIn(owner + "shared/" + ("sung" if low else "low") + "-mass-diagrams.tex", inputs)
+                self.assertIn(owner + "shared/artwork/pencil/ASG-ART-032-sanctuary-master.png", selected)
+                if not low:
+                    self.assertIn(owner + "shared/sung-movement-atlas.tex", inputs)
         for leaf in ("01-low-mass-flash-cards", "02-missa-cantata-cue-cards", "03-solemn-mass-cue-cards"):
             with self.subTest(leaf=leaf):
                 self.assertEqual(artwork.server_artwork(ROOT, "gpt", artwork.SERVER + "/" + leaf),

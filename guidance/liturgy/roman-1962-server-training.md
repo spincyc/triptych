@@ -444,6 +444,17 @@ before/after or state-change frames rather than one composite pose. A route
 frame names its cue, moving actor, carried object, stopping point, and finish
 state. Do not add a figure merely to show both ends of one actor's movement.
 
+Use one shared architectural backdrop and coordinate system across the three
+forms. Keep the altar, steps, tabernacle, crucifix and credence in fixed
+positions; change only the people, movable objects and form-specific
+appointments required by the action. Reusable figure layers distinguish
+posture and facing. A neutral figure used only to locate an actor is identified
+as a position view, with a separate close view for a materially different hand
+action. Crop close views so they cannot introduce a conflicting sanctuary.
+Each movement explanation uses the same cue, actor/object, route, finish and
+waiting fields. This implements the maintainer's 7 November 2026 request for
+expanded diagrams and consistent settings, positions and movements.
+
 Project-owned AI generation and revision are permitted for these instructional
 scenes. Generation is a production method, not ceremonial evidence: every
 actor, object, posture, route, destination, handoff, and finish state must be

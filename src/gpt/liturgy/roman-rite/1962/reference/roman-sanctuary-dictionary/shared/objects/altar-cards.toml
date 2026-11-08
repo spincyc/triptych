@@ -1,0 +1,121 @@
+schema_version = 1
+id = "obj-altar-cards"
+workflow_state = "art-reviewed"
+preferred_english_name = "Altar cards"
+latin_headword = "tabellae secretarum"
+alternate_english_names = ["altar prayer cards"]
+alternate_latin_names = []
+categories = ["books-and-printed-objects"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-altar-missal"]
+related_objects = ["obj-altar-cross", "obj-tabernacle"]
+
+[presence]
+locations = ["At the back of the altar: the largest card at the middle, with smaller cards at the Epistle and Gospel ends."]
+contexts = ["Prayer aids for the celebrant during Mass; the 1962 rubrics limit their altar presence to Mass."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["priest", "sacristan"]
+server_relation = "recognizes-only"
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-altar-cards-identity"
+kind = "identity"
+text = "Separate altar prayer cards give the celebrant convenient access to selected Mass texts."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-cards-manual"]
+
+[[claims]]
+id = "clm-altar-cards-appearance"
+kind = "appearance"
+text = "The ordinary set described by the ceremonial has three cards: one larger central card and two smaller side cards. The drawing leaves the printed faces blank to keep received prayer text out of the illustration."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-cards-manual"]
+
+[[claims]]
+id = "clm-altar-cards-placement"
+kind = "placement"
+text = "The larger card stands at the middle near the cross or tabernacle; the Epistle-side card supplies the water-blessing prayer and Lavabo psalm, and the Gospel-side card the Last Gospel."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-cards-manual"]
+
+[[claims]]
+id = "clm-altar-cards-liturgical-use"
+kind = "liturgical-use"
+text = "The cards assist the celebrant with selected prayers; they do not replace the Missal containing the Mass texts and rubrics."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-cards-manual", "src-altar-cards-missal"]
+
+[[claims]]
+id = "clm-altar-cards-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "General Rubrics 527 permits the altar cards on the altar only during Mass."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-cards-missal"]
+
+[[claims]]
+id = "clm-altar-cards-handling-boundary"
+kind = "handling-boundary"
+text = "The ceremonial describes placing the cards before Mass and removing them afterwards; this recognition entry does not assign those tasks to a particular server."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-altar-cards-manual"]
+
+[[sources]]
+id = "src-altar-cards-manual"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed pp. 19–20 / PDF pp. 40–41."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[sources]]
+id = "src-altar-cards-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Rubricae generales 527; printed XXXVI / PDF 34."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[audience_note]]
+audience = "altar-server"
+text = "Identify the three prayer aids and distinguish them from the Missal; their placement or removal is an assigned preparation task."
+claim_ids = ["clm-altar-cards-identity", "clm-altar-cards-appearance", "clm-altar-cards-placement", "clm-altar-cards-liturgical-use", "clm-altar-cards-ceremonial-presence", "clm-altar-cards-handling-boundary"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Prepare the three-card arrangement for Mass, keeping the central, Epistle and Gospel functions distinct."
+claim_ids = ["clm-altar-cards-identity", "clm-altar-cards-appearance", "clm-altar-cards-placement", "clm-altar-cards-liturgical-use", "clm-altar-cards-ceremonial-presence", "clm-altar-cards-handling-boundary"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Teach the card positions from the altar itself; the Epistle and Gospel labels identify sides, not the viewer’s right and left."
+claim_ids = ["clm-altar-cards-identity", "clm-altar-cards-appearance", "clm-altar-cards-placement", "clm-altar-cards-liturgical-use", "clm-altar-cards-ceremonial-presence", "clm-altar-cards-handling-boundary"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "These three small prayer aids sit behind the action at the altar; the separate Missal supplies the Mass book."
+claim_ids = ["clm-altar-cards-identity", "clm-altar-cards-appearance", "clm-altar-cards-placement", "clm-altar-cards-liturgical-use", "clm-altar-cards-ceremonial-presence", "clm-altar-cards-handling-boundary"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "This ordinary three-card set does not establish the use or form of a prelate’s separate Canon book."
+claim_ids = ["clm-altar-cards-identity", "clm-altar-cards-appearance", "clm-altar-cards-placement", "clm-altar-cards-liturgical-use", "clm-altar-cards-ceremonial-presence", "clm-altar-cards-handling-boundary"]
+
+[[artwork]]
+id = "art-altar-cards-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/books/RPD-FIG-altar-cards-isolated.png"
+review_state = "identity-checked"
+depicts = ["obj-altar-cards"]
+scale_mode = "not-to-common-scale"
+review_note = "Three separate upright prayer-card panels, a broad larger middle panel and two smaller side panels. Blank faces deliberately omit the received texts; narrow frames and supports are representative. No altar or people."

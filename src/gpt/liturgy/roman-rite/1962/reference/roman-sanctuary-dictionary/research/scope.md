@@ -1,7 +1,7 @@
 # Scope
 
 Status: **open completeness corpus with bounded public-alpha leaves**
-Audit date: 2026-07-28
+Audit date: 2026-11-07
 
 ## Governing question
 
@@ -60,15 +60,14 @@ canonical records but may not copy or enlarge them independently.
 
 ## Completeness claim
 
-No completeness claim is authorized. The official source corpus has not been
-closed; the material-culture corpus has not been defined; the canonical
-inventory contains 76 records; and the completeness matrix has open rows in
-every category. The current workflow labels are 2 `lead`, 8 `identified`, 30
-`source-audited`, 2 `art-reviewed`, 28 `publication-ready`, and 6 `held`.
-Those labels neither close a category nor establish an authoritative edition.
-The five generated leaves may publish the checked subset as bounded alphas;
-their first pages identify that alpha boundary. The unclosed owner corpus
-must not be described as complete.
+No completeness claim is authorized. The official source corpus and material-
+culture corpus remain open. The 2026-11-07 structural census contains 87
+canonical records; current workflow and admission counts must be derived from
+the TOML records and generated edition admission registers. No workflow label
+closes a category or establishes an authoritative edition. All six generated
+leaves may publish their individually checked subset, with the scope and
+source qualifications retained in their terminal apparatus. The unclosed
+owner corpus must not be described as complete.
 
 ## Status vocabulary boundary
 
@@ -81,8 +80,8 @@ confused with an object's liturgical status.
 The governing profile requires object status to distinguish universal Roman,
 conditional or privileged, authorized or regional, religious-community,
 practical or local furnishing, historical, and unresolved use. The current
-structured schema does not yet represent that vocabulary exactly: it lacks
-dedicated conditional-or-privileged and practical-or-local values and uses
+structured schema does not yet represent that vocabulary exactly: it lacks a
+dedicated conditional-or-privileged value and uses
 `religious-order` and `institutional` instead of the profile's broader
 classes. Until the schema and existing records are reconciled, no structured
 status count is evidence that the corresponding corpus boundary is complete.
@@ -104,4 +103,4 @@ Edition horizon: 1962, with earlier Roman practice segregated historically.
 Language of publication: English, with Latin headwords.
 Jurisdiction: universal Roman provision unless a record explicitly declares a
 documented narrower status.
-As-of date for this scope record: 2026-07-28.
+As-of date for this scope record: 2026-11-07.

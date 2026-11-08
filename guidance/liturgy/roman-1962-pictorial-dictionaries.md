@@ -165,6 +165,15 @@ of independently resized drawings; omit repetitive generic view and scale
 labels from the rows. Search, grouping, sorting, and expansion must preserve
 keyboard access, stable entry links, and a usable native HTML fallback.
 
+Expanded entries expose the canonical object identifier, supported aliases,
+diagnostic appearance, placement, function, handler and server involvement.
+Link confusable and related objects to their owning entries; a relationship
+does not establish that two names denote the same object. Search these fields
+as well as the English and Latin headwords. Add useful, source-supported
+objects with their own checked illustrations, and keep the inventory and
+audience selections current. These identification and coverage requirements
+follow the maintainer's 7 November 2026 direction.
+
 This website presentation follows the user's 6 November 2026 direction. The
 image-dominant page composition and scale requirements above continue to
 govern print editions.

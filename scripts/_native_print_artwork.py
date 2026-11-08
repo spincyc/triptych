@@ -28,9 +28,10 @@ DICTIONARY_LEAVES = {"comprehensive": "ed-comprehensive", "altar-server": "ed-al
                      "general-reader": "ed-general-reader", "pontifical-ceremonies": "ed-pontifical"}
 SERVER = "liturgy/roman-rite/1962/reference/altar-server-guides"
 _DIAGRAM_FILES = ("low-mass-diagrams.tex", "sung-mass-diagrams.tex")
+_SHARED_DIAGRAM_FILES = ("sanctuary-scenes.tex",)
 # Only these top-level dimensions have two canonical definitions: the first
 # branch is the trainer manual's and the second the child booklet's.
-_BRANCHED = {"LMSceneXUnit", "LMSceneYUnit", "LMPencilSceneHeight", "LMPencilPairHeight", "LMLavaboHeight"}
+_BRANCHED = {"LMSceneXUnit", "LMSceneYUnit", "LMPencilSceneHeight", "LMPencilPairHeight", "LMLavaboHeight", "LMPositionWidth"}
 _GRAPHICS = re.compile(r"\\includegraphics\s*(?:\[[^\]]*\]\s*)?\{([^{}]*)\}")
 
 
@@ -222,11 +223,11 @@ def _web_edition(root: Path):
     return _module(root / "tools/web-edition", "_native_print_web_edition")
 
 
-def _diagram_definitions(shared: Path, variant: str) -> dict[str, dict]:
+def _diagram_definitions(shared: Path, variant: str, names, read) -> dict[str, dict]:
     pattern = re.compile(r"\\(?:re)?newcommand\s*\{\\([A-Za-z]+)\}\s*(?:\[\d+\])?\s*(?:\[[^\]]*\])?\s*\{")
     result, alternatives = {}, {}
-    for name in _DIAGRAM_FILES:
-        text = (shared / name).read_text(encoding="utf-8")
+    for name in names:
+        text = _clean(read(shared / name))
         for match in pattern.finditer(text):
             depth, position = 1, match.end()
             while depth:
@@ -286,8 +287,10 @@ def server_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str],
 
     main_path = owner / name / "main.tex"
     main = read(main_path)
-    definitions, _ = web.command_definitions(read(owner / "shared" / _DIAGRAM_FILES[form != "low"]))
-    diagrams = {key for key in definitions if key.startswith("LMScene") or key.endswith("Diagram")}
+    variant = "trainer" if trainer else "child" if form == "low" else "sung"
+    diagram_names = (_DIAGRAM_FILES[form != "low"], *_SHARED_DIAGRAM_FILES)
+    definitions = _diagram_definitions(owner / "shared", variant, diagram_names, read)
+    diagrams = set(definitions)
     used = set()
 
     def scan(value):
@@ -295,7 +298,7 @@ def server_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str],
         for args, _, _ in calls(selected, "input", 1):
             source = root / "src" / provider / (args[0] + ("" if args[0].endswith(".tex") else ".tex"))
             text = read(source)
-            if not args[0].endswith("sung-mass-diagrams"):
+            if source.name not in diagram_names:
                 scan(text)
         used.update(command for command in diagrams
                     if re.search(re.escape("\\" + command) + r"(?![A-Za-z@])", selected))
@@ -312,26 +315,19 @@ def server_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str],
             scan(raw[end:scenes[index + 1][0] if index + 1 < len(scenes) else len(raw)])
     else:
         scan(web.split_document(main)[1])
-    variant = "trainer" if trainer else "child" if form == "low" else "sung"
-    shared = owner / "shared"
-    every = _diagram_definitions(shared, "child")
-    selected_definitions = _diagram_definitions(shared, variant)
     plate = re.compile(re.escape(SERVER) + r"/shared/artwork/pencil/[A-Za-z0-9._-]+\.png")
     selected = set()
     for macro in sorted(used):
-        _need(macro in every and macro not in {"LMSceneXUnit", "LMSceneYUnit"}
-              and macro.startswith("LMScene") == (variant != "sung"),
-              "selected server diagram has no canonical definition: " + macro)
         closure, queue = set(), [macro]
         while queue:
             item = queue.pop()
             if item in closure:
                 continue
             closure.add(item)
-            queue.extend(found for found in re.findall(r"\\([A-Za-z]+)", selected_definitions[item]["body"])
-                         if found in every and found not in closure)
+            queue.extend(found for found in re.findall(r"\\([A-Za-z]+)", definitions[item]["body"])
+                         if found in definitions and found not in closure)
         for item in closure:
-            selected.update("src/" + provider + "/" + value for value in plate.findall(selected_definitions[item]["tex"]))
+            selected.update("src/" + provider + "/" + value for value in plate.findall(definitions[item]["tex"]))
     for value in selected:
         _need((root / value).is_file(), "selected server artwork is missing: " + value)
     return selected, inputs

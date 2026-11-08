@@ -1,7 +1,7 @@
 # Object inventory
 
 Status: **canonical inventory expanded; whole-corpus completeness remains open**
-Inventory reconciliation: 2026-11-05
+Inventory reconciliation: 2026-11-07
 
 The authoritative format is the structured contract under `shared/schema/`.
 This Markdown file is the human audit index for the populated TOML records and
@@ -12,7 +12,7 @@ authorization to render an entry.
 ## Canonical counts and admission
 
 `shared/objects/` owns every object identity and workflow state. The inventory
-validator reported 82 conforming canonical records at the 2026-11-05 content
+validator reported 87 conforming canonical records at the 2026-11-07 content
 checkpoint. This is a structural result, not closure of the source corpus,
 completeness matrix, variants, artwork review, rights, or publication gates.
 `shared/schema/object.example.toml` is a syntax fixture and is excluded.
@@ -55,7 +55,25 @@ assigns no clerical rank, privilege, universal tailoring or mandatory black
 cassock to every server. The ceremonial's recorded lay-dress custom remains
 visible. Exact loci and image provenance are in
 [`slices/server-choir-clothing-2026-11-05.md`](slices/server-choir-clothing-2026-11-05.md).
-Cope, humeral veil, rochet and the wider choir-dress corpus remain open.
+The 2026-11-07 recognition expansion below adds bounded cope, humeral-veil and
+biretta entries; rochet and the wider choir-dress corpus remain open.
+
+## Recognition expansion, 2026-11-07
+
+| Stable record | Identification and catalogue distinction | Preserved limit |
+| --- | --- | --- |
+| `obj-altar-cards` | Three separate prayer aids; larger central card and Epistle/Gospel-side cards, distinct from the bound Missal | Blank drawing faces omit received text; exact frame, support and proportions are representative |
+| `obj-altar-frontal` | Front hanging, also antependium or pallium, distinguished from the three top-covering altar cloths | Contemporary description is not converted into a universal 1962 requirement or attachment method |
+| `obj-biretta` | Ordinary square black cap with three ridges; priest-to-minister reception at entrance | No rank color, privilege or ordinary server headwear inferred |
+| `obj-cope` | Semicircular cape with front fastening; specified rites distinguish it from the Mass chasuble | No inherited 1943 color rule, prescribed ornament or privileged clasp |
+| `obj-humeral-veil` | Broad oblong shoulder textile, distinct from amice, stole and vimpa; exact Solemn Mass paten relationship | Requiem exception retained; wider related-ceremony uses and full handoff sequences remain unclosed |
+
+Each entry has source-bound identity, appearance, placement or construction,
+use, ceremonial presence and handling boundaries, a separately reviewed
+original isolated figure and audience notes. The two textiles also have
+supporting context studies. Existing records link back to their new
+confusables and related objects. Exact source inspection and image review are
+in [`slices/recognition-expansion-2026-11-07.md`](slices/recognition-expansion-2026-11-07.md).
 
 ## Candidate discovery queue
 

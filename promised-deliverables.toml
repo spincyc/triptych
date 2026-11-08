@@ -1,6 +1,35 @@
 schema_version = 1
 
 [[deliverables]]
+id = "sanctuary-visual-expansion-2026-11"
+owner = "PROJECT-WORK.md"
+promise = "Expand and improve pictorial dictionary identification, coverage and cataloguing, and provide more consistent altar-server Mass diagrams, role positions and movement descriptions using one fixed sanctuary model."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "dictionary-coverage-and-identification"
+  criterion = "Canonical dictionary entries gain source-supported coverage, diagnostic identification and relationships, with actual matching illustrations for new pictured entries."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/research/slices/recognition-expansion-2026-11-07.md", "tools/tests/test_roman_sanctuary_dictionary.py"]
+
+  [[deliverables.requirements]]
+  id = "catalogue-reader"
+  criterion = "The grouped website table exposes useful identification and catalogue details, searchable aliases and stable cross-references without losing warnings, source qualifications, accessibility or images."
+  status = "pass"
+  evidence = ["tools/public-alpha", "tools/tests/test_pictorial_gallery.py"]
+
+  [[deliverables.requirements]]
+  id = "mass-visual-continuity"
+  criterion = "Low Mass, Missa Cantata and Solemn Mass have expanded coherent diagrams with fixed sanctuary architecture, explicit roles and consistent cue, route, object and finish-state descriptions."
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/sanctuary-scenes.tex", "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/sung-movement-atlas.tex"]
+
+  [[deliverables.requirements]]
+  id = "verified-integration"
+  criterion = "Affected source consumers and focused regressions pass, actual illustrated renderings are inspected, provenance and limitations are recorded, and the changes are committed on the assigned workspace branch."
+  status = "open"
+
+[[deliverables]]
 id = "sanctuary-dictionary-table-2026-11"
 owner = "tools/public-alpha"
 promise = "Present the website Sanctuary Picture Dictionary as one cohesive grouped table with small expandable illustrations, quiet default rows, preserved source boundaries and full cold organization/presentation review."

@@ -413,7 +413,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 "ed-mc-trainer": (
                     r"\RSDHeterodoxFivePlateStart"
                     r"{Vesting And Sacred Ministers}{1}",
-                    r"\RSDDensePlateStart{Books And Supports}{1}",
+                    r"\RSDDenseSevenPlateStart{Books And Supports}{1}",
                 ),
                 "ed-general-reader": (
                     r"\RSDBalancedThreePlateStart{Sanctuary}{1}",
@@ -426,7 +426,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     r"{Ministers And Object Transfers}{1}",
                 ),
                 "ed-altar-server": (
-                    r"\RSDDensePlateStart{Sanctuary Orientation}{1}",
+                    r"\RSDDenseSevenPlateStart{Sanctuary Orientation}{1}",
                     r"\RSDDenseSevenPlateStart{Sanctuary Orientation}{2}",
                     r"\RSDDensePlateStart{Objects Around The Server}{1}",
                 ),
@@ -435,8 +435,9 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 text = (output / f"{edition}.tex").read_text()
                 positions = [text.index(marker) for marker in markers]
                 self.assertEqual(positions, sorted(positions), edition)
-                self.assertIn(r"\RSDDensePlateRowBreak", text)
-                self.assertIn(r"\RSDDensePlateCellBreak", text)
+                dense_macro = "RSDDenseSevenPlate" if edition == "ed-mc-trainer" else "RSDDensePlate"
+                self.assertIn("\\" + dense_macro + "RowBreak", text)
+                self.assertIn("\\" + dense_macro + "CellBreak", text)
             for edition in (
                 "ed-comprehensive", "ed-altar-server",
             ):
@@ -543,7 +544,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 ), 1
             )
             self.assertEqual(
-                text.count(r"\RSDRelationshipThreePlateStart{Sanctuary}{3}"), 1
+                text.count(r"\RSDBalancedFourPlateStart{Sanctuary}{3}"), 1
             )
             self.assertEqual(
                 text.count(r"\RSDStoryTallPlateStart{Objects And Linens}{4}"), 1
@@ -555,8 +556,8 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             self.assertNotIn(r"\RSDStoryPlateStart{Objects And Linens}", text)
             sanctuary_triptych = text.split(
-                r"\RSDRelationshipThreePlateStart{Sanctuary}{3}", 1
-            )[1].split(r"\RSDRelationshipThreePlateEnd", 1)[0]
+                r"\RSDBalancedFourPlateStart{Sanctuary}{3}", 1
+            )[1].split(r"\RSDBalancedFourFilledPlateEnd", 1)[0]
             sanctuary_triptych_ids = [
                 line.split("{", 1)[1].split("}", 1)[0]
                 for line in sanctuary_triptych.splitlines()
@@ -566,22 +567,14 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 sanctuary_triptych_ids,
                 [
                     "obj-altar-cloths",
+                    "obj-altar-frontal",
                     "obj-missal-cushion",
                     "obj-missal-stand",
                 ],
             )
-            self.assertEqual(sanctuary_triptych.count(r"\RSDTallCardNext"), 1)
-            self.assertEqual(
-                sanctuary_triptych.count(r"\RSDRelationshipCardNext"), 2
-            )
-            self.assertEqual(
-                sanctuary_triptych.count(r"\RSDRelationshipThreePlateCellBreak"),
-                1,
-            )
-            self.assertEqual(
-                sanctuary_triptych.count(r"\RSDRelationshipThreePlateRightBreak"),
-                1,
-            )
+            self.assertEqual(sanctuary_triptych.count(r"\RSDQuadCardNext"), 4)
+            self.assertEqual(sanctuary_triptych.count(r"\RSDBalancedFourPlateCellBreak"), 2)
+            self.assertEqual(sanctuary_triptych.count(r"\RSDBalancedFourFilledPlateRowBreak"), 1)
             story = text.split(
                 r"\RSDStoryPlateStart{Vestments And Insignia}{1}", 1
             )[1].split(r"\RSDStoryPlateEnd", 1)[0]
@@ -628,15 +621,15 @@ class DictionaryGeneratorTests(unittest.TestCase):
             )
             self.assertEqual(text.count(r"\RSDStoryTallHeroNext"), 2)
             self.assertEqual(text.count(r"\RSDStoryTallCompanionsStart"), 2)
-            self.assertEqual(text.count(r"\RSDBalancedFourFilledPlateRowBreak"), 1)
-            self.assertEqual(text.count(r"\RSDQuadCardNext"), 4)
+            self.assertEqual(text.count(r"\RSDBalancedFourFilledPlateRowBreak"), 2)
+            self.assertEqual(text.count(r"\RSDQuadCardNext"), 8)
             rendered_ids = [
                 line.split("{", 1)[1].split("}", 1)[0]
                 for line in text.splitlines()
                 if line.startswith(r"\RSDObjectRecord{")
             ]
-            self.assertEqual(len(rendered_ids), 49)
-            self.assertEqual(len(set(rendered_ids)), 49)
+            self.assertEqual(len(rendered_ids), 54)
+            self.assertEqual(len(set(rendered_ids)), 54)
             self.assertIn("obj-cassock", rendered_ids)
             self.assertIn("obj-surplice", rendered_ids)
             for object_id in story_ids + dalmatic_story_ids:
@@ -651,7 +644,8 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 "obj-priest-stole",
             ),
             ("obj-chasuble", "obj-deacon-stole", "obj-dalmatic", "obj-tunicle"),
-            ("obj-altar", "obj-altar-cross", "obj-tabernacle"),
+            ("obj-cope", "obj-humeral-veil", "obj-biretta"),
+            ("obj-altar", "obj-altar-cross", "obj-tabernacle", "obj-altar-frontal"),
             (
                 "obj-credence-table", "obj-lectern", "obj-sacristy-cross",
                 "obj-sanctuary-lamp", "obj-sedilia",
@@ -659,7 +653,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
             (
                 "obj-altar-missal", "obj-missal-stand", "obj-missal-cushion",
                 "obj-altar-cloths", "obj-epistle-book",
-                "obj-gospel-book",
+                "obj-gospel-book", "obj-altar-cards",
             ),
             (
                 "obj-altar-candle", "obj-altar-candlestick",
@@ -695,9 +689,9 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 object_id for plate in expected_plates for object_id in plate
             ) + ("obj-cassock", "obj-surplice")
             self.assertEqual(actual_ids, expected_ids)
-            self.assertEqual(len(actual_ids), 51)
-            self.assertEqual(len(set(actual_ids)), 51)
-            self.assertEqual(text.count(r"\RSDDensePlateStart"), 1)
+            self.assertEqual(len(actual_ids), 56)
+            self.assertEqual(len(set(actual_ids)), 56)
+            self.assertEqual(text.count(r"\RSDDensePlateStart"), 0)
             self.assertEqual(text.count(r"\RSDStoryPlateStart"), 1)
             self.assertEqual(text.count(r"\RSDRelationshipThreePlateStart"), 0)
             self.assertIn(
@@ -709,12 +703,12 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 r"{Processions And Special Ceremonies}{1}",
                 text,
             )
-            self.assertEqual(text.count(r"\RSDDenseSevenPlateStart"), 3)
+            self.assertEqual(text.count(r"\RSDDenseSevenPlateStart"), 4)
             self.assertNotIn(r"\RSDBalancedThreeTallPlateStart", text)
-            self.assertEqual(text.count(r"\RSDBalancedFourPlateStart"), 1)
-            self.assertEqual(text.count(r"\RSDDenseSevenPlateRowBreak"), 3)
-            self.assertEqual(text.count(r"\RSDDenseSevenPlateCellBreak"), 15)
-            self.assertEqual(text.count(r"\RSDSevenCardNext"), 21)
+            self.assertEqual(text.count(r"\RSDBalancedFourPlateStart"), 2)
+            self.assertEqual(text.count(r"\RSDDenseSevenPlateRowBreak"), 4)
+            self.assertEqual(text.count(r"\RSDDenseSevenPlateCellBreak"), 20)
+            self.assertEqual(text.count(r"\RSDSevenCardNext"), 28)
             self.assertNotIn("People Roles And Stations", text)
             self.assertIn("Books And Supports", text)
             self.assertIn("Lights And Signals", text)
@@ -744,6 +738,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 (
                     "obj-altar-candlestick",
                     "obj-altar-cloths",
+                    "obj-altar-frontal",
                     "obj-missal-cushion",
                     "obj-missal-stand",
                     "obj-acolyte-candlestick",
@@ -769,9 +764,9 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     r"\RSDDensePlateEnd",
                 ),
                 (
-                    r"\RSDDensePlateStart"
+                    r"\RSDDenseSevenPlateStart"
                     r"{Sanctuary And Altar Preparation}{3}",
-                    r"\RSDDensePlateEnd",
+                    r"\RSDDenseSevenPlateEnd",
                 ),
                 (
                     r"\RSDStoryTallPlateStart"
@@ -798,9 +793,9 @@ class DictionaryGeneratorTests(unittest.TestCase):
             planned_ids = [
                 object_id for plate in actual_plates for object_id in plate
             ]
-            self.assertEqual([len(plate) for plate in actual_plates], [3, 6, 6, 4, 3])
-            self.assertEqual(len(planned_ids), 22)
-            self.assertEqual(len(set(planned_ids)), 22)
+            self.assertEqual([len(plate) for plate in actual_plates], [3, 6, 7, 4, 3])
+            self.assertEqual(len(planned_ids), 23)
+            self.assertEqual(len(set(planned_ids)), 23)
             self.assertEqual(section.count(r"\RSDStoryTallHeroNext"), 1)
             self.assertEqual(section.count(r"\RSDStoryTallCompanionsStart"), 1)
             self.assertEqual(
@@ -815,7 +810,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 )
             self.assertEqual(
                 section.count(r"\RSDFieldCardNext"),
-                12,
+                6,
             )
 
             self.assertIn(
@@ -885,6 +880,7 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     "obj-epistle-book",
                     "obj-gospel-book",
                     "obj-altar-missal",
+                    "obj-altar-cards",
                 ),
                 (
                     "obj-altar-bells",
@@ -920,9 +916,9 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     end_marker = r"\RSDDensePlateEnd"
                 elif plate_number == 2:
                     marker = (
-                        r"\RSDHeterodoxFivePlateStart{Objects And Linens}{2}"
+                        r"\RSDDensePlateStart{Objects And Linens}{2}"
                     )
-                    end_marker = r"\RSDHeterodoxFivePlateEnd"
+                    end_marker = r"\RSDDensePlateEnd"
                 elif plate_number == 4:
                     marker = (
                         r"\RSDStoryTallPlateStart{Objects And Linens}{4}"
@@ -946,9 +942,9 @@ class DictionaryGeneratorTests(unittest.TestCase):
             planned_ids = [
                 object_id for plate in actual_plates for object_id in plate
             ]
-            self.assertEqual([len(plate) for plate in actual_plates], [7, 5, 6, 4, 4])
-            self.assertEqual(len(planned_ids), 26)
-            self.assertEqual(len(set(planned_ids)), 26)
+            self.assertEqual([len(plate) for plate in actual_plates], [7, 6, 6, 4, 4])
+            self.assertEqual(len(planned_ids), 27)
+            self.assertEqual(len(set(planned_ids)), 27)
             self.assertEqual(
                 section.count(r"\RSDBalancedFourPlateStart{Objects And Linens}"),
                 1,
@@ -1006,12 +1002,12 @@ class DictionaryGeneratorTests(unittest.TestCase):
                     ),
                 ),
                 (
-                    r"\RSDDensePlateStart{Altar And Appointments}{1}",
-                    r"\RSDDensePlateEnd",
+                    r"\RSDDenseSevenPlateStart{Altar And Appointments}{1}",
+                    r"\RSDDenseSevenPlateEnd",
                     (
                         "obj-altar-candle", "obj-altar-candlestick",
                         "obj-altar-cloths", "obj-missal-cushion",
-                        "obj-missal-stand", "obj-altar-cross",
+                        "obj-missal-stand", "obj-altar-cross", "obj-altar-frontal",
                     ),
                 ),
                 (
@@ -1114,6 +1110,8 @@ class DictionaryGeneratorTests(unittest.TestCase):
                 for object_id in (
                     "obj-altar", "obj-altar-cross", "obj-tabernacle",
                     "obj-ciborium", "obj-amice", "obj-maniple",
+                    "obj-altar-cards", "obj-altar-frontal", "obj-biretta",
+                    "obj-cope", "obj-humeral-veil",
                 ):
                     self.assertEqual(
                         text.count(f"\\RSDObjectRecord{{{object_id}}}"),

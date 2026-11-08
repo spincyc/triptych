@@ -1,0 +1,121 @@
+schema_version = 1
+id = "obj-biretta"
+workflow_state = "art-reviewed"
+preferred_english_name = "Biretta"
+latin_headword = "biretum"
+alternate_english_names = ["clerical square cap"]
+alternate_latin_names = []
+categories = ["priestly-vestments", "servers-ministers-and-choir"]
+periods = ["roman-1962-horizon"]
+statuses = ["universal-roman"]
+ceremonies = ["low-mass", "missa-cantata", "solemn-mass", "pontifical-mass", "requiem-mass", "nuptial-mass", "ritual-mass"]
+confusable_with = ["obj-mitre"]
+related_objects = ["obj-cassock"]
+
+[presence]
+locations = ["Worn on the priest’s head during the approach to the altar; handed to the minister before the lowest step."]
+contexts = ["The 1962 entrance rubric explicitly names the priest’s cap and its reception by the minister."]
+local_variability = "possible"
+
+[handling]
+ordinary_handlers = ["priest", "other-server", "cleric"]
+server_relation = "varies-by-ceremony"
+
+[audience_relevance]
+altar_server = "required"
+sacristan = "required"
+mc_trainer = "required"
+general_reader = "required"
+pontifical = "required"
+
+[[claims]]
+id = "clm-biretta-identity"
+kind = "identity"
+text = "The biretta is the clerical square cap; the checked ordinary form is black cloth with three raised ridges."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-biretta-manual"]
+
+[[claims]]
+id = "clm-biretta-appearance"
+kind = "appearance"
+text = "Identify the square body and three ridges, leaving the fourth side without a ridge. This ordinary form does not establish the colors or privileges of other clerical ranks."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-biretta-manual"]
+
+[[claims]]
+id = "clm-biretta-placement"
+kind = "placement"
+text = "The priest approaches with his head covered, then removes the biretta before the lowest altar step and gives it to the minister."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-biretta-missal"]
+
+[[claims]]
+id = "clm-biretta-liturgical-use"
+kind = "liturgical-use"
+text = "At the entrance the biretta is received from the priest before he begins at the altar."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-biretta-missal"]
+
+[[claims]]
+id = "clm-biretta-ceremonial-presence"
+kind = "ceremonial-presence"
+text = "The 1962 Ritus servandus explicitly includes the cap in the priest’s preparation and arrival at the altar."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-biretta-missal"]
+
+[[claims]]
+id = "clm-biretta-handling-boundary"
+kind = "handling-boundary"
+text = "The minister’s reception of the priest’s biretta is a named action; the cap is not thereby assigned as ordinary server headwear."
+evidence_state = "source-grounded-synthesis"
+source_ids = ["src-biretta-missal"]
+
+[[sources]]
+id = "src-biretta-manual"
+binding = "artifact.adrian-fortescue.ceremonies-of-the-roman-rite-described.seventh-revised-1943.dli-internet-archive-pdf"
+locus = "Printed p. 10 / PDF p. 31."
+role = "ceremonial-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[sources]]
+id = "src-biretta-missal"
+binding = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+locus = "Ritus servandus I.3, II.2; opening Ritus page / PDF 56."
+role = "governing-liturgical-book"
+verification_state = "claim-verified"
+checked_on = 2026-11-07
+
+[[audience_note]]
+audience = "altar-server"
+text = "Receive the priest’s cap when assigned at the entrance; recognize its square body and three ridges."
+claim_ids = ["clm-biretta-identity", "clm-biretta-appearance", "clm-biretta-placement", "clm-biretta-liturgical-use", "clm-biretta-ceremonial-presence", "clm-biretta-handling-boundary"]
+
+[[audience_note]]
+audience = "sacristan"
+text = "Keep the ordinary three-ridged cap distinct from a mitre; this record does not establish rank colors or storage methods."
+claim_ids = ["clm-biretta-identity", "clm-biretta-appearance", "clm-biretta-placement", "clm-biretta-liturgical-use", "clm-biretta-ceremonial-presence", "clm-biretta-handling-boundary"]
+
+[[audience_note]]
+audience = "mc-trainer"
+text = "Place the receipt of the cap before the priest’s reverence and prayers at the altar; use the exact entrance rubric for the action."
+claim_ids = ["clm-biretta-identity", "clm-biretta-appearance", "clm-biretta-placement", "clm-biretta-liturgical-use", "clm-biretta-ceremonial-presence", "clm-biretta-handling-boundary"]
+
+[[audience_note]]
+audience = "general-reader"
+text = "This square three-ridged cap belongs to clerical dress; the priest removes it on reaching the altar."
+claim_ids = ["clm-biretta-identity", "clm-biretta-appearance", "clm-biretta-placement", "clm-biretta-liturgical-use", "clm-biretta-ceremonial-presence", "clm-biretta-handling-boundary"]
+
+[[audience_note]]
+audience = "pontifical"
+text = "The pictured ordinary black cap establishes no episcopal or other privileged color."
+claim_ids = ["clm-biretta-identity", "clm-biretta-appearance", "clm-biretta-placement", "clm-biretta-liturgical-use", "clm-biretta-ceremonial-presence", "clm-biretta-handling-boundary"]
+
+[[artwork]]
+id = "art-biretta-isolated"
+view = "isolated"
+asset = "shared/artwork/pencil/vestments/RPD-FIG-biretta-isolated.png"
+review_state = "identity-checked"
+depicts = ["obj-biretta"]
+scale_mode = "not-to-common-scale"
+review_note = "One black cloth square cap seen from above at three-quarter angle, with three raised ridges and one ridge-free side. No pompom, wearer or rank insignia."
