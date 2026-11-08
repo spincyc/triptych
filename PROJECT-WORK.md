@@ -11,22 +11,22 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: low-mass-fidelity-2026-11 -->
 
-**Reviewed candidate on `feature/altar-server`; delivery checks in progress.** Correct the principal-Gospel model:
-Second remains at his normal place, while First waits at the Gospel side until
-the priest begins reading, then returns below the steps. Show cruets offered
-handle-first and the server's kiss at the appropriate place. Distinguish the
-first wine purification from the subsequent finger ablution: the priest stays
-on the predella, First serves at his right, and wine then water pass over the
-priest's fingers into the chalice resting on the altar. Turn the priest toward
-the Gospel side for the Last Gospel. Expand the full Low Mass movement
-sequence, and reconcile close-up actors, facing, objects and actions with the
-fixed sanctuary position views.
+**Verified on `feature/altar-server`; branch delivery pending.** The corrected
+Gospel model keeps Second at his normal place. First waits at the Gospel side
+until the priest begins reading, then returns below the steps. Cruets are
+offered handle-first, with the light kiss shown at the base of the handle.
+The initial wine purification and subsequent finger ablution are distinct:
+for the latter, the priest stays on the predella, First serves at his right,
+and wine then water pass over the priest's fingers into the chalice resting
+on the altar. The priest faces left for the Last Gospel. The expanded movement
+sequence aligns close-up actors, facing, objects and actions with the fixed
+sanctuary views.
 
 The maintainer's corrections identify substantive defects in the preceding
 visual acceptance. That earlier review remains a record of its exact snapshot;
 it does not establish the fidelity of the corrected sequence. Fresh source
 checks, generated action illustrations, child/trainer page review, affected
-consumer checks and release reconciliation are required. New artwork remains
+consumer checks and release reconciliation were completed. New artwork remains
 illustrative rather than ceremonial evidence. No new live deployment is claimed.
 
 Fresh checks of the 1962 Missal, Carmody's 1961 manual and the seventh-edition
@@ -54,10 +54,49 @@ attributed coverage are recorded in the production manifest and
 Six Low Mass model regressions and 32 native-print tests pass. All seven
 guide content/schema gates pass; both Low Mass native builds have no overfull
 or underfull boxes. Scoped publication and source-family inventories are
-refreshed without changing classification. Aggregate source checks, final
-native bundle identities and release reconciliation remain in progress.
-This is screen and source review;
-physical-print and ecclesiastical approval are not claimed.
+refreshed without changing classification. Aggregate `make check-sources`
+passes, including generated-proper and generated-document freshness.
+Source commit `cd342f0a924bfbee0b022207d63ba333d62182c3` contains the reviewed
+implementation, artwork and source records. Final native preparation at that
+commit passes for all seven editions, selecting 21, 21, 12, 11, 0, 0 and 0
+images. The sung and card artwork selections retain their prior bytes.
+
+Two independent cold builds of the twelve affected browser-data families
+agree on all 27,705 files and 227,128,545 bytes. The exact unchanged encyclicals
+proof is retained. The thirteen-family total is 27,706 files and 227,726,661
+bytes, with identity
+`dafa7e76f7ed81a2bf9d945893fadcf66e5eb07c2e3e9d590ebcdb5f0b4cc3a3`.
+Only the document catalogue output changes; output path sets, recipes,
+dependency locks and rights inputs are unchanged. All 21 web figures are
+verified current.
+
+Scoped release reconciliation adds 14 paths, updates 10 existing hashes and
+retires none. All 24,186 outside-scope bindings remain unchanged, for 24,210
+bound paths. The 23 bound source paths match the reviewed source commit;
+the product descriptor matches its newly verified bytes. Authorization and
+publication fields and rights prose are unchanged, with the generated rights
+digest refreshed.
+
+The full site build and official GitHub Pages artifact verifier pass at the
+reviewed source commit, with 43,732 files, 43,731 checksum rows and 650 native
+editions. Direct inspection of all seven served print manifests proves exact
+render identities, every mounted path and byte, selected artwork, runtime
+transport and source-pack bytes. All 289 unique source inputs were rehashed.
+Each Low Mass selection adds thirteen images and retires three superseded
+details; the other five selections retain their artwork. Shared transport
+packing is recorded separately from identical render inputs.
+
+The publication manifest has SHA-256
+`85d775fcd93d4761ce95753a7be745773cfd892c5499aeece9299c8e88a08c77`;
+the checksum manifest has SHA-256
+`e8dae45defc51c1e6e1ed217258b4734bef166e1d2ef71e51021bc01efefca3e`.
+The composite release receipt has SHA-256
+`4c79af99fbf1ec3e7fb6aa94d1926bf03630d4d24dfdce86769407f70f854839`.
+The dictionary gallery is byte-identical to the preceding reviewed site.
+No UI suite or browser-WASM execution was repeated, and no preview process
+remains running. This is source, screen-proof and artifact verification;
+physical-print, ecclesiastical approval and a new live deployment are not
+claimed. The required branch push and final delivery-ledger closure remain.
 
 ## Sanctuary dictionary and server-guide visual expansion — 7 November 2026
 

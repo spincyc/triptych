@@ -28,6 +28,7 @@ state = "candidate"
   id = "integrated-delivery"
   criterion = "Affected source, native bundle and release checks pass, the delivery records agree, and the verified corrections are committed and pushed to the assigned workspace branch."
   status = "open"
+  evidence = ["PROJECT-WORK.md", "release/browser-products.json", "release/public-alpha.json", "workflows/reviews/low-mass-fidelity-2026-11-08/REVIEW.md"]
 
 [[deliverables]]
 id = "sanctuary-visual-expansion-2026-11"
