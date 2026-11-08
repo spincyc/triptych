@@ -4,7 +4,7 @@ schema_version = 1
 id = "catena-english-linkage-lectern-2026-11-08"
 owner = "guidance/catena.md"
 promise = "Repair Lectern startup with missing generated browser data, recover available English editions of already known Catena works, and improve verse-specific excerpt linkage within held source documents."
-state = "in_progress"
+state = "candidate"
 
   [[deliverables.requirements]]
   id = "lectern-missing-products"
@@ -15,7 +15,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "standalone-cold-preparation-dependencies"
   criterion = "Installing only the documented TUI requirements also supplies the pinned YAML dependency needed for automatic cold product preparation, with an isolated install verified and current product and release bindings recorded."
-  status = "open"
+  status = "pass"
   evidence = ["requirements-tui.txt", "requirements-tools.txt", "release/browser-products.json", "release/public-alpha.json", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]

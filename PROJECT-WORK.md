@@ -11,7 +11,7 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Publication candidate pushed; fresh-install dependency correction in progress.** The maintainer reports Lectern refusing to start with
+**Terminal correction validated; final publication verification pending.** The maintainer reports Lectern refusing to start with
 “published browser data is unavailable: missing or unsafe browser product”.
 The requested source work prioritizes existing English translations of the
 already known Catena Omnia works. The earlier acquisition of new holdings does
@@ -143,9 +143,23 @@ verified warm startup bypasses the guard. Twelve focused startup tests pass,
 including missing/wrong Markdown before generation, unchanged warm behavior,
 real stale/corrupt/symlink error preservation and concise CLI output without a
 traceback. This reader-only guard and its tests affect no product/release inputs.
+The dependency re-record passes two independent cold builds: all thirteen
+output inventories are byte-for-byte identical to the accepted package, still
+27,915 files and 227,285,321 bytes. The new product identity is
+`929ec3200c858d939c8ce8917833df53a311ba8216fc421b89187baff6ab0d03`.
+An actual `tools/tpt lectern snapshot` launch under the pinned environment now
+passes and renders the 8 November Day screen against the refreshed cache. The
+previous source, reader and packaged-content checks remain applicable to those
+identical bytes. The scoped refresh changes exactly the browser-product
+descriptor and TUI-requirements bindings, plus their inventory and rights-record
+digests. Other release/authorization fields are unchanged. The final site package
+is rebuilding against these records on a separately verified cache, allowing
+active Lectern sessions to retain their read snapshots. Final artifact
+verification, follow-up main publication and live acceptance remain pending.
 The website workflow already installs source-tool dependencies and is unaffected
 by this standalone-install gap. Existing reader and source results remain
-recorded; the new dependency closure and final publication are still pending.
+recorded; the new dependency closure is validated and final publication is still
+pending.
 
 ## Catena Omnia corpus and passage recovery — 7 November 2026
 

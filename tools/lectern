@@ -45,7 +45,7 @@ from lectern import SURFACES  # noqa: E402
 from lectern.repo import Refused as ReaderRefused  # noqa: E402
 THEMES = ("triptych", "triptych-vellum", "triptych-compline")
 DEPENDENCY = ("install the reader's Python dependencies with python3 -m pip install -r requirements-tui.txt "
-              "in your virtual environment; lectern --help includes first-run setup")
+              "in your virtual environment; ./tools/tpt lectern --help includes first-run setup")
 SETUP = """First-run setup (from the repository root):
   Use Python 3.11+, Node and Git, with full clone history.
   On Arch, Node and Git are supplied by: sudo pacman -S nodejs git
@@ -175,7 +175,7 @@ def _prepare_products() -> None:
                     f"published browser data could not be prepared: {cache_error}. "
                     f"Preparation also requires the pinned renderer: {error}. "
                     "In an isolated environment, run `python3 -m pip install -r requirements-tui.txt` "
-                    "and launch Lectern there; `lectern --help` has setup commands."
+                    "and launch Lectern there; `./tools/tpt lectern --help` has setup commands."
                 ) from error
             # Warm readers can coexist under the store's shared lock. Only a
             # failed check needs the exclusive builder; it independently refuses
