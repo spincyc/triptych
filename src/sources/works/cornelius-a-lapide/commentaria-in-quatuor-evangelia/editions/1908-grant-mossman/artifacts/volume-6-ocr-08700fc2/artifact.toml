@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+edition_id = "edition.cornelius-a-lapide.commentaria-in-quatuor-evangelia.1908-grant-mossman"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Historical 1908 English printing is public domain in the United States by expiration of its publication term; the Internet Archive item displays Public Domain Mark 1.0. Machine OCR adds no human-authored translation. Google front matter and attribution are preserved under src/sources/inventories/google-usage-guidelines-rights-v1.toml and excluded from the historical text and project licence. No general licence to Google material is asserted."
+retrieved = "2026-11-07"
+id = "artifact.cornelius-a-lapide.commentaria-in-quatuor-evangelia.1908-grant-mossman.volume-6-ocr-08700fc2"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+source_url = "https://archive.org/download/TheGreatCommentaryOfCorneliusALapideV6/TheGreatCommentaryOfCorneliusALapideV6_djvu.txt"
+sha256 = "08700fc2c29813e41e4221d13d648cd1efe7450b3820ade42264df56a3f6249b"
+byte_size = 1365287
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/cornelius-a-lapide/commentaria-in-quatuor-evangelia/editions/1908-grant-mossman/artifacts/volume-6-ocr-08700fc2/source.txt"
+provenance = "Direct complete HTTP retrieval of the archive’s offered OCR file. Acquisition queries: web search “Cornelius Lapide Great Commentary gospel English gutenberg”; Internet Archive advancedsearch title:\"great commentary\" AND creator:\"Lapide\", first 50 results. Local Matthew 1 (uncapped) and Revelation 1 (30-result cap, no omitted results) discovery and containment survey preceded selection. No model-produced source text."
+notes = "Whole volume 6, 25312 LF-delimited physical lines; title scope: John 12–21 and 1 John 1–5, 2 John 1, 3 John 1. Complete offered OCR bytes, including Google attribution, headers, front matter and end matter. Uncorrected OCR is a searchable finding aid, not a checked transcription. The separately registered scan has 529 pages; no claim of checking every page."

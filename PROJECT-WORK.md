@@ -5,7 +5,89 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-06.
+Last reconciled: 2026-11-07.
+
+## Catena Omnia corpus and passage recovery — 7 November 2026
+
+<!-- promised-deliverable: catena-omnia-recovery-2026-11-07 -->
+
+**In progress.** The maintainer requests reliable passage-specific discovery,
+complete accounting and indexing of held commentary, broader acquisition of
+sources and their English translations, exclusion of non-Catholic commentary
+authors (including Martin Luther), and matching web and terminal behavior.
+Coherent commits, reconciliation with main, and validated publication to main
+are authorized. The assigned workspace branch remains the implementation
+branch; publication must not rewrite published history.
+
+Five bounded tracks cover retrieval and a reproducible corpus census, checked
+held-passage admissions, English source acquisition, Catholic author eligibility,
+and the two reader surfaces. Source-library evidence, translation identity,
+natural scripture extent, disputed attribution, rights, and numbering refusals
+remain binding. Excluding a commentary from the active Catena does not erase
+an immutable historical source used elsewhere, or exclude a Catholic Father's
+words because his translator or anthology editor was Protestant.
+
+The prior 22 October audit established a corpus snapshot, not complete fragment
+admission. This work must report acquired, checked, indexed, English-available,
+and unresolved material separately. Remaining access, rights, transcription,
+or anchoring gaps are recorded as such; a plan or a successful build does not
+establish complete textual coverage. Verification and publication evidence will
+be reconciled here as each coherent unit lands.
+
+The integrated corpus has 1,560 admitted fragments covering 1,363 distinct
+canonical verses, 88 chapters and 21 books, against 1,413 fragments / 76 chapters /
+20 books at baseline. The change removes ten Luther fragments, adds 134 complete
+Alcuin questions and ten other previously held passages, and admits thirteen
+excerpts from newly acquired English witnesses. Existing source records and
+their evidence states are unchanged. All 327 explicit-text review dispositions
+pin their passage manifests; the exhaustive audit accounts for all 56,731 work, edition, artifact, segment
+and passage manifests, including 9,635 passages. Of the dispositions, nineteen still require
+admission evidence, eleven need multiple-locus handling, four need boundary
+repair and four are redundant parent records. The rest distinguish direct
+commentary, incidental citations and non-commentary. Unknown applicability in
+other holdings remains unknown; an exhaustive census is not complete semantic
+indexing of every source body.
+
+Eight complete 1908 English Lapide OCR volumes (8,394,315 bytes; 3,632 scanned
+pages registered remotely) are acquired, with five image-checked full comments.
+Mossman and Cobb remain credited as translators; Cobb’s abridgement is explicit.
+Historical English Catena Aurea texts are acquired for all four Gospels.
+Matthew/Mark contain 44 chapters, 10,329 paragraphs and 390 mechanical groups;
+seven complete blocks have inspected electronic wording. Luke is a composite
+1843/1865 binding and John the 1874 new edition, with 3,856,251 OCR bytes and
+1,493 scan pages measured. One 864-word Luke unit is image-checked and admitted;
+a checked 469-word John unit remains pending documentary translator credit.
+Full OCR and mechanical groups remain finding aids, and none claims complete
+print collation. Four sourced Gospel work extents distinguish work scope from
+fragment admission. The acquisition records preserve exact hashes, derivation,
+rights, misleading catalogue credits and remaining translation limitations.
+
+One scope policy reads the canonical cited author registry for active fragments,
+CLI discovery and acquisition projections. Luther, Westcott and Latham are
+explicitly outside scope; unknown authors remain counted separately and fail
+closed. Translators do not determine original-author scope. Theophylact retains
+the prior named maintainer exception, with its contrary canonical evidence
+visible. The web and terminal readers share inclusive verse-range selection,
+canonical bound validation, English availability and author filters. Full
+fragment extents and the displayed Bible’s numbering remain visible; groups
+arrive collapsed. A direct commentary action brings mobile readers to results.
+Native Chromium and Textual keyboard checks cover invalid-input recovery,
+author controls, history and chapter navigation. Current-data desktop, mobile
+and native terminal checks agree on Genesis 1:3–4 (17 fragments), 1 Corinthians
+13:13 English (Lapide, 518 words) and Luke 24:50–53 English (Aquinas’s Catena,
+864 words). Matching excerpts precede chapter translation research in both
+readers. Browser and Source Library wording matches exactly.
+
+Independent reviews read every newly admitted held passage, replayed acquired
+payload hashes and transcription recipes, and checked the thirteen new admitted
+English units at their declared evidence levels. Review also found and resolved
+a missing-edge audit bypass, invalid-registry empty success, and broad collection
+aliases falsely assigning Luke coverage to Pauline or Matthew works. Three
+whole-work spelling identities are now reviewed explicitly; broader Lapide and
+Aurea collection leads stay separately reported. Catena and paragraph producer
+read audits found no undeclared inputs. Source-library, containment and family
+ledger validation pass. Final integration checks, browser-product recording,
+coherent commits and live publication remain pending and are not claimed complete.
 
 ## Generate PDF links work in place — 6 November 2026
 

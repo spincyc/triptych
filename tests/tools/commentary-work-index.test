@@ -16,7 +16,8 @@ run_tool --help >/dev/null
 # resolve their default --discovery and --output relative to the working
 # directory, and build-corpus writes by default; running outside the repo
 # means a missing --output can never touch tracked state.
-sandbox="$(mktemp -d)"
+mkdir -p "$repo/.scratch/retrieval"
+sandbox="$(mktemp -d "$repo/.scratch/retrieval/commentary-cli.XXXXXX")"
 trap 'rm -rf "$sandbox"' EXIT INT TERM
 
 repo_discovery="$repo/src/sources/commentary/passage-commentary-index.yaml"
@@ -67,6 +68,8 @@ contains "unknown book" "$err" "unknown book is reported by the citations siblin
 
 # ---------------------------------------------------------------------------
 # discover ranks and shapes the works it finds.
+# Synthetic leads have no canonical work_id; eligibility follows the explicit
+# reviewed author. A fabricated non-null ID must now be refused, not joined.
 cat >"$sandbox/discovery.yaml" <<'YAML'
 schema: triptych-commentary-work-index/v1
 updated: 2026-07-30
@@ -76,21 +79,21 @@ passages:
     numbering: unrecorded
     numbering_basis: only a Lectionary-numbered citation reaches this key
     works:
-      - work_id: jerome.in-ioelem
+      - work_id: null
         author: Jerome
         title: Commentarii in Ioelem
         role: church-father
         confidence: 1.0
   - passage: "John 3:16"
     works:
-      - work_id: aug.tract-io
+      - work_id: null
         author: Augustine
         title: Tractates on John
         date: c. 407
         role: church-father
         confidence: 0.9
         source_hint: PL 35
-      - work_id: chrys.hom-io
+      - work_id: null
         author: John Chrysostom
         title: Homilies on John
         date: c. 390
@@ -98,50 +101,50 @@ passages:
         confidence: 0.95
   - passage: "Psalms 24:1-24:3"
     works:
-      - work_id: aug.enarr
+      - work_id: null
         author: Augustine
         title: Enarrationes in Psalmos
         role: doctor
         confidence: 0.8
   - passage: "Psalms 24"
     works:
-      - work_id: cassiodorus.expositio
+      - work_id: null
         author: Cassiodorus
         title: Expositio Psalmorum
         role: ecclesiastical-writer
         confidence: 0.7
   - passage: "Psalms 22"
     works:
-      - work_id: theodoret.in-psalmos
-        author: Theodoret of Cyrus
+      - work_id: null
+        author: Augustine of Hippo
         title: Interpretatio in Psalmos
         role: church-father
         confidence: 0.6
   - passage: "Genesis 1"
     works:
-      - work_id: gen1.first
-        author: Basil
+      - work_id: null
+        author: Basil the Great
         title: Hexaemeron
         role: church-father
         confidence: 0.9
-      - work_id: gen1.second
+      - work_id: null
         author: Ambrose
         title: Exameron
         role: church-father
         confidence: 0.8
-      - work_id: both.chapters
+      - work_id: null
         author: Bede
         title: In Genesim
         role: church-father
         confidence: 0.5
   - passage: "Genesis 2"
     works:
-      - work_id: gen2.first
+      - work_id: null
         author: Chrysostom
         title: Homiliae in Genesim
         role: church-father
         confidence: 0.85
-      - work_id: both.chapters
+      - work_id: null
         author: Bede
         title: In Genesim
         role: church-father
@@ -155,7 +158,7 @@ discover() {
 out="$(discover --passage "John 3:16" --json)"
 # Ranked by confidence descending, so Chrysostom (0.95) precedes Augustine (0.9).
 case "$out" in
-*'"work_id":"chrys.hom-io"'*'"work_id":"aug.tract-io"'*) ;;
+*'"title":"Homilies on John"'*'"title":"Tractates on John"'*) ;;
 *) echo "expected works ranked by confidence, got: $out" >&2; exit 1 ;;
 esac
 # `patristic` is an alias that normalizes onto the church-father role.
@@ -167,8 +170,8 @@ contains '"source_hint":"PL 35"' "$out" "source hint is preserved"
 # --max-results truncates the ranked list and is echoed back.
 out="$(discover --passage "John 3:16" --max-results 1 --json)"
 contains '"max_results":1' "$out" "max-results echo"
-contains '"work_id":"chrys.hom-io"' "$out" "max-results keeps the top rank"
-lacks '"work_id":"aug.tract-io"' "$out" "max-results drops the tail"
+contains '"title":"Homilies on John"' "$out" "max-results keeps the top rank"
+lacks '"title":"Tractates on John"' "$out" "max-results drops the tail"
 
 # Several --passage flags produce several discoveries, in the order given.
 out="$(discover --passage "John 3:16" --passage "Psalm 24:1-3" --numbering vulgate --json)"
@@ -190,8 +193,8 @@ contains '"passage":"Psalms 24:1-24:3"' "$out" "the key is derived, not the spel
 contains '"cited":"Psalm 24:1-3"' "$out" "the citation as written is still reported"
 # Both key spaces answer: the verse-range entry the pilot runs left, and the
 # chapter entry the full passes recorded. Neither hides the other.
-contains '"work_id":"aug.enarr"' "$out" "an exact verse-range key still answers"
-contains '"work_id":"cassiodorus.expositio"' "$out" "the chapter key answers too"
+contains '"title":"Enarrationes in Psalmos"' "$out" "an exact verse-range key still answers"
+contains '"title":"Expositio Psalmorum"' "$out" "the chapter key answers too"
 # A chapter-level hit says so, and says which chapter; an exact hit does not.
 contains '"matched":"chapter"' "$out" "a widened match is labelled"
 contains '"matched_loci":["Psalms 24"]' "$out" "a widened match names its locus"
@@ -207,10 +210,10 @@ contains "Vulgate 50 is Hebrew 51" "$err" "the refusal says why"
 # is Vulgate 22, and the conversion runs through the tracked concordance.
 out="$(discover --passage "Psalm 23:1-3" --numbering hebrew --json)"
 contains '"passage":"Psalms 22:1-22:3"' "$out" "hebrew input renumbers to the vulgate key"
-contains '"work_id":"theodoret.in-psalmos"' "$out" "renumbered lookup finds the vulgate locus"
+contains '"title":"Interpretatio in Psalmos"' "$out" "renumbered lookup finds the vulgate locus"
 # The same citation read as Vulgate is a different psalm, and must not find it.
 out="$(discover --passage "Psalm 23:1-3" --numbering vulgate --json)"
-lacks '"work_id":"theodoret.in-psalmos"' "$out" "vulgate input is not renumbered"
+lacks '"title":"Interpretatio in Psalmos"' "$out" "vulgate input is not renumbered"
 
 # ---------------------------------------------------------------------------
 # The index says which numbering its keys are in, and a key that is not in it
@@ -224,7 +227,7 @@ schema: triptych-commentary-work-index/v1
 passages:
   - passage: "John 3:16"
     works:
-      - work_id: aug.tract-io
+      - work_id: null
         author: Augustine
         title: Tractates on John
         role: church-father
@@ -239,7 +242,7 @@ contains "no \`numbering\` declared" "$err" "the refusal names the missing decla
 # A row that declares another system holds real works about other text. The
 # lookup refuses it and carries the reason, rather than counting a hit.
 out="$(discover --passage "Joel 3:1-5" --json)"
-lacks '"work_id":"jerome.in-ioelem"' "$out" "a foreign key does not answer"
+lacks '"title":"Commentarii in Ioelem"' "$out" "a foreign key does not answer"
 contains '"refused_loci"' "$out" "the refusal is reported"
 contains "only a Lectionary-numbered citation reaches this key" "$out" "the refusal carries its reason"
 
@@ -249,14 +252,14 @@ contains "only a Lectionary-numbered citation reaches this key" "$out" "the refu
 # Ranks are interleaved instead, so the cut at --max-results cannot starve a
 # chapter the citation named.
 out="$(discover --passage "Genesis 1:1-2:2" --max-results 2 --json)"
-contains '"work_id":"gen1.first"' "$out" "cross-chapter keeps the first chapter's best"
-contains '"work_id":"gen2.first"' "$out" "cross-chapter keeps the second chapter's best"
-lacks '"work_id":"gen1.second"' "$out" "cross-chapter does not fill from one chapter"
+contains '"title":"Hexaemeron"' "$out" "cross-chapter keeps the first chapter's best"
+contains '"title":"Homiliae in Genesim"' "$out" "cross-chapter keeps the second chapter's best"
+lacks '"title":"Exameron"' "$out" "cross-chapter does not fill from one chapter"
 # One work found under both chapters is one work, carrying both loci in the
 # order the citation names them.
 out="$(discover --passage "Genesis 1:1-2:2" --json)"
 contains '"matched_loci":["Genesis 1","Genesis 2"]' "$out" "a work in both chapters carries both"
-case "$(printf '%s' "$out" | grep -o '"work_id":"both.chapters"' | wc -l)" in
+case "$(printf '%s' "$out" | grep -o '"title":"In Genesim"' | wc -l)" in
 1) ;;
 *) echo "expected one entry for a work found under both chapters, got: $out" >&2; exit 1 ;;
 esac

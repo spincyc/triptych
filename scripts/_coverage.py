@@ -80,7 +80,7 @@ STATUS_ORDER = (GAP, UNEXAMINED, NOT_ESTABLISHED, COMPLETE)
 STATUS_RANK = {status: rank for rank, status in enumerate(STATUS_ORDER)}
 
 STATUS_NOTE = {
-    GAP: "acquisition stopped inside the work's own extent",
+    GAP: "chapters inside the recorded continuous extent have no admitted fragments; inspect held text before acquiring",
     UNEXAMINED: "no extent recorded, so nothing can say whether this is a gap",
     NOT_ESTABLISHED: "inside a selective work, so this may be its own silence",
     COMPLETE: "the work's extent is held entire",
@@ -288,14 +288,11 @@ def _held(root: Path) -> tuple[
     dict[tuple[str, str], int],
     dict[str, set[tuple[str, str]]],
 ]:
-    """Chapters held, fragments held, and the alias groups a work answers to.
+    """Chapters held, fragments held, and related harvest alias groups.
 
-    The last of these is the reason nothing here needs a lookup table. Every
-    fragment carries both identities — `work_id` from the source library and
-    `work_alias` from the harvest — and `catena check` already refuses a
-    fragment whose two identities name different people. So the join between
-    the index's identity space and the library's is read off the fragments that
-    already reconcile them, and there is no second copy of it to disagree.
+    The edge proves a relationship, which may be constituent-to-collection.
+    `_whole_work_aliases` separately establishes whether the whole harvested
+    work equals the owning source work before assigning its chapter leads.
     """
     chapters: dict[tuple[str, str], set[int]] = {}
     counts: dict[tuple[str, str], int] = {}
@@ -336,7 +333,7 @@ def _held_reach(root: Path) -> dict[tuple[str, str], tuple[tuple[int, int], tupl
     return reach
 
 
-def _named(root: Path, wanted: set[tuple[str, str]]) -> dict[tuple[str, str], set[int]]:
+def _named(root: Path, wanted: set[tuple[str, str]]) -> dict[tuple[str, str, str], set[int]]:
     """Chapters the discovery index names each alias group on, keyed by group and book.
 
     Only the groups asked for are collected: the index names 579 distinct works
@@ -354,7 +351,7 @@ def _named(root: Path, wanted: set[tuple[str, str]]) -> dict[tuple[str, str], se
             title_of[(key[0], str(title))] = key
 
     token_of = {book["name"]: book["token"] for book in _catena.canon(root)}
-    named: dict[tuple[str, str], set[int]] = {}
+    named: dict[tuple[str, str, str], set[int]] = {}
     index = _catena._load_yaml(root / _catena.INDEX_RELATIVE)
     for entry in index.get("passages") or ():
         # A row declaring its own numbering declares a DIFFERENT one, and the
@@ -373,6 +370,42 @@ def _named(root: Path, wanted: set[tuple[str, str]]) -> dict[tuple[str, str], se
             if key is not None:
                 named.setdefault((key[0], key[1], token_of[book]), set()).add(int(chapter))
     return named
+
+
+def _whole_work_aliases(
+    root: Path,
+    sources: _catena.Sources,
+    aliases: dict[str, set[tuple[str, str]]],
+) -> tuple[dict[str, set[tuple[str, str]]], dict[tuple[str, str], set[str]]]:
+    """Separate whole-work identities from possible constituent relationships.
+
+    An edge proves the held excerpt belongs under a harvested name, not that
+    its narrower owning work equals that entire collection. Containment's
+    identity/constituent joins deliberately include such parts and therefore
+    cannot establish whole-work equality here. Use only the reviewed canonical
+    identity or the canonical group name appearing among the work's own titles;
+    membership among a group's *other* titles is not sufficient.
+    """
+    def fold(value: Any) -> str:
+        return " ".join(str(value or "").casefold().split())
+
+    document = _catena._load_yaml(root / _catena.ALIASES_RELATIVE)
+    reviewed = {(str(row.get("author")), str(row.get("work"))): str(row.get("work_id"))
+                for row in (document.get("review") or {}).get("canonical_work_ids") or []}
+    whole, unresolved = {}, {}
+    for work_id, groups in aliases.items():
+        work = sources.works.get(work_id) or {}
+        titles = {fold(title) for title in [work.get("title"), *(work.get("alternate_titles") or [])]}
+        for group in groups:
+            # A reviewed identity controls even if a different work happens to
+            # share its title; a fragment relationship cannot overrule it.
+            identified = reviewed.get(group)
+            exact = identified == work_id if identified else fold(group[1]) in titles
+            if exact:
+                whole.setdefault(work_id, set()).add(group)
+            else:
+                unresolved.setdefault(group, set()).add(work_id)
+    return whole, unresolved
 
 
 # ---------------------------------------------------------------------------
@@ -395,9 +428,24 @@ def coverage(root: Path = ROOT, token: str | None = None) -> dict[str, Any]:
     books = {book["token"]: book for book in _catena.canon(root)}
     groups = {group for sets in aliases.values() for group in sets}
     named = _named(root, groups)
+    whole_aliases, unresolved = _whole_work_aliases(root, sources, aliases)
+
+    unresolved_aliases = []
+    for (author, title), work_ids in sorted(unresolved.items()):
+        named_books = [{"token": book_token, "book": books[book_token]["name"],
+                        "chapters": sorted(chapters_named)}
+                       for (named_author, named_title, book_token), chapters_named in sorted(named.items())
+                       if (named_author, named_title) == (author, title)
+                       and (token is None or book_token == token)]
+        if named_books:
+            unresolved_aliases.append({
+                "author": author, "work": title, "held_work_ids": sorted(work_ids),
+                "named_books": named_books,
+                "reason": "The fragment alias may name a broader collection or another title; whole-work identity with these owning records is not established. These chapter leads are not assigned to its constituents.",
+            })
 
     pairs: set[tuple[str, str]] = set(chapters) | set(recorded)
-    for work_id, group_keys in aliases.items():
+    for work_id, group_keys in whole_aliases.items():
         for author, work in group_keys:
             for key in named:
                 if key[0] == author and key[1] == work:
@@ -412,7 +460,7 @@ def coverage(root: Path = ROOT, token: str | None = None) -> dict[str, Any]:
         work = sources.works.get(work_id) or {}
         held = chapters.get((work_id, book_token), set())
         names: set[int] = set()
-        for author, alias_work in aliases.get(work_id, set()):
+        for author, alias_work in whole_aliases.get(work_id, set()):
             names |= named.get((author, alias_work, book_token), set())
         extent = recorded.get((work_id, book_token))
 
@@ -481,6 +529,7 @@ def coverage(root: Path = ROOT, token: str | None = None) -> dict[str, Any]:
         "schema": REPORT_SCHEMA,
         "numbering": _catena._projection.CANONICAL,
         "rows": rows,
+        "unresolved_aliases": unresolved_aliases,
         "totals": {
             "works": len({row["work_id"] for row in rows}),
             "rows": len(rows),
@@ -488,6 +537,7 @@ def coverage(root: Path = ROOT, token: str | None = None) -> dict[str, Any]:
             "chapters_missing": sum(len(row["missing"]) for row in rows),
             "extents_recorded": len([row for row in rows if row["extent"]]),
             "extents_unrecorded": len([row for row in rows if not row["extent"]]),
+            "unresolved_aliases": len(unresolved_aliases),
         },
     }
 
@@ -507,6 +557,7 @@ def summary_line(root: Path = ROOT) -> str:
         f"{by_status[GAP]} with a gap inside a recorded extent, "
         f"{by_status[UNEXAMINED]} with no extent recorded, "
         f"{totals['chapters_missing']} chapters not held; "
+        f"{totals['unresolved_aliases']} alias groups await whole-work identity; "
         f"see `tpt commentary-work-index coverage`"
     )
 

@@ -188,6 +188,46 @@ current Ordo pages with unresolved redistribution rights are represented by
 metadata, not retained public payloads. None of these historical texts is
 offered under Triptych's CC BY 4.0 license.
 
+Historical English Cornelius a Lapide: The Great Commentary, Edinburgh: John
+Grant, 1908, volumes 1–8. Thomas W. Mossman and various scholars translate
+volumes 1–6; W. F. Cobb translates and edits volumes 7–8, with abridgement and
+factual corrections expressly acknowledged in his preface. Eight exact full
+machine-OCR deliveries and five bounded image-checked comments retain the
+historical English printing’s United States public-domain basis and remain
+excluded from Triptych’s CC BY 4.0 grant. Google front matter and digitizer
+attribution are retained unchanged under src/sources/inventories/google-usage-
+guidelines-rights-v1.toml and are not attributed to Lapide. Eight complete
+scan PDFs are registered remotely with acquired hashes; no offline scan
+delivery is asserted. The acquisition record states each volume’s actual
+books/chapters, hashes, title-page inspection and fragment limits. Full OCR is
+uncorrected discovery text, not a verified whole-work transcription.
+
+The historical Oxford English translation of Thomas Aquinas’s *Catena Aurea*,
+Matthew (Mark Pattison, 1841) and Mark (John Dalgairns, 1842), edited by
+John Henry Newman, is retained from the CCEL transcription as complete chapter
+bodies. The historical wording is public domain in the United States and is
+excluded from Triptych’s CC BY 4.0 grant. The normalized extraction omits
+modern XML wrappers, navigation and descriptions; the complete upstream XML
+is represented only by metadata. Source spelling and transcription defects
+remain. The chapter bodies are not print-facsimile-collated, and mechanical
+Scripture groups are finding aids, not checked commentary fragments. Translator
+credits follow the historical prefaces rather than the erroneous modern XML
+metadata. Acquisition records state exact hashes, transformations and the
+limited electronic-wording checks for admitted blocks.
+
+The further Oxford English *Catena Aurea* acquisitions retain full machine OCR
+of Luke in a composite binding (Part I, 1843; Part II, second edition, 1865)
+and John in the 1874 new edition, with their historical preliminaries and
+publisher matter. Luke’s historical preface credits Thomas Dudley Ryder and
+John Henry Newman; John’s individual translator remains unestablished.
+Exact full scans are hash-registered remote evidence, not offline scan delivery.
+Bounded Luke and John transcriptions were corrected against the identified scan
+images with reproducible recipes; the whole OCR remains uncorrected discovery
+text. Historical wording remains public domain in the United States and outside
+Triptych’s CC BY 4.0 grant. John’s retained short Google reproduction statement
+and digitizer markings follow the existing Google usage-guidelines inventory;
+they are not attributed to Aquinas. No full-volume physical collation is claimed.
+
 ## Liturgical and Scriptural Texts
 
 Scripture, Missal formularies, Orders of Mass, rubrics, chants, and texts from

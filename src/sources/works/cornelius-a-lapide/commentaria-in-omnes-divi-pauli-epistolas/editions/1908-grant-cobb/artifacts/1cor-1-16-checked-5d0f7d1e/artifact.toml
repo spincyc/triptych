@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.1cor-1-16-checked-5d0f7d1e"
+edition_id = "edition.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Literal historical English from the 1908 printing under the parent OCR’s recorded United States publication-term basis; not a new translation."
+retrieved = "2026-11-07"
+sha256 = "5d0f7d1e25841e24a3202c1eb756b0d481a7ed18c7728445a114dccac62ada72"
+byte_size = 175
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/cornelius-a-lapide/commentaria-in-omnes-divi-pauli-epistolas/editions/1908-grant-cobb/artifacts/1cor-1-16-checked-5d0f7d1e/comment.txt"
+derived_from = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.volume-7-ocr-c9d11cbf"
+transformation = "Select exact OCR physical lines 729–731; omit the numeric verse-heading prefix; fold physical line whitespace. Independently collated the entire resulting natural verse-comment against volume 7, PDF page 22; preceding and following verse-comment boundaries read. No translation or paraphrase."
+provenance = "Image check against artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.volume-7-scan-a16992d5, PDF page 22, on 2026-11-07."
+notes = "The complete natural comment in this English edition is retained, including its opening biblical lemma. The author is Lapide; the English translator is credited by the edition."

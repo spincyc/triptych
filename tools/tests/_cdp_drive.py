@@ -67,8 +67,10 @@ _ACTIONS = """} else if (act.do === 'click') {
       await cdp.send('Page.bringToFront');
       await waitFor(cdp, '!document.hidden', 'foreground document');
     } else if (act.do === 'key') {
-      await cdp.send('Input.dispatchKeyEvent',{type:'keyDown',key:act.key,code:act.code,modifiers:act.modifiers||0});
-      await cdp.send('Input.dispatchKeyEvent',{type:'keyUp',key:act.key,code:act.code,modifiers:act.modifiers||0});
+      const identity={key:act.key,code:act.code,modifiers:act.modifiers||0,
+        ...(act.virtualKeyCode ? {windowsVirtualKeyCode:act.virtualKeyCode,nativeVirtualKeyCode:act.virtualKeyCode} : {})};
+      await cdp.send('Input.dispatchKeyEvent',{type:'keyDown',...identity,...(act.text ? {text:act.text} : {})});
+      await cdp.send('Input.dispatchKeyEvent',{type:'keyUp',...identity});
     } else if (act.do === 'media') {
       await cdp.send('Emulation.setEmulatedMedia', {media: act.media});
     } else if (act.do === 'network') {

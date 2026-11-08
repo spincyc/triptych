@@ -267,7 +267,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-source-graph check-publication-inventories check-proper-chronology-current \
 	check-generated-documents-current \
 	check-artwork-manifests \
-	check-catena check-catena-structure check-catena-paragraphs \
+	check-catena check-catena-structure check-catena-paragraphs check-catena-accounting \
 	check-expensive \
 	check-promised-deliverables \
 	check-public-alpha prepare-public-alpha \
@@ -523,8 +523,13 @@ check-research-sources: check-deployment-sources check-source-evidence \
 # reviewed ledgers without requiring optional acquired binary evidence.
 check-sources: check-source-graph check-publication-inventories \
 		check-source-containment check-commentator-inventories check-commentary-corpus \
-		check-proper-chronology-current check-generated-documents-current
+		check-catena-accounting check-proper-chronology-current check-generated-documents-current
 	@$(PYTHON) $(SOURCE_FAMILY_MIGRATION_TOOL) check
+
+# Account for every held passage; newly inspected eligible text needs either
+# its checked Scripture edge or a current, explicit applicability disposition.
+check-catena-accounting:
+	@$(PYTHON) tools/tpt commentary-work-index audit
 
 # Adopted proper chronology remains current with the canonical corpus, including
 # older dossiers. This source-only gate neither migrates legacy prose nor prints.

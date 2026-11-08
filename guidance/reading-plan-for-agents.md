@@ -266,6 +266,9 @@ work           author, title, role, death_year, aliases[]?, work_id?
 - `role` ∈ `church-father | saint | saintly | pope | doctor |
   ecclesiastical-writer`. Enforced at
   `record`.
+- These raw model tags establish no Catholic eligibility; active commentary
+  and acquisition suggestions follow the cited author policy in
+  [Catena §1](catena.md#catholic-author-scope--amended-2026-11-07).
 - `death_year` must be an integer ≤ **1900**. Enforced at `record` — the cutoff
   is a field so it is checkable afterwards, never only a prompt.
 - Runs are stored sorted by `run_id`; re-recording an identical run is a no-op.

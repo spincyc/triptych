@@ -89,6 +89,61 @@ figure is a property of the acquisition list and it must not follow the fragment
 onto the page, where it would invite a reader to discount a text that is simply
 present.
 
+### Catholic author scope — amended 2026-11-07
+
+The active Catena and its acquisition suggestions admit Catholic commentary.
+`scripts/_catena_scope.py` applies this rule to the cited person records in
+`src/sources/inventories/author-standing-v1.toml`; ecclesial facts have that
+single owner. A harvested `role`, a name resembling a saint's, a work's age,
+or an edition's public-domain status cannot supply Catholic eligibility.
+
+The policy reports three distinct decisions: `eligible`, `excluded` for an
+author recorded outside Catholic communion, and `unreviewed` when identity or
+Catholic communion is not established. Only `eligible` enters active fragment
+and lead projections. Unreviewed leads remain counted as pending eligibility
+review in acquisition accounting. An unknown author is never relabelled
+Catholic or non-Catholic merely to complete that accounting. A malformed
+standing registry fails the check; each query/build reads a fresh snapshot.
+
+Eligibility follows the **intellectual commentary author**. Its source-library
+work's responsible name and any registered author namespace must agree.
+An anthology's editor is not its constituent commentator, and a translator's
+confession does not change the author of the translated work. Augustine or
+Basil in a Schaff edition therefore remains Augustine or Basil. An
+unidentified constituent needs an author/work identity before admission; an
+anthology title cannot stand in for one. A Catholic compiler's own continuous
+commentary, such as Aquinas's *Catena Aurea*, retains that compiler identity and
+its internal attributions; quoted Fathers are not silently rewritten as the
+compiler's own words.
+
+Received pre-schism Fathers are admitted through their cited patristic
+standing, without imposing modern confessional divisions on them. **Theophylact
+of Ohrid is one explicit inherited exception:** the maintainer's
+[2026-09-23 standing settlement](liturgy/liturgical-commentators-plan-2026-09-22.md#maintainer-decisions-2026-09-22)
+receives him as an ecclesiastical writer on account of his Western reception.
+His canonical row retains its Byzantine confession and the contrary Catholic
+Encyclopedia evidence; the policy does not rewrite those facts. The present
+Catholic-scope request preserves that earlier named settlement. The decision
+reports the exception, and a later canonical `non-catholic` standing would
+exclude him. This admits no other post-schism Byzantine author automatically.
+An author with unresolved communion remains `unreviewed`; antiquity, later
+Catholic quotation or the harvest's `ecclesiastical-writer` tag alone cannot
+settle that question. Existing censure records and disputed attributions
+continue to qualify use of an otherwise eligible author.
+
+This scope governs active use, not historical preservation. Luther's authored
+Genesis commentary is excluded from the active chain and acquisition list.
+His immutable work, editions, artifacts and passages remain available to
+historical research, as do the raw harvest answers. Re-entry of an ineligible
+fragment fails validation; generation independently applies the same policy.
+The older measurements below, including the 2026-08-01 account of Luther's
+English holdings, describe the corpus before this amendment and remain
+historical measurements. They are not present eligibility claims.
+
+Run `python3 -m unittest tools.tests.test_catena_scope` with the ordinary
+Catena and commentary checks after changing this policy or its canonical
+standing inputs.
+
 ---
 
 ## 2. The anchor is canonical; the display is projected
@@ -440,6 +495,31 @@ A catena that pre-rendered chapter × translation × fragment-set would break bo
 
 ---
 
+### Passage focus in the web and terminal readers — 2026-11-07
+
+The optional `verses` address selects one canonical Vulgate verse or ascending
+range within the selected chapter. Both readers check its endpoints against the
+Scripture shard’s canonical bounds before changing the reading. Selection
+retains each overlapping fragment’s full natural extent and the full Scripture
+chapter in its edition’s own numbering. Chapter navigation clears the focus;
+web history restores it. Typed invalid input preserves the current valid
+reading; an invalid deep link stays unchanged and shows a recovery page.
+
+Web and Lectern use the same `CatenaModel.passageSelection` and
+`passageProblem` functions. Author groups arrive collapsed, author exclusions
+persist across chapters, and English counts describe held excerpts rather than
+complete coverage. Acquisition leads, blocked works and translation research
+are explicitly chapter context when a verse filter is active. Matching fragments
+precede chapter translation research in both readers. A keyboard-accessible
+“Read commentary” action beside the range controls moves focus directly to
+the results, including on narrow screens, without changing the address.
+
+Measured gzip-9 payloads with this feature are 13,632 bytes for `catena.js`
+(9,050 without comments) and 8,185 for `catena.css` (2,910 rules only). The
+regression ceilings are 14,000/9,300 and 8,500/3,000 bytes respectively. The
+increase supports passage selection, validation and author controls; it adds no
+shard family or additional payload request.
+
 ## 8. What must be true before acquisition begins
 
 Most of this list is now discharged. It is kept in order, with what settled each,
@@ -554,7 +634,7 @@ Four readings, and they must not collapse into one number:
 | Reading | What it means | What to do |
 | --- | --- | --- |
 | `complete` | the extent is recorded and held entire | nothing |
-| `gap` | chapters unheld inside a **continuous** work's extent | acquire |
+| `gap` | chapters with no admitted fragments inside a **continuous** work’s extent | inspect held text; acquire a witness if needed |
 | `not-established` | chapters unheld inside a **selective** work's extent | read the printing before calling it anything |
 | `unexamined` | no extent recorded | establish the extent, and only then ask |
 
@@ -583,6 +663,23 @@ is data, and it has to have somewhere to live.
 
 `commentary-work-index coverage` is the verb; `make check-commentary-coverage`
 is the one line it prints into the build.
+
+**Amended 2026-11-07.** A fragment’s harvest alias can name a broader collection:
+Lapide’s Scripture commentary includes a Pauline work, and Aquinas’s four-Gospel
+Catena includes separately registered Gospel works. That relationship does not
+make every collection-level chapter lead a claim about each constituent.
+Coverage assigns such leads to an owning work only when its canonical or
+alternate title equals the canonical alias name, or the reviewed
+`work-aliases.yaml` whole-work identity establishes equivalence. Unresolved
+collection identities retain their chapter leads in a separate reported list;
+they do not inflate constituent gaps. Positive sourced work extents and actual
+fragment extents still establish the constituent’s coverage.
+
+Here “held” counts admitted fragments. A complete searchable OCR or electronic
+witness may already be acquired while most chapters have no admitted excerpts.
+Consult `discover` and the exhaustive `audit` before treating a fragment gap as
+an acquisition gap. The original-language and English expression remain
+separate holdings, and raw OCR remains discovery text.
 
 ---
 

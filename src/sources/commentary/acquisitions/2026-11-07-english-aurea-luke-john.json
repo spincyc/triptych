@@ -1,0 +1,165 @@
+{
+  "schema": 1,
+  "record_type": "acquisition-audit",
+  "retrieved": "2026-11-07",
+  "scope": "Additional complete offered historical English Catena Aurea Luke and John deliveries; bounded scan evidence only.",
+  "sources": [
+    {
+      "book": "Luke",
+      "edition_id": "edition.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia",
+      "artifacts": [
+        {
+          "id": "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.ocr-1455eb5f",
+          "source_url": "https://archive.org/download/catenaaureacomme03thom/catenaaureacomme03thom_djvu.txt",
+          "sha256": "1455eb5ffc0bb8db65b04627d7b6c177685a68da8c381bf8c49d39a206e12a9a",
+          "byte_size": 2106842,
+          "storage": "tracked"
+        },
+        {
+          "id": "artifact.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.pdf-a63aa18e",
+          "source_url": "https://archive.org/download/catenaaureacomme03thom/catenaaureacomme03thom_bw.pdf",
+          "sha256": "a63aa18e946492aaeb263d8d2e1dc95d658b8e81ae42afcc98bd5c5ac5967291",
+          "byte_size": 42193374,
+          "storage": "remote"
+        }
+      ],
+      "scan_inspected_passage": "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.luke-24-50-53",
+      "scan_page_ranges": [
+        [
+          816,
+          819
+        ]
+      ],
+      "all_offered_bytes_acquired": true,
+      "complete_physical_collation": false,
+      "ocr_transcription_verified": false,
+      "ready_edges": [
+        {
+          "passage_id": "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.luke-24-50-53-text",
+          "work_id": "work.thomas-aquinas.catena-aurea-in-lucam",
+          "work_alias": {
+            "author": "Thomas Aquinas",
+            "work": "Catena aurea in quatuor Evangelia"
+          },
+          "extent": {
+            "token": "Luke",
+            "first_chapter": 24,
+            "first_verse": 50,
+            "last_chapter": 24,
+            "last_verse": 53
+          },
+          "numbering": "vulgate",
+          "basis": "Printed scripture lemmas head this complete unit Luke 24:50-53. Body and boundaries checked against the registered facsimile images. The source preserves named patristic voices; Aquinas is compiler. Marginal references and layout omitted with explicit recipe."
+        }
+      ],
+      "notes": "Composite binding, not a single 1841 edition: facsimile PDF page 9 title dates Part I MDCCCXLIII; page 405 dates Part II M DCCC LXV and calls it Second Edition. IA catalogue date 1841 is not adopted. Original prefatory OCR lines 416-424 explicitly credit translator Thomas Dudley Ryder and are signed J. H. N.; this credit was read in OCR, not independently collated against its page image. Entire offered OCR retained, including historical preliminaries, errata and later library markings. No page-by-page physical collation has been performed. Transcription body subsequently independently checked against all four facsimile pages.",
+      "checked_text_passage": "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.luke-24-50-53-text",
+      "checked_text_sha256": "df41b464aad64f9ca9c023acd2720fece08d057653016741b92d850960ebe816",
+      "bounded_ocr_transcription_verified": true
+    },
+    {
+      "book": "John",
+      "edition_id": "edition.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia",
+      "artifacts": [
+        {
+          "id": "artifact.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.ocr-109bb1e4",
+          "source_url": "https://archive.org/download/CatenaAureaNewEdV6/CatenaAureaNewEdV6_djvu.txt",
+          "sha256": "109bb1e4d903cb17389ccd90e61f98686b83aabea7c71ed2f5f924b4319ba6a2",
+          "byte_size": 1749409,
+          "storage": "tracked"
+        },
+        {
+          "id": "artifact.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.pdf-c4ab25fb",
+          "source_url": "https://archive.org/download/CatenaAureaNewEdV6/CatenaAureaNewEdV6.pdf",
+          "sha256": "c4ab25fb4f56f330b15bbc223d1dd28102640d3b7398e5bfb586965db58decfb",
+          "byte_size": 22657952,
+          "storage": "remote"
+        }
+      ],
+      "scan_inspected_passage": "passage.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.john-21-24-25",
+      "scan_page_ranges": [
+        [
+          637,
+          638
+        ]
+      ],
+      "all_offered_bytes_acquired": true,
+      "complete_physical_collation": false,
+      "ocr_transcription_verified": false,
+      "notes": "Facsimile PDF page 8 identifies St. John, New Edition, James Parker and Co., 1874. The title does not name an individual translator or editor; none is inferred from the IA item-level broad contributor list. Historical Oxford English translation associated with the Catena Aurea series. Entire offered OCR retained, including short Google reproduction statement at its beginning, digitization stamps, original publisher catalogue and library markings. Catalogue and wrapper are not part of Aquinas's commentary. No page-by-page physical collation has been performed. Transcription body subsequently independently checked against both facsimile pages. Bound publisher ads contain later 1877 references; title date does not date all end matter.",
+      "checked_text_passage": "passage.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.john-21-24-25-text",
+      "checked_text_sha256": "8f35e97d42d8d9d21dcb735130ef3c06e61228c51b8916bd785ca5ebc098494f",
+      "bounded_ocr_transcription_verified": true,
+      "pending_edges": [
+        {
+          "passage_id": "passage.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.john-21-24-25-text",
+          "work_id": "work.thomas-aquinas.catena-aurea-in-ioannem",
+          "work_alias": {
+            "author": "Thomas Aquinas",
+            "work": "Catena aurea in quatuor Evangelia"
+          },
+          "extent": {
+            "token": "John",
+            "first_chapter": 21,
+            "first_verse": 24,
+            "last_chapter": 21,
+            "last_verse": 25
+          },
+          "numbering": "vulgate",
+          "basis": "Printed scripture lemmas head this complete unit John 21:24-25. Body and boundaries checked against the registered facsimile images. The source preserves named patristic voices; Aquinas is compiler. Marginal references and layout omitted with explicit recipe."
+        }
+      ],
+      "admission_limit": "Complete image-checked text acquired, but named translator not established; do not admit under current Catena named-translator requirement until documentary credit is found."
+    }
+  ],
+  "rejected_candidates": [
+    {
+      "item": "catenaaureacomme04thom",
+      "reason": "IA notes missing printed pages 367-369; not represented as a complete John witness."
+    },
+    {
+      "item": "catenaaurestjohn00thomuoft",
+      "reason": "Complete offered OCR acquired but poor character recognition; PDF and scandata endpoints returned HTTP 500. Selected independent readable 1874 John witness CatenaAureaNewEdV6."
+    }
+  ],
+  "reproduction": "Fetch each exact artifact source_url directly as bytes; compare byte_size and SHA-256. Render stated one-based PDF pages with tools/tpt pdf-review. No whole-book normalization or model reconstruction performed.",
+  "limits": "Two bounded complete commentary-body units have image-checked transcriptions; the remaining whole-volume OCR is unverified. Whole offered file acquisition is not a claim that every original printed leaf was collated. Luke is a mixed-year binding. Existing Matthew/Mark lane untouched.",
+  "ready_edges": [
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.luke-24-50-53-text",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-lucam",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "Luke",
+        "first_chapter": 24,
+        "first_verse": 50,
+        "last_chapter": 24,
+        "last_verse": 53
+      },
+      "numbering": "vulgate",
+      "basis": "Printed scripture lemmas head this complete unit Luke 24:50-53. Body and boundaries checked against the registered facsimile images. The source preserves named patristic voices; Aquinas is compiler. Marginal references and layout omitted with explicit recipe."
+    }
+  ],
+  "pending_edges": [
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-ioannem.1874-english-oxford-ia.john-21-24-25-text",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-ioannem",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "John",
+        "first_chapter": 21,
+        "first_verse": 24,
+        "last_chapter": 21,
+        "last_verse": 25
+      },
+      "numbering": "vulgate",
+      "basis": "Printed scripture lemmas head this complete unit John 21:24-25. Body and boundaries checked against the registered facsimile images. The source preserves named patristic voices; Aquinas is compiler. Marginal references and layout omitted with explicit recipe."
+    }
+  ]
+}

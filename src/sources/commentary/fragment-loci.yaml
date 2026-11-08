@@ -78,7 +78,7 @@ author_aliases:
     Migne's Patrologia Latina 52 does ('SANCTI PETRI CHRYSOLOGI ARCHIEPISCOPI RAVENNATIS'), and the
     harvest names him without it. Both name the bishop of Ravenna whose sermons that volume prints.
 schema: triptych-commentary-fragment-loci/v1
-updated: '2026-11-05'
+updated: '2026-11-07'
 numbering: vulgate
 # ONE TEXT UNDER TWO NAMES (Rule 15). Where the library holds one text as two or
 # more passage records under disputed attributions, the catena hangs it once,
@@ -114,6 +114,2957 @@ parallels:
     two printings are not collated as a whole. The notes of both passage records carry the
     evidence.'
 fragments:
+- passage_id: passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.luke-24-50-53-text
+  work_id: work.thomas-aquinas.catena-aurea-in-lucam
+  work_alias:
+    author: Thomas Aquinas
+    work: Catena aurea in quatuor Evangelia
+  extent:
+    token: Luke
+    first_chapter: 24
+    first_verse: 50
+    last_chapter: 24
+    last_verse: 53
+  numbering: vulgate
+  basis: Printed scripture lemmas head this complete unit Luke 24:50-53. Body and boundaries checked against
+    the registered facsimile images. The source preserves named patristic voices; Aquinas is compiler.
+    Marginal references and layout omitted with explicit recipe.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.11
+  extent:
+    token: Gen
+    first_chapter: 3
+    first_verse: 17
+    last_chapter: 3
+    last_verse: 17
+  basis: Question 11 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The response explicitly explains its comparison of land and water
+    animals from maledicta terra, the curse of Genesis 3:17; the immediately preceding question 10 also
+    quotes that verse. This is Alcuin's inference about the curse's effects, not an assertion that Genesis
+    itself states that comparison. His supporting Luke 24:43 example is not a second primary edge. The
+    existing inspected transcription state is preserved; this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.18
+  extent:
+    token: Apoc
+    first_chapter: 11
+    first_verse: 3
+    last_chapter: 11
+    last_verse: 7
+  basis: Question 18 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question prints Apocalypse 11:3 and asks why Enoch will die.
+    Verse 3 introduces the two witnesses and verse 7 recounts their death, so the whole witness unit 11:3-7
+    is retained. Identifying Enoch with a witness is Alcuin's interpretation, not a name supplied by the
+    biblical text. The printed introductory reference is preserved without pretending it alone narrates
+    the death. The existing inspected transcription state is preserved; this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.25
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 31
+    last_chapter: 2
+    last_verse: 2
+  basis: Question 25 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question asks why creation was completed in six days; the
+    response joins numerical perfection with omnia perfecta et valde bona. Genesis 1:31 concludes the
+    sixth day as very good and 2:1-2 explicitly states completion and the cessation of work. This contiguous
+    conclusion, spanning the chapter boundary, is the natural unit, not six separately fabricated fragments.
+    The existing inspected transcription state is preserved; this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.61
+  extent:
+    token: Gen
+    first_chapter: 3
+    first_verse: 1
+    last_chapter: 3
+    last_verse: 6
+  basis: Question 61 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question asks why God permitted the temptation despite foreknowing
+    the human assent. The natural narrative is the complete temptation and assent at Genesis 3:1-6. The
+    answer draws a general lesson about trials from that episode; it is not mapped to an incidental later
+    prooftext or only the serpent's first sentence. The existing inspected transcription state is preserved;
+    this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.117
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 21
+    last_chapter: 6
+    last_verse: 21
+  basis: Question 117 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question explains how carnivorous animals could be fed in
+    the ark. Genesis 6:21 explicitly provides all kinds of food for Noah and the animals. Alcuin gives
+    possible explanations, preferring suitable food over extra prey animals; the fragment retains his
+    uncertainty and does not turn those explanations into facts stated by Genesis. The existing inspected
+    transcription state is preserved; this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.120
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 19
+    last_chapter: 6
+    last_verse: 20
+  basis: Question 120 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question asks how different animals were preserved together
+    without fighting. Its response explicitly joins their divinely directed entry to their preservation;
+    Genesis 6:19-20 commands their entry ut vivant and ut possint vivere. This maps Alcuin's explanation
+    of that preservation, without claiming that Scripture explicitly narrates the animals' concord. The
+    existing inspected transcription state is preserved; this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.136
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 13
+    last_chapter: 9
+    last_verse: 14
+  basis: Question 136 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The response infers an answer about pre-flood rain from the rainbow
+    formed by sunlight and a moist cloud. Genesis 9:13-14 expressly places the rainbow in clouds and governs
+    this inference. His tentative videtur and potest wording remains intact; no claim is made that the
+    biblical verses themselves establish the meteorological conclusion. The existing inspected transcription
+    state is preserved; this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.141
+  extent:
+    token: Gen
+    first_chapter: 10
+    first_verse: 32
+    last_chapter: 10
+    last_verse: 32
+  basis: 'Question 141 and its complete response were read and the stated scriptural subject compared
+    with the held canonical Clementine text. The question asks how the world was divided among Noah''s
+    sons and grandsons, the subject expressly summarized in Genesis 10:32: Ab his divisae sunt gentes
+    in terra post diluvium. Alcuin''s tentative assignment of continents is his explanatory interpretation,
+    not geographic wording supplied by that verse. The existing inspected transcription state is preserved;
+    this is not new printed-page collation.'
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.142
+  extent:
+    token: Gen
+    first_chapter: 10
+    first_verse: 1
+    last_chapter: 10
+    last_verse: 32
+  basis: Question 142 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question counts the peoples descended from each son and gives
+    a combined total. Its natural subject is the entire Table of Nations, Genesis 10:1-32, whose three
+    branches and closing summary furnish the count. The whole-table extent is intentional; this is not
+    a single descendant verse, and the comparison with seventy-two disciples supplies no additional primary
+    edge. The existing inspected transcription state is preserved; this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.150
+  extent:
+    token: Gen
+    first_chapter: 11
+    first_verse: 1
+    last_chapter: 11
+    last_verse: 9
+  basis: Question 150 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question asks in which family the original language remained
+    after the division of languages, continuing the preceding question's expressly identified Babel episode.
+    Genesis 11:1-9 is that entire narrative. The response proposes Heber's family and invokes the later
+    cross title as corroboration; these are Alcuin's interpretations, not an assertion that Genesis explicitly
+    identifies the retained language as Hebrew. The existing inspected transcription state is preserved;
+    this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.267
+  extent:
+    token: Gen
+    first_chapter: 42
+    first_verse: 7
+    last_chapter: 45
+    last_verse: 3
+  basis: Question 267 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question expressly surveys Joseph's repeated testing and delay
+    until revealing himself. The natural narrative starts with his feigned estrangement at Genesis 42:7
+    and ends with Ego sum Joseph at 45:3. It spans the intervening tests across chapters; a single search
+    hit or one test would truncate the question's stated scope. The complete source question remains one
+    fragment. The existing inspected transcription state is preserved; this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.274
+  extent:
+    token: Gen
+    first_chapter: 47
+    first_verse: 4
+    last_chapter: 47
+    last_verse: 11
+  basis: Question 274 and its complete response were read and the stated scriptural subject compared with
+    the held canonical Clementine text. The question identifies the settlement land called Gersen/Gesen
+    and Ramesse. The immediately preceding question 273 expressly quotes Genesis 47:3. The following settlement
+    unit names Gessen at 47:4 and 47:6 and Ramesses at 47:11; the contiguous request, grant and installation
+    at 47:4-11 preserves both names. Alcuin's reported geographic identifications remain his source's
+    opinion, not independently established geography. The existing inspected transcription state is preserved;
+    this is not new printed-page collation.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.7
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 16
+    last_chapter: 2
+    last_verse: 17
+  basis: Question 7 and its complete response were read in the held Latin transcription and compared with
+    the canonical Clementine Genesis text. The question directly asks why Adam received a command despite
+    his dominion; the command not to eat is the natural unit. The complete natural question remains one
+    fragment. Existing inspected status is preserved, without a claim of printed-page collation; incidental
+    supporting references do not create other edges.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.62
+  extent:
+    token: Gen
+    first_chapter: 3
+    first_verse: 1
+    last_chapter: 3
+    last_verse: 5
+  basis: Question 62 and its complete response were read in the held Latin transcription and compared
+    with the canonical Clementine Genesis text. The question and response concern whether the speaking
+    serpent understood the words spoken through him; the bounded serpent dialogue is Genesis 3:1-5. The
+    complete natural question remains one fragment. Existing inspected status is preserved, without a
+    claim of printed-page collation; incidental supporting references do not create other edges.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.66
+  extent:
+    token: Gen
+    first_chapter: 3
+    first_verse: 4
+    last_chapter: 3
+    last_verse: 6
+  basis: Question 66 and its complete response were read in the held Latin transcription and compared
+    with the canonical Clementine Genesis text. The question asks how the woman believed the serpent about
+    the forbidden good; the denial, promise and resulting assent form Genesis 3:4-6. The complete natural
+    question remains one fragment. Existing inspected status is preserved, without a claim of printed-page
+    collation; incidental supporting references do not create other edges.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.95
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 18
+    last_chapter: 9
+    last_verse: 19
+  basis: Question 95 and its complete response were read in the held Latin transcription and compared
+    with the canonical Clementine Genesis text. The question concerns the renewed human world through
+    the three sons of Noah; Genesis 9:18-19 names all three and states their worldwide progeny. Its printed
+    Gen. VI merely points to an earlier list of sons and is not the natural extent of this question. The
+    complete natural question remains one fragment. Existing inspected status is preserved, without a
+    claim of printed-page collation; incidental supporting references do not create other edges.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.113
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 15
+    last_chapter: 6
+    last_verse: 16
+  basis: Question 113 and its complete response were read in the held Latin transcription and compared
+    with the canonical Clementine Genesis text. The question asks whether the stated dimensions of the
+    ark could contain the animals and their food; its answer explicitly interprets the cubit used in the
+    ark dimensions. The complete natural question remains one fragment. Existing inspected status is preserved,
+    without a claim of printed-page collation; incidental supporting references do not create other edges.
+- work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.123
+  extent:
+    token: Gen
+    first_chapter: 7
+    first_verse: 21
+    last_chapter: 7
+    last_verse: 23
+  basis: Question 123 and its complete response were read in the held Latin transcription and compared
+    with the canonical Clementine Genesis text. The question directly asks why land animals died with
+    humanity rather than aquatic animals, explaining the land-breathing qualification of the flood deaths.
+    The complete natural question remains one fragment. Existing inspected status is preserved, without
+    a claim of printed-page collation; incidental supporting references do not create other edges.
+- passage_id: passage.augustine.de-civitate-dei.dods-1871.20.14
+  work_id: work.augustine.de-civitate-dei
+  work_alias:
+    author: Augustine of Hippo
+    work: De civitate Dei
+  numbering: vulgate
+  extent:
+    token: Apoc
+    first_chapter: 20
+    first_verse: 12
+    last_chapter: 20
+    last_verse: 12
+  text_date: 413
+  text_date_basis: The retained Dods 1871 volume I introduction, artifact artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf
+    lines 239-243, dates composition of the work from 413 to 426. This ordering key uses the first year
+    of that stated range, as composed_year does for work records; it does not establish the exact year
+    of Books XX-XXI. The work record has no composed field and its existing reviewed consumer bindings
+    are preserved.
+  basis: The complete held excerpt at Dods volume II lines 14930-14935 explains the single book opened
+    for judgment. The surrounding lines 14914-14930 quote and explicitly discuss Apocalypse 20:12. Only
+    the retained explanatory sentence is mapped here, not the whole chapter on 20:11-15; its inspected
+    evidence status remains unchanged.
+- passage_id: passage.augustine.de-civitate-dei.dods-1871.21.23
+  work_id: work.augustine.de-civitate-dei
+  work_alias:
+    author: Augustine of Hippo
+    work: De civitate Dei
+  numbering: vulgate
+  extent:
+    token: Matt
+    first_chapter: 25
+    first_verse: 46
+    last_chapter: 25
+    last_verse: 46
+  text_date: 413
+  text_date_basis: The retained Dods 1871 volume I introduction, artifact artifact.augustine.de-civitate-dei.dods-1871.pg45304-body-lf
+    lines 239-243, dates composition of the work from 413 to 426. This ordering key uses the first year
+    of that stated range, as composed_year does for work records; it does not establish the exact year
+    of Books XX-XXI. The work record has no composed field and its existing reviewed consumer bindings
+    are preserved.
+  basis: The complete held excerpt at Dods volume II lines 18006-18009 explains why eternal punishment
+    and eternal life in the same sentence bear corresponding duration. Lines 18001-18006 quote Matthew
+    25:46 immediately before the excerpt. The excerpt is mapped to that directly expounded verse, not
+    every other prooftext in the chapter; its inspected evidence status remains unchanged.
+- passage_id: passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.1cor-1-5
+  work_id: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas
+  work_alias:
+    author: Cornelius a Lapide
+    work: Commentaria in Scripturam Sacram
+  numbering: vulgate
+  extent:
+    token: 1Cor
+    first_chapter: 1
+    first_verse: 5
+    last_chapter: 1
+    last_verse: 5
+  composition_date_unestablished: The 1908 title and commentary pages identify the historical English
+    expression, not the date of composition of the Latin comment; no composition date has been established
+    in this acquisition.
+  basis: 'Volume 7, PDF page 16: the explicit verse number and opening biblical lemma identify 1 Corinthians
+    1:5; the complete block ends before the next verse-comment heading. Checked against the scan. Cobb’s
+    abridged historical English translation is credited by the edition; translator’s preface is not attributed
+    to Lapide.'
+- passage_id: passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.1cor-1-7
+  work_id: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas
+  work_alias:
+    author: Cornelius a Lapide
+    work: Commentaria in Scripturam Sacram
+  numbering: vulgate
+  extent:
+    token: 1Cor
+    first_chapter: 1
+    first_verse: 7
+    last_chapter: 1
+    last_verse: 7
+  composition_date_unestablished: The 1908 title and commentary pages identify the historical English
+    expression, not the date of composition of the Latin comment; no composition date has been established
+    in this acquisition.
+  basis: 'Volume 7, PDF page 16: the explicit verse number and opening biblical lemma identify 1 Corinthians
+    1:7; the complete block ends before the next verse-comment heading. Checked against the scan. Cobb’s
+    abridged historical English translation is credited by the edition; translator’s preface is not attributed
+    to Lapide.'
+- passage_id: passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.1cor-1-16
+  work_id: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas
+  work_alias:
+    author: Cornelius a Lapide
+    work: Commentaria in Scripturam Sacram
+  numbering: vulgate
+  extent:
+    token: 1Cor
+    first_chapter: 1
+    first_verse: 16
+    last_chapter: 1
+    last_verse: 16
+  composition_date_unestablished: The 1908 title and commentary pages identify the historical English
+    expression, not the date of composition of the Latin comment; no composition date has been established
+    in this acquisition.
+  basis: 'Volume 7, PDF page 22: the explicit verse number and opening biblical lemma identify 1 Corinthians
+    1:16; the complete block ends before the next verse-comment heading. Checked against the scan. Cobb’s
+    abridged historical English translation is credited by the edition; translator’s preface is not attributed
+    to Lapide.'
+- passage_id: passage.cornelius-a-lapide.commentaria-in-quatuor-evangelia.1908-grant-mossman.matthew-20-17
+  work_id: work.cornelius-a-lapide.commentaria-in-quatuor-evangelia
+  work_alias:
+    author: Cornelius a Lapide
+    work: Commentaria in Scripturam Sacram
+  numbering: vulgate
+  extent:
+    token: Matt
+    first_chapter: 20
+    first_verse: 17
+    last_chapter: 20
+    last_verse: 17
+  composition_date_unestablished: The 1908 title and commentary pages identify the historical English
+    expression, not the date of composition of the Latin comment; no composition date has been established
+    in this acquisition.
+  basis: 'Volume 2, PDF page 391: the explicit verse number and opening biblical lemma identify Matthew
+    20:17; the complete block ends before the next verse-comment heading. Checked against the scan. Mossman’s
+    historical English translation is credited by the edition.'
+- passage_id: passage.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.1cor-13-13
+  work_id: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas
+  work_alias:
+    author: Cornelius a Lapide
+    work: Commentaria in Scripturam Sacram
+  numbering: vulgate
+  extent:
+    token: 1Cor
+    first_chapter: 13
+    first_verse: 13
+    last_chapter: 13
+    last_verse: 13
+  composition_date_unestablished: The 1908 title and commentary pages identify the historical English
+    expression, not the date of composition of the Latin comment; no composition date has been established
+    in this acquisition.
+  basis: Volume 7, printed 334–335 / PDF 344–345 explicitly heads the whole final chapter XIII unit Ver.
+    13; the next unit is CHAPTER XIV. Complete unit and its boundaries checked against both images. Incidental
+    citations within the argument are not independent primary extents. W. F. Cobb’s abridged historical
+    English translation is credited in the edition.
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.05-07-07
+  work_id: work.thomas-aquinas.catena-aurea-in-matthaeum
+  work_alias:
+    author: Thomas Aquinas
+    work: Catena aurea in quatuor Evangelia
+  extent:
+    token: Matt
+    first_chapter: 5
+    first_verse: 7
+    last_chapter: 5
+    last_verse: 7
+  basis: The source itself heads this whole block Matthew 5:7-7; these Gospel labels correspond to the
+    canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler;
+    the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile
+    collation.
+  numbering: vulgate
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.09-23-26
+  work_id: work.thomas-aquinas.catena-aurea-in-matthaeum
+  work_alias:
+    author: Thomas Aquinas
+    work: Catena aurea in quatuor Evangelia
+  extent:
+    token: Matt
+    first_chapter: 9
+    first_verse: 23
+    last_chapter: 9
+    last_verse: 26
+  basis: The source itself heads this whole block Matthew 9:23-26; these Gospel labels correspond to the
+    canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler;
+    the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile
+    collation.
+  numbering: vulgate
+- passage_id: passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.16-20-21
+  work_id: work.thomas-aquinas.catena-aurea-in-matthaeum
+  work_alias:
+    author: Thomas Aquinas
+    work: Catena aurea in quatuor Evangelia
+  extent:
+    token: Matt
+    first_chapter: 16
+    first_verse: 20
+    last_chapter: 16
+    last_verse: 21
+  basis: The source itself heads this whole block Matthew 16:20-21; these Gospel labels correspond to
+    the canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is
+    compiler; the text is not attributed to him as sole author. Verification is of CCEL digital wording,
+    not facsimile collation.
+  numbering: vulgate
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-21-22
+  work_id: work.thomas-aquinas.catena-aurea-in-marcum
+  work_alias:
+    author: Thomas Aquinas
+    work: Catena aurea in quatuor Evangelia
+  extent:
+    token: Mark
+    first_chapter: 1
+    first_verse: 21
+    last_chapter: 1
+    last_verse: 22
+  basis: The source itself heads this whole block Mark 1:21-22; these Gospel labels correspond to the
+    canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler;
+    the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile
+    collation.
+  numbering: vulgate
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.04-30-34
+  work_id: work.thomas-aquinas.catena-aurea-in-marcum
+  work_alias:
+    author: Thomas Aquinas
+    work: Catena aurea in quatuor Evangelia
+  extent:
+    token: Mark
+    first_chapter: 4
+    first_verse: 30
+    last_chapter: 4
+    last_verse: 34
+  basis: The source itself heads this whole block Mark 4:30-34; these Gospel labels correspond to the
+    canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler;
+    the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile
+    collation.
+  numbering: vulgate
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.10-41-45
+  work_id: work.thomas-aquinas.catena-aurea-in-marcum
+  work_alias:
+    author: Thomas Aquinas
+    work: Catena aurea in quatuor Evangelia
+  extent:
+    token: Mark
+    first_chapter: 10
+    first_verse: 41
+    last_chapter: 10
+    last_verse: 45
+  basis: The source itself heads this whole block Mark 10:41-45; these Gospel labels correspond to the
+    canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler;
+    the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile
+    collation.
+  numbering: vulgate
+- passage_id: passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.16-09-13
+  work_id: work.thomas-aquinas.catena-aurea-in-marcum
+  work_alias:
+    author: Thomas Aquinas
+    work: Catena aurea in quatuor Evangelia
+  extent:
+    token: Mark
+    first_chapter: 16
+    first_verse: 9
+    last_chapter: 16
+    last_verse: 13
+  basis: The source itself heads this whole block Mark 16:9-13; these Gospel labels correspond to the
+    canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler;
+    the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile
+    collation.
+  numbering: vulgate
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.6
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 9
+    last_chapter: 2
+    last_verse: 9
+  basis: 'Question 6 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 2:9. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.9
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 26
+    last_chapter: 1
+    last_verse: 31
+  basis: 'Question 9 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:26-31. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.26
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 1
+    last_chapter: 1
+    last_verse: 1
+  basis: 'Question 26 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:1. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.30
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 2
+    last_chapter: 1
+    last_verse: 2
+  basis: 'Question 30 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:2. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page. The question explicitly follows the Septuagint wording invisibilis et incomposita; the
+    canonical Vulgate has inanis et vacua at the same Genesis 1:2 locus.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.31
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 3
+    last_chapter: 1
+    last_verse: 3
+  basis: 'Question 31 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:3. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.32
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 5
+    last_chapter: 1
+    last_verse: 5
+  basis: 'Question 32 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:5. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.33
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 3
+    last_chapter: 1
+    last_verse: 5
+  basis: 'Question 33 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:3-5. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.34
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 5
+    last_chapter: 1
+    last_verse: 5
+  basis: 'Question 34 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:5. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.37
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 26
+    last_chapter: 1
+    last_verse: 26
+  basis: 'Question 37 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:26. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.38
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 26
+    last_chapter: 1
+    last_verse: 26
+  basis: 'Question 38 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:26. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.39
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 26
+    last_chapter: 1
+    last_verse: 26
+  basis: 'Question 39 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:26. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.40
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 26
+    last_chapter: 1
+    last_verse: 27
+  basis: 'Question 40 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:26-27. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.41
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 31
+    last_chapter: 1
+    last_verse: 31
+  basis: 'Question 41 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 1:31. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.43
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 3
+    last_chapter: 2
+    last_verse: 3
+  basis: 'Question 43 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 2:3. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.45
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 4
+    last_chapter: 2
+    last_verse: 4
+  basis: 'Question 45 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 2:4. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.47
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 5
+    last_chapter: 2
+    last_verse: 5
+  basis: 'Question 47 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 2:5. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.50
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 7
+    last_chapter: 2
+    last_verse: 7
+  basis: 'Question 50 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 2:7. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.53
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 17
+    last_chapter: 2
+    last_verse: 17
+  basis: 'Question 53 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 2:17. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.55
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 19
+    last_chapter: 2
+    last_verse: 20
+  basis: 'Question 55 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 2:19-20. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.57
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 2
+    first_verse: 21
+    last_chapter: 2
+    last_verse: 22
+  basis: 'Question 57 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 2:21-22. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.73
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 3
+    first_verse: 8
+    last_chapter: 3
+    last_verse: 8
+  basis: 'Question 73 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 3:8. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.76
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 3
+    first_verse: 15
+    last_chapter: 3
+    last_verse: 15
+  basis: 'Question 76 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 3:15. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page. The printed parenthesis says vers. 7, but the question and answer expressly identify
+    the seed of the woman and serpent: canonical Genesis 3:15. The incorrect printed number remains in
+    the source text.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.80
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 3
+    first_verse: 21
+    last_chapter: 3
+    last_verse: 21
+  basis: 'Question 80 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 3:21. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.84
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 4
+    first_verse: 7
+    last_chapter: 4
+    last_verse: 7
+  basis: 'Question 84 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 4:7. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.85
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 4
+    first_verse: 7
+    last_chapter: 4
+    last_verse: 7
+  basis: 'Question 85 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 4:7. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.86
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 4
+    first_verse: 9
+    last_chapter: 4
+    last_verse: 9
+  basis: 'Question 86 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 4:9. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.87
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 4
+    first_verse: 10
+    last_chapter: 4
+    last_verse: 10
+  basis: 'Question 87 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 4:10. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.89
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 4
+    first_verse: 15
+    last_chapter: 4
+    last_verse: 15
+  basis: 'Question 89 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 4:15. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.90
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 4
+    first_verse: 14
+    last_chapter: 4
+    last_verse: 14
+  basis: 'Question 90 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 4:14. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.91
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 4
+    first_verse: 15
+    last_chapter: 4
+    last_verse: 15
+  basis: 'Question 91 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 4:15. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page. The question quotes the sevenfold punishment of whoever kills Cain, canonical Genesis
+    4:15. Its printed vers. 24 instead belongs to the following Lamech question; that printed number is
+    retained rather than silently repaired in the source.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.92
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 4
+    first_verse: 24
+    last_chapter: 4
+    last_verse: 24
+  basis: 'Question 92 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 4:24. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.98
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 3
+    last_chapter: 6
+    last_verse: 3
+  basis: 'Question 98 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:3. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.99
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 6
+    last_chapter: 6
+    last_verse: 6
+  basis: 'Question 99 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:6. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.100
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 9
+    last_chapter: 6
+    last_verse: 9
+  basis: 'Question 100 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:9. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.101
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 13
+    last_chapter: 6
+    last_verse: 13
+  basis: 'Question 101 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:13. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.102
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 13
+    last_chapter: 6
+    last_verse: 13
+  basis: 'Question 102 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:13. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.103
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 14
+    last_chapter: 6
+    last_verse: 14
+  basis: 'Question 103 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:14. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.104
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 14
+    last_chapter: 6
+    last_verse: 14
+  basis: 'Question 104 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:14. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.105
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 15
+    last_chapter: 6
+    last_verse: 16
+  basis: 'Question 105 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:15-16. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.106
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 16
+    last_chapter: 6
+    last_verse: 16
+  basis: 'Question 106 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:16. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.107
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 16
+    last_chapter: 6
+    last_verse: 16
+  basis: 'Question 107 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:16. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.108
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 15
+    last_chapter: 6
+    last_verse: 15
+  basis: 'Question 108 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:15. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.109
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 6
+    first_verse: 16
+    last_chapter: 6
+    last_verse: 16
+  basis: 'Question 109 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 6:16. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.111
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 7
+    first_verse: 2
+    last_chapter: 7
+    last_verse: 2
+  basis: 'Question 111 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 7:2. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.112
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 7
+    first_verse: 2
+    last_chapter: 7
+    last_verse: 2
+  basis: 'Question 112 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 7:2. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.116
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 7
+    first_verse: 16
+    last_chapter: 7
+    last_verse: 16
+  basis: 'Question 116 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 7:16. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.118
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 7
+    first_verse: 15
+    last_chapter: 7
+    last_verse: 15
+  basis: 'Question 118 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 7:15. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.119
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 7
+    first_verse: 19
+    last_chapter: 7
+    last_verse: 20
+  basis: 'Question 119 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 7:19-20. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.122
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 8
+    first_verse: 6
+    last_chapter: 8
+    last_verse: 9
+  basis: 'Question 122 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 8:6-9. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.128
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 8
+    first_verse: 11
+    last_chapter: 8
+    last_verse: 11
+  basis: 'Question 128 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 8:11. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.132
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 3
+    last_chapter: 9
+    last_verse: 3
+  basis: 'Question 132 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 9:3. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.133
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 13
+    last_chapter: 9
+    last_verse: 13
+  basis: 'Question 133 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 9:13. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.134
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 13
+    last_chapter: 9
+    last_verse: 13
+  basis: 'Question 134 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 9:13. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.135
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 13
+    last_chapter: 9
+    last_verse: 13
+  basis: 'Question 135 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 9:13. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.138
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 21
+    last_chapter: 9
+    last_verse: 21
+  basis: 'Question 138 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 9:21. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.139
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 25
+    last_chapter: 9
+    last_verse: 25
+  basis: 'Question 139 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 9:25. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.140
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 9
+    first_verse: 5
+    last_chapter: 9
+    last_verse: 5
+  basis: 'Question 140 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 9:5. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page. The question quotes blood required from the hand of a brother, canonical Genesis 9:5.
+    Its printed Gen. VI is inconsistent with that lemma and remains unchanged in the source.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.148
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 10
+    first_verse: 8
+    last_chapter: 10
+    last_verse: 10
+  basis: 'Question 148 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 10:8-10. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.149
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 11
+    first_verse: 4
+    last_chapter: 11
+    last_verse: 9
+  basis: 'Question 149 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 11:4-9. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.156
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 12
+    first_verse: 15
+    last_chapter: 12
+    last_verse: 17
+  basis: 'Question 156 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 12:15-17. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.161
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 13
+    first_verse: 14
+    last_chapter: 13
+    last_verse: 14
+  basis: 'Question 161 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 13:14. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.163
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 14
+    first_verse: 14
+    last_chapter: 14
+    last_verse: 14
+  basis: 'Question 163 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 14:14. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.167
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 15
+    first_verse: 9
+    last_chapter: 15
+    last_verse: 12
+  basis: 'Question 167 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 15:9-12. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.171
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 16
+    first_verse: 1
+    last_chapter: 16
+    last_verse: 4
+  basis: 'Question 171 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 16:1-4. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page. The question concerns Abraham and Hagar while Sarah lives, canonical Genesis 16:1-4.
+    The printed Gen. XV is inconsistent with the episode and remains in the source.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.174
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 17
+    first_verse: 24
+    last_chapter: 17
+    last_verse: 24
+  basis: 'Question 174 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 17:24. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.175
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 17
+    first_verse: 17
+    last_chapter: 17
+    last_verse: 17
+  basis: 'Question 175 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 17:17. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.178
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 18
+    first_verse: 2
+    last_chapter: 18
+    last_verse: 3
+  basis: 'Question 178 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 18:2-3. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.181
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 18
+    first_verse: 26
+    last_chapter: 18
+    last_verse: 32
+  basis: 'Question 181 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 18:26-32. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.183
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 19
+    first_verse: 24
+    last_chapter: 19
+    last_verse: 25
+  basis: 'Question 183 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 19:24-25. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.185
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 19
+    first_verse: 2
+    last_chapter: 19
+    last_verse: 3
+  basis: 'Question 185 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 19:2-3. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.187
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 19
+    first_verse: 24
+    last_chapter: 19
+    last_verse: 24
+  basis: 'Question 187 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 19:24. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.188
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 19
+    first_verse: 26
+    last_chapter: 19
+    last_verse: 26
+  basis: 'Question 188 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 19:26. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.189
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 19
+    first_verse: 31
+    last_chapter: 19
+    last_verse: 36
+  basis: 'Question 189 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 19:31-36. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.190
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 19
+    first_verse: 31
+    last_chapter: 19
+    last_verse: 36
+  basis: 'Question 190 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 19:31-36. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.194
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 20
+    first_verse: 3
+    last_chapter: 20
+    last_verse: 3
+  basis: 'Question 194 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 20:3. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.196
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 21
+    first_verse: 9
+    last_chapter: 21
+    last_verse: 10
+  basis: 'Question 196 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 21:9-10. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.197
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 21
+    first_verse: 8
+    last_chapter: 21
+    last_verse: 8
+  basis: 'Question 197 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 21:8. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.199
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 21
+    first_verse: 16
+    last_chapter: 21
+    last_verse: 17
+  basis: 'Question 199 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 21:16-17. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.200
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 21
+    first_verse: 29
+    last_chapter: 21
+    last_verse: 33
+  basis: 'Question 200 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 21:29-33. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.204
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 22
+    first_verse: 3
+    last_chapter: 22
+    last_verse: 4
+  basis: 'Question 204 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 22:3-4. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.207
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 22
+    first_verse: 14
+    last_chapter: 22
+    last_verse: 14
+  basis: 'Question 207 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 22:14. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.208
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 22
+    first_verse: 15
+    last_chapter: 22
+    last_verse: 16
+  basis: 'Question 208 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 22:15-16. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.209
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 22
+    first_verse: 17
+    last_chapter: 22
+    last_verse: 17
+  basis: 'Question 209 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 22:17. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.210
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 22
+    first_verse: 20
+    last_chapter: 22
+    last_verse: 23
+  basis: 'Question 210 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 22:20-23. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.213
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 24
+    first_verse: 14
+    last_chapter: 24
+    last_verse: 14
+  basis: 'Question 213 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 24:14. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.214
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 24
+    first_verse: 60
+    last_chapter: 24
+    last_verse: 60
+  basis: 'Question 214 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 24:60. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.215
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 24
+    first_verse: 63
+    last_chapter: 24
+    last_verse: 63
+  basis: 'Question 215 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 24:63. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.216
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 24
+    first_verse: 62
+    last_chapter: 24
+    last_verse: 62
+  basis: 'Question 216 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 24:62. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page. The question asks about Isaac living in the southern land as Rebecca arrives, canonical
+    Genesis 24:62. Its response carries vers. 65, but that verse is the veil episode; the discrepancy
+    remains in the source.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.217
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 24
+    first_verse: 65
+    last_chapter: 24
+    last_verse: 65
+  basis: 'Question 217 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 24:65. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.219
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 25
+    first_verse: 1
+    last_chapter: 25
+    last_verse: 6
+  basis: 'Question 219 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 25:1-6. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.221
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 25
+    first_verse: 8
+    last_chapter: 25
+    last_verse: 8
+  basis: 'Question 221 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 25:8. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.222
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 25
+    first_verse: 18
+    last_chapter: 25
+    last_verse: 18
+  basis: 'Question 222 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 25:18. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.223
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 25
+    first_verse: 16
+    last_chapter: 25
+    last_verse: 16
+  basis: 'Question 223 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 25:16. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.226
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 25
+    first_verse: 23
+    last_chapter: 25
+    last_verse: 23
+  basis: 'Question 226 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 25:23. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.230
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 28
+    first_verse: 18
+    last_chapter: 28
+    last_verse: 18
+  basis: 'Question 230 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 28:18. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.232
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 29
+    first_verse: 25
+    last_chapter: 29
+    last_verse: 30
+  basis: 'Question 232 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 29:25-30. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.234
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 30
+    first_verse: 37
+    last_chapter: 30
+    last_verse: 39
+  basis: 'Question 234 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 30:37-39. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.235
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 30
+    first_verse: 41
+    last_chapter: 30
+    last_verse: 42
+  basis: 'Question 235 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 30:41-42. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.236
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 30
+    first_verse: 37
+    last_chapter: 30
+    last_verse: 43
+  basis: 'Question 236 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 30:37-43. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.238
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 31
+    first_verse: 45
+    last_chapter: 31
+    last_verse: 45
+  basis: 'Question 238 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 31:45. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.239
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 31
+    first_verse: 53
+    last_chapter: 31
+    last_verse: 53
+  basis: 'Question 239 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 31:53. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.241
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 32
+    first_verse: 7
+    last_chapter: 32
+    last_verse: 12
+  basis: 'Question 241 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 32:7-12. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.242
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 32
+    first_verse: 25
+    last_chapter: 32
+    last_verse: 29
+  basis: 'Question 242 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 32:25-29. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.248
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 35
+    first_verse: 10
+    last_chapter: 35
+    last_verse: 10
+  basis: 'Question 248 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 35:10. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.249
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 35
+    first_verse: 19
+    last_chapter: 35
+    last_verse: 20
+  basis: 'Question 249 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 35:19-20. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.250
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 35
+    first_verse: 21
+    last_chapter: 35
+    last_verse: 21
+  basis: 'Question 250 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 35:21. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.257
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 38
+    first_verse: 1
+    last_chapter: 38
+    last_verse: 30
+  basis: 'Question 257 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 38:1-30. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.258
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 38
+    first_verse: 14
+    last_chapter: 38
+    last_verse: 14
+  basis: 'Question 258 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 38:14. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.260
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 38
+    first_verse: 29
+    last_chapter: 38
+    last_verse: 30
+  basis: 'Question 260 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 38:29-30. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.262
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 40
+    first_verse: 10
+    last_chapter: 40
+    last_verse: 10
+  basis: 'Question 262 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 40:10. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.269
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 46
+    first_verse: 26
+    last_chapter: 46
+    last_verse: 26
+  basis: 'Question 269 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 46:26. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.270
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 46
+    first_verse: 15
+    last_chapter: 46
+    last_verse: 15
+  basis: 'Question 270 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 46:15. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.271
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 46
+    first_verse: 26
+    last_chapter: 46
+    last_verse: 27
+  basis: 'Question 271 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 46:26-27. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.276
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 47
+    first_verse: 29
+    last_chapter: 47
+    last_verse: 30
+  basis: 'Question 276 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 47:29-30. The address was
+    checked against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.279
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 48
+    first_verse: 7
+    last_chapter: 48
+    last_verse: 7
+  basis: 'Question 279 and its complete response were read in the held Latin transcription. The question''s
+    own quoted lemma or expressly named narrative action establishes Genesis 48:7. The address was checked
+    against the held Clementine Genesis verse text (edition catholic-church.vulgata-clementina.ebible-latvuc);
+    it is not inferred from an incidental prooftext or from the position of a search hit. The complete
+    question remains one fragment; supporting citations in its answer do not create extra edges. The existing
+    inspected state is preserved: this is a transcription reading, not a new collation against Migne''s
+    printed page.'
+- passage_id: passage.alcuin-of-york.interrogationes-et-responsiones-in-genesim.latin-migne-pl-100.16
+  work_id: work.alcuin-of-york.interrogationes-et-responsiones-in-genesim
+  work_alias:
+    author: Alcuin of York
+    work: Interrogationes et responsiones in Genesim
+  numbering: vulgate
+  extent:
+    token: Matt
+    first_chapter: 23
+    first_verse: 35
+    last_chapter: 23
+    last_verse: 35
+  basis: Question 16 expressly asks why the Gospel names Abel just, cites Matthew 23:35, and answers with
+    Abel's virginity, priesthood and martyrdom. The question's direct Gospel lemma governs this natural
+    unit even though the collection is named Questions on Genesis. The complete Latin question and answer
+    were read as held; their existing inspected state is preserved without claiming printed-page collation.
+- passage_id: passage.bede.in-lucae-evangelium-expositio.latin-migne-corpus-corporum-web-2026-07-25.vi-lk-24.12
+  work_id: work.bede.in-lucae-evangelium-expositio
+  work_alias:
+    author: Bede the Venerable
+    work: In Lucae evangelium expositio
+  numbering: vulgate
+  extent:
+    token: Luke
+    first_chapter: 24
+    first_verse: 12
+    last_chapter: 24
+    last_verse: 12
+  composition_date_unestablished: The held work, edition and checked passage records were reviewed on
+    2026-11-07. They establish this text's identity but do not establish its composition date. The printing
+    and retrieval dates are not composition evidence.
+  basis: The verified passage identifies Luke 24:12 and PL 92 columns 625A-B as its lemma and witness
+    location. The three checked sentences directly explain Peter's stooping and subsequent entry. John's
+    parallel supplies the harmonization, not a second independent primary extent. Source wording and its
+    repeated ingressum remain unchanged.
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.3-4
+  work_id: work.gregory-the-great.homiliae-in-evangelia
+  work_alias:
+    author: Gregory the Great
+    work: Homiliae in Evangelia
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 7
+    last_chapter: 20
+    last_verse: 7
+  composition_date_unestablished: The held work, edition and checked passage records were reviewed on
+    2026-11-07. They establish this text's identity but do not establish its composition date. The printing
+    and retrieval dates are not composition evidence.
+  basis: Homily XXII sections 3-4 expound the separated, wrapped head-cloth at John 20:7. The checked
+    excerpt, its context and the five exact transcription segments establish this natural extent. The
+    Pauline head-of-Christ citation supports the allegory and is not a separate primary commentary edge.
+    This is Gregory's allegorical reading, not an argument against theft.
+- passage_id: passage.gregory-the-great.homiliae-in-evangelia.latin-migne-corpus-corporum-web-2026-07-25.22.5
+  work_id: work.gregory-the-great.homiliae-in-evangelia
+  work_alias:
+    author: Gregory the Great
+    work: Homiliae in Evangelia
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 8
+    last_chapter: 20
+    last_verse: 9
+  composition_date_unestablished: The held work, edition and checked passage records were reviewed on
+    2026-11-07. They establish this text's identity but do not establish its composition date. The printing
+    and retrieval dates are not composition evidence.
+  basis: Homily XXII section 5 directly expounds Et vidit et credidit and its immediately following Nondum
+    enim sciebant Scripturas. The checked text therefore reaches John 20:8-9, not only verse 8. The homily's
+    recorded lection is John 20:1-9; no claim is made to hold all that lection's exposition.
+- passage_id: passage.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.20.1-anti-theft
+  work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+  work_alias:
+    author: Thomas Aquinas
+    work: Super Evangelium S. Ioannis lectura
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 6
+    last_chapter: 20
+    last_verse: 7
+  composition_date_unestablished: The held work, edition and checked passage records were reviewed on
+    2026-11-07. They establish this text's identity but do not establish its composition date. The printing
+    and retrieval dates are not composition evidence.
+  basis: The checked excerpt of chapter 20 lectio 1, source section 87552, explains the linen clothes
+    and the separate wrapped head-cloth at John 20:6-7. It preserves Aquinas's attribution to Chrysostom
+    and does not create separate witnesses for the authorities he cites. References to burial spices and
+    guards are supporting arguments, not additional primary extents.
+- passage_id: passage.thomas-aquinas.super-evangelium-ioannis-lectura.latin-corpusthomisticum-web-2026-07-25.20.1-credidit
+  work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+  work_alias:
+    author: Thomas Aquinas
+    work: Super Evangelium S. Ioannis lectura
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 8
+    last_chapter: 20
+    last_verse: 9
+  composition_date_unestablished: The held work, edition and checked passage records were reviewed on
+    2026-11-07. They establish this text's identity but do not establish its composition date. The printing
+    and retrieval dates are not composition evidence.
+  basis: The checked chapter 20 lectio 1 excerpt explicitly expounds John 20:8 and 20:9 under both Augustine's
+    and Chrysostom's readings. It is an excerpt with an omitted passage between transcription segments
+    2 and 3, as the source record states; the two alternatives and their attribution are preserved. It
+    is not the complete lectio, and no incidental prooftext creates another edge.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-85.4
+  work_id: work.john-chrysostom.homilies-on-john
+  constituent_of: edition.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889
+  work_alias:
+    author: John Chrysostom
+    work: Homiliae in Ioannem
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 3
+    last_chapter: 20
+    last_verse: 8
+  composition_date_unestablished: The held work, edition and checked passage records were reviewed on
+    2026-11-07. They establish this text's identity but do not establish its composition date. The printing
+    and retrieval dates are not composition evidence.
+  basis: 'NPNF I/14 printed pages 320-321, Homily LXXXV.4: the checked eight-sentence excerpt expounds
+    the disciples'' run, entry, cloths and belief at John 20:3-8. The section''s narrative and the printed
+    footnote 11 supply the local lemma; the homily''s broader John 19:16-18 opening heading does not misplace
+    this later exposition. This passage remains owned by its NPNF anthology, while the intellectual work
+    and author are Chrysostom''s; the edition supplies the historical English translators.'
+- passage_id: passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-86.1
+  work_id: work.john-chrysostom.homilies-on-john
+  constituent_of: edition.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889
+  work_alias:
+    author: John Chrysostom
+    work: Homiliae in Ioannem
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 10
+    last_chapter: 20
+    last_verse: 11
+  composition_date_unestablished: The held work, edition and checked passage records were reviewed on
+    2026-11-07. They establish this text's identity but do not establish its composition date. The printing
+    and retrieval dates are not composition evidence.
+  basis: NPNF I/14 printed page 323 explicitly heads Homily LXXXVI with John 20:10-11. The two checked
+    sentences contrast the disciples' departure and Mary's remaining tears under that lemma. The reference
+    back to cloths and belief explains the contrast and does not replace the actual local extent with
+    John 20:8.
+- passage_id: passage.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889.chrysostom-in-io-hom-87
+  work_id: work.john-chrysostom.homilies-on-john
+  constituent_of: edition.nicene-and-post-nicene-fathers.series-1-volume-14.new-york-1889
+  work_alias:
+    author: John Chrysostom
+    work: Homiliae in Ioannem
+  numbering: vulgate
+  extent:
+    token: John
+    first_chapter: 20
+    first_verse: 29
+    last_chapter: 20
+    last_verse: 29
+  composition_date_unestablished: The held work, edition and checked passage records were reviewed on
+    2026-11-07. They establish this text's identity but do not establish its composition date. The printing
+    and retrieval dates are not composition evidence.
+  basis: 'NPNF I/14 printed page 327, Homily LXXXVII: the checked passage context identifies this objection
+    and answer as exposition of the blessing of those who have not seen and believed (John 20:29). Its
+    retrospective mention of the disciples and cloths is illustrative; it is not indexed as an additional
+    direct exposition of John 20:8.'
 - passage_id: passage.bede.explanatio-apocalypsis.1878-marshall-parker.1-7-14
   work_id: work.bede.explanatio-apocalypsis
   work_alias:
@@ -980,149 +3931,6 @@ fragments:
     2 Corinthians 12 and on the kinds of vision. The extent is declared at Genesis 2:8, where paradise
     is planted, because that is the Genesis question the book argues from; the anchor is this project's
     inference and not Migne's.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-1
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 1
-    first_verse: 2
-    last_chapter: 1
-    last_verse: 30
-  basis: The printed lemmata run from "V. 2a. And the earth was waste and void" to "V. 30. And every
-    green herb". The untitled introduction that opens the chapter argues about the age of the world
-    and the order of the six days, but it prints no lemma at 1:1 and the extent is not widened to
-    reach it; nor is there a lemma at 1:31.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-2
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 2
-    first_verse: 2
-    last_chapter: 2
-    last_verse: 25
-  basis: The printed lemmata run from verse 2 to verse 25, which is the last verse of the chapter.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-3
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 3
-    first_verse: 1
-    last_chapter: 3
-    last_verse: 23
-  basis: The printed lemmata run from verse 1 to verse 23; the chapter has 24 verses and the printing
-    reaches no lemma at the last.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-4-volume-1
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 4
-    first_verse: 1
-    last_chapter: 4
-    last_verse: 14
-  basis: Volume I breaks off inside the fourth chapter. Its lemmata run from verse 1 to verse 14,
-    under the printed part-headings on the birth, marriage and offerings of Cain and Abel. The rest
-    of the chapter is in volume II and stands here as its own fragment.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-4-volume-2
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 4
-    first_verse: 8
-    last_chapter: 4
-    last_verse: 26
-  basis: 'Volume II resumes the fourth chapter at its Part IV, "Cain murders his brother; called
-    to account", and its lemmata run from verse 8 to verse 26. It overlaps volume I at verses 8
-    to 14 because the two volumes divide the chapter there, and the overlap is left standing rather
-    than trimmed: trimming would cut a printed part in half.'
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-5
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 5
-    first_verse: 1
-    last_chapter: 5
-    last_verse: 31
-  basis: The printed lemmata run the whole chapter. The last of them is verse 32 in the English
-    numbering Lenker prints, and the Clementine Vulgate this project anchors in ends the chapter
-    at verse 31; Rule 3 stores the CANONICAL address, so the extent is stated at 5:31 and the printing's
-    own last lemma is recorded here rather than silently renumbered.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-6
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 6
-    first_verse: 1
-    last_chapter: 6
-    last_verse: 22
-  basis: The printed lemmata run the whole chapter, from verse 1 to verse 22.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-7
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 7
-    first_verse: 1
-    last_chapter: 7
-    last_verse: 24
-  basis: The printed lemmata run the whole chapter, from verse 1 to verse 24.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-8
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 8
-    first_verse: 1
-    last_chapter: 8
-    last_verse: 22
-  basis: The printed lemmata run the whole chapter, from verse 1 to verse 22.
-- passage_id: passage.martin-luther.lectures-on-genesis.lenker-minneapolis-1904.genesis-9
-  work_id: work.martin-luther.lectures-on-genesis
-  work_alias:
-    author: Martin Luther
-    work: Lectures on Genesis
-  numbering: vulgate
-  extent:
-    token: Gen
-    first_chapter: 9
-    first_verse: 1
-    last_chapter: 9
-    last_verse: 29
-  basis: The printed lemmata run the whole chapter, from verse 1 to verse 29, closing on Noah's
-    death.
 - passage_id: passage.ambrose.hexameron.latin-migne-pl-14.1
   work_id: work.ambrose.hexameron
   work_alias:

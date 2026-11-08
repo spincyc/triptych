@@ -1,0 +1,207 @@
+{
+  "schema": "triptych-commentary-acquisition/v1",
+  "audited_on": "2026-11-07",
+  "scope": "Complete offered English Catena Aurea chapter bodies for Matthew and Mark; bounded checked passage admission.",
+  "method": "catena-aurea-ccel-paragraphs-v1",
+  "extractor": "scripts/_catena_aurea.py",
+  "holdings_check": {
+    "method": "tools/tpt commentary-work-index discover --passage Luke 14:1-11 --max-results 0 --json; direct Catena work/edition/artifact aliases and containment inventory searched",
+    "existing_direct_work": "work.thomas-aquinas.catena-aurea-in-lucam",
+    "limit": "Uncapped discover joined only the existing Latin Luke edition, with two restricted HTML artifact records, zero passages, zero segments and no containers; this is not an acquired English Gospel witness."
+  },
+  "sources": [
+    {
+      "work_id": "work.thomas-aquinas.catena-aurea-in-matthaeum",
+      "edition_id": "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel",
+      "source_url": "https://ccel.org/ccel/a/aquinas/catena1.xml",
+      "raw_sha256": "943a6b5fd668ef021877e99f210d96b84abbbe81212fe5627c6bb206f9ce1618",
+      "text_artifact_id": "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a",
+      "text_sha256": "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67",
+      "chapters": 28,
+      "paragraphs": 7187,
+      "candidate_groups": 285,
+      "unparsed_lemma_groups": 8,
+      "candidate_index": "src/sources/works/thomas-aquinas/catena-aurea-in-matthaeum/editions/1842-english-oxford-ccel/artifacts/candidates-fd372a66/candidates.json",
+      "verified_passages": [
+        "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.05-07-07",
+        "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.09-23-26",
+        "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.16-20-21"
+      ]
+    },
+    {
+      "work_id": "work.thomas-aquinas.catena-aurea-in-marcum",
+      "edition_id": "edition.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel",
+      "source_url": "https://ccel.org/ccel/a/aquinas/catena2.xml",
+      "raw_sha256": "69c8f2d198186de50e444c6a618dd3de24d3b89e8af879042b06c5a46c89168f",
+      "text_artifact_id": "artifact.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.text-790ed587",
+      "text_sha256": "790ed587e6cd6ec86df02f97ee8494fb2ddb31923361b972d423aaa318139bbf",
+      "chapters": 16,
+      "paragraphs": 3142,
+      "candidate_groups": 105,
+      "unparsed_lemma_groups": 3,
+      "candidate_index": "src/sources/works/thomas-aquinas/catena-aurea-in-marcum/editions/1842-english-oxford-ccel/artifacts/candidates-756967a9/candidates.json",
+      "verified_passages": [
+        "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-21-22",
+        "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.04-30-34",
+        "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.10-41-45",
+        "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.16-09-13"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "url": "https://www.newmanreader.org/works/fathers/catena.html",
+      "fact": "Historical preface credits Mark Pattison for Matthew, signed J. H. N.; advertisement dated 6 May 1841."
+    },
+    {
+      "url": "https://ccel.org/ccel/a/aquinas/catena2.xml",
+      "fact": "Historical Mark preface credits John Dalgairns; imprint MDCCCXLII."
+    },
+    {
+      "url": "https://ccel.org/about/copyright.html",
+      "fact": "Modern wrapper excluded; no permission asserted over whole XML."
+    },
+    {
+      "url": "https://copyright.gov/circs/circ15a.pdf",
+      "fact": "United States publication-term basis for historical wording."
+    },
+    {
+      "url": "https://bibale.irht.cnrs.fr/553",
+      "fact": "IRHT catalogue search extract gives Matthew 1262-1264, other three Gospel volumes 1264-1268; full endpoint 403."
+    }
+  ],
+  "limits": [
+    "390 mechanical scripture-class groups are finding aids, not 390 verified fragments. Eleven groups contain unparsed source labels or class errors and require review before canonical mapping.",
+    "The CCEL XML falsely credits William Whiston; actual historical preface translator credits govern.",
+    "Source-text transcription retains spelling and paragraph defects. Verified means identified electronic wording and boundary checked; no whole-print or patristic-original collation is claimed.",
+    "Luke and John acquisition remains open. CCEL catena3.xml and catena4.xml returned 404. Isidore Luke/John modernize wording and include separately translated material, so were not mislabeled as unrevised historical editions. IA item catenaaureacomme04thom discloses missing pages 367-369; that candidate was not acquired as complete."
+  ],
+  "ready_edges": [
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.05-07-07",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-matthaeum",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "Matt",
+        "first_chapter": 5,
+        "first_verse": 7,
+        "last_chapter": 5,
+        "last_verse": 7
+      },
+      "basis": "The source itself heads this whole block Matthew 5:7-7; these Gospel labels correspond to the canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler; the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile collation.",
+      "numbering": "vulgate"
+    },
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.09-23-26",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-matthaeum",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "Matt",
+        "first_chapter": 9,
+        "first_verse": 23,
+        "last_chapter": 9,
+        "last_verse": 26
+      },
+      "basis": "The source itself heads this whole block Matthew 9:23-26; these Gospel labels correspond to the canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler; the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile collation.",
+      "numbering": "vulgate"
+    },
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.16-20-21",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-matthaeum",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "Matt",
+        "first_chapter": 16,
+        "first_verse": 20,
+        "last_chapter": 16,
+        "last_verse": 21
+      },
+      "basis": "The source itself heads this whole block Matthew 16:20-21; these Gospel labels correspond to the canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler; the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile collation.",
+      "numbering": "vulgate"
+    },
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.01-21-22",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-marcum",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "Mark",
+        "first_chapter": 1,
+        "first_verse": 21,
+        "last_chapter": 1,
+        "last_verse": 22
+      },
+      "basis": "The source itself heads this whole block Mark 1:21-22; these Gospel labels correspond to the canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler; the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile collation.",
+      "numbering": "vulgate"
+    },
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.04-30-34",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-marcum",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "Mark",
+        "first_chapter": 4,
+        "first_verse": 30,
+        "last_chapter": 4,
+        "last_verse": 34
+      },
+      "basis": "The source itself heads this whole block Mark 4:30-34; these Gospel labels correspond to the canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler; the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile collation.",
+      "numbering": "vulgate"
+    },
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.10-41-45",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-marcum",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "Mark",
+        "first_chapter": 10,
+        "first_verse": 41,
+        "last_chapter": 10,
+        "last_verse": 45
+      },
+      "basis": "The source itself heads this whole block Mark 10:41-45; these Gospel labels correspond to the canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler; the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile collation.",
+      "numbering": "vulgate"
+    },
+    {
+      "passage_id": "passage.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.16-09-13",
+      "work_id": "work.thomas-aquinas.catena-aurea-in-marcum",
+      "work_alias": {
+        "author": "Thomas Aquinas",
+        "work": "Catena aurea in quatuor Evangelia"
+      },
+      "extent": {
+        "token": "Mark",
+        "first_chapter": 16,
+        "first_verse": 9,
+        "last_chapter": 16,
+        "last_verse": 13
+      },
+      "basis": "The source itself heads this whole block Mark 16:9-13; these Gospel labels correspond to the canonical Vulgate locus. Entire XML block inspected, with patristic labels retained. Aquinas is compiler; the text is not attributed to him as sole author. Verification is of CCEL digital wording, not facsimile collation.",
+      "numbering": "vulgate"
+    }
+  ],
+  "checks": {
+    "extractor_unit_tests": "3 passed; markup tails, uncertain labels, missing chapter and unheaded paragraph refusal",
+    "exact_replay": "Normalized text hashes and complete candidate JSON reproduce exactly from each acquired raw XML.",
+    "paragraph_partition": "Every retained source paragraph appears exactly once inside a candidate block; chapter headings excluded from block ranges.",
+    "shared_edge_integration": "Seven ready_edges copied from the owning fragment-loci registry after integration; schema matches the actual admitted edge shape.",
+    "source_library_validate": "PASS: all registered source records and bindings validated after the additions; exact payload hashes checked by the library validator."
+  }
+}

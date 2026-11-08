@@ -40,7 +40,7 @@
 #   partial-public-domain some public-domain text exists, but not the whole work
 #   not-surveyed          nobody has looked; this is data, not an estimate
 schema: triptych-commentary-translation-absences/v1
-updated: 2026-10-23
+updated: 2026-11-07
 
 question: >-
   for each work the catena holds, is there a public-domain English translation
@@ -75,6 +75,33 @@ bound: >-
   Fathers, Giles's Bede and Dods's Augustine, read volume by volume.
 
 absences:
+- work_id: work.bede.in-lucae-evangelium-expositio
+  language: en
+  finding: not-surveyed
+  checked_on: '2026-11-07'
+  reason: The held editions and checked Latin excerpts were reviewed for Catena admission. No English
+    edition is registered for this work; English translation availability and redistribution rights have
+    not been surveyed. This is a catalog boundary, not a finding that no English translation exists.
+  overturned_by: An edition-identified English translation survey and a registered lawful English witness
+    with checked passage text.
+- work_id: work.gregory-the-great.homiliae-in-evangelia
+  language: en
+  finding: not-surveyed
+  checked_on: '2026-11-07'
+  reason: The held editions and checked Latin excerpts were reviewed for Catena admission. No English
+    edition is registered for this work; English translation availability and redistribution rights have
+    not been surveyed. This is a catalog boundary, not a finding that no English translation exists.
+  overturned_by: An edition-identified English translation survey and a registered lawful English witness
+    with checked passage text.
+- work_id: work.thomas-aquinas.super-evangelium-ioannis-lectura
+  language: en
+  finding: not-surveyed
+  checked_on: '2026-11-07'
+  reason: The held editions and checked Latin excerpts were reviewed for Catena admission. No English
+    edition is registered for this work; English translation availability and redistribution rights have
+    not been surveyed. This is a catalog boundary, not a finding that no English translation exists.
+  overturned_by: An edition-identified English translation survey and a registered lawful English witness
+    with checked passage text.
 - 'work_id': 'work.augustine.quaestiones-euangeliorum'
   'language': 'en'
   'finding': 'not-surveyed'

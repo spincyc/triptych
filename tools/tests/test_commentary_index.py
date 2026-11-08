@@ -957,6 +957,18 @@ class HeldFragmentTests(unittest.TestCase):
 
 
 class FragmentNumberingTests(unittest.TestCase):
+    def test_invalid_author_registry_is_not_a_successful_empty_discovery(self):
+        from types import SimpleNamespace
+        from unittest.mock import patch
+        holdings = SimpleNamespace(root=ROOT, books=None, library={"works": {}})
+        args = SimpleNamespace(discovery=INDEX, passage=["John 3:16"], passage_file=None)
+        with patch.object(work_index._catena_scope, "validate", return_value=["malformed author registry"]), \
+             patch.object(work_index._containment, "Holdings", return_value=holdings):
+            with self.assertRaisesRegex(ValueError, "malformed author registry"):
+                work_index.run_discover(args, None)
+            with self.assertRaisesRegex(ValueError, "malformed author registry"):
+                work_index.HeldFragments(holdings)
+
     """Rule 3: a fragment's extent is Vulgate, and a Hebrew citation is converted to meet it."""
 
     def setUp(self) -> None:
@@ -999,8 +1011,22 @@ class FragmentNumberingTests(unittest.TestCase):
             " last_chapter: 50, last_verse: 4}\n",
             encoding="utf-8",
         )
+        import tomllib
+        import _standing
+        registry = tomllib.loads((ROOT / _standing.REGISTRY_RELATIVE).read_text())
+        person = next(row for row in registry["persons"] if row["id"] == "augustine")
+        standing = [f'{key} = {json.dumps(registry[key])}'
+                    for key in ("schema", "record_type", "audited_on")]
+        standing.append("[[persons]]")
+        standing.extend(f'{key} = {json.dumps(person[key])}' for key in (
+            "id", "name", "names", "died", "standing", "standing_basis", "basis_sources", "confession"))
+        registry_path = root / _standing.REGISTRY_RELATIVE
+        registry_path.parent.mkdir(parents=True, exist_ok=True)
+        registry_path.write_text("\n".join(standing))
         self.fragments = work_index.HeldFragments(
-            types.SimpleNamespace(root=root, books=_containment.Canon(root))
+            types.SimpleNamespace(root=root, books=_containment.Canon(root),
+                                  library={"works": {"work.someone.expositio": {
+                                      "responsible": "Augustine of Hippo", "work_type": "commentary"}}})
         )
         self.citations = work_index._load_citations_tool()
 

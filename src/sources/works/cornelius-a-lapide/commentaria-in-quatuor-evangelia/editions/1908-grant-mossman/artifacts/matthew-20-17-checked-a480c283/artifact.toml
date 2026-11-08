@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cornelius-a-lapide.commentaria-in-quatuor-evangelia.1908-grant-mossman.matthew-20-17-checked-a480c283"
+edition_id = "edition.cornelius-a-lapide.commentaria-in-quatuor-evangelia.1908-grant-mossman"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Literal historical English from the 1908 printing under the parent OCR’s recorded United States publication-term basis; not a new translation."
+retrieved = "2026-11-07"
+sha256 = "a480c2830603d5d316f91e5cad8996b1efb4a951e15ea690132c461f6a04ba89"
+byte_size = 560
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/cornelius-a-lapide/commentaria-in-quatuor-evangelia/editions/1908-grant-mossman/artifacts/matthew-20-17-checked-a480c283/comment.txt"
+derived_from = "artifact.cornelius-a-lapide.commentaria-in-quatuor-evangelia.1908-grant-mossman.volume-2-ocr-8f5265d4"
+transformation = "Select exact OCR physical lines 19101–19109; omit the numeric verse-heading prefix; fold physical line whitespace. Independently collated the entire resulting natural verse-comment against volume 2, PDF page 391; preceding and following verse-comment boundaries read. No translation or paraphrase."
+provenance = "Image check against artifact.cornelius-a-lapide.commentaria-in-quatuor-evangelia.1908-grant-mossman.volume-2-scan-e56628c8, PDF page 391, on 2026-11-07."
+notes = "The complete natural comment in this English edition is retained, including its opening biblical lemma. The author is Lapide; the English translator is credited by the edition."

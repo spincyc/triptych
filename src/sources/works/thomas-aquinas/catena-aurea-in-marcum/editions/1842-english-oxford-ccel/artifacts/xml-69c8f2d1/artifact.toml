@@ -1,0 +1,15 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.xml-69c8f2d1"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel"
+artifact_type = "xml-delivery"
+media_type = "application/xml"
+storage = "remote"
+rights_status = "unresolved"
+rights_basis = "The complete XML includes modern CCEL descriptive text and encoding. CCEL copyright policy https://ccel.org/about/copyright.html reserves website and special contents and asks permission to republish CCEL works. No whole-delivery redistribution basis is asserted."
+source_url = "https://ccel.org/ccel/a/aquinas/catena2.xml"
+provenance = "Acquired complete HTTPS response 2026-11-07 using curl, directly as bytes. Discovery query: Catena Aurea English Newman Matthew Mark Luke John text archive Aquinas. Checked direct source-library Catena aliases and uncapped commentary-work-index discover for Luke 14:1-11; existing direct Catena holding was Latin Luke. Complete CCEL work-information download link selected; no source text was generated or rewritten by a model."
+retrieved = "2026-11-07"
+sha256 = "69c8f2d198186de50e444c6a618dd3de24d3b89e8af879042b06c5a46c89168f"
+byte_size = 971399
+notes = "Entire XML response acquired; 16 sequential Gospel chapters. Retained public derivative contains historical chapter paragraphs only. Raw bytes are not retained in the public library."

@@ -13,20 +13,61 @@ preserve the bounded research evidence and future implementation constraints.
 They are research metadata, not an import, fragment-admission approval or
 completion of the parent-owned promise check.
 
+## Account for held commentary
+
+`tools/tpt commentary-work-index audit` inventories every work, edition,
+artifact, segment and passage manifest under `src/sources/works`, in every
+language. Corpus group definitions and the wider source graph retain the
+ordinary source-library validation gate. The audit reports the actual indexed
+canonical verses separately from acquired records, explicit text, reviewed
+applicability, author eligibility and unresolved admission requirements.
+An unindexed passage is not automatically a missing commentary: it may be a
+prayer, a biblical witness, an incidental citation, a disputed parallel, or
+material whose biblical reference has not been established.
+
+```sh
+tools/tpt commentary-work-index audit
+tools/tpt commentary-work-index audit --json --output .scratch/catena-audit.json
+tools/tpt commentary-work-index discover --passage 'John 20:6-9' --max-results 0
+```
+
+The audit is generated from current records; its output belongs in scratch,
+not in a second maintained catalogue. Reviewed decisions about held passages
+live in `held-passage-review.yaml`, pinned to each passage manifest. The
+existing fragment edges, source records, work extents and translation-absence
+records retain their separate authority. The audit's `indexed` classification
+means membership in Catena's scripture edge, not a source-library evidence
+state or a new verification event.
+
+`make check-catena-accounting` runs the audit without writing a report and is
+part of `make check-sources`. A newly inspected eligible passage with explicit
+text must have either its reviewed Scripture edge or a current applicability
+disposition. Malformed records and stale review pins fail the gate. To check
+a saved audit's exact currency, use `audit --check --output PATH`.
+
+For acquisition, first inspect an uncapped `discover` result and its container
+holdings. Register a complete lawful text where available, preserving its
+edition and translation credits; identify the natural commentary units in
+that witness, then inspect their text and scripture extent before admission.
+Raw OCR and automatically extracted source headings remain finding aids until
+that review. English coverage is measured separately from original-language
+holdings, and a partial or abridged translation retains that description.
+
 ## Chain
 
 | Stage | Tool | Input | Output |
 | --- | --- | --- | --- |
 | Lookup | `tools/tpt commentary-work-index discover` | `passage-commentary-index.yaml`, the source library and `../inventories/source-containment-v1.toml` | works for one passage, each with what the library holds of it |
-| Union | `tools/tpt commentary-work-index build-corpus` | the index plus `../calendars/*/propers.yaml` | `mass-commentary-corpus.yaml` |
+| Union | `tools/tpt commentary-work-index build-corpus` | the index, cited author standing and source work identities, plus `../calendars/*/propers.yaml` | `mass-commentary-corpus.yaml` |
 | Harvest | `tools/tpt harvest {plan,record}` | a passage | one run's candidates, into `harvest-ledger.yaml` |
 | Identity | `tools/tpt harvest aliases` | the ledger | `work-aliases.yaml` |
 | Promote | `tools/tpt harvest promote` | the ledger and the alias table | `passage-commentary-index.yaml` |
 
 Only the harvest stage consults a model. Everything downstream reads the
-tracked index, so the chain reproduces exactly from a given index: two runs of
-`build-corpus` over one index and calendar snapshot are byte-identical, and the
-corpus header records the index's `discovery_sha256`. The union reads appointed
+tracked index, so the chain reproduces exactly from a given index and its
+canonical inputs. Two runs of `build-corpus` over the same index, calendar,
+author-standing and source-work snapshots are byte-identical, and the corpus
+header records the index's `discovery_sha256`. The union reads appointed
 propers through `_calendars.resolve_propers`, including inherited Masses,
 individual proper references, forms and local overrides. A broken reference is
 a refusal, never an empty research list.
@@ -37,7 +78,8 @@ and refuses a missing or stale `mass-commentary-corpus.yaml` without writing it.
 the installed index's review date, then checks the corpus and runs the
 identity/inheritance regressions. Both checks refuse stale output without
 writing it. Rebuild the index after changing the ledger or alias review, and
-rebuild the corpus after changing the index or relevant calendars;
+rebuild the corpus after changing the index, relevant calendars, cited author
+standing or commentary work identities;
 neither check nor rebuild calls a model or admits a Catena fragment.
 
 ## Index format

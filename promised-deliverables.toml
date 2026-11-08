@@ -1,6 +1,41 @@
 schema_version = 1
 
 [[deliverables]]
+id = "catena-omnia-recovery-2026-11-07"
+owner = "guidance/catena.md"
+promise = "Make Catena Omnia reliably retrieve commentary by biblical passage, account for and index held sources completely, expand acquired sources and English translations, exclude non-Catholic commentary authors, maintain web and terminal parity, and publish coherent validated changes to main."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "passage-retrieval-and-parity"
+  criterion = "Web and terminal readers select the same actual overlapping fragments for a biblical passage, preserve numbering and provenance limits, and expose useful passage-focused navigation with matched empty and translation states."
+  status = "pass"
+  evidence = ["src/web/browser/catena/catena-model.js", "scripts/lectern/adapters/catena.js", "tools/tests/test_catena_passage_readers.py"]
+
+  [[deliverables.requirements]]
+  id = "held-corpus-accounting"
+  criterion = "A reproducible exhaustive held-record census distinguishes indexed fragments, unindexed holdings, blocked evidence and disputed parallels; every admission-ready held commentary passage is indexed at its proved natural extent and unresolved records have explicit actionable dispositions."
+  status = "pass"
+  evidence = ["scripts/_catena_audit.py", "src/sources/commentary/held-passage-review.yaml", "src/sources/commentary/fragment-loci.yaml", "tools/tests/test_catena_audit.py"]
+
+  [[deliverables.requirements]]
+  id = "english-acquisition"
+  criterion = "Additional eligible sources and historical English translations are acquired and registered with exact provenance, edition, rights and measured scope; checked fragments reach both readers and remaining English gaps are recorded without counting leads or OCR as verified text."
+  status = "pass"
+  evidence = ["src/sources/commentary/acquisitions/2026-11-07-english-lapide.json", "src/sources/commentary/acquisitions/2026-11-07-english-aurea.json", "src/sources/commentary/acquisitions/2026-11-07-english-aurea-luke-john.json", "THIRD_PARTY.md"]
+
+  [[deliverables.requirements]]
+  id = "catholic-commentary-scope"
+  criterion = "The active Catena and its acquisition suggestions exclude non-Catholic commentary authors through an auditable policy and regression guard, including Martin Luther, while preserving historical evidence and correctly distinguishing original authors from translators and editors."
+  status = "pass"
+  evidence = ["scripts/_catena_scope.py", "src/sources/inventories/author-standing-v1.toml", "tools/tests/test_catena_scope.py", "guidance/catena.md"]
+
+  [[deliverables.requirements]]
+  id = "verified-main-publication"
+  criterion = "Coherent commits pass affected source, browser-data and reader checks, reconcile with main without force, and reach main with deployment and affected live routes verified; remaining corpus gaps are reported accurately."
+  status = "open"
+
+[[deliverables]]
 id = "in-place-pdf-generation-2026-11-06"
 owner = "src/web/browser/shared/native-print.js"
 promise = "Generate PDF links no longer change to a different page: a plain click typesets the edition in place under a minimal, unintrusive progress popover beside the link."

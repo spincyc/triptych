@@ -26,6 +26,12 @@
   const prevButton = document.getElementById('prev-button');
   const nextButton = document.getElementById('next-button');
   const controlsDisclosure = document.getElementById('controls-filter');
+  const verseInput = document.getElementById('verse-input');
+  const verseError = document.getElementById('verse-error');
+  const verseApply = document.getElementById('verse-apply');
+  const verseClear = document.getElementById('verse-clear');
+  const readCommentary = document.getElementById('read-commentary');
+  let selectedVerses = '';
 
   let index = null;
   let bibles = [];
@@ -432,24 +438,19 @@
     container.appendChild(note);
   }
 
-  function renderChain(container, file, book, blockedHeld) {
-    // Already the chapter's own list: the derivation is the model's.
-    const all = M.chapterFragments(file);
+  function renderChain(container, file, book) {
     const wanted = voiceSelect.value;
-    const held = all.filter((one) => M.matchesVoice(one, wanted));
-    const headingText =
-      held.length === 0
-        ? 'Commentary held here'
-        : held.length === 1
-          ? 'One fragment held here'
-          : held.length + ' fragments held here';
-    const heading = T.el('h2', 'section-heading', headingText);
+    const selection = M.passageSelection(file, Number(chapterSelect.value), selectedVerses, wanted, []);
+    const held = selection.fragments;
+    const heading = T.el('h2', 'section-heading', selection.heading);
     container.appendChild(heading);
+    container.appendChild(T.el('p', 'english-availability', selection.availability));
+    if (selection.contextNote) container.appendChild(T.el('p', 'aside-note', selection.contextNote));
     if (!held.length) {
       // Rule 1: no fragments shows no fragments, said plainly. The sentence
       // is the model's, beside the counts it is derived from.
       container.appendChild(T.el('p', 'aside-note',
-        M.emptyChainNote(all.length, blockedHeld, wanted, M.chapterVoices(file))));
+        selection.empty));
       renderAbsences(container, file, wanted);
       return 0;
     }
@@ -458,7 +459,6 @@
       const said = M.otherVoicesNote(wanted,
         M.chapterVoices(file).filter((one) => one.key !== wanted));
       if (said) container.appendChild(T.el('p', 'aside-note', said));
-      renderAbsences(container, file, wanted);
     }
 
     const groups = M.commentaryGroups(held);
@@ -466,9 +466,7 @@
     const chain = T.el('ul', 'chain');
     let undated = null, undatedChain = null;
     const rendered = [];
-    // The first group opens: all closed reads as nothing, all open as
-    // a wall. No request either way.
-    let first = true;
+    // Author groups and fragment prose arrive closed in both readers.
     for (const group of groups) {
       if (group.undated && !undated) {
         undated = T.el('section', 'aside');
@@ -479,10 +477,6 @@
       }
       const item = T.el('li', 'author');
       const node = T.el('details', 'author-body');
-      if (first) {
-        node.open = true;
-        first = false;
-      }
 
       const summary = T.el('summary', 'author-head');
       summary.appendChild(T.el('span', 'author-name', group.author));
@@ -502,31 +496,34 @@
       node.appendChild(inner);
       item.appendChild(node);
       (group.undated ? undatedChain : chain).appendChild(item);
-      rendered.push({ author: group.author, item, count: group.fragments.length });
+      rendered.push({ author: group.author, item });
     }
 
     // One toggle per AUTHOR, though he may stand at several dates.
     // Only a NAMED author gets a switch: `hiddenAuthors` persists across
     // chapters, so a key of '' hid every author-less fragment in the corpus.
-    const authors = [...new Set(rendered.map((row) => row.author).filter(Boolean))];
+    const authors = selection.authors;
 
     let filterHolder = null;
+    const filterNote = T.el('p');
+    filterNote.hidden = true;
+    container.appendChild(filterNote);
 
     // DESELECTED authors; hiding, not rebuilding, keeps nodes open.
     function applyFilter() {
-      let shown = 0;
       for (const row of rendered) {
         const on = !(row.author && hiddenAuthors.has(row.author));
         row.item.hidden = !on;
-        if (on) shown += row.count;
       }
       // The heading counts what is HELD; when the filter hides everything
       // the page says so and opens the control that undoes it.
-      heading.textContent =
-        shown === held.length ? headingText : headingText + ' — ' + shown + ' shown';
-      if (!shown && filterHolder) {
-        heading.textContent =
-          headingText + ' — none shown; every author is switched off below';
+      const filtered = M.passageSelection(file, Number(chapterSelect.value), selectedVerses,
+        wanted, [...hiddenAuthors]);
+      heading.textContent = filtered.heading;
+      filterNote.textContent = filtered.empty;
+      filterNote.hidden = !filtered.empty;
+      filterNote.className = filtered.empty ? 'aside-note' : '';
+      if (!filtered.visible.length && filterHolder) {
         filterHolder.open = true;
       }
     }
@@ -564,6 +561,7 @@
 
     if (chain.children.length) container.appendChild(chain);
     if (undated) container.appendChild(undated);
+    renderAbsences(container, file, wanted);
     applyFilter();
     return held.length;
   }
@@ -649,6 +647,7 @@
   }
 
   function renderInvalid(bad) {
+    readCommentary.disabled = true;
     printableChapter = false;
     printing.invalidate();
     T.beginRender();
@@ -682,6 +681,7 @@
   /* ----------------------------------------------------------- assembly */
 
   async function render() {
+    readCommentary.disabled = true;
     printableChapter = false;
     printing.invalidate();
     const wasArrival = arrival;
@@ -703,19 +703,25 @@
     const renderToken = T.beginRender();
     reading.setAttribute('aria-busy', 'true');
 
-    reference.textContent = book.name + ' ' + chapter;
+    reference.textContent = book.name + ' ' + chapter + (selectedVerses ? ':' + selectedVerses : '');
     // '' where the canon states no testament; an `else` printed "New".
     referenceBook.textContent = book.testamentName;
 
     // One failure funnel; capture focus before replacing the page.
     const refocus = focusKeeper();
-    let file, scripture;
+    let file, scripture, focusProblem;
     try {
-      [file, scripture] = await Promise.all([
+      [file, scripture, focusProblem] = await Promise.all([
         chapterFile(token, chapter),
-        scriptureChapter(bible, token, chapter)
+        scriptureChapter(bible, token, chapter),
+        M.passageProblem(index, token, chapter, selectedVerses, (path) => cached(scriptureFiles, path))
       ]);
       if (!T.isCurrentRender(renderToken)) return;
+      if (focusProblem) {
+        resetVerses();
+        renderInvalid([focusProblem]);
+        return;
+      }
 
       // An expected spine that would not come is an error, not an absence,
       // and the PROJECTION says which: read raw, it was asked twice.
@@ -730,6 +736,8 @@
       let count = 0;
       renderRefusal(reading, file, bible, book, chapter);
       const scriptureColumn = T.el('div', 'chapter');
+      const focus = M.passageSelection(file, chapter, selectedVerses, voiceSelect.value, []);
+      if (focus.focusNote) scriptureColumn.appendChild(T.el('p', 'focus-note', focus.focusNote));
       if (scripture.ok) {
         if (scripture.note) scriptureColumn.appendChild(T.el('p', 'citation-recast', scripture.note));
         for (const part of scripture.parts) {
@@ -749,10 +757,14 @@
       } else {
         // One wrapper for all that is not the chapter, for the wide grid.
         const column = T.el('div', 'chain-column');
-        count = renderChain(column, file, book, blocked.length);
+        column.setAttribute('tabindex', '-1');
+        column.setAttribute('role', 'region');
+        column.setAttribute('aria-label', 'Commentary fragments');
+        count = renderChain(column, file, book);
         renderLeads(column, leads);
         renderBlocked(column, blocked);
         reading.appendChild(column);
+        readCommentary.disabled = false;
       }
       reading.setAttribute('aria-busy', 'false');
       printableChapter = !unfetched && !blocked.length && scripture.ok &&
@@ -767,13 +779,16 @@
       // cannot disagree rather than being asserted not to.
       T.clear(tally);
       const said = M.chapterSummary({
-        total: total, shown: count, blocked: blocked.length,
+        total: total, shown: M.chapterFragments(file).filter((row) => M.matchesVoice(row, voiceSelect.value)).length, blocked: blocked.length,
         leads: leads.length, unfetched: !!unfetched, voice: voiceSelect.value
       });
       if (said.bold) tally.appendChild(T.el('b', null, said.bold));
       tally.appendChild(textNode(said.tail));
+      const matched = count + (count === 1 ? ' fragment matches' : ' fragments match') + ' the verse and voice filters';
+      if (selectedVerses) tally.appendChild(textNode(' · ' + matched));
       T.statusLine(
-        book.name + ' ' + chapter + ', ' + bible.label + ', ' + said.spoken + '.');
+        reference.textContent + ', ' + bible.label + ', ' + said.spoken +
+          (selectedVerses ? ', ' + matched : '') + '.');
       writeRoute(wasArrival);
     } catch (error) {
       // Stale proves nothing: only the owning render may show a failure.
@@ -797,7 +812,8 @@
       now.get('book') === bookSelect.value &&
       Number(now.get('chapter')) === Number(chapterSelect.value) &&
       now.get('bible') === bibleSelect.value &&
-      (now.get('voice') || '') === voiceSelect.value;
+      (now.get('voice') || '') === voiceSelect.value &&
+      (now.get('verses') || '') === selectedVerses;
     if (identical) return;
     if (wasArrival && window.history.replaceState) {
       window.history.replaceState(null, '', currentHashText());
@@ -806,7 +822,7 @@
       // grammar — and the text is remembered so its echo is consumed.
       selfWrote = currentHashText();
       T.writeHash([['book', bookSelect.value], ['chapter', chapterSelect.value],
-                   ['bible', bibleSelect.value], ['voice', voiceSelect.value]]);
+                   ['bible', bibleSelect.value], ['voice', voiceSelect.value], ['verses', selectedVerses]]);
     }
   }
 
@@ -856,6 +872,7 @@
     const book = canonEntry(bookSelect.value);
     if (!book || next < 1 || next > book.chapters) return;
     chapterSelect.value = String(next);
+    resetVerses();
     render();
   }
 
@@ -873,7 +890,7 @@
   function currentHashText() {
     const parts = [];
     for (const pair of [['book', bookSelect.value], ['chapter', chapterSelect.value],
-                        ['bible', bibleSelect.value], ['voice', voiceSelect.value]]) {
+                        ['bible', bibleSelect.value], ['voice', voiceSelect.value], ['verses', selectedVerses]]) {
       if (pair[1]) parts.push(pair[0] + '=' + encodeURIComponent(pair[1]));
     }
     return parts.length ? '#' + parts.join('&') : '';
@@ -890,6 +907,9 @@
       (!broken.has('bible') && hash.get('bible')) || (bibles[0] || {}).id || '';
     voiceSelect.value = '';
     wantedVoice = broken.has('voice') ? '' : hash.get('voice') || '';
+    selectedVerses = broken.has('verses') ? '' : hash.get('verses') || '';
+    verseInput.value = selectedVerses;
+    verseError.hidden = true;
     updateSteps();
   }
 
@@ -916,6 +936,8 @@
 
   // Never a permanent "Loading…" over a failed bootstrap.
   function labelSelects(label) {
+    readCommentary.disabled = true;
+    verseInput.disabled = verseApply.disabled = verseClear.disabled = true;
     for (const select of [bookSelect, chapterSelect, bibleSelect, voiceSelect]) {
       T.fillSelect(select, [{ value: '', label: label }]);
       select.disabled = true;
@@ -987,12 +1009,43 @@
       canon.books.map((book) => ({ value: book.token, label: book.name })));
     T.fillBibleSelect(bibleSelect, bibles);
     bookSelect.disabled = chapterSelect.disabled = bibleSelect.disabled = false;
+    verseInput.disabled = verseApply.disabled = verseClear.disabled = false;
+
+    document.getElementById('passage-focus').addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const draft = verseInput.value;
+      const address = currentHashText();
+      const token = bookSelect.value, chapter = Number(chapterSelect.value);
+      const focus = M.parseVerses(draft.trim());
+      verseError.hidden = !!focus;
+      if (!focus) {
+        verseError.textContent = 'Enter one verse or an ascending range within this chapter, such as 3 or 3-8.';
+        return;
+      }
+      const problem = await M.passageProblem(index, token, chapter, focus.key,
+        (path) => cached(scriptureFiles, path));
+      if (currentHashText() !== address || verseInput.value !== draft) return;
+      if (problem) {
+        verseError.textContent = 'Verse filter ' + problem.note + '.';
+        verseError.hidden = false;
+        return;
+      }
+      selectedVerses = verseInput.value = focus.key;
+      render();
+    });
+    verseClear.addEventListener('click', () => { resetVerses(); render(); });
+    readCommentary.addEventListener('click', () => {
+      const column = reading.querySelector('.chain-column');
+      if (column) { column.focus(); column.scrollIntoView({ block: 'start' }); }
+    });
 
     bookSelect.addEventListener('change', () => {
       fillChapters(bookSelect.value, 1);
+      resetVerses();
       render();
     });
-    for (const one of [chapterSelect, bibleSelect, voiceSelect]) {
+    chapterSelect.addEventListener('change', () => { resetVerses(); render(); });
+    for (const one of [bibleSelect, voiceSelect]) {
       one.addEventListener('change', render);
     }
     prevButton.addEventListener('click', () => step(-1));
@@ -1012,4 +1065,9 @@
   }
 
   start();
+
+  function resetVerses() {
+    selectedVerses = verseInput.value = '';
+    verseError.hidden = true;
+  }
 }());

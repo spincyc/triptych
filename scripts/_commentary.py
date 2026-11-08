@@ -53,6 +53,11 @@ def chapter_loci(passage: str) -> list[str]:
     if not match:
         return [passage]
     book, tail = match.group(1), match.group(2)
+    # A contiguous range includes the chapters between its endpoints too.
+    # Reading only the printed chapter numbers silently lost their leads.
+    extents = key_extents(passage)
+    if extents:
+        return [f"{name} {chapter}" for name, chapter, _, _ in extents]
     chapters: list[str] = []
     for chapter in re.findall(r"(\d+):", tail) or re.findall(r"^(\d+)$", tail):
         locus = f"{book} {chapter}"
@@ -94,7 +99,9 @@ def key_extents(key: str) -> list[Extent]:
     if last_chapter < first_chapter:
         return []
     if last_chapter == first_chapter:
-        return [(book, first_chapter, first_verse, max(first_verse, last_verse))]
+        if last_verse < first_verse:
+            return []
+        return [(book, first_chapter, first_verse, last_verse)]
     # A span across chapters is open at the seam: the first chapter runs to its
     # end and the last begins at its start, exactly as `_loci.range_to_loci`
     # splits a reading. Splitting at the boundary is not the same as dropping

@@ -634,6 +634,71 @@
     });
   }
 
+  /** A focus is one inclusive verse range in this canonical chapter. Empty
+   * means the whole chapter; malformed input never widens the selection. */
+  function parseVerses(value) {
+    if (value === '') return { first: null, last: null, key: '' };
+    if (typeof value !== 'string' || !/^[0-9]+(?:-[0-9]+)?$/.test(value)) return null;
+    const parts = value.split('-').map(Number);
+    const first = parts[0], last = parts.length === 2 ? parts[1] : first;
+    if (!Number.isSafeInteger(first) || !Number.isSafeInteger(last) || first < 1 || last < first) return null;
+    return { first, last, key: first === last ? String(first) : first + '-' + last };
+  }
+
+  /** Inclusive intersection, never a clipping of the fragment's own extent.
+   * This uses Vulgate addresses, independently of the displayed Bible. */
+  function touchesPassage(extent, chapter, verses) {
+    const focus = parseVerses(verses);
+    if (!focus || !touchesChapter(extent, chapter)) return false;
+    const range = bag(extent);
+    const first = whole(range.first_verse), last = whole(range.last_verse);
+    if (first === null || last === null || first < 1 || last < 1 ||
+        (range.first_chapter === range.last_chapter && last < first)) return false;
+    if (!focus.key) return true;
+    return (range.first_chapter < chapter || first <= focus.last) &&
+      (range.last_chapter > chapter || last >= focus.first);
+  }
+
+  /** One selection and its reader-facing explanations for web and terminal.
+   * Chapter-level leads, blocking records and translation research are not
+   * promoted into verse-level evidence by this filter. */
+  function passageSelection(file, chapter, verses, voice, excluded) {
+    const all = chapterFragments(file);
+    const focus = parseVerses(verses);
+    const overlapping = focus ? (focus.key
+      ? all.filter((row) => touchesPassage(row.extent, chapter, focus.key)) : all) : [];
+    const fragments = overlapping.filter((row) => matchesVoice(row, voice));
+    const hidden = new Set(list(excluded).map(sound).filter(Boolean));
+    const visible = fragments.filter((row) => !row.author || !hidden.has(row.author));
+    const authors = [...new Set(fragments.map((row) => row.author).filter(Boolean))];
+    const english = overlapping.filter((row) => row.language === 'en' && !row.text_refused).length;
+    const heading = fragments.length === 0 ? 'Commentary held here'
+      : fragments.length === 1 ? 'One fragment held here' : fragments.length + ' fragments held here';
+    let empty = '';
+    if (!focus) empty = 'Enter one verse or an ascending range within this chapter, such as 3 or 3-8.';
+    else if (focus.key && !overlapping.length) {
+      empty = 'No renderable fragment in this chapter has a recorded extent overlapping Vulgate ' +
+        chapter + ':' + focus.key + '. Clear the verse filter to see the whole chapter.';
+    } else if (!fragments.length) {
+      empty = focus.key
+        ? 'No fragment overlapping these verses is held in ' + voicePhrase(parseVoiceKey(voice)) +
+          '. Choose “Everything held” to see the ' + overlapping.length +
+          (overlapping.length === 1 ? ' overlapping fragment.' : ' overlapping fragments.')
+        : emptyChainNote(all.length, chapterBlocked(file).length, voice, chapterVoices(file));
+    } else if (!visible.length) empty = 'Every author is switched off. Restore an author with the author filter.';
+    return {
+      fragments, visible, authors, overlapping: overlapping.length, total: all.length, english,
+      heading: visible.length === fragments.length ? heading : heading + ' — ' + visible.length + ' shown',
+      empty,
+      availability: english + ' ' + (english === 1 ? 'fragment has' : 'fragments have') +
+        ' English text ' + (focus && focus.key ? 'overlapping these verses' : 'in this chapter') +
+        '; this counts held excerpts, not complete coverage.',
+      focusNote: focus && focus.key ? 'Commentary focus: Vulgate ' + chapter + ':' + focus.key +
+        '. Scripture remains the full chapter in its edition’s own numbering. Fragments keep their full extent.' : '',
+      contextNote: focus && focus.key ? 'Acquisition leads, blocked works and translation research below concern the whole chapter; they do not establish commentary on the selected verses.' : ''
+    };
+  }
+
   /**
    * "Genesis 1:1-2:2", "Genesis 1:4-5", "Genesis 1:4" — the full extent, always.
    *
@@ -2052,6 +2117,34 @@
       ? prefix + book.path + '.json' : null;
   }
 
+  /** Validate the verse filter against the canonical citation, never the
+   * displayed edition's native verse labels. The caller shares its ordinary
+   * Scripture-file cache, so this requires no extra corpus payload. */
+  async function passageProblem(index, token, chapter, verses, file) {
+    const focus = parseVerses(verses);
+    if (focus && !focus.key) return null;
+    const problem = (note) => ({ key: 'verses', value: verses, note });
+    if (!focus) return problem('is not one verse or an ascending range within this chapter, such as 3 or 3-8');
+    try {
+      const path = scripturePath(index, token);
+      const root = path ? bag(await file(path)) : {};
+      const citation = bag(bag(root.chapters)[String(chapter)]);
+      const loci = list(bag(citation.loci).vulgate);
+      const locus = bag(loci[0]);
+      const first = whole(locus.first), last = whole(locus.last);
+      if (root.schema !== 'triptych-catena-scripture/v1' || root.token !== token ||
+          citation.token !== token || citation.numbering !== 'vulgate' ||
+          loci.length !== 1 || locus.chapter !== chapter || (locus.book && locus.book !== token) ||
+          first === null || last === null || first < 1 || last < first) {
+        return problem('cannot be checked because the canonical chapter bounds could not be read');
+      }
+      return focus.first < first || focus.last > last
+        ? problem('is outside this Vulgate chapter’s recorded verses ' + first + '-' + last) : null;
+    } catch (_) {
+      return problem('cannot be checked because the canonical chapter bounds could not be loaded');
+    }
+  }
+
   function scriptureUnavailable(problem) {
     return { ok: false, problem: sound(problem) ||
       'The Scripture chapter correspondence could not be read; no chapter is substituted.' };
@@ -2947,7 +3040,7 @@
     // Multiplicity first: a recognized key cited twice is refused even when
     // the citations agree; a stranger's key is not judged, and no write keeps
     // one. (An undecodable percent-value stays literal, and fails.)
-    for (const key of ['book', 'chapter', 'bible', 'voice']) {
+    for (const key of ['book', 'chapter', 'bible', 'voice', 'verses']) {
       const all = hash.getAll(key);
       if (all.length > 1) flag(key, all.join(', '), 'is cited more than once');
     }
@@ -2980,6 +3073,10 @@
       }
     }
     const bible = hash.get('bible') || '';
+    const verses = hash.get('verses') || '';
+    if (!parseVerses(verses)) {
+      flag('verses', verses, 'is not one verse or an ascending range within this chapter, such as 3 or 3-8');
+    }
     if (bible && !records(bag(editions).bibles).some((one) => one.id === bible)) {
       flag('bible', bible, said(bag(editions).whole, 'is not a published edition'));
     }
@@ -3047,6 +3144,10 @@
   }
 
   return {
+    parseVerses: parseVerses,
+    touchesPassage: touchesPassage,
+    passageSelection: passageSelection,
+    passageProblem: passageProblem,
     touchesChapter: touchesChapter,
     fragmentsOnChapter: fragmentsOnChapter,
     chapterFragments: chapterFragments,

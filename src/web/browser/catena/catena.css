@@ -78,6 +78,42 @@
   color: var(--section-ink);
 }
 
+/* Passage focus stays beside the reading entrance, including when the larger
+   chapter/edition chooser is folded on a small screen. */
+.passage-focus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+  padding-block: 0.75rem;
+  border-block: 1px solid var(--section-pale);
+}
+.passage-focus label { font-weight: 600; }
+.focus-numbering { font-weight: 400; color: var(--ink-soft); }
+.passage-focus input {
+  width: 10rem;
+  max-width: 100%;
+  min-height: 2.75rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--ink-faint);
+  border-radius: 0.2rem;
+  color: var(--ink);
+  background: var(--panel);
+  font: inherit;
+}
+.passage-focus button { min-height: 2.75rem; }
+.passage-focus p { flex-basis: 100%; margin: 0; font-size: 0.82rem; }
+#verse-help, .english-availability { color: var(--ink-soft); }
+#verse-error { color: var(--section-ink); font-weight: 600; }
+.focus-note {
+  margin: 0 0 1rem;
+  padding-inline-start: 0.75rem;
+  border-inline-start: 2px solid var(--section-ink);
+  font-size: 0.88rem;
+}
+.english-availability { font-size: 0.85rem; }
+
 /* ---------------------------------------------------------------------------
  * The chapter
  * ------------------------------------------------------------------------ */
@@ -794,6 +830,7 @@
  * ------------------------------------------------------------------------ */
 
 @media print {
+  .catena-page .passage-focus { display: none; }
   .catena-page .skip-link,
   .catena-page .banner,
   .catena-page .author-filter-disclosure,

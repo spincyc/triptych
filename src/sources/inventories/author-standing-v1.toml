@@ -216,7 +216,7 @@ confession = "Catholic"
 id = "thomas-aquinas"
 namespaces = ["thomas-aquinas"]
 name = "Thomas Aquinas"
-names = ["Thomas Aquinas", "Aquinas", "St Thomas Aquinas"]
+names = ["Thomas Aquinas", "Aquinas", "St Thomas Aquinas", "Thomas Aquinas; reportatio Leodegarii Bissuntini", "Thomas Aquinas; reportatio Petri de Andria"]
 died = "7 March 1274"
 standing = "doctor"
 standing_basis = "Died 7 March 1274 and 'canonized by John XXII, 18 July, 1323' (Catholic Encyclopedia, 'St. Thomas Aquinas'); 'declared a Doctor by the Dominican St. Pius V in his new edition of the Breviary (1568)' (Catholic Encyclopedia, 'Doctors of the Church')."
@@ -225,6 +225,7 @@ basis_sources = [
   "https://www.newadvent.org/cathen/05075a.htm",
 ]
 confession = "Catholic"
+notes = "Identity forms reviewed 2026-11-07 against work.thomas-aquinas.super-matthaeum and work.thomas-aquinas.super-matthaeum-reportatio-petri-de-andria: the responsible strings identify Aquinas as lecturer and separately retain the reporter. Matching the complete citation form to the lecturer does not equate the two reportationes or identify the reporters as Aquinas."
 
 [[persons]]
 id = "cassiodorus"
@@ -266,7 +267,7 @@ source = "https://www.newadvent.org/cathen/04308b.htm"
 id = "cornelius-a-lapide"
 namespaces = ["cornelius-a-lapide"]
 name = "Cornelius a Lapide"
-names = ["Cornelius a Lapide", "Cornelis Cornelissen van den Steen"]
+names = ["Cornelius a Lapide", "Cornelis Cornelissen van den Steen", "Cornelius Cornelii a Lapide, S.J."]
 died = "12 March 1637"
 standing = "ecclesiastical-writer"
 standing_basis = "Flemish Jesuit and exegete, born at Bocholt 18 December 1567, died at Rome 12 March 1637, professor of Holy Scripture at Louvain and then at Rome (Catholic Encyclopedia, 'Cornelius Cornelii a Lapide'). His brethren buried him apart in the hope that he 'should receive the honour of beatification'; the article records no cause, beatification or cultus."
@@ -498,7 +499,7 @@ confession = "Church of England"
 id = "peter-chrysologus"
 namespaces = ["peter-chrysologus"]
 name = "Peter Chrysologus"
-names = ["Peter Chrysologus", "Chrysologus", "Petrus Chrysologus", "St Peter Chrysologus"]
+names = ["Peter Chrysologus", "Peter Chrysologus, bishop of Ravenna", "Chrysologus", "Petrus Chrysologus", "St Peter Chrysologus"]
 died = "450"
 standing = "father"
 standing_basis = "Bishop of Ravenna from 433, 'Born at Imola, 406; died there, 450' (Catholic Encyclopedia, 'St. Peter Chrysologus', vol. 11, 1911); among the Fathers whose preaching the Catholic Encyclopedia's 'Fathers of the Church' characterizes ('the short sermons of Peter Chrysologus ... The eloquence of these Fathers'); declared a Doctor of the Church by Benedict XIII in 1729 ('St. Peter Chrysologus by Benedict XIII (1729)', Catholic Encyclopedia, 'Doctors of the Church'). A Father before a Doctor, by this file's precedence."
@@ -593,3 +594,250 @@ basis_sources = [
 ]
 confession = "Catholic"
 notes = "The Fathers article gives the Martyrology criterion as an encomium 'as \"sanctitate et doctrina insignis\"'; only the 1916 English Martyrology was read, so the Latin wording of his entry is not claimed. The Encyclopedia article's 'one of the chief doctors of the theology of the Incarnation' is description, not the title: the Encyclopedia's 'Doctors of the Church' does not name him. It also calls the ancient Vita et certamen 'not contemporary' and says it 'cannot be trusted'."
+
+# Catholic Catena author eligibility review, 2026-11-07.
+# Whole HTML documents were retrieved directly; the cited identity/standing
+# statements were inspected. Eligibility uses these canonical facts; it does
+# not duplicate them in a Catena whitelist. Unregistered authors remain
+# unreviewed. These additions do not validate attribution or every teaching.
+
+[[persons]]
+id = "gregory-of-nyssa"
+namespaces = ["gregory-of-nyssa"]
+name = "Gregory of Nyssa"
+names = ["Gregory of Nyssa"]
+died = "Date unknown; present at the Constantinople synod of 394"
+standing = "father"
+standing_basis = "Benedict XVI, audience of 29 August 2007, receives Gregory as Saint, bishop of Nyssa, defender of the true faith and a leading participant at Constantinople in 381. The received pre-schism Father belongs to the Catholic patristic tradition; modern denominational labels do not classify his fourth-century episcopate."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070829.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "alcuin-of-york"
+namespaces = ["alcuin-of-york"]
+name = "Alcuin of York"
+names = ["Alcuin of York", "Alcuin"]
+died = "19 May 804"
+standing = "ecclesiastical-writer"
+standing_basis = "Catholic Encyclopedia, Alcuin (1907), identifies the deacon and abbot of St Martin at Tours, his adherence to Roman ecclesial tradition and his defence of the Church against Adoptionism. This establishes a Catholic ecclesiastical writer; no beatification is inferred from devotional epithets."
+basis_sources = ["https://www.newadvent.org/cathen/01276a.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "angelomus-of-luxeuil"
+namespaces = ["angelomus-of-luxeuil"]
+name = "Angelomus of Luxeuil"
+names = ["Angelomus of Luxeuil", "Angelomus Luxoviensis"]
+died = "854? (Caen authority record)"
+standing = "ecclesiastical-writer"
+standing_basis = "University of Caen, Thesauri authority pddn_p.644, identifies Angelomus as a Benedictine monk of Luxeuil in the ninth century. His held Genesis work identifies the Carolingian monk and his patristic commentary. Catholic monastic affiliation is the historical inference from that identified community, not a claim of canonization."
+basis_sources = ["https://thesauri.unicaen.fr/autorites/personnes/doc/pddn_p.644.html", "work.angelomus-of-luxeuil.commentarius-in-genesim"]
+confession = "Catholic"
+
+[[persons]]
+id = "remigius-of-auxerre"
+namespaces = ["remigius-of-auxerre"]
+name = "Remigius of Auxerre"
+names = ["Remigius of Auxerre"]
+died = "908"
+standing = "ecclesiastical-writer"
+standing_basis = "Catholic Encyclopedia, Remigius of Auxerre (1911), identifies the ninth-century Benedictine monk, teacher at St-Germain in Auxerre and Christian biblical commentator. Catholic monastic affiliation is the historical inference from that identified community; he is not confused with the saint and bishop Remigius of Reims."
+basis_sources = ["https://www.newadvent.org/cathen/12764a.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "severian-of-gabala"
+namespaces = ["severian-of-gabala"]
+name = "Severian of Gabala"
+names = ["Severian of Gabala"]
+died = "Not established by the cited historical chapter"
+standing = "ecclesiastical-writer"
+standing_basis = "Socrates Scholasticus, Church History VI.11, identifies Severian as bishop of Gabala, received by John Chrysostom and preaching at Constantinople, and records their quarrel and reconciliation. This is an early fifth-century ecclesiastical writer within that Church, not a modern separated confession. His opposition to Chrysostom is retained; this row confers neither sainthood nor blanket approval of his conduct or every teaching."
+basis_sources = ["https://www.newadvent.org/fathers/26016.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "martin-luther"
+namespaces = ["martin-luther"]
+name = "Martin Luther"
+names = ["Martin Luther", "Luther", "Martinus Lutherus"]
+died = "Not established by the cited bull"
+standing = "non-catholic"
+standing_basis = "Leo X, Decet Romanum Pontificem, 3 January 1521, declares Martin Luther excommunicated after his refusal to retract. The held Lectures on Genesis were composed in 1535-1545 according to their work record, after that separation. Historical preservation of his works does not admit his authored commentary to the Catholic Catena."
+basis_sources = ["https://www.papalencyclicals.net/leo10/l10decet.htm", "work.martin-luther.lectures-on-genesis"]
+confession = "Protestant (Lutheran Reformation after 1521)"
+
+[[persons.censures]]
+body = "Pope Leo X"
+year = "1521"
+point = "Excommunication declared in Decet Romanum Pontificem, 3 January 1521, following refusal to retract the censured errors."
+source = "https://www.papalencyclicals.net/leo10/l10decet.htm"
+
+[[persons]]
+id = "denis-the-carthusian"
+namespaces = []
+name = "Denis the Carthusian"
+names = ["Denis the Carthusian", "Denys the Carthusian", "Dionysius the Carthusian"]
+died = "12 March 1471"
+standing = "ecclesiastical-writer"
+standing_basis = "Catholic Encyclopedia, Denys the Carthusian (1908), identifies the monk professed at Roermond in 1423, his Catholic theology and biblical commentary. The article distinguishes devotional use of Blessed from a beatification cause; this row therefore asserts only ecclesiastical-writer standing."
+basis_sources = ["https://www.newadvent.org/cathen/04734a.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "nicholas-of-lyra"
+namespaces = []
+name = "Nicholas of Lyra"
+names = ["Nicholas of Lyra", "Nicolaus of Lyra"]
+died = "1340"
+standing = "ecclesiastical-writer"
+standing_basis = "Catholic Encyclopedia, Nicholas of Lyra (1911), identifies the Franciscan exegete and quotes his submission of his writings to the correction of Holy Mother Church. Later use of his exegesis by Luther does not change Nicholas into a Protestant commentator."
+basis_sources = ["https://www.newadvent.org/cathen/11063a.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "hugh-of-saint-cher"
+namespaces = ["hugh-of-saint-cher"]
+name = "Hugh of Saint-Cher"
+names = ["Hugh of Saint-Cher", "Hugh of St. Cher", "Hugh of St Cher", "Hugh of St-Cher"]
+died = "19 March 1263"
+standing = "ecclesiastical-writer"
+standing_basis = "Catholic Encyclopedia, Hugh of St-Cher (1910), identifies the Dominican cardinal, raised to the cardinalate by Innocent IV in 1244 and entrusted with papal legations, and his biblical Postillae."
+basis_sources = ["https://www.newadvent.org/cathen/07521b.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "walafrid-strabo"
+namespaces = []
+name = "Walafrid Strabo"
+names = ["Walafrid Strabo", "Walahfrid Strabo"]
+died = "Not dated in the cited article"
+standing = "ecclesiastical-writer"
+standing_basis = "Catholic Encyclopedia, Walafrid (1912), identifies the ninth-century abbot of Reichenau and ecclesiastical writer. This affiliation establishes Catholic scope, not the authorship of every work later circulated under his name, including the Glossa ordinaria."
+basis_sources = ["https://www.newadvent.org/cathen/15526a.htm"]
+confession = "Catholic"
+
+[[persons]]
+id = "albert-the-great"
+namespaces = []
+name = "Albert the Great"
+names = ["Albert the Great", "Albertus Magnus"]
+died = "1280"
+standing = "doctor"
+standing_basis = "Benedict XVI, audience of 24 March 2010, records the Dominican bishop of Regensburg, canonized and proclaimed Doctor of the Church by Pius XI in 1931."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100324.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "peter-lombard"
+namespaces = ["peter-lombard"]
+name = "Peter Lombard"
+names = ["Peter Lombard"]
+died = "1160"
+standing = "ecclesiastical-writer"
+standing_basis = "Benedict XVI, audience of 30 December 2009, identifies the priest and bishop of Paris from 1159, his Scripture commentaries and the Catholic theology of his Sentences."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2009/documents/hf_ben-xvi_aud_20091230.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "cyril-of-alexandria"
+namespaces = ["cyril-of-alexandria"]
+name = "Cyril of Alexandria"
+names = ["Cyril of Alexandria", "St Cyril of Alexandria"]
+died = "27 June 444"
+standing = "father"
+standing_basis = "Benedict XVI, audience of 3 October 2007, explicitly receives Cyril among the Fathers, venerated as a saint in East and West, and records his declaration as Doctor by Leo XIII in 1882. Father has precedence here."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071003.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "cyril-of-jerusalem"
+namespaces = ["cyril-of-jerusalem"]
+name = "Cyril of Jerusalem"
+names = ["Cyril of Jerusalem"]
+died = "Not stated in the cited audience"
+standing = "father"
+standing_basis = "Benedict XVI, audience of 3 October 2007, identifies Saint Cyril of Jerusalem as an exponent of Greek patristics and records his proclamation as Doctor by Leo XIII in 1882. Father has precedence here."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071003.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "gregory-of-nazianzus"
+namespaces = ["gregory-of-nazianzus"]
+name = "Gregory of Nazianzus"
+names = ["Gregory of Nazianzus", "Gregory Nazianzen", "Gregory Nazianzus"]
+died = "Not stated in the cited audience"
+standing = "father"
+standing_basis = "Benedict XVI, audience of 29 August 2007, identifies Gregory Nazianzus as a fourth-century bishop and Doctor of the Church, in the series on the received Fathers. Father has precedence here."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070829.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "athanasius-of-alexandria"
+namespaces = ["athanasius-of-alexandria"]
+name = "Athanasius of Alexandria"
+names = ["Athanasius of Alexandria", "Athanasius"]
+died = "2 May 373"
+standing = "father"
+standing_basis = "Benedict XVI, audience of 20 June 2007, explicitly receives Athanasius as an early Church Father, saint, Doctor and defender of Nicene orthodoxy. Father has precedence here."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070620.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "ephrem-the-syrian"
+namespaces = ["ephrem-the-syrian"]
+name = "Ephrem the Syrian"
+names = ["Ephrem the Syrian", "Ephrem", "Ephraem the Syrian"]
+died = "373"
+standing = "father"
+standing_basis = "Benedict XVI, audience of 28 November 2007, receives Saint Ephrem, the fourth-century Syriac deacon, biblical commentator and theologian, within the one Christian faith in its early Eastern expression. His pre-schism Syriac tradition is received patristic standing, not modern denominational separation."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20071128.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "isidore-of-seville"
+namespaces = []
+name = "Isidore of Seville"
+names = ["Isidore of Seville", "Isidore"]
+died = "636"
+standing = "father"
+standing_basis = "Benedict XVI, audience of 18 June 2008, identifies Saint Isidore as the last Christian Father of antiquity and reports Toledo 653 receiving him as a teacher and glory of the Catholic Church."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2008/documents/hf_ben-xvi_aud_20080618.html"]
+confession = "Catholic"
+
+[[persons]]
+id = "bonaventure"
+namespaces = ["bonaventure"]
+name = "Bonaventure"
+names = ["Bonaventure", "Bonaventure of Bagnoregio"]
+died = "1274"
+standing = "doctor"
+standing_basis = "Benedict XVI, audience of 3 March 2010, receives Saint Bonaventure, Franciscan theologian and minister general; the Catholic Encyclopedia, Doctors of the Church, records his declaration by Sixtus V in 1588."
+basis_sources = ["https://www.vatican.va/content/benedict-xvi/en/audiences/2010/documents/hf_ben-xvi_aud_20100303.html", "https://www.newadvent.org/cathen/05075a.htm"]
+confession = "Catholic"
+
+# Two held resurrection-commentary authors reviewed 2026-11-07.
+# Full source pages were retrieved directly; identity, ministry and authorship
+# statements were inspected. Their held evidence and historical uses remain.
+
+[[persons]]
+id = "brooke-foss-westcott"
+namespaces = ["brooke-foss-westcott"]
+name = "Brooke Foss Westcott"
+names = ["Brooke Foss Westcott", "B. F. Westcott"]
+died = "27 July 1901"
+standing = "non-catholic"
+standing_basis = "The New Schaff-Herzog Encyclopedia of Religious Knowledge, Westcott, Brooke Foss, explicitly identifies him as Church of England and bishop of Durham, and lists The Gospel according to St. John among his works. Cambridge Faculty of Divinity's institutional history independently identifies his ordination, canonries at Peterborough and Westminster, St John's Gospel commentary and appointment as bishop of Durham in 1890. This establishes the Anglican commentator represented by the held work, not a confession inferred from an edition's translator or editor."
+basis_sources = ["https://ccel.org/s/schaff/encyc12/htm/iii.xi.xxvi.htm", "https://www.divinity.cam.ac.uk/history-faculty-divinity", "work.brooke-foss-westcott.the-gospel-according-to-st-john"]
+confession = "Church of England"
+
+[[persons]]
+id = "henry-latham"
+namespaces = ["henry-latham"]
+name = "Henry Latham"
+names = ["Henry Latham"]
+died = "5 June 1902"
+standing = "non-catholic"
+standing_basis = "Dictionary of National Biography, Second Supplement (1912), Latham, Henry, by H. E. M., identifies the Trinity Hall clerical fellow and later master, ordained deacon by the bishop of Ely in 1848 and priest in 1850, and names his The Risen Master (1901). The article's stated sources include the college books and personal knowledge. Church of England affiliation follows from this identified Anglican episcopal ordination and clerical career, not from the name Latham or the book's subject. The exact title and author connect that biography to the held commentary."
+basis_sources = ["https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1912_supplement/Latham,_Henry", "work.henry-latham.the-risen-master"]
+confession = "Church of England"

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+edition_id = "edition.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Historical 1908 English printing is public domain in the United States by expiration of its publication term; the Internet Archive item displays Public Domain Mark 1.0. Machine OCR adds no human-authored translation. Google front matter and attribution are preserved under src/sources/inventories/google-usage-guidelines-rights-v1.toml and excluded from the historical text and project licence. No general licence to Google material is asserted."
+retrieved = "2026-11-07"
+id = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.volume-7-ocr-c9d11cbf"
+artifact_type = "ocr-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+source_url = "https://archive.org/download/TheGreatCommentaryOfCorneliusALapideV7/TheGreatCommentaryOfCorneliusALapideV7_djvu.txt"
+sha256 = "c9d11cbfac73b64955ee6ef5478316eda0ec6227791937f232564125e2f4a161"
+byte_size = 960005
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/cornelius-a-lapide/commentaria-in-omnes-divi-pauli-epistolas/editions/1908-grant-cobb/artifacts/volume-7-ocr-c9d11cbf/source.txt"
+provenance = "Direct complete HTTP retrieval of the archive’s offered OCR file. Acquisition queries: web search “Cornelius Lapide Great Commentary gospel English gutenberg”; Internet Archive advancedsearch title:\"great commentary\" AND creator:\"Lapide\", first 50 results. Local Matthew 1 (uncapped) and Revelation 1 (30-result cap, no omitted results) discovery and containment survey preceded selection. No model-produced source text."
+notes = "Whole volume 7, 20355 LF-delimited physical lines; title scope: 1 Corinthians 1–16. Complete offered OCR bytes, including Google attribution, headers, front matter and end matter. Uncorrected OCR is a searchable finding aid, not a checked transcription. The separately registered scan has 418 pages; no claim of checking every page."

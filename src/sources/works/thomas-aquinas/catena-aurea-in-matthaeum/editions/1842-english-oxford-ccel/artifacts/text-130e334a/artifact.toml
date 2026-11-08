@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.text-130e334a"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Historical Oxford English translation published in 1841-1842, beyond the maximum United States publication term (U.S. Copyright Office Circular 15A https://copyright.gov/circs/circ15a.pdf). Only historical commentary chapter text is retained; modern CCEL descriptions, XML encoding, navigation and generated indexes are excluded. No exclusive rights in historical wording are claimed; this text is excluded from Triptych CC BY authorship."
+rights_jurisdiction = "United States"
+source_url = "https://ccel.org/ccel/a/aquinas/catena1.xml"
+provenance = "Acquired complete HTTPS response 2026-11-07 using curl, directly as bytes. Discovery query: Catena Aurea English Newman Matthew Mark Luke John text archive Aquinas. Checked direct source-library Catena aliases and uncapped commentary-work-index discover for Luke 14:1-11; existing direct Catena holding was Latin Luke. Complete CCEL work-information download link selected; no source text was generated or rewritten by a model."
+retrieved = "2026-11-07"
+sha256 = "130e334a0e087ba2ff7f2afc9f803921b4d1de16ed45d682c1756c0c14e3cd67"
+byte_size = 2202233
+path = "src/sources/works/thomas-aquinas/catena-aurea-in-matthaeum/editions/1842-english-oxford-ccel/artifacts/text-130e334a/source.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.thomas-aquinas.catena-aurea-in-matthaeum.1842-english-oxford-ccel.xml-943a6b5f"
+transformation = "scripts/_catena_aurea.py extract(raw_bytes, 'Matthew', 28), method catena-aurea-ccel-paragraphs-v1. Select all sequential Chapter N div2 elements; retain every nonempty p in document order; join XML character data and collapse whitespace; one chapter heading or paragraph per LF line. Preserve source wording and Father labels. No OCR correction, lexical substitution or translation. Historical prefatory matter is outside this chapter-body derivative."
+notes = "Complete offered commentary chapters 1-28; 7187 paragraphs and 285 mechanical scripture-class groups. Completeness means chapter-body extraction from this exact XML, not complete historical volume front matter or whole-edition collation. Source misspellings, malformed verse labels and paragraph-class errors remain. Only separately recorded passages have been read and checked."

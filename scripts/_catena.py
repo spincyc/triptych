@@ -61,6 +61,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
 import _canon  # noqa: E402
+import _catena_scope  # noqa: E402
 import _loci  # noqa: E402
 import _paragraphs  # noqa: E402
 import _projection  # noqa: E402
@@ -1017,7 +1018,7 @@ def _extent(value: Any) -> Extent | None:
 
 def validate(root: Path = ROOT) -> list[str]:
     """Every reason the edge cannot be rendered, in a deterministic order."""
-    errors: list[str] = []
+    errors: list[str] = _catena_scope.validate(root)
     where = EDGES_RELATIVE.as_posix()
     data = load_edges(root)
 
@@ -1029,6 +1030,7 @@ def validate(root: Path = ROOT) -> list[str]:
         )
 
     sources = load_sources(root)
+    scope = _catena_scope.Scope(root, works=sources.works)
     forms = book_forms(root)
     equivalent = _author_equivalences(data, where, errors)
     groups = {
@@ -1082,6 +1084,9 @@ def validate(root: Path = ROOT) -> list[str]:
         # The work, and the author derived from it once.
         work_id = str(fragment["work_id"])
         work = sources.works.get(work_id)
+        decision = scope.work_decision(work_id)
+        if not decision["eligible"]:
+            errors.append(f"{label}: commentator scope is {decision['status']}: {decision['reason']}")
         if work is None:
             errors.append(f"{label} names work {work_id}, which is not a work record")
         author = str((work or {}).get("responsible") or "").strip()
@@ -1512,7 +1517,7 @@ def _solved_case_errors(data: dict[str, Any], where: str, known: set[str]) -> li
 # ---------------------------------------------------------------------------
 
 
-def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
+def fragments_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, Any]]:
     """Every held fragment on a book, at its own extent, in chronological order.
 
     Chapter-keyed nothing: Rule 5 stores the extent and derives the view, and
@@ -1526,6 +1531,7 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
     """
     data = load_edges(root)
     sources = _sources_cache(root)
+    scope = scope or _catena_scope.Scope(root, works=sources.works)
     rows: list[dict[str, Any]] = []
     for fragment in data.get("fragments") or ():
         extent = _extent(fragment.get("extent"))
@@ -1533,6 +1539,8 @@ def fragments_for_book(root: Path, token: str) -> list[dict[str, Any]]:
             continue
         passage = sources.passages.get(str(fragment["passage_id"])) or {}
         work_id = str(fragment["work_id"])
+        if not scope.allowed_work(work_id):
+            continue
         work = sources.works.get(work_id) or {}
         edition_id = str(passage.get("edition_id") or "")
         edition = sources.editions.get(edition_id) or {}
@@ -1613,7 +1621,7 @@ def _commentary_index(root: Path) -> Any:
     return _INDEX_CACHE[root]
 
 
-def leads_for_book(root: Path, token: str, name: str) -> dict[str, list[dict[str, str]]]:
+def leads_for_book(root: Path, token: str, name: str, *, scope=None) -> dict[str, list[dict[str, str]]]:
     """L1 rows for a book, keyed by chapter, with the confidence removed.
 
     Rule 2 is enforced here rather than in the page. Once a work's fragments are
@@ -1623,6 +1631,7 @@ def leads_for_book(root: Path, token: str, name: str) -> dict[str, list[dict[str
     uses against a licensed edition: a page cannot show what it was never sent.
     """
     index = _commentary_index(root)
+    scope = scope or _catena_scope.Scope(root, works=_sources_cache(root).works)
     prefix = f"{name} "
     leads: dict[str, list[dict[str, str]]] = {}
     for entry in index.get("passages") or ():
@@ -1643,6 +1652,8 @@ def leads_for_book(root: Path, token: str, name: str) -> dict[str, list[dict[str
             continue
         works = []
         for work in entry.get("works") or ():
+            if not scope.lead_decision(work)["eligible"]:
+                continue
             works.append(
                 {
                     "author": str(work.get("author") or "Unknown"),
@@ -1875,7 +1886,7 @@ def refusals_for_book(root: Path, token: str) -> dict[str, list[dict[str, Any]]]
     return refusals
 
 
-def blocked_for_book(root: Path, token: str) -> list[dict[str, Any]]:
+def blocked_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, Any]]:
     """Held fragments a book carries that may not render, with the reason.
 
     The label here comes from the harvest identity rather than from a work
@@ -1885,12 +1896,16 @@ def blocked_for_book(root: Path, token: str) -> list[dict[str, Any]]:
     and states why.
     """
     data = load_edges(root)
+    scope = scope or _catena_scope.Scope(root, works=_sources_cache(root).works)
     rows: list[dict[str, Any]] = []
     for entry in data.get("blocked") or ():
         extent = _extent(entry.get("extent"))
         if extent is None or extent.token != token:
             continue
         alias = entry.get("work_alias") or {}
+        if not scope.lead_decision({"author": str(alias.get("author") or ""),
+                                    "work_id": entry.get("work_id")})["eligible"]:
+            continue
         rows.append(
             {
                 "author": str(alias.get("author") or ""),
@@ -2183,6 +2198,7 @@ def _structure_files(
     # `translation:grc` to offer. Counting the pairs is the only way to know
     # that; inferring support from the language alone invents a holding.
     voices: set[str] = set()
+    scope = _catena_scope.Scope(root, works=_sources_cache(root).works)
     scripture_editions = _scripture_editions(root)
     for book in books:
         token = book["token"]
@@ -2191,9 +2207,9 @@ def _structure_files(
         scripture_path = directory / "scripture" / f"{folder}.json"
         files[scripture_path] = _serialise(scripture_for_book(root, book, scripture_editions))
         written.append(scripture_path)
-        rows = fragments_for_book(root, token)
-        leads = leads_for_book(root, token, book["name"])
-        held_back = blocked_for_book(root, token)
+        rows = fragments_for_book(root, token, scope=scope)
+        leads = leads_for_book(root, token, book["name"], scope=scope)
+        held_back = blocked_for_book(root, token, scope=scope)
         if not rows and not leads and not held_back:
             continue
 

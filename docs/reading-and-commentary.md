@@ -19,9 +19,11 @@ the date. Three separate askings are then measured against each other. The
 measurement came back with an uncomfortable and useful answer — the passes agreed
 on *who* wrote on a passage far more often than on *what the work was called* —
 and that answer blocked promotion until a derived table of work identities closed
-the gap. Promotion ran on 2026-07-31. The discovery index now holds 497 passages
-and 7,297 work entries, under no confidence floor, and over a locus-granularity
-mismatch that is still unsettled.
+the gap. The initial promotion on 2026-07-31 held 497 passages and 7,297 work
+entries, under no confidence floor. Its chapter/verse mismatch was subsequently
+resolved by keeping discovery leads at chapter level and checked commentary
+at its actual verse extent. The historical measurements below describe that
+first harvest, not the current size of the library.
 
 This document explains what each undertaking decided and why. Every number in it
 was recomputed from the repository's own tracked files — where a figure disagreed
@@ -32,6 +34,20 @@ failure modes are in
 
 **[The Story of Salvation](../scripture/)** — the plan itself, in three
 lengths, with the translation of your choosing.
+
+**[Catena Omnia](../catena/)** — read a biblical chapter and the commentary
+held on it. Choose a verse or range to narrow the chain to overlapping
+fragments, then choose English or the author's own language. Each fragment
+keeps its complete natural extent and its source. The verse filter uses the
+Catena's canonical Vulgate numbering; the Scripture pane retains the selected
+Bible's own labels. Author groups begin collapsed, and opening a fragment
+loads its text and attribution. The terminal reader offers the same selection.
+
+The chain draws on Catholic commentary authors. Unreviewed acquisition leads,
+unavailable translations and texts not yet transcribed are separate from held
+fragments. A full book in the source library does not mean every passage in it
+has been checked or indexed. The source inventory and its unresolved work are
+described in the [commentary records](https://github.com/spincyc/triptych/tree/main/src/sources/commentary).
 
 ---
 
@@ -452,7 +468,7 @@ reproducible and is not restated: `promote`'s identity map was first-hit rather
 than a union at the time, so the ranking depended on the order the ledger was
 walked.)
 
-**The granularity mismatch is real and unresolved.** 490 of the index's keys are
+**The initial granularity mismatch, since resolved.** 490 of the initial index's keys were
 chapters; 7 are verse ranges, left by the three pilot runs of 2026-07-30, which
 keyed verse ranges where the three full passes key chapters. The two key spaces
 disagree about the same text:
@@ -467,10 +483,10 @@ disagree about the same text:
 | Psalms 84:8 | 17 | Psalms 84 | 15 | 8 |
 | Psalms 84:13 | 17 | Psalms 84 | 15 | 8 |
 
-Reconciling the two granularities was named here as something that had to happen
-before promotion. It did not happen, and promotion ran anyway. The commit that
-promoted records the identity fix as what unblocked it and says nothing about the
-granularity; this document does not know why it ran, and will not guess.
+Reconciliation followed that initial promotion. Discovery now keeps one row
+per chapter, preserving all of the pilot's work entries. Held commentary has a
+separate verse-level index, whose natural extents may cross chapter boundaries.
+The table preserves the defect found in the first promotion.
 
 Two smaller facts about the shape of the file. 490 chapter rows, not 491, because
 4 Esdras 2 came back empty from all three passes and `promote` writes no row for

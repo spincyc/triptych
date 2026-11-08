@@ -87,18 +87,24 @@ module.exports = function catena(realm) {
     return { where, file: M.spineUnreadable(file) ? unfetched(where) : file };
   }
 
-  async function address(token, chapter, bible, voice) {
+  async function address(token, chapter, bible, voice, verses) {
     const state = await start();
     const hash = new URLSearchParams();
     hash.set('book', token);
     hash.set('chapter', String(chapter));
     if (bible) hash.set('bible', bible);
     if (voice) hash.set('voice', voice);
-    return { state, problems: M.addressProblems(hash, state.canon, state.editions, state.voices) };
+    if (verses) hash.set('verses', verses);
+    const problems = M.addressProblems(hash, state.canon, state.editions, state.voices);
+    if (!problems.length) {
+      const problem = await M.passageProblem(state.index, token, chapter, verses || '', cached);
+      if (problem) problems.push(problem);
+    }
+    return { state, problems };
   }
 
-  async function view(token, chapter, bibleId, voice) {
-    const { state, problems } = await address(token, chapter, bibleId, voice);
+  async function view(token, chapter, bibleId, voice, verses = '', excluded = []) {
+    const { state, problems } = await address(token, chapter, bibleId, voice, verses);
     if (problems.length) {
       return { problems, heading: 'This address cannot be used as written' }; // catena.js:626
     }
@@ -131,6 +137,7 @@ module.exports = function catena(realm) {
     const leads = M.chapterLeads(file);
     const total = M.chapterTally(file);
     const held = M.chapterVoices(file);
+    const selection = M.passageSelection(file, chapter, verses, voice, excluded);
 
     const voiceOptions = [{ value: '', label: 'Everything held' }] // catena.js:797
       .concat(held.map((entry) => ({ value: entry.key, label: M.voiceLabel(entry) })));
@@ -173,11 +180,10 @@ module.exports = function catena(realm) {
     let chain = null;
     if (!missing) { // catena.js:425
       const all = M.chapterFragments(file);
-      const shown = all.filter((one) => M.matchesVoice(one, voice));
-      const heading = shown.length === 0 ? 'Commentary held here'
-        : shown.length === 1 ? 'One fragment held here' : shown.length + ' fragments held here';
+      const shown = selection.visible;
+      const heading = selection.heading;
       const notes = [];
-      if (!shown.length) notes.push(M.emptyChainNote(all.length, blocked.length, voice, held));
+      if (!shown.length) notes.push(selection.empty);
       else if (voice) {
         const said = M.otherVoicesNote(voice, held.filter((one) => one.key !== voice));
         if (said) notes.push(said);
@@ -203,20 +209,23 @@ module.exports = function catena(realm) {
         chip: M.languageChip(row),
         reviewNote: row.review && row.review !== 'verified' ? row.review + ', not collated' : '', // catena.js:369
       }));
-      chain = { heading, notes, total: all.length, shown: shown.length, absences, fragments };
+      chain = { heading, notes, total: all.length, shown: shown.length, absences, fragments,
+        authors: selection.authors, availability: selection.availability, contextNote: selection.contextNote };
     }
 
-    const summary = M.chapterSummary({ total, shown: chain ? chain.shown : 0,
+    const summary = M.chapterSummary({ total, shown: M.chapterFragments(file).filter((row) => M.matchesVoice(row, voice)).length,
       blocked: blocked.length, leads: leads.length, unfetched: !!missing, voice });
 
     return {
       problems: [],
-      reference: book.name + ' ' + chapter,
+      reference: book.name + ' ' + chapter + (verses ? ':' + verses : ''),
       testament: book.testamentName,
       book: { token: book.token, name: book.name, chapters: book.chapters },
       chapter,
       bible: { id: bible.id, label: bible.label, language: bible.language, numbering: bible.numbering },
       voice,
+      verses,
+      focusNote: selection.focusNote,
       voices: voiceOptions,
       held: !!where,
       tally: summary,

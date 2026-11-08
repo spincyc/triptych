@@ -41,6 +41,21 @@ class CatenaFixture(unittest.TestCase):
     def setUp(self) -> None:
         self.temporary_directory = tempfile.TemporaryDirectory()
         self.root = Path(self.temporary_directory.name)
+        # Catholic eligibility is explicit fixture evidence, not a production
+        # fallback when a miniature repository lacks its standing registry.
+        import tomllib
+        import _standing
+        registry = tomllib.loads((ROOT / _standing.REGISTRY_RELATIVE).read_text())
+        standing = [f'schema = {json.dumps(registry["schema"])}',
+                    f'record_type = {json.dumps(registry["record_type"])}',
+                    f'audited_on = {json.dumps(registry["audited_on"])}']
+        for person in registry["persons"]:
+            if person["id"] not in {"augustine", "basil-of-caesarea"}:
+                continue
+            standing.append("[[persons]]")
+            for key in ("id", "name", "names", "died", "standing", "standing_basis", "basis_sources", "confession"):
+                standing.append(f"{key} = {json.dumps(person[key])}")
+        self.write(_standing.REGISTRY_RELATIVE.as_posix(), "\n".join(standing))
         self.write(
             "src/sources/works/catholic-church/vulgata-clementina/editions/"
             "ebible-latvuc/artifacts/book-index-fcad78c2/book-index.tsv",
@@ -238,6 +253,12 @@ class ExtentTests(CatenaFixture):
 
 
 class IdentityTests(CatenaFixture):
+    def test_unreviewed_author_fails_admission_and_cannot_emit_text(self) -> None:
+        path = self.root / "src/sources/works/augustine/de-civitate-dei/work.toml"
+        path.write_text(path.read_text().replace("Augustine of Hippo", "Unreviewed writer"))
+        self.assertTrue(any("commentator scope is unreviewed" in error for error in self.errors()))
+        self.assertEqual(_catena.fragments_for_book(self.root, "Gen"), [])
+
     def test_an_unresolvable_work_alias_is_refused(self) -> None:
         self.write_edges(
             work_alias={"author": "Augustine of Hippo", "work": "Confessiones"}

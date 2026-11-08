@@ -11,6 +11,7 @@ Usage:
   commentary-work-index containment [--container ID] [--unresolved]
   commentary-work-index formulary [--calendar CALENDAR --mass KEY]
   commentary-work-index standing [--person ID]
+  commentary-work-index audit [--root REPO] [--output PATH] [--check]
 
 This tool does not invoke external search agents. It works from curated mapping
 records in `--discovery`, and returns ranked work metadata for each passage.
@@ -77,6 +78,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 import _calendars
 import _catena
+import _catena_scope
 import _containment
 import _coverage
 import _formulary
@@ -99,12 +101,29 @@ from _tooling import (
 
 # Captured transcripts, never composed; see scripts/_tooling.py.
 EXAMPLES = {
+    "audit": (
+        Example(
+            "tools/commentary-work-index audit",
+            (
+                "held corpus audit: ok",
+                "... 12 more lines",
+            ),
+        ),
+        Example(
+            "tools/commentary-work-index audit --check",
+            (
+                "commentary-work-index: audit --check requires --output",
+            ),
+            "A saved report path is required for byte-for-byte replay.",
+        ),
+    ),
     "discover": (
         Example(
             "tools/commentary-work-index discover --passage 'John 3:16' --max-results 3",
             (
                 "passage: John 3:16",
-                "  showing 3 of 17 leads; --max-results 0 lists every one",
+                "  showing 3 of 15 leads; --max-results 0 lists every one",
+                "  Catholic scope: 0 excluded; 2 pending author review",
                 "   1. Albert the Great — Super Iohannem (1280)",
                 "      role: doctor",
                 "      matched on the chapter, not the verses cited: John 3",
@@ -126,7 +145,7 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index discover --passage 'Psalm 24:1-3' --numbering vulgate --max-results 2 --json",
             (
-                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"passage\":\"Psalms 24:1-24:3\"... [+23638 chars]",
+                "{\"cited_numbering\":\"vulgate\",\"discoveries\":[{\"cited\":\"Psalm 24:1-3\",\"lead_scope_counts\":{\"eligib... [+23702 chars]",
             ),
         ),
         Example(
@@ -144,28 +163,52 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index coverage",
             (
-                "coverage: 18 works held, 22 work-and-book pairs, 232 chapters not held",
-                "  gap 2 · unexamined 12 · not-established 1 · complete 7 · extents recorded 10 of 22",
+                "coverage: 34 works held, 53 work-and-book pairs, 466 chapters not held",
+                "  gap 6 · unexamined 39 · not-established 1 · complete 7 · extents recorded 14 of 53",
                 "",
-                "  1. Augustine of Hippo — Enarrationes in Psalmos · Psalms  [unexamined, 128 of 150 chapters not held]",
-                "     named on 130 · held on 2 · 7 fragments · extent unrecorded",
-                "     not held: 1-2, 4-34, 36-37, 39-49, 53-56, 58-59, 61-62, 64-73, 75-80, 82-87, 89-92, 94-97, 99, 101-122, 124-125, 127-130, 132, 134, 136-140, 142-148, 150",
-                "     no extent recorded, so nothing can say whether this is a gap",
-                "... 48 more lines",
+                "  Collection/title leads awaiting whole-work identity review:",
+                "    Cornelius a Lapide — Commentaria in Scripturam Sacram: 1 Corinthians 1-7, 9-13, 15; 1 John 2-5; 1 Samuel 3, 16, 26; 1 Chronicles 29; 1 Peter 1-5; 1 Thessalonians 1-5; 1 Timothy 1-3, 6; 2 Corinthians 1, 3-6, 8, 11-13; Nehemiah 8; 2 Samuel 5, 7, 12; 2 Maccabees 1, 7; 2 Chronicles 36; 2 Peter 3; 2 Thessalonians 1-3; 2 Timothy 1-4; 1 Kings 3, 8, 17, 19; 2 Kings 4-5; Acts 1-10, 13-16, 19; Amos 6-9; Revelation 1, 3, 5, 7, 21-22; Baruch 3-5; Colossians 1-3; Daniel 3, 7, 9, 12-14; Deuteronomy 4-6, 8, 11, 18, 26, 30-32; Ecclesiastes 1-2; Sirach 3, 15, 24, 27-28, 35-36; Ephesians 1-6; Esther 13-14; Exodus 3, 12-17, 19-20, 22, 24, 30, 32, 34; Ezekiel 2, 17-18, 33-34, 36-37, 47; Galatians 1-6; Genesis 1-50; Habakkuk 1-3; Hebrews 1-2, 4-5, 7, 9-13; Isaiah 1-2, 4-9, 11-12, 19, 22, 25, 30, 35, 38, 40, 42-43, 45, 48-50, 52-56, 58, 60-64, 66; James 1-5; Jeremiah 1, 7, 11, 17-18, 20, 23, 29, 31, 33, 38; Job 26; Joel 2; John 1-21; Jonah 3; Joshua 5, 24; Lamentations 3; Leviticus 13, 19, 21, 23, 26; Luke 1-24; Malachi 1-3; Mark 1-16; Matthew 1-18, 20-28; Micah 5-7; Numbers 6, 11, 20; Hosea 2, 6, 14; Philippians 1-4; Philemon 1; Proverbs 3, 8-9, 23, 31; Psalms 10, 24, 84; Romans 1, 3-6, 8-16; Zephaniah 2-3; Titus 2-3; Tobit 12; Wisdom 1-2, 6-7, 9-12, 16, 18; Zechariah 8-9, 12-14",
+                "      unresolved owning records: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas, work.cornelius-a-lapide.commentaria-in-quatuor-evangelia",
+                "      The fragment alias may name a broader collection or another title; whole-work identity with these owning records is not established. These chapter leads are not assigned to its constituents.",
+                "... 128 more lines",
             ),
             "ranked by how much is missing; a gap is a work item, never a build failure",
         ),
         Example(
             "tools/commentary-work-index coverage --book Luke",
             (
-                "coverage: 2 works held, 2 work-and-book pairs, 2 chapters not held",
-                "  unexamined 2 · extents recorded 0 of 2",
+                "coverage: 6 works held, 6 work-and-book pairs, 76 chapters not held",
+                "  gap 1 · unexamined 5 · extents recorded 1 of 6",
                 "",
-                "  1. Augustine of Hippo — De civitate Dei · Luke  [unexamined, 1 of 24 chapters not held]",
+                "  Collection/title leads awaiting whole-work identity review:",
+                "    Cornelius a Lapide — Commentaria in Scripturam Sacram: Luke 1-24",
+                "      unresolved owning records: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas, work.cornelius-a-lapide.commentaria-in-quatuor-evangelia",
+                "      The fragment alias may name a broader collection or another title; whole-work identity with these owning records is not established. These chapter leads are not assigned to its constituents.",
+                "    Thomas Aquinas — Catena aurea in quatuor Evangelia: Luke 1-24",
+                "      unresolved owning records: work.thomas-aquinas.catena-aurea-in-lucam, work.thomas-aquinas.catena-aurea-in-marcum, work.thomas-aquinas.catena-aurea-in-matthaeum",
+                "      The fragment alias may name a broader collection or another title; whole-work identity with these owning records is not established. These chapter leads are not assigned to its constituents.",
+                "",
+                "  1. Thomas Aquinas — Catena aurea in Lucam · Luke  [gap, 23 of 24 chapters not held]",
+                "     named on 0 · held on 1 · 1 fragment · extent 1:1-24:53 continuous",
+                "     not held: 1-23",
+                "     chapters inside the recorded continuous extent have no admitted fragments; inspect held text before acquiring",
+                "  2. Bede the Venerable — In Lucae evangelium expositio · Luke  [unexamined, 23 of 24 chapters not held]",
+                "     named on 24 · held on 1 · 1 fragment · extent unrecorded",
+                "     not held: 1-23",
+                "     no extent recorded, so nothing can say whether this is a gap",
+                "  3. Gregory the Great — Homiliae in Evangelia · Luke  [unexamined, 16 of 24 chapters not held]",
+                "     named on 16 · held on 0 · 0 fragments · extent unrecorded",
+                "     not held: 2-3, 5, 7-8, 10-16, 18-19, 21, 24",
+                "     no extent recorded, so nothing can say whether this is a gap",
+                "  4. Augustine of Hippo — Quaestiones euangeliorum · Luke  [unexamined, 12 of 24 chapters not held]",
+                "     named on 12 · held on 0 · 0 fragments · extent unrecorded",
+                "     not held: 1-2, 5, 8, 10-11, 14-17, 19, 22",
+                "     no extent recorded, so nothing can say whether this is a gap",
+                "  5. Augustine of Hippo — De civitate Dei · Luke  [unexamined, 1 of 24 chapters not held]",
                 "     named on 1 · held on 0 · 0 fragments · extent unrecorded",
                 "     not held: 21",
                 "     no extent recorded, so nothing can say whether this is a gap",
-                "  2. Peter Chrysologus, bishop of Ravenna — Sermones · Luke  [unexamined, 1 of 24 chapters not held]",
+                "  6. Peter Chrysologus, bishop of Ravenna — Sermones · Luke  [unexamined, 1 of 24 chapters not held]",
                 "     named on 1 · held on 0 · 0 fragments · extent unrecorded",
                 "     not held: 21",
                 "     no extent recorded, so nothing can say whether this is a gap",
@@ -177,16 +220,16 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index containment",
             (
-                "containment: 134 containers (101 records, 33 whole-volume artifacts), 358 constituents, 68 of them commentary-index leads",
-                "  resolved 25 · partial 92 · unresolved 17 · not containers 37 · identities 6",
+                "containment: 227 containers (178 records, 49 whole-volume artifacts), 7867 constituents, 86 of them commentary-index leads",
+                "  resolved 42 · partial 159 · unresolved 26 · not containers 37 · identities 6",
             ),
             "validates the inventory; a container-shaped record with no entry, an unknown record or a malformed extent fails it",
         ),
         Example(
             "tools/commentary-work-index containment --container work.jacques-paul-migne.patrologia-latina-volume-37",
             (
-                "containment: 134 containers (101 records, 33 whole-volume artifacts), 358 constituents, 68 of them commentary-index leads",
-                "  resolved 25 · partial 92 · unresolved 17 · not containers 37 · identities 6",
+                "containment: 227 containers (178 records, 49 whole-volume artifacts), 7867 constituents, 86 of them commentary-index leads",
+                "  resolved 42 · partial 159 · unresolved 26 · not containers 37 · identities 6",
                 "",
                 "  work.jacques-paul-migne.patrologia-latina-volume-37  [resolved]",
                 "    Augustine of Hippo -- Enarrationes in Psalmos (index lead): Psalms 80-150",
@@ -226,13 +269,12 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index standing",
             (
-                "author standing: 33 persons · father 13 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
-                "  liturgical commentaries with a row: 12 of 13 · published lane authors with a row: 29 of 36",
+                "author standing: 54 persons · father 20 · doctor 4 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 22 · non-catholic 4",
+                "  liturgical commentaries with a row: 12 of 14 · published lane authors with a row: 33 of 38",
                 "  no row yet (liturgical commentaries): work.joseph-husslein.christ-the-king",
+                "  no row yet (liturgical commentaries): work.patrick-l-murphy.new-rubrics-of-the-roman-breviary-and-missal",
                 "  no row yet (lane authors): Alphonsus Liguori",
                 "  no row yet (lane authors): Anthony of Padua",
-                "  no row yet (lane authors): Cyril of Alexandria",
-                "  no row yet (lane authors): Cyril of Jerusalem",
                 "  no row yet (lane authors): Hippolytus",
                 "  no row yet (lane authors): Pius XI",
                 "  no row yet (lane authors): Victorinus of Pettau",
@@ -242,13 +284,12 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index standing --person theodoret-of-cyrus",
             (
-                "author standing: 33 persons · father 13 · doctor 2 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 13 · non-catholic 1",
-                "  liturgical commentaries with a row: 12 of 13 · published lane authors with a row: 29 of 36",
+                "author standing: 54 persons · father 20 · doctor 4 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 22 · non-catholic 4",
+                "  liturgical commentaries with a row: 12 of 14 · published lane authors with a row: 33 of 38",
                 "  no row yet (liturgical commentaries): work.joseph-husslein.christ-the-king",
+                "  no row yet (liturgical commentaries): work.patrick-l-murphy.new-rubrics-of-the-roman-breviary-and-missal",
                 "  no row yet (lane authors): Alphonsus Liguori",
                 "  no row yet (lane authors): Anthony of Padua",
-                "  no row yet (lane authors): Cyril of Alexandria",
-                "  no row yet (lane authors): Cyril of Jerusalem",
                 "  no row yet (lane authors): Hippolytus",
                 "  no row yet (lane authors): Pius XI",
                 "  no row yet (lane authors): Victorinus of Pettau",
@@ -268,19 +309,19 @@ EXAMPLES = {
             "tools/commentary-work-index discover --passage 'John 3:16' --max-results 2",
             (
                 "passage: John 3:16",
-                "  showing 2 of 17 leads; --max-results 0 lists every one",
+                "  showing 2 of 15 leads; --max-results 0 lists every one",
+                "  Catholic scope: 0 excluded; 2 pending author review",
                 "   1. Albert the Great — Super Iohannem (1280)",
-                "      role: doctor",
-                "... 7 more lines",
+                "... 8 more lines",
             ),
             "read-only first: `discover` is the per-passage lookup `build-corpus` aggregates",
         ),
         Example(
-            "tools/commentary-work-index build-corpus --calendar roman-1962 --output build/example-corpus.yaml",
+            "tools/commentary-work-index build-corpus --calendar roman-1962 --output .scratch/retrieval/example-corpus.yaml",
             (
                 "masses: 494 covered of 494",
-                "total works in union corpus: 172",
-                "unresolved passages: 115",
+                "total works in union corpus: 145",
+                "unresolved passages: 117",
                 "refused loci: 0",
                 "",
                 "roman-1962::advent-1 [seasonal] -> 20 works",
@@ -1221,6 +1262,15 @@ def _render_payload(
         print(_dump_yaml(payload).rstrip())
         return None
 
+    if payload.get("schema") == "triptych-catena-held-corpus-audit/v1":
+        print(f"held corpus audit: {payload['status']}")
+        for key, value in payload["totals"].items():
+            print(f"  {key}: {value}")
+        for error in payload["errors"]:
+            print(f"  error: {error}")
+        print("  Unindexed does not establish missing commentary; see applicability and gates in --json.")
+        return None
+
     if payload.get("discoveries") is not None:
         for item in payload["discoveries"]:
             print(f"passage: {item['passage']}")
@@ -1234,6 +1284,10 @@ def _render_payload(
                     f"  showing {cut['shown']} of {cut['total']} leads; "
                     "--max-results 0 lists every one"
                 )
+            scope_counts = item.get("lead_scope_counts") or {}
+            if scope_counts.get("excluded") or scope_counts.get("unreviewed"):
+                print(f"  Catholic scope: {scope_counts.get('excluded', 0)} excluded; "
+                      f"{scope_counts.get('unreviewed', 0)} pending author review")
             works = item.get("works", [])
             if not works:
                 print("  - no mapped commentaries yet")
@@ -1581,9 +1635,19 @@ def _render_coverage(payload: dict[str, Any]) -> None:
         f" of {totals['rows']}"
     )
     shown = payload["rows"]
-    if not shown:
+    unresolved = payload.get("unresolved_aliases") or []
+    if unresolved:
         print()
-        print("  nothing to act on: every held work covers its recorded extent")
+        print("  Collection/title leads awaiting whole-work identity review:")
+        for alias in unresolved:
+            named = "; ".join(f"{book['book']} {_ranges(book['chapters'])}" for book in alias["named_books"])
+            print(f"    {alias['author']} — {alias['work']}: {named}")
+            print(f"      unresolved owning records: {', '.join(alias['held_work_ids'])}")
+            print(f"      {alias['reason']}")
+    if not shown:
+        if not unresolved:
+            print()
+            print("  nothing to act on: every held work covers its recorded extent")
         return
     print()
     for ordinal, row in enumerate(shown, start=1):
@@ -1681,6 +1745,9 @@ class HeldFragments:
 
     def __init__(self, holdings: _containment.Holdings) -> None:
         self.books = holdings.books
+        scope = _catena_scope.Scope(holdings.root, works=holdings.library["works"])
+        if scope.errors:
+            raise ValueError("; ".join(scope.errors))
         path = holdings.root / _catena.EDGES_RELATIVE
         data = _calendars.read_yaml(path) if path.is_file() else {}
         if not isinstance(data, dict):
@@ -1695,6 +1762,8 @@ class HeldFragments:
         self.rows: list[tuple[_containment.Span, dict[str, Any]]] = []
         for fragment in data.get("fragments") or []:
             if not isinstance(fragment, dict):
+                continue
+            if not scope.allowed_work(str(fragment.get("work_id") or "")):
                 continue
             # `catena check` refuses a malformed extent; one that reaches here
             # anyway is left out rather than guessed at.
@@ -1819,6 +1888,9 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
     # Holdings are read from the repository's own library whatever --discovery
     # names: the index is an input a caller may substitute, the library is not.
     holdings = _containment.Holdings()
+    scope = _catena_scope.Scope(holdings.root, works=holdings.library["works"])
+    if scope.errors:
+        raise ValueError("; ".join(scope.errors))
     fragments = HeldFragments(holdings)
     for passage in passages:
         try:
@@ -1863,6 +1935,15 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
             )
         except Exception as error:
             raise ValueError(f"invalid passage {named}: {error}") from error
+        scope_counts = {state: 0 for state in ("eligible", "excluded", "unreviewed")}
+        eligible = []
+        for work in every:
+            decision = scope.lead_decision(work)
+            scope_counts[decision["status"]] += 1
+            if decision["eligible"]:
+                eligible.append(work)
+        every = eligible
+        total = len(every)
         works = every[: args.max_results] if args.max_results > 0 else every
 
         # A lead is not the end of a sweep: the next question is whether the
@@ -1891,6 +1972,7 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
         entry: dict[str, Any] = {
             "passage": ref,
             "works": listed,
+            "lead_scope_counts": scope_counts,
         }
         if unplaced:
             entry["fragments_without_lead"] = unplaced
@@ -1943,6 +2025,19 @@ def run_discover(args: argparse.Namespace, citations) -> dict[str, object]:
 
 def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     discovery = _load_discovery(args.discovery)
+    scope = _catena_scope.Scope(_catena.ROOT, works=_catena.load_sources().works)
+    if scope.errors:
+        raise ValueError("; ".join(scope.errors))
+    scope_counts = {state: 0 for state in ("eligible", "excluded", "unreviewed")}
+    scoped_works = {}
+    for locus, leads in discovery.works.items():
+        scoped_works[locus] = []
+        for lead in leads:
+            decision = scope.lead_decision(lead)
+            scope_counts[decision["status"]] += 1
+            if decision["eligible"]:
+                scoped_works[locus].append(lead)
+    discovery = discovery._replace(works=scoped_works)
     _psalm_target(discovery)
     root = Path(args.root)
     if not root.is_dir():
@@ -1985,6 +2080,7 @@ def run_build_corpus(args: argparse.Namespace, citations) -> dict[str, object]:
     payload = {
         "schema": SCHEMA_CORPUS,
         "status": "ok",
+        "lead_scope_counts": scope_counts,
         # Every psalm locus below is normalised into the system the index
         # declares, but the book names are printed as they are commonly
         # written, so "Psalms 24" sits beside "1 Samuel 16" and looks like it
@@ -2173,6 +2269,11 @@ def main(argv: list[str] | None = None) -> int:
     examples_live_on_the_verbs(parser, "commentary-work-index")
     sub = parser.add_subparsers(dest="command", required=True)
 
+    audit = with_examples(sub.add_parser("audit", help="Account for every held source manifest and passage without inventing Scripture links.", parents=[shared]), EXAMPLES["audit"])
+    audit.add_argument("--root", type=Path, default=_catena.ROOT, help="repository root")
+    audit.add_argument("--output", type=Path, help="write the complete reproducible JSON report")
+    audit.add_argument("--check", action="store_true", help="compare --output without writing")
+
     discover = with_examples(
         sub.add_parser(
             "discover",
@@ -2328,6 +2429,21 @@ def main(argv: list[str] | None = None) -> int:
     )
 
     def dispatch(arguments: argparse.Namespace):
+        if arguments.command == "audit":
+            import json
+            import _catena_audit
+            if arguments.check and not arguments.output:
+                raise ValueError("audit --check requires --output")
+            payload = _catena_audit.report(arguments.root)
+            rendered = json.dumps(payload, ensure_ascii=False, sort_keys=True, indent=2) + "\n"
+            if arguments.output:
+                if arguments.check:
+                    if not arguments.output.is_file() or arguments.output.read_text(encoding="utf-8") != rendered:
+                        raise ValueError("held corpus audit report is missing or stale")
+                else:
+                    arguments.output.parent.mkdir(parents=True, exist_ok=True)
+                    arguments.output.write_text(rendered, encoding="utf-8")
+            return payload
         if arguments.command == "coverage":
             return run_coverage(arguments)
         if arguments.command == "containment":
@@ -2352,6 +2468,7 @@ def main(argv: list[str] | None = None) -> int:
     return run_verb_cli(
         parser=parser,
         handlers={
+            "audit": dispatch,
             "discover": dispatch,
             "build-corpus": dispatch,
             "coverage": dispatch,

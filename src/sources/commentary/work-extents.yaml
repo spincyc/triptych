@@ -56,7 +56,7 @@
 # this project: chapters and verses are the Clementine Vulgate's, which is what
 # `_projection.CANONICAL` projects into.
 schema: triptych-commentary-work-extents/v1
-updated: '2026-08-01'
+updated: '2026-11-07'
 numbering: vulgate
 extents:
 - work_id: work.ambrose.hexameron
@@ -202,3 +202,90 @@ extents:
     coll. 429-500, which prints the six entire. Their numbering does not answer the
     days one for one, which bears on each fragment''s extent and not on the
     series''s reach.'
+- work_id: work.thomas-aquinas.catena-aurea-in-matthaeum
+  token: Matt
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 28
+  last_verse: 20
+  within: continuous
+  basis: >-
+    The acquired 1842 Oxford English CCEL witness actually proceeds through
+    chapters 1-28, each with successive scripture lemmas followed by named
+    patristic commentary. The registered XML artifact xml-943a6b5f and its
+    replayed text-130e334a/source.txt derivative in this work's
+    1842-english-oxford-ccel edition establish that sequence; the companion
+    candidates-fd372a66 index records all 28 chapter groups and 7,187 paragraphs.
+    The opening lemma is Matthew 1:1 (text line 2, XML ii.i-p1). The final
+    headed unit is 28:16-20 (lines 7162-7215); its scripture lemmas at
+    lines 7162-7166, XML ii.xxviii-p94 through p98, end with teaching all
+    commanded things and the promise to the end of the world. Those are the
+    canonical Matthew endpoints. This establishes the continuous work's scope;
+    the mechanical paragraph census does not verify or admit its uninspected
+    commentary bodies.
+- work_id: work.thomas-aquinas.catena-aurea-in-marcum
+  token: Mark
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 16
+  last_verse: 20
+  within: continuous
+  basis: >-
+    The acquired 1842 Oxford English CCEL witness proceeds through chapters
+    1-16, each with successive scripture lemmas followed by named patristic
+    commentary. The registered XML artifact xml-69c8f2d1 and its replayed
+    text-790ed587/source.txt derivative in this work's 1842-english-oxford-ccel
+    edition establish that sequence; the companion candidates-756967a9 index
+    records all 16 chapter groups and 3,142 paragraphs. The opening lemma is
+    Mark 1:1 (text line 2, XML iii.i-p1). The final headed unit is 16:19-20
+    (lines 3145-3158); scripture lemmas at lines 3145-3147, XML iii.xvi-p126
+    through p128, end with the apostles preaching everywhere, the Lord working
+    with them and confirming the word, followed by Amen. Those are the
+    canonical Mark endpoints. This establishes the continuous work's scope;
+    the mechanical paragraph census does not verify or admit its uninspected
+    commentary bodies.
+- work_id: work.thomas-aquinas.catena-aurea-in-lucam
+  token: Luke
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 24
+  last_verse: 53
+  within: continuous
+  basis: >-
+    The acquired Oxford English composite witness, Part I 1843 and Part II
+    1865, has continuous chapter and scripture-lemma progression through
+    Luke 1-24. In this work's 1843-1865-english-oxford-composite-ia edition,
+    registered facsimile pdf-a63aa18e page 27 was inspected: it opens CHAP. I
+    with Luke 1:1-4 and Eusebius/Ambrose commentary. Independently inspected
+    pages 816-819 contain the final complete commentary unit, Luke 24:50-53.
+    The registered ocr-1455eb5f/source.txt and PDF text locate the successive
+    chapter openings on one-based PDF pages 27, 85, 128, 164, 194, 219, 254,
+    284, 321, 366, 409, 452, 500, 525, 547, 572, 601, 623, 648, 675, 696,
+    720, 762 and 790. The opening lemmas identify chapters 11 and 12 where
+    PDF OCR misreads their Roman numerals as XL and XIL. This chapter sequence
+    and the inspected endpoints establish the continuous work's canonical
+    extent. They do not claim physical collation of every leaf or verification
+    and admission of the intervening OCR commentary bodies.
+- work_id: work.thomas-aquinas.catena-aurea-in-ioannem
+  token: John
+  first_chapter: 1
+  first_verse: 1
+  last_chapter: 21
+  last_verse: 25
+  within: continuous
+  basis: >-
+    The acquired Oxford English New Edition of 1874 has continuous chapter
+    and scripture-lemma progression through John 1-21. In this work's
+    1874-english-oxford-ia edition, registered facsimile pdf-c4ab25fb page 10
+    was inspected: it opens CHAP. I with John 1:1 and Chrysostom/Augustine
+    commentary. Independently inspected pages 637-638 contain the final
+    complete commentary unit, John 21:24-25, followed by THE END. The registered
+    ocr-109bb1e4/source.txt and PDF text locate successive chapter openings
+    on one-based PDF pages 10, 88, 112, 142, 178, 216, 262, 289, 335, 352,
+    376, 402, 427, 456, 484, 505, 529, 552, 576, 601 and 621. The Lazarus
+    opening lemma identifies chapter 11 where PDF OCR misreads XI as XL.
+    This chapter sequence and the inspected endpoints establish the continuous
+    work's canonical extent. They do not claim physical collation of every
+    leaf or verification and admission of the intervening OCR commentary
+    bodies; the acquired English ending remains separately blocked from
+    admission until its translator credit is established.

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.candidates-756967a9"
+edition_id = "edition.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel"
+artifact_type = "structural-index"
+media_type = "application/json"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project-created factual index of native source paragraph classes, IDs and labels, with no commentary wording; CC BY 4.0."
+provenance = "Offline deterministic extraction from the exact acquired XML and its normalized text."
+retrieved = "2026-11-07"
+sha256 = "756967a962434e61352e0bd6ae6a2763b647dc8ac03eaf4c5057466d88ef0542"
+byte_size = 448041
+path = "src/sources/works/thomas-aquinas/catena-aurea-in-marcum/editions/1842-english-oxford-ccel/artifacts/candidates-756967a9/candidates.json"
+encoding = "utf-8"
+indexable = false
+derived_from = "artifact.thomas-aquinas.catena-aurea-in-marcum.1842-english-oxford-ccel.xml-69c8f2d1"
+transformation = "scripts/_catena_aurea.py extract; retain its index and add artifact_id, artifact_sha256 and source_artifact_id naming the registered inputs; JSON indent=2, ensure_ascii=False, final LF."
+notes = "All blocks are mechanical candidates, including explicitly flagged unparsed lemma paragraphs. Native numbers have not been projected to the Vulgate or certified as source-correct. No blanket verified status."

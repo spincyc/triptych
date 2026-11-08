@@ -85,22 +85,23 @@ BROWSER = ROOT / "src/web/browser"
 CATENA = BROWSER / "catena"
 NODE = shutil.which("node")
 
-# gzip -9, whole file, mtime pinned to zero. These are the recorded E1
-# ceilings — the first candidate raised them to 8,600/13,400 without a waiver
-# and the review declined that; the corrected composition fits the originals.
-CSS_BUDGET_GZ = 8_000
+# gzip -9, whole file, mtime pinned to zero. The 2026-11-07 passage-focus
+# capability adds bounded canonical verse selection, visible English holdings
+# and matching terminal author filters. Its measured expansion and ceilings
+# are recorded in guidance/catena.md; this is not a relaxation for E1 styling.
+CSS_BUDGET_GZ = 8_500
 
-JS_BUDGET_GZ = 13_000
+JS_BUDGET_GZ = 14_000
 
 # The same files with comments stripped: what the composition itself costs.
 # Base at main 9b9ff74a7: css 1,813 / js 6,450. The growth is the accepted
-# composition plus the correction work this file pins (typed hash validation
-# for all four keys, integrity errors, rights facts, chronology grouping,
+# composition plus the correction work this file pins (typed hash validation,
+# canonical verse bounds, integrity errors, rights facts, chronology grouping,
 # filter recovery, route-owned history with arrival replaceState, print and
 # forced-colors blocks).
-CSS_RULES_BUDGET_GZ = 2_700
+CSS_RULES_BUDGET_GZ = 3_000
 
-JS_CODE_BUDGET_GZ = 8_800
+JS_CODE_BUDGET_GZ = 9_300
 
 # The review's protected distinctions. The composition deliberately specifies
 # no treatment for the `.absence-*` selectors (they render in the page's
@@ -2572,6 +2573,13 @@ function buildPage(document) {
   add(steps, 'button', 'prev-button').disabled = true;
   add(steps, 'button', 'next-button').disabled = true;
 
+  const focus = add(body, 'form', 'passage-focus', 'passage-focus');
+  add(focus, 'input', 'verse-input').value = '';
+  add(focus, 'button', 'verse-apply');
+  add(focus, 'button', 'verse-clear');
+  add(focus, 'button', 'read-commentary');
+  add(focus, 'p', 'verse-error').hidden = true;
+
   const reading = add(body, 'main', 'reading', 'reading');
   reading.setAttribute('tabindex', '-1');
   const entry = add(reading, 'section', null, 'static-entry');
@@ -3379,6 +3387,17 @@ async function run(scenario) {
       select.value = step.value;
       select.dispatch('change');
       await settle();
+    } else if (step.do === 'setVerses') {
+      const input = document.getElementById('verse-input');
+      input.value = step.value;
+      document.activeElement = input;
+      for (const handler of document.getElementById('passage-focus').listeners.submit || []) {
+        await handler({ preventDefault() {} });
+      }
+      await settle();
+    } else if (step.do === 'clearVerses') {
+      document.getElementById('verse-clear').dispatch('click');
+      await settle();
     } else if (step.do === 'toggleAuthor') {
       const filter = document.querySelector('.author-filter');
       const label = filter && filter.descendants().find(
@@ -3745,8 +3764,9 @@ class AuthorFilterRecoveryTest(ReplayTest):
         self.assertTrue(gen42["authorFilterOpen"],
                         "the disclosure must open when everything is hidden")
         self.assertIn(
-            "3 fragments held here — none shown; every author is switched off below",
+            "3 fragments held here — 0 shown",
             gen42["sectionHeadings"])
+        self.assertIn("Every author is switched off. Restore an author with the author filter.", gen42["asideNotes"])
         self.assertTrue(all(one["hidden"] for one in gen42["authorGroups"]))
 
     def test_the_switch_restores_the_chain(self):
@@ -5318,8 +5338,8 @@ class StaticDocumentTruthTest(unittest.TestCase):
 
     def test_the_footer_agrees_with_what_actually_opens(self):
         # Conditional on rendering, so it is also true with scripts off.
-        self.assertIn("Once the page renders, the chapter and the first commentator "
-                      "stand open", self.page)
+        self.assertIn("Once the page renders, the chapter stands open", self.page)
+        self.assertIn("every commentator and fragment is closed until you open it", self.page)
         self.assertNotIn("Everything here is closed until you open it", self.page)
         self.assertNotIn("stand open on arrival", self.page)
 
@@ -5616,13 +5636,12 @@ class ComposedButNotSimplifiedTest(unittest.TestCase):
 class CompositionTest(ReplayTest):
     """The accepted E0 composition, in the corrected mechanics."""
 
-    def test_the_chapter_opens_and_the_first_group_opens_with_it(self):
+    def test_the_chapter_opens_and_all_author_groups_start_closed(self):
         page = self.page("default")
         self.assertTrue(page["chapterOpen"])
         opened = [one["open"] for one in page["authorGroups"]]
-        self.assertTrue(opened[0])
-        self.assertFalse(any(opened[1:]),
-                         "only the first group opens; the rest wait to be asked")
+        self.assertTrue(opened)
+        self.assertFalse(any(opened), "all groups wait to be asked, as in the terminal reader")
 
     def test_the_author_filter_is_folded_and_closed_when_nothing_is_hidden(self):
         page = self.page("default")
@@ -8346,7 +8365,7 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
             "sectionHeadings": ["One fragment held here"],
             "dataStates": ["held"],
             "authorGroups": [{"author": "Author 1", "date": "301",
-                              "count": "1 fragment", "open": True,
+                              "count": "1 fragment", "open": False,
                               "hidden": False}],
             "acknowledgements": [],
             # --- the chapter around it ---------------------------------
@@ -8392,7 +8411,7 @@ class V9ComposedPrefixFallbackClosureTest(ReplayTest):
                 "author", "author-body", "author-count", "author-date",
                 "author-fragments", "author-head", "author-name", "chain",
                 "chain-column", "chapter", "chapter-body", "chapter-count",
-                "chapter-head", "chapter-name", "fragment",
+                "chapter-head", "chapter-name", "english-availability", "fragment",
                 "fragment-apparatus", "fragment-author", "fragment-body",
                 "fragment-date", "fragment-extent", "fragment-head",
                 "fragment-language", "fragment-length", "fragment-source",
@@ -8926,7 +8945,7 @@ class V15TransportOwnershipTest(V14ProjectionAuthorityBase):
             "author", "author-body", "author-count", "author-date",
             "author-fragments", "author-head", "author-name", "chain",
             "chain-column", "chapter", "chapter-body", "chapter-count",
-            "chapter-head", "chapter-name", "fragment", "fragment-apparatus",
+            "chapter-head", "chapter-name", "english-availability", "fragment", "fragment-apparatus",
             "fragment-author", "fragment-body", "fragment-date",
             "fragment-extent", "fragment-head", "fragment-language",
             "fragment-length", "fragment-source", "fragment-text",
@@ -8936,7 +8955,7 @@ class V15TransportOwnershipTest(V14ProjectionAuthorityBase):
         "langAttributes": ["passage=en", "fragment-text=la"],
         "acknowledgements": [],
         "authorGroups": [{"author": "Author 1", "date": "301",
-                          "count": "1 fragment", "open": True,
+                          "count": "1 fragment", "open": False,
                           "hidden": False}],
     }
 

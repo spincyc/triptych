@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.1cor-13-13-checked-130f2dd3"
+edition_id = "edition.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Literal historical English from the 1908 printing under the parent OCR’s recorded United States publication-term basis; not a new translation."
+retrieved = "2026-11-07"
+sha256 = "130f2dd3b7e4925c54324ab427f66d2c81a4f630c11ea1c4977b93c26c58d47c"
+byte_size = 2855
+indexable = true
+encoding = "utf-8"
+path = "src/sources/works/cornelius-a-lapide/commentaria-in-omnes-divi-pauli-epistolas/editions/1908-grant-cobb/artifacts/1cor-13-13-checked-130f2dd3/comment.txt"
+derived_from = "artifact.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas.1908-grant-cobb.volume-7-ocr-c9d11cbf"
+transformation = "Select OCR physical lines 16603–16628 and 16641–16666, omitting the numeric heading, footer and page heading; fold physical whitespace. Explicit image-checked OCR corrections: {\"faith , hope, charity, S. Paul\": \"faith, hope, charity. S. Paul\", \"Subjecto Fidel \\\\ part 2)\": \"Subjecto Fidei, part 2)\", \"Tertullian {de Patientid , c. xii.)\": \"Tertullian (de Patientiâ, c. xii.)\", \"by fakh\": \"by faith\", \"accompanies .”\": \"accompanies.”\", \"Greater, ue., the greatest So\": \"Greater, i.e., the greatest. So\", \"“ O Hesperus , light more fair, which shinest in heaven .*\": \"“O Hesperus, light more fair, which shinest in heaven.”\", \"e.g .,\": \"e.g.,\", \"Deut. vL 5.\": \"Deut. vi. 5.\"}"
+provenance = "Complete natural comment collated against the registered volume 7 scan, PDF pages 344–345 / printed 334–335 on 2026-11-07; preceding verse 12 and following chapter XIV boundaries checked."
+notes = "Historical printing itself reads gold among the elements; preserve this rather than emend it. Full natural verse-comment; no translator preface or modern translation."

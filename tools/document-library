@@ -1049,10 +1049,12 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         if not target.is_file():
             raise CorpusError(f"{target} does not exist; run `document-library structure`")
         if target.read_text(encoding="utf-8") != serialised:
+            # Re-record with tools/browser-products record; this is advice,
+            # not a tool dependency (that producer calls this catalogue).
             raise CorpusError(
                 f"{target} has drifted from the sources; "
-                "re-record the verified browser products with `browser-products record` "
-                "(guidance/web-data.md)"
+                "explicitly re-record the verified browser products as described "
+                "in guidance/web-data.md"
             )
         return {**built["counted"], "current": str(target), "status": "ok"}
     target.parent.mkdir(parents=True, exist_ok=True)

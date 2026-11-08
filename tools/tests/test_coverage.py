@@ -259,7 +259,72 @@ class ExtentRecordTests(CoverageFixture):
 
 
 class CoverageReportTests(CoverageFixture):
-    """The four readings, and that they stay four."""
+    """Keep coverage states and whole-work identities distinct."""
+
+    def collection_fixture(self, collection: str, part: str) -> None:
+        """Use real title shapes in a synthetic single-author identity graph."""
+        import yaml
+        path = self.root / "src/sources/works/augustine/de-civitate-dei/work.toml"
+        path.write_text(path.read_text().replace('title = "De civitate Dei"', f'title = "{part}"'))
+        self.write("src/sources/commentary/work-aliases.yaml", yaml.safe_dump({
+            "groups": [{"author": "Augustine of Hippo", "work": collection,
+                        "titles": [collection.lower(), part.lower()]}]}))
+        path = self.root / "src/sources/commentary/fragment-loci.yaml"
+        edges = yaml.safe_load(path.read_text())
+        edges["fragments"][0]["work_alias"]["work"] = collection
+        path.write_text(yaml.safe_dump(edges))
+        self.write("src/sources/commentary/passage-commentary-index.yaml", yaml.safe_dump({
+            "passages": [{"passage": "Romans 2", "works": [{
+                "author": "Augustine of Hippo", "title": collection}]}]}))
+
+    def test_collection_alias_does_not_broadcast_to_its_constituent(self) -> None:
+        for collection, part in (
+            ("Commentaria in Scripturam Sacram", "Commentaria in omnes D. Pauli epistolas"),
+            ("Catena aurea in quatuor Evangelia", "Catena aurea in Matthaeum"),
+        ):
+            with self.subTest(collection=collection):
+                fixture = CoverageReportTests()
+                fixture.setUp()
+                self.addCleanup(fixture.tearDown)
+                fixture.collection_fixture(collection, part)
+                fixture.write_extents(fixture.extent())
+                result = _coverage.coverage(fixture.root)
+                self.assertEqual([row["token"] for row in result["rows"]], ["Gen"])
+                self.assertEqual(result["rows"][0]["named"], [])
+                self.assertEqual(result["rows"][0]["missing"], [2, 3])
+                self.assertEqual(result["unresolved_aliases"][0]["work"], collection)
+                self.assertEqual(result["unresolved_aliases"][0]["held_work_ids"], [WORK])
+                self.assertEqual(result["unresolved_aliases"][0]["named_books"][0]["token"], "Rom")
+
+    def test_reviewed_whole_work_identity_keeps_cross_book_leads(self) -> None:
+        import yaml
+        self.collection_fixture("The City of God", "De civitate Dei")
+        path = self.root / "src/sources/commentary/work-aliases.yaml"
+        aliases = yaml.safe_load(path.read_text())
+        aliases["review"] = {"canonical_work_ids": [{"author": "Augustine of Hippo",
+            "work": "The City of God", "work_id": WORK, "reason": "Reviewed whole-work identity."}]}
+        path.write_text(yaml.safe_dump(aliases))
+        result = _coverage.coverage(self.root)
+        self.assertEqual(result["unresolved_aliases"], [])
+        self.assertEqual({row["token"] for row in result["rows"]}, {"Gen", "Rom"})
+        self.assertEqual(next(row for row in result["rows"] if row["token"] == "Rom")["named"], [2])
+
+    def test_source_owned_alternate_title_keeps_cross_book_leads(self) -> None:
+        self.collection_fixture("The City of God", "De civitate Dei")
+        path = self.root / "src/sources/works/augustine/de-civitate-dei/work.toml"
+        path.write_text(path.read_text() + '\nalternate_titles = ["The City of God"]\n')
+        result = _coverage.coverage(self.root)
+        self.assertEqual(result["unresolved_aliases"], [])
+        self.assertEqual({row["token"] for row in result["rows"]}, {"Gen", "Rom"})
+
+    def test_unresolved_alias_does_not_remove_a_sourced_other_book_extent(self) -> None:
+        self.collection_fixture("Commentaria in Scripturam Sacram", "Commentaria in omnes D. Pauli epistolas")
+        self.write_extents(self.extent(token="Rom", last_verse=31))
+        rows = {row["token"]: row for row in self.rows()}
+        self.assertEqual(set(rows), {"Gen", "Rom"})
+        self.assertEqual(rows["Rom"]["named"], [])
+        self.assertEqual(rows["Rom"]["status"], "gap")
+        self.assertEqual(rows["Rom"]["missing"], [1, 2, 3])
 
     def test_a_continuous_work_short_of_its_extent_is_a_gap(self) -> None:
         self.write_extents(self.extent())

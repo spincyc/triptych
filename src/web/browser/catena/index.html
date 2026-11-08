@@ -97,6 +97,17 @@
 </form>
 </details>
 
+<form id="passage-focus" class="passage-focus" aria-label="Focus commentary on verses">
+  <label for="verse-input">Commentary verses <span class="focus-numbering">(Vulgate)</span></label>
+  <input id="verse-input" name="verses" type="text" placeholder="Whole chapter"
+         aria-describedby="verse-help verse-error" autocomplete="off" disabled>
+  <button type="submit" id="verse-apply" disabled>Apply</button>
+  <button type="button" id="verse-clear" disabled>Whole chapter</button>
+  <button type="button" id="read-commentary" disabled>Read commentary</button>
+  <p id="verse-help">One verse or a range in this chapter, such as 3 or 3-8. Scripture keeps its edition’s numbering.</p>
+  <p id="verse-error" role="status" hidden></p>
+</form>
+
 <!-- Not a live region: replacing it would read a whole chapter aloud on
      every change. The shared script announces a one-line summary instead.
 
@@ -143,8 +154,8 @@
        works, where the links go — so print drops them by these classes;
        the paragraph above states what the page holds and is kept. -->
   <p class="footer-interaction">
-    Once the page renders, the chapter and the first commentator stand open;
-    every other fragment is closed until you open it, and opening is what it
+    Once the page renders, the chapter stands open;
+    every commentator and fragment is closed until you open it, and opening is what it
     costs to read. A chapter fetches a list of who comments on it — never their words —
     so a chapter with nothing held fetches nothing at all; a fragment's text
     arrives when you open that fragment, which is why its length is printed

@@ -63,7 +63,7 @@ HISTORY_VIEW_HASH_KEYS = {
 }
 
 RECOGNISED_HASH_KEYS = {
-  "catena/catena.js": ["bible", "book", "chapter", "voice"],
+  "catena/catena.js": ["bible", "book", "chapter", "verses", "voice"],
   "history/history.js": sorted(key for keys in HISTORY_VIEW_HASH_KEYS.values() for key in keys),
   "law/law.js": ["act", "canon", "line", "par", "unit"],
   "liturgy/day.js": [
@@ -84,7 +84,7 @@ RECOGNISED_HASH_KEYS = {
 # emitted. A file whose call is built from a variable instead of a literal is
 # listed in COMPUTED_HASH_WRITERS and pinned by replaying the function.
 WRITTEN_HASH_KEYS = {
-  "catena/catena.js": [["book", "chapter", "bible", "voice"]],
+  "catena/catena.js": [["book", "chapter", "bible", "voice", "verses"]],
   "history/history.js": [["station", "unit"], ["station", "unit"],
                          ["family", "q", "record"], ["family", "q"]],
   "law/law.js": [["canon", "par", "line", "act"]],
@@ -672,9 +672,9 @@ class CanonicalHashFormTest(unittest.TestCase):
   of the address bar.
   """
 
-  def test_catena_writes_book_chapter_bible_and_voice_in_that_order(self):
+  def test_catena_writes_book_chapter_bible_voice_and_verses_in_that_order(self):
     answer = probe(probe="writtenKeys", file="catena/catena.js")
-    self.assertEqual(answer["literal"][0], ["book", "chapter", "bible", "voice"])
+    self.assertEqual(answer["literal"][0], ["book", "chapter", "bible", "voice", "verses"])
 
   def test_the_track_writes_a_reading_or_a_period_but_never_both(self):
     state = {
