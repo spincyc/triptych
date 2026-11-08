@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.severian-of-gabala.in-cosmogoniam-homiliae.2010-pearse-bareille-sermon-1.complete-page-text-08940240"
+edition_id = "edition.severian-of-gabala.in-cosmogoniam-homiliae.2010-pearse-bareille-sermon-1"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Roger Pearse’s complete source page credits his English translation (2010) and states: \"This file and all material on this page is in the public domain - copy freely.\" This affirmative translator release covers the retained page and its mechanical text derivative. The work is English through J. Bareille’s 1865 French, not a claim to public-domain status for another modern translator. Source words remain excluded from Triptych’s CC BY 4.0 grant."
+rights_jurisdiction = "United States"
+provenance = "Retrieved the complete publisher-offered file with curl on 2026-11-08. Exact bytes hashed before local conversion; no source wording passed through a model. "
+retrieved = "2026-11-08"
+sha256 = "08940240c91912c322366e8e4d345be32886b8a9cf97b5429de19fcf74833ff1"
+byte_size = 33207
+indexable = true
+derived_from = "artifact.severian-of-gabala.in-cosmogoniam-homiliae.2010-pearse-bareille-sermon-1.complete-page-2a316d4b"
+transformation = "pandoc 3.11 INPUT.html --from html --to plain --wrap=none -o OUTPUT.txt; complete source-page conversion, no editorial rewriting. Paragraph boundaries, source footnote indicators, all source notes and the translator’s rights notice are retained."
+path = "src/sources/works/severian-of-gabala/in-cosmogoniam-homiliae/editions/2010-pearse-bareille-sermon-1/artifacts/complete-page-text-08940240/severian-sermon-1.txt"
+encoding = "utf-8"

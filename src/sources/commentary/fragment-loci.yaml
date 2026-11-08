@@ -78,7 +78,7 @@ author_aliases:
     Migne's Patrologia Latina 52 does ('SANCTI PETRI CHRYSOLOGI ARCHIEPISCOPI RAVENNATIS'), and the
     harvest names him without it. Both name the bishop of Ravenna whose sermons that volume prints.
 schema: triptych-commentary-fragment-loci/v1
-updated: '2026-11-07'
+updated: '2026-11-08'
 numbering: vulgate
 # ONE TEXT UNDER TWO NAMES (Rule 15). Where the library holds one text as two or
 # more passage records under disputed attributions, the catena hangs it once,
@@ -114,6 +114,321 @@ parallels:
     two printings are not collated as a whole. The notes of both passage records carry the
     evidence.'
 fragments:
+- passage_id: passage.severian-of-gabala.in-cosmogoniam-homiliae.2010-pearse-bareille-sermon-1.homilia-1
+  work_id: work.severian-of-gabala.in-cosmogoniam-homiliae
+  work_alias:
+    author: Severian of Gabala
+    work: In cosmogoniam homiliae sex
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 1
+    last_chapter: 1
+    last_verse: 5
+  basis: Complete Sermon 1, sections 1–7 and concluding doxology, on Genesis 1:1–5. The text explicitly
+    treats creation, darkness, the moving spirit, light, day and night; its retrospective closing marks
+    completion of the first day. Read against the complete HTML source, including numbered divisions,
+    source notes and final paragraph. Translation by Roger Pearse from Bareille’s French, not directly
+    from Greek; source wording, including awkward phrases, is unchanged. The publisher’s notes remain
+    in the controlling text artifact but are not attributed to Severian in this passage. Later creation
+    verses and other biblical quotations are supporting illustrations, not a wider direct commentary extent.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-3-6-3-8
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 1
+    last_chapter: 1
+    last_verse: 1
+  basis: Complete source section block 3.6-3.8, beneath the translator’s heading 'The beginning (Gen.
+    1:1)', read with surrounding sections; direct commentary on Genesis 1:1. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-3-9-3-10
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 1
+    last_chapter: 1
+    last_verse: 1
+  basis: Complete source section block 3.9-3.10, beneath the translator’s heading 'Heaven and earth (Gen.
+    1:1)', read with surrounding sections; direct commentary on Genesis 1:1. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-4-11
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 2
+    last_chapter: 1
+    last_verse: 2
+  basis: Complete source section block 4.11, beneath the translator’s heading '‘The earth was invisible’
+    (Gen. 1:2)', read with surrounding sections; direct commentary on Genesis 1:2. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-4-12
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 2
+    last_chapter: 1
+    last_verse: 2
+  basis: Complete source section block 4.12, beneath the translator’s heading '‘Darkness above the abyss’
+    (Gen. 1:2)', read with surrounding sections; direct commentary on Genesis 1:2. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-4-13-4-15
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 2
+    last_chapter: 1
+    last_verse: 2
+  basis: Complete source section block 4.13-4.15, beneath the translator’s heading '‘Water’ (Gen. 1:2)',
+    read with surrounding sections; direct commentary on Genesis 1:2. Wording inspected against the publisher-supplied
+    Word document and its mechanical complete-text extraction. The biblical lemma and the argument establish
+    the stated extent; cross-referenced biblical verses are illustrations rather than additional direct
+    loci. Translator’s headings are retained in the artifact but excluded from the attributed prose. No
+    Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-4-16-4-18
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 2
+    last_chapter: 1
+    last_verse: 2
+  basis: Complete source section block 4.16-4.18, beneath the translator’s heading '‘The Spirit passed’
+    (Gen. 1:2)', read with surrounding sections; direct commentary on Genesis 1:2. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-5-19
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 3
+    last_chapter: 1
+    last_verse: 3
+  basis: Complete source section block 5.19, beneath the translator’s heading '‘And God said...’ (Gen.
+    1:3)', read with surrounding sections; direct commentary on Genesis 1:3. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-5-20-5-21
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 3
+    last_chapter: 1
+    last_verse: 3
+  basis: Complete source section block 5.20-5.21, beneath the translator’s heading 'Light (Gen. 1:3)',
+    read with surrounding sections; direct commentary on Genesis 1:3. Wording inspected against the publisher-supplied
+    Word document and its mechanical complete-text extraction. The biblical lemma and the argument establish
+    the stated extent; cross-referenced biblical verses are illustrations rather than additional direct
+    loci. Translator’s headings are retained in the artifact but excluded from the attributed prose. No
+    Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-5-22-5-25
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 4
+    last_chapter: 1
+    last_verse: 4
+  basis: Complete source section block 5.22-5.25, beneath the translator’s heading 'Light and darkness
+    (Gen. 1:4)', read with surrounding sections; direct commentary on Genesis 1:4. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-6-26-6-27
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 5
+    last_chapter: 1
+    last_verse: 5
+  basis: Complete source section block 6.26-6.27, beneath the translator’s heading 'Day and night (Gen.
+    1:5)', read with surrounding sections; direct commentary on Genesis 1:5. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-7-28
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 5
+    last_chapter: 1
+    last_verse: 5
+  basis: Complete source section block 7.28, beneath the translator’s heading 'Evening and morning (Gen.
+    1:5)', read with surrounding sections; direct commentary on Genesis 1:5. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-8-29
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 6
+    last_chapter: 1
+    last_verse: 7
+  basis: Complete source section block 8.29, beneath the translator’s heading 'The vault (firmament) (Gen.
+    1:6)', read with surrounding sections; direct commentary on Genesis 1:6–7. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-8-30-9-30
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 6
+    last_chapter: 1
+    last_verse: 7
+  basis: Complete source section block 8.30-9.30, beneath the translator’s heading '‘And it was done’
+    (Gen. 1:7)', read with surrounding sections; direct commentary on Genesis 1:6–7. Wording inspected
+    against the publisher-supplied Word document and its mechanical complete-text extraction. The biblical
+    lemma and the argument establish the stated extent; cross-referenced biblical verses are illustrations
+    rather than additional direct loci. Translator’s headings are retained in the artifact but excluded
+    from the attributed prose. No Latin collation or equivalence with a different English translation
+    is claimed. The source repeats paragraph number 30 across chapters 8 and 9; this record preserves
+    both locators.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
+- passage_id: passage.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.sections-9-31
+  work_id: work.augustine.de-genesi-ad-litteram-imperfectus-liber
+  work_alias:
+    author: Augustine of Hippo
+    work: De Genesi ad litteram imperfectus liber
+  numbering: vulgate
+  extent:
+    token: Gen
+    first_chapter: 1
+    first_verse: 8
+    last_chapter: 1
+    last_verse: 8
+  basis: Complete source section block 9.31, beneath the translator’s heading '‘God saw it was good’ (Gen.
+    1:8)', read with surrounding sections; direct commentary on Genesis 1:8. Wording inspected against
+    the publisher-supplied Word document and its mechanical complete-text extraction. The biblical lemma
+    and the argument establish the stated extent; cross-referenced biblical verses are illustrations rather
+    than additional direct loci. Translator’s headings are retained in the artifact but excluded from
+    the attributed prose. No Latin collation or equivalence with a different English translation is claimed.
+  composition_date_unestablished: The acquired English edition establishes this distinct work’s identity
+    and section limits; this acquisition has not established its original composition date or the date
+    of its later additions. The 2020 translation date is not a composition date.
 - passage_id: passage.thomas-aquinas.catena-aurea-in-lucam.1843-1865-english-oxford-composite-ia.luke-24-50-53-text
   work_id: work.thomas-aquinas.catena-aurea-in-lucam
   work_alias:
@@ -25094,3 +25409,65 @@ fragments:
     natural unit and that reference is its extent; question IX (13:13, 23) precedes it and question XI (13:31)
     follows. Augustine's own Latin in a dated digital transcription of Migne, PL 35, not collated with a page
     image. The date is the work record's composed range.
+
+# Hooker English: complete reviewed sections; exact noncommercial permission and author standing checked.
+- passage_id: passage.origen.homiliae-in-ezechielem.2014-hooker.homily-1-section-6
+  work_id: work.origen.homiliae-in-ezechielem
+  work_alias:
+    author: Origen
+    work: Homiliae in Ezechielem
+  numbering: vulgate
+  extent:
+    token: Ezech
+    first_chapter: 1
+    first_verse: 1
+    last_chapter: 1
+    last_verse: 1
+  basis: Complete Homily1 section6, printed 37 (PDF pages[50]), read with neighboring sections and page
+    notes; direct exposition of Ezekiel1:1. Wording checked against rendered publisherPDF pages on 2026-11-08.
+    Exact text-layer lines retained, including source footnote numbers and line-end hyphenation. The complete
+    text artifact retains translator notes; they are excluded from attributed homily prose here. No original-language
+    collation claimed. Publication requires separate author-standing and noncommercial-permission admission;
+    this source passage alone grants neither.
+  composition_date_unestablished: No original composition date established in this intake; 2014publication
+    and2018release are not composition dates.
+- passage_id: passage.origen.homiliae-in-ezechielem.2014-hooker.homily-1-section-8
+  work_id: work.origen.homiliae-in-ezechielem
+  work_alias:
+    author: Origen
+    work: Homiliae in Ezechielem
+  numbering: vulgate
+  extent:
+    token: Ezech
+    first_chapter: 1
+    first_verse: 2
+    last_chapter: 1
+    last_verse: 2
+  basis: Complete Homily1 section8, printed 43 (PDF pages[56]), read with neighboring sections and page
+    notes; direct exposition of Ezekiel1:2. Wording checked against rendered publisherPDF pages on 2026-11-08.
+    Exact text-layer lines retained, including source footnote numbers and line-end hyphenation. The complete
+    text artifact retains translator notes; they are excluded from attributed homily prose here. No original-language
+    collation claimed. Publication requires separate author-standing and noncommercial-permission admission;
+    this source passage alone grants neither.
+  composition_date_unestablished: No original composition date established in this intake; 2014publication
+    and2018release are not composition dates.
+- passage_id: passage.origen.homiliae-in-ezechielem.2014-hooker.homily-1-section-9
+  work_id: work.origen.homiliae-in-ezechielem
+  work_alias:
+    author: Origen
+    work: Homiliae in Ezechielem
+  numbering: vulgate
+  extent:
+    token: Ezech
+    first_chapter: 1
+    first_verse: 3
+    last_chapter: 1
+    last_verse: 3
+  basis: Complete Homily1 section9, printed 43,45 (PDF pages[56, 58]), read with neighboring sections
+    and page notes; direct exposition of Ezekiel1:3. Wording checked against rendered publisherPDF pages
+    on 2026-11-08. Exact text-layer lines retained, including source footnote numbers and line-end hyphenation.
+    The complete text artifact retains translator notes; they are excluded from attributed homily prose
+    here. No original-language collation claimed. Publication requires separate author-standing and noncommercial-permission
+    admission; this source passage alone grants neither.
+  composition_date_unestablished: No original composition date established in this intake; 2014publication
+    and2018release are not composition dates.

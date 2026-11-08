@@ -362,6 +362,17 @@ A source that cannot be redistributed is worth much less here than one that can,
 whatever its scholarly superiority — and that ranking should drive the
 acquisition round, not be discovered during it.
 
+A publisher's explicit permission can authorize a bounded expression without
+making it public domain or giving it a Creative Commons licence. Such an
+artifact retains `rights_status = "permission"`. Catena and Sources accept it
+only through the shared, reviewed artifact-specific permission record; the
+status or a `LicenseRef` identifier alone supplies no publication authority.
+The grant's attribution and conditions travel beside the passage in both
+readers. The November 2026 Origen acquisition covers only the identified
+English homily derivative under Roger Pearse's noncommercial grant. It does
+not clear the complete mixed-rights PDF, another artifact, commercial reuse,
+or an unreviewed author or passage.
+
 ---
 
 ## 7. The missing edge, which is the only new thing
@@ -522,6 +533,33 @@ Measured gzip-9 payloads with this feature are 13,632 bytes for `catena.js`
 regression ceilings are 14,000/9,300 and 8,500/3,000 bytes respectively. The
 increase supports passage selection, validation and author controls; it adds no
 shard family or additional payload request.
+
+### Verse-specific excerpts within a held passage — 2026-11-08
+
+A long admitted fragment can carry reviewed internal Scripture links in
+`src/sources/commentary/passage-snippets.yaml`. These links select the source's
+own complete argumentative sections; they are not new fragments, translations,
+or evidence of another witness. The fragment retains its natural extent and
+full text. A Scripture quotation elsewhere in that text is not automatically
+commentary on the quoted verse.
+
+`scripts/_catena_snippets.py` owns the closed sidecar contract and validation.
+Each parent text is hash-pinned; each selected span has exact offsets, a
+canonical extent contained within the parent's, a source locator and a reviewed
+basis. Source-side offsets count Unicode code points; the producer emits UTF-16
+offsets for both readers' shared model. Neither layer searches for substitute
+wording when a pin or boundary fails. The generated `source_record` identifies
+the controlling edition, artifact and available physical bounds without moving
+or copying the source text.
+
+The readers show overlapping reviewed sections first and offer the entire
+natural fragment as context. When no reviewed section matches, they retain the
+full fragment; missing internal links do not establish missing commentary.
+Source wording, translator identity, rights and edition-numbering refusals
+retain their existing owners. `python3 scripts/_catena.py linkage` reports
+linkage coverage across the whole admitted corpus and the long passages still
+requiring internal-boundary review. Its counts describe that pass, not complete
+semantic indexing of every acquired work.
 
 ## 8. What must be true before acquisition begins
 

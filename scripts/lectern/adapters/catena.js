@@ -241,7 +241,8 @@ module.exports = function catena(realm) {
 
   function index(state) { return state.index; }
 
-  async function body(token, chapter, voice, id) { // catena.js:119, :298
+  async function body(token, chapter, voice, id, verses = '') { // catena.js:119, :298
+    if (!M.parseVerses(verses)) throw new Error('The commentary verse selection is invalid.');
     const { file } = await chapterFile(token, chapter);
     const row = M.chapterFragments(file).find((one) => one.id === id);
     if (!row) throw new Error('no fragment ' + id + ' stands under this chapter');
@@ -264,6 +265,12 @@ module.exports = function catena(realm) {
     }
     const content = completed.content;
     const say = M.bodySaying(content);
+    const { canon } = await start();
+    const book = canon.books.find((one) => one.token === token);
+    const snippets = say.missing ? [] : M.matchingSnippets(content, token, chapter, verses).map((snippet) => ({
+      id: snippet.id, text: snippet.text, locator: snippet.locator, basis: snippet.basis,
+      extent: M.formatExtent(snippet.extent, book.name),
+    }));
     return {
       missing: say.missing,
       said: say.said,
@@ -271,6 +278,7 @@ module.exports = function catena(realm) {
       date_basis: say.missing ? '' : content.date_basis,
       acknowledgement: content.present ? content.acknowledgement : '',
       acknowledgement_broken: content.present ? content.acknowledgement_broken : false,
+      snippets,
     };
   }
 

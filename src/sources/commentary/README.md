@@ -53,6 +53,38 @@ Raw OCR and automatically extracted source headings remain finding aids until
 that review. English coverage is measured separately from original-language
 holdings, and a partial or abridged translation retains that description.
 
+### Read the relevant portion of a larger excerpt
+
+`passage-snippets.yaml` records reviewed narrower Scripture extents within
+already admitted fragments. It stores a parent-text SHA-256 and exact Unicode
+code-point offsets, source section locators and the reason for each link.
+It duplicates no source wording and changes neither the parent's natural
+extent nor its evidence state. The producer converts offsets to UTF-16 for
+the web and terminal readers; each lazy body carries its optional `snippets`
+and the parent's exact `source_record` identity and line/page bounds.
+
+The first pass covers the explicit verse-led explanations in the five held
+English Chrysostom excerpts exceeding 1,000 words, and selected complete
+sections of Gregory of Nyssa's *On the Making of Man*. Supporting citations
+inside an explanation acquire no commentary edges. Gregory's text remains
+an inspected web witness, without a new facsimile-collation claim.
+
+```sh
+python3 scripts/_catena.py linkage
+python3 scripts/_catena.py linkage --json > .scratch/catena-linkage.json
+python3 -m unittest tools.tests.test_catena_linkage
+```
+
+The report accounts for every admitted fragment and lists every parent of at
+least 1,000 words that has no reviewed narrower snippets, ordered by length.
+`--minimum-words` changes that reading-length heuristic. Its remaining Latin
+books, Greek homilies and English texts need source-boundary review; their
+existing full commentary remains available. A short fragment or a parent with
+some snippets is not a claim of exhaustive sentence-to-verse mapping.
+Missing snippets retain full context; stale hashes, invalid offsets and an
+extent outside the parent fail validation and generation rather than being
+silently reselected.
+
 ## Chain
 
 | Stage | Tool | Input | Output |

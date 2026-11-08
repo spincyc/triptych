@@ -65565,3 +65565,33 @@ title = "Commentaria in Scripturam Sacram"
 scripture = ["2 Corinthians 1-13", "Galatians 1-6"]
 locator = "Volume 8; full offered 363-page scan and 17425-line OCR."
 basis = "The title identifies the named Gospel/epistle coverage. This is the relevant constituent of the broader harvested Scripture commentary; no whole=true claim about all Scripture. Volume 6’s Johannine epistles remain distinct from its Gospel content. Cobb volumes 7–8 are expressly abridged translations."
+
+[[containers]]
+id = "artifact.origen.homiliae-in-ezechielem.2014-hooker.complete-publisher-volume-e3c297ca"
+manifest_sha256 = "d54a6842cb9ddab57373297bc6b95d2e6c7ec5e7b69f27859b60f80360ccdeec"
+status = "partial"
+basis = "Reviewed 8 November 2026 against the complete publisher PDF, its title (printed v), contents (vii and 3), prefaces, homily boundaries and named divisions. The volume is Origen of Alexandria: Exegetical works on Ezekiel, edited by Roger Pearse and translated by Mischa Hooker (Chieftain Publishing, 2014). It contains multiple original works and modern editorial matter; filing its remote source artifact under the homilies does not make every page part of that work. The artifact remains restricted as a whole; this containment entry does not grant redistribution of the Greek-fragment section or its separately credited NETS quotations."
+unresolved = "Individual Greek fragments have not been separated into homily, commentary and scholion work identities, nor have their individual scriptural extents or attributions been audited. Modern editorial introduction (ix–x), translator preface (xi–xii), introduction to the Greek fragments, appendix Etymologies from the Onomasticum Marchalianum (division beginning 707), contributor biographies (727), and cover material remain unenumerated as individual constituent works. This is a partial identity inventory, not a complete transcription, attribution adjudication, or rights clearance of the volume."
+
+[[containers.constituents]]
+author = "Origen"
+title = "Homiliae in Ezechielem"
+work_id = "work.origen.homiliae-in-ezechielem"
+whole = true
+locator = "Fourteen homilies, printed 8–397 (physical PDF 21–410); facing Latin on even printed pages and Hooker English on odd printed pages."
+basis = "The homily contents on printed 3 list Homilies 1–14, starting at 8 and ending with Homily 14 beginning 388; its final doxology ends on 397. The complete English derivative retains printed 9,11,...,397. Whole means the surviving fourteen-homily collection, not the distinct Ezekiel commentary, scholia, or every work in this volume. Three English sections (1.6, 1.8, 1.9) have bounded passage verification; the rest is acquired rather than comprehensively collated."
+
+[[containers.constituents]]
+author = "Jerome"
+title = "Preface to Origen’s Homilies on Ezekiel"
+whole = true
+locator = "Printed 4–7 (physical PDF 17–20), Latin Praefatio and facing English Preface, sections 1–2."
+basis = "The separate prefatory letter precedes Homily 1 and ends before its printed-page-8 heading. Jerome describes his translation of Origen and the three forms of Origen’s biblical writings; this is Jerome’s prefatory work, not homily prose by Origen. Its presence and boundary were inspected; no verified passage or separately redistributable derivative is registered here."
+
+[[containers.constituents]]
+author = "Origen"
+title = "Greek fragments of the homilies, commentaries and scholia on Ezekiel"
+whole = false
+locator = "The Greek Fragments division begins on printed 399 (physical PDF 412) and precedes the appendix division beginning on printed 707. The division also includes modern introductory matter."
+extent_unresolved = "This collected fragment section is not a complete surviving original commentary or scholia work; the individual fragments, source attributions and Scripture ranges have not been inventoried in this intake."
+basis = "The book’s title explicitly distinguishes the fourteen homilies from Greek fragments of the homilies, commentaries and scholia; the contents and division heading identify their location. This is a collective holding with attribution limits, not a claim that every paragraph in the division is Origen’s prose. Its separately credited NETS biblical quotations and modern material are excluded from the homily English derivative and no payload from this section is admitted."

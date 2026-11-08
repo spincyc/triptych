@@ -40,7 +40,7 @@
 #   partial-public-domain some public-domain text exists, but not the whole work
 #   not-surveyed          nobody has looked; this is data, not an estimate
 schema: triptych-commentary-translation-absences/v1
-updated: 2026-11-07
+updated: 2026-11-08
 
 question: >-
   for each work the catena holds, is there a public-domain English translation
@@ -216,43 +216,6 @@ absences:
   - Aurelius Augustinus
   - Patrologia Latina 34
   overturned_by: A HathiTrust full-text hit on a Victorian partial rendering.
-
-- work_id: work.severian-of-gabala.in-cosmogoniam-homiliae
-  language: en
-  finding: partial-public-domain
-  checked_on: 2026-08-01
-  reason: >-
-    The scholarly translation is Robert C. Hill's, in Commentaries on Genesis
-    1-3: Severian of Gabala and Bede the Venerable, Ancient Christian Texts
-    (IVP Academic, 2010), which is in copyright.
-  partial: >-
-    Roger Pearse published an English of the FIRST homily only at tertullian.org
-    in 2010, dedicated to the public domain in terms that permit free copying.
-    Two things about it decide against landing it without saying so: it is one
-    homily of six, and it is a translation of J. Bareille's 1865 FRENCH rather
-    than of the Greek. A translation of a translation is a third claim again,
-    and this project would have to render it as one — which is possible and has
-    not been done, rather than impossible.
-  nineteenth_century: >-
-    None. The homilies survive under Chrysostom's name as De mundi creatione
-    among the spuria of Patrologia Graeca 56, which is why Bareille printed them
-    inside the Oeuvres completes de S. Jean Chrysostome; that alias was searched.
-    The nineteenth-century English Chrysostom collections — the Oxford Library
-    of the Fathers and NPNF first series volumes 9 to 14 — translate the genuine
-    works only and carry no spuria.
-  aliases_searched:
-  - In cosmogoniam homiliae sex
-  - De mundi creatione
-  - Sermons on Genesis
-  - Homilies on Creation and Fall
-  - Severianus Gabalensis
-  - John Chrysostom spuria
-  - Patrologia Graeca 56
-  - Oeuvres completes de S. Jean Chrysostome
-  overturned_by: >-
-    Landing Pearse's first homily, declared as an English of a French of the
-    Greek. The route is proven and the rights are affirmative; what has not been
-    done is reading it and stating its extent.
 
 - work_id: work.bede.in-principium-genesis
   language: en
@@ -484,14 +447,28 @@ absences:
 - work_id: work.augustine.epistolae-ad-galatas-expositio
   language: en
   finding: not-surveyed
-  checked_on: '2026-10-23'
-  reason: English translation availability and redistribution rights have not been surveyed for this batch.
-    The canonical work's two registered editions, and the duplicate catalogue record's edition, are Latin.
-    No English translation or claim that none exists is supplied by this Latin admission. Existing catalogue
-    notes recording no English acquisition receipt are not treated as a completed publication or rights
-    survey.
-  overturned_by: A completed edition-identified English translation and rights survey, including review
-    of canonical holdings and any lawful historical witness.
+  checked_on: '2026-11-08'
+  reason: >-
+    An English translation is identified: Eric Plumer, Augustine's Commentary on
+    Galatians: Introduction, Text, Translation, and Notes (Oxford University
+    Press, 2003; ISBN 9780199244393). The publisher's catalogue confirms the
+    English translation at https://academic.oup.com/book/3945 . No English
+    payload was acquired. The chapter6 publisher page (pp.124–236,
+    DOI10.1093/0199244391.003.0006) says this session has no access. The
+    publisher's legal notice permits personal noncommercial copies but expressly
+    forbids display or distribution on another website or electronic network:
+    https://academic.oup.com/pages/legal-notice . No edition-specific open
+    redistribution grant was found. This is a blocker for the inspected route,
+    not a claim that no English translation or other permission can exist.
+  aliases_searched:
+  - Augustine Galatians Plumer 2003 commentary
+  evidence: >-
+    Publisher's edition identity, chapter access and legal notice checked on
+    2026-11-08. The exact modern translation exists; the inspected publisher
+    route does not authorize corpus or website redistribution. A complete
+    survey of other English expressions remains outstanding.
+  overturned_by: An acquired, edition-identified English expression with an
+    affirmative redistribution basis.
 
 # Public-domain English that EXISTS beside what is already held. Recorded
 # because a route found and not taken is worth more written down than
@@ -499,6 +476,46 @@ absences:
 # English is a real offer to a reader and not a duplicate: Healey's Jacobean
 # City of God and Dods's Victorian one are two different books.
 also_found:
+
+- work_id: work.severian-of-gabala.in-cosmogoniam-homiliae
+  language: en
+  finding: acquired-partial-public-domain
+  checked_on: 2026-11-08
+  reason: >-
+    The scholarly translation is Robert C. Hill's, in Commentaries on Genesis
+    1-3: Severian of Gabala and Bede the Venerable, Ancient Christian Texts
+    (IVP Academic, 2010), which is in copyright.
+  previous_partial_lead: >-
+    Roger Pearse published an English of the FIRST homily only at tertullian.org
+    in 2010, dedicated to the public domain in terms that permit free copying.
+    Two things about it decide against landing it without saying so: it is one
+    homily of six, and it is a translation of J. Bareille's 1865 FRENCH rather
+    than of the Greek. A translation of a translation is a third claim again,
+    and this project would have to render it as one — which is possible and has
+    not been done, rather than impossible.
+  nineteenth_century: >-
+    None. The homilies survive under Chrysostom's name as De mundi creatione
+    among the spuria of Patrologia Graeca 56, which is why Bareille printed them
+    inside the Oeuvres completes de S. Jean Chrysostome; that alias was searched.
+    The nineteenth-century English Chrysostom collections — the Oxford Library
+    of the Fathers and NPNF first series volumes 9 to 14 — translate the genuine
+    works only and carry no spuria.
+  aliases_searched:
+  - In cosmogoniam homiliae sex
+  - De mundi creatione
+  - Sermons on Genesis
+  - Homilies on Creation and Fall
+  - Severianus Gabalensis
+  - John Chrysostom spuria
+  - Patrologia Graeca 56
+  - Oeuvres completes de S. Jean Chrysostome
+  acquisition: >-
+    The complete offered page and its text derivative were acquired on 2026-11-08
+    as edition.severian-of-gabala.in-cosmogoniam-homiliae.2010-pearse-bareille-sermon-1.
+    The whole first homily is inspected and registered at Genesis 1:1-5.
+    Pearse is the English translator; Bareille supplied the French intermediary.
+    This supplies one of six homilies, not a complete English of the collection.
+    The prior partial lead above is retained as the historical research finding.
 
 - work_id: work.augustine.de-civitate-dei
   language: en

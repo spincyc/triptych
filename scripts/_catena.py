@@ -62,6 +62,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
 import _canon  # noqa: E402
 import _catena_scope  # noqa: E402
+import _catena_snippets  # noqa: E402
 import _loci  # noqa: E402
 import _paragraphs  # noqa: E402
 import _projection  # noqa: E402
@@ -1123,10 +1124,11 @@ def validate(root: Path = ROOT) -> list[str]:
                         f"check because {reason} (Rule 8, TASK-100)"
                     )
 
-        errors.extend(_passage_errors(sources, label, passage_id, work_id, fragment))
+        errors.extend(_passage_errors(sources, label, passage_id, work_id, fragment, root=root))
 
     errors.extend(_blocked_errors(sources, data, where, seen))
     errors.extend(_parallel_errors(sources, data, where))
+    errors.extend(_catena_snippets.reviewed(root, sources, data)[1])
     errors.extend(_solved_case_errors(data, where, seen))
     errors.extend(
         _absence_errors(
@@ -1401,6 +1403,7 @@ def _passage_errors(
     passage_id: str,
     work_id: str,
     fragment: dict[str, Any] | None = None,
+    *, root: Path = ROOT,
 ) -> list[str]:
     errors: list[str] = []
     passage = sources.passages.get(passage_id)
@@ -1481,7 +1484,9 @@ def _passage_errors(
         return errors
     rights = str(artifact.get("rights_status") or "")
     identifier = str(artifact.get("license") or "")
-    if rights not in PUBLISHABLE_RIGHTS and not (
+    import _reviewed_permissions
+    errors.extend(_reviewed_permissions.problems(root, artifact, passage))
+    if rights not in PUBLISHABLE_RIGHTS and not _reviewed_permissions.allowed(root, artifact, passage) and not (
         rights == "licensed" and identifier in REDISTRIBUTABLE_LICENSES
     ):
         errors.append(
@@ -1532,6 +1537,9 @@ def fragments_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, 
     data = load_edges(root)
     sources = _sources_cache(root)
     scope = scope or _catena_scope.Scope(root, works=sources.works)
+    snippets, snippet_errors = _catena_snippets.reviewed(root, sources, data)
+    if snippet_errors:
+        raise CatenaError("\n".join(snippet_errors))
     rows: list[dict[str, Any]] = []
     for fragment in data.get("fragments") or ():
         extent = _extent(fragment.get("extent"))
@@ -1545,6 +1553,10 @@ def fragments_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, 
         edition_id = str(passage.get("edition_id") or "")
         edition = sources.editions.get(edition_id) or {}
         artifact = controlling_artifact(sources, passage) or {}
+        import _reviewed_permissions
+        permission_problems = _reviewed_permissions.problems(root, artifact, passage)
+        if permission_problems:
+            raise CatenaError("; ".join(permission_problems))
         rows.append(
             {
                 "id": str(fragment["passage_id"]),
@@ -1585,6 +1597,10 @@ def fragments_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, 
                 "container": str((fragment.get("constituent_of") or "")),
                 "basis": str(fragment.get("basis") or ""),
                 "text": str(passage.get("text") or ""),
+                "source_record": _catena_snippets.source_record(passage, artifact),
+                **({"snippets": _catena_snippets.project(
+                    passage["text"], snippets[fragment["passage_id"]])}
+                   if fragment["passage_id"] in snippets else {}),
                 "extent": {
                     "token": extent.token,
                     "first_chapter": extent.first_chapter,
@@ -1937,9 +1953,9 @@ SAFE_ID = re.compile(r"[a-z0-9][a-z0-9._-]*\Z")
 # Genesis fragment metadata, read by nobody who had not opened the fragment.
 CARRIED_WITH_TEXT = ("text", "basis", "date_basis")
 
-# A mandatory licence notice travels in the existing lazy-body channel. Keep
-# it absent from unlicensed payloads so their bytes and metadata stay exact.
-OPTIONAL_CARRIED_WITH_TEXT = ("acknowledgement",)
+# Licence notices and reviewed source linkage travel with the lazy body.
+# Unlicensed payloads still gain no acknowledgement.
+OPTIONAL_CARRIED_WITH_TEXT = ("acknowledgement", "snippets", "source_record")
 
 # What a fragment says about its EDITION rather than about itself. Written once
 # per chapter file under `sources` and referenced by key, because the alternative
@@ -2628,6 +2644,10 @@ def main(argv: list[str] | None = None) -> int:
     verbs.add_parser("check", help="validate the edge and replay the chapter cases")
     verbs.add_parser("canon", help="print the enumerated canon as JSON")
     verbs.add_parser("titles", help="print the alias groups failing the title check")
+    linkage = verbs.add_parser("linkage", help="audit exact source links and reviewed snippet coverage")
+    linkage.add_argument("--json", action="store_true")
+    linkage.add_argument("--minimum-words", type=int, default=1000,
+                         help="reading-length threshold for the remaining boundary-review worklist")
     emit = verbs.add_parser("structure", help="write what the browser fetches")
     emit.add_argument("--out", type=Path, default=None)
     # The tracked emit is bound file by file to a SHA-256 in
@@ -2653,6 +2673,24 @@ def main(argv: list[str] | None = None) -> int:
     try:
         if args.verb == "check":
             return _check(root)
+        if args.verb == "linkage":
+            if args.minimum_words < 1:
+                raise CatenaError("minimum words must be positive")
+            report = _catena_snippets.audit(root, minimum_words=args.minimum_words)
+            report["errors"] = sorted(set(report["errors"] + validate(root)))
+            if args.json:
+                print(json.dumps(report, ensure_ascii=False, indent=2))
+            else:
+                counts = report["counted"]
+                print(f"catena linkage: {counts['fragments']} source-linked fragments; "
+                      f"{counts['snippets']} reviewed snippets in {counts['parents_with_snippets']} parents")
+                print(f"{counts['large_parents_without_snippets']} of {counts['large_parents']} parents "
+                      f"with at least {args.minimum_words} words have no narrower reviewed snippets:")
+                for identifier in report["large_parents_without_snippets"]:
+                    print(identifier)
+                for error in report["errors"]:
+                    print(error, file=sys.stderr)
+            return 1 if report["errors"] else 0
         if args.verb == "canon":
             print(json.dumps(canon(root), ensure_ascii=False, indent=1))
             return 0

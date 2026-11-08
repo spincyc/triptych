@@ -60,7 +60,8 @@ class RequiredCommentaryNoticeTests(CatenaFixture):
         row = self.row()
         self.assertNotIn("acknowledgement", row)
         payload, spine = self.files()
-        self.assertEqual(set(payload), {"id", "text", "basis", "date_basis"})
+        self.assertEqual(set(payload), {"id", "text", "basis", "date_basis", "source_record"})
+        self.assertEqual(payload["source_record"]["artifact_id"], self.artifact_id)
         self.assertNotIn("acknowledgement", json.dumps(spine))
 
     def test_licensed_notice_is_the_exact_controller_text(self) -> None:

@@ -841,3 +841,38 @@ standing = "non-catholic"
 standing_basis = "Dictionary of National Biography, Second Supplement (1912), Latham, Henry, by H. E. M., identifies the Trinity Hall clerical fellow and later master, ordained deacon by the bishop of Ely in 1848 and priest in 1850, and names his The Risen Master (1901). The article's stated sources include the college books and personal knowledge. Church of England affiliation follows from this identified Anglican episcopal ordination and clerical career, not from the name Latham or the book's subject. The exact title and author connect that biography to the held commentary."
 basis_sources = ["https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1912_supplement/Latham,_Henry", "work.henry-latham.the-risen-master"]
 confession = "Church of England"
+
+# Origen's received ecclesial identity, reviewed 2026-11-08 with the
+# contrary disciplinary and doctrinal evidence retained below.
+[[persons]]
+id = "origen"
+namespaces = ["origen"]
+name = "Origen of Alexandria"
+names = ["Origen", "Origen of Alexandria", "Origenes"]
+died = "253 or 254, according to the Catholic Encyclopedia; exact year uncertain"
+standing = "ecclesiastical-writer"
+standing_basis = "Ferdinand Prat's Catholic Encyclopedia article, Origen and Origenism (1911), explicitly judges Origen's ecclesial disposition Catholic and distinguishes it from his doctrinal errors. It identifies his episcopally commissioned teaching, ordination and continuing reception at Caesarea after the Alexandrian dispute. Benedict XVI's audience of 25 April 2007 receives him as a teacher of faith, discusses his scriptural exposition and cites Homilies on Ezekiel 4.8. These affirmative judgments support Catholic ecclesiastical-writer standing, not a designation as Father, Doctor or saint, and not an inference from antiquity alone."
+basis_sources = [
+  "https://www.newadvent.org/cathen/11306b.htm",
+  "https://www.vatican.va/content/benedict-xvi/en/audiences/2007/documents/hf_ben-xvi_aud_20070425.html",
+]
+confession = "Catholic"
+notes = "Both complete sources retrieved on 2026-11-08; the biographical, ecclesial and censure passages supporting this row were read. Prat reports disputed reception of the 553 anathemas; this row does not settle their conciliar status. Catholic identity neither cancels the recorded censures nor approves every teaching. The author remains distinct from Jerome's Latin translation and modern translators."
+
+[[persons.censures]]
+body = "Alexandrian synods under Demetrius"
+year = "231-232"
+point = "Banishment and deposition from priesthood in the ordination dispute; Prat reports Jerome's statement that the condemnation was not doctrinal."
+source = "https://www.newadvent.org/cathen/11306b.htm"
+
+[[persons.censures]]
+body = "Council of Alexandria under Theophilus"
+year = "400"
+point = "Condemnation of Origen's books; Prat also reports Anastasius's condemnation of propositions extracted from them."
+source = "https://www.newadvent.org/cathen/11306b.htm"
+
+[[persons.censures]]
+body = "Local synod of Constantinople under Mennas, following Justinian's edict"
+year = "543"
+point = "Anathemas against propositions drawn from De principiis; Prat reports the patriarchs' and Pope Vigilius's adhesion."
+source = "https://www.newadvent.org/cathen/11306b.htm"

@@ -5,7 +5,66 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-07.
+Last reconciled: 2026-11-08.
+
+## Catena English editions, passage linkage and Lectern startup — 8 November 2026
+
+<!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
+
+**Implementation complete; integration validation in progress.** The maintainer reports Lectern refusing to start with
+“published browser data is unavailable: missing or unsafe browser product”.
+The requested source work prioritizes existing English translations of the
+already known Catena Omnia works. The earlier acquisition of new holdings does
+not settle that requirement. A further linkage pass must expose the actual
+bounded commentary on a selected verse within the larger documents already
+held, preserving edition, language, attribution, rights and scripture extent.
+
+Lectern now verifies a warm cache and prepares genuinely missing products
+offline before opening the interface or starting the snapshot settling timer.
+Stale source inputs and unsafe or corrupt products still fail explicitly; an
+ordinary launch cannot rewrite the publication descriptor. The shared generated
+projection remains disposable: normalized sources own the evidence, while the
+projection supplies rights filtering, verse indexes and browser/terminal parity.
+
+The container-aware census covers the same 577 known author/title leads: 74
+direct holdings, 24 container holdings, 11 cataloged-only records and 468 without
+a registered match. A missing match is not proof that no English translation
+exists. Three complete offered English expressions were acquired: Severian's
+first Creation homily (Pearse via Bareille), Augustine's distinct unfinished
+literal Genesis commentary (Image revision 4), and all fourteen Ezekiel homilies
+of Origen (Hooker via Jerome). Eighteen checked natural passages enter Catena.
+Severian and Augustine have explicit public-domain grants. Origen retains the
+publisher's noncommercial permission, exact artifact and grant pins, and notices
+beside the words; his standing record preserves the cited historical censures.
+The complete mixed-rights PDF is not redistributed. A rejected corrupt Word
+extraction supplies no published text. Full acquisition does not claim complete
+textual collation.
+
+The integrated chain has 1,578 fragments across 22 books: 95 English, 1,477 Latin
+and six Greek. All emitted bodies carry edition/artifact identities and exact
+source anchors. Twenty-four reviewed snippets in six long parent passages use
+hash-pinned boundaries and canonical verse extents. Both readers select those
+same exact excerpts and retain the full natural passage; Lectern uses `c` to
+switch context. The audit reports 64 of 70 parents of at least 1,000 words still
+without narrower reviewed excerpts. That heuristic is a review worklist, not a
+claim of complete semantic linkage or a reason to infer links from citations.
+
+Independent review replayed the complete acquired conversions, read all 18
+new admitted passages at their stated evidence level and checked all 24 snippet
+texts. It caught and corrected a Chrysostom excerpt that separated an objection
+from its answer, and rejected corrupted Origen Word footnotes in favor of the
+publisher PDF. English editions of Augustine's Galatians, Bede's Genesis and
+Ambrose's Hexameron remain identified leads with their specific access/rights
+gaps recorded. Work stays on the assigned workspace branch; no new main
+publication is part of this correction request.
+
+The source gate passes after regenerating the commentary worklist and adding
+the mixed Origen volume's partial containment record. The unchanged chronology
+and generated-document freshness checks passed earlier in this session; source
+library schema checks pass all 67 tests. Focused linkage, permission and Lectern
+tests pass, and browser excerpt checks preserve keyboard, print and exact-text
+parity. The reviewed source/implementation checkpoint precedes the final
+browser-product descriptor, sealed-reader tests and packaged-site validation.
 
 ## Catena Omnia corpus and passage recovery — 7 November 2026
 

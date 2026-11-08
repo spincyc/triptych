@@ -144,7 +144,7 @@ DISTRIBUTABLE_RIGHTS = ("public-domain", "licensed", "project-created")
 # person whose work is being reused. So a licensed text renders its
 # `rights_basis` BESIDE the words, at the point of use, and never once in a page
 # footer — a reader who copies a passage out has to carry the condition with it.
-ATTRIBUTION_REQUIRED = ("licensed",)
+ATTRIBUTION_REQUIRED = ("licensed", "permission")
 
 # What may be set as prose. See the module docstring: a TSV row is a structured
 # record and a JPEG is a photograph, and neither becomes a reading by being
@@ -228,6 +228,9 @@ def _qualified_reading(library, passage: dict, artifact: dict, result: dict) -> 
     problems = reading_problems(
         library.root, passage, artifact, sources=library.records,
         text=result.get("text"))
+    import _reviewed_permissions
+    problems.extend(_reviewed_permissions.problems(
+        library.root, artifact, passage, text=result.get("text")))
     if not problems:
         return result
     return {**{key: value for key, value in result.items() if key != "text"},
@@ -278,7 +281,12 @@ def reading_of(library, passage: dict) -> dict:
         return {**common, "readable": False, "withheld": "rights",
                 "reason": "; ".join(qualified_problems)}
 
-    if rights not in DISTRIBUTABLE_RIGHTS:
+    import _reviewed_permissions
+    permission_problems = _reviewed_permissions.problems(library.root, artifact, passage)
+    if permission_problems:
+        return {**common, "readable": False, "withheld": "rights",
+                "reason": "; ".join(permission_problems)}
+    if rights not in DISTRIBUTABLE_RIGHTS and not _reviewed_permissions.allowed(library.root, artifact, passage):
         stated = {
             "restricted": (
                 "The rights record states that lawful project access to this "
@@ -460,7 +468,8 @@ def corpus(library) -> list[dict]:
         # entry in the real repository's build/ that nothing reads again.
         return _corpus(library)
     from _proper_qualified_latin import cache_fingerprint
-    qualified_key = cache_fingerprint(library.root)
+    import _reviewed_permissions
+    qualified_key = cache_fingerprint(library.root) + _reviewed_permissions.fingerprint(library.root)
     return cached_json(
         ROOT / "build" / "source-reader-corpus",
         f"{fingerprint}-{code_fingerprint(__file__)}-{qualified_key}",
@@ -874,7 +883,7 @@ def _artifact_payload(one: dict, *, edition_owned: bool) -> dict:
                 "rights_basis": one.get("rights_basis"),
                 "notes": one.get("notes"),
             }
-            if rights in DISTRIBUTABLE_RIGHTS
+            if rights in DISTRIBUTABLE_RIGHTS or rights == "permission"
             else {}
         ),
     }
@@ -1088,7 +1097,10 @@ def run_check(arguments: argparse.Namespace) -> dict:
             payload = edition_payload(work, edition)
             for row in payload["passages"]:
                 if row["readable"]:
-                    if row.get("rights") not in DISTRIBUTABLE_RIGHTS:
+                    import _reviewed_permissions
+                    controller = library.records.get(row.get("artifact_id"))
+                    granted = controller is not None and _reviewed_permissions.allowed(library.root, controller.data)
+                    if row.get("rights") not in DISTRIBUTABLE_RIGHTS and not granted:
                         leaked.append(f"{row['id']}: readable under rights {row.get('rights')!r}")
                     if row.get("storage") != "tracked":
                         leaked.append(f"{row['id']}: readable from {row.get('storage')!r} storage")

@@ -281,6 +281,21 @@ not been fetched is not in the document, so the browser's own find-in-page
 cannot reach it. That is why each fragment's length is printed beside its name —
 a reader chooses what to open knowing how long it is.
 
+A Catena text payload may additionally carry `snippets`, reviewed internal
+Scripture links governed by [Catena](catena.md#verse-specific-excerpts-within-a-held-passage--2026-11-08).
+Each row carries `id`, `start`, `end`, `extent`, `locator` and `basis`; offsets
+are half-open UTF-16 positions in that payload's exact, untrimmed `text`.
+The shared model selects overlapping rows and slices that same text. There are
+no separate excerpt payloads or verse-by-fragment product files. Invalid
+snippet metadata refuses the text; absent or nonmatching snippets retain the
+complete natural fragment.
+
+The accompanying `source_record` projects the parent's `edition_id`, ultimate
+`artifact_id`, `artifact_sha256` and, where declared, `segment_id`,
+`physical_line_ranges` and `artifact_page_ranges`. These fields describe the
+existing controller, not a newly verified source or a downloadable scan.
+The source library remains the owner of their identities and evidence states.
+
 **The next candidate is the propers structure**, roughly 1 MB per missal, which
 `day.js` already fetches last because it is the big one.
 

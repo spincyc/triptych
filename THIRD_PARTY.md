@@ -1462,3 +1462,47 @@ excludes those marks. No modern 1962 facsimile or English response is admitted.
 ### Francis Collect: bounded Lasance English receiving, 26 October 2026
 
 The separately manifested `src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-reader-completion-20261026-francis-one-f9548bab/english.tsv` retains only the literal October4 Francis Collect in Lasance/Walsh revised1945 English, at ordinary printed1224 (artifactPDF1219). Its UnitedStates public-domain basis is the existing A110108/A192159 nonrenewal record and insert-excluded expression anchor; lettered inserts1298a-1298n and1302a-1302d remain excluded. The source and publication passages retain the exact named appointment, complete Latin comparison, two bounded spellings and unchanged short English ending. This historical translation is not official1962 English. No whole scan, page image, protected layout, new Latin permission, conclusion expansion or English response is admitted.
+
+
+### Known Genesis and Ezekiel commentary English recovery (8 November 2026)
+
+Severian of Gabala, *On the Creation of the World*, Sermon 1: Roger Pearse’s
+2010 English from J. Bareille’s 1865 French translation is retained as its
+complete offered HTML and a mechanical plain-text derivative. The source
+page’s explicit public-domain dedication covers the page and its material;
+the source-library edition distinguishes the English translator from the
+French intermediary. This is one homily of six, not R. C. Hill’s translation.
+
+Augustine, *De Genesi ad litteram imperfectus liber* (CPL 268): Isabella Image’s
+2020 English, revision 4 with minor edits by Roger Pearse, is retained in
+complete mechanically extracted plaintext. Its own source note explicitly
+releases this translation into the public domain. The full publisher PDF and
+Word file were acquired and hashed and remain remote delivery artifacts.
+This unfinished work is distinct from the twelve-book *De Genesi ad litteram*
+(CPL 266); no rights in Taylor’s or Hill’s English translations are asserted.
+Both translations remain excluded from Triptych’s CC BY 4.0 grant. Exact
+source URLs, hashes, translation credits, extent and inspection bounds reside
+in the adjacent source-library manifests and acquisition record.
+
+Origen, *Homiliae in Ezechielem*: the complete fourteen English homilies by
+Mischa Hooker, edited by Roger Pearse (Chieftain Publishing, 2014), are retained
+from the publisher’s PDF released on 24 July 2018. © Roger Pearse 2014.
+The publisher expressly permits copying, circulation and noncommercial use;
+commercial use requires contacting Roger Pearse. This is permission, not a
+public-domain dedication or Creative Commons licence. Grant:
+https://roger-pearse.com/weblog/2018/07/24/origen-homilies-on-ezekiel-now-available-online/ .
+The mechanical plaintext derivative preserves all 195 English homily pages
+(printed 9–397, odd pages), including translator notes and source formatting.
+Facing Latin, Jerome’s preface, modern introductions and the Greek-fragment
+section (including separately credited NETS quotations) are excluded. The
+translator’s preface p.xi confirms freshly translated biblical quotations in
+the homilies. The complete PDF remains a remote exact-hash source and has
+restricted status because its separately credited third-party contents have
+not been cleared as a whole. The earlier Word-file extraction was rejected
+for corrupt apparatus and supplies no tracked text. Attribution and this
+noncommercial condition accompany reuse; these source bytes remain excluded
+from Triptych’s CC BY 4.0 grant. Exact source URL, hashes, page bounds,
+conversion and bounded inspection reside in the source-library manifests and
+acquisition receipt. Three checked sections are admitted after separate
+author-standing review and an artifact-specific noncommercial permission
+gate; that admission does not extend to unchecked passages or other editions.

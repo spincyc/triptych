@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.complete-english-text-a72c9c03"
+edition_id = "edition.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The revision 4 document’s own first footnote states that Isabella Image made this translation and released it into the public domain in 2020, with minor edits by Roger Pearse. The publisher confirms her release at https://roger-pearse.com/weblog/2020/08/22/augustine-de-genesi-ad-litteram-imperfectus-liber-the-literal-interpretation-of-genesis-unfinished-book-online-in-english/ . Retained English is this identified translation, not Taylor’s or Hill’s copyrighted translation of a different work. Source words remain excluded from Triptych’s CC BY 4.0 grant."
+rights_jurisdiction = "United States"
+provenance = "Retrieved the complete publisher-offered file with curl on 2026-11-08. Exact bytes hashed before local conversion; no source wording passed through a model. Whole English work retained, including the original translator’s headings and source note. Numbering 8.30 and 9.30 both occur in the supplied expression and are preserved rather than silently corrected."
+retrieved = "2026-11-08"
+sha256 = "a72c9c0337a509feea9a7e4e21fda553a9d37510bd1bfa23addec47d6fb63f11"
+byte_size = 78619
+indexable = true
+derived_from = "artifact.augustine.de-genesi-ad-litteram-imperfectus-liber.2020-image-revision-4.publisher-docx-545defde"
+transformation = "pandoc 3.11 INPUT.docx --from docx --to plain --wrap=none -o OUTPUT.txt. Complete document, paragraph breaks and source footnote retained; no editorial wording corrections or translation. Italics/bold become plain-text emphasis where supplied by the converter."
+path = "src/sources/works/augustine/de-genesi-ad-litteram-imperfectus-liber/editions/2020-image-revision-4/artifacts/complete-english-text-a72c9c03/augustine-imperfectum.txt"
+encoding = "utf-8"
+notes = "Whole English work retained, including the original translator’s headings and source note. Numbering 8.30 and 9.30 both occur in the supplied expression and are preserved rather than silently corrected."

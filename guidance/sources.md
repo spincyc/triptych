@@ -576,6 +576,15 @@ jurisdiction and basis, license, permission, legal exception, restriction, or
 unresolved status. Retention and public delivery require an affirmative
 recorded basis; online availability and successful download are insufficient.
 
+The reviewed noncommercial grants in
+`src/sources/inventories/noncommercial-permissions-v1.json` authorize only their
+exact identified artifacts and reader uses. The shared permission check pins
+the grant and artifact, and readers carry its conditions beside the words.
+`permission` remains distinct from a public-domain or licensed artifact; neither
+that status nor an arbitrary `LicenseRef` opens a reader surface. A complete
+volume with other rights holders is not cleared by permission for one bounded
+expression extracted from it.
+
 **Settle a recurring rights question once, in a rights record.** Where the same
 question governs a whole body of material and keeps being reopened, the answer
 belongs in one file under `src/sources/inventories/`, with its citations, the

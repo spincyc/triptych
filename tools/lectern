@@ -8,6 +8,8 @@ This tool derives nothing. Every view is read from verified browser products
 or asked of the browser's own models and renderers, run under node in one process set
 up as a page's realm (`scripts/lectern/bridge.js`), so what a reader sees here
 and what the site renders cannot disagree about anything but layout.
+Before opening, the browser-product owner prepares missing cache entries offline
+and verifies existing entries against the committed descriptor.
 
 TWO VERBS.
 
@@ -141,6 +143,23 @@ def _intent(arguments: argparse.Namespace) -> dict[str, str]:
     return found
 
 
+def _prepare_products() -> None:
+    """Prepare exact misses before the UI or snapshot's settling clock starts."""
+    from _browser_products import ProductError, build, check
+
+    print("lectern: preparing verified browser data (a first build may take several minutes)", file=sys.stderr)
+    try:
+        try:
+            check(ROOT)
+        except ProductError:
+            # Warm readers can coexist under the store's shared lock. Only a
+            # failed check needs the exclusive builder; it independently refuses
+            # stale/corrupt entries and generates only genuinely absent families.
+            build(ROOT)
+    except (ProductError, OSError) as error:
+        raise ReaderRefused(f"published browser data could not be prepared: {error}") from error
+
+
 def open_reader(arguments: argparse.Namespace) -> int:
     if not sys.stdout.isatty():
         raise InputRefused("open needs a terminal; use `lectern snapshot` to render without one")
@@ -151,6 +170,7 @@ def open_reader(arguments: argparse.Namespace) -> int:
     # palette, which keeps only the hues that mark a warning or a season.
     style = getattr(arguments, "style_resolved", None)
     theme = "triptych-compline" if style and style.plain else arguments.theme
+    _prepare_products()
     try:
         TriptychApp(start=arguments.surface, intent=_intent(arguments), theme=theme).run()
     finally:
@@ -167,6 +187,7 @@ def snapshot(arguments: argparse.Namespace) -> str:
     plain = bool(style and style.plain)
     if plain and arguments.format == "svg":
         raise InputRefused("an SVG drawing is not plain text; drop --plain or ask for --format text")
+    _prepare_products()
     try:
         return render(
             surface=arguments.surface,

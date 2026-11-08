@@ -398,10 +398,12 @@
       "idempotent": true,
       "json": false,
       "lang": "python",
-      "mutates": false,
+      "mutates": true,
       "origin": "local",
       "purpose": "Read the published missal, catena and corpus in a terminal.",
-      "requires": [],
+      "requires": [
+        "browser-products"
+      ],
       "stage": "draft",
       "usage": "lectern {open,snapshot} [--surface NAME] [--date ISO] [--calendar NAME] [--ref REF] [--size WxH] [--format {text,ansi,svg}]"
     },

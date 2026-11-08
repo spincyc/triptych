@@ -348,6 +348,10 @@
   white-space: normal;
 }
 
+.fragment-context { margin-top: 1rem; }
+.fragment-context > summary { padding: 0.5rem 0; cursor: pointer; }
+.fragment-context[open] > summary { margin-bottom: 0.5rem; }
+
 /* A licence ABOVE the words it covers, so a copied selection carries the
    condition with it. Quiet but not fine print: it is a condition of use. */
 .fragment-acknowledgement {
@@ -839,6 +843,7 @@
   .catena-page .footer-interaction,
   .catena-page .footer-entrances,
   .catena-page .fragment-whole,
+  .catena-page .fragment-snippets,
   .catena-page .error-recovery { display: none !important; }
 
   .catena-page .reading { display: block; }

@@ -242,7 +242,7 @@
     return block;
   }
 
-  function renderFragment(fragment, bookName) {
+  function renderFragment(fragment, bookName, chapter, verses) {
     const item = T.el('li', 'fragment');
     item.setAttribute('data-state', 'held');
 
@@ -334,6 +334,24 @@
             text.className = say.missing ? 'fragment-text missing' : 'fragment-text';
             text.textContent = say.said;
             if (!say.missing) {
+              const snippets = M.matchingSnippets(body, fragment.extent.token, chapter, verses);
+              if (snippets.length) {
+                const excerpts = T.el('div', 'fragment-snippets');
+                for (const snippet of snippets) {
+                  excerpts.appendChild(T.el('p', 'fragment-basis',
+                    'Excerpt — ' + M.formatExtent(snippet.extent, bookName) + ' · ' + snippet.locator));
+                  const words = T.el('p', 'fragment-text snippet-text', snippet.text);
+                  if (code) words.lang = code;
+                  excerpts.appendChild(words);
+                  apparatus.appendChild(T.el('p', 'fragment-basis', 'Excerpt — ' + snippet.basis));
+                }
+                const context = T.el('details', 'fragment-context');
+                context.appendChild(T.el('summary', 'fragment-basis',
+                  'Read full context — ' + M.formatExtent(fragment.extent, bookName)));
+                details.insertBefore(excerpts, text);
+                details.insertBefore(context, text);
+                context.appendChild(text);
+              }
               if (body.basis) {
                 apparatus.appendChild(T.el('p', 'fragment-basis', 'Extent — ' + body.basis));
               }
@@ -491,7 +509,7 @@
 
       const inner = T.el('ul', 'author-fragments');
       for (const fragment of group.fragments) {
-        inner.appendChild(renderFragment(fragment, book.name));
+        inner.appendChild(renderFragment(fragment, book.name, Number(chapterSelect.value), selectedVerses));
       }
       node.appendChild(inner);
       item.appendChild(node);

@@ -5,10 +5,19 @@ browser products, the same derivations, a different screen. It is a
 consumer of the published structure exactly as a browser page is, and it holds
 itself to the page's rules.
 
-Prepare the current products with `tools/browser-products build`. The bridge
-holds a private verified snapshot for its entire Node process lifetime. Missing,
-stale or corrupt products are refused; the reader never substitutes an unsealed
-working tree or the former `src/web/data/` directory.
+Both `open` and `snapshot` prepare the current products through the same owner
+as `tools/browser-products build`, before starting the reader. A first run can
+take several minutes: exact cache misses rebuild offline from canonical inputs
+and must match the committed descriptor. Warm entries are verified and reused.
+The cache follows `TRIPTYCH_BROWSER_DATA_ROOT` (set `.scratch/browser-data` in a
+workspace), or defaults to `build/browser-data`. Preparation progress goes to
+stderr so snapshot stdout remains the requested drawing.
+
+The bridge holds a private verified snapshot for its entire Node process
+lifetime. Stale descriptors, corrupt or unsafe entries, and mismatching rebuilds
+are refused before opening the reader; preparation never re-records expected
+hashes or substitutes an unsealed working tree or the former `src/web/data/`
+directory. Direct bridge callers still prepare products explicitly.
 
 ## The one rule
 
@@ -97,6 +106,17 @@ dialogs, and terminal clipboard support. Propers Compare stacks corresponding
 units; Day can place their sides in columns. Browser print, touch controls and
 font enlargement retain their native implementations. These presentation
 differences do not create another liturgical model or substitute source text.
+
+## Catena commentary
+
+Where a held fragment declares reviewed passage excerpts, opening it shows the
+excerpts matching the selected canonical chapter or verse range. The shared
+browser model validates and slices the unchanged source text; each excerpt
+keeps its own extent, locator and selection basis. Press `c` to read the complete
+source passage and press it again to return to the excerpts. `s` still opens the
+same passage in the Source Library; `n` and `p` walk the commentary chain.
+Without an applicable excerpt the reader shows the complete natural fragment.
+Required acknowledgements stay visible in both views.
 
 ## Layout
 

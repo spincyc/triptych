@@ -1,6 +1,32 @@
 schema_version = 1
 
 [[deliverables]]
+id = "catena-english-linkage-lectern-2026-11-08"
+owner = "guidance/catena.md"
+promise = "Repair Lectern startup with missing generated browser data, recover available English editions of already known Catena works, and improve verse-specific excerpt linkage within held source documents."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "lectern-missing-products"
+  criterion = "Lectern prepares absent generated products through their canonical offline builder before starting, retains integrity refusals, and passes focused startup regression and real-data reader checks."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "known-work-english-editions"
+  criterion = "An auditable census identifies English availability for known Catena works, incorporates recoverable admissible editions with exact provenance and rights, and distinguishes remaining leads, unavailable texts and unchecked transcription."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "verse-source-excerpts"
+  criterion = "A reproducible linkage pass exposes bounded source excerpts for selected scripture verses with source anchors, truthful language and extent, and checks that incidental citations and unsupported boundaries do not become direct commentary."
+  status = "open"
+
+  [[deliverables.requirements]]
+  id = "integrated-validation"
+  criterion = "Affected source, producer and reader checks pass against the integrated corpus; the change is committed on the workspace branch with concrete coverage and remaining gaps recorded."
+  status = "open"
+
+[[deliverables]]
 id = "catena-omnia-recovery-2026-11-07"
 owner = "guidance/catena.md"
 promise = "Make Catena Omnia reliably retrieve commentary by biblical passage, account for and index held sources completely, expand acquired sources and English translations, exclude non-Catholic commentary authors, maintain web and terminal parity, and publish coherent validated changes to main."

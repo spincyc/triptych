@@ -1775,6 +1775,11 @@
     'date_basis', 'acknowledgement', 'acknowledgement_broken']);
 
   const contents = new WeakSet();
+  // Optional nested metadata belongs to the same finalized body, without
+  // widening its established scalar schema. Freeze every retained child too.
+  const snippetSets = new WeakMap();
+  const snippetProblems = new WeakMap();
+  const sourceRecords = new WeakMap();
 
   function sealText(fields) {
     const made = Object.create(null);
@@ -1787,7 +1792,9 @@
       // then read from it. Every schema member is now taken from the literal's
       // own table or not at all.
       const value = Object.hasOwn(fields, name) ? fields[name] : undefined;
-      made[name] = typeof value === 'boolean' ? value : sound(value);
+      // Source offsets refer to these exact words, including outer whitespace.
+      made[name] = name === 'text' && typeof value === 'string' ? value
+        : typeof value === 'boolean' ? value : sound(value);
     }
     Object.freeze(made);
     contents.add(made);
@@ -1837,8 +1844,8 @@
     const missing = !present || ownData(held, 'unreadable') === true;
     return Object.freeze({
       missing: missing,
-      said: !missing ? sound(ownData(held, 'text'))
-        : present ? TEXT_UNREADABLE : TEXT_ABSENT
+      said: !missing ? (typeof ownData(held, 'text') === 'string' ? ownData(held, 'text') : '')
+        : snippetProblems.get(held) || (present ? TEXT_UNREADABLE : TEXT_ABSENT)
     });
   }
 
@@ -1866,21 +1873,100 @@
     // (`realmAdmitsThenable`). It is read as nothing at all — no words, no
     // acknowledgement, no basis — so it finalizes as unreadable below.
     const record = realmAdmitsThenable() ? Object.create(null) : bag(loaded);
-    const text = sound(ownData(record, 'text'));
+    const rawText = ownData(record, 'text');
+    const text = typeof rawText === 'string' ? rawText : '';
     const acknowledged = ownData(record, 'acknowledgement');
-    return sealText({
+    const snippets = readSnippets(record, text);
+    const made = sealText({
       present: true,
       // A payload is a record that states its words. Anything else — a list, a
       // string, a number, a record whose `text` is not text — is a file this
       // page could not read, and it says so instead of showing nothing.
-      unreadable: record !== loaded || !text,
+      unreadable: record !== loaded || !sound(text) || snippets === null,
       text: text,
       basis: sound(ownData(record, 'basis')),
       date_basis: sound(ownData(record, 'date_basis')),
       acknowledgement: sound(acknowledged),
       acknowledgement_broken: broken(acknowledged)
     });
+    snippetSets.set(made, snippets || Object.freeze([]));
+    if (snippets === null) snippetProblems.set(made,
+      'The recorded commentary snippets do not identify valid exact passages in this text. The fragment cannot be shown.');
+    sourceRecords.set(made, readSourceRecord(ownData(record, 'source_record')));
+    return made;
   }
+
+  // Optional reviewed offsets are UTF-16, as String.slice uses them. Never
+  // trim the parent text or repair an offset: either would change its witness.
+  function readSnippets(record, text) {
+    if (!Object.hasOwn(record, 'snippets')) return Object.freeze([]);
+    const rows = ownData(record, 'snippets');
+    if (!Array.isArray(rows)) return null;
+    for (const character of text) if (/^[\uD800-\uDFFF]$/u.test(character)) return null;
+    const out = [], ids = new Set();
+    const boundary = (at) => !(at > 0 && at < text.length &&
+      /[\uD800-\uDBFF]/.test(text[at - 1]) && /[\uDC00-\uDFFF]/.test(text[at]));
+    for (let i = 0; i < rows.length; i++) {
+      const row = bag(ownData(rows, String(i)));
+      const id = ownData(row, 'id'), start = ownData(row, 'start'), end = ownData(row, 'end');
+      const locator = ownData(row, 'locator'), basis = ownData(row, 'basis');
+      const rawExtent = bag(ownData(row, 'extent'));
+      const extent = Object.create(null);
+      extent.token = bookToken(ownData(rawExtent, 'token'));
+      for (const key of ['first_chapter', 'first_verse', 'last_chapter', 'last_verse']) {
+        extent[key] = whole(ownData(rawExtent, key));
+      }
+      if (typeof id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || ids.has(id) ||
+          !Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start < 0 || end <= start ||
+          (out.length && start < out[out.length - 1].end) ||
+          end > text.length || !boundary(start) || !boundary(end) || !sound(text.slice(start, end)) ||
+          (start > 0 && !/\s/u.test(text[start - 1])) || (end < text.length && !/\s/u.test(text[end])) ||
+          !sound(locator) || !sound(basis) || !extent.token ||
+          [extent.first_chapter, extent.first_verse, extent.last_chapter, extent.last_verse].some((n) => n === null) ||
+          extent.last_chapter < extent.first_chapter ||
+          (extent.first_chapter === extent.last_chapter && extent.last_verse < extent.first_verse)) return null;
+      ids.add(id);
+      out.push(Object.freeze({ id, start, end, extent: Object.freeze(extent), locator, basis,
+        text: text.slice(start, end) }));
+    }
+    return Object.freeze(out);
+  }
+
+  /** Exact reviewed excerpts overlapping the canonical selection, in source
+   * order. No match means use the full natural fragment, never an absence. */
+  function matchingSnippets(content, token, chapter, verses = '') {
+    if (!contents.has(content) || content.unreadable || !bookToken(token) ||
+        whole(chapter) === null || !parseVerses(verses)) return Object.freeze([]);
+    return Object.freeze((snippetSets.get(content) || []).filter((row) =>
+      row.extent.token === token && touchesPassage(row.extent, chapter, verses)));
+  }
+
+  function readSourceRecord(value) {
+    const row = bag(value), out = Object.create(null);
+    for (const key of ['edition_id', 'artifact_id', 'artifact_sha256', 'segment_id']) {
+      const raw = ownData(row, key);
+      if (raw === undefined && key === 'segment_id') continue;
+      if (key === 'artifact_sha256' ? typeof raw !== 'string' || !/^[a-f0-9]{64}$/.test(raw) : !ident(raw)) return null;
+      out[key] = raw;
+    }
+    for (const key of ['physical_line_ranges', 'artifact_page_ranges']) {
+      if (!Object.hasOwn(row, key)) continue;
+      const ranges = ownData(row, key);
+      if (!Array.isArray(ranges)) return null;
+      const kept = [];
+      for (let i = 0; i < ranges.length; i++) {
+        const range = ownData(ranges, String(i));
+        if (!Array.isArray(range) || range.length !== 2) return null;
+        const first = whole(ownData(range, '0')), last = whole(ownData(range, '1'));
+        if (first === null || last === null || last < first) return null;
+        kept.push(Object.freeze([first, last]));
+      }
+      out[key] = Object.freeze(kept);
+    }
+    return Object.freeze(out);
+  }
+
+  function sourceRecord(content) { return sourceRecords.get(content) || null; }
 
   /* ------------------------------------------------------------------------
    * The index, and the addresses derived from it
@@ -3167,6 +3253,8 @@
     textAsked: textAsked,
     fragmentRow: fragmentRow,
     textPayload: textPayload,
+    matchingSnippets: matchingSnippets,
+    sourceRecord: sourceRecord,
     NO_TEXT: NO_TEXT,
     bodySaying: bodySaying,
     failureSaid: failureSaid,

@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.origen.homiliae-in-ezechielem.2014-hooker.complete-english-homily-pages-46dfd5c2"
+edition_id = "edition.origen.homiliae-in-ezechielem.2014-hooker"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "permission"
+rights_basis = "© Roger Pearse 2014. Translation by Mischa Hooker; edited by Roger Pearse; Chieftain Publishing. Publisher’s 24 July 2018 release expressly authorizes copying, circulation and noncommercial use; commercial use requires contacting Roger Pearse. This later, specific permission governs publisher-owned homily English despite the printed volume’s earlier general reservation. Source: https://roger-pearse.com/weblog/2018/07/24/origen-homilies-on-ezekiel-now-available-online/ . Retain attribution and this noncommercial condition. Excluded from Triptych’s CC BY 4.0 grant; not public domain or a Creative Commons licence. The homily-only text excludes separately credited NETS material in the printed Greek Fragments section. Translator preface p.xi says biblical quotations in the homilies were freshly translated from the text."
+rights_jurisdiction = "Publisher’s worldwide online grant; commercial use not granted"
+provenance = "Retrieved the complete publisher-offered file with curl on 2026-11-08. Exact bytes hashed before local conversion; no source wording passed through a model. Complete English fourteen-homily expression held. Only Homily1 sections6,8,9 have bounded page-image wording verification in this intake; the remaining pages are acquired text, not comprehensively collated. Footnote numbers remain flattened by pdftotext; notes are retained on their source pages. Publisher grant applies to noncommercial redistribution only."
+retrieved = "2026-11-08"
+sha256 = "46dfd5c227ccb4c8d2e429152fa8c60b616696ec2c4d8d9fd406acc6c345b44f"
+byte_size = 481096
+indexable = true
+derived_from = "artifact.origen.homiliae-in-ezechielem.2014-hooker.complete-publisher-volume-e3c297ca"
+transformation = "pdftotext -layout complete publisherPDF to UTF-8; split only on U+000C page terminators, retain complete physicalPDF pages22,24,...,410 (195 English pages; printed9,11,...,397) in order with original form-feed terminators. All lines, headers, line-end hyphenation, footnote indicators and translator notes on those pages are unchanged. No OCR, model rewriting or manual spelling changes."
+path = "src/sources/works/origen/homiliae-in-ezechielem/editions/2014-hooker/artifacts/complete-english-homily-pages-46dfd5c2/origen-ezekiel-english-pages.txt"
+encoding = "utf-8"
+notes = "Complete English fourteen-homily expression held. Only Homily1 sections6,8,9 have bounded page-image wording verification in this intake; the remaining pages are acquired text, not comprehensively collated. Footnote numbers remain flattened by pdftotext; notes are retained on their source pages. Publisher grant applies to noncommercial redistribution only."
+license = "LicenseRef-Roger-Pearse-2018-Noncommercial"

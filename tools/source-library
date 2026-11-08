@@ -1598,6 +1598,11 @@ def _validate_artifacts(library: Library) -> None:
         data = record.data
         storage = data.get("storage")
         rights = data.get("rights_status")
+        import _reviewed_permissions
+        if (data.get("id") == _reviewed_permissions.ARTIFACT_ID or
+                data.get("license") == _reviewed_permissions.LICENSE):
+            for problem in _reviewed_permissions.problems(library.root, data):
+                library.error(record.path, problem)
         if not _is_string(storage) or storage not in STORAGE_DISPOSITIONS:
             library.error(record.path, f"storage must be one of: {', '.join(sorted(STORAGE_DISPOSITIONS))}")
         if not _is_string(rights) or rights not in RIGHTS_STATUSES:
@@ -2318,6 +2323,13 @@ def _validate_source_tree(library: Library) -> None:
         if relative.parts[0] == "schema" and entry.suffix in {".json", ".md", ".toml"}:
             continue
         if relative.parts[0] == "inventories" and entry.suffix in {".md", ".toml"}:
+            continue
+        if relative == Path("inventories/noncommercial-permissions-v1.json"):
+            import _reviewed_permissions
+            controller = library.records.get(_reviewed_permissions.ARTIFACT_ID)
+            for problem in _reviewed_permissions.problems(
+                    library.root, controller.data if controller else {"rights_status": "permission"}):
+                library.error(entry, problem)
             continue
         if _owned_history_inventory(library, entry, relative):
             continue

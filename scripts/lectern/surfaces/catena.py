@@ -35,6 +35,21 @@ class FragmentList(OptionList):
                 self.call_after_refresh(self.scroll_to_highlight)
 
 
+class FragmentReading(Reading):
+    """Matching excerpts with an explicit route to their complete passage."""
+
+    BINDINGS = [Binding("c", "dismiss('context')", "full context")]
+
+    def __init__(self, *args, excerpts: bool = False, **kwargs) -> None:
+        super().__init__(*args, **kwargs)
+        self.excerpts = excerpts
+
+    def check_action(self, action: str, parameters: tuple) -> bool | None:
+        if action == "dismiss" and parameters == ("context",):
+            return self.excerpts
+        return super().check_action(action, parameters)
+
+
 class Catena(Surface):
     key = "3"
     label = "Catena"
@@ -48,6 +63,7 @@ class Catena(Surface):
         ("b", "next scripture edition"),
         ("v", "next commentary voice (everything held, own language, a translation)"),
         ("enter", "open or close an author's fragments; on a fragment, read it (n / p walk the chain)"),
+        ("c", "in a commentary reading with matched excerpts, switch to full context and back"),
         ("a", "open or close every author's fragments"),
         ("click", "a bar in the strip opens that chapter"),
         ("f", "focus: scripture and chain alone; again to restore chapter and acquisition panes"),
@@ -574,17 +590,19 @@ class Catena(Surface):
             return
         # The chapter on screen, not one still loading behind it.
         self.fetch_body(position, fragments[position], self.current["book"]["token"],
-                        self.current["chapter"], self.current["voice"])
+                        self.current["chapter"], self.current["voice"], self.current.get("verses", ""))
 
     @work(thread=True, exclusive=True, group="catena-body")
-    def fetch_body(self, position: int, fragment: dict, token: str, chapter: int, voice: str) -> None:
+    def fetch_body(self, position: int, fragment: dict, token: str, chapter: int, voice: str,
+                   verses: str = "") -> None:
         try:
-            body = bridge.call(ADAPTER, "body", token, chapter, voice, fragment["id"])
+            body = bridge.call(ADAPTER, "body", token, chapter, voice, fragment["id"], verses)
         except Refused as refusal:
             body = {"missing": True, "said": str(refusal)}
         self.deliver(self.open_reading, position, fragment, body)
 
-    def open_reading(self, position: int, fragment: dict, body: dict) -> None:
+    def open_reading(self, position: int, fragment: dict, body: dict, *, full_context: bool = False) -> None:
+        snippets = body.get("snippets", []) if not body.get("missing") else []
         text = Ink()(fragment["author"], "bold $catena-color")
         if fragment["date"]:
             text(f"  {fragment['date']}", "bold")
@@ -595,7 +613,9 @@ class Catena(Surface):
         text(fragment["extent"], "bold")
         if fragment["spans"]:
             text(" — runs across the chapter boundary", "$warning")
-        text.line(f"  ·  {fragment['chip']}  ·  {fragment['text_words']:,} words", "$text-muted").line()
+        length = f"{fragment['text_words']:,} words"
+        text.line(f"  ·  {fragment['chip']}  ·  " + ("full passage: " if snippets else "") + length,
+                  "$text-muted").line()
         if body.get("acknowledgement_broken"):
             text.line("The recorded acknowledgement is malformed and not shown.", "bold $warning").line()
         elif body.get("acknowledgement"):
@@ -603,7 +623,18 @@ class Catena(Surface):
         said = body.get("said")
         if body.get("missing"):
             text.line(said or "The text of this fragment could not be loaded.", "bold $warning")
+        elif snippets and not full_context:
+            text.line("Matched commentary excerpts", "bold $catena-color")
+            text.line("Press c for the complete source passage.", "italic $text-muted").line()
+            for snippet in snippets:
+                text.line(snippet["extent"], "bold")
+                text.line(snippet["locator"], "italic $text-muted").line()
+                text.line(_plain(snippet["text"]))
+                text.line()("Selection — ", "bold").line(snippet["basis"]).line()
         else:
+            if snippets:
+                text.line("Complete source passage", "bold $catena-color")
+                text.line("Press c to return to the matched excerpts.", "italic $text-muted").line()
             text.line(_plain(said if isinstance(said, str) else ""))
         if body.get("basis"):
             text.line()("Extent — ", "bold").line(body["basis"])
@@ -626,10 +657,14 @@ class Catena(Surface):
                 self.read(position - 1)
             elif step == "source":
                 self.app.action_surface("sources", passage=fragment["id"])
+            elif step == "context":
+                self.open_reading(position, fragment, body, full_context=not full_context)
 
         title = f"{fragment['author']} · {fragment['work']} {fragment['locator']}"
+        context_hint = (" · c excerpts" if full_context else " · c full context") if snippets else ""
         self.app.push_screen(
-            Reading(title, text.content(), f"{position + 1} of {len(self.current['chain']['fragments'])}"
-                    " · esc close · n next · p previous · s source library", source=True),
+            FragmentReading(title, text.content(), f"{position + 1} of {len(self.current['chain']['fragments'])}"
+                            " · esc close · n next · p previous" + context_hint + " · s source library",
+                            source=True, excerpts=bool(snippets)),
             walked,
         )

@@ -136,6 +136,26 @@ class CatenaAdapterTests(unittest.TestCase):
         self.assertTrue(body["said"].strip())
         self.assertTrue(body["date_basis"].strip())
 
+    def test_passage_excerpts_match_the_focus_and_keep_complete_source_context(self) -> None:
+        ident = "passage.john-chrysostom.homilies-on-philippians.ccel-web-2026-09-17.3"
+        payload = json.loads(structure_path(f"catena/text/{ident}.json").read_text(encoding="utf-8"))
+        recorded = next(one for one in payload["snippets"] if one["id"] == "verse-21")
+        exact = payload["text"].encode("utf-16-le")[2 * recorded["start"]:2 * recorded["end"]].decode("utf-16-le")
+        focused = bridge.call("catena", "body", "Phil", 1, "", ident, "21")
+        self.assertFalse(focused["missing"])
+        self.assertEqual([one["id"] for one in focused["snippets"]], ["verse-21"])
+        self.assertEqual(focused["snippets"][0]["text"], exact)
+        self.assertEqual(focused["snippets"][0]["locator"], recorded["locator"])
+        self.assertEqual(focused["snippets"][0]["basis"], recorded["basis"])
+        self.assertEqual(focused["said"], payload["text"])
+        ranged = bridge.call("catena", "body", "Phil", 1, "", ident, "21-22")
+        self.assertEqual([one["id"] for one in ranged["snippets"]], ["verse-21", "verse-22"])
+        unmatched = bridge.call("catena", "body", "Phil", 1, "", ident, "18")
+        self.assertEqual(unmatched["snippets"], [])
+        self.assertEqual(unmatched["said"], payload["text"])
+        with self.assertRaisesRegex(Refused, "verse selection is invalid"):
+            bridge.call("catena", "body", "Phil", 1, "", ident, "21x")
+
 
 @unittest.skipUnless(NODE, "node is not installed; the reader's derivations run the browser's models under node")
 class LiturgyAdapterTests(unittest.TestCase):
@@ -836,15 +856,17 @@ class SnapshotCLIRegressionTests(unittest.TestCase):
         from lectern.app import TriptychApp
 
         app = TriptychApp(start="day")
+        tool = _lectern_tool()
         out, err = io.StringIO(), io.StringIO()
         process = bridge.BRIDGE_PROCESS.process
-        with (patch.object(TriptychApp, "on_mount", lambda self: None),
+        with (patch.object(tool, "_prepare_products"),
+              patch.object(TriptychApp, "on_mount", lambda self: None),
               patch.object(snapshot, "TriptychApp", return_value=app),
               patch.object(snapshot, "_settle", AsyncMock(side_effect=TimeoutError("snapshot did not settle"))),
               patch.object(bridge.BRIDGE_PROCESS, "close", wraps=bridge.BRIDGE_PROCESS.close) as close,
               patch.dict(os.environ, {"TPT_TRACEBACK": ""}),
               patch.object(sys, "stdout", out), patch.object(sys, "stderr", err)):
-            self.assertEqual(_lectern_tool().main(["snapshot"]), 70)
+            self.assertEqual(tool.main(["snapshot"]), 70)
         self.assertEqual(out.getvalue(), "")
         self.assertEqual(err.getvalue(), "lectern: snapshot did not settle\n")
         close.assert_any_call()
@@ -1000,7 +1022,9 @@ class SnapshotBusyBridgeTests(unittest.TestCase):
                                                 form="text", theme="triptych")
                             self.assertIs(type(timeout.exception), TimeoutError)
                         else:
-                            self.assertEqual(_lectern_tool().main(["snapshot"]), 70)
+                            tool = _lectern_tool()
+                            with patch.object(tool, "_prepare_products"):
+                                self.assertEqual(tool.main(["snapshot"]), 70)
                             self.assertEqual(
                                 err.getvalue(),
                                 "lectern: snapshot did not settle within 4 polling rounds "
