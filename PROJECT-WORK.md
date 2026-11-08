@@ -11,7 +11,7 @@ Last reconciled: 2026-11-07.
 
 <!-- promised-deliverable: catena-omnia-recovery-2026-11-07 -->
 
-**In progress.** The maintainer requests reliable passage-specific discovery,
+**Live and verified.** The maintainer requested reliable passage-specific discovery,
 complete accounting and indexing of held commentary, broader acquisition of
 sources and their English translations, exclusion of non-Catholic commentary
 authors (including Martin Luther), and matching web and terminal behavior.
@@ -28,11 +28,11 @@ an immutable historical source used elsewhere, or exclude a Catholic Father's
 words because his translator or anthology editor was Protestant.
 
 The prior 22 October audit established a corpus snapshot, not complete fragment
-admission. This work must report acquired, checked, indexed, English-available,
+admission. This work reports acquired, checked, indexed, English-available,
 and unresolved material separately. Remaining access, rights, transcription,
 or anchoring gaps are recorded as such; a plan or a successful build does not
-establish complete textual coverage. Verification and publication evidence will
-be reconciled here as each coherent unit lands.
+establish complete textual coverage. Verification and publication evidence is
+recorded below for the shipped recovery and its remaining corpus limits.
 
 The integrated corpus has 1,560 admitted fragments covering 1,363 distinct
 canonical verses, 88 chapters and 21 books, against 1,413 fragments / 76 chapters /
@@ -40,8 +40,9 @@ canonical verses, 88 chapters and 21 books, against 1,413 fragments / 76 chapter
 Alcuin questions and ten other previously held passages, and admits thirteen
 excerpts from newly acquired English witnesses. Existing source records and
 their evidence states are unchanged. All 327 explicit-text review dispositions
-pin their passage manifests; the exhaustive audit accounts for all 56,731 work, edition, artifact, segment
-and passage manifests, including 9,635 passages. Of the dispositions, nineteen still require
+pin their passage manifests; the exhaustive audit accounts for all 56,731 work,
+edition, artifact, segment and passage manifests, including 9,635 passages.
+Of the dispositions, nineteen still require
 admission evidence, eleven need multiple-locus handling, four need boundary
 repair and four are redundant parent records. The rest distinguish direct
 commentary, incidental citations and non-commentary. Unknown applicability in
@@ -86,24 +87,21 @@ aliases falsely assigning Luke coverage to Pauline or Matthew works. Three
 whole-work spelling identities are now reviewed explicitly; broader Lapide and
 Aurea collection leads stay separately reported. Catena and paragraph producer
 read audits found no undeclared inputs. Source-library, containment and family
-ledger validation pass. Implementation and source validation are complete;
-packaged-site validation and live publication remain pending.
+ledger validation pass. Implementation, source and packaged-site validation are
+complete; the live publication evidence follows below.
 
 Implementation checkpoint `add2198bcc` is committed on `feature/catena-omnia`.
 The final `make check-sources` passes, including the exhaustive audit and
 chronology/document freshness checks. The combined backend run passes all
-203 tests. Final current-data native reader checks pass 15 feature tests and
-408 production tests, with one existing skip. A release probe found that the coverage worklist still counted Luther’s
-preserved historical work extent as an acquisition gap. Browser-product
-recording was stopped before sealing. The follow-up applies the same author
-policy to coverage rows and unresolved aliases while preserving the historical
-extent. Independent review and 28 coverage tests pass: 33 eligible works,
-52 work/book pairs, and one excluded work counted separately. Fresh product
-recording follows the fix checkpoint `85519c811e`. Two independent cold builds
+203 tests. Checkpoint `85519c811e` applies the same author policy to coverage
+rows and unresolved aliases, so Luther's preserved historical extent no longer
+becomes an acquisition gap. Independent review and 28 coverage tests pass:
+33 eligible works, 52 work/book pairs, and one excluded work counted separately.
+Two independent cold builds
 match exactly: thirteen products, 27,875 files and 226,387,710 bytes, descriptor
 identity `352f666cc9b9690505e8cad43da7289b997e0f1447b15d9ea84bda23a26b945d`.
-The final source gate passes again at that checkpoint. Sealed-data reader checks,
-packaged-site validation and publication are now in progress.
+The final source gate passes again at that checkpoint. The sealed-data reader
+checks below validate the recorded corpus and current implementation.
 
 The broad sealed-data run exercised 755 reader tests and exposed stale Catena
 corpus expectations plus a compact terminal selection bug. The expectations now
@@ -126,8 +124,27 @@ The rendered Lapide fragment and emitted Source Library target match exactly
 after whitespace normalization (2,835 characters). Matching Luke commentary
 precedes chapter research, groups start collapsed, and neither mobile reader
 overflows horizontally. Independent `public-alpha verify --deployment-target
-github-pages` passes. The validated release checkpoint is ready for main;
-publication and live deployment verification remain pending.
+github-pages` passes. Release checkpoint `cc2f51f1d4` is published to
+`feature/catena-omnia` and `main` by an ordinary fast-forward from `e05633d6dd`.
+The exact four-commit outgoing range was reviewed: source text, provenance,
+code, tests and release records only, with no scratch, build, PDF or archive
+objects. Repository hygiene run 42440677260 passes. Pages run
+[42440677186](https://github.com/spincyc/triptych/actions/runs/42440677186)
+passes build, print-compile and deploy; all 650 admitted print editions
+(300 pdfTeX and 350 XeTeX) compile with zero failures.
+
+The [live Catena](https://spincyc.github.io/triptych/catena/) is verified against
+that deployment. All 106 checked live files match the local verified artifact
+byte for byte: the page and its assets, index, all 88 fragment-bearing chapter
+files and all thirteen newly admitted English text payloads. Those chapter
+files contain 1,560 unique admitted fragments and no excluded commentary
+authors. Live Chromium checks at 1440 and 390 pixels reproduce the packaged
+results for all three passages, keyboard range selection, history, invalid
+bounds, author exclusion/restoration and source navigation. The Lapide text
+again matches its Source Library target exactly; live checks and inspected
+screenshots show no error sections or horizontal overflow. The documentary
+translator, anchoring, boundary and full-OCR collation limits above remain
+explicit follow-up work rather than claims of complete commentary coverage.
 
 ## Generate PDF links work in place — 6 November 2026
 

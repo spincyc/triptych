@@ -4,7 +4,7 @@ schema_version = 1
 id = "catena-omnia-recovery-2026-11-07"
 owner = "guidance/catena.md"
 promise = "Make Catena Omnia reliably retrieve commentary by biblical passage, account for and index held sources completely, expand acquired sources and English translations, exclude non-Catholic commentary authors, maintain web and terminal parity, and publish coherent validated changes to main."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "passage-retrieval-and-parity"
@@ -33,7 +33,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "verified-main-publication"
   criterion = "Coherent commits pass affected source, browser-data and reader checks, reconcile with main without force, and reach main with deployment and affected live routes verified; remaining corpus gaps are reported accurately."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "release/browser-products.json"]
 
 [[deliverables]]
