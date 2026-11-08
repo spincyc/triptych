@@ -5,7 +5,59 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-07.
+Last reconciled: 2026-11-08.
+
+## Low Mass movement and action fidelity — 8 November 2026
+
+<!-- promised-deliverable: low-mass-fidelity-2026-11 -->
+
+**Reviewed candidate on `feature/altar-server`; delivery checks in progress.** Correct the principal-Gospel model:
+Second remains at his normal place, while First waits at the Gospel side until
+the priest begins reading, then returns below the steps. Show cruets offered
+handle-first and the server's kiss at the appropriate place. Distinguish the
+first wine purification from the subsequent finger ablution: the priest stays
+on the predella, First serves at his right, and wine then water pass over the
+priest's fingers into the chalice resting on the altar. Turn the priest toward
+the Gospel side for the Last Gospel. Expand the full Low Mass movement
+sequence, and reconcile close-up actors, facing, objects and actions with the
+fixed sanctuary position views.
+
+The maintainer's corrections identify substantive defects in the preceding
+visual acceptance. That earlier review remains a record of its exact snapshot;
+it does not establish the fidelity of the corrected sequence. Fresh source
+checks, generated action illustrations, child/trainer page review, affected
+consumer checks and release reconciliation are required. New artwork remains
+illustrative rather than ceremonial evidence. No new live deployment is claimed.
+
+Fresh checks of the 1962 Missal, Carmody's 1961 manual and the seventh-edition
+Fortescue--O'Connell facsimile distinguish the first wine purification from the
+later finger washing. First ascends for the initial pour and returns one step
+below for the finger ablution. The chosen Gospel-return cue remains the
+previously checked Laurence J. O'Connell model; that witness was not freshly
+accessible, and Carmody's slightly later cue remains explicitly distinguished.
+Thirteen new figure and action assets now cover the left-facing priest, carried
+book and veil, cruet kiss and handoff, three consecutive pours, Lavabo,
+separate elevations and covered-chalice carry.
+
+The child and trainer editions each contain 44 pages, 31 sanctuary-view
+placements and 11 close-up placements. Their main text and page structure
+agree. Wide actions and enlarged details share the same artwork; the fixed
+altar and steps retain one geometry. All 88 candidate pages received individual
+screen inspection. The final rebuild changes five pages in each edition;
+those were inspected again, and the other 39 rasters in each match the reviewed
+candidate exactly. Corrections found in review include Lavabo tread support,
+a route-marker collision, explicit bell replacement and Second's rise before
+the ablutions. No visual finding remains open. The exact final PDFs and
+attributed coverage are recorded in the production manifest and
+[review record](workflows/reviews/low-mass-fidelity-2026-11-08/REVIEW.md).
+
+Six Low Mass model regressions and 32 native-print tests pass. All seven
+guide content/schema gates pass; both Low Mass native builds have no overfull
+or underfull boxes. Scoped publication and source-family inventories are
+refreshed without changing classification. Aggregate source checks, final
+native bundle identities and release reconciliation remain in progress.
+This is screen and source review;
+physical-print and ecclesiastical approval are not claimed.
 
 ## Sanctuary dictionary and server-guide visual expansion — 7 November 2026
 

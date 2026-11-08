@@ -268,3 +268,58 @@ handed after his earlier safe return and assigns the boat to BB. Neutral priest
 figures indicate a station only. The elevation hand inset retains the actual
 raised Host and chasuble-edge action; no joined-hands figure is claimed to
 depict the elevation itself. Source locators remain those of the inventory.
+
+### Low-Mass correction audit, 2026-11-08
+
+The maintainer's correction exposed substantive defects in the earlier scene
+review. LM-016 already left Second at his normal Gospel place, but LM-017 and
+the drawings moved him onto Step 2 without an action or source warrant. The
+revised route leaves him standing on the floor below the steps. First alone
+waits on the Gospel-side step and returns below the steps after the reading
+begins and any immediate reverence is complete. The earlier visual acceptance
+does not establish the correctness of that superseded arrangement.
+
+Fresh facsimile inspection in this bounded correction covered the 1962 Missal,
+*Ritus servandus* VI.1--2 (printed LVII, PDF 59), VII.4 (LVIII, PDF 60), X.5
+(LXII, PDF 64), and XII.1, 6 (LXIV, PDF 66); Carmody, *Learning to Serve*
+(1961), pp. 66, 68, 70--72, and 92--93; and Fortescue--J. B. O'Connell,
+*The Ceremonies of the Roman Rite Described*, seventh edition (1943),
+pp. 56--59 and 74--75. The 1943 title page was checked directly: this is not
+the Internet Archive metadata's misleadingly dated 1917 object and not the
+uncollated 1962 twelfth edition.
+
+- Carmody p. 71 gives a free handle facing the priest and a light kiss at the
+  handle's base before presentation; the water follows its blessing. The
+  ensuing sequence prescribes no return kiss. That absence supports the
+  selected model's no-added-kiss instruction; it is not quoted as a Missal
+  prohibition. Its one-server hand switches are not imported into the
+  two-server Offertory allocation.
+- The Missal X.5 separates wine in the extended chalice from the later wine
+  and water over the thumbs and forefingers. Fortescue--O'Connell 1943 p. 57
+  explicitly rests the chalice on the altar for the latter, and p. 74 locates
+  the waiting server on the highest step outside the footpace. First's
+  initial ascent to the predella remains the selected model, corroborated by
+  the checked Goretti modern transcription, ch. X section 4. Its frontmatter
+  mentions both early editions; no fresh original-1917 facsimile check is
+  claimed. The 1943 wording says that the server approaches, without defining
+  the first pour's exact height. Carmody pp. 92--93 confirms wine then water
+  and the slight chalice lift as a stop signal.
+- The ordinary Last Gospel leaves the Missal at Epistle. The priest turns
+  toward the Gospel card, with the leftward body and sight line shown in the
+  revised drawing; an exact angle is illustrative. At departure the Missal
+  XII.6 gives the chalice to the priest's left hand with the right over the
+  burse; Fortescue--O'Connell 1943 p. 59 specifies the left grip at the node.
+
+The selected Laurence J. O'Connell *Book of Ceremonies* allocation remains
+grounded in the recorded earlier direct check of pp. 170--174. Its exact scan
+was not recovered in this pass, so that earlier audit is not recast as fresh
+inspection. Carmody's Gospel return after an early Holy Name bow, otherwise
+after a few lines, is later than the selected start-of-reading cue. The 1943
+Fortescue--O'Connell two-boy model also assigns Second both book transfers;
+that different allocation is not substituted for First-out / Second-back.
+
+New generated artwork is original instructional material, not source
+evidence. Wide action scenes and enlarged hand details consume the same
+checked asset; the stable sanctuary fixes the positions and levels. Production
+acceptance must identify the freshly built child/trainer pair and its complete
+individual-page review, rather than inherit the superseded November 7 receipt.

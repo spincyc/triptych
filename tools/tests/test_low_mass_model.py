@@ -2,6 +2,7 @@
 """Regression checks for the declared two-server Low-Mass model."""
 
 from pathlib import Path
+import re
 import unittest
 
 
@@ -18,15 +19,60 @@ class LowMassModelTests(unittest.TestCase):
         self.diagrams = (OWNER / "shared/low-mass-diagrams.tex").read_text()
         self.inventory = (OWNER / "research/ceremonial-inventory.md").read_text()
 
-    def test_gospel_wait_and_same_level_geometry_are_explicit(self) -> None:
+    def macro(self, name: str) -> str:
+        """Read one TeX definition while retaining nested groups."""
+        marker = rf"\newcommand{{\{name}}}"
+        start = self.diagrams.index(marker) + len(marker)
+        start = self.diagrams.index("{", start)
+        depth, end = 1, start + 1
+        while depth:
+            if self.diagrams[end] == "{":
+                depth += 1
+            elif self.diagrams[end] == "}":
+                depth -= 1
+            end += 1
+        return self.diagrams[start + 1 : end - 1]
+
+    def test_gospel_second_never_climbs_and_first_returns_after_start(self) -> None:
         self.assertIn(r"\emph{In illo tempore}", self.ceremony)
-        self.assertIn("same step level but laterally clear", self.ceremony)
-        self.assertIn("First G/Step2; Second G/Step2 laterally clear", self.inventory)
+        self.assertNotIn("same step level", self.ceremony)
+        self.assertNotIn("Second G/Step2", self.inventory)
+        for name in ("LMSceneMissalMove", "LMSceneMissalCentre", "LMSceneGospel", "LMSceneGospelReturn"):
+            body = self.macro(name)
+            second = re.findall(r"\\ASGStandingServer\{[^}]+\}\{([^}]+)\}\{SECOND", body)
+            self.assertEqual(second, ["11.3"], name + " must leave Second on the floor")
+        self.assertIn(r"\ASGStandingServer{29}{22.5}{FIRST}", self.macro("LMSceneGospel"))
+        self.assertIn(r"\ASGServerFacingLeft{75}{11.3}{FIRST}", self.macro("LMSceneGospelReturn"))
+        self.assertIn("First E/Base/Floor, Second unchanged", self.inventory)
 
     def test_offertory_formation_and_first_only_ablutions_are_explicit(self) -> None:
-        self.assertIn("Side by side on the second step", self.ceremony)
-        self.assertIn("First alone serves both ablutions", self.ceremony)
-        self.assertIn("Pour wine first and then", self.ceremony)
+        self.assertIn("Side by side on Step 2", self.ceremony)
+        self.assertIn("First serves all three pours", self.ceremony)
+        self.assertIn("base of the wine-cruet handle", self.ceremony)
+        self.assertIn("turns the handle toward the priest", self.ceremony)
+        self.assertIn("The priest has blessed the water", self.ceremony)
+        self.assertIn("chalice resting on the altar", self.ceremony)
+        stages = ("LMSceneWinePurification", "LMSceneFingerWine", "LMSceneFingerWater")
+        self.assertEqual(sorted(stages, key=self.ceremony.index), list(stages))
+        self.assertIn("C/Pred for wine purification → E/Step2 for finger ablution", self.inventory)
+
+    def test_action_views_and_enlargements_share_the_same_art(self) -> None:
+        for scene, detail, art in (
+            ("LMSceneWinePurification", "LMWinePurificationDetail", "LMWinePurificationArt"),
+            ("LMSceneFingerWine", "LMFingerWineDetail", "LMFingerWineArt"),
+            ("LMSceneFingerWater", "LMFingerWaterDetail", "LMFingerWaterArt"),
+            ("LMSceneLavaboAction", "LMLavaboActionDetail", "LMLavaboArt"),
+            ("LMSceneHostElevation", "LMHostElevationDetail", "LMHostElevationArt"),
+            ("LMSceneChaliceElevation", "LMChaliceElevationDetail", "LMChaliceElevationArt"),
+        ):
+            self.assertIn("\\" + art, self.macro(scene))
+            self.assertIn("\\" + art, self.macro(detail))
+            self.assertEqual(len(re.findall(r"ASG-ART-[^}]+\.png", self.macro(art))), 1)
+
+    def test_last_gospel_and_exit_depict_actual_facing_and_object(self) -> None:
+        self.assertIn(r"\LMPriestFacingLeft", self.macro("LMSceneLastGospel"))
+        self.assertIn("GOSPEL CARD", self.macro("LMSceneLastGospel"))
+        self.assertIn(r"\LMChaliceBearer", self.macro("LMSceneRecess"))
         self.assertNotIn("First pours wine;\\nSecond pours water", self.ceremony)
 
     def test_coordinated_veil_and_book_exchange_has_no_cover_wait(self) -> None:
@@ -40,8 +86,7 @@ class LowMassModelTests(unittest.TestCase):
         self.assertIn("shared/sanctuary-scenes}", self.diagrams)
         self.assertIn("ASG-ART-032-sanctuary-master.png", shared_scene)
         self.assertIn(r"\ASGBeginScene{\LMPositionWidth}", self.diagrams)
-        self.assertIn("ASG-ART-029-lm-first-only-ablutions", self.diagrams)
-        for moment in ("GospelReturn", "ElevationReturn", "BookReturnComplete"):
+        for moment in ("MissalCentre", "GospelReturn", "WinePresentation", "WaterPresentation", "WinePurification", "FingerWine", "FingerWater", "ElevationReturn", "BookReturnComplete", "Recess"):
             self.assertIn(r"\newcommand{\LMScene" + moment + "}", self.diagrams)
             self.assertIn(r"\LMScene" + moment, self.ceremony)
         for asset in (
@@ -52,6 +97,7 @@ class LowMassModelTests(unittest.TestCase):
             "ASG-ART-019-lm-book-and-veil-return",
             "ASG-ART-027-lm-gospel-opening",
             "ASG-ART-028-lm-offertory-formation",
+            "ASG-ART-029-lm-first-only-ablutions",
             "ASG-ART-031-lm-veil-missal-exchange",
         ):
             self.assertNotIn(asset, self.diagrams)

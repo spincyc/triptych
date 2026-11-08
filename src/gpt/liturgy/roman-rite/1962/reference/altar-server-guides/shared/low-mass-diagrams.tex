@@ -27,28 +27,58 @@
 \tikzset{lm role tag/.style={asg label},lm object tag/.style={asg label},lm transfer tag/.style={asg label}}
 \ifTrainerManualGuide
   \newcommand{\LMPencilSceneHeight}{4.05cm}
-  \newcommand{\LMLavaboHeight}{4.20cm}
   \newcommand{\LMPositionWidth}{9.5cm}
 \else
   \newcommand{\LMPencilSceneHeight}{5.00cm}
-  \newcommand{\LMLavaboHeight}{5.20cm}
   \newcommand{\LMPositionWidth}{10.5cm}
 \fi
 \newcommand{\LMPositionScene}[2]{%
   \par\smallskip\noindent\makebox[\linewidth][c]{%
     \ASGBeginScene{\LMPositionWidth}\ASGLowCandles #1\ASGEndScene}%
   \par\noindent{\small\centering #2\par}\smallskip}
+\newcommand{\LMRouteFields}[6]{%
+  \par\smallskip{\fontsize{10.5}{12.5}\selectfont\RaggedRight
+  \textbf{Cue:} #1\quad\textbf{Who / object:} #2\par
+  \textbf{Start:} #3\par
+  \textbf{Route:} #4\par
+  \textbf{Finish / facing:} #5\par
+  \textbf{Waiting:} #6\par}\smallskip}
 \newcommand{\LMMissalAtEpistle}{\ASGStation{63}{43}{MISSAL}}
 \newcommand{\LMMissalAtGospel}{\ASGMissalGospel}
-\newcommand{\LMCoveredChalice}{\ASGStation{50}{44}{COVERED\\CHALICE}}
+\newcommand{\LMCoveredChalice}{\draw[thin] (22,40) -- (50,43);\ASGStation{12}{40}{COVERED\\CHALICE}}
+\newcommand{\LMPriestAbove}[2]{%
+  \node[anchor=south,inner sep=0pt] at (#1,#2) {\includegraphics[height=28\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-035-priest-standing.png}};
+  \ASGStation{#1}{#2+31}{PRIEST}}
+\newcommand{\LMPriestFacingLeft}[3]{%
+  \node[anchor=south,inner sep=0pt] at (#1,#2) {\includegraphics[height=28\ASGSceneUnit,trim=0 7 0 12,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-039-priest-facing-left.png}};
+  \ASGStation{#1}{#2-2}{#3}}
+\newcommand{\LMBookBearer}[3]{%
+  \node[anchor=south,inner sep=0pt] at (#1,#2) {\includegraphics[height=23\ASGSceneUnit,trim=0 13 0 28,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-040-server-carrying-missal.png}};
+  \ASGStation{#1}{#2-2}{#3}}
+\newcommand{\LMWaitingCruetServer}[4]{%
+  \node[anchor=south,inner sep=0pt] at (#1,#2) {\includegraphics[height=23\ASGSceneUnit,trim=140 15 140 30,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-050-server-waiting-cruet.png}};
+  \ASGStation{#1}{#2-#4}{#3}}
+\newcommand{\LMCruetKissDetail}{%
+  \begin{center}\begin{tikzpicture}
+  \node[inner sep=0pt] (art) {\includegraphics[height=3.2cm]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-041-cruet-kiss.png}};
+  \node[asg label,anchor=east] (label) at ($(art.north west)+(-2mm,-4mm)$) {BASE OF\\HANDLE};
+  \draw[thin,-{Stealth[length=1.4mm]}] (label.south east) -- ($(art.south west)!.67!(art.south east)+(0,1.55cm)$);
+  \end{tikzpicture}\par{\small Kiss the lower handle attachment lightly; keep the spout clear.}\end{center}}
 
 \newcommand{\LMSceneStart}{%
   \LMPositionScene{%
     \LMMissalAtEpistle
-    \ASGPriest{50}{11.3}{PRIEST}
+    \LMChaliceBearer{50}{11.3}{PRIEST}
     \ASGStandingServer{33}{11.3}{SECOND}
     \ASGStandingServer{67}{11.3}{FIRST}
-  }{1. Arrival complete: all three stand on the floor.}}
+  }{1. Servers form at the foot; the priest arrives carrying the covered chalice, then faces the altar.}}
+\newcommand{\LMScenePriestPrepares}{%
+  \LMPositionScene{%
+    \LMMissalAtEpistle\LMCoveredChalice
+    \ASGPriest{50}{26.5}{PRIEST}
+    \ASGStandingServer{33}{11.3}{SECOND}
+    \ASGStandingServer{67}{11.3}{FIRST}
+  }{While the priest prepares the altar: both servers remain standing on the floor.}}
 \newcommand{\LMSceneFootKneel}{%
   \LMPositionScene{%
     \LMMissalAtEpistle\LMCoveredChalice
@@ -56,6 +86,15 @@
     \ASGKneelingServer{33}{11.3}{SECOND}
     \ASGKneelingServer{67}{11.3}{FIRST}
   }{2. At the opening prayers: both servers kneel on the floor.}}
+\newcommand{\LMSceneRiseFromFoot}{%
+  \LMPositionScene{%
+    \LMMissalAtEpistle\LMCoveredChalice
+    \ASGPriest{50}{26.5}{PRIEST}
+    \ASGStandingServer{33}{11.3}{SECOND}
+    \ASGStandingServer{67}{11.3}{FIRST}
+    \draw[asg route] (30,10) -- (23,10) -- (23,17);
+    \draw[asg route] (70,10) -- (77,10) -- (77,17);
+  }{1. After the priest starts up: both rise, turn inward, and go to the outside places.}}
 \newcommand{\LMSceneNormalPlaces}{%
   \LMPositionScene{%
     \LMMissalAtEpistle
@@ -64,51 +103,56 @@
     \ASGKneelingServer{75}{18.3}{FIRST}
     \draw[asg route] (33,12) -- (25,12) -- (25,17);
     \draw[asg route] (67,12) -- (75,12) -- (75,17);
-  }{After the priest ascends: kneel at the two normal places on Step 1.}}
+  }{2. Movement finished: both kneel at their normal places on Step 1.}}
 \newcommand{\LMSceneMissalMove}{%
   \LMPositionScene{%
     \ASGPriest{50}{26.5}{PRIEST}
-    \ASGStandingServer{20}{18.3}{SECOND\\CLEAR}
-    \ASGStandingServer{69}{26.5}{FIRST}
-    \ASGStation{74}{43}{BOOK + STAND}
+    \ASGStandingServer{20}{11.3}{SECOND\\STAYS}
+    \LMBookBearer{72}{26.5}{FIRST}
     \draw[asg route] (73,25) -- (82,18) -- (82,9) -- (50,9);
     \draw[asg route] (48,9) -- (28,9) -- (28,22) -- (35,25);
     \ASGStop{82}{9}{A}\ASGStop{50}{9}{B}\ASGStop{28}{22}{C}
   }{1. First takes the book down the Epistle side; B marks the centre stop.}}
+\newcommand{\LMSceneMissalCentre}{%
+  \LMPositionScene{%
+    \LMPriestAbove{50}{26.5}
+    \ASGStandingServer{20}{11.3}{SECOND\\STAYS}
+    \LMBookBearer{50}{11.3}{FIRST}
+    \draw[asg route] (44,10) -- (28,10) -- (28,22) -- (35,25);
+    \ASGStop{28}{22}{C}
+  }{2. First stops at the centre for the taught reverence, then takes the book up Gospel.}}
 \newcommand{\LMSceneGospel}{%
   \LMPositionScene{%
     \LMMissalAtGospel
-    \ASGPriest{39}{26.5}{PRIEST}
-    \ASGStandingServer{18}{22.5}{SECOND}
+    \LMPriestFacingLeft{39}{26.5}{PRIEST}
+    \ASGStandingServer{20}{11.3}{SECOND\\STAYS}
     \ASGStandingServer{29}{22.5}{FIRST}
-  }{2. Book placed: both stand on Step 2 at the Gospel side; Second stays outward.}}
+  }{3. Gospel begins: First waits at Gospel on Step 2; Second stays below the steps.}}
 \newcommand{\LMSceneGospelReturn}{%
   \LMPositionScene{%
-    \LMMissalAtGospel\ASGPriest{39}{26.5}{PRIEST}
-    \ASGStandingServer{20}{22.5}{SECOND}
-    \ASGStandingServer{75}{18.3}{FIRST}
-    \draw[asg route] (29,22) -- (29,9) -- (50,9) -- (75,9) -- (75,17);
-    \ASGStop{29}{22}{A}\ASGStop{50}{9}{B}
-  }{3. After the Gospel text begins: First returns to Epistle; Second stays clear.}}
-\newcommand{\LMSceneCruetService}{%
+    \LMMissalAtGospel\LMPriestFacingLeft{39}{26.5}{PRIEST}
+    \ASGStandingServer{20}{11.3}{SECOND\\STAYS}
+    \ASGServerFacingLeft{75}{11.3}{FIRST}
+    \draw[asg route] (29,22) -- (29,6) -- (50,6) -- (75,6) -- (75,10);
+    \ASGStop{29}{22}{A}\ASGStop{50}{6}{B}
+  }{4. Reading underway: First has descended and returned to Epistle; both face the Gospel.}}
+\newcommand{\LMSceneCruetPickup}{%
   \LMPositionScene{%
-    \LMMissalAtGospel
-    \ASGPriestFacingRight{68}{26.5}{PRIEST}
-    \ASGServerFacingLeft{76}{22.5}{FIRST}
-    \ASGServerFacingLeft[4]{83}{22.5}{SECOND}
-    \ASGStation{73}{5}{FIRST: WINE\quad SECOND: WATER}
-    \ASGPairPlan{FIRST}{SECOND}
-    \draw[asg route] (94,13) -- (91,18) -- (88,21);
-  }{At the Offertory handoff: both servers stand side by side on Step 2.}}
-\newcommand{\LMSceneCruets}{\LMSceneCruetService}
-\newcommand{\LMSceneLavaboPlaces}{%
+    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
+    \ASGStandingServer{71}{11.3}{FIRST}
+    \ASGStandingServer{83}{11.3}{SECOND}
+    \ASGStation{72}{3}{FIRST: WINE\quad SECOND: WATER}
+    \draw[asg route] (25,17) -- (25,6) -- (49,6) -- (75,6) -- (81,10);
+    \draw[asg route] (75,17) -- (70,12) -- (52,6);
+    \ASGStop{50}{6}{A}
+  }{Before pickup: both stand at the credence; the folded veil is already secure.}}
+\newcommand{\LMSceneVeilReceipt}{%
   \LMPositionScene{%
-    \LMMissalAtGospel\ASGPriestFacingRight{66}{26.5}{PRIEST}
-    \ASGServerFacingLeft{76}{22.5}{SECOND}
-    \ASGServerFacingLeft[4]{83}{22.5}{FIRST}
-    \ASGStation{70}{5}{SECOND: WATER + BOWL\\FIRST: TOWEL}
-    \ASGPairPlan{SECOND}{FIRST}
-  }{At the Lavabo: Step 2, outside the Epistle edge.}}
+    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
+    \ASGStandingServer{25}{11.3}{SECOND\\WAITS}
+    \LMVeilBearer{73}{26.5}{FIRST}
+    \draw[asg route] (76,12) -- (82,18) -- (80,24);
+  }{After First receives the folded veil at Epistle: Second is still below the steps.}}
 \newcommand{\LMSceneBell}{%
   \LMPositionScene{%
     \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
@@ -116,43 +160,52 @@
     \ASGKneelingServer{75}{18.3}{FIRST}
     \ASGStation{84}{23}{BELL}
   }{Both kneel on Step 1; the bell rests on Step 2 in front of First.}}
-\newcommand{\LMSceneElevation}{%
+\newcommand{\LMSceneLavaboReset}{%
   \LMPositionScene{%
     \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
-    \ASGKneelingServer{39}{25.5}{SECOND}
-    \ASGKneelingServer{61}{25.5}{FIRST}
-    \ASGStation{73}{28}{BELL}
-    \draw[asg route] (25,18) -- (31,18) -- (35,25);
-    \draw[asg route] (75,18) -- (69,18) -- (65,25);
-  }{Before the elevations: both are kneeling, slightly behind the priest on the predella.}}
+    \ASGStandingServer{71}{11.3}{FIRST}
+    \ASGStandingServer{83}{11.3}{SECOND}
+    \ASGStation{70}{3}{ARTICLES RESET}
+    \draw[asg route] (70,10) -- (50,6);
+    \ASGStop{50}{6}{A}
+  }{1. Lavabo complete: articles are back at the credence; First is ready to take the bell.}}
+\newcommand{\LMScenePlatePickup}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
+    \ASGKneelingServer{25}{18.3}{SECOND\\WAITS}
+    \ASGStandingServer{83}{11.3}{FIRST}
+    \ASGStation{66}{4}{BELL SET DOWN; PLATE NEXT}
+    \draw[asg route] (75,18) -- (78,13) -- (81,11);
+  }{Before the Communion-plate pickup: First is at the credence; Second stays at Gospel.}}
+\newcommand{\LMSceneAblutionPickup}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
+    \ASGStandingServer{25}{11.3}{SECOND\\WAITS}
+    \ASGStandingServer{83}{11.3}{FIRST}
+    \ASGStation{66}{4}{FIRST TAKES WINE + WATER}
+    \draw[asg route] (88,12) -- (88,19) -- (79,22);
+  }{Before pickup: First takes both cruets; Second remains below the Gospel-side steps.}}
 \newcommand{\LMSceneElevationReturn}{%
   \LMPositionScene{%
     \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
     \ASGKneelingServer{25}{18.3}{SECOND}
     \ASGKneelingServer{75}{18.3}{FIRST}
+    \ASGStation{84}{23}{BELL}
     \draw[asg route] (39,25) -- (35,15) -- (46,9);
     \draw[asg route] (61,25) -- (65,15) -- (54,9);
     \ASGStop{50}{9}{A}
     \ASGStation{50}{3}{CENTRE REVERENCE, THEN NORMAL PLACES}
   }{After the priest's final reverence: descend, meet at the foot, then return to Step 1.}}
-\newcommand{\LMElevationHandDetail}{%
-  \par\smallskip\noindent\begin{minipage}[t]{.48\linewidth}
-    \centering\includegraphics[height=1.7cm,trim=580 630 580 145,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations-2026.png}
-    \par\small The priest raises the Host.
-  \end{minipage}\hfill\begin{minipage}[t]{.48\linewidth}
-    \centering\includegraphics[height=1.7cm,trim=490 320 480 510,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-015-lm-elevation-stations-2026.png}
-    \par\small Each server lifts the nearest lower chasuble edge.
-  \end{minipage}\par\smallskip}
 \newcommand{\LMSceneBookReturn}{%
   \LMPositionScene{%
-    \LMMissalAtGospel\ASGPriest{50}{26.5}{PRIEST}
-    \ASGStandingServer{29}{26.5}{SECOND}
-    \ASGStandingServer{72}{22.5}{FIRST}
+    \ASGPriest{50}{26.5}{PRIEST}
+    \LMBookBearer{29}{26.5}{SECOND}
+    \LMVeilBearer{72}{22.5}{FIRST}
     \draw[asg route] (29,23) -- (29,9) -- (76,9) -- (76,25);
     \draw[asg route] (72,20) -- (67,5) -- (22,5) -- (22,23);
     \ASGStation{45}{16}{BOOK TO EPISTLE}
     \ASGStop{68.3}{9}{A}
-    \ASGStation{83}{33}{FIRST WAITS\\UNTIL A IS CLEAR}
+    \ASGStation{82}{58}{FIRST WAITS\\UNTIL A IS CLEAR}
     \ASGStation{46}{2}{FOLDED VEIL TO GOSPEL}
   }{1. Two routes: First gives way while Second passes the crossing A.}}
 \newcommand{\LMSceneBookReturnComplete}{%
@@ -165,35 +218,28 @@
 \newcommand{\LMSceneLastGospel}{%
   \LMPositionScene{%
     \LMMissalAtEpistle\LMCoveredChalice
-    \ASGPriest{38}{26.5}{PRIEST}
-    \ASGStandingServer{25}{18.3}{SECOND}
-    \ASGServerFacingLeft{75}{18.3}{FIRST}
+    \LMPriestFacingLeft{38}{26.5}{PRIEST}
+    \ASGStation{12}{49}{GOSPEL CARD}
+    \draw[thin] (22,48) -- (34,43);
+    \ASGStandingServer{25}{11.3}{SECOND}
+    \ASGServerFacingLeft{75}{11.3}{FIRST}
     \draw[asg route,solid] (68,31) -- (47,34);
-  }{Last Gospel: Second faces the altar; First turns toward the priest.}}
+  }{Last Gospel: the priest faces left; Second faces the altar and First turns toward him.}}
 \newcommand{\LMSceneExit}{%
   \LMPositionScene{%
-    \LMMissalAtEpistle
-    \ASGPriest{50}{11.3}{PRIEST}
+    \LMMissalAtEpistle\LMCoveredChalice
+    \ASGPriest{50}{26.5}{PRIEST}
     \ASGStandingServer{33}{11.3}{SECOND}
     \ASGStandingServer{67}{11.3}{FIRST}
-    \ASGStation{50}{2}{LEAVE SINGLE FILE: FIRST, SECOND, PRIEST}
-  }{After the final common reverence: turn inward and take the rehearsed sacristy route.}}
-
-\newcommand{\LMSceneLavabo}{%
-  \begin{center}
-  \begin{tikzpicture}
-    \node[inner sep=0pt] (art) {%
-      \includegraphics[height=\LMLavaboHeight,keepaspectratio]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-006-lm-lavabo-2026.png}};
-    \node[lm role tag,anchor=south] at
-      ($(art.north west)!.50!(art.north east)+(0,1mm)$) {PRIEST};
-    \node[lm role tag,anchor=north] at
-      ($(art.south west)!.16!(art.south east)+(0,-1mm)$)
-      {SECOND\\WATER + BOWL};
-    \node[lm role tag,anchor=north] at
-      ($(art.south west)!.83!(art.south east)+(0,-1mm)$) {FIRST\\TOWEL};
-  \end{tikzpicture}
-  \end{center}}
+  }{1. Both servers have reached the foot; the priest is ready to take his covered chalice.}}
+\newcommand{\LMSceneRecess}{%
+  \LMPositionScene{%
+    \LMMissalAtEpistle
+    \ASGServerFacingLeft{20}{11.3}{FIRST}
+    \ASGServerFacingLeft{37}{11.3}{SECOND}
+    \LMChaliceBearer{57}{11.3}{PRIEST}
+    \draw[asg route] (58,3) -- (14,3);
+  }{2. After the common reverence: form single file and take the sacristy route.}}
 
 \newcommand{\LMScenePlate}{%
   \begin{center}\begin{tikzpicture}
@@ -215,18 +261,105 @@
       {SIDE VIEW};
   \end{tikzpicture}\end{center}}
 
-\newcommand{\LMSceneAblutions}{%
-  \par\medskip\noindent\begin{minipage}[t]{.48\linewidth}
-  \centering\textbf{1. FIRST: WINE}\par\smallskip
-  \includegraphics[width=.94\linewidth,trim=170 440 1175 120,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-2026.png}
-  \par\small Into the priest-held chalice.
-  \end{minipage}\hfill
-  \begin{minipage}[t]{.48\linewidth}
-  \centering\textbf{2. FIRST: WINE, THEN WATER}\par\smallskip
-  \includegraphics[width=.94\linewidth,trim=1130 420 180 140,clip]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-029-lm-first-only-ablutions-2026.png}
-  \par\small Over the joined thumbs and index fingers.
-  \end{minipage}\par\medskip}
+% The wide view and hand enlargement call one artwork owner for each act.
+% Crop coordinates are reviewed against that same image, never a second scene.
+\newcommand{\LMCruetPresentationArt}[1]{\includegraphics[#1]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-042-cruet-presentation-handle-out.png}}
+\newcommand{\LMWinePurificationArt}[1]{\includegraphics[#1]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-043-first-purification.png}}
+\newcommand{\LMFingerWineArt}[1]{\includegraphics[#1]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-044-finger-ablution-wine.png}}
+\newcommand{\LMFingerWaterArt}[1]{\includegraphics[#1]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-045-finger-ablution-water.png}}
+\newcommand{\LMLavaboArt}[1]{\includegraphics[#1]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-046-lavabo-service.png}}
+\newcommand{\LMHostElevationArt}[1]{\includegraphics[#1]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-047-elevation-host.png}}
+\newcommand{\LMChaliceElevationArt}[1]{\includegraphics[#1]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-048-elevation-chalice.png}}
+\newcommand{\LMChaliceBearer}[3]{%
+  \node[anchor=south,inner sep=0pt] at (#1,#2) {\includegraphics[height=28\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-051-priest-carrying-covered-chalice.png}};
+  \ASGStation{#1}{#2-2}{#3}}
+\newcommand{\LMVeilBearer}[3]{%
+  \node[anchor=south,inner sep=0pt] at (#1,#2) {\includegraphics[height=23\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-052-server-carrying-folded-veil.png}};
+  \ASGStation{#1}{#2-2}{#3}}
 
-% Both hand-action moments now share the same side-by-side plate above.
+\newcommand{\LMSceneWinePresentation}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriestFacingRight{66}{26.5}{PRIEST}
+    \LMWaitingCruetServer{76}{22.5}{FIRST}{2}
+    \LMWaitingCruetServer{84}{22.5}{SECOND}{6}
+    \ASGStation{75}{5}{FIRST: WINE\quad SECOND: WATER}
+    \ASGPairPlan{FIRST}{SECOND}
+  }{Before the handoff: First holds wine and Second water at their fixed service places.}}
+\newcommand{\LMSceneWaterPresentation}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGPriestFacingRight{66}{26.5}{PRIEST}
+    \LMWaitingCruetServer{76}{22.5}{FIRST}{2}
+    \LMWaitingCruetServer{84}{22.5}{SECOND}{6}
+    \ASGStation{75}{5}{SECOND: WATER\quad FIRST: WINE}
+    \ASGPairPlan{FIRST}{SECOND}
+  }{Before the water handoff: First holds the returned wine; neither server changes place.}}
+\newcommand{\LMCruetPresentationDetail}{%
+  \begin{center}\LMCruetPresentationArt{height=3.4cm,trim=180 700 120 180,clip}\par
+  {\small The handle is free and faces the priest's receiving hand.}\end{center}}
+\newcommand{\LMCruetSequenceDetail}{%
+  \noindent\begin{minipage}[t]{.49\linewidth}\LMCruetKissDetail\end{minipage}\hfill
+  \begin{minipage}[t]{.49\linewidth}\LMCruetPresentationDetail\end{minipage}\par}
 
-\newcommand{\LMSceneFingerWashing}{}
+\newcommand{\LMSceneWinePurification}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGStandingServer{25}{11.3}{SECOND\\WAITS}
+    \node[anchor=south west,inner sep=0pt] at (46,26.5) {\LMWinePurificationArt{height=28\ASGSceneUnit,trim=0 67 0 19,clip}};
+    \ASGStation{50}{24}{PRIEST}\ASGStation{64}{24}{FIRST}
+    \ASGStation{73}{5}{FIRST WINE: BOTH ON PREDELLA}
+  }{First wine purification: the priest holds the chalice; First pours into it.}}
+\newcommand{\LMWinePurificationDetail}{%
+  \begin{center}\LMWinePurificationArt{height=3.5cm,trim=250 800 250 180,clip}\par
+  {\small Wine goes into the held chalice; the fingers are not being washed.}\end{center}}
+
+\newcommand{\LMSceneFingerWine}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGStandingServer{25}{11.3}{SECOND\\WAITS}
+    \node[anchor=south west,inner sep=0pt] at (58,22.5) {\LMFingerWineArt{height=32\ASGSceneUnit}};
+    \ASGStation{63}{25}{PRIEST}\ASGStation{79}{20}{FIRST}
+    \ASGStation{75}{5}{FINGERS: WINE FIRST}
+  }{The priest stays on the predella; First pours from Step 2, at Epistle.}}
+\newcommand{\LMFingerWineDetail}{%
+  \begin{center}\LMFingerWineArt{height=3.5cm,trim=250 700 150 180,clip}\par
+  {\small Wine over both thumbs and forefingers; the chalice base rests on the altar.}\end{center}}
+\newcommand{\LMSceneFingerWater}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel\ASGStandingServer{25}{11.3}{SECOND\\WAITS}
+    \node[anchor=south west,inner sep=0pt] at (58,22.5) {\LMFingerWaterArt{height=32\ASGSceneUnit}};
+    \ASGStation{63}{25}{PRIEST}\ASGStation{79}{20}{FIRST}
+    \ASGStation{75}{5}{FINGERS: WATER NEXT}
+  }{Same station, next pour: First follows with water; Second still waits clear.}}
+\newcommand{\LMFingerWaterDetail}{%
+  \begin{center}\LMFingerWaterArt{height=3.5cm,trim=250 700 150 180,clip}\par
+  {\small Water over the same fingers into the same altar-supported chalice.}\end{center}}
+
+\newcommand{\LMSceneLavaboAction}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel
+    \node[anchor=south west,inner sep=0pt] at (50,23.2) {\LMLavaboArt{height=32\ASGSceneUnit,trim=160 10 200 10,clip}};
+    \ASGStation{56}{25}{PRIEST}\ASGStation{70}{20}{SECOND}\ASGStation{82}{16}{FIRST}
+    \ASGPairPlan{SECOND}{FIRST}
+  }{Lavabo: Second pours into the bowl; First has the open towel ready.}}
+\newcommand{\LMLavaboActionDetail}{%
+  \begin{center}\LMLavaboArt{height=3.5cm,trim=400 404 286 220,clip}\par
+  {\small Water and bowl belong to Second; the towel belongs to First.}\end{center}}
+
+\newcommand{\LMSceneHostElevation}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel
+    \node[anchor=south west,inner sep=0pt] at (38,25.5) {\LMHostElevationArt{height=34\ASGSceneUnit,trim=0 10 0 10,clip}};
+    \ASGStation{50}{62}{PRIEST}
+    \ASGStation{42}{23}{SECOND}\ASGStation{58}{23}{FIRST}
+  }{Host elevation: both kneel, lift the nearest lower edge, and keep the priest's movement free.}}
+\newcommand{\LMHostElevationDetail}{%
+  \begin{center}\LMHostElevationArt{height=3.1cm,trim=100 200 0 680,clip}\par
+  {\small The inside hands lift the two edges; First's outside right hand rings the bell.}\end{center}}
+\newcommand{\LMSceneChaliceElevation}{%
+  \LMPositionScene{%
+    \LMMissalAtGospel
+    \node[anchor=south west,inner sep=0pt] at (38,25.5) {\LMChaliceElevationArt{height=34\ASGSceneUnit,trim=0 10 0 10,clip}};
+    \ASGStation{50}{62}{PRIEST}
+    \ASGStation{42}{23}{SECOND}\ASGStation{58}{23}{FIRST}
+  }{Chalice elevation: the same two places and hand assignments; release when it is lowered.}}
+\newcommand{\LMChaliceElevationDetail}{%
+  \begin{center}\LMChaliceElevationArt{height=3.1cm,trim=100 200 0 680,clip}\par
+  {\small Repeat the lift and three rings, then release the chasuble and remain still.}\end{center}}

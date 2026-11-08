@@ -1,6 +1,6 @@
 # Artwork manifest: 1962 altar-server guides
 
-Original audit: 2026-07-27 (America/Chicago). Current scene revision: 2026-11-07.
+Original audit: 2026-07-27 (America/Chicago). Current correction: 2026-11-08.
 
 The illustrations are project-created editorial teaching aids showing a
 generic ad-orientem Roman altar frontally from the nave. They do not establish
@@ -14,9 +14,37 @@ Alpha admission gates. Only a concrete source, rights, safety,
 reproducibility, mechanical, or visual defect remains operative; nothing in
 this manifest implies external approval.
 
-## Current shared sanctuary and figure set — 2026-11-07
+## Low Mass fidelity correction — 2026-11-08
 
-The four teaching guides now compose their position views from one architectural
+The Low Mass child and trainer editions are corrected after substantive
+station, timing and hand-action defects were identified in the accepted
+7 November scenes. Their earlier screen/layout acceptance does not establish
+the correctness of those arrangements and is superseded for the corrected
+Low Mass content. Historical asset and PDF hashes remain valid identities of
+their named earlier snapshots.
+
+The [Low Mass fidelity record](low-mass-fidelity-2026-11-08.md) identifies the
+new layers, action studies, source controls and exact selected bytes. The
+current integration replaces the Low Mass `006` Lavabo, `015` elevation
+and `029` ablution details; new wine and water finger-ablution states must remain distinct from
+the initial wine purification. The architecture remains `032`, with its
+existing role, route and level grammar. Sung selections are outside this
+correction.
+
+All thirteen new assets (`039`–`048`, `050`–`052`) passed bounded independent
+isolated image review; `049` is unassigned. The separate integrated review
+accepted both 44-page Low Mass proofs, including placement, scale, captions,
+action timing and route geometry. The source-frozen positive selection
+is 21 files for each Low Mass edition: `026`, `032`–`048`, `050`–`052`.
+Missa Cantata and Solemn selections remain 12 and 11 files, respectively,
+with no image bytes changed; all three card companions select none. The
+[production manifest](production-manifest.md#low-mass-fidelity-correction--2026-11-08)
+records the exact accepted proofs and review extent. Packaging checks cover
+all seven editions; new every-page visual acceptance covers the Low Mass pair.
+
+## Shared sanctuary and figure set — 2026-11-07 snapshot
+
+At this checkpoint the four teaching guides composed their position views from one architectural
 backdrop, reusable standing and kneeling figures, and form-specific candle
 counts. `shared/sanctuary-scenes.tex` owns the common coordinates, side names,
 level markers, role labels and route grammar. Low Mass uses two altar candles;
@@ -47,7 +75,8 @@ them for native printing or carry forward approval of an obsolete rendering.
 
 At this checkpoint the following nineteen files superseded the earlier image
 states for these logical IDs. The consumer column describes the 5 November
-snapshot. The 7 November selection above controls present use. The older
+snapshot. The 7 November selection above is likewise historical for Low Mass;
+the 8 November correction controls its replacement. The older
 sections below likewise describe their named historical snapshots.
 
 Exact received and normalized identities, saved generation/correction prompts,

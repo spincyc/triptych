@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-11-07"
+audited_on = "2026-11-08"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 154
-source_surface_file_count = 3628
-snapshot = "sha256:282fc660767862e8fe2fdcc6e47080e013b47668f235bc05df1ca865cb3b7aac"
+source_surface_file_count = 3629
+snapshot = "sha256:1d00778db45631bd96c354413e5ca2d5e50613f4426a1d125c77d831e30bd3bb"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -15194,7 +15194,7 @@ owners = ["liturgy/roman-rite/1962/reference/altar-server-guides/03-solemn-mass"
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/artwork-manifest.md"
-sha256 = "aa4e28970ee7a88d958a1afbe36bc3a05a2c580132a79024b6d2a701340b7548"
+sha256 = "cd31067765ead734643b3a29982c3b575d225888a720a089d136b00f8bd2e4a4"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15206,7 +15206,7 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/ceremonial-inventory.md"
-sha256 = "2f94eb2964a59563d42eeb5d320988e0aa20ab7a97c73b73b4692591266dc8c0"
+sha256 = "ec61c601016d0f0b27fec43a142c9eb4461a41dfa8bad3ff6abcbcc62973672c"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15218,13 +15218,19 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/edition-manifest.md"
-sha256 = "03276f80fe235c527f1d27448b02d25bafc447dd16e3b82e454ca59c27cad329"
+sha256 = "2a945f4e8f13a1f9bc0693b14622b69bc319816c0133de154b0d4bc9dfdf7800"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/flash-card-manifest.md"
 sha256 = "03b9b21efa90c7aa4d378165b83877f5a697837dd3b18a87610f0204c64e90a8"
+kind = "research-record"
+owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/low-mass-fidelity-2026-11-08.md"
+sha256 = "fac85e25f19ab57d39086c292e5ab66a820521f1d9a87afbdd5a15edc7ec6bca"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15242,7 +15248,7 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md"
-sha256 = "4d0af4fc42fe3eb0cd4121d2faba01fc641fe191053fae59c3de6ac768b50042"
+sha256 = "256460391626261e13b148bbf72c41fca93087533b78a128665e8e6f808c444c"
 kind = "research-record"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15272,13 +15278,13 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/scope.md"
-sha256 = "2d20f1f4f5bd0cb07afbd938f8c71e9ab8c935774b2e7856147d3fb70bbd2a0c"
+sha256 = "3020d1ab8d2ba78db9f8ea4635dce41479dc0f0d7b15e3eaa3521038380342fa"
 kind = "research-scope"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/source-audit.md"
-sha256 = "10d713ca376a06cb213b9fa9ccfc622a8de04c106a16b08a4d1e0c5c24f34bae"
+sha256 = "0f5e1f11202c3c0e1d7172fd18b0b36c8da6f595cdd967e92bc9611ed9e397ad"
 kind = "legacy-source-audit"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
@@ -15290,13 +15296,13 @@ owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-ceremony.tex"
-sha256 = "e2c68abe39868c3580c0e1dff6ceeb6229a1a45ac1f98d3772b798b327569b91"
+sha256 = "1420500a9bb475c70c842ee71788a371b0bc07f8b998180d10db4497921ebf51"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/shared/low-mass-diagrams.tex"
-sha256 = "bbc7d8256d1c992a38c91c4c66ea41de2c1d205047936043a826b801d4e50177"
+sha256 = "66b6fd878dba2234cd33d145ed044f2e10db963c8d36ad5df82a50d946969aec"
 kind = "shared-source-or-render"
 owners = ["owner.liturgy.roman-rite.1962.altar-server-guides"]
 

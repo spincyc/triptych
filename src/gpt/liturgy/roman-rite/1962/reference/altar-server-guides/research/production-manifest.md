@@ -1,13 +1,15 @@
 # Production manifest: 1962 altar-server guides
 
-Latest source revision: 2026-11-07. The seven current source editions retain
+Latest source revision: 2026-11-08. The seven current source editions retain
 their shared owners and source-first, on-demand native printing. Generated
 PDFs are review artifacts, not tracked or installed publication inputs.
 
-This revision replaces varying sanctuary position images with one reusable
-architectural backdrop and figure system, adds distinct Low Mass movement
-states and sixteen sung movement panels, and retains separate action details.
-The new asset identities, composition rules and review bounds are in
+This revision corrects the Low Mass Gospel stations and departure cue,
+Offertory handoff, distinct purification and finger-ablution moments,
+Last-Gospel facing and procession figures. It retains the shared sanctuary
+architecture and expands the action/route sequence. New identities and review
+bounds are in [`low-mass-fidelity-2026-11-08.md`](low-mass-fidelity-2026-11-08.md).
+The preceding architectural revision remains recorded in
 [`scene-revision-2026-11-07.md`](scene-revision-2026-11-07.md). Source loci
 and conflicting manual allocations remain in `source-audit.md` and
 `ceremonial-inventory.md`.
@@ -16,7 +18,74 @@ All dated production records below describe their named historical snapshots.
 Their references to "current" or "installed" PDFs apply only within those
 records and do not establish the identity or approval of the present edition.
 
-## Shared sanctuary revision — 2026-11-07
+## Low Mass fidelity correction — 2026-11-08
+
+The maintainer's corrections exposed substantive defects missed by the earlier
+scene review. The two Low Mass receipts below remain historical evidence of
+the page layout, exact pixels and source-output checks actually performed;
+they do not approve the corrected content or establish the fidelity of the
+superseded stations and gestures. Their ceremonial acceptance is superseded
+by this correction. No changed source inherits a prior proof hash.
+
+The child and trainer metadata record the new source-verification and
+illustration contribution without inventing an image model/version. Thirteen
+new action/figure assets passed separate generating and independent asset
+inspection. The active source uses 29 distinct sanctuary scene definitions
+in 31 placements per Low Mass edition, with 11 closeup placements and three
+nested plan insets. Both editions select the same 21 PNG files; the superseded
+`006`, `015` and `029` detail files are excluded.
+
+Every page of both 44-page proofs was reviewed individually in the acceptance
+chain. The trainer review was performed by the implementing agent; the child
+review was independent. The final rebuild changed pages 22, 23, 28, 32 and 44
+in each edition; those five pages were inspected again. The other 39 full-page
+PNG files per edition are byte-identical to the already inspected candidates.
+The child reviewer independently recomputed that identity. The final changes
+keep the Lavabo servers' feet on the tread, move a caption clear of the route
+marker, restore the explicit bell return station, and state that Second rises
+when First leaves for the cruets before waiting at the Gospel-side foot.
+The last cue repairs a previously silent kneeling-to-standing transition;
+the terminal revision stamp also changes. No unresolved visual finding
+remains in this bounded review.
+
+The main-lane comparison finds equal 44-page extents and matching body-word
+multisets after excluding the trainer rail. Three full-width continuation
+headings on pages 7, 8 and 24 require explicit accounting: the rail-coordinate
+filter omits their leftmost words, and the complete headings were verified
+visually. This mechanical comparison supplements the page review; it does not
+establish ceremonial fidelity by itself.
+
+| Leaf | Pages | Bytes | Reviewed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| `01-low-mass` | 44 | 8745169 | `22cda6bca52a3d68761720ad190d7d9b1cd87897e112432995f6df7f15837bfe` |
+| `01-low-mass-trainer-manual` | 44 | 8767988 | `6f9108383e1c3a01420481be4355aabab288179f8937bded2f486bf447005e1e` |
+
+These are source-frozen candidate proofs with an uncommitted-source stamp.
+Their hashes identify the reviewed bytes, not a future committed release
+build. The paired rebuilds passed the owning print and content/schema gates;
+the six focused Low Mass model tests pass. Content/schema checks with the
+owning validators pass for all seven editions: the Low Mass pair was checked
+with the final builds, and the five other leaves were checked separately.
+The native page and source-bundle suite passes all 32 tests without a collector
+change. The separate candidate native metadata/Make and positive-selection
+checks cover all seven editions and
+select 21, 21, 12, 11, 0, 0 and 0 image files respectively. Sung image bytes
+are unchanged and the three card companions remain image-free; these source
+checks confer no new sung-guide or card-page visual acceptance.
+
+Disposable proof identities, exact raster transfer and canonical print receipt
+locations are recorded in
+`.scratch/low-mass-fidelity/guide-layout/proof-transfer.json`; the main-lane
+comparison is in `main-lane-parity.log` in that directory. The independent
+[review report](../../../../../../../../workflows/reviews/low-mass-fidelity-2026-11-08/REVIEW.md)
+records the exact page and source-consistency scope. Final logs have no
+overfull or underfull boxes; the sole retained warning concerns disabled
+epstopdf shell escape, and these sources require no EPS conversion. The bounded source
+findings are in [the correction audit](source-audit.md#low-mass-correction-audit-2026-11-08).
+No physical-print trial, complete fresh collation of a manual, or ecclesiastical
+approval is claimed.
+
+## Shared sanctuary revision — 2026-11-07 snapshot
 
 The four teaching guides share one fixed altar, three numbered levels and
 credence. Position views distinguish stationary actors from route arrows and

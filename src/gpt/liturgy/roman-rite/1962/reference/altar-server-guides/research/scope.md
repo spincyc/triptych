@@ -25,7 +25,7 @@
   Fortescue--O'Connell-family teaching models, including documented syntheses
   where the manuals disagree, corrected wherever the 1962 Missal controls and
   qualified wherever local direction is needed.
-- **Research as-of date:** 2026-07-24.
+- **Research as-of date:** general inventory 2026-07-24; bounded Low-Mass movement and hand-action correction 2026-11-08.
 
 ## Three form-family boundaries
 
@@ -72,8 +72,8 @@ way. After both placements and the centre reverence they switch back to their
 normal sides. The priest reassembles and veils the chalice at
 the altar's center and carries it out himself after the concluding rites. The
 model uses the sanctuary floor for the prayers at the foot, the first step for
-the normal places, the second step for cruet and Lavabo service, and the
-predella for elevation assistance. These are teaching levels in a model
+the normal kneeling places (standing at those places is on the floor below the steps), the second step for cruet and Lavabo service, and the
+predella for elevation assistance and the initial wine purification. First then waits and serves the finger ablution one step below the priest, with the chalice resting on the altar. These are teaching levels in a model
 sanctuary, not a claim that the rubrics fix every church's number, dimensions,
 or traffic.
 
@@ -112,7 +112,7 @@ There is no quiz, written exercise, self-score, or mastery record.
 
 The child and trainer books use US-letter portrait pages, black ink on white
 paper, and Libertinus typography. The trainer edition imports the same
-thirty-three authored page units with the same hard page boundaries. Its
+authored page units with the same hard page boundaries; the current print receipt records the rebuilt extent. Its
 left-hand rail adds only terse preparation, correction, branch, safety, or
 source-hierarchy notes. Genuflections are stated where needed but are not
 drawn; standing and kneeling are differentiated in both words and figure
@@ -153,8 +153,7 @@ until he takes it for the recession; First transfers only its folded veil,
 never the chalice. First-only sequential ablutions, the asymmetric Missal and
 veil moves, and continuous plate assignment follow the checked O’Connell
 comparison. The ACSS paired-cruet and Fortescue post-Communion Missal
-allocation remains recorded rather than harmonized. Cruet kisses are retained
-as a trainer detail. Rail-cloth traffic and an optional pax instrument are
+allocation remains recorded rather than harmonized. Cruet kisses and the handle-out handoff are taught in the child lane, with the source and model explanation in the trainer rail. Rail-cloth traffic and an optional pax instrument are
 outside the core route.
 
 ## Exclusions
@@ -232,3 +231,24 @@ to objects without substituting a different sanctuary. The Low-Mass side-pair
 inset explains the overhead relation that a nave-facing projection cannot show.
 The labelled crossing A in LM-037 is a local give-way example: First waits while
 Second passes with the book; the trainer marks the actual lanes before use.
+
+### Low-Mass action fidelity, 2026-11-08
+
+The corrected Gospel route keeps Second at his standing normal place on the
+floor below the steps. First alone takes the Missal around the foot, waits on
+Step 2 at the Gospel opening, and returns below the steps only after the reading
+has begun and any immediate reverence is complete. Both are then at their
+normal standing places. A normal kneeling place on Step 1 does not mean that a
+server climbs onto that step when standing for the Gospel.
+
+The expanded scenes separate the wine and water presentations, show the base
+of the handle as the kiss contact, and leave the handle free toward the priest.
+The post-Communion wine purification, wine over the fingers, and water over the
+fingers are separate moments. First alone supplies all three pours. The first
+pour uses the priest-held chalice; the subsequent pours use the chalice resting
+on the altar beneath both thumbs and forefingers. Wide action views and their
+enlargements use the same source drawing, so the actor, hand, vessel, and liquid
+relations cannot silently change between them. Last-Gospel and departure views
+show the priest's actual facing and the covered-chalice carry. The 7 November
+visual review did not detect the substantive mismatches corrected here; fresh
+acceptance applies only to the newly inspected output identities.
