@@ -43,6 +43,7 @@ from typing import Any, NamedTuple
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import _catena  # noqa: E402
+import _catena_scope  # noqa: E402
 
 ROOT = _catena.ROOT
 SCHEMA = "triptych-commentary-work-extents/v1"
@@ -163,7 +164,7 @@ def validate(root: Path = ROOT) -> list[str]:
     a record that contradicts the fragments it is subtracted from would be the
     fluent wrong answer this repository exists to refuse.
     """
-    errors: list[str] = []
+    errors: list[str] = _catena_scope.validate(root)
     where = EXTENTS_RELATIVE.as_posix()
     data = load_extents(root)
 
@@ -426,11 +427,17 @@ def coverage(root: Path = ROOT, token: str | None = None) -> dict[str, Any]:
     recorded = extents(root)
     sources = _catena.load_sources(root)
     books = {book["token"]: book for book in _catena.canon(root)}
+    scope = _catena_scope.Scope(root, works=sources.works)
+    if scope.errors:
+        raise _catena.CatenaError("; ".join(scope.errors))
+    decisions = {work_id: scope.work_decision(work_id)
+                 for work_id in set(aliases) | {key[0] for key in recorded} | {key[0] for key in chapters}}
     groups = {group for sets in aliases.values() for group in sets}
     named = _named(root, groups)
     whole_aliases, unresolved = _whole_work_aliases(root, sources, aliases)
 
     unresolved_aliases = []
+    unresolved_work_ids: set[str] = set()
     for (author, title), work_ids in sorted(unresolved.items()):
         named_books = [{"token": book_token, "book": books[book_token]["name"],
                         "chapters": sorted(chapters_named)}
@@ -438,6 +445,9 @@ def coverage(root: Path = ROOT, token: str | None = None) -> dict[str, Any]:
                        if (named_author, named_title) == (author, title)
                        and (token is None or book_token == token)]
         if named_books:
+            unresolved_work_ids.update(work_ids)
+            work_ids = {work_id for work_id in work_ids if decisions[work_id]["eligible"]}
+        if named_books and work_ids and scope.allowed_author(author):
             unresolved_aliases.append({
                 "author": author, "work": title, "held_work_ids": sorted(work_ids),
                 "named_books": named_books,
@@ -452,6 +462,10 @@ def coverage(root: Path = ROOT, token: str | None = None) -> dict[str, Any]:
                     pairs.add((work_id, key[2]))
     if token is not None:
         pairs = {pair for pair in pairs if pair[1] == token}
+    scope_counts = {status: 0 for status in ("eligible", "excluded", "unreviewed")}
+    for work_id in {pair[0] for pair in pairs} | unresolved_work_ids:
+        scope_counts[decisions[work_id]["status"]] += 1
+    pairs = {pair for pair in pairs if decisions[pair[0]]["eligible"]}
 
     rows: list[dict[str, Any]] = []
     for work_id, book_token in sorted(pairs):
@@ -530,6 +544,7 @@ def coverage(root: Path = ROOT, token: str | None = None) -> dict[str, Any]:
         "numbering": _catena._projection.CANONICAL,
         "rows": rows,
         "unresolved_aliases": unresolved_aliases,
+        "scope_counts": scope_counts,
         "totals": {
             "works": len({row["work_id"] for row in rows}),
             "rows": len(rows),
@@ -558,6 +573,8 @@ def summary_line(root: Path = ROOT) -> str:
         f"{by_status[UNEXAMINED]} with no extent recorded, "
         f"{totals['chapters_missing']} chapters not held; "
         f"{totals['unresolved_aliases']} alias groups await whole-work identity; "
+        f"excluded works: {report['scope_counts']['excluded']}; "
+        f"pending author review: {report['scope_counts']['unreviewed']}; "
         f"see `tpt commentary-work-index coverage`"
     )
 

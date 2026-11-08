@@ -89,6 +89,18 @@ read audits found no undeclared inputs. Source-library, containment and family
 ledger validation pass. Final integration checks, browser-product recording,
 coherent commits and live publication remain pending and are not claimed complete.
 
+Implementation checkpoint `add2198bcc` is committed on `feature/catena-omnia`.
+The final `make check-sources` passes, including the exhaustive audit and
+chronology/document freshness checks. The combined backend run passes all
+203 tests. Final current-data native reader checks pass 15 feature tests and
+408 production tests, with one existing skip. A release probe found that the coverage worklist still counted Luther’s
+preserved historical work extent as an acquisition gap. Browser-product
+recording was stopped before sealing. The follow-up applies the same author
+policy to coverage rows and unresolved aliases while preserving the historical
+extent. Independent review and 28 coverage tests pass: 33 eligible works,
+52 work/book pairs, and one excluded work counted separately. Fresh product
+recording and packaged-site validation follow the fix checkpoint.
+
 ## Generate PDF links work in place — 6 November 2026
 
 <!-- promised-deliverable: in-place-pdf-generation-2026-11-06 -->

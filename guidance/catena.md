@@ -136,6 +136,9 @@ Genesis commentary is excluded from the active chain and acquisition list.
 His immutable work, editions, artifacts and passages remain available to
 historical research, as do the raw harvest answers. Re-entry of an ineligible
 fragment fails validation; generation independently applies the same policy.
+Coverage worklists apply it too: a historical work extent may remain stored
+without becoming an active acquisition gap. Excluded and unreviewed work
+counts are reported separately, and an invalid registry fails the query.
 The older measurements below, including the 2026-08-01 account of Luther's
 English holdings, describe the corpus before this amendment and remain
 historical measurements. They are not present eligibility claims.

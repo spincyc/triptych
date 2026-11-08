@@ -163,14 +163,14 @@ EXAMPLES = {
         Example(
             "tools/commentary-work-index coverage",
             (
-                "coverage: 34 works held, 53 work-and-book pairs, 466 chapters not held",
-                "  gap 6 · unexamined 39 · not-established 1 · complete 7 · extents recorded 14 of 53",
+                "coverage: 33 works held, 52 work-and-book pairs, 416 chapters not held",
+                "  gap 5 · unexamined 39 · not-established 1 · complete 7 · extents recorded 13 of 52",
+                "  Catholic scope: 1 owning works excluded; 0 pending author review",
                 "",
                 "  Collection/title leads awaiting whole-work identity review:",
                 "    Cornelius a Lapide — Commentaria in Scripturam Sacram: 1 Corinthians 1-7, 9-13, 15; 1 John 2-5; 1 Samuel 3, 16, 26; 1 Chronicles 29; 1 Peter 1-5; 1 Thessalonians 1-5; 1 Timothy 1-3, 6; 2 Corinthians 1, 3-6, 8, 11-13; Nehemiah 8; 2 Samuel 5, 7, 12; 2 Maccabees 1, 7; 2 Chronicles 36; 2 Peter 3; 2 Thessalonians 1-3; 2 Timothy 1-4; 1 Kings 3, 8, 17, 19; 2 Kings 4-5; Acts 1-10, 13-16, 19; Amos 6-9; Revelation 1, 3, 5, 7, 21-22; Baruch 3-5; Colossians 1-3; Daniel 3, 7, 9, 12-14; Deuteronomy 4-6, 8, 11, 18, 26, 30-32; Ecclesiastes 1-2; Sirach 3, 15, 24, 27-28, 35-36; Ephesians 1-6; Esther 13-14; Exodus 3, 12-17, 19-20, 22, 24, 30, 32, 34; Ezekiel 2, 17-18, 33-34, 36-37, 47; Galatians 1-6; Genesis 1-50; Habakkuk 1-3; Hebrews 1-2, 4-5, 7, 9-13; Isaiah 1-2, 4-9, 11-12, 19, 22, 25, 30, 35, 38, 40, 42-43, 45, 48-50, 52-56, 58, 60-64, 66; James 1-5; Jeremiah 1, 7, 11, 17-18, 20, 23, 29, 31, 33, 38; Job 26; Joel 2; John 1-21; Jonah 3; Joshua 5, 24; Lamentations 3; Leviticus 13, 19, 21, 23, 26; Luke 1-24; Malachi 1-3; Mark 1-16; Matthew 1-18, 20-28; Micah 5-7; Numbers 6, 11, 20; Hosea 2, 6, 14; Philippians 1-4; Philemon 1; Proverbs 3, 8-9, 23, 31; Psalms 10, 24, 84; Romans 1, 3-6, 8-16; Zephaniah 2-3; Titus 2-3; Tobit 12; Wisdom 1-2, 6-7, 9-12, 16, 18; Zechariah 8-9, 12-14",
                 "      unresolved owning records: work.cornelius-a-lapide.commentaria-in-omnes-divi-pauli-epistolas, work.cornelius-a-lapide.commentaria-in-quatuor-evangelia",
-                "      The fragment alias may name a broader collection or another title; whole-work identity with these owning records is not established. These chapter leads are not assigned to its constituents.",
-                "... 128 more lines",
+                "... 125 more lines",
             ),
             "ranked by how much is missing; a gap is a work item, never a build failure",
         ),
@@ -1634,6 +1634,10 @@ def _render_coverage(payload: dict[str, Any]) -> None:
         + f" · extents recorded {totals['extents_recorded']}"
         f" of {totals['rows']}"
     )
+    scope_counts = payload.get("scope_counts") or {}
+    if scope_counts.get("excluded") or scope_counts.get("unreviewed"):
+        print(f"  Catholic scope: {scope_counts.get('excluded', 0)} owning works excluded; "
+              f"{scope_counts.get('unreviewed', 0)} pending author review")
     shown = payload["rows"]
     unresolved = payload.get("unresolved_aliases") or []
     if unresolved:

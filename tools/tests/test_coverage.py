@@ -37,8 +37,30 @@ class CoverageFixture(unittest.TestCase):
     """One work, one book, and whichever extent the test is about."""
 
     def setUp(self) -> None:
-        self.temporary_directory = tempfile.TemporaryDirectory()
+        scratch = ROOT / ".scratch/retrieval"
+        scratch.mkdir(parents=True, exist_ok=True)
+        self.temporary_directory = tempfile.TemporaryDirectory(dir=scratch)
         self.root = Path(self.temporary_directory.name)
+        import tomllib
+        import _standing
+        registry = tomllib.loads((ROOT / _standing.REGISTRY_RELATIVE).read_text())
+        standing = [f'{key} = {json.dumps(registry[key])}'
+                    for key in ("schema", "record_type", "audited_on")]
+        for person in registry["persons"]:
+            if person["id"] not in {"augustine", "martin-luther"}:
+                continue
+            standing.append("[[persons]]")
+            standing.extend(f'{key} = {json.dumps(person[key])}' for key in (
+                "id", "name", "names", "died", "standing", "standing_basis", "basis_sources", "confession"))
+        self.write(_standing.REGISTRY_RELATIVE.as_posix(), "\n".join(standing))
+        self.write("src/sources/works/martin-luther/lectures-on-genesis/work.toml", '''
+            schema = 1
+            record_type = "work"
+            id = "work.martin-luther.lectures-on-genesis"
+            title = "Lectures on Genesis"
+            responsible = "Martin Luther"
+            work_type = "biblical-commentary"
+        ''')
         self.write(
             "src/sources/works/catholic-church/vulgata-clementina/editions/"
             "ebible-latvuc/artifacts/book-index-fcad78c2/book-index.tsv",
@@ -260,6 +282,35 @@ class ExtentRecordTests(CoverageFixture):
 
 class CoverageReportTests(CoverageFixture):
     """Keep coverage states and whole-work identities distinct."""
+
+    def test_excluded_historical_extent_is_counted_but_not_offered(self) -> None:
+        self.write_extents(self.extent(work_id="work.martin-luther.lectures-on-genesis"))
+        path = self.root / _coverage.EXTENTS_RELATIVE
+        before = path.read_bytes()
+        self.assertEqual(_coverage.validate(self.root), [])
+        report = _coverage.coverage(self.root)
+        self.assertEqual({row["work_id"] for row in report["rows"]}, {WORK})
+        self.assertEqual(report["scope_counts"], {"eligible": 1, "excluded": 1, "unreviewed": 0})
+        self.assertIn("excluded works: 1; pending author review: 0", _coverage.summary_line(self.root))
+        self.assertEqual(path.read_bytes(), before)
+
+    def test_unreviewed_owning_work_and_its_collection_leads_are_withheld(self) -> None:
+        self.collection_fixture("Unresolved collection", "Constituent work")
+        path = self.root / "src/sources/works/augustine/de-civitate-dei/work.toml"
+        path.write_text(path.read_text().replace("Augustine of Hippo", "Unreviewed writer"))
+        self.write_extents(self.extent())
+        report = _coverage.coverage(self.root)
+        self.assertEqual(report["rows"], [])
+        self.assertEqual(report["unresolved_aliases"], [])
+        self.assertEqual(report["scope_counts"]["unreviewed"], 1)
+
+    def test_invalid_author_registry_is_an_error_not_empty_coverage(self) -> None:
+        import _standing
+        (self.root / _standing.REGISTRY_RELATIVE).unlink()
+        self.write_extents(self.extent())
+        self.assertTrue(any("not found" in error for error in _coverage.validate(self.root)))
+        with self.assertRaisesRegex(_coverage._catena.CatenaError, "not found"):
+            _coverage.coverage(self.root)
 
     def collection_fixture(self, collection: str, part: str) -> None:
         """Use real title shapes in a synthetic single-author identity graph."""
