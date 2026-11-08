@@ -34,6 +34,7 @@ state = "in_progress"
   id = "verified-main-publication"
   criterion = "Coherent commits pass affected source, browser-data and reader checks, reconcile with main without force, and reach main with deployment and affected live routes verified; remaining corpus gaps are reported accurately."
   status = "open"
+  evidence = ["PROJECT-WORK.md", "release/browser-products.json"]
 
 [[deliverables]]
 id = "in-place-pdf-generation-2026-11-06"

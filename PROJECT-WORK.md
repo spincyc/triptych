@@ -116,6 +116,19 @@ document product contain 156 / 219; those inherited assertions are unchanged.
 Chromium checks pass with its temporary socket files under the shorter scratch
 path. The TUI correction leaves the sealed browser-product identity unchanged.
 
+The compact-reader correction is committed as `3148d1bbe9`. Release refresh
+changes exactly twenty-two reviewed site inputs and their rights digest.
+`make public-site` passes, including every deployment-source gate and twenty-one
+independently reproducible figures. Packaged Chromium acceptance passes at
+1440 and 390 pixels for all three passage scenarios, real keyboard range input,
+invalid-bound recovery, exact history restoration and author exclusion/restoration.
+The rendered Lapide fragment and emitted Source Library target match exactly
+after whitespace normalization (2,835 characters). Matching Luke commentary
+precedes chapter research, groups start collapsed, and neither mobile reader
+overflows horizontally. Independent `public-alpha verify --deployment-target
+github-pages` passes. The validated release checkpoint is ready for main;
+publication and live deployment verification remain pending.
+
 ## Generate PDF links work in place — 6 November 2026
 
 <!-- promised-deliverable: in-place-pdf-generation-2026-11-06 -->
