@@ -11,7 +11,7 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: low-mass-fidelity-2026-11 -->
 
-**Verified on `feature/altar-server`; branch delivery pending.** The corrected
+**Complete: corrected, verified and pushed to `feature/altar-server`.** The corrected
 Gospel model keeps Second at his normal place. First waits at the Gospel side
 until the priest begins reading, then returns below the steps. Cruets are
 offered handle-first, with the light kiss shown at the base of the handle.
@@ -96,7 +96,13 @@ The dictionary gallery is byte-identical to the preceding reviewed site.
 No UI suite or browser-WASM execution was repeated, and no preview process
 remains running. This is source, screen-proof and artifact verification;
 physical-print, ecclesiastical approval and a new live deployment are not
-claimed. The required branch push and final delivery-ledger closure remain.
+claimed.
+
+The reviewed source and publication records reached
+`origin/feature/altar-server` at
+`efbcfc27f2467cd06d050cd693c0531e94c43a63`; the remote commit was confirmed
+after the normal push. The exact outgoing range was reviewed for intended
+public disclosure before publication.
 
 ## Sanctuary dictionary and server-guide visual expansion — 7 November 2026
 

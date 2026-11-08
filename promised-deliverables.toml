@@ -4,7 +4,7 @@ schema_version = 1
 id = "low-mass-fidelity-2026-11"
 owner = "PROJECT-WORK.md"
 promise = "Correct Low Mass Gospel, cruet, ablution and Last Gospel actions and provide a fuller, faithful movement sequence whose close-ups agree with the fixed sanctuary scenes."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "ceremonial-corrections"
@@ -27,7 +27,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "integrated-delivery"
   criterion = "Affected source, native bundle and release checks pass, the delivery records agree, and the verified corrections are committed and pushed to the assigned workspace branch."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "release/browser-products.json", "release/public-alpha.json", "workflows/reviews/low-mass-fidelity-2026-11-08/REVIEW.md"]
 
 [[deliverables]]
