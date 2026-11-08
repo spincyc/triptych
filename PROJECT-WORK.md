@@ -129,6 +129,12 @@ descriptor and release bindings must be regenerated before closing validation.
 The isolated install using only `requirements-tui.txt` passes: Textual 8.2.8,
 Markdown 3.10.3 and PyYAML 6.0.3 import successfully, and `pip check` reports no
 broken requirements. It uses no system-site packages.
+Lectern's root, open and snapshot help now document the complete first-run
+environment: Python 3.11+, Node, Git/full history, the TUI requirements and the
+explicit pinned-Pandoc installer and PATH. Launch remains offline. All three
+help forms and eight focused startup tests pass. The help file belongs to no
+browser-family input closure or publication binding, so this clarification does
+not disturb the dependency re-recording in progress.
 The website workflow already installs source-tool dependencies and is unaffected
 by this standalone-install gap. Existing reader and source results remain
 recorded; the new dependency closure and final publication are still pending.

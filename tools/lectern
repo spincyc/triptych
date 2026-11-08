@@ -13,10 +13,10 @@ and verifies existing entries against the committed descriptor.
 
 TWO VERBS.
 
-`open` is the interactive reader. It needs a terminal and the Textual library
-(`requirements-tui.txt`, or `pacman -S python-textual`). Reading a web edition
-in full also needs the Markdown the site pins (`requirements-public-alpha.txt`);
-without it the texts surface says so where the text would be.
+`open` is the interactive reader. It needs a terminal, Node, and the Python
+dependencies in `requirements-tui.txt`. First-run product preparation also
+needs Git with full clone history and the exact Pandoc converter pinned in
+`src/common/web-edition-toolchain.toml`. See `--help` for setup commands.
 
 `snapshot` renders the same reader headlessly at a fixed size, once every
 pending load has settled, and prints the screen: as plain text, as text with
@@ -44,8 +44,22 @@ from _tooling import (  # noqa: E402
 from lectern import SURFACES  # noqa: E402
 from lectern.repo import Refused as ReaderRefused  # noqa: E402
 THEMES = ("triptych", "triptych-vellum", "triptych-compline")
-DEPENDENCY = ("the reader needs Textual: pacman -S python-textual, or pip install -r requirements-tui.txt, "
-              "which also brings the Markdown pin a web edition is set with")
+DEPENDENCY = ("install the reader's Python dependencies with python3 -m pip install -r requirements-tui.txt "
+              "in your virtual environment; lectern --help includes first-run setup")
+SETUP = """First-run setup (from the repository root):
+  Use Python 3.11+, Node and Git, with full clone history.
+  On Arch, Node and Git are supplied by: sudo pacman -S nodejs git
+  python3 -m venv .scratch/lectern-venv
+  . .scratch/lectern-venv/bin/activate
+  python3 -m pip install -r requirements-tui.txt
+  python3 scripts/_install_web_edition_pandoc.py --fetch --bin-dir .scratch/web-edition-toolchain
+  export PATH="$PWD/.scratch/web-edition-toolchain:$PATH"
+  export TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data
+
+The installer fetches the exact locked Pandoc for Linux x86-64; run it once
+into an empty destination. Later shells need the same environment and PATH.
+Lectern itself prepares missing products offline; it never installs tools.
+"""
 
 EXAMPLES = {
     "open": (
@@ -228,6 +242,8 @@ def main(argv: list[str] | None = None) -> int:
                         provider=None, passage=None, edition=None, canon=None, view=None,
                         tradition=None, theme="triptych")
     examples_live_on_the_verbs(parser, "lectern")
+    for help_parser in (parser, opened, shot):
+        help_parser.epilog = SETUP + "\n" + (help_parser.epilog or "")
 
     def render(payload: object, arguments: argparse.Namespace) -> int:
         if isinstance(payload, int):
