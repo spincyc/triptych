@@ -165,7 +165,18 @@ def _prepare_products() -> None:
     try:
         try:
             check(ROOT)
-        except ProductError:
+        except ProductError as cache_error:
+            from _markdown_render import MarkdownRenderError, require_locked_markdown_dependency
+
+            try:
+                require_locked_markdown_dependency(ROOT)
+            except MarkdownRenderError as error:
+                raise ReaderRefused(
+                    f"published browser data could not be prepared: {cache_error}. "
+                    f"Preparation also requires the pinned renderer: {error}. "
+                    "In an isolated environment, run `python3 -m pip install -r requirements-tui.txt` "
+                    "and launch Lectern there; `lectern --help` has setup commands."
+                ) from error
             # Warm readers can coexist under the store's shared lock. Only a
             # failed check needs the exclusive builder; it independently refuses
             # stale/corrupt entries and generates only genuinely absent families.

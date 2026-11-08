@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import io
+from importlib.metadata import PackageNotFoundError
 import os
 import shutil
 import unittest
@@ -20,7 +21,12 @@ class LecternPreparationTests(unittest.TestCase):
         fixture = store_tests.BrowserProductsTests()
         self.addCleanup(fixture.doCleanups)
         fixture.setUp()
+        (fixture.root / "requirements-public-alpha.txt").write_text("Markdown==3.10.3\n")
+        fixture.manifest = products.record(fixture.root, cache_root=fixture.cache)
+        fixture.generated.clear()
         self.fixture = fixture
+        self.markdown_version = self.enterContext(
+            patch("_markdown_render.distribution_version", return_value="3.10.3"))
         self.tool = _lectern_tool()
         self.enterContext(patch.object(self.tool, "ROOT", fixture.root))
         self.enterContext(patch.dict(os.environ, {"TRIPTYCH_BROWSER_DATA_ROOT": str(fixture.cache)}))
@@ -48,6 +54,58 @@ class LecternPreparationTests(unittest.TestCase):
         with products.verified_products(self.fixture.root):
             self.tool._prepare_products()
         self.assertEqual(self.fixture.generated, [])
+
+    def test_wrong_or_missing_markdown_refuses_before_build(self):
+        shutil.rmtree(self.fixture.cache)
+        for installed in ("3.11.3", None):
+            with self.subTest(installed=installed):
+                self.markdown_version.return_value = installed
+                self.markdown_version.side_effect = PackageNotFoundError("Markdown") if installed is None else None
+                with (patch.object(products, "build") as build,
+                      self.assertRaises(Refused) as raised):
+                    self.tool._prepare_products()
+                build.assert_not_called()
+                message = str(raised.exception)
+                self.assertIn("missing or unsafe browser product", message)
+                self.assertIn("Preparation also requires the pinned renderer:", message)
+                self.assertIn("expected 3.10.3, found 3.11.3" if installed else "Python Markdown is required", message)
+                self.assertIn("isolated environment", message)
+                self.assertIn("python3 -m pip install -r requirements-tui.txt", message)
+        self.assertEqual(self.fixture.generated, [])
+
+    def test_warm_reader_does_not_check_converter_dependency(self):
+        self.markdown_version.side_effect = PackageNotFoundError("Markdown")
+        with patch.object(products, "build") as build:
+            self.tool._prepare_products()
+        build.assert_not_called()
+        self.markdown_version.assert_not_called()
+
+    def test_wrong_markdown_keeps_original_integrity_refusal_first(self):
+        self.markdown_version.return_value = "3.11.3"
+        source = self.fixture.root / "src/a/input.txt"
+        for condition, path in (("stale", source), ("corrupt", self.fixture.payload()),
+                                ("unsafe", self.fixture.payload())):
+            with self.subTest(condition=condition):
+                body = path.read_bytes()
+                try:
+                    if condition == "unsafe":
+                        path.unlink()
+                        path.symlink_to(source)
+                    else:
+                        path.write_text("changed")
+                    with self.assertRaises(products.ProductError) as original:
+                        products.check(self.fixture.root)
+                    with (patch.object(products, "build") as build,
+                          self.assertRaises(Refused) as raised):
+                        self.tool._prepare_products()
+                    build.assert_not_called()
+                    message = str(raised.exception)
+                    self.assertTrue(message.startswith(
+                        "published browser data could not be prepared: " + str(original.exception)))
+                    self.assertIn("expected 3.10.3, found 3.11.3", message)
+                finally:
+                    path.unlink()
+                    path.write_bytes(body)
 
     def test_corrupt_cache_is_refused_without_rebuild(self):
         self.fixture.payload().write_text("corrupt")
@@ -87,6 +145,21 @@ class LecternPreparationTests(unittest.TestCase):
 
 @unittest.skipUnless(TEXTUAL, "Textual is required for reader entry points")
 class LecternStartupTests(unittest.TestCase):
+    def test_wrong_markdown_cli_refusal_is_concise_and_does_not_build(self):
+        tool = _lectern_tool()
+        with (patch.object(products, "check", side_effect=products.ProductError("missing browser data")),
+              patch("_markdown_render.distribution_version", return_value="3.11.3"),
+              patch.object(products, "build") as build,
+              patch("sys.stdout", new_callable=io.StringIO) as out,
+              patch("sys.stderr", new_callable=io.StringIO) as err):
+            self.assertEqual(tool.main(["snapshot", "--surface", "day"]), 2)
+        build.assert_not_called()
+        self.assertEqual(out.getvalue(), "")
+        self.assertIn("expected 3.10.3, found 3.11.3", err.getvalue())
+        self.assertIn("python3 -m pip install -r requirements-tui.txt", err.getvalue())
+        self.assertNotIn("Traceback", err.getvalue())
+        self.assertLess(len(err.getvalue()), 1000)
+
     def test_both_verbs_prepare_before_starting_the_reader(self):
         from lectern import bridge, snapshot
         from lectern.app import TriptychApp
@@ -113,6 +186,7 @@ class LecternStartupTests(unittest.TestCase):
                 tool = _lectern_tool()
                 with (patch.object(products, "check", side_effect=products.ProductError("controlled corruption")),
                       patch.object(products, "build", side_effect=products.ProductError("controlled corruption")),
+                      patch("_markdown_render.require_locked_markdown_dependency"),
                       patch.object(TriptychApp, "run") as opened,
                       patch.object(snapshot, "render") as rendered,
                       patch("sys.stdout", new_callable=io.StringIO) as out,

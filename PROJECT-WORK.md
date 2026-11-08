@@ -135,6 +135,14 @@ explicit pinned-Pandoc installer and PATH. Launch remains offline. All three
 help forms and eight focused startup tests pass. The help file belongs to no
 browser-family input closure or publication binding, so this clarification does
 not disturb the dependency re-recording in progress.
+The maintainer then reproduced a plain-launch failure under host Markdown
+3.11.3. After a failed warm-product check, Lectern now checks the pinned
+Markdown dependency before invoking producers. A refusal retains the original
+cache error first and gives an isolated-environment installation command;
+verified warm startup bypasses the guard. Twelve focused startup tests pass,
+including missing/wrong Markdown before generation, unchanged warm behavior,
+real stale/corrupt/symlink error preservation and concise CLI output without a
+traceback. This reader-only guard and its tests affect no product/release inputs.
 The website workflow already installs source-tool dependencies and is unaffected
 by this standalone-install gap. Existing reader and source results remain
 recorded; the new dependency closure and final publication are still pending.
