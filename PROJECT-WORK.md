@@ -11,7 +11,7 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Terminal correction validated; final publication verification pending.** The maintainer reports Lectern refusing to start with
+**Validated final candidate; deployment and live acceptance pending.** The maintainer reports Lectern refusing to start with
 “published browser data is unavailable: missing or unsafe browser product”.
 The requested source work prioritizes existing English translations of the
 already known Catena Omnia works. The earlier acquisition of new holdings does
@@ -111,7 +111,7 @@ A local HTTP byte audit checks 134 packaged files: all 89 fragment-bearing
 chapter spines account for 1,578 unique fragments; all eighteen new English
 Catena bodies equal their Source Reader bodies; Origen's notices match in both;
 and all six snippet-bearing parents carry the 24 reviewed excerpts. Independent
-`public-alpha verify --deployment-target github-pages` passes. The accepted
+`public-alpha verify --deployment-target github-pages` passes. The initial
 package's `SHA256SUMS` digest is
 `a1ab14b205cef1c3a6beb44c0bf59a62f9b524e49cc14beb1a2c8fe421d0c9cb`.
 The validated candidate `5412d7e1afdb97546cf81ef8182148222f70df29` is pushed to
@@ -125,7 +125,7 @@ installed only Textual and Markdown. Baseline warm reading did not need YAML.
 The correction includes the existing `requirements-tools.txt` pin in the TUI
 requirements, then checks a fresh standalone install. This requirements file
 belongs to every browser-product family key and the release inventory, so the
-descriptor and release bindings must be regenerated before closing validation.
+descriptor and release bindings required the re-recording documented below.
 The isolated install using only `requirements-tui.txt` passes: Textual 8.2.8,
 Markdown 3.10.3 and PyYAML 6.0.3 import successfully, and `pip check` reports no
 broken requirements. It uses no system-site packages.
@@ -134,7 +134,7 @@ environment: Python 3.11+, Node, Git/full history, the TUI requirements and the
 explicit pinned-Pandoc installer and PATH. Launch remains offline. All three
 help forms and eight focused startup tests pass. The help file belongs to no
 browser-family input closure or publication binding, so this clarification does
-not disturb the dependency re-recording in progress.
+not disturb the dependency re-recording.
 The maintainer then reproduced a plain-launch failure under host Markdown
 3.11.3. After a failed warm-product check, Lectern now checks the pinned
 Markdown dependency before invoking producers. A refusal retains the original
@@ -153,9 +153,13 @@ previous source, reader and packaged-content checks remain applicable to those
 identical bytes. The scoped refresh changes exactly the browser-product
 descriptor and TUI-requirements bindings, plus their inventory and rights-record
 digests. Other release/authorization fields are unchanged. The final site package
-is rebuilding against these records on a separately verified cache, allowing
-active Lectern sessions to retain their read snapshots. Final artifact
-verification, follow-up main publication and live acceptance remain pending.
+build and independent `public-alpha verify --deployment-target github-pages`
+both pass. A separately verified publication cache allows active Lectern
+sessions to retain their read snapshots. The accepted Catena HTML, scripts,
+styles and checked excerpt payload remain byte-identical; the final package's
+`SHA256SUMS` digest is
+`b77092592853beed4a8a8d86a659cf4a38c6d7951b15b4d5bc69be8c30e72c6f`.
+Follow-up main publication, deployment and live acceptance remain pending.
 The website workflow already installs source-tool dependencies and is unaffected
 by this standalone-install gap. Existing reader and source results remain
 recorded; the new dependency closure is validated and final publication is still
