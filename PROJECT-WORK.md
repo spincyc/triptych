@@ -11,7 +11,7 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Validated publication candidate; main deployment pending.** The maintainer reports Lectern refusing to start with
+**Publication candidate pushed; fresh-install dependency correction in progress.** The maintainer reports Lectern refusing to start with
 “published browser data is unavailable: missing or unsafe browser product”.
 The requested source work prioritizes existing English translations of the
 already known Catena Omnia works. The earlier acquisition of new holdings does
@@ -114,7 +114,24 @@ and all six snippet-bearing parents carry the 24 reviewed excerpts. Independent
 `public-alpha verify --deployment-target github-pages` passes. The accepted
 package's `SHA256SUMS` digest is
 `a1ab14b205cef1c3a6beb44c0bf59a62f9b524e49cc14beb1a2c8fe421d0c9cb`.
-Main publication, deployment and live acceptance remain pending.
+The validated candidate `5412d7e1afdb97546cf81ef8182148222f70df29` is pushed to
+both the workspace branch and main by fast-forward. The
+[Pages run](https://github.com/spincyc/triptych/actions/runs/42496691138)
+is in progress; successful deployment and live acceptance remain pending.
+
+A final standalone-install audit found an introduced dependency gap: automatic
+cold preparation calls the YAML source producers, but `requirements-tui.txt`
+installed only Textual and Markdown. Baseline warm reading did not need YAML.
+The correction includes the existing `requirements-tools.txt` pin in the TUI
+requirements, then checks a fresh standalone install. This requirements file
+belongs to every browser-product family key and the release inventory, so the
+descriptor and release bindings must be regenerated before closing validation.
+The isolated install using only `requirements-tui.txt` passes: Textual 8.2.8,
+Markdown 3.10.3 and PyYAML 6.0.3 import successfully, and `pip check` reports no
+broken requirements. It uses no system-site packages.
+The website workflow already installs source-tool dependencies and is unaffected
+by this standalone-install gap. Existing reader and source results remain
+recorded; the new dependency closure and final publication are still pending.
 
 ## Catena Omnia corpus and passage recovery — 7 November 2026
 
