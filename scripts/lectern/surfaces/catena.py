@@ -25,6 +25,16 @@ def _plain(text: str) -> str:
     return "\n".join(re.sub(r"[ \t]+", " ", line).strip() for line in (text or "").split("\n"))
 
 
+class FragmentList(OptionList):
+    def on_resize(self) -> None:
+        # Pane toggles and terminal resizing can move the same selection out
+        # of view without changing the highlighted option.
+        if self.highlighted is not None:
+            option = self.get_option_at_index(self.highlighted)
+            if option.id and option.id.startswith("frag-"):
+                self.call_after_refresh(self.scroll_to_highlight)
+
+
 class Catena(Surface):
     key = "3"
     label = "Catena"
@@ -118,7 +128,7 @@ class Catena(Surface):
                         ScrollPanel(Static("", id="catena-loading"), title="scripture", id="catena-scripture"),
                         Vertical(
                             Panel(Static("Enter opens an author; Enter on a fragment reads it.", id="catena-instruction"),
-                                  OptionList(id="catena-chain-list"), title="chain", id="catena-chain"),
+                                  FragmentList(id="catena-chain-list"), title="chain", id="catena-chain"),
                             ScrollPanel(Static("", id="catena-lead-text"), title="acquisition list",
                                         id="catena-leads"),
                             id="catena-right",
@@ -294,6 +304,15 @@ class Catena(Surface):
             group = int(event.option.id[4:])
             self.opened_groups ^= {group}
             self.draw_chain(keep=event.option.id)
+
+    @on(OptionList.OptionHighlighted, "#catena-chain-list")
+    def reveal_fragment(self, event: OptionList.OptionHighlighted) -> None:
+        if event.option.id and event.option.id.startswith("frag-"):
+            # Enter followed immediately by Down can select a newly mounted
+            # fragment before its list has recomputed the scroll bounds.
+            # Scroll after layout so the selected text remains visible even
+            # when the compact pane also holds several lines of context.
+            event.option_list.call_after_refresh(event.option_list.scroll_to_highlight)
 
     def action_expand_all(self) -> None:
         if not self.current or not self.current.get("chain"):

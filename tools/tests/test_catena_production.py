@@ -420,6 +420,15 @@ SEVERIAN_EDITION = json.loads(
 
 SEVERIAN_BASIS = SEVERIAN_EDITION["artifacts"][0]["rights_basis"]
 
+# EXPLICITLY SYNTHETIC sparse-author edge case. The current Genesis 42
+# corpus also has Alcuin's recovered chapter-spanning fragment. Retain just
+# Remigius here to keep testing exclusions when a later chapter has one author.
+SOLE_AUTHOR_FIXTURE = json.loads((browser_data_root(ROOT) /
+    "structure/catena/01-gen/042.json").read_text(encoding="utf-8"))
+SOLE_AUTHOR_FIXTURE["_fixture"] = "Synthetic sole-author recovery; not corpus evidence"
+SOLE_AUTHOR_FIXTURE["fragments"] = [one for one in SOLE_AUTHOR_FIXTURE["fragments"]
+    if SOLE_AUTHOR_FIXTURE["sources"][one["source"]]["author"] == "Remigius of Auxerre"]
+
 # THE TWO TERMINAL SENTENCES, AND THEY ARE DIFFERENT CLAIMS. V10, the V9
 # review: absence — no text reference stated — and refusal — a reference
 # stated and declined — collapsed into the first sentence, which is false of
@@ -484,7 +493,7 @@ GEN3 = "#book=Gen&chapter=3&bible=douay-rheims"
 
 GEN42 = "#book=Gen&chapter=42&bible=douay-rheims"
 
-# Genesis 10 holds 71 fragments, every one in its author's own Latin.
+# Genesis 10 holds 74 fragments, every one in its author's own Latin.
 GEN10_ENGLISH = "#book=Gen&chapter=10&bible=douay-rheims&voice=translation:en"
 
 # EXPLICITLY SYNTHETIC malformed-STRUCTURE fixture (V4, the V3 review's
@@ -1545,7 +1554,7 @@ SCENARIOS = [
                 "label": "unsupported"},
                {"do": "hash", "value": GEN1 + "&voice=translation:en",
                 "label": "supported-again"}]},
-    # Genesis 10 holds 71 fragments, every one in its author's own Latin: the
+    # Genesis 10 holds 74 fragments, every one in its author's own Latin: the
     # selected-empty-voice chapter finding 8 demands be told truthfully.
     {"name": "voice-empty-chapter", "hash": GEN10_ENGLISH},
     {"name": "numbering-refusal", "hash": "#book=Ps&chapter=13&bible=king-james-version"},
@@ -1554,6 +1563,8 @@ SCENARIOS = [
     {"name": "nothing-held", "hash": "#book=Ex&chapter=1&bible=douay-rheims"},
     {"name": "narrow", "hash": GEN1, "narrow": True},
     {"name": "one-commentator", "hash": GEN42},
+    {"name": "sole-author-fixture", "hash": GEN42,
+     "files": {"structure/catena/01-gen/042.json": SOLE_AUTHOR_FIXTURE}},
     {"name": "held-unrenderable", "hash": GEN1,
      "files": {"structure/catena/01-gen/001.json": BLOCKED_FIXTURE}},
     # The real licensed source: six Severian/PTA fragments under rights
@@ -1736,6 +1747,7 @@ SCENARIOS = [
          {"do": "hash", "value": GEN2, "label": "forward"},
      ]},
     {"name": "hidden-author-carry", "hash": GEN1,
+     "files": {"structure/catena/01-gen/042.json": SOLE_AUTHOR_FIXTURE},
      "steps": [
          {"do": "toggleAuthor", "author": "Remigius of Auxerre", "label": "hidden"},
          {"do": "hash", "value": GEN42, "label": "gen42"},
@@ -3597,13 +3609,12 @@ class ChronologyTest(ReplayTest):
         ("Severian of Gabala", "401", 5),
         ("Augustine of Hippo", "413", 3),
         ("Bede", "717", 35),
-        ("Alcuin of York", "796", 4),
+        ("Alcuin of York", "796", 17),
         ("Angelomus of Luxeuil", "845", 17),
         ("Remigius of Auxerre", "890", 11),
-        ("Martin Luther", "1535", 1),
     ]
 
-    def test_genesis_1_renders_twelve_groups_in_text_date_order(self):
+    def test_genesis_1_renders_eleven_groups_in_text_date_order(self):
         groups = self.page("default")["authorGroups"]
         self.assertEqual(
             [(one["author"], one["date"]) for one in groups],
@@ -3623,8 +3634,8 @@ class ChronologyTest(ReplayTest):
         groups = self.page("default")["authorGroups"]
         counts = [int(re.match(r"(\d+)", one["count"]).group(1)) for one in groups]
         self.assertEqual(counts, [count for _, _, count in self.EXPECTED])
-        self.assertEqual(sum(counts), 107)
-        self.assertEqual(self.page("default")["fragmentCount"], 107)
+        self.assertEqual(sum(counts), 119)
+        self.assertEqual(self.page("default")["fragmentCount"], 119)
 
     def test_every_expected_fragment_id_renders_exactly_once_in_order(self):
         # The correction review asked chronology to be proved by IDENTITY,
@@ -3649,7 +3660,7 @@ class ChronologyTest(ReplayTest):
 class VoiceCountTruthTest(ReplayTest):
     """Finding 8a — the tally states the corpus, never the filter.
 
-    Genesis 10 holds 71 fragments, all in their authors' own Latin. Selecting
+    Genesis 10 holds 74 fragments, all in their authors' own Latin. Selecting
     English used to headline "Nothing held here"; the corpus truth now leads
     and the empty selection is a second clause.
     """
@@ -3662,26 +3673,26 @@ class VoiceCountTruthTest(ReplayTest):
         page = self.page("voice-empty-chapter")
         self.assertEqual(
             page["tallyText"],
-            "71 fragments held · none in English translation"
-            " · 28 lead entries on the acquisition list")
+            "74 fragments held · none in English translation"
+            " · 15 lead entries on the acquisition list")
         self.assertNotIn("Nothing", page["tallyText"])
-        self.assertIn("71 fragments held, none in English translation",
+        self.assertIn("74 fragments held, none in English translation",
                       page["statusText"])
         self.assertTrue(any(
-            "71 fragments are held here, in the author’s own language" in one
+            "74 fragments are held here, in the author’s own language" in one
             for one in page["asideNotes"]))
 
     def test_a_voice_showing_a_subset_is_a_second_clause(self):
         page = self.page("voice-held")
         self.assertEqual(
             page["tallyText"],
-            "107 fragments held · 14 in English translation"
-            " · 33 lead entries on the acquisition list")
+            "119 fragments held · 13 in English translation"
+            " · 27 lead entries on the acquisition list")
 
     def test_the_unfiltered_tally_counts_the_corpus(self):
         self.assertEqual(
             self.page("default")["tallyText"],
-            "107 fragments held · 33 lead entries on the acquisition list")
+            "119 fragments held · 27 lead entries on the acquisition list")
 
     def test_a_chapter_with_nothing_says_nothing_held(self):
         self.assertEqual(self.page("nothing-held")["tallyText"], "Nothing held here")
@@ -3748,14 +3759,14 @@ class AuthorFilterRecoveryTest(ReplayTest):
     """
 
     def test_a_fresh_single_author_chapter_grows_no_filter(self):
-        page = self.page("one-commentator")
+        page = self.page("sole-author-fixture")
         self.assertEqual(page["fragmentCount"], 3)
         self.assertEqual(len(page["authorGroups"]), 1)
         self.assertFalse(page["authorFilterInDisclosure"])
 
     def test_a_partial_filter_is_reported_against_the_held_total(self):
         hidden = self.snapshot("hidden-author-carry", "hidden")
-        self.assertIn("107 fragments held here — 96 shown", hidden["sectionHeadings"])
+        self.assertIn("119 fragments held here — 108 shown", hidden["sectionHeadings"])
 
     def test_a_carried_exclusion_still_offers_the_switch_on_a_sole_author(self):
         gen42 = self.snapshot("hidden-author-carry", "gen42")
@@ -3822,8 +3833,8 @@ class LeadsCopyTest(ReplayTest):
     generator's. Rows render unhidden, unreordered, by exact identity.
     """
 
-    NOTE_15 = (
-        "15 unreconciled lead entries on the acquisition record for this "
+    NOTE_13 = (
+        "13 unreconciled lead entries on the acquisition record for this "
         "chapter, which omits its confidence. An entry establishes no "
         "distinct work, no possession and nothing renderable, and the list "
         "is not checked against the commentary above.")
@@ -3837,7 +3848,7 @@ class LeadsCopyTest(ReplayTest):
                       page["sectionHeadings"])
         note = next(one for one in page["asideNotes"]
                     if "acquisition record" in one)
-        self.assertEqual(note, self.NOTE_15)
+        self.assertEqual(note, self.NOTE_13)
 
     def test_the_old_overclaims_are_gone(self):
         script = held(CATENA / "catena.js")
@@ -3853,9 +3864,9 @@ class LeadsCopyTest(ReplayTest):
     def test_the_rows_render_unhidden(self):
         page = self.page("acquisition-only")
         self.assertEqual(page["fragmentCount"], 0)
-        self.assertEqual(len(page["leads"]), 15)
-        # Genesis 1's 33 rows include held works; they are not hidden here.
-        self.assertEqual(len(self.page("default")["leads"]), 33)
+        self.assertEqual(len(page["leads"]), 13)
+        # Genesis 1's 27 rows include held works; they are not hidden here.
+        self.assertEqual(len(self.page("default")["leads"]), 27)
 
     def test_the_rows_render_exact_identity_in_record_order(self):
         # The review demanded exact row identity/order, not counts alone:
@@ -3869,7 +3880,7 @@ class LeadsCopyTest(ReplayTest):
             (lead.get("title") or "") +
             (" (" + str(lead["date"]) + ")" if lead.get("date") else "")
             for lead in spine["leads"]]
-        self.assertEqual(len(expected), 33)
+        self.assertEqual(len(expected), 27)
         self.assertEqual(
             expected[0],
             "Alcuin of York — Interrogationes et responsiones in Genesim (804)")
@@ -3929,9 +3940,9 @@ class RightsRenderingTest(ReplayTest):
                             for one in self.page("default")["sourceLines"]))
 
     def test_provenance_stands_whether_or_not_the_text_loads(self):
-        # Source lines exist for all 107 fragments before any text is fetched.
+        # Source lines exist for all 119 fragments before any text is fetched.
         self.assertEqual(len(self.page("voice-held")["snapshots"]["start"]["fetched"]), 7)
-        self.assertEqual(len(self.page("default")["sourceLines"]), 107)
+        self.assertEqual(len(self.page("default")["sourceLines"]), 119)
 
     def test_a_recorded_acknowledgement_renders_above_the_prose(self):
         """SYNTHETIC fixture: the notice arrives through the spine channel."""
@@ -4100,7 +4111,7 @@ class HashValidationTest(ReplayTest):
         recovered = self.snapshot("invalid-recovery", "recovered")
         self.assertFalse(recovered["errorSections"])
         self.assertEqual(recovered["referenceText"], "Genesis 1")
-        self.assertEqual(recovered["fragmentCount"], 107)
+        self.assertEqual(recovered["fragmentCount"], 119)
 
     def test_an_invalid_hashchange_replaces_rather_than_leaves_stale_content(self):
         broken = self.snapshot("hashchange-invalid", "broken")
@@ -4130,7 +4141,7 @@ class VoiceDeepLinkTest(ReplayTest):
         # byte for byte — no canonicalising rewrite, no extra history entry.
         self.assertEqual(page["hash"], GEN1 + "&voice=translation:en")
         self.assertEqual(page["hashWrites"], [])
-        self.assertEqual(page["fragmentCount"], 14)
+        self.assertEqual(page["fragmentCount"], 13)
         self.assertTrue(any("Showing English translation only" in one
                             for one in page["asideNotes"]))
 
@@ -4217,13 +4228,13 @@ class UnsupportedVoiceTest(ReplayTest):
         # supported -> unsupported -> supported, over one live document.
         first = self.snapshot("unsupported-voice-change", "start")
         self.assertEqual(first["voice"], "translation:en")
-        self.assertEqual(first["fragmentCount"], 14)
+        self.assertEqual(first["fragmentCount"], 13)
         broken = self.snapshot("unsupported-voice-change", "unsupported")
         self.assertEqual(broken["referenceText"], "Address not used")
         self.assertEqual(broken["fragmentCount"], 0)
         back = self.snapshot("unsupported-voice-change", "supported-again")
         self.assertEqual(back["voice"], "translation:en")
-        self.assertEqual(back["fragmentCount"], 14)
+        self.assertEqual(back["fragmentCount"], 13)
         self.assertEqual(back["hash"], GEN1 + "&voice=translation:en")
 
     def test_the_supported_set_is_read_from_the_index_not_from_the_key(self):
@@ -4434,7 +4445,7 @@ class RecoveryFocusTest(ReplayTest):
         recovered = self.snapshot("keyboard-recovery", "recovered")
         self.assertFalse(recovered["errorSections"])
         self.assertEqual(recovered["referenceText"], "Genesis 1")
-        self.assertEqual(recovered["fragmentCount"], 107)
+        self.assertEqual(recovered["fragmentCount"], 119)
         self.assertEqual(recovered["activeElement"], "reading",
                          "focus must not be stranded on the removed link")
 
@@ -4515,7 +4526,7 @@ class AsyncTransactionTest(ReplayTest):
                 self.assertEqual(late["referenceText"], "Genesis 42")
                 self.assertEqual(late["hash"], GEN42)
                 self.assertFalse(late["errorSections"])
-                self.assertEqual(late["fragmentCount"], 3)
+                self.assertEqual(late["fragmentCount"], 4)
 
 
 class CacheRecoveryTest(ReplayTest):
@@ -4531,7 +4542,7 @@ class CacheRecoveryTest(ReplayTest):
         self.assertTrue(any("could not be loaded" in one for one in failed["statusWrites"]))
         recovered = self.snapshot("spine-retry", "recovered")
         self.assertEqual(recovered["referenceText"], "Genesis 1")
-        self.assertEqual(recovered["fragmentCount"], 107)
+        self.assertEqual(recovered["fragmentCount"], 119)
         asked = [one for one in recovered["fetched"]
                  if one == "structure/catena/01-gen/001.json"]
         self.assertEqual(len(asked), 2, "the return visit must really ask again")
@@ -4613,10 +4624,10 @@ class TypedTruthStateTest(ReplayTest):
         page = self.page("blocked-with-held")
         self.assertEqual(
             page["tallyText"],
-            "107 fragments held · 1 work held, not renderable yet"
-            " · 33 lead entries on the acquisition list")
+            "119 fragments held · 1 work held, not renderable yet"
+            " · 27 lead entries on the acquisition list")
         self.assertIn("Held, and not renderable yet", page["sectionHeadings"])
-        self.assertEqual(page["fragmentCount"], 107)
+        self.assertEqual(page["fragmentCount"], 119)
         self.assertEqual(len(page["blocked"]), 1)
 
     def test_true_absence_still_says_nothing_held(self):
@@ -4980,10 +4991,9 @@ class SupersededArrivalVoiceTest(ReplayTest):
         self.assertEqual(reader["referenceText"], "Genesis 3")
         self.assertEqual(reader["voice"], "")
         self.assertEqual(reader["voiceLabels"],
-                         ["Everything held", "The author’s own language",
-                          "English translation"],
+                         ["Everything held", "The author’s own language"],
                          "a Latin translation was never a voice of this page")
-        self.assertEqual(reader["fragmentCount"], 86)
+        self.assertEqual(reader["fragmentCount"], 92)
 
     def test_the_pushed_address_is_the_readers_own_route(self):
         reader = self.snapshot("parked-voice-superseded", "reader")
@@ -4998,7 +5008,7 @@ class SupersededArrivalVoiceTest(ReplayTest):
             self.rendered_state(self.snapshot("parked-voice-superseded", "reader")))
         self.assertEqual(
             self.page("parked-voice-superseded")["tallyText"],
-            "86 fragments held · 31 lead entries on the acquisition list")
+            "92 fragments held · 23 lead entries on the acquisition list")
 
 
 class SelfWriteEchoTest(ReplayTest):
@@ -5037,7 +5047,7 @@ class SelfWriteEchoTest(ReplayTest):
         page = self.page("echo-after-action")
         self.assertEqual(page["referenceText"], "Genesis 3")
         self.assertEqual(page["selectValues"]["chapter"], "3")
-        self.assertEqual(page["fragmentCount"], 86)
+        self.assertEqual(page["fragmentCount"], 92)
         self.assertEqual(page["hash"], GEN3)
         self.assertEqual(page["hashWrites"], [GEN2, GEN3],
                          "one write per commit, and no write for the echo")
@@ -5107,7 +5117,7 @@ class BlockedVoiceClaimTest(ReplayTest):
         # Reached without an arrival to reseed anything: English chosen where
         # it IS held, then a move onto the blocked-only chapter.
         chosen = self.snapshot("blocked-voice-control", "chosen")
-        self.assertIn("14 in English translation", chosen["tallyText"])
+        self.assertIn("13 in English translation", chosen["tallyText"])
         moved = self.snapshot("blocked-voice-control", "moved")
         self.assertEqual(moved["voice"], "translation:en")
         self.assertEqual(moved["voiceLabels"],
@@ -5127,15 +5137,15 @@ class BlockedVoiceClaimTest(ReplayTest):
                           "English translation"])
         self.assertEqual(page["asideNotes"][0],
                          "No renderable commentary on this chapter is held in English "
-                         "translation. 71 fragments are held here, in the author’s own "
+                         "translation. 74 fragments are held here, in the author’s own "
                          "language; choose “Everything held” to see them.")
         self.assertEqual(page["tallyText"],
-                         "71 fragments held · 1 work held, not renderable yet"
-                         " · 28 lead entries on the acquisition list")
+                         "74 fragments held · 1 work held, not renderable yet"
+                         " · 15 lead entries on the acquisition list")
         self.assertNotIn("none in", page["tallyText"])
         self.assertEqual(page["statusText"],
-                         "Genesis 10, Douay-Rheims (Challoner), 71 fragments held, "
-                         "1 work held, not renderable yet, 28 lead entries on the "
+                         "Genesis 10, Douay-Rheims (Challoner), 74 fragments held, "
+                         "1 work held, not renderable yet, 15 lead entries on the "
                          "acquisition list.")
 
     def test_with_nothing_blocked_the_provable_absence_is_still_stated(self):
@@ -5147,7 +5157,7 @@ class BlockedVoiceClaimTest(ReplayTest):
         self.assertIn("none in English translation", page["tallyText"])
         self.assertEqual(page["asideNotes"][0],
                          "No commentary on this chapter is held in English "
-                         "translation. 71 fragments are held here, in the author’s own "
+                         "translation. 74 fragments are held here, in the author’s own "
                          "language; choose “Everything held” to see them.")
 
 
@@ -5937,7 +5947,7 @@ class ExactVoiceKeyTest(ReplayTest):
         self.assertNotIn("Greek translation — none here", greek["voiceLabels"])
         back = self.snapshot("unsupported-greek-change", "supported-again")
         self.assertEqual(back["voice"], "translation:en")
-        self.assertEqual(back["fragmentCount"], 14)
+        self.assertEqual(back["fragmentCount"], 13)
         self.assertEqual(back["busy"], "false")
 
     def test_the_published_projection_is_the_exact_key_set(self):
@@ -6221,7 +6231,7 @@ class NumericVerseAndPathTest(ReplayTest):
         self.assertEqual(page["verseTexts"], [])
         self.assertEqual(page["chapterCounts"], [])
         self.assertTrue(any("extent is not present" in note for note in page["notices"]))
-        self.assertEqual(page["fragmentCount"], 107)
+        self.assertEqual(page["fragmentCount"], 119)
 
     def test_no_verse_value_is_coerced_into_scripture(self):
         # CORRECTED ORACLE (V6). This read `fragmentTexts` — the COMMENTARY —
@@ -6734,10 +6744,10 @@ class UnregressedScriptureTest(ReplayTest):
                          ["31 verses", "8 paragraphs"])
 
     def test_every_real_fragment_still_prints_its_tally(self):
-        # 107 fragments, 107 chips — asserted as a count of the chips
+        # 119 fragments, 119 chips — asserted as a count of the chips
         # THEMSELVES, which the deduplicated projection could never express.
         page = self.page("default")
-        self.assertEqual(page["fragmentCount"], 107)
+        self.assertEqual(page["fragmentCount"], 119)
         self.assertEqual(len(page["lengths"]), page["fragmentCount"])
 
 
@@ -7271,20 +7281,20 @@ class RootLanguageIdentityTest(ReplayTest):
             ["passage=en"])
 
     def test_every_language_attribute_written_is_a_language_subtag(self):
-        # The fragment sink, counted rather than deduplicated: 107 fragments
+        # The fragment sink, counted rather than deduplicated: 119 fragments
         # under Everything held, each carrying its own source's sound code,
-        # and 14 under the English translation. `classes` and `dataStates`
+        # and 13 under the English translation. `classes` and `dataStates`
         # are sets and would read the same for one attribute and for a
         # hundred; `langAttributes` is the whole journal in rendered order.
         held = self.page("bible-language-forms")["langAttributes"]
-        self.assertEqual(len(held), 107)
-        # Counted, so the three sinks account for all 107 and none is a
-        # substitute for another: 88 Latin, 14 English, 5 Greek.
+        self.assertEqual(len(held), 119)
+        # Counted, so the three sinks account for all 119 and none is a
+        # substitute for another: 101 Latin, 13 English, 5 Greek.
         self.assertEqual([held.count(one) for one in
                           ("fragment-text=la", "fragment-text=en", "fragment-text=grc")],
-                         [88, 14, 5])
+                         [101, 13, 5])
         voiced = self.page("bible-language-forms-voice")["langAttributes"]
-        self.assertEqual(voiced, ["fragment-text=en"] * 14)
+        self.assertEqual(voiced, ["fragment-text=en"] * 13)
         for written in held + voiced:
             code = written.split("=", 1)[1]
             self.assertRegex(code, r"^[A-Za-z]{2,3}(-[A-Za-z0-9]{2,8})*$", written)
@@ -7329,13 +7339,13 @@ class RootLanguageIdentityTest(ReplayTest):
         self.assertEqual(page["voiceLabels"],
                          ["Everything held", "The author’s own language",
                           "English translation", "Latin translation"])
-        self.assertEqual(page["fragmentCount"], 14)
+        self.assertEqual(page["fragmentCount"], 13)
         self.assertEqual(page["tallyText"],
-                         "107 fragments held · 14 in English translation · "
-                         "33 lead entries on the acquisition list")
+                         "119 fragments held · 13 in English translation · "
+                         "27 lead entries on the acquisition list")
         self.assertEqual(page["filterLabels"],
                          ["Basil of Caesarea", "Gregory of Nyssa",
-                          "Augustine of Hippo", "Martin Luther"])
+                          "Augustine of Hippo"])
         self.assertEqual(page["absenceSummary"],
                          "6 works standing here have no English this project may "
                          "publish; 2 have only a partly public domain English, "
@@ -7414,16 +7424,16 @@ class EditionIdentityTest(ReplayTest):
         self.assertEqual(page["verseNumbers"], [str(n) for n in range(1, 32)])
         self.assertEqual(page["referenceText"], "Genesis 1")
         self.assertEqual(page["referenceBookText"], "Old Testament")
-        self.assertEqual(page["fragmentCount"], 107)
+        self.assertEqual(page["fragmentCount"], 119)
         self.assertEqual(page["tallyText"],
-                         "107 fragments held · 33 lead entries on the acquisition list")
+                         "119 fragments held · 27 lead entries on the acquisition list")
 
     def test_the_page_terminates(self):
         page = self.page("bible-identity-forms")
         self.assertEqual(page["busy"], "false")
         self.assertEqual(page["statusWrites"],
-                         ["Genesis 1, Douay-Rheims, 107 fragments held, "
-                          "33 lead entries on the acquisition list."])
+                         ["Genesis 1, Douay-Rheims, 119 fragments held, "
+                          "27 lead entries on the acquisition list."])
         self.assertEqual(page["errorSections"], [])
 
 
@@ -7613,12 +7623,12 @@ class GenuinelyLateStaleWorkTest(ReplayTest):
                "blocked", "voice", "voiceLabels", "stepButtons", "classes",
                "langAttributes", "acknowledgements", "authorGroups")
 
-    GEN1_SPOKEN = ("Genesis 1, Douay-Rheims (Challoner), 107 fragments held,"
-                   " 33 lead entries on the acquisition list.")
-    GEN2_SPOKEN = ("Genesis 2, Douay-Rheims (Challoner), 99 fragments held,"
-                   " 31 lead entries on the acquisition list.")
-    GEN2_TALLY = "99 fragments held · 31 lead entries on the acquisition list"
-    GEN2_HEADINGS = ["99 fragments held here",
+    GEN1_SPOKEN = ("Genesis 1, Douay-Rheims (Challoner), 119 fragments held,"
+                   " 27 lead entries on the acquisition list.")
+    GEN2_SPOKEN = ("Genesis 2, Douay-Rheims (Challoner), 108 fragments held,"
+                   " 22 lead entries on the acquisition list.")
+    GEN2_TALLY = "108 fragments held · 22 lead entries on the acquisition list"
+    GEN2_HEADINGS = ["108 fragments held here",
                      "Believed to comment here — the acquisition list"]
 
     def steps_of(self, name: str) -> list:
@@ -7685,14 +7695,14 @@ class GenuinelyLateStaleWorkTest(ReplayTest):
         self.assertEqual(after["referenceText"], "Genesis 2")
         self.assertEqual(after["selectValues"],
                          {"book": "Gen", "chapter": "2", "bible": "douay-rheims"})
-        self.assertEqual(after["fragmentCount"], 99)
-        self.assertEqual(len(after["fragmentIds"]), 99)
+        self.assertEqual(after["fragmentCount"], 108)
+        self.assertEqual(len(after["fragmentIds"]), 108)
         self.assertEqual(after["fragmentIds"][0],
                          "passage.ambrose.hexameron.latin-migne-pl-14.6")
         self.assertEqual(
             after["fragmentIds"][-1],
-            "passage.martin-luther.lectures-on-genesis"
-            ".lenker-minneapolis-1904.genesis-2")
+            "passage.remigius-of-auxerre.commentarius-in-genesim"
+            ".latin-migne-pl-131.2-15")
         self.assertEqual(after["errorSections"], [])
         self.assertEqual(after["sectionHeadings"], self.GEN2_HEADINGS)
         # Genesis 1's text landed into a detached fragment: no Genesis 2
@@ -7716,7 +7726,7 @@ class GenuinelyLateStaleWorkTest(ReplayTest):
         self.assertEqual(after["referenceText"], "Genesis 2")
         self.assertEqual(after["selectValues"],
                          {"book": "Gen", "chapter": "2", "bible": "douay-rheims"})
-        self.assertEqual(after["fragmentCount"], 99)
+        self.assertEqual(after["fragmentCount"], 108)
         self.assertEqual(after["errorSections"], [])
         self.assertEqual(after["sectionHeadings"], self.GEN2_HEADINGS)
         for said in after["fragmentTexts"]:
@@ -7744,7 +7754,7 @@ class GenuinelyLateStaleWorkTest(ReplayTest):
         self.assertEqual(after["busy"], "false")
         self.assertEqual(after["activeElement"], "chapter-select")
         self.assertEqual(after["referenceText"], "Genesis 2")
-        self.assertEqual(after["fragmentCount"], 99)
+        self.assertEqual(after["fragmentCount"], 108)
         self.assertEqual(after["errorSections"], [])
         self.assertEqual(after["sectionHeadings"], self.GEN2_HEADINGS)
         # The refusal record belonged to the malformed Genesis 1 fixture; it
@@ -9868,7 +9878,7 @@ class V7UnreadableRootDomainClaimTest(ReplayTest):
         # commentary: the catena is rendered, counted and announced in full.
         page = self.page("v7-verses-list")
         self.assertEqual(page["tallyText"],
-                         "107 fragments held · 33 lead entries"
+                         "119 fragments held · 27 lead entries"
                          " on the acquisition list")
         self.assertEqual(page["errorSections"], [])
         self.assertEqual(page["hashWrites"], [])

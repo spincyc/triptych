@@ -86,8 +86,8 @@ aliases falsely assigning Luke coverage to Pauline or Matthew works. Three
 whole-work spelling identities are now reviewed explicitly; broader Lapide and
 Aurea collection leads stay separately reported. Catena and paragraph producer
 read audits found no undeclared inputs. Source-library, containment and family
-ledger validation pass. Final integration checks, browser-product recording,
-coherent commits and live publication remain pending and are not claimed complete.
+ledger validation pass. Implementation and source validation are complete;
+packaged-site validation and live publication remain pending.
 
 Implementation checkpoint `add2198bcc` is committed on `feature/catena-omnia`.
 The final `make check-sources` passes, including the exhaustive audit and
@@ -99,7 +99,22 @@ recording was stopped before sealing. The follow-up applies the same author
 policy to coverage rows and unresolved aliases while preserving the historical
 extent. Independent review and 28 coverage tests pass: 33 eligible works,
 52 work/book pairs, and one excluded work counted separately. Fresh product
-recording and packaged-site validation follow the fix checkpoint.
+recording follows the fix checkpoint `85519c811e`. Two independent cold builds
+match exactly: thirteen products, 27,875 files and 226,387,710 bytes, descriptor
+identity `352f666cc9b9690505e8cad43da7289b997e0f1447b15d9ea84bda23a26b945d`.
+The final source gate passes again at that checkpoint. Sealed-data reader checks,
+packaged-site validation and publication are now in progress.
+
+The broad sealed-data run exercised 755 reader tests and exposed stale Catena
+corpus expectations plus a compact terminal selection bug. The expectations now
+name the admitted corpus, and the terminal scrolls the selected fragment after
+layout and pane resizing. Independent review passes the original 80×24
+regression, including rapid keys, pane toggles and resize round trips. The final
+focused 427-test run passes with one existing skip. Two unrelated Texts tests
+still expect 154 works / 216 documents where the baseline and current identical
+document product contain 156 / 219; those inherited assertions are unchanged.
+Chromium checks pass with its temporary socket files under the shorter scratch
+path. The TUI correction leaves the sealed browser-product identity unchanged.
 
 ## Generate PDF links work in place — 6 November 2026
 
