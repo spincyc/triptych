@@ -4,7 +4,7 @@ schema_version = 1
 id = "catena-english-linkage-lectern-2026-11-08"
 owner = "guidance/catena.md"
 promise = "Repair Lectern startup with missing generated browser data, recover available English editions of already known Catena works, and improve verse-specific excerpt linkage within held source documents."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "lectern-missing-products"
@@ -39,7 +39,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "coherent-main-publication"
   criterion = "The validated correction is published coherently to main without history rewriting, the Pages deployment succeeds, and affected live Catena routes expose the reviewed English passages and verse excerpts."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "release/public-alpha.json", "release/browser-products.json"]
 
 [[deliverables]]

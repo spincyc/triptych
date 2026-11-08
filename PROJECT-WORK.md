@@ -11,13 +11,12 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Validated final candidate; deployment and live acceptance pending.** The maintainer reports Lectern refusing to start with
-“published browser data is unavailable: missing or unsafe browser product”.
-The requested source work prioritizes existing English translations of the
-already known Catena Omnia works. The earlier acquisition of new holdings does
-not settle that requirement. A further linkage pass must expose the actual
-bounded commentary on a selected verse within the larger documents already
-held, preserving edition, language, attribution, rights and scripture extent.
+**Live and verified.** The maintainer requested reliable Lectern startup,
+English translations of already known Catena Omnia works, and bounded
+verse-specific excerpts within larger held commentary. Consistent commits and
+coherent publication to main were explicitly authorized. The implementation
+was committed on the assigned workspace branch and published without rewriting
+history.
 
 Lectern now verifies a warm cache and prepares genuinely missing products
 offline before opening the interface or starting the snapshot settling timer.
@@ -26,9 +25,9 @@ ordinary launch cannot rewrite the publication descriptor. The shared generated
 projection remains disposable: normalized sources own the evidence, while the
 projection supplies rights filtering, verse indexes and browser/terminal parity.
 
-The container-aware census covers the same 577 known author/title leads: 74
-direct holdings, 24 container holdings, 11 cataloged-only records and 468 without
-a registered match. A missing match is not proof that no English translation
+The container-aware census covers 577 known author/title leads: 74 direct
+holdings, 24 container holdings, 11 cataloged-only records and 468 without a
+registered match. A missing match is not proof that no English translation
 exists. Three complete offered English expressions were acquired: Severian's
 first Creation homily (Pearse via Bareille), Augustine's distinct unfinished
 literal Genesis commentary (Image revision 4), and all fourteen Ezekiel homilies
@@ -38,7 +37,8 @@ publisher's noncommercial permission, exact artifact and grant pins, and notices
 beside the words; his standing record preserves the cited historical censures.
 The complete mixed-rights PDF is not redistributed. A rejected corrupt Word
 extraction supplies no published text. Full acquisition does not claim complete
-textual collation.
+textual collation. English editions of Augustine's Galatians, Bede's Genesis and
+Ambrose's Hexameron remain identified leads with specific access/rights gaps.
 
 The integrated chain has 1,578 fragments across 22 books: 95 English, 1,477 Latin
 and six Greek. All emitted bodies carry edition/artifact identities and exact
@@ -48,129 +48,81 @@ same exact excerpts and retain the full natural passage; Lectern uses `c` to
 switch context. The audit reports 64 of 70 parents of at least 1,000 words still
 without narrower reviewed excerpts. That heuristic is a review worklist, not a
 claim of complete semantic linkage or a reason to infer links from citations.
-
-Independent review replayed the complete acquired conversions, read all 18
+Independent review replayed the complete acquired conversions, read all eighteen
 new admitted passages at their stated evidence level and checked all 24 snippet
-texts. It caught and corrected a Chrysostom excerpt that separated an objection
-from its answer, and rejected corrupted Origen Word footnotes in favor of the
-publisher PDF. English editions of Augustine's Galatians, Bede's Genesis and
-Ambrose's Hexameron remain identified leads with their specific access/rights
-gaps recorded. The maintainer subsequently authorized committing consistent
-work and pushing coherent changes to main. Implementation remains on the
-assigned workspace branch; publish the validated result to main without
-rewriting history, then verify deployment and the affected live routes.
+texts. It corrected a Chrysostom excerpt that separated an objection from its
+answer and rejected corrupted Origen Word footnotes in favor of the publisher PDF.
 
-The source gate passes after regenerating the commentary worklist and adding
-the mixed Origen volume's partial containment record. The unchanged chronology
-and generated-document freshness checks passed earlier in this session; source
-library schema checks pass all 67 tests. Focused linkage, permission and Lectern
-tests pass, and browser excerpt checks preserve keyboard, print and exact-text
-parity. The reviewed source/implementation checkpoint precedes the final
-browser-product descriptor, sealed-reader tests and packaged-site validation.
+The maintainer's later plain-launch failure used host Markdown 3.11.3 against
+the bound 3.10.3 dependency. After a failed warm-product check, Lectern now checks
+that dependency before invoking producers and gives a concise isolated-install
+instruction while retaining the original product error. Verified warm startup
+bypasses this guard. `requirements-tui.txt` includes the pinned YAML source-tool
+dependency needed for cold preparation. A fresh standalone install has Textual
+8.2.8, Markdown 3.10.3 and PyYAML 6.0.3, with `pip check` passing and no system-site
+packages. Root, open and snapshot help document Python 3.11+, Node, Git/full
+history, the isolated TUI install and the explicit pinned-Pandoc installer.
+Ordinary launch remains offline. Twelve focused startup tests pass, including
+missing/wrong Markdown, warm behavior, real stale/corrupt/symlink refusals and
+concise CLI output without a traceback. An actual pinned-environment launch
+renders the 8 November Day screen against the refreshed cache.
 
-Implementation checkpoint `3c92df7f98` is committed and pushed on the workspace
-branch. Two independent cold builds agree: thirteen products, 27,915 files and
-227,285,321 bytes, identity
-`a838af7ab5b9f1aa8f5f2c1e829d016ce21697a49ff6988e387c91943e8d3ba0`.
-Catena, paragraph and Source Reader input audits report no undeclared reads.
-The host Markdown version differed from the lock; validation uses the existing
-locked dependencies in an isolated environment, without changing the lock.
+All deployment source gates pass. Source-library schema checks pass 67 tests;
+backend and Source Reader checks pass 124; the sealed browser suite passes 451.
+The full Lectern run exercised 141 tests, with one expected skip and two inherited
+count failures: old assertions said 154 works / 216 documents although the
+baseline's hash-verified catalogue held 156 / 219. Both corrected tests compare
+against the independent sealed catalogue and pass their focused rerun; all other
+cases passed the full run. Five actual CLI snapshots verify Day, Philippians
+1:21 excerpts and compact full context, and Origen's commentary and Source Library
+navigation with its complete notice. Catena, paragraph and Source Reader input
+audits report no undeclared reads; all 21 web figures are current.
 
-The sealed browser suite passes 451 tests; backend and Source Reader checks
-pass 124. The full Lectern run exercises 141 tests, with one expected skip and
-two inherited count failures: the old assertions said 154 works / 216 documents,
-although the baseline's hash-verified catalogue already held 156 / 219. The
-tests now compare the display against the independent sealed catalogue; both
-corrected cases pass their focused rerun, and all other cases passed the full
-run. Five actual CLI snapshots verify Day, Philippians 1:21 excerpts and compact
-full context, and Origen's commentary and Source Library navigation with its
-complete notice. All deployment source gates pass; the already verified
-product check and separate chronology/document freshness checks are reused
-instead of taking an exclusive rebuild lock while reader tests hold snapshots.
-
-Release checkpoint `8416e4f17f` is committed and pushed on the workspace branch.
-The scoped refresh changes exactly fourteen reviewed source bindings
-(including the two new helper modules), their inventory digest and the rights
-record digest. It changes no publication authorization prose. The committed
-descriptor seals the independently reproduced products; all 21 web figures
-are current. The public site builds successfully.
+Two independent cold builds of the final dependency closure agree: thirteen
+products, 27,915 files and 227,285,321 bytes, current identity
+`929ec3200c858d939c8ce8917833df53a311ba8216fc421b89187baff6ab0d03`.
+Their output inventories are byte-identical to the initial accepted products
+(identity `a838af7ab5b9f1aa8f5f2c1e829d016ce21697a49ff6988e387c91943e8d3ba0`).
+The scoped release refresh changes reviewed bindings and their inventory and
+rights-record digests without changing publication authorization prose. The
+final site build and independent `public-alpha verify --deployment-target
+github-pages` both pass. A separately verified publication cache lets active
+Lectern sessions retain their read snapshots. The final package's `SHA256SUMS`
+digest is `b77092592853beed4a8a8d86a659cf4a38c6d7951b15b4d5bc69be8c30e72c6f`.
 
 Packaged browser acceptance passes ten inspected states: Philippians 1:21 at
 widths 320, 393, 768, 1024 and 1440, keyboard full-context expansion, Augustine
-Genesis 1:3 at desktop and mobile widths, and Origen Ezekiel 1:1–3 at both
-widths with each complete notice before its prose. Exact excerpt and parent
-text, named controls, accessibility-tree names, reflow, console and network
-checks pass. The broader Catena browser gate has 104 passes, twelve skips and
-five existing navigation-target-size failures. Baseline assets from
+Genesis 1:3 at desktop and mobile widths, and Origen Ezekiel 1:1–3 at both widths
+with each complete notice before its prose. Exact excerpt and parent text,
+named controls, accessibility-tree names, reflow, console and network checks
+pass. The broader Catena browser gate has 104 passes, twelve skips and five
+existing navigation-target-size failures. Baseline assets from
 `df2735445625c9aba290f83cd17138ed171c7e12` reproduce all five failure objects
-exactly, with unchanged shared header/footer inputs. Existing 200% text
-enlargement overflow at 320 pixels also reproduces at baseline. Neither is
-introduced by this correction.
+exactly, with unchanged shared header/footer inputs. Existing 200% text enlargement
+overflow at 320 pixels also reproduces at baseline. Neither is introduced by this
+correction.
 
-A local HTTP byte audit checks 134 packaged files: all 89 fragment-bearing
-chapter spines account for 1,578 unique fragments; all eighteen new English
-Catena bodies equal their Source Reader bodies; Origen's notices match in both;
-and all six snippet-bearing parents carry the 24 reviewed excerpts. Independent
-`public-alpha verify --deployment-target github-pages` passes. The initial
-package's `SHA256SUMS` digest is
-`a1ab14b205cef1c3a6beb44c0bf59a62f9b524e49cc14beb1a2c8fe421d0c9cb`.
-The validated candidate `5412d7e1afdb97546cf81ef8182148222f70df29` is pushed to
-both the workspace branch and main by fast-forward. The
-[Pages run](https://github.com/spincyc/triptych/actions/runs/42496691138)
-passes source/build, artifact verification, all 650 print editions and deployment.
-The first live byte audit passes all 134 affected files, including all 18 new
-English passages and 24 reviewed snippets. Final dependency-follow-up deployment
-and live acceptance remain pending below.
-
-A final standalone-install audit found an introduced dependency gap: automatic
-cold preparation calls the YAML source producers, but `requirements-tui.txt`
-installed only Textual and Markdown. Baseline warm reading did not need YAML.
-The correction includes the existing `requirements-tools.txt` pin in the TUI
-requirements, then checks a fresh standalone install. This requirements file
-belongs to every browser-product family key and the release inventory, so the
-descriptor and release bindings required the re-recording documented below.
-The isolated install using only `requirements-tui.txt` passes: Textual 8.2.8,
-Markdown 3.10.3 and PyYAML 6.0.3 import successfully, and `pip check` reports no
-broken requirements. It uses no system-site packages.
-Lectern's root, open and snapshot help now document the complete first-run
-environment: Python 3.11+, Node, Git/full history, the TUI requirements and the
-explicit pinned-Pandoc installer and PATH. Launch remains offline. All three
-help forms and eight focused startup tests pass. The help file belongs to no
-browser-family input closure or publication binding, so this clarification does
-not disturb the dependency re-recording.
-The maintainer then reproduced a plain-launch failure under host Markdown
-3.11.3. After a failed warm-product check, Lectern now checks the pinned
-Markdown dependency before invoking producers. A refusal retains the original
-cache error first and gives an isolated-environment installation command;
-verified warm startup bypasses the guard. Twelve focused startup tests pass,
-including missing/wrong Markdown before generation, unchanged warm behavior,
-real stale/corrupt/symlink error preservation and concise CLI output without a
-traceback. This reader-only guard and its tests affect no product/release inputs.
-The dependency re-record passes two independent cold builds: all thirteen
-output inventories are byte-for-byte identical to the accepted package, still
-27,915 files and 227,285,321 bytes. The new product identity is
-`929ec3200c858d939c8ce8917833df53a311ba8216fc421b89187baff6ab0d03`.
-An actual `tools/tpt lectern snapshot` launch under the pinned environment now
-passes and renders the 8 November Day screen against the refreshed cache. The
-previous source, reader and packaged-content checks remain applicable to those
-identical bytes. The scoped refresh changes exactly the browser-product
-descriptor and TUI-requirements bindings, plus their inventory and rights-record
-digests. Other release/authorization fields are unchanged. The final site package
-build and independent `public-alpha verify --deployment-target github-pages`
-both pass. A separately verified publication cache allows active Lectern
-sessions to retain their read snapshots. The accepted Catena HTML, scripts,
-styles and checked excerpt payload remain byte-identical; the final package's
-`SHA256SUMS` digest is
-`b77092592853beed4a8a8d86a659cf4a38c6d7951b15b4d5bc69be8c30e72c6f`.
-The complete follow-up `a9165ce33056de53415d82294f85037b5bf52d0a` is pushed to
-main and the workspace branch by fast-forward. Repository hygiene passes. Its
+The final correction `a9165ce33056de53415d82294f85037b5bf52d0a` reached both
+main and the workspace branch by fast-forward. The
 [final Pages run](https://github.com/spincyc/triptych/actions/runs/42503381587)
-has started after the successful initial publication; final deployment and live
-acceptance remain pending.
-The website workflow already installs source-tool dependencies and is unaffected
-by this standalone-install gap. Existing reader and source results remain
-recorded; the new dependency closure is validated and pushed, with deployment
-verification still pending.
+passes source validation, site construction, independent artifact and GitHub
+Pages verification, all 650 print editions and deployment. Print compilation
+passes 300 pdfTeX and 350 XeTeX editions: 611 settle in two passes and 39 in three,
+with no failed editions. Repository hygiene also passes.
+
+Final live acceptance on [Catena Omnia](https://mystago.gy/catena/) matches all
+134 checked files to the accepted package: 89 fragment-bearing chapter spines,
+1,578 unique fragments, all eighteen new English Catena and Source Reader bodies,
+and all six snippet parents containing the 24 reviewed excerpts. Origen's notices
+match between both readers. A separate 131,072-byte comparison of the live
+publication manifest confirms the final browser-product and TUI-requirements
+bindings, distinguishing this deployment from the initial publication with
+identical reading content. All ten live browser states pass again, with exact
+assets and inspected text, keyboard access, named controls, responsive layouts,
+and no runtime or network faults. Ten captures are reviewed; nine are byte-identical
+to the inspected initial live captures, and the remaining desktop scroll-position
+variation is inspected separately. The remaining English and passage-linkage
+coverage limits above remain explicit.
 
 ## Catena Omnia corpus and passage recovery — 7 November 2026
 
