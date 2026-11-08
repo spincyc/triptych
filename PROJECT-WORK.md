@@ -11,11 +11,11 @@ Last reconciled: 2026-11-07.
 
 <!-- promised-deliverable: sanctuary-visual-expansion-2026-11 -->
 
-**In progress on the assigned workspace branch.** Expand the pictorial
-dictionary's useful object coverage, identification, catalogue relationships
-and table content. Expand the Low Mass, Missa Cantata and Solemn Mass teaching
-diagrams and make movement descriptions, role positions and sanctuary
-architecture consistent. Canonical object and ceremonial records control
+**Complete: implemented and verified on `feature/altar-server`.** The pictorial
+dictionary has expanded object coverage, identification, catalogue relationships
+and table content. The Low Mass, Missa Cantata and Solemn Mass teaching diagrams
+now use consistent movement descriptions, role positions and sanctuary
+architecture. Canonical object and ceremonial records control
 facts; one reusable architectural scene controls the depicted setting.
 New drawings remain project-created illustrations, with generated provenance
 and source-bounded briefs, rather than evidence for ritual facts.
@@ -39,16 +39,17 @@ Provenance and content gates pass for all thirteen affected consumers. Focused
 checks pass: 29 dictionary tests, 27 reader tests, 32 native-print tests and
 four Low Mass model tests. The browser review passes 58 checks, including all
 77 drawings, keyboard navigation, narrow screens, enlarged text, forced colors
-and no-JavaScript operation, with no HTTP, console or runtime errors.
+and no-JavaScript operation, with no dictionary-page HTTP, console or runtime errors.
 
 Independent visual review found and prompted corrections to obscured labels,
 crossing routes, page breaks and ambiguous isolated textile drawings. The four
 guide proofs have 33, 33, 39 and 35 pages. Every page was visually inspected;
 rebuilds transfer acceptance only for identical page rasters, with changed pages
 inspected again. The Low Mass booklet and trainer manual retain page-title and
-main-text parity. All six dictionary editions build, totaling 105 pages, and all their pages
-have visual acceptance. Release reconciliation is in progress. Exact proof
-identities and attributed inspection are recorded in the research manifests and
+main-text parity. All six dictionary editions build, totaling 105 pages, and
+all their pages have visual acceptance, for 245 inspected proof pages in total.
+Release reconciliation and artifact verification pass. Exact proof identities
+and attributed inspection are recorded in the research manifests and
 [review record](workflows/reviews/sanctuary-visual-expansion-2026-11-07/REVIEW.md).
 
 A broader 57-test artwork/schema run has 55 passes and two failures in the
@@ -57,6 +58,36 @@ isolated copy of baseline `589da93da7`; their tests, validator and proper source
 are unchanged. The unchanged `tmt` registry also reports that `document-library`
 uses `browser-products` without declaring that dependency. Neither result is
 reported as a successful check.
+
+Source commit `56b42e26dcee27e4c16eb00da408f1f8a7bd9392` contains the
+reviewed implementation and artwork. Final preparation of all seven native
+source bundles preserves exact positive artwork selection. Scoped publication
+and source-family inventories are current, and aggregate `make check-sources`
+passes, including generated-proper and generated-document freshness. The
+inventory refresh invalidates twelve browser-data families. Two independent
+cold builds agree on all 27,705 regenerated files; the unchanged encyclicals
+proof is retained exactly. All thirteen families total 27,706 files and
+227,725,835 bytes, with identity
+`dfbd8a87034f9591c2a57710ac3caf5bc903de498f3e4d2feb66073591f80b8e`.
+Only the documents output changes; all output path sets and rights inputs
+remain unchanged. The separate cache check and all 21 web-figure checks pass.
+
+Scoped release reconciliation adds 23 reviewed source files, updates 51
+existing hashes and retires none. All 24,122 outside-scope bindings remain
+unchanged, for 24,196 bound paths in total. Authorization terms, publication
+states and rights prose are unchanged; the generated rights digest is current.
+Independent release status passes with zero stale bindings. The full site
+build and official GitHub Pages artifact verifier pass with 43,722 files and
+43,721 checksum rows. Its dictionary HTML, stylesheet and script are
+byte-identical to the reviewed candidates, and the installed-site Chromium
+run passes all 58 checks. Desktop, enlarged mobile text and the two new context
+panels were inspected again. Direct no-JavaScript PNG navigation succeeds;
+Chromium's incidental request for a bare-image favicon returns 404, without a
+dictionary-page or image failure. All task preview processes have stopped.
+The final publication manifest has SHA-256
+`f86a2656e6d05b8613c7b89c7e10bcfc51953f75edc21c0630e56165f5f771ef`;
+the site checksum manifest has SHA-256
+`9d66ac9d4abb5ce4d4773be76d1daa5ce30d447a985147197ecc3cf01c3dc93f`.
 
 Existing print and deployment receipts describe their historical snapshots
 only. This task does not claim a new live deployment or the closure of every

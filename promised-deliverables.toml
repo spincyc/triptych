@@ -4,7 +4,7 @@ schema_version = 1
 id = "sanctuary-visual-expansion-2026-11"
 owner = "PROJECT-WORK.md"
 promise = "Expand and improve pictorial dictionary identification, coverage and cataloguing, and provide more consistent altar-server Mass diagrams, role positions and movement descriptions using one fixed sanctuary model."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "dictionary-coverage-and-identification"
@@ -27,7 +27,8 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "verified-integration"
   criterion = "Affected source consumers and focused regressions pass, actual illustrated renderings are inspected, provenance and limitations are recorded, and the changes are committed on the assigned workspace branch."
-  status = "open"
+  status = "pass"
+  evidence = ["PROJECT-WORK.md", "workflows/reviews/sanctuary-visual-expansion-2026-11-07/REVIEW.md", "release/browser-products.json", "release/public-alpha.json"]
 
 [[deliverables]]
 id = "sanctuary-dictionary-table-2026-11"
