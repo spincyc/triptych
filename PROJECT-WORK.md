@@ -11,7 +11,7 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: low-mass-fidelity-2026-11 -->
 
-**Source and page review complete; committed delivery is in progress.**
+**Complete: verified corrections committed and pushed to `origin/feature/altar-server`.**
 The earlier 44-page delivery did not supply enough actual movement states, and
 its actor-only close-ups omitted the altar shown in the wide views. Its visual
 acceptance for those criteria is withdrawn. Historical build and delivery
@@ -49,16 +49,47 @@ and source/print limitations belong to the
 [production manifest](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md).
 The [movement record](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/movement-continuity-2026-11-08.md)
 binds all 26 new assets and five direct dictionary reuses, including rejected
-iterations. Final committed native assembly, source inventories, release
-reconciliation and branch delivery remain in progress. No new live deployment
-is claimed.
+iterations. Source commit `16f63530e534ff8405175b979475cdb4ab9f7889` and
+release commit `00844a95cc38a0fefac4d68380ed9fa740ef1284` reached
+`origin/feature/altar-server`; the remote revision was checked after pushing.
+
+Final native assembly from the clean source commit passes all seven selections.
+The installed bundles match all 322 distinct source inputs, mounted files,
+render identities and selected images, with runtime and source-pack bytes
+verified separately. The source inventories are current; aggregate
+`make check-sources` passes. Inventory changes remain within this guide owner,
+and publication membership and classification review are unchanged.
+
+Two independent cold builds agree on all 27,705 files from the twelve changed
+browser families. The unchanged encyclicals proof is retained exactly. All
+thirteen families total 27,706 files and 227,728,581 bytes, with identity
+`fd2413a380559e6b21a21e39d9e7a93000a8809d09d8e52cf82ea114c07ad53f`.
+Only the document catalog changes bytes: four guide contribution/revision
+records. Scoped release reconciliation adds 29 paths, updates 19 bindings and
+preserves all 24,191 outside-scope bindings. Authorization, publication states
+and rights prose remain unchanged apart from the generated rights digest.
+
+All 21 web figures pass. The official site build and independent GitHub Pages
+artifact verifier pass with 43,755 files, 43,754 checksum rows and 650 native
+editions. The dictionary gallery remains byte-identical to its prior accepted
+site copy. The final publication manifest SHA-256 is
+`9eec59fdb4bf9ca72610fa03dc1e222b349f2136cc07c990472e7d5ea40a4700`;
+the checksum manifest is
+`de79ecf15c0a40502c2c91956a5dcf269a33a3e89778d0a226f56e5e9eb0539b`.
+The local combined release receipt has SHA-256
+`65ddb6ce0673783e91e5bc84824ac488179df8a066580a2cd58d415b4206dab8`.
+These are source assembly and artifact checks; PDF visual acceptance remains
+bound to the exact four screen proofs above. No live deployment was performed.
 
 ## Sanctuary dictionary and server-guide visual expansion — 7 November 2026
 
 <!-- promised-deliverable: sanctuary-visual-expansion-2026-11 -->
 
-**Dictionary expansion delivered; Mass visual continuity reopened.** The pictorial
-dictionary has expanded object coverage, identification, catalogue relationships
+**Complete: dictionary expansion and corrected Mass visuals delivered on `feature/altar-server`.**
+The figures and build receipts below describe the original dictionary expansion.
+Current Mass-guide acceptance is recorded in the movement entry above, which
+supersedes these earlier guide proofs. The pictorial dictionary has expanded
+object coverage, identification, catalogue relationships
 and table content. The Low Mass, Missa Cantata and Solemn Mass teaching diagrams
 now use consistent movement descriptions, role positions and sanctuary
 architecture. Canonical object and ceremonial records control

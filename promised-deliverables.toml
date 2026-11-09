@@ -4,7 +4,7 @@ schema_version = 1
 id = "low-mass-fidelity-2026-11"
 owner = "PROJECT-WORK.md"
 promise = "Correct Low Mass Gospel, cruet, ablution and Last Gospel actions and provide a fuller, faithful movement sequence whose close-ups agree with the fixed sanctuary scenes."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "ceremonial-corrections"
@@ -27,14 +27,14 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "integrated-delivery"
   criterion = "Affected source, native bundle and release checks pass, the delivery records agree, and the verified corrections are committed and pushed to the assigned workspace branch."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "release/browser-products.json", "release/public-alpha.json", "src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/movement-continuity-2026-11-08.md"]
 
 [[deliverables]]
 id = "sanctuary-visual-expansion-2026-11"
 owner = "PROJECT-WORK.md"
 promise = "Expand and improve pictorial dictionary identification, coverage and cataloguing, and provide more consistent altar-server Mass diagrams, role positions and movement descriptions using one fixed sanctuary model."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "dictionary-coverage-and-identification"
@@ -57,7 +57,7 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "verified-integration"
   criterion = "Affected source consumers and focused regressions pass, actual illustrated renderings are inspected, provenance and limitations are recorded, and the changes are committed on the assigned workspace branch."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "workflows/reviews/sanctuary-visual-expansion-2026-11-07/REVIEW.md", "release/browser-products.json", "release/public-alpha.json"]
 
 [[deliverables]]
