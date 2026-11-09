@@ -11,14 +11,14 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Plain-launch correction validated; main publication pending.** The maintainer
+**Plain launcher and published corpus verified.** The maintainer
 reproduced the failure with a plain `./tools/tpt lectern` invocation after the
 pinned-environment checks passed, and clarified that startup must be robust
 across different environments. Prior validation required activation and a cache
 export; it did not establish the ordinary launcher path. The follow-up makes
 Lectern select its documented project-local Python environment and cache,
 preserve explicit overrides, and isolate the reader from conflicting shell
-Python settings. Ordinary launch remains offline. Completion requires the exact
+Python settings. Ordinary launch remains offline. Acceptance includes the exact
 interactive command without activation or cache exports, environment regression
 checks, and coherent publication of the correction.
 
@@ -40,8 +40,17 @@ Origen reading modal with Python-Markdown 3.10.3 and Pandoc 3.11. An explicit
 alternate cache also renders Day. Independent review reproduces dependency-free
 help and a broken-environment refusal without a loop. Package consistency and
 the tool registry checks pass. All changed runtime paths are outside the browser
-product and publication input closures, so the existing live corpus acceptance
-below remains applicable; main publication of the terminal correction is pending.
+product and publication input closures. The freshly computed product identity
+remains `929ec3200c858d939c8ce8917833df53a311ba8216fc421b89187baff6ab0d03`,
+so the existing live corpus acceptance below remains applicable.
+The terminal correction `fab29afbb0f27eafe226af860ecb0e3bd0c287e8` is pushed to
+main and the workspace branch by fast-forward; its
+[repository hygiene check](https://github.com/spincyc/triptych/actions/runs/42539698577)
+passes. The automatic
+[Pages run](https://github.com/spincyc/triptych/actions/runs/42539698545)
+is rebuilding unchanged website inputs; its result is pending. The terminal
+delivery is verified by the actual launches and focused checks above, and the
+published artifact retains the completed deployment and live proof below.
 
 The maintainer requested reliable Lectern startup,
 English translations of already known Catena Omnia works, and bounded

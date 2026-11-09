@@ -4,12 +4,12 @@ schema_version = 1
 id = "catena-english-linkage-lectern-2026-11-08"
 owner = "guidance/catena.md"
 promise = "Repair Lectern startup with missing generated browser data, recover available English editions of already known Catena works, and improve verse-specific excerpt linkage within held source documents."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "plain-command-runtime"
   criterion = "The plain Lectern command selects the documented project-local Python environment and workspace cache without activation or manual exports, isolates conflicting shell Python settings, preserves explicit cache overrides and offline startup, and passes focused regressions plus actual interactive launch before coherent publication."
-  status = "open"
+  status = "pass"
   evidence = ["tools/lectern", "scripts/lectern/README.md", "tools/tests/test_lectern_runtime.py", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
