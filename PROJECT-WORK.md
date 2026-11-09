@@ -11,7 +11,39 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Live and verified.** The maintainer requested reliable Lectern startup,
+**Plain-launch correction validated; main publication pending.** The maintainer
+reproduced the failure with a plain `./tools/tpt lectern` invocation after the
+pinned-environment checks passed, and clarified that startup must be robust
+across different environments. Prior validation required activation and a cache
+export; it did not establish the ordinary launcher path. The follow-up makes
+Lectern select its documented project-local Python environment and cache,
+preserve explicit overrides, and isolate the reader from conflicting shell
+Python settings. Ordinary launch remains offline. Completion requires the exact
+interactive command without activation or cache exports, environment regression
+checks, and coherent publication of the correction.
+
+The correction selects `.scratch/lectern-venv` in isolated Python mode after
+argument validation, uses the repository's `.scratch/browser-data` by default,
+and finds an installed local converter automatically. Explicit cache and
+converter settings are preserved. A consumed re-execution marker prevents loops;
+Python home/import-path settings are removed from producer children. Setup stays
+explicit and local, and help remains available even with a broken environment.
+The documented environment is provisioned with the existing three pinned
+dependencies; no requirement, product descriptor or release binding changes.
+
+All 26 focused runtime, preparation and metadata tests pass, including real
+process re-execution from another working directory and preservation of Unicode
+arguments. The exact plain interactive command opens Day without activation or
+cache exports and exits cleanly. A second real launch from another directory,
+under a foreign virtual environment and conflicting Python settings, opens the
+Origen reading modal with Python-Markdown 3.10.3 and Pandoc 3.11. An explicit
+alternate cache also renders Day. Independent review reproduces dependency-free
+help and a broken-environment refusal without a loop. Package consistency and
+the tool registry checks pass. All changed runtime paths are outside the browser
+product and publication input closures, so the existing live corpus acceptance
+below remains applicable; main publication of the terminal correction is pending.
+
+The maintainer requested reliable Lectern startup,
 English translations of already known Catena Omnia works, and bounded
 verse-specific excerpts within larger held commentary. Consistent commits and
 coherent publication to main were explicitly authorized. The implementation

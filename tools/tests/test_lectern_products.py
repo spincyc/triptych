@@ -70,7 +70,7 @@ class LecternPreparationTests(unittest.TestCase):
                 self.assertIn("Preparation also requires the pinned renderer:", message)
                 self.assertIn("expected 3.10.3, found 3.11.3" if installed else "Python Markdown is required", message)
                 self.assertIn("isolated environment", message)
-                self.assertIn("python3 -m pip install -r requirements-tui.txt", message)
+                self.assertIn(".scratch/lectern-venv/bin/python -m pip install -r requirements-tui.txt", message)
         self.assertEqual(self.fixture.generated, [])
 
     def test_warm_reader_does_not_check_converter_dependency(self):
@@ -156,7 +156,7 @@ class LecternStartupTests(unittest.TestCase):
         build.assert_not_called()
         self.assertEqual(out.getvalue(), "")
         self.assertIn("expected 3.10.3, found 3.11.3", err.getvalue())
-        self.assertIn("python3 -m pip install -r requirements-tui.txt", err.getvalue())
+        self.assertIn(".scratch/lectern-venv/bin/python -m pip install -r requirements-tui.txt", err.getvalue())
         self.assertNotIn("Traceback", err.getvalue())
         self.assertLess(len(err.getvalue()), 1000)
 

@@ -9,9 +9,21 @@ Both `open` and `snapshot` prepare the current products through the same owner
 as `tools/browser-products build`, before starting the reader. A first run can
 take several minutes: exact cache misses rebuild offline from canonical inputs
 and must match the committed descriptor. Warm entries are verified and reused.
-The cache follows `TRIPTYCH_BROWSER_DATA_ROOT` (set `.scratch/browser-data` in a
-workspace), or defaults to `build/browser-data`. Preparation progress goes to
+The CLI defaults to the repository's `.scratch/browser-data`; an explicit
+`TRIPTYCH_BROWSER_DATA_ROOT` takes precedence, including from another working
+directory. Preparation progress goes to
 stderr so snapshot stdout remains the requested drawing.
+
+Install the pinned dependencies once with `python3 -m venv
+.scratch/lectern-venv` and `.scratch/lectern-venv/bin/python -m pip install -r
+requirements-tui.txt`. The ordinary command automatically selects that environment
+in isolated Python mode and puts its executables on the child-process PATH.
+Conflicting Python import-path and home settings are removed for those children.
+An installed converter under `.scratch/web-edition-toolchain` is also found
+automatically; `--help` documents its explicit installation. No shell activation
+or cache/PATH exports are needed. Without a local environment the current Python
+is used; a broken local environment is refused, with setup help still available.
+Ordinary startup never installs packages or downloads tools.
 
 The bridge holds a private verified snapshot for its entire Node process
 lifetime. Stale descriptors, corrupt or unsafe entries, and mismatching rebuilds

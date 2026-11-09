@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import os
 import re
 import sys
 from pathlib import Path
@@ -44,21 +45,23 @@ from _tooling import (  # noqa: E402
 from lectern import SURFACES  # noqa: E402
 from lectern.repo import Refused as ReaderRefused  # noqa: E402
 THEMES = ("triptych", "triptych-vellum", "triptych-compline")
-DEPENDENCY = ("install the reader's Python dependencies with python3 -m pip install -r requirements-tui.txt "
-              "in your virtual environment; ./tools/tpt lectern --help includes first-run setup")
+DEPENDENCY = ("prepare .scratch/lectern-venv with the pinned requirements-tui.txt dependencies; "
+              "./tools/lectern --help includes first-run setup")
 SETUP = """First-run setup (from the repository root):
   Use Python 3.11+, Node and Git, with full clone history.
   On Arch, Node and Git are supplied by: sudo pacman -S nodejs git
   python3 -m venv .scratch/lectern-venv
-  . .scratch/lectern-venv/bin/activate
-  python3 -m pip install -r requirements-tui.txt
+  .scratch/lectern-venv/bin/python -m pip install -r requirements-tui.txt
   python3 scripts/_install_web_edition_pandoc.py --fetch --bin-dir .scratch/web-edition-toolchain
-  export PATH="$PWD/.scratch/web-edition-toolchain:$PATH"
-  export TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data
+  ./tools/lectern
 
 The installer fetches the exact locked Pandoc for Linux x86-64; run it once
-into an empty destination. Later shells need the same environment and PATH.
-Lectern itself prepares missing products offline; it never installs tools.
+into an empty destination if your installed Pandoc differs from the lock.
+Lectern automatically uses .scratch/lectern-venv and the local converter when
+present, without activation or PATH exports. Its default cache is the repository's
+.scratch/browser-data; an explicit TRIPTYCH_BROWSER_DATA_ROOT takes precedence.
+An absent local environment uses the current Python. A broken local environment
+is refused. Lectern prepares missing products offline; it never installs tools.
 """
 
 EXAMPLES = {
@@ -157,6 +160,44 @@ def _intent(arguments: argparse.Namespace) -> dict[str, str]:
     return found
 
 
+def _prepare_runtime() -> None:
+    """Select the installed checkout runtime without depending on shell activation."""
+    environment = ROOT / ".scratch/lectern-venv"
+    python = environment / "bin/python"
+    marker = "TRIPTYCH_LECTERN_RUNTIME"
+    os.environ.setdefault("TRIPTYCH_BROWSER_DATA_ROOT", str(ROOT / ".scratch/browser-data"))
+    converter = ROOT / ".scratch/web-edition-toolchain"
+    paths = [str(converter)] if (converter / "pandoc").is_file() else []
+    installed = os.path.lexists(environment)
+    if installed:
+        if not python.is_file() or not os.access(python, os.X_OK):
+            raise ReaderRefused("the local .scratch/lectern-venv Python is unavailable; "
+                                "recreate it using ./tools/lectern --help")
+        paths.insert(0, str(python.parent))
+    if paths:
+        inherited = os.environ.get("PATH", os.defpath).split(os.pathsep)
+        os.environ["PATH"] = os.pathsep.join(paths + [part for part in inherited if part not in paths])
+    if not installed:
+        return
+    selected = Path(sys.prefix).resolve() == environment.resolve() and sys.flags.isolated
+    if os.environ.pop(marker, None) == str(environment) and not selected:
+        raise ReaderRefused("the local .scratch/lectern-venv did not select its isolated Python; "
+                            "recreate it using ./tools/lectern --help")
+    # sys.executable can be a symlink to the host binary even inside a venv.
+    # Isolate children too: product producers launch this interpreter separately.
+    for name in ("PYTHONHOME", "PYTHONPATH", "PYTHONUSERBASE", "PYTHONINSPECT"):
+        os.environ.pop(name, None)
+    os.environ.update({"VIRTUAL_ENV": str(environment),
+                       "PYTHONNOUSERSITE": "1", "PYTHONDONTWRITEBYTECODE": "1"})
+    if not selected:
+        try:
+            child_environment = dict(os.environ, **{marker: str(environment)})
+            os.execve(str(python), [str(python), "-I", "-B", str(ROOT / "tools/lectern"), *sys.argv[1:]],
+                      child_environment)
+        except OSError as error:
+            raise ReaderRefused(f"the local .scratch/lectern-venv Python could not start: {error}") from error
+
+
 def _prepare_products() -> None:
     """Prepare exact misses before the UI or snapshot's settling clock starts."""
     from _browser_products import ProductError, build, check
@@ -174,8 +215,10 @@ def _prepare_products() -> None:
                 raise ReaderRefused(
                     f"published browser data could not be prepared: {cache_error}. "
                     f"Preparation also requires the pinned renderer: {error}. "
-                    "In an isolated environment, run `python3 -m pip install -r requirements-tui.txt` "
-                    "and launch Lectern there; `./tools/tpt lectern --help` has setup commands."
+                    "Prepare the isolated environment with `python3 -m venv .scratch/lectern-venv` "
+                    "and `.scratch/lectern-venv/bin/python -m pip install -r requirements-tui.txt`; "
+                    "then run `./tools/lectern` without activation. "
+                    "`./tools/lectern --help` has setup commands."
                 ) from error
             # Warm readers can coexist under the store's shared lock. Only a
             # failed check needs the exclusive builder; it independently refuses
@@ -262,9 +305,18 @@ def main(argv: list[str] | None = None) -> int:
         sys.stdout.write(str(payload))
         return 0
 
+    def runtime(action):
+        def run(arguments):
+            # Argument errors and help stay dependency-free, even if the local
+            # environment is broken. Imported main([...]) stays in its caller.
+            if argv is None:
+                _prepare_runtime()
+            return action(arguments)
+        return run
+
     return run_verb_cli(
         parser=parser,
-        handlers={"open": open_reader, "snapshot": snapshot},
+        handlers={"open": runtime(open_reader), "snapshot": runtime(snapshot)},
         renderer=render,
         prefix="lectern",
         argv=argv,
