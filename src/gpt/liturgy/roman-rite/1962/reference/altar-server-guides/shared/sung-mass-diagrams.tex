@@ -17,7 +17,7 @@
   \ASGPriest{50}{11.3}{P}
   \ASGKneelingServer{31}{11.3}{A2}
   \ASGKneelingServer{69}{11.3}{A1}
-  \ASGStation{80}{7}{MC: FOOT}
+  \ASGStation{77}{3}{MC: FOOT}
   \ASGStation{20}{39}{T1--T4: BASE}
   \ASGStation{83}{40}{TH + BB:\\SAFE STATION}}
 \newcommand{\MCGospelPositions}{%
@@ -59,8 +59,8 @@
 \newcommand{\MCAblutionPositions}{%
   \ASGMissalGospel
   \ASGPriestFacingRight{68}{26.5}{P}
-  \ASGServerFacingLeft{77}{22.5}{A1}
-  \ASGServerFacingLeft[4]{83}{22.5}{A2}
+  \ASGServerFacingLeft{77.2}{23.4}{A1}
+  \ASGServerFacingLeft[4]{81.8}{22.3}{A2}
   \ASGStation{49}{5}{WINE FIRST; WATER WAITS}
   \ASGPairPlan{A1}{A2}}
 \newcommand{\MCBookReturnPositions}{%
@@ -92,19 +92,15 @@
   \ASGStation{74}{20}{SD}
   \ASGServerFacingLeft{85}{18.3}{A1}
   \ASGStation{84}{5}{A2: VEIL}
-  \ASGStation{55}{8}{MC: HUMERAL VEIL, THEN CLEAR}
+  \ASGStation{55}{8}{MC: HUMERAL VEIL,\\THEN CLEAR}
   \draw[asg route] (94,16) -- (83,21) -- (71,25);}
 \newcommand{\SolemnAblutionPositions}{%
-  \ASGPriestFacingRight{63}{26.5}{C}
-  \ASGStation{73}{39}{SD:\\POURS}
-  \ASGServerFacingLeft{82}{22.5}{A1}
-  \ASGStation{84}{5}{A2: VEIL}
-  \ASGStation{38}{43}{GOSPEL-SIDE\\VEIL PLACE}
-  \ASGStation{49}{5}{A1 SUPPLIES BOTH CRUETS}}
+  \SolemnFirstWineLayer
+  \SolemnAblutionStations}
 \newcommand{\SungDeparturePositions}{%
   \ASGStation{50}{13}{FINAL REVERENCE LINE}
   \ASGStation{50}{38}{ALTAR CLEAR OF SERVER OBJECTS}
-  \ASGStation{77}{4}{TAKE ONLY\\EXIT OBJECTS}
+  \ASGStation{72}{4}{TAKE ONLY\\EXIT OBJECTS}
   \draw[asg route] (50,10) -- (50,2) -- (12,2);
   \ASGStation{22}{8}{SINGLE FILE}}
 
@@ -204,7 +200,7 @@
 \newcommand{\SolemnGospelStationDiagram}{%
   \par\noindent\begin{minipage}{\linewidth}
   \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (scene) {\includegraphics[width=.62\linewidth]{%
+    \node[inner sep=0pt] (scene) {\includegraphics[width=.619\linewidth]{%
       liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-010-so-gospel-station-2026.png}};
     \SungAboveTag{scene}{.22}{A1}
     \SungAboveTag{scene}{.40}{SD}
@@ -248,64 +244,97 @@
   \parbox{.90\linewidth}{\small \textbf{Two separate handoff moments.} Before the entrance, the adult gives a lighted candle to each acolyte. After the sacred ministers uncover at the sanctuary, MC receives their birettas one at a time with both hands and places each at its marked sedilia place. Here SD hands his to MC while C and D retain theirs. This is a handoff study; rehearse procession order, arrival reverence, and distances at the actual church.}
   \end{center}}
 
-\newcommand{\MCFirstAblutionDiagram}{%
-  \begin{center}
-  \begin{tikzpicture}
-    \node[inner sep=0pt] (scene)
-      {\includegraphics[width=.66\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-017-lm-mc-first-ablution-wine-v2-alpha.png}};
-    \SungRoleTag{scene}{.18}{1mm}{A1: WINE}
-    \SungRoleTag{scene}{.50}{40mm}{P}
-    \SungRoleTag{scene}{.82}{1mm}{A2: WATER WAITS}
-  \end{tikzpicture}
+% The action layer owns people and held articles only. Its measured shoe
+% contacts meet the same treads as the position view; the altar is always032.
+% MC keeps a fixed depth pair: A1 farther, A2 nearer, each with one cruet.
+\newcommand{\MCFirstWineLayer}{%
+  \node[anchor=south west,inner sep=0pt] at (63.226,21.869)
+    {\includegraphics[height=33.4186\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-072-mc-first-wine-no-altar-v1.png}};}
+\newcommand{\MCFingerWineLayer}{%
+  \node[anchor=south west,inner sep=0pt] at (63.226,21.726)
+    {\includegraphics[height=33.4186\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-073-mc-finger-wine-no-altar-v1.png}};}
+\newcommand{\MCFingerWaterLayer}{%
+  \node[anchor=south west,inner sep=0pt] at (63.226,21.726)
+    {\includegraphics[height=33.4186\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-074-mc-finger-water-no-altar-v1.png}};}
+\newcommand{\MCAblutionStations}{%
+  \ASGMissalGospel
+  \ASGStation{66}{24}{P}
+  \ASGStation{77}{20}{A1}
+  \ASGStation{86}{17}{A2}
+  \ASGStation{49}{5}{A1: WINE\quad A2: WATER}}
 
-  \parbox{.82\linewidth}{\small\textbf{First ablution (MC-048; MODEL).}
-  A1 pours wine into the priest-held chalice. A2 waits with water at the
-  locally marked handoff point.}
-  \end{center}}
+% SD remains beside C on the predella through the ablutions (Fortescue /
+% O'Connell1943, XI.8, pp.101--102). A1 supplies both cruets from the LOCAL
+% lower handoff and waits empty-handed; the Low-Mass acolyte level is not
+% used for SD. Scale places the finger-ablution chalice foot on the master
+% altar top. The two adult actors have the same scale in all three moments.
+\newcommand{\SolemnFirstWineLayer}{%
+  \node[anchor=south west,inner sep=0pt] at (58.758,25.163)
+    {\includegraphics[height=30.688\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-069-so-first-wine-no-altar-v1.png}};}
+\newcommand{\SolemnFingerWineLayer}{%
+  \node[anchor=south west,inner sep=0pt] at (58.725,25.163)
+    {\includegraphics[height=30.688\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-070-so-finger-wine-no-altar-v1.png}};}
+\newcommand{\SolemnFingerWaterLayer}{%
+  \node[anchor=south west,inner sep=0pt] at (58.682,25.185)
+    {\includegraphics[height=30.688\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-071-so-finger-water-no-altar-v1.png}};}
+\newcommand{\SolemnAblutionStations}{%
+  \ASGServerFacingLeft{85}{22.5}{A1}
+  \ASGStation{62}{24}{C}
+  \ASGStation{75}{24}{SD}
+  \ASGStation{84}{5}{A2: VEIL}
+  \ASGStation{35}{43}{GOSPEL-SIDE\\VEIL PLACE}
+  \ASGStation{49}{5}{A1: BOTH CRUETS\\SUPPLY / RECEIVE}}
+
+% Each close view is a viewport of the complete saved scene immediately
+% beside it. It cannot substitute a different altar or change the roster.
+\newcommand{\SungAblutionFrame}[7]{%
+  \par\medskip\Needspace{7.5cm}
+  \noindent\begin{minipage}{\linewidth}
+  \textbf{#1}\par\smallskip
+  \ASGSaveScene{.49\linewidth}{\ASGSungCandles #2}%
+  \noindent\begin{minipage}[t]{.49\linewidth}\vspace{0pt}
+    \ASGShowSavedScene
+  \end{minipage}\hfill
+  \begin{minipage}[t]{.48\linewidth}\vspace{0pt}
+    \ASGSceneViewport{#3}{#4}{#5}{#6}{\linewidth}
+  \end{minipage}
+  \par\smallskip{\small #7\par}
+  \end{minipage}\par\medskip}
+
+\newcommand{\MCFirstAblutionDiagram}{%
+  \SungAblutionFrame{1. First wine (MC-048; MODEL)}
+    {\MCFirstWineLayer\MCAblutionStations}{65}{34}{88}{55}
+    {A1 pours wine directly into the priest-held chalice. A2 waits with
+     water. The acolytes keep their locally marked places: A1 farther
+     from the viewer, A2 nearer.}}
 
 \newcommand{\MCFingerAblutionDiagram}{%
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (scene) {\includegraphics[width=.90\linewidth]{%
-      liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-018-mc-finger-ablutions-2026.png}};
-    \SungAboveTag{scene}{.23}{P}
-    \SungAboveTag{scene}{.75}{P}
-    \SungBelowTag{scene}{.08}{A1: WINE}
-    \SungBelowTag{scene}{.40}{A2: WAITS}
-    \SungBelowTag{scene}{.59}{A1: DONE}
-    \SungBelowTag{scene}{.92}{A2: WATER}
-  \end{tikzpicture}
-
-  \parbox{.90\linewidth}{\small \textbf{Finger ablution (MC-049; MODEL), two successive moments.} Left: A1 pours wine over the priest\textquotesingle s thumbs and index fingers into the chalice while A2 waits. Right: A1 has stopped; A2 then pours water over the same fingertips. Mark standing places and pouring signals locally.}
-  \end{center}}
+  \SungAblutionFrame{2. Wine over the fingers (MC-049; MODEL)}
+    {\MCFingerWineLayer\MCAblutionStations}{65}{34}{88}{55}
+    {A1 pours wine over the priest's thumbs and index fingers into the
+     chalice, whose base rests on the altar. A2 keeps his water cruet upright.}
+  \SungAblutionFrame{3. Then water (MC-049; MODEL)}
+    {\MCFingerWaterLayer\MCAblutionStations}{65}{34}{88}{55}
+    {A1 has stopped and holds his wine cruet. A2 now pours water over the
+     same fingertips into the same chalice. Only the serving arms change;
+     the acolytes keep their places.}}
 
 \newcommand{\MCAblutionsDiagram}{%
   \MCFirstAblutionDiagram
   \MCFingerAblutionDiagram}
 
 \newcommand{\SolemnAblutionsDiagram}{%
-  \par\noindent\begin{minipage}{\linewidth}
-  \begin{center}\begin{tikzpicture}
-    \node[inner sep=0pt] (scene)
-      {\includegraphics[width=.96\linewidth]{%
-        liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-030-so-subdeacon-ablutions-2026.png}};
-    \SungAboveTag{scene}{.167}{FIRST WINE}
-    \SungAboveTag{scene}{.50}{FINGER ABLUTION: WINE}
-    \SungAboveTag{scene}{.833}{THEN WATER}
-    \SungBelowTag{scene}{.05}{A1}
-    \SungBelowTag{scene}{.17}{C}
-    \SungBelowTag{scene}{.28}{SD}
-    \SungBelowTag{scene}{.38}{A1}
-    \SungBelowTag{scene}{.50}{C}
-    \SungBelowTag{scene}{.61}{SD}
-    \SungBelowTag{scene}{.71}{A1}
-    \SungBelowTag{scene}{.84}{C}
-    \SungBelowTag{scene}{.94}{SD}
-  \end{tikzpicture}
-
-  \parbox{.96\linewidth}{\small\textbf{Three successive Solemn-Mass moments
-  (SO-057--058; MODEL), hand-action close-ups.} A1 supplies and receives both
-  cruets at the LOCAL handoff point. The subdeacon pours the first wine directly
-  into the priest-held chalice. He then pours wine, followed by water, over the
-  celebrant's thumbs and index fingers into the chalice.}
-  \end{center}\end{minipage}\par}
+  \SungAblutionFrame{1. SD pours the first wine (SO-057--058; MODEL)}
+    {\SolemnFirstWineLayer\SolemnAblutionStations}{59}{37}{81}{55}
+    {A1 has supplied both cruets to SD at the LOCAL Epistle-side handoff.
+     SD pours wine into the celebrant-held chalice and retains the water
+     cruet. C and SD remain together on the predella; A1 waits below.}
+  \SungAblutionFrame{2. SD pours wine over the fingers (SO-058; MODEL)}
+    {\SolemnFingerWineLayer\SolemnAblutionStations}{59}{37}{81}{55}
+    {SD pours wine over the celebrant's thumbs and index fingers into
+     the chalice resting on the altar. A1 waits to receive the cruets;
+     he does not handle the chalice.}
+  \SungAblutionFrame{3. SD then pours water (SO-058; MODEL)}
+    {\SolemnFingerWaterLayer\SolemnAblutionStations}{59}{37}{81}{55}
+    {SD pours water over the same fingertips into the same chalice.
+     Afterward he returns both cruets to A1 at the LOCAL handoff.}}

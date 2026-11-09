@@ -442,15 +442,28 @@ paths or labels may not obscure an actor, object, level, or destination.
 When one action contains materially different moments, use numbered
 before/after or state-change frames rather than one composite pose. A route
 frame names its cue, moving actor, carried object, stopping point, and finish
-state. Do not add a figure merely to show both ends of one actor's movement.
+state. Show the intermediate states that make the movement recoverable:
+descent or ascent with the object, an altar-facing centre stop, a change of
+equipment, a give-way and pass, and the placement before the empty-handed
+return, wherever the particular journey requires them. An arrow between two
+stationary endpoints does not supply these states. Each actor appears once
+per frame; posture, facing and the visible carried object agree with that
+moment. Do not multiply indistinguishable poses to meet an image count.
 
 Use one shared architectural backdrop and coordinate system across the three
 forms. Keep the altar, steps, tabernacle, crucifix and credence in fixed
 positions; change only the people, movable objects and form-specific
 appointments required by the action. Reusable figure layers distinguish
 posture and facing. A neutral figure used only to locate an actor is identified
-as a position view, with a separate close view for a materially different hand
-action. Crop close views so they cannot introduce a conflicting sanctuary.
+as a position view. An altar-action close-up is a magnified viewport of the
+complete composed action scene, including its background and appointments,
+not a crop of an isolated actor layer or a separately generated sanctuary.
+The wide action and close-up have identical people, hands, objects, facing,
+occlusion and altar geometry. Actor layers contain no replacement altar,
+cloth strip, steps or furniture. Check feet against the intended tread and
+vessel bases against their actual support in the composed scene. A genuinely
+isolated object/contact study, such as the point touched by a cruet kiss, is
+identified as such and does not substitute for the corresponding full action.
 Each movement explanation uses the same cue, actor/object, route, finish and
 waiting fields. This implements the maintainer's 7 November 2026 request for
 expanded diagrams and consistent settings, positions and movements.

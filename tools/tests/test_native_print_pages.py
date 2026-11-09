@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import re
 import sys
+import tempfile
 import tomllib
 import unittest
 
@@ -138,7 +139,16 @@ class ArtworkSelectionTests(unittest.TestCase):
 
     def test_server_guides_select_pencil_plates_through_active_diagrams_and_cards_none(self):
         owner = "src/gpt/" + artwork.SERVER + "/"
-        pencil = re.compile(re.escape(owner) + r"shared/artwork/pencil/[A-Za-z0-9._-]+\.png")
+        dictionary = "src/gpt/" + artwork.DICTIONARY + "/shared/artwork/pencil/"
+        pencil = re.compile("(?:" + re.escape(owner + "shared/artwork/pencil/") + "|"
+                            + re.escape(dictionary) + r")[A-Za-z0-9._/-]+\.png")
+        reused = {dictionary + value for value in (
+            "books/RPD-FIG-books-0001-in-use-missal-on-stand-v3-alpha.png",
+            "RPD-FIG-service-objects-0103-paired-cruets-v2-alpha.png",
+            "RPD-FIG-service-objects-0106-lavabo-basin-manuterge-v2-alpha.png",
+            "RPD-FIG-sacred-vessels-0007-iso-communion-plate.png",
+            "compositions/RPD-FIG-prepared-chalice-0001-formation-alpha.png")}
+        low_movement_ids = set(range(53, 69)) | {75, 76, 77, 78}
         for leaf in ("01-low-mass", "01-low-mass-trainer-manual", "02-missa-cantata", "03-solemn-mass"):
             with self.subTest(leaf=leaf):
                 selected, inputs = artwork.server_artwork(ROOT, "gpt", artwork.SERVER + "/" + leaf)
@@ -150,8 +160,23 @@ class ArtworkSelectionTests(unittest.TestCase):
                 self.assertIn(owner + "shared/" + ("low" if low else "sung") + "-mass-diagrams.tex", inputs)
                 self.assertNotIn(owner + "shared/" + ("sung" if low else "low") + "-mass-diagrams.tex", inputs)
                 self.assertIn(owner + "shared/artwork/pencil/ASG-ART-032-sanctuary-master.png", selected)
-                if not low:
+                ids = {int(match[1]) for path in selected
+                       if (match := re.search(r"/ASG-ART-(\d+)-", path))}
+                if low:
+                    self.assertEqual({path for path in selected if path.startswith(dictionary)}, reused)
+                    self.assertTrue(low_movement_ids <= ids, "every movement and resting-object sprite is needed")
+                    self.assertFalse({26, 42, 44, 45, 49} & ids, "superseded action plates must stay out")
+                    for name in ("low-mass-movement.tex", "low-mass-objects.tex"):
+                        self.assertIn(owner + "shared/" + name, inputs)
+                else:
                     self.assertIn(owner + "shared/sung-movement-atlas.tex", inputs)
+                    self.assertFalse(low_movement_ids & ids)
+                    self.assertFalse(selected & reused)
+                    expected_ablutions = {72, 73, 74} if leaf == "02-missa-cantata" else {69, 70, 71}
+                    self.assertTrue(expected_ablutions <= ids)
+                    self.assertFalse({17, 18, 30} & ids, "superseded sung ablution tableaux must stay out")
+                    for name in ("low-mass-movement.tex", "low-mass-objects.tex"):
+                        self.assertNotIn(owner + "shared/" + name, inputs)
         for leaf in ("01-low-mass-flash-cards", "02-missa-cantata-cue-cards", "03-solemn-mass-cue-cards"):
             with self.subTest(leaf=leaf):
                 self.assertEqual(artwork.server_artwork(ROOT, "gpt", artwork.SERVER + "/" + leaf),
@@ -159,6 +184,57 @@ class ArtworkSelectionTests(unittest.TestCase):
         every = set((ROOT / "src/gpt" / artwork.SERVER / "shared/artwork/pencil").glob("*.png"))
         sung, _ = artwork.server_artwork(ROOT, "gpt", artwork.SERVER + "/02-missa-cantata")
         self.assertLess(len(sung), len(every))
+
+
+class ServerArtworkPathTests(unittest.TestCase):
+    def setUp(self):
+        scratch = ROOT / ".scratch/native-print-tests/artwork"
+        scratch.mkdir(parents=True, exist_ok=True)
+        self.temporary = tempfile.TemporaryDirectory(prefix="selector-tests-", dir=scratch)
+        self.addCleanup(self.temporary.cleanup)
+        self.root = Path(self.temporary.name).resolve()
+        self.server = artwork.SERVER + "/shared/artwork/pencil/"
+        self.dictionary = artwork.DICTIONARY + "/shared/artwork/pencil/"
+
+    def image(self, provider, relative):
+        path = self.root / "src" / provider / relative
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(b"fixture")
+        return path
+
+    def test_only_literal_graphics_select_images_from_the_same_provider(self):
+        for provider in ("gpt", "claude"):
+            with self.subTest(provider=provider):
+                paths = [self.image(provider, name) for name in
+                         (self.server + "server.png", self.dictionary + "books/missal.png",
+                          self.dictionary + "compositions/chalice.png")]
+                unrelated = self.image(provider, self.dictionary + "unused.png")
+                source = "\n".join(r"\includegraphics[width=2cm]{" + path.relative_to(
+                    self.root / "src" / provider).as_posix() + "}" for path in paths)
+                source += "\n% " + r"\includegraphics{" + self.dictionary + "unused.png}\n"
+                source += self.dictionary + "unused.png"  # A filename mention is not a graphics call.
+                selected = artwork._server_graphics(self.root, provider, source)
+                self.assertEqual(selected, {path.relative_to(self.root).as_posix() for path in paths})
+                self.assertNotIn(unrelated.relative_to(self.root).as_posix(), selected)
+
+    def test_graphics_paths_reject_escape_dynamic_missing_and_symlink_inputs(self):
+        target = self.image("gpt", self.server + "valid.png")
+        linked = target.with_name("linked.png")
+        linked.symlink_to(target)
+        directory_link = target.parent / "linked-directory"
+        directory_link.symlink_to(target.parent, target_is_directory=True)
+        cases = (
+            self.server + "../valid.png", self.server + "nested/../../valid.png",
+            self.server + "*.png", self.server + "#1.png", self.server + r"\ImageName.png",
+            self.server + r"\ImageName{valid}.png",
+            self.server + "valid.jpg", self.server + "missing.png",
+            self.server + "linked.png", self.server + "linked-directory/valid.png",
+            artwork.DICTIONARY + "/research/valid.png", "src/claude/" + self.server + "valid.png",
+            str(target),
+        )
+        for value in cases:
+            with self.subTest(value=value), self.assertRaises(artwork.ArtworkError):
+                artwork._server_graphics(self.root, "gpt", r"\includegraphics{" + value + "}")
 
 
 if __name__ == "__main__":

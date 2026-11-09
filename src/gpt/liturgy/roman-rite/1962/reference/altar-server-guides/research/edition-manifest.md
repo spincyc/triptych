@@ -13,6 +13,19 @@ ch. X §4 was checked as modern typeset text, not as an original-edition
 facsimile. The new [correction audit](source-audit.md#low-mass-correction-audit-2026-11-08)
 records the differences between these witnesses and the selected model.
 
+The subsequent movement/scene-continuity correction also freshly inspected
+Fortescue–J. B. O'Connell (1943), chapter XI §8, printed pp. 101–102
+(PDF pp. 122–123), for the subdeacon's continuous altar station and his
+distinct role in the Solemn Mass ablutions. This bounded check supplies no
+new Low Mass or Missa Cantata role assignment; see the corresponding
+[source-audit entry](source-audit.md#movement-and-scene-continuity-correction--2026-11-08).
+
+The same correction freshly inspected printed pp. 45–46 (PDF pp. 66–67)
+of that facsimile for the Offertory chalice: its initial right-side rest,
+left-hand support while the right receives the cruets, and central
+pall-covered rest before the Lavabo. This is a bounded visual-source check,
+not a claim to have collated the entire manual.
+
 | Witness | Edition and locator | Role in the guides | Access / collation state | Rights and reuse treatment |
 | --- | --- | --- | --- | --- |
 | *Missale Romanum* | *Missale Romanum ex decreto SS. Concilii Tridentini restitutum Summorum Pontificum cura recognitum*, editio typica (Typis Polyglottis Vaticanis, 1962); General Rubrics 269–273, 424–426, 471–473, 507–530; *Ritus servandus* II–XII, especially VII.2, VII.4, X.5, X.7, XI.1, and XII.6; *Ordo Missae*, printed pp. 216–328 | Controlling Latin, order, speakers, Low/sung/Solemn distinctions, omissions, ministerial cues, limits of incense, the celebrant's removal and later reuse of the chalice veil without an assigned lay-server resting-place route, the wine-cruet kiss without kissing the celebrant's hand, Communion-plate clearance, the celebrant's reassembly and retention of the chalice, and the unnamed minister's post-ablution book service | CMAA 1,088-page facsimile, <https://media.churchmusicassociation.org/pdf/missale62.pdf>; local audit object 82,815,941 bytes, SHA-256 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a; selected relevant images checked, with repository Ordinary audits used as a second internal control | Received liturgical and official text; not relicensed; only the response text needed for instruction is reproduced |

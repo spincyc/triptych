@@ -17,6 +17,8 @@ class LowMassModelTests(unittest.TestCase):
     def setUp(self) -> None:
         self.ceremony = (OWNER / "shared/low-mass-ceremony.tex").read_text()
         self.diagrams = (OWNER / "shared/low-mass-diagrams.tex").read_text()
+        self.movement = (OWNER / "shared/low-mass-movement.tex").read_text()
+        self.diagrams += self.movement
         self.inventory = (OWNER / "research/ceremonial-inventory.md").read_text()
 
     def macro(self, name: str) -> str:
@@ -37,17 +39,21 @@ class LowMassModelTests(unittest.TestCase):
         self.assertIn(r"\emph{In illo tempore}", self.ceremony)
         self.assertNotIn("same step level", self.ceremony)
         self.assertNotIn("Second G/Step2", self.inventory)
-        for name in ("LMSceneMissalMove", "LMSceneMissalCentre", "LMSceneGospel", "LMSceneGospelReturn"):
+        for name in ("LMMoveMissalLift", "LMMoveMissalDescent", "LMMoveMissalCentre",
+                     "LMMoveMissalAscent", "LMMoveMissalPlaced", "LMMoveMissalStepDown",
+                     "LMSceneGospel", "LMMoveGospelDescent", "LMMoveGospelCentre",
+                     "LMMoveGospelCross", "LMMoveGospelReturned"):
             body = self.macro(name)
             second = re.findall(r"\\ASGStandingServer\{[^}]+\}\{([^}]+)\}\{SECOND", body)
             self.assertEqual(second, ["11.3"], name + " must leave Second on the floor")
         self.assertIn(r"\ASGStandingServer{29}{22.5}{FIRST}", self.macro("LMSceneGospel"))
-        self.assertIn(r"\ASGServerFacingLeft{75}{11.3}{FIRST}", self.macro("LMSceneGospelReturn"))
+        self.assertIn(r"\LMMoveBookRear{50}{11.3}{FIRST}", self.macro("LMMoveMissalCentre"))
+        self.assertIn(r"\ASGServerFacingLeft{75}{11.3}{FIRST}", self.macro("LMMoveGospelReturned"))
         self.assertIn("First E/Base/Floor, Second unchanged", self.inventory)
 
     def test_offertory_formation_and_first_only_ablutions_are_explicit(self) -> None:
         self.assertIn("Side by side on Step 2", self.ceremony)
-        self.assertIn("First serves all three pours", self.ceremony)
+        self.assertIn("First serves all three pours", self.ceremony, "The First-only allocation must remain explicit")
         self.assertIn("base of the wine-cruet handle", self.ceremony)
         self.assertIn("turns the handle toward the priest", self.ceremony)
         self.assertIn("The priest has blessed the water", self.ceremony)
@@ -56,7 +62,7 @@ class LowMassModelTests(unittest.TestCase):
         self.assertEqual(sorted(stages, key=self.ceremony.index), list(stages))
         self.assertIn("C/Pred for wine purification → E/Step2 for finger ablution", self.inventory)
 
-    def test_action_views_and_enlargements_share_the_same_art(self) -> None:
+    def test_action_enlargements_reuse_the_complete_sanctuary(self) -> None:
         for scene, detail, art in (
             ("LMSceneWinePurification", "LMWinePurificationDetail", "LMWinePurificationArt"),
             ("LMSceneFingerWine", "LMFingerWineDetail", "LMFingerWineArt"),
@@ -66,8 +72,21 @@ class LowMassModelTests(unittest.TestCase):
             ("LMSceneChaliceElevation", "LMChaliceElevationDetail", "LMChaliceElevationArt"),
         ):
             self.assertIn("\\" + art, self.macro(scene))
-            self.assertIn("\\" + art, self.macro(detail))
+            self.assertIn(r"\LMSceneEnlargement", self.macro(detail))
+            self.assertNotIn("\\" + art, self.macro(detail))
+            self.assertNotIn(r"\includegraphics", self.macro(detail))
             self.assertEqual(len(re.findall(r"ASG-ART-[^}]+\.png", self.macro(art))), 1)
+        self.assertIn(r"\ASGSaveScene{\LMPositionWidth}{\ASGLowCandles #1}", self.macro("LMPositionScene"))
+        self.assertIn(r"\ASGShowSavedScene", self.macro("LMPositionScene"))
+        self.assertIn(r"\ASGSceneViewport", self.macro("LMSceneEnlargement"))
+        # A shared actor PNG alone did not preserve architecture. The viewport
+        # must reuse the same assembled box and may not load any image itself.
+        shared = (OWNER / "shared/sanctuary-scenes.tex").read_text()
+        viewport = shared.split(r"\newcommand{\ASGSceneViewport}", 1)[1].split(r"\newcommand", 1)[0]
+        self.assertIn(r"\ASGShowSavedScene", viewport)
+        self.assertNotIn(r"\includegraphics", viewport)
+        self.assertIn("058-finger-ablution-wine-no-altar", self.macro("LMFingerWineArt"))
+        self.assertIn("059-finger-ablution-water-no-altar", self.macro("LMFingerWaterArt"))
 
     def test_last_gospel_and_exit_depict_actual_facing_and_object(self) -> None:
         self.assertIn(r"\LMPriestFacingLeft", self.macro("LMSceneLastGospel"))
@@ -76,17 +95,20 @@ class LowMassModelTests(unittest.TestCase):
         self.assertNotIn("First pours wine;\\nSecond pours water", self.ceremony)
 
     def test_coordinated_veil_and_book_exchange_has_no_cover_wait(self) -> None:
-        self.assertIn("First takes the folded chalice veil", self.ceremony)
-        self.assertIn("Second takes the Missal and stand", self.ceremony)
-        self.assertIn("switch back to their normal", self.ceremony)
-        self.assertIn("not an invented universal", self.ceremony)
+        self.assertIn("First takes the folded veil", self.ceremony, "First retains the veil assignment")
+        self.assertIn("Second takes the Missal and stand", self.ceremony, "Second retains the book assignment")
+        ordered = ("LMMoveExchangeTaken", "LMMoveExchangeYield", "LMMoveExchangeClear",
+                   "LMMoveExchangeBookPlaced", "LMMoveExchangeVeilPlaced",
+                   "LMMoveExchangeEmptyDescent", "LMMoveExchangeCentre", "LMMoveExchangeReturn")
+        self.assertEqual(sorted(ordered, key=self.ceremony.index), list(ordered))
+        self.assertNotRegex(self.ceremony, r"[Ww]ait until the (?:priest has )?(?:covered the chalice|chalice is covered)")
 
     def test_corrected_low_mass_plates_replace_superseded_assets(self) -> None:
         shared_scene = (OWNER / "shared/sanctuary-scenes.tex").read_text()
         self.assertIn("shared/sanctuary-scenes}", self.diagrams)
         self.assertIn("ASG-ART-032-sanctuary-master.png", shared_scene)
-        self.assertIn(r"\ASGBeginScene{\LMPositionWidth}", self.diagrams)
-        for moment in ("MissalCentre", "GospelReturn", "WinePresentation", "WaterPresentation", "WinePurification", "FingerWine", "FingerWater", "ElevationReturn", "BookReturnComplete", "Recess"):
+        self.assertIn(r"\ASGSaveScene{\LMPositionWidth}", self.diagrams)
+        for moment in ("WinePresentation", "WaterPresentation", "WinePurification", "FingerWine", "FingerWater", "ElevationReturn", "BookReturnComplete", "Recess"):
             self.assertIn(r"\newcommand{\LMScene" + moment + "}", self.diagrams)
             self.assertIn(r"\LMScene" + moment, self.ceremony)
         for asset in (

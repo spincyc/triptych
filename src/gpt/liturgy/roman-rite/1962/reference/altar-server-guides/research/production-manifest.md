@@ -4,19 +4,94 @@ Latest source revision: 2026-11-08. The seven current source editions retain
 their shared owners and source-first, on-demand native printing. Generated
 PDFs are review artifacts, not tracked or installed publication inputs.
 
-This revision corrects the Low Mass Gospel stations and departure cue,
-Offertory handoff, distinct purification and finger-ablution moments,
-Last-Gospel facing and procession figures. It retains the shared sanctuary
-architecture and expands the action/route sequence. New identities and review
-bounds are in [`low-mass-fidelity-2026-11-08.md`](low-mass-fidelity-2026-11-08.md).
-The preceding architectural revision remains recorded in
-[`scene-revision-2026-11-07.md`](scene-revision-2026-11-07.md). Source loci
-and conflicting manual allocations remain in `source-audit.md` and
-`ceremonial-inventory.md`.
+This revision adds successive carried-object movement frames and replaces
+actor-only close-ups with literal enlargements of the complete sanctuary.
+Low Mass, Missa Cantata and Solemn Mass retain one architectural master and
+their distinct roles. New asset identities, rejected iterations and direct
+dictionary reuses are recorded in
+[`movement-continuity-2026-11-08.md`](movement-continuity-2026-11-08.md).
+Source loci and conflicting manual allocations remain in `source-audit.md`
+and `ceremonial-inventory.md`.
 
 All dated production records below describe their named historical snapshots.
 Their references to "current" or "installed" PDFs apply only within those
 records and do not establish the identity or approval of the present edition.
+
+## Movement and complete-scene continuity correction — 2026-11-08
+
+The maintainer rejected the preceding movement coverage and the setting of
+the close-ups. Acceptance of those criteria in the earlier 44-page review
+is withdrawn. The replacement saves the complete composition before making
+an enlargement: architecture, appointments, people, hands, objects and
+occlusion are shared between the two views.
+
+Each 64-page Low Mass edition now has 75 sanctuary-view placements from 73
+distinct scene definitions, including 52 successive movement frames in 53
+placements. Nine action enlargements are literal complete-scene viewports;
+the separate cruet-kiss contact study supplements the full handoff. The
+sequence includes loaded ascent/descent, centre stops, equipment changes,
+give-way and pass, placement, empty-handed return, Communion-plate travel
+and the departing chalice carry. Resting basin, towel, cruets, plate, bell,
+book, veil and the appropriate chalice state remain accounted for. The
+Offertory handoffs retain the chalice in the priest's left hand while his
+right receives each cruet. All 39 shared dialogue calls retain their exact
+normalized text and order.
+
+The sung guides replace three incompatible ablution tableaux with six
+successive complete-scene/viewport pairs. Missa Cantata retains A1 wine and
+A2 water; Solemn Mass retains the subdeacon as pourer and the acolyte as
+supplier. The altar and six candles stay fixed. The separate Low Mass
+first-wine and finger-ablution stations are not imposed on those rosters.
+
+| Leaf | Pages | Bytes | Reviewed PDF SHA-256 |
+| --- | ---: | ---: | --- |
+| `01-low-mass` | 64 | 16431870 | `47f9ea3034253517997929021956ce77df59fcc6b1c88711b29d02c3e93dd892` |
+| `01-low-mass-trainer-manual` | 64 | 16466436 | `a470b1562e50aaff3cf4b85b65c364df348a011159ce026ee1eb62b65d830f80` |
+| `02-missa-cantata` | 40 | 4605085 | `ec92f8a594b32d4d8e089e096f7c1ff1d48503c2f7a1bd9963b8bf0c98b66494` |
+| `03-solemn-mass` | 35 | 6310943 | `1a278386e5c799f257b65413ffa0b09bbfb2bebf999713be500b357f16dca592` |
+
+The child review is independent of its implementation. All 64 pages are
+accounted for in its review chain: the final 37 changed pages were opened
+individually, while 27 transfer by exact PNG-byte identity from a previously
+reviewed candidate. The initial 62-page review required changes and is not
+retroactively accepted. The final child pass closes the disappearing-object,
+sequence-rewind, plate-route, label/face, orphan-leader and step-key findings.
+The implementing trainer reviewer independently opened its 37 changed pages;
+27 exact raster matches transfer from the fully inspected preceding trainer
+proof. The paired main lanes retain 64 matching pages. Page-word extraction
+requires explicit exceptions for full-width heading crop exclusions on 7, 8
+and 32 and invisible labels behind literal viewport clipping on 25, 26, 29,
+42, 45, 47 and 48. Those pages were visually adjudicated; no visible main-lane
+prose or response is missing. No open visual finding remains in the Low Mass
+pair. The integrating reviewer also inspected the corrected handoff, plate,
+ablution and return compositions.
+
+An independent reviewer inspected all 75 sung candidate pages individually,
+then reinspected the eight changed final pages: Cantata 11, 13, 24, 25 and
+40; Solemn 9, 10 and 35. The other 67 final PNGs match the inspected pages
+exactly. All reported capsule collisions and the orphan Communion heading
+are resolved. The new ablution scenes pass the bounded role, hand, support,
+level and full-scene/detail continuity checks.
+
+All four final build logs have no overfull/underfull boxes, undefined controls
+or missing characters. The known disabled-shell-escape epstopdf warning is
+retained; these editions require no EPS conversion. The owning content/schema
+gates pass for all seven guide/card consumers. Six Low Mass model regressions
+and 34 native page/bundle tests pass. Positive artwork selection includes
+42 images for each Low Mass edition, 13 for each sung guide, and none for the
+three card companions. Five Low Mass dictionary objects are reused directly,
+with explicit Make dependencies; superseded art is excluded from the selected
+bundles. Final committed-source native assembly and release reconciliation
+remain separate integration steps, recorded in `PROJECT-WORK.md`.
+
+These are exact uncommitted-source screen proofs. Their hashes identify the
+reviewed bytes, not a later committed revision stamp. The veil exchange
+explicitly recalls the already practised Gospel ascent; it does not claim a
+new rear-facing veil-ascent pose. Genuflection remains verbally taught with
+live demonstration, and centre-stop images show the preceding standing
+orientation. Local coordinates and routes remain the declared rehearsed
+model. No physical-print trial, full fresh manual collation, external human
+review or ecclesiastical approval is claimed.
 
 ## Low Mass fidelity correction — 2026-11-08
 

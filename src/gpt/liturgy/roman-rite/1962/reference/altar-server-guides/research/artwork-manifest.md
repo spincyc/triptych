@@ -2,6 +2,20 @@
 
 Original audit: 2026-07-27 (America/Chicago). Current correction: 2026-11-08.
 
+**Superseding movement and scene-continuity decision — 2026-11-08.** The
+maintainer rejected the earlier movement depictions and close-up continuity:
+endpoint arrows did not show enough of the actual journeys, and isolated
+action crops changed or omitted the altar surrounding the action. The movement
+and scene-continuity acceptance recorded below for the earlier Low Mass
+proofs is withdrawn. Their hashes and completed mechanical/layout checks
+remain historical evidence for those bytes; they do not approve the revised
+scenes. The [movement-continuity record](movement-continuity-2026-11-08.md)
+owns the replacement visual contract, new `053`–`078` asset register, direct
+dictionary-object reuse, and explicit outstanding receipts. An altar-action
+close-up must magnify the same complete composed scene as its wide view.
+New asset/component inspection is separate from final consumer acceptance,
+which remains pending for this correction.
+
 The illustrations are project-created editorial teaching aids showing a
 generic ad-orientem Roman altar frontally from the nave. They do not establish
 a rubric, sanctuary arrangement, or ceremonial fact. TeX owns every role

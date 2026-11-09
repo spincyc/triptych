@@ -2,6 +2,53 @@
 
 Research cutoff: 2026-07-25 (America/Chicago).
 
+## Movement and scene continuity — 2026-11-08
+
+The maintainer withdrew acceptance of the earlier movement depictions and
+altar-action close-ups. More endpoint diagrams and arrows had not made the
+actual travel recoverable, and an isolated action crop could show a different
+altar edge or omit the surrounding sanctuary. This is direct editorial
+feedback on the produced guides. It is not a new child-reader study or new
+external research finding; the research cutoff above remains unchanged.
+Earlier references in this record to an accepted or current evaluation set
+describe their dated snapshots, not acceptance of this replacement.
+
+The revised visual contract requires meaningful intermediate frames for each
+journey that needs them: picking up the equipment, ascending or descending
+with it, reaching an altar-facing centre stop, changing equipment, giving way
+and passing, placing the object, and returning empty-handed. Each frame shows
+one moment and each actor once. Facing, posture, hands and carried objects
+must match that moment. A walking silhouette cannot stand for a stationary
+stop, and a rear-facing figure cannot imply forward descent toward the nave.
+Do not mirror a handed action: the wine and water vessels or the bell must
+remain in their specified anatomical hands. Arrows supplement these states.
+Repeating unchanged silhouettes solely to increase the image count does not
+satisfy the requirement.
+
+An altar-action close-up is a magnified viewport of the **complete composed
+scene** used for the wide view: the same altar and appointments, people,
+hands, objects, supports and occlusion. Save that composition once and clip
+and enlarge it; do not substitute a crop of the isolated actor layer or a
+separately generated altar. The actor artwork must contain no replacement
+altar, cloth strip or furniture. Feet must meet the intended tread, and a
+vessel base must meet its actual support in the composed scene. A separately
+identified object/contact study may explain, for example, where a cruet is
+kissed, but cannot replace the full corresponding action.
+
+The existing **no depicted genuflection** rule remains: state a required
+genuflection in words and have the trainer demonstrate it. A centre-stop
+frame may show the standing arrival or finish; it must not label that standing
+pose as the gesture itself. The fixed nave-facing sanctuary, named levels,
+role labels and page-matched child/trainer route remain the governing model.
+The same complete-scene rule applies to the sung guides' altar-action views;
+their minister and server roles remain separately controlled.
+
+The [movement-continuity record](movement-continuity-2026-11-08.md) records
+asset provenance and the bounded component checks. Final composed-page
+review, the source-frozen selected-asset census, and final print identities
+remain pending here. No page count, generated-image count or successful
+component build establishes that acceptance.
+
 ## 2026-07-26 action-first reconciliation
 
 The child publication now presents each stage as a field guide: identify the

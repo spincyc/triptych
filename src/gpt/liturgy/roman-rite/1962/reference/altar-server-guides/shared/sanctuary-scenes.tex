@@ -27,6 +27,28 @@
     \node[font=\fontsize{6.6}{7.7}\selectfont,anchor=north] at (94,10.8) {CREDENCE};}
 \newcommand{\ASGEndScene}{\end{tikzpicture}}
 
+% Save the complete composed sanctuary once. A close view clips that box:
+% architecture, appointments, actors and occlusion cannot drift independently.
+\newsavebox{\ASGSceneSnapshot}
+\newlength{\ASGZoomUnit}
+\newcommand{\ASGSaveScene}[2]{%
+  \sbox{\ASGSceneSnapshot}{\ASGBeginScene{#1}#2\ASGEndScene}}
+\newcommand{\ASGShowSavedScene}{\usebox{\ASGSceneSnapshot}}
+\newcommand{\ASGSceneViewport}[5]{%
+  \begingroup
+  \pgfmathsetlength{\ASGZoomUnit}{#5/(#3-#1)}%
+  \begin{tikzpicture}[x=\ASGZoomUnit,y=\ASGZoomUnit]
+    \begin{scope}
+      \clip (0,0) rectangle (#3-#1,#4-#2);
+      \node[anchor=south west,inner sep=0pt] at (-#1,-#2)
+        {\resizebox{100\ASGZoomUnit}{!}{\ASGShowSavedScene}};
+    \end{scope}
+    \pgfresetboundingbox
+    \path[use as bounding box] (0,0) rectangle (#3-#1,#4-#2);
+    \draw[black!50,line width=.4pt] (0,0) rectangle (#3-#1,#4-#2);
+  \end{tikzpicture}%
+  \endgroup}
+
 \newcommand{\ASGStandingServer}[3]{%
   \node[anchor=south,inner sep=0pt] at (#1,#2) {\includegraphics[height=23\ASGSceneUnit]{liturgy/roman-rite/1962/reference/altar-server-guides/shared/artwork/pencil/ASG-ART-033-server-standing.png}};
   \begin{pgfonlayer}{asg labels}\node[asg label,anchor=north] at (#1,#2) {#3};\end{pgfonlayer}}

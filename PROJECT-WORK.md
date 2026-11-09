@@ -11,104 +11,53 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: low-mass-fidelity-2026-11 -->
 
-**Complete: corrected, verified and pushed to `feature/altar-server`.** The corrected
-Gospel model keeps Second at his normal place. First waits at the Gospel side
-until the priest begins reading, then returns below the steps. Cruets are
-offered handle-first, with the light kiss shown at the base of the handle.
-The initial wine purification and subsequent finger ablution are distinct:
-for the latter, the priest stays on the predella, First serves at his right,
-and wine then water pass over the priest's fingers into the chalice resting
-on the altar. The priest faces left for the Last Gospel. The expanded movement
-sequence aligns close-up actors, facing, objects and actions with the fixed
-sanctuary views.
+**Source and page review complete; committed delivery is in progress.**
+The earlier 44-page delivery did not supply enough actual movement states, and
+its actor-only close-ups omitted the altar shown in the wide views. Its visual
+acceptance for those criteria is withdrawn. Historical build and delivery
+receipts remain in the [production manifest](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md)
+and [earlier review](workflows/reviews/low-mass-fidelity-2026-11-08/REVIEW.md).
+The previous delivery reached `origin/feature/altar-server`; it is not the
+acceptance target for the current correction.
 
-The maintainer's corrections identify substantive defects in the preceding
-visual acceptance. That earlier review remains a record of its exact snapshot;
-it does not establish the fidelity of the corrected sequence. Fresh source
-checks, generated action illustrations, child/trainer page review, affected
-consumer checks and release reconciliation were completed. New artwork remains
-illustrative rather than ceremonial evidence. No new live deployment is claimed.
+The new renderer saves the entire composed sanctuary and enlarges that exact
+scene. Added movement frames show carried objects during ascent/descent,
+altar-facing centre stops, equipment changes, yielding and passing, placement,
+and the empty-handed return. Communion plate transport and return are included.
+Parked equipment stays visible until its pickup, subject to actual occlusion.
+Distinct chalice states follow the freshly checked Offertory and ablution
+sources. The sung ablutions retain their own ministers and cruet allocations.
 
-Fresh checks of the 1962 Missal, Carmody's 1961 manual and the seventh-edition
-Fortescue--O'Connell facsimile distinguish the first wine purification from the
-later finger washing. First ascends for the initial pour and returns one step
-below for the finger ablution. The chosen Gospel-return cue remains the
-previously checked Laurence J. O'Connell model; that witness was not freshly
-accessible, and Carmody's slightly later cue remains explicitly distinguished.
-Thirteen new figure and action assets now cover the left-facing priest, carried
-book and veil, cruet kiss and handoff, three consecutive pours, Lavabo,
-separate elevations and covered-chalice carry.
+A first 62-page Low Mass pair was fully inspected and required further
+corrections. Both final editions have 64 pages, 75 sanctuary-view placements,
+52 distinct movement frames and nine complete-scene action enlargements.
+The independent child review and implementing trainer review each inspected
+37 final changed pages, transferring 27 only by exact raster identity. Their
+main lanes match page for page; extraction exceptions for headings and
+invisible clipped labels were visually adjudicated. All 39 dialogue calls
+remain unchanged in text and order.
 
-The child and trainer editions each contain 44 pages, 31 sanctuary-view
-placements and 11 close-up placements. Their main text and page structure
-agree. Wide actions and enlarged details share the same artwork; the fixed
-altar and steps retain one geometry. All 88 candidate pages received individual
-screen inspection. The final rebuild changes five pages in each edition;
-those were inspected again, and the other 39 rasters in each match the reviewed
-candidate exactly. Corrections found in review include Lavabo tread support,
-a route-marker collision, explicit bell replacement and Second's rise before
-the ablutions. No visual finding remains open. The exact final PDFs and
-attributed coverage are recorded in the production manifest and
-[review record](workflows/reviews/low-mass-fidelity-2026-11-08/REVIEW.md).
+An independent reviewer inspected all 40 Missa Cantata and 35 Solemn Mass
+pages, then reinspected eight changed pages after label and page-break fixes;
+67 final page rasters match exactly. All four exact screen proofs have no open
+visual finding. Six Low Mass regressions and 34 native page/bundle tests pass;
+all seven content/schema gates pass. The source selector includes 42 images
+per Low Mass edition, 13 per sung guide and zero per card companion.
 
-Six Low Mass model regressions and 32 native-print tests pass. All seven
-guide content/schema gates pass; both Low Mass native builds have no overfull
-or underfull boxes. Scoped publication and source-family inventories are
-refreshed without changing classification. Aggregate `make check-sources`
-passes, including generated-proper and generated-document freshness.
-Source commit `cd342f0a924bfbee0b022207d63ba333d62182c3` contains the reviewed
-implementation, artwork and source records. Final native preparation at that
-commit passes for all seven editions, selecting 21, 21, 12, 11, 0, 0 and 0
-images. The sung and card artwork selections retain their prior bytes.
-
-Two independent cold builds of the twelve affected browser-data families
-agree on all 27,705 files and 227,128,545 bytes. The exact unchanged encyclicals
-proof is retained. The thirteen-family total is 27,706 files and 227,726,661
-bytes, with identity
-`dafa7e76f7ed81a2bf9d945893fadcf66e5eb07c2e3e9d590ebcdb5f0b4cc3a3`.
-Only the document catalogue output changes; output path sets, recipes,
-dependency locks and rights inputs are unchanged. All 21 web figures are
-verified current.
-
-Scoped release reconciliation adds 14 paths, updates 10 existing hashes and
-retires none. All 24,186 outside-scope bindings remain unchanged, for 24,210
-bound paths. The 23 bound source paths match the reviewed source commit;
-the product descriptor matches its newly verified bytes. Authorization and
-publication fields and rights prose are unchanged, with the generated rights
-digest refreshed.
-
-The full site build and official GitHub Pages artifact verifier pass at the
-reviewed source commit, with 43,732 files, 43,731 checksum rows and 650 native
-editions. Direct inspection of all seven served print manifests proves exact
-render identities, every mounted path and byte, selected artwork, runtime
-transport and source-pack bytes. All 289 unique source inputs were rehashed.
-Each Low Mass selection adds thirteen images and retires three superseded
-details; the other five selections retain their artwork. Shared transport
-packing is recorded separately from identical render inputs.
-
-The publication manifest has SHA-256
-`85d775fcd93d4761ce95753a7be745773cfd892c5499aeece9299c8e88a08c77`;
-the checksum manifest has SHA-256
-`e8dae45defc51c1e6e1ed217258b4734bef166e1d2ef71e51021bc01efefca3e`.
-The composite release receipt has SHA-256
-`4c79af99fbf1ec3e7fb6aa94d1926bf03630d4d24dfdce86769407f70f854839`.
-The dictionary gallery is byte-identical to the preceding reviewed site.
-No UI suite or browser-WASM execution was repeated, and no preview process
-remains running. This is source, screen-proof and artifact verification;
-physical-print, ecclesiastical approval and a new live deployment are not
-claimed.
-
-The reviewed source and publication records reached
-`origin/feature/altar-server` at
-`efbcfc27f2467cd06d050cd693c0531e94c43a63`; the remote commit was confirmed
-after the normal push. The exact outgoing range was reviewed for intended
-public disclosure before publication.
+Exact proof identities, review transfer, the explicit recalled veil ascent
+and source/print limitations belong to the
+[production manifest](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/production-manifest.md).
+The [movement record](src/gpt/liturgy/roman-rite/1962/reference/altar-server-guides/research/movement-continuity-2026-11-08.md)
+binds all 26 new assets and five direct dictionary reuses, including rejected
+iterations. Final committed native assembly, source inventories, release
+reconciliation and branch delivery remain in progress. No new live deployment
+is claimed.
 
 ## Sanctuary dictionary and server-guide visual expansion — 7 November 2026
 
 <!-- promised-deliverable: sanctuary-visual-expansion-2026-11 -->
 
-**Complete: implemented and verified on `feature/altar-server`.** The pictorial
+**Dictionary expansion delivered; Mass visual continuity reopened.** The pictorial
 dictionary has expanded object coverage, identification, catalogue relationships
 and table content. The Low Mass, Missa Cantata and Solemn Mass teaching diagrams
 now use consistent movement descriptions, role positions and sanctuary

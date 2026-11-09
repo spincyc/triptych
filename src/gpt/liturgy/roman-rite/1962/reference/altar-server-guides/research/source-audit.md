@@ -323,3 +323,42 @@ evidence. Wide action scenes and enlarged hand details consume the same
 checked asset; the stable sanctuary fixes the positions and levels. Production
 acceptance must identify the freshly built child/trainer pair and its complete
 individual-page review, rather than inherit the superseded November 7 receipt.
+
+## Movement and scene-continuity correction — 2026-11-08
+
+The maintainer's subsequent rejection withdraws the previous movement and
+cross-view acceptance. An isolated actor image shared between two views did
+not preserve the complete altar setting. The current renderer enlarges the
+already assembled sanctuary scene; the selected actor layers contain no
+replacement altar cloth or furniture. This is a production correction, not
+new evidence for a ceremonial rule.
+
+A fresh page-image check of Fortescue–J. B. O'Connell, seventh edition (1943),
+chapter XI §8, printed pp. 101–102 (facsimile PDF pp. 122–123), establishes
+the subdeacon's continuous station at the celebrant's right after the Pax,
+through the first wine purification and subsequent finger ablutions. He
+returns the cruets before changing places with the deacon. The drawings
+therefore retain celebrant and subdeacon at the altar on the predella;
+the lower acolyte supplying the cruets is a different actor. This placement
+is a source-grounded reading of the continuous sequence, not a transfer of
+the Low Mass First-acolyte geometry. Both the delegated source reviewer and
+the integrating reviewer inspected these page images. The existing canonical
+facsimile identity in the edition manifest is unchanged.
+
+The integrating reviewer also freshly inspected printed pp. 45–46 (PDF
+pp. 66–67) for the chalice through the Offertory. Before the handoff it is
+at the celebrant's right; during receipt of the cruets he holds its node
+with his left hand, with the purificator over that thumb, while the right
+hand receives the cruet. After offering it he places it centrally and
+covers it with the pall before going to the Lavabo. The compositions retain
+these distinct states instead of omitting the vessel or showing an open
+chalice throughout. The pictured table spacing is a model placement, not
+a further rubric.
+
+Missa Cantata retains its selected A1-wine / A2-water allocation. A Low Mass
+actor carrying both cruets cannot be substituted for either acolyte. Solemn
+Mass retains the subdeacon as pourer and A1 as supplier. Exact spacing,
+crossing priority, the folded-veil pickup point and the depicted sacristy
+direction remain explicit rehearsed model choices. The centre-stop images
+show the standing orientation before the verbally taught reverence; they do
+not depict genuflection or establish an additional reverence.

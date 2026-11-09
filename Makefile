@@ -188,6 +188,12 @@ ALTAR_SERVER_GUIDES_DOCUMENTS := $(filter \
 ALTAR_SERVER_GUIDES_METADATA_VERIFICATIONS := $(addprefix \
 	$(BUILD_ROOT)/.metadata/,$(addsuffix .verify,$(ALTAR_SERVER_GUIDES_DOCUMENTS)))
 ROMAN_SANCTUARY_DICTIONARY_ROOT := $(SOURCE_ROOT)/liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary
+ALTAR_SERVER_GUIDES_SHARED += $(addprefix $(ROMAN_SANCTUARY_DICTIONARY_ROOT)/shared/artwork/pencil/,\
+  books/RPD-FIG-books-0001-in-use-missal-on-stand-v3-alpha.png \
+  RPD-FIG-service-objects-0103-paired-cruets-v2-alpha.png \
+  RPD-FIG-service-objects-0106-lavabo-basin-manuterge-v2-alpha.png \
+  RPD-FIG-sacred-vessels-0007-iso-communion-plate.png \
+  compositions/RPD-FIG-prepared-chalice-0001-formation-alpha.png)
 ROMAN_SANCTUARY_DICTIONARY_SHARED := $(shell find $(ROMAN_SANCTUARY_DICTIONARY_ROOT)/shared -type f \( \
 	-name '*.tex' -o -name '*.sty' -o -name '*.cls' -o -name '*.bib' -o \
 	-name '*.bst' -o -name '*.toml' -o -name '*.png' -o -name '*.jpg' -o \

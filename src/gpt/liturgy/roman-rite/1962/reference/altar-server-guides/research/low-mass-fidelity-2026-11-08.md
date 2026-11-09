@@ -1,5 +1,16 @@
 # Low Mass fidelity correction — 8 November 2026
 
+**Movement and scene-continuity acceptance withdrawn.** After the delivery
+recorded below, the maintainer rejected the result: movement depictions were
+still insufficient and close-ups broke the altar setup of the wide views.
+The historical build and byte-identity receipts remain facts about that
+snapshot; they do not establish visual fidelity. In particular, sharing one
+actor image between views failed to preserve the composed sanctuary, and
+`044`/`045` introduced their own altar-cloth strip. A subsequent correction
+must review actual intermediate movement states and literal complete-scene
+enlargements. The asset/consumer passes below are historical, not renewed
+acceptance of the rejected treatment.
+
 This correction concerns the Low Mass child booklet and trainer manual. The
 maintainer identified substantive defects in previously accepted stations,
 timing and hand actions. The 7 November page/layout and byte-identity checks

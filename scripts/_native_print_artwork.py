@@ -29,6 +29,7 @@ DICTIONARY_LEAVES = {"comprehensive": "ed-comprehensive", "altar-server": "ed-al
 SERVER = "liturgy/roman-rite/1962/reference/altar-server-guides"
 _DIAGRAM_FILES = ("low-mass-diagrams.tex", "sung-mass-diagrams.tex")
 _SHARED_DIAGRAM_FILES = ("sanctuary-scenes.tex",)
+_LOW_DIAGRAM_FILES = ("low-mass-movement.tex", "low-mass-objects.tex")
 # Only these top-level dimensions have two canonical definitions: the first
 # branch is the trainer manual's and the second the child booklet's.
 _BRANCHED = {"LMSceneXUnit", "LMSceneYUnit", "LMPencilSceneHeight", "LMPencilPairHeight", "LMLavaboHeight", "LMPositionWidth"}
@@ -223,6 +224,25 @@ def _web_edition(root: Path):
     return _module(root / "tools/web-edition", "_native_print_web_edition")
 
 
+def _server_graphics(root: Path, provider: str, text: str) -> set[str]:
+    """Admit reached literal images from this provider's two artwork owners."""
+    _need(provider in {"gpt", "claude"}, "unknown server artwork provider")
+    roots = (SERVER + "/shared/artwork/pencil/", DICTIONARY + "/shared/artwork/pencil/")
+    selected = set()
+    for args, _, _ in _calls(_clean(text), "includegraphics", 1):
+        value = args[0].strip()
+        prefix = next((prefix for prefix in roots if value.startswith(prefix)), None)
+        _need(prefix is not None, "server artwork outside its permitted owners: " + value)
+        relative = value[len(prefix):]
+        _need(re.fullmatch(r"(?:[A-Za-z0-9_-][A-Za-z0-9._-]*/)*[A-Za-z0-9_-][A-Za-z0-9._-]*\.png",
+                           relative), "server artwork is not a safe literal PNG path: " + value)
+        path = root / "src" / provider / value
+        _need(path.is_file() and path.resolve() == path,
+              "selected server artwork is missing or uses a symlink: " + value)
+        selected.add(_relative(root, path))
+    return selected
+
+
 def _diagram_definitions(shared: Path, variant: str, names, read) -> dict[str, dict]:
     pattern = re.compile(r"\\(?:re)?newcommand\s*\{\\([A-Za-z]+)\}\s*(?:\[\d+\])?\s*(?:\[[^\]]*\])?\s*\{")
     result, alternatives = {}, {}
@@ -288,7 +308,8 @@ def server_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str],
     main_path = owner / name / "main.tex"
     main = read(main_path)
     variant = "trainer" if trainer else "child" if form == "low" else "sung"
-    diagram_names = (_DIAGRAM_FILES[form != "low"], *_SHARED_DIAGRAM_FILES)
+    diagram_names = (_DIAGRAM_FILES[form != "low"], *_SHARED_DIAGRAM_FILES,
+                     *(_LOW_DIAGRAM_FILES if form == "low" else ()))
     definitions = _diagram_definitions(owner / "shared", variant, diagram_names, read)
     diagrams = set(definitions)
     used = set()
@@ -315,7 +336,6 @@ def server_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str],
             scan(raw[end:scenes[index + 1][0] if index + 1 < len(scenes) else len(raw)])
     else:
         scan(web.split_document(main)[1])
-    plate = re.compile(re.escape(SERVER) + r"/shared/artwork/pencil/[A-Za-z0-9._-]+\.png")
     selected = set()
     for macro in sorted(used):
         closure, queue = set(), [macro]
@@ -327,7 +347,5 @@ def server_artwork(root: Path, provider: str, canonical: str) -> tuple[set[str],
             queue.extend(found for found in re.findall(r"\\([A-Za-z]+)", definitions[item]["body"])
                          if found in definitions and found not in closure)
         for item in closure:
-            selected.update("src/" + provider + "/" + value for value in plate.findall(definitions[item]["tex"]))
-    for value in selected:
-        _need((root / value).is_file(), "selected server artwork is missing: " + value)
+            selected.update(_server_graphics(root, provider, definitions[item]["body"]))
     return selected, inputs
