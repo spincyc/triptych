@@ -11,7 +11,7 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Loading-screen candidate verified locally; publication pending.**
+**Loading screen verified and published; plain launcher and corpus verified.**
 The maintainer requested a loading screen that precedes the reading interface.
 Acceptance covers both product preparation and the initial chained reading loads,
 navigation gating, cancellation, failure display, settled snapshots and actual
@@ -39,7 +39,17 @@ opens Day only after preparation, and exits cleanly; cancelling another actual
 launch also exits cleanly. The measured delay varies with the environment.
 The current browser-product identity is unchanged and no changed path belongs
 to the release's bound site sources. No generated data or release binding is
-modified. The implementation is ready for coherent main publication.
+modified. The implementation commit
+`7ea8c603ea21bef158b6c8ff9f0883a30288bdf6` is pushed by fast-forward to main and
+the workspace branch. Independent final review reran the diagnostic scrolling
+and initial-focus regressions and found no remaining issues. This is terminal
+delivery; the existing completed website deployment and live corpus proof below
+remain the publication acceptance for the unchanged site inputs.
+The implementation's
+[repository hygiene check](https://github.com/spincyc/triptych/actions/runs/42543057381)
+passes. Its automatic
+[Pages run](https://github.com/spincyc/triptych/actions/runs/42543057358)
+is pending; no new website deployment is claimed.
 
 The maintainer
 reproduced the failure with a plain `./tools/tpt lectern` invocation after the
