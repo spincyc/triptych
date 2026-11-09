@@ -49,6 +49,7 @@ def availability(row: dict) -> str:
 class Texts(Surface):
     key = "5"
     label = "Texts"
+    FIRST = "#texts-list"
     HELP = (
         ("/", "find: words of a title, subject, path, provider or model"),
         ("escape", "leave the find box for the list"),

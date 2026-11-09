@@ -11,7 +11,37 @@ Last reconciled: 2026-11-08.
 
 <!-- promised-deliverable: catena-english-linkage-lectern-2026-11-08 -->
 
-**Plain launcher and published corpus verified.** The maintainer
+**Loading-screen candidate verified locally; publication pending.**
+The maintainer requested a loading screen that precedes the reading interface.
+Acceptance covers both product preparation and the initial chained reading loads,
+navigation gating, cancellation, failure display, settled snapshots and actual
+terminal startup. The existing corpus and publication evidence below remains
+applicable; this follow-up changes the terminal lifecycle only.
+
+Interactive startup now draws a loading screen before the canonical offline
+preflight and keeps the reader hidden and disabled through the initial chained
+surface loads. It then restores the intended reading or catalogue focus.
+Preparation runs in an owned subprocess group so cancellation terminates and
+reaps producers; bridge cleanup stays off the drawing thread. A failed preflight
+remains on the loading screen with a scrollable diagnostic and a visible close
+hint, and closing preserves the CLI error status. Snapshots still prepare before
+their settling timer and emit only the settled drawing.
+
+All 34 focused runtime, preparation, metadata and loading tests pass, as do the
+12 additional bridge/settling regressions and all ten real-data layout checks.
+These cover chained worker delivery, disabled navigation, cancellation and a
+producer that ignores termination, narrow diagnostic scrolling, snapshot timeout
+cleanup and initial focus. Independent review identified focus changes for
+Texts, Sources and Scripture; explicit initial targets now preserve their prior
+behavior. Real-data captures at 80×24 and 120×36 reveal Day with reading focus.
+The exact plain interactive command displays the loader in about 0.3 seconds,
+opens Day only after preparation, and exits cleanly; cancelling another actual
+launch also exits cleanly. The measured delay varies with the environment.
+The current browser-product identity is unchanged and no changed path belongs
+to the release's bound site sources. No generated data or release binding is
+modified. The implementation is ready for coherent main publication.
+
+The maintainer
 reproduced the failure with a plain `./tools/tpt lectern` invocation after the
 pinned-environment checks passed, and clarified that startup must be robust
 across different environments. Prior validation required activation and a cache

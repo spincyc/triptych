@@ -6,13 +6,17 @@ consumer of the published structure exactly as a browser page is, and it holds
 itself to the page's rules.
 
 Both `open` and `snapshot` prepare the current products through the same owner
-as `tools/browser-products build`, before starting the reader. A first run can
+as `tools/browser-products build`, before exposing the reading. A first run can
 take several minutes: exact cache misses rebuild offline from canonical inputs
 and must match the committed descriptor. Warm entries are verified and reused.
 The CLI defaults to the repository's `.scratch/browser-data`; an explicit
 `TRIPTYCH_BROWSER_DATA_ROOT` takes precedence, including from another working
-directory. Preparation progress goes to
-stderr so snapshot stdout remains the requested drawing.
+directory. Interactive startup paints a loading screen first and keeps the
+reading panes and navigation hidden until verification and the initial chained
+loads finish. The screen reports preparation errors; `q` or `ctrl+c` closes it.
+Cancelling preparation stops and reaps its process group, including producers.
+Snapshots prepare synchronously before their settling timer, report progress to
+stderr, and emit only the completed drawing on stdout.
 
 Install the pinned dependencies once with `python3 -m venv
 .scratch/lectern-venv` and `.scratch/lectern-venv/bin/python -m pip install -r

@@ -58,6 +58,7 @@ def split_line(line: str, first: int, rest: int) -> list[str]:
 class Sources(Surface):
     key = "6"
     label = "Sources"
+    FIRST = "#sources-list"
     HELP = (
         ("/", "find: a title, author, alias or id"),
         ("escape", "leave the find box for the list"),

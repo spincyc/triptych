@@ -1,17 +1,23 @@
 """The application shell: the top bar, the surfaces, the keys that move between them."""
 from __future__ import annotations
 
+import asyncio
 import datetime as dt
+from collections.abc import Awaitable, Callable
 
 from rich.style import Style
 from rich.text import Text
 from textual.app import App, ComposeResult
 from textual.binding import Binding
-from textual.containers import VerticalScroll
+from textual import work
+from textual.containers import Container, Vertical, VerticalScroll
 from textual.reactive import reactive
 from textual.screen import ModalScreen
-from textual.widgets import ContentSwitcher, Footer, Static
+from textual.widgets import ContentSwitcher, Footer, LoadingIndicator, Static
+from textual.worker import WorkerCancelled, get_current_worker
 
+from . import bridge
+from .repo import Refused
 from .surface import Pending, Surface, shown
 from .theme import SURFACE_ACCENTS, THEMES
 
@@ -199,7 +205,21 @@ class TriptychApp(App[None]):
 
     TITLE = "triptych"
     CSS = """
-    Screen { background: $background; }
+    Screen { background: $background; layers: reader loading; }
+    #reader { layer: reader; width: 100%; height: 100%; }
+    #reader.preparing { visibility: hidden; }
+    #loading {
+        layer: loading; width: 100%; height: 100%;
+        align: center middle; background: $background;
+    }
+    #loading-box { width: 66; max-width: 90%; height: auto; max-height: 100%; padding: 1 2; }
+    #loading-box.failed { height: 100%; }
+    #loading-detail-scroll { height: auto; }
+    #loading-box.failed #loading-detail-scroll { height: 1fr; }
+    #loading Static { height: auto; text-align: center; }
+    #loading-title { text-style: bold; color: $primary; margin-bottom: 1; }
+    #loading LoadingIndicator { height: 2; margin: 1 0; }
+    #loading-hint { color: $text-muted; margin-top: 1; }
     #surfaces { height: 1fr; }
     Surface { padding: 0 1; }
     .pending { padding: 2 4; color: $text-muted; }
@@ -213,6 +233,7 @@ class TriptychApp(App[None]):
     """ + _surface_css() + "".join(getattr(kind, "CSS", "") for kind in surfaces())
     BINDINGS = [
         Binding("q", "quit", "quit", show=False),
+        Binding("ctrl+c", "quit", "quit", show=False, priority=True),
         Binding("question_mark", "help", "help"),
         Binding("T", "next_theme", "theme", show=False),
     ] + [
@@ -221,7 +242,8 @@ class TriptychApp(App[None]):
     ]
 
     def __init__(self, *, start: str = "day", intent: dict | None = None,
-                 theme: str = "triptych", today: dt.date | None = None) -> None:
+                 theme: str = "triptych", today: dt.date | None = None,
+                 prepare: Callable[[], Awaitable[None]] | None = None) -> None:
         super().__init__()
         # The date the reader calls today. A snapshot pins it, so that what it
         # draws depends on the arguments and never on the clock.
@@ -232,16 +254,95 @@ class TriptychApp(App[None]):
         self.start = start
         self.intent = intent or {}
         self._surface_focus = {}
+        self.prepare = prepare
+        self.starting = True
+        self.startup_error: Refused | None = None
+        self._startup_worker = None
+        self._quitting = False
 
     def compose(self) -> ComposeResult:
-        yield TopBar(id="topbar")
-        with ContentSwitcher(id="surfaces", initial=None):
-            for kind in surfaces():
-                yield kind()
-        yield ReaderFooter(compact=True)
+        with Container(id="reader", classes="preparing", disabled=True):
+            yield TopBar(id="topbar")
+            with ContentSwitcher(id="surfaces", initial=None):
+                for kind in surfaces():
+                    yield kind()
+            yield ReaderFooter(compact=True)
+        with Container(id="loading"):
+            with Vertical(id="loading-box"):
+                yield Static("✠ triptych", id="loading-title")
+                yield Static("Preparing your reading…", id="loading-status", markup=False)
+                yield LoadingIndicator()
+                with VerticalScroll(id="loading-detail-scroll", can_focus=False):
+                    yield Static("The first load may take several minutes.", id="loading-detail", markup=False)
+                yield Static("q / ctrl+c  cancel", id="loading-hint")
 
     def on_mount(self) -> None:
-        self.action_surface(self.start, **self.intent)
+        # The first frame must be visible before verification can start.
+        self.call_after_refresh(self._begin_startup)
+
+    def _begin_startup(self) -> None:
+        if not self._quitting:
+            self._startup_worker = self._load_initial()
+
+    @work
+    async def _load_initial(self) -> None:
+        if self.prepare is not None:
+            self.query_one("#loading-status", Static).update("Preparing verified reading data…")
+            try:
+                await self.prepare()
+            except (Refused, OSError) as error:
+                self.startup_error = Refused(str(error))
+                self.query_one("#loading-status", Static).update("The reading could not be opened.")
+                self.query_one("#loading-detail", Static).update(str(error))
+                self.query_one(LoadingIndicator).display = False
+                self.query_one("#loading-hint", Static).update("q / ctrl+c  close")
+                self.query_one("#loading-box").add_class("failed")
+                detail = self.query_one("#loading-detail-scroll", VerticalScroll)
+                detail.can_focus = True
+                self.call_after_refresh(detail.focus)
+                return
+        self.query_one("#loading-status", Static).update(f"Opening {self.start.title()}…")
+        self.query_one("#loading-detail", Static).update("Loading the initial reading.")
+        self._open_surface(self.start, **self.intent)
+        coordinator = get_current_worker()
+        quiet = 0
+        # Opening a surface may spawn another load when its first worker delivers.
+        # A single wait_for_complete() captures only the workers already present.
+        while quiet < 3:
+            await asyncio.sleep(0.05)
+            busy = any(worker is not coordinator and not worker.is_finished for worker in self.workers)
+            quiet = 0 if busy or bridge.BRIDGE_PROCESS.waiting else quiet + 1
+        reader = self.query_one("#reader")
+        reader.disabled = False
+        reader.remove_class("preparing")
+        self.query_one("#loading").display = False
+        self.starting = False
+        if (surface := self.current()) is not None:
+            surface._initial_focus_pending = True
+            self.call_after_refresh(self._focus_into, surface, True)
+        self.refresh_bindings()
+
+    def check_action(self, action: str, parameters: tuple[object, ...]) -> bool | None:
+        if self.starting and action != "quit":
+            return False
+        return super().check_action(action, parameters)
+
+    async def action_quit(self) -> None:
+        if self._quitting:
+            return
+        self._quitting = True
+        if self.starting:
+            self.query_one("#loading-status", Static).update("Closing…")
+        if self._startup_worker is not None and not self._startup_worker.is_finished:
+            self._startup_worker.cancel()
+            try:
+                await self._startup_worker.wait()
+            except WorkerCancelled:
+                pass
+        self.workers.cancel_all()
+        # Closing the bridge can wait for its verification thread; keep drawing.
+        await asyncio.to_thread(bridge.BRIDGE_PROCESS.close)
+        self.exit()
 
     # --- moving between surfaces -------------------------------------------
 
@@ -252,6 +353,10 @@ class TriptychApp(App[None]):
         return self.query_one(f"#{switcher.current}", Surface)
 
     def action_surface(self, ident: str, **intent) -> None:
+        if not self.starting:
+            self._open_surface(ident, **intent)
+
+    def _open_surface(self, ident: str, **intent) -> None:
         switcher = self.query_one("#surfaces", ContentSwitcher)
         previous = self.current()
         if previous is not None and self.focused is not None and previous in self.focused.ancestors:
@@ -265,6 +370,8 @@ class TriptychApp(App[None]):
         self.call_after_refresh(self._focus_into, surface, first_open, not intent)
 
     def _focus_into(self, surface: Surface, first_open: bool = False, restore: bool = True) -> None:
+        if self.starting:
+            return
         if first_open:
             surface.focus_initial()
         elif (restore and (remembered := self._surface_focus.get(surface.surface_id())) is not None
@@ -304,7 +411,7 @@ class TriptychApp(App[None]):
             yield SystemCommand(f"theme: {palette.name}", "colours only; nothing they mark is lost",
                                 lambda name=palette.name: setattr(self, "theme", name))
         yield SystemCommand("help", "key ?", self.action_help)
-        yield SystemCommand("quit", "key q", self.exit)
+        yield SystemCommand("quit", "key q", self.action_quit)
 
     def action_help(self) -> None:
         self.push_screen(Help(self.current()))

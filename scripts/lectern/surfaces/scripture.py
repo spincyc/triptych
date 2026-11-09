@@ -110,6 +110,7 @@ def runs(ink: Ink, block: dict, *, verse_lines: bool = False, style: str = "") -
 class Scripture(Surface):
     key = "4"
     label = "Scripture"
+    FIRST = "#scripture-reading-list"
     HELP = (
         ("← / →", "previous / next reading; in a period's view, previous / next period; "
                   "from the orientation, → opens the reading in hand"),

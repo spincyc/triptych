@@ -160,40 +160,51 @@ class LecternStartupTests(unittest.TestCase):
         self.assertNotIn("Traceback", err.getvalue())
         self.assertLess(len(err.getvalue()), 1000)
 
-    def test_both_verbs_prepare_before_starting_the_reader(self):
-        from lectern import bridge, snapshot
+    def test_open_defers_preparation_to_loading_screen_but_snapshot_prepares_first(self):
+        from lectern import bridge, preparation, snapshot
         from lectern.app import TriptychApp
 
         for arguments in ([], ["open"], ["snapshot"]):
             with self.subTest(arguments=arguments):
                 tool = _lectern_tool()
                 events = []
+
+                def run(app):
+                    self.assertIs(app.prepare, preparation.prepare_products)
+                    events.append("open")
+
                 with (patch.object(tool, "_prepare_products", side_effect=lambda: events.append("prepare")),
-                      patch.object(TriptychApp, "run", side_effect=lambda: events.append("open")),
+                      patch.object(TriptychApp, "run", run),
                       patch.object(snapshot, "render", side_effect=lambda **kwargs: events.append("snapshot") or "screen\n"),
                       patch.object(bridge.BRIDGE_PROCESS, "close"),
                       patch("sys.stdout", new_callable=io.StringIO) as out,
                       patch.object(out, "isatty", return_value=True)):
                     self.assertEqual(tool.main(arguments), 0)
-                self.assertEqual(events, ["prepare", "snapshot" if arguments == ["snapshot"] else "open"])
+                self.assertEqual(events, ["prepare", "snapshot"] if arguments == ["snapshot"] else ["open"])
 
-    def test_failed_preparation_returns_a_cli_error_before_rendering(self):
+    def test_failed_preparation_keeps_the_cli_error_contract(self):
         from lectern import snapshot
         from lectern.app import TriptychApp
 
         for arguments in (["open"], ["snapshot"]):
             with self.subTest(arguments=arguments):
                 tool = _lectern_tool()
+
+                def run(app):
+                    try:
+                        tool._prepare_products(announce=False)
+                    except Refused as error:
+                        app.startup_error = error
+
                 with (patch.object(products, "check", side_effect=products.ProductError("controlled corruption")),
                       patch.object(products, "build", side_effect=products.ProductError("controlled corruption")),
                       patch("_markdown_render.require_locked_markdown_dependency"),
-                      patch.object(TriptychApp, "run") as opened,
+                      patch.object(TriptychApp, "run", run),
                       patch.object(snapshot, "render") as rendered,
                       patch("sys.stdout", new_callable=io.StringIO) as out,
                       patch("sys.stderr", new_callable=io.StringIO) as err,
                       patch.object(out, "isatty", return_value=True)):
                     self.assertEqual(tool.main(arguments), 2)
-                opened.assert_not_called()
                 rendered.assert_not_called()
                 self.assertEqual(out.getvalue(), "")
                 self.assertIn("published browser data could not be prepared: controlled corruption", err.getvalue())
