@@ -5,7 +5,35 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-08.
+Last reconciled: 2026-11-09.
+
+## GPT resumed Sixth Sunday after the Epiphany — 15 November 2026
+
+<!-- promised-deliverable: gpt-1962-67-production-2026-11-09 -->
+
+**In progress.** The maintainer requested the TLM propers documents workflow
+for the upcoming Sunday and publication to main. The target is the GPT 1962
+resumed Sixth Sunday after the Epiphany, identity 67, for 15 November 2026.
+The context stage confirms the universal-calendar appointment against the 1962
+Missal's page images and two dated institutional Ordos. Its eleven-element
+inventory includes the appointed Trinity Preface. It records the Epistle's
+printed citation misprint and excludes additional institutional or local
+appointments. Full wording collation and historical English checks remain in
+research.
+
+The deliverable is the full study, concise study and homily under one owner,
+through proper-study version 19, with independent stage reviews, source and
+reader checks, publication gates, and archived results. Scope and context
+pass; research is in progress. No study, concise study or homily has yet been
+authored or accepted. Completion also requires the three native print
+compilation checks, successful publication to main without rewriting history,
+successful Pages deployment, and verification of all three live readers.
+Work remains on the assigned workspace branch until publication; the explicit
+main request authorizes advancing the remote main ref with validated commits.
+
+The production authorization is recorded in
+`guidance/liturgy/propers-production-plan.md`. The durable cycle record will be
+`workflows/reviews/gpt-1962-67-production-2026-11-09/CYCLES.md`.
 
 ## Catena English editions, passage linkage and Lectern startup — 8 November 2026
 

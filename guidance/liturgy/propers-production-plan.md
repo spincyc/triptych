@@ -197,6 +197,13 @@ validated result to main. It opens only this provider and identity.
 
 - Authorized 2026-11-05: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany`.
 
+The maintainer's 9 November 2026 request opens the GPT target below for
+Sunday, 15 November 2026, under the current three-document contract and
+authorizes publication of the validated result to main. The dated context
+must independently verify the resumed Sunday and its appointed texts.
+
+- Authorized 2026-11-09: provider `gpt`, identity `liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany`.
+
 ### Reference-only publication scope
 
 An additional authorization here replaces full appointed-text reproduction
