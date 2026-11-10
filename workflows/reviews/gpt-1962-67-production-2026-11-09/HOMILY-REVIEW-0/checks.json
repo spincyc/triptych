@@ -1,0 +1,76 @@
+{
+  "packet_sha256": "5262f3b7f2e09d8f51520efcc431833b42205381b71c623752560fe683d4b0dc",
+  "spoken_words": 1300,
+  "whitespace_words": 1300,
+  "paragraphs": 15,
+  "sentences": 95,
+  "maximum_sentence_words": 25,
+  "delivery_seconds": {
+    "115": 678.26,
+    "120": 650.0,
+    "125": 624.0
+  },
+  "input_seal_matches": true,
+  "sealed_files": [
+    {
+      "path": "src/common/chronology-table.tex",
+      "expected": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "actual": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "matches": true
+    },
+    {
+      "path": "src/common/preamble.tex",
+      "expected": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "actual": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "matches": true
+    },
+    {
+      "path": "src/common/propers-format.tex",
+      "expected": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "actual": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "matches": true
+    },
+    {
+      "path": "src/common/propers-homily.tex",
+      "expected": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "actual": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/homily.tex",
+      "expected": "2ed3e596f02d2f67ac098e1fe3efa226a21d25cf07ef5f9891b80d475db73030",
+      "actual": "2ed3e596f02d2f67ac098e1fe3efa226a21d25cf07ef5f9891b80d475db73030",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md",
+      "expected": "ffab2a8503ef9a5bf66587ecfd4d2ff507ee77d92304bf21c745f9da87bc4481",
+      "actual": "ffab2a8503ef9a5bf66587ecfd4d2ff507ee77d92304bf21c745f9da87bc4481",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+      "expected": "18935d5cbb67ca4899dfad1d9581676af8973c8bcbd0f6f1fcdf6108fe22a2e7",
+      "actual": "18935d5cbb67ca4899dfad1d9581676af8973c8bcbd0f6f1fcdf6108fe22a2e7",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml",
+      "expected": "590783dc083607ea579b2147ca1804389f56116efb32ad34539c4bffc85e04ed",
+      "actual": "590783dc083607ea579b2147ca1804389f56116efb32ad34539c4bffc85e04ed",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/10-body.tex",
+      "expected": "843620353e5048150cea3671e4f1295ccf777650b530089d2967f23ce804d960",
+      "actual": "843620353e5048150cea3671e4f1295ccf777650b530089d2967f23ce804d960",
+      "matches": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/90-apparatus.tex",
+      "expected": "02e97fbc38cbe26cf5431e152852a8e6613db831e8290e133137b68ace040219",
+      "actual": "02e97fbc38cbe26cf5431e152852a8e6613db831e8290e133137b68ace040219",
+      "matches": true
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+Independent synthesis review — iteration 0
+
+Packet: build/tpt-runs/b42047a822a7e83e/packets/synthesis-review-0000.txt
+Run: b42047a822a7e83e; workflow proper-study v19; declared effort xhigh.
+Reviewed artifact: src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/synthesis.tex and all five sections/concise/*.tex inputs, with the shared generated chronology sheet.
+Verdict: PASS. No blocking or advisory findings were identified.
+
+Scope and independent reading
+
+Read the complete packet, applicable personal/workspace/repository guidance, and the governing editorial, document-schema, source, repository, Roman-1962 and three-document guidance. Read every concise reader-facing sentence independently before comparing its interpretation to the expansive study. No authoring conversation or author defense was used. No reviewed artifact was edited.
+
+The concise text independently conveys two distinguishable interpretations: the Gospel received in trial and communicated through exemplary conduct, and the Gospel transforming the whole person, including desire, repentance, and bodily hope. The first is carried by Chrysostom and Aquinas; the second by Jerome and Augustine. Supporting authors meet within questions about small beginnings, conduct, promised peace, offerings, prayer, and final hope. They are not merely recapped in separate author blocks.
+
+Compared the concise prose to the expansive opening, per-proper commentary, both interpretive chapters, comparison, and apparatus; also checked research/scope.md, research/interpretations.md, source bindings and relevant research dependency records. The complete-text mode is retained. The inventory contains the eleven appointed elements in liturgical order; exactly four senses overview rows follow it. The generated chronology precedes substantive themes and developed commentary, followed by terminal apparatus. The commentary develops reasoning beyond the opening themes, including Aquinas's two explanations of power, Chrysostom's distinction between gifts and virtue, and Jerome's limits on a proposed Trinitarian allegory. The selected occurrence and lack of a local commemoration remain recognizable.
+
+Checked compression for lost qualifications, upgraded certainty, new source-dependent claims, and manufactured disagreement. No such defect was found. Chrysostom's reading of three measures as much meal and Jerome's offered anthropological readings remain complementary alternatives. The four senses remain distinguishable where they affect the argument. Read the whole concise prose for recurring register defects under the editorial guidance; no blocking recurring pattern or isolated concrete advisory defect was identified. The apparatus remains a concise terminal apparatus rather than a second exposition.
+
+Exact evidence actually inspected
+
+All payload paths below are read-only under .scratch/gpt-1962-67-research-0/.
+
+* Chrysostom, Homilies on Matthew 46.2–3 and 47.1: bound-texts/adb8f1c9a988-source.txt, relevant passages around lines 27200–27360 and 27481–27565. Checked the relation of sowing losses and tares to the small-seed promise, leaven's contact with meal, three measures, apostolic virtue and miraculous gifts, inquiry through parables, and the private explanation of the tares. Inspected the historical NPNF/CCEL delivery header.
+* Chrysostom, Homily 1 on First Thessalonians: bound-texts/54274dd9aa73-source.txt, approximately lines 29125–29305. Checked work of faith, labor of charity, patience of hope, affliction with joy, and believers becoming examples; inspected the historical delivery header.
+* Aquinas, Super I ad Thessalonicenses, cap. 1, lect. 1 [87862]: aquinas-thess.txt, lines 53–220. Read the Latin for the virtues, alternative explanations of power, qualified imitation of preachers, exemplary conduct spreading faith, and resurrection hope. The concise study does not turn the alternatives into one exclusive explanation.
+* Jerome, Commentary on Matthew, PL 26, cols. 89–94: visually inspected jerome-052.png, jerome-053.png and jerome-054.png. Checked the apparent insignificance of preaching the crucified God, seed/sower/branches, spirit–soul–body and reason–anger–desire readings, the reported Trinitarian interpretation and its stated evidential limit, and the transition to private explanation and scriptural mysteries.
+* Jerome, Commentary on Jeremiah 29:10–14, PL 24, cols. 893–894: visually inspected jeremiah-451.png. Checked the contrast with false promises of immediate return, the seventy-year horizon, and prayer with the whole heart despite God's ability to fulfill the promise without it.
+* Augustine, Expositions on Psalms 129 (English CXXX), 43 (XLIV), and 84 (LXXXV): bound-texts/d68419503330-source.txt. Read the complete relevant Psalm 129 exposition (approximately lines 62150–62316), Psalm 43 sections 6–8 with surrounding text (14948–15075), and Psalm 84 sections 2–6 with context (41540–41695). Checked prayer from the depths, sin and prosperity, propitiation, Christ's resurrection and ours, future deliverance spoken with certainty, present suffering, captivity as sin, and forgiveness and conversion. Inspected the historical delivery header.
+* Bede, In Marci evangelium expositio, Mark 11:22–25: bound-texts/b8197766e84d-source.txt, the complete paragraphs at lines 338–339 beginning Et respondens Jesus and Et cum stabitis ad orandum. Checked faith working through charity, spiritual mountains, forgiveness and eternal life, and forgiving others. The concise study correctly treats forgiveness as adjacent context rather than an invented discrete gloss on verse 24.
+* Bellarmine, O'Sullivan's historical translation of the Psalm commentary: bound-texts/357551e186b7-text.txt. Read the translator's notice of omitted philological material; Psalm 43, explanations 7–9; Psalm 84, explanation 1; and Psalm 129, explanations 3–5 with surrounding text. Checked remembered deliverance and ensuing complaint, partial release and bodily resurrection, and misery joined to confidence in mercy. The difference of temporal emphasis from Augustine is preserved.
+* Schuster, Liber Sacramentorum: visually inspected schuster1-original-432.png and schuster1-original-433.png (printed pp. 416–417), including the chapter boundary and exact Sixth Sunday commentary on the Collect, Epistle, Gospel, Secret, and Postcommunion. Inspected schuster-204.png (vol. III, printed p. 188) for the relevant Offertory comment; did not import that page's different Gospel or Secret.
+* Historical prayer witnesses: visually inspected cummiskey112.jpg (printed p. 102) for the Sixth Sunday Collect, pustet-130.png and pustet-131.png (printed pp. 44–45) for the three orations and lessons, and pustet-325.png and pustet-326.png (printed pp. 239–240) for the complete Trinity preface. The historical winter chant set was not treated as the resumed Sunday's appointed chant set.
+* Biblical contextual checks: read Matthew 13:30–43 from bound-texts/dd0ba183f5fd-47-matthew.tsv, Mark 11:20–26 from bound-texts/69b4cb759fee-48-mark.tsv, and all First Thessalonians 1 from bound-texts/bb539aeca2f5-59-1-thessalonians.tsv. These support the seed/leaven, subsequent private questioning, adjacent forgiveness, and faith–charity–hope context.
+
+Generated chronology usability
+
+Read the actual shared generated table and annotations without reviewing or rewriting the sheet's wording. Generated the canonical web-edition Markdown with the repository tool, then rendered the exact extracted chronology table in a standalone diagnostic HTML page using Pandoc and Chromium. Inspected chronology.png visually and performed these concrete passage-to-occurrence/place/date lookups:
+
+* Matthew 13:31–35 -> narrated event, Jesus teaching in parables, Sea of Galilee -> AD 27, marked as derived from the adopted chronology. Matthew's composition appears as a separate occurrence, with Palestine and a proposal span c. AD 38–68.
+* Mark 11:24 -> narrated event, Jesus teaching faith and prayer, Bethany to Jerusalem before the Passion -> AD 29, derived. Mark's composition remains a separate row, traditionally Rome, proposal span AD 38–70.
+* First Thessalonians 1:2–10 -> composition of the letter, Corinth to Thessalonica -> proposal span AD 52–54.
+* Jeremiah 29:11–12,14 -> composition of the letter to exiles, Jerusalem to Babylon, after the deportation of 598–597 BC. The additional Introit Psalm 84 row remains distinct with explicit Vulgate/Hebrew numbering.
+
+The occurrence, place and date remain paired and usable; different kinds of occurrence are not collapsed. This tests the shared table content and relationships, not production print pagination.
+
+Verification and limits
+
+All 16 files in this packet's REVIEW_INPUTS seal still match their recorded SHA-256 values; see input-sha256-check.txt. This was a closure-integrity check, not a substitute for the substantive review. The result JSON is checked separately for its required stage, numeric iteration, disposition, summary and empty findings list.
+
+This is source/content and HTML-semantic review. No print edition was requested in this dispatch, and no PDF pagination or approximately 10–12-page physical extent is approved. The chronology HTML is a diagnostic rendering of the actual shared table, not an exact production companion page. Canonical web-edition conversion succeeded. Direct synthesis product enumeration was unavailable because its code traverses the not-yet-created downstream homily.tex; that did not prevent reading all synthesis sources or inspecting the shared table and is not treated as a synthesis defect. An initial Chromium attempt failed because of the temporary socket path length; retrying within the assigned scratch directory succeeded.
+
+This review did not repeat the complete research seal, calendar/rubric audit, rights audit, or whole appointed-Latin text collation. It used the accepted expansive evidence structure while independently inspecting the exact interpretive and prayer loci listed above. The 1962 controlling missal images were not freshly inspected in this lane. Historical missals were used only for the specific prayers and preface checked here. No fresh outside research or unsupported new chronology judgment was introduced. Prior, carried and advisory findings were all empty in the packet.
+
+Only .scratch/gpt-1962-67-synthesis-review-0/ was written. No reviewed artifact was edited; no agents were spawned; no workflow transition, commit or push was performed.

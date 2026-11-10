@@ -1,0 +1,144 @@
+{
+  "stage": "research-review",
+  "iteration": 0,
+  "run_id": "b42047a822a7e83e",
+  "packet": "build/tpt-runs/b42047a822a7e83e/packets/research-review-0000.txt",
+  "packet_sha256": "da89280eb43d45ae8b7915c1cc635603ef0a6839622e6d01a51b208b4b4be2cd",
+  "review_method": "Independent cold review of the packet, its actual sealed subject inputs, registered source metadata and exact available source evidence. No reliance on another reviewer verdict. No source changes or workflow advancement.",
+  "integrity": {
+    "sealed_files_checked": 1736,
+    "chronology_computation_inputs_checked": 15,
+    "source_admission_computation_inputs_checked": 8,
+    "errors": [],
+    "acquisition_check": "acquisition-hash-check.json",
+    "retained_payload_check": "retained-payload-check.json",
+    "dependency_check": "dependency-closure-check.json"
+  },
+  "subject_files_read": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/context.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-dispositions.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/review-dependencies.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/retrieved.txt",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md"
+  ],
+  "inventory_and_identity": {
+    "result": "Supported: universal 1962 II-class resumed Sixth Sunday after Epiphany, 15 November 2026; no A/B/C cycle; eleven elements including the Trinity Preface.",
+    "primary_loci": [
+      "1962 Missale Romanum, printed421–422, nos1759–1768 / PDF502–503",
+      "Trinity Preface, printed293, no1082 / PDF374",
+      "RG18(b),91,109,111(b); RGMR298 / PDF10,15,16,20"
+    ],
+    "observations": [
+      "The 26-Sunday interval places resumed VI in slot25 before the final Sunday. RG18(b) supports the ordering.",
+      "RGMR298 takes the five chants from the Twenty-third Sunday and retains the resumed Sunday's own orations, Epistle and Gospel.",
+      "The missal's printed 1Thess1,1–20 reference is erroneous; its complete body supports 1:2–10.",
+      "No ordinary commemoration of III-class Saint Albert follows under RG111(b). Contemporary Ordo material is corroboration with local additions excluded."
+    ]
+  },
+  "text_collation_evidence": [
+    {
+      "witness": "Pustet, Ratisbon1862",
+      "inspected": "Printed44–45 / PDF130–131; printed357–358 / PDF443–444; printed239–240 / PDF325–326, original page images",
+      "result": "The antecedent bodies support the appointed Latin; spelling and typography are normalized explicitly, including quotidie/cotidie."
+    },
+    {
+      "witness": "Cummiskey, Philadelphia1861",
+      "inspected": "Printed102 and anomalous101 / IA112,114; printedxxviii–xxix / IA38–39 original page images; registered temporal-orations-en, praefationes-en and ordinarium-oblatio-en text owners",
+      "result": "Historical English orations and preface supported. Biblical English is separately labeled a counterpart rather than a generated chant translation."
+    },
+    {
+      "witness": "Douay–Rheims Challoner, Gutenberg1581 registered verse artifacts",
+      "inspected": "Jer29:1–14; Ps43:1–15; Ps84:1–14; Ps129:1–8; Ps77:1–8; Matt13:24–43; Mark11:12–26; 1Thess1:1–10",
+      "result": "Appointed boundaries, Psalm numbering and meaningful liturgical adaptations supported."
+    }
+  ],
+  "reception_evidence": [
+    {
+      "witness": "Chrysostom, Homilies on Matthew46.2–3 and47.1",
+      "evidence": "Exact NPNF10 CCEL text adb8f1c9a988; lines27170–27330 and27475–27545 with local context",
+      "result": "Few weak disciples, contact of leaven, virtue beyond admiration of miracles, much meal, and inquiry prompted by parables support Reading A."
+    },
+    {
+      "witness": "Chrysostom, Homilies on First Thessalonians1 and2 opening",
+      "evidence": "Exact NPNF13 text54274dd9aa73; four admitted passages and adjacent boundaries at29102–29303 and29501–29598; translation preface16557–16563",
+      "result": "Natural paragraph extents and body/transcription separation supported; bodily affliction/spiritual joy, exemplary faith and final hope are present."
+    },
+    {
+      "witness": "Aquinas, Super I ad Thessalonicenses",
+      "evidence": "Exact Corpus Thomisticum HTMLfe77f056; prooemium[87861] and complete caput1 lectio1[87862], read through local text rendering",
+      "result": "Exemplary conversion, divine action, two explanations of power/Spirit/fullness, resurrection and freedom from punishment support Reading A. Minor faith/labor attribution issue recorded as RES-002."
+    },
+    {
+      "witness": "Jerome, Commentary on MatthewII",
+      "evidence": "PL26, cols89–94, PDF52–54 original page images",
+      "result": "Gospel preaching as seed; Scripture through the Church as leaven; spirit/soul/body and reason/anger/desire; warning against proving dogma from uncertain parables support Reading B and the stated comparison."
+    },
+    {
+      "witness": "Jerome, In JeremiamV",
+      "evidence": "PL24, cols893–894, PDF451 original page image",
+      "result": "Seventy-year restoration, rejection of false speedy return and summons to whole-hearted prayer support the Introit contextual limits."
+    },
+    {
+      "witness": "Augustine, Enarrationes in Psalmos",
+      "evidence": "Exact NPNF8 textd68419503330; Enarratio129.1–8 / NPNFPs130 lines62171–62335; relevant Enarratio43 / NPNFPs44 lines14925–15050; Enarratio84.1–6 / NPNFPs85 lines41518–41670",
+      "result": "Penitential depths, propitiation, resurrection, future rescue and conversion substantiate the reception claims with numbering reconciled."
+    },
+    {
+      "witness": "Bellarmine, Psalms in historical O’Sullivan English",
+      "evidence": "Exact text357551e186b7; translator preface; Ps43 explanations1–11; Ps84 explanations1–8; Ps129 explanations1–8",
+      "result": "Present persecution alongside remembered rescue, partial/final liberty, penitence and trust are supported. Historical abridgment is not treated as an original Latin controller."
+    },
+    {
+      "witness": "Bede, In Marci evangelium expositio",
+      "evidence": "Exact Latin textb8197766e84d lines332–341, Mark11:12–33 neighborhood",
+      "result": "Faith, charity, forgiveness and eternal life support the Communion contextual limit. No separate Mark11:24 lemma is invented."
+    },
+    {
+      "witness": "Schuster, The Sacramentary",
+      "evidence": "VolumeI printed416–418 / originalPDF432–434 and volumeIII printed186–189 / PDF202–205, original page images",
+      "result": "Actual Sixth-Sunday reading/oration commentary is distinguished from Twenty-third-Sunday five-chant commentary. Neighboring Mass texts and secondary historical assertions are not imported as appointed evidence."
+    }
+  ],
+  "consequential_difficulty_test": [
+    {
+      "question": "Does the three-measures image warrant the two readings or a proof of the Trinity?",
+      "loci": "Chrysostom, Homilies on Matthew46.2; Jerome, Commentary on MatthewII on13:33, PL26cols91–92",
+      "outcome": "Pass: Chrysostom explains much meal and contact; Jerome offers comprehensive human transformation and explicitly refuses dogmatic proof from uncertain parables. The proposal preserves the difference and treats its Trinity-Preface connection as synthesis."
+    },
+    {
+      "question": "Can confidence in deliverance coexist with affliction, and does ask-anything promise arbitrary temporal success?",
+      "loci": "Chrysostom, First Thessalonians1 on1:4–6; Augustine, Enarratio129.1–8; Bede, Mark11:22–25 neighborhood; SchusterIII188–189",
+      "outcome": "Pass: the actual sources distinguish bodily trial from Spirit-given joy, ground hope in Christ, and connect prayer to pardon, charity and eternal life. The proposed readings retain those constraints."
+    }
+  ],
+  "chronology": {
+    "inspected": "Generated chronology record, claims and orientation annotations; exact retained Catholic Encyclopedia paragraphs for Maas, Faulhaber, Prat, Drum, Durand, Jacquier, MacRory, Souvay, Reid, LeCamus, Schets and Corbett; Haydock printed790 / IA825 page image; AAS4(1912)464 responsaV–VI page image.",
+    "result": "No substantive defect found in the qualified selected traditional proposals. Composition and narrated-event claims remain distinct; Korahite range is a collection bound, Psalm occasions remain unresolved in full evidence, and possible Davidic attribution remains conditional. Compact ranges follow the later chronology orientation guidance and do not assert unique consensus dates."
+  },
+  "source_reconciliation": {
+    "bound_sources": 54,
+    "disposition_rows": 61,
+    "admission": "One row names four already admitted Chrysostom First-Thessalonians natural units.",
+    "deferrals": 16,
+    "non_commentary_rows": 44,
+    "result": "No unsupported new admission found. Concrete deferrals preserve natural extent, language, transcription and rights limitations. All reviewed source identities are exact; the one controlling rights inventory omission remains blocking."
+  },
+  "limits": [
+    "This is a bounded research review, not an exhaustive reading of every author or historical volume.",
+    "Original Greek was not consulted for NPNF translations; rights-limited modern Aquinas delivery supports attributed paraphrase, not a new purported historical English quotation.",
+    "Chronology checks test the retained traditional proposals and their qualifications, not contemporary scholarly consensus.",
+    "The Google rights inventory was read to establish the dependency omission; it is not part of the current sealed inputs. This review does not make a fresh legal ruling.",
+    "No downstream study, concise study, homily or rendered publication was reviewed at this stage."
+  ],
+  "verdict": "CHANGES_REQUIRED",
+  "findings": [
+    "RES-001",
+    "RES-002"
+  ]
+}

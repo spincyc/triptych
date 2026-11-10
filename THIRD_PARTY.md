@@ -1506,3 +1506,24 @@ conversion and bounded inspection reside in the source-library manifests and
 acquisition receipt. Three checked sections are admitted after separate
 author-standing review and an artifact-specific noncommercial permission
 gate; that admission does not extend to unchecked passages or other editions.
+
+
+### Resumed Sixth Sunday after Epiphany source evidence (9 November 2026)
+
+This registration retains uncorrected mechanical text extractions from the
+identified 1924 and 1925 English printings of Schuster’s *The Sacramentary*,
+translated by Arthur Levelis-Marke. Their public-domain historical text is
+distinct from Schuster’s Italian original. It also retains bounded original-page
+evidence from Schuster 1924 and 1927, Migne PL 24 (1865) and PL 26 (1845), Pustet 1862,
+and four exact Cummiskey 1861 page deliveries. Each artifact records its measured
+extent, exact hash, transformation where applicable and United States basis.
+
+Cummiskey’s pages were inspected as faithful mechanical reproductions of the
+historical printing; the existing Google-usage rights record governs the intact
+digitizer attribution only, not a blanket scan license. Original page-foot marks
+remain unaltered and outside Triptych licensing. Earlier whole-delivery rights
+records and reviewed consumer pins are unchanged. The binary evidence has one
+verified offline-only pack with no asserted public route. Modern Ordo and Haydock
+deliveries and the restricted Corpus Thomisticum expression are not distributed.
+The four reused Chrysostom passages remain the existing historical NPNF English,
+with its declared translation attribution and composition-date limitation.

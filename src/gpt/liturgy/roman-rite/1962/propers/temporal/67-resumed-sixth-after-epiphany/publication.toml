@@ -1,0 +1,46 @@
+[document]
+type = "proper-study-v1"
+title = 'Resumed Sixth Sunday after the Epiphany'
+running-head = 'Resumed Sixth Sunday after the Epiphany'
+
+[document.main]
+pdftitle = 'Resumed Sixth Sunday after the Epiphany: The Word Received and the Life It Changes'
+pdfsubject = 'An expansive study of the 1962 Roman Missal for 15 November 2026'
+subtitle = 'The Word Received and the Life It Changes'
+source-line = '1962 Roman Missal; expansive study'
+occasion-line = '15 November 2026; second-class Sunday'
+body = [
+  { component = 'opening' },
+  { component = 'appointed-text' },
+  { component = 'commentary' },
+  { component = 'word-received-in-trial' },
+  { component = 'whole-person-and-desire' },
+  { component = 'comparison' },
+]
+apparatus = [{ component = 'study-apparatus' }]
+
+[document.synthesis]
+pdftitle = 'Resumed Sixth Sunday after the Epiphany: Faith Taking Root'
+pdfsubject = 'A concise comparison of two interpretations of the 1962 Roman Missal for 15 November 2026'
+subtitle = 'Faith Taking Root'
+source-line = '1962 Roman Missal; concise study'
+occasion-line = '15 November 2026; second-class Sunday'
+opening = [
+  { component = 'concise-inventory' },
+  { component = 'concise-overview' },
+]
+body = [
+  { component = 'concise-themes' },
+  '\clearpage',
+  { component = 'concise-commentary' },
+  { component = 'concise-apparatus' },
+]
+
+[document.homily]
+pdftitle = 'Resumed Sixth Sunday after the Epiphany: Receiving the Word amid Difficulty'
+pdfsubject = 'A homily for an adult parish assembly at the 1962 Roman Missal celebration on 15 November 2026'
+subtitle = 'Receiving the Word amid Difficulty'
+source-line = '1962 Roman Missal; homily'
+occasion-line = '15 November 2026; adult parish assembly'
+homily = [{ component = 'homily-body' }]
+apparatus = [{ component = 'homily-apparatus' }]

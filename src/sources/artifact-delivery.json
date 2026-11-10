@@ -99,6 +99,14 @@
       "bytes": 2775040,
       "urls": [],
       "delivery": "offline-only"
+    },
+    {
+      "id": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "name": "triptych-binaries-0012-f0a3cc7417c7ddfb.tar",
+      "sha256": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "bytes": 9144320,
+      "urls": [],
+      "delivery": "offline-only"
     }
   ],
   "artifacts": [
@@ -50662,6 +50670,96 @@
         "sha256": "a19a438656586d6b8c23bb7c7bbc0006678be3c22846ac8c22c90a96e7e5c78a",
         "input_history": 5
       }
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/epiphany-pentecost-trinity-pages-7a85c99f/evidence.pdf",
+      "sha256": "7a85c99fc6b4540a2bcad09b42b055e083d221d6b045d78e7e1c0fcfd47f335d",
+      "bytes": 1087676,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/epiphany-pentecost-trinity-pages-7a85c99f/evidence.pdf"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey038-e7e9d004/page.jpg",
+      "sha256": "e7e9d004a1f82d0b26ace9a85d1677e1589cc0ce206a6b4b4e2a9070c1c8d471",
+      "bytes": 965843,
+      "kind": "source-evidence",
+      "media_type": "image/jpeg",
+      "origin_url": "https://archive.org/download/romanmissaltran00churgoog/page/n38_w1800.jpg",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey038-e7e9d004/page.jpg"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey039-1072b2d3/page.jpg",
+      "sha256": "1072b2d3956cb1b08feff62e4186af14a5402143bfe74f773a8dffb789e65f8c",
+      "bytes": 962934,
+      "kind": "source-evidence",
+      "media_type": "image/jpeg",
+      "origin_url": "https://archive.org/download/romanmissaltran00churgoog/page/n39_w1800.jpg",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey039-1072b2d3/page.jpg"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey112-b9829704/page.jpg",
+      "sha256": "b982970415a12791522b62c464a741dfcab13b0824ff6760f39cc0c932dd4f47",
+      "bytes": 1013702,
+      "kind": "source-evidence",
+      "media_type": "image/jpeg",
+      "origin_url": "https://archive.org/download/romanmissaltran00churgoog/page/n112_w1800.jpg",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey112-b9829704/page.jpg"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey114-db1cc0e0/page.jpg",
+      "sha256": "db1cc0e0dcd57a4863a882f2569c95c4d7581aaa2fd607af567c45f45f5bcad7",
+      "bytes": 984442,
+      "kind": "source-evidence",
+      "media_type": "image/jpeg",
+      "origin_url": "https://archive.org/download/romanmissaltran00churgoog/page/n114_w1800.jpg",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey114-db1cc0e0/page.jpg"
+    },
+    {
+      "path": "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1924-burns-oates-washbourne-volume-1-english/artifacts/title-and-sixth-epiphany-5fe08023/evidence.pdf",
+      "sha256": "5fe08023c79894088b8635a6ea9ee985616b09db187cca594d895bd43bd72751",
+      "bytes": 983994,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/LiberSacramentorum/The%20Sacramentary%20%28Liber%20Sacramentorum%29%3A%20Historical%20%26%20Liturgical%20Notes%20on%20the%20Roman%20Missal%20%28vol.%201%29.pdf",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1924-burns-oates-washbourne-volume-1-english/artifacts/title-and-sixth-epiphany-5fe08023/evidence.pdf"
+    },
+    {
+      "path": "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/twenty-third-pentecost-pages-cc8b4f6a/evidence.pdf",
+      "sha256": "cc8b4f6ac48d17f081156013a0b5ae26d10c8a05c6c86420cb60a2723a1123cc",
+      "bytes": 1556946,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/LiberSacramentorum/The%20Sacramentary%20%28Liber%20Sacramentorum%29%3A%20Historical%20%26%20Liturgical%20Notes%20on%20the%20Roman%20Missal%20%28vol.%203%29.pdf",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/twenty-third-pentecost-pages-cc8b4f6a/evidence.pdf"
+    },
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremiah-29-pages-2f3d5660/evidence.pdf",
+      "sha256": "2f3d5660bacf2569baa123493ac4d41f6fdfeb463109e1b653a430c3c4679483",
+      "bytes": 406153,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/sanctieusebiihie04jero/sanctieusebiihie04jero.pdf",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremiah-29-pages-2f3d5660/evidence.pdf"
+    },
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-26/editions/paris-1845/artifacts/matthew-13-pages-e99f4fd2/evidence.pdf",
+      "sha256": "e99f4fd243c42148172790afd996071514544cbec27bba923ea01d24c8ed36a3",
+      "bytes": 1164484,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "origin_url": "https://archive.org/download/patrologiaecurs240unkngoog/patrologiaecurs240unkngoog.pdf",
+      "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
+      "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-26/editions/paris-1845/artifacts/matthew-13-pages-e99f4fd2/evidence.pdf"
     }
   ]
 }

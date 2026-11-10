@@ -1,0 +1,176 @@
+schema = 2
+format_contract = "propers-format-v1"
+presentation_contract = "interpretive-pagination-v1"
+authority_contract = "authority-standing-v1"
+chronology_presentation = "orientation-v3"
+appointed_text_completeness = "complete"
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+
+[presentation]
+inventory = "concise-inventory"
+overview = "concise-overview"
+chronology = "concise-chronology"
+themes = "concise-themes"
+commentary = "concise-commentary"
+
+[[components]]
+key = "opening"
+kind = "front-matter"
+path = "sections/00-opening.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "appointed-text"
+kind = "appointed-text"
+path = "sections/10-appointed-text.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "propers/verified.md"]
+
+[[components]]
+key = "commentary"
+kind = "proper-treatment"
+path = "sections/20-commentary.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "word-received-in-trial"
+kind = "interpretive-lane"
+path = "sections/30-word-received-in-trial.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "whole-person-and-desire"
+kind = "interpretive-lane"
+path = "sections/40-whole-person-and-desire.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "comparison"
+kind = "front-matter"
+path = "sections/50-comparison.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "historical-appendix"
+kind = "front-matter"
+path = "generated/scriptural-date-location.tex"
+modes = ["research"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology.toml", "research/chronology-annotations.tex", "research/chronology-table.tex"]
+
+[[components]]
+key = "study-apparatus"
+kind = "terminal-apparatus"
+path = "sections/90-apparatus.tex"
+modes = ["research"]
+depends_on = []
+element_keys = []
+references = []
+
+[[components]]
+key = "concise-inventory"
+kind = "front-matter"
+path = "sections/concise/01-inventory.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "concise-overview"
+kind = "front-matter"
+path = "sections/concise/02-overview.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "concise-chronology"
+kind = "front-matter"
+path = "generated/scriptural-date-location-page.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml", "research/chronology.toml", "research/chronology-annotations.tex", "research/chronology-table.tex"]
+
+[[components]]
+key = "concise-themes"
+kind = "front-matter"
+path = "sections/concise/04-themes.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "concise-commentary"
+kind = "integrated-commentary"
+path = "sections/concise/10-commentary.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "concise-apparatus"
+kind = "terminal-apparatus"
+path = "sections/concise/90-apparatus.tex"
+modes = ["synthesis"]
+depends_on = []
+element_keys = []
+references = []
+
+[[components]]
+key = "homily-body"
+kind = "homily"
+path = "sections/homily/10-body.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+references = ["research/scope.md", "research/interpretations.md", "research/source-bindings.toml"]
+
+[[components]]
+key = "homily-apparatus"
+kind = "terminal-apparatus"
+path = "sections/homily/90-apparatus.tex"
+modes = ["homily"]
+depends_on = []
+element_keys = []
+references = []
+
+[[lanes]]
+key = "word-received-in-trial"
+authors = ["John Chrysostom", "Thomas Aquinas", "Jerome", "Augustine of Hippo", "Bede", "Ildefonso Schuster"]
+carrying_authors = ["John Chrysostom", "Thomas Aquinas"]
+sources = ["research/scope.md", "research/interpretations.md"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+component_keys = ["word-received-in-trial"]
+
+[[lanes]]
+key = "whole-person-and-desire"
+authors = ["Jerome", "Augustine of Hippo", "Robert Bellarmine", "Bede", "John Chrysostom", "Ildefonso Schuster"]
+carrying_authors = ["Jerome", "Augustine of Hippo"]
+sources = ["research/scope.md", "research/interpretations.md"]
+senses = ["literal", "allegorical", "moral", "anagogical"]
+element_keys = ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"]
+component_keys = ["whole-person-and-desire"]

@@ -1,0 +1,87 @@
+{
+  "stage": "build-artifacts",
+  "iteration": 0,
+  "run_id": "b42047a822a7e83e",
+  "publication": "gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+  "identity_status": "ok",
+  "content_sha256": "265d4cdba2b5e8a8645f558c200a6182f2781a092661459e0c5853716f01e403",
+  "evidence_sha256": "38a155500a6bad5408f22a02aec3fa62a36102eb3c59b7ed5d724941ea0f751d",
+  "render_inputs_sha256": "5c50dd4afb369f9aa6d4e34ff242ce67f8ae2d086abc8c1570bb0b11ea7d1e6d",
+  "output_identities": {
+    "canonical": "286fd51fc27a8deecbfddfd6d301803111c153ffd80442f9687f48e379e96793",
+    "homily": "d440f0692f2430878f4917cda1305493d4a8a3c7bad5390acf2a2169f134004c",
+    "synthesis": "e7b3e212087f3b891b92681b0275cc36cfa08177ad22a7cdff1556e10942f83a"
+  },
+  "identity_unchanged_after_audit": true,
+  "review_closure": [
+    {
+      "review": "research",
+      "accepted_iteration": 1,
+      "exact_match": true,
+      "files": 1738,
+      "chronology_computation_inputs": 15,
+      "source_admission_computation_inputs": 8
+    },
+    {
+      "review": "study",
+      "accepted_iteration": 1,
+      "exact_match": true,
+      "files": 19
+    },
+    {
+      "review": "synthesis",
+      "accepted_iteration": 0,
+      "exact_match": true,
+      "files": 16
+    },
+    {
+      "review": "homily",
+      "accepted_iteration": 1,
+      "exact_match": true,
+      "files": 10
+    }
+  ],
+  "accepted_result_hashes_match_state": true,
+  "unchanged_entrypoints": [
+    "main.tex",
+    "synthesis.tex",
+    "homily.tex"
+  ],
+  "changed_production_resources": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/production-review.md"
+  ],
+  "limits": [
+    "No fresh source collation or independent editorial review; this stage validated current accepted closures.",
+    "No print export, physical pagination, PDF/font/extraction checks, rasters or visual print review requested or performed.",
+    "No web conversion or independent web review claimed by this stage.",
+    "The existing STU-002 advisory remains unchanged and does not block the accepted study.",
+    "Shared inventories and the family ledger are coordinator-owned; no new repository-wide make check-sources result is claimed."
+  ],
+  "schema_validation": {
+    "status": "ok",
+    "documents": 1,
+    "outputs": 3,
+    "errors": 0,
+    "phase": "content"
+  },
+  "registered_gates": [
+    {
+      "id": "generation",
+      "status": "pass",
+      "exit_code": 0,
+      "output": "Generation metadata valid: 1 canonical record(s), 0 inherited record(s).\n"
+    },
+    {
+      "id": "proper-components",
+      "status": "pass",
+      "exit_code": 0,
+      "output": "Proper component manifests valid: 1.\n"
+    },
+    {
+      "id": "proper-content",
+      "status": "pass",
+      "exit_code": 0,
+      "output": "bindings-valid: 54 bindings, every id registered and every reviewed state fingerprinted as the library computes it\nchronology-annotations-current: research/chronology-annotations.tex carries the complete live projection for 7 scriptural elements and 19 projected candidates\nchronology-claims-supported: research: 10 generated orientation rows with exact passage reach and complete candidates; synthesis: 10 generated orientation rows with exact passage reach and complete candidates; homily: 0 chronology claims and no date cell, every claim asserted by the corpus (not yet bound by version: the document type assembles current chronology)\nchronology-record-current: 7 scriptural elements, 22 corpus assertions carried, current with the corpus\nhouse-voice: 21 reader-facing files, no sentence taking the guide, its apparatus or the repository as its subject\nidentifiers-resolve: the leaf prints no source identifier\nproposal-fields: not in scope: schema 2 uses whole-proper interpretive lanes, not the legacy exploratory-proposal template\nreferences-used: 19 entries, every one used in the body\nrelation-coverage: 2 interpretive lanes, each declaring all four senses and whole-proper component coverage\nrestricted-not-reproduced: 54 bound sources, 1 of them restricted, none reproduced\nstructural-meta-labels: 100 headings, box titles, run-in labels, and table headings inspected, with no forbidden structural meta-label (the leaf adopts schema 2)\nunquoted-not-quoted: 0 sources declared unquoted, none attributed a quotation\n"
+    }
+  ]
+}

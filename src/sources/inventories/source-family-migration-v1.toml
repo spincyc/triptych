@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-11-08"
+audited_on = "2026-11-09"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:729cb887340cd0ec1da5ae0c50570d5d164b3175c2679c411bf9b14bd5f536c4"
+inventory_snapshot = "sha256:1b6a2da8928c3101c551f35b7f81500917f2f5937e74a0e74520f3bcd32f5052"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
-classification_snapshot = "sha256:b608e607e338fcb02ff5e29a2c317bd2271a50e3679373e4903f6028b1dae2d4"
-canonical_catalog_snapshot = "sha256:7bbb713b47ad40db8bac13428dc2e28ee51e376114dd789607cc6b805a9cf33c"
+classification_snapshot = "sha256:3e31ca144b739b9ac7ffb3d846bc30d705061feed3f565c4ed29f5e5b665b738"
+canonical_catalog_snapshot = "sha256:75785c181c06d27db13700a7c26eb35ef36a0feb329c9ed9e6b6e436c86bbe0f"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:8b3dd9fb1e7cd0f3f22511d8179ad0ae5e3232f886525694ac30bf5299fe088e"
+snapshot = "sha256:3f01d973e8c3e960986021c7169807b15110df6f93f64fd6a4932c2c732efbc6"
 families = []
 
 [[review_units]]
@@ -504,6 +504,11 @@ review_state = "pending"
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"
 surface_snapshot = "sha256:be59f37bdd8768c467c0c8a13ced1a329772d7a3416f45fddcdf03e179901a6c"
+review_state = "pending"
+
+[[review_units]]
+owner_id = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
+surface_snapshot = "sha256:8946b2f767806b2fddca48dd61486384d8459adbe9ee45f85361c51522e85dee"
 review_state = "pending"
 
 [[review_units]]

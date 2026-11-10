@@ -11,28 +11,43 @@ Last reconciled: 2026-11-09.
 
 <!-- promised-deliverable: gpt-1962-67-production-2026-11-09 -->
 
-**In progress.** The maintainer requested the TLM propers documents workflow
-for the upcoming Sunday and publication to main. The target is the GPT 1962
-resumed Sixth Sunday after the Epiphany, identity 67, for 15 November 2026.
-The context stage confirms the universal-calendar appointment against the 1962
-Missal's page images and two dated institutional Ordos. Its eleven-element
-inventory includes the appointed Trinity Preface. It records the Epistle's
-printed citation misprint and excludes additional institutional or local
-appointments. Full wording collation and historical English checks remain in
-research.
+**In progress: research and all three content reviews accepted.** The
+maintainer requested the TLM propers documents for the upcoming Sunday and
+publication to main. The target is GPT identity 67, the universal 1962 resumed
+Sixth Sunday after the Epiphany on 15 November 2026. The eleven appointed
+elements include the Trinity Preface. The controlling Missal images and two
+dated Ordos establish the appointment; the evidence preserves the Epistle's
+printed citation anomaly, resumed prayer endings and local-calendar limits.
 
-The deliverable is the full study, concise study and homily under one owner,
-through proper-study version 19, with independent stage reviews, source and
-reader checks, publication gates, and archived results. Scope and context
-pass; research is in progress. No study, concise study or homily has yet been
-authored or accepted. Completion also requires the three native print
-compilation checks, successful publication to main without rewriting history,
-successful Pages deployment, and verification of all three live readers.
-Work remains on the assigned workspace branch until publication; the explicit
-main request authorizes advancing the remote main ref with validated commits.
+Proper-study version 19, run `b42047a822a7e83e`, has accepted research,
+expansive-study, concise-study and homily reviews. The current documents contain
+6,598 substantive study words, 3,377 concise-study words and 1,185 spoken homily
+words. The homily's estimate is 10 minutes 18 seconds at 115 words per minute,
+not a timed performance. Research, study and homily repairs received fresh
+independent reviews; the concise review passed without findings. One isolated
+redundant Offertory sentence remains advisory (STU-002).
 
-The production authorization is recorded in
-`guidance/liturgy/propers-production-plan.md`. The durable cycle record will be
+The source records reconcile fifty-four bindings and sixty-one dispositions.
+Nine binary witnesses are verified and preserved in an offline-only pack
+outside the disposable workspace. The complete source check passed against
+the iteration-0 homily family; inventories are synchronized after the later
+prose repair and artifact audit, with final global validation still pending. All 167 source-family review states
+remain pending, without an invented family-wide acceptance. A staged revision
+validation defect was repaired in `1b68bd930e`; its focused tests and actual
+conversions pass, with broader fixture-test limits recorded in the cycle audit.
+
+Source/artifact validation passes with all accepted input seals current.
+Remaining work is the committed
+source checkpoint, canonical web review, publication wiring and gates, terminal
+run archive, three native print compilation checks, desktop/mobile reader and
+print-control checks, validated publication to main, successful Pages deployment
+and verification of all three live readers. Content acceptance does not yet
+establish publication or print-layout approval. Work stays on
+`feature/propers/codex`; the explicit main request authorizes a fast-forward
+update of the remote main ref without history rewriting.
+
+Authorization: `guidance/liturgy/propers-production-plan.md`.
+Exact review cycles, retained evidence and limitations:
 `workflows/reviews/gpt-1962-67-production-2026-11-09/CYCLES.md`.
 
 ## Catena English editions, passage linkage and Lectern startup — 8 November 2026

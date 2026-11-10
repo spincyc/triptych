@@ -1,0 +1,175 @@
+{
+  "packet": "build/tpt-runs/b42047a822a7e83e/packets/study-review-0001.txt",
+  "packet_sha256": "1fd5b66860ed10240639781bde25ef9aee59101ad69278b9b5ffe84493cbf999",
+  "stage": "study-review",
+  "iteration": 1,
+  "effort": "xhigh",
+  "review_scope": [
+    "generation-metadata.tex",
+    "research/production-review.md",
+    "sections/20-commentary.tex",
+    "sections/40-whole-person-and-desire.tex"
+  ],
+  "sealed_files": [
+    {
+      "path": "src/common/chronology-table.tex",
+      "expected": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "actual": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "match": true
+    },
+    {
+      "path": "src/common/preamble.tex",
+      "expected": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "actual": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "match": true
+    },
+    {
+      "path": "src/common/propers-format.tex",
+      "expected": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "actual": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location.tex",
+      "expected": "fff4bdaea9e1a356804873f764ae48d6ca8605574f95c71dc144a2c98155a5d6",
+      "actual": "fff4bdaea9e1a356804873f764ae48d6ca8605574f95c71dc144a2c98155a5d6",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex",
+      "expected": "ca1269d5b030634b98c12f683bad45b9419952fc32199919dbdf052b292b49b5",
+      "actual": "ca1269d5b030634b98c12f683bad45b9419952fc32199919dbdf052b292b49b5",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md",
+      "expected": "b1fbe804ca8a0a36bedb3e4185b067185b72aed17392668a6adc8b9970456120",
+      "actual": "b1fbe804ca8a0a36bedb3e4185b067185b72aed17392668a6adc8b9970456120",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex",
+      "expected": "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc",
+      "actual": "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex",
+      "expected": "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8",
+      "actual": "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml",
+      "expected": "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812",
+      "actual": "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md",
+      "expected": "ffab2a8503ef9a5bf66587ecfd4d2ff507ee77d92304bf21c745f9da87bc4481",
+      "actual": "ffab2a8503ef9a5bf66587ecfd4d2ff507ee77d92304bf21c745f9da87bc4481",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+      "expected": "18935d5cbb67ca4899dfad1d9581676af8973c8bcbd0f6f1fcdf6108fe22a2e7",
+      "actual": "18935d5cbb67ca4899dfad1d9581676af8973c8bcbd0f6f1fcdf6108fe22a2e7",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml",
+      "expected": "590783dc083607ea579b2147ca1804389f56116efb32ad34539c4bffc85e04ed",
+      "actual": "590783dc083607ea579b2147ca1804389f56116efb32ad34539c4bffc85e04ed",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/00-opening.tex",
+      "expected": "bb8db906a8ec343bb77488e4a6c4d9d4899fc2a5657e500b7a4affd09832ac6e",
+      "actual": "bb8db906a8ec343bb77488e4a6c4d9d4899fc2a5657e500b7a4affd09832ac6e",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/10-appointed-text.tex",
+      "expected": "00d6972383b7dbbc7e44c882e89ec7899718e30d1fdc2a6043c4a519d916cefb",
+      "actual": "00d6972383b7dbbc7e44c882e89ec7899718e30d1fdc2a6043c4a519d916cefb",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/20-commentary.tex",
+      "expected": "039f8f32aa8d302a5683fe33845458b186de235269844ffa63815dcdbab5df93",
+      "actual": "039f8f32aa8d302a5683fe33845458b186de235269844ffa63815dcdbab5df93",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/30-word-received-in-trial.tex",
+      "expected": "8be7083d2680dcf1365b0c0934da670334790e70a13fbf01ae34bcf9e95fe30b",
+      "actual": "8be7083d2680dcf1365b0c0934da670334790e70a13fbf01ae34bcf9e95fe30b",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/40-whole-person-and-desire.tex",
+      "expected": "be7f63f61e9d4e391068bb67e1f4ceb51526311bc07dc90f476b987e03d29f41",
+      "actual": "be7f63f61e9d4e391068bb67e1f4ceb51526311bc07dc90f476b987e03d29f41",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/50-comparison.tex",
+      "expected": "12bd0b2837ea9b7f0eed82de317d148259c49694585aba478e8215eed2026327",
+      "actual": "12bd0b2837ea9b7f0eed82de317d148259c49694585aba478e8215eed2026327",
+      "match": true
+    },
+    {
+      "path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/90-apparatus.tex",
+      "expected": "b79ac00dd99fe9b71f53f6e5d0397a0d8a59d79c3da79aa98e0cca2160a6570c",
+      "actual": "b79ac00dd99fe9b71f53f6e5d0397a0d8a59d79c3da79aa98e0cca2160a6570c",
+      "match": true
+    }
+  ],
+  "appointed_mode": "complete",
+  "appointed_anchors": [
+    "introit",
+    "collect",
+    "epistle",
+    "gradual",
+    "alleluia",
+    "gospel",
+    "offertory",
+    "secret",
+    "preface",
+    "communion",
+    "postcommunion"
+  ],
+  "source_payload_checks": [
+    {
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9",
+      "sha256": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648",
+      "match": true
+    },
+    {
+      "source_id": "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950",
+      "sha256": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9",
+      "match": true
+    },
+    {
+      "source_id": "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9",
+      "sha256": "54274dd9aa73ca36e4da9e763e4a27d1818b09e42ffc73795529afec703a4210",
+      "match": true
+    },
+    {
+      "source_id": "artifact.bede.in-marci-evangelium-expositio.2026-10-13-latin-wikisource-migne.latin-text-b8197766",
+      "sha256": "b8197766e84dfbc56b1aee5ff09ebaa6b949131f964645733c907548b33049a2",
+      "match": true
+    },
+    {
+      "source_id": "artifact.robert-bellarmine.commentary-on-the-book-of-psalms.2026-09-05-osullivan-ecatholic2000.historical-text-357551e1",
+      "sha256": "357551e186b7c400fcd4f442ef2a70f6e51b7148ae69ab467b93b4a64ae51bc2",
+      "match": true
+    },
+    {
+      "source_id": "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d",
+      "sha256": "578f023dfe1c830252f23df84bcdbaae79857a652e41b7546c461c4a22f601fc",
+      "match": true
+    }
+  ]
+}

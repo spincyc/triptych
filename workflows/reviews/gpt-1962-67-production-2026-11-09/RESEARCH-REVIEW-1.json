@@ -1,0 +1,96 @@
+{
+  "stage": "research-review",
+  "iteration": 1,
+  "run_id": "b42047a822a7e83e",
+  "verdict": "PASS",
+  "packet": "build/tpt-runs/b42047a822a7e83e/packets/research-review-0001.txt",
+  "packet_sha256": "5493027ad9c2dd07d46cf371f3f664861bd548a0622a9e0f83b94504a7fcdae7",
+  "completed_at_utc": "2026-11-10T02:07:31.004173+00:00",
+  "reviewed_changed_records": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/review-dependencies.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-dispositions.toml"
+  ],
+  "standing_record": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/blocking-findings-v1.toml",
+  "seal_audit": {
+    "hashed_entries": {
+      "files": 1738,
+      "chronology_computation_inputs": 15,
+      "source_admission_computation_inputs": 8
+    },
+    "mismatches": [],
+    "added_rights_owners": {
+      "src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml": "f214bd4841f573b4ff8a85ae312c034602bfc12b1e01f8980cce078631603d35",
+      "src/sources/inventories/google-usage-guidelines-rights-v1.toml": "721d78d00a6d07a7562f6ea8d2c629d6e9fdbbdf14f4247e3a29af022ee5fd6f"
+    },
+    "previous_packet_comparison": "Exactly the five REVIEW_SCOPE files changed and two rights inventories entered the seal; no chronology or source-admission computation input changed."
+  },
+  "standing_findings": [
+    {
+      "id": "RES-001",
+      "outcome": "resolved",
+      "evidence": "Google inventory is declared and sealed at 721d78d00a6d07a7562f6ea8d2c629d6e9fdbbdf14f4247e3a29af022ee5fd6f; its adopted Ambrosian/Mozarabic reasoning is declared and sealed at f214bd4841f573b4ff8a85ae312c034602bfc12b1e01f8980cce078631603d35. Read Google rule, holding, conditions, the_other_google_matter, why_it_may_be_retained, census/duplicate examples, not_settled_here, and the adopted shape_three section. The Braga reference is a contrast, not an adopted permission. The historical-printing/mechanical-reproduction basis stays distinct from the stamp rule and older whole-PDF dispositions."
+    },
+    {
+      "id": "RES-002",
+      "outcome": "resolved",
+      "evidence": "Rehashed exact 92000-byte Aquinas delivery to fe77f056e47df4d73eab61c0c496d465b657d35b60e7fc201f9e0579bab2ef95 and read caput 1 lectio 1 [87862] completely. The current scope, interpretation and binding now correctly join operationem et laborem to faith, then distinguish charity and hope. Compared Chrysostom First-Thessalonians 1 opening, which expressly attaches labor to love."
+    }
+  ],
+  "source_reconciliation": {
+    "bindings": 54,
+    "disposition_rows": 61,
+    "disposition_counts": {
+      "not-commentary": 44,
+      "deferred": 16,
+      "admitted": 1
+    },
+    "unrepresented_bindings": [],
+    "finding": "Read the complete changed binding and disposition records. All local inspected witnesses have a disposition; analogues and neighboring Jerome contexts remain explicit. Deferrals identify concrete admission gaps without erasing checked publication-local use or conferring redistribution rights."
+  },
+  "exact_locus_checks": [
+    {
+      "source": "Chrysostom, Homilies on Matthew 46.2–3 and 47.1 opening",
+      "controller": "artifact.nicene-and-post-nicene-fathers.series-1-volume-10.ccel-web-2026-09-17.ccel-text-adb8f1c9",
+      "extent": "Physical lines 27185–27315 and 27481–27538",
+      "outcome": "Reading A addresses the discouragement caused by the sower/tares sequence: weak disciples and leaven in contact explain outward fruitfulness; three measures mean much meal. The homily contrasts apostolic virtue with reliance on miracles and treats parables as prompting inquiry. The brief keeps these inferences with Chrysostom rather than assigning him the whole Mass."
+    },
+    {
+      "source": "Jerome, Commentary on Matthew II on 13:31–35",
+      "controller": "artifact.jacques-paul-migne.patrologia-latina-volume-26.paris-1845.matthew-13-pages-e99f4fd2",
+      "extent": "Rendered and visually read retained-extract pages 1–2, PL26 cols 89–92, especially 13:32–33",
+      "outcome": "Reading B has a distinct supported mechanism: apparently slight Gospel preaching grows within a believing soul; scriptural understanding orders spirit/soul/body or reason/anger/desire. Jerome expressly refuses dogmatic proof from uncertain parables. This supports the comparison with Chrysostom and preserves the limit concerning the Trinity Preface."
+    },
+    {
+      "source": "Augustine, Enarratio 129.1–8",
+      "controller": "artifact.augustine.enarrationes-in-psalmos.english-npnf8-ccel-web-2026-09-05.ccel-npnf108-text-d6841950",
+      "extent": "NPNF Psalm CXXX, physical lines 62171–62340",
+      "outcome": "The sinner’s cry, Christ’s propitiatory sacrifice and morning-watch resurrection supply substantive compatible penitential and eschatological reasoning for B; NPNF heading and Latin/Vulgate numbering are distinguished."
+    },
+    {
+      "source": "Chrysostom, Homilies on First Thessalonians, four admitted units",
+      "controller": "artifact.nicene-and-post-nicene-fathers.series-1-volume-13.english-ccel-web-2026-09-05.ccel-npnf113-text-54274dd9",
+      "extent": "Passage bodies 1.1thess-1.1-3, 1.1thess-1.4-6, 1.1thess-1.7, 2.1thess-1.8-10; controller segments and Oxford preface lines 16504–16514 and 16557–16563",
+      "outcome": "Read all four passage bodies; every recorded transcription segment matches its exact controller line. Native units end at their proper next lemma or Moral division. Tweed attribution and Constantinopolitan setting agree with the checked preface; no Greek inspection or precise composition year is inferred."
+    }
+  ],
+  "artifact_checks": {
+    "nine_new_binary_artifacts": "All nine cached artifacts independently rehashed and measured against the exact sealed artifact records; all hashes and sizes match. Cache read only.",
+    "visual_inspection": "Cummiskey IA n112, printed102: complete Sixth-Sunday Collect at page bottom and intact Google foot attribution; Jerome Matthew extract pages1–2: complete original pages, Latin commentary, no new human editorial overlay asserted."
+  },
+  "unchanged_context_consulted": [
+    "context.md complete",
+    "verified.md identity/rights opening and eleven-element headings",
+    "retrieved.txt source identity opening",
+    "chronology-table.tex complete",
+    "chronology-annotations.tex complete"
+  ],
+  "limitations": [
+    "This is iteration 1 under REVIEW_SCOPE and the standing-findings contract, not an unrestricted rerun of iteration 0. Unchanged appointment, chronology, source payload and computation inputs were verified for byte continuity; their entire earlier scholarly inspection was not repeated.",
+    "No new online acquisition, independent legal opinion, whole-book inspection, original-Greek collation, print rendering/layout approval, web approval or publication approval is claimed.",
+    "Existing corpus-admission deferrals and bounded uninspected leads remain. PASS authorizes study drafting from the bounded evidence, not exhaustive scholarship.",
+    "No subject source, canonical review record, workflow state, commit, push or shared cache was modified; only this reviewer’s assigned scratch was written."
+  ]
+}
