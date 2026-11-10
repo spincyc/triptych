@@ -291,6 +291,47 @@ regions = ["body"]
                 self.assertEqual(roles["synthesis"], "authored" if version == 2 else "projection")
                 self.assertEqual("homily" in roles, version == 2)
 
+    def test_selected_edition_allows_future_companions_but_full_validation_refuses(self):
+        leaf = self.root / "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-example"
+        leaf.mkdir(parents=True)
+        (leaf / "main.tex").write_text("Complete study.\n", encoding="utf-8")
+        (leaf / "proper-components.toml").write_text("schema=2\n", encoding="utf-8")
+        manifest = leaf / "publication.toml"
+        manifest.write_text('''[[structure]]
+role = "companion-exposition"
+source = "sections/future-synthesis.tex"
+outputs = ["synthesis"]
+''', encoding="utf-8")
+        record = schema.load_manifest(self.root, manifest, output_entrypoint="main.tex")
+        self.assertEqual([o["role"] for o in record["outputs"]],
+                         ["canonical", "synthesis", "homily"])
+        with self.assertRaisesRegex(schema.SchemaError, "input has no existing file"):
+            schema.load_manifest(self.root, manifest)
+        with self.assertRaisesRegex(schema.SchemaError, "input has no existing file"):
+            schema.load_manifest(self.root, manifest, output_entrypoint="synthesis.tex")
+        with self.assertRaisesRegex(schema.SchemaError, "input has no existing file"):
+            schema.load_manifest(self.root, manifest, output_entrypoint="homily.tex")
+        with self.assertRaisesRegex(schema.SchemaError, "one declared output"):
+            schema.load_manifest(self.root, manifest, output_entrypoint="other.tex")
+        (leaf / "main.tex").unlink()
+        with self.assertRaisesRegex(schema.SchemaError, "input has no existing file"):
+            schema.load_manifest(self.root, manifest, output_entrypoint="main.tex")
+
+    def test_selected_edition_keeps_shared_inputs_and_other_output_ownership_checks(self):
+        manifest = self.write()
+        (self.leaf / "research/scope.md").unlink()
+        with self.assertRaisesRegex(schema.SchemaError, "input has no existing file"):
+            schema.load_manifest(self.root, manifest, output_entrypoint="main.tex")
+        (self.leaf / "research/scope.md").write_text("Restored scope.\n", encoding="utf-8")
+        (self.leaf / "proper-components.toml").write_text("schema=2\n", encoding="utf-8")
+        manifest.write_text("# Derived declarations.\n", encoding="utf-8")
+        other = self.root / "src/claude/other/main.tex"
+        other.parent.mkdir(parents=True)
+        other.write_text("Other provider.\n", encoding="utf-8")
+        (self.leaf / "synthesis.tex").symlink_to(other)
+        with self.assertRaisesRegex(schema.SchemaError, "output entrypoint escapes"):
+            schema.load_manifest(self.root, manifest, output_entrypoint="main.tex")
+
     def test_audit_and_render_source_changes_have_distinct_identities(self):
         record = self.load()
         before = schema.identities(self.root, record)
