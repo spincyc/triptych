@@ -77,6 +77,22 @@ class Fixture(unittest.TestCase):
 
 
 class ClosureAndHistoryTests(Fixture):
+    def test_new_proper_revision_does_not_require_unauthored_companions(self) -> None:
+        document = "liturgy/roman-rite/1962/propers/temporal/67-example"
+        leaf = "src/claude/" + document
+        self.write(leaf + "/main.tex", "Complete expansive study.\n")
+        self.write(leaf + "/proper-components.toml", "schema=2\n")
+        self.write(leaf + "/publication.toml", "# Derived declarations.\n")
+        authored = self.commit("author the expansive study")
+        value = self.derive(document)
+        self.assertEqual(value.timestamp, stamp(authored))
+        self.assertIn(leaf + "/main.tex", value.closure)
+        self.assertFalse(value.uncommitted)
+        self.assertFalse((self.root / leaf / "synthesis.tex").exists())
+        self.assertFalse((self.root / leaf / "homily.tex").exists())
+        with self.assertRaisesRegex(revision.SchemaError, "input has no existing file"):
+            revision.load_manifest(self.root, self.root / leaf / "publication.toml")
+
     def test_explicit_leaf_relative_render_data_is_part_of_the_revision(self) -> None:
         document = "liturgy/roman-rite/1962/reference/roman-sanctuary-dictionary/altar-server"
         leaf = "src/claude/" + document

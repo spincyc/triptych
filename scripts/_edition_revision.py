@@ -307,7 +307,7 @@ def _render_data(root: Path, provider_root: Path, entry: Path) -> set[Path]:
     if not manifest.is_file():
         return set()
     try:
-        data = load_manifest(root, manifest)
+        data = load_manifest(root, manifest, output_entrypoint=entry.name)
     except (OSError, SchemaError, ValueError) as error:
         raise RevisionError(f"cannot read {manifest.relative_to(root)}: {error}") from error
     role = next((output.get("role") for output in data.get("outputs", [])

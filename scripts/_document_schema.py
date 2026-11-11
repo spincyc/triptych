@@ -551,12 +551,12 @@ def adapter_manifest(root: Path, leaf_dir: Path) -> dict:
     return data
 
 
-def _structure_paths(root: Path, record: dict, item: dict) -> list[Path]:
+def _structure_paths(root: Path, record: dict, item: dict, *, must_exist: bool = True) -> list[Path]:
     if "source" in item:
         pattern = f"{record['source_dir']}/{item['source']}"
     else:
         pattern = item["data"]
-    paths = _paths(root, pattern)
+    paths = _paths(root, pattern, must_exist=must_exist)
     leaf_dir = (root / record["source_dir"]).resolve()
     other = {p for p in PROVIDERS if p != record["provider"]}
     for path in paths:
@@ -569,7 +569,8 @@ def _structure_paths(root: Path, record: dict, item: dict) -> list[Path]:
     return paths
 
 
-def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
+def _normalise(root: Path, data: dict, manifest_path: Path | None, *,
+               output_entrypoint: str | None = None) -> dict:
     _strict(data, MANIFEST_FIELDS, "publication")
     declared = data
     if manifest_path is not None:
@@ -633,6 +634,13 @@ def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
     canonical = next((o for o in result["outputs"] if o["role"] == "canonical"), None)
     if canonical is None or canonical["entrypoint"] != entrypoint:
         raise SchemaError("exactly one canonical output must use the declared entrypoint")
+    selected_role = None
+    if output_entrypoint is not None:
+        _relative(output_entrypoint, "selected output entrypoint")
+        selected = [o for o in result["outputs"] if o["entrypoint"] == output_entrypoint]
+        if len(selected) != 1:
+            raise SchemaError(f"selected output entrypoint must name one declared output: {output_entrypoint}")
+        selected_role = selected[0]["role"]
     if source_format in {"latex", "structured"}:
         expected = _expected_outputs(root, provider, leaf)
         if [{k: o[k] for k in OUTPUT_FIELDS} for o in result["outputs"]] != expected:
@@ -675,7 +683,8 @@ def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
         if not selected or set(selected) - roles:
             raise SchemaError("structure outputs must name existing output roles")
         nodes[key] = _strings(item.get("depends_on", []), "structure depends_on")
-        _structure_paths(root, result, item)
+        _structure_paths(root, result, item,
+                         must_exist=selected_role is None or selected_role in selected)
     _acyclic(nodes, "structure")
     for field in ("content_inputs", "evidence_inputs", "render_inputs"):
         for pattern in _strings(data.get(field, []), field):
@@ -717,7 +726,8 @@ def _normalise(root: Path, data: dict, manifest_path: Path | None) -> dict:
         raise SchemaError("canonical_owner must preserve the exact existing generation inheritance")
     _inheritance_cycle(root, data["id"])
     for output in result["outputs"]:
-        for path in _paths(root, output["source_path"]):
+        for path in _paths(root, output["source_path"],
+                           must_exist=selected_role is None or output["role"] == selected_role):
             if not path.resolve().is_relative_to(leaf_dir.resolve()):
                 raise SchemaError("output entrypoint escapes its owning leaf through a symlink")
     return result
@@ -742,7 +752,13 @@ def _acyclic(nodes: dict[str, list[str]], label: str) -> None:
         visit(key)
 
 
-def load_manifest(root: Path, path: Path) -> dict:
+def load_manifest(root: Path, path: Path, *, output_entrypoint: str | None = None) -> dict:
+    """Validate a declaration, requiring all outputs unless one edition is selected.
+
+    Staged edition consumers require their own and shared input files. All
+    declarations and existing paths retain their shape and ownership checks.
+    Ordinary publication validation requires the complete declared family.
+    """
     root = Path(root).resolve()
     path = Path(path)
     if not path.is_absolute():
@@ -754,7 +770,7 @@ def load_manifest(root: Path, path: Path) -> dict:
         data = tomllib.loads(path.read_text(encoding="utf-8"))
     except (OSError, tomllib.TOMLDecodeError) as exc:
         raise SchemaError(f"cannot read {path.relative_to(root)}: {exc}") from exc
-    return _normalise(root, data, path)
+    return _normalise(root, data, path, output_entrypoint=output_entrypoint)
 
 
 def discover(root: Path = ROOT) -> list[dict]:
