@@ -2,22 +2,22 @@
  "editorial_approval": false,
  "inputs": {
   "families": {
-   "act-history": "109f4ba98aeab1d2a80892c3775d47fc2b8980e7be084b9774c189431382d49e",
-   "bibles": "57f66fe7c412807d8aa8528bcb45d01825d5bc3cd8335da086014933e2737a71",
-   "calendar": "64c7223fb6647e1de38068ab1cea674c91ec800cd2eab8daabb4c791e5dbb211",
-   "catena": "9ef499b9bd3bc3a8dc71060bd31f1d28c65431b7a04a3e181481769375515c23",
-   "documents": "d1abf2a2c481960e3ab31432c3e17c7df5831c2e9b398b50a39e44b95a771b01",
+   "act-history": "1a6235d73e3d799e3953e46c0a5050f77707a3c9a4fc46e34869702f0aed2ed7",
+   "bibles": "63628151b87ca4fa73e26937fadf3c0a35d1ae20cfe6866b44a262f26a8d8077",
+   "calendar": "0de805ac5babe700a771663ed98aba35858e35400a0860d2a1daa23f5c46fc7a",
+   "catena": "9c32251f8c5cb64efcefda235bc1b5ee18aa9e9b140b20b92e033689d6197e34",
+   "documents": "6d8beee79192c0c0146d0c66078babdda71e45b42a862bf827e635da5934917a",
    "encyclicals": "b5bd56042072a75a68074fb92e6faeaa002322f18d41554bb2728e8e054ef35c",
-   "ordinary": "5039b7b044a363860bcdf888dfa13843d2a3ee2edec301588f93023f90c3bdce",
-   "paragraphs": "aa23cb086f630b07acaedbf07b7913af0cc06ba7dbe288ef0bfd04c8b8c17dee",
-   "propers": "78086c3e914b0bd1ee19f5c9cd23df29a0e328c898f9023406cdbe297fc68ae1",
-   "readings": "8e5559fd2c97e3d94d2ea2b0fff0c2f2f69b688add539d3cf04ae4c9a4658288",
-   "rubrics": "a7623cc6c8f2b2b4599245b16dab2e64395bca80236a0c10066c24d534782dd9",
-   "sources": "88cf60eba89db4e6f7e7d4b96d6e5b6ffae583fb1eea6ce2e62982126557689c",
-   "web-editions": "917a05d2e858037502251eae59c02774d013d274b82570e26342419801527b1b"
+   "ordinary": "9e7e814c8d958d5b93c148f9716374ad33b8be24fdf81504158d6c1509bdb04e",
+   "paragraphs": "ab06d83ab32fd304363e0c3d5cb8521943a4e4c3e651f5742305df38a92bcf8b",
+   "propers": "af48fc342165837fe3cb10ad663f73ec2ea53913933aef3944ff96b3b65560b1",
+   "readings": "552bfee93994ee765373cabe70926200c38c1013377cbc33ac525ab9cf11d668",
+   "rubrics": "46b6e65a384f4b953264d555cd1791c4dbb1d66bec94c0e05b6d18ad28c5538f",
+   "sources": "c8d4b9211b399d06f8728042e933a2bed207d0a46b8475a4e1388619858d34c5",
+   "web-editions": "702a885d8ff028576678767ea46755ea405d152014ae8eaff56531b8caa0a62d"
   },
   "schema": "triptych-browser-product-aggregate-inputs/v1",
-  "sha256": "269fd5b9337ff44132ce4d96d0cfd6e93f29de308458d01511d76e523aaa4d6f"
+  "sha256": "7f2ea8510a8c1f418bc53fae3ab68878a8e3a9c3fc1eeedb9c7e50d530609910"
  },
  "products": [
   {
@@ -31,16 +31,16 @@
    },
    "id": "bibles",
    "inputs": {
-    "content": "3c2c7ee976c4529ac9e6a16ff239474601917dd18276e02b33ad8e19a7ad7bc2",
-    "count": 70806,
+    "content": "e121255802d864fd64269e8517566a200c0f82c4302118c441fb8edd28f36d37",
+    "count": 70815,
     "generator": "672afa42efc3bfef03b60aea926fc815c813ac9839fdcfe9b9200b5994e3c030",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "a90892701c3bd2bd42bcce6e711fac93eb7a79e3aeac4b8eafd9ba6644d8c386",
-    "rights": "bfd93cf22e7ee7d6522bbcc3e05a2d93908ada9cfd540cb85a2d25f68a52c026",
+    "membership": "ddff28449e6cbb9e2d25cf66e2393b906841cc52a2c761b12bc93b82212ff020",
+    "rights": "d55fea6773763458ea58ca69833a7653f561b9d1e356794dbeb4c55f25ce2392",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "57f66fe7c412807d8aa8528bcb45d01825d5bc3cd8335da086014933e2737a71"
+    "sha256": "63628151b87ca4fa73e26937fadf3c0a35d1ae20cfe6866b44a262f26a8d8077"
    },
-   "key": "bdf7db60a92b10d96c6cb818f704a02abc073e35081f80dc02112d8ac7e928e8",
+   "key": "6becc745e52235114839998c1374c1c1cf712bc61ea03efa928d56a54c6a38c5",
    "path_set_sha256": "14d56894543c1e5457683c8b4a392258e6dfd6703dd6afbf8ffd704a9b039014"
   },
   {
@@ -2301,16 +2301,16 @@
    },
    "id": "act-history",
    "inputs": {
-    "content": "859331d1377c00f14e2b04eef9e5014e8c8610a0b44b92e8e0187c67fea181ff",
-    "count": 78727,
+    "content": "e892a5b4ebc0de029b3a99f52c2911fc29d318d517135cfa4c6b8e09fb8d2ff5",
+    "count": 78774,
     "generator": "d7362c3ac2689d3a6faa16cae242628750e7d85e518cb01bf4f822bcb0205171",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "5a596b312be7e326b870c692ac3fb6bc9bd0f240890b3848d3edd05f593db77b",
-    "rights": "170bfd3248aac9f68ae9075cd170cbf192e14cf82ee8587f4ca25029b3de018e",
+    "membership": "9666a77193ab1f10ea9b6d64c50ccafc37bfc7205d1227fa7486c35f6f70d246",
+    "rights": "f576ac5fa4fc03575bb52b671f7a2e9045532b65495022818af49a16d98825d6",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "109f4ba98aeab1d2a80892c3775d47fc2b8980e7be084b9774c189431382d49e"
+    "sha256": "1a6235d73e3d799e3953e46c0a5050f77707a3c9a4fc46e34869702f0aed2ed7"
    },
-   "key": "b2537d1cf3942f807192197452069e2f0ce16a3726864fcea6c3d93bbccfaec2",
+   "key": "f6c76ce909febaa635927ae152131c5773d726b81266a52805305c08cbd3e8c9",
    "path_set_sha256": "6c79229e3b84cc13de7dec10eb7e12bccf9e7f43de5a0b920b2ac014966e1eee"
   },
   {
@@ -3536,21 +3536,21 @@
    },
    "id": "calendar",
    "inputs": {
-    "content": "ce5ff90439ab90967e5a924f5ea1b5d417dd40dc29c09e4671f2352dd239bdb2",
+    "content": "1f09f28377ecd2ac26ae27964fdd9384d67c55b1bb34da182dc544bb48ff0067",
     "count": 377,
     "generator": "afbbcc62abf2809c18c84ccc274fb4346d1d55b9943bca955be642c90fbb7ac7",
     "lock": "47a6c6994f512bee2aac6a3fa2b2a1e97ee413b5297e0c9449c66b622006a052",
     "membership": "fe4353d5ea546a1d41dda39c823fe4b40586f08311f0203552e9b2415acc07f7",
     "rights": "0df8fe64379e4dfd01f7b37319661c12762c9582df21f45148be359883d051e8",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "64c7223fb6647e1de38068ab1cea674c91ec800cd2eab8daabb4c791e5dbb211"
+    "sha256": "0de805ac5babe700a771663ed98aba35858e35400a0860d2a1daa23f5c46fc7a"
    },
-   "key": "679668651e09e34a4f2f715fec47bbabb58c296e25aae2e4e688e4bbe87f59c6",
+   "key": "1faac8905e149da549a143b4cfb64fc4739d73585c3221741eda9ebcea8a2f69",
    "path_set_sha256": "a0c13f328642fecd9fec07952be9cfeef0ab13fa0e58633f104eea29995974a9"
   },
   {
-   "bytes": 8048157,
-   "count": 2220,
+   "bytes": 8052336,
+   "count": 2222,
    "files": {
     "structure/catena/01-gen/001.json": {
      "bytes": 52875,
@@ -5033,8 +5033,8 @@
      "sha256": "482dd23b5ad392e9f7386f75b91865c36b7f202d285369e18ef13b5fa0d9de53"
     },
     "structure/catena/47-matt/013.json": {
-     "bytes": 2998,
-     "sha256": "410d84fa6ef7d3bfb2dbf125cd4760ce9f2e4ec2050f94f207c3515291a8dcac"
+     "bytes": 3684,
+     "sha256": "b00f1fafda29735957e8035eb9e4615ce57d3243d0eb6ca5b80e328a9ae02348"
     },
     "structure/catena/47-matt/014.json": {
      "bytes": 2006,
@@ -5825,8 +5825,8 @@
      "sha256": "72abf6945c6f0473a48d0c6c66d5486f0d0a42ce21510dba1632a894b7216071"
     },
     "structure/catena/index.json": {
-     "bytes": 36656,
-     "sha256": "b2b3ace8a8ceebb7719ba3329d9e609953c4f76f2208ce763bea910c68d1b3c7"
+     "bytes": 36657,
+     "sha256": "6b0a014eba6f8c177de134dddb86dc41986ce0b8a123dfd39c92e3094a872f27"
     },
     "structure/catena/scripture/01-gen.json": {
      "bytes": 24103,
@@ -8399,6 +8399,14 @@
     "structure/catena/text/passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-10.json": {
      "bytes": 1655,
      "sha256": "ae17d78988a0344915d55014f1cff2291dc74792f6cac19106bfc2250aad756c"
+    },
+    "structure/catena/text/passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-11.json": {
+     "bytes": 1698,
+     "sha256": "b450a63e968a05dd224d30796026984b7e24d9c12eff9c2b6c1dc208014d2852"
+    },
+    "structure/catena/text/passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-12.json": {
+     "bytes": 1794,
+     "sha256": "f8e42671d97f08bc951685556042b516830ea60390cd4049ca9a0f2af43576e3"
     },
     "structure/catena/text/passage.basil-of-caesarea.homiliae-in-hexaemeron.eustathius-migne-pl-53.hexaemeron-1.json": {
      "bytes": 27289,
@@ -12435,39 +12443,39 @@
    },
    "id": "catena",
    "inputs": {
-    "content": "185bdb920584025d0a2a711d23efcf0c528ee2a8c9f85289f5f25aa3c0dd252e",
-    "count": 70813,
+    "content": "2b36c252d2120c31746feb2361fb499ca456b2db1f4e3caff38b2cc0fb1b0943",
+    "count": 70822,
     "generator": "455da4f857f1ecca26b8ffd205a9c958771a4a13131464436d743dcc925b226e",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "0abec3a4df023ce7b759c8de1b832fb61db27e74ef73e52c57e7f433848ca1d6",
-    "rights": "bfd93cf22e7ee7d6522bbcc3e05a2d93908ada9cfd540cb85a2d25f68a52c026",
+    "membership": "1037f36a7e16f96364cef6103a4105426985d3ee5d6b6a3da34bd4f1ab28177c",
+    "rights": "d55fea6773763458ea58ca69833a7653f561b9d1e356794dbeb4c55f25ce2392",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "9ef499b9bd3bc3a8dc71060bd31f1d28c65431b7a04a3e181481769375515c23"
+    "sha256": "9c32251f8c5cb64efcefda235bc1b5ee18aa9e9b140b20b92e033689d6197e34"
    },
-   "key": "2aa6c6f4b279f389f2f25b28566a2eb3f4ade87c35fb5035b26906f51c3bebf6",
-   "path_set_sha256": "203f9bde9bc8c78bd54e760be8a9c25593295855b8174a1716eabc619a7296a0"
+   "key": "8265bf6c5edd60ddace96ace59a7dff924e2c86a3094d38f68dd1e644f26a715",
+   "path_set_sha256": "2c1042d5e009e9893eb5ec2eaaf352196ec624373e1078b6628765fe1bcdbfb0"
   },
   {
-   "bytes": 1233343,
+   "bytes": 1241080,
    "count": 1,
    "files": {
     "structure/documents/corpus.json": {
-     "bytes": 1233343,
-     "sha256": "01016dc052c852e1e5c3e3768a38965cf87f0987c89c50abe28f90ebef4d96dd"
+     "bytes": 1241080,
+     "sha256": "6942f6667daf08b38ea066ceaba0656bfa22b3363359a903aa86b0060792103b"
     }
    },
    "id": "documents",
    "inputs": {
-    "content": "708e45a892a22c13d1ded9a7182542fe59009228a5b926656065ebcb0401ff8b",
-    "count": 79919,
+    "content": "b37270d87405ed8fa49148eaeee251f65e837dfdee7fbd5109b27d4f174dada1",
+    "count": 79969,
     "generator": "922948a9341e7d77eeae14052c4c867bb7633902ee51c6c14169725980f40ad8",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "bfa795ecbb67be950f23644c3b71207018e3e56e0b5dfc8639080563532eec8c",
-    "rights": "6b00b1cdc11d935b92babb91e0db7086ae495b304470f0f8d11db4f39f1517a3",
+    "membership": "04f28e0e168d0cdf8524d1aad45bb06a6b5d15f9103cd7554e6957e0c9e137cb",
+    "rights": "174b3d8510507eab1c6ec5ba1927bab35da1fc16af322a58dfdba15cc56f3233",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "d1abf2a2c481960e3ab31432c3e17c7df5831c2e9b398b50a39e44b95a771b01"
+    "sha256": "6d8beee79192c0c0146d0c66078babdda71e45b42a862bf827e635da5934917a"
    },
-   "key": "8eca0c547f39963818fbb39b028f0a44276263326d2bc01b9dc6be90c296e620",
+   "key": "e7d5f10c9cc0878bd03c9948a30251bc9c8e1ee851841b8da34869ac88638748",
    "path_set_sha256": "0ec113e99b049bb781b04b2631e34ca3f3d0a90d0fdf95112ab234089debe48b"
   },
   {
@@ -12493,16 +12501,16 @@
    },
    "id": "ordinary",
    "inputs": {
-    "content": "3c2c7ee976c4529ac9e6a16ff239474601917dd18276e02b33ad8e19a7ad7bc2",
-    "count": 70788,
+    "content": "e121255802d864fd64269e8517566a200c0f82c4302118c441fb8edd28f36d37",
+    "count": 70797,
     "generator": "e491a48f0a3007b9e1a12f090ccfa532f730f5d27aa3de906d3a3bbb9d23d13d",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "56fdb5ec622be71ec03596d75b48cddf6a8030606f3934d57dbb6cd5f770fd14",
-    "rights": "bfd93cf22e7ee7d6522bbcc3e05a2d93908ada9cfd540cb85a2d25f68a52c026",
+    "membership": "d743f3945174e858d340aa7e2d4a2427f9bc7d3264aaa83f156464e51136f620",
+    "rights": "d55fea6773763458ea58ca69833a7653f561b9d1e356794dbeb4c55f25ce2392",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "5039b7b044a363860bcdf888dfa13843d2a3ee2edec301588f93023f90c3bdce"
+    "sha256": "9e7e814c8d958d5b93c148f9716374ad33b8be24fdf81504158d6c1509bdb04e"
    },
-   "key": "e2f9260c704723a3e44e2e43dbd2e89982cba7be093cc3627a44a17d953aaae6",
+   "key": "656995d25bb77c0966fdb5e9c7ccf13f66a9c80b384005d67c72ecaed293267a",
    "path_set_sha256": "8d6628d20ee36a40306d533a98efeaafbdf1ff3b8fd15fcaa53e9afc4ae63513"
   },
   {
@@ -34704,16 +34712,16 @@
    },
    "id": "paragraphs",
    "inputs": {
-    "content": "3c2c7ee976c4529ac9e6a16ff239474601917dd18276e02b33ad8e19a7ad7bc2",
-    "count": 70812,
+    "content": "e121255802d864fd64269e8517566a200c0f82c4302118c441fb8edd28f36d37",
+    "count": 70821,
     "generator": "455da4f857f1ecca26b8ffd205a9c958771a4a13131464436d743dcc925b226e",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "93a518cd23afa3fc52c892efbdf00e97e7197a1e237e549eafe7a9c1c6540ada",
-    "rights": "bfd93cf22e7ee7d6522bbcc3e05a2d93908ada9cfd540cb85a2d25f68a52c026",
+    "membership": "af0a221f2e61b1f5d0d26f54c0a72b43175b072f14e5974dfaeed2a3255e0ec0",
+    "rights": "d55fea6773763458ea58ca69833a7653f561b9d1e356794dbeb4c55f25ce2392",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "aa23cb086f630b07acaedbf07b7913af0cc06ba7dbe288ef0bfd04c8b8c17dee"
+    "sha256": "ab06d83ab32fd304363e0c3d5cb8521943a4e4c3e651f5742305df38a92bcf8b"
    },
-   "key": "82fc3a80d7c5ca619058ec8ed79fa30474d7e1cd7d68eaff026b14e0c8a06228",
+   "key": "931436cf8591759680529baab706df1464765c6514af1eedf4bdbe26af2a5d0a",
    "path_set_sha256": "9de3712da5253ae1811b47967cb17448685f69729faff8a58c640179f9049796"
   },
   {
@@ -36719,16 +36727,16 @@
    },
    "id": "propers",
    "inputs": {
-    "content": "d5e01096b5862035839eb55ce6ea61e36b8f78670802a3d61d97f10bb8ee40e2",
-    "count": 78516,
+    "content": "2208b4b8b9093f2645cde45b1bfb4158b551d1cd5214ddee72d75b5bbe72b8cf",
+    "count": 78563,
     "generator": "672afa42efc3bfef03b60aea926fc815c813ac9839fdcfe9b9200b5994e3c030",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "a0cb8197627cb4a9eb6bc8b770bce4bfa75472c260646db016ffc5cdbf96fc53",
-    "rights": "cf5f7c2b3af8929c01153fe789ba775e4e7a9852648f7b226fb9a2a303565c72",
+    "membership": "67ccfb26ab67dd72aa42b9d2cc53d8d13775444245718d1926cc170e392b8ef1",
+    "rights": "28d9b879381e1b5fb8452610d47fc8ad249f01023def7acf6e843fce20e044aa",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "78086c3e914b0bd1ee19f5c9cd23df29a0e328c898f9023406cdbe297fc68ae1"
+    "sha256": "af48fc342165837fe3cb10ad663f73ec2ea53913933aef3944ff96b3b65560b1"
    },
-   "key": "cb50e31588cdcab72e6f20dfdcac78111ea55adff871c19e8569e9536dd1711b",
+   "key": "dfc59d6069fdba20a7ce3ac9f101a032d13cbb45fcc959c6a11c6ef69b54499b",
    "path_set_sha256": "b53fa6715bff5bcbf2f849d69c9dcf20923c4c0fc6cd0695f735724209265f97"
   },
   {
@@ -36742,16 +36750,16 @@
    },
    "id": "readings",
    "inputs": {
-    "content": "3c2c7ee976c4529ac9e6a16ff239474601917dd18276e02b33ad8e19a7ad7bc2",
-    "count": 70807,
+    "content": "e121255802d864fd64269e8517566a200c0f82c4302118c441fb8edd28f36d37",
+    "count": 70816,
     "generator": "4af0e68b008cc8a28d2b010050610877c0b65da02d8cba9c10db54ea268881b4",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "5132babf9f02c6c99a11caaab1bcac4ab18abca8e36b4c4531c221f763558be1",
-    "rights": "bfd93cf22e7ee7d6522bbcc3e05a2d93908ada9cfd540cb85a2d25f68a52c026",
+    "membership": "a735e15810990cfe2d6ce966ffb1f0f4a43eac31af398573a17d5a56479acbf5",
+    "rights": "d55fea6773763458ea58ca69833a7653f561b9d1e356794dbeb4c55f25ce2392",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "8e5559fd2c97e3d94d2ea2b0fff0c2f2f69b688add539d3cf04ae4c9a4658288"
+    "sha256": "552bfee93994ee765373cabe70926200c38c1013377cbc33ac525ab9cf11d668"
    },
-   "key": "082270ae2b291ba10c603b17b2d3ec9a4c4577a472e94b6f20558745cb4cab67",
+   "key": "979c1950543e0e07d6e3bcc9b66c289144b5f39de1d8cbcfc45ce47c1df9695c",
    "path_set_sha256": "508b7a8e33c837e26653f6d32011065feafebd126ee7022fefa70a2cccadeabf"
   },
   {
@@ -36777,21 +36785,21 @@
    },
    "id": "rubrics",
    "inputs": {
-    "content": "ce5ff90439ab90967e5a924f5ea1b5d417dd40dc29c09e4671f2352dd239bdb2",
+    "content": "1f09f28377ecd2ac26ae27964fdd9384d67c55b1bb34da182dc544bb48ff0067",
     "count": 377,
     "generator": "39f2c06855ebebe34d66c0b0803c2c07966110f1cc0fbee352d9f4f396ca363b",
     "lock": "47a6c6994f512bee2aac6a3fa2b2a1e97ee413b5297e0c9449c66b622006a052",
     "membership": "95d3fbf5e0fd71c97b62046c6798828aad8ba41317692b634f40d778268307eb",
     "rights": "0df8fe64379e4dfd01f7b37319661c12762c9582df21f45148be359883d051e8",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "a7623cc6c8f2b2b4599245b16dab2e64395bca80236a0c10066c24d534782dd9"
+    "sha256": "46b6e65a384f4b953264d555cd1791c4dbb1d66bec94c0e05b6d18ad28c5538f"
    },
-   "key": "bfa737cc6fb1f17994cd1cfd36c61b93d4e65622a736b077956b01522d491a5f",
+   "key": "16d8166baf4a2ab492eed248c1650aeb03023a51a70cb559af9ab2bc02b0abcf",
    "path_set_sha256": "b33143518fe47bc2375691f3ef5f78ffee0bc633c3fbb8507344ae056d6b7216"
   },
   {
-   "bytes": 69789671,
-   "count": 18502,
+   "bytes": 69807878,
+   "count": 18506,
    "files": {
     "structure/sources/editions/abbey-of-saint-gall/hartker-antiphonary/1900-1900-solesmes-facsimile.json": {
      "bytes": 6561,
@@ -46870,8 +46878,8 @@
      "sha256": "e455fcde91c5741e592a503a0816fbbf9ddb897ba1733a5b0ae25939d09b6a71"
     },
     "structure/sources/editions/augustine/quaestiones-euangeliorum/2026-latin-migne-corpus-corporum-wikisource-web-2026-09-05.json": {
-     "bytes": 5634,
-     "sha256": "01bd01e9ef24a639f56f4bf4ff25db6fcc948bced6c0e4598e7ca263539cbc09"
+     "bytes": 11225,
+     "sha256": "b6b6efd8ebb4c220c34b754fa7c2df7da93fbb57c9978d6b4f53ef1dc50ed7bf"
     },
     "structure/sources/editions/augustine/sermo-115/2026-latin-augustinus-it-web-2026-07-28.json": {
      "bytes": 2148,
@@ -63958,8 +63966,8 @@
      "sha256": "b77437acacf8a736699d06b5f45188e04f377c486c5d986f167838557f7d8fc3"
     },
     "structure/sources/editions/catholic-encyclopedia/volume-14/1912-new-york-1912.json": {
-     "bytes": 27356,
-     "sha256": "561047392ec6a620a29a85a635ee3665aebcfb79cb4a0b9536ec6a4c7a20c438"
+     "bytes": 30723,
+     "sha256": "273ed558fa3302ebd84602befcdf19e45339d8b62e18747f639a07cf0d0c8b15"
     },
     "structure/sources/editions/catholic-encyclopedia/volume-15/1912-new-york-1912.json": {
      "bytes": 10786,
@@ -65040,6 +65048,10 @@
     "structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-11-05-web.json": {
      "bytes": 3219,
      "sha256": "cedcf7498b99d1e327aebd6f154b9426c51b43bf5af92d11b15eb214f4f1d3b0"
+    },
+    "structure/sources/editions/fssp-france/ordo-du-mois/2026-2026-11-11-web.json": {
+     "bytes": 3221,
+     "sha256": "1ad45f0bd575b8a51898dc21dd69300bad1baec93c5d2765e8e01e6524419338"
     },
     "structure/sources/editions/fsspx/ordo/2026-2026-10-25-web.json": {
      "bytes": 1281,
@@ -69952,6 +69964,10 @@
     "structure/sources/editions/icrsp-france/ordo/2026-2026-11-05-web.json": {
      "bytes": 2059,
      "sha256": "46c2c1efe3f1061c473c8d0517f165b59ee9deb2dead59b1917b0ae902166ce3"
+    },
+    "structure/sources/editions/icrsp-france/ordo/2026-2026-11-11-web.json": {
+     "bytes": 2067,
+     "sha256": "62b805bbb3f1418eddd0e0500641e6b53061511380176339d73a1ca811f017a5"
     },
     "structure/sources/editions/icrsp-france/textes-de-la-messe/2026-2026-10-26-web.json": {
      "bytes": 2433,
@@ -94106,8 +94122,8 @@
      "sha256": "ffaf08c0f47cd6ab1d4761546a9e290ce69420b185c891d67395fcc17d5d9d5e"
     },
     "structure/sources/index.json": {
-     "bytes": 11226321,
-     "sha256": "822d07177a4b898cf21328c033cd306a065cc7c238bf2ce883acdd2548a6a9c8"
+     "bytes": 11227022,
+     "sha256": "766c38a6273ad2bd3c28683fd8cdc9ba7634f8ec7d853184dfb17898b72dc63d"
     },
     "structure/sources/text/passage.abbey-of-saint-gall.hartker-antiphonary.1900-solesmes-facsimile.fulgentibus-latin-checked-20261029.json": {
      "bytes": 1546,
@@ -97040,6 +97056,14 @@
     "structure/sources/text/passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-10.json": {
      "bytes": 1648,
      "sha256": "2b4ca765f741079177ba6f8d3475ef92e6a9f5357f015280b91650b1b58a965c"
+    },
+    "structure/sources/text/passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-11.json": {
+     "bytes": 1518,
+     "sha256": "51a71f33879a8119c93e613b2d41dac6723fac759944af784bbeb4aca036f6a9"
+    },
+    "structure/sources/text/passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-12.json": {
+     "bytes": 1742,
+     "sha256": "7986af62ccac6e0cd996fbde95b18ad44e516dd6ac042bf46aec70c2c5d66f83"
     },
     "structure/sources/text/passage.augustine.sermo-87.ccel-web-2026-09-17.1-10-and-14-15.json": {
      "bytes": 23448,
@@ -110804,21 +110828,21 @@
    },
    "id": "sources",
    "inputs": {
-    "content": "7403a580bb90abbe1d1e2149dff1422593b2038df518ef5a8ded114867a7d41a",
-    "count": 78646,
+    "content": "3c8ff48b164cca17f1d987b25b821f04a7e1fc365611a6a25791cecd29884a53",
+    "count": 78693,
     "generator": "e967e710e97ec8f8bc6979b72d2aae579893622b1946bf3c74894e095ef2109d",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "3d9fab8b89148d731bf161c67d21b847647db39f7c3912c8cde3a7c9b6c6d553",
-    "rights": "d6333f862f8b173f8d81c51e1cdfae73d21138bb71905449d57725e96cacdd5c",
+    "membership": "e5efa4b3899462cdbaaeece548cd4f81c9e8e90d99575b234254c33de4e17b58",
+    "rights": "5caf96a6fc96d22efc092e2ce7083b961f4a6cce626a65ca06f1cda9f474100c",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "88cf60eba89db4e6f7e7d4b96d6e5b6ffae583fb1eea6ce2e62982126557689c"
+    "sha256": "c8d4b9211b399d06f8728042e933a2bed207d0a46b8475a4e1388619858d34c5"
    },
-   "key": "d6c00802c5619b357e44226e752fc9b998d7f7dfbda96093efa91e7bd1d1c85b",
-   "path_set_sha256": "27ff077c3443dd646b684b88122d03cf8d487624a80e8cecd6829967c4fd4040"
+   "key": "79a3d8fd2134cbd5da3f4f5c71fbe15f89d94d5d3574ad4d183a49f5130920c4",
+   "path_set_sha256": "3386a6f81c4a580654620899ceadc4f4e94672443cdf4e32d997021e901eea80"
   },
   {
-   "bytes": 26839905,
-   "count": 273,
+   "bytes": 27030896,
+   "count": 276,
    "files": {
     "web-editions/claude/articles/canon-law/clerical-celibacy-chastity-and-continence.json": {
      "bytes": 201884,
@@ -111059,6 +111083,18 @@
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany.json": {
      "bytes": 120033,
      "sha256": "6d7b3f328e891bbd2be580879dbfd8a13b3b3c40f745f7d2e773a0ee47e8217f"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.json": {
+     "bytes": 18238,
+     "sha256": "a2a02ae122c6a60e6a86fa54fcd8deaccbeb528a2f0fb300f45deaefb68b0cd1"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.json": {
+     "bytes": 50903,
+     "sha256": "5a086b700ee6f36b82c6e93ff4b4e0e14ae75632d5dce88e2f994a29a0af58f9"
+    },
+    "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.json": {
+     "bytes": 119968,
+     "sha256": "4db986c2169d51c12e224ade42017c60fc6ebaff874c34de1175c96c3f4897fe"
     },
     "web-editions/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king-homily.json": {
      "bytes": 19859,
@@ -111909,23 +111945,23 @@
      "sha256": "e2f772b0680d93c81ca46dc2118d13132ff538679677b2970464e5748b9d962f"
     },
     "web-editions/index.json": {
-     "bytes": 168371,
-     "sha256": "0d24867231947d5fde216dcfb10f9b6de6407c28269f82257c51c7df3bdbd129"
+     "bytes": 170253,
+     "sha256": "6cb66e0ba4e089e2cfbf3f5f89461a3843cfe7631e9fc70e07536bef42d90dce"
     }
    },
    "id": "web-editions",
    "inputs": {
-    "content": "93444777f295040269a9bbddc43d9ad0571c222ebfc7513a2a83e42a6bfa2d2e",
-    "count": 79838,
+    "content": "f51721dcfe76cbce7833a8d141dfdf591888db637082a3829aeb5f807f80e5d3",
+    "count": 79888,
     "generator": "135affbaaf6d30072bd7df6961d767eef22aa2ea9c16bc6c487f5b0332cfcf69",
     "lock": "62ed728e10b17c7b6dfeb6374c13b017114a326e33d3fc30e66f4b6576f87306",
-    "membership": "5e4c263fb010e2726fddac12956309f9a1ae89eb9446ee27c32bac709d0f781a",
-    "rights": "6b00b1cdc11d935b92babb91e0db7086ae495b304470f0f8d11db4f39f1517a3",
+    "membership": "78b42d65bede95b16b3462a31ce5aec87a095a0b981c7d8ef62ab259a2ade72a",
+    "rights": "174b3d8510507eab1c6ec5ba1927bab35da1fc16af322a58dfdba15cc56f3233",
     "schema": "triptych-browser-product-inputs/v1",
-    "sha256": "917a05d2e858037502251eae59c02774d013d274b82570e26342419801527b1b"
+    "sha256": "702a885d8ff028576678767ea46755ea405d152014ae8eaff56531b8caa0a62d"
    },
-   "key": "b2892001af647f571534b0423b53fc40a61be1fa3f496b37107776fcc15c7414",
-   "path_set_sha256": "808474eec93dad5c6c55a64f5a5e08353fb23255f4f5ec340f242d09fe0b09bb"
+   "key": "3bfb2f451fd97c256cb58f0feba344061119ad3ca13549039cf836fd01530d72",
+   "path_set_sha256": "fa57b9a02ee58e7b3e2f2fcf678923af057441fdb37b8911259930f31a0fee1c"
   }
  ],
  "proof": "two-independent-cold-builds-byte-parity",

@@ -840,3 +840,73 @@ restricted-not-reproduced and provenance-matches-run against this run: pass.
 
 **For other owners (not repaired here).** None new. The items recorded under
 earlier entries stand.
+
+## Install-publication, iteration 0 (11 November 2026)
+
+**Completed reviews.** The engine's recorded results for this run, by stage.
+The SHA-256 is that of the accepting result as the run state records it. At
+installation every sealed review's current input object still equalled the
+object it accepted (the engine's own stale-review computation returned no
+finding).
+
+| Review | Iterations and dispositions | Accepting result SHA-256 |
+| --- | --- | --- |
+| Research review | 0-1 changes required (2 and 1 blocking); 2 pass, 3 advisories | `a8b31161a782bfb45c8a971be056367bd5481933fcba8c36b6efff22547f983d` |
+| Study review | 0-2 changes required (2, 3 and 1 blocking); 3 pass, 3 advisories | `ed40ae89e8175afcf5b258e0d0795bd128f51960fd8ed4bb982aa392e4c2c6ae` |
+| Synthesis review | 0-1 changes required (3 and 1 blocking); 2 pass, 2 advisories | `7674fcfd9efbc179eae6e1f05c1a512663bb901760da2a25cb6ea14b5927e75c` |
+| Homily review | 0 changes required (1 blocking); 1 pass, 2 advisories | `707987f9a19ea648c13a49abcc475da11e1955af08a42e898275110633012424` |
+| Artifact gates | 0 pass | `97af5c9c6c70bfc4459030f6b4c4d3ef1c5d44f458a9759ff4ab5fcbb5607d3c` |
+| Web review | 0 pass, 1 advisory (WEB-001) and 1 observation | `db120ccab649823b8cd621bb6e49635fa9345467e1b82926b84335e7a4a88ade` |
+
+**Web edition.** Nothing is installed: the site converts the study and its
+companions from their canonical TeX when it is built. A fresh conversion of
+the canonical study with `tools/web-edition --provider claude` into this
+stage's scratch area is byte-identical to the reviewed conversion
+`build/web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.md`
+(SHA-256 `293ceca2e890ee0f4714c7943af99fea687f11db59d8d42107fa2e8af9c99410`,
+equal to `research/web-artifact.json` and to the web review's sealed bytes);
+its stamp is the committed author time, `2026-11-11T20:40:01Z`.
+`web-edition.toml` now records the web review as the canonical reader's
+inspection (`inspected`, `inspected_by`, `inspection`, with that conversion
+hash). Under this run's base those three fields lie outside the content and
+render identities the review seals, and `reviewed` is unchanged. The
+synthesis and homily readers are converter-verified: no review of their own
+conversions ran, so no companion inspection is recorded.
+
+**Release records and catalog.** `make add-publication` with
+`PROVIDER=claude`, `STATUS=alpha` and `CATALOG=library/traditional-latin-mass.md`
+created the three records under
+`release/publications/claude/liturgy/roman-rite/1962/propers/temporal/` for
+the bare ID, `-synthesis` and `-homily`; none existed before. Each is `alpha`
+under the standing authorization `perpetual-public-repository-2026`. In
+`library/traditional-latin-mass.md`, row 67's Claude cell, which read
+`Planned`, now links Full Study Guide, Synthesis and Homily to the three
+readers in the document type's output order; no PDF is linked, because none
+is published. The page gains the one publication marker
+`claude:liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany`
+(the release's primary provider is `gpt`, so a Claude marker carries its
+provider prefix). The ChatGPT cell of row 67 still reads `Planned`; no other
+row and no other provider's entry was changed.
+
+**Checks before the shared records.** `tools/tpt web-edition check --leaf`
+for this leaf: 3 reader outputs convert with every fidelity audit.
+`tools/tpt check-web-edition` for the leaf: valid, 1 eligible. The
+publication-phase `scripts/_proper_study.py check` in source mode with the
+presentation, format, authority, orientation and orientation-v3
+requirements: pass. `tools/tpt document-library check` scoped to this leaf:
+pass (3 titles derived and checked).
+
+**Shared records.** The Claude publication inventory and its classification
+review, the source-family ledger, the browser-product descriptor and the
+scoped release bindings each bind this file's bytes, so this stage refreshes
+them after this entry is written, in that order. Their outcomes are reported
+in the stage's result and in the run record, not here. The publication gate
+decides acceptance.
+
+**Review advisories and observations (not repaired here).** WEB-001 (one
+unclear anagogical sentence in `sections/20-crushed-seed.tex`, Ambrose
+VII.185) is advisory and asks for a study-source change, which this stage
+may not make; it stands for a later revision of the study. The web review's
+observation on straight single quotes and an ASCII ellipsis in the generated
+Scriptural Date and Location evidence belongs to the chronology projection or
+its corpus records, not to this leaf.

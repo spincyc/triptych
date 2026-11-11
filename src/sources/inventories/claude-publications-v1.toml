@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "claude"
-audited_on = "2026-11-05"
+audited_on = "2026-11-11"
 discovery_rule = "src/claude/**/main.tex"
-publication_count = 65
-source_surface_file_count = 2344
-snapshot = "sha256:fd4a8befeaa1e270d5213e8f868148df2b31ecde6be3b9f5aa08bc0799b1f25b"
+publication_count = 66
+source_surface_file_count = 2380
+snapshot = "sha256:cc81ad389fadbc2eca21d2f2272fae12db23d0ad6908c2d0acf85cfbb0740ac1"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -556,6 +556,17 @@ inventory_state = "sources-categorized"
 source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
 [[documents.record_owners]]
 id = "liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"
+relationship = "local"
+
+[[documents]]
+id = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
+main = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex"
+publication_kind = "canonical"
+source_mode = "local"
+inventory_state = "sources-categorized"
+source_categories = ["finding-aid", "historical-primary", "institutional-current", "liturgical", "patristic", "repository-internal", "scholastic", "scripture", "secondary"]
+[[documents.record_owners]]
+id = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
 relationship = "local"
 
 [[documents]]
@@ -9271,6 +9282,222 @@ path = "src/claude/liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-aft
 sha256 = "641db329ab818a628e09732167e816c1c26eaf536d97dbbe271ee54b5979fd02"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/blocking-findings-v1.toml"
+sha256 = "8314bd1ed39c6e6f0616c1b62f85c4dca65a3e823db5d913bf438fd137502790"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location-page.tex"
+sha256 = "9cad6888aa530cace76b70e1eb2a679b7059527ee72c4071e8d06f637998ec6f"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location.tex"
+sha256 = "fff4bdaea9e1a356804873f764ae48d6ca8605574f95c71dc144a2c98155a5d6"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/homily.tex"
+sha256 = "8075e9de1596959caa916249211abee19e047775916461207adce49565377927"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex"
+sha256 = "40124da1efdb167c1c99c33bab2271e60a49eb71b5909e1c59ba4b78d085ca07"
+kind = "publication-main"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/proper-components.toml"
+sha256 = "9d85a66eed3574e12ded2e198f140b92ae789f270f6d692a7607bf1067c7a546"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/retrieved.txt"
+sha256 = "edfb85be3e2757c83d6770a4fabc8494934cace6421e4d896e32e90d4a50849b"
+kind = "local-evidence-payload"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md"
+sha256 = "7dfbec047540c2f1ff70de93912de9d8d783ef604542aed749b6b3079d28c030"
+kind = "proper-verification"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/publication.toml"
+sha256 = "cffdb21e858a948f069f8f60a2bf7e4cd47cc1819dd5213c43516af6cf909b80"
+kind = "publication-contract"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex"
+sha256 = "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex"
+sha256 = "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml"
+sha256 = "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/context.md"
+sha256 = "94c41c69edb40398940f2d4387b468ab3bf08be0e596cd60beada4da95e8b275"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md"
+sha256 = "e823125ea2020ec425b4f953cc5c145ca2546458a0806003db068cb06c38fbb1"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/production-review.md"
+sha256 = "71bdd997ad9e89121d8b1e56816e95d4b1060e86878609c104fbf1e92315e5cb"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/review-dependencies.toml"
+sha256 = "bd996cf0d1123e87b53b95e2765d9553d8c9a1e3ca9d9899ee3b76294804dab6"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md"
+sha256 = "d0f70830a8b573c2a8c4a100e21b151bd9962eb11e73568031d9df6c8b6af157"
+kind = "research-scope"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml"
+sha256 = "4844f371105d6557ae90cdf66bcf3c3ba58c73e7caa9621e98aa874913567f9c"
+kind = "source-binding"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-dispositions.toml"
+sha256 = "181f37c27750185c60afb5d0ccfa2b374fbbfd650895cba4af18e4ba8a7f428a"
+kind = "research-record"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/00-opening.tex"
+sha256 = "156de774855ae582d0d61651c1fa1a723ffd2bb8b74c0c770b1bf351639ae63c"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/05-appointed-texts.tex"
+sha256 = "e7d56c606f171c3f19bf60cc94f049b80a66f6e171fa30efc39a4ace46569d23"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/10-each-element.tex"
+sha256 = "9bfc3d79358536dc3cad3ac1e5b93a0645f8f227739d877eba5660ab6214858b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/20-crushed-seed.tex"
+sha256 = "5761c082c35e9013b53f6f4c605e3816f2a54324442921dc47309242a40c85d9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/30-hidden-leaven.tex"
+sha256 = "6ec245e98362a9edf09592e1de054035f2d241ec02b5bd55acec4bce72e667db"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/40-already-and-awaited.tex"
+sha256 = "82febb6f856cf32d3c36795b2ca656c3f95505c9da22164eb44fd978d0373719"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/50-comparison.tex"
+sha256 = "e8b4cdfc2c7bc4ef2c6b505c8a87eea331e0559ed8de2372ad38e36b8aaefb91"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/90-apparatus.tex"
+sha256 = "718ed6f956d23486c5d7a0df872cebc0e5d13b17a34a31951726034358e7c4e8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/01-inventory.tex"
+sha256 = "eedd26f5afd88311ccf713d22125bbb440e18ed116f69066389c07ae9da3f9a0"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/02-overview.tex"
+sha256 = "a3cc07ffe7aacaeb73681c1220795de3e7d7d7c157e3bbb13082d8a857745eb2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/04-themes.tex"
+sha256 = "00a91f5cccc875961f5955c77967f03912af9ec1ab1f5ffcf3f1ff28586a41c9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/10-commentary.tex"
+sha256 = "d06c74350996f14f227f4d8873632329c2cead8575a5bf856056c1671641445b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/90-apparatus.tex"
+sha256 = "057bb7bf1c6cc4fb2833a02b78cf0088c5a75ecd401a5dc7d3d7b528940ccfaa"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/10-homily.tex"
+sha256 = "bb30d59a92aa95ff6760481a779f088cf3f326d36804d5709dff131dd9484625"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/90-note.tex"
+sha256 = "06ae5bc98b2eb8c1d4e93dbe7b99c07f1425dc61ce8f92cae38941b54118efe8"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/synthesis.tex"
+sha256 = "5ed4f61b7607784a36b8c84722cbef3784bad188a7a395486a436b67282fdda7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/web-edition.toml"
+sha256 = "021b16cc327379e696242ac1efc4b588f1a2989745dcdc28b4c7a7592238141a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
 
 [[files]]
 path = "src/claude/liturgy/roman-rite/1962/propers/temporal/f01-christ-the-king/evaluations/blocking-findings-v1.toml"

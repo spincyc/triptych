@@ -49,13 +49,13 @@ provider = "claude"
 run_id = "decbd44ee5bcce3b"
 workflow = "proper-study"
 workflow_version = 19
-stage = "homily-review"
-iteration = 1
+stage = "web-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 10
-observation_count = 7
+advisory_count = 11
+observation_count = 8
 
 [[stages]]
 stage = "homily-review"
@@ -104,6 +104,18 @@ standing = 0
 accepted_count = 0
 advisory_count = 2
 observation_count = 3
+
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "decbd44ee5bcce3b"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 1
 
 [[advisories]]
 stage = "homily-review"
@@ -185,6 +197,14 @@ location = "sections/20-crushed-seed.tex lines 175-191 (expansive study: the cit
 problem = "Carried forward from iterations 0 and 1. It was re-read this round and is still true, since the expansive study is unchanged here. The run cites '(Hom. in 1 Thess. 1)' at line 183, after the persecution sentence. It then gives the affliction-and-joy sentence, the Three Children and the imitators of the Lord without a citation, and closes with '(Hom. 2)' at line 191, after the remark on verse 8. The tracked NPNF I.13 text (ccel-npnf113-text-54274dd9) puts all three of those uncited passages in Homily I, which begins at physical line 29098: the imitators at 29262 and the Three Children at 29279. Only the verse-8 remark ('sounded out', 29520) belongs to Homily II, which begins at 29497. A reader reasonably takes everything after the first citation as Homily 2. The concise study cites Homily 1 correctly, so this stage has nothing to repair."
 required_result = "For the study owner at its next revision: add '(Hom. 1)' after the sentences on the Three Children and the imitators of the Lord, so that '(Hom. 2)' covers only the remark on verse 8."
 
+[[advisories]]
+stage = "web-review"
+id = "WEB-001"
+severity = "advisory"
+location = "sections/20-crushed-seed.tex lines 337-339 (fourSenses, Anagogical, first interpretation); web Markdown line 341: 'In the grown tree's branches the one caught up into paradise, and to be caught up into the clouds, rests tuta iam sede, “in a seat now safe” (2 Cor 12:4; 1 Thess 4:16)'"
+problem = "The sentence copies the shape of Ambrose's Latin (Exp. in Lucam VII.185, tracked Wikisource text: 'ille raptus in paradisum, in aerem rapiendus et nubes, tuta jam sede requiescat'), and the English does not parse on a first reading. 'The one caught up into paradise, and to be caught up into the clouds' joins a past participle to a bare infinitive with no relative pronoun. The subject is never named, and the body of the study never presents this passage of Ambrose, so a reader meets it here for the first time. The attribution is correct. Under 'Say what the texts say, plainly' this is Latin left for the reader to construe. It occurs once, so it is advisory."
+required_result = "Name the subject and complete the clause, keeping Ambrose's words and loci. For example: 'Ambrose sets in the grown tree's branches the man who was caught up into paradise and is to be caught up into the air and the clouds (2 Cor 12:4; 1 Thess 4:16), resting tuta iam sede, “in a seat now safe”; the nations gathered from far off fly into them and flourish certae stationis iam securitate, “in the security of a sure station” (VII.185-186).' The rest of the sense is unchanged."
+
 [[observations]]
 stage = "homily-review"
 location = "sections/homily/10-homily.tex lines 34-37 (Mt 16:6; 1 Cor 5:8, which replaced 1 Cor 5:7 this round); sections/homily/90-note.tex lines 81-83 and References line 132; research/source-bindings.toml (the Douay-Rheims Matthew binding's loci are Matt.13.1-35; artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260 has no binding)"
@@ -219,3 +239,8 @@ note = "Run again this round, it still refuses with 'input has no existing file:
 stage = "synthesis-review"
 location = "src/common/propers-format.tex line 52 (\\runninghead calls \\markright), seen on physical page 11 of this review's build"
 note = "Still true: a section that begins mid-page sets the running head for that whole page, so page 11 is headed 'Scope and References' above the last paragraph of The Propers: Detailed Commentary. production-review.md already records this for the shared-format owner."
+
+[[observations]]
+stage = "web-review"
+location = "generated/scriptural-date-location.tex lines 32, 41, 46 and 51 (evidence notes for the Alleluia, the Introit's Jeremias, the Gospel and the Communion; web Markdown lines 547, 557, 563 and 569), taken from the locus strings in src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/passages/corbett-david-usual-chronology.toml line 7 and volume-8/editions/new-york-1910/passages/maas-journeys-three-five.toml and maas-ninth-journey-fig-tree.toml line 7, and from the label in src/sources/chronology/composition.yaml line 1865"
+note = "The corpus writes article titles in straight single quotes ('David, King,'). TeX, and the converter after it, set both as a right quotation mark, so print and web both show ’David, King,’ with a closing mark where the opening one belongs. The Jer 29:2 label prints its elision as '...' where the rest of the study sets '…'. Both are faithful conversions of the generated source. Outside this leaf, 31 generated Scriptural Date and Location files in the two providers carry the same straight-quoted locus form. The repair belongs to the chronology projection or to the corpus records, not to this leaf."

@@ -4,3 +4,6 @@ document = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epip
 eligibility = "eligible"
 blocking_constructs = []
 reviewed = "2026-11-11"
+inspected = "2026-11-11"
+inspected_by = "Anthropic Claude (claude-opus-5-5): proper-study v19 run decbd44ee5bcce3b independent web-review iteration 0"
+inspection = "The web review read the complete canonical Markdown against main.tex and every section it inputs, with a TeX-stripping word comparison (19,480 source words) and a punctuation-sensitive pass, compared the ten Latin propers with propers/verified.md and the Lasance and Douay-Rheims blocks with their recorded texts, and rendered the page through the site renderer, layout, site.css, publication-reader CSS and reader shell in headless Chromium at 1280, 768, 390 and 320 px, checking headings, unique ids, all 67 fragment links, blockquotes, each interpretation's four senses, tables, overflow, the revision stamp and colophon, and TeX debris (conversion SHA-256 293ceca2e890ee0f4714c7943af99fea687f11db59d8d42107fa2e8af9c99410). The full public-alpha site, the Generate PDF action, the Sunday selector and previous and next links, the synthesis and homily readers and all PDFs were outside this inspection."
