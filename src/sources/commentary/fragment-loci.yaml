@@ -78,7 +78,7 @@ author_aliases:
     Migne's Patrologia Latina 52 does ('SANCTI PETRI CHRYSOLOGI ARCHIEPISCOPI RAVENNATIS'), and the
     harvest names him without it. Both name the bishop of Ravenna whose sermons that volume prints.
 schema: triptych-commentary-fragment-loci/v1
-updated: '2026-11-08'
+updated: '2026-11-11'
 numbering: vulgate
 # ONE TEXT UNDER TWO NAMES (Rule 15). Where the library holds one text as two or
 # more passage records under disputed attributions, the catena hangs it once,
@@ -25409,6 +25409,45 @@ fragments:
     natural unit and that reference is its extent; question IX (13:13, 23) precedes it and question XI (13:31)
     follows. Augustine's own Latin in a dated digital transcription of Migne, PL 35, not collated with a page
     image. The date is the work record's composed range.
+- passage_id: passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-11
+  work_id: work.augustine.quaestiones-euangeliorum
+  work_alias:
+    author: Augustine of Hippo
+    work: Quaestiones evangeliorum
+  numbering: vulgate
+  extent:
+    token: Matt
+    first_chapter: 13
+    first_verse: 31
+    last_chapter: 13
+    last_verse: 32
+  basis: Question XI stands on physical line 16 under the printing's own reference [Ib. XIII, 31.], and the
+    book's capitula list (line 5) titles it De grano sinapis quod majus fit omnibus oleribus. The answer
+    expounds the grain of mustard seed (13:31) and its becoming greater than all herbs, the words of 13:32
+    (majus est omnibus oleribus), which it reads as the doctrines of the sects; the extent is therefore
+    13:31-32, one verse wider than the printed reference, because the answer itself expounds that verse. The
+    whole answer is the natural unit; question X (13:25-30) precedes it and question XII (13:33) follows.
+    Augustine's own Latin in a dated digital transcription of Migne, PL 35, not collated with a page image.
+    The date is the work record's composed range.
+- passage_id: passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-12
+  work_id: work.augustine.quaestiones-euangeliorum
+  work_alias:
+    author: Augustine of Hippo
+    work: Quaestiones evangeliorum
+  numbering: vulgate
+  extent:
+    token: Matt
+    first_chapter: 13
+    first_verse: 33
+    last_chapter: 13
+    last_verse: 33
+  basis: Question XII stands on physical line 17 under the printing's own reference [Ib. XIII, 33.]; the
+    answer expounds the woman, the leaven and the three measures of meal of that verse. The whole answer is
+    the natural unit and that reference is its extent; the parables of the sower's yields (13:8, 23), the
+    great commandment and Ezechiel 14:14 are quoted inside it as supporting references and receive no
+    separate edge. Question XI (13:31) precedes it and question XIII (13:44) follows. Augustine's own Latin in
+    a dated digital transcription of Migne, PL 35, not collated with a page image. The date is the work
+    record's composed range.
 
 # Hooker English: complete reviewed sections; exact noncommercial permission and author standing checked.
 - passage_id: passage.origen.homiliae-in-ezechielem.2014-hooker.homily-1-section-6

@@ -1,0 +1,17 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.icrsp-france.ordo.web-2026-11-11.html-5a3ffb25"
+edition_id = "edition.icrsp-france.ordo.web-2026-11-11"
+artifact_type = "web-page"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "unresolved"
+rights_basis = "Modern institutional calendar, compilation and site markup. Public access does not establish redistribution rights, and no affirmative grant was identified in the retrieved page. Only identity and factual-locus metadata are retained."
+rights_jurisdiction = "United States"
+source_url = "https://icrspfrance.fr/ordo.php?d=2026-11-15"
+provenance = "Retrieved complete over HTTPS on 2026-11-11 by the research stage (iteration 0) of workflow run decbd44ee5bcce3b and hashed as received; the 14 and 15 November 2026 entries were read in locally parsed response text. Nothing between the server and this hash passed through a language model."
+retrieved = "2026-11-11"
+sha256 = "5a3ffb25b35e82ca2405bf3f092b973fabe38de51970d2f93aa915090f1b48a1"
+byte_size = 110296
+indexable = false
+notes = "Complete offered HTML response. The 2026-09-22 registration of this page measured that its delivery is not byte-stable (a per-response script nonce): the resolve-context stage of the same run received a response of the same length earlier the same day with another digest. This digest identifies the one response read here. Access limitation: no HTML or text derivative is retained, because the page's modern text and presentation lack an affirmative redistribution basis. Offline readers have this dated identity and the factual passage record, not the response itself; reopening the wording requires the public URL, which will yield a later state."
