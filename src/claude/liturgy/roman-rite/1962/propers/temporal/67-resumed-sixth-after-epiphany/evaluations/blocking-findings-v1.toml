@@ -1,0 +1,221 @@
+# Blocking findings standing against this publication, the
+# verdicts its evaluation lanes reached, and the observations
+# they recorded outside their own criteria. Written by tpt after
+# each evaluation of this leaf.
+#
+# One record, several stages. Every entry names the stage that
+# raised it, [[stages]] says what each stage last said, and an
+# evaluation replaces its own stage's entries and leaves every
+# other stage's alone -- so what the content evaluation found
+# still stands here after the synthesis evaluation has spoken. A
+# stage that looked and found nothing leaves an empty list
+# rather than no entry: "evaluated, nothing stands" and
+# "nobody has looked" are different facts, per stage.
+#
+# The keys directly below these comments describe the write that
+# last touched this file, and count every stage's entries
+# together. They are its summary line. What a given stage found
+# is in that stage's [[stages]] entry and in the entries naming
+# it -- reading the top-level stage as the record's one stage is
+# the mistake this schema exists to stop.
+#
+# It exists because a run's own results live under build/, which
+# is ignored, which `make clean` and `wt tidy` delete without
+# asking, and which nothing preserves between productions.
+#
+# Nothing reads this back into a run. Carrying findings from one
+# production into the next wants doing where the run's identity
+# can cover it -- a committed record, or this file's hash in the
+# run id and the acceptance audit -- and until then this is a
+# record for people.
+#
+# Escalations -- defects in artifacts no stage of the run may
+# write: guidance, the source library, the tools, the workflow --
+# are written here too, from the run's whole ledger, so that the
+# decision they ask of a maintainer outlives the run directory.
+#
+# Accepted findings are true defects a lane judged not worth a
+# repair round, with the reason it judged so. Advisories are
+# defects that did not merit blocking. Both are here because a
+# verdict that dies with the run is met again by the next cold
+# read as though nobody had ever weighed it, and weighed again --
+# which is how a document in good shape spends a whole iteration
+# budget. A later evaluation reads these before it raises.
+
+standing_findings_schema = 4
+record_type = "standing-blocking-findings"
+document = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
+provider = "claude"
+run_id = "decbd44ee5bcce3b"
+workflow = "proper-study"
+workflow_version = 19
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+standing = 0
+accepted_count = 0
+advisory_count = 10
+observation_count = 7
+
+[[stages]]
+stage = "homily-review"
+iteration = 1
+disposition = "PASS"
+run_id = "decbd44ee5bcce3b"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 1
+
+[[stages]]
+stage = "research-review"
+iteration = 2
+disposition = "PASS"
+run_id = "decbd44ee5bcce3b"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 2
+
+[[stages]]
+stage = "study-review"
+iteration = 3
+disposition = "PASS"
+run_id = "decbd44ee5bcce3b"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 3
+observation_count = 1
+
+[[stages]]
+stage = "synthesis-review"
+iteration = 2
+disposition = "PASS"
+run_id = "decbd44ee5bcce3b"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 2
+observation_count = 3
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-004"
+severity = "advisory"
+location = "sections/homily/90-note.tex lines 115-118 ('the speech names Augustine for it and gives Bede the millstones, the commandment and the argument from \"until,\" which are his'); research/production-review.md lines 711-712 (Derive-homily, iteration 0: 'Bede is credited with the commandment, the millstones and the argument from *donec*, which are his')"
+problem = "The note says the millstones are Bede's own. Bede does write them at In Lucam IV on Lk 13:21 (PL 92 col. 507C; registered remote wikitext refetched for this review, SHA-256 116db0ca... matched, line 1384: 'quotquot timoris et spei exercitio, quasi mola superiore et inferiore conterimur'). But making the upper and nether millstone stand for hope and fear is Gregory the Great's reading of Deut 24:6, in Moralia in Iob XXXIII.24: 'But the upper and nether millstone are hope and fear. For hope raises up the heart, but fear weighs it down lower' (tracked artifact complete-text-d9f9ed86, SHA-256 d9f9ed86... matched, line 52867). The standing research advisory RES-009 records the same overclaim in the research records, and the note carries it into reader-facing apparatus. The speech (10-homily.tex lines 108-111) says only that Bede says this, which is true, so a listener is not misled. A reader of the note, though, is told the image is Bede's own invention. This is a single instance."
+required_result = "Claim for Bede only what his text shows. Either (a) lines 117-118: 'the speech names Augustine for it; the commandment, the argument from ``until'' and the meal ground by fear and hope are Bede's words at that place.' or (b) credit the image: 'and gives Bede the commandment and the argument from ``until,'' which are his, and the millstones, Gregory the Great's figure for hope and fear (Moralia in Iob XXXIII.24), which Bede applies to the meal.' With (b), add a References entry for the Moralia and leave its binding to the research owner under RES-009. Record the correction in the next entry of research/production-review.md and do not repeat the iteration-0 claim."
+
+[[advisories]]
+stage = "homily-review"
+id = "HOM-005"
+severity = "advisory"
+location = "sections/homily/10-homily.tex lines 86-99 (spoken paragraph 8): lines 87-89 'Then a mob attacked the house of Jason, where Paul was staying, and the brethren sent Paul away by night.' and lines 95-98 'The mob could not find Paul, so they dragged Jason before the rulers of the city for having received him, and Chrysostom asks whether it was a slight labour to endure such a storm \"when the seed had not yet taken root.\" Jason gave security and sent Paul away.'"
+problem = "A listener hears Paul sent away twice in this paragraph. First 'the brethren' send him 'by night' (Acts 17:10). Six sentences later Jason does it, in Chrysostom's words ('Jason sent away Paul', Hom. in 1 Thess. 1, NPNF I.13 line 29192). Heard once, that can sound like two events, or leave the listener unsure who sent him. Lines 95-97 also put the arrest and Chrysostom's question into one 42-word sentence: two ideas in one breath, in the longest sentence of the speech, inside its longest paragraph (194 words, 12 sentences). This is confined to one paragraph, so it is advisory."
+required_result = "Tell the sending-away once and split the long sentence. Keep Chrysostom's words and Jason's danger. For example, lines 87-89: 'Then a mob attacked the house of Jason, where Paul was staying.' (delete 'and the brethren sent Paul away by night'; Chrysostom's 'Jason gave security and sent Paul away' tells it later). Lines 95-97: 'The mob could not find Paul, so they dragged Jason before the rulers of the city for having received him. Chrysostom asks whether it was a slight labour to endure such a storm ``when the seed had not yet taken root.''' If the spoken count changes, update the word count and pace in the note and research/production-review.md. If v. 10 is no longer told, update the note's Acts locus."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-009"
+severity = "advisory"
+location = "research/interpretations.md lines 288-292 (reading 2, Bede: 'The argument he builds on them is not in Augustine, Jerome, Ambrose or Chrysologus as read for this study ... ground between fear and hope as between the upper and the lower millstone'), lines 304-305 ('what the meal is (ourselves, ground and made one)'), lines 492-495 (Limits: 'What is credited to Bede as his own here (the Church's commandment, the millstones, and the donec argument ...)'); research/scope.md lines 220-223 (section 3: 'no earlier holder of Bede's donec sentence or of his millstones was found'), line 349 (section 5 Bede row: 'The rest was found in none of them, nor by a literal search of the library's tracked texts'), lines 814-817 (section 10: 'Gregory's works were not searched for the millstones of fear and hope'); research/source-bindings.toml binding 47 context ('Bede's own, as far as the Fathers read here and the library's tracked texts show: ... the meal ourselves, ground by fear and hope into one bread'); research/source-dispositions.toml row bede-in-lucam-iv-13-18-21 (reason)"
+problem = "Bede's 'cujus farina nos sumus, quotquot timoris et spei exercitio, quasi mola superiore et inferiore conterimur' (In Lucam IV on Lk 13:21, PL 92 col. 507C; registered remote wikitext fetched from its source_url on 2026-11-11, SHA-256 116db0ca... matched, physical line 1384) applies Gregory the Great's reading of Deut 24:6, which the library holds as a tracked text: Moralia in Iob XXXIII.24, 'But the upper and nether millstone are hope and fear. For hope raises up the heart, but fear weighs it down lower' (artifact.gregory-the-great.moralia-in-iob.2026-10-12-library-of-fathers-lectionarycentral.complete-text-d9f9ed86, physical lines 52860-52877, hash matched). The records list the millstones among what is Bede's own, and binding 47 says this holds 'as far as ... the library's tracked texts show'. The search behind that was a literal Latin string ('mola superior'), and section 10 itself says Gregory was not searched for the image. So the binding claims a search the records did not make, and a held text contradicts it. Bede's words at his locus are correctly his. A search of Gregory's held texts for 'leaven' found nothing behind the donec argument or the Church's commandment. Only the originality of the hope-and-fear millstones is overclaimed, but a study drafted from these records could present the image as Bede's invention."
+required_result = "Credit the equation of the two millstones with hope and fear to Gregory, Moralia XXXIII.24, at the tracked locus, and keep Bede credited with applying it to the Church's meal at Lk 13:21. Remove 'the millstones' from what is called Bede's own in interpretations lines 492-495, in binding 47's context and in the Bede disposition reason. Correct scope section 3 (lines 220-223), the section 5 Bede row and section 10 so that the search claim says what was searched (literal Latin strings) and records the Gregory locus and its outcome. Plain rewrites, for example: interpretations lines 290-292: 'we are her meal, ground by the exercise of fear and hope, which Gregory had called the upper and the lower millstone (Moralia XXXIII.24), so that we may be one bread and one body (1 Cor 10:17)'; lines 304-305: 'what the meal is (ourselves, ground by fear and hope, Gregory's two millstones, and made one bread)'. If the studies are to name Gregory, bind the Moralia artifact at that locus with an honest role and give it a disposition row; if he is named only in the research record, record the locus there."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-010"
+severity = "advisory"
+location = "research/scope.md lines 216-220 (section 3: Mt 21:21-22 'was searched in the held commentaries on Matthew: Chrysostom ..., Jerome ... and Hilary'), lines 299-301 (section 3.1 rows for Mt 21:21-22), line 321 (matrix, Mk 11:24 row), lines 659-669 (section 7.7, Chrysostom bullet: 'not to guarantee any object'), lines 699-702 (7.7 What changes: 'each locates the promise's condition in the one who prays, not in what is asked'), lines 818-821 (section 10, Mt 21:21-22 leads); research/source-bindings.toml binding 25 (loci)"
+problem = "(a) Aquinas, Super Evangelium Matthaei c. 21, is held in the artifact bound at binding 25 (Venice 1745 t. 3 OCR, physical lines 35080-35118, hash matched) and expounds Mt 21:21-22. It is neither recorded as searched nor listed as a lead, and section 3 calls the three works read 'the held commentaries on Matthew'. I read it in the OCR. On v. 21 he gives Jerome's answer to the pagans and adds 'Dominus non dixit quod fieret, sed quod posset, [si] necessitas esset'. On v. 22 he says only that the Lord touches faith's power in prayer, and he refers to 'Supra VII. 7. Petite, et accipietis'. At that cross-reference (same artifact, lines 14296-14365, on Mt 7:8) he answers the difficulty 7.7 states, that the promise read literally gives any object to any petitioner: 'Videtur esse falsum, quia non semper accipitur quod petitur. Dico, quod in quatuor casibus petit homo, et non exauditur'. The four cases are: asking what does not profit (so what is necessary to salvation is to be asked; Mt 20:22); not asking well (pie, cum fide, humiliter, devote; Jas 4:3); praying for another whose merits oppose it (Jer 15:1); and not persevering (Lk 18:1). He adds 'dat Dominus ad utilitatem, non ad voluntatem', with Augustine's 'Bonus Dominus qui saepe non tribuit quod petimus, ut tribuat quod mallemus'. That is a Doctor's direct answer, reached from his comment on the Communion's parallel. It places a condition in what is asked, which qualifies 7.7's closing synthesis that every answer puts the condition 'in the one who prays, not in what is asked'. Bede's sure object for the imperfect, forgiveness, already puts one there too. Rabanus, In Mt. on Mt 21 (PL 107, held), is likewise neither searched nor listed. (b) The Chrysostom bullet (lines 666-668) says his answer gives the promise 'not to guarantee any object'. Hom. in Mt. 67.2 (NPNF I.10, lines 37980-37998, read) says nothing of the kind: the negative is the editor's inference written into his answer, and a study could print it as Chrysostom's."
+required_result = "Search Aquinas, Super Mt. c. 21 on vv. 21-22 in the bound Venice t. 3 artifact, and follow his cross-reference to c. 7 on Mt 7:7-8. Record the loci and outcome in section 3, the section 3.1 Mt 21:21-22 rows, the Mk 11:24 matrix row and section 10, and list Rabanus on Mt 21 as searched or as a lead. If Aquinas's four cases are used, add him to 7.7 as an answer reached from the parallel. Credit it to Mt 7:8 and Mt 21:22, never to Mk 11:24, extend binding 25's loci, and give the new locus a disposition row. Then revise 7.7's closing synthesis so that it no longer says that every answer puts the condition only in the one who prays. In the Chrysostom bullet, replace lines 666-668 with, for example: 'His answer places the promise in the disciples' coming trials: it is given to make them confident in faith and prayer against plots.' Put any statement that the promise does not guarantee an object in the What changes paragraph, as the editor's."
+
+[[advisories]]
+stage = "research-review"
+id = "RES-011"
+severity = "advisory"
+location = "research/interpretations.md lines 42-49 (question 1: 'Its answer, from Hilary and Ambrose, is that ... and the Thessalonians ... show the pattern happening'), lines 50-60 (question 2: 'Its answer, from Augustine, Bede, Jerome and Ambrose, is that ... the Epistle's work of faith, labour and charity and the Collect's in word and in deed are where that transformation shows'), lines 267-268 (reading 2 controlling claim: 'the teaching of Scripture and of the Church that kindles it (Jerome; Ambrose)')"
+problem = "Three summary sentences name a reading's Fathers beside a thesis that includes the editor's joins. This is the form the three-document profile forbids ('a sentence of the form \"these Fathers carry it: <thesis>\" credits each with the whole synthesis'). Hilary and Ambrose say nothing of the Thessalonians. Augustine, Bede, Jerome and Ambrose say nothing of 1 Thess 1:3 or the Collect. Neither Jerome nor Ambrose says that teaching kindles love; lines 367-368 themselves mark that join (editorial). Each reading's element bullets label these joins correctly, so the evidence is not misstated. But these sentences are the ones a study's opening will be drafted from, and as written each credits every named Father with the whole synthesis."
+required_result = "Rewrite the three sentences so that each Father is credited only with the clause he states and the cross-element joins are marked (editorial). For example, lines 43-49: 'Hilary's answer is that the seed is Christ, whose power is kindled by pressure and who is sown in his death and burial; Ambrose's, that faith and Christ alike pour out their power when crushed. The editor sets beside them the Thessalonians, who received the word in much tribulation with joy and whose faith then sounded out everywhere *(editorial)*.' Lines 57-60: '... until nothing in him is unleavened. The Epistle's *work of faith, labour and charity* and the Collect's *in word and in deed* are where the editor sees that transformation *(editorial)*.' Lines 267-268: 'or the teaching of Scripture (Jerome) and the Church's spiritual doctrine (Ambrose), which the editor takes as what kindles that love *(editorial)*'."
+
+[[advisories]]
+stage = "study-review"
+id = "STU-022"
+severity = "advisory"
+location = "sections/40-already-and-awaited.tex lines 164-169 (end of 'A kingdom hidden from the foundation of the world'; added this iteration as the repair of STU-019)"
+problem = "The repair added two sentences. In the first, the clause after the colon ('for Augustine the mystery veiled in the Old Testament is unveiled in the New, and for Jerome the letter that tells of the exodus also sounds hidden mysteries') paraphrases the two quotations the reader has just read at 40:155-163. 'Say what the texts say, plainly' rules that out ('Say it once'); only the shared point before the colon is new. The second sentence ('Jerome's rule is the one this interpretation applies to the Gradual's psalm and the Introit's prophecy in answer to the strongest objection, below') tells the reader in advance what the study will do instead of stating a finding. It also does not match the passage it points to. At 40:247-251 the rule is applied to Jeremias's letter ('The rule he states at Mt 13:35 allows both'), and at 40:251-254 the Gradual's psalm is answered from Augustine, not by Jerome's rule. This is a single instance, so it is advisory."
+required_result = "Keep the shared point, and drop both the paraphrase and the forward pointer. Rewrites: (1) 'Both read the psalm's account of Israel's past as holding more than its letter.' (2) Delete the sentence 'Jerome's rule is the one this interpretation applies ... below.' The objection already states and uses the rule at 40:249-251. If a link to the objection is wanted, it must be accurate, for example: 'Below, the same rule answers the objection that Jeremias's promise was made only to the exiles in Babylon.'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-023"
+severity = "advisory"
+location = "sections/20-crushed-seed.tex lines 191-195 (rewritten this iteration under STU-021)"
+problem = "At Super I ad Thessalonicenses c. 1 l. 1, paragraph [87862] (Corpus Thomisticum, fetched 2026-11-11, SHA-256 fe77f056... matched), Aquinas writes: 'Cum gaudio, inquam, spiritus sancti, non alio quocumque, qui est amor Dei, qui facit gaudium patientibus propter Christum, quia amant eum.' The repair correctly gives the relative 'qui est amor Dei' to the Spirit. But 'non alio quocumque' is ablative and agrees with 'gaudio': with the joy of the Holy Spirit, not with any other joy. The study's 'the joy is the Holy Spirit's and no other's' reads the phrase as ruling out another owner of the joy. Aquinas rules out another kind of joy."
+required_result = "'Aquinas, on the Latin, says that it is the joy of the Holy Spirit and no other joy, the Spirit \"who is the love of God, who gives joy to those who suffer for Christ, because they love him\" (Cum gaudio ... spiritus sancti, non alio quocumque, qui est amor Dei, qui facit gaudium patientibus propter Christum, quia amant eum; Super I ad Thessalonicenses c. 1 l. 1).'"
+
+[[advisories]]
+stage = "study-review"
+id = "STU-024"
+severity = "advisory"
+location = "sections/40-already-and-awaited.tex lines 270-271 (fourSenses, Moral)"
+problem = "The moral sense gives the Communion as 'believe that you receive (Mk 11:24)'. The Missal's antiphon has crédite quia accipiétis, and the Douay-Rheims of Mk 11:24 reads 'believe that you shall receive' (tracked verse text; also 00:44). This interpretation makes the tense its point: 40:213-214 says 'The Communion gives a present command and a future gift.' The moral sense turns that future gift into a present one."
+required_result = "'... pray, since praying to be heard is faith's part (Hilary), and believe that you shall receive (Mk 11:24); forgive, that your prayer be heard (Bede); ...'"
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-011"
+severity = "advisory"
+location = "sections/concise/10-commentary.tex lines 210-213 ('and Ambrose says that faith is pressed when we believe in Christ crucified. By Ambrose's account, then, the Thessalonians' faith was pressed both in what they believed and by the persecution that followed.'); the expansive study's source sentence at sections/20-crushed-seed.tex lines 213-215"
+problem = "The conclusion uses one verb for two things Ambrose keeps apart. At Exp. in Lucam VII.179 (tracked Wikisource artifact book-7-html-895ee72a) he writes 'Sed alias teritur fides, alias premitur, alias seminatur': faith is ground in one way, pressed in another and sown in another. Adversity grinds it ('si teratur adversis', VII.178, which this commentary renders 'if it is ground by adversity' at lines 34-36). Belief in the crucified presses it ('Premitur fides, cum crucifixum credimus Christum', VII.181, rendered at lines 43-44 and 211-212). On Ambrose's account, then, the persecution ground the Thessalonians' faith rather than pressed it. This round's SYN-010 repair makes the slip easier to see, because the sentence before now defines Ambrose's pressing as belief in Christ crucified. Elsewhere 'adversity presses it' (04-themes.tex lines 18-19) is a loose rendering that does no harm on its own, because it is not set against Ambrose's other verb. In substance both acts work on faith in Ambrose's account, so the reader is not materially misled. This is a single instance, and the concise study carries the accepted study's wording faithfully."
+required_result = "Use Ambrose's own verb for each act. Commentary lines 212-213: 'By Ambrose's account, then, the Thessalonians' faith was pressed in what they believed and ground by the persecution that followed.' For the study owner at its next revision, sections/20-crushed-seed.tex lines 213-215: 'On Ambrose's account, then, the Thessalonians' faith was pressed in what they believed and ground by the persecution that followed.'"
+
+[[advisories]]
+stage = "synthesis-review"
+id = "SYN-008"
+severity = "advisory"
+location = "sections/20-crushed-seed.tex lines 175-191 (expansive study: the citation run on Chrysostom's homilies on First Thessalonians)"
+problem = "Carried forward from iterations 0 and 1. It was re-read this round and is still true, since the expansive study is unchanged here. The run cites '(Hom. in 1 Thess. 1)' at line 183, after the persecution sentence. It then gives the affliction-and-joy sentence, the Three Children and the imitators of the Lord without a citation, and closes with '(Hom. 2)' at line 191, after the remark on verse 8. The tracked NPNF I.13 text (ccel-npnf113-text-54274dd9) puts all three of those uncited passages in Homily I, which begins at physical line 29098: the imitators at 29262 and the Three Children at 29279. Only the verse-8 remark ('sounded out', 29520) belongs to Homily II, which begins at 29497. A reader reasonably takes everything after the first citation as Homily 2. The concise study cites Homily 1 correctly, so this stage has nothing to repair."
+required_result = "For the study owner at its next revision: add '(Hom. 1)' after the sentences on the Three Children and the imitators of the Lord, so that '(Hom. 2)' covers only the remark on verse 8."
+
+[[observations]]
+stage = "homily-review"
+location = "sections/homily/10-homily.tex lines 34-37 (Mt 16:6; 1 Cor 5:8, which replaced 1 Cor 5:7 this round); sections/homily/90-note.tex lines 81-83 and References line 132; research/source-bindings.toml (the Douay-Rheims Matthew binding's loci are Matt.13.1-35; artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260 has no binding)"
+note = "The homily quotes the Douay at Mt 16:6 and 1 Cor 5:8. Both lie outside the leaf's bound loci, and 1 Cor 5:8 comes from a registered verse text with no binding at all. Both quotations are exact in the tracked verse texts, and research/production-review.md records the gap. The study-review recorded the study's own instances as an observation, so this homily review is the second stage to report the same gap that way. That points to a missing preflight criterion: bindings-valid and references-used do not test a quoted verse against its binding's loci. This is for the research owner and the preflight tool owner."
+
+[[observations]]
+stage = "research-review"
+location = "research/chronology-table.tex rows row-f76be1c29ff66ffb and row-dca3f1ae19cbf664 (Alleluia and Offertory, Ps 129:1-2); src/sources/chronology/orientation.yaml calendar estimate for composition.psalm-129-possible-davidic-composition (basis at lines 615-622)"
+note = "Carried forward from iterations 0 and 1 and still true: the generated row prints 'Composition: David after his sin (proposed)' beside 'c. 1048-1015 B.C. (traditional Jerusalem chronology)', while the corpus's own basis says that range is the whole Jerusalem phase of David's reign, not the year of the sin, and the printed qualification does not say so; for the chronology-corpus owner, since no stage in this run may change the corpus."
+
+[[observations]]
+stage = "research-review"
+location = "research/chronology-table.tex row row-fd3920d9cd8b2ce1 (Gradual, Ps 43:8-9); src/sources/chronology composition.psalms-of-the-sons-of-korah; Catholic Encyclopedia 'Psalms' tracked article text (newadvent-12533a-cb9d9a25-article-text), physical line 218"
+note = "Carried forward and still true: the corpus's own cited article reports that Delitzsch and Perowne admit Ps xliv (Heb.), the Gradual's psalm, to be Maccabean, adding 'There are no certain proofs', but the corpus authors no row for that alternative, so the Gradual row prints only the Korahite collection estimate; scope section 11 item 5 reports it, and it is recorded here for the chronology-corpus owner."
+
+[[observations]]
+stage = "study-review"
+location = "research/source-bindings.toml lines 104-110 (Douay-Rheims 1 Thessalonians, loci 1Thess.1.1-10) and 120-126 (Douay-Rheims Matthew, loci Matt.13.1-35); research/production-review.md lines 340-350 and 371-372"
+note = "The study quotes Douay-Rheims English outside the bound loci in more places than the production record hands to the research owner. Mt 16:6 (10:151-152, 30:5-6) and Mt 17:19 (20:48-49) lie outside the Matthew binding's 13:1-35. 1 Thess 2:2 (10:60, 20:301-302) and 3:1-7 (10:67-70) lie outside 1:1-10. 1 Cor 2:4 (20:200-202) and 5:7 (10:152) come from a registered artifact (artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260) that has no binding at all. Every quotation was checked word for word in the tracked verse texts and is exact, and the References list the loci, so nothing the reader sees is wrong. But production-review.md names only Mt 17:19, 1 Cor 2:4 and 5:7. The bindings-valid and references-used preflight checks do not test whether a quoted verse lies inside its binding's loci. This is the second round in which the gap has reached the run only as an observation, which suggests a missing mechanical check rather than a defect in the study."
+
+[[observations]]
+stage = "synthesis-review"
+location = "sections/concise/10-commentary.tex line 401 and sections/20-crushed-seed.tex lines 267-268 ('The Church holds that the offering of the Mass is the sacrifice of the cross made present')"
+note = "Re-checked and still true: this doctrinal sentence has no locus in either study, nor in research/scope.md or research/interpretations.md, although the 1962 profile's gates ask for an exact source and locus for every doctrinal claim. The concise study carries it faithfully from the accepted study, so it belongs to the study and research owner, and a magisterial locus would supply it."
+
+[[observations]]
+stage = "synthesis-review"
+location = "tools/print-document build --document publication:claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --edition synthesis (refusal raised by scripts/_document_schema.py line 213)"
+note = "Run again this round, it still refuses with 'input has no existing file: .../homily.tex', so the supported tool cannot export the concise study before the homily exists. This review's page evidence came from make doc with BUILD_ROOT in its own scratch, which is not a print acceptance. For the tool owner."
+
+[[observations]]
+stage = "synthesis-review"
+location = "src/common/propers-format.tex line 52 (\\runninghead calls \\markright), seen on physical page 11 of this review's build"
+note = "Still true: a section that begins mid-page sets the running head for that whole page, so page 11 is headed 'Scope and References' above the last paragraph of The Propers: Detailed Commentary. production-review.md already records this for the shared-format owner."
