@@ -5,7 +5,21 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-08.
+Last reconciled: 2026-11-11.
+
+## Claude 1962 resumed Sixth Sunday after the Epiphany, 2026-11-15
+
+<!-- promised-deliverable: claude-1962-67-resumed-sixth-three-documents-2026-11-15 -->
+
+**In progress: authorized; seeding after one pre-seed tool fix.** On
+2026-11-11 the maintainer asked for the Claude 1962 proper-study documents
+for the upcoming Sunday and authorized publication to `main`. Sunday,
+15 November 2026 is the Sixth Sunday after the Epiphany resumed after
+Pentecost (II class), permanent identity `67`,
+`liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany`. St Albert the Great (III class) is outranked.
+The production plan records the one-provider authorization. This is an
+independent Claude production: the GPT leaf for the same identity is not an
+input.
 
 ## Catena English editions, passage linkage and Lectern startup — 8 November 2026
 

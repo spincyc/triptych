@@ -1,6 +1,39 @@
 schema_version = 1
 
 [[deliverables]]
+id = "claude-1962-67-resumed-sixth-three-documents-2026-11-15"
+owner = "PROJECT-WORK.md"
+promise = "Complete the Claude 1962 resumed Sixth Sunday after the Epiphany (67) proper-study workflow for Sunday 15 November 2026: produce the expansive study, concise study and homily with independent cold reviews and their web readers, publish to main and verify the deployment."
+state = "in_progress"
+
+  [[deliverables.requirements]]
+  id = "claude-67-authorized"
+  criterion = "The production plan records the maintainer's one-provider authorization for the exact Claude 67 identity."
+  status = "pass"
+  evidence = ["guidance/liturgy/propers-production-plan.md"]
+  check = "contains"
+  path = "guidance/liturgy/propers-production-plan.md"
+  needle = "- Authorized 2026-11-11: provider `claude`, identity `liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany`."
+
+  [[deliverables.requirements]]
+  id = "claude-67-native-acceptance"
+  criterion = "A real proper-study version-19 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany, date 2026-11-15, audience adult parish assembly, reaches ACCEPTED with every required fresh cold review, and its results are archived in the leaf with a cycles record."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-67-reviewed-publications"
+  criterion = "The expansive study, concise study and homily sources pass their gates and reviews; the web reader conversion is reviewed and current; the catalog, inventories and release records are current and the publication gates pass."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+  [[deliverables.requirements]]
+  id = "claude-67-main-and-pages"
+  criterion = "The validated work reaches origin/main after the deploy gates pass locally, the Pages run (build, print-compile and deploy) succeeds, and the live reader routes match the local site build."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
+
+[[deliverables]]
 id = "catena-english-linkage-lectern-2026-11-08"
 owner = "guidance/catena.md"
 promise = "Repair Lectern startup with missing generated browser data, recover available English editions of already known Catena works, and improve verse-specific excerpt linkage within held source documents."
