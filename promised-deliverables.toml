@@ -18,14 +18,16 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "claude-67-native-acceptance"
   criterion = "A real proper-study version-19 run for provider claude, identity liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany, date 2026-11-15, audience adult parish assembly, reaches ACCEPTED with every required fresh cold review, and its results are archived in the leaf with a cycles record."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["workflows/reviews/claude-1962-67-production-2026-11-11/CYCLES.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/decbd44ee5bcce3b/record.md"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-67-reviewed-publications"
   criterion = "The expansive study, concise study and homily sources pass their gates and reviews; the web reader conversion is reviewed and current; the catalog, inventories and release records are current and the publication gates pass."
-  status = "open"
-  evidence = ["PROJECT-WORK.md"]
+  status = "pass"
+  evidence = ["src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/production-review.md", "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/blocking-findings-v1.toml", "release/publications/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "claude-67-main-and-pages"
