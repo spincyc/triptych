@@ -1,0 +1,274 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-001",
+      "location": "sections/homily/10-homily.tex lines 48, 64 and 81 (spoken paragraphs 3, 5 and 7)",
+      "problem": "Three sentences in the exegetical middle of the speech address the source record rather than the listener: the expansive study's analytic voice carried into the speech, a footnote spoken aloud under guidance/editorial.md, 'Say what the texts say, plainly'. (1) Line 48, 'Augustine had counted them the same way, as heart, soul and mind.', reports a variant (Augustine's 'mind' against Bede's 'strength') that the argument never uses, and it overstates the source: Quaestiones Evangeliorum I.12 gives heart, soul and mind as the first of three alternatives, beside the three yields and Noah, Daniel and Job. (2) Line 64, 'In Bede the parable's \"until\" has become a requirement.', closes the paragraph by restating as an observation about Bede's method the 'must go on growing' the listener has just heard; it is the study's own sentence (sections/30-hidden-leaven.tex line 143), and deleting it loses nothing. (3) Line 81, 'We may take our own constant thought as our part in that work.', is the inference marker that editorial.md names for a homily as 'a footnote spoken aloud' ('we may take that unity as the healing of the wound'); the terminal note already records this link as the homily's own (90-note.tex lines 55-58), so the preacher should simply state it. The pattern recurs through paragraphs 3-7, where the listener most needs the line of argument and is told about the sources instead.",
+      "repair_target": "homily",
+      "required_result": "Change only these three sentences, in the preacher's voice. Line 48: delete 'Augustine had counted them the same way, as heart, soul and mind.'; the paragraph already credits Augustine with love, and 'Here Ambrose's answer and Augustine's come together' needs nothing more. Line 64: delete 'In Bede the parable's \"until\" has become a requirement.'; Bede's 'must go on growing until it has changed the whole mind' has said it, and paragraph 6 begins the next step. Line 81: 'We may take our own constant thought as our part in that work.' becomes 'Our constant thought, the meditating the Collect asks for, is our part in that work.' Keep every Father's argument, every quotation and the order of the speech; keep the attribution clause on Chrysostom at line 53 and the glosses of the Collect's Latin (lines 77-78) and of the Greek of 1 Thess 1:3 (lines 90-91), which the listener needs. Credit no rewritten sentence to a Father, keep the note's record of the Collect link as the homily's own, and update the spoken word count and pace in the note and in research/production-review.md.",
+      "severity": "blocking"
+    },
+    {
+      "id": "HOM-002",
+      "location": "sections/homily/10-homily.tex lines 33-40 (spoken paragraph 2); 90-note.tex lines 81-82; References, Douay-Rheims entry (90-note.tex line 132)",
+      "problem": "The speech quotes 1 Cor 5:7, 'Purge out the old leaven', and then says St Ambrose 'answered from those very warnings'. Ambrose's argument at Expositio in Lucam VII.190 cites Mt 16:6 and 1 Cor 5:8, 'Non in fermento nequitiae et malitiae', not 5:7 (tracked Wikisource text of PL 15; the note's own locus at lines 93-94 says 5:8, and the expansive study at sections/30-hidden-leaven.tex lines 26-29 quotes 5:8 for him). The two verses are one exhortation, so the listener is not misled about what Ambrose argues, but the speech credits him with a verse he does not use.",
+      "required_result": "Give Paul's warning in the words Ambrose cites, the Douay of 1 Cor 5:8 ('not with the old leaven, nor with the leaven of malice and wickedness'), so that 'those very warnings' names what Ambrose used, or use an equivalent wording that does not credit Ambrose with 1 Cor 5:7. Bring the note's Scripture loci and the References' Douay entry into line with the verse the speech quotes.",
+      "severity": "advisory"
+    },
+    {
+      "id": "HOM-003",
+      "location": "sections/homily/10-homily.tex line 21; 90-note.tex lines 81-83; References, Douay-Rheims entry (90-note.tex line 132)",
+      "problem": "The speech places the parables 'from a boat on the Sea of Galilee', which rests on Mt 13:1-2 (Douay: 'sat by the sea side ... he went up into a boat and sat'). The note gives the Gospel's told verses as 'the rest of Mt 13:31-36' and the References list Mt 13:31-36, so the locus the opening scene rests on is not named; the expansive study names it (sections/10-each-element.tex lines 135-136, 'vv. 1-2').",
+      "required_result": "Add Mt 13:1-2 to the note's Scripture loci, as told close to the Douay's words, and to the References' Douay-Rheims entry.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-homily.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "homily-body"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-note",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-note.tex",
+          "references": [
+            "propers/verified.md",
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Peter Chrysologus",
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "crushed-seed"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "crushed-seed",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Bede",
+            "Jerome",
+            "Ambrose of Milan",
+            "Thomas Aquinas",
+            "John Chrysostom",
+            "Theodoret of Cyrus",
+            "Peter Chrysologus",
+            "Hilary of Poitiers"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Bede",
+            "Jerome",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "hidden-leaven"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hidden-leaven",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Peter Chrysologus",
+            "Bede",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome"
+          ],
+          "component_keys": [
+            "already-and-awaited"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "already-and-awaited",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/homily.tex": "8075e9de1596959caa916249211abee19e047775916461207adce49565377927",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md": "7dfbec047540c2f1ff70de93912de9d8d783ef604542aed749b6b3079d28c030",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md": "e823125ea2020ec425b4f953cc5c145ca2546458a0806003db068cb06c38fbb1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md": "d0f70830a8b573c2a8c4a100e21b151bd9962eb11e73568031d9df6c8b6af157",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/10-homily.tex": "41af9ef2269b839101ffe0555e9799e2119beaafc07db88efeccb8cae01be007",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/90-note.tex": "94ff21a8a576408cd26ae1eaf9cc5a6258ec9b80b8f9237a1340214aa6dfba50",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "decbd44ee5bcce3b",
+            "99791e370c49b8110516cc7d744caab2715c2f71",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Cold review of the Claude 1962 resumed Sixth Sunday after the Epiphany homily (homily.tex; sections/homily/10-homily.tex and 90-note.tex; all ten sealed inputs hash-matched to REVIEW_INPUTS). Read as one hearing, it is a real exegetical homily: one argument from abscondit ... donec fermentatum est totum (leaven hidden in the whole person, working unseen and slowly until the whole is leavened), taught plainly through the scene, the leaven difficulty, the verb hid and the word until, then the Collect's thought, word and deed, the Thessalonians' labour of charity with Chrysostom on Jason, the cry from the depths, Bede's meal ground into one bread, one response from the Communion said once in the second person, and a conclusion on the Postcommunion and Bede's begun here, perfected there. It passes the text-substitution test (every step rests on Mt 13:31-33, the Collect, 1 Thess 1:3, Ps 129:1, Mk 11:24 or the Postcommunion), has no Latin left to construe, no dated sources, no maxim tag, inventory, slogan, anecdote, clerical identity or composed prayer, and the production audit names the change the exegesis makes and its textual detail. Evidence checked at the loci: Chrysostom Hom. in Mt. 46.2 and 47.1 (tracked NPNF I.10 CCEL text, including 'as being plainer' and 'He said not, put, simply, but hid'), Hom. in 1 Thess. 1 (tracked passage record, including 'Jason sent away Paul'), Expositio in Ps. 129.1 (PG 55 Internet Archive OCR fetched and SHA-256-matched to the registered artifact; the Greek has the passions calmed, anger softened and envy cast out before the asking is received); Ambrose Exp. in Lc. VII.187-194 (tracked Wikisource Latin); Augustine Quaest. Ev. I.12 (tracked Latin); Bede In Lc. IV on 13:18-21 (registered remote wikitext fetched and SHA-256-matched, PL 92 506C-507D: nemo repente fit perfectus, the Church's commandment, the millstones, Et pulchre dicit ... donec, begun here and perfected there); every Douay quotation and told verse (Mt 13:1-2, 31-36; 16:6; 1 Cor 5:7-8; 10:17; 1 Thess 1:3; Acts 17:1-10) in the tracked Douay; the Lasance English against propers/verified.md. Spoken words recounted at 1,293 (about 9.9-10.8 minutes at 120-130 words a minute, arithmetic only; the note truthfully says no one has delivered or timed it); the homily-edition content preflight passes. Limits: the Lasance English was checked against the leaf's verified record, not its page images; Chrysostom on Matthew and 1 Thessalonians was read in the NPNF English only; Ambrose and Bede in transcriptions without page images; no print export was built. Verdict: one blocking register pattern (HOM-001: three sentences in paragraphs 3-7 that speak the source record aloud, one of them the exact inference marker editorial.md names for a homily) and two advisories on a misattributed verse and a missing note locus; the repair is homily-owned and touches three sentences."
+}

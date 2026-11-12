@@ -1,0 +1,414 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "SYN-001",
+      "location": "sections/concise/10-commentary.tex lines 324-327 ('Whose voice the chants are', second paragraph: 'Chrysostom says on the same verse that such prayer ... drives out envy; it works on the one who prays as the leaven works on the meal, hidden and from within'); lines 391-394 ('Why a promise must be asked for': 'Bede adds a condition ... they \"will without doubt obtain what they ask, provided that they first forgive others who sin against them\"'); lines 424-426 ('The four senses compared': 'the second, love that changes the whole mind and labours in bearing a brother (Bede, Jerome, Chrysostom, Theodoret)')",
+      "problem": "Three compressions credit a Father with more than his locus says; in each the expansive study kept the step apart. (a) The leaven comparison is the study's own: research/interpretations.md lines 400-403 marks it (editorial), and sections/30-hidden-leaven.tex lines 225-231 gives it as what 'this interpretation hears'. Chrysostom on Ps 129:1 (registered PG 55 optical text ia-djvu-ocr-d9b83186, fetched and SHA-256 d9b83186... matched, physical lines 49381-49410) says that such prayer, before it receives, calms the passions, softens anger and drives out envy, and likens it to rain on hard ground and fire softening iron; he says nothing of leaven. Joined to his paraphrased words by a semicolon, with no quotation marks to bound them (the scope note says he is given in paraphrase), the clause reads as his. (b) Bede's promise to the imperfect has an object that the concise drops. In Marcum III on 11:22-25 (tracked artifact latin-text-b8197766, physical line 339): 'postulent sibi peccata dimitti, quo ad vitam intrare mereantur perpetuam, et absque dubio impetrabunt quod petunt, si tamen in se peccantibus aliis primo ipsi dimittunt'. What they will surely obtain is the forgiveness of their sins. The expansive keeps that object at 30:255-258 ('the forgiveness they ask') and 40:222-227 ('they should ask that their sins be forgiven'). Set beside the Communion's 'whatsoever you ask', the concise sentence makes Bede promise the imperfect whatever they ask, on the single condition of forgiving others. (c) In the closing comparison Jerome is listed among the authors of 'love that changes the whole mind and labours in bearing a brother'. Jerome's leaven is the knowledge of the Scriptures (PL 26 col. 91, as the concise itself says at lines 100-102), and his moral reading is reason, anger and desire made prudence, hatred of vice and longing for virtue (concise lines 116-120; expansive 30:290-291). The three-document profile requires a summary naming authors beside a claim to credit each only with the clause he states. Each is a source defect introduced by compression, not a register slip.",
+      "repair_target": "synthesis",
+      "required_result": "Rewrite the three passages so that each Father is credited only with what his locus says and the study's step is stated as the study's. For example: (a) 'Chrysostom says on the same verse that such prayer, even before it receives what it asks, calms the passions, softens anger and drives out envy. The second interpretation takes that inward change for the leaven's work, hidden and from within.' (b) 'Bede adds a condition, which the second interpretation also uses, for those whose faith is not yet perfect: they are to ask that their sins be forgiven, \"and they will without doubt obtain what they ask, provided that they first forgive others who sin against them\" (In Marcum III, on 11:25).' (c) '... the second, love that changes the whole mind (Bede) and labours in bearing a brother (Chrysostom, Theodoret), with reason, anger and desire made prudence, hatred of vice and longing for virtue (Jerome); ...'",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-002",
+      "location": "sections/concise/04-themes.tex lines 72-74 ('\"The affliction is in things bodily, and the joy in things spiritual\" (Hom. in 1 Thess. 2)')",
+      "problem": "Wrong locus. The sentence is in Chrysostom's Homily 1 on First Thessalonians, on 1:6, not Homily 2. In NPNF I.13 (tracked artifact ccel-npnf113-text-54274dd9, hash prefix matched) Homily I begins at physical line 29098 and the sentence stands at lines 29270-29271; Homily II begins at line 29497, expounds 1:8-10, and does not contain it. research/source-bindings.toml places it correctly ('Hom. in 1 Thess. 1 on 1:1-7'). A reader who follows the citation will not find the words.",
+      "repair_target": "synthesis",
+      "required_result": "Cite Homily 1: '... \"The affliction is in things bodily, and the joy in things spiritual\" (Hom. in 1 Thess. 1).'",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-003",
+      "location": "sections/concise/90-apparatus.tex lines 93-94 (References: 'In Marci evangelium expositio I, on 4:30--32, and III, on 11:22--25') and lines 43-45 (scope note: 'Ambrose, Chrysologus and Bede are cited on Luke's and Mark's forms of the two parables')",
+      "problem": "The concise never cites Bede on Mk 4:30-32. Its uses of Bede are In Lucam IV on 13:19 and 13:21 and In Marcum III on 11:22-25 (commentary lines 105-107, 112-115, 122-125, 165-174, 187-189, 366-371, 391-394), and no one in it is cited on Mark's form of either parable: Mark has no leaven parable, and Bede on Mark 11 comments on the Communion's own verse, not on a parallel. The References entry therefore names a locus the prose never uses, which the 1962 profile ('References contains only sources actually used') and the three-document profile's references-used rule forbid, and the scope note states something untrue of this document. Both were carried over from the expansive study, where Bede on Mk 4:30-32 is cited (20:131-136). The references-used check passed the synthesis edition only because it never judged this entry (see the observation on tools/check-content-preflight).",
+      "repair_target": "synthesis",
+      "required_result": "Remove the unused locus from the Bede entry, for example: 'Bede, In Lucae evangelium expositio IV, on Lk 13:19--21, PL 92, Wikisource transcription; In Marci evangelium expositio III, on 11:22--25, Migne Latin text (Wikisource).' Correct the scope note to what this document does, for example: 'Ambrose, Chrysologus and Bede are cited on Luke's form of the two parables, Bede also on Mark's verses of the Communion's saying, and Chrysostom on Matthew's form of it (Mt 21:21--22).'",
+      "severity": "blocking"
+    },
+    {
+      "id": "SYN-004",
+      "location": "sections/concise/10-commentary.tex lines 176-181 ('In the third, Bede's \"perfected there\" and Chrysologus's \"when Christ comes\" put the parable's end at the Lord's coming')",
+      "problem": "The expansive study's third interpretation does not use Bede's sentence: sections/40-already-and-awaited.tex takes the parable's end from Chrysologus alone (lines 145-148, 274-275), and Bede's 'begun here, perfected there' is the second interpretation's anagogy (30:295-296), as the concise's own closing comparison has it (lines 429-431). Bede places the perfection 'there, where God is all in all' (1 Cor 15:28) and does not speak of the Lord's coming, so the sentence also makes his phrase say when the end comes. The step is defensible, but it is the concise's own and is not in the reviewed study.",
+      "required_result": "Give the third interpretation Chrysologus alone, or state the step as the interpretation's. For example: 'In the third, Chrysologus's \"when Christ comes\" puts the parable's end at the Lord's coming: the seed is sown and the leaven hidden, while the tree and the whole leavened are still to come.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-005",
+      "location": "sections/concise/04-themes.tex lines 76-78 with 10-commentary.tex lines 271-272 (Aquinas on eripuit); 04-themes.tex lines 44-46, 68-70 and 91-92 with 10-commentary.tex lines 254-256 (the tenses); 10-commentary.tex lines 43-46 and 210-213 (Ambrose's 'faith is pressed' with 1 Cor 2:1-2)",
+      "problem": "Restatement ('Say it once'). Aquinas's explanation of the perfect of 1 Thess 1:10, the cause removed now and the penalty escaped later, is stated in the themes and stated again, quoted, in the commentary. The commentary's unit on the tenses opens by re-listing the tenses the themes already set out for the Introit, the Epistle and the Gradual. Ambrose's 'faith is pressed when we believe in Christ crucified', with Paul knowing nothing at Corinth but Christ crucified, is explained at lines 43-46 and explained again at 210-213. In each case the second statement adds no step, in a document whose extent is bounded. The instances are few and each sits beside new material, so this is advisory.",
+      "required_result": "Say each once and refer back. For example: drop the themes' sentence on Aquinas (04-themes lines 76-78) and keep his words in the commentary; open the tenses unit with 'The third interpretation begins from the tenses set out above, and Augustine meets the question on the Gradual's own verses.'; and at lines 210-213 write 'Paul had reasoned in their synagogue that \"the Christ was to suffer and to rise again from the dead\" (Acts 17:3), the belief by which, Ambrose says, faith is pressed.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-006",
+      "location": "sections/concise/04-themes.tex lines 51-54 ('\"always meditating on reasonable things\"', '\"both in words and in deeds\"'); 10-commentary.tex lines 182-183 ('\"the same things by which we truly live\"'); 90-apparatus.tex lines 35-36 ('no English is composed for a liturgical text')",
+      "problem": "The concise prints its own English renderings of phrases of the Collect and the Postcommunion in quotation marks, while page 1 quotes the Lasance English of the same prayers ('ever fixing our thoughts on reasonable things', 'both in word and in deed', 'we may ever hunger after those things by which we truly live'; propers/verified.md lines 343-345 and 362-364). A reader meets two English texts of one prayer, both in quotation marks, and cannot tell which is quoted; the scope note's statement that no English is composed for a liturgical text is not true of these phrases, and the 1962 profile says the guide supplies no rendering of its own for a proper. The expansive study does the same at 10-each-element lines 46-53 and 216-222, which the study owner may wish to align at its next revision.",
+      "required_result": "Where an English phrase of an oration is quoted, quote Lasance, and gloss single Latin words where the argument turns on them. For example: 'Those who pray are described as semper rationabilia meditantes, \"ever fixing our thoughts on reasonable things\" (semper, always; meditantes, meditating), that is, on things that accord with reason; they ask to do what pleases God \"both in word and in deed\".' And at 10-commentary 182-183: '... and ask that they may semper, always, long for eadem, the same things, \"by which we truly live\".' Alternatively, restate the scope note so that it says exactly what is done.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-007",
+      "location": "sections/concise/10-commentary.tex lines 264-267, 273, 303-305 and 428-429; sections/concise/90-apparatus.tex line 46",
+      "problem": "Five compressions are less exact than the study they condense. (a) 'On the Introit's verse he asks how the psalmist can pray, \"Convert us\"': Augustine's question is on the psalm's later verses (his section 84.4), after he has taken the Introit's verse as said to Christ (84.2; NPNF I.8 artifact lines 41548-41592); the expansive keeps the two apart (40:40-50). (b) 'the psalm's Salvasti': the reader is not told that Salvasti is the Vulgate's verb where the Gradual sings Liberasti (expansive 40:116-117). (c) 'Rupert and Sicard put the Gradual's thanks in the future of that remnant': the expansive's 'the remnant of Israel at the end of time' (40:202-203) is dropped, so the reader is not told why that thanks is future, and Rupert's people were introduced as Christ's brethren according to the flesh, not as a remnant. (d) 'the tree in whose branches the nations rest \"in the security of a sure station\"': in Ambrose VII.185-186 (tracked Wikisource artifact book-7-html-895ee72a) it is the one caught up into paradise and the heavenly powers who rest (requiescat, requiescunt); the nations fly into the branches and flourish there (advolamus ... certae stationis iam securitate vernantes), as the expansive renders it (20:340-341). (e) The scope note drops the expansive's qualification that Ambrose and Bede were read in transcriptions of Migne 'not collated with page images'.",
+      "required_result": "Restore each exactness in a phrase. For example: (a) 'On the same psalm he asks how the psalmist can pray, \"Convert us, O God,\" ...'; (b) 'On the psalm's Salvasti, the Vulgate's verb where the chant has Liberasti, he gives both times ...'; (c) 'For both, the sequence belongs to the remnant of Israel at the end of time, and they put the Gradual's thanks in that future although Liberasti is a perfect ...'; (d) 'the tree into whose branches the nations fly and flourish \"in the security of a sure station\"'; (e) 'Ambrose and Bede in transcriptions of Migne not collated with page images'.",
+      "severity": "advisory"
+    },
+    {
+      "id": "SYN-008",
+      "location": "sections/20-crushed-seed.tex lines 175-191 (expansive study: the citation run on Chrysostom's homilies on First Thessalonians)",
+      "problem": "The run cites '(Hom. in 1 Thess. 1)' after the persecution sentence, then gives the affliction-and-joy sentence and the imitators of the Lord, both from Homily 1 (NPNF I.13 lines 29242-29271), and closes with '(Hom. 2)' after the remark on verse 8, which alone is Homily 2's. A reader reasonably takes everything after the first citation as Homily 2, and the concise did (SYN-002). Not this stage's to repair.",
+      "required_result": "For the study owner at its next revision: add '(Hom. 1)' after the sentences on the Three Children and the imitators of the Lord, so that '(Hom. 2)' covers only the remark on verse 8.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 0,
+  "observations": [
+    {
+      "location": "tools/check-content-preflight, references-used check (locus rules in the comment block at lines 615-668), run on this leaf's synthesis edition",
+      "note": "It passed the concise References although Bede's In Marci evangelium expositio I, on 4:30-32, is cited nowhere in the concise (SYN-003): by its documented design it judges a commentary's loci only where the body cites the entry by a title word followed at once by an arabic number, and the body writes 'In Marcum III', whose title word is not the entry's and whose division is roman, so the entry was never judged; for the tool owner, an abbreviated work title or a roman book division lets an unused locus of the same entry through."
+    },
+    {
+      "location": "tools/print-document build --edition synthesis (scripts/_print_document.py), this leaf",
+      "note": "It refuses with 'input has no existing file: .../homily.tex' because the homily is not yet written, so the supported tool cannot export the concise study at this point of a proper-study run; this review's page evidence came from a direct pdflatex build of the sealed sources in its own scratch with a placeholder revision stamp, which is not a print acceptance; for the tool owner."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-inventory"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "concise-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-overview"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "concise-themes"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Peter Chrysologus",
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "crushed-seed"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "crushed-seed",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Bede",
+            "Jerome",
+            "Ambrose of Milan",
+            "Thomas Aquinas",
+            "John Chrysostom",
+            "Theodoret of Cyrus",
+            "Peter Chrysologus",
+            "Hilary of Poitiers"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Bede",
+            "Jerome",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "hidden-leaven"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hidden-leaven",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Peter Chrysologus",
+            "Bede",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome"
+          ],
+          "component_keys": [
+            "already-and-awaited"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "already-and-awaited",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location-page.tex": "9cad6888aa530cace76b70e1eb2a679b7059527ee72c4071e8d06f637998ec6f",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md": "7dfbec047540c2f1ff70de93912de9d8d783ef604542aed749b6b3079d28c030",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex": "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex": "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml": "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md": "e823125ea2020ec425b4f953cc5c145ca2546458a0806003db068cb06c38fbb1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md": "d0f70830a8b573c2a8c4a100e21b151bd9962eb11e73568031d9df6c8b6af157",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/01-inventory.tex": "eedd26f5afd88311ccf713d22125bbb440e18ed116f69066389c07ae9da3f9a0",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/02-overview.tex": "ecf6bdf92891c542c68db9c18a6891f56d556c2e1f7a84b38dbbf9c8856becd6",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/04-themes.tex": "c14b743bd0866e1a6a941009ba17ca60f2c07adf8341faa9d9a529c410c0f5ac",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/10-commentary.tex": "09fb69a0dcbafe1be71db9b7be235b663cbd1b7314d9f81fce673a8f9d108b2d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/90-apparatus.tex": "b6a546b8adb62c45cc2de0d2bceeed235e04bd49933b6e42e1d7996fcf73478d",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/synthesis.tex": "5ed4f61b7607784a36b8c84722cbef3784bad188a7a395486a436b67282fdda7",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "decbd44ee5bcce3b",
+            "99791e370c49b8110516cc7d744caab2715c2f71",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "Cold review of the concise study, synthesis.tex with sections/concise/01-inventory, 02-overview, 04-themes, 10-commentary and 90-apparatus and the generated page 2; all 16 sealed inputs were re-hashed and match REVIEW_INPUTS. From the concise prose alone the three answers are recoverable and agree with research/interpretations.md and sections/20-50: the seed gives its strength when crushed (Hilary; Ambrose, faith ground by adversity), seen in a church that received the word in much tribulation and was heard of everywhere; the leaven, love (Augustine, Bede) or teaching (Jerome, Ambrose), works through the whole person until all is changed; deliverance is sung as done because God's promise is certain and its cause removed (Augustine, Aquinas) while his people pray and wait (Jerome). The commentary sets the interpretations side by side at shared texts, keeps the Fathers' real disagreements (seed, leaven, measures, the Trinitarian reading), keeps Jerome's order, Ambrose's reported versus preferred readings and the Greek/Latin of 1 Thess 1:3, keeps the liturgical commentators to the chants, and closes with the four senses compared. Evidence checked at loci: Augustine NPNF En. in Ps. 43.1, 43.6-7, 77.1-2, 84.2-4 and Quaest. Ev. I.11-12; Chrysostom NPNF Hom. in Mt. 46.2-3, 47.1, 67.2 and Hom. in 1 Thess. 1-2; Chrysostom on Ps 129 in the registered PG 55 optical text (fetched, hash matched); Jerome In Mt. II cols. 90-91 in the Internet Archive OCR of the registered PL 26 scan (finding aid only); Ambrose Exp. in Lc. VII.176-194; Chrysologus Sermo 99; Bede In Marcum on 11:22-25; the Lasance English in propers/verified.md; every quoted Douay verse. Page-2 lookup on the generated table: Communion, Mark 11:24 -> 'Jesus teaches faith and prayer; Bethany to Jerusalem, before the Passion', A.D. 29 (derived; Maas's chronology), composition 'Mark; Rome traditionally', proposals A.D. 38-70; Introit, Jer 29:11-12,14 -> 'Letter to the exiles; Jerusalem to Babylon', after the deportation of c. 598-597 B.C.; each passage pairs its occurrence, place and date within one row group, so the page is usable. Limits: no print edition was requested and no pagination is claimed; a direct pdflatex build of the sealed sources in this reviewer's scratch, with a placeholder revision stamp, gave 12 pages with the inventory and overview on page 1, the date page on 2, themes on 3-4 and commentary from 5, and no overfull boxes, which is evidence of extent and not a print acceptance; the page images of Hilary, of Jerome on Jeremias and of the Aquinas texts were not re-read. Verdict CHANGES_REQUIRED, all three blocking defects owned by the concise study: compression credits Chrysostom with the study's leaven comparison, drops the object of Bede's promise and lists Jerome under love (SYN-001); a wrong homily locus for Chrysostom (SYN-002); and an unused Bede-on-Mark-4 locus in the References with a scope sentence untrue of this document (SYN-003). SYN-004 to SYN-008 are advisory."
+}

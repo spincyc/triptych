@@ -26,6 +26,7 @@ import os
 import re
 import shlex
 import shutil
+import signal
 import subprocess
 import time
 import tomllib
@@ -37,6 +38,13 @@ LINEAR = "linear"
 EVALUATOR = "evaluator"
 BOUNDED_REVISION = "bounded-revision"
 GATE = "gate"
+
+# The wall-clock budget of one gate command. It exists to stop a hung check,
+# not to measure a working one: on the reference host `make
+# check-release-bindings` takes about 790s alone, once one traced chronology
+# computation runs per publication, and `document-library structure --check`
+# about 320s. The earlier 300s budget failed both while each exited 0.
+GATE_TIMEOUT_SECONDS = 1800
 
 # Terminal states
 ACCEPTED = "ACCEPTED"
@@ -4118,10 +4126,14 @@ class WorkflowEngine:
         `build/{provider}/` tree with no lock between them, and
         `publication-gates` includes `make check-web-editions-current`, which
         begins by removing a fixed directory that its twenty siblings would
-        then be racing. The timeout is the other half of it: 300s is a
-        wall-clock budget, and a check that fits alone can miss it while
-        twenty siblings share the machine, surfacing as a blocking finding
-        rather than as the scheduling problem it is.
+        then be racing. The timeout is the other half of it: the budget is
+        wall-clock, and a check that fits alone can miss it while twenty
+        siblings share the machine, surfacing as a blocking finding rather
+        than as the scheduling problem it is.
+
+        A command runs through a shell in a session of its own, and a timeout
+        kills that whole process group. Killing only the shell left the
+        command it had started running, unowned, beside every later check.
         """
         checks = stage.get("checks", [])
         # A gate command names the run's arguments and, under the reserved
@@ -4147,14 +4159,7 @@ class WorkflowEngine:
             # to continue the command from.
             command = _substitute_args(command_template, args, quote=True)
             try:
-                proc = subprocess.run(
-                    command,
-                    shell=True,
-                    capture_output=True,
-                    text=True,
-                    cwd=self.repo_root,
-                    timeout=300,
-                )
+                proc = _run_gate_command(command, self.repo_root)
                 log_dir.mkdir(parents=True, exist_ok=True)
                 (log_dir / f"{stage['id']}-{stage_iter:04d}-{check_id}.log"
                  ).write_text(
@@ -4185,10 +4190,12 @@ class WorkflowEngine:
                     "id": f"GATE-{check_id.upper()}",
                     "severity": "blocking",
                     "check": check_id,
-                    "problem": f"command timed out after 300s: {command}",
+                    "problem": (f"command timed out after "
+                                f"{GATE_TIMEOUT_SECONDS}s: {command}"),
                     "required_result": check.get(
                         "required_result",
-                        f"command must complete within 300s: {command}"
+                        f"command must complete within "
+                        f"{GATE_TIMEOUT_SECONDS}s: {command}"
                     ),
                 })
             except OSError as error:
@@ -5545,6 +5552,33 @@ def _run_identity(workflow: dict[str, Any],
         f"{RUN_IDENTITY_PREFIX}run_id": str(state["run_id"]),
         f"{RUN_IDENTITY_PREFIX}repo_commit": str(state["repo_commit"]),
     }
+
+
+def _run_gate_command(command: str, cwd: Path,
+                      timeout: float | None = None
+                      ) -> subprocess.CompletedProcess:
+    """Run one gate command; on timeout kill its whole process group.
+
+    `subprocess.run(..., shell=True, timeout=...)` kills only the shell, so a
+    long check the shell started (make, then the tool make runs) went on
+    running after its finding was written. The command therefore starts a
+    session of its own, and the timeout ends every process in it before the
+    timeout is raised.
+    """
+    limit = GATE_TIMEOUT_SECONDS if timeout is None else timeout
+    with subprocess.Popen(command, shell=True, cwd=cwd, text=True,
+                          stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                          start_new_session=True) as proc:
+        try:
+            stdout, stderr = proc.communicate(timeout=limit)
+        except subprocess.TimeoutExpired:
+            try:
+                os.killpg(proc.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            proc.communicate()
+            raise
+    return subprocess.CompletedProcess(command, proc.returncode, stdout, stderr)
 
 
 def _gate_substitutions(workflow: dict[str, Any],

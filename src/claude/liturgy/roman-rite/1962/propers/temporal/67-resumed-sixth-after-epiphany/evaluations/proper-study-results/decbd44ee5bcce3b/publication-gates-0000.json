@@ -1,0 +1,21 @@
+{
+  "disposition": "FAIL",
+  "findings": [
+    {
+      "check": "release-bindings",
+      "id": "GATE-RELEASE-BINDINGS",
+      "problem": "command timed out after 300s: make check-release-bindings",
+      "required_result": "The site authorization must bind the current reader-facing sources.",
+      "severity": "blocking"
+    },
+    {
+      "check": "document-catalogue",
+      "id": "GATE-DOCUMENT-CATALOGUE",
+      "problem": "command timed out after 300s: tools/tpt document-library check --provider claude --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany && tools/tpt document-library structure --check",
+      "required_result": "The deterministic corpus catalog must include the current publications.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "stage": "publication-gates"
+}

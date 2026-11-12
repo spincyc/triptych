@@ -243,6 +243,27 @@ three derived edition revisions reports `uncommitted: false` and the same
 committed timestamp. The engine dispatches fresh generate-web iteration 0 at
 high against that checkpoint.
 
+
+On 12 November the maintainer renews the task and requests pulling main before
+continuing. The coordinator interrupts the resumed web worker and merges
+`92032f5178`, preserving the independent Claude production, both authorization
+and deliverable entries, and all 167 GPT-ledger review states. The identical
+revision helper fix is already present upstream. Shared ledger hashes are
+recomputed by their owning tool against the combined canonical catalog.
+The imported gate runner has a longer command budget and kills the command's
+whole process group on timeout. Of its three focused execution tests, the
+output/status and direct-gate tests pass; the process-disappearance assertion
+fails on this host. Its implementation and test are unchanged from main. No
+clean test-suite pass is claimed. The global promised-deliverable check reports
+the expected stale browser products after integration; product recording and
+release validation remain pending.
+Independent comparison after the merge confirms the study, synthesis and homily
+seals remain exact. Research differs at one sealed dependency only:
+`src/sources/commentary/fragment-loci.yaml`, where main adds Augustine
+Quaestiones evangeliorum I.11 and I.12 mappings. The earlier research acceptance
+is therefore stale against the integrated tree and requires renewed independent
+review through the workflow. No seal or accepted result is restamped.
+
 Registration's bounded source-evidence pack contains nine payloads: Pustet's
 appointed antecedent pages, four Cummiskey page images, two Schuster extracts,
 and two Jerome extracts. The pack is 9,144,320 bytes, SHA-256

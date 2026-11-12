@@ -5,13 +5,84 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-09.
+Last reconciled: 2026-11-12.
+
+## Claude 1962 resumed Sixth Sunday after the Epiphany, 2026-11-15
+
+<!-- promised-deliverable: claude-1962-67-resumed-sixth-three-documents-2026-11-15 -->
+
+**Complete: pushed to `main`, deployed and verified live.** On
+2026-11-11 the maintainer asked for the Claude 1962 proper-study documents
+for the upcoming Sunday and authorized publication to `main`. Sunday,
+15 November 2026 is the Sixth Sunday after the Epiphany resumed after
+Pentecost (II class), permanent identity `67`,
+`liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany`. St Albert the Great (III class) is outranked.
+The production plan records the one-provider authorization. This is an
+independent Claude production: the GPT leaf for the same identity is not an
+input.
+
+One tool fix landed before seeding (`16a02b41c8`, revision stamps during
+staged authoring, the parallel GPT session's `1b68bd930e` applied unchanged).
+Run `decbd44ee5bcce3b` (`proper-study` v19) reached ACCEPTED with 53 packets,
+53 results and 16 interventions. Of its ten cycles, eight were content defects
+found by cold reviews: research twice, the study three times, the concise
+study twice and the homily once. The study review passed in its fourth and
+last allowed round. The other two cycles came at the publication gate. Its
+runner gave each check a fixed 300 s, and `make check-release-bindings`
+(about 786 s) and the document-catalogue check (about 316 s) both exit 0 but
+outlast it. The runner also left the timed-out command's child running. The
+fix is `306cb81ea4`: 1800 s, and a timeout kills the whole process group.
+Before committing it mid-run, the driver confirmed it staled only the web
+review. That review's render digest covers every `scripts/*.py`. A
+byte-identical reconversion and a fresh cold web review then passed. The
+published family is a 31-page expansive study, a 12-page concise study and a
+4-page homily (1,284 spoken words). Each compiles natively with pdfTeX, and
+each has its reader. Eleven advisories stand, among them SYN-008 (Chrysostom
+Hom. 1/2 in the expansive study) and WEB-001 (one unclear Ambrose sentence).
+The run is archived in the leaf. The driver's account, with the defects left
+for other owners, is
+[CYCLES.md](workflows/reviews/claude-1962-67-production-2026-11-11/CYCLES.md).
+
+After acceptance, the run was archived (`c594c4616a`), the Claude publication
+inventory was refreshed to cover the archive (`80fd071a5a`), and the browser
+products were re-recorded and their binding refreshed (`cc5be75e6f`,
+`a2e8b7047a`). `origin/main` had not moved, so no merge was needed. The
+local gates then passed on `3b5f75f894`: native compile of the three editions
+(pdfTeX, 47 pages), `make check-deployment-sources`, `make public-site`,
+`tools/tpt public-alpha verify --deployment-target github-pages` and
+`make check-release-bindings` (0 stale; log sha256 `d36234c01168c898…`).
+Then `origin/main` was fast-forwarded from `436230e120` to `3b5f75f894`, and
+the workspace branch was pushed to the same commit. Pages run
+[43167895080](https://github.com/spincyc/triptych/actions/runs/43167895080)
+built cold, because the archive changed every product family. Its first
+attempt was cancelled at the build job's 180-minute limit, during artifact
+verification and after the verified products had been saved. Re-running the
+failed jobs restored those products warm. Attempt 2 ran build and deploy,
+both succeeded, and print-compile had already succeeded. Repository hygiene
+run 43167895079 succeeded. On 2026-11-12 each route below was fetched from
+`https://mystago.gy/` and compared with `build/public-alpha/site/` built from
+the same commit:
+
+| Route | HTTP | SHA-256 | Match |
+| --- | ---: | --- | --- |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html` | 200 | `fc9323fa3e8405b1…` | byte-identical |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html` | 200 | `c082b66df4816805…` | byte-identical |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html` | 200 | `b8dbc9284482ffea…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html` | 200 | `5dc98634476a9815…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html` | 200 | `ea578caa26ec190d…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html` | 200 | `85bde04fd7ed7e3f…` | byte-identical |
+| `library/traditional-latin-mass.html` | 200 | `a11b642653b804eb…` | byte-identical |
+
+The added lines of the outgoing range were scanned for machine paths,
+usernames, hosts, addresses and credentials, with no match. The archived
+worker notes carry repository-relative paths only. The cold build's closeness
+to the 180-minute limit is left to the Pages workflow's owner.
 
 ## GPT resumed Sixth Sunday after the Epiphany — 15 November 2026
 
 <!-- promised-deliverable: gpt-1962-67-production-2026-11-09 -->
 
-**In progress: research and all three content reviews accepted.** The
+**In progress: main integrated; research revalidation pending.** The
 maintainer requested the TLM propers documents for the upcoming Sunday and
 publication to main. The target is GPT identity 67, the universal 1962 resumed
 Sixth Sunday after the Epiphany on 15 November 2026. The eleven appointed
@@ -36,9 +107,10 @@ remain pending, without an invented family-wide acceptance. A staged revision
 validation defect was repaired in `1b68bd930e`; its focused tests and actual
 conversions pass, with broader fixture-test limits recorded in the cycle audit.
 
-Source/artifact validation passes with all accepted input seals current.
-Remaining work is the committed
-source checkpoint, canonical web review, publication wiring and gates, terminal
+The reviewed source checkpoint is committed as `89e6f0ff1e`. After the
+12 November merge from main, the three content seals remain exact, while a
+shared commentary-map addition makes the research seal stale. Remaining work
+is renewed research review, canonical web review, publication wiring and gates, terminal
 run archive, three native print compilation checks, desktop/mobile reader and
 print-control checks, validated publication to main, successful Pages deployment
 and verification of all three live readers. Content acceptance does not yet

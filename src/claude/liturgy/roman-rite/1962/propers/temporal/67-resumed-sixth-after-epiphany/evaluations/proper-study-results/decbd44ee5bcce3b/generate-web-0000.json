@@ -1,0 +1,7 @@
+{
+  "artifact_path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.md",
+  "disposition": "PASS",
+  "iteration": 0,
+  "stage": "generate-web",
+  "summary": "All three editions (bare, -synthesis, -homily) report uncommitted: false at 5704d9e52d. Converted the canonical study with tools/tpt web-edition (all build-time fidelity audits passed; a second conversion was byte-identical), read the whole Markdown against the sources (57 headings, the ten appointed-text anchors, three interpretation lanes each with its four-senses definition list, comparison table, generated Scriptural Date and Location with evidence, scope appendix, references, revision stamp and rights colophon all present), and recorded the receipt research/web-artifact.json (sha256 293ceca2e890ee0f4714c7943af99fea687f11db59d8d42107fa2e8af9c99410). No conversion or declaration defect required repair; tools/tpt check-web-edition validates the leaf's eligible declaration. Path for the coordinator to commit: src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/web-artifact.json. Shared-generator note for its owner (not this stage's to repair, rendered identically in TeX and web): the generated Scriptural Date and Location evidence writes article titles in straight single quotes ('David, King,', 'Jesus Christ,', 'Chronology of the Life of Jesus Christ,'), which TeX and the reader both set with a closing quote at each end."
+}

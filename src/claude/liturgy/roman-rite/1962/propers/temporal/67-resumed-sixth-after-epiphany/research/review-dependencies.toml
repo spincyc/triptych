@@ -1,0 +1,57 @@
+# Controlling external evidence this research reads outside its leaf and that
+# the registered source bindings do not already seal (research/source-bindings.toml
+# seals every bound record and its ancestry). Declared on 2026-11-11 in the
+# research stage (iteration 0) of run decbd44ee5bcce3b. Every path is a tracked
+# record under src/ in the roman-1962 family or the provider-neutral source
+# library.
+#
+# Rights, ledgers, standing and joins
+# - missale-romanum-1962-facsimile-rights-v1.toml: the 17 U.S.C. 103(b) holding on
+#   which the Latin's publication basis rests, with Pustet 1862 as the witness
+#   (propers/verified.md; research/scope.md 2.2).
+# - lasance-new-roman-missal-rights-v1.toml: the non-renewal record and excluded
+#   ranges behind the Lasance English (research/scope.md 2.4).
+# - roman-1962-proper-latin-provenance-v1.toml and
+#   roman-1962-proper-translations-v1.toml: same-family ledgers whose rows, and
+#   missing rows, research/context.md, propers/verified.md and research/scope.md 11
+#   report.
+# - missal-expected-targets-v1.toml: the resumed-epiphany-6 slot rows that
+#   research/context.md adopts for the formulary's locus.
+# - author-standing-v1.toml: the standing column of the witness register
+#   (research/scope.md 5) and the carrying authors of each reading.
+# - source-containment-v1.toml and commentary/passage-commentary-index.yaml: the
+#   joins behind `commentary-work-index discover` for every appointed passage
+#   (research/scope.md 3, 3.1).
+# - commentary/formulary-loci.yaml: the empty `formulary` result for
+#   resumed-epiphany-6 and epiphany-6 (research/scope.md 3, 6).
+# - calendars/roman-1962/propers.yaml and rubrics.yaml: the occurrence and
+#   precedence inputs research/context.md adopts.
+#
+# Ordinary and Preface
+# - The 1962 Ordo Missae and Preface passage records whose marginal numbers
+#   research/context.md, "Other text-bearing parts of this Mass", cites.
+#
+# The Scripture chronology corpus
+# research/chronology.toml, research/chronology-annotations.tex and
+# research/chronology-table.tex were generated with tools/tpt proper-chronology
+# (research/scope.md 9). The engine seals every file that computation opens
+# outside the leaf and every source the record cites; those need no declaration
+# and are not repeated here.
+paths = [
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+  "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+  "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+  "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "src/sources/inventories/missal-expected-targets-v1.toml",
+  "src/sources/inventories/author-standing-v1.toml",
+  "src/sources/inventories/source-containment-v1.toml",
+  "src/sources/commentary/formulary-loci.yaml",
+  "src/sources/commentary/passage-commentary-index.yaml",
+  "src/sources/calendars/roman-1962/propers.yaml",
+  "src/sources/calendars/roman-1962/rubrics.yaml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-ad-gradum.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-kyrie-gloria.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-credo.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-conclusio.toml",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/praefationes.toml",
+]

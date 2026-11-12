@@ -447,6 +447,31 @@ class GateExecutionTests(unittest.TestCase):
         finally:
             shutil.rmtree(repo, ignore_errors=True)
 
+    def test_gate_timeout_kills_the_command_it_started(self):
+        """A timed-out gate command leaves no process of its own running."""
+        work = Path(tempfile.mkdtemp(prefix="tpt-gate-timeout-"))
+        try:
+            pid_file = work / "child.pid"
+            command = (f"sleep 60 & echo $! > {shlex.quote(str(pid_file))}; "
+                       "wait")
+            with self.assertRaises(subprocess.TimeoutExpired):
+                _workflow._run_gate_command(command, work, timeout=1)
+            child = int(pid_file.read_text(encoding="utf-8").strip())
+            with self.assertRaises(ProcessLookupError):
+                os.kill(child, 0)
+        finally:
+            shutil.rmtree(work, ignore_errors=True)
+
+    def test_gate_command_returns_its_output_and_status(self):
+        work = Path(tempfile.mkdtemp(prefix="tpt-gate-output-"))
+        try:
+            proc = _workflow._run_gate_command("echo out; echo err >&2; exit 3",
+                                               work)
+            self.assertEqual((proc.returncode, proc.stdout, proc.stderr),
+                             (3, "out\n", "err\n"))
+        finally:
+            shutil.rmtree(work, ignore_errors=True)
+
 
 class RunIdentitySubstitutionTests(unittest.TestCase):
     """What a gate command may name, and what it may never be made to mean.

@@ -1,0 +1,14 @@
+schema = 1
+record_type = "passage"
+id = "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-11"
+edition_id = "edition.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05"
+artifact_id = "artifact.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.wikisource-latin-text"
+artifact_sha256 = "aed43fd30cbd7a5bfe698c3930c360a6e4cb201f5da47951dc26a22c069c80e7"
+locus = "1.11"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Book I, question XI, the whole answer on the grain of mustard seed (physical line 16, headed by the printing's reference [Ib. XIII, 31.] under the book's title In Evangelium secundum Matthaeum, line 5; the capitula list on line 5 titles it De grano sinapis quod majus fit omnibus oleribus). Read with questions X (Mt 13:25-30) and XII (Mt 13:33) on either side: the seed becomes greater than all herbs because of the fervour of faith, or because it is said to drive out poisons, the herbs being the doctrines of the sects, which he glosses as the placita of each sect."
+physical_line_ranges = [[16, 16]]
+text = "Granum sinapis ob fervorem fidei, vel quod dicatur venena expellere, majus fit omnibus oleribus, id est dogmatibus. Dogmata autem sunt placita sectarum, id est, quod placuit singulis sectis."
+transcription_segments = [{ line = 16, text = "Granum sinapis ob fervorem fidei, vel quod dicatur venena expellere, majus fit omnibus oleribus, id est dogmatibus. Dogmata autem sunt placita sectarum, id est, quod placuit singulis sectis." }]
+verified_on = "2026-11-11"
+notes = "Mechanically copied as one exact substring of retained raw line 16, omitting only the question numeral and the editor's bracketed Scripture reference that head the line ('XI. [Ib. XIII, 31.]'); no word was retyped, modernized or supplied. The whole answer is retained: the line ends where question XII begins on line 17. The printing's reference names verse 31 only; the answer expounds the seed's becoming greater than all herbs, which are the words of verse 32 (majus est omnibus oleribus), as the capitula title on line 5 also says, so the canonical edge in fragment-loci.yaml takes 13:31-32. The wording is that of this dated digital transcription of Migne, PL 35; it was not collated with a page image of the printed column and is not presented as diplomatic. Augustine's own Latin, so no translator is involved."

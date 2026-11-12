@@ -1,0 +1,14 @@
+{
+  "artifact_path": "build/web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STALE-WEB-REVIEW",
+      "note": "The publication deliverable was reconverted from the committed tree and its receipt re-recorded. The bytes match the earlier review exactly; only the render digest moved, because of the scripts/_workflow.py runner fix. The new independent review of these bytes is the next stage's work.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "stage": "generate-web",
+  "summary": "All three editions (bare, -synthesis, -homily) report uncommitted: false at commit 5704d9e52d, stamp 2026-11-11T20:40:01Z. Reconverted the canonical study from the committed tree with tools/tpt web-edition (exit 0); the output is byte-identical to the reviewed conversion (SHA-256 293ceca2e890ee0f4714c7943af99fea687f11db59d8d42107fa2e8af9c99410, revision stamp unchanged). snapshot-web re-recorded research/web-artifact.json, whose bytes are unchanged. No conversion or declaration defect was found and no tracked file changed."
+}
