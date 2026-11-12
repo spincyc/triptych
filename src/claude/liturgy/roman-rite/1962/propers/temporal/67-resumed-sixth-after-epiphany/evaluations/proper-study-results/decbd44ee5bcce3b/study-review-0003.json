@@ -1,0 +1,456 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-022",
+      "location": "sections/40-already-and-awaited.tex lines 164-169 (end of 'A kingdom hidden from the foundation of the world'; added this iteration as the repair of STU-019)",
+      "problem": "The repair added two sentences. In the first, the clause after the colon ('for Augustine the mystery veiled in the Old Testament is unveiled in the New, and for Jerome the letter that tells of the exodus also sounds hidden mysteries') paraphrases the two quotations the reader has just read at 40:155-163. 'Say what the texts say, plainly' rules that out ('Say it once'); only the shared point before the colon is new. The second sentence ('Jerome's rule is the one this interpretation applies to the Gradual's psalm and the Introit's prophecy in answer to the strongest objection, below') tells the reader in advance what the study will do instead of stating a finding. It also does not match the passage it points to. At 40:247-251 the rule is applied to Jeremias's letter ('The rule he states at Mt 13:35 allows both'), and at 40:251-254 the Gradual's psalm is answered from Augustine, not by Jerome's rule. This is a single instance, so it is advisory.",
+      "required_result": "Keep the shared point, and drop both the paraphrase and the forward pointer. Rewrites: (1) 'Both read the psalm's account of Israel's past as holding more than its letter.' (2) Delete the sentence 'Jerome's rule is the one this interpretation applies ... below.' The objection already states and uses the rule at 40:249-251. If a link to the objection is wanted, it must be accurate, for example: 'Below, the same rule answers the objection that Jeremias's promise was made only to the exiles in Babylon.'",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-023",
+      "location": "sections/20-crushed-seed.tex lines 191-195 (rewritten this iteration under STU-021)",
+      "problem": "At Super I ad Thessalonicenses c. 1 l. 1, paragraph [87862] (Corpus Thomisticum, fetched 2026-11-11, SHA-256 fe77f056... matched), Aquinas writes: 'Cum gaudio, inquam, spiritus sancti, non alio quocumque, qui est amor Dei, qui facit gaudium patientibus propter Christum, quia amant eum.' The repair correctly gives the relative 'qui est amor Dei' to the Spirit. But 'non alio quocumque' is ablative and agrees with 'gaudio': with the joy of the Holy Spirit, not with any other joy. The study's 'the joy is the Holy Spirit's and no other's' reads the phrase as ruling out another owner of the joy. Aquinas rules out another kind of joy.",
+      "required_result": "'Aquinas, on the Latin, says that it is the joy of the Holy Spirit and no other joy, the Spirit \"who is the love of God, who gives joy to those who suffer for Christ, because they love him\" (Cum gaudio ... spiritus sancti, non alio quocumque, qui est amor Dei, qui facit gaudium patientibus propter Christum, quia amant eum; Super I ad Thessalonicenses c. 1 l. 1).'",
+      "severity": "advisory"
+    },
+    {
+      "id": "STU-024",
+      "location": "sections/40-already-and-awaited.tex lines 270-271 (fourSenses, Moral)",
+      "problem": "The moral sense gives the Communion as 'believe that you receive (Mk 11:24)'. The Missal's antiphon has cr\u00e9dite quia accipi\u00e9tis, and the Douay-Rheims of Mk 11:24 reads 'believe that you shall receive' (tracked verse text; also 00:44). This interpretation makes the tense its point: 40:213-214 says 'The Communion gives a present command and a future gift.' The moral sense turns that future gift into a present one.",
+      "required_result": "'... pray, since praying to be heard is faith's part (Hilary), and believe that you shall receive (Mk 11:24); forgive, that your prayer be heard (Bede); ...'",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 3,
+  "observations": [
+    {
+      "location": "research/source-bindings.toml lines 104-110 (Douay-Rheims 1 Thessalonians, loci 1Thess.1.1-10) and 120-126 (Douay-Rheims Matthew, loci Matt.13.1-35); research/production-review.md lines 340-350 and 371-372",
+      "note": "The study quotes Douay-Rheims English outside the bound loci in more places than the production record hands to the research owner. Mt 16:6 (10:151-152, 30:5-6) and Mt 17:19 (20:48-49) lie outside the Matthew binding's 13:1-35. 1 Thess 2:2 (10:60, 20:301-302) and 3:1-7 (10:67-70) lie outside 1:1-10. 1 Cor 2:4 (20:200-202) and 5:7 (10:152) come from a registered artifact (artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-53-1-corinthians-ffc4f260) that has no binding at all. Every quotation was checked word for word in the tracked verse texts and is exact, and the References list the loci, so nothing the reader sees is wrong. But production-review.md names only Mt 17:19, 1 Cor 2:4 and 5:7. The bindings-valid and references-used preflight checks do not test whether a quoted verse lies inside its binding's loci. This is the second round in which the gap has reached the run only as an observation, which suggests a missing mechanical check rather than a defect in the study."
+    }
+  ],
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-texts",
+          "kind": "appointed-text",
+          "path": "sections/05-appointed-texts.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "appointed-texts"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "each-element",
+          "kind": "proper-treatment",
+          "path": "sections/10-each-element.tex",
+          "references": [
+            "propers/verified.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "crushed-seed",
+          "kind": "interpretive-lane",
+          "path": "sections/20-crushed-seed.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hidden-leaven",
+          "kind": "interpretive-lane",
+          "path": "sections/30-hidden-leaven.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "each-element"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "already-and-awaited",
+          "kind": "interpretive-lane",
+          "path": "sections/40-already-and-awaited.tex",
+          "references": [
+            "research/interpretations.md",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [
+            "crushed-seed",
+            "hidden-leaven",
+            "already-and-awaited"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "communion"
+          ],
+          "key": "scriptural-date-location",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex",
+            "research/chronology.toml",
+            "research/scope.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": [
+            "propers/verified.md",
+            "research/context.md",
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "John Chrysostom",
+            "Jerome",
+            "Thomas Aquinas",
+            "Peter Chrysologus",
+            "Bede",
+            "Augustine of Hippo"
+          ],
+          "carrying_authors": [
+            "Hilary of Poitiers",
+            "Ambrose of Milan",
+            "John Chrysostom"
+          ],
+          "component_keys": [
+            "crushed-seed"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "crushed-seed",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Bede",
+            "Jerome",
+            "Ambrose of Milan",
+            "Thomas Aquinas",
+            "John Chrysostom",
+            "Theodoret of Cyrus",
+            "Peter Chrysologus",
+            "Hilary of Poitiers"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Bede",
+            "Jerome",
+            "Ambrose of Milan"
+          ],
+          "component_keys": [
+            "hidden-leaven"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "hidden-leaven",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "authors": [
+            "Augustine of Hippo",
+            "Jerome",
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Hilary of Poitiers",
+            "Peter Chrysologus",
+            "Bede",
+            "Rupert of Deutz",
+            "William Durandus",
+            "Sicard of Cremona"
+          ],
+          "carrying_authors": [
+            "Augustine of Hippo",
+            "Jerome"
+          ],
+          "component_keys": [
+            "already-and-awaited"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "already-and-awaited",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/interpretations.md",
+            "research/scope.md",
+            "research/source-bindings.toml"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-date-location",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+    "files": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location.tex": "fff4bdaea9e1a356804873f764ae48d6ca8605574f95c71dc144a2c98155a5d6",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex": "40124da1efdb167c1c99c33bab2271e60a49eb71b5909e1c59ba4b78d085ca07",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md": "7dfbec047540c2f1ff70de93912de9d8d783ef604542aed749b6b3079d28c030",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex": "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex": "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml": "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/context.md": "94c41c69edb40398940f2d4387b468ab3bf08be0e596cd60beada4da95e8b275",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md": "e823125ea2020ec425b4f953cc5c145ca2546458a0806003db068cb06c38fbb1",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md": "d0f70830a8b573c2a8c4a100e21b151bd9962eb11e73568031d9df6c8b6af157",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml": "4844f371105d6557ae90cdf66bcf3c3ba58c73e7caa9621e98aa874913567f9c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/00-opening.tex": "156de774855ae582d0d61651c1fa1a723ffd2bb8b74c0c770b1bf351639ae63c",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/05-appointed-texts.tex": "e7d56c606f171c3f19bf60cc94f049b80a66f6e171fa30efc39a4ace46569d23",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/10-each-element.tex": "9bfc3d79358536dc3cad3ac1e5b93a0645f8f227739d877eba5660ab6214858b",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/20-crushed-seed.tex": "5761c082c35e9013b53f6f4c605e3816f2a54324442921dc47309242a40c85d9",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/30-hidden-leaven.tex": "6ec245e98362a9edf09592e1de054035f2d241ec02b5bd55acec4bce72e667db",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/40-already-and-awaited.tex": "82febb6f856cf32d3c36795b2ca656c3f95505c9da22164eb44fd978d0373719",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/50-comparison.tex": "e8b4cdfc2c7bc4ef2c6b505c8a87eea331e0559ed8de2372ad38e36b8aaefb91",
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/90-apparatus.tex": "718ed6f956d23486c5d7a0df872cebc0e5d13b17a34a31951726034358e7c4e8",
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec"
+    },
+    "generation_provenance": {
+      "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "decbd44ee5bcce3b",
+            "99791e370c49b8110516cc7d744caab2715c2f71",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "claude",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "Cold study review, iteration 3, of the expansive study main.tex of the Claude 1962 leaf liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany. The appointed-text mode is complete ('Full PDF'). That agrees with proper-components.toml and the research records, and with the production plan, which authorizes this identity for claude (2026-11-11) and names no reference-only target. All 21 REVIEW_INPUTS hashes matched. Every REVIEW_SCOPE file was read whole: sections 10, 20, 40, 50 and 90, generation-metadata.tex and research/production-review.md. Sections 00, 05 and 30 were read for context. The iteration-2-to-3 change set was taken from the run's author-study-2 and author-study-3 web probes. Standing findings: STU-016 is repaired. The Chronology paragraph now only points to the generated appendix, and no authored sentence elsewhere restates or contradicts its dates (checked against Jerusalem-to-Babylon, the last days before the Passion and the 1 Thess entries). Advisories STU-017, STU-018 and STU-020 are cleared. STU-019 and STU-021 are cleared as filed: the run of names on Mt 13:35 is gone, and Aquinas's relative clause is now given to the Spirit. Each repair left a small new defect (STU-022, STU-023). Evidence checked at the loci: Jerome, In Mt. II on 13:35, PL 26 cols. 92-93, read on the page image (the registered remote PDF was fetched to the reviewer's scratch area, SHA-256 0d889bd6... matched, PDF pp. 53-54). Jerome, In Hier. V, PL 24 col. 893, read on the page image (remote PDF fetched, SHA-256 e55e8bd2... matched, PDF p. 451). Augustine, En. in Ps. 43.1, 43.6-7 and 77.1-2 (tracked NPNF). Ambrose, Exp. in Lucam VII.176-186 and 190-192 (tracked Wikisource). Aquinas, Super I Thess. c. 1 l. 1 [87862] (Corpus Thomisticum fetched, SHA-256 fe77f056... matched; no bytes retained in the repository). Hilary, In Mt. 13.5, and Chrysologus, Sermo 99 (tracked PL 9 and PL 52 OCR). The Douay-Rheims verse text at every verse the study quotes: all of it is exact. Consequential-difficulty tests: (1) Third interpretation, its strongest objection (40:237-254, with 40:150-169). The answer rests on Jerome's 'nec manifestam tantum sonare litteram, sed et abscondita sacramenta' (col. 93), and the page image does read 'tantum ... sed et', so 'the letter sounds what is plain as well as hidden mysteries' holds. At col. 893 Jerome's historical reading of the letter ('Nisi enim septuaginta anni expleti fuerint, Cyro rege Persarum laxante captivos') comes before 'Secundum anagogen', so 'Jerome grants that history' holds. Augustine 43.1 and 43.6 support the persecuted Church as the psalm's speaker and its 'Thou hast saved us' as a certain future. The objection is taught before it is answered, and the inference is clear. Pass. (2) First interpretation, the repaired 20:191-215. Ambrose VII.181 ('Premitur fides, cum crucifixum credimus Christum. Pressit fidem Paulus ... I Cor. II, 1 et 2'), VII.176 ('magna est fides') and Aquinas's two explanations of in virtute are reported accurately. Pass, apart from STU-023. (3) Second interpretation, unchanged and outside scope. Ambrose VII.190-192, Hilary 13.5 ('legis, prophetarum, evangeliorum') and Chrysologus Sermo 99 ('mensurae tres ... Lex, Prophetae, Evangelia') confirm 30:150-168 and the comparison's 50:64-74. Pass. Register: no recurring pattern in the changed passages; the production vocabulary scan of 10, 20, 40 and 50 is clean. Limits: no print export exists, so the 20-50-page range is untested. Bede, Chrysostom (NPNF and on the Psalms), Theodoret, Rupert, Sicard and Durandus were not re-read this round. The generated date appendix was not reviewed as prose. Verdict: PASS. There are three advisories (STU-022 to STU-024) and one observation for the research owner."
+}

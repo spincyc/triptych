@@ -1,0 +1,15 @@
+WORKFLOW: proper-study v19
+WORKFLOW_DIGEST: 73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645
+RUN_ID: decbd44ee5bcce3b
+COMMIT: 99791e370c49b8110516cc7d744caab2715c2f71
+STAGE: homily-preflight
+ITERATION: 1
+EXECUTION: program
+ARGS: {"audience":"adult parish assembly","date":"2026-11-15","proper":"liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany","provider":"claude","research_handoff":"none"}
+DOCUMENT_ROOT: src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany
+PRIOR_FINDINGS: []
+CARRIED_FINDINGS: []
+ADVISORY_FINDINGS: [{"id":"HOM-002","location":"sections/homily/10-homily.tex lines 33-40 (spoken paragraph 2); 90-note.tex lines 81-82; References, Douay-Rheims entry (90-note.tex line 132)","problem":"The speech quotes 1 Cor 5:7, 'Purge out the old leaven', and then says St Ambrose 'answered from those very warnings'. Ambrose's argument at Expositio in Lucam VII.190 cites Mt 16:6 and 1 Cor 5:8, 'Non in fermento nequitiae et malitiae', not 5:7 (tracked Wikisource text of PL 15; the note's own locus at lines 93-94 says 5:8, and the expansive study at sections/30-hidden-leaven.tex lines 26-29 quotes 5:8 for him). The two verses are one exhortation, so the listener is not misled about what Ambrose argues, but the speech credits him with a verse he does not use.","required_result":"Give Paul's warning in the words Ambrose cites, the Douay of 1 Cor 5:8 ('not with the old leaven, nor with the leaven of malice and wickedness'), so that 'those very warnings' names what Ambrose used, or use an equivalent wording that does not credit Ambrose with 1 Cor 5:7. Bring the note's Scripture loci and the References' Douay entry into line with the verse the speech quotes.","severity":"advisory"},{"id":"HOM-003","location":"sections/homily/10-homily.tex line 21; 90-note.tex lines 81-83; References, Douay-Rheims entry (90-note.tex line 132)","problem":"The speech places the parables 'from a boat on the Sea of Galilee', which rests on Mt 13:1-2 (Douay: 'sat by the sea side ... he went up into a boat and sat'). The note gives the Gospel's told verses as 'the rest of Mt 13:31-36' and the References list Mt 13:31-36, so the locus the opening scene rests on is not named; the expansive study names it (sections/10-each-element.tex lines 135-136, 'vv. 1-2').","required_result":"Add Mt 13:1-2 to the note's Scripture loci, as told close to the Douay's words, and to the References' Douay-Rheims entry.","severity":"advisory"}]
+
+
+(gate stage: run by tpt with --run-gate; no AI worker)

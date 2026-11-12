@@ -1,0 +1,14 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-016",
+      "note": "Sentence deleted from sections/90-apparatus.tex; no replacement statement of what is or is not dated.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 3,
+  "stage": "author-study",
+  "summary": "Repaired STU-016 by deleting the scope appendix's false Chronology sentence, leaving only the statement that every biblical date in the Scriptural Date and Location appendix is generated from the chronology corpus with its sources named there; cleared advisories STU-017 to STU-021 with no new source, locus or quotation; kept the three Douay-Rheims quotations (Mt 17:19, 1 Cor 2:4, 1 Cor 5:7) after checking them word for word in the tracked Douay-Rheims verse text, and added those loci to the References (the missing research bindings are recorded for the research owner). All study-preflight checks, check-web-edition and the author-study-3 web probe pass. Changed files to commit: src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/{sections/10-each-element.tex, sections/20-crushed-seed.tex, sections/40-already-and-awaited.tex, sections/50-comparison.tex, sections/90-apparatus.tex, generation-metadata.tex, research/production-review.md}."
+}

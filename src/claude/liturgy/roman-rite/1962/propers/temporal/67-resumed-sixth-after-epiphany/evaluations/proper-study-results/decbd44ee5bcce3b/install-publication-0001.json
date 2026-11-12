@@ -1,0 +1,20 @@
+{
+  "artifact_path": "release/public-alpha.json",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "GATE-RELEASE-BINDINGS",
+      "note": "The driver's gate-runner fix (306cb81ea4) raised the per-command budget from 300 s to 1800 s and kills the whole process group on timeout. This stage then re-recorded the browser products and refreshed the two stale bindings, scripts/_workflow.py and release/browser-products.json, with scoped ONLY and no ADOPT. Under _run_gate_command, `make check-release-bindings` exits 0 with 'exact: 0 stale binding(s)' in 785.3 s. The earlier untimed runs took 786.5 s and 785.1 s.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "GATE-DOCUMENT-CATALOGUE",
+      "note": "No catalogue defect, and this stage changed nothing for it. The clearing change is the driver's budget raise from 300 s to 1800 s. Under _run_gate_command the exact gate command exits 0 in 315.3 s and reports corpus.json current. The earlier untimed run took 315.8 s.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Files changed, for the driver to commit: release/browser-products.json, release/public-alpha.json, release/rights/public-alpha-2026-07-15.md. The driver's host note expected only the last two. The browser-products record was also needed, because without it the scoped refresh refused with 'browser product inputs changed (act-history, documents, web-editions)'. The packet assigns that record to this stage, and it changed no output bytes. I did not touch src/, library/, release/publications/, tools, scripts or workflows. I ran no git, so the driver should confirm the working tree shows only those three paths. I found no __pycache__ under src/, and nothing from this checkout is left running. Observation, which this stage cannot repair: the engine's stale-review computation (iteration-0 probe, plus .scratch/run/work/install-publication-0001/w2-stale_paths.py) reports STALE-WEB-REVIEW, repair_target publication. Its sealed review_inputs differ only in source_publication/identities render sha256 and the three output digests derived from it. Content and evidence digests are unchanged. The render identity globs scripts/*.py (scripts/_document_schema.py, render_patterns), so the cause is scripts/_workflow.py, not this stage's release-record edits. publication-gates sets verify_review_inputs, so that gate will fail on this stale review before its checks run. Per the workflow, it routes to generate-web and a fresh web review. Separately, render identity covering every scripts/*.py means any engine-only edit invalidates accepted web reviews. That is worth a look by the tooling owner. Logs and timings are in .scratch/run/work/install-publication-0001/w2-*.",
+  "stage": "install-publication",
+  "summary": "Repaired the publication wiring after the driver's gate-runner commit (306cb81ea4, scripts/_workflow.py). That commit staled two things: the release binding for scripts/_workflow.py, and the browser-products families whose code closure includes it. The families were act-history, documents and web-editions. Only their generator component changed; content, rights, lock and membership did not. I re-recorded the browser products with `tools/browser-products record`, which exited 0 in 1260 s ('13 products, 27924 files; ok'). Only those three families' input commitments and keys changed, and their output bytes, counts and file sets stayed identical. I then ran two scoped refreshes without ADOPT, first `make refresh-release-bindings ONLY=\"scripts/_workflow.py\"` and then `ONLY=\"release/browser-products.json\"`, because the record rewrote that bound site source. Each refresh changed exactly one site_sources digest plus rights_record_sha256 and the rights-table digest row. Both forwarded gate commands now exit 0 under the engine's own `_run_gate_command` with its 1800 s budget. `make check-release-bindings` reported 'exact: 0 stale binding(s)' in 785.3 s. The document-catalogue command reported corpus.json current in 315.3 s."
+}

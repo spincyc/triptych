@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "install-publication",
+  "text": "Install-publication iteration 1 brief: the publication gate's two findings were 300-second timeouts. The driver told the installer that the timed-out 'make check-release-bindings' had left its 'release-bindings status' child running orphaned for about 12.5 minutes, overlapping the document-catalogue check, until the driver killed it. The installer was asked to run each failing gate command alone and timed, from the committed tree, to change nothing if nothing needs repair, and not to touch the tooling. No content instruction was added.",
+  "timestamp": "2026-11-11T22:57:03Z"
+}

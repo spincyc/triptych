@@ -1,0 +1,18 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "outcome": "repaired"
+    },
+    {
+      "id": "RES-002",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": "Files changed (all in the leaf; the driver commits): research/scope.md, research/interpretations.md, research/source-bindings.toml (bindings 15 and 30 and the header comment), research/source-dispositions.toml (rows for bindings 15 and 30, new binding_sha256 values, header comment), propers/verified.md (Communion comparison note and provenance line). No source was registered, no tool, calendar or shared record was edited, and no bytes were retained. For source registration: no new retrieval receipts in this iteration. The tracked Ambrose book VII HTML, Bede In Marci Latin text, PL 9 OCR, PL 52 OCR and NPNF I.8 text were re-hashed and matched their registered SHA-256. Page images were re-rendered from the iteration-0 receipts .scratch/run/work/research-0000/dl/pl26.pdf (SHA-256 0d889bd6..., matched) and pl24.pdf (e55e8bd2..., matched) into .scratch/run/work/research-0001/ (PDF pp. 52-53 and 451). The binding 30 disposition row was renamed from ambrose-exp-luc-vii-176-190-luke-13-18-21; the old id survives only in evaluations/blocking-findings-v1.toml, a historical record. Shared observations, not repaired: Wikisource's Ambrose book VII prints the scripture references 'Matth. XVI, 33' (for Mt 13:33) at VII.188 and 'Esai. XIII, 2' (for Is 53:2) at VII.183; the Clementine Mt 18:19 reads 'fiet illis', where Ambrose's quotation at VII.192 reads 'fiet vobis' (not used in the records).",
+  "stage": "research",
+  "summary": "Answered the research review. RES-001: read Ambrose, Expositio in Lucam VII.187-194 in the bound tracked HTML (hash matched) to the opening of chapter XIV at VII.195; extended binding 30 to loci 7.176-7.194 and reconciled its disposition row (renamed ambrose-exp-luc-vii-176-194-luke-13-18-21; locus PL 15 cols. 1746-1752; missing criteria page-image-collation and passage-record); rewrote scope sections 4, 5 (Ambrose row), 7.2, 8.2 and 12 and reading 2's carrying authors, 'differ on what the leaven is' sentence, difficulty paragraph, four senses, limits and the comparison table so that 187 and 189 are readings Ambrose reports, 188 one he finds congruent, and 190-191 his stated preference (leaven = the Church's spiritual doctrine; measures = flesh, soul and spirit; the whole inner man leavened), with 192-194 on unity, prayer and the resurrection; Law/Prophets/Gospel now credited to Hilary and Chrysologus (and Chrysologus's leaven as heavenly doctrine). RES-002: scope 2.3 and reading 1's Communion now state only the textual fact that Mk 11:24 follows the mountain-moving saying of 11:23, which also opens Amen dico vobis and ends fiet ei, with the antiphon's origin unresolved; binding 15's context, its disposition row and propers/verified.md were brought into line. Advisories cleared: RES-003 (Jerome's full sentence at PL 26 col. 91, re-read on the page image; reading 2's Communion uses Jerome and Ambrose 192-193 as checked witnesses with the join editorial; new scope 7.7 on the Communion's promise with Bede III and Hilary Tract. 129.2-3 at their loci); RES-004 (Jerome's patientiam gloss marked as comment on the clause the antiphon omits; the Jer 29 anagogy re-read on the PL 24 col. 893 page image and given in Jerome's order); RES-005 (NPNF I.8 Augustine stated as abridged English for every psalm used, Latin not read, quotations condensed English, in sections 5 and 12). Research-preflight gate command and source-dispositions check pass."
+}

@@ -1,0 +1,6 @@
+{
+  "encoded": false,
+  "stage": "install-publication",
+  "text": "Install-publication iteration 1, second worker: the first fresh worker found both publication-gate timeouts genuine. On a quiet host the commands exit 0 but take 786 s (release bindings) and 316 s (document catalogue), against the runner's fixed 300 s, so it returned BLOCKED. The driver did not submit that result. It committed 306cb81ea4 to shared tooling instead: gate commands get 1800 s and a timeout kills the whole process group. The commit stales only the web review, whose sealed inputs include scripts/_workflow.py, and the publication gate routes that to generate-web and a fresh web review. A second fresh installer was dispatched on the same packet with those facts and asked to refresh the single site-source binding for scripts/_workflow.py. No content instruction was added.",
+  "timestamp": "2026-11-12T01:17:02Z"
+}

@@ -1,0 +1,24 @@
+{
+  "artifact_path": "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "STU-007",
+      "note": "All five listed places plus the subsection title and the cut 'command to pray' sentence; comparison section's Jerome clause also corrected.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-008",
+      "note": "Aquinas's two explanations quoted from c. 1 l. 1 [87862], read in bytes matching the registered SHA-256; the comparison with Chrysostom 46.3 is in the study's voice.",
+      "outcome": "repaired"
+    },
+    {
+      "id": "STU-009",
+      "note": "(a)(c)(d) cut, (b)(e) rewritten; the same habit removed elsewhere in sections 00, 10, 20, 30, 40 and 50 on a whole re-read.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 2,
+  "stage": "author-study",
+  "summary": "Repaired the expansive study of the Claude 1962 resumed Sixth Sunday after the Epiphany for STU-007 (Jerome's answer at In Hier. V col. 893 now everywhere 'urges them to pray so that they may deserve to receive', his question and Augustine's called related in both places), STU-008 (Aquinas on 1 Thess 1:5 in virtute reported whole from the re-fetched, hash-matched bound paragraph: the contrast with sublimity of speech, then miracles confirming the preaching or a virtuous life; the 'plain preaching of the cross' conclusion replaced by the study's own link through 1 Cor 2:1-2 and Acts 17:2-3) and STU-009 (closers a, d and the v. 9 paragraph cut, b and e rewritten, plus a re-read of sections 00-50 that removed further restating closers, a duplicated Chrysostom 67.2 passage and links stated as fact), and cleared advisories STU-010 to STU-015. All study-preflight checks, check-web-edition and the web probe pass; production-review.md records iteration 2."
+}
