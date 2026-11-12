@@ -5,13 +5,13 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-11.
+Last reconciled: 2026-11-12.
 
 ## Claude 1962 resumed Sixth Sunday after the Epiphany, 2026-11-15
 
 <!-- promised-deliverable: claude-1962-67-resumed-sixth-three-documents-2026-11-15 -->
 
-**Accepted; deployment pending.** On
+**Complete: pushed to `main`, deployed and verified live.** On
 2026-11-11 the maintainer asked for the Claude 1962 proper-study documents
 for the upcoming Sunday and authorized publication to `main`. Sunday,
 15 November 2026 is the Sixth Sunday after the Epiphany resumed after
@@ -42,6 +42,41 @@ Hom. 1/2 in the expansive study) and WEB-001 (one unclear Ambrose sentence).
 The run is archived in the leaf. The driver's account, with the defects left
 for other owners, is
 [CYCLES.md](workflows/reviews/claude-1962-67-production-2026-11-11/CYCLES.md).
+
+After acceptance, the run was archived (`c594c4616a`), the Claude publication
+inventory was refreshed to cover the archive (`80fd071a5a`), and the browser
+products were re-recorded and their binding refreshed (`cc5be75e6f`,
+`a2e8b7047a`). `origin/main` had not moved, so no merge was needed. The
+local gates then passed on `3b5f75f894`: native compile of the three editions
+(pdfTeX, 47 pages), `make check-deployment-sources`, `make public-site`,
+`tools/tpt public-alpha verify --deployment-target github-pages` and
+`make check-release-bindings` (0 stale; log sha256 `d36234c01168c898…`).
+Then `origin/main` was fast-forwarded from `436230e120` to `3b5f75f894`, and
+the workspace branch was pushed to the same commit. Pages run
+[43167895080](https://github.com/spincyc/triptych/actions/runs/43167895080)
+built cold, because the archive changed every product family. Its first
+attempt was cancelled at the build job's 180-minute limit, during artifact
+verification and after the verified products had been saved. Re-running the
+failed jobs restored those products warm. Attempt 2 ran build and deploy,
+both succeeded, and print-compile had already succeeded. Repository hygiene
+run 43167895079 succeeded. On 2026-11-12 each route below was fetched from
+`https://mystago.gy/` and compared with `build/public-alpha/site/` built from
+the same commit:
+
+| Route | HTTP | SHA-256 | Match |
+| --- | ---: | --- | --- |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html` | 200 | `fc9323fa3e8405b1…` | byte-identical |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html` | 200 | `c082b66df4816805…` | byte-identical |
+| `web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html` | 200 | `b8dbc9284482ffea…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html` | 200 | `5dc98634476a9815…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html` | 200 | `ea578caa26ec190d…` | byte-identical |
+| `print/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html` | 200 | `85bde04fd7ed7e3f…` | byte-identical |
+| `library/traditional-latin-mass.html` | 200 | `a11b642653b804eb…` | byte-identical |
+
+The added lines of the outgoing range were scanned for machine paths,
+usernames, hosts, addresses and credentials, with no match. The archived
+worker notes carry repository-relative paths only. The cold build's closeness
+to the 180-minute limit is left to the Pages workflow's owner.
 
 ## Catena English editions, passage linkage and Lectern startup — 8 November 2026
 
