@@ -238,6 +238,11 @@ The engine's artifact gates pass. The coordinator prepares the reviewed
 source/evidence checkpoint before dispatching canonical web generation;
 generated web bytes and publication records are not yet accepted.
 
+Reviewed sources and evidence are committed in `89e6f0ff1e`. Each of the
+three derived edition revisions reports `uncommitted: false` and the same
+committed timestamp. The engine dispatches fresh generate-web iteration 0 at
+high against that checkpoint.
+
 Registration's bounded source-evidence pack contains nine payloads: Pustet's
 appointed antecedent pages, four Cummiskey page images, two Schuster extracts,
 and two Jerome extracts. The pack is 9,144,320 bytes, SHA-256
