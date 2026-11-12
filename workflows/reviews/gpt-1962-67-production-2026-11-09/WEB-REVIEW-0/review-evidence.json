@@ -1,0 +1,157 @@
+{
+  "stage": "web-review",
+  "iteration": 0,
+  "run_id": "b42047a822a7e83e",
+  "completed_utc": "2026-11-12T18:47:39.602416+00:00",
+  "packet": "build/tpt-runs/b42047a822a7e83e/packets/web-review-0000.txt",
+  "packet_sha256": "06b8f2615da8f3925be8934b0270ad4e0b6ba132fb80e2e515bea6e25369c62b",
+  "canonical_markdown": "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.md",
+  "canonical_sha256": "974b381c0487d7d499fca6f3b773e45c6e28e52d847bcbafebe630c88b94bf2d",
+  "sealed_inputs": "sealed-inputs.json",
+  "seal_comparison": "seal-check.json",
+  "final_closure_unchanged": true,
+  "review_input_history": {
+    "evidence": "history-limit.json",
+    "result": "Independent mechanical comparison of the prior engine-owned research-review-0001 review_inputs with the supplied current research seal found exactly one changed file: src/sources/commentary/fragment-loci.yaml, from 1826cf69c3b6be0dfd422e72fa1d7c7a804519f97acf4f1cdb48eca212647494 to a919c53b8cd0409523d646326eb0ad1272267bbca442a00c8b3fd3f018e4c1b8. The current file matches the latter hash. The driver record separately reports unchanged study, synthesis and homily seals; those historical comparisons were not independently repeated here.",
+    "acceptance_limit": "This PASS is a new canonical web-conversion judgment against this packet's current seal. It does not renew the earlier research acceptance or infer source, synthesis, homily, PDF, deployed-site or other acceptance from matching hashes. The changed historical research seal has not been exhaustively readjudicated in this web lane."
+  },
+  "read_scope": "Complete 702-line canonical Markdown, every reader-facing sentence, all seven canonical section sources, source/control declarations and generated chronology table/evidence. Mechanical comparison supplements direct reading; it does not replace source or register judgment.",
+  "fidelity": {
+    "detail": "source-comparison.json",
+    "canonical_sections": 7,
+    "nontrivial_source_lines_compared": 221,
+    "source_text_mismatches": 0,
+    "footnotes_compared": 48,
+    "footnote_mismatches": 0,
+    "chronology": "Generated Passage/Context/Date table and its evidence notes compared manually to canonical generated TeX and chronology table/annotation sources. Distinct date proposals, qualifiers, Psalm numbering and evidence wording survive conversion."
+  },
+  "browser": {
+    "preview_identity": "preview-identity.json",
+    "browser_version": {
+      "jsVersion": "15.7.112.23",
+      "product": "Chrome/157.0.8103.38",
+      "protocolVersion": "1.3",
+      "revision": "@a733b5afbb3ba618844ff8876b89ad1a774b2f18",
+      "userAgent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36"
+    },
+    "detail": "browser-results.json",
+    "supplement": "browser-supplemental.json",
+    "viewports": [
+      "1440x1000",
+      "393x1000",
+      "320x852"
+    ],
+    "result": "No page overflow at any inspected width. Eleven appointed-text anchors and 22 Latin/English blocks survive. Two interpretations each retain literal/allegorical/moral/anagogical definitions. All 48 notes and references remain. No duplicate IDs, missing internal targets or TeX debris. Heading hierarchy is one h1, nine h2 and subordinate h3 headings. Inventory scrolls horizontally on mobile; chronology reflows to paired context/date rows. Contents navigation and note/return interactions succeed. Supplemental browser console is empty.",
+    "screenshots": [
+      "browser/",
+      "browser-supplemental/"
+    ],
+    "visually_inspected_samples": [
+      "browser/canonical--opening--1440x1000.png",
+      "browser/canonical--opening--320x852.png",
+      "browser/canonical--appointed--393x1000.png",
+      "browser/canonical--epistle--393x1000.png",
+      "browser/canonical--interpretation-one--1440x1000.png",
+      "browser/canonical--interpretation-two--1440x1000.png",
+      "browser/canonical--senses-one--1440x1000.png",
+      "browser/canonical--senses-two--393x1000.png",
+      "browser/canonical--chronology--1440x1000.png",
+      "browser/canonical--chronology--393x1000.png",
+      "browser/canonical--references--393x1000.png",
+      "browser/canonical--footnotes--1440x1000.png",
+      "browser-supplemental/canonical--inventory--393x1000.png",
+      "browser-supplemental/canonical--inventory-scrolled-right--393x1000.png",
+      "browser-supplemental/canonical--chronology-lower--393x1000.png",
+      "browser-supplemental/canonical--rights--1440x1000.png"
+    ],
+    "harness_note": "The initial browser harness completed content/viewport capture and note navigation, then used an incorrect raw-colon selector for the encoded chronology contents href. Its traceback remains in browser-summary.log. The supplemental harness used the actual percent-encoded href and passed. Some framing samples intentionally scroll unanchored containers to the viewport top; anchor targets themselves carry reader-toolbar scroll margins."
+  },
+  "source_spot_checks": [
+    {
+      "author": "John Chrysostom",
+      "locus": "Homilies on Matthew, Homily 46.2-3; canonical notes 21, 22 and 25",
+      "source": "src/sources/works/nicene-and-post-nicene-fathers/series-1-volume-10/editions/2026-09-17-ccel-web/artifacts/ccel-text-adb8f1c9/source.txt",
+      "inspection": "Read local source lines 27170-27330, including the surrounding discussion of seed, leaven and miracles.",
+      "result": "Supports weak disciples encouraged after discouraging parables, leaven requiring contact, three measures as multitude, and the distinction between miracles and virtuous conduct.",
+      "source_sha256": "adb8f1c9a988c5050a20fb9fdbf75143dcb227e95e3dad2f560a63b757923648"
+    },
+    {
+      "author": "Thomas Aquinas",
+      "locus": "Super I Thessalonicenses, cap. 1, lectio 1 [87862]",
+      "source": "https://www.corpusthomisticum.org/c1t.html",
+      "inspection": "Opened primary Latin text with web tool; read lines 23-49. Edition header identifies Turin 1953 text revised by Enrique Alarcon.",
+      "result": "Supports thanksgiving, working faith, charity and patient hope, alternative readings of power, imitation amid affliction, exemplary life and expectation of resurrection/deliverance."
+    },
+    {
+      "author": "Jerome",
+      "locus": "Commentary on Matthew II, Matthew 13:31-35, PL 26 cols. 89-93; canonical notes 35-38",
+      "source": ".scratch/gpt-1962-67-research-0/jerome-pl26.pdf",
+      "source_url": "https://archive.org/download/patrologiaecurs240unkngoog/patrologiaecurs240unkngoog.pdf",
+      "source_sha256": "0d889bd6856adae5240b240a56a3717f278d1abf5aad26b03c53fe686a0245e4",
+      "inspection": "Independently rehashed acquired original PDF and rendered original PDF pages 52-54 at 110 dpi into this review scratch; visually read cols. 89-93.",
+      "images": [
+        "source-checks/jerome-052.png",
+        "source-checks/jerome-053.png",
+        "source-checks/jerome-054.png"
+      ],
+      "result": "Supports Gospel preaching and the believing soul, sowing/tending in the heart, Scripture reforming reason/anger/desire, the alternative church-and-Trinity allegory with its explicit doctrinal limit, and the Psalm 77/78 citation."
+    },
+    {
+      "author": "Augustine",
+      "locus": "Expositions of the Psalms, Vulgate 129.1-8 (NPNF heading Psalm 130); canonical notes 39, 42, 44 and 47",
+      "source": "src/sources/works/augustine/enarrationes-in-psalmos/editions/2026-09-05-english-npnf8-ccel-web-2026-09-05/artifacts/ccel-npnf108-text-d6841950/source.txt",
+      "inspection": "Read source lines 62171-62345, including the continuous exposition.",
+      "result": "Supports Jonah/depths, the sinner refusing to cry, propitiation and sacrifice, Christ taking flesh, resurrection/morning watch, and hope beyond earthly goods.",
+      "source_sha256": "d6841950333024906294e6e829f7512d08b3adf62ae6cee3615d18a7ad0020e9"
+    },
+    {
+      "author": "Bede",
+      "locus": "In Marci evangelium expositio III, connected Mark 11:22-25 exposition",
+      "source": "src/sources/works/bede/in-marci-evangelium-expositio/editions/2026-10-13-latin-wikisource-migne/artifacts/latin-text-b8197766/source.txt",
+      "inspection": "Read Latin source lines 336-340; relevant prose at 338-339.",
+      "result": "Supports the study's connection of faith/prayer with charity, forgiveness and eternal life; the note identifies the connected locus instead of inventing a standalone comment on 11:24.",
+      "source_sha256": "b8197766e84dfbc56b1aee5ff09ebaa6b949131f964645733c907548b33049a2"
+    }
+  ],
+  "external_references": [
+    {
+      "url": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+      "status": 200,
+      "final_url": "https://media.churchmusicassociation.org/pdf/missale62.pdf",
+      "content_type": "application/pdf",
+      "content_length": "82815941"
+    },
+    {
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "status": 200,
+      "final_url": "https://creativecommons.org/licenses/by/4.0/",
+      "content_type": "text/html",
+      "content_length": null
+    },
+    {
+      "url": "https://www.corpusthomisticum.org/c1t.html",
+      "method": "web open",
+      "result": "Live primary Latin text opened and exact locus read."
+    },
+    {
+      "url": "https://icrspfrance.fr/ordo.php?d=2026-11-01",
+      "method": "web open/find",
+      "result": "November 15 entry read: resumed Sixth after Epiphany, second class, green, Gloria, Credo and Trinity Preface. Institutional pro Papa addition remains outside study scope."
+    },
+    {
+      "url": "https://ordo.fsspx.org/day/2026-11-15?lang=en",
+      "method": "web open",
+      "result": "Live endpoint redirects to the English day page and identifies VI Sunday after Epiphany transferred, November 15, second class."
+    }
+  ],
+  "limits": [
+    "Canonical study only; no independent synthesis or homily reader review.",
+    "Focused preview uses exact sealed Markdown and repository renderer/wrapper/CSS/JavaScript. No site-wide chrome, edition switching, production deployment, assistive technology, native printing or PDF review claimed.",
+    "Complete Markdown was read; browser inspection used structural checks and targeted visual samples rather than a pixel-by-pixel review of every scroll position.",
+    "Source loci were independently spot-checked as listed. This review is not a fresh exhaustive research or chronology adjudication and does not claim every external source payload was reverified.",
+    "The web tool refused the 82,815,941-byte CMAA PDF because of size; a separate HEAD request returned HTTP 200 and application/pdf. This is a link availability check, not a new Missal facsimile collation."
+  ],
+  "register_judgment": "One isolated redundant Offertory sentence is recorded as WEB-001 advisory. No recurring register pattern or blocking conversion defect found.",
+  "git_status_at_close": " M workflows/reviews/gpt-1962-67-production-2026-11-09/CYCLES.md\n?? src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/web-artifact.json\n",
+  "mutations": "Only assigned scratch files were created. Canonical source, conversion, shared source records and workflow engine were not edited; no commit, push or delegation occurred."
+}

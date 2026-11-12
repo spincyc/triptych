@@ -1,11 +1,11 @@
 inventory_schema = 1
 record_type = "publication-source-inventory"
 provider = "gpt"
-audited_on = "2026-11-09"
+audited_on = "2026-11-12"
 discovery_rule = "src/gpt/**/main.tex"
 publication_count = 155
-source_surface_file_count = 3654
-snapshot = "sha256:1b6a2da8928c3101c551f35b7f81500917f2f5937e74a0e74520f3bcd32f5052"
+source_surface_file_count = 3685
+snapshot = "sha256:d219a0935913ad342bb54d89f026eb34a3e875c0c8e16e897910b612152e45fb"
 
 [[owners]]
 id = "owner.articles.faith.four-last-things"
@@ -13987,7 +13987,193 @@ owners = ["liturgy/roman-rite/1962/propers/temporal/66-resumed-fifth-after-epiph
 
 [[files]]
 path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/blocking-findings-v1.toml"
-sha256 = "bdd582d824c68a63e0d2fe4d63c6d0c797c9ec2204cb2247bf7607256a4a5664"
+sha256 = "10533d5c9101b5e6e665d60147a3223bb621d4cb47579075f1d24d7a3a5932f5"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/artifact-gates-0000.txt"
+sha256 = "8a965284b5996bcee937a7f542d8082fe5d8240db2cce1274f4478b069742339"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/author-study-0000.txt"
+sha256 = "86f454b75cc3cb54582389bfb60aa3feebf9211cd75fbb0011dbe580afb94742"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/author-study-0001.txt"
+sha256 = "89c37eec1277ea4b62eba19b0b1d71b058c28c87116127f78df9e5280afc9537"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/build-artifacts-0000.txt"
+sha256 = "d9a179688fa86ad2b047b1259530e15267e9b65b2d83adaf435fab14848cf9e3"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/derive-homily-0000.txt"
+sha256 = "b38cba7bb264a78df7279d1136fc473204bba944b3364074fa6a14119a283dd4"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/derive-homily-0001.txt"
+sha256 = "95fa44cdfcc37e7fdd0cfb245a90d1fed7300fbb9855070b28563a2d3cac357d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/derive-synthesis-0000.txt"
+sha256 = "98acf18284cab5b3811882db86c3fc5b4bccd87d70ce57b421dc2e80a45842ab"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/generate-web-0000.txt"
+sha256 = "03719a0225e80f0654032dfe4067a3eb9916f2b8acb6933562d43bbcdebcd411"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/homily-preflight-0000.txt"
+sha256 = "4e23879437d013b3debbfe075a11db2d794b6331ff4878938ae013794ba182e2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/homily-preflight-0001.txt"
+sha256 = "95fa5945e469c40d714aef7739582fa6512c2f591040f663f56379e2545c8fff"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/homily-review-0000.txt"
+sha256 = "5262f3b7f2e09d8f51520efcc431833b42205381b71c623752560fe683d4b0dc"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/homily-review-0001.txt"
+sha256 = "afc7b58dc0329e3c83c7c65e41db2fa4e228a97c3ae253a9166ff05afc4804da"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/install-publication-0000.txt"
+sha256 = "441e69f8e647dbe27eefdf1f345a68ce2cdb8dca86ddba52f8892ae4aa255656"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/research-0000.txt"
+sha256 = "1c26bbfed2a561c22cc792af4302b48e269027bee708eb3b90923ebe973f669d"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/research-0001.txt"
+sha256 = "1a6d4883dcb93c155636e1e9dc30e98103343aa55ded499a9b52662a83f26464"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/research-preflight-0000.txt"
+sha256 = "12596775f0ae2ee8457915c26f75bd50ca5bec9b560cf58a56b269a7229a9a3b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/research-preflight-0001.txt"
+sha256 = "f40a4e38fc1acb21844c3e8465a6c4250a4c2e8432914777c509503458369a1a"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/research-review-0000.txt"
+sha256 = "da89280eb43d45ae8b7915c1cc635603ef0a6839622e6d01a51b208b4b4be2cd"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/research-review-0001.txt"
+sha256 = "5493027ad9c2dd07d46cf371f3f664861bd548a0622a9e0f83b94504a7fcdae7"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/resolve-context-0000.txt"
+sha256 = "2e3009ac25458c453244dc42c417241574c9aac206ffcfa6bc2604146f59ace1"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/scope-gate-0000.txt"
+sha256 = "08c5dc623f006315bcaba6018f208505ed8a988372163ff42eac19af942bc4f9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/source-registration-0000.txt"
+sha256 = "9344fb1beb8ed9513c6261fae49a179c6502918781b409cb2c23bb45c9264411"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/source-registration-0001.txt"
+sha256 = "99a70710711fab0c23b5794430fcfad942dd75e8592709f5f97a726f06414b21"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/study-preflight-0000.txt"
+sha256 = "bd279f1095e9f69fb6934575e3486f9efc9e58da81e2b52a0d3c1f78a6e9e022"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/study-preflight-0001.txt"
+sha256 = "506e842f9c6322fb1f48f8c17b09a15cdb9d13cd83e7e9aa916727bea231d7d9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/study-review-0000.txt"
+sha256 = "596b5118525b399b0ef0f3014fc7281a5bed25d06aeb0b560ad313b11d2d3da9"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/study-review-0001.txt"
+sha256 = "1fd5b66860ed10240639781bde25ef9aee59101ad69278b9b5ffe84493cbf999"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/synthesis-preflight-0000.txt"
+sha256 = "f00bb893e43a1638137d977c904b3241e4fa11d361f54e12b05117edd6c884d2"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/synthesis-review-0000.txt"
+sha256 = "55dee7c108420a64e71f3ff132f7d2d0a82e76f88bfefb0e9d570eee26cfbfeb"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/packets/web-review-0000.txt"
+sha256 = "06b8f2615da8f3925be8934b0270ad4e0b6ba132fb80e2e515bea6e25369c62b"
+kind = "rendered-content"
+owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
+
+[[files]]
+path = "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/b42047a822a7e83e/record.md"
+sha256 = "fcc991ee553c80cc379538a610f0bd217db2a782f8c9b920547418f9b80d9bf6"
 kind = "rendered-content"
 owners = ["liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"]
 

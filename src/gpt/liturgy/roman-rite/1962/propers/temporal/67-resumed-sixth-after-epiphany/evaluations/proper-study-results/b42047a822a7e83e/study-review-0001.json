@@ -1,0 +1,349 @@
+{
+  "disposition": "PASS",
+  "findings": [
+    {
+      "id": "STU-002",
+      "location": "sections/20-commentary.tex:47, final sentence",
+      "problem": "The new closing sentence, 'As the worshipper presents gifts received from God, he asks for mercy,' repeats the preceding sentence's statement that the gifts have been received from God's goodness and their presentation is accompanied by an appeal to mercy. This is an isolated redundant closer under 'Say what the texts say, plainly'; the attribution and substantive explanation remain sound.",
+      "required_result": "If editing this paragraph again, omit the final sentence and end after the existing Schuster footnote; the preceding two sentences already preserve the complete point and its source. No source or interpretive change is needed.",
+      "severity": "advisory"
+    }
+  ],
+  "iteration": 1,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "opening",
+          "kind": "front-matter",
+          "path": "sections/00-opening.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "appointed-text",
+          "kind": "appointed-text",
+          "path": "sections/10-appointed-text.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "propers/verified.md"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "commentary",
+          "kind": "proper-treatment",
+          "path": "sections/20-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-received-in-trial",
+          "kind": "interpretive-lane",
+          "path": "sections/30-word-received-in-trial.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-person-and-desire",
+          "kind": "interpretive-lane",
+          "path": "sections/40-whole-person-and-desire.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "comparison",
+          "kind": "front-matter",
+          "path": "sections/50-comparison.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "historical-appendix",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "study-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Jerome",
+            "Augustine of Hippo",
+            "Bede",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "word-received-in-trial"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-received-in-trial",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Bede",
+            "John Chrysostom",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "whole-person-and-desire"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-person-and-desire",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location.tex": "fff4bdaea9e1a356804873f764ae48d6ca8605574f95c71dc144a2c98155a5d6",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex": "ca1269d5b030634b98c12f683bad45b9419952fc32199919dbdf052b292b49b5",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md": "b1fbe804ca8a0a36bedb3e4185b067185b72aed17392668a6adc8b9970456120",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex": "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex": "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml": "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md": "ffab2a8503ef9a5bf66587ecfd4d2ff507ee77d92304bf21c745f9da87bc4481",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md": "18935d5cbb67ca4899dfad1d9581676af8973c8bcbd0f6f1fcdf6108fe22a2e7",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml": "590783dc083607ea579b2147ca1804389f56116efb32ad34539c4bffc85e04ed",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/00-opening.tex": "bb8db906a8ec343bb77488e4a6c4d9d4899fc2a5657e500b7a4affd09832ac6e",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/10-appointed-text.tex": "00d6972383b7dbbc7e44c882e89ec7899718e30d1fdc2a6043c4a519d916cefb",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/20-commentary.tex": "039f8f32aa8d302a5683fe33845458b186de235269844ffa63815dcdbab5df93",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/30-word-received-in-trial.tex": "8be7083d2680dcf1365b0c0934da670334790e70a13fbf01ae34bcf9e95fe30b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/40-whole-person-and-desire.tex": "be7f63f61e9d4e391068bb67e1f4ceb51526311bc07dc90f476b987e03d29f41",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/50-comparison.tex": "12bd0b2837ea9b7f0eed82de317d148259c49694585aba478e8215eed2026327",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/90-apparatus.tex": "b79ac00dd99fe9b71f53f6e5d0397a0d8a59d79c3da79aa98e0cca2160a6570c"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "b42047a822a7e83e",
+            "436230e120745d2f3d4be76c8331fca8f44f6e17",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "study",
+    "schema": 1
+  },
+  "stage": "study-review",
+  "summary": "PASS for the canonical GPT expansive study at src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex: the three revised passages preserve the checked arguments and qualifications of Schuster, Chrysostom and Jerome and the full Psalm 43 context, and both distinct interpretations retain substantive carrying authors, eleven-element engagement and their own four senses. I inspected the complete authored study, compared the prior/current generated prose, checked the relevant Jerome and Schuster page images and Chrysostom, Augustine, Aquinas, Bede, Bellarmine and Psalm text loci, and matched all 19 sealed input files; this is source/content review, with no fresh acquisition sweep, Greek collation, chronology re-adjudication, web acceptance or print inspection, and the sole isolated restatement is advisory."
+}

@@ -1,0 +1,193 @@
+{
+  "disposition": "CHANGES_REQUIRED",
+  "findings": [
+    {
+      "id": "HOM-REG-001",
+      "location": "sections/homily/10-body.tex:13,15,17,27 (paragraphs 7, 8, 9 and 14, final sentence of each)",
+      "problem": "The speech repeatedly appends an abstract restatement after the paragraph has completed its explanation. At line 13, 'That is a consequence of receiving the Gospel which reaches another person directly' repeats the preceding account of neighbors encountering changed conduct. At line 15, 'His explanation brings the parable into the conduct of people who have heard it and must now live with their neighbors' summarizes the already explained applicability of apostolic virtue without adding an inference. At line 17, 'God's help is needed at that point where an understanding of the good must become an actual response' repeats the opening statement of the Collect's request after the contempt example has made it concrete. At line 27, 'The reach of their reputation is smaller than the good for which they hope' turns the preceding distinction between present example and future fulfillment into a second, maxim-like closer. This recurring pattern prolongs explanations the listener has already understood and falls under the packet's blocking register criterion for restatement and unearned paragraph endings.",
+      "repair_target": "homily",
+      "required_result": "Remove the redundant endings and let these paragraphs finish with the concrete explanation or consequence they have reached, preserving the supported exegesis, prayer connections and final preaching conclusion. Two plain examples: replace the last three sentences of paragraph 7 with 'Their neighbors met believers whose allegiance to God had changed how they acted'; replace the last two sentences of paragraph 14 with 'Their example has already strengthened other believers, and they still await resurrection and deliverance with the risen Lord.' In paragraphs 8 and 9, end after the existing explanation of charity giving people reason to attend to the teaching and the unexpressed charitable intention, respectively, or integrate a genuinely needed connection without repeating the paragraph's opening. Check the revised speech for the same pattern and recalculate its spoken word count and delivery estimates; do not replace the removed sentences with slogans or padding.",
+      "severity": "blocking"
+    }
+  ],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "homily-body",
+          "kind": "homily",
+          "path": "sections/homily/10-body.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "homily-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/homily/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Jerome",
+            "Augustine of Hippo",
+            "Bede",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "word-received-in-trial"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-received-in-trial",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Bede",
+            "John Chrysostom",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "whole-person-and-desire"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-person-and-desire",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/common/propers-homily.tex": "bd8098dbbd899d7942bad73ffbe7f7dba30d63d59df363a81745a8f68125499b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/homily.tex": "2ed3e596f02d2f67ac098e1fe3efa226a21d25cf07ef5f9891b80d475db73030",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md": "ffab2a8503ef9a5bf66587ecfd4d2ff507ee77d92304bf21c745f9da87bc4481",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md": "18935d5cbb67ca4899dfad1d9581676af8973c8bcbd0f6f1fcdf6108fe22a2e7",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml": "590783dc083607ea579b2147ca1804389f56116efb32ad34539c4bffc85e04ed",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/10-body.tex": "843620353e5048150cea3671e4f1295ccf777650b530089d2967f23ce804d960",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/90-apparatus.tex": "02e97fbc38cbe26cf5431e152852a8e6613db831e8290e133137b68ace040219"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "b42047a822a7e83e",
+            "436230e120745d2f3d4be76c8331fca8f44f6e17",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "homily",
+    "schema": 1
+  },
+  "stage": "homily-review",
+  "summary": "Reviewed homily.tex, both homily components, the carrying study interpretation and concise comparison; the specific argument, pastoral application and source claims are supported by independently inspected Matthew 13, 1 Thessalonians 1, Psalm 129, Chrysostom Matthew 46.2\u20133 and First-Thessalonians homily 1, Aquinas [87862], and the 1962 Missal page images at printed 421\u2013422, but recurring redundant paragraph closers require homily revision. All ten packet-sealed files match, and the body independently counts as 1,300 words (10:50 at 120 words per minute; 10:24\u201311:18 at 125\u2013115); this was a silent source-and-speech review, without audible rehearsal, timed human delivery, Greek collation, renewed comprehensive research, web inspection or print review, and the reviewed artifact was not edited."
+}

@@ -82,7 +82,7 @@ to the 180-minute limit is left to the Pages workflow's owner.
 
 <!-- promised-deliverable: gpt-1962-67-production-2026-11-09 -->
 
-**In progress: main integrated; research revalidation pending.** The
+**In progress: main integrated; a fresh workflow run is required.** The
 maintainer requested the TLM propers documents for the upcoming Sunday and
 publication to main. The target is GPT identity 67, the universal 1962 resumed
 Sixth Sunday after the Epiphany on 15 November 2026. The eleven appointed
@@ -109,7 +109,10 @@ conversions pass, with broader fixture-test limits recorded in the cycle audit.
 
 The reviewed source checkpoint is committed as `89e6f0ff1e`. After the
 12 November merge from main, the three content seals remain exact, while a
-shared commentary-map addition makes the research seal stale. Remaining work
+shared commentary-map addition makes the research seal stale. Canonical web
+review passes, but the install stage stops run `b42047a822a7e83e` as BLOCKED
+at that research prerequisite. Its immutable audit is retained before a new
+run against the integrated sources. Remaining work
 is renewed research review, canonical web review, publication wiring and gates, terminal
 run archive, three native print compilation checks, desktop/mobile reader and
 print-control checks, validated publication to main, successful Pages deployment

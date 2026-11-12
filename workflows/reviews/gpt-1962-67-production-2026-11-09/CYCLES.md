@@ -264,6 +264,50 @@ Quaestiones evangeliorum I.11 and I.12 mappings. The earlier research acceptance
 is therefore stale against the integrated tree and requires renewed independent
 review through the workflow. No seal or accepted result is restamped.
 
+
+Generate-web iteration 0 passes after main integration. All three revision
+commands still report committed sources at `89e6f0ff1e`. The canonical
+conversion passes fidelity checks and its receipt records SHA-256
+`974b381c0487d7d499fca6f3b773e45c6e28e52d847bcbafebe630c88b94bf2d`.
+The integrated source-disposition validator also passes. Neither that mechanical
+result nor conversion renews the stale research acceptance. The worker reports
+that limitation explicitly; it changes only the conversion receipt and does not
+modify a source, declaration, accepted result or seal.
+
+
+Fresh independent web-review iteration 0 passes the exact canonical conversion
+at the recorded hash. It compares all seven canonical sections and 48 exact
+notes, confirms current sealed identities, and independently spot-checks the
+carrying Chrysostom, Aquinas, Jerome, Augustine and Bede loci. A focused preview
+using the repository renderer and reader styles is inspected at 1440, 393 and
+320 pixels. Contents and note-return navigation, mobile table scrolling and
+chronology reflow pass. WEB-001 is the same isolated redundant Offertory closer
+noted earlier as STU-002; it is advisory, with no silent prose repair.
+The complete review scope and its initial selector-harness correction are in
+[WEB-REVIEW-0/review-evidence.json](WEB-REVIEW-0/review-evidence.json).
+The reviewer independently confirms the one-file historical research-seal
+mismatch and explicitly limits this PASS to the current canonical conversion.
+It does not renew research, companion-reader, native-print or deployed-site
+acceptance. The engine dispatches fresh install-publication iteration 0 at high;
+terminal review-closure and publication gates remain ahead.
+
+
+Install-publication iteration 0 returns BLOCKED at its research prerequisite.
+Its independent regeneration confirms that the only changed research-seal file
+is the merged commentary map; every other field matches. Schema/content and
+all registered gates pass, and a fresh conversion is byte-identical to the
+accepted canonical web conversion. No release record, catalog, inspection,
+shared inventory, browser descriptor or release binding is written. The exact
+comparison is retained as
+[INSTALL-PUBLICATION-0-RESEARCH-CLOSURE.json](INSTALL-PUBLICATION-0-RESEARCH-CLOSURE.json).
+The engine records terminal BLOCKED for `b42047a822a7e83e`. This is an obsolete
+research-input boundary after the requested merge, not a content rejection or
+a publication acceptance. The run and all actual reviews are preserved. The
+workflow exposes no rewind or replacement of an accepted seal; continuing the
+maintainer's authorized task therefore requires a new run seeded against the
+integrated sources, with genuine current reviews and no resetting of this run's
+history. No deployment or completed deliverable is claimed.
+
 Registration's bounded source-evidence pack contains nine payloads: Pustet's
 appointed antecedent pages, four Cummiskey page images, two Schuster extracts,
 and two Jerome extracts. The pack is 9,144,320 bytes, SHA-256

@@ -1,0 +1,289 @@
+{
+  "disposition": "PASS",
+  "findings": [],
+  "iteration": 0,
+  "review_inputs": {
+    "component_contract": {
+      "calendar": "roman-1962",
+      "components": [
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-inventory",
+          "kind": "front-matter",
+          "path": "sections/concise/01-inventory.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-overview",
+          "kind": "front-matter",
+          "path": "sections/concise/02-overview.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-chronology",
+          "kind": "front-matter",
+          "path": "generated/scriptural-date-location-page.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml",
+            "research/chronology.toml",
+            "research/chronology-annotations.tex",
+            "research/chronology-table.tex"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-themes",
+          "kind": "front-matter",
+          "path": "sections/concise/04-themes.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "concise-commentary",
+          "kind": "integrated-commentary",
+          "path": "sections/concise/10-commentary.tex",
+          "references": [
+            "research/scope.md",
+            "research/interpretations.md",
+            "research/source-bindings.toml"
+          ]
+        },
+        {
+          "depends_on": [],
+          "element_keys": [],
+          "key": "concise-apparatus",
+          "kind": "terminal-apparatus",
+          "path": "sections/concise/90-apparatus.tex",
+          "references": []
+        }
+      ],
+      "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "element_keys": [
+        "introit",
+        "collect",
+        "epistle",
+        "gradual",
+        "alleluia",
+        "gospel",
+        "offertory",
+        "secret",
+        "preface",
+        "communion",
+        "postcommunion"
+      ],
+      "lanes": [
+        {
+          "authors": [
+            "John Chrysostom",
+            "Thomas Aquinas",
+            "Jerome",
+            "Augustine of Hippo",
+            "Bede",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "John Chrysostom",
+            "Thomas Aquinas"
+          ],
+          "component_keys": [
+            "word-received-in-trial"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "word-received-in-trial",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        },
+        {
+          "authors": [
+            "Jerome",
+            "Augustine of Hippo",
+            "Robert Bellarmine",
+            "Bede",
+            "John Chrysostom",
+            "Ildefonso Schuster"
+          ],
+          "carrying_authors": [
+            "Jerome",
+            "Augustine of Hippo"
+          ],
+          "component_keys": [
+            "whole-person-and-desire"
+          ],
+          "element_keys": [
+            "introit",
+            "collect",
+            "epistle",
+            "gradual",
+            "alleluia",
+            "gospel",
+            "offertory",
+            "secret",
+            "preface",
+            "communion",
+            "postcommunion"
+          ],
+          "key": "whole-person-and-desire",
+          "senses": [
+            "literal",
+            "allegorical",
+            "moral",
+            "anagogical"
+          ],
+          "sources": [
+            "research/scope.md",
+            "research/interpretations.md"
+          ]
+        }
+      ],
+      "presentation": {
+        "chronology": "concise-chronology",
+        "commentary": "concise-commentary",
+        "inventory": "concise-inventory",
+        "overview": "concise-overview",
+        "themes": "concise-themes"
+      },
+      "presentation_contract": "interpretive-pagination-v1",
+      "schema": 2
+    },
+    "document": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+    "files": {
+      "src/common/chronology-table.tex": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "src/common/preamble.tex": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "src/common/propers-format.tex": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location-page.tex": "9cad6888aa530cace76b70e1eb2a679b7059527ee72c4071e8d06f637998ec6f",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex": "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex": "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml": "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md": "ffab2a8503ef9a5bf66587ecfd4d2ff507ee77d92304bf21c745f9da87bc4481",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md": "18935d5cbb67ca4899dfad1d9581676af8973c8bcbd0f6f1fcdf6108fe22a2e7",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml": "590783dc083607ea579b2147ca1804389f56116efb32ad34539c4bffc85e04ed",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/01-inventory.tex": "e657e28acb20fb82ba7029f7bf5c22cbf2dca1675706dd3b4c5f3c25dd63ef6b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/02-overview.tex": "7f6bbf9046d0de6419c27d834a7cd33c6008b92055290d0484be5729a92a99c8",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/04-themes.tex": "0950bf1d588dff757f6fed3f0f99918fcee717b8e04f960e2df82e98d092747b",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/10-commentary.tex": "09a0587d74cd1110dd35b8013fbaed8438e139010887a87f73219f74c4f25868",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/90-apparatus.tex": "d3ff680db608cfa309e4d720f12e9ab03b9ad929f06effeb3e448cbc4974cdcf",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/synthesis.tex": "e0f68ce5d41680763ece9bbc0c22aaef03f3b6e657c8ff792c8bbc8e3e892172"
+    },
+    "generation_provenance": {
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generation-metadata.tex": {
+        "inheritance": [],
+        "production": [
+          [
+            "proper-study",
+            "19",
+            "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+            "b42047a822a7e83e",
+            "436230e120745d2f3d4be76c8331fca8f44f6e17",
+            "unknown"
+          ]
+        ]
+      }
+    },
+    "provider": "gpt",
+    "review": "synthesis",
+    "schema": 1
+  },
+  "stage": "synthesis-review",
+  "summary": "PASS: independently read synthesis.tex and every concise section for 67-resumed-sixth-after-epiphany, compared them with the expansive study and exact cited loci from Chrysostom, Aquinas, Jerome, Augustine, Bede, Bellarmine and Schuster plus historical prayer witnesses and relevant biblical contexts, and found the interpretations independently intelligible, interleaved, qualified, substantive and concise, with all eleven appointed elements and four-sense distinctions preserved; concrete rendered chronology lookups for Matthew 13, Mark 11, First Thessalonians 1 and Jeremiah 29 were usable, and all 16 sealed input hashes still match. This is source/content and HTML-semantic approval, without print pagination, exact production companion-page approval, or a fresh complete research/calendar/rights audit and appointed-Latin collation; direct synthesis product enumeration encountered the absent downstream homily.tex, but all reviewed sources and the shared table were accessible, with detailed evidence and limits recorded in .scratch/gpt-1962-67-synthesis-review-0/review-notes.txt."
+}

@@ -1,0 +1,16 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-dispositions.toml",
+  "disposition": "PASS",
+  "iteration": 0,
+  "notes": [
+    "Complete exact source IDs, admitted passage IDs, every deferred key and missing criterion, changed-resource SHA-256/size inventory, validation commands/logs and remaining limitations are in .scratch/gpt-1962-67-registration-0/handoff.json. Exact changed file list: .scratch/gpt-1962-67-registration-0/changed-resources.json.",
+    "Mandatory checks passed: source-dispositions --mode source; source-library validate; source-reader structure --strict and --strict --check (18,506 files); make check-sources. Broad classification was reviewed for only the new leaf; family review remains pending.",
+    "All 18 actual research acquisition files matched their receipt hashes and measured byte sizes. New records distinguish original facsimiles, uncorrected OCR, retained source text, remote modern deliveries and acquisition versus inspection.",
+    "Offline-only pack: .scratch/gpt-1962-67-registration-0/offline-packs/triptych-binaries-0012-f0a3cc7417c7ddfb.tar; 9,144,320 bytes; SHA-256 f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff. Its nine members and rights bases are in pack-audit.json. Both hydration roundtrips passed; the coordinator independently verified a durable local copy outside the disposable workspace. No public route or upload is claimed.",
+    "The four Cummiskey page-image retentions rest on the independently read 1861 imprint and faithful mechanical reproduction, with the existing Google rule applied only to intact attribution. No older whole-PDF record or consumer pin was rewritten.",
+    "No source Greek/Latin or translation/date verification was invented. Bede and Schuster shared-metadata review, exact transcriptions, original/English witnesses and two unresolved neighboring Jerome extents remain in the concrete deferred queue. No new commentary edge was added.",
+    "Only the working source projection was generated. No drafting, aggregate product sealing, commits, pushes, workflow advances or nested agents occurred."
+  ],
+  "stage": "source-registration",
+  "summary": "Registered 17 exact artifacts under four new editions, retained lawful text and nine verified binary witnesses, and reconciled all 54 bindings into 61 source dispositions. Reused four validated Chrysostom passages, retained 16 concrete commentary deferrals, preserved all 37 earlier source fingerprints and pending family review states, and passed the required catalog, handoff, strict working projection and source checks."
+}

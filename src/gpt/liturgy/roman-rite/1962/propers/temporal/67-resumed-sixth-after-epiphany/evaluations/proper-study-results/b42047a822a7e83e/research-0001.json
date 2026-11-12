@@ -1,0 +1,25 @@
+{
+  "artifact_path": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+  "disposition": "PASS",
+  "finding_dispositions": [
+    {
+      "id": "RES-001",
+      "note": "Both controlling inventories are declared and appear with exact current hashes in the regenerated proper-study-v5 source-mode research seal; no prior sealed file was lost. Historical wording, mechanical reproduction, Google attribution and older whole-PDF rights remain distinct.",
+      "outcome": "repaired"
+    }
+  ],
+  "iteration": 1,
+  "notes": [
+    "Changed resources only: src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md, src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/review-dependencies.toml, src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md, src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml, src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-dispositions.toml. Exact before/after diff: .scratch/gpt-1962-67-research-1/repair.diff.",
+    "Validation passed: python scripts/_proper_study.py check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --phase research --mode source --require-source-dispositions. Log: .scratch/gpt-1962-67-research-1/research-check.log.",
+    "Regenerated seal: .scratch/gpt-1962-67-research-1/research-review-seal.json; contract proper-study-v5, mode source, 1738 files. Every file hash independently matched current bytes; no removed files; exactly the two inventory additions and five research-file changes. Validation receipt: .scratch/gpt-1962-67-research-1/validation.json.",
+    "Google inventory SHA-256: 721d78d00a6d07a7562f6ea8d2c629d6e9fdbbdf14f4247e3a29af022ee5fd6f. Ambrosian/Mozarabic inventory SHA-256: f214bd4841f573b4ff8a85ae312c034602bfc12b1e01f8980cce078631603d35.",
+    "Authority audit: Google why_it_may_be_retained expressly adopts the_hosts.shape_three_google_scan_and_its_own_front_matter in the Ambrosian/Mozarabic inventory. That section contrasts the Braga supplement; it does not adopt the Braga disposition for these pages. Google census examples and expressly unsettled image/third-site/OCR questions are not further adopted permission owners. This repair changes no rights inventory, source artifact, retained payload or existing source fingerprint.",
+    "RES-002 advisory also corrected: Aquinas caput1 lectio1 [87862] assigns operation and labor to faith, then charity and hope; Chrysostom First-Thessalonians1 attaches labor to love. Inspected the local exact Aquinas delivery (92000 bytes, SHA-256 fe77f056e47df4d73eab61c0c496d465b657d35b60e7fc201f9e0579bab2ef95) and checked Chrysostom NPNF13 retained text lines 29160-29212. No new translation or source-text payload created.",
+    "Source-registration handoff: all 54 source fingerprints and all 61 disposition meanings remain unchanged. Only Aquinas binding 17 context was corrected, and its existing deferred disposition now pins local binding SHA-256 d5068d3df085ba6c234211aba62c932c692923fc2fa826b2d0067006077e213d. No new artifacts, fragments, rights permissions, acquisitions or receipt handoff are needed. The prior acquisition receipt manifest remains .scratch/gpt-1962-67-research-0/source-receipts.json; prior scratch and artifact-cache were read only.",
+    "make check-sources exited 2 after source-library validation passed. Exact failure in .scratch/gpt-1962-67-research-1/check-sources.log: publications-v1.toml files[1995]-files[1999] SHA-256 values are stale for interpretations.md, review-dependencies.toml, scope.md, source-bindings.toml and source-dispositions.toml; evaluations/blocking-findings-v1.toml is missing from the inventory. The next source-registration stage owns central inventory refresh and rerunning this gate, as the coordinator directed. No central inventory was changed by this worker.",
+    "Remaining limitations: existing corpus-admission deferrals, restricted Aquinas delivery and modern Haydock/Ordo redistribution limits remain as recorded; no fresh full-formulary research or cold review is claimed. The standalone seal was regenerated for validation without changing workflow state. Source registration, research preflight and independent review still follow under the engine. No drafting, commit, push, workflow advance or nested agent."
+  ],
+  "stage": "research",
+  "summary": "Declared the Google attribution rights inventory and the Ambrosian/Mozarabic inventory whose reasoning it adopts, audited the scoped authority chain, and verified both exact hashes in a regenerated research-review seal. Corrected the advisory Aquinas attribution consistently in the interpretation, reception matrix and binding, preserving the source fingerprint and deferred admission disposition."
+}

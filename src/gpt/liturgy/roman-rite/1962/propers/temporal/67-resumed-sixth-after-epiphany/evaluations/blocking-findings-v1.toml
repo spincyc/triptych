@@ -49,12 +49,12 @@ provider = "gpt"
 run_id = "b42047a822a7e83e"
 workflow = "proper-study"
 workflow_version = 19
-stage = "homily-review"
-iteration = 1
+stage = "web-review"
+iteration = 0
 disposition = "PASS"
 standing = 0
 accepted_count = 0
-advisory_count = 1
+advisory_count = 2
 observation_count = 0
 
 [[stages]]
@@ -105,6 +105,18 @@ accepted_count = 0
 advisory_count = 0
 observation_count = 0
 
+[[stages]]
+stage = "web-review"
+iteration = 0
+disposition = "PASS"
+run_id = "b42047a822a7e83e"
+workflow = "proper-study"
+workflow_version = 19
+standing = 0
+accepted_count = 0
+advisory_count = 1
+observation_count = 0
+
 [[advisories]]
 stage = "study-review"
 id = "STU-002"
@@ -112,3 +124,11 @@ severity = "advisory"
 location = "sections/20-commentary.tex:47, final sentence"
 problem = "The new closing sentence, 'As the worshipper presents gifts received from God, he asks for mercy,' repeats the preceding sentence's statement that the gifts have been received from God's goodness and their presentation is accompanied by an appeal to mercy. This is an isolated redundant closer under 'Say what the texts say, plainly'; the attribution and substantive explanation remain sound."
 required_result = "If editing this paragraph again, omit the final sentence and end after the existing Schuster footnote; the preceding two sentences already preserve the complete point and its source. No source or interpretive change is needed."
+
+[[advisories]]
+stage = "web-review"
+id = "WEB-001"
+severity = "advisory"
+location = "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.md:313 (source: src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/20-commentary.tex:47; Offertory commentary, second paragraph)"
+problem = "The closing sentence, \"As the worshipper presents gifts received from God, he asks for mercy,\" restates the immediately preceding sentence about gifts already received from God and their presentation with an appeal to mercy. It adds no further explanation. This is one isolated instance of the restatement defect named in the register guidance."
+required_result = "If this advisory is taken up, delete that final sentence while retaining the preceding two sentences and Schuster note 15, or replace it with a distinct, supported explanation. Do not move a new editorial inference into Schuster's attribution."

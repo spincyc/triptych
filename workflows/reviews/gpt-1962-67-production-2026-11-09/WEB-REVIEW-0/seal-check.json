@@ -1,0 +1,46 @@
+{
+  "content_equal": true,
+  "evidence_equal": true,
+  "render_equal": true,
+  "outputs_equal": true,
+  "limitations_equal": true,
+  "identities": {
+    "content": {
+      "sha256": "265d4cdba2b5e8a8645f558c200a6182f2781a092661459e0c5853716f01e403",
+      "input_count": 28
+    },
+    "evidence": {
+      "sha256": "38a155500a6bad5408f22a02aec3fa62a36102eb3c59b7ed5d724941ea0f751d",
+      "input_count": 148
+    },
+    "render": {
+      "sha256": "df7d10e9bcbcd617fe73ba27b1b4bff8cb4cd1d90708382fef64818ccfec2131",
+      "input_count": 1800
+    }
+  },
+  "outputs": {
+    "canonical": {
+      "sha256": "b6b7e7148fafa982a84a99d8a609fdb43abca6dc6b0f3fe47f08c991bd30cd04",
+      "input_count": 1898
+    },
+    "homily": {
+      "sha256": "ce65639cde10ed6431bb912fcf8120e4d310076e0937befc6e26ba7f59c2911a",
+      "input_count": 1898
+    },
+    "synthesis": {
+      "sha256": "fd7fec8156699b16cdea8ea714691d427efbdf0b60add0af1fecae3ef9cb27b3",
+      "input_count": 1898
+    }
+  },
+  "limitations": [
+    "Source identity does not establish semantic or rendered review acceptance.",
+    "Evidence identity covers audit/binding metadata and controlling source-record ancestry, not external witness payload verification."
+  ],
+  "missing_paths": [],
+  "web": {
+    "build/web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.md": {
+      "sealed": "974b381c0487d7d499fca6f3b773e45c6e28e52d847bcbafebe630c88b94bf2d",
+      "actual": "974b381c0487d7d499fca6f3b773e45c6e28e52d847bcbafebe630c88b94bf2d"
+    }
+  }
+}
