@@ -910,3 +910,66 @@ may not make; it stands for a later revision of the study. The web review's
 observation on straight single quotes and an ASCII ellipsis in the generated
 Scriptural Date and Location evidence belongs to the chronology projection or
 its corpus records, not to this leaf.
+
+## Install-publication, iteration 2 (11 November 2026)
+
+**Why the publication returned here.** Publication gates iteration 0 failed
+on two 300-second timeouts, `make check-release-bindings` and the
+document-catalogue check; both commands exit 0 when they are given time.
+The driver then changed the gate runner in `scripts/_workflow.py` to give
+gate commands a longer budget and to end their whole process group.
+Install-publication iteration 1 re-recorded the browser products and
+refreshed the two release bindings that change staled; it changed nothing in
+this leaf. The web review's render identity covers every `scripts/*.py`, so
+publication gates iteration 1 found the web review stale (STALE-WEB-REVIEW,
+repair target publication) before running its checks. The content and
+evidence identities were unchanged. Generate-web iteration 1 reconverted the
+study from the committed sources, byte-identical to the reviewed conversion,
+and a fresh, cold web review (iteration 1) passed.
+
+**Completed reviews.** The accepting results in the iteration-0 table stand
+for the research, study, synthesis and homily reviews and the artifact gates.
+The web review's accepting result is now iteration 1.
+
+| Review | Iterations and dispositions | Accepting result SHA-256 |
+| --- | --- | --- |
+| Web review | 0 pass (its seal later staled by the runner change); 1 pass, 1 advisory (WEB-001, carried at its original severity) and 1 observation | `85c24be1633a5a3ea0dec59478685e0bac7a54958ca811a4ac308384536f503f` |
+
+The engine recorded web review iteration 1 in
+`evaluations/blocking-findings-v1.toml`. At this stage the engine's own
+stale-review computation, for the reviews the publication gate verifies,
+returned no finding.
+
+**Web edition.** Nothing is installed. A fresh conversion of the canonical
+study with `tools/web-edition --provider claude` into this stage's scratch
+area is byte-identical to the reviewed conversion
+`build/web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.md`
+(SHA-256 `293ceca2e890ee0f4714c7943af99fea687f11db59d8d42107fa2e8af9c99410`,
+equal to `research/web-artifact.json` and to web review iteration 1's sealed
+bytes). Its stamp is still `2026-11-11T20:40:01Z`. `web-edition.toml` now
+records web review iteration 1 as the canonical reader's inspection:
+`inspected_by` names that iteration, and `inspection` states the method it
+reported and the same conversion hash. `inspected` and `reviewed` are
+unchanged. The three inspection fields lie outside the identities the review
+seals. The synthesis and homily readers remain converter-verified.
+
+**Release records and catalog.** Confirmed, not recreated. The three records
+under `release/publications/claude/liturgy/roman-rite/1962/propers/temporal/`
+for the bare ID, `-synthesis` and `-homily` are each `alpha` under the
+standing authorization `perpetual-public-repository-2026`. Row 67's Claude
+cell in `library/traditional-latin-mass.md` and the page's single Claude
+publication marker are unchanged.
+
+**Shared records.** This entry and the inspection fields change bytes that
+the Claude publication inventory, its classification review, the
+browser-product descriptor and the scoped release bindings bind, so this
+stage refreshes those after writing this entry. The outcomes are reported in
+the stage's result and in the run record, not here. The publication gate
+decides acceptance.
+
+**Review advisories and observations (not repaired here).** Unchanged from
+iteration 0. WEB-001 (one unclear anagogical sentence in
+`sections/20-crushed-seed.tex`, Ambrose VII.185) asks for a study-source
+change, which this stage may not make. The observation on straight single
+quotes and an ASCII ellipsis in the generated Scriptural Date and Location
+evidence belongs to the chronology projection or its corpus records.

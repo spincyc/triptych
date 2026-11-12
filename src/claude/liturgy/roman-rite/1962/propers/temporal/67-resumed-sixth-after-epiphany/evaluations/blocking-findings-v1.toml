@@ -50,7 +50,7 @@ run_id = "decbd44ee5bcce3b"
 workflow = "proper-study"
 workflow_version = 19
 stage = "web-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
 standing = 0
 accepted_count = 0
@@ -107,7 +107,7 @@ observation_count = 3
 
 [[stages]]
 stage = "web-review"
-iteration = 0
+iteration = 1
 disposition = "PASS"
 run_id = "decbd44ee5bcce3b"
 workflow = "proper-study"
@@ -202,7 +202,7 @@ stage = "web-review"
 id = "WEB-001"
 severity = "advisory"
 location = "sections/20-crushed-seed.tex lines 337-339 (fourSenses, Anagogical, first interpretation); web Markdown line 341: 'In the grown tree's branches the one caught up into paradise, and to be caught up into the clouds, rests tuta iam sede, “in a seat now safe” (2 Cor 12:4; 1 Thess 4:16)'"
-problem = "The sentence copies the shape of Ambrose's Latin (Exp. in Lucam VII.185, tracked Wikisource text: 'ille raptus in paradisum, in aerem rapiendus et nubes, tuta jam sede requiescat'), and the English does not parse on a first reading. 'The one caught up into paradise, and to be caught up into the clouds' joins a past participle to a bare infinitive with no relative pronoun. The subject is never named, and the body of the study never presents this passage of Ambrose, so a reader meets it here for the first time. The attribution is correct. Under 'Say what the texts say, plainly' this is Latin left for the reader to construe. It occurs once, so it is advisory."
+problem = "This is carried at the severity iteration 0 gave it. The source is unchanged, and this round re-read it against the tracked Wikisource text of Ambrose, Exp. in Lucam VII.185 ('in cujus frondentibus ramis ... ille raptus in paradisum, in aerem rapiendus et nubes, tuta jam sede requiescat'). The sentence copies the shape of the Latin, and the English does not parse on a first reading. 'The one caught up into paradise, and to be caught up into the clouds' joins a past participle to a bare infinitive with no relative pronoun. The subject is never named, and the body of the study never presents this passage, so a reader meets it here first. The attribution and loci are correct. Under 'Say what the texts say, plainly' this is Latin left for the reader to construe. It occurs once, so it is advisory."
 required_result = "Name the subject and complete the clause, keeping Ambrose's words and loci. For example: 'Ambrose sets in the grown tree's branches the man who was caught up into paradise and is to be caught up into the air and the clouds (2 Cor 12:4; 1 Thess 4:16), resting tuta iam sede, “in a seat now safe”; the nations gathered from far off fly into them and flourish certae stationis iam securitate, “in the security of a sure station” (VII.185-186).' The rest of the sense is unchanged."
 
 [[observations]]
@@ -242,5 +242,5 @@ note = "Still true: a section that begins mid-page sets the running head for tha
 
 [[observations]]
 stage = "web-review"
-location = "generated/scriptural-date-location.tex lines 32, 41, 46 and 51 (evidence notes for the Alleluia, the Introit's Jeremias, the Gospel and the Communion; web Markdown lines 547, 557, 563 and 569), taken from the locus strings in src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/passages/corbett-david-usual-chronology.toml line 7 and volume-8/editions/new-york-1910/passages/maas-journeys-three-five.toml and maas-ninth-journey-fig-tree.toml line 7, and from the label in src/sources/chronology/composition.yaml line 1865"
-note = "The corpus writes article titles in straight single quotes ('David, King,'). TeX, and the converter after it, set both as a right quotation mark, so print and web both show ’David, King,’ with a closing mark where the opening one belongs. The Jer 29:2 label prints its elision as '...' where the rest of the study sets '…'. Both are faithful conversions of the generated source. Outside this leaf, 31 generated Scriptural Date and Location files in the two providers carry the same straight-quoted locus form. The repair belongs to the chronology projection or to the corpus records, not to this leaf."
+location = "generated/scriptural-date-location.tex lines 32, 41, 46 and 51 (evidence notes for the Alleluia, the Introit's Jeremias, the Gospel and the Communion; web Markdown lines 547, 557, 563 and 569), from the locus strings in src/sources/works/catholic-encyclopedia/volume-4/editions/new-york-1908/passages/corbett-david-usual-chronology.toml line 7 and the volume-8 Maas passages, and from the label in src/sources/chronology/composition.yaml line 1865"
+note = "Still true this round. The corpus writes article titles in straight single quotes (article 'David, King,'). TeX and the converter both set each as a right quotation mark, so print and web show ’David, King,’ with a closing mark where the opening one belongs. The Jer 29:2 label prints its elision as '...' where the study sets '…'. Both are faithful conversions of the generated source. 32 generated Scriptural Date and Location files in the two providers carry the straight-quoted locus form (16 under src/claude); this count excludes the GPT leaf of this identity, which the production's independence terms put off-limits. The repair belongs to the chronology projection or the corpus records, not to this leaf."
