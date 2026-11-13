@@ -108,7 +108,22 @@
       "urls": [],
       "delivery": "offline-only"
     },
-    {"id": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa", "name": "triptych-binaries-0012-04d04fc3a80723e2.tar", "sha256": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa", "bytes": 1484800, "urls": [], "delivery": "offline-only"}
+    {
+      "id": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa",
+      "name": "triptych-binaries-0012-04d04fc3a80723e2.tar",
+      "sha256": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa",
+      "bytes": 1484800,
+      "urls": [],
+      "delivery": "offline-only"
+    },
+    {
+      "id": "4cec21bc84c39fa738dbe6225251338053df2990e01f17e719d7eda1a9254d10",
+      "name": "triptych-binaries-0014-4cec21bc84c39fa7.tar",
+      "sha256": "4cec21bc84c39fa738dbe6225251338053df2990e01f17e719d7eda1a9254d10",
+      "bytes": 3594240,
+      "urls": [],
+      "delivery": "offline-only"
+    }
   ],
   "artifacts": [
     {
@@ -50762,10 +50777,59 @@
       "archive": "f0a3cc7417c7ddfb8dc63ea68d803ac56984b0fde5dbfd95978236fe582210ff",
       "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-26/editions/paris-1845/artifacts/matthew-13-pages-e99f4fd2/evidence.pdf"
     },
-    {"path": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf", "sha256": "a2c3faecd154022fe00d1c09ed043c3441b78c7e4ae6430164ef287a81f1988e", "bytes": 167718, "kind": "source-evidence", "media_type": "application/pdf", "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa", "member": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"},
-    {"path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf", "sha256": "b86a5a1adc0ec7f92e9585b1fafefddc47d0a8c2fd4887589bbbf0063616d759", "bytes": 445268, "kind": "source-evidence", "media_type": "application/pdf", "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa", "member": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"},
-    {"path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf", "sha256": "21722c83217e64738042331b1f8185fbd0c497ea9db43b5cb7498c5b3c762997", "bytes": 623510, "kind": "source-evidence", "media_type": "application/pdf", "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa", "member": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"},
-    {"path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf", "sha256": "adab3b804ccdae4e930f71543d5ac24c28b5e54906d76a708e104cc738cfcb69", "bytes": 131148, "kind": "source-evidence", "media_type": "application/pdf", "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa", "member": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"},
-    {"path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf", "sha256": "1891b45b9a8554097eacd35bce0b3fc3b4c871d70820bfc48e17d0945d2a1cf4", "bytes": 101806, "kind": "source-evidence", "media_type": "application/pdf", "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa", "member": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"}
+    {
+      "path": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "sha256": "a2c3faecd154022fe00d1c09ed043c3441b78c7e4ae6430164ef287a81f1988e",
+      "bytes": 167718,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa",
+      "member": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "sha256": "b86a5a1adc0ec7f92e9585b1fafefddc47d0a8c2fd4887589bbbf0063616d759",
+      "bytes": 445268,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa",
+      "member": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "sha256": "21722c83217e64738042331b1f8185fbd0c497ea9db43b5cb7498c5b3c762997",
+      "bytes": 623510,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa",
+      "member": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "sha256": "adab3b804ccdae4e930f71543d5ac24c28b5e54906d76a708e104cc738cfcb69",
+      "bytes": 131148,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa",
+      "member": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "sha256": "1891b45b9a8554097eacd35bce0b3fc3b4c871d70820bfc48e17d0945d2a1cf4",
+      "bytes": 101806,
+      "kind": "source-evidence",
+      "media_type": "application/pdf",
+      "archive": "04d04fc3a80723e240c5ba78d01e49bb031704ef5cbcf2a55342c4c6d8a6e0aa",
+      "member": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf"
+    },
+    {
+      "path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/page120.png",
+      "sha256": "3d9471fa7a6e446da05e12724ab83a3c1f9cd930b539e3243e6456c37c81cae6",
+      "bytes": 3586491,
+      "kind": "source-evidence",
+      "media_type": "image/png",
+      "archive": "4cec21bc84c39fa738dbe6225251338053df2990e01f17e719d7eda1a9254d10",
+      "member": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/page120.png"
+    }
   ]
 }
