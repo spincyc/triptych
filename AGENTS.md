@@ -120,8 +120,9 @@ the bounds are the reason it was granted.
   ancestor, stop and report. Never force, never rewrite published history.
 - **The deploy gates run first, locally.** `make check-deployment-sources`,
   `make public-site`, and `public-alpha verify --deployment-target github-pages`
-  are exactly what the Pages workflow runs; run all three and the fix's own
-  tests before pushing.
+  run exactly the gates, build and verification the Pages workflow runs (Pages
+  runs the first two together, gates beside the build, as `make pages-site`);
+  run all three and the fix's own tests before pushing.
 - **The push is the deployment.** A push to `origin/main` triggers the Pages
   workflow, so pushing authorizes that publication. Verify the run afterwards
   rather than assuming it.

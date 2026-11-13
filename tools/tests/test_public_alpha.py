@@ -1700,7 +1700,8 @@ class PublicAlphaTest(unittest.TestCase):
             "python tools/tpt public-alpha verify --deployment-target github-pages",
             workflow,
         )
-        self.assertLess(workflow.index("make public-site"), workflow.index("--deployment-target github-pages"))
+        self.assertIn("pages-site-members: public-site-artifact deployment-source-gates", makefile)
+        self.assertLess(workflow.index("make pages-site"), workflow.index("--deployment-target github-pages"))
         self.assertLess(
             workflow.index("--deployment-target github-pages"),
             workflow.index("actions/upload-pages-artifact"),

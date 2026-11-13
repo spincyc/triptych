@@ -32,7 +32,7 @@ LOADER.exec_module(PREFLIGHT)
 class GeneratedDocumentsFreshnessTests(unittest.TestCase):
     def test_source_maintenance_and_publication_reach_the_gate(self):
         makefile = (ROOT / "Makefile").read_text()
-        for goal in ("check-sources", "check-deployment-sources", "public-site"):
+        for goal in ("check-sources", "check-deployment-sources", "public-site", "pages-site"):
             with self.subTest(goal=goal):
                 reached = make_reached(goal, makefile)
                 self.assertIn("check-generated-documents-current", reached)
@@ -100,6 +100,58 @@ class AuthoredDatePageTests(unittest.TestCase):
             "sections/90-apparatus.tex": "% \\section{Scriptural Date and Location}\n"
                                          "Every date in the Scriptural Date and Location appendix.\n",
         }), [])
+
+
+class PrepareInputStateTests(unittest.TestCase):
+    """`prepare` watches exactly what an rglob walk of the source trees sees.
+
+    The walk runs once per Assembly, so it is a scandir walk; it must keep the
+    rglob semantics: matching suffixes only, symlinked files followed,
+    symlinked directories not descended, and a change to any watched file seen.
+    """
+
+    @staticmethod
+    def rglob_state(root: Path) -> set:
+        found = set()
+        for tree, suffixes in date_page._WATCHED:
+            for path in (root / "src/sources" / tree).rglob("*"):
+                if path.suffix in suffixes and path.is_file():
+                    stat = path.stat()
+                    found.add((str(path), stat.st_dev, stat.st_ino, stat.st_size,
+                               stat.st_mtime_ns, stat.st_ctime_ns))
+        return found
+
+    def test_the_walk_matches_rglob_and_sees_every_change(self):
+        scratch = ROOT / ".scratch/tests/generated-documents"
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=scratch) as temp:
+            root = Path(temp)
+            sources = root / "src/sources"
+            for name, text in {
+                "chronology/events/a.yaml": "a: 1\n", "chronology/notes.md": "not watched\n",
+                "calendars/roman-1962/propers.yaml": "x: 1\n", "calendars/x.toml": "not watched\n",
+                "bibles/drb/chapters/gen/1.json": "{}\n", "bibles/drb/index.yaml": "id: drb\n",
+                "works/w/record.toml": "id = 'w'\n", "works/w/verse-text-x/a.tsv": "1\t2\n",
+                "works/w/.hidden.toml": "id = 'h'\n", "elsewhere/ignored.yaml": "n: 1\n",
+            }.items():
+                (sources / name).parent.mkdir(parents=True, exist_ok=True)
+                (sources / name).write_text(text)
+            outside = root / "outside"
+            outside.mkdir()
+            (outside / "linked.toml").write_text("id = 'l'\n")
+            (sources / "works/linked-file.toml").symlink_to(outside / "linked.toml")
+            (sources / "works/linked-directory").symlink_to(outside, target_is_directory=True)
+            state = date_page._input_state(root)
+            self.assertEqual(list(state), sorted(state))
+            self.assertEqual(set(state), self.rglob_state(root))
+            self.assertEqual(len(state), 8)
+            self.assertIn(str(sources / "works/linked-file.toml"), {row[0] for row in state})
+            self.assertNotIn(str(sources / "works/linked-directory/linked.toml"),
+                             {row[0] for row in state})
+            (sources / "works/w/record.toml").write_text("id = 'changed'\n")
+            self.assertNotEqual(date_page._input_state(root), state)
+            (sources / "works/w/new.tsv").write_text("new\n")
+            self.assertEqual(set(date_page._input_state(root)), self.rglob_state(root))
 
 
 class PreflightExemptionTests(unittest.TestCase):

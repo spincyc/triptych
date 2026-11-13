@@ -282,9 +282,16 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         prepared = ("tools/tpt", "browser-products", "build")
         for command in GENERATED_CONSUMERS:
             self.assertLess(commands.index(prepared), commands.index(command))
+        # Pages runs the gates beside the site build, so only the rights cases
+        # (a prerequisite of the build) are ordered before it; every gate is
+        # ordered before verification, which only a passing step reaches.
         for command in SOURCE_COMMANDS:
-            self.assertLess(commands.index(command), commands.index(build))
+            self.assertLess(commands.index(command), commands.index(verify))
         self.assertLess(commands.index(rights[0]), commands.index(build))
+        # And every gate waits for the products, so that a cold product build
+        # has the runner to itself.
+        for command in (SOURCE_COMMANDS - {prepared}) | {rights[0]}:
+            self.assertLess(commands.index(prepared), commands.index(command))
         runtime = ("scripts/_native_tex_assets.py", "hydrate", "--fetch")
         self.assertEqual(commands.count(runtime), 1)
         self.assertLess(commands.index(runtime), commands.index(build))
@@ -292,10 +299,22 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         self.assertFalse((self.root / "pdf").exists())
         self.assertEqual(list(self.root.rglob("*.pdf")), [])
 
-    def test_each_new_source_gate_failure_prevents_artifact_construction(self):
-        for gate in ["scripts/_native_tex_assets.py hydrate --fetch",
-                     "tools/tpt browser-products key", "scripts/_browser_cache_bootstrap.py --fetch",
-                     *sorted(" ".join(command) for command in SOURCE_COMMANDS)]:
+    def test_each_new_source_gate_failure_prevents_verification_and_upload(self):
+        # Pages assembles the site beside the gates, so a failed gate may leave
+        # an assembled site on the runner; it fails the step, and verification,
+        # cache retention and upload are later steps that never run.
+        verify = ("tools/tpt", "public-alpha", "verify", "--deployment-target", "github-pages")
+        before_make = ["scripts/_native_tex_assets.py hydrate --fetch",
+                       "tools/tpt browser-products key", "scripts/_browser_cache_bootstrap.py --fetch",
+                       "tools/tpt browser-products build",
+                       "-m unittest -v " + " ".join(
+                           "tools.tests.test_curriculum_liturgical_rights.CurriculumLiturgicalRightsTests." + name
+                           for name in ("test_hash_only_registry_is_complete_and_well_formed",
+                                        "test_allowlist_exactly_matches_tracked_curriculum_sources",
+                                        "test_unavailable_dispositions_cover_affected_stable_ids",
+                                        "test_scanner_is_location_and_surface_sensitive",
+                                        "test_tex_control_words_cannot_hide_a_window"))]
+        for gate in [*before_make, *sorted(" ".join(command) for command in SOURCE_COMMANDS)]:
             with self.subTest(gate=gate):
                 self.log.unlink(missing_ok=True)
                 Path(self.env["GITHUB_OUTPUT"]).unlink(missing_ok=True)
@@ -303,8 +322,44 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
                 result = self.run_pages_commands(env={**self.env, "DEPLOYMENT_TEST_FAIL": gate})
                 self.assertNotEqual(result.returncode, 0)
                 self.assertIn("deliberate source gate failure", result.stderr)
+                commands = self.commands()
+                self.assertNotIn(verify, commands)
+                self.assertNotIn(("tools/tpt", "browser-products", "prune"), commands)
+                if gate in before_make:
+                    # Nothing the site build needs may be skipped: its own
+                    # prerequisites still stop assembly outright.
+                    self.assertNotIn(("tools/tpt", "public-alpha", "build"), commands)
+                    self.assertFalse((self.root / "build/public-alpha/site").exists())
+
+    def test_each_source_gate_failure_prevents_local_artifact_construction(self):
+        # `make public-site` keeps the strict order: no gate, no assembly.
+        for gate in sorted(" ".join(command) for command in SOURCE_COMMANDS):
+            with self.subTest(gate=gate):
+                self.log.unlink(missing_ok=True)
+                shutil.rmtree(self.root / "build", ignore_errors=True)
+                result = self.shell("make public-site", env={**self.env, "DEPLOYMENT_TEST_FAIL": gate})
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn("deliberate source gate failure", result.stderr)
                 self.assertNotIn(("tools/tpt", "public-alpha", "build"), self.commands())
                 self.assertFalse((self.root / "build/public-alpha/site").exists())
+
+    def test_pages_reaches_every_deployment_source_gate_and_the_site_build(self):
+        from tools.tests.test_example_replay import make_reached
+
+        makefile = (ROOT / "Makefile").read_text(encoding="utf-8")
+        commands = "\n".join(step.get("run", "") for step in self.pages()["jobs"]["build"]["steps"])
+        targets = re.findall(r"^\s*make\s+([a-z][a-z0-9-]*)", commands, flags=re.MULTILINE)
+        self.assertEqual(targets, ["pages-site"])
+        reached = make_reached("pages-site", makefile)
+        gates = make_reached("check-deployment-sources", makefile)
+        # The bootstrap wrapper is the one name Pages does not need: its
+        # members, which carry every recipe, are what must be reached.
+        self.assertEqual(set(gates) - {"check-deployment-sources"} - set(reached), set())
+        site = make_reached("public-site", makefile)
+        self.assertEqual(set(site) - {"public-site", "check-deployment-sources"} - set(reached), set())
+        body = "\n".join(reached.values())
+        self.assertIn("$(PUBLIC_ALPHA_TOOL) build", body)
+        self.assertIn("$(WEB_FIGURES)", body)
 
     def test_consumers_prepare_products_once_before_serial_or_parallel_reads(self):
         for jobs in ("-j1", "-j4"):
@@ -384,7 +439,7 @@ class PagesPublicationSelectionTests(DeploymentFixture, unittest.TestCase):
         # compilation, inside the pinned TEXLIVE_IMAGE, through make.
         self.assertNotRegex(commands, r"(?i)\b(?:texlive|pdflatex|xelatex|lualatex|pdfinfo|poppler|apt-get|pacman)\b")
         self.assertEqual(re.findall(r"(?i)docker\S*", commands), ['docker:$TEXLIVE_IMAGE"'])
-        self.assertIn('make public-site WEB_FIGURES_RUNNER="docker:$TEXLIVE_IMAGE"', commands)
+        self.assertIn('make pages-site WEB_FIGURES_RUNNER="docker:$TEXLIVE_IMAGE"', commands)
         # Browser-reflow print preparation was removed. Web readers are converted
         # at build time by the pinned Pandoc, installed by its own verified lock.
         self.assertNotRegex(commands, r"(?i)_web_print|print-editions")

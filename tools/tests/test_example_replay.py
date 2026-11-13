@@ -613,10 +613,11 @@ class GateTests(unittest.TestCase):
                 installed_imports.update(distribution_imports[distribution])
 
         make_targets = set(
-            re.findall(r"\brun:\s+make\s+([a-z][a-z0-9-]*)", workflow)
+            re.findall(r"^\s*(?:run:\s+)?make\s+([a-z][a-z0-9-]*)", workflow,
+                       flags=re.MULTILINE)
         )
-        self.assertIn("public-site", make_targets)
-        self.assertIn("check-deployment-sources", make_reached("public-site", makefile))
+        self.assertIn("pages-site", make_targets)
+        self.assertIn("deployment-source-gates", make_reached("pages-site", makefile))
         tool_variables = dict(
             re.findall(
                 r"^([A-Z_]+_TOOL)\s*:=\s*tools/tpt\s+([a-z][a-z0-9-]*)",
@@ -666,8 +667,13 @@ class GateTests(unittest.TestCase):
                 if module == "__future__" or module in sys.stdlib_module_names:
                     continue
                 local = ROOT / "scripts" / f"{module}.py"
+                package = ROOT / "scripts" / module
                 if local.is_file():
                     pending.append(local)
+                elif package.is_dir():
+                    # A local package (document_projections, ...): walk
+                    # every module in it, not just the name.
+                    pending.extend(sorted(package.glob("*.py")))
                 else:
                     external_imports.add(module)
 

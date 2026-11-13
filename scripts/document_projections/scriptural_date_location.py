@@ -9,6 +9,7 @@ model is ``scripts/_proper_chronology_page.py``.
 
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 
@@ -41,17 +42,7 @@ def prepare(root: Path) -> None:
     import _psalms
     import _psalter
 
-    sources = root / "src/sources"
-    paths = set()
-    for tree, suffixes in (
-        ("chronology", {".yaml", ".toml"}), ("calendars", {".yaml"}),
-        ("bibles", {".yaml", ".json"}), ("works", {".toml", ".tsv"}),
-    ):
-        paths.update(path for path in (sources / tree).rglob("*")
-                     if path.suffix in suffixes and path.is_file())
-    state = tuple((str(path), stat.st_dev, stat.st_ino, stat.st_size,
-                   stat.st_mtime_ns, stat.st_ctime_ns)
-                  for path in sorted(paths) for stat in (path.stat(),))
+    state = _input_state(root)
     if _INPUT_STATE.get(root) == state:
         return
     for module in (_chronology, wiring, page, _deuterocanon, _psalms, _psalter):
@@ -62,6 +53,41 @@ def prepare(root: Path) -> None:
     if root not in _INPUT_STATE and len(_INPUT_STATE) >= 4:
         _INPUT_STATE.pop(next(iter(_INPUT_STATE)))
     _INPUT_STATE[root] = state
+
+
+_WATCHED = (
+    ("chronology", (".yaml", ".toml")), ("calendars", (".yaml",)),
+    ("bibles", (".yaml", ".json")), ("works", (".toml", ".tsv")),
+)
+
+
+def _input_state(root: Path) -> tuple:
+    """The file identity of every watched input, in path order.
+
+    Every operation (each new `Assembly`) asks this, so it is a scandir walk
+    over plain strings: the same files `rglob("*")` reaches -- symlinked
+    directories are not descended, symlinked files are followed -- with the
+    same stat fields, at a fifth of the cost of building and sorting ~67,000
+    Path objects.
+    """
+    found = []
+    for tree, suffixes in _WATCHED:
+        pending = [os.path.join(root, "src", "sources", tree)]
+        while pending:
+            try:
+                listing = os.scandir(pending.pop())
+            except OSError:
+                continue
+            with listing:
+                for entry in listing:
+                    if entry.is_dir(follow_symlinks=False):
+                        pending.append(entry.path)
+                    elif os.path.splitext(entry.name)[1] in suffixes and entry.is_file():
+                        stat = entry.stat()
+                        found.append((entry.path, stat.st_dev, stat.st_ino, stat.st_size,
+                                      stat.st_mtime_ns, stat.st_ctime_ns))
+    found.sort()
+    return tuple(found)
 
 
 def dependency_trace(context) -> dict[str, list[str]]:

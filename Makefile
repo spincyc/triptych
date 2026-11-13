@@ -259,6 +259,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-document-schemas check-document-content check-artifact-delivery \
 	check-snapshot-delivery check-papal-inputs \
 	prepare-browser-data check-browser-products deployment-source-gates \
+	pages-site pages-site-members public-site-artifact \
 	check-source-evidence print-document \
 	check-source-inventory check-source-inventory-tool \
 	check-source-family-migration check-source-family-migration-tool \
@@ -500,9 +501,32 @@ DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schem
 ifeq ($(strip $(_TRIPTYCH_MAKE_PARALLEL_FLAGS)),)
 check-deployment-sources:
 	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) deployment-source-gates
+pages-site:
+	+@$(MAKE) --no-print-directory $(_TRIPTYCH_BOUNDED_PDF_JOB_OPTION) pages-site-members
 else
 check-deployment-sources: deployment-source-gates
+pages-site: pages-site-members
 endif
+
+# What the Pages build job runs: the whole deployment source gate beside the
+# site build instead of before it. The build is one process and the gates fill
+# the runner's other cores; the site is listed first so that it takes the first
+# job slot the verified products free. A failing gate still fails this target,
+# and with it the workflow step, before `public-alpha verify` runs or anything
+# is uploaded: the site may be assembled, but it never leaves the runner.
+# `make public-site` keeps the stricter local order, gates before assembly.
+pages-site-members: public-site-artifact deployment-source-gates
+
+# For Pages every gate also waits for the verified products, which only some of
+# them read: a cold product build then has the runner's cores to itself, and the
+# gates overlap the site build instead. Other goals keep the members' own order.
+ifneq ($(filter pages-site pages-site-members,$(MAKECMDGOALS)),)
+$(DEPLOYMENT_SOURCE_MEMBERS): | prepare-browser-data
+endif
+
+public-site-artifact: check-curriculum-source-rights | prepare-browser-data
+	@$(WEB_FIGURES)
+	@$(PYTHON) $(PUBLIC_ALPHA_TOOL) build
 
 deployment-source-gates: $(DEPLOYMENT_SOURCE_MEMBERS) | prepare-browser-data
 	@$(PYTHON) tools/tpt calendar-days check
@@ -705,6 +729,7 @@ help:
 		'make prepare-public-alpha  Print current candidate hashes; grants no approval' \
 		'make public-preview  Build a private no-index preview with review candidates' \
 		'make public-site  Build the fail-closed, history-free public artifact' \
+		'make pages-site  Run the deployment source gates beside the public artifact build, as Pages does' \
 		'make print-document DOCUMENT=<qualified-id> [PRINT_EDITION=main] [PRINT_OUT=.scratch/print-document]  Build one optional PDF and receipt' \
 		'make verify-public-preview  Recheck the existing private preview artifact' \
 		'make verify-public-site  Recheck the existing public artifact' \
