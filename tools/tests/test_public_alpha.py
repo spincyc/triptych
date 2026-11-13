@@ -230,6 +230,119 @@ class PublicAlphaTest(unittest.TestCase):
     def write_json(self, relative: str, payload: object) -> None:
         self.write(relative, (json.dumps(payload) + "\n").encode())
 
+    def add_propers_reader_fixture(self, structure: dict) -> str:
+        """Use the actual producer's thin metadata and Mass serialization."""
+        from _reader_publication_products import _tool
+        owner = _tool(REPOSITORY_ROOT, "mass-propers")
+        calendar = structure["calendar"]
+        prefix = "src/web/data/structure/propers/"
+        self.write(prefix + calendar + ".json", owner._serialise_structure(structure).encode())
+        reader = owner.reader_structure(structure)
+        generation = digest((owner._compact(reader) + "\n").encode())
+        relative = f"structure/propers/reader/{calendar}.json"
+        self.write_json("src/web/data/" + relative, dict(reader, generation=generation))
+        catalog, masses = owner.read_payloads(structure, generation)
+        self.write_json(prefix + f"catalog/{calendar}.json", catalog)
+        for key, mass in masses.items():
+            self.write_json(prefix + f"mass/{calendar}/{key}.json", mass)
+        index_path = self.root / prefix / "index.json"
+        index = json.loads(index_path.read_text()) if index_path.exists() else {"default": calendar, "missals": []}
+        index["missals"] = [row for row in index["missals"] if row["id"] != calendar]
+        index["missals"].append({
+            "id": calendar, "edition": structure["edition"], "edition_short": structure["edition_short"],
+            "reader_index": True, "reader_file": relative,
+            "read_payload": {"catalog": f"structure/propers/catalog/{calendar}.json",
+                             "mass_prefix": f"structure/propers/mass/{calendar}/"}})
+        self.write_json(prefix + "index.json", index)
+        return relative
+
+    def test_reader_split_validates_all_calendars_against_exact_public_bytes(self) -> None:
+        structure = self.make_propers_read_fixture()["structure"]
+        for calendar in ("roman-1962", "roman-pre-1955", "postconciliar"):
+            self.add_propers_reader_fixture(dict(structure, calendar=calendar))
+        data_root = self.root / "src/web/data"
+        validated = {}
+        for path in data_root.rglob("*.json"):
+            relative = path.relative_to(data_root).as_posix()
+            if "/reader/" not in relative:
+                validated[relative] = self.tool.validate_liturgical_public_data(path)
+        proofs = self.tool.validate_propers_read_payload_sources(data_root, validated_sources=validated)
+        self.assertEqual(len(proofs), 3)
+        for relative, proof in proofs.items():
+            self.tool.validate_liturgical_public_data(data_root / relative, proper_reader_binding=proof)
+        missing = dict(validated)
+        del missing["structure/propers/postconciliar.json"]
+        with self.assertRaisesRegex(self.tool.ReleaseError, "lack current public validation"):
+            self.tool.validate_propers_read_payload_sources(data_root, validated_sources=missing)
+        source = data_root / "structure/propers/postconciliar.json"
+        source.write_bytes(source.read_bytes() + b"\n")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "lack current public validation"):
+            self.tool.validate_propers_read_payload_sources(data_root, validated_sources=validated)
+
+    def test_reader_split_rejects_forged_metadata_generations_and_foreign_mass_paths(self) -> None:
+        prefix = "src/web/data/structure/propers/"
+        cases = (
+            ("reader/roman-1962.json", lambda value: value.update(edition="Forged")),
+            ("reader/roman-1962.json", lambda value: value.update(generation="0" * 64)),
+            ("reader/roman-1962.json", lambda value: value.update(source_sha256="0" * 64)),
+            ("reader/roman-1962.json", lambda value: value.update(name_execution_source_coverage={"sources": 2})),
+            ("reader/roman-1962.json", lambda value: value["masses"][0].update(payload="structure/propers/mass/other/pentecost-sunday.json")),
+            ("reader/roman-1962.json", lambda value: value["masses"].append(value["masses"][0])),
+            ("mass/roman-1962/pentecost-sunday.json", lambda value: value.update(generation="0" * 64)),
+            ("mass/roman-1962/pentecost-sunday.json", lambda value: value.update(calendar="postconciliar")),
+            ("index.json", lambda value: value["missals"].append(value["missals"][0])),
+        )
+        for relative, mutate in cases:
+            with self.subTest(relative=relative, mutation=mutate):
+                self.add_propers_reader_fixture(self.make_propers_read_fixture()["structure"])
+                value = json.loads((self.root / prefix / relative).read_text())
+                mutate(value)
+                self.write_json(prefix + relative, value)
+                with self.assertRaises(self.tool.ReleaseError):
+                    self.tool.validate_propers_read_payload_sources(self.root / "src/web/data")
+        self.add_propers_reader_fixture(self.make_propers_read_fixture()["structure"])
+        (self.root / prefix / "mass/roman-1962/pentecost-sunday.json").unlink()
+        with self.assertRaisesRegex(self.tool.ReleaseError, "missing or unsafe"):
+            self.tool.validate_propers_read_payload_sources(self.root / "src/web/data")
+        self.add_propers_reader_fixture(self.make_propers_read_fixture()["structure"])
+        self.write_json(prefix + "mass/foreign/pentecost-sunday.json", {})
+        with self.assertRaisesRegex(self.tool.ReleaseError, "orphaned"):
+            self.tool.validate_propers_read_payload_sources(self.root / "src/web/data")
+
+    def test_reader_metadata_requires_join_and_still_rejects_quarantine_and_rights(self) -> None:
+        structure = self.make_propers_read_fixture()["structure"]
+        relative = self.add_propers_reader_fixture(structure)
+        data_root = self.root / "src/web/data"
+        path = data_root / relative
+        with self.assertRaisesRegex(self.tool.ReleaseError, "validated source join"):
+            self.tool.validate_liturgical_public_data(path)
+        for field, value, message in (("edition", self.quarantine_marker, "quarantined English body"),
+                                      ("coverage", {"rights": "permission"}, "permission-scoped rights")):
+            with self.subTest(field=field):
+                self.add_propers_reader_fixture(dict(structure, **{field: value}))
+                proofs = self.tool.validate_propers_read_payload_sources(data_root)
+                with self.assertRaisesRegex(self.tool.ReleaseError, message):
+                    self.tool.validate_liturgical_public_data(path, proper_reader_binding=proofs[relative])
+        self.add_propers_reader_fixture(structure)
+        proofs = self.tool.validate_propers_read_payload_sources(data_root)
+        path.write_bytes(path.read_bytes() + b"\n")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "validated source join"):
+            self.tool.validate_liturgical_public_data(path, proper_reader_binding=proofs[relative])
+
+    def test_reader_metadata_cannot_hide_incomplete_finite_source_domain(self) -> None:
+        structure = self.make_propers_read_fixture()["structure"]
+        structure["name_execution_source_coverage"] = {
+            "schema": "triptych-name-source-coverage/v1", "sources": 2,
+            "historical_named_translations_added": 0, "count_basis": "distinct-exact-recipient-occurrences"}
+        self.add_propers_reader_fixture(structure)
+        self.write_json("src/web/data/bibles.json", {"bibles": [{"id": "offered", "numbering": "vulgate"}]})
+        self.write("src/sources/bibles/offered/chapters/Ps/1.json", b"{}\n")
+        self.write("src/web/browser/shared/browser-core.js", b"// fixture\n")
+        for entrance in self.tool.WEB_BROWSER_ENTRANCES:
+            self.write(f"src/web/browser/{entrance}/index.html", b"<main>fixture</main>\n")
+        with self.assertRaisesRegex(self.tool.ReleaseError, "finite name coverage disagrees"):
+            self.tool.web_data_files()
+
     def test_page_classes_are_semantic_and_stable(self) -> None:
         self.assertEqual(
             self.tool.page_classes("README.md", "index.html"),
@@ -2323,7 +2436,7 @@ class PublicAlphaTest(unittest.TestCase):
         fixture = self.make_propers_read_fixture()
         del fixture["index"]["missals"][0]["read_payload"]
         self.write_json("src/web/data/structure/propers/index.json", fixture["index"])
-        with self.assertRaisesRegex(self.tool.ReleaseError, "orphan split files"):
+        with self.assertRaisesRegex(self.tool.ReleaseError, "orphan"):
             self.tool.validate_propers_read_payload_sources(self.root / "src/web/data")
 
     def test_verifier_rejects_tampered_copied_browser_asset_with_fresh_checksums(

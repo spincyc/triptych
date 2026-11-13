@@ -4023,7 +4023,10 @@ READ_MASS_KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 
 def reader_structure(structure: dict) -> dict:
     """Navigation and qualifications from the public projection, without bodies."""
-    result = dict(structure, reader_index=True)
+    # The thin bytes determine the shared reader generation. Bind the complete
+    # served structure too, so a body-only edit cannot reuse that generation.
+    source_sha256 = hashlib.sha256(_serialise_structure(structure).encode("utf-8")).hexdigest()
+    result = dict(structure, reader_index=True, source_sha256=source_sha256)
     result["masses"] = []
     for mass in structure["masses"]:
         row = {key: value for key, value in mass.items() if key not in {"propers", "forms"}}

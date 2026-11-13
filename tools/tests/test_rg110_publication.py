@@ -58,9 +58,15 @@ class Rg110Publication(unittest.TestCase):
         structure = copy.deepcopy(self.structure if structure is None else structure)
         rubrics = copy.deepcopy(self.rubrics if rubrics is None else rubrics)
         self.write_json(data / "structure/rubrics/roman-1962.json", rubrics)
-        self.write_json(data / "structure/propers/index.json", self.index)
-        raw = self.write_json(data / "structure/propers/roman-1962.json", structure)
-        catalog, payloads = self.producer.read_payloads(structure, hashlib.sha256(raw).hexdigest())
+        index = copy.deepcopy(self.index)
+        index["missals"] = [row for row in index["missals"] if row["id"] == "roman-1962"]
+        self.write_json(data / "structure/propers/index.json", index)
+        source = data / "structure/propers/roman-1962.json"
+        source.write_text(self.producer._serialise_structure(structure))
+        reader = self.producer.reader_structure(structure)
+        generation = hashlib.sha256((self.producer._compact(reader) + "\n").encode()).hexdigest()
+        self.write_json(data / "structure/propers/reader/roman-1962.json", dict(reader, generation=generation))
+        catalog, payloads = self.producer.read_payloads(structure, generation)
         self.write_json(data / "structure/propers/catalog/roman-1962.json", catalog)
         for key, payload in payloads.items():
             self.write_json(data / f"structure/propers/mass/roman-1962/{key}.json", payload)

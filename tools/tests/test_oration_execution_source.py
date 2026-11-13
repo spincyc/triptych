@@ -85,10 +85,10 @@ class OrationExecutionSources(unittest.TestCase):
         spec=importlib.util.spec_from_loader(loader.name,loader);gate=importlib.util.module_from_spec(spec);sys.modules[spec.name]=gate;loader.exec_module(gate)
         payload=json.loads((browser_data_root(ROOT) / 'structure/propers/roman-1962.json').read_text())
         virtual=ROOT/'src/web/data/structure/propers/execution-source-fixture.json'
-        original_read=Path.read_text
+        original_read=Path.read_bytes
         def check(value):
-            def read(path,*args,**kwargs):return json.dumps(value,ensure_ascii=False)if path==virtual else original_read(path,*args,**kwargs)
-            with patch.object(Path,'read_text',read):gate.validate_liturgical_public_data(virtual)
+            def read(path,*args,**kwargs):return json.dumps(value,ensure_ascii=False).encode()if path==virtual else original_read(path,*args,**kwargs)
+            with patch.object(Path,'read_bytes',read):gate.validate_liturgical_public_data(virtual)
         check(payload)
         for change in ['private','wrong-owner','wrong-calendar','duplicate','source-text','coverage','private-coverage']:
             bad=copy.deepcopy(payload);mass=next(m for m in bad['masses']if any(p.get('execution_sources')for p in m['propers']));proper=next(p for p in mass['propers']if p.get('execution_sources'))
@@ -102,8 +102,8 @@ class OrationExecutionSources(unittest.TestCase):
             with self.subTest(change=change),self.assertRaises(gate.ReleaseError):check(bad)
         catalog=json.loads((browser_data_root(ROOT) / 'structure/propers/catalog/roman-1962.json').read_text())
         catalog_path=ROOT/'src/web/data/structure/propers/catalog/execution-source-fixture.json'
-        def read_catalog(path,*args,**kwargs):return json.dumps(catalog,ensure_ascii=False)if path==catalog_path else original_read(path,*args,**kwargs)
-        with patch.object(Path,'read_text',read_catalog):
+        def read_catalog(path,*args,**kwargs):return json.dumps(catalog,ensure_ascii=False).encode()if path==catalog_path else original_read(path,*args,**kwargs)
+        with patch.object(Path,'read_bytes',read_catalog):
             gate.validate_liturgical_public_data(catalog_path)
             catalog['structure']['execution_source_coverage']['private_locator']='PRIVATE'
             with self.assertRaises(gate.ReleaseError):gate.validate_liturgical_public_data(catalog_path)

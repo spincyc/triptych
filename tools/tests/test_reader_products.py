@@ -1,8 +1,11 @@
 """Thin discovery and bounded reading keep bodies and authority in their owners."""
 from contextlib import contextmanager, nullcontext
+from copy import deepcopy
 import hashlib
 import json
 from pathlib import Path
+import shutil
+import subprocess
 import sys
 from types import SimpleNamespace
 import unittest
@@ -68,6 +71,60 @@ class ReaderProductTests(unittest.TestCase):
             self.assertEqual(catalog["calendar"], calendar)
             self.assertEqual(thin["masses"][0]["payload"],
                              f"structure/propers/mass/{calendar}/{mass['key']}.json")
+
+    def test_body_only_edits_change_source_identity_and_reader_generation(self):
+        _, structure, _ = self.fixture()
+        owner = reader._tool("mass-propers")
+        original = owner.reader_structure(structure)
+        self.assertEqual(original["source_sha256"], hashlib.sha256(
+            owner._serialise_structure(structure).encode("utf-8")).hexdigest())
+        for grouped in (False, True):
+            with self.subTest(grouped=grouped):
+                changed = deepcopy(structure)
+                mass = changed["masses"][0]
+                target = mass["forms"][0]["propers"][0] if grouped else mass["propers"][0]["latin"]
+                target["text"] = "Changed wording — æ"
+                updated = owner.reader_structure(changed)
+                self.assertNotEqual(original["source_sha256"], updated["source_sha256"])
+                self.assertNotEqual(hashlib.sha256(reader._json(original)).hexdigest(),
+                                    hashlib.sha256(reader._json(updated)).hexdigest())
+                self.assertEqual({key: value for key, value in original.items() if key != "source_sha256"},
+                                 {key: value for key, value in updated.items() if key != "source_sha256"})
+                self.assertNotIn("Changed wording", reader._json(updated).decode("utf-8"))
+                self.assertEqual(reader._skeleton(changed), updated)
+
+    @unittest.skipUnless(shutil.which("node"), "the shared reader needs Node")
+    def test_existing_javascript_hydrator_rejects_body_only_mixed_generations(self):
+        _, structure, _ = self.fixture()
+        owner = reader._tool("mass-propers")
+        changed = deepcopy(structure)
+        changed["masses"][0]["propers"][0]["latin"]["text"] = "Changed body, same metadata"
+        fixtures = []
+        for source in (structure, changed):
+            thin = owner.reader_structure(source)
+            generation = hashlib.sha256(reader._json(thin)).hexdigest()
+            _, masses = owner.read_payloads(source, generation)
+            fixtures.append({"index": dict(thin, generation=generation),
+                             "envelope": masses["advent-1"]})
+        result = subprocess.run([shutil.which("node"), "-e", r"""
+const assert = require('node:assert/strict');
+const Payload = require('./src/web/browser/liturgy/reader-proper-payload.js');
+const [before, after] = JSON.parse(require('node:fs').readFileSync(0, 'utf8'));
+const mixed = structuredClone(before.index);
+assert.throws(() => Payload.hydrateSync({structure: mixed, roots: 'advent-1',
+  load: () => after.envelope}), /Mass envelope disagrees/);
+assert.deepEqual(mixed, before.index, 'a refused body leaves discovery unchanged');
+for (const fixture of [before, after]) {
+  const hydrated = Payload.hydrateSync({structure: structuredClone(fixture.index),
+    roots: 'advent-1', load: () => fixture.envelope});
+  assert.deepEqual(hydrated.masses[0], fixture.envelope.mass);
+}
+(async () => {
+  await assert.rejects(Payload.hydrate({structure: structuredClone(before.index),
+    roots: 'advent-1', load: async () => after.envelope}), /Mass envelope disagrees/);
+})().catch(error => { console.error(error); process.exitCode = 1; });
+"""], input=json.dumps(fixtures), cwd=ROOT, text=True, capture_output=True, timeout=30)
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
 
     def test_mass_calls_only_selected_shared_projection_with_global_witness_order(self):
         mass, structure, index = self.fixture()

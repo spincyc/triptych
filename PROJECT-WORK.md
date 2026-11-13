@@ -29,6 +29,33 @@ These measurements establish the problem, not performance guarantees.
 Implementation lanes cover the source locator/dependency index, selected-record
 projection through existing domain owners, shared web/terminal lazy loaders,
 bounded Sources discovery, and operation-scoped publication preparation.
+Runtime and metadata checkpoints are committed on `feature/tui-perf`. The
+integrated reader run passes 173 tests with one expected skip, plus 18 actual
+reading/layout checks. Day settles in 6.67 seconds cold and 2.59 seconds warm;
+Genesis 1 Catena in 3.97/2.42 seconds. A selected publication body opens in
+4.78 seconds. Filtered-clone checks retain complete branch history and open
+both Day and an actual publication without fetching historical blobs or
+preparing browser-product families. The measurements and their limits are in
+[Reader setup and performance](docs/reader-performance.md).
+
+All thirteen complete producer input audits pass, with no reads from the thin
+index. Two independent cold builds agree over 29,123 generated files. Comparing
+with the starting descriptor found no reading-prose changes: the additional
+History differences are generator provenance, and the Publications differences
+are derived revision dates. The Sources and liturgy differences are the
+intended discovery and transport changes. The publication gate now proves all
+three calendars' exact index, generation and payload joins before accepting
+aggregate coverage from thin metadata. It retains independent full-source,
+rights and quarantine checks. A full-calendar content hash also ensures that
+body-only changes invalidate the reader generation. The actual admission scan
+passes all 1,599 Mass payloads and Sources v3; independent mutation tests pass.
+Final metadata/product regeneration and complete source/site gates remain.
+
+Three inherited test assertions were reproduced against the starting code:
+two expect an already-translated Collect to remain absent, and one expects an
+older chronology wording. Their exact cases are recorded in the performance
+guide; authored corpus text is unchanged by this work.
+
 Acceptance requires measured cold and warm readers, content/rights parity and
 stale-input refusal tests, index size and update-churn checks, partial-clone
 compatibility, and integrated source/build checks. No deployment or history

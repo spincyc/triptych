@@ -812,11 +812,18 @@ Selected reading has a separate contract. A
 `triptych-propers-read-mass/v1` supplies one complete public Mass. Their
 calendar, Mass key and generation identity must agree before rendering; forms,
 choices, qualifications and rights-filtered wording remain owned by the
-ordinary producer. The static product currently advertises this path for the
-1962 Missal. Indexed terminal reading uses the same logical paths to derive a
-selected Mass for each offered calendar, with a prose-free discovery skeleton
-under `src/index/propers/`. Neither path pre-renders combinations of a Mass,
-language, witness and reader mode.
+ordinary producer. The static manifest advertises a thin `reader_file` and
+selected Mass payloads for all three offered calendars. Publication checks
+prove that the thin metadata is the exact projection of the complete public
+calendar and that each selected payload contains its complete source Mass,
+with the same generation and qualifications. The thin index's `source_sha256`
+binds the exact complete calendar bytes before its generation is computed, so
+a body-only edit changes the generation and mixed deployment payloads fail.
+Full calendar products retain
+their independent coverage and rights checks. Indexed terminal reading uses
+the same logical paths to derive a selected Mass, with a prose-free discovery
+skeleton under `src/index/propers/`. Neither path pre-renders combinations of a
+Mass, language, witness and reader mode.
 
 ## The calendar layer
 

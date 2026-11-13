@@ -198,6 +198,11 @@ remained absent. No browser-data family was prepared. The original working
 checkout measured 7.11/2.58 seconds for the same cold/warm Day snapshots while
 other validation work was running.
 
+A separate fresh filtered-clone check opened the actual Origen publication
+body in 5.00 seconds, including its revision timestamp. The converter's
+publication-specific Git history queries completed with lazy fetching disabled;
+the object store and complete missing-object list stayed unchanged.
+
 The final Genesis 1 Catena snapshot settled in 3.97 seconds cold and 2.42 seconds
 warm, including all 50 chapter-count indicators. It fetched one selected
 chapter and one count record. An actual Origen publication reader, opened from
@@ -210,3 +215,18 @@ ships in Git, so a first-time reader does not repeat it. The measured metadata
 occupied about 54.6 MB as files and 16.4 MB as compressed Git blobs, including
 the generic integrity/address layer and all five discovery surfaces. This
 adds lookup metadata without duplicating reading bodies or rewriting history.
+
+Validation includes 174 reader tests (173 passed and one expected dependency
+refusal skip), 18 real reading/layout checks, all 13 producer input audits,
+and independent rejection tests for stale inputs, poisoned refusals, mismatched
+generations, coverage tampering and rights/quarantine violations. Full output
+comparison found no reading-prose changes beyond the intended transport split;
+other differences were derived revision dates and generator provenance.
+
+Three existing corpus expectations failed both here and against the starting
+code at `92032f5178`: the whole-body-hold assertion and renderer `missing` flag
+in `test_oration_execution_source.py`, and
+`test_complete_shared_chronology_table_preserves_starred_rows_through_pandoc`
+in `test_web_edition_conversion.py`. The former expect a Collect that is already
+translated to remain absent; the latter expects older chronology wording.
+These are recorded baseline failures, not silently counted as passing tests.

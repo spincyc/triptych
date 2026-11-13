@@ -5,7 +5,7 @@ import hashlib
 import importlib.machinery
 import importlib.util
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import sys
@@ -86,11 +86,11 @@ class FiniteNameExecution(unittest.TestCase):
         # Execute the production transport function alone: no owner CLI or
         # release build, and no mocks of its exact source/catalog comparison.
         module=ast.parse((ROOT/'tools/public-alpha').read_bytes())
-        function=next(n for n in module.body if isinstance(n,ast.FunctionDef) and n.name=='validate_propers_read_payload_sources')
+        functions=[n for n in module.body if isinstance(n,ast.FunctionDef) and n.name in {'validate_propers_read_payload_sources','_validate_proper_read_calendar'}]
         class ReleaseError(Exception): pass
-        namespace={'Path':Path,'json':json,'hashlib':hashlib,'re':re,'ReleaseError':ReleaseError}
-        exec(compile(ast.Module(body=[function],type_ignores=[]),'<actual public transport>','exec'),namespace)
-        validate=namespace[function.name]
+        namespace={'Path':Path,'PurePosixPath':PurePosixPath,'json':json,'hashlib':hashlib,'re':re,'ReleaseError':ReleaseError}
+        exec(compile(ast.Module(body=functions,type_ignores=[]),'<actual public transport>','exec'),namespace)
+        validate=namespace['validate_propers_read_payload_sources']
         scratch=ROOT/'.scratch';scratch.mkdir(exist_ok=True)
         with tempfile.TemporaryDirectory(prefix='finite-name-transport-',dir=scratch) as temporary:
             data=Path(temporary);proper=data/'structure/propers'
