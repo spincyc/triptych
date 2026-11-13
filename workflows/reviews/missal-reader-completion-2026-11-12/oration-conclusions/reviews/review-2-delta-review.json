@@ -1,0 +1,882 @@
+{
+  "schema": "triptych-oration-ending-independent-family-review/v1",
+  "reviewed_on": "2026-11-12",
+  "scope": "Exactly review-delta-1.json, 53 already held Latin/English source pairs. This approves only the proposed source-cue/family mapping; it does not alter literal source text, supply source approval, authorize another witness, or approve runtime activation.",
+  "candidate_batch_sha256": "e8306353fd79f43b5d7b97508d2d2483c4ab8137168d3c1f506686d5cfb6f3e3",
+  "candidate_union_path": ".scratch/oration-endings/candidates-v3.json",
+  "candidate_union_sha256": "3f1ba134bf5f75e83bf904b4f74567466617ae206b605d8fdea2ddc2ca6a7f06",
+  "source_images_read": [
+    {
+      "path": ".scratch/oration-endings/1962-ap17.png",
+      "sha256": "b023aad66759557a7fe910dbbaf8296b69b001ddc6683bcaf08792dc190ec482",
+      "locus": "1962 CMAA PDF17, printedXIX; RG115-116"
+    },
+    {
+      "path": ".scratch/oration-endings/lasance-ap818.png",
+      "sha256": "d24ed45817669dfb48a66af51d16dc5e8fc97936ad1f146db6d7b8f330783f0d",
+      "locus": "Lasance1945 PDF818, printed819; all five Latin/English conclusions and separately marked Amen"
+    }
+  ],
+  "input_sha256": {
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+    "src/sources/calendars/roman-1962/propers.yaml": "7ed9b6adeb8b259c81140f02ba31e899a8c8328f4e2a8d57af34380548ffc97c",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "9dffc512b5ba43699f9d72dc3624e1cfe148ff262ff9ddd1acd41bc2e6f3a1fc",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "59deb71b22cb457873a56a91b6044f295934c59acb044eb7d701d38547b09ff9"
+  },
+  "reviewed_row_numbers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53
+  ],
+  "accepted_count": 53,
+  "rejected_count": 0,
+  "family_counts": {
+    "through-our-lord": 44,
+    "through-the-same": 9
+  },
+  "runtime_preconditions_not_tested_here": [
+    "Exact roman-1962 edition, source-owner target, language and explicitly selected witness must match; no cross-recension or cross-witness inheritance.",
+    "Current literal body, binding, complete Latin proof, formula table and reviewed per-row identity must all match their pins.",
+    "A full conclusion is executed only for the actually final prayer in its applicable conclusion group; a nonfinal shared prayer retains source quotation separately and receives no duplicated conclusion or Amen.",
+    "The source-proved seat and RGMR442-443 multiple-lesson placement remain controlling for Ember Days; main form and name Collect alone do not establish placement.",
+    "The final group member supplies its own family; no reuse of the principal prayer family for a later commemoration.",
+    "The table has a separately marked response Amen; do not silently make it priest formula text.",
+    "Preserve quotation separately from source-derived execution and retain source credit; this is neither official English nor a claim that the target prints expanded wording."
+  ],
+  "specific_review_observations": [
+    {
+      "target": [
+        "commune-dedicationis-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "finding": "The spiritual growth of the Church and English of the spirit are not an explicit invocation or mention of the Holy Spirit. The attested through-our-Lord family remains."
+    },
+    {
+      "target": [
+        "s-ioannis-capistrano-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "finding": "Spirituali poculo describes the spiritual cup; it is not Spiritus Sancti. No same-Spirit suffix is inferred."
+    },
+    {
+      "target": [
+        "ss-septem-fundatorum-ordinis-servorum-beatae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "finding": "Both source cues explicitly appoint through-the-same despite the Son reference within the last clause about His Mother. Preserve the attested family, rather than choosing who-with-thee solely from a last-word heuristic."
+    },
+    {
+      "target": [
+        "comm-beatae-mariae-virginis-monte-carmelo",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "finding": "The prayer invokes the Mother of God and both source cues specify through-the-same. The named family is followed; no anonymous default is invented."
+    }
+  ],
+  "rows": [
+    {
+      "target": [
+        "advent-2",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "ed80aae58fde181dd10fcc5ebc43312a860825c209dcc7b64ec73527ef1a2ca4",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "sexagesima",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "ab72e1b7b8c4fa8b259984feab77b65e1e6313e23e9b8f8d00173dfd37ce4550",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "ss-quadraginta-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "eb83c7e8d13a392efa3ff63c3c48d597898a70ae01391b2ff9979c1d54478d10",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-ss-marii-marthae-audifacis-abachum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "474563b41c17c7a7db9baf577f50b4055d5668b3ddeb23e3a3ada609ed230662",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "pentecost-7",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "7fe25f681e64e44f514596f3c71848f6807b387e027ba9fa563ec083b24cf87b",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "rogation-mass",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "41b6da6e1fdbc89460d6df8a8ac8f89440e097b510c11db583c1347a17bcdf2e",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "commune-dedicationis-ecclesiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "84b4178f2ea69b8affedf7ef1862eebddebe2a9ed9ffdb6077422ada43a9ef9c",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "easter-5",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "a94847ca4c9d802fcfd9516022a6aa550e0b61ac4272e2b0aa121540d555e567",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "last-sunday-after-pentecost",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "231a9773f1be9df4c43c4d50f6a9d44dae4ed8186c96e99edbc249bf407aed68",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "mass-of-the-first-sunday-after-epiphany",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "e7c2117d3d22c19e105207188b5e30131d25bfe50498a7bea8b3ad67e8b9b79f",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "pentecost-12",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "18b6cf532a764b0f81c34a9481726dc94663d0d9253611698fb756b20c91e9df",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-cyrilli-episcopi-hierosolymitani-confessoris-ecclesiae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "1d5beca946a39578a8c9a7fbd930355b3a8a9b530c9e9e91dfbf894ae3a4cff7",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-iustini-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "e8cb4444e6bdb4395b107d3af2a0bb885a3a53ed53e47b26af50d20ee52a193c",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-patricii-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "549037df6f68c0c025edcfcd6ec4c78f23794720b3729d6f7d90e9e9746f85bd",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "september-ember-wednesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "61351e8f07247be5842d03e2522d4633f1c84d9e164d2a0a0ac2d11afac50ae9",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "visitatione-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "1f2ec0a17ed05377ba7012abc582a6ac88fd65591239379426d37323b1486dd5",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "lent-3-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "c0484e2c04078653606d13e892f5231d61c16f38ec28ddddea60179d9f4f0e4b",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "lent-4",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "565e810b7d4071d0e7cb267adea9f30f867a917e7d171bf5c2f6171a43505fb1",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-augustini-episcopi-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "b821ec3e1db95358e5b8f28416e4c537d7cd9872124070e79f5743e89f6de6d4",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-hieronymi-aemiliani-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "053910e603fc61d6143480791a52967cebd21253470aa38d3ad7c4723f840a89",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "ss-septem-fratrum-martyrum-ac-ss",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "16bedbe58557427667a22a6d78b1a775d84fae8e7b6ce3a47a28e46cc0b246bf",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-s-nicomedis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "a437f2f8fb24162551ea469211b5a3d9b422e537be47561befe19805194f8868",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-ss-marcellini-petri-atque-erasmi",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "36d6364d8531be6da30c5e2a94420bdffb669db32465f213526b29284cec7a36",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-ss-viti-modesti-atque-crescentiae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "6d3a1d77b21aca0ec52bfacbf8c275d0750d545bf99ae662dea804f93f0abffc",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "easter-thursday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "5a9269b26763999119a86ae0ed41a501cd9bd67a04cf8ddb7d2447b8684d85ed",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "omnium-sanctorum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "4f8506b32fad7eeec44758f393ecd06c954d3136534629c187e6c06e59a828b4",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "passion-saturday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "9be2493b23c71b3c8946004e8a373ddad9b5dd15b9d6de3fc448c41233bc4f28",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "passion-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "cf9bcd3928c6b6c4cddf626a2b7503732d446847adb9851a8edcfd1525dd2fc9",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-aloisii-gonzagae-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "ef0695e6e63e4c31c29e7eaa3234e7b7aa0fe6ade75a5d36c9ca971c149ae37c",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-ioannis-a-cruce-confessoris-ecclesiae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "b7a2303ec5369475f33b84d189054a71cd1d95ca34c6735162526e9fb446e3d2",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-nicolai-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "a16b4f9532067caa7a841e462255f940641f580659083e04ba1e72738adc7d0a",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-thomae-aquino-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "fa5865807b19ef87d11bb7828d960724e055288de040c5eff6e7612f4ea8f53c",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "ss-angelorum-custodum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "90d71164bb1b39c7fcb99407f3ba679040ea93ad53ddfe8ee0208ffb7ae139be",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-ss-chrysanthi-dariae-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "57b37a9da909bca2a079bc5844af26680572e976665dd3618a07cac4ec785425",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-ss-felicis-simplicii-faustini-beatricis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "04740c5807dad3492818eeec8076d016ca361662f138130b4aa481b2782c4e24",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-ss-hippolyti-cassiani-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "ab312a78f0c2214db11cb53ec3d161fd15d79f22b267229dabeb6e8fdd0418e2",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "fourth-day-within-octave-ss-innocentium",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "359109275414cdb4dc6cb1a03f86169f741cb83f377ae3f05e93bb6ce4f937ce",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "lent-2-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "eae6415a4f1f7dd21222bc6a962b10dd5f54718facb9cfc9da24e74d3c4f6a54",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-laurentii-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "9e3290a4b9272714a7ad2080c59a042acfaefd617db2656cb1fdf3ac42a20334",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "second-day-within-octave-s-stephani",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "84615e77444799ae5e6937b729a1b8b6e9ebe0a035ca1c324e9093535b1aea84",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "vigil-saint-lawrence",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "5ab64135a13edd764ef6b1fc6c908fc76bf1da4a4ab93175a8e554b68d486447",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "d0aa37f43049b7ffd1df57ef4764dfc5eee82674b9370aa97effa6f84aefd18b",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-annae-matris-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "171e02876aa7da76372eb152d26ca034eefbdca46c5f9755aa662ec3c17e74f5",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-ioannis-capistrano-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "e0092357d52e1ec5ac39d854426416e1f8bf28a0eb99b21520578659ffe3a137",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-beatae-mariae-virginis-monte-carmelo",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "e9a4e83fa24a1a5b24c5911c157a62465be6f681292de133ca6b88af4669f6a2",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "maternitatis-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "c77af75e813eee5d376931cd5385b06aed47f1f8e477d8754077240c54925c70",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "purificatione-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "aef3dcd14b7c852d68b7308f02cb633b93d47138a39c0de6500ace10bff728c4",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-pauli-primi-eremitae-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "cfeb7f4b7d41378c86fc6756ff4dc9ef1e36668459e68aed13fa51a33f9fb720",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "sacred-heart",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "428fd35c9490dd4b9ecff403a1120bcf0886f3047553937fba150df36e390303",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "ss-septem-fundatorum-ordinis-servorum-beatae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "9adbea9ab5f6e19ac9c139ae877d8b8d3a56af7fed836bec3d5cdeb8ed8ce2f9",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "s-catharinae-senensis-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "08e5716d832ee1fce3f85864fdced6b4737bb621fe318a419ce8ca7ab46468ec",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "octava-nativitatis-domini",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "28b86fc9aa39c10b66ed4b30159793b13b3560ae65d88ddc97fcf287f01053e3",
+      "family": "through-the-same",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    },
+    {
+      "target": [
+        "comm-ss-gordiani-epimachi-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_row_sha256": "d2d25addcc11deac5b0c7dd2e09ebca27857307ca03300cec02a048f5695e532",
+      "family": "through-our-lord",
+      "result": "accepted-family-and-literal-source-mapping",
+      "current_source_binding_proof_formula_checks": "pass",
+      "semantic_review": "Both actual petitions read; address/person and explicit source cue agree with the named formula. No added name, inline choice, explicit Holy Spirit reference, or contrary particular ending is introduced."
+    }
+  ]
+}

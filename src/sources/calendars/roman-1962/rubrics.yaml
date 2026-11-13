@@ -31,17 +31,33 @@ latin_text_status:
 # of the code that publication does not carry, and where this file departs from
 # it, it says so in `divergences` below and does not silently choose.
 #
-# The two rows of `appointed_across` are the exception, and they are named here
+# The two rows of `appointed_across` are exceptions, and they are named here
 # rather than left for a reader to notice. They are not rules of the code at
 # all: the daily appointment of a Sequence is printed in the Proprium de tempore
 # under the Sequence itself, which that publication does not cover and its
 # rubric index does not carry. Both were read for this file on 2026-08-01, at
 # page images of the same controlling facsimile, and each row records its own
 # page, its resolution and the digest the bytes were matched against. The
-# `derived_from` block below is unchanged because it states where the CODE came
-# from and that is still true of every rule it introduces.
+# code publication named below remains the source of the other code rules.
+# Greater Litanies and the final Sunday were independently reread on page
+# images on 2026-11-12; their bounded source passages are recorded below.
+# The annual Dedication Secret rule is a further non-code appointment: its
+# conditions stand in the Common and its referrals in the two November feasts.
+# It was read directly on 2026-11-12; the bounded inspection below records the
+# source-only evidence separately from the public rule and the supplied fact.
 # ---------------------------------------------------------------------------
 derived_from:
+  annual_calendar:
+    artifact_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+    artifact_sha256: 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+    inspected_on: '2026-11-12'
+    method: direct-page-images
+    resolution_dpi: 200
+    passages:
+    - passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-final-sunday
+    - passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-greater-litanies
+    - passage.catholic-church.missale-romanum.vatican-typica-1962.saint-mark-rogation-commemoration
+    - passage.catholic-church.missale-romanum.vatican-typica-1962.seven-sorrows-festive-mass-scope
   publication: liturgy/roman-rite/1962/reference/assembling-the-mass
   rubric_index: src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/rubric-index.md
   sections:
@@ -50,6 +66,22 @@ derived_from:
   - src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/30-impediment.tex
   - src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/sections/50-assembly-map.tex
   worked_cases: src/claude/liturgy/roman-rite/1962/reference/assembling-the-mass/research/worked-cases.md
+  dedication_anniversary_context:
+    artifact_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+    artifact_sha256: 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+    inspected_on: '2026-11-12'
+    method: direct-page-images
+    resolution_dpi: 400
+    pages:
+    - {artifact_page: 794, printed_page: '713', what: Lateran annual feast referral}
+    - {artifact_page: 802, printed_page: '721', what: Peter and Paul basilicas annual feast referral}
+    - {artifact_page: 847, printed_page: '[39]', what: anniversary and actual dedication Collects}
+    - {artifact_page: 848, printed_page: '[40]', what: two anniversary Secret conditions and anniversary Postcommunion}
+    - {artifact_page: 849, printed_page: '[41]', what: distinct actual-consecration Mass rubric}
+    boundary: >-
+      Appointment evidence only. No new prayer body or rubric wording is
+      published; the already held prayers retain their separate publication
+      authority. The source does not attest any actual celebration location.
   witnesses:
   - id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
     role: direct-witness
@@ -436,6 +468,16 @@ bases:
   why: a further Mass the Missal appoints on a day whose identity is settled elsewhere.
     It is not a competitor for the day
   locus: the Missal prints both formularies at this day
+- id: mass-privileged-commemoration
+  label: 'a privileged commemoration in the Mass'
+  row: null
+  nature: commemoration
+  commemoration: privileged
+  commemoration_locus: 'RG 81; RG 108-109 f'
+  competes: false
+  de_tempore: false
+  why: 'The Greater Litanies are commemorated in the Mass, with no Office and no commemoration de Tempore; their privileged commemoration is distinct from the feast of St Mark.'
+  locus: 'RG 80-81; RG 108-109 f'
 - id: alternative-formulary
   label: a formulary the Missal prints for a slot another day occupies
   row: null
@@ -797,13 +839,19 @@ mass_choices:
     has, and it is filed the same way. The Commemoration of the Seven Sorrows is
     a commemoration and not a feast - the Missal prints no class over it, only
     the word Commemoratio, and the calendar reference inscribes it comm. - so it
-    never takes the day, and every year the Friday of Passion Week is said with
-    the Seven Sorrows commemorated in it. This rubric adds that where the
+    never takes the day. When the Friday feria wins occurrence, its Mass is
+    said with the Seven Sorrows commemorated under the general rubrics.
+    The proper rubric adds that where the
     devotions of the day are actually held, two festive Masses of the Seven
     Sorrows are permitted. That is a permission about the Mass, not a claim about
-    the day, which is why it lives here and not in a precedence rule.
+    the day, which is why it lives here and not in a precedence rule. The
+    existing pair includes the feria's Mass, so it applies only while that
+    feria wins. This boundary was independently checked against RGMR 270,
+    301-306 and the proper rubric on 2026-11-12; see
+    passage.catholic-church.missale-romanum.vatican-typica-1962.seven-sorrows-festive-mass-scope.
   when:
     with_candidate: comm-septem-dolorum-beatae-mariae-virginis
+    winner_basis: row-22-lenten-feria
   default: null
   open_because: >-
     The rubric conditions the permission on ubi ... peraguntur - where the
@@ -811,11 +859,13 @@ mass_choices:
     fact held - and that is a local fact this repository does not decide and
     cannot compute, exactly as it decides no particular calendar. So the page
     names both and prefers neither, and the reason is the condition itself and
-    not a silence in the book. The rubric also does not say which two of the
-    Masses of the Seven Sorrows the permitted pair are, and this file does not
-    supply them. `when` gates only on the day - the Seven Sorrows standing as a
-    candidate is what the Friday after Passion Sunday is - and states nothing
-    about the devotions.
+    not a silence in the book. The permission concerns two celebrations of
+    the Seven Sorrows formulary. Its applicability when a higher-ranked feast
+    wins has not been established by this bounded review; omitting this
+    particular feria-versus-Seven-Sorrows pair in that case is an evidence
+    boundary, not a universal prohibition. The higher-ranked Office Mass
+    remains the ordinary dated assignment. The winner gate states nothing
+    about the local devotions or the use of either permitted celebration.
   among:
   - id: missa-feriae
     label: The Mass of the Friday of Passion Week
@@ -824,7 +874,7 @@ mass_choices:
     locus: RG 91 row 22; RGMR 270
     why: >-
       The Mass of the day, which the Friday of Passion Week holds as a
-      third-class feria of Passiontide at row 22, with the Seven Sorrows
+      third-class feria of Passiontide at row 22 when it wins occurrence, with the Seven Sorrows
       commemorated in it. This is what is said if the devotions are not held.
       It is named as a mass and not as `takes: office_mass`, because that value
       means the Saturday Office of Our Lady's own Mass and nothing else - the
@@ -923,6 +973,13 @@ impediment:
 # reduced, and the part the second and third collect come from.
 # ---------------------------------------------------------------------------
 commemoration:
+  date_observances:
+  - id: greater-litanies
+    on_anchor: greater_litanies
+    mass: rogation-mass
+    basis: mass-privileged-commemoration
+    label: 'Greater Litanies'
+    locus: 'RG 80-81; RG 108-109 f; Proprium Sanctorum, 25 April, printed pp. 510-511, nn. 2442, 2448, 2451'
   kinds:
     locus: RG 107-108
     gloss: >-
@@ -1082,6 +1139,41 @@ orations:
       fourth-class days, placed last. It is a choice, not a rule, so this page never
       adds one.
 
+# The annual Dedication Secret requires a supplied fact about this celebration.
+# It is kept outside mass_choices because the source offers no free preference.
+dedication_anniversary_context:
+  id: dedication-anniversary-location
+  scope: annual-feast
+  fact: celebration-location-relative-to-dedicated-church
+  keys:
+  - dedicatione-archibasilicae-mi-salvatoris
+  - dedicatione-basilicarum-ss-petri-pauli-apostolorum
+  form_id: main
+  target: {mass: commune-dedicationis-ecclesiae, group: contextual-secret}
+  required_selection: {group: occasion-orations, option: anniversary}
+  unknown: unresolved
+  conditions:
+    in-dedicated-church:
+      option: anniversary-in-church
+      proper: Secret (In ecclesia ipsa dedicata)
+      label: In the church whose dedication is commemorated
+    outside-dedicated-church:
+      option: anniversary-outside-church
+      proper: Secret (Extra ecclesiam ipsam dedicatam)
+      label: Outside the church whose dedication is commemorated
+  locus: >-
+    Missale Romanum 1962, 9 November p. 713 and 18 November p. 721;
+    Commune Dedicationis ecclesiae pp. [39]-[41], nn. 4461, 4470-4471, 4474.
+  why: >-
+    Both annual feasts appoint the Dedication Common. The anniversary keeps
+    its Collect and Postcommunion; its Secret depends on whether Mass is
+    celebrated in the church whose dedication is commemorated or outside it.
+    These are conditional appointments, not freely interchangeable prayers.
+    An explicit location statement for this celebration supplies that fact.
+    The date, the feast title and being in some church do not supply it.
+    With no location statement the Secret remains unresolved. This rule does
+    not appoint the distinct prayers for the actual day of consecration.
+
 # ---------------------------------------------------------------------------
 # Texts appointed across a span of days.
 #
@@ -1226,30 +1318,6 @@ divergences:
   reported: true
 
 unsettled:
-- what: the twenty-three-Sunday shortfall after Pentecost
-  why: >-
-    A year with exactly twenty-three Sundays after Pentecost puts the numbered
-    Sunday and the last Sunday in one slot, and the day file emits both. RG 18's
-    closing paragraph legislates the twenty-five- through twenty-eight-Sunday
-    cases but does not expressly provide for this shortfall. The date-scoped
-    calendar refusal therefore prevents occurrence from choosing either entry;
-    a competent dated Ordo is required.
-- what: 'the Greater Litanies combined with the feast of St Mark on a higher-ranking day'
-  scope: 'occurrence'
-  when:
-    candidate_key: 'litania-maior'
-    with_precedence_place:
-      min: 1
-      max: 15
-  why: 'The calendar index inscribes the Greater Litanies at 25 April under one
-    key with the feast of St Mark. When that combined entry loses to a day in
-    rows 1 through 15, this file cannot tell the feast''s ordinary
-    commemoration from the Litanies'' privileged commemoration in the Mass
-    under RG 109 f. It therefore cannot settle the losing entry''s
-    commemoration or the resulting oration order.'
-  effect: 'On 25 April the model would otherwise derive an ordinary
-    commemoration that may instead be privileged, changing whether it survives
-    at a sung non-conventual Mass.'
 - what: 'whether the Rogation Mass is said in a given church'
   why: 'The Rogation Mass is placed 404 times over the 101 emitted years, at 25
     April and at Easter +36, +37 and +38, and is classified as a further Mass
@@ -1494,7 +1562,7 @@ worked_cases:
     day is the feria and not the commemoration - the Missal prints no class over
     the Seven Sorrows, only the word Commemoratio, so it occupies no row of RG 91
     and can never take the day - while the Seven Sorrows is nonetheless
-    commemorated in the feria's Mass, which is what happens every year everywhere.
+    commemorated in the feria's Mass on this date, when the feria wins occurrence.
     Filed `additional-mass` instead it would carry `commemoration: none` and be
     dropped from the commemorations altogether, which would invert the book.
     The `mass_choices` assertion is the other half and is the reason this case
@@ -1513,6 +1581,20 @@ worked_cases:
     settled: true
     mass_choices:
       seven-sorrows-where-devotions-are-held: [missa-feriae, missae-festivae-de-septem-doloribus]
+- id: saint-joseph-displaces-the-passion-friday-feria
+  source: RG 91 rows 11 and 22; RGMR 270; passage.catholic-church.missale-romanum.vatican-typica-1962.seven-sorrows-festive-mass-scope
+  date: '2027-03-19'
+  why: >-
+    St Joseph is the first-class Office winner on this Passion Friday. The
+    existing feria-versus-Seven-Sorrows choice must not replace that certain
+    Mass with a pair whose first arm is the displaced feria. Application of
+    the special local festive permission to this collision is not established
+    here; this fixture does not declare that permission universally forbidden.
+  expect:
+    winner: s-ioseph-sponsi-beatae-mariae-virginis
+    winner_row: 11
+    settled: true
+    mass_choices: {}
 # --- The Triduum of 2026, end to end -------------------------------------
 # Five consecutive days, asserted on `readable` as well as on the winner,
 # because the winner alone would pass a page that offered a displaced Mass as

@@ -99,6 +99,7 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
   # The turn-divided derivatives are read only by the elements whose Latin
   # fragments address the checked source rows: sursum-corda, pax-domini and
@@ -126,6 +127,7 @@ artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+  "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en",
@@ -306,7 +308,7 @@ what = "Three elements combine parts with different availability and cannot hone
 key = "priest-prayer-said-quietly"
 label = "No exact exemplar of this quiet prayer is held here"
 kind = "no-exemplar"
-what = "A prayer the Priest says quietly, for which this project holds no exact exemplar, and nobody has refused anything. Six elements are empty for this reason: the mingling of water and wine at n. 24, In spiritu humilitatis at n. 26, the washing of hands at n. 28, the commingling formula at n. 129, the Priest's two prayers of private preparation at n. 131, and the purification at n. 137. The gap follows the bounds of the available official excerpts, which do not supply these inaudible prayers. What would close it is an authoritative complete Order of Mass exemplar whose exact target state and per-surface distribution basis are recorded. Until one is registered these elements stay empty, and the reason is a page nobody here has read rather than a permission nobody has given."
+what = "This absence applies to quiet-prayer bodies whose exact approved-English exemplar is not held here: the mingling of water and wine at n.24, washing of hands at n.28, commingling at n.129, and the second private-preparation alternative at n.131. An independently held historical witness may supply a separately qualified study body without supplying or clearing approved2011 English. In spiritu humilitatis, purification and the first private-preparation petition now have such historical English joins; their exact source extents and remaining controlling2008 limits are stated on the respective elements. No source-body coverage claim establishes complete target fidelity or liturgical approval."
 
 # Six Latin reasons stand where one stood, because a single blanket key had
 # described rights refusals where many elements instead have witness or model gaps.
@@ -1922,14 +1924,54 @@ note = "ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing co
 
 [[sections.elements]]
 key = "praeparatio-sacerdotis"
+kind = "rubric"
+name = "The priest's private preparation"
+missal_number = "n. 131"
+absent_english = "not-a-text"
+absent_latin = "not-a-text"
+note = "Structural action and preserved semantic anchor. The two distinct alternatives follow separately; one is selected. The first historical-source petition is held, while the changed second alternative remains unavailable."
+
+[[sections.elements]]
+key = "domine-fili-dei-vivi"
 kind = "prayer"
 speaker = "priest"
-name = "The priest's private preparation"
+name = "Private preparation — Domine Iesu Christe"
 latin_incipit = "Domine Iesu Christe, Fili Dei vivi"
-missal_number = "n. 131"
+missal_number = "n. 131, first alternative"
+alternatives = [{ group = "private-preparation", option = "preparation-domine" }]
+note = "The complete historical petition is selected without its separate older conclusion. Its source colon is retained; no modern ending or Amen is invented. This is a historical study excerpt, not approved liturgical English or an authenticated complete2008 witness."
+
+[sections.elements.latin]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112"
+elements = ["domine-fili-dei-vivi-petition"]
+column = "latin"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Exact historical source petition (Cummiskey, 1861), ending at its printed colon. The separate old conclusion is excluded and retained in source apparatus. Not approved Missal English or a complete2008 collation."
+note = "The complete source-contiguous petition on printed p. xli, original PDF p.52, IA n51, is carried verbatim through its colon. The parent source and separate derivative conclusion remain unchanged and retained. Fresh secondary2002 n.131 inspection on artifact pp.367-368 establishes that this first alternative ends with the petition, omitting the older relative conclusion and Amen. Lexical comparison allows only source spelling and pointing differences. This does not authenticate complete2008 wording or approved2011 English; the source relation remains uncollated to that controlling edition."
+
+[sections.elements.english]
+witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112"
+elements = ["domine-fili-dei-vivi-petition"]
+column = "english"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Exact historical source petition (Cummiskey, 1861), ending at its printed colon. The separate old conclusion is excluded and retained in source apparatus. Not approved Missal English or a complete2008 collation."
+note = "The complete source-contiguous petition on printed p. xli, original PDF p.52, IA n51, is carried verbatim through its colon. The parent source and separate derivative conclusion remain unchanged and retained. Fresh secondary2002 n.131 inspection on artifact pp.367-368 establishes that this first alternative ends with the petition, omitting the older relative conclusion and Amen. Lexical comparison allows only source spelling and pointing differences. This does not authenticate complete2008 wording or approved2011 English; the source relation remains uncollated to that controlling edition."
+
+[[sections.elements]]
+key = "perceptio-corporis-et-sanguinis"
+kind = "prayer"
+speaker = "priest"
+name = "Private preparation — Perceptio Corporis et Sanguinis"
+latin_incipit = "Perceptio Corporis et Sanguinis tui"
+missal_number = "n. 131, second alternative"
+alternatives = [{ group = "private-preparation", option = "preparation-perceptio" }]
 absent_english = "priest-prayer-said-quietly"
 absent_latin = "antecedent-diverges-at-named-words"
-note = "Two forms; the priest chooses one and says it inaudibly."
+note = "The second alternative remains unavailable. The historical witness omits et Sanguinis, includes quod ego indignus sumere praesumo, and carries a separate old conclusion. Those substantive differences are not repaired or silently transferred."
 
 [[sections.elements]]
 key = "ecce-agnus-dei"
@@ -2347,4 +2389,20 @@ default = false
 [[variants.options]]
 id = "greeting-bishop"
 name = "Bishop only — Pax vobis"
+default = false
+
+
+[[variants]]
+group = "private-preparation"
+name = "Priest's private preparation"
+what = "Secondary digital2002 Ordo Missae n.131, artifact pp.367-368, prints two quiet prayers separated by Vel. This is an explicit alternative, not two cumulative prayers. The first printed alternative is only the display default; complete authenticated2008 collation is not asserted."
+
+[[variants.options]]
+id = "preparation-domine"
+name = "Domine Iesu Christe, Fili Dei vivi"
+default = true
+
+[[variants.options]]
+id = "preparation-perceptio"
+name = "Perceptio Corporis et Sanguinis tui"
 default = false

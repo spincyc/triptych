@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the words printed on public-domain Mame 1922 page 355 are transcribed. The exact registered whole source records the United States publication-term basis. Faithful transcription adds no exclusive right in the words and is excluded from Triptych CC BY 4.0."
+rights_jurisdiction = "United States"
+provenance = "After rehashing the complete registered Mame PDF to 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005, read the full blessing and printed response directly from original PDF 469, printed 355, on actual 200 and 400 dpi page images. Compared all spoken words against the 1962 target at CMAA PDF 407, printed 326, n. 1138, at both resolutions. The word sequence agrees; surrounding source rubrics are not adopted as target rubrics."
+retrieved = "2026-11-12"
+sha256 = "b3453506c65a37cde248badba326982861ed0f1ff7e478938b9c3617ca4208f0"
+byte_size = 363
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join the two priest-text spans across the intervening printed action rubric, then place the separately marked Amen response in its own row. Join physical wraps and line-end hyphenation, omit stress accents, collapse spacing, represent the printed cross as ✠ and the barred response cue as R. Preserve source lexical words, capitals and punctuation. No rubric word is copied into the prayer and no actor is inferred from R. alone."
+notes = "Physical lines 2 and 3 are distinct source turns; only the priest has a source-supported actor. No English payload or existing source witness is changed."

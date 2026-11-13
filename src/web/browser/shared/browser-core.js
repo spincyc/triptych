@@ -2665,7 +2665,60 @@ window.Triptych = (function () {
     return {text: null, lang: 'en', shown: true, missing: false, source: null, executionScoped: true, nameExecutionScoped: true};
   }
 
+  function renderConclusionExecution(container, owner, held) {
+    const language = held.orations || SOURCE_LANGUAGE;
+    const execution = held.conclusionExecution && held.conclusionExecution.languages[language];
+    if (!execution || execution.state !== 'source-derived-complete') return null;
+    const original = orationFor(owner, language, held.translationWitness || null);
+    const member = execution.member;
+    if (!original.text || original.text !== member.source_text) {
+      throw new Error('conclusion execution no longer matches its exact quoted source');
+    }
+    const wrapper = el('div', 'conclusion-execution');
+    wrapper.lang = language;
+    wrapper.dataset.executionState = execution.state;
+    wrapper.dataset.conclusionGroup = String(execution.conclusion_group);
+    wrapper.dataset.conclusionRole = member.role;
+    let prefix = 0;
+    while (prefix < member.source_text.length && member.source_text[prefix] === member.priest_text[prefix]) prefix += 1;
+    const sourceStructure = usableStructure(member.source_text, original.structure);
+    const structure = sourceStructure && {
+      stanzas: sourceStructure.stanzas.filter(function (offset) { return offset < prefix; }),
+      actions: sourceStructure.actions.filter(function (action) { return action.end <= prefix; })
+    };
+    const body = composedBody(member.priest_text, structure,
+      composedLabel((member.role === 'petition' ? 'Prayer in the shared conclusion group' :
+        'Prayer with sourced conclusion') + ' · ' + languageName(language)));
+    body.dataset.speaker = 'priest';
+    wrapper.appendChild(body);
+    if (execution.response) {
+      const response = el('p', 'conclusion-response');
+      response.dataset.speaker = 'response';
+      response.appendChild(versicleMark('R'));
+      response.appendChild(document.createTextNode(' ' + execution.response.text));
+      wrapper.appendChild(response);
+    }
+    container.appendChild(wrapper);
+    const qualification = el('p', 'composed-note conclusion-execution-qualification',
+      'Source-derived execution for this dated Mass; the historical wording and ending cue are retained below.' +
+      (language === 'en' ? ' Historical English, not an approved liturgical translation.' : ''));
+    qualification.lang = 'en';
+    qualification.setAttribute('data-copy', 'skip');
+    container.appendChild(qualification);
+    const quotation = el('details', 'conclusion-source-quotation');
+    quotation.setAttribute('data-copy', 'skip');
+    quotation.appendChild(el('summary', 'composed-note', 'Historical source quotation and ending cue'));
+    const quoted = composedBody(member.source_text, original.structure, null);
+    quoted.lang = language;
+    quotation.appendChild(quoted);
+    quotation.appendChild(translationCredits(original));
+    container.appendChild(quotation);
+    return Object.assign({}, original, {shown: true, executionScoped: true});
+  }
+
   function renderSingleOrationState(container, owner, held, scope, parentSource) {
+    const conclusion = renderConclusionExecution(container, owner, held);
+    if (conclusion) return conclusion;
     if (held.nameExecution && held.orations === 'en') return renderNameExecution(container, held);
     if (held.executionSource && held.orations === 'en') return renderExecutionSource(container, held);
     const asked = held.orations || SOURCE_LANGUAGE;
@@ -2692,6 +2745,24 @@ window.Triptych = (function () {
         composed.setAttribute('data-unit-original', SOURCE_LANGUAGE);
       }
       container.appendChild(composed);
+      const latinProvenance = owner.latin && owner.latin.provenance;
+      if (shownLang === SOURCE_LANGUAGE && owner.latin && owner.latin.withheld === false &&
+          owner.latin.state !== 'unavailable' &&
+          owner.latin.publication && owner.latin.publication.status === 'permitted' &&
+          latinProvenance && latinProvenance.status === 'collated' &&
+          latinProvenance.relationship === 'exact-transcription') {
+        const qualification = owner.latin && owner.latin.note || owner.notes;
+        if (typeof qualification === 'string' && qualification.trim()) {
+          const note = el('p', 'composed-note latin-source-qualification', qualification);
+          note.lang = 'en';
+          container.appendChild(note);
+          if (latinProvenance.source_date || latinProvenance.source_id) {
+            container.appendChild(el('p', 'composed-note latin-source-credit',
+              'Latin source: ' + (latinProvenance.source_date || latinProvenance.source_id) +
+              (latinProvenance.verification_locator ? ' · ' + latinProvenance.verification_locator : '')));
+          }
+        }
+      }
       const context = shownLang === SOURCE_LANGUAGE && owner.latin && owner.latin.target_context;
       if (context && Object.keys(context).length === 3 &&
           context.scope === 'witness-state-only' && context.civil_date_authority === false &&
@@ -2862,7 +2933,8 @@ window.Triptych = (function () {
       originalSide.appendChild(note);
     }
     const provenance = owner.latin && owner.latin.provenance;
-    if (originalResult.shown && provenance && (provenance.source_date || provenance.source_id)) originalSide.appendChild(el('p', 'composed-note',
+    if (originalResult.shown && provenance && !originalSide.querySelector('.latin-source-credit') &&
+        (provenance.source_date || provenance.source_id)) originalSide.appendChild(el('p', 'composed-note',
       'Latin source: ' + (provenance.source_date || provenance.source_id) +
       (provenance.verification_locator ? ' · ' + provenance.verification_locator : '')));
     const selectedSide = textSide(asked, metadata(asked, selected));
@@ -3089,7 +3161,8 @@ window.Triptych = (function () {
         if (!proper) throw new Error('inseparable prayer has no exact production owner: ' + member.id);
         const level = Number(String(options.heading || 'h3').slice(1)) || 3;
         const rendered = renderProper(proper, bible, fragments, Object.assign({}, options, {
-          orationGroups: null, executionSource: member.executionSource || null, nameExecution: member.nameExecution || null, heading: 'h' + Math.min(6, level + 1)
+          orationGroups: null, executionSource: member.executionSource || null, nameExecution: member.nameExecution || null,
+          conclusionExecution: member.conclusionExecution || null, heading: 'h' + Math.min(6, level + 1)
         }));
         const title = rendered.querySelector('.proper-name');
         if (title && member.of_name) title.textContent = proper.name + ' — ' + member.of_name;

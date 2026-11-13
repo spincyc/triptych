@@ -1,0 +1,104 @@
+{
+  "schema": "triptych-independent-metadata-delta-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "/root/modern_sources/ordinary_review",
+  "verdict": "accept-four-locus-remediation-only",
+  "scope": "Exactly four source passage metadata edits. No expansion of original historical-source or target-edition acceptance.",
+  "original_review_path": ".scratch/modern-ordinary-review/review.json",
+  "original_review_sha256": "6c3a3c05df71c7c04ca3f5d32d003b3014331f0e3ca15ff9e7213a7b0d3101cf",
+  "delta_path": ".scratch/modern-sources/ordinary-remediation/metadata-delta.json",
+  "delta_sha256": "078476e362b9815453a1947ded8f630363688b61e24327abcd648cc31c73b676",
+  "owning_work_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/work.toml",
+  "owning_work_sha256": "80a589340fe7fbe6284fa8cb1eef65b0f98d4bb6baee2d2f17a00b7b1b0c6358",
+  "locus_pattern": "[a-z0-9-]+(/(collect|secret|postcommunion|introit|gradual|alleluia|tract|offertory|communion|procession-antiphon-[1-9][0-9]*))?",
+  "production_rule": "tools/source-library _validate_loci applies re.fullmatch on owning work locus_pattern, lines2433-2437",
+  "changes": [
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-en-20261112.toml",
+      "before_sha256": "1fb81915be1665acd72bfb3d26becb20e84196fa8a0afa8684bd575dcee91046",
+      "after_sha256": "a94018720d3b2f92f34bfae37e541aee255e937d0bf47dd4ffb4b8c121bc813d",
+      "locus": "ordo-missae-domine-jesu-christe-fili-dei-vivi-petition",
+      "other_fields_unchanged": true,
+      "original_locator_preserved_verbatim": true,
+      "owning_work_regex_passes": true,
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
+      "artifact_sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+      "physical_line_ranges": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-la-20261112.toml",
+      "before_sha256": "35dba406abb9064321a66d2d99aaaaf40d7c308b0683a8ce937146de98b5c7dc",
+      "after_sha256": "59f7b32006a5cd8299598407febe1bd882d093ebf483996528a0c556cae26245",
+      "locus": "ordo-missae-domine-jesu-christe-fili-dei-vivi-petition",
+      "other_fields_unchanged": true,
+      "original_locator_preserved_verbatim": true,
+      "owning_work_regex_passes": true,
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
+      "artifact_sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+      "physical_line_ranges": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-en-20261112.toml",
+      "before_sha256": "5adbda2bf72892d7d38508aaf51374a007de3bdfdb47c3cc9ea93723e2974f7a",
+      "after_sha256": "190bb7a28d97d0281f21513ecbbbbaef894ad2cd58fe4ebe76d73f31951040cb",
+      "locus": "ordo-missae-domine-jesu-christe-fili-dei-vivi-source-conclusion",
+      "other_fields_unchanged": true,
+      "original_locator_preserved_verbatim": true,
+      "owning_work_regex_passes": true,
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
+      "artifact_sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+      "physical_line_ranges": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-la-20261112.toml",
+      "before_sha256": "ccde2fc25beb1b9111878910a445a3ea0afd48ccaebe3cfb3adaa76cac43240a",
+      "after_sha256": "9409b49d4c1c127b6d73da9afd602865983af6ba4b091499d2a67ed0c0def7d8",
+      "locus": "ordo-missae-domine-jesu-christe-fili-dei-vivi-source-conclusion",
+      "other_fields_unchanged": true,
+      "original_locator_preserved_verbatim": true,
+      "owning_work_regex_passes": true,
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
+      "artifact_sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+      "physical_line_ranges": [
+        [
+          3,
+          3
+        ]
+      ]
+    }
+  ],
+  "source_carrier_checks": [
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-en-20261112/text.tsv",
+      "sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-la-20261112/text.tsv",
+      "sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67"
+    }
+  ],
+  "findings": [
+    "Only locus and notes changed in all four passage records.",
+    "IDs, edition and artifact joins, exact carrier hashes, line ranges, states, verification date and scope/context are unchanged.",
+    "Both new loci satisfy the actual owning-work pattern; the original prose did not.",
+    "All original locator prose is retained verbatim in notes.",
+    "Both Latin and English carrier TSV bytes and artifact records exactly match the independently reviewed original package."
+  ],
+  "remaining_integration_validation": "Full integrated source-library validation is running in the owning parent lane; this receipt does not claim its result.",
+  "required_changes": []
+}

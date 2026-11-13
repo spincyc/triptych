@@ -1,0 +1,62 @@
+{
+  "schema": "triptych-official-additions-english-accounting-admission/v1",
+  "date": "2026-11-12",
+  "inventory": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+  "inventory_at_preparation_sha256": "4cad587bb3b7f4e6cf1cbe0a86f25faf360ace05bb44ee4b82aa9f2a4fd2fdc9",
+  "changes": [
+    {
+      "target": [
+        "saint-hildegard-bingen-virgin-doctor-church",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "before": null,
+      "after": {
+        "mass": "saint-hildegard-bingen-virgin-doctor-church",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The newly represented Collect is attested in a complete held official Latin annex, but no exact English exemplar is acquired and qualified by this source admission. Latin acquisition and its withheld body do not establish an English rights-withheld state. No English text, witness identity, publication permission, or historical-English correspondence is inferred. Latin appointment evidence: passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments."
+      }
+    },
+    {
+      "target": [
+        "saint-john-henry-newman-priest-doctor",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "before": null,
+      "after": {
+        "mass": "saint-john-henry-newman-priest-doctor",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The newly represented Collect is attested in a complete held official Latin annex, but no exact English exemplar is acquired and qualified by this source admission. Latin acquisition and its withheld body do not establish an English rights-withheld state. No English text, witness identity, publication permission, or historical-English correspondence is inferred. Latin appointment evidence: passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments. The USCCB memorial page is a known English acquisition lead; its available wording is not an acquired hash-bound English artifact in this admission."
+      }
+    }
+  ],
+  "scope": "Two explicit untranslated accounting entries only; no body or English publication permission.",
+  "precondition": "Each exact target must remain absent from entries and untranslated before appending. Preserve every existing dictionary exactly.",
+  "status": "accepted",
+  "reviewer": "Codex integration reviewer",
+  "proposal_sha256": "5f8730e9a10143a29c1876445f26359d4fca0315e6d639ec37f67be62c0f499a",
+  "decision": "Accept exactly the two absent English body-gap dispositions for the independently admitted Collect appointments. No source-qualified English body is established, so no-exemplar is appropriate; Latin withheld publication does not justify an English rights claim. The known Newman English lead remains explicitly open. This closes inventory accounting only, not text availability."
+}

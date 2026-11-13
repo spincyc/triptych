@@ -33,7 +33,7 @@
       errors.push({ code: 'invalid-explicit-value', path: 'peer-missal',
         message: 'Compare requires another explicitly selected held edition' });
     }
-    const unsupported = ['mass', 'form', 'translation-witness', 'ordinary-lang'];
+    const unsupported = ['mass', 'form', 'oration-mass', 'oration-territory', 'translation-witness', 'ordinary-lang'];
     if (parsed.recognized.ordinary === '1') unsupported.push('ordinary');
     (parsed.variantKeys || []).forEach(function (key) { unsupported.push(key); });
     unsupported.forEach(function (key) {

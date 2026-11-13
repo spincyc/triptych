@@ -1,0 +1,1943 @@
+{
+  "schema": "triptych-finite-latin-authority/v1",
+  "method_id": "english-completion-20261029-finite-latin-v1",
+  "state": "adopted",
+  "authority_boundary": "The integration reviewer accepted exactly six additional body, owner, source and controller tuples in the bound actual review. This successor preserves all twenty-two previously admitted scopes byte-for-byte as data. It grants no authority beyond its exact scopes; runtime use additionally requires the independently code-pinned authority digest and recognition constants.",
+  "baseline_commit": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "preserved_old_authority": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "sha256": "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e",
+    "scope_count": 22
+  },
+  "preserved_old_scope_list_sha256": "e18af9b64bb20e530e9d9e337c0d93ebe386b75c2fac9de94c74236997dfcf06",
+  "prior_routes": {
+    "row_sha256": [],
+    "artifacts": [],
+    "readings": []
+  },
+  "scopes": [
+    {
+      "key": [
+        "beatae-mariae-virginis-reginae",
+        "",
+        "Alleluia",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "ccc4e84ad1c369107f7b49de5cea2305d305c5354b9ab753b98a4c8f150f0d5f",
+      "body_sha256": "01c6691e3d76f113226e381bcb55c959ab40f630541c544fbbfadb0a110f2071",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified-01c6691e",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.queen-regular-alleluia-full-target-control-20261030",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified-01c6691e",
+        "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-text-20261029",
+        "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.publisher-whole-pdf-d7c7795c": "a5bc923843f45c3f56cc5023649f24c89b702d34f40810e47cded7e786f17d23",
+        "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029": "2860485a56d3926a0ad675b068319b8502a193db243213bd6eb5a27522c4f711",
+        "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.paderborn-whole-pdf-1db9e816": "338131d7e6de418595dddfd7e1cbb6226605b942555fcfbc005f74cee113940e",
+        "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-pages-20261029": "bbb0317ba13b048f4fb5475081116d4fa38a4554cb6a11f3a2e23cd44dd8bd42",
+        "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-text-20261029": "37911772043c469f706b8d48826d32597e2532e99da374daf760f20ba97bbcdc",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified-01c6691e": "729b7440d2f72eaecf632e06671b40f16612d67514a3fcb811200f9d3a784f6d",
+        "edition.catholic-church.missale-romanum.pustet-ratisbon-1862": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.salesian-society.bollettino-salesiano.1892-april-issue-4": "6724cf92247cff37615395c5786f999a4f42f9f3b0180a51d01dffe1cfacf193",
+        "edition.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2": "cf8b279d986bad36e4257d6b924c403564100474fe5b3bdc44f747e699299d3c",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.queen-regular-alleluia-full-target-control-20261030": "46c107299ece3475eee72ebcd7cc017aee9d7410500ce3e461bb29eb569be87a",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified": "2be60a4a0f6a0d9ad5993b86a4f5f190f0606786cfc6e7f302827a353c7e0ff5",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.salesian-society.bollettino-salesiano": "c1389de46a0294e04a301183e660e7028f451ef0e3cb21fea238127fa838332e",
+        "work.society-of-bollandists.acta-sanctorum": "85e5aa49c38cbe7c90b59881116892286f2cb1ab02bc06879e75ffbd9e5b49c7",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "inherited_row_sha256": "52d73d3ac2757115a51c329a6612e82d4493739fb7cd52593066fb2172042001",
+      "artifact_payload_sha256": "01c6691e3d76f113226e381bcb55c959ab40f630541c544fbbfadb0a110f2071",
+      "projected_from": [
+        "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-text-20261029",
+        "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "beatae-mariae-virginis-reginae",
+        "",
+        "Introit",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "6743a61bcee2769f76943447a6dfe5eb938ea16ff98e759d16a5f991ccb5a258",
+      "body_sha256": "62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified-62bc1f50",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.queen-introit-full-target-control-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified-62bc1f50",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-latin-20261029"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-latin-20261029": "3ddbea1f05548df999b819c4e700128918b6201c2016748db1323a4074ae81ef",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-pages-20261029": "6d37c253959db8a41659745cc8b54f6f42933f0010732638fd68d989c2db06ca",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified-62bc1f50": "68d5ecf0350ebe758232aab9349dce17434087f47ba725c461a8d9aa18140153",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.queen-introit-full-target-control-20261029": "683d34301b96a79d3356b1ff89e9f9de680df52cb841ae767cf2240574dd29ee",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-introit-qualified": "f773d034d124c21b5a863965e0ea7c1261700285731ee0aad6ed9aeba5da09ee",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "inherited_row_sha256": "43714faaf78a7c4f4f1238d757e699ef1131fbac95287eb1ff1f539b56450784",
+      "artifact_payload_sha256": "62bc1f505027f3ba9f914511ae9c836b6b460068c08409677226a16ff44de459",
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.queen-introit-gaudeamus-latin-20261029",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "beatae-mariae-virginis-reginae",
+        "",
+        "Offertory",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "5d1a31e727f9d998844472b14173c1c3386e8230d04bc0ca8606298ba53850e2",
+      "inherited_row_sha256": "fed7b1124a768a5c87eb529015967bdc6b90621f48522ab34bcc14a42b09455f",
+      "body_sha256": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446",
+      "artifact_payload_sha256": "f4e866f44553d4181484958a6e4d79ffe7d1e560a4a56f39c298b877093de446",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified-f4e866f4",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-queenship-offertory-target-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified-f4e866f4",
+        "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.erara-whole-pdf-6fb9cd28": "17dfcc53a0165f2bfd0934dcecc511987fc1f43ed5200070eec8e1432d1b3add",
+        "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-latin-20261029": "74d1fad9639cc62029e1cc3e92da26782e5ef61714e9f76817f96b3957d42cef",
+        "artifact.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-base-pages-20261029": "b7c993501b4340545ff4421eda4233ac83e6cc54fd61f380c070cb520d6b99fc",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified-f4e866f4": "74ecf40d3b196e4719b885d9b8120961b8406fe47234218abb30bacc356ed757",
+        "edition.catholic-church.breviarium-monasticum.1690-venice-baglioni": "9a92cd0a8bb7b9e72597529b36ecb047ccd6206404e000ec6fee115e72bc4a43",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.breviarium-monasticum.1690-venice-baglioni.queenship-offertory-responsory-base-20261029": "2db4e536c8b8f32d0892f60b4e8c2c51b3838fd27140e2e778bda3148b4ab760",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-queenship-offertory-target-20261029": "9ca540a763a64c3c3740c18aca3059fb6bba13a6a4070d31ef90902e5b7c503f",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-offertory-qualified": "5d5e5e9566053d2fdf96e790b0431951e2c3a22eb715ea10b8fde3db364bf002",
+        "work.catholic-church.breviarium-monasticum": "e8ca09cfdcc8051b55676a73a24b102db29f7bb9ab7d11b885036222337463c7",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "beatae-mariae-virginis-reginae",
+        "",
+        "Postcommunion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "04e3ed06a5a1bfebb319f17b6eb13e63a8314c511b22a653cfdc61c1fd55a637",
+      "inherited_row_sha256": "f51b9f83be0e6c3c952064edf0b91c4bc43ccf47246e5677da716e70a94c0c81",
+      "body_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "artifact_payload_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified-73348b62",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.queenship-postcommunion-target-control-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified-73348b62",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112": "26244393c003f96e975f88be4a891da82944668da1eaba05ec59c7cc372af267",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112": "2d8ee3df8094861bf5c9d72aa3c3c28b7145249b5bca69fd276c20c9246f3c19",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112": "a9184ef05a24d0492d9ac46af38fbf035ff5319ac11dc88a23b084c2eca8d2ce",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112": "198c30348ef5001d1ee99f1f288de2bec1228c1e222a37b0d70280b20f36a00c",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified-73348b62": "ca3dc5395e5b78a2c89f2e2c129bc38bd5dbc34a60091b2c872f0613e2c2cc7a",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.queenship-postcommunion-target-control-20261112": "932f32876ccbbb31ff409afb4697c011b3b827be5d3ac49c8f8f5ede978014d7",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified": "62bf8220b31ce0b04abfea8b9887dcbcb93f2cc2f7fd8918343ee7348720d0a3",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "beatae-mariae-virginis-reginae",
+        "",
+        "Secret",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "4a8701267d10c3690b41e4081711ec75366a353e53a669a15bcce98f35318896",
+      "inherited_row_sha256": "572f3ffb68a6fd5821b07430d7e3ec005e0e59f2b217fe7cc863d72ca131cb4f",
+      "body_sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "artifact_payload_sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified-7f341d63",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.queenship-secret-target-control-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified-7f341d63",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112": "26244393c003f96e975f88be4a891da82944668da1eaba05ec59c7cc372af267",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112": "2d8ee3df8094861bf5c9d72aa3c3c28b7145249b5bca69fd276c20c9246f3c19",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112": "a9184ef05a24d0492d9ac46af38fbf035ff5319ac11dc88a23b084c2eca8d2ce",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112": "198c30348ef5001d1ee99f1f288de2bec1228c1e222a37b0d70280b20f36a00c",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified-7f341d63": "6a0311362062daa3af242e455108809125c8d660a5a6eb38598326b0fdff6739",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.queenship-secret-target-control-20261112": "f2e772ffa434655f469af5a1f0c823abe4b272276fccc8e72ae971a41260eb35",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified": "0f0a2b1dededf450a2e9c8f1fd7b5b62f630551ee0c6079b18ed56a3d7664c63",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "chrism-mass",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "e6a611d6cee12a105fa6e4825c96236da44508893342871578243b355fbd9aab",
+      "inherited_row_sha256": "15be00f184648a00034996177aeb23fcff3020a519ec4cf81b792d59fb9f6b3e",
+      "body_sha256": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33",
+      "artifact_payload_sha256": "100ae514cc635ab67fa0b2f223954bbb9053f77c01dead58eb11309c16815d33",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-collect-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-collect-qualified-100ae514",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.chrism-three-orations-word-collation-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-collect-qualified-100ae514",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-three-oration-readings-20261029-33c7ecdf"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-three-oration-readings-20261029-33c7ecdf",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-orations-pages-69-73-16f98b4d": "1f6a038fd4ac6da5908ae265472de2ced999c7874e520e67cd968b04e6a6c86c",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-three-oration-readings-20261029-33c7ecdf": "7ac3f76df73514344d9e627db4577236087944f6cb164a9f9201e3a4afd031d8",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3": "99cf50d7b8ebc5410e229374868a2367ad221602e09e4dbeff5fd9b9f91acd45",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-collect-qualified-100ae514": "bef5f7ea2c8a0812afb0173f7da21999402b8e67c8144c5ba0faf47459d58c5c",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894": "496d32217750750f5d5e11c9eae3b3d27a2add9cf541cdfb1d2e393ec34ae395",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.chrism-three-orations-word-collation-20261029": "f74d1183afe0fc36cd0606147a756a5c865feefea62218201e604835035f15a6",
+        "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.chrism-collect-checked-20261029": "146666fe3831b158a949ae561e9120fe2b3f29e446cde3729f925382a6d4aaa8",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.chrism-collect-qualified": "6f9dcd7d96f524cfc93309939b2dd0f0b0b5adbc6e413f09942cf289488b8d4f",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-gelasianum-vetus": "e983ecd4a3d9889453d6eade30e16fde890746ff6168f9aec8bf758578f7d70b",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "comm-s-silvestri-i-papae-confessoris",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "638136fc441e7068a3c0c5888aca5c5ea2ec9a69826b01ea45603c0c83bf7227",
+      "inherited_row_sha256": "ec89a101276033a659a824e86385b30f7f141f005574a53038ae287d1446d7b0",
+      "body_sha256": "61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53",
+      "artifact_payload_sha256": "61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-silvestri-i-papae-confessoris--collect--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-silvestri-i-papae-confessoris--collect--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-silvestri-i-papae-confessoris--collect--1",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49": "ffaa8ef3b5b506899626f56383d71f0dd9a6e6afc7c640a0fa8a41b346dbaff5",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-silvestri-i-papae-confessoris--collect--1": "fbae1f454d37fa66d032a39f04fe038748afe5ebbcd54c0921a26737f10e1714",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029": "8936e4e66c1dde79f914be153603ed0c512c3320c86f0dd3f807951c99f4ff24",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-silvestri-i-papae-confessoris--collect--1": "a056885e6d76946d4f72aafeceb138a76ef7c9925f6a01baa4d59f57d43f4cd5",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-silvestri-i-papae-confessoris--collect--1": "5bf6da0ef873d06270677421bf888358eca40ab4d3b6b7203d333313a91afeab",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "comm-s-urbani-i-papae-martyris",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "e60c9b1cef53958105ec023d4dd962cb3cd2d85049e140eb3ab6f3086dadf8ce",
+      "inherited_row_sha256": "d2d74b7356956acbc7a18274566b0f6e7427463d359dac323bdc99eda80a2fc6",
+      "body_sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "artifact_payload_sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban-6a400cc9",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.urban-target-collation-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban-6a400cc9",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-virtute-preface-whole-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-virtute-preface-whole-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112": "fd298f3e6a95b9f2837398dabc0763ad246f2ad6b436285068a115e8dd7a9967",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112": "009af7b308084f7aed89c88d7f430e8daf3f38f2a80cfbdc520d0357ed2762a1",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112": "f2cc138b5426a7e19022cefe69fe77e7f11c7aae22d6a0d0938e8092c4a5ef6a",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-virtute-preface-whole-20261112": "cb20666b75df90d3949ddb62c6932daa5bf3d6f66dd161447ac479bed73e8d37",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban-6a400cc9": "7736aa4ecf1aaa4583e1ed8605e6b548cae44e69025d51ace82a31169448f91d",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12": "6e529e468d18571752c1120b5a3a611095b3c6a07cfba94eaf742597c1e55b39",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.urban-target-collation-20261112": "e18099c2a8910897250800092e21d5798cdf53a1f0b6b7074efe31c3251878cd",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban": "3620aaa3264d1a0b8f31da8e1f74fcc89f2c6e0bcd8022f6ee1420d3f1308a87",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "comm-s-zephyrini-papae-martyris",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "1324a8c911e7009e27f89e58ebaeb15a3032507748660b75097ec4f49c68feac",
+      "inherited_row_sha256": "af23c50ba2f02bde2e9df781f4cf5187a3611bf205c0b1ef8b0ead8663644675",
+      "body_sha256": "f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad",
+      "artifact_payload_sha256": "f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49": "ffaa8ef3b5b506899626f56383d71f0dd9a6e6afc7c640a0fa8a41b346dbaff5",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1": "97c2a258c6eb94e98fcc8bdf835e7a81dc282c0858d38121510a9c3ec6ad9382",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029": "8936e4e66c1dde79f914be153603ed0c512c3320c86f0dd3f807951c99f4ff24",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-comm-s-zephyrini-papae-martyris--collect--1": "0544cdab029b576c43b1c4a6873b4d3711120eb6c83b421bb6246a206601564d",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1": "4a4075f1595071c76be727786a41855233179cf993329272dd84c1ab110dd2d6",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "commune-summorum-pontificum",
+        "",
+        "Collect (in plurali)",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "2466db54ecaed4baffc316d1f7d3d5cddf9a349ce81ca59b5ce0364d49f7ead2",
+      "body_sha256": "77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified-77215320",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-plural-collect-collation-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified-77215320",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified-77215320": "17a4d3d9cf876d0c05cbd842dc19fe7decbb7c5303502b7d096223d0521ddff9",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-plural-collect-collation-20261029": "ec23ea140de9095a31a9af9d63c2bfead0eb3dd7a24a5b24074ba8bff5f8f3f7",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.pontiff-plural-collect-whole-foundation-20261029": "d644bdc0aac8ff5784933cf46325b3bcb40fa17d01558badc825bdb132f80398",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified": "c526829df3c14316772c34ce93f815240a2c085655c9d7b968d259863017fd13",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "inherited_row_sha256": "32a2f357401478d6923c44a2f4cb636512670822f7d540f44ceb50ceb253e496",
+      "artifact_payload_sha256": "77215320cce36c1a3823c3643d63bac8f3f98579ded3eb454c1fead0f6abf440",
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+      ],
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "commune-summorum-pontificum",
+        "",
+        "Postcommunion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "a207f591f4b900fe802a4baf7091c3aff2ae48d2a55f689789a5580af185fb0d",
+      "inherited_row_sha256": "1527ca51c689b4ce445ab0ce7cfe7291d9d5392d699279ed6a820467f112846c",
+      "body_sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "artifact_payload_sha256": "3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-postcommunion-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-secret-postcommunion-collation-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          3,
+          3
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77": "0e122663dd9004e459a2b22db91f21e624ec24d63b8e2568d2d15045892bc711",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-secret-postcommunion-collation-20261029": "e97f64decd873f05f5d739759c256ffadb2349c9c2efac51b8fc048075ffe296",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.pontiff-common-postcommunion-whole-foundation-20261029": "123ae5dd309955192803f34b8f282c1674b4118d139cfd7e739647d1273b5515",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-postcommunion-qualified": "29a99de861d3b0e9ebd90926971beef0df5d2a0b2e6958dd7dd92eb85db97dcc",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "commune-summorum-pontificum",
+        "",
+        "Secret",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "09175afe81fbb6b5b9f1889c81eeab31ddd9a6eb40ba26ecbf53c752c7bf44f9",
+      "inherited_row_sha256": "e57355940beda12796ac311ddf651a02c811d7e51fb76fd85c370d83bd1f2f1a",
+      "body_sha256": "513de5a7dff9120d02f2fcc6cbc4c5a9d19a69ffd18e9075c5325885a98e43ab",
+      "artifact_payload_sha256": "3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-secret-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-secret-postcommunion-collation-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77": "0e122663dd9004e459a2b22db91f21e624ec24d63b8e2568d2d15045892bc711",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-secret-postcommunion-collation-20261029": "e97f64decd873f05f5d739759c256ffadb2349c9c2efac51b8fc048075ffe296",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.pontiff-common-secret-whole-foundation-20261029": "455d62d8d1ddf8b171423fa08eefec00b12afa4286d589897d4447a232a8b7f7",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-secret-qualified": "24ef5f6d0b7c3c5b568e765c424ea325cad36101027985585a92a82443f1fedd",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "easter-vigil",
+        "",
+        "Blessing of the Lighted Candle",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "db2b6477ee10b4eaa0d648066f347f86a49d84dd4d32cd2c4e06bb0dd4535bfd",
+      "body_sha256": "0595480950da324de25ef33113f56537a979517bd4bd23beb75d7643f3310b5f",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified-05954809",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.lighted-candle-target-word-collation-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified-05954809",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-latin-20261029-be854aa4",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-latin-20261029-1334bce8",
+        "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-latin-20261029-be854aa4": "d6d90a95be1175a281c3ca78924def7987b90bad74b5b02b3fe99a396dc5597e",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-page-20261029-0e5057cc": "f7ec512fb403a7c6b12b31b2d38353e410a1cc72ecc83d31716d9044d4a1a39d",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3": "99cf50d7b8ebc5410e229374868a2367ad221602e09e4dbeff5fd9b9f91acd45",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-latin-20261029-1334bce8": "2a07faf0fa519d52b61fa099924d8194c230255d5ad63247e3fdb8b72c52e3a5",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-pages-20261029-eb290d46": "4f762d67e347b5b0fdce235f0344d48e246f2d0bb57530eee956cfe5196661fb",
+        "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7": "b76fe85e63e921097d884482753273213c8c67255545e2859ff5ad9c16cff6da",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified-05954809": "eb77b2196b2cfd6abc311d5fa4303aebdabf15e8def1354f3ebde731591c88c8",
+        "edition.catholic-church.missale-romanum.pustet-ratisbon-1862": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894": "496d32217750750f5d5e11c9eae3b3d27a2add9cf541cdfb1d2e393ec34ae395",
+        "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915": "383ba61c1c5772c97ad3e8e2cae55423e87eb9099552f391a989fb16ec3ba362",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-checked-20261029": "e56f0f8d109b532a4ede54eaefd9157d791299e2fb22eccb3cafffc1b3b29838",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.lighted-candle-target-word-collation-20261029": "e9623ee4ce86901177924fcb29de748c5348eed2326391c9926c629408b22fc8",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified": "226805620bbe023e16c77a68b7587b3bdbd2622fafda748c1b6e00f67f0b06a5",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-gelasianum-vetus": "e983ecd4a3d9889453d6eade30e16fde890746ff6168f9aec8bf758578f7d70b",
+        "work.catholic-church.sacramentarium-gregorianum-hadrianum": "52e107516f47de8cf4dc8e5571fd04a5462f69868051ce6bd802e22b2d5c371b",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "inherited_row_sha256": "d63da576cd29fdae3eb2c395dc7a1df0c9a8e3525cdb37acb54407f15e57fc6c",
+      "artifact_payload_sha256": "0595480950da324de25ef33113f56537a979517bd4bd23beb75d7643f3310b5f",
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lighted-candle-old-prayer-latin-20261029-be854aa4",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.lighted-candle-old-prayer-latin-20261029-1334bce8",
+        "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "exaltatione-s-crucis",
+        "",
+        "Offertory",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "6b3dc8f644a09965be3db519ad0ff825a548c92b8eb360a0d714a5225a44192f",
+      "inherited_row_sha256": "dd88b778707f80fc45ee29f2f4aef15e4dcfc6b0a4f26a6bd758f1aefee090c9",
+      "body_sha256": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79",
+      "artifact_payload_sha256": "18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified-18060fef",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-cross-offertory-target-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified-18060fef",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708": "01d16b11dc9cb9a75dd8f87e53a62a623857a70c34cc8229197a78354162edd6",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified-18060fef": "a4152de1bf690cee788456894d56a73a987ab7ca0938b34379c3594f5de28ba6",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-cross-feast-base": "1aa53752cc1800a31c60320f6e52b4c9ef089f6ce37f60cd0e38ace0c4b0d41c",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-cross-offertory-target-20261029": "aeaf5ad42a700aabb00cac5b4d301459584d33755beead9db20aff1112920cb0",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified": "ec7e4ff27feea4cb6c415f83805444a46e65ff33195a03238cc124477e2e69d3",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "good-friday",
+        "",
+        "Improperia",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "adc8f768b96fa59c8a6550924c571d06d6c5a2bcf95832ed91245f3ccfe32575",
+      "body_sha256": "83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified-83cbd703",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.improperia-whole-collation-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified-83cbd703",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-checked-20261029-b8728178"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          267
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-checked-20261029-b8728178": "982d7df0f1003bd89294bcbb546a49794583a02253a5b780997bb291fe89de7c",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-pages-20261029-04a3ab17": "77ec2c80684b340131594d22aa9085cc59257d4d410ad9f255c365c639ff5c7a",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified-83cbd703": "12a855b8ab0950b9662c3719b730e43f0d59dc0fecf33e5cf73f3bcaf890a14b",
+        "edition.catholic-church.missale-romanum.pustet-ratisbon-1862": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.improperia-whole-collation-20261029": "1c423c2f701886e42fa3dc43c13da8ded83f728adc1e69f1ce6e2f268de59256",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified": "fd38a2207ca3a76a702ce4c444bcd7141618f3162c86024ed56bf32695ec982a",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "inherited_row_sha256": "b3049dff9f5e2806d0963ad4216a554a6c84702363fae12512414c73b5c30c9a",
+      "artifact_payload_sha256": "83cbd70391a22369245ab9c1019d3d25db59e02b5b267474f3b039130d40a616",
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.improperia-whole-checked-20261029-b8728178",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "good-friday",
+        "",
+        "Prayer after the Prostration",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "29f62b39417a55f1cafaad148a1cd25ed5660a38be5c8c4cdbe6147cfddc6de6",
+      "inherited_row_sha256": "dc9c69578f1582637867864c1cbfdffbc711c96523f8b86ef886a9eb663c6611",
+      "body_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+      "artifact_payload_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-prostration-whole-target-20261030",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348": "80d23672f93803b86ec77d882cc27d296e52a5e1cfb457a1cf424bef4330b538",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98": "14c29bda38dd7c3400e4b5810a2aa941029b789c19decbe66c392b2e781fb478",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3": "99cf50d7b8ebc5410e229374868a2367ad221602e09e4dbeff5fd9b9f91acd45",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432": "9188d0321eeaa3e3714568581ae46235a6968d969d383b838d3cb5629713adcd",
+        "edition.catholic-church.missale-romanum.pustet-ratisbon-1862": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894": "496d32217750750f5d5e11c9eae3b3d27a2add9cf541cdfb1d2e393ec34ae395",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-prostration-whole-target-20261030": "199baa623bec66da05302f34d03d450af192dc985c1060b4d6feb21246f77c1d",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030": "7794c5305055c5e6d8f5abcaf8e9a3779436012071cac23d7ba8933ef1cba04f",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-gelasianum-vetus": "e983ecd4a3d9889453d6eade30e16fde890746ff6168f9aec8bf758578f7d70b",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "good-friday",
+        "",
+        "Third Prayer after Communion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "9429739be79c5262f622949e4140734379e3a0a80f41e39f512c2154bf3593c7",
+      "inherited_row_sha256": "77ffd4023474f5cc42e57233171d99cb95b49f6aff6f7497ba40214e382d9d10",
+      "body_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+      "artifact_payload_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-third-after-communion-whole-target-20261030",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348": "80d23672f93803b86ec77d882cc27d296e52a5e1cfb457a1cf424bef4330b538",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98": "14c29bda38dd7c3400e4b5810a2aa941029b789c19decbe66c392b2e781fb478",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3": "99cf50d7b8ebc5410e229374868a2367ad221602e09e4dbeff5fd9b9f91acd45",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887": "f794a6ec507d2941d291d821f3e29f6802f793267969dbe3038242560884fda3",
+        "edition.catholic-church.missale-romanum.pustet-ratisbon-1862": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894": "496d32217750750f5d5e11c9eae3b3d27a2add9cf541cdfb1d2e393ec34ae395",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-third-after-communion-whole-target-20261030": "78be2a80624e8705c5a8c1415137067431d3402fb1f9037c2935213f21c69121",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030": "a07f1b4d5af4c002a49252c5a2fa3d4ad2c1dadb036667bc5ea9d84092b9d55d",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-gelasianum-vetus": "e983ecd4a3d9889453d6eade30e16fde890746ff6168f9aec8bf758578f7d70b",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "c0745819498df47e3bea81ade67c859049ea47d23e936d286439ddea6652fe6a",
+      "inherited_row_sha256": "1b180dfff683f98e4132506c23e4762e5414610ceb9fcd1e0611147ad0482f4c",
+      "body_sha256": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a",
+      "artifact_payload_sha256": "c8b53661561aac747517845360d96151db5afb6707c0c3b798b8de710559395a",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.heart-two-20261029-collect",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages": "18bdf6f5592e646e31e3b0bafe0e3665729fc528598e27369a9762c8764c721f",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers": "9297cea52c267d890e35895c6368deef36c668411f3f5f43ab4dd5eb25b76e1c",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49": "ffaa8ef3b5b506899626f56383d71f0dd9a6e6afc7c640a0fa8a41b346dbaff5",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1": "d97a19d2bf941bef7090dcb561336dc01180a8123138debfb4963bf5a0877273",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029": "8936e4e66c1dde79f914be153603ed0c512c3320c86f0dd3f807951c99f4ff24",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.heart-two-20261029-collect": "4e7d39ee9bc29b7a489446497f8cac5772e69ad8ea4861935920085adee402f7",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--collect--1": "e526b1cc4e13f3e2fc0bc60816e4b00ba8cb9313a4540b80854e38db44ba7851",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "immaculati-cordis-beatae-mariae-virginis",
+        "",
+        "Postcommunion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "1cb2714c66e403929036da049bdf5ab6f5a9f726207b0b1c5842805c1b6c8ef7",
+      "inherited_row_sha256": "4be79dcccc9b99ab3b2d2f749666393b6ebc9b5884b37d916591cc845e38db81",
+      "body_sha256": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795",
+      "artifact_payload_sha256": "6c81c9d5ef0912c0e01fc911ab4dc9fe86648e27e49651092086e38d2ca17795",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.heart-two-20261029-postcommunion",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-control-pages": "18bdf6f5592e646e31e3b0bafe0e3665729fc528598e27369a9762c8764c721f",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.heart-two-20261029-historical-prayers": "9297cea52c267d890e35895c6368deef36c668411f3f5f43ab4dd5eb25b76e1c",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1": "7f4a0a72c506f5ac3d9362461b5f084fd1d1cfd427c076ccc1fa62ddbb52b32b",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.heart-two-20261029-postcommunion": "d384701add678c0061900687a4660a2bf457c19b8a28027709eab72f512a074c",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.immaculati-cordis-beatae-mariae-virginis--postcommunion--1": "807f72311ab2c32c1cfca624356d7fdea7b77fa29c1411a67a05034cc145bebb",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "palm-sunday",
+        "",
+        "Blessing of the Palms",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "2f759c1b286b588a0cef4d113d3de81e3a1c8297b3c27f0b881f801cda24da50",
+      "body_sha256": "800c4d2cbcdd38b63a488b726080ae2c8497cd882d277602dd389a396c01f31e",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified-800c4d2c",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.palm-blessing-collation-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified-800c4d2c",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-latin-20261029",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-page-20261029"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-latin-20261029": "bdd9879355f2ecc114cc376ff16fbf7b33033662826457c85b8f1513794d2b06",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-page-20261029": "ab920f938d9d222c7a417110e784a97b5d5b5f4ff3818eaf8c72e286ab75e3f9",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified-800c4d2c": "ce3d170cdd599bfce7c57a5a29ec2d7a0ea02f79b4e21fa700112ef9b3377b36",
+        "edition.catholic-church.missale-romanum.pustet-ratisbon-1862": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-20261029": "f72395a77b12f64cdf6f13277ae582b75d638ddd84c24c11d0b986592ce43363",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.palm-blessing-collation-20261029": "c6b82aa0a711f1a1dca6339628724dec0891b39b923897da529c79b7834f50ca",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.palm-blessing-qualified": "3426fb54d16a11ceeaec17c58b55d15498fc7e25d5cdb2a9a78c295686bcd55d",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "inherited_row_sha256": "9a126d598eb63c9972e744053fdef6fb5878583c244b13eb32c218939fc88879",
+      "artifact_payload_sha256": "800c4d2cbcdd38b63a488b726080ae2c8497cd882d277602dd389a396c01f31e",
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-latin-20261029",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.palm-blessing-whole-page-20261029"
+      ],
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "palm-sunday",
+        "",
+        "Procession Antiphon",
+        "",
+        "",
+        4
+      ],
+      "row_sha256": "c52af0a480cca987896f8662f034999165a67790cb77bdf34a4b0375d88a958a",
+      "inherited_row_sha256": "7de24212ea86d21f7fb73eec12224f2ab0054acb9d9a059dd3b1da7ac1e32b0d",
+      "body_sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+      "artifact_payload_sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes-0749a65a",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-target-collation-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes-0749a65a",
+        "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112": "50396688a67826fbfe6c3ff3f8cfefd62352b6b34b29ee823378adc9dd67cc06",
+        "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.whole-pdf-20261112-21c082e9": "b3c2c405f2c315468aaf1db0244d5fc95fb2d897d8cd9c3dff064c15848ab3bb",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes-0749a65a": "b799351f9450ab264160d6f9d8c7fa3f8f1662f88550f65cee76e03e305cce56",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78": "b95f7637cab19235c244a667b4570266c5e928c005d1b3f8ba0285c8cc4df146",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12": "6e529e468d18571752c1120b5a3a611095b3c6a07cfba94eaf742597c1e55b39",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-target-collation-20261112": "56d0c118e5e7307bd89f7be08409b24a11ad118b4a42edacbff726d83f2f5adc",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes": "49bf139248475c8c418f705b2857f84cf5167aa6d58485332e4fe3b8024f12dc",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.jacques-paul-migne.patrologia-latina-volume-78": "79dc9341102e70de5b66278ff8506ec6a705ffe35d2ca75e65f45ca61683c7ee",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "s-clementis-i-papae-martyris",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "dc574bfacfa9bb05274281ea23b08fa9153b3963887068dea794d7afa9064444",
+      "inherited_row_sha256": "70204b752b04d4368f9ab1eaee30f72ce0827ca281ffc44b07503a173e596482",
+      "body_sha256": "d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8",
+      "artifact_payload_sha256": "d57235904e4e32436dfda5e58d4ac5c98822e784725000a41d75bbc1a24d4aa8",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--collect--1",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49": "ffaa8ef3b5b506899626f56383d71f0dd9a6e6afc7c640a0fa8a41b346dbaff5",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1": "1bb00ba4c1d7d02e64b615df64d9da1de23da4dc8dc4831bf6ddc2d757b897ac",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029": "8936e4e66c1dde79f914be153603ed0c512c3320c86f0dd3f807951c99f4ff24",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--collect--1": "fe507bf4b21f0b47dd0a41d6e5d09b6b98274d7e521491c2c71e1f125f426c09",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--collect--1": "84ae2abbfaa86c66c27ca872136048324b1a29dad9f81c44888fe898ca666a50",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "s-clementis-i-papae-martyris",
+        "",
+        "Postcommunion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "fc81b057dce72e46726dd12589d9cb861a44fac89e89fad308b26acacf09f80c",
+      "inherited_row_sha256": "101a0a0948e8aa54893accaed2666cbde95365a47125b92e9f8978b6a4385eaa",
+      "body_sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "artifact_payload_sha256": "bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--postcommunion--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--postcommunion--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--postcommunion--1",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49": "ffaa8ef3b5b506899626f56383d71f0dd9a6e6afc7c640a0fa8a41b346dbaff5",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--postcommunion--1": "d205bcb4d0cf7078ee1be5dbbb1ee1ad0d68316584b54fd87b934bc7cce10636",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029": "8936e4e66c1dde79f914be153603ed0c512c3320c86f0dd3f807951c99f4ff24",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--postcommunion--1": "7bdf9dca42228eb89626f8360318072b5432d6183b1b00685b1bca7aa1b7093e",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--postcommunion--1": "7663e4b0fe51629ae76282ae900e3a33229e567c905ab2e6d0f308de7240f9be",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "s-clementis-i-papae-martyris",
+        "",
+        "Secret",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "339e32cbae13716a590a31c870be1b5d7d45eafb1b67186f038c597c91677e5b",
+      "inherited_row_sha256": "cb848aae7b6e5493759e59c2aa3667da47531e3120c56c8e458a3a9624c6e578",
+      "body_sha256": "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de",
+      "artifact_payload_sha256": "85e15b6f86d5c6f8c122d9c2c70203102ad0659a6006d502467d9e1afb0628de",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--secret--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--secret--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--secret--1",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--secret--1",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49": "ffaa8ef3b5b506899626f56383d71f0dd9a6e6afc7c640a0fa8a41b346dbaff5",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--secret--1": "c05e7054c95d260a6aa1135c4b0545e0bdf3028f798fe2a8d1927fd2f960ca10",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029": "8936e4e66c1dde79f914be153603ed0c512c3320c86f0dd3f807951c99f4ff24",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-clementis-i-papae-martyris--secret--1": "868af0a73a65f7b4538669fec1a0bb2a05932f59fbffe05949e646da920fd92d",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-clementis-i-papae-martyris--secret--1": "6af084d12f5abefbd1231531da988f06828b42d23f2ff3a6cdf5e0b3e124fb22",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "s-ioannis-bosco-confessoris",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "4f37ff0c84b19e8cf78d2802430f2a37dff317ca42bced43802da354a7e9f34e",
+      "inherited_row_sha256": "b4c288fdf24ff65e0327ece6bb4ba72ceab1db52c71a9bd78288f4726777930d",
+      "body_sha256": "20e15f699f0c8c1a9538024049d905c97a6d86577e24a2f5d3cae4a9c9b60155",
+      "artifact_payload_sha256": "20e15f699f0c8c1a9538024049d905c97a6d86577e24a2f5d3cae4a9c9b60155",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--collect--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--collect--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--collect--1",
+        "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.official-asc-scan-93b726ae",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+      ],
+      "projected_from": [
+        "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.official-asc-scan-93b726ae",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          5
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026": "c5d8d3ea6ca0854b1277c3a47d39bd3c70ba2b74cbf21ca124f74053b6b9ec0b",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.official-asc-scan-93b726ae": "e1e96d1e0ae9d99b5d769d7b88f29b2e30882970d56610b4ab7080ffd8447bef",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--collect--1": "c9c0ffe9e7845eea4c4df02a73ed508bd8104f6b605faaf9dfbe4de7d2e3a4fc",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52": "13ef7289d38fe8541f3d5d2dc50bda2d5503768a8d1b9df7f233302a813dfb06",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026": "ab2b09f9bf41c6cc10bcf9a8a50a97876492c319cc65e3151cf6f98ecb1f8f93",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-father-conclusion-20261026": "cf60f365f14071e4aa633acb95deb6e15995a2d1fc54eb10d87b3a44313beeea",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029": "1856c7470b94a8203b3b03f8b0e7573a5dc3e84015b6ea12dbf4dc05137b4651",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--collect--1": "39e809df9ad77033888a9ea67ea59dfceb18dd20cbbe0a01a70bf569446bdcb8",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.salesian-society.atti-del-capitolo-superiore": "37e84280fb57293ddb360aac6672007abba44901a6552e08f79666e779778116",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "s-ioannis-bosco-confessoris",
+        "",
+        "Postcommunion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "caa001038746bdcf8f4364c52221c13efb59480036e5c8a80320c365973810f9",
+      "inherited_row_sha256": "fd41aec075ffa2a37f363b78c6f540869449a28249a89657086976fa9fa1d6da",
+      "body_sha256": "4f47d9dd70abae1166e980d2935e2a4552abd9e65d7105af44e7f8909fce62ea",
+      "artifact_payload_sha256": "4f47d9dd70abae1166e980d2935e2a4552abd9e65d7105af44e7f8909fce62ea",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--postcommunion--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--postcommunion--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--postcommunion--1",
+        "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.official-asc-scan-93b726ae",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026"
+      ],
+      "projected_from": [
+        "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.official-asc-scan-93b726ae",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-support-pages-20261026": "c5d8d3ea6ca0854b1277c3a47d39bd3c70ba2b74cbf21ca124f74053b6b9ec0b",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52.official-asc-scan-93b726ae": "e1e96d1e0ae9d99b5d769d7b88f29b2e30882970d56610b4ab7080ffd8447bef",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--postcommunion--1": "120793690d6023b600e28112ffd17e0b60a936166629b3ba63ba8c7cc4836f27",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.salesian-society.atti-del-capitolo-superiore.1930-02-24-n52": "13ef7289d38fe8541f3d5d2dc50bda2d5503768a8d1b9df7f233302a813dfb06",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-christ-conclusion-20261026": "2b272331dae802de00428b36987855ed687a0181b77a46b56df5c6970334b798",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.latin-five-conclusion-rule-20261026": "ab2b09f9bf41c6cc10bcf9a8a50a97876492c319cc65e3151cf6f98ecb1f8f93",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.bosco-three-orations-target-20261029": "1856c7470b94a8203b3b03f8b0e7573a5dc3e84015b6ea12dbf4dc05137b4651",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-ioannis-bosco-confessoris--postcommunion--1": "b9b9e8008b506c7ea10398697d9ff14bcc283cf718d5f02454bbd3e07f61594b",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.salesian-society.atti-del-capitolo-superiore": "37e84280fb57293ddb360aac6672007abba44901a6552e08f79666e779778116",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "",
+        "Offertory",
+        "",
+        "",
+        2
+      ],
+      "row_sha256": "1873d9d315571b2a929db30a519f1992c170ae1b92d4ff4e431b4e33e5839a0e",
+      "inherited_row_sha256": "b174a3169bfa45ad696a37ba96445d6eb7eea97ae9387482a10b106c6c0622f0",
+      "body_sha256": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96",
+      "artifact_payload_sha256": "e88531b6aff711ffb42e4d411fc44e81d0f07c5836d36e34fe3570b33a8a3c96",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified-e88531b6",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-damascene-paschal-offertory-target-20261029",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified-e88531b6",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-saints-bases-2be6c708": "01d16b11dc9cb9a75dd8f87e53a62a623857a70c34cc8229197a78354162edd6",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified-e88531b6": "f53c8b8f82864a18db5bb3f57bd795bce4c6cbf1778b6937ceb82e00f0250582",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-finite-damascene-non-paschal-base": "c86cfae3754fd48b5ba400ca69dfc4f921288fa271c5a7a81c71037db84fbb96",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.finite-damascene-paschal-offertory-target-20261029": "d2a0c2caae39e823608221c9e0da95cfee9de648be37b009e1f28dfa136dba48",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.damascene-paschal-offertory-qualified": "91846b3e4bf4464f439905ad4d4c141c4b0ec0075e39c549519f3dc9bd3c3fb1",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    },
+    {
+      "key": [
+        "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "48128f046f2d9e75bc2e1ddc88d24b9d0c7922d164c315790cdbe78e94a8b741",
+      "inherited_row_sha256": "81c0cc5f77c968354aab798d74c9038b7413c9db6875618fdab4490431dc81dc",
+      "body_sha256": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005",
+      "artifact_payload_sha256": "9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005",
+      "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+      "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+      "publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-historical-latin-20261029-5602f33a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-historical-latin-20261029-5602f33a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-controls-20261029-976afd49": "ffaa8ef3b5b506899626f56383d71f0dd9a6e6afc7c640a0fa8a41b346dbaff5",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-historical-latin-20261029-5602f33a": "f9c73a0811daa584bb89f2f4e31eab1ece1a8ddbde12a77e44b2091a2f1097bc",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1": "6e9d9d2edee0c5278f018f252fe7b9bf6bdae4bb805e41b6048a1e9a3bd3defa",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "edition.catholic-church.missale-romanum.vatican-typica-1962": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+        "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion": "60ce2579318b3e74187a2e0fb300908c62a75b0a70461c90bb2df3b81e9a66fc",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.reader-lawrence-conclusion-prefix-20261029": "8936e4e66c1dde79f914be153603ed0c512c3320c86f0dd3f807951c99f4ff24",
+        "passage.catholic-church.missale-romanum.vatican-typica-1962.english-completion-20261029-s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1": "9476901730c227d02e9afb6873eeb1106c31b36f53f3fe7afe0820a1a0e7c2ec",
+        "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1": "bcf0f8ba0fb24c722b94a761a1d743c32c3583f06f6c4483a356a9654ce600f9",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.roman-1962-latin-proper-editorial-projection": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4"
+      },
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier."
+    }
+  ],
+  "plan_pins": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/install-plan.json",
+      "sha256": "d6102e9854702ee9d4c8ef00f139f395e31beaf40037ea99a970c71df0415f10",
+      "source_review": {
+        "path": ".scratch/roman-sources/gf-pair/source-review.json",
+        "sha256": "335a93f649ff486521f5a7bb88bf5608a61f237e5e1cd1248662b52adaf5ba75",
+        "independent": false
+      }
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/install-plan.json",
+      "sha256": "3530451542b051cec722ff1b17052cd724445cee1d7f5c095ce8e3d5bb05c188",
+      "source_review": {
+        "path": ".scratch/roman-sources/queenship-pair/source-review.json",
+        "sha256": "1e1b35327ca3462aece9da25a0c21475f3c67fbb4d88e3712d96b1a1602bfd9b",
+        "independent": false
+      }
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/install-plan.json",
+      "sha256": "6b3456b438491d1d3755f198e3a5a4a53ae876e237e6e1022bab5af8ce56a2f3",
+      "source_review": {
+        "path": ".scratch/roman-sources/urban-omnes/source-review.json",
+        "sha256": "a0d4e982b935f530f4050861119ed5d818bd59cd11e3387705959113e4f84b60"
+      }
+    }
+  ],
+  "new_scope_count": 6,
+  "collision_measurement": {
+    "path": ".scratch/roman-sources/collision-scan.json",
+    "sha256": "087b9ccb6d337b6a8fe584880d00b6d90abd862e8092b61100a8c83ae4237dc1"
+  },
+  "root_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review-v2.json",
+    "sha256": "e8812fba11c14396da0f37cec0a29f97f35898c25385b811be2a32802ccc0946"
+  },
+  "root_adopted_case_bindings": [
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Prayer after the Prostration",
+        "all",
+        1
+      ],
+      "latin_key": [
+        "good-friday",
+        "",
+        "Prayer after the Prostration",
+        "",
+        "",
+        1
+      ],
+      "Latin_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+      "English_sha256": "a0897e5a6efd7820740c2c762bc765e38e00546c7bdc5bc5c19f72bc7c6370f2",
+      "final_English_entry_sha256": "3d89eff914cd4f6c6f9d85405aaa983a312631312f65d68199aad2c997cc3250",
+      "resolved_Latin_row_sha256": "29f62b39417a55f1cafaad148a1cd25ed5660a38be5c8c4cdbe6147cfddc6de6",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-prostration-whole-target-20261030",
+      "target_record_sha256": "199baa623bec66da05302f34d03d450af192dc985c1060b4d6feb21246f77c1d",
+      "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030",
+      "controller_passage_record_sha256": "7794c5305055c5e6d8f5abcaf8e9a3779436012071cac23d7ba8933ef1cba04f",
+      "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432",
+      "controller_artifact_record_sha256": "9188d0321eeaa3e3714568581ae46235a6968d969d383b838d3cb5629713adcd",
+      "controller_payload_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+      "source_record_closure_sha256": "57bf2248f6d330f90224e8e0e14c26c6a58f6b49c5412e71948181212df82b0c",
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+      "status": "accepted",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "confidence": "moderate",
+      "jurisdiction": "United States",
+      "whole_expression_decision": "The complete earlier inherited-death, Passion and image argument remains continuous. The selected variant, conventional same-Christ conclusion and functional response direction do not create a distinct expressive development in this bounded whole. The combination is not an exact old witness: the mixed apparatus reading and cumulative ritual editing remain material contrary evidence.",
+      "english_decision": "Accepted as newly authored study English faithful to the exact Latin body. It is neither historical human English nor an approved liturgical translation."
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Third Prayer after Communion",
+        "all",
+        1
+      ],
+      "latin_key": [
+        "good-friday",
+        "",
+        "Third Prayer after Communion",
+        "",
+        "",
+        1
+      ],
+      "Latin_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+      "English_sha256": "24ea409c3486a6b51c4256e962d53c9a2905c527f27aa9539b53d49191ef3843",
+      "final_English_entry_sha256": "35cd816d69973b86145d3fd449a6fa4ae2b266fc5e6648fe3776e12729e6d462",
+      "resolved_Latin_row_sha256": "9429739be79c5262f622949e4140734379e3a0a80f41e39f512c2154bf3593c7",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-third-after-communion-whole-target-20261030",
+      "target_record_sha256": "78be2a80624e8705c5a8c1415137067431d3402fb1f9037c2935213f21c69121",
+      "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030",
+      "controller_passage_record_sha256": "a07f1b4d5af4c002a49252c5a2fa3d4ad2c1dadb036667bc5ea9d84092b9d55d",
+      "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887",
+      "controller_artifact_record_sha256": "f794a6ec507d2941d291d821f3e29f6802f793267969dbe3038242560884fda3",
+      "controller_payload_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+      "source_record_closure_sha256": "9a9dfaa5d3fc5377bdd5cdc9bd5fbbbddcc6c4df3650fec2da59866fc105ddcc",
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+      "status": "accepted",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "confidence": "moderate",
+      "jurisdiction": "United States",
+      "whole_expression_decision": "The complete earlier mercy and protection petition retains its Christ, blood and paschal-mystery explanation. Removing the repeated beneficiary pronoun and supplying the received same-Christ closure conventionally adapt that continuous prayer. Abridgment and arrangement can carry original expression; neither the different old appointment nor the separately old ending alone clears the resulting whole.",
+      "english_decision": "Accepted as newly authored study English faithful to the exact Latin body. It is neither historical human English nor an approved liturgical translation."
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "latin_key": [
+        "beatae-mariae-virginis-reginae",
+        "",
+        "Secret",
+        "",
+        "",
+        1
+      ],
+      "Latin_sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "English_sha256": "70106bd8c00991c3bc01d4ad07276f74a51e4a9792faf365980fb43be72e5f09",
+      "final_English_entry_sha256": "85c37508444051eccbaee7407a48e6c0f9247891a9a649c64f5523040123243a",
+      "resolved_Latin_row_sha256": "4a8701267d10c3690b41e4081711ec75366a353e53a669a15bcce98f35318896",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.queenship-secret-target-control-20261112",
+      "target_record_sha256": "f2e772ffa434655f469af5a1f0c823abe4b272276fccc8e72ae971a41260eb35",
+      "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified",
+      "controller_passage_record_sha256": "0f0a2b1dededf450a2e9c8f1fd7b5b62f630551ee0c6079b18ed56a3d7664c63",
+      "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified-7f341d63",
+      "controller_artifact_record_sha256": "6a0311362062daa3af242e455108809125c8d660a5a6eb38598326b0fdff6739",
+      "controller_payload_sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "source_record_closure_sha256": "891fff0274538df3bbb2a7260d81116db9d948a8b5bc76faac751c1b73cc5317",
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+      "status": "accepted",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "confidence": "moderate",
+      "jurisdiction": "United States",
+      "whole_expression_decision": "The complete already-Marian offering prayer retains its request, supporting merits and saving result. The rejoicing-Church wording and royal Marian title conventionally apply that received prayer in this exact combination. The changed ecclesial perspective and coordinated royal title remain substantive contrary evidence, not mere spelling changes.",
+      "english_decision": "Accepted as newly authored study English faithful to the exact Latin body. It is neither historical human English nor an approved liturgical translation."
+    },
+    {
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "latin_key": [
+        "beatae-mariae-virginis-reginae",
+        "",
+        "Postcommunion",
+        "",
+        "",
+        1
+      ],
+      "Latin_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "English_sha256": "28b0f46096d20021a1063d651c50e281bda9709a49587860da271462faf2e665",
+      "final_English_entry_sha256": "0bdb01803da0bec9665a899d38705a9ac7229759541e675dfd573f38a04f953d",
+      "resolved_Latin_row_sha256": "04e3ed06a5a1bfebb319f17b6eb13e63a8314c511b22a653cfdc61c1fd55a637",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.queenship-postcommunion-target-control-20261112",
+      "target_record_sha256": "932f32876ccbbb31ff409afb4697c011b3b827be5d3ac49c8f8f5ede978014d7",
+      "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified",
+      "controller_passage_record_sha256": "62bf8220b31ce0b04abfea8b9887dcbcb93f2cc2f7fd8918343ee7348720d0a3",
+      "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified-73348b62",
+      "controller_artifact_record_sha256": "ca3dc5395e5b78a2c89f2e2c129bc38bd5dbc34a60091b2c872f0613e2c2cc7a",
+      "controller_payload_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "source_record_closure_sha256": "79306672e61168a0061b7a2fcca7834e24e9f1c2b5ced5cd52b4b642b616696f",
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+      "status": "accepted",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "confidence": "moderate",
+      "jurisdiction": "United States",
+      "whole_expression_decision": "The complete earlier completed-rites, intercession, saving-result and joyful-observance sequence remains. The singular Marian honoree, feast or commemoration and associated adjustments conventionally apply the inherited prayer. The coordinated theological retargeting and arrangement remain material contrary evidence. The actual parenthetical option and short ending are preserved.",
+      "english_decision": "Accepted as newly authored study English faithful to the exact Latin body. It is neither historical human English nor an approved liturgical translation."
+    },
+    {
+      "identity": [
+        "comm-s-urbani-i-papae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_key": [
+        "comm-s-urbani-i-papae-martyris",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ],
+      "Latin_sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "English_sha256": "5af06636570d6aaf4e6c4d943dfdeb4083b51a667ddc641913ff027179316406",
+      "final_English_entry_sha256": "e7967ab8db859f54b9aeb429488554f19311e8f7c89bfe4b1c672ed59ae46106",
+      "resolved_Latin_row_sha256": "e60c9b1cef53958105ec023d4dd962cb3cd2d85049e140eb3ab6f3086dadf8ce",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.urban-target-collation-20261112",
+      "target_record_sha256": "e18099c2a8910897250800092e21d5798cdf53a1f0b6b7074efe31c3251878cd",
+      "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban",
+      "controller_passage_record_sha256": "3620aaa3264d1a0b8f31da8e1f74fcc89f2c6e0bcd8022f6ee1420d3f1308a87",
+      "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban-6a400cc9",
+      "controller_artifact_record_sha256": "7736aa4ecf1aaa4583e1ed8605e6b548cae44e69025d51ace82a31169448f91d",
+      "controller_payload_sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "source_record_closure_sha256": "80420c170bd5c19b0c5a30f802f961e389a3a9a52522dd77973872911b71b71a",
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+      "status": "accepted",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "confidence": "moderate",
+      "jurisdiction": "United States",
+      "whole_expression_decision": "The connected older Church, foundation, gates and steadfastness prayer remains the governing construction. In this exact whole the apostolic rock, named papal intercession, divine strength and continued protection conventionally apply that inherited framework. This is the most substantial redaction of the six: no old unit supplies the whole, and the coherent later ecclesial emphasis could be original. Acceptance is qualified and moderate, never an old-template rule or unqualified public-domain finding.",
+      "english_decision": "Accepted as newly authored study English faithful to the exact Latin body. It is neither historical human English nor an approved liturgical translation."
+    },
+    {
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        5
+      ],
+      "latin_key": [
+        "palm-sunday",
+        "",
+        "Procession Antiphon",
+        "",
+        "",
+        4
+      ],
+      "Latin_sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+      "English_sha256": "3acc42515afe33de1098224a2ad85207b38a3b12f2decd45d2e0e2de9033afa3",
+      "final_English_entry_sha256": "809c951c49951b69a3efc79b52319abc44faa735bfcefdcbd27dc1550cdc8640",
+      "resolved_Latin_row_sha256": "c52af0a480cca987896f8662f034999165a67790cb77bdf34a4b0375d88a958a",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-target-collation-20261112",
+      "target_record_sha256": "56d0c118e5e7307bd89f7be08409b24a11ad118b4a42edacbff726d83f2f5adc",
+      "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes",
+      "controller_passage_record_sha256": "49bf139248475c8c418f705b2857f84cf5167aa6d58485332e4fe3b8024f12dc",
+      "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes-0749a65a",
+      "controller_artifact_record_sha256": "b799351f9450ab264160d6f9d8c7fa3f8f1662f88550f65cee76e03e305cce56",
+      "controller_payload_sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+      "source_record_closure_sha256": "2421157a42b5590254fb56497c7645afdaba95b08701f3142631d88a690b87b8",
+      "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+      "status": "accepted",
+      "publication_basis": "qualified-nonoriginal-adaptation",
+      "confidence": "moderate",
+      "jurisdiction": "United States",
+      "whole_expression_decision": "The complete old praise and quoted blessing retain their sequence. The change from future dicent to present dicunt synchronizes the saying with the inherited present praise without a new clause or image. The tense choice is substantive contrary evidence. This decision covers only the bounded antiphon, excluding its psalm, repetitions and ritual arrangement.",
+      "english_decision": "Accepted as newly authored study English faithful to the exact Latin body. It is neither historical human English nor an approved liturgical translation."
+    }
+  ],
+  "independent_reviews": [
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/independent-source-review.json",
+      "sha256": "d6204deaca1a69ee69ca24cdc71a848315caf6a6a27cb9bfa830c4c710fee549"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/independent-english-review.json",
+      "sha256": "c2a16cf7a5051029937a835514ea29238e47edd3e1cade23a76025223fcb0465"
+    }
+  ],
+  "adopted_on": "2026-11-12",
+  "source_application_receipt": {
+    "sha256": "68b9d20a187a61789b67efd5a202c79d2f22a3937af565efce258d349c22a5ec",
+    "boundary": "Exact source-file and owner application receipt retained by the integration review; no runtime code activation inferred."
+  },
+  "historical_evidence_boundary": "The referenced v2 authority retains historical evidence and prior twenty-two adoption decisions. New plan paths are scratch reconstruction evidence; durable exact body/source review bindings are the root_review and independent_reviews above.",
+  "preserved_predecessor_authority": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/finite-latin-authority-v3.json",
+    "sha256": "a45509b6d6e4db53e41a09ce19a5eec27dad4533633b5ab275b2b182a6ebc18c"
+  },
+  "technical_correction": {
+    "reason": "Normalize source-provenance confidence to the schema token medium. The accepted qualified publication confidence remains moderate.",
+    "root_review": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review-v2.json",
+      "sha256": "e8812fba11c14396da0f37cec0a29f97f35898c25385b811be2a32802ccc0946"
+    },
+    "exact_corrections": [
+      {
+        "identity": [
+          "good-friday",
+          "main",
+          "Prayer after the Prostration",
+          "all",
+          1
+        ],
+        "changed_field": "provenance_confidence",
+        "before_value": "moderate",
+        "after_value": "medium",
+        "before_row": {
+          "provenance_status": "collated",
+          "publication_status": "permitted",
+          "publication_basis": "qualified-nonoriginal-adaptation",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "mass": "good-friday",
+          "form": "",
+          "proper": "Prayer after the Prostration",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030",
+          "source_date": "2026-11-12 reconstruction of exact previously adopted body; older Wilson1894 and Pustet1862 witnesses",
+          "locator": "Good Friday Prayer after the Prostration; complete editorial carrier latin.txt line1; target PDF243 / printed162 no.924",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-prostration-whole-target-20261030",
+          "verification_locator": "Feria VI in Passione et Morte Domini, printed 162, no. 924; artifact PDF 243, left column Oratio after the prostration",
+          "transformations": [
+            "Join target printed wraps, remove stress accents and expand ligatures; retain exact target wording, pointing, complete printed ending and response direction/marker. Identify the nonspoken direction/marker by an exact typed action while keeping the following Amen spoken. Do not relabel target variants as ancient main text."
+          ],
+          "provenance_evidence": "Entire target prayer read at 200/400 dpi. Whole Wilson prayer and apparatus, plus complete independent Pustet conclusion, are bound without silent harmonization. The target combines da with eidem; the old main has dona and the apparatus witnesses of da also have eiusdem. The ending changes, and Omnes respondent is new functional direction.",
+          "provenance_authority": "Triptych editorial projection verified by fresh page-image collation against the exact 1962 target",
+          "provenance_confidence": "moderate",
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432",
+            "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"
+          ],
+          "publication_locator": "Wilson1894 printed61,75,78; Pustet1862 printed135; exact registered whole-PDF page controls and retained whole readings.",
+          "publication_evidence": "The entire continuous old prayer retains its inherited-death, Passion and earthly/heavenly-image argument and word order. The later whole combines a synonymous command, received spelling, conventional closure and the functional two-word response direction; evaluated together these make no distinct new expressive prayer architecture. The hybrid apparatus/main selection and cumulative ritual editing are real contrary evidence and keep the judgment qualified and moderate. Omnes respondent is assessed as new functional wording, not falsely attested by Pustet R.; its exact nonspoken action and following spoken Amen must remain distinct. Strongest contrary: The final form is not a single literally identical older witness. Apparatus8 attests da in witnesses whose apparatus9 also has eiusdem, whereas the target retains main-text eidem; the modern form cannot be assembled and relabelled as an exact old witness. Choosing that hybrid, severing the final Christ genitive from the petition, adopting a different complete conclusion and expressly calling the congregation to respond could together be a deliberate ritual redaction with sufficiently original selection and arrangement. The originality threshold is low and the separate old formula by itself defeats none of that argument. Method english-completion-20261029-finite-latin-v1 limits admission to the code-pinned exact authority, including these row, body, action and source binding identities."
+        },
+        "after_row": {
+          "provenance_status": "collated",
+          "publication_status": "permitted",
+          "publication_basis": "qualified-nonoriginal-adaptation",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "mass": "good-friday",
+          "form": "",
+          "proper": "Prayer after the Prostration",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030",
+          "source_date": "2026-11-12 reconstruction of exact previously adopted body; older Wilson1894 and Pustet1862 witnesses",
+          "locator": "Good Friday Prayer after the Prostration; complete editorial carrier latin.txt line1; target PDF243 / printed162 no.924",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-prostration-whole-target-20261030",
+          "verification_locator": "Feria VI in Passione et Morte Domini, printed 162, no. 924; artifact PDF 243, left column Oratio after the prostration",
+          "transformations": [
+            "Join target printed wraps, remove stress accents and expand ligatures; retain exact target wording, pointing, complete printed ending and response direction/marker. Identify the nonspoken direction/marker by an exact typed action while keeping the following Amen spoken. Do not relabel target variants as ancient main text."
+          ],
+          "provenance_evidence": "Entire target prayer read at 200/400 dpi. Whole Wilson prayer and apparatus, plus complete independent Pustet conclusion, are bound without silent harmonization. The target combines da with eidem; the old main has dona and the apparatus witnesses of da also have eiusdem. The ending changes, and Omnes respondent is new functional direction.",
+          "provenance_authority": "Triptych editorial projection verified by fresh page-image collation against the exact 1962 target",
+          "provenance_confidence": "medium",
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432",
+            "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"
+          ],
+          "publication_locator": "Wilson1894 printed61,75,78; Pustet1862 printed135; exact registered whole-PDF page controls and retained whole readings.",
+          "publication_evidence": "The entire continuous old prayer retains its inherited-death, Passion and earthly/heavenly-image argument and word order. The later whole combines a synonymous command, received spelling, conventional closure and the functional two-word response direction; evaluated together these make no distinct new expressive prayer architecture. The hybrid apparatus/main selection and cumulative ritual editing are real contrary evidence and keep the judgment qualified and moderate. Omnes respondent is assessed as new functional wording, not falsely attested by Pustet R.; its exact nonspoken action and following spoken Amen must remain distinct. Strongest contrary: The final form is not a single literally identical older witness. Apparatus8 attests da in witnesses whose apparatus9 also has eiusdem, whereas the target retains main-text eidem; the modern form cannot be assembled and relabelled as an exact old witness. Choosing that hybrid, severing the final Christ genitive from the petition, adopting a different complete conclusion and expressly calling the congregation to respond could together be a deliberate ritual redaction with sufficiently original selection and arrangement. The originality threshold is low and the separate old formula by itself defeats none of that argument. Method english-completion-20261029-finite-latin-v1 limits admission to the code-pinned exact authority, including these row, body, action and source binding identities."
+        },
+        "before_row_sha256": "bc48c9e11d181890f1862dfeb714b99413f80711ffeaebafd8d745158709e7ad",
+        "after_row_sha256": "29f62b39417a55f1cafaad148a1cd25ed5660a38be5c8c4cdbe6147cfddc6de6",
+        "before_inherited_row_sha256": "22a50b323c85b52e8beb92810c902c825731c4f969afae6914a4619d7c24ba87",
+        "after_inherited_row_sha256": "dc9c69578f1582637867864c1cbfdffbc711c96523f8b86ef886a9eb663c6611",
+        "schema_issues_before": [
+          "['good-friday', 'main', 'Prayer after the Prostration', 'all', 1]: provenance_confidence must be low, medium, or high"
+        ],
+        "schema_issues_after": [
+          "['good-friday', 'main', 'Prayer after the Prostration', 'all', 1]: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+        ]
+      },
+      {
+        "identity": [
+          "good-friday",
+          "main",
+          "Third Prayer after Communion",
+          "all",
+          1
+        ],
+        "changed_field": "provenance_confidence",
+        "before_value": "moderate",
+        "after_value": "medium",
+        "before_row": {
+          "provenance_status": "collated",
+          "publication_status": "permitted",
+          "publication_basis": "qualified-nonoriginal-adaptation",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "mass": "good-friday",
+          "form": "",
+          "proper": "Third Prayer after Communion",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030",
+          "source_date": "2026-11-12 reconstruction of exact previously adopted body; older Wilson1894 and Pustet1862 witnesses",
+          "locator": "Good Friday Third Prayer after Communion; complete editorial carrier latin.txt line1; target PDF262 / printed181 no.970",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-third-after-communion-whole-target-20261030",
+          "verification_locator": "Feria VI in Passione et Morte Domini, printed 181, no. 970; artifact PDF 262, right column Oratio tertia after Communion",
+          "transformations": [
+            "Join target printed wraps, remove stress accents and expand ligatures; retain exact target wording, pointing, complete printed ending and response direction/marker. Identify the nonspoken direction/marker by an exact typed action while keeping the following Amen spoken. Do not relabel target variants as ancient main text."
+          ],
+          "provenance_evidence": "Entire target prayer read at 200/400 dpi. Whole Wilson prayer and apparatus, plus complete independent Pustet conclusion, are bound without silent harmonization. The target drops nobis and changes the printed conclusion. The old appointment is Monday of the sixth week; no calendar identity is inferred.",
+          "provenance_authority": "Triptych editorial projection verified by fresh page-image collation against the exact 1962 target",
+          "provenance_confidence": "moderate",
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887",
+            "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"
+          ],
+          "publication_locator": "Wilson1894 printed61,75,78; Pustet1862 printed135; exact registered whole-PDF page controls and retained whole readings.",
+          "publication_evidence": "The whole old mercy/protection prayer and Christ/blood/paschal-mystery explanation retain their syntax and sequence. Removing nobis prunes the beneficiary reference already carried by pro quibus; joining the prayer to the independently old same-Christ conclusion supplies conventional closure without a new expressive turn. Abridgment and arrangement can themselves be original, and the different old appointment does not prove the modern whole unprotected; these contrary facts remain, with moderate qualified confidence rather than an identity or whole-public-domain claim. Strongest contrary: An abridgment can contribute original authorship even if it adds no petition words. Deleting nobis makes pro quibus carry the beneficiary reference without a second communal pronoun; coupling that edited prayer to a more explicit Christ conclusion and response could constitute a meaningful modern ritual adaptation. The old source is a Monday-in-the-sixth-week prayer, not proof of the Good Friday appointment, and the Palm Sunday conclusion witness establishes its wording only. Neither source context proves that the final modern combination is wholly unprotected. Method english-completion-20261029-finite-latin-v1 limits admission to the code-pinned exact authority, including these row, body, action and source binding identities."
+        },
+        "after_row": {
+          "provenance_status": "collated",
+          "publication_status": "permitted",
+          "publication_basis": "qualified-nonoriginal-adaptation",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "mass": "good-friday",
+          "form": "",
+          "proper": "Third Prayer after Communion",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030",
+          "source_date": "2026-11-12 reconstruction of exact previously adopted body; older Wilson1894 and Pustet1862 witnesses",
+          "locator": "Good Friday Third Prayer after Communion; complete editorial carrier latin.txt line1; target PDF262 / printed181 no.970",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-third-after-communion-whole-target-20261030",
+          "verification_locator": "Feria VI in Passione et Morte Domini, printed 181, no. 970; artifact PDF 262, right column Oratio tertia after Communion",
+          "transformations": [
+            "Join target printed wraps, remove stress accents and expand ligatures; retain exact target wording, pointing, complete printed ending and response direction/marker. Identify the nonspoken direction/marker by an exact typed action while keeping the following Amen spoken. Do not relabel target variants as ancient main text."
+          ],
+          "provenance_evidence": "Entire target prayer read at 200/400 dpi. Whole Wilson prayer and apparatus, plus complete independent Pustet conclusion, are bound without silent harmonization. The target drops nobis and changes the printed conclusion. The old appointment is Monday of the sixth week; no calendar identity is inferred.",
+          "provenance_authority": "Triptych editorial projection verified by fresh page-image collation against the exact 1962 target",
+          "provenance_confidence": "medium",
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887",
+            "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"
+          ],
+          "publication_locator": "Wilson1894 printed61,75,78; Pustet1862 printed135; exact registered whole-PDF page controls and retained whole readings.",
+          "publication_evidence": "The whole old mercy/protection prayer and Christ/blood/paschal-mystery explanation retain their syntax and sequence. Removing nobis prunes the beneficiary reference already carried by pro quibus; joining the prayer to the independently old same-Christ conclusion supplies conventional closure without a new expressive turn. Abridgment and arrangement can themselves be original, and the different old appointment does not prove the modern whole unprotected; these contrary facts remain, with moderate qualified confidence rather than an identity or whole-public-domain claim. Strongest contrary: An abridgment can contribute original authorship even if it adds no petition words. Deleting nobis makes pro quibus carry the beneficiary reference without a second communal pronoun; coupling that edited prayer to a more explicit Christ conclusion and response could constitute a meaningful modern ritual adaptation. The old source is a Monday-in-the-sixth-week prayer, not proof of the Good Friday appointment, and the Palm Sunday conclusion witness establishes its wording only. Neither source context proves that the final modern combination is wholly unprotected. Method english-completion-20261029-finite-latin-v1 limits admission to the code-pinned exact authority, including these row, body, action and source binding identities."
+        },
+        "before_row_sha256": "d687566709067133e42cffb24b7526fecdc3c33938c8fd564590d42d877c8551",
+        "after_row_sha256": "9429739be79c5262f622949e4140734379e3a0a80f41e39f512c2154bf3593c7",
+        "before_inherited_row_sha256": "a7a76d52c15f3b550da12247843094ccdadc9c7ff7da3e50d15a9e28d3f175e7",
+        "after_inherited_row_sha256": "77ffd4023474f5cc42e57233171d99cb95b49f6aff6f7497ba40214e382d9d10",
+        "schema_issues_before": [
+          "['good-friday', 'main', 'Third Prayer after Communion', 'all', 1]: provenance_confidence must be low, medium, or high"
+        ],
+        "schema_issues_after": [
+          "['good-friday', 'main', 'Third Prayer after Communion', 'all', 1]: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+        ]
+      }
+    ],
+    "unchanged": "All six Latin and English bodies, source records, controller selections, publication judgments, scope keys, public notices, and original twenty-two scopes."
+  }
+}

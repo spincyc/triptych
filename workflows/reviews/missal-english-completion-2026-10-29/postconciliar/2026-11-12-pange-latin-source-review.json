@@ -1,0 +1,71 @@
+{
+  "schema": "triptych-independent-source-review/v1",
+  "date": "2026-11-12",
+  "reviewer": "modern_sources/pange_review",
+  "disposition": "required-changes-before-publication",
+  "source_readings_disposition": "accepted for exact historical-source quotation only",
+  "reviewed_head": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "candidate_sha256": "a59919103fd506e67a153767a30a0a9f1e2c1d25a3efd1f804494eec42c6f5ef",
+  "patch_sha256": "1eca99bddee25c982aa01a0761121e65e5ef5397eeb1f64ac6f918b00b8d8e17",
+  "new_passage_sha256": {
+    "pange-transfer-four-stanzas-20261112.toml": "5acb066200138d2fb06d33e614bd490571de90a0163e164c83d3f979585b2222",
+    "pange-reposition-two-stanzas-20261112.toml": "bbdaf00f4cfd4c992a72a338038ac6e21e6d5b5c4c3658d0e9787682f5ca82ff"
+  },
+  "verified": [
+    "Independently recovered historical PD page PDF from published c448036bd6 object; exact SHA25669fd77df32441bc239a2a18fc2858b669bf3ed21c8da5162531e688f4a281f51; independently rendered200dpi and visually read printed301-302.",
+    "All six Latin stanzas agree with source glyphs after recorded ae/oe expansion, source hyphen joining and layout whitespace; bounded selections preserve wording, punctuation, stanza order and final Amen extent.",
+    "Transfer quotes complete stanzas1-4 with no Amen; reposition quotes stanzas5-6 with source Amen and no following versicle. Corrected reposition locus is printed302.",
+    "Secondary2002 appointment image names Pange excluding final2 stanzas at n38 and Tantum ergo at n39. Both allow another Eucharistic chant; n39 has no literal two-stanza prescription. It prints no full hymn body.",
+    "Independently checked exact selected Latin hashes and all before/after parsed calendar and ledger values, including list lengths. Only the two intended owners/rows change.",
+    "Existing English full row dictionaries and body hashes are exactly conserved against canonical overlay.",
+    "Existing LatinDecision permits exact-transcription/public-domain historical source on all declared surfaces; coverage maps it to unresolved target relationship with collated source, not exact-target.",
+    "Executed actual tools/mass-propers select_texts and shared browser renderProper against candidate projections; stored independent evidence in byte-checks.json and render-checks.json."
+  ],
+  "required_changes": [
+    {
+      "id": "reader-qualification",
+      "severity": "high",
+      "scope": [
+        "src/web/browser/shared/browser-core.js:2668",
+        "src/web/browser/shared/browser-core.js:2828"
+      ],
+      "finding": "Latin-only output omits1879 provenance and all historical/2008 limitations; paired output prints1879 locator but omits historical/2008 limits; foreign-language fallback calls it The Latin original is shown. Candidate notes are present in data but unused here.",
+      "minimum_change": "Carry a concise historical1879 source qualification and unresolved modern-target limit beside displayed Latin in single, paired and fallback renderings; avoid unqualified original claim for this historical source. Preserve target-unresolved coverage and existing English qualifications. This can be a narrow qualified-Latin rendering path; broad alternative-witness UI is unnecessary."
+    },
+    {
+      "id": "cli-qualification",
+      "severity": "high",
+      "scope": [
+        "tools/mass-propers:5752",
+        "scripts/_calendars.py:2809"
+      ],
+      "finding": "Actual CLI selection returns (Latin body, empty attribution, empty note) for both. mass-propers reading and dependent text consumers therefore lose source qualification.",
+      "minimum_change": "Carry the same historical-source and unresolved-target qualification into the shared CLI Latin selection tuple; inspect dependent mass-today and terminal surfaces."
+    },
+    {
+      "id": "durable-integration",
+      "severity": "required-integration",
+      "scope": [
+        "source epoch successor",
+        "source library",
+        "publication/source ledger"
+      ],
+      "finding": "Candidate is scratch-only and old removed hashes are retained only in candidate receipt; full integration/source-epoch/generator checks remain unrun.",
+      "minimum_change": "Preserve exact prior removed hashes and reviewed source-only admission in a durable bounded receipt, register new passages, integrate via exact source-epoch successor, then run owning source/calendar/coverage gates and regenerate affected consumer products. Do not convert this receipt into2008 approval."
+    }
+  ],
+  "minimum_acceptance_checks": [
+    "Run source-library validation with the new passage records and exact evidence locally available; full-source ownership/rights graph must pass.",
+    "Check proper Latin ledger hashes, calendar validity, source-epoch finite successor and unchanged unrelated owners/English.",
+    "Assert both modern Latin rows remain target relationship unresolved and source collation collated, with same historical body hashes.",
+    "Actual reader/CLI regression for Latin-only, pairedEnglish and an unavailable-language fallback must show historical qualification and unresolved2008 target beside Latin; negative control must not label source as exact-target or contemporary approved English.",
+    "Review actual generated Propers/Day reader output for both HolyThursday selections; source apparatus must not claim obligatory hymn choice or explicit n39 two-stanza prescription."
+  ],
+  "limits": [
+    "No whole2008 authentic witness or full modern hymn collation acquired; no exact2008 wording or appointment finding.",
+    "1946 English is independently accepted historical antecedent English; no assertion it translates this exact1879 printing or supplies approved contemporary English.",
+    "No new legal grant inferred; source admission uses the existing exact1879 artifact public-domain basis only.",
+    "Executed shared renderer with actual candidate Latin projection and existing English body, but not full generated browser deployment or print layout.",
+    "No canonical writes, commits or publication performed by this reviewer."
+  ]
+}

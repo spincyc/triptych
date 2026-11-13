@@ -28,6 +28,7 @@ import _calendars  # noqa: E402
 import _missal_coverage  # noqa: E402
 import _oration_execution  # noqa: E402
 import _name_execution  # noqa: E402
+import _oration_endings  # noqa: E402
 import _proper_qualified_latin  # noqa: E402
 from _psalms import (  # noqa: E402
     PSALMS,
@@ -3529,6 +3530,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                          if mass_keys is None or mass_keys & set(_oration_execution.HOSTS) else {})
     name_sources = (_name_execution.load_name_sources(root, calendar, owner)
                     if mass_keys is None or mass_keys & {key[0] for key in _name_execution.TARGETS} else {})
+    conclusion_sources = _oration_endings.load_sources(root, calendar, owner)
     joined_orations = oration_relations(root, calendar)
     overlay, untranslated, stale, witnesses = (
         translation_overlay(calendar, root) if source_keys is None
@@ -3773,6 +3775,8 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
             execution_key = identity[:3] + (CYCLE_ALL, identity[3])
             if execution_key in execution_sources:
                 built_proper["execution_sources"] = [execution_sources[execution_key]]
+            if execution_key in conclusion_sources:
+                built_proper["conclusion_execution"] = [conclusion_sources[execution_key]]
             name_key = (mass["key"], current_form_id, proper["name"], CYCLE_ALL, identity[3])
             if name_key in name_sources:
                 built_proper["name_execution_sources"] = [name_sources[name_key]]

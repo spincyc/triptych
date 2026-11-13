@@ -24,6 +24,7 @@ from _missal_coverage import (  # noqa: E402
     validate_bounded_form_text_slots,
     validate_summary,
 )
+from _missal_readiness import build_readiness, render_text as render_readiness  # noqa: E402
 
 
 FAMILIES = ("roman-pre-1955", "roman-1962", "postconciliar")
@@ -74,10 +75,10 @@ EXAMPLES = {
         Example(
             "tools/complete-missal --help",
             (
-                "usage: complete-missal [-h] [--check | --require-resolved] [--json]",
+                "usage: complete-missal [-h] [--check | --require-resolved] [--readiness]",
+                "                       [--json]",
                 "",
-                "Compose the owning corpus reports into a deterministic §13 completeness report without inventing an expected universe.",
-                "... 11 more lines",
+                "... 14 more lines",
             ),
         ),
     ),
@@ -1237,6 +1238,11 @@ def main(argv: list[str] | None = None) -> int:
         help="exit 1 after reporting while any dimension remains unresolved",
     )
     parser.add_argument(
+        "--readiness",
+        action="store_true",
+        help="report bilingual daily-reader source readiness separately from structural renderability",
+    )
+    parser.add_argument(
         "--json",
         action="store_true",
         help="emit one compact key-sorted JSON object (cli-v1)",
@@ -1245,14 +1251,19 @@ def main(argv: list[str] | None = None) -> int:
     arguments = parser.parse_args(argv)
     try:
         report = build_report(*owning_reports())
-    except (OSError, Refused, subprocess.TimeoutExpired) as error:
+        if arguments.readiness:
+            report = build_readiness(report)
+    except (OSError, Refused, ValueError, subprocess.TimeoutExpired) as error:
         print(f"complete-missal: {error}", file=sys.stderr)
         return 2
     if arguments.json:
         print_json(report)
+    elif arguments.readiness:
+        render_readiness(report)
     else:
         render_text(report)
-    return 1 if arguments.require_resolved and not report["check"]["resolved"] else 0
+    resolved = report["ready"] if arguments.readiness else report["check"]["resolved"]
+    return 1 if arguments.require_resolved and not resolved else 0
 
 
 if __name__ == "__main__":

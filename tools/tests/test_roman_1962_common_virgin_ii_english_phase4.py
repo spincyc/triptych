@@ -2,6 +2,7 @@
 from pathlib import Path
 import copy,csv,hashlib,io,json,tomllib,unittest
 from tools.tests import test_roman_1962_english31_phase4 as prior
+from _artifact_store import resolve as resolve_artifact
 from tools.tests import _source_batch_guards as source_batch
 ROOT=Path(__file__).resolve().parents[2]
 CAL=ROOT/"src/sources/calendars"
@@ -292,7 +293,7 @@ class CommonVirginIIEnglishTests(unittest.TestCase):
 
     def test_accepted_common_latin_proof_old43_old9778_and41_bindings_frozen(self):
         for path,expected in FROZEN_COMMON_FILES.items():
-            with self.subTest(path=path):self.assertEqual(sha((ROOT/path).read_bytes()),expected)
+            with self.subTest(path=path):self.assertEqual(sha(resolve_artifact(ROOT,path,fetch=False).read_bytes()),expected)
         common=[r for r in self.latin if r["mass"]=="commune-virginum-2" and r["proper"] in ("Collect","Secret")]
         self.assertEqual(digest(common),COMMON_ROWS_SHA)
         old="artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33"

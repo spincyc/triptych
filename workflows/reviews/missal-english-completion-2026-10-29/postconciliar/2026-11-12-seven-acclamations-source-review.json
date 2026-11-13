@@ -1,0 +1,387 @@
+{
+  "schema": "triptych-independent-bounded-source-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "/root/modern_sources/ordinary_review",
+  "candidate_author": "/root/modern_sources/partition_later_accepted",
+  "verdict": "accept-seven-acclamation-source-candidates-for-finite-root-adoption",
+  "scope": "Seven exact composed Gospel Acclamation verse coordinates, supplied by four complete historical bodies with five target punctuation forms. Source and whole-expression publication assessment only; new source and ledger records and integrated reader validation are not yet included in this packet.",
+  "candidate_path": ".scratch/modern-partition-later/seven-acclamations-candidate.json",
+  "candidate_sha256": "03b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432",
+  "carrier_tsv_path": ".scratch/modern-partition-later/seven-acclamations-latin.tsv",
+  "carrier_tsv_sha256": "8986231a21988e9ce6e3173ebbec257b62996a839ae7f2b20b48c16c41c03cb7",
+  "verification_path": ".scratch/modern-later-acclamations-review/verification.json",
+  "verification_sha256": "b0ccfd7fac627181617fd027b06db094ca6cd77c4bd3b95984edf2b44e517a01",
+  "checker_path": ".scratch/modern-later-acclamations-review/check.py",
+  "checker_sha256": "7d37546b587dd79f0ddb75b8032598f1c155586f25f6010d7fd973f8ab55133a",
+  "accepted_coordinates": [
+    {
+      "identity": [
+        "saint-lawrence-brindisi-priest-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "historical_body_sha256": "9a8ade73802471a7a675b1b625c0d311fb301fe80821511739e7fed466b34f4a",
+      "english_body_sha256": [
+        "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798"
+      ],
+      "before_proper_json_sha256": "2b628161d5cd7c3a19bcc6e6083b3fc06bb96bb8aa440f235a838d920d6f227e",
+      "after_proper_json_sha256": "5b6a7bef3917c32a77a48fdd92c45d7f3a3ab752b70f6a6dd8ff0d60d4ab84dc",
+      "unchanged_english_dictionary_json_sha256": "fe483d38fcaefbf7cf5ac5b8070e84418d22e4944377da2517a2a56eab4d2ff6",
+      "target_owner": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+      "target_appointment": "n.602 (July21) explicitly appoints n.729.8",
+      "target_pdf_pages": [
+        390,
+        351
+      ]
+    },
+    {
+      "identity": [
+        "saint-john-chrysostom-bishop-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "historical_body_sha256": "9a8ade73802471a7a675b1b625c0d311fb301fe80821511739e7fed466b34f4a",
+      "english_body_sha256": [
+        "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798"
+      ],
+      "before_proper_json_sha256": "062c492191d0a09578ac43d6a58f474fc5816bca709b9264f5822f0633d1b0a1",
+      "after_proper_json_sha256": "e6d88e185d7f733b0909eb2d7df8abf2f58b4db9397772325618c822d0eec05d",
+      "unchanged_english_dictionary_json_sha256": "617393fdedee2a0b0352cae324f38ec4f70081badddfa642b0f3dd9691c3a089",
+      "target_owner": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+      "target_appointment": "n.637 (September13) explicitly appoints n.729.8",
+      "target_pdf_pages": [
+        390,
+        359
+      ]
+    },
+    {
+      "identity": [
+        "pentecost",
+        "vigil",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "body_sha256": "c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0",
+      "historical_body_sha256": "ec2ddb47814e6d5bbe791b49c52d17a17c23ce7e04320dacdb774d156507e2c8",
+      "english_body_sha256": [
+        "885a5136d1f867d0691a9a096e9af7e05580d16e14ed9049f8a0fe017e6f511c"
+      ],
+      "before_proper_json_sha256": "65f5a4542821a91257f35cb854c7e7e63ccc0c9b36f36d16c90bc9284d70c73e",
+      "after_proper_json_sha256": "f934a013ff7b031fc44672705eeb45896e2a087c28f489dc76ec38eb8c4dd158",
+      "unchanged_english_dictionary_json_sha256": "6738e5b87a39ee8230c9d30a09f39adc174edf48ab4f5afba9377c941408339e",
+      "target_owner": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+      "target_appointment": "n.62 Pentecost Ad Missam in vigilia",
+      "target_pdf_pages": [
+        95
+      ]
+    },
+    {
+      "identity": [
+        "pentecost",
+        "day",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "body_sha256": "c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0",
+      "historical_body_sha256": "ec2ddb47814e6d5bbe791b49c52d17a17c23ce7e04320dacdb774d156507e2c8",
+      "english_body_sha256": [
+        "885a5136d1f867d0691a9a096e9af7e05580d16e14ed9049f8a0fe017e6f511c"
+      ],
+      "before_proper_json_sha256": "65f5a4542821a91257f35cb854c7e7e63ccc0c9b36f36d16c90bc9284d70c73e",
+      "after_proper_json_sha256": "21df945cc25be5008a63548472381fcf25f21bb012421f6faffe8e9a7518cec6",
+      "unchanged_english_dictionary_json_sha256": "6013d095acda035e8a621847feb4accd4d32296401b00a7d55c6050a72b1afe7",
+      "target_owner": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+      "target_appointment": "n.63 Pentecost Ad Missam in die: Alleluia Ut supra,n.62",
+      "target_pdf_pages": [
+        95
+      ]
+    },
+    {
+      "identity": [
+        "nativity",
+        "day",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "body_sha256": "1f7e9e52b87aea04b1fbd3d7de15bce31c1c4971b7a489a7cd4dbf272d93a797",
+      "historical_body_sha256": "1f7e9e52b87aea04b1fbd3d7de15bce31c1c4971b7a489a7cd4dbf272d93a797",
+      "english_body_sha256": [
+        "60fff024d7b543e76876749940e2e1c9419ff008e6be17887f1bb7ee828d6ad4"
+      ],
+      "before_proper_json_sha256": "77dbd176ed89dca216ca28b4a04b48786d00ad81c179895bdc59af40037563ac",
+      "after_proper_json_sha256": "42fcc09e19595078564833fcf59f92683b08a744a89976c34eed329fdd10f6d4",
+      "unchanged_english_dictionary_json_sha256": "617265300811e54649d945a6aa6f939eef97e58a8dfafb7d1a1c4abb81971ad0",
+      "target_owner": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+      "target_appointment": "n.16 Nativity Ad Missam in die",
+      "target_pdf_pages": [
+        66
+      ]
+    },
+    {
+      "identity": [
+        "easter-3",
+        "main",
+        "Gospel Acclamation",
+        "C",
+        1
+      ],
+      "body_sha256": "3038efc01f0f7b132cc7d03b53fff17d7d2e7b3a0950dc8e7243295de4b87e12",
+      "historical_body_sha256": "bc30ed94c6de5ec84868ae81d812a7e374c7fb129c418001109933166e679c0d",
+      "english_body_sha256": [
+        "388998c78ec3888ea0fb40a8b18d432c5a84fced0534245d734d379883c29690"
+      ],
+      "before_proper_json_sha256": "8952c7b5f0e6ebdc9fe8c0219cd374e8c0c9a3ddefbc609c0581848df8b22f43",
+      "after_proper_json_sha256": "4543e085eb36daad195b928bf9e4f711b4cc2a9acde1021c20c5d1fd62ec1ef7",
+      "unchanged_english_dictionary_json_sha256": "5e7bea2a55996004a596902389592e71bef1dfbe2e6f572215ab430dfbf9d0ff",
+      "target_owner": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+      "target_appointment": "n.48C EasterIII YearC, not A/B",
+      "target_pdf_pages": [
+        88
+      ]
+    },
+    {
+      "identity": [
+        "easter-2-saturday",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "body_sha256": "25f2a27baa91440142ef50d70e6fe88c5052b07a75fb740d6c785cd10b17bc1f",
+      "historical_body_sha256": "bc30ed94c6de5ec84868ae81d812a7e374c7fb129c418001109933166e679c0d",
+      "english_body_sha256": [
+        "388998c78ec3888ea0fb40a8b18d432c5a84fced0534245d734d379883c29690"
+      ],
+      "before_proper_json_sha256": "4ed8c5615c3c48ca337f5b91aec9fcf3ad9a78731af2dfcffe1e547439776d2d",
+      "after_proper_json_sha256": "d9952bfcaaf0b7cf0d42c971b9ff5670b3eb6cea4b2c4443c65f20e83a6d2190",
+      "unchanged_english_dictionary_json_sha256": "951d0a608c7563b1d1a81c2ba1e0e72076d6e2cc98d1956e725f416eabf1e150",
+      "target_owner": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+      "target_appointment": "n.272 Sabbato, EasterII ferial course",
+      "target_pdf_pages": [
+        202
+      ]
+    }
+  ],
+  "source_identity": {
+    "OLM_whole_pdf_sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+    "OLM_whole_pdf_bytes": 21487058,
+    "OLM_identity_finding": "Whole PDF independently rehashed. Fresh artifact p. 5 image explicitly identifies Ordo lectionum Missae, editio typica altera, Libreria Editrice Vaticana, MCMLXXXI. Artifact p. 7 contains the promulgation decree. The identity is taken from the identified book, not inferred from a web filename or a later source.",
+    "Lasance_whole_pdf_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+    "Lasance_whole_pdf_bytes": 75268976,
+    "Lasance_identity_scope": "Exact complete registered revised-1945 later-printing scan rehashed. Only the complete verses on ordinary seasonal printed pages 145, 555 and 599 are used; excluded lettered inserts and the whole-PDF rights state are not changed.",
+    "Pustet_page_sha256": "b68ef0d6180b0f7a00e06269a71e44ab1b9eebc79ca69ca7086f952fe3b71849",
+    "Pustet_latin_tsv_sha256": "129a2f73517c43fca3d9211581d6b2ad6b5754c22b0af664561836a5b4ff5c76",
+    "Pustet_identity_scope": "Registered 1888 Pustet Breviary page 339 and its exact Latin TSV independently rehashed; the complete registered page image was opened and read."
+  },
+  "independent_visual_method": "Fresh complete OLM and Lasance page rasters were generated in this review scratch from independently rehashed whole PDFs. All seven target verse/appointment pages, three historical Lasance pages and the complete Pustet page were directly viewed. Additional OLM title and adjacent heading pages establish the printed edition and Nativity/Easter week/course context. Optical text is not the wording authority. No modern body extraction or previously refused Ordinary target-transcription action was performed.",
+  "whole_body_findings": [
+    {
+      "body": "Semen est",
+      "historical_locus": "Pustet 1888 printed339, Feria Tertia within Sexagesima, Magnificat antiphon at bottom right",
+      "complete_unit": "The entire antiphon, from Semen through aeternum, is present as one uninterrupted source unit. The chant asterisk is an internal performance mark and is removed explicitly. Stress accents and ae ligature are normalized; the old colon after Christus becomes the OLM semicolon. Every spoken word and its order is unchanged.",
+      "targets": [
+        "OLM n.602, AP351/printed297, July21 Lawrence of Brindisi, refers explicitly to n.729.8",
+        "OLM n.637, AP359/printed305, September13 John Chrysostom, refers explicitly to n.729.8",
+        "OLM n.729.8 complete verse AP390/printed336"
+      ],
+      "ending_and_frame": "No Alleluia word is part of the old antiphon or the selected OLM verse. No Amen, concluding formula or wrapper is added."
+    },
+    {
+      "body": "Veni, Sancte Spiritus",
+      "historical_locus": "Lasance AP597/printed599, Whitsunday, second Alleluia verse immediately above the Sequence",
+      "complete_unit": "The selected verse begins after the separate kneeling direction and ends at accende before the Sequence heading. The preceding Psalm103 verse, Alleluia frame, versicle mark and kneeling rubric are outside the quoted body. This is not the following Sequence with the same incipit. The old colon after fidelium becomes the OLM semicolon; every spoken word and its order is unchanged.",
+      "targets": [
+        "OLM n.62, AP95/printed41, Pentecost Ad Missam in vigilia, complete verse",
+        "OLM n.63, same page, Pentecost Ad Missam in die, explicitly refers its Alleluia to n.62"
+      ],
+      "ending_and_frame": "Ends at accende with its actual period. No final Alleluia, Amen or long ending is supplied."
+    },
+    {
+      "body": "Dies sanctificatus",
+      "historical_locus": "Lasance AP146/printed145, Christmas III Mass, complete Alleluia verse",
+      "complete_unit": "The complete verse begins after the opening Alleluia and versicle mark and ends at terram before a separately printed final Alleluia. This fresh verse-only selection excludes both wrapper locations. The two colons and final period agree with OLM; only old accents and printer wrapping are normalized.",
+      "targets": [
+        "OLM n.16, AP66/printed12, Ad Missam in die; Nativity heading and governing context independently read on preceding AP65"
+      ],
+      "ending_and_frame": "No Alleluia wrapper, Amen or concluding formula is added to the selected verse."
+    },
+    {
+      "body": "Surrexit Christus",
+      "historical_locus": "Lasance AP553/printed555, Thursday in Easter Week, complete Alleluia verse",
+      "complete_unit": "The entire source verse follows the separate Alleluia/versicle and ends at generi before the Sequence referral. Its words and order agree with both OLM appointments. OLM n.48C retains the comma after Christus and omits the old colon after omnia; n.272 omits the comma after Christus and replaces that colon with a comma. The two exact target punctuation forms remain separate.",
+      "targets": [
+        "OLM n.48 C, AP88/printed34, with EasterIII heading and distinct A/B provisions on AP87/printed33",
+        "OLM n.272 Sabbato, AP202/printed148, within Hebdomada secunda Paschae established at AP201/printed147"
+      ],
+      "ending_and_frame": "The historical selected verse ends at generi; no subsequent Alleluia occurs before the Sequence referral, and none is invented. No Amen or concluding formula is added."
+    }
+  ],
+  "controlling_target_assessment": {
+    "accepted_exact_owner": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+    "finding": "The source role for these seven Gospel Acclamations is the identified Latin Lectionary, which gives the complete verse or an explicit numbered referral. The postconciliar profile requires the owning Missal, Lectionary, ritual or chant source to control its own component. Exactness to this controlling OLM1981 expression and its named recipient is therefore the appropriate positive claim. A missing whole-2008 altar-Missal collation does not make the directly verified OLM appointment uncollated.",
+    "limits": [
+      "No authenticated complete2008 Missal or complete Mass claim",
+      "No ICEL/CCD or territorial approved-English claim",
+      "No new reading/Common option chosen by this source admission",
+      "No expansion from Easter3 YearC to A/B",
+      "No additional recipient inferred from a shared incipit or feast name"
+    ],
+    "reader_requirement": "Identify the exact source owner as OLM1981 wherever this source-exactness claim is exposed. Do not label it an authenticated2008 altar-book collation. Historical English attribution and its study status must remain visible."
+  },
+  "whole_expression_publication_assessment": {
+    "basis": "public-domain",
+    "jurisdiction": "United States",
+    "Semen_basis": "The complete old Latin antiphon is directly verified in the registered 1888 Pustet source with its affirmative publication-date basis and exact public-domain Latin carrier. Later OLM pointing introduces no new substantive expression.",
+    "Lasance_Latin_basis": "The repository rights inventory, pinned in each affected case, separately identifies the latin-missale-romanum layer as the old Tridentine Latin through Benedict XV, public domain by its own age. This review applies that existing layer finding only to the three complete source verses directly read on the ordinary seasonal pages. The source layer is distinct from the English registration/nonrenewal finding and from the unresolved whole late-printing PDF.",
+    "whole_expression_reasoning": "Each displayed verse is one complete old source unit, with all words in the original order. None is assembled from scattered old fragments or reconstructed from a Bible citation. The only recorded changes are chant-mark removal, accent/ligature and line-wrap normalization, or punctuation. Considered as a whole, none adds a new developed clause, substantive alteration or expressive arrangement. The publication basis is the independent old whole expression; OLM establishes exact appointment and comparison only.",
+    "strongest_adverse_argument": "A modern liturgical book may contain protected editing or arrangement, and the presence of old words in a later book does not clear that book or its selection as a whole. The mixed late Lasance scan likewise cannot be treated as entirely public domain. English permission does not automatically license Latin.",
+    "response": "The finite body for each recipient is the exact complete historical verse, not the surrounding modern book, rubrics or selection. Source layers, bounds and recipient appointments are separately identified. No substantive modern recasting is present in any of these seven bodies. Whole-book scans and surrounding apparatus remain outside publication. This is a bounded internal project assessment rather than rightsholder permission or a court ruling.",
+    "primary_legal_sources_consulted_in_this_review_session": [
+      "https://www.copyright.gov/title17/92chap1.html#103",
+      "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf"
+    ],
+    "reconsider_if": [
+      "any body hash or appointment changes",
+      "a word is added, removed or substituted",
+      "a wrapper or rubric is added to the publication unit",
+      "the source layer or artifact identity is overturned"
+    ]
+  },
+  "english_review": {
+    "finding": "All seven complete English dictionaries match the current canonical entries and remain identical in the proposal, including attribution, historical witness relation, publication artifact and passage bindings, and every body byte. Existing historical English is not relabeled as an approved or newly literal target translation. In particular, the Bute Semen rendering remains his historical wording, with its documented freedom relative to the Latin.",
+    "new_english_bodies": 0,
+    "changed_english_dictionaries": 0,
+    "publication_binding_change": "None proposed. These are already attributed historical human translations with their own exact publication bindings, not a new study translation requiring invented Latin provenance."
+  },
+  "metadata_finding_resolved": {
+    "initial_issue": "The earlier packet retained proper_after notes denying a publishable Latin whole witness; its Lasance rationale blurred the English nonrenewal and Latin-age source layers.",
+    "resolution": "The accepted frozen packet supplies dated Latin-successor notes, preserves full before-state in the receipt, explains that the old English admission provided no Latin authority, and pins the distinct Latin rights layer. English dictionaries and Latin payload TSV did not change.",
+    "accepted_candidate_sha256": "03b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432"
+  },
+  "mechanical_checks": {
+    "result": "passed",
+    "coordinates": 7,
+    "historical_whole_bodies": 4,
+    "target_pointing_bodies": 5,
+    "checks": [
+      "frozen candidate and TSV hashes",
+      "all seven exact current proper before-nodes",
+      "all seven unchanged complete English dictionaries and body hashes",
+      "five proposed payload hashes and TSV recipient joins",
+      "old/target lexical identity after explicitly limited normalization",
+      "only exact body/status/notes fields change",
+      "Easter3 A/B preservation",
+      "registered target artifact identity and restricted state",
+      "historical source record/rights inventory/prior review pins",
+      "complete source PDFs and all author image hashes"
+    ],
+    "not_claimed": [
+      "prepared new canonical source records or Latin ledger rows",
+      "full integrated source-library/schema or publication validation",
+      "source-epoch acceptance",
+      "browser or paired-rendering validation"
+    ]
+  },
+  "independent_rasters": [
+    {
+      "path": ".scratch/modern-later-acclamations-review/lasance-146.png",
+      "sha256": "f27589b258f1a40a6381c1d2a2791a15d613e0b6b99d80188bfc0f44c659b624"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/lasance-553.png",
+      "sha256": "9beceb814dcb6fd99e53fb957e533ed30e309b272ccc0462bc8096e55f91b5c6"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/lasance-597.png",
+      "sha256": "8b46f15b08d4b1d0515d2af998b06544011ed4965073a7cffcfd5fcd4df7f530"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-2.png",
+      "sha256": "30d0cf3be05ce7afc15adc535f6615e589162beaec81c76c5df6e4dc11c2d268"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-200.png",
+      "sha256": "96247c8a3c40524e3c7e43f1c724c223fc65f49449248b8b8b80f760a15c2a68"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-201.png",
+      "sha256": "c40648679a6bfebeaf35bba4aef5ecf10716da8cfd7512a25c86fc625b8da099"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-202.png",
+      "sha256": "824c755251938506e6f0a7a7057b5447119c65eb0f987fe67a068ab5f9746b1b"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-3.png",
+      "sha256": "d3b025ec0183199f211158861a834dfaa07dca57e65489ad990a34b29ec153c5"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-351.png",
+      "sha256": "477b325ca6776dae8e8d88f61bbba6bd20e5eecbbccd5be8ea938b58504dfc2b"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-359.png",
+      "sha256": "e935ea16c2697926c6080ac9b1e20bd67f6009b458136606286f1223db3151de"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-390.png",
+      "sha256": "cbaee5ef16e40702ae6c30462c749ba8a683a5449534f6a1127e469f9d95a71f"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-5.png",
+      "sha256": "0099de4525575e076b220b122d4038a6f1868925a322e50c8187f44bb0fdb51c"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-64.png",
+      "sha256": "9a0897191a856969059c619e3b54d3504e49db96a405cfc090bcf3f1efdbc6c0"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-65.png",
+      "sha256": "5317c4210b16844771099c8d943bdaedf8251410633b09b58e45dc40f43742b8"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-66.png",
+      "sha256": "2c57df94a81ab5c77ca7b6de87daf972527858c6be1bb20803f68c25af836981"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-7.png",
+      "sha256": "5c982b17ec23000e047053f1761f4cfd6bcba6aac2ba19e1d7ad5035fb4962f6"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-86.png",
+      "sha256": "c43e303763854ec49e935ba2e0938246d4b5d918b9fb4e3c9ebb9da916f07571"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-87.png",
+      "sha256": "4e45e2e379e2e27d6e70aa4f4e329c92e23a2e2d3cf631875bc73dbf69de5436"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-88.png",
+      "sha256": "81719ed44ad33511e8484a288cd49298d0c053ab6ffe4096e06564e0e67ce566"
+    },
+    {
+      "path": ".scratch/modern-later-acclamations-review/olm-95.png",
+      "sha256": "ba441ad7063f890bc22ee7d142bbe25e2ffdb173d77f534e33b0625442f9f4e4"
+    }
+  ],
+  "required_source_text_changes": [],
+  "source_or_publication_blockers_for_exact_seven_bodies": [],
+  "root_integration_requirements": [
+    "Adopt finite Latin authority for exactly these seven body hashes and OLM1981 recipient coordinates, separate from previous English-only decisions.",
+    "Prepare source artifacts and exact publication/verification passages, seven Latin ledger rows and their source-owner qualification; those records are not part of this candidate and require their own schema/path/locus/graph checks.",
+    "Apply only the reviewed proper/status/notes deltas; preserve all seven English dictionaries and all other cycles, appointments, neighbours and options.",
+    "Carry the existing historical-English attribution and study status alongside the source-verified OLM Latin; do not claim approved English or authenticated whole2008 correspondence.",
+    "Keep external Alleluia framing separate from these verse bodies and validate that reader composition neither doubles nor invents it.",
+    "Coordinate exact source/body/provenance deltas with source_epoch and run integrated source, calendar, publication, generated-output and reader checks.",
+    "Exclude already reviewed Pange and the separate Pentecost extended-vigil prayer from this seven-coordinate admission; the two Pentecost Gospel Acclamations here are distinct."
+  ]
+}

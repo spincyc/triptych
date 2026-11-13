@@ -27,9 +27,7 @@ def tool_json(*arguments: str) -> dict:
 
 def nominal_resumed_slots(pentecost_sundays: int) -> dict[int, str]:
   """Return the fixed RG 18 map; occurrence is deliberately out of scope."""
-  if pentecost_sundays == 23:
-    raise ValueError("RG 18 does not legislate the P=23 shortfall")
-  starts = {24: None, 25: 6, 26: 5, 27: 4, 28: 3}
+  starts = {23: None, 24: None, 25: 6, 26: 5, 27: 4, 28: 3}
   first = starts.get(pentecost_sundays)
   if first is None:
     return {}
@@ -78,9 +76,8 @@ class CalendarComputationGuidanceTest(unittest.TestCase):
     self.assertEqual(result[dt.date(2008, 11, 9)], ("Epiphany 5", "Lateran dedication", True))
     self.assertEqual(result[dt.date(2008, 11, 16)], ("Epiphany 6", "Epiphany 6", False))
 
-  def test_p23_fails_closed(self):
-    with self.assertRaisesRegex(ValueError, "P=23"):
-      nominal_resumed_slots(23)
+  def test_p23_has_no_resumed_epiphany_slot(self):
+    self.assertEqual(nominal_resumed_slots(23), {})
 
   def test_1962_reader_calendar_has_68_parents(self):
     landing = (ROOT / "library/traditional-latin-mass.md").read_text()

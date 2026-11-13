@@ -3882,17 +3882,21 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = "A great multitude that was met together at the festival cried out to the Lord: Blessed is he that cometh in the name of the Lord: Hosanna in the highest."
 
-[[untranslated]]
+[[entries]]
 mass = "palm-sunday"
 form_id = "main"
 proper = "Procession Antiphon"
 cycle = "all"
 occurrence = 5
+source_latin_sha256 = "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes-0749a65a", "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review.json"
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "The 1861 Cummiskey and 1862 Pustet witnesses both pass directly from the three historical procession antiphons now attached as occurrences 1-3 to the Gloria, laus hymn. This 1955 addition appears in neither witness, so no English body is attached."
+rights = "project-created"
+text = "All praise your name together and say: “Blessed is he who comes in the name of the Lord: Hosanna in the highest.”\n"
 
 [[untranslated]]
 mass = "palm-sunday"
@@ -3906,17 +3910,31 @@ availability = "unavailable"
 reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
 note = "Cummiskey printed p. 239 ends Ingrediente Domino and passes directly to the Mass; it has no English for the 1955 Domine Jesu Christe procession-conclusion prayer retained by the 1962 target."
 
-[[untranslated]]
+[[entries]]
 mass = "good-friday"
 form_id = "main"
 proper = "Prayer after the Prostration"
 cycle = "all"
 occurrence = 1
+source_latin_sha256 = "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review.json"
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "Cummiskey printed p. 280 moves from silent prostration directly to the lesson and has no English for the 1955 Deus, qui peccati veteris prayer retained by the 1962 target."
+rights = "project-created"
+text = "God, who through the Passion of your Christ, our Lord, undid the inherited death of the ancient sin, into which all succeeding generations had entered: grant that, having been conformed to him, as we have borne the image of the earthly one by the necessity of nature, so we may bear the image of the heavenly one through the sanctification of grace. Through the same Christ our Lord. All respond: Amen.\n"
+notice = "Original study translation by Triptych."
+
+[entries.translations.text_structure]
+text_sha256 = "a0897e5a6efd7820740c2c762bc765e38e00546c7bdc5bc5c19f72bc7c6370f2"
+checked = "Original study English of the source-checked Latin. Literal same-Christ ending is retained; response direction/marker is nonspoken and Amen is spoken."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 384
+text = "All respond:"
 
 [[untranslated]]
 mass = "good-friday"
@@ -3954,17 +3972,31 @@ availability = "unavailable"
 reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
 note = "After Communion Cummiskey has only the ordinary Quod ore sumpsimus before Vespers/Respice; it has no English for the second 1955 post-Communion prayer in the 1962 target."
 
-[[untranslated]]
+[[entries]]
 mass = "good-friday"
 form_id = "main"
 proper = "Third Prayer after Communion"
 cycle = "all"
 occurrence = 1
+source_latin_sha256 = "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review.json"
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "After Communion Cummiskey has only the ordinary Quod ore sumpsimus before Vespers/Respice; it has no English for the third 1955 post-Communion prayer in the 1962 target."
+rights = "project-created"
+text = "Remember your mercies, Lord, and sanctify your servants with everlasting protection, for whom Christ, your Son, established the paschal mystery through his own blood. Through the same Christ our Lord. R. Amen.\n"
+notice = "Original study translation by Triptych."
+
+[entries.translations.text_structure]
+text_sha256 = "24ea409c3486a6b51c4256e962d53c9a2905c527f27aa9539b53d49191ef3843"
+checked = "Original study English of the source-checked Latin. Literal same-Christ ending is retained; response direction/marker is nonspoken and Amen is spoken."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 201
+text = "R."
 
 [[untranslated]]
 mass = "easter-vigil"
@@ -4349,17 +4381,21 @@ text = "I am the Saviour of my people, saith the Lord: in whatever distress they
 
 
 
-[[untranslated]]
+[[entries]]
 mass = "comm-s-urbani-i-papae-martyris"
 form_id = "main"
 proper = "Collect"
 cycle = "all"
 occurrence = 1
+source_latin_sha256 = "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban-6a400cc9", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-virtute-preface-whole-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review.json"
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound. A historical English lead from the public-domain Cummiskey 1861 (edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861) was formerly stored here and stays quarantined, because no tracked publication artifact and verified passage binding establishes exact text that may be served. Retyped from rights-withheld on 2026-10-19 (C2 gap G3): nothing about this slot is rights restricted; the binding is C3 work."
+rights = "project-created"
+text = "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed Urban, your Martyr and Supreme Pontiff, she may be fortified with continual security, remaining steadfast in your strength. Through the Lord.\n"
 
 [[untranslated]]
 mass = "assumptione-beatae-mariae-virginis"
@@ -22341,29 +22377,37 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
 
-[[untranslated]]
+[[entries]]
 mass = "beatae-mariae-virginis-reginae"
 form_id = "main"
 proper = "Postcommunion"
 cycle = "all"
 occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
+source_latin_sha256 = "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified-73348b62", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review.json"
 
-[[untranslated]]
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O Lord, now that the solemn rites which we performed for the feast (commemoration) of Saint Mary our Queen have been celebrated, we pray that through her intercession they may bring us salvation; they have been joyfully fulfilled in her honor. Through the Lord.\n"
+
+[[entries]]
 mass = "beatae-mariae-virginis-reginae"
 form_id = "main"
 proper = "Secret"
 cycle = "all"
 occurrence = 1
+source_latin_sha256 = "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified-7f341d63", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review.json"
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The source appointment is established by the registered 1962 CMAA facsimile, artifact621-622/printed540-541. No exact human English exemplar/publication binding is established for this owner; no English is supplied and no whole-witness absence is asserted."
+rights = "project-created"
+text = "Receive, we pray, O Lord, the gifts of the rejoicing Church, and grant that, with the aid of the merits of the Blessed Virgin Mary the Queen, they may help us attain salvation. Through the Lord.\n"
 
 [[entries]]
 mass = "advent-ember-saturday"

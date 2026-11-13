@@ -1,0 +1,1548 @@
+{
+  "schema": "triptych-independent-roman-six-english-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Independent Codex English-fidelity review",
+  "base_commit": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "branch": "feature/missal-reader",
+  "scope": "All six complete proposed Latin and reconstructed English bodies, including actual endings, embedded rubrics, the Queenship option, and communicative fidelity. Review performed independently from the root meaning assessments.",
+  "result": "accept-all-six-exact-proposed-english-bodies",
+  "authority_boundary": "This is a bounded review proposal, not an adoption, activation, publication-rights, or approved-liturgical-text decision. The root retains study-translation and admission authority. Changed body, source controller, or meaningful entry bytes need their own review; no vanished historical English receipt is treated as acceptance of these new bytes.",
+  "hash_convention": "Body hashes are SHA-256 of exact UTF-8 text including terminal LF. File hashes cover exact file bytes. Object hashes use JSON UTF-8 with ensure_ascii=False, sort_keys=True and separators=(comma, colon), without terminal LF.",
+  "plans": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/install-plan.json",
+      "sha256": "d6102e9854702ee9d4c8ef00f139f395e31beaf40037ea99a970c71df0415f10",
+      "byte_size": 31042
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/install-plan.json",
+      "sha256": "3530451542b051cec722ff1b17052cd724445cee1d7f5c095ce8e3d5bb05c188",
+      "byte_size": 39527
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/install-plan.json",
+      "sha256": "6b3456b438491d1d3755f198e3a5a4a53ae876e237e6e1022bab5af8ce56a2f3",
+      "byte_size": 38572
+    }
+  ],
+  "cases": [
+    {
+      "case": "good-friday-prostration",
+      "identity": [
+        "good-friday",
+        "main",
+        "Prayer after the Prostration",
+        "all",
+        1
+      ],
+      "plan_path": ".scratch/roman-sources/gf-pair/install-plan.json",
+      "plan_sha256": "d6102e9854702ee9d4c8ef00f139f395e31beaf40037ea99a970c71df0415f10",
+      "verdict": "accept",
+      "verdict_scope": "Complete exact proposed English body is faithful to the complete exact proposed Latin body as original study English; not adoption or liturgical approval.",
+      "latin_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+      "english_sha256": "a0897e5a6efd7820740c2c762bc765e38e00546c7bdc5bc5c19f72bc7c6370f2",
+      "new_proper_sha256": "8229e2d2173df165c752b4d36f1ae847f4026ed421cfa6a16b89ce99b7948a36",
+      "latin_provenance_sha256": "bc48c9e11d181890f1862dfeb714b99413f80711ffeaebafd8d745158709e7ad",
+      "english_entry_sha256": "974326a3649a9e6c1842051f4e9566289e842a9d6f3df3390b4477f7144f9267",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030",
+      "source_artifacts": [
+        {
+          "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432",
+          "payload_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+          "byte_size": 344,
+          "artifact_type": "editorial-projection",
+          "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/artifact.toml",
+          "manifest_sha256": "4b47c8fb6d23b1214d6832742dd3bcdd877ee0619c376c72eec8559efa39a599",
+          "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/latin.txt",
+          "derived_from": null,
+          "projected_from": [
+            "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+            "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+          ]
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+          "payload_sha256": "8e343f986642600eb54e3be9cef15ab096f3589ce05fb019de4fbd0c16a9e26d",
+          "byte_size": 638,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/artifact.toml",
+          "manifest_sha256": "509de7ba6dc6e0240cd7a58e84cc732b090dd2377b2935367997d9706f986806",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+          "payload_sha256": "58788348c5188989a6e16fe50a50a2fe8ebc7327ef44e24e29b497153403763c",
+          "byte_size": 46,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/artifact.toml",
+          "manifest_sha256": "29bcaf661aef73473fd9947971a333d26df888352fdad1ec74a1280298121aca",
+          "payload_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/latin.txt",
+          "derived_from": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "projected_from": []
+        }
+      ],
+      "target_image": {
+        "path": ".scratch/roman-sources/gf-pair/rasters/cmaa-1962-p243-400.png",
+        "sha256": "8103219dd027bff8bb8be157d59ffaaf18d466845a07d78b70d75e800980986a",
+        "byte_size": 294507,
+        "locus": "CMAA 1962 artifact p. 243, printed p. 162, no. 924; complete prayer and following response direction.",
+        "viewed_extent": "full page"
+      },
+      "text_structure": {
+        "la": {
+          "sha256": "063b891eae8f3cfc92e50de2712013d06aafc9f525f6a9a478006260f61d2cc0",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 320,
+              "text": "Omnes respondent:"
+            }
+          ],
+          "exact_offsets_pass": true,
+          "amen_outside_actions": true
+        },
+        "en": {
+          "sha256": "32be4b1699e0d7ef3058d9523767f241ed47f4b23e72b14a902fabd4c1754112",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 384,
+              "text": "All respond:"
+            }
+          ],
+          "exact_offsets_pass": true,
+          "amen_outside_actions": true
+        }
+      },
+      "reasons": [
+        "The opening retains God as addressee and Christ, our Lord, as the one whose Passion undoes the inherited death arising from the ancient sin. All succeeding generations correctly renders the collective posteritatis genus omne; nothing from the older main-text ending is imported.",
+        "Having been conformed to him refers to the same Christ and preserves the prayer's antecedent. The earthly-one/heavenly-one comparison, the necessity of nature, and sanctification by grace all remain. The inherited biblical allusion is preserved without inserting explanatory names into the prayer.",
+        "Through the same Christ our Lord accurately retains the entire printed Per eundem Christum Dominum nostrum. conclusion. All respond: translates the printed direction and is typed nonspoken; Amen remains spoken.",
+        "The English is a complete, intelligible study rendering. The sanctification of grace is literal and somewhat abstract; the separate optional-wording file offers a nonblocking clarification, not a required correction."
+      ],
+      "ending_check": "Complete printed same-Christ ending retained; no further standard conclusion expansion.",
+      "option_check": "No internal optional wording in this bounded target.",
+      "required_revisions": []
+    },
+    {
+      "case": "good-friday-third-after-communion",
+      "identity": [
+        "good-friday",
+        "main",
+        "Third Prayer after Communion",
+        "all",
+        1
+      ],
+      "plan_path": ".scratch/roman-sources/gf-pair/install-plan.json",
+      "plan_sha256": "d6102e9854702ee9d4c8ef00f139f395e31beaf40037ea99a970c71df0415f10",
+      "verdict": "accept",
+      "verdict_scope": "Complete exact proposed English body is faithful to the complete exact proposed Latin body as original study English; not adoption or liturgical approval.",
+      "latin_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+      "english_sha256": "24ea409c3486a6b51c4256e962d53c9a2905c527f27aa9539b53d49191ef3843",
+      "new_proper_sha256": "6b2d92657ba1e0180f396e90a53c874f727bab559aee25bff49976ed57006d5a",
+      "latin_provenance_sha256": "d687566709067133e42cffb24b7526fecdc3c33938c8fd564590d42d877c8551",
+      "english_entry_sha256": "74cad39489a5950c3bf9a618248b78c55c7400f7acb163ce8366aac33d002587",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030",
+      "source_artifacts": [
+        {
+          "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887",
+          "payload_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+          "byte_size": 217,
+          "artifact_type": "editorial-projection",
+          "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/artifact.toml",
+          "manifest_sha256": "3c50a5b1b29a5d7b49b0a3815b3b350734367e6faea06ef235b0cc8f4447c7c6",
+          "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/latin.txt",
+          "derived_from": null,
+          "projected_from": [
+            "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+            "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+            "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+          ]
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+          "payload_sha256": "8e343f986642600eb54e3be9cef15ab096f3589ce05fb019de4fbd0c16a9e26d",
+          "byte_size": 638,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/artifact.toml",
+          "manifest_sha256": "509de7ba6dc6e0240cd7a58e84cc732b090dd2377b2935367997d9706f986806",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+          "payload_sha256": "58788348c5188989a6e16fe50a50a2fe8ebc7327ef44e24e29b497153403763c",
+          "byte_size": 46,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/artifact.toml",
+          "manifest_sha256": "29bcaf661aef73473fd9947971a333d26df888352fdad1ec74a1280298121aca",
+          "payload_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/latin.txt",
+          "derived_from": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "projected_from": []
+        }
+      ],
+      "target_image": {
+        "path": ".scratch/roman-sources/gf-pair/rasters/cmaa-1962-p262-400.png",
+        "sha256": "e6c62a9cb021ea96067afc7e1d8a0258d8fee7dd3c64735145c40b5749352264",
+        "byte_size": 286859,
+        "locus": "CMAA 1962 artifact p. 262, printed p. 181, no. 970; complete third prayer and response.",
+        "viewed_extent": "full page"
+      },
+      "text_structure": {
+        "la": {
+          "sha256": "7455d9ef4592f76df02ed47cf6fd8a3c37216668b1a04bcb49935b7a2d89b94a",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 208,
+              "text": "R."
+            }
+          ],
+          "exact_offsets_pass": true,
+          "amen_outside_actions": true
+        },
+        "en": {
+          "sha256": "0df86230f2bfc98a6d6e9ec177ea38d175776460108643e234e3d601d036ecb6",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 201,
+              "text": "R."
+            }
+          ],
+          "exact_offsets_pass": true,
+          "amen_outside_actions": true
+        }
+      },
+      "reasons": [
+        "Remember your mercies preserves the plural appeal; sanctify your servants with everlasting protection preserves the verb, object, and means. The servants remain the beneficiaries of the following for whom clause.",
+        "Christ, your Son, established the paschal mystery through his own blood accurately preserves the agent, filial title, verb, mystery, and means. The translation does not restore the older witness's omitted nobis.",
+        "The complete same-Christ ending is retained. The R. marker is typed nonspoken in both languages at its exact offset, and Amen remains spoken."
+      ],
+      "ending_check": "Complete printed same-Christ ending and spoken Amen retained.",
+      "option_check": "No internal optional wording in this bounded target.",
+      "required_revisions": []
+    },
+    {
+      "case": "queenship-secret",
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "plan_path": ".scratch/roman-sources/queenship-pair/install-plan.json",
+      "plan_sha256": "3530451542b051cec722ff1b17052cd724445cee1d7f5c095ce8e3d5bb05c188",
+      "verdict": "accept",
+      "verdict_scope": "Complete exact proposed English body is faithful to the complete exact proposed Latin body as original study English; not adoption or liturgical approval.",
+      "latin_sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "english_sha256": "70106bd8c00991c3bc01d4ad07276f74a51e4a9792faf365980fb43be72e5f09",
+      "new_proper_sha256": "5f4b0a7c60737cd088ff565d31484aa30992a5dba9baaf16a0215327fe62889f",
+      "latin_provenance_sha256": "4a8701267d10c3690b41e4081711ec75366a353e53a669a15bcce98f35318896",
+      "english_entry_sha256": "85c37508444051eccbaee7407a48e6c0f9247891a9a649c64f5523040123243a",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified",
+      "source_artifacts": [
+        {
+          "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified-7f341d63",
+          "payload_sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+          "byte_size": 174,
+          "artifact_type": "editorial-projection",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/artifact.toml",
+          "manifest_sha256": "33fd2132872275f4fbe73acc579e00479d3cb12d567eb0220bd4ac35d78ee2b2",
+          "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/latin.txt",
+          "derived_from": null,
+          "projected_from": [
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+            "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+          ]
+        },
+        {
+          "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+          "payload_sha256": "439a271f72cb925b86dc63787157fd1b5f6f1c55e8bc00bba691c991e7bb8268",
+          "byte_size": 181,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/artifact.toml",
+          "manifest_sha256": "756614926836e43cedb9673a205c1db79e0655931c2ab2d9906386c93f1e1a71",
+          "payload_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+          "payload_sha256": "6b0db644727b1634a7eb5304ffe7fbd28b5ae963ac9e73b3e865a9d5a6c1179b",
+          "byte_size": 176,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/artifact.toml",
+          "manifest_sha256": "a2198da98e990657f8e45db22d18d2cda44f7f483c2365fba7bc1cf3e0fa9382",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+          "payload_sha256": "f4971dd237cda4356f169f5a9b95e8279db836cd117507e599f6fc5f7f3abe7c",
+          "byte_size": 143,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/artifact.toml",
+          "manifest_sha256": "41dcf71c2b55e76effe7f94fb1b19b928c1fc8b080762c06b13e92be3053c743",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+          "payload_sha256": "90a8d08f0165759f772ec601bba085caccbca8c5a2bf442a30c3a22b76adcda8",
+          "byte_size": 140,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/artifact.toml",
+          "manifest_sha256": "df3aa845c8b54c350e790dd12e5ffc1ab176006e2d455fe5825f24f878713641",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        }
+      ],
+      "target_image": {
+        "path": ".scratch/roman-sources/queenship-pair/images/target-400.png",
+        "sha256": "cea74aef0bdd339ef67a016cf00144cef3666912dacf0a33c208ffa512d9785a",
+        "byte_size": 269862,
+        "locus": "CMAA 1962 artifact p. 622, printed p. 541, nos. 2692 and 2695; both complete prayers and their endings.",
+        "viewed_extent": "full page"
+      },
+      "text_structure": {
+        "la": {
+          "present": false,
+          "finding": "No internal response-direction marker requiring a nonspoken span in this bounded body. Parentheses in Queenship Postcommunion remain an explicit alternative."
+        },
+        "en": {
+          "present": false,
+          "finding": "No internal response-direction marker requiring a nonspoken span in this bounded body. Parentheses in Queenship Postcommunion remain an explicit alternative."
+        }
+      },
+      "reasons": [
+        "Receive ... the gifts of the rejoicing Church preserves the requested acceptance, the gifts as object, and the Church as their source. It does not silently restore the older Holy House wording.",
+        "With the aid of the merits retains suffragantibus meritis and all Marian identifiers, including Virgin and Queen. They may help us attain salvation makes the gifts the subject of provenire and preserves ad nostrae salutis auxilium as their requested saving benefit.",
+        "Through the Lord. translates only the actual short Per Dominum. cue. No unwitnessed full ending or response is supplied."
+      ],
+      "ending_check": "Literal short Per Dominum. / Through the Lord. cue retained.",
+      "option_check": "No internal optional wording in this bounded target.",
+      "required_revisions": []
+    },
+    {
+      "case": "queenship-postcommunion",
+      "identity": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "plan_path": ".scratch/roman-sources/queenship-pair/install-plan.json",
+      "plan_sha256": "3530451542b051cec722ff1b17052cd724445cee1d7f5c095ce8e3d5bb05c188",
+      "verdict": "accept",
+      "verdict_scope": "Complete exact proposed English body is faithful to the complete exact proposed Latin body as original study English; not adoption or liturgical approval.",
+      "latin_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "english_sha256": "28b0f46096d20021a1063d651c50e281bda9709a49587860da271462faf2e665",
+      "new_proper_sha256": "54c2a5a7859df6dcb7f5309bd36bb772fda0fb6cef0d4e7d4fb63c7821a609b6",
+      "latin_provenance_sha256": "04e3ed06a5a1bfebb319f17b6eb13e63a8314c511b22a653cfdc61c1fd55a637",
+      "english_entry_sha256": "0bdb01803da0bec9665a899d38705a9ac7229759541e675dfd573f38a04f953d",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified",
+      "source_artifacts": [
+        {
+          "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified-73348b62",
+          "payload_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+          "byte_size": 212,
+          "artifact_type": "editorial-projection",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/artifact.toml",
+          "manifest_sha256": "16a1a34d6450446c2cdcebf21bbb55b6e5fe337f007b756cf72fe2b09b4a1973",
+          "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/latin.txt",
+          "derived_from": null,
+          "projected_from": [
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+            "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+          ]
+        },
+        {
+          "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+          "payload_sha256": "439a271f72cb925b86dc63787157fd1b5f6f1c55e8bc00bba691c991e7bb8268",
+          "byte_size": 181,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/artifact.toml",
+          "manifest_sha256": "756614926836e43cedb9673a205c1db79e0655931c2ab2d9906386c93f1e1a71",
+          "payload_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+          "payload_sha256": "6b0db644727b1634a7eb5304ffe7fbd28b5ae963ac9e73b3e865a9d5a6c1179b",
+          "byte_size": 176,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/artifact.toml",
+          "manifest_sha256": "a2198da98e990657f8e45db22d18d2cda44f7f483c2365fba7bc1cf3e0fa9382",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+          "payload_sha256": "f4971dd237cda4356f169f5a9b95e8279db836cd117507e599f6fc5f7f3abe7c",
+          "byte_size": 143,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/artifact.toml",
+          "manifest_sha256": "41dcf71c2b55e76effe7f94fb1b19b928c1fc8b080762c06b13e92be3053c743",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+          "payload_sha256": "90a8d08f0165759f772ec601bba085caccbca8c5a2bf442a30c3a22b76adcda8",
+          "byte_size": 140,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/artifact.toml",
+          "manifest_sha256": "df3aa845c8b54c350e790dd12e5ffc1ab176006e2d455fe5825f24f878713641",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        }
+      ],
+      "target_image": {
+        "path": ".scratch/roman-sources/queenship-pair/images/target-400.png",
+        "sha256": "cea74aef0bdd339ef67a016cf00144cef3666912dacf0a33c208ffa512d9785a",
+        "byte_size": 269862,
+        "locus": "CMAA 1962 artifact p. 622, printed p. 541, nos. 2692 and 2695; both complete prayers and their endings.",
+        "viewed_extent": "full page"
+      },
+      "text_structure": {
+        "la": {
+          "present": false,
+          "finding": "No internal response-direction marker requiring a nonspoken span in this bounded body. Parentheses in Queenship Postcommunion remain an explicit alternative."
+        },
+        "en": {
+          "present": false,
+          "finding": "No internal response-direction marker requiring a nonspoken span in this bounded body. Parentheses in Queenship Postcommunion remain an explicit alternative."
+        }
+      },
+      "reasons": [
+        "The English resolves the Latin's opening ablative construction into now that the solemn rites ... have been celebrated and retains those rites as the subject of the petition. Its repetition of performed/celebrated reflects the source rather than omitting a clause.",
+        "The feast (commemoration) of Saint Mary our Queen retains the parenthetical memoria alternative and the complete identity. The rendering does not choose one alternative or merge both into a cumulative celebration.",
+        "Through her intercession ... bring us salvation preserves the intercessor and the benefit for us. Joyfully fulfilled in her honor retains the closing relative clause, its joy, and its Marian reference.",
+        "Through the Lord. retains only the printed short ending. No Amen or longer conclusion is added."
+      ],
+      "ending_check": "Literal short Per Dominum. / Through the Lord. cue retained.",
+      "option_check": "festivitate (memoria) remains feast (commemoration), a parenthesized alternative. This review does not decide when it is selected.",
+      "required_revisions": []
+    },
+    {
+      "case": "urban-collect",
+      "identity": [
+        "comm-s-urbani-i-papae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "plan_path": ".scratch/roman-sources/urban-omnes/install-plan.json",
+      "plan_sha256": "6b3456b438491d1d3755f198e3a5a4a53ae876e237e6e1022bab5af8ce56a2f3",
+      "verdict": "accept",
+      "verdict_scope": "Complete exact proposed English body is faithful to the complete exact proposed Latin body as original study English; not adoption or liturgical approval.",
+      "latin_sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "english_sha256": "5af06636570d6aaf4e6c4d943dfdeb4083b51a667ddc641913ff027179316406",
+      "new_proper_sha256": "5fb0eb0e7371c1c301d16f289236df2daf528f41d14f16c18da250e3fb6dcba9",
+      "latin_provenance_sha256": "e60c9b1cef53958105ec023d4dd962cb3cd2d85049e140eb3ab6f3086dadf8ce",
+      "english_entry_sha256": "e7967ab8db859f54b9aeb429488554f19311e8f7c89bfe4b1c672ed59ae46106",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban",
+      "source_artifacts": [
+        {
+          "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban-6a400cc9",
+          "payload_sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+          "byte_size": 261,
+          "artifact_type": "editorial-projection",
+          "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/artifact.toml",
+          "manifest_sha256": "0a157d446aa452e03b8ade7a2183a99ddafd64d66398ab9ccaf6b6cf3b3f325f",
+          "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/latin.txt",
+          "derived_from": null,
+          "projected_from": [
+            "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-virtute-preface-whole-20261112",
+            "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"
+          ]
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+          "payload_sha256": "2ba50bddb43a5d2eb14265770b0aabc5a60750509101ec8df6ce6b2190b51810",
+          "byte_size": 196,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/artifact.toml",
+          "manifest_sha256": "f838077f43ead0d7a3ac1da08164f23d502f48290f7c51f2b94993fb518bdff7",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-virtute-preface-whole-20261112",
+          "payload_sha256": "c2bc0a8f73b06214adee738c44b210f2298c8ee5d76b76e0559d2d2ed73c9a1a",
+          "byte_size": 172,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/artifact.toml",
+          "manifest_sha256": "dd29a94cb3b4104ac1ab3c286894a6bc8f6d8dc2b359f6a54ed21c61feac9451",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+          "payload_sha256": "d18b79835bfa47efb99bd4b1a9f43b2c6b758b67d9dfb590e9c4253770103a75",
+          "byte_size": 100,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/artifact.toml",
+          "manifest_sha256": "1c893158d403b9283166c54c00f862388fe3aaae3ae4f5f5c081c59a26e681a6",
+          "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "projected_from": []
+        },
+        {
+          "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112",
+          "payload_sha256": "ed368e8aeabdcdfb257d04ca01cb274c7002ce7224ac642b92a9e0c2d605be4d",
+          "byte_size": 155,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/artifact.toml",
+          "manifest_sha256": "47f4ec2c994d7f22dc72d0dde3c5a2f1426c24349fdf449f225a3d62a5890850",
+          "payload_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/latin.txt",
+          "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "projected_from": []
+        }
+      ],
+      "target_image": {
+        "path": ".scratch/roman-sources/urban-omnes/derivatives/cmaa616-400.png",
+        "sha256": "c8cd3ba21427e1a6d4602f9c30508764366af4e6517fa2cdc116dbf0388fe97e",
+        "byte_size": 30323,
+        "locus": "CMAA 1962 artifact p. 616, printed p. 535, no. 2639; complete Urban Collect.",
+        "viewed_extent": "bounded complete-prayer crop"
+      },
+      "text_structure": {
+        "la": {
+          "present": false,
+          "finding": "No internal response-direction marker requiring a nonspoken span in this bounded body. Parentheses in Queenship Postcommunion remain an explicit alternative."
+        },
+        "en": {
+          "present": false,
+          "finding": "No internal response-direction marker requiring a nonspoken span in this bounded body. Parentheses in Queenship Postcommunion remain an explicit alternative."
+        }
+      },
+      "reasons": [
+        "The English keeps God as rescuer of the Church founded on the apostolic rock, and retains the terror of the gates of hell. The Church remains the subject of the requested continuing protection.",
+        "Blessed Urban, your Martyr and Supreme Pontiff preserves every personal title in the target and assigns the intercession to Urban. The translation is of the target prayer, not the different older Urban oration.",
+        "Remaining steadfast in your strength correctly translates the actually printed virtute and does not substitute the related Common's veritate. Fortified with continual security is literal but intelligible and preserves both muniatur and continua securitate.",
+        "Through the Lord. retains the actual short target conclusion without expansion or an added response."
+      ],
+      "ending_check": "Literal short Per Dominum. / Through the Lord. cue retained.",
+      "option_check": "No internal optional wording in this bounded target.",
+      "required_revisions": [],
+      "latin_key": [
+        "comm-s-urbani-i-papae-martyris",
+        "",
+        "Collect",
+        "",
+        "",
+        1
+      ]
+    },
+    {
+      "case": "omnes-antiphon",
+      "identity": [
+        "palm-sunday",
+        "main",
+        "Procession Antiphon",
+        "all",
+        5
+      ],
+      "plan_path": ".scratch/roman-sources/urban-omnes/install-plan.json",
+      "plan_sha256": "6b3456b438491d1d3755f198e3a5a4a53ae876e237e6e1022bab5af8ce56a2f3",
+      "verdict": "accept",
+      "verdict_scope": "Complete exact proposed English body is faithful to the complete exact proposed Latin body as original study English; not adoption or liturgical approval.",
+      "latin_sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+      "english_sha256": "3acc42515afe33de1098224a2ad85207b38a3b12f2decd45d2e0e2de9033afa3",
+      "new_proper_sha256": "ea7c45428327c180fe8c9cad12a68b3acf218cbbf506543358c82a2ddf6814b3",
+      "latin_provenance_sha256": "c52af0a480cca987896f8662f034999165a67790cb77bdf34a4b0375d88a958a",
+      "english_entry_sha256": "809c951c49951b69a3efc79b52319abc44faa735bfcefdcbd27dc1550cdc8640",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes",
+      "source_artifacts": [
+        {
+          "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes-0749a65a",
+          "payload_sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+          "byte_size": 106,
+          "artifact_type": "editorial-projection",
+          "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/artifact.toml",
+          "manifest_sha256": "d9421c895174fec0b49aca03064503b42fc9a6963a26727b97de48459731b459",
+          "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/latin.txt",
+          "derived_from": null,
+          "projected_from": [
+            "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+            "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112"
+          ]
+        },
+        {
+          "id": "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112",
+          "payload_sha256": "c2d21fbc140305438edbb6c9354951064582a88e842bf274e849bdf7472947e5",
+          "byte_size": 100,
+          "artifact_type": "checked-transcription",
+          "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/artifact.toml",
+          "manifest_sha256": "11ec7f1e39434c58f0b37cf223b6333adc6fc8c6f6ed8bbd816554e0db0c3fc4",
+          "payload_path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/latin.txt",
+          "derived_from": "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.whole-pdf-20261112-21c082e9",
+          "projected_from": []
+        }
+      ],
+      "target_image": {
+        "path": ".scratch/roman-sources/urban-omnes/derivatives/cmaa215-400.png",
+        "sha256": "4a52ee23a0fb33beebfee1fc580c8ed3f7eaf6cd7a8a2065240ef92bfd50b6b0",
+        "byte_size": 13415,
+        "locus": "CMAA 1962 artifact p. 215, printed p. 134, no. 838; first complete Antiphona 5 body.",
+        "viewed_extent": "bounded complete-antiphon crop"
+      },
+      "text_structure": {
+        "la": {
+          "present": false,
+          "finding": "No internal response-direction marker requiring a nonspoken span in this bounded body. Parentheses in Queenship Postcommunion remain an explicit alternative."
+        },
+        "en": {
+          "present": false,
+          "finding": "No internal response-direction marker requiring a nonspoken span in this bounded body. Parentheses in Queenship Postcommunion remain an explicit alternative."
+        }
+      },
+      "reasons": [
+        "All praise your name together preserves the universal subject, the object, and the collective force of collaudant. And say follows the target present dicunt; it does not import the older witness's future dicent.",
+        "The complete quoted blessing, coming in the Lord's name, and Hosanna in the highest are present. There is no added response, conclusion, psalm, doxology, repetition instruction, or neighboring antiphon.",
+        "The English is bound to translation occurrence 5 and Latin direct-body occurrence 4, as the plan explicitly distinguishes; it is not attached by incipit alone."
+      ],
+      "ending_check": "Antiphon ends at Hosanna in excelsis; English ends at Hosanna in the highest. No ending is supplied.",
+      "option_check": "No internal optional wording. Psalm 147, repeated antiphon, and ritual arrangement are outside this bounded body.",
+      "required_revisions": [],
+      "latin_key": [
+        "palm-sunday",
+        "",
+        "Procession Antiphon",
+        "",
+        "",
+        4
+      ]
+    }
+  ],
+  "source_artifacts": [
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+      "payload_sha256": "58788348c5188989a6e16fe50a50a2fe8ebc7327ef44e24e29b497153403763c",
+      "byte_size": 46,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/artifact.toml",
+      "manifest_sha256": "29bcaf661aef73473fd9947971a333d26df888352fdad1ec74a1280298121aca",
+      "payload_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/latin.txt",
+      "derived_from": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+      "payload_sha256": "8e343f986642600eb54e3be9cef15ab096f3589ce05fb019de4fbd0c16a9e26d",
+      "byte_size": 638,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/artifact.toml",
+      "manifest_sha256": "509de7ba6dc6e0240cd7a58e84cc732b090dd2377b2935367997d9706f986806",
+      "payload_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/latin.txt",
+      "derived_from": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432",
+      "payload_sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+      "byte_size": 344,
+      "artifact_type": "editorial-projection",
+      "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/artifact.toml",
+      "manifest_sha256": "4b47c8fb6d23b1214d6832742dd3bcdd877ee0619c376c72eec8559efa39a599",
+      "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/latin.txt",
+      "derived_from": null,
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ]
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887",
+      "payload_sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+      "byte_size": 217,
+      "artifact_type": "editorial-projection",
+      "manifest_path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/artifact.toml",
+      "manifest_sha256": "3c50a5b1b29a5d7b49b0a3815b3b350734367e6faea06ef235b0cc8f4447c7c6",
+      "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/latin.txt",
+      "derived_from": null,
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ]
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+      "payload_sha256": "439a271f72cb925b86dc63787157fd1b5f6f1c55e8bc00bba691c991e7bb8268",
+      "byte_size": 181,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/artifact.toml",
+      "manifest_sha256": "756614926836e43cedb9673a205c1db79e0655931c2ab2d9906386c93f1e1a71",
+      "payload_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/latin.txt",
+      "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+      "payload_sha256": "6b0db644727b1634a7eb5304ffe7fbd28b5ae963ac9e73b3e865a9d5a6c1179b",
+      "byte_size": 176,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/artifact.toml",
+      "manifest_sha256": "a2198da98e990657f8e45db22d18d2cda44f7f483c2365fba7bc1cf3e0fa9382",
+      "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/latin.txt",
+      "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+      "payload_sha256": "f4971dd237cda4356f169f5a9b95e8279db836cd117507e599f6fc5f7f3abe7c",
+      "byte_size": 143,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/artifact.toml",
+      "manifest_sha256": "41dcf71c2b55e76effe7f94fb1b19b928c1fc8b080762c06b13e92be3053c743",
+      "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/latin.txt",
+      "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+      "payload_sha256": "90a8d08f0165759f772ec601bba085caccbca8c5a2bf442a30c3a22b76adcda8",
+      "byte_size": 140,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/artifact.toml",
+      "manifest_sha256": "df3aa845c8b54c350e790dd12e5ffc1ab176006e2d455fe5825f24f878713641",
+      "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/latin.txt",
+      "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-postcommunion-qualified-73348b62",
+      "payload_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "byte_size": 212,
+      "artifact_type": "editorial-projection",
+      "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/artifact.toml",
+      "manifest_sha256": "16a1a34d6450446c2cdcebf21bbb55b6e5fe337f007b756cf72fe2b09b4a1973",
+      "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/latin.txt",
+      "derived_from": null,
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ]
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-secret-qualified-7f341d63",
+      "payload_sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "byte_size": 174,
+      "artifact_type": "editorial-projection",
+      "manifest_path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/artifact.toml",
+      "manifest_sha256": "33fd2132872275f4fbe73acc579e00479d3cb12d567eb0220bd4ac35d78ee2b2",
+      "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/latin.txt",
+      "derived_from": null,
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112",
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      ]
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112",
+      "payload_sha256": "ed368e8aeabdcdfb257d04ca01cb274c7002ce7224ac642b92a9e0c2d605be4d",
+      "byte_size": 155,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/artifact.toml",
+      "manifest_sha256": "47f4ec2c994d7f22dc72d0dde3c5a2f1426c24349fdf449f225a3d62a5890850",
+      "payload_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/latin.txt",
+      "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+      "payload_sha256": "2ba50bddb43a5d2eb14265770b0aabc5a60750509101ec8df6ce6b2190b51810",
+      "byte_size": 196,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/artifact.toml",
+      "manifest_sha256": "f838077f43ead0d7a3ac1da08164f23d502f48290f7c51f2b94993fb518bdff7",
+      "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/latin.txt",
+      "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+      "payload_sha256": "d18b79835bfa47efb99bd4b1a9f43b2c6b758b67d9dfb590e9c4253770103a75",
+      "byte_size": 100,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/artifact.toml",
+      "manifest_sha256": "1c893158d403b9283166c54c00f862388fe3aaae3ae4f5f5c081c59a26e681a6",
+      "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/latin.txt",
+      "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-virtute-preface-whole-20261112",
+      "payload_sha256": "c2bc0a8f73b06214adee738c44b210f2298c8ee5d76b76e0559d2d2ed73c9a1a",
+      "byte_size": 172,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/artifact.toml",
+      "manifest_sha256": "dd29a94cb3b4104ac1ab3c286894a6bc8f6d8dc2b359f6a54ed21c61feac9451",
+      "payload_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/latin.txt",
+      "derived_from": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112",
+      "payload_sha256": "c2d21fbc140305438edbb6c9354951064582a88e842bf274e849bdf7472947e5",
+      "byte_size": 100,
+      "artifact_type": "checked-transcription",
+      "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/artifact.toml",
+      "manifest_sha256": "11ec7f1e39434c58f0b37cf223b6333adc6fc8c6f6ed8bbd816554e0db0c3fc4",
+      "payload_path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/latin.txt",
+      "derived_from": "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.whole-pdf-20261112-21c082e9",
+      "projected_from": []
+    },
+    {
+      "id": "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.whole-pdf-20261112-21c082e9",
+      "payload_sha256": "21c082e99495da11d59011ec4d824a437dc79e4978560f7192261dd072d567b3",
+      "byte_size": 86680766,
+      "artifact_type": "scan-pdf",
+      "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/whole-pdf-20261112-21c082e9/artifact.toml",
+      "manifest_sha256": "07d9cdd2b4a902568bde6d0902bf2032559b57d79ef8af1315eb57dad351ad64",
+      "payload_path": null,
+      "derived_from": null,
+      "projected_from": []
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.omnes-0749a65a",
+      "payload_sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+      "byte_size": 106,
+      "artifact_type": "editorial-projection",
+      "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/artifact.toml",
+      "manifest_sha256": "d9421c895174fec0b49aca03064503b42fc9a6963a26727b97de48459731b459",
+      "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/latin.txt",
+      "derived_from": null,
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112"
+      ]
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.urban-omnes-reconstruction-2026-11-12.urban-6a400cc9",
+      "payload_sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "byte_size": 261,
+      "artifact_type": "editorial-projection",
+      "manifest_path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/artifact.toml",
+      "manifest_sha256": "0a157d446aa452e03b8ade7a2183a99ddafd64d66398ab9ccaf6b6cf3b3f325f",
+      "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/latin.txt",
+      "derived_from": null,
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-virtute-preface-whole-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"
+      ]
+    }
+  ],
+  "source_file_integrity": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/artifact.toml",
+      "sha256": "29bcaf661aef73473fd9947971a333d26df888352fdad1ec74a1280298121aca",
+      "byte_size": 1726,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/artifact.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/latin.txt",
+      "sha256": "58788348c5188989a6e16fe50a50a2fe8ebc7327ef44e24e29b497153403763c",
+      "byte_size": 46,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/latin.txt",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/received-conclusion-historical-page-control-20261112.toml",
+      "sha256": "2107221c528e5999cbec2576db3f621ab1ac25f1097fbfe4470c3b111a7e6b48",
+      "byte_size": 1027,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/received-conclusion-historical-page-control-20261112.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/received-conclusion-printed135-20261112.toml",
+      "sha256": "10299d94062e5de29958f72cd265dc5356f34fa914f1766e589b60db19a44ed3",
+      "byte_size": 1039,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/received-conclusion-printed135-20261112.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/good-friday-prostration-whole-target-20261030.toml",
+      "sha256": "9c1eff2fce3f44d9c99df372c9f02ff051c57006958e8b594c522d2924f06a18",
+      "byte_size": 967,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/good-friday-prostration-whole-target-20261030.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/good-friday-third-after-communion-whole-target-20261030.toml",
+      "sha256": "40c684d3f33026fd8999611152e81135f8c8416145622e99f60fc2acb6543aa8",
+      "byte_size": 1040,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/good-friday-third-after-communion-whole-target-20261030.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/artifact.toml",
+      "sha256": "509de7ba6dc6e0240cd7a58e84cc732b090dd2377b2935367997d9706f986806",
+      "byte_size": 2264,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/artifact.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/latin.txt",
+      "sha256": "8e343f986642600eb54e3be9cef15ab096f3589ce05fb019de4fbd0c16a9e26d",
+      "byte_size": 638,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/latin.txt",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/good-friday-prostration-apparatus-20261112.toml",
+      "sha256": "73dd8718c086263e4a0344d35dedd91d8d12fa5f04411fdb0c03b198cf15fa9a",
+      "byte_size": 1096,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/good-friday-prostration-apparatus-20261112.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/good-friday-prostration-old-main-20261112.toml",
+      "sha256": "9fa2f25b720a35e2469e81821f7e86f1d0597e7bb50f40de99a710535e5194e9",
+      "byte_size": 1093,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/good-friday-prostration-old-main-20261112.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/good-friday-third-old-main-20261112.toml",
+      "sha256": "bf03071cdb0a8c3dc329a0274618a1ae17df659e40b811f51262c57c8c4ec6b4",
+      "byte_size": 1044,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/good-friday-third-old-main-20261112.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/good-friday-two-historical-page-control-20261112.toml",
+      "sha256": "054ed5e9b2887752b34d1558d5d57f5a5572a57a139e72abbbde2f6760d788f4",
+      "byte_size": 1052,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/good-friday-two-historical-page-control-20261112.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/artifact.toml",
+      "sha256": "4b47c8fb6d23b1214d6832742dd3bcdd877ee0619c376c72eec8559efa39a599",
+      "byte_size": 2918,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/artifact.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/latin.txt",
+      "sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+      "byte_size": 344,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/latin.txt",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/artifact.toml",
+      "sha256": "3c50a5b1b29a5d7b49b0a3815b3b350734367e6faea06ef235b0cc8f4447c7c6",
+      "byte_size": 2878,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/artifact.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/latin.txt",
+      "sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+      "byte_size": 217,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/latin.txt",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/good-friday-prostration-qualified-20261030.toml",
+      "sha256": "f5b8fddcee0c3a46c6753255f0aa72cb745a08a0b4d052b6a81ad6ecb89f6d65",
+      "byte_size": 1245,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/good-friday-prostration-qualified-20261030.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/good-friday-third-after-communion-qualified-20261030.toml",
+      "sha256": "b1ec36239e19e7051e8c83ee82d599d142e1bc0cb27bd32193e0ab8d7b7e9367",
+      "byte_size": 1265,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/good-friday-third-after-communion-qualified-20261030.toml",
+      "plan": "gf-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/artifact.toml",
+      "sha256": "756614926836e43cedb9673a205c1db79e0655931c2ab2d9906386c93f1e1a71",
+      "byte_size": 1893,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/artifact.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/latin.txt",
+      "sha256": "439a271f72cb925b86dc63787157fd1b5f6f1c55e8bc00bba691c991e7bb8268",
+      "byte_size": 181,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/latin.txt",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/mame-holy-house-secret-20261112.toml",
+      "sha256": "c5361db683031fe19e8a0426d0bdefacd6c08e2cbf0908fe61cb55fc064eb375",
+      "byte_size": 1410,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/mame-holy-house-secret-20261112.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/queenship-postcommunion-target-control-20261112.toml",
+      "sha256": "c9c70f189deabb1358a5fa211ab2bffbb973f8e82acdd525d67b6cf226dbf1c7",
+      "byte_size": 1158,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/queenship-postcommunion-target-control-20261112.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/queenship-secret-target-control-20261112.toml",
+      "sha256": "9d4b29193f036267b6490f95e5b2e8247d0e6889b021044e56da6faa26345548",
+      "byte_size": 1049,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/queenship-secret-target-control-20261112.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/artifact.toml",
+      "sha256": "a2198da98e990657f8e45db22d18d2cda44f7f483c2365fba7bc1cf3e0fa9382",
+      "byte_size": 1721,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/artifact.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/latin.txt",
+      "sha256": "6b0db644727b1634a7eb5304ffe7fbd28b5ae963ac9e73b3e865a9d5a6c1179b",
+      "byte_size": 176,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/latin.txt",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/artifact.toml",
+      "sha256": "41dcf71c2b55e76effe7f94fb1b19b928c1fc8b080762c06b13e92be3053c743",
+      "byte_size": 1628,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/artifact.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/latin.txt",
+      "sha256": "f4971dd237cda4356f169f5a9b95e8279db836cd117507e599f6fc5f7f3abe7c",
+      "byte_size": 143,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/latin.txt",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/artifact.toml",
+      "sha256": "df3aa845c8b54c350e790dd12e5ffc1ab176006e2d455fe5825f24f878713641",
+      "byte_size": 1661,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/artifact.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/latin.txt",
+      "sha256": "90a8d08f0165759f772ec601bba085caccbca8c5a2bf442a30c3a22b76adcda8",
+      "byte_size": 140,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/latin.txt",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-apostles-postcommunion-20261112.toml",
+      "sha256": "18bfa1e9f844a123520f6167f65fbda99e9a4fd2eb44a5c29de202cf9a1b3887",
+      "byte_size": 1256,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-apostles-postcommunion-20261112.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-eufymia-secret-20261112.toml",
+      "sha256": "d1b40465732671f62382d5a0339e5423a8d77f71a6d7148b92e9bacec6fbba6f",
+      "byte_size": 1163,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-eufymia-secret-20261112.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-laurence-secret-20261112.toml",
+      "sha256": "6e4cece9c44fc3214ec8136ac6fd7c94a563843a0392d65844f5e2ec48934317",
+      "byte_size": 1196,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-laurence-secret-20261112.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/artifact.toml",
+      "sha256": "16a1a34d6450446c2cdcebf21bbb55b6e5fe337f007b756cf72fe2b09b4a1973",
+      "byte_size": 4682,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/artifact.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/latin.txt",
+      "sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "byte_size": 212,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/latin.txt",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/artifact.toml",
+      "sha256": "33fd2132872275f4fbe73acc579e00479d3cb12d567eb0220bd4ac35d78ee2b2",
+      "byte_size": 4474,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/artifact.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/latin.txt",
+      "sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "byte_size": 174,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/latin.txt",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-postcommunion-qualified.toml",
+      "sha256": "207340991154e701b70cc4ff0be67de217d7fc06a8ce3034c2441a175c81ac20",
+      "byte_size": 2139,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-postcommunion-qualified.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-secret-qualified.toml",
+      "sha256": "98343587bc244ce2b14e8e34e36deb9668b76a3e96bb6b904e0c8138a6df62ff",
+      "byte_size": 1916,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/queenship-secret-qualified.toml",
+      "plan": "queenship-pair"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/artifact.toml",
+      "sha256": "47f4ec2c994d7f22dc72d0dde3c5a2f1426c24349fdf449f225a3d62a5890850",
+      "byte_size": 1622,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/artifact.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/latin.txt",
+      "sha256": "ed368e8aeabdcdfb257d04ca01cb274c7002ce7224ac642b92a9e0c2d605be4d",
+      "byte_size": 155,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/latin.txt",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/urban-old-whole-20261112-image.toml",
+      "sha256": "3a6af5ddbe35589b2bbe646cf9e1de36cf72fd52db9d22b6d4ecd0e63da81e78",
+      "byte_size": 1063,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/urban-old-whole-20261112-image.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/urban-old-whole-20261112.toml",
+      "sha256": "fda03a254f64cb7c283271e11a6aa68123d4b92771ec834a539e0a1e87de8eb6",
+      "byte_size": 1094,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/urban-old-whole-20261112.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/omnes-target-collation-20261112.toml",
+      "sha256": "8c4ccd14451e3212b0d0d280de3f34cb2d40d895bdebf7614aa2dcaeff2c8649",
+      "byte_size": 1509,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/omnes-target-collation-20261112.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/urban-target-collation-20261112.toml",
+      "sha256": "923318348e28f691710011846dbcf2c649558504448dd2677516152d97cb5c05",
+      "byte_size": 1969,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/urban-target-collation-20261112.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/artifact.toml",
+      "sha256": "f838077f43ead0d7a3ac1da08164f23d502f48290f7c51f2b94993fb518bdff7",
+      "byte_size": 1511,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/artifact.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/latin.txt",
+      "sha256": "2ba50bddb43a5d2eb14265770b0aabc5a60750509101ec8df6ce6b2190b51810",
+      "byte_size": 196,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/latin.txt",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/artifact.toml",
+      "sha256": "1c893158d403b9283166c54c00f862388fe3aaae3ae4f5f5c081c59a26e681a6",
+      "byte_size": 1465,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/artifact.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/latin.txt",
+      "sha256": "d18b79835bfa47efb99bd4b1a9f43b2c6b758b67d9dfb590e9c4253770103a75",
+      "byte_size": 100,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/latin.txt",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/artifact.toml",
+      "sha256": "dd29a94cb3b4104ac1ab3c286894a6bc8f6d8dc2b359f6a54ed21c61feac9451",
+      "byte_size": 1623,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/artifact.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/latin.txt",
+      "sha256": "c2bc0a8f73b06214adee738c44b210f2298c8ee5d76b76e0559d2d2ed73c9a1a",
+      "byte_size": 172,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/latin.txt",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-collect-whole-20261112-image.toml",
+      "sha256": "ed3fac22f50c5de16e8126649b833e03f0f4042b6ef0b2e7fee259663a2d24ef",
+      "byte_size": 968,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-collect-whole-20261112-image.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-collect-whole-20261112.toml",
+      "sha256": "76faf513a14940d61aa68cf8a2c9092f22b04210e26c0a20150a0e33501ad45a",
+      "byte_size": 997,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-collect-whole-20261112.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-protection-whole-20261112-image.toml",
+      "sha256": "d8107ddaea7e0769704cd12736ec68a36203407e5fcc18824c4e21861d566d3e",
+      "byte_size": 919,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-protection-whole-20261112-image.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-protection-whole-20261112.toml",
+      "sha256": "86395fc06a44dd307d3ebb7df6ac35e4fe80d9882d846ecb7a4752df6f140fe9",
+      "byte_size": 951,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-protection-whole-20261112.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-virtute-preface-whole-20261112-image.toml",
+      "sha256": "7292ebe058ae0f4a2875c8037f09a2a25f95adab616b59e2fd0d3fbd810aae8d",
+      "byte_size": 1072,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-virtute-preface-whole-20261112-image.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-virtute-preface-whole-20261112.toml",
+      "sha256": "9c70de885f7279c3f6f7cbb8f76c1dd7c2915d7f13c5460123d31c2538036af4",
+      "byte_size": 1109,
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-virtute-preface-whole-20261112.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/artifact.toml",
+      "sha256": "11ec7f1e39434c58f0b37cf223b6333adc6fc8c6f6ed8bbd816554e0db0c3fc4",
+      "byte_size": 1523,
+      "repository_path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/artifact.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/latin.txt",
+      "sha256": "c2d21fbc140305438edbb6c9354951064582a88e842bf274e849bdf7472947e5",
+      "byte_size": 100,
+      "repository_path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/latin.txt",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/whole-pdf-20261112-21c082e9/artifact.toml",
+      "sha256": "07d9cdd2b4a902568bde6d0902bf2032559b57d79ef8af1315eb57dad351ad64",
+      "byte_size": 1994,
+      "repository_path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/whole-pdf-20261112-21c082e9/artifact.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/passages/omnes-old-whole-20261112-image.toml",
+      "sha256": "21643911e61db8fbde74ac5049437911a8d56b611312a911643470b7db16b320",
+      "byte_size": 975,
+      "repository_path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/passages/omnes-old-whole-20261112-image.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/passages/omnes-old-whole-20261112.toml",
+      "sha256": "e466f52045962299247a86ef3620aa5deb0397e77c35314e37678c1953772570",
+      "byte_size": 999,
+      "repository_path": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/passages/omnes-old-whole-20261112.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/artifact.toml",
+      "sha256": "d9421c895174fec0b49aca03064503b42fc9a6963a26727b97de48459731b459",
+      "byte_size": 3126,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/artifact.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/latin.txt",
+      "sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+      "byte_size": 106,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/latin.txt",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/artifact.toml",
+      "sha256": "0a157d446aa452e03b8ade7a2183a99ddafd64d66398ab9ccaf6b6cf3b3f325f",
+      "byte_size": 3735,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/artifact.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/latin.txt",
+      "sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "byte_size": 261,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/latin.txt",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/edition.toml",
+      "sha256": "35d38e132f507169c63b7e2a8b9ae8692f85b0d1bb929fcd7dd5949e53c23de6",
+      "byte_size": 867,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/edition.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/passages/omnes.toml",
+      "sha256": "1d9dfcc6ced387248a786102a833b8da7163fcfe9272517304cd98e2b7b85ee4",
+      "byte_size": 1861,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/passages/omnes.toml",
+      "plan": "urban-omnes"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/passages/urban.toml",
+      "sha256": "0ddb0a81800e6259a4918b554b44da8fb180d8eebf6d73e398e14557b24a548b",
+      "byte_size": 2321,
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/passages/urban.toml",
+      "plan": "urban-omnes"
+    }
+  ],
+  "complete_source_texts_read": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/received-conclusion-printed135-20261112-58788348/latin.txt",
+      "sha256": "58788348c5188989a6e16fe50a50a2fe8ebc7327ef44e24e29b497153403763c",
+      "byte_size": 46,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/latin.txt",
+      "sha256": "8e343f986642600eb54e3be9cef15ab096f3589ce05fb019de4fbd0c16a9e26d",
+      "byte_size": 638,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/latin.txt",
+      "sha256": "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+      "byte_size": 344,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/latin.txt",
+      "sha256": "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+      "byte_size": 217,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/latin.txt",
+      "sha256": "439a271f72cb925b86dc63787157fd1b5f6f1c55e8bc00bba691c991e7bb8268",
+      "byte_size": 181,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/latin.txt",
+      "sha256": "6b0db644727b1634a7eb5304ffe7fbd28b5ae963ac9e73b3e865a9d5a6c1179b",
+      "byte_size": 176,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/latin.txt",
+      "sha256": "f4971dd237cda4356f169f5a9b95e8279db836cd117507e599f6fc5f7f3abe7c",
+      "byte_size": 143,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/latin.txt",
+      "sha256": "90a8d08f0165759f772ec601bba085caccbca8c5a2bf442a30c3a22b76adcda8",
+      "byte_size": 140,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-postcommunion-qualified-73348b62/latin.txt",
+      "sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "byte_size": 212,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/proposed-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/queenship-secret-qualified-7f341d63/latin.txt",
+      "sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "byte_size": 174,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/latin.txt",
+      "sha256": "ed368e8aeabdcdfb257d04ca01cb274c7002ce7224ac642b92a9e0c2d605be4d",
+      "byte_size": 155,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-collect-whole-20261112/latin.txt",
+      "sha256": "2ba50bddb43a5d2eb14265770b0aabc5a60750509101ec8df6ce6b2190b51810",
+      "byte_size": 196,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-protection-whole-20261112/latin.txt",
+      "sha256": "d18b79835bfa47efb99bd4b1a9f43b2c6b758b67d9dfb590e9c4253770103a75",
+      "byte_size": 100,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-virtute-preface-whole-20261112/latin.txt",
+      "sha256": "c2bc0a8f73b06214adee738c44b210f2298c8ee5d76b76e0559d2d2ed73c9a1a",
+      "byte_size": 172,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/latin.txt",
+      "sha256": "c2d21fbc140305438edbb6c9354951064582a88e842bf274e849bdf7472947e5",
+      "byte_size": 100,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/omnes-0749a65a/latin.txt",
+      "sha256": "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+      "byte_size": 106,
+      "complete_text_read": true
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-urban-omnes-reconstruction/artifacts/urban-6a400cc9/latin.txt",
+      "sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "byte_size": 261,
+      "complete_text_read": true
+    }
+  ],
+  "whole_source_bytes_verified": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/wilson-1894.pdf",
+      "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+      "byte_size": 13625474
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "byte_size": 102880787
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/cmaa-1962.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "byte_size": 82815941
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/acquired/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "byte_size": 51720493
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/acquired/feltoe1896.pdf",
+      "sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+      "byte_size": 19868448
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/acquired/pl78.pdf",
+      "sha256": "21c082e99495da11d59011ec4d824a437dc79e4978560f7192261dd072d567b3",
+      "byte_size": 86680766
+    }
+  ],
+  "target_images_inspected": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/rasters/cmaa-1962-p243-400.png",
+      "sha256": "8103219dd027bff8bb8be157d59ffaaf18d466845a07d78b70d75e800980986a",
+      "byte_size": 294507,
+      "locus": "CMAA 1962 artifact p. 243, printed p. 162, no. 924; complete prayer and following response direction.",
+      "viewed_extent": "full page"
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/rasters/cmaa-1962-p262-400.png",
+      "sha256": "e6c62a9cb021ea96067afc7e1d8a0258d8fee7dd3c64735145c40b5749352264",
+      "byte_size": 286859,
+      "locus": "CMAA 1962 artifact p. 262, printed p. 181, no. 970; complete third prayer and response.",
+      "viewed_extent": "full page"
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/images/target-400.png",
+      "sha256": "cea74aef0bdd339ef67a016cf00144cef3666912dacf0a33c208ffa512d9785a",
+      "byte_size": 269862,
+      "locus": "CMAA 1962 artifact p. 622, printed p. 541, nos. 2692 and 2695; both complete prayers and their endings.",
+      "viewed_extent": "full page"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/derivatives/cmaa616-400.png",
+      "sha256": "c8cd3ba21427e1a6d4602f9c30508764366af4e6517fa2cdc116dbf0388fe97e",
+      "byte_size": 30323,
+      "locus": "CMAA 1962 artifact p. 616, printed p. 535, no. 2639; complete Urban Collect.",
+      "viewed_extent": "bounded complete-prayer crop"
+    },
+    {
+      "path": ".scratch/roman-sources/urban-omnes/derivatives/cmaa215-400.png",
+      "sha256": "4a52ee23a0fb33beebfee1fc580c8ed3f7eaf6cd7a8a2065240ef92bfd50b6b0",
+      "byte_size": 13415,
+      "locus": "CMAA 1962 artifact p. 215, printed p. 134, no. 838; first complete Antiphona 5 body.",
+      "viewed_extent": "bounded complete-antiphon crop"
+    }
+  ],
+  "verification": [
+    "All three frozen plan hashes match the assigned final hashes.",
+    "Every mapped source file matches its plan hash.",
+    "Every proposed Latin and English body hash matches its plan pin, including terminal LF.",
+    "Each English entry binds its exact reviewed Latin hash and existing proposed source-artifact identities.",
+    "All four Good Friday text_structure action spans match their exact body offsets; Amen is outside each span.",
+    "The six complete target bodies were read on the five listed target page images/crops, including their last words and markers.",
+    "All complete historical text derivatives listed above were read; the six underlying full-PDF byte hashes were recomputed."
+  ],
+  "limits": [
+    "This lane does not repeat the separate source lanes' full historical page-image collation or their 200/400 dpi pair inspection. Its independent visual check uses the listed 400 dpi target renderings; it additionally reads the complete historical transcriptions and verifies exact source bytes.",
+    "No approval of the substantive modern Latin adaptations or their publication basis is made here; source-record assertions remain proposals for root disposition.",
+    "No whole Mass, rite, corpus completeness, browser rendering, or physical source-delivery claim follows from these six bounded translation verdicts.",
+    "Short Per Dominum. cues stay short. This lane requires no standard-conclusion expansion."
+  ],
+  "optional_wording": {
+    "path": ".scratch/roman-sources/six-english-review/optional-wording.json",
+    "sha256": "8db38f05be71ff24678a714ff0cf38b4a5e649aa84946ce20e52b37a14555b6d",
+    "byte_size": 1319
+  },
+  "canonical_mutations": [],
+  "commits": [],
+  "pushes": []
+}

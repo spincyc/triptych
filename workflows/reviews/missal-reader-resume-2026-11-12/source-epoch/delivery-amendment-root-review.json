@@ -1,0 +1,34 @@
+{
+  "schema": "triptych-source-epoch-delivery-amendment-root-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted",
+  "review_packet_sha256": "6f502d0addf42b3b117b88e401c3b5d2c3321ce9851368d7666ca28d4444d045",
+  "evidence": [
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/support-delivery-amendment.diff",
+      "sha256": "32400f0cbbf7340c1824ae7090d9b1341dbcee98965b038d053e566326d31bb9"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/compiler-namespace-amendment.diff",
+      "sha256": "415313d7a0a98d1119b1604954f551233e68f75c23d116aeec64f92f92a2e9cc"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/binary-read-audit.json",
+      "sha256": "5345d449e6c84810e52b71c71ac8c3547c7e67274297403809972cba1c572a10"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/direct25-delivery-proof.json",
+      "sha256": "44d689725af087bf6daaa9fd2d18490de42fcd1ba055501ecc2cb897d55e5ca0"
+    }
+  ],
+  "accepted_adapter_sha256": "1dd33f7a5b7045b308ec86a61ea47a0541fed141c4a3bc4f9bca596afb4e626d",
+  "decision": "Accept the exact two read/stat operand changes in the immutable-support replay, together with the previously reviewed exact namespace-delivery amendment. Root read both changed expressions and the complete explicit dependency resolver. Actual full bytes are read through the existing fetch=False delivery resolver only when their declared canonical path is absent; exact source-epoch membership, sidecar hash, owning source identity, payload hash and original metadata/byte-size assertions remain enforced. No blanket Path patch, missing-byte acceptance, source permission relaxation or payload substitution is authorized.",
+  "validation": {
+    "complete_original_direct_pd_oracles": 25,
+    "full_proof_parity": true,
+    "adapter_negative_controls_passed": 18,
+    "operand_audit": "All 17 immutable-support/compiler read/stat/is_file sites inspected; no further external-binary operand identified."
+  },
+  "boundary": "This authorizes the finite replay compatibility method, not a derived fixture. Final source input membership, semantic complements and all original raw test streams require separate acceptance."
+}

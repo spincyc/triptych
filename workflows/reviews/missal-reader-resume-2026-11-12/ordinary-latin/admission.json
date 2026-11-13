@@ -1,0 +1,43 @@
+{
+  "schema": "triptych-roman-ordinary-latin-admission/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted",
+  "installation_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-latin/installation-manifest.json",
+    "sha256": "a6fc7b64e8d19ea0cc41447f03c15f7b76e81a26cf68da120dfe6adc296b63f7"
+  },
+  "independent_source_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-latin/independent-source-review.json",
+    "sha256": "9d19fa9dff378eb569776ed91b962a469be952aaeec5338e74ef6e39835cd090"
+  },
+  "review_performed": [
+    "Read all five complete Latin bodies, all case findings of the independent source-image review, and exact proposed owner and publication-extent changes.",
+    "Compared scope and source controls; image inspection is attributed to the independent reviewers, not claimed as repeated personally by this integration reviewer."
+  ],
+  "decisions": [
+    {
+      "scope": "Sacred Heart and Christ the King complete Latin Prefaces",
+      "decision": "Accept the exact two historical transcriptions and word-exact target collation under declared orthographic comparison. Christ the King lies within the previously admitted 1929 extent. Accept the narrow additional Sacred Heart Preface extent: printed Herder 1929 leaf, integral contents, continuous pagination and independently matched catalog evidence jointly support the appendix attribution. Absence of a separate dated appendix imprint is explicitly retained as a limitation; no host date or handwritten title date is substituted.",
+      "publication_scope": "Only these complete historical Latin Preface bodies. The old exclusion of the Sacred Heart Preface remains as the prior scope record; this separately dated bounded extension supersedes that exclusion only for the stated extent. No German, English, page images, entire PDF, neighboring prayer or general target-1962 permission."
+    },
+    {
+      "scope": "Preface of the Dead and final blessing",
+      "decision": "Accept exact bounded Mame 1922 historical Latin with independently verified word agreement. Preserve the blessing priest formula, separately marked response and unassigned response actor; exclude the intervening printed action rubric from spoken text."
+    },
+    {
+      "scope": "Preface of Saint Joseph",
+      "decision": "Accept the complete Mame 1922 historical source only in the existing March 19 scope, keeping Festivitate (Veneratione) unselected. No exact selected-target grade and no May 1 solemnitate body or appointment follows."
+    }
+  ],
+  "preservation": [
+    "All English bodies, bindings, alternatives and source fidelity grades remain unchanged.",
+    "All five bodies remain historically identified; no liturgical approval is claimed.",
+    "No binary source is added to Git and no whole-source permission is inferred."
+  ],
+  "integration": {
+    "source_epoch": "pending",
+    "consumer_checks": "pending",
+    "release_gates": "pending"
+  }
+}

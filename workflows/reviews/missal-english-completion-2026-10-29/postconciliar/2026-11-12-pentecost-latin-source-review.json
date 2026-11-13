@@ -1,0 +1,261 @@
+{
+  "schema": "triptych-independent-bounded-source-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "/root/modern_sources/ordinary_review",
+  "candidate_author": "/root/modern_sources/official_2008_latin",
+  "base_commit": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "head_at_review": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "verdict": "accept-pentecost-only-for-finite-root-adoption",
+  "required_source_changes": [],
+  "source_or_publication_blockers_for_this_exact_candidate": [],
+  "scope": "Exactly the first of three prayers after the Third Reading in the official 2008 Pentecost extended Vigil, including its complete short conclusion and separately marked response. Independent source/rights acceptance only; no canonical installation or integrated-reader acceptance is performed by this reviewer.",
+  "candidate_binding": {
+    "candidate_path": ".scratch/modern-official2008-latin/candidate.json",
+    "candidate_sha256": "331a919f5ab75aee46ce6434f41917a8db29342b843b1a9ee603e6410bac363b",
+    "manifest_path": ".scratch/modern-official2008-latin/manifest.json",
+    "manifest_sha256": "03d6bfcbe506132bfb2606c074f2a0b836134035cdf9a74ec498d74a27e93051",
+    "ledger_proposal_path": ".scratch/modern-official2008-latin/pentecost-proposed-ledger-entry.toml",
+    "ledger_proposal_sha256": "c105eb07bee9ed1695cc5d457f73e7786f602d9b47eefa25e3975526f7f69fa0",
+    "verification_path": ".scratch/modern-pentecost-review/verification.json",
+    "verification_sha256": "654025df19bbfd18ea464e529d2fe35a4841179afb4f8d6dfa06f52cab6b95e7",
+    "checker_path": ".scratch/modern-pentecost-review/check.py",
+    "checker_sha256": "3afb8ca93b3b0eb98b6e42e4ac48e035c0d61ff1901295e7518efa69f2c51d1c"
+  },
+  "accepted_coordinate": {
+    "overlay_key": [
+      "pentecost",
+      "extended-vigil",
+      "Prayer after the Third Reading",
+      "all",
+      1
+    ],
+    "latin_key": [
+      "pentecost",
+      "Vigil Mass, extended form",
+      "Prayer after the Third Reading",
+      "",
+      "",
+      1
+    ],
+    "before_body": null,
+    "after_body_sha256": "7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a",
+    "byte_size": 240,
+    "physical_lines": 7,
+    "before_proper_json_sha256": "6322dc97ff1bd425b8cc7c40c452a860ad3dd546b576192f012f27cd115dfbc6",
+    "after_proper_json_sha256": "dad855eee1064c4e1316a0bf5bef4e24664cf8532218906cb58ba48a1c1ec06a",
+    "expected_count_delta": {
+      "published_latin_bodies": 1,
+      "published_english_bodies": 0
+    }
+  },
+  "accepted_source_files": [
+    {
+      "path": "proposed/src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/artifacts/domine-deus-virtutum-7e2a9720/artifact.toml",
+      "sha256": "a5dbabb75d9a23edabcbf9d8f5313ee1783820f73112dddd508de932526dc2da",
+      "byte_size": 2834
+    },
+    {
+      "path": "proposed/src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/artifacts/domine-deus-virtutum-7e2a9720/latin.txt",
+      "sha256": "7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a",
+      "byte_size": 240
+    },
+    {
+      "path": "proposed/src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/edition.toml",
+      "sha256": "b2a2b2a5a74d0ed7731c13e58435154f8ba7a0edb76c204f2a6202c3f59dde00",
+      "byte_size": 849
+    },
+    {
+      "path": "proposed/src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/passages/domine-deus-virtutum.toml",
+      "sha256": "53127e3a51a85825033ab34ccab2ac080c73c3486fe3f704bcef7c0b1d431f02",
+      "byte_size": 1677
+    },
+    {
+      "path": "proposed/src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/work.toml",
+      "sha256": "a81011e81b75f060df3c1a5eff2d40f0aff0f5bd7a4d6e576dd9f318e7cfb9ba",
+      "byte_size": 798
+    }
+  ],
+  "excluded_manifest_files": [
+    {
+      "path": "proposed/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/modern-latin-pilot-20261112-short-per-christum-cue.toml",
+      "sha256": "969e2dd9ddf39dbd4ca37d4f461edb927229d1cb86d31247905618a20b2838a8",
+      "byte_size": 1511
+    }
+  ],
+  "independent_source_findings": [
+    {
+      "witness": "Pustet Ratisbon 1862, complete petition",
+      "whole_pdf": {
+        "path": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+        "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474"
+      },
+      "artifact_page": 382,
+      "printed_page": "296",
+      "locus": "In Vigilia Pentecostes, Prophetia sexta, Oratio; bottom left column continuing at top right column",
+      "finding": "Fresh full-page image comparison confirms every petition word in the candidate, in the same order and clause structure. The donor ends with its actual Per Dominum. cue; this is preserved in the historical witness record and is not expanded into the target formula.",
+      "recorded_transformations": [
+        "join printer wraps and hyphenation",
+        "omit stress accents",
+        "add comma after Domine",
+        "remove comma before et reparata",
+        "replace colon after conservas and semicolon after renovandos with commas",
+        "capitalize Baptismate",
+        "set target sense lines"
+      ]
+    },
+    {
+      "witness": "Pustet Ratisbon 1862, separately printed complete short conclusion and response",
+      "whole_pdf_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "artifact_page": 776,
+      "printed_page": "[106]",
+      "locus": "Benedictiones diversae; ending above Benedictio Candelarum",
+      "finding": "Fresh full-page image comparison confirms all words of the candidate final two lines, including the complete short formula and separately marked response. The printer break in Christum is joined and the response glyph is represented as R. This focused ending is independently witnessed; the preceding blessing petition is outside the selection."
+    },
+    {
+      "witness": "Official 2008 Supplementum in Notitiae 44 nos. 503-504",
+      "whole_pdf": {
+        "path": ".scratch/modern-official2008-latin/acquired/notitiae2008.pdf",
+        "sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f"
+      },
+      "artifact_pages": [
+        64,
+        65
+      ],
+      "printed_pages": [
+        "382",
+        "383"
+      ],
+      "locus": "n. 7, after Ezekiel 37:1-14 and the psalm; first prayer of three alternatives",
+      "finding": "Fresh page-image comparison of the already retained, independently public-domain carrier against artifact p. 64 confirms the exact target petition, pointing, capital Baptismate, complete short conclusion, separate response and seven sense lines, allowing only the explicitly recorded response-glyph representation. Oremus is a distinct preceding invitation outside the prayer body. Page 64 begins the following Vel alternative; page 65 contains the second and third alternatives and then n. 8 after the Fourth Reading.",
+      "qualification": "official-2008-bounded-excerpt; exact target relation for this finite coordinate, not a claim to have collated or cleared the complete 2008 Missal",
+      "method_limit": "No fresh modern target transcription script or target text extraction was performed. Comparison used the existing candidate whose every word is independently supplied by the old source. Restricted PDF and images remain scratch-only."
+    }
+  ],
+  "source_identity_correction": "Both the Pentecost petition and its separately witnessed short conclusion/response are from Pustet 1862. Wilson 1915 belongs only to the excluded September 8 assessment.",
+  "whole_expression_publication_assessment": {
+    "accepted_basis": "public-domain",
+    "accepted_relationship": "editorial-projection-exact-to-target",
+    "jurisdiction": "United States",
+    "finite_surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "independent_basis": "The registered Pustet 1862 artifact records expiry by publication date and a faithful mechanical facsimile. One complete, uninterrupted old petition supplies every petition word and its entire structure. A second identified locus in the same book supplies the complete conventional conclusion and response. The displayed body contains no newly developed petition, substituted petition clause, or recombination of separate petition structures.",
+    "whole_work_reasoning": "The old donor and target do not have identical endings, so the modern complete string cannot be described as one diplomatic old-source transcription. Considered as a whole, the recorded changes comprise pointing, case, line display and addition of a separately old conventional closing formula/response after the unchanged whole petition. This finite combination does not supply a new expressive recasting in the reviewed text. This is an internal project assessment, not a court determination or a rightsholder permission.",
+    "strongest_adverse_argument": "A later arrangement can contain protectable original expression even when every individual element is old. Choosing a different conclusion and placing it after a historical petition creates a whole string not printed at that old prayer locus; a bare word-match or small edit count would not resolve originality.",
+    "response_to_adverse_argument": "The conclusion is a routine, separately witnessed liturgical formula followed by its conventional response. The entire substantive petition remains intact, with no creative recasting of its order, structure or content. The assessment relies on that whole-expression character and exact source evidence, not a blanket rule that all small edits or all formula substitutions are unprotected. The projection record expressly discloses both old loci and the target comparison.",
+    "authority_separation": "The proposed carrier is project-created editorial material under its recorded terms; that label alone does not clear received Latin. The independent Pustet artifact and the separately reviewed per-proper public-domain row supply the underlying-wording basis. The restricted 2008 artifact is a verification witness and is not in publication_source_ids.",
+    "not_authorized": [
+      "redistribution of the modern PDF or page images",
+      "the modern book arrangement, rubrics, typography or unrelated contents",
+      "a blanket source/ending substitution policy",
+      "a new English translation or any approved-English claim",
+      "the separate September 8 candidate"
+    ],
+    "reconsider_if": [
+      "the candidate body hash changes",
+      "a petition word, clause or its order changes",
+      "a different target or option is substituted",
+      "an ending is inferred rather than directly witnessed",
+      "the old-source or target pins cease to match"
+    ],
+    "primary_sources_consulted": [
+      {
+        "url": "https://www.copyright.gov/title17/92chap1.html",
+        "sections": [
+          "101",
+          "103(b)"
+        ],
+        "checked_on": "2026-11-12",
+        "support": "Original derivative authorship is distinct from preexisting material; later copyright does not enlarge rights in the latter."
+      },
+      {
+        "url": "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf",
+        "sections": [
+          "308",
+          "311.2",
+          "313.4"
+        ],
+        "checked_on": "2026-11-12",
+        "support": "The originality inquiry considers the contribution as a whole; a merely trivial alteration does not itself provide copyrightable derivative authorship."
+      }
+    ]
+  },
+  "english_binding_review": {
+    "before_entry_json_sha256": "7901af593aac4e2bb200f58cbb351aa1bfa2e2f90244058a3801689f37ff56d4",
+    "after_entry_json_sha256": "9f3dbcd538c16846638001c3c7df43f63c0cb915e9ba9fac0cbf05b78be82572",
+    "unchanged_body_sha256": "17a0ab2147bdb4b40d675d2bac515f0551c624224677ec22b321488a3524b671",
+    "only_added_fields": [
+      "source_latin_passage_id",
+      "source_latin_publication_source_ids",
+      "source_latin_sha256"
+    ],
+    "finding": "The proposed English entry is byte-for-byte equivalent in every preexisting field, including all translation words, source relationships and caveats. Its overall relation remains variant because the actual ending in the main historical prayer differs. Petition and separately sourced conclusion relations remain verbatim. The added source_latin fields match the exact proposed Latin body, passage and publication source list.",
+    "status": "Existing project study English, unapproved; no received or approved English is introduced."
+  },
+  "placement_and_option_review": {
+    "proper_name": "Prayer after the Third Reading",
+    "form_id": "extended-vigil",
+    "option": "domine-deus-virtutum",
+    "number_of_third_reading_alternatives": 3,
+    "ordinary_disposition_unchanged": true,
+    "no_implicit_default": true,
+    "cycle_scope": "Existing all-cycle entry; this admission does not select a calendar cycle or change a reading appointment.",
+    "finding": "Current exact before-row and its ordinal match the frozen proposal. Only text_status, text and explanatory notes change. The existing alternative group and its source-defined absence of an implicit default remain intact."
+  },
+  "mechanical_verification": {
+    "command": ".scratch/root/venv/bin/python .scratch/modern-pentecost-review/check.py",
+    "result": "passed",
+    "new_source_records": 4,
+    "new_source_files_including_carrier": 5,
+    "error_arrays": {
+      "baseline_source_errors": [],
+      "proposed_graph_errors": [],
+      "proposed_artifact_errors": [],
+      "proposed_passage_errors": [],
+      "proposed_latin_row_errors": [],
+      "proposed_latin_source_errors": []
+    },
+    "coverage": "Frozen packet/manifest hashes; source-record and whole-PDF pins; exact seven-line carrier; current exact before proper and English; unchanged English body and only three binding fields; absent before ledger key; exact proposal ledger/translation/source joins; source record schemas, paths, graph, artifact bytes and passage lines; current Latin row and source gate.",
+    "concurrency": "Root-owned Holy Thursday Latin source admission changes the whole proper/ledger files; this checker separately proves the exact Pentecost proper and English before-row remain unchanged and the target ledger key remains absent.",
+    "limits": "No canonical writes, generator run, fixture adoption, full integrated publication build or browser test were performed. Those remain with the root and owning integration lanes."
+  },
+  "independent_rasters": [
+    {
+      "path": ".scratch/modern-pentecost-review/notitiae-p64.png",
+      "sha256": "d970d2c38df0d9312eba298d7d797a987d0b0346d068bd285663ee7fd1e234c2"
+    },
+    {
+      "path": ".scratch/modern-pentecost-review/notitiae-p65.png",
+      "sha256": "20b289b4f36c05e155dfbcca9faad369ba78d28f5f7aefcf3783d05753460117"
+    },
+    {
+      "path": ".scratch/modern-pentecost-review/pustet-p382-400.png",
+      "sha256": "e2f3ab6db81a9d31fe231885e95e0a4e91d38392ae79b8ef4d6c581127e60566"
+    },
+    {
+      "path": ".scratch/modern-pentecost-review/pustet-p382.png",
+      "sha256": "844928e2d70eaf3527ebc8ecfd3a358689c96f39724ce168410a1d0e5a7da621"
+    },
+    {
+      "path": ".scratch/modern-pentecost-review/pustet-p776-400.png",
+      "sha256": "55eeee8e2337ac20b39aa507f218fb9e80f6409700f103e484c355f44b6d4086"
+    },
+    {
+      "path": ".scratch/modern-pentecost-review/pustet-p776.png",
+      "sha256": "344596733818cd1dbe4e1341eb63bfef5eb4f398b97c148287c9653122694ba6"
+    }
+  ],
+  "root_integration_requirements": [
+    "Record a new finite Latin adoption distinct from the earlier English-only decision, bound to this exact carrier hash, coordinate, proposed row and independent review.",
+    "Install only the five accepted Pentecost source files, replace only this proper body/status/notes, append one exact Latin row, and add only the three source_latin fields to its unchanged study-English entry.",
+    "Preserve the independently reviewed Holy Thursday changes and all other concurrent lanes; do not restore whole source files from the frozen before-state.",
+    "Coordinate exact source/provenance/body before-after deltas with source_epoch and refresh derived inventories and source notices through their owners.",
+    "Run integrated source, calendar, translation, source-epoch and publication checks; inspect Latin, English and paired rendering plus the unchanged three-option/no-default behavior.",
+    "Keep September 8 and its proposed Wilson passage outside this acceptance; retain restricted modern PDF/images in scratch only."
+  ]
+}

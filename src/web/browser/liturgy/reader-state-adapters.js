@@ -11,13 +11,13 @@
 (function (root, factory) {
   let api;
   if (typeof module === 'object' && module && module.exports) {
-    api = factory(require('./reader-state.js'), require('./ordinary-seating.js'));
+    api = factory(require('./reader-state.js'), require('./ordinary-seating.js'), require('./assembly-model.js'), require('./oration-conclusions.js'));
     module.exports = api;
   } else {
-    api = factory(root.LiturgyReaderState, root.OrdinarySeating);
+    api = factory(root.LiturgyReaderState, root.OrdinarySeating, root.MassAssembly, root.TriptychOrationConclusions);
     root.LiturgyReaderStateAdapters = api;
   }
-}(typeof globalThis !== 'undefined' ? globalThis : this, function (Contract, Seating) {
+}(typeof globalThis !== 'undefined' ? globalThis : this, function (Contract, Seating, Model, Conclusions) {
   if (!Contract || !Seating) throw new Error('reader-state adapters require contract and seating');
 
   function pad(value) {
@@ -26,6 +26,57 @@
 
   function properEventId(editionId, formularyId, index) {
     return 'proper/' + editionId + '/' + formularyId + '/' + pad(index);
+  }
+
+  /** Join a model-admitted prayer choice without moving either source owner.
+   * The chosen Sunday's printed sequence supplies slot order. The weekday's
+   * readings remain their exact source objects and retain their relative order.
+   */
+  function weekdayOrationRows(mass, properRows, structure, selection) {
+    if (!selection) return properRows;
+    if (structure.calendar !== 'postconciliar' || selection.mass !== mass.key ||
+        typeof selection.owner !== 'string' || !Array.isArray(selection.slots) ||
+        selection.slots.length !== 3 || new Set(selection.slots).size !== 3) {
+      throw new Error('weekday prayers require an exact model-admitted owner and three slots');
+    }
+    const owner = (structure.masses || []).find(function (row) { return row.key === selection.owner; });
+    if (!owner || (owner.forms || []).length) throw new Error('weekday prayer owner has no single source form');
+    const order = new Map();
+    (owner.propers || []).forEach(function (proper) {
+      const slot = Seating.semanticProperId(proper, true);
+      if (slot && !order.has(slot)) order.set(slot, order.size);
+    });
+    let previous = -1, previousDisposition = null;
+    const rows = properRows.map(function (row) {
+      const slot = Seating.semanticProperId(row.proper, true);
+      const position = order.get(slot);
+      const disposition = row.proper.ordinary_disposition;
+      const alternative = position === previous && disposition && previousDisposition &&
+        disposition.kind === 'alternative' && previousDisposition.kind === 'alternative' &&
+        disposition.group === previousDisposition.group && disposition.option !== previousDisposition.option;
+      if (position === undefined || position < previous || position === previous && !alternative ||
+          selection.slots.includes(row.proper.name)) {
+        throw new Error('weekday source readings do not retain one ordered place in the chosen Mass');
+      }
+      previous = position;
+      previousDisposition = disposition;
+      return {proper: row.proper, sourceMass: mass.key, sourceProperIndex: row.sourceIndex, position: position};
+    });
+    selection.slots.forEach(function (name) {
+      const found = (owner.propers || []).map(function (proper, index) { return {proper: proper, index: index}; })
+        .filter(function (row) { return row.proper.name === name; });
+      if (found.length !== 1) throw new Error('weekday prayer choice requires one exact source row for ' + name);
+      const row = found[0], position = order.get(Seating.semanticProperId(row.proper, true));
+      if (position === undefined || rows.some(function (one) { return one.position === position; })) {
+        throw new Error('weekday prayer choice collides with an appointed reading slot');
+      }
+      rows.push({proper: row.proper, sourceMass: owner.key, sourceProperIndex: row.index, position: position});
+    });
+    return rows.sort(function (left, right) { return left.position - right.position; })
+      .map(function (row, index) {
+        return {proper: row.proper, sourceIndex: index, sourceMass: row.sourceMass,
+          sourceProperIndex: row.sourceProperIndex};
+      });
   }
 
   function semanticSlot(proper) {
@@ -1181,6 +1232,21 @@
   function seatedEvents(
     mass, properRows, request, structure, ordinary, cycleMode, predicateFacts, dayContext
   ) {
+    const owners = new Map(properRows.filter(function (row) { return row.sourceMass; })
+      .map(function (row) { return [row.proper, row]; }));
+    function projectMember(row, seat, semantic) {
+      const source = owners.get(row.proper);
+      const owner = source && (structure.masses || []).find(function (one) { return one.key === source.sourceMass; });
+      if (source && (!owner || owner.propers[source.sourceProperIndex] !== row.proper)) {
+        throw new Error('weekday prayer or reading lost its exact source owner');
+      }
+      const dedication = dayContext && dayContext.usageContext && dayContext.usageContext.branch.dedicationSelection;
+      if (dedication && source && source.sourceMass === dedication.target.mass && row.proper.name === dedication.proper) {
+        semantic = semanticSlot({name: 'Secret'});
+      }
+      return projectProper(row.proper, source ? source.sourceProperIndex : row.sourceIndex,
+        owner || mass, request, structure, cycleMode, seat, semantic);
+    }
     const prepared = prepareAppointments(mass, properRows, request, structure, dayContext);
     const sourceRows = properRows;
     properRows = prepared.rows;
@@ -1192,12 +1258,7 @@
       return {
         events: projectSeatingEvents(
           unframed, mass, request,
-          function (row, seat, semantic) {
-            return projectProper(
-              row.proper, row.sourceIndex, mass, request, structure, cycleMode,
-              seat, semantic
-            );
-          },
+          projectMember,
           function () { throw new Error('unframed Proper sequence carried an Ordinary event'); }
         ),
         ordinaryUnresolved: [], prepared: prepared
@@ -1216,12 +1277,7 @@
     assertSeatingComplete(placed);
     const events = projectSeatingEvents(
       Seating.massEvents(resolution.shown, placed), mass, request,
-      function (row, seat, semantic) {
-        return projectProper(
-          row.proper, row.sourceIndex, mass, request, structure, cycleMode,
-          seat, semantic
-        );
-      },
+      projectMember,
       function (event) {
       if (event.kind === 'begin_section') {
         return {
@@ -2197,6 +2253,14 @@
       );
     }
     const branch = branchFor(derived, request);
+    const orationSelection = branch.orationSelection || null;
+    const dedicationSelection = branch.dedicationSelection || null;
+    if ((request.orationMass || null) !== (orationSelection && orationSelection.owner)) {
+      throw new Error('explicit weekday prayer owner does not match the calendar selection');
+    }
+    if (request.orationTerritory && (!orationSelection || request.orationTerritory !== orationSelection.territory)) {
+      throw new Error('explicit weekday prayer territory does not match the calendar selection');
+    }
     const choices = branchChoices(branch, request);
     const readable = readableFor(branch, request);
     if (!readable && choices.length) {
@@ -2205,7 +2269,7 @@
       );
     }
     if (!readable) throw new Error('Day branch has no deterministic or explicitly selected formulary');
-    const mass = (input.structure.masses || []).find(function (one) { return one.key === readable.key; });
+    let mass = (input.structure.masses || []).find(function (one) { return one.key === readable.key; });
     if (!mass) throw new Error('resolved Day formulary is absent from the selected edition structure');
     const formSelection = properFormSelection(mass, request, true);
     if (formSelection.choice) {
@@ -2225,11 +2289,24 @@
     }
     const lectionary = derived.liturgicalYear && derived.liturgicalYear.lectionary || null;
     const adaptedRequest = Object.assign({}, request, { lectionary: lectionary });
+    let properRows = weekdayOrationRows(mass, formSelection.rows, input.structure, orationSelection);
+    if (dedicationSelection) {
+      if (dedicationSelection.territory !== branch.option || dedicationSelection.formId !== (formSelection.id || 'main')) {
+        throw new Error('Dedication location does not match the selected branch and Mass form');
+      }
+      if (orationSelection || !Model) throw new Error('Dedication location needs its independent source model');
+      const projected = Model.projectDedicationAnniversary(Object.assign({}, input, {
+        mass: mass, properRows: properRows, selection: dedicationSelection
+      }));
+      mass = projected.mass;
+      properRows = projected.rows;
+    }
     const frame = ordinaryFrame(mass, formSelection.form);
     const ordinary = request.options && request.options.ordinary && frame.applicability === 'full'
       ? (input.ordinary || null) : null;
     const seated = seatedEvents(
-      mass, formSelection.rows, adaptedRequest, input.structure, ordinary, 'day',
+      mass, properRows,
+      adaptedRequest, input.structure, ordinary, 'day',
       Seating.predicateFacts({
         settled: branch.settled, weekday: derived.weekday,
         season: derived.season, nature: branch.winner && branch.winner.nature,
@@ -2242,9 +2319,16 @@
       }}
     );
     let events = withOrationGroups(
-      seated.events, branch, readable, mass, adaptedRequest, input.structure, null, {season: derived.season}
+      seated.events, branch, readable, mass, adaptedRequest, input.structure, null, {
+        season: derived.season, properRows: dedicationSelection ? properRows : null,
+        unresolvedDedicationContext: !dedicationSelection && Model && Model.dedicationAnniversaryChoices({
+          derived: derived, rubrics: input.rubrics, structure: input.structure,
+          territory: branch.option, mass: mass.key, formId: formSelection.id || 'main'
+        })
+      }
     );
     events = withFiniteNameExecution(events, branch, readable, mass, adaptedRequest, input.structure, input.nameExecutionUse || null);
+    events = withConclusionExecution(events, branch, readable, mass, adaptedRequest, input.structure);
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: readable.state
@@ -2265,6 +2349,8 @@
         lectionary: lectionary
       },
       resolved: resolved,
+      ...(orationSelection ? {orationSelection: orationSelection} : {}),
+      ...(dedicationSelection ? {dedicationSelection: dedicationSelection} : {}),
       events: events,
       ...(nameExecutionCoverage(events).occurrences ? {nameExecutionCoverage: nameExecutionCoverage(events)} : {}),
       ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
@@ -2524,8 +2610,17 @@
       }
     }
     events.forEach(collect);
+    const projectedRows = dayContext && dayContext.properRows;
+    const rowByHook = projectedRows && new Map(projectedRows.map(function (row) {
+      return [request.edition.id + '/' + row.sourceMass + '/' + pad(row.sourceProperIndex), row];
+    }));
     const indexFor = function (event) {
       const hook = (event.sourceHooks || []).find(function (one) { return one.kind === 'proper-structure'; });
+      if (rowByHook) {
+        const row = hook && rowByHook.get(hook.id);
+        if (!row) throw new Error('oration placement lacks its projected source coordinate');
+        return row.sourceIndex;
+      }
       const match = hook && /\/(\d{3})$/.exec(hook.id);
       if (!match) throw new Error('oration placement requires an exact principal source coordinate');
       return Number(match[1]) - 1;
@@ -2539,6 +2634,8 @@
     const plan = Seating.orationPlan(rows, {
       active: true, calendar: request.edition.id, mainKey: mass.key, execution: branch.oration_execution,
       date: request.civilDate, season: dayContext && dayContext.season || null,
+      unresolvedDedicationContext: dayContext && dayContext.unresolvedDedicationContext || null,
+      principalCommonReference: mass.takes_from || null,
       facts: structure.proper_appointment_facts || {},
       series: branch.orations.all || branch.orations.low_mass || [],
       owners: (structure.masses || []).map(function (owner) {
@@ -2588,6 +2685,91 @@
         }))).concat(groups.map(function (group) { return {kind: 'locus', id: group.locus}; }))});
     }
     return events.map(attach);
+  }
+
+  function withConclusionExecution(events, branch, readable, mass, request, structure) {
+    if (!Conclusions || request.edition.id !== 'roman-1962' || !branch.settled ||
+        readable.state !== 'said' || !branch.oration_execution ||
+        branch.oration_execution.scope !== 'dated-mass-of-office' || mass.key === 'good-friday') return events;
+    function sourceOf(event) {
+      const hook = (event.sourceHooks || []).find(function (row) { return row.kind === 'proper-structure'; });
+      const match = hook && /^([^/]+)\/([^/]+)\/(\d{3})$/.exec(hook.id);
+      const owner = match && match[1] === structure.calendar && structure.masses.find(function (row) { return row.key === match[2]; });
+      return owner && owner.propers[Number(match[3]) - 1] || null;
+    }
+    function memberInput(event, language) {
+      const proper = sourceOf(event), sources = proper && proper.conclusion_execution || [];
+      let source = sources.length === 1 ? sources[0] : null;
+      // The public source identity belongs to the quoted owner, including a
+      // source-resolved Common, rather than to a new synthetic weekday key.
+      const target = source && source.target;
+      const expected = target && [structure.calendar, 'proper', target[0], target[1], target[2], target[4], 'all', 'all'].join(':');
+      if (!proper || !proper.coverage || decodeURIComponent(proper.coverage.target_id || '') !== expected ||
+          event.executionSource || event.nameExecution) source = null;
+      const languages = Object.assign({}, request.languages, {orations: language});
+      if (language === 'la') delete languages.translationWitness;
+      const selected = proper && selectedMaterial(proper, Object.assign({}, request, {languages: languages}), structure, 'day');
+      return {id: event.id, target: target || [], source: source,
+        text: selected && selected.text, witness: selected && selected.sourceId, language: language};
+    }
+    function apply(event) {
+      if (event.kind === 'proper-choice') return Object.assign({}, event, {options: event.options.map(function (option) {
+        return event.selection.state === 'selected' && option.id === event.selection.option
+          ? Object.assign({}, option, {events: option.events.map(apply)}) : option;
+      })});
+      if (event.kind !== 'proper' || !event.semanticSlot || event.semanticSlot.state !== 'mapped' ||
+          !['collect', 'prayer-over-offerings', 'prayer-after-communion'].includes(event.semanticSlot.identity.id)) return event;
+      const attached = event.orationGroups || [];
+      const principal = attached.filter(function (group) { return group.conclusion_group === 1; });
+      const groups = principal.length ? attached : [{kind: 'principal', position: 1,
+        conclusion_group: 1, conclusion_final: true, slot: event.editionSlotLabel, members: [event]}].concat(attached);
+      const byMember = new Map(), results = [];
+      [1, 2].forEach(function (number) {
+        const partition = groups.filter(function (group) { return group.conclusion_group === number; });
+        if (!partition.length || !partition.some(function (group) { return group.members.some(function (member) {
+          const proper = sourceOf(member); return proper && (proper.conclusion_execution || []).length;
+        }); })) return;
+        const languages = {};
+        ['la', 'en'].forEach(function (language) {
+          const projected = Conclusions.executeGroup({calendar: structure.calendar, massCategory: 'mass-of-office',
+            rule: branch.oration_execution.locus, groups: partition.map(function (group) {
+              return {kind: group.kind, position: group.position, conclusion_group: group.conclusion_group,
+                conclusion_final: group.conclusion_final, slot: group.slot,
+                members: group.members.map(function (member) { return memberInput(member, language); })};
+            })});
+          languages[language] = projected;
+          (projected.members || []).forEach(function (member) {
+            if (!byMember.has(member.id)) byMember.set(member.id, {languages: {}});
+            byMember.get(member.id).languages[language] = {state: projected.state,
+              execution_extent: projected.execution_extent, conclusion_group: number, member: member,
+              response: projected.response.provider_id === member.id ? projected.response : null};
+          });
+        });
+        results.push({conclusion_group: number, slot: partition[0].slot, languages: languages});
+      });
+      if (!results.length) return event;
+      const revised = attached.map(function (group) {
+        const result = results.find(function (one) { return one.conclusion_group === group.conclusion_group; });
+        const selected = result && result.languages[request.languages.orations];
+        const execution = selected && selected.state === 'source-derived-complete' ? Object.assign({}, group.execution, {
+          state: 'source-derived-complete', source_method: Conclusions.METHOD_ID,
+          unresolved: (group.execution && group.execution.unresolved || []).filter(function (reason) {
+            return !['intermediate-conclusion-spans-unbound', 'later-shared-conclusion-unbound'].includes(reason);
+          })}) : group.execution;
+        return Object.assign({}, group, {execution: execution, members: group.members.map(function (member) {
+          return byMember.has(member.id) ? Object.assign({}, member, {conclusionExecution: byMember.get(member.id)}) : member;
+        })});
+      });
+      const hooks = results.flatMap(function (result) { return Object.values(result.languages).flatMap(function (language) {
+        return (language.members || []).flatMap(function (member) { return member.source_hooks.map(function (id) {
+          return {kind: 'publication', id: id};
+        }); });
+      }); });
+      return Object.assign({}, event, {conclusionGroups: results, orationGroups: revised,
+        sourceHooks: uniqueSourceHooks([event, {sourceHooks: hooks}])},
+        byMember.has(event.id) ? {conclusionExecution: byMember.get(event.id)} : {});
+    }
+    return events.map(apply);
   }
 
   function withInseparableGroups(events, branch, readable, mass, request, structure) {
@@ -3009,6 +3191,14 @@
       );
     }
     const branch = branchFor(input.derived, request);
+    const orationSelection = branch.orationSelection || null;
+    const dedicationSelection = branch.dedicationSelection || null;
+    if ((request.orationMass || null) !== (orationSelection && orationSelection.owner)) {
+      throw new Error('CLI prayer-source request disagrees with the calendar assembly');
+    }
+    if (request.orationTerritory && (!orationSelection || request.orationTerritory !== orationSelection.territory)) {
+      throw new Error('CLI prayer-source territory disagrees with the calendar assembly');
+    }
     const territory = territoryId(request);
     if (territory !== null && day.selected_territory !== territory) {
       throw new Error('mass-today selected territory disagrees with the explicit reader state');
@@ -3031,7 +3221,7 @@
     if (!mass.bible || mass.bible.id !== request.bible.id) {
       throw new Error('mass-today formulary Bible does not match the request');
     }
-    const generatedMass = input.structure && (input.structure.masses || []).find(function (one) {
+    let generatedMass = input.structure && (input.structure.masses || []).find(function (one) {
       return one.key === mass.key;
     });
     if (!generatedMass) throw new Error('mass-today parity requires the matching generated formulary');
@@ -3073,9 +3263,40 @@
     } else if (mass.selected_form !== formSelection.id || mass.form_choice_required === true) {
       throw new Error('mass-today selected form disagrees with the explicit reader state');
     }
-    const generatedRows = formSelection.rows.filter(function (row) {
+    let generatedRows = weekdayOrationRows(generatedMass, formSelection.rows, input.structure, orationSelection);
+    if (dedicationSelection) {
+      if (dedicationSelection.territory !== branch.option || dedicationSelection.formId !== (formSelection.id || 'main')) {
+        throw new Error('Dedication location does not match the selected branch and Mass form');
+      }
+      if (orationSelection || !Model) throw new Error('CLI Dedication location needs its independent source model');
+      const projected = Model.projectDedicationAnniversary(Object.assign({}, input, {
+        mass: generatedMass, properRows: generatedRows, selection: dedicationSelection
+      }));
+      generatedMass = projected.mass;
+      generatedRows = projected.rows;
+      if (!sameJson(mass.dedication_selection, dedicationSelection) ||
+          !sameJson(mass.takes_from, generatedMass.takes_from)) {
+        throw new Error('mass-today Dedication location disagrees with generated source appointment');
+      }
+    } else if (hasOwn(mass, 'dedication_selection')) {
+      throw new Error('mass-today carries an unattested Dedication location');
+    }
+    generatedRows = generatedRows.filter(function (row) {
       return row.proper.name !== 'Placeholder';
     });
+    if (orationSelection || dedicationSelection) {
+      const origins = generatedRows.map(function (row) {
+        return {mass: row.sourceMass, source_index: row.sourceProperIndex};
+      });
+      if (!sameJson(mass.proper_origins, origins)) {
+        throw new Error('mass-today selected prayer source ownership disagrees with generated structure');
+      }
+    } else if (hasOwn(mass, 'proper_origins')) {
+      throw new Error('mass-today carries unrequested prayer source origins');
+    }
+    if (orationSelection ? !sameJson(mass.oration_selection, orationSelection) : hasOwn(mass, 'oration_selection')) {
+      throw new Error('mass-today weekday prayer source disagrees with the calendar selection');
+    }
     if (generatedRows.length !== (mass.propers || []).length) {
       throw new Error('mass-today held Proper count disagrees with generated structure');
     }
@@ -3112,7 +3333,9 @@
     const payloadBySourceIndex = new Map();
     generatedRows.forEach(function (generatedRow, cliIndex) {
       payloadBySourceIndex.set(generatedRow.sourceIndex, {
-        proper: (mass.propers || [])[cliIndex], generated: generatedRow.proper
+        proper: (mass.propers || [])[cliIndex], generated: generatedRow.proper,
+        sourceMass: generatedRow.sourceMass || mass.key,
+        sourceProperIndex: generatedRow.sourceProperIndex === undefined ? generatedRow.sourceIndex : generatedRow.sourceProperIndex
       });
     });
     function cliProper(row, seat, semanticSlotOverride) {
@@ -3128,8 +3351,11 @@
         ? Object.assign({}, rawProper, rawProper[selector.family][selector.cycle]) : rawProper;
       if (!rawGenerated) throw new Error('mass-today has no raw source row for admitted appointment');
       const selected = cliMaterial(proper, adaptedRequest, generatedProper);
+      if (dedicationSelection && held.sourceMass === dedicationSelection.target.mass && generatedProper.name === dedicationSelection.proper) {
+        semanticSlotOverride = semanticSlot({name: 'Secret'});
+      }
       return {
-        id: properEventId(request.edition.id, mass.key, sourceIndex),
+        id: properEventId(request.edition.id, held.sourceMass, held.sourceProperIndex),
         kind: 'proper',
         semanticSlot: semanticSlotOverride || semanticSlot(generatedProper),
         editionSlotLabel: proper.name || null,
@@ -3138,7 +3364,7 @@
         selected: selected,
         seat: seat || null,
         sourceHooks: sourceHooks(
-          proper, selected, request.edition.id, mass.key, sourceIndex
+          proper, selected, request.edition.id, held.sourceMass, held.sourceProperIndex
         )
       };
     }
@@ -3236,8 +3462,13 @@
           seat: anchor.seat || null,
           sourceHooks: sourceHooks(proper, selected, request.edition.id, member.key, member.sourceIndex)
         };
-      }, {season: input.derived.season});
+      }, {season: input.derived.season, properRows: dedicationSelection ? generatedRows : null,
+        unresolvedDedicationContext: !dedicationSelection && Model && Model.dedicationAnniversaryChoices({
+          derived: input.derived, rubrics: input.rubrics, structure: input.structure,
+          territory: branch.option, mass: generatedMass.key, formId: formSelection.id || 'main'
+        })});
     events = withFiniteNameExecution(events, branch, readable, generatedMass, adaptedRequest, input.structure, input.nameExecutionUse || null);
+    events = withConclusionExecution(events, branch, readable, generatedMass, adaptedRequest, input.structure);
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: mass.standing
@@ -3254,6 +3485,8 @@
         lectionary: lectionary
       },
       resolved: resolved,
+      ...(orationSelection ? {orationSelection: orationSelection} : {}),
+      ...(dedicationSelection ? {dedicationSelection: dedicationSelection} : {}),
       events: events,
       ...(nameExecutionCoverage(events).occurrences ? {nameExecutionCoverage: nameExecutionCoverage(events)} : {}),
       ...(executionSourceCoverage(events).petitions ? {executionSourceCoverage: executionSourceCoverage(events)} : {}),
@@ -3421,6 +3654,7 @@
 
   return Object.freeze({
     properEventId: properEventId,
+    weekdayOrationRows: weekdayOrationRows,
     browseState: browseState,
     selectOrdinaryTranslation: ordinaryTranslation,
     validationContext: validationContext,

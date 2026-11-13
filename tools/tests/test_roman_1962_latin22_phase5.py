@@ -17,6 +17,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT), str(ROOT/"scripts")]
+from _artifact_store import resolve as resolve_artifact
 from tools.tests import _source_batch_guards as BATCH_GUARDS
 import _calendars as C
 from _proper_latin import LatinKey, SURFACES, body_owners, decision_for, publication_records, read_sidecar
@@ -2052,7 +2053,7 @@ class Latin22Phase5Tests(unittest.TestCase):
             historical=record(x["historical_passage_id"]);h=record(historical["artifact_id"])
             self.assertEqual((lane["historical_artifact_id"],lane["historical_sha256"]),(historical["artifact_id"],historical["artifact_sha256"]))
             self.assertEqual("public-domain",h["rights_status"])
-            self.assertEqual(h["sha256"],digest((ROOT/h["path"]).read_bytes()))
+            self.assertEqual(h["sha256"],digest(resolve_artifact(ROOT,h["path"],fetch=False).read_bytes()))
             self.assertIn(x["historical_passage_id"],r["provenance_evidence"])
             target=record(x["target_passage_id"])
             self.assertEqual((TARGET,TARGET_HASH,x["target_locus"]),(target["artifact_id"],target["artifact_sha256"],target["locus"]))
@@ -2101,6 +2102,101 @@ class Latin22Phase5Tests(unittest.TestCase):
                 self.assertEqual("920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3",
                                  digest(authority.read_bytes()))
                 self.assertEqual("adopted", json.loads(authority.read_text())["state"])
+            elif path == "src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml":
+                # The old complete rights record is an unchanged byte prefix.
+                # Only the separately adopted Ordinary-Preface section follows.
+                current = (ROOT / path).read_bytes()
+                boundary = b"\n[ordinary_prefaces_extension_20261112]\n"
+                self.assertEqual(current.count(boundary), 1)
+                self.assertEqual(h, digest(current.split(boundary, 1)[0]))
+                adoption_raw = (ROOT / "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-latin/admission.json").read_bytes()
+                self.assertEqual("75945c86124c67db262000c0bb926b5316d1d09fd6db7e9d310e538a9d485982", digest(adoption_raw))
+                adoption = json.loads(adoption_raw)
+                self.assertEqual("accepted", adoption["status"])
+                selected = adoption["installation_manifest"]
+                manifest_raw = (ROOT / selected["path"]).read_bytes()
+                self.assertEqual(selected["sha256"], digest(manifest_raw))
+                rows = [row for row in json.loads(manifest_raw)["source_files"] if row["source_file"] == path]
+                self.assertEqual(len(rows), 1)
+                self.assertEqual(h, rows[0]["owner_before_sha256"])
+                self.assertEqual("dfebf95c1f8322c217a175c508b3867ff7b1a0443a4592e9e6941a6ff6d6aeb2", rows[0]["sha256"])
+                self.assertEqual(rows[0]["sha256"], digest(current))
+            elif path == "scripts/_calendars.py":
+                review_raw = (ROOT / "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/runtime-code-review-v2.json").read_bytes()
+                self.assertEqual("1ab3d4b4328eeb223d067d8844986fad6907c31530a6151b6644cd79d125370d", digest(review_raw))
+                review = json.loads(review_raw)
+                self.assertEqual("accepted", review["status"])
+                current = (ROOT / path).read_bytes()
+                self.assertEqual({"before_sha256": h, "after_sha256": digest(current)},
+                                 review["accepted_code_owned_successors"][path])
+                # Exact inverse of the reviewed presentation-only successor;
+                # the entire previous module must still have its original hash.
+                inverse = {'after_sha256': 'fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7',
+                 'before_sha256': '54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4',
+                 'hunks': [{'after_lines': [2791, 2821],
+                            'after_slice_sha256': 'e67defaf384a866aeda9066b282e23bb3e302d6c80fdec6d7574b316b0c79a09',
+                            'before_utf8': ''},
+                           {'after_lines': [2834, 2837],
+                            'after_slice_sha256': '485dfb11cc86c2cc54a2ab01706e3dfc8ef93915666c7fa406e3cf3f204220d3',
+                            'before_utf8': '    Returns `(text, attribution, note)` triples; the attribution is empty\n'
+                                           '    where there is nothing to choose between. It lives here rather than in\n'
+                                           '    `mass-propers` because two tools print a proper — that one and\n'},
+                           {'after_lines': [2841, 2843],
+                            'after_slice_sha256': 'f5de068ec3f6871e9ece45d68eac853bd82897e87c9d514f79f3e5df9a7ad4a0',
+                            'before_utf8': '        return [(str(proper.get("text") or ""), "", "")]\n'},
+                           {'after_lines': [2855, 2857],
+                            'after_slice_sha256': 'c5a70f34bc357febb21343803ba8293c890322e92b424cbb1d3226418a9e43ef',
+                            'before_utf8': '                "",\n'},
+                           {'after_lines': [2881, 2885],
+                            'after_slice_sha256': '42ce4588b4b549004224a3844ccb9144bfb6bfa6d861c58cd406f886f6ad0b9d',
+                            'before_utf8': '        return [(str(proper["text"]), "", note)]\n'}]}
+                self.assertEqual(inverse["after_sha256"], digest(current))
+                lines = current.splitlines(keepends=True)
+                end = 0
+                for hunk in inverse["hunks"]:
+                    start, stop = hunk["after_lines"]
+                    self.assertTrue(0 <= start <= stop <= len(lines) and start >= end)
+                    self.assertEqual(hunk["after_slice_sha256"], digest(b"".join(lines[start:stop])))
+                    end = stop
+                for hunk in reversed(inverse["hunks"]):
+                    start, stop = hunk["after_lines"]
+                    lines[start:stop] = [hunk["before_utf8"].encode()]
+                self.assertEqual(h, inverse["before_sha256"])
+                self.assertEqual(h, digest(b"".join(lines)))
+            elif path == "tools/tests/test_roman_1962_boniface_annual_source_repair.py":
+                # The existing owner test now checks the accepted own-prayer
+                # appointment and no obsolete unresolved Common selection.
+                # Retain both its exact successor and complete prior test bytes.
+                current = (ROOT / path).read_bytes()
+                self.assertEqual("2faf9225873fd7e05dbcd44fba32098dc3c6cf14d386caa8c4c8aaba086e269e", digest(current))
+                inverse = {'after_sha256': '2faf9225873fd7e05dbcd44fba32098dc3c6cf14d386caa8c4c8aaba086e269e',
+                 'before_sha256': 'b1cab01b3a01d831143e075cdc83345ef73d03145caf674624b1c27bf6c11775',
+                 'hunks': [{'after_lines': [127, 128],
+                            'after_slice_sha256': '7c0733ce09196a58128ba01f488aaa243238fb8bbf2a2f27d3a86ca2cafc87df',
+                            'before_utf8': '    def '
+                                           'test_unresolved_common_candidates_do_not_displace_local_orations(self):\n'},
+                           {'after_lines': [129, 130],
+                            'after_slice_sha256': '653e08a6ec27a48c87a5fecaa21159cca8cffeddc7e455ac20c00ccccd45b75b',
+                            'before_utf8': '            {"mass": "commune-martyrum-tempore-paschali-1", "citation": "Commune '
+                                           'Sanctorum [15]",\n'
+                                           '             "common_sets": {"orations": {"state": "unresolved", "candidates": '
+                                           '["c3", "c4"]}}},\n'},
+                           {'after_lines': [132, 134],
+                            'after_slice_sha256': '6dc9555e7c138bce96dc1ad46fcbc8ec6ef2dcc924f9ba2c2ecc1fd1730d47c0',
+                            'before_utf8': '        rows, _ = _calendars.resolve_propers(self.document, self.mass)\n'}]}
+                self.assertEqual(inverse["after_sha256"], digest(current))
+                lines = current.splitlines(keepends=True)
+                end = 0
+                for hunk in inverse["hunks"]:
+                    start, stop = hunk["after_lines"]
+                    self.assertTrue(0 <= start <= stop <= len(lines) and start >= end)
+                    self.assertEqual(hunk["after_slice_sha256"], digest(b"".join(lines[start:stop])))
+                    end = stop
+                for hunk in reversed(inverse["hunks"]):
+                    start, stop = hunk["after_lines"]
+                    lines[start:stop] = [hunk["before_utf8"].encode()]
+                self.assertEqual(h, inverse["before_sha256"])
+                self.assertEqual(h, digest(b"".join(lines)))
             elif path == "scripts/_missal_coverage.py":
                 archived = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/historical-code/missal-coverage-prior.py"
                 self.assertEqual(h, digest(archived.read_bytes()), path + " at 6aeb96a392")

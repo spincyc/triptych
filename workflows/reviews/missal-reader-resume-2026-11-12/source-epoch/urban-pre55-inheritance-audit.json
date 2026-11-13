@@ -1,0 +1,54 @@
+{
+  "schema": "triptych-urban-pre1955-inheritance-audit/v1",
+  "state": "read-only-existing-contract-verified",
+  "command": ".scratch/root/venv/bin/python tools/mass-propers show --calendar roman-pre-1955 --mass comm-s-urbani-i-papae-martyris --json",
+  "exit_code": 0,
+  "actual_payload": {
+    "path": ".scratch/roman-sources/urban-pre55-consumer.json",
+    "sha256": "8cb53eb89d5a5380f7742ddb9615b0f01cdb931e8d88e31d67e2af1a9a373d12"
+  },
+  "mass_recension": {
+    "also": [],
+    "basis": "",
+    "calendar": "roman-1962",
+    "kind": "",
+    "stated": false,
+    "text_from": "roman-1962"
+  },
+  "advisory": "Partial pre-1955 projection with exactly three separately attested Latin prayer bodies: Pentecost main Collect, Secret and Postcommunion, occurrence one, in the Bonn 2004 reimpressio of a conformed edition of about 1954. This witness-state-only attestation gives no civil-date authority or authenticated Vatican 1920 claim. Six Holy Week departures and the exact absences of St Joseph the Worker and the Queenship of the Blessed Virgin Mary are also established here. Other unstated wording remains mechanically inherited from roman-1962 and uncollated for the target; this is not a complete 1920 corpus.",
+  "recension_inheritance": {
+    "basis": "`text_from` remains a mechanical fallback to the resident roman-1962 altar-book corpus. Exactly three separately selected Pentecost prayer bodies have current per-body Bonn witness-state attestations. Their generic relationship remains unresolved, collation collated and generic exact-target count zero. All other inherited wording remains uncollated for this target; source ownership and English inheritance are unchanged.",
+    "source_calendar": "roman-1962",
+    "status": "partial"
+  },
+  "proper_domain": {
+    "basis": "A separate hash-bound inventory attests exactly Pentecost main Collect, Secret and Postcommunion, occurrence one, to the identified Bonn 2004 reimpressio of a conformed edition of about 1954. Literal short endings are retained. This establishes three witness-state bodies, without civil-date authority, an authenticated Vatican 1920 claim or generic exact-target identity. All other resident inherited prayer owners remain withheld; English dictionaries and inheritance are unchanged. Other unstated wording remains mechanical roman-1962 fallback. Known-different bundled formularies keep typed unavailable status.",
+    "state": "partial"
+  },
+  "common_domain": {
+    "basis": "Every Common is inherited from roman-1962. No pre-1955 witness has been collated against those formularies, so inheritance proves availability in the projection and not identity in the target recension.",
+    "state": "inherited-uncollated"
+  },
+  "urban_latin_public": {
+    "text": null,
+    "latin": {
+      "available": false,
+      "held": false,
+      "state": "unavailable",
+      "target": "Collect",
+      "withheld": true
+    }
+  },
+  "urban_english_public": {
+    "caution": "Original study translation; not approved for liturgical use or recitation.",
+    "lang": "en",
+    "rights": "project-created",
+    "source_label": "Triptych study English",
+    "text": "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed Urban, your Martyr and Supreme Pontiff, she may be fortified with continual security, remaining steadfast in your strength. Through the Lord.\n"
+  },
+  "urban_english_coverage_relationship": "study-translation",
+  "mechanism": "translation_overlay validates the bound study against its owning ledger calendar roman-1962 (tools/mass-propers2925-2928), then existing text_from inheritance carries that same dictionary. study_translation_matches_body prevents inheritance over a different raw Latin body. Latin publication is separately reset to unresolved for roman-pre-1955 and this actual output withholds it.",
+  "five_other_six_targets": "Existing HolyWeek/Queenship inherited_inapplicable masks were transported from untranslated to entry only; Urban has no stated child departure and no preexisting mask. A fabricated calendar-departure mask would be rejected because Urban remains appointed in the effective child calendar.",
+  "scope_conclusion": "This is one additional available English study translation in the already-qualified mechanical projection, not an independent pre-1955 Latin publication or target-recension attestation. No 1942 or earlier identity inference is made. Current known-different masks remain intact.",
+  "canonical_changes": false
+}

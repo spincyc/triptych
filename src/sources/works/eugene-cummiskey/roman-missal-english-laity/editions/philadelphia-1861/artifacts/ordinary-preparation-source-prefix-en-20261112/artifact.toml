@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Exact selected historical text from the 1861 Philadelphia Cummiskey printing, whose affirmative United States public-domain basis is held on the parent transcription. No modern target wording, modern translation, Google watermark or host material is included."
+rights_jurisdiction = "United States"
+provenance = "The complete parent TSV and its sha256 were checked. The named prayer at printed p. xli, original PDF artifact p. 52, IA n51, was freshly inspected in both columns from the whole hash-matched source PDF on 2026-11-12. The image confirms the petition/conclusion boundary."
+retrieved = "2026-11-12"
+sha256 = "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8"
+byte_size = 725
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-en-20261112/text.tsv"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en"
+transformation = "Select the source row domine-jesu-christe-fili-dei-vivi. Split its english cell immediately after the colon preceding the old relative conclusion. Retain the petition colon and all source wording, capitalization, hyphens, abbreviations and punctuation verbatim. Put the complete remaining conclusion in a second row. No wording is translated, normalized, expanded, changed or supplied."
+indexable = true
+encoding = "utf-8"
+notes = "Header plus two rows. The first is an exact historical source prefix, not a complete historical prayer. The second preserves the old conclusion. Selection of the petition is separately compared with secondary2002 n.131, not authenticated whole2008 text or approved2011 English."

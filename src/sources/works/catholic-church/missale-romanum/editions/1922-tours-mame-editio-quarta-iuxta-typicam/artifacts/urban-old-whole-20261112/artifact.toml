@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded checked transcription of the independently identified public-domain historical printing, under its parent artifact United States basis. The mechanical editorial normalization adds no claim over the underlying old text."
+rights_jurisdiction = "United States"
+provenance = "Transcribed from the complete unit on page images at 200 and 400 dpi on 2026-11-12; OCR served only as a locating aid."
+retrieved = "2026-11-12"
+sha256 = "ed368e8aeabdcdfb257d04ca01cb274c7002ce7224ac642b92a9e0c2d605be4d"
+byte_size = 155
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/urban-old-whole-20261112/latin.txt"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join decorative initial and linewraps, remove stress accents, expand ae ligatures; preserve words, j spellings, punctuation and the short Per Dominum. cue. This establishes Urban with martyr/pontiff titles in conventional intercessory prayer; Summo and the target placement are not printed here."
+indexable = true
+encoding = "utf-8"
+notes = "Mame 1922, complete Urban Oratio, printed p. 599 / PDF p. 713."

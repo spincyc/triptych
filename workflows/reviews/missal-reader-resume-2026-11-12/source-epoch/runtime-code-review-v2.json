@@ -1,0 +1,48 @@
+{
+  "schema": "triptych-source-epoch-runtime-code-review/v2",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted",
+  "code_parent": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "candidate": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/runtime-code-candidate.json",
+    "sha256": "23c29f77b0cab4c5b98195eed0970350243e45bc1ad2f195eb7bd7b844dd4535"
+  },
+  "accepted_code_owned_successors": {
+    "scripts/_calendars.py": {
+      "after_sha256": "fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7",
+      "before_sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4"
+    },
+    "scripts/_oration_endings.py": {
+      "after_sha256": "6450ff3667f74fedcbd3874e928d46de23a3f9186519ed63f61f41204cb1113c",
+      "before_sha256": null
+    },
+    "scripts/_proper_finite_latin_20261029.py": {
+      "after_sha256": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+      "before_sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5"
+    },
+    "tools/mass-propers": {
+      "after_sha256": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+      "before_sha256": "1e6ed563783d81d510d63d43a81e9fe14d195107de4d796225fd633f127b780a"
+    }
+  },
+  "reviewed_changes": {
+    "scripts/_calendars.py": "Read complete diff. Add source-owned qualification to exact historical Latin transcription and Latin fallback display; no change to body, selection or source permission. The v2 addition carries an existing emitted translation caution verbatim into the returned note. Missing and nonstring cautions yield an empty note; body, selected witness and attribution are unchanged. Root inspected the exact branch change. Nine focused tests and actual current Roman six/legacy-four CLI projection checks passed.",
+    "scripts/_oration_endings.py": "Read complete finite-authority compiler and atomic group execution. Accept exact v2 source metadata correction and unchanged 754 mappings under separately recorded root-adoption-v2. Unknown/changed source or context refuses the whole group; source quotations remain distinct.",
+    "scripts/_proper_finite_latin_20261029.py": "Verified successor changes only the exact adopted authority and recognition pins. Original 22 scopes remain complete and identical; six additions and the two technical confidence-enum corrections have separate exact root reviews. No permission algorithm relaxation.",
+    "tools/mass-propers": "Read four-line integration: import, load exact conclusion sources and attach the existing exact source-owner descriptor. No body rewrite or appointment change."
+  },
+  "boundary": [
+    "These four exact code successors only may differ from the immutable code parent during the source compiler replay. Source metadata cannot authorize another module or changed bytes.",
+    "This is not source-fixture acceptance. The original candidate recorded two unaccounted English targets; separately accepted exact gap dispositions now close them and the original zero-unaccounted gate must remain enforced during derivation.",
+    "All original test streams, unchanged code imports, semantic complements and publication refusals remain controlling."
+  ],
+  "predecessor": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/runtime-code-review.json",
+    "sha256": "9c742ad9bd83fc5ba6d2182d386bdfd0c0afdc5370ec90457a531332f8467fd0"
+  },
+  "caution_consumer_proof": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/english-caution-consumer-proof.json",
+    "sha256": "cfe2578c77b817718b2cd47e634b09cfbf5200b33f91c91fe3ea1a396fb8c759"
+  }
+}

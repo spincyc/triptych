@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Finite United States qualified-nonoriginal-adaptation assessment under method english-completion-20261029-finite-latin-v1, limited to the exact scope admitted by the code-pinned finite authority. The Latin body hash equals the body adopted in the 2026-10-30 future-Good-Friday-two root decision; these reconstructed records carry fresh source bindings. No holder permission, whole-work public-domain claim or general formula license is asserted. Only Triptych editorial contributions are offered under CC BY 4.0."
+provenance = "Fresh page-image collation on 2026-11-12 against whole registered 1962 PDF and independently read whole older prayers and conclusion. The old scratch packet is absent; no prior receipt is represented as a check of these new record bytes."
+retrieved = "2026-11-12"
+sha256 = "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d"
+byte_size = 344
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-prostration-qualified-20261030-01972432/latin.txt"
+projected_from = ["artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join target printed wraps, remove stress accents and expand ligatures; retain exact target wording, pointing, complete printed ending and response direction/marker. Identify the nonspoken direction/marker by an exact typed action while keeping the following Amen spoken. Do not relabel target variants as ancient main text."
+indexable = true
+encoding = "utf-8"
+notes = "The final form is not a single literally identical older witness. Apparatus8 attests da in witnesses whose apparatus9 also has eiusdem, whereas the target retains main-text eidem; the modern form cannot be assembled and relabelled as an exact old witness. Choosing that hybrid, severing the final Christ genitive from the petition, adopting a different complete conclusion and expressly calling the congregation to respond could together be a deliberate ritual redaction with sufficiently original selection and arrangement. The originality threshold is low and the separate old formula by itself defeats none of that argument."

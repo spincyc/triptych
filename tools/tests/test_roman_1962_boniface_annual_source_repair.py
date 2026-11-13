@@ -125,13 +125,13 @@ class BonifaceAnnualSourceRepairTests(unittest.TestCase):
             self.assertEqual(target["id"], row["verification_source_id"])
             self.assertNotIn(target["artifact_id"], row["publication_source_ids"])
 
-    def test_unresolved_common_candidates_do_not_displace_local_orations(self):
+    def test_own_orations_need_no_common_set_selection(self):
         self.assertEqual(
-            {"mass": "commune-martyrum-tempore-paschali-1", "citation": "Commune Sanctorum [15]",
-             "common_sets": {"orations": {"state": "unresolved", "candidates": ["c3", "c4"]}}},
+            {"mass": "commune-martyrum-tempore-paschali-1", "citation": "Commune Sanctorum [15]"},
             self.mass["takes_from"],
         )
-        rows, _ = _calendars.resolve_propers(self.document, self.mass)
+        rows, errors = _calendars.resolve_propers(self.document, self.mass)
+        self.assertEqual([], errors)
         for name, own in self.propers.items():
             matching = [(p, origin) for _, p, origin in rows if p["name"] == name]
             self.assertEqual([(own, None)], matching)

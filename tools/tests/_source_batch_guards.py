@@ -16,6 +16,50 @@ def canonical(value):return json.dumps(value,ensure_ascii=False,sort_keys=True,s
 def digest(value):return hashlib.sha256(value.encode()if isinstance(value,str)else value).hexdigest()
 def require(condition,label):
  if not condition:raise AssertionError('frozen source batch: '+label)
+def _delivery_entries(source_pins):
+    """Delivery may relocate bytes; its complete reviewed declaration stays pinned."""
+    from _artifact_store import INDEX_PATH, delivery_entries
+    require(INDEX_PATH in source_pins,
+            'external delivery index must belong to accepted input manifest')
+    require(digest((ROOT / INDEX_PATH).read_bytes()) == source_pins[INDEX_PATH],
+            'exact accepted external delivery index bytes')
+    return delivery_entries(ROOT)
+
+
+def _current_input_bytes(relative, source_pins):
+    """Read actual local evidence; never substitute a declaration for its bytes."""
+    path = ROOT / relative
+    if path.is_file():
+        return path.read_bytes()
+    if 'src/sources/artifact-delivery.json' not in source_pins:
+        raise FileNotFoundError(relative)
+    require(relative in source_pins,
+            'external source input must belong to accepted input manifest ' + relative)
+    entries = {entry['path']: entry for entry in _delivery_entries(source_pins)}
+    entry = entries.get(relative)
+    require(entry is not None and entry['kind'] == 'source-evidence',
+            'missing input is not declared source evidence ' + relative)
+    require(entry['sha256'] == source_pins[relative],
+            'external declaration must retain exact accepted source hash ' + relative)
+    from _source_delivery_policy import external_source_identity
+    from _artifact_store import resolve
+    identity = external_source_identity(ROOT, relative)
+    require(identity is not None and identity['sha256'] == source_pins[relative],
+            'exact external source artifact owner ' + relative)
+    return resolve(ROOT, relative, fetch=False).read_bytes()
+
+
+def _current_namespace_files(prefixes, data):
+    """Enumerate physical text and declared binaries, then hash the actual bytes."""
+    pins = {row['path']: row['post_sha256'] for row in _bound_manifest_rows(data)}
+    paths = {str(path.relative_to(ROOT)) for prefix in prefixes
+             for path in (ROOT / prefix).rglob('*') if path.is_file()}
+    if 'src/sources/artifact-delivery.json' in pins:
+        paths.update(entry['path'] for entry in _delivery_entries(pins)
+                     if entry['path'].startswith(prefixes))
+    return {path: digest(_current_input_bytes(path, pins)) for path in paths}
+
+
 def _bound_manifest_rows(data):
  """Verify the exact bound bytes on every consumption, including warm calls."""
  manifest_path=Path(data['source_input_manifest_path'])
@@ -45,8 +89,8 @@ def fixture():
  for relative,want in source_pins.items():
   path=Path(relative)
   require(not path.is_absolute()and '..'not in path.parts,'source manifest path must be repository relative')
-  try: current=(ROOT/path).read_bytes()
-  except OSError as error: raise AssertionError('frozen source batch: accepted source input missing '+relative)from error
+  try: current=_current_input_bytes(relative,source_pins)
+  except (OSError,ValueError) as error: raise AssertionError('frozen source batch: accepted source input missing or invalid '+relative)from error
   require(digest(current)==want,'entire accepted source input '+relative)
  for relative,spec in data['files'].items():
   require(source_pins.get(relative)==spec['after_sha256'],'every replay input belongs to accepted input manifest '+relative)
@@ -103,7 +147,7 @@ def assert_current_projection_source_files():
  prefix='src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/'
  for row in _bound_manifest_rows(data):
   if row['path'].startswith(prefix):expected[row['path']]=row['post_sha256']
- actual={str(p.relative_to(ROOT)):digest(p.read_bytes())for p in (ROOT/prefix).rglob('*')if p.is_file()}
+ actual=_current_namespace_files((prefix,),data)
  require(set(actual)==set(expected),'exact entire current project-projection source-file identities')
  for path,want in expected.items():require(actual[path]==want,'exact current project-projection source file '+path)
 def projection_artifact_specs():
@@ -160,10 +204,7 @@ def historical_english_source_files():
  prefixes=tuple('src/sources/works/'+n+'/'for n in ('francis-xavier-lasance','eugene-cummiskey','edward-caswall'))
  for row in _bound_manifest_rows(data):
   if row['path'].startswith(prefixes):expected[row['path']]=row['post_sha256']
- actual={}
- for name in ('francis-xavier-lasance','eugene-cummiskey','edward-caswall'):
-  for path in (ROOT/'src/sources/works'/name).rglob('*'):
-   if path.is_file():actual[str(path.relative_to(ROOT))]=digest(path.read_bytes())
+ actual=_current_namespace_files(prefixes,data)
  require(set(actual)==set(expected),'exact entire current English source-file identities')
  for path,want in expected.items():require(actual[path]==want,'exact current English source file '+path)
  historical=data['english_historical_source_files']

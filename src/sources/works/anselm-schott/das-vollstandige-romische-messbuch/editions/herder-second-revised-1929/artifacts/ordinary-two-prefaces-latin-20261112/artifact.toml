@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112"
+edition_id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded Latin printed in the independently identified Herder 1929 second revised Schott/Bihlmeyer missal; United States public domain by expiration of the maximum 95-year publication term at the end of 2024. Christ the King printed1107-1108/PDF1177-1178 lies inside the already allowed Latin extent. Sacred Heart printed[272]-[273]/PDF1486-1487 is the exact new bounded extension recorded in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml [ordinary_prefaces_extension_20261112]. Appendix attribution uses the printed1929 printer leaf, integral contents and previously corroborated exact-edition pagination, not the handwritten title date or host1927 label. No whole PDF, German translation, image/layout, watermark or neighboring text is admitted. Faithful transcription adds no exclusive right; underlying words are excluded from Triptych CC BY 4.0."
+rights_jurisdiction = "United States"
+provenance = "Fetched the complete1495-page delivery from the registered source_url and verified SHA-256 4511fa924e0f260185576b220e25f24d4d130b8af64700fb720e0b03f1b07f92 before extracting finding text or rendering pages. Read original PDF2,3,11,1177,1178,1486,1487 at actual200 and400dpi. PDF3 independently prints Herder1929; PDF11/XII lists the Sacred Heart appendix Mass at[269] and the following index at[275]. Read both complete Preface bodies directly from page images and compared them word for word with CMAA1962 PDF372/371 at both resolutions. Independent admission review is separate."
+retrieved = "2026-11-12"
+sha256 = "f94160dc86a620341c756f8650e39b87a34883f653f4908904a6a9e1382398c9"
+byte_size = 1566
+path = "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92"
+transformation = "Transcribe only the complete Latin Preface bodies from Vere through dicentes. Omit stress accents, join physical wraps and discretionary line-end hyphens, and collapse word and punctuation spacing. Preserve source words, intrinsic spelling, ligatures, capitalization and punctuation, including Sacred Heart lower-case qui, nunquam and pænitentibus, and both sources cælestis. Exclude the Sanctus referrals, headings, German, rubrics and neighboring prayers. Add TSV metadata; ia_leaf is empty because this source is not an Internet Archive delivery."
+notes = "One header and two physical data lines, in source order Christ the King then Sacred Heart. The full Preface body is printed in each case; no omitted opening or conclusion is generated or borrowed. English remains unchanged."

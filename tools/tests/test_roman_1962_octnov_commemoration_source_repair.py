@@ -18,6 +18,7 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
+from _artifact_store import resolve as resolve_artifact
 from tools.tests import _source_batch_guards as BATCH_GUARDS
 import _calendars as C
 from _proper_latin import LatinKey, SURFACES, body_owners, decision_for, read_sidecar
@@ -1711,7 +1712,7 @@ def _phase5_key(row):
 def _phase5_source_postimages():
     # Frozen from the independently accepted corrected source, not a live oracle.
     for path, expected in PHASE5_SOURCE_POSTIMAGES.items():
-        _phase5_require(digest((ROOT / path).read_bytes()) == expected, path)
+        _phase5_require(digest(resolve_artifact(ROOT,path,fetch=False).read_bytes()) == expected, path)
 
 
 def _phase5_validate_node(node, spec):
@@ -2005,7 +2006,7 @@ class OctNovCommemorationSourceRepairTests(unittest.TestCase):
 
     def test_historical_payload_is_exact_fourteen_page_parented_extract(self):
         artifact = record(HIST_ARTIFACT)
-        payload = (ROOT / artifact["path"]).read_bytes()
+        payload = resolve_artifact(ROOT,artifact["path"],fetch=False).read_bytes()
         self.assertEqual((HIST_HASH, 2981377), (digest(payload), len(payload)))
         self.assertEqual((14, "public-domain", "tracked"),
                          (artifact["page_count"], artifact["rights_status"], artifact["storage"]))
@@ -2115,8 +2116,19 @@ class OctNovCommemorationSourceRepairTests(unittest.TestCase):
         later = {LatinKey("comm-s-silvestri-i-papae-confessoris", "", "Collect", "", "", 1),
                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 5),
                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 6)}
+        prior_triduum = {LatinKey(mass, "", proper, "", "", 1) for mass, proper in (
+            ("easter-vigil", "Blessing of the Lighted Candle"),
+            ("palm-sunday", "Blessing of the Palms"),
+            ("good-friday", "Improperia"),
+            ("good-friday", "Antiphons at the Translation of the Blessed Sacrament"),
+        )}
+        reader_restored = {
+            LatinKey("good-friday", "", "Prayer after the Prostration", "", "", 1),
+            LatinKey("good-friday", "", "Third Prayer after Communion", "", "", 1),
+            LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 4),
+        }
         restored = {k for k in removed if current_prior_records[k]["publication_status"] == "permitted"}
-        self.assertEqual(restored, {anthony} | later)
+        self.assertEqual(restored, {anthony} | later | prior_triduum | reader_restored)
         legacy = dict(raw_records)
         legacy[anthony] = current_prior_records[anthony]
         self.assertEqual((1270,16,3), counts(legacy))
@@ -2125,15 +2137,21 @@ class OctNovCommemorationSourceRepairTests(unittest.TestCase):
         # The finite-sixteen authority restores Silvester; installation-a7619040
         # and its two source reviews map Palm English ordinals 6/7 to Latin 5/6.
         status = lambda row: (row["publication_status"], row["provenance_status"])
-        self.assertEqual(later, {k for k in current_prior_records if status(current_prior_records[k]) != status(legacy[k])})
+        intermediate = dict(legacy)
+        intermediate.update({k: current_prior_records[k] for k in later})
+        self.assertEqual((1273,13,3), counts(intermediate))
+        self.assertEqual(later, {k for k in intermediate if status(intermediate[k]) != status(legacy[k])})
+        self.assertEqual(prior_triduum | reader_restored,
+                         {k for k in current_prior_records if status(current_prior_records[k]) != status(intermediate[k])})
         bodies = {k: body for k, body, state in body_owners(self.document) if state == "present"}
         for k in restored:
             self.assertEqual(("permitted", "collated"), status(current_prior_records[k]))
             self.assertTrue(decision_for(k, bodies[k], self.records).permits(SURFACES))
+            self.assertFalse(decision_for(k, bodies[k] + " Amen.", self.records).permits(SURFACES))
         for k in removed - restored:
             self.assertEqual(status(raw_records[k]), status(current_prior_records[k]))
             self.assertFalse(decision_for(k, "Invented body.", self.records).permits(SURFACES))
-        self.assertEqual((1273,13,3), counts(current_prior_records))
+        self.assertEqual((1280,6,3), counts(current_prior_records))
 
     def test_real_cli_raw_and_appointed_bodies_have_the_same_bytes(self):
         for mass in MASSES:

@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Literal complete prayer readings of the identified Oxford 1894 Wilson printing, public domain in the United States by publication date. No later target variant or conclusion is silently inserted."
+source_url = "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf"
+provenance = "Fresh complete-page image collation at 200 and 400 dpi on 2026-11-12 against the complete registered parent PDF pages168/154/171; line 1 transcribes printed75, line2 printed61, and lines3-5 the entire apparatus notes8-10 at printed78. No OCR reading supplies the words."
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+transformation = "Manually transcribe the two complete printed main-text prayers, including their literal conclusion cues, followed by the three complete controlling apparatus notes; join line wraps, omit footnote numerals and marginal witness sigla from prayer wording. Preserve haereditariam, dona, eidem, terminal Christi Domini nostri. Qui tecum vivit. in the first and nobis plus Per Dominum nostrum. in the second."
+indexable = true
+encoding = "utf-8"
+notes = "Wilson printed 78 apparatus 8 attests da in R. Gerb. Pam.; apparatus 9 attests eiusdem in those same witnesses while V. has main eidem; apparatus 10 gives portemus. Per eundem in R. Gerb. Pam. These apparatus readings are NOT silently merged into either main-text prayer. Printed 61 appoints the second prayer Feria ii Hebdom. sexta, not Good Friday after Communion."
+retrieved = "2026-11-12"
+sha256 = "8e343f986642600eb54e3be9cef15ab096f3589ce05fb019de4fbd0c16a9e26d"
+byte_size = 638
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-two-whole-readings-20261112-8e343f98/latin.txt"

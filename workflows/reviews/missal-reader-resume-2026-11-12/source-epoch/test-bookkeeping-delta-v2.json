@@ -1,0 +1,2058 @@
+{
+  "c5_reconstruction": {
+    "expected_fixture_sha256": "c5dfb4a5f9f264cb23b535174e45cdbd054f3e877d393ab254df8c118bc274dc",
+    "expected_manifest_sha256": "8bff4e89d1cf0ed36686dc8ac38aa0dc92c4bc67edc479631f51cbab745501b9",
+    "replace_six_file_specs": {
+      "tools/tests/test_proper_latin.py": {
+        "after_sha256": "bb609bb0dc7071c270433ff4df5cf9ca297b40dab6b35a170b69f27a20a9f81d",
+        "before_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+        "hunks": [
+          {
+            "after_lines": [
+              3,
+              4
+            ],
+            "after_slice_sha256": "3b3ea3cdc7068a9e97cfcddbcd9d8e0c54fe4d068347b80b158fdd8b14676e3b",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              21,
+              22
+            ],
+            "after_slice_sha256": "816ab2d4d902e1ff0c2180f301fb8f887983fc1fdc0dfd52f2edd9dc05df5d2d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              25,
+              26
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              27,
+              28
+            ],
+            "after_slice_sha256": "a796aad512a6a09c10d06242daa81fb539777781c49034766ccbb0552b6f1560",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              55,
+              143
+            ],
+            "after_slice_sha256": "d3d5f5023ea250bb851c413c901eef4ef84da1ae7ec1cf0e6d038507b029d7a7",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              553,
+              595
+            ],
+            "after_slice_sha256": "3cd1b93aa224dae28b6244e7861d095b35a4cf70d8a6ff67192e68b91546eb77",
+            "before_utf8": "        self.assertFalse(any(p[\"name\"] == \"Prayer over the Offerings\" for p in sept8[\"propers\"]),\n                         \"the unresolved two-option source packet is outside these three Collects\")\n"
+          },
+          {
+            "after_lines": [
+              626,
+              645
+            ],
+            "after_slice_sha256": "2db0c58e54b7e0ac8adb8029707ba4a818de1132ae40466934ecbf6694ca9d7b",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              663,
+              664
+            ],
+            "after_slice_sha256": "27ca06c3767aea3298ba570e40aec5a2ca922c8e02a54c2a442c5fff4229feee",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              665,
+              765
+            ],
+            "after_slice_sha256": "11266e875598185f0b1f4f219df29b5839eb87d00a174a944c234add7efdb5ac",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              771,
+              773
+            ],
+            "after_slice_sha256": "7c0ff25de440e30996b398b171e3f5ddb73da2c75fce8af1b60f7bbd0bc87a15",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              778,
+              781
+            ],
+            "after_slice_sha256": "2e5546c4e2829fa18ed57b589e98d7eaa67435dc47b664a23fe1176761dabf07",
+            "before_utf8": "        # Every permitted body is pinned by SHAPE rather than by key. Pinning\n"
+          },
+          {
+            "after_lines": [
+              809,
+              821
+            ],
+            "after_slice_sha256": "da64e928925fe61d21c7612d3e68d68361b54ae0b456cd54ba934ae4c0a72958",
+            "before_utf8": "        self.assertEqual(1269, len(permitted))\n        self.assertEqual(1269, len(roman))\n"
+          },
+          {
+            "after_lines": [
+              874,
+              877
+            ],
+            "after_slice_sha256": "0b854196d3cee99f3d51fd247860adfd93e83a240db3513516a7907f66283f17",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              966,
+              969
+            ],
+            "after_slice_sha256": "0615621a220eff8e5d8dd90f0941b3fd196f560ba7cf210a45d87e9124e4810c",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              974,
+              976
+            ],
+            "after_slice_sha256": "7d3945e99285dbf9725e684b7e601aa64f0018466dc5b2c9124e2a14aab4ac75",
+            "before_utf8": "        for calendar, key, row in permitted:\n"
+          },
+          {
+            "after_lines": [
+              989,
+              994
+            ],
+            "after_slice_sha256": "5ac71a927918f3e65996d4fdeff47fb5d4390e1dcce52832da70ff310a4a05f6",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1011,
+              1014
+            ],
+            "after_slice_sha256": "7ec4b0e99fa78aff48e2c07962a485d4969ffc83001cb3e77d84ef04c34c4feb",
+            "before_utf8": "                self.assertEqual(\"public-domain\", row[\"publication_basis\"])\n"
+          },
+          {
+            "after_lines": [
+              1015,
+              1022
+            ],
+            "after_slice_sha256": "c0d94e64714711db2efe8aea8c3d37c8b9c2e41c6e5ba8e7ed4d8b7feef4dbd5",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1028,
+              1033
+            ],
+            "after_slice_sha256": "ad247c147a211488040f6db377480abc512b539f7c4388d9ab85d483956913e1",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1067,
+              1071
+            ],
+            "after_slice_sha256": "7d43153e013e02d194db4b91df01fe457f7ea978015ea78c7ddb5cfa9a5b7291",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1072,
+              1073
+            ],
+            "after_slice_sha256": "339913a2e0a85fb78a43b5eebb08f2169647b4dcbd3cf8671200fd1cf04c7632",
+            "before_utf8": "                        # Sole cross-edition case: Schott petition + exact Pustet conclusion.\n"
+          },
+          {
+            "after_lines": [
+              1076,
+              1078
+            ],
+            "after_slice_sha256": "152f881f1dd3b60c044dba307569e48ce27e844c6fcf786640b6955b43a0ee15",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1096,
+              1111
+            ],
+            "after_slice_sha256": "1d3bf273265794c61658fc5b54f3fafb2edeb877757b8acc404e5f73602e19e9",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1121,
+              1134
+            ],
+            "after_slice_sha256": "cbaff6e92a56607fcb5c01b6b045af731553e16785bef4c0f8dc31b1d76dc05b",
+            "before_utf8": "        self.assertEqual(52, len(supplemented), supplemented)\n"
+          },
+          {
+            "after_lines": [
+              1162,
+              1174
+            ],
+            "after_slice_sha256": "1340226e7f7fedec1fef5a63ebbe0b65b2f5c65e94cd8674c560b4c13b5a79b6",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1175,
+              1179
+            ],
+            "after_slice_sha256": "8075aa373f690562ba68d5e9436b847f1bba66dcb79bab6780e9fc072ef46234",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1196,
+              1200
+            ],
+            "after_slice_sha256": "8e57bdf7b3bdf5927000ae34ab723b0a3f23cf2e36256ac995ed7c9be1d26cc6",
+            "before_utf8": "        for _, _, row in permitted:\n"
+          },
+          {
+            "after_lines": [
+              1211,
+              1222
+            ],
+            "after_slice_sha256": "965d71c0abfad9ec4e02a57c8a3604b37a92f8c488a6429b9d3ee50c68efed0d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1223,
+              1241
+            ],
+            "after_slice_sha256": "cb8b43b5561948e6827748882fefdf9387e5cdd4cf656db592d9329816521506",
+            "before_utf8": "        self.assertEqual(349, len(nonpermitted))\n"
+          },
+          {
+            "after_lines": [
+              1295,
+              1299
+            ],
+            "after_slice_sha256": "ae72b8d3ca8f1c69831f098a60f3b5c177e2fcc42cc0b001669e0deb58a46b32",
+            "before_utf8": "        self.assertEqual(346, len(unresolved))\n"
+          }
+        ]
+      },
+      "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py": {
+        "after_sha256": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+        "before_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+        "hunks": [
+          {
+            "after_lines": [
+              4,
+              5
+            ],
+            "after_slice_sha256": "6d9118f7e39b167921427c8eb850d4aef0b8523d6859c0d8ef6312251fb7f0f9",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              251,
+              252
+            ],
+            "after_slice_sha256": "aea14da3bdbc1cf442ebfe7f55a92ed5288d9998b5bad920aad527d7f66982bf",
+            "before_utf8": "        self.assertEqual(len(self.entries),219)\n"
+          },
+          {
+            "after_lines": [
+              298,
+              300
+            ],
+            "after_slice_sha256": "87f3fc54e320710431188ca7b78402e6166090a3f7fc33571d960052f2ad60b9",
+            "before_utf8": "        shared=[r for r in self.latin if old in r.get(\"publication_source_ids\",[])]\n"
+          },
+          {
+            "after_lines": [
+              309,
+              311
+            ],
+            "after_slice_sha256": "3199c7e244839e02c8232604708c529e5bb4e7c21a3156d421a5fee75b3f34fa",
+            "before_utf8": "    def test_measured_both_calendar_coverage_zero_errors_and_advent_hold(self):\n"
+          },
+          {
+            "after_lines": [
+              312,
+              314
+            ],
+            "after_slice_sha256": "b823331de3fc3fd46879a994e4ee428500256da217cb8e43aa6299db354a9a20",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              315,
+              316
+            ],
+            "after_slice_sha256": "b8b3f89bd4cdc0dc3984f20c5799d8dabd5e924ba7fa89d890bcda869b03a5c4",
+            "before_utf8": "            self.assertEqual((row[\"slots\"],row[\"with_english\"],row[\"ledgered_untranslated\"]),expected)\n"
+          },
+          {
+            "after_lines": [
+              317,
+              325
+            ],
+            "after_slice_sha256": "2573fd0e85823c3124d41aeb068239fe410164ca0a5f9f47556fe7c711ec933f",
+            "before_utf8": "        self.assertEqual(self.p.english_coverage(CAL,\"roman-pre-1955\")[\"inherited_inapplicable_records\"],49)\n        self.assertNotIn((\"advent-2\",\"main\",\"Collect\",\"all\",1),self.entries)\n"
+          }
+        ]
+      },
+      "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py": {
+        "after_sha256": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+        "before_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+        "hunks": [
+          {
+            "after_lines": [
+              12,
+              13
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              93,
+              95
+            ],
+            "after_slice_sha256": "2e883488303ae5f4e048f94d5a8d0a06afc97710dcd71a12f2f5eee5417761c7",
+            "before_utf8": "IMMUTABLE_GUARDS = {'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/commons-2-orations-8f0f1a33/commons-2-orations-8f0f1a33.txt': '8f0f1a33bcd92be8742d2d69e89ddd5c455c180f33c64f1f584f40638e087995', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-collect.toml': '7252a4a2e2f055b2ab8dd194b96778d458a74b1e0576c43398bdb0724aea18f4', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-postcommunion.toml': '21ea32617470b8748b3fcdc63a2eb9dc60e659ad00735502529d67aa68ea7bca', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-secret.toml': '31488b03b8823baf47edb94c91355437bcd600d4680c25ea3567545dbe8bcd09', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-collect.toml': 'a4eb206c3cd7bef5c783bbf59e5702127a35a07ad56c01395027374212144481', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-postcommunion.toml': '750393a112746fd9a7b61c5dc05059fe8c67edd322e5ec259320ce7250253d76', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-secret.toml': 'dd2d2a42fee2a7c2605f684d688f7ca1e8e5bad68b5fbbf78ca6fc87c551ae51', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-collect-in-ipso-die-dedicationis.toml': '641478b09b534155b181de1ed6b10c51f8120293bc3ee939ae7bfc958c901491', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-collect.toml': 'f0aa7a9273ed9735b79138cea3651b6d00a9a2be9e8af54c029a29d53fc942a6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-postcommunion-in-ipso-die-dedicationis.toml': '0aeaf00caf4a6b49ef6316d8bef1632f4360a24f59df7fda3f606bc33d66dfa5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-postcommunion.toml': '2b4c8ff178bb0a94f5a31b001bef9cb00de999aa18fe94ef4ea491349c84d015', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-secret-extra-ecclesiam-ipsam-dedicatam.toml': '84f414c23345f2c7d7700f21b240df105dbd0b06ec85faf55dbd3152d721a360', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-secret-in-ipso-die-dedicationis.toml': 'ad9cc763cc6233b844202f387b4afbeb4869fc2538e41fedb88897cbd2ca8676', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-collect.toml': 'da558610b6a9852462312137b3925250f86d234ecab96eef738b80d45897d296', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-postcommunion.toml': '83f0215a1e9f8f9ea0c11be3c5f6d60ec95bb33428f32958c4de5646f971a871', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-secret.toml': '661fa79d3160eda9fbb0dae4a69477689f46f1bd107f6c11baa637d4151805f5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-collect-pro-pluribus-martyribus-quae-non-sint-virgines.toml': '417b5c09bc41eb2e43ea97de9f56215752c25d5e63c5355448e105ec4567d6b6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-collect.toml': '9b811bd6bcbeb621b00c0ac58d7819fad77ae033b5ad75751e7149673d0e8f9a', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-postcommunion.toml': '57794ddaeaf2b0e4fbe8f3c3070c04d9cf77efefc994f2365947cc1cc8af8ae4', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-secret-pro-pluribus-martyribus-quae-non-sint-virgines.toml': '2c505965b9d3c37b86f85dd543038e8b2819c17966a3ddc2731c89f38a159890', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-secret.toml': 'cd7f861800c9f3194ff871532576d2ea2946e98ecf6dc0dffea498c1b0305ad1', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-2-collect.toml': 'b18a9d6822a38059d7901fce1d6ec00607635ce7721870bf98de78d228839100', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-collect.toml': 'd469c7124b22915b8473da03060f7e44a548a493695122abbc5e407f483c07b5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-postcommunion.toml': '5374407b323342ac39bd2b4333f07c838bad4273c6389f48f2f37ffea344f063', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-secret.toml': 'e000171fb26bdf467c281d3e169092fcdf97ede5a362e95f44b8624e78c48bd6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-collect-pro-pluribus-virginibus-martyribus.toml': '8f6e8f21255ecb84d48b18ebd637d6cd4c579ee8ba857cee72b8abaa26ba5457', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-collect.toml': '2216f2b1cda0074f6995b9960118c7ef91afadad4c5f6a113a2b59efadf8c25a', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-postcommunion-pro-pluribus-virginibus-martyribus.toml': '4359b1a34b45c4eab70d8c572c0ae82eeeee16e0c8b1eeb474207ff8d69eab25', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-postcommunion.toml': '45d96bcc7d8622ae9f0ea0e8cfd2274ceb9c898575dff7f154814646b23aefff', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-secret-pro-pluribus-virginibus-martyribus.toml': 'f67c2b24b2d5222b23c25341972929eadc9cf20572b8deb73bad83834b7ea2b9', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-secret.toml': '90fab9ea36f94010efff1e16a8f7a6eff2cbaf8224bb664180b83ab9d81a7862', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-collect.toml': 'db9b43044b38148ac620fb41859c64a9dcc3edb197e92f36d460a22e70dbd7d0', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-postcommunion.toml': '3033c5a9a25bafd807bb4fabe1cdbf0334ffd7f1d2949082aa6025bf12b5f664', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-secret.toml': 'b70655eed2dec984dc49b1c19535ca7648649f343b068f360e6c99283b6a6d5b', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-4-collect.toml': '5f9b8505eb97c221fee202acdfbb2aeb8752c25e5c27c097fccb539d6d20f692', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-collect.toml': '49cbd6e444bfd8158017c10d0858bfeedab4cd4ad917425f7313863b29dfe756', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-postcommunion.toml': '8fa0478e6b1c1da3ee11c099b9cf8a6a928d6d54791294742eb29b0816dd8f13', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-secret.toml': '7e84319c635e8af03752b1707a2a17607619e7f94749370bdb2dab2cbd28f6d6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-collect.toml': '38984de29887653b011b15237c6a3539b25347fd6770495730b998f1a0646fdd', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-postcommunion.toml': '5fd60100fe3f3d2733925eed38a16d6ec7f0af10d29dd050bc2f8a67612a3dd9', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-secret.toml': '392fe22bed075848cb789f4614f621f985902ac6af8d2d6842d3ec7e704d75a0', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-3-postcommunion.toml': '7419043b9d38717fdcc66de8f7e5d76f300a09f51f9374f7f0d88f222f9f6380', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-collect.toml': '49b0a1528eb7cf2f030efb841adf746bf7004f2939d07d34edea908383d49675', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-postcommunion.toml': 'abdd025d3a41c72b7fb5dea54d08467758cba9e4e6adc5e0bfbae1e0561e79a1', 'src/sources/calendars/roman-pre-1955/propers.yaml': '037c74fa2dc8ecab13e2bd3bebc2e0ee194255c149b35d2c546d8c36cd9af65d', 'src/sources/inventories/roman-pre-1955-proper-latin-provenance-v1.toml': 'da959d9ba61843d2cb8f08155241b5b69058b6705f3d76aac67e6c70803546d9'}\n"
+          },
+          {
+            "after_lines": [
+              174,
+              178
+            ],
+            "after_slice_sha256": "1f006d7413e2b56cad641071081b7269890390a77678650d00c3bc42e0997b1a",
+            "before_utf8": "        owners = list(body_owners(self.document))\n        self.assertEqual((1289,1269,20),(len(self.records),sum(s==\"present\" for _,_,s in owners),sum(s==\"removed\" for _,_,s in owners)))\n"
+          },
+          {
+            "after_lines": [
+              179,
+              218
+            ],
+            "after_slice_sha256": "ce87356f061ea0d08ab4bf002f5336838a5ef1e15ce6fb13a8ddefcfcf2f3818",
+            "before_utf8": "        self.assertEqual((1269,17,3),(sum(r[\"publication_status\"]==\"permitted\" for r in self.records.values()),sum(r[\"provenance_status\"]==\"unresolved\" for r in self.records.values()),sum(r[\"publication_status\"]==\"withheld\" for r in self.records.values())))\n"
+          }
+        ]
+      },
+      "tools/tests/test_roman_1962_latin22_phase5.py": {
+        "after_sha256": "6f060092d0bf2db1c0a82382dc50e0063ccedd7fa8f3e82b19d162010789d3da",
+        "before_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+        "hunks": [
+          {
+            "after_lines": [
+              19,
+              21
+            ],
+            "after_slice_sha256": "5d67a0c86436d51a84bea43e0a259da034f323132b8656fbca65000543a23e16",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1866,
+              1869
+            ],
+            "after_slice_sha256": "39ddcba8638fab50e669b31fbe7b8b4fdba53f2edee2a2c3600480c85897e5c8",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1870,
+              1871
+            ],
+            "after_slice_sha256": "3fc6f80dd1650b97cec12a1d84b4f883087abae0840c4617a662cbaddaf3536b",
+            "before_utf8": "  \"src/sources/calendars/roman-pre-1955/propers.yaml\": \"037c74fa2dc8ecab13e2bd3bebc2e0ee194255c149b35d2c546d8c36cd9af65d\",\n"
+          },
+          {
+            "after_lines": [
+              1873,
+              1876
+            ],
+            "after_slice_sha256": "c6c8797ad4d89ba73db1b0ca2390d49f657ac8f33007b3f37048758f2ee5f983",
+            "before_utf8": "  \"scripts/_proper_latin.py\": \"064d6567ba12b7ab19191fb3c530b248c70a9de0855afe5c932c7be81a5874a6\",\n  \"scripts/_calendars.py\": \"c2ec47e2001a219429ca879165d56202a0cd587b00c36f3abe18a6a4dec593ef\",\n  \"scripts/_missal_coverage.py\": \"e2d93f25f683d76fd7e277c77c8de4d61ff3019d745e62e63358c3926ffb3ca4\",\n"
+          },
+          {
+            "after_lines": [
+              1880,
+              1881
+            ],
+            "after_slice_sha256": "15760ad1890ce638005f9b3f9962c647bef36385293f9f05a964c06172887824",
+            "before_utf8": "  \"tools/tests/test_roman_1962_alexander_hilary_restoration.py\": \"98cf7be34f0a26c6427b472ea749164ef49df91b5c020bed3484760e90b5463b\",\n"
+          },
+          {
+            "after_lines": [
+              2055,
+              2056
+            ],
+            "after_slice_sha256": "24acd649be1c864dbc69768ccddd21203151ade42522d99e00aa9795a7fcced8",
+            "before_utf8": "            self.assertEqual(h[\"sha256\"],digest((ROOT/h[\"path\"]).read_bytes()))\n"
+          },
+          {
+            "after_lines": [
+              2079,
+              2082
+            ],
+            "after_slice_sha256": "5cdb0cc98f6f997472ba58dba7e8727efd3aecf08b3ba156e94e201a814d0082",
+            "before_utf8": "        present=[dict(key=k.as_dict(),body=b,state=s) for k,b,s in body_owners(self.doc) if s==\"present\" and k not in KEYS]\n"
+          },
+          {
+            "after_lines": [
+              2084,
+              2086
+            ],
+            "after_slice_sha256": "d6a52632d4965c92abab206d328c9dd788b4d0f2e2df1652f8a665dc2bda8495",
+            "before_utf8": "        self.assertEqual(UNOWNED_YAML_SHA256,digest(yaml_unowned(self.source)))\n        self.assertEqual(UNOWNED_LEDGER_SHA256,digest(ledger_unowned(self.ledger)))\n"
+          },
+          {
+            "after_lines": [
+              2089,
+              2113
+            ],
+            "after_slice_sha256": "ac253b3bff28f3600e8e2df09f026f99080c605f94f87be3345b47e0602f79e0",
+            "before_utf8": "        for path,h in PRESERVED_FILES.items():self.assertEqual(h,digest((ROOT/path).read_bytes()),path)\n"
+          },
+          {
+            "after_lines": [
+              2115,
+              2118
+            ],
+            "after_slice_sha256": "addf67b7130a0f693be00c9b3a01af022351e6432c8fc24e2b6ffa1d3b137434",
+            "before_utf8": "        raw=tomllib.loads(self.ledger)[\"entries\"]\n"
+          },
+          {
+            "after_lines": [
+              2121,
+              2122
+            ],
+            "after_slice_sha256": "0e4246ea7cbeeee70fda3c6e53af2e510bc286b80e658cd4486cabeeffb7d89d",
+            "before_utf8": "        owners=list(body_owners(self.doc))\n"
+          }
+        ]
+      },
+      "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py": {
+        "after_sha256": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+        "before_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+        "hunks": [
+          {
+            "after_lines": [
+              20,
+              21
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1759,
+              1765
+            ],
+            "after_slice_sha256": "10945e7f5eac71fbb19231e58d7ccdf38ffbd5cfd5afb465ecebba17ddd843c7",
+            "before_utf8": "    \"\"\"Validate all accepted owners BEFORE masking exactly their three fields.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              1786,
+              1792
+            ],
+            "after_slice_sha256": "2aeec3457f07288d1565ec8864068c04e53ada728c56570c7993e36baeed54bc",
+            "before_utf8": "    \"\"\"Restore fixed raw slices; retain every other byte, including whitespace.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              1794,
+              1795
+            ],
+            "after_slice_sha256": "7c2569bd26623e9f1949c53fbb086ce605ae1100947f5262ba249696a6ada2de",
+            "before_utf8": "    phase5_predecessor_document(yaml.load(source, Loader=yaml.CSafeLoader))\n"
+          },
+          {
+            "after_lines": [
+              1817,
+              1823
+            ],
+            "after_slice_sha256": "c1070e3805fa4374ea1145f98cce88d05e3306bb20901c83e9d26190181d91bd",
+            "before_utf8": "    \"\"\"Remove only 20 exact additions and restore only two exact former rows.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              2092,
+              2136
+            ],
+            "after_slice_sha256": "f9749df409fee988916146740e348a2a13294dac6f39c53862b4e1de3ccf1c1e",
+            "before_utf8": "        self.assertEqual(1289, len(rows))\n        self.assertEqual(1269, sum(r[\"publication_status\"] == \"permitted\"\n                                   for r in self.records.values()))\n        self.assertEqual(20, sum(r.get(\"body_status\") == \"removed\" for r in rows))\n        self.assertEqual(1269, sum(state == \"present\" for _, _, state in body_owners(self.document)))\n"
+          }
+        ]
+      },
+      "tools/tests/test_roman_1962_winter_ursula_source_repair.py": {
+        "after_sha256": "9e26bcc171abc7144ad6731450e7e0d8caebb073a8d09eb4425026475a844e44",
+        "before_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+        "hunks": [
+          {
+            "after_lines": [
+              14,
+              15
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              962,
+              966
+            ],
+            "after_slice_sha256": "ec237b66f9baeb2d4f525ab3aeb33d9f360e331df1ac1ca46170b71734a409c3",
+            "before_utf8": "        owners = list(body_owners(self.document))\n        self.assertEqual((1289,1269,20),(len(self.records),sum(s==\"present\" for _,_,s in owners),\n"
+          },
+          {
+            "after_lines": [
+              967,
+              1008
+            ],
+            "after_slice_sha256": "3b3a7b69abe9660a5a646d405b5ae1b66f81c1b2aa478ff908153fd7552092a3",
+            "before_utf8": "        self.assertEqual(1269,sum(r[\"publication_status\"]==\"permitted\" for r in self.records.values()))\n        self.assertEqual(17,sum(r[\"provenance_status\"]==\"unresolved\" for r in self.records.values()))\n        self.assertEqual(3,sum(r[\"publication_status\"]==\"withheld\" for r in self.records.values()))\n        boniface = self.index[\"comm-s-bonifatii-martyris\"][\"takes_from\"][\"common_sets\"][\"orations\"]\n        self.assertEqual(\"unresolved\",boniface[\"state\"])\n        self.assertEqual({\"c3\",\"c4\"},set(boniface[\"candidates\"]))\n"
+          }
+        ]
+      }
+    },
+    "replace_six_input_pins": {
+      "tools/tests/test_proper_latin.py": "bb609bb0dc7071c270433ff4df5cf9ca297b40dab6b35a170b69f27a20a9f81d",
+      "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+      "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+      "tools/tests/test_roman_1962_latin22_phase5.py": "6f060092d0bf2db1c0a82382dc50e0063ccedd7fa8f3e82b19d162010789d3da",
+      "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+      "tools/tests/test_roman_1962_winter_ursula_source_repair.py": "9e26bcc171abc7144ad6731450e7e0d8caebb073a8d09eb4425026475a844e44"
+    },
+    "replace_top_level_fields": {
+      "acceptance": {
+        "receipt_path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-batch-acceptance.json",
+        "receipt_sha256": "ba879f5812d527da3f73777cf2824fc7b8b6bf4029ad3afc6183471c6ec09fde",
+        "status": "accepted"
+      },
+      "source_input_manifest_sha256": "8bff4e89d1cf0ed36686dc8ac38aa0dc92c4bc67edc479631f51cbab745501b9",
+      "state": "Accepted exact reader source cohort after independent accounting and Root review; no new source permission created by this fixture."
+    }
+  },
+  "changed_original_replay_specs": {
+    "tools/tests/test_proper_latin.py": {
+      "after": {
+        "after_sha256": "075b4cb36c55fb3cd5b2719eb8496e417c57316d806c1532ec878e36a1e1d18f",
+        "before_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+        "hunks": [
+          {
+            "after_lines": [
+              3,
+              4
+            ],
+            "after_slice_sha256": "3b3ea3cdc7068a9e97cfcddbcd9d8e0c54fe4d068347b80b158fdd8b14676e3b",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              21,
+              22
+            ],
+            "after_slice_sha256": "816ab2d4d902e1ff0c2180f301fb8f887983fc1fdc0dfd52f2edd9dc05df5d2d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              25,
+              26
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              27,
+              28
+            ],
+            "after_slice_sha256": "a796aad512a6a09c10d06242daa81fb539777781c49034766ccbb0552b6f1560",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              55,
+              143
+            ],
+            "after_slice_sha256": "d3d5f5023ea250bb851c413c901eef4ef84da1ae7ec1cf0e6d038507b029d7a7",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              553,
+              595
+            ],
+            "after_slice_sha256": "3cd1b93aa224dae28b6244e7861d095b35a4cf70d8a6ff67192e68b91546eb77",
+            "before_utf8": "        self.assertFalse(any(p[\"name\"] == \"Prayer over the Offerings\" for p in sept8[\"propers\"]),\n                         \"the unresolved two-option source packet is outside these three Collects\")\n"
+          },
+          {
+            "after_lines": [
+              626,
+              645
+            ],
+            "after_slice_sha256": "2db0c58e54b7e0ac8adb8029707ba4a818de1132ae40466934ecbf6694ca9d7b",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              663,
+              664
+            ],
+            "after_slice_sha256": "27ca06c3767aea3298ba570e40aec5a2ca922c8e02a54c2a442c5fff4229feee",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              665,
+              765
+            ],
+            "after_slice_sha256": "83cf799b425553760d6ccf71135b8e1920caddc04c81c9d7aeb53c5eb6ec6904",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              771,
+              773
+            ],
+            "after_slice_sha256": "7c0ff25de440e30996b398b171e3f5ddb73da2c75fce8af1b60f7bbd0bc87a15",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              778,
+              781
+            ],
+            "after_slice_sha256": "2e5546c4e2829fa18ed57b589e98d7eaa67435dc47b664a23fe1176761dabf07",
+            "before_utf8": "        # Every permitted body is pinned by SHAPE rather than by key. Pinning\n"
+          },
+          {
+            "after_lines": [
+              809,
+              889
+            ],
+            "after_slice_sha256": "dba26722811b7a0b44e40da0e16167603899b4d30cc2654d0029e9361493ee2c",
+            "before_utf8": "        self.assertEqual(1269, len(permitted))\n        self.assertEqual(1269, len(roman))\n"
+          },
+          {
+            "after_lines": [
+              942,
+              945
+            ],
+            "after_slice_sha256": "0b854196d3cee99f3d51fd247860adfd93e83a240db3513516a7907f66283f17",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1034,
+              1037
+            ],
+            "after_slice_sha256": "0615621a220eff8e5d8dd90f0941b3fd196f560ba7cf210a45d87e9124e4810c",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1042,
+              1044
+            ],
+            "after_slice_sha256": "7d3945e99285dbf9725e684b7e601aa64f0018466dc5b2c9124e2a14aab4ac75",
+            "before_utf8": "        for calendar, key, row in permitted:\n"
+          },
+          {
+            "after_lines": [
+              1057,
+              1062
+            ],
+            "after_slice_sha256": "5ac71a927918f3e65996d4fdeff47fb5d4390e1dcce52832da70ff310a4a05f6",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1079,
+              1082
+            ],
+            "after_slice_sha256": "7ec4b0e99fa78aff48e2c07962a485d4969ffc83001cb3e77d84ef04c34c4feb",
+            "before_utf8": "                self.assertEqual(\"public-domain\", row[\"publication_basis\"])\n"
+          },
+          {
+            "after_lines": [
+              1083,
+              1090
+            ],
+            "after_slice_sha256": "c0d94e64714711db2efe8aea8c3d37c8b9c2e41c6e5ba8e7ed4d8b7feef4dbd5",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1096,
+              1101
+            ],
+            "after_slice_sha256": "ad247c147a211488040f6db377480abc512b539f7c4388d9ab85d483956913e1",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1135,
+              1139
+            ],
+            "after_slice_sha256": "7d43153e013e02d194db4b91df01fe457f7ea978015ea78c7ddb5cfa9a5b7291",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1140,
+              1141
+            ],
+            "after_slice_sha256": "339913a2e0a85fb78a43b5eebb08f2169647b4dcbd3cf8671200fd1cf04c7632",
+            "before_utf8": "                        # Sole cross-edition case: Schott petition + exact Pustet conclusion.\n"
+          },
+          {
+            "after_lines": [
+              1144,
+              1146
+            ],
+            "after_slice_sha256": "152f881f1dd3b60c044dba307569e48ce27e844c6fcf786640b6955b43a0ee15",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1164,
+              1179
+            ],
+            "after_slice_sha256": "1d3bf273265794c61658fc5b54f3fafb2edeb877757b8acc404e5f73602e19e9",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1189,
+              1202
+            ],
+            "after_slice_sha256": "cbaff6e92a56607fcb5c01b6b045af731553e16785bef4c0f8dc31b1d76dc05b",
+            "before_utf8": "        self.assertEqual(52, len(supplemented), supplemented)\n"
+          },
+          {
+            "after_lines": [
+              1230,
+              1242
+            ],
+            "after_slice_sha256": "1340226e7f7fedec1fef5a63ebbe0b65b2f5c65e94cd8674c560b4c13b5a79b6",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1243,
+              1247
+            ],
+            "after_slice_sha256": "8075aa373f690562ba68d5e9436b847f1bba66dcb79bab6780e9fc072ef46234",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1264,
+              1268
+            ],
+            "after_slice_sha256": "8e57bdf7b3bdf5927000ae34ab723b0a3f23cf2e36256ac995ed7c9be1d26cc6",
+            "before_utf8": "        for _, _, row in permitted:\n"
+          },
+          {
+            "after_lines": [
+              1279,
+              1290
+            ],
+            "after_slice_sha256": "965d71c0abfad9ec4e02a57c8a3604b37a92f8c488a6429b9d3ee50c68efed0d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1291,
+              1347
+            ],
+            "after_slice_sha256": "cacef265f07cedd33e93b68171a95b7aec5a5d5cda3a5cc1a694783e2ebc95d8",
+            "before_utf8": "        self.assertEqual(349, len(nonpermitted))\n"
+          },
+          {
+            "after_lines": [
+              1401,
+              1414
+            ],
+            "after_slice_sha256": "c7547197525c88ca08b21c92fd47c2ed2647ae24bb98f4dd1b7b97b951145748",
+            "before_utf8": "        self.assertEqual(346, len(unresolved))\n"
+          },
+          {
+            "after_lines": [
+              1418,
+              1425
+            ],
+            "after_slice_sha256": "5289b6e1bb0907e3aca25dfb789615dc2e6fa1c098b5b49e6f94589efbd551d5",
+            "before_utf8": "        self.assertEqual(329, len(postconciliar))\n"
+          }
+        ]
+      },
+      "before": {
+        "after_sha256": "bb609bb0dc7071c270433ff4df5cf9ca297b40dab6b35a170b69f27a20a9f81d",
+        "before_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+        "hunks": [
+          {
+            "after_lines": [
+              3,
+              4
+            ],
+            "after_slice_sha256": "3b3ea3cdc7068a9e97cfcddbcd9d8e0c54fe4d068347b80b158fdd8b14676e3b",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              21,
+              22
+            ],
+            "after_slice_sha256": "816ab2d4d902e1ff0c2180f301fb8f887983fc1fdc0dfd52f2edd9dc05df5d2d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              25,
+              26
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              27,
+              28
+            ],
+            "after_slice_sha256": "a796aad512a6a09c10d06242daa81fb539777781c49034766ccbb0552b6f1560",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              55,
+              143
+            ],
+            "after_slice_sha256": "d3d5f5023ea250bb851c413c901eef4ef84da1ae7ec1cf0e6d038507b029d7a7",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              553,
+              595
+            ],
+            "after_slice_sha256": "3cd1b93aa224dae28b6244e7861d095b35a4cf70d8a6ff67192e68b91546eb77",
+            "before_utf8": "        self.assertFalse(any(p[\"name\"] == \"Prayer over the Offerings\" for p in sept8[\"propers\"]),\n                         \"the unresolved two-option source packet is outside these three Collects\")\n"
+          },
+          {
+            "after_lines": [
+              626,
+              645
+            ],
+            "after_slice_sha256": "2db0c58e54b7e0ac8adb8029707ba4a818de1132ae40466934ecbf6694ca9d7b",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              663,
+              664
+            ],
+            "after_slice_sha256": "27ca06c3767aea3298ba570e40aec5a2ca922c8e02a54c2a442c5fff4229feee",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              665,
+              765
+            ],
+            "after_slice_sha256": "11266e875598185f0b1f4f219df29b5839eb87d00a174a944c234add7efdb5ac",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              771,
+              773
+            ],
+            "after_slice_sha256": "7c0ff25de440e30996b398b171e3f5ddb73da2c75fce8af1b60f7bbd0bc87a15",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              778,
+              781
+            ],
+            "after_slice_sha256": "2e5546c4e2829fa18ed57b589e98d7eaa67435dc47b664a23fe1176761dabf07",
+            "before_utf8": "        # Every permitted body is pinned by SHAPE rather than by key. Pinning\n"
+          },
+          {
+            "after_lines": [
+              809,
+              821
+            ],
+            "after_slice_sha256": "da64e928925fe61d21c7612d3e68d68361b54ae0b456cd54ba934ae4c0a72958",
+            "before_utf8": "        self.assertEqual(1269, len(permitted))\n        self.assertEqual(1269, len(roman))\n"
+          },
+          {
+            "after_lines": [
+              874,
+              877
+            ],
+            "after_slice_sha256": "0b854196d3cee99f3d51fd247860adfd93e83a240db3513516a7907f66283f17",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              966,
+              969
+            ],
+            "after_slice_sha256": "0615621a220eff8e5d8dd90f0941b3fd196f560ba7cf210a45d87e9124e4810c",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              974,
+              976
+            ],
+            "after_slice_sha256": "7d3945e99285dbf9725e684b7e601aa64f0018466dc5b2c9124e2a14aab4ac75",
+            "before_utf8": "        for calendar, key, row in permitted:\n"
+          },
+          {
+            "after_lines": [
+              989,
+              994
+            ],
+            "after_slice_sha256": "5ac71a927918f3e65996d4fdeff47fb5d4390e1dcce52832da70ff310a4a05f6",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1011,
+              1014
+            ],
+            "after_slice_sha256": "7ec4b0e99fa78aff48e2c07962a485d4969ffc83001cb3e77d84ef04c34c4feb",
+            "before_utf8": "                self.assertEqual(\"public-domain\", row[\"publication_basis\"])\n"
+          },
+          {
+            "after_lines": [
+              1015,
+              1022
+            ],
+            "after_slice_sha256": "c0d94e64714711db2efe8aea8c3d37c8b9c2e41c6e5ba8e7ed4d8b7feef4dbd5",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1028,
+              1033
+            ],
+            "after_slice_sha256": "ad247c147a211488040f6db377480abc512b539f7c4388d9ab85d483956913e1",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1067,
+              1071
+            ],
+            "after_slice_sha256": "7d43153e013e02d194db4b91df01fe457f7ea978015ea78c7ddb5cfa9a5b7291",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1072,
+              1073
+            ],
+            "after_slice_sha256": "339913a2e0a85fb78a43b5eebb08f2169647b4dcbd3cf8671200fd1cf04c7632",
+            "before_utf8": "                        # Sole cross-edition case: Schott petition + exact Pustet conclusion.\n"
+          },
+          {
+            "after_lines": [
+              1076,
+              1078
+            ],
+            "after_slice_sha256": "152f881f1dd3b60c044dba307569e48ce27e844c6fcf786640b6955b43a0ee15",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1096,
+              1111
+            ],
+            "after_slice_sha256": "1d3bf273265794c61658fc5b54f3fafb2edeb877757b8acc404e5f73602e19e9",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1121,
+              1134
+            ],
+            "after_slice_sha256": "cbaff6e92a56607fcb5c01b6b045af731553e16785bef4c0f8dc31b1d76dc05b",
+            "before_utf8": "        self.assertEqual(52, len(supplemented), supplemented)\n"
+          },
+          {
+            "after_lines": [
+              1162,
+              1174
+            ],
+            "after_slice_sha256": "1340226e7f7fedec1fef5a63ebbe0b65b2f5c65e94cd8674c560b4c13b5a79b6",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1175,
+              1179
+            ],
+            "after_slice_sha256": "8075aa373f690562ba68d5e9436b847f1bba66dcb79bab6780e9fc072ef46234",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1196,
+              1200
+            ],
+            "after_slice_sha256": "8e57bdf7b3bdf5927000ae34ab723b0a3f23cf2e36256ac995ed7c9be1d26cc6",
+            "before_utf8": "        for _, _, row in permitted:\n"
+          },
+          {
+            "after_lines": [
+              1211,
+              1222
+            ],
+            "after_slice_sha256": "965d71c0abfad9ec4e02a57c8a3604b37a92f8c488a6429b9d3ee50c68efed0d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1223,
+              1241
+            ],
+            "after_slice_sha256": "cb8b43b5561948e6827748882fefdf9387e5cdd4cf656db592d9329816521506",
+            "before_utf8": "        self.assertEqual(349, len(nonpermitted))\n"
+          },
+          {
+            "after_lines": [
+              1295,
+              1299
+            ],
+            "after_slice_sha256": "ae72b8d3ca8f1c69831f098a60f3b5c177e2fcc42cc0b001669e0deb58a46b32",
+            "before_utf8": "        self.assertEqual(346, len(unresolved))\n"
+          }
+        ]
+      }
+    },
+    "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py": {
+      "after": {
+        "after_sha256": "604a8a9592bafe0b9bcc03d8879f86805af58d4f25b3b17f90f8647dc89f07f3",
+        "before_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+        "hunks": [
+          {
+            "after_lines": [
+              4,
+              6
+            ],
+            "after_slice_sha256": "b42c098a8d3ab0c70c5be77e6bd8b740a74535d2ff7d4e987869f5c7d6d278db",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              252,
+              253
+            ],
+            "after_slice_sha256": "aea14da3bdbc1cf442ebfe7f55a92ed5288d9998b5bad920aad527d7f66982bf",
+            "before_utf8": "        self.assertEqual(len(self.entries),219)\n"
+          },
+          {
+            "after_lines": [
+              295,
+              296
+            ],
+            "after_slice_sha256": "cf3e31aaec6d7f92333b6f70a491e142eaa3ae33b5f790e27d173a5f8f08e77a",
+            "before_utf8": "            with self.subTest(path=path):self.assertEqual(sha((ROOT/path).read_bytes()),expected)\n"
+          },
+          {
+            "after_lines": [
+              299,
+              301
+            ],
+            "after_slice_sha256": "87f3fc54e320710431188ca7b78402e6166090a3f7fc33571d960052f2ad60b9",
+            "before_utf8": "        shared=[r for r in self.latin if old in r.get(\"publication_source_ids\",[])]\n"
+          },
+          {
+            "after_lines": [
+              310,
+              312
+            ],
+            "after_slice_sha256": "3199c7e244839e02c8232604708c529e5bb4e7c21a3156d421a5fee75b3f34fa",
+            "before_utf8": "    def test_measured_both_calendar_coverage_zero_errors_and_advent_hold(self):\n"
+          },
+          {
+            "after_lines": [
+              313,
+              315
+            ],
+            "after_slice_sha256": "b823331de3fc3fd46879a994e4ee428500256da217cb8e43aa6299db354a9a20",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              316,
+              317
+            ],
+            "after_slice_sha256": "b8b3f89bd4cdc0dc3984f20c5799d8dabd5e924ba7fa89d890bcda869b03a5c4",
+            "before_utf8": "            self.assertEqual((row[\"slots\"],row[\"with_english\"],row[\"ledgered_untranslated\"]),expected)\n"
+          },
+          {
+            "after_lines": [
+              318,
+              326
+            ],
+            "after_slice_sha256": "2573fd0e85823c3124d41aeb068239fe410164ca0a5f9f47556fe7c711ec933f",
+            "before_utf8": "        self.assertEqual(self.p.english_coverage(CAL,\"roman-pre-1955\")[\"inherited_inapplicable_records\"],49)\n        self.assertNotIn((\"advent-2\",\"main\",\"Collect\",\"all\",1),self.entries)\n"
+          }
+        ]
+      },
+      "before": {
+        "after_sha256": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+        "before_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+        "hunks": [
+          {
+            "after_lines": [
+              4,
+              5
+            ],
+            "after_slice_sha256": "6d9118f7e39b167921427c8eb850d4aef0b8523d6859c0d8ef6312251fb7f0f9",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              251,
+              252
+            ],
+            "after_slice_sha256": "aea14da3bdbc1cf442ebfe7f55a92ed5288d9998b5bad920aad527d7f66982bf",
+            "before_utf8": "        self.assertEqual(len(self.entries),219)\n"
+          },
+          {
+            "after_lines": [
+              298,
+              300
+            ],
+            "after_slice_sha256": "87f3fc54e320710431188ca7b78402e6166090a3f7fc33571d960052f2ad60b9",
+            "before_utf8": "        shared=[r for r in self.latin if old in r.get(\"publication_source_ids\",[])]\n"
+          },
+          {
+            "after_lines": [
+              309,
+              311
+            ],
+            "after_slice_sha256": "3199c7e244839e02c8232604708c529e5bb4e7c21a3156d421a5fee75b3f34fa",
+            "before_utf8": "    def test_measured_both_calendar_coverage_zero_errors_and_advent_hold(self):\n"
+          },
+          {
+            "after_lines": [
+              312,
+              314
+            ],
+            "after_slice_sha256": "b823331de3fc3fd46879a994e4ee428500256da217cb8e43aa6299db354a9a20",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              315,
+              316
+            ],
+            "after_slice_sha256": "b8b3f89bd4cdc0dc3984f20c5799d8dabd5e924ba7fa89d890bcda869b03a5c4",
+            "before_utf8": "            self.assertEqual((row[\"slots\"],row[\"with_english\"],row[\"ledgered_untranslated\"]),expected)\n"
+          },
+          {
+            "after_lines": [
+              317,
+              325
+            ],
+            "after_slice_sha256": "2573fd0e85823c3124d41aeb068239fe410164ca0a5f9f47556fe7c711ec933f",
+            "before_utf8": "        self.assertEqual(self.p.english_coverage(CAL,\"roman-pre-1955\")[\"inherited_inapplicable_records\"],49)\n        self.assertNotIn((\"advent-2\",\"main\",\"Collect\",\"all\",1),self.entries)\n"
+          }
+        ]
+      }
+    },
+    "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py": {
+      "after": {
+        "after_sha256": "50a5df73661d88e02028073bcb93e97d8c29d3e6d680c9d0338f17d60f54f063",
+        "before_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+        "hunks": [
+          {
+            "after_lines": [
+              12,
+              14
+            ],
+            "after_slice_sha256": "5d67a0c86436d51a84bea43e0a259da034f323132b8656fbca65000543a23e16",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              94,
+              96
+            ],
+            "after_slice_sha256": "2e883488303ae5f4e048f94d5a8d0a06afc97710dcd71a12f2f5eee5417761c7",
+            "before_utf8": "IMMUTABLE_GUARDS = {'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/commons-2-orations-8f0f1a33/commons-2-orations-8f0f1a33.txt': '8f0f1a33bcd92be8742d2d69e89ddd5c455c180f33c64f1f584f40638e087995', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-collect.toml': '7252a4a2e2f055b2ab8dd194b96778d458a74b1e0576c43398bdb0724aea18f4', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-postcommunion.toml': '21ea32617470b8748b3fcdc63a2eb9dc60e659ad00735502529d67aa68ea7bca', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-secret.toml': '31488b03b8823baf47edb94c91355437bcd600d4680c25ea3567545dbe8bcd09', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-collect.toml': 'a4eb206c3cd7bef5c783bbf59e5702127a35a07ad56c01395027374212144481', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-postcommunion.toml': '750393a112746fd9a7b61c5dc05059fe8c67edd322e5ec259320ce7250253d76', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-secret.toml': 'dd2d2a42fee2a7c2605f684d688f7ca1e8e5bad68b5fbbf78ca6fc87c551ae51', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-collect-in-ipso-die-dedicationis.toml': '641478b09b534155b181de1ed6b10c51f8120293bc3ee939ae7bfc958c901491', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-collect.toml': 'f0aa7a9273ed9735b79138cea3651b6d00a9a2be9e8af54c029a29d53fc942a6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-postcommunion-in-ipso-die-dedicationis.toml': '0aeaf00caf4a6b49ef6316d8bef1632f4360a24f59df7fda3f606bc33d66dfa5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-postcommunion.toml': '2b4c8ff178bb0a94f5a31b001bef9cb00de999aa18fe94ef4ea491349c84d015', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-secret-extra-ecclesiam-ipsam-dedicatam.toml': '84f414c23345f2c7d7700f21b240df105dbd0b06ec85faf55dbd3152d721a360', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-secret-in-ipso-die-dedicationis.toml': 'ad9cc763cc6233b844202f387b4afbeb4869fc2538e41fedb88897cbd2ca8676', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-collect.toml': 'da558610b6a9852462312137b3925250f86d234ecab96eef738b80d45897d296', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-postcommunion.toml': '83f0215a1e9f8f9ea0c11be3c5f6d60ec95bb33428f32958c4de5646f971a871', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-secret.toml': '661fa79d3160eda9fbb0dae4a69477689f46f1bd107f6c11baa637d4151805f5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-collect-pro-pluribus-martyribus-quae-non-sint-virgines.toml': '417b5c09bc41eb2e43ea97de9f56215752c25d5e63c5355448e105ec4567d6b6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-collect.toml': '9b811bd6bcbeb621b00c0ac58d7819fad77ae033b5ad75751e7149673d0e8f9a', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-postcommunion.toml': '57794ddaeaf2b0e4fbe8f3c3070c04d9cf77efefc994f2365947cc1cc8af8ae4', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-secret-pro-pluribus-martyribus-quae-non-sint-virgines.toml': '2c505965b9d3c37b86f85dd543038e8b2819c17966a3ddc2731c89f38a159890', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-secret.toml': 'cd7f861800c9f3194ff871532576d2ea2946e98ecf6dc0dffea498c1b0305ad1', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-2-collect.toml': 'b18a9d6822a38059d7901fce1d6ec00607635ce7721870bf98de78d228839100', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-collect.toml': 'd469c7124b22915b8473da03060f7e44a548a493695122abbc5e407f483c07b5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-postcommunion.toml': '5374407b323342ac39bd2b4333f07c838bad4273c6389f48f2f37ffea344f063', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-secret.toml': 'e000171fb26bdf467c281d3e169092fcdf97ede5a362e95f44b8624e78c48bd6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-collect-pro-pluribus-virginibus-martyribus.toml': '8f6e8f21255ecb84d48b18ebd637d6cd4c579ee8ba857cee72b8abaa26ba5457', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-collect.toml': '2216f2b1cda0074f6995b9960118c7ef91afadad4c5f6a113a2b59efadf8c25a', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-postcommunion-pro-pluribus-virginibus-martyribus.toml': '4359b1a34b45c4eab70d8c572c0ae82eeeee16e0c8b1eeb474207ff8d69eab25', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-postcommunion.toml': '45d96bcc7d8622ae9f0ea0e8cfd2274ceb9c898575dff7f154814646b23aefff', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-secret-pro-pluribus-virginibus-martyribus.toml': 'f67c2b24b2d5222b23c25341972929eadc9cf20572b8deb73bad83834b7ea2b9', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-secret.toml': '90fab9ea36f94010efff1e16a8f7a6eff2cbaf8224bb664180b83ab9d81a7862', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-collect.toml': 'db9b43044b38148ac620fb41859c64a9dcc3edb197e92f36d460a22e70dbd7d0', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-postcommunion.toml': '3033c5a9a25bafd807bb4fabe1cdbf0334ffd7f1d2949082aa6025bf12b5f664', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-secret.toml': 'b70655eed2dec984dc49b1c19535ca7648649f343b068f360e6c99283b6a6d5b', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-4-collect.toml': '5f9b8505eb97c221fee202acdfbb2aeb8752c25e5c27c097fccb539d6d20f692', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-collect.toml': '49cbd6e444bfd8158017c10d0858bfeedab4cd4ad917425f7313863b29dfe756', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-postcommunion.toml': '8fa0478e6b1c1da3ee11c099b9cf8a6a928d6d54791294742eb29b0816dd8f13', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-secret.toml': '7e84319c635e8af03752b1707a2a17607619e7f94749370bdb2dab2cbd28f6d6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-collect.toml': '38984de29887653b011b15237c6a3539b25347fd6770495730b998f1a0646fdd', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-postcommunion.toml': '5fd60100fe3f3d2733925eed38a16d6ec7f0af10d29dd050bc2f8a67612a3dd9', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-secret.toml': '392fe22bed075848cb789f4614f621f985902ac6af8d2d6842d3ec7e704d75a0', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-3-postcommunion.toml': '7419043b9d38717fdcc66de8f7e5d76f300a09f51f9374f7f0d88f222f9f6380', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-collect.toml': '49b0a1528eb7cf2f030efb841adf746bf7004f2939d07d34edea908383d49675', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-postcommunion.toml': 'abdd025d3a41c72b7fb5dea54d08467758cba9e4e6adc5e0bfbae1e0561e79a1', 'src/sources/calendars/roman-pre-1955/propers.yaml': '037c74fa2dc8ecab13e2bd3bebc2e0ee194255c149b35d2c546d8c36cd9af65d', 'src/sources/inventories/roman-pre-1955-proper-latin-provenance-v1.toml': 'da959d9ba61843d2cb8f08155241b5b69058b6705f3d76aac67e6c70803546d9'}\n"
+          },
+          {
+            "after_lines": [
+              147,
+              148
+            ],
+            "after_slice_sha256": "bb5a7bf22b573b27c40e9a39623959a01762ee4324df1cf37597b0b5d6d196c8",
+            "before_utf8": "        pdf = (ROOT/extract[\"path\"]).read_bytes()\n"
+          },
+          {
+            "after_lines": [
+              175,
+              179
+            ],
+            "after_slice_sha256": "1f006d7413e2b56cad641071081b7269890390a77678650d00c3bc42e0997b1a",
+            "before_utf8": "        owners = list(body_owners(self.document))\n        self.assertEqual((1289,1269,20),(len(self.records),sum(s==\"present\" for _,_,s in owners),sum(s==\"removed\" for _,_,s in owners)))\n"
+          },
+          {
+            "after_lines": [
+              180,
+              236
+            ],
+            "after_slice_sha256": "4644d9bcbc3339e06249b52badfac6bb695c215f5f7933d9a273649c349bb603",
+            "before_utf8": "        self.assertEqual((1269,17,3),(sum(r[\"publication_status\"]==\"permitted\" for r in self.records.values()),sum(r[\"provenance_status\"]==\"unresolved\" for r in self.records.values()),sum(r[\"publication_status\"]==\"withheld\" for r in self.records.values())))\n"
+          }
+        ]
+      },
+      "before": {
+        "after_sha256": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+        "before_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+        "hunks": [
+          {
+            "after_lines": [
+              12,
+              13
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              93,
+              95
+            ],
+            "after_slice_sha256": "2e883488303ae5f4e048f94d5a8d0a06afc97710dcd71a12f2f5eee5417761c7",
+            "before_utf8": "IMMUTABLE_GUARDS = {'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/commons-2-orations-8f0f1a33/commons-2-orations-8f0f1a33.txt': '8f0f1a33bcd92be8742d2d69e89ddd5c455c180f33c64f1f584f40638e087995', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-collect.toml': '7252a4a2e2f055b2ab8dd194b96778d458a74b1e0576c43398bdb0724aea18f4', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-postcommunion.toml': '21ea32617470b8748b3fcdc63a2eb9dc60e659ad00735502529d67aa68ea7bca', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-abbatum-secret.toml': '31488b03b8823baf47edb94c91355437bcd600d4680c25ea3567545dbe8bcd09', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-collect.toml': 'a4eb206c3cd7bef5c783bbf59e5702127a35a07ad56c01395027374212144481', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-postcommunion.toml': '750393a112746fd9a7b61c5dc05059fe8c67edd322e5ec259320ce7250253d76', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-confessoris-non-pontificis-2-secret.toml': 'dd2d2a42fee2a7c2605f684d688f7ca1e8e5bad68b5fbbf78ca6fc87c551ae51', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-collect-in-ipso-die-dedicationis.toml': '641478b09b534155b181de1ed6b10c51f8120293bc3ee939ae7bfc958c901491', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-collect.toml': 'f0aa7a9273ed9735b79138cea3651b6d00a9a2be9e8af54c029a29d53fc942a6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-postcommunion-in-ipso-die-dedicationis.toml': '0aeaf00caf4a6b49ef6316d8bef1632f4360a24f59df7fda3f606bc33d66dfa5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-postcommunion.toml': '2b4c8ff178bb0a94f5a31b001bef9cb00de999aa18fe94ef4ea491349c84d015', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-secret-extra-ecclesiam-ipsam-dedicatam.toml': '84f414c23345f2c7d7700f21b240df105dbd0b06ec85faf55dbd3152d721a360', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-dedicationis-ecclesiae-secret-in-ipso-die-dedicationis.toml': 'ad9cc763cc6233b844202f387b4afbeb4869fc2538e41fedb88897cbd2ca8676', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-collect.toml': 'da558610b6a9852462312137b3925250f86d234ecab96eef738b80d45897d296', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-postcommunion.toml': '83f0215a1e9f8f9ea0c11be3c5f6d60ec95bb33428f32958c4de5646f971a871', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-festorum-bmv-secret.toml': '661fa79d3160eda9fbb0dae4a69477689f46f1bd107f6c11baa637d4151805f5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-collect-pro-pluribus-martyribus-quae-non-sint-virgines.toml': '417b5c09bc41eb2e43ea97de9f56215752c25d5e63c5355448e105ec4567d6b6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-collect.toml': '9b811bd6bcbeb621b00c0ac58d7819fad77ae033b5ad75751e7149673d0e8f9a', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-postcommunion.toml': '57794ddaeaf2b0e4fbe8f3c3070c04d9cf77efefc994f2365947cc1cc8af8ae4', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-secret-pro-pluribus-martyribus-quae-non-sint-virgines.toml': '2c505965b9d3c37b86f85dd543038e8b2819c17966a3ddc2731c89f38a159890', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-1-secret.toml': 'cd7f861800c9f3194ff871532576d2ea2946e98ecf6dc0dffea498c1b0305ad1', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-non-virginum-2-collect.toml': 'b18a9d6822a38059d7901fce1d6ec00607635ce7721870bf98de78d228839100', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-collect.toml': 'd469c7124b22915b8473da03060f7e44a548a493695122abbc5e407f483c07b5', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-postcommunion.toml': '5374407b323342ac39bd2b4333f07c838bad4273c6389f48f2f37ffea344f063', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-1-secret.toml': 'e000171fb26bdf467c281d3e169092fcdf97ede5a362e95f44b8624e78c48bd6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-collect-pro-pluribus-virginibus-martyribus.toml': '8f6e8f21255ecb84d48b18ebd637d6cd4c579ee8ba857cee72b8abaa26ba5457', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-collect.toml': '2216f2b1cda0074f6995b9960118c7ef91afadad4c5f6a113a2b59efadf8c25a', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-postcommunion-pro-pluribus-virginibus-martyribus.toml': '4359b1a34b45c4eab70d8c572c0ae82eeeee16e0c8b1eeb474207ff8d69eab25', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-postcommunion.toml': '45d96bcc7d8622ae9f0ea0e8cfd2274ceb9c898575dff7f154814646b23aefff', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-secret-pro-pluribus-virginibus-martyribus.toml': 'f67c2b24b2d5222b23c25341972929eadc9cf20572b8deb73bad83834b7ea2b9', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-2-secret.toml': '90fab9ea36f94010efff1e16a8f7a6eff2cbaf8224bb664180b83ab9d81a7862', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-collect.toml': 'db9b43044b38148ac620fb41859c64a9dcc3edb197e92f36d460a22e70dbd7d0', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-postcommunion.toml': '3033c5a9a25bafd807bb4fabe1cdbf0334ffd7f1d2949082aa6025bf12b5f664', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-3-secret.toml': 'b70655eed2dec984dc49b1c19535ca7648649f343b068f360e6c99283b6a6d5b', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/commune-virginum-4-collect.toml': '5f9b8505eb97c221fee202acdfbb2aeb8752c25e5c27c097fccb539d6d20f692', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-collect.toml': '49cbd6e444bfd8158017c10d0858bfeedab4cd4ad917425f7313863b29dfe756', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-postcommunion.toml': '8fa0478e6b1c1da3ee11c099b9cf8a6a928d6d54791294742eb29b0816dd8f13', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-1-secret.toml': '7e84319c635e8af03752b1707a2a17607619e7f94749370bdb2dab2cbd28f6d6', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-collect.toml': '38984de29887653b011b15237c6a3539b25347fd6770495730b998f1a0646fdd', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-postcommunion.toml': '5fd60100fe3f3d2733925eed38a16d6ec7f0af10d29dd050bc2f8a67612a3dd9', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-2-secret.toml': '392fe22bed075848cb789f4614f621f985902ac6af8d2d6842d3ec7e704d75a0', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-3-postcommunion.toml': '7419043b9d38717fdcc66de8f7e5d76f300a09f51f9374f7f0d88f222f9f6380', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-collect.toml': '49b0a1528eb7cf2f030efb841adf746bf7004f2939d07d34edea908383d49675', 'src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-postcommunion.toml': 'abdd025d3a41c72b7fb5dea54d08467758cba9e4e6adc5e0bfbae1e0561e79a1', 'src/sources/calendars/roman-pre-1955/propers.yaml': '037c74fa2dc8ecab13e2bd3bebc2e0ee194255c149b35d2c546d8c36cd9af65d', 'src/sources/inventories/roman-pre-1955-proper-latin-provenance-v1.toml': 'da959d9ba61843d2cb8f08155241b5b69058b6705f3d76aac67e6c70803546d9'}\n"
+          },
+          {
+            "after_lines": [
+              174,
+              178
+            ],
+            "after_slice_sha256": "1f006d7413e2b56cad641071081b7269890390a77678650d00c3bc42e0997b1a",
+            "before_utf8": "        owners = list(body_owners(self.document))\n        self.assertEqual((1289,1269,20),(len(self.records),sum(s==\"present\" for _,_,s in owners),sum(s==\"removed\" for _,_,s in owners)))\n"
+          },
+          {
+            "after_lines": [
+              179,
+              218
+            ],
+            "after_slice_sha256": "ce87356f061ea0d08ab4bf002f5336838a5ef1e15ce6fb13a8ddefcfcf2f3818",
+            "before_utf8": "        self.assertEqual((1269,17,3),(sum(r[\"publication_status\"]==\"permitted\" for r in self.records.values()),sum(r[\"provenance_status\"]==\"unresolved\" for r in self.records.values()),sum(r[\"publication_status\"]==\"withheld\" for r in self.records.values())))\n"
+          }
+        ]
+      }
+    },
+    "tools/tests/test_roman_1962_latin22_phase5.py": {
+      "after": {
+        "after_sha256": "ddb555d009e04cc11f89f2907678a94bb7af517d5cd71b8e6a238d8f6588e23c",
+        "before_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+        "hunks": [
+          {
+            "after_lines": [
+              19,
+              21
+            ],
+            "after_slice_sha256": "5d67a0c86436d51a84bea43e0a259da034f323132b8656fbca65000543a23e16",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1866,
+              1869
+            ],
+            "after_slice_sha256": "39ddcba8638fab50e669b31fbe7b8b4fdba53f2edee2a2c3600480c85897e5c8",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1870,
+              1871
+            ],
+            "after_slice_sha256": "3fc6f80dd1650b97cec12a1d84b4f883087abae0840c4617a662cbaddaf3536b",
+            "before_utf8": "  \"src/sources/calendars/roman-pre-1955/propers.yaml\": \"037c74fa2dc8ecab13e2bd3bebc2e0ee194255c149b35d2c546d8c36cd9af65d\",\n"
+          },
+          {
+            "after_lines": [
+              1873,
+              1876
+            ],
+            "after_slice_sha256": "c6c8797ad4d89ba73db1b0ca2390d49f657ac8f33007b3f37048758f2ee5f983",
+            "before_utf8": "  \"scripts/_proper_latin.py\": \"064d6567ba12b7ab19191fb3c530b248c70a9de0855afe5c932c7be81a5874a6\",\n  \"scripts/_calendars.py\": \"c2ec47e2001a219429ca879165d56202a0cd587b00c36f3abe18a6a4dec593ef\",\n  \"scripts/_missal_coverage.py\": \"e2d93f25f683d76fd7e277c77c8de4d61ff3019d745e62e63358c3926ffb3ca4\",\n"
+          },
+          {
+            "after_lines": [
+              1880,
+              1881
+            ],
+            "after_slice_sha256": "15760ad1890ce638005f9b3f9962c647bef36385293f9f05a964c06172887824",
+            "before_utf8": "  \"tools/tests/test_roman_1962_alexander_hilary_restoration.py\": \"98cf7be34f0a26c6427b472ea749164ef49df91b5c020bed3484760e90b5463b\",\n"
+          },
+          {
+            "after_lines": [
+              2055,
+              2056
+            ],
+            "after_slice_sha256": "24acd649be1c864dbc69768ccddd21203151ade42522d99e00aa9795a7fcced8",
+            "before_utf8": "            self.assertEqual(h[\"sha256\"],digest((ROOT/h[\"path\"]).read_bytes()))\n"
+          },
+          {
+            "after_lines": [
+              2079,
+              2082
+            ],
+            "after_slice_sha256": "5cdb0cc98f6f997472ba58dba7e8727efd3aecf08b3ba156e94e201a814d0082",
+            "before_utf8": "        present=[dict(key=k.as_dict(),body=b,state=s) for k,b,s in body_owners(self.doc) if s==\"present\" and k not in KEYS]\n"
+          },
+          {
+            "after_lines": [
+              2084,
+              2086
+            ],
+            "after_slice_sha256": "d6a52632d4965c92abab206d328c9dd788b4d0f2e2df1652f8a665dc2bda8495",
+            "before_utf8": "        self.assertEqual(UNOWNED_YAML_SHA256,digest(yaml_unowned(self.source)))\n        self.assertEqual(UNOWNED_LEDGER_SHA256,digest(ledger_unowned(self.ledger)))\n"
+          },
+          {
+            "after_lines": [
+              2089,
+              2208
+            ],
+            "after_slice_sha256": "c4372598301f2287ec823be53360198762e5a2f287d211b64d34af4661620db2",
+            "before_utf8": "        for path,h in PRESERVED_FILES.items():self.assertEqual(h,digest((ROOT/path).read_bytes()),path)\n"
+          },
+          {
+            "after_lines": [
+              2210,
+              2213
+            ],
+            "after_slice_sha256": "addf67b7130a0f693be00c9b3a01af022351e6432c8fc24e2b6ffa1d3b137434",
+            "before_utf8": "        raw=tomllib.loads(self.ledger)[\"entries\"]\n"
+          },
+          {
+            "after_lines": [
+              2216,
+              2217
+            ],
+            "after_slice_sha256": "0e4246ea7cbeeee70fda3c6e53af2e510bc286b80e658cd4486cabeeffb7d89d",
+            "before_utf8": "        owners=list(body_owners(self.doc))\n"
+          }
+        ]
+      },
+      "before": {
+        "after_sha256": "6f060092d0bf2db1c0a82382dc50e0063ccedd7fa8f3e82b19d162010789d3da",
+        "before_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+        "hunks": [
+          {
+            "after_lines": [
+              19,
+              21
+            ],
+            "after_slice_sha256": "5d67a0c86436d51a84bea43e0a259da034f323132b8656fbca65000543a23e16",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1866,
+              1869
+            ],
+            "after_slice_sha256": "39ddcba8638fab50e669b31fbe7b8b4fdba53f2edee2a2c3600480c85897e5c8",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1870,
+              1871
+            ],
+            "after_slice_sha256": "3fc6f80dd1650b97cec12a1d84b4f883087abae0840c4617a662cbaddaf3536b",
+            "before_utf8": "  \"src/sources/calendars/roman-pre-1955/propers.yaml\": \"037c74fa2dc8ecab13e2bd3bebc2e0ee194255c149b35d2c546d8c36cd9af65d\",\n"
+          },
+          {
+            "after_lines": [
+              1873,
+              1876
+            ],
+            "after_slice_sha256": "c6c8797ad4d89ba73db1b0ca2390d49f657ac8f33007b3f37048758f2ee5f983",
+            "before_utf8": "  \"scripts/_proper_latin.py\": \"064d6567ba12b7ab19191fb3c530b248c70a9de0855afe5c932c7be81a5874a6\",\n  \"scripts/_calendars.py\": \"c2ec47e2001a219429ca879165d56202a0cd587b00c36f3abe18a6a4dec593ef\",\n  \"scripts/_missal_coverage.py\": \"e2d93f25f683d76fd7e277c77c8de4d61ff3019d745e62e63358c3926ffb3ca4\",\n"
+          },
+          {
+            "after_lines": [
+              1880,
+              1881
+            ],
+            "after_slice_sha256": "15760ad1890ce638005f9b3f9962c647bef36385293f9f05a964c06172887824",
+            "before_utf8": "  \"tools/tests/test_roman_1962_alexander_hilary_restoration.py\": \"98cf7be34f0a26c6427b472ea749164ef49df91b5c020bed3484760e90b5463b\",\n"
+          },
+          {
+            "after_lines": [
+              2055,
+              2056
+            ],
+            "after_slice_sha256": "24acd649be1c864dbc69768ccddd21203151ade42522d99e00aa9795a7fcced8",
+            "before_utf8": "            self.assertEqual(h[\"sha256\"],digest((ROOT/h[\"path\"]).read_bytes()))\n"
+          },
+          {
+            "after_lines": [
+              2079,
+              2082
+            ],
+            "after_slice_sha256": "5cdb0cc98f6f997472ba58dba7e8727efd3aecf08b3ba156e94e201a814d0082",
+            "before_utf8": "        present=[dict(key=k.as_dict(),body=b,state=s) for k,b,s in body_owners(self.doc) if s==\"present\" and k not in KEYS]\n"
+          },
+          {
+            "after_lines": [
+              2084,
+              2086
+            ],
+            "after_slice_sha256": "d6a52632d4965c92abab206d328c9dd788b4d0f2e2df1652f8a665dc2bda8495",
+            "before_utf8": "        self.assertEqual(UNOWNED_YAML_SHA256,digest(yaml_unowned(self.source)))\n        self.assertEqual(UNOWNED_LEDGER_SHA256,digest(ledger_unowned(self.ledger)))\n"
+          },
+          {
+            "after_lines": [
+              2089,
+              2113
+            ],
+            "after_slice_sha256": "ac253b3bff28f3600e8e2df09f026f99080c605f94f87be3345b47e0602f79e0",
+            "before_utf8": "        for path,h in PRESERVED_FILES.items():self.assertEqual(h,digest((ROOT/path).read_bytes()),path)\n"
+          },
+          {
+            "after_lines": [
+              2115,
+              2118
+            ],
+            "after_slice_sha256": "addf67b7130a0f693be00c9b3a01af022351e6432c8fc24e2b6ffa1d3b137434",
+            "before_utf8": "        raw=tomllib.loads(self.ledger)[\"entries\"]\n"
+          },
+          {
+            "after_lines": [
+              2121,
+              2122
+            ],
+            "after_slice_sha256": "0e4246ea7cbeeee70fda3c6e53af2e510bc286b80e658cd4486cabeeffb7d89d",
+            "before_utf8": "        owners=list(body_owners(self.doc))\n"
+          }
+        ]
+      }
+    },
+    "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py": {
+      "after": {
+        "after_sha256": "e97c80208342900b5b2b313230627f454aee11b85d6dbb2ef9aef2f8d1f22d6f",
+        "before_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+        "hunks": [
+          {
+            "after_lines": [
+              20,
+              22
+            ],
+            "after_slice_sha256": "5d67a0c86436d51a84bea43e0a259da034f323132b8656fbca65000543a23e16",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1714,
+              1715
+            ],
+            "after_slice_sha256": "d81478a719a38141d8bbdf273aff3397651dfbaf7c89617563e0ec66520311eb",
+            "before_utf8": "        _phase5_require(digest((ROOT / path).read_bytes()) == expected, path)\n"
+          },
+          {
+            "after_lines": [
+              1760,
+              1766
+            ],
+            "after_slice_sha256": "10945e7f5eac71fbb19231e58d7ccdf38ffbd5cfd5afb465ecebba17ddd843c7",
+            "before_utf8": "    \"\"\"Validate all accepted owners BEFORE masking exactly their three fields.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              1787,
+              1793
+            ],
+            "after_slice_sha256": "2aeec3457f07288d1565ec8864068c04e53ada728c56570c7993e36baeed54bc",
+            "before_utf8": "    \"\"\"Restore fixed raw slices; retain every other byte, including whitespace.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              1795,
+              1796
+            ],
+            "after_slice_sha256": "7c2569bd26623e9f1949c53fbb086ce605ae1100947f5262ba249696a6ada2de",
+            "before_utf8": "    phase5_predecessor_document(yaml.load(source, Loader=yaml.CSafeLoader))\n"
+          },
+          {
+            "after_lines": [
+              1818,
+              1824
+            ],
+            "after_slice_sha256": "c1070e3805fa4374ea1145f98cce88d05e3306bb20901c83e9d26190181d91bd",
+            "before_utf8": "    \"\"\"Remove only 20 exact additions and restore only two exact former rows.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              2008,
+              2009
+            ],
+            "after_slice_sha256": "15a0c3cf40394b322d78725329589a0d359661464c10510f62b18b3bda7abb00",
+            "before_utf8": "        payload = (ROOT / artifact[\"path\"]).read_bytes()\n"
+          },
+          {
+            "after_lines": [
+              2093,
+              2154
+            ],
+            "after_slice_sha256": "a3686abffa57d49ffe26e5f3aceb94109a4ce6fc41a1930f6bf4817e3e4358ce",
+            "before_utf8": "        self.assertEqual(1289, len(rows))\n        self.assertEqual(1269, sum(r[\"publication_status\"] == \"permitted\"\n                                   for r in self.records.values()))\n        self.assertEqual(20, sum(r.get(\"body_status\") == \"removed\" for r in rows))\n        self.assertEqual(1269, sum(state == \"present\" for _, _, state in body_owners(self.document)))\n"
+          }
+        ]
+      },
+      "before": {
+        "after_sha256": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+        "before_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+        "hunks": [
+          {
+            "after_lines": [
+              20,
+              21
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              1759,
+              1765
+            ],
+            "after_slice_sha256": "10945e7f5eac71fbb19231e58d7ccdf38ffbd5cfd5afb465ecebba17ddd843c7",
+            "before_utf8": "    \"\"\"Validate all accepted owners BEFORE masking exactly their three fields.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              1786,
+              1792
+            ],
+            "after_slice_sha256": "2aeec3457f07288d1565ec8864068c04e53ada728c56570c7993e36baeed54bc",
+            "before_utf8": "    \"\"\"Restore fixed raw slices; retain every other byte, including whitespace.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              1794,
+              1795
+            ],
+            "after_slice_sha256": "7c2569bd26623e9f1949c53fbb086ce605ae1100947f5262ba249696a6ada2de",
+            "before_utf8": "    phase5_predecessor_document(yaml.load(source, Loader=yaml.CSafeLoader))\n"
+          },
+          {
+            "after_lines": [
+              1817,
+              1823
+            ],
+            "after_slice_sha256": "c1070e3805fa4374ea1145f98cce88d05e3306bb20901c83e9d26190181d91bd",
+            "before_utf8": "    \"\"\"Remove only 20 exact additions and restore only two exact former rows.\"\"\"\n"
+          },
+          {
+            "after_lines": [
+              2092,
+              2136
+            ],
+            "after_slice_sha256": "f9749df409fee988916146740e348a2a13294dac6f39c53862b4e1de3ccf1c1e",
+            "before_utf8": "        self.assertEqual(1289, len(rows))\n        self.assertEqual(1269, sum(r[\"publication_status\"] == \"permitted\"\n                                   for r in self.records.values()))\n        self.assertEqual(20, sum(r.get(\"body_status\") == \"removed\" for r in rows))\n        self.assertEqual(1269, sum(state == \"present\" for _, _, state in body_owners(self.document)))\n"
+          }
+        ]
+      }
+    },
+    "tools/tests/test_roman_1962_winter_ursula_source_repair.py": {
+      "after": {
+        "after_sha256": "e623d07cb6969c87cbfd59551c159fddaf046ae057cc87be174cc4a7c30aaa7d",
+        "before_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+        "hunks": [
+          {
+            "after_lines": [
+              14,
+              16
+            ],
+            "after_slice_sha256": "5d67a0c86436d51a84bea43e0a259da034f323132b8656fbca65000543a23e16",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              890,
+              891
+            ],
+            "after_slice_sha256": "9fef61e128945c97b5fd556aae773ad1abe4b8e899d2108bf1a022121795111f",
+            "before_utf8": "            payload = (ROOT/art[\"path\"]).read_bytes()\n"
+          },
+          {
+            "after_lines": [
+              963,
+              967
+            ],
+            "after_slice_sha256": "ec237b66f9baeb2d4f525ab3aeb33d9f360e331df1ac1ca46170b71734a409c3",
+            "before_utf8": "        owners = list(body_owners(self.document))\n        self.assertEqual((1289,1269,20),(len(self.records),sum(s==\"present\" for _,_,s in owners),\n"
+          },
+          {
+            "after_lines": [
+              968,
+              1026
+            ],
+            "after_slice_sha256": "623610488844f5150ecbdd9cfd8006cb6c2684d9da83ececc7ca1b3f9a4b11eb",
+            "before_utf8": "        self.assertEqual(1269,sum(r[\"publication_status\"]==\"permitted\" for r in self.records.values()))\n        self.assertEqual(17,sum(r[\"provenance_status\"]==\"unresolved\" for r in self.records.values()))\n        self.assertEqual(3,sum(r[\"publication_status\"]==\"withheld\" for r in self.records.values()))\n        boniface = self.index[\"comm-s-bonifatii-martyris\"][\"takes_from\"][\"common_sets\"][\"orations\"]\n        self.assertEqual(\"unresolved\",boniface[\"state\"])\n        self.assertEqual({\"c3\",\"c4\"},set(boniface[\"candidates\"]))\n"
+          }
+        ]
+      },
+      "before": {
+        "after_sha256": "9e26bcc171abc7144ad6731450e7e0d8caebb073a8d09eb4425026475a844e44",
+        "before_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+        "hunks": [
+          {
+            "after_lines": [
+              14,
+              15
+            ],
+            "after_slice_sha256": "8dc75234383a7abb9db3a164779edb138633c7bcb3e30d183f36a99bc8e7610d",
+            "before_utf8": ""
+          },
+          {
+            "after_lines": [
+              962,
+              966
+            ],
+            "after_slice_sha256": "ec237b66f9baeb2d4f525ab3aeb33d9f360e331df1ac1ca46170b71734a409c3",
+            "before_utf8": "        owners = list(body_owners(self.document))\n        self.assertEqual((1289,1269,20),(len(self.records),sum(s==\"present\" for _,_,s in owners),\n"
+          },
+          {
+            "after_lines": [
+              967,
+              1008
+            ],
+            "after_slice_sha256": "3b3a7b69abe9660a5a646d405b5ae1b66f81c1b2aa478ff908153fd7552092a3",
+            "before_utf8": "        self.assertEqual(1269,sum(r[\"publication_status\"]==\"permitted\" for r in self.records.values()))\n        self.assertEqual(17,sum(r[\"provenance_status\"]==\"unresolved\" for r in self.records.values()))\n        self.assertEqual(3,sum(r[\"publication_status\"]==\"withheld\" for r in self.records.values()))\n        boniface = self.index[\"comm-s-bonifatii-martyris\"][\"takes_from\"][\"common_sets\"][\"orations\"]\n        self.assertEqual(\"unresolved\",boniface[\"state\"])\n        self.assertEqual({\"c3\",\"c4\"},set(boniface[\"candidates\"]))\n"
+          }
+        ]
+      }
+    }
+  },
+  "new_source_input_manifest_sha256": "f427c98032220558654aef37d8ccc483ed8dcccb22e4678bbfcf8cdeed4c4658",
+  "new_source_permissions": false,
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-batch-acceptance.json",
+    "receipt_sha256": "ba879f5812d527da3f73777cf2824fc7b8b6bf4029ad3afc6183471c6ec09fde",
+    "status": "accepted"
+  },
+  "parent_fixture_sha256": "c5dfb4a5f9f264cb23b535174e45cdbd054f3e877d393ab254df8c118bc274dc",
+  "parent_manifest_sha256": "8bff4e89d1cf0ed36686dc8ac38aa0dc92c4bc67edc479631f51cbab745501b9",
+  "pending_fixture_sha256": "1e5d6bdad26e0dc93ac8b8ae814efc6f1ee529f5434602dd2b650d05bea8dd84",
+  "schema": "triptych-source-epoch-test-bookkeeping-delta/v1",
+  "test_code_changes": [
+    {
+      "after_sha256": "075b4cb36c55fb3cd5b2719eb8496e417c57316d806c1532ec878e36a1e1d18f",
+      "before_sha256": "bb609bb0dc7071c270433ff4df5cf9ca297b40dab6b35a170b69f27a20a9f81d",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "604a8a9592bafe0b9bcc03d8879f86805af58d4f25b3b17f90f8647dc89f07f3",
+      "before_sha256": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "after_sha256": "50a5df73661d88e02028073bcb93e97d8c29d3e6d680c9d0338f17d60f54f063",
+      "before_sha256": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "after_sha256": "e97c80208342900b5b2b313230627f454aee11b85d6dbb2ef9aef2f8d1f22d6f",
+      "before_sha256": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "after_sha256": "e623d07cb6969c87cbfd59551c159fddaf046ae057cc87be174cc4a7c30aaa7d",
+      "before_sha256": "9e26bcc171abc7144ad6731450e7e0d8caebb073a8d09eb4425026475a844e44",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    },
+    {
+      "after_sha256": "ddb555d009e04cc11f89f2907678a94bb7af517d5cd71b8e6a238d8f6588e23c",
+      "before_sha256": "6f060092d0bf2db1c0a82382dc50e0063ccedd7fa8f3e82b19d162010789d3da",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "after_sha256": "c510a5f88c866cb5de6543d819fa8ff5640c4e4439320602c2eb1918224d8647",
+      "before_sha256": "57bdd03d364eca918086031462972b52ed9a3a0cd8e6c30def32f29753f38acb",
+      "path": "tools/tests/test_missal_coverage.py"
+    }
+  ],
+  "test_code_inverses_to_c5": {
+    "tools/tests/test_missal_coverage.py": {
+      "after_sha256": "c510a5f88c866cb5de6543d819fa8ff5640c4e4439320602c2eb1918224d8647",
+      "before_sha256": "57bdd03d364eca918086031462972b52ed9a3a0cd8e6c30def32f29753f38acb",
+      "hunks": [
+        {
+          "after_lines": [
+            753,
+            756
+          ],
+          "after_slice_sha256": "cf5c7727e048aaccddbac566a532a025a0bf354aadc4ae86bf0750844b5d6948",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            757,
+            760
+          ],
+          "after_slice_sha256": "1fbedad8cd03b4c978e32a7c4331b8a63880efea53ab594d089c6aa7cf44dcb6",
+          "before_utf8": "        # Accepted bindings can fill these former gaps. Each remaining row\n        # retains the exact reviewed absence record, never a rights restriction.\n"
+        },
+        {
+          "after_lines": [
+            761,
+            768
+          ],
+          "after_slice_sha256": "2cb05644396a2c86da377b3e1be49f3bde98d15b691828fc63a4365871ae396e",
+          "before_utf8": "            identity = self.propers.translation_record_identity(row)\n            self.assertFalse(assert_current_english_owner(self, identity))\n        self.assertEqual({row[\"reason\"][\"kind\"] for row in retyped}, {\"no-exemplar\"})\n"
+        }
+      ]
+    },
+    "tools/tests/test_proper_latin.py": {
+      "after_sha256": "075b4cb36c55fb3cd5b2719eb8496e417c57316d806c1532ec878e36a1e1d18f",
+      "before_sha256": "bb609bb0dc7071c270433ff4df5cf9ca297b40dab6b35a170b69f27a20a9f81d",
+      "hunks": [
+        {
+          "after_lines": [
+            695,
+            696
+          ],
+          "after_slice_sha256": "9f8b8f23730d748e6bff66c702ad5d3c4f621cf48187f939ccc21bccbebc846b",
+          "before_utf8": "                self.assertEqual(expected[\"payload_sha256\"], hashlib.sha256((ROOT / expected[\"payload_path\"]).read_bytes()).hexdigest())\n"
+        },
+        {
+          "after_lines": [
+            809,
+            877
+          ],
+          "after_slice_sha256": "92517c43e745e73384a12b6f07fc93ac7a462f0e64879688be201d03ad0b7698",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            1302,
+            1303
+          ],
+          "after_slice_sha256": "88a04a2aefed3da4b14fdbb5e839c79db90006f67ae828f1604d739d20a421ba",
+          "before_utf8": "                row for entry in archived[\"entries\"]\n"
+        },
+        {
+          "after_lines": [
+            1308,
+            1347
+          ],
+          "after_slice_sha256": "aa455bb7e659ab0a67f2f3e7751f78a9aefe7227c704d0ae10582782dcdfb9fd",
+          "before_utf8": "        self.assertEqual(341, len(nonpermitted))\n"
+        },
+        {
+          "after_lines": [
+            1403,
+            1414
+          ],
+          "after_slice_sha256": "6148b7921aeb4b8a17cd6d96f1f9e75c68bcf1f344e5ec66bdcdc45051a1b583",
+          "before_utf8": "                                  for row in historical_nonpermitted))\n        self.assertEqual(338, len(unresolved))\n"
+        },
+        {
+          "after_lines": [
+            1418,
+            1425
+          ],
+          "after_slice_sha256": "5289b6e1bb0907e3aca25dfb789615dc2e6fa1c098b5b49e6f94589efbd551d5",
+          "before_utf8": "        self.assertEqual(329, len(postconciliar))\n"
+        }
+      ]
+    },
+    "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py": {
+      "after_sha256": "604a8a9592bafe0b9bcc03d8879f86805af58d4f25b3b17f90f8647dc89f07f3",
+      "before_sha256": "69530f60a46c22ec5e8e2b3a1ed2338695e605abb2f370e20618b7c47c95646d",
+      "hunks": [
+        {
+          "after_lines": [
+            4,
+            5
+          ],
+          "after_slice_sha256": "816ab2d4d902e1ff0c2180f301fb8f887983fc1fdc0dfd52f2edd9dc05df5d2d",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            295,
+            296
+          ],
+          "after_slice_sha256": "cf3e31aaec6d7f92333b6f70a491e142eaa3ae33b5f790e27d173a5f8f08e77a",
+          "before_utf8": "            with self.subTest(path=path):self.assertEqual(sha((ROOT/path).read_bytes()),expected)\n"
+        }
+      ]
+    },
+    "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py": {
+      "after_sha256": "50a5df73661d88e02028073bcb93e97d8c29d3e6d680c9d0338f17d60f54f063",
+      "before_sha256": "e9bf4075f1529b48682b6e64363e0d67492b0e5fb12fdb99a2e08ea9cf14db0f",
+      "hunks": [
+        {
+          "after_lines": [
+            12,
+            13
+          ],
+          "after_slice_sha256": "816ab2d4d902e1ff0c2180f301fb8f887983fc1fdc0dfd52f2edd9dc05df5d2d",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            147,
+            148
+          ],
+          "after_slice_sha256": "bb5a7bf22b573b27c40e9a39623959a01762ee4324df1cf37597b0b5d6d196c8",
+          "before_utf8": "        pdf = (ROOT/extract[\"path\"]).read_bytes()\n"
+        },
+        {
+          "after_lines": [
+            200,
+            211
+          ],
+          "after_slice_sha256": "e312611c55ca26a87b75d3b6b1d9e1bef775d1f67540a9066bcc27c43897f612",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            212,
+            213
+          ],
+          "after_slice_sha256": "58aaf6786546290769cc877d30f1ebf6692d978b2fd24812a05c8b0adc9efbe8",
+          "before_utf8": "        self.assertEqual(restored, {anthony} | later)\n"
+        },
+        {
+          "after_lines": [
+            221,
+            227
+          ],
+          "after_slice_sha256": "9741d652ed43ebd6a8988b5519da6736d4757b4d8033adb7cff66efe786da279",
+          "before_utf8": "        self.assertEqual(later, {k for k in prior_records if status(prior_records[k]) != status(legacy[k])})\n"
+        },
+        {
+          "after_lines": [
+            231,
+            232
+          ],
+          "after_slice_sha256": "1b2a27444bc387e6cd4b86cc2c60869edca5c77963fb6b2e37223aa8ecab6396",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            235,
+            236
+          ],
+          "after_slice_sha256": "519e3fd4991b9d1d175b407a3356874552785c556511433c43af14f87cfef0f7",
+          "before_utf8": "        self.assertEqual((1273,13,3), counts(prior_records))\n"
+        }
+      ]
+    },
+    "tools/tests/test_roman_1962_latin22_phase5.py": {
+      "after_sha256": "ddb555d009e04cc11f89f2907678a94bb7af517d5cd71b8e6a238d8f6588e23c",
+      "before_sha256": "6f060092d0bf2db1c0a82382dc50e0063ccedd7fa8f3e82b19d162010789d3da",
+      "hunks": [
+        {
+          "after_lines": [
+            2104,
+            2199
+          ],
+          "after_slice_sha256": "05522f73b06b44d4c8da52aef43c2eb8de069bcc0faee2801393362af4ecd904",
+          "before_utf8": ""
+        }
+      ]
+    },
+    "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py": {
+      "after_sha256": "e97c80208342900b5b2b313230627f454aee11b85d6dbb2ef9aef2f8d1f22d6f",
+      "before_sha256": "cdc06660f2be35e40f94acb44d72c3a9d6cd679089d640e3486256044db5b994",
+      "hunks": [
+        {
+          "after_lines": [
+            20,
+            21
+          ],
+          "after_slice_sha256": "816ab2d4d902e1ff0c2180f301fb8f887983fc1fdc0dfd52f2edd9dc05df5d2d",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            1714,
+            1715
+          ],
+          "after_slice_sha256": "d81478a719a38141d8bbdf273aff3397651dfbaf7c89617563e0ec66520311eb",
+          "before_utf8": "        _phase5_require(digest((ROOT / path).read_bytes()) == expected, path)\n"
+        },
+        {
+          "after_lines": [
+            2008,
+            2009
+          ],
+          "after_slice_sha256": "15a0c3cf40394b322d78725329589a0d359661464c10510f62b18b3bda7abb00",
+          "before_utf8": "        payload = (ROOT / artifact[\"path\"]).read_bytes()\n"
+        },
+        {
+          "after_lines": [
+            2118,
+            2129
+          ],
+          "after_slice_sha256": "e312611c55ca26a87b75d3b6b1d9e1bef775d1f67540a9066bcc27c43897f612",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            2130,
+            2131
+          ],
+          "after_slice_sha256": "58aaf6786546290769cc877d30f1ebf6692d978b2fd24812a05c8b0adc9efbe8",
+          "before_utf8": "        self.assertEqual(restored, {anthony} | later)\n"
+        },
+        {
+          "after_lines": [
+            2139,
+            2145
+          ],
+          "after_slice_sha256": "299bb5a91b9bc2c3f74cda753383e40be0f2cdcdc677cd98576f2063884c5749",
+          "before_utf8": "        self.assertEqual(later, {k for k in current_prior_records if status(current_prior_records[k]) != status(legacy[k])})\n"
+        },
+        {
+          "after_lines": [
+            2149,
+            2150
+          ],
+          "after_slice_sha256": "1b2a27444bc387e6cd4b86cc2c60869edca5c77963fb6b2e37223aa8ecab6396",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            2153,
+            2154
+          ],
+          "after_slice_sha256": "fdd8a64f5ac78ec92bd11272431c40d26fdf7aa641fb5d9c65a4b4ef2dfcdbba",
+          "before_utf8": "        self.assertEqual((1273,13,3), counts(current_prior_records))\n"
+        }
+      ]
+    },
+    "tools/tests/test_roman_1962_winter_ursula_source_repair.py": {
+      "after_sha256": "e623d07cb6969c87cbfd59551c159fddaf046ae057cc87be174cc4a7c30aaa7d",
+      "before_sha256": "9e26bcc171abc7144ad6731450e7e0d8caebb073a8d09eb4425026475a844e44",
+      "hunks": [
+        {
+          "after_lines": [
+            14,
+            15
+          ],
+          "after_slice_sha256": "816ab2d4d902e1ff0c2180f301fb8f887983fc1fdc0dfd52f2edd9dc05df5d2d",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            890,
+            891
+          ],
+          "after_slice_sha256": "9fef61e128945c97b5fd556aae773ad1abe4b8e899d2108bf1a022121795111f",
+          "before_utf8": "            payload = (ROOT/art[\"path\"]).read_bytes()\n"
+        },
+        {
+          "after_lines": [
+            988,
+            999
+          ],
+          "after_slice_sha256": "e312611c55ca26a87b75d3b6b1d9e1bef775d1f67540a9066bcc27c43897f612",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            1000,
+            1001
+          ],
+          "after_slice_sha256": "58aaf6786546290769cc877d30f1ebf6692d978b2fd24812a05c8b0adc9efbe8",
+          "before_utf8": "        self.assertEqual(restored, {anthony} | later)\n"
+        },
+        {
+          "after_lines": [
+            1009,
+            1015
+          ],
+          "after_slice_sha256": "9741d652ed43ebd6a8988b5519da6736d4757b4d8033adb7cff66efe786da279",
+          "before_utf8": "        self.assertEqual(later, {k for k in prior_records if status(prior_records[k]) != status(legacy[k])})\n"
+        },
+        {
+          "after_lines": [
+            1019,
+            1020
+          ],
+          "after_slice_sha256": "1b2a27444bc387e6cd4b86cc2c60869edca5c77963fb6b2e37223aa8ecab6396",
+          "before_utf8": ""
+        },
+        {
+          "after_lines": [
+            1023,
+            1024
+          ],
+          "after_slice_sha256": "519e3fd4991b9d1d175b407a3356874552785c556511433c43af14f87cfef0f7",
+          "before_utf8": "        self.assertEqual((1273,13,3), counts(prior_records))\n"
+        }
+      ]
+    }
+  },
+  "unchanged_semantic_fields": [
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "corrected_latin_keys",
+    "cross_supplement_specs",
+    "current_roman_document_sha256",
+    "direct_pd_permitted_specs",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_coverage",
+    "english_historical_absence_scope",
+    "english_historical_source_files",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_rows",
+    "latin_baseline_supplemented_keys",
+    "latin_current_bodies",
+    "latin_current_rows",
+    "latin_current_supplements",
+    "latin_permitted_keys",
+    "new_latin_keys",
+    "new_projection_artifact_specs",
+    "new_projection_specs",
+    "postconciliar_current_english_absence",
+    "postconciliar_current_english_positive",
+    "projection_baseline_source_files",
+    "reviewed_transition_contract_sha256",
+    "roman_current_english_absence",
+    "roman_current_english_owner_universe",
+    "roman_current_english_positive",
+    "roman_current_execution_source_hashes",
+    "schema",
+    "source_input_manifest_path"
+  ],
+  "unchanged_semantic_fields_sha256": "98c1e230be08f8d42e638570d102f9ab28fcbc9f1ebca847fc98e9b9c555aa67"
+}

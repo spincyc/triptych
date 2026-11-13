@@ -897,6 +897,12 @@ promise = "Drive the missal reader to completion with English translations of al
 state = "in_progress"
 
   [[deliverables.requirements]]
+  id = "bilingual-daily-mass-completion"
+  criterion = "The resumed 2026-11-12 request is met for both the Roman 1962 and postconciliar missals: every daily Mass, applicable form, commemoration and cycle renders its complete sourced English and Latin, including orations and their source-controlled execution, with no missing, withheld or unmodeled text counted as complete. Permitted weekday oration choices are explicitly selectable. Structural render success and qualified historical alternatives remain distinct from exact target-edition text completeness."
+  status = "open"
+  evidence = ["PROJECT-WORK.md", "tools/complete-missal", "tools/tests/test_complete_missal_year.py"]
+
+  [[deliverables.requirements]]
   id = "english-text-coverage"
   criterion = "Every represented Proper and Ordinary text has source-supported English, with exact historical wording and original project study translations distinguished, and no missing or withheld body counted as translated. Genuine unmodeled source and rite contexts are also resolved or individually identified; historical nonapplicability is distinguished from missing text. Every remaining source or distribution blocker is identified individually."
   status = "open"

@@ -1,0 +1,1011 @@
+{
+  "schema": "triptych-finite-ordinary-historical-source-admission/v1",
+  "recorded_on": "2026-11-12",
+  "state": "source-accepted; consumer integration pending",
+  "scope": "One historical Latin and English petition for the first private-preparation alternative, retaining the source colon; second alternative remains unavailable. This is not authenticated2008 wording or approved2011 English.",
+  "candidate_manifest_sha256": "b112fa4a75c722c024c38395deb4e0f5d3419a6de4775562a270d479f1b24818",
+  "candidate_files": [
+    {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "239fa6ed41030f2f33cb753007262fbd8f2733e86530f8c616a73a696916dbbb",
+      "bytes": 176729
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-en-20261112/artifact.toml",
+      "sha256": "8ad28e1ef12b52f5dfad1e27d863ff3b66032e48aa724b38a83f45b5dc9fc321",
+      "bytes": 2110
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-en-20261112/text.tsv",
+      "sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+      "bytes": 725
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-la-20261112/artifact.toml",
+      "sha256": "c6b83cf5050e95ea7377a55aedc556801ea84595351718690069fbf1487c0a3b",
+      "bytes": 2108
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-la-20261112/text.tsv",
+      "sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+      "bytes": 714
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-en-20261112.toml",
+      "sha256": "a94018720d3b2f92f34bfae37e541aee255e937d0bf47dd4ffb4b8c121bc813d",
+      "bytes": 1139
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-la-20261112.toml",
+      "sha256": "59f7b32006a5cd8299598407febe1bd882d093ebf483996528a0c556cae26245",
+      "bytes": 1137
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-en-20261112.toml",
+      "sha256": "190bb7a28d97d0281f21513ecbbbbaef894ad2cd58fe4ebe76d73f31951040cb",
+      "bytes": 1166
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-la-20261112.toml",
+      "sha256": "9409b49d4c1c127b6d73da9afd602865983af6ba4b091499d2a67ed0c0def7d8",
+      "bytes": 1164
+    }
+  ],
+  "preimage_pins": [
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/ordinarium-communio-la.tsv",
+      "sha256": "8a58f98ad38a0733f8b6b7645ef0f7ccc2a95995d28478d87aa351a7d87fe67d"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/ordinarium-communio-en.tsv",
+      "sha256": "f35d635ec2311ade057558ad1531bc6e007126311acc9a554b4b662dfacd0ccc"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "c9babb91ea80c4b1fb192693a8c2027c7fce114dfea4ab23eb149f872990246e"
+    }
+  ],
+  "source_review_path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-ordinary-preparation-source-review.json",
+  "source_review_sha256": "6c3a3c05df71c7c04ca3f5d32d003b3014331f0e3ca15ff9e7213a7b0d3101cf",
+  "target_comparison": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "inspected_pages": [
+      367,
+      368
+    ],
+    "status": "secondary2002; not authenticated2008"
+  },
+  "historical_source": {
+    "sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+    "inspected_pages": [
+      32,
+      52
+    ],
+    "published_payload": "No source PDF or Google matter in package"
+  },
+  "source_selection_proof": [
+    {
+      "lang": "la",
+      "source_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/ordinarium-communio-la.tsv",
+      "source_sha256": "8a58f98ad38a0733f8b6b7645ef0f7ccc2a95995d28478d87aa351a7d87fe67d",
+      "key": "domine-jesu-christe-fili-dei-vivi",
+      "column": "latin",
+      "source_cell_sha256": "f0294b2c33f126b165ee8aebc40b7b6a4485ade5f3c261d1b49a4abd54afebc7",
+      "split_after_character": 310,
+      "petition_sha256": "3ad47f65f245adf4f1dbb519385dfec964354f3b6fde57c9b0df01d8e8c8b377",
+      "conclusion_sha256": "acef9e576f99d059d86de30a5fca719cb3e81e448f47f63f8031e4941f30df5c",
+      "source_reconstruction": "petition + one ASCII space + conclusion = complete source cell"
+    },
+    {
+      "lang": "en",
+      "source_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/ordinarium-communio-en.tsv",
+      "source_sha256": "f35d635ec2311ade057558ad1531bc6e007126311acc9a554b4b662dfacd0ccc",
+      "key": "domine-jesu-christe-fili-dei-vivi",
+      "column": "english",
+      "source_cell_sha256": "281070694c9d71c56c05c6a606097c722f536d0ba4dc76483242f3aa34148521",
+      "split_after_character": 357,
+      "petition_sha256": "a86cb35aaa4561c164d94d010a929ed4f77f2930f246c0bec38edef7f433a038",
+      "conclusion_sha256": "736f3f6313a9bc9910d27b9bf71f086862c69cb72b4d29721cebcaa1ec7c1f67",
+      "source_reconstruction": "petition + one ASCII space + conclusion = complete source cell"
+    }
+  ],
+  "source_selection_verification": {
+    "status": "PASS",
+    "assertions": 12,
+    "scope": "Production choice filtering, historical source extents, and order only; no browser or visual acceptance"
+  },
+  "element_changes": [
+    {
+      "key": "domine-fili-dei-vivi",
+      "before": null,
+      "after": {
+        "key": "domine-fili-dei-vivi",
+        "kind": "prayer",
+        "speaker": "priest",
+        "name": "Private preparation — Domine Iesu Christe",
+        "latin_incipit": "Domine Iesu Christe, Fili Dei vivi",
+        "missal_number": "n. 131, first alternative",
+        "alternatives": [
+          {
+            "group": "private-preparation",
+            "option": "preparation-domine"
+          }
+        ],
+        "note": "The complete historical petition is selected without its separate older conclusion. Its source colon is retained; no modern ending or Amen is invented. This is a historical study excerpt, not approved liturgical English or an authenticated complete2008 witness.",
+        "latin": {
+          "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
+          "elements": [
+            "domine-fili-dei-vivi-petition"
+          ],
+          "column": "latin",
+          "relation": "antecedent",
+          "collation": "uncollated",
+          "reading_note": "Exact historical source petition (Cummiskey, 1861), ending at its printed colon. The separate old conclusion is excluded and retained in source apparatus. Not approved Missal English or a complete2008 collation.",
+          "note": "The complete source-contiguous petition on printed p. xli, original PDF p.52, IA n51, is carried verbatim through its colon. The parent source and separate derivative conclusion remain unchanged and retained. Fresh secondary2002 n.131 inspection on artifact pp.367-368 establishes that this first alternative ends with the petition, omitting the older relative conclusion and Amen. Lexical comparison allows only source spelling and pointing differences. This does not authenticate complete2008 wording or approved2011 English; the source relation remains uncollated to that controlling edition."
+        },
+        "english": {
+          "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
+          "elements": [
+            "domine-fili-dei-vivi-petition"
+          ],
+          "column": "english",
+          "relation": "antecedent",
+          "collation": "uncollated",
+          "reading_note": "Exact historical source petition (Cummiskey, 1861), ending at its printed colon. The separate old conclusion is excluded and retained in source apparatus. Not approved Missal English or a complete2008 collation.",
+          "note": "The complete source-contiguous petition on printed p. xli, original PDF p.52, IA n51, is carried verbatim through its colon. The parent source and separate derivative conclusion remain unchanged and retained. Fresh secondary2002 n.131 inspection on artifact pp.367-368 establishes that this first alternative ends with the petition, omitting the older relative conclusion and Amen. Lexical comparison allows only source spelling and pointing differences. This does not authenticate complete2008 wording or approved2011 English; the source relation remains uncollated to that controlling edition."
+        }
+      }
+    },
+    {
+      "key": "perceptio-corporis-et-sanguinis",
+      "before": null,
+      "after": {
+        "key": "perceptio-corporis-et-sanguinis",
+        "kind": "prayer",
+        "speaker": "priest",
+        "name": "Private preparation — Perceptio Corporis et Sanguinis",
+        "latin_incipit": "Perceptio Corporis et Sanguinis tui",
+        "missal_number": "n. 131, second alternative",
+        "alternatives": [
+          {
+            "group": "private-preparation",
+            "option": "preparation-perceptio"
+          }
+        ],
+        "absent_english": "priest-prayer-said-quietly",
+        "absent_latin": "antecedent-diverges-at-named-words",
+        "note": "The second alternative remains unavailable. The historical witness omits et Sanguinis, includes quod ego indignus sumere praesumo, and carries a separate old conclusion. Those substantive differences are not repaired or silently transferred."
+      }
+    },
+    {
+      "key": "praeparatio-sacerdotis",
+      "before": {
+        "key": "praeparatio-sacerdotis",
+        "kind": "prayer",
+        "speaker": "priest",
+        "name": "The priest's private preparation",
+        "latin_incipit": "Domine Iesu Christe, Fili Dei vivi",
+        "missal_number": "n. 131",
+        "absent_english": "priest-prayer-said-quietly",
+        "absent_latin": "antecedent-diverges-at-named-words",
+        "note": "Two forms; the priest chooses one and says it inaudibly."
+      },
+      "after": {
+        "key": "praeparatio-sacerdotis",
+        "kind": "rubric",
+        "name": "The priest's private preparation",
+        "missal_number": "n. 131",
+        "absent_english": "not-a-text",
+        "absent_latin": "not-a-text",
+        "note": "Structural action and preserved semantic anchor. The two distinct alternatives follow separately; one is selected. The first historical-source petition is held, while the changed second alternative remains unavailable."
+      }
+    }
+  ],
+  "variant_changes": {
+    "before": null,
+    "after": {
+      "group": "private-preparation",
+      "name": "Priest's private preparation",
+      "what": "Secondary digital2002 Ordo Missae n.131, artifact pp.367-368, prints two quiet prayers separated by Vel. This is an explicit alternative, not two cumulative prayers. The first printed alternative is only the display default; complete authenticated2008 collation is not asserted.",
+      "options": [
+        {
+          "id": "preparation-domine",
+          "name": "Domine Iesu Christe, Fili Dei vivi",
+          "default": true
+        },
+        {
+          "id": "preparation-perceptio",
+          "name": "Perceptio Corporis et Sanguinis tui",
+          "default": false
+        }
+      ]
+    }
+  },
+  "other_metadata_changes": {
+    "witnesses": {
+      "before": [
+        {
+          "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "lang": "la",
+          "label": "Antecedent Latin (NOT the Missale Romanum's text): the facing Latin column of The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+          "rights": "public-domain",
+          "caution": "NOT the Latin of the Missale Romanum. The controlling 2008 Latin is a work of the Holy See, is under copyright, is not distributable on this surface, and is not served under this witness; no element here claims that the 1861 words are that book's text. The repository does hold and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish every antecedent identity. What is here is the facing Latin column of an 1861 Philadelphia lay hand missal - never an altar book, never an approved liturgical translation, and pre-1955 in its rubrics and its discipline - which prints the ancient prayers this Order of Mass received. It is joined element by element, and only where an element's Latin is that ancient prayer; where the reform composed, recast or rearranged, nothing is carried and the element says why. Its orthography and its misprints are its own and are carried as printed: justum for iustum, Jesu for Iesu, Et expecto for Et exspecto, the ae- and oe-ligatures, and nodie for hodie at In spiritu humilitatis are the 1861 printer's and not the Holy See's. Every element carrying Latin states beside its own words which prayer of that book it is, at which printed page and Internet Archive leaf, which accidents it carries, and whether its identity with the controlling edition has been established or is so far only asserted. Nothing here may be used for recitation.",
+          "artifacts": [
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la"
+          ]
+        },
+        {
+          "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "lang": "en",
+          "label": "Historical English antecedent (NOT the approved Roman Missal English): The Roman Missal translated into the English language for the use of the laity (Philadelphia: Eugene Cummiskey, 1861)",
+          "rights": "public-domain",
+          "caution": "The English of an 1861 lay hand missal, not the approved 2011 English and never an altar book. It supplies only explicitly joined historical antecedents beside the older Latin already carried here. Its own spelling, printed cues, abbreviations, speaker allocation and optional-text configuration are preserved; the historical Our Father has an additional priest Amen and the Agnus Dei retains continuation asterisks. Every English body remains uncollated against approved target English. Nothing here may be used for recitation.",
+          "artifacts": [
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
+          ]
+        },
+        {
+          "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+          "lang": "la",
+          "label": "Historical Latin antecedent (Mame, 1922), not the controlling 2008 Missal",
+          "rights": "public-domain",
+          "caution": "A checked historical printing of the ancient prayer, with source spelling and explicit bounded source selection. It is not an authenticated complete 2008 target witness and is not a text for recitation.",
+          "artifacts": [
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-la"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "label": "Triptych study English of the historical Supplices body (not approved liturgical English)",
+          "rights": "project-created",
+          "caution": "New AI-authored study English from the independently checked public-domain 1922 prayer-body prefix, without its separate old conclusion. No approved English or human review is claimed. Not approved for liturgical use or recitation.",
+          "artifacts": [
+            "artifact.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030.supplices-body-study-en"
+          ]
+        },
+        {
+          "id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+          "lang": "la",
+          "label": "Historical Latin antecedent (NOT the controlling Missal): Roman Breviary, Pustet, 1888",
+          "rights": "public-domain",
+          "caution": "The complete ancient Apostles Creed from an 1888 Roman Breviary, not the controlling 2008 Missal. Acute accents are explicitly omitted in this normalized study transcription; source ligatures, j, capitals and punctuation remain. Source verification does not establish authenticated complete2008 identity or permission to recite from this finding aid.",
+          "artifacts": [
+            "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-latin"
+          ]
+        },
+        {
+          "id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+          "lang": "en",
+          "label": "Historical English antecedent (NOT approved Missal English): Bute Roman Breviary, 1908",
+          "rights": "public-domain",
+          "caution": "The complete historical human English of the Apostles Creed in Bute's 1908 Roman Breviary, not approved2011 Roman Missal English. Source wording, capitals, pronouns, pointing and complete Amen ending remain; typographic small capitals are represented as uppercase. This study witness does not clear or replace the approved English and is not for recitation.",
+          "artifacts": [
+            "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english"
+          ]
+        },
+        {
+          "id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+          "lang": "la",
+          "label": "Historical Ambrosian Latin (Milan,1712), not a controlling2008 exemplar",
+          "rights": "public-domain",
+          "caution": "An independently checked complete old invitation, from a different rite. No old response, rubrics or assignment is transferred. No complete2008 collation or recitation authority is claimed.",
+          "artifacts": [
+            "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-la"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "label": "Triptych study English of the historical peace invitation (not approved liturgical English)",
+          "rights": "project-created",
+          "caution": "New AI-authored English from the independently checked1712 invitation only. Not approved for liturgical use or recitation; no human review is claimed.",
+          "artifacts": [
+            "artifact.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030.peace-invitation-study-en"
+          ]
+        },
+        {
+          "id": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+          "lang": "la",
+          "label": "Historical Latin antecedent: Clementine Vulgate (eBible latVUC), not the controlling 2008 Missal",
+          "rights": "public-domain",
+          "caution": "Independently identified historical source wording with explicit selections and source spelling. This is not an authenticated complete 2008 target witness or approved liturgical English, and is not for recitation.",
+          "artifacts": [
+            "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-trinitarian-la",
+            "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-grace-peace-la",
+            "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-bishop-la",
+            "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-beati-ad-cenam-la"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "label": "Triptych study English of ancient source fragments (not approved liturgical English)",
+          "rights": "project-created",
+          "caution": "New AI-authored study English from the individually identified public-domain source spans. Not approved for liturgical use or recitation; no human review is claimed.",
+          "artifacts": [
+            "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
+          ]
+        },
+        {
+          "id": "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030",
+          "lang": "en",
+          "label": "Triptych sixfold study arrangement of 1861 Kyrie glosses (not approved English)",
+          "rights": "project-created",
+          "caution": "Six study utterances arranged from two exact historical English glosses. The 1861 Mass itself is ninefold and does not print this complete arrangement. Its older P./R. actors are not inherited. This is not approved English or a text for recitation.",
+          "artifacts": [
+            "artifact.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030.sixfold-english-gloss-arrangement"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "label": "Triptych study English with explicit communal revision (not approved liturgical English)",
+          "rights": "project-created",
+          "caution": "New AI-authored study English of a checked old main prayer, one explicit communal possessive revision and a separately witnessed ancient short conclusion. Not approved for liturgical use or recitation; no human review or complete2008target grade is claimed.",
+          "artifacts": [
+            "artifact.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030.domine-qui-dixisti-study-en"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "rights": "project-created",
+          "artifacts": [
+            "artifact.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030.common-full-names-conclusion-omitted-study-en"
+          ],
+          "label": "Triptych study English of common Communicantes (not approved Missal English)",
+          "caution": "Common form only, with full saints list and omitted conclusion; seasonal proper forms remain unfilled. New AI-authored study English from the separately identified source body and exact Joseph clause. No approved translation, human review, whole2008 identity or recitation authority is claimed."
+        },
+        {
+          "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+          "lang": "en",
+          "label": "Complete historical English (Lasance, 1945), not approved postconciliar Missal English",
+          "rights": "public-domain",
+          "caution": "An independently checked historical English witness of the complete printed threefold Agnus Dei. The old source actor and ceremonial context are not assigned to the postconciliar setting. No approved translation, authenticated complete2008 identity or recitation authority is claimed.",
+          "artifacts": [
+            "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+          ]
+        }
+      ],
+      "after": [
+        {
+          "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "lang": "la",
+          "label": "Antecedent Latin (NOT the Missale Romanum's text): the facing Latin column of The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)",
+          "rights": "public-domain",
+          "caution": "NOT the Latin of the Missale Romanum. The controlling 2008 Latin is a work of the Holy See, is under copyright, is not distributable on this surface, and is not served under this witness; no element here claims that the 1861 words are that book's text. The repository does hold and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish every antecedent identity. What is here is the facing Latin column of an 1861 Philadelphia lay hand missal - never an altar book, never an approved liturgical translation, and pre-1955 in its rubrics and its discipline - which prints the ancient prayers this Order of Mass received. It is joined element by element, and only where an element's Latin is that ancient prayer; where the reform composed, recast or rearranged, nothing is carried and the element says why. Its orthography and its misprints are its own and are carried as printed: justum for iustum, Jesu for Iesu, Et expecto for Et exspecto, the ae- and oe-ligatures, and nodie for hodie at In spiritu humilitatis are the 1861 printer's and not the Holy See's. Every element carrying Latin states beside its own words which prayer of that book it is, at which printed page and Internet Archive leaf, which accidents it carries, and whether its identity with the controlling edition has been established or is so far only asserted. Nothing here may be used for recitation.",
+          "artifacts": [
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-la",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-la"
+          ]
+        },
+        {
+          "id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "lang": "en",
+          "label": "Historical English antecedent (NOT the approved Roman Missal English): The Roman Missal translated into the English language for the use of the laity (Philadelphia: Eugene Cummiskey, 1861)",
+          "rights": "public-domain",
+          "caution": "The English of an 1861 lay hand missal, not the approved 2011 English and never an altar book. It supplies only explicitly joined historical antecedents beside the older Latin already carried here. Its own spelling, printed cues, abbreviations, speaker allocation and optional-text configuration are preserved; the historical Our Father has an additional priest Amen and the Agnus Dei retains continuation asterisks. Every English body remains uncollated against approved target English. Nothing here may be used for recitation.",
+          "artifacts": [
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en-turn-divided",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-en-turn-divided-2026-10-20",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-en-turn-divided",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-conclusio-en",
+            "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.english-completion-20261030-ordinary-ancient-frames-en"
+          ]
+        },
+        {
+          "id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+          "lang": "la",
+          "label": "Historical Latin antecedent (Mame, 1922), not the controlling 2008 Missal",
+          "rights": "public-domain",
+          "caution": "A checked historical printing of the ancient prayer, with source spelling and explicit bounded source selection. It is not an authenticated complete 2008 target witness and is not a text for recitation.",
+          "artifacts": [
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-supplices-la",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261030-ordinary-ecce-la"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "label": "Triptych study English of the historical Supplices body (not approved liturgical English)",
+          "rights": "project-created",
+          "caution": "New AI-authored study English from the independently checked public-domain 1922 prayer-body prefix, without its separate old conclusion. No approved English or human review is claimed. Not approved for liturgical use or recitation.",
+          "artifacts": [
+            "artifact.triptych.postconciliar-ordinary-supplices-study-english-20261030.study-english-20261030.supplices-body-study-en"
+          ]
+        },
+        {
+          "id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+          "lang": "la",
+          "label": "Historical Latin antecedent (NOT the controlling Missal): Roman Breviary, Pustet, 1888",
+          "rights": "public-domain",
+          "caution": "The complete ancient Apostles Creed from an 1888 Roman Breviary, not the controlling 2008 Missal. Acute accents are explicitly omitted in this normalized study transcription; source ligatures, j, capitals and punctuation remain. Source verification does not establish authenticated complete2008 identity or permission to recite from this finding aid.",
+          "artifacts": [
+            "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-ordinary-apostles-latin"
+          ]
+        },
+        {
+          "id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+          "lang": "en",
+          "label": "Historical English antecedent (NOT approved Missal English): Bute Roman Breviary, 1908",
+          "rights": "public-domain",
+          "caution": "The complete historical human English of the Apostles Creed in Bute's 1908 Roman Breviary, not approved2011 Roman Missal English. Source wording, capitals, pronouns, pointing and complete Amen ending remain; typographic small capitals are represented as uppercase. This study witness does not clear or replace the approved English and is not for recitation.",
+          "artifacts": [
+            "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-ordinary-apostles-english"
+          ]
+        },
+        {
+          "id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+          "lang": "la",
+          "label": "Historical Ambrosian Latin (Milan,1712), not a controlling2008 exemplar",
+          "rights": "public-domain",
+          "caution": "An independently checked complete old invitation, from a different rite. No old response, rubrics or assignment is transferred. No complete2008 collation or recitation authority is claimed.",
+          "artifacts": [
+            "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.english-completion-20261030-peace-invitation-la"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "label": "Triptych study English of the historical peace invitation (not approved liturgical English)",
+          "rights": "project-created",
+          "caution": "New AI-authored English from the independently checked1712 invitation only. Not approved for liturgical use or recitation; no human review is claimed.",
+          "artifacts": [
+            "artifact.triptych.postconciliar-ordinary-peace-invitation-study-english-20261030.study-english-20261030.peace-invitation-study-en"
+          ]
+        },
+        {
+          "id": "edition.catholic-church.vulgata-clementina.ebible-latvuc",
+          "lang": "la",
+          "label": "Historical Latin antecedent: Clementine Vulgate (eBible latVUC), not the controlling 2008 Missal",
+          "rights": "public-domain",
+          "caution": "Independently identified historical source wording with explicit selections and source spelling. This is not an authenticated complete 2008 target witness or approved liturgical English, and is not for recitation.",
+          "artifacts": [
+            "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-trinitarian-la",
+            "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-grace-peace-la",
+            "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-greeting-bishop-la",
+            "artifact.catholic-church.vulgata-clementina.ebible-latvuc.english-completion-20261030-ordinary-beati-ad-cenam-la"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "label": "Triptych study English of ancient source fragments (not approved liturgical English)",
+          "rights": "project-created",
+          "caution": "New AI-authored study English from the individually identified public-domain source spans. Not approved for liturgical use or recitation; no human review is claimed.",
+          "artifacts": [
+            "artifact.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030.ancient-frames-study-en"
+          ]
+        },
+        {
+          "id": "edition.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030",
+          "lang": "en",
+          "label": "Triptych sixfold study arrangement of 1861 Kyrie glosses (not approved English)",
+          "rights": "project-created",
+          "caution": "Six study utterances arranged from two exact historical English glosses. The 1861 Mass itself is ninefold and does not print this complete arrangement. Its older P./R. actors are not inherited. This is not approved English or a text for recitation.",
+          "artifacts": [
+            "artifact.triptych.english-completion-20261030-kyrie-sixfold-study-arrangement.study-arrangement-20261030.sixfold-english-gloss-arrangement"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "label": "Triptych study English with explicit communal revision (not approved liturgical English)",
+          "rights": "project-created",
+          "caution": "New AI-authored study English of a checked old main prayer, one explicit communal possessive revision and a separately witnessed ancient short conclusion. Not approved for liturgical use or recitation; no human review or complete2008target grade is claimed.",
+          "artifacts": [
+            "artifact.triptych.postconciliar-ordinary-domine-qui-dixisti-study-english-20261030.study-english-20261030.domine-qui-dixisti-study-en"
+          ]
+        },
+        {
+          "id": "edition.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030",
+          "lang": "en",
+          "rights": "project-created",
+          "artifacts": [
+            "artifact.triptych.postconciliar-common-communicantes-study-english-20261030.study-english-20261030.common-full-names-conclusion-omitted-study-en"
+          ],
+          "label": "Triptych study English of common Communicantes (not approved Missal English)",
+          "caution": "Common form only, with full saints list and omitted conclusion; seasonal proper forms remain unfilled. New AI-authored study English from the separately identified source body and exact Joseph clause. No approved translation, human review, whole2008 identity or recitation authority is claimed."
+        },
+        {
+          "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+          "lang": "en",
+          "label": "Complete historical English (Lasance, 1945), not approved postconciliar Missal English",
+          "rights": "public-domain",
+          "caution": "An independently checked historical English witness of the complete printed threefold Agnus Dei. The old source actor and ceremonial context are not assigned to the postconciliar setting. No approved translation, authenticated complete2008 identity or recitation authority is claimed.",
+          "artifacts": [
+            "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ordo-communio-checked-english-v1"
+          ]
+        }
+      ]
+    },
+    "absences": {
+      "before": [
+        {
+          "key": "approved-english-publication-restriction",
+          "label": "Approved English text is not published here",
+          "kind": "rights-withheld",
+          "what": "The approved English text is ICEL's and its exact official source remains registered as restricted provenance. ICEL's standing permission may support a qualifying free, noncommercial website display under all six stated conditions, but it does not authorize this tracked corpus, public Git, downloadable data, or PDFs. No text join or turn metadata is retained on those public surfaces unless a separate distribution basis is recorded."
+        },
+        {
+          "key": "official-exemplar-not-carried",
+          "label": "The official exemplar has no tracked text payload here",
+          "kind": "witness-gap",
+          "what": "Sixteen modelled elements have registered official exemplars but no tracked payload this generator may join to them: Penitential Act I, the twelve source-grounded children of Eucharistic Prayer I, and Eucharistic Prayers II-IV. These are five fixed formulary spans represented at their received boundaries, not sixteen independent source acquisitions. This is a payload and currentness gap, not a claim that the words are unavailable at their official source. The registered exemplars remain remote artifacts, and the Prayer II-IV witnesses predate the 2013 insertion of Saint Joseph. A later import must establish the exact target state and its per-surface distribution basis before any words enter this public corpus. Until then each element records the registered exemplar without pretending it has been transcribed, updated, or cleared for Git distribution."
+        },
+        {
+          "key": "proper-text-outside-ordinary",
+          "label": "The appointed text belongs to the day’s formulary",
+          "kind": "outside-layer",
+          "what": "Six variable texts do not belong to this invariant frame: the Collect, Responsorial Psalm, Alleluia or Lenten acclamation, Prayer over the Offerings, Preface, and Prayer after Communion. Their assignments and any text this project may serve belong to the Propers and Scripture layers. Empty Ordinary elements preserve their seats in the Order of Mass; they do not assert that the appointed text is missing from the day or from the rite."
+        },
+        {
+          "key": "no-fixed-text",
+          "label": "This part of the rite has no fixed text",
+          "kind": "not-applicable",
+          "what": "Three frame elements have no invariant recitation for this layer to carry: the Homily, the locally supplied intentions of the Universal Prayer, and the veneration of the altar and departure. Their elements preserve an action or location in the Order of Mass. No textual witness could make those three into fixed Ordinary text, so their emptiness is structural rather than an acquisition or rights gap."
+        },
+        {
+          "key": "element-spans-mixed-availability",
+          "label": "Parts of this element have different text availability",
+          "kind": "model-gap",
+          "what": "Three elements combine parts with different availability and cannot honestly be represented by one undivided text block: the prayers over the bread and chalice combine a Priest's prayer with the people's response, and the Communion element combines the Priest's private Communion, the public distribution formula, and intervening actions. The available official excerpts do not supply one complete tracked payload for any of these composite spans. Carrying only a public response would make a partial element look complete; the elements must be split at the Missal's own boundaries before their independently sourced parts can be served."
+        },
+        {
+          "key": "priest-prayer-said-quietly",
+          "label": "No exact exemplar of this quiet prayer is held here",
+          "kind": "no-exemplar",
+          "what": "A prayer the Priest says quietly, for which this project holds no exact exemplar, and nobody has refused anything. Six elements are empty for this reason: the mingling of water and wine at n. 24, In spiritu humilitatis at n. 26, the washing of hands at n. 28, the commingling formula at n. 129, the Priest's two prayers of private preparation at n. 131, and the purification at n. 137. The gap follows the bounds of the available official excerpts, which do not supply these inaudible prayers. What would close it is an authoritative complete Order of Mass exemplar whose exact target state and per-surface distribution basis are recorded. Until one is registered these elements stay empty, and the reason is a page nobody here has read rather than a permission nobody has given."
+        },
+        {
+          "key": "editio-typica-new-matter",
+          "label": "New target wording has no publication basis here",
+          "kind": "rights-withheld",
+          "what": "The reform's own new matter, and this is the class for which the rights refusal is the true reason. The Latin of the postconciliar Missal is a work of the Holy See, first published in 1969, revised in 1975 and 2002, with the emended reprint of 2008; it is a post-1929 foreign work, protected in the United States, and this project has established no distribution basis for it. For these thirteen elements no public-domain antecedent establishes the wording either, so nothing may be carried from an older book instead. This repository's tracked study of this Order of Mass states, at the loci its endnotes give, that the two Penitential Act forms II and III are new compositions in their present arrangement; that the two Benedictus es prayers over the bread and the chalice are new compositions which replaced the medieval offertory prayers Suscipe sancte Pater and Offerimus tibi Domine; that Prayers II, III and IV are twentieth-century compositions, Prayer II being an adaptation which does not print the ancient anaphora it is built on; and that the acclamation after the consecration is wholly new. Five more are recastings of ancient matter, where the older prayer is public domain and is NOT this element's text: Qui pridie adds quod pro vobis tradetur, removes mysterium fidei from the chalice form, and replaces the older concluding command; the mingling formula is a shortened form of a Roman Christmas collect and the older witness carries an opening clause and a full conclusion the Missal deleted, as visually controlled by passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-303; the washing of hands prints a shortened verse of a different psalm from the one the older Order recited; the invitation to Communion is the older Ecce Agnus Dei joined to the beatitude of Revelation 19:9, which the study places among the substantially changed; and the two-word Communion formula with the communicant's Amen replaces the longer formula the older Order gave the priest alone. What is refused is the Missal's own composed or recast wording. Nothing here refuses the ancient prayers underneath the recastings, which are public domain and are not what these elements print."
+        },
+        {
+          "key": "antecedent-held-not-carried",
+          "label": "The older witness does not fit this element’s structure",
+          "kind": "witness-gap",
+          "what": "One ancient text this project holds but cannot carry onto the element as modelled, and no rightsholder has refused any of it. The 1861 witness sets the Kyrie as three rows of three, the ninefold form, while this Missal prints six acclamations, two to each invocation. Joining all three witness rows would print nine acclamations under an element of six; dropping three to fit would edit the witness. This is an arrangement gap, not permission and not an invitation to reconstruct the target."
+        },
+        {
+          "key": "antecedent-diverges-at-named-words",
+          "label": "The older witness differs at the target words",
+          "kind": "rights-withheld",
+          "what": "Three elements have public-domain antecedents in the 1861 Cummiskey hand missal and the 1862 Pustet altar book, but those antecedents are NOT the target elements' words. The target's altered wording is Holy See post-1929 matter for which this project has established no distribution basis. At the prayer for peace the target quotation reads peccata nostra where both antecedents read peccata mea. The target quotation stops at digneris inside a running sentence, and its passage record reports no ending: whether the target carries the antecedents' qui vivis conclusion is UNTESTED, not an established omission. At the private preparation the target names Perceptio Corporis et Sanguinis tui where both antecedents read Perceptio Corporis tui; the first alternative prayer's body is separately untested. At Libera nos the verified target passage record reports that the intercession of the saints is absent and exspectantes beatam spem et adventum Salvatoris nostri Iesu Christi is added, while both antecedents print the older form. The 1862 readings are controlled by passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-347, passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-348, and passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-349. No further witness of the older text can establish the target's changed wording, and none of the antecedent bodies is carried here."
+        },
+        {
+          "key": "no-antecedent-witness",
+          "label": "No historical witness establishes the target wording",
+          "kind": "witness-gap",
+          "what": "Three elements have no antecedent witness that establishes their target wording, which is a witness boundary and not permission. The Apostles' Creed is not an element of the Tridentine or 1962 Order of Mass, so neither the 1861 Cummiskey nor the 1862 Pustet Ordo prints it. The fraction and commingling formula is printed by the 1861 inside an English rubric with no facing Latin; the checked 1862 leaf shows the older formula, but no target collation yet establishes an identity. The n. 128 invitation Offerte vobis pacem is new to this Order: the older books instead print the distinct clerical pax Pax tecum, and their words cannot be transferred. The 1862 page evidence is passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-347 and passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-348."
+        },
+        {
+          "key": "element-spans-mixed-matter",
+          "label": "This element mixes inherited and changed wording",
+          "kind": "model-gap",
+          "what": "Seven elements combine inherited and changed matter inside a boundary whose complete target configuration an older witness cannot express. The Greeting carries four forms, of which the 1861 holds one; Penitential Act I carries an invitation the witness lacks and a Confiteor printed there only by incipit; the Gospel dialogue differs in both announcement and conclusion; the Blessing carries simple, solemn or prayer-over-the-people, and pontifical regimes; and the Dismissal combines ancient Ite missa est with three formulas added in 2008. Inside Eucharistic Prayer I, Communicantes adds Saint Joseph, makes part of its saints list optional, and has proper forms the antecedent lacks; Supplices reads target perferri against antecedent praeferri and makes its older conclusion optional. Each remains text-free until its target-owned and inherited parts can be modelled without silently editing the antecedent. Libera nos is not in this class because its ancient embolism itself differs; the Pax is already split at nn. 127 and 128."
+        },
+        {
+          "key": "not-a-text",
+          "label": "This structural element has no words of its own",
+          "kind": "not-applicable",
+          "what": "These twelve elements carry no words of their own at this layer, so nothing is withheld and nothing is missing; the key exists because calling their emptiness a rights refusal would turn a modelling fact into a claim that the rite omits something. Eight are frame markers for an action or a chant - the entrance and the veneration of the altar, the first and second readings, the responsorial psalm, the Alleluia or Lenten acclamation, the homily, the universal prayer whose n. 20 is one line and no formulary, and the veneration and departure - and six of the twelve carry no Latin incipit at all. Four are propers of the day, whose text belongs to the propers layer and not to this invariant frame: the Collect, the Prayer over the Offerings, the Preface, and the Prayer after Communion. The Prefaces are the one row here with mixed matter underneath: the constitution's own two categories are taken from the more ancient tradition of the Roman Church or newly composed, the two must not be conflated in either direction, and whoever opens that corpus must classify prayer by prayer rather than treat it as one thing."
+        },
+        {
+          "key": "appointed-text-printed-with-formulary",
+          "label": "The appointed text is printed with the day’s formulary",
+          "kind": "rights-unresolved",
+          "what": "A text the day's formulary itself appoints and prints, not the invariant frame: on Pentecost Sunday, Mass during the Day, the Missal directs 'Praefatio: De mysterio Pentecostes' and prints that Preface with the formulary (artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944, artifact PDF p. 266), and directs the deacon or priest to dismiss the people with the paschal Ite, missa est with a double Alleluia and its doubled response (artifact PDF p. 267); read in the artifact's rendered text on 2026-10-19 against a local copy whose sha256 matched the record. The registered artifact is restricted, no public-domain antecedent has been collated against either text, and whether this surface may publish their words has not been established. Nothing is invented in their place and no other Preface or dismissal is shown instead."
+        }
+      ],
+      "after": [
+        {
+          "key": "approved-english-publication-restriction",
+          "label": "Approved English text is not published here",
+          "kind": "rights-withheld",
+          "what": "The approved English text is ICEL's and its exact official source remains registered as restricted provenance. ICEL's standing permission may support a qualifying free, noncommercial website display under all six stated conditions, but it does not authorize this tracked corpus, public Git, downloadable data, or PDFs. No text join or turn metadata is retained on those public surfaces unless a separate distribution basis is recorded."
+        },
+        {
+          "key": "official-exemplar-not-carried",
+          "label": "The official exemplar has no tracked text payload here",
+          "kind": "witness-gap",
+          "what": "Sixteen modelled elements have registered official exemplars but no tracked payload this generator may join to them: Penitential Act I, the twelve source-grounded children of Eucharistic Prayer I, and Eucharistic Prayers II-IV. These are five fixed formulary spans represented at their received boundaries, not sixteen independent source acquisitions. This is a payload and currentness gap, not a claim that the words are unavailable at their official source. The registered exemplars remain remote artifacts, and the Prayer II-IV witnesses predate the 2013 insertion of Saint Joseph. A later import must establish the exact target state and its per-surface distribution basis before any words enter this public corpus. Until then each element records the registered exemplar without pretending it has been transcribed, updated, or cleared for Git distribution."
+        },
+        {
+          "key": "proper-text-outside-ordinary",
+          "label": "The appointed text belongs to the day’s formulary",
+          "kind": "outside-layer",
+          "what": "Six variable texts do not belong to this invariant frame: the Collect, Responsorial Psalm, Alleluia or Lenten acclamation, Prayer over the Offerings, Preface, and Prayer after Communion. Their assignments and any text this project may serve belong to the Propers and Scripture layers. Empty Ordinary elements preserve their seats in the Order of Mass; they do not assert that the appointed text is missing from the day or from the rite."
+        },
+        {
+          "key": "no-fixed-text",
+          "label": "This part of the rite has no fixed text",
+          "kind": "not-applicable",
+          "what": "Three frame elements have no invariant recitation for this layer to carry: the Homily, the locally supplied intentions of the Universal Prayer, and the veneration of the altar and departure. Their elements preserve an action or location in the Order of Mass. No textual witness could make those three into fixed Ordinary text, so their emptiness is structural rather than an acquisition or rights gap."
+        },
+        {
+          "key": "element-spans-mixed-availability",
+          "label": "Parts of this element have different text availability",
+          "kind": "model-gap",
+          "what": "Three elements combine parts with different availability and cannot honestly be represented by one undivided text block: the prayers over the bread and chalice combine a Priest's prayer with the people's response, and the Communion element combines the Priest's private Communion, the public distribution formula, and intervening actions. The available official excerpts do not supply one complete tracked payload for any of these composite spans. Carrying only a public response would make a partial element look complete; the elements must be split at the Missal's own boundaries before their independently sourced parts can be served."
+        },
+        {
+          "key": "priest-prayer-said-quietly",
+          "label": "No exact exemplar of this quiet prayer is held here",
+          "kind": "no-exemplar",
+          "what": "This absence applies to quiet-prayer bodies whose exact approved-English exemplar is not held here: the mingling of water and wine at n.24, washing of hands at n.28, commingling at n.129, and the second private-preparation alternative at n.131. An independently held historical witness may supply a separately qualified study body without supplying or clearing approved2011 English. In spiritu humilitatis, purification and the first private-preparation petition now have such historical English joins; their exact source extents and remaining controlling2008 limits are stated on the respective elements. No source-body coverage claim establishes complete target fidelity or liturgical approval."
+        },
+        {
+          "key": "editio-typica-new-matter",
+          "label": "New target wording has no publication basis here",
+          "kind": "rights-withheld",
+          "what": "The reform's own new matter, and this is the class for which the rights refusal is the true reason. The Latin of the postconciliar Missal is a work of the Holy See, first published in 1969, revised in 1975 and 2002, with the emended reprint of 2008; it is a post-1929 foreign work, protected in the United States, and this project has established no distribution basis for it. For these thirteen elements no public-domain antecedent establishes the wording either, so nothing may be carried from an older book instead. This repository's tracked study of this Order of Mass states, at the loci its endnotes give, that the two Penitential Act forms II and III are new compositions in their present arrangement; that the two Benedictus es prayers over the bread and the chalice are new compositions which replaced the medieval offertory prayers Suscipe sancte Pater and Offerimus tibi Domine; that Prayers II, III and IV are twentieth-century compositions, Prayer II being an adaptation which does not print the ancient anaphora it is built on; and that the acclamation after the consecration is wholly new. Five more are recastings of ancient matter, where the older prayer is public domain and is NOT this element's text: Qui pridie adds quod pro vobis tradetur, removes mysterium fidei from the chalice form, and replaces the older concluding command; the mingling formula is a shortened form of a Roman Christmas collect and the older witness carries an opening clause and a full conclusion the Missal deleted, as visually controlled by passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-303; the washing of hands prints a shortened verse of a different psalm from the one the older Order recited; the invitation to Communion is the older Ecce Agnus Dei joined to the beatitude of Revelation 19:9, which the study places among the substantially changed; and the two-word Communion formula with the communicant's Amen replaces the longer formula the older Order gave the priest alone. What is refused is the Missal's own composed or recast wording. Nothing here refuses the ancient prayers underneath the recastings, which are public domain and are not what these elements print."
+        },
+        {
+          "key": "antecedent-held-not-carried",
+          "label": "The older witness does not fit this element’s structure",
+          "kind": "witness-gap",
+          "what": "One ancient text this project holds but cannot carry onto the element as modelled, and no rightsholder has refused any of it. The 1861 witness sets the Kyrie as three rows of three, the ninefold form, while this Missal prints six acclamations, two to each invocation. Joining all three witness rows would print nine acclamations under an element of six; dropping three to fit would edit the witness. This is an arrangement gap, not permission and not an invitation to reconstruct the target."
+        },
+        {
+          "key": "antecedent-diverges-at-named-words",
+          "label": "The older witness differs at the target words",
+          "kind": "rights-withheld",
+          "what": "Three elements have public-domain antecedents in the 1861 Cummiskey hand missal and the 1862 Pustet altar book, but those antecedents are NOT the target elements' words. The target's altered wording is Holy See post-1929 matter for which this project has established no distribution basis. At the prayer for peace the target quotation reads peccata nostra where both antecedents read peccata mea. The target quotation stops at digneris inside a running sentence, and its passage record reports no ending: whether the target carries the antecedents' qui vivis conclusion is UNTESTED, not an established omission. At the private preparation the target names Perceptio Corporis et Sanguinis tui where both antecedents read Perceptio Corporis tui; the first alternative prayer's body is separately untested. At Libera nos the verified target passage record reports that the intercession of the saints is absent and exspectantes beatam spem et adventum Salvatoris nostri Iesu Christi is added, while both antecedents print the older form. The 1862 readings are controlled by passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-347, passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-348, and passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-349. No further witness of the older text can establish the target's changed wording, and none of the antecedent bodies is carried here."
+        },
+        {
+          "key": "no-antecedent-witness",
+          "label": "No historical witness establishes the target wording",
+          "kind": "witness-gap",
+          "what": "Three elements have no antecedent witness that establishes their target wording, which is a witness boundary and not permission. The Apostles' Creed is not an element of the Tridentine or 1962 Order of Mass, so neither the 1861 Cummiskey nor the 1862 Pustet Ordo prints it. The fraction and commingling formula is printed by the 1861 inside an English rubric with no facing Latin; the checked 1862 leaf shows the older formula, but no target collation yet establishes an identity. The n. 128 invitation Offerte vobis pacem is new to this Order: the older books instead print the distinct clerical pax Pax tecum, and their words cannot be transferred. The 1862 page evidence is passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-347 and passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-348."
+        },
+        {
+          "key": "element-spans-mixed-matter",
+          "label": "This element mixes inherited and changed wording",
+          "kind": "model-gap",
+          "what": "Seven elements combine inherited and changed matter inside a boundary whose complete target configuration an older witness cannot express. The Greeting carries four forms, of which the 1861 holds one; Penitential Act I carries an invitation the witness lacks and a Confiteor printed there only by incipit; the Gospel dialogue differs in both announcement and conclusion; the Blessing carries simple, solemn or prayer-over-the-people, and pontifical regimes; and the Dismissal combines ancient Ite missa est with three formulas added in 2008. Inside Eucharistic Prayer I, Communicantes adds Saint Joseph, makes part of its saints list optional, and has proper forms the antecedent lacks; Supplices reads target perferri against antecedent praeferri and makes its older conclusion optional. Each remains text-free until its target-owned and inherited parts can be modelled without silently editing the antecedent. Libera nos is not in this class because its ancient embolism itself differs; the Pax is already split at nn. 127 and 128."
+        },
+        {
+          "key": "not-a-text",
+          "label": "This structural element has no words of its own",
+          "kind": "not-applicable",
+          "what": "These twelve elements carry no words of their own at this layer, so nothing is withheld and nothing is missing; the key exists because calling their emptiness a rights refusal would turn a modelling fact into a claim that the rite omits something. Eight are frame markers for an action or a chant - the entrance and the veneration of the altar, the first and second readings, the responsorial psalm, the Alleluia or Lenten acclamation, the homily, the universal prayer whose n. 20 is one line and no formulary, and the veneration and departure - and six of the twelve carry no Latin incipit at all. Four are propers of the day, whose text belongs to the propers layer and not to this invariant frame: the Collect, the Prayer over the Offerings, the Preface, and the Prayer after Communion. The Prefaces are the one row here with mixed matter underneath: the constitution's own two categories are taken from the more ancient tradition of the Roman Church or newly composed, the two must not be conflated in either direction, and whoever opens that corpus must classify prayer by prayer rather than treat it as one thing."
+        },
+        {
+          "key": "appointed-text-printed-with-formulary",
+          "label": "The appointed text is printed with the day’s formulary",
+          "kind": "rights-unresolved",
+          "what": "A text the day's formulary itself appoints and prints, not the invariant frame: on Pentecost Sunday, Mass during the Day, the Missal directs 'Praefatio: De mysterio Pentecostes' and prints that Preface with the formulary (artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944, artifact PDF p. 266), and directs the deacon or priest to dismiss the people with the paschal Ite, missa est with a double Alleluia and its doubled response (artifact PDF p. 267); read in the artifact's rendered text on 2026-10-19 against a local copy whose sha256 matched the record. The registered artifact is restricted, no public-domain antecedent has been collated against either text, and whether this surface may publish their words has not been established. Nothing is invented in their place and no other Preface or dismissal is shown instead."
+        }
+      ]
+    }
+  },
+  "unrelated_elements_unchanged": true,
+  "no_existing_English_body_modified": true,
+  "not_admitted": [
+    "Per evangelica dicta held StageB candidate",
+    "Second private-preparation alternative body",
+    "Any newly transcribed modern target body or approvedEnglish"
+  ],
+  "closure": {
+    "source_review": "accepted independently and by Root",
+    "generated_ordinary_data": "pending Root integration",
+    "actual_Day_reader_choices": "pending Root validation",
+    "source_epoch": "pending Root acceptance",
+    "owning_gates": "pending Root integration"
+  },
+  "initial_candidate_files": [
+    {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "239fa6ed41030f2f33cb753007262fbd8f2733e86530f8c616a73a696916dbbb",
+      "bytes": 176729
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-en-20261112/artifact.toml",
+      "sha256": "8ad28e1ef12b52f5dfad1e27d863ff3b66032e48aa724b38a83f45b5dc9fc321",
+      "bytes": 2110
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-en-20261112/text.tsv",
+      "sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+      "bytes": 725
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-la-20261112/artifact.toml",
+      "sha256": "c6b83cf5050e95ea7377a55aedc556801ea84595351718690069fbf1487c0a3b",
+      "bytes": 2108
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-la-20261112/text.tsv",
+      "sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+      "bytes": 714
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-en-20261112.toml",
+      "sha256": "1fb81915be1665acd72bfb3d26becb20e84196fa8a0afa8684bd575dcee91046",
+      "bytes": 1068
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-la-20261112.toml",
+      "sha256": "35dba406abb9064321a66d2d99aaaaf40d7c308b0683a8ce937146de98b5c7dc",
+      "bytes": 1066
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-en-20261112.toml",
+      "sha256": "5adbda2bf72892d7d38508aaf51374a007de3bdfdb47c3cc9ea93723e2974f7a",
+      "bytes": 1086
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-la-20261112.toml",
+      "sha256": "ccde2fc25beb1b9111878910a445a3ea0afd48ccaebe3cfb3adaa76cac43240a",
+      "bytes": 1084
+    }
+  ],
+  "current_candidate_manifest_path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-ordinary-preparation-manifest-successor.json",
+  "current_candidate_manifest_sha256": "5dabce03c5ca3927275e88dc07bd57463cf31772d3185604215040b91dbc400c",
+  "metadata_successor": {
+    "reason": "Original source passage locus prose failed the owningwork locus_pattern. Normalize only locus identifiers and preserve all locator prose in notes.",
+    "changes": [
+      {
+        "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-en-20261112.toml",
+        "before_sha256": "1fb81915be1665acd72bfb3d26becb20e84196fa8a0afa8684bd575dcee91046",
+        "after_sha256": "a94018720d3b2f92f34bfae37e541aee255e937d0bf47dd4ffb4b8c121bc813d",
+        "before": {
+          "schema": 1,
+          "record_type": "passage",
+          "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-petition-en-20261112",
+          "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
+          "artifact_sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+          "locus": "Printed p. xli, original PDF p. 52, IA n51; english column, Domine Jesu Christe Fili Dei vivi petition; selected derivative physical line 2.",
+          "physical_line_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "states": [
+            "cataloged",
+            "acquired",
+            "inspected",
+            "verified"
+          ],
+          "context": "The complete historical prayer remains split into two exact source spans. The petition ends at its own source colon; its historical conclusion is separately preserved.",
+          "verified_on": "2026-11-12",
+          "notes": "Source image inspected anew. This verifies source wording and selection only; approved English and complete2008 target identity remain unestablished."
+        },
+        "after": {
+          "schema": 1,
+          "record_type": "passage",
+          "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-petition-en-20261112",
+          "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
+          "artifact_sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+          "locus": "ordo-missae-domine-jesu-christe-fili-dei-vivi-petition",
+          "physical_line_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "states": [
+            "cataloged",
+            "acquired",
+            "inspected",
+            "verified"
+          ],
+          "context": "The complete historical prayer remains split into two exact source spans. The petition ends at its own source colon; its historical conclusion is separately preserved.",
+          "verified_on": "2026-11-12",
+          "notes": "Source image inspected anew. This verifies source wording and selection only; approved English and complete2008 target identity remain unestablished. Source locator: Printed p. xli, original PDF p. 52, IA n51; english column, Domine Jesu Christe Fili Dei vivi petition; selected derivative physical line 2."
+        }
+      },
+      {
+        "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-la-20261112.toml",
+        "before_sha256": "35dba406abb9064321a66d2d99aaaaf40d7c308b0683a8ce937146de98b5c7dc",
+        "after_sha256": "59f7b32006a5cd8299598407febe1bd882d093ebf483996528a0c556cae26245",
+        "before": {
+          "schema": 1,
+          "record_type": "passage",
+          "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-petition-la-20261112",
+          "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
+          "artifact_sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+          "locus": "Printed p. xli, original PDF p. 52, IA n51; latin column, Domine Jesu Christe Fili Dei vivi petition; selected derivative physical line 2.",
+          "physical_line_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "states": [
+            "cataloged",
+            "acquired",
+            "inspected",
+            "verified"
+          ],
+          "context": "The complete historical prayer remains split into two exact source spans. The petition ends at its own source colon; its historical conclusion is separately preserved.",
+          "verified_on": "2026-11-12",
+          "notes": "Source image inspected anew. This verifies source wording and selection only; approved English and complete2008 target identity remain unestablished."
+        },
+        "after": {
+          "schema": 1,
+          "record_type": "passage",
+          "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-petition-la-20261112",
+          "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
+          "artifact_sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+          "locus": "ordo-missae-domine-jesu-christe-fili-dei-vivi-petition",
+          "physical_line_ranges": [
+            [
+              2,
+              2
+            ]
+          ],
+          "states": [
+            "cataloged",
+            "acquired",
+            "inspected",
+            "verified"
+          ],
+          "context": "The complete historical prayer remains split into two exact source spans. The petition ends at its own source colon; its historical conclusion is separately preserved.",
+          "verified_on": "2026-11-12",
+          "notes": "Source image inspected anew. This verifies source wording and selection only; approved English and complete2008 target identity remain unestablished. Source locator: Printed p. xli, original PDF p. 52, IA n51; latin column, Domine Jesu Christe Fili Dei vivi petition; selected derivative physical line 2."
+        }
+      },
+      {
+        "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-en-20261112.toml",
+        "before_sha256": "5adbda2bf72892d7d38508aaf51374a007de3bdfdb47c3cc9ea93723e2974f7a",
+        "after_sha256": "190bb7a28d97d0281f21513ecbbbbaef894ad2cd58fe4ebe76d73f31951040cb",
+        "before": {
+          "schema": 1,
+          "record_type": "passage",
+          "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-conclusion-en-20261112",
+          "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
+          "artifact_sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+          "locus": "Printed p. xli, original PDF p. 52, IA n51; english column, Domine Jesu Christe Fili Dei vivi source-conclusion; selected derivative physical line 3.",
+          "physical_line_ranges": [
+            [
+              3,
+              3
+            ]
+          ],
+          "states": [
+            "cataloged",
+            "acquired",
+            "inspected",
+            "verified"
+          ],
+          "context": "The complete historical prayer remains split into two exact source spans. The petition ends at its own source colon; its historical conclusion is separately preserved.",
+          "verified_on": "2026-11-12",
+          "notes": "Source image inspected anew. This verifies source wording and selection only; approved English and complete2008 target identity remain unestablished."
+        },
+        "after": {
+          "schema": 1,
+          "record_type": "passage",
+          "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-conclusion-en-20261112",
+          "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-en-20261112",
+          "artifact_sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+          "locus": "ordo-missae-domine-jesu-christe-fili-dei-vivi-source-conclusion",
+          "physical_line_ranges": [
+            [
+              3,
+              3
+            ]
+          ],
+          "states": [
+            "cataloged",
+            "acquired",
+            "inspected",
+            "verified"
+          ],
+          "context": "The complete historical prayer remains split into two exact source spans. The petition ends at its own source colon; its historical conclusion is separately preserved.",
+          "verified_on": "2026-11-12",
+          "notes": "Source image inspected anew. This verifies source wording and selection only; approved English and complete2008 target identity remain unestablished. Source locator: Printed p. xli, original PDF p. 52, IA n51; english column, Domine Jesu Christe Fili Dei vivi source-conclusion; selected derivative physical line 3."
+        }
+      },
+      {
+        "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-la-20261112.toml",
+        "before_sha256": "ccde2fc25beb1b9111878910a445a3ea0afd48ccaebe3cfb3adaa76cac43240a",
+        "after_sha256": "9409b49d4c1c127b6d73da9afd602865983af6ba4b091499d2a67ed0c0def7d8",
+        "before": {
+          "schema": 1,
+          "record_type": "passage",
+          "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-conclusion-la-20261112",
+          "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
+          "artifact_sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+          "locus": "Printed p. xli, original PDF p. 52, IA n51; latin column, Domine Jesu Christe Fili Dei vivi source-conclusion; selected derivative physical line 3.",
+          "physical_line_ranges": [
+            [
+              3,
+              3
+            ]
+          ],
+          "states": [
+            "cataloged",
+            "acquired",
+            "inspected",
+            "verified"
+          ],
+          "context": "The complete historical prayer remains split into two exact source spans. The petition ends at its own source colon; its historical conclusion is separately preserved.",
+          "verified_on": "2026-11-12",
+          "notes": "Source image inspected anew. This verifies source wording and selection only; approved English and complete2008 target identity remain unestablished."
+        },
+        "after": {
+          "schema": 1,
+          "record_type": "passage",
+          "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-conclusion-la-20261112",
+          "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinary-preparation-source-prefix-la-20261112",
+          "artifact_sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+          "locus": "ordo-missae-domine-jesu-christe-fili-dei-vivi-source-conclusion",
+          "physical_line_ranges": [
+            [
+              3,
+              3
+            ]
+          ],
+          "states": [
+            "cataloged",
+            "acquired",
+            "inspected",
+            "verified"
+          ],
+          "context": "The complete historical prayer remains split into two exact source spans. The petition ends at its own source colon; its historical conclusion is separately preserved.",
+          "verified_on": "2026-11-12",
+          "notes": "Source image inspected anew. This verifies source wording and selection only; approved English and complete2008 target identity remain unestablished. Source locator: Printed p. xli, original PDF p. 52, IA n51; latin column, Domine Jesu Christe Fili Dei vivi source-conclusion; selected derivative physical line 3."
+        }
+      }
+    ],
+    "independent_review_path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-ordinary-preparation-locus-review.json",
+    "independent_review_sha256": "b89d5b23860e5066c066332b10af8dcb745b87234c14000eb9125037907c92c8",
+    "full_source_validation": {
+      "command": "TRIPTYCH_LIBRARY_CACHE_DIR=.scratch/modern-sources/ordinary-remediation/cache .scratch/root/venv/bin/python tools/source-library validate",
+      "exit_code": 0,
+      "result": "source-library valid: artifact=11022 corpus=5 edition=14331 passage=9695 segment=10822 work=10959 bindings=4615 external-witnesses=711:metadata-only",
+      "scope": "Complete source graph structural/schema/binding validation, metadata-only external witnesses; not full binary evidence hydration"
+    }
+  }
+}

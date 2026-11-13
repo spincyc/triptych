@@ -1,0 +1,187 @@
+{
+  "state": "pass",
+  "code_sha256": {
+    "scripts/_calendars.py": "fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7",
+    "tools/tests/test_historical_latin_cli.py": "602b6d55ad3f4421e59b4f9e07d649fc71527847c2fbc6beac8f3d179009654a",
+    "tools/mass-today": "6c81d9100649ab1b1f0f92cff47d7b3c14b2a5921f4f60d9fa625a84fded4ab4",
+    "tools/mass-propers": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f"
+  },
+  "generated_source_projections": {
+    ".scratch/root/browser-work/structure/propers/postconciliar.json": "cabf0cb36bbcaa5ba6f30d9102c1ab20728501661be485a888879d8af2f34c88",
+    ".scratch/root/browser-work/structure/propers/roman-1962.json": "a135f5449e8b3760b6a2b689de3c6b56a42f850ddbc7cff28a7a99d4ebec98e5"
+  },
+  "scope": "Actual installed legacy4 and Roman6 generated English bodies, executed through current production text selector and both CLI renderers. No source binding or projection mutation.",
+  "cases": [
+    {
+      "calendar": "postconciliar",
+      "identity": [
+        "advent-2",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "body_sha256": "010563a8fdc2969448f323cf869f37e6977fe8877f1932d9e5646b776ff325c5",
+      "caution": "Historical petition agrees word for word with the secondary 2002 petition except word order: humilitatis nostrae precibus versus nostrae precibus humilitatis; pointing/display differ. Historical cue Per. and target cue Per Christum. are distinct and neither is silently expanded. The complete short ending is separately read in Pustet1862 p.180 and its choice is supported by GIRM77 in the same secondary2002 controller at artifact p.22. Existing study English is corrected only as stated in the dated review; Amen remains a separate response outside this prayer-body row. This is a bounded source review of original project study English. It is not approved English, not for recitation, and establishes neither printed-2002 fidelity nor authenticated-2008 correspondence. The original seventy-entry history and all other entries remain unchanged. Source binding uses the already registered exact whole Wilson1894 artifact at originalPDFpage307 (printed214). The complete file retains its existing remote/unresolved digitiser-wrapper status; this review relies on the independently public-domain historical printed prayer, not permission to redistribute the complete PDF.",
+      "caution_sha256": "15d2261bed55da9b07301b4ce79ee3ee08f0818ceda0f8ac1c1a9dfab7b745ac",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "postconciliar",
+      "identity": [
+        "advent-3",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "body_sha256": "f50ba191d1e22b9b0e7293107dcea936c3401e1531bd0f9a735fbf05e0965ea5",
+      "caution": "Historical petition agrees in every word with the secondary 2002 petition after expanding the printed Domine contraction and joining line wraps. Historical cue per. and target cue Per Christum. are distinct; the exact old formula is separately witnessed. The complete short ending is separately read in Pustet1862 p.180 and its choice is supported by GIRM77 in the same secondary2002 controller at artifact p.22. Existing study English is corrected only as stated in the dated review; Amen remains a separate response outside this prayer-body row. This is a bounded source review of original project study English. It is not approved English, not for recitation, and establishes neither printed-2002 fidelity nor authenticated-2008 correspondence. The original seventy-entry history and all other entries remain unchanged.",
+      "caution_sha256": "a4f0ce746206a9bcaf4912854b262a36581ad906ecb78aab469e26fad7e29d77",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "postconciliar",
+      "identity": [
+        "easter-4",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "body_sha256": "7a7bf24b485e7e01ce09b1f614ce36245404fab929dc1cc36170f3b857660be4",
+      "caution": "The complete long formula was re-read on2026-11-12 in the original retained Pustet1862 extract a8fa7ec08dab8614ecfb0563a15c3725cf670ddac6d04dbf0b0caeed6d561975, page1 / originalPDF88 printed2, and in its checked text line3. Only its conclusion, not the unrelated Contra persecutores petition, supports this bounded original English completion. The historical cue Per. remains unexpanded in ancient_reading. Amen is the separate response outside this prayer-body row. This is a bounded source review of original project study English, not approved English or for recitation. It establishes neither printed2002 fidelity nor authenticated2008 correspondence, and does not accept the unreconstructed old first8 packet or remaining legacy70. Source binding uses the already registered exact whole Wilson1894 artifact at originalPDFpage193 (printed100). The complete file retains its existing remote/unresolved digitiser-wrapper status; this review relies on the independently public-domain historical printed prayer, not permission to redistribute the complete PDF.",
+      "caution_sha256": "ac1269090a988e7495c3e1f204d51ad7f983d3c017b97c0c877e5d6e339f5ecb",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "postconciliar",
+      "identity": [
+        "easter-4",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "body_sha256": "047146a71089c2b0a6648e301aa9dbf41736ceaaa0c6071c6df5161159407ffa",
+      "caution": "The historical main text prints nominative perpetua; the secondary 2002 text prints genitive perpetuae before laetitiae. Wilson footnote 7 also records perpetuae in named comparison witnesses, without turning those into inspected complete witnesses. The single-inflection variant remains explicitly disclosed. Historical Per Dominum nostrum. and secondary Per Christum. are different cues. The complete short ending is separately read in Pustet1862 p.180 and its choice is supported by GIRM77 in the same secondary2002 controller at artifact p.22. Existing study English is corrected only as stated in the dated review; Amen remains a separate response outside this prayer-body row. This is a bounded source review of original project study English. It is not approved English, not for recitation, and establishes neither printed-2002 fidelity nor authenticated-2008 correspondence. The original seventy-entry history and all other entries remain unchanged. Source binding uses the already registered exact whole Wilson1894 artifact at originalPDFpage187 (printed94). The complete file retains its existing remote/unresolved digitiser-wrapper status; this review relies on the independently public-domain historical printed prayer, not permission to redistribute the complete PDF.",
+      "caution_sha256": "b57b8bd1a6aeb2ff11392922992fd2c765e59d5976f907a461c29ad6a016ed7b",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "roman-1962",
+      "identity": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "body_sha256": "b0a0a3f7de33960f9bfa9027b2b46a033fbf72666b8569ad23788ffb9ecde6ab",
+      "caution": "Original study translation; not approved for liturgical use or recitation.",
+      "caution_sha256": "0067ce3e13ddff90ece351b6905f9045186b491b2f645a7dee809ba1a87bdd12",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "roman-1962",
+      "identity": [
+        "s-clementis-i-papae-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "body_sha256": "74cdb18eeb765ef8880cf4058948da0500870f8fe56b1fd485edda9fbecb8837",
+      "caution": "Original study translation; not approved for liturgical use or recitation.",
+      "caution_sha256": "0067ce3e13ddff90ece351b6905f9045186b491b2f645a7dee809ba1a87bdd12",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "roman-1962",
+      "identity": [
+        "s-ioannis-bosco-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "body_sha256": "a7d51a4fce5bb83ca075c7cb4e18f2d7f819499df2b5ad9bacb00c41c2425ecd",
+      "caution": "Original study translation; not approved for liturgical use or recitation.",
+      "caution_sha256": "0067ce3e13ddff90ece351b6905f9045186b491b2f645a7dee809ba1a87bdd12",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "roman-1962",
+      "identity": [
+        "s-ioannis-bosco-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "body_sha256": "f90300369f528793e9ed8be614d2cb99a4ebaef074485f81bb5c39997e8f4c55",
+      "caution": "Original study translation; not approved for liturgical use or recitation.",
+      "caution_sha256": "0067ce3e13ddff90ece351b6905f9045186b491b2f645a7dee809ba1a87bdd12",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "roman-1962",
+      "identity": [
+        "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "main",
+        "Offertory",
+        "all",
+        2
+      ],
+      "body_sha256": "aae1c894bbd01f1de8f087e5690a10c4bac4c5cf4b55391b7ad30580fef3d6b2",
+      "caution": "Original study translation; not approved for liturgical use or recitation.",
+      "caution_sha256": "0067ce3e13ddff90ece351b6905f9045186b491b2f645a7dee809ba1a87bdd12",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    },
+    {
+      "calendar": "roman-1962",
+      "identity": [
+        "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "body_sha256": "f915dcad95b7217e16c83e3f1d8c6ee756d1378adc0518b403ac277aafcdecfb",
+      "caution": "Original study translation; not approved for liturgical use or recitation.",
+      "caution_sha256": "0067ce3e13ddff90ece351b6905f9045186b491b2f645a7dee809ba1a87bdd12",
+      "selector_caution_verbatim": true,
+      "mass_today_displays_all_caution_paragraphs": true,
+      "mass_propers_displays_all_caution_paragraphs": true,
+      "projection_unchanged": true
+    }
+  ],
+  "output_sha256": "d8219cf9ba64e6bc64b5ab754cabb8249c6f2f5d550668a31e65f9a202af1c47"
+}

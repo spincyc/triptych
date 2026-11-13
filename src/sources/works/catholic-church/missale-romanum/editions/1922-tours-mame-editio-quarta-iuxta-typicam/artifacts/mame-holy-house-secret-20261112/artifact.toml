@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame-holy-house-secret-20261112"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The bounded prayer belongs to the identified 1922 Tours Mame printing, public domain in the United States by its publication date under the existing registered assessment. This transcription carries only its actual historical prayer; it asserts no identity or automatic clearance for the 1962 adaptation."
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+provenance = "Fresh image reading on 2026-11-12 at 200 dpi and 400 dpi, using complete held PDF bytes and surrounding source context. In Translatione Almae Domus B. Mariae Virginis (10 December), Secret; PDF artifact p. 1072, printed p. [42], left column. Heading begins on artifact p. 1070, printed p. [40], and preceding formulary continues through p. 1071/[41]. The p. [42] running header names the following Common and must not misidentify this prayer."
+retrieved = "2026-11-12"
+sha256 = "439a271f72cb925b86dc63787157fd1b5f6f1c55e8bc00bba691c991e7bb8268"
+byte_size = 181
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame-holy-house-secret-20261112/latin.txt"
+indexable = true
+encoding = "utf-8"
+transformation = "Join printed wraps and line-end hyphenation, remove stress accents, expand ae ligatures, represent drop-cap opening in sentence case. Retain source pointing and the complete printed short Per Dominum. cue; no cue expansion."

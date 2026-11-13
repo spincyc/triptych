@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The historical Latin is already admitted in the exact derived_from artifact as United States public domain from the Tours Alfred Mame 1922 printing. This mechanical TSV packaging changes none of its words and asserts no exclusive right. Underlying source matter remains excluded from Triptych CC BY 4.0."
+rights_jurisdiction = "United States"
+provenance = "Copied the complete registered 737-byte source-body artifact after checking its SHA-256. Re-read the original Mame PDF page 451, printed 337, and CMAA 1962 PDF page 376, printed 295, on actual 200 and 400 dpi images. The full words agree for the corresponding feast or votive branch; the May 1 solemnitate branch is absent from this old witness."
+retrieved = "2026-11-12"
+sha256 = "e6befcb79a0bbd6996d7cb51292a38de3f3c23e305eb886f62d4cee3c6f5aea1"
+byte_size = 866
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body"
+transformation = "Copy the existing text.txt physical line 1 verbatim into the latin cell; remove its terminal LF only as a TSV record delimiter and add indexing columns. Retain both Festivitate (Veneratione) alternatives without selecting or replacing either. The derived_from artifact records the original image-to-text transformations."
+notes = "This remains a historical antecedent with unselected alternatives, not a selected exact-target body. The Ordinary join is limited to the existing March 19 formulary scope. No May 1 Latin publication follows from the separately authorized May 1 study English."

@@ -1,0 +1,73 @@
+{
+  "schema": "triptych-oration-conclusion-integration-review/v2",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted",
+  "authority": {
+    "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v2.json",
+    "sha256": "c5fb8fb02eb062a53cdb5d316bb476f5586550691ce6a613e8cf2889241b4f43"
+  },
+  "review_performed": [
+    "Read all six independent review verdicts, scope restrictions and substantive exception findings; checked their exact receipt hashes and the finite authority scope. Independent reviewers read the full 755 candidate Latin/English pairs and rule/formula images. This integration review does not claim to have repeated that complete pair or image review.",
+    "Read the complete Python compiler and atomic group projection implementation, including exact source/target/English binding controls, complete Latin cue-prefix validation, separate response handling and unresolved-group behavior."
+  ],
+  "source_merits": [
+    "Accept the 754 exact reviewed source-owner mappings to the existing historical bilingual formula table under RG115–116. Source cue, petition addressee and particular-ending exceptions govern; a generic last-word or keyword heuristic does not.",
+    "The principal prayer owns the first conclusion; admitted commemorations share the second. Only the actual final member supplies its own family and response. Intermediate cue omission is permitted only in an atomically validated whole group under the existing source-owned seating rules.",
+    "The separately marked Amen remains a response. The complete historical formula and original abbreviated quotation remain separately attributable; no new whole-prayer translation, changed appointment or verbatim expanded target claim follows."
+  ],
+  "held": [
+    {
+      "target": [
+        "comm-ss-processi-martiniani-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "281da095eec637af2036219ad483f30405abfe525f831a56b5dc983aa3010ab2",
+      "reason": "held-for-english-address-review"
+    }
+  ],
+  "runtime_conditions": [
+    "Exact authority, source table/rule records, complete Latin proof, translation binding, selected witness and both literal body hashes must match.",
+    "Unbound members, mixed contexts, changed descriptors, unknown families, unsupported placeholders/options and unresolved placement refuse the entire group; preserve literal quotations.",
+    "The generated browser validation map must mechanically equal the single finite authority. No independent editable formula body or second authority is introduced.",
+    "Preserve the prior six RG110 mappings unchanged. No global modern-missal conclusion authority follows."
+  ],
+  "activation_decision": "Install the reviewed corrected passage and exact authority bytes as authority-v2.json, preserving v1 and this record predecessor. Update Python path and digest and mechanically generated JavaScript authority digest; all substantive source/runtime conditions remain unchanged.",
+  "integration": {
+    "focused_negative_controls": "Agent reports seven focused tests, complete 754-pair reconstruction and Python/JavaScript parity; final canonical rerun pending.",
+    "native_reader": "pending",
+    "source_epoch": "pending",
+    "release_gates": "pending"
+  },
+  "predecessor": {
+    "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/root-adoption.json",
+    "sha256": "2f6262b947632c313edd942c83b93d8c399e50e50aa42808a589c4b6325ace3a"
+  },
+  "technical_correction": {
+    "status": "accepted",
+    "proposal_sha256": "7be88727d5dc90577b3b82dbca422d132e00a0ea503a3d83a7d8a7842b1a9b52",
+    "source_record": {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/rubricae-generales-conclusions-115-116-20261112.toml",
+      "before_sha256": "45737ffa735cef6db54aaa87c9080902046910c3aafe8a8189b42b9d75ab831a",
+      "after_sha256": "98f5aef0d9c83ec32f7c7c14d54719c3459a335e851e431482406ec1b7b01789",
+      "removed_field": {
+        "artifact_page_ranges": [
+          [
+            17,
+            17
+          ]
+        ]
+      }
+    },
+    "authority_predecessor": {
+      "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v1.json",
+      "before_sha256": "426845246d3f21d0b29b5de3c084cb0b51d280a457f9f768e329b6acd6be2cfb",
+      "after_sha256": "c5fb8fb02eb062a53cdb5d316bb476f5586550691ce6a613e8cf2889241b4f43",
+      "changed_json_path": "source_records[0].sha256"
+    },
+    "finding": "Exact parsed comparison confirms removal only of the optional structured page range from this metadata-only passage, and replacement only of that source-record hash in the finite authority. The exact controlling artifact identity and bytes, printed XIX / artifact PDF17 locus, interpretation, 754 rows, six reviews, held candidate and all literal/public bodies remain unchanged. This meets the existing artifact metadata schema without mutating its 73 other source references."
+  }
+}

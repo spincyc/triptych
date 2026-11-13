@@ -1,0 +1,169 @@
+{
+  "schema": "triptych-seven-acclamation-latin-root-adoption/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted",
+  "references": {
+    "installation-manifest": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-seven-acclamations/installation-manifest.json",
+      "sha256": "4c9612f006eac73b7659bf48157737b484be5c9d8c6aea1a9ade96abb0d3fd76"
+    },
+    "exact-deltas": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-seven-acclamations/exact-deltas.json",
+      "sha256": "9b58101ce2d8f87c10c150c5e475105810b32f7f78c08fe548df22365ea05d3c"
+    },
+    "independent-source-review": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-seven-acclamations/independent-source-review.json",
+      "sha256": "cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8"
+    }
+  },
+  "review_performed": [
+    "Read all complete proposed Latin and existing English bodies, exact recipient/cycle mapping, independent whole-source and target findings, whole-expression publication argument and adverse argument.",
+    "Reviewed the prepared source graph and publication validation. Actual source-image work is attributed to the independent reviewer, not claimed as independently repeated by this integration reviewer."
+  ],
+  "targets": [
+    {
+      "identity": [
+        "saint-lawrence-brindisi-priest-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "saint-lawrence-brindisi-priest-doctor-church",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3"
+    },
+    {
+      "identity": [
+        "saint-john-chrysostom-bishop-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "saint-john-chrysostom-bishop-doctor-church",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3"
+    },
+    {
+      "identity": [
+        "pentecost",
+        "vigil",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "pentecost",
+        "form": "Vigil Mass",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "body_sha256": "c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0"
+    },
+    {
+      "identity": [
+        "pentecost",
+        "day",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "pentecost",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "body_sha256": "c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0"
+    },
+    {
+      "identity": [
+        "nativity",
+        "day",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "nativity",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "body_sha256": "1f7e9e52b87aea04b1fbd3d7de15bce31c1c4971b7a489a7cd4dbf272d93a797"
+    },
+    {
+      "identity": [
+        "easter-3",
+        "main",
+        "Gospel Acclamation",
+        "C",
+        1
+      ],
+      "latin_key": {
+        "mass": "easter-3",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "C",
+        "occurrence": 1
+      },
+      "body_sha256": "3038efc01f0f7b132cc7d03b53fff17d7d2e7b3a0950dc8e7243295de4b87e12"
+    },
+    {
+      "identity": [
+        "easter-2-saturday",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "easter-2-saturday",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "body_sha256": "25f2a27baa91440142ef50d70e6fe88c5052b07a75fb740d6c785cd10b17bc1f"
+    }
+  ],
+  "decisions": [
+    "Accept the seven exact Latin bodies as complete old historical verses with only declared typographic and punctuation changes. Each continuous whole is separately attested; no body is reconstructed from scattered biblical fragments.",
+    "For Semen, the exact 1888 Pustet antiphon supplies the independently public-domain expression. For Veni Sancte Spiritus, Dies sanctificatus and Surrexit Christus, apply the already established old Roman Latin layer only to the exact complete seasonal source verses independently inspected, separately from English nonrenewal and whole late-printing scan status.",
+    "The identified OLM1981 directly governs these exact Gospel Acclamation components and appointments. This specific component exactness is accepted without asserting authenticated whole2008 altar-Missal identity. Preserve the two Surrexit pointing forms and Easter3 YearC restriction."
+  ],
+  "strongest_contrary_argument": "Modern liturgical books may contain protected editing and arrangement, and the late Lasance scan is not wholly public domain. Old words and English permission do not alone authorize Latin. Here the finite unit is each complete old verse, with no new clause, substantive omission or expressive rearrangement; the modern surrounding book, selection and rubrics are excluded.",
+  "limits": [
+    "All seven existing English dictionaries and their historical/source-qualified status remain byte-value-equivalent. No approved English claim.",
+    "No external Alleluia framing, Amen, new Common option, extra cycle or recipient is supplied.",
+    "No whole source PDF or image is added or licensed. No rights grant is inferred for unrelated modern prayers."
+  ],
+  "installation": "Apply the ten exact prepared files and seven identity-level proper/Latin-ledger deltas after exact preimage checks, preserving every concurrent unrelated change.",
+  "integration": {
+    "source_epoch": "pending",
+    "consumer_checks": "pending",
+    "release_gates": "pending"
+  }
+}

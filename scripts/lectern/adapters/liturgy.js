@@ -53,11 +53,13 @@ module.exports = function liturgy(realm) {
         ['  function branchHeading(branch, ordinal) {', pages.FN],
         ['  function resultHeading(row, structure) {', pages.FN],
         ['  function locationPrefix(branch, multiple) {', pages.FN],
+        ['  function sourceDayChoice(branch, id) {', pages.FN],
+        ['  function primaryDayChoice(result, branch) {', pages.FN],
         ['  function nearestProperLocation(location, events) {', pages.FN],
       ], {
         params: ['T', 'Model', 'runtime'],
         args: [T, M, runtime],
-        returns: ['longDate', 'todayISO', 'coverageMessage', 'reasoningApparatus', 'branchHeading', 'resultHeading', 'locationPrefix', 'nearestProperLocation'],
+        returns: ['longDate', 'todayISO', 'coverageMessage', 'reasoningApparatus', 'branchHeading', 'resultHeading', 'locationPrefix', 'primaryDayChoice', 'nearestProperLocation'],
       });
     }
     return dayPage;
@@ -137,6 +139,33 @@ module.exports = function liturgy(realm) {
     return M.derive({ date: iso, year: year(calendar, iso), rubrics: rubricsOf(calendar) });
   }
 
+  // The weekday-oration and dedication selectors read owner Masses the day's
+  // own roots do not name, so they receive every Mass of the reader index.
+  function completeStructure(calendar) {
+    const row = data('structure/propers/index.json').missals.find((one) => one.id === calendar);
+    if (!row || !row.reader_index) return structure(calendar);
+    return structure(calendar, data(Payload.indexPath(calendar, row)).masses.map((one) => one.key));
+  }
+
+  // A selected weekday-oration owner is read beside the day's own Masses.
+  function dayRootsFor(derived, state) {
+    return [Payload.dayRoots(derived, state.mass), state.orationMass || null];
+  }
+
+  function selectedDay(calendar, iso, state) {
+    let derived = derive(calendar, iso);
+    if (state.orationMass) derived = M.selectWeekdayOrations({
+      derived, rubrics: rubricsOf(calendar), year: year(calendar, iso), structure: completeStructure(calendar),
+      territory: state.orationTerritory || state.territory || null, mass: state.mass || null, owner: state.orationMass,
+    }).derived;
+    if (state.dedicationAttestation) derived = M.selectDedicationAnniversary({
+      derived, rubrics: rubricsOf(calendar), structure: completeStructure(calendar),
+      territory: state.territory || state.dedicationAttestation.territory || null,
+      mass: state.mass || null, formId: state.form || 'main', attestation: state.dedicationAttestation,
+    }).derived;
+    return derived;
+  }
+
   function branchSummary(option) {
     const winner = option.winner;
     return {
@@ -186,15 +215,21 @@ module.exports = function liturgy(realm) {
 
   /* --- rendering one proper, as the reader renders it -------------------- */
 
-  function sourceIndex(event) { // day-reader.js:200
+  function sourceIndex(event) {
     const hook = (event.sourceHooks || []).find((one) => one.kind === 'proper-structure');
     const match = hook && /\/(\d{3})$/.exec(hook.id);
     return match ? Number(match[1]) - 1 : null;
   }
 
+  function sourceProper(event, owner) {
+    const hook = (event.sourceHooks || []).find((one) => one.kind === 'proper-structure');
+    const match = hook && /^([^/]+)\/([^/]+)\/(\d{3})$/.exec(hook.id);
+    const mass = match && match[1] === owner.calendar && (owner.masses || []).find((row) => row.key === match[2]);
+    return mass && (mass.propers || [])[Number(match[3]) - 1] || null;
+  }
+
   function renderedProper(event, mass, owner, bible, fragments, state) { // day-reader.js:1834
-    const index = sourceIndex(event);
-    const proper = index === null ? null : (mass.propers || [])[index];
+    const proper = sourceProper(event, owner);
     if (!proper) return { blocks: [], problem: 'no published proper stands at ' + event.id };
     if (T.isPlaceholder(proper)) return { blocks: [], placeholder: true };
     const section = T.renderProper(proper, bible, fragments, {
@@ -204,7 +239,8 @@ module.exports = function liturgy(realm) {
       translationWitness: state.witness || null,
       heading: 'h3',
       cycle: event.selected && event.selected.cycle || null,
-      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
+      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null,
+      conclusionExecution: event.conclusionExecution || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
     });
     return { blocks: realm.dom.read(section) };
   }
@@ -377,6 +413,8 @@ module.exports = function liturgy(realm) {
     if (state.scriptureCompanion) base.scriptureCompanion = state.scriptureCompanion;
     if (state.alternative) base.alternative = { id: state.alternative };
     if (state.properChoices && Object.keys(state.properChoices).length) base.properChoices = state.properChoices;
+    if (entrance === 'day' && state.orationMass) base.orationMass = state.orationMass;
+    if (entrance === 'day' && state.orationTerritory) base.orationTerritory = state.orationTerritory;
     return base;
   }
 
@@ -425,8 +463,7 @@ module.exports = function liturgy(realm) {
     if (!mass) return [];
     const fragment = document.createDocumentFragment();
     function append(event) {
-      const index = sourceIndex(event);
-      const proper = index === null ? null : (mass.propers || [])[index];
+      const proper = sourceProper(event, owner);
       if (!proper) return;
       const cycle = event.selected && event.selected.cycle;
       const owners = [proper].concat((cycle ? [cycle] : T.cycleKeysOf(proper)).map((key) => T.cycleOf(proper, key)));
@@ -448,8 +485,8 @@ module.exports = function liturgy(realm) {
   function studyDay(calendar, iso, options) {
     const state = normal(options);
     const bible = bibleFor(state.bible);
-    const derived = derive(calendar, iso);
-    const owner = structure(calendar, Payload.dayRoots(derived, state.mass));
+    const derived = selectedDay(calendar, iso, state);
+    const owner = structure(calendar, dayRootsFor(derived, state));
     const branches = state.territory ? derived.options.filter((one) => one.option === state.territory) : derived.options;
     if (!branches.length) throw new Error('the requested territorial branch is not held');
     return branches.map((branch) => {
@@ -459,8 +496,11 @@ module.exports = function liturgy(realm) {
       if (branches.length > 1 || state.territory) asked.calendar.territory = { id: branch.option };
       if (state.mass) asked.selectedReadableFormulary = { id: state.mass };
       if (state.form) asked.form = state.form;
-      const adapted = A.adaptDay({ request: asked, derived, structure: owner,
+      const adapted = A.adaptDay({ request: asked, derived, structure: owner, rubrics: rubricsOf(calendar),
         ordinary: state.ordinary ? ordinaryOf(calendar) : null, nameExecutionUse: options && options.nameExecutionUse || null });
+      const choice = dayReader().primaryDayChoice(adapted, branch);
+      if (choice) return {option: branch.option || null,
+        blocks: realm.dom.read(T.el('p', 'candidate-choice-reason', choice.reason))};
       return { option: branch.option || null,
         blocks: study(adapted).concat(translationApparatus(adapted, owner, state)) };
     });
@@ -583,8 +623,8 @@ module.exports = function liturgy(realm) {
   async function day(calendar, iso, options) {
     const state = normal(options);
     const bible = bibleFor(state.bible);
-    const derived = derive(calendar, iso);
-    const owner = structure(calendar, Payload.dayRoots(derived, state.mass));
+    const derived = selectedDay(calendar, iso, state);
+    const owner = structure(calendar, dayRootsFor(derived, state));
     const ordinary = state.ordinary ? ordinaryOf(calendar) : null;
     const rubrics = rubricsOf(calendar);
     const page = dayReader();
@@ -603,11 +643,12 @@ module.exports = function liturgy(realm) {
       });
       if (state.mass) asked.selectedReadableFormulary = { id: state.mass };
       if (state.form) asked.form = state.form;
+      if (!branch.orationSelection) { delete asked.orationMass; delete asked.orationTerritory; }
       if (multiple || state.territory) asked.calendar.territory = { id: branch.option };
       const heading = multiple ? headingOf(page, branch, ordinal) : null;
       let adapted;
       try {
-        adapted = A.adaptDay({ request: asked, derived, structure: owner, ordinary, nameExecutionUse: options && options.nameExecutionUse || null });
+        adapted = A.adaptDay({ request: asked, derived, structure: owner, rubrics: rubricsOf(calendar), ordinary, nameExecutionUse: options && options.nameExecutionUse || null });
       } catch (error) {
         // page: day-reader.js:1251-1262
         rows.push({ option: branch.option || null, heading, branch: branchSummary(branch),
@@ -615,7 +656,9 @@ module.exports = function liturgy(realm) {
             ' No locality, formulary, or liturgical text was substituted.' });
         continue;
       }
-      const key = resolvedKey(adapted);
+      const choice = page.primaryDayChoice(adapted, branch);
+      const properFormChoice = choice && /^proper-form:/.test(choice.id);
+      const key = choice && !properFormChoice ? null : resolvedKey(adapted);
       const { mass, context } = key ? massContext(calendar, key, state) : { mass: null, context: null };
       const row = {
         option: branch.option || null,
@@ -633,14 +676,37 @@ module.exports = function liturgy(realm) {
         reasoning: realm.dom.read(page.reasoningApparatus(branch, rubrics, owner, adapted, ordinary)),
       };
       common(row, adapted);
+      if (choice) {
+        // The page presents the authorized choice before rendering any body.
+        // Retain its source ID so the terminal's chooser selects the same Mass.
+        row.primaryDayChoice = choice.id;
+        row.title = properFormChoice ? 'Choose a Mass form' : 'Choose a formulary';
+        row.notice = choice.reason;
+        row.resolved = properFormChoice ? adapted.resolved : null;
+        row.events = [];
+        row.sourcePaths = [];
+        row.navigation = navigationFor(Object.assign({}, adapted, {events: []}));
+        rows.push(row);
+        continue;
+      }
+      row.orationChoices = M.weekdayOrationChoices({derived, rubrics, structure: owner,
+        territory: branch.option, mass: state.mass || null});
+      row.dedicationChoices = M.dedicationAnniversaryChoices({derived, rubrics, structure: owner,
+        territory: branch.option, mass: state.mass || null, formId: state.form || 'main'});
+      row.dedicationSelection = adapted.dedicationSelection || null;
+      if (row.dedicationSelection) row.notice += ' Celebration location stated: ' + row.dedicationSelection.label +
+        ' · ' + row.dedicationSelection.locus + '.';
+      row.orationSelection = adapted.orationSelection || null;
+      if (row.orationSelection) row.notice += ' Prayers from ' + row.orationSelection.label +
+        ' · ' + row.orationSelection.locus + '. Other permitted choices are not yet available here; missing texts remain marked.';
       if (context) context.witnesses = witnessesFor(adapted, owner, state);
       row.sourcePaths = sourcePathsFor(adapted, (next) => A.adaptDay({
-        request: next, derived, structure: owner, ordinary,
+        request: next, derived, structure: owner, ordinary, rubrics,
       }));
       // properChoiceRequest, source-choice-controls.js: the same request with one choice made.
       const probe = (id, option) => A.adaptDay({ request: Object.assign({}, asked, {
         properChoices: Object.assign({}, asked.properChoices || {}, { [id]: option }) }),
-      derived, structure: owner, ordinary });
+      derived, structure: owner, ordinary, rubrics });
       row.events = await events(adapted, calendar, mass, bible, state, ordinary, probe);
       rows.push(row);
     }
@@ -769,6 +835,9 @@ module.exports = function liturgy(realm) {
    * view sets them; the terminal reads back what that view writes. */
   async function compare(primary, peer, iso, options) {
     const state = normal(options);
+    if (state.dedicationAttestation) {
+      return {refused: 'Clear the stated celebration location before comparing calendars; confirm it again when returning to this Mass.', territories: []};
+    }
     ['liturgy/reader-state.js', 'liturgy/reader-comparison.js', 'liturgy/reader-compare-view.js',
       'liturgy/day-compare.js'].forEach(realm.script);
     const D = globalThis.TriptychDayCompare;
@@ -828,6 +897,9 @@ module.exports = function liturgy(realm) {
    * the website. No terminal-only query grammar is introduced. */
   async function readerUrl(entrance, calendar, anchor, options, comparison) {
     const state = normal(options);
+    if (state.dedicationAttestation) {
+      throw new Error('The stated celebration location is not carried in a reader link. Clear it before sharing; the location must be confirmed again when opening the link.');
+    }
     const bible = bibleFor(state.bible);
     let asked;
     if (comparison) {
@@ -846,12 +918,13 @@ module.exports = function liturgy(realm) {
         if (state.mass) asked.selectedReadableFormulary = { id: state.mass };
         if (state.form) asked.form = state.form;
         // Validation follows the same independent territorial adaptations as Day.
-        const derived = derive(calendar, anchor);
-        structure(calendar, Payload.dayRoots(derived, state.mass));
+        const derived = selectedDay(calendar, anchor, state);
+        structure(calendar, dayRootsFor(derived, state));
         for (const branch of derived.options) {
           const branchRequest = Object.assign({}, asked, { calendar: { id: calendar } });
+          if (!branch.orationSelection) { delete branchRequest.orationMass; delete branchRequest.orationTerritory; }
           if (derived.options.length > 1) branchRequest.calendar.territory = { id: branch.option };
-          A.adaptDay({ request: branchRequest, derived, structure: structure(calendar),
+          A.adaptDay({ request: branchRequest, derived, structure: structure(calendar), rubrics: rubricsOf(calendar),
             ordinary: state.ordinary ? ordinaryOf(calendar) : null });
         }
       } else {
@@ -885,9 +958,13 @@ module.exports = function liturgy(realm) {
     const parsed = C.parseLegacy(entrance, url.hash, { variantKeys: C.URL_INVENTORY[entrance].dynamicHash });
     const calendar = parsed.recognized.missal || opening().default;
     const ordinary = ordinaryOf(calendar);
-    const derived = entrance === 'day' ? derive(calendar, parsed.recognized.date || dayReader().todayISO()) : null;
+    const derived = entrance === 'day' ? selectedDay(calendar, parsed.recognized.date || dayReader().todayISO(), {
+      orationMass: parsed.recognized['oration-mass'], mass: parsed.recognized.mass,
+      orationTerritory: parsed.recognized['oration-territory'], territory: parsed.recognized.territory,
+    }) : null;
     const owner = structure(calendar, derived
-      ? Payload.dayRoots(derived, parsed.recognized.mass) : parsed.recognized.mass);
+      ? dayRootsFor(derived, { mass: parsed.recognized.mass, orationMass: parsed.recognized['oration-mass'] })
+      : parsed.recognized.mass);
     const structures = { [calendar]: owner };
     const peer = parsed.recognized['peer-missal'];
     if (peer && data('structure/propers/index.json').missals.some((one) => one.id === peer)) {
@@ -938,6 +1015,8 @@ module.exports = function liturgy(realm) {
     if (entrance === 'day') {
       intent.date = state.civilDate;
       intent.mass = state.selectedReadableFormulary && state.selectedReadableFormulary.id || null;
+      intent.orationMass = state.orationMass || null;
+      intent.orationTerritory = state.orationTerritory || null;
       intent.rubrics = state.apparatus.rubrics;
       if (state.comparison) {
         intent.comparing = true;
@@ -952,8 +1031,9 @@ module.exports = function liturgy(realm) {
         intent.comparing = false;
         for (const branch of derived.options) {
           const branchRequest = Object.assign({}, state, { calendar: { id: calendar } });
+          if (!branch.orationSelection) { delete branchRequest.orationMass; delete branchRequest.orationTerritory; }
           if (derived.options.length > 1) branchRequest.calendar.territory = { id: branch.option };
-          const result = A.adaptDay({ request: branchRequest, derived, structure: owner, ordinary });
+          const result = A.adaptDay({ request: branchRequest, derived, structure: owner, ordinary, rubrics: rubricsOf(calendar) });
           const prefix = dayReader().locationPrefix(branch, derived.options.length > 1);
           locations.push(...result.events.map((one) => prefix + one.id));
         }

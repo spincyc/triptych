@@ -1,0 +1,45 @@
+{
+  "schema": "triptych-oration-conclusion-integration-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted",
+  "authority": {
+    "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v1.json",
+    "sha256": "426845246d3f21d0b29b5de3c084cb0b51d280a457f9f768e329b6acd6be2cfb"
+  },
+  "review_performed": [
+    "Read all six independent review verdicts, scope restrictions and substantive exception findings; checked their exact receipt hashes and the finite authority scope. Independent reviewers read the full 755 candidate Latin/English pairs and rule/formula images. This integration review does not claim to have repeated that complete pair or image review.",
+    "Read the complete Python compiler and atomic group projection implementation, including exact source/target/English binding controls, complete Latin cue-prefix validation, separate response handling and unresolved-group behavior."
+  ],
+  "source_merits": [
+    "Accept the 754 exact reviewed source-owner mappings to the existing historical bilingual formula table under RG115–116. Source cue, petition addressee and particular-ending exceptions govern; a generic last-word or keyword heuristic does not.",
+    "The principal prayer owns the first conclusion; admitted commemorations share the second. Only the actual final member supplies its own family and response. Intermediate cue omission is permitted only in an atomically validated whole group under the existing source-owned seating rules.",
+    "The separately marked Amen remains a response. The complete historical formula and original abbreviated quotation remain separately attributable; no new whole-prayer translation, changed appointment or verbatim expanded target claim follows."
+  ],
+  "held": [
+    {
+      "target": [
+        "comm-ss-processi-martiniani-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "281da095eec637af2036219ad483f30405abfe525f831a56b5dc983aa3010ab2",
+      "reason": "held-for-english-address-review"
+    }
+  ],
+  "runtime_conditions": [
+    "Exact authority, source table/rule records, complete Latin proof, translation binding, selected witness and both literal body hashes must match.",
+    "Unbound members, mixed contexts, changed descriptors, unknown families, unsupported placeholders/options and unresolved placement refuse the entire group; preserve literal quotations.",
+    "The generated browser validation map must mechanically equal the single finite authority. No independent editable formula body or second authority is introduced.",
+    "Preserve the prior six RG110 mappings unchanged. No global modern-missal conclusion authority follows."
+  ],
+  "activation_decision": "Authorized to install the exact authority, independent review receipts and source rule record and activate the corresponding Python/JavaScript pins. Consumer integration and full release acceptance require separate validation.",
+  "integration": {
+    "focused_negative_controls": "Agent reports seven focused tests, complete 754-pair reconstruction and Python/JavaScript parity; final canonical rerun pending.",
+    "native_reader": "pending",
+    "source_epoch": "pending",
+    "release_gates": "pending"
+  }
+}

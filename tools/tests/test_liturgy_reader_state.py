@@ -888,7 +888,7 @@ if (input.op === 'fixture-validate') {
     mass.propers.find((proper) => proper.text_status).text_status.scope = 'whole-proper';
   }
   if (input.malformed === 'common-set') {
-    mass.takes_from.common_sets.orations.candidates = ['c3'];
+    mass.takes_from.common_sets['contextual-secret'].candidates = ['anniversary-in-church'];
   }
   const request = {
     schema: C.STATE_SCHEMA, entrance: 'propers', civilDate: null,
@@ -1097,7 +1097,7 @@ class ContractTests(unittest.TestCase):
             ["date", "missal", "bible", "orations", "why", "ordinary",
              "ordinary-lang", "rubrics", "mass", "form", "translation-witness",
              "mode", "location", "text-display", "scripture-companion", "compare", "peer-missal", "territory", "proper-choices",
-             "eucharistic-prayer"],
+             "oration-mass", "oration-territory", "eucharistic-prayer"],
         )
         self.assertEqual(
             propers["hash"],
@@ -1209,7 +1209,8 @@ class FixtureTests(unittest.TestCase):
         for fixture in load_fixtures():
             if fixture["visibility"] == "public-data":
                 for path in fixture["basis"]["paths"]:
-                    self.assertTrue((ROOT / path).is_file(), f"{fixture['id']}: {path}")
+                    file = DATA / path.removeprefix("src/web/data/") if path.startswith("src/web/data/") else ROOT / path
+                    self.assertTrue(file.is_file(), f"{fixture['id']}: {path}")
 
     def test_synthetic_fixtures_are_explicitly_non_public_and_claim_free(self) -> None:
         synthetic = [one for one in load_fixtures() if one["visibility"] == "synthetic-non-public"]
@@ -3196,15 +3197,25 @@ class ParityTests(unittest.TestCase):
             "op": "source-claim-coverage", "id": "roman-1962",
             "mass": "comm-s-bonifatii-martyris",
         })
+        self.assertFalse(any(row["id"].startswith("common-set:")
+                             for row in boniface["unresolvedChoices"]))
+        own_prayers = [event["editionSlotLabel"] for event in boniface["events"]
+                       if event.get("editionSlotLabel") in {"Collect", "Secret", "Postcommunion"}]
+        self.assertEqual(["Collect", "Secret", "Postcommunion"], own_prayers)
+
+        lateran = node_call({
+            "op": "source-claim-coverage", "id": "roman-1962",
+            "mass": "dedicatione-archibasilicae-mi-salvatoris",
+        })
         common_choice = next(
-            row for row in boniface["unresolvedChoices"]
+            row for row in lateran["unresolvedChoices"]
             if row["id"].startswith("common-set:")
         )
         self.assertEqual([option["id"] for option in common_choice["options"]],
-                         ["c3", "c4"])
-        self.assertEqual(boniface["coverage"][0]["completeness"], "partial")
+                         ["anniversary-in-church", "anniversary-outside-church"])
+        self.assertEqual(lateran["coverage"][0]["completeness"], "partial")
         self.assertIn("unresolved-choice", {
-            reason["kind"] for reason in boniface["coverage"][0]["reasons"]
+            reason["kind"] for reason in lateran["coverage"][0]["reasons"]
         })
 
     def test_source_claim_statuses_and_common_set_dispositions_fail_closed(self) -> None:
@@ -3212,7 +3223,7 @@ class ParityTests(unittest.TestCase):
             ("postconciliar", "our-lady-fatima", "mass-status"),
             ("roman-1962", "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
              "proper-status"),
-            ("roman-1962", "comm-s-bonifatii-martyris", "common-set"),
+            ("roman-1962", "dedicatione-archibasilicae-mi-salvatoris", "common-set"),
         )
         for edition, mass, mutation in malformed:
             with self.subTest(mutation=mutation), self.assertRaises(AssertionError):

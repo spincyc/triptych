@@ -231,6 +231,26 @@
     return { candidates: collapsed, folded: folded };
   }
 
+  /** Mass-only observances have their own date and never compete for the Office. */
+  function dateObservanceCandidates(rubrics, owner, isoDate) {
+    return ((rubrics.commemoration || {}).date_observances || []).flatMap(function (rule) {
+      const date = anchor(owner, rule.on_anchor);
+      if (!date) throw new Error('missing calendar anchor for commemoration: ' + rule.on_anchor);
+      if (date !== isoDate) return [];
+      const basis = (rubrics.bases || []).find((one) => one.id === rule.basis);
+      if (!basis || basis.nature !== 'commemoration' || basis.row != null ||
+          basis.competes !== false || basis.commemoration !== 'privileged' ||
+          basis.de_tempore !== false || !classify(rubrics, rule.mass).known) {
+        throw new Error('unclassified dated commemoration: ' + rule.id);
+      }
+      return [{
+        id: 'commemoration:' + rule.id, key: rule.mass, name: rule.label,
+        known: true, basis: basis, row: basis.row, source: 'dated-commemoration',
+        rule: {origin: 'rubric', rule: rule.locus}, territorial: null, certain: true
+      }];
+    });
+  }
+
   /**
    * The Mass a day borrows, where nothing on the date supplies one of its own.
    *
@@ -946,9 +966,11 @@
         what: tied.map((one) => one.name || one.id).join(' and '),
         why:
           'both stand at ' + placeWord(rubrics) + ' ' + best.row +
-          ', and the table orders within a row by a property — movable before fixed, ' +
+          ((rubrics.precedence || {}).unresolved_tie
+            ? '. ' + rubrics.precedence.unresolved_tie
+            : ', and the table orders within a row by a property — movable before fixed, ' +
           'proper before indulted — that a mass key does not carry. This repository ' +
-          'does not choose between them.',
+          'does not choose between them.'),
         seeAlso: stated.map((one) => ({ locus: one.locus, why: one.why }))
       });
       return { winner: null, contest: contest, defeated: defeated, aside: standingAside, tied: tied };
@@ -1182,6 +1204,8 @@
 
     const order = (rubrics.commemoration && rubrics.commemoration.order) || {};
     const surplus = (rubrics.commemoration && rubrics.commemoration.surplus) || {};
+    const privilegedDisplacesOrdinary = ceiling && ceiling.displaced_by_privileged &&
+      eligible.some((one) => one.basis.commemoration === 'privileged');
     let seasonalTaken = false;
 
     for (const loser of eligible) {
@@ -1190,6 +1214,11 @@
 
       if (!ceiling) {
         refusal = { locus: null, why: 'no ceiling in the rubrics source matches this day' };
+      } else if (privilegedDisplacesOrdinary && !privileged) {
+        refusal = {
+          locus: ceilingLocus + ' ' + (ceiling.clause || ''),
+          why: 'the privileged commemoration required on this Sunday displaces the ordinary commemoration of the second-class feast'
+        };
       } else if (admitted.length >= (ceiling.max || 0)) {
         refusal = { locus: surplus.locus || ceiling.clause, why: surplus.latin
           ? 'beyond the number this day admits, and so omitted (' + surplus.latin + ')'
@@ -1530,7 +1559,7 @@
   }
 
   function deriveBranch(rubrics, owner, isoDate, candidates, option, folded, orphanBorrow,
-                        calendarRefusals) {
+                        calendarRefusals, orationSelection) {
     // Calendar computation owns whether it has enough evidence to appoint a
     // day at all. An active refusal therefore precedes every occurrence rule:
     // a rubrical override cannot turn a computation-layer "neither is chosen"
@@ -1543,7 +1572,8 @@
     // A territorial branch may share the objects that came from the year file
     // with another branch. Occurrence-only reductions must not leak from one
     // branch to another, so ranking works on branch-local shallow copies.
-    const effectiveCandidates = candidates.map((one) => Object.assign({}, one));
+    const effectiveCandidates = candidates.map((one) => Object.assign({}, one))
+      .concat(dateObservanceCandidates(rubrics, owner, isoDate));
     // Conditional limits live in the rubrics source beside the proposition the
     // repository has not established. They are evaluated before ranking: a
     // known limitation cannot be replaced by whichever row comparison the
@@ -1557,7 +1587,10 @@
     if (!unsettled.length && ranked.winner) {
       const winnerScoped = sourceUnsettledOn(
         rubrics, effectiveCandidates, ranked.winner, true
-      );
+      ).filter(function (limit) {
+        return !(orationSelection && ranked.winner.key === orationSelection.mass &&
+          limit.scope === orationSelection.resolves_scope);
+      });
       if (winnerScoped.length) {
         unsettled.push.apply(unsettled, winnerScoped);
         // The provisional rank existed only to test the source condition. Once
@@ -1641,6 +1674,14 @@
           sung_non_conventual: orationsFrom(rubrics, winner, sung ? sung.commemorations : [], sung && sung.groups)
         }
       : { all: orationsFrom(rubrics, winner, []) };
+    if (orationSelection && orations.all && winner && winner.key === orationSelection.mass) {
+      orations.all.forEach(function (row) {
+        row.source_key = orationSelection.owner;
+        row.of_name = orationSelection.label;
+        row.why = 'orations explicitly selected under ' + orationSelection.locus;
+        row.locus = orationSelection.locus;
+      });
+    }
     const ceilings = commemorates
       ? { low_mass: low.ceiling, sung_non_conventual: sung ? sung.ceiling : null }
       : null;
@@ -1785,6 +1826,7 @@
         sung && low.commemorations.length !== sung.commemorations.length
       ),
       orations: orations,
+      ...(orationSelection ? {orationSelection: orationSelection} : {}),
       ...(orationExecution(rubrics) ? {oration_execution: {
         ...rubrics.orations.execution,
         slots: [{slot: 'Collect', locus: rubrics.orations.what_counts.locus}]
@@ -1811,7 +1853,7 @@
    * The entry point
    * --------------------------------------------------------------------- */
 
-  function derive(input) {
+  function deriveWithSelection(input, selection) {
     const year = input.year;
     const rubrics = input.rubrics;
     const isoDate = input.date;
@@ -1856,7 +1898,8 @@
         set.unshift(implied);
       }
       return deriveBranch(rubrics, owner, isoDate, set, option, held.folded,
-                          implied ? null : (takes[0] || null), blockingRefusals);
+                          implied ? null : (takes[0] || null), blockingRefusals,
+                          selection && selection.territory === option ? selection : null);
     }
 
     // The borrowed rows carry territorial tags of their own — on the ferias
@@ -1894,8 +1937,208 @@
     };
   }
 
+  function derive(input) {
+    return deriveWithSelection(input, null);
+  }
+
+  // Permissions remain source-owned. The reader supplies an explicit choice;
+  // neither calendar proximity nor the order of held formularies selects one.
+  function weekdayOrationChoices(input) {
+    const derived = input.derived;
+    const rubrics = input.rubrics;
+    const structure = input.structure;
+    if (!derived || !rubrics || !structure || derived.calendar !== rubrics.calendar ||
+        structure.calendar !== rubrics.calendar) return null;
+    const rules = (rubrics.implied || []).filter(function (row) {
+      return row.appointed_mass && row.appointed_mass.oration_scope &&
+        row.appointed_mass.oration_scope.selection;
+    });
+    if (!rules.length) return null;
+    if (rules.length !== 1) throw new Error('ambiguous weekday oration selection rules');
+    const scope = rules[0].appointed_mass.oration_scope;
+    const rule = scope.selection;
+    const branches = derived.options || [];
+    const territory = input.territory || null;
+    const branch = territory ? branches.find(function (row) { return row.option === territory; }) :
+      (branches.length === 1 ? branches[0] : null);
+    if (!branch || derived.season !== rule.season || branch.season !== rule.season) return null;
+    const selected = input.mass || (branch.orationSelection || {}).mass;
+    const readable = branch.readable || [];
+    const weekday = new RegExp(rule.weekday_key_matches);
+    let target = selected ? readable.find(function (row) {
+      return row.key === selected && (row.state === 'option' || row.state === 'said' || row.state === 'unresolved');
+    }) : readable.find(function (row) { return row.state === 'said'; });
+    if (!target && !selected && readable.length === 1 && readable[0].state === 'unresolved') target = readable[0];
+    if (!target || !weekday.test(target.key)) return null;
+    if ((branch.unsettled || []).some(function (row) { return row.scope !== rule.resolves_scope; }) ||
+        (branch.conditions || []).length || (branch.absent || []).some(function (row) { return row.blocks_result; })) return null;
+    const owner = new RegExp(rule.owner_key_matches);
+    const options = (structure.masses || []).filter(function (mass) {
+      const classified = (rubrics.keys || {})[mass.key];
+      const basis = classified && basisOf(rubrics, classified.basis);
+      return owner.test(mass.key) && basis && basis.id === rule.owner_basis && mass.season === rule.season &&
+        !(mass.forms || []).length && scope.slots.every(function (slot) {
+          return (mass.propers || []).filter(function (proper) { return proper.name === slot; }).length === 1;
+        });
+    }).map(function (mass) { return {id: mass.key, label: mass.name}; });
+    return {id: rule.id, mass: target.key, slots: scope.slots.slice(), locus: scope.locus,
+      evidence: scope.evidence, options: options, unavailable: rule.unavailable,
+      complete: rule.complete, territory: branch.option, resolves_scope: rule.resolves_scope};
+  }
+
+  function selectWeekdayOrations(input) {
+    const choices = weekdayOrationChoices(input);
+    const owner = choices && choices.options.find(function (row) { return row.id === input.owner; });
+    if (!owner) throw new Error('the requested weekday oration source is not available for this selection');
+    if (!input.year) throw new Error('selectWeekdayOrations needs the original calendar year');
+    const selection = {id: choices.id, mass: choices.mass, owner: owner.id, label: owner.label,
+      slots: choices.slots, locus: choices.locus, evidence: choices.evidence,
+      complete: choices.complete, unavailable: choices.unavailable,
+      territory: choices.territory, resolves_scope: choices.resolves_scope};
+    const derived = deriveWithSelection({date: input.derived.date, rubrics: input.rubrics, year: input.year}, selection);
+    const branch = derived.options.find(function (row) { return row.option === choices.territory; });
+    if (!branch || !branch.settled || !(branch.readable || []).some(function (row) {
+      return row.key === selection.mass && (row.state === 'said' || row.state === 'option');
+    })) throw new Error('the selected orations do not resolve this calendar branch');
+    return {derived: derived, selection: selection};
+  }
+
+  // An annual Dedication has one conditional Secret. Its location is a fact
+  // supplied for this celebration, never a calendar default or prayer preference.
+  function dedicationAnniversaryChoices(input) {
+    const derived = input.derived, rubrics = input.rubrics, structure = input.structure;
+    if (!derived || !rubrics || !structure || rubrics.calendar !== 'roman-1962' ||
+        derived.calendar !== rubrics.calendar || structure.calendar !== rubrics.calendar) return null;
+    const rule = rubrics.dedication_anniversary_context;
+    if (!rule) return null;
+    if (rule.scope !== 'annual-feast' || rule.fact !== 'celebration-location-relative-to-dedicated-church' ||
+        rule.unknown !== 'unresolved' || Object.prototype.hasOwnProperty.call(rule, 'default') ||
+        !Array.isArray(rule.keys) || !rule.target || !rule.required_selection || !rule.conditions) {
+      throw new Error('unsupported Dedication location source rule');
+    }
+    const branches = derived.options || [], territory = input.territory || null;
+    const branch = territory ? branches.find(function (row) { return row.option === territory; }) :
+      (branches.length === 1 ? branches[0] : null);
+    if (!branch || !branch.settled || (branch.unsettled || []).length ||
+        (branch.conditions || []).length || (branch.absent || []).some(function (row) { return row.blocks_result; })) return null;
+    const readable = branch.readable || [];
+    const candidates = input.mass ? readable.filter(function (row) {
+      return row.key === input.mass && (row.state === 'said' || row.state === 'option');
+    }) : readable.filter(function (row) { return row.state === 'said'; });
+    if ((!input.mass && branch.choiceRequired) || candidates.length !== 1 ||
+        !rule.keys.includes(candidates[0].key) || (input.formId || 'main') !== rule.form_id) return null;
+    const mass = (structure.masses || []).find(function (row) { return row.key === candidates[0].key; });
+    const common = (structure.masses || []).find(function (row) { return row.key === rule.target.mass; });
+    const reference = mass && mass.takes_from, selections = reference && reference.common_sets;
+    const definitions = common && common.common_sets;
+    if (!mass || !common || (mass.forms || []).length || (common.forms || []).length ||
+        !reference || reference.mass !== common.key || !selections || !definitions) {
+      throw new Error('Dedication location requires its exact annual Common reference');
+    }
+    const fixed = selections[rule.required_selection.group], unresolved = selections[rule.target.group];
+    const group = definitions[rule.target.group];
+    if (!fixed || fixed.state !== 'selected' || fixed.option !== rule.required_selection.option ||
+        !unresolved || unresolved.state !== 'unresolved' || !Array.isArray(unresolved.candidates) ||
+        !group || !group.options || Object.keys(selections).length !== Object.keys(definitions).length) {
+      throw new Error('Dedication location cannot replace another Common disposition');
+    }
+    const options = Object.keys(rule.conditions).map(function (relation) {
+      const condition = rule.conditions[relation], members = condition && group.options[condition.option];
+      const sourceRows = (common.propers || []).filter(function (proper) { return proper.name === condition.proper; });
+      if (!condition || !Array.isArray(members) || members.length !== 1 || members[0] !== condition.proper ||
+          sourceRows.length !== 1 || !unresolved.candidates.includes(condition.option) ||
+          typeof condition.label !== 'string' || !condition.label) {
+        throw new Error('Dedication location condition has no exact available Common member');
+      }
+      return {id: relation, option: condition.option, proper: condition.proper, label: condition.label};
+    });
+    if (options.length !== 2 || unresolved.candidates.length !== options.length ||
+        new Set(options.map(function (row) { return row.option; })).size !== options.length) {
+      throw new Error('Dedication location conditions do not cover exactly the unresolved candidates');
+    }
+    return {id: rule.id, calendar: rubrics.calendar, mass: mass.key, formId: rule.form_id,
+      civilDate: derived.date, territory: branch.option, target: Object.assign({}, rule.target),
+      options: options, locus: rule.locus, why: rule.why};
+  }
+
+  function selectDedicationAnniversary(input) {
+    const choices = dedicationAnniversaryChoices(input), attestation = input.attestation;
+    const fields = ['calendar', 'civilDate', 'formId', 'mass', 'relation', 'schema', 'territory'];
+    if (!choices || !attestation || typeof attestation !== 'object' || Array.isArray(attestation) ||
+        JSON.stringify(Object.keys(attestation).sort()) !== JSON.stringify(fields) ||
+        attestation.schema !== 'triptych-dedication-location/v1' ||
+        ['calendar', 'civilDate', 'formId', 'mass', 'territory'].some(function (field) {
+          return attestation[field] !== choices[field];
+        })) throw new Error('Dedication location needs an explicit attestation for this date, Mass, form and branch');
+    const condition = choices.options.find(function (row) { return row.id === attestation.relation; });
+    if (!condition) throw new Error('the stated location is not a source-defined Dedication condition');
+    const selection = {id: choices.id, calendar: choices.calendar, mass: choices.mass, formId: choices.formId,
+      civilDate: choices.civilDate, territory: choices.territory, relation: condition.id,
+      target: choices.target, option: condition.option, proper: condition.proper, label: condition.label,
+      locus: choices.locus, why: choices.why, attestation: Object.assign({}, attestation)};
+    const derived = Object.assign({}, input.derived, {options: input.derived.options.map(function (branch) {
+      return branch.option === choices.territory ? Object.assign({}, branch, {dedicationSelection: selection}) : branch;
+    })});
+    return {derived: derived, selection: selection};
+  }
+
+  function projectDedicationAnniversary(input) {
+    const mass = input.mass, rows = input.properRows, selection = input.selection;
+    if (!selection) return {mass: mass, rows: rows};
+    const admitted = selectDedicationAnniversary(Object.assign({}, input, {
+      mass: mass.key, formId: selection.formId, territory: selection.territory,
+      attestation: selection.attestation
+    })).selection;
+    function same(left, right) {
+      if (left === right) return true;
+      if (!left || !right || typeof left !== 'object' || typeof right !== 'object') return false;
+      if (Array.isArray(left) !== Array.isArray(right)) return false;
+      const keys = Object.keys(left).sort(), other = Object.keys(right).sort();
+      return JSON.stringify(keys) === JSON.stringify(other) && keys.every(function (key) { return same(left[key], right[key]); });
+    }
+    if (!same(selection, admitted)) throw new Error('Dedication projection does not match the admitted location');
+    const common = input.structure.masses.find(function (row) { return row.key === selection.target.mass; });
+    const reference = JSON.parse(JSON.stringify(mass.takes_from));
+    reference.common_sets[selection.target.group] = {state: 'selected', option: selection.option};
+    const grouped = new Set(), included = new Set();
+    Object.keys(common.common_sets).forEach(function (group) {
+      const options = common.common_sets[group].options, disposition = reference.common_sets[group];
+      Object.values(options).forEach(function (members) { members.forEach(function (name) { grouped.add(name); }); });
+      if (!disposition || disposition.state !== 'selected' || !Array.isArray(options[disposition.option])) {
+        throw new Error('Dedication projection retains an unresolved Common group');
+      }
+      options[disposition.option].forEach(function (name) { included.add(name); });
+    });
+    const appointed = common.propers.map(function (proper, index) { return {proper: proper, index: index}; })
+      .filter(function (row) { return !grouped.has(row.proper.name) || included.has(row.proper.name); });
+    const existing = appointed.filter(function (row) { return row.proper.name !== selection.proper; });
+    if (!Array.isArray(rows) || rows.length !== existing.length || rows.length !== mass.propers.length ||
+        rows.some(function (row, index) {
+          return !Number.isInteger(row.sourceIndex) || row.sourceIndex < 0 ||
+            !same(row.proper, mass.propers[row.sourceIndex]) || row.proper.name !== existing[index].proper.name ||
+            (row.sourceMass && row.sourceMass !== mass.key) ||
+            (row.sourceProperIndex !== undefined && row.sourceProperIndex !== row.sourceIndex);
+        })) throw new Error('Dedication projection must preserve the exact source-ordered annual formulary');
+    let current = 0;
+    const projected = appointed.map(function (row, index) {
+      if (row.proper.name === selection.proper) return {
+        proper: row.proper, sourceIndex: index, sourceMass: common.key, sourceProperIndex: row.index
+      };
+      const held = rows[current++];
+      return {proper: held.proper, sourceIndex: index, sourceMass: held.sourceMass || mass.key,
+        sourceProperIndex: held.sourceProperIndex === undefined ? held.sourceIndex : held.sourceProperIndex};
+    });
+    return {mass: Object.assign({}, mass, {takes_from: reference,
+      propers: projected.map(function (row) { return row.proper; })}), rows: projected};
+  }
+
   return {
     derive: derive,
+    weekdayOrationChoices: weekdayOrationChoices,
+    selectWeekdayOrations: selectWeekdayOrations,
+    dedicationAnniversaryChoices: dedicationAnniversaryChoices,
+    selectDedicationAnniversary: selectDedicationAnniversary,
+    projectDedicationAnniversary: projectDedicationAnniversary,
     // Exposed for the page's own labelling; not part of the derivation.
     weekdayOf: weekdayOf,
     shift: shift,

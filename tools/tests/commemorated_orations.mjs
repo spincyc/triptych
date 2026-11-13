@@ -31,14 +31,24 @@ let checks=0;
 for (const mode of ['read','missal']) for(const language of ['la','en']) {
  const result=adapt('2026-03-17',mode,language);
  assert.equal(prayers(result).length,3);assert.equal(flat(result).length,3);
- for(const event of prayers(result)) {const group=event.orationGroups[0];assert.equal(group.kind,'commemoration');assert.equal(group.conclusion_group,2);assert.equal(group.count,1);assert.equal(group.members[0].of_name,'S. Patricii Episcopi et Confessoris');assert.ok(['source-wording','unresolved'].includes(group.execution.state));}
+ for(const event of prayers(result)) {const group=event.orationGroups[0];assert.equal(group.kind,'commemoration');assert.equal(group.conclusion_group,2);assert.equal(group.count,1);assert.equal(group.members[0].of_name,'S. Patricii Episcopi et Confessoris');assert.equal(group.execution.state,event.editionSlotLabel==='Postcommunion'?'unresolved':'source-derived-complete');
+  if(event.editionSlotLabel!=='Postcommunion') {
+   const execution=group.members[0].conclusionExecution.languages[language];
+   assert.equal(execution.response.provider_id,group.members[0].id);
+   assert.equal(execution.member.source_text,group.members[0].selected.text);
+  }
+ }
  for(const member of flat(result)) if(language==='la')assert.equal(member.selected.text,raw(member).text);
  assert.equal(result.explicitAbsences.some(a=>a.reason==='intermediate-conclusion-spans-unbound'),false);checks++;
 }
 for(const date of ['2026-01-19','2026-03-04','2026-03-27','2026-10-21']) {
  const result=adapt(date);assert.equal(prayers(result).length,3);
  assert.ok(prayers(result).every(e=>e.orationGroups.length===2&&e.orationGroups.every(g=>g.conclusion_group===2)));
- assert.equal(result.explicitAbsences.filter(a=>a.reason==='intermediate-conclusion-spans-unbound').length,3);
+ assert.equal(result.explicitAbsences.filter(a=>a.reason==='intermediate-conclusion-spans-unbound').length,date==='2026-03-27'?2:3);
+ if(date==='2026-03-27') {
+  const post=prayers(result).find(e=>e.editionSlotLabel==='Postcommunion');
+  assert.deepEqual(post.orationGroups.flatMap(g=>g.members.map(m=>m.conclusionExecution.languages.la.member.role)),['petition','conclusion-provider']);
+ }
  for(const member of flat(result))assert.equal(member.selected.text,raw(member).text);checks++;
 }
 const advent=derive('2026-12-03').options[0];

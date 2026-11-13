@@ -208,13 +208,14 @@ open_collation_items:
   six Commons print more than one mutually exclusive set of orations. Their
   `common_sets` definitions and inbound references are machine-readable.
   The earlier seven-row unresolved list is superseded: Stanislaus, Venantius,
-  Sabina and Felicitas have later bounded appointment repairs. Three references
-  still carry unresolved candidates: Boniface between c3/c4 and the two
-  Dedication feasts among the three Dedication contexts. Boniface's own three
-  orations override every inherited prayer; the 2026-10-22 image recheck confirms
-  that its Secret is C 3 and Postcommunion C 4, so no uniform Common set is
-  selected. The Dedication contexts remain unchosen. Candidate identity is not
-  permission to appoint their union or infer the missing contextual facts
+  Sabina and Felicitas have later bounded appointment repairs. The unresolved references
+  have been reduced to the two Dedication feasts' anniversary Secrets, whose
+  inside/outside church contexts remain unchosen. Boniface's own three orations
+  override every inherited prayer; the 2026-10-22 image recheck confirms that
+  its Secret is C 3 and Postcommunion C 4. No uniform Common set is appointed
+  or needed, so its wholly replaced Common group carries no selection.
+  Candidate identity is not permission to appoint a union or infer missing
+  contextual facts
 - pre-1960 commemorations, suffrages, and suppressed octave texts were omitted
   as not appointed in 1962; confirm against the controlling edition's rubrics
 - 60 commemorations stood inside another celebration's name, in the shape the
@@ -9260,20 +9261,23 @@ sections:
         verses:
         - book: Matthew
           ranges:
-          - begin: {chapter: 21, verse: 9}
-            end: {chapter: 21, verse: 9}
+          - begin:
+              chapter: 21
+              verse: 9
+            end:
+              chapter: 21
+              verse: 9
           ref: Matthew 21:9
         - book: Psalms
           ranges:
-          - begin: {chapter: 147}
-            end: {chapter: 147}
+          - begin:
+              chapter: 147
+            end:
+              chapter: 147
           ref: Psalm 147
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        text: |
+          Omnes collaudant nomen tuum, et dicunt: « Benedictus qui venit in nomine Domini: Hosanna in excelsis ».
+        notes: Exact bounded body from direct 2026-11-12 source/target page-image collation. Qualified United States whole-expression assessment; moderate confidence. Publication is limited to the code-pinned exact owner/body/controller/surface tuple under method english-completion-20261029-finite-latin-v1. The source record itself grants no authority or wider scope. A changed English body or controller requires its own review; no vanished historical receipt is replayed or inferred.
       - "name": "Procession Antiphon"
         "ordinary_disposition":
           "kind": "unplaced"
@@ -10219,12 +10223,15 @@ sections:
       - name: Prayer after the Prostration
         incipit: Deus, qui peccati veteris hereditariam mortem
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        text: |
+          Deus, qui peccati veteris hereditariam mortem, in qua posteritatis genus omne successerat, Christi tui, Domini nostri, passione solvisti: da, ut, conformes eidem facti; sicut imaginem terreni, naturae necessitate portavimus, ita imaginem caelestis, gratiae sanctificatione portemus. Per eundem Christum Dominum nostrum. Omnes respondent: Amen.
+        text_structure:
+          text_sha256: 019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d
+          checked: 'Fresh 200/400 dpi target collation on 2026-11-12; Omnes respondent: is a nonspoken action; the following Amen remains spoken.'
+          actions:
+          - kind: rubric
+            offset: 320
+            text: 'Omnes respondent:'
       - name: First Lesson
         source: scripture
         verses:
@@ -10595,12 +10602,15 @@ sections:
       - name: Third Prayer after Communion
         incipit: Reminiscere miserationum tuarum
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        text: |
+          Reminiscere miserationum tuarum, Domine, et famulos tuos aeterna protectione sanctifica, pro quibus Christus, Filius tuus, per suum cruorem, instituit paschale mysterium. Per eundem Christum Dominum nostrum. R. Amen.
+        text_structure:
+          text_sha256: 69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9
+          checked: Fresh 200/400 dpi target collation on 2026-11-12; R. is a nonspoken action; the following Amen remains spoken.
+          actions:
+          - kind: rubric
+            offset: 208
+            text: R.
     - key: easter-vigil
       name: Easter Vigil
       registry: '29'
@@ -26992,18 +27002,11 @@ sections:
           - "kind": "rubric"
             "offset": 110
             "text": "(T. P. Alleluia.)"
-      - name: "Secret"
-        source: "composed"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact622/printed541, unit2692; appointment read on the page
-          images on 2026-10-23. No complete earlier-witness word collation or
-          independent publication basis is established here; no body is supplied.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      - name: Secret
+        source: composed
+        text: |
+          Accipe, quaesumus, Domine, munera laetantis Ecclesiae, et, beatae Virginis Mariae Reginae suffragantibus meritis, ad nostrae salutis auxilium provenire concede. Per Dominum.
+        notes: 1962 Vatican typical edition, registered CMAA facsimile artifact p. 622 / printed p. 541, unit 2692, exact Queenship Secret only. Complete body collated on 2026-11-12. Exact finite qualified-adaptation evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. Retain the printed short conclusion.
       - "name": "Communion"
         "source": "composed"
         "notes": "Whole chant collated on the 1962 target page images and independently witnessed in Pustet Ratisbon1862 at printedp.[137]; exact Latin publication evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. No historical English is inferred."
@@ -27015,18 +27018,11 @@ sections:
           - "kind": "rubric"
             "offset": 135
             "text": "(T. P. Alleluia.)"
-      - name: "Postcommunion"
-        source: "composed"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact622/printed541, unit2695; appointment read on the page
-          images on 2026-10-23. No complete earlier-witness word collation or
-          independent publication basis is established here; no body is supplied.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+      - name: Postcommunion
+        source: composed
+        text: |
+          Celebratis solemniis, Domine, quae pro sanctae Mariae Reginae nostrae festivitate (memoria) peregimus: eius, quaesumus, nobis intercessione fiant salutaria; in cuius honore sunt exsultanter impleta. Per Dominum.
+        notes: 1962 Vatican typical edition, registered CMAA facsimile artifact p. 622 / printed p. 541, unit 2695, exact Queenship Postcommunion only. Complete body collated on 2026-11-12. Exact finite qualified-adaptation evidence is recorded in roman-1962-proper-latin-provenance-v1.toml. Retain the printed short conclusion and the parenthetical commemoration alternative.
       notes: >-
         The dated May31 feast heading, complete two-page context and appointment
         directives were checked on the registered 1962 CMAA facsimile page
@@ -37724,7 +37720,7 @@ sections:
           inveniri mereamur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui
           tecum vivit et regnat in unitate.
     - key: litania-maior
-      name: Litania maior; S. Marci Evangelistae
+      name: 'S. Marci Evangelistae'
       registry: '1962-04-25'
       date: 04-25
       rank: II
@@ -40248,10 +40244,6 @@ sections:
           sentiamus effectum. Per Dominum.
       takes_from:
         mass: commune-martyrum-tempore-paschali-1
-        common_sets:
-          orations:
-            state: unresolved
-            candidates: [c3, c4]
         citation: Commune Sanctorum [15]
       notes: >-
         The three complete local orations were rechecked on 2026-10-22 in the
@@ -40259,9 +40251,9 @@ sections:
         1862, artifact p. 531 / printed p. 445 (IA leaf n530). The historical
         page carries each complete petition and Per Dominum. conclusion.
         The Collect is marked P, Secret C 3 and Postcommunion C 4. A single
-        Common oration-set selection cannot express that mixed source direction;
-        the existing unresolved c3/c4 metadata stays explicit, while the three
-        local orations override every inherited prayer. Tempore paschali the
+        Common oration-set selection cannot express that mixed source direction.
+        The three local orations replace every inherited oration family, so the
+        wholly replaced Common group requires no selection. Tempore paschali the
         source appoints Common Martyrs I [15]; extra tempus paschale it names
         Common of one Martyr III [6]. The existing single-form referral represents
         the Paschal appointment only; no extra-Paschal or votive use is inferred.
@@ -40937,12 +40929,9 @@ sections:
       propers:
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        text: |
+          Deus, qui Ecclesiam tuam in apostolicae petrae soliditate fundatam, ab infernarum eruis terrore portarum: praesta, quaesumus; ut, intercedente beato Urbano Martyre tuo atque Summo Pontifice, in tua virtute persistens, continua securitate muniatur. Per Dominum.
+        notes: Exact bounded body from direct 2026-11-12 source/target page-image collation. Qualified United States whole-expression assessment; moderate confidence. Publication is limited to the code-pinned exact owner/body/controller/surface tuple under method english-completion-20261029-finite-latin-v1. The source record itself grants no authority or wider scope. A changed English body or controller requires its own review; no vanished historical receipt is replayed or inferred.
       notes: >-
         The held controlling edition at artifact PDF p. 616, printed p. 535,
         marginal 2643A, expressly selects Papal orations II loco. The existing

@@ -3181,6 +3181,70 @@ and are not promised by this work unit.
 
 <!-- promised-deliverable: missal-reader-english-completion-2026-10-29 -->
 
+**Resumed 2026-11-12.** The maintainer requests completed oration sourcing and
+clean, complete English and Latin rendering for every daily Mass of the 1962
+and postconciliar missals, with useful parallel source and implementation work.
+This resumes the stopped source work and explicitly includes Latin delivery;
+it does not waive the existing source, edition, publication or fidelity gates.
+The existing study-translation route remains the working basis pending the
+maintainer's answer about approved English. No new translation or source
+admission is established by resumption itself.
+
+Fresh owning reports reproduce the last English Proper counts below. They also
+show 1,411/1,448 represented Roman 1962 Latin Proper targets available and no
+available postconciliar composed Latin Proper target bodies. Accepted English
+overlays do not by themselves supply publishable target Latin. The annual
+structural audit is therefore insufficient to establish bilingual completion.
+The existing annual matrix also leaves the source of Ordinary Time weekday
+orations unselected in the postconciliar reader; explicit source-supported
+selection is being implemented without making one permitted choice mandatory.
+
+The previous stop's temporary candidate trees are absent from this checkout.
+Retained decisions and hashes are historical evidence, not recovered payloads.
+The six bounded Roman source candidates and the modern source/English
+corrections are being reconstructed from their actual witnesses before review
+and integration. Nomenclature and older-recension expansion remain separate
+work; neither is a prerequisite invented for this request.
+
+The resumed workspace's publication target is `feature/missal-reader` under
+its current workspace instructions. The historical main-publication direction
+below describes the earlier work and is not a new authorization to publish
+this checkpoint to main or replace the rejected remote feature history.
+
+The first resumed cohort has actual source and translation admissions under
+`workflows/reviews/missal-reader-resume-2026-11-12`, with exact predecessors
+preserved. The current reader work adds explicit weekday oration selection,
+church-specific dedication context, visible historical Latin qualifications,
+and separately sourced conclusions with atomic commemoration-group handling.
+The Roman calendar's Greater Litanies and short-year final Sundays have
+source-reviewed corrections. Source-epoch acceptance and 251 source regression
+tests pass. Generated browser products and their remaining consumer checks
+follow the source commit: chronology projections correctly include changed
+calendar inputs in their revision timestamps, so an uncommitted build cannot
+provide the required reproducibility proof. The bilingual annual promise
+remains open. Further Common, temporal and
+sanctoral source candidates remain separate from the admitted cohort.
+
+The first source-epoch successor is independently accepted: all 7,264 earlier
+input paths remain, 185 explicit inputs are added, and all 17 original raw
+replays and 25 complete direct-public-domain proof records remain exact. The
+owning source checks and producer-input audits pass. The 754 admitted
+source-owned conclusion descriptors preserve quoted abbreviations and provide
+complete reading text only when every member of the relevant language group
+is bound. The six-year reader sweep returns 133,512 projections with no
+source-owner or atomic-group integrity errors; its 72 retained exceptions
+identify Christmas-octave commemoration ownership and three Ember Saturday
+collisions. Those counts describe checked projections, not complete Masses.
+
+Whole-year completion remains open. Reviewed next work includes the Christmas
+and Ember appointments, Lenten prayers over the people and their Ordinary
+placement, additional complete conclusions, and further bounded prayer-source
+admissions. Palm Sunday's newly supplied procession antiphon still repeats an
+embedded Gospel quotation as separately labelled Bible reference text in the
+reader; its citation roles need a source-backed correction. Historical source
+availability and study English continue to be distinguished from authenticated
+2008 wording and approved English.
+
 **In progress.** The maintainer requests completion of the missal reader,
 English translations of all its texts, and maximum useful parallel agent work.
 This extends the existing annual-content promise; it does not replace its

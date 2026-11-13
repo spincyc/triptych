@@ -1,0 +1,161 @@
+{
+  "schema": "triptych-legacy-three-cold-review/v1",
+  "reviewed_on": "2026-11-12",
+  "status": "accept-source-fidelity-candidate-root-integration-pending",
+  "review_json_sha256": "948252ae7aa66d17f6778dfc8506e9124a6d80543d2f4a5dc0b36fc25ee65cc0",
+  "overlay_patch_sha256": "d5c4bbc1a80082aed0a0225846beea80b5a4fd7ac0eccbdd0850006a4efab5a0",
+  "candidate_overlay_sha256": "eedc0f3bacc792b4161540af00e356b8189c82966a6d07db091f6ca9bd769f6c",
+  "source_overlay_sha256": "88e54e407656a75ee00dab1ac029cf960612c65aabbcde78d4e82236486b3d27",
+  "identities": [
+    [
+      "advent-2",
+      "main",
+      "Prayer over the Offerings",
+      "all",
+      1
+    ],
+    [
+      "advent-3",
+      "main",
+      "Prayer over the Offerings",
+      "all",
+      1
+    ],
+    [
+      "easter-4",
+      "main",
+      "Prayer over the Offerings",
+      "all",
+      1
+    ]
+  ],
+  "english_edits": {
+    "advent-2": "Remove the two excess terminal periods after Through Christ our Lord.",
+    "advent-3": "Remove the two excess terminal periods after Through Christ our Lord.",
+    "easter-4": "Replace give thanks with rejoice; all other English unchanged."
+  },
+  "independent_findings": [
+    "The three historical readings are accurately transcribed from Wilson1894 printed214/AP307, Feltoe1896 printed112/AP136, and Wilson1894 printed94/AP187, with the declared contraction/line-break normalization.",
+    "The actual historical conclusion cues are retained without being falsely reported as complete formulas.",
+    "Pustet1862 printed180/parentAP266 separately prints the full short formula, with Amen as a separate response. GIRM77 in secondary2002 AP22 supplies the bounded rule selecting this ending for these three offerings prayers; none names the Son at the petition end.",
+    "The Advent2 comparison differs by declared word order and conclusion cue. Advent3 petition agrees after stated display/contraction normalization. Easter4 main text has nominative perpetua versus secondary2002 genitive perpetuae, and a different printed conclusion cue. The complete prayer comparison introduces no further lexical difference.",
+    "Rejoice is the fitting intransitive rendering of gratulari here. Existing source-qualified study English otherwise preserves the petition sense within its non-approved editorial route.",
+    "The cold-review objection to categorical attachment of historical perpetua to operatio was accepted and removed in the reviewed revision.",
+    "All 13 candidate file hashes and sizes match the revised review manifest. All TOML files parse. The actual base and proposed overlay differ only at entry indices0,1,6; entries remain173; all other entries and all other top-level data, including untranslated and English quarantine, remain identical.",
+    "The overlay patch passes git apply --check against the inspected canonical overlay.",
+    "Whole Wilson1894 and secondary2002 PDFs, exact Feltoe1896 PDF, and retained Pustet page hashes match their registered controllers. Independent pdftoppm renders of all eleven inspected pages are byte-identical to the images actually read."
+  ],
+  "accepted_after_revision": [
+    "Easter4 syntax metadata now states the witnessed nominative/genitive difference without categorical operatio attachment.",
+    "Wilson excerpt metadata explicitly preserves the separate Google-footer rights status and asserts no project licence over scan/source/Google matter."
+  ],
+  "limits": [
+    "Acceptance reaches these three source/fidelity corrections only. It supplies no new English coverage and closes no remaining67 legacy70 rows, no lost first8 packet, and no original116 history.",
+    "English is original project study English, not approved ICEL English and not for liturgical recitation. Secondary2002 is not authenticated printed2002 or2008 target fidelity.",
+    "Modern target PDF and target rendered images remain restricted scratch evidence. Historical Latin and new English use the existing independently sourced public-domain/project-created route.",
+    "Root must integrate new Wilson binary excerpts through current hash-bound artifact-delivery policy, preserve the exact candidate source manifests/passages, and run owning source/publication gates after integration. This cold review does not claim the full canonical source-library or browser rendering gates passed."
+  ],
+  "historical_render_sha256": {
+    "wilson-ap307": "847fe289ec7628bcdd55fa875dc6e02b6b92e5d17bca27ba14e130cc2f5d0a13",
+    "feltoe-ap136": "638521a65fd998168d90ffdea54d49023819d15eb4fbecafb7a72af26915713a",
+    "wilson-ap187": "a92ba41292b23bc2b6dfa69d2e2c205c0c7c7bdb9917fa40e36f848f2ae14481",
+    "pustet-ap266": "125b137bd87642f04ffe071ddb4eaf5f05b1c615237091c97ada3a2cd97015e8"
+  },
+  "secondary_render_checks": {
+    "22": {
+      "sha256": "f4f6223c61e3086c23242b0985723e598473bb3dfb398a1cf4e5abd0d5ad6728",
+      "matches_previously_visually_read_render": true
+    },
+    "87": {
+      "sha256": "b7e7c895fd5344cde93d3f60ca11898e5026bc3589a168994361a013ac299d96",
+      "matches_previously_visually_read_render": true
+    },
+    "88": {
+      "sha256": "02f1ca2e50355c858a8631ecfdf17d356f47c879b352b68458df355ef2fecb7f",
+      "matches_previously_visually_read_render": true
+    },
+    "92": {
+      "sha256": "f295bfbb78d884c751b112228ad873bbdcfd293c8ac8bc4df128bd1ef3b134b4",
+      "matches_previously_visually_read_render": true
+    },
+    "93": {
+      "sha256": "926b77991b62dafae147def5ff26731a4c99460b6f85bedfbe59f8982f613903",
+      "matches_previously_visually_read_render": true
+    },
+    "241": {
+      "sha256": "a34d3685b6429c8ce032757bbb5927edd7b11ace4a5a910d18beac5ceabee8bb",
+      "matches_previously_visually_read_render": true
+    },
+    "242": {
+      "sha256": "5f085c7e71163473ef942c51d1f4f027296fb2ae9bee1be0cc97b539e1a1f838",
+      "matches_previously_visually_read_render": true
+    }
+  },
+  "candidate_files": [
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "eedc0f3bacc792b4161540af00e356b8189c82966a6d07db091f6ca9bd769f6c",
+      "bytes": 999501
+    },
+    {
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-77.toml",
+      "sha256": "c774e45d39b13dc5742415a42bde193c08e3dd04e1b403f71c9540e6545d20b2",
+      "bytes": 1202
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/legacy-study-review-20261112-short-conclusion.toml",
+      "sha256": "8b85d7f91a2f724852434830c7d88457cd285c1adaecafe6c632e4a5bfe6563e",
+      "bytes": 1141
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/legacy-study-review-20261112-advent-2-offerings-comparison.toml",
+      "sha256": "9a5db5f6e40d77c4984d53355a02f98f90345b273f1eb3e4f3cf40353adf4c09",
+      "bytes": 1458
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/legacy-study-review-20261112-advent-3-offerings-comparison.toml",
+      "sha256": "ec19f4c2c8f4ae9192c18a8003781d3ffd9df500e30d27acb66af0c37017c4a0",
+      "bytes": 1434
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/legacy-study-review-20261112-easter-4-offerings-comparison.toml",
+      "sha256": "d4b07da7aa0d547ddbf21ab4665bdf216e066816bfe333148a177cb20af3bcd4",
+      "bytes": 1570
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/legacy-study-review-20261112-p214-bafffb59/artifact.toml",
+      "sha256": "cecdc92ab24f814d31e12935c004bc2e98789772b667feabd23dc3d16df53188",
+      "bytes": 1969
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/legacy-study-review-20261112-p214-bafffb59/page.pdf",
+      "sha256": "bafffb59b95d2f1dc3dd24ed2e8c05a6ddd7e84f06163424a0a77e401338562d",
+      "bytes": 124859
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/legacy-study-review-20261112-p94-1d03f8cb/artifact.toml",
+      "sha256": "381104f1cef437f1d3ee357d8010ac24b9e1836e4f9a1866b6def7a911aa8858",
+      "bytes": 1966
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/legacy-study-review-20261112-p94-1d03f8cb/page.pdf",
+      "sha256": "1d03f8cbec5117b546d56751e49d3a48c4894d23830717b9b5080b69ec75f3d5",
+      "bytes": 101285
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/legacy-study-review-20261112-advent-2-offerings-source.toml",
+      "sha256": "d9c9ea3b8b7f2f3829a51637f0b8b5bfdde2a78576f8849e462195d5288b00ef",
+      "bytes": 1703
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/legacy-study-review-20261112-easter-4-offerings-source.toml",
+      "sha256": "7cf755a2b56398e37f38c51aeced8aecafd7521bbc3c9d0fa031b736adfc036d",
+      "bytes": 1827
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/legacy-study-review-20261112-advent-3-offerings-source.toml",
+      "sha256": "c540fc655ab0bfd227e3dea0b90f847bc6d475d7b57af11edf1fc966042bec09",
+      "bytes": 1640
+    }
+  ]
+}

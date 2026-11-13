@@ -1,0 +1,71 @@
+{
+  "schema": "triptych-legacy-fourth-cold-review/v1",
+  "reviewed_on": "2026-11-12",
+  "status": "accept-source-fidelity-candidate-root-integration-pending",
+  "review_json_sha256": "19a75a5e31816fafc992123b0262f4926beda80939fa26073a095c12b2b4861a",
+  "overlay_patch_sha256": "1ea480c82cea76120cca8ace7a62436e87cb0f19e9066bf3868c26a204e9fdd4",
+  "candidate_overlay_sha256": "58fb71285326ac4448f78c8d55b0e2fed12f48b64a42a523dddae997d639ab8b",
+  "identity": [
+    "easter-4",
+    "main",
+    "Collect",
+    "all",
+    1
+  ],
+  "entry_index": 5,
+  "findings": [
+    "Wilson1894 printed100/AP193 first prayer was independently inspected at full-page resolution and again at3600pixels. The candidate accurately removes OCR/marginal debris and preserves source punctuation, all petition words, and actual Per. cue.",
+    "Secondary2002 AP241-242 gives the exact petition abridgment stated in the candidate: the contiguous words Spiritu sancto renatos regnum tuum tribuas introire, atque are omitted after ut; the remaining petition words agree, with stated display/capitalization differences.",
+    "The complete old Latin long conclusion was read on the hash-checked Pustet1862 retained extract a8fa7ec08dab8614ecfb0563a15c3725cf670ddac6d04dbf0b0caeed6d561975, first page/originalAP88/printed2, and compared with checked text e085b59f15592f63937a0a9665b9ac228b96a32295d7c4116a054dc177c8f602 physical line3. The separate Contra persecutores petition is not transferred.",
+    "GIRM54 in secondary2002 AP18 supplies the matching Per Dominum long-conclusion branch, with Amen a separate congregational response. The target Collect itself prints that branch cue.",
+    "The proposed added English faithfully translates the independently witnessed full formula. The existing petition English and beginning of the conclusion remain exact; only the ellipsis is completed.",
+    "All6 candidate file hashes/bytes match and all TOML files parse. Only entry5 differs in the actual candidate; all other entries and top-level data including untranslated and English quarantine remain identical. Both old/new English hashes and the complete old entry match.",
+    "The fourth overlay patch passes git apply --check. Applying the accepted three-row patch followed by the fourth patch to an isolated copy succeeds and changes exactly indices0,1,5,6."
+  ],
+  "blocking_findings": [],
+  "limits": [
+    "Accepted only as original project study English from independent public-domain Latin with declared finite abridgment and separately sourced complete conclusion. Not approved English, for recitation, authenticated printed2002, or authenticated2008.",
+    "No new coverage: this already-available row is a source/fidelity repair. Remaining legacy70 debt and the lost old first8 packet are outside acceptance.",
+    "Root must register exact Wilson binary delivery and run owning source/publication gates after integration. Restricted target PDFs and images remain scratch evidence.",
+    "Combined validation copy is scratch-only and not an integration or source-admission authority."
+  ],
+  "combined_overlay_sha256": "e4fc047def2dec494eb410791d7c099f99c073960cc2a8c56fd56f36e035c973",
+  "candidate_files": [
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "58fb71285326ac4448f78c8d55b0e2fed12f48b64a42a523dddae997d639ab8b",
+      "bytes": 997087
+    },
+    {
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-54.toml",
+      "sha256": "0cfe6248c48aa0da047cc63c075dc690293213dc8a0e2b4977d17efcc3a00b31",
+      "bytes": 1201
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/legacy-study-review-20261112-easter-4-collect-comparison.toml",
+      "sha256": "c40145acd967a0de0527deb44d399c2a19fa60c9f98b9b90f5cfcf7924ef7439",
+      "bytes": 1488
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/legacy-study-review-20261112-p100-5d8fa6db/artifact.toml",
+      "sha256": "51c8b28ef6d2fef7f0a1d1810a510e673e9d4ccb0faa54c045604d3266f08bb2",
+      "bytes": 1958
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/legacy-study-review-20261112-p100-5d8fa6db/page.pdf",
+      "sha256": "5d8fa6db3360a679e449f97e7e5e5aef625acccfbabd7e03d2452f56f544abdc",
+      "bytes": 98533
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/legacy-study-review-20261112-easter-4-collect-source.toml",
+      "sha256": "ae5b898404c6580d136b3ee4cc1ed5bad2bf76e93338437d0a680f6a60f1eb93",
+      "bytes": 1883
+    }
+  ],
+  "independent_render_sha256": {
+    "wilson-ap193": "d87779501b9630679f791f2547d04de650ff624788b351628b341a21c0579efb",
+    "wilson-ap193-high": "d2527434b75550001e7e8810c71c21974a6e0e66f5d3d4ab66de2d208a398d79",
+    "target-18": "4f8fa828cd480f749b56e7fa56b2cdd64625dea4481a543f624dc5c297830bc6",
+    "pustet-ap88": "fdedf2f6f9dee5b4fbb85f69113b6a2f61a3b25bc1374a05a7c323e102c96c3a"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "adapter_proof_sha256": "1c9a30804e47d121fb0b5e0aebdd4fe4949f699b11c7983b2631d62f2f853efd",
+  "added_paths": 185,
+  "candidate_fixture_sha256": "098b979d44a71aca5609a4d42d2d0982d2fb63123e31007f9a933fc5c39dbf5b",
+  "candidate_input_manifest_sha256": "8bff4e89d1cf0ed36686dc8ac38aa0dc92c4bc67edc479631f51cbab745501b9",
+  "entire_current_inputs_verified": 7449,
+  "explicit_input_changes": 209,
+  "historical_fields_unchanged": [
+    "schema",
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "latin_baseline_rows",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_supplemented_keys",
+    "projection_baseline_source_files",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_historical_source_files",
+    "english_historical_absence_scope"
+  ],
+  "original_direct_pd_complete_oracles_unchanged": 25,
+  "original_raw_replays_equal_git_bytes": 17,
+  "retained_parent_input_paths": 7264,
+  "reviewed_runtime_successors": {
+    "scripts/_calendars.py": {
+      "after_sha256": "fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7",
+      "before_sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4"
+    },
+    "scripts/_oration_endings.py": {
+      "after_sha256": "6450ff3667f74fedcbd3874e928d46de23a3f9186519ed63f61f41204cb1113c",
+      "before_sha256": null
+    },
+    "scripts/_proper_finite_latin_20261029.py": {
+      "after_sha256": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+      "before_sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5"
+    },
+    "tools/mass-propers": {
+      "after_sha256": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+      "before_sha256": "1e6ed563783d81d510d63d43a81e9fe14d195107de4d796225fd633f127b780a"
+    }
+  },
+  "reviewer": "root coordinator",
+  "runtime_modules_verified": 24,
+  "schema": "triptych-source-epoch-independent-accounting-review/v1",
+  "scope": "Independent accounting verification; source merits retain their separately recorded root and independent reviews.",
+  "source_permission_created": false,
+  "status": "accepted",
+  "transition_contract_sha256": "8cc1e5115b64c61213da39859d0cd92bd07c6c37caf813ad428b3c587952ecb0"
+}

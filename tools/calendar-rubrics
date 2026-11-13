@@ -196,6 +196,7 @@ EMITTED = (
     "citation_forms",
     "code",
     "commemoration",
+    "dedication_anniversary_context",
     "divergences",
     "edition",
     "edition_short",
@@ -333,6 +334,7 @@ def load_masses(root: Path, name: str) -> dict[str, dict]:
                 "season": mass.get("season"),
                 "dated": bool(mass.get("date")),
                 "forms": forms,
+                "proper_names": [proper.get("name") for proper in mass.get("propers") or []],
             }
     if not masses:
         raise SourceError(f"{path}: carries no masses")
@@ -464,6 +466,9 @@ def check_latin_text_status(document: dict, where: str) -> list[str]:
 
 def check_precedence(document: dict, where: str) -> list[str]:
     problems: list[str] = []
+    explanation = (document.get("precedence") or {}).get("unresolved_tie")
+    if explanation is not None and (not isinstance(explanation, str) or not explanation.strip()):
+        problems.append(f"{where}: precedence.unresolved_tie must be nonempty source-owned prose")
     table = document["precedence"]
     if not table.get("stated"):
         problems.append(f"{where}: precedence.stated is false; this file exists to state it")
@@ -571,6 +576,38 @@ def assign(document: dict, masses: dict[str, dict], where: str) -> tuple[dict[st
     return assigned, problems
 
 
+def check_date_observances(document: dict, assigned: dict, where: str) -> list[str]:
+    """A Mass-only commemoration needs an explicit date and a separate source Mass."""
+    problems: list[str] = []
+    entries = (document.get("commemoration") or {}).get("date_observances", [])
+    if not isinstance(entries, list):
+        return [f"{where}: commemoration.date_observances must be a list"]
+    fields = {"id", "on_anchor", "mass", "basis", "label", "locus"}
+    bases = {row["id"]: row for row in document.get("bases", [])}
+    seen: set[str] = set()
+    for row in entries:
+        if not isinstance(row, dict) or set(row) != fields:
+            problems.append(f"{where}: dated commemoration must carry exactly {sorted(fields)}")
+            continue
+        if any(not isinstance(row[key], str) or not row[key].strip() for key in fields):
+            problems.append(f"{where}: dated commemoration fields must be nonempty strings")
+            continue
+        if row["id"] in seen:
+            problems.append(f"{where}: repeated dated commemoration {row['id']!r}")
+        seen.add(row["id"])
+        if document.get("calendar") != "roman-1962" or row["on_anchor"] != "greater_litanies":
+            problems.append(f"{where}: dated commemoration names an unsupported calendar anchor")
+        if row["mass"] not in assigned:
+            problems.append(f"{where}: dated commemoration names unknown Mass {row['mass']!r}")
+        basis = bases.get(row["basis"], {})
+        if not (basis.get("nature") == "commemoration" and basis.get("row") is None
+                and basis.get("competes") is False
+                and basis.get("commemoration") == "privileged"
+                and basis.get("de_tempore") is False):
+            problems.append(f"{where}: dated commemoration must have a noncompeting privileged Mass-only basis")
+    return problems
+
+
 def check_implied(document: dict, basis_index: dict[str, int], where: str) -> list[str]:
     problems: list[str] = []
     seen: set[str] = set()
@@ -596,6 +633,144 @@ def check_implied(document: dict, basis_index: dict[str, int], where: str) -> li
     if office and not office.get("stated_only"):
         if office.get("basis") not in basis_index:
             problems.append(f"{where}: saturday_office names unknown basis {office.get('basis')!r}")
+    return problems
+
+
+def check_weekday_oration_selection(document: dict, masses: dict, assigned: dict,
+                                    where: str) -> list[str]:
+    """Validate the source-owned, incomplete permission without appointing it."""
+    problems = []
+    scopes = [entry.get("appointed_mass", {}).get("oration_scope", {})
+              for entry in document.get("implied") or []]
+    scopes = [scope for scope in scopes if "selection" in scope]
+    if len(scopes) > 1:
+        return [f"{where}: more than one weekday oration selection rule"]
+    for scope in scopes:
+        rule = scope["selection"]
+        required = {"id", "weekday_key_matches", "owner_key_matches", "owner_basis",
+                    "season", "resolves_scope", "complete", "unavailable", "why"}
+        if not isinstance(rule, dict) or set(rule) != required:
+            problems.append(f"{where}: weekday oration selection has an unsupported shape")
+            continue
+        if rule["complete"] is not False or not rule["unavailable"]:
+            problems.append(f"{where}: weekday oration selection must retain its incomplete boundary")
+        if not scope.get("locus") or not scope.get("evidence") or not rule["why"]:
+            problems.append(f"{where}: weekday oration selection lacks its source basis")
+        limits = [entry for entry in document.get("unsettled") or []
+                  if entry.get("scope") == rule["resolves_scope"] and
+                  entry.get("when") == {"candidate_key_matches": rule["weekday_key_matches"],
+                                         "candidate_wins": True}]
+        if len(limits) != 1:
+            problems.append(f"{where}: weekday oration selection does not bind one exact owner limitation")
+        slots = scope.get("slots")
+        if not isinstance(slots, list) or not slots or len(set(slots)) != len(slots):
+            problems.append(f"{where}: weekday oration selection has invalid slots")
+            continue
+        patterns = {}
+        for field in ("weekday_key_matches", "owner_key_matches"):
+            pattern = rule[field]
+            if not isinstance(pattern, str) or not pattern.startswith("^") or not pattern.endswith("$"):
+                problems.append(f"{where}: weekday oration {field} must match whole keys")
+                continue
+            try:
+                patterns[field] = re.compile(pattern)
+                issue = javascript_regex_problem(pattern)
+                if issue:
+                    problems.append(f"{where}: weekday oration {field}: {issue}")
+            except re.error as error:
+                problems.append(f"{where}: weekday oration {field}: {error}")
+        if len(patterns) != 2:
+            continue
+        owners = {key for key in masses if patterns["owner_key_matches"].fullmatch(key)}
+        weekdays = {key for key in masses if patterns["weekday_key_matches"].fullmatch(key)}
+        if not owners or not weekdays or owners & weekdays:
+            problems.append(f"{where}: weekday oration selection needs distinct held owners and weekdays")
+        for key in sorted(owners):
+            mass = masses[key]
+            if (mass["season"] != rule["season"] or
+                    assigned.get(key, {}).get("basis") != rule["owner_basis"] or mass["forms"] or
+                    any(mass["proper_names"].count(slot) != 1 for slot in slots)):
+                problems.append(f"{where}: weekday oration owner {key!r} does not satisfy its declared scope")
+        for key in sorted(weekdays):
+            if masses[key]["season"] != rule["season"]:
+                problems.append(f"{where}: weekday oration target {key!r} has the wrong season")
+        for missing in rule["unavailable"]:
+            if (not isinstance(missing, dict) or set(missing) != {"id", "state", "label"} or
+                    missing.get("state") not in {"not-represented", "not-supported"} or
+                    not missing.get("label") or missing.get("id") in owners):
+                problems.append(f"{where}: weekday oration selection has a stale or invalid unavailable option")
+    return problems
+
+
+def check_dedication_anniversary_context(document: dict, propers: dict, where: str) -> list[str]:
+    """Check the annual Secret's source relation without supplying a location."""
+    rule = document.get("dedication_anniversary_context")
+    if rule is None:
+        return []
+    prefix = f"{where}: dedication anniversary context"
+    required = {"id", "scope", "fact", "keys", "form_id", "target",
+                "required_selection", "unknown", "conditions", "locus", "why"}
+    if not isinstance(rule, dict) or set(rule) != required:
+        return [f"{prefix} has an unsupported shape"]
+    expected = {
+        "id": "dedication-anniversary-location", "scope": "annual-feast",
+        "fact": "celebration-location-relative-to-dedicated-church",
+        "form_id": "main", "unknown": "unresolved",
+        "target": {"mass": "commune-dedicationis-ecclesiae", "group": "contextual-secret"},
+        "required_selection": {"group": "occasion-orations", "option": "anniversary"},
+    }
+    if (document.get("calendar") != "roman-1962" or
+            any(rule[field] != value for field, value in expected.items())):
+        return [f"{prefix} must retain its exact 1962 annual-feast scope and unresolved unknown"]
+    keys = rule["keys"]
+    if (not isinstance(keys, list) or len(keys) != 2 or
+            any(not isinstance(key, str) for key in keys) or set(keys) != {
+                "dedicatione-archibasilicae-mi-salvatoris",
+                "dedicatione-basilicarum-ss-petri-pauli-apostolorum"}):
+        return [f"{prefix} must name the two supported annual feasts exactly once"]
+    if any(not isinstance(rule[field], str) or not rule[field].strip() for field in ("locus", "why")):
+        return [f"{prefix} requires its source locus and explanation"]
+    evidence = (document.get("derived_from") or {}).get("dedication_anniversary_context")
+    if (not isinstance(evidence, dict) or evidence.get("method") != "direct-page-images" or
+            not isinstance(evidence.get("artifact_id"), str) or
+            not evidence["artifact_id"].startswith("artifact.") or
+            not re.fullmatch(r"[0-9a-f]{64}", str(evidence.get("artifact_sha256", ""))) or
+            not evidence.get("pages") or not evidence.get("inspected_on")):
+        return [f"{prefix} requires its source-only page-image evidence"]
+    conditions = rule["conditions"]
+    options = {"in-dedicated-church": "anniversary-in-church",
+               "outside-dedicated-church": "anniversary-outside-church"}
+    if not isinstance(conditions, dict) or set(conditions) != set(options):
+        return [f"{prefix} must distinguish the two actual location relations"]
+    index = _calendars.mass_index(propers)
+    common = index.get(rule["target"]["mass"], {})
+    group = (common.get("common_sets") or {}).get(rule["target"]["group"], {})
+    if group.get("families") != ["Secret"]:
+        return [f"{prefix} must resolve only the Common's Secret family"]
+    problems = []
+    for relation, option in options.items():
+        condition = conditions[relation]
+        if (not isinstance(condition, dict) or set(condition) != {"option", "proper", "label"} or
+                condition.get("option") != option or
+                not isinstance(condition.get("proper"), str) or not condition["proper"] or
+                not isinstance(condition.get("label"), str) or not condition["label"].strip()):
+            problems.append(f"{prefix} has an invalid condition for {relation!r}")
+            continue
+        if ((group.get("options") or {}).get(option) != [condition["proper"]] or
+                sum(proper.get("name") == condition["proper"]
+                    for proper in common.get("propers") or []) != 1):
+            problems.append(f"{prefix} condition {relation!r} does not name one held Common Secret")
+    for key in keys:
+        mass = index.get(key, {})
+        reference = mass.get("takes_from") or {}
+        selections = reference.get("common_sets") or {}
+        if (not mass or mass.get("forms") or reference.get("mass") != rule["target"]["mass"] or
+                selections.get("occasion-orations") != {"state": "selected", "option": "anniversary"} or
+                selections.get("contextual-secret") != {
+                    "state": "unresolved", "candidates": list(options.values())} or
+                any(_calendars.proper_family(proper.get("name", "")) == "Secret"
+                    for proper in mass.get("propers") or [])):
+            problems.append(f"{prefix} feast {key!r} has a different source appointment")
     return problems
 
 
@@ -1112,14 +1287,36 @@ def run_model(payload: dict) -> dict:
     """
     harness = (
         "const model = require(process.argv[1]);\n"
+        "const fs = require('fs');\n"
         "let raw = '';\n"
         "process.stdin.on('data', (chunk) => { raw += chunk; });\n"
         "process.stdin.on('end', () => {\n"
         "  const input = JSON.parse(raw);\n"
         "  const out = input.cases.map((one) => {\n"
         "    try {\n"
-        "      return { id: one.id, ok: true,"
-        " result: model.derive({ date: one.date, year: one.year, rubrics: one.rubrics }) };\n"
+        "      let result = model.derive({ date: one.date, year: one.year, rubrics: one.rubrics });\n"
+        "      if (one.orationOwner) result = model.selectWeekdayOrations({derived: result,"
+        " year: one.year, rubrics: one.rubrics, structure: one.structure,"
+        " owner: one.orationOwner, territory: one.territory, mass: one.mass}).derived;\n"
+        "      if (one.dedicationLocation) {\n"
+        "        const context={derived:result,rubrics:one.rubrics,structure:one.structure,mass:one.mass,territory:one.territory};\n"
+        "        const choice=model.dedicationAnniversaryChoices(context);\n"
+        "        if (!choice) throw new Error('no Dedication location context is available for this date and Mass');\n"
+        "        const attestation={schema:'triptych-dedication-location/v1',calendar:choice.calendar,mass:choice.mass,"
+        " formId:choice.formId,civilDate:choice.civilDate,territory:choice.territory,relation:one.dedicationLocation};\n"
+        "        result=model.selectDedicationAnniversary({...context,attestation}).derived;\n"
+        "      }\n"
+        "      const dedicationRule=one.rubrics.dedication_anniversary_context;\n"
+        "      if (dedicationRule && result.options.some(branch=>(branch.readable||[]).some(row=>"
+        " row.state==='said' && dedicationRule.keys.includes(row.key)))) {\n"
+        "        const structure=one.structure || (one.structurePath ? JSON.parse(fs.readFileSync(one.structurePath,'utf8')) : null);\n"
+        "        if (structure) result.options=result.options.map(branch=>{\n"
+        "          if (branch.dedicationSelection) return branch;\n"
+        "          const context=model.dedicationAnniversaryChoices({derived:result,rubrics:one.rubrics,structure,territory:branch.option});\n"
+        "          return context ? {...branch,unresolvedDedicationContext:context} : branch;\n"
+        "        });\n"
+        "      }\n"
+        "      return { id: one.id, ok: true, result: result };\n"
         "    } catch (error) {\n"
         "      return { id: one.id, ok: false, error: String(error && error.stack || error) };\n"
         "    }\n"
@@ -1352,7 +1549,12 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
         problems.extend(found)
         assigned, found = assign(document, masses, where)
         problems.extend(found)
+        problems.extend(check_date_observances(document, assigned, where))
         problems.extend(check_implied(document, basis_index, where))
+        problems.extend(check_weekday_oration_selection(document, masses, assigned, where))
+        if "dedication_anniversary_context" in document:
+            problems.extend(check_dedication_anniversary_context(
+                document, _calendars.load_document(root, name, effective=True), where))
         problems.extend(check_overrides(document, assigned, basis_index, where))
         problems.extend(check_seats(document, assigned, where))
         problems.extend(check_absences(document, where))
@@ -1586,6 +1788,8 @@ def run_day(arguments: argparse.Namespace) -> dict:
     under node — the same file, through the same harness the solved cases use —
     so the terminal and the page agree by construction and not by coincidence.
     """
+    if (getattr(arguments, "oration_mass", None) or getattr(arguments, "dedication_location", None)) and not arguments.calendar:
+        raise SourceError("an explicit prayer source or Dedication location requires --calendar")
     data = committed_data_root(ROOT) if arguments.out is None else Path(arguments.out)
     problems: list[str] = []
     # Read from the emitted layer, not rebuilt from the YAML sources. `build`
@@ -1620,7 +1824,15 @@ def run_day(arguments: argparse.Namespace) -> dict:
         except SourceError as error:
             problems.append(f"{name}: {error}")
             continue
-        cases.append({"id": name, "date": date, "year": year, "rubrics": payload})
+        case = {"id": name, "date": date, "year": year, "rubrics": payload,
+                "structurePath": str(data / "structure" / "propers" / f"{name}.json")}
+        if getattr(arguments, "oration_mass", None) or getattr(arguments, "dedication_location", None):
+            case.update(orationOwner=getattr(arguments, "oration_mass", None),
+                        dedicationLocation=getattr(arguments, "dedication_location", None),
+                        territory=getattr(arguments, "territory", None),
+                        mass=getattr(arguments, "mass", None),
+                        structure=json.loads((data / "structure" / "propers" / f"{name}.json").read_text(encoding="utf-8")))
+        cases.append(case)
     if not cases:
         raise SourceError("; ".join(problems) or f"no calendar carries a year file for {civil_year}")
 
@@ -1743,6 +1955,14 @@ def main(argv: list[str] | None = None) -> int:
             "--date", default=argparse.SUPPRESS if verb else None,
             help="the civil date to derive (the `day` verb)"
         )
+        shared.add_argument("--oration-mass", default=missing,
+                            help="explicit source of the three Ordinary Time weekday orations (day only)")
+        shared.add_argument("--dedication-location", default=missing,
+                            help="state in-dedicated-church or outside-dedicated-church relative to the church whose dedication this Mass commemorates")
+        shared.add_argument("--territory", default=missing,
+                            help="territorial branch for an explicit oration selection")
+        shared.add_argument("--mass", default=missing,
+                            help="selected weekday when the calendar offers coequal Masses")
         return shared
 
     shared = shared_options(verb=False)

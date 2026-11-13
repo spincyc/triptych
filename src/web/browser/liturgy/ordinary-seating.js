@@ -1638,6 +1638,33 @@
       throw error;
     }
     const execution = context.execution;
+    // This is the source-validated Dedication choice descriptor, not a list
+    // of slots a caller may waive. Its unresolved Secret has no source seat
+    // until the actual celebration location is attested.
+    const dedication = context.unresolvedDedicationContext || null;
+    if (dedication && (dedication.id !== 'dedication-anniversary-location' ||
+        dedication.calendar !== context.calendar || dedication.mass !== context.mainKey ||
+        dedication.civilDate !== context.date || dedication.formId !== 'main' ||
+        !dedication.target || dedication.target.group !== 'contextual-secret' ||
+        typeof dedication.target.mass !== 'string' || !dedication.target.mass ||
+        !Array.isArray(dedication.options) || dedication.options.length !== 2 ||
+        !dedication.options.every(function (option) {
+          return option && typeof option.proper === 'string' && /^Secret \(.*\)$/.test(option.proper);
+        }) || !dedication.locus)) {
+      fail('unsupported-oration-context', 'unresolved Dedication source context does not match this Mass');
+    }
+    if (dedication) {
+      const reference = context.principalCommonReference;
+      const selections = reference && reference.common_sets;
+      const secret = selections && selections[dedication.target.group];
+      const occasion = selections && selections['occasion-orations'];
+      if (!reference || reference.mass !== dedication.target.mass || !secret || secret.state !== 'unresolved' ||
+          !Array.isArray(secret.candidates) || secret.candidates.length !== dedication.options.length ||
+          !dedication.options.every(function (option) { return secret.candidates.includes(option.option); }) ||
+          !occasion || occasion.state !== 'selected' || occasion.option !== 'anniversary') {
+        fail('unsupported-oration-context', 'unresolved Dedication context lacks its principal source Common reference');
+      }
+    }
     if (context.calendar !== 'roman-1962' || execution.scope !== 'dated-mass-of-office' ||
         !execution.conclusions || execution.conclusions.principal !== 1 ||
         execution.conclusions.commemorations !== 2 ||
@@ -1736,6 +1763,7 @@
           placementLocus = multiple.locus;
         }
       }
+      if (!anchor.length && slot.slot === 'Secret' && dedication) return null;
       if (anchor.length !== 1) {
         fail('principal-oration-slot-unbound', 'oration series lacks a unique principal source seat for ' + slot.slot);
       }
@@ -1765,7 +1793,7 @@
         return group;
       });
       return {sourceIndex: anchor[0].sourceIndex, slot: slot.slot, groups: groups};
-    });
+    }).filter(Boolean);
   }
 
   return {

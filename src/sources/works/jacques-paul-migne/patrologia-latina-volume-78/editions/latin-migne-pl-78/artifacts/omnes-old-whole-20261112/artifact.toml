@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.omnes-old-whole-20261112"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded checked transcription of the independently identified public-domain historical printing, under its parent artifact United States basis. The mechanical editorial normalization adds no claim over the underlying old text."
+rights_jurisdiction = "United States"
+provenance = "Transcribed from the complete unit on page images at 200 and 400 dpi on 2026-11-12; OCR served only as a locating aid."
+retrieved = "2026-11-12"
+sha256 = "c2d21fbc140305438edbb6c9354951064582a88e842bf274e849bdf7472947e5"
+byte_size = 100
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-78/editions/latin-migne-pl-78/artifacts/omnes-old-whole-20261112/latin.txt"
+derived_from = "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.whole-pdf-20261112-21c082e9"
+transformation = "Exclude the Ant. label; join source linewraps and discretionary hyphenation, remove typographic spacing before the colon. Preserve dicent, the comma after Domini and lower-case hosanna. No adjacent antiphon, psalm, or rite is included."
+indexable = true
+encoding = "utf-8"
+notes = "Migne PL78, complete Omnes antiphon, col. 763B / PDF p. 386."

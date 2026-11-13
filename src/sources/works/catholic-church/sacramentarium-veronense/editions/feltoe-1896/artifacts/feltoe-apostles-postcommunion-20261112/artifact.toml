@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-apostles-postcommunion-20261112"
+edition_id = "edition.catholic-church.sacramentarium-veronense.feltoe-1896"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The bounded prayer belongs to the identified 1896 Feltoe printing, public domain in the United States by its publication date under the existing registered assessment. This transcription carries only its actual historical prayer; it asserts no identity or automatic clearance for the 1962 adaptation."
+derived_from = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+provenance = "Fresh image reading on 2026-11-12 at 200 dpi and 400 dpi, using complete held PDF bytes and surrounding source context. June, VIII. Item alia, complete final prayer, printed p. 39 lines 27-30 / PDF artifact p. 63. This is Celebratis ... impleta, not the different Peractis ... impensa prayer at printed p. 41 / artifact p. 65."
+retrieved = "2026-11-12"
+sha256 = "6b0db644727b1634a7eb5304ffe7fbd28b5ae963ac9e73b3e865a9d5a6c1179b"
+byte_size = 176
+path = "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-apostles-postcommunion-20261112/latin.txt"
+indexable = true
+encoding = "utf-8"
+transformation = "Join three printed lines; explicitly expand printed Dne with overline to Domine. Retain original spelling, case and otherwise sparse punctuation. Preserve actual lowercase per. as an abbreviated cue, never Per Dominum. or a full conclusion."

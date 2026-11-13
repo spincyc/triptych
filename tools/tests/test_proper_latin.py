@@ -19,6 +19,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
 
+from _artifact_store import resolve as resolve_artifact
 from tools.tests.test_roman_1962_octnov_commemoration_source_repair import (
     PHASE5_LATIN22, phase5_owner, phase5_predecessor_christmas, digest, canonical,
 )
@@ -71,15 +72,31 @@ HISTORICAL_FINITE_SCOPES = {
     LatinKey(*scope["key"]): scope
     for scope in json.loads(HISTORICAL_FINITE_AUTHORITY_RAW)["scopes"]
 }
-CURRENT_AUTHORITY_PATH = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json"
+PRIOR_AUTHORITY_PATH = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json"
+PRIOR_AUTHORITY_RAW = PRIOR_AUTHORITY_PATH.read_bytes()
+if hashlib.sha256(PRIOR_AUTHORITY_RAW).hexdigest() != "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e":
+    raise AssertionError("exact preceding twenty-two-scope authority")
+PRIOR_QUALIFIED_SCOPES = {
+    LatinKey(*scope["key"]): scope
+    for scope in json.loads(PRIOR_AUTHORITY_RAW)["scopes"]
+}
+CURRENT_AUTHORITY_PATH = ROOT / "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/finite-latin-authority-v4.json"
 CURRENT_AUTHORITY_RAW = CURRENT_AUTHORITY_PATH.read_bytes()
-if hashlib.sha256(CURRENT_AUTHORITY_RAW).hexdigest() != "495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e":
+if hashlib.sha256(CURRENT_AUTHORITY_RAW).hexdigest() != "9d9bd0cc9a36fd6bbf4b474631d0944baf260f5a3e91b5612c4a5031363e37b7":
     raise AssertionError("exact adopted finite Latin authority")
 CURRENT_QUALIFIED_SCOPES = {
     LatinKey(*scope["key"]): scope
     for scope in json.loads(CURRENT_AUTHORITY_RAW)["scopes"]
 }
 QUALIFIED_KEYS = LEGACY_QUALIFIED_KEYS | set(CURRENT_QUALIFIED_SCOPES)
+READER_SIX_BODY_HASHES = {
+    LatinKey("beatae-mariae-virginis-reginae", "", "Postcommunion", "", "", 1): "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+    LatinKey("beatae-mariae-virginis-reginae", "", "Secret", "", "", 1): "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+    LatinKey("comm-s-urbani-i-papae-martyris", "", "Collect", "", "", 1): "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+    LatinKey("good-friday", "", "Prayer after the Prostration", "", "", 1): "019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d",
+    LatinKey("good-friday", "", "Third Prayer after Communion", "", "", 1): "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9",
+    LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 4): "0749a65a571d4fb4811cb545d191f4cdc9f57225f573195edb049a3843b0884a",
+}
 DIRECT_DECLARATION_PATH = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/direct-pd-latin-proof-declaration-v1.json"
 DIRECT_DECLARATION_RAW = DIRECT_DECLARATION_PATH.read_bytes()
 if hashlib.sha256(DIRECT_DECLARATION_RAW).hexdigest() != "70716afc9012297f8600c837b129332a1b924b9520b8861d9d6ad33ae4f47752":
@@ -676,7 +693,7 @@ class ProductionLedgerTests(unittest.TestCase):
             with self.subTest(artifact=expected["id"]):
                 self.assertEqual(expected["record"], registered_artifact(expected["id"]))
                 self.assertEqual(expected["sha256"], hashlib.sha256((ROOT / expected["path"]).read_bytes()).hexdigest())
-                self.assertEqual(expected["payload_sha256"], hashlib.sha256((ROOT / expected["payload_path"]).read_bytes()).hexdigest())
+                self.assertEqual(expected["payload_sha256"], hashlib.sha256(resolve_artifact(ROOT, expected["payload_path"], fetch=False).read_bytes()).hexdigest())
                 self.assertEqual("public-domain", expected["record"]["rights_status"])
 
     def assert_pange_source_assembly(self, row: dict) -> None:
@@ -708,7 +725,7 @@ class ProductionLedgerTests(unittest.TestCase):
         for source in (review["candidate"]["source_files"] + review["existing_key_ancestors"]):
             path = source.get("repository_path", source.get("path"))
             if path.startswith((project_prefix, latin_prefix)):
-                self.assertEqual(source["sha256"], hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), path)
+                self.assertEqual(source["sha256"], hashlib.sha256(resolve_artifact(ROOT, path, fetch=False).read_bytes()).hexdigest(), path)
         carrier = tomllib.loads((EDITORIAL_PROJECTION / "editions/2026-10-29-editorial-projection/artifacts/pange-source-prescribed-assembly-53086b37/artifact.toml").read_text())
         cue_carrier = tomllib.loads((EDITORIAL_PROJECTION / "editions/2026-09-03-editorial-projection/artifacts/triduum-orations-21aa7a98/artifact.toml").read_text())
         hymn = registered_artifact(ids[2])
@@ -790,6 +807,74 @@ class ProductionLedgerTests(unittest.TestCase):
         # Accepted Phase 1: 1187. Phase 2 independently adds exactly eighteen
         # full bodies (fifteen new ledger rows, three restored Saturninus rows).
         # Phase 3 adds nineteen complete bodies on two artifact-specific pairs.
+        # These ten Modern owners have independent whole-body admissions.
+        # Close that exact partition before preserving the Roman-only oracles.
+        modern_bodies = {
+            LatinKey('easter-2-saturday', '', 'Gospel Acclamation', '', '', 1):
+                '25f2a27baa91440142ef50d70e6fe88c5052b07a75fb740d6c785cd10b17bc1f',
+            LatinKey('easter-3', '', 'Gospel Acclamation', 'cycles', 'C', 1):
+                '3038efc01f0f7b132cc7d03b53fff17d7d2e7b3a0950dc8e7243295de4b87e12',
+            LatinKey('mass-of-the-lords-supper', '', 'Chant at the Place of Reposition', '', '', 1):
+                '14e54ab240d4d1cdadb55b7fa21fa8fb22b67fcd70d15d3c54fc5528e6085905',
+            LatinKey('mass-of-the-lords-supper', '', 'Hymn at the Transfer of the Blessed Sacrament', '', '', 1):
+                '5849cc72f72aef91b897e11d20712b4f617b94df698f5e43b99b50826e8d34aa',
+            LatinKey('nativity', 'Mass during the Day', 'Gospel Acclamation', '', '', 1):
+                '1f7e9e52b87aea04b1fbd3d7de15bce31c1c4971b7a489a7cd4dbf272d93a797',
+            LatinKey('pentecost', 'Mass during the Day', 'Gospel Acclamation', '', '', 1):
+                'c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0',
+            LatinKey('pentecost', 'Vigil Mass, extended form', 'Prayer after the Third Reading', '', '', 1):
+                '7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a',
+            LatinKey('pentecost', 'Vigil Mass', 'Gospel Acclamation', '', '', 1):
+                'c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0',
+            LatinKey('saint-john-chrysostom-bishop-doctor-church', '', 'Gospel Acclamation', '', '', 1):
+                'b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3',
+            LatinKey('saint-lawrence-brindisi-priest-doctor-church', '', 'Gospel Acclamation', '', '', 1):
+                'b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3',
+        }
+
+        def admitted_record(path, expected):
+            raw = (ROOT / path).read_bytes()
+            self.assertEqual(expected, digest(raw), path)
+            return json.loads(raw)
+
+        pange = admitted_record(
+            "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-pange-latin-admission.json",
+            "797aed3dba317738ab1c52f27b57314c85c60fa9f83648e3ca4b7e406c2c150b")
+        pentecost = admitted_record(
+            "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-pentecost-latin-admission.json",
+            "44ef8380662dbc72ec152a13741f405111119b1c5b527e612b1493fcc24145c8")
+        seven = admitted_record(
+            "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-seven-acclamations/root-adoption.json",
+            "79d4fe04a2bb0bb817c8ea9c5bd951cd56d929d378376632fb2ac9ce0d570f59")
+        self.assertEqual(seven["status"], "accepted")
+        deltas_ref = seven["references"]["exact-deltas"]
+        deltas = admitted_record(deltas_ref["path"], deltas_ref["sha256"])
+        for admission in (pange, pentecost):
+            admitted_record(admission["source_review_path"], admission["source_review_sha256"])
+        source_ref = seven["references"]["independent-source-review"]
+        admitted_record(source_ref["path"], source_ref["sha256"])
+        accepted_rows = [row["latin_ledger_after"] for row in pange["changes"]]
+        accepted_rows.append(pentecost["after_latin_ledger"])
+        accepted_rows.extend(row["after_row"] for row in deltas["entries"])
+        expected_rows = {LatinKey.from_mapping(row): row for row in accepted_rows}
+        self.assertEqual(len(accepted_rows), len(expected_rows))
+        self.assertEqual(set(modern_bodies), set(expected_rows))
+        modern = {key: row for calendar, key, row in permitted if calendar == "postconciliar"}
+        self.assertEqual(expected_rows, modern)
+        modern_records, problems = publication_records(CALENDARS, "postconciliar", INVENTORIES)
+        self.assertEqual([], problems)
+        document = yaml.safe_load((CALENDARS / "postconciliar/propers.yaml").read_text())
+        bodies = dict(text_owners(document))
+        for key, expected_body_hash in modern_bodies.items():
+            with self.subTest(modern_owner=key):
+                row = modern[key]
+                self.assertEqual(row, modern_records[key])
+                self.assertEqual(expected_body_hash, row["text_sha256"])
+                self.assertEqual(expected_body_hash, text_sha256(bodies[key]))
+                self.assertEqual(row["publication_basis"], "public-domain")
+                self.assertTrue(decision_for(key, bodies[key], modern_records).permits(SURFACES))
+                self.assertFalse(decision_for(key, bodies[key] + " Amen.", modern_records).permits(SURFACES))
+        permitted = [item for item in permitted if item[0] != "postconciliar"]
         BATCH_GUARDS.assert_permitted_owners(permitted)
         direct = [(calendar, key, row) for calendar, key, row in permitted
                   if not row["publication_source_ids"][0].startswith(
@@ -1084,8 +1169,14 @@ class ProductionLedgerTests(unittest.TestCase):
         self.assertEqual(16, len(HISTORICAL_FINITE_SCOPES))
         for key, scope in HISTORICAL_FINITE_SCOPES.items():
             self.assertEqual(scope, CURRENT_QUALIFIED_SCOPES[key])
-        self.assertEqual(22, len(CURRENT_QUALIFIED_SCOPES))
-        self.assertEqual(24, len(QUALIFIED_KEYS))
+        self.assertEqual(22, len(PRIOR_QUALIFIED_SCOPES))
+        for key, scope in PRIOR_QUALIFIED_SCOPES.items():
+            self.assertEqual(scope, CURRENT_QUALIFIED_SCOPES[key])
+        self.assertEqual(set(READER_SIX_BODY_HASHES), set(CURRENT_QUALIFIED_SCOPES) - set(PRIOR_QUALIFIED_SCOPES))
+        for key, body_sha256 in READER_SIX_BODY_HASHES.items():
+            self.assertEqual(body_sha256, CURRENT_QUALIFIED_SCOPES[key]["body_sha256"])
+        self.assertEqual(28, len(CURRENT_QUALIFIED_SCOPES))
+        self.assertEqual(30, len(QUALIFIED_KEYS))
         # The same kind of tripwire as the permitted count: a further witness
         # beside the pinned one is rare, so each is a visible edit here.
         # 30 since 2026-10-01: the 29 KI-054 rows resting on the 1862 name its
@@ -1209,13 +1300,51 @@ class ProductionLedgerTests(unittest.TestCase):
             archived = tomllib.loads(BATCH_GUARDS.historical_text(
                 f"src/sources/inventories/{calendar}{SIDECAR_SUFFIX}"))
             historical_nonpermitted.extend(
-                row for entry in archived["entries"]
+                (calendar, LatinKey.from_mapping(row), row) for entry in archived["entries"]
                 for row in [{**archived["defaults"], **entry}]
                 if row["publication_status"] != "permitted"
                 and not (calendar == "roman-1962" and LatinKey.from_mapping(row) == anthony_key)
             )
         self.assertEqual(348, len(historical_nonpermitted))
-        self.assertEqual(341, len(nonpermitted))
+        prior_restored = {("roman-1962", LatinKey(mass, "", proper, "", "", occurrence))
+                          for mass, proper, occurrence in (
+            ("comm-s-silvestri-i-papae-confessoris", "Collect", 1),
+            ("palm-sunday", "Procession Antiphon", 5),
+            ("palm-sunday", "Procession Antiphon", 6),
+            ("easter-vigil", "Blessing of the Lighted Candle", 1),
+            ("palm-sunday", "Blessing of the Palms", 1),
+            ("good-friday", "Improperia", 1),
+            ("good-friday", "Antiphons at the Translation of the Blessed Sacrament", 1),
+        )}
+        historical_owners = {(calendar, key) for calendar, key, _ in historical_nonpermitted}
+        self.assertLess(prior_restored, historical_owners)
+        prior_nonpermitted = historical_owners - prior_restored
+        self.assertEqual(341, len(prior_nonpermitted))
+        reader_restored = {("roman-1962", LatinKey(mass, "", proper, "", "", occurrence))
+                           for mass, proper, occurrence in (
+            ("good-friday", "Prayer after the Prostration", 1),
+            ("good-friday", "Third Prayer after Communion", 1),
+            ("palm-sunday", "Procession Antiphon", 4),
+        )}
+        modern_restored = {
+            ("postconciliar", LatinKey.from_mapping(row["latin_ledger_before"]))
+            for row in pange["changes"]
+        } | {
+            ("postconciliar", LatinKey.from_mapping(row["before_row"]))
+            for row in deltas["entries"] if row["before_row"] is not None
+        }
+        self.assertEqual(modern_restored, {
+            ("postconciliar", LatinKey("mass-of-the-lords-supper", "", "Chant at the Place of Reposition", "", "", 1)),
+            ("postconciliar", LatinKey("mass-of-the-lords-supper", "", "Hymn at the Transfer of the Blessed Sacrament", "", "", 1)),
+            ("postconciliar", LatinKey("easter-3", "", "Gospel Acclamation", "cycles", "C", 1)),
+            ("postconciliar", LatinKey("nativity", "Mass during the Day", "Gospel Acclamation", "", "", 1)),
+            ("postconciliar", LatinKey("pentecost", "Vigil Mass", "Gospel Acclamation", "", "", 1)),
+            ("postconciliar", LatinKey("pentecost", "Mass during the Day", "Gospel Acclamation", "", "", 1)),
+        })
+        self.assertLess(reader_restored | modern_restored, prior_nonpermitted)
+        self.assertEqual(prior_nonpermitted - reader_restored - modern_restored,
+                         {(calendar, key) for calendar, key, _ in nonpermitted})
+        self.assertEqual(332, len(nonpermitted))
         collated = [
             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
         ]
@@ -1272,13 +1401,28 @@ class ProductionLedgerTests(unittest.TestCase):
         ]
         # The same historical post-Anthony345 remains a separate exact control.
         self.assertEqual(345, sum(row["provenance_status"] == "unresolved"
-                                  for row in historical_nonpermitted))
-        self.assertEqual(338, len(unresolved))
+                                  for _, _, row in historical_nonpermitted))
+        historical_unresolved = {(calendar, key) for calendar, key, row in historical_nonpermitted
+                                 if row["provenance_status"] == "unresolved"}
+        self.assertLess(prior_restored, historical_unresolved)
+        prior_unresolved = historical_unresolved - prior_restored
+        self.assertEqual(338, len(prior_unresolved))
+        self.assertLess(reader_restored | modern_restored, prior_unresolved)
+        self.assertEqual(prior_unresolved - reader_restored - modern_restored,
+                         {(calendar, key) for calendar, key, row in nonpermitted
+                          if row["provenance_status"] == "unresolved"})
+        self.assertEqual(329, len(unresolved))
         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
         postconciliar = [
             row for calendar, _, row in nonpermitted if calendar == "postconciliar"
         ]
-        self.assertEqual(329, len(postconciliar))
+        historical_modern = {(calendar, key) for calendar, key, _ in historical_nonpermitted
+                             if calendar == "postconciliar"}
+        self.assertEqual(329, len(historical_modern))
+        self.assertEqual(historical_modern - modern_restored,
+                         {(calendar, key) for calendar, key, _ in nonpermitted
+                          if calendar == "postconciliar"})
+        self.assertEqual(323, len(postconciliar))
         self.assertTrue(
             all(
                 row["body_status"] == "removed"

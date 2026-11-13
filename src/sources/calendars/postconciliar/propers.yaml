@@ -4462,12 +4462,12 @@ sections:
         - name: Gospel Acclamation
           incipit: Dies sanctificatus illuxit nobis
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-            - kind: rights-withheld
-              source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+          text: 'Dies sanctificatus illuxit nobis: venite, gentes, et adorate Dominum: quia hodie descendit lux magna super terram.'
+          notes: 'Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed145 agrees word for
+            word with the controlling OLM1981 appointment (n.16 Nativity Ad Missam in die). This independent public-domain Latin body
+            is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied no Latin
+            authority; its witness notes record that earlier admission state. The existing attributed historical study English remains
+            unchanged. Authentication of the complete2008 altar Missal is not asserted.'
         - name: Gospel
           ordinary_disposition:
             kind: alternative
@@ -18379,22 +18379,54 @@ sections:
       - name: Hymn at the Transfer of the Blessed Sacrament
         incipit: Pange, lingua, gloriosi Corporis mysterium
         source: composed
-        notes: The last two stanzas are excluded here and sung at the place of reposition.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        notes: "Historical Latin of the named hymn option, transcribed from the 1879 Duffy witness; paired with the existing 1946 Lasance historical English. The secondary 2002 source names the option and stage but prints no complete hymn body. Exact 2008 wording and appointment remain uncollated. First four stanzas only; no Amen. The source permits another Eucharistic chant."
+        text: |-
+          Pange, lingua, gloriosi
+          Corporis mysterium,
+          Sanguinisque pretiosi,
+          Quem in mundi pretium,
+          Fructus ventris generosi,
+          Rex effudit gentium.
+
+          Nobis datus, nobis natus
+          Ex intacta Virgine,
+          Et in mundo conversatus,
+          Sparso verbi semine,
+          Sui moras incolatus
+          Miro clausit ordine.
+
+          In supremae nocte coenae
+          Recumbens cum fratribus,
+          Observata lege plene
+          Cibis in legalibus,
+          Cibum turbae duodenae
+          Se dat suis manibus.
+
+          Verbum caro, panem verum
+          Verbo carnem efficit:
+          Fitque sanguis Christi merum:
+          Et si sensus deficit,
+          Ad firmandum cor sincerum
+          Sola fides sufficit.
       - name: Chant at the Place of Reposition
         incipit: Tantum ergo Sacramentum
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        notes: "Historical Latin of the named hymn option, transcribed from the 1879 Duffy witness; paired with the existing 1946 Lasance historical English. The secondary 2002 source names the option and stage but prints no complete hymn body. Exact 2008 wording and appointment remain uncollated. Final two stanzas with Amen. Taking Genitori after Tantum ergo is the independently identified historical closing-section interpretation, not an explicit two-stanza prescription at n.39. Another Eucharistic chant remains permitted."
+        text: |-
+          Tantum ergo Sacramentum
+          Veneremur cernui:
+          Et antiquum documentum
+          Novo cedat ritui:
+          Praestet fides supplementum
+          Sensuum defectui.
+
+          Genitori, Genitoque
+          Laus et jubilatio,
+          Salus, honor, virtus quoque
+          Sit et benedictio:
+          Procedenti ab utroque
+          Compar sit laudatio.
+          Amen.
     - key: good-friday
       name: Celebration of the Lord's Passion
       registry: pc-t02
@@ -20112,27 +20144,34 @@ sections:
             verses:
             - book: Luke
               ranges:
-              - begin: {chapter: 24, verse: 32}
-                end: {chapter: 24, verse: 32}
+              - begin:
+                  chapter: 24
+                  verse: 32
+                end:
+                  chapter: 24
+                  verse: 32
               ref: Luke 24:32
           B:
             source: scripture
             verses:
             - book: Luke
               ranges:
-              - begin: {chapter: 24, verse: 32}
-                end: {chapter: 24, verse: 32}
+              - begin:
+                  chapter: 24
+                  verse: 32
+                end:
+                  chapter: 24
+                  verse: 32
               ref: Luke 24:32
           C:
             source: composed
-            text_status:
-              state: unavailable
-              scope: proper-body
-              reasons:
-              - kind: rights-withheld
-                source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-        notes: Years A and B use Luke 24:32; Year C has a composed acclamation with no scriptural
-          citation.
+            text: Surrexit Christus, qui creavit omnia et misertus est humano generi.
+        notes: 'Years A and B use Luke 24:32; Year C has a composed acclamation with no scriptural citation. YearC only: Dated 2026-11-12
+          Latin successor: the complete historical Latin verse in Lasance1945, printed555 agrees word for word with the controlling
+          OLM1981 appointment (n.48C EasterIII YearC, not A/B). This independent public-domain Latin body is supplied with OLM pointing
+          and without external Alleluia framing. The earlier dated English admission supplied no Latin authority; its witness notes
+          record that earlier admission state. The existing attributed historical study English remains unchanged. Authentication
+          of the complete2008 altar Missal is not asserted.'
       - name: Gospel
         ordinary_disposition:
           kind: alternative
@@ -21902,12 +21941,12 @@ sections:
         - name: Gospel Acclamation
           incipit: Veni, Sancte Spiritus
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-            - kind: rights-withheld
-              source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+          text: Veni, Sancte Spiritus, reple tuorum corda fidelium; et tui amoris in eis ignem accende.
+          notes: 'Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed599 agrees word for
+            word with the controlling OLM1981 appointment (n.62 Pentecost Ad Missam in vigilia). This independent public-domain Latin
+            body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied
+            no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English
+            remains unchanged. Authentication of the complete2008 altar Missal is not asserted.'
         - name: Gospel
           source: scripture
           verses:
@@ -22056,12 +22095,12 @@ sections:
         - name: Gospel Acclamation
           incipit: Veni, Sancte Spiritus
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-            - kind: rights-withheld
-              source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+          text: Veni, Sancte Spiritus, reple tuorum corda fidelium; et tui amoris in eis ignem accende.
+          notes: 'Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed599 agrees word for
+            word with the controlling OLM1981 appointment (n.63 Pentecost Ad Missam in die: Alleluia Ut supra,n.62). This independent
+            public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English
+            admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed
+            historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted.'
         - name: Gospel
           source: scripture
           cycles:
@@ -22377,24 +22416,26 @@ sections:
         - name: Prayer after the Third Reading
           source: composed
           incipit: Domine, Deus virtutum
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-            - kind: witness-gap
-              source_id: passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum
-          notes: 'Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 7, first prayer. The petition
-            is independently established in the public-domain 1862 source. This Latin status records the missing
-            exact independently publishable Latin projection, not an absent official exemplar or a blanket restriction
-            on ancient expression. The separately proposed study English includes only the actual official short
-            cue and an explicitly marked response.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module'
+          notes: Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 7, first prayer. The complete petition is
+            independently sourced from Pustet 1862 printed p. 296, and the complete short conclusion and separate response from Pustet
+            printed p. [106]. The exact source-based Latin projection is collated to this finite official 2008 excerpt. Oremus is
+            a separate preceding invitation outside the prayer body. This is one of three alternative prayers after Ezekiel, without
+            an implicit default; the existing project study English remains unapproved.
           ordinary_disposition:
             kind: alternative
             group: prayer-after-third-reading
             option: domine-deus-virtutum
             basis: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module,
-              artifact pp. 64-65 / printed pp. 382-383, n. 7, explicitly prints three prayers separated by Vel after
-              Ezekiel 37:1-14. All three are alternatives; none is an implicit default.
+              artifact pp. 64-65 / printed pp. 382-383, n. 7, explicitly prints three prayers separated by Vel after Ezekiel 37:1-14.
+              All three are alternatives; none is an implicit default.
+          text: |
+            Domine, Deus virtutum,
+            qui collapsa reparas et reparata conservas,
+            auge populos in tui nominis sanctificatione renovandos,
+            ut omnes, qui sacro Baptismate diluuntur,
+            tua semper inspiratione dirigantur.
+            Per Christum Dominum nostrum.
+            R. Amen.
         - name: Prayer after the Third Reading
           source: composed
           incipit: Deus, qui nos verbo vitae regenerasti
@@ -23638,27 +23679,15 @@ sections:
           - begin: {chapter: 33, verse: 18}
             end: {chapter: 33, verse: 19}
           ref: Psalm 33:1-2, 4-5, 18-19
-      - name: "Gospel Acclamation"
+      - name: Gospel Acclamation
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e
-        notes: 'OLM 1981 n.272, AP202 / printed148, complete Gospel Acclamation inspected 2026-10-22. No biblical citation
-          is printed. An uncited two-clause Easter unit is printed; no biblical whole-unit identification or independent
-          publishable whole witness is established. Exact Latin image evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.easter-ferial-courses-267-284.
-          The underlying biblical material is not assigned new Latin ownership. No independent lawful whole-unit witness/publication
-          basis for the adapted or composed unit has been established; the held source artifact remains non-indexable
-          and restricted. No text, incipit, removed-body hash or Latin publication-ledger entry is supplied. No exact
-          English whole-unit exemplar is held. Dated 2026-10-29 successor: a complete historical Lasance1945
-          human-English verse has now been independently image-checked and bound for this exact OLM1981
-          verse recipient. Alleluia framing and adjacent material are outside that quotation. The earlier
-          no-exemplar finding and its unavailable dictionary are preserved in the dated admission receipt;
-          no approved-English or authenticated2008 claim, target Latin body, or restricted-image publication
-          is supplied. Source and admission: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-acclamations-admission.json.'
+        notes: 'OLM1981 n.272, AP202 / printed148, appoints the complete composed Gospel Acclamation without a biblical citation.
+          Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed555 agrees word for word
+          with the controlling OLM1981 appointment (n.272 Sabbato, EasterII ferial course). This independent public-domain Latin
+          body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied
+          no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English
+          remains unchanged. Authentication of the complete2008 altar Missal is not asserted.'
+        text: Surrexit Christus qui creavit omnia, et misertus est humano generi.
       - name: Gospel
         source: scripture
         verses:
@@ -62039,13 +62068,13 @@ sections:
           ref: Psalm 40:2, 4ab, 7-8a, 8b-9, 10
       - name: Gospel Acclamation
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
-        notes: 'Source-local appointment: OLM 1981 n. 602, artifact p. 351, refers to n. 729,8, artifact p. 390, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
+        notes: 'Source-local appointment: OLM 1981 n. 602, artifact p. 351, refers to n. 729,8, artifact p. 390, without a Scripture
+          citation. Dated 2026-11-12 Latin successor: the complete historical Latin verse in Pustet1888 Breviary, printed339 agrees
+          word for word with the controlling OLM1981 appointment (n.602 (July21) explicitly appoints n.729.8). This independent
+          public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English
+          admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed
+          historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted.'
+        text: Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.
       - name: Gospel
         ordinary_disposition:
           kind: alternative
@@ -64990,13 +65019,13 @@ sections:
           ref: Psalm 40:2, 4ab, 7-8a, 8b-9, 10
       - name: Gospel Acclamation
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
-        notes: 'Source-local appointment: OLM 1981 n. 637, artifact p. 359, refers to n. 729,8, artifact p. 390, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied.'
+        notes: 'Source-local appointment: OLM 1981 n. 637, artifact p. 359, refers to n. 729,8, artifact p. 390, without a Scripture
+          citation. Dated 2026-11-12 Latin successor: the complete historical Latin verse in Pustet1888 Breviary, printed339 agrees
+          word for word with the controlling OLM1981 appointment (n.637 (September13) explicitly appoints n.729.8). This independent
+          public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English
+          admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed
+          historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted.'
+        text: Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.
       - name: Gospel
         ordinary_disposition:
           kind: alternative
@@ -65225,19 +65254,35 @@ sections:
               chapter: 7
               verse: 29
           ref: Matthew 7:21-29
-    - key: saint-hildegard-bingen-virgin-doctor-church
-      name: Saint Hildegard of Bingen, Virgin and Doctor of the Church
-      registry: pc-09-17-hildegard
-      date: 09-17
-      rank: Optional memorial
-      kind: sanctoral
+    - key: 'saint-hildegard-bingen-virgin-doctor-church'
+      name: 'Saint Hildegard of Bingen, Virgin and Doctor of the Church'
+      registry: 'pc-09-17-hildegard'
+      date: '09-17'
+      rank: 'Optional memorial'
+      kind: 'sanctoral'
       text_status:
-        state: unavailable
-        scope: missal-formulary
+        state: 'partial'
+        scope: 'missal-formulary'
         reasons:
-        - kind: no-exemplar
-      notes: Stable calendar identity split from a formerly composite optional-memorial entry. No formulary
-        body is inferred or invented.
+        - kind: 'witness-gap'
+          source_id: 'edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008'
+      notes: 'Stable calendar identity split from a formerly composite optional-memorial entry. No formulary body
+        is inferred or invented. The complete proper Collect is held in the exact official annex registered below, but
+        no body is published. The remaining target Missal Common body and source-owned reading selection remain unresolved;
+        the source directions do not select a complete Common form. Appointment evidence: passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments'
+      propers:
+      - name: 'Collect'
+        source: 'composed'
+        text_status:
+          state: 'unavailable'
+          scope: 'proper-body'
+          body_status: 'held-unpublished'
+          reasons:
+          - kind: 'rights-withheld'
+            source_id: 'artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c'
+        notes: 'The official annex prints a complete proper Collect. Its exact image/HTML exemplar is acquired, so
+          no-exemplar is not the source state. No prayer body is supplied; per-text publication assessment and English
+          study translation remain open. Appointment evidence: passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments'
     - key: saint-januarius-bishop-martyr
       common_from:
         scope: missal-antiphons
@@ -66545,19 +66590,35 @@ sections:
               chapter: 5
               verse: 11
           ref: Luke 5:1-11
-    - key: saint-john-henry-newman-priest-doctor
-      name: Saint John Henry Newman, Priest and Doctor of the Church
-      registry: pc-10-09-newman
-      date: 10-09
-      rank: Optional memorial
-      kind: sanctoral
+    - key: 'saint-john-henry-newman-priest-doctor'
+      name: 'Saint John Henry Newman, Priest and Doctor of the Church'
+      registry: 'pc-10-09-newman'
+      date: '10-09'
+      rank: 'Optional memorial'
+      kind: 'sanctoral'
       text_status:
-        state: unavailable
-        scope: missal-formulary
+        state: 'partial'
+        scope: 'missal-formulary'
         reasons:
-        - kind: no-exemplar
-      notes: Stable calendar identity split from a formerly composite optional-memorial entry. No formulary
-        body is inferred or invented.
+        - kind: 'witness-gap'
+          source_id: 'edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008'
+      notes: 'Stable calendar identity split from a formerly composite optional-memorial entry. No formulary body
+        is inferred or invented. The complete proper Collect is held in the exact official annex registered below, but
+        no body is published. The remaining target Missal Common body and source-owned reading selection remain unresolved;
+        the source directions do not select a complete Common form. Appointment evidence: passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments'
+      propers:
+      - name: 'Collect'
+        source: 'composed'
+        text_status:
+          state: 'unavailable'
+          scope: 'proper-body'
+          body_status: 'held-unpublished'
+          reasons:
+          - kind: 'rights-withheld'
+            source_id: 'artifact.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.official-html-5c12307c'
+        notes: 'The official annex prints a complete proper Collect. Its exact image/HTML exemplar is acquired, so
+          no-exemplar is not the source state. No prayer body is supplied; per-text publication assessment and English
+          study translation remain open. Appointment evidence: passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments'
     - key: saint-john-xxiii-pope
       name: Saint John XXIII, Pope
       registry: pc-10-11

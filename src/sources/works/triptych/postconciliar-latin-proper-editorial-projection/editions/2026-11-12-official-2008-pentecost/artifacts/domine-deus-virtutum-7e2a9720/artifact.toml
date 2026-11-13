@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-12-official-2008-pentecost.domine-deus-virtutum-7e2a9720"
+edition_id = "edition.triptych.postconciliar-latin-proper-editorial-projection.2026-11-12-official-2008-pentecost"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers only its editorial carrier and source-relation record under CC BY 4.0. Every Latin word is independently witnessed in the public-domain 1862 printing: the whole petition at printed p. 296 and the complete short conclusion/response at printed p. [106]. No exclusive right in received Latin expression is claimed; the separate per-proper decision supplies the underlying-text publication basis."
+rights_jurisdiction = "United States"
+provenance = "Whole Pustet PDF hash 363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474 verified locally; artifact pp. 382 and 776 directly read on fresh complete page rasters on 2026-11-12. Whole official Notitiae PDF hash 74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f independently fetched and verified; artifact p. 64 / printed p. 382 directly compared. The modern PDF/images are not included."
+retrieved = "2026-11-12"
+sha256 = "7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a"
+byte_size = 240
+path = "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/artifacts/domine-deus-virtutum-7e2a9720/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.holy-see.notitiae.volume-44-numbers-503-504-2008.official-pdf-74c8d174"]
+transformation = "Transcribe the complete old petition from Pustet p. 296 and omit its actual Per Dominum. cue only in this separately witnessed target projection. Join printer hyphenation and remove stress accents. Apply official-target punctuation: comma after Domine, remove comma before et reparata, replace colon after conservas and semicolon after renovandos with commas. Capitalize Baptismate as in the target. Use independently printed Per Christum Dominum nostrum. and separate R. Amen. from old p. [106], never expansion from the p. 296 cue. Represent the response glyph as R.; retain its separate line. Set seven target sense lines. Oremus remains a distinct preceding invitation outside the body."
+indexable = true
+encoding = "utf-8"
+notes = "Proposed finite source carrier, to be installed only with independent acceptance and exact per-text publication authority. Existing study-English words remain unchanged. The historical petition and conclusion are not misrepresented as a contiguous single historical prayer."

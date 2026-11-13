@@ -70,6 +70,9 @@ derived_from:
 precedence:
   stated: true
   locus: NUALC 59
+  unresolved_tie: >-
+    No applicable same-place occurrence disposition is established here for this
+    tie. This repository does not choose between them.
   gloss: >-
     Unice - solely. There is no residual customary precedence, no appeal to the
     dignity of a titular, and no general principle that a solemnity always wins.
@@ -593,6 +596,27 @@ implied:
       locus: IGMR 363
       evidence: passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.363
       slots: [Collect, Prayer over the Offerings, Prayer after Communion]
+      selection:
+        id: ordinary-time-weekday-orations
+        weekday_key_matches: '^ot-\d+-(monday|tuesday|wednesday|thursday|friday|saturday)$'
+        owner_key_matches: '^ot-([1-9]|[12][0-9]|3[0-4])$'
+        owner_basis: place-6-sunday
+        season: ordinary-time
+        resolves_scope: oration-owner
+        complete: false
+        unavailable:
+        - {id: ot-1, state: not-represented, label: First Week in Ordinary Time}
+        - {id: ot-34, state: not-represented, label: Thirty-fourth Week in Ordinary Time}
+        - {id: various-needs, state: not-represented, label: Prayers for various needs}
+        - {id: collect-only, state: not-supported, label: Choosing the Collect separately}
+        why: >-
+          An explicit reader choice may take the three named orations together
+          from any held Ordinary Time Sunday formulary. This is the permission
+          in IGMR 363, not a mandatory appointment of the preceding Sunday.
+          The eligible keys describe the thirty-four Ordinary Time formularies;
+          only held keys with the stated Sunday basis and all three slots may
+          be offered. The unavailable alternatives keep the supported subset
+          distinct from the full permission, including the collect-only option.
       slots_why: >-
         Nothing else in this file answers which slots are orations. The
         `orations` block below says how many collects are SAID on a day, never
@@ -634,50 +658,17 @@ implied:
         slots, at mass level or at proper level, and none may: a takes_from
         citation records the edition's own printed pointer at the day, and what
         IGMR 363 states is a general rubric. The scope above says which slots
-        would cross over IF a base were emitted. It emits none and prefers none.
-    # The mass_choices entry the sentence above promises was attempted on
-    # 2026-08-20 and is not written, because it cannot be written truthfully in
-    # the shape this repository validates and renders.
-    mass_choice_not_yet_expressible:
-      attempted_on: '2026-08-20'
-      gaps:
-      - what: an arm cannot name a base that varies with the date
-        where: >-
-          tools/calendar-rubrics, check_mass_choices, which requires every arm
-          to declare takes mass with a key this calendar's index carries, or
-          takes office_mass; and src/web/browser/liturgy/assembly-model.js,
-          massChoicesFor, which resolves an arm to option.mass or, for
-          office_mass, to the winner's OWN formulary
-        why_it_blocks: >-
-          The base IGMR 363 names is the preceding Sunday, which is a different
-          key on every date, and the two alternatives it names - another Sunday
-          in Ordinary Time, a prayer for various needs - name no key at all. An
-          explicit weekday key now carries the day's readings but no oration
-          owner, so an office_mass arm would falsely manufacture ownership from
-          the weekday entry. Writing the arms as fixed Sunday keys would make
-          the choice the rubric declines to make.
-      - what: a choice cannot be confined to one season
-        where: src/web/browser/liturgy/assembly-model.js, massChoicesFor
-        why_it_blocks: >-
-          `when` gates on weekday, winner_basis and with_candidate. Its
-          when.season test compares the entry's own season field to itself and
-          never to the day's, and the day's season is not passed into the
-          function at all, so a season gate would read as a filter and filter
-          nothing. The only basis available here, place-13-weekday, is equally
-          the basis of the ordinary weekdays of Advent, of Christmas Time and of
-          Easter Time, where neither IGMR 363 nor rubric 3 b applies. An entry
-          written today would offer Ordinary Time's Masses on an Advent weekday.
-      also: >-
-        Enumerating the permission instead is out of reach for a third reason.
-        Rubric 3 b permits any of the thirty-four Ordinary Time Masses and this
-        index carries thirty-two of them, ot-2 to ot-33, the formularies of
-        weeks 1 and 34 having no Sunday to be inscribed at. Thirty-two arms
-        would understate the rubric and say nothing about the understatement.
-      so: >-
-        Nothing is written rather than something wrong. The weekday key and its
-        readings are emitted, but the choice still needs a takes value that can
-        name a date-dependent oration source and a `when` that actually tests the
-        day's season. Neither capability is invented by this source.
+        cross over only after an explicit choice under selection. No base is
+        selected by default.
+    selection_boundary:
+      former_attempt: '2026-08-20'
+      why: >-
+        The former mass_choices design could not name a varying oration owner
+        without replacing the weekday readings. The separate oration selection
+        above now names a held owner explicitly and leaves the weekday key and
+        readings in place. It offers a source-bounded subset, not the full
+        permission to choose any of the thirty-four formularies or prayers for
+        various needs. Whole-Mass choices under IGMR 355 c remain outside it.
 saturday_office:
   locus: NUALC 15
   stated_only: true
@@ -898,13 +889,11 @@ unsettled:
 - what: IGMR 54
   why: the article that states the one-oration rule directly has not been read in a
     witness here. The count is stated from NUALC 60 and IGMR 355 a instead.
-- what: the mass choice IGMR 363 leaves open on a weekday in Ordinary Time
-  why: 'it is a real choice and it is not written, because no arm of a mass_choices
-    entry can name a base that changes with the date and no `when` can confine a
-    choice to one season. The attempt, the two gaps and the shape the entry needs
-    are recorded in full at implied ordinary-time-weekday, under
-    mass_choice_not_yet_expressible; the oration scope that entry would need is
-    declared beside it and does not choose a basis either.'
+- what: the full choice IGMR 363 leaves open on a weekday in Ordinary Time
+  why: >-
+    The source-bounded explicit oration selection offers the held Ordinary Time
+    Sunday formularies. Weeks 1 and 34, prayers for various needs, and choosing
+    the Collect separately remain unavailable. No selection is made by default.
 
 worked_cases:
 - id: mother-of-church-prevails-over-boniface-2028

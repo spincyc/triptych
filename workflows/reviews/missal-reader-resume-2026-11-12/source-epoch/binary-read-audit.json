@@ -1,0 +1,137 @@
+{
+  "additional_external_binary_amendments_required": false,
+  "all_direct_read_stat_is_file_sites": [
+    {
+      "disposition": "immutable compiler source",
+      "expression": "Path(__file__).read_bytes()",
+      "line": 24,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "immutable support source",
+      "expression": "path.read_bytes()",
+      "line": 78,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "explicit input delta JSON",
+      "expression": "path.read_bytes()",
+      "line": 201,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "read_epoch replaced by full exact delivery-aware implementation",
+      "expression": "target.is_file()",
+      "line": 221,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "read_epoch replaced by full exact delivery-aware implementation",
+      "expression": "target.read_bytes()",
+      "line": 225,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "fixed Palm correction JSON",
+      "expression": "(root / PALM_CORRECTION).read_bytes()",
+      "line": 261,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "fixed direct-PD declaration JSON",
+      "expression": "(root / DIRECT_DECLARATION).read_bytes()",
+      "line": 279,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "original17 replay text files and named semantic inventory TOML files",
+      "expression": "(root / path).read_bytes()",
+      "line": 298,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "one exact namespace expression replaced by declared delivery closure",
+      "expression": "path.read_bytes()",
+      "line": 412,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "one exact namespace expression replaced by declared delivery closure",
+      "expression": "path.is_file()",
+      "line": 413,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "explicit input delta JSON drift check",
+      "expression": "delta_path.read_bytes()",
+      "line": 430,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "fixed direct-PD declaration JSON drift check",
+      "expression": "(root / DIRECT_DECLARATION).read_bytes()",
+      "line": 431,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "immutable compiler source drift check",
+      "expression": "Path(__file__).read_bytes()",
+      "line": 432,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py"
+    },
+    {
+      "disposition": "artifact.toml metadata selected by literal glob; none of the 115 binary paths",
+      "expression": "path.read_text()",
+      "line": 141,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py"
+    },
+    {
+      "disposition": "amended exact direct-PD dependency bytes",
+      "expression": "(source / dependency).read_bytes()",
+      "line": 205,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py"
+    },
+    {
+      "disposition": "direct-PD artifact.toml metadata; canonical file exists",
+      "expression": "(source / path).read_text()",
+      "line": 207,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py"
+    },
+    {
+      "disposition": "amended exact direct-PD payload size",
+      "expression": "(source / payload).stat()",
+      "line": 214,
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py"
+    }
+  ],
+  "entrypoint": "derive only; capture/inspect are not executed",
+  "immutable_source_hashes": {
+    "workflows/reviews/missal-english-completion-2026-10-29/source-guard/compile_successor_v3.py": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b",
+    "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+  },
+  "remaining_literal_read_lambda_paths": [
+    "src/sources/calendars/postconciliar/propers.yaml",
+    "src/sources/calendars/roman-1962/propers.yaml",
+    "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+    "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+    "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+    "src/sources/inventories/roman-pre-1955-ordo-missae-v1.toml",
+    "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+    "tools/tests/test_proper_latin.py",
+    "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py",
+    "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py",
+    "tools/tests/test_roman_1962_english13_phase5.py",
+    "tools/tests/test_roman_1962_english31_phase4.py",
+    "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py",
+    "tools/tests/test_roman_1962_latin22_phase5.py",
+    "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py",
+    "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+  ],
+  "remaining_literal_read_lambda_paths_all_canonical": true,
+  "schema": "triptych-source-epoch-binary-read-audit/v1",
+  "scope": "The two support expressions, existing epoch resolver and single namespace expression collectively cover every binary-sensitive read in the immutable compiler/support; no Path patching, symlink, alias, or byte substitution."
+}

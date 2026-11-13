@@ -1,0 +1,123 @@
+{
+  "schema": "triptych-independent-ordinary-source-review/v1",
+  "date": "2026-11-12",
+  "base_commit": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "verdict": "accept-bounded-historical-source-preparation",
+  "publication_state": "not-integrated; root acceptance and release checks remain",
+  "candidate_manifest": {
+    "path": ".scratch/modern-ordinary-candidates/manifest.json",
+    "sha256": "b112fa4a75c722c024c38395deb4e0f5d3419a6de4775562a270d479f1b24818"
+  },
+  "candidate_patch": {
+    "path": ".scratch/modern-ordinary-candidates/stage-a-preparation.patch",
+    "sha256": "38a2c373a9a51d172909ad4e1ae890f38799d4744e3201f665acd05a0b738588"
+  },
+  "scope": {
+    "target": "postconciliar Ordinary n.131, first private-preparation alternative",
+    "accepted_languages": [
+      "la",
+      "en"
+    ],
+    "accepted_text_role": "literal historical source petition excerpt",
+    "target_relation": "antecedent/uncollated",
+    "authenticated_2008_identity": false,
+    "approved_2011_english": false,
+    "second_option": "unavailable; no reconstructed text",
+    "general_ending_removal_authority": false
+  },
+  "independent_source_inspection": {
+    "source_pdf_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+    "artifact_page": 52,
+    "printed_page": "xli",
+    "ia_leaf": "n51",
+    "dpi": [
+      200,
+      400
+    ],
+    "method": "Whole already acquired hash-matched historical PDF; fresh independent page renders, both columns read. Parent checked-TSV typography remains the literal transformation input. No modern target transcription or source retrieval through a model.",
+    "finding": "Selected historical wording and source colon agree with the printed prayer. Each source petition plus one ASCII space plus its separately preserved conclusion reconstructs the whole parent TSV cell exactly."
+  },
+  "target_evidence_boundary": {
+    "independently_transcribed": false,
+    "secondary_2002_pages": [
+      367,
+      368
+    ],
+    "evidence_role": "Author-reported image comparison metadata only in this review; prior tracked sequence inventory independently records n.131 as two alternatives with one chosen. No exact modern wording certification is made.",
+    "reason": "Fresh target-text transcription had previously triggered an automated content-filter refusal in the preparation lane; this review did not repeat or reformat that action."
+  },
+  "source_publication_basis": "Existing exact 1861 Philadelphia historical transcription has an affirmative United States public-domain artifact record. Both new derivatives contain only literal selected spans from that source, inherit its edition ownership, and include no modern source wording, typography or host matter.",
+  "findings": [
+    "All nine candidate files match the supplied manifest hashes; all TOML records parse.",
+    "Both source parent payloads retain their exact pinned hashes; two new TSVs reconstruct their whole selected source cells.",
+    "Every unrelated inline Ordinary element is unchanged; existing variants and unrelated absence records are unchanged.",
+    "The old semantic key remains as a text-free rubric anchor. Both prayer alternatives have their own keys; first/default and explicit second selections are mutually exclusive; conflicting explicit options refuse.",
+    "Current production mass-ordinary calendar_structure compiles the proposal byte-semantically equal to its saved compiled JSON.",
+    "Neither carried language claims own/current target words, collation, target_wording, or exact-target coverage.",
+    "Production source notes appear by default in selected English, selected Latin and paired rendering. They are separate nonspoken blocks received by the terminal reader. Ordinary CLI element rendering also preserves the concise note in both languages.",
+    "The second option stays text-free and does not fall back to the first; neither removed historical conclusion is appended to the projected petition."
+  ],
+  "required_source_changes": [],
+  "integration_prerequisites": [
+    "Root must record a finite admission decision binding these exact candidate hashes and preserving the target-uncollated and historical-excerpt qualifications.",
+    "Run complete source-library and public-artifact gates, source epoch successor, source inventory refresh and owning generated browser-product validation after canonical integration.",
+    "Run supported full Day/Propers routes in native Chromium with the current generated product set, verifying both alternatives, single/paired languages, notes and source labels. The focused native-DOM checks are not native browser or layout acceptance.",
+    "Do not count this historical excerpt as authenticated complete2008 Latin, approved2011 English, or closure of whole-book completeness."
+  ],
+  "checks": [
+    {
+      "command": ".scratch/root/venv/bin/python .scratch/modern-ordinary-review/check.py",
+      "exit_status": 0,
+      "receipt": "mechanical-review.json",
+      "sha256": "50dd97865421bf1ef80fdb54fa914f7e601ab693c8d7216d8ee9b72b38c1dce6"
+    },
+    {
+      "command": "node .scratch/modern-ordinary-review/render.cjs",
+      "exit_status": 0,
+      "receipt": "render-review.json",
+      "sha256": "39e78529b0c53ed60b94315bcab5c1dac374df31fade3a771201eeca84567002"
+    }
+  ],
+  "tested_code_state": [
+    {
+      "path": "tools/mass-ordinary",
+      "sha256": "64a40ac97bae51378127556029be33c37d7a34cc05d93f756ed279b48648bb14"
+    },
+    {
+      "path": "scripts/_ordinary_text.py",
+      "sha256": "78bc3aca760383f4392ed0bd4bd9e01e580d4c5eb4922f198ad28f7d2b8e14f6"
+    },
+    {
+      "path": "src/web/browser/liturgy/day.js",
+      "sha256": "dc45b3f062cd05109f424a7ebeb56375f649063746c417855960aeaad6b5db18"
+    },
+    {
+      "path": "src/web/browser/liturgy/ordinary-seating.js",
+      "sha256": "90467f26022701a79cfee246c131de8776a6226f208cde0c5bc30010aaa3b5ba"
+    },
+    {
+      "path": "src/web/browser/liturgy/reader-state-adapters.js",
+      "sha256": "62b3e727766f8611383f13d0a5999a603baaf0a2f8c191d536df4088005df1c5"
+    },
+    {
+      "path": "src/web/browser/shared/browser-core.js",
+      "sha256": "020e39927b02903627a53ce04bba49a5b237f7bab522189afe6d0bacf757a604"
+    },
+    {
+      "path": "scripts/lectern/dom.js",
+      "sha256": "94dd50f260f01692edc06ce9fb9479c6f756016093da5bc41bd368413a0dbb89"
+    }
+  ],
+  "canonical_mutations": false,
+  "scratch_outputs": [
+    "review.json",
+    "mechanical-review.json",
+    "render-review.json",
+    "check.py",
+    "render.cjs",
+    "cli-en.txt",
+    "cli-la.txt",
+    "cummiskey-p52.png",
+    "cummiskey-p52-400.png"
+  ]
+}

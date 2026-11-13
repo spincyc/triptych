@@ -2108,13 +2108,44 @@ def validate_liturgical_public_data(
 
     name_seen: set[tuple] = set()
     execution_seen: set[tuple] = set()
+    conclusion_authority = None
     def visit_execution(value: object, trail: tuple = (), mass_key: str | None = None) -> None:
+        nonlocal conclusion_authority
         if isinstance(value, list):
             for index, item in enumerate(value): visit_execution(item, trail + (index,), mass_key)
         elif isinstance(value, dict):
             if isinstance(value.get("propers"), list) and isinstance(value.get("key"), str):
                 mass_key = value["key"]
             for key, item in value.items():
+                if key == "conclusion_execution":
+                    try:
+                        import _oration_endings
+                        import _missal_coverage
+                        if not isinstance(item, list) or len(item) != 1:
+                            raise ValueError("one finite conclusion descriptor required")
+                        if conclusion_authority is None:
+                            _, conclusion_authority = _oration_endings.authority(ROOT)
+                        source = _oration_endings.validate_public(item[0], ROOT, authority_rows=conclusion_authority)
+                        target = source["target"]
+                        if payload.get("calendar") != "roman-1962" or parts[:2] != ("structure", "propers"):
+                            raise ValueError("conclusion execution outside Roman1962 propers")
+                        borrowed = value.get("taken_from") or {}
+                        owner = borrowed.get("mass") or mass_key
+                        form = (borrowed.get("form") or "main") if borrowed else value.get("form_id")
+                        proper = borrowed.get("proper") or value.get("name")
+                        if [owner, form, proper] != target[:3]:
+                            raise ValueError("conclusion descriptor source owner differs")
+                        target_id = _missal_coverage.identity(
+                            _missal_coverage.identity("roman-1962", "proper", target[0], target[1], target[2], target[4]), "all", target[3])
+                        if (value.get("coverage") or {}).get("target_id") != target_id:
+                            raise ValueError("conclusion source occurrence differs")
+                        if _oration_endings.sha(value.get("text") or "") != source["target_latin_sha256"]:
+                            raise ValueError("conclusion current Latin differs")
+                        english = [row for row in value.get("translations") or [] if row.get("lang") == "en" and row.get("source_id") == source["source_id"]]
+                        if len(english) != 1 or _oration_endings.sha(english[0].get("text") or "") != source["source_text_sha256"]:
+                            raise ValueError("conclusion current English witness differs")
+                    except (ValueError, KeyError, TypeError, OSError) as error:
+                        raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
                 if key == "name_execution_source_coverage":
                     expected = {"schema": "triptych-name-source-coverage/v1", "sources": 2,
                         "historical_named_translations_added": 0, "count_basis": "distinct-exact-recipient-occurrences"}

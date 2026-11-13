@@ -1,0 +1,110 @@
+{
+  "state": "source-accepted; consumer integration pending",
+  "date": "2026-11-12",
+  "scope": "One modern private-preparation first-alternative historical petition; second alternative remains unavailable. Two new source artifacts, four passages and one inventory candidate. No canonical source or generated file changed.",
+  "pins": [
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la/ordinarium-communio-la.tsv",
+      "sha256": "8a58f98ad38a0733f8b6b7645ef0f7ccc2a95995d28478d87aa351a7d87fe67d"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-en/ordinarium-communio-en.tsv",
+      "sha256": "f35d635ec2311ade057558ad1531bc6e007126311acc9a554b4b662dfacd0ccc"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "c9babb91ea80c4b1fb192693a8c2027c7fce114dfea4ab23eb149f872990246e"
+    }
+  ],
+  "files": [
+    {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "239fa6ed41030f2f33cb753007262fbd8f2733e86530f8c616a73a696916dbbb",
+      "bytes": 176729
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-en-20261112/artifact.toml",
+      "sha256": "8ad28e1ef12b52f5dfad1e27d863ff3b66032e48aa724b38a83f45b5dc9fc321",
+      "bytes": 2110
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-en-20261112/text.tsv",
+      "sha256": "9e669f0f812a8ca2482dd9d228d897ffcdd7cdc62f23cbd8eeda8de6b29bbbe8",
+      "bytes": 725
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-la-20261112/artifact.toml",
+      "sha256": "c6b83cf5050e95ea7377a55aedc556801ea84595351718690069fbf1487c0a3b",
+      "bytes": 2108
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinary-preparation-source-prefix-la-20261112/text.tsv",
+      "sha256": "85717c429d97d74273b6a4847116c732912a06d1299c574b579302bd5c23ce67",
+      "bytes": 714
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-en-20261112.toml",
+      "sha256": "a94018720d3b2f92f34bfae37e541aee255e937d0bf47dd4ffb4b8c121bc813d",
+      "bytes": 1139
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-petition-la-20261112.toml",
+      "sha256": "59f7b32006a5cd8299598407febe1bd882d093ebf483996528a0c556cae26245",
+      "bytes": 1137
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-en-20261112.toml",
+      "sha256": "190bb7a28d97d0281f21513ecbbbbaef894ad2cd58fe4ebe76d73f31951040cb",
+      "bytes": 1166
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ordinary-preparation-source-conclusion-la-20261112.toml",
+      "sha256": "9409b49d4c1c127b6d73da9afd602865983af6ba4b091499d2a67ed0c0def7d8",
+      "bytes": 1164
+    }
+  ],
+  "target": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "inspected_pages": [
+      367,
+      368
+    ],
+    "status": "secondary2002; not authenticated2008"
+  },
+  "historical_source_pdf": {
+    "sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+    "inspected_pages": [
+      32,
+      52
+    ],
+    "published_payload": "No source PDF or Google matter in package"
+  },
+  "verification": [
+    "Production mass-ordinary.calendar_structure accepted candidate with current source graph and candidate artifact additions.",
+    "Both source rows reconstruct exactly as petition + ASCII space + conclusion.",
+    "All proposal artifacts and inventory parse as TOML.",
+    "Production JavaScript choice filtering:12 assertions PASS; exact alternative separation and source colons retained.",
+    "Real-data probe could not start: current committed browser product cache absent. No browser acceptance claimed.",
+    "Final candidate manifest hashes and all TOML records rechecked after absence-summary successor."
+  ],
+  "remaining": [
+    "Independent source and source-selection review.",
+    "Root source/data acceptance and source-epoch update.",
+    "Private preparation alternative UI/native browser and script consumer checks.",
+    "2008 exactness remains open.",
+    "Full source and public-artifact gates and focused generated-data refresh."
+  ],
+  "word_frame_hold": "Per evangelica dicta is source-ready but no activation patch is supplied: ordinary Gospel versus Passion applicability must be independently established first.",
+  "word_frame_source_candidate": "stage-b-word-source-candidate.json",
+  "repeatable_work_note": {
+    "tool": "tmt note",
+    "slug": "ordinary-source-prefix-split",
+    "count": 1,
+    "status": "recorded"
+  },
+  "supersedes_manifest_sha256": "b112fa4a75c722c024c38395deb4e0f5d3419a6de4775562a270d479f1b24818",
+  "metadata_successor": "Four source loci normalized to owningwork syntax; full page/column prose preserved in notes. Independent locus review, actual complete source-library structural validation passed. Source text, selections and inventory unchanged.",
+  "metadata_review_path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-ordinary-preparation-locus-review.json",
+  "metadata_review_sha256": "b89d5b23860e5066c066332b10af8dcb745b87234c14000eb9125037907c92c8"
+}

@@ -82,7 +82,8 @@
     pendingFocus: null,
     modeStartedAt: null,
     pendingPreferences: false,
-    compareView: null
+    compareView: null,
+    dedicationAttestation: null
   };
 
   const PREFERENCES_KEY = 'triptych:liturgy:preferences:v1';
@@ -196,12 +197,14 @@
     return [recension && recension.notice, text].filter(Boolean).join(' ');
   }
 
-  function sourceIndex(event) {
+  function sourceProper(event, structure) {
     const hook = (event.sourceHooks || []).find(function (one) {
       return one.kind === 'proper-structure';
     });
-    const match = hook && /\/(\d{3})$/.exec(hook.id);
-    return match ? Number(match[1]) - 1 : null;
+    const match = hook && /^([^/]+)\/([^/]+)\/(\d{3})$/.exec(hook.id);
+    const owner = match && match[1] === structure.calendar &&
+      (structure.masses || []).find(function (mass) { return mass.key === match[2]; });
+    return owner && (owner.propers || [])[Number(match[3]) - 1] || null;
   }
 
   function semanticProjection(result) {
@@ -535,7 +538,34 @@
       }) : load('structure/propers/' + peer + '.json');
     }
     const selectedStructures = await Promise.all([primaryStructure, peerStructure]);
-    const structure = selectedStructures[0];
+    let structure = selectedStructures[0];
+    if (runtime.dedicationAttestation && requestedMode !== 'compare') {
+      const attestation = runtime.dedicationAttestation;
+      if (attestation.calendar !== missal || attestation.civilDate !== preliminary.date ||
+          parsed.recognized.mass && parsed.recognized.mass !== attestation.mass ||
+          (parsed.recognized.form || 'main') !== attestation.formId) {
+        runtime.dedicationAttestation = null;
+      }
+    }
+    const orationOwner = parsed.present.indexOf('oration-mass') >= 0;
+    const dedication = requestedMode !== 'compare' ? runtime.dedicationAttestation : null;
+    // Weekday-oration and dedication selections read owner Masses that a
+    // day-scoped reader index does not hold, so they read the complete structure.
+    if (orationOwner || dedication) structure = await load('structure/propers/' + missal + '.json');
+    if (orationOwner) {
+      derived = Model.selectWeekdayOrations({
+        derived: derived, rubrics: rows[0], year: rows[1], structure: structure,
+        territory: parsed.recognized['oration-territory'] || null,
+        mass: parsed.recognized.mass || null, owner: parsed.recognized['oration-mass']
+      }).derived;
+    }
+    if (dedication) {
+      derived = Model.selectDedicationAnniversary({
+        derived: derived, rubrics: rows[0], structure: structure,
+        mass: parsed.recognized.mass || null, formId: parsed.recognized.form || 'main',
+        territory: dedication.territory, attestation: dedication
+      }).derived;
+    }
     const structures = {};
     structures[missal] = structure;
     if (peer) structures[peer] = selectedStructures[1];
@@ -1166,9 +1196,17 @@
 
   function resultStateForBranch(state, branch, multiple) {
     if (!multiple) return state;
-    return Object.assign({}, state, {
+    const request = Object.assign({}, state, {
       calendar: Object.assign({}, state.calendar, { territory: { id: branch.option } })
     });
+    if (branch.orationSelection) {
+      request.orationMass = branch.orationSelection.owner;
+      if (branch.orationSelection.territory) request.orationTerritory = branch.orationSelection.territory;
+    } else {
+      delete request.orationMass;
+      delete request.orationTerritory;
+    }
+    return request;
   }
 
   function failedBranchDocument(branch, prefix, error) {
@@ -1192,17 +1230,18 @@
     };
   }
 
+  function sourceDayChoice(branch, id) {
+    if (branch && branch.choice &&
+        (branch.choice.id || 'calendar-precedence') === id) return branch.choice;
+    return (branch && branch.massChoices || []).find(function (one) {
+      return (one.id || 'authorized-formulary-choice') === id;
+    }) || null;
+  }
+
   function primaryDayChoice(result, branch) {
-    const readable = new Set();
-    (branch && branch.readable || []).forEach(function (one) {
-      if (one.id) readable.add(one.id);
-      if (one.key) readable.add(one.key);
-    });
     return (result.unresolvedChoices || []).find(function (one) {
       return one.id === 'calendar-formulary' || /^proper-form:/.test(one.id) ||
-        ((one.options || []).length > 1 && one.options.every(function (option) {
-          return readable.has(option.id);
-        }));
+        !!sourceDayChoice(branch, one.id);
     }) || null;
   }
 
@@ -1220,7 +1259,7 @@
     };
   }
 
-  function validateExplicitTranslationWitness(state, derived, structure) {
+  function validateExplicitTranslationWitness(state, derived, structure, rubrics) {
     const wanted = state.languages && state.languages.translationWitness || null;
     if (!wanted) return [];
     const errors = [];
@@ -1232,6 +1271,7 @@
       const probe = Adapters.adaptDay({
         request: witnessless,
         derived: derived,
+        rubrics: rubrics || runtime.rubrics,
         structure: structure,
         ordinary: null
       });
@@ -1248,7 +1288,7 @@
     return errors.slice(0, 1);
   }
 
-  function validateExplicitSemanticLocation(state, derived, structure, ordinary) {
+  function validateExplicitSemanticLocation(state, derived, structure, ordinary, rubrics) {
     const wanted = state.semanticLocation && state.semanticLocation.eventId || null;
     if (!wanted) return [];
     const multiple = (derived.options || []).length > 1;
@@ -1258,6 +1298,7 @@
       try {
         const branchState = resultStateForBranch(state, branch, multiple);
         const result = Adapters.adaptDay({
+          rubrics: rubrics || runtime.rubrics,
           request: branchState,
           derived: derived,
           structure: structure,
@@ -1308,7 +1349,18 @@
     if (properForm && !mass) {
       throw new Error('a Proper-form choice has no resolved source Mass');
     }
-    const offered = properForm ? (mass.forms || []) : (branch.readable || []);
+    const sourceChoice = !properForm && sourceDayChoice(branch, choice.id);
+    const offered = properForm ? (mass.forms || []) : sourceChoice
+      ? (sourceChoice.among || []).map(function (option) {
+        const id = option.key || option.id;
+        const readable = (branch.readable || []).find(function (row) {
+          return row.key === id || row.id === id;
+        });
+        if (!readable || readable.state === 'commemorated') {
+          throw new Error('a source choice option has no readable Mass identity');
+        }
+        return Object.assign({}, readable, { id: id, label: option.label || readable.label });
+      }) : (branch.readable || []);
     const readable = new Map(offered.map(function (row) {
       return [row.id || row.key, row];
     }));
@@ -1443,6 +1495,114 @@
     refreshDetailsAfterOutcome();
   }
 
+  function weekdayOrationControl(result, structure, state, prefix) {
+    const choices = Model.weekdayOrationChoices({
+      derived: runtime.derived, rubrics: runtime.rubrics, structure: structure,
+      territory: state.calendar.territory && state.calendar.territory.id || null,
+      mass: state.selectedReadableFormulary && state.selectedReadableFormulary.id || null
+    });
+    if (!choices) return null;
+    const section = T.el(result.orationSelection ? 'details' : 'section', 'candidate-choice weekday-oration-choice');
+    section.dataset.weekdayOrationChoice = choices.id;
+    if (result.orationSelection) section.appendChild(T.el('summary', null,
+      'Prayers from ' + result.orationSelection.label + ' · ' + choices.locus));
+    const heading = T.el('h2', null, 'Choose prayers for this weekday');
+    heading.id = (prefix || '').replace(/\//g, '-') + 'weekday-oration-heading';
+    if (!result.orationSelection) section.setAttribute('aria-labelledby', heading.id);
+    section.appendChild(heading);
+    section.appendChild(T.el('p', 'candidate-choice-reason',
+      'Choose prayers from an allowed Mass. The readings remain those of this weekday.'));
+    const form = T.el('form', 'candidate-choice-form');
+    const label = T.el('label', null, 'Prayers from');
+    const select = T.el('select');
+    select.name = 'oration-mass';
+    select.appendChild(new Option('Choose a Mass', ''));
+    choices.options.forEach(function (option) { select.appendChild(new Option(option.label, option.id)); });
+    select.value = state.orationMass || '';
+    label.appendChild(select);
+    const apply = T.el('button', 'candidate-choice-apply', 'Read with these prayers');
+    apply.type = 'submit';
+    apply.disabled = !select.value;
+    select.addEventListener('change', function () { apply.disabled = !select.value; });
+    form.appendChild(label);
+    form.appendChild(apply);
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!select.value) return;
+      navigate({'oration-mass': select.value, 'oration-territory': choices.territory, location: null}, ['location'], {
+        location: {kind: 'top', id: null}, focus: {kind: 'day-choice-result'}
+      });
+    });
+    section.appendChild(form);
+    if (result.orationSelection) section.appendChild(T.el('p', 'candidate-choice-locus',
+      'Prayers from ' + result.orationSelection.label + ' · ' + choices.locus + '.'));
+    section.appendChild(T.el('p', 'surface-note', choices.locus +
+      ' permits this choice. Other permitted choices are not yet available here; missing texts remain marked.'));
+    return section;
+  }
+
+  function dedicationLocationControl(result, structure, state, prefix) {
+    const choices = Model.dedicationAnniversaryChoices({derived: runtime.derived,
+      rubrics: runtime.rubrics, structure: structure,
+      mass: state.selectedReadableFormulary && state.selectedReadableFormulary.id || null,
+      formId: state.form || 'main', territory: state.calendar.territory && state.calendar.territory.id || null});
+    if (!choices) return null;
+    const section = T.el(result.dedicationSelection ? 'details' : 'section', 'candidate-choice dedication-location-choice');
+    if (result.dedicationSelection) section.appendChild(T.el('summary', null,
+      'Confirmed location: ' + result.dedicationSelection.label));
+    const heading = T.el('h2', null, 'Where is this Mass being celebrated?');
+    heading.id = (prefix || '').replace(/\//g, '-') + 'dedication-location-heading';
+    if (!result.dedicationSelection) section.setAttribute('aria-labelledby', heading.id);
+    section.appendChild(heading);
+    section.appendChild(T.el('p', 'candidate-choice-reason',
+      'The Secret depends on whether this Mass is celebrated in the church whose dedication is commemorated. If the location is unknown, leave it unresolved.'));
+    const form = T.el('form', 'candidate-choice-form');
+    const label = T.el('label', null, 'Celebration location');
+    const select = T.el('select');
+    select.name = 'dedication-location';
+    select.appendChild(new Option('Location unknown', ''));
+    choices.options.forEach(function (option) { select.appendChild(new Option(option.label, option.id)); });
+    select.value = result.dedicationSelection && result.dedicationSelection.relation || '';
+    label.appendChild(select);
+    form.appendChild(label);
+    const confirmation = T.el('label', 'candidate-choice-option');
+    const checkbox = T.el('input');
+    checkbox.type = 'checkbox';
+    checkbox.name = 'confirm-dedication-location';
+    confirmation.appendChild(checkbox);
+    confirmation.appendChild(document.createTextNode('I confirm that this is the actual location of this celebration.'));
+    form.appendChild(confirmation);
+    const apply = T.el('button', 'candidate-choice-apply', 'Apply confirmed location');
+    apply.type = 'submit';
+    apply.disabled = true;
+    form.addEventListener('change', function () { apply.disabled = !select.value || !checkbox.checked; });
+    function applyLocation(attestation) {
+      runtime.dedicationAttestation = attestation;
+      runtime.pendingLocation = {kind: 'top', id: null};
+      runtime.pendingFocus = {kind: 'day-choice-result'};
+      renderCandidate();
+    }
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (!select.value || !checkbox.checked) return;
+      applyLocation({schema: 'triptych-dedication-location/v1', calendar: choices.calendar,
+        civilDate: choices.civilDate, mass: choices.mass, formId: choices.formId,
+        territory: choices.territory, relation: select.value});
+    });
+    form.appendChild(apply);
+    section.appendChild(form);
+    if (result.dedicationSelection) {
+      section.appendChild(T.el('p', 'candidate-choice-locus', result.dedicationSelection.label + ' · ' + choices.locus));
+      const reset = T.el('button', null, 'Leave location unresolved');
+      reset.type = 'button';
+      reset.addEventListener('click', function () { applyLocation(null); });
+      section.appendChild(reset);
+    }
+    section.appendChild(T.el('p', 'surface-note',
+      'This confirmation applies only to this celebration while this page is open. A shared link or reload asks for confirmation again.'));
+    return section;
+  }
+
   async function buildResultDocument(result, structure, branch, renderContext, isCurrent) {
     const state = renderContext.state;
     const ordinary = renderContext.ordinary;
@@ -1455,6 +1615,10 @@
     const fragments = await T.fetchFragments(bible, T.citationsOf(mass), state, runtime.bibles);
     if (!isCurrent()) return false;
     const documentFragment = document.createDocumentFragment();
+    const dedicationControl = dedicationLocationControl(result, structure, state, prefix);
+    if (dedicationControl) documentFragment.appendChild(dedicationControl);
+    const orationChoice = weekdayOrationControl(result, structure, state, prefix);
+    if (orationChoice) documentFragment.appendChild(orationChoice);
     const contents = [];
     const branchLocus = prefix && branch && branch.option
       ? T.titleCase(String(branch.option).replace(/-/g, ' ')) : null;
@@ -1495,10 +1659,9 @@
           return;
         }
         if (event.kind !== 'proper') return;
-        const index = sourceIndex(event);
-        const proper = index === null ? null : (mass.propers || [])[index];
+        const proper = sourceProper(event, structure);
         if (!proper || T.isPlaceholder(proper)) return;
-        const section = renderProperEvent(event, proper, index, structure, bible,
+        const section = renderProperEvent(event, proper, eventOrdinal, structure, bible,
           fragments, state, 'h2', prefix, result);
         const unplaced = typedUnplacedSeat(event);
         const region = unplaced && event.seat.region === 'before-frame'
@@ -1519,6 +1682,7 @@
       state: state, prefix: prefix, navigate: navigate,
       adapt: function (request) {
         return Adapters.adaptDay({ request: request, derived: runtime.derived,
+          rubrics: runtime.rubrics,
           structure: structure, ordinary: ordinary });
       }
     });
@@ -1769,7 +1933,8 @@
       translationWitness: state.languages.translationWitness || null,
       heading: heading,
       cycle: event.selected && event.selected.cycle || null,
-      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
+      orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null,
+      conclusionExecution: event.conclusionExecution || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
     });
     const choice = renderTranslationWitnessChoice(
       event, resolvableTranslationWitnessState(result, structure, state), prefix, result,
@@ -1871,11 +2036,11 @@
       location: location, focus: { kind: 'proper-choice-result', event: location.id },
       adapt: function (request) {
         return Adapters.adaptDay({ request: request, derived: runtime.derived,
+          rubrics: runtime.rubrics,
           structure: structure, ordinary: runtime.ordinary });
       },
       renderMember: function (member) {
-        const index = sourceIndex(member);
-        const proper = index === null ? null : (mass.propers || [])[index];
+        const proper = sourceProper(member, structure);
         if (!proper || T.isPlaceholder(proper)) {
           throw new Error('Proper choice member has no production Proper at ' + member.id);
         }
@@ -1945,8 +2110,7 @@
         });
         return;
       }
-      const index = sourceIndex(event);
-      const proper = index === null ? null : (mass.propers || [])[index];
+      const proper = sourceProper(event, structure);
       if (!proper || T.isPlaceholder(proper)) {
         throw new Error('semantic Proper event has no production Proper at ' + event.id);
       }
@@ -2149,8 +2313,7 @@
           });
           return node;
         }
-        const index = sourceIndex(event);
-        const proper = index === null ? null : (mass.propers || [])[index];
+        const proper = sourceProper(event, structure);
         if (!proper || T.isPlaceholder(proper)) {
           throw new Error('semantic Proper event has no production Proper at ' + event.id);
         }
@@ -2237,6 +2400,7 @@
           options: Object.assign({}, state.options || {}, { legitimate: legitimate })
         });
         const candidate = Adapters.adaptDay({
+          rubrics: runtime.rubrics,
           request: candidateState, derived: runtime.derived,
           structure: structure, ordinary: ordinary
         });
@@ -2382,7 +2546,7 @@
         return;
       }
       const witnessErrors = validateExplicitTranslationWitness(
-        normalized.state, assembled.derived, assembled.structure
+        normalized.state, assembled.derived, assembled.structure, assembled.rubrics
       );
       if (witnessErrors.length) {
         renderFailure(witnessErrors, { mode: requestedMode });
@@ -2390,7 +2554,7 @@
       }
       const locationErrors = normalized.state.requestedMode === 'compare' ? [] :
         validateExplicitSemanticLocation(
-          normalized.state, assembled.derived, assembled.structure, assembled.ordinary
+          normalized.state, assembled.derived, assembled.structure, assembled.ordinary, assembled.rubrics
         );
       if (locationErrors.length) {
         renderFailure(locationErrors, { mode: requestedMode });
@@ -2448,6 +2612,7 @@
           const prefix = locationPrefix(branch, multiple);
           try {
             const result = Adapters.adaptDay({
+              rubrics: assembled.rubrics,
               request: branchState,
               derived: assembled.derived,
               structure: assembled.structure,
@@ -2599,6 +2764,22 @@
 
   function navigate(updates, removals) {
     removals = Shell.properChoiceRemovals(runtime.normalized && runtime.normalized.state, updates, removals);
+    const state = runtime.normalized && runtime.normalized.state;
+    const scope = state && {date: state.civilDate, missal: state.edition.id,
+      territory: state.calendar.territory && state.calendar.territory.id || null,
+      mass: state.selectedReadableFormulary && state.selectedReadableFormulary.id || null,
+      form: state.form || null};
+    const scopeChanged = !scope || Object.keys(scope).some(function (key) {
+      const next = (removals || []).indexOf(key) >= 0 ? null :
+        (Object.prototype.hasOwnProperty.call(updates, key) ? updates[key] || null : scope[key]);
+      if (key === 'mass' && !scope.mass && runtime.result && runtime.result.resolved &&
+          next === runtime.result.resolved.formulary) return false;
+      if (key === 'form' && !scope.form && next === 'main') return false;
+      return next !== scope[key];
+    });
+    if (scopeChanged) runtime.dedicationAttestation = null;
+    if (!Object.prototype.hasOwnProperty.call(updates, 'oration-mass') &&
+        scopeChanged) removals = (removals || []).concat(['oration-mass', 'oration-territory']);
     const navigation = arguments.length > 2 && arguments[2] || {};
     runtime.pendingPreferences = navigation.rememberPreferences === true;
     const currentLocation = readerShell.captureSemanticLocation();

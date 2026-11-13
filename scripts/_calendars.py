@@ -2817,6 +2817,36 @@ def _resolve_proper(
     ]
 
 
+def _latin_source_presentation(proper: dict) -> tuple[str, str]:
+    """Keep a checked source quotation's qualification beside its words.
+
+    Exact transcription establishes the wording of the named source, not its
+    identity with the target Missal. The public ledger's note owns that
+    distinction; do not invent a historical relation or print general Proper
+    apparatus for every Latin body.
+    """
+    latin = proper.get("latin")
+    if not proper.get("text") or not isinstance(latin, dict):
+        return "", ""
+    provenance = latin.get("provenance")
+    publication = latin.get("publication")
+    if not (
+        latin.get("withheld") is False
+        and latin.get("state") != "unavailable"
+        and isinstance(provenance, dict)
+        and provenance.get("status") == "collated"
+        and provenance.get("relationship") == "exact-transcription"
+        and isinstance(publication, dict)
+        and publication.get("status") == "permitted"
+    ):
+        return "", ""
+    note = latin.get("note") or proper.get("notes")
+    if not isinstance(note, str) or not note.strip():
+        return "", ""
+    source = provenance.get("source_date") or provenance.get("source_id")
+    return (f"Latin source: {source}" if source else ""), note.strip()
+
+
 def texts_of(
     proper: dict, lang: str, witness: str | None = None
 ) -> list[tuple[str, str, str]]:
@@ -2830,14 +2860,15 @@ def texts_of(
     disagreement is what caught 38 wrong orations in this corpus. `witness`
     narrows to one when that is what is wanted.
 
-    Returns `(text, attribution, note)` triples; the attribution is empty
-    where there is nothing to choose between. It lives here rather than in
-    `mass-propers` because two tools print a proper — that one and
+    Returns `(text, attribution, note)` triples; the attribution identifies a
+    qualified Latin source or distinguishes multiple translations. It lives
+    here rather than in `mass-propers` because two tools print a proper — that one and
     `mass-today --expanded` — and a second copy of this rule would be a second
     answer to "which text is this Mass said in".
     """
     if lang == "la":
-        return [(str(proper.get("text") or ""), "", "")]
+        attribution, note = _latin_source_presentation(proper)
+        return [(str(proper.get("text") or ""), attribution, note)]
     found = [
         translation
         for translation in proper.get("translations") or []
@@ -2850,7 +2881,8 @@ def texts_of(
             (
                 str(translation.get("text") or ""),
                 str(translation.get("source_id") or "this project") if named else "",
-                "",
+                translation["caution"]
+                if isinstance(translation.get("caution"), str) else "",
             )
             for translation in found
         ]
@@ -2875,7 +2907,10 @@ def texts_of(
             note = f"no {lang} recorded, deliberately; see the untranslated ledger"
         else:
             note = f"no {lang} translation{scope} recorded; showing Latin"
-        return [(str(proper["text"]), "", note)]
+        attribution, source_note = _latin_source_presentation(proper)
+        if source_note:
+            note += ". " + source_note
+        return [(str(proper["text"]), attribution, note)]
     return []
 
 

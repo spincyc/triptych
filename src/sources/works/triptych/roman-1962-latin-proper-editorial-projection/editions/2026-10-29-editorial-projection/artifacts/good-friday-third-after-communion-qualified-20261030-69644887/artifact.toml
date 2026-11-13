@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Finite United States qualified-nonoriginal-adaptation assessment under method english-completion-20261029-finite-latin-v1, limited to the exact scope admitted by the code-pinned finite authority. The Latin body hash equals the body adopted in the 2026-10-30 future-Good-Friday-two root decision; these reconstructed records carry fresh source bindings. No holder permission, whole-work public-domain claim or general formula license is asserted. Only Triptych editorial contributions are offered under CC BY 4.0."
+provenance = "Fresh page-image collation on 2026-11-12 against whole registered 1962 PDF and independently read whole older prayers and conclusion. The old scratch packet is absent; no prior receipt is represented as a check of these new record bytes."
+retrieved = "2026-11-12"
+sha256 = "69644887102a93a61c88021c6553943fc24e566dcfc273921c9da7c2a98d06c9"
+byte_size = 217
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-third-after-communion-qualified-20261030-69644887/latin.txt"
+projected_from = ["artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-two-whole-readings-20261112-8e343f98", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join target printed wraps, remove stress accents and expand ligatures; retain exact target wording, pointing, complete printed ending and response direction/marker. Identify the nonspoken direction/marker by an exact typed action while keeping the following Amen spoken. Do not relabel target variants as ancient main text."
+indexable = true
+encoding = "utf-8"
+notes = "An abridgment can contribute original authorship even if it adds no petition words. Deleting nobis makes pro quibus carry the beneficiary reference without a second communal pronoun; coupling that edited prayer to a more explicit Christ conclusion and response could constitute a meaningful modern ritual adaptation. The old source is a Monday-in-the-sixth-week prayer, not proof of the Good Friday appointment, and the Palm Sunday conclusion witness establishes its wording only. Neither source context proves that the final modern combination is wholly unprotected."

@@ -1,0 +1,2663 @@
+{
+  "schema": "triptych-oration-ending-independent-review/v1",
+  "reviewed_on": "2026-11-12",
+  "batch": 4,
+  "batch_sha256": "81db0d68bab93d2f3c407d214d85bbf121d7309afa724c1687340b80f1d68d42",
+  "packet_sha256": "450175fafe57bcc780f57b88c0a26ed30b4c7d9ae98900a6d627c57cb032a0aa",
+  "result": "accepted-with-required-runtime-scope",
+  "counts": {
+    "reviewed": 162,
+    "accepted": 162,
+    "rejected": 0
+  },
+  "families": {
+    "through-our-lord": 142,
+    "through-the-same": 5,
+    "who-livest": 10,
+    "who-with-thee": 5
+  },
+  "source_images_read": [
+    {
+      "name": "1962-ap17.png",
+      "sha256": "b023aad66759557a7fe910dbbaf8296b69b001ddc6683bcaf08792dc190ec482",
+      "locus": "1962 CMAA PDF17, printedXIX; RG115-116"
+    },
+    {
+      "name": "lasance-ap818.png",
+      "sha256": "d24ed45817669dfb48a66af51d16dc5e8fc97936ad1f146db6d7b8f330783f0d",
+      "locus": "Lasance revised1945 PDF818, printed819; five bilingual conclusion formulas and separate R.Amen"
+    }
+  ],
+  "input_sha256": {
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "9dffc512b5ba43699f9d72dc3624e1cfe148ff262ff9ddd1acd41bc2e6f3a1fc",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "59deb71b22cb457873a56a91b6044f295934c59acb044eb7d701d38547b09ff9",
+    "src/sources/calendars/roman-1962/propers.yaml": "7ed9b6adeb8b259c81140f02ba31e899a8c8328f4e2a8d57af34380548ffc97c",
+    "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"
+  },
+  "required_runtime_refusals": [
+    "wrong-calendar",
+    "wrong-target-or-body-hash",
+    "wrong-selected-witness",
+    "unproved-or-nonfinal-shared-conclusion",
+    "unknown-source-table-or-rule-authority",
+    "unbound-placeholder-or-option"
+  ],
+  "required_preservation": [
+    "Original quoted source text and cue remain unchanged and independently accessible.",
+    "The separately supplied conclusion is visibly derived execution, not verbatim full source prayer or approved1962English.",
+    "Separate printed Amen response must retain its response role.",
+    "Existing publication and whole-prayer fidelity decisions are inherited, not re-approved or generalized here."
+  ],
+  "unrelated_observations": [
+    {
+      "batch_index": 26,
+      "target": [
+        "commune-unius-martyris-3",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "observation": "Existing quoted English contains bseech. This review neither corrects it nor authenticates that spelling; inspect the historical source before any correction."
+    }
+  ],
+  "validation": {
+    "canonical_target_binding_proof_and_formula_hashes": "passed-all162",
+    "publication_artifact_bytes": 21,
+    "runtime_refusal_tests": "not-run; compiler and renderer not owned by reviewer"
+  },
+  "rows": [
+    {
+      "batch_index": 0,
+      "target": [
+        "advent-3",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "baedf4d40a98a8342283681cfe1cc06257f80c73165955467e60bde9fd5cc637",
+      "source_text_sha256": "e8d7be1c405c86d96f6d129846283274e5e9f9b60e0fb50fc04a7a185c8cc0a7",
+      "latin_sha256": "3a5c3f53e1624f16bf63ce32ca33c9df209d7504729cfa9d1f4a9cf5692d34b4",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 1,
+      "target": [
+        "commune-virginum-3",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "2b2ff77ee3ab05ea5853eec130e6587a3433e7617d382b0db375a926c47fe688",
+      "source_text_sha256": "20f9b751b001dd22411f2aff30f9839ea08989ef90d50d6aa1dcfce4b1bb2c0c",
+      "latin_sha256": "8bb5053f890faaf48c65987a87742c3e47ad2ab77cb7c3477f27c20308cfa63d",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 2,
+      "target": [
+        "s-birgittae-viduae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a0c9ff3b79f5a9fc494a71616d5139cb68330e2414644d16fc4884e7a80484b8",
+      "source_text_sha256": "20f9b751b001dd22411f2aff30f9839ea08989ef90d50d6aa1dcfce4b1bb2c0c",
+      "latin_sha256": "8bb5053f890faaf48c65987a87742c3e47ad2ab77cb7c3477f27c20308cfa63d",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 3,
+      "target": [
+        "comm-s-praxedis-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "9c5015209c145694fb101a5cf9b08722b78278ca869fb841dcb2cba979c180fe",
+      "source_text_sha256": "b14c743270654bdfbf7cb059d611b8ae1ffc400a7e37fa9161abda9fb0c63387",
+      "latin_sha256": "2fce5ba4bdcb315093b386dd6b9cf76b5da1950b9d82876e7c95d0c0957bf0db",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 4,
+      "target": [
+        "s-gregorii-thaumaturgi-episcopi-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "0113ee55d4b6d13999645f9dfc7ffafe7fefccbfa2e26446115e9e874faf1e55",
+      "source_text_sha256": "22c98188bae9580f0b396cf6442970bdb554cd9e3bb9a214262fa713515eccb3",
+      "latin_sha256": "5602efa256b603e14aabf412065bf0c5dc2aab9abf552d7036e81a1ad0563a3d",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 5,
+      "target": [
+        "vigil-of-the-ascension",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "969b9a9dc9ab9fcdd8398a761689189c72815a88cb1f8c6745e9c6402c7f5320",
+      "source_text_sha256": "46bdcc338a284cfe345573bb7ebc0cd3a4980394d9a0f3348691bd9cd6b56731",
+      "latin_sha256": "b49a24f871cea1d49713ee9849b708c682f833b7dea0d6d7a351487e00ab97a6",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 6,
+      "target": [
+        "epiphany-5",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "25f547871e5c2b48a958b378409d164080b53b436b0c1cd3d6a34bbbf93d2000",
+      "source_text_sha256": "58a54e6f4a19eb464e42bcfc1469782bf9437dd1483583d2b5e2922e99835f38",
+      "latin_sha256": "be852e2fdd2f135ab124972e0dbfa0f27ec6006111e3e8580080cf6ebb893139",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 7,
+      "target": [
+        "pentecost-4",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "69f38b8af0296611b71da01672951224eba5f9e603e588537648fa8a95590a3f",
+      "source_text_sha256": "670de5e23d63442a7f56336ed09c787a931979b6d468c1042fb41dfc3f31da16",
+      "latin_sha256": "a6509cc09e7ab180bb6129d8fff280599984974443f6f7cd47fed9ac0ba72db2",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 8,
+      "target": [
+        "comm-impressionis-sacrorum-stigmatum-s-francisci",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "83a3248400579138852b4a9968f293d086c214523929bf021e08b53c47d862e5",
+      "source_text_sha256": "11407d2f65144547c65ed756f04c8eb8224839925d6fe5b876f0fe48bab18e11",
+      "latin_sha256": "cbe6cca40c3d4b2aeac8d4996792381bbae3db33a2a73a31e55cf51882d3b553",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 9,
+      "target": [
+        "comm-ss-quatuor-coronatorum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a284a2ab9166ed133b0ac906f2e45c108c01f14fc59b1d1ede93f978cc7e3832",
+      "source_text_sha256": "3e4bcd7d513b1df18f541202c3c081b3a5c0695591c6db86af9a21418f5d7423",
+      "latin_sha256": "1944cc089a542dd99119c5346d10c3fd57963061446c9d9e50667b57ea03c849",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 10,
+      "target": [
+        "apparitione-beatae-mariae-virginis-immaculatae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "bb67add989d79b67237b7c155c1b989c10c5f980196e5fa0421991eb6eab279a",
+      "source_text_sha256": "3d0a11ce6fb797b7ab611bd1b6c64edc5d59aef6dce06a646f86b3faca1c968d",
+      "latin_sha256": "6ee41d8065bf62d6bdb9cb9ecbc1847b2fd44904f6e3372d08b627df7e7eec7e",
+      "family": "through-the-same",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 11,
+      "target": [
+        "epiphany-3",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a706beb9d1cf618eec86cc1b8da1ecf3b1872baae06b54bdf88dd1af46b9d5fc",
+      "source_text_sha256": "2389481987655b73fd82818953582aca8517298bee30a81c3da821f45c454c8f",
+      "latin_sha256": "6c014880165486b3ae670c87c14f3a2e1fc7c6d2d13aa19c70617763c15acc3d",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 12,
+      "target": [
+        "comm-s-agnetis-virginis-martyris-secundo",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "7d6beeef791977ad641c7b9097d1184fe4204dce09046e71ff9f1ce65a442045",
+      "source_text_sha256": "597e91e678124386ab68c3013b5f55665a401c2ad010b27dfdc02519318c44c3",
+      "latin_sha256": "e4ed2371ac9229f90fd2fdcdd34d23b2525eac13aec03d479230e04aad35ede3",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 13,
+      "target": [
+        "comm-ss-marii-marthae-audifacis-abachum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "81a4ad3fc20e424bdc31197d20a3a62c5d8920ceac7cf1337820fdd6a5fdcd9e",
+      "source_text_sha256": "a93bd9a25a0534556a7f5e2aa9ad23bc9ee6c720dd683c26f3883a6491e8e73c",
+      "latin_sha256": "2ef11b9b712b47cd8a05d6fda0ca578ad8e41547b9f28c6dab1cc8897f142d14",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 14,
+      "target": [
+        "easter-4",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "7671a640a1770c5fc0a28cbea6741cbb7201c1fede4bb8f36e33035f1acf219b",
+      "source_text_sha256": "9c364cadf651360e4ea2258e54a31a539848946eae5ea055caf1841d9ddbd422",
+      "latin_sha256": "bda6482fdb6808169e0afb185b113dd5f19e58d2d7df499d7dcef13c7ec76b1b",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 15,
+      "target": [
+        "pentecost-10",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "b8a18fd2c7405705779a7fbc56a72936c138e31d619a612339b776f3b227a9d4",
+      "source_text_sha256": "8b4ac6154e2f8e3228841f626b6551d8f8a64b457c1145f6d646f68ec7bc69ef",
+      "latin_sha256": "f1830209032a40650d6e48ff93ffd7988e823ae2b1873037f68b8503dd3a8f54",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 16,
+      "target": [
+        "pentecost-12",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "8d8285100dea1dc336833d91d012e97fed489d4ddbbb8924c897c5a86c8bb206",
+      "source_text_sha256": "a6b64e74fb7fe3c70633b77fec9419fc4c658fe3c10c3da15fa55d3bc0447e5e",
+      "latin_sha256": "b912ed5a51974a59f09f13c871172d1cf66b418b7bee0d255937555befb35085",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 17,
+      "target": [
+        "pentecost-18",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "c2a22e922ca995e05b265594665f60ab6d2fc885c00accdbd52af7c7871c02a9",
+      "source_text_sha256": "920bcf20c9a4cc5d66a7bed24234f9f725d5d736ed7a7aea6161acca755939ca",
+      "latin_sha256": "0beb868eef7502c505d90fcdd19507e7745fd64adb766c3e1028169a0a59f8c7",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 18,
+      "target": [
+        "pentecost-2",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "08aaf8c49a0b2b8c578c49e984c4ecd23abf6aabaa13b5b77a3c7fe6ffac9b55",
+      "source_text_sha256": "b937a0f20ba9b0a556042737a9f0f020a10a65d42247f33a234f3e02e3034066",
+      "latin_sha256": "4f90c74b9d0bee425158e066f37e176cb92cb53db453f59b7b4a5b5ed0da1219",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 19,
+      "target": [
+        "pentecost-3",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e778b8e0e2b8cc95b068f06aa30fb131340043c65ff30a621de8c2604d84a21d",
+      "source_text_sha256": "70abcca44c897ece1124bad2367c3e88e4fdac1ace0896cb76a31cc73eecfb74",
+      "latin_sha256": "7d8dbb6cd3808bded8a4745efd24f7afcb347770582a2af989dbc9cd6dbbdd33",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 20,
+      "target": [
+        "pentecost-7",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e4a12e54a22c66502a3f5803a47e8c3d9fe1b60b1a5d669c51b573eed823d98e",
+      "source_text_sha256": "1a6cc6d92bb7dd5ce02b6f55b21e75e0f78ba206c2c4607bf24fd6f5a5ef9976",
+      "latin_sha256": "fb640357e91d538dafb4b90bfaf85536689d9c64de9ae9eb373934437694f4fb",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 21,
+      "target": [
+        "s-andreae-corsini-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "eecbe738f846d8d0f19d082b0c39d465a366f3570f1d414df3055d189824fd17",
+      "source_text_sha256": "e3fefb12a05709c2f3ddf0ac9b30cceeb92b92bbfbbfda5a41e3c53407d42b09",
+      "latin_sha256": "ba671555cd58ce1235520d650196f02765c4303552c48f03f10eef31c4599c00",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 22,
+      "target": [
+        "sunday-after-ascension",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e2398067329110a96d950cab5f2eb4040515279a7cbbe6d53b69bd09e361917d",
+      "source_text_sha256": "ba6988c643ab3cd6fda6933e2efa0223ff80d97842683ae241fd430eeb741383",
+      "latin_sha256": "1dfa3086c6e44ee47e263ac9a6e72470839cff2dc33d4768b07d0bfff64761c7",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 23,
+      "target": [
+        "ascension",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "ec38a972bfa7af96ade0f6c481031cbc1d1668fc744c9f7797d12b7ad868f288",
+      "source_text_sha256": "5cb4507898c6af613350362dde828ae1437d5c1c62e2a41c1fd229b9137d3448",
+      "latin_sha256": "176539cab8f23ab8e0c22a4a0c76f96cccecc574fccaeae750480fad3bfeb934",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 24,
+      "target": [
+        "comm-septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "1069fbeeb7c42b44ecea3d699ea2678394ae83fe97ed109f2c227628b39118ca",
+      "source_text_sha256": "bb3e4c185d21679ed4dfa032a0b68101e48df2ed4f3dcf467796e07cf6847328",
+      "latin_sha256": "ae1440ab7e4cc5a4d75b4696a1527866e1c5ee74b784167cd452e7ac5b5f2867",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 25,
+      "target": [
+        "commemoratione-baptismatis-domini-nostri-iesu-christi",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "12b0ed4ca1605aff2cf358fd88ccc955de262f0c88706c104edbcd360706cb31",
+      "source_text_sha256": "82b68b32ae7189543f1a6bbc96771bc686f5ef5cf157a4d453dd9c5f70af6766",
+      "latin_sha256": "19ea2604799dc20d8827f2cd88823fa6dab1e1fca03a2fe4dc781b294d42d51d",
+      "family": "who-with-thee",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 26,
+      "target": [
+        "commune-unius-martyris-3",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "21dcb43f95a420c1ea3616e7bad6c5e62ba4d628e15cb27f73242d60b6394ec3",
+      "source_text_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+      "latin_sha256": "4660ffec2644091dce38f1e120e65d63b7ef11aa702b85fa048ceb94130f4ca7",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 27,
+      "target": [
+        "easter-5",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "aebf00c9d0365b23621cc2da0d96a7d41c49105e6a85bed836d78eb20207a3ff",
+      "source_text_sha256": "7e1ba3356f9b799e5c68de80789f20ec1ad2358953e53fe292ceb3099a8d68a5",
+      "latin_sha256": "80512a61d27a60564e0f6e6f70615f6b3f37627a6ff2dfc3e5057aabcdd624f1",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 28,
+      "target": [
+        "epiphany-2",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "15b2923674417244a26feb7464c7a6aceff5fa2a63df186889a32fb870cfd68e",
+      "source_text_sha256": "352632476be01dbc7485dd5b78202739577eac8c7b1a75200b24e3574cf057e8",
+      "latin_sha256": "3a2d7a1aa48be08b5618ae782732db4961a94a55d730dc13fd26b96c3ed87af5",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 29,
+      "target": [
+        "epiphany-4",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "56ecaf13dec8888001527271417f69f2489d81d1cfdc7d6ce997f2418108c2cc",
+      "source_text_sha256": "e1eeab46598ebf19dc81acbf979a79de56da224d1bf4f860de22ad5beedec07b",
+      "latin_sha256": "78dde9ad2f273cef508e4517f915217bd6cf09319ebaf4838c802e0ab2fc7d93",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 30,
+      "target": [
+        "last-sunday-after-pentecost",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "38de0fabad8e1c5ec4a2dd8d0b610da13caa7fda8a41886aace1288235419e01",
+      "source_text_sha256": "2f39fcacd2a2db1266f341186acfec582f17f78761ae35fbba1c5f575e1584a6",
+      "latin_sha256": "2586ef500803a58b639b55086df94baf21688655397b1203565699966e3ee517",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 31,
+      "target": [
+        "mass-of-the-first-sunday-after-epiphany",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "550b99c7f4f4e78cf0628ac3adcdd3ba9f565168b75a4be170904b86e75de348",
+      "source_text_sha256": "c86868a840ae70d4b97957700247acf31237ec91d13209aaaf764c8b9324c7ee",
+      "latin_sha256": "d109dc5856b122524282c1bf00cb72f1ef8088f5335fd748343af32788f4f124",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 32,
+      "target": [
+        "octava-nativitatis-domini",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "0eb20849fa8797a53a7bf26a0ff63643ca545b87553af845b1bf9c622e00fd09",
+      "source_text_sha256": "580700f819948196f651ef4588bd1ac818bde8bc79b95f3e33f679b4822baa44",
+      "latin_sha256": "b58d9cab71a1a86392e1cfb52426f21d921f2adda27ccfca460d8a70cbf8b081",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 33,
+      "target": [
+        "pentecost-17",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "5055c9108cd0b6233e1bd9241ee45e5b13182af27abebb8c70c0e2e1c1f1e614",
+      "source_text_sha256": "6129e090435a9284528c4caa17075b4d4273b0fc02f30c8e812f779adc7974c7",
+      "latin_sha256": "f44f8e7e4bc7c31294b38c377b79a5c1099437db3e67c7c816d5a7006ac872a4",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 34,
+      "target": [
+        "pentecost-22",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "2b4e5dc68265c9fd3757f4871c7fbd53a27e993bc76ea9414a9f5fbeefe5e0a5",
+      "source_text_sha256": "d89734d570745f47a3ad5980ce7f5171343e9ff376fffea92174daad91de1a06",
+      "latin_sha256": "31d0ff7a42be3905b9fa081c59151a84e86f4450a2ccddf3296b3c6a0450c2fe",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 35,
+      "target": [
+        "pentecost-23",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "99bd9dc55520c9d8e602308abcdf6bfca023e37b3f3a9733b698c56b783cf809",
+      "source_text_sha256": "de61cf1d1f5fe2613f474774de56e909f49a1518374c444400a81bd57cb7d32b",
+      "latin_sha256": "f4d20e317c987f6cf4eddd3186d31c9f2b3bd76b837f40e65bb1f4450e2eab59",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 36,
+      "target": [
+        "pentecost-5",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "de874247a53e4d044f07cfb0945186eeefe806af5493d17c523e6137296b9089",
+      "source_text_sha256": "c77794f3e5375ced5c2714593c1e2e1a51d60dad7d8060a7a5f714c90ca78e31",
+      "latin_sha256": "f494484996de8169b337b601ac7c7c4a01ce639de19258d15210d9f4c9dba96b",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 37,
+      "target": [
+        "quinquagesima",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "be9bdaecdda47b5c48f741d92b7beb3fcd66cf0aff642b7e4b92271a0072c28c",
+      "source_text_sha256": "b66de784b7d663f246e2b2d1b1056ad6febc0ea141b9576d162401a3b6dea492",
+      "latin_sha256": "b73f72ce0ea64c12615ad66c078a1b8d2101dc59924e874e25a88fc93fca5f62",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 38,
+      "target": [
+        "rogation-mass",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "37303dc6807320aad497167567b7cac67d5ec962347945a2df45ac068c16df56",
+      "source_text_sha256": "ec8ecfafe6ada345d50e76708bf30865473f84fa123f050d3807a133b80f9dbd",
+      "latin_sha256": "a282b7a84f830d01d89dbdeb9c23ba3e170227fba56a497708f72f7b5966a9d1",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 39,
+      "target": [
+        "s-gabrielis-a-virgine-perdolente-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "13f97948165ed5cec2e074cc699a3a2d420bcf1b083a24c270637a3ae8f97123",
+      "source_text_sha256": "916566a1f01a8a1526d0ce882903b2f4afb624ed52c755dd4899989b49be94e2",
+      "latin_sha256": "68f6e0f727412022d6828070a3842a3a48c671b0d3412dab55afd6ecc4f96835",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 40,
+      "target": [
+        "s-ioannis-a-deo-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "f7794ec905f92c22d3dd3cb2dd1143a5dbb7b66705cb86ce8241c310055ad10a",
+      "source_text_sha256": "16b0081f14d5286b1fd8c3fc20b4b2d1860309ba45344b8a26b9c27ae3556a8f",
+      "latin_sha256": "172478f3f4216928095e6c11c4cd46bf0cd9cd6eb8d282cc5ead906f003e9e65",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 41,
+      "target": [
+        "s-matthiae-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e62d520c7f2a72485cc74fbe97dbbab7f4e21c08a5d1a7c5af004b6aee31294f",
+      "source_text_sha256": "890ab67145a29729dc42ccdbb958e5afc97184e4f5a853b1498b7fa51c1a341d",
+      "latin_sha256": "5d03ea54a84fdf04be65850f153fe89c52613df2e2dfb9efd044c16dce7cd5c9",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 42,
+      "target": [
+        "september-ember-friday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "923530c4c188e5918e3e02ac06749ba003f952d9280cd8e971566e6974613a09",
+      "source_text_sha256": "982e572cfa0156d69c691cc1b7f8a0e0ae0f130dbefb420bb003f9c6d9de3844",
+      "latin_sha256": "3c8a2d487a2a86473f7772ba6c1e85b29cc4b1f966f072750403e827c3c6d161",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 43,
+      "target": [
+        "septuagesima",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a97e8acf2211dbe87d409511694986dccb78188efac219491c635d9ae9a8a2ef",
+      "source_text_sha256": "580700f819948196f651ef4588bd1ac818bde8bc79b95f3e33f679b4822baa44",
+      "latin_sha256": "b58d9cab71a1a86392e1cfb52426f21d921f2adda27ccfca460d8a70cbf8b081",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 44,
+      "target": [
+        "ss-quadraginta-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "63a2497e55e1a86f9ddde94fb9d3f1822747e4a02a9c3b69c58160c4201a2811",
+      "source_text_sha256": "f306830a2aab38eaaa68ec9f639df70a7c6fdf2a0f08c80ec6175591598d7f72",
+      "latin_sha256": "10e4ba8ef5bbcfe49d3a0323488eab33ced077813440d87e51866eba66c443fd",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 45,
+      "target": [
+        "advent-ember-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "15e5499fccb776bbaab15e2e9e7dde2ee2cf0d439080b3d60f68a45c7ed82f3a",
+      "source_text_sha256": "f4728948e98b503d58ead4042a955a14eb9d5cad2a466fbebb9903d1f4ddd485",
+      "latin_sha256": "a669976f12386280424a9441269ab943b45fda8e589d1b4fd3611de0e2e8ee04",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 46,
+      "target": [
+        "comm-s-bonifatii-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "8cb43102c72f5dddd2266421c669387ec8dabc437d78cfe6880633649869ee97",
+      "source_text_sha256": "b007881b652d4585f4b51201f6b5c56aeb1ceab27618b416b40032ea0bda0b73",
+      "latin_sha256": "04e1c0bdb1009538613a545d3853c8995c2e48f20f4d2eb0c731b1828b8e261e",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 47,
+      "target": [
+        "lent-1",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "792391ad7fbed5d7e6a1699ecea5e4c91922c8535571392dd3106e393c82cee4",
+      "source_text_sha256": "20b1a0ff3f07b93182bc833aa90c30857edacd5b98891d19285e52ec719db84a",
+      "latin_sha256": "6b995f711671189e6c89b7e42b2283704fa5821cb5298cd84e5e17e0342c75f9",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 48,
+      "target": [
+        "lent-1-ember-friday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "cfc552b10b968bb5d05fc56b800f5274e766378c191dc6bea45344ec6ef9c542",
+      "source_text_sha256": "c5172fb330e8ea401906f02458517792f19956e3bfc68c5c7273566ccae632af",
+      "latin_sha256": "76a7d371909f0bb22082c0006753702a8f87cc2a74045f1c5ce1b4949510b515",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 49,
+      "target": [
+        "lent-1-monday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "afbd99770ef65519d61c6c8108993da02718e840269b6dec843b091b84238e33",
+      "source_text_sha256": "c2ba08f08db78aa96fca3c14f7cd999a763bf00108001b504865e3b616495e75",
+      "latin_sha256": "1b3a0dbcfe8dfac703f9310a1ff25e4bb1efbb4abe3f6dc940440d563427aa5e",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 50,
+      "target": [
+        "lent-1-thursday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "09a12faaf373d867b75c08d08bfee699276e7ee3572813739e52b0d7592d8d3d",
+      "source_text_sha256": "c2a51ac2929d6b5ef49bd7cbccd5a7370d6c3ac706a95889dbd90f23e83221a2",
+      "latin_sha256": "c6c247c3851bdabbb0236cdd4831627f9d266a4fb9bd91110a5d96192fd0433b",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 51,
+      "target": [
+        "lent-2",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "316279e77b0ae2fa7fde719424d11bb3015386f17e44dba561ee316b26b73864",
+      "source_text_sha256": "d57c5950d4368f5c7122c844a14aa185c5d78094fa89197166b4c9279e9de8a1",
+      "latin_sha256": "e7ae682320d52b86ac4088164cb0d93fb707e52ef84abf6f307c3099c7a3e545",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 52,
+      "target": [
+        "lent-3-friday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "01911b566b53201e4c6d54dc58d820cecf0995ce8f8a19e26c44b7e85a8feb98",
+      "source_text_sha256": "e10f5992c836a0f259fdc461cedc043b42a9ce0d01bf8d6f58fc21010da3ba1a",
+      "latin_sha256": "c734d1352c58ccdce54a303c1ac79b8379a1109ee562f8b5cc1afaefa2b70dae",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 53,
+      "target": [
+        "lent-3-saturday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "cb212f12bc26e363b23a0c5e1e3dd9d28cbbcef425e07fe733d22a3f86dc1683",
+      "source_text_sha256": "4ba90f96d5a9172a4aacbf1b9e1210f3f545594ca05e74b459fb89633ab9ca01",
+      "latin_sha256": "386f506bd7a5e8a26c0c2f5ff5be95dbfc295088a3af5d5ac3388e41b42b82c6",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 54,
+      "target": [
+        "lent-3-thursday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e384264705b13f2169b4c721a6615dfcb06e05323c074a5ae68e1926b625aad9",
+      "source_text_sha256": "d93413ae3686786d973682dcde33c245b9d0f702a9e8b3c3dbed6b27171e20f6",
+      "latin_sha256": "0731e6a16f788816186eea2076653e29f49fe0f199e723ce5ccd0fb882d3b8ba",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 55,
+      "target": [
+        "lent-3-wednesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "30ad02a14874361f64fe35b70d806af9c77f6d99d4fdca5946323948b949d785",
+      "source_text_sha256": "cc3e8f2b27db907ad7623663c9271f5f3f8b04877bec24b0aaac73ab64405bd9",
+      "latin_sha256": "84a1d766b479d83145d273e59d303d7dd34f82dee0199dd3fd8e74a7596871ca",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 56,
+      "target": [
+        "lent-4-thursday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "c3e7e659d0092c3c3abadd0ed772324d49c1b3700544a12469fff57ab1bf0dbb",
+      "source_text_sha256": "4cfea73c50ad78755454199d6b391e82328ff36c608ca7ef7f7f878124516da7",
+      "latin_sha256": "f67b37e78d5bfd66b98030d4f47e61d5278870caeaf4c48c7efe243ff39b9eec",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 57,
+      "target": [
+        "lent-4-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "3d83f6fe3747c9be73fe2626e91d8436897274983c00fa3f831e97bdc4ffd1fd",
+      "source_text_sha256": "f4f06ca75f92187c3f449345127c986186e2d0745701ba5b1175eee75025afbd",
+      "latin_sha256": "bc40e43240749bc6590454dc47cc14184d56f595ae1584df1b7de6fa8de0df11",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 58,
+      "target": [
+        "litania-maior",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "bd7701ee5f0433adecb4ad8bae2a25499d609e986f3495c136cd5271a60c424b",
+      "source_text_sha256": "efa873e055b050fb717c85c432eaf51e8c4f01ab6bfb338ac95ab1ebca7bb628",
+      "latin_sha256": "aa2371475104cca6dba96efc1cdd8f9ac0c9a0b94ab24613fb90edccc97a4721",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 59,
+      "target": [
+        "s-apollinaris-episcopi-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a695c44644a27362c8671073b7547d14a977e031f0f5f105801df7f3dd353ea9",
+      "source_text_sha256": "4516eda55b6d208e4ea84489bc5db5f8f9f2b01cebb2bb9e34841694bffb1092",
+      "latin_sha256": "882cd9a47c3be573acc9892764628e796c72c9bbeec1ae23302faa2150fe84a2",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 60,
+      "target": [
+        "s-augustini-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "3305989848ee8c8be422dd1247a0c4a2faad48e1d1ecb3a912dade160d95e5ea",
+      "source_text_sha256": "8f9fbcace4b9ddd00936d0619b0813a71fb28badca45df2b2f16c544fbf2fa50",
+      "latin_sha256": "903b6a99192214ca6816494e3d1bd0fe710ec55997b8aa62c62bb6909f9359e4",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 61,
+      "target": [
+        "s-elisabeth-reginae-viduae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "c680b450758a0c4f3656ac416e61b2334b8a65c37d00c10ab4ce7b3d0b06ca3f",
+      "source_text_sha256": "74a884a626354d963986c68da34aabf5b791c62905462e62de7a88814f3bc9c4",
+      "latin_sha256": "cc8c4ae54e4c940658fdb38e78ecee6df118c1909a08ecede1cf3aa872eb92b8",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 62,
+      "target": [
+        "s-ignatii-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "7f6233f8bd5867147b7c87a66d18bba5fd3122150170ca1a3c1edc0cc74aa270",
+      "source_text_sha256": "2a22e97cdd32ae2e5bf97b7a88caf72986155a7f127e7829c390c207fdd9ecdc",
+      "latin_sha256": "77882764c308deec4b150176a3d0e16942f8df54ef3a8b2b1578f3c51a211514",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 63,
+      "target": [
+        "s-mariae-magdalenae-paenitentis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "117d710be34885bc47a05ac91438ba8e17a2f8e10790e771a3b068f667206f31",
+      "source_text_sha256": "69b597a57a59fc3589f805d061d8c961ba5fd2d58ade256529f755077c96d377",
+      "latin_sha256": "593a911bae845a8b3dde8711692015e9a708c75cf0e38f8aa6c3d5e7687ea06f",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 64,
+      "target": [
+        "s-venantii-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a7e15f2a9c9605023248e6203501904a2cb4403d6f3c2841b9cfccd32ba83cb3",
+      "source_text_sha256": "301c3da8ae666952d161db69f45552d6f5341023703a21ea8235e54636d9a995",
+      "latin_sha256": "20464f114b0ab8c86feb38ac450fd26eb1575282a671620b0f00025631e542d5",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 65,
+      "target": [
+        "ss-cyrilli-methodii-episcoporum-confessorum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "02d1d74b792449f23d9b7880a7dd898055fe7ae1f3d42e004b20010449f4ee96",
+      "source_text_sha256": "a42716aee96a163584f02bd7f9224e43780d08cf8e12542b9373d55b1369ca47",
+      "latin_sha256": "a0be66e50e72dd360604b9bc589d32d1ca1e44a3aa5b8c70472113b3eff3f38d",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 66,
+      "target": [
+        "ss-nerei-achillei-domitillae-virginis-atque",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "46223c9f0b1ffb00a77327a6a6c446b450925e1e5e26abaa7b49874c27a59455",
+      "source_text_sha256": "8c9e919dce89548f95fe8b416fcb182a184a54cba1ee52e7f6dfafcb1bf550f4",
+      "latin_sha256": "b582550303fbde340325e6c942398bdf332949850a1d0a47b75d6f4278c0e9f4",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 67,
+      "target": [
+        "comm-s-chrysogoni-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "fbbc7282a3933e49d7a9d38d5fe8c0829322b85a5c94fe705164df181a75ac50",
+      "source_text_sha256": "e592bba0600616bbc5b413eededdfbb3d06a8762527650d4eb61ae137422569c",
+      "latin_sha256": "9cbdf0be88b80a6108cc2415f21b18e5319a0d8c85dd10285f38e61192c84e8d",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 68,
+      "target": [
+        "comm-s-priscae-virginis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "bc245ddc52d857ad72bcef14d956abd9f31ebee0d47be7693be778d144cbb940",
+      "source_text_sha256": "9b06913e0a65c77cc2bf1046960c2d17db64cafa6e6d5df7d4eaeb0e21f7d854",
+      "latin_sha256": "7cd289ae79d0f668003a00a6edd717b018d9863efb683a7baf8dca3f06a290d3",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 69,
+      "target": [
+        "comm-ss-basilidis-cyrini-naboris-nazarii",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "094b1c32e8d0737b89a7187bb8de81f1e9473a5cb9b36036433128730a22ece5",
+      "source_text_sha256": "dbe3eeeef067685b0a03955862a1ac54038921796504065e0f5b7cdaaac4d095",
+      "latin_sha256": "6bfc42492ec9359f54323ddb53f34583c9caebe091421d0d96e628b7852a950c",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 70,
+      "target": [
+        "comm-ss-duodecim-fratrum-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "14033bc740fcb4ad7b8adbc328c0f7da55166e44d136e1a7d1c4ba33e233a948",
+      "source_text_sha256": "e61a76233b354ca127565ed629a4a9ee86f5a873bf6005e8c5da5f4cb7f9c251",
+      "latin_sha256": "5f14ef508906dc33466e37474ffdf60bec160bb6d966c29102db9453d2090e14",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 71,
+      "target": [
+        "comm-ss-marci-marcelliani-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "29475cee0ce928ece994bd2c9cce60a2f702c3584c54bccd020ee9c22323932e",
+      "source_text_sha256": "1c5655f3a310a0c5d72271fb1d19db7d1d711dd66514fa1778bd0d7c25a1aae0",
+      "latin_sha256": "fab9537fd87e8cbc22fc28b41f2788c3106fe8508a7981ea8d2bc01ee180ba31",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 72,
+      "target": [
+        "comm-ss-primi-feliciani-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "ab327e7d849ba8b13490492ee0c45b416cdcfb6521f8abaea24c0e412ac75e43",
+      "source_text_sha256": "db5a1ca347d358ebc0e3bbae3c11b2f5dee2cb4bd4428bce5e4838f7f1417c65",
+      "latin_sha256": "0d22b217027e14f078b12907c34fa9915d157def7bc4a80b1494a8b6ffd131a8",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 73,
+      "target": [
+        "comm-ss-tryphonis-respicii-nymphae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "dc2d94f257ef61bddbf78bcca0921f3c9a68d4865a40f0aa40f3acbc14db5f65",
+      "source_text_sha256": "1732b42d335b7429cde05a45e922f6683c292fae6d2933274118d358b3116216",
+      "latin_sha256": "07a740e583d7ee0b12022fdf9ec48b5df76ee8a1f4e9aad3345b9a2af68be281",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 74,
+      "target": [
+        "comm-ss-viti-modesti-atque-crescentiae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "2f38f286c907de1fd15a4ddd263f363de8ead2b740c737da888d2401398290f6",
+      "source_text_sha256": "79dda7ef307c466e1c91d7ec4c8fb2999a904dc3ef91267283dd90e124a07dba",
+      "latin_sha256": "f548c1857223b6bf672571b47646e251383df9017e7ab435008cbfbce0393703",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 75,
+      "target": [
+        "dedicatione-s-michaelis-archangeli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "38321926cad2106a0a5367869c5dc1a5042792e90fe2b313e27fefd35a785024",
+      "source_text_sha256": "657671bc99cfadb0b2c1cd4f8c6d2b320082a5a174c4d29240b124d732839a94",
+      "latin_sha256": "05a45f70b38d4a52b886c44198a19e16a6697e88432438b27b205dfb31c74e00",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 76,
+      "target": [
+        "easter-saturday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "2d4cb717fcd3d2a3f6a3e7572acbed9c5f92bb68760700faaacc86bb8de48f90",
+      "source_text_sha256": "9f2e3f9a6c357c87cbd001f3335f55a0539f3c04dca5b2c75108b03eb3d32bef",
+      "latin_sha256": "f60aa55ab273d05dc4bd5d2e877453189373ab3722c296c12713f62cdfe3f3dc",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 77,
+      "target": [
+        "easter-tuesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a54811b818a5bd0fe7f51e4fb6f92d3048502f0002082b8cbf3bb2d796486fef",
+      "source_text_sha256": "e024344c92ad868baf6b30b1103878398a760769750e3862b8d8c0fc6b89a877",
+      "latin_sha256": "6b5263fb551d6c5b9087c1e584c8b4438a8f8795bc0037d1b67aa11448ceccc8",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 78,
+      "target": [
+        "holy-tuesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "77418eafc375aecc1915e0783573b852451af3c18b2616aaa40e1e51712a23db",
+      "source_text_sha256": "b52675584070d54c096d9403541472558718f2fcb26605d491fd6a68b3e62da7",
+      "latin_sha256": "c5e0a67316b8a805e1169e9ef1787122f5657cb3e3c8429726a2fff5735f8296",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 79,
+      "target": [
+        "low-sunday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "8c9eb7fb63938ddb72596caf90e37de9ac3180ec72f08388c4fb886ecec97fa2",
+      "source_text_sha256": "fb9d8f2af70084b06438c0433d8a63091b07b424b92dce3a8a0992c4f839b217",
+      "latin_sha256": "b4299c2bd07375c250047167eba1d038fdec39e1f2a8c1b95bd71af747694b39",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 80,
+      "target": [
+        "nativitate-s-ioannis-baptistae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "8f0edb5fc7b9e4463c692c4bb660daa21a3299aa2b895d8f0bd42120848c967e",
+      "source_text_sha256": "79e53830ebff10f388efd6269e7e2472518afc7df431f293030fb3081663f843",
+      "latin_sha256": "28e4723f1dcaac36da12ac048201079c6b1246d5e202778afc115e704d80241c",
+      "family": "who-with-thee",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 81,
+      "target": [
+        "passion-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "5d710d7af5a1afa115776dadb963c3ae1094988be25f6e330482aa65b9e47f16",
+      "source_text_sha256": "e782aa8051b7d01dbe278af8d888f88964d10be03473721fd2b996ec3cfd4d90",
+      "latin_sha256": "f91017a8d0666571d38d1b71a9ac2d1898d1680145e5c78e957d5d2a0f30dfdf",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 82,
+      "target": [
+        "passion-monday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "2a7d12e45a648ee511be70fcbd7ff154eac7a51ef2aab4cee2a3ea053f7620ab",
+      "source_text_sha256": "b6565a0c0f328529f47e05ac927d9882d4ca69bcaa13867381d68cd89b4e4750",
+      "latin_sha256": "e8e9e3139b94dba8b3552b67ef11a8b3e26663fa5453937aab8769acdac24fb6",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 83,
+      "target": [
+        "passion-sunday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "1fa7c95e60cd584b15336d2464daf1bbeb8431d05b82f99b8eea23305739da0f",
+      "source_text_sha256": "fbb3efe3dde63d51a13538b1880d1c9eaa7be5f0e4e115cc2683fd89043618ee",
+      "latin_sha256": "c49d577fc8b3c7e09da4767528998d801d9683608a1199e223a05d3c62d2da2a",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 84,
+      "target": [
+        "passion-tuesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "1e3fbdcfb445c2ac841d417a906521760ab43a9be578059d608d97888f63e0d1",
+      "source_text_sha256": "38f2fe6d79bc7ff6328a21b717d7c0ec484522d5a60161ab9723b13427f2b76a",
+      "latin_sha256": "2ba76216d15f1915aaa04ecd337f4eda71f0f43fa492070efa23e0536fc9e226",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 85,
+      "target": [
+        "s-agathae-virginis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "956af97e6e7b82a95e5b712a94e8a6229dea516ffd5d8aead1a72218ce712c8f",
+      "source_text_sha256": "d7e13671eadb1b8ed271f1a5a120531634332b31886a815344ddad5941fd88ac",
+      "latin_sha256": "1c4d3751bc18020d54da296d760661610dbfe9446218cd32685bdfd73aae10c0",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 86,
+      "target": [
+        "s-andreae-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "fbe6405dc048221ac47e96ca0275c081b76bffce9cf03e827464b9eed0c98c98",
+      "source_text_sha256": "2d47e158c1464d0ab8be4c7b2bd3578ecebbd4b5b81bd65054dedb4cf8bad464",
+      "latin_sha256": "0b39f0b150e097d4d1d856584bd4d723fd7b1581664abcd9332983ac391b6038",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 87,
+      "target": [
+        "s-angelae-mericiae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e33c4dc99d98d530e25adccf4e111fb7e4d35e67d7df31515c56041ddf632f40",
+      "source_text_sha256": "fd480536563f3627c90a988a7f282a495d27205352dd4f5d80aa9719f50ddff3",
+      "latin_sha256": "cc9322dd7d8679e5d967e6eafb3f257503883087efbeca0cbc017e5d0f435832",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 88,
+      "target": [
+        "s-bonifatii-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "b08fba24db57572a90adce485eb23fa989a2e1d133cbea2367b93924c3cb92a7",
+      "source_text_sha256": "fc560d939b19d931cf4adde3551c5982b652cc53075e1a479b6c6d853172c66b",
+      "latin_sha256": "7978e4b6df9c1a15926849c3eefed4aa438e8d00895cb9011a3e04bd5226fd01",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 89,
+      "target": [
+        "s-casimiri-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a16c06f01029a6cc0fc66caa7f0f95e50db1df90e3842488cdcf0379b72d41bc",
+      "source_text_sha256": "ba2db5db4992698786e17cbff765f70f1491a865798b75cb05ad629bf5cf4378",
+      "latin_sha256": "017f3637eddb050018c4bc81292bf33523e018b4fa73f2af59a71e4a75282024",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 90,
+      "target": [
+        "s-francisci-xaverii-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "c6aadbdc926917771577fe29e6d7873d464273205c3e598764d86e061d615327",
+      "source_text_sha256": "b378f99160b8fb71b0c1e8cfdd4892c0a2a7013363d3d62e09753287db7fa300",
+      "latin_sha256": "66dd44139e975fcb904bf0ef37da5896d7ff16769c5c2a2f0578ff854eddd0fd",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 91,
+      "target": [
+        "s-hieronymi-presbyteri-confessoris-ecclesiae-doctoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "51c7d6a9d76e7342a00f86ca5480e7832c52f4939261f0ee08c3408b6ce7ed5e",
+      "source_text_sha256": "07e16ab04ddf424bb27e1c9058952c7b402837cfebcb78228444be0b98e7e659",
+      "latin_sha256": "0539124abce21f4ce2fc9f46e07fb0f7fe50df17ad5dad1df7a335d18054ebab",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 92,
+      "target": [
+        "s-ioannis-cantii-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "ab07d544056b13981c3dba7b34939262237ce04363b5d264e1241506dfbf5c19",
+      "source_text_sha256": "b33ff7cbcd818403f151f2e3d6772970910aee99a84e1ea3361ff1e401fb9773",
+      "latin_sha256": "0f3b4f37e405efc24830eb5baef8116b0bb368424b38e150ff06b8301174fe36",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 93,
+      "target": [
+        "s-ioannis-s-facundo-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "1d34db35602d568d228fbefa4e20c2006c2c124dc309f0d87bc9f82f638ec54d",
+      "source_text_sha256": "3d29b9c5eda0b4d48540dfa492fcae9b6b589704431338b203e357f9cb87b469",
+      "latin_sha256": "86ff8c656a52e4e5fdc53fc5f60ea0ca1403f77453c8f6c1ed300c4cd87e037b",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 94,
+      "target": [
+        "s-lucae-evangelistae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "250c8fbbf2b618ea69af8ed35d433aa4169202e3f25f8396c302ba6c1b67ab3b",
+      "source_text_sha256": "5cc4b324f9c028390210a249f21e94debab15f15a2b308f37d4093ee1e0fb144",
+      "latin_sha256": "a72cee83aa7fc937472ce037fccfbb8fbff418d7ade08cb0767e25e45e66ac11",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 95,
+      "target": [
+        "s-martini-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a4098ee90b8bd21e67e462cb04db30253c745a87c0906e82b5035dfdd7b70a05",
+      "source_text_sha256": "3dc1c1f70cd655dd52701c48835c0e88141725ced4625b320d3354587e9d98c9",
+      "latin_sha256": "25c4d31323c04937ddbcdcb20f2f23e68f7199289f67844366ca43228c65c520",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 96,
+      "target": [
+        "s-matthaei-apostoli-evangelistae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "3b4202a20a6fac79ecd463c7681944854bbdec4e8fe346b2d7a432cfd32157ff",
+      "source_text_sha256": "2acb01543d7740c63f5f227ba83a75630f1d58cf64cd4bdd85fcfea634793d16",
+      "latin_sha256": "f42323202ce645be204f4180a79d7ce9b736753a1206c7241b547bea123bc0c8",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 97,
+      "target": [
+        "s-pauli-a-cruce-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "d93766d69321c9852ef8661583e28eeb57d912774b115ffb98254f49fa25f09e",
+      "source_text_sha256": "fde0602b398a097311d69550a8efd7b99be69953616ccdb004449712ec7150dc",
+      "latin_sha256": "32d71796820d461dc2c866bba0c68cfa671d139a27a0e0910e9a06a01ac4592b",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 98,
+      "target": [
+        "s-paulini-episcopi-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "db6ecbf9acb746e76abc6ab10dfcf73f30d312ef1cef3900f261ab0c83de0ab1",
+      "source_text_sha256": "b3076a54b42c2b255ef149aafa0cbff5f2fe721ea132ad8a1acbb6b116213639",
+      "latin_sha256": "7bc884657cf48519d17e955e6167e79dd8fcf78ec2e94fb21f42f2588903bd93",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 99,
+      "target": [
+        "s-philippi-nerii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "6687b9b30b7b3f742f4844bd7c9cb6d5a82c6c5f96647e1fcc368294416516f4",
+      "source_text_sha256": "11474dfcb00a254de2a9eb2374cf8fbb1e03b90d748e376694f4ea21c82d3220",
+      "latin_sha256": "646da7f1a25acbbf9cc5363cb51ee52973ea5df69372e9e2864dffc886e54d62",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 100,
+      "target": [
+        "s-thomae-apostoli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "0994994000b72d2d0c9b93247966f83e5d3dfc82eb52f44e403827156f890a68",
+      "source_text_sha256": "9f85214d13e63cf663e9a6dacbffd3e3cc329f3af142d455a3fe9a5939d41de0",
+      "latin_sha256": "58dfccd69b8e341855b0743846c85358ab3b7fd93b6f58614f087dfdfaccf4e8",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 101,
+      "target": [
+        "ss-angelorum-custodum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "640a10ea4b362b1d39e924b5f4ed381c0c23da2d0e79ba0bc06ea630439df67e",
+      "source_text_sha256": "d36dae3de79c00d573881c951187c60c0ca443135324a15c3f8ff7ab397be7a6",
+      "latin_sha256": "ca2c6f4d21c997f12441a279af24a039e3c7b6ff238258ec0f97cef9b99675d9",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 102,
+      "target": [
+        "ss-ioannis-pauli-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e14af26e685eb54b63f4d9438e90fbc119847dc52bcbdd91e2b7312d1d4524c0",
+      "source_text_sha256": "d96b903c500c63070480a57ea600d19eed8abc4ec885e7d11e2fa3f700a71cf4",
+      "latin_sha256": "83a390f4ef6995239deb7c580982ecc122cb2f3129cdef44a3ffb38c05416b05",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 103,
+      "target": [
+        "ss-petri-pauli-apostolorum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "c73b4963639559b92018b7f568b32d22538409ed44805df898eef57530274517",
+      "source_text_sha256": "80f12c2c4cb90989268d033df9a1049d59e04aa226da5cb9dc560ad72bfe62ad",
+      "latin_sha256": "4093315ccd36eb95a496528907c1ac16017a2ce6b8b32c87ca400c1d5b6d3d1d",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 104,
+      "target": [
+        "ss-simonis-iudae-apostolorum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a1b2689d04f17ed0772c564e9d0d79673a2ae5a2c8db357a0fc3418ada59772f",
+      "source_text_sha256": "8a9b67e8be8139cc50ccf358846b4b50e3cb98275798c49374fabef76240c039",
+      "latin_sha256": "9d07d5a17fffa7cef3592c7aa5ef56c9ea8687898f20db3739a3aeb968254f93",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 105,
+      "target": [
+        "ash-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "0510f75ab298b95a3ddb20b74e2bf81b5eb7f48fe5a25964974b55e69ee6b249",
+      "source_text_sha256": "ea3d84ce608b209105e6bb19e1493e1925d369f9fdd836ff0baadf3e63a1c16b",
+      "latin_sha256": "1356fcb87210acf8635e00b0cf63fc14f8c3391b798064771d9e4ee6d4bcee77",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 106,
+      "target": [
+        "comm-s-agapiti-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "d1f87ed4c91152d9de7589dacf215378c503f48462b4c1b7c9466ba82f5cddac",
+      "source_text_sha256": "6f6d02f2c61eadfa12fe2dd2ae5ddd2dbbd1abe9ec6a303e0294fd060b305598",
+      "latin_sha256": "ad27e8e56bbbd8d382c27beb6c49cc0a1b234e279bad55be1151be3121ea42df",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 107,
+      "target": [
+        "comm-s-donati-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "81f4b1b86847a056c2f2a373df0f0b82c0b932881ad499fcbf25015c43f252d1",
+      "source_text_sha256": "1d1854d419db452d05a23b3e49bdafcaa17c2879e55873dc5110a12afc002fb6",
+      "latin_sha256": "bab7fabf1258cee103f8b9cb4ea658db839fb18d06a3ce7c33d8d55441807a86",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 108,
+      "target": [
+        "comm-s-felicitatis-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "4926cc0bb17970bb8d6d01e850da25ddaf843a86c4a4885a2cbbe430d0fe8996",
+      "source_text_sha256": "09a614a0697ffe9c04727f6dfb24ef9ed306c41aad21e5bf44206e35f152fcc3",
+      "latin_sha256": "e6e1a1e31175529247f57f551f79c5c2421b44e9f37071a8131259b4793ad3cf",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 109,
+      "target": [
+        "comm-s-mennae-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "1d9ebcd78541bacd8d32263f796f17f05c51151b6827186d5a0caaeb9d86928d",
+      "source_text_sha256": "dff303d64d54ebd1380696e4a4a510adfe99a968c4be12cf5c71bbfe814eeaed",
+      "latin_sha256": "358b3c80aa6754c588523873263e1a3345eaff44ecb50d9714f1e1257c845f47",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 110,
+      "target": [
+        "comm-ss-abdon-sennen-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "fd3fba62d287e53ec21d2427c5669e1fda3ee8783b7b95b122579c0d28a18a4e",
+      "source_text_sha256": "b6fad343a5c49fa788804387fae4606d4c5657b13cd2b7e7fd2c6dd1402549c8",
+      "latin_sha256": "3d3f8cb90ad5f67c1098ae784f857bcfc97a0627123627d63844590fbaec3319",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 111,
+      "target": [
+        "comm-ss-dionysii-episcopi-rustici-eleutherii",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "f44186ead44b4784174f09cc02e7fcbe025af4cd1e06c9665ec5122c4d0174c7",
+      "source_text_sha256": "838198beb022fa88017c8c0529ce6504014b020d1dbd3c842c8aa2d28ee0c25b",
+      "latin_sha256": "10fe7baaca366e1065aebdef4b6cdca9d404fd99a31d6fc49276093a26d97027",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 112,
+      "target": [
+        "comm-ss-felicis-adaucti-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "f9fe0ee57a0f17b19b1ad9e789a6068671939dd0d81cb73cff7173a5489c271c",
+      "source_text_sha256": "4e105cd49652cdcfe6bc045ad900aa5e4388a6c3daa4c070236aa3648f2af7ff",
+      "latin_sha256": "e9c4e32c36af6e475d86016d892473f3a14e9ddd8ab6e2cb54faeb21d1aa57e9",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 113,
+      "target": [
+        "comm-ss-machabaeorum-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "839e4ff8b4dd0a23b085b2319ad5b23c98eccbb011bd9df42857902b7d02e462",
+      "source_text_sha256": "bad598c2d431d8400af8d24c3e4c7f1263f76204b94439562572b9a4f1107ab3",
+      "latin_sha256": "bf5a2849fd2385bbe625e170da0bedba698dbaf380646b0b42e03188b92b1d69",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 114,
+      "target": [
+        "comm-ss-quatuor-coronatorum-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "3071caee05e5d165c0cadf479d5104f908d661452d1a726a2cfeb35a8303fb60",
+      "source_text_sha256": "17c7ae86161425f712547826a22402dc0d0b3aa260e2d4a3a8eb2eb5c8ceae0c",
+      "latin_sha256": "abe9d5e07048cf53e282f2fb2fa4fd8b35dbcd23743c416b28ee9c7bba1e1d00",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 115,
+      "target": [
+        "comm-ss-timothei-sociorum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "5b5783e797c2313e8fe0ce8e8d7eb62a40beb88e25ad61b4e664b689f12e83bf",
+      "source_text_sha256": "0f55f1545993a7aea628afddde1480a3e7d66190460e99dddc4307acee9dbf0c",
+      "latin_sha256": "4668087b18e4bd5b96750960f64a9ee280fa40e89525e5b3a32ca93fa08157ad",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 116,
+      "target": [
+        "decollatione-s-ioannis-baptistae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "f52965d372f3a6c4e463637567f318ed3c179f026e9a5bef17ef4b3018df1f73",
+      "source_text_sha256": "438e4105233d5d3a810ea51d6a52bc33b8e5691958e88a66ac32aa3aead036b2",
+      "latin_sha256": "f03de9ded7269ee07717dc32aac40acd446f54900b3c206998ac6c53e6436c96",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 117,
+      "target": [
+        "fourth-day-within-octave-ss-innocentium",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "9c823aa4cd4afb19ecf66fa1f3e2b0f85513ac65cc27272c7348989fc5e6580a",
+      "source_text_sha256": "154e25acd50e32390b42f431c8bf50562cd0faf112da4c069661759af931add3",
+      "latin_sha256": "782402e5d4b95e2b323bc68e1455eea6cebe73139b9b24691e7b93f700654c5c",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 118,
+      "target": [
+        "lent-2-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "030d9496ca1c35284a0144b7e17d5f50e71f44ccdb9d47f4c2fde95896dae49c",
+      "source_text_sha256": "4ed9d1690c2694992c806223295dac3d31ff3d2c1733fe3eefee86f08ba43927",
+      "latin_sha256": "7634fab00530c4a4c3627ed49bc60f2d53f66e14579320498bbf8c8cc324025b",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 119,
+      "target": [
+        "lent-2-monday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "6ea285c455d242d61b071ef1b82dc936d9591a529d4c3dbfc48791f083d0941e",
+      "source_text_sha256": "2d805a08db83ed6330b08622d97cf7ff29ba25f2654c43e5cbbcc6be3e648cdd",
+      "latin_sha256": "de7fbf62b4fe1efbdba96386e829ea1d9399f45a6844aad07413e17cde419bfd",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 120,
+      "target": [
+        "lent-2-thursday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "3b58752a73e8b6a607dc3ec63e65531bafae525a4ed0f34d47d2f6c62904d575",
+      "source_text_sha256": "bcc99be7bbbce79fc92b38d6ea4ff1973ac42e99ed42be1e52b4d0a6871f24a9",
+      "latin_sha256": "a0cafda85518f8f18040621d697ecf60c34442d499f54321a279d57a828e7251",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 121,
+      "target": [
+        "lent-2-tuesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "93cdd4a4c3e4bd9de8c95947daf20184b60e28ac2b763f4a927be1d41bd137f1",
+      "source_text_sha256": "5aace529f601ff0035c440ae99f49c37a4a816f67802466ce925d30c3acae7ad",
+      "latin_sha256": "039daf1c817b7ad4b2a881437764682f710f27a62ed2cbc0ddb18c2cdfd847f4",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 122,
+      "target": [
+        "lent-4-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "1a677887280b2652953f97013bc98a3e6a81085ac08fd48ce76b1d79c86b015c",
+      "source_text_sha256": "098daa39386308607977cacdab62a50ca94ba640f8ef95e428b497a0d3eda49c",
+      "latin_sha256": "d7546a4658bd162dd962f7a98ab11511f18512710cc0b2e33cb9efc8b0d1471f",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 123,
+      "target": [
+        "mass-of-the-first-sunday-after-pentecost",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "7cdeafab43f3e95eaa051970e1acae971e276a82745577c0d62b40290a54813c",
+      "source_text_sha256": "11eaf7e0e56bb20cbbfb2c289e5c54460f0deae88dcf5f6d56d09407bc2567b0",
+      "latin_sha256": "c016dacc5ffacb474a9edaa6963e878cf5a28580ff0792fb5da58bd6f075d231",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 124,
+      "target": [
+        "pentecost-6",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "5b5cdac46baebda060d9926aafe41155551ea54e1667ca741cf1080d066151a8",
+      "source_text_sha256": "ceedb055888bf2ab3365b9417e60c3de212e7b3a3989a74612b52f9b2b9114e7",
+      "latin_sha256": "1705725288cbe60d7907ab3b42c5e4af3bc8668a8c7ad1f9de9ae91c877de7fd",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 125,
+      "target": [
+        "pentecost-ember-wednesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "aa2d37917444a6d24a6f9a085d21a396ad5f9211e6b785d7aba25f9242f7fc21",
+      "source_text_sha256": "d55428c024db4e8a5b8df42f9fd392e984471f69a2ea2f9bc6acc92889275703",
+      "latin_sha256": "26da9742fe039ae29213f5235937ca26439d5724b9e69b063b7ccdae577852e6",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 126,
+      "target": [
+        "s-antonii-mariae-zaccaria-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e83031449560de0bcc7f9001a48273d498ceb81279021650115df835403417bc",
+      "source_text_sha256": "d8604d73210181345b14b302220e6f6ab831235ffccafa7717143d7e1c12e133",
+      "latin_sha256": "a164d8829a3a54d857b7062a43ca56305efb44f4314093cb398191e7cf55eca3",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 127,
+      "target": [
+        "s-caietani-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "1a6336481024841f46cbad2fb6b17452cc27bc041ea587fe8a9e82620dbd04c2",
+      "source_text_sha256": "1393843f5f0c325dfeda8df188c97ca12062316fd6fc7b59239d29b7154e8681",
+      "latin_sha256": "ed4b5edd6231013367b0d3f3c5499934c47573c1d2f7249de0627614de5d0b79",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 128,
+      "target": [
+        "s-callisti-i-papae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "5dfbf8a8b423097079d7b3508ae9cd235c2f3ad8240855e6bc8c1eae9cdab41b",
+      "source_text_sha256": "e371f3cbb8eda42d88fb7b216c1623b44378881aa28f855ea51069e186b01d0e",
+      "latin_sha256": "82722b4ed627758f0f91f5e5cb5af81abe6dd1408144f65f37d377bb3d9c612c",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 129,
+      "target": [
+        "s-eduardi-regis-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "a49c625a03a1465c6e88c95f4a9ff8d0da9e71d2c310e7a074a5535d5a3a74f0",
+      "source_text_sha256": "3f69eeaf2945ad17432019dff531855d9ada3db6924cdd1c0867c22c81b60e5d",
+      "latin_sha256": "08a4e64381a24eedc1f5ece22000d028661afdafcf7ad3947c703b07090fa3e1",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 130,
+      "target": [
+        "s-francisci-xaverii-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "2a35041b7c1a70e6ca7ba74c8cd5bf10283138c87e69a6cac63bf55142b68d38",
+      "source_text_sha256": "826b00614bd1bcee760d29522f7d63ab0886a050663cc35f5bb98e905691c3dc",
+      "latin_sha256": "507854a9d173fffe6ecb7cb133b8bc8b0be42e027cb92c6f6d864a03dba080ac",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 131,
+      "target": [
+        "s-hieronymi-presbyteri-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "19f617c81753e3f1d76f9f0dbdc69c44460143de11b11c1221d9cd13b99889f2",
+      "source_text_sha256": "dd6d70337fb50379912fea8efbc119192063f9d2f08ee0fc1bc1426fd4c2b5a1",
+      "latin_sha256": "647fb4e0ff93de48d2d6a8e3d825f452da25bdce975d5701d95f6e223ea511e9",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 132,
+      "target": [
+        "s-iosephi-calasanctii-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "9a1e18b9b2214f768f071ed9506744847256416fb764e201e527195c79139deb",
+      "source_text_sha256": "d2d343b02a3ff4b173218954c2b71abc487ad5065e01305525886c8fef3fb24d",
+      "latin_sha256": "81537b9351c1837f0768be71f68d0ebfbcad899608e49171ce069f380be5c1ec",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 133,
+      "target": [
+        "s-lucae-evangelistae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "7115a01eb771aa08364e2e62e459fb44b7d0858691cddbe3ff482ffee446cdfe",
+      "source_text_sha256": "a827a8dee01cfe84d33f4a90f6c2dcc1f0ae3051d2450af3c5c4bcee9c51b497",
+      "latin_sha256": "460b32312e07a4d7a4dea82dd898fde089bc0bca356c966fcb6e21eb9a26bf5c",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 134,
+      "target": [
+        "s-petri-alcantara-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "088a50bfd5a43367918810535cb5f6f94a0a5702d52c7c9d664455c44c6d1c26",
+      "source_text_sha256": "e8fc56fb17570457b09dbc2f7121b0d6defeade59c1471219c5a3c84b6e01ae9",
+      "latin_sha256": "0fed6d601d963f51a33ed3eb027643f77b7f5d078b87999f3e1c28026caae216",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 135,
+      "target": [
+        "s-raymundi-nonnati-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "0e1b036261e581effb58a223f2a69b44340737656aa1f3ac4aacf806f8c18b33",
+      "source_text_sha256": "eb3ac671ce8d7f172001adee25b7c030c4f6c6245b378c1d25f49aaf6afe9b34",
+      "latin_sha256": "b80c35e5d4ab5808ef6cb050ddeebc29851f495cfb72144f788594bc09b226b9",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 136,
+      "target": [
+        "s-vincentii-a-paulo-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "dec215c39df90ec7f33fcc8a59d8d5c88cf4fcdade7f571a389f816d1a16d6c0",
+      "source_text_sha256": "e8fc56fb17570457b09dbc2f7121b0d6defeade59c1471219c5a3c84b6e01ae9",
+      "latin_sha256": "ee0674284f1c8d0966900dcda7dcad27426d59f79802efbca091b64fc14dd236",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 137,
+      "target": [
+        "saturday-after-ash-wednesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "f363422e78b3686748ccbc09386edadc12a76eb66abc22414619c77ce58c9343",
+      "source_text_sha256": "6791d491ba9203b703c7f3871ce14a2f96ea01702efb200d4e0f2bf42ca4b52d",
+      "latin_sha256": "6a5f88b89464f54e692d79f212bd54d02d3dd6b419031ecff37d3646b26daff4",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 138,
+      "target": [
+        "sunday-within-octave-of-nativity",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "7f3771b9c7cd1adcd7d5aff528f883f53638fd635ce6517cd516eb5e93e9672c",
+      "source_text_sha256": "a5f96b7294b04fea083f4d2fe652a29bdc33078f8dcb78bfe1869106dff8f039",
+      "latin_sha256": "7efad74d1762aadb30de011f8c19cb8f66c8979264864370454b134bc6ec2064",
+      "family": "who-with-thee",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 139,
+      "target": [
+        "third-day-within-octave-s-ioannis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "fe2b1836f18e4dd3bec0f72a21b6bb7bdb8cf962adeda588a7db0ef348de8c91",
+      "source_text_sha256": "f4c0e720b74fcc2c92e893a09854ce592e2e0914ad45fd5729012212b9fc82b1",
+      "latin_sha256": "f6bf920edcf45badbd82ff92ed014e83daf0c7fe218b0de9079a9085ce6ec472",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 140,
+      "target": [
+        "vigil-saint-lawrence",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "7cdf4b127c75b02a028cf7385b23514368d355c8e2fd3df2b2e162dba876e4f6",
+      "source_text_sha256": "d3af8224b4533e1612645c1f0280ff38251f46a04b166220f19135439101f8e5",
+      "latin_sha256": "be9cda6f78e31a427c7461d172ca035b3ad767ce67f5ca9607598dd2e6ab4f99",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 141,
+      "target": [
+        "comm-ss-cyriaci-largi-smaragdi-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "2185f0aae96f21ee92fff80916385e3fabf41522bf4002e051ecae3905569830",
+      "source_text_sha256": "7c784d3c882b971089d15f77fd9925e6f69856756db49d46e0ecd0115f0626e7",
+      "latin_sha256": "464d8b5d6e11cd14dc777f3296dca356c82bdddd9c7322e52462b65c5acef822",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 142,
+      "target": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "1b9dc760bf471b15898cdb46f6cee7e253bb9fc9b183d7a6b2d8097472c9fa51",
+      "source_text_sha256": "118c974703a1cada50a9691eea21855bb105aaf95dac26853a784ef8c66c0e6e",
+      "latin_sha256": "3fbbff4b8eacffc9473def04e4d43f8eae5550e8a7f70a90d2c533e958bfebad",
+      "family": "who-with-thee",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 143,
+      "target": [
+        "s-annae-matris-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "de5120f8ee85911af7d70d8454cdb33a90633294fdd6bf86fb293afb32a86d9f",
+      "source_text_sha256": "0e1e6fc5158a9bb4d15a7eeb2eb03b0e3783bd03fe495ac2fd1abf57011ee293",
+      "latin_sha256": "e67e8b433dd1b1cd08acc54bc3135120e92bb2b27a0398935340d383f6402ff7",
+      "family": "through-the-same",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 144,
+      "target": [
+        "beatae-mariae-virginis-a-rosario",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "e7ea2eaa666d3e58c91d8e8637b5a32530b76e683b6f8495b94745d9371a7991",
+      "source_text_sha256": "63248d3a79ecd4047b632723bc6bcea57ee2f978390362477f9a14c8264fbb30",
+      "latin_sha256": "cbf847be295d419274bb665ad284c14f1021ca49fed8be632dddb9b421a00fa5",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 145,
+      "target": [
+        "comm-s-valentini-presbyteri-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "3cc5b5cabe3738178eefc49d698329446007690af0e8aab337e702ab6a9e59a7",
+      "source_text_sha256": "536d7992af7329cc53c96bd552a25ff39956a0e0721d0369d7cdae1badfb8c3c",
+      "latin_sha256": "b2a6baa0d26541e8a02fdee4579a1c3c4ff4d62060fa478c3029bdaefc629b5c",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 146,
+      "target": [
+        "s-agnetis-virginis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "d9752965a6265e96903c831e5aec7c8ec1d9aa6ae0899cadd1f1023b99e7e776",
+      "source_text_sha256": "b4c7e9cdfd80465b448034d8c8fc7a4dd9becee055b698a8d889cd17066ee871",
+      "latin_sha256": "058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 147,
+      "target": [
+        "s-francisci-paula-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "7877bc09e461d44615a88f9ec34b3406a3eb27fe4ff88449e6b3a4b2ad1d2177",
+      "source_text_sha256": "695c062655aa0301bcb5c66f8308ffdf42362ca4c63db7fb38af024ad2735290",
+      "latin_sha256": "72fc354689a235504aecb159bd7ddd3cd7247a79a11923cfef48fe7dd1ebc3ab",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 148,
+      "target": [
+        "s-ioannis-baptistae-la-salle-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "05c03ecd2294ac932603ff1fbfe966a6b87d32b7ca31ae5aac34c29b9d2bdb59",
+      "source_text_sha256": "1079cd1e921ee4800d01daf898d2ce780befe31b6a4065b528da7f39d6563a2a",
+      "latin_sha256": "058cd6d47f6f7348ce5e1e0dff29b0c9a028683c5b469b257794438462a6984a",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 149,
+      "target": [
+        "sanctissimi-nominis-beatae-mariae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "876ab62a416ac923b3356b218355e90a9006573dc73617ca07b90f91b15b1d86",
+      "source_text_sha256": "92efa03ed6cb3bacc26c805cb6a935ee833918ced8baac9f20dda2430fd607be",
+      "latin_sha256": "fed60d2ab90097a00e036de689ed52691268187b138b648f8e05f3f0f8adcaed",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 150,
+      "target": [
+        "comm-s-valentini-presbyteri-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "716554ebad11ed230df2816d4eaec6f3175a806ac03d32276c62265529b61c8e",
+      "source_text_sha256": "9fe80cbf531cdb97ac85747862c35aa0afa8ecf71d192cecc155bccd9733ce99",
+      "latin_sha256": "436baaecd84d3f42bd478e024ea1779afadb1fb79a0f619314dfc7426c67cbaa",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 151,
+      "target": [
+        "comm-ss-tiburtii-valeriani-maximi-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "fb3ddb99e555830b5d7938ab45c890f1af8783b6bb23a6dd04607f0d3e9d7b1e",
+      "source_text_sha256": "bd25584aa087f9819367764bae19f43e61f6920628c67d93fee45eed5437181f",
+      "latin_sha256": "15841f11cc12562e8f0b441e48755c4a55f1c21a05585c3f0b86b830e584d8fb",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 152,
+      "target": [
+        "exaltatione-s-crucis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "58e47620cc547f3f1474c87e2ef4cb6ee893c6ea5b2d60c3619e5bdd9be2dd55",
+      "source_text_sha256": "5087fb0895d09a8c4d000f2bd5ecac8cb58152d4040d61c60e5d56a1eca4353c",
+      "latin_sha256": "6301db937b5c90b56a76f25cacacdf3797a01712681e87213221ca051e6b3115",
+      "family": "through-the-same",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 153,
+      "target": [
+        "s-aloisii-gonzagae-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "ac2e3524371253523a73a58ed5a2a7db73205af8f69d33f8abbb958b74eca90c",
+      "source_text_sha256": "b35f8625ef4370ff11df806ef68721138febce7048f0f1f27eb49adc424c21e8",
+      "latin_sha256": "1153e2d25a9a6395fc3f90d7ba5d6b5730861ac143ae3da000e45fa90926111d",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 154,
+      "target": [
+        "s-petri-nolasci-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "dc6740f463371b95d481072f8930d2d9314cc7ea9e2c778d51efdc1a94d3ead9",
+      "source_text_sha256": "4fdad1c2c0e50107c20bed187ebabbf2ae302f75737b14f96fc4f39b38f2e3d2",
+      "latin_sha256": "0e09a3ce15b9951f91dee27dc1ac644dbd9c77aa0c20cd4b6c0eaac898e0cb4b",
+      "family": "who-livest",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 155,
+      "target": [
+        "vigil-assumption",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "ef9a51878287650a39d788f67b0600090e63bdc2b23a9d295e458ecb84e995d3",
+      "source_text_sha256": "9e091bd25dab165f34ee5d388152bb055856edf060fa573c5e7315b7aa355ca4",
+      "latin_sha256": "7e2eced416486fc392b0bebaffaea3c3fd78addc9bef8cbcd314bb15c70e9c34",
+      "family": "through-the-same",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 156,
+      "target": [
+        "comm-ss-faustini-iovitae-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "759ddbf85bee98769acfc693ffedffb5b1e92174e209a4f7abae250db17027a0",
+      "source_text_sha256": "30cd00de126839233fe14c37f7cc277004e045109918a84704b2edabeb11b426",
+      "latin_sha256": "930d2a1efd6953449a0b2ca03ad38af696e56035d64bc75b88b1e89e62a06f65",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 157,
+      "target": [
+        "lent-4-saturday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "95e6a19395674fc484b321f14ebe1e5fbe89e683a53e8dc6b25f4e32e97fc756",
+      "source_text_sha256": "8b51d0bf427376e49f38ce7dacbf86bc02a436f8eac7480ade72c8d75ec51d64",
+      "latin_sha256": "b1c7bd9afb6473bf73cd9b63a404108f31e2c665a72de40c9b5eb16af232e7ed",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 158,
+      "target": [
+        "ascension",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "candidate_sha256": "24e596f43f03506a06b7e3aca3fa48cc9a8dd966bca934533d725d6b7fffdd23",
+      "source_text_sha256": "e294297b134f5579817c3c1768601b102546105deb1b1d1781acb9ffca945ccf",
+      "latin_sha256": "6e2b16c8905efe2858b953429a59d21b0a79445da7756f81ecf869fd7e8749b8",
+      "family": "through-the-same",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 159,
+      "target": [
+        "octava-nativitatis-domini",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "eb92e0572d0a36af2b1f827dc1f3d21a1d0c5c2bf07c0c0165c0769dd46e82a4",
+      "source_text_sha256": "93489dd401b4cb18f6cae4aa0d07a7fc143b11c2c317aff247bffa0a606250ed",
+      "latin_sha256": "9cddb71fbf9eb08abc14814574aef82e7939fde5068551293d53dbc7ff8d6589",
+      "family": "who-with-thee",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 160,
+      "target": [
+        "s-caeciliae-virginis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "candidate_sha256": "99364c853ca614a3d95a7d6b4d378fb83b5531c9ad14baf814e0a51056fd731a",
+      "source_text_sha256": "e07feb1d1ce209ecc266eb1a14cb4f9282818191bf0a352f5290d125031afd6f",
+      "latin_sha256": "2fce5ba4bdcb315093b386dd6b9cf76b5da1950b9d82876e7c95d0c0957bf0db",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    },
+    {
+      "batch_index": 161,
+      "target": [
+        "s-francisci-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "candidate_sha256": "f1d92e9fc5774833b716c458f2caad33ba888dacc03fe6a4a26d5e19230753d7",
+      "source_text_sha256": "23da8912c08b729082e732d7d32a6d90fe817464c4f060d691aefb2ff6bd7a02",
+      "latin_sha256": "e1503f1b8200e8c1fa8237668c85918030b650159e67b159d63715b9d2f918b8",
+      "family": "through-our-lord",
+      "decision": "accepted-for-finite-source-execution-only",
+      "family_context": "Actual English and Latin petitions read; literal source cue and target prefix agree with this checked table family. No unbound name, inline option, Holy Spirit mention or particular contrary ending was found."
+    }
+  ]
+}

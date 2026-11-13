@@ -507,6 +507,12 @@ class Anchors:
         self.last_day = self.next_advent - timedelta(days=1)
         self.sunday_before_advent = self.next_advent - timedelta(days=7)
         self.christmas = date(ending - 1, 12, 25)
+        # RG 80 fixes both the Greater Litanies' ordinary date and its sole
+        # universal transfer. Keep one computed date for placement and for the
+        # distinct privileged commemoration in the Mass (RG 81; 109 f).
+        self.greater_litanies = date(ending, 4, 25)
+        if self.greater_litanies in (self.easter, self.easter + timedelta(days=1)):
+            self.greater_litanies = self.easter + timedelta(days=2)
 
     def as_json(self) -> dict:
         return {
@@ -582,11 +588,10 @@ class Year:
         """Record the Mass that the ferias following `sunday` take.
 
         A second governor for the same Sunday is refused rather than resolved.
-        The one year that produces one is a year of twenty-three Sundays after
-        Pentecost, where the numbered Sunday and the last Sunday share a slot
-        and the guidance already declines to choose between them; borrowing
-        from a Sunday whose own Mass is undecided would decide it by the back
-        door.
+        The pre-1955 projection retains an unresolved twenty-three-Sunday
+        case pending its own source ruling. Borrowing from a Sunday whose
+        Mass is undecided would decide it by the back door. The independently
+        checked 1962 RG 18 mapping appoints only XXIV in that final slot.
         """
         if key not in self.known:
             return
@@ -896,10 +901,10 @@ def build_1962(
     # replacement day, which is why this transfer is computed where a territorial
     # one never is. The lesser Litanies are the three days before the Ascension;
     # rubric 87's faculty to move them is a local decision and is not computed.
-    litania_maior = date(ending, 4, 25)
-    if litania_maior in (easter, easter + timedelta(days=1)):
+    litania_maior = a.greater_litanies
+    if litania_maior != date(ending, 4, 25):
         year.put(
-            easter + timedelta(days=2),
+            litania_maior,
             "rogation-mass",
             "the greater Litanies: 25 April falls on Easter Sunday or Easter "
             "Monday, so they keep the following Tuesday, which is Easter +2",
@@ -1088,7 +1093,7 @@ def build_1962(
         "last-sunday-after-pentecost",
         FERIAL_RULE + "the last Sunday after Pentecost",
     )
-    if after == 23:
+    if after == 23 and year.calendar != "roman-1962":
         year.put(a.sunday_before_advent, "pentecost-23", "slot 23 of 23 Sundays after Pentecost")
         year.governs(
             a.sunday_before_advent,
@@ -1099,9 +1104,10 @@ def build_1962(
             "the last Sunday after Pentecost",
             "23 Sundays after Pentecost. "
             + GUIDANCE
-            + " records that neither identified normative locus provides for the "
-            "shortfall, so both the twenty-third and the twenty-fourth-and-last "
-            "formulary are listed and neither is chosen",
+            + " now resolves this case for the 1962 edition only; the pre-1955 "
+            "projection has no independent ruling for the shortfall, so both "
+            "the twenty-third and the twenty-fourth-and-last formulary are "
+            "listed and neither is chosen",
             from_date=a.sunday_before_advent,
             to_date=a.sunday_before_advent,
         )
@@ -1885,6 +1891,7 @@ def year_summary(year: Year, calendar: str) -> dict:
     if year.calendar == "roman-1962":
         anchors.pop("ascension_transferred_sunday_form")
         anchors.pop("body_and_blood_transferred_sunday_form")
+        anchors["greater_litanies"] = year.anchors.greater_litanies.isoformat()
     summary: dict[str, object] = {
         "anchors": anchors,
         "begins": year.anchors.begins.isoformat(),

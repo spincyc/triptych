@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Historical Latin actually printed on page339 of the independently identified Tours Alfred Mame1922 missal. United States public domain by expiration of its publication term, as recorded for the registered whole source. Faithful transcription adds no exclusive right and underlying source matter is excluded from Triptych CC BY4.0. No later Lasance stratum or renewal rationale is relied upon."
+rights_jurisdiction = "United States"
+provenance = "Rehashed the complete registered source to9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005 before source derivatives. Read the complete Preface at original PDF453, printed339, at actual200/400dpi and compared all its words with1962 n.1087, printed298, CMAA PDF379, at both resolutions. Independent admission review is separate."
+retrieved = "2026-11-12"
+sha256 = "542e00dbfad217175bd4a401082559265fc2ef098e1f06ae118ce28b55dc15c8"
+byte_size = 731
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select the entire Latin body VERE through dicentes before the separately printed Sanctus. Join line wraps and discretionary line-end hyphens, omit stress accents, represent decorative small capitals as VERE and collapse spacing around pointing. Preserve source words, intrinsic spelling, ligatures, other capitalization and punctuation, including conditio, hujus, cælis/cælestis and the comma after et before dissoluta. Exclude dialogue, heading and Sanctus; add TSV metadata."
+notes = "One complete body, physical TSV line2. The historical words agree with the1962 target under the declared orthographic comparison, without string identity or changed English provenance."

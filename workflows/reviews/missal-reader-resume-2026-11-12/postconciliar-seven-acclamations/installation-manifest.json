@@ -1,0 +1,245 @@
+{
+  "schema": "triptych-seven-acclamations-install-package/v1",
+  "state": "scratch-only prepared; canonical adoption belongs to parent root",
+  "accepted_candidate": {
+    "path": ".scratch/modern-partition-later/seven-acclamations-candidate.json",
+    "sha256": "03b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432"
+  },
+  "independent_review": {
+    "path": ".scratch/modern-later-acclamations-review/review.json",
+    "sha256": "cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8"
+  },
+  "files": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json",
+      "scratch_path": ".scratch/modern-partition-later/install/files/workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json",
+      "sha256": "03b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432",
+      "byte_size": 110837,
+      "before": "absent",
+      "kind": "immutable accepted source evidence"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json",
+      "scratch_path": ".scratch/modern-partition-later/install/files/workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json",
+      "sha256": "cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8",
+      "byte_size": 24856,
+      "before": "absent",
+      "kind": "immutable accepted source evidence"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-verification.json",
+      "scratch_path": ".scratch/modern-partition-later/install/files/workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-verification.json",
+      "sha256": "b0ccfd7fac627181617fd027b06db094ca6cd77c4bd3b95984edf2b44e517a01",
+      "byte_size": 10131,
+      "before": "absent",
+      "kind": "immutable accepted source evidence"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/acclamations-historical-latin-20261112/text.tsv",
+      "scratch_path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/acclamations-historical-latin-20261112/text.tsv",
+      "sha256": "83ee02b24dd501050b788c54eccc9c0390b653196e22aa67e3709a408110da49",
+      "byte_size": 346,
+      "before": "absent",
+      "kind": "three complete historical Latin verses; no target pointing"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/acclamations-historical-latin-20261112/artifact.toml",
+      "scratch_path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/acclamations-historical-latin-20261112/artifact.toml",
+      "sha256": "0673247db59eb7152e09dddaf212549c533f2cc367b9a140394bf5846bc25f3b",
+      "byte_size": 2825,
+      "before": "absent",
+      "kind": "new bounded historical Latin artifact record"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-veni-sancte-spiritus-historical-latin-20261112.toml",
+      "scratch_path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-veni-sancte-spiritus-historical-latin-20261112.toml",
+      "sha256": "790e274bdd5a23b85788fa8ae971cde113d221ee6da7ae8e49a4fab67910b021",
+      "byte_size": 1521,
+      "before": "absent",
+      "kind": "new exact bounded historical Latin passage"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-dies-sanctificatus-historical-latin-20261112.toml",
+      "scratch_path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-dies-sanctificatus-historical-latin-20261112.toml",
+      "sha256": "0d2f92483bed9f480dab75bf4cba73f15da1e8898535928c6c65cf7b8d90a544",
+      "byte_size": 1515,
+      "before": "absent",
+      "kind": "new exact bounded historical Latin passage"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-surrexit-christus-historical-latin-20261112.toml",
+      "scratch_path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-surrexit-christus-historical-latin-20261112.toml",
+      "sha256": "64b6d41c4b6873bf311ab311a8fdb09aa6c8bad0ff3d3483a9469bdce4980bb2",
+      "byte_size": 1512,
+      "before": "absent",
+      "kind": "new exact bounded historical Latin passage"
+    },
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/acclamation-semen-lawrence-brindisi-20261112.toml",
+      "scratch_path": ".scratch/modern-partition-later/install/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/acclamation-semen-lawrence-brindisi-20261112.toml",
+      "sha256": "c40170f47d666679091565521e304232bb742d9c2db144a54b6643274436adf2",
+      "byte_size": 1603,
+      "before": "absent",
+      "kind": "new text-free exact OLM1981 appointment/comparison"
+    },
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/acclamation-semen-john-chrysostom-20261112.toml",
+      "scratch_path": ".scratch/modern-partition-later/install/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/acclamation-semen-john-chrysostom-20261112.toml",
+      "sha256": "3d584bac740f936d3013c5521979dced52c5f96d53091292dd98cd611e630df0",
+      "byte_size": 1601,
+      "before": "absent",
+      "kind": "new text-free exact OLM1981 appointment/comparison"
+    }
+  ],
+  "logical_mutations": [
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "scope": "seven exact proper objects only",
+      "delta_path": ".scratch/modern-partition-later/install/deltas.json"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "scope": "four removed rows replaced; three absent rows added",
+      "delta_path": ".scratch/modern-partition-later/install/deltas.json"
+    }
+  ],
+  "english_mutations": [],
+  "reused_and_proposed_graph_records": {
+    "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+      "sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+      "record_type": "artifact",
+      "locus_pattern": null
+    },
+    "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/edition.toml",
+      "sha256": "061025437feaa2dda34bf03c55921d6389e399c3a58d73f2457e3990f41f4eb7",
+      "record_type": "edition",
+      "locus_pattern": null
+    },
+    "work.francis-xavier-lasance.the-new-roman-missal": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
+      "sha256": "c40e462e77cb754586a920072d53280e7a39f4c9090d12e8a92de31fa33d5a05",
+      "record_type": "work",
+      "locus_pattern": null
+    },
+    "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamations-historical-latin-20261112": {
+      "path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/acclamations-historical-latin-20261112/artifact.toml",
+      "sha256": "0673247db59eb7152e09dddaf212549c533f2cc367b9a140394bf5846bc25f3b",
+      "record_type": "artifact",
+      "locus_pattern": null
+    },
+    "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-olm-comparison": {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-olm-comparison.toml",
+      "sha256": "2eb70a32bdb38d73034fe41f7849f76f8cf3e4ad04d60bf759585523a7d61823",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e": {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/artifacts/internet-archive-scan-pdf-ed4bc14e/artifact.toml",
+      "sha256": "6aed43b819e64d5a1fa8ba0356764210278fb0167e6eefaf1f80522c477ea51d",
+      "record_type": "artifact",
+      "locus_pattern": null
+    },
+    "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981": {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/edition.toml",
+      "sha256": "3d77f765f2e04d401ca08c923008186423e87656fdd071f875be4c53457dd526",
+      "record_type": "edition",
+      "locus_pattern": null
+    },
+    "work.catholic-church.ordo-lectionum-missae": {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/work.toml",
+      "sha256": "ad7180529504a200c4c6ed21c7666bef71f2ee530d5b2c91c914b76ca1995c36",
+      "record_type": "work",
+      "locus_pattern": null
+    },
+    "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-surrexit-christus-historical-latin-20261112": {
+      "path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-surrexit-christus-historical-latin-20261112.toml",
+      "sha256": "64b6d41c4b6873bf311ab311a8fdb09aa6c8bad0ff3d3483a9469bdce4980bb2",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-olm-comparison": {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-olm-comparison.toml",
+      "sha256": "5db7152a4ee369a59e9da5cb3899fa8f9ce0bc09e8f4955cf752900ff03e8918",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-olm-comparison": {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-olm-comparison.toml",
+      "sha256": "5e089abda526f806b137be869ce338b3579492c4f5319d2a5ffa06e66d2e33a7",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-dies-sanctificatus-historical-latin-20261112": {
+      "path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-dies-sanctificatus-historical-latin-20261112.toml",
+      "sha256": "0d2f92483bed9f480dab75bf4cba73f15da1e8898535928c6c65cf7b8d90a544",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-olm-comparison": {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-olm-comparison.toml",
+      "sha256": "0c1bbe7884167329e64142949c5683202aa84ac33eac2e9fbc86de7852e6de63",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-veni-sancte-spiritus-historical-latin-20261112": {
+      "path": ".scratch/modern-partition-later/install/files/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/acclamation-veni-sancte-spiritus-historical-latin-20261112.toml",
+      "sha256": "790e274bdd5a23b85788fa8ae971cde113d221ee6da7ae8e49a4fab67910b021",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-olm-comparison": {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-olm-comparison.toml",
+      "sha256": "9a05eeaafe113cd1bce82c509a6efc7bada5112e213c3242ba6b4f6cefa56127",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen": {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/artifact.toml",
+      "sha256": "a2cf4519fae093ddd751f58fd09f828d771d7be1f67ff7efb2e44bfb1cbbfd2f",
+      "record_type": "artifact",
+      "locus_pattern": null
+    },
+    "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf": {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-pdf/artifact.toml",
+      "sha256": "02997d248da9c47e43ef703851a53f9c123e2becff977e491916b8c400c06f28",
+      "record_type": "artifact",
+      "locus_pattern": null
+    },
+    "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888": {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/edition.toml",
+      "sha256": "39c835e448f867a979441f4ddaf7534582f47305f7b658aaee0b499f6afff675",
+      "record_type": "edition",
+      "locus_pattern": null
+    },
+    "work.catholic-church.breviarium-romanum": {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/work.toml",
+      "sha256": "4c7d7fb7936515dcb73559128c988001fedf3d1b326d0d289c5203bb999654e9",
+      "record_type": "work",
+      "locus_pattern": null
+    },
+    "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.acclamation-semen-john-chrysostom-20261112": {
+      "path": ".scratch/modern-partition-later/install/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/acclamation-semen-john-chrysostom-20261112.toml",
+      "sha256": "3d584bac740f936d3013c5521979dced52c5f96d53091292dd98cd611e630df0",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen-publish": {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/english-completion-20261029-postconciliar-latin1888-semen-publish.toml",
+      "sha256": "b5b3892c7c7fd677eb09be301f89a21d1c776bddd5845d82b0e45f310f17b723",
+      "record_type": "passage",
+      "locus_pattern": null
+    },
+    "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.acclamation-semen-lawrence-brindisi-20261112": {
+      "path": ".scratch/modern-partition-later/install/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/acclamation-semen-lawrence-brindisi-20261112.toml",
+      "sha256": "c40170f47d666679091565521e304232bb742d9c2db144a54b6643274436adf2",
+      "record_type": "passage",
+      "locus_pattern": null
+    }
+  },
+  "delta_sha256": "9b58101ce2d8f87c10c150c5e475105810b32f7f78c08fe548df22365ea05d3c",
+  "latin_rows_sha256": "0f395509c5e9682069cede2865e12c72cae5cac02d70709313f53e76fbd82de4",
+  "source_identity_choice": "Reuse complete Pustet1888 historical cell; one historical Lasance carrier plus3 exact passages; reuse5 OLM comparison passages and add2 Semen appointment passages. No new work/edition or modern Latin target carrier is needed because all words derive from the complete historical bodies and ledger transforms declare every pointing/display change.",
+  "canonical_files_written": 0
+}

@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-laurence-secret-20261112"
+edition_id = "edition.catholic-church.sacramentarium-veronense.feltoe-1896"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The bounded prayer belongs to the identified 1896 Feltoe printing, public domain in the United States by its publication date under the existing registered assessment. This transcription carries only its actual historical prayer; it asserts no identity or automatic clearance for the 1962 adaptation."
+derived_from = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+provenance = "Fresh image reading on 2026-11-12 at 200 dpi and 400 dpi, using complete held PDF bytes and surrounding source context. August, VII. Item alia, second prayer Accipe, printed p. 96 lines 23-25 / PDF artifact p. 120. Footnote 2 says Muratori and Ballerini begin Mass VII at Accipe; the present edition starts VII with the preceding Adesto."
+retrieved = "2026-11-12"
+sha256 = "90a8d08f0165759f772ec601bba085caccbca8c5a2bf442a30c3a22b76adcda8"
+byte_size = 140
+path = "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-laurence-secret-20261112/latin.txt"
+indexable = true
+encoding = "utf-8"
+transformation = "Join three printed lines; explicitly expand printed Dne with overline to Domine. Retain Laurenti, source case/pointing and the actual lowercase abbreviated per. cue without expansion."

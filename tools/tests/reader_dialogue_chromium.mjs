@@ -348,7 +348,9 @@ async function verifyCopy(cdp,entrance,lang,keys=[...KYRIE,'praeparatio/misereat
 }
 async function verifyGospelPrayers(cdp,entrance,paired) {
   const witness=data.translations.find(row=>row.source_id===MAME);
-  assert.equal(witness?.held,3,'exact additional Latin witness extent');
+  const witnessBodies=[...elements.values()].flatMap(element=>(element.translations||[])
+    .filter(row=>row.lang==='la' && row.source_id===MAME && row.text));
+  assert.equal(witness?.held,witnessBodies.length,'Latin witness census matches its held source bodies');
   assert.match(witness.caution,/priest cue is limited.*without deacon and subdeacon/);
   assert.match(witness.caution,/solemn-Mass occurrence belongs to the deacon/);
   const page=await evaluate(cdp,`document.querySelector('#reader-document').innerText`);

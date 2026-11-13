@@ -751,13 +751,21 @@ class RealCorpusCoverageTests(unittest.TestCase):
             self.assertEqual(G.digest(G.canonical(row)),
                              G.fixture()["roman_current_english_absence"][G.canonical(identity)])
             self.assertNotIn("text", row)
+        historical_retyped = [row for row in historical["untranslated"] if "(C2 gap G3)" in row["note"]]
+        self.assertEqual({row["reason"]["kind"] for row in historical_retyped}, {"no-exemplar"})
+        original_ids = {self.propers.translation_record_identity(row) for row in historical_retyped}
         retyped = [row for row in ledger["untranslated"] if "(C2 gap G3)" in row["note"]]
-        # Accepted bindings can fill these former gaps. Each remaining row
-        # retains the exact reviewed absence record, never a rights restriction.
+        remaining = {self.propers.translation_record_identity(row) for row in retyped}
+        admitted = {identity for identity in original_ids if assert_current_english_owner(self, identity)}
+        self.assertEqual(remaining, original_ids - admitted)
         for row in retyped:
-            identity = self.propers.translation_record_identity(row)
-            self.assertFalse(assert_current_english_owner(self, identity))
-        self.assertEqual({row["reason"]["kind"] for row in retyped}, {"no-exemplar"})
+            self.assertEqual(row["reason"]["kind"], "no-exemplar")
+        # Urban was the final G3 gap in the preceding accepted epoch. Its
+        # exact current study binding closes it; it is not silently removed.
+        urban = ("comm-s-urbani-i-papae-martyris", "main", "Collect", "all", 1)
+        self.assertIn(urban, original_ids)
+        self.assertTrue(assert_current_english_owner(self, urban))
+        self.assertEqual(remaining, set())
         restricted = [unit for mass in self.files["roman-1962"]["masses"]
                       for unit in coverage.proper_units(mass)
                       if english(unit)["availability"] == "not-publishable"]

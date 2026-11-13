@@ -1,0 +1,20 @@
+--- tracked/support_v3.py
++++ in-memory/support_v3.py
+@@ -202,7 +202,7 @@
+         for dependency, expected_sha in ((path, artifact['sha256']),
+                                          (payload, artifact['payload_sha256'])):
+             require(pins.get(dependency) == expected_sha
+-                    and digest((source / dependency).read_bytes()) == expected_sha,
++                    and digest(_source_input_path(source, dependency, pins).read_bytes()) == expected_sha,
+                     'exact declared direct-PD artifact input ' + dependency)
+         metadata = tomllib.loads((source / path).read_text())
+         require(canonical(metadata) == canonical(artifact['record'])
+@@ -211,7 +211,7 @@
+                 and metadata['path'] == payload
+                 and metadata['sha256'] == artifact['payload_sha256']
+                 and metadata['byte_size'] == artifact['payload_bytes']
+-                == (source / payload).stat().st_size, 'entire direct-PD artifact record and payload')
++                == _source_input_path(source, payload, pins).stat().st_size, 'entire direct-PD artifact record and payload')
+     result = {}
+     for key, expected_row in expected.items():
+         record = actual[key]

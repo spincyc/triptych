@@ -1,0 +1,3366 @@
+{
+  "schema": "triptych-oration-ending-independent-review/v1",
+  "date": "2026-11-12",
+  "batch": 3,
+  "candidate_packet_sha256": "450175fafe57bcc780f57b88c0a26ed30b4c7d9ae98900a6d627c57cb032a0aa",
+  "batch_sha256": "1374c9ab20bef3a3b49741f36d6931a37ca923c8e2762f916df86911c0413605",
+  "current_input_verification_sha256": "daf2e810800650713722d9d952b752426a407a467f430ced782d0b3db218e460",
+  "scope": "Independent review of every one of these162 exact held Latin and Lasance1945 English prayers for their proposed same-witness full conclusion. This is source-mapping review, not activation, new wording admission, or proof of a complete annual execution.",
+  "review_method": [
+    "Read all162 Latin prayers and all162 English source bodies in full, including their actual printed cues; read allfive complete table formulas.",
+    "Read1962CMAA artifactpage17 printedXIX RG115-116 and Lasance1945 artifactpage818 printed819 at the rendered page images; verify both fullPDF hashes against registered artifacts.",
+    "Verify exact current translation binding dictionaries, literal English hashes, direct Latin bodies and hashes, whole provenance dictionaries, target identities, formula dictionaries and table hash for all162 rows.",
+    "Read1962CMAA artifactpage243 printed162 n927 and local rubrics8/8a independently for the GoodFriday exception to a generic Mass-frame assumption."
+  ],
+  "source_controls": [
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "pages": [
+        17,
+        243
+      ],
+      "printed_pages": [
+        "XIX",
+        "162"
+      ],
+      "loci": [
+        "RG115-116",
+        "GoodFriday n927; localrubrics8/8a"
+      ],
+      "image_sha256s": [
+        "b023aad66759557a7fe910dbbaf8296b69b001ddc6683bcaf08792dc190ec482",
+        "559cdcbc01e330fc0310b1fab265a19f952f7940f344d0d67c990bc159099742"
+      ],
+      "disposition": "Private inspection control; no facsimile redistribution authority."
+    },
+    {
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "pages": [
+        818
+      ],
+      "printed_pages": [
+        "819"
+      ],
+      "loci": [
+        "PrayerConclusions"
+      ],
+      "image_sha256s": [
+        "d24ed45817669dfb48a66af51d16dc5e8fc97936ad1f146db6d7b8f330783f0d"
+      ],
+      "disposition": "Existing bounded textual-table publication basis only; no wholePDF publication authority."
+    }
+  ],
+  "outcome": "accepted-exact-source-mappings-with-required-runtime-scope",
+  "accepted_count": 162,
+  "held_count": 0,
+  "rejected_count": 0,
+  "family_counts": {
+    "through-our-lord": 148,
+    "who-livest": 6,
+    "who-with-thee": 4,
+    "through-the-same": 4
+  },
+  "semantic_findings": [
+    "The148 through-our-lord rows use the literal historical cue and a matching Father-through-Son Latin prefix; no unhandled HolySpirit mention, free name placeholder or parenthetical choice was found in their petitions.",
+    "The six who-livest rows address Christ: AssumptionVigil dwelling in Mary, MaryMagdalen and Lazarus, Paulinus and the promise to those who leave all, FrancisBorgia, FrancisStigmata, and SeptemberDolors. Their Latin person agrees.",
+    "The four who-with-thee rows end by referring to Christ: JohnBaptistNativityPostcommunion, GoodFridayCollect, PreciousBloodPostcommunion and ChristmasVigilSecret. Their Latin third-person cue agrees.",
+    "The four through-the-same rows have the exact historical cue and corresponding eundem/eumdem Latin family: AnnePostcommunion, ExaltationCollect, PreciousBloodSecret and TransfigurationSecret. Exaltation identifies Christ through the cross/redemption subject and explicit printed same-Lord cue; this is not a new general inference rule.",
+    "GoodFridayCollect is locally controlled by n927 after the firstlesson/responsory, with the celebrant praying in ferialtone. Its actual extended cue supports the long family. The nearby n924 prayer uses a distinct explicit short ending; no GoodFriday-wide replacement is authorized."
+  ],
+  "required_runtime_scope": [
+    "Exact roman-1962 source-owner target, form, cycle, slot and occurrence; no new appointment, donor fanout or other-recension authority.",
+    "Exact selected Lasance1945 witness and English source hash, exact current Latin body and complete provenance hash, and exact formula-table record hash. A mismatch must refuse execution rather than silently fall back to a different witness.",
+    "Current assembly must affirm that this prayer owns the final conclusion of its actual group. A nonfinal shared-conclusion member, absent group decision, or unresolved context must not receive a full conclusion.",
+    "This review does not itself authorize removal of earlier group members' printed cues. Any execution omission needs its own valid partition and assembly proof while preserving the whole source quotation.",
+    "Keep the literal source cue available unchanged and distinguish the source-derived execution from a transcription of the whole expanded target. Table spelling, capitalization and pointing belong to the table; do not silently claim they reproduce the target printing.",
+    "Keep the separately printed Amen response separate from the priest formula; avoid duplicating a response already supplied by another exact execution source.",
+    "Preserve special ceremony placement and voice rules, including GoodFriday n927 and Secret conclusion execution; family agreement does not replace those controls."
+  ],
+  "preexisting_text_observations": [
+    {
+      "target": [
+        "comm-s-mennae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "observation": "The held English contains bseech. No correction is made or authorized by an ending review; source recheck is a separate task."
+    },
+    {
+      "target": [
+        "s-matthiae-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "observation": "The held English has no period between defended and ThroughourLord. Keep the literal source untouched; any editorial correction needs source review. Execution partition must not pretend that a missing period was printed."
+    },
+    {
+      "targets": [
+        [
+          "comm-s-thomae-episcopi-martyris",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        [
+          "lent-2-monday",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ]
+      ],
+      "observation": "Historical English renders heavenlyremedy personally, while the Latin petition does not name the Son. The actual ThroughourLord/PerDominum cues control; no semantic rewrite to Who-with-Thee is authorized."
+    }
+  ],
+  "rows": [
+    {
+      "number": 1,
+      "target": [
+        "advent-3",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "0eed0d0b19f4711f9e3a7a8b7cbd8afb93053ee94e4857c9a40b438be5eadfab",
+      "binding_sha256": "f6fd4ccbbd5e94d7471505e770a515499dbaf7d2e952e5873cd32243bd115fe2",
+      "english_sha256": "8158f4caf6b826be428ff6955182e8d69189d2ee60601ab2710932aa47920457",
+      "latin_sha256": "e4c168f5f8e55daaf9a5aaed39eee30d64a0b4ca6c545171a0545e1536c07d93",
+      "latin_proof_sha256": "638cd112e63026615939d0c9fd16bbb4415390521d63f4702cbaeedf8f726649",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 2,
+      "target": [
+        "advent-4",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8af121d6c89a97a17f1ae6e23352f6ffe15f063cec2995abd120d90e5c8402b6",
+      "binding_sha256": "c82ebe4cfc8174ad151e1bf635081372765b7a82612ecd5f1efb503595a13d7f",
+      "english_sha256": "ac7e9bd2e457e7b0652edb809fc5e2d4fd948d025fb984b13c7dd358f464333f",
+      "latin_sha256": "cb9947034e85a0168fb4ee3600e1a307157887070ede10944a5136170f24c93f",
+      "latin_proof_sha256": "01bddb22b6b57f22fbb52ee562a595731a6f1eb96da7cc8ad68d0792d1f59f14",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 3,
+      "target": [
+        "s-marthae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "7d74ac81fab89ece99b743833fad84078795f34f1d182872557840b6734d83eb",
+      "binding_sha256": "7e2caad10328309f28db5aedae3c1d063af7a9b944e374e9066a903d16fef0c5",
+      "english_sha256": "20f9b751b001dd22411f2aff30f9839ea08989ef90d50d6aa1dcfce4b1bb2c0c",
+      "latin_sha256": "8bb5053f890faaf48c65987a87742c3e47ad2ab77cb7c3477f27c20308cfa63d",
+      "latin_proof_sha256": "037b3ead2099b38aada93f3476ce6cdf6b683b4a64e2b2b6a2edf4e04ad5f810",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 4,
+      "target": [
+        "s-monicae-viduae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "9136d9e6168df48538cffd3ba9a02c18a195c40dd95513680eff0b8cab07fa3f",
+      "binding_sha256": "a53649b1d01b084e60367b770a901764f636f7d95d79a1cdf37f57d6e24b3dfc",
+      "english_sha256": "b14c743270654bdfbf7cb059d611b8ae1ffc400a7e37fa9161abda9fb0c63387",
+      "latin_sha256": "2fce5ba4bdcb315093b386dd6b9cf76b5da1950b9d82876e7c95d0c0957bf0db",
+      "latin_proof_sha256": "1681a7895ab3e9a39acb7ef7077fc75870eb5909046d4caae6c221457a34a199",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 5,
+      "target": [
+        "s-antonini-episcopi-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "229b9575c0af0cfa1063b220827e67514c2ba96c01b5894451847397d96b1795",
+      "binding_sha256": "7ebb4fb38085134cbd19050f645126b463b31bbb8daa5a1584f0a04835cba16e",
+      "english_sha256": "22c98188bae9580f0b396cf6442970bdb554cd9e3bb9a214262fa713515eccb3",
+      "latin_sha256": "5602efa256b603e14aabf412065bf0c5dc2aab9abf552d7036e81a1ad0563a3d",
+      "latin_proof_sha256": "9479d126893d32a7401a6ab5490568ea3fd6b5e54c6a089ae53a1f8ebd80bbeb",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 6,
+      "target": [
+        "easter-5",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "1934eeb03dce6a269909353b5b79aeaf7371bcf622d81cf5182092c0c72e5276",
+      "binding_sha256": "7d74e8b770a072e9b78437547305a98e4a630ba5243a490a7616ede9e8ac432b",
+      "english_sha256": "46bdcc338a284cfe345573bb7ebc0cd3a4980394d9a0f3348691bd9cd6b56731",
+      "latin_sha256": "b49a24f871cea1d49713ee9849b708c682f833b7dea0d6d7a351487e00ab97a6",
+      "latin_proof_sha256": "cffdfab3a43e3644a0df7c9ee82fe41912cc4d25bd42a8fc787ca83fe94c7957",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 7,
+      "target": [
+        "s-hermenegildi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "fa67ee470eeeaaf10f7ddc16ef3f6753146ddd8ad58b597fc3ae212cd608ba4e",
+      "binding_sha256": "669a13fb202fca91abafc9eebfc56d432d114e6fb031d9b315f288a475d9fb8f",
+      "english_sha256": "af5c1e171b3d5b8d6c1cacaf440a9db2a44cc908451468788f4811c2a937aca1",
+      "latin_sha256": "f0a57d5f46075d85a70c9118853d24a262fb85570c39d24e59ad72143637166f",
+      "latin_proof_sha256": "3c7aca4cd9443114a49e3a25ebe57864c16346ca7cfc4f1cb180f983161530f6",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 8,
+      "target": [
+        "pentecost-4",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "dd339ae0873ba34b412ef164b62c6c9a2b5fe9da89f1fa49cca2b6a3efa6216c",
+      "binding_sha256": "b169a3587be77d4251ae61bfd4f799318f608d9c8c4ac180c887508b4faa6c44",
+      "english_sha256": "4bc9d0bd1edbd4ef35227d7f31f6c94e787f9aee88a3610e04a9853a31213b32",
+      "latin_sha256": "583d847585b7cb8db4508c6f41faac5b67b4ad6e8682f7287757711f2336e744",
+      "latin_proof_sha256": "74cd60cdc83f37d91a6045fa1aa23f20c8eb401e97b5886ecdf33569356d5704",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 9,
+      "target": [
+        "lent-4-tuesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "eed715193da5adfed6f7bb42db90c79638cb41a110e2a5eb175ea762dd7961e1",
+      "binding_sha256": "07a9a94121d3613e075ec5340514796a13f7817f83fd259f45f111b1ead50e88",
+      "english_sha256": "bb348d1ddceb95b39e7947f3fd2ac3cdb6f2586be942a88a856ed0b87bd3fed3",
+      "latin_sha256": "b88dcae8fdad1144a59b33b06287fab3744233b0be96d1d0b2b6f36fea2aa7d0",
+      "latin_proof_sha256": "79426996012c22538863750f5caf8197c3348a9306e3af3235b6ce3210ce3e05",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 10,
+      "target": [
+        "ss-septem-fratrum-martyrum-ac-ss",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "078a704495a27db522ac743dc8a295e06f66e8b284f4b84b9be891af6c55c267",
+      "binding_sha256": "c44f3ee0d3a06a6ded67fb81dc266702489aa4b60996ecdf99620d54f057fa97",
+      "english_sha256": "3e4bcd7d513b1df18f541202c3c081b3a5c0695591c6db86af9a21418f5d7423",
+      "latin_sha256": "1944cc089a542dd99119c5346d10c3fd57963061446c9d9e50667b57ea03c849",
+      "latin_proof_sha256": "dd9005fa75c8b17b14935cfc979d19e60ba1e9ff45cc45240333698b36243356",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 11,
+      "target": [
+        "commune-dedicationis-ecclesiae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "43853087b165a0003bf2f7fe7f4e5e9c01b90c0ad19e150a5f819f6d6d9fecd0",
+      "binding_sha256": "91bbde98653b020f286d6d556190ee3752af880e4dde6367b66a925ae6882d7f",
+      "english_sha256": "aa9242c2be1ad34bf16b540a92e3f7dc70af16eb0a84d9a27e3f7e35ce0a9285",
+      "latin_sha256": "db0081ffeb2c7c4b5d33c7263cbb5e1c95388cf9cc188c353724494e36ec9edd",
+      "latin_proof_sha256": "6e8b2771be463be02c13d72e9b1d78c37472d405b8a451f1228405b4dd57483e",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 12,
+      "target": [
+        "comm-ss-sergii-bacchi-marcelli-apuleii",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "36daad89d39a1809c837fcbdfd880bc2383795677ee03216dc4992a955625dce",
+      "binding_sha256": "ba65e394ed31c399ff636304fed3256954fa54603b829dc88419ea5e5e59f732",
+      "english_sha256": "5cd688081823093bc162b0b247e83f3f0d9005f9ee4522933d39e03682fd8511",
+      "latin_sha256": "3b312da3ef6bbaabae27f02bf13d00143847fe89ce45bb1917cd3f5b160e479a",
+      "latin_proof_sha256": "78e20363e8d1fab5202b1591058668108499075cc53d7aae475d7b86ba2440b8",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 13,
+      "target": [
+        "missa-de-s-maria-in-sabbato-2",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "e010444139d832d7a5087b3d45f3170268c96946aa3e78df09cd7b39f88f6a7d",
+      "binding_sha256": "cd1c9aab4afda62c98de14f1164c486bcda2514123f99b3b46b44da1fd04a179",
+      "english_sha256": "4247caf5d0d4365b4edb98d3b4802349fd6b1c54bc92a7a22d8e880954436e31",
+      "latin_sha256": "4fcb9b4f5f436b5bae4d0bc6d9419f1f8b290b323ff1e0c0758c0607f0cb2104",
+      "latin_proof_sha256": "c7e41467fd4aece943b04b6f78c9c665593f787b69cda6048231c6890226369c",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 14,
+      "target": [
+        "comm-s-valentini-presbyteri-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "6b69f67272a7121376e397c179dffab0e0032133e5071162dfc25caf077d67f9",
+      "binding_sha256": "07fc96e877de847928d39390be120ec7ff26dc5916cf3526bb6e483e6cbd7caf",
+      "english_sha256": "b4cbab638fafb34615c315ea068141ad391da0268b11bc6c257acc6ae70d843d",
+      "latin_sha256": "db9e0987d46cb7a86489374015bc7ff0ad472cea3f572ce31c21d587098a41d5",
+      "latin_proof_sha256": "5570f83d47d3fc2ca397087794e29cfa909a8a9ceeb448aeaaeddc0577b61f6c",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 15,
+      "target": [
+        "easter-3",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "551c6ea962b3f30e96571f953c5259256b0674235abefe64fb15b930280ae58d",
+      "binding_sha256": "65dce4c3a98116965139ec2763b502c7bb78779b85a8dc8076bafef0b0d9c026",
+      "english_sha256": "83b4d0df0d8ce4f065b46ab6eeeed144700c4bb21b9b0f5f78553ed29f8e918c",
+      "latin_sha256": "c3ae5908b2ed82e73e4fd1ff5c9e0e4aab078a75f173217240ab0a99696da359",
+      "latin_proof_sha256": "6efed76400890c9f60e1a2dc3d0ce8ca9748470ce30a5dcdafede440adf53c2d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 16,
+      "target": [
+        "pentecost-10",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "9f9ddef1e880deffe98a9f4c9057f22cd7fa88d40ba5131c335fc307114b1e4e",
+      "binding_sha256": "49f2eb90c44d69900f708f776e9dde916e04d69c917fd34726665e64327dbbf9",
+      "english_sha256": "2606c39705cbd81681f8381ea015d267c682d0453ae1f931e1655d7ac4736bfb",
+      "latin_sha256": "afaf2f6f4cd524abcc48ee5c8b1b97ee2f05a97efb1b7e775acdf9ac48518af3",
+      "latin_proof_sha256": "be1346c851c6c2c887af6ca6040e7d1ea89ef5b8046bb992254fd44b81e04c0a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 17,
+      "target": [
+        "pentecost-12",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "12efbf775b91f538f84dbf346b7f2b7e90a9a716c342f54842a771eed8051ed6",
+      "binding_sha256": "776ae5c2e1f6a34b01810db58b08727560d934fab482e6dc1d78016a42365aaf",
+      "english_sha256": "e8b9246f30a78ae00a1a32e83edb43c05e3f0f4ff4cb70b5337e306a06358ebc",
+      "latin_sha256": "d33e23d1a728f4c09bbdb4fc253207291282cd0f6328c07eff9f782bec187fe5",
+      "latin_proof_sha256": "af970634ce33d3dd0ceec1ed81a548adc04f501ca441ddf53210b77252b3d5ea",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 18,
+      "target": [
+        "pentecost-16",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "b40513142df9120b5711c91f2bfb4ab13d039effe2bb2bed815b98d52918bf3a",
+      "binding_sha256": "e5284f9d90eec55a643931e326623a620279cb6a8bc0f46a5c5a6d7168759dc3",
+      "english_sha256": "1fccd23fd2f05a6ae0e805fa5be5abc26d5b8496f7f0e70602d91dbb7e474832",
+      "latin_sha256": "8e7f9d28652bbd6eed2bc6cfcb885869c97b28115972412c757a50960a960121",
+      "latin_proof_sha256": "0fb8f37f305cba836fdaa197c8de120befa146a877eea1ecc723fc5c831ec5ec",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 19,
+      "target": [
+        "pentecost-2",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8e423da24ab7222bb90b12fa0f81cb731b496229d8492c70798ff38ee8363b0e",
+      "binding_sha256": "b6ccb7978e9c9a8eafe4bca80159b375a4002a64d979c9e4a0fb5c62b6cbb7a5",
+      "english_sha256": "508f35eb35bb2e589e61816f262a7325a353472851c3c4d7934b7f52fc725e75",
+      "latin_sha256": "f8e3a44b3ccd8425a190150374a23887f82f6f77994213b1caaa570eadcf0822",
+      "latin_proof_sha256": "7fcff75214a2476e41634a9abef4f3638c14870941f1778851b10f697b6e2642",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 20,
+      "target": [
+        "pentecost-3",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "f8ef87e865ecd31e0d8452c5490b5f6132c2956daa5ebec55e9e4dca5779866f",
+      "binding_sha256": "99dde61cdb8d66173de67f47497e3bcea9e41890c09f6de584f5b4feadfb7cba",
+      "english_sha256": "dffdc4314d3d2282ec075ce63826a73c9af30206afc86dbfc3b3f93052470a7e",
+      "latin_sha256": "d980b2bd8ac2698e378442d130f7f28ebb6d18a6e894d8ccd6d29f4e2f93602c",
+      "latin_proof_sha256": "aaba686af3783bebf997a9ddd23eb8b6718f4a168b2fbc6eedfcce0ce87875db",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 21,
+      "target": [
+        "pentecost-7",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "0c30c58f28e772d902784eba63d98dcf583925d54d9fb15f9273a119c09af1e3",
+      "binding_sha256": "b70a1e39c6e1f16e7b4ea79e0c7df1eb4371cc5db210c28ab79651c1eaa11f45",
+      "english_sha256": "12a7019ad3ffeb0241d1b49021e30a289b57e5bf44846c51248405d72a05e5ec",
+      "latin_sha256": "1411dde30d935a15c60b6330a24fcc39da5651adff98b0799b6546619e551841",
+      "latin_proof_sha256": "564d10f893ff985c4735b26f60b78a6451259900cb1c08b451bf36e60af749c0",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 22,
+      "target": [
+        "s-agnetis-virginis-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "87380bd4e89651c840cd64285fd235ae272b0fa61256aa63bac1732898df5529",
+      "binding_sha256": "1185264134341f96495bd8790993e93cca415b1c67a4b22e1651b7d09ca016cc",
+      "english_sha256": "bf3757f2176c584c4b0e4fb23ef143e9c07d3ce1592cc8bdd3fc248a107ce004",
+      "latin_sha256": "d7c15150b9b7d6b5c44fc8e8b881c2393826f4775cdd91e02e72fd64fb58a4c9",
+      "latin_proof_sha256": "64bed3ad226cdb6d20d38e96fd29266f9382e63b8db5976f11adb9cd4d137902",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 23,
+      "target": [
+        "ss-fabiani-papae-sebastiani-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "bd5913c07a06fdbd0f19a9a5617634ad1a7ef8bdd073ae81f9231e3e47145bde",
+      "binding_sha256": "1e0a927510967baee067805893bce6d1643b195f93d16960899cab1edbb7c8e5",
+      "english_sha256": "569b9f6866f5a2cec05d52b6d6b4f1455e4b3b85685509d46a552e538bc7c410",
+      "latin_sha256": "8c77ed4df357e933dc1334afbade9077187775dd2b6e9657b727a825a18cf52c",
+      "latin_proof_sha256": "4c9cf613bb583bf4df1eb8d9d8e23102c8cffddfdb2dfec546cb551da936a012",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 24,
+      "target": [
+        "trinity",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "aea683c12dbabcd7fb30923a6c2d4ed44d593e3bab23e1a5d69dc8428ff78e59",
+      "binding_sha256": "6ca20cd074259cd1877943d941dcc7c11f4a230023644a58d15b1bad6ff59fcd",
+      "english_sha256": "97be42c811fd3df3c304a77bf04609e7a58c234d9772d378599a21aca97127a1",
+      "latin_sha256": "1a19178cba24b3599544506f480034b11b2b7edd0424dc83183a9373ef2c248b",
+      "latin_proof_sha256": "8564f95598739e5590e46a2429b323ac24e18416ba6f485f7285815d8ce3a0d4",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 25,
+      "target": [
+        "comm-s-felicis-presbyteri-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "1698d18976a305e708521f620993bef58e736f4b84a0f24db2cde95a8deb8482",
+      "binding_sha256": "b302adcd8dbf811c6b6fe6485b75f8dae50e34be463f43af5700be4871dcf898",
+      "english_sha256": "9a022c7aedd94b2a58e75c8c9b8327a51e402ac782703816ea9ee43584ff061a",
+      "latin_sha256": "2de7888148c5b3a5caebd13b2e6e629474a696d2af56c478261f7d44c3f855c7",
+      "latin_proof_sha256": "fdfdcc1aa0e58509fd655800c4b8ff4d6e203a0ad4c5e23dd1e8eff4343e7ba7",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 26,
+      "target": [
+        "comm-ss-tiburtii-valeriani-maximi-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8590999f322914ed7ffbab82ca44a1b9ad699988896e2bab57adb32c2c96a22b",
+      "binding_sha256": "63e06dca94bc32a98862e9f285b832cc24cdbcbfa9fd912a370df5699b5d7946",
+      "english_sha256": "96ea65d23643ef989f0f860a621fac3625af691223d99fba54a512ac3f9724b4",
+      "latin_sha256": "220cf2150ef312cea8f9929df00f528b84b07402a15821ed8cc5384dd957649a",
+      "latin_proof_sha256": "7338133451e1263d282d70598efec78c3b5d6c90c920e1b2161d1d532f876d32",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 27,
+      "target": [
+        "commune-plurimorum-martyrum-1",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "377cecb65c1db78a8ec6534fed62c6664ba586cc3826509bc2acaa4d32cbb3fc",
+      "binding_sha256": "15d2f1f861cfd6eb8596da50e81eb83becade40d46fc9f4d85b70f0c40436266",
+      "english_sha256": "cb51186c849b486cdb54f1698107266ee4ec753d7bf1c12ca554fd5351e24937",
+      "latin_sha256": "9efc29f131425491f8f1b5f3be49fa49f4240a3626ee39d2a703d801ff61d643",
+      "latin_proof_sha256": "74dbd9bab283891fc9974d31227c02306908d4aeca5f8aec381be9aacaf11722",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 28,
+      "target": [
+        "easter-4",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "c74497813200877371d82f5e1811069d0926fde7a9561948c7e6774661f1a7f7",
+      "binding_sha256": "60061518caa405b1704add4e453224c3aa94cb6938903420007e28dc77f299cb",
+      "english_sha256": "4cb2f5655c0be18e3dc48742b5f5f7435e5d5614e89aa0a8ed85814ff2b004d9",
+      "latin_sha256": "e322f5ba4b2aac67d83be014ba2fcd3b728752b63c0b2e5af9150d12c3ec7b3d",
+      "latin_proof_sha256": "48fb7d9bac3f3551b6052000547c1e44e01049abe5e193b4c88f4492397afd26",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 29,
+      "target": [
+        "epiphany-2",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "326eba60fda3d07263105cc3143efa9ece7c0ea306f7b28b17372aa56ef74fc1",
+      "binding_sha256": "366ea5e2cd69dbf4424d9045a2cce1a0e796fae34e5ca49ed74ef858cc79f6b3",
+      "english_sha256": "b183f4b8db18d895f53dee574b5c82c2296e6127e186c05a3d05b125248254ef",
+      "latin_sha256": "eb9ed2f89307da0c4d06de897eecabca64a076b1671d226b38018b1cec5e11c7",
+      "latin_proof_sha256": "90ef074f0801f3ee50bbae871d6abe19efca62f915a0d6b11c9356d3cb89d2a0",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 30,
+      "target": [
+        "epiphany-4",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "e201cbf8ed27eaf14e7e8934059daef21e478e96664d41134fb70095e1bce2b9",
+      "binding_sha256": "5506f5ce0d458d7a18d60097d1d68d9e090fa2155c6f456ec95be0440967c615",
+      "english_sha256": "26655ab76262530c11fd2a81a651c142b95edc3be2671baa839ad9df4db793ed",
+      "latin_sha256": "ec9f12118260b027ab8e1e976955c557a7b3f863bd5b768f1a9a02d3f4ba4de1",
+      "latin_proof_sha256": "9e6346eb64913919cecabe823806d1f26c18313663a80808468c4bd828353d03",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 31,
+      "target": [
+        "epiphany-6",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "2886a731e286a0885b2bac1b2bb250d1025a00cd6246ddeb1a6054a22fcbc262",
+      "binding_sha256": "6757d0c3ab2b622ebd6e1e1d37a3174100e03077054e59beb4785b7b4c0dc7bb",
+      "english_sha256": "fb0af0bf34fdd396866c6e478051a9f5e91b8cc2fee575bcf31c07b5a9513f4a",
+      "latin_sha256": "8b06f1a4bc67a0f0af63c9ef34c4b14e569a4d95af1c0fc976bb6dbf14e33178",
+      "latin_proof_sha256": "775f3894e7c0a31c18e344a68f3f15be87942f417aa3f1d52a8d343ad890c903",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 32,
+      "target": [
+        "lent-4-tuesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "74cc36c59cd90d25e99d7996f66aca6f8067ae12a6cf2b808883c07dd7804818",
+      "binding_sha256": "698f6f26eae46215ef2fc9d535d8688c1775aaf2e96507ad652ffb15b4227473",
+      "english_sha256": "70d88829387651b5b6baee4acd5792ad4bec5086ba9ebdbd2ce44e6836b52f25",
+      "latin_sha256": "28c97811e81b1b4e43374724fd2f89f534a9c4e922e9b8659079159e1bf60019",
+      "latin_proof_sha256": "b1801523ac549862a906d560a22e5dce7281e3e9496a3695aef053f7e99e76ef",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 33,
+      "target": [
+        "missa-de-s-maria-in-sabbato-4",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "faec596d17d30fb8baccb6a3d747c927536d40cdc08d305c1e5b3a1006a64752",
+      "binding_sha256": "2ed36c7ee8b77380f27d601aee06fb299c6ac6a558384107196196dbd4260962",
+      "english_sha256": "fbaa0389238e5fbe506d8875b94e2b19aaa13f216319f892938821038fafda3d",
+      "latin_sha256": "9a8a54860774bbaaf2399f725a2ab743c1ef1a3dbbd317caaadb5eb93d8df4b8",
+      "latin_proof_sha256": "897c01435184b30b6853912ac82695b2d361552aaa1e1e5e3efbc3cd464548f3",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 34,
+      "target": [
+        "pentecost-17",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "33c5c47d31fcdadf36f0f995d003f04ab77b1b77ccb5866253d3401d7a72fed9",
+      "binding_sha256": "194fd2a04c848524b855ef731d04c36ad4f2d7116b34c9a97cd7a898e85d2735",
+      "english_sha256": "e400aceb9d821d0ee6e05372a8a6db418b14585329c511c7b35948c8ca548653",
+      "latin_sha256": "ed6312e4271ab2d22ed9dd8b4134f2677be90aa497c9b841f43a22a9fd4fa4df",
+      "latin_proof_sha256": "18d375c7961fef0606b8322840d8d07b5d8946ce4aebb86c3b59c20d7ef2789b",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 35,
+      "target": [
+        "pentecost-21",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "09c00d4873534cfa645973004c44e1f0bce13695c7e4cbfa33a9e87ff918d402",
+      "binding_sha256": "dd14e7ccf7835b398ad5439eabbda00360eb23eeac6ab5009a1c9d446609cf53",
+      "english_sha256": "e186ab1a3cb2228d922f81ba49bd3f6846fca8766ad9e4d5d98ed0b6855d34ae",
+      "latin_sha256": "c9d48457b82fb8a584d94c223bc7330ec5b3a24e9723b31b6c9e41960182a7b0",
+      "latin_proof_sha256": "46b24fb1c2e9e2d98e84f9ad23f9a2aa5f670f593bd5e833286f53e36e830b59",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 36,
+      "target": [
+        "pentecost-23",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "2ac88e36a7ce4d3a7cb9a280f6ddae3877c1e73a708db89ffc5734ba8cd9af0f",
+      "binding_sha256": "e436b4b1923f57f68de26edd04f00b9c5291dc0161d6b4a9d8061206e5324ea8",
+      "english_sha256": "b2bb7b06fd59fefda5b7278aa44100946c5430d15477d9219b71b1709175bfd8",
+      "latin_sha256": "f3aecac1d465eb600a2fce8c4d85b520d6a5b75d0a615d173a0a376b2bb3dc87",
+      "latin_proof_sha256": "4dd9c64821d2766afadf54850ffcdf32dc47237d2c06815f5b024f056ddaa8fe",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 37,
+      "target": [
+        "pentecost-5",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "2c2fcec9aea3894218bed6b8b6fccf1d0fa655bc8960df668d6b8a489f7d0ac8",
+      "binding_sha256": "f7e1593168f2ef6af0fb514e1b6315999f43407478fc2fd473bafada243cf2e6",
+      "english_sha256": "726dee7542bd3e688246f306b2e03a77b69639383cce29fb23abeafbb3271179",
+      "latin_sha256": "f3619bfc04603a5886aec1ef91e332f9dfbcc1d983467232fae12b365355b158",
+      "latin_proof_sha256": "a3316fa54c677af1a461fdeb20e7ab255bdc5b54c96f93d95ae7dd23105941e2",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 38,
+      "target": [
+        "purificatione-beatae-mariae-virginis",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "c875eb9067cb4561eb19e5323865bade685c45b4dbcbe9d1f9ba82996a1919ad",
+      "binding_sha256": "e93dd5f73569e95dc1955cc7015d72ceab49d02cf2c39628496e44619fe01151",
+      "english_sha256": "a1aacdffbf2eb386f48b5ef3ea4f1d88871efff5576a425dde2f23ac36971c00",
+      "latin_sha256": "826e296a92a4fc0e1881b39c25d9d2990c683b6e02e26646947d8ad515ba38e2",
+      "latin_proof_sha256": "843f2662937f1d050926a895be70a9c5b583b6ce516cce818d30fe9cb3339c05",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 39,
+      "target": [
+        "rogation-mass",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "d542e14c919ae76a7961b1eecdd9f9e3530b3bf38334d9290603a1ec455838a1",
+      "binding_sha256": "ac582a48a1dc8573c4ec450d5a6381076c22a5b60e16cb2f7902819c7fffff75",
+      "english_sha256": "f3f69fa1bae2cc7f68be6a2a11a99bf721b2677041e6ffbabfc19dad256c9cde",
+      "latin_sha256": "ed9e3b529b2bd8b5206acb4f8f112637dbb63a13af919379b66b89cab29bb39f",
+      "latin_proof_sha256": "70dc5359802dc15165bacfc7aa8823d731faa832c8f96cddb2ca4796601ae469",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 40,
+      "target": [
+        "s-francisci-paula-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "710790d2d058cdf519c58ebf2caf79fa99e8d72788b31dde73a36abbdd08ad07",
+      "binding_sha256": "256a099b0032ea6d19e9446c54114f9b70d6e29e57f5fc821877c31efd567154",
+      "english_sha256": "5c3f8b4949af79f3bd6c385513551aa3b435864c206fdc59d407b63fe71bccbd",
+      "latin_sha256": "d3fd4482d014f3f878905ab5b40fc774b4765e07ac4d405020ff31c65a13506c",
+      "latin_proof_sha256": "0c8e82971a1aa2c795116b3298ce717106b8bd94d49e5c61f935a7d646943250",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 41,
+      "target": [
+        "s-gregorii-i-papae-confessoris-ecclesiae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "69e4aa7203024ee6d242eb7e315167f4b15cf9b109a8107bc1792e1a5564e63e",
+      "binding_sha256": "1340f370f5c72d186bee5eecc5680259b62e33e9eef96ccae376d2a52f63bbf6",
+      "english_sha256": "a9c3f0211a40fd04b834fccd25247a7ae5e7b6200a1c2c85d26419fc3e520f2f",
+      "latin_sha256": "de68d814bb7f5eefba784dd85985561c638170c3f872460695efbdad36defcb1",
+      "latin_proof_sha256": "e4fe1d84864c2a8e75c95e0ae3a4d806feba0fcf60dc61c2d7bb99627a6f5cd8",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 42,
+      "target": [
+        "s-ioseph-sponsi-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "a4fbdb4f919e911fdea552ccee8e229d95250aef8aa5718daf7747cc1eec315b",
+      "binding_sha256": "ce2e1e9253b0f8e4244cdbf28505e3d8b909b8ae4430846028dc80e45ef107b3",
+      "english_sha256": "ed8e9ac40d08d2a230a32b6de3d786702b62b9ee9c648055f4baaa335023aa3d",
+      "latin_sha256": "dcf59e7b6641d7c8660cfe72f08272059af3202b4345a16e6bbdf443c8715a82",
+      "latin_proof_sha256": "c491396d5f6c8264fb913b323089feb36da1bc39be032978ccf233fdda8fbdcb",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 43,
+      "target": [
+        "september-ember-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "30de295c98e42695ff6546ce839c3a334ee27eb3120e62ddf742109b55ab4440",
+      "binding_sha256": "5764041a711841715f129b102d555a51df29d58b9dace3063502cc023e1c56f3",
+      "english_sha256": "e5f972b71a46dade5900dd11f0c14c9951abb3f3772bdba23dc00db573c31257",
+      "latin_sha256": "a1d49decb615c3761ce75eaee045b9ae92a630f8fa593b4142febb974064eeb2",
+      "latin_proof_sha256": "fa26c6020d73eb64eeb2b299e67bbc2c786727454bc7b63b5880cac0835cfd5d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 44,
+      "target": [
+        "septuagesima",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "eff23dc351c2229de320b41ae11d58a306472aef76e5e868e3e80c6ca025335c",
+      "binding_sha256": "c18a27f61271c90593ea8c11080841fb5580a21ddb17c54df9f6d769dfe53db8",
+      "english_sha256": "73de48c466c0f180891da80769cdb228a35a63408cb2eb92ec41a327c0ec6bea",
+      "latin_sha256": "8cf8402809c00ebb85b5900f9d3b16ec2af5f1628ee9edee60df71e4172d82d0",
+      "latin_proof_sha256": "a6a0d833297715cb05771072a82a41ac15958b71563aae3a073d7f912b2c337e",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 45,
+      "target": [
+        "ss-quadraginta-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "07b36a46765b1828ae4ca0e17b793aa858a7c7af689c7d6e54be9a39bf2bc689",
+      "binding_sha256": "af4ddd958b6526b6c2910071d64ad0dbc817f73702da73796c222ce557ed4fd5",
+      "english_sha256": "a33bd2303bb695601cfef0f4bafe32a5fb4718e1f99dc7d13525e39c1ab4f9b7",
+      "latin_sha256": "bfda1982ce9bad88dec0ecc680a9844ea8eb484c7c5bd01a3018af3cc03c822c",
+      "latin_proof_sha256": "25caa1cedbda5f479e81162b3a8aa1ff751cc53da2162cc5e40808258537ae21",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 46,
+      "target": [
+        "vigil-assumption",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "who-livest",
+      "candidate_row_sha256": "b1ab185f047a520544ae72a8c062183fa370181bc03de6da6e5b29e0e3d70d3a",
+      "binding_sha256": "da4fb20319bbf94084e2c91edc73d1bdcf5d6857ad1659a6f3a33112ace35fc5",
+      "english_sha256": "e05e5f9e3d117d0d01883c30c97abe544db21fead4353989183f48987866ca76",
+      "latin_sha256": "0f44752e04eabf4f5f3edbcd79d306be9dc2a7e57f990001853784865a785d86",
+      "latin_proof_sha256": "715f683bdbb1b701e3044ead4e82a195bb178d39711e325456af86e840269c9d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 47,
+      "target": [
+        "advent-ember-wednesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "7f68cdabe63bbf063ee1218430c6a498fe18eb5bf2b0433b5f61cd64ede19d8c",
+      "binding_sha256": "48b4c88d066dc9650265b7dcce88386329ff606d202b5c829232b4bd54dbb272",
+      "english_sha256": "3da97f3194175b2286c32c30a25b6bbc3e70201bc5a1cccb97e90e65e0574c73",
+      "latin_sha256": "7fc13c392113f871b284b7bb0457eb39d78cf8ff31d0d38deae44406efc7f8a2",
+      "latin_proof_sha256": "d1c51f4c818685861eeb68569c1bbccec1bd9b35fe2d7456a76a8868e9812e26",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 48,
+      "target": [
+        "comm-s-georgii-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "635ea3efbdb8b4993c462da132b0b364edf9fdc83c7bb507daccca4cadf504c6",
+      "binding_sha256": "c30cf99e4ef2325d7874ab4f1895712d81970c1e3bd2bb44d197fff468efaec3",
+      "english_sha256": "4fc4c093fbd2013f3413ccb9a5378f4603bab3f5b3d5554d4b059d0b141606e4",
+      "latin_sha256": "5d80fb8d4243ca44cef2051e2c7476a12cd7adc58b78dcd4c32f6c63ef4d413f",
+      "latin_proof_sha256": "1b3969a73dd85f556ffe096d33438fb12562bb14dc9ee41a14147b1886af128e",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 49,
+      "target": [
+        "lent-1-ember-friday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "d534ec4de5f5aa69703123b8d3d3abdfb1ac8f374e8c9150d15ad520a93c6bd5",
+      "binding_sha256": "3fa6d0be9ade4ebc141c711d851bc2d6d62d7874eaf7c64dd1d09cb92c519c1d",
+      "english_sha256": "8b69a543ebd9a8c98ba5c37e95c81b3ed314965e5ee344f578a1cb2150250a4e",
+      "latin_sha256": "2f4db6d3ddfbff0c337dd68979806bd913a692ec8a0917877d06c9493748f424",
+      "latin_proof_sha256": "4f1b1c2229b2251db955f5147e704a338d1d14edae12e1c7f48d06e44d6e77c7",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 50,
+      "target": [
+        "lent-1-monday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "07ce40527a03742dcc6a0394572a24bd915a4d89f3f676a95e2efdb0d9d7c769",
+      "binding_sha256": "aff52291107b50cf6e2a5990d675886f699393175e78c708a7afa755f993a268",
+      "english_sha256": "59c225b75db1cbe428c5b1834061305c2dc99242599a8fe18bae9848e73f22fd",
+      "latin_sha256": "2f31e2d8a2d9b420f890143ece543b9edf42d91bec43d7a6cd81613941bb541f",
+      "latin_proof_sha256": "164b5e14b6fd06a1b6f39a9456a9f930a288219ff6f213f07866ba99b368719c",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 51,
+      "target": [
+        "lent-1-thursday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "51a39bc9686bbbe6bf6a8c88fa42bc5e95f7650ecfacce4798a4e556edc6ad71",
+      "binding_sha256": "15e59cfea42fea19bc6cc0b6212d72d2a74bf5103e98c73a253b817f8657dc54",
+      "english_sha256": "365282ded7c9fe9e6f90deb89de6c6b4b2ac428cd1bd2f65f1f49ac1a273dad3",
+      "latin_sha256": "83ef087dec8d46dc2d5a62d8ee7b4bcd388a45e10edfed8b8cb90af3781d2f5c",
+      "latin_proof_sha256": "565945986869da24ffd5cc930eebf4f1da515c79b95a82a9287a8f8762dea817",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 52,
+      "target": [
+        "lent-1-tuesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "11501a1a5fa64a4cc66ed47270a2e1a10de5fc15f8725774601026f013ae1278",
+      "binding_sha256": "1e71d20890ab44e6a378da8c76c9b48c1ebe58f656c13ee8dc6ead97a605d8ac",
+      "english_sha256": "59aad5b6c25d414d0d62ef16c04a006af0f346de926fb390a5bfe8adfd43db10",
+      "latin_sha256": "cd187b2c94c4dfa36b6ca9fb21d94f17ad8214a7f0ff303f753b4ea209d363ba",
+      "latin_proof_sha256": "f1819894c820704fc88a459f2099361280692b7fbdda5fecdc383cf3f5de70f9",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 53,
+      "target": [
+        "lent-3",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "2c9add6cf3a40acd91e34b3c2d5e800760a80e5858ce6674ced9ac524ce3bbfb",
+      "binding_sha256": "020683864d71b70f37dffba2e1f6ea49d627060e804acb0744b69586820846d0",
+      "english_sha256": "3f4f6a7ee26e39783f745972da62d2d8579f227c30d821db9740298e2a58f489",
+      "latin_sha256": "befe2d856013a5a1f08f8a63a30832cb29e7da1e54b5723db8fc7a22749183e5",
+      "latin_proof_sha256": "c5c1ae2b1696226242c2fecca85186fd0f05ab554d6ad12497b1d98e0516ea9a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 54,
+      "target": [
+        "lent-3-monday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "836db855825306ef973c522e77bf3cdc2524f57eedacc7fece01f5ea0801b040",
+      "binding_sha256": "c839ab7053f82ce84c00e368c530c0671d242c082ec47b94e2c39ac8830e2f03",
+      "english_sha256": "4c736cf007d6aa47c92c4525cb16a4ea0201bb7dcaa5b328a1818cc7ed2f3c03",
+      "latin_sha256": "96af0aaab49584511993eb91dc852f3af7fd59e2b64d18592a134bdc478c1031",
+      "latin_proof_sha256": "af5ba1e47af41c07929844faf02dcd6e8f438ddcb73ff028695573fd87567bc7",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 55,
+      "target": [
+        "lent-3-thursday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "5cfe2d8df5d82ea086b51595c74b7cd5488b32aa691238233fd2532f83924a7d",
+      "binding_sha256": "31ffa78fdda380f8db4b4a211fecdf216bedc7a091dffe1c2888601508fe08ac",
+      "english_sha256": "cc79a4b8ae6c5f653fe61faeca626bec3a5b7aaa2f54419fb2d007ac93c35091",
+      "latin_sha256": "dd05eb8a55d057492bd22c365b6decc058eb847b702e82adfea7567b8b01ee7b",
+      "latin_proof_sha256": "d55c8ef117b1803283ab64ac5d08815772dcc741fba196974e15b3895744289a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 56,
+      "target": [
+        "lent-3-tuesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "c7c13753c7b7fbc3f2f2d4876aace0ad28cdf0b15917dcbcfa189e01da6528ff",
+      "binding_sha256": "220e3f9437a6ca552a115d8c5844ab8751957b552d4b9349e1ccdcf70d3fcf74",
+      "english_sha256": "49801d6493d6183ade06f0450149b049f966c6869609a6ca04964b4d0bfe2d6b",
+      "latin_sha256": "3d13d233606bc7360678d6a89a545b7d98e0ef4631f6f7c48fd78ec99c29f517",
+      "latin_proof_sha256": "7253944ccb49124a31c2dfd51c2ed0dae7a8eca8d5eacda54b775f495479981e",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 57,
+      "target": [
+        "lent-4-monday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "2ecd279f97c1e537d4ffe181e3b6b897cc4be85be5bb9e30266491b8fe2d5bbd",
+      "binding_sha256": "bc948ce203792950755b46b411e845d2734b1b3f5f0c7bae0986fea02327b5a4",
+      "english_sha256": "35116f504b62528201798ec6f08e603b9ede98caf2a1021e3de574f75009b8ce",
+      "latin_sha256": "8a6186f388177a10192a7788b47a34d54e26ee1cb3c02959846c6119ef164042",
+      "latin_proof_sha256": "2b00be5aaeade289fa2c437e7073d4cd0544facae25efc64bf86c8e54cf3b5d4",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 58,
+      "target": [
+        "lent-4-tuesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "a6f4f31965bfd02b456053ee83ff110b47a1eef2f9467ed63f19a0a315a3e3b6",
+      "binding_sha256": "b888df622dc624b057b43996105fcb867795a8184078cf846a59361d49f9e99c",
+      "english_sha256": "8a1a612b2575fc8d2cd6a10ca99cf0c558fd3cbafae366169ca5e3ece5c8dd8a",
+      "latin_sha256": "b99928c688762c590fb4c51b3482ecf52d51201be95d98521c1edaf5aa3db0c6",
+      "latin_proof_sha256": "6d1087fb3c6cfba6af38c3531dc9241b63f9893005663e942e90ee063c08b232",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 59,
+      "target": [
+        "litania-maior",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "ac69968adb2abc50fd355eadfce94e03469553d8e7008d5576ce389fb961a178",
+      "binding_sha256": "369c893637ede31c006ec2836a940ea7c4879c3c09f521df13eeb2ca18221039",
+      "english_sha256": "0e407d0d28358c0feb24b2bed3534bda8e90122abd3662ab892f34a863ca1696",
+      "latin_sha256": "c33254fe14a38ddb546271501ae4ff5b79cf9c7f26ec692f0444deb9430777d0",
+      "latin_proof_sha256": "a58f9494117096bf5b688e360b88255484828bbd476241c6bca4d12c9ff4c02d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 60,
+      "target": [
+        "s-apollinaris-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "ee744b2c9305b18920c18ca148179fec89c6dc9ee8c1867d34d1f5149fa1b101",
+      "binding_sha256": "5b4c54c20294f0d5defd3abefa98b16f04efb381fa16466eca61366e0204f862",
+      "english_sha256": "696e8aaa4f1b0e7f29d63acdef54b4f3e5b32633480c1eaaf947aeafaac7bf3f",
+      "latin_sha256": "a10286316876fbe822ef3da2179eb81dcb4456138f2a569974644abf3dd158ca",
+      "latin_proof_sha256": "8b859e82bb8f88c54f5540ed1c91b20b5d7542f04650c4c0e2bab48894f8c366",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 61,
+      "target": [
+        "s-athanasii-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8e9bf34082308c83597ab97e840ea6a51db5120e176fe7c8b17228cb57e64ca1",
+      "binding_sha256": "5549e0dcdd41002806c8c58b8aa9fb804aec94aafcb79df9d3aefa7dd1b2665e",
+      "english_sha256": "99018f007b966b6b49f81e36fb307fa076f584aba58ad92779107fb959f9fd36",
+      "latin_sha256": "93641f5d097b29f069dd1c0217854b42f56feb02ebc4e89ffeef553611257691",
+      "latin_proof_sha256": "139ab59dd69ed6799446f04ab87f4c38dd6c03d6415405a1c3b7dd9435906b01",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 62,
+      "target": [
+        "s-dominici-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "0e1676cdfc9a24a012c1933da3e483d31c1f6befddd694629e23ea271357c698",
+      "binding_sha256": "de771c1002d76caa22ac609a186229afcdd103cfc54077ea0f7f6b5bf40f40c1",
+      "english_sha256": "56e5974fd41da350f80be6e8b43439ffe131acb6214190a47790931ec613d339",
+      "latin_sha256": "631dc429fe77c1f4818c241418f8cc4cddffbd3299f3075be42c016c8fa64ecd",
+      "latin_proof_sha256": "d5777a7d06ee04115f3b68c0b600860c4cf59da11f012f74a6b3b97a6b1919fc",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 63,
+      "target": [
+        "s-iacobi-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "a2e314f51f61c1037e4c925efcffdca42fe6fb24a5d6483d78520316bdccc399",
+      "binding_sha256": "623fe52b6ca5e24ba4d11d135bff3b21c1846378525cc8be404b263789a85fc7",
+      "english_sha256": "65a7b92e456ed2d8bbd936256adb4f363d9e169e6a953c0a7077d24c0c501174",
+      "latin_sha256": "65c5fb9bc5a59b92a411bb64658787a1b5878ced950b660e8c78455980f63862",
+      "latin_proof_sha256": "b79708399eed6ae13f39f000191459dd62fbffe997d4dbb0030ebe588b194417",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 64,
+      "target": [
+        "s-mariae-magdalenae-paenitentis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "who-livest",
+      "candidate_row_sha256": "da185aa7659f8c1c31fa659d505b0e3451cdffc2720215f4b785a2b67c2bf7d2",
+      "binding_sha256": "40ad8675a77ce274255eae3e58b3137c0855ab8c7011082eac42e19fae177032",
+      "english_sha256": "7ee28fffcae3ff7597fdd9d3fb0922534a1ab7485fbffb760695b348c7433c7c",
+      "latin_sha256": "db48c0f0ba081863ceb10691a7b2e6535819c9ea4ecd5fc3ce72d811b5293a7f",
+      "latin_proof_sha256": "8d00994c56ee64b7bedb715d461f5e5f2d7e2ae0314e20ea672a7d521e0304d2",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 65,
+      "target": [
+        "s-ubaldi-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "45c0fad6f14fb63104d05b223e3426f0b91fb8edfc8f105a045cc15b1d0f6592",
+      "binding_sha256": "0831aaf38f3f5506719df7f2f6ae1c0a1e37d8ebda6cc671ede5802a7e21880a",
+      "english_sha256": "a5ac311d799e62c52eed2f40fe372f8d77298c6e3b84ccb809dab10d4b552300",
+      "latin_sha256": "e614c139332f66b2e0c7f22f34a69487d70592bb29f86a0d6365e7c9857457d7",
+      "latin_proof_sha256": "d34391d99861f8491dc47034142d157b00f1aa3e65645aa77b6f05b288df2a0a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 66,
+      "target": [
+        "ss-cyrilli-methodii-episcoporum-confessorum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "944e747512d8a61b8c6ecc63394d492bb2a2a69568a710c126ba7b6c8f332c4b",
+      "binding_sha256": "b312f2d40d26f787a58e7f005db57e0c82af133d373d219996879da14b1ccf3f",
+      "english_sha256": "974e15498c95acbd0280e4301e8e93254f7dc041cf1f2fa01b00d832404032bc",
+      "latin_sha256": "6a2a6d63254f22de805639e2b60ee0e803a8cf20f437d67a66b009c3c11e212e",
+      "latin_proof_sha256": "c62face6877b166b1556a1fa3d22992f065f97945a0fba3891714c82599401c2",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 67,
+      "target": [
+        "ss-nazarii-celsi-martyrum-victoris-i",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "046005b159ce0779dc744985fb99650d4f86968b68a6b71ea7bcd4c51e6df290",
+      "binding_sha256": "89f14872e159a68572226cd85a8d6fa657ff500229903a64caa2aa3ea5b92843",
+      "english_sha256": "4ad30971cac40c910af80824d7fb41f873bf29c351b0b13a20617e622112b4c4",
+      "latin_sha256": "c5f59bf4701cf8d5e54336fb4e3948adfbec2a27c3f65f62146b6e08d4aa2be7",
+      "latin_proof_sha256": "a4020ba372b2135cdf51a6e3959e88b8550d1af1bfe21ffffa580c8ab3fc949e",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 68,
+      "target": [
+        "comm-impressionis-sacrorum-stigmatum-s-francisci",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "d721590ab005de84c53bb1c837103f1146e13d43863f06f7762feb2ee454d1f3",
+      "binding_sha256": "c67c21aa1b90b7670b20d882a1da9da1fd12929926b1826e154391a6d4b30a65",
+      "english_sha256": "e4dee9ce4042b3b434770b361d5d2965bfedb994314579dd4b8d2ff79ad09204",
+      "latin_sha256": "2a2aff532e79c87d101c1154fc61c889ca0c8ba7df1c964fac4294201b425fd2",
+      "latin_proof_sha256": "d4409a3257cff9cf322fdc4194e6b3978f320c9fc32c86b5fd9448099b345406",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 69,
+      "target": [
+        "comm-s-nicomedis-martyris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "c5f255bf8cd35da0f60f4c240bbf354461b9ec2914dcc01948a8a39db1b75b3a",
+      "binding_sha256": "898e968ee21df27bd1c6873d90efc13149804dddf1727b118c2b8d11dce90544",
+      "english_sha256": "7220337bec746272edaa2f209b6d5f862640e96c6ad01eb6dc28633edcf0ce7e",
+      "latin_sha256": "95e4a58fb8950f504e4212bf38075f8f833c083d02055d26ff668999bc06661f",
+      "latin_proof_sha256": "e3cc888222ab6ad65b8569e8703952738955dfe76a8e70bd059c46738138012c",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 70,
+      "target": [
+        "comm-ss-basilidis-cyrini-naboris-nazarii",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "3beb66b413412e5c5293e8bdebf148c8292a4e49441c54b3055579c30c1259ee",
+      "binding_sha256": "5817a2a8e90294cb809ad3fa7275b270d1e61eb1ba12d23dda8bfaade8cbe352",
+      "english_sha256": "eb336e045576476a072ef2cf89049721750f795707548bf43887297e75915943",
+      "latin_sha256": "83b65972103171b2e1e31622804a51d8d7ddb926d23be136cfeda30a3760b695",
+      "latin_proof_sha256": "4821e61032638c37beed61e0f41d0d289f6ac1f85dcccfaf62e23e5140ce7cd2",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 71,
+      "target": [
+        "comm-ss-duodecim-fratrum-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8b0b33750150c5932b525c2aa0da6d1a61fe3169a99e63de1b6c4fb7232dade8",
+      "binding_sha256": "96f979371c2567183be9fefaff9d0b41420e1690f5c24033241706747a0c9362",
+      "english_sha256": "c935478aecbc86ec705a347065726dfbc843e226b055a82fff2038a5e5581a75",
+      "latin_sha256": "49741b93ce3ac2a0138fc8571656f6eb8a04368cf320bd752b281f32e420a30f",
+      "latin_proof_sha256": "1603f20184c2d57fa139111e61b93d9670046a644e2896ad2bf23387ada93780",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 72,
+      "target": [
+        "comm-ss-marcellini-petri-atque-erasmi",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "d0b1eae358cfd86241748378517cad4506307b404f45c7cbaa3cf78d52b4388f",
+      "binding_sha256": "c5d20ee992dc946affaab2d09727577292cbfdef93a8a0387a190934ca7dc34f",
+      "english_sha256": "03795d14608d0c3a63345f9691ec54de75a39f89fb5f76842b14491bccd53a16",
+      "latin_sha256": "2e83fcc14783eafafc1005d419778262c4b21bf8be1e718a9e009bd11ab13bec",
+      "latin_proof_sha256": "d37b7dc3683c01d9d45bf3127b686e4c8178d039bd5eae2c1aab91d67928ff9d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 73,
+      "target": [
+        "comm-ss-primi-feliciani-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "82fff58f1b94fec0a9f1158beaf96742240177c74dc86267539887dd2f645184",
+      "binding_sha256": "a9b5af27087a1414b892102ad73fc1e56d09179d4a1ed3e27465059528a52f85",
+      "english_sha256": "c69082641192bb6c7f83eec986327870d8ddf23798e339c0013c76fbd58461c3",
+      "latin_sha256": "7f03d7654a48a880e2522100e1cecd6f7686f58f66c2d35197255b33141f78b7",
+      "latin_proof_sha256": "d68e483c041b8e6f4a8d3fcbfef5055363358af629feccb4289695c4d9409d0f",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 74,
+      "target": [
+        "comm-ss-tryphonis-respicii-nymphae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "10dc8364d6871f2c1f60855a9bb2e69a57a73c4b24b9aaac88527e226f9c2b7e",
+      "binding_sha256": "0d442509d336b9142cb9101b5011040e0e4ddbe9bc3c560b4a350e6fd48b2feb",
+      "english_sha256": "4e35bd1461d489fbcdfb5612c926b78c617d527462ff0190283b496e62c6aeb4",
+      "latin_sha256": "deb57a9cfa239206bf764cdd2af1ecf027ad45cee56a7eaba8c7887e37fbea65",
+      "latin_proof_sha256": "b8dd2ecb949bb5f0170d12f1c6f811c4a3fee8fbccbc8489f4e3fb5462172453",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 75,
+      "target": [
+        "comm-ss-vitalis-agricolae-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "41671ebbdc1d17d06ed436ff1ab595bd17b9fc922087013bf28cc7d9a079716c",
+      "binding_sha256": "31f07a8f2484e42ca6623a2202a0fc69a4a4902ed0a54e1370b780dac11dfe0d",
+      "english_sha256": "880b7b30c4c05f99e7cefef9dbd72a0d1625b9e21818f5fe23b04bb1b70cb867",
+      "latin_sha256": "745a0803357ee930c43cbbe8504507d0bf1b23e41c1b22dabd1001157e7afb97",
+      "latin_proof_sha256": "937cda530e898319e57e6dcfa59d622e72f491460ecc6b3077dcec9f6af0e01d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 76,
+      "target": [
+        "dedicatione-s-michaelis-archangeli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "d7908d42f58ddbefa409f86b31ae727cff3109ce6938f00cf10403de9a08c9cd",
+      "binding_sha256": "492e19cae469d2119051e4913ad6fc5388ce6514c54fbd7fa71ab8776360d08a",
+      "english_sha256": "943a6deec500a18ef663d2bdb71a133c94964a53940bc48a828b36d929582992",
+      "latin_sha256": "ee59f8a7e1b1ff12641dffb47f09da36f8a550fc088e06aadf85eef83df71a09",
+      "latin_proof_sha256": "4b987af16259b9dd030195726ca96f7609947971a6e0c19576c6b6b2bd59c0ec",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 77,
+      "target": [
+        "easter-saturday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "e19b1874a39b116e58f57cc93ff6596ddabe3eee09de42ea300099e7838bb695",
+      "binding_sha256": "e8edde6a08cf5368a24f21324799350f02d3b55d6576d473a92f87fe00a8deef",
+      "english_sha256": "84821f5a82d68c3297b346380d95907a765b13c2022ff857cce7cf7240e02889",
+      "latin_sha256": "b215ce1caa301cfa0d26fa908a504184a3eb12ad2cb1755eae38e46d7b004b8b",
+      "latin_proof_sha256": "05c3e8ee52a755fa715d577ea2d99c06088edcf8522a4fe32965506f1d2d34b0",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 78,
+      "target": [
+        "easter-tuesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "1654fbf5e2700a4ddf3750c6f9efabe5dc1772b3c113771d3f23f1707824fc10",
+      "binding_sha256": "463cf804f601849e43d23b965b52ff447aff462e1f548ca5be7da51325d13c6f",
+      "english_sha256": "a9e3d008c610ae52f7a121ae28ab010aa59f853cda208c66be016865d04b7e08",
+      "latin_sha256": "558c4a59e69ed3af3b3b726f916f93aacbc878b3a4f23814fcd687b377cc50c5",
+      "latin_proof_sha256": "417ff13f2dde346b8bd2c83dc88ec2ff2202e3f509b67e99558976e6771407f3",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 79,
+      "target": [
+        "holy-monday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "6c7dbc1654b45d506c319729571b0e2d65003707c1fb75a11887de60695f17f6",
+      "binding_sha256": "0cb343331685591df209de0f9c4459544aabd4d1addb88d6ae1de93b53fc054f",
+      "english_sha256": "2c793a03a7be4f36c100e46cf74d5ddf2f707f01ee6e8b6472838e6c5b18d4c7",
+      "latin_sha256": "749840b5b2d9f39ba78e99621a608581da7ec245553548afd50214b109264aa1",
+      "latin_proof_sha256": "e48b24780373ebd76f48b55443eb9568ca74228d75cebae137ee73609ef19240",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 80,
+      "target": [
+        "low-sunday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "7ecdbec728d25056aff9626becea4db464b78a46162e24b789ed86cedd2bf575",
+      "binding_sha256": "aa3af3a3c04d7479f747adba6a1306ec28c7daf22243cbfb53b7bd56a8b74d3d",
+      "english_sha256": "5d0bdc4cca7a82458ac81c53cd46d02a03e327ee9f1f85be8515944588d529ee",
+      "latin_sha256": "e19c50b3c777c2737bfdd346dc6cbfe6d8a45229c8250d84daa62b3f63d9b772",
+      "latin_proof_sha256": "6df7bef2d803cb3fa780323bcb86d8739d1fcbf17e5a8f86e007f45632dafc05",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 81,
+      "target": [
+        "nativitate-s-ioannis-baptistae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "who-with-thee",
+      "candidate_row_sha256": "c7d8de878a0ea1563a1c0e3dcde004e7e4db835e2b352d560b4a1a413cf90b09",
+      "binding_sha256": "efc0c97cf6648ad52379b7b2f8f47db931a2f676090906c463d864a7d084c9f9",
+      "english_sha256": "6df755a980fc1f757f341ac0f1f23cbd81ab97d1268ba990de9542b725218a1e",
+      "latin_sha256": "0ad05346f797b1599e35250d9a63064afa1069570da8e30e17368f5689dc7120",
+      "latin_proof_sha256": "fb1e0669914542adc9c73156db3d498b0fee042cc94b9848cbc2426998508c8b",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 82,
+      "target": [
+        "palm-sunday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "861c8e5660fa9726c0e5a377cb26152f7cd6e628c9c1ff9f8114520ec6c54a9f",
+      "binding_sha256": "1f09ef5f4aa8d6dd2c9f85314c6ef6280c9a2399b0226705550ea9bec8e6b22f",
+      "english_sha256": "e19d59b58c22bc1ce9c51e02b8fc1fafce84c93c4fd62583db4843ee88b24d71",
+      "latin_sha256": "dc5a31731ce2ca26c25b2fc55c65658ba9719101e3fe9ae8673bbe022652a024",
+      "latin_proof_sha256": "f730e7f75a93d2b5dcae76997bf6efb79d34b816f9ca293addda50e218afc861",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 83,
+      "target": [
+        "passion-monday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "248a3e577f45cdf6b55707a3eb6ce34ae1c2ef60219bf06d0ca09c821049e670",
+      "binding_sha256": "eead0070e68b52ff58833304c8876839c31729733766f647bc9d19b8ebc3e3c8",
+      "english_sha256": "d271b7f39d6f2c88d931013ab74a490abd07677d98da9dee7512a447ccf7ddb6",
+      "latin_sha256": "c740b11d76e479cb8a6ee2003fb96a3664c65b8b5fb20d4d0df1e60a2bca4ea8",
+      "latin_proof_sha256": "77180f640024297f2caa79e55af0b36ddf51633fea6aa7ea20b73935d99b9c73",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 84,
+      "target": [
+        "passion-saturday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "570340b25c5576682cd892c069539c77b167ff54498206647dc0a17b0b7ecf59",
+      "binding_sha256": "a14ea7dd7a0f61efcdd348b9ac46299a0e5e54fbdda2d41a9a5e04d063a0e186",
+      "english_sha256": "b182314adf627f242a6d4419ffbdeb643725cb2cb13b50f3c82679239a6e03ce",
+      "latin_sha256": "3fd18822b7f1eb5e1eab0c8aebdfad06f0a6378057ca9269cd13620d6ddd9070",
+      "latin_proof_sha256": "552dde85ba6fbe6b8f8f4e291d04d09ad91cc735fd66579250ea16ea6acb0136",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 85,
+      "target": [
+        "passion-thursday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "a879f63e54be944c4e56853aad9b4b56974f568392c68866d4d0de00ead26ba0",
+      "binding_sha256": "8eb83f8d93fd1f55ad70dd252424268550e76d2c5881c58dcc52ffedbd34a0be",
+      "english_sha256": "a493f52e302b6b9ed7437d6da65317361cfa4ca444ba3957547b9a46a70290c2",
+      "latin_sha256": "62b7538b96c0ec4bfea34a9f3eaa9df8237ef0c31eb217146b06c63c031d8cd1",
+      "latin_proof_sha256": "676c0daef83321ffb6cebaac70aea44ea50e4cc77f3e6855ce5caec99daae4da",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 86,
+      "target": [
+        "passion-wednesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8c6ec0f72ec97742b70105eb61ed13f7918d2f5e63628a272de35cc6253b5e54",
+      "binding_sha256": "c9b95201f75ad5c358dbac049fd8b2e30b40bc9c592731eff2e50a75b4ce8d49",
+      "english_sha256": "48dd42f108ba5fb5e1f6a16c87a913be5a3b161069e676794a6830a7c435a674",
+      "latin_sha256": "815d6b90297d01cc0241eae5d8a154a30817187a18493be08e298d884d689b2f",
+      "latin_proof_sha256": "3fdd13553a1e7be0f5ebd70c49202992a7a15784d79e32393152d47606162185",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 87,
+      "target": [
+        "s-ambrosii-episcopi-confessoris-ecclesiae-doctoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "2a27d4a6cd8ce21b6934b26d0ba48ae357b779f3fe4e56c161f868db635af1c4",
+      "binding_sha256": "5b11e3f252923aac00a316236a9ed68dff4c4c50338f6b4f6d953ec7fe02899d",
+      "english_sha256": "ee32d0c7c8b35b97c9df8f98bd304a6744bf7881546b2df428dd7d2681b4bb59",
+      "latin_sha256": "f4f4d07349ed8ebc8021aa0b1341760a247bc7257e0eb85a430d860de6e757c6",
+      "latin_proof_sha256": "52fd02b65811976a91aa9658589e803ff5d7c821bbed759f7c3286bc0e2beef4",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 88,
+      "target": [
+        "s-angelae-mericiae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "7442e334a4b7d12d8b9fe53c22ec30dc03846db8edcdcfef7c7ebfafea50a708",
+      "binding_sha256": "b10a3674b3c82f4076381b62ceb7f95a442f42e8ed1f8655b8e736555ad19f75",
+      "english_sha256": "d1dc60227a4b26b30d6686bb36a5fee0ec300877427b80ab83d3fda10e971b0a",
+      "latin_sha256": "fe0fd119f32fb56ba22e8e30b0c9122de83b022ef5ee951f816161695254f7f3",
+      "latin_proof_sha256": "345c8935f0b05071decb0d9a041bdfec63a1754de8c2acc0e0de1522e09c847a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 89,
+      "target": [
+        "s-barnabae-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "e8b45960d29238cec10d21809669b194fe86a7a5b7f4b00712fbb733532ce343",
+      "binding_sha256": "e0347051b2c33af3b87a439dbe00d265d6f964f9251a738b408f18d79bc701e8",
+      "english_sha256": "bd6bcf2ec7d953f4a0a9e6ba1a4b07590293e59fad4c47408ffd4fe8305898a2",
+      "latin_sha256": "be70be1fcf34b62e5421170a82d06ad44e040e3d4e35dbc9913c9ae78756b0ef",
+      "latin_proof_sha256": "b5dd144e7f9f5fed06a779b7c0540bef6add9a1e2b9447bf9d1d3d913edca12a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 90,
+      "target": [
+        "s-caroli-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "e60a33ec241d9314d105e3ce0941740b715ad436144eedc22d1a3df97d68b579",
+      "binding_sha256": "2c52d05d19d7c7d1ccac7c482243f3e8bc4300532091f13c019e9d0a2bb539e1",
+      "english_sha256": "e06ea8de7dcd57750d74e1e55cbd1c79cade5f2299368d3b66b4912b92da9760",
+      "latin_sha256": "9fdb6e1f38dfdbf1c814532d237685a6d358ad78b7d8310561729b5156368097",
+      "latin_proof_sha256": "89c159098ea5a3c62419cb5dea8bf6e49b1c978acfb3856d33e2ef5f13e5b81f",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 91,
+      "target": [
+        "s-francisci-xaverii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "a854d9979fd889a5ce561309ee2c1aed08730de28a1eab625f74ba2cbc189e83",
+      "binding_sha256": "b0bc4557641975ae9c4a70cb7cb4a32fe5fc7e90753850aa724f898989ad2c66",
+      "english_sha256": "5d9c36468c9c286b0f686fab2e9fe344908e9d406bffd36b3881fc36f9ef982b",
+      "latin_sha256": "9f425f16aeca64c6d6ce6dc650765ef4c5dc21e0f81fbf8480bd644911eaf642",
+      "latin_proof_sha256": "60dc0233f13dd5f0fa2679e4cc20f41cd408dfc6b73043ade9352514035e052a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 92,
+      "target": [
+        "s-gulielmi-abbatis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "b679f090554309c7be0bac0a0705e9424006c8431f9b5e6d262ca581a33df295",
+      "binding_sha256": "c85747295f8d961fdf06af9ceb4f37932cdfad38e8631613ad05dbea80b76ce6",
+      "english_sha256": "1f919181c90c1fda31913039afe0b4dcbba8481b6c7cec2e39101600b349fad0",
+      "latin_sha256": "69b0fb6bf0b27925107d2d9f89748080ca9c39da8e3b476494860651045625af",
+      "latin_proof_sha256": "91bb0b7bc0d793aaa5bede0a05b7e458bc9d016f441a810e1be22604a08ea8db",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 93,
+      "target": [
+        "s-ioannis-cantii-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "d6ad337fe241a1903b4c9103b65a0b6496fe74c497207613b8a135da735826f5",
+      "binding_sha256": "1a774d92e063f042b9a8d324800628fe7ab991f237777ec5cba1aeaf4408f35e",
+      "english_sha256": "413521ae57d12fce3078ed34260ae44eba12c86180ddd9c3e5ac3e5d66f9e075",
+      "latin_sha256": "f88761bc86593b663718bee1f3f3e2ffaf76e368ac4d4ccc59d7afa157a2efb2",
+      "latin_proof_sha256": "92ef3640d73f5bc891bb47fe630eca62b4ae7b91e544155d5c64321c05ab5d10",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 94,
+      "target": [
+        "s-ioannis-damasceni-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "e4b67a64a8bc42aabda6aafe92bd102af20542d5549541f58303ef22f6a31141",
+      "binding_sha256": "fce9b3ef68b05ae92089dff69a59941c75fbccfca9a1d8d51fff7e735f001174",
+      "english_sha256": "d68585f0a66ac1f7aad7d2a0569b0a0aef4a7bbeec3886bb476065a7eebb79e3",
+      "latin_sha256": "07b97659b79e676bf74ae41d7a2946ce564ac589cf625c16b5a3a5774dd20c89",
+      "latin_proof_sha256": "4ca099aab1ac6365821a49ff704786ae3b58ed89f614fd749d4265b0d0b97948",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 95,
+      "target": [
+        "s-lucae-evangelistae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "05092e98f2d70b9623255ddcdc80723e3667b40eebf64b98bc7e4cec10c00c82",
+      "binding_sha256": "092041efb91d5358a488eaf1ebf84ef95a66ac6eb4456c1c66c1c53975570303",
+      "english_sha256": "925ac31c7e9eb8a5f6569e746882ec2c745dbe3c9d449dae30394281ff6ec191",
+      "latin_sha256": "6423ce66671bf9340b04b3552727921904c4f93f101070bf62ba535d7a311b45",
+      "latin_proof_sha256": "75f9f14586051449838148b853f1f40be7061f8430c98604d45d76e8739b191b",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 96,
+      "target": [
+        "s-mariae-magdalenae-pazzis-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "603ddcf16df7c82680becb1420bbb4abedcf7ac849a633de6f8ed5c0255ccca0",
+      "binding_sha256": "d99bc2a4d70262543dfacb03147b8e36d091d44e478601284c670bbf8f5be435",
+      "english_sha256": "1be03f59287158d894e2d2ffd462bf94bf1ec4279d63cb438c49735d904789cb",
+      "latin_sha256": "2a6bf51915d006eb4405d5ad552a67daedb1a20cd0707e0ba0e2cc77ed8a163a",
+      "latin_proof_sha256": "b760bc0babb421410f5bd8418eb2aa8c473a760ff57e75856d51c7d8334303f0",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 97,
+      "target": [
+        "s-matthaei-apostoli-evangelistae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "ec7a469186420fc8991744a7ab9a8fb09b75e5ba6b919afb06ee971dd8ef3279",
+      "binding_sha256": "5664b58426ac9ccdf50c7499236dc1095cc1e7bb2a8ee356a38d980e2a24eb91",
+      "english_sha256": "354f23d9f96c1fc3895633fef6937004ea1fe65c5c9e4ccf4d7e134751393d25",
+      "latin_sha256": "a97054255c7c6e3df13057423b029fa44d10ea02cb15b0760d076fd5e4d2de6c",
+      "latin_proof_sha256": "146fa3147df409958bff66ef92f99d97f8e37b67314086d253365525b0638afd",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 98,
+      "target": [
+        "s-norberti-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "c302893217dc59eed449c6ec357b532803f56e45b71437b78b3ada763ca24d58",
+      "binding_sha256": "7ff8eb9f355e0b4a932e17e38415abe48b19fa488ea372f823063653522f4637",
+      "english_sha256": "bca0d0093ddf5ad2414af3d05d89a5a70a004e48fdb6f6e81a64e3ecc841b8fd",
+      "latin_sha256": "d6581ddf18e3dfc6d8b023d3245ac00d4fb298961e01d0e9e4f28222bbc3c62c",
+      "latin_proof_sha256": "29d7d5de052d66bad07c4064e8c86316dda65ee087261d5fbc6213472eb3cf7a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 99,
+      "target": [
+        "s-paulini-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "who-livest",
+      "candidate_row_sha256": "65f60632c9895052dfba81909413fd80b92fe19f144b68f31afccdf146adeee3",
+      "binding_sha256": "39cf874d4cfa600ab483db71950bb644b9ed0256c8e8cede42c0bfd25e57af03",
+      "english_sha256": "2f66e552486720176f5fdf7363b8a2295fa8e4d7fc82e313f52fd584a5d90df7",
+      "latin_sha256": "e707e543b2f9a49a2e2d90ff4c086f2f4754253aaf912eea75c4e943aeffbcdf",
+      "latin_proof_sha256": "1e9b2ed574ec4b8ed2c72f48c0b005e2d6e9daf033094b3f9ae4a2f325d32d5b",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 100,
+      "target": [
+        "s-petri-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "478320cd5e07b7d86da09b48169ee7b7a4449b19ce63385f6c38354d3ca1c090",
+      "binding_sha256": "bccc1f558ed109662a89e8e8a1a7e4c8b3abc6565d67a7f2e560df432640957a",
+      "english_sha256": "13d6f3479dbe72021f4be02795bd4e80a86b3664f9d43abca1f5b0cb27fa9f54",
+      "latin_sha256": "aa7ae0c4e3d1f314ae1404c546181cfce56c68c1557514c0897b4243f19b80e5",
+      "latin_proof_sha256": "f1dfa5f2b64f2688dc0345bfcbc1c92090a4d35723eacc115443f0f81339b2ad",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 101,
+      "target": [
+        "s-scholasticae-virginis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "c70a0b0e0f015ac1f613a56bb2cc2ee5a11e12c794ce04a68fc14a1d04e62e57",
+      "binding_sha256": "be02c8e1868e9a4ea01d52f25f11c62aaed671fd58c1c8531a4666c891e6b6e2",
+      "english_sha256": "b80e409de05f07b50ba1099805d05dca4b09bfc90dc42b55233a2005d0916ea1",
+      "latin_sha256": "d7952913bc604b708908eae613773523c4fdae6fe78a7975a06bf2334146abeb",
+      "latin_proof_sha256": "5d253628cb4a14f6d01912a3c5892ff044f7be7fd20847f19281c8eedc15fd22",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 102,
+      "target": [
+        "s-thomae-villanova-episcopi-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "13e06a4dc31ea34ec6c88cd244dafeb37fd9ab3008fab938743eb4f4808e6227",
+      "binding_sha256": "9943e0111bf54fe4b084845e960b67793c4ab06ffbe6ee399dfa2e9c780acd62",
+      "english_sha256": "163c47d41c0e405d47f76f0692482f99e3e55960eac664c9e98d8ff47464eb17",
+      "latin_sha256": "5cafd9c2856156151992c79daf7c7111d0c233bf32055ef2092ef47627f626e7",
+      "latin_proof_sha256": "aa0492bfe969b01f293b5c35fb6b49e23913c3bdeb9592d2801e8ab77649042a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 103,
+      "target": [
+        "ss-fabiani-papae-sebastiani-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8105e5c4dc8424a85b587a77d3e38ddcc6a08429aad0ece4260b572a613fb505",
+      "binding_sha256": "86d0642349ff7d584991d6c25602b5a351b90d8f0d4034cc5a24977cf99e7883",
+      "english_sha256": "868604d43fca73fc50931f73a38d11bde059c5e3570bbdcf4b23b7871d7530cb",
+      "latin_sha256": "084ccd822a7d49b6ada61e589b9fef3056cb7fab0bf03394f4ac66db7176804a",
+      "latin_proof_sha256": "896cb148cdfece8302e83311afa741043890b0773d815b207a3742f965ee5b34",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 104,
+      "target": [
+        "ss-petri-pauli-apostolorum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "958b414dcf2089eac7adfb4e8535520139ea008910fa52c5bebf02a43ee5ebe6",
+      "binding_sha256": "ade16e5f73a37467206fc62e81187815a437ed3cf1cd6d70a6ab42b0b21b4055",
+      "english_sha256": "02756426af43f439dcfd115e6e30476733a0f334421014b9dcf253103525fbb2",
+      "latin_sha256": "6d405a68ed9be4be5bb6d6ec5eddbd724f4b7f2ceb12ba480dc77e4e4be17da0",
+      "latin_proof_sha256": "c3336de91498a2273afee7380025e0ec5ef54631ebc823da08963d997e8ccc9f",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 105,
+      "target": [
+        "ss-simonis-iudae-apostolorum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "3bbedd9803646009cc6cc34393c5cab4566c119ac45ba8d75f8b32939a2fe9bb",
+      "binding_sha256": "5f225424dc2d09dc6bb7eb7592ea052956494737124403a0806dc0b4806f565d",
+      "english_sha256": "1e18f0687fcfe528f5435b240fa16e94e6d5554a304920d7b96a7225d66555d6",
+      "latin_sha256": "06cea470ef4fe0cf7e1115d0cbc73a794553c6125fa4d1575b6869b5ff60c043",
+      "latin_proof_sha256": "1133e46e56279b06e31d86b824fa713e1dc121c242e8f67f47f035c52710809d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 106,
+      "target": [
+        "vigil-nativity-saint-john-baptist",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "e492e503199f41756f63cadcb81087f21dc6628656e55e94cfd9afeebe9a358f",
+      "binding_sha256": "2e33415dc8abecc1235b701530196d0ce97ebba0ca56b1703941a1baf6457509",
+      "english_sha256": "c8adb95481596679844311aa551dabe5f696844a7ebd1bf626d668d890e7234f",
+      "latin_sha256": "84985af405814234a725f83e75f3e06ab8560441bb2debb3bcc94cf84bf3652c",
+      "latin_proof_sha256": "77ed8bca98c7abc797fe07873905b74e0ce46108c05cadc4cc0773ece043a85d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 107,
+      "target": [
+        "comm-s-agapiti-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "ed8a413194e1752041ed8df9fbc06e73be4531ed78b23336788e87c60aed03cc",
+      "binding_sha256": "b60c558b3ce915fa1f5c1634946d20fa76e461808d190d1bf1b641600d599ab9",
+      "english_sha256": "8a3ae4db23850f86b0b142112eeaaad11f211cb0de779365012d6f1a5591ea8a",
+      "latin_sha256": "1aa26e498d6f85d1eea9e2754897a8c90a8bdfd20b4899d551a117b20823f27a",
+      "latin_proof_sha256": "655ebdd5e2ac20a2ee552052e6cf25f9ecc5ef96ab201ce2e0bf74c39584c9ae",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 108,
+      "target": [
+        "comm-s-donati-episcopi-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "c4eee87ff70feb2965694c1fbdde6299b1c69a95f35d69244aa5a1323e6638a1",
+      "binding_sha256": "411068a2c952ad5961f3660cf5fd702115c2cf0fb75e08c813c8248274ad57a4",
+      "english_sha256": "bda32d2f01b0339f7c86f3b638e97ba82b294b28207be3e5ed1d6e51bda36b21",
+      "latin_sha256": "046415df2b1d22a316959d0592b65ba768da911967e1f939ecedcf7917eaed1b",
+      "latin_proof_sha256": "7aa4d04ae9af57b6fd5c8377a446d750c7e94de74d579aa73d9423803f9915d1",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 109,
+      "target": [
+        "comm-s-felicitatis-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "e0b08d8d3f7702e52cf379042a4fe0b9e1bd09449fd514dc52f1623e867995ee",
+      "binding_sha256": "c724901d9943a55d5782040d746434db9a8cc04338b52b7063dc68aee9a00cc4",
+      "english_sha256": "80b0a2977304eefc71f00ac6d78940ac0875158e7b4db132490c084144fa17e8",
+      "latin_sha256": "73c245cfdb76716117797efa254e74ac132b37fc0c0b204834640751557f2be4",
+      "latin_proof_sha256": "31c0966ef23e14f1d1d36e9a3618c04ddedad67f22338ddecde3eeb265f89104",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 110,
+      "target": [
+        "comm-s-mennae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "7fc09f7fc9585b2fd9e962bd05425a8ee13de66e362d8d8deb32280abea6461d",
+      "binding_sha256": "266f9af85e4840b695909b3eb9e2201d6f4d3f723d89ae4a2ba0d5c20c20a89e",
+      "english_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+      "latin_sha256": "e20901eac87b8ebf187effd60b30e33fcebf6dd2846867cad74247ba6ef21603",
+      "latin_proof_sha256": "f0a96cf9783002594fc763de22a3f09836c28b821e224553728451b79cd5ec28",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 111,
+      "target": [
+        "comm-s-thomae-episcopi-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "bb7b79f110c1fe87e7d6495472d6b8910f44a16cb36ededd5fd19c825777e9e6",
+      "binding_sha256": "c977377946a597f4fbc5de16ea12b3021866071c5b50bd4b1aafdfdbe2e1cf60",
+      "english_sha256": "3f7c75ccc88493599ff2fb2f8cf1ca236ce0d985482624785ced56a98cd6000a",
+      "latin_sha256": "2887ac1784e0e51909819486a7533d7642e55c23caccb79187ebeb29dc116f80",
+      "latin_proof_sha256": "003510d06bea0b05f5b09598da137a67e1492465d050651a9b7cb78715f8f54a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 112,
+      "target": [
+        "comm-ss-cyriaci-largi-smaragdi-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "ea1b90cbaf152f02288e1467a59bbc2cbd7e2ef3d4139f0658a0258b72501729",
+      "binding_sha256": "5bf60df699fd18352fcc5cbb0f2cdb688987b82a915e211f36ad2cff7426e636",
+      "english_sha256": "9df5520563cd3a41173182f2cea165e6da3c7987d4a6f8bdca7683b6d6ae821b",
+      "latin_sha256": "79ef06498a49c29b11c3bdfcbf8f90ad242c133f18957009417775eb5393d406",
+      "latin_proof_sha256": "b7c2ffb53ba3a399d54b32883c237326e8d8b937b602adb65fbef54fbec675f9",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 113,
+      "target": [
+        "comm-ss-felicis-adaucti-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "81881f897a1f86315fa1072cc63075d139907b76175bb3bf933c4182d5d601ca",
+      "binding_sha256": "bfdc9ecbd5af8ee119c79a8950cf7410366776ec507b17a67f58a642afa8c4ea",
+      "english_sha256": "6e08fa9b08b7777aee5629f8283e273aa9488963e068d9fbedc46a4f8c943e6a",
+      "latin_sha256": "b4d22c85d47b334155f2f86a76d5ef06de74fbf07f769409d3fa4c478c1c6a90",
+      "latin_proof_sha256": "d87e531b35b03f7bd849369218e17e0c62e9b5772a82b67576950f35a58251ef",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 114,
+      "target": [
+        "comm-ss-machabaeorum-martyrum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "0e3556d7f02b89462f91de5bdd4095c20c502a5c9446da0c5b17b61253bc2a85",
+      "binding_sha256": "f12ccd9b7e3978db1386ad9029293281acb3b407c022fdcf0e3f7edcdbdedac9",
+      "english_sha256": "5911ec7ec1c180b9c1515aaaaa7e65307b458b88d839b22c40217f0a69058486",
+      "latin_sha256": "d6ae3a80e6c3ca20fdd21a3b87ab2d75b3a7b006ec6fe4f918cb60c11b707101",
+      "latin_proof_sha256": "b98daf944c8944fe8ce7bd0555bc7abb3675f294d6f15cfa3af44fbf911e23e8",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 115,
+      "target": [
+        "comm-ss-processi-martiniani-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "eee966c3616c5c06914be941b8884f62d9dd28795f49a20044d9aaf8ac0e513c",
+      "binding_sha256": "72cc590258f9675394b28c3e03d9f2ec776059b0c1df7d1472eecb53f29d69a3",
+      "english_sha256": "b890332a1ee3d3ce1e88afe4b76beadf4df78e1520b1058315eb2a7e687fa31d",
+      "latin_sha256": "5990d66db3ad5f9403102eefded46458dce1ee115b6a4cb3746cb72f89cceaca",
+      "latin_proof_sha256": "7b1dcb0642e0a253c9cf12e8af2c05b19d9ae775b2787bfb5ed70cb6b5b708dd",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 116,
+      "target": [
+        "comm-ss-tiburtii-susannae-virginis-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8ed377ec19abc5d5f68bdce45410e03d1463c89f51514420013f69a0d8fc387f",
+      "binding_sha256": "917d5c3dafcbb387714ce16fcae57a5f3b9aa060b11a0fb7e727d01319603dbd",
+      "english_sha256": "a3c6ea061c0b0cf5d3bf8f206fa5c9c8be20313def5faba7320f167b036926d0",
+      "latin_sha256": "05cbb81fc452f338c5f36cd339513da27c9bb74ff53ca0dd8b1b01f91ced7a98",
+      "latin_proof_sha256": "d83b159e2e5e77c79bff99f7e0b6df17b3a55ce904f549fe82ae6e2f6fdb8384",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 117,
+      "target": [
+        "corpus-christi",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "9c7c9668a539a45e8176e9d9e73b6ff72ada5d27b0f6957713bd3aec8ee471ff",
+      "binding_sha256": "5bfcec4659b3f4a00be23aab928c549d6531131d8111ca32eea57f5420b20650",
+      "english_sha256": "df49f778e7f3532d5d423775cf2caa2f567a2d8ae761f9867ea42bf65ab794f6",
+      "latin_sha256": "c236628fcbf00086bbbd66054d9740c9dfa2e6e72662c68f2ec3bb00fafe35e7",
+      "latin_proof_sha256": "98e7a956235837cf4a2eea0194f5bc73c4614879161f94b9095aab1ea4158ee9",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 118,
+      "target": [
+        "dedicatione-s-michaelis-archangeli",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "86b9ef2870fe6265bffcc898bb134e3032e4f48870385e1fdd5b3c13740553aa",
+      "binding_sha256": "05c057e90c701fc814f717e942f43733dae994428dd65708e2a52174979f9e4a",
+      "english_sha256": "12b9fe1ebc36dd9d21a57ae24941a338124277c367f1d2c030a2e13eb6ab4887",
+      "latin_sha256": "b6d9abd208084a20496a4207c904dfd6f29555865eaae30833426d921671b7b6",
+      "latin_proof_sha256": "c1be891e61eb49e9bd5d977ec4a6cca8e5d9c76bdaa58db774e6d0d29cea168f",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 119,
+      "target": [
+        "friday-after-ash-wednesday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "33263e663a719a1d3e5f2b80a0096821e2d5e87246f8ae012e0bc0b31ec61ef3",
+      "binding_sha256": "8780fbb6e076abee5f6f1da2d4ce7b517c35f9098e2c89ec7b1fd14b698f55f5",
+      "english_sha256": "212e19776e285b5b82a86e4743de014981ca55666755022d082806683e91f624",
+      "latin_sha256": "657de3268b864c00506295fa9506992daba4629dbed2e176cd46f4e29a9f6f2e",
+      "latin_proof_sha256": "f26a84c02f97e9d5a1e16f877042d8eec54961d22f4efe4abe8c32acf61f83d9",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 120,
+      "target": [
+        "lent-2-monday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "af92503169ba88e0d8c8d7fab2e6fc2f5730436df9a5f144dcd5dbbe2b07d1ce",
+      "binding_sha256": "0963f43c1677a498939ffeb951e105617789ac52552a22e7295d9fd664abff89",
+      "english_sha256": "c935094bae7c51c855059bc9e2f656bb0a257f246f382e964c9867cd02d4dd34",
+      "latin_sha256": "fa4dfa186b099023400698137c9ce8a39bf5bb4d841ff244ef3596afabfe1f47",
+      "latin_proof_sha256": "ad479de2661f815313f4c89bb5de3ac1cc0c5f9f56dca3822e275bc036e24465",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 121,
+      "target": [
+        "lent-2-saturday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "9c08e549e85f60377d97e4525e4f33c404736c00ea4c51f15cdbc9380f13ddcd",
+      "binding_sha256": "854e4bb9e0725bdbecdcf30ca101fb2f2766d562773b7d920f9a1f84a88721e6",
+      "english_sha256": "ac51059ff92f3829d84cb6d758221f29117aa950e5068704f9d6a09811362a45",
+      "latin_sha256": "b05709543de92b7a980b731f4060b7145140873b01a215a21cfd8f1531724471",
+      "latin_proof_sha256": "4a59735822a3da2c53218a325ba2f63a1e2abe9f9548b0f497f05416e6d4c906",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 122,
+      "target": [
+        "lent-2-tuesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "883b79dff5d9d2a344edbaf44afa09066a4e1688c3da7d82956d9c8f6972d5e2",
+      "binding_sha256": "fc394e4a608ec8180ba9e14d1f32749d351e477f7a7493ac1828c55a8f7a9add",
+      "english_sha256": "64e9c42f5b98db49af0350762a7a88e9d2a7615ff0dec5c55be535f894a73685",
+      "latin_sha256": "dd45d077f48adca70b8cdea5a316a8aa9b1c014a42fd80dbd05bdb6ae51d2e34",
+      "latin_proof_sha256": "32fff23141ba41c9e7ab98475437cbd70a5e6f94783836974a36f2a77545654e",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 123,
+      "target": [
+        "lent-4",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "106442fdafaf6d23169d0fb75329ab229f2cb67822d85cc720fdea4c3c6ceacc",
+      "binding_sha256": "0419002e08dc9b700a1f80bdbd06123b055b886ce916906dafbe2fa4607e1855",
+      "english_sha256": "b0397ec803867f0dbfc0584ced59f74fb0eb577503f480efa499dd8096968d2f",
+      "latin_sha256": "89916ae5b717e6e8714e403b139644ada06913f7a75cac818e3072e593a39465",
+      "latin_proof_sha256": "7b636e1625526edd93bfec8bc8c41e84e772aad99d66584296630b4a8881c5f7",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 124,
+      "target": [
+        "lent-4-saturday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "433c9f4b6c00073c505ce1927b9ff648ac2fdd581f34b5180ae54522a5bc84d1",
+      "binding_sha256": "3eb32982502962d11a559e9ff2d3662719dc949ecaca14302836e677263eb3f3",
+      "english_sha256": "846aba716dd0fd9ef1705b878c0f355635a0d290fd5c743ece6ae1e44c78afb6",
+      "latin_sha256": "d70cdb8ceb8e780f89c598d4ee69e372514b2ddc8c6861ed542b47d541da7bfb",
+      "latin_proof_sha256": "71cc7a3c9f0f450023c98d1f5b53d53bac8a901884714054de22e5e984e4e721",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 125,
+      "target": [
+        "pentecost-4",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "9cccb6c40c9080d00f2088f61da743aedc8cbcca61fd372557b4418ff671ba02",
+      "binding_sha256": "567e40b406a37ddcfa20f8e4ac790b12577ec3ae9d12e52ede014db56e6a2c31",
+      "english_sha256": "0894a084149b28681e533cd86e77d18032fa63dd0d414b89efe15fd7d50073f3",
+      "latin_sha256": "b3f5c868634462bff7d01c0a22d121f0ebfbbbc291b9016764abb9c81708b361",
+      "latin_proof_sha256": "c3c7b462990d6fc4946b32eb780c28fd8328da816c7c3348a0f5276592d78e9f",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 126,
+      "target": [
+        "pentecost-ember-wednesday",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "49fb17920793e3b0af82fd6fd4d8bf78dec395816eaab3b03419ae198e3536bc",
+      "binding_sha256": "2d12d835d1a4c6e944b112f1ae154075f407897bec9be2d57d80b44f9341cae5",
+      "english_sha256": "a27f2ea74c07c023c44469f79927f99b3f736449393f5837527ea0a32aed6bae",
+      "latin_sha256": "a11499e956c87f118c3b403b4a2a9cd1a8abd1872ed03e8cced0bc4d9bc3d753",
+      "latin_proof_sha256": "0d5f937c20179c46ea1c45be1972f20372e6ab9d0edeba5e3edef94bc26eeb5a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 127,
+      "target": [
+        "s-andreae-avellini-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "92a2eafe859eac59e972625c9f98ad7ad6565eed4415b5edaeba2ae57a982b03",
+      "binding_sha256": "bd49d1aa34dea7fd7bf29d348aa7998b39fa8b0abdbf650b9b2d5c88b43d9737",
+      "english_sha256": "f712a81500bea5b9fe57c1d6387cfc5538bfc382d1fce5be1f9dce657226ed6e",
+      "latin_sha256": "778a4ad588ce976f9cbf8df06e652b582672c3a7ea1a0b2dc1598493be24acdb",
+      "latin_proof_sha256": "08cb45f7222c5eab73f5c3fca89429829992529f3b657ee58cfb3918ccb0d8f8",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 128,
+      "target": [
+        "s-birgittae-viduae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "5fcb901fefb79051fc18a2467c95d1dd3a46ee5f3a1b175d2830e00a654f9181",
+      "binding_sha256": "3ee83da1c22fa82415e39a9be3640c60b79574f7047a9603cc73eca3c9cdd6fa",
+      "english_sha256": "60d4bb232f62f2d7096a3573b22050a0fe732b278cbd82802ce52fa681e496e5",
+      "latin_sha256": "4f780bad4b12c9f83c486d7296986dfe2032b60de300361bb188027d264091bf",
+      "latin_proof_sha256": "2cb968fe83127da360569af8d7d1b959f9122e0ba5d50067f86b01a1b6cf91c5",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 129,
+      "target": [
+        "s-callisti-i-papae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "ad12832d1b6116ef64cfd5515ae287d9aff6916c0923fb246ff2b816162d9387",
+      "binding_sha256": "e72b367b299fc9e385df0d121e78ec5b82c159b00f04792fcc678eaf23eeec69",
+      "english_sha256": "33e19694e6c7634c70f7803c71fffd2e84d35f9d22dbe2ed57aa68e9bc9c290d",
+      "latin_sha256": "c7717d177019d3968334d33ebe2a76eadd4db941ebef027ffd8b719294dfb45d",
+      "latin_proof_sha256": "ba8f3e3092d1fce9c3645647169970ea9ea30af0e8f4c5c014588238f2d16b26",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 130,
+      "target": [
+        "s-didaci-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "dcbb818db1c7385486b6a71978c01d996770f5c3672e36c25318dc0fd39a3e54",
+      "binding_sha256": "a6c0612f47b567fd54263a90b5f631c6c0b1ee29567277a00512e764cf38b502",
+      "english_sha256": "c3991cadd27c859c16ea46b5e7467578be27ee254001143ac1d8791ffe43d7fd",
+      "latin_sha256": "76e4a8ae34f6d1022518862b06b83cfed9171fc51f0d3743c5a9a2507be5149c",
+      "latin_proof_sha256": "9590bd7f661a332af5578ce513aacd8a4239117e74e9d00d7ac299d99751d65c",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 131,
+      "target": [
+        "s-francisci-borgiae-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "who-livest",
+      "candidate_row_sha256": "7969539a47d802ecaea7374e2e1ae1bd909058b64a8222cbb8e85712b7a7639a",
+      "binding_sha256": "9788ded93497a4fde0959d9d57f75ae6f60958e505d4a1ab3291c8f9c23d81cd",
+      "english_sha256": "b05a526fb1015a313fc233da8852e9e600444d39d0d332945f95bc4b7c4336fb",
+      "latin_sha256": "47f9732a9deea5676fbc4a48d9380cdae9caca04cbf792189dd00e61aa05c991",
+      "latin_proof_sha256": "d5b0655237d0577083ce6e0d7897ae59c4256600fe507c42decb65e64fba9361",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 132,
+      "target": [
+        "s-hieronymi-presbyteri-confessoris-ecclesiae-doctoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "28ee9e4514c188b99629926ca291f5ca86b2b1f6195dd89d6e69f21dccbcad7c",
+      "binding_sha256": "dac258cee954907813ed1aefbe4252a15d11d75e1fc25169c9011b7e3457705a",
+      "english_sha256": "bdc69a0b91b7f3047cfbf12472fece87a67ff825e30a17af4c5ba8e19a2079b6",
+      "latin_sha256": "725c3b941e115566b848c73d971b8272d521b82f263474836decae14d435054f",
+      "latin_proof_sha256": "d24cb6e10391eeffd8a68c14166e22141bb8b59c88625c3207c01d5522ed6f8c",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 133,
+      "target": [
+        "s-ioannis-leonardi-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "602a10104c98d69fb9d182594439a2d48e3ffe2e2454ccb6c4cd627363e987cc",
+      "binding_sha256": "79be62e3119d9927b5bc37e4e918035647e52ad0a6cce84eca1b09e9b34c994d",
+      "english_sha256": "3af13c88a24c6a25fd13d15368ae7bb95164cce63c66ac1f75a2f8f05c8cb233",
+      "latin_sha256": "2fae63f0d6db8b25fab6e8c01289791943de2889b40485846081859f1f3dc276",
+      "latin_proof_sha256": "43c36e48c96bdf5d885d593f9e49806a705409410d303dbcd2203c93bd41ec5a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 134,
+      "target": [
+        "s-laurentii-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "c9bd30ec3b3f1bf8ebf6b6ff4041715a9570ffadb67a2da509010faa95219d2b",
+      "binding_sha256": "a0f04be2491c43ac5ae0977065e1499cd4e4c4936395772be8315d0b95b18aee",
+      "english_sha256": "5f157c84cdb414ee9fdbce44d69a39987786a830763c262f998cc79d0ddfa5f1",
+      "latin_sha256": "12a48066316696191945d723b0949ea122e25ed94e9568d0d24abe72faa5cf18",
+      "latin_proof_sha256": "443cc4f69e5b3ba4c559d9ff18963972f946fb4322de31081109bdf5e8613f6b",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 135,
+      "target": [
+        "s-marthae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "53cd2b952313c634bfb23bf72f47f842a8082230e32ef3a8593d7bf28284ddb1",
+      "binding_sha256": "661b3b7bf5d85bc3dcb9b2a1f95fa76ba8aa3f6e1e67a038cff978a9b6694041",
+      "english_sha256": "b14c743270654bdfbf7cb059d611b8ae1ffc400a7e37fa9161abda9fb0c63387",
+      "latin_sha256": "ad27e8e56bbbd8d382c27beb6c49cc0a1b234e279bad55be1151be3121ea42df",
+      "latin_proof_sha256": "002fce94a6a70a024bcde1e6598bcc55120d03b7f266b57daf4445b7005e1a6d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 136,
+      "target": [
+        "s-raphaelis-archangeli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "609f3610c100689acb96cf3bacd443973e181de07818c8d7d7b30f05cddf7cf9",
+      "binding_sha256": "63d8946334f93db9e080792d34183030924e4d04fd85704394333c844ea56069",
+      "english_sha256": "657671bc99cfadb0b2c1cd4f8c6d2b320082a5a174c4d29240b124d732839a94",
+      "latin_sha256": "2226c255dc6464581584c8fffc8bacd3da02af2f1f5a82657c8a110234be45ee",
+      "latin_proof_sha256": "232904090b415a0f051d1c89c8ad77755f4bf5ab6798d5315819f104a2317efe",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 137,
+      "target": [
+        "s-vincentii-a-paulo-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "635eca1615084679ef0d666d77b0b209e616f205dcaee84f7906aabd9a849598",
+      "binding_sha256": "12094539ceb6cf5f0562ebcb5ab7b3fd106f202f9f581d8995ec2827ba1698a5",
+      "english_sha256": "8d4c04286ddcfcf3dd26d960623dd06da6aea331209399da47d019078c0a739e",
+      "latin_sha256": "94310c66720827e8665ccfb6d579dff16f8eb316c85c3169af13db82bda35773",
+      "latin_proof_sha256": "89d2d2b1ef8fcfd37d7e039b587453621dfb1521005cbcaf27ffd24d84e6bcfa",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 138,
+      "target": [
+        "saturday-after-ash-wednesday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "00e250246112dc043d256becc3bacf4740b2c4de57cf99b8e30bfababa868eab",
+      "binding_sha256": "de7ef0964006c0d11f4fde777f8b87539b4b26ea5e7566c5c568f28c97a4ab25",
+      "english_sha256": "432883e7612d77061d17ffaaed5c7ddceae68832dcf48daf74727b134f0b8a77",
+      "latin_sha256": "dc46de9d0c8b18e399cd10a1304d1fead5af26aa8d71de51f4e6fa6f40595094",
+      "latin_proof_sha256": "9bff01e4298ac6d6ca59ed924a448e1eff1e967121801144bdf53b7e1ecc864d",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 139,
+      "target": [
+        "ss-cyrilli-methodii-episcoporum-confessorum",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "6b22e4b98a0c35841ffd8df0c5bf903b851e62b557cd32950cab3917dc7daf91",
+      "binding_sha256": "d715dd0a663e23fd8f5252708aa2cf8166e4999224d0102dbef7b1b5ac93325a",
+      "english_sha256": "6b8ad8c07409d29012659dea174a8f5ef2beb1986442ccfd9f4af8b5a830ad53",
+      "latin_sha256": "cc03dd2353d4d213f5cd5a6ddddf69b196e2ba79f5d13ac93f60588e8939c629",
+      "latin_proof_sha256": "18f536cac784afcf9ced0716aec646eb380ba37050349b51133230c405a33e5c",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 140,
+      "target": [
+        "third-day-within-octave-s-ioannis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "65c79a7abeca2e34cd02123a3f155aa5116d3a39c4fddd59fe07718170afe4fb",
+      "binding_sha256": "91f70c83cc3c10b4c8012decab5bf1ced063ad0ebb13ac0986780324fc9eaddf",
+      "english_sha256": "43aab489a2a5b991c6ec09898950467c8347c34e0d123f3be89d88b11e89e4ae",
+      "latin_sha256": "c54e7b763d548996f776d7f05275456bcb9b04b1153a7591fbbfc22f7e376563",
+      "latin_proof_sha256": "b8640a0ded09fc26316923e661436eeb1508996226075709f04acfc3495d4c6b",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 141,
+      "target": [
+        "vigil-of-the-ascension",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "9c9528a9e16fd997f42d2bad7ae57bc875302cebec5dd3f584c6d9b9c4dc0593",
+      "binding_sha256": "4c1d878e52deb9b6d6f7ffc245d831f3acce61f13b69e40993d93a2b48d978e1",
+      "english_sha256": "7e1ba3356f9b799e5c68de80789f20ec1ad2358953e53fe292ceb3099a8d68a5",
+      "latin_sha256": "e1aca0de770551526fb5703bd24a97da52aeaf7f69b438c3f4e6655b108b0662",
+      "latin_proof_sha256": "27ee31e635f3513fa5d1f283a9df88532709e063883221be3b0ddfb387ea413a",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 142,
+      "target": [
+        "comm-ss-abdon-sennen-martyrum",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "5ca5599b0f977f936950d154c488c33700b6ecaf69d0bfd383534e650cb94513",
+      "binding_sha256": "bc61ff6002041eca7278e78e861a03561c03d471eaf33b49f3100f3a2de5583a",
+      "english_sha256": "4384a9240b0b6451d52739089e73b039314e9166990fae0c6d94657ece43ca0b",
+      "latin_sha256": "e80db91fb412cb1b0fff06b9fcac515ad306d110100357da650d57d3303c53c1",
+      "latin_proof_sha256": "06e453711484bbb94f4f3419c67f688c702ca9eb6adf1ff04a8aea82736b2bec",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 143,
+      "target": [
+        "good-friday",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "who-with-thee",
+      "candidate_row_sha256": "43bdfddd88a81a6a6c4ca513e1a040f526418cbce400abd6d28ac5fc38ad7dd3",
+      "binding_sha256": "b3ad3704c44ea4fd7e86349badba05f704729d4ad8172d87d6deb1af7cab634a",
+      "english_sha256": "e1a2910a1983b30abf48cebdb378859c31c4caa892be893981e9fe96253d5f69",
+      "latin_sha256": "0d05d364d14f27d7864d5027a3c1f4ce2bcec034e9d0f26cdcdb8a8b02ad1533",
+      "latin_proof_sha256": "99225a390bcf0bd41ffd4295c40d7f3e69da25868c09ded3c374f172492690db",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 144,
+      "target": [
+        "s-annae-matris-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-the-same",
+      "candidate_row_sha256": "3756ed35a76b283188c26d5bb9c21dff9b109f19b7c3359408d02aa5a446b91c",
+      "binding_sha256": "fb74557e3888c67ac4a6f7745e904d94e146676bec02e95ec4d92fa792db37ef",
+      "english_sha256": "cb3b4814d889968dee7922b25ed4a474e75452da09a2be1a1d177b5e122b6747",
+      "latin_sha256": "318338d87f9133de9b5495330926862ea901aa7bb0d6791c479a39ce60f8d08f",
+      "latin_proof_sha256": "87179678ba1f63c32baa0f0d310390564377ea128684daa82154bdc4501475bd",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 145,
+      "target": [
+        "s-ludovici-regis-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "9562ca0dc520e79c4394b5afb94e1822b967095c161f29d237444276c60289ff",
+      "binding_sha256": "38520c1051c8f808c9eedcd57afb4a95a521fb3e52bef484320cd3b1fba732ac",
+      "english_sha256": "52797fb28892d0e4c0e7f4241ffcf8b9db897dceaffc76f68fd52185c47474b0",
+      "latin_sha256": "138157e3a8f093b512f9c3da16d75511fe5a589d526dda04cb06f5acd68aaf8b",
+      "latin_proof_sha256": "8ba24a8e879430b4ecdf9c323fb76d1d54bb3b8e255e52f9705e8e680fa42759",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 146,
+      "target": [
+        "comm-s-petri-apostoli",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "185a906c6ef3e43c59d8897253bc8d13040023c692eb7420aba295cb787aa3e0",
+      "binding_sha256": "1499f0841b8fddad2eb14a9ae83c8aeaeff3e1889387d63546bd58a77366e579",
+      "english_sha256": "abbc6cbb26dee68b5fb91fa12733d7698393b82a6fcd9266adb48b298904e15b",
+      "latin_sha256": "2121835b24465e15221a0eb4d00a9d00db59b5120deb7b3103696e13a5c49f48",
+      "latin_proof_sha256": "8ac3c14b12b56e52b80ff66b3b4ec3c3391911087818ac1e5217a3d11d9518ce",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 147,
+      "target": [
+        "pretiosissimi-sanguinis-domini-nostri-iesu-christi",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "who-with-thee",
+      "candidate_row_sha256": "d3daaf52fbf70a1528017da12dbe396d381d619aa972228f89ecde49a144afcf",
+      "binding_sha256": "dd831e8a3226637dd425ad2747604291121eb9e603a60eb61402cfc0d5393757",
+      "english_sha256": "f6ecf3b7581a890e5e1db97e078550e3eee37e8d945e00bea83fb196e009a3e6",
+      "latin_sha256": "769396568a7c49b62b1cf84f78597dc84982ff745441cf76992674b7e833ee2d",
+      "latin_proof_sha256": "e668ce84076c5a47d8dba3e8441b540d9c0df9e6998e4d69113bf12ad9ab7d2c",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 148,
+      "target": [
+        "s-francisci-paula-confessoris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "66b71baa9d15343954e146caa3f7af9add09da545da7819187ad2f9f2b48f0a4",
+      "binding_sha256": "5c4b65b2642bd69dbf65d5d19c2c0f5c56052c09734e32270f07ace867a21bd1",
+      "english_sha256": "0846b3df3b1812b2f68ecd835a456fa05febae9b5f1114b08568f99f6b6a4f41",
+      "latin_sha256": "6064dbf8f994bb6d8dafe6f2393ced415b08d8658f631ac2ddf7a89baaa975fd",
+      "latin_proof_sha256": "615473fdc6950547dc1bb93e2315d27ffdb89ffef6232c325b6eb627c9742bee",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 149,
+      "target": [
+        "s-ioannis-baptistae-la-salle-confessoris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "cfbf9b7ad2179e45572207685e7ad90bea2da56815abd847c9b9415046fdb891",
+      "binding_sha256": "f65b87598990adc3950d60053dc76366fbf6505a426928dadb9ea9219914665c",
+      "english_sha256": "76139bf564f200cd1f1fb76c42f00d22b5467a093bb0c0caa03edb91f52a9899",
+      "latin_sha256": "823f557a2ee9b7d8ca9742e052a882df60a25eadf82fbc8c2abaa9b8e1974c45",
+      "latin_proof_sha256": "95529d7403cd333e1e9a3a9143afde0c2f52c166ca8fc5132f63cb62ee3fdccd",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 150,
+      "target": [
+        "s-titi-episcopi-confessoris",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "3dedd22f678ec2ffb930b345bace7049f37f4d28a001a5cae296afa481573038",
+      "binding_sha256": "01b4621158df008e5a0c1fcff0c6cf39092bcc2e2a88939a103a86203ea3d47d",
+      "english_sha256": "22c98188bae9580f0b396cf6442970bdb554cd9e3bb9a214262fa713515eccb3",
+      "latin_sha256": "80d5f4e03a555f6707332ed17fa4091e03b5186c98cb021504016107cf60b7fa",
+      "latin_proof_sha256": "2d24b01e164191513bb9a95e7fad272d52baa8522d56076ede3520d1d8433e03",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 151,
+      "target": [
+        "comm-impressionis-sacrorum-stigmatum-s-francisci",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "who-livest",
+      "candidate_row_sha256": "ec245d1744be00797c6370f8c8a3b2f4e031f331b74818f9809e909e416f0173",
+      "binding_sha256": "d94e7883448e4fbf06ce7e08e178e04f98c4e6f471ff6b82d08a29792e15fa37",
+      "english_sha256": "3bca75b694062b5df7f79334e4d17ba26346f765ec31706ddf54ee9215f4be16",
+      "latin_sha256": "c5cecae4364178849880c798e7c1a79e90534a53dd84082797feabf66cb9c6b2",
+      "latin_proof_sha256": "e223ddcf398ddeffff5ce9061cbb63e084e630587d879aa94ebfc47068422e62",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 152,
+      "target": [
+        "comm-ss-marci-marcelliani-martyrum",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "0361e6cce6f26dd548bc0e9e81239b47c9240b4bee7d9924d43980063b578e84",
+      "binding_sha256": "0e0788e85b73e456924805ebcbc2bce09899e6ce8511c1d14a619e968a5dfd0b",
+      "english_sha256": "a54d234f385954630c17e26a340a651c5e9c9d451f15c8400d14f1c7dc6e031e",
+      "latin_sha256": "63c48c6e72adb567802b28c670eb07b0f544ea4e38c1c552eb14d742034a549d",
+      "latin_proof_sha256": "684ed4deafaeb3daefacd70613df28e7128c70d9eef5f053bbcbc36d1ca64f47",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 153,
+      "target": [
+        "exaltatione-s-crucis",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-the-same",
+      "candidate_row_sha256": "15012df945fbfacda4a99bab6503cdfde4d63b0c3892911396283deaeacd26c3",
+      "binding_sha256": "5a5016f97c5ce884ff51fe81fd9e8c786c0a58af3c57bb603d82813de4e85112",
+      "english_sha256": "877db78a6722ac3231ac80986c1595e58c10754ec6c04dc5da9b5e2eee1eb4fc",
+      "latin_sha256": "7aaff31588cc21086a64b33c2fc970f7edbb7118c512c1be786ecfc6afc98f40",
+      "latin_proof_sha256": "114c33337b3762b51ba8b9036862235a94760f9f1863ec9b45a60a9db2db3f06",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 154,
+      "target": [
+        "pretiosissimi-sanguinis-domini-nostri-iesu-christi",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-the-same",
+      "candidate_row_sha256": "21eb2ff01880fd420bab2fecdd1fdba562bec0551725a4e187f5e7d2d95f755e",
+      "binding_sha256": "c1bb06baf78581d7536ccc8fbc6fed2a745eea1cb75007663a6d592ca6ae0629",
+      "english_sha256": "3304dbf26a2500c9e8ed4debecde127e5b240268ae71e1525f18aac73491fab8",
+      "latin_sha256": "c6dcee0855c3def8079735d182fb62494a3328b675826ef30f34b56bab88c228",
+      "latin_proof_sha256": "8c1682c683cfbcbb66df14e0457824347f9dd97d5d187937d97eb2b132284e69",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 155,
+      "target": [
+        "s-monicae-viduae",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "12b7b13360fc52be2d6393162421eab4b9ff97aac057994f025b3aa7883ac0f9",
+      "binding_sha256": "1c3fb6f84af2fbd8c355691b474d3207cfd964967bb2feec128f689338256dae",
+      "english_sha256": "1517e4314b55fcf15b72a38a8400d3c2c022bf1a99d3b62ff3013be7cff412d4",
+      "latin_sha256": "25c0455a47b1a2ec45854494f273f77d3cbb867139dab327d308d310b2ebcf83",
+      "latin_proof_sha256": "deaa7480b35d8d5df0c6074c900706bea9d7c801503543a0f61a44a719288d52",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 156,
+      "target": [
+        "transfiguratione-domini-nostri-iesu-christi",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-the-same",
+      "candidate_row_sha256": "566581c52982c458cab437dc521e8eba91facecc0ecd9552bcc6ff0a126bb5a5",
+      "binding_sha256": "4ed220f7553bf34b6eaaafa3e06848a324cf85a70ea1dc8e8dd647001fe0d0a2",
+      "english_sha256": "7bc384370984b4e2c857e0bf5717a05fb5d407d8828bf5f812047631a2aa7d31",
+      "latin_sha256": "5fc1c7279e05899dedb0e9d5445b56b3abb3686800344617dc64ec87aaf1829a",
+      "latin_proof_sha256": "44d302c6a6fe56f17dd839cf93515cce341a3290bb21490df22c50e2a29799ad",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 157,
+      "target": [
+        "vigil-nativity-lord",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "who-with-thee",
+      "candidate_row_sha256": "5e720a8856137e628a3d2c0f5f82ca8e17f49e24ecc8339e8b8c90fa2e18c134",
+      "binding_sha256": "f432acfa5cbd570c61f3f61e4b733be160704e0fa4987271b629e8857e2729d7",
+      "english_sha256": "758bc4cf6ec45190e61626404bd86154aade9ea769d48108062a0a5218b7320e",
+      "latin_sha256": "8b3d8d1f13cee3421ecd07c3de7f57ea7debc0b4f0fe3b840313fe2a8e712009",
+      "latin_proof_sha256": "e6f0a05a4c7a5b22181787b8f395f53472d169b2a650986df9bff2ab6ef73bf5",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 158,
+      "target": [
+        "commune-martyrum-tempore-paschali-2",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "23b59dbf2c333e52e763b8a0e4479a18cb906c98ec0f6d89ac4b6cce19d9318b",
+      "binding_sha256": "716b645e635b6aa1250ef126dc485de1349aecbb9fcb6f03d4c858fd9ce8022b",
+      "english_sha256": "cb51186c849b486cdb54f1698107266ee4ec753d7bf1c12ca554fd5351e24937",
+      "latin_sha256": "0a192aaafcc09f948b517ce53e9af9c6bd5f9b4a90c49e91d9fe2dd51b2b28a7",
+      "latin_proof_sha256": "1a2b329ab7638d1b86d0f8efd1af630e9c293d5994f414c7458dcfec19902ce5",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 159,
+      "target": [
+        "s-ioannae-franciscae-fremiot-chantal-viduae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "8ba03564d313095a404fab13555ad0cb95e1af8484258ab99e2a75a64ce308eb",
+      "binding_sha256": "fbc467ec9fa7d388a95dce6137e092b5a1089b004b5d4f760c90fbb491498967",
+      "english_sha256": "d0c8e83933bf352450ea224cba35f8ec3e6876a5b2f663f9e7247276098b2ed1",
+      "latin_sha256": "ff0d36a3b9d4c7d295fe77f8718489b91eaa6061089f54876ef531370bc885f0",
+      "latin_proof_sha256": "f06277e1362b390981b541cd906e32b3a7518abac29808290754582ca6bcb2e8",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 160,
+      "target": [
+        "septem-dolorum-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "family": "who-livest",
+      "candidate_row_sha256": "dc0fce8dabce96fceb809ef456486f990c4ae74e3b1fdded2c3af3b410436b1c",
+      "binding_sha256": "e60ca35467de7b1b3f63a9d1dab0c04a02ab2c14d78ca6a5ba4735b2f8619ebb",
+      "english_sha256": "624564d01115feff15360c3c27e834a101a1b95dd88a96c883a79bd44f092348",
+      "latin_sha256": "c557628e6c50fef9abd51c8b52657da465a153c989d4959ed9f07e3bf1c16002",
+      "latin_proof_sha256": "ff7b44cf58739003ed3cf49e8a37dd9130ebbe987c92c97bb1d9112415abc5f7",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 161,
+      "target": [
+        "s-caeciliae-virginis-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "020f8b432bc5af85adfd695347dca2cf18f4a4cbee36daedfa3a169bbc887471",
+      "binding_sha256": "bdabc854ad74ac574141727a9b746ad2c95132ac9ab6e5f1bce7fd40b3691d96",
+      "english_sha256": "4dd79a02d35103d8adfcd7f738cd1812d80b80baaf3b80f1b3e1fb5ac8960012",
+      "latin_sha256": "9c8f97dbaf1a7e442d7083fb5f9f690a6395ac112df46dc48f930a19b48c9672",
+      "latin_proof_sha256": "09907457079cd70462a33be21d1a186efe916f195bf4372a9a472052a648c0c6",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    },
+    {
+      "number": 162,
+      "target": [
+        "s-matthiae-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "family": "through-our-lord",
+      "candidate_row_sha256": "70064aefdcf7d1756e6ed28ab8c725c217d4b7423f0d9a58c979dc6a11266f0a",
+      "binding_sha256": "f0e79dec458b1625cd685b6c014f249c1ad33d32b7bf5430b5eb60a7d99c5f5b",
+      "english_sha256": "dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262",
+      "latin_sha256": "354bf98613b16aaf2b75195cb6aef23ed100a84c9fa0977e13a96988c7c127f7",
+      "latin_proof_sha256": "7c4a74f3013f03680aead4d89c3396d05ad85d26c95ec8113efa500dbac9c8cf",
+      "formula_table_sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "checks_passed": true,
+      "errors": [],
+      "decision": "accepted-exact-source-mapping"
+    }
+  ],
+  "execution_tests_run": false,
+  "canonical_files_changed": false
+}

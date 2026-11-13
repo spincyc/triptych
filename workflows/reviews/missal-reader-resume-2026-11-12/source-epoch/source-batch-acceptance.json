@@ -1,0 +1,144 @@
+{
+  "accepted_by": "root coordinator",
+  "accepted_fixture_core_sha256": "c21ccf7254f5d93e7651f305d0b0d41f1d12086d4d1aab89dcc1fb49c0ed8d08",
+  "accepted_on": "2026-11-12",
+  "activation_driver": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/activate_reviewed_epoch.py",
+    "sha256": "f917ee634f3a932f05b283acd0abab631ccb73be4d92ce2593795b009116ba06"
+  },
+  "adapter_proof": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-adapter-proof.json",
+    "sha256": "1c9a30804e47d121fb0b5e0aebdd4fe4949f699b11c7983b2631d62f2f853efd"
+  },
+  "added_input_paths": 185,
+  "boundaries": [
+    "This receipt accepts exact fixture accounting only; all source, rights, expression and calendar judgments retain their separately recorded authorities.",
+    "All 7264 parent paths, 17 raw original Git streams, 12 historical fields and 25 complete direct-public-domain proof oracles remain preserved.",
+    "Only the exact four reviewed runtime successors, six Roman admissions, four legacy-English corrections and three Pentecost source-binding fields affect their respective protected partitions.",
+    "All unconsumed prior English refusals remain exact. Two new explicit English gap rows are additive. Every original strict zero-unaccounted gate passes.",
+    "Declared historical binaries require complete local bytes through the existing fetch=False resolver; metadata cannot substitute for evidence.",
+    "The three historically excluded shared registries remain outside the source epoch. The separately recorded source-family refresh changed only its date and two snapshots.",
+    "Evidence retained during activation is an output of this accounting review, not an added source input or publication permission.",
+    "The fixture differs from the independently reviewed pending candidate only in its acceptance pointer and state. Source input bytes and all semantic oracle fields are unchanged."
+  ],
+  "captured_declaration": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/candidate-declaration.json",
+    "sha256": "85b1d936df30cf3d9eb7ec2c31089967a7ac395378c66b001436cd534c663865"
+  },
+  "code_parent_git_revision": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "cohort_scope": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/candidate-cohort-scope.json",
+    "sha256": "5a130a6b9626ddde28069465f2d8a102ea74ce76cbb630c5dacd33dc694f1d85"
+  },
+  "data_proof": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-data-proof.json",
+    "sha256": "9697062b32543100a20aad14f02d42de9ecc97a215959d74452903bb7dc5a7a7"
+  },
+  "delivery_compatibility_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/delivery-amendment-root-review.json",
+    "sha256": "87ae50bcc81d8790898d5facd414f5fbf83c50d1753b80b066b2035c84a6752d"
+  },
+  "driver": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/semantic_adapter.py",
+    "sha256": "1dd33f7a5b7045b308ec86a61ea47a0541fed141c4a3bc4f9bca596afb4e626d"
+  },
+  "dropped_parent_input_paths": 0,
+  "fixture_core_serialization": "UTF-8 json.dumps(indent=2,sort_keys=True,ensure_ascii=False,allow_nan=False) plus LF, excluding exactly acceptance and state.",
+  "generator_settlement": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/candidate-generators-settlement.json",
+    "sha256": "8d62be14e7424f82827a393558e49ef0c4d990cd0565f29bd4fddb172f4b9a07"
+  },
+  "independent_accounting_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-batch-independent-review.json",
+    "sha256": "7b72022d4a856df2039b16aa2bd77b73d5e01437167aaa47cb8f079938955c86",
+    "status": "accepted"
+  },
+  "original_replay_streams_preserved": 17,
+  "original_run_input_layout": {
+    ".scratch/source-epoch/checkpoint-inputs/cohort-scope.json": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/candidate-cohort-scope.json",
+      "sha256": "5a130a6b9626ddde28069465f2d8a102ea74ce76cbb630c5dacd33dc694f1d85"
+    },
+    ".scratch/source-epoch/checkpoint-inputs/declaration.json": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/candidate-declaration.json",
+      "sha256": "85b1d936df30cf3d9eb7ec2c31089967a7ac395378c66b001436cd534c663865"
+    },
+    ".scratch/source-epoch/checkpoint-inputs/generators-settlement.json": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/candidate-generators-settlement.json",
+      "sha256": "8d62be14e7424f82827a393558e49ef0c4d990cd0565f29bd4fddb172f4b9a07"
+    },
+    ".scratch/source-epoch/checkpoint-inputs/source-input-delta.json": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-input-delta.json",
+      "sha256": "28e76f86fc99e72f32f2739a35b808567bce2291d7b147d746b1d4cbbb1f3f2b"
+    },
+    ".scratch/source-epoch/checkpoint-inputs/source-input-rows.json": {
+      "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+      "sha256": "8bff4e89d1cf0ed36686dc8ac38aa0dc92c4bc67edc479631f51cbab745501b9"
+    },
+    ".scratch/source-epoch/checkpoint-inputs/sources-settlement.json": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/candidate-sources-settlement.json",
+      "sha256": "6a2c4df78b2086145eee38149ce1c3dad1d913356de2e5a1155d8ce035b3fc8e"
+    }
+  },
+  "parent_fixture": {
+    "path": "tools/tests/fixtures/missal-source-batch-20261023.json",
+    "sha256": "3bcf736daf2c6afd3eabb2bfd3f3e8528beddb513d1c496051a25255b9b933b3"
+  },
+  "parent_git_revision": "c448036bd6a407cea691be69aabf2f281a08db81",
+  "parent_input_manifest": {
+    "path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+    "sha256": "ea29e0b2f4ae20bb73626f88070608a5a7b76a2dead18a3d7daee32ebc3c9f2b"
+  },
+  "parent_proof": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-parent-proof.json",
+    "sha256": "81d8121e5436540c474046dcdc4ba49f478b230bbfa6ddab8302a72a048b03aa"
+  },
+  "pending_fixture_reconstruction": {
+    "duplicate_pending_fixture_archive_required": false,
+    "expected_pending_fixture_sha256": "098b979d44a71aca5609a4d42d2d0982d2fb63123e31007f9a933fc5c39dbf5b",
+    "replace_exact_top_level_fields": {
+      "acceptance": {
+        "receipt_path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-batch-acceptance.json",
+        "receipt_sha256": null,
+        "status": "pending"
+      },
+      "state": "Bounded source successor candidate; independent source and fixture acceptance pending"
+    }
+  },
+  "pending_fixture_sha256": "098b979d44a71aca5609a4d42d2d0982d2fb63123e31007f9a933fc5c39dbf5b",
+  "post_activation_tests": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/post-activation-tests.json",
+    "sha256": "b16c862f817924d334e22b9acbc2bdaa6f6edb18ab34e3bead5a1ac7c041fca9"
+  },
+  "retained_parent_input_paths": 7264,
+  "root_acceptance_pending": false,
+  "runtime_code_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/runtime-code-review-v2.json",
+    "sha256": "1ab3d4b4328eeb223d067d8844986fad6907c31530a6151b6644cd79d125370d"
+  },
+  "schema": "triptych-source-batch-acceptance/v1",
+  "scope": "missal-source-batch",
+  "semantic_transition_contract": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-transition-contract.json",
+    "sha256": "8cc1e5115b64c61213da39859d0cd92bd07c6c37caf813ad428b3c587952ecb0"
+  },
+  "source_epoch_paths": 7449,
+  "source_input_delta": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-input-delta.json",
+    "sha256": "28e76f86fc99e72f32f2739a35b808567bce2291d7b147d746b1d4cbbb1f3f2b"
+  },
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "8bff4e89d1cf0ed36686dc8ac38aa0dc92c4bc67edc479631f51cbab745501b9",
+  "source_permission_created_by_this_receipt": false,
+  "source_settlement": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/candidate-sources-settlement.json",
+    "sha256": "6a2c4df78b2086145eee38149ce1c3dad1d913356de2e5a1155d8ce035b3fc8e"
+  },
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "556bb3530c2176bfa66c7d656c81a83c976b89fea97b2592fc91f8d24be32bc0",
+  "successor_kind": "exact-reviewed-reader-source-cohort-with-local-binary-delivery-compatibility",
+  "urban_pre55_scope_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/urban-pre55-scope-review.json",
+    "sha256": "0d067fa19050b9c23059d1fc3cad5951a45f72b55749af208fd18407af7fee6e"
+  }
+}

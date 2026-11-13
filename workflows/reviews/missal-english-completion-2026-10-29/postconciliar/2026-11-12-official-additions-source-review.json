@@ -1,0 +1,120 @@
+{
+  "as_of": "2026-11-12",
+  "scope": "Independent pre-admission source review of eight metadata records and two Collect appointment facts, with inactive candidate Scripture and Common facts.",
+  "result": "Passed after the two bounded locator and date-description precision corrections listed below.",
+  "record_count": 8,
+  "unique_record_ids": 8,
+  "hash_verification": [
+    {
+      "artifact": "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c",
+      "sha256": "7b776f5c92eace137ff5a7dc3c1c8c2db229f7e75fb347e2f3392d8d97cd65de",
+      "bytes": 2135629,
+      "pages": 9,
+      "matches_proposal_and_source_records": true
+    },
+    {
+      "artifact": "artifact.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.official-html-5c12307c",
+      "sha256": "5c12307c7fd60bf91a8073bcae01e990f3555c009af1d0958ed864c85226f235",
+      "bytes": 41813,
+      "matches_proposal_and_source_records": true
+    }
+  ],
+  "direct_inspection": [
+    {
+      "source": "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c",
+      "artifact_pages": [
+        1,
+        4,
+        7
+      ],
+      "bounds": "Page1 attachment date/authority and Gregory heading; page4 John of Avila heading; page7 Hildegard optional-memorial heading, Missal and Lectionary blocks."
+    },
+    {
+      "source": "artifact.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.official-html-5c12307c",
+      "physical_lines": [
+        [
+          762,
+          790
+        ]
+      ],
+      "bounds": "Attachment date and optional-memorial heading; Missal and Lectionary blocks. The page's existing dicastery breadcrumb and canonical URL were also checked."
+    }
+  ],
+  "verified_appointments": [
+    {
+      "mass": "saint-hildegard-bingen-virgin-doctor-church",
+      "date": "09-17",
+      "proper_collect_printed": true,
+      "missal_common_options": [
+        {
+          "common": "Virgins",
+          "selection": "one virgin",
+          "page": 947
+        },
+        {
+          "common": "Holy Men and Women",
+          "selection": "nun",
+          "page": 960
+        }
+      ],
+      "lectionary_number": "641bis",
+      "lectionary_common_options": "Virgins or female saints [for religious]",
+      "citations": [
+        "Cant8:6-7; n731,1",
+        "Ps44:11-12,14-15,16-17; n733,1",
+        "Mt5:8; n741,3",
+        "Mt25:1-13; n742,11"
+      ],
+      "proposed_citations_match": true
+    },
+    {
+      "mass": "saint-john-henry-newman-priest-doctor",
+      "date": "10-09",
+      "proper_collect_printed": true,
+      "missal_common_options": [
+        {
+          "common": "Pastors",
+          "selection": "one pastor",
+          "page": 933
+        },
+        {
+          "common": "Doctors of the Church",
+          "page": 943
+        }
+      ],
+      "lectionary_number": "655bis",
+      "lectionary_common_options": "Pastors or Doctors of the Church",
+      "citations": [
+        "Sir39:8-14 (Greek6-11); n725,4",
+        "Ps39:2,4ab,7-8a,8b-9,10; n721,3",
+        "Mt23:9b,10b; n723,1",
+        "Mt13:47-52; n730,3"
+      ],
+      "proposed_citations_match": true
+    }
+  ],
+  "recommendations": [
+    {
+      "severity": "minor-locator",
+      "record": "Newman passage locus and proposal source locus",
+      "finding": "The stated lines770-790 cover the Missal and Lectionary blocks, while the date and optional-memorial heading used by the metadata are at lines762-764.",
+      "change": "Extend the source locus to lines762-790 or state an additional metadata-heading locus.",
+      "resolution": "Applied before canonical admission; current record hashes are pinned by the companion admission receipt."
+    },
+    {
+      "severity": "metadata-precision",
+      "record": "Both edition publication descriptions",
+      "finding": "The source explicitly dates the attached decree; that date is not independently shown to be the delivery's publication date.",
+      "change": "Describe each as an official Latin annex to the decree dated2021-01-25 or2025-11-09. Preserve the separate retrieval date.",
+      "resolution": "Applied before canonical admission; current record hashes are pinned by the companion admission receipt."
+    }
+  ],
+  "limits": [
+    "No prayer bodies were transcribed or assessed for publication.",
+    "The proposal correctly leaves candidate readings unactivated and does not infer a mandatory course, a default Common, complete target Common wording or English attestation.",
+    "Artifact hashes and sizes were recomputed; this review did not repeat the original HTTPS acquisition or independently verify its delivery timestamp.",
+    "No source-library sandbox rerun was needed for this semantic review; the parent reports eight records and zero errors.",
+    "The independent review was completed before canonical admission and made no canonical changes."
+  ],
+  "admission_receipt": "2026-11-12-official-additions-admission.json"
+}

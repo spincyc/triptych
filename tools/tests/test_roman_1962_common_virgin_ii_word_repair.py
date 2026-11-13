@@ -10,6 +10,7 @@ import tomllib
 import unittest
 ROOT = Path(__file__).resolve().parents[2]
 sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
+from _artifact_store import resolve as resolve_artifact
 from tools.tests import _source_batch_guards as BATCH_GUARDS
 import _calendars as C
 from _proper_latin import LatinKey, SURFACES, body_owners, decision_for, publication_records, read_sidecar
@@ -144,7 +145,7 @@ class CommonVirginIIWordRepairTests(unittest.TestCase):
         historical = record(ORACLES[0]["historical_passage_id"])
         self.assertEqual([[1,2]],historical["artifact_page_ranges"])
         extract = record(lane["historical_id"])
-        pdf = (ROOT/extract["path"]).read_bytes()
+        pdf = resolve_artifact(ROOT,extract["path"],fetch=False).read_bytes()
         self.assertEqual((lane["pdf_hash"],lane["pdf_byte_size"]),(digest(pdf),len(pdf)))
         self.assertEqual("public-domain",extract["rights_status"])
         self.assertIn("698, 699",extract["transformation"])
@@ -197,8 +198,19 @@ class CommonVirginIIWordRepairTests(unittest.TestCase):
         later = {LatinKey("comm-s-silvestri-i-papae-confessoris", "", "Collect", "", "", 1),
                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 5),
                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 6)}
+        prior_triduum = {LatinKey(mass, "", proper, "", "", 1) for mass, proper in (
+            ("easter-vigil", "Blessing of the Lighted Candle"),
+            ("palm-sunday", "Blessing of the Palms"),
+            ("good-friday", "Improperia"),
+            ("good-friday", "Antiphons at the Translation of the Blessed Sacrament"),
+        )}
+        reader_restored = {
+            LatinKey("good-friday", "", "Prayer after the Prostration", "", "", 1),
+            LatinKey("good-friday", "", "Third Prayer after Communion", "", "", 1),
+            LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 4),
+        }
         restored = {k for k in removed if prior_records[k]["publication_status"] == "permitted"}
-        self.assertEqual(restored, {anthony} | later)
+        self.assertEqual(restored, {anthony} | later | prior_triduum | reader_restored)
         legacy = dict(raw_records)
         legacy[anthony] = prior_records[anthony]
         self.assertEqual((1270,16,3), counts(legacy))
@@ -207,15 +219,21 @@ class CommonVirginIIWordRepairTests(unittest.TestCase):
         # The finite-sixteen authority restores Silvester; installation-a7619040
         # and its two source reviews map Palm English ordinals 6/7 to Latin 5/6.
         status = lambda row: (row["publication_status"], row["provenance_status"])
-        self.assertEqual(later, {k for k in prior_records if status(prior_records[k]) != status(legacy[k])})
+        intermediate = dict(legacy)
+        intermediate.update({k: prior_records[k] for k in later})
+        self.assertEqual((1273,13,3), counts(intermediate))
+        self.assertEqual(later, {k for k in intermediate if status(intermediate[k]) != status(legacy[k])})
+        self.assertEqual(prior_triduum | reader_restored,
+                         {k for k in prior_records if status(prior_records[k]) != status(intermediate[k])})
         bodies = {k: body for k, body, state in body_owners(self.document) if state == "present"}
         for k in restored:
             self.assertEqual(("permitted", "collated"), status(prior_records[k]))
             self.assertTrue(decision_for(k, bodies[k], self.records).permits(SURFACES))
+            self.assertFalse(decision_for(k, bodies[k] + " Amen.", self.records).permits(SURFACES))
         for k in removed - restored:
             self.assertEqual(status(raw_records[k]), status(prior_records[k]))
             self.assertFalse(decision_for(k, "Invented body.", self.records).permits(SURFACES))
-        self.assertEqual((1273,13,3), counts(prior_records))
+        self.assertEqual((1280,6,3), counts(prior_records))
     def test_inherited_two_word_corrections_are_not_pre1955_target_attestation(self):
         pre = C.load_document(ROOT/"src/sources/calendars","roman-pre-1955")
         index = C.mass_index(pre)

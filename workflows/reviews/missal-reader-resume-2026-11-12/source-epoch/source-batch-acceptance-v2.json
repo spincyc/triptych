@@ -1,0 +1,121 @@
+{
+  "accepted_by": "root coordinator",
+  "accepted_fixture_core_sha256": "e166e0150538ccec850ac8482b159b9f10776f5c9a3988a681d22b5f2c8ab542",
+  "accepted_on": "2026-11-12",
+  "activation_driver": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/activate_test_bookkeeping_v2.py",
+    "sha256": "35be6be8297757f057a374e9e192b333aa838da34f6ff9cd454270e2ecdf5709"
+  },
+  "bookkeeping_delta": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/test-bookkeeping-delta-v2.json",
+    "sha256": "101953da80b320c7d550d79fe3685f0043548748ae05db99dd39d21572ae19d7"
+  },
+  "bookkeeping_proof": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/test-bookkeeping-proof-v2.json",
+    "sha256": "3a4d2799fd056623f5b7b604c0407268ac2156275f3653b1aa47b2854b4cd419"
+  },
+  "boundaries": [
+    "No source body, source metadata, runtime module, permission, semantic fixture oracle or source-domain membership changes.",
+    "Exactly six captured test posthashes and their existing original-stream inverse specifications change; the seventh test is unpinned and stays outside the source manifest.",
+    "All original seventeen streams still reverse to the identical complete immutable Git bytes and refuse altered current bytes.",
+    "The previous accepted c5 fixture and input manifest reconstruct byte for byte from this compact delta; its receipt and all original evidence remain unchanged.",
+    "Prospective execution used scratch test modules against actual unchanged c5 source bytes. The actual post-activation suite remains required.",
+    "New test review/proof artifacts are accounting outputs, not source inputs or permissions."
+  ],
+  "c5_fixture_and_manifest_reconstruction": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/test-bookkeeping-delta-v2.json",
+    "sha256": "101953da80b320c7d550d79fe3685f0043548748ae05db99dd39d21572ae19d7"
+  },
+  "changed_test_input_pins": 6,
+  "fixture_core_serialization": "UTF-8 json.dumps(indent=2,sort_keys=True,ensure_ascii=False,allow_nan=False) plus LF, excluding exactly acceptance and state.",
+  "original_replay_streams_preserved": 17,
+  "parent_acceptance": {
+    "receipt_path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-batch-acceptance.json",
+    "receipt_sha256": "ba879f5812d527da3f73777cf2824fc7b8b6bf4029ad3afc6183471c6ec09fde",
+    "status": "accepted"
+  },
+  "parent_fixture_sha256": "c5dfb4a5f9f264cb23b535174e45cdbd054f3e877d393ab254df8c118bc274dc",
+  "parent_input_manifest_sha256": "8bff4e89d1cf0ed36686dc8ac38aa0dc92c4bc67edc479631f51cbab745501b9",
+  "pending_fixture_reconstruction": {
+    "expected_pending_fixture_sha256": "1e5d6bdad26e0dc93ac8b8ae814efc6f1ee529f5434602dd2b650d05bea8dd84",
+    "replace_exact_top_level_fields": {
+      "acceptance": {
+        "receipt_path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-batch-acceptance-v2.json",
+        "receipt_sha256": null,
+        "status": "pending"
+      },
+      "state": "Bounded test-input bookkeeping successor of accepted c5 epoch; exact test review and activation pending."
+    }
+  },
+  "pending_fixture_sha256": "1e5d6bdad26e0dc93ac8b8ae814efc6f1ee529f5434602dd2b650d05bea8dd84",
+  "post_activation_tests": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/post-activation-tests.json",
+    "sha256": "b16c862f817924d334e22b9acbc2bdaa6f6edb18ab34e3bead5a1ac7c041fca9"
+  },
+  "prospective_test_log": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/test-compatibility-prospective-tests-v2.log",
+    "sha256": "e98c4ff8f4793c055a8ba027760de7ea0e9b7254023566b33df939a178fd6d51"
+  },
+  "prospective_test_proof": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/test-compatibility-prospective-proof-v2.json",
+    "sha256": "d84b8ac7240e8ed0c0d00348c19a7b61e7aecb9eae996d21b4453a57a0c8e466"
+  },
+  "root_test_compatibility_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/test-compatibility-root-review.json",
+    "sha256": "3cf85e3747052f38cb6d8e5bc2b96b00a37d88249f7ffc5cd12838fd52dc2bc4"
+  },
+  "schema": "triptych-source-batch-acceptance/v2",
+  "scope": "missal-source-batch",
+  "semantic_oracle_fields_sha256": "98c1e230be08f8d42e638570d102f9ab28fcbc9f1ebca847fc98e9b9c555aa67",
+  "semantic_oracle_fields_unchanged": [
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "corrected_latin_keys",
+    "cross_supplement_specs",
+    "current_roman_document_sha256",
+    "direct_pd_permitted_specs",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_coverage",
+    "english_historical_absence_scope",
+    "english_historical_source_files",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_rows",
+    "latin_baseline_supplemented_keys",
+    "latin_current_bodies",
+    "latin_current_rows",
+    "latin_current_supplements",
+    "latin_permitted_keys",
+    "new_latin_keys",
+    "new_projection_artifact_specs",
+    "new_projection_specs",
+    "postconciliar_current_english_absence",
+    "postconciliar_current_english_positive",
+    "projection_baseline_source_files",
+    "reviewed_transition_contract_sha256",
+    "roman_current_english_absence",
+    "roman_current_english_owner_universe",
+    "roman_current_english_positive",
+    "roman_current_execution_source_hashes",
+    "schema",
+    "source_input_manifest_path"
+  ],
+  "source_epoch_paths": 7449,
+  "source_input_manifest_path": "tools/tests/fixtures/missal-source-batch-20261023-inputs.json",
+  "source_input_manifest_sha256": "f427c98032220558654aef37d8ccc483ed8dcccb22e4678bbfcf8cdeed4c4658",
+  "source_permission_created_by_this_receipt": false,
+  "status": "accepted",
+  "strict_runtime_helper_sha256": "556bb3530c2176bfa66c7d656c81a83c976b89fea97b2592fc91f8d24be32bc0",
+  "successor_kind": "exact-test-input-bookkeeping-of-accepted-c5-epoch",
+  "test_file_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/test-compatibility-files-v2.json",
+    "sha256": "00a96696431e3658e16b106bcfa4134bd072713b9fcc87b425d7b2f2683a563e"
+  },
+  "test_patch": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/test-compatibility-v2.patch",
+    "sha256": "53e7c6d0be13f01369020b30fd5f6fbe11b013be23f68bfdad5fbfb947dc6c2a"
+  },
+  "unchanged_input_pins": 7443,
+  "unchanged_runtime_modules": 24
+}

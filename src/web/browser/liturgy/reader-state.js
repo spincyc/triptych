@@ -28,7 +28,7 @@
   const STATE_FIELDS = Object.freeze([
     'schema', 'entrance', 'civilDate', 'edition', 'calendar', 'formulary', 'browse',
     'bible', 'languages', 'selectedReadableFormulary', 'requestedMode', 'options',
-    'apparatus', 'form', 'cycle', 'alternative', 'properChoices', 'semanticLocation', 'sourceHooks',
+    'apparatus', 'form', 'cycle', 'alternative', 'properChoices', 'orationMass', 'orationTerritory', 'semanticLocation', 'sourceHooks',
     'coverage', 'unresolvedChoices', 'explicitAbsences', 'comparison', 'textDisplay', 'scriptureCompanion'
   ]);
 
@@ -67,7 +67,7 @@
   const DAY_KEYS = Object.freeze([
     'date', 'missal', 'bible', 'orations', 'why', 'ordinary',
     'ordinary-lang', 'rubrics', 'mass', 'form', 'translation-witness', 'mode', 'location', 'text-display', 'scripture-companion',
-    'compare', 'peer-missal', 'territory', 'proper-choices'
+    'compare', 'peer-missal', 'territory', 'proper-choices', 'oration-mass', 'oration-territory'
   ]);
   const PROPERS_KEYS = Object.freeze([
     'missal', 'type', 'mass', 'bible', 'orations',
@@ -755,6 +755,16 @@
     if (has(value, 'form') && !nonempty(value.form)) {
       errors.push(issue('form-id', 'form', 'form must be a stable nonempty id when supplied'));
     }
+    if (has(value, 'orationMass') && (value.entrance !== 'day' ||
+        typeof value.orationMass !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.orationMass))) {
+      errors.push(issue('oration-mass', 'orationMass',
+        'a prayer selection must name one exact Mass on the Day entrance'));
+    }
+    if (has(value, 'orationTerritory') && (!value.orationMass ||
+        typeof value.orationTerritory !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value.orationTerritory))) {
+      errors.push(issue('oration-territory', 'orationTerritory',
+        'a territorial prayer selection requires its explicit Mass and exact branch'));
+    }
     if (has(value, 'alternative') && value.alternative !== null) {
       assertIdentity(errors, value.alternative, 'alternative');
     } else if (has(value, 'alternative')) {
@@ -1383,6 +1393,12 @@
           'explicit Proper choices must be one JSON mapping', 'url'));
       }
     }
+    if (parsed.entrance === 'day' && has(parsed.recognized, 'oration-mass')) {
+      state.orationMass = parsed.recognized['oration-mass'];
+    }
+    if (parsed.entrance === 'day' && parsed.present.indexOf('oration-territory') >= 0) {
+      state.orationTerritory = parsed.recognized['oration-territory'];
+    }
 
     // Compare peers are never taken from preferences or manifest order. A
     // shared URL identifies the left side with the existing entrance keys and
@@ -1609,6 +1625,8 @@
       pairs.push(['rubrics', state.apparatus.rubrics ? '1' : '0']);
       if (state.selectedReadableFormulary) pairs.push(['mass', state.selectedReadableFormulary.id]);
       if (state.form) pairs.push(['form', state.form]);
+      if (state.orationMass) pairs.push(['oration-mass', state.orationMass]);
+      if (state.orationTerritory) pairs.push(['oration-territory', state.orationTerritory]);
       if (state.languages.translationWitness) {
         pairs.push(['translation-witness', state.languages.translationWitness]);
       }

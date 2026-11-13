@@ -1,0 +1,44 @@
+{
+  "schema": "triptych-postconciliar-legacy-four-root-adoption/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted",
+  "correction_declaration": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-legacy-four/correction-declaration.json",
+    "sha256": "0916fb56c38eaf8e9d43b34c71d52e0755f6d6674a0453b95f05a30779d7994c"
+  },
+  "independent_reviews": [
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-legacy-four/independent-three-review.json",
+      "sha256": "72749b54d8186aa3a041eaebe1253e216712b06efa799b22668d8f46f93fea2d"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-legacy-four/independent-fourth-review.json",
+      "sha256": "82f57bb1b75216b9881608224e201a57b1234fbf00e7f778811585957d94a8f1"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-legacy-four/independent-metadata-successor-review.json",
+      "sha256": "b780bb3346fbee34e4308a19ccea67028c57b355cb854d2c7136101e77bde635"
+    }
+  ],
+  "review_performed": [
+    "Read all four complete old/new English bodies, historical source readings, stated target differences and separate conclusion sources.",
+    "Read both independent source/fidelity reviews and the metadata-successor review; exact hashes bind their actual image inspection. This reviewer does not claim to have repeated their independent page-image work."
+  ],
+  "decisions": [
+    "Advent 2 and Advent 3 offerings: accept removal of the excess terminal periods. The complete short ending is independently witnessed and supported by the identified prayer-type rule; an abbreviated historical cue is not silently declared a full source formula.",
+    "Easter 4 Collect: accept the complete original study-English rendering of the independently old long conclusion. Preserve the existing petition and disclose its exact historical abridgment. This does not newly certify whole target-edition fidelity.",
+    "Easter 4 offerings: accept rejoice for the intransitive gratulari. Preserve all remaining wording and explicitly retain the nominative/genitive historical-target difference without asserting an unsupported syntactic attachment.",
+    "Accept the three successor Wilson bindings to the already registered exact whole artifact and original page coordinates. This establishes the historical expressions without granting redistribution or offline delivery of the full digitized PDF."
+  ],
+  "limits": [
+    "Exactly four source/fidelity repairs, zero new body coverage. No remaining legacy70 batch approval, authenticated printed2002 or exact2008 claim.",
+    "English remains project study English, neither approved liturgical English nor for recitation.",
+    "No source binary or new binary artifact manifest is installed."
+  ],
+  "integration": {
+    "source_epoch": "pending exact four-entry correction exception",
+    "consumer_checks": "pending",
+    "release_gates": "pending"
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "all_runtime_code_unchanged": true,
+  "all_semantic_oracles_unchanged": true,
+  "altered_current_replay_refusals": 17,
+  "c5_fixture_reconstructed_byte_equal": true,
+  "c5_manifest_reconstructed_byte_equal": true,
+  "candidate_fixture": {
+    "path": ".scratch/source-epoch/test-compatibility/bookkeeping/pending-fixture-v2.json",
+    "sha256": "1e5d6bdad26e0dc93ac8b8ae814efc6f1ee529f5434602dd2b650d05bea8dd84"
+  },
+  "candidate_manifest": {
+    "path": ".scratch/source-epoch/test-compatibility/bookkeeping/input-manifest-v2.json",
+    "sha256": "f427c98032220558654aef37d8ccc483ed8dcccb22e4678bbfcf8cdeed4c4658"
+  },
+  "canonical_writes": 0,
+  "changed_input_paths": [
+    "tools/tests/test_proper_latin.py",
+    "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py",
+    "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py",
+    "tools/tests/test_roman_1962_latin22_phase5.py",
+    "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py",
+    "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+  ],
+  "current_actual_input_bytes_verified": 7449,
+  "delta": {
+    "path": ".scratch/source-epoch/test-compatibility/bookkeeping/bookkeeping-delta-v2.json",
+    "sha256": "101953da80b320c7d550d79fe3685f0043548748ae05db99dd39d21572ae19d7"
+  },
+  "original_replays": [
+    {
+      "after_sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+      "original_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+      "path": "src/sources/calendars/postconciliar/propers.yaml"
+    },
+    {
+      "after_sha256": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953",
+      "original_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+      "path": "src/sources/calendars/roman-1962/propers.yaml"
+    },
+    {
+      "after_sha256": "117769a895aacabe098a438fccf19f1a6ae7fedd16f9c867374c176e0020ed38",
+      "original_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+    },
+    {
+      "after_sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+      "original_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "6b9b70f19e7d1473619a18022ce91ca430df36485b776933b4313ec85116ce57",
+      "original_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+      "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml"
+    },
+    {
+      "after_sha256": "e1898bf40bc10db519b48da5eab6cc273308590225f191f395847a7e97196658",
+      "original_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml"
+    },
+    {
+      "after_sha256": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf",
+      "original_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "497e9e6511f5191576dfbedfe14c55a2ec67c1f4d0e420b73a4a0a82d1885eae",
+      "original_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+      "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml"
+    },
+    {
+      "after_sha256": "075b4cb36c55fb3cd5b2719eb8496e417c57316d806c1532ec878e36a1e1d18f",
+      "original_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+      "path": "tools/tests/test_proper_latin.py"
+    },
+    {
+      "after_sha256": "604a8a9592bafe0b9bcc03d8879f86805af58d4f25b3b17f90f8647dc89f07f3",
+      "original_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py"
+    },
+    {
+      "after_sha256": "50a5df73661d88e02028073bcb93e97d8c29d3e6d680c9d0338f17d60f54f063",
+      "original_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+      "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py"
+    },
+    {
+      "after_sha256": "cb9265ac684392086cfb9347cb9c5e778fda2563e48b5f5d431ed811ae15fa6d",
+      "original_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+      "path": "tools/tests/test_roman_1962_english13_phase5.py"
+    },
+    {
+      "after_sha256": "e7067e3fc899d473c2619da91789893b102960e88531eafb3fb5114d9aa4627f",
+      "original_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+      "path": "tools/tests/test_roman_1962_english31_phase4.py"
+    },
+    {
+      "after_sha256": "e61a6847c080ba9ee4d922339ec05f20cbc98da4d289f3d54f1b47b6018edb91",
+      "original_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+      "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py"
+    },
+    {
+      "after_sha256": "ddb555d009e04cc11f89f2907678a94bb7af517d5cd71b8e6a238d8f6588e23c",
+      "original_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+      "path": "tools/tests/test_roman_1962_latin22_phase5.py"
+    },
+    {
+      "after_sha256": "e97c80208342900b5b2b313230627f454aee11b85d6dbb2ef9aef2f8d1f22d6f",
+      "original_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+      "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py"
+    },
+    {
+      "after_sha256": "e623d07cb6969c87cbfd59551c159fddaf046ae057cc87be174cc4a7c30aaa7d",
+      "original_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+      "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py"
+    }
+  ],
+  "parent_fixture_sha256": "c5dfb4a5f9f264cb23b535174e45cdbd054f3e877d393ab254df8c118bc274dc",
+  "parent_manifest_sha256": "8bff4e89d1cf0ed36686dc8ac38aa0dc92c4bc67edc479631f51cbab745501b9",
+  "patch_sha256": "53e7c6d0be13f01369020b30fd5f6fbe11b013be23f68bfdad5fbfb947dc6c2a",
+  "permission_created": false,
+  "runtime_code_sha256": {
+    "scripts/_artifact_store.py": "49580bff96aa72077b34aecd41bf73c08416729dcf8a55081055fbd4f9413a14",
+    "scripts/_bible_artifacts.py": "b662b5f65144af78c7d708627963f16e4aafdd254ed128c51d927984354c4069",
+    "scripts/_bible_editions.py": "0d51c2f607a146ab5d248b23ee5382f5abd31f388eded4dece10d6458c994125",
+    "scripts/_browser_product_inputs.py": "91587639e0e577a771932c1f5c81c6a80bde60f48c7dc6d96a2305bb1320fde3",
+    "scripts/_browser_products.py": "07acd089bbf2d4aa1598f8042bdf3036e478c92e89d0ef4071a46bcc58b36c70",
+    "scripts/_calendars.py": "fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7",
+    "scripts/_lasance_publication.py": "c56117d625a887f98804268fa9f6d9876a5164e0ea9b5b37b0124e4154e7c93d",
+    "scripts/_loci.py": "75f85aa6bf7dd5231959b346a8db0bb42ad33d2ff37ee9be5171b9d5185b355e",
+    "scripts/_missal_coverage.py": "10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70",
+    "scripts/_name_execution.py": "15a6c35b338123569c674aee3a3158ecf5318cf87b56520b947473680734c7b6",
+    "scripts/_oration_endings.py": "6450ff3667f74fedcbd3874e928d46de23a3f9186519ed63f61f41204cb1113c",
+    "scripts/_oration_execution.py": "34dda1349096fa9d7fc7fea37e2cf9d0c8fb7e3d536ff7bbd0e1beac445c120a",
+    "scripts/_proper_finite_latin_20261029.py": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+    "scripts/_proper_latin.py": "852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a",
+    "scripts/_proper_qualified_latin.py": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949",
+    "scripts/_proper_target_overrides.py": "5f002ec8ee444c26c17399f5dcf7c761203d099bcd42a871d5fbf112bb4b1e66",
+    "scripts/_psalms.py": "87312f2aef24dfa0990bceec392f6d8ec264a2593555fe46ff72ec80849bacf7",
+    "scripts/_reviewed_permissions.py": "a7caecd6d160dd5fd3cc7ac806d6abaa4030c4435bc7e6fffd4e32d62d311d33",
+    "scripts/_safe_files.py": "dafefcf19315ddfb5503c0044701360073c5570ce44a8843cb29a4f5f8a45161",
+    "scripts/_source_delivery_policy.py": "631048d3cbf73bc61c99702e1fd53f6e813980c0b2f40b145184a393ff68edef",
+    "scripts/_tooling.py": "9ad9ba33f59598a8d27b1d852b9379c57ae80406f845778f67ac668e052d389f",
+    "tools/mass-propers": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+    "tools/source-library": "963a9ac27c43d0ab93c568271401a865d5252854343e059d2c4208787fefb450",
+    "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+  },
+  "schema": "triptych-source-epoch-test-bookkeeping-proof/v1",
+  "semantic_fields": [
+    "baseline_revision",
+    "baseline_roman_document_sha256",
+    "corrected_latin_keys",
+    "cross_supplement_specs",
+    "current_roman_document_sha256",
+    "direct_pd_permitted_specs",
+    "english_219_keys",
+    "english_baseline_source_files",
+    "english_coverage",
+    "english_historical_absence_scope",
+    "english_historical_source_files",
+    "latin_baseline_bodies",
+    "latin_baseline_present_keys",
+    "latin_baseline_rows",
+    "latin_baseline_supplemented_keys",
+    "latin_current_bodies",
+    "latin_current_rows",
+    "latin_current_supplements",
+    "latin_permitted_keys",
+    "new_latin_keys",
+    "new_projection_artifact_specs",
+    "new_projection_specs",
+    "postconciliar_current_english_absence",
+    "postconciliar_current_english_positive",
+    "projection_baseline_source_files",
+    "reviewed_transition_contract_sha256",
+    "roman_current_english_absence",
+    "roman_current_english_owner_universe",
+    "roman_current_english_positive",
+    "roman_current_execution_source_hashes",
+    "schema",
+    "source_input_manifest_path"
+  ],
+  "source_domain_added": [],
+  "source_domain_dropped": [],
+  "status": "pass",
+  "test_code_old_bytes_reconstructible": 7,
+  "unchanged_input_paths": 7443,
+  "unchanged_semantic_fields_sha256": "98c1e230be08f8d42e638570d102f9ab28fcbc9f1ebca847fc98e9b9c555aa67"
+}

@@ -13,8 +13,11 @@ QUALIFIED_IDENTITIES={G.canonical({'course':'','cycle':'','form':'','mass':m,'oc
 HISTORICAL_FINITE_RAW=(ROOT/'workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json').read_bytes()
 if hashlib.sha256(HISTORICAL_FINITE_RAW).hexdigest()!='920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3':raise AssertionError('exact original sixteen-scope authority')
 HISTORICAL_FINITE=json.loads(HISTORICAL_FINITE_RAW)
-FINITE_RAW=(ROOT/'workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json').read_bytes()
-if hashlib.sha256(FINITE_RAW).hexdigest()!='495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e':raise AssertionError('exact adopted twenty-two-scope authority')
+PRIOR_FINITE_RAW=(ROOT/'workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json').read_bytes()
+if hashlib.sha256(PRIOR_FINITE_RAW).hexdigest()!='495e5b3672cccb8f2c3ea07398104c4b72026ffb7139de21d25087edcab1f48e':raise AssertionError('exact preceding twenty-two-scope authority')
+PRIOR_FINITE=json.loads(PRIOR_FINITE_RAW)
+FINITE_RAW=(ROOT/'workflows/reviews/missal-reader-resume-2026-11-12/roman-six/finite-latin-authority-v4.json').read_bytes()
+if hashlib.sha256(FINITE_RAW).hexdigest()!='9d9bd0cc9a36fd6bbf4b474631d0944baf260f5a3e91b5612c4a5031363e37b7':raise AssertionError('exact adopted twenty-eight-scope authority')
 FINITE_QUALIFIED=json.loads(FINITE_RAW)
 QUALIFIED_IDENTITIES.update(G.key_string(LatinKey(*scope['key']))
  for scope in FINITE_QUALIFIED['scopes'])
@@ -26,7 +29,17 @@ RESTORED_IDENTITIES={G.key_string(LatinKey(m,'',p,'','',o)) for m,p,o in (
  ('easter-vigil','Blessing of the Lighted Candle',1),
  ('palm-sunday','Blessing of the Palms',1),
  ('good-friday','Improperia',1),
- ('good-friday','Antiphons at the Translation of the Blessed Sacrament',1))}
+ ('good-friday','Antiphons at the Translation of the Blessed Sacrament',1),
+ ('good-friday','Prayer after the Prostration',1),
+ ('good-friday','Third Prayer after Communion',1),
+ ('palm-sunday','Procession Antiphon',4))}
+READER_SIX_IDENTITIES={G.key_string(LatinKey(m,'',p,'','',o)) for m,p,o in (
+ ('beatae-mariae-virginis-reginae','Postcommunion',1),
+ ('beatae-mariae-virginis-reginae','Secret',1),
+ ('comm-s-urbani-i-papae-martyris','Collect',1),
+ ('good-friday','Prayer after the Prostration',1),
+ ('good-friday','Third Prayer after Communion',1),
+ ('palm-sunday','Procession Antiphon',4))}
 class CurrentSourceBatchLatinTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
@@ -50,7 +63,8 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
   # Silvester; the two accepted Palm source reviews restore direct-Latin
   # ordinals5/6 (English target ordinals6/7 include an earlier Scripture node).
   # The separately adopted next seven restore four further removed
-  # bundles above. Every other original removed owner keeps its refusal.
+  # bundles above. The reader-six adoption restores the two Good Friday
+  # prayers and direct-Latin Palm ordinal4. Other removed owners keep refusal.
   restored=removed & corrected
   self.assertEqual(restored,RESTORED_IDENTITIES)
   for identity in removed-restored:
@@ -59,8 +73,13 @@ class CurrentSourceBatchLatinTests(unittest.TestCase):
   self.assertEqual(len(HISTORICAL_FINITE['scopes']),16)
   current={tuple(s['key']):s for s in FINITE_QUALIFIED['scopes']}
   for scope in HISTORICAL_FINITE['scopes']:self.assertEqual(scope,current[tuple(scope['key'])])
-  self.assertEqual(len(FINITE_QUALIFIED['scopes']),22)
-  self.assertEqual(len(QUALIFIED_IDENTITIES),24)
+  self.assertEqual(len(PRIOR_FINITE['scopes']),22)
+  for scope in PRIOR_FINITE['scopes']:self.assertEqual(scope,current[tuple(scope['key'])])
+  preceding={G.key_string(LatinKey(*s['key'])) for s in PRIOR_FINITE['scopes']}
+  actual={G.key_string(LatinKey(*s['key'])) for s in FINITE_QUALIFIED['scopes']}
+  self.assertEqual(actual-preceding,READER_SIX_IDENTITIES)
+  self.assertEqual(len(FINITE_QUALIFIED['scopes']),28)
+  self.assertEqual(len(QUALIFIED_IDENTITIES),30)
   for identity in self.frozen['new_latin_keys']+self.frozen['corrected_latin_keys']:
    with self.subTest(identity=identity):
     key,body,state=self.bodies[identity];self.assertEqual(state,'present')

@@ -1,0 +1,262 @@
+{
+  "schema": "triptych-postconciliar-official-additions-admission/v1",
+  "reviewed_on": "2026-11-12",
+  "scope": "Two official-addition Collect appointment facts and eight metadata-only source records.",
+  "disposition": "source-metadata-and-unpublished-appointment-admitted",
+  "calendar_path": "src/sources/calendars/postconciliar/propers.yaml",
+  "source_records": [
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-newman-additions-2025/editions/2025-official-latin-annex/artifacts/official-html-5c12307c/artifact.toml",
+      "id": "artifact.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.official-html-5c12307c",
+      "sha256": "3e12a33ae873e0c51a6d1821c5caac1433e8f8c3c1d84117911b45c0b0035bfa"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-newman-additions-2025/editions/2025-official-latin-annex/edition.toml",
+      "id": "edition.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex",
+      "sha256": "ec7032aee0c053078e63209c12a2225a947f8d9be35bed6d3eef06e33c770c36"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-newman-additions-2025/editions/2025-official-latin-annex/passages/missal-and-lectionary-appointments.toml",
+      "id": "passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments",
+      "sha256": "67c8ffbf076dc288b83c75b18050718d04fc6cef2d6383fb8149275a5c1a64ae"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-newman-additions-2025/work.toml",
+      "id": "work.catholic-church.roman-calendar-newman-additions-2025",
+      "sha256": "5bee4e9de1392ade2f6e9f8dda522f2e09161cb5478b61c38e5e5b066ed8b387"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-three-doctors-additions-2021/editions/2021-official-latin-annex/artifacts/official-pdf-7b776f5c/artifact.toml",
+      "id": "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c",
+      "sha256": "d1c9fc3f82c9be9bf9779164e802ea01689382d8c2dbe66ac8cbeaa971da89e2"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-three-doctors-additions-2021/editions/2021-official-latin-annex/edition.toml",
+      "id": "edition.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex",
+      "sha256": "59c90fec38ea2df6c607b03589560d4952def59658d4ba6675fa64f62df17692"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-three-doctors-additions-2021/editions/2021-official-latin-annex/passages/missal-and-lectionary-appointments.toml",
+      "id": "passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments",
+      "sha256": "eda8e492b0df0a8360de224b52b0c3c7d17f6f81c810fcda0728eefb37b7e5f5"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-three-doctors-additions-2021/work.toml",
+      "id": "work.catholic-church.roman-calendar-three-doctors-additions-2021",
+      "sha256": "f91cbfdf17bb2ad4a7e0506c91bfa16fa466afddb06ea29530a2a071cef49a8f"
+    }
+  ],
+  "source_artifacts": [
+    {
+      "key": "saint-hildegard-bingen-virgin-doctor-church",
+      "artifact_id": "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c",
+      "passage_id": "passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments",
+      "sha256": "7b776f5c92eace137ff5a7dc3c1c8c2db229f7e75fb347e2f3392d8d97cd65de",
+      "bytes": 2135629,
+      "locus": "Hildegard of Bingen, 17 September; In Missale Romanum and In Ordinem lectionum Missae, no. 641bis; artifact and printed page 7"
+    },
+    {
+      "key": "saint-john-henry-newman-priest-doctor",
+      "artifact_id": "artifact.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.official-html-5c12307c",
+      "passage_id": "passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments",
+      "sha256": "5c12307c7fd60bf91a8073bcae01e990f3555c009af1d0958ed864c85226f235",
+      "bytes": 41813,
+      "locus": "John Henry Newman, 9 October; In Missale Romanum and In Ordinem lectionum Missae, no. 655bis; official HTML physical lines 762-790"
+    }
+  ],
+  "appointments": [
+    {
+      "key": "saint-hildegard-bingen-virgin-doctor-church",
+      "before_sha256": "76e4ee64f3347ca0f5ca815232270c44e6333362a0a9f4eb1e37c2e0d224b044",
+      "after_sha256": "de1881f2f968b5dc8db64fb6a6d23859a4ac200fd2e9917ae2ff8d1686674aa5",
+      "before": {
+        "key": "saint-hildegard-bingen-virgin-doctor-church",
+        "name": "Saint Hildegard of Bingen, Virgin and Doctor of the Church",
+        "registry": "pc-09-17-hildegard",
+        "date": "09-17",
+        "rank": "Optional memorial",
+        "kind": "sanctoral",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "missal-formulary",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "notes": "Stable calendar identity split from a formerly composite optional-memorial entry. No formulary body is inferred or invented."
+      },
+      "after": {
+        "key": "saint-hildegard-bingen-virgin-doctor-church",
+        "name": "Saint Hildegard of Bingen, Virgin and Doctor of the Church",
+        "registry": "pc-09-17-hildegard",
+        "date": "09-17",
+        "rank": "Optional memorial",
+        "kind": "sanctoral",
+        "text_status": {
+          "state": "partial",
+          "scope": "missal-formulary",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+            }
+          ]
+        },
+        "notes": "Stable calendar identity split from a formerly composite optional-memorial entry. No formulary body is inferred or invented. The complete proper Collect is held in the exact official annex registered below, but no body is published. The remaining target Missal Common body and source-owned reading selection remain unresolved; the source directions do not select a complete Common form. Appointment evidence: passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments",
+        "propers": [
+          {
+            "name": "Collect",
+            "source": "composed",
+            "text_status": {
+              "state": "unavailable",
+              "scope": "proper-body",
+              "body_status": "held-unpublished",
+              "reasons": [
+                {
+                  "kind": "rights-withheld",
+                  "source_id": "artifact.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.official-pdf-7b776f5c"
+                }
+              ]
+            },
+            "notes": "The official annex prints a complete proper Collect. Its exact image/HTML exemplar is acquired, so no-exemplar is not the source state. No prayer body is supplied; per-text publication assessment and English study translation remain open. Appointment evidence: passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments"
+          }
+        ]
+      }
+    },
+    {
+      "key": "saint-john-henry-newman-priest-doctor",
+      "before_sha256": "9dcf166133d58e1e0227d3358a0f70c7e7b4f72eb2807cb00a534ff6f6ca1cd2",
+      "after_sha256": "4df42c26d0e8eb365bd517c11a3d07a5574082a67a62e3932700f71cb4d17070",
+      "before": {
+        "key": "saint-john-henry-newman-priest-doctor",
+        "name": "Saint John Henry Newman, Priest and Doctor of the Church",
+        "registry": "pc-10-09-newman",
+        "date": "10-09",
+        "rank": "Optional memorial",
+        "kind": "sanctoral",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "missal-formulary",
+          "reasons": [
+            {
+              "kind": "no-exemplar"
+            }
+          ]
+        },
+        "notes": "Stable calendar identity split from a formerly composite optional-memorial entry. No formulary body is inferred or invented."
+      },
+      "after": {
+        "key": "saint-john-henry-newman-priest-doctor",
+        "name": "Saint John Henry Newman, Priest and Doctor of the Church",
+        "registry": "pc-10-09-newman",
+        "date": "10-09",
+        "rank": "Optional memorial",
+        "kind": "sanctoral",
+        "text_status": {
+          "state": "partial",
+          "scope": "missal-formulary",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+            }
+          ]
+        },
+        "notes": "Stable calendar identity split from a formerly composite optional-memorial entry. No formulary body is inferred or invented. The complete proper Collect is held in the exact official annex registered below, but no body is published. The remaining target Missal Common body and source-owned reading selection remain unresolved; the source directions do not select a complete Common form. Appointment evidence: passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments",
+        "propers": [
+          {
+            "name": "Collect",
+            "source": "composed",
+            "text_status": {
+              "state": "unavailable",
+              "scope": "proper-body",
+              "body_status": "held-unpublished",
+              "reasons": [
+                {
+                  "kind": "rights-withheld",
+                  "source_id": "artifact.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.official-html-5c12307c"
+                }
+              ]
+            },
+            "notes": "The official annex prints a complete proper Collect. Its exact image/HTML exemplar is acquired, so no-exemplar is not the source state. No prayer body is supplied; per-text publication assessment and English study translation remain open. Appointment evidence: passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments"
+          }
+        ]
+      }
+    }
+  ],
+  "independent_review": "2026-11-12-official-additions-source-review.json",
+  "limits": [
+    "The exact Latin Collect exemplars are held but their bodies remain unpublished; this admission grants no source publication permission.",
+    "No prayer wording, translation, incipit, public source payload, or approved English is added.",
+    "Common directions and reading choices are not activated or changed. No target-2008 complete Common identity is inferred.",
+    "Mass-level partial witness-gap status preserves unresolved remaining formulary and selection requirements.",
+    "No Latin provenance removal row is created because these previously unrepresented Collects had no public Latin body.",
+    "This receipt establishes no completed bilingual Mass and no annual completeness."
+  ],
+  "validation": {
+    "state": "canonical-source-graph-and-proper-statuses-verified",
+    "source_library": {
+      "command": "tools/source-library validate",
+      "exit_code": 0,
+      "result": "source-library valid: artifact=11024 corpus=5 edition=14333 passage=9697 segment=10822 work=10961 bindings=4615 external-witnesses=711:metadata-only",
+      "scope": "Metadata and graph validation; restricted source bytes were not publicly retained or redistributed."
+    },
+    "proper_statuses": {
+      "command": "tools/mass-propers --calendar postconciliar --mass saint-hildegard-bingen-virgin-doctor-church --mass saint-john-henry-newman-priest-doctor --format json show",
+      "exit_code": 0,
+      "results": [
+        {
+          "key": "saint-hildegard-bingen-virgin-doctor-church",
+          "mass_text_status": {
+            "scope": "missal-formulary",
+            "state": "partial"
+          },
+          "proper_name": "Collect",
+          "proper_text_status": {
+            "scope": "proper-body",
+            "state": "unavailable"
+          },
+          "projected_latin": {
+            "available": false,
+            "held": false,
+            "state": "unavailable",
+            "target": "Collect",
+            "withheld": true
+          }
+        },
+        {
+          "key": "saint-john-henry-newman-priest-doctor",
+          "mass_text_status": {
+            "scope": "missal-formulary",
+            "state": "partial"
+          },
+          "proper_name": "Collect",
+          "proper_text_status": {
+            "scope": "proper-body",
+            "state": "unavailable"
+          },
+          "projected_latin": {
+            "available": false,
+            "held": false,
+            "state": "unavailable",
+            "target": "Collect",
+            "withheld": true
+          }
+        }
+      ]
+    },
+    "source_record_hashes_match_reviewed_package": true,
+    "exact_two_node_postimages_match": true,
+    "common_recovery": {
+      "command": "python -m unittest discover -s tools/tests -p test_postconciliar_sanctoral_commons_inventory.py",
+      "tests_run": 7,
+      "existing_failures": 3,
+      "errors": 0,
+      "unchanged_before_after": true,
+      "row_count": 167,
+      "details": "The same three assertions fail against the before-install snapshot and current graph: wrong_edition_evidence differs for Saint Jerome Emiliani and Saint George, plus the aggregate exact-note comparison. Both node sets derive the identical recovery rows. No recovery inventory or Common direction was changed."
+    }
+  }
+}

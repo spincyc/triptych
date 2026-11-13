@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-eufymia-secret-20261112"
+edition_id = "edition.catholic-church.sacramentarium-veronense.feltoe-1896"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The bounded prayer belongs to the identified 1896 Feltoe printing, public domain in the United States by its publication date under the existing registered assessment. This transcription carries only its actual historical prayer; it asserts no identity or automatic clearance for the 1962 adaptation."
+derived_from = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"
+provenance = "Fresh image reading on 2026-11-12 at 200 dpi and 400 dpi, using complete held PDF bytes and surrounding source context. September, XVI Kal. Oct. In natale scae Eufymiae, II. Item alia, first prayer, printed p. 105 lines 28-30 / PDF artifact p. 129."
+retrieved = "2026-11-12"
+sha256 = "f4971dd237cda4356f169f5a9b95e8279db836cd117507e599f6fc5f7f3abe7c"
+byte_size = 143
+path = "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-eufymia-secret-20261112/latin.txt"
+indexable = true
+encoding = "utf-8"
+transformation = "Join three printed lines; explicitly expand printed Dne with overline to Domine and scae with overline to sanctae. Preserve Eufymiae, natalicia, maiestati, source case/pointing and the actual lowercase abbreviated per. cue without expansion."

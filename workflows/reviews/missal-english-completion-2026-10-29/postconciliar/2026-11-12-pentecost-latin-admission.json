@@ -1,0 +1,238 @@
+{
+  "schema": "triptych-finite-exact-target-latin-admission/v1",
+  "recorded_on": "2026-11-12",
+  "state": "source-accepted; generated consumer and source-epoch closure pending",
+  "scope": "One alternative after the third reading in the official2008 extended Pentecost vigil; no implicit default or wholeMissal completion",
+  "target": [
+    "pentecost",
+    "extended-vigil",
+    "Prayer after the Third Reading",
+    "all",
+    1
+  ],
+  "latin_key": [
+    "pentecost",
+    "Vigil Mass, extended form",
+    "Prayer after the Third Reading",
+    "",
+    "",
+    1
+  ],
+  "candidate_sha256": "331a919f5ab75aee46ce6434f41917a8db29342b843b1a9ee603e6410bac363b",
+  "source_review_path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-pentecost-latin-source-review.json",
+  "source_review_sha256": "1b81ff2fd74bc1d82816d6e063bc58055736583a1913035742c62bd4bc7dba22",
+  "root_decision": "Accepted the unchanged whole public-domain petition and separately attested conventional closing response. No expressive petition recasting occurs; authority is finite to this exact complete expression. Exact official2008 excerpt and whole-expression source/publication merits were read and accepted independently and by Root.",
+  "before_proper": {
+    "name": "Prayer after the Third Reading",
+    "source": "composed",
+    "incipit": "Domine, Deus virtutum",
+    "text_status": {
+      "state": "unavailable",
+      "scope": "proper-body",
+      "reasons": [
+        {
+          "kind": "witness-gap",
+          "source_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum"
+        }
+      ]
+    },
+    "notes": "Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 7, first prayer. The petition is independently established in the public-domain 1862 source. This Latin status records the missing exact independently publishable Latin projection, not an absent official exemplar or a blanket restriction on ancient expression. The separately proposed study English includes only the actual official short cue and an explicitly marked response.  Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+    "ordinary_disposition": {
+      "kind": "alternative",
+      "group": "prayer-after-third-reading",
+      "option": "domine-deus-virtutum",
+      "basis": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module, artifact pp. 64-65 / printed pp. 382-383, n. 7, explicitly prints three prayers separated by Vel after Ezekiel 37:1-14. All three are alternatives; none is an implicit default."
+    }
+  },
+  "after_proper": {
+    "name": "Prayer after the Third Reading",
+    "source": "composed",
+    "incipit": "Domine, Deus virtutum",
+    "notes": "Official 2008 Supplementum, Notitiae artifact p. 64 / printed p. 382, n. 7, first prayer. The complete petition is independently sourced from Pustet 1862 printed p. 296, and the complete short conclusion and separate response from Pustet printed p. [106]. The exact source-based Latin projection is collated to this finite official 2008 excerpt. Oremus is a separate preceding invitation outside the prayer body. This is one of three alternative prayers after Ezekiel, without an implicit default; the existing project study English remains unapproved.",
+    "ordinary_disposition": {
+      "kind": "alternative",
+      "group": "prayer-after-third-reading",
+      "option": "domine-deus-virtutum",
+      "basis": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module, artifact pp. 64-65 / printed pp. 382-383, n. 7, explicitly prints three prayers separated by Vel after Ezekiel 37:1-14. All three are alternatives; none is an implicit default."
+    },
+    "text": "Domine, Deus virtutum,\nqui collapsa reparas et reparata conservas,\nauge populos in tui nominis sanctificatione renovandos,\nut omnes, qui sacro Baptismate diluuntur,\ntua semper inspiratione dirigantur.\nPer Christum Dominum nostrum.\nR. Amen.\n"
+  },
+  "before_latin_ledger": null,
+  "after_latin_ledger": {
+    "mass": "pentecost",
+    "form": "Vigil Mass, extended form",
+    "proper": "Prayer after the Third Reading",
+    "course": "",
+    "cycle": "",
+    "occurrence": 1,
+    "text_sha256": "7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a",
+    "provenance_status": "collated",
+    "source_id": "passage.triptych.postconciliar-latin-proper-editorial-projection.2026-11-12-official-2008-pentecost.domine-deus-virtutum",
+    "source_date": "Pustet Ratisbon 1862; Triptych projection 2026-11-12",
+    "locator": "Pustet artifact p. 382 / printed p. 296, complete petition after Prophetia sexta; artifact p. 776 / printed p. [106], complete short formula and separate response; projected body physical lines 1-7",
+    "relationship": "editorial-projection-exact-to-target",
+    "verification_source_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum",
+    "verification_locator": "Official 2008 Supplementum, Notitiae 44 nos. 503-504, printed p. 382 / artifact p. 64, n. 7, first prayer after third reading",
+    "transformations": [
+      "join old printer hyphenation and line wraps",
+      "remove old stress accents",
+      "apply individually recorded target punctuation and capital Baptismate",
+      "replace the old petition donor actual Per Dominum. cue with independently old complete Per Christum Dominum nostrum. plus separate R. Amen.; this is not an inferred expansion",
+      "preserve seven target sense lines and separate response"
+    ],
+    "provenance_evidence": "Fresh full-page comparison on 2026-11-12 confirms all petition words are identical between old Pustet and official 2008 target. Pustet p. [106] independently prints all words of the complete short conclusion and response. No substantive petition alteration, omitted petition clause, new petition arrangement or supplied word occurs. The whole target expression consists of the one uninterrupted old prayer petition and one independently old conventional conclusion/response, separately witnessed at the exact target location.",
+    "provenance_authority": "Triptych bounded page-image source comparison; independent final adoption required before installation",
+    "provenance_confidence": "high",
+    "publication_status": "permitted",
+    "publication_basis": "public-domain",
+    "surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "publication_source_ids": [
+      "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-12-official-2008-pentecost.domine-deus-virtutum-7e2a9720",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+    ],
+    "publication_locator": "Independent Pustet 1862 complete petition printed p. 296 and complete short formula/response printed p. [106]; source artifact publication-date/mechanical-reproduction United States public-domain basis",
+    "publication_authority": "Triptych internal United States assessment under publication policy priorities 1 and 3 and 17 USC 103(b); no whole-modern-edition clearance",
+    "publication_evidence": "The whole petition is preexisting public-domain expression; the only different conclusion is separately printed verbatim in the same old book. The target changes only pointing/case/display and uses a conventional old formula after the unchanged old petition. Considered as a whole, this supplies no new developed petition, expressive recasting or creative recombination of separate petition structures. The new book retains its distinct rights in other contents, rubrics, typography and apparatus. No modern source image or book arrangement is copied.",
+    "notice": "Latin independently sourced from Pustet Ratisbon 1862 and collated to this exact official 2008 excerpt; project study English is unapproved.",
+    "note": "Finite to this one alternative prayer, including the actual short conclusion and separately marked response. Oremus remains outside the body. Existing alternative group and no-default rule remain unchanged; this does not authenticate a complete 2008 Missal or complete extended Vigil."
+  },
+  "before_english_entry": {
+    "mass": "pentecost",
+    "form_id": "extended-vigil",
+    "form": "Vigil Mass, extended form",
+    "proper": "Prayer after the Third Reading",
+    "cycle": "all",
+    "occurrence": 1,
+    "incipit": "Domine, Deus virtutum",
+    "relation": "variant",
+    "petition_relation": "verbatim",
+    "ancient_witness": "Missale Romanum, Pustet Ratisbon 1862, In Vigilia Pentecostes, Prophetia sexta, Oratio; printed p. 296 / artifact p. 382",
+    "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum",
+    "ancient_reading": "Domine Deus virtutum, qui collapsa reparas, et reparata conservas: auge populos in tui nominis sanctificatione renovandos; ut omnes, qui sacro baptismate diluuntur, tua semper inspiratione dirigantur. Per Dominum.",
+    "target_witness_passage_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum",
+    "target_qualification": "official-2008-bounded-excerpt",
+    "conclusion_witness_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source",
+    "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+    "conclusion_relation": "verbatim",
+    "study_english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-pentecost-study-english.2026-10-29.domine-deus-virtutum",
+    "divergence": "The complete petition has identical words in the independently proved 1862 source and official 2008 excerpt after stress accents, case, punctuation and printer-wrap transformations. No petition word is added, omitted or substituted. The actual historical short cue Per Dominum. differs from the actual official cue Per Christum Dominum nostrum.; the fresh study English translates only the latter printed short cue. The separately printed target R. Amen. is rendered on its own marked line and is not misattributed to the old donor. The old source does not supply the modern response, and no long conclusion is inferred. This is fresh study English from independently established public-domain expression, not an edited historical human translation, approved English or a complete extended Vigil. The preceding Oremus is a separate source invitation outside the prayer body. Independent conclusion source: Pustet1862 printed p. [106] / artifact p.776 prints the exact complete short formula Per Christum Dominum nostrum. and its separately marked R.Amen. This focused old passage independently supplies both conventional units; the main prayer's Per Dominum. is not expanded or treated as their wording source. The full body is a two-source study translation; petition_relation is verbatim and the overall main-witness relation is variant because its actual cue differs.",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "project-created",
+        "text": "Lord, God of hosts, you restore what has fallen and preserve what has been restored. Increase the peoples who are to be renewed in the sanctification of your name, so that all who are washed in holy Baptism may always be guided by your inspiration. Through Christ our Lord.\nR. Amen.\n"
+      }
+    ]
+  },
+  "after_english_entry": {
+    "mass": "pentecost",
+    "form_id": "extended-vigil",
+    "form": "Vigil Mass, extended form",
+    "proper": "Prayer after the Third Reading",
+    "cycle": "all",
+    "occurrence": 1,
+    "incipit": "Domine, Deus virtutum",
+    "relation": "variant",
+    "petition_relation": "verbatim",
+    "ancient_witness": "Missale Romanum, Pustet Ratisbon 1862, In Vigilia Pentecostes, Prophetia sexta, Oratio; printed p. 296 / artifact p. 382",
+    "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum",
+    "ancient_reading": "Domine Deus virtutum, qui collapsa reparas, et reparata conservas: auge populos in tui nominis sanctificatione renovandos; ut omnes, qui sacro baptismate diluuntur, tua semper inspiratione dirigantur. Per Dominum.",
+    "target_witness_passage_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-domine-deus-virtutum",
+    "target_qualification": "official-2008-bounded-excerpt",
+    "conclusion_witness_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source",
+    "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+    "conclusion_relation": "verbatim",
+    "study_english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-pentecost-study-english.2026-10-29.domine-deus-virtutum",
+    "divergence": "The complete petition has identical words in the independently proved 1862 source and official 2008 excerpt after stress accents, case, punctuation and printer-wrap transformations. No petition word is added, omitted or substituted. The actual historical short cue Per Dominum. differs from the actual official cue Per Christum Dominum nostrum.; the fresh study English translates only the latter printed short cue. The separately printed target R. Amen. is rendered on its own marked line and is not misattributed to the old donor. The old source does not supply the modern response, and no long conclusion is inferred. This is fresh study English from independently established public-domain expression, not an edited historical human translation, approved English or a complete extended Vigil. The preceding Oremus is a separate source invitation outside the prayer body. Independent conclusion source: Pustet1862 printed p. [106] / artifact p.776 prints the exact complete short formula Per Christum Dominum nostrum. and its separately marked R.Amen. This focused old passage independently supplies both conventional units; the main prayer's Per Dominum. is not expanded or treated as their wording source. The full body is a two-source study translation; petition_relation is verbatim and the overall main-witness relation is variant because its actual cue differs.",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "project-created",
+        "text": "Lord, God of hosts, you restore what has fallen and preserve what has been restored. Increase the peoples who are to be renewed in the sanctification of your name, so that all who are washed in holy Baptism may always be guided by your inspiration. Through Christ our Lord.\nR. Amen.\n"
+      }
+    ],
+    "source_latin_sha256": "7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a",
+    "source_latin_passage_id": "passage.triptych.postconciliar-latin-proper-editorial-projection.2026-11-12-official-2008-pentecost.domine-deus-virtutum",
+    "source_latin_publication_source_ids": [
+      "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-12-official-2008-pentecost.domine-deus-virtutum-7e2a9720",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+    ]
+  },
+  "english_delta_fields": [
+    "source_latin_sha256",
+    "source_latin_passage_id",
+    "source_latin_publication_source_ids"
+  ],
+  "english_body_unchanged_sha256": "17a0ab2147bdb4b40d675d2bac515f0551c624224677ec22b321488a3524b671",
+  "latin_body_sha256": "7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a",
+  "source_files": [
+    {
+      "path": "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/artifacts/domine-deus-virtutum-7e2a9720/artifact.toml",
+      "sha256": "a5dbabb75d9a23edabcbf9d8f5313ee1783820f73112dddd508de932526dc2da",
+      "bytes": 2834
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/artifacts/domine-deus-virtutum-7e2a9720/latin.txt",
+      "sha256": "7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a",
+      "bytes": 240
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/edition.toml",
+      "sha256": "b2a2b2a5a74d0ed7731c13e58435154f8ba7a0edb76c204f2a6202c3f59dde00",
+      "bytes": 849
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-12-official-2008-pentecost/passages/domine-deus-virtutum.toml",
+      "sha256": "53127e3a51a85825033ab34ccab2ac080c73c3486fe3f704bcef7c0b1d431f02",
+      "bytes": 1677
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/work.toml",
+      "sha256": "a81011e81b75f060df3c1a5eff2d40f0aff0f5bd7a4d6e576dd9f318e7cfb9ba",
+      "bytes": 798
+    }
+  ],
+  "file_preimages": {
+    "src/sources/calendars/postconciliar/propers.yaml": "6184b6912644a80cc6c117a5ca9ff46e8994db4ef4f7a15b87f5339922e7885e",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "88e54e407656a75ee00dab1ac029cf960612c65aabbcde78d4e82236486b3d27",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "1e34ae24eca4f20f570b78030bcb64238b79d56439c94126b456e81cf4a9f428"
+  },
+  "file_postimages": {
+    "src/sources/calendars/postconciliar/propers.yaml": "f11d2bcbae85693d80f577fad4fa6e2e85c055d173170f86284ac5cd88438358",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "5f95e2f45e478da0efdd250a63ade50716db10f0bd785c6053a22c977e5fba7d",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "469c5a92a928f6b2883b41e5077b654c83e33a2adce7e6703e2d1d19749b1c2f"
+  },
+  "marker_execution": {
+    "checked_by": "reader_audit",
+    "result": "Actual current browser-core/LecternDOM rendering separates final R.Amen into nonspoken response marker and spoken Amen using existing versicleMarksIn/appendVersicled path. No new text_structure necessary; same mechanism covered by existing proper dialogue tests.",
+    "actual_generated_Day_validation": "pending Root regeneration"
+  },
+  "preserved": [
+    "All unrelated Proper dictionaries",
+    "All unrelated Latin ledger entries",
+    "All unrelated English entries and every prior untranslated dictionary",
+    "Three-option group and no implicit default",
+    "Separate Oremus outside this body"
+  ],
+  "excluded": [
+    "September8 qualified adaptation proposal and its separate Wilson passage",
+    "Any new English wording or approval",
+    "Whole2008Missal authentication"
+  ],
+  "closure": {
+    "source_epoch": "pending finite exact-existing-positive exception",
+    "generated_reader": "pending Root validation",
+    "full_owning_checks": "pending Root validation"
+  }
+}

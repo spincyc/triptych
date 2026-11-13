@@ -1,0 +1,286 @@
+{
+  "supersedes": "handoff.json and prepared/ are withdrawn; use handoff-v2.json and prepared-v2/ only",
+  "before": {
+    "la": {
+      "available_targets": 125,
+      "exact_target_targets": 102,
+      "targets": 199,
+      "available": 126,
+      "exact_target": 103,
+      "occurrences": 200
+    },
+    "en": {
+      "available_targets": 196,
+      "exact_target_targets": 0,
+      "targets": 199,
+      "available": 197,
+      "exact_target": 0,
+      "occurrences": 200
+    }
+  },
+  "after": {
+    "la": {
+      "available_targets": 130,
+      "exact_target_targets": 106,
+      "targets": 199,
+      "available": 131,
+      "exact_target": 107,
+      "occurrences": 200
+    },
+    "en": {
+      "available_targets": 196,
+      "exact_target_targets": 0,
+      "targets": 199,
+      "available": 197,
+      "exact_target": 0,
+      "occurrences": 200
+    }
+  },
+  "categories_after": {
+    "witness-own-english-heading": [
+      "praeparatio/ordinarium-missae-heading",
+      "praeparatio/psalmus-xlii-heading",
+      "oblatio/credo-heading",
+      "oblatio/oblatio-hostiae-heading",
+      "oblatio/oblatio-calicis-heading",
+      "oblatio/praefatio-heading",
+      "praefatio/praefatio-communis-heading",
+      "praefatio/praefatio-de-ss-trinitate-heading",
+      "praefatio/praefatio-de-nativitate-heading",
+      "praefatio/praefatio-de-epiphania-heading",
+      "praefatio/praefatio-de-quadragesima-heading",
+      "praefatio/praefatio-de-sancta-cruce-heading",
+      "praefatio/praefatio-paschalis-heading",
+      "praefatio/praefatio-de-ascensione-heading",
+      "praefatio/praefatio-de-spiritu-sancto-heading",
+      "praefatio/praefatio-de-beata-maria-virgine-heading",
+      "praefatio/praefatio-de-apostolis-heading",
+      "canon/canon-heading",
+      "canon/commemoratio-vivorum-heading",
+      "canon/commemoratio-defunctorum-heading"
+    ],
+    "witness-own-english-rubric": [
+      "praeparatio/rubrica-sacerdos-ad-pedes-altaris",
+      "praeparatio/rubrica-ascensus-ad-altare",
+      "praeparatio/rubrica-inclinatus-ante-altare",
+      "praeparatio/rubrica-conversus-ad-populum",
+      "oblatio/rubrica-post-collectam",
+      "oblatio/rubrica-epistola",
+      "oblatio/rubrica-munda-cor-meum",
+      "oblatio/rubrica-evangelium-proprium",
+      "oblatio/rubrica-post-evangelium",
+      "oblatio/rubrica-cum-sacerdote",
+      "oblatio/rubrica-offertorium",
+      "oblatio/rubrica-vinum-et-aqua",
+      "oblatio/rubrica-inclinatus-ante-altare",
+      "oblatio/rubrica-benedictio-panis-et-vini",
+      "oblatio/rubrica-benedictio-incensi",
+      "oblatio/rubrica-incensatio-oblatorum",
+      "oblatio/rubrica-incensatio-altaris",
+      "oblatio/rubrica-thuribulum-diacono",
+      "oblatio/rubrica-lavabo",
+      "oblatio/rubrica-inclinatus-ante-medium-altaris",
+      "oblatio/rubrica-conversus-ad-populum",
+      "praefatio/rubrica-nota-asterisci",
+      "praefatio/rubrica-nota-obeli",
+      "praefatio/rubrica-nota-nominis",
+      "canon/rubrica-oratio-silens",
+      "canon/rubrica-manus-expansae",
+      "canon/rubrica-elevatio-hostiae",
+      "canon/rubrica-elevatio-calicis",
+      "canon/rubrica-mentio-defunctorum",
+      "canon/rubrica-percussio-pectoris",
+      "communio/rubrica-agnus-dei",
+      "communio/rubrica-oratio-omittenda",
+      "communio/rubrica-panem-coelestem",
+      "communio/rubrica-domine-non-sum-dignus",
+      "communio/rubrica-sumptio-corporis",
+      "communio/rubrica-sumptio-calicis",
+      "communio/rubrica-sumptio-sanguinis",
+      "communio/rubrica-ablutio-prima",
+      "conclusio/rubrica-ablutio-secunda",
+      "conclusio/rubrica-communio",
+      "conclusio/rubrica-in-missis-defunctorum",
+      "conclusio/rubrica-inclinatus-ante-altare",
+      "conclusio/rubrica-benedictio"
+    ],
+    "held-without-exact-target-grade": [
+      "praeparatio/confiteor-sacerdotis",
+      "praeparatio/indulgentiam",
+      "praeparatio/gloria-in-excelsis-heading",
+      "oblatio/suscipe-sancte-pater",
+      "oblatio/in-spiritu-humilitatis",
+      "oblatio/ne-perdas-cum-impiis",
+      "oblatio/gloria-patri",
+      "oblatio/suscipiat-dominus",
+      "praefatio/praefatio-de-ss-trinitate",
+      "praefatio/praefatio-de-nativitate",
+      "praefatio/praefatio-de-epiphania",
+      "praefatio/praefatio-de-quadragesima",
+      "praefatio/praefatio-de-sancta-cruce",
+      "praefatio/praefatio-paschalis",
+      "praefatio/praefatio-de-ascensione",
+      "praefatio/praefatio-de-beata-maria-virgine",
+      "praefatio/praefatio-de-apostolis",
+      "praefatio/praefatio-sancto-ioseph",
+      "canon/simili-modo",
+      "canon/forma-sanguinis",
+      "canon/supplices",
+      "canon/per-quem",
+      "communio/agnus-dei",
+      "conclusio/dominus-vobiscum-ante-postcommunionem"
+    ],
+    "no-facing-latin-rubric": [
+      "praeparatio/rubrica-benedictio-incensi-et-introitus",
+      "communio/rubrica-commixtio",
+      "communio/rubrica-agnus-dei-in-missis-defunctorum"
+    ],
+    "appointment-placeholder": [
+      "praefatio/praefatio-diei",
+      "canon/communicantes-diei",
+      "canon/hanc-igitur-diei"
+    ]
+  },
+  "english_changes": [],
+  "latin_changes": [
+    "praefatio/praefatio-sacro-corde",
+    "praefatio/praefatio-christo-rege",
+    "praefatio/praefatio-sancto-ioseph",
+    "praefatio/praefatio-defunctis",
+    "conclusio/benedicat-vos-omnipotens-deus"
+  ],
+  "new_binary_artifacts": 0,
+  "owners": [
+    "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+    "src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml"
+  ],
+  "validation": {
+    "source_library": "source-library valid: artifact=11006 corpus=5 edition=14330 passage=9663 segment=10822 work=10959 bindings=4615 external-witnesses=711:metadata-only",
+    "mass_ordinary_coverage": "passed",
+    "mass_ordinary_show": "passed",
+    "all_english_translations_and_alternatives_equal": true,
+    "all_prepared_artifact_hashes_and_sizes_match": true,
+    "inventory_diff_whitespace_errors": 0
+  },
+  "source_files": [
+    {
+      "source_file": "src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml",
+      "sha256": "dfebf95c1f8322c217a175c508b3867ff7b1a0443a4592e9e6941a6ff6d6aeb2",
+      "byte_size": 7788,
+      "record_type": "christ-the-king-early-witnesses-rights",
+      "record_id": null,
+      "owner_before_sha256": "709520743fe520e94386a6e514426ef27acc305d27d80d03ded7886e4831c7cd"
+    },
+    {
+      "source_file": "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+      "sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+      "byte_size": 458834,
+      "record_type": "ordinary-owner",
+      "record_id": null,
+      "owner_before_sha256": "3ee41481f416ab428d1f0a421726580a2f536c0f97fabfb01af340d227d44b04"
+    },
+    {
+      "source_file": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/artifact.toml",
+      "sha256": "df1bca17861d4ff625aaa4b6b13da799eae09ca33abf18c5eb5f96ac00d8b19e",
+      "byte_size": 3180,
+      "record_type": "artifact",
+      "record_id": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112"
+    },
+    {
+      "source_file": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/text.tsv",
+      "sha256": "f94160dc86a620341c756f8650e39b87a34883f653f4908904a6a9e1382398c9",
+      "byte_size": 1566
+    },
+    {
+      "source_file": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-christo-rege-20261112.toml",
+      "sha256": "2b6837372e095c0f9c646f85fff5dc02153445f4051f6d4a53740e4453c427e3",
+      "byte_size": 2715,
+      "record_type": "passage",
+      "record_id": "passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-latin-christo-rege-20261112"
+    },
+    {
+      "source_file": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-sacro-corde-20261112.toml",
+      "sha256": "84c21820989fbebec27fcef9e41670537c4a867b681928f376af386e4898daad",
+      "byte_size": 2389,
+      "record_type": "passage",
+      "record_id": "passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-latin-sacro-corde-20261112"
+    },
+    {
+      "source_file": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-prefaces-extent-review-20261112.toml",
+      "sha256": "11b8f6779e8d9bfd55638cd4672adb65d02e2aa5115d75d8a08ae49c403fcbf6",
+      "byte_size": 1853,
+      "record_type": "passage",
+      "record_id": "passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-prefaces-extent-review-20261112"
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/artifact.toml",
+      "sha256": "02901bbb64f286d03b72d84aca0d67ce5a48e87b34c88f860c33d21ba77dfdc6",
+      "byte_size": 2350,
+      "record_type": "artifact",
+      "record_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112"
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/text.tsv",
+      "sha256": "542e00dbfad217175bd4a401082559265fc2ef098e1f06ae118ce28b55dc15c8",
+      "byte_size": 731
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/artifact.toml",
+      "sha256": "ca9e2125a591c2352c12c6cfb6149afdd701bf473a0411f21b36c23620d344d3",
+      "byte_size": 2244,
+      "record_type": "artifact",
+      "record_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112"
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/text.tsv",
+      "sha256": "b3453506c65a37cde248badba326982861ed0f1ff7e478938b9c3617ca4208f0",
+      "byte_size": 363
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/artifact.toml",
+      "sha256": "093d5e0787a25e803f75fd47534da7867182971ae5ec9328947aa2ceee07fb5a",
+      "byte_size": 2237,
+      "record_type": "artifact",
+      "record_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112"
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/text.tsv",
+      "sha256": "e6befcb79a0bbd6996d7cb51292a38de3f3c23e305eb886f62d4cee3c6f5aea1",
+      "byte_size": 866
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-dead-preface-latin-20261112.toml",
+      "sha256": "642a74521e6c16c871ee72ac7fb2c42024ee0a8d0ae6d228ed18a6503a3f938e",
+      "byte_size": 2395,
+      "record_type": "passage",
+      "record_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112"
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-final-blessing-latin-20261112.toml",
+      "sha256": "99f1eeaaa1942b0144a779a97a7c4cec2bfc4f30281d98ee1d69909f2bcf9859",
+      "byte_size": 1384,
+      "record_type": "passage",
+      "record_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112"
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-joseph-historical-latin-20261112.toml",
+      "sha256": "07b9c939a0a80c1e50fb2f9f0890b078104cb9cf498582267805a2f17344ced0",
+      "byte_size": 2594,
+      "record_type": "passage",
+      "record_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112"
+    }
+  ],
+  "source_inputs": [
+    {
+      "artifact_id": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92",
+      "sha256": "4511fa924e0f260185576b220e25f24d4d130b8af64700fb720e0b03f1b07f92"
+    },
+    {
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005"
+    },
+    {
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+    }
+  ],
+  "prepared_handoff_sha256": "16b92d8f70d7706c777bdd1cfa0edca58a5a97eca5334bc631d1dff94bdf7ea9"
+}

@@ -599,14 +599,15 @@ class CompleteMissalReportTests(unittest.TestCase):
         roman_unknown = families["roman-1962"]["textual"]["unknown_slots"]
         post_unknown = families["postconciliar"]["textual"]["unknown_slots"]
         # c726f83a1 later settled Felicity, Sabina and Venantius from their own
-        # orations as read on the 1962 page images (each mass's notes); Boniface
-        # and the two Dedications remain unresolved.
-        self.assertEqual(pre_unknown["lower_bound"], 3)
-        self.assertEqual(roman_unknown["lower_bound"], 3)
+        # orations as read on the 1962 page images (each mass's notes). Boniface
+        # likewise replaces all Common prayers; only the two Dedication Secrets
+        # still require the actual inside/outside church context.
+        self.assertEqual(pre_unknown["lower_bound"], 2)
+        self.assertEqual(roman_unknown["lower_bound"], 2)
         self.assertEqual(post_unknown["lower_bound"], 0)
         # The 1962 page-image C 2 mark resolves Stanislaus's shared Common
         # selection in both 1962 and the inherited pre-1955 source model.
-        self.assertEqual(len(pre_unknown["unresolved_common_set_selections"]), 3)
+        self.assertEqual(len(pre_unknown["unresolved_common_set_selections"]), 2)
         for row in pre_unknown["unresolved_common_set_selections"]:
             self.assertEqual(set(row), {"mass", "target", "group", "candidates"})
 

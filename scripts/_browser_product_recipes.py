@@ -54,13 +54,14 @@ _REVIEW_RECORDS = [
 # walks them, and would load a research/source-bindings.toml placed there.
 # Reviewed authority records the proper text pipeline reads by fixed path.
 _LATIN_AUTHORITIES = [
-    "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
+    "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/finite-latin-authority-v4.json",
     "workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json",
 ]
 _EXECUTION_AUTHORITIES = [
     "workflows/reviews/reader-completion-2026-10-26/finite-name-two-authority.json",
     "workflows/reviews/reader-completion-2026-10-26/finite-name-two-root-adoption.json",
     "workflows/reviews/reader-completion-2026-10-26/oration-execution-six-authority.json",
+    "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v2.json",
 ]
 
 

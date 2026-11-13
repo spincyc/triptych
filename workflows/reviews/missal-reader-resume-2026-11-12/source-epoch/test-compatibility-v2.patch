@@ -1,0 +1,525 @@
+--- a/tools/tests/test_proper_latin.py
++++ b/tools/tests/test_proper_latin.py
+@@ -693,7 +693,7 @@
+             with self.subTest(artifact=expected["id"]):
+                 self.assertEqual(expected["record"], registered_artifact(expected["id"]))
+                 self.assertEqual(expected["sha256"], hashlib.sha256((ROOT / expected["path"]).read_bytes()).hexdigest())
+-                self.assertEqual(expected["payload_sha256"], hashlib.sha256((ROOT / expected["payload_path"]).read_bytes()).hexdigest())
++                self.assertEqual(expected["payload_sha256"], hashlib.sha256(resolve_artifact(ROOT, expected["payload_path"], fetch=False).read_bytes()).hexdigest())
+                 self.assertEqual("public-domain", expected["record"]["rights_status"])
+ 
+     def assert_pange_source_assembly(self, row: dict) -> None:
+@@ -807,6 +807,74 @@
+         # Accepted Phase 1: 1187. Phase 2 independently adds exactly eighteen
+         # full bodies (fifteen new ledger rows, three restored Saturninus rows).
+         # Phase 3 adds nineteen complete bodies on two artifact-specific pairs.
++        # These ten Modern owners have independent whole-body admissions.
++        # Close that exact partition before preserving the Roman-only oracles.
++        modern_bodies = {
++            LatinKey('easter-2-saturday', '', 'Gospel Acclamation', '', '', 1):
++                '25f2a27baa91440142ef50d70e6fe88c5052b07a75fb740d6c785cd10b17bc1f',
++            LatinKey('easter-3', '', 'Gospel Acclamation', 'cycles', 'C', 1):
++                '3038efc01f0f7b132cc7d03b53fff17d7d2e7b3a0950dc8e7243295de4b87e12',
++            LatinKey('mass-of-the-lords-supper', '', 'Chant at the Place of Reposition', '', '', 1):
++                '14e54ab240d4d1cdadb55b7fa21fa8fb22b67fcd70d15d3c54fc5528e6085905',
++            LatinKey('mass-of-the-lords-supper', '', 'Hymn at the Transfer of the Blessed Sacrament', '', '', 1):
++                '5849cc72f72aef91b897e11d20712b4f617b94df698f5e43b99b50826e8d34aa',
++            LatinKey('nativity', 'Mass during the Day', 'Gospel Acclamation', '', '', 1):
++                '1f7e9e52b87aea04b1fbd3d7de15bce31c1c4971b7a489a7cd4dbf272d93a797',
++            LatinKey('pentecost', 'Mass during the Day', 'Gospel Acclamation', '', '', 1):
++                'c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0',
++            LatinKey('pentecost', 'Vigil Mass, extended form', 'Prayer after the Third Reading', '', '', 1):
++                '7e2a972044030037e1d1d6aa36963dbc8b0cc9e2ac7d7cdda9a5dbe9f20fef2a',
++            LatinKey('pentecost', 'Vigil Mass', 'Gospel Acclamation', '', '', 1):
++                'c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0',
++            LatinKey('saint-john-chrysostom-bishop-doctor-church', '', 'Gospel Acclamation', '', '', 1):
++                'b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3',
++            LatinKey('saint-lawrence-brindisi-priest-doctor-church', '', 'Gospel Acclamation', '', '', 1):
++                'b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3',
++        }
++
++        def admitted_record(path, expected):
++            raw = (ROOT / path).read_bytes()
++            self.assertEqual(expected, digest(raw), path)
++            return json.loads(raw)
++
++        pange = admitted_record(
++            "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-pange-latin-admission.json",
++            "797aed3dba317738ab1c52f27b57314c85c60fa9f83648e3ca4b7e406c2c150b")
++        pentecost = admitted_record(
++            "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-pentecost-latin-admission.json",
++            "44ef8380662dbc72ec152a13741f405111119b1c5b527e612b1493fcc24145c8")
++        seven = admitted_record(
++            "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-seven-acclamations/root-adoption.json",
++            "79d4fe04a2bb0bb817c8ea9c5bd951cd56d929d378376632fb2ac9ce0d570f59")
++        self.assertEqual(seven["status"], "accepted")
++        deltas_ref = seven["references"]["exact-deltas"]
++        deltas = admitted_record(deltas_ref["path"], deltas_ref["sha256"])
++        for admission in (pange, pentecost):
++            admitted_record(admission["source_review_path"], admission["source_review_sha256"])
++        source_ref = seven["references"]["independent-source-review"]
++        admitted_record(source_ref["path"], source_ref["sha256"])
++        accepted_rows = [row["latin_ledger_after"] for row in pange["changes"]]
++        accepted_rows.append(pentecost["after_latin_ledger"])
++        accepted_rows.extend(row["after_row"] for row in deltas["entries"])
++        expected_rows = {LatinKey.from_mapping(row): row for row in accepted_rows}
++        self.assertEqual(len(accepted_rows), len(expected_rows))
++        self.assertEqual(set(modern_bodies), set(expected_rows))
++        modern = {key: row for calendar, key, row in permitted if calendar == "postconciliar"}
++        self.assertEqual(expected_rows, modern)
++        modern_records, problems = publication_records(CALENDARS, "postconciliar", INVENTORIES)
++        self.assertEqual([], problems)
++        document = yaml.safe_load((CALENDARS / "postconciliar/propers.yaml").read_text())
++        bodies = dict(text_owners(document))
++        for key, expected_body_hash in modern_bodies.items():
++            with self.subTest(modern_owner=key):
++                row = modern[key]
++                self.assertEqual(row, modern_records[key])
++                self.assertEqual(expected_body_hash, row["text_sha256"])
++                self.assertEqual(expected_body_hash, text_sha256(bodies[key]))
++                self.assertEqual(row["publication_basis"], "public-domain")
++                self.assertTrue(decision_for(key, bodies[key], modern_records).permits(SURFACES))
++                self.assertFalse(decision_for(key, bodies[key] + " Amen.", modern_records).permits(SURFACES))
++        permitted = [item for item in permitted if item[0] != "postconciliar"]
+         BATCH_GUARDS.assert_permitted_owners(permitted)
+         direct = [(calendar, key, row) for calendar, key, row in permitted
+                   if not row["publication_source_ids"][0].startswith(
+@@ -1232,13 +1300,51 @@
+             archived = tomllib.loads(BATCH_GUARDS.historical_text(
+                 f"src/sources/inventories/{calendar}{SIDECAR_SUFFIX}"))
+             historical_nonpermitted.extend(
+-                row for entry in archived["entries"]
++                (calendar, LatinKey.from_mapping(row), row) for entry in archived["entries"]
+                 for row in [{**archived["defaults"], **entry}]
+                 if row["publication_status"] != "permitted"
+                 and not (calendar == "roman-1962" and LatinKey.from_mapping(row) == anthony_key)
+             )
+         self.assertEqual(348, len(historical_nonpermitted))
+-        self.assertEqual(341, len(nonpermitted))
++        prior_restored = {("roman-1962", LatinKey(mass, "", proper, "", "", occurrence))
++                          for mass, proper, occurrence in (
++            ("comm-s-silvestri-i-papae-confessoris", "Collect", 1),
++            ("palm-sunday", "Procession Antiphon", 5),
++            ("palm-sunday", "Procession Antiphon", 6),
++            ("easter-vigil", "Blessing of the Lighted Candle", 1),
++            ("palm-sunday", "Blessing of the Palms", 1),
++            ("good-friday", "Improperia", 1),
++            ("good-friday", "Antiphons at the Translation of the Blessed Sacrament", 1),
++        )}
++        historical_owners = {(calendar, key) for calendar, key, _ in historical_nonpermitted}
++        self.assertLess(prior_restored, historical_owners)
++        prior_nonpermitted = historical_owners - prior_restored
++        self.assertEqual(341, len(prior_nonpermitted))
++        reader_restored = {("roman-1962", LatinKey(mass, "", proper, "", "", occurrence))
++                           for mass, proper, occurrence in (
++            ("good-friday", "Prayer after the Prostration", 1),
++            ("good-friday", "Third Prayer after Communion", 1),
++            ("palm-sunday", "Procession Antiphon", 4),
++        )}
++        modern_restored = {
++            ("postconciliar", LatinKey.from_mapping(row["latin_ledger_before"]))
++            for row in pange["changes"]
++        } | {
++            ("postconciliar", LatinKey.from_mapping(row["before_row"]))
++            for row in deltas["entries"] if row["before_row"] is not None
++        }
++        self.assertEqual(modern_restored, {
++            ("postconciliar", LatinKey("mass-of-the-lords-supper", "", "Chant at the Place of Reposition", "", "", 1)),
++            ("postconciliar", LatinKey("mass-of-the-lords-supper", "", "Hymn at the Transfer of the Blessed Sacrament", "", "", 1)),
++            ("postconciliar", LatinKey("easter-3", "", "Gospel Acclamation", "cycles", "C", 1)),
++            ("postconciliar", LatinKey("nativity", "Mass during the Day", "Gospel Acclamation", "", "", 1)),
++            ("postconciliar", LatinKey("pentecost", "Vigil Mass", "Gospel Acclamation", "", "", 1)),
++            ("postconciliar", LatinKey("pentecost", "Mass during the Day", "Gospel Acclamation", "", "", 1)),
++        })
++        self.assertLess(reader_restored | modern_restored, prior_nonpermitted)
++        self.assertEqual(prior_nonpermitted - reader_restored - modern_restored,
++                         {(calendar, key) for calendar, key, _ in nonpermitted})
++        self.assertEqual(332, len(nonpermitted))
+         collated = [
+             item for item in nonpermitted if item[2]["provenance_status"] == "collated"
+         ]
+@@ -1295,13 +1401,28 @@
+         ]
+         # The same historical post-Anthony345 remains a separate exact control.
+         self.assertEqual(345, sum(row["provenance_status"] == "unresolved"
+-                                  for row in historical_nonpermitted))
+-        self.assertEqual(338, len(unresolved))
++                                  for _, _, row in historical_nonpermitted))
++        historical_unresolved = {(calendar, key) for calendar, key, row in historical_nonpermitted
++                                 if row["provenance_status"] == "unresolved"}
++        self.assertLess(prior_restored, historical_unresolved)
++        prior_unresolved = historical_unresolved - prior_restored
++        self.assertEqual(338, len(prior_unresolved))
++        self.assertLess(reader_restored | modern_restored, prior_unresolved)
++        self.assertEqual(prior_unresolved - reader_restored - modern_restored,
++                         {(calendar, key) for calendar, key, row in nonpermitted
++                          if row["provenance_status"] == "unresolved"})
++        self.assertEqual(329, len(unresolved))
+         self.assertTrue(all(row["publication_basis"] == "unresolved" for row in unresolved))
+         postconciliar = [
+             row for calendar, _, row in nonpermitted if calendar == "postconciliar"
+         ]
+-        self.assertEqual(329, len(postconciliar))
++        historical_modern = {(calendar, key) for calendar, key, _ in historical_nonpermitted
++                             if calendar == "postconciliar"}
++        self.assertEqual(329, len(historical_modern))
++        self.assertEqual(historical_modern - modern_restored,
++                         {(calendar, key) for calendar, key, _ in nonpermitted
++                          if calendar == "postconciliar"})
++        self.assertEqual(323, len(postconciliar))
+         self.assertTrue(
+             all(
+                 row["body_status"] == "removed"
+--- a/tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py
++++ b/tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py
+@@ -2,6 +2,7 @@
+ from pathlib import Path
+ import copy,csv,hashlib,io,json,tomllib,unittest
+ from tools.tests import test_roman_1962_english31_phase4 as prior
++from _artifact_store import resolve as resolve_artifact
+ from tools.tests import _source_batch_guards as source_batch
+ ROOT=Path(__file__).resolve().parents[2]
+ CAL=ROOT/"src/sources/calendars"
+@@ -292,7 +293,7 @@
+ 
+     def test_accepted_common_latin_proof_old43_old9778_and41_bindings_frozen(self):
+         for path,expected in FROZEN_COMMON_FILES.items():
+-            with self.subTest(path=path):self.assertEqual(sha((ROOT/path).read_bytes()),expected)
++            with self.subTest(path=path):self.assertEqual(sha(resolve_artifact(ROOT,path,fetch=False).read_bytes()),expected)
+         common=[r for r in self.latin if r["mass"]=="commune-virginum-2" and r["proper"] in ("Collect","Secret")]
+         self.assertEqual(digest(common),COMMON_ROWS_SHA)
+         old="artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33"
+--- a/tools/tests/test_roman_1962_common_virgin_ii_word_repair.py
++++ b/tools/tests/test_roman_1962_common_virgin_ii_word_repair.py
+@@ -10,6 +10,7 @@
+ import unittest
+ ROOT = Path(__file__).resolve().parents[2]
+ sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
++from _artifact_store import resolve as resolve_artifact
+ from tools.tests import _source_batch_guards as BATCH_GUARDS
+ import _calendars as C
+ from _proper_latin import LatinKey, SURFACES, body_owners, decision_for, publication_records, read_sidecar
+@@ -144,7 +145,7 @@
+         historical = record(ORACLES[0]["historical_passage_id"])
+         self.assertEqual([[1,2]],historical["artifact_page_ranges"])
+         extract = record(lane["historical_id"])
+-        pdf = (ROOT/extract["path"]).read_bytes()
++        pdf = resolve_artifact(ROOT,extract["path"],fetch=False).read_bytes()
+         self.assertEqual((lane["pdf_hash"],lane["pdf_byte_size"]),(digest(pdf),len(pdf)))
+         self.assertEqual("public-domain",extract["rights_status"])
+         self.assertIn("698, 699",extract["transformation"])
+@@ -197,8 +198,19 @@
+         later = {LatinKey("comm-s-silvestri-i-papae-confessoris", "", "Collect", "", "", 1),
+                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 5),
+                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 6)}
++        prior_triduum = {LatinKey(mass, "", proper, "", "", 1) for mass, proper in (
++            ("easter-vigil", "Blessing of the Lighted Candle"),
++            ("palm-sunday", "Blessing of the Palms"),
++            ("good-friday", "Improperia"),
++            ("good-friday", "Antiphons at the Translation of the Blessed Sacrament"),
++        )}
++        reader_restored = {
++            LatinKey("good-friday", "", "Prayer after the Prostration", "", "", 1),
++            LatinKey("good-friday", "", "Third Prayer after Communion", "", "", 1),
++            LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 4),
++        }
+         restored = {k for k in removed if prior_records[k]["publication_status"] == "permitted"}
+-        self.assertEqual(restored, {anthony} | later)
++        self.assertEqual(restored, {anthony} | later | prior_triduum | reader_restored)
+         legacy = dict(raw_records)
+         legacy[anthony] = prior_records[anthony]
+         self.assertEqual((1270,16,3), counts(legacy))
+@@ -207,15 +219,21 @@
+         # The finite-sixteen authority restores Silvester; installation-a7619040
+         # and its two source reviews map Palm English ordinals 6/7 to Latin 5/6.
+         status = lambda row: (row["publication_status"], row["provenance_status"])
+-        self.assertEqual(later, {k for k in prior_records if status(prior_records[k]) != status(legacy[k])})
++        intermediate = dict(legacy)
++        intermediate.update({k: prior_records[k] for k in later})
++        self.assertEqual((1273,13,3), counts(intermediate))
++        self.assertEqual(later, {k for k in intermediate if status(intermediate[k]) != status(legacy[k])})
++        self.assertEqual(prior_triduum | reader_restored,
++                         {k for k in prior_records if status(prior_records[k]) != status(intermediate[k])})
+         bodies = {k: body for k, body, state in body_owners(self.document) if state == "present"}
+         for k in restored:
+             self.assertEqual(("permitted", "collated"), status(prior_records[k]))
+             self.assertTrue(decision_for(k, bodies[k], self.records).permits(SURFACES))
++            self.assertFalse(decision_for(k, bodies[k] + " Amen.", self.records).permits(SURFACES))
+         for k in removed - restored:
+             self.assertEqual(status(raw_records[k]), status(prior_records[k]))
+             self.assertFalse(decision_for(k, "Invented body.", self.records).permits(SURFACES))
+-        self.assertEqual((1273,13,3), counts(prior_records))
++        self.assertEqual((1280,6,3), counts(prior_records))
+     def test_inherited_two_word_corrections_are_not_pre1955_target_attestation(self):
+         pre = C.load_document(ROOT/"src/sources/calendars","roman-pre-1955")
+         index = C.mass_index(pre)
+--- a/tools/tests/test_roman_1962_octnov_commemoration_source_repair.py
++++ b/tools/tests/test_roman_1962_octnov_commemoration_source_repair.py
+@@ -18,6 +18,7 @@
+ 
+ ROOT = Path(__file__).resolve().parents[2]
+ sys.path.insert(0, str(ROOT / "scripts"))
++from _artifact_store import resolve as resolve_artifact
+ from tools.tests import _source_batch_guards as BATCH_GUARDS
+ import _calendars as C
+ from _proper_latin import LatinKey, SURFACES, body_owners, decision_for, read_sidecar
+@@ -1711,7 +1712,7 @@
+ def _phase5_source_postimages():
+     # Frozen from the independently accepted corrected source, not a live oracle.
+     for path, expected in PHASE5_SOURCE_POSTIMAGES.items():
+-        _phase5_require(digest((ROOT / path).read_bytes()) == expected, path)
++        _phase5_require(digest(resolve_artifact(ROOT,path,fetch=False).read_bytes()) == expected, path)
+ 
+ 
+ def _phase5_validate_node(node, spec):
+@@ -2005,7 +2006,7 @@
+ 
+     def test_historical_payload_is_exact_fourteen_page_parented_extract(self):
+         artifact = record(HIST_ARTIFACT)
+-        payload = (ROOT / artifact["path"]).read_bytes()
++        payload = resolve_artifact(ROOT,artifact["path"],fetch=False).read_bytes()
+         self.assertEqual((HIST_HASH, 2981377), (digest(payload), len(payload)))
+         self.assertEqual((14, "public-domain", "tracked"),
+                          (artifact["page_count"], artifact["rights_status"], artifact["storage"]))
+@@ -2115,8 +2116,19 @@
+         later = {LatinKey("comm-s-silvestri-i-papae-confessoris", "", "Collect", "", "", 1),
+                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 5),
+                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 6)}
++        prior_triduum = {LatinKey(mass, "", proper, "", "", 1) for mass, proper in (
++            ("easter-vigil", "Blessing of the Lighted Candle"),
++            ("palm-sunday", "Blessing of the Palms"),
++            ("good-friday", "Improperia"),
++            ("good-friday", "Antiphons at the Translation of the Blessed Sacrament"),
++        )}
++        reader_restored = {
++            LatinKey("good-friday", "", "Prayer after the Prostration", "", "", 1),
++            LatinKey("good-friday", "", "Third Prayer after Communion", "", "", 1),
++            LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 4),
++        }
+         restored = {k for k in removed if current_prior_records[k]["publication_status"] == "permitted"}
+-        self.assertEqual(restored, {anthony} | later)
++        self.assertEqual(restored, {anthony} | later | prior_triduum | reader_restored)
+         legacy = dict(raw_records)
+         legacy[anthony] = current_prior_records[anthony]
+         self.assertEqual((1270,16,3), counts(legacy))
+@@ -2125,15 +2137,21 @@
+         # The finite-sixteen authority restores Silvester; installation-a7619040
+         # and its two source reviews map Palm English ordinals 6/7 to Latin 5/6.
+         status = lambda row: (row["publication_status"], row["provenance_status"])
+-        self.assertEqual(later, {k for k in current_prior_records if status(current_prior_records[k]) != status(legacy[k])})
++        intermediate = dict(legacy)
++        intermediate.update({k: current_prior_records[k] for k in later})
++        self.assertEqual((1273,13,3), counts(intermediate))
++        self.assertEqual(later, {k for k in intermediate if status(intermediate[k]) != status(legacy[k])})
++        self.assertEqual(prior_triduum | reader_restored,
++                         {k for k in current_prior_records if status(current_prior_records[k]) != status(intermediate[k])})
+         bodies = {k: body for k, body, state in body_owners(self.document) if state == "present"}
+         for k in restored:
+             self.assertEqual(("permitted", "collated"), status(current_prior_records[k]))
+             self.assertTrue(decision_for(k, bodies[k], self.records).permits(SURFACES))
++            self.assertFalse(decision_for(k, bodies[k] + " Amen.", self.records).permits(SURFACES))
+         for k in removed - restored:
+             self.assertEqual(status(raw_records[k]), status(current_prior_records[k]))
+             self.assertFalse(decision_for(k, "Invented body.", self.records).permits(SURFACES))
+-        self.assertEqual((1273,13,3), counts(current_prior_records))
++        self.assertEqual((1280,6,3), counts(current_prior_records))
+ 
+     def test_real_cli_raw_and_appointed_bodies_have_the_same_bytes(self):
+         for mass in MASSES:
+--- a/tools/tests/test_roman_1962_winter_ursula_source_repair.py
++++ b/tools/tests/test_roman_1962_winter_ursula_source_repair.py
+@@ -12,6 +12,7 @@
+ 
+ ROOT = Path(__file__).resolve().parents[2]
+ sys.path[:0] = [str(ROOT), str(ROOT / "scripts")]
++from _artifact_store import resolve as resolve_artifact
+ from tools.tests import _source_batch_guards as BATCH_GUARDS
+ import _calendars as C
+ from tools.tests.test_roman_1962_octnov_commemoration_source_repair import (
+@@ -887,7 +888,7 @@
+     def test_historical_extract_rights_parent_hashes_and_exact_page_maps(self):
+         for name,lane in LANES.items():
+             art = record(lane["historical_id"])
+-            payload = (ROOT/art["path"]).read_bytes()
++            payload = resolve_artifact(ROOT,art["path"],fetch=False).read_bytes()
+             self.assertEqual((lane["pdf_hash"],lane["pdf_byte_size"]),(digest(payload),len(payload)))
+             self.assertEqual(("public-domain","tracked",len(lane["pages"])),
+                              (art["rights_status"],art["storage"],art["page_count"]))
+@@ -985,8 +986,19 @@
+         later = {LatinKey("comm-s-silvestri-i-papae-confessoris", "", "Collect", "", "", 1),
+                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 5),
+                  LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 6)}
++        prior_triduum = {LatinKey(mass, "", proper, "", "", 1) for mass, proper in (
++            ("easter-vigil", "Blessing of the Lighted Candle"),
++            ("palm-sunday", "Blessing of the Palms"),
++            ("good-friday", "Improperia"),
++            ("good-friday", "Antiphons at the Translation of the Blessed Sacrament"),
++        )}
++        reader_restored = {
++            LatinKey("good-friday", "", "Prayer after the Prostration", "", "", 1),
++            LatinKey("good-friday", "", "Third Prayer after Communion", "", "", 1),
++            LatinKey("palm-sunday", "", "Procession Antiphon", "", "", 4),
++        }
+         restored = {k for k in removed if prior_records[k]["publication_status"] == "permitted"}
+-        self.assertEqual(restored, {anthony} | later)
++        self.assertEqual(restored, {anthony} | later | prior_triduum | reader_restored)
+         legacy = dict(raw_records)
+         legacy[anthony] = prior_records[anthony]
+         self.assertEqual((1270,16,3), counts(legacy))
+@@ -995,15 +1007,21 @@
+         # The finite-sixteen authority restores Silvester; installation-a7619040
+         # and its two source reviews map Palm English ordinals 6/7 to Latin 5/6.
+         status = lambda row: (row["publication_status"], row["provenance_status"])
+-        self.assertEqual(later, {k for k in prior_records if status(prior_records[k]) != status(legacy[k])})
++        intermediate = dict(legacy)
++        intermediate.update({k: prior_records[k] for k in later})
++        self.assertEqual((1273,13,3), counts(intermediate))
++        self.assertEqual(later, {k for k in intermediate if status(intermediate[k]) != status(legacy[k])})
++        self.assertEqual(prior_triduum | reader_restored,
++                         {k for k in prior_records if status(prior_records[k]) != status(intermediate[k])})
+         bodies = {k: body for k, body, state in body_owners(self.document) if state == "present"}
+         for k in restored:
+             self.assertEqual(("permitted", "collated"), status(prior_records[k]))
+             self.assertTrue(decision_for(k, bodies[k], self.records).permits(SURFACES))
++            self.assertFalse(decision_for(k, bodies[k] + " Amen.", self.records).permits(SURFACES))
+         for k in removed - restored:
+             self.assertEqual(status(raw_records[k]), status(prior_records[k]))
+             self.assertFalse(decision_for(k, "Invented body.", self.records).permits(SURFACES))
+-        self.assertEqual((1273,13,3), counts(prior_records))
++        self.assertEqual((1280,6,3), counts(prior_records))
+         # Boniface's own P/C3/C4 prayers replace every Common oration family.
+         self.assertNotIn("common_sets", self.index["comm-s-bonifatii-martyris"]["takes_from"])
+ 
+--- a/tools/tests/test_roman_1962_latin22_phase5.py
++++ b/tools/tests/test_roman_1962_latin22_phase5.py
+@@ -2102,6 +2102,101 @@
+                 self.assertEqual("920299972ab84575183de8c84adcd3f7418bdc46304fbe1d6a4435fad1103ee3",
+                                  digest(authority.read_bytes()))
+                 self.assertEqual("adopted", json.loads(authority.read_text())["state"])
++            elif path == "src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml":
++                # The old complete rights record is an unchanged byte prefix.
++                # Only the separately adopted Ordinary-Preface section follows.
++                current = (ROOT / path).read_bytes()
++                boundary = b"\n[ordinary_prefaces_extension_20261112]\n"
++                self.assertEqual(current.count(boundary), 1)
++                self.assertEqual(h, digest(current.split(boundary, 1)[0]))
++                adoption_raw = (ROOT / "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-latin/admission.json").read_bytes()
++                self.assertEqual("75945c86124c67db262000c0bb926b5316d1d09fd6db7e9d310e538a9d485982", digest(adoption_raw))
++                adoption = json.loads(adoption_raw)
++                self.assertEqual("accepted", adoption["status"])
++                selected = adoption["installation_manifest"]
++                manifest_raw = (ROOT / selected["path"]).read_bytes()
++                self.assertEqual(selected["sha256"], digest(manifest_raw))
++                rows = [row for row in json.loads(manifest_raw)["source_files"] if row["source_file"] == path]
++                self.assertEqual(len(rows), 1)
++                self.assertEqual(h, rows[0]["owner_before_sha256"])
++                self.assertEqual("dfebf95c1f8322c217a175c508b3867ff7b1a0443a4592e9e6941a6ff6d6aeb2", rows[0]["sha256"])
++                self.assertEqual(rows[0]["sha256"], digest(current))
++            elif path == "scripts/_calendars.py":
++                review_raw = (ROOT / "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/runtime-code-review-v2.json").read_bytes()
++                self.assertEqual("1ab3d4b4328eeb223d067d8844986fad6907c31530a6151b6644cd79d125370d", digest(review_raw))
++                review = json.loads(review_raw)
++                self.assertEqual("accepted", review["status"])
++                current = (ROOT / path).read_bytes()
++                self.assertEqual({"before_sha256": h, "after_sha256": digest(current)},
++                                 review["accepted_code_owned_successors"][path])
++                # Exact inverse of the reviewed presentation-only successor;
++                # the entire previous module must still have its original hash.
++                inverse = {'after_sha256': 'fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7',
++                 'before_sha256': '54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4',
++                 'hunks': [{'after_lines': [2791, 2821],
++                            'after_slice_sha256': 'e67defaf384a866aeda9066b282e23bb3e302d6c80fdec6d7574b316b0c79a09',
++                            'before_utf8': ''},
++                           {'after_lines': [2834, 2837],
++                            'after_slice_sha256': '485dfb11cc86c2cc54a2ab01706e3dfc8ef93915666c7fa406e3cf3f204220d3',
++                            'before_utf8': '    Returns `(text, attribution, note)` triples; the attribution is empty\n'
++                                           '    where there is nothing to choose between. It lives here rather than in\n'
++                                           '    `mass-propers` because two tools print a proper — that one and\n'},
++                           {'after_lines': [2841, 2843],
++                            'after_slice_sha256': 'f5de068ec3f6871e9ece45d68eac853bd82897e87c9d514f79f3e5df9a7ad4a0',
++                            'before_utf8': '        return [(str(proper.get("text") or ""), "", "")]\n'},
++                           {'after_lines': [2855, 2857],
++                            'after_slice_sha256': 'c5a70f34bc357febb21343803ba8293c890322e92b424cbb1d3226418a9e43ef',
++                            'before_utf8': '                "",\n'},
++                           {'after_lines': [2881, 2885],
++                            'after_slice_sha256': '42ce4588b4b549004224a3844ccb9144bfb6bfa6d861c58cd406f886f6ad0b9d',
++                            'before_utf8': '        return [(str(proper["text"]), "", note)]\n'}]}
++                self.assertEqual(inverse["after_sha256"], digest(current))
++                lines = current.splitlines(keepends=True)
++                end = 0
++                for hunk in inverse["hunks"]:
++                    start, stop = hunk["after_lines"]
++                    self.assertTrue(0 <= start <= stop <= len(lines) and start >= end)
++                    self.assertEqual(hunk["after_slice_sha256"], digest(b"".join(lines[start:stop])))
++                    end = stop
++                for hunk in reversed(inverse["hunks"]):
++                    start, stop = hunk["after_lines"]
++                    lines[start:stop] = [hunk["before_utf8"].encode()]
++                self.assertEqual(h, inverse["before_sha256"])
++                self.assertEqual(h, digest(b"".join(lines)))
++            elif path == "tools/tests/test_roman_1962_boniface_annual_source_repair.py":
++                # The existing owner test now checks the accepted own-prayer
++                # appointment and no obsolete unresolved Common selection.
++                # Retain both its exact successor and complete prior test bytes.
++                current = (ROOT / path).read_bytes()
++                self.assertEqual("2faf9225873fd7e05dbcd44fba32098dc3c6cf14d386caa8c4c8aaba086e269e", digest(current))
++                inverse = {'after_sha256': '2faf9225873fd7e05dbcd44fba32098dc3c6cf14d386caa8c4c8aaba086e269e',
++                 'before_sha256': 'b1cab01b3a01d831143e075cdc83345ef73d03145caf674624b1c27bf6c11775',
++                 'hunks': [{'after_lines': [127, 128],
++                            'after_slice_sha256': '7c0733ce09196a58128ba01f488aaa243238fb8bbf2a2f27d3a86ca2cafc87df',
++                            'before_utf8': '    def '
++                                           'test_unresolved_common_candidates_do_not_displace_local_orations(self):\n'},
++                           {'after_lines': [129, 130],
++                            'after_slice_sha256': '653e08a6ec27a48c87a5fecaa21159cca8cffeddc7e455ac20c00ccccd45b75b',
++                            'before_utf8': '            {"mass": "commune-martyrum-tempore-paschali-1", "citation": "Commune '
++                                           'Sanctorum [15]",\n'
++                                           '             "common_sets": {"orations": {"state": "unresolved", "candidates": '
++                                           '["c3", "c4"]}}},\n'},
++                           {'after_lines': [132, 134],
++                            'after_slice_sha256': '6dc9555e7c138bce96dc1ad46fcbc8ec6ef2dcc924f9ba2c2ecc1fd1730d47c0',
++                            'before_utf8': '        rows, _ = _calendars.resolve_propers(self.document, self.mass)\n'}]}
++                self.assertEqual(inverse["after_sha256"], digest(current))
++                lines = current.splitlines(keepends=True)
++                end = 0
++                for hunk in inverse["hunks"]:
++                    start, stop = hunk["after_lines"]
++                    self.assertTrue(0 <= start <= stop <= len(lines) and start >= end)
++                    self.assertEqual(hunk["after_slice_sha256"], digest(b"".join(lines[start:stop])))
++                    end = stop
++                for hunk in reversed(inverse["hunks"]):
++                    start, stop = hunk["after_lines"]
++                    lines[start:stop] = [hunk["before_utf8"].encode()]
++                self.assertEqual(h, inverse["before_sha256"])
++                self.assertEqual(h, digest(b"".join(lines)))
+             elif path == "scripts/_missal_coverage.py":
+                 archived = ROOT / "workflows/reviews/missal-english-completion-2026-10-29/checkpoint-v1/historical-code/missal-coverage-prior.py"
+                 self.assertEqual(h, digest(archived.read_bytes()), path + " at 6aeb96a392")
+--- a/tools/tests/test_missal_coverage.py
++++ b/tools/tests/test_missal_coverage.py
+@@ -751,13 +751,21 @@
+             self.assertEqual(G.digest(G.canonical(row)),
+                              G.fixture()["roman_current_english_absence"][G.canonical(identity)])
+             self.assertNotIn("text", row)
++        historical_retyped = [row for row in historical["untranslated"] if "(C2 gap G3)" in row["note"]]
++        self.assertEqual({row["reason"]["kind"] for row in historical_retyped}, {"no-exemplar"})
++        original_ids = {self.propers.translation_record_identity(row) for row in historical_retyped}
+         retyped = [row for row in ledger["untranslated"] if "(C2 gap G3)" in row["note"]]
+-        # Accepted bindings can fill these former gaps. Each remaining row
+-        # retains the exact reviewed absence record, never a rights restriction.
++        remaining = {self.propers.translation_record_identity(row) for row in retyped}
++        admitted = {identity for identity in original_ids if assert_current_english_owner(self, identity)}
++        self.assertEqual(remaining, original_ids - admitted)
+         for row in retyped:
+-            identity = self.propers.translation_record_identity(row)
+-            self.assertFalse(assert_current_english_owner(self, identity))
+-        self.assertEqual({row["reason"]["kind"] for row in retyped}, {"no-exemplar"})
++            self.assertEqual(row["reason"]["kind"], "no-exemplar")
++        # Urban was the final G3 gap in the preceding accepted epoch. Its
++        # exact current study binding closes it; it is not silently removed.
++        urban = ("comm-s-urbani-i-papae-martyris", "main", "Collect", "all", 1)
++        self.assertIn(urban, original_ids)
++        self.assertTrue(assert_current_english_owner(self, urban))
++        self.assertEqual(remaining, set())
+         restricted = [unit for mass in self.files["roman-1962"]["masses"]
+                       for unit in coverage.proper_units(mass)
+                       if english(unit)["availability"] == "not-publishable"]

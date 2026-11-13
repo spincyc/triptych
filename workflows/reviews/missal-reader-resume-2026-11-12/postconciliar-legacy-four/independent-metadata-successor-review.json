@@ -1,0 +1,219 @@
+{
+  "schema": "legacy-study-four-successor-independent-review/v1",
+  "date": "2026-11-12",
+  "reviewer": "/root/modern_sources/legacy_review/three_cold_review",
+  "decision": "accept-bounded-successor-metadata-and-prior-four-source-fidelity",
+  "reviewed_report": {
+    "path": ".scratch/modern-legacy-review/root-remediated/review.json",
+    "sha256": "5dfe8b84c74f4db15e089be9add5da880c0c5b75512cf3160861430d2573d553"
+  },
+  "reviewed_patch": {
+    "path": ".scratch/modern-legacy-review/root-remediated/overlay.patch",
+    "sha256": "789ed1179ec2bc4774b485c840efc011f098af698d15ace36885abddc5e9f4b8"
+  },
+  "reviewed_overlay_sha256": "200d57aad8b5ddd2bb23e69fad7ed91af978027f9cc62d307ee811f750e5d2f1",
+  "verification": {
+    "path": ".scratch/modern-legacy-three-cold-review/root-remediation/verification.json",
+    "sha256": "ad7108b004519a1019ea1f37e38ba673e0b091e4f5f48dccebf5dacaed94fcf6"
+  },
+  "candidate_files": [
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "200d57aad8b5ddd2bb23e69fad7ed91af978027f9cc62d307ee811f750e5d2f1",
+      "bytes": 1002052,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-54.toml",
+      "sha256": "0cfe6248c48aa0da047cc63c075dc690293213dc8a0e2b4977d17efcc3a00b31",
+      "bytes": 1201,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-77.toml",
+      "sha256": "c774e45d39b13dc5742415a42bde193c08e3dd04e1b403f71c9540e6545d20b2",
+      "bytes": 1202,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/legacy-study-review-20261112-short-conclusion.toml",
+      "sha256": "8b85d7f91a2f724852434830c7d88457cd285c1adaecafe6c632e4a5bfe6563e",
+      "bytes": 1141,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/legacy-study-review-20261112-advent-2-offerings-comparison.toml",
+      "sha256": "9a5db5f6e40d77c4984d53355a02f98f90345b273f1eb3e4f3cf40353adf4c09",
+      "bytes": 1458,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/legacy-study-review-20261112-advent-3-offerings-comparison.toml",
+      "sha256": "ec19f4c2c8f4ae9192c18a8003781d3ffd9df500e30d27acb66af0c37017c4a0",
+      "bytes": 1434,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/legacy-study-review-20261112-easter-4-collect-comparison.toml",
+      "sha256": "c40145acd967a0de0527deb44d399c2a19fa60c9f98b9b90f5cfcf7924ef7439",
+      "bytes": 1488,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/legacy-study-review-20261112-easter-4-offerings-comparison.toml",
+      "sha256": "d4b07da7aa0d547ddbf21ab4665bdf216e066816bfe333148a177cb20af3bcd4",
+      "bytes": 1570,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/legacy-study-review-20261112-advent-2-offerings-source.toml",
+      "sha256": "b454cf9c141f9fb47380f561cea4f9903c6c2b1e7a51a821671012e4c062859c",
+      "bytes": 2055,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/legacy-study-review-20261112-easter-4-collect-source.toml",
+      "sha256": "f4e9eb37a5f7392014585027e125f317e123015f105fbed189036a78cb0b6e1e",
+      "bytes": 2235,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/legacy-study-review-20261112-easter-4-offerings-source.toml",
+      "sha256": "4afca1b6825c5b640a3c85cd19054212ce335ad8cd13ff06deeb483ecc2d4b5c",
+      "bytes": 2179,
+      "hash_size_toml_verified": true
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/legacy-study-review-20261112-advent-3-offerings-source.toml",
+      "sha256": "c540fc655ab0bfd227e3dea0b90f847bc6d475d7b57af11edf1fc966042bec09",
+      "bytes": 1640,
+      "hash_size_toml_verified": true
+    }
+  ],
+  "scope": {
+    "canonical_indices": [
+      0,
+      1,
+      5,
+      6
+    ],
+    "identities": [
+      [
+        "advent-2",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      [
+        "advent-3",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      [
+        "easter-4",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      [
+        "easter-4",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ]
+    ],
+    "new_coverage": 0,
+    "prior_four_english_and_all_translation_dictionaries_unchanged": true,
+    "successor_overlay_metadata_changes": [
+      {
+        "index": 0,
+        "keys": [
+          "witness_artifact_id",
+          "witness_note"
+        ]
+      },
+      {
+        "index": 5,
+        "keys": [
+          "witness_artifact_id",
+          "witness_note"
+        ]
+      },
+      {
+        "index": 6,
+        "keys": [
+          "witness_artifact_id",
+          "witness_note"
+        ]
+      }
+    ],
+    "source_passage_changes": "Only the three Wilson source passage artifact bindings, original page ranges, and appended wrapper/basis limitations change; all other eight passages match the prior accepted candidate bytes.",
+    "source_body_text_changes_from_prior_accepted_candidate": false
+  },
+  "evidence": [
+    {
+      "scope": "Existing whole Wilson1894 artifact and original page identity",
+      "manifest_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/internet-archive-pdf-006a38a3/artifact.toml",
+      "manifest_sha256": "10a439e18ff4e2740f398e77088902d20650102f20bb7a9b012ba0f0e1f0b030",
+      "whole_pdf_path": ".scratch/modern-legacy-review/wilson1894.pdf",
+      "whole_pdf_sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+      "freshly_rendered_page_images_byte_identical_to_prior_visually_read_images": [
+        {
+          "whole_pdf_page": 307,
+          "current_render_path": ".scratch/modern-legacy-three-cold-review/root-remediation/wilson-307.png",
+          "prior_visually_read_path": ".scratch/modern-legacy-three-cold-review/wilson-ap307.png",
+          "identical_sha256": "847fe289ec7628bcdd55fa875dc6e02b6b92e5d17bca27ba14e130cc2f5d0a13"
+        },
+        {
+          "whole_pdf_page": 193,
+          "current_render_path": ".scratch/modern-legacy-three-cold-review/root-remediation/wilson-193.png",
+          "prior_visually_read_path": ".scratch/modern-legacy-three-cold-review/wilson-ap193.png",
+          "identical_sha256": "d87779501b9630679f791f2547d04de650ff624788b351628b341a21c0579efb"
+        },
+        {
+          "whole_pdf_page": 187,
+          "current_render_path": ".scratch/modern-legacy-three-cold-review/root-remediation/wilson-187.png",
+          "prior_visually_read_path": ".scratch/modern-legacy-three-cold-review/wilson-ap187.png",
+          "identical_sha256": "a92ba41292b23bc2b6dfa69d2e2c205c0c7c7bdb9917fa40e36f848f2ae14481"
+        }
+      ],
+      "page_mapping": {
+        "307": "printed214, Placare Domine",
+        "193": "printed100, Omnipotens sempiterne Deus deduc nos",
+        "187": "printed94, Concede quaesumus Domine semper nos"
+      }
+    }
+  ],
+  "prior_receipts": [
+    {
+      "path": ".scratch/modern-legacy-three-cold-review/receipt.json",
+      "sha256": "72749b54d8186aa3a041eaebe1253e216712b06efa799b22668d8f46f93fea2d"
+    },
+    {
+      "path": ".scratch/modern-legacy-three-cold-review/fourth-receipt.json",
+      "sha256": "82f57bb1b75216b9881608224e201a57b1234fbf00e7f778811585957d94a8f1"
+    }
+  ],
+  "checks": [
+    "All twelve candidate file hashes, byte sizes and TOML parses passed; directory has no extra file, PDF, or artifact manifest.",
+    "Canonical preimage hash remains exact; changed entry indices are exactly 0, 1, 5, 6; all remaining entries and non-entry data are equal.",
+    "Prior accepted four-entry overlay hash remains exact; successor changes only witness_artifact_id and witness_note in entries 0, 5, 6; every translation dictionary is equal.",
+    "Reported complete old/new entry dictionaries match actual canonical and successor entries.",
+    "The existing whole PDF hash and registered artifact match; original page bounds 307, 193 and 187 verified through independently rendered page images identical to prior directly inspected images.",
+    "git apply --check succeeded on the current canonical preimage."
+  ],
+  "qualification": [
+    "This new receipt independently accepts the exact successor metadata; prior receipts alone did not cover the changed artifact bindings.",
+    "The three Wilson historical prayer expressions remain the independently public-domain source basis already examined. The whole registered PDF stays remote/unresolved because its digitizer wrapper has no established distribution grant. This receipt does not authorize or claim redistribution, offline delivery, or new permission for the whole PDF.",
+    "The twelve-file successor omits the three previously staged Wilson page PDFs and their three manifests. No new binary delivery is proposed.",
+    "The four source/fidelity changes remain original project study English, not approved liturgical English and not for recitation. No exact-2008/current-edition or authenticated printed-2002 correspondence is established.",
+    "No other legacy debt, abandoned first-eight packet, full corpus completeness, source graph validation, reader checks, or root adoption is accepted here. Root integration and required source/inventory/reader gates remain separate."
+  ],
+  "blockers_within_this_review": [],
+  "canonical_writes": false
+}

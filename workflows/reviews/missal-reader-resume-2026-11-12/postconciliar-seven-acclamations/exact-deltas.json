@@ -1,0 +1,1241 @@
+{
+  "schema": "seven-acclamations-canonical-deltas/v1",
+  "accepted_candidate_sha256": "03b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432",
+  "independent_review_sha256": "cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8",
+  "calendar_path": "src/sources/calendars/postconciliar/propers.yaml",
+  "calendar_baseline_sha256": "f11d2bcbae85693d80f577fad4fa6e2e85c055d173170f86284ac5cd88438358",
+  "ledger_path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+  "ledger_baseline_sha256": "469c5a92a928f6b2883b41e5077b654c83e33a2adce7e6703e2d1d19749b1c2f",
+  "english_path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+  "english_before_and_after_sha256": "5f95e2f45e478da0efdd250a63ade50716db10f0bd785c6053a22c977e5fba7d",
+  "entries": [
+    {
+      "identity": [
+        "saint-lawrence-brindisi-priest-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "saint-lawrence-brindisi-priest-doctor-church",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_state": "absent",
+      "before_row": null,
+      "before_effective_row": null,
+      "after_row": {
+        "mass": "saint-lawrence-brindisi-priest-doctor-church",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen-publish",
+        "source_date": "1888",
+        "locator": "Complete historical antiphon, Pustet1888 printed339 / TSV line2, text cell",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.acclamation-semen-lawrence-brindisi-20261112",
+        "verification_locator": "n.602 (July21) explicitly appoints n.729.8; exact OLM1981 artifact pages 390,351",
+        "transformations": [
+          "Remove historical chant asterisk; remove stress accents; expand æ to ae; historical colon after Christus becomes OLM semicolon; no lexical change.",
+          "Select only the complete appointed verse; no external Alleluia repetition, rubric, adjacent verse, or response is supplied."
+        ],
+        "provenance_evidence": "Every spoken verse word agrees in order between the complete historical witness and the controlling OLM1981 verse; the declared display and pointing transformations account for the complete difference. Independently accepted workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json (SHA256cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8); candidate workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json (SHA25603b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432).",
+        "provenance_authority": "Exact controlling OLM1981 Lectionary expression and appointment, independently sourced from complete historical Latin; no whole2008 altar Missal authentication",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+        ],
+        "publication_locator": "Pustet1888 printed339 and exact independently registered full antiphon TSV",
+        "publication_evidence": "The complete historical antiphon is independently printed in Pustet1888 printed339 and retained in the exact registered Latin TSV (sha256129a2f73517c43fca3d9211581d6b2ad6b5754c22b0af664561836a5b4ff5c76). Its artifact has an affirmative United States public-domain-by-publication-date basis for the1888 words and mechanical transcription. The OLM1981 item has every same word in the same order; only declared typography and pointing change. The independently admitted Bute1908 English is retained with its own attribution and basis; it is not the Latin publication basis.",
+        "notice": "Latin wording is independently sourced from the identified historical witness and compared word for word with the controlling OLM1981 verse. English is the existing attributed historical study translation, not approved modern English.",
+        "note": "The full accepted historical English dictionary remains unchanged. Earlier English admission did not supply Latin authority; this dated source and whole-body comparison supplies the separate Latin basis. Canonical body contains the complete composed verse only."
+      },
+      "before_proper": {
+        "name": "Gospel Acclamation",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+            }
+          ]
+        },
+        "notes": "Source-local appointment: OLM 1981 n. 602, artifact p. 351, refers to n. 729,8, artifact p. 390, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied."
+      },
+      "after_proper": {
+        "name": "Gospel Acclamation",
+        "source": "composed",
+        "notes": "Source-local appointment: OLM 1981 n. 602, artifact p. 351, refers to n. 729,8, artifact p. 390, without a Scripture citation. Dated 2026-11-12 Latin successor: the complete historical Latin verse in Pustet1888 Breviary, printed339 agrees word for word with the controlling OLM1981 appointment (n.602 (July21) explicitly appoints n.729.8). This independent public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted.",
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum."
+      },
+      "english_dictionary_before": {
+        "mass": "saint-lawrence-brindisi-priest-doctor-church",
+        "form_id": "main",
+        "cycle": "all",
+        "occurrence": 1,
+        "proper": "Gospel Acclamation",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+        "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-lawrence",
+        "verified_on_page": "2026-10-29",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Literal historical human English of the independently source-established Breviary antiphon, for study. The whole Latin word sequence is directly witnessed in Pustet1888 printed339/AP393 and in OLM1981 n729,8 printed336/AP390. Differences are stress accents, the ae ligature, colon/semicolon and the Breviary chant asterisk; no word is added, dropped or changed. The historical English is Bute1908 printed439/AP523, whole wording unchanged, including his free rendering he shall never be moved for manebit in aeternum and the printed asterisk. OLM1981 appointments n602 and637 refer to n729,8; their exact source local reading role is retained. No authenticated2008 collation, approved modern English or target Latin publication is claimed. The source Latin2008 whole-body hold remains independent.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      },
+      "english_dictionary_after": {
+        "mass": "saint-lawrence-brindisi-priest-doctor-church",
+        "form_id": "main",
+        "cycle": "all",
+        "occurrence": 1,
+        "proper": "Gospel Acclamation",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+        "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-lawrence",
+        "verified_on_page": "2026-10-29",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Literal historical human English of the independently source-established Breviary antiphon, for study. The whole Latin word sequence is directly witnessed in Pustet1888 printed339/AP393 and in OLM1981 n729,8 printed336/AP390. Differences are stress accents, the ae ligature, colon/semicolon and the Breviary chant asterisk; no word is added, dropped or changed. The historical English is Bute1908 printed439/AP523, whole wording unchanged, including his free rendering he shall never be moved for manebit in aeternum and the printed asterisk. OLM1981 appointments n602 and637 refer to n729,8; their exact source local reading role is retained. No authenticated2008 collation, approved modern English or target Latin publication is claimed. The source Latin2008 whole-body hold remains independent.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      },
+      "source_latin_binding_delta": null,
+      "english_binding_reason": "All retained translations are attributed public-domain historical human English. The source_latin contract is opt-in and requires project-created translations without source_id; adding its fields here would be invalid."
+    },
+    {
+      "identity": [
+        "saint-john-chrysostom-bishop-doctor-church",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "saint-john-chrysostom-bishop-doctor-church",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_state": "absent",
+      "before_row": null,
+      "before_effective_row": null,
+      "after_row": {
+        "mass": "saint-john-chrysostom-bishop-doctor-church",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen-publish",
+        "source_date": "1888",
+        "locator": "Complete historical antiphon, Pustet1888 printed339 / TSV line2, text cell",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.acclamation-semen-john-chrysostom-20261112",
+        "verification_locator": "n.637 (September13) explicitly appoints n.729.8; exact OLM1981 artifact pages 390,359",
+        "transformations": [
+          "Same wholebody and transformations as Lawrence; separate exact n.637 appointment.",
+          "Select only the complete appointed verse; no external Alleluia repetition, rubric, adjacent verse, or response is supplied."
+        ],
+        "provenance_evidence": "Every spoken verse word agrees in order between the complete historical witness and the controlling OLM1981 verse; the declared display and pointing transformations account for the complete difference. Independently accepted workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json (SHA256cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8); candidate workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json (SHA25603b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432).",
+        "provenance_authority": "Exact controlling OLM1981 Lectionary expression and appointment, independently sourced from complete historical Latin; no whole2008 altar Missal authentication",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+        ],
+        "publication_locator": "Pustet1888 printed339 and exact independently registered full antiphon TSV",
+        "publication_evidence": "The complete historical antiphon is independently printed in Pustet1888 printed339 and retained in the exact registered Latin TSV (sha256129a2f73517c43fca3d9211581d6b2ad6b5754c22b0af664561836a5b4ff5c76). Its artifact has an affirmative United States public-domain-by-publication-date basis for the1888 words and mechanical transcription. The OLM1981 item has every same word in the same order; only declared typography and pointing change. The independently admitted Bute1908 English is retained with its own attribution and basis; it is not the Latin publication basis.",
+        "notice": "Latin wording is independently sourced from the identified historical witness and compared word for word with the controlling OLM1981 verse. English is the existing attributed historical study translation, not approved modern English.",
+        "note": "The full accepted historical English dictionary remains unchanged. Earlier English admission did not supply Latin authority; this dated source and whole-body comparison supplies the separate Latin basis. Canonical body contains the complete composed verse only."
+      },
+      "before_proper": {
+        "name": "Gospel Acclamation",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+            }
+          ]
+        },
+        "notes": "Source-local appointment: OLM 1981 n. 637, artifact p. 359, refers to n. 729,8, artifact p. 390, without a Scripture citation. The exact target-2008 body is not adopted or established. No chant words, removed-body hash, publication permission or Bible reconstruction is supplied."
+      },
+      "after_proper": {
+        "name": "Gospel Acclamation",
+        "source": "composed",
+        "notes": "Source-local appointment: OLM 1981 n. 637, artifact p. 359, refers to n. 729,8, artifact p. 390, without a Scripture citation. Dated 2026-11-12 Latin successor: the complete historical Latin verse in Pustet1888 Breviary, printed339 agrees word for word with the controlling OLM1981 appointment (n.637 (September13) explicitly appoints n.729.8). This independent public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted.",
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum."
+      },
+      "english_dictionary_before": {
+        "mass": "saint-john-chrysostom-bishop-doctor-church",
+        "form_id": "main",
+        "cycle": "all",
+        "occurrence": 1,
+        "proper": "Gospel Acclamation",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+        "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-chrysostom",
+        "verified_on_page": "2026-10-29",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Literal historical human English of the independently source-established Breviary antiphon, for study. The whole Latin word sequence is directly witnessed in Pustet1888 printed339/AP393 and in OLM1981 n729,8 printed336/AP390. Differences are stress accents, the ae ligature, colon/semicolon and the Breviary chant asterisk; no word is added, dropped or changed. The historical English is Bute1908 printed439/AP523, whole wording unchanged, including his free rendering he shall never be moved for manebit in aeternum and the printed asterisk. OLM1981 appointments n602 and637 refer to n729,8; their exact source local reading role is retained. No authenticated2008 collation, approved modern English or target Latin publication is claimed. The source Latin2008 whole-body hold remains independent.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      },
+      "english_dictionary_after": {
+        "mass": "saint-john-chrysostom-bishop-doctor-church",
+        "form_id": "main",
+        "cycle": "all",
+        "occurrence": 1,
+        "proper": "Gospel Acclamation",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+        "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-chrysostom",
+        "verified_on_page": "2026-10-29",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Literal historical human English of the independently source-established Breviary antiphon, for study. The whole Latin word sequence is directly witnessed in Pustet1888 printed339/AP393 and in OLM1981 n729,8 printed336/AP390. Differences are stress accents, the ae ligature, colon/semicolon and the Breviary chant asterisk; no word is added, dropped or changed. The historical English is Bute1908 printed439/AP523, whole wording unchanged, including his free rendering he shall never be moved for manebit in aeternum and the printed asterisk. OLM1981 appointments n602 and637 refer to n729,8; their exact source local reading role is retained. No authenticated2008 collation, approved modern English or target Latin publication is claimed. The source Latin2008 whole-body hold remains independent.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      },
+      "source_latin_binding_delta": null,
+      "english_binding_reason": "All retained translations are attributed public-domain historical human English. The source_latin contract is opt-in and requires project-created translations without source_id; adding its fields here would be invalid."
+    },
+    {
+      "identity": [
+        "pentecost",
+        "vigil",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "pentecost",
+        "form": "Vigil Mass",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_state": "removed row",
+      "before_row": {
+        "mass": "pentecost",
+        "form": "Vigil Mass",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "4a7ea722d5bec36bb23133ed6e1525b3585bfc71e7eeb26c1be522364c59dfb5"
+      },
+      "before_effective_row": {
+        "provenance_status": "unresolved",
+        "publication_status": "unresolved",
+        "publication_basis": "unresolved",
+        "surfaces": [],
+        "mass": "pentecost",
+        "form": "Vigil Mass",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "4a7ea722d5bec36bb23133ed6e1525b3585bfc71e7eeb26c1be522364c59dfb5"
+      },
+      "after_row": {
+        "mass": "pentecost",
+        "form": "Vigil Mass",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0",
+        "provenance_status": "collated",
+        "source_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-veni-sancte-spiritus-historical-latin-20261112",
+        "source_date": "1945",
+        "locator": "Lasance1945 printed599/AP597, historical TSV line2, text cell",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-olm-comparison",
+        "verification_locator": "n.62 Pentecost Ad Missam in vigilia; exact OLM1981 artifact pages 95",
+        "transformations": [
+          "Remove source stress accents and join printer wraps; historical colon after fidelium becomes OLM semicolon; no lexical change. Exclude Alleluia wrapper, preceding Psalm103 verse and nonspoken kneeling direction.",
+          "Select only the complete appointed verse; no external Alleluia repetition, rubric, adjacent verse, or response is supplied."
+        ],
+        "provenance_evidence": "Every spoken verse word agrees in order between the complete historical witness and the controlling OLM1981 verse; the declared display and pointing transformations account for the complete difference. Independently accepted workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json (SHA256cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8); candidate workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json (SHA25603b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432).",
+        "provenance_authority": "Exact controlling OLM1981 Lectionary expression and appointment, independently sourced from complete historical Latin; no whole2008 altar Missal authentication",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamations-historical-latin-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+        ],
+        "publication_locator": "Complete historical ordinary-page Latin verse; latin-missale-romanum age layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, applied only to the selected entire verse",
+        "publication_evidence": "The entire selected Latin verse is read on the exact ordinary seasonal page of the identified Lasance/Walsh revised1945 book, outside both excluded lettered inserts. The separate latin-missale-romanum layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml identifies the underlying Tridentine Latin through Benedict XV as public domain on its own age; in2026 its pre1931 foreign-publication date basis applies independently of English renewal. This finite complete-verse comparison applies that old Latin layer only to the complete named seasonal verse actually printed on this ordinary page. Every OLM1981 word occurs in that historical verse in the same order, with no additions, omissions or lexical substitutions; only declared pointing/display changes are projected. The English has its separate registered nonrenewal basis. No whole late-printing PDF license or Latin permission inherited merely from English acceptance is asserted.",
+        "notice": "Latin wording is independently sourced from the identified historical witness and compared word for word with the controlling OLM1981 verse. English is the existing attributed historical study translation, not approved modern English.",
+        "note": "The full accepted historical English dictionary remains unchanged. Earlier English admission did not supply Latin authority; this dated source and whole-body comparison supplies the separate Latin basis. Canonical body contains the complete composed verse only."
+      },
+      "before_proper": {
+        "name": "Gospel Acclamation",
+        "incipit": "Veni, Sancte Spiritus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_proper": {
+        "name": "Gospel Acclamation",
+        "incipit": "Veni, Sancte Spiritus",
+        "source": "composed",
+        "text": "Veni, Sancte Spiritus, reple tuorum corda fidelium; et tui amoris in eis ignem accende.",
+        "notes": "Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed599 agrees word for word with the controlling OLM1981 appointment (n.62 Pentecost Ad Missam in vigilia). This independent public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted."
+      },
+      "english_dictionary_before": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Veni, Sancte Spiritus",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "599",
+        "ia_leaf": 596,
+        "ia_leaf_range": [
+          596,
+          596
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-veni-sancte-spiritus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 599, PDF pages [597], IA leaves [596] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [95], printed pages ['41'], OLM1981 n62 fullverse; n63 explicitly refers to n62. Every verse word agrees; pointing colon/semicolon and stress/display vary. HistoricalprecedingAlleluiaPsalm103verse/versicles and nonspokenkneelingrubric excluded by fresh explicit verse span. No protectedmodernEnglish, translatedrubric or conflatedotherverse. Body begins Come after parenthesized kneelingdirection and ends love. OLM n. 62 prints the complete Vigil verse and n. 63 explicitly refers the Day Alleluia to n. 62; the two recipients share one actual historical verse verification. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "Come, O Holy Spirit, fill the hearts of Thy faithful: and kindle in them the fire of Thy love."
+          }
+        ]
+      },
+      "english_dictionary_after": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Veni, Sancte Spiritus",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "599",
+        "ia_leaf": 596,
+        "ia_leaf_range": [
+          596,
+          596
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-veni-sancte-spiritus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 599, PDF pages [597], IA leaves [596] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [95], printed pages ['41'], OLM1981 n62 fullverse; n63 explicitly refers to n62. Every verse word agrees; pointing colon/semicolon and stress/display vary. HistoricalprecedingAlleluiaPsalm103verse/versicles and nonspokenkneelingrubric excluded by fresh explicit verse span. No protectedmodernEnglish, translatedrubric or conflatedotherverse. Body begins Come after parenthesized kneelingdirection and ends love. OLM n. 62 prints the complete Vigil verse and n. 63 explicitly refers the Day Alleluia to n. 62; the two recipients share one actual historical verse verification. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-vigil-gospel-acclamation-all-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "Come, O Holy Spirit, fill the hearts of Thy faithful: and kindle in them the fire of Thy love."
+          }
+        ]
+      },
+      "source_latin_binding_delta": null,
+      "english_binding_reason": "All retained translations are attributed public-domain historical human English. The source_latin contract is opt-in and requires project-created translations without source_id; adding its fields here would be invalid."
+    },
+    {
+      "identity": [
+        "pentecost",
+        "day",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "pentecost",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_state": "removed row",
+      "before_row": {
+        "mass": "pentecost",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "4a7ea722d5bec36bb23133ed6e1525b3585bfc71e7eeb26c1be522364c59dfb5"
+      },
+      "before_effective_row": {
+        "provenance_status": "unresolved",
+        "publication_status": "unresolved",
+        "publication_basis": "unresolved",
+        "surfaces": [],
+        "mass": "pentecost",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "4a7ea722d5bec36bb23133ed6e1525b3585bfc71e7eeb26c1be522364c59dfb5"
+      },
+      "after_row": {
+        "mass": "pentecost",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0",
+        "provenance_status": "collated",
+        "source_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-veni-sancte-spiritus-historical-latin-20261112",
+        "source_date": "1945",
+        "locator": "Lasance1945 printed599/AP597, historical TSV line2, text cell",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-olm-comparison",
+        "verification_locator": "n.63 Pentecost Ad Missam in die: Alleluia Ut supra,n.62; exact OLM1981 artifact pages 95",
+        "transformations": [
+          "Same wholebody and transformations as Vigil, under actual n.63→62 referral.",
+          "Select only the complete appointed verse; no external Alleluia repetition, rubric, adjacent verse, or response is supplied."
+        ],
+        "provenance_evidence": "Every spoken verse word agrees in order between the complete historical witness and the controlling OLM1981 verse; the declared display and pointing transformations account for the complete difference. Independently accepted workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json (SHA256cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8); candidate workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json (SHA25603b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432).",
+        "provenance_authority": "Exact controlling OLM1981 Lectionary expression and appointment, independently sourced from complete historical Latin; no whole2008 altar Missal authentication",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamations-historical-latin-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+        ],
+        "publication_locator": "Complete historical ordinary-page Latin verse; latin-missale-romanum age layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, applied only to the selected entire verse",
+        "publication_evidence": "The entire selected Latin verse is read on the exact ordinary seasonal page of the identified Lasance/Walsh revised1945 book, outside both excluded lettered inserts. The separate latin-missale-romanum layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml identifies the underlying Tridentine Latin through Benedict XV as public domain on its own age; in2026 its pre1931 foreign-publication date basis applies independently of English renewal. This finite complete-verse comparison applies that old Latin layer only to the complete named seasonal verse actually printed on this ordinary page. Every OLM1981 word occurs in that historical verse in the same order, with no additions, omissions or lexical substitutions; only declared pointing/display changes are projected. The English has its separate registered nonrenewal basis. No whole late-printing PDF license or Latin permission inherited merely from English acceptance is asserted.",
+        "notice": "Latin wording is independently sourced from the identified historical witness and compared word for word with the controlling OLM1981 verse. English is the existing attributed historical study translation, not approved modern English.",
+        "note": "The full accepted historical English dictionary remains unchanged. Earlier English admission did not supply Latin authority; this dated source and whole-body comparison supplies the separate Latin basis. Canonical body contains the complete composed verse only."
+      },
+      "before_proper": {
+        "name": "Gospel Acclamation",
+        "incipit": "Veni, Sancte Spiritus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_proper": {
+        "name": "Gospel Acclamation",
+        "incipit": "Veni, Sancte Spiritus",
+        "source": "composed",
+        "text": "Veni, Sancte Spiritus, reple tuorum corda fidelium; et tui amoris in eis ignem accende.",
+        "notes": "Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed599 agrees word for word with the controlling OLM1981 appointment (n.63 Pentecost Ad Missam in die: Alleluia Ut supra,n.62). This independent public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted."
+      },
+      "english_dictionary_before": {
+        "mass": "pentecost",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Veni, Sancte Spiritus",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "599",
+        "ia_leaf": 596,
+        "ia_leaf_range": [
+          596,
+          596
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-veni-sancte-spiritus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 599, PDF pages [597], IA leaves [596] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [95], printed pages ['41'], OLM1981 n62 fullverse; n63 explicitly refers to n62. Every verse word agrees; pointing colon/semicolon and stress/display vary. HistoricalprecedingAlleluiaPsalm103verse/versicles and nonspokenkneelingrubric excluded by fresh explicit verse span. No protectedmodernEnglish, translatedrubric or conflatedotherverse. Body begins Come after parenthesized kneelingdirection and ends love. OLM n. 62 prints the complete Vigil verse and n. 63 explicitly refers the Day Alleluia to n. 62; the two recipients share one actual historical verse verification. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "Come, O Holy Spirit, fill the hearts of Thy faithful: and kindle in them the fire of Thy love."
+          }
+        ]
+      },
+      "english_dictionary_after": {
+        "mass": "pentecost",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Veni, Sancte Spiritus",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "599",
+        "ia_leaf": 596,
+        "ia_leaf_range": [
+          596,
+          596
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-veni-sancte-spiritus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 599, PDF pages [597], IA leaves [596] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [95], printed pages ['41'], OLM1981 n62 fullverse; n63 explicitly refers to n62. Every verse word agrees; pointing colon/semicolon and stress/display vary. HistoricalprecedingAlleluiaPsalm103verse/versicles and nonspokenkneelingrubric excluded by fresh explicit verse span. No protectedmodernEnglish, translatedrubric or conflatedotherverse. Body begins Come after parenthesized kneelingdirection and ends love. OLM n. 62 prints the complete Vigil verse and n. 63 explicitly refers the Day Alleluia to n. 62; the two recipients share one actual historical verse verification. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-pentecost-day-gospel-acclamation-all-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "Come, O Holy Spirit, fill the hearts of Thy faithful: and kindle in them the fire of Thy love."
+          }
+        ]
+      },
+      "source_latin_binding_delta": null,
+      "english_binding_reason": "All retained translations are attributed public-domain historical human English. The source_latin contract is opt-in and requires project-created translations without source_id; adding its fields here would be invalid."
+    },
+    {
+      "identity": [
+        "nativity",
+        "day",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "nativity",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_state": "removed row",
+      "before_row": {
+        "mass": "nativity",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "e407c135aa1401807c4f9740b365475f2c9e04bbb1ff739a1d3c56fb5eed8248"
+      },
+      "before_effective_row": {
+        "provenance_status": "unresolved",
+        "publication_status": "unresolved",
+        "publication_basis": "unresolved",
+        "surfaces": [],
+        "mass": "nativity",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "e407c135aa1401807c4f9740b365475f2c9e04bbb1ff739a1d3c56fb5eed8248"
+      },
+      "after_row": {
+        "mass": "nativity",
+        "form": "Mass during the Day",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "1f7e9e52b87aea04b1fbd3d7de15bce31c1c4971b7a489a7cd4dbf272d93a797",
+        "provenance_status": "collated",
+        "source_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-dies-sanctificatus-historical-latin-20261112",
+        "source_date": "1945",
+        "locator": "Lasance1945 printed145/AP146, historical TSV line3, text cell",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-olm-comparison",
+        "verification_locator": "n.16 Nativity Ad Missam in die; exact OLM1981 artifact pages 66",
+        "transformations": [
+          "Remove stress accents and join printer wraps; both colons and final period agree. Exclude source leading/trailing Alleluia wrapper and versicle mark.",
+          "Select only the complete appointed verse; no external Alleluia repetition, rubric, adjacent verse, or response is supplied."
+        ],
+        "provenance_evidence": "Every spoken verse word agrees in order between the complete historical witness and the controlling OLM1981 verse; the declared display and pointing transformations account for the complete difference. Independently accepted workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json (SHA256cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8); candidate workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json (SHA25603b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432).",
+        "provenance_authority": "Exact controlling OLM1981 Lectionary expression and appointment, independently sourced from complete historical Latin; no whole2008 altar Missal authentication",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamations-historical-latin-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+        ],
+        "publication_locator": "Complete historical ordinary-page Latin verse; latin-missale-romanum age layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, applied only to the selected entire verse",
+        "publication_evidence": "The entire selected Latin verse is read on the exact ordinary seasonal page of the identified Lasance/Walsh revised1945 book, outside both excluded lettered inserts. The separate latin-missale-romanum layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml identifies the underlying Tridentine Latin through Benedict XV as public domain on its own age; in2026 its pre1931 foreign-publication date basis applies independently of English renewal. This finite complete-verse comparison applies that old Latin layer only to the complete named seasonal verse actually printed on this ordinary page. Every OLM1981 word occurs in that historical verse in the same order, with no additions, omissions or lexical substitutions; only declared pointing/display changes are projected. The English has its separate registered nonrenewal basis. No whole late-printing PDF license or Latin permission inherited merely from English acceptance is asserted.",
+        "notice": "Latin wording is independently sourced from the identified historical witness and compared word for word with the controlling OLM1981 verse. English is the existing attributed historical study translation, not approved modern English.",
+        "note": "The full accepted historical English dictionary remains unchanged. Earlier English admission did not supply Latin authority; this dated source and whole-body comparison supplies the separate Latin basis. Canonical body contains the complete composed verse only."
+      },
+      "before_proper": {
+        "name": "Gospel Acclamation",
+        "incipit": "Dies sanctificatus illuxit nobis",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_proper": {
+        "name": "Gospel Acclamation",
+        "incipit": "Dies sanctificatus illuxit nobis",
+        "source": "composed",
+        "text": "Dies sanctificatus illuxit nobis: venite, gentes, et adorate Dominum: quia hodie descendit lux magna super terram.",
+        "notes": "Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed145 agrees word for word with the controlling OLM1981 appointment (n.16 Nativity Ad Missam in die). This independent public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted."
+      },
+      "english_dictionary_before": {
+        "mass": "nativity",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Dies sanctificatus illuxit nobis",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "145",
+        "ia_leaf": 145,
+        "ia_leaf_range": [
+          145,
+          145
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-dies-sanctificatus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 145, PDF pages [146], IA leaves [145] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [66], printed pages ['12'], OLM1981 n16 Alleluia verse. Entire verse matches in everyLatinword under stress/pointing/display. HistoricalEnglishverse begins A hallowed day after preceding Alleluia,alleluia/versicle and ends earth before separate concludingAlleluia. Bothwraps excluded as explicit fresh bounded verse quotation, not mechanical trimming of old payload. No newEnglishtranslation. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "A hallowed day hath dawned for us: come, ye Gentiles, and adore the Lord; for this day a great light hath descended upon the earth."
+          }
+        ]
+      },
+      "english_dictionary_after": {
+        "mass": "nativity",
+        "form_id": "day",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Dies sanctificatus illuxit nobis",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "145",
+        "ia_leaf": 145,
+        "ia_leaf_range": [
+          145,
+          145
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-dies-sanctificatus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 145, PDF pages [146], IA leaves [145] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [66], printed pages ['12'], OLM1981 n16 Alleluia verse. Entire verse matches in everyLatinword under stress/pointing/display. HistoricalEnglishverse begins A hallowed day after preceding Alleluia,alleluia/versicle and ends earth before separate concludingAlleluia. Bothwraps excluded as explicit fresh bounded verse quotation, not mechanical trimming of old payload. No newEnglishtranslation. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-nativity-day-gospel-acclamation-all-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "A hallowed day hath dawned for us: come, ye Gentiles, and adore the Lord; for this day a great light hath descended upon the earth."
+          }
+        ]
+      },
+      "source_latin_binding_delta": null,
+      "english_binding_reason": "All retained translations are attributed public-domain historical human English. The source_latin contract is opt-in and requires project-created translations without source_id; adding its fields here would be invalid."
+    },
+    {
+      "identity": [
+        "easter-3",
+        "main",
+        "Gospel Acclamation",
+        "C",
+        1
+      ],
+      "latin_key": {
+        "mass": "easter-3",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "C",
+        "occurrence": 1
+      },
+      "before_state": "removed row",
+      "before_row": {
+        "mass": "easter-3",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "C",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "d207dee7e513b407d4d47d14ab365d8101f84d07b6b02edba20edcbb75ade8ae"
+      },
+      "before_effective_row": {
+        "provenance_status": "unresolved",
+        "publication_status": "unresolved",
+        "publication_basis": "unresolved",
+        "surfaces": [],
+        "mass": "easter-3",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "C",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "d207dee7e513b407d4d47d14ab365d8101f84d07b6b02edba20edcbb75ade8ae"
+      },
+      "after_row": {
+        "mass": "easter-3",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "C",
+        "occurrence": 1,
+        "text_sha256": "3038efc01f0f7b132cc7d03b53fff17d7d2e7b3a0950dc8e7243295de4b87e12",
+        "provenance_status": "collated",
+        "source_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-surrexit-christus-historical-latin-20261112",
+        "source_date": "1945",
+        "locator": "Lasance1945 printed555/AP553, historical TSV line4, text cell",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-olm-comparison",
+        "verification_locator": "n.48C EasterIII YearC, not A/B; exact OLM1981 artifact pages 88",
+        "transformations": [
+          "Remove stress accents and join printer wraps; source colon after omnia omitted as OLM n.48C; comma after Christus retained. Exclude Alleluia wrapper and versicle mark; source Sequence referral is outside unit.",
+          "Select only the complete appointed verse; no external Alleluia repetition, rubric, adjacent verse, or response is supplied."
+        ],
+        "provenance_evidence": "Every spoken verse word agrees in order between the complete historical witness and the controlling OLM1981 verse; the declared display and pointing transformations account for the complete difference. Independently accepted workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json (SHA256cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8); candidate workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json (SHA25603b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432).",
+        "provenance_authority": "Exact controlling OLM1981 Lectionary expression and appointment, independently sourced from complete historical Latin; no whole2008 altar Missal authentication",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamations-historical-latin-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+        ],
+        "publication_locator": "Complete historical ordinary-page Latin verse; latin-missale-romanum age layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, applied only to the selected entire verse",
+        "publication_evidence": "The entire selected Latin verse is read on the exact ordinary seasonal page of the identified Lasance/Walsh revised1945 book, outside both excluded lettered inserts. The separate latin-missale-romanum layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml identifies the underlying Tridentine Latin through Benedict XV as public domain on its own age; in2026 its pre1931 foreign-publication date basis applies independently of English renewal. This finite complete-verse comparison applies that old Latin layer only to the complete named seasonal verse actually printed on this ordinary page. Every OLM1981 word occurs in that historical verse in the same order, with no additions, omissions or lexical substitutions; only declared pointing/display changes are projected. The English has its separate registered nonrenewal basis. No whole late-printing PDF license or Latin permission inherited merely from English acceptance is asserted.",
+        "notice": "Latin wording is independently sourced from the identified historical witness and compared word for word with the controlling OLM1981 verse. English is the existing attributed historical study translation, not approved modern English.",
+        "note": "The full accepted historical English dictionary remains unchanged. Earlier English admission did not supply Latin authority; this dated source and whole-body comparison supplies the separate Latin basis. Canonical body contains the complete composed verse only."
+      },
+      "before_proper": {
+        "name": "Gospel Acclamation",
+        "cycles": {
+          "A": {
+            "source": "scripture",
+            "verses": [
+              {
+                "book": "Luke",
+                "ranges": [
+                  {
+                    "begin": {
+                      "chapter": 24,
+                      "verse": 32
+                    },
+                    "end": {
+                      "chapter": 24,
+                      "verse": 32
+                    }
+                  }
+                ],
+                "ref": "Luke 24:32"
+              }
+            ]
+          },
+          "B": {
+            "source": "scripture",
+            "verses": [
+              {
+                "book": "Luke",
+                "ranges": [
+                  {
+                    "begin": {
+                      "chapter": 24,
+                      "verse": 32
+                    },
+                    "end": {
+                      "chapter": 24,
+                      "verse": 32
+                    }
+                  }
+                ],
+                "ref": "Luke 24:32"
+              }
+            ]
+          },
+          "C": {
+            "source": "composed",
+            "text_status": {
+              "state": "unavailable",
+              "scope": "proper-body",
+              "reasons": [
+                {
+                  "kind": "rights-withheld",
+                  "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+                }
+              ]
+            }
+          }
+        },
+        "notes": "Years A and B use Luke 24:32; Year C has a composed acclamation with no scriptural citation."
+      },
+      "after_proper": {
+        "name": "Gospel Acclamation",
+        "cycles": {
+          "A": {
+            "source": "scripture",
+            "verses": [
+              {
+                "book": "Luke",
+                "ranges": [
+                  {
+                    "begin": {
+                      "chapter": 24,
+                      "verse": 32
+                    },
+                    "end": {
+                      "chapter": 24,
+                      "verse": 32
+                    }
+                  }
+                ],
+                "ref": "Luke 24:32"
+              }
+            ]
+          },
+          "B": {
+            "source": "scripture",
+            "verses": [
+              {
+                "book": "Luke",
+                "ranges": [
+                  {
+                    "begin": {
+                      "chapter": 24,
+                      "verse": 32
+                    },
+                    "end": {
+                      "chapter": 24,
+                      "verse": 32
+                    }
+                  }
+                ],
+                "ref": "Luke 24:32"
+              }
+            ]
+          },
+          "C": {
+            "source": "composed",
+            "text": "Surrexit Christus, qui creavit omnia et misertus est humano generi."
+          }
+        },
+        "notes": "Years A and B use Luke 24:32; Year C has a composed acclamation with no scriptural citation. YearC only: Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed555 agrees word for word with the controlling OLM1981 appointment (n.48C EasterIII YearC, not A/B). This independent public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted."
+      },
+      "english_dictionary_before": {
+        "mass": "easter-3",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "C",
+        "occurrence": 1,
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "555",
+        "ia_leaf": 552,
+        "ia_leaf_range": [
+          552,
+          552
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-surrexit-christus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 555, PDF pages [553], IA leaves [552] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [88], printed pages ['34'], OLM1981n48YearC. Entire source-ownedverse matches in everyword after stress/pointing/display; versequotedfreshlyfromactualLasancepage between precedingAlleluia/versiclecue and followingSequenceheading. No additionalAlleluia is supplied or trimmedfromoldpayload. HistoricalEnglishsource preserved, not freshlytranslated or approvedmodernEnglish. This source-local comparison and appointment apply only to cycle C; A and B retain their separate scriptural acclamations. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "Christ is risen, Who created all things, and Who has had pity upon mankind."
+          }
+        ]
+      },
+      "english_dictionary_after": {
+        "mass": "easter-3",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "C",
+        "occurrence": 1,
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "555",
+        "ia_leaf": 552,
+        "ia_leaf_range": [
+          552,
+          552
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-surrexit-christus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 555, PDF pages [553], IA leaves [552] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [88], printed pages ['34'], OLM1981n48YearC. Entire source-ownedverse matches in everyword after stress/pointing/display; versequotedfreshlyfromactualLasancepage between precedingAlleluia/versiclecue and followingSequenceheading. No additionalAlleluia is supplied or trimmedfromoldpayload. HistoricalEnglishsource preserved, not freshlytranslated or approvedmodernEnglish. This source-local comparison and appointment apply only to cycle C; A and B retain their separate scriptural acclamations. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-easter-3-main-gospel-acclamation-c-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "Christ is risen, Who created all things, and Who has had pity upon mankind."
+          }
+        ]
+      },
+      "source_latin_binding_delta": null,
+      "english_binding_reason": "All retained translations are attributed public-domain historical human English. The source_latin contract is opt-in and requires project-created translations without source_id; adding its fields here would be invalid."
+    },
+    {
+      "identity": [
+        "easter-2-saturday",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "latin_key": {
+        "mass": "easter-2-saturday",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "before_state": "absent",
+      "before_row": null,
+      "before_effective_row": null,
+      "after_row": {
+        "mass": "easter-2-saturday",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "25f2a27baa91440142ef50d70e6fe88c5052b07a75fb740d6c785cd10b17bc1f",
+        "provenance_status": "collated",
+        "source_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-surrexit-christus-historical-latin-20261112",
+        "source_date": "1945",
+        "locator": "Lasance1945 printed555/AP553, historical TSV line4, text cell",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-olm-comparison",
+        "verification_locator": "n.272 Sabbato, EasterII ferial course; exact OLM1981 artifact pages 202",
+        "transformations": [
+          "Remove stress accents and join printer wraps; source comma after Christus omitted; source colon after omnia becomes OLM n.272 comma. Exclude Alleluia wrapper and versicle mark; source Sequence referral is outside unit.",
+          "Select only the complete appointed verse; no external Alleluia repetition, rubric, adjacent verse, or response is supplied."
+        ],
+        "provenance_evidence": "Every spoken verse word agrees in order between the complete historical witness and the controlling OLM1981 verse; the declared display and pointing transformations account for the complete difference. Independently accepted workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json (SHA256cc8e7840e2f3777c2411f655dbb372afc225b82d9f2ccba2a562ca60c59f08f8); candidate workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-candidate.json (SHA25603b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432).",
+        "provenance_authority": "Exact controlling OLM1981 Lectionary expression and appointment, independently sourced from complete historical Latin; no whole2008 altar Missal authentication",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamations-historical-latin-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+        ],
+        "publication_locator": "Complete historical ordinary-page Latin verse; latin-missale-romanum age layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml, applied only to the selected entire verse",
+        "publication_evidence": "The entire selected Latin verse is read on the exact ordinary seasonal page of the identified Lasance/Walsh revised1945 book, outside both excluded lettered inserts. The separate latin-missale-romanum layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml identifies the underlying Tridentine Latin through Benedict XV as public domain on its own age; in2026 its pre1931 foreign-publication date basis applies independently of English renewal. This finite complete-verse comparison applies that old Latin layer only to the complete named seasonal verse actually printed on this ordinary page. Every OLM1981 word occurs in that historical verse in the same order, with no additions, omissions or lexical substitutions; only declared pointing/display changes are projected. The English has its separate registered nonrenewal basis. No whole late-printing PDF license or Latin permission inherited merely from English acceptance is asserted.",
+        "notice": "Latin wording is independently sourced from the identified historical witness and compared word for word with the controlling OLM1981 verse. English is the existing attributed historical study translation, not approved modern English.",
+        "note": "The full accepted historical English dictionary remains unchanged. Earlier English admission did not supply Latin authority; this dated source and whole-body comparison supplies the separate Latin basis. Canonical body contains the complete composed verse only."
+      },
+      "before_proper": {
+        "name": "Gospel Acclamation",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "body_status": "held-unpublished",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+            }
+          ]
+        },
+        "notes": "OLM 1981 n.272, AP202 / printed148, complete Gospel Acclamation inspected 2026-10-22. No biblical citation is printed. An uncited two-clause Easter unit is printed; no biblical whole-unit identification or independent publishable whole witness is established. Exact Latin image evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.easter-ferial-courses-267-284. The underlying biblical material is not assigned new Latin ownership. No independent lawful whole-unit witness/publication basis for the adapted or composed unit has been established; the held source artifact remains non-indexable and restricted. No text, incipit, removed-body hash or Latin publication-ledger entry is supplied. No exact English whole-unit exemplar is held. Dated 2026-10-29 successor: a complete historical Lasance1945 human-English verse has now been independently image-checked and bound for this exact OLM1981 verse recipient. Alleluia framing and adjacent material are outside that quotation. The earlier no-exemplar finding and its unavailable dictionary are preserved in the dated admission receipt; no approved-English or authenticated2008 claim, target Latin body, or restricted-image publication is supplied. Source and admission: workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-acclamations-admission.json."
+      },
+      "after_proper": {
+        "name": "Gospel Acclamation",
+        "source": "composed",
+        "notes": "OLM1981 n.272, AP202 / printed148, appoints the complete composed Gospel Acclamation without a biblical citation. Dated 2026-11-12 Latin successor: the complete historical Latin verse in Lasance1945, printed555 agrees word for word with the controlling OLM1981 appointment (n.272 Sabbato, EasterII ferial course). This independent public-domain Latin body is supplied with OLM pointing and without external Alleluia framing. The earlier dated English admission supplied no Latin authority; its witness notes record that earlier admission state. The existing attributed historical study English remains unchanged. Authentication of the complete2008 altar Missal is not asserted.",
+        "text": "Surrexit Christus qui creavit omnia, et misertus est humano generi."
+      },
+      "english_dictionary_before": {
+        "mass": "easter-2-saturday",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "555",
+        "ia_leaf": 552,
+        "ia_leaf_range": [
+          552,
+          552
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-surrexit-christus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 555, PDF pages [553], IA leaves [552] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [202], printed pages ['148'], OLM1981n272. Entire source-ownedverse matches in everyword after stress/pointing/display; versequotedfreshlyfromactualLasancepage between precedingAlleluia/versiclecue and followingSequenceheading. No additionalAlleluia is supplied or trimmedfromoldpayload. HistoricalEnglishsource preserved, not freshlytranslated or approvedmodernEnglish. The 2026-10-22 statement that no independent English whole-unit exemplar was held remains a dated prior finding; this 2026-10-29 image-checked whole-verse witness is its bounded successor. It does not clear the separate restricted OLM body. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "Christ is risen, Who created all things, and Who has had pity upon mankind."
+          }
+        ]
+      },
+      "english_dictionary_after": {
+        "mass": "easter-2-saturday",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "555",
+        "ia_leaf": 552,
+        "ia_leaf_range": [
+          552,
+          552
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-surrexit-christus-verse-source",
+        "collated": "page-image, complete verse only, 2026-10-29",
+        "collation_result": "confirmed",
+        "witness_note": "Historical antecedent English for study, freshly read from Lasance and Walsh revised-1945 ordinary printed pages 555, PDF pages [553], IA leaves [552] on 2026-10-29. The entire source-owned Latin verse was compared word for word with the actual OLM 1981 source at artifact pages [202], printed pages ['148'], OLM1981n272. Entire source-ownedverse matches in everyword after stress/pointing/display; versequotedfreshlyfromactualLasancepage between precedingAlleluia/versiclecue and followingSequenceheading. No additionalAlleluia is supplied or trimmedfromoldpayload. HistoricalEnglishsource preserved, not freshlytranslated or approvedmodernEnglish. The 2026-10-22 statement that no independent English whole-unit exemplar was held remains a dated prior finding; this 2026-10-29 image-checked whole-verse witness is its bounded successor. It does not clear the separate restricted OLM body. The retained historical human English covers the complete verse alone; common acclamation wrappers and nonspoken directions remain outside this body. This is not approved contemporary English or a source for recitation. OLM 1981 establishes its own reading and source-local appointment only; correspondence to the 2008 reimpressio remains independently unresolved. No modern Latin, protected image, approved English or translated modern rubric is imported. The previous unavailable record and its quarantine fingerprints remain in the dated preparation receipt; their distinct approved-English restriction is unchanged.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-lasance-verses-en",
+        "publication_artifact_sha256": "822222a570dca1d26bd887b8767b1bf2f2dbdec9d7646c51806e58709bab6a66",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase2-acclamations-easter-2-saturday-main-gospel-acclamation-all-1-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "Christ is risen, Who created all things, and Who has had pity upon mankind."
+          }
+        ]
+      },
+      "source_latin_binding_delta": null,
+      "english_binding_reason": "All retained translations are attributed public-domain historical human English. The source_latin contract is opt-in and requires project-created translations without source_id; adding its fields here would be invalid."
+    }
+  ]
+}

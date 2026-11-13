@@ -1,0 +1,37 @@
+{
+  "additional_check": [
+    "git",
+    "diff",
+    "--check"
+  ],
+  "argv": [
+    ".scratch/root/venv/bin/python",
+    "-m",
+    "unittest",
+    "-v",
+    "tools.tests.test_current_source_batch_latin",
+    "tools.tests.test_ember_pentecost_september",
+    "tools.tests.test_missal_coverage",
+    "tools.tests.test_proper_latin",
+    "tools.tests.test_roman_1962_advent_ferial_use",
+    "tools.tests.test_roman_1962_common_virgin_ii_english_phase4",
+    "tools.tests.test_roman_1962_common_virgin_ii_word_repair",
+    "tools.tests.test_roman_1962_english13_phase5",
+    "tools.tests.test_roman_1962_english31_phase4",
+    "tools.tests.test_roman_1962_exact_primary_bodies",
+    "tools.tests.test_roman_1962_lasance_commons_easter_phase3",
+    "tools.tests.test_roman_1962_latin22_phase5",
+    "tools.tests.test_roman_1962_octnov_commemoration_source_repair",
+    "tools.tests.test_roman_1962_winter_ursula_source_repair",
+    "tools.tests.test_source_batch_delivery",
+    "tools.tests.test_source_batch_guards",
+    "tools.tests.test_witness_agreement",
+    "tools.tests.test_finite_latin_20261029"
+  ],
+  "does_not_replace": "Root source-library, generator and consumer integration checks.",
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "schema": "triptych-source-epoch-post-activation-tests/v1",
+  "scope": "Every test module importing the source-batch guard, plus the finite Latin authority controls."
+}

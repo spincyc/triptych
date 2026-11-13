@@ -1,0 +1,310 @@
+{
+  "schema": "triptych-finite-historical-latin-source-admission/v1",
+  "recorded_on": "2026-11-12",
+  "state": "source and consumer qualification accepted; source-epoch and release gates pending",
+  "scope": "Two independently public-domain named hymn selections for the Mass of the Lords Supper, exact to the 1879 source; no authenticated 2008 wording or complete-Mass claim. Existing 1946 English remains unchanged.",
+  "target_calendar": "postconciliar",
+  "source_latin_artifact": "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1",
+  "source_latin_sha256": "15c03ec1c4929c2fb54f32f5e4930d80917f90c0ebeb6f9f660cf6b508a50f76",
+  "source_facsimile_sha256": "69fd77df32441bc239a2a18fc2858b669bf3ed21c8da5162531e688f4a281f51",
+  "source_facsimile_original_pages": [
+    315,
+    316
+  ],
+  "source_facsimile_printed_pages": [
+    301,
+    302
+  ],
+  "source_review_path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-pange-latin-source-review.json",
+  "source_review_sha256": "29cdd7e2869fe62d795f4491ddf58db10961df63fe464bfe6b08b198703b1305",
+  "source_review_disposition": "Historical source bodies accepted independently and by Root; exact reader and CLI integration closure remains pending.",
+  "target_comparison": {
+    "artifact": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "page": 190,
+    "full_modern_body_printed": false,
+    "authenticated_2008": false
+  },
+  "whole_expression_basis": "Every selected Latin word, punctuation and stanza boundary comes from the independently public-domain 1879 hymn transcription. The two complete bounded selections add no target-era expressive words. Target-source appointment evidence is kept separate from historical wording.",
+  "old_refusal_status": "Prior removed-body ledger entries and exact prior proper dictionaries are conserved below. Their refusal provenance is not erased and does not become a blanket grant.",
+  "source_fidelity": "Exact source transcription; literal stanza selection; final storage LF excluded. Latin uses original jubilatio spelling.",
+  "publication_surfaces": [
+    "web",
+    "download",
+    "print",
+    "cli",
+    "corpus-data",
+    "public-git"
+  ],
+  "target_coverage_relation": "unresolved",
+  "changes": [
+    {
+      "identity": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Hymn at the Transfer of the Blessed Sacrament",
+        "all",
+        1
+      ],
+      "proper_before": {
+        "name": "Hymn at the Transfer of the Blessed Sacrament",
+        "incipit": "Pange, lingua, gloriosi Corporis mysterium",
+        "source": "composed",
+        "notes": "The last two stanzas are excluded here and sung at the place of reposition.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_before_json_sha256": "871c1e9e6f06107be87f9eec1544055f47f4579986dc0b8e9ff38a432c3754fa",
+      "proper_after": {
+        "name": "Hymn at the Transfer of the Blessed Sacrament",
+        "incipit": "Pange, lingua, gloriosi Corporis mysterium",
+        "source": "composed",
+        "notes": "Historical Latin of the named hymn option, transcribed from the 1879 Duffy witness; paired with the existing 1946 Lasance historical English. The secondary 2002 source names the option and stage but prints no complete hymn body. Exact 2008 wording and appointment remain uncollated. First four stanzas only; no Amen. The source permits another Eucharistic chant.",
+        "text": "Pange, lingua, gloriosi\nCorporis mysterium,\nSanguinisque pretiosi,\nQuem in mundi pretium,\nFructus ventris generosi,\nRex effudit gentium.\n\nNobis datus, nobis natus\nEx intacta Virgine,\nEt in mundo conversatus,\nSparso verbi semine,\nSui moras incolatus\nMiro clausit ordine.\n\nIn supremae nocte coenae\nRecumbens cum fratribus,\nObservata lege plene\nCibis in legalibus,\nCibum turbae duodenae\nSe dat suis manibus.\n\nVerbum caro, panem verum\nVerbo carnem efficit:\nFitque sanguis Christi merum:\nEt si sensus deficit,\nAd firmandum cor sincerum\nSola fides sufficit."
+      },
+      "proper_after_json_sha256": "48dcdb6130a777bf54dc704b38750cd205f363b161c7799c609bb53882bc339f",
+      "latin_ledger_before": {
+        "mass": "mass-of-the-lords-supper",
+        "form": "",
+        "proper": "Hymn at the Transfer of the Blessed Sacrament",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "339543026410aa73232b2868972f2dbd55c55fa4b328b8f28e8c0fd502f68834"
+      },
+      "latin_ledger_after": {
+        "mass": "mass-of-the-lords-supper",
+        "form": "",
+        "proper": "Hymn at the Transfer of the Blessed Sacrament",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "5849cc72f72aef91b897e11d20712b4f617b94df698f5e43b99b50826e8d34aa",
+        "provenance_status": "collated",
+        "source_id": "passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-transfer-four-stanzas-20261112",
+        "source_date": "1879",
+        "locator": "Checked historical hymn lines 1-27; Duffy1879 printed pp.301-302",
+        "relationship": "exact-transcription",
+        "verification_source_id": "passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-checked-20261029",
+        "verification_locator": "Whole six-stanza historical source, printed301-302; bounded selected lines",
+        "transformations": [
+          "Select complete historical stanzas at the recorded physical lines",
+          "Omit final storage LF; preserve every selected word, spelling, punctuation and internal line break"
+        ],
+        "provenance_evidence": "Exact to the independently public-domain historical hymn transcription. Fresh source-page image comparison confirms all six stanzas. The secondary2002 named-work directive is appointment evidence only, not a full modern-body witness.",
+        "provenance_authority": "Historical source exactness; modern target relation unresolved",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1"
+        ],
+        "publication_locator": "Duffy1879 printed301-302, source artifact own United States public-domain basis",
+        "publication_evidence": "Complete selected underlying hymn is present in the independently public-domain1879 printing; selection adds no words. No modern rubric, translation, typography or other later expression is imported.",
+        "note": "Historical Latin of the named hymn option, transcribed from the 1879 Duffy witness; paired with the existing 1946 Lasance historical English. The secondary 2002 source names the option and stage but prints no complete hymn body. Exact 2008 wording and appointment remain uncollated. First four stanzas only; no Amen. The source permits another Eucharistic chant."
+      },
+      "latin_body_utf8_sha256": "5849cc72f72aef91b897e11d20712b4f617b94df698f5e43b99b50826e8d34aa",
+      "english_dictionary_before_and_after": {
+        "mass": "mass-of-the-lords-supper",
+        "form_id": "main",
+        "proper": "Hymn at the Transfer of the Blessed Sacrament",
+        "cycle": "all",
+        "occurrence": 1,
+        "witness": "lasance-1945-printing-1946",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "454-455",
+        "ia_leaf": 463,
+        "ia_leaf_range": [
+          463,
+          464
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-source",
+        "collated": "historical page-image selection and named-work appointment; full modern body not collated",
+        "collation_result": "qualified historical named-work selection",
+        "witness_note": "Actual 1946 Lasance and Walsh historical English, printed pp. 454-455, PDF pages [464, 465], IA leaves [463, 464]. The secondary 2002 reproduction at artifact p. 190, n. 38 explicitly names the Eucharistic Pange lingua and excludes its last two stanzas during transfer. This quotation is exactly the first four stanzas of the independently complete historical hymn and contains no Amen. Both numbered directions permit another Eucharistic chant; this entry represents the specifically named-work option, not a mandatory sole performance choice. The actual page prints no complete hymn body and has no visible printed page number. No full modern-word collation, printed-2002 fidelity or authenticated 2008 correspondence is asserted. This is historical antecedent human English for study, not approved contemporary English, the separately authored Roman project study translation, or a text for recitation. Exact characters [0, 780] of the independently verified complete source English are quoted without word, case, contraction, punctuation or Amen changes. Full source artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-historical-en-20261029-7dc5b07e, SHA-256 7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be, verification passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-verify-20261029, publication passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-publish-20261029; those existing records remain unchanged. The independent 1879 Latin witness passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-checked-20261029 establishes the complete ancient named hymn, not modern target wording. The previous unavailable record and approved-English restriction remain separately retained in the dated preparation receipt.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-historical-selections-en",
+        "publication_artifact_sha256": "421b84c0761c4c8cc37f3f83e4c528b6e6ee2974279c71308333a7166304771c",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-hymn-at-the-transfer-of-the-blessed-sacrament-all-1-publication",
+        "incipit": "Pange, lingua, gloriosi Corporis mysterium",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946",
+            "text": "Sing, my tongue, the Saviour's glory,\nOf His flesh, the mystery sing;\nOf His blood, all price exceeding,\nShed by our immortal king.\nDestin'd for the world's redemption,\nFrom a noble womb to spring.\n\nOf a pure and spotless virgin\nBorn for us on earth below,\nHe, as man with man conversing,\nStay'd the seeds of truth to sow;\nThen He closed in solemn order\nWondrously His life of woe.\n\nOn the night of that Last Supper,\nSeated with His chosen band,\nHe the paschal victim eating,\nFirst fulfills the Lord's command;\nThen as food to all His brethren,\nGives Himself with His own hand.\n\nWord made flesh, the bread of nature\nBy His word to flesh He turns;\nWine into His blood He changes;\nWhat though sense no change discerns!\nOnly be the heart in earnest,\nFaith her lessons quickly learns."
+          }
+        ]
+      },
+      "english_utf8_sha256": "2af99ec30a2e741d5138a647db979320eb968b336c6b067aa4454d72af69679a"
+    },
+    {
+      "identity": [
+        "mass-of-the-lords-supper",
+        "main",
+        "Chant at the Place of Reposition",
+        "all",
+        1
+      ],
+      "proper_before": {
+        "name": "Chant at the Place of Reposition",
+        "incipit": "Tantum ergo Sacramentum",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_before_json_sha256": "f157bd1c7f182ff8914702e26434e19d1424eabfb47a9bfda422a50c4171a5ff",
+      "proper_after": {
+        "name": "Chant at the Place of Reposition",
+        "incipit": "Tantum ergo Sacramentum",
+        "source": "composed",
+        "notes": "Historical Latin of the named hymn option, transcribed from the 1879 Duffy witness; paired with the existing 1946 Lasance historical English. The secondary 2002 source names the option and stage but prints no complete hymn body. Exact 2008 wording and appointment remain uncollated. Final two stanzas with Amen. Taking Genitori after Tantum ergo is the independently identified historical closing-section interpretation, not an explicit two-stanza prescription at n.39. Another Eucharistic chant remains permitted.",
+        "text": "Tantum ergo Sacramentum\nVeneremur cernui:\nEt antiquum documentum\nNovo cedat ritui:\nPraestet fides supplementum\nSensuum defectui.\n\nGenitori, Genitoque\nLaus et jubilatio,\nSalus, honor, virtus quoque\nSit et benedictio:\nProcedenti ab utroque\nCompar sit laudatio.\nAmen."
+      },
+      "proper_after_json_sha256": "a4e1a273ecdd663f769ee26e8ca73b60b9571c1f691116056ca8f968de35205b",
+      "latin_ledger_before": {
+        "mass": "mass-of-the-lords-supper",
+        "form": "",
+        "proper": "Chant at the Place of Reposition",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "69417503d620f87d8593db42ce5012f5ec6f443ef72184eed77baeab4a5dde75"
+      },
+      "latin_ledger_after": {
+        "mass": "mass-of-the-lords-supper",
+        "form": "",
+        "proper": "Chant at the Place of Reposition",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "14e54ab240d4d1cdadb55b7fa21fa8fb22b67fcd70d15d3c54fc5528e6085905",
+        "provenance_status": "collated",
+        "source_id": "passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-reposition-two-stanzas-20261112",
+        "source_date": "1879",
+        "locator": "Checked historical hymn lines 29-42; Duffy1879 printed pp.301-302",
+        "relationship": "exact-transcription",
+        "verification_source_id": "passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-checked-20261029",
+        "verification_locator": "Whole six-stanza historical source, printed301-302; bounded selected lines",
+        "transformations": [
+          "Select complete historical stanzas at the recorded physical lines",
+          "Omit final storage LF; preserve every selected word, spelling, punctuation and internal line break"
+        ],
+        "provenance_evidence": "Exact to the independently public-domain historical hymn transcription. Fresh source-page image comparison confirms all six stanzas. The secondary2002 named-work directive is appointment evidence only, not a full modern-body witness.",
+        "provenance_authority": "Historical source exactness; modern target relation unresolved",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-latin-checked-20261029-15c03ec1"
+        ],
+        "publication_locator": "Duffy1879 printed301-302, source artifact own United States public-domain basis",
+        "publication_evidence": "Complete selected underlying hymn is present in the independently public-domain1879 printing; selection adds no words. No modern rubric, translation, typography or other later expression is imported.",
+        "note": "Historical Latin of the named hymn option, transcribed from the 1879 Duffy witness; paired with the existing 1946 Lasance historical English. The secondary 2002 source names the option and stage but prints no complete hymn body. Exact 2008 wording and appointment remain uncollated. Final two stanzas with Amen. Taking Genitori after Tantum ergo is the independently identified historical closing-section interpretation, not an explicit two-stanza prescription at n.39. Another Eucharistic chant remains permitted."
+      },
+      "latin_body_utf8_sha256": "14e54ab240d4d1cdadb55b7fa21fa8fb22b67fcd70d15d3c54fc5528e6085905",
+      "english_dictionary_before_and_after": {
+        "mass": "mass-of-the-lords-supper",
+        "form_id": "main",
+        "proper": "Chant at the Place of Reposition",
+        "cycle": "all",
+        "occurrence": 1,
+        "witness": "lasance-1945-printing-1946",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "455",
+        "ia_leaf": 464,
+        "ia_leaf_range": [
+          464,
+          464
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-source",
+        "collated": "historical page-image selection and named-work appointment; full modern body not collated",
+        "collation_result": "qualified historical named-work selection",
+        "witness_note": "Actual 1946 Lasance and Walsh historical English, printed p. 455, PDF pages [465], IA leaves [464]. The secondary 2002 reproduction at artifact p. 190, n. 39 names Tantum ergo sacramentum at reposition. It does not literally specify a two-stanza count: the following Genitori stanza and Amen belong to the closing section of the independently complete historical hymn and are retained as a bounded named-work selection interpretation. Both numbered directions permit another Eucharistic chant; this entry represents the specifically named-work option, not a mandatory sole performance choice. The actual page prints no complete hymn body and has no visible printed page number. No full modern-word collation, printed-2002 fidelity or authenticated 2008 correspondence is asserted. This is historical antecedent human English for study, not approved contemporary English, the separately authored Roman project study translation, or a text for recitation. Exact characters [782, 1146] of the independently verified complete source English are quoted without word, case, contraction, punctuation or Amen changes. Full source artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-historical-en-20261029-7dc5b07e, SHA-256 7dc5b07e7cf017028acf80b5d40971d9a71747e94f036ae85e48a1b6fe0724be, verification passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-verify-20261029, publication passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.pange-lingua-six-stanzas-publish-20261029; those existing records remain unchanged. The independent 1879 Latin witness passage.prosper-gueranger.the-liturgical-year.english-duffy-1879-volume-10.pange-lingua-six-stanzas-checked-20261029 establishes the complete ancient named hymn, not modern target wording. The previous unavailable record and approved-English restriction remain separately retained in the dated preparation receipt.",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-historical-selections-en",
+        "publication_artifact_sha256": "421b84c0761c4c8cc37f3f83e4c528b6e6ee2974279c71308333a7166304771c",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.english-completion-20261029-postconciliar-phase2-pange-mass-of-the-lords-supper-main-chant-at-the-place-of-reposition-all-1-publication",
+        "incipit": "Tantum ergo Sacramentum",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946",
+            "text": "Down in adoration falling,\nLo! the sacred host we hail!\nLo! o'er ancient forms departing\nNewer rites of grace prevail;\nFaith for all defects supplying,\nWhere the feebler senses fail.\n\nTo the everlasting Father,\nAnd the Son who reigns on high,\nWith the Holy Ghost proceeding\nForth from each eternally,\nBe salvation, honor, blessing,\nMight and endless majesty.\nAmen."
+          }
+        ]
+      },
+      "english_utf8_sha256": "fde699664599d7a55bb0662729cf4683c920c7b6a293548b2d57ac71a8155ac0"
+    }
+  ],
+  "source_passages": [
+    {
+      "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/passages/pange-transfer-four-stanzas-20261112.toml",
+      "sha256": "5acb066200138d2fb06d33e614bd490571de90a0163e164c83d3f979585b2222",
+      "source_physical_line_ranges": [
+        [
+          1,
+          27
+        ]
+      ]
+    },
+    {
+      "path": "src/sources/works/prosper-gueranger/the-liturgical-year/editions/english-duffy-1879-volume-10/passages/pange-reposition-two-stanzas-20261112.toml",
+      "sha256": "bbdaf00f4cfd4c992a72a338038ac6e21e6d5b5c4c3658d0e9787682f5ca82ff",
+      "source_physical_line_ranges": [
+        [
+          29,
+          42
+        ]
+      ]
+    }
+  ],
+  "required_before_publication": [
+    "Display historical Latin source and unresolved target relation in Latin-only, paired, and language-fallback browser output and CLI.",
+    "Retain every English dictionary byte-equivalent and every unrelated Proper/Latin ledger row.",
+    "Review precise source-epoch successor delta and preserve original replay/refusal streams.",
+    "Pass owning source/calendar/body-publication/product checks with exact installed inputs."
+  ],
+  "closure": {
+    "reader_qualification": "Passed native Chromium against freshly generated canonical data: both historical hymn selections retain their source and unresolved target qualifications in Latin-only and bilingual Propers, with language-fallback component controls. Covered by tools/tests/weekday_orations_chromium.mjs and tools/tests/test_weekday_orations_reader.py; no authenticated 2008 or full-Mass claim follows.",
+    "cli_qualification": "Passed the shared Latin-selection and both mass-propers and mass-today reading checks in tools/tests/test_historical_latin_cli.py. The historical-source note survives direct Latin and language fallback; existing English remains unchanged.",
+    "source_epoch": "pending Root acceptance",
+    "owning_gates": "pending Root integration"
+  }
+}

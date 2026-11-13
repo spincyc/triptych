@@ -1,0 +1,836 @@
+{
+  "schema": "triptych-independent-ordinary-latin-source-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Independent source/image reviewer /root/roman_sources/six_source_review, separately commissioned Ordinary lane; not candidate author",
+  "independent": true,
+  "verdict": "pass-source-factual-support for all five; SacredHeart publication extension requires separate actual Root judgment",
+  "handoff": {
+    "path": ".scratch/roman-sources/ordinary-latin/handoff-v2.json",
+    "sha256": "16b92d8f70d7706c777bdd1cfa0edca58a5a97eca5334bc631d1dff94bdf7ea9",
+    "byte_size": 18992
+  },
+  "candidate_files": [
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml",
+      "sha256": "dfebf95c1f8322c217a175c508b3867ff7b1a0443a4592e9e6941a6ff6d6aeb2",
+      "byte_size": 7788,
+      "repository_path": "src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+      "sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+      "byte_size": 458834,
+      "repository_path": "src/sources/inventories/roman-1962-ordo-missae-v1.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/artifact.toml",
+      "sha256": "df1bca17861d4ff625aaa4b6b13da799eae09ca33abf18c5eb5f96ac00d8b19e",
+      "byte_size": 3180,
+      "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/artifact.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/text.tsv",
+      "sha256": "f94160dc86a620341c756f8650e39b87a34883f653f4908904a6a9e1382398c9",
+      "byte_size": 1566,
+      "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/text.tsv"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-christo-rege-20261112.toml",
+      "sha256": "2b6837372e095c0f9c646f85fff5dc02153445f4051f6d4a53740e4453c427e3",
+      "byte_size": 2715,
+      "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-christo-rege-20261112.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-sacro-corde-20261112.toml",
+      "sha256": "84c21820989fbebec27fcef9e41670537c4a867b681928f376af386e4898daad",
+      "byte_size": 2389,
+      "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-sacro-corde-20261112.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-prefaces-extent-review-20261112.toml",
+      "sha256": "11b8f6779e8d9bfd55638cd4672adb65d02e2aa5115d75d8a08ae49c403fcbf6",
+      "byte_size": 1853,
+      "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-prefaces-extent-review-20261112.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/artifact.toml",
+      "sha256": "02901bbb64f286d03b72d84aca0d67ce5a48e87b34c88f860c33d21ba77dfdc6",
+      "byte_size": 2350,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/artifact.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/text.tsv",
+      "sha256": "542e00dbfad217175bd4a401082559265fc2ef098e1f06ae118ce28b55dc15c8",
+      "byte_size": 731,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/text.tsv"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/artifact.toml",
+      "sha256": "ca9e2125a591c2352c12c6cfb6149afdd701bf473a0411f21b36c23620d344d3",
+      "byte_size": 2244,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/artifact.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/text.tsv",
+      "sha256": "b3453506c65a37cde248badba326982861ed0f1ff7e478938b9c3617ca4208f0",
+      "byte_size": 363,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/text.tsv"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/artifact.toml",
+      "sha256": "093d5e0787a25e803f75fd47534da7867182971ae5ec9328947aa2ceee07fb5a",
+      "byte_size": 2237,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/artifact.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/text.tsv",
+      "sha256": "e6befcb79a0bbd6996d7cb51292a38de3f3c23e305eb886f62d4cee3c6f5aea1",
+      "byte_size": 866,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/text.tsv"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-dead-preface-latin-20261112.toml",
+      "sha256": "642a74521e6c16c871ee72ac7fb2c42024ee0a8d0ae6d228ed18a6503a3f938e",
+      "byte_size": 2395,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-dead-preface-latin-20261112.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-final-blessing-latin-20261112.toml",
+      "sha256": "99f1eeaaa1942b0144a779a97a7c4cec2bfc4f30281d98ee1d69909f2bcf9859",
+      "byte_size": 1384,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-final-blessing-latin-20261112.toml"
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-joseph-historical-latin-20261112.toml",
+      "sha256": "07b9c939a0a80c1e50fb2f9f0890b078104cb9cf498582267805a2f17344ced0",
+      "byte_size": 2594,
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-joseph-historical-latin-20261112.toml"
+    }
+  ],
+  "whole_source_inputs": [
+    {
+      "path": ".scratch/roman-sources/ordinary-latin/schott-1929.pdf",
+      "sha256": "4511fa924e0f260185576b220e25f24d4d130b8af64700fb720e0b03f1b07f92",
+      "byte_size": 62711309
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/acquired/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "byte_size": 51720493
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/cmaa-1962.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "byte_size": 82815941
+    }
+  ],
+  "scope": "Only handoff-v2.json and its16 prepared-v2 text files. Earlier v1 is withdrawn. This record is separate from the completed six-expression finite-authority work.",
+  "repository_head": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "cases": [
+    {
+      "case": "christ-the-king-preface",
+      "wording_verdict": "word-exact under declared orthographic/typographic comparison; source historical text preserved",
+      "source_pages": [
+        1177,
+        1178
+      ],
+      "source_printed": "1107–1108",
+      "target_page": 372,
+      "target_printed": "291 / no1080",
+      "finding": "The complete Latin body starts Vere on source1107 and continues without omitted wording through dicentes on1108. Source has its own opening and complete conclusion. Separate Sanctus referral and adjacent German/Secret/Communion are excluded. Every lexical word agrees with the1962 body; source j/ligatures, capitals and punctuation remain, including comma after semper and no comma after Dominationibus.",
+      "rights_scope_finding": "Both pages fall inside the existing explicitly allowed original Schott Latin extent1104–1108. This is a source-extent fact; no whole-book or1962 edition clearance follows.",
+      "verdict": "pass-source-factual-support",
+      "blocking_errors": [],
+      "passage": {
+        "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-christo-rege-20261112.toml",
+        "sha256": "2b6837372e095c0f9c646f85fff5dc02153445f4051f6d4a53740e4453c427e3",
+        "byte_size": 2715,
+        "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-christo-rege-20261112.toml"
+      },
+      "passage_id": "passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-latin-christo-rege-20261112",
+      "artifact": {
+        "id": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112",
+        "manifest": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/artifact.toml",
+          "sha256": "df1bca17861d4ff625aaa4b6b13da799eae09ca33abf18c5eb5f96ac00d8b19e",
+          "byte_size": 3180,
+          "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/artifact.toml"
+        },
+        "payload": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/text.tsv",
+          "sha256": "f94160dc86a620341c756f8650e39b87a34883f653f4908904a6a9e1382398c9",
+          "byte_size": 1566
+        },
+        "derived_from": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92",
+        "artifact_type": "normalized-text",
+        "rights_status": "public-domain"
+      },
+      "selected_text_sha256": "097ec9b7e81c1871c1ea28996bf804d53cfbbf676094281863dcf40ba4b1b6e3",
+      "selected_text_hash_definition": "UTF-8 of passage.text, preserving internal LF between turns, no added terminal LF",
+      "physical_line_ranges": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "case": "sacred-heart-preface",
+      "wording_verdict": "word-exact under declared orthographic/typographic comparison; source historical text preserved",
+      "source_pages": [
+        1486,
+        1487
+      ],
+      "source_printed": "[272]–[273]",
+      "target_page": 371,
+      "target_printed": "290 / no1079",
+      "finding": "The full Latin body is continuous from Vere on[272] through dicentes on[273], before its distinct Sanctus etc. referral. Source lower-case qui, nunquam, pænitentibus and cælestis are retained; target Qui, numquam, paenitentibus and caelestis are spelling/case variants, not omitted/reconstructed clauses. All lexical words agree under the declared comparison.",
+      "rights_scope_finding": "Earlier owner explicitly excluded this Preface. The proposed ordinary_prefaces_extension_20261112 adds only this exact complete Latin block and expressly retains other exclusions. Printed1929 printer leaf, integral contents, boundary continuity and exact catalog pagination factually support its1929 appendix attribution as a corroborated inference; no separate appendix imprint exists. Actual new publication judgment remains with Root.",
+      "verdict": "pass-source-factual-support",
+      "blocking_errors": [],
+      "passage": {
+        "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-sacro-corde-20261112.toml",
+        "sha256": "84c21820989fbebec27fcef9e41670537c4a867b681928f376af386e4898daad",
+        "byte_size": 2389,
+        "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/ordinary-latin-sacro-corde-20261112.toml"
+      },
+      "passage_id": "passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-latin-sacro-corde-20261112",
+      "artifact": {
+        "id": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112",
+        "manifest": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/artifact.toml",
+          "sha256": "df1bca17861d4ff625aaa4b6b13da799eae09ca33abf18c5eb5f96ac00d8b19e",
+          "byte_size": 3180,
+          "repository_path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/artifact.toml"
+        },
+        "payload": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/ordinary-two-prefaces-latin-20261112/text.tsv",
+          "sha256": "f94160dc86a620341c756f8650e39b87a34883f653f4908904a6a9e1382398c9",
+          "byte_size": 1566
+        },
+        "derived_from": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92",
+        "artifact_type": "normalized-text",
+        "rights_status": "public-domain"
+      },
+      "selected_text_sha256": "82928fcb0c337780f4093f79a165c8dd8338d1e26ed895dd6adec2c57237a4d0",
+      "selected_text_hash_definition": "UTF-8 of passage.text, preserving internal LF between turns, no added terminal LF",
+      "physical_line_ranges": [
+        [
+          3,
+          3
+        ]
+      ]
+    },
+    {
+      "case": "dead-preface",
+      "wording_verdict": "word-exact under declared orthographic/typographic comparison; source historical text preserved",
+      "source_pages": [
+        453
+      ],
+      "source_printed": "339",
+      "target_page": 379,
+      "target_printed": "298 / no1087",
+      "finding": "Complete prayer begins beneath dialogue in left column and continues at top right through dicentes. Separate Sanctus excluded. Source conditio versus target condicio, hujus/huius, cælis/caelis, cælestis/caelestis, stress/case and pointing differences are declared; no lexical addition/removal found. Source comma after et before dissoluta is retained.",
+      "rights_scope_finding": "Source belongs to the exact registered Mame1922 PDF. Independently read title and17May1922 approval leaf support this edition identification. No Lasance publication stratum or renewal rationale used.",
+      "verdict": "pass-source-factual-support",
+      "blocking_errors": [],
+      "passage": {
+        "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-dead-preface-latin-20261112.toml",
+        "sha256": "642a74521e6c16c871ee72ac7fb2c42024ee0a8d0ae6d228ed18a6503a3f938e",
+        "byte_size": 2395,
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-dead-preface-latin-20261112.toml"
+      },
+      "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112",
+      "artifact": {
+        "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112",
+        "manifest": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/artifact.toml",
+          "sha256": "02901bbb64f286d03b72d84aca0d67ce5a48e87b34c88f860c33d21ba77dfdc6",
+          "byte_size": 2350,
+          "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/artifact.toml"
+        },
+        "payload": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-dead-preface-latin-20261112/text.tsv",
+          "sha256": "542e00dbfad217175bd4a401082559265fc2ef098e1f06ae118ce28b55dc15c8",
+          "byte_size": 731
+        },
+        "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+        "artifact_type": "normalized-text",
+        "rights_status": "public-domain"
+      },
+      "selected_text_sha256": "d0630f1035b3799d7317759308bf6b72c466ef0d01bfb50f788663cd30231504",
+      "selected_text_hash_definition": "UTF-8 of passage.text, preserving internal LF between turns, no added terminal LF",
+      "physical_line_ranges": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "case": "final-blessing",
+      "wording_verdict": "word-exact spoken text with disclosed cue-glyph normalization",
+      "source_pages": [
+        469
+      ],
+      "source_printed": "355",
+      "target_page": 407,
+      "target_printed": "326 / no1138",
+      "finding": "Priest formula begins at lower-left and resumes upper-right across a red action rubric. Candidate joins only those spoken spans, preserves cross position, and separately records R. Amen. All spoken words match target. Source preceding sacerdos and continuous ritual subject support priest; R. alone does not identify a server or other specific responding actor. Proposed response has dialogue_role=response without speaker assignment.",
+      "rights_scope_finding": "Exact Mame1922 page source, no added target rubric or generic later missal-date inference.",
+      "verdict": "pass-source-factual-support",
+      "blocking_errors": [],
+      "passage": {
+        "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-final-blessing-latin-20261112.toml",
+        "sha256": "99f1eeaaa1942b0144a779a97a7c4cec2bfc4f30281d98ee1d69909f2bcf9859",
+        "byte_size": 1384,
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-final-blessing-latin-20261112.toml"
+      },
+      "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112",
+      "artifact": {
+        "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112",
+        "manifest": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/artifact.toml",
+          "sha256": "ca9e2125a591c2352c12c6cfb6149afdd701bf473a0411f21b36c23620d344d3",
+          "byte_size": 2244,
+          "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/artifact.toml"
+        },
+        "payload": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-final-blessing-latin-20261112/text.tsv",
+          "sha256": "b3453506c65a37cde248badba326982861ed0f1ff7e478938b9c3617ca4208f0",
+          "byte_size": 363
+        },
+        "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+        "artifact_type": "normalized-text",
+        "rights_status": "public-domain"
+      },
+      "selected_text_sha256": "7ee6defd4664c948e9fdbf8910370d7fe36cfbb92fb9ebc70470ce71bb2a9739",
+      "selected_text_hash_definition": "UTF-8 of passage.text, preserving internal LF between turns, no added terminal LF",
+      "physical_line_ranges": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "case": "joseph-preface",
+      "wording_verdict": "historical antecedent, alternatives unselected; correctly no word-exact target grade",
+      "source_pages": [
+        451
+      ],
+      "source_printed": "337",
+      "target_page": 376,
+      "target_printed": "295 / no1084",
+      "finding": "Complete source body crosses left-bottom to right-top, retaining Festivitate (Veneratione). Target directs festivitate for19March, solemnitate for1May, veneratione for votive Masses; source lacks solemnitate. Remaining words agree for the corresponding historical branch under disclosed typography. Candidate reuses the existing737-byte historical body exactly as a TSV cell, drops only terminalLF delimiter, does not choose a branch, and explicitly limits its join to existingMarch19 scope.",
+      "rights_scope_finding": "Exact existing historical Mame source body reused, not its separately authorized May1 study-English target and not May1 Latin. New artifact name does not promote inherited target grade.",
+      "verdict": "pass-source-factual-support",
+      "blocking_errors": [],
+      "passage": {
+        "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-joseph-historical-latin-20261112.toml",
+        "sha256": "07b9c939a0a80c1e50fb2f9f0890b078104cb9cf498582267805a2f17344ced0",
+        "byte_size": 2594,
+        "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-joseph-historical-latin-20261112.toml"
+      },
+      "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112",
+      "artifact": {
+        "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112",
+        "manifest": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/artifact.toml",
+          "sha256": "093d5e0787a25e803f75fd47534da7867182971ae5ec9328947aa2ceee07fb5a",
+          "byte_size": 2237,
+          "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/artifact.toml"
+        },
+        "payload": {
+          "path": ".scratch/roman-sources/ordinary-latin/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-joseph-historical-latin-20261112/text.tsv",
+          "sha256": "e6befcb79a0bbd6996d7cb51292a38de3f3c23e305eb886f62d4cee3c6f5aea1",
+          "byte_size": 866
+        },
+        "derived_from": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.english-completion-20261029-ordinary-joseph-preface-may1-source-body",
+        "artifact_type": "normalized-text",
+        "rights_status": "public-domain"
+      },
+      "selected_text_sha256": "144ea73f7c2d35596308a1aa15e8994c4fbfb14b8d0d3b377671c9a2a37a7f63",
+      "selected_text_hash_definition": "UTF-8 of passage.text, preserving internal LF between turns, no added terminal LF",
+      "physical_line_ranges": [
+        [
+          2,
+          2
+        ]
+      ],
+      "unchanged_existing_body": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/english-completion-20261029-ordinary-joseph-preface-may1-source-body/text.txt",
+        "sha256": "235844b4188dc771ca3e0b33065bf4072f4cb58d118d00742ef48b8bc62417e8",
+        "byte_size": 737
+      }
+    }
+  ],
+  "images_independently_read": [
+    {
+      "source": "schott",
+      "pdf_page": 2,
+      "read_scope": "whole identity/contents page",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-2-200.png",
+          "sha256": "c76149a033323c11a78431e4cccff245b32ec6a62e8de50f53bdef907298339e",
+          "byte_size": 27458,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-2-400.png",
+          "sha256": "79cb02fac299ffa59caa424ace0c0765bc94bf6a8e3f29d4d3a6265b61edc257",
+          "byte_size": 195798,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 3,
+      "read_scope": "whole identity/contents page",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-3-200.png",
+          "sha256": "1345e9a7a0330794b0163afb6b2e2b9cf12c388c6a73f42d9d2ef10a4bfc2467",
+          "byte_size": 19274,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-3-400.png",
+          "sha256": "bd8647fa88812701819db94c43a691ffbb21e163e5cc8d5e4dbc185df6359744",
+          "byte_size": 132855,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 11,
+      "read_scope": "whole identity/contents page",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-11-200.png",
+          "sha256": "ed6d65ad982b437916351aa592f2930c2c1c1b5d2e69e615dfa5e9bc19f9c488",
+          "byte_size": 36447,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-11-400.png",
+          "sha256": "23eae9811f172a7ddf3b6a11a1b77e52bace3a06290681d1084b1ed91f59a04d",
+          "byte_size": 286606,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1177,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-1177-200.png",
+          "sha256": "024d544b8fbeea8dd4c50f8283aae2b6654edf0d0524d29c4579e08f4b65e083",
+          "byte_size": 90759,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-1177-400.png",
+          "sha256": "b9b6d0ee71c3e27c1131eee0cb57d79ee0a4bf4202f0d5efd4cf09cd81d2a560",
+          "byte_size": 826178,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1178,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-1178-200.png",
+          "sha256": "705ca3056d0f88bb4acec88a94934f4a403cd532ff6bd5684a5009ef61a1c61b",
+          "byte_size": 93359,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-1178-400.png",
+          "sha256": "3676d4853f67aaab1f004727770ab0a79f28db0e3ab02ce67e77e18a2e315413",
+          "byte_size": 864935,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1486,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-1486-200.png",
+          "sha256": "c91c02b316c873f6390fafd838427211d617e9fa2892da8b938be8220742be85",
+          "byte_size": 94353,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-1486-400.png",
+          "sha256": "8636ca6130b123c4ebedf0c1a67b6daba0eba61cf4bc323e1eb8afb8ae473638",
+          "byte_size": 869833,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1487,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-1487-200.png",
+          "sha256": "f4415a435a524c78eb26cfd59875e5a8b9587fd8ff6367eb2c2ba19893dbce75",
+          "byte_size": 83705,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/schott-1487-400.png",
+          "sha256": "0fd7f45b7678e36fdbe06f41528b31c9a160297beb674726b86bff264f645f6b",
+          "byte_size": 777695,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "mame",
+      "pdf_page": 451,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/mame-451-200.png",
+          "sha256": "df0b3f812a555b19a443ba7ce6bd85a4a9196eebfaa4df9242a6e8c80bd32f00",
+          "byte_size": 497064,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/mame-451-400.png",
+          "sha256": "929256fda557c9449f4d372bdf6851e41874fddc669534d02083971d8082b6b4",
+          "byte_size": 1227071,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "mame",
+      "pdf_page": 453,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/mame-453-200.png",
+          "sha256": "b26b2e450b72eb018c6d1532ecb32899a968baf4872cee2903eee2160568f47d",
+          "byte_size": 259249,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/mame-453-400.png",
+          "sha256": "8fab6595ccf09e9092adc3ae71a7d7ec8e26bf4211847cb7d8d6d7144ebe36e4",
+          "byte_size": 636469,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "mame",
+      "pdf_page": 469,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/mame-469-200.png",
+          "sha256": "3b789a2dc7d20480ba1cdec71198c952f4afc8c6f01a067ebb441c9b4b7a8c0b",
+          "byte_size": 380858,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/mame-469-400.png",
+          "sha256": "6ca65f406876f04cca5fea2b74c3b75b34e046acdaab6e36a53afb1877dcaaa9",
+          "byte_size": 901325,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "target",
+      "pdf_page": 371,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-371-200.png",
+          "sha256": "25087b36a1b297b9b8cb5ec12d16bf2888db2abd74646a3c85b3d93c1fc40101",
+          "byte_size": 137935,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-371-400.png",
+          "sha256": "60be48b621b3ee02d526ac170f877436e53bb8aef3dd015470d3f13f0d1d8fce",
+          "byte_size": 153668,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "target",
+      "pdf_page": 372,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-372-200.png",
+          "sha256": "cfc0acb7eb0f2d67c1f5781405f4269e1857e61b11bea74f91214e20df7bc3dc",
+          "byte_size": 158038,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-372-400.png",
+          "sha256": "36166e91d367ce625ade60a917453620dc31e493bfbb65de1e9d1302f0d48abc",
+          "byte_size": 167963,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "target",
+      "pdf_page": 376,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-376-200.png",
+          "sha256": "439963adeb677f924b8272b02dacb99c4cfc031345abaed65312bdbff7ea4ce7",
+          "byte_size": 164530,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-376-400.png",
+          "sha256": "10f7faae52854cd62df1b4e1543cd3f789cb9fb107c27a03f08549677ab191df",
+          "byte_size": 179550,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "target",
+      "pdf_page": 379,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-379-200.png",
+          "sha256": "cdb4cc321d4156027eb8b8dd6cc2e634c9cb12ca07750c4afa5f1cdce6be7c98",
+          "byte_size": 138895,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-379-400.png",
+          "sha256": "caac8e602fd554ba85c5bc47cc891e80e31b18a1f7e0b6e143322b587e9d8ce7",
+          "byte_size": 148646,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "target",
+      "pdf_page": 407,
+      "read_scope": "complete bounded source/target prayer and surrounding page context",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-407-200.png",
+          "sha256": "cdfb1914bbca41bb57a00a66ae110a44b16f80322acb1212ad9961c4baefd940",
+          "byte_size": 144463,
+          "dpi": 200
+        },
+        {
+          "path": ".scratch/roman-sources/ordinary-latin/images-dpi/target-407-400.png",
+          "sha256": "615c6b93c28703fdea605ac52d85f0b96dbaa848aad761d57f06b7c7acae08ad",
+          "byte_size": 150209,
+          "dpi": 400
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1214,
+      "read_scope": "pagination and integral appendix section context; at1483 also complete SacredHeart heading/introduction",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/schott-1214-200.png",
+          "sha256": "877b0ee3b7d05760b7bd6a5ba1620e02c9e3e2693cff81c214cff8c81fe5637d",
+          "byte_size": 82617,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1215,
+      "read_scope": "pagination and integral appendix section context; at1483 also complete SacredHeart heading/introduction",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/schott-1215-200.png",
+          "sha256": "bb46322c1086c208af9fb74845beacf1e4efd003d8676e0699ef07c34bfd618c",
+          "byte_size": 86606,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1478,
+      "read_scope": "pagination and integral appendix section context; at1483 also complete SacredHeart heading/introduction",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/schott-1478-200.png",
+          "sha256": "69c76ac2d0740d6b3074493cd42f94abb377f98c8c72c9f95d0fd712585c9b25",
+          "byte_size": 69039,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1479,
+      "read_scope": "pagination and integral appendix section context; at1483 also complete SacredHeart heading/introduction",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/schott-1479-200.png",
+          "sha256": "a07f49735246f2de0f70f201bd963fb2eda7c998fcdf1daadf29c9b9ced89768",
+          "byte_size": 86509,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1483,
+      "read_scope": "pagination and integral appendix section context; at1483 also complete SacredHeart heading/introduction",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/schott-1483-200.png",
+          "sha256": "769c62b554e3174451df228ffb3876c8c94f2ea8f6e968e4ba66c7869cc375c8",
+          "byte_size": 92231,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1488,
+      "read_scope": "pagination and integral appendix section context; at1483 also complete SacredHeart heading/introduction",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/schott-1488-200.png",
+          "sha256": "ca276a47537a0cce50ee28879519dcc46d03f292f20ad9aa3cd48faff648092c",
+          "byte_size": 65509,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1489,
+      "read_scope": "pagination and integral appendix section context; at1483 also complete SacredHeart heading/introduction",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/schott-1489-200.png",
+          "sha256": "2b6776c9072318601d394421fee3557c1ff437af9ce3f058e187e13ad5f7fbe7",
+          "byte_size": 94548,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "schott",
+      "pdf_page": 1495,
+      "read_scope": "pagination and integral appendix section context; at1483 also complete SacredHeart heading/introduction",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/schott-1495-200.png",
+          "sha256": "d2eb9df74ee64705ed663f2aa03e51bc7e4d22757543b9009333b53be7ff1a29",
+          "byte_size": 77420,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "mame",
+      "pdf_page": 13,
+      "read_scope": "identity/title/approval",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/mame-13-200.png",
+          "sha256": "eda0251d536b6b545d6573c0008b081f02a7d6a248a5c0262d510ba5275f9340",
+          "byte_size": 235482,
+          "dpi": 200
+        }
+      ]
+    },
+    {
+      "source": "mame",
+      "pdf_page": 15,
+      "read_scope": "identity/title/approval",
+      "images": [
+        {
+          "path": ".scratch/roman-sources/ordinary-source-review/mame-15-200.png",
+          "sha256": "bb6f5cad3820f32c767274369f2935710cfa7770880844b6c54cdf09ff202b24",
+          "byte_size": 331227,
+          "dpi": 200
+        }
+      ]
+    }
+  ],
+  "independent_raster_binding_audit": {
+    "path": ".scratch/roman-sources/ordinary-source-review/raster-bindings.json",
+    "sha256": "476bda624fefb22fbcb5284635471fdbd52ce962f3f7989e98b04be58820df10",
+    "byte_size": 8053
+  },
+  "raster_finding": "Independently rerendered25 pages at200dpi; all15 pages with supplied200dpi counterparts are pixel-identical. One extraMame14 render was not read or used. Mame15 separately rendered and read. All substantive source/target bodies andSchott identity/contents also read in supplied400dpi images. Source PDFs independently hashed before this review.",
+  "catalog_finding": {
+    "source_url": "https://dli.institute/dlibib/dlibibkatwp.php?layout=dbk&ausgabe=1&nummer=67078&Bestand=c&NurSchweiz=0",
+    "retrieved_on": "2026-11-12",
+    "retained_html": {
+      "path": ".scratch/roman-sources/ordinary-source-review/dli-67078.html",
+      "sha256": "b924f875ca7c5faae9ccc8b2e85293a4d75beb0af64c3ca6d9714652e8937efd",
+      "byte_size": 7816
+    },
+    "finding": "Independently reopened/read the complete catalog record and fetched its completeHTML. It identifies Bihlmeyer/Schott, second revised edition, FreiburgHerder1929, XII,64*,1144,281pages andSchott1. FreshHTML digest exactly matches the existing retained catalog digest. This corroborates the precise printing, rather than treating an undated appendix or host1927 filename as an independent imprint."
+  },
+  "edition_factual_findings": [
+    "SchottPDF2 states second revised edition with handwritten1929; PDF3 independently prints Herder1929 and carries1927 approvals. Only the printed printer line supplies the direct imprint date.",
+    "SchottPDF11/XII lists newly prescribed feasts inclSacredHeart[269] followed by index[275]. Independently read core1144/PDF1214, start of second paginationPDF1215, [264]/1478 to newfeasts[265]/1479, actualSacredHeart[269]/1483, [274]/1488 to index[275]/1489, and final[281]/1495. At[269] the introduction itself says the following Mass was prescribed in1929. These facts corroborate integral appendix attribution; they do not supply a separately dated appendix imprint.",
+    "MamePDF13 independently prints fourth edition juxta typicam Vaticanam, ToursAlfredMame etFils,MCMXXII; approvalPDF15 is dated17May1922 and explicitly mentions1920/1921 decrees. The bounded prayers lie in its ordinary pagination. ExistingMame whole-source metadata controls the identified1922 source."
+  ],
+  "metadata_and_scope_findings": [
+    "All4 new text artifacts are normalized-text with same-edition derived_from links. NewSchott/Mame ordinary artifacts retain historical words; none is mislabeled as a1962 facsimile or source-exact modern string. Four word-exact grades concern lexical agreement under declared orthography, not byte identity or whole-rite approval.",
+    "All16 proposedfiles are text; no newPDF/image artifact or binary payload is included. SchottwholePDF remains restricted/metadata-only for publication purposes. Images, German, English, watermark/digital packaging, neighboring material, and reconstructed/missing scan pages remain outside the new extent.",
+    "No LasanceLatin witness/artifact/passage is added or used by any of thefive newLatin joins. Existing LasanceEnglish remains unchanged. This review does not infer the date of any Lasance stratum from its1945 label and does not reopen or approve that existingEnglish rights question.",
+    "Joseph copies its admittedMame body exactly, retains both alternatives, has no target_wording=word-exact field, and explicitly limits applicability toMarch19. No selected alternative, May1Latin, or modified appointment is introduced.",
+    "Finalblessing source cues support the priest role and a response role; the response has no invented specific speaker. Rubric words are excluded and the cross remains at its source position."
+  ],
+  "english_immutability": {
+    "path": ".scratch/roman-sources/ordinary-source-review/english-immutability.json",
+    "sha256": "3c36d3116a6c298644aad6949815ec1a831eba75f6fe6148c377a2a24647b24d",
+    "byte_size": 748
+  },
+  "english_finding": "All29 English-named fields and allEnglish witness records equal preimage. A second full parsed-owner comparison becomes identical after reverting only thefive expectedLatin joins and Latinwitness metadata. This verifies all remainingEnglish/alternatives/turns/conditions/appointments unchanged, independent of authorvalidation.",
+  "prior_six_receipt_unchanged": {
+    "path": ".scratch/roman-sources/six-source-review/review.json",
+    "sha256": "d6204deaca1a69ee69ca24cdc71a848315caf6a6a27cb9bfa830c4c710fee549",
+    "byte_size": 76796
+  },
+  "blocking_errors": [],
+  "nonblocking_caveats": [
+    "SacredHeart1929 appendix attribution remains a corroborated bibliographic inference, accurately disclosed. The earlier rightsowner excluded thisPreface; the new exact extent is a proposal requiring actualRoot publication judgment, not automatic inheritance from otherSchott prayers.",
+    "The source historical spellings/punctuation are preserved. Word-exact is a comparison grade under declared typography and receivedspelling, never a claim of identical modern target bytes.",
+    "No freshEnglish fidelity orrights review and no live reader/coverage/runtime audit was performed. ExistingEnglish is mechanically unchanged; its prior assessments are neither expanded nor independently reapproved here."
+  ],
+  "limits": [
+    "No legalresearch/adoption, no publicationauthorization, no controller/finite-authority mutation, no canonical orcandidate edits, commits orpushes. Root retains the actualsource/publication decision.",
+    "Review is finite to exacthandoff/source/artifact/passagetext hashes listed. Any candidate change needs repinning or appropriate delta review.",
+    "CompletePDFs were hashed but not everypage read. Only the expressly listed images/contexts and complete bounded prayers were independently read. Ordinary200/400dpi images were actually viewed; image display may fit a fullpage to the interface.",
+    "All newreview output is confined to ordinary-source-review/. The earlier six-source-review receipt was read only to assert its unchanged digest."
+  ]
+}

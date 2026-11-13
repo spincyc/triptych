@@ -467,7 +467,9 @@ class LiturgicalYearUnresolvedScopeTests(unittest.TestCase):
 class ActiveCalendarRefusalTests(unittest.TestCase):
     """A live calendar refusal outranks every rubrical occurrence override."""
 
-    CALENDARS = ("roman-1962", "roman-pre-1955")
+    # RG 18 now settles the 1962 nominal short year. The separate pre-1955
+    # source hold remains a live control for refusing an invented tie-break.
+    CALENDARS = ("roman-pre-1955",)
     DATE = "2038-11-21"
     EXPECTED = [
         "last-sunday-after-pentecost",
@@ -694,13 +696,18 @@ class SourceDrivenFailClosedRegressionTests(unittest.TestCase):
         self.assertEqual(branch["winner"]["key"], "saint-boniface-bishop-martyr")
         self.assertEqual(branch["winner"]["row"], 7)
 
-    def test_1962_litanies_refuse_only_when_the_combined_entry_loses(self) -> None:
-        losing = self.assert_refused("litanies-lose", "occurrence")
-        self.assertIn("Greater Litanies", losing["unsettled"][0]["what"])
+    def test_1962_litanies_are_distinct_from_st_mark_in_both_occurrences(self) -> None:
+        _, losing = self.results["litanies-lose"]
+        self.assertTrue(losing["settled"])
+        self.assertEqual(losing["winner"]["id"], "easter-3")
         _, winning = self.results["litanies-win"]
         self.assertTrue(winning["settled"])
         self.assertEqual(winning["winner"]["id"], "litania-maior")
         self.assertEqual(winning["unsettled"], [])
+        for branch in (losing, winning):
+            for kind in ("low_mass", "sung_non_conventual"):
+                self.assertEqual(branch["orations"][kind][1]["source_key"], "rogation-mass")
+                self.assertEqual(branch["orations"][kind][1]["kind"], "privileged commemoration")
 
     def test_pre1955_linearization_refuses_only_the_material_range(self) -> None:
         uncertain = self.assert_refused("linearization-can-decide", "occurrence")

@@ -177,15 +177,23 @@ artifacts = [
   "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-complete-b-en",
 ]
 
-# This separate witness supplies only three missing Latin prayer bodies.
-# Cummiskey's own English-only finding remains on those original source rows.
+
+[[witnesses]]
+id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+lang = "la"
+label = "Schott/Bihlmeyer, second revised Herder1929 printing: two historical Latin Preface bodies"
+rights = "public-domain"
+caution = "Complete historical Latin of Christ the King and the Sacred Heart from exact bounded, independently dated1929 source extents. Source spelling and pointing remain. The whole PDF, German, images and neighboring prayers remain outside the publication basis. Word agreement does not confer liturgical approval or change the historical English fidelity grades."
+artifacts = ["artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112"]
+
+
 [[witnesses]]
 id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
 lang = "la"
-label = "Missale Romanum, editio quarta juxta typicam (Tours: Alfred Mame, 1922), Gospel-adjacent prayers and Accendat Latin"
+label = "Missale Romanum, editio quarta juxta typicam (Tours: Alfred Mame, 1922), Gospel-adjacent prayers, proper Canon, historical Joseph and Dead Prefaces and final blessing Latin"
 rights = "public-domain"
-caution = "Checked Gospel-adjacent prayer bodies and Accendat from a 1922 altar missal, retained in that printing's own spelling and pointing. This is an antecedent witness, not the 1962 typical edition, and the reader is never a book to celebrate from. The Munda cor meum priest cue is limited to the source's express reuse at Mass without deacon and subdeacon; its fully printed solemn-Mass occurrence belongs to the deacon. Cummiskey's English source and actor assignments remain separate."
-artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae"]
+caution = "Checked Gospel-adjacent prayer bodies and Accendat from a 1922 altar missal, retained in that printing's own spelling and pointing. This is an antecedent witness, not the 1962 typical edition, and the reader is never a book to celebrate from. The Munda cor meum priest cue is limited to the source's express reuse at Mass without deacon and subdeacon; its fully printed solemn-Mass occurrence belongs to the deacon. Cummiskey's English source and actor assignments remain separate. The complete historical Joseph body retains unselected alternatives under March 19 applicability only; the final blessing retains its own priest formula and unassigned response cue."
+artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112"]
 
 [[witnesses]]
 id = "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029"
@@ -2507,8 +2515,8 @@ after = "rubrica-nota-nominis"
 kind = "prayer"
 speaker = "priest"
 name = "Preface of the Sacred Heart"
-absent_latin = "preface-not-in-witness"
 conditions = [{ kind = "appointed", variable = "preface", options = ["sacro-corde"], basis = "This complete historical Preface body stands only where the source-owned appointment selects its named Preface. No appointment is inferred from the translation." }]
+latin_turns = [{ key = "priest-1", seq = [2], speaker = "priest" }]
 [sections.inserted.english]
 witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
@@ -2518,14 +2526,26 @@ relation = "antecedent"
 collation = "uncollated"
 note = "HISTORICAL HUMAN ENGLISH. Exact source body at Lasance ordinary printed pages 812–818, independently image-checked and source-fidelity reviewed. The complete body includes its own opening and conclusion, ending before the separately printed Sanctus; no Cummiskey opening or conclusion is spliced into it. The frame’s subsequent Sanctus retains its separate existing source identity. Source spelling, capitals and punctuation remain; no approved target-English or whole-execution claim is made."
 
+[sections.inserted.latin]
+witness = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+artifact = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112"
+element = "praefatio-sacro-corde"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Complete historical Latin atSchott1929 printed[272]-[273]/PDF1486-1487 compared word for word against1962 n.1079, printed290/CMAA PDF371. All lexical words agree under declared i/j, ligature, stress-accent, capitalization, pointing and received-spelling comparison. Source wording and pointing are preserved."
+target_wording = "word-exact"
+note = "Complete historical body with its own opening and conclusion before the separate Sanctus or referral. One priest turn; the opening dialogue and Sanctus are excluded. No English exactness, new appointment or Lasance publication-layer inference is made. passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-latin-sacro-corde-20261112"
+
+
 [[sections.inserted]]
 key = "praefatio-christo-rege"
 after = "rubrica-nota-nominis"
 kind = "prayer"
 speaker = "priest"
 name = "Preface of Christ the King"
-absent_latin = "preface-not-in-witness"
 conditions = [{ kind = "appointed", variable = "preface", options = ["christo-rege"], basis = "This complete historical Preface body stands only where the source-owned appointment selects its named Preface. No appointment is inferred from the translation." }]
+latin_turns = [{ key = "priest-1", seq = [1], speaker = "priest" }]
 [sections.inserted.english]
 witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
@@ -2535,15 +2555,27 @@ relation = "antecedent"
 collation = "uncollated"
 note = "HISTORICAL HUMAN ENGLISH. Exact source body at Lasance ordinary printed pages 812–818, independently image-checked and source-fidelity reviewed. The complete body includes its own opening and conclusion, ending before the separately printed Sanctus; no Cummiskey opening or conclusion is spliced into it. The frame’s subsequent Sanctus retains its separate existing source identity. Source spelling, capitals and punctuation remain; no approved target-English or whole-execution claim is made."
 
+[sections.inserted.latin]
+witness = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+artifact = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-two-prefaces-latin-20261112"
+element = "praefatio-christo-rege"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Complete historical Latin atSchott1929 printed1107-1108/PDF1177-1178 compared word for word against1962 n.1080, printed291/CMAA PDF372. All lexical words agree under declared i/j, ligature, stress-accent, capitalization, pointing and received-spelling comparison. Source wording and pointing are preserved."
+target_wording = "word-exact"
+note = "Complete historical body with its own opening and conclusion before the separate Sanctus or referral. One priest turn; the opening dialogue and Sanctus are excluded. No English exactness, new appointment or Lasance publication-layer inference is made. passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.ordinary-latin-christo-rege-20261112"
+
+
 [[sections.inserted]]
 key = "praefatio-sancto-ioseph"
 after = "rubrica-nota-nominis"
 kind = "prayer"
 speaker = "priest"
 name = "Preface of St Joseph"
-absent_latin = "preface-not-in-witness"
 conditions = [{ kind = "appointed", variable = "preface", options = ["sancto-ioseph"], basis = "This complete historical Preface body stands only where the source-owned appointment selects its named Preface. No appointment is inferred from the translation." }]
 english_alternatives = [{ witness = "edition.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030", artifact = "artifact.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030.joseph-preface-may1-study-en-240fd178", element = "praefatio-sancto-ioseph-may1", column = "english", relation = "own", reading_note = "Triptych study translation for the May 1 Preface of Saint Joseph. This English has no liturgical approval and is not for recitation.", applicability = { kind = "formulary", calendar = "roman-1962", formularies = ["s-ioseph-opificis-sponsi-beatae-mariae"], basis = "The independently reviewed new study English renders the complete 99-word body for the May 1 solemnitate selection. The complete 1922 Mame Latin foundation and sole later functional-word replacement at word 25 have the exact separate root-adopted basis recorded in workflows/reviews/missal-english-completion-2026-10-29/ordinary/joseph-may1-rights-adoption-v2.json. No target Latin publication, March 19 or votive application follows." }, note = "NEW PROJECT STUDY ENGLISH. Whole body from thanksgiving opening through the conclusion before the separate Sanctus, independently reviewed for semantic fidelity. Its source graph identifies the full old Latin witness and the bounded source-plus-functional-word adoption. This source is distinct from the unchanged historical March 19 English; no historical May 1 identity, liturgical approval or recitation authority is claimed." }]
+latin_turns = [{ key = "priest-1", seq = [1], speaker = "priest" }]
 [sections.inserted.english]
 witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
@@ -2555,14 +2587,27 @@ reading_note = "Historical English for the March 19 Preface of Saint Joseph; its
 applicability = { kind = "formulary", calendar = "roman-1962", formularies = ["s-ioseph-sponsi-beatae-mariae-virginis"], basis = "The checked historical source prints festivity (veneration), which remains unselected. The 1962 May 1 solemnity reading is absent. This body is held only for the March 19 formulary; a date-free or other formulary context establishes no use. No target appointment or alternative selection is inferred." }
 note = "HISTORICAL HUMAN ENGLISH. Exact source body at Lasance ordinary printed pages 812–818, independently image-checked and source-fidelity reviewed. The complete body includes its own opening and conclusion, ending before the separately printed Sanctus; no Cummiskey opening or conclusion is spliced into it. The frame’s subsequent Sanctus retains its separate existing source identity. Source spelling, capitals and punctuation remain; no approved target-English or whole-execution claim is made. Source festivity (veneration) alternatives remain visible and unselected; this source cannot supply May 1 solemnity."
 
+[sections.inserted.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112"
+element = "praefatio-sancto-ioseph"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Mame printed 337 / PDF 451 compared against 1962 n. 1084 / printed 295 / CMAA PDF 376. The source prints Festivitate (Veneratione), retaining both alternatives; the May 1 solemnitate option is absent. No selected exact-target grade is asserted."
+reading_note = "Historical Latin for the March 19 Preface of Saint Joseph; its printed alternatives remain unselected."
+applicability = { kind = "formulary", calendar = "roman-1962", formularies = ["s-ioseph-sponsi-beatae-mariae-virginis"], basis = "The checked 1922 witness prints Festivitate (Veneratione), which remains unselected. Its historical body is held only for the existing March 19 formulary scope. It does not supply May 1 solemnitate or infer an appointment." }
+note = "Reuses the exact already admitted Mame source body through a mechanical TSV derivative. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112 The complete source Preface body is a single priest turn. The separately printed dialogue and Sanctus are outside this row. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112"
+
+
 [[sections.inserted]]
 key = "praefatio-defunctis"
 after = "rubrica-nota-nominis"
 kind = "prayer"
 speaker = "priest"
 name = "Preface of the Dead"
-absent_latin = "preface-not-in-witness"
 conditions = [{ kind = "appointed", variable = "preface", options = ["defunctis"], basis = "This complete historical Preface body stands only where the source-owned appointment selects its named Preface. No appointment is inferred from the translation." }]
+latin_turns = [{ key = "priest-1", seq = [1], speaker = "priest" }]
 [sections.inserted.english]
 witness = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 artifact = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-ordinary-prefaces-en"
@@ -2581,6 +2626,18 @@ note = "HISTORICAL HUMAN ENGLISH. Exact source body at Lasance ordinary printed 
 # Preface's own row as far as that printed junction, so the appointed Preface
 # reads whole; it adds no words (C3, 2026-10-19). Only the Holy Spirit Preface
 # takes it here: the other asterisk Prefaces' junctions are not yet collated.
+[sections.inserted.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112"
+element = "praefatio-defunctis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Complete historical Latin atMame1922 printed339/PDF453 compared word for word against1962 n.1087, printed298/CMAA PDF379. All lexical words agree under declared i/j, ligature, stress-accent, capitalization, pointing and received-spelling comparison. Source wording and pointing are preserved."
+target_wording = "word-exact"
+note = "Complete historical body with its own opening and conclusion before the separate Sanctus or referral. One priest turn; the opening dialogue and Sanctus are excluded. No English exactness, new appointment or Lasance publication-layer inference is made. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112"
+
+
 [[sections.inserted]]
 key = "praefatio-de-spiritu-sancto-initium"
 before = "praefatio-de-spiritu-sancto"
@@ -4617,3 +4674,18 @@ column = "english"
 relation = "antecedent"
 collation = "uncollated"
 note = "LASANCE HISTORICAL ENGLISH, NOT APPROVED TARGET-EDITION ENGLISH. Complete selected current spoken extent from the independently checked numbered source pages; original source words, source actors and printed cues are retained. Source-specific ceremonies, unsupported variants and target witness gaps are not resolved. The original base artifacts and all target Latin, element order, slots and conditions remain unchanged."
+
+[[sections.additional_texts]]
+element = "benedicat-vos-omnipotens-deus"
+latin_turns = [{ key = "priest-1", seq = [1], speaker = "priest" }, { key = "response-1", seq = [2], printed_marker = "R.", dialogue_role = "response" }]
+turns_basis = "Mame printed 355 expressly assigns the formula to the priest and marks the following Amen with its response cue. No server actor is inferred from that cue; this Latin turn assignment is independent of the historical English. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112"
+element = "benedicat-vos-omnipotens-deus"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "Mame printed 355, PDF 469, complete priest formula and response compared against 1962 n. 1138, printed 326, CMAA PDF 407. Spoken words agree; only declared stress-accent and cue-glyph representations differ."
+target_wording = "word-exact"
+note = "Source prayer spans joined across the printed red rubric; the action rubric is excluded. Historical English and its source turns are unchanged. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112"

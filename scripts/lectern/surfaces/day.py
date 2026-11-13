@@ -269,7 +269,7 @@ class Day(Surface):
             self.compare_territory = "" if options["compare_territory"] == "universal" else options["compare_territory"]
         if options.get("replace"):
             self.choices[(self.calendar, self.date.isoformat())] = {}
-        self.pending_selection = {key: options[key] for key in ("form", "witness", "properChoices", "variants")
+        self.pending_selection = {key: options[key] for key in ("form", "witness", "properChoices", "variants", "orationMass", "orationTerritory")
                                   if key in options}
         self.navigation.pending = options.get("location")
         self.pending_study = bool(options.get("study"))
@@ -343,6 +343,12 @@ class Day(Surface):
             self.load()
 
     def action_compare(self) -> None:
+        if not self.comparing and self.selection().get("dedicationAttestation"):
+            self.app.notify("The confirmed celebration location cannot be carried into Compare.", severity="warning")
+            return
+        if not self.comparing and self.selection().get("orationMass"):
+            self.app.notify("This prayer selection has no source-backed comparison dimension yet.", severity="warning")
+            return
         self.map_mode_location("read" if self.comparing else "compare")
         self.comparing = not self.comparing
         self.set_class(self.comparing, "comparing")
@@ -491,6 +497,9 @@ class Day(Surface):
             options = self.options_for(self.calendar)
             options.pop("territory", None)
             options.pop("mass", None)
+            options.pop("orationMass", None)
+            options.pop("orationTerritory", None)
+            options.pop("dedicationAttestation", None)
             options.pop("urlLegacy", None)
             resolved = row.get("resolved") or {}
             if resolved.get("form"):
@@ -557,6 +566,14 @@ class Day(Surface):
                     found.append(((calendar, row.get("option"), "calendar-formulary", option["key"], row),
                                   f"{prefix}{option.get('label') or option['key']} — {option['state']}{mark}"))
             selected_form = (row.get("resolved") or {}).get("form")
+            for option in (row.get("dedicationChoices") or {}).get("options") or []:
+                mark = " (confirmed)" if option["id"] == (row.get("dedicationSelection") or {}).get("relation") else ""
+                found.append(((calendar, row.get("option"), "dedication-location", option["id"], row),
+                              f"{prefix}Celebration location: {option['label']}{mark}"))
+            for option in (row.get("orationChoices") or {}).get("options") or []:
+                mark = " (selected)" if option["id"] == (row.get("orationSelection") or {}).get("owner") else ""
+                found.append(((calendar, row.get("option"), "weekday-orations", option["id"], row),
+                              f"{prefix}Prayers from {option['label']} · {row['orationChoices']['locus']}{mark}"))
             forms = (row.get("mass") or {}).get("forms") or []
             if selected_form and len(forms) > 1:
                 for form in forms:
@@ -625,17 +642,42 @@ class Day(Surface):
             if option and (self.views.get(calendar) or {}).get("multiple"):
                 selection.clear()
                 selection["territory"] = option
-            if kind == "calendar-formulary":
+            if kind == "calendar-formulary" or (kind == row.get("primaryDayChoice") and not kind.startswith("proper-form:")):
                 territory = selection.get("territory")
                 selection.clear()
                 if territory:
                     selection["territory"] = territory
                 selection["mass"] = choice
             elif kind.startswith("proper-form"):
+                selection.pop("orationMass", None)
+                selection.pop("orationTerritory", None)
+                selection.pop("dedicationAttestation", None)
                 selection["form"] = choice
                 key = (row.get("mass") or {}).get("key") or self.resolved_key(row)
                 if key:
                     selection.setdefault("mass", key)
+            elif kind == "weekday-orations":
+                selection["orationMass"] = choice
+                selection["orationTerritory"] = option
+            elif kind == "dedication-location":
+                context = row["dedicationChoices"]
+                label = next(one["label"] for one in context["options"] if one["id"] == choice)
+                attestation = {"schema": "triptych-dedication-location/v1", "relation": choice,
+                               **{key: context[key] for key in ("calendar", "civilDate", "mass", "formId", "territory")}}
+
+                def confirmed(answer) -> None:
+                    if answer == "confirmed":
+                        selection["dedicationAttestation"] = attestation
+                    elif answer == "unknown":
+                        selection.pop("dedicationAttestation", None)
+                    else:
+                        return
+                    self.load()
+
+                self.app.push_screen(Pick("confirm celebration location", [
+                    ("confirmed", "I confirm: " + label), ("unknown", "Location unknown; leave unresolved")],
+                    "Confirm the actual location of this celebration. This applies only to this date, Mass, form and branch; a shared link does not carry the confirmation."), confirmed)
+                return
             elif kind == "proper-choice":
                 selection.setdefault("properChoices", {})[choice[0]] = choice[1]
             elif kind.startswith("translation-witness"):

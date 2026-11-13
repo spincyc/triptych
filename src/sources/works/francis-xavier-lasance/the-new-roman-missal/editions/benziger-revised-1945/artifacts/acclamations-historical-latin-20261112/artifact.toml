@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamations-historical-latin-20261112"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The complete three selected Latin verses belong to the old Missale Romanum text reprinted on ordinary seasonal pages of the identified Lasance revised1945 printing. The separately recorded latin-missale-romanum layer in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml establishes the underlying Tridentine Latin through Benedict XV as public domain by age, independent of English renewal. At the2026-11-12 review date this underlying foreign-published material predates1931. Each entire named verse was freshly read on its exact ordinary source page and independently reviewed; no excluded later lettered insert or new modern expression is included. Mechanical faithful transcription and declared stress/line-wrap normalization add no authorship. This basis applies only to these whole historical verses, not the mixed whole scan, modern OLM layout or approved contemporary English."
+rights_jurisdiction = "United States"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+transformation = "Transcribe only the complete historical second Alleluia verse at printed599/AP597, Christmas Third Mass verse at printed145/AP146, and Easter Thursday verse at printed555/AP553. Join source wraps, normalize stress/display accents, retain historical words and pointing. Exclude external Alleluia framing, versicle signs, adjacent Psalm verse, kneeling direction, Sequence referrals and every neighboring unit. Source words and original pointing are preserved before the separately declared OLM pointing transformations in the Latin ledger."
+retrieved = "2026-11-12"
+sha256 = "83ee02b24dd501050b788c54eccc9c0390b653196e22aa67e3709a408110da49"
+byte_size = 346
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/acclamations-historical-latin-20261112/text.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Independent finite source review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-seven-acclamations-source-review.json, accepted candidate SHA25603b70d1ad09b7233580eba5d4b4afad6dc81cb57c7bf37a4c52655ee14d8d432. The physical carrier is the historical hand missal; the underlying Latin is the old Missale Romanum text, not a Lasance English authorship claim. This artifact contains three historical verse cells, not seven distinct sources."

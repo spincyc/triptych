@@ -1,0 +1,95 @@
+{
+  "adapter_sha256": "1dd33f7a5b7045b308ec86a61ea47a0541fed141c4a3bc4f9bca596afb4e626d",
+  "canonical_writes": 0,
+  "code_owned_runtime_successors": {
+    "scripts/_calendars.py": {
+      "after_sha256": "fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7",
+      "before_sha256": "54f37042b07ae107a9bea59fe6080d5699f70290335ae7ddee453752f35eb7d4"
+    },
+    "scripts/_oration_endings.py": {
+      "after_sha256": "6450ff3667f74fedcbd3874e928d46de23a3f9186519ed63f61f41204cb1113c",
+      "before_sha256": null
+    },
+    "scripts/_proper_finite_latin_20261029.py": {
+      "after_sha256": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+      "before_sha256": "aa925ac3883a807498b0596ce1535a4c2b93bbc2d49913782d49ea7e4736d9f5"
+    },
+    "tools/mass-propers": {
+      "after_sha256": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+      "before_sha256": "1e6ed563783d81d510d63d43a81e9fe14d195107de4d796225fd633f127b780a"
+    }
+  },
+  "code_parent": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "compiler_namespace_expression": {
+    "after": "        actual = _delivery_namespace(root, prefixes, pins)",
+    "before": "        actual = {str(path.relative_to(root)): digest(path.read_bytes())\n                  for prefix in prefixes for path in (root / prefix).rglob('*') if path.is_file()}"
+  },
+  "declaration_sha256": "85b1d936df30cf3d9eb7ec2c31089967a7ac395378c66b001436cd534c663865",
+  "exact_pentecost_binding_admission": {
+    "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-pentecost-latin-admission.json",
+    "sha256": "44ef8380662dbc72ec152a13741f405111119b1c5b527e612b1493fcc24145c8"
+  },
+  "exact_positive_correction": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-legacy-four/correction-declaration.json",
+    "sha256": "0916fb56c38eaf8e9d43b34c71d52e0755f6d6674a0453b95f05a30779d7994c"
+  },
+  "exact_positive_correction_adoption": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-legacy-four/root-adoption.json",
+    "sha256": "55f05c49294a80843a9423ab19196ba99c16cba5b0acf33caf48e7695778fc13"
+  },
+  "exact_runtime_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/runtime-code-review-v2.json",
+    "sha256": "1ab3d4b4328eeb223d067d8844986fad6907c31530a6151b6644cd79d125370d"
+  },
+  "helper_sha256": "556bb3530c2176bfa66c7d656c81a83c976b89fea97b2592fc91f8d24be32bc0",
+  "historical_compiler_sha256": "29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b",
+  "historical_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+  "replaced_functions": [
+    "parent_state",
+    "scope_paths",
+    "read_epoch",
+    "extra_input",
+    "positive_complement"
+  ],
+  "runtime_code_sha256": {
+    "scripts/_artifact_store.py": "49580bff96aa72077b34aecd41bf73c08416729dcf8a55081055fbd4f9413a14",
+    "scripts/_bible_artifacts.py": "b662b5f65144af78c7d708627963f16e4aafdd254ed128c51d927984354c4069",
+    "scripts/_bible_editions.py": "0d51c2f607a146ab5d248b23ee5382f5abd31f388eded4dece10d6458c994125",
+    "scripts/_browser_product_inputs.py": "91587639e0e577a771932c1f5c81c6a80bde60f48c7dc6d96a2305bb1320fde3",
+    "scripts/_browser_products.py": "07acd089bbf2d4aa1598f8042bdf3036e478c92e89d0ef4071a46bcc58b36c70",
+    "scripts/_calendars.py": "fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7",
+    "scripts/_lasance_publication.py": "c56117d625a887f98804268fa9f6d9876a5164e0ea9b5b37b0124e4154e7c93d",
+    "scripts/_loci.py": "75f85aa6bf7dd5231959b346a8db0bb42ad33d2ff37ee9be5171b9d5185b355e",
+    "scripts/_missal_coverage.py": "10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70",
+    "scripts/_name_execution.py": "15a6c35b338123569c674aee3a3158ecf5318cf87b56520b947473680734c7b6",
+    "scripts/_oration_endings.py": "6450ff3667f74fedcbd3874e928d46de23a3f9186519ed63f61f41204cb1113c",
+    "scripts/_oration_execution.py": "34dda1349096fa9d7fc7fea37e2cf9d0c8fb7e3d536ff7bbd0e1beac445c120a",
+    "scripts/_proper_finite_latin_20261029.py": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+    "scripts/_proper_latin.py": "852acb6a88084aba5729e5f60e807ca4e10f9c4436f5db2b23a9fdd3fbe2da1a",
+    "scripts/_proper_qualified_latin.py": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949",
+    "scripts/_proper_target_overrides.py": "5f002ec8ee444c26c17399f5dcf7c761203d099bcd42a871d5fbf112bb4b1e66",
+    "scripts/_psalms.py": "87312f2aef24dfa0990bceec392f6d8ec264a2593555fe46ff72ec80849bacf7",
+    "scripts/_reviewed_permissions.py": "a7caecd6d160dd5fd3cc7ac806d6abaa4030c4435bc7e6fffd4e32d62d311d33",
+    "scripts/_safe_files.py": "dafefcf19315ddfb5503c0044701360073c5570ce44a8843cb29a4f5f8a45161",
+    "scripts/_source_delivery_policy.py": "631048d3cbf73bc61c99702e1fd53f6e813980c0b2f40b145184a393ff68edef",
+    "scripts/_tooling.py": "9ad9ba33f59598a8d27b1d852b9379c57ae80406f845778f67ac668e052d389f",
+    "tools/mass-propers": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+    "tools/source-library": "963a9ac27c43d0ab93c568271401a865d5252854343e059d2c4208787fefb450",
+    "workflows/reviews/missal-english-completion-2026-10-29/source-guard/support_v3.py": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc"
+  },
+  "schema": "triptych-missal-reader-source-adapter-proof/v1",
+  "source_inputs": 7449,
+  "source_parent": "c448036bd6a407cea691be69aabf2f281a08db81",
+  "source_permission_created": false,
+  "status": "pending-independent-review",
+  "support_delivery_expressions": [
+    {
+      "after": "digest(_source_input_path(source, dependency, pins).read_bytes())",
+      "before": "digest((source / dependency).read_bytes())"
+    },
+    {
+      "after": "== _source_input_path(source, payload, pins).stat().st_size",
+      "before": "== (source / payload).stat().st_size"
+    }
+  ]
+}

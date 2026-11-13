@@ -1527,3 +1527,47 @@ verified offline-only pack with no asserted public route. Modern Ordo and Haydoc
 deliveries and the restricted Corpus Thomisticum expression are not distributed.
 The four reused Chrysostom passages remain the existing historical NPNF English,
 with its declared translation attribution and composition-date limitation.
+
+### Bounded missal source additions and conclusions (12 November 2026)
+
+The additions recorded under
+[`workflows/reviews/missal-reader-resume-2026-11-12`](workflows/reviews/missal-reader-resume-2026-11-12)
+and the dated postconciliar receipts under
+[`workflows/reviews/missal-english-completion-2026-10-29/postconciliar`](workflows/reviews/missal-english-completion-2026-10-29/postconciliar)
+retain their individual source and expression boundaries. Historical Latin
+from Pustet, Mame, Feltoe, Wilson and Migne, and the bounded historical
+Cummiskey and Guéranger/Duffy texts, use the exact old editions identified in
+their manifests. The additional Sacred Heart Preface extent in Schott's
+Herder 1929 printing rests on the printed imprint, integral contents,
+pagination and independently corroborated catalog evidence; its appendix
+date remains a bibliographic inference, not a separate printed imprint.
+These public-domain historical words remain outside Triptych's CC BY 4.0
+grant. The findings do not extend to whole scans, German translations,
+modern digitizer matter, page images or neighboring texts.
+
+The Roman six-expression admission uses a separate, qualified United States
+assessment of each exact adaptation under the publication policy. It has
+moderate confidence and retains the opposing originality arguments; it is
+neither rightsholder permission nor an unqualified public-domain finding.
+Its exact source, body and controller boundaries are recorded in the
+[`Roman six review`](workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review-v2.json).
+Triptych claims only its own editorial contributions and newly authored
+study English. Study English is not an approved liturgical translation.
+
+The postconciliar acclamation additions distinguish the independently old
+Latin expression from its exact appointment in the identified 1981 *Ordo
+lectionum Missae*. Their existing historical English keeps its separate
+source and publication basis. The bounded Pentecost prayer comparison uses
+the actual official 2008 supplement; neither route authenticates or clears
+the entire 2008 altar Missal. The four legacy study-English corrections
+likewise confer no approval on the remaining legacy translations. Official
+Hildegard and Newman additions are represented by source metadata and
+explicit text gaps, not newly licensed prayer bodies.
+
+The separately supplied Roman prayer conclusions use the already admitted
+historical Lasance formula table and an exact, finite source-owner mapping
+under the 1962 rules. The literal abbreviated source quotation remains
+distinct from the derived reading, and the response remains separate.
+[`The conclusion admission`](workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/root-adoption-v2.json)
+does not license new whole prayers, change historical English or extend
+formula use to an unreviewed witness, appointment or unresolved prayer group.

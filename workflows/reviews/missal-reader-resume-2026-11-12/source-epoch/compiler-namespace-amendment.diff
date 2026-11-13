@@ -1,0 +1,12 @@
+--- tracked/compile_successor_v3.py
++++ in-memory/compile_successor_v3.py
+@@ -409,8 +409,7 @@
+                                                     ('francis-xavier-lasance', 'eugene-cummiskey', 'edward-caswall')))):
+         expected = dict(prior[field])
+         expected.update({path: sha256 for path, sha256 in pins.items() if path.startswith(prefixes)})
+-        actual = {str(path.relative_to(root)): digest(path.read_bytes())
+-                  for prefix in prefixes for path in (root / prefix).rglob('*') if path.is_file()}
++        actual = _delivery_namespace(root, prefixes, pins)
+         require(actual == expected, 'entire current source namespace must equal historical complement plus final manifest: ' + field)
+     manifest_raw = serialized([{'path': path, 'post_sha256': pins[path]} for path in sorted(pins)])
+     fixture['source_input_manifest_path'] = MANIFEST
