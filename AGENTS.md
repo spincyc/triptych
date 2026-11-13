@@ -182,6 +182,12 @@ conversion.
   `tools/browser-products` for sealed cache validation and offline rebuilding,
   and an unsealed working destination for direct producer edits. The existing
   `src/sources/bibles/` chapter fragments remain in place.
+- `src/index/` is tracked metadata derived from most of `src/`, `release/`,
+  `guidance/` and `library/` and from the reader code under `scripts/` and
+  `tools/`. Commit the changed inputs first, then commit the output of
+  `tools/corpus-index refresh --readers`: Publications metadata is generated
+  from committed history. `make check-corpus-index` names any stale path, and
+  it is a Pages deployment gate. `guidance/web-data.md` owns the contract.
 - Shared theological or typesetting text has one authoritative source and is imported by its consumers; do not create drifting copies.
 - Never treat generated print output, `build/`, or `.scratch/` as an authoritative input.
 
