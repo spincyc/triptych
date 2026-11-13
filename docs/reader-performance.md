@@ -56,10 +56,11 @@ The converter installer is an explicit download. Ordinary startup does not
 install tools. See the [Lectern guide](../scripts/lectern/README.md) for controls,
 snapshot output and surface behavior.
 
-The index contains IDs, paths, hashes and discovery metadata. It contains no
-copy of the corpus's reading text. The existing source producers transform a
-selected record only when requested, and the browser models interpret and
-render it. A selected large edition can still take time to parse or convert.
+The index contains IDs, paths, hashes and discovery metadata, including titles
+and short search incipits. It contains no complete reading bodies or converted
+editions. The existing source producers transform a selected record only when
+requested, and the browser models interpret and render it. A selected large
+edition can still take time to parse or convert.
 
 Startup checks index membership using Git and dirty paths. Each canonical
 body actually consumed is separately checked by SHA-256 and size. A fresh
@@ -116,10 +117,15 @@ workspace, the complete site path remains:
 
 ```sh
 export TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data
+python3 scripts/_native_tex_assets.py hydrate --fetch
 tools/browser-products build
 tools/browser-products check
 make public-site
 ```
+
+The explicit hydration downloads the exact manifest-bound browser TeX runtime
+used by the site's print routes. These software assets are separate from corpus
+products and are unnecessary for ordinary terminal reading.
 
 An intentional canonical change may require explicit browser-product
 recording before that build. Follow [Web data](../guidance/web-data.md#what-a-family-key-covers)
@@ -215,6 +221,9 @@ ships in Git, so a first-time reader does not repeat it. The measured metadata
 occupied about 54.6 MB as files and 16.4 MB as compressed Git blobs, including
 the generic integrity/address layer and all five discovery surfaces. This
 adds lookup metadata without duplicating reading bodies or rewriting history.
+The liturgy discovery metadata includes 3,729 incipits, at most 80 characters
+each and 95,340 characters in total, for finding readings without loading their
+bodies. They serve as discovery labels alongside titles and offered choices.
 
 Validation includes 174 reader tests (173 passed and one expected dependency
 refusal skip), 18 real reading/layout checks, all 13 producer input audits,
@@ -222,6 +231,12 @@ and independent rejection tests for stale inputs, poisoned refusals, mismatched
 generations, coverage tampering and rights/quarantine violations. Full output
 comparison found no reading-prose changes beyond the intended transport split;
 other differences were derived revision dates and generator provenance.
+The final public-site, source-schema, conversion and liturgical-execution
+regressions cover 346 tests: 343 pass, with only the three baseline failures
+below. Synthetic conversion fixtures use the real site renderer with no print
+route for their invented publication; this avoids rebuilding the unrelated
+complete native print catalogue for each quotation, list or anchor assertion.
+Native print admission remains part of the complete site gates.
 
 Three existing corpus expectations failed both here and against the starting
 code at `92032f5178`: the whole-body-hold assertion and renderer `missing` flag

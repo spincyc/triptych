@@ -7,9 +7,9 @@ remain tracked sources; the generated browser products formerly under
 `src/web/data/` are reproducible outputs outside Git.
 
 The thin metadata under `src/index/` is a deliberate exception to that output
-storage rule. It supplies discovery and addresses without copying reading
-text. Ordinary terminal reading uses it as described below; the complete site
-retains its sealed browser-product contract.
+storage rule. It supplies discovery and addresses without copying complete
+reading bodies. Ordinary terminal reading uses it as described below; the
+complete site retains its sealed browser-product contract.
 
 Print pages and native TeX source bundles are a separate bounded projection of
 admitted outputs, described [below](#native-print-pages-and-source-bundles).
@@ -20,12 +20,13 @@ They do not precompute a PDF or replace canonical sources.
 On 2026-11-12 the maintainer authorized one shared, Git-tracked thin index for
 fast discovery and selected reading. `src/index/` may contain stable IDs,
 canonical paths, hashes, sizes, dependency addresses and the minimal metadata
-needed to browse: titles, authors, dates, counts, offered choices and their
-qualifications. The document catalogue retains derived revision dates under
-the [editorial timestamp rule](editorial.md#revision-timestamp). Corpus prose,
-passage bodies, complete converted editions and complete browser payloads do
-not enter this index. TSV, TOML, YAML, TeX and source-owned fragments remain
-authoritative; an index is regenerated from their existing owners.
+needed to browse: titles, short search incipits, authors, dates, counts, offered
+choices and their qualifications, including their source and provenance notes.
+The document catalogue retains derived revision dates under the
+[editorial timestamp rule](editorial.md#revision-timestamp). Complete passage
+bodies, converted editions and browser reading-body payloads do not enter this
+index. TSV, TOML, YAML, TeX and source-owned fragments remain authoritative;
+an index is regenerated from their existing owners.
 
 `scripts/_corpus_index.py` owns the address and integrity layer under
 `src/index/corpus/`. Its small root names bounded hash-checked shards. Path
@@ -821,8 +822,8 @@ binds the exact complete calendar bytes before its generation is computed, so
 a body-only edit changes the generation and mixed deployment payloads fail.
 Full calendar products retain
 their independent coverage and rights checks. Indexed terminal reading uses
-the same logical paths to derive a selected Mass, with a prose-free discovery
-skeleton under `src/index/propers/`. Neither path pre-renders combinations of a
+the same logical paths to derive a selected Mass, with discovery metadata
+under `src/index/propers/`. Neither path pre-renders combinations of a
 Mass, language, witness and reader mode.
 
 ## The calendar layer

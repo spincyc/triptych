@@ -12,7 +12,7 @@ Last reconciled: 2026-11-13.
 <!-- promised-deliverable: indexed-corpus-performance-2026-11-12 -->
 
 **In progress.** The maintainer authorized a shared, Git-tracked thin index over
-the existing canonical corpus, with no duplicated corpus prose, to improve
+the existing canonical corpus, without copied complete reading bodies, to improve
 fresh-checkout preparation, Lectern, the GitHub Pages readers and repeated
 build work. The index is lookup metadata, not a second authoring source or a
 published cache archive. Ordinary reading will verify the selected canonical
@@ -49,7 +49,21 @@ aggregate coverage from thin metadata. It retains independent full-source,
 rights and quarantine checks. A full-calendar content hash also ensures that
 body-only changes invalidate the reader generation. The actual admission scan
 passes all 1,599 Mass payloads and Sources v3; independent mutation tests pass.
-Final metadata/product regeneration and complete source/site gates remain.
+Final metadata regeneration and independent product recording are complete.
+The final product recording covers 29,123 files and 251,916,713 bytes; the last
+generation fix changes only generation identifiers and three content hashes.
+The final five-module regression run passes 343 of 346 tests, with only the
+three inherited assertions below. Six synthetic rendering fixtures now avoid
+unrelated complete print discovery while retaining their actual renderer and
+content assertions. Complete source/site gates and release reconciliation remain.
+
+The metadata audit confirms 1,943 index files, 54,644,047 bytes as files and
+16,403,578 bytes as compressed Git blobs. Titles, short search incipits and
+source/provenance qualifications are explicitly allowed discovery metadata;
+complete reading bodies and converted editions remain excluded. No authored
+corpus paths, credentials or machine-specific paths entered the reviewed range.
+The complete site additionally requires the exact native browser TeX software
+assets; they have been hydrated and verified through their existing manifest.
 
 Three inherited test assertions were reproduced against the starting code:
 two expect an already-translated Collect to remain absent, and one expects an

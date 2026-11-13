@@ -3,33 +3,43 @@ schema_version = 1
 [[deliverables]]
 id = "indexed-corpus-performance-2026-11-12"
 owner = "guidance/web-data.md"
-promise = "Use a shared tracked metadata index over the existing corpus to accelerate fresh-checkout reading, terminal and Pages readers, and repeated builds without tracking duplicate corpus prose or requiring generated-product archives."
+promise = "Use a shared tracked metadata index over the existing corpus to accelerate fresh-checkout reading, terminal and Pages readers, and repeated builds without tracking duplicate complete reading bodies or requiring generated-product archives."
 state = "in_progress"
 
   [[deliverables.requirements]]
   id = "thin-index-integrity"
   criterion = "Deterministic bounded index shards contain only lookup/dependency metadata, support incremental updates, detect stale membership and consumed bytes, and pass independent full validation."
   status = "open"
+  evidence = ["scripts/_corpus_index.py", "tools/tests/test_corpus_index.py", "src/index/readers.json"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "cold-and-warm-readers"
   criterion = "A fresh checkout with documented dependencies opens a reading without generating all browser products; cold and warm TUI measurements and semantic parity/integrity regressions pass."
-  status = "open"
+  status = "pass"
+  evidence = ["docs/reader-performance.md", "tools/tests/test_lectern_indexed.py", "tools/tests/test_reader_products.py"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "pages-selective-loading"
   criterion = "Sources and liturgy browser readers load compact discovery metadata and selected content, retain complete reachability and rights/choice semantics, and have measured transfer reductions."
-  status = "open"
+  status = "pass"
+  evidence = ["docs/reader-performance.md", "tools/tests/test_source_edition_schemas.py", "tools/tests/test_public_alpha.py", "tools/tests/test_reader_products.py"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "incremental-build-and-clone"
   criterion = "Repeated publication discovery/preparation is reduced with unchanged output evidence; supported partial-clone behavior and index update costs are documented and checked."
-  status = "open"
+  status = "pass"
+  evidence = ["docs/reader-performance.md", "tools/tests/test_corpus_index.py", "tools/tests/test_reader_publication_products.py"]
+  check = "path_exists"
 
   [[deliverables.requirements]]
   id = "integrated-performance-validation"
   criterion = "Affected source, producer and reader gates pass, superseded reader-verification guidance is updated, measured results and limits are recorded, and coherent work is committed on the workspace branch."
   status = "open"
+  evidence = ["PROJECT-WORK.md", "docs/reader-performance.md", "guidance/web-data.md"]
+  check = "path_exists"
 
 [[deliverables]]
 id = "gpt-1962-67-production-2026-11-09"

@@ -19,8 +19,10 @@ Apply these rules in order:
   typed source data.
 - `src/index/` is the narrow derived-metadata exception: shared, reproducible
   addresses, identities, hashes and the small discovery records readers need.
-  It contains no copy of corpus prose or rendered reading bodies and is never
-  edited as an authority. Canonical TSV, TOML, YAML and TeX retain ownership.
+  Titles, short search incipits and source qualifications remain discovery
+  metadata; complete reading bodies and converted editions are excluded.
+  It is never edited as an authority. Canonical TSV, TOML, YAML and TeX retain
+  ownership.
   [Web data](web-data.md#tracked-discovery-and-ordinary-indexed-reading) owns
   freshness, maintenance and the boundary between indexed reading and full
   publication checks.

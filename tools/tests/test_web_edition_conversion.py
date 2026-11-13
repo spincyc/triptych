@@ -55,6 +55,18 @@ DOSSIER_HEADER = "| **Proper** | **Citation** | **Location** | **Date** |\n|"
 DEF_TABLE = "\\begin{tabular}{ll}\n\\yr{} row & x\\\\\n\\end{tabular}"
 
 
+def synthetic_site_renderer() -> dict:
+    """Use the real renderer for a synthetic leaf with no native print route."""
+    site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+    # These fixtures exercise converted content, not publication admission.
+    # Avoid deriving the complete native print catalogue for their invented
+    # subject.html route; native print integration has its own release gates.
+    site["render_page"].__globals__["native_print_pages"] = lambda: {
+        "pages": {}, "readers": {}, "source_paths": [],
+    }
+    return site
+
+
 def quotation_texts(rendered: str) -> list[str]:
     """Each blockquote's words, its nested quotations' included, in opening order."""
 
@@ -233,7 +245,7 @@ class WebEditionConversionTests(unittest.TestCase):
             r"Symbol\textsuperscript{*}. Escaped\textsuperscript{a\&b}. "
             r"Styled\textsuperscript{\textit{ab}}. Note.\footnote{Citation.}"
         )
-        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        site = synthetic_site_renderer()
         rendered = site["render_page"](
             "web/test/studies/subject.md", markdown, "subject.html", True, {}
         )
@@ -631,7 +643,7 @@ class WebEditionConversionTests(unittest.TestCase):
             r"See \hyperref[proper-collect]{Collect} and \hyperref[proper-communion-jn10]{John}."
         )
         markdown = self.convert(body, proper=True, proper_schema=2, element_keys=keys)
-        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        site = synthetic_site_renderer()
         rendered = site["render_page"]("web/test/studies/subject.md", markdown, "subject.html", True, {})
         self.assertCountEqual(re.findall(r'id="(proper-[^"]+)"', rendered), [f"proper-{key}" for key in keys])
         self.assertIn('id="proper-collect" data-label="proper-collect"></span><strong>Collect:</strong>', rendered)
@@ -744,7 +756,7 @@ class WebEditionConversionTests(unittest.TestCase):
         # site's Python-Markdown: a psalm's response and its verses, two
         # quotations in the PDF, reached the reader as one. Rendered by the
         # site itself, at the top level and inside a quotation and a note.
-        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        site = synthetic_site_renderer()
         pair = (
             "\\begin{quotation}\nThe response.\n\\end{quotation}\n"
             "\\begin{quotation}\nThe first verse.\n\nThe second verse.\n\\end{quotation}\n"
@@ -788,7 +800,7 @@ class WebEditionConversionTests(unittest.TestCase):
         # items as siblings of the item holding them: both Claude calendar
         # references printed each witness's components that way. Rendered by
         # the site itself.
-        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        site = synthetic_site_renderer()
         markdown = self.convert(
             "\\begin{itemize}\n"
             "\\item The typical edition, read for:\n"
@@ -1025,7 +1037,7 @@ class WebEditionConversionTests(unittest.TestCase):
             self.assertRegex(markdown, rf"(?m)^{re.escape(label)}$")
         self.assertEqual(len(re.findall(r"(?m)^:\s+The .* body\.$", markdown)), 4)
 
-        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        site = synthetic_site_renderer()
         rendered = site["render_page"](
             "web/test/studies/subject.md", markdown, "subject.html", True, {}
         )
@@ -1351,7 +1363,7 @@ class WebEditionConversionTests(unittest.TestCase):
             flat,
         )
         self.assertEqual(flat.count(header), 2)
-        site = runpy.run_path(str(ROOT / "tools/public-alpha"))
+        site = synthetic_site_renderer()
         rendered = site["render_page"]("web/test/studies/subject.md", markdown, "subject.html", True, {})
         self.assertIn("</table>\n<p><em>Narrated event: none recorded.</em></p>", rendered)
         # A leaf's own explicit multicolumn remains a semantic table span.
