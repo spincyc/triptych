@@ -34,6 +34,16 @@ class Element {
   getAttribute(key) { return this.attrs[key] ?? null; }
   addEventListener() {}
   querySelectorAll() { return []; }
+  // 2026-11-13: browser-core now asks a rendered side for an existing
+  // `.latin-source-credit` before adding one; answer single-class selectors.
+  querySelector(selector) {
+    const match = /^\.([\w-]+)$/.exec(selector);
+    if (!match) throw new Error('fake DOM supports only single-class selectors: ' + selector);
+    const find = node => node.children.find(child => child.nodeType === 1 &&
+      child.className.split(/\s+/).includes(match[1])) || node.children.reduce((found, child) =>
+      found || (child.nodeType === 1 ? find(child) : null), null);
+    return find(this);
+  }
   get lastChild() { return this.children.at(-1) || null; }
   get textContent() { return this.nodeValue ?? this._text + this.children.map(one => one.textContent).join(''); }
   set textContent(value) { this._text = String(value); this.children = []; }

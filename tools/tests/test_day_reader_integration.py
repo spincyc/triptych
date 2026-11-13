@@ -574,6 +574,16 @@ console.log(JSON.stringify({cases,negatives,settled}));
                 self.assertEqual(source.count(dependency), 1, path)
                 self.assertIn(dependency + b'<script src="reader-shell.js"></script>', source, path)
                 source = source.replace(dependency, b"", 1)
+                # 2026-11-13: the missal-reader branch (2927f34b6e, dc9e7e97b3)
+                # adds two required adapter dependencies; subtract them the
+                # same way so the original oracle bytes stay pinned.
+                dependency = (
+                    b'<script src="oration-conclusions.js"></script>\n'
+                    b'<script src="source-local-actor-sequences.js"></script>\n'
+                )
+                self.assertEqual(source.count(dependency), 1, path)
+                self.assertIn(dependency + b'<script src="reader-state-adapters.js"></script>', source, path)
+                source = source.replace(dependency, b"", 1)
             actual = hashlib.sha256(source).hexdigest()
             self.assertEqual(actual, expected, path)
         public_renderer = text(LITURGY / "day.js")
@@ -648,7 +658,18 @@ console.log(JSON.stringify({cases,negatives,settled}));
         # recension caveat, the selected-outcome report and Contents locations;
         # C6 moved resolved Read loading into bounded helpers while preserving
         # this concrete 124 KiB controller budget.
-        self.assertLess(DAY_JS.stat().st_size, 124 * 1024)
+        # 2026-11-13: the missal-reader branch (2927f34b6e, dc9e7e97b3) grew the
+        # controller from 123,723 B to 134,016 B with new Day responsibilities:
+        # the explicit weekday prayer-source choice (`oration-mass`) and the
+        # Dedication-anniversary location attestation controls (~6.6 KB),
+        # their load-time selection and scope-change clearing (~2.2 KB),
+        # source-authored Day choice offers (~0.6 KB), and Roman 1962
+        # proper-rite Ordinary loading, cross-owner Proper lookup, rubrics and
+        # sourced-conclusion pass-through (~0.9 KB). Reconciled with main's
+        # indexed Day loading the controller is 135,611 B. Keep a concrete
+        # 136 KiB ceiling; moving the two choice-form builders beside
+        # source-choice-controls.js is the next trim if this tightens again.
+        self.assertLess(DAY_JS.stat().st_size, 136 * 1024)
 
     def test_chromium_evidence_distinguishes_commit_from_visual_settlement(self) -> None:
         harness = text(ROOT / "tools/tests/day_reader_integration_browser.mjs")

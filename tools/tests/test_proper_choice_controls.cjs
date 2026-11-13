@@ -352,7 +352,9 @@ test('browse-only explicit source choices fail before canonicalization', () => {
 test('existing print rules hide native controls and the Day controller stays within its cap', () => {
   const css = fs.readFileSync(path.join(moduleRoot, 'reader-instrument.css'), 'utf8');
   assert.match(css.slice(css.indexOf('@media print')), /\.reader-instrument \.ordinary-choice/);
-  assert(Buffer.byteLength(daySource) <= 126976);
+  // 2026-11-13: the Day controller's budget is owned, with its rationale, by
+  // test_day_reader_integration's size test; the two ceilings agree.
+  assert(Buffer.byteLength(daySource) <= 136 * 1024);
   for (const name of ['source-choice-controls.js', 'reader-shell.js', 'propers-events.js', 'day-reader.js', 'propers-reader.js'])
     new vm.Script(source(name), {filename: name});
 });

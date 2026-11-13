@@ -81,6 +81,11 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 "ordinary-seating.js",
                 "day.js",
                 "reader-state.js",
+                # 2026-11-13: the missal-reader branch (2927f34b6e, dc9e7e97b3)
+                # loads the reviewed sourced-conclusion and source-local actor
+                # modules before the adapters on every reader route.
+                "oration-conclusions.js",
+                "source-local-actor-sequences.js",
                 "reader-state-adapters.js",
                 "source-choice-controls.js",
                 "reader-shell.js",
@@ -102,6 +107,8 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 "ordinary-seating.js",
                 "day.js",
                 "reader-state.js",
+                "oration-conclusions.js",
+                "source-local-actor-sequences.js",
                 "reader-state-adapters.js",
                 "source-choice-controls.js",
                 "reader-shell.js",
@@ -419,6 +426,17 @@ class LiturgyReaderVisualResetTest(unittest.TestCase):
                 dependency = b'<script src="source-choice-controls.js"></script>\n'
                 self.assertEqual(source.count(dependency), 1, name)
                 self.assertIn(dependency + b'<script src="reader-shell.js"></script>', source, name)
+                source = source.replace(dependency, b"", 1)
+                # 2026-11-13: the missal-reader branch (2927f34b6e, dc9e7e97b3)
+                # added these two required adapter dependencies to both
+                # prototypes. Subtract them, as above, so the original visual
+                # bytes stay pinned; the script-order tests cover placement.
+                dependency = (
+                    b'<script src="oration-conclusions.js"></script>\n'
+                    b'<script src="source-local-actor-sequences.js"></script>\n'
+                )
+                self.assertEqual(source.count(dependency), 1, name)
+                self.assertIn(dependency + b'<script src="reader-state-adapters.js"></script>', source, name)
                 source = source.replace(dependency, b"", 1)
             if name == "reader-visual-reset-day.html":
                 # f88c657866b6 added this one required dependency; the bounded

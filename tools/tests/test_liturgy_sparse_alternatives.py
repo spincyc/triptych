@@ -225,8 +225,10 @@ if (input.op === 'actual-days') {
     else A.adaptPropers(held);
     assert.equal(JSON.stringify(held), before);
   }
-  assert.deepEqual(Object.keys(A), ['properEventId', 'browseState', 'selectOrdinaryTranslation',
-    'validationContext', 'adaptDay', 'adaptPropers', 'adaptCli']);
+  // 2026-11-13: the missal-reader branch (2927f34b6e) exports the explicit
+  // weekday prayer-source projection that tools/mass-today also consumes.
+  assert.deepEqual(Object.keys(A), ['properEventId', 'weekdayOrationRows', 'browseState',
+    'selectOrdinaryTranslation', 'validationContext', 'adaptDay', 'adaptPropers', 'adaptCli']);
 } else throw new Error('unknown regression operation');
 assert.equal(JSON.stringify({structure, rubrics, bibles}), original);
 process.stdout.write(JSON.stringify({ok: true}));

@@ -8,10 +8,30 @@ const require=createRequire(import.meta.url);
 const {browserDataRoot}=require(path.join(root,'tools/tests/_product_data.cjs'));
 const data=process.argv[3] || browserDataRoot(root);
 const core=process.argv[4] || path.join(root,'src/web/browser/shared/browser-core.js');
-const source=process.argv[5] ? JSON.parse(fs.readFileSync(process.argv[5])) :
- JSON.parse(fs.readFileSync(path.join(data,'structure/propers/postconciliar.json'))).masses
+const canonical=JSON.parse(fs.readFileSync(path.join(data,'structure/propers/postconciliar.json'))).masses
  .filter(m=>['christmas-december-30','christmas-december-31'].includes(m.key))
  .map(m=>({mass:m.key,proper:m.propers.find(p=>p.name==='Entrance Antiphon'&&p.form_id==='main')}));
+assert.equal(canonical.length,2);
+// 2026-11-13: the historical Lasance English for these two antiphons stayed in a
+// private validation snapshot only; the reviewed canonical rows remain
+// rights-withheld (workflows/reviews/modern-source-completion-2026-11-12/
+// next-cohort-six/shared/qualification-addendum.json, "temporal" group,
+// unrelated_experimental_rows_restored_only_in_private_snapshot). No held
+// scripture-sourced English body exists, so the presentation and grade controls
+// run on explicitly synthetic, never-published words over the real carriers.
+const SYNTHETIC='synthetic.test-only.historical-scripture-witness';
+function historicalSynthetic({mass,proper}){
+ const held=structuredClone(proper),label='Synthetic historical English witness (test only, not published)';
+ held.translations=[{lang:'en',rights:'public-domain',source_id:SYNTHETIC,source_label:label,
+  caution:'Synthetic caution sentinel for '+mass+'.',text:'Synthetic historical scriptural sentinel for '+mass+'.'}];
+ held.untranslated=[];held.unavailable_translations=[];
+ held.languages=held.languages.map(r=>r.lang==='en'?{available:true,held:true,lang:'en',reason:null,status:'full-text'}:r);
+ held.coverage.languages=held.coverage.languages.map(r=>r.lang!=='en'?r:{availability:'available',collation:'unresolved',lang:'en',
+  publication_basis:'public-domain',relationship:'historical-antecedent',witnesses:[{aliases:[],collation:'unresolved',id:SYNTHETIC,
+  label,publication_basis:'public-domain',relationship:'historical-antecedent',source_id:SYNTHETIC}]});
+ return {mass,proper:held};
+}
+const source=process.argv[5] ? JSON.parse(fs.readFileSync(process.argv[5])) : canonical.map(historicalSynthetic);
 assert.equal(source.length,2);
 const dom=require(path.join(root,'scripts/lectern/dom.js'));
 globalThis.window=globalThis;globalThis.document=dom.document;globalThis.location={search:'?data=/data',hash:'',pathname:'/probe.html'};
@@ -23,7 +43,19 @@ globalThis.fetch=async url=>{
 };
 vm.runInThisContext(fs.readFileSync(core,'utf8'),{filename:core});
 const T=globalThis.Triptych,bible=JSON.parse(fs.readFileSync(path.join(data,'bibles.json'))).bibles.find(b=>b.id==='douay-rheims');
-const clone=value=>structuredClone(value),reports=[];
+const clone=value=>structuredClone(value),reports=[],withheld=[];
+for(const {mass,proper} of canonical){
+ const coverage=proper.coverage.languages.find(r=>r.lang==='en');
+ assert.equal(coverage.publication_basis,'restricted',mass);assert.equal(coverage.availability,'not-publishable',mass);
+ assert.ok(!(proper.translations||[]).some(t=>t.lang==='en'),mass);
+ const fragments=await T.fetchFragments(bible,proper.citations);
+ for(const textDisplay of ['selected','latin-and-selected']){
+  const node=T.renderProper(proper,bible,fragments,{orations:'en',textDisplay});
+  assert.equal(node.querySelector('.composed'),null,mass);
+  assert.ok(!node.textContent.includes('Historical scriptural text'),mass);
+ }
+ withheld.push(mass);
+}
 for(const {mass,proper} of source){
  assert.equal(proper.source,'scripture');assert.equal(proper.text,null);
  const english=proper.translations.find(t=>t.lang==='en'),coverage=proper.coverage.languages.find(r=>r.lang==='en');
@@ -74,4 +106,4 @@ const controls=[
  ['composed',p=>p.source='composed','Composed text — not scripture']
 ];
 for(const [name,mutate,label] of controls){const proper=clone(original);mutate(proper);const node=T.renderProper(proper,bible,fragment,{orations:'en'});assert.equal(node.querySelector('.composed-label').textContent,label+' · English',name);}
-console.log(JSON.stringify({status:'pass',presentations:reports,latinNoBody:2,gradeControls:controls.map(r=>r[0]),canonicalWrites:false}));
+console.log(JSON.stringify({status:'pass',presentations:reports,latinNoBody:2,gradeControls:controls.map(r=>r[0]),canonicalWithheld:withheld,canonicalWrites:false}));

@@ -263,7 +263,7 @@ The v1 inventory is:
 
 | Route | Hash keys | Query keys |
 | --- | --- | --- |
-| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `compare`, `peer-missal`, `territory`, `proper-choices`, and manifest-declared Ordinary variant keys | `data` |
+| Day | `date`, `missal`, `bible`, `orations`, `why`, `ordinary`, `ordinary-lang`, `rubrics`, `mass`, `form`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `compare`, `peer-missal`, `territory`, `proper-choices`, `oration-mass`, `oration-territory`, and manifest-declared Ordinary variant keys | `data` |
 | Propers | `missal`, `type`, `mass`, `bible`, `orations`, `form`, `cycle`, `alternative`, `translation-witness`, `mode`, `location`, `text-display`, `scripture-companion`, `ordinary-lang`, `compare`, `peer-orations`, `peer-cycle`, `peer-alternative`, `peer-witness`, `peer-bible`, `proper-choices` | `data`, `missals` |
 
 The contract preserves current spelling and canonical route order. Unknown
@@ -287,6 +287,13 @@ multi-form Mass without `form` remains choice-required; a form without a Mass,
 or an invalid form, fails closed without substituting or concatenating text.
 `mode` uses the closed reader-mode vocabulary. `location` names an exact
 semantic event and is restored only inside the selected result.
+
+`oration-mass` is valid only on the Day entrance and names one exact Mass,
+offered by the weekday's own source-permitted choice, whose prayers are read
+with that weekday's readings. `oration-territory` is valid only beside an
+explicit `oration-mass` and names its exact territorial branch. Neither key is
+inferred from preferences or manifest order; a change of date, edition,
+territory, Mass or form clears both, and Compare refuses them.
 
 URL fields outrank valid remembered preferences, which outrank
 repository-declared defaults. A throwing or absent storage adapter yields no

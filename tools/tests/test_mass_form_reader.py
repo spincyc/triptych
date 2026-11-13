@@ -67,6 +67,12 @@ function adapt(key, ids, selected, ordinary) {
     ? JSON.parse(fs.readFileSync(productFixturePath('src/web/data/structure/ordinary/roman-1962.json'), 'utf8'))
     : null;
   if (ordinaryFile) ordinaryFile.calendar = 'synthetic-edition';
+  // 2026-11-13: proper-rite declarations are edition-bound and refuse a
+  // foreign calendar; relabel them with the borrowed synthetic Ordinary. No
+  // synthetic Mass holds their appointments, so every rite stays inactive.
+  if (ordinaryFile) (ordinaryFile.proper_rites || []).forEach((rite) => {
+    rite.edition = 'synthetic-edition';
+  });
   return A.adaptDay({
     request: heldRequest,
     derived: {
@@ -437,10 +443,16 @@ for (const calendar of calendars) {
           if (selected.some((row) => row.proper.name === 'Second Reading')) {
             predicates['second-reading-appointed'] = true;
           }
+          // 2026-11-13: source-declared proper rites (2927f34b6e/dc9e7e97b3)
+          // resolve their Ordinary cue and finite seat only with the exact
+          // principal Mass, form and rows, as reader-state-adapters supplies.
+          const riteContext = {calendar, mass: mass.key, formId: form.id,
+            properRows: prepared.rows};
+          predicates['proper-rite-context'] = riteContext;
           const shown = Seating.shownElements(ordinary, null, predicates);
           placed = Seating.seatPropers(
             prepared.rows,
-            Seating.seats(ordinary, shown),
+            Seating.seats(ordinary, shown, riteContext),
             (proper) => proper && proper.name === 'Placeholder',
             prepared.selections
           );
@@ -450,7 +462,7 @@ for (const calendar of calendars) {
               const branchShown = Seating.shownElements(ordinary, selection, predicates);
               const branchPlaced = Seating.seatPropers(
                 prepared.rows,
-                Seating.seats(ordinary, branchShown),
+                Seating.seats(ordinary, branchShown, riteContext),
                 (proper) => proper && proper.name === 'Placeholder',
                 prepared.selections
               );

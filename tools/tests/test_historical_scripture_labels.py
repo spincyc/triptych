@@ -20,3 +20,7 @@ class HistoricalScriptureLabels(unittest.TestCase):
         self.assertEqual(len(report["presentations"]), 4)
         self.assertEqual(report["latinNoBody"], 2)
         self.assertEqual(len(report["gradeControls"]), 8)
+        # 2026-11-13: the canonical Christmas antiphon English stays withheld;
+        # the presentations above use synthetic, never-published words.
+        self.assertEqual(report["canonicalWithheld"],
+                         ["christmas-december-30", "christmas-december-31"])
