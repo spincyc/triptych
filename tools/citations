@@ -33,7 +33,7 @@ from pathlib import Path
 # which requires every file in tools/ to be a registered tool, stays clean.
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from _calendars import partition, read_yaml
+from _calendars import citation_reading_role, partition, read_yaml
 from _psalms import PSALMS, validate_psalm
 from _tooling import (
     Example,
@@ -408,7 +408,8 @@ def check_ref_agrees(where: str, passage: dict, problems: list[str]) -> None:
 
 
 def check_passage(
-    where: str, passage: object, problems: list[str], numbering: object = None
+    where: str, passage: object, problems: list[str], numbering: object = None,
+    owner_source: object = None,
 ) -> None:
     if isinstance(passage, str):
         problems.append(f"{where}: citation is still a bare string: {passage!r}")
@@ -416,7 +417,13 @@ def check_passage(
     if not isinstance(passage, dict):
         problems.append(f"{where}: passage is not a mapping")
         return
-    unknown_passage = set(passage) - PASSAGE_FIELDS
+    unknown_passage = set(passage) - PASSAGE_FIELDS - {"reading_role"}
+    if "reading_role" in passage:
+        # A source-declared citation use; `_calendars` owns its whole contract.
+        try:
+            citation_reading_role(passage, owner_source)
+        except ValueError as error:
+            problems.append(f"{where}: {error}")
     if unknown_passage:
         problems.append(
             f"{where}: passage has unknown keys "
@@ -908,7 +915,8 @@ def check(root: Path) -> dict[str, object]:
                     )
                     continue
                 for passage in passages_value:
-                    check_passage(f"{label}{suffix}", passage, file_problems, effective)
+                    check_passage(f"{label}{suffix}", passage, file_problems, effective,
+                                  proper.get("source") if isinstance(proper, dict) else None)
                     passages += 1
                     if isinstance(passage, dict):
                         book = passage.get("book")
