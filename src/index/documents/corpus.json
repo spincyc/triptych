@@ -1,10 +1,10 @@
 {
  "advisory": "Derived from each document's current sources and publication manifest. Titles are evaluated out of the source preamble; a document whose sources state no title is carried with the reason in place of one and is never given an invented name. Production provenance is what each document records about itself, field by field, omitting any field its record says was not recoverable; comparing it against the workflows declared below is a finding aid and never an authority, and nothing in this repository gates on it. Print availability names an on-demand source recipe, not an installed download or a reviewed rendering. Page counts are unknown until a particular rendering is inspected; counts from an earlier rendering do not describe the current print styles.",
  "counted": {
-  "documents": 220,
-  "issues": 292,
+  "documents": 221,
+  "issues": 295,
   "pages": 0,
-  "pages_unmeasured": 220,
+  "pages_unmeasured": 221,
   "titles_unrecorded": 0,
   "works": 157
  },
@@ -34,7 +34,7 @@
    "id": "claude-opus-5[1m]"
   },
   {
-   "documents": 27,
+   "documents": 28,
    "id": "GPT-6"
   },
   {
@@ -61,7 +61,7 @@
    "label": "Claude"
   },
   {
-   "documents": 154,
+   "documents": 155,
    "id": "gpt",
    "label": "GPT"
   }
@@ -10411,6 +10411,118 @@
      "title": "The Sixth Sunday after the Epiphany, Resumed after Pentecost: A Study of the Proper in the 1962 Roman Missal",
      "title_source": "src/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex",
      "web": "web/claude/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html"
+    },
+    {
+     "also": [
+      {
+       "available": {
+        "print": true,
+        "reader": true
+       },
+       "derivation": "authored",
+       "id": "gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis",
+       "kind": "synthesis",
+       "pages": null,
+       "print_mode": "browser",
+       "subject": "A concise comparison of two interpretations of the 1962 Roman Missal for 15 November 2026",
+       "targets": {
+        "print": "print/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html",
+        "reader": "web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html"
+       },
+       "title": "Resumed Sixth Sunday after the Epiphany: Faith Taking Root"
+      },
+      {
+       "available": {
+        "print": true,
+        "reader": true
+       },
+       "derivation": "authored",
+       "id": "gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily",
+       "kind": "homily",
+       "pages": null,
+       "print_mode": "browser",
+       "subject": "A homily for an adult parish assembly at the 1962 Roman Missal celebration on 15 November 2026",
+       "targets": {
+        "print": "print/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html",
+        "reader": "web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html"
+       },
+       "title": "Resumed Sixth Sunday after the Epiphany: Receiving the Word amid Difficulty"
+      }
+     ],
+     "authorization": "perpetual-public-repository-2026",
+     "available": {
+      "print": true,
+      "reader": true
+     },
+     "contributions": [
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; expansive study, mechanical assembly of accepted appointed texts, two interpretations, declarations and source/conversion checks; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; expansive study revision of interpretive process narration and source/conversion checks; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; concise study derivation, interleaved comparison, declarations and selected source/conversion checks; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; homily derivation, source-and-delivery apparatus, declarations and source/conversion checks; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; homily revision of redundant paragraph endings, delivery estimates and source/conversion checks; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; expansive study reconciliation with revalidated research, Augustine's seed and leaven explanations, source and conversion checks; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; concise study reconciliation with the revalidated expansive study, Augustine's faith and love interpretations, source and conversion checks; unexposed: client version and server revision"
+      },
+      {
+       "model": "GPT-6",
+       "qualifiers": "effort=high; unexposed: exact model variant and other model qualifiers",
+       "runtime": "OpenAI Codex API agent; homily revalidation against both current studies and retained primary witnesses, silent oral-clarity review and scoped source/conversion checks; unexposed: client version and server revision"
+      }
+     ],
+     "derivation": "authored",
+     "eligibility": "eligible",
+     "id": "gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+     "models": [
+      "GPT-6"
+     ],
+     "pages": null,
+     "print_mode": "browser",
+     "produced": {
+      "run_id": "eaa5e2381738f740",
+      "seed_commit": "6855b2c0d3fc44250d5e2fc4807b00bfaad34d0d",
+      "workflow_digest": "73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645",
+      "workflow_id": "proper-study",
+      "workflow_version": "19"
+     },
+     "provider": "gpt",
+     "reviewed": "2026-11-09",
+     "revised": "2026-11-13T12:52:18Z",
+     "status": "alpha",
+     "subject": "An expansive study of the 1962 Roman Missal for 15 November 2026",
+     "targets": {
+      "print": "print/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html",
+      "reader": "web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html"
+     },
+     "title": "Resumed Sixth Sunday after the Epiphany: The Word Received and the Life It Changes",
+     "title_source": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex",
+     "web": "web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html"
     }
    ],
    "leaf": "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
