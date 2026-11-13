@@ -63,6 +63,27 @@ def choice_rows():
     return rows
 
 
+def without_proper_rites(ordinary, calendar=None):
+    """A copy of the generated 1962 Ordinary with no source-declared proper rite.
+
+    The 1962 frame now declares the ferial prayer over the people as a finite
+    Roman 1962 rite: one rite-held slot and one adjacent cue element. A copy
+    relabelled as another edition must not carry that 1962-only declaration,
+    and only an Ordinary without proper_rites still uses the legacy seating
+    gate. Every other element and slot is kept exactly.
+    """
+    held = copy.deepcopy(ordinary)
+    rites = {rite['id'] for rite in held.pop('proper_rites', [])}
+    held['slots'] = [slot for slot in held['slots'] if slot.get('rite') not in rites]
+    for section in held['sections']:
+        section['elements'] = [element for element in section['elements'] if not any(
+            condition.get('kind') == 'include-when-proper-rite' and condition.get('rite') in rites
+            for condition in element.get('conditions') or [])]
+    if calendar is not None:
+        held['calendar'] = calendar
+    return held
+
+
 def conditioned(name='Gradual'):
     proper = row(name)
     proper['ordinary_disposition'] = {'kind': 'conditional', 'group': 'technical-conditional',
@@ -75,18 +96,25 @@ class CommonOrdinaryGate(unittest.TestCase):
     def setUpClass(cls):
         cls.ordinary = json.loads((browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text())
         inventory = tomllib.loads((ORDINARY_SOURCE / 'src/sources/inventories/roman-1962-ordo-missae-v1.toml').read_text())
-        cls.ordinary['slots'] = O.slot_table(inventory, cls.ordinary['sections'], 'roman-1962')
+        # The 1962 inventory now declares one rite-held slot
+        # (oratio-super-populum); slot_table validates it against the
+        # generated Ordinary's own declared proper_rites, as the producer does.
+        cls.ordinary['slots'] = O.slot_table(inventory, cls.ordinary['sections'], 'roman-1962',
+                                             cls.ordinary.get('proper_rites'))
         cls.source = C.read_yaml(SOURCE / 'src/sources/calendars/roman-1962/propers.yaml')
         # A bounded in-memory projection of the actual Common source, using
         # the canonical producer and all its referenced terminal owners.
         cls.source.pop('citation_divergences', None)
         # The finite dated execution sources validate non-Common hosts outside
-        # this projection; their own tests own them.
+        # this projection; their own tests own them. The source-controlled
+        # oration-conclusion supplement likewise resolves its ferial hosts
+        # (the prayer over the people) outside it, and no seating input reads
+        # its conclusion_execution rows.
         with patch.object(MP, 'load_calendar', return_value=cls.source), patch.object(
             MP, 'masses_of', return_value=[('common', mass) for mass in cls.source['sections']['common']['masses']]
         ), patch.object(MP._oration_execution, 'load_sources', return_value={}), patch.object(
             MP._name_execution, 'load_name_sources', return_value={}
-        ):
+        ), patch.object(MP._oration_endings, 'load_sources', return_value={}):
             cls.structure = MP.calendar_structure(ROOT / 'src/sources/calendars', 'roman-1962', MP.book_tokens())
 
     def check(self, rows, *, full=True, facts=None, ordinary=None):
@@ -111,7 +139,12 @@ class CommonOrdinaryGate(unittest.TestCase):
         self.assertEqual(run.call_count, 1)
         summaries = result['source_appointments']
         self.assertGreater(len(summaries), 0)
-        expected = [m for m in self.structure['masses'] if O.appointment_seating_required(m['propers'])]
+        # An Ordinary that declares a proper rite seats every form through
+        # the shared model, so each Common is in the one batch, including
+        # those whose rows alone would not require appointment seating.
+        self.assertTrue(self.ordinary.get('proper_rites'))
+        expected = list(self.structure['masses'])
+        self.assertGreater(len(expected), len([m for m in expected if O.appointment_seating_required(m['propers'])]))
         self.assertEqual({s['mass'] for s in summaries}, {m['key'] for m in expected})
         self.assertEqual(sum(s['candidates'] for s in summaries), sum(len(m['propers']) for m in expected))
         self.assertEqual(sum(s['conditional_rows'] for s in summaries), sum(
@@ -176,7 +209,7 @@ class CommonOrdinaryGate(unittest.TestCase):
             MP, 'masses_of', return_value=[('common', mass) for mass in base['sections']['common']['masses']]
         ):
             structure = MP.calendar_structure(ROOT / 'src/sources/calendars', 'roman-pre-1955', MP.book_tokens())
-        ordinary = copy.deepcopy(self.ordinary); ordinary['calendar'] = 'roman-pre-1955'
+        ordinary = without_proper_rites(self.ordinary, 'roman-pre-1955')
         result = O.check_calendar_seating(ordinary, structure)
         diagnostics = [d for s in result['source_appointments'] for d in s['diagnostics']]
         self.assertGreater(len(diagnostics), 0)
@@ -200,28 +233,33 @@ class CommonOrdinaryGate(unittest.TestCase):
         for proper in [rows[2], rows[4]]:
             del proper['ordinary_disposition']['anchor']
             proper['appointment_applicability'] = marker
-        ordinary = copy.deepcopy(self.ordinary); ordinary['calendar'] = 'roman-pre-1955'
+        ordinary = without_proper_rites(self.ordinary, 'roman-pre-1955')
         with self.assertRaisesRegex(O.SourceError, 'contiguous|at least two distinct options'):
             self.check(rows, ordinary=ordinary, facts={})
 
     def test_pure_legacy_path_keeps_its_existing_controls_without_node(self):
+        # A rite-declaring Ordinary never falls back to the legacy gate.
         with patch.object(O.shutil, 'which', return_value=None):
-            self.check([{'name': 'Epistle'}, {'name': 'Gospel'}])
-            with self.assertRaisesRegex(O.SourceError, 'runs backward'):
-                self.check([{'name': 'Gospel'}, {'name': 'Epistle'}])
-            with self.assertRaisesRegex(O.SourceError, 'has no Ordinary seat'):
-                self.check([{'name': 'Unknown'}])
             with self.assertRaisesRegex(O.SourceError, 'node is not installed'):
-                self.check(choice_rows())
+                self.check([{'name': 'Epistle'}, {'name': 'Gospel'}])
+        legacy = without_proper_rites(self.ordinary)
+        with patch.object(O.shutil, 'which', return_value=None):
+            self.check([{'name': 'Epistle'}, {'name': 'Gospel'}], ordinary=legacy)
+            with self.assertRaisesRegex(O.SourceError, 'runs backward'):
+                self.check([{'name': 'Gospel'}, {'name': 'Epistle'}], ordinary=legacy)
+            with self.assertRaisesRegex(O.SourceError, 'has no Ordinary seat'):
+                self.check([{'name': 'Unknown'}], ordinary=legacy)
+            with self.assertRaisesRegex(O.SourceError, 'node is not installed'):
+                self.check(choice_rows(), ordinary=legacy)
         rows = choice_rows()
         for proper in [rows[2], rows[4]]:
             del proper['ordinary_disposition']['anchor']
         with self.assertRaisesRegex(O.SourceError, 'contiguous'):
-            self.check(rows)
+            self.check(rows, ordinary=legacy)
         rows = [{'name': 'Epistle', 'ordinary_disposition': {'kind': 'unplaced',
             'group': 'stale', 'region': 'before-frame', 'basis': 'Technical stale placement.'}}]
         with self.assertRaisesRegex(O.SourceError, 'stale because'):
-            self.check(rows)
+            self.check(rows, ordinary=legacy)
 
 
 if __name__ == '__main__':

@@ -81,12 +81,24 @@ class PostconciliarOrdinaryDivergenceRecoveryTests(unittest.TestCase):
             for section in inventory["sections"]
             for element in section["elements"]
         }
+        # 2026-11-12 private-preparation admission (workflows/reviews/
+        # missal-english-completion-2026-10-29/postconciliar/
+        # 2026-11-12-ordinary-preparation-admission.json): n. 131 keeps its
+        # key as a text-free structural parent, and the named divergence now
+        # belongs to the unavailable second alternative it describes.
         for key in (
             "libera-nos",
             "domine-iesu-christe-qui-dixisti",
-            "praeparatio-sacerdotis",
+            "perceptio-corporis-et-sanguinis",
         ):
             self.assertEqual(elements[key]["absent_latin"], finding["key"])
+        parent = elements["praeparatio-sacerdotis"]
+        self.assertEqual(parent["kind"], "rubric")
+        self.assertEqual((parent["absent_english"], parent["absent_latin"]),
+                         ("not-a-text", "not-a-text"))
+        self.assertEqual(elements["perceptio-corporis-et-sanguinis"]["alternatives"],
+                         [{"group": "private-preparation", "option": "preparation-perceptio"}])
+        self.assertNotIn("latin", elements["perceptio-corporis-et-sanguinis"])
 
     def test_pax_is_split_without_overstating_the_response(self) -> None:
         inventory = load_toml(INVENTORY)
@@ -178,22 +190,25 @@ class PostconciliarOrdinaryDivergenceRecoveryTests(unittest.TestCase):
 
     def test_generated_structure_has_the_settled_coverage(self) -> None:
         structure = json.loads(STRUCTURE.read_text(encoding="utf-8"))
-        # Original61 semantic IDs remain, plus nine source-complete children.
-        # This checkpoint does not include the pending next-epoch packages.
-        self.assertEqual(sum(len(section["elements"]) for section in structure["sections"]), 70)
+        # Original61 semantic IDs remain, plus nine source-complete children
+        # and, since the 2026-11-12 admissions, the two n. 131 alternatives.
+        # The first carries uncollated historical Latin and English; In
+        # spiritu humilitatis moves to collated Pustet 1862 Latin
+        # (ordinary-in-spiritu-2008-source-admission-2026-11-12.json).
+        self.assertEqual(sum(len(section["elements"]) for section in structure["sections"]), 72)
         self.assertEqual(
             structure["language_coverage"],
             [
-                {"absent": 35, "elements": 70, "held": 35, "lang": "en", "missing": 35},
-                {"absent": 38, "elements": 70, "held": 32, "lang": "la", "missing": 38},
+                {"absent": 36, "elements": 72, "held": 36, "lang": "en", "missing": 36},
+                {"absent": 39, "elements": 72, "held": 33, "lang": "la", "missing": 39},
             ],
         )
         self.assertEqual(
             structure["relation_coverage"],
             [
-                {"collation": "uncollated", "count": 26, "lang": "en", "relation": "antecedent"},
+                {"collation": "uncollated", "count": 27, "lang": "en", "relation": "antecedent"},
                 {"collation": "not-applicable", "count": 9, "lang": "en", "relation": "own"},
-                {"collation": "collated", "count": 5, "lang": "la", "relation": "antecedent"},
+                {"collation": "collated", "count": 6, "lang": "la", "relation": "antecedent"},
                 {"collation": "uncollated", "count": 27, "lang": "la", "relation": "antecedent"},
             ],
         )

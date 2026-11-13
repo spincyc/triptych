@@ -230,6 +230,13 @@ assert.equal(marchSource.rights, 'public-domain');
 assert.equal(maySource.rights, 'project-created');
 assert.deepEqual(marchSource.applicability.formularies, [march]);
 assert.deepEqual(maySource.applicability.formularies, [may]);
+// 2026-11-12 Roman Ordinary Latin admission (workflows/reviews/
+// missal-reader-resume-2026-11-12/ordinary-latin/admission.json): the
+// complete Mame 1922 Latin is held only in the existing March 19 scope.
+const latinRows = preface.translations.filter(row => row.lang === 'la');
+assert.deepEqual(latinRows.map(row => [row.source_id, row.applicability.formularies]),
+  [['edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam', [march]]]);
+assert.ok(latinRows[0].reading_note);
 const structure = JSON.parse(fs.readFileSync(productFixturePath(path.join(root,
   'src/web/data/structure/propers/roman-1962.json')), 'utf8'));
 function adapt(formulary, frame = ordinary) {
@@ -278,8 +285,13 @@ for (const translations of reversed(preface.translations)) {
       const node = TriptychOrdinaryRenderer.renderElement(row, ordinary, undefined, useContext);
       assert.ok(clean(node.textContent).includes(clean(expected.text)));
       assert.equal(clean(node.textContent).includes(clean(other.text)), false);
-      assert.equal(node.querySelectorAll('.ordinary-reading-note').length, 1);
-      assert.equal(node.querySelector('.ordinary-reading-note').textContent, expected.reading_note);
+      // The English side carries exactly its own note; a paired page adds
+      // only the note of a Latin row applicable to the same formulary.
+      const notes = Array.from(node.querySelectorAll('.ordinary-reading-note'), one => one.textContent);
+      assert.equal(notes.filter(note => note === expected.reading_note).length, 1);
+      assert.deepEqual(notes.filter(note => note !== expected.reading_note),
+        textDisplay === 'latin-and-selected' ? latinRows.filter(row =>
+          row.applicability.formularies.includes(formulary)).map(row => row.reading_note) : []);
       assert.equal(node.textContent.includes(other.reading_note), false);
       const terminal = dom.read(node).map(block => block.runs.map(run => run.text).join('')).join('\n');
       assert.ok(clean(terminal).includes(clean(expected.text)));

@@ -458,15 +458,33 @@ class OrdinaryAppointments(unittest.TestCase):
         # where 1962 says the common Preface: an inherited formulary does not
         # carry the 1962 book's direction into this recension.
         self.assertEqual(self.preface_of("transfigurationPre1955"), "praefatio-de-nativitate")
-        for key in ("lentFeria1962", "lentFeriaPre1955"):
-            # The Lenten ferial prayer now has its own source row. The
-            # generic frame cannot seat it, but the printed Preface direction
-            # remains independently inspectable without inventing that seat.
-            day = self.report[key]
-            self.assertEqual(day["sourceAppointments"]["preface"]["option"], "quadragesima")
-            self.assertEqual(day["frame"]["applicability"], "unavailable")
-            self.assertEqual(day["ordinary"], [])
-            self.assertIn(["Oratio super populum", None], day["propers"])
+        # The Lenten ferial prayer has its own source row. Since 2026-11-12 the
+        # 1962 Ordinary seats it through its finite source-declared proper
+        # rite (roman-1962-ordo-missae-v1.toml proper_rites, RGMR 506; Ritus
+        # servandus XI.2-3), with the Oremus/Humiliate cue element after the
+        # last Postcommunion's greeting and before the final one.
+        day = self.report["lentFeria1962"]
+        self.assertEqual(day["sourceAppointments"]["preface"]["option"], "quadragesima")
+        self.assertIsNone(day["frame"])
+        ordinary = day["ordinary"]
+        cue = ordinary.index("conclusio/oratio-super-populum-cues")
+        self.assertEqual(ordinary[cue - 1:cue + 2], [
+            "conclusio/dominus-vobiscum-ante-postcommunionem",
+            "conclusio/oratio-super-populum-cues",
+            "conclusio/dominus-vobiscum-ite-missa-est",
+        ])
+        self.assertEqual(day["propers"][-2:], [
+            ["Postcommunion", "postcommunio"], ["Oratio super populum", "oratio-super-populum"]])
+        self.assertNotIn("conclusio/oratio-super-populum-cues", self.report["adventFeria1962"]["ordinary"])
+        # The pre-1955 recension inherits the words, not that 1962 seat. Its
+        # own Ordinary leaves the prayer unplaced, so the generic frame cannot
+        # seat it, but the printed Preface direction remains independently
+        # inspectable without inventing that seat.
+        day = self.report["lentFeriaPre1955"]
+        self.assertEqual(day["sourceAppointments"]["preface"]["option"], "quadragesima")
+        self.assertEqual(day["frame"]["applicability"], "unavailable")
+        self.assertEqual(day["ordinary"], [])
+        self.assertIn(["Oratio super populum", None], day["propers"])
         # A saint's day the Bonn formulary gives no direction for: its general
         # rubrics turn on commemorations and octaves, which are not modelled,
         # so the typed stand-in remains, never a de Tempore or common Preface.
