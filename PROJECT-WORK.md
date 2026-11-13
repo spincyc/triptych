@@ -82,7 +82,7 @@ to the 180-minute limit is left to the Pages workflow's owner.
 
 <!-- promised-deliverable: gpt-1962-67-production-2026-11-09 -->
 
-**In progress: workflow ACCEPTED and archived; final site validation and publication remain.** The
+**Complete: pushed to `main`, deployed and verified live.** The
 maintainer requested the TLM propers documents for the upcoming Sunday and
 publication to main. The target is GPT identity 67, the universal 1962 resumed
 Sixth Sunday after the Epiphany on 15 November 2026. The eleven appointed
@@ -139,16 +139,41 @@ Post-archive inventory checks pass with 3,707 source-surface files and all
 167 review states preserved; all five accepted review-input objects remain
 exact. The complete post-archive browser-product record/check passes with
 13 families and 27,931 files; all 3,048 native TeX runtime assets verify.
-Remaining work is the final descriptor binding, site build and verification,
-desktop/mobile reader and print-control checks, validated publication to main,
-successful Pages deployment and verification of all three live readers. Selected native print compilation
+Selected native print compilation
 passes for all three outputs in two passes each (24, 10 and 3 pages). The full
 source suite passes on 13 November against the stable publication audit before
-the terminal archive; subsequent archive/inventory changes require their current
-checks and product derivation. Content acceptance does not yet
-establish publication or print-layout approval. Work stays on
-`feature/propers/codex`; the explicit main request authorizes a fast-forward
-update of the remote main ref without history rewriting.
+the terminal archive. Content acceptance does not establish print-layout approval.
+
+The accepted checkpoint is committed as `2e500a135e`. Main had moved to
+`d191a5e30d`, so it is merged in `f2ccd0fdfd`; only the generated release
+records conflicted. The merge carries `Edition-Revision: none`, like main's
+chronology-walk change it brings in, so the study and synthesis keep their
+12:52:18 UTC stamp and the homily its 10 November one. Recorded from the
+committed merge (`3c419745bd`), all thirteen browser-product families' outputs
+equal the pre-merge descriptor; the scoped binding refresh is `20dba67b26`.
+On that commit `make public-site`, `tools/tpt public-alpha verify
+--deployment-target github-pages`, `make check-release-bindings` (0 stale) and
+the deliverables check pass. `origin/main` and `feature/propers/codex` were
+fast-forwarded to `20dba67b26`; no published history was rewritten. Pages run
+[43504506547](https://github.com/spincyc/triptych/actions/runs/43504506547)
+succeeded in build, print-compile (every admitted native bundle) and deploy;
+repository hygiene run 43504506451 succeeded. On 13 November each route below
+was fetched from `https://mystago.gy/` and compared with
+`build/public-alpha/site/` built from the same commit:
+
+| Route | HTTP | SHA-256 | Match |
+| --- | ---: | --- | --- |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html` | 200 | `3a30ca777d7f7a6d…` | byte-identical |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html` | 200 | `c62ac10213a4d25d…` | byte-identical |
+| `web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html` | 200 | `85b7cc02bd28f795…` | byte-identical |
+| `print/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.html` | 200 | `61dc4e778d2c9420…` | byte-identical |
+| `print/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.html` | 200 | `477cb0ae98810727…` | byte-identical |
+| `print/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.html` | 200 | `13c62651277a8e53…` | byte-identical |
+| `library/traditional-latin-mass.html` | 200 | `329ae85d761a365c…` | byte-identical |
+
+The canonical study's desktop/mobile inspection is the web review's bounded
+preview; no separate live screenshot or print-control inspection was made of
+the deployed readers, and the companions remain converter-verified only.
 
 Authorization: `guidance/liturgy/propers-production-plan.md`.
 Exact review cycles, retained evidence and limitations:

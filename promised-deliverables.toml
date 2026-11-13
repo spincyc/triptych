@@ -4,7 +4,7 @@ schema_version = 1
 id = "gpt-1962-67-production-2026-11-09"
 owner = "PROJECT-WORK.md"
 promise = "Complete the GPT 1962 three-document propers workflow for Sunday, 15 November 2026, and push the validated publication to main."
-state = "in_progress"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "verified-appointment"
@@ -21,13 +21,13 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "reviewed-readers-and-print-compilation"
   criterion = "All three reader outputs, catalog links and release records pass their required checks, and all three current native print bundles compile successfully."
-  status = "open"
+  status = "pass"
   evidence = ["workflows/reviews/gpt-1962-67-production-2026-11-09/PUBLICATION-GATES-0/evidence.json", "workflows/reviews/gpt-1962-67-production-2026-11-09/NATIVE-PRINT-2026-11-13/summary.json", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "main-and-live-verification"
   criterion = "Validated commits reach main without history rewriting; the resulting Pages build, print-compile and deploy succeed, and all three live reader routes are verified."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
