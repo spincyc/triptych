@@ -121,8 +121,16 @@ for(const week of [2,3,4])for(const day of ['monday','tuesday','wednesday','thur
   facts:source.proper_appointment_facts||{},sourcePaths:one.proper_source_paths});staticForms++;
  const acclamation=one.propers.find(p=>p.name==='Gospel Acclamation');assert(acclamation);
  if(!['easter-2-friday','easter-3-monday'].includes(one.key)){
-  assert.equal(acclamation.source,'composed');assert.equal(acclamation.text_status.state,'unavailable');
-  assert.equal(acclamation.citations.length,0);assert(!acclamation.text);
+  assert.equal(acclamation.source,'composed');assert.equal(acclamation.citations.length,0);
+  if(one.key==='easter-2-saturday'){
+   // n.272's Latin was adopted on 2026-11-12 (postconciliar-seven-acclamations
+   // root adoption, installed in 2927f34b6e): held by hash and source id only.
+   assert.equal(acclamation.text_status,null);assert.equal(acclamation.latin.withheld,false);
+   assert.equal(require('node:crypto').createHash('sha256').update(acclamation.text).digest('hex'),
+    '25f2a27baa91440142ef50d70e6fe88c5052b07a75fb740d6c785cd10b17bc1f');
+   assert.equal(acclamation.latin.provenance.source_id,
+    'passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-surrexit-christus-historical-latin-20261112');
+  }else{assert.equal(acclamation.text_status.state,'unavailable');assert(!acclamation.text);}
  }
 }
 if(process.env.TRIPTYCH_EASTER_CLI_MANIFEST){

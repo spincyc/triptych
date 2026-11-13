@@ -1,7 +1,9 @@
 """Exactly two separately authorized, fresh-verbatim CommonVirginII English owners."""
 from pathlib import Path
-import copy,csv,hashlib,io,json,tomllib,unittest
+import copy,csv,hashlib,io,json,sys,tomllib,unittest
+sys.path[:0]=[str(Path(__file__).resolve().parents[2]),str(Path(__file__).resolve().parents[2]/"scripts")]
 from tools.tests import test_roman_1962_english31_phase4 as prior
+from tools.tests import test_roman_1962_common_virgin_ii_word_repair as word_repair
 from _artifact_store import resolve as resolve_artifact
 from tools.tests import _source_batch_guards as source_batch
 ROOT=Path(__file__).resolve().parents[2]
@@ -284,7 +286,13 @@ class CommonVirginIIEnglishTests(unittest.TestCase):
     def test_all173_and_all31_previous_entry_and_binding_dictionaries_preserved(self):
         keys=sorted(set(prior.OLD_KEYS)|set(prior.TARGET_ORACLES)|{prior.REUSE_TARGET})
         self.assertEqual(len(keys),204)
-        self.assertEqual(digest([self.entries[k] for k in keys]),OLD204_SHA)
+        # The one reviewed successor among them is the accepted Holy Name
+        # locator erratum (see prior.accepted_holy_name_locator); every other
+        # previous dictionary stays byte-exact under OLD204_SHA.
+        self.assertIn(prior.HOLY_NAME,keys)
+        before,after=prior.accepted_holy_name_locator()
+        self.assertEqual(self.entries[prior.HOLY_NAME],after)
+        self.assertEqual(digest([before if k==prior.HOLY_NAME else self.entries[k] for k in keys]),OLD204_SHA)
 
     def test_all76_sealed31_source_files_are_byte_immutable(self):
         self.assertEqual(len(OLD31_FILES),76)
@@ -292,8 +300,18 @@ class CommonVirginIIEnglishTests(unittest.TestCase):
             with self.subTest(path=path):self.assertEqual(sha((ROOT/path).read_bytes()),expected)
 
     def test_accepted_common_latin_proof_old43_old9778_and41_bindings_frozen(self):
+        # One frozen passage has the reviewed notes-only digest successor that
+        # word_repair validates (source-note-digests review, dc9e7e97b3); it
+        # must move exactly from this pin to that successor. All others stay.
+        successors={p:c for p,c in word_repair.accepted_note_digest_successors().items() if p in FROZEN_COMMON_FILES}
+        self.assertEqual(set(successors),{word_repair.NOTE_DIGEST_GUARDED})
         for path,expected in FROZEN_COMMON_FILES.items():
-            with self.subTest(path=path):self.assertEqual(sha(resolve_artifact(ROOT,path,fetch=False).read_bytes()),expected)
+            with self.subTest(path=path):
+                current=sha(resolve_artifact(ROOT,path,fetch=False).read_bytes())
+                if path in successors:
+                    self.assertEqual((expected,current),(successors[path]["before_file_sha256"],successors[path]["after_file_sha256"]))
+                else:
+                    self.assertEqual(current,expected)
         common=[r for r in self.latin if r["mass"]=="commune-virginum-2" and r["proper"] in ("Collect","Secret")]
         self.assertEqual(digest(common),COMMON_ROWS_SHA)
         old="artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33"

@@ -1,4 +1,4 @@
-"""OLM1981 nn.236/243/250, n252's explicit gap, and n238 source bounds.
+"""OLM1981 nn.236/243/250, n252's admitted native verse, and n238 source bounds.
 
 Appointment facts only: no source words, generated fixtures or inferred actual
 Sunday use. --projection feeds the paired browser-contract test from raw owners.
@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 import copy
+import hashlib
 from importlib.machinery import SourceFileLoader
 from importlib.util import module_from_spec, spec_from_loader
 import json
@@ -31,6 +32,15 @@ ENGLISH = "postconciliar-proper-translations-v1.toml"
 LATIN = "postconciliar-proper-latin-provenance-v1.toml"
 ARTIFACT = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
 FACT = "lent-5-sunday-john-8-1-11-actually-read"
+# lent-5-tuesday's native n.252 ferial verse, admitted in dc9e7e97b3 under
+# workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/
+# install-review.json (root-adoption.json beside it): Pustet 1888 Latin,
+# verified word-exact against OLM 1981 n.252, with Bute 1908 historical English.
+# Held here by its body hash only (this file carries no source words).
+SEMEN_SHA256 = "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3"
+SEMEN_LATIN = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-lent5-tuesday-ferial-20261112"
+SEMEN_VERIFY = "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112"
+SEMEN_ENGLISH = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-lent5-tuesday-ferial-20261112"
 DAYS = ("monday", "tuesday", "wednesday", "thursday", "friday", "saturday")
 KEYS = tuple(f"lent-{week}-{day}" for week in (3, 4, 5) for day in DAYS)
 ROLES = ("First Reading", "Responsorial Psalm", "Verse Before the Gospel", "Gospel")
@@ -127,9 +137,28 @@ class LentenFerialCourseTests(unittest.TestCase):
         self.assertEqual(paths, 41)
 
     def test_all_nineteen_composed_owners_are_typed_and_untranscribed(self):
-        expected = {(key, 2) for key in KEYS} | {("lent-5-tuesday", 1)}
+        # Eighteen optional-course verses remain typed and untranscribed. The
+        # nineteenth owner, the native n.252 lent-5-tuesday verse, is now the
+        # exact reviewed admission (see SEMEN_* above), never a silent removal.
+        expected = {(key, 2) for key in KEYS}
         self.assertEqual({(r["mass"], r["occurrence"]) for r in self.negative_rows}, expected)
-        self.assertEqual(len(self.negative_rows), 19)
+        self.assertEqual(len(self.negative_rows), 18)
+        native = [p for p in self.masses["lent-5-tuesday"]["propers"]
+                  if p["name"] == "Verse Before the Gospel"][0]
+        self.assertEqual((native["source"], hashlib.sha256(native["text"].encode()).hexdigest()),
+                         ("composed", SEMEN_SHA256))
+        for field in ("text_status", "verses", "takes_from"):
+            self.assertNotIn(field, native)
+        identity = ("lent-5-tuesday", "Verse Before the Gospel", 1)
+        latin = [r for r in tomllib.loads((INVENTORIES / LATIN).read_text())["entries"]
+                 if (r["mass"], r["proper"], r.get("occurrence", 1)) == identity]
+        self.assertEqual([(r["text_sha256"], r["source_id"], r["verification_source_id"],
+                           r["publication_status"], r["publication_basis"]) for r in latin],
+                         [(SEMEN_SHA256, SEMEN_LATIN, SEMEN_VERIFY,
+                           "permitted", "public-domain")])
+        english = [r for r in tomllib.loads(self.english_text)["entries"]
+                   if (r["mass"], r["proper"], r.get("occurrence", 1)) == identity]
+        self.assertEqual([r["publication_passage_id"] for r in english], [SEMEN_ENGLISH])
         for row in self.negative_rows:
             proper = [p for p in self.masses[row["mass"]]["propers"]
                       if p["name"] == "Verse Before the Gospel"][row["occurrence"] - 1]
@@ -153,7 +182,14 @@ class LentenFerialCourseTests(unittest.TestCase):
             self.assertEqual([m["appointment"]["proper"] for m in selected["members"]], list(ROLES))
             verse = selected["members"][2]
             self.assertEqual(verse["appointment"]["occurrence"], occurrence)
-            self.assertEqual(target_rows(self.doc, verse)["text_status"]["state"], "unavailable")
+        # The native fourth role stays distinct from the optional n.250 verse:
+        # since dc9e7e97b3 it holds the reviewed n.252 body (SEMEN_* above),
+        # while the optional verse remains an unavailable held body.
+        native_verse = target_rows(self.doc, native["members"][2])
+        self.assertEqual(hashlib.sha256(native_verse["text"].encode()).hexdigest(), SEMEN_SHA256)
+        self.assertNotIn("text_status", native_verse)
+        self.assertEqual(target_rows(self.doc, optional["members"][2])["text_status"]["state"], "unavailable")
+        self.assertNotIn("text", target_rows(self.doc, optional["members"][2]))
         self.assertEqual(native["choices"]["verse-before-gospel"], "ferial")
         self.assertEqual(optional["choices"]["verse-before-gospel"], "course-250")
 

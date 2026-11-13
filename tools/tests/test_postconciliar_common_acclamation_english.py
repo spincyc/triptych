@@ -21,6 +21,12 @@ CASES = {
     'saint-lucy-virgin-martyr': (692, 372, '735,2', 391),
 }
 TARGET = 'edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008'
+# Latin admitted separately from any English admission: the accepted root
+# adoption workflows/reviews/missal-reader-resume-2026-11-12/
+# postconciliar-seven-acclamations/root-adoption.json (installed in 2927f34b6e)
+# supplies the n. 729,8 Latin body for these two only (body hash, no words).
+LATIN_ADOPTED = {'saint-lawrence-brindisi-priest-doctor-church', 'saint-john-chrysostom-bishop-doctor-church'}
+LATIN_ADOPTED_SHA256 = 'b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3'
 
 # All four admissions and complete positive dictionaries already exist at 702f650.
 ADMITTED = {'saint-lawrence-brindisi-priest-doctor-church': {'entry_sha256': 'fe483d38fcaefbf7cf5ac5b8070e84418d22e4944377da2517a2a56eab4d2ff6',
@@ -103,15 +109,25 @@ class CommonAcclamationEnglishTests(unittest.TestCase):
         for key, proper, identity, records in self.seats():
             with self.subTest(mass=key):
                 self.assertEqual(proper['source'], 'composed')
-                self.assertEqual(proper['text_status'], {'state': 'unavailable', 'scope': 'proper-body', 'reasons': [{'kind': 'witness-gap', 'source_id': TARGET}]})
                 carried = self.owner.carry_translations('postconciliar', identity[:3], proper, self.overlay, [], identity, self.witnesses)
                 public = {**carried, 'untranslated': self.owner.public_untranslated_records(records)}
                 states = {r['lang']: r for r in self.owner.proper_language_capabilities(public)}
-                self.assertEqual(states['la']['status'], 'unavailable')
-                self.assertFalse(states['la']['held'])
-                self.assertFalse(states['la']['available'])
-                self.assertEqual(public['text_status'], proper['text_status'])
-                for field in ('text', 'verses', 'incipit'):
+                if key in LATIN_ADOPTED:
+                    # The Latin state follows its own adoption, not the English one.
+                    self.assertNotIn('text_status', proper)
+                    self.assertEqual(hashlib.sha256(proper['text'].encode()).hexdigest(), LATIN_ADOPTED_SHA256)
+                    self.assertEqual((states['la']['status'], states['la']['held'], states['la']['available']),
+                                     ('full-text', True, True))
+                    self.assertEqual(public['text'], proper['text'])
+                    self.assertNotIn('text_status', public)
+                else:
+                    self.assertEqual(proper['text_status'], {'state': 'unavailable', 'scope': 'proper-body', 'reasons': [{'kind': 'witness-gap', 'source_id': TARGET}]})
+                    self.assertEqual(states['la']['status'], 'unavailable')
+                    self.assertFalse(states['la']['held'])
+                    self.assertFalse(states['la']['available'])
+                    self.assertEqual(public['text_status'], proper['text_status'])
+                    self.assertFalse(public.get('text'))
+                for field in ('verses', 'incipit'):
                     self.assertFalse(public.get(field))
                 if key in ADMITTED:
                     self.assertEqual(states['en']['status'], 'full-text')

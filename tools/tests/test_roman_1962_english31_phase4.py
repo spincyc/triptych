@@ -936,6 +936,35 @@ OLD_KEYS = [('advent-1', 'main', 'Collect', 'all', 1),
 
 OLD_ENTRY_SHA = '02256f54b09c73c5a5901b4f3a45509639b7d1b4eda1cc2b9b08c317a0f4770b'
 
+# One prior row has a reviewed successor. The 2026-11-12 root admission
+# (latin-two-holy-name/root-admission.json, installed in dc9e7e97b3) adopts
+# holy-name-locator-declaration.json: the Holy Name Collect's locator moves
+# from leaf n103 to n105 with an erratum note. Only ia_leaf, ia_leaf_range and
+# witness_note change; its English, sources and publication binding do not.
+# Every other prior row stays under OLD_ENTRY_SHA unchanged.
+HOLY_NAME=("most-holy-name-of-jesus","main","Collect","all",1)
+HOLY_NAME_REVIEW=ROOT/"workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name"
+HOLY_NAME_DECLARATION_SHA="8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6"
+HOLY_NAME_ADOPTION_SHA="af653c80c2398d53f742024528b9c9c02c354a3f88e78ea11673fa80c28f5e80"
+HOLY_NAME_FIELDS={"ia_leaf","ia_leaf_range","witness_note"}
+def accepted_holy_name_locator():
+ """The exact adopted before/after Holy Name rows, or AssertionError."""
+ raw=(HOLY_NAME_REVIEW/"holy-name-locator-declaration.json").read_bytes()
+ adoption_raw=(HOLY_NAME_REVIEW/"root-admission.json").read_bytes()
+ if sha(raw)!=HOLY_NAME_DECLARATION_SHA or sha(adoption_raw)!=HOLY_NAME_ADOPTION_SHA:
+  raise AssertionError("Holy Name locator declaration or its root admission changed")
+ declaration,adoption=json.loads(raw),json.loads(adoption_raw)
+ if not (adoption["status"]=="accepted" and adoption["holy_name_declaration"]["sha256"]==HOLY_NAME_DECLARATION_SHA
+         and declaration["target"]==list(HOLY_NAME)
+         and declaration["change_class"]=="existing-positive-locator-metadata-only"):
+  raise AssertionError("Holy Name locator correction is not the accepted metadata-only declaration")
+ before,after=declaration["before_binding"],declaration["after_binding"]
+ if not (before.keys()==after.keys() and set(declaration["fields_changed"])==HOLY_NAME_FIELDS
+         and {k for k in before if before[k]!=after[k]}==HOLY_NAME_FIELDS
+         and before["translations"]==after["translations"]):
+  raise AssertionError("Holy Name locator correction changes more than its three locator fields")
+ return before,after
+
 COVERAGE = {'roman-1962': (1427, 219, 1208), 'roman-pre-1955': (1378, 206, 1172)}
 
 ARTIFACT_ORACLES = {'artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.phase4-nativity-marian-reuse-en-ed897177': ('ed89717779d0b40259dee17372a269085854d3747c9aab34252df73c0a148f88',
@@ -1073,7 +1102,11 @@ class English31SourceTests(unittest.TestCase):
  def test_all_173_prior_rows_and_their_bindings_are_unchanged(self):
   old=[self.entries[k] for k in OLD_KEYS]
   self.assertEqual(len(old),173)
-  self.assertEqual(sha(json.dumps(old,sort_keys=True,ensure_ascii=False)),OLD_ENTRY_SHA)
+  self.assertIn(HOLY_NAME,OLD_KEYS)
+  before,after=accepted_holy_name_locator()
+  self.assertEqual(self.entries[HOLY_NAME],after)
+  prior_rows=[before if k==HOLY_NAME else self.entries[k] for k in OLD_KEYS]
+  self.assertEqual(sha(json.dumps(prior_rows,sort_keys=True,ensure_ascii=False)),OLD_ENTRY_SHA)
 
  def test_authorized_common_two_and_original_advent_hold(self):
   historical=source_batch.historical_english_entries(self.entries)

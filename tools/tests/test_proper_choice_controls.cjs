@@ -156,7 +156,7 @@ function dayView(state, wanted = 'common-acclamation', prefix = '') {
     runtime: {derived: d, structure, ordinary: null},
     navigate: (...args) => navigation.push(clone(args)),
     renderTranslationWitnessChoice: () => null, resolvableTranslationWitnessState: () => ({})});
-  ['sourceIndex', 'semanticNode', 'validateProperChoiceEvent', 'properChoiceLabel',
+  ['sourceProper', 'semanticNode', 'validateProperChoiceEvent', 'properChoiceLabel',
     'renderProperMaterial', 'renderProperChoiceEvent'].forEach((name) => {
     vm.runInContext(exactFunction(daySource, name), env.context);
   });

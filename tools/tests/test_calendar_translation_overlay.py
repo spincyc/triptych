@@ -1065,6 +1065,21 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         ("saint-george-martyr", "Collect"),
         ("saint-apollinaris-bishop-martyr", "Collect"),
     }
+    # A refused or unbound Cummiskey route stays refused; its no-exemplar gap
+    # may close only by separately adopted project study English, never by
+    # Cummiskey. These four closed in dc9e7e97b3 under workflows/reviews/
+    # missal-reader-resume-2026-11-13/nonseasonal-orations/
+    # root-eleven-english-merits-admission.json -> exact adopted English sha256.
+    ELEVEN_STUDY_SUCCESSORS = {
+        ("saint-apollinaris-bishop-martyr", "Collect"):
+            "58670ddd435a4c52c9a1603b6698ce1a7754b55e823af7d32f60a161d88fee76",
+        ("saint-paulinus-nola-bishop", "Collect"):
+            "577f9e42c61797df14a2dd3f6851961f83dd7a83c89e74aae10c4f5d5bda1e74",
+        ("saints-sixtus-ii-pope-companions-martyrs", "Collect"):
+            "afd2b3efdaab42743f844cfae6beee8aeea8d83cb339037d8916344f85fe7df3",
+        ("most-holy-name-mary", "Prayer over the Offerings"):
+            "b7292a42b88adfa1e7daad70bbb43ed1c45bda9648342ae8a76f6ab19fe26751",
+    }
     RECOVERED = {
         ("advent-4", "Collect"): (
             "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
@@ -1117,6 +1132,31 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         self.assertEqual(len(self.STUDY_SUCCESSORS), 3)
         self.assertLessEqual(set(self.STUDY_SUCCESSORS), self.QUARANTINED)
         self.assertFalse(set(self.STUDY_SUCCESSORS) & set(self.RECOVERED))
+        self.assertEqual(len(self.ELEVEN_STUDY_SUCCESSORS), 4)
+        self.assertLessEqual(set(self.ELEVEN_STUDY_SUCCESSORS),
+                             (self.QUARANTINED - set(self.RECOVERED)
+                              - set(self.STUDY_SUCCESSORS)) | self.UNBOUND)
+        admission = json.loads((
+            ROOT / "workflows/reviews/missal-reader-resume-2026-11-13/"
+            "nonseasonal-orations/root-eleven-english-merits-admission.json"
+        ).read_text())
+        adopted = {(row["identity"][0], row["identity"][2]): row["english_scalar_sha256"]
+                   for row in admission["rows"]}
+        for key, english_sha256 in self.ELEVEN_STUDY_SUCCESSORS.items():
+            self.assertEqual(adopted[key], english_sha256)
+            self.assertIn(key, positives)
+            self.assertNotIn(key, gaps)
+            row = positives[key]
+            self.assertNotIn("publication_artifact_id", row)
+            self.assertTrue(row.get("study_english_passage_id"))
+            self.assertEqual(
+                [(t["lang"], t["rights"]) for t in row["translations"]],
+                [("en", "project-created")],
+            )
+            self.assertEqual(
+                hashlib.sha256(row["translations"][0]["text"].encode()).hexdigest(),
+                english_sha256,
+            )
         for key in (self.BOUND - self.UNBOUND) | set(self.RECOVERED):
             self.assertIn(key, positives)
             self.assertNotIn(key, gaps)
@@ -1133,8 +1173,9 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
                 "publication_passage_id",
             ):
                 self.assertTrue(row.get(field), (key, field))
-        for key in ((self.QUARANTINED - set(self.RECOVERED)
-                     - set(self.STUDY_SUCCESSORS)) | self.UNBOUND):
+        for key in (((self.QUARANTINED - set(self.RECOVERED)
+                      - set(self.STUDY_SUCCESSORS)) | self.UNBOUND)
+                    - set(self.ELEVEN_STUDY_SUCCESSORS)):
             self.assertNotIn(key, positives)
             self.assertIn(key, gaps)
             self.assertEqual(gaps[key]["availability"], "unavailable")
@@ -1281,11 +1322,34 @@ class HistoricalAcclamationVerseSuccessorTests(unittest.TestCase):
         mass = next(mass for section in document["sections"].values()
                     for mass in section["masses"] if mass["key"] == "easter-2-saturday")
         proper = next(row for row in mass["propers"] if row["name"] == "Gospel Acclamation")
-        self.assertIn("Dated 2026-10-29 successor", proper["notes"])
-        self.assertIn("independently image-checked", proper["notes"])
-        self.assertEqual(proper["text_status"]["state"], "unavailable")
-        self.assertNotIn("text", proper)
+        # The 2026-10-29 English successor now lives in its ledger witness
+        # note; the calendar note names the later reviewed Latin successor
+        # (dc9e7e97b3; workflows/reviews/missal-reader-resume-2026-11-12/
+        # postconciliar-seven-acclamations/root-adoption.json).
+        inventory = tomllib.loads(self.INVENTORY.read_text())
+        english = next(row for row in inventory["entries"]
+                       if (row["mass"], row["proper"]) == ("easter-2-saturday", "Gospel Acclamation"))
+        self.assertIn("this 2026-10-29 image-checked whole-verse witness is its bounded successor",
+                      english["witness_note"])
+        self.assertIn("2026-10-22 statement that no independent English whole-unit exemplar",
+                      english["witness_note"])
+        self.assertIn("Dated 2026-11-12 Latin successor", proper["notes"])
+        self.assertIn("earlier dated English admission supplied no Latin authority", proper["notes"])
+        adoption = json.loads((ROOT / "workflows/reviews/missal-reader-resume-2026-11-12/"
+                               "postconciliar-seven-acclamations/root-adoption.json").read_text())
+        self.assertEqual(adoption["status"], "accepted")
+        target = next(row for row in adoption["targets"]
+                      if row["identity"] == ["easter-2-saturday", "main", "Gospel Acclamation", "all", 1])
+        self.assertNotIn("text_status", proper)
+        self.assertEqual(hashlib.sha256(proper["text"].encode()).hexdigest(), target["body_sha256"])
         self.assertNotIn("incipit", proper)
+        latin = tomllib.loads((ROOT / "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml").read_text())
+        provenance = next(row for row in latin["entries"]
+                          if (row["mass"], row["proper"]) == ("easter-2-saturday", "Gospel Acclamation"))
+        self.assertEqual(provenance["text_sha256"], target["body_sha256"])
+        self.assertEqual(provenance["source_id"],
+                         "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945."
+                         "acclamation-surrexit-christus-historical-latin-20261112")
 
 
 class Official2008September8OfferingTests(unittest.TestCase):

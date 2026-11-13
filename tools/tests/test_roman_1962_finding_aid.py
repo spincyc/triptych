@@ -141,6 +141,22 @@ CUMMISKEY_REUSE_ARTIFACTS = {
     "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
     "phase4-nativity-marian-reuse-en-ed897177": 1,
 }
+# The one Cummiskey owner of the reviewed ferial three (dc9e7e97b3): artifact
+# -> its exact single target.
+CUMMISKEY_FERIAL_THREE = {
+    "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861."
+    "ferial-osp-20261112-lent-4-thursday-english": (
+        "lent-4-thursday", "main", "Oratio super populum", "all", 1,
+    ),
+}
+# Reviewed locator-only errata (dc9e7e97b3): identity -> (historical carrier
+# leaf range, corrected entry leaf range). workflows/reviews/missal-reader-
+# resume-2026-11-12/latin-two-holy-name/root-admission.json adopts
+# holy-name-locator-declaration.json (sha256 8bb9cb7e...): the Collect is on
+# leaf n105; the publication TSV row keeps its earlier leaf as historical bytes.
+CUMMISKEY_LOCATOR_ERRATA = {
+    ("most-holy-name-of-jesus", "main", "Collect", "all", 1): ([103, 103], [105, 105]),
+}
 
 TOP_FIELDS = {
     "schema",
@@ -923,7 +939,10 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
         # 77 since 2026-10-19 (C3): the Pentecost Collect, Secret and
         # Postcommunion bind through roman-1962-pentecost-en (C2 gap G3).
         # 99 since 1f1be432b: the 22 CUMMISKEY_REUSE_ARTIFACTS bindings.
-        self.assertEqual(len(expected), 99)
+        # 100 since dc9e7e97b3: the one Cummiskey owner of the reviewed ferial
+        # three (CUMMISKEY_FERIAL_THREE; workflows/reviews/missal-reader-
+        # resume-2026-11-12/ferial-three/evidence/root-source-admission-original.json).
+        self.assertEqual(len(expected), 100)
         self.assertEqual(set(bound), expected)
         self.assertTrue(expected.isdisjoint(self.exact_gap_identities()))
         reused = {
@@ -939,6 +958,15 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
             CUMMISKEY_REUSE_ARTIFACTS,
         )
         expected -= set().union(*reused.values())
+        ferial = {
+            identity: row for identity, row in bound.items()
+            if row["publication_artifact_id"] in CUMMISKEY_FERIAL_THREE
+        }
+        self.assertEqual(
+            {identity: row["publication_artifact_id"] for identity, row in ferial.items()},
+            {target: artifact for artifact, target in CUMMISKEY_FERIAL_THREE.items()},
+        )
+        expected -= set(ferial)
         self.assertEqual(len(expected), 77)
         self.assertEqual(
             hashlib.sha256(CUMMISKEY_PUBLICATION_TSV.read_bytes()).hexdigest(),
@@ -1026,6 +1054,13 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 leaf_range = [
                     int(value) for value in source["ia_leaf_range"].split("-")
                 ]
+                if identity in CUMMISKEY_LOCATOR_ERRATA:
+                    # The immutable carrier keeps its historical leaf bytes;
+                    # the entry owns the reviewed corrected locator.
+                    historical, corrected = CUMMISKEY_LOCATOR_ERRATA[identity]
+                    self.assertEqual(leaf_range, historical)
+                    self.assertIn("Locator erratum", row["witness_note"])
+                    leaf_range = corrected
                 self.assertEqual(row["ia_leaf_range"], leaf_range)
                 self.assertEqual(row["ia_leaf"], leaf_range[0])
                 self.assertEqual(row["witness"], "cummiskey-1861")
@@ -1050,6 +1085,43 @@ class HistoricalEnglishAccountingTest(unittest.TestCase):
                 self.assertEqual(translation["rights"], "public-domain")
                 self.assertEqual(translation["source_id"], CUMMISKEY_SOURCE)
                 self.assertEqual(translation["text"], source["english"])
+        # The ferial owner has its own one-row carrier and the same checks.
+        for identity, row in ferial.items():
+            with self.subTest(identity=identity):
+                artifact_path = (
+                    CUMMISKEY_EDITION.parent / "artifacts"
+                    / row["publication_artifact_id"].rsplit(".", 1)[1]
+                )
+                artifact = load(artifact_path / "artifact.toml")
+                self.assertEqual(artifact["id"], row["publication_artifact_id"])
+                carrier = ROOT / artifact["path"]
+                self.assertEqual(
+                    hashlib.sha256(carrier.read_bytes()).hexdigest(),
+                    artifact["sha256"],
+                )
+                self.assertEqual(row["publication_artifact_sha256"], artifact["sha256"])
+                with carrier.open(encoding="utf-8", newline="") as handle:
+                    carried = list(csv.DictReader(handle, delimiter="\t"))
+                self.assertEqual(
+                    [(r["mass"], r["form_id"], r["proper"], r["cycle"],
+                      int(r["occurrence"])) for r in carried],
+                    [identity],
+                )
+                self.assertEqual(row["witness"], "cummiskey-1861")
+                self.assertEqual(row["artifact_id"], CUMMISKEY_PAGE_ARTIFACT)
+                self.assertEqual(row["collation_result"], "confirmed")
+                propers.validate_translation_publication_binding(
+                    row, propers.DEFAULT_ROOT, ROMAN_TRANSLATIONS
+                )
+                self.assertEqual(len(row["translations"]), 1)
+                translation = row["translations"][0]
+                self.assertEqual(
+                    (translation["lang"], translation["rights"], translation["source_id"]),
+                    ("en", "public-domain", CUMMISKEY_SOURCE),
+                )
+                self.assertEqual(
+                    translation["text"], json.loads(carried[0]["english_json"])
+                )
 
     def test_child_sidecar_excludes_only_exact_typed_inherited_departures(self) -> None:
         rows = self.child["inherited_inapplicable"]

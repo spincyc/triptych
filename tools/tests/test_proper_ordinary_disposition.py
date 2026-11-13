@@ -342,6 +342,10 @@ class ProjectionTests(unittest.TestCase):
                 propers_tool, "translation_overlay", return_value=({}, {}, [], {})
             ),
             patch.object(propers_tool, "publication_records", return_value=({}, [])),
+            # The finite oration-conclusion authority is a repository record
+            # that governs only the real calendars; a synthetic calendar is
+            # read apart from it (as in test_missal_coverage).
+            patch.object(propers_tool._oration_endings, "load_sources", return_value={}),
         ):
             structure = propers_tool.calendar_structure(ROOT, "synthetic", {})
         masses = {mass["key"]: mass for mass in structure["masses"]}

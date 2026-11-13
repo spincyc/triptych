@@ -10,6 +10,7 @@ import tempfile
 import tomllib
 import unittest
 from types import SimpleNamespace
+from unittest import mock
 from importlib.machinery import SourceFileLoader
 from pathlib import Path
 
@@ -170,6 +171,16 @@ def load_tool(name: str):
     return SourceFileLoader(
         f"test_{name.replace('-', '_')}", str(ROOT / "tools" / name)
     ).load_module()
+
+
+def synthetic_structure(mass_propers, calendars: Path, calendar: str) -> dict:
+    """Build a synthetic calendar's structure apart from the repository's
+    finite oration-conclusion authority, which `_oration_endings` reads from
+    the repository three levels above a real `src/sources/calendars` root and
+    which governs only the real calendars (same isolation as
+    test_missal_coverage's synthetic structures)."""
+    with mock.patch.object(mass_propers._oration_endings, "load_sources", return_value={}):
+        return mass_propers.calendar_structure(calendars, calendar, {})
 
 
 def demo_document(*propers: dict) -> dict:
@@ -2183,7 +2194,7 @@ class ProjectionTests(unittest.TestCase):
 
     def test_browser_download_and_print_structure_contain_state_not_wording(self) -> None:
         mass_propers = load_tool("mass-propers")
-        built = mass_propers.calendar_structure(self.calendars, "demo", {})
+        built = synthetic_structure(mass_propers, self.calendars, "demo")
         encoded = json.dumps(built, ensure_ascii=False)
         self.assertNotIn("Secretum Latinum", encoded)
         self.assertNotIn("Arcanum A", encoded)
@@ -2238,7 +2249,7 @@ class ProjectionTests(unittest.TestCase):
             elif isinstance(value, list):
                 for child in value: public_statuses(child)
         mass_propers = load_tool("mass-propers")
-        built = mass_propers.calendar_structure(self.calendars, "demo", {})
+        built = synthetic_structure(mass_propers, self.calendars, "demo")
         public_statuses(built)
         self.assertEqual(neutral, built["masses"][0]["propers"][0]["latin"])
         command = [sys.executable, str(ROOT / "tools/mass-propers"), "show",

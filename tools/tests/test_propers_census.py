@@ -159,13 +159,31 @@ class CountingKeyTests(unittest.TestCase):
         # and the nine adopted owners (8d7e3b301; workflows/reviews/
         # missal-reader-completion-2026-10-26/nine-owner-adoption.json). The
         # census blocks regenerated in f3f59d483 and 8d7e3b301 record the same.
+        # +3 seasonal since dc9e7e97b3: exactly the three source-established
+        # ferial Oratio super populum owners below, admitted with their Latin
+        # and historical English by workflows/reviews/missal-reader-resume-
+        # 2026-11-12/ferial-three/evidence/root-source-admission-original.json.
+        ferial_three = {
+            (mass["key"], proper["name"])
+            for section in document["sections"].values()
+            for mass in section["masses"]
+            if section["kind"] == "seasonal"
+            for proper in mass.get("propers") or []
+            if proper["name"] == "Oratio super populum"
+            and mass["key"] in {"lent-1-tuesday", "lent-4-thursday", "passion-wednesday"}
+        }
+        self.assertEqual(
+            ferial_three,
+            {(mass, "Oratio super populum")
+             for mass in ("lent-1-tuesday", "lent-4-thursday", "passion-wednesday")},
+        )
         self.assertEqual(
             {
                 row["kind"]: (row["masses"], row["propers"])
                 for row in counted["sections"]
             },
             {
-                "seasonal": (128, 1424),
+                "seasonal": (128, 1427),
                 "christological": (8, 99),
                 "marian": (18, 163),
                 "sanctoral": (307, 1685),
@@ -173,8 +191,8 @@ class CountingKeyTests(unittest.TestCase):
             },
         )
         self.assertEqual(counted["masses"], 491)
-        self.assertEqual(counted["propers"], 3753)
-        self.assertEqual(counted["substantive_propers"], 3753)
+        self.assertEqual(counted["propers"], 3756)
+        self.assertEqual(counted["substantive_propers"], 3756)
         self.assertEqual(counted["propers_in_forms"], 211)
         self.assertEqual(counted["scripture_bearing_propers"], 2270)
         self.assertEqual(counted["slot_names"], 128)
@@ -1006,6 +1024,33 @@ class EnglishCoverageTests(unittest.TestCase):
             )
             self.assertEqual(len(bound), len(targets))
             expected += bound
+        # 2026-11-12/13 ferial three (dc9e7e97b3): two exact Lasance carriers,
+        # one target each, per workflows/reviews/missal-reader-resume-2026-11-12/
+        # ferial-three/evidence/root-source-admission-original.json and its
+        # root-recipient-carrier-amendment.json. The third owner,
+        # lent-4-thursday, is a Cummiskey positive and is already expected.
+        ferial_three_scopes = {
+            "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english": {
+                ("lent-1-tuesday", "main", "Oratio super populum", "all", 1),
+            },
+            "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient": {
+                ("passion-wednesday", "main", "Oratio super populum", "all", 1),
+            },
+        }
+        for artifact_id, targets in ferial_three_scopes.items():
+            bound = [row for row in document["entries"]
+                     if row.get("publication_artifact_id") == artifact_id]
+            self.assertEqual(
+                {(row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
+                 for row in bound}, targets,
+            )
+            self.assertEqual(len(bound), len(targets))
+            expected += bound
+        self.assertIn(
+            ("lent-4-thursday", "main", "Oratio super populum", "all", 1),
+            {(row["mass"], row["form_id"], row["proper"], row["cycle"], row["occurrence"])
+             for row in expected},
+        )
         self.assertEqual(
             {
                 (

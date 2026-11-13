@@ -38,7 +38,11 @@ class CommonGospelSeats(unittest.TestCase):
         cls.source = C.read_yaml(SOURCE_ROOT / 'src/sources/calendars/roman-1962/propers.yaml')
         cls.inventory = tomllib.loads((ORDINARY_ROOT / 'src/sources/inventories/roman-1962-ordo-missae-v1.toml').read_text())
         cls.ordinary = json.loads((browser_data_root(ROOT) / 'structure/ordinary/roman-1962.json').read_text())
-        cls.ordinary['slots'] = O.slot_table(cls.inventory, cls.ordinary['sections'], 'roman-1962')
+        # The inventory now declares a rite-held slot (oratio-super-populum);
+        # slot_table validates it only against the generated ordinary's own
+        # declared proper_rites, as the producer itself does.
+        cls.ordinary['slots'] = O.slot_table(cls.inventory, cls.ordinary['sections'], 'roman-1962',
+                                             cls.ordinary.get('proper_rites'))
 
     def test_each_exact_label_is_a_source_anchored_gospel_with_same_ordinary_seat(self):
         held = {p['name'] for m in self.source['sections']['common']['masses'] for p in m.get('propers', [])

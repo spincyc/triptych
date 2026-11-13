@@ -27,7 +27,12 @@ const sandbox = {
   coverageWitnessMatches:(owner, lang, wanted, row) => wanted === row.source_id,
 };
 vm.createContext(sandbox);
+// renderSingleOrationState first offers a sourced conclusion execution and a
+// Latin study presentation; both are carried as the exact production bytes
+// that precede it, and both decline for this fixture (no conclusionExecution,
+// no study-reconstruction provenance).
 vm.runInContext(extract('properBodyUnavailable', '  /* ------------------------------------------------------------------------\n   * Claim-local truth') +
+  extract('renderConclusionExecution', '  function renderSingleOrationState(') +
   extract('renderSingleOrationState', '  /** One labelled language side'), sandbox);
 const context = {scope:'witness-state-only',label:'Bonn 2004 reimpressio of a conformed edition of about 1954',civil_date_authority:false};
 const owner = {source:'composed',text:'Fixture Latin.',latin:{withheld:false,target_context:context,publication:{status:'permitted',basis:'public-domain'},provenance:{status:'collated',relationship:'editorial-projection-exact-to-target'}},translations:[{lang:'en',text:'Fixture English.',source_id:'passage.fixture.english'}]};

@@ -85,7 +85,16 @@ const tuesdayRelation=tuesday.proper_source_paths[0];
 assert.equal(tuesdayRelation.paths.find(p=>p.standing==='principal').members.length,4);
 const tuesdayVerses=tuesday.propers.filter(p=>p.name==='Verse Before the Gospel');
 assert.equal(tuesdayVerses.length,2);
-assert(tuesdayVerses.every(p=>p.source==='composed' && p.text_status.state==='unavailable'));
+// Since dc9e7e97b3 the native n.252 ferial verse (occurrence 1) holds the
+// reviewed Pustet 1888 Latin body (semen install review, 2026-11-12); the
+// optional n.250 course verse (occurrence 2) remains a held, unpublished body.
+assert(tuesdayVerses.every(p=>p.source==='composed'));
+const tuesdayVerse=(occurrence)=>tuesdayVerses.find(p=>p.appointment_identity.occurrence===occurrence);
+assert.equal(require('node:crypto').createHash('sha256').update(tuesdayVerse(1).text).digest('hex'),
+  'b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3');
+assert.equal(tuesdayVerse(1).text_status,undefined);
+assert.equal(tuesdayVerse(2).text_status.state,'unavailable');
+assert.equal(tuesdayVerse(2).text,undefined);
 
 assert.equal(executions,560);assert.equal(negatives,202);assert.equal(staticForms,18);
 const coreExecutions=executions;
@@ -178,4 +187,4 @@ assert.equal(conditionNegatives,284);
 assert.equal(JSON.stringify(source),before,'admission must preserve original raw source metadata');
 console.log(JSON.stringify({status:'pass',staticForms,executions:coreExecutions,negativeControls:negatives,
   additionalControls,additionalExecutions:executions-coreExecutions,conditionExecutions,conditionNegatives,
-  scope:'18 coupled ferial courses; 19 composed unavailable owners; explicit n252 gap; stale Gospel-only selectors fail closed'}));
+  scope:'18 coupled ferial courses; 18 composed unavailable owners; admitted n252 native verse distinct from n250; stale Gospel-only selectors fail closed'}));

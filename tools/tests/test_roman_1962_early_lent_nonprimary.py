@@ -141,7 +141,22 @@ class EarlyLentNonprimary(unittest.TestCase):
    self.assertEqual(entries,[],(key,fid,name))
    self.assertEqual(len(matches),1,(key,fid,name));self.assertEqual(matches[0]['reason'],{'kind':'no-exemplar'})
  def test_generic_frames_are_explicitly_unavailable_and_specialized_frames_remain(self):
-  for key in FRAME_MASSES+['lent-1-ember-saturday','lent-1-ember-wednesday']:
+  # These 19 generic frames were withheld only because the Ordo Missae left
+  # the Lenten ferial Oratio super populum unplaced. Since dc9e7e97b3 the
+  # inventory declares that seat (proper rite oratio-super-populum, passage
+  # ...vatican-typica-1962.oratio-super-populum-placement-actors-20261112;
+  # RGMR 506; Ritus servandus XI.2-3) and withdrew that not_decided_here
+  # clause, so each generic frame now holds and the prayer is seated by an
+  # exact rite appointment. The specialized Ember frames remain withheld.
+  inventory=tomllib.loads((ROOT/'src/sources/inventories/roman-1962-ordo-missae-v1.toml').read_text())
+  self.assertEqual([slot['rite'] for slot in inventory['slots'] if 'rite' in slot],['oratio-super-populum'])
+  rite=next(r for r in inventory['proper_rites'] if r['id']=='oratio-super-populum')
+  seated={(a['mass'],a['form_id'],a['proper'],a['occurrence']) for a in rite['appointments']}
+  self.assertNotIn('super populum',' '.join(inventory['not_decided_here']).lower())
+  for key in FRAME_MASSES:
+   self.assertNotIn('ordinary_frame',masses(self.document)[key],key)
+   self.assertIn((key,'main','Oratio super populum',1),seated,key)
+  for key in ['lent-1-ember-saturday','lent-1-ember-wednesday']:
    frame=masses(self.document)[key]['ordinary_frame'];self.assertEqual(frame['applicability'],'unavailable');self.assertTrue(frame['basis'])
  def test_omission_and_plausible_wrong_citation_are_detected(self):
   omitted=copy.deepcopy(self.document);mass=masses(omitted)['ash-wednesday'];mass['propers']=[p for p in mass['propers'] if p['name']!='Oratio super populum']
