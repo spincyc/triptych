@@ -3946,6 +3946,7 @@ function node(tag) {
     closest(selectors) { return this.matches(selectors) ? this
       : this.parentElement && this.parentElement.closest(selectors); },
     setAttribute(k, v) { this.attrs[k] = v; },
+    hasAttribute(k) { return Object.hasOwn(this.attrs, k); },
     querySelectorAll() { return []; }, addEventListener() {},
     text() { let o = this.textContent || '';
       for (const c of this.children) o += (c.text ? c.text() : String(c.data || '')); return o; },

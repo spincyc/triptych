@@ -1233,18 +1233,18 @@
     };
   }
 
+  function primaryDayChoice(result, branch) {
+    return (result.unresolvedChoices || []).find(function (one) {
+      return one.id === 'calendar-formulary' || /^proper-form:/.test(one.id) ||
+        !!sourceDayChoice(branch, one.id);
+    }) || null;
+  }
+
   function sourceDayChoice(branch, id) {
     if (branch && branch.choice &&
         (branch.choice.id || 'calendar-precedence') === id) return branch.choice;
     return (branch && branch.massChoices || []).find(function (one) {
       return (one.id || 'authorized-formulary-choice') === id;
-    }) || null;
-  }
-
-  function primaryDayChoice(result, branch) {
-    return (result.unresolvedChoices || []).find(function (one) {
-      return one.id === 'calendar-formulary' || /^proper-form:/.test(one.id) ||
-        !!sourceDayChoice(branch, one.id);
     }) || null;
   }
 
