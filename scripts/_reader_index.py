@@ -25,7 +25,7 @@ SCHEMA = 'triptych-reader-derivations/v1'
 # conservative common scope until narrower closures have independent audits.
 COMMON = ('scripts', 'tools')
 SURFACES = {
-    'commentary': ('src/sources',),
+    'commentary': ('src/sources', 'src/web/browser/catena/catena-model.js'),
     'sources': ('src/sources', 'src/gpt', 'src/claude', 'src/common', 'web'),
     'liturgy': ('src/sources', 'src/gpt', 'src/claude'),
     'history': ('src/sources', 'src/gpt', 'src/claude', 'src/common', 'web',

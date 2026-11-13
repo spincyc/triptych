@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import sys
+import subprocess
 import unittest
 from unittest.mock import patch
 
@@ -15,6 +16,36 @@ import _catena
 from _corpus_index import CorpusIndex
 import _reader_bibles
 import _reader_commentary_products as reader
+
+_DENSITY_ADAPTER = r"""
+const fs = require('fs'), path = require('path');
+const root = process.argv[1], input = JSON.parse(fs.readFileSync(0, 'utf8'));
+globalThis.CatenaModel = require(path.join(root, 'src/web/browser/catena/catena-model.js'));
+const loads = [];
+class NotFound extends Error {}
+globalThis.Triptych = {
+  NotFound, languageName: (code) => code,
+  loadBibles: async () => ({ok: true, bibles: input.editions}),
+  loadJSON: async (where) => {
+    loads.push(where);
+    if (where === 'structure/catena/index.json') return input.index;
+    if (where === 'structure/paragraphs/index.json') return {};
+    if (Object.hasOwn(input.chapters, where)) return input.chapters[where];
+    throw new NotFound(where);
+  },
+};
+const adapter = require(path.join(root, 'scripts/lectern/adapters/catena.js'))({
+  script() {}, read(where) {
+    const token = where.slice('structure/catena/density/'.length, -5);
+    return input.density ? input.density[token] : undefined;
+  },
+});
+(async () => {
+  const rows = {};
+  for (const book of input.index.canon) rows[book.token] = await adapter.density(book.token);
+  process.stdout.write(JSON.stringify({rows, loads}));
+})().catch((error) => { console.error(error.message); process.exitCode = 1; });
+"""
 
 
 class CommentaryReaderTests(unittest.TestCase):
@@ -90,7 +121,7 @@ class CommentaryReaderTests(unittest.TestCase):
             return original(relative)
 
         with patch.object(self.index, "read", side_effect=broken):
-            with self.assertRaisesRegex(ValueError, "invalid source record"):
+            with self.assertRaisesRegex(ValueError, "invalid source record|canonical source is corrupt"):
                 self.resolve(path)
 
     def test_selected_text_retains_the_owning_rights_gate(self):
@@ -139,6 +170,64 @@ class CommentaryReaderTests(unittest.TestCase):
             self.assertFalse(problem)
             self.assertIn("Lauda", text)
             self.assertEqual(set(bible.verses.loaded), {("Ps", 147)})
+
+    def density_fixture(self):
+        catalog = json.loads(self.index.read(reader.CATALOG_PATH))["catena"]
+        catalog["canon"] = [book for book in catalog["canon"] if book["token"] in {"Gen", "Ex", "Ps"}]
+        paths = ("structure/catena/01-gen/001.json", "structure/catena/01-gen/002.json",
+                 "structure/catena/02-ex/003.json", "structure/catena/21-ps/002.json")
+        chapters = {path: json.loads(self.resolve(path)) for path in paths}
+        from _reader_products import MANIFESTS
+        editions = json.loads(self.index.read(MANIFESTS))["bibles.json"]["bibles"]
+        return {"index": catalog, "chapters": chapters, "editions": editions}
+
+    def adapter_density(self, fixture):
+        result = subprocess.run(["node", "-e", _DENSITY_ADAPTER, str(ROOT)],
+                                input=json.dumps(fixture), text=True, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        return json.loads(result.stdout)
+
+    def test_density_keeps_model_counts_without_loading_chapters(self):
+        fixture = self.density_fixture()
+        expected = self.adapter_density(fixture)
+        fixture["density"] = reader.density_metadata(ROOT, fixture["index"], fixture["chapters"], fixture["editions"])
+        actual = self.adapter_density(fixture)
+        self.assertEqual(actual["rows"], expected["rows"])
+        self.assertEqual(actual["loads"], ["structure/catena/index.json", "structure/paragraphs/index.json"])
+        self.assertGreater(expected["rows"]["Gen"][0]["fragments"], 0)
+        self.assertGreater(expected["rows"]["Ex"][2]["leads"], 0)
+        self.assertEqual(expected["rows"]["Ex"][2]["fragments"], 0)
+        self.assertTrue(any(row["refused"] for row in expected["rows"]["Ps"]))
+        self.assertTrue(any(row["unreadable"] for row in expected["rows"]["Gen"]))
+        self.assertTrue(any(not row["held"] for row in expected["rows"]["Ex"]))
+
+        catalog = json.loads(self.index.read(reader.CATALOG_PATH))
+        catalog["density"] = fixture["density"]
+        reads = []
+        def only_metadata(relative):
+            reads.append(relative)
+            if relative != reader.CATALOG_PATH:
+                raise AssertionError(f"density read a body: {relative}")
+            return reader._json(catalog)
+
+        with patch.object(self.index, "read", side_effect=only_metadata):
+            payload = json.loads(self.resolve("structure/catena/density/Gen.json"))
+        self.assertEqual(payload["rows"], expected["rows"]["Gen"])
+        self.assertEqual(reads, [reader.CATALOG_PATH])
+
+    def test_density_refuses_missing_metadata_and_different_editions(self):
+        catalog = json.loads(self.index.read(reader.CATALOG_PATH))
+        catalog.pop("density", None)
+        with patch.object(reader, "_catalog", return_value=catalog):
+            with self.assertRaisesRegex(ValueError, "density index is missing"):
+                self.resolve("structure/catena/density/Gen.json")
+        fixture = self.density_fixture()
+        fixture["density"] = reader.density_metadata(ROOT, fixture["index"], fixture["chapters"], fixture["editions"])
+        fixture["density"]["Gen"]["editions"] = []
+        result = subprocess.run(["node", "-e", _DENSITY_ADAPTER, str(ROOT)],
+                                input=json.dumps(fixture), text=True, capture_output=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("does not describe this book and its editions", result.stderr)
 
 
 if __name__ == "__main__":

@@ -15,6 +15,7 @@ import io
 import json
 from pathlib import Path
 import sys
+import subprocess
 from unittest.mock import patch
 
 import _canon
@@ -28,6 +29,43 @@ from _indexed_source_library import indexed_records
 
 CATALOG_PATH = "src/index/commentary/catalog.json"
 SCHEMA = "triptych-reader-commentary-addresses/v1"
+DENSITY_SCHEMA = "triptych-catena-density/v1"
+
+_DENSITY_HARNESS = r"""
+const fs = require('fs'), path = require('path');
+const root = process.argv[1];
+const model = require(path.join(root, 'src/web/browser/catena/catena-model.js'));
+const derive = require(path.join(root, 'scripts/lectern/adapters/catena.js')).chapterDensity;
+const input = JSON.parse(fs.readFileSync(0, 'utf8'));
+const editions = model.bibleRoot(input.editions);
+if (!editions.whole) throw new Error('Unreadable Bible offer for Catena density');
+const ids = editions.bibles.map((edition) => edition.id);
+async function chapterFile(token, chapter) {
+  const where = model.chapterPath(input.index, token, chapter);
+  if (!where) return {where, file: where === null ? {unfetched: 'the index record'} : null};
+  const file = input.chapters[where] || {unfetched: where};
+  return {where, file: model.spineUnreadable(file) ? {unfetched: where} : file};
+}
+(async () => {
+  const out = {};
+  for (const book of model.canonRoot(input.index.canon).books) {
+    out[book.token] = {schema: input.schema, token: book.token, editions: ids,
+                      rows: await derive(model, book, ids, chapterFile)};
+  }
+  process.stdout.write(JSON.stringify(out));
+})().catch((error) => { console.error(error.message); process.exitCode = 1; });
+"""
+
+
+def density_metadata(root, catalog, chapters, editions):
+    """Run the live adapter's tally once during explicit metadata maintenance."""
+    result = subprocess.run(["node", "-e", _DENSITY_HARNESS, str(root)],
+        input=json.dumps({"schema": DENSITY_SCHEMA, "index": catalog,
+                          "chapters": chapters, "editions": editions}),
+        text=True, capture_output=True, check=False)
+    if result.returncode:
+        raise _catena.CatenaError(f"Catena density derivation failed: {result.stderr.strip()}")
+    return json.loads(result.stdout)
 
 
 def _json(value) -> bytes:
@@ -43,11 +81,12 @@ def build_catalog(root: Path) -> dict:
     directory, products, _ = _catena._structure_files(root, destination)
     catalog = json.loads(products[directory / "index.json"])
     catalog.pop("absences")  # The source-owned reason is read when requested.
-    chapters = {}
+    chapters, spines = {}, {}
     for path, body in products.items():
         if path.parent == directory or path.parent.name in {"text", "scripture"}:
             continue
         chapter = json.loads(body)
+        spines[path.relative_to(destination).as_posix()] = chapter
         chapters.setdefault(path.parent.name, {})[str(chapter["chapter"])] = [
             row["id"] for row in chapter["fragments"]]
     paragraph_directory, paragraph_products, _ = _catena._paragraph_files(root, destination)
@@ -55,8 +94,13 @@ def build_catalog(root: Path) -> dict:
     absence_editions = sorted(identifier for identifier, edition
                               in _catena._sources_cache(root).editions.items()
                               if edition.get("work_id") in absent_works)
+    register = _catena._index_bible(root)
+    servable = {identifier for identifier in register.EDITIONS
+                if (root / _catena.BIBLES_RELATIVE / identifier / "chapters").is_dir()}
+    editions = register.manifest_document(servable)["bibles"]
     return {"schema": SCHEMA, "catena": catalog, "chapters": chapters,
             "absence_editions": absence_editions,
+            "density": density_metadata(root, catalog, spines, editions),
             "paragraphs": json.loads(paragraph_products[paragraph_directory / "index.json"])}
 
 
@@ -195,6 +239,14 @@ def _validate_selected(root, sources, edges, identifiers):
 
 def _catena_product(relative, root, index, catalog):
     suffix = relative.removeprefix("structure/catena/")
+    if suffix.startswith("density/") and suffix.endswith(".json"):
+        token = suffix[len("density/"):-5]
+        if token not in {book["token"] for book in catalog["catena"]["canon"]}:
+            return None
+        payload = catalog.get("density", {}).get(token)
+        if not isinstance(payload, dict) or payload.get("schema") != DENSITY_SCHEMA:
+            raise ValueError("Catena density index is missing; run tools/corpus-index refresh --readers")
+        return _json(payload)
     if suffix == "index.json":
         edges = _catena.load_edges(root)
         sources = _sources(index, editions=catalog["absence_editions"])

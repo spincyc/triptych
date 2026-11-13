@@ -155,6 +155,7 @@ The November 2026 implementation measurements include:
 
 | Operation | Before | Indexed or selective path |
 | --- | ---: | ---: |
+| Day startup / settled snapshot, 120×40 | approximately 42 s | 6–7 s cold; 2–3 s warm |
 | Sources initial discovery JSON | 11.23 MB | 262.5 KB |
 | Day, 15 January, initial JSON | 23.30 MB | 1.50 MB |
 | Liturgy Compare initial JSON | 30.69 MB | 2.61 MB |
@@ -180,3 +181,27 @@ Mass payloads. Those generated products remain outside Git.
 The timings above are individual local observations, not throughput guarantees.
 Index authoring and independent complete publication checks still perform full
 corpus work. They are not a first-reader bootstrap requirement.
+
+A controlled filtered clone of the implementation retained all 3,113 commits
+and all 80,871 tracked source paths. Its complete graph initially transferred
+17.27 MB of pack data; normal checkout brought total pack data to 637.87 MB,
+compared with about 5.1 GiB of objects in the existing full clone. Local file
+transport took 1.50 seconds for the graph and 21.34 seconds for checkout. These
+are transport/size experiments, not predictions of GitHub download time.
+
+With dependency installation already complete, that fresh checkout opened the
+12 November 2026 Day reading in 5.97 seconds, then 2.20 seconds warm. Sources
+opened in 2.09 seconds and Publications discovery in 2.36 seconds. Canonical
+text appeared in the settled snapshots. With Git lazy fetching disabled, no
+fetch occurred, object storage was unchanged and 73,977 historical objects
+remained absent. No browser-data family was prepared. The original working
+checkout measured 7.11/2.58 seconds for the same cold/warm Day snapshots while
+other validation work was running.
+
+The first complete metadata derivation took 9 minutes 38 seconds; an unchanged
+`refresh --readers` took 7.71 seconds and reused all 80,287 inputs without
+rehashing or reparsing them. This is maintainer work: the resulting metadata
+ships in Git, so a first-time reader does not repeat it. The measured metadata
+occupied about 54.4 MB as files and 16.4 MB as compressed Git blobs, including
+the generic integrity/address layer and all five discovery surfaces. This
+adds lookup metadata without duplicating reading bodies or rewriting history.

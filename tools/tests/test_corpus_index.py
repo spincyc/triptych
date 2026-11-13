@@ -317,6 +317,19 @@ class CorpusIndexTests(unittest.TestCase):
             corpus.refresh(self.root, readers=True)
             builder.assert_not_called()
 
+    def test_catena_model_change_invalidates_discovery_counts(self):
+        model = 'src/web/browser/catena/catena-model.js'
+        self.put(model, 'module.exports = {chapterTally: () => 1};')
+        with patch.object(readers, 'build_surface', side_effect=self._surface) as builder:
+            corpus.refresh(self.root, readers=True)
+            self.put(model, 'module.exports = {chapterTally: () => 2};')
+            with self.assertRaisesRegex(corpus.CorpusIndexError, 'stale reader derivation'):
+                corpus.refresh(self.root)
+            builder.reset_mock()
+            result = corpus.refresh(self.root, readers=True)
+            self.assertIn('commentary', result['reader_surfaces'])
+            self.assertIn('commentary', [call.args[0] for call in builder.call_args_list])
+
     def test_change_during_reader_generation_is_refused(self):
         count = 0
         def racing(surface, root, index, *, check=False):

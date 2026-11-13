@@ -1,8 +1,9 @@
 """A web edition, set for a terminal by the site's own renderer and pandoc.
 
-A web edition's Markdown is converted from its canonical TeX when the site is
-built, into the `web-editions` browser product (guidance/web-editions.md); no
-copy of it is tracked. The catalogue names the page it becomes,
+A web edition's Markdown is converted from its canonical TeX when requested
+through the verified reader index. The site derives the same `web-editions`
+product during its complete build (guidance/web-editions.md); no copy of the
+converted body is tracked. The catalogue names the page it becomes,
 `web/<provider>/<output>.html`, and that page names the output whose verified
 product is read here, so no path is composed from anything else.
 
@@ -16,9 +17,8 @@ set by pandoc's `ansi` writer at the reading width; measured over all 137
 editions, not one visible letter or digit of the site's HTML is lost, tables
 are wrapped to the width, and only an unbreakable URL runs past it.
 
-Nothing falls back. If the products are not built, the renderer refuses or
-pandoc is missing, the reason is what the reader is shown, in the place of the
-text.
+If the indexed source is invalid, the renderer refuses or pandoc is missing,
+the reason is shown in the place of the text.
 """
 from __future__ import annotations
 

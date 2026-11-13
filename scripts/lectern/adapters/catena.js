@@ -1,4 +1,24 @@
 'use strict';
+
+/* Shared by live complete-product reading and the thin discovery producer.
+ * Only the existing model decides what each chapter contributes to the strip. */
+async function chapterDensity(model, book, editionIds, chapterFile) {
+  const rows = [];
+  for (let chapter = 1; chapter <= book.chapters; chapter += 1) {
+    const { where, file } = await chapterFile(book.token, chapter);
+    const row = { chapter, held: !!where, fragments: 0, leads: 0, blocked: 0, refused: 0, unreadable: false };
+    if (where === null) row.unreadable = true;
+    if (where) {
+      row.unreadable = !!model.chapterUnfetched(file);
+      row.fragments = model.chapterTally(file);
+      row.leads = model.chapterLeads(file).length;
+      row.blocked = model.chapterBlocked(file).length;
+      row.refused = editionIds.filter((id) => model.refusalNote(file, id, chapter)).length;
+    }
+    rows.push(row);
+  }
+  return rows;
+}
 /*
  * Catena Omnia, as `src/web/browser/catena/catena.js` assembles it.
  *
@@ -290,22 +310,24 @@ module.exports = function catena(realm) {
     const book = canon.books.find((one) => one.token === M.sound(token));
     if (!book) throw new Error('no book ' + token);
     const ids = editions.bibles.map((one) => one.id);
-    const rows = [];
-    for (let chapter = 1; chapter <= book.chapters; chapter += 1) {
-      const { where, file } = await chapterFile(book.token, chapter);
-      const row = { chapter, held: !!where, fragments: 0, leads: 0, blocked: 0, refused: 0, unreadable: false };
-      if (where === null) row.unreadable = true;
-      if (where) {
-        row.unreadable = !!M.chapterUnfetched(file);
-        row.fragments = M.chapterTally(file);
-        row.leads = M.chapterLeads(file).length;
-        row.blocked = M.chapterBlocked(file).length;
-        row.refused = ids.filter((id) => M.refusalNote(file, id, chapter)).length;
+    const indexed = realm.read('structure/catena/density/' + book.token + '.json');
+    if (indexed !== undefined) {
+      const fields = ['chapter', 'held', 'fragments', 'leads', 'blocked', 'refused', 'unreadable'];
+      if (!indexed || indexed.schema !== 'triptych-catena-density/v1' || indexed.token !== book.token ||
+          JSON.stringify(indexed.editions) !== JSON.stringify(ids) || !Array.isArray(indexed.rows) ||
+          indexed.rows.length !== book.chapters || indexed.rows.some((row, i) =>
+            !row || Object.keys(row).length !== fields.length || fields.some((field) => !Object.hasOwn(row, field)) ||
+            row.chapter !== i + 1 || typeof row.held !== 'boolean' || typeof row.unreadable !== 'boolean' ||
+            ['fragments', 'leads', 'blocked', 'refused'].some((field) => !Number.isSafeInteger(row[field]) || row[field] < 0) ||
+            row.refused > ids.length)) {
+        throw new Error('The indexed chapter density does not describe this book and its editions.');
       }
-      rows.push(row);
+      return indexed.rows;
     }
-    return rows;
+    return chapterDensity(M, book, ids, chapterFile);
   }
 
   return { opening, view, body, density };
 };
+
+module.exports.chapterDensity = chapterDensity;
