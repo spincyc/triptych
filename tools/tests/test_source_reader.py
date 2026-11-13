@@ -357,7 +357,7 @@ class TrackedProjectionTests(unittest.TestCase):
         index = TRACKED / "index.json"
         if not index.is_file():
             raise unittest.SkipTest("run `make source-projection` first")
-        cls.spine = json.loads(index.read_text(encoding="utf-8"))
+        cls.spine = reader.read_discovery(index)
         # Read once for the class. Four tests below walk the same 730 edition
         # projections and parse every one of them again; the tree cannot change
         # between them, and `setUpClass` is where this class already reads the

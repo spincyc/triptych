@@ -1,4 +1,4 @@
-/* Narrow 1962 Propers reading fast path; every split failure uses the full source projection. */
+/* Propers loads the selected Mass and dependencies, or retains the older data contract. */
 'use strict';
 
 (function (root, factory) {
@@ -31,6 +31,12 @@
     const indexRow = (input.index.missals || []).find(function (row) {
       return row.id === input.calendar;
     });
+    if (indexRow && indexRow.reader_index && root.LiturgyReaderProperPayload) {
+      return root.LiturgyReaderProperPayload.loadIndexed({
+        load: input.load, calendar: input.calendar, indexRow: indexRow,
+        roots: input.parsed.recognized.mass
+      });
+    }
     if (!eligible(input.parsed, input.calendar) || !indexRow || !indexRow.read_payload ||
         !root.LiturgyReaderProperPayload) return monolith();
     try {

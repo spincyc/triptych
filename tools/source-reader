@@ -14,6 +14,7 @@ the current ones.
     list       the corpus, filtered by author, language, category or rights
     show       one work or edition in full, with every passage it carries
     structure  write the spine, the per-edition files and the text payloads
+    index      write or check the compact tracked discovery metadata
 
 THE RIGHTS RULE IS THE WHOLE OF THIS TOOL, so it is stated once, here, and
 every verb reads it from `reading_of` below rather than deciding for itself.
@@ -856,6 +857,133 @@ def spine(works: list[dict], counted: dict) -> dict:
     }
 
 
+CATALOGUE_SCHEMA = "triptych-source-catalogue/v2"
+DISCOVERY = Path("src/index/sources/index.json")
+
+
+def compact_spine(built: dict) -> dict:
+    """Discovery tuples; bibliography, apparatus and bodies remain lazy shards.
+
+    Only repeated labels are interned. IDs and routes remain exact recorded
+    values; this representation never guesses an identity from a filename.
+    """
+    labels: list = []
+    positions: dict = {}
+    def label(value):
+        if value is None:
+            return None
+        if value not in positions:
+            positions[value] = len(labels)
+            labels.append(value)
+        return positions[value]
+    rows = []
+    for work in built["works"]:
+        editions = [[ed["id"], 0 if ed["title"] == work["title"] else ed["title"],
+                     label(ed["language"]), label(ed["date"]), ed["year"],
+                     label(ed["file"]), ed["passages"], ed["readable"],
+                     [label(right) for right in ed["rights"]]] for ed in work["editions"]]
+        rows.append([work["id"], work["title"], label(work["author"]),
+                     label(work["category"]), work["alternate_titles"],
+                     work["directory"], editions])
+    return {**{key: value for key, value in built.items() if key not in ("works", "schema")},
+            "schema": CATALOGUE_SCHEMA, "labels": labels, "rows": rows}
+
+
+def expand_spine(built: dict) -> dict:
+    if built.get("schema") != CATALOGUE_SCHEMA:
+        return built
+    labels = built["labels"]
+    def label(value):
+        return labels[value] if value is not None else None
+    works = []
+    for row in built["rows"]:
+        works.append(dict(id=row[0], title=row[1], author=label(row[2]),
+                          category=label(row[3]), alternate_titles=row[4], directory=row[5],
+                          editions=[dict(id=ed[0], title=row[1] if ed[1] == 0 else ed[1],
+                            language=label(ed[2]), date=label(ed[3]), year=ed[4], file=label(ed[5]),
+                            passages=ed[6], readable=ed[7], rights=[label(r) for r in ed[8]])
+                            for ed in row[6]]))
+    return {**{key: value for key, value in built.items() if key not in ("labels", "rows")},
+            "works": works}
+
+
+def catalogue_bytes(built: dict) -> str:
+    return json.dumps(built, ensure_ascii=False, separators=(",", ":"), sort_keys=True) + "\n"
+
+
+DISCOVERY_SCHEMA = "triptych-source-discovery/v3"
+DISCOVERY_PAGE = 128
+
+
+def discovery_files(built: dict) -> dict[str, str]:
+    """A small entry point and bounded metadata shards, in finder default order."""
+    # Match reader-model.order('author'), including its missing-field treatment.
+    works = sorted(built["works"], key=lambda work: (
+        str(work["author"]).lower() if work["author"] else "\uffff",
+        str(work["title"]).lower() if work["title"] else "\uffff" + work["id"], work["id"]))
+    files = {}
+    shards = []
+    for offset in range(0, len(works), DISCOVERY_PAGE):
+        selected = works[offset:offset + DISCOVERY_PAGE]
+        name = f"catalogue/{offset // DISCOVERY_PAGE:04d}.json"
+        packed = compact_spine({"works": selected})
+        files[name] = catalogue_bytes(packed)
+        shards.append({"path": f"{STRUCTURE_RELATIVE.as_posix()}/{name}",
+                       "works": len(selected)})
+    manifest = {**{key: value for key, value in built.items() if key not in ("works", "schema")},
+                "schema": DISCOVERY_SCHEMA, "shards": shards}
+    files[INDEX_NAME] = catalogue_bytes(manifest)
+    return files
+
+
+def read_discovery(target: Path) -> dict:
+    """Expand discovery for validators that deliberately inspect the whole view."""
+    built = json.loads(target.read_text(encoding="utf-8"))
+    if built.get("schema") != DISCOVERY_SCHEMA:
+        return expand_spine(built)
+    works = []
+    for shard in built["shards"]:
+        name = shard["path"].removeprefix(f"{STRUCTURE_RELATIVE.as_posix()}/")
+        works.extend(expand_spine(json.loads((target.parent / name).read_text(encoding="utf-8")))["works"])
+    return {**built, "works": works}
+
+
+def run_index(arguments: argparse.Namespace) -> dict:
+    """Explicitly regenerate or replay the tracked, prose-free discovery view."""
+    works = corpus(load(arguments))
+    counted = tally(works)
+    files = discovery_files(spine(works, counted))
+    target = Path(getattr(arguments, "out", None) or ROOT / DISCOVERY)
+    if not target.is_absolute():
+        target = ROOT / target
+    files[target.name] = files.pop(INDEX_NAME)
+    held = {path.relative_to(target.parent).as_posix() for path in (target.parent / "catalogue").glob("*.json")}
+    expected = set(files) - {target.name}
+    if arguments.check:
+        if held != expected or any(not (target.parent / name).is_file() or
+                (target.parent / name).read_text(encoding="utf-8") != body for name, body in files.items()):
+            raise ReaderError(f"{target} is stale; run tools/source-reader index")
+    else:
+        for name in held - expected:
+            (target.parent / name).unlink()
+        for name, body in files.items():
+            path = target.parent / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(body, encoding="utf-8")
+    return {**counted, "files": len(files), "current" if arguments.check else "written": str(target), "status": "ok"}
+
+
+def text_payload(work: dict, edition: dict, passage: dict) -> dict:
+    reading = passage["reading"]
+    return {"id": passage["id"], "locus": passage.get("locus"),
+            "source": reading["source"], "language": edition["language"], "text": reading["text"],
+            "artifact_id": reading.get("artifact_id"), "artifact_type": reading.get("artifact_type"),
+            "rights": reading.get("rights"), "rights_basis": reading.get("rights_basis"),
+            "edition_id": edition["id"],
+            "edition_path": f"{STRUCTURE_RELATIVE.as_posix()}/{edition['directory']}{edition['file']}",
+            "work_id": work["id"]}
+
+
 def _artifact_payload(one: dict, *, edition_owned: bool) -> dict:
     """Public apparatus facts for an owned artifact or a passage controller.
 
@@ -995,7 +1123,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
     counted = tally(works)
     built = spine(works, counted)
 
-    files: dict[str, str] = {INDEX_NAME: _serialise(built)}
+    files: dict[str, str] = discovery_files(built)
     for work in works:
         for edition in work["editions"]:
             where = edition["directory"] + edition["file"]
@@ -1008,27 +1136,7 @@ def run_structure(arguments: argparse.Namespace) -> dict:
                 if not SAFE_ID.fullmatch(identifier):
                     raise ReaderError(f"passage id is not safe as a filename: {identifier!r}")
                 files[f"{TEXT_DIRECTORY}/{identifier}.json"] = _serialise(
-                    {
-                        "id": identifier,
-                        "locus": passage.get("locus"),
-                        "source": reading["source"],
-                        "language": edition["language"],
-                        "text": reading["text"],
-                        "artifact_id": reading.get("artifact_id"),
-                        "artifact_type": reading.get("artifact_type"),
-                        "rights": reading.get("rights"),
-                        "rights_basis": reading.get("rights_basis"),
-                        # Where this passage is read in context. Written by the
-                        # generator so that a link arriving from the catena with
-                        # nothing but a passage id can reach the whole edition
-                        # in one further fetch, without the page deriving an
-                        # edition out of the shape of an id. An id's spelling is
-                        # not a route, and treating it as one is how a renamed
-                        # record becomes a broken link nothing notices.
-                        "edition_id": edition["id"],
-                        "edition_path": f"{STRUCTURE_RELATIVE.as_posix()}/{where}",
-                        "work_id": work["id"],
-                    }
+                    text_payload(work, edition, passage)
                 )
 
     if arguments.check:
@@ -1498,11 +1606,11 @@ def main(argv: list[str] | None = None) -> int:
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
     )
     shared.add_argument("--out", default=argparse.SUPPRESS,
-                        help="`structure`: unsealed working output root (default: browser-data working tree)")
+                        help="`structure`: unsealed output root; `index`: discovery manifest path (default: src/index/sources/index.json)")
     shared.add_argument(
         "--check",
         action="store_true",
-        help="`structure`: fully replay sources against the selected working output, and write nothing",
+        help="`structure` or `index`: replay the selected output against sources, and write nothing",
     )
     shared.add_argument(
         "--strict",
@@ -1542,6 +1650,12 @@ def main(argv: list[str] | None = None) -> int:
         EXAMPLES["structure"],
     )
 
+    with_examples(
+        sub.add_parser("index", help="write or check the tracked compact discovery index", parents=[shared]),
+        (Example("source-reader index --check --json", (),
+                 "replay discovery metadata without writing; counts follow the current corpus"),),
+    )
+
     return run_verb_cli(
         parser=parser,
         handlers={
@@ -1549,6 +1663,7 @@ def main(argv: list[str] | None = None) -> int:
             "list": run_list,
             "show": run_show,
             "structure": run_structure,
+            "index": run_index,
         },
         renderer=render,
         prefix="source-reader",

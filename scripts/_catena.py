@@ -798,7 +798,7 @@ def load_absences(root: Path = ROOT) -> dict[str, Any]:
     return data
 
 
-def held_languages(root: Path, sources: Sources) -> dict[str, set[str]]:
+def held_languages(root: Path, sources: Sources, *, edges=None) -> dict[str, set[str]]:
     """Every language the LIBRARY holds each work in, folded, by both routes.
 
     A work reaches a language two ways and only one of them is obvious. The
@@ -821,7 +821,7 @@ def held_languages(root: Path, sources: Sources) -> dict[str, set[str]]:
         folded = fold_language(edition.get("language"))
         if work_id and folded:
             found.setdefault(work_id, set()).add(folded)
-    for fragment in load_edges(root).get("fragments") or ():
+    for fragment in (load_edges(root) if edges is None else edges).get("fragments") or ():
         if not isinstance(fragment, dict):
             continue
         container = str(fragment.get("constituent_of") or "")
@@ -848,7 +848,7 @@ def absences_by_work(root: Path = ROOT) -> dict[tuple[str, str], dict[str, Any]]
     return found
 
 
-def absent_by_work(root: Path = ROOT) -> dict[str, list[dict[str, str]]]:
+def absent_by_work(root: Path = ROOT, *, sources=None, edges=None) -> dict[str, list[dict[str, str]]]:
     """What the page is given about a language a work does not reach.
 
     The apparatus stays behind: the aliases a search used and what would
@@ -857,8 +857,8 @@ def absent_by_work(root: Path = ROOT) -> dict[str, list[dict[str, str]]]:
     text of the work does exist without answering the chapter — the offer that
     was found and not taken.
     """
-    sources = load_sources(root)
-    everywhere = held_languages(root, sources)
+    sources = load_sources(root) if sources is None else sources
+    everywhere = held_languages(root, sources, edges=edges)
     served: dict[str, list[dict[str, str]]] = {}
     for (work_id, language), row in sorted(absences_by_work(root).items()):
         if work_id not in sources.works or language in everywhere.get(work_id, set()):
@@ -1522,7 +1522,9 @@ def _solved_case_errors(data: dict[str, Any], where: str, known: set[str]) -> li
 # ---------------------------------------------------------------------------
 
 
-def fragments_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, Any]]:
+def fragments_for_book(
+    root: Path, token: str, *, scope=None, sources=None, edges=None, passage_ids=None,
+) -> list[dict[str, Any]]:
     """Every held fragment on a book, at its own extent, in chronological order.
 
     Chapter-keyed nothing: Rule 5 stores the extent and derives the view, and
@@ -1534,14 +1536,17 @@ def fragments_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, 
     Rule 7's order is by the date of the text, then by author, work and extent,
     so that a tie and a missing year both sort the same way on every build.
     """
-    data = load_edges(root)
-    sources = _sources_cache(root)
+    data = load_edges(root) if edges is None else edges
+    sources = _sources_cache(root) if sources is None else sources
     scope = scope or _catena_scope.Scope(root, works=sources.works)
-    snippets, snippet_errors = _catena_snippets.reviewed(root, sources, data)
+    snippets, snippet_errors = _catena_snippets.reviewed(
+        root, sources, data, passage_ids=passage_ids)
     if snippet_errors:
         raise CatenaError("\n".join(snippet_errors))
     rows: list[dict[str, Any]] = []
     for fragment in data.get("fragments") or ():
+        if passage_ids is not None and fragment.get("passage_id") not in passage_ids:
+            continue
         extent = _extent(fragment.get("extent"))
         if extent is None or extent.token != token:
             continue
@@ -1637,7 +1642,7 @@ def _commentary_index(root: Path) -> Any:
     return _INDEX_CACHE[root]
 
 
-def leads_for_book(root: Path, token: str, name: str, *, scope=None) -> dict[str, list[dict[str, str]]]:
+def leads_for_book(root: Path, token: str, name: str, *, scope=None, discovery=None) -> dict[str, list[dict[str, str]]]:
     """L1 rows for a book, keyed by chapter, with the confidence removed.
 
     Rule 2 is enforced here rather than in the page. Once a work's fragments are
@@ -1646,7 +1651,7 @@ def leads_for_book(root: Path, token: str, name: str, *, scope=None) -> dict[str
     there. Dropping the column at generation is the same guard `bibles.json`
     uses against a licensed edition: a page cannot show what it was never sent.
     """
-    index = _commentary_index(root)
+    index = _commentary_index(root) if discovery is None else discovery
     scope = scope or _catena_scope.Scope(root, works=_sources_cache(root).works)
     prefix = f"{name} "
     leads: dict[str, list[dict[str, str]]] = {}
@@ -1902,7 +1907,7 @@ def refusals_for_book(root: Path, token: str) -> dict[str, list[dict[str, Any]]]
     return refusals
 
 
-def blocked_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, Any]]:
+def blocked_for_book(root: Path, token: str, *, scope=None, edges=None) -> list[dict[str, Any]]:
     """Held fragments a book carries that may not render, with the reason.
 
     The label here comes from the harvest identity rather than from a work
@@ -1911,7 +1916,7 @@ def blocked_for_book(root: Path, token: str, *, scope=None) -> list[dict[str, An
     list is a text — an entry states that a fragment exists and is withheld,
     and states why.
     """
-    data = load_edges(root)
+    data = load_edges(root) if edges is None else edges
     scope = scope or _catena_scope.Scope(root, works=_sources_cache(root).works)
     rows: list[dict[str, Any]] = []
     for entry in data.get("blocked") or ():

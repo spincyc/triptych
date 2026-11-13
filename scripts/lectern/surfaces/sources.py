@@ -122,6 +122,9 @@ class Sources(Surface):
         self._intent: dict = {}
         self._token = 0
         self._edition_token = 0
+        self._find_token = 0
+        self._find_timer = None
+        self._finder_page = 0
 
     # --- building --------------------------------------------------------
 
@@ -291,35 +294,60 @@ class Sources(Surface):
     @on(Input.Changed, "#sources-query")
     def typed(self, event: Input.Changed) -> None:
         self.state["find"] = event.value
-        self.refind()
+        self._find_token += 1
+        if self._find_timer is not None:
+            self._find_timer.stop()
+        self._find_timer = self.set_timer(0.12, self.refind)
 
     @on(Input.Submitted, "#sources-query")
     def submitted(self) -> None:
         self.query_one("#sources-list", OptionList).focus()
 
-    def refind(self) -> None:
+    def refind(self, page: int = 0) -> None:
+        if self._find_timer is not None:
+            self._find_timer.stop()
+            self._find_timer = None
         if self.opening:
-            self.find(dict(self.state))
+            self._find_token += 1
+            self.query_one("#sources-status", Static).update("Loading source results…")
+            self.find(self._find_token, dict(self.state), page)
 
     @work(thread=True, exclusive=True, group="sources-find")
-    def find(self, state: dict) -> None:
+    def find(self, token: int, state: dict, page: int = 0) -> None:
         try:
-            found = bridge.call(ADAPTER, "find", state)
+            found = bridge.call(ADAPTER, "find", state, page)
         except Refused as refusal:
-            self.deliver(self.fail, str(refusal))
+            self.deliver(self.find_failed, token, str(refusal))
             return
-        self.deliver(self.listed, found)
+        self.deliver(self.found_for, token, found)
+
+    def find_failed(self, token: int, message: str) -> None:
+        if token == self._find_token:
+            self.query_one("#sources-status", Static).update("Source results could not be loaded.")
+            self.fail(message)
+
+    def found_for(self, token: int, found: dict) -> None:
+        if token == self._find_token:
+            self.listed(found)
 
     # --- the finder list -------------------------------------------------
 
     def listed(self, found: dict) -> None:
         self.found = found
+        self._finder_page = found.get("page", 0)
+        for at, row in found.get("workRows", []):
+            while len(self.opening["works"]) <= at:
+                self.opening["works"].append(None)
+            self.opening["works"][at] = row
         self.order = [(row[0], row[1]) for row in found["rows"]]
         self.draw_list()
         self.query_one("#sources-status", Static).update(Ink()(found["tally"], "italic").content())
         works = self.query_one("#sources-works", Panel)
         works.retitle(f"works · {self.label_of('sort', found['state']['sort'])}")
-        works.border_subtitle = "▸ text readable here · ○ none"
+        if found.get("pages", 0) > 1:
+            works.border_subtitle = f"page {self._finder_page + 1} of {found['pages']}"
+        else:
+            works.border_subtitle = "▸ text readable here · ○ none"
         if self._intent:
             intent, self._intent = self._intent, {}
             self.follow(**intent)
@@ -335,6 +363,10 @@ class Sources(Surface):
         kept = listing.highlighted_option.id if listing.highlighted_option is not None else None
         listing.clear_options()
         options = []
+        page_size = 40
+        start = self._finder_page * page_size
+        if start:
+            options.append(Option("← Previous works", id="page-previous"))
         for at, shown in self.order:
             one = works[at]
             head = fitted([(one["title"], f"bold {ACCENT}")], width)
@@ -358,6 +390,8 @@ class Sources(Surface):
                     facts.append((" · " + edition["withheld"], "italic $warning"))
                 fitted(facts, width, ink)
                 options.append(Option(ink.content(), id=f"e-{at}-{index}"))
+        if self._finder_page + 1 < self.found.get("pages", 1):
+            options.append(Option("Next works →", id="page-next"))
         if self.found.get("zero"):
             options.append(Option(Ink()(self.found["zero"], "italic $warning").content(), disabled=True))
         listing.add_options(options)
@@ -386,7 +420,9 @@ class Sources(Surface):
     @on(OptionList.OptionSelected, "#sources-list")
     def chosen(self, event: OptionList.OptionSelected) -> None:
         ident = event.option.id or ""
-        if ident.startswith("e-"):
+        if ident in ("page-next", "page-previous"):
+            self.refind(self._finder_page + (1 if ident == "page-next" else -1))
+        elif ident.startswith("e-"):
             at, index = ident[2:].split("-")
             self.open_at(int(at), int(index), 0)
         elif ident.startswith("w-"):

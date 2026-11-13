@@ -365,5 +365,60 @@ class VerifiedProductSourceTests(unittest.TestCase):
         self.assertNotIn(str(self.holds[0].data_root), report["errors"][0])
 
 
+
+
+class SourceDiscoverySchemaTests(unittest.TestCase):
+    def setUp(self):
+        from tools.tests.test_source_discovery import fixture, reader
+        scratch = ROOT / '.scratch/sources-perf'
+        scratch.mkdir(parents=True, exist_ok=True)
+        temporary = tempfile.TemporaryDirectory(dir=scratch)
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.data = self.root / 'data'
+        self.files = {}
+        for name, body in reader.discovery_files(fixture(130)).items():
+            relative = 'structure/sources/' + name
+            path = self.data / relative
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_text(body)
+            self.files[relative] = path
+        self.products = SimpleNamespace(data_root=self.data, files=self.files)
+        self.manifest = json.loads(self.files['structure/sources/index.json'].read_text())
+        self.logical = 'src/web/data/structure/sources/index.json'
+
+    def check(self):
+        schemas._source_projection(self.root, self.logical, self.manifest, self.products)
+
+    def test_all_shards_and_complete_counts_are_validated(self):
+        self.check()
+        self.manifest['counted']['editions'] += 1
+        with self.assertRaisesRegex(ValueError, 'counts disagree'):
+            self.check()
+
+    def test_missing_shard_cannot_become_a_smaller_library(self):
+        self.files.pop('structure/sources/catalogue/0001.json')
+        with self.assertRaisesRegex(ValueError, 'verified browser product snapshot'):
+            self.check()
+
+    def test_shard_path_cannot_escape_the_discovery_directory(self):
+        self.manifest['shards'][0]['path'] = 'structure/sources/../../private.json'
+        with self.assertRaisesRegex(ValueError, 'invalid source discovery shard'):
+            self.check()
+
+    def test_duplicate_edition_identity_and_out_of_range_labels_fail(self):
+        path = self.files['structure/sources/catalogue/0000.json']
+        original = json.loads(path.read_text())
+        for mutation in ('identity', 'label'):
+            with self.subTest(mutation=mutation):
+                changed = json.loads(json.dumps(original))
+                if mutation == 'identity':
+                    changed['rows'][1][6][0][0] = changed['rows'][0][6][0][0]
+                else:
+                    changed['rows'][0][6][0][5] = len(changed['labels'])
+                path.write_text(json.dumps(changed))
+                with self.assertRaises(ValueError):
+                    self.check()
+
 if __name__ == "__main__":
     unittest.main()

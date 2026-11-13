@@ -44,6 +44,87 @@
 
   const ANY = '';
 
+  /** Decode the compact discovery metadata; edition apparatus stays lazy. */
+  function catalogue(input) {
+    if (input.schema !== 'triptych-source-catalogue/v2') return input;
+    const labels = input.labels;
+    function label(at) {
+      if (at === null) return null;
+      if (!Number.isInteger(at) || at < 0 || at >= labels.length) throw new Error('Invalid Sources label');
+      return labels[at];
+    }
+    if (!Array.isArray(labels) || !Array.isArray(input.rows)) throw new Error('Invalid Sources catalogue');
+    const works = input.rows.map(function (row) {
+      if (!Array.isArray(row) || row.length !== 7 || !Array.isArray(row[6])) throw new Error('Invalid Sources work');
+      return { id: row[0], title: row[1], author: label(row[2]), category: label(row[3]),
+        alternate_titles: row[4], directory: row[5], editions: row[6].map(function (ed) {
+          if (!Array.isArray(ed) || ed.length !== 9) throw new Error('Invalid Sources edition');
+          return { id: ed[0], title: ed[1] === 0 ? row[1] : ed[1], language: label(ed[2]),
+            date: label(ed[3]), year: ed[4], file: label(ed[5]), passages: ed[6], readable: ed[7],
+            rights: ed[8].map(label) };
+        }) };
+    });
+    const result = Object.assign({}, input, { works: works });
+    delete result.rows;
+    delete result.labels;
+    return result;
+  }
+
+  /** A complete finder remains available without loading it before the first page.
+   * Calls share in-flight shard requests; a failed shard remains retryable.
+   */
+  function discovery(input, load) {
+    if (input.schema !== 'triptych-source-discovery/v3') {
+      if (input.schema && !['triptych-source-reader/v1', 'triptych-source-catalogue/v2'].includes(input.schema)) {
+        throw new Error('Unknown Sources discovery schema');
+      }
+      const file = catalogue(input);
+      if (!Array.isArray(file.works)) throw new Error('Invalid Sources catalogue');
+      return { file: file, ensure: async function () { return file; },
+        all: async function () { return file; }, total: (file.works || []).length };
+    }
+    if (!Array.isArray(input.shards) || !input.counted ||
+        !Number.isInteger(input.counted.works) || input.counted.works < 0 ||
+        input.shards.some(function (shard, at) {
+          return !shard || shard.path !== 'structure/sources/catalogue/' + String(at).padStart(4, '0') + '.json' ||
+            !Number.isInteger(shard.works) || shard.works < 1 || shard.works > 128;
+        }) || input.shards.reduce(function (sum, shard) { return sum + shard.works; }, 0) !== input.counted.works) {
+      throw new Error('Invalid Sources discovery');
+    }
+    const file = Object.assign({}, input, { works: [] });
+    let loaded = 0;
+    let pending = null;
+    async function ensure(count) {
+      const wanted = Math.min(count, input.counted.works);
+      while (file.works.length < wanted) {
+        if (!pending) {
+          const shard = input.shards[loaded];
+          if (!shard) throw new Error('Sources discovery is incomplete');
+          pending = load(shard.path).then(function (body) {
+            const works = catalogue(body).works;
+            if (!Array.isArray(works) || works.length !== shard.works) throw new Error('Sources shard count differs');
+            file.works.push.apply(file.works, works);
+            loaded += 1;
+          }).finally(function () { pending = null; });
+        }
+        await pending;
+      }
+      return file;
+    }
+    return { file: file, ensure: ensure, all: function () { return ensure(input.counted.works); },
+      total: input.counted.works };
+  }
+
+  function unfiltered(state) {
+    return !(state.author || state.category || state.language || state.period || state.rights ||
+      state.readable || state.find || (state.sort && state.sort !== 'author'));
+  }
+
+  // Records are immutable discovery data. Normalise each searched identity once,
+  // and let the old catalogue be collected when a new one replaces it.
+  const searchText = new WeakMap();
+  const emptyEdition = {};
+
   /** Every control at rest. One object, so a caller cannot forget a key. */
   function blank() {
     return {
@@ -74,7 +155,10 @@
    * corpus does not have it. So every alias the record carries is searchable.
    */
   function haystack(work, edition) {
-    return [
+    let held = searchText.get(work);
+    if (!held) { held = new WeakMap(); searchText.set(work, held); }
+    if (held.has(edition)) return held.get(edition);
+    const result = [
       work.title || '',
       work.author || '',
       work.category || '',
@@ -85,6 +169,8 @@
       edition.date || '',
       edition.language || ''
     ].join(' ').toLowerCase();
+    held.set(edition, result);
+    return result;
   }
 
   /** Does this edition survive the choices? */
@@ -128,7 +214,7 @@
         continue;
       }
       if (!(work.editions || []).length && !asksAboutEditions(state) &&
-          (!state.find || haystack(work, {}).indexOf(state.find) !== -1)) {
+          (!state.find || haystack(work, emptyEdition).indexOf(state.find) !== -1)) {
         kept.push({ work: work, editions: [] });
       }
     }
@@ -247,6 +333,9 @@
 
   return {
     ANY: ANY,
+    catalogue: catalogue,
+    discovery: discovery,
+    unfiltered: unfiltered,
     blank: blank,
     periodOf: periodOf,
     haystack: haystack,

@@ -7,6 +7,35 @@ handoff, and before reporting completion. “Published,” “built,” “commi
 
 Last reconciled: 2026-11-13.
 
+## Indexed corpus access and reader performance
+
+<!-- promised-deliverable: indexed-corpus-performance-2026-11-12 -->
+
+**In progress.** The maintainer authorized a shared, Git-tracked thin index over
+the existing canonical corpus, with no duplicated corpus prose, to improve
+fresh-checkout preparation, Lectern, the GitHub Pages readers and repeated
+build work. The index is lookup metadata, not a second authoring source or a
+published cache archive. Ordinary reading will verify the selected canonical
+records; complete independent source and publication checks remain available.
+This deliberately replaces whole-corpus verification on every reader launch.
+
+The measured baseline is approximately 42 seconds to the initial Day reading,
+with more than 98 percent spent in product preparation and snapshot verification.
+The observed cache-assisted preparation took 15 minutes 38 seconds and rebuilt
+five of thirteen product families; it is not a fully cold baseline. The Sources
+and History discovery catalogs each transfer about 11 MB before filtering.
+These measurements establish the problem, not performance guarantees.
+
+Implementation lanes cover the source locator/dependency index, selected-record
+projection through existing domain owners, shared web/terminal lazy loaders,
+bounded Sources discovery, and operation-scoped publication preparation.
+Acceptance requires measured cold and warm readers, content/rights parity and
+stale-input refusal tests, index size and update-churn checks, partial-clone
+compatibility, and integrated source/build checks. No deployment or history
+rewrite is authorized by this implementation request. On 13 November the
+maintainer explicitly requested recovery, completion and pushing the work;
+publication is limited to the assigned `feature/tui-perf` branch.
+
 ## Claude 1962 resumed Sixth Sunday after the Epiphany, 2026-11-15
 
 <!-- promised-deliverable: claude-1962-67-resumed-sixth-three-documents-2026-11-15 -->

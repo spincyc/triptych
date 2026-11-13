@@ -273,7 +273,7 @@ class TriptychApp(App[None]):
                 yield Static("Preparing your reading…", id="loading-status", markup=False)
                 yield LoadingIndicator()
                 with VerticalScroll(id="loading-detail-scroll", can_focus=False):
-                    yield Static("The first load may take several minutes.", id="loading-detail", markup=False)
+                    yield Static("Loading the selected reading from the corpus.", id="loading-detail", markup=False)
                 yield Static("q / ctrl+c  cancel", id="loading-hint")
 
     def on_mount(self) -> None:
@@ -287,7 +287,7 @@ class TriptychApp(App[None]):
     @work
     async def _load_initial(self) -> None:
         if self.prepare is not None:
-            self.query_one("#loading-status", Static).update("Preparing verified reading data…")
+            self.query_one("#loading-status", Static).update("Checking the corpus index…")
             try:
                 await self.prepare()
             except (Refused, OSError) as error:

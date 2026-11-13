@@ -4,18 +4,18 @@
 A reader for the same structure the browser pages read, laid out as a
 dashboard: eight surfaces, one per page of the site, each reached by its digit.
 
-This tool derives nothing. Every view is read from verified browser products
+This tool derives nothing. Every view is read from verified indexed sources
 or asked of the browser's own models and renderers, run under node in one process set
 up as a page's realm (`scripts/lectern/bridge.js`), so what a reader sees here
 and what the site renders cannot disagree about anything but layout.
-Before opening, the browser-product owner prepares missing cache entries offline
-and verifies existing entries against the committed descriptor.
+Before opening, the reader checks the committed corpus index. Existing producers
+derive requested records on demand; no complete browser-product build is needed.
 
 TWO VERBS.
 
 `open` is the interactive reader. It needs a terminal, Node, and the Python
-dependencies in `requirements-tui.txt`. First-run product preparation also
-needs Git with full clone history and the exact Pandoc converter pinned in
+dependencies in `requirements-tui.txt`. Opening a publication additionally needs
+usable Git history and the exact Pandoc converter pinned in
 `src/common/web-edition-toolchain.toml`. See `--help` for setup commands.
 
 `snapshot` renders the same reader headlessly at a fixed size, once every
@@ -48,20 +48,23 @@ THEMES = ("triptych", "triptych-vellum", "triptych-compline")
 DEPENDENCY = ("prepare .scratch/lectern-venv with the pinned requirements-tui.txt dependencies; "
               "./tools/lectern --help includes first-run setup")
 SETUP = """First-run setup (from the repository root):
-  Use Python 3.11+, Node and Git, with full clone history.
+  Use Python 3.11+, Node and Git. A normal partial clone is supported.
   On Arch, Node and Git are supplied by: sudo pacman -S nodejs git
   python3 -m venv .scratch/lectern-venv
   .scratch/lectern-venv/bin/python -m pip install -r requirements-tui.txt
-  python3 scripts/_install_web_edition_pandoc.py --fetch --bin-dir .scratch/web-edition-toolchain
   ./tools/lectern
 
+To read publication editions, also install the pinned converter once:
+  python3 scripts/_install_web_edition_pandoc.py --fetch --bin-dir .scratch/web-edition-toolchain
 The installer fetches the exact locked Pandoc for Linux x86-64; run it once
 into an empty destination if your installed Pandoc differs from the lock.
 Lectern automatically uses .scratch/lectern-venv and the local converter when
-present, without activation or PATH exports. Its default cache is the repository's
-.scratch/browser-data; an explicit TRIPTYCH_BROWSER_DATA_ROOT takes precedence.
+present, without activation or PATH exports. Disposable selected-record projections
+are kept in .scratch/reader-data; the canonical corpus and tracked index are inputs.
 An absent local environment uses the current Python. A broken local environment
-is refused. Lectern prepares missing products offline; it never installs tools.
+is refused. Reading stays offline and never installs tools. After source edits,
+run tools/corpus-index refresh --readers to update the lookup metadata.
+Publication revision stamps require unshallow history; partial clones retain it.
 """
 
 EXAMPLES = {
@@ -199,34 +202,15 @@ def _prepare_runtime() -> None:
 
 
 def _prepare_products(*, announce: bool = True) -> None:
-    """Prepare exact misses before reading or the snapshot's settling clock."""
-    from _browser_products import ProductError, build, check
+    """Check the committed lookup index; selected records load when requested."""
+    from _corpus_index import CorpusIndex, CorpusIndexError
 
     if announce:
-        print("lectern: preparing verified browser data (a first build may take several minutes)", file=sys.stderr)
+        print("lectern: checking the corpus index", file=sys.stderr)
     try:
-        try:
-            check(ROOT)
-        except ProductError as cache_error:
-            from _markdown_render import MarkdownRenderError, require_locked_markdown_dependency
-
-            try:
-                require_locked_markdown_dependency(ROOT)
-            except MarkdownRenderError as error:
-                raise ReaderRefused(
-                    f"published browser data could not be prepared: {cache_error}. "
-                    f"Preparation also requires the pinned renderer: {error}. "
-                    "Prepare the isolated environment with `python3 -m venv .scratch/lectern-venv` "
-                    "and `.scratch/lectern-venv/bin/python -m pip install -r requirements-tui.txt`; "
-                    "then run `./tools/lectern` without activation. "
-                    "`./tools/lectern --help` has setup commands."
-                ) from error
-            # Warm readers can coexist under the store's shared lock. Only a
-            # failed check needs the exclusive builder; it independently refuses
-            # stale/corrupt entries and generates only genuinely absent families.
-            build(ROOT)
-    except (ProductError, OSError) as error:
-        raise ReaderRefused(f"published browser data could not be prepared: {error}") from error
+        CorpusIndex(ROOT)
+    except (CorpusIndexError, OSError) as error:
+        raise ReaderRefused(f"indexed reading data is unavailable: {error}") from error
 
 
 def open_reader(arguments: argparse.Namespace) -> int:

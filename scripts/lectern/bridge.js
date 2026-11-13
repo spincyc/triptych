@@ -19,10 +19,15 @@ const readline = require('readline');
 const vm = require('vm');
 
 const ROOT = path.resolve(__dirname, '..', '..');
-// The Python owner holds this private, verified snapshot until this child exits.
-// A direct node invocation must not silently read an unverified working tree.
+// The Python owner supplies immutable, index-verified records on demand.
+// The explicit snapshot mode remains useful to independent product audits.
 if (!process.argv[2]) throw new Error('a verified browser-product snapshot is required');
-const DATA = path.resolve(process.argv[2]);
+const INDEXED = process.argv[2] === '--indexed';
+const DATA = INDEXED ? null : path.resolve(process.argv[2]);
+const DATA_FD = INDEXED ? Number(process.argv[3]) : null;
+if (INDEXED && (!Number.isSafeInteger(DATA_FD) || DATA_FD < 3)) {
+  throw new Error('an owned indexed-reader response pipe is required');
+}
 const BIBLES = path.join(ROOT, 'src', 'sources', 'bibles');
 const BROWSER = path.join(ROOT, 'src', 'web', 'browser');
 
@@ -32,6 +37,24 @@ function inside(base, file) {
 }
 
 let offered = null;
+let responseBuffer = Buffer.alloc(0);
+function indexedText(relative) {
+  process.stdout.write(JSON.stringify({reader_data: true, path: relative}) + '\n');
+  for (;;) {
+    const newline = responseBuffer.indexOf(10);
+    if (newline !== -1) {
+      const line = responseBuffer.subarray(0, newline).toString('utf8');
+      responseBuffer = responseBuffer.subarray(newline + 1);
+      const response = JSON.parse(line);
+      if (!response.ok) throw new Error(response.error || 'indexed data was refused');
+      return response.text;
+    }
+    const chunk = Buffer.allocUnsafe(65536);
+    const count = fs.readSync(DATA_FD, chunk, 0, chunk.length, null);
+    if (!count) throw new Error('the indexed-reader owner closed its response pipe');
+    responseBuffer = Buffer.concat([responseBuffer, chunk.subarray(0, count)]);
+  }
+}
 /* Only an edition the published manifest offers is served, as the deploy
  * copies only those (guidance/web-data.md, "Assembling the site"). */
 function offeredEditions() {
@@ -58,13 +81,20 @@ function onDisk(relative) {
 
 function siteFetch(url, options) {
   const relative = String(url).replace(/^\.\.\/browse\//, '').split('#')[0].split('?')[0];
-  const file = onDisk(relative);
   const reply = (status, text) => ({
     status: status,
     ok: status >= 200 && status < 300,
     text: () => Promise.resolve(text),
     json: () => Promise.resolve(JSON.parse(text)),
   });
+  if (INDEXED) {
+    try {
+      const text = indexedText(relative);
+      return Promise.resolve(reply(text === null ? 404 : 200,
+        options && options.method === 'HEAD' ? '' : text || ''));
+    } catch (error) { return Promise.reject(error); }
+  }
+  const file = onDisk(relative);
   if (!file) return Promise.resolve(reply(404, ''));
   try {
     const head = options && options.method === 'HEAD';
@@ -98,6 +128,10 @@ function script(relative) {
 }
 
 function read(relative) {
+  if (INDEXED) {
+    const text = indexedText(relative);
+    return text === null ? undefined : JSON.parse(text);
+  }
   const file = onDisk(relative);
   if (!file || !fs.existsSync(file)) return undefined;
   return JSON.parse(fs.readFileSync(file, 'utf8'));

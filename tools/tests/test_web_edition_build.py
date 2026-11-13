@@ -10,6 +10,8 @@ from __future__ import annotations
 import functools
 import importlib.machinery
 import importlib.util
+from contextlib import nullcontext
+import io
 import json
 import os
 import signal
@@ -254,6 +256,66 @@ class ParentStateTests(unittest.TestCase):
         self.assertTrue(state["index"])
         self.assertEqual(state["records"], 1)
         self.assertTrue(state["repository"])
+
+
+class WorkerSelectionTests(unittest.TestCase):
+    """Workers recheck one selection, retaining the fresh converter process."""
+
+    def setUp(self):
+        self.row = {"id": "publication:gpt/articles/faith/example", "provider": "gpt",
+                    "document": "articles/faith/example", "release_status": "alpha",
+                    "declaration": {"eligibility": "eligible"}}
+        self.identity = "gpt/articles/faith/example"
+
+    def run_worker(self, row, current=None):
+        with (mock.patch.object(DRIVER.sys, "stdin", io.StringIO(json.dumps(row))),
+              mock.patch.object(DRIVER.sys, "stdout", io.StringIO()) as output,
+              mock.patch.object(DRIVER.sys, "stderr", io.StringIO()) as errors,
+              mock.patch("_print_document.publication_recipe", return_value={}) as recipe,
+              mock.patch.object(DRIVER, "publication_output", return_value=current or self.row),
+              mock.patch.object(DRIVER, "reader_outputs", side_effect=AssertionError("whole corpus")),
+              mock.patch.object(DRIVER, "product_record", return_value={"id": self.identity}) as convert):
+            status = DRIVER.product_row_json(self.identity)
+        return status, output.getvalue(), errors.getvalue(), recipe, convert
+
+    def test_worker_rechecks_the_selected_output_without_corpus_discovery(self):
+        status, output, errors, recipe, convert = self.run_worker(self.row)
+        self.assertEqual(status, 0, errors)
+        self.assertEqual(json.loads(output), {"id": self.identity})
+        recipe.assert_called_once_with("gpt", "articles/faith/example", root=ROOT)
+        convert.assert_called_once_with(self.row)
+
+    def test_worker_refuses_stale_or_unadmitted_selections_before_conversion(self):
+        for changes in ({"release_status": "hold"}, {"release_status": None},
+                        {"declaration": {"eligibility": "ineligible"}},
+                        {"declaration": {"eligibility": "eligible", "withdrawn": "2026-11-12"}},
+                        {"entrypoint": "src/gpt/articles/faith/other/main.tex"}):
+            with self.subTest(changes=changes):
+                status, output, errors, _, convert = self.run_worker(self.row, {**self.row, **changes})
+                self.assertEqual(status, 1)
+                self.assertEqual(output, "")
+                self.assertTrue(errors)
+                convert.assert_not_called()
+        status, _, _, recipe, convert = self.run_worker(None)
+        self.assertEqual(status, 1)
+        recipe.assert_not_called()
+        convert.assert_not_called()
+
+    def test_indexed_worker_captures_canonical_reads_and_checks_converter_pin(self):
+        dependencies = {"src/gpt/articles/faith/example/main.tex": "source-hash"}
+        index = mock.Mock()
+        index.verified_reads.return_value = nullcontext(dependencies)
+        with (mock.patch("_corpus_index.CorpusIndex", return_value=index) as factory,
+              mock.patch.object(DRIVER.sys, "stdin", io.StringIO(json.dumps(self.row))),
+              mock.patch.object(DRIVER.sys, "stdout", io.StringIO()) as output,
+              mock.patch.object(DRIVER, "pinned_pandoc") as pinned,
+              mock.patch.object(DRIVER, "selected_product_record", return_value={"id": self.identity}) as selected):
+            self.assertEqual(DRIVER.product_row_json(self.identity, indexed=True), 0)
+        factory.assert_called_once_with(ROOT)
+        pinned.assert_called_once()
+        selected.assert_called_once_with(self.identity, self.row)
+        self.assertEqual(json.loads(output.getvalue()),
+                         {"record": {"id": self.identity}, "dependencies": dependencies})
 
 
 if __name__ == "__main__":

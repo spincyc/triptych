@@ -17,6 +17,8 @@ globalThis.LiturgyReaderProperPayload=Payload;
 const Day=require(modules+'/day-read-payload.js');
 const Props=require(modules+'/propers-read-payload.js');
 const full=json('structure/propers/roman-1962.json'),index=json('structure/propers/index.json');
+// Keep this older-data compatibility suite independent of the new transport.
+index.missals.forEach(row=>{delete row.reader_index;delete row.reader_file;});
 const ordinary=json('structure/ordinary/roman-1962.json'),ordinaryIndex=json('structure/ordinary/index.json');
 const rubrics=json('structure/rubrics/roman-1962.json'),rubricsIndex=json('structure/rubrics/index.json'),year=json('structure/calendar/roman-1962/2026.json'),bibles=json('bibles.json');
 const catalog=json('structure/propers/catalog/roman-1962.json');

@@ -64,11 +64,19 @@ _EXECUTION_AUTHORITIES = [
 ]
 
 
+# Reader lookup metadata derived from the publication inputs. Full publication
+# derivations are independent of it, and keying its bytes would bind release
+# receipts back into themselves through broad source scopes, so every family
+# whose trees hold it keys it by name alone.
+_READER_INDEX = "src/index"
+
+
 def _recipe(identifier, prefix, argv, trees, files=(), *, excludes=(), delivery):
+    holds_index = any(_READER_INDEX.startswith(tree + "/") for tree in trees)
     return {
         "id": identifier, "version": 1, "output_prefixes": [prefix],
         "argv": argv, "input_trees": list(trees), "input_files": list(files),
-        "exclude_paths": list(excludes), "delivery": delivery,
+        "exclude_paths": [*excludes, *([_READER_INDEX] if holds_index else [])], "delivery": delivery,
     }
 
 

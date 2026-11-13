@@ -70,7 +70,7 @@ class LoadingTests(unittest.IsolatedAsyncioTestCase):
                 app = self.App(prepare=prepared.wait)
                 async with app.run_test(size=size) as pilot:
                     await pilot.pause()
-                    self.assertIn("Preparing verified reading data", _text(app, styles=False))
+                    self.assertIn("Checking the corpus index", _text(app, styles=False))
                     self.assertNotIn("Unfinished reading", _text(app, styles=False))
                     self.assertIsNone(app.current())
                     await pilot.press("1", "2", "question_mark", "ctrl+p", "T", "tab")

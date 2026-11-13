@@ -10,7 +10,7 @@
   let OrdinaryRenderer = window.TriptychOrdinaryRenderer;
   const DayCompare = window.TriptychDayCompare;
   const DayStudy = window.TriptychDayStudy;
-  const DayReadPayload = window.TriptychDayReadPayload;
+  let DayReadPayload = window.TriptychDayReadPayload;
 
   if (!T || !Model || !Contract || !Adapters || !Shell) {
     throw new Error('Day reader requires production browser, assembly, state, adapter, and shell modules');
@@ -483,6 +483,14 @@
 
   async function assemble(parsed, manifests, preliminary) {
     const missal = preliminary.missal;
+    // Retained shells predate the payload includes. They use the same loader
+    // when served a thin index, without changing their protected HTML.
+    if (!DayReadPayload && manifests.propersIndex.missals.some(function (row) { return row.reader_index; })) {
+      await import('./reader-proper-payload.js');
+      await import('./day-read-payload.js');
+      DayReadPayload = window.TriptychDayReadPayload;
+      if (!DayReadPayload) throw new Error('The Proper payload loader did not initialize');
+    }
     const year = preliminary.date.slice(0, 4);
     const requestedMode = requestedModeOf(parsed);
     // Explicit dormant Ordinary state still gets source validation.
@@ -498,7 +506,8 @@
     ];
     if (needsOrdinary) paths.push('structure/ordinary/' + missal + '.json');
     const peer = requestedMode === 'compare' ? parsed.recognized['peer-missal'] : null;
-    if (peer) paths.push('structure/propers/' + peer + '.json');
+    if (peer) paths.push('structure/rubrics/' + peer + '.json',
+      'structure/calendar/' + peer + '/' + year + '.json');
     window.LiturgyReaderProperPayload?.warmDay({
       load, index: manifests.propersIndex, missal, parsed,
       mode: requestedMode, needsOrdinary
@@ -511,13 +520,25 @@
       derivations.set(derivationKey, derived);
       window.dayReaderDebug.derivations += 1;
     }
-    const structure = DayReadPayload ? await DayReadPayload.loadStructure({
+    const primaryStructure = DayReadPayload ? DayReadPayload.loadStructure({
       load: load, index: manifests.propersIndex, missal: missal,
       parsed: parsed, derived: derived, mode: requestedMode, needsOrdinary: needsOrdinary
-    }) : await load('structure/propers/' + missal + '.json');
+    }) : load('structure/propers/' + missal + '.json');
+    let peerStructure = null;
+    if (peer) {
+      const offset = needsOrdinary ? 3 : 2;
+      const peerDerived = Model.derive({ date: preliminary.date,
+        rubrics: rows[offset], year: rows[offset + 1] });
+      peerStructure = DayReadPayload ? DayReadPayload.loadStructure({
+        load: load, index: manifests.propersIndex, missal: peer,
+        parsed: parsed, derived: peerDerived, mode: requestedMode, needsOrdinary: false
+      }) : load('structure/propers/' + peer + '.json');
+    }
+    const selectedStructures = await Promise.all([primaryStructure, peerStructure]);
+    const structure = selectedStructures[0];
     const structures = {};
     structures[missal] = structure;
-    if (peer) structures[peer] = rows[needsOrdinary ? 3 : 2];
+    if (peer) structures[peer] = selectedStructures[1];
     const ordinaries = {};
     if (needsOrdinary && rows[2]) ordinaries[missal] = rows[2];
     const context = Adapters.validationContext({

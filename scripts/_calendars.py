@@ -22,6 +22,9 @@ refuses.
 """
 from __future__ import annotations
 
+from contextlib import contextmanager
+from contextvars import ContextVar
+import copy
 import hashlib
 import json
 import os
@@ -860,6 +863,21 @@ _YAML_CACHE_FLOOR = 256 * 1024
 # another tool is about to ask for and the cache thrashes instead of hitting.
 # Generous on purpose: an entry is a parsed copy of a file that already exists.
 _YAML_CACHE_KEEP = 128
+_VERIFIED_PARSE_CACHE = ContextVar("calendar_verified_parse_cache", default=None)
+
+
+@contextmanager
+def verified_parse_cache(cache):
+    """Reuse parsing of exact bytes within an indexed reader's lifetime.
+
+    The caller owns verification of every canonical read. No timestamp or old
+    parsed value may avoid that read, and callers receive independent objects.
+    """
+    token = _VERIFIED_PARSE_CACHE.set(cache)
+    try:
+        yield
+    finally:
+        _VERIFIED_PARSE_CACHE.reset(token)
 
 
 def _cache_entry(path: Path, kind: str = "yaml") -> Path | None:
@@ -961,6 +979,16 @@ def read_toml(path: Path):
 
 def _cached_parse(path: Path, kind: str, parse):
     """Parse *path* with *parse*, through the JSON cache described above."""
+    verified = _VERIFIED_PARSE_CACHE.get()
+    if verified is not None:
+        body = path.read_bytes()
+        key = (kind, hashlib.sha256(body).digest())
+        if key not in verified:
+            parsed = parse(body.decode("utf-8"))
+            if len(verified) >= _YAML_CACHE_KEEP:
+                verified.pop(next(iter(verified)))
+            verified[key] = parsed
+        return copy.deepcopy(verified[key])
     entry = _cache_entry(path, kind)
     if entry is not None:
         try:

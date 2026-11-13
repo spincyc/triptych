@@ -6,9 +6,85 @@ names, and puts them together in the browser. Canonical TSV, TOML, YAML and TeX
 remain tracked sources; the generated browser products formerly under
 `src/web/data/` are reproducible outputs outside Git.
 
+The thin metadata under `src/index/` is a deliberate exception to that output
+storage rule. It supplies discovery and addresses without copying reading
+text. Ordinary terminal reading uses it as described below; the complete site
+retains its sealed browser-product contract.
+
 Print pages and native TeX source bundles are a separate bounded projection of
 admitted outputs, described [below](#native-print-pages-and-source-bundles).
 They do not precompute a PDF or replace canonical sources.
+
+## Tracked discovery and ordinary indexed reading
+
+On 2026-11-12 the maintainer authorized one shared, Git-tracked thin index for
+fast discovery and selected reading. `src/index/` may contain stable IDs,
+canonical paths, hashes, sizes, dependency addresses and the minimal metadata
+needed to browse: titles, authors, dates, counts, offered choices and their
+qualifications. The document catalogue retains derived revision dates under
+the [editorial timestamp rule](editorial.md#revision-timestamp). Corpus prose,
+passage bodies, complete converted editions and complete browser payloads do
+not enter this index. TSV, TOML, YAML, TeX and source-owned fragments remain
+authoritative; an index is regenerated from their existing owners.
+
+`scripts/_corpus_index.py` owns the address and integrity layer under
+`src/index/corpus/`. Its small root names bounded hash-checked shards. Path
+rows bind exact bytes and Git file identity; source-record rows map an ID to
+its kind, canonical path and declared dependencies. Surface discovery records
+live beside that layer and use the existing producers' publication filters.
+An index entry grants no new rights, evidence state, editorial approval or
+release authorization. The source library's reserved evidence-state word
+`indexed` remains forbidden; “indexed reading” names this access method only.
+
+Ordinary Lectern `open` and `snapshot` use this contract:
+
+1. Check index membership against the current Git index and dirty working-tree
+   paths. Clean startup does not read historical blobs, parse every source
+   manifest or SHA-256 the corpus. Git metadata is a discovery check, not proof
+   of the bytes that will be read.
+2. Load only the discovery shards and selected dependencies the view needs.
+   Read actual canonical bytes and verify their SHA-256 and size before the
+   owning producer or browser model consumes them. Missing, unindexed,
+   changed, malformed or unsafe inputs fail visibly; equal-size edits and
+   restored mtimes do not bypass content verification.
+3. Keep session membership fixed and consumed byte values immutable. A session
+   is not a copied snapshot of the whole corpus: a later read of changed bytes
+   fails against that session's index. Refresh the index and reopen after
+   changing source membership or content.
+4. Reuse disposable selected projections only when their current code,
+   history and exact dependency identities match. `.scratch/reader-data`
+   stores these projections; clearing it costs recomputation of the requested
+   records, not a full family build. A projection cache never repairs an
+   authoritative source or updates a tracked expectation.
+
+`scripts/_reader_products.py` and the `_reader_*_products.py` modules route
+logical browser paths to the smallest supported unit of their existing owner:
+a selected Mass, year, commentary passage, source edition, history record or
+publication edition. The browser models still own interpretation and rendering.
+Missing data never becomes an empty library, a silently omitted work or a
+reason to start an unrelated corpus rebuild. First opening a publication may
+run its converter; first opening a large selected source may still read that
+source's natural unit.
+
+This explicitly supersedes the former whole-corpus warm check before ordinary
+Lectern reading. It does not relax complete source audits, index rederivation,
+rights checks, browser-product recording or site publication. Full index
+checks independently rederive the metadata and hash canonical inputs; explicit
+CI and publication checks retain their full scopes. Startup acceptance is not
+a report that the entire corpus passed those audits.
+
+Index maintenance is explicit. Review regenerated metadata together with its
+canonical change; never hand-edit a derived row or silently refresh it during
+reading. `tools/corpus-index refresh --readers` updates changed surface
+discovery through its owning producers, then updates addresses and hashes.
+`tools/corpus-index check --readers` independently replays every discovery
+projection and checks the complete address layer. `src/index/readers.json`
+binds each surface's input and output aggregates without copying another
+per-file inventory. A low-level refresh without `--readers` refuses stale
+surface proofs; it cannot bless an old discovery projection after its inputs
+change. Publication revision metadata additionally requires committed source
+and producer inputs and usable complete history. Setup and measurement commands are in
+[Reader setup and performance](../docs/reader-performance.md).
 
 ## Generated products and canonical inputs
 
@@ -27,8 +103,8 @@ producers must never write into a sealed cache entry. The descriptor-relative
 paths such as `structure/propers/roman-1962.json` remain the logical publication
 paths regardless of where the cache lives.
 
-Warm checks hash current canonical inputs and every expected output, including
-exact family and aggregate membership. An exact cache miss may rebuild offline
+Warm checks of sealed publication products hash current canonical inputs and
+every expected output, including exact family and aggregate membership. An exact cache miss may rebuild offline
 from canonical sources and compare with the committed expected bytes. Missing
 data must trigger that rebuild or an explicit failure, never a smaller library,
 empty catalog, or fewer print editions. A stale descriptor or corrupt entry
@@ -54,7 +130,7 @@ the independent artifact check, so an interrupted deployment can reuse that
 work. Artifact verification still precedes publication.
 
 The complete browser descriptor is the one freshness proof for every generated
-family, the source-reader and act-history projections included. Its input
+publication family, the source-reader and act-history projections included. Its input
 closure is the audited set each producer reads ([below](#what-a-family-key-covers)),
 and its cold path runs the strict producers (`source-reader structure --strict`,
 the act-history cold replay) in two fresh passes. Exact SHA-256, size and
@@ -149,6 +225,13 @@ library's symlink preflight, its `**/research/source-bindings.toml` discovery
 (which would load a bindings file placed in an archive) and its cache
 fingerprint all descend through them. Excluding them first needs those walks
 to stop at `evaluations/`, a change to the library rather than to a recipe.
+
+Every family whose trees contain the thin reader index (`documents` and
+`web-editions`, which declare all of `src`) excludes `src/index`. Full
+publication derivations never read it, and keying its bytes would bind the
+release record, which the index hashes, back into the descriptor that record
+binds. `_browser_product_recipes.py` applies the exclusion to any recipe whose
+trees hold the index.
 
 The descriptor's aggregate identity commits to the sorted family input
 commitments and to nothing else, so a change outside every family's key stales
@@ -326,8 +409,25 @@ The accompanying `source_record` projects the parent's `edition_id`, ultimate
 existing controller, not a newly verified source or a downloadable scan.
 The source library remains the owner of their identities and evidence states.
 
-**The next candidate is the propers structure**, roughly 1 MB per missal, which
-`day.js` already fetches last because it is the big one.
+### Sources discovery
+
+`source-reader structure` publishes a small
+`triptych-source-discovery/v3` root at `structure/sources/index.json` and
+bounded work-metadata shards under `structure/sources/catalogue/`. Each shard
+contains at most 128 works in the finder's default author order. The root
+retains the complete counts, facets and shard addresses; a shard retains
+identity, title, author, language, date, rights disposition, passage counts and
+the route to each edition. Repeated labels are interned by the shared
+`triptych-source-catalogue/v2` format. No passage body enters either layer.
+
+Initial browsing loads enough shards for its first page. Further pages load
+more; a search, filter or changed sort loads the complete discovery metadata
+before claiming complete results. Edition bibliography and apparatus remain
+in the edition payload, and passage text is fetched only when opened. Browser
+and terminal use the same `sources/reader-model.js` finder. Explicit full
+validators expand all shards and verify complete membership. The tracked
+`src/index/sources/` projection uses the same discovery shape for indexed
+terminal reading; it does not replace the publication product's descriptor.
 
 ## The paragraph layer
 
@@ -706,6 +806,17 @@ facts already admitted in the served structure. `public-alpha` enforces its
 exact text-free schema before copying it. Civil-date and saint-identity search
 need separate source-owned joins; names are searchable as titles but do not
 establish a saint identity.
+
+Selected reading has a separate contract. A
+`triptych-propers-read-catalog/v1` supplies navigation metadata and a
+`triptych-propers-read-mass/v1` supplies one complete public Mass. Their
+calendar, Mass key and generation identity must agree before rendering; forms,
+choices, qualifications and rights-filtered wording remain owned by the
+ordinary producer. The static product currently advertises this path for the
+1962 Missal. Indexed terminal reading uses the same logical paths to derive a
+selected Mass for each offered calendar, with a prose-free discovery skeleton
+under `src/index/propers/`. Neither path pre-renders combinations of a Mass,
+language, witness and reader mode.
 
 ## The calendar layer
 

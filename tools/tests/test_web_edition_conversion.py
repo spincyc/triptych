@@ -1316,7 +1316,7 @@ class WebEditionConversionTests(unittest.TestCase):
             return self.convert(body, **options)
         # The graph gate has its own tests; here it accepts the synthetic leaf.
         with mock.patch("_proper_components.include_graph",
-                        side_effect=lambda main, leaf, root: {
+                        side_effect=lambda main, leaf, root, **kwargs: {
                             path.resolve() for path in leaf.rglob("*.tex")}):
             return self.convert(body, format_contract="propers-format-v1", **options)
 

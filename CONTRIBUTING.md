@@ -22,15 +22,24 @@ Name the document and page or section if you can, but a high-level concern is en
 Git keeps the project’s files and history. An AI coding agent can edit, check, and rebuild them.
 
 1. Clone the repository using the address shown by its hosting site. If you already have a copy, update it and begin from a clean `main`.
-   A shallow clone (`git clone --depth 1 --single-branch <repository-url>`)
-   avoids downloading old binary history when that history is not needed.
-   Current-tree PDF removal does not shrink a full-history clone. If a workspace
-   assigns a branch, keep that branch and follow its local instructions.
+   `git clone --filter=blob:none <repository-url>` keeps the commit graph while
+   deferring historical file contents until Git needs them. A normal checkout
+   still downloads the current source tree. Do not use `--depth`: edition
+   revision dates need complete history and refuse a shallow clone.
+   Current-tree PDF removal does not shrink retained history or an existing
+   clone. If a workspace assigns a branch, keep that branch and follow its
+   local instructions.
 2. From the repository’s top-level folder, start Codex directly. The current checkout is the ordinary workspace; do not create, move, delete, or administer worktrees yourself.
-   Browser data is generated outside Git from the canonical sources. In a
-   workspace set `TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data`; the build
+   Ordinary terminal reading uses the tracked thin index and loads selected
+   canonical records on demand; it does not first build the complete site.
+   [Reader setup and performance](docs/reader-performance.md) explains setup,
+   index maintenance and the separate full checks.
+   Browser reading payloads are generated outside Git from the canonical
+   sources. In a workspace set
+   `TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data`; the build
    verifies exact cached outputs or rebuilds an absent cache offline. Do not
-   commit generated browser JSON or edit a sealed cache. See
+   commit generated reading payloads or edit a sealed cache. The tracked thin
+   index is maintained separately. See
    [Web data](guidance/web-data.md) for isolated producer work and explicit
    descriptor refreshes after an intentional source change.
 3. Give the agent an ordinary request, including any sources, concerns, emphases, or limits that matter.
@@ -115,6 +124,7 @@ Submit only material you created or have authority to provide. Identify quotatio
 - [Repository and publication contract](guidance/repository.md)
 - [Publication schemas](guidance/document-schemas.md)
 - [Printing one edition](docs/printing.md)
+- [Reader setup and performance](docs/reader-performance.md)
 - [Reusable source library contract](guidance/sources.md)
 - [Reusable source library](src/sources/README.md)
 - [About](ABOUT.md)

@@ -13,6 +13,8 @@ as the witness never implies permission to reproduce it.
 """
 from __future__ import annotations
 
+from contextlib import contextmanager
+from contextvars import ContextVar
 from dataclasses import dataclass
 from datetime import date
 from hashlib import sha256
@@ -34,6 +36,21 @@ SCHEMA = "triptych-proper-latin-provenance/v1"
 SIDECAR_SUFFIX = "-proper-latin-provenance-v1.toml"
 POLICY = "guidance/liturgical-text-publication-policy.md"
 TRUSTED_REPOSITORY = Path(__file__).resolve().parents[1]
+_READING_RECORDS = ContextVar("proper_latin_reading_records", default=None)
+
+
+@contextmanager
+def reading_records(records):
+    """Use the reader's verified, lazy records for this bounded operation.
+
+    Publication decisions still validate their exact witnesses and controllers.
+    The ordinary corpus validator retains its complete graph-loading path.
+    """
+    token = _READING_RECORDS.set(records)
+    try:
+        yield
+    finally:
+        _READING_RECORDS.reset(token)
 
 PROVENANCE_STATES = frozenset({"unresolved", "identified", "collated"})
 PUBLICATION_STATES = frozenset({"unresolved", "withheld", "permitted"})
@@ -778,6 +795,9 @@ def _source_library_records(
     small metadata projection needed to decide whether a per-text witness is
     exact and whether its backing artifact has the claimed rights state.
     """
+    reading = _READING_RECORDS.get()
+    if reading is not None:
+        return reading, []
     root = calendar_root.resolve().parents[2]
     cached = _SOURCE_LIBRARY_CACHE.get(root)
     if cached is not None:
@@ -970,6 +990,7 @@ def publication_records(
     inventory_root: Path | None = None,
     *,
     registered_sources: Mapping[str, Mapping[str, object]] | None = None,
+    mass_keys: set[str] | None = None,
 ) -> tuple[dict[LatinKey, dict], list[str]]:
     """Validated records effective for a calendar, its recension base first."""
     inventory_root = inventory_root or calendar_root.parent / "inventories"
@@ -1036,6 +1057,8 @@ def publication_records(
                 records[LatinKey.from_mapping(row)] = row
     if not problems:
         for key, row in records.items():
+            if mass_keys is not None and key.mass not in mass_keys:
+                continue
             problems.extend(_source_record_problems(
                 key.label(), row, registered_sources,
                 authority_root=calendar_root.resolve().parents[2],

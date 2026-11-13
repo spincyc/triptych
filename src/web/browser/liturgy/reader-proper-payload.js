@@ -1,4 +1,4 @@
-/* Validated catalog + one-Mass Proper payload for the resolved Read path. */
+/* Shared validated calendar-index and selected-Mass transport for every reader. */
 'use strict';
 
 (function (root, factory) {
@@ -44,6 +44,130 @@
     };
   }
 
+  // These are source addresses, not a second calendar or choice resolver. Walk
+  // every offered branch/option so leaving a coequal choice open loses no text.
+  const REFERENCE_KEYS = new Set(['key', 'mass', 'of', 'source_key', 'host',
+    'companion', 'takes_from', 'taken_from', 'common_from']);
+  function references(value, known) {
+    const found = new Set();
+    function visit(one, field) {
+      if (typeof one === 'string') {
+        if (REFERENCE_KEYS.has(field) && known.has(one)) found.add(one);
+      } else if (Array.isArray(one)) {
+        if (['target', 'terminal_common'].includes(field) && known.has(one[0])) found.add(one[0]);
+        one.forEach(function (child) { visit(child, field); });
+      } else if (object(one)) {
+        Object.entries(one).forEach(function (entry) { visit(entry[1], entry[0]); });
+      }
+    }
+    visit(value, 'key');
+    return Array.from(found);
+  }
+
+  function dayRoots(derived, explicit) {
+    return [explicit, (derived && derived.options || []).map(function (branch) {
+      return { winner: branch.winner, orations: branch.orations,
+        // Displaced celebrations remain in the index for explanation. Their
+        // bodies become necessary only when a request explicitly names them.
+        readable: (branch.readable || []).filter(function (one) { return one.state !== 'displaced'; }) };
+    })];
+  }
+
+  function indexedDescriptor(mass) {
+    const result = Object.assign({}, mass);
+    delete result.propers;
+    delete result.payload;
+    if (Array.isArray(result.forms)) result.forms = result.forms.map(function (form) {
+      const descriptor = Object.assign({}, form);
+      delete descriptor.propers;
+      return descriptor;
+    });
+    return result;
+  }
+
+  // One request planner serves both async browser fetches and synchronous local
+  // reads. Completed entries replace only their own descriptor; concurrent
+  // selections can safely share the same growing, generation-bound structure.
+  function* hydration(input) {
+    const structure = input.structure;
+    if (!structure || structure.reader_index !== true) return structure;
+    if (structure.schema !== 'triptych-propers-structure/v1' ||
+        !ID.test(structure.calendar || '') || !SHA.test(structure.generation || '') ||
+        !Array.isArray(structure.masses)) fail('reader index identity is invalid');
+    const byKey = new Map();
+    structure.masses.forEach(function (mass, index) {
+      if (!object(mass) || !ID.test(mass.key || '') || byKey.has(mass.key) ||
+          (!mass.payload && !Array.isArray(mass.propers))) {
+        fail('reader index Mass identity is invalid or duplicated');
+      }
+      byKey.set(mass.key, index);
+    });
+    const seen = new Set();
+    let pending = references(input.roots, byKey);
+    while (pending.length) {
+      const keys = pending.filter(function (key) { return !seen.has(key); });
+      if (!keys.length) break;
+      keys.forEach(function (key) { seen.add(key); });
+      const requests = keys.filter(function (key) {
+        return Boolean(structure.masses[byKey.get(key)].payload);
+      }).map(function (key) {
+        const descriptor = structure.masses[byKey.get(key)];
+        const path = 'structure/propers/mass/' + structure.calendar + '/' + key + '.json';
+        if (descriptor.payload !== path) fail('reader index Mass path disagrees with its identity');
+        return { key: key, path: path, descriptor: descriptor };
+      });
+      const envelopes = requests.length ? yield requests.map(function (one) { return one.path; }) : [];
+      requests.forEach(function (one, index) {
+        const envelope = envelopes[index];
+        if (!object(envelope) || envelope.schema !== MASS_SCHEMA ||
+            envelope.calendar !== structure.calendar || envelope.generation !== structure.generation ||
+            !object(envelope.mass) || !Array.isArray(envelope.mass.propers) ||
+            !same(indexedDescriptor(envelope.mass), indexedDescriptor(one.descriptor))) {
+          fail('Mass envelope disagrees with its reader index descriptor: ' + one.key);
+        }
+      });
+      requests.forEach(function (one, index) {
+        structure.masses[byKey.get(one.key)] = envelopes[index].mass;
+      });
+      pending = references(keys.map(function (key) { return structure.masses[byKey.get(key)]; }), byKey);
+    }
+    return structure;
+  }
+
+  async function hydrate(input) {
+    const plan = hydration(input);
+    let step = plan.next();
+    while (!step.done) step = plan.next(await Promise.all(step.value.map(input.load)));
+    return step.value;
+  }
+
+  function hydrateSync(input) {
+    const plan = hydration(input);
+    let step = plan.next();
+    while (!step.done) step = plan.next(step.value.map(input.load));
+    return step.value;
+  }
+
+  function indexPath(calendar, row) {
+    const expected = 'structure/propers/reader/' + calendar + '.json';
+    if (!ID.test(calendar || '') || !object(row) || row.id !== calendar ||
+        row.reader_index !== true || row.reader_file !== expected) {
+      fail('the index row has no matching reader file');
+    }
+    return row.reader_file;
+  }
+
+  async function loadIndexed(input) {
+    if (!object(input) || typeof input.load !== 'function' || !ID.test(input.calendar || '')) {
+      fail('calendar and load callback are required');
+    }
+    const structure = await input.load(indexPath(input.calendar, input.indexRow));
+    if (!structure || structure.calendar !== input.calendar || structure.reader_index !== true) {
+      fail('the selected calendar has no matching reader index');
+    }
+    return hydrate({ structure: structure, roots: input.roots, load: input.load });
+  }
+
   function warm(load, path) {
     try {
       const pending = load(path);
@@ -58,8 +182,9 @@
     const present = parsed && parsed.present || [];
     const rows = input.index && input.index.missals;
     const row = (Array.isArray(rows) ? rows : []).find(function (one) {
-      return one.id === 'roman-1962';
+      return one.id === input.missal;
     });
+    if (row && row.reader_index) return warm(input.load, indexPath(input.missal, row));
     if (input.missal !== 'roman-1962' || input.mode !== 'read' ||
         input.needsOrdinary || !row || !row.read_payload ||
         row.read_payload.catalog !== 'structure/propers/catalog/roman-1962.json' ||
@@ -84,7 +209,7 @@
         (params.has('mode') && params.get('mode') !== 'read') ||
         keys.some(function (key) { return !allowed.has(key); }) ||
         new Set(keys).size !== keys.length) return null;
-    return warm(load, 'structure/propers/catalog/roman-1962.json');
+    return warm(load, 'structure/propers/reader/roman-1962.json');
   }
 
   // Hints only warm browser responses. The ordinary loaders remain responsible
@@ -103,7 +228,7 @@
         (params.has('mode') && params.get('mode') !== 'read') ||
         (params.has('ordinary') && params.get('ordinary') !== '0')) return [];
     const paths = ['bibles.json', 'structure/propers/index.json', 'structure/ordinary/index.json',
-      'structure/propers/catalog/roman-1962.json'];
+      'structure/propers/reader/roman-1962.json'];
     if (input.entrance === 'day') {
       const date = params.get('date') || '';
       if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return [];
@@ -213,7 +338,9 @@
     });
   }
 
-  return Object.freeze({ load: load, warmDay: warmDay, warmPropers: warmPropers,
+  return Object.freeze({ load: load, hydrate: hydrate, hydrateSync: hydrateSync,
+    loadIndexed: loadIndexed, indexPath: indexPath, dayRoots: dayRoots, references: references,
+    warmDay: warmDay, warmPropers: warmPropers,
     startupHints: startupHints, selfContainedMass: selfContainedMass, framedRequest: framedRequest, framedMass: framedMass,
     CATALOG_SCHEMA: CATALOG_SCHEMA, MASS_SCHEMA: MASS_SCHEMA });
 }));

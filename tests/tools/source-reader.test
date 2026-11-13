@@ -52,12 +52,15 @@ if [ ! -f "$root/index.json" ]; then
 	exit 1
 fi
 
-python3 - "$root" <<'PY'
+python3 - "$root" "$repo" <<'PY'
 import json, pathlib, sys
 
 root = pathlib.Path(sys.argv[1])
-spine = json.loads((root / "index.json").read_text(encoding="utf-8"))
-assert spine["schema"] == "triptych-source-reader/v1", spine["schema"]
+sys.path.insert(0, str(pathlib.Path(sys.argv[2]) / "scripts"))
+from _reader_source_products import _reader
+spine = _reader().read_discovery(root / "index.json")
+assert spine["schema"] == "triptych-source-discovery/v3", spine["schema"]
+assert len(spine["shards"]) > 1, "discovery is not sharded"
 assert spine["advisory"], "the projection states no caution about itself"
 
 # ---- The rights gate, end to end ----------------------------------------
@@ -148,7 +151,8 @@ if ! diff -r "$root" "$sandbox/again/structure/sources" >/dev/null; then
 	exit 1
 fi
 
-# The tracked projection is what the records produce now.
+# The tracked metadata and working projection are what the records produce now.
+run_tool index --check --strict >/dev/null
 run_tool structure --check >/dev/null
 
 # `list` narrows, and narrowing narrows.

@@ -38,9 +38,6 @@ _SEQUENCE = re.compile(r"\x1b\[([0-9;]*)m|\x1b\]8;[^;\x1b\x07]*;([^\x1b\x07]*)(?
 _SAFE_URL = re.compile(r"[A-Za-z][A-Za-z0-9+.-]*:[^\s\"'<>\\]+")
 
 
-_EDITIONS: dict = {}
-
-
 def edition_of(web: str) -> tuple[str, str]:
     """The output identity and Markdown a catalogue's `web` page is rendered from."""
     if not (web.startswith("web/") and web.endswith(".html")):
@@ -48,23 +45,9 @@ def edition_of(web: str) -> tuple[str, str]:
     identity = web[len("web/"):-len(".html")]
     if not re.fullmatch(r"[a-z0-9-]+/[a-z0-9][a-z0-9./-]*", identity) or ".." in identity.split("/"):
         raise Refused(f"The catalogue names {web!r}, which is not a web edition's page.")
-    if "files" not in _EDITIONS:
-        try:
-            from _browser_products import ProductError, verified_products
-        except ImportError as error:  # scripts/ is on the path whenever lectern is
-            raise Refused(f"The browser product store could not be loaded: {error}") from error
-        try:
-            with verified_products(ROOT, product_ids=["web-editions"]) as products:
-                _EDITIONS["files"] = {
-                    name: path.read_bytes() for name, path in products.files.items()
-                    if name.startswith("web-editions/")}
-        except ProductError as error:
-            raise Refused(
-                "Web editions are converted from their TeX when the site is built, and that "
-                f"product is not ready here: {error}. Build it with `tools/browser-products build` "
-                "(the pinned pandoc in src/common/web-edition-toolchain.toml) and read again."
-            ) from error
-    body = _EDITIONS["files"].get(f"web-editions/{identity}.json")
+    from .bridge import BRIDGE_PROCESS
+
+    body = BRIDGE_PROCESS.read_product(f"web-editions/{identity}.json")
     if body is None:
         raise Refused(f"The catalogue names {web}, but no web edition of {identity} was built.")
     return identity, json.loads(body)["markdown"]

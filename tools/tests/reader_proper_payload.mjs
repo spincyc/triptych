@@ -18,12 +18,16 @@ const indexPath = 'structure/propers/index.json';
 const catalogPath = 'structure/propers/catalog/roman-1962.json';
 const massPath = 'structure/propers/mass/roman-1962/' + key + '.json';
 const monolithPath = 'structure/propers/roman-1962.json';
+const readerPath = 'structure/propers/reader/roman-1962.json';
 const data = async (path) => JSON.parse(await readFile(repositoryPath(ROOT, 'src/web/data/' + path)));
 const clone = (value) => structuredClone(value);
 const chosen = (index) => index.missals.find((row) => row.id === calendar);
 
 async function fixture() {
   const index = await data(indexPath);
+  // This suite retains the supported older catalog contract. The indexed
+  // transport has its own all-calendar hydration and semantic-parity tests.
+  index.missals.forEach(row => { delete row.reader_index; delete row.reader_file; });
   const catalog = await data(catalogPath);
   const envelope = await data(massPath);
   return { index, catalog, envelope };
@@ -113,7 +117,7 @@ test('speculative catalog requests stay inside eligible Read state and reuse cac
   await Payload.warmPropers((path) => {
     propersRequests.push(path); return Promise.resolve(parts.catalog);
   }, good);
-  assert.deepEqual(propersRequests, [catalogPath]);
+  assert.deepEqual(propersRequests, [readerPath]);
   for (const invalid of [
     good + '&mode=read', good + '&unexpected=1',
     good.replace('mode=read', 'mode=study'),
@@ -123,7 +127,7 @@ test('speculative catalog requests stay inside eligible Read state and reuse cac
       propersRequests.push(path); return Promise.resolve(parts.catalog);
     }, invalid), null);
   }
-  assert.deepEqual(propersRequests, [catalogPath]);
+  assert.deepEqual(propersRequests, [readerPath]);
 });
 
 test('untrusted paths, generation, and descriptor identity reject before rendering', async () => {

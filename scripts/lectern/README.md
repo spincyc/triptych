@@ -1,22 +1,22 @@
 # lectern — the terminal reader
 
-`tools/lectern` reads what the site publishes, in a terminal: the same verified
-browser products, the same derivations, a different screen. It is a
-consumer of the published structure exactly as a browser page is, and it holds
-itself to the page's rules.
+`tools/lectern` reads the site's corpus in a terminal, using the same
+source-owned derivations, publication filters and browser models. It loads
+selected records through the shared thin index under `src/index/` instead of
+building the complete set of browser products before opening a reading.
 
-Both `open` and `snapshot` prepare the current products through the same owner
-as `tools/browser-products build`, before exposing the reading. A first run can
-take several minutes: exact cache misses rebuild offline from canonical inputs
-and must match the committed descriptor. Warm entries are verified and reused.
-The CLI defaults to the repository's `.scratch/browser-data`; an explicit
-`TRIPTYCH_BROWSER_DATA_ROOT` takes precedence, including from another working
-directory. Interactive startup paints a loading screen first and keeps the
-reading panes and navigation hidden until verification and the initial chained
-loads finish. The screen reports preparation errors; `q` or `ctrl+c` closes it.
-Cancelling preparation stops and reaps its process group, including producers.
-Snapshots prepare synchronously before their settling timer, report progress to
-stderr, and emit only the completed drawing on stdout.
+Both `open` and `snapshot` check index membership against Git and dirty paths,
+then read the discovery metadata and canonical dependencies the selected view
+needs. Actual input bytes are SHA-256 verified before use. Missing or stale
+index data fails with maintenance instructions; startup never repairs it,
+adopts changed hashes or starts a full site build. The complete contract is in
+[Web data](../../guidance/web-data.md#tracked-discovery-and-ordinary-indexed-reading).
+
+Interactive startup paints a loading screen while the index check and initial
+chained loads finish. The screen reports preparation errors; `q` or `ctrl+c`
+closes it. Cancelling preparation stops and reaps its process group. Snapshots
+check synchronously before their settling timer, report progress to stderr,
+and emit only the completed drawing on stdout.
 
 Install the pinned dependencies once with `python3 -m venv
 .scratch/lectern-venv` and `.scratch/lectern-venv/bin/python -m pip install -r
@@ -29,22 +29,30 @@ or cache/PATH exports are needed. Without a local environment the current Python
 is used; a broken local environment is refused, with setup help still available.
 Ordinary startup never installs packages or downloads tools.
 
-The bridge holds a private verified snapshot for its entire Node process
-lifetime. Stale descriptors, corrupt or unsafe entries, and mismatching rebuilds
-are refused before opening the reader; preparation never re-records expected
-hashes or substitutes an unsealed working tree or the former `src/web/data/`
-directory. Direct bridge callers still prepare products explicitly.
+The bridge holds one index membership view for its Node process lifetime and
+passes immutable, verified bytes to the browser realm. It checks newly consumed
+canonical bytes against that view; changing sources requires index maintenance
+and a new reader session. Selected projections have a bounded memory cache and
+a disposable disk cache under `.scratch/reader-data`, bound to code, history
+and verified dependencies. `TRIPTYCH_BROWSER_DATA_ROOT` still controls full
+publication builds; it is not the ordinary reading cache. Explicit verified
+browser-product snapshot mode remains available for product audits.
+
+Opening a publication can invoke its pinned converter for that edition. Other
+views do not wait for unrelated publication conversions. Installation,
+checkout and maintenance commands are in
+[Reader setup and performance](../../docs/reader-performance.md).
 
 ## The one rule
 
-**Nothing is derived here.** A view is either read from a published file or
-asked of the code that already owns its derivation:
+**Every derivation keeps its existing owner.** A view reads a verified record
+or asks the producer or browser code that already owns its derivation:
 
 | Owner | How the reader reaches it |
 | --- | --- |
 | a browser model (`src/web/browser/**/*.js`) | `bridge.js`, one long-lived node process set up as a page's realm |
 | a page's own renderer (`Triptych.renderProper`, …) | the same realm, against `dom.js`, read back as blocks of styled runs |
-| a published data file | `bridge.js`, through `read()` or the realm's `siteFetch` |
+| a selected data record | `data.py` verifies dependencies; the existing producer supplies the logical browser payload through `bridge.js` |
 
 Where a page keeps its logic or its sentences inside its own closure — the
 Day page's "Why this Mass", the history model, the law page's glossaries —
@@ -134,6 +142,15 @@ same passage in the Source Library; `n` and `p` walk the commentary chain.
 Without an applicable excerpt the reader shows the complete natural fragment.
 Required acknowledgements stay visible in both views.
 
+## Source Library
+
+The finder opens with compact metadata for the first page of works. Browsing
+forward loads further discovery shards; a search, filter or different sort
+loads the metadata needed to search the complete catalogue. A partial load is
+never reported as a complete search. Edition details and passage text remain
+separate selected reads. The browser and terminal share the finder model,
+rights dispositions, exact edition identities and passage links.
+
 ## Layout
 
 | File | What it is |
@@ -144,6 +161,7 @@ Required acknowledgements stay visible in both views.
 | `surfaces/<name>.py` | one surface per page of the site; `surfaces/__init__.py` loads them in the shared order |
 | `adapters/<name>.js` | the node side of a surface: calls the page's model in the page's order |
 | `bridge.js`, `bridge.py` | the node realm and its Python client; `bridge.call(adapter, fn, *args)` |
+| `data.py` | the indexed reading session and disposable cache of selected projections |
 | `dom.js` | the document the page renderers write to, and `read()` back to blocks |
 | `widgets.py` | `Panel`, `ScrollPanel` (rounded, titled boxes), `Ink` (theme-aware text), meters |
 | `strip.py`, `month.py` | the chapter strip and the month grid |

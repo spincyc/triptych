@@ -32,15 +32,7 @@ module.exports = function sources(realm) {
   let loading = null;
   function spine() {
     if (!loading) {
-      loading = T.loadJSON(SPINE).then((file) => {
-        const editions = new Map();
-        (file.works || []).forEach((work, at) => (work.editions || []).forEach((edition, index) => {
-          editions.set(edition.id, [at, index]);
-        }));
-        const position = new Map();
-        (file.works || []).forEach((work, at) => position.set(work, at));
-        return { file, editions, position };
-      });
+      loading = T.loadJSON(SPINE).then((file) => M.discovery(file, T.loadJSON));
       loading.catch(() => { loading = null; });
     }
     return loading;
@@ -92,6 +84,25 @@ module.exports = function sources(realm) {
     });
   }
 
+  function summary(work) {
+    return {
+        id: work.id,
+        title: titleOf(work),
+        author: authorOf(work),
+        authorRecorded: Boolean(work.author),
+        category: work.category || '',
+        also: (work.alternate_titles || []).length ? 'Also: ' + work.alternate_titles.join(' · ') : '', // sources.js:203-207
+        editions: (work.editions || []).map((edition) => ({
+          id: edition.id,
+          title: editionLabel(edition).title,
+          facts: editionLabel(edition).facts,
+          passages: edition.passages || 0,
+          readable: edition.readable || 0,
+          withheld: edition.readable ? '' : 'no text readable here', // sources.js:218-222
+        })),
+    };
+  }
+
   async function opening() {
     const { file } = await spine();
     const facets = file.facets || {};
@@ -133,44 +144,41 @@ module.exports = function sources(realm) {
         'permitted bytes are not stored here — is listed with the reason rather than quietly dropped. A record ' +
         'you cannot read here is still a record you can find, cite and follow to its source.',
       ],
-      works: (file.works || []).map((work) => ({
-        id: work.id,
-        title: titleOf(work),
-        author: authorOf(work),
-        authorRecorded: Boolean(work.author),
-        category: work.category || '',
-        also: (work.alternate_titles || []).length ? 'Also: ' + work.alternate_titles.join(' · ') : '', // sources.js:203-207
-        editions: (work.editions || []).map((edition) => ({
-          id: edition.id,
-          title: editionLabel(edition).title,
-          facts: editionLabel(edition).facts,
-          passages: edition.passages || 0,
-          readable: edition.readable || 0,
-          withheld: edition.readable ? '' : 'no text readable here', // sources.js:218-222
-        })),
-      })),
+      works: [],
     };
   }
 
   /* The finder (sources.js:167-191), as positions. */
-  async function find(asked) {
-    const { file, position } = await spine();
+  async function find(asked, page) {
+    const source = await spine();
     const chosen = state(asked);
+    const pageSize = 40;
+    page = Math.max(0, Number.isInteger(page) ? page : 0);
+    if (M.unfiltered(chosen)) await source.ensure((page + 1) * pageSize);
+    else await source.all();
+    const file = source.file;
     const rows = M.order(M.narrow(file.works || [], chosen), chosen.sort);
-    const counted = M.tally(rows);
+    const counted = M.unfiltered(chosen) ? file.counted : M.tally(rows);
+    const pages = Math.ceil(counted.works / pageSize);
+    page = Math.min(page, Math.max(0, pages - 1));
+    const position = new Map(file.works.map((work, at) => [work, at]));
+    const shown = rows.slice(page * pageSize, (page + 1) * pageSize);
     return {
-      state: chosen,
-      rows: rows.map((row) => [position.get(row.work), row.editions.map((one) => row.work.editions.indexOf(one))]),
+      state: chosen, page, pages,
+      rows: shown.map((row) => [position.get(row.work), row.editions.map((one) => row.work.editions.indexOf(one))]),
+      workRows: shown.map((row) => [position.get(row.work), summary(row.work)]),
       counted,
-      tally: counted.works + ' works · ' + counted.editions + ' editions · ' + // page: sources.js:171-172
+      tally: counted.works + ' works · ' + counted.editions + ' editions · ' +
         counted.passages + ' passages · ' + counted.readable + ' readable here',
-      zero: rows.length ? '' : 'No work in the corpus matches those choices. The corpus holds ' + // sources.js:178-179
+      zero: counted.works ? '' : 'No work in the corpus matches those choices. The corpus holds ' +
         file.counted.works + ' works in all.',
     };
   }
 
   async function opened(workAt, editionAt) {
-    const { file } = await spine();
+    const source = await spine();
+    await source.ensure(workAt + 1);
+    const file = source.file;
     const work = (file.works || [])[workAt];
     const edition = work && (work.editions || [])[editionAt];
     if (!edition) throw new Error('no edition at ' + workAt + '/' + editionAt + ' in the spine');
@@ -311,7 +319,11 @@ module.exports = function sources(realm) {
    * (sources.js:777-803). The passage alone is followed through its own text
    * file, never taken apart (sources.js:705-719). */
   async function follow(editionId, passageId) {
-    const { file, editions } = await spine();
+    const source = await spine();
+    await source.all();
+    const file = source.file;
+    const editions = new Map();
+    file.works.forEach((work, at) => work.editions.forEach((edition, index) => editions.set(edition.id, [at, index])));
     let place = editionId ? editions.get(editionId) : undefined;
     if (!place && passageId) {
       let pointer = null;

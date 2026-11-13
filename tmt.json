@@ -299,6 +299,17 @@
       "stage": "draft",
       "usage": "complete-missal [--check | --require-resolved] [--json]"
     },
+    "corpus-index": {
+      "idempotent": true,
+      "json": true,
+      "lang": "python",
+      "mutates": true,
+      "origin": "local",
+      "purpose": "Build and verify a thin canonical corpus address and hash index.",
+      "requires": [],
+      "stage": "draft",
+      "usage": "corpus-index {refresh,check} [--root DIR] [--full] [--readers] [--json]"
+    },
     "document-library": {
       "idempotent": true,
       "json": true,
@@ -402,7 +413,7 @@
       "origin": "local",
       "purpose": "Read the published missal, catena and corpus in a terminal.",
       "requires": [
-        "browser-products"
+        "corpus-index"
       ],
       "stage": "draft",
       "usage": "lectern {open,snapshot} [--surface NAME] [--date ISO] [--calendar NAME] [--ref REF] [--size WxH] [--format {text,ansi,svg}]"
@@ -772,7 +783,7 @@
         "source-library"
       ],
       "stage": "draft",
-      "usage": "source-reader {check,list,show,structure} [--author A] [--language L] [--rights R] [--out DIR] [--check] [--json]"
+      "usage": "source-reader {check,list,show,structure,index} [--author A] [--language L] [--rights R] [--out DIR] [--check] [--json]"
     },
     "tpt": {
       "idempotent": true,

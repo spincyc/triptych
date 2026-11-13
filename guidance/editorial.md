@@ -512,9 +512,9 @@ comparison and is shown none.
 
 ### Revision timestamp
 
-Each edition's "Last revised (UTC)" timestamp is derived from Git at build
-time and is never tracked or hand-written. It is the greatest author time, in
-whole-second UTC, of the commits that changed a file in the edition's
+Each edition's "Last revised (UTC)" timestamp is derived from Git, never
+hand-written or declared in its canonical source. It is the greatest author
+time, in whole-second UTC, of the commits that changed a file in the edition's
 source closure: the provider-tree files its entrypoint reaches through
 `\input`/`\include` (macro-built paths expanded), their literal artwork, and
 the publication's declared generator data. An assembled projection contributes
@@ -532,6 +532,16 @@ metadata gate — takes the value from it. Each edition of a leaf has its own
 stamp, so a homily that reads none of a changed chronology page keeps its
 date. Author time, unlike committer time, survives cherry-pick and rebase, so
 integrating a commit does not move the editions it revised.
+
+The derived document discovery index may retain this value so opening and
+sorting the catalogue does not replay every edition's history. This is the
+sole tracked timestamp exception, authorized on 2026-11-12: it is reproducible
+metadata under `src/index/`, bound to the canonical sources and history that
+produced it, and checked by explicit index maintenance. It does not become a
+second timestamp authority or permit a tracked declaration in
+`generation-metadata.tex`. Selected-edition rendering still obtains its value
+from `_edition_revision.py`. [Web data](web-data.md#tracked-discovery-and-ordinary-indexed-reading)
+owns the index contract.
 
 A commit that changes closure files without revising any edition's text must
 carry the trailer `Edition-Revision: none` in its message; the derivation
@@ -572,8 +582,10 @@ a chronological agent/runtime ledger in a PDF or web edition. Keep audit
 detail that is safe and necessary for reproducibility in the tracked
 declarations or owning research and production records.
 
-The source metadata gate rejects any tracked or hand-written revision
-timestamp; missing, duplicated, misplaced, or malformed provenance;
+The source metadata gate rejects revision timestamp declarations in canonical
+sources and every hand-written revision timestamp; the derived discovery
+metadata exception above is outside that declaration rule. It also rejects
+missing, duplicated, misplaced, or malformed provenance;
 provenance fields carried without their workflow; exact duplicate contributions;
 generic family-only model labels; missing exposed qualifiers; invalid
 inheritance; and handwritten display substitutes.

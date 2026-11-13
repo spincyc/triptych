@@ -178,9 +178,34 @@
    * The finder
    * ------------------------------------------------------------------ */
 
-  function renderFinder() {
+  let discovery = null;
+  let finderRequest = 0;
+  let hashRequest = 0;
+  let finderPage = 0;
+  let finderChoices = null;
+  const FINDER_PAGE_SIZE = 40;
+
+  async function renderFinder() {
+    const request = ++finderRequest;
+    const choices = JSON.stringify(state);
+    if (choices !== finderChoices) { finderPage = 0; finderChoices = choices; }
+    const all = !M.unfiltered(state);
+    elements.finder.setAttribute('aria-busy', 'true');
+    elements.tally.textContent = all ? 'Searching the complete source catalogue…' : 'Loading source results…';
+    try {
+      if (all) await discovery.all();
+      else await discovery.ensure((finderPage + 1) * FINDER_PAGE_SIZE);
+    } catch (error) {
+      if (request !== finderRequest) return;
+      elements.finder.setAttribute('aria-busy', 'false');
+      elements.tally.textContent = 'Source results could not be loaded: ' + (error.message || error);
+      T.clear(elements.finder);
+      return;
+    }
+    if (request !== finderRequest) return;
+    elements.finder.setAttribute('aria-busy', 'false');
     const rows = M.order(M.narrow(spine.works || [], state), state.sort);
-    const counted = M.tally(rows);
+    const counted = all ? M.tally(rows) : spine.counted;
     elements.tally.textContent =
       counted.works + ' works · ' + counted.editions + ' editions · ' +
       counted.passages + ' passages · ' + counted.readable + ' readable here';
@@ -196,7 +221,22 @@
       return;
     }
 
-    for (const row of rows) {
+    const pages = Math.ceil(counted.works / FINDER_PAGE_SIZE);
+    finderPage = Math.min(finderPage, pages - 1);
+    if (pages > 1) {
+      const paging = T.el('nav', 'finder-pages');
+      paging.setAttribute('aria-label', 'Source results pages');
+      paging.appendChild(T.el('span', '', 'Page ' + (finderPage + 1) + ' of ' + pages + ' · '));
+      for (const direction of [-1, 1]) {
+        const button = T.el('button', '', direction < 0 ? 'Previous works' : 'Next works');
+        button.type = 'button';
+        button.disabled = finderPage + direction < 0 || finderPage + direction >= pages;
+        button.addEventListener('click', function () { finderPage += direction; renderFinder(); });
+        paging.appendChild(button);
+      }
+      elements.finder.appendChild(paging);
+    }
+    for (const row of rows.slice(finderPage * FINDER_PAGE_SIZE, (finderPage + 1) * FINDER_PAGE_SIZE)) {
       elements.finder.appendChild(renderWorkCard(row));
     }
     T.statusLine(
@@ -811,8 +851,19 @@
   }
 
   async function applyHash(hash) {
+    const request = ++hashRequest;
+    ++finderRequest;
     const editionId = hash.get('edition');
     const passageId = hash.get('passage');
+    if (editionId || passageId) {
+      T.statusLine('Looking up the source address…');
+      try { await discovery.all(); }
+      catch (error) {
+        if (request === hashRequest) T.fail('The source address could not be loaded: ' + (error.message || error));
+        return;
+      }
+      if (request !== hashRequest) return;
+    }
 
     if (editionId) {
       for (const work of spine.works || []) {
@@ -826,6 +877,7 @@
     }
     if (passageId) {
       const found = await followPassage(passageId);
+      if (request !== hashRequest) return;
       if (found) {
         await openEdition(found.work, found.edition, passageId, true);
         return;
@@ -870,7 +922,8 @@
       'show. Serve the pages over HTTP with the data at "' + T.dataRoot + '".'
     );
     try {
-      spine = await T.loadJSON(SPINE);
+      discovery = M.discovery(await T.loadJSON(SPINE), T.loadJSON);
+      spine = discovery.file;
     } catch (error) {
       T.doneBootstrapping();
       for (const control of [elements.author, elements.category, elements.language,
@@ -914,12 +967,15 @@
       writeHash();
       renderFinder();
     });
+    let searchTimer = null;
     elements.find.addEventListener('input', function () {
       readControls();
       // Typing rewrites the current finder address rather than manufacturing
       // a Back-button stop for every partial query.
       replaceFinderHash();
-      renderFinder();
+      ++finderRequest;
+      if (searchTimer !== null) clearTimeout(searchTimer);
+      searchTimer = setTimeout(function () { searchTimer = null; renderFinder(); }, 120);
     });
 
     // Arrow keys step through the passages of an open edition, and do nothing
@@ -927,7 +983,11 @@
     T.onArrowStep(function (by) {
       if (open) step(by);
     });
-    T.onHashChange(function (hash) { applyHash(hash); });
+    T.onHashChange(function (hash) {
+      if (searchTimer !== null) clearTimeout(searchTimer);
+      searchTimer = null;
+      applyHash(hash);
+    });
 
     elements.reading.setAttribute('aria-busy', 'false');
     await applyHash(T.readHash());

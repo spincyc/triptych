@@ -9,7 +9,7 @@
   const SearchController = window.TriptychProperSearchController;
   const Compare = window.TriptychPropersCompare;
   const Study = window.TriptychPropersStudy;
-  const ReadPayload = window.TriptychPropersReadPayload;
+  let ReadPayload = window.TriptychPropersReadPayload;
 
   if (!T || !Contract || !Adapters || !Shell) {
     throw new Error('Propers reader requires production browser, state, adapter, and shell modules');
@@ -127,6 +127,10 @@
   }
 
   function structurePath(id) {
+    const row = runtime.manifests && runtime.manifests.properIndexRaw.missals.find(function (one) {
+      return one.id === id;
+    });
+    if (row && row.reader_index) return window.LiturgyReaderProperPayload.indexPath(id, row);
     return 'structure/propers/' + id + '.json';
   }
 
@@ -366,6 +370,12 @@
 
     let structure;
     try {
+      if (!ReadPayload && manifests.properIndexRaw.missals.some(function (row) { return row.reader_index; })) {
+        await import('./reader-proper-payload.js');
+        await import('./propers-read-payload.js');
+        ReadPayload = window.TriptychPropersReadPayload;
+        if (!ReadPayload) throw new Error('The Proper payload loader did not initialize');
+      }
       structure = ReadPayload ? await ReadPayload.load({ parsed: parsed, calendar: missal,
         index: manifests.properIndexRaw, load: load, monolith: structurePath(missal) })
         : await load(structurePath(missal));

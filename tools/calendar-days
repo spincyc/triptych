@@ -2403,7 +2403,6 @@ def structure_projection(
     if last < first:
         raise ValueError(f"--last {last} precedes --first {first}")
     documents: dict[Path, dict] = {}
-    manifest: list[dict] = []
     for name, index in indexes.items():
         built = build_years(index, list(range(first, last + 2)))
         with_fixed(index, list(range(first, last + 1)))
@@ -2413,6 +2412,13 @@ def structure_projection(
                 civil_year,
                 {civil_year: built[civil_year], civil_year + 1: built[civil_year + 1]},
             )
+    return documents, index_document(indexes, first, last)
+
+
+def index_document(indexes: dict[str, dict], first: int, last: int) -> dict:
+    """Discover calendars without computing every year in the offered span."""
+    manifest: list[dict] = []
+    for name, index in indexes.items():
         manifest.append(
             {
                 "calendar": index["calendar"],
@@ -2422,7 +2428,7 @@ def structure_projection(
                 "territorial": territorial_block(index["builder"], index["directory"]),
             }
         )
-    index_document = {
+    return {
         "advisory": ADVISORY,
         "calendars": manifest,
         "guidance": GUIDANCE,
@@ -2430,7 +2436,6 @@ def structure_projection(
         "schema": SCHEMA,
         "span": {"first": first, "last": last},
     }
-    return documents, index_document
 
 
 def serialise_year(document: dict) -> str:

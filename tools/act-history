@@ -3423,13 +3423,18 @@ def write_json(target: Path, payload: dict) -> None:
     )
 
 
-def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
+def fragments(data: dict, root: Path, slice_id: str, *, selected: str | None = None,
+              emit=None) -> dict[str, dict]:
     """Write one file per station, per state and per unit; return the summaries.
 
     The file names come from `sorted_name`, the same helper the spine's
     `station_path` and `state_path` are built from, so there is one naming rule
     and the page follows the path it was given rather than composing one.
     """
+    def write(target: Path, payload: dict) -> None:
+        if selected is None or target.relative_to(root).as_posix() == selected:
+            (emit or write_json)(target, payload)
+
     order, states, _ = build(data)
     acts = indexed(data.get("acts", []), "id", "acts")
     departures_by_act: dict[str, list[dict]] = {}
@@ -3474,10 +3479,10 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
                  for field in ("from", "kind", "instrument", "citation", "basis")}
                 for row in receptions_of(act)
             ]
-        write_json(root / slice_id / "station" / f"{name}.json", {**sets[act_id], "edges": edges})
-        write_json(root / slice_id / "state" / f"{name}.json", standing(act_id, act, states[act_id]))
+        write(root / slice_id / "station" / f"{name}.json", {**sets[act_id], "edges": edges})
+        write(root / slice_id / "state" / f"{name}.json", standing(act_id, act, states[act_id]))
     for unit_id, history in sorted(histories.items()):
-        write_json(root / slice_id / "unit" / f"{unit_id}.json", history)
+        write(root / slice_id / "unit" / f"{unit_id}.json", history)
     vocab = vocabulary_of(data)
     groups = indexed(data.get("masses", []), "id", vocab.group_table)
     index = []
@@ -3502,7 +3507,7 @@ def fragments(data: dict, root: Path, slice_id: str) -> dict[str, dict]:
         if chain:
             row["divisions"] = chain
         index.append(row)
-    write_json(root / slice_id / "units.json", {
+    write(root / slice_id / "units.json", {
         "slice": slice_id,
         "units": index,
         # The containers themselves, so a reader of the index can be shown
@@ -3636,11 +3641,28 @@ def structure(data: dict, out: Path) -> dict:
     declaring which one the page opens on, so that no page has to guess a slice
     id and none has to name one in its own source.
     """
-    rows = graph(data)["rows"]
-    known = {act["id"]: act for act in data["acts"]}
     slice_id = str(data.get("slice"))
     root = out / "structure" / "act-history"
     totals = fragments(data, root, slice_id)
+    payload = map_payload(data, totals)
+    target = root / f"{slice_id}.json"
+    write_json(target, payload)
+    manifest, listed = write_manifest(root)
+    return {
+        "stations": len(payload["stations"]),
+        "lines": len(payload["lines"] or []),
+        "written": str(target),
+        "manifest": str(manifest),
+        "slices": [entry["id"] for entry in listed],
+        "default": landing_of(listed),
+    }
+
+
+def map_payload(data: dict, totals: dict) -> dict:
+    """The shared map projection, independent of materialized fragment files."""
+    rows = graph(data)["rows"]
+    known = {act["id"]: act for act in data["acts"]}
+    slice_id = str(data.get("slice"))
     stations = []
     for row in rows:
         act = known[row["act"]]
@@ -3721,21 +3743,7 @@ def structure(data: dict, out: Path) -> dict:
         "commonality": shared_bases(data),
         "extends_chain": data.get("extends_chain", []),
     }
-    target = root / f"{slice_id}.json"
-    target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(
-        json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n",
-        encoding="utf-8",
-    )
-    manifest, listed = write_manifest(root)
-    return {
-        "stations": len(stations),
-        "lines": len(payload["lines"] or []),
-        "written": str(target),
-        "manifest": str(manifest),
-        "slices": [entry["id"] for entry in listed],
-        "default": landing_of(listed),
-    }
+    return payload
 
 
 def structure_sources() -> tuple[Path, ...]:

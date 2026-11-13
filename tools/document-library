@@ -937,7 +937,8 @@ def work_catalog(editions: tuple[Document, ...]) -> str | None:
     return stated[0]
 
 
-def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document]) -> dict:
+def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document],
+              *, root: Path = ROOT) -> dict:
     """The whole corpus, keyed by work, as one object the page fetches once."""
     editions_of: dict[str, list[Document]] = {}
     for document in rows:
@@ -1014,7 +1015,7 @@ def catalogue(rows: tuple[Document, ...], by_key: dict[tuple[str, str], Document
                 "version": workflow.version,
                 "digest": workflow.digest,
             }
-            for workflow in declared_workflows()
+            for workflow in declared_workflows(root / "workflows/pipelines")
         ],
         "providers": [
             {"id": name, "label": PROVIDER_LABELS.get(name, name), "documents": count}

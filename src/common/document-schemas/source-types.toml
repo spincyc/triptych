@@ -65,12 +65,12 @@ validator = ["tools/source-library", "check"]
 
 [[families]]
 id = "source-reader-projection"
-schema_ids = ["triptych-source-reader/v1"]
+schema_ids = ["triptych-source-reader/v1", "triptych-source-discovery/v3"]
 owner = "tools/source-reader"
 paths = ["src/web/data/structure/sources/index.json"]
-required_fields = ["schema", "counted", "works"]
+required_fields = ["schema", "counted"]
 minimum_members = 1
-cardinality = "Projection identity and counts only here; the browser-product descriptor owns freshness, not a heavy replay or a new completeness claim."
+cardinality = "Validate discovery identity, shard membership and complete counts here; source-reader index --check owns canonical metadata replay, and the browser-product descriptor owns deployed freshness."
 validator = ["tools/browser-products", "check"]
 
 [[families]]

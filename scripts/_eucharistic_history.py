@@ -367,7 +367,7 @@ def source_library_links(entries: list[dict], root: Path, inputs: dict) -> None:
                                "url": "../sources/#edition=" + quote(identifier, safe="")})
 
 
-def catalogue(source: Path, root: Path, *, act_loader) -> dict:
+def catalogue(source: Path, root: Path, *, act_loader, binding_loader=None) -> dict:
     root = root.resolve()
     data, inputs = route(source, root)
     entries = []
@@ -474,7 +474,8 @@ def catalogue(source: Path, root: Path, *, act_loader) -> dict:
     try:
         stage_history = load_stages(root, catalogue_ids=set(by_id), catalogue_records=by_id, comparisons=comparisons_by_id,
                                     fingerprint=fingerprint,
-                                    default_tradition_id=data.get("stage_history_default_tradition"))
+                                    default_tradition_id=data.get("stage_history_default_tradition"),
+                                    binding_loader=binding_loader)
     except StageError as error:
         raise HistoryError(f"stage history: {error}") from error
     for stamp in stage_history["inputs"]:

@@ -120,6 +120,22 @@ class PublicAlphaTest(unittest.TestCase):
         self.manifest = self.make_manifest()
         self.write_manifest()
 
+    def test_source_validation_and_identities_share_only_the_current_operation(self) -> None:
+        from _document_types import Assembly
+        with mock.patch("_document_types.Assembly", wraps=Assembly) as make_assembly:
+            with self.tool.held_repository_inputs():
+                first = self.tool.publication_source_identity("gpt", "work")
+                self.tool.publication_source_records()
+                self.assertEqual(make_assembly.call_count, 1)
+                held = self.tool.document_assembly()
+                self.assertIs(held, self.tool.document_assembly())
+            self.write("src/gpt/work/main.tex", b"Revised source.\n")
+            with self.tool.held_repository_inputs():
+                second = self.tool.publication_source_identity("gpt", "work")
+                self.assertIsNot(held, self.tool.document_assembly())
+                self.assertEqual(make_assembly.call_count, 2)
+        self.assertNotEqual(first["content"]["sha256"], second["content"]["sha256"])
+
     def write(self, relative: str, data: bytes) -> None:
         path = self.root / relative
         path.parent.mkdir(parents=True, exist_ok=True)

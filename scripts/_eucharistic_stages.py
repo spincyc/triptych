@@ -186,7 +186,8 @@ def verify_progression(stages: dict[str, dict], transitions: list[dict]) -> None
 
 
 def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], fingerprint,
-         default_tradition_id: str | None = None, catalogue_records: dict[str, dict] | None = None) -> dict:
+         default_tradition_id: str | None = None, catalogue_records: dict[str, dict] | None = None,
+         binding_loader=None) -> dict:
     """Read the canonical dossier directory; preserve authored order within files.
 
     The owning engine supplies its shared fingerprint function. Missing dossiers
@@ -292,7 +293,7 @@ def load(root: Path, *, catalogue_ids: set[str], comparisons: dict[str, dict], f
             if not binding_id.startswith(NATIVE_BOOK_PREFIX):
                 raise StageError(f"{context}: full-text binding must identify a native book")
             try:
-                payload = load_adapter(binding_id, root)
+                payload = (binding_loader or load_adapter)(binding_id, root)
             except AdapterError as error:
                 raise StageError(f"{context}: full-text binding: {error}") from error
             binding = payload["book_binding"]

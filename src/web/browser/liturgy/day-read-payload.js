@@ -1,4 +1,4 @@
-/* Day policy for the bounded, resolved 1962 reading payload. */
+/* Day loads its resolved source owners; older data retain their bounded fast path. */
 'use strict';
 
 (function (root, factory) {
@@ -45,6 +45,10 @@
       return one.id === input.missal;
     });
     const reader = root.LiturgyReaderProperPayload;
+    if (row && row.reader_index && reader) return reader.loadIndexed({
+      load: input.load, calendar: input.missal, indexRow: row,
+      roots: reader.dayRoots(input.derived, input.parsed && input.parsed.recognized.mass)
+    });
     if (!key || !row || !row.read_payload || !reader) return input.load(monolith);
     try {
       const structure = await reader.load({

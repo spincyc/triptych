@@ -258,7 +258,7 @@ override _TRIPTYCH_BOUNDED_PDF_JOB_OPTION = $(if $(strip $(_TRIPTYCH_MAKE_PARALL
 	check-sources check-research-sources check-deployment-sources check-source-library \
 	check-document-schemas check-document-content check-artifact-delivery \
 	check-snapshot-delivery check-papal-inputs \
-	prepare-browser-data check-browser-products deployment-source-gates \
+	prepare-browser-data check-browser-products check-corpus-index deployment-source-gates \
 	pages-site pages-site-members public-site-artifact \
 	check-source-evidence print-document \
 	check-source-inventory check-source-inventory-tool \
@@ -444,6 +444,9 @@ prepare-browser-data:
 check-browser-products:
 	@$(PYTHON) $(BROWSER_PRODUCTS_TOOL) check
 
+check-corpus-index:
+	@$(PYTHON) tools/tpt corpus-index check --readers
+
 # Default validation checks logical identities, rights, bindings and the exact
 # external-delivery metadata without hydrating optional evidence bytes.
 check-source-graph:
@@ -493,7 +496,7 @@ check-publication-inventories: check-source-graph
 DEPLOYMENT_SOURCE_MEMBERS := check-curriculum-source-rights check-document-schemas \
 	check-artifact-delivery check-snapshot-delivery check-papal-inputs \
 	check-document-catalogue check-source-graph check-proper-chronology-current \
-	check-generated-documents-current
+	check-generated-documents-current check-corpus-index
 
 # Bootstrap bounded concurrency when the caller supplied no jobserver. Keep
 # ordinary liturgical derivation and rights checks in the source publication

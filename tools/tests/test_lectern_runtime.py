@@ -147,10 +147,9 @@ class LecternRuntimeTests(unittest.TestCase):
             target = self.root / name
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(ROOT / name, target)
-        (self.root / "scripts/_browser_products.py").write_text(
-            "class ProductError(Exception): pass\n"
-            "def check(root): pass\n"
-            "def build(root): raise AssertionError('unexpected build')\n")
+        (self.root / "scripts/_corpus_index.py").write_text(
+            "class CorpusIndexError(Exception): pass\n"
+            "class CorpusIndex:\n    def __init__(self, root): pass\n")
         (self.root / "scripts/lectern/bridge.py").write_text(
             "class Bridge:\n    def close(self): pass\nBRIDGE_PROCESS = Bridge()\n")
         (self.root / "scripts/lectern/snapshot.py").write_text(

@@ -82,6 +82,76 @@ def _read(path):
     return yaml.safe_load(path.read_text(encoding="utf-8"))
 
 
+def _source_projection(root, logical, data, products):
+    """Validate every discovery shard through the held product membership."""
+    counted = data.get("counted")
+    _need(isinstance(counted, dict) and all(type(value) is int and value >= 0
+          for value in counted.values()), f"{logical}: invalid projection counts")
+    if data.get("schema") == "triptych-source-reader/v1":
+        _need(isinstance(data.get("works"), list) and len(data["works"]) == counted.get("works"),
+              f"{logical}: projection identity/counts disagree")
+        return
+    _need(data.get("schema") == "triptych-source-discovery/v3" and isinstance(data.get("shards"), list),
+          f"{logical}: invalid source discovery manifest")
+    _need(data.get("root") == "structure/sources/" and data.get("texts") == "structure/sources/text/",
+          f"{logical}: invalid source discovery roots")
+    totals = dict(works=0, editions=0, passages=0, readable=0)
+    identities = set()
+    expected = set()
+    for number, shard in enumerate(data["shards"]):
+        relative = f"structure/sources/catalogue/{number:04d}.json"
+        message = f"{BROWSER_DATA}/{relative}: invalid source discovery shard"
+        _need(isinstance(shard, dict) and shard.get("path") == relative and
+              type(shard.get("works")) is int and 0 < shard["works"] <= 128, message)
+        expected.add(relative)
+        matches = _family_paths(root, [BROWSER_DATA + "/" + relative], products)
+        _need(len(matches) == 1, message + " is missing from verified membership")
+        path = matches[0][1]
+        _need(path.is_file() and not path.is_symlink(), message + " is not a regular file")
+        payload = _read(path)
+        _need(isinstance(payload, dict) and payload.get("schema") == "triptych-source-catalogue/v2" and
+              isinstance(payload.get("labels"), list) and all(isinstance(label, str) for label in payload["labels"]) and
+              isinstance(payload.get("rows"), list) and len(payload["rows"]) == shard["works"], message)
+        labels = payload["labels"]
+        def label(value, optional=True):
+            return (optional and value is None) or (type(value) is int and 0 <= value < len(labels))
+        def identity(value):
+            _need(isinstance(value, str) and value and value not in identities, message + " has duplicate/missing identity")
+            identities.add(value)
+        for row in payload["rows"]:
+            _need(isinstance(row, list) and len(row) == 7, message + " has malformed work")
+            identity(row[0])
+            _need((row[1] is None or isinstance(row[1], str)) and label(row[2]) and label(row[3]) and
+                  isinstance(row[4], list) and all(isinstance(alias, str) for alias in row[4]) and
+                  isinstance(row[6], list), message + " has invalid work metadata")
+            _need(row[5] is None and not row[6] or isinstance(row[5], str) and
+                  re.fullmatch(r"editions/[a-z0-9._-]+/[a-z0-9._-]+/", row[5]) is not None,
+                  message + " has invalid work route")
+            totals["works"] += 1
+            for edition in row[6]:
+                _need(isinstance(edition, list) and len(edition) == 9, message + " has malformed edition")
+                identity(edition[0])
+                _need((edition[1] is None or isinstance(edition[1], str) or type(edition[1]) is int and edition[1] == 0) and
+                      label(edition[2]) and label(edition[3]) and
+                      (edition[4] is None or type(edition[4]) is int) and label(edition[5], False) and
+                      re.fullmatch(r"[a-z0-9._-]+\.json", labels[edition[5]]) is not None and
+                      type(edition[6]) is int and type(edition[7]) is int and 0 <= edition[7] <= edition[6] and
+                      isinstance(edition[8], list) and all(label(right, False) for right in edition[8]),
+                      message + " has invalid edition metadata")
+                totals["editions"] += 1
+                totals["passages"] += edition[6]
+                totals["readable"] += edition[7]
+    prefix = "structure/sources/catalogue/"
+    if products is not None:
+        actual = {name for name in products.files if name.startswith(prefix)}
+    else:
+        actual = {path.relative_to(Path(root) / BROWSER_DATA).as_posix()
+                  for path in (Path(root) / BROWSER_DATA / prefix).glob("*.json")}
+    _need(actual == expected, f"{logical}: source discovery shard membership differs")
+    _need(all(counted.get(key) == value for key, value in totals.items()),
+          f"{logical}: projection identity/counts disagree")
+
+
 def source_types(root):
     data = _read(Path(root) / REGISTRY)
     _need(data.get("schema_version") == 1 and data.get("record_type") == "source-document-family-registry",
@@ -276,11 +346,7 @@ def _check_source_editions(root, products=None):
                     schema = "acts_schema/" + str(data["acts_schema"]) if "acts_schema" in data else data.get("schema")
                     _need(schema in family["schema_ids"], f"{logical}: unexpected canonical schema {schema}")
                     if identifier == "source-reader-projection":
-                        counted = data["counted"]
-                        _need(isinstance(counted, dict) and isinstance(data["works"], list)
-                              and all(type(value) is int and value >= 0 for value in counted.values())
-                              and len(data["works"]) == counted.get("works"),
-                              f"{logical}: projection identity/counts disagree")
+                        _source_projection(root, logical, data, products)
             semantic = identifier in special
             report["families"].append({"id": identifier, "schema_ids": family["schema_ids"],
                 "members": members, "status": "pass", "semantic_checks": "performed" if semantic else "owning-gate",

@@ -50,6 +50,7 @@ import unittest
 from pathlib import Path
 
 from tools.tests._product_data import browser_data_root
+from _reader_source_products import _reader as source_reader
 
 ROOT = Path(__file__).resolve().parents[2]
 DATA = browser_data_root(ROOT)
@@ -407,11 +408,12 @@ class UnavailableCorpusTests(unittest.TestCase):
         self.assertNotIn("showing its small built-in fallback", seen)
 
     def test_source_edition_without_file_preserves_hosts_and_recovers(self) -> None:
-        index = json.loads((SOURCES / "index.json").read_text(encoding="utf-8"))
+        index = source_reader().read_discovery(SOURCES / "index.json")
         index["works"] = [work for work in index["works"]
                           if any(edition["id"] in (IRENAEUS, ONE_PASSAGE)
                                  for edition in work.get("editions", []))]
         index["facets"] = {}
+        index["schema"] = "triptych-source-reader/v1"
         edition = next(edition for work in index["works"]
                        for edition in work.get("editions", [])
                        if edition["id"] == IRENAEUS)
@@ -595,6 +597,8 @@ class SourceReaderInteractionTests(unittest.TestCase):
                     editions: document.querySelectorAll('.edition-open').length
                   });
                 })()""" % find_edition},
+                {"do": "wait", "until": "document.querySelectorAll('.edition-open').length === 1 && document.getElementById('finder').getAttribute('aria-busy') === 'false'"},
+                {"do": "eval", "name": "finder_editions", "expression": "document.querySelectorAll('.edition-open').length"},
                 {"do": "eval", "expression": """(() => {
                   document.querySelector('.edition-open').click();
                   return true;
@@ -759,7 +763,7 @@ class SourceReaderInteractionTests(unittest.TestCase):
         state = self.state("finder_history")
         self.assertEqual(state["before"], state["after"])
         self.assertEqual(state["hash"], "#find=" + ONE_PASSAGE)
-        self.assertEqual(state["editions"], 1)
+        self.assertEqual(self.seen["finder_editions"], 1)
 
     def test_opening_a_one_passage_edition_writes_its_complete_citation(self) -> None:
         state = self.state("one_passage")
@@ -881,7 +885,7 @@ class SourceReaderAddressTests(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls) -> None:
-        index = json.loads((SOURCES / "index.json").read_text(encoding="utf-8"))
+        index = source_reader().read_discovery(SOURCES / "index.json")
         latin = next(one for one in index["facets"]["languages"] if one["id"] == "la")
         cls.latin_editions = latin["editions"]
         cls.josephus = next(one for one in index["works"] if one["id"] == JOSEPHUS)
@@ -918,9 +922,8 @@ class SourceReaderAddressTests(unittest.TestCase):
                    return history.length;
                  })()"""},
                 {"do": "wait", "until":
-                 "location.hash === '#language=la' && "
-                 "document.querySelectorAll('.edition-open').length === " +
-                 str(cls.latin_editions),
+                 "location.hash === '#language=la' && document.getElementById('finder').getAttribute('aria-busy') === 'false' && "
+                 "document.getElementById('tally').textContent.includes(' · " + str(cls.latin_editions) + " editions · ')",
                  "label": "canonical valid finder state"},
                 {"do": "eval", "name": "valid_facet_only", "expression":
                  """JSON.stringify({
@@ -935,6 +938,8 @@ class SourceReaderAddressTests(unittest.TestCase):
                      document.getElementById('sort-select').value
                    ],
                    readable: document.getElementById('readable-input').checked,
+                   tally: document.getElementById('tally').textContent,
+                   works: document.querySelectorAll('#finder .work').length,
                    editions: document.querySelectorAll('.edition-open').length
                  })"""},
                 {"do": "eval", "expression":
@@ -992,7 +997,8 @@ class SourceReaderAddressTests(unittest.TestCase):
         self.assertEqual(state["hash"], "#language=la")
         self.assertEqual(state["values"], ["", "", "la", "", "", "author"])
         self.assertFalse(state["readable"])
-        self.assertEqual(state["editions"], self.latin_editions)
+        self.assertIn(f" · {self.latin_editions} editions · ", state["tally"])
+        self.assertLessEqual(state["works"], 40)
         self.assertEqual(state["history"], self.seen["facet_history"])
 
     def test_rights_filter_includes_segment_controlled_editions(self) -> None:
@@ -1339,6 +1345,38 @@ class StationMagnitudeTests(unittest.TestCase):
         self.assertTrue(quiet)
         self.assertEqual(set(quiet) - {"nothing changed", "nothing differs"}, set())
 
+
+
+
+class SourceDiscoveryPagingTests(unittest.TestCase):
+    def test_initial_page_is_bounded_and_global_search_reaches_the_last_work(self):
+        manifest = json.loads((SOURCES / "index.json").read_text(encoding="utf-8"))
+        if manifest.get("schema") != "triptych-source-discovery/v3":
+            self.skipTest("requires sharded source discovery products")
+        complete = source_reader().read_discovery(SOURCES / "index.json")
+        last = complete["works"][-1]["id"]
+        seen = drive({"acts": [
+            {"do": "navigate", "url": page("sources")},
+            {"do": "wait", "until": "document.querySelectorAll('#finder .work').length === 40"},
+            {"do": "eval", "name": "first", "expression": """({
+                count: document.querySelectorAll('#finder .work').length,
+                title: document.querySelector('#finder .work-title').textContent,
+                pages: document.querySelector('.finder-pages').textContent,
+                tally: document.getElementById('tally').textContent,
+                shards: performance.getEntriesByType('resource').filter(e=>e.name.includes('/sources/catalogue/')).length
+            })"""},
+            {"do": "eval", "expression": "document.querySelector('.finder-pages button:last-child').click(); true"},
+            {"do": "wait", "until": "document.querySelector('.finder-pages').textContent.includes('Page 2 of')"},
+            {"do": "eval", "name": "second", "expression": "document.querySelector('#finder .work-title').textContent"},
+            {"do": "eval", "expression": "location.hash = '#find=' + encodeURIComponent(" + json.dumps(last) + "); true"},
+            {"do": "wait", "until": "document.querySelectorAll('#finder .work').length === 1 && document.getElementById('finder').getAttribute('aria-busy') === 'false'"},
+            {"do": "eval", "name": "last", "expression": "document.getElementById('tally').textContent"},
+        ]})
+        self.assertEqual(seen["first"]["count"], 40)
+        self.assertEqual(seen["first"]["shards"], 1)
+        self.assertIn(str(manifest["counted"]["works"]) + " works", seen["first"]["tally"])
+        self.assertNotEqual(seen["first"]["title"], seen["second"])
+        self.assertTrue(seen["last"].startswith("1 works"))
 
 if __name__ == "__main__":  # pragma: no cover
     unittest.main()

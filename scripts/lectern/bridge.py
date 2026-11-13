@@ -5,6 +5,7 @@ import atexit
 import itertools
 from contextvars import Context
 import json
+import os
 import selectors
 import shutil
 import subprocess
@@ -13,7 +14,8 @@ import threading
 from pathlib import Path
 from typing import Any
 
-from _browser_products import ProductError, verified_products
+from _corpus_index import CorpusIndexError as ProductError
+from .data import indexed_products
 
 from .repo import ROOT, Refused
 
@@ -35,6 +37,8 @@ class Bridge:
         self.ids = itertools.count(1)
         self.waiting = 0  # calls under way, which a snapshot waits out
         self._products: dict[subprocess.Popen[str], tuple[Any, Any]] = {}
+        self._readers: dict[subprocess.Popen[str], Any] = {}
+        self._data_pipes: dict[subprocess.Popen[str], int] = {}
 
     def _start(self) -> subprocess.Popen[str]:
         node = shutil.which("node")
@@ -47,18 +51,19 @@ class Bridge:
         # operation could finish while this interactive child is still alive.
         context = Context()
         try:
-            manager = verified_products(ROOT)
+            manager = indexed_products(ROOT)
             products = context.run(manager.__enter__)
         except (ProductError, OSError) as error:
-            raise Refused(f"published browser data is unavailable: {error}") from error
+            raise Refused(f"indexed reading data is unavailable: {error}") from error
         # Temporary snapshots can install their own exit cleanup. Re-register
         # after every acquisition so this verification and child teardown run
         # first, including after a bridge restart.
         atexit.unregister(self.close)
         atexit.register(self.close)
+        read_fd, write_fd = os.pipe()
         try:
             process = subprocess.Popen(
-                [node, str(BRIDGE), str(products.data_root)],
+                [node, str(BRIDGE), "--indexed", str(read_fd)],
                 cwd=ROOT,
                 stdin=subprocess.PIPE,
                 stdout=subprocess.PIPE,
@@ -66,22 +71,30 @@ class Bridge:
                 text=True,
                 encoding="utf-8",
                 bufsize=1,
+                pass_fds=(read_fd,),
             )
         except BaseException:
+            os.close(write_fd)
             try:
                 context.run(manager.__exit__, *sys.exc_info())
             finally:
                 atexit.unregister(self.close)
             raise
+        finally:
+            os.close(read_fd)
         self._products[process] = (context, manager)
+        self._readers[process] = products
+        self._data_pipes[process] = write_fd
         return process
 
-    def call(self, adapter: str, fn: str, *args: Any) -> Any:
+    def call(self, adapter: str, fn: str, *args: Any, cancelled=None) -> Any:
         with self._state:
             generation = self._generation
             if self._closing:
                 raise Refused("the model bridge is closing")
         with self.lock:
+            if cancelled is not None and cancelled():
+                raise Refused("the reading request was superseded")
             with self._state:
                 if self._closing or generation != self._generation:
                     raise Refused("the model bridge closed before this request could start")
@@ -110,6 +123,8 @@ class Bridge:
                 raise Refused(f"the model bridge stopped while answering {adapter} {fn}")
             try:
                 answer = json.loads(reply)
+                if not isinstance(answer, dict):
+                    raise ValueError("the bridge response is not an object")
             except ValueError as error:
                 # A line that is not the protocol: nothing after it can be trusted.
                 self._drop(process)
@@ -122,14 +137,52 @@ class Bridge:
             return answer.get("value")
 
     def _reply(self, process: subprocess.Popen[str]) -> str | None:
-        """One line from the bridge, or None if none arrives in time."""
+        """Answer selected-data requests until the browser model returns."""
         stream = process.stdout
         assert stream
         with selectors.DefaultSelector() as watch:
             watch.register(stream, selectors.EVENT_READ)
-            if not watch.select(timeout=PATIENCE):
-                return None
-        return stream.readline()
+            while True:
+                if not watch.select(timeout=PATIENCE):
+                    return None
+                line = stream.readline()
+                if not line:
+                    return line
+                try:
+                    message = json.loads(line)
+                except ValueError:
+                    return line
+                if not isinstance(message, dict) or message.get("reader_data") is not True:
+                    return line
+                try:
+                    reader = self._readers[process]
+                    context, _ = self._products[process]
+                    body = context.run(reader.read, message.get("path"))
+                    response = {"ok": True, "text": None if body is None else body.decode("utf-8")}
+                except Exception as error:
+                    response = {"ok": False, "error": str(error)}
+                payload = (json.dumps(response, ensure_ascii=False) + "\n").encode("utf-8")
+                descriptor = self._data_pipes[process]
+                while payload:
+                    count = os.write(descriptor, payload)
+                    payload = payload[count:]
+
+    def read_product(self, relative: str) -> bytes | None:
+        """Read a selected publication through the same owned source snapshot."""
+        with self.lock:
+            with self._state:
+                if self._closing:
+                    raise Refused("the model bridge is closing")
+                if self.process is None or self.process.poll() is not None:
+                    self._dispose(self.process)
+                    self.process = self._start()
+                process = self.process
+            reader = self._readers[process]
+            context, _ = self._products[process]
+            try:
+                return context.run(reader.read, relative)
+            except (ProductError, OSError, ValueError) as error:
+                raise Refused(f"indexed reading data is unavailable: {error}") from error
 
     def _dispose(self, process: subprocess.Popen[str] | None) -> None:
         if process is None:
@@ -143,6 +196,10 @@ class Bridge:
         # Release only after termination is confirmed. A failed teardown keeps
         # the process and snapshot owned, so a later close can finish it.
         lifetime = self._products.pop(process, None)
+        self._readers.pop(process, None)
+        descriptor = self._data_pipes.pop(process, None)
+        if descriptor is not None:
+            os.close(descriptor)
         try:
             if lifetime is not None:
                 context, manager = lifetime
@@ -172,6 +229,9 @@ class Bridge:
             self._generation += 1
             generation = self._generation
             process = self.process
+            reader = self._readers.get(process)
+            if reader is not None and hasattr(reader, "cancel"):
+                reader.cancel()
             if process is not None and process.poll() is None:
                 process.kill()
         with self.lock:
@@ -187,4 +247,14 @@ BRIDGE_PROCESS = Bridge()
 
 
 def call(adapter: str, fn: str, *args: Any) -> Any:
-    return BRIDGE_PROCESS.call(adapter, fn, *args)
+    worker = None
+    try:
+        from textual.worker import get_current_worker, NoActiveWorker
+        try:
+            worker = get_current_worker()
+        except NoActiveWorker:
+            pass
+    except ImportError:
+        pass
+    return BRIDGE_PROCESS.call(adapter, fn, *args,
+                               cancelled=(lambda: worker.is_cancelled) if worker else None)

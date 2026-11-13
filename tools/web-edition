@@ -3742,25 +3742,37 @@ def edition_selection(provider: str, entrypoint: Path, edition: str) -> dict:
     }
 
 
+def publication_output(recipe: dict) -> dict:
+    """Read the current declaration and disposition of one source recipe."""
+    from _document_schema import derived_kind_and_outputs
+    leaf = SRC / recipe["provider"] / recipe["canonical"]
+    declaration = tomllib.loads((leaf / "web-edition.toml").read_text(encoding="utf-8"))
+    release_path = ROOT / "release/publications" / recipe["provider"] / f"{recipe['document']}.json"
+    release = json.loads(release_path.read_text(encoding="utf-8")) if release_path.is_file() else {}
+    manifest = tomllib.loads((leaf / "publication.toml").read_text(encoding="utf-8"))
+    kind, _ = derived_kind_and_outputs(ROOT, leaf, manifest)
+    return {**recipe, "declaration": declaration, "release_status": release.get("status"),
+            "kind": kind}
+
+
 def publication_outputs() -> list[dict]:
     """Every declared publication output with its leaf's web declaration.
 
     A leaf's kind is the one the schema derives from its owning path; the
     manifest states it only where the registry cannot.
     """
-    from _document_schema import derived_kind_and_outputs
     from _print_document import recipes
-    rows = []
-    for recipe in recipes(ROOT, family="publication"):
-        leaf = SRC / recipe["provider"] / recipe["canonical"]
-        declaration = tomllib.loads((leaf / "web-edition.toml").read_text(encoding="utf-8"))
-        release_path = ROOT / "release/publications" / recipe["provider"] / f"{recipe['document']}.json"
-        release = json.loads(release_path.read_text(encoding="utf-8")) if release_path.is_file() else {}
-        manifest = tomllib.loads((leaf / "publication.toml").read_text(encoding="utf-8"))
-        kind, _ = derived_kind_and_outputs(ROOT, leaf, manifest)
-        rows.append({**recipe, "declaration": declaration, "release_status": release.get("status"),
-                     "kind": kind})
-    return rows
+    return [publication_output(recipe) for recipe in recipes(ROOT, family="publication")]
+
+
+def has_reader(row: dict) -> bool:
+    declaration = row["declaration"]
+    if (declaration.get("eligibility") not in {"eligible", "conditional"}
+            or declaration.get("withdrawn") or row["release_status"] == "hold"):
+        return False
+    if row["release_status"] != "alpha":
+        raise ConversionError(f"{row['id']}: publication has no alpha or hold disposition")
+    return True
 
 
 def reader_outputs() -> list[dict]:
@@ -3770,15 +3782,7 @@ def reader_outputs() -> list[dict]:
     Admission follows the native print universe: a withdrawn leaf or a held
     output has no reader. An ineligible leaf keeps only its print page.
     """
-    rows = []
-    for row in publication_outputs():
-        declaration = row["declaration"]
-        if (declaration.get("eligibility") not in {"eligible", "conditional"}
-                or declaration.get("withdrawn") or row["release_status"] == "hold"):
-            continue
-        if row["release_status"] != "alpha":
-            raise ConversionError(f"{row['id']}: publication has no alpha or hold disposition")
-        rows.append(row)
+    rows = [row for row in publication_outputs() if has_reader(row)]
     rows.sort(key=lambda row: row["id"])
     return rows
 
@@ -4131,6 +4135,44 @@ def product_json(identity: str) -> int:
     return 0
 
 
+def selected_product_record(identity: str, row: dict) -> dict:
+    """Check one handoff against its current source-owned reader admission."""
+    from _print_document import publication_recipe
+    if not isinstance(row, dict):
+        raise ConversionError("selected reader row must be an object")
+    provider, _, output = identity.partition("/")
+    current = publication_output(publication_recipe(provider, output, root=ROOT))
+    if not has_reader(current):
+        raise ConversionError(f"no reader output {identity}")
+    if row != current:
+        raise ConversionError(f"reader selection changed: {identity}")
+    return product_record(current)
+
+
+def product_row_json(identity: str, *, indexed: bool = False) -> int:
+    """Recheck the parent's selected row without rediscovering every reader.
+
+    The fresh interpreter still owns all conversion state and fidelity audits.
+    A changed declaration, disposition or recipe fails this batch selection.
+    """
+    try:
+        row = json.load(sys.stdin)
+        if indexed:
+            from _corpus_index import CorpusIndex
+            index = CorpusIndex(ROOT)
+            with index.verified_reads() as dependencies:
+                pinned_pandoc()
+                record = selected_product_record(identity, row)
+            record = {"record": record, "dependencies": dependencies}
+        else:
+            record = selected_product_record(identity, row)
+    except (ConversionError, OSError, ValueError) as error:
+        print(f"web-edition: {error}", file=sys.stderr)
+        return 1
+    sys.stdout.write(json.dumps(record, ensure_ascii=False, sort_keys=True))
+    return 0
+
+
 def figure_records_from_products() -> list[dict]:
     """Every figure record of the verified web-edition products."""
     from _browser_products import ProductError, verified_products
@@ -4203,6 +4245,10 @@ def main() -> int:
         return check_main(sys.argv[2:])
     if sys.argv[1:2] == ["--product-json"] and len(sys.argv) == 3:
         return product_json(sys.argv[2])
+    if sys.argv[1:2] == ["--product-row-json"] and len(sys.argv) == 3:
+        return product_row_json(sys.argv[2])
+    if sys.argv[1:2] == ["--indexed-product-row-json"] and len(sys.argv) == 3:
+        return product_row_json(sys.argv[2], indexed=True)
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--provider", required=True)
     parser.add_argument("documents", nargs="*")

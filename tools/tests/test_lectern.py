@@ -419,7 +419,7 @@ class WebEditionTests(unittest.TestCase):
             [sys.executable, str(ROOT / "tools/web-edition"), "--product-json", "claude/biographies/origen"],
             cwd=ROOT, check=True, capture_output=True, text=True).stdout
         files = {"web-editions/claude/biographies/origen.json": converted.encode("utf-8")}
-        with patch.dict(webedition._EDITIONS, {"files": files}):
+        with patch.object(bridge.BRIDGE_PROCESS, "read_product", side_effect=files.get):
             done = webedition.set_for_terminal("web/claude/biographies/origen.html", 80)
         text = "".join(run for run, _ in done["runs"])
         self.assertIn("Last revised (UTC):", text)
@@ -429,7 +429,7 @@ class WebEditionTests(unittest.TestCase):
     @unittest.skipIf(_markdown_at_the_pin(), "the pinned Markdown is installed, so there is no refusal to see")
     def test_the_renderer_refuses_any_markdown_but_the_pinned_one(self) -> None:
         files = {"web-editions/claude/biographies/origen.json": b'{"markdown": "# Origen"}'}
-        with patch.dict(webedition._EDITIONS, {"files": files}), self.assertRaises(Refused):
+        with patch.object(bridge.BRIDGE_PROCESS, "read_product", side_effect=files.get), self.assertRaises(Refused):
             webedition.set_for_terminal("web/claude/biographies/origen.html", 80)
 
     def test_a_path_outside_web_is_refused(self) -> None:
@@ -438,7 +438,7 @@ class WebEditionTests(unittest.TestCase):
                 webedition.edition_of(web)
 
     def test_an_edition_that_was_not_built_is_refused(self) -> None:
-        with patch.dict(webedition._EDITIONS, {"files": {}}):
+        with patch.object(bridge.BRIDGE_PROCESS, "read_product", return_value=None):
             with self.assertRaisesRegex(Refused, "no web edition"):
                 webedition.edition_of("web/claude/biographies/origen.html")
 
@@ -583,9 +583,11 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
         from lectern.surfaces.sources import Sources
 
         opening = bridge.call("sources", "opening")
-        held = next((at, i) for at, work in enumerate(opening["works"])
+        readable_page = bridge.call("sources", "find", {"readable": True})
+        first_page = bridge.call("sources", "find", {})
+        held = next((at, i) for at, work in readable_page["workRows"]
                     for i, edition in enumerate(work["editions"]) if edition["readable"])
-        empty = next((at, i) for at, work in enumerate(opening["works"])
+        empty = next((at, i) for at, work in first_page["workRows"]
                      for i, edition in enumerate(work["editions"]) if not edition["passages"])
         ready, release = threading.Event(), threading.Event()
         deliver = Sources.deliver
@@ -1096,7 +1098,7 @@ def products(root):
     finally:
         atexit.unregister(cleanup)
         temporary.cleanup()
-bridge.verified_products=products
+bridge.indexed_products=products
 client=bridge.Bridge()
 for attempt in range(int(sys.argv[3])):
     try:
@@ -1170,10 +1172,11 @@ for attempt in range(int(sys.argv[3])):
                 errors.append(error)
 
         try:
-            with (patch.object(bridge, "verified_products", products),
+            with (patch.object(bridge, "indexed_products", products),
                   patch.object(bridge.subprocess, "Popen", return_value=child) as start):
                 client.process = client._start()
-                self.assertEqual(start.call_args.args[0][-1], str(ROOT / ".scratch/next-product-consumers/private-data"))
+                self.assertEqual(start.call_args.args[0][-2], "--indexed")
+                self.assertIn(int(start.call_args.args[0][-1]), start.call_args.kwargs["pass_fds"])
                 self.assertEqual(events, ["enter"])
                 self.assertFalse(marker.get())
                 closer = threading.Thread(target=close)
@@ -1192,7 +1195,7 @@ for attempt in range(int(sys.argv[3])):
 
     def test_unverified_products_refuse_before_a_child_is_started(self) -> None:
         client = bridge.Bridge()
-        with (patch.object(bridge, "verified_products", side_effect=bridge.ProductError("missing descriptor")),
+        with (patch.object(bridge, "indexed_products", side_effect=bridge.ProductError("missing descriptor")),
               patch.object(bridge.subprocess, "Popen") as start,
               self.assertRaisesRegex(Refused, "missing descriptor")):
             client._start()
@@ -1209,7 +1212,7 @@ for attempt in range(int(sys.argv[3])):
                 yield SimpleNamespace(data_root=ROOT / ".scratch/next-product-consumers/private-data")
             finally:
                 events.append("exit")
-        with (patch.object(bridge, "verified_products", products),
+        with (patch.object(bridge, "indexed_products", products),
               patch.object(bridge.subprocess, "Popen", side_effect=OSError("cannot spawn")),
               self.assertRaisesRegex(OSError, "cannot spawn")):
             client._start()
@@ -1224,7 +1227,7 @@ for attempt in range(int(sys.argv[3])):
             yield SimpleNamespace(data_root=ROOT / ".scratch/next-product-consumers/private-data")
             raise bridge.ProductError("rights inputs changed")
         try:
-            with (patch.object(bridge, "verified_products", products),
+            with (patch.object(bridge, "indexed_products", products),
                   patch.object(bridge.subprocess, "Popen", return_value=child)):
                 client.process = client._start()
             with self.assertRaisesRegex(Refused, "rights inputs changed"):
@@ -1510,7 +1513,7 @@ class ReaderOptionTrimTests(unittest.TestCase):
 
         markdown = "**Strong** and [link](https://example.invalid/reader)."
         files = {"web-editions/reader/control.json": edition(markdown)}
-        with patch.dict(webedition._EDITIONS, {"files": files}), patch.object(webedition, "_SET", _Cache(24)):
+        with patch.object(bridge.BRIDGE_PROCESS, "read_product", side_effect=files.get), patch.object(webedition, "_SET", _Cache(24)):
             first = webedition.set_for_terminal("web/reader/control.html", 80)
             self.assertIs(webedition.set_for_terminal("web/reader/control.html", 80), first)
             self.assertEqual(first["source"], "web-editions/reader/control")

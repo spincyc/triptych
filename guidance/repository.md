@@ -17,14 +17,22 @@ Apply these rules in order:
 - `src/` contains tracked authoring sources, semantic publication manifests,
   evidence and research records, reusable fragments, and provider-neutral
   typed source data.
+- `src/index/` is the narrow derived-metadata exception: shared, reproducible
+  addresses, identities, hashes and the small discovery records readers need.
+  It contains no copy of corpus prose or rendered reading bodies and is never
+  edited as an authority. Canonical TSV, TOML, YAML and TeX retain ownership.
+  [Web data](web-data.md#tracked-discovery-and-ordinary-indexed-reading) owns
+  freshness, maintenance and the boundary between indexed reading and full
+  publication checks.
 - Web readers are generated from those sources when the site is built
   (the `web-editions` browser product); no reader text is tracked.
   `guidance/web-editions.md` owns them.
 - `build/` contains ignored, reproducible site and build intermediates. In a
   workspace, task-created logs, review output, caches, and experiments go under
   the owning `.scratch/` directory.
-- Generated browser data is outside Git. `release/browser-products.json` binds
-  per-family canonical inputs and exact expected outputs; `tools/browser-products`
+- Generated browser reading payloads are outside Git.
+  `release/browser-products.json` binds per-family canonical inputs and exact
+  expected outputs; `tools/browser-products`
   verifies warm caches and rebuilds exact misses offline. Workspace caches use
   `TRIPTYCH_BROWSER_DATA_ROOT=.scratch/browser-data`; direct producers write to
   an unsealed sibling working tree. `guidance/web-data.md` owns this contract.
@@ -96,7 +104,8 @@ their own authorization; this source migration grants none of them.
 
 External source records remain under `src/sources/`, not a generated provider
 branch. Generated indexes and reports are reproducible outputs, not source
-identity records.
+identity records. The thin discovery metadata permitted under `src/index/`
+does not change that distinction.
 
 Frozen papal installation/review input snapshots use the separate delivery
 index `release/papal-documents/input-delivery.json`. Exact original bytes are

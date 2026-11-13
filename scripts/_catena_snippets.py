@@ -17,7 +17,7 @@ SCHEMA = "triptych-catena-passage-snippets/v1"
 SNIPPET_FIELDS = {"id", "start", "end", "extent", "locator", "basis"}
 
 
-def reviewed(root, sources, edges):
+def reviewed(root, sources, edges, *, passage_ids=None):
     """Return validated code-point records and all errors, without partial use."""
     import _catena
 
@@ -59,6 +59,10 @@ def reviewed(root, sources, edges):
         if identifier in seen:
             errors.append(f"{label}: duplicate parent")
         seen.add(identifier)
+        # Interactive reads validate the selected parents' exact text and
+        # boundaries. The full producer still validates every parent by default.
+        if passage_ids is not None and identifier not in passage_ids:
+            continue
         passage = sources.passages.get(identifier, {})
         text = passage.get("text")
         if not isinstance(text, str) or not text.strip():

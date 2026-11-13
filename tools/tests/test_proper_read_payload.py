@@ -1,4 +1,4 @@
-"""The 1962 resolved-Read split reconstructs the served public structure."""
+"""Split reading products reconstruct the served public structure."""
 from __future__ import annotations
 
 import argparse
@@ -47,7 +47,14 @@ class ProperReadPayloadTests(unittest.TestCase):
         })
         self.assertEqual(catalog["schema"], self.generator.READ_CATALOG_SCHEMA)
         self.assertEqual(catalog["calendar"], "roman-1962")
-        self.assertEqual(catalog["generation"], hashlib.sha256(source_bytes).hexdigest())
+        reader = json.loads((PROPERS / "reader/roman-1962.json").read_text())
+        generation = reader.pop("generation")
+        self.assertEqual(reader, self.generator.reader_structure(source))
+        self.assertEqual(entry["reader_file"], "structure/propers/reader/roman-1962.json")
+        self.assertTrue(entry["reader_index"])
+        self.assertEqual(generation, hashlib.sha256(
+            (self.generator._compact(reader) + "\n").encode()).hexdigest())
+        self.assertEqual(catalog["generation"], generation)
         self.assertEqual(catalog["structure"], {
             key: value for key, value in source.items() if key != "masses"
         })

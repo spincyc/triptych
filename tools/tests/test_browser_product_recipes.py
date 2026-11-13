@@ -56,7 +56,12 @@ class RecipeTests(unittest.TestCase):
         for identifier, recipe in actual.items():
             with self.subTest(family=identifier):
                 holds = any(inventories == tree or inventories.startswith(tree + "/") for tree in recipe["input_trees"])
-                self.assertEqual(recipe["exclude_paths"], recipes._REVIEW_RECORDS if holds else [])
+                # Reader lookup metadata is keyed by name alone wherever a tree holds it.
+                index = any(recipes._READER_INDEX.startswith(tree + "/") for tree in recipe["input_trees"])
+                self.assertEqual(recipe["exclude_paths"],
+                                 (recipes._REVIEW_RECORDS if holds else []) + (["src/index"] if index else []))
+        self.assertEqual({identifier for identifier, recipe in actual.items() if "src/index" in recipe["exclude_paths"]},
+                         {"documents", "web-editions"})
 
     def test_recipe_factory_requires_delivery_and_runner_expands_out_once(self):
         with self.assertRaises(TypeError):

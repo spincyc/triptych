@@ -8,6 +8,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "scripts"))
@@ -89,6 +90,19 @@ regions = ["body"]
         revised = schema.identities(self.root, record)
         self.assertNotEqual(first["content"]["sha256"], revised["content"]["sha256"])
         self.assertNotEqual(first["render"]["sha256"], revised["render"]["sha256"])
+
+    def test_validation_and_identity_accept_one_operation_assembly(self):
+        from _document_types import Assembly
+        record = self.load()
+        expected = schema.identities(self.root, record)
+        assembly = Assembly(self.root)
+        with mock.patch("_document_types.Assembly", side_effect=AssertionError("new assembly")):
+            self.assertTrue(schema.validate(self.root, record, assembly=assembly)["ok"])
+            self.assertEqual(schema.identities(self.root, record, assembly=assembly), expected)
+        foreign = Assembly(self.root / "other")
+        self.assertFalse(schema.validate(self.root, record, assembly=foreign)["ok"])
+        with self.assertRaisesRegex(schema.SchemaError, "another repository"):
+            schema.identities(self.root, record, assembly=foreign)
 
     def test_a_minimal_manifest_derives_everything_its_path_and_records_state(self):
         # The leaf's path, its registered kind and its research records say

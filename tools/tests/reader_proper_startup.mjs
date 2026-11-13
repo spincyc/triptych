@@ -15,7 +15,7 @@ test('settled Read URLs hint only their bounded manifests and selected data', ()
   const day = hints('day', DAY);
   assert.equal(day.length, 7);
   assert.ok(day.includes('https://reader.example/browse/structure/calendar/roman-1962/2026.json'));
-  assert.ok(day.includes('https://reader.example/browse/structure/propers/catalog/roman-1962.json'));
+  assert.ok(day.includes('https://reader.example/browse/structure/propers/reader/roman-1962.json'));
   assert.ok(day.every(url => !url.includes('structure/ordinary/roman-1962.json')));
   const propers = hints('propers', PROPERS);
   assert.equal(propers.length, 5);

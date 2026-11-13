@@ -1164,6 +1164,8 @@ def identities(root: Path, record: dict, *, output: str | None = None, assembly=
     if assembly is None:
         from _document_types import Assembly
         assembly = Assembly(root)
+    elif assembly.root != root:
+        raise SchemaError("document assembly belongs to another repository")
     virtual = assembly.files(leaf_dir)
     owner = _owner(root, record["provider"], record["leaf"])
     content = _source_files(root, leaf_dir, evidence=False)
@@ -1334,6 +1336,8 @@ def validate(root: Path, record: dict, *, phase: str = "source", run_gates: bool
     if phase not in {"source", "content", "render"}:
         raise SchemaError("phase must be source, content or render")
     try:
+        if assembly is not None and assembly.root != root:
+            raise SchemaError("document assembly belongs to another repository")
         if record.get("discovery_error"):
             raise SchemaError(record["discovery_error"])
         path = root / record["manifest_path"] if record.get("manifest_path") else None
