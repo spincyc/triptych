@@ -15,17 +15,20 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "accepted-three-documents"
   criterion = "The full study, concise study and homily reach terminal ACCEPTED through genuine independent proper-study reviews and source/publication gates, with complete archived results and cycle evidence."
-  status = "open"
+  status = "pass"
+  evidence = ["src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/evaluations/proper-study-results/eaa5e2381738f740/record.md", "workflows/reviews/gpt-1962-67-production-2026-11-09/CYCLES.md", "workflows/reviews/gpt-1962-67-production-2026-11-09/PUBLICATION-GATES-0/evidence.json"]
 
   [[deliverables.requirements]]
   id = "reviewed-readers-and-print-compilation"
   criterion = "All three reader outputs, catalog links and release records pass their required checks, and all three current native print bundles compile successfully."
   status = "open"
+  evidence = ["workflows/reviews/gpt-1962-67-production-2026-11-09/PUBLICATION-GATES-0/evidence.json", "workflows/reviews/gpt-1962-67-production-2026-11-09/NATIVE-PRINT-2026-11-13/summary.json", "PROJECT-WORK.md"]
 
   [[deliverables.requirements]]
   id = "main-and-live-verification"
   criterion = "Validated commits reach main without history rewriting; the resulting Pages build, print-compile and deploy succeed, and all three live reader routes are verified."
   status = "open"
+  evidence = ["PROJECT-WORK.md"]
 
 [[deliverables]]
 id = "claude-1962-67-resumed-sixth-three-documents-2026-11-15"

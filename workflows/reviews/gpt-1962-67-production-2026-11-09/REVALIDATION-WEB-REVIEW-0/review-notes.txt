@@ -1,0 +1,40 @@
+Independent canonical web review — proper-study eaa5e2381738f740, web-review 0
+
+Packet and identity
+- Read the complete packet prose/fragments. Parsed the entire REVIEW_INPUTS object, including all 7,698 input-list entries, without using a truncated JSON representation as evidence.
+- Packet SHA-256: 2bb1f7961b0e20b43fb58cad003bee66c64f2212ed6da259c5db82c442b799e2.
+- Canonical Markdown: build/web/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.md.
+- Exact 81,324-byte conversion SHA-256: 044426496683095df82e37433155bba432c22ab37dee0ef6f8350017be7f5f5c. This matches research/web-artifact.json and the packet seal.
+- Current document-schema identities match every sealed content, evidence, render and output identity, including complete input-list equality, at both start and finish. This is byte-identity evidence, not a claim of semantic review of all 1,900-plus dependencies or external witness bytes.
+
+Text and source comparison
+- Read all 712 Markdown lines, including full appointed text, both complete interpretations, their four senses, comparison, generated chronology and evidence, scope, references, revision, rights and 50 notes.
+- Followed main.tex/publication.toml order. Compared all seven canonical authored sections through normalized source-text coverage: 225 substantive lines, no unmatched line. All 50 footnotes match their canonical source, including source loci and bracketed Aquinas locator.
+- Two separate semantic definition lists each retain Literal, Allegorical, Moral and Anagogical, with four bodies each. The distinctions between communal witness under trial and whole-person reform remain intelligible.
+- Eleven unique proper anchors identify only their respective texts. The 22 separate quotation blocks preserve Latin/English boundaries. All internal links resolve; no duplicate ids. No TeX commands or hidden model/workflow identifiers found in reader text. One revision and the rights notice remain visible.
+- The source's generated chronology table and evidence remain distinguishable from the authored interpretations. The table preserves passage/date pairing, event/composition distinction, Psalm numbering and alternatives. It was not rewritten or judged as authored prose.
+
+Independent targeted evidence inspection
+- Missale Romanum 1962, printed 421–422 / PDF 502–503: inspected both page images, the Sixth Sunday's heading/boundaries, texts, erroneous printed Epistle citation, chant repetitions, Secret/Postcommunion and Trinity Preface appointment. This was not a fresh collation of every Latin/English witness or rights antecedent.
+- Chrysostom, Homilies on Matthew 46.2–3, CCEL NPNF1-10 retained historical English, source lines 27203 onward: the preceding failures/opposition explain the disciples' fear; the small leaven's contact with the multitude and the many measures support the first interpretation; his contrast of signs and virtuous conduct supports the exposition. No fresh Greek collation claimed.
+- Aquinas, Super I Thes. 1, lecture 1 [87862], retained Corpus Thomisticum Latin: read the entire lecture, including the two explanations of power/Spirit/fullness, labor attached to faith, imitation qualified by conformity to Christ, the salutation's Trinity reference and resurrection/deliverance. The study's attributions match these distinctions. Restricted reading aid retained only in this scratch directory.
+- Jerome, Commentary on Matthew II, PL 26 cols. 91–92 / scan PDF 53: inspected the page image. Apostolic preaching/Church, scriptural knowledge, spirit/soul/body, reason/anger/desire and the warning against grounding dogma in uncertain parabolic interpretation support the second interpretation and its Trinity qualification.
+- Augustine, Questions on the Gospels I.11–12: read both complete retained Latin answers. Mustard/faith, leaven/love, wisdom and the three alternative identifications are faithfully distinguished.
+- Augustine, Expositions of Psalms 129.1–8 (NPNF Psalm 130), retained historical English: read all eight sections, including the refusal to cry, propitiation/sacrifice and resurrection/morning-watch argument. The study preserves the relation to the full psalm beyond the appointed chant verses.
+- Bede, Mark 11:22–25, retained Latin, paragraphs Et respondens Jesus and Et cum stabitis ad orandum: checked faith working through love and forgiveness/eternal life, without inventing a separate 11:24 lemma.
+- Schuster, Sacramentary I p. 417 / PDF 433: inspected original image; four effects of the sacrifice and nourishment followed by hunger are present. Also saw the continuation on p. 418 / PDF 434, whose political generalization is not adopted.
+- Schuster III p. 188 / PDF 204: inspected the Offertory paragraph. Gifts first received from God and the worshipper's need support the claim. The following different Secret was not treated as this Sunday's Secret.
+- Source copies/excerpts and their hashes are listed in source-evidence-manifest.json. Original repository research records guided source location only; predecessor verdicts and review conclusions were not read.
+
+Rendering and interaction
+- Focused preview regenerated from the sealed current Markdown with the repository Markdown renderer, reader-mark expansion, publication-reader wrapper, and current site/reader CSS and JavaScript. Reused existing local preview mechanics only, not prior findings or screenshot verdicts.
+- Chromium 157.0.8103.38: measured 1440x1000, 393x1000 and 320x852. No page overflow or content-boundary overflow detected. The main inventory remains horizontally scrollable on mobile; the chronology reflows into passage/context plus date. Tested inventory scrolling to expose the final column.
+- Tested footnote 1, its return link, and the chronology contents link. Footnote 1 lands below the sticky toolbar at mobile width. No browser console errors.
+- Captured 26 screenshots; personally inspected the 14 named in inspected-screenshots.json. This is bounded visual sampling, not a claim to have viewed every vertical pixel or every captured image.
+- Six external links requested with bounded HTTP range reads. Five returned 200/206. FSSPX returned HTTP 403; retained source evidence remains available, but live access to that URL was not verified. A 403 was not treated as evidence that its address is wrong.
+
+Finding
+WEB-001 is advisory: sections/20-commentary.tex line 47 ends by immediately repeating the preceding explanation that gifts received from God are presented with a request for mercy. Removing the final sentence loses no argument or attribution. It is isolated, not a recurring pattern requiring a blocking register repair.
+
+Inspection limits
+Canonical study only. No companion-reader inspection, native print/PDF inspection, deployment check, complete site-wide navigation or print-generation test. The preview supplies only the canonical treatment and excludes site-wide chrome and other publication routes. No exhaustive renewed calendar, chronology, rights or complete-witness research audit is claimed. No reviewed artifact, workflow state, coordinator record or publication wiring was changed. Browser/server processes were closed. Supporting outputs remain exclusively in the assigned scratch directory.

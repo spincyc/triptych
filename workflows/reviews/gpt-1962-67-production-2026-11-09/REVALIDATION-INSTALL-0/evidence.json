@@ -1,0 +1,285 @@
+{
+  "run": "eaa5e2381738f740",
+  "stage": "install-publication",
+  "iteration": 0,
+  "disposition": "PASS",
+  "packet": "build/tpt-runs/eaa5e2381738f740/packets/install-publication-0000.txt",
+  "packet_sha256": "60f920f149ffb19e7981e2e6fb97cc1856c0212fad0739005a669bc7555c1f16",
+  "source_checkpoint": "a50bb5c0d64132092074d7d4ba9d307264d38f90",
+  "source_review_closures": "All five complete accepted serialized review inputs matched current values before and after installation; see seal-check-before.json and seal-check-after.json.",
+  "changed_paths": [
+    "library/traditional-latin-mass.md",
+    "release/browser-products.json",
+    "release/public-alpha.json",
+    "release/rights/public-alpha-2026-07-15.md",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.json",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/web-edition.toml",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/production-review.md",
+    "src/sources/inventories/publications-v1.toml",
+    "src/sources/inventories/source-family-migration-v1.toml"
+  ],
+  "changed_path_hashes": {
+    "library/traditional-latin-mass.md": "8df64b2acd37cac369c941024c3007531a5a55c1dedeb38c596fe1c2420a4564",
+    "release/browser-products.json": "cf75f6e0af0c1ff97a4231dd43ee89d2b8730749599958c8a5bdb4a7d31db795",
+    "release/public-alpha.json": "1e3c71f2f7add0bdd150c04d78d5c58a350306d65f144c77ee8e17bb2cb129f9",
+    "release/rights/public-alpha-2026-07-15.md": "8ed0cde964e193ea6c124ea764fccf729e89d1d75e8356ab9f897e05ea6a9048",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.json": "c89403f7cc9b9abf08d188b0552db1573d582fcad75c29051df7998d5562e2dd",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.json": "c89403f7cc9b9abf08d188b0552db1573d582fcad75c29051df7998d5562e2dd",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.json": "c89403f7cc9b9abf08d188b0552db1573d582fcad75c29051df7998d5562e2dd",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/web-edition.toml": "3305e4dcbb5276067421d50944273fcdaf421d1e151aceb8db667e10c8faac1f",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/production-review.md": "1c6e976228840e77c26dec28cf5008be2508cc76dabbfb28d399aaecd8019062",
+    "src/sources/inventories/publications-v1.toml": "bfff8863c6ae3fdea731e81473770811aa361c31449b58cf8ba5f7fa12dfcd9e",
+    "src/sources/inventories/source-family-migration-v1.toml": "15d01fb29105bb86a530ca0d9594a4b3c5795d406ade5bfc974b24964f7b7895"
+  },
+  "release_decisions": [
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.json",
+    "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.json"
+  ],
+  "canonical_reviewed_conversion_sha256": "044426496683095df82e37433155bba432c22ab37dee0ef6f8350017be7f5f5c",
+  "reader_hashes": {
+    "status": "complete aggregate recorded with independent cold byte parity and checked",
+    "readers": {
+      "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany": {
+        "markdown_sha256": "044426496683095df82e37433155bba432c22ab37dee0ef6f8350017be7f5f5c",
+        "product_json_sha256": "1fcdc18458ccce4dbb4808fb94339c8cd29f97a0ec3f88193c81cb497b050429",
+        "blocking_constructs": [],
+        "eligibility": "eligible"
+      },
+      "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis": {
+        "markdown_sha256": "1a529e7a69a4df6e7f3d23e1ac1a8584642db9ada0d61864b269fde9676228c9",
+        "product_json_sha256": "be1d57f70d60ea4096d9162b36975df29a70fc880c67139132b56be828232ffe",
+        "blocking_constructs": [],
+        "eligibility": "eligible"
+      },
+      "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily": {
+        "markdown_sha256": "17292a2dba28c5182b85f9f27bb3b6bc82147c421c5750fe04c4a567725b0d06",
+        "product_json_sha256": "502a8d984102cdfc519c749d9ad7e5ce4ba7c768478346ed01deb1e52057c91b",
+        "blocking_constructs": [],
+        "eligibility": "eligible"
+      }
+    },
+    "document_catalog_sha256": "312fc3de3a1f996ffe8798dd2559c65c17328092e4b8203530cd4b31dba50f23",
+    "browser_products_identity": "e2b4b8a46c95a78cf4b78663c4b4b10b30f079c34107f7cc582cb0b12826db58",
+    "descriptor_sha256": "cf75f6e0af0c1ff97a4231dd43ee89d2b8730749599958c8a5bdb4a7d31db795",
+    "proof": "two-independent-cold-builds-byte-parity",
+    "editorial_approval": false,
+    "families": [
+      {
+        "id": "bibles",
+        "files": 1,
+        "bytes": 4230,
+        "key": "028e4ad4905a39175407b5f8795a24a28c01f558474d6e18e653495f84b13683"
+      },
+      {
+        "id": "encyclicals",
+        "files": 1,
+        "bytes": 598116,
+        "key": "da843d411c402f968e5536c86a6dfa57d9b639ec8daaa496d6c5c1382bc69599"
+      },
+      {
+        "id": "act-history",
+        "files": 557,
+        "bytes": 26293255,
+        "key": "3054d7431c5e1db93ff8d6052a325e235259af53da13db8501b3981b3ca2e0da"
+      },
+      {
+        "id": "calendar",
+        "files": 304,
+        "bytes": 18747411,
+        "key": "93632514913080554c4fd21f399015b05a8d7a9188ec9720d9060782d3f6bf82"
+      },
+      {
+        "id": "catena",
+        "files": 2222,
+        "bytes": 8052336,
+        "key": "5544cb79bd6ed728521590dc8fb8a9625a067ae291b0fde650b9f3377d0cd0e8"
+      },
+      {
+        "id": "documents",
+        "files": 1,
+        "bytes": 1246842,
+        "key": "61d5cc67ddcf7c360b52d4fe239f4d01cd86e5b15c73f13ff08938264c1ea3f6"
+      },
+      {
+        "id": "ordinary",
+        "files": 4,
+        "bytes": 1703188,
+        "key": "8a904ee86e187a72acfc450786c8d938006d4c5bd12da4fe874c65b6fc4470cd"
+      },
+      {
+        "id": "paragraphs",
+        "files": 5548,
+        "bytes": 841718,
+        "key": "dad8b3a60fd2e79fd2dc2ab6fc24f278d27a2818fe68dd21f8dde98119525a5b"
+      },
+      {
+        "id": "propers",
+        "files": 499,
+        "bytes": 72645557,
+        "key": "6193a290a1c02c7f491ac8d4da251b59db93bcd59de1d9ffc74781a4a7b7bcca"
+      },
+      {
+        "id": "readings",
+        "files": 1,
+        "bytes": 257826,
+        "key": "76b33a20f3edc12efd21575b2a77418c4cf6c18d12d8e4abcee541ab2022f91c"
+      },
+      {
+        "id": "rubrics",
+        "files": 4,
+        "bytes": 282944,
+        "key": "d5c16ac1c79d36b17e933f72d41949990f43923f78ae10f9a709d0d1b88f790d"
+      },
+      {
+        "id": "sources",
+        "files": 18510,
+        "bytes": 69831271,
+        "key": "294d12641d1ecdb7eeb3f683c16a6642538d2180872ec992f1ca31635320a69d"
+      },
+      {
+        "id": "web-editions",
+        "files": 279,
+        "bytes": 27165039,
+        "key": "1a687dade6736a8bb33937a9ad68e3f7cd4b3b3786799cadadfd50cf98153765"
+      }
+    ]
+  },
+  "aggregate_record": {
+    "bytes": 227669733,
+    "family_keys": {
+      "act-history": "3054d7431c5e1db93ff8d6052a325e235259af53da13db8501b3981b3ca2e0da",
+      "bibles": "028e4ad4905a39175407b5f8795a24a28c01f558474d6e18e653495f84b13683",
+      "calendar": "93632514913080554c4fd21f399015b05a8d7a9188ec9720d9060782d3f6bf82",
+      "catena": "5544cb79bd6ed728521590dc8fb8a9625a067ae291b0fde650b9f3377d0cd0e8",
+      "documents": "61d5cc67ddcf7c360b52d4fe239f4d01cd86e5b15c73f13ff08938264c1ea3f6",
+      "encyclicals": "da843d411c402f968e5536c86a6dfa57d9b639ec8daaa496d6c5c1382bc69599",
+      "ordinary": "8a904ee86e187a72acfc450786c8d938006d4c5bd12da4fe874c65b6fc4470cd",
+      "paragraphs": "dad8b3a60fd2e79fd2dc2ab6fc24f278d27a2818fe68dd21f8dde98119525a5b",
+      "propers": "6193a290a1c02c7f491ac8d4da251b59db93bcd59de1d9ffc74781a4a7b7bcca",
+      "readings": "76b33a20f3edc12efd21575b2a77418c4cf6c18d12d8e4abcee541ab2022f91c",
+      "rubrics": "d5c16ac1c79d36b17e933f72d41949990f43923f78ae10f9a709d0d1b88f790d",
+      "sources": "294d12641d1ecdb7eeb3f683c16a6642538d2180872ec992f1ca31635320a69d",
+      "web-editions": "1a687dade6736a8bb33937a9ad68e3f7cd4b3b3786799cadadfd50cf98153765"
+    },
+    "files": 27931,
+    "products": 13,
+    "products_identity": "e2b4b8a46c95a78cf4b78663c4b4b10b30f079c34107f7cc582cb0b12826db58",
+    "status": "ok"
+  },
+  "aggregate_check": {
+    "bytes": 227669733,
+    "family_keys": {
+      "act-history": "3054d7431c5e1db93ff8d6052a325e235259af53da13db8501b3981b3ca2e0da",
+      "bibles": "028e4ad4905a39175407b5f8795a24a28c01f558474d6e18e653495f84b13683",
+      "calendar": "93632514913080554c4fd21f399015b05a8d7a9188ec9720d9060782d3f6bf82",
+      "catena": "5544cb79bd6ed728521590dc8fb8a9625a067ae291b0fde650b9f3377d0cd0e8",
+      "documents": "61d5cc67ddcf7c360b52d4fe239f4d01cd86e5b15c73f13ff08938264c1ea3f6",
+      "encyclicals": "da843d411c402f968e5536c86a6dfa57d9b639ec8daaa496d6c5c1382bc69599",
+      "ordinary": "8a904ee86e187a72acfc450786c8d938006d4c5bd12da4fe874c65b6fc4470cd",
+      "paragraphs": "dad8b3a60fd2e79fd2dc2ab6fc24f278d27a2818fe68dd21f8dde98119525a5b",
+      "propers": "6193a290a1c02c7f491ac8d4da251b59db93bcd59de1d9ffc74781a4a7b7bcca",
+      "readings": "76b33a20f3edc12efd21575b2a77418c4cf6c18d12d8e4abcee541ab2022f91c",
+      "rubrics": "d5c16ac1c79d36b17e933f72d41949990f43923f78ae10f9a709d0d1b88f790d",
+      "sources": "294d12641d1ecdb7eeb3f683c16a6642538d2180872ec992f1ca31635320a69d",
+      "web-editions": "1a687dade6736a8bb33937a9ad68e3f7cd4b3b3786799cadadfd50cf98153765"
+    },
+    "files": 27931,
+    "products": 13,
+    "products_identity": "e2b4b8a46c95a78cf4b78663c4b4b10b30f079c34107f7cc582cb0b12826db58",
+    "status": "ok"
+  },
+  "cold_parity_scope": "Owning complete descriptor tool performed two independent cold builds for all 12 changed families and retained its unchanged, validated encyclicals proof; all 13 families are present. Existing candidate caches were preserved.",
+  "binding_preservation": {
+    "exact_changed_binding_paths": [
+      "THIRD_PARTY.md",
+      "library/traditional-latin-mass.md",
+      "release/browser-products.json",
+      "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily.json",
+      "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis.json",
+      "release/publications/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany.json",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location-page.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generation-metadata.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/homily.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/proper-components.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/retrieved.txt",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/publication.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/context.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/review-dependencies.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-dispositions.toml",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/00-opening.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/10-appointed-text.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/20-commentary.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/30-word-received-in-trial.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/40-whole-person-and-desire.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/50-comparison.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/90-apparatus.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/01-inventory.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/02-overview.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/04-themes.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/10-commentary.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/concise/90-apparatus.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/10-body.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/homily/90-apparatus.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/synthesis.tex",
+      "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/web-edition.toml",
+      "src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml",
+      "src/sources/works/augustine/quaestiones-euangeliorum/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/passages/1-11.toml",
+      "src/sources/works/augustine/quaestiones-euangeliorum/editions/latin-migne-corpus-corporum-wikisource-web-2026-09-05/passages/1-12.toml",
+      "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/epiphany-pentecost-trinity-pages-7a85c99f/artifact.toml",
+      "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey038-e7e9d004/artifact.toml",
+      "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey039-1072b2d3/artifact.toml",
+      "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey112-b9829704/artifact.toml",
+      "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-cummiskey114-db1cc0e0/artifact.toml",
+      "src/sources/works/fsspx/ordo/editions/2026-11-09-web/artifacts/html-abd8b0e2/artifact.toml",
+      "src/sources/works/fsspx/ordo/editions/2026-11-09-web/edition.toml",
+      "src/sources/works/george-leo-haydock/douay-rheims-with-haydock-commentary/editions/2014-loreto-feeney-memorial/artifacts/page-825-ae86732a/artifact.toml",
+      "src/sources/works/icrsp-france/ordo/editions/2026-11-09-web/artifacts/html-60cdeed4/artifact.toml",
+      "src/sources/works/icrsp-france/ordo/editions/2026-11-09-web/edition.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1924-burns-oates-washbourne-volume-1-english/artifacts/ia-original-volume-1-13aa55ad/artifact.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1924-burns-oates-washbourne-volume-1-english/artifacts/isidore-machine-text-e78f3515/artifact.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1924-burns-oates-washbourne-volume-1-english/artifacts/isidore-ocr-only-e2378715/artifact.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1924-burns-oates-washbourne-volume-1-english/artifacts/title-and-sixth-epiphany-5fe08023/artifact.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1924-burns-oates-washbourne-volume-1-english/edition.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1925-benziger-volume-2-english/artifacts/isidore-machine-text-4f45cab9/artifact.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1925-benziger-volume-2-english/artifacts/isidore-ocr-only-b4bce010/artifact.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/1925-benziger-volume-2-english/edition.toml",
+      "src/sources/works/ildefonso-schuster/the-sacramentary/editions/burns-oates-washbourne-english-1927/artifacts/twenty-third-pentecost-pages-cc8b4f6a/artifact.toml",
+      "src/sources/works/jacques-paul-migne/patrologia-latina-volume-24/editions/1865-paris/artifacts/jeremiah-29-pages-2f3d5660/artifact.toml",
+      "src/sources/works/jacques-paul-migne/patrologia-latina-volume-26/editions/paris-1845/artifacts/matthew-13-pages-e99f4fd2/artifact.toml"
+    ],
+    "changed_binding_count": 64,
+    "adopted_count": 61,
+    "updated_count": 3,
+    "retired_count": 0,
+    "all_out_of_scope_bindings_preserved": true,
+    "all_other_authorization_fields_preserved": true,
+    "scoped_hashes_current": true,
+    "rights_record_sha256": "8ed0cde964e193ea6c124ea764fccf729e89d1d75e8356ab9f897e05ea6a9048",
+    "site_sources_digest": "b1015d5c0f2c2c5071071cd7a4bde0fbbd07b970d64d00a1ae65aea7aec32300",
+    "three_claude_releases_preserved": true,
+    "three_minimal_gpt_releases_valid": true,
+    "global_post_refresh_gate": "pending coordinator-owned next program stage; not claimed by this local check"
+  },
+  "final_catalog_scope_verified": true,
+  "commands": "commands.json",
+  "limits": [
+    "Canonical study alone received the independent visual/browser inspection; synthesis and homily are converter-verified, not separately visually reviewed.",
+    "FSSPX external URL returned HTTP 403 during independent web review; no successful live access is asserted.",
+    "No PDF was installed or print review claimed. Coordinator reports separate selected native compilation success, outside this stage.",
+    "Global post-refresh release validation, terminal gates/archive, final source-suite synchronization and actual site/deployment verification are coordinator-owned downstream.",
+    "Later terminal audit/inventory mutations require owning complete browser-product refresh/check and scoped binding refresh again, as acknowledged by coordinator."
+  ],
+  "source_audit_and_inventory_stability": "No audit/source/inventory edits after the complete browser-product recording began."
+}

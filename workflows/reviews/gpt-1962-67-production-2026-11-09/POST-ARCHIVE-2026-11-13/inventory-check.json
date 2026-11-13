@@ -1,0 +1,18 @@
+{
+  "checked_on": "2026-11-13",
+  "source_checkpoint": "a50bb5c0d64132092074d7d4ba9d307264d38f90",
+  "scope": "After accepted run archive and owning inventory refresh; final browser-product/deployment checks remain separate.",
+  "publication_count": 155,
+  "source_surface_file_count": 3707,
+  "owners": 12,
+  "all_publication_and_owner_declarations_preserved": true,
+  "every_other_leaf_inventory_entry_preserved": true,
+  "classification_and_claude_inventory_hashes_preserved": {
+    "src/sources/inventories/classification-review-v1.toml": true,
+    "src/sources/inventories/claude-publications-v1.toml": true,
+    "src/sources/inventories/claude-classification-review-v1.toml": true
+  },
+  "family_review_states": "All 167 prior pending states and other non-snapshot fields preserved.",
+  "inventory_check_log": "source-inventory valid: publications=155 source_surface_files=3707 owners=12\n",
+  "family_check_log": "source-family-migration valid: families=0 review_units=167 screened=0 pending=167 trace_records=0 atomic_citation_coverage=false\n"
+}

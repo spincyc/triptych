@@ -82,7 +82,7 @@ to the 180-minute limit is left to the Pages workflow's owner.
 
 <!-- promised-deliverable: gpt-1962-67-production-2026-11-09 -->
 
-**In progress: all three content reviews accepted; publication validation underway.** The
+**In progress: workflow ACCEPTED and archived; final site validation and publication remain.** The
 maintainer requested the TLM propers documents for the upcoming Sunday and
 publication to main. The target is GPT identity 67, the universal 1962 resumed
 Sixth Sunday after the Epiphany on 15 November 2026. The eleven appointed
@@ -126,11 +126,26 @@ its reconciliation, verifies retained evidence hashes and returns PASS. The
 unchanged 1,185-word speech passes preflight and fresh independent review without
 findings. Artifact validation confirms one owner, three outputs, eight current
 generated files and exact accepted-review inputs. Fetching main on 13 November
-finds no newer upstream changes. Remaining work is artifact gates, the reviewed
-source checkpoint, canonical web review, publication wiring and gates, terminal
-run archive, three native print compilation checks, desktop/mobile reader and
-print-control checks, validated publication to main, successful Pages deployment
-and verification of all three live readers. Content acceptance does not yet
+finds no newer upstream changes. Artifact gates pass and reviewed-source
+checkpoint `a50bb5c0d6` is committed. The canonical conversion passes fidelity
+checks and independent web review, including a bounded desktop/mobile preview.
+Its sole advisory is the same isolated Offertory repetition. Publication wiring,
+complete browser-product recording/checking and the scoped 64-path release
+refresh pass. All five terminal publication checks and accepted-review
+comparisons pass; run `eaa5e2381738f740` is ACCEPTED with 21 results and
+21 packets, all iteration 0.
+Its verified archive is retained in the leaf and reproduces byte-for-byte.
+Post-archive inventory checks pass with 3,707 source-surface files and all
+167 review states preserved; all five accepted review-input objects remain
+exact. The complete post-archive browser-product record/check passes with
+13 families and 27,931 files; all 3,048 native TeX runtime assets verify.
+Remaining work is the final descriptor binding, site build and verification,
+desktop/mobile reader and print-control checks, validated publication to main,
+successful Pages deployment and verification of all three live readers. Selected native print compilation
+passes for all three outputs in two passes each (24, 10 and 3 pages). The full
+source suite passes on 13 November against the stable publication audit before
+the terminal archive; subsequent archive/inventory changes require their current
+checks and product derivation. Content acceptance does not yet
 establish publication or print-layout approval. Work stays on
 `feature/propers/codex`; the explicit main request authorizes a fast-forward
 update of the remote main ref without history rewriting.

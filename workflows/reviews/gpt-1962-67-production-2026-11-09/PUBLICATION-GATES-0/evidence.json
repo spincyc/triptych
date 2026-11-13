@@ -1,0 +1,50 @@
+{
+  "run": "eaa5e2381738f740",
+  "checked_on": "2026-11-13",
+  "terminal_disposition": "ACCEPTED",
+  "source_checkpoint": "a50bb5c0d64132092074d7d4ba9d307264d38f90",
+  "scope": "Actual five terminal gate commands; archive and later deployment checks are separate.",
+  "retention": "JSON strings preserve log content except the explicitly counted current-repository-root prefixes; original logs remain unchanged.",
+  "logs": [
+    {
+      "log_name": "publication-gates-0000-document-catalogue.log",
+      "exit_code": 0,
+      "native_sha256": "46db31c475fffaa113b71ed6afbb6f2e2f01d2fe6e22439aea7ae309cfceaf53",
+      "retained_log_sha256": "723fef2d9d76e8d7ab9ff6b85f450cf8f63b17c84fe14d76f607eb0f416fe559",
+      "repository_root_prefixes_removed": 1,
+      "log": "$ tools/tpt document-library check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany && tools/tpt document-library structure --check\nexit 0\n--- stdout ---\n1 work, 1 document, 3 issues, page extents unmeasured.\n  titles derived and checked against current source declarations: 3\n  titles the sources do not state: 0\n  documents with no current rendered page count: 1\n  the page's own derivation, replayed: src/web/browser/texts/catalogue-model.js\n  editions whose production record makes no comparable claim: 0\n  editions produced under a workflow version since superseded: 0 (advisory; nothing gates on it)\n  editions produced under a workflow version later than the one declared: 0\n  editions whose workflow source has been revised since they were produced: 0\n  workflows the comparison is measured against: 3\n157 works, 221 documents, 295 issues, page extents unmeasured.\n  .scratch/browser-data/e2b4b8a46c95a78cf4b78663c4b4b10b30f079c34107f7cc582cb0b12826db58/data/structure/documents/corpus.json is current\n\n--- stderr ---\n\n"
+    },
+    {
+      "log_name": "publication-gates-0000-public-alpha.log",
+      "exit_code": 0,
+      "native_sha256": "3889fdbde629c305eb28c5140e49dddefc7fbb95b4cf92a8e5e8ef0ff8e53f9f",
+      "retained_log_sha256": "3889fdbde629c305eb28c5140e49dddefc7fbb95b4cf92a8e5e8ef0ff8e53f9f",
+      "repository_root_prefixes_removed": 0,
+      "log": "$ tools/tpt public-alpha check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany\nexit 0\n--- stdout ---\npublic-alpha scoped policy valid: gpt:liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany\nglobal source, release and authorization records valid: 295 publications\npublication scope: liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany, liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily, liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis\nThis source-policy check is not a deployment verification.\n\n--- stderr ---\n\n"
+    },
+    {
+      "log_name": "publication-gates-0000-release-bindings.log",
+      "exit_code": 0,
+      "native_sha256": "ceb4f78fb2185c058c638e110f5286c3c57a64f4424b9c140760ba3ccb538395",
+      "retained_log_sha256": "ceb4f78fb2185c058c638e110f5286c3c57a64f4424b9c140760ba3ccb538395",
+      "repository_root_prefixes_removed": 0,
+      "log": "$ make check-release-bindings\nexit 0\n--- stdout ---\nbrowser-products: 13 products, 27931 files; ok\nexact: 0 stale binding(s)\n\n--- stderr ---\n\n"
+    },
+    {
+      "log_name": "publication-gates-0000-three-document-publication.log",
+      "exit_code": 0,
+      "native_sha256": "c579daaf3ec2bf2891cfdc30992d840cd62eca758ed3bfe2d187188c2a6a7880",
+      "retained_log_sha256": "c579daaf3ec2bf2891cfdc30992d840cd62eca758ed3bfe2d187188c2a6a7880",
+      "repository_root_prefixes_removed": 0,
+      "log": "$ python3 scripts/_proper_study.py check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --date 2026-11-15 --phase publication --require-presentation --require-format --require-authority --require-orientation --require-orientation-v3 --mode source\nexit 0\n--- stdout ---\nproper-study check publication: liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany\n\n--- stderr ---\n\n"
+    },
+    {
+      "log_name": "publication-gates-0000-web-editions-current.log",
+      "exit_code": 0,
+      "native_sha256": "4b1b9169adefd0dbea92b58b8c05d6f859c23d115d0152fe0d15b75332ca539d",
+      "retained_log_sha256": "4b1b9169adefd0dbea92b58b8c05d6f859c23d115d0152fe0d15b75332ca539d",
+      "repository_root_prefixes_removed": 0,
+      "log": "$ python3 tools/tpt web-edition check --leaf gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany\nexit 0\n--- stdout ---\nWeb editions convert: 3 reader output(s), 0 figure(s).\n\n--- stderr ---\n\n"
+    }
+  ]
+}

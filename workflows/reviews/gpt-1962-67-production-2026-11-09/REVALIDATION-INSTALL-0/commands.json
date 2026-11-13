@@ -1,0 +1,114 @@
+{
+  "stage": "install-publication",
+  "iteration": 0,
+  "run": "eaa5e2381738f740",
+  "packet_sha256": "60f920f149ffb19e7981e2e6fb97cc1856c0212fad0739005a669bc7555c1f16",
+  "source_checkpoint": "a50bb5c0d64132092074d7d4ba9d307264d38f90",
+  "completed_checks": [
+    {
+      "command": "tools/document-schema check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --phase content --run-gates",
+      "exit_code": 0,
+      "evidence": "schema-check.log"
+    },
+    {
+      "command": "tools/web-edition --provider gpt --output .scratch/gpt-1962-67-revalidation-install-0/web liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "exit_code": 0,
+      "evidence": "conversion.log"
+    },
+    {
+      "command": "tools/tpt web-edition check --leaf gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "exit_code": 0,
+      "evidence": "web-check.log"
+    },
+    {
+      "command": "tools/document-library structure --out .scratch/gpt-1962-67-revalidation-install-0/document-catalog",
+      "exit_code": 0,
+      "evidence": "document-catalog.log"
+    },
+    {
+      "command": "tools/source-inventory refresh --audited-on 2026-11-13",
+      "exit_code": 0,
+      "evidence": "inventory-refresh.log"
+    },
+    {
+      "command": "tools/source-family-migration refresh --audited-on 2026-11-13",
+      "exit_code": 0,
+      "evidence": "family-refresh.log"
+    },
+    {
+      "command": "tools/source-inventory check",
+      "exit_code": 0,
+      "evidence": "inventory-check.log"
+    },
+    {
+      "command": "tools/source-family-migration check",
+      "exit_code": 0,
+      "evidence": "family-check.log"
+    },
+    {
+      "command": "tmt check",
+      "exit_code": 0,
+      "evidence": "tool-registry.log"
+    },
+    {
+      "command": "tools/browser-products record --json",
+      "exit_code": 0,
+      "evidence": "browser-record.json"
+    },
+    {
+      "command": "tools/browser-products check --json",
+      "exit_code": 0,
+      "evidence": "browser-check.json"
+    },
+    {
+      "command": "tools/release-bindings add-publication --provider gpt --id liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --catalog library/traditional-latin-mass.md --status alpha",
+      "exit_code": 0,
+      "evidence": "release-add.log"
+    },
+    {
+      "command": "tools/release-bindings add-publication --provider gpt --id liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-synthesis --catalog library/traditional-latin-mass.md --status alpha",
+      "exit_code": 0,
+      "evidence": "release-add-synthesis.log"
+    },
+    {
+      "command": "tools/release-bindings add-publication --provider gpt --id liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany-homily --catalog library/traditional-latin-mass.md --status alpha",
+      "exit_code": 0,
+      "evidence": "release-add-homily.log"
+    },
+    {
+      "command": "tools/release-bindings status",
+      "exit_code": 1,
+      "evidence": "release-status-current.log",
+      "interpretation": "Expected pre-refresh report: 64 exact task-owned binding divergences; no unrelated divergence."
+    },
+    {
+      "argv_file": "release-refresh-argv.json",
+      "command": "tools/release-bindings refresh --adopt-new-site-sources (64 exact --only paths)",
+      "exit_code": 0,
+      "evidence": "release-refresh.log"
+    },
+    {
+      "command": "python3 .scratch/gpt-1962-67-revalidation-install-0/verify-final-bindings.py",
+      "exit_code": 0,
+      "evidence": "binding-preservation-check.json"
+    },
+    {
+      "command": "git diff --check",
+      "exit_code": 0
+    }
+  ],
+  "diagnostic_notes": [
+    "The first in-memory review-object comparison required JSON normalization because the API returns tuples for provenance while receipts contain JSON arrays. Complete serialized equality then passed for all five scopes before and after installation.",
+    "A scratch catalog inspection initially requested index.json; the owning tool emits corpus.json. The actual emitted corpus was inspected and all three target routes verified.",
+    "Pre-record release-binding status correctly refused stale browser-product inputs; no binding refresh was attempted before the required product proof.",
+    "A read-only binding comparison initially treated authorizations as a list; rerun using the manifest mapping succeeded. Only THIRD_PARTY.md and the target catalog differed among already-recorded sources before the product descriptor was recorded."
+  ],
+  "downstream_scope": [
+    "Terminal engine gates and archival",
+    "Full source suite",
+    "Native print compilation",
+    "Actual site and deployment verification",
+    "Mandatory next program stage make check-release-bindings supplies global post-refresh validation; worker verifies exact scoped diff and preservation after owning refresh."
+  ],
+  "release_refresh_scope_note": "THIRD_PARTY.md is included because its complete delta from its currently bound bytes is the task-owned 21-line resumed Sixth Sunday source-evidence notice committed in 89e6f0ff1e; the coordinator independently confirmed this authorization."
+}

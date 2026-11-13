@@ -7,7 +7,15 @@ The maintainer authorized the three-document workflow and publication of its
 validated result to main on 9 November 2026. This production uses the 1962
 Missal only, with the ordinary complete appointed-text publication mode.
 
-## Run
+The final workflow result is **ACCEPTED**: revalidation run
+`eaa5e2381738f740` reaches its terminal gate on 13 November 2026. Its
+21 packets and results are archived under this leaf's
+`evaluations/proper-study-results/eaa5e2381738f740/`. The earlier blocked run
+and every intervening review remain part of the history below. Final site,
+main and live-deployment completion are tracked in `PROJECT-WORK.md` and
+`promised-deliverables.toml`.
+
+## Initial run
 
 - Workflow: `proper-study`, version 19.
 - Digest: `73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645`.
@@ -573,3 +581,126 @@ The staged whitespace check identifies one surplus final blank line in the
 retained research-review notes. Only that blank line is removed from the public
 copy; original scratch evidence remains unchanged. Its retention receipt records
 both hashes. All inspection text and review verdicts are preserved.
+
+The reviewed checkpoint is committed as `a50bb5c0d64132092074d7d4ba9d307264d38f90`.
+All three edition-revision commands report `uncommitted: false`: the study and
+synthesis use 13 November 2026, 12:52:18 UTC; the unchanged homily retains its
+10 November 2026, 04:21:20 UTC content revision. No timestamp is invented.
+The engine dispatches one fresh generate-web worker at high.
+
+Generate-web iteration 0 passes. The canonical conversion contains 81,324 bytes,
+SHA-256 044426496683095df82e37433155bba432c22ab37dee0ef6f8350017be7f5f5c.
+The converter fidelity audits and declaration check pass; its receipt identifies
+the exact bytes for independent web review. All three source closures remain
+committed. This stage changes only the web-artifact receipt and makes no
+browser, companion or print-review claim. Retained evidence is in
+[REVALIDATION-WEB-0](REVALIDATION-WEB-0/).
+
+Web review iteration 0 passes for the exact canonical conversion. The reviewer
+reads all 712 lines, compares seven canonical sections and all fifty notes,
+checks targeted primary loci and inspects fourteen captured preview screenshots
+at desktop/mobile widths. All sealed source identities and the reader hash
+match at start and finish. One advisory, WEB-001, concerns the same isolated
+Offertory repetition; accepted prose is preserved. Five external references
+respond successfully; the FSSPX reference returns HTTP 403, so its live access
+is not verified. This focused preview excludes companions, native print and
+deployment. Exact inspection scope and identity checks are retained in
+[REVALIDATION-WEB-REVIEW-0](REVALIDATION-WEB-REVIEW-0/); screenshots remain
+scratch-only with their inspected-file hashes recorded.
+
+The engine accepts web-review and dispatches one fresh install-publication
+worker at high. Shared catalog, release, product-descriptor and owning
+inventory writes are serialized to that worker. A fresh fetch still finds
+main at 92032f5178, already integrated. The coordinator reserves terminal
+archive, full source validation, native print compilation and actual local/live
+site checks for the publication checkpoint.
+
+The three admitted GPT print bundles are prepared from source checkpoint
+a50bb5c0d6 and compiled with native pdfTeX against the declared browser runtime
+closure. All pass in two passes: study 24 pages, synthesis 10, homily 3. All
+29 required runtime fonts are located; no runtime members use differing host
+bytes, and no closure problem is reported. Exact bundle/render/PDF hashes and
+toolchain evidence are retained in [NATIVE-PRINT-2026-11-13](NATIVE-PRINT-2026-11-13/).
+This is a selected three-bundle compilation check, not all-corpus deployment
+CI, browser-WASM byte equivalence or visual/physical print acceptance.
+
+While the complete browser-product record runs against stable publication
+inputs, the coordinator runs make check-sources to completion. It passes:
+source graph, both inventories, containment, commentator and held-corpus
+accounting, 23 corpus tests, 17 chronology freshness tests (415.936 seconds),
+six generated-document tests, and the migration ledger. All 167 family review
+states remain pending. The exact log and a dated scope/hash receipt are retained
+in [SOURCE-CHECK-2026-11-13](SOURCE-CHECK-2026-11-13/). This result precedes the
+terminal archive; subsequent inventory changes receive current owning checks,
+and changed browser-product inputs require a fresh complete derivation.
+
+The installation-stage aggregate browser-product record passes after two
+independent cold builds of all twelve changed families. The unchanged
+encyclicals family retains the owning tool’s validated prior proof. The
+complete descriptor covers thirteen families, 27,931 files and 227,669,733
+bytes, identity e2b4b8a46c95a78cf4b78663c4b4b10b30f079c34107f7cc582cb0b12826db58.
+No partial descriptor or cache-only substitute was adopted. Descriptor checking
+and scoped release binding remain with the installation worker.
+
+Installation iteration 0 passes. All five accepted closures remain exact, the
+three GPT release decisions and catalog links pass preservation checks, and
+the complete browser-product descriptor check passes. The owning scoped refresh
+changes exactly 64 bindings: 61 additions and three updates, with no retirements.
+All other bindings and authorization fields, and all three Claude releases,
+are preserved. Generated rights-table hashes are refreshed by the owning tool.
+Stage evidence, commands and catalog verification are retained in
+[REVALIDATION-INSTALL-0](REVALIDATION-INSTALL-0/). The engine accepts the worker
+result and starts publication-gates iteration 0; its global release validation
+is still pending at this handoff. A fresh fetch again finds main at 92032f5178.
+
+Publication-gates iteration 0 passes all five commands: the three-document
+publication contract, global release bindings (zero stale), public-alpha
+source/release/authorization validation for 295 publications, document catalog
+and all three reader conversions. The final accepted-review comparisons pass.
+Run eaa5e2381738f740 reaches **ACCEPTED**, with 21 results and 21 packets,
+each at iteration 0, and no manual engine interventions. The earlier blocked
+run remains an intact historical record. Actual terminal logs are retained in
+[PUBLICATION-GATES-0](PUBLICATION-GATES-0/); one local repository-root prefix
+in the catalog log is removed with original/retained hashes and an exact count.
+
+The owning archive tool verifies and archives the accepted run in the leaf.
+A second archive into scratch is byte-identical. All 46 native input records
+retain their original hashes; both privacy options are enabled but no input
+needs a replacement. The archive adds 48 files including its record and receipt.
+The subsequent owning inventory synchronization and complete browser-product
+rebuild remain necessary before the final site checks and publication push.
+
+Post-archive synchronization passes with 155 publications, 3,707 inventoried
+source-surface files and twelve owners. The 22 added text entries are this
+run's packets and record. Every other leaf's inventory entries, all publication
+and owner declarations, both classifications, the Claude inventory and all
+167 pending family-review states are preserved. Each of the five complete
+current review-input objects still equals its engine-accepted object; none
+is renewed or restamped. Bounded evidence is retained in
+[POST-ARCHIVE-2026-11-13](POST-ARCHIVE-2026-11-13/). The accepted source and
+archive checkpoint is ready; its changed product inputs still require the
+complete owning browser-product derivation before deployment validation.
+
+The complete post-archive browser-product record and check pass. The owning
+tool compares two independent cold builds of all twelve changed families;
+its unchanged encyclicals proof remains validated. The aggregate again contains
+thirteen families, 27,931 files and 227,669,733 bytes, now under identity
+`dc0f85977164a0e9b2a83818e88888420963e93fbb9252f89fa7c20afbdd7acc`.
+All 3,048 declared native TeX runtime assets also verify. Exact command outputs
+are retained in POST-ARCHIVE-2026-11-13. The first deliverables check after
+archiving correctly refused stale browser products. With current products,
+the check identifies two open requirements missing evidence paths; links to
+their existing progress/partial-validation records are added, without marking
+either requirement passed. The final scoped binding refresh is limited to
+`release/browser-products.json`, the sole recorded source with changed bytes.
+
+The corrected deliverables ledger passes: 128 tracked promises, 105 complete.
+This production remains in progress with its final reader/site and main/live
+requirements open. Comparing the complete before/after product output records
+shows that all thirteen families retain identical output bytes, while twelve
+input keys change to account for the archive and inventory. The fresh two-pass
+proof is retained; no older descriptor was restamped. The final publication
+snapshot will be committed before site construction because native print
+controls identify the exact checkout commit. Subsequent local/browser/deployment
+facts belong in the two operational status files, whose changes alone are
+excluded from the Pages trigger.

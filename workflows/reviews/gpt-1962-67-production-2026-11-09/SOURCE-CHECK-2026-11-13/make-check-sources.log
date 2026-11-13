@@ -1,0 +1,69 @@
+source-library valid: artifact=11019 corpus=5 edition=14334 passage=9657 segment=10822 work=10959 bindings=4671 external-witnesses=720:metadata-only
+source-inventory valid: publications=66 source_surface_files=2434 owners=6
+source-inventory valid: publications=155 source_surface_files=3685 owners=12
+containment: 228 containers (178 records, 50 whole-volume artifacts), 7870 constituents, 87 of them commentary-index leads
+  resolved 42 · partial 160 · unresolved 26 · not containers 37 · identities 6
+author standing: 55 persons · father 20 · doctor 4 · saint 2 · blessed 1 · servant-of-god 1 · ecclesiastical-writer 23 · non-catholic 4
+  liturgical commentaries with a row: 12 of 14 · published lane authors with a row: 33 of 38
+  no row yet (liturgical commentaries): work.joseph-husslein.christ-the-king
+  no row yet (liturgical commentaries): work.patrick-l-murphy.new-rubrics-of-the-roman-breviary-and-missal
+  no row yet (lane authors): Alphonsus Liguori
+  no row yet (lane authors): Anthony of Padua
+  no row yet (lane authors): Hippolytus
+  no row yet (lane authors): Pius XI
+  no row yet (lane authors): Victorinus of Pettau
+formulary loci: 11 works, 46 loci (6 structural, 4 of them by topic only and listed under no mass)
+  headings replayed against their lines: 42 · read in a facsimile, bounded by pages: 4
+.......<frozen importlib._bootstrap>:533: DeprecationWarning: the load_module() method is deprecated and slated for removal in Python 3.15; use exec_module() instead
+................
+----------------------------------------------------------------------
+Ran 23 tests in 17.579s
+
+OK
+held corpus audit: ok
+  manifests: 56791
+  records_by_type: {'artifact': 11019, 'edition': 14334, 'passage': 9657, 'segment': 10822, 'work': 10959}
+  invalid_manifests: 0
+  passages: 9657
+  passages_by_index_state: {'indexed': 1580, 'parallel': 1, 'unindexed': 8076}
+  passages_by_language: {'Albanian sung text; Italian preface': 1, 'Greek and Albanian': 1, 'Greek transliteration, Albanian and Italian': 1, 'arc': 2, 'ca': 4, 'cop-ar': 2, 'cu': 10, 'de': 5, 'de-la': 2, 'en': 3776, 'en-hy-grc-syr': 1, 'eng': 2, 'es': 3, 'fr': 22, 'grc': 35, 'grc-la': 11, 'he': 9, 'hr': 1, 'hy': 1, 'it': 22, 'la': 5709, 'la-de': 9, 'la-en': 3, 'mul': 13, 'syr': 11, 'uk': 1}
+  passages_by_applicability: {'deferred-multiple-loci': 11, 'direct-commentary': 1594, 'incidental-citation': 2, 'needs-admission': 19, 'needs-boundary-review': 4, 'no-scripture-commentary': 129, 'redundant-container': 4, 'unestablished': 7894}
+  books_with_fragments: 22
+  chapters_with_fragments: 89
+  verses_with_fragments: 1369
+  chapter_leads_by_scope: {'eligible': 7130, 'excluded': 18, 'unreviewed': 1929}
+  Unindexed does not establish missing commentary; see applicability and gates in --json.
+test_authored_date_page_cannot_hide_behind_fresh_assembly (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_authored_date_page_cannot_hide_behind_fresh_assembly) ... ok
+test_authored_unsupported_claim_remains_refused (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_authored_unsupported_claim_remains_refused) ... ok
+test_changed_corpus_reaches_checks_without_refreshing_snapshots (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_changed_corpus_reaches_checks_without_refreshing_snapshots) ... ok
+test_malformed_shared_corpus_is_refused (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_malformed_shared_corpus_is_refused) ... ok
+test_missing_appointment_input_remains_explicitly_pending (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_missing_appointment_input_remains_explicitly_pending) ... ok
+test_missing_snapshots_use_the_live_assembly_without_writing (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_missing_snapshots_use_the_live_assembly_without_writing) ... ok
+test_refresh_check_validates_live_assembly_without_rewriting (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_refresh_check_validates_live_assembly_without_rewriting) ... ok
+test_stale_snapshots_do_not_replace_current_shared_content (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_stale_snapshots_do_not_replace_current_shared_content) ... ok
+test_unavailable_ritual_formulary_does_not_acquire_dates (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_unavailable_ritual_formulary_does_not_acquire_dates) ... ok
+test_wrong_scope_is_not_treated_as_an_absent_projection (tools.tests.test_generated_proper_chronology_freshness.AssemblyFreshnessTests.test_wrong_scope_is_not_treated_as_an_absent_projection) ... ok
+test_a_changed_corpus_refuses_both_unchanged_consumer_artifacts (tools.tests.test_generated_proper_chronology_freshness.FreshnessRefusalTests.test_a_changed_corpus_refuses_both_unchanged_consumer_artifacts) ... ok
+test_an_altered_dossier_is_refused (tools.tests.test_generated_proper_chronology_freshness.FreshnessRefusalTests.test_an_altered_dossier_is_refused) ... ok
+test_an_omitted_annotation_qualification_is_refused (tools.tests.test_generated_proper_chronology_freshness.FreshnessRefusalTests.test_an_omitted_annotation_qualification_is_refused) ... ok
+test_discovery_excludes_an_unrelated_genre_chronology_record (tools.tests.test_generated_proper_chronology_freshness.FreshnessRefusalTests.test_discovery_excludes_an_unrelated_genre_chronology_record) ... ok
+test_discovery_keeps_an_annotation_consumer_without_its_record (tools.tests.test_generated_proper_chronology_freshness.FreshnessRefusalTests.test_discovery_keeps_an_annotation_consumer_without_its_record) ... ok
+test_every_adopted_projection_and_authored_claim_is_current (tools.tests.test_generated_proper_chronology_freshness.GeneratedProperChronologyFreshnessTests.test_every_adopted_projection_and_authored_claim_is_current) ... ok
+test_source_maintenance_and_publication_reach_the_freshness_gate (tools.tests.test_generated_proper_chronology_freshness.GeneratedProperChronologyFreshnessTests.test_source_maintenance_and_publication_reach_the_freshness_gate) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 415.936s
+
+OK
+test_an_authored_heading_notes_or_table_import_is_refused (tools.tests.test_generated_documents_freshness.AuthoredDatePageTests.test_an_authored_heading_notes_or_table_import_is_refused) ... ok
+test_generated_research_comment_and_prose_mentions_are_not (tools.tests.test_generated_documents_freshness.AuthoredDatePageTests.test_generated_research_comment_and_prose_mentions_are_not) ... ok
+test_every_proper_leaf_declares_a_type_that_slots_the_date_page (tools.tests.test_generated_documents_freshness.EveryProperLeafIsOnADocumentTypeTests.test_every_proper_leaf_declares_a_type_that_slots_the_date_page) ... ok
+test_every_opted_in_leaf_assembles_and_has_no_authored_copy (tools.tests.test_generated_documents_freshness.GeneratedDocumentsFreshnessTests.test_every_opted_in_leaf_assembles_and_has_no_authored_copy) ... ok
+test_source_maintenance_and_publication_reach_the_gate (tools.tests.test_generated_documents_freshness.GeneratedDocumentsFreshnessTests.test_source_maintenance_and_publication_reach_the_gate) ... ok
+test_only_an_opted_in_leafs_generated_pages_skip_the_prose_date_scan (tools.tests.test_generated_documents_freshness.PreflightExemptionTests.test_only_an_opted_in_leafs_generated_pages_skip_the_prose_date_scan) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 9.198s
+
+OK
+source-family-migration valid: families=0 review_units=167 screened=0 pending=167 trace_records=0 atomic_citation_coverage=false

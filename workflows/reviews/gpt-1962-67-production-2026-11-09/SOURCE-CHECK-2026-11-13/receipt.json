@@ -1,0 +1,37 @@
+{
+  "command": "make check-sources",
+  "performed_on": "2026-11-13",
+  "exit_code": 0,
+  "head": "a50bb5c0d64132092074d7d4ba9d307264d38f90",
+  "phase": "Stable publication audit and synchronized inventories, before terminal workflow archive",
+  "log_sha256": "5edac7af194918042f4ba762eb38e7aa2dff6d9675055d1f1fb1c0742a044842",
+  "test_groups": [
+    {
+      "tests": 23,
+      "seconds": 17.579,
+      "status": "PASS"
+    },
+    {
+      "tests": 17,
+      "seconds": 415.936,
+      "status": "PASS"
+    },
+    {
+      "tests": 6,
+      "seconds": 9.198,
+      "status": "PASS"
+    }
+  ],
+  "current_input_hashes": {
+    "src/sources/inventories/publications-v1.toml": "bfff8863c6ae3fdea731e81473770811aa361c31449b58cf8ba5f7fa12dfcd9e",
+    "src/sources/inventories/claude-publications-v1.toml": "50aacda105740aa4fdb4ba78984631f39bc4ef165207535825b88c9229d722fc",
+    "src/sources/inventories/source-family-migration-v1.toml": "15d01fb29105bb86a530ca0d9594a4b3c5795d406ade5bfc974b24964f7b7895",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/production-review.md": "1c6e976228840e77c26dec28cf5008be2508cc76dabbfb28d399aaecd8019062",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/web-edition.toml": "3305e4dcbb5276067421d50944273fcdaf421d1e151aceb8db667e10c8faac1f"
+  },
+  "limits": [
+    "Not a source-family editorial acceptance: all 167 family review states remain pending.",
+    "Terminal archive and subsequent inventory changes require their own current checks and browser-product proof.",
+    "No browser, deployment or physical print acceptance follows from this source suite."
+  ]
+}

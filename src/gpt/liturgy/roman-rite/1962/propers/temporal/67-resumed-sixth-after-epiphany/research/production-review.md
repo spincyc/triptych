@@ -575,3 +575,48 @@ evaluated. Web conversion and independent web acceptance remain downstream
 work. The coordinator owns shared publication-inventory and family-ledger
 synchronization after this audit; no new repository-wide `make check-sources`
 result is claimed.
+
+## Revalidation run eaa5e2381738f740: source and reader publication
+
+The engine recorded independent iteration-0 PASS results for research, the
+expansive study, the concise study and the homily, followed by the source
+artifact gates and canonical web review. At installation on 13 November 2026,
+the current research, study, synthesis, homily and web review-input objects
+were recomputed and compared in full with those accepted records; all five
+matched. The research seal uses proper-study-v5 in source mode. This checks
+the accepted closure and does not claim a new collation or research review.
+The study and web reviewers' isolated repetition advisories remain
+nonblocking; installation preserves the accepted prose.
+
+The content schema with registered validators passed for the one owner and
+all three declared outputs. A fresh canonical conversion reproduced the
+reviewed 81,324-byte Markdown exactly, SHA-256
+`044426496683095df82e37433155bba432c22ab37dee0ef6f8350017be7f5f5c`.
+The leaf-wide web check then converted all three readers with the normal
+fidelity audits and no figures. The canonical inspection is recorded in
+`web-edition.toml`; the synthesis and homily remain converter-verified only.
+
+The independent web reviewer read all 712 Markdown lines, compared the seven
+canonical authored sections and all 50 notes, checked the eleven appointed
+anchors and both four-senses blocks, and inspected fourteen screenshots with
+Chromium checks at widths of 1440, 393 and 320 pixels. This was a focused
+preview using the current site renderer, not an inspection of a complete
+deployed site. Five of six external links returned successful responses;
+the FSSPX Ordo request returned HTTP 403, so live access to that reference
+was not verified. The retained source evidence and its existing limits stand.
+
+Three independently owned release records select alpha distribution under
+the existing perpetual-public-repository-2026 authorization. The existing
+1962 catalog row now links the GPT full study, synthesis and homily readers
+in declared order, with one canonical GPT publication marker. The three
+Claude releases and their row links are preserved. No PDF download is
+advertised, and no second prose owner or tracked reader copy was created.
+
+This audit records completed source reviews, conversion and inspection, and
+publication wiring. The complete browser-product proof and scoped release
+bindings are maintained by their owning tools and checked by the terminal
+publication gates; they confer no editorial approval. Terminal workflow
+acceptance, full source-suite verification, native print compilation and
+actual site/deployment verification remain separate downstream events. No
+PDF export or physical-page inspection was performed by this stage, and no
+deployed publication is claimed here.
