@@ -1,0 +1,84 @@
+{
+  "status": "ACCEPT finite source/actor/span inputs; not adapter activation",
+  "input_path": ".scratch/modern-lent-orations/execution-addendum/execution-input-v2.json",
+  "input_sha256": "1ae6ad610521ee2a16dfe132c9866716c031870108f82c755f8e23020c0d5ba4",
+  "checks": [
+    {
+      "target": [
+        "good-friday",
+        "main",
+        "Solemn Intercession IV: For catechumens",
+        "all",
+        1
+      ],
+      "lang": "en",
+      "all_prayer_words_accounted_for_once": true,
+      "source_scalar_and_dictionary_pins_match": true,
+      "spans_exact_utf16_nonoverlapping": true,
+      "only_whitespace_excluded": true,
+      "response_actor": "response",
+      "response_already_in_source_body": true
+    },
+    {
+      "target": [
+        "good-friday",
+        "main",
+        "Solemn Intercession IV: For catechumens",
+        "all",
+        1
+      ],
+      "lang": "la",
+      "all_prayer_words_accounted_for_once": true,
+      "source_scalar_and_dictionary_pins_match": true,
+      "spans_exact_utf16_nonoverlapping": true,
+      "only_whitespace_excluded": true,
+      "response_actor": "response",
+      "response_already_in_source_body": true
+    },
+    {
+      "target": [
+        "lent-4",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "lang": "en",
+      "all_prayer_words_accounted_for_once": true,
+      "source_scalar_and_dictionary_pins_match": true,
+      "spans_exact_utf16_nonoverlapping": true,
+      "only_whitespace_excluded": true,
+      "response_actor": "people",
+      "response_already_in_source_body": false
+    },
+    {
+      "target": [
+        "lent-4",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "lang": "la",
+      "all_prayer_words_accounted_for_once": true,
+      "source_scalar_and_dictionary_pins_match": true,
+      "spans_exact_utf16_nonoverlapping": true,
+      "only_whitespace_excluded": true,
+      "response_actor": "people",
+      "response_already_in_source_body": false
+    }
+  ],
+  "new_actor_record_syntax_errors": [],
+  "complete_owning_chain_checks": {
+    "_validate_relationships": [],
+    "_validate_loci": [],
+    "_validate_work_dates": [],
+    "_validate_artifact_licenses": [],
+    "_validate_cycles": [],
+    "_validate_passage_locators": []
+  },
+  "historical_actor_findings": "Fresh1970 AP244/p251 rubric10 assigns invitation and collect to priest with common silence between. Rubric11 makes conference acclamation or deacon kneeling directions conditional. Local IV AP246 provides R.Amen but does not expressly name its respondent; retain actor=response. Lent4 IGMR122 AP50 explicitly assigns final Amen to people.",
+  "consumer_requirements": "Exact body, source, complete dictionary and recipient pins must gate any execution projection. Render GF response once from existing reviewed span, not an appended copy. Render Lent4 separately sourced people Amen once outside unchanged priest scalar. Preserve visible1970/unresolved2008 qualification. Current input JSON alone activates no consumer.",
+  "canonical_mutation": false,
+  "checker_sha256": "68adea6c25d45df4ac54d5a3df7da8bd1ee0c790e50d77a0390dbbde4601a8f5"
+}

@@ -1,0 +1,512 @@
+{
+  "schema": "bounded-independent-acclamation-review-v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "ordinary_candidates",
+  "scope": "Five candidates, source-only independent review; no canonical writes, commits or production generators.",
+  "actual_governing_target": "Ordo lectionum Missae, editio typica altera,1981; target appointments and selections only. No fabricated2008Missal relationship.",
+  "input_files": [
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-candidates.json",
+      "sha256": "b51d43378bfc7ac4add71509115a158c3621b953ed6bf2a99b86e20a21b35891",
+      "bytes": 11355
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-english-candidates.tsv",
+      "sha256": "8b8c59dda7b8cf8a2e220c9380343c1a70dda162b6ed211978c4b344f1f265fd",
+      "bytes": 317
+    },
+    {
+      "path": ".scratch/modern-partition-lent-holyweek/candidate-package.json",
+      "sha256": "8afd019ee5d04a5d787f6132ae23a1350dbb85c03b3e9cce3f47cf348401eb3a",
+      "bytes": 34673
+    },
+    {
+      "path": ".scratch/modern-partition-lent-holyweek/candidate-package-v2.json",
+      "sha256": "48798e2d5b54937c8dcab57663dee029a89eb148b8852af7325bd50216d46091",
+      "bytes": 35309
+    }
+  ],
+  "canonical_preimage_files": [
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "88e54e407656a75ee00dab1ac029cf960612c65aabbcde78d4e82236486b3d27",
+      "bytes": 995469
+    },
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "sha256": "e12182c89c5efd1f7f464e0d990869d573a510572276e29ee23eee148bbf0d14",
+      "bytes": 3158774
+    }
+  ],
+  "source_files": [
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/artifacts/internet-archive-scan-pdf-ed4bc14e/artifact.toml",
+      "sha256": "6aed43b819e64d5a1fa8ba0356764210278fb0167e6eefaf1f80522c477ea51d",
+      "bytes": 1574
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/olm1981.pdf",
+      "sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+      "bytes": 21487058
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+      "sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+      "bytes": 3690
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+      "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "bytes": 75268976
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/artifact.toml",
+      "sha256": "a2cf4519fae093ddd751f58fd09f828d771d7be1f67ff7efb2e44bfb1cbbfd2f",
+      "bytes": 1946
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/semen.tsv",
+      "sha256": "129a2f73517c43fca3d9211581d6b2ad6b5754c22b0af664561836a5b4ff5c76",
+      "bytes": 196
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-semen/artifact.toml",
+      "sha256": "e6426d43363264b26930e45c125ea7e93736e0136de99f11ce27cb07765edf9e",
+      "bytes": 2037
+    },
+    {
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-semen/semen.tsv",
+      "sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+      "bytes": 397
+    }
+  ],
+  "images": [
+    {
+      "path": ".scratch/modern-new-acclamations-review/rasters/page-110.png",
+      "sha256": "9fb198504da380902a936abe909816725d94f5458067fb54d54437337565ea06",
+      "bytes": 166443,
+      "artifact_page": 110,
+      "source": "olm1981",
+      "render": "pdftoppm -f N -l N -scale-to 2200 -png -singlefile",
+      "independently_viewed": true
+    },
+    {
+      "path": ".scratch/modern-new-acclamations-review/rasters/page-115.png",
+      "sha256": "d98fb01a47908a3941ec788372519c41c6a1010089c21a46d9c7bba20bc9f386",
+      "bytes": 180263,
+      "artifact_page": 115,
+      "source": "olm1981",
+      "render": "pdftoppm -f N -l N -scale-to 2200 -png -singlefile",
+      "independently_viewed": true
+    },
+    {
+      "path": ".scratch/modern-new-acclamations-review/rasters/page-192.png",
+      "sha256": "07903422392ff6140a39bdb150cece894b78b318473a4830fce14c53bed47dd0",
+      "bytes": 183366,
+      "artifact_page": 192,
+      "source": "olm1981",
+      "render": "pdftoppm -f N -l N -scale-to 2200 -png -singlefile",
+      "independently_viewed": true
+    },
+    {
+      "path": ".scratch/modern-new-acclamations-review/rasters/page-194.png",
+      "sha256": "0944da58efb75c462a0803ba45e74cc3bd8f43ff75ba8d88c8f412956e3bafdb",
+      "bytes": 143724,
+      "artifact_page": 194,
+      "source": "olm1981",
+      "render": "pdftoppm -f N -l N -scale-to 2200 -png -singlefile",
+      "independently_viewed": true
+    },
+    {
+      "path": ".scratch/modern-new-acclamations-review/rasters/page-1455.png",
+      "sha256": "c1d35f72259641d94a8a8d4e102f18e8a9a05be1a83412ba15d4d0eea77329b1",
+      "bytes": 747926,
+      "artifact_page": 1455,
+      "source": "lasance1945",
+      "render": "pdftoppm -f N -l N -scale-to 2200 -png -singlefile",
+      "independently_viewed": true
+    },
+    {
+      "path": ".scratch/modern-partition-lent-holyweek/english-completion-20261029-postconciliar-latin1888-page339.jpg",
+      "sha256": "b68ef0d6180b0f7a00e06269a71e44ab1b9eebc79ca69ca7086f952fe3b71849",
+      "bytes": 773246,
+      "artifact_id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-page339",
+      "viewed_path": ".scratch/modern-partition-ordinarytime/latin1888-page339.jpg",
+      "independently_viewed": true
+    },
+    {
+      "path": ".scratch/modern-partition-lent-holyweek/english-completion-20261029-postconciliar-bute1908-page439.jpg",
+      "sha256": "d9f23026a095f366bed46c750760db865214623ae2a2e7545633e268111e63c4",
+      "bytes": 759269,
+      "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-page439",
+      "viewed_path": ".scratch/modern-partition-ordinarytime/bute1908-page439.jpg",
+      "independently_viewed": true
+    }
+  ],
+  "source_rights_scope": {
+    "Pustet1888_and_Bute1908": "Existing per-artifact United States historical publication-date basis applies to complete old bodies. Rechecked exact manifests and full source-body images; no new legal finding.",
+    "Lasance1945": "Existing registration-level nonrenewal record covers old numbered-page1436 English; historical Latin has its own age basis. Does not independently establish rights in a later shorter arrangement. Whole PDF remains unresolved and is not a public payload.",
+    "OLM1981": "Restricted evidence only; no source scan or target-text payload is authorized by this review."
+  },
+  "source_fidelity_corrections": {
+    "path": ".scratch/modern-partition-lent-holyweek/candidate-package.json",
+    "sha256": "8afd019ee5d04a5d787f6132ae23a1350dbb85c03b3e9cce3f47cf348401eb3a",
+    "corrections": [
+      "Independent review and reinspection: Lesser Alleluia historical English source terminal comma retained before excluded Alleluia frame, instead of supplied full stop.",
+      "Independent review and reinspection: OLM1981 n252 prints semicolon after Christus, not colon. Pustet1888 source colon unchanged."
+    ],
+    "unchanged": "All proposed English payloads, old Latin selections and prior refusal dictionaries unchanged."
+  },
+  "reviews": [
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "verdict": "accepted-source-and-fidelity-ready-for-recipient-binding",
+      "route": "unchanged-historical-human-English",
+      "historical_english_body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "historical_latin_body_sha256": "9a8ade73802471a7a675b1b625c0d311fb301fe80821511739e7fed466b34f4a",
+      "actual_target": {
+        "edition": "OLM1981",
+        "number": 92,
+        "cycle": "B",
+        "artifact_page": 110,
+        "printed_page": 56
+      },
+      "source_fidelity": "PASS: complete printed Pustet1888 Latin and Bute1908 English independently viewed. Exact Bute punctuation, capitalization and chant asterisk remain.",
+      "whole_expression": "PASS for historical source route: all old Latin words occur in the appointed complete OLM verse in unchanged order. Differences are accents, ligature, chant asterisk and colon/semicolon.",
+      "translation_qualification": "Bute is historical human English; his final clause is freer than the Latin. It must remain attributed, unchanged and distinct from approved English.",
+      "integration_conditions": [
+        "Exact stated cycle only; no all-cycle widening.",
+        "New recipient publication passage and either supported scalar reuse or one shared derivative for the three new Semen recipients.",
+        "Retain earlier approved-English no-exemplar/rejected-source findings as route-specific provenance.",
+        "No added Alleluia frame; no authenticated2008 Missal relation or approved2011 claim."
+      ]
+    },
+    {
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "verdict": "accepted-source-and-fidelity-ready-for-recipient-binding",
+      "route": "unchanged-historical-human-English",
+      "historical_english_body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "historical_latin_body_sha256": "9a8ade73802471a7a675b1b625c0d311fb301fe80821511739e7fed466b34f4a",
+      "actual_target": {
+        "edition": "OLM1981",
+        "number": 103,
+        "cycle": "A",
+        "artifact_page": 115,
+        "printed_page": 61
+      },
+      "source_fidelity": "PASS: complete printed Pustet1888 Latin and Bute1908 English independently viewed. Exact Bute punctuation, capitalization and chant asterisk remain.",
+      "whole_expression": "PASS for historical source route: all old Latin words occur in the appointed complete OLM verse in unchanged order. Differences are accents, ligature, chant asterisk and colon/semicolon.",
+      "translation_qualification": "Bute is historical human English; his final clause is freer than the Latin. It must remain attributed, unchanged and distinct from approved English.",
+      "integration_conditions": [
+        "Exact stated cycle only; no all-cycle widening.",
+        "New recipient publication passage and either supported scalar reuse or one shared derivative for the three new Semen recipients.",
+        "Retain earlier approved-English no-exemplar/rejected-source findings as route-specific provenance.",
+        "No added Alleluia frame; no authenticated2008 Missal relation or approved2011 claim."
+      ]
+    },
+    {
+      "identity": [
+        "holy-monday",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "verdict": "held-whole-expression-basis",
+      "route": "project-created-study-English-from-independent-public-domain-Latin-selection",
+      "historical_latin_body_sha256": "7a883073ea110b4b1faf27ab619a16269f3587b9e4012f5ac9a08f138c9d56bd",
+      "historical_human_english_body_sha256": "3fb1c182b6f9d649d8c2a5695207a65509f78340fe1da6f0ea725ee29eae7ec3",
+      "proposed_study_english_sha256": "68ab0b82062252fb3ae5bdd03cc40039126c13bff51f4fde4cf726f02094f977",
+      "actual_target": {
+        "edition": "OLM1981",
+        "number": 257,
+        "artifact_page": 194,
+        "printed_page": 140
+      },
+      "source_fidelity": "PASS after v2 source-English punctuation correction. Complete twenty-word old Latin verse and whole old human-English verse were independently viewed on Lasance AP1455/p1436.",
+      "study_english_fidelity": "PASS: proposed fresh English expresses each selected Latin clause without an added Alleluia frame. This is project-created English, not literal Lasance human-English reuse.",
+      "selection": {
+        "retained_old_word_ranges": [
+          [
+            1,
+            9
+          ]
+        ],
+        "omitted_old_word_ranges": [
+          [
+            10,
+            20
+          ]
+        ],
+        "description": "Retains the first nine words of the complete old 20-word verse, ending errores; omits the following obedience/slaughter clause. No word added or substituted. Modern comma/colon/full stop differ from the printed old punctuation.",
+        "historical_word_count": 20,
+        "selected_word_count": 9
+      },
+      "whole_expression": "HOLD: matching selected old words does not establish the exact shorter arrangement as an independently old whole expression. Monday truncates at an internal colon; Tuesday deletes an internal six-word clause. The identified source prints the longer combined verse.",
+      "governing_rule": {
+        "path": "guidance/liturgical-text-publication-policy.md",
+        "section": "8.2",
+        "relevant_rule": "Where the reform composed, recentonised or rewrote, the alteration is the reform's and nothing is published."
+      },
+      "required_successor": "Earlier independently published witness establishing the exact shorter whole verse, or a separately reasoned affirmative rights disposition reaching this precise arrangement and intended surface. A faithful fresh translation alone does not close that gate.",
+      "integration_conditions": [
+        "Do not install under this review.",
+        "Preserve v1, v2 and prior refusal dictionaries.",
+        "No authenticated2008 relation or approved2011 claim.",
+        "Wednesday n259 may refer to these owners but is not a new owned body."
+      ]
+    },
+    {
+      "identity": [
+        "holy-tuesday",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "verdict": "held-whole-expression-basis",
+      "route": "project-created-study-English-from-independent-public-domain-Latin-selection",
+      "historical_latin_body_sha256": "7a883073ea110b4b1faf27ab619a16269f3587b9e4012f5ac9a08f138c9d56bd",
+      "historical_human_english_body_sha256": "3fb1c182b6f9d649d8c2a5695207a65509f78340fe1da6f0ea725ee29eae7ec3",
+      "proposed_study_english_sha256": "bcd7c05f45263990cc38c6f1679d781db217eb3a5828b3248f8649d2dfea1f75",
+      "actual_target": {
+        "edition": "OLM1981",
+        "number": 258,
+        "artifact_page": 194,
+        "printed_page": 140
+      },
+      "source_fidelity": "PASS after v2 source-English punctuation correction. Complete twenty-word old Latin verse and whole old human-English verse were independently viewed on Lasance AP1455/p1436.",
+      "study_english_fidelity": "PASS: proposed fresh English expresses each selected Latin clause without an added Alleluia frame. This is project-created English, not literal Lasance human-English reuse.",
+      "selection": {
+        "retained_old_word_ranges": [
+          [
+            1,
+            3
+          ],
+          [
+            10,
+            20
+          ]
+        ],
+        "omitted_old_word_ranges": [
+          [
+            4,
+            9
+          ]
+        ],
+        "description": "Retains Ave Rex noster plus the following Patri obediens through ad occisionem clause in source order; omits the six-word mercy clause. No word added or substituted. Modern punctuation differs.",
+        "historical_word_count": 20,
+        "selected_word_count": 14
+      },
+      "whole_expression": "HOLD: matching selected old words does not establish the exact shorter arrangement as an independently old whole expression. Monday truncates at an internal colon; Tuesday deletes an internal six-word clause. The identified source prints the longer combined verse.",
+      "governing_rule": {
+        "path": "guidance/liturgical-text-publication-policy.md",
+        "section": "8.2",
+        "relevant_rule": "Where the reform composed, recentonised or rewrote, the alteration is the reform's and nothing is published."
+      },
+      "required_successor": "Earlier independently published witness establishing the exact shorter whole verse, or a separately reasoned affirmative rights disposition reaching this precise arrangement and intended surface. A faithful fresh translation alone does not close that gate.",
+      "integration_conditions": [
+        "Do not install under this review.",
+        "Preserve v1, v2 and prior refusal dictionaries.",
+        "No authenticated2008 relation or approved2011 claim.",
+        "Wednesday n259 may refer to these owners but is not a new owned body."
+      ]
+    },
+    {
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "verdict": "accepted-source-and-fidelity-ready-for-recipient-binding",
+      "route": "unchanged-historical-human-English",
+      "historical_english_body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "historical_latin_body_sha256": "9a8ade73802471a7a675b1b625c0d311fb301fe80821511739e7fed466b34f4a",
+      "actual_target": {
+        "edition": "OLM1981",
+        "number": 252,
+        "artifact_page": 192,
+        "printed_page": 138,
+        "option": "ferial"
+      },
+      "source_fidelity": "PASS after v2 correction: OLM prints semicolon, whereas Pustet1888 prints colon. Complete old Latin and Bute1908 English independently viewed.",
+      "whole_expression": "PASS for historical source route: complete old antiphon, no added/deleted/reordered word.",
+      "translation_qualification": "Bute free final clause and chant asterisk remain unchanged and attributed; no approved-English identity.",
+      "integration_conditions": [
+        "Occurrence1 ferial only. Preserve occurrence2 optional n250 and coupled course choice.",
+        "Bind one of the three new Semen recipient rows or supported scalar source reuse.",
+        "Preserve prior no-exemplar finding for exact approved English.",
+        "No Alleluia frame in Lent; no authenticated2008 Missal relation."
+      ]
+    }
+  ],
+  "prior_refusals_preserved": [
+    {
+      "mass": "ot-15",
+      "form_id": "main",
+      "proper": "Gospel Acclamation",
+      "cycle": "A",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-23"
+      ],
+      "quarantined_text_sha256": [
+        "d240fe86bbe050283938f40d3a438f6172827fcb54ce882a7de32b77ca03ac6f"
+      ],
+      "note": "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. The liturgies.net row is a rejected source candidate. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable exemplar. No English wording is retained."
+    },
+    {
+      "mass": "ot-11",
+      "form_id": "main",
+      "proper": "Gospel Acclamation",
+      "cycle": "B",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No authoritative Lectionary exemplar establishing the exact approved English for this cycle-specific source-owned slot is held. No English wording is retained."
+    },
+    {
+      "mass": "holy-monday",
+      "form_id": "main",
+      "proper": "Gospel Acclamation",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The 2026-10-22 held-image check of OLM 1981 artifact page 194 / printed page 140, n. 257, establishes an uncited pre-Gospel role, not an English exemplar. No exact English body is held or published for this terminal source-owned slot. Wednesday's n. 259 referral to nn. 257-258 resolves to this same owner for its Monday option, not to a separately owned Wednesday body. This exact English absence supplies no inferred Bible citation, Latin wording or classification, target-2008 correspondence, quarantine fingerprint, or publication permission."
+    },
+    {
+      "mass": "holy-tuesday",
+      "form_id": "main",
+      "proper": "Gospel Acclamation",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The 2026-10-22 held-image check of OLM 1981 artifact page 194 / printed page 140, n. 258, establishes an uncited pre-Gospel role, not an English exemplar. No exact English body is held or published for this terminal source-owned slot. Wednesday's n. 259 referral to nn. 257-258 resolves to this same owner for its Tuesday option, not to a separately owned Wednesday body. This exact English absence supplies no inferred Bible citation, Latin wording or classification, target-2008 correspondence, quarantine fingerprint, or publication permission."
+    },
+    {
+      "mass": "lent-5-tuesday",
+      "form_id": "main",
+      "proper": "Verse Before the Gospel",
+      "cycle": "all",
+      "occurrence": 1,
+      "extent": "body",
+      "lang": "en",
+      "availability": "unavailable",
+      "note": "OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth role is part of the native ferial course, not silently replaced by the optional course. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made.",
+      "reason": {
+        "kind": "no-exemplar"
+      }
+    }
+  ],
+  "mechanical_checks": {
+    "status": "PASS",
+    "count": 61,
+    "checks": [
+      "frozen-input:.scratch/modern-partition-ordinarytime/semen-candidates.json",
+      "frozen-input:.scratch/modern-partition-ordinarytime/semen-english-candidates.tsv",
+      "frozen-input:.scratch/modern-partition-lent-holyweek/candidate-package.json",
+      "frozen-input:.scratch/modern-partition-lent-holyweek/candidate-package-v2.json",
+      "source-manifest-equality:olm1981",
+      "source-payload-hash:olm1981",
+      "source-payload-size:olm1981",
+      "source-manifest-equality:lasance1945",
+      "source-payload-hash:lasance1945",
+      "source-payload-size:lasance1945",
+      "source-manifest-equality:pustet_latin_cell",
+      "source-payload-hash:pustet_latin_cell",
+      "source-payload-size:pustet_latin_cell",
+      "source-manifest-equality:bute_english_cells",
+      "source-payload-hash:bute_english_cells",
+      "source-payload-size:bute_english_cells",
+      "canonical-Bute-body-same-for-existing-recipients",
+      "OT-TSV-exact-recipient-count",
+      "all-five-prior-refusals-present",
+      "no-active-English-entry-for-five-recipients",
+      "OT-exact-English:ot-11",
+      "OT-exact-historical-Latin:ot-11",
+      "OT-English-hash:ot-11",
+      "OT-Latin-hash:ot-11",
+      "OT-complete-lexical-identity:ot-11",
+      "OT-exact-cycle-present:ot-11",
+      "OT-exact-English:ot-15",
+      "OT-exact-historical-Latin:ot-15",
+      "OT-English-hash:ot-15",
+      "OT-Latin-hash:ot-15",
+      "OT-complete-lexical-identity:ot-15",
+      "OT-exact-cycle-present:ot-15",
+      "unchanged-prior-refusal:holy-monday",
+      "prior-refusal-matches-current-inventory:holy-monday",
+      "Lasance-exact-Latin-hash:holy-monday",
+      "Lasance-corrected-English-hash:holy-monday",
+      "Lasance-English-terminal-comma:holy-monday",
+      "Lasance-exact-twenty-word-parent:holy-monday",
+      "Lasance-finite-selection-word-match:holy-monday",
+      "study-English-unchanged-from-v1:holy-monday",
+      "study-English-hash:holy-monday",
+      "unchanged-prior-refusal:holy-tuesday",
+      "prior-refusal-matches-current-inventory:holy-tuesday",
+      "Lasance-exact-Latin-hash:holy-tuesday",
+      "Lasance-corrected-English-hash:holy-tuesday",
+      "Lasance-English-terminal-comma:holy-tuesday",
+      "Lasance-exact-twenty-word-parent:holy-tuesday",
+      "Lasance-finite-selection-word-match:holy-tuesday",
+      "study-English-unchanged-from-v1:holy-tuesday",
+      "study-English-hash:holy-tuesday",
+      "unchanged-prior-refusal:lent-5-tuesday",
+      "prior-refusal-matches-current-inventory:lent-5-tuesday",
+      "Lent-exact-historical-English",
+      "Lent-exact-historical-Latin",
+      "Lent-complete-lexical-identity",
+      "Lent-corrected-semicolon",
+      "Lent-ferial-first-optional-course-second",
+      "registered-historical-image-hash:artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-page339",
+      "viewed-historical-image-is-same-registered-byte-object:artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-page339",
+      "registered-historical-image-hash:artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-page439",
+      "viewed-historical-image-is-same-registered-byte-object:artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-page439"
+    ]
+  },
+  "counts": {
+    "reviewed": 5,
+    "accepted_source_and_fidelity": 3,
+    "held_whole_expression_basis": 2
+  },
+  "integration_not_reviewed": [
+    "Final source-library recipient passages/derivatives",
+    "Canonical inventory integration and source epoch",
+    "Production projection and browser presentation/choice coverage"
+  ]
+}

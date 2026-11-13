@@ -1,0 +1,713 @@
+{
+  "schema": "triptych.independent-source-metadata-successor-review.v1",
+  "date": "2026-11-13",
+  "reviewer": "/root/roman_sources/remaining_saints",
+  "status": "pass",
+  "scope": "Only three prepared passage metadata changes: two optional CMAA page-range removals and Holy Name semantic-locus restoration. No new page collation; original image reviews retained. No canonical edit, publication/adoption grant, runtime-design decision or installer approval.",
+  "successor": {
+    "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/source-metadata-successor.json",
+    "sha256": "24626ded338d22da0ec8dc8fb2875591a92c505eb9881cba3ee8f6004a931c5d",
+    "bytes": 14064
+  },
+  "cases": [
+    {
+      "case": 1,
+      "verdict": "pass",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "changed_field": "artifact_page_ranges",
+      "before_sha256": "e881152aeaacc469e0be567aa9676664e4a551e006c4172c2887c62923718357",
+      "after_sha256": "7c5441b6ececdf7858f6349b56c4f42d42cc9d3dcbd12a202a052e1cfa205baf",
+      "unchanged": "Every other parsed field; source identifiers/hash, notes, context, verification date, states and source/rights role."
+    },
+    {
+      "case": 2,
+      "verdict": "pass",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "changed_field": "artifact_page_ranges",
+      "before_sha256": "07290a8ae34349f6c41d1d163b7362c9e64ca3b02c5ce844bccef20e2c76d8e0",
+      "after_sha256": "0bc0c70a673105647690047d37d59ddece3a0e3677e62a0f3db54a485ab2064d",
+      "unchanged": "Every other parsed field; source identifiers/hash, notes, context, verification date, states and source/rights role."
+    },
+    {
+      "case": 3,
+      "verdict": "pass",
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml",
+      "changed_field": "locus",
+      "before_sha256": "2c3d76cc0e34bb62b7f56954c09a654fd814e4cd0ab600e23018b96e55c53ff1",
+      "after_sha256": "650dfd4d1eed122cc82ef5e86470392de1d0a42bad08b9fab9415c10e3ef940c",
+      "unchanged": "Every other parsed field; source identifiers/hash, notes, context, verification date, states and source/rights role."
+    }
+  ],
+  "source_file_scope": {
+    "files": 10,
+    "changed": [
+      "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml"
+    ],
+    "unchanged_count": 7
+  },
+  "preservation": "Original raw declarations, admission and case receipts verified unchanged across prepared-v1/prepared-v2/prepared. Exact Latin before/after bodies, proper and owner-row dictionaries/proof hashes remain as admitted. Holy Name English body/binding dictionaries and immutable TSV remain unchanged by this metadata successor.",
+  "focused_validator": {
+    "functions": [
+      "tools/source-library::_validate_passage_locators",
+      "tools/source-library::_validate_loci"
+    ],
+    "before_errors": [
+      ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml: artifact_page_ranges requires a controlling artifact with page_count",
+      ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml: artifact_page_ranges requires a controlling artifact with page_count",
+      ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml: locus does not match work.eugene-cummiskey.roman-missal-english-laity locus_pattern: most-holy-name-of-jesus/collect; printed p. 95; artifact PDF p. 106; IA leaf n105"
+    ],
+    "after_errors": [],
+    "full_library_validation_run": false,
+    "note": "Full activation validation remains the integration owner’s gate. No source controller is altered to satisfy these optional ranges."
+  },
+  "check_count": 84,
+  "failure_count": 0,
+  "checks": [
+    {
+      "check": "exact requested successor pin",
+      "passed": true
+    },
+    {
+      "check": "exactly three successor records",
+      "passed": true
+    },
+    {
+      "check": "case1 actual original bytes",
+      "passed": true
+    },
+    {
+      "check": "case1 actual successor bytes",
+      "passed": true
+    },
+    {
+      "check": "case1 declared original equals parsed bytes",
+      "passed": true
+    },
+    {
+      "check": "case1 declared successor equals parsed bytes",
+      "passed": true
+    },
+    {
+      "check": "case1 exactly one declared field changes",
+      "passed": true,
+      "detail": [
+        "artifact_page_ranges"
+      ]
+    },
+    {
+      "check": "case1 all other metadata unchanged",
+      "passed": true
+    },
+    {
+      "check": "case1 source IDs and hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "case1 original exact page range preserved in declaration",
+      "passed": true
+    },
+    {
+      "check": "case1 optional range absent after",
+      "passed": true
+    },
+    {
+      "check": "case1 prose PDF locus retained",
+      "passed": true
+    },
+    {
+      "check": "case1 printed unit and column retained",
+      "passed": true
+    },
+    {
+      "check": "case2 actual original bytes",
+      "passed": true
+    },
+    {
+      "check": "case2 actual successor bytes",
+      "passed": true
+    },
+    {
+      "check": "case2 declared original equals parsed bytes",
+      "passed": true
+    },
+    {
+      "check": "case2 declared successor equals parsed bytes",
+      "passed": true
+    },
+    {
+      "check": "case2 exactly one declared field changes",
+      "passed": true,
+      "detail": [
+        "artifact_page_ranges"
+      ]
+    },
+    {
+      "check": "case2 all other metadata unchanged",
+      "passed": true
+    },
+    {
+      "check": "case2 source IDs and hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "case2 original exact page range preserved in declaration",
+      "passed": true
+    },
+    {
+      "check": "case2 optional range absent after",
+      "passed": true
+    },
+    {
+      "check": "case2 prose PDF locus retained",
+      "passed": true
+    },
+    {
+      "check": "case2 printed unit and column retained",
+      "passed": true
+    },
+    {
+      "check": "case3 actual original bytes",
+      "passed": true
+    },
+    {
+      "check": "case3 actual successor bytes",
+      "passed": true
+    },
+    {
+      "check": "case3 declared original equals parsed bytes",
+      "passed": true
+    },
+    {
+      "check": "case3 declared successor equals parsed bytes",
+      "passed": true
+    },
+    {
+      "check": "case3 exactly one declared field changes",
+      "passed": true,
+      "detail": [
+        "locus"
+      ]
+    },
+    {
+      "check": "case3 all other metadata unchanged",
+      "passed": true
+    },
+    {
+      "check": "case3 source IDs and hashes unchanged",
+      "passed": true
+    },
+    {
+      "check": "Holy Name semantic locus restored",
+      "passed": true
+    },
+    {
+      "check": "Holy Name correct PDF106 range retained",
+      "passed": true
+    },
+    {
+      "check": "Holy Name exact erratum retained",
+      "passed": true
+    },
+    {
+      "check": "identical ten-file source scope",
+      "passed": true
+    },
+    {
+      "check": "unchanged raw source src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "passed": true
+    },
+    {
+      "check": "unchanged raw source src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "passed": true
+    },
+    {
+      "check": "unchanged raw source src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/publish--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml",
+      "passed": true
+    },
+    {
+      "check": "unchanged raw source src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/artifact.toml",
+      "passed": true
+    },
+    {
+      "check": "unchanged raw source src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+      "passed": true
+    },
+    {
+      "check": "unchanged raw source src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "passed": true
+    },
+    {
+      "check": "unchanged raw source src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "passed": true
+    },
+    {
+      "check": "no source changes beyond declared three",
+      "passed": true,
+      "detail": [
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+        "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+        "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml"
+      ]
+    },
+    {
+      "check": "frozen raw declaration/review unchanged latin-correction-declarations.json",
+      "passed": true
+    },
+    {
+      "check": "frozen raw declaration/review unchanged holy-name-locator-declaration.json",
+      "passed": true
+    },
+    {
+      "check": "frozen raw declaration/review unchanged root-admission.json",
+      "passed": true
+    },
+    {
+      "check": "frozen raw declaration/review unchanged independent-case-1.json",
+      "passed": true
+    },
+    {
+      "check": "frozen raw declaration/review unchanged independent-case-2.json",
+      "passed": true
+    },
+    {
+      "check": "frozen raw declaration/review unchanged independent-case-3.json",
+      "passed": true
+    },
+    {
+      "check": "frozen raw declaration/review unchanged independent-selected-review.json",
+      "passed": true
+    },
+    {
+      "check": "original Latin declaration exact admitted hash",
+      "passed": true
+    },
+    {
+      "check": "original Holy Name declaration exact admitted hash",
+      "passed": true
+    },
+    {
+      "check": "original Root admission exact hash",
+      "passed": true
+    },
+    {
+      "check": "original independent receipt still frozen .scratch/roman-sources/cleanliness-source-review/review-receipt.json",
+      "passed": true
+    },
+    {
+      "check": "original independent receipt still frozen .scratch/roman-sources/cleanliness-source-review/case-1.json",
+      "passed": true
+    },
+    {
+      "check": "original independent receipt still frozen .scratch/roman-sources/cleanliness-source-review/case-2.json",
+      "passed": true
+    },
+    {
+      "check": "original independent receipt still frozen .scratch/roman-sources/cleanliness-source-review/case-3.json",
+      "passed": true
+    },
+    {
+      "check": "s-gregorii-i-papae-confessoris-ecclesiae/main/Secret/all/1 preserved body_before hash",
+      "passed": true
+    },
+    {
+      "check": "s-gregorii-i-papae-confessoris-ecclesiae/main/Secret/all/1 preserved body_after hash",
+      "passed": true
+    },
+    {
+      "check": "s-gregorii-i-papae-confessoris-ecclesiae/main/Secret/all/1 preserved proper_before hash",
+      "passed": true
+    },
+    {
+      "check": "s-gregorii-i-papae-confessoris-ecclesiae/main/Secret/all/1 preserved proper_after hash",
+      "passed": true
+    },
+    {
+      "check": "s-gregorii-i-papae-confessoris-ecclesiae/main/Secret/all/1 preserved owner_row_before hash",
+      "passed": true
+    },
+    {
+      "check": "s-gregorii-i-papae-confessoris-ecclesiae/main/Secret/all/1 preserved owner_row_after hash",
+      "passed": true
+    },
+    {
+      "check": "s-gregorii-i-papae-confessoris-ecclesiae/main/Secret/all/1 exact LF body still selected by unchanged source range",
+      "passed": true
+    },
+    {
+      "check": "s-gregorii-i-papae-confessoris-ecclesiae/main/Secret/all/1 payload/proof exact hashes",
+      "passed": true
+    },
+    {
+      "check": "comm-s-gorgonii-martyris/main/Postcommunion/all/1 preserved body_before hash",
+      "passed": true
+    },
+    {
+      "check": "comm-s-gorgonii-martyris/main/Postcommunion/all/1 preserved body_after hash",
+      "passed": true
+    },
+    {
+      "check": "comm-s-gorgonii-martyris/main/Postcommunion/all/1 preserved proper_before hash",
+      "passed": true
+    },
+    {
+      "check": "comm-s-gorgonii-martyris/main/Postcommunion/all/1 preserved proper_after hash",
+      "passed": true
+    },
+    {
+      "check": "comm-s-gorgonii-martyris/main/Postcommunion/all/1 preserved owner_row_before hash",
+      "passed": true
+    },
+    {
+      "check": "comm-s-gorgonii-martyris/main/Postcommunion/all/1 preserved owner_row_after hash",
+      "passed": true
+    },
+    {
+      "check": "comm-s-gorgonii-martyris/main/Postcommunion/all/1 exact LF body still selected by unchanged source range",
+      "passed": true
+    },
+    {
+      "check": "comm-s-gorgonii-martyris/main/Postcommunion/all/1 payload/proof exact hashes",
+      "passed": true
+    },
+    {
+      "check": "Holy Name English dictionary unchanged by original locator correction",
+      "passed": true
+    },
+    {
+      "check": "Holy Name immutable TSV raw bytes preserved",
+      "passed": true
+    },
+    {
+      "check": "Holy Name preserved before_binding hash",
+      "passed": true
+    },
+    {
+      "check": "Holy Name preserved after_binding hash",
+      "passed": true
+    },
+    {
+      "check": "Holy Name preserved before_body hash",
+      "passed": true
+    },
+    {
+      "check": "Holy Name preserved after_body hash",
+      "passed": true
+    },
+    {
+      "check": "legacy CMAA controller has no page_count",
+      "passed": true
+    },
+    {
+      "check": "Holy Name old extended locus fails current work grammar",
+      "passed": true
+    },
+    {
+      "check": "Holy Name restored locus matches current work grammar",
+      "passed": true
+    },
+    {
+      "check": "focused current validator reproduces exactly three original structural failures",
+      "passed": true,
+      "detail": [
+        ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml: artifact_page_ranges requires a controlling artifact with page_count",
+        ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml: artifact_page_ranges requires a controlling artifact with page_count",
+        ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml: locus does not match work.eugene-cummiskey.roman-missal-english-laity locus_pattern: most-holy-name-of-jesus/collect; printed p. 95; artifact PDF p. 106; IA leaf n105"
+      ]
+    },
+    {
+      "check": "focused current validator accepts all three successors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "input_pins": [
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/source-metadata-successor.json",
+      "sha256": "24626ded338d22da0ec8dc8fb2875591a92c505eb9881cba3ee8f6004a931c5d",
+      "bytes": 14064
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "e881152aeaacc469e0be567aa9676664e4a551e006c4172c2887c62923718357",
+      "bytes": 1594
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "7c5441b6ececdf7858f6349b56c4f42d42cc9d3dcbd12a202a052e1cfa205baf",
+      "bytes": 1558
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "07290a8ae34349f6c41d1d163b7362c9e64ca3b02c5ce844bccef20e2c76d8e0",
+      "bytes": 1467
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "0bc0c70a673105647690047d37d59ddece3a0e3677e62a0f3db54a485ab2064d",
+      "bytes": 1431
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml",
+      "sha256": "2c3d76cc0e34bb62b7f56954c09a654fd814e4cd0ab600e23018b96e55c53ff1",
+      "bytes": 2011
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml",
+      "sha256": "650dfd4d1eed122cc82ef5e86470392de1d0a42bad08b9fab9415c10e3ef940c",
+      "bytes": 1961
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "2393df71e9225e72b2e35ffc807309c18a5749d6cd0abaf7b8a11d3a1cbf5a14",
+      "bytes": 1566
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "2393df71e9225e72b2e35ffc807309c18a5749d6cd0abaf7b8a11d3a1cbf5a14",
+      "bytes": 1566
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "2e7fc16a5e8549f175b1992b96abf71fd071902198d731b9dda57a478a4146ae",
+      "bytes": 1693
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "2e7fc16a5e8549f175b1992b96abf71fd071902198d731b9dda57a478a4146ae",
+      "bytes": 1693
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/publish--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml",
+      "sha256": "1f047785004a3ceeebd22b807d7e2e46cef97326b85a0857122110661b9a2620",
+      "bytes": 1295
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/publish--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml",
+      "sha256": "1f047785004a3ceeebd22b807d7e2e46cef97326b85a0857122110661b9a2620",
+      "bytes": 1295
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/artifact.toml",
+      "sha256": "b2e52627a57a68c3304b5213959b163bbb3e8ef5d0e26c81ebb1fe5b0c828db6",
+      "bytes": 2861
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/artifact.toml",
+      "sha256": "b2e52627a57a68c3304b5213959b163bbb3e8ef5d0e26c81ebb1fe5b0c828db6",
+      "bytes": 2861
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+      "sha256": "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb",
+      "bytes": 506
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+      "sha256": "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb",
+      "bytes": 506
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "ee9afe0849805ed20d4b9321dca4147acfb26b2c7fdaecb020552d1410165bcc",
+      "bytes": 1843
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "ee9afe0849805ed20d4b9321dca4147acfb26b2c7fdaecb020552d1410165bcc",
+      "bytes": 1843
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "6a4399180b2718dd881653d29fdc521940279bb36cd80b1d331577855e8b2dcb",
+      "bytes": 1975
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "6a4399180b2718dd881653d29fdc521940279bb36cd80b1d331577855e8b2dcb",
+      "bytes": 1975
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/latin-correction-declarations.json",
+      "sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e",
+      "bytes": 36165
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/latin-correction-declarations.json",
+      "sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e",
+      "bytes": 36165
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v1/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/latin-correction-declarations.json",
+      "sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e",
+      "bytes": 36165
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/holy-name-locator-declaration.json",
+      "sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6",
+      "bytes": 9375
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/holy-name-locator-declaration.json",
+      "sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6",
+      "bytes": 9375
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v1/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/holy-name-locator-declaration.json",
+      "sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6",
+      "bytes": 9375
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/root-admission.json",
+      "sha256": "af653c80c2398d53f742024528b9c9c02c354a3f88e78ea11673fa80c28f5e80",
+      "bytes": 5499
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/root-admission.json",
+      "sha256": "af653c80c2398d53f742024528b9c9c02c354a3f88e78ea11673fa80c28f5e80",
+      "bytes": 5499
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v1/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/root-admission.json",
+      "sha256": "af653c80c2398d53f742024528b9c9c02c354a3f88e78ea11673fa80c28f5e80",
+      "bytes": 5499
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-1.json",
+      "sha256": "c279c147839f461bbbd4e1cf1848173f2351ebae7515e88173a6a309ce167388",
+      "bytes": 3419
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-1.json",
+      "sha256": "c279c147839f461bbbd4e1cf1848173f2351ebae7515e88173a6a309ce167388",
+      "bytes": 3419
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v1/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-1.json",
+      "sha256": "c279c147839f461bbbd4e1cf1848173f2351ebae7515e88173a6a309ce167388",
+      "bytes": 3419
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-2.json",
+      "sha256": "3f88ad1c2751e12ad0a990360444e5fbd84c9d3188ecc1fcce6d8f2201457111",
+      "bytes": 3391
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-2.json",
+      "sha256": "3f88ad1c2751e12ad0a990360444e5fbd84c9d3188ecc1fcce6d8f2201457111",
+      "bytes": 3391
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v1/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-2.json",
+      "sha256": "3f88ad1c2751e12ad0a990360444e5fbd84c9d3188ecc1fcce6d8f2201457111",
+      "bytes": 3391
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-3.json",
+      "sha256": "c5297d7e6597397e4dd4db12e647a58b2d9e43d016de1563f35784619f31cc5d",
+      "bytes": 2506
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-3.json",
+      "sha256": "c5297d7e6597397e4dd4db12e647a58b2d9e43d016de1563f35784619f31cc5d",
+      "bytes": 2506
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v1/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-3.json",
+      "sha256": "c5297d7e6597397e4dd4db12e647a58b2d9e43d016de1563f35784619f31cc5d",
+      "bytes": 2506
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v2/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-selected-review.json",
+      "sha256": "d59c980a8976c8f13d36a79a78301ebf7f1a47e43dd34720f96a45f614c6e370",
+      "bytes": 6861
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-selected-review.json",
+      "sha256": "d59c980a8976c8f13d36a79a78301ebf7f1a47e43dd34720f96a45f614c6e370",
+      "bytes": 6861
+    },
+    {
+      "path": ".scratch/roman-sources/latin-two-holy-name-activation/prepared-v1/workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-selected-review.json",
+      "sha256": "d59c980a8976c8f13d36a79a78301ebf7f1a47e43dd34720f96a45f614c6e370",
+      "bytes": 6861
+    },
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/review-receipt.json",
+      "sha256": "5afefdfd76d2a96c61448f4d7c733a3205a06eba457325acbe5419438f2bfa40",
+      "bytes": 8615
+    },
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-1.json",
+      "sha256": "c279c147839f461bbbd4e1cf1848173f2351ebae7515e88173a6a309ce167388",
+      "bytes": 3419
+    },
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-2.json",
+      "sha256": "3f88ad1c2751e12ad0a990360444e5fbd84c9d3188ecc1fcce6d8f2201457111",
+      "bytes": 3391
+    },
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-3.json",
+      "sha256": "c5297d7e6597397e4dd4db12e647a58b2d9e43d016de1563f35784619f31cc5d",
+      "bytes": 2506
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-recovered-en/roman-1962-recovered-en.tsv",
+      "sha256": "c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a",
+      "bytes": 42700
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+      "bytes": 521
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml",
+      "sha256": "2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10",
+      "bytes": 642
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "sha256": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf",
+      "bytes": 5430
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/work.toml",
+      "sha256": "80a589340fe7fbe6284fa8cb1eef65b0f98d4bb6baee2d2f17a00b7b1b0c6358",
+      "bytes": 1153
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml",
+      "sha256": "a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466",
+      "bytes": 1411
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml",
+      "sha256": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4",
+      "bytes": 1805
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "6eb1e6ffd872f6854d3bd334ef911ba7f4949537e5fea9aae56f8dd727355d99",
+      "bytes": 17868
+    },
+    {
+      "path": "tmt.json",
+      "sha256": "c3758a9a62956c36cbebe0fe32178aa70433d9de78fbef98b1ddc8d0b9552f1e",
+      "bytes": 27759
+    },
+    {
+      "path": "tools/source-library",
+      "sha256": "963a9ac27c43d0ab93c568271401a865d5252854343e059d2c4208787fefb450",
+      "bytes": 147906
+    },
+    {
+      "path": "guidance/sources.md",
+      "sha256": "e12011d97179fea38102107187f861327a37a706d9062a478f741faf1b338b3a",
+      "bytes": 55709
+    }
+  ],
+  "head_observed": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c"
+}

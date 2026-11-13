@@ -1,0 +1,49 @@
+{
+  "reviewer": "/root/roman_sources/remaining_saints",
+  "status": "source-review-pass-pending-root-adoption",
+  "canonical_writes": 0,
+  "authority": "Independent bounded source and metadata review only. No publication grant, source activation, source_epoch exception, or runtime overlay-ordering decision.",
+  "case": [
+    "s-gregorii-i-papae-confessoris-ecclesiae",
+    "main",
+    "Secret",
+    "all",
+    1
+  ],
+  "kind": "existing-Latin-transcription-correction",
+  "finding": "Both exact whole-PDF page images print ut intercessione beati Gregorii. Neither contains II or a split intercession e. The decorative historical initial is Annue. Complete petitions agree after declared accent/ligature/j normalization; the target supplies the retained comma after quaesumus.",
+  "historical_locus": "Pustet Ratisbon 1862, printed 414, PDF500, right column Secreta.",
+  "target_locus": "CMAA 1962, printed488, marginal2281, PDF569, left column.",
+  "historical_ending": "Per Dominum.",
+  "target_ending": "Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.",
+  "body_before_sha256": "2cf35f33ef127fb916f8a8f1428449b802536b04bceefcda7b79e23735efa5ff",
+  "body_after_sha256": "20a1441c3dbfa8349ab0ae1bd6b1b15ea8c78df41d29068e15340415d49b50f6",
+  "proper_before_sha256": "47cdf362813ac2744e47915f5619ae1cc963cbf291170d9a4804d00127edac41",
+  "proper_after_sha256": "9d24bfe86fdf0fe536e6abde1dce57864626a3d5dd66fdcdee8ee37b87d53444",
+  "owner_row_before_sha256": "d8f0d0422d9b0f8954c7fda7af70e1882cb078148d49c6911722718e377054bf",
+  "owner_row_after_sha256": "2266e8803d3e959ae489e537fcf342ad5418de1a3b1fe7e131faca5b22b77401",
+  "exact_change": {
+    "before": "ut II intercession e beati",
+    "after": "ut intercessione beati"
+  },
+  "images_independently_read": [
+    {
+      "path": ".scratch/roman-sources/latin-cleanliness/images/cmaa-569-400.png",
+      "bytes": 239308,
+      "sha256": "8048d26abb09d3dd680ab6ad21d335a4c9399b6f898264ff2858b8358603dd3d"
+    },
+    {
+      "path": ".scratch/roman-sources/latin-cleanliness/images/pustet-500-scale4800.png",
+      "bytes": 3948744,
+      "sha256": "ed841548b142d8483a8b1e9ae86e7958814c8b5923eeac42c37a0c28166e4821"
+    }
+  ],
+  "source_tuple": {
+    "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+    "payload_sha256": "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb",
+    "source_passage": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+    "historical_passage": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+    "target_passage": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret"
+  },
+  "limitations": "Existing target conclusion words and length remain unchanged. The fresh historical collation corrects earlier conclusion descriptions; it does not independently grant rights in any modern revision. Eight additive files comprise one text payload and seven TOML records. Old projection bodies/passages remain immutable."
+}

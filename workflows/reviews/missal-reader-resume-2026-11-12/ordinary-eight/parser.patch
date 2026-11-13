@@ -1,0 +1,139 @@
+--- a/tools/mass-ordinary
++++ b/tools/mass-ordinary
+@@ -589,6 +589,11 @@
+                               "turns_basis"}
+ ENGLISH_REPLACES_FIELDS = {"witness", "artifact", "text_sha256"}
+ 
++# The same guard for an independently witnessed Latin body.
++LATIN_REPLACEMENT_FIELDS = {"element", "replaces", "latin", "latin_turns",
++                            "turns_basis"}
++LATIN_REPLACES_FIELDS = {"witness", "artifact", "text_sha256"}
++
+ # Words the book prints as conditional inside a row -- the 1861 and 1962
+ # Holy Spirit Preface's "hodierna die", said only from the vigil of Pentecost
+ # through the following Saturday.  The span is declared, never inferred, with
+@@ -2265,6 +2270,77 @@
+     return held
+ 
+ 
++def artifact_latin_replacements(
++    section: dict, source_keys: set[str], elements: list[dict], witnesses: dict, restricted: dict,
++    library: dict, name: str,
++) -> dict[str, dict]:
++    """Resolve exact, source-owned Latin substitutions without changing frame.
++
++    Entries name an existing emitted body, including a source-backed repeat or
++    junction prefix. They cannot create an element, resolve an absence, replace
++    English, or inherit the old witness's turn partition. Application follows the
++    base source's cuts and precedes conditional-span validation, so a replacement
++    must still contain every declared conditional phrase exactly once.
++    """
++    declared = section.get("latin_replacements")
++    if declared is None:
++        return {}
++    where = f"{name}: section {section['key']} latin_replacements"
++    if not isinstance(declared, list) or not declared:
++        raise SourceError(f"{where} must be a nonempty table array")
++    by_key = {element["key"].split("/", 1)[1]: element for element in elements}
++    held = {}
++    for entry in declared:
++        if not isinstance(entry, dict) or set(entry) != LATIN_REPLACEMENT_FIELDS:
++            raise SourceError(f"{where} entries carry exactly "
++                              f"{', '.join(sorted(LATIN_REPLACEMENT_FIELDS))}")
++        local = entry.get("element")
++        if not isinstance(local, str) or local not in by_key or local in held:
++            raise SourceError(f"{where} must name each existing emitted element once")
++        element = by_key[local]
++        if (local not in source_keys and element.get("occurrence_of") not in
++                {section["key"] + "/" + key for key in source_keys}):
++            raise SourceError(f"{where} for {local} is not backed by the base Latin artifact")
++        if element["kind"] not in ("prayer", "dialogue", "form"):
++            raise SourceError(f"{where} for {local} must replace a spoken body")
++        replaces = entry.get("replaces")
++        if not isinstance(replaces, dict) or set(replaces) != LATIN_REPLACES_FIELDS:
++            raise SourceError(f"{where} for {local} replaces carries exactly "
++                              f"{', '.join(sorted(LATIN_REPLACES_FIELDS))}")
++        if (replaces.get("witness") != (section.get("witness_latin") or section.get("witness")) or
++                replaces.get("artifact") != section.get("artifact_latin")):
++            raise SourceError(f"{where} for {local} does not name the base Latin witness and artifact")
++        digest = replaces.get("text_sha256")
++        if not isinstance(digest, str) or re.fullmatch(r"[0-9a-f]{64}", digest) is None:
++            raise SourceError(f"{where} for {local} needs an exact lowercase text_sha256")
++        block = entry.get("latin")
++        if not isinstance(block, dict) or not block or set(block) - ADDITIONAL_SIDE_FIELDS:
++            raise SourceError(f"{where} for {local} has unknown or malformed Latin source fields")
++        for field in ("witness", "artifact", "column"):
++            if not isinstance(block.get(field), str) or not block[field].strip():
++                raise SourceError(f"{where} for {local} needs explicit {field}")
++        selectors = [field for field in ("element", "elements") if field in block]
++        if len(selectors) != 1:
++            raise SourceError(f"{where} for {local} needs exactly one source element selector")
++        selected = [block["element"]] if selectors[0] == "element" else block["elements"]
++        if (not isinstance(selected, list) or not selected or
++                any(not isinstance(one, str) or not one.strip() for one in selected) or
++                len(selected) != len(set(selected))):
++            raise SourceError(f"{where} for {local} needs distinct nonempty source element keys")
++        if block.get("relation") not in RELATIONS:
++            raise SourceError(f"{where} for {local} needs an explicit source relation")
++        if not isinstance(entry.get("turns_basis"), str) or not entry["turns_basis"].strip():
++            raise SourceError(f"{where} for {local} needs a source-specific turns_basis")
++        translation = side_text(entry, "la", witnesses, restricted, library, element["key"], name)
++        if translation is None or not translation.get("turns"):
++            raise SourceError(f"{where} for {local} needs an exact Latin source-row turn partition")
++        if not any(not turn.get("action") and not turn.get("gloss")
++                   for turn in translation["turns"]):
++            raise SourceError(f"{where} for {local} needs at least one spoken source turn")
++        held[local] = {"replaces": replaces, "translation": translation}
++    return held
++
++
+ def from_artifact(
+     section: dict, witnesses: dict, restricted: dict, absences: dict,
+     library: dict, name: str, options: dict | None = None,
+@@ -2483,6 +2559,9 @@
+     replacements = artifact_english_replacements(
+         section, set(source_groups), elements, witnesses, restricted, library, name,
+     )
++    latin_replacements = artifact_latin_replacements(
++        section, set(source_groups), elements, witnesses, restricted, library, name,
++    )
+     prefix = section["key"] + "/"
+     for element in elements:
+         local = element["key"][len(prefix):]
+@@ -2509,6 +2588,19 @@
+                 replacement["translation"] if row["lang"] == "en" else row
+                 for row in element["translations"] or []
+             ]
++        replacement = latin_replacements.pop(local, None)
++        if replacement is not None:
++            if (local, "la") in element_provenance:
++                raise SourceError(f"{name}: {where} cannot inherit Latin provenance over a replacement")
++            old = [row for row in element["translations"] or [] if row["lang"] == "la"]
++            if (len(old) != 1 or old[0]["source_id"] != replacement["replaces"]["witness"] or
++                    hashlib.sha256(old[0]["text"].encode("utf-8")).hexdigest() !=
++                    replacement["replaces"]["text_sha256"]):
++                raise SourceError(f"{name}: {where} replacement does not match the exact existing Latin body")
++            element["translations"] = [
++                replacement["translation"] if row["lang"] == "la" else row
++                for row in element["translations"] or []
++            ]
+         for lang in ("en", "la"):
+             block = element_provenance.pop((local, lang), None)
+             if block is None:
+@@ -2541,6 +2633,8 @@
+             rows[0]["conditional_spans"] = spans
+     if replacements:
+         raise SourceError(f"{name}: section {section['key']} leaves English replacements unapplied")
++    if latin_replacements:
++        raise SourceError(f"{name}: section {section['key']} leaves Latin replacements unapplied")
+     if element_provenance or conditional_spans:
+         left = sorted(set(element_provenance) | set(conditional_spans))[0]
+         raise SourceError(f"{name}: section {section['key']} leaves {left} unapplied")
+@@ -3169,6 +3263,7 @@
+                 "exclusions", "turn_partitions", "absent_latin_by_element",
+                 "element_conditions", "inserted", "junctions", "incipit_markers",
+                 "element_provenance", "conditional_spans", "additional_texts", "english_replacements",
++                "latin_replacements",
+             ):
+                 if field in section:
+                     raise SourceError(

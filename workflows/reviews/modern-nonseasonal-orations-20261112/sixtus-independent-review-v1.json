@@ -1,0 +1,172 @@
+{
+  "schema": "triptych-independent-prayer-source-review/v1",
+  "date": "2026-11-12",
+  "reviewer": "Independent Codex agent partition_later_accepted; automated source and fidelity review, not a claim of human review",
+  "owner": "sixtus",
+  "identity": [
+    "saints-sixtus-ii-pope-companions-martyrs",
+    "main",
+    "Collect",
+    "all",
+    1
+  ],
+  "frozen_candidate": {
+    "path": ".scratch/modern-nonseasonal-orations/early-saints/sixtus-candidate.json",
+    "sha256": "038d59ebb1bfb04392f9d5bddb732f68c4617ad61ba0dd0f21c08f6d941beee1",
+    "bytes": 19228
+  },
+  "exact_english_scalar_sha256": "afd2b3efdaab42743f844cfae6beee8aeea8d83cb339037d8916344f85fe7df3",
+  "exact_english_carrier_lf_sha256": "e7bb6fe0cb8c633a2cf54c9fb62ec12d30277f738914161dd89a13151d8401e0",
+  "private_complete_latin_scalar_sha256": "21b7e40972c04a67f55b8d9992dca9777d05449f0a1109c5346ad149afe13521",
+  "verification": {
+    "path": ".scratch/modern-nonseasonal-prayer-review/verification.json",
+    "sha256": "1889c6a15776b374997a77f5a72a05804b6048046904b8a97d7048f05dcf7ce6",
+    "bytes": 9674
+  },
+  "exhaustive_comparison": {
+    "owner": "sixtus",
+    "independently_checked_transformation_exhaustive": true,
+    "complete_human_old_petition_sha256": "358bde148afe30135b6bd60118952bc32fc0c02566493b4e700767f5c730c746",
+    "exact_html_index_unit_matches_packet": true,
+    "complete_proposed_latin_sha256": "21b7e40972c04a67f55b8d9992dca9777d05449f0a1109c5346ad149afe13521",
+    "lexical_operations": [
+      "Invert sancti Spiritus",
+      "Replace papal title with companions",
+      "Required plural animas suas",
+      "Normalize pointing; independently establish full conclusion from recipient cue/rule and old1862 formula"
+    ],
+    "no_unexplained_residual_words": true,
+    "original1738_conclusion_not_held": true
+  },
+  "governing_policy": {
+    "path": "guidance/liturgical-text-publication-policy.md",
+    "sha256": "81dee58829a694b6155f156d8f90d2a217baf48396c326c4c45f7b1948f328df",
+    "sections": [
+      "1: per-text and per-surface presumption, especially independently old text and explicit ambiguous-defensible basis",
+      "8.2: independent witness comparison, substantive change assessment, no transfer by similarity or an incipit",
+      "10: identity, assignment, rights, translation and witness status remain separate",
+      "12-14: truthful source claims, exact boundaries, provenance and unresolved-state discipline"
+    ],
+    "interpretation": "The positive historical-identity route is not asserted for a substantively changed modern whole. Where accepted below, section1(6) is a separate finite assessment of the entire resulting expression, not an inference that old components or newly drafted English clear any adaptation."
+  },
+  "scope_limits": [
+    "Source/fidelity/whole-expression review only; source graph, per-owner ledger admission, consumed reader qualification and runtime integration require separate review.",
+    "No canonical files written, no generator run, no permission outreach.",
+    "Actual modern comparison is the registered secondary retypesetting labelled2002, not an authenticated2008 Missal.",
+    "No approved liturgical English, generic Missal permission, or licence to reproduce modern apparatus is asserted.",
+    "This receipt contains locators and hashes rather than the restricted modern Latin comparison body."
+  ],
+  "current_preimages_equal": true,
+  "canonical_changes_by_review": false,
+  "verdict": "accept-finite-source-qualified-study-english-merits",
+  "publication_basis": "ambiguous-defensible for the exact complete English candidate on repository, generated web-data, reader-display and download surfaces; no republication permission for the scholarly carrier as a whole",
+  "historical_source": {
+    "source": {
+      "path": ".scratch/modern-nonseasonal-orations/early-saints/acquired/clerus-paris.html",
+      "sha256": "1406208eec5af422ca66b1b50b024f99a10ecbbfbcd41d420f70b553d6c2aac1",
+      "bytes": 1420123
+    },
+    "actual_unit": "Whole prayer no3135, O, PS, in Index of Prayers by Paris Missal Number; adjacent complete records3134 and3141 delimit it. Not a KWIC fragment.",
+    "carrier": "Rev.Gerard O’Connor, The Sources of the Orations of the Missale Parisiense of1738, Volume2, Concordantia et Indices Missalis Parisiensis1738, Romae2004; title names Pontificium Athenaeum S.Anselmi / Pontificium Institutum Liturgicum.",
+    "held_extent": "Whole acquired first HTML part CimPar1.htm, not the complete multipart volume. CP1252 source decoded without content emendation; exact complete no3135 equals the frozen candidate’s old petition.",
+    "reliability": "Identified human scholarly edition with explicit1738 source claim and bibliography naming Johnson/Ward1993 Missale Parisiense anno1738 edition. Its declared format supplies complete prayer text as well as concordance entries. The held unit is internally coherent and its exact words can be compared with the actual secondary2002 whole prayer. Sufficient as an attributed historical transcript for this qualified study use.",
+    "accuracy_limits": [
+      "No original1738 image or original ending cue held; no photographic or diplomatic1738 identity claimed.",
+      "A scholarly transcript can normalize or err. The bibliography is a source statement, not proof that the reviewer opened the1993 volume.",
+      "No assertion that the whole2004 apparatus, editorial arrangement or corpus is freely reusable.",
+      "Modern English surfaced incidentally during the author’s source search; disclosed by author, not treated as an English exemplar or described as clean-room work."
+    ],
+    "fresh_provenance_discrepancy": {
+      "finding": "Notitiae0601971 AP46/printed38 visibly defines MP as Missale Parisiense,1736, while the2004 transcript identifies1738. Notitiae0631971 AP30/printed136 points Sixtus C to MP6.8.",
+      "disposition": "Preserve1736/1738 discrepancy. Dumas is a Paris-source pointer only, not independent authentication of this exact1738 edition or of the whole no3135 text. Carrier attribution remains1738 as transcribed2004."
+    }
+  },
+  "ending": {
+    "source": {
+      "path": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "bytes": 102880787,
+      "pages": 922
+    },
+    "old_full_formula": "AP88/printed2, Contra persecutores Ecclesiae, complete long conclusion freshly read",
+    "recipient_cue_and_rule": "Secondary2002 AP475-476 whole Sixtus Collect and actual Per Dominum cue; AP18 IGMR54.",
+    "boundary": "The ending completes this secondary2002-qualified study reading; it is not assigned retrospectively to an uninspected1738 abbreviated cue. Separate Amen excluded."
+  },
+  "whole_expression_assessment": {
+    "affirmative": "The entire attributed old prayer already asks that the Spirit make the worshippers receptive to believing and strong in confessing, and relates this request to God’s gift enabling Sixtus to lay down his life for the word and testimony of Jesus. The modern residual merely extends the recipient to his companions, drops the individual papal title, changes the resulting number agreement, and reverses a conventional noun/adjective order. No old request is replaced, no donor clause is inserted, and no new theological relationship or expressive image is introduced. The independently old complete conclusion, selected from the actual recipient cue and rule, closes the whole. This supplies a finite section1(6) basis for the exact qualified study English.",
+    "strongest_contrary": "The modern group extension is an editorial adaptation; the exact modern whole is not reproduced by a single held old original. More fundamentally, the human2004 carrier may contain unrecognized normalization or transcription errors, and the old ending is absent. A claim of exact1738/2008 identity or an age-only clearance of the complete modern expression would exceed the evidence.",
+    "disposition_of_contrary": "The source limitations require attribution and qualification, but they do not erase the complete human transcript actually held. Its explicit old-source attribution and complete unit support this historical study reading without inventing a facsimile check. The actual modern residual is conventional recipient designation and agreement within an otherwise intact old expression; its scope has been exhaustively compared. This is sufficient for section1(6) at the stated surfaces, distinct from an unqualified public-domain-target or historical-original-body label.",
+    "what_would_overturn": "Evidence of substantive modern creation/mis-transcription within attributed no3135; an old original or reliable correction showing unexplained differences; extra modern residual wording; a particular restriction defeating the finite basis; or a different requested surface/body."
+  },
+  "english_fidelity": {
+    "verdict": "accept exact frozen English",
+    "findings": [
+      "Teachable in faith renders dociles ad credendum as receptivity in believing; it is interpretive but preserves the intended disposition.",
+      "Steadfast in professing it renders fortes ad confitendum; it refers back to faith and preserves the parallel petition without changing its object.",
+      "Through the power of the Holy Spirit preserves the means of the requested divine action.",
+      "For you granted renders the explanatory relative addressed to God; lay down their lives retains the gift and plural recipient.",
+      "The testimony of Jesus preserves the Latin genitive without introducing an unsupported resolution of its possible sense.",
+      "Complete long conclusion is faithful; Amen remains separate."
+    ],
+    "material_translation_errors_found": false
+  },
+  "latin_scope": "No canonical modern Latin admission or exact2008 status. Exact Latin is private comparison evidence; English publication merits here do not imply that translation removes underlying-expression rights.",
+  "required_integration_qualification": [
+    "Project study English from Paris1738 prayer as transcribed by O’Connor2004, with disclosed group adaptation and independently evidenced conclusion.",
+    "Original1738 page/cue uninspected; actual comparison only secondary2002; authenticated2008 wording unresolved.",
+    "Do not promote Dumas MP to exact1738 corroboration or claim republication rights in the2004 scholarly volume.",
+    "Use separately reviewed source records, finite owner bindings and a reader-consumed qualification."
+  ],
+  "fresh_images": [
+    {
+      "source": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+      "source_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "artifact_page": 88,
+      "path": ".scratch/modern-nonseasonal-prayer-review/pustet1862-ap88.png",
+      "sha256": "fdedf2f6f9dee5b4fbb85f69113b6a2f61a3b25bc1374a05a7c323e102c96c3a",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "source_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_page": 18,
+      "path": ".scratch/modern-nonseasonal-prayer-review/secondary2002-ap18.png",
+      "sha256": "4f8fa828cd480f749b56e7fa56b2cdd64625dea4481a543f624dc5c297830bc6",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "source_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_page": 475,
+      "path": ".scratch/modern-nonseasonal-prayer-review/secondary2002-ap475.png",
+      "sha256": "215cac9a8cb7576f139acbead1d156797435bd35a3bfb4456cff7de13a0d7703",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "source_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_page": 476,
+      "path": ".scratch/modern-nonseasonal-prayer-review/secondary2002-ap476.png",
+      "sha256": "26120bc00ce5fa9388f84633205ae9ebb3ad62f87e44599c5b8a68e76ee99b50",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-nonseasonal-orations/early-saints/acquired/notitiae0601971.pdf",
+      "source_sha256": "ae175b6941922a2322e95443e72e09126826ba46589ed6184b08db025545c5dc",
+      "artifact_page": 46,
+      "path": ".scratch/modern-nonseasonal-prayer-review/notitiae0601971-ap46.png",
+      "sha256": "5ae3e0f6e61b9bdb97d8d51953b5229ec7717ce2cf4c755fb88b44abc57ad53a",
+      "bytes": 206891,
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-nonseasonal-orations/early-saints/acquired/notitiae0631971.pdf",
+      "source_sha256": "ac3df66a5c4e344cc160197805f0fc8468077a8f06ed45f04e6fc2f83c684755",
+      "artifact_page": 30,
+      "path": ".scratch/modern-nonseasonal-prayer-review/notitiae0631971-ap30.png",
+      "sha256": "6cb13cd33130247af0452e0773301664e25e5f431576b036023646274eda11a2",
+      "bytes": 198079,
+      "independently_rendered_and_visually_inspected": true
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+PUBLIC-SAFE DERIVATIVE (path-normalized; not a literal execution receipt)
+Raw SHA-256: f911b4dace9b024e1c5bb3df665d73caf820efc85f37350ef4e87d62a730b221
+Raw byte count: 754
+Transformation: exactly two private checkout-root prefixes replaced with <REPOSITORY_ROOT>/.
+All other execution text below is preserved verbatim; no interpreter path required normalization.
+--- normalized execution text ---
+Traceback (most recent call last):
+  File "<REPOSITORY_ROOT>/.scratch/modern-next-cohort-plan/apply_to_scratch.py", line 132, in <module>
+    if __name__=='__main__':main()
+                            ~~~~^^
+  File "<REPOSITORY_ROOT>/.scratch/modern-next-cohort-plan/apply_to_scratch.py", line 66, in main
+    assert V.is_relative_to(HERE) and V!=HERE and '.scratch' in V.parts,'Output must be a fresh directory below this scratch package; canonical installation is forbidden'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Output must be a fresh directory below this scratch package; canonical installation is forbidden

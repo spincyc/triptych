@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only Latin already printed in the 1922 Tours Mame missal is transcribed. The exact registered whole source records its United States publication-term basis. Faithful transcription adds no exclusive right in these words and is excluded from Triptych CC BY 4.0."
+rights_jurisdiction = "United States"
+provenance = "Complete registered Mame PDF rehashed to 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005 before bounded derivatives. The eight complete prayer units at original PDF 386, 390–392, 457–459 and 464 were read from actual 200 and 400 dpi page images, including both sides of the Supplices page break. Compared complete target units against CMAA 1962 PDF 297–298, 301–302, 390, 392 and 399 from the rehashed whole input 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a, at both resolutions. No OCR text is authority."
+retrieved = "2026-11-12"
+sha256 = "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a"
+byte_size = 2144
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Join physical wraps and discretionary line-end hyphens; expand ae/oe ligatures and omit stress accents; normalize decorative initials and small-cap incipits to normal capitalization. Preserve source lexical words, j spellings and punctuation. Represent printed crosses by ✠ and barred response by R. Exclude red action-rubric words and nonspoken headings. Keep Indulgentiam and its response in separate rows, and each of the three fully printed Agnus invocations in its own row. No abbreviated body is expanded from memory."
+notes = "This new artifact is independent of immutable Cummiskey artifacts. The eight selected Latin units change only upon a guarded owner declaration and parser adoption; every current English selection remains unchanged. No new binary artifact or delivery sidecar is introduced."

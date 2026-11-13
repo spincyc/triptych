@@ -1,0 +1,243 @@
+{
+  "schema": "triptych-ferial-three-source-binding-projection/v1",
+  "state": "exact-source-bindings-projection-not-frame-or-conclusion-admission",
+  "original_bindings": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/appointment-body-bindings.json",
+    "sha256": "48ddf0258bbd827c467fddfe832e63f9cb6401b8a252a4cc56d3841d01090e2e",
+    "byte_size": 44281
+  },
+  "selected_rows": [
+    {
+      "original_json_pointer": "/rows/0",
+      "original_row_canonical_sha256": "7226551b7a84044371677a52c19f31e09631b6d504b2cecd958f3ad1c640ebf0",
+      "binding": {
+        "identity": [
+          "lent-1-tuesday",
+          "main",
+          "Oratio super populum",
+          "all",
+          1
+        ],
+        "source_owner": "src/sources/calendars/roman-1962/propers.yaml",
+        "entry_type": "direct recipient proper and direct recipient Latin/English inventory entries; historical source owners retained",
+        "Latin_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+        "English_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269",
+        "new_proper_parsed_sha256": "59993fc7590b696846d1b30ad20af45bff2f793b8caab3b7cfc33d19601a10e7",
+        "Latin_provenance_parsed_sha256": "e40cb1478ed2e8dc5eda50e54cd19232d692adc9bc058db924475ebb82f6f17d",
+        "English_entry_parsed_sha256": "1dc16ed15a6954fdf5136933996a37b311b6db0158b77446ae054acb924b1fcd",
+        "source_proofs": [
+          {
+            "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-20261112-lent-1-tuesday",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-1-tuesday.toml",
+            "sha256": "8b48c801b5810ec8776e43de5ef58980aafdc08a964583b41a25bd78d10b57d2",
+            "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-1-tuesday.toml"
+          },
+          {
+            "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ferial-osp-20261112-lent-1-tuesday",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-1-tuesday.toml",
+            "sha256": "84c3c8d8e024ebfc6e3a22f18e6b140c400e79601bbd557f107f84b75e32f772",
+            "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-1-tuesday.toml"
+          },
+          {
+            "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-two-target-20261112",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/artifact.toml",
+            "sha256": "85a82120517b646adcbbae0783a7a1d689520f233e51ba9b027d219ba9deb01c",
+            "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/artifact.toml"
+          },
+          {
+            "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ferial-osp-two-historical-20261112",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/artifact.toml",
+            "sha256": "1622434dad4b0ffbe3f0f53f25c8072e1f2901c502b11223c85fb6ecf5e3abd9",
+            "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/artifact.toml"
+          },
+          {
+            "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ia-google-facsimile-pdf-4573991d/artifact.toml",
+            "sha256": "1abaf2370ebd4d7fd82807ab9285b4a7b3e1a487e1d9936fcead9865e3f5f16a",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ia-google-facsimile-pdf-4573991d/artifact.toml"
+          },
+          {
+            "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english-source",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-source.toml",
+            "sha256": "655004308418d33dd556e497eb6f02daab3ed5a205ebeec3abf87db568cbe1a5",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-source.toml"
+          },
+          {
+            "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/artifact.toml",
+            "sha256": "4eac4a4bdbf59f39b17b836e3f55c342591fe4c4c0835b1eb9cc5dd3486888a9",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/artifact.toml"
+          },
+          {
+            "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english-text",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-text.toml",
+            "sha256": "db221173a81b838065f73409f187bec3275acce6b3a0c0cc0ff91baeebc06f9f",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-text.toml"
+          }
+        ],
+        "no_source_alias": true
+      }
+    },
+    {
+      "original_json_pointer": "/rows/1",
+      "original_row_canonical_sha256": "08665b87a7f7ff2b888dbb53b3ef45ee432ee9d634cf089b6de086b0931f50c7",
+      "binding": {
+        "identity": [
+          "lent-4-thursday",
+          "main",
+          "Oratio super populum",
+          "all",
+          1
+        ],
+        "source_owner": "src/sources/calendars/roman-1962/propers.yaml",
+        "entry_type": "direct recipient proper and direct recipient Latin/English inventory entries; historical source owners retained",
+        "Latin_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+        "English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e",
+        "new_proper_parsed_sha256": "286732f81128f846a5cead2eb4878ac66c73383ecc3fbfad98a2ab2100ad55db",
+        "Latin_provenance_parsed_sha256": "289d848d8075ddac490f96e5189060345b831a21a6f30d28b2eab18383369531",
+        "English_entry_parsed_sha256": "5ceaeff54634fb28ea20bc7f831f20a3a74e959553870505a3c031da7ee3264c",
+        "source_proofs": [
+          {
+            "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-20261112-lent-4-thursday",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-4-thursday.toml",
+            "sha256": "bd3ab500e3a49dec1a63699c3776e699e4f398c29fac512dec64e574c049a94d",
+            "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-4-thursday.toml"
+          },
+          {
+            "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ferial-osp-20261112-lent-4-thursday",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-4-thursday.toml",
+            "sha256": "c12aa624210698ffbe3eb5edc4647a8ec49e65175b32f956cd9e4ee2ed4b1d83",
+            "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-4-thursday.toml"
+          },
+          {
+            "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-two-target-20261112",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/artifact.toml",
+            "sha256": "85a82120517b646adcbbae0783a7a1d689520f233e51ba9b027d219ba9deb01c",
+            "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/artifact.toml"
+          },
+          {
+            "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ferial-osp-two-historical-20261112",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/artifact.toml",
+            "sha256": "1622434dad4b0ffbe3f0f53f25c8072e1f2901c502b11223c85fb6ecf5e3abd9",
+            "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/artifact.toml"
+          },
+          {
+            "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+            "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml",
+            "sha256": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4",
+            "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml"
+          },
+          {
+            "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english-source",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-source.toml",
+            "sha256": "36c85bf9e32b86b7e65c8888ea12d07c42151ae48c5095edc0ab17cddc4a394d",
+            "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-source.toml"
+          },
+          {
+            "id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/artifact.toml",
+            "sha256": "cc3186b924016dc3ac16fbf34ec9c5ad690de48395ab7dfad9247df2b6cc8441",
+            "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/artifact.toml"
+          },
+          {
+            "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english-text",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-text.toml",
+            "sha256": "8db0730a81540ec6688ae638e0dcbbac4938d6631804e16e45075f91ed3bbf3b",
+            "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-text.toml"
+          }
+        ],
+        "no_source_alias": true
+      }
+    },
+    {
+      "original_json_pointer": "/rows/2",
+      "original_row_canonical_sha256": "46a34c6cd0256664a683d38791be9b7b20021690bf464a13674a5a99d467846b",
+      "binding": {
+        "identity": [
+          "passion-wednesday",
+          "main",
+          "Oratio super populum",
+          "all",
+          1
+        ],
+        "source_owner": "src/sources/calendars/roman-1962/propers.yaml",
+        "entry_type": "direct recipient proper and direct recipient Latin/English inventory entries; historical source owners retained",
+        "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+        "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+        "new_proper_parsed_sha256": "fcdf6015a27d3d6d95afb4245a24397a289a523351f58a7b04b080589673d9f3",
+        "Latin_provenance_parsed_sha256": "989a985a264a533db4e63f262e077f5669f206e5c29ec021ed3e61573125abcc",
+        "English_entry_parsed_sha256": "d3f075c746563a9a28be986ac0547aa5209910abd7f1ee810ce1da5a7efd3c43",
+        "source_proofs": [
+          {
+            "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.annual-oratio-early-20261023-lent-2-monday",
+            "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/annual-oratio-early-20261023-lent-2-monday.toml",
+            "sha256": "e70740699e18d194b261304def0c77577ad98cdce8cd7c0c456cc0087267438c",
+            "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/annual-oratio-early-20261023-lent-2-monday.toml"
+          },
+          {
+            "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ferial-osp-20261112-passion-wednesday",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-passion-wednesday.toml",
+            "sha256": "17c87867a6a3f22f64263a7196de69f12b57458174b7315f84748ddc38bdef71",
+            "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-passion-wednesday.toml"
+          },
+          {
+            "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.annual-oratio-early-20261023",
+            "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/annual-oratio-early-20261023/artifact.toml",
+            "sha256": "f221041b075d1ce94afd2b10bd24204ea238bb91947a2778afa58e818be8b732",
+            "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/annual-oratio-early-20261023/artifact.toml"
+          },
+          {
+            "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-pages",
+            "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/annual-oratio-early-20261023-pages/artifact.toml",
+            "sha256": "cad7eec6049a08d9f3e8dba2b65ba556c5f03c29647a0b82909888a7e5456999",
+            "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/annual-oratio-early-20261023-pages/artifact.toml"
+          },
+          {
+            "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-transcription",
+            "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/annual-oratio-early-20261023-transcription/artifact.toml",
+            "sha256": "a5634be8a17817ed7736dbe3be1eb21c2039b40cec5fca2409788e3f13ead3f8",
+            "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/annual-oratio-early-20261023-transcription/artifact.toml"
+          },
+          {
+            "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+            "sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml"
+          },
+          {
+            "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-verify-lent-2-monday--main--oratio-super-populum--all--1",
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-append209-strict165-2026-10-23-verify-lent-2-monday--main--oratio-super-populum--all--1.toml",
+            "sha256": "045a6a33d77531140dc08913f5f553dd159e872bdc5b14d33342229a2bbd300d",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-append209-strict165-2026-10-23-verify-lent-2-monday--main--oratio-super-populum--all--1.toml"
+          },
+          {
+            "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-2de93984",
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-append209-strict165-2026-10-23-2de93984/artifact.toml",
+            "sha256": "ebc3621029809b6e0aa75de9b1fdbbd25f9bae1d3c28f2dd89ece24143fa81dc",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-append209-strict165-2026-10-23-2de93984/artifact.toml"
+          },
+          {
+            "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-lent-2-monday--main--oratio-super-populum--all--1",
+            "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-append209-strict165-2026-10-23-publish-lent-2-monday--main--oratio-super-populum--all--1.toml",
+            "sha256": "097bace1cf1c75da8a0e4029aee8f87ffb484e4a5b911dbf206b0aa2b45181d5",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-append209-strict165-2026-10-23-publish-lent-2-monday--main--oratio-super-populum--all--1.toml"
+          },
+          {
+            "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+            "sha256": "6ee61b34bbb6346b1b8f36c1ed3d32ab3af343594c4dff1e779ad38a17e40fcd",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml"
+          },
+          {
+            "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient-text",
+            "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+            "sha256": "55348fa03e59567eb92b568e80686474b5d1bc12fb275b0750a9701ec0150f43",
+            "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml"
+          }
+        ],
+        "no_source_alias": true
+      }
+    }
+  ],
+  "transformation": "Retain exact source owners, all 27 source-proof bindings, literal body and complete row hashes, and original selected-row pointers/digests. Omit duplicated complete proper/ledger objects and frame/ending controls. All original donor proofs remain; two new recipient publication proofs are explicit additions. No source assertion or hash changes."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "triptych-root-browser-recipe-adoption/v1",
+  "decision": "Adopt exact additive runtime dependency declarations for current source cohort",
+  "proposal": {
+    "path": ".scratch/source-epoch/next-cohort/recipe-composition-v3/proposal.json",
+    "sha256": "d0fa11045935a40a81d753c92f74f0a7b31ad108051dd04a7294fc39a6c906c8"
+  },
+  "path": "scripts/_browser_product_recipes.py",
+  "before_sha256": "01e37911bf81f69060a6270f85281f4649efbcfe59e83cacd04d0993c668b2b4",
+  "after_sha256": "676ccb95d4d4b31e5ebc34349088685aaf2d3cc009b8cbbd985784a18b7b1748",
+  "independent_review": {
+    "path": ".scratch/product-repro/next-cohort-build-readiness/recipe-v3-independent-review.json",
+    "sha256": "9e01445b61f5fe29933fafd69798041dc4866fa0d3b4ae2bfc870fe96fa6daf9"
+  },
+  "root_review": "Read complete patch, proposal and independent dependency conclusions; verified11 actual staged runtime authority/proof pins and unchanged inputs module; reconstructed exact patch. All13 recipes, six original authority inputs, argv, exclusions and other fields remain intact.",
+  "limits": "Cold actual-read audit and final reproducible products remain required. Build dependencies create no source/runtime admission.",
+  "canonical_writes": false
+}

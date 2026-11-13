@@ -1,0 +1,362 @@
+{
+  "schema": "triptych-proper-refusal-history/v1",
+  "group": "collects-paris-five",
+  "date": "2026-11-13",
+  "scope": "Exact pre-mutation owner, removed-Latin provenance and unavailable-English dictionaries; no quarantined body is retained here.",
+  "canonical_owner_file_pins": [
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+      "byte_size": 3163294
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+      "byte_size": 1004208
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "sha256": "117769a895aacabe098a438fccf19f1a6ae7fedd16f9c867374c176e0020ed38",
+      "byte_size": 108045
+    }
+  ],
+  "rows": [
+    {
+      "identity": [
+        "ot-13",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_before": {
+        "name": "Collect",
+        "incipit": "Deus, qui per adoptionem gratiae",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "latin_before_canonical_json_sha256": "5315548926c9b1c79f4308e63f5c53622fb637b250579ba865b56cfb93f3fe5e",
+      "latin_provenance_before": {
+        "mass": "ot-13",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "152e4bb2f71261663d0079a1238681b7e41ec07baa265eaa50c69296c2dd6801"
+      },
+      "latin_provenance_before_canonical_json_sha256": "4a64af9a00e3d2c0c56bcf032fa65932d6b8d8a33fe8fdca203a28f1d7108f0f",
+      "english_untranslated_before": {
+        "mass": "ot-13",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2016",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 18,
+        "verified_printed_page": "18",
+        "verified_heading": "THIRTEENTH SUNDAY IN ORDINARY TIME / Collect:",
+        "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+        "quarantined_text_sha256": [
+          "707a2630b39c1b42401d50b77e54a54760008223a47d54ad37401ff37b62f56f"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "english_untranslated_before_canonical_json_sha256": "0d529c01364e4550ec96c924bd25f25df10a476f5614b523dbb3e4b9287d846e"
+    },
+    {
+      "identity": [
+        "ot-16",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_before": {
+        "name": "Collect",
+        "incipit": "Propitiare, Domine, famulis tuis",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "latin_before_canonical_json_sha256": "a9aabddcf2088cf27e775e22cc5ab837806b6bef6ece90a027b2bc10fa693f19",
+      "latin_provenance_before": {
+        "mass": "ot-16",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "695bab6ad788874c02dfb49dc1329d28893ca8767f467add6cbe023c8c597288"
+      },
+      "latin_provenance_before_canonical_json_sha256": "7d1721775eeb64feab574f5f286e7fbe212d4c0bd5c614f14c9e5200f67f9ecd",
+      "english_untranslated_before": {
+        "mass": "ot-16",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2016",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78c-ordinary-14-23",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 8,
+        "verified_printed_page": "8",
+        "verified_heading": "SIXTEENTH SUNDAY IN ORDINARY TIME / Collect:",
+        "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf",
+        "quarantined_text_sha256": [
+          "1ac52fe553e54761dcbf2758edff43fcec92bc41ce7505278eb7b1dc6e384138"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "english_untranslated_before_canonical_json_sha256": "42e3b533195d2654054484653685fbebd21e80e87458ad78ecc328083dbad82b"
+    },
+    {
+      "identity": [
+        "ot-18",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "latin_before": {
+        "name": "Collect",
+        "incipit": "Adesto, Domine, famulis tuis",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "latin_before_canonical_json_sha256": "5272da5072cdad4a6523bf810d696bc8ffeeda07f5e2f389eb04877d169feb24",
+      "latin_provenance_before": {
+        "mass": "ot-18",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "4da45eeb45471be273807430cbaaff65c4fd18864574a6db1990e24c6b5d2e64"
+      },
+      "latin_provenance_before_canonical_json_sha256": "cbc57d91180aebf56bcb393455711f4d190e921f3789180a6305f6e9437454bd",
+      "english_untranslated_before": {
+        "mass": "ot-18",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2016",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78c-ordinary-14-23",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 12,
+        "verified_printed_page": "12",
+        "verified_heading": "EIGHTEENTH SUNDAY IN ORDINARY TIME / Collect:",
+        "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf",
+        "quarantined_text_sha256": [
+          "1ae2963cc52aa19f60de1301b787738e75dc94470444fffa9907aa011337469e"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "english_untranslated_before_canonical_json_sha256": "3dbb5fad9741d2b05a5f74e847650a0226bfc3a156f35b117f0b086a1c06911f"
+    },
+    {
+      "identity": [
+        "ot-9",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "latin_before": {
+        "name": "Prayer after Communion",
+        "incipit": "Rege nos Spiritu tuo",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "latin_before_canonical_json_sha256": "282fa1e870977a25427df3ff2f48de9c2d97311a47c1f94f18dcfeae86ae1795",
+      "latin_provenance_before": {
+        "mass": "ot-9",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "195d40b27ea96e1486f0f4d9b5b0e38713568f61bf688de1d7ef5f14550aeadf"
+      },
+      "latin_provenance_before_canonical_json_sha256": "1d7450f6a60998ae6c35a3cfc0bacad43a4bae33d67e4a1e2bbf0b8176683629",
+      "english_untranslated_before": {
+        "mass": "ot-9",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "f549b533edddedbb9825848333a82c50b3a8d079c194ad17f21d7f18b02acc08"
+        ],
+        "note": "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "english_untranslated_before_canonical_json_sha256": "d47b2623a083cbed5397a7d0ef85b1163f18ac0d49a60ce8100c432dc1f74c08"
+    },
+    {
+      "identity": [
+        "ot-20",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "latin_before": {
+        "name": "Prayer after Communion",
+        "incipit": "Per haec sacramenta, Domine, Christi participes effecti",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "latin_before_canonical_json_sha256": "ad51704f0eb5dec766c028a787561f6440e33eb5f839673647ab1cc1956a656f",
+      "latin_provenance_before": {
+        "mass": "ot-20",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "236c8a0a393092b27b26ae15b6132952b6d04f4a5bee2769b2a55b6c7a88f34a"
+      },
+      "latin_provenance_before_canonical_json_sha256": "a9f94ebbca9d31f033af1ae5e9a4e29bbdd11c7cf6b201dcb029c54b030957cd",
+      "english_untranslated_before": {
+        "mass": "ot-20",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2016",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78c-ordinary-14-23",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 17,
+        "verified_printed_page": "17",
+        "verified_heading": "TWENTIETH SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+        "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf",
+        "quarantined_text_sha256": [
+          "174fe06198912fac7c6425cfbf7212fda9b47fbf2b73bbb84e60a179cb830179"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "english_untranslated_before_canonical_json_sha256": "7d1365393637f9a55c7eb7779b28a4800f620a3f1357e593d344d59067bc87e6"
+    }
+  ]
+}

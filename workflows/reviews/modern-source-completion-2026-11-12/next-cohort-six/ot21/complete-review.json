@@ -1,0 +1,354 @@
+{
+  "schema": "independent-ot21-complete-source-assembly-review/v1",
+  "reviewed_on": "2026-11-12",
+  "source_fidelity_disposition": "accepted-complete-qualified-study-assembly",
+  "installation_disposition": "qualified-runtime-checks-pass-root-integration-pending",
+  "candidate": {
+    "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/candidate.json",
+    "sha256": "16ffaaa9d2cf7dc90c61bbf7ed6813b6d26567befd41f3577e4c9c672a948f45",
+    "bytes": 6444
+  },
+  "installation_proposal_v3": {
+    "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/installation-proposal-v3.json",
+    "sha256": "c249aaf635ed0cef4e1a599544e024d749462b24c118445422e09436052c887e",
+    "bytes": 14404
+  },
+  "prior_petition_review": {
+    "path": ".scratch/modern-new-orations-review/ot21/review.json",
+    "sha256": "cbc465cf1c4cd021e79fafaffc6fcfd680d49eff75605d7639d9d13872b9331c",
+    "bytes": 3791
+  },
+  "source_manifest": {
+    "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/new-source-files-manifest.json",
+    "sha256": "e91b8a40ce0507eec8b5174873b1331e15194a9045c9ffc31fde8166870fd679",
+    "bytes": 2338
+  },
+  "new_source_files": [
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/work.toml",
+      "sha256": "792eaa4493984ab973345db2cdaa448a0c29f1773722a75ea1a1682cd32b5fe4",
+      "bytes": 885
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/edition.toml",
+      "sha256": "575dee4d20b24e8eea49d6638712dc36804faed3dde383302116976323f0bac7",
+      "bytes": 902
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/latin.txt",
+      "sha256": "bdcbbbc226e40954aba73906c2aa5f1ebfa8f6a00cb34bd7057e45fd78a4622a",
+      "bytes": 199
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/artifact.toml",
+      "sha256": "84bbfbdc569a0a58bcde72fdf794645e38b8b4fe6c3dbb420e41cb05a73f34c1",
+      "bytes": 2444
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/passages/plenum-complete-latin.toml",
+      "sha256": "d2931432e52b1667ce8939bf23a0836dc1d7df656a47548b80b0b6a34fcbe17f",
+      "bytes": 971
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot21-plenum-petition-source-20261112.toml",
+      "sha256": "89e2aed8c24aa47d1cc8b3f323c638b2ceee49d4d1edd337a6ddc8b4d10deac6",
+      "bytes": 1076
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/work.toml",
+      "sha256": "8e79041e0dcc87ea4666565a550b62f28a8233b28e64b0d9a0d3f03f74199cbb",
+      "bytes": 702
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "407303d136832a06b7f3d762493b851cd968a1ca6df923d491afab7c8842c204",
+      "bytes": 622
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "sha256": "bcde0e7303dbb189fd35d7041981accfef2035e919facf7041bed913243b5266",
+      "bytes": 170
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "sha256": "53762bd6b562f00344937be86aa12db236d55b477e87c85526d39c45649bb0b6",
+      "bytes": 1388
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "sha256": "eb4e67de2d7c5cd7cc8064d2b6ded9676c53afc75f28eb4cb74072d2507a9fdf",
+      "bytes": 889
+    }
+  ],
+  "exact_old_and_comparison_payloads": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "bytes": 102880787
+    },
+    {
+      "path": ".scratch/artifact-cache/d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8/pages.pdf",
+      "sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "bytes": 502778
+    },
+    {
+      "path": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "bytes": 3333382
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "sha256": "d380657fdad6aa7a98b1e62f2ea4b8bd6247703e089e98a5ba8ea47754105974",
+      "bytes": 1226
+    }
+  ],
+  "independent_visual_inspections": [
+    {
+      "path": ".scratch/modern-new-orations-review/ot21-complete/rasters/pustet780.png",
+      "sha256": "da1f1011caab21c22d4951653aad78292ec259a3b18063dab70c8a4ec7ec2478",
+      "bytes": 1148272
+    },
+    {
+      "path": ".scratch/modern-new-orations-review/ot21-complete/rasters/formula217.png",
+      "sha256": "8fa248af7b00a41b26863f0398787d98e2bd8fe18642f4a34811135955e58d9e",
+      "bytes": 849098
+    },
+    {
+      "path": ".scratch/modern-new-orations-review/ot21-complete/rasters/secondary285.png",
+      "sha256": "9fa0838a545d2b55247f2d3e9139559ade07651eb1177bc903fb9da53d4e943b",
+      "bytes": 247302
+    },
+    {
+      "path": ".scratch/modern-new-orations-review/ot21-complete/rasters/secondary286.png",
+      "sha256": "64f5aeae3b03c69095559787299b89c6e3291665b33880b348ea8bfb171ecc93",
+      "bytes": 234816
+    }
+  ],
+  "scope_of_visual_review": "Complete old petition including cross-column continuation and actual old cue; complete independently printed short Latin/English formula and marked Amen; exact secondary2002 appointment, petition and different cue. No official2008 witness was inspected or inferred.",
+  "complete_expression_reasoning": [
+    "The entire1862 petition is retained without lexical editing; the source punctuation survives accent/ligature normalization.",
+    "The source old cue remains verbatim in ancient_reading. Its omitted cue is not falsely expanded into the new short formula.",
+    "The appended full conventional Latin and English conclusion and response are directly printed in the separate old source. Response glyph becomes declared R.; Latin stress accents are normalized.",
+    "This is an explicitly project-assembled study prayer from two complete old units, not a claim that either donor contains the assembled whole and not a splice of protected modern petition wording.",
+    "The new English petition remains exactly the independently accepted project translation; the separately sourced conventional ending and response are literal."
+  ],
+  "strongest_contrary_gate": "Whole historical prayer differs in ending and original appointment; only a secondary digital2002 text supports the modern OT21 comparison. Neither printed2002 fidelity nor authenticated2008 identity is established. Acceptance therefore supplies only a labelled source-based study assembly; Latin coverage remains unresolved against target and English is a study translation. It cannot remove the approved-English rights refusal or count as exact modern-target completion.",
+  "source_ownership_successor": "v1 incorrectly reused a work requiring an exact target relation. v2/v3 own the Latin under work.triptych.ot21-plenum-historical-latin-assembly, with no widening of the exact-target work.",
+  "source_graph_validation": {
+    "path": ".scratch/modern-new-orations-review/ot21-complete/independent-source-graph.txt",
+    "sha256": "78ba1eb9960c38277c793940e26eea962fcff9b384c4dc1d61806b3306a913a5",
+    "scope": "Independent full metadata/text graph validation of v2 snapshot; v3 source files unchanged. External binary witnesses remain metadata-only except the exact relevant payloads hashed and images inspected here."
+  },
+  "mechanical_source_and_binding_checks": {
+    "status": "PASS",
+    "count": 71,
+    "checks": [
+      "candidate-freeze",
+      "proposal-v3-freeze",
+      "source-manifest-freeze",
+      "prior-body-review-matches",
+      "entire-old-petition-normalization",
+      "unchanged-accepted-English-petition",
+      "complete-Latin-three-unit-assembly",
+      "complete-English-three-unit-assembly",
+      "Latin-full-scalar-hash",
+      "English-full-scalar-hash",
+      "separate-response-line-both-languages",
+      "full-short-formula-not-old-cue-expansion",
+      "full-English-formula-literal-old-source",
+      "exact-source-payload:historical_petition",
+      "exact-source-payload:full_conclusion",
+      "exact-source-payload:comparison",
+      "formula-passage-record-unchanged",
+      "exact-eleven-source-files",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-historical-latin-assembly/work.toml",
+      "unique-new-source-id:work.triptych.ot21-plenum-historical-latin-assembly",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/edition.toml",
+      "unique-new-source-id:edition.triptych.ot21-plenum-historical-latin-assembly.2026-11-12",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/latin.txt",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/artifact.toml",
+      "unique-new-source-id:artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "artifact-byte-hash:artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "artifact-byte-size:artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "artifact-exact-complete-body:artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/passages/plenum-complete-latin.toml",
+      "unique-new-source-id:passage.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "source-file-hash:src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot21-plenum-petition-source-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot21-plenum-petition-source-20261112",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-study-english/work.toml",
+      "unique-new-source-id:work.triptych.ot21-plenum-study-english",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/edition.toml",
+      "unique-new-source-id:edition.triptych.ot21-plenum-study-english.2026-11-12",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "unique-new-source-id:artifact.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+      "artifact-byte-hash:artifact.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+      "artifact-byte-size:artifact.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+      "artifact-exact-complete-body:artifact.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+      "source-file-hash:src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "unique-new-source-id:passage.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+      "dedicated-historical-Latin-work",
+      "no-exact-target-work-reuse",
+      "passage-parent-hash:passage.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "passage-complete-three-lines:passage.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "passage-parent-hash:passage.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+      "passage-complete-three-lines:passage.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+      "old-main-source-cue-preserved",
+      "no-modern-target-grade",
+      "English-source-binding-exact-Latin",
+      "English-classified-project-study",
+      "English-complete-payload-unchanged",
+      "consumed-study-caution-present",
+      "prior-approved-English-refusal-preserved",
+      "prior-Latin-refusal-preserved",
+      "live-English-finite-preimage",
+      "live-Latin-finite-preimage",
+      "live-sidecar-finite-preimage",
+      "actual-full-publication-records",
+      "actual-one-Latin-owner",
+      "actual-Latin-six-surfaces",
+      "coverage-does-not-upgrade-target",
+      "actual-public-Latin-body-preserved",
+      "actual-study-English-Latin-binding",
+      "actual-disk-study-overlay",
+      "actual-v3-carried-English-caution",
+      "actual-mass-propers-English-caution",
+      "actual-Latin-qualification-both-selectors"
+    ]
+  },
+  "runtime_qualification": {
+    "actual_calls": [
+      {
+        "function": "mass-propers.select_texts",
+        "lang": "la",
+        "results": [
+          {
+            "body_sha256": "36e86231010cd442ba153211c41e73fc7a2e5a3f34d6a7366b12a72c914674e3",
+            "attribution": "Latin source: 1862 petition;1945 complete common ending",
+            "note": "Historical study source assembly: complete1862 Plenum petition with separately witnessed full short conclusion and marked response. Every petition word agrees with the secondary digital2002 witness, whose Per Christum cue differs from the old Per Dominum nostrum. This full expansion is independently sourced, not printed in full at the secondary target locus. Printed2002 fidelity and2008 correspondence remain unresolved; no exact modern-target claim."
+          }
+        ]
+      },
+      {
+        "function": "_calendars.texts_of",
+        "lang": "la",
+        "results": [
+          {
+            "body_sha256": "36e86231010cd442ba153211c41e73fc7a2e5a3f34d6a7366b12a72c914674e3",
+            "attribution": "Latin source: 1862 petition;1945 complete common ending",
+            "note": "Historical study source assembly: complete1862 Plenum petition with separately witnessed full short conclusion and marked response. Every petition word agrees with the secondary digital2002 witness, whose Per Christum cue differs from the old Per Dominum nostrum. This full expansion is independently sourced, not printed in full at the secondary target locus. Printed2002 fidelity and2008 correspondence remain unresolved; no exact modern-target claim."
+          }
+        ]
+      },
+      {
+        "function": "mass-propers.select_texts",
+        "lang": "en",
+        "results": [
+          {
+            "body_sha256": "4bf0aad8ec265a0e84f7859d6354313dd07b5f657a24f0091f85ad3479de5332",
+            "attribution": "Triptych, study translation from public-domain Latin",
+            "note": "New study English translated from a complete historical Latin petition, joined to a separately sourced traditional conclusion and marked response. This source assembly is not an approved liturgical translation. Correspondence with the 2008 Missal remains unverified."
+          }
+        ]
+      },
+      {
+        "function": "_calendars.texts_of",
+        "lang": "en",
+        "results": [
+          {
+            "body_sha256": "4bf0aad8ec265a0e84f7859d6354313dd07b5f657a24f0091f85ad3479de5332",
+            "attribution": "",
+            "note": "New study English translated from a complete historical Latin petition, joined to a separately sourced traditional conclusion and marked response. This source assembly is not an approved liturgical translation. Correspondence with the 2008 Missal remains unverified."
+          }
+        ]
+      }
+    ],
+    "mass_propers_English_caution": "PASS",
+    "shared_calendars_English_caution": "PASS",
+    "dependency": "Resolved by narrow shared-selector caution propagation; both exact English selectors rechecked against pinned production code.",
+    "production_code_pins": {
+      "scripts/_calendars.py": "fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7",
+      "tools/mass-propers": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+      "scripts/_missal_coverage.py": "10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70"
+    },
+    "final_finite_selector_probe": "PASS: exact English body and witness_note survive both production selectors; exact Latin body note survives both; English coverage is study-translation and Latin target relation remains unresolved."
+  },
+  "preserved_approved_English_refusal": {
+    "mass": "ot-21",
+    "form_id": "main",
+    "proper": "Prayer after Communion",
+    "cycle": "all",
+    "occurrence": 1,
+    "lang": "en",
+    "extent": "body",
+    "availability": "unavailable",
+    "reason": {
+      "kind": "rights-withheld",
+      "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+      "surfaces": [
+        "corpus-data",
+        "public-git",
+        "command-line",
+        "download"
+      ]
+    },
+    "rights": "permission",
+    "witness": "fdlc-mystagogy-2016",
+    "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+    "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78c-ordinary-14-23",
+    "verified_on_page": "2026-08-26",
+    "verified_artifact_page": 23,
+    "verified_printed_page": "23",
+    "verified_heading": "TWENTY-FIRST SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+    "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf",
+    "quarantined_text_sha256": [
+      "f65c1d4207469fc2f12208efcaab32373cbb2233147be2f70fe59ef51a3ac3de"
+    ],
+    "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+  },
+  "preserved_Latin_before_node": {
+    "name": "Prayer after Communion",
+    "incipit": "Plenum, quaesumus, Domine, in nobis remedium",
+    "source": "composed",
+    "text_status": {
+      "state": "unavailable",
+      "scope": "proper-body",
+      "reasons": [
+        {
+          "kind": "rights-withheld",
+          "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+        }
+      ]
+    }
+  },
+  "preserved_Latin_removal_records": [
+    {
+      "mass": "ot-21",
+      "form": "",
+      "proper": "Prayer after Communion",
+      "course": "",
+      "cycle": "",
+      "occurrence": 1,
+      "body_status": "removed",
+      "text_sha256": "98ab0eec1630824aa2d0a4d86137fc2b6808ffad35febce4b97b49f8cdcf04b9"
+    }
+  ],
+  "metadata_defect_separate": {
+    "path": ".scratch/modern-new-orations-review/ot21-complete/inherited-formula-metadata-defect.json",
+    "sha256": "b5bbc76a404205a67af55e0ff3607b001670d3141a3bab750174195f1888316c",
+    "bytes": 2442
+  },
+  "required_before_installation": [
+    "Recheck finite live preimages and merge only these deltas.",
+    "Preserve exact earlier approved-English refusal/quarantine and Latin removal records in durable review records.",
+    "Keep source assembly and study labels; no2008 exactness upgrade.",
+    "Run final integrated source epoch and public/browser projection checks at Root."
+  ],
+  "canonical_writes": false,
+  "prior_runtime_failure_retained": {
+    "path": ".scratch/modern-new-orations-review/ot21-complete/english-qualification-failure-v2.json",
+    "sha256": "451487796975067f60ab0e0ea8c7860c4729a8cdd477dd439c4749d05755f608",
+    "status": "superseded by consumed witness_note metadata and shared selector caution propagation; original failure retained"
+  },
+  "final_disposition": "accepted-finite-qualified-historical-study-installation-root-integration-pending"
+}

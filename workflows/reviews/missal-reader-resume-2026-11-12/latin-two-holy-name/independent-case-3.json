@@ -1,0 +1,44 @@
+{
+  "reviewer": "/root/roman_sources/remaining_saints",
+  "status": "source-review-pass-pending-root-adoption",
+  "canonical_writes": 0,
+  "authority": "Independent bounded source and metadata review only. No publication grant, source activation, source_epoch exception, or runtime overlay-ordering decision.",
+  "case": [
+    "most-holy-name-of-jesus",
+    "main",
+    "Collect",
+    "all",
+    1
+  ],
+  "kind": "locator-only-erratum",
+  "finding": "Independently read PDF104 image: printed93, First Sunday after Epiphany, with no Holy Name Collect. PDF106 image: printed95, complete Holy Name Collect from O God through Thro'. Correct zero-based IA leaf is105. The full proposed English is exactly the retained historical body; apostrophe styling follows the existing transcription.",
+  "images_independently_read": [
+    {
+      "path": ".scratch/roman-sources/additional-english-findings/images/cummiskey-ap104-200.png",
+      "bytes": 129039,
+      "sha256": "362f3ac630eb82657621802cbd15708ac7b41b34e8454236bc436eff759d51e7"
+    },
+    {
+      "path": ".scratch/roman-sources/additional-english-findings/images/cummiskey-ap106-400.png",
+      "bytes": 189625,
+      "sha256": "639066411d0cc42326059d1537923c0ccecb234f5112258bdccbe99dc27340ed"
+    }
+  ],
+  "before_binding_sha256": "fd68491616873692980d2c3af533d436dc22df2d2d97719209db8ef9cac58ff3",
+  "after_binding_sha256": "3e8312b0f085e2784848474ee2c98f0b5547bc3a41742a9123f12ec28e3bd8d2",
+  "body_before_sha256": "a0136939dba2112dfd3a0dda1cca88770218a124a024e241f8bb4390a5bdc199",
+  "body_after_sha256": "a0136939dba2112dfd3a0dda1cca88770218a124a024e241f8bb4390a5bdc199",
+  "fields_changed": [
+    "ia_leaf",
+    "ia_leaf_range",
+    "witness_note"
+  ],
+  "preserved_payload": {
+    "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-recovered-en/roman-1962-recovered-en.tsv",
+    "sha256": "c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a",
+    "physical_line": 57,
+    "stale_metadata": "IA leaf 103-103; PDF 104-104",
+    "treatment": "Preserve immutable payload; explicit erratum in publication passage points to corrected verification and owner metadata."
+  },
+  "limitations": "This checks the named page/body locator and explicit erratum. Historical feast placement notes and previous target-relation authority remain unchanged; no new source-calendar appointment is claimed. Physical TSV row57 retains its old metadata as immutable historical bytes."
+}

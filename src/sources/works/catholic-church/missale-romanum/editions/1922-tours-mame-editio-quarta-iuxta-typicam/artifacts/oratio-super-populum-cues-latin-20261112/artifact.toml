@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the liturgical cue words printed in the identified Tours Mame 1922 edition are transcribed. The registered whole source establishes the United States publication-term basis for the 1922 contents. This faithful text-only transcription adds no exclusive right in those words, which are excluded from Triptych CC BY 4.0. No whole scan or modern target text is included."
+rights_jurisdiction = "United States"
+provenance = "The complete already-held Mame 1922 PDF was rehashed to the registered SHA256 before reuse. Read Ritus servandus XI.2 at original PDF 85, printed lxxv, directly on whole page images at 220 and 400 dpi; XI.3 continues on PDF 86, printed lxxvi. The full two-utterance cue is printed in XI.2. Compared its complete lexical sequence against the held 1962 Ritus XI.2, original PDF 65/printed LXIII, and the source actor distinction against XI.3 at PDF 65-66/printed LXIII-LXIV. OCR was not used as the authority."
+retrieved = "2026-11-12"
+sha256 = "28665e7430be0a60f7b0d35d53b0a6f228df930d04d4b9507a54a6a758508ab4"
+byte_size = 592
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/oratio-super-populum-cues-latin-20261112/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Select only the two red spoken utterances in Ritus XI.2. Split at the printed full stop after Oremus; join the physical line wrap within vestra, omit stress accents, and collapse interword spacing. Preserve source words, capital letters and punctuation, including the comma after Deo that separates the cue from the following action rubric. Do not include the action rubric, source actor names, or invented speaker/response markers in either text row."
+notes = "The source comma after Deo is retained. It marks the transition to the action rubric; the following rubric is outside this text. Historical ferial-Office applicability and dismissal rules are not imported into 1962."

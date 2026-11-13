@@ -3612,12 +3612,7 @@ sections:
           only. Excludes Oremus/Humiliate directions from spoken-prayer payload; no historical
           Benedicamus or earlier additional-orations rubric adoption. Historical ending "Per Dominum.";
           actual target ending "Per Dominum.".
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 58, artifact PDF p. 139,
-          numbered unit 396). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: thursday-after-ash-wednesday
       name: Thursday after Ash Wednesday
       registry: '1962-T-thursday-after-ash-wednesday'
@@ -3748,12 +3743,7 @@ sections:
           romanum.pustet-ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is
           claimed to print its expanded target ending. Historical ending "Per Dominum."; actual target
           ending "Per Dominum nostrum.".
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 60, artifact PDF p. 141,
-          numbered unit 406). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: friday-after-ash-wednesday
       name: Friday after Ash Wednesday
       registry: '1962-T-friday-after-ash-wednesday'
@@ -3922,12 +3912,7 @@ sections:
           claimed to print its expanded target ending. Historical ending "Per Dominum nostrum."; actual
           target ending "Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in
           unitate.".
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 62, artifact PDF p. 143,
-          numbered unit 417). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: saturday-after-ash-wednesday
       name: Saturday after Ash Wednesday
       registry: '1962-T-saturday-after-ash-wednesday'
@@ -4060,12 +4045,7 @@ sections:
           bottom; Super populum Oratio; final prayer of Saturday.  Whole Saturday Oratio super populum;
           not the Sunday printed below it or a postcommunion. Historical ending "Per Dominum."; actual
           target ending "Per Dominum.".
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 63, artifact PDF p. 144,
-          numbered unit 427). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-1
       name: First Sunday of Lent
       registry: '21'
@@ -4323,12 +4303,7 @@ sections:
           ratisbon-1862.phase5-latin22-ritus-celebrandi-v-1. No historical proper is claimed to print
           its expanded target ending. Historical ending "Per Dominum."; actual target ending "Per
           Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.".
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 66, artifact PDF p. 147,
-          numbered unit 448). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-1-tuesday
       name: Tuesday of the First Week of Lent
       registry: '1962-T-lent-1-tuesday'
@@ -4429,6 +4404,12 @@ sections:
         text: |
           Quaesumus, omnipotens Deus: ut illius salutaris capiamus effectum, cujus per
           haec mysteria pignus accepimus. Per Dominum.
+      - name: Oratio super populum
+        incipit: Ascendant ad te, Domine
+        source: composed
+        notes: Missale Romanum 1962, printed 68/PDF 149, no. 458. Complete prayer and recipient appointment image-checked at 200/400 dpi on 2026-11-12. Entire preexisting wording corroborated in Mame 1922 printed 86/PDF 200; actual short Per Dominum. retained. Separate cues and execution conclusion belong to the source-appointed rite, outside this literal body.
+        text: |
+          Ascendant ad te, Domine, preces nostrae: et ab Ecclesia tua cunctam repelle nequitiam. Per Dominum.
     - key: lent-1-ember-wednesday
       name: Ember Wednesday of Lent
       registry: '1962-T-lent-1-ember-wednesday'
@@ -4753,12 +4734,7 @@ sections:
           diplomatic identity. Whole Thursday Oratio super populum only; preceding Postcommunion has a
           different target conclusion and was not used to construct this unit. Historical ending "Per
           Dominum nostrum."; actual target ending "Per Dominum.".
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 71, artifact PDF p. 152,
-          numbered unit 481). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-1-ember-friday
       name: Ember Friday of Lent
       registry: '1962-T-lent-1-ember-friday'
@@ -4884,12 +4860,7 @@ sections:
         text: |
           Exaudi nos, misericors Deus: et mentibus nostris gratiae tuae lumen ostende.
           Per Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 73, artifact PDF p. 154,
-          numbered unit 492). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-1-ember-saturday
       name: Ember Saturday of Lent
       registry: '1962-T-lent-1-ember-saturday'
@@ -5623,12 +5594,7 @@ sections:
           Adesto supplicationibus nostris, omnipotens Deus: et, quibus fiduciam
           sperandae pietatis indulges; consuetae misericordiae tribue benignus
           effectum. Per Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 82, artifact PDF p. 163,
-          numbered unit 551). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-2-tuesday
       name: Tuesday of the Second Week of Lent
       registry: '1962-T-lent-2-tuesday'
@@ -5749,12 +5715,7 @@ sections:
           Propitiare, Domine, supplicationibus nostris, et animarum nostrarum medere
           languoribus: ut, remissione percepta, in tua semper benedictione laetemur.
           Per Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 83, artifact PDF p. 164,
-          numbered unit 561). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-2-wednesday
       name: Wednesday of the Second Week of Lent
       registry: '1962-T-lent-2-wednesday'
@@ -5883,12 +5844,7 @@ sections:
           Deus, innocentiae restitutor et amator, dirige ad te tuorum corda servorum:
           ut, spiritus tui fervore concepto, et in fide inveniantur stabiles, et in
           opere efficaces. Per Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 85, artifact PDF p. 166,
-          numbered unit 572). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-2-thursday
       name: Thursday of the Second Week of Lent
       registry: '1962-T-lent-2-thursday'
@@ -6010,12 +5966,7 @@ sections:
           Adesto, Domine, famulis tuis, et perpetuam benignitatem largire poscentibus:
           ut iis, qui te auctore et gubernatore gloriantur, et congregata restaures,
           et restaurata conserves. Per Dominum nostrum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 86, artifact PDF p. 167,
-          numbered unit 582). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-2-friday
       name: Friday of the Second Week of Lent
       registry: '1962-T-lent-2-friday'
@@ -6138,12 +6089,7 @@ sections:
           Da, quaesumus, Domine, populo tuo salutem mentis et corporis: ut, bonis
           operibus inhaerendo, tuae semper virtutis mereatur protectione defendi. Per
           Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 88, artifact PDF p. 169,
-          numbered unit 593). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-2-saturday
       name: Saturday of the Second Week of Lent
       registry: '1962-T-lent-2-saturday'
@@ -6261,12 +6207,7 @@ sections:
           Familiam tuam, quaesumus, Domine, continua pietate custodi: ut, quae in sola
           spe gratiae caelestis innititur, caelesti etiam protectione muniatur. Per
           Dominum nostrum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 91, artifact PDF p. 172,
-          numbered unit 603). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-3
       name: Third Sunday of Lent
       registry: '23'
@@ -6549,12 +6490,7 @@ sections:
           nostrorum periculis, te mereamur protegente eripi, te liberante salvari. Per
           Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
           unitate.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 94, artifact PDF p. 175,
-          numbered unit 624). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-3-tuesday
       name: Tuesday of the Third Week of Lent
       registry: '1962-T-lent-3-tuesday'
@@ -6677,12 +6613,7 @@ sections:
         text: |
           Tua nos, Domine, protectione defende: et ab omni semper iniquitate custodi.
           Per Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 96, artifact PDF p. 177,
-          numbered unit 634). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-3-wednesday
       name: Wednesday of the Third Week of Lent
       registry: '1962-T-lent-3-wednesday'
@@ -6832,12 +6763,7 @@ sections:
           Concede, quaesumus, omnipotens Deus: ut, qui protectionis tuae gratiam
           quaerimus, liberati a malis omnibus, secura tibi mente serviamus. Per
           Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 98, artifact PDF p. 179,
-          numbered unit 645). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-3-thursday
       name: Thursday of the Third Week of Lent
       registry: '1962-T-lent-3-thursday'
@@ -6943,12 +6869,7 @@ sections:
         text: |
           Subjectum tibi populum, quaesumus, Domine, propitiatio caelestis amplificet:
           et tuis semper faciat servire mandatis. Per Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 99, artifact PDF p. 180,
-          numbered unit 655). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-3-friday
       name: Friday of the Third Week of Lent
       registry: '1962-T-lent-3-friday'
@@ -7104,12 +7025,7 @@ sections:
         text: |
           Praesta, quaesumus, omnipotens Deus: ut, qui in tua protectione confidimus,
           cuncta nobis adversantia, te adjuvante, vincamus. Per Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 101, artifact PDF p. 182,
-          numbered unit 666). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-3-saturday
       name: Saturday of the Third Week of Lent
       registry: '1962-T-lent-3-saturday'
@@ -7232,12 +7148,7 @@ sections:
         text: |
           Praetende, Domine, fidelibus tuis dexteram caelestis auxilii: ut te toto
           corde perquirant; et, quae digne postulant, consequi mereantur. Per Dominum.
-      ordinary_frame:
-        applicability: unavailable
-        basis: The source appoints an Oratio super populum after the Postcommunion (printed p. 104, artifact PDF p. 185,
-          numbered unit 676). This remains a Mass. The held generic Ordinary has no declared seat for this prayer, and
-          its Ordo Missae inventory explicitly leaves the Lenten ferial prayer unplaced. The Proper rows retain the Missal's
-          order while the generic frame is withheld.
+
     - key: lent-4
       name: Fourth Sunday of Lent
       registry: '24'
@@ -7472,13 +7383,8 @@ sections:
         source: "composed"
         text: |
           Deprecationem nostram, quaesumus, Domine, benignus exaudi: et, quibus supplicandi praestas affectum, tribue defensionis auxilium. Per Dominum.
-        notes: "Missale Romanum1962 original PDF188, printed107; numbered unit697; right bottom; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF250, printed136; right top; Oratio after Super populum and before next day; retained extract page2. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 107, numbered text 697; artifact PDF p. 188). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF188, printed107; numbered unit697; right bottom; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF250, printed136; right top; Oratio after Super populum and before next day; retained extract page2. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: lent-4-tuesday
       name: Tuesday of the Fourth Week of Lent
       registry: '1962-T-lent-4-tuesday'
@@ -7596,13 +7502,8 @@ sections:
         source: "composed"
         text: |
           Miserere, Domine, populo tuo: et, continuis tribulationibus laborantem, propitius respirare concede. Per Dominum nostrum.
-        notes: "Missale Romanum1962 original PDF190, printed109; numbered unit707; right top; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF252, printed138; right middle; Oratio after Super populum and before next day; retained extract page3. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 109, numbered text 707; artifact PDF p. 190). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF190, printed109; numbered unit707; right top; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF252, printed138; right middle; Oratio after Super populum and before next day; retained extract page3. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: lent-4-wednesday
       name: Wednesday of the Fourth Week of Lent
       registry: '1962-T-lent-4-wednesday'
@@ -7866,6 +7767,12 @@ sections:
           Caelestia dona capientibus, quaesumus, Domine: non ad judicium provenire
           patiaris, quae fidelibus tuis ad remedium providisti. Per Dominum nostrum
           Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
+      - name: Oratio super populum
+        incipit: Populi tui, Deus, institutor et rector
+        source: composed
+        notes: Missale Romanum 1962, printed 114/PDF 195, no. 731. Complete prayer and recipient appointment image-checked at 200/400 dpi on 2026-11-12. Entire preexisting wording corroborated in Mame 1922 printed 144/PDF 258; actual short Per Dominum. retained. Separate cues and execution conclusion belong to the source-appointed rite, outside this literal body.
+        text: |
+          Populi tui, Deus, institutor et rector, peccata, quibus impugnatur, expelle: ut semper tibi placitus, et tuo munimine sit securus. Per Dominum.
     - key: lent-4-friday
       name: Friday of the Fourth Week of Lent
       registry: '1962-T-lent-4-friday'
@@ -8002,13 +7909,8 @@ sections:
         source: "composed"
         text: |
           Da nobis, quaesumus, omnipotens Deus: ut, qui infirmitatis nostrae conscii, de tua virtute confidimus, sub tua semper pietate gaudeamus. Per Dominum nostrum.
-        notes: "Missale Romanum1962 original PDF197, printed116; numbered unit742; left bottom continuing at right top; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF261, printed147; right bottom; Oratio after Super populum and before next day; retained extract page5. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 116, numbered text 742; artifact PDF p. 197). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF197, printed116; numbered unit742; left bottom continuing at right top; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF261, printed147; right bottom; Oratio after Super populum and before next day; retained extract page5. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: lent-4-saturday
       name: Saturday of the Fourth Week of Lent
       registry: '1962-T-lent-4-saturday'
@@ -8117,13 +8019,8 @@ sections:
         source: "composed"
         text: |
           Deus, qui sperantibus in te misereri potius eligis, quam irasci: da nobis digne flere mala, quae fecimus; ut tuae consolationis gratiam invenire mereamur. Per Dominum.
-        notes: "Missale Romanum1962 original PDF198, printed117; numbered unit752; right lower middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF263, printed149; right lower middle; Oratio after Super populum and before next day; retained extract page6. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 117, numbered text 752; artifact PDF p. 198). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF198, printed117; numbered unit752; right lower middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF263, printed149; right lower middle; Oratio after Super populum and before next day; retained extract page6. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: passion-sunday
       name: First Sunday of the Passion
       registry: '25'
@@ -8388,13 +8285,8 @@ sections:
         source: "composed"
         text: |
           Da, quaesumus, Domine, populo tuo salutem mentis et corporis: ut, bonis operibus inhaerendo, tua semper mereatur protectione defendi. Per Dominum nostrum.
-        notes: "Missale Romanum1962 original PDF202, printed121; numbered unit773; left upper middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF268, printed154; right bottom; Oratio after Super populum and before next day; retained extract page7. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 121, numbered text 773; artifact PDF p. 202). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF202, printed121; numbered unit773; left upper middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF268, printed154; right bottom; Oratio after Super populum and before next day; retained extract page7. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: passion-tuesday
       name: Tuesday of Passion Week
       registry: '1962-T-passion-tuesday'
@@ -8510,13 +8402,8 @@ sections:
         source: "composed"
         text: |
           Da nobis, quaesumus, Domine: perseverantem in tua voluntate famulatum; ut in diebus nostris, et merito et numero, populus tibi serviens augeatur. Per Dominum.
-        notes: "Missale Romanum1962 original PDF203, printed122; numbered unit783; right lower middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF271, printed157; left top; Oratio after Super populum and before next day; retained extract page8. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 122, numbered text 783; artifact PDF p. 203). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF203, printed122; numbered unit783; right lower middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF271, printed157; left top; Oratio after Super populum and before next day; retained extract page8. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: passion-wednesday
       name: Wednesday of Passion Week
       registry: '1962-T-passion-wednesday'
@@ -8630,6 +8517,14 @@ sections:
           deprecamur; ut hoc idem nobis et sacramenti causa sit, et salutis. Per
           Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in
           unitate.
+      - name: Oratio super populum
+        incipit: Adesto supplicationibus
+        source: composed
+        notes: Missale Romanum 1962, printed 124/PDF 205, no. 794. Complete prayer and recipient appointment image-checked at 200/400 dpi on 2026-11-12. Entire preexisting wording corroborated in Mame 1922 printed 102/PDF 216; actual short Per Dominum. retained. Separate cues and execution conclusion belong to the source-appointed rite, outside this literal body. Exact held lent-2-monday body reused with its historical source ownership preserved; this recipient appointment has an independent 1962 control.
+        text: |
+          Adesto supplicationibus nostris, omnipotens Deus: et, quibus fiduciam
+          sperandae pietatis indulges; consuetae misericordiae tribue benignus
+          effectum. Per Dominum.
     - key: passion-thursday
       name: Thursday of Passion Week
       registry: '1962-T-passion-thursday'
@@ -8742,13 +8637,8 @@ sections:
         source: "composed"
         text: |
           Esto, quaesumus, Domine, propitius plebi tuae: ut, quae tibi non placent, respuentes; tuorum potius repleantur delectationibus mandatorum. Per Dominum nostrum.
-        notes: "Missale Romanum1962 original PDF207, printed126; numbered unit804; left middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF275, printed161; right middle; Oratio after Super populum and before next day; retained extract page9. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 126, numbered text 804; artifact PDF p. 207). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF207, printed126; numbered unit804; left middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF275, printed161; right middle; Oratio after Super populum and before next day; retained extract page9. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: passion-friday
       name: Friday of Passion Week
       registry: '1962-T-passion-friday'
@@ -8892,13 +8782,8 @@ sections:
         source: "composed"
         text: |
           Concede, quaesumus, omnipotens Deus: ut, qui protectionis tuae gratiam quaerimus, liberati a malis omnibus, secura tibi mente serviamus. Per Dominum nostrum.
-        notes: "Missale Romanum1962 original PDF208, printed127; numbered unit815; right middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF277, printed163; right top; Oratio after Super populum and before next day; retained extract page10. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 127, numbered text 815; artifact PDF p. 208). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF208, printed127; numbered unit815; right middle; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF277, printed163; right top; Oratio after Super populum and before next day; retained extract page10. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: passion-saturday
       name: Saturday of Passion Week
       registry: '1962-T-passion-saturday'
@@ -9012,13 +8897,8 @@ sections:
         source: "composed"
         text: |
           Tueatur, quaesumus, Domine, dextera tua populum deprecantem: et purificatum dignanter erudiat; ut, consolatione praesenti, ad futura bona proficiat. Per Dominum.
-        notes: "Missale Romanum1962 original PDF210, printed129; numbered unit825; right bottom; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF280, printed166; right top; Oratio after Super populum and before next day; retained extract page11. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 129, numbered text 825; artifact PDF p. 210). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF210, printed129; numbered unit825; right bottom; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF280, printed166; right top; Oratio after Super populum and before next day; retained extract page11. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: palm-sunday
       name: Second Sunday of the Passion (Palm Sunday)
       registry: '26'
@@ -9268,6 +9148,11 @@ sections:
               chapter: 21
               verse: 9
           ref: Matthew 21:9
+          reading_role:
+            schema: "triptych-proper-citation-role/v1"
+            kind: "embedded-quotation"
+            source_id: "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-embedded-quotation-following-psalm-20261112"
+            locus: "CMAA 1962 PDF p. 215, printed p. 134, bottom-left: Antiphona 5, no. 838; Benedictus/Hosanna words are inside the complete Omnes antiphon guillemets, not a separately appointed Matthew reading."
         - book: Psalms
           ranges:
           - begin:
@@ -9275,6 +9160,11 @@ sections:
             end:
               chapter: 147
           ref: Psalm 147
+          reading_role:
+            schema: "triptych-proper-citation-role/v1"
+            kind: "following-psalm"
+            source_id: "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-embedded-quotation-following-psalm-20261112"
+            locus: "CMAA 1962 PDF p. 215, printed p. 134, right column: separately headed Psalmus 147, no. 839; followed by a doxology and Et repetitur antiphona before the repeated Omnes."
         text: |
           Omnes collaudant nomen tuum, et dicunt: « Benedictus qui venit in nomine Domini: Hosanna in excelsis ».
         notes: Exact bounded body from direct 2026-11-12 source/target page-image collation. Qualified United States whole-expression assessment; moderate confidence. Publication is limited to the code-pinned exact owner/body/controller/surface tuple under method english-completion-20261029-finite-latin-v1. The source record itself grants no authority or wider scope. A changed English body or controller requires its own review; no vanished historical receipt is replayed or inferred.
@@ -9590,13 +9480,8 @@ sections:
         source: "composed"
         text: |
           Adjuva nos, Deus salutaris noster: et ad beneficia recolenda, quibus nos instaurare dignatus es, tribue venire gaudentes. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti, Deus.
-        notes: "Missale Romanum1962 original PDF224, printed143; numbered unit867; left top continuing at right top; preceding cue on PDF223 printed142; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF300, printed186; left middle; Oratio after Super populum and before next day; retained extract page12. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 143, numbered text 867; artifact PDF p. 224). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF224, printed143; numbered unit867; left top continuing at right top; preceding cue on PDF223 printed142; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF300, printed186; left middle; Oratio after Super populum and before next day; retained extract page12. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: holy-tuesday
       name: Tuesday of Holy Week
       registry: '1962-T-holy-tuesday'
@@ -9703,13 +9588,8 @@ sections:
         source: "composed"
         text: |
           Tua nos misericordia, Deus, et ab omni subreptione vetustatis expurget, et capaces sanctae novitatis efficiat. Per Dominum nostrum.
-        notes: "Missale Romanum1962 original PDF227, printed146; numbered unit877; right bottom; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF306, printed192; right top; Oratio after Super populum and before next day; retained extract page13. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. Generic Ordinary placement remains unavailable."
-      ordinary_frame:
-        applicability: unavailable
-        basis: This remains a Mass. The normal formulary appoints Oratio super populum after Postcommunion and before
-          dismissal (Missale Romanum 1962, printed p. 146, numbered text 877; artifact PDF p. 227). The held generic Ordinary
-          frame has no declared place for this prayer, so that frame is unavailable. The Propers remain in their printed
-          order.
+        notes: "Missale Romanum1962 original PDF227, printed146; numbered unit877; right bottom; Oratio super populum after Postcommunion. Complete Latin independently collated to Mame1922 original PDF306, printed192; right top; Oratio after Super populum and before next day; retained extract page13. Under17USC103(b), public-domain underlying words; declared target pointing, j orthography and actual printed conclusion. The finite Oratio super populum rite declaration in the 1962 Ordinary inventory establishes this prayer's placement."
+
     - key: holy-wednesday
       name: Wednesday of Holy Week
       registry: '1962-T-holy-wednesday'
@@ -10584,21 +10464,27 @@ sections:
       - name: First Prayer after Communion
         incipit: Super populum tuum, quaesumus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        text: |
+          Super populum tuum, quaesumus, Domine, qui passionem et mortem Filii tui devota mente recoluit, benedictio copiosa descendat, indulgentia veniat, consolatio tribuatur, fides sancta succrescat, redemptio sempiterna firmetur. Per eundem Christum Dominum nostrum. R. Amen.
+        text_structure:
+          text_sha256: d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18
+          checked: Complete target image collation at200/400dpi on2026-11-12; exact R. marker is nonspoken and following Amen spoken.
+          actions:
+          - kind: rubric
+            offset: 261
+            text: R.
       - name: Second Prayer after Communion
         incipit: Omnipotens et misericors Deus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        text: |
+          Omnipotens et misericors Deus, qui Christi tui beata passione et morte nos reparasti: conserva in nobis operam misericordiae tuae; ut, huius mysterii participatione, perpetua devotione vivamus. Per eundem Christum Dominum nostrum. R. Amen.
+        text_structure:
+          text_sha256: 9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d
+          checked: Complete target image collation at200/400dpi on2026-11-12; exact R. marker is nonspoken and following Amen spoken.
+          actions:
+          - kind: rubric
+            offset: 231
+            text: R.
       - name: Third Prayer after Communion
         incipit: Reminiscere miserationum tuarum
         source: composed
@@ -18344,25 +18230,15 @@ sections:
         "notes": "Plural form for two or more Supreme Pontiffs."
         "text": "Gregem tuum, Pastor aeterne, placatus intende: et per beatos N. et N. (Martyres tuos atque) Summos Pontifices perpetua protectione custodi; quos totius Ecclesiae praestitisti esse pastores. Per Dominum.\n"
       - name: Collect (Altera oratio)
-        incipit: Deus, qui Ecclesiam
         source: composed
         notes: Printed p. [2], no. 4178.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        text: |
+          Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab infernarum eruis terrore portarum: praesta, quaesumus; ut, intercedente beato N. (Martyre tuo atque) Summo Pontifice, in tua veritate persistens, continua securitate muniatur. Per Dominum.
       - name: Collect (Altera oratio, in plurali)
-        incipit: Deus, qui Ecclesiam
         source: composed
         notes: Printed p. [2], no. 4179.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        text: |
+          Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab infernarum eruis terrore portarum: praesta, quaesumus; ut, intercedentibus beatis N. et N. (Martyribus tuis atque) Summis Pontificibus, in tua veritate persistens, continua securitate muniatur. Per Dominum.
       - name: Epistle
         source: scripture
         verses:
@@ -18539,15 +18415,10 @@ sections:
         "notes": "Printed p. [3], no. 4187. Entiretargetbody is a finite qualifiednonoriginaladaptation of a continuousFeltoe1896wholeprayer; see exactauthority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Moderateconfidence; theologicalredactionoriginality objection retained; no holderpermission or unqualifiedPDclaim."
         "text": "Oblatis muneribus, quaesumus, Domine, Ecclesiam tuam benignus illumina: ut et gregis tui proficiat ubique successus, et grati fiant nomini tuo, te gubernante, pastores. Per Dominum nostrum.\n"
       - name: Secret (Altera secreta)
-        incipit: Munera, quae tibi
         source: composed
         notes: Printed p. [3], no. 4188.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        text: |
+          Munera, quae tibi, Domine, laetantes offerimus, suscipe benignus, et praesta: ut, intercedente beato N. (intercedentibus beatis N. et N.), Ecclesia tua et fidei integritate laetetur, et temporum tranquillitate semper exsultet. Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.
       - name: Communion
         source: scripture
         verses:
@@ -18566,25 +18437,15 @@ sections:
         "notes": "Printed p. [3], no. 4190. Entiretargetbody is a finite qualifiednonoriginaladaptation of a continuousFeltoe1896wholeprayer; see exactauthority workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v1.json method english-completion-20261029-finite-latin-v1. Moderateconfidence; theologicalredactionoriginality objection retained; no holderpermission or unqualifiedPDclaim."
         "text": "Refectione sancta enutritam guberna, quaesumus, Domine, tuam placatus Ecclesiam: ut, potenti moderatione directa, et incrementa libertatis accipiat et in religionis integritate persistat. Per Dominum.\n"
       - name: Postcommunion (Altera postcommunio)
-        incipit: Multiplica, quaesumus, Domine
         source: composed
         notes: Printed p. [3], no. 4191.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        text: |
+          Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem dedisti: ut, beati N. (Martyris tui atque) Summi Pontificis deprecatione, nec pastori oboedientia gregis nec gregi desit cura pastoris. Per Dominum.
       - name: Postcommunion (in plurali)
-        incipit: Multiplica, quaesumus, Domine
         source: composed
         notes: Printed p. [3], no. 4192.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf
+        text: |
+          Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem dedisti: ut, beatorum N. et N. (Martyrum tuorum atque) Summorum Pontificum deprecatione, nec pastori oboedientia gregis nec gregi desit cura pastoris. Per Dominum.
     - key: commune-unius-martyris-1
       name: 'Commune unius Martyris extra tempus paschale, Missa I: Statuit ei Dominus'
       registry: 1962-C-unius-martyris-1
@@ -27371,12 +27232,7 @@ sections:
       kind: marian
       ordinary_appointments:
         preface: {option: beata-maria-virgine, locus: "Missale Romanum 1962, registered CMAA facsimile, artifact p. 709 / printed p. 628, raw page-local line 44; Praefatio de beata Maria Virgine Et te in; expected-target row roman-1962:sanctoral-form:p708-l5:preface:p709-l44"}
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 627 (digital p.
-        708), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: Identity, rank and printed scriptural citations were initially recorded on 2026-08-01 from the text layer of the CMAA 1962 facsimile, printed 627 / PDF708. This was not a complete visual collation of the formulary. Later per-proper source and Latin-provenance records identify the exact page-image checks and publication basis for each available body; remaining orations retain their typed unavailable states.
       propers:
       - name: Introit
         source: scripture
@@ -27493,12 +27349,8 @@ sections:
           ref: Luke 1:48-49
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Sumptis, Domine, salutaribus sacramentis: da, quaesumus; ut, meritis et intercessione beatae Virginis Mariae in caelum assumptae, ad resurrectionis gloriam perducamur. Per Dominum.
     - key: immaculati-cordis-beatae-mariae-virginis
       name: Immaculati Cordis Beatae Mariae Virginis
       registry: '1962-08-22'
@@ -35396,7 +35248,7 @@ sections:
           public-domain Pustet Ratisbon 1862 at printed p. 414; text-layer lines
           59292-59304; this is the 1862's own entry for the day.
         text: |
-          Annue nobis, quaesumus, Domine: ut II intercession e beati Gregorii haec
+          Annue nobis, quaesumus, Domine: ut intercessione beati Gregorii haec
           nobis prosit oblatio, quam immolando totius mundi tribuisti relaxari
           delicta. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et
           regnat in unitate.
@@ -40051,12 +39903,7 @@ sections:
       date: 05-13
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 528 (digital p.
-        609), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: Identity, rank and printed scriptural citations were initially recorded on 2026-08-01 from the text layer of the CMAA 1962 facsimile, printed 528 / PDF609. This was not a complete visual collation of the formulary. Later per-proper source and Latin-provenance records identify the exact page-image checks and publication basis for each available body; remaining orations retain their typed unavailable states.
       propers:
       - name: Introit
         source: scripture
@@ -40167,12 +40014,8 @@ sections:
           ref: Psalms 72:28
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Hostias tibi, Domine, in odorem suavitatis offerimus: et praesta; ut, beati Roberti monitis et exemplis edocti, per semitam mandatorum tuorum dilatato corde curramus. Per Dominum nostrum.
       - name: Communion
         source: scripture
         verses:
@@ -51716,12 +51559,7 @@ sections:
       date: 09-03
       rank: III
       kind: sanctoral
-      notes: Only the scripture-bearing propers are recorded; the orations the Missal
-        prints for this day are appointed and not transcribed here. Identity, rank and
-        the printed citations were read on 2026-08-01 from the embedded text layer of
-        the CMAA facsimile of the controlling edition at printed p. 648 (digital p.
-        729), not from the facsimile images, and nothing here has been visually
-        collated.
+      notes: "Identity, rank and printed scriptural citations were initially recorded on 2026-08-01 from the text layer of the CMAA 1962 facsimile, printed 648 / artifact page 729. This was not a complete visual collation of the formulary. The Secret now has its own exact page-image collation and finite qualified publication basis; Collect and Postcommunion retain their typed unavailable states. No older-recension attestation is inferred."
       propers:
       - name: Introit
         source: scripture
@@ -51817,12 +51655,8 @@ sections:
           ref: Psalms 33:12
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: |
+          Oblationibus nostris, quaesumus, Domine, benigne susceptis, da nobis, ut haec divina mysteria, sancto Pio Summo Pontifice intercedente, sinceris tractemus obsequiis et fideli mente sumamus. Per Dominum.
       - name: Communion
         source: scripture
         verses:
@@ -51916,7 +51750,7 @@ sections:
           public-domain Pustet Ratisbon 1862 at 1862 sanctoral, 9 September, 'Pro S.
           Gorgonio. Postcomm.'; text-layer lines 73848-73852; approx. printed p. 537.
         text: |
-          Familiam tuam, Deus, suavitas aeterna contingat et vegetet: quas in Martyre
+          Familiam tuam, Deus, suavitas aeterna contingat et vegetet: quae in Martyre
           tuo Gorgonio Christi Filii tui bono jugiter odore pascatur: Qui tecum vivit
           et regnat in unitate.
       takes_from:

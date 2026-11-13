@@ -1,0 +1,526 @@
+{
+  "schema": "triptych-ferial-three-installation-projection/v1",
+  "state": "exact-admitted-source-operations-only-not-an-application-receipt",
+  "original_installation_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/install-plan.json",
+    "sha256": "c015358de877879ccaaf10e8bd1ce5c4af9c096d7c55a2bc024308583e0263d1",
+    "byte_size": 81954
+  },
+  "hash_convention": "Literal UTF-8 for file/body hashes; UTF-8 JSON, ensure_ascii=False, sort_keys=True and compact separators, without final LF, for parsed objects.",
+  "selected_rows": [
+    {
+      "original_json_pointer": "/rows/0",
+      "original_row_canonical_sha256": "1c26450185793b0481048bddf2c945dc38d13af2051f6239ac269cf5ff0ce291",
+      "operation": {
+        "identity": [
+          "lent-1-tuesday",
+          "main",
+          "Oratio super populum",
+          "all",
+          1
+        ],
+        "new_proper": {
+          "name": "Oratio super populum",
+          "incipit": "Ascendant ad te, Domine",
+          "source": "composed",
+          "notes": "Missale Romanum 1962, printed 68/PDF 149, no. 458. Complete prayer and recipient appointment image-checked at 200/400 dpi on 2026-11-12. Entire preexisting wording corroborated in Mame 1922 printed 86/PDF 200; actual short Per Dominum. retained. Separate cues and execution conclusion belong to the source-appointed rite, outside this literal body.",
+          "text": "Ascendant ad te, Domine, preces nostrae: et ab Ecclesia tua cunctam repelle nequitiam. Per Dominum.\n"
+        },
+        "latin_provenance": {
+          "mass": "lent-1-tuesday",
+          "form": "",
+          "proper": "Oratio super populum",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-20261112-lent-1-tuesday",
+          "source_date": "2026-11-12 target projection; complete historical witness Mame 1922",
+          "locator": "Complete target lent-1-tuesday Oratio super populum; carrier line 1",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ferial-osp-20261112-lent-1-tuesday",
+          "verification_locator": "Proprium de tempore; lent-1-tuesday; heading PDF 148/printed 67; complete Oratio super populum no. 458, PDF 149/printed 68, L column; Postcommunion 457 and cue PDF 149",
+          "transformations": [
+            "join physical wraps and division hyphens",
+            "remove stress accents and expand ae/oe ligatures",
+            "preserve full petition and target punctuation",
+            "expand historical Dñum. to Dominum explicitly"
+          ],
+          "provenance_evidence": "Complete petition equals target after stress/ligature/wrap normalization; printed Dnum with contraction mark is represented Dñum. here and explicitly expanded to Dominum in the target carrier. No prayer words change. Complete target and entire historical prayer independently inspected by author at 200/400 dpi.",
+          "provenance_authority": "Triptych direct page-image collation with independent target and historical controls",
+          "provenance_confidence": "medium",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-two-target-20261112",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ferial-osp-two-historical-20261112"
+          ],
+          "publication_locator": "Mame 1922 printed 86/PDF 200; historical text line 1; target carrier line 1",
+          "publication_evidence": "Complete preexisting Latin expression established in the 1922 printing, under the existing United States public-domain/17 U.S.C. 103(b) route; no new qualified-nonoriginal-adaptation assessment or modern-edition permission. Only declared typographic normalization and the explicit Ascendant contraction expansion from Dñum. to Dominum. Source bodies and appointment remain separately bound."
+        },
+        "english_entry": {
+          "mass": "lent-1-tuesday",
+          "form_id": "main",
+          "proper": "Oratio super populum",
+          "cycle": "all",
+          "occurrence": 1,
+          "witness": "lasance-1945-printing-1946",
+          "printed_page": "245",
+          "ia_leaf": 254,
+          "ia_leaf_range": [
+            254,
+            254
+          ],
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english-source",
+          "collated": "complete page-image and bounded checked transcription, 2026-11-12",
+          "collation_result": "confirmed",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english",
+          "publication_artifact_sha256": "f5667f63524494c630ef1c7ccb08bdc628966f581b29670f599149bf3af373bf",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english-text",
+          "witness_note": "Complete prayer at printed p. 245, artifact PDF page 255. Full parallel Latin and English read at 200/400 dpi; complete Latin word sequence and actual Per Dominum. match the target. English exact in concrete 1946 printing. Title/copyright PDF 9-10 read at 200/400 dpi. Exact complete target Latin SHA256 125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c. Concrete 1946 printing establishes this historical English stratum, without extending the mixed later-printing label. Complete parallel Latin and actual ending equal target under typography only. No modern approved liturgical-English claim.",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946",
+              "text": "Let our prayers ascend unto Thee, O Lord, and repel all evil from Thy Church. Through our Lord."
+            }
+          ]
+        },
+        "old_proper": null,
+        "old_latin_provenance": null,
+        "old_english_entry": null,
+        "old_untranslated": [],
+        "old_mass_parsed_sha256": "3d302cd537f2e48af9ef11e7f511b1c44a084571b2c96b2ff31f7723403857f6",
+        "old_propers_parsed_sha256": "1947750ebc0f521d161df8522e4afab51987b1b59446ba55df603d3d1858b79a",
+        "Latin_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+        "English_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269",
+        "complete_new_proper_sha256": "59993fc7590b696846d1b30ad20af45bff2f793b8caab3b7cfc33d19601a10e7",
+        "complete_Latin_row_sha256": "e40cb1478ed2e8dc5eda50e54cd19232d692adc9bc058db924475ebb82f6f17d",
+        "complete_English_entry_sha256": "1dc16ed15a6954fdf5136933996a37b311b6db0158b77446ae054acb924b1fcd",
+        "insertion": {
+          "operation": "append one terminal proper after existing final Postcommunion",
+          "index": 9,
+          "anchor_parsed_sha256": "4326f1c2185906056b06ab9d85442ed77a479314386621a196a75fdd9608052c"
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/rows/1",
+      "original_row_canonical_sha256": "1123b846add348629e75a86acb19796b12d2f7a0610ce8ac746c152e864d526c",
+      "operation": {
+        "identity": [
+          "lent-4-thursday",
+          "main",
+          "Oratio super populum",
+          "all",
+          1
+        ],
+        "new_proper": {
+          "name": "Oratio super populum",
+          "incipit": "Populi tui, Deus, institutor et rector",
+          "source": "composed",
+          "notes": "Missale Romanum 1962, printed 114/PDF 195, no. 731. Complete prayer and recipient appointment image-checked at 200/400 dpi on 2026-11-12. Entire preexisting wording corroborated in Mame 1922 printed 144/PDF 258; actual short Per Dominum. retained. Separate cues and execution conclusion belong to the source-appointed rite, outside this literal body.",
+          "text": "Populi tui, Deus, institutor et rector, peccata, quibus impugnatur, expelle: ut semper tibi placitus, et tuo munimine sit securus. Per Dominum.\n"
+        },
+        "latin_provenance": {
+          "mass": "lent-4-thursday",
+          "form": "",
+          "proper": "Oratio super populum",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-20261112-lent-4-thursday",
+          "source_date": "2026-11-12 target projection; complete historical witness Mame 1922",
+          "locator": "Complete target lent-4-thursday Oratio super populum; carrier line 2",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ferial-osp-20261112-lent-4-thursday",
+          "verification_locator": "Proprium de tempore; lent-4-thursday; heading PDF 193/printed 112; complete Oratio super populum no. 731, PDF 195/printed 114, L column; Postcommunion 730 and cue PDF 194",
+          "transformations": [
+            "join physical wraps and division hyphens",
+            "remove stress accents and expand ae/oe ligatures",
+            "preserve full petition and target punctuation",
+            "retain exact short Per Dominum. ending"
+          ],
+          "provenance_evidence": "Complete petition and short Per Dominum ending equal target after typography and wrap normalization. Target pointing is retained. Complete target and entire historical prayer independently inspected by author at 200/400 dpi.",
+          "provenance_authority": "Triptych direct page-image collation with independent target and historical controls",
+          "provenance_confidence": "medium",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-two-target-20261112",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ferial-osp-two-historical-20261112"
+          ],
+          "publication_locator": "Mame 1922 printed 144/PDF 258; historical text line 2; target carrier line 2",
+          "publication_evidence": "Complete preexisting Latin expression established in the 1922 printing, under the existing United States public-domain/17 U.S.C. 103(b) route; no new qualified-nonoriginal-adaptation assessment or modern-edition permission. Only declared typographic normalization; no contraction expansion is made for Populi. Source bodies and appointment remain separately bound."
+        },
+        "english_entry": {
+          "mass": "lent-4-thursday",
+          "form_id": "main",
+          "proper": "Oratio super populum",
+          "cycle": "all",
+          "occurrence": 1,
+          "witness": "cummiskey-1861",
+          "printed_page": "203",
+          "ia_leaf": 213,
+          "ia_leaf_range": [
+            213,
+            213
+          ],
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+          "passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english-source",
+          "collated": "complete page-image and bounded checked transcription, 2026-11-12",
+          "collation_result": "confirmed",
+          "publication_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english",
+          "publication_artifact_sha256": "fe009205998c6219bae88bac8b8c141f66236b9d114b5869651b371677e618be",
+          "publication_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english-text",
+          "witness_note": "Complete prayer at printed p. 203, artifact PDF page 214. Actual Thursday heading at Cummiskey AP 211/p 200, continued 212-213/p 201-202. PC Caelestia at AP 213, cue and Prayer Populi at AP 214/p 203 before actual Friday heading. English-only source incipit; complete semantic comparison is with separately image-checked Mame and target, not a claim that Cummiskey prints full Latin. Exact complete target Latin SHA256 686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53. Whole historical English meaning compared to separately source-checked target/Mame Latin, including semper/always. Source prints incipit Populi. and literal Thro’., not full Latin or a full conclusion. Execution with a separate Lasance full formula requires its own exact mixed-witness review; no same-witness table has been established. No modern approved liturgical-English claim.",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "text": "O God, the author and governor of thy people, deliver them from the sins, by which they are assaulted, that they may be always well pleasing in thy sight, and safe under thy protection. Thro’."
+            }
+          ]
+        },
+        "old_proper": null,
+        "old_latin_provenance": null,
+        "old_english_entry": null,
+        "old_untranslated": [],
+        "old_mass_parsed_sha256": "72ac0207f12c2bb669047a76a3921e89162cf4618bcff92771dd17ba7878f88c",
+        "old_propers_parsed_sha256": "b86e87fb50ecabf99345ecb83802085f39e95d92e0e1efdf6da7a5073c24f772",
+        "Latin_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+        "English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e",
+        "complete_new_proper_sha256": "286732f81128f846a5cead2eb4878ac66c73383ecc3fbfad98a2ab2100ad55db",
+        "complete_Latin_row_sha256": "289d848d8075ddac490f96e5189060345b831a21a6f30d28b2eab18383369531",
+        "complete_English_entry_sha256": "5ceaeff54634fb28ea20bc7f831f20a3a74e959553870505a3c031da7ee3264c",
+        "insertion": {
+          "operation": "append one terminal proper after existing final Postcommunion",
+          "index": 9,
+          "anchor_parsed_sha256": "0d8788e4afa77c48b42a02bb7b1f8235eb054c758491fa1ead4dcdf6b9df61fc"
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/rows/2",
+      "original_row_canonical_sha256": "5fea8f50a765f0739423787034e7dffacedae85a18fe2385675cca9fcb917897",
+      "operation": {
+        "identity": [
+          "passion-wednesday",
+          "main",
+          "Oratio super populum",
+          "all",
+          1
+        ],
+        "new_proper": {
+          "name": "Oratio super populum",
+          "incipit": "Adesto supplicationibus",
+          "source": "composed",
+          "notes": "Missale Romanum 1962, printed 124/PDF 205, no. 794. Complete prayer and recipient appointment image-checked at 200/400 dpi on 2026-11-12. Entire preexisting wording corroborated in Mame 1922 printed 102/PDF 216; actual short Per Dominum. retained. Separate cues and execution conclusion belong to the source-appointed rite, outside this literal body. Exact held lent-2-monday body reused with its historical source ownership preserved; this recipient appointment has an independent 1962 control.",
+          "text": "Adesto supplicationibus nostris, omnipotens Deus: et, quibus fiduciam\nsperandae pietatis indulges; consuetae misericordiae tribue benignus\neffectum. Per Dominum.\n"
+        },
+        "latin_provenance": {
+          "mass": "passion-wednesday",
+          "form": "",
+          "proper": "Oratio super populum",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "text_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+          "provenance_status": "collated",
+          "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.annual-oratio-early-20261023-lent-2-monday",
+          "source_date": "23 October 2026 project editorial projection; antecedent Mame Tours 1922",
+          "locator": "Projection physical lines 4-6; Mame Tours 1922, printed p. 102, original PDF p. 216, left middle; complete Super populum Oratio; retained extract p. 2",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ferial-osp-20261112-passion-wednesday",
+          "verification_locator": "Proprium de tempore; passion-wednesday; heading PDF 203/printed 122; complete Oratio super populum no. 794, PDF 205/printed 124, R column; Postcommunion 793 and cue PDF 205",
+          "transformations": [
+            "join physical line wraps",
+            "remove stress accents",
+            "expand ae/oe ligatures",
+            "retain declared consonantal j",
+            "apply target punctuation and capitalization",
+            "carry the actual target conclusion length"
+          ],
+          "provenance_evidence": "The entire appointed petition was read directly from the actual 1962 target page images at 200 dpi and 400 dpi, then compared word for word with the entire same prayer on actual Mame 1922 page images at 200 dpi and 400 dpi. No incipit-only, OCR or English inference supplies any word. No lexical or pointing difference after declared normalization. Fresh recipient comparison 2026-11-12: complete Passion Wednesday target at PDF 205 no 794 has exact literal held donor body including ending and pointing; donor line wraps and final LF preserved. Historical source remains lent-2-monday, not an assertion of old Wednesday appointment.",
+          "provenance_authority": "Triptych page-image collation with independently registered historical and target controls",
+          "provenance_confidence": "high",
+          "publication_status": "permitted",
+          "publication_basis": "public-domain",
+          "surfaces": [
+            "web",
+            "download",
+            "print",
+            "cli",
+            "corpus-data",
+            "public-git"
+          ],
+          "publication_source_ids": [
+            "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.annual-oratio-early-20261023",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-pages",
+            "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-transcription"
+          ],
+          "publication_locator": "Mame Tours 1922, printed p. 102, original PDF p. 216, left middle; complete Super populum Oratio; retained extract p. 2",
+          "publication_evidence": "Underlying Latin wording independently established in the United States public-domain Mame 1922 printing; where the actual target conclusion is longer or spells out an abbreviation, the already registered Pustet 1862 Father-through-Son formula supplies its contiguous prefix. 17 U.S.C. 103(b) supplies no exclusive modern-edition right in that preexisting material, as settled in missale-romanum-1962-facsimile-rights-v1.toml. Historical image pages and source transcription are retained offline; target scan and images are excluded. No pre-1955 target or English attestation follows."
+        },
+        "english_entry": {
+          "mass": "passion-wednesday",
+          "form_id": "main",
+          "proper": "Oratio super populum",
+          "cycle": "all",
+          "occurrence": 1,
+          "witness": "lasance-1945",
+          "printed_page": "271",
+          "ia_leaf": 270,
+          "ia_leaf_range": [
+            270,
+            270
+          ],
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-verify-lent-2-monday--main--oratio-super-populum--all--1",
+          "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+          "collation_result": "confirmed",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient",
+          "publication_artifact_sha256": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient-text",
+          "witness_note": "Historical source lent-2-monday/main/Oratio super populum/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.annual-oratio-early-20261023-lent-2-monday retained. No source-recipient calendar attestation or official 1962 English claimed. Recipient Passion Wednesday independently verified at 1962 PDF 205/printed 124 no 794 on 2026-11-12. Exact held donor Latin including wraps/final LF and exact held English reused unchanged. Fresh Lasance PDF 271 page-image comparison confirms the complete historical English; original donor passage ownership is retained. No old-witness Wednesday appointment is asserted. Publication-carrier correction 2026-11-13: a separate recipient TSV row carries passion-wednesday for the existing exact-owner producer contract. Its complete English is copied byte for byte from the unchanged donor publication TSV line 70. The original historical verification passage, donor locus, PDF artifact, IA bounds and source edition remain unchanged; the recipient carrier does not attest an old Wednesday appointment.",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "Be present to our supplications, O almighty God, and kindly grant the effect of Thy wonted mercy to those whom Thou dost permit confidently to rely on Thy goodness. Through our Lord."
+            }
+          ]
+        },
+        "old_proper": null,
+        "old_latin_provenance": null,
+        "old_english_entry": null,
+        "old_untranslated": [],
+        "old_mass_parsed_sha256": "ee488702afc1db1cb19cc7cca82dae26e285a2496758a9a94749b513b2828eb1",
+        "old_propers_parsed_sha256": "c29b40ee67a715121c8339bdad2bfcdedfff36cec6b0bc815208109c67f4ee85",
+        "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+        "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+        "complete_new_proper_sha256": "fcdf6015a27d3d6d95afb4245a24397a289a523351f58a7b04b080589673d9f3",
+        "complete_Latin_row_sha256": "989a985a264a533db4e63f262e077f5669f206e5c29ec021ed3e61573125abcc",
+        "complete_English_entry_sha256": "d3f075c746563a9a28be986ac0547aa5209910abd7f1ee810ce1da5a7efd3c43",
+        "insertion": {
+          "operation": "append one terminal proper after existing final Postcommunion",
+          "index": 10,
+          "anchor_parsed_sha256": "c5b023efb115cc788189f5e28418d21169ae0df09f98b1daa5469f89be28270a"
+        }
+      }
+    }
+  ],
+  "source_files": [
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/artifact.toml",
+      "sha256": "1622434dad4b0ffbe3f0f53f25c8072e1f2901c502b11223c85fb6ecf5e3abd9",
+      "byte_size": 1779,
+      "original_json_pointer": "/source_files/0"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/text.txt",
+      "sha256": "a767a82cc0ffb5cb0a6bbd233046597b18b200b3fdec1cff7dcecc2becc72593",
+      "byte_size": 242,
+      "original_json_pointer": "/source_files/1"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-1-tuesday-source.toml",
+      "sha256": "cfee74622b5780e096f65317a892e4ca4cb72b07de71335efff43218b226cd84",
+      "byte_size": 1027,
+      "original_json_pointer": "/source_files/2"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-1-tuesday-text.toml",
+      "sha256": "50a115bd6ce1cd82092b5038640b3e7dff462f7c4cbf6b4fca19a721d77f92dc",
+      "byte_size": 1064,
+      "original_json_pointer": "/source_files/3"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-4-thursday-source.toml",
+      "sha256": "bf63fdf9ec4dd377bdc628f2baa2d6689a6a34e269b68ab0646e9b8265ea81fa",
+      "byte_size": 941,
+      "original_json_pointer": "/source_files/4"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-4-thursday-text.toml",
+      "sha256": "8c108fb604024341e2ee2c9a5f733913b4691e47d6bca6776eb555b08ce1bbbf",
+      "byte_size": 979,
+      "original_json_pointer": "/source_files/5"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-1-tuesday.toml",
+      "sha256": "84c3c8d8e024ebfc6e3a22f18e6b140c400e79601bbd557f107f84b75e32f772",
+      "byte_size": 1191,
+      "original_json_pointer": "/source_files/6"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-4-thursday.toml",
+      "sha256": "c12aa624210698ffbe3eb5edc4647a8ec49e65175b32f956cd9e4ee2ed4b1d83",
+      "byte_size": 1195,
+      "original_json_pointer": "/source_files/7"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-passion-wednesday.toml",
+      "sha256": "17c87867a6a3f22f64263a7196de69f12b57458174b7315f84748ddc38bdef71",
+      "byte_size": 1199,
+      "original_json_pointer": "/source_files/8"
+    },
+    {
+      "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/artifact.toml",
+      "sha256": "cc3186b924016dc3ac16fbf34ec9c5ad690de48395ab7dfad9247df2b6cc8441",
+      "byte_size": 1704,
+      "original_json_pointer": "/source_files/9"
+    },
+    {
+      "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/english.tsv",
+      "sha256": "fe009205998c6219bae88bac8b8c141f66236b9d114b5869651b371677e618be",
+      "byte_size": 299,
+      "original_json_pointer": "/source_files/10"
+    },
+    {
+      "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-source.toml",
+      "sha256": "36c85bf9e32b86b7e65c8888ea12d07c42151ae48c5095edc0ab17cddc4a394d",
+      "byte_size": 1318,
+      "original_json_pointer": "/source_files/11"
+    },
+    {
+      "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-text.toml",
+      "sha256": "8db0730a81540ec6688ae638e0dcbbac4938d6631804e16e45075f91ed3bbf3b",
+      "byte_size": 1462,
+      "original_json_pointer": "/source_files/12"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/artifact.toml",
+      "sha256": "4eac4a4bdbf59f39b17b836e3f55c342591fe4c4c0835b1eb9cc5dd3486888a9",
+      "byte_size": 2014,
+      "original_json_pointer": "/source_files/13"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/english.tsv",
+      "sha256": "f5667f63524494c630ef1c7ccb08bdc628966f581b29670f599149bf3af373bf",
+      "byte_size": 199,
+      "original_json_pointer": "/source_files/14"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-source.toml",
+      "sha256": "655004308418d33dd556e497eb6f02daab3ed5a205ebeec3abf87db568cbe1a5",
+      "byte_size": 1259,
+      "original_json_pointer": "/source_files/15"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-text.toml",
+      "sha256": "db221173a81b838065f73409f187bec3275acce6b3a0c0cc0ff91baeebc06f9f",
+      "byte_size": 1491,
+      "original_json_pointer": "/source_files/16"
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/artifact.toml",
+      "sha256": "85a82120517b646adcbbae0783a7a1d689520f233e51ba9b027d219ba9deb01c",
+      "byte_size": 2104,
+      "original_json_pointer": "/source_files/17"
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/latin.txt",
+      "sha256": "34789fa5ff4287a3e83872fcd49494fad749e7ceaf2144205fa95e18e204cfd5",
+      "byte_size": 244,
+      "original_json_pointer": "/source_files/18"
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-1-tuesday.toml",
+      "sha256": "8b48c801b5810ec8776e43de5ef58980aafdc08a964583b41a25bd78d10b57d2",
+      "byte_size": 1227,
+      "original_json_pointer": "/source_files/19"
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-4-thursday.toml",
+      "sha256": "bd3ab500e3a49dec1a63699c3776e699e4f398c29fac512dec64e574c049a94d",
+      "byte_size": 1231,
+      "original_json_pointer": "/source_files/20"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+      "sha256": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7",
+      "byte_size": 278,
+      "original_json_pointer": "/source_files/21"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+      "sha256": "6ee61b34bbb6346b1b8f36c1ed3d32ab3af343594c4dff1e779ad38a17e40fcd",
+      "byte_size": 3072,
+      "original_json_pointer": "/source_files/22"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+      "sha256": "55348fa03e59567eb92b568e80686474b5d1bc12fb275b0750a9701ec0150f43",
+      "byte_size": 2116,
+      "original_json_pointer": "/source_files/23"
+    }
+  ],
+  "owners": [
+    "src/sources/calendars/roman-1962/propers.yaml",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+  ],
+  "donor_preimage": {
+    "identity": [
+      "lent-2-monday",
+      "main",
+      "Oratio super populum",
+      "all",
+      1
+    ],
+    "Latin_row_parsed_sha256": "b819822d6a9ea48caf791b8d5a19e87378159f9bea9299f011a302984046f868",
+    "English_entry_parsed_sha256": "1837ec5f40edb38b23cd6ef87f313643ec76dd8000e9b8129dc1794a1cd0cfa5",
+    "proper_parsed_sha256": "72e46a73946703360184e0ec1d86b4414eae37ca2bd6df3d939576e82bc28095"
+  },
+  "rights_records": [
+    {
+      "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+      "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1"
+    },
+    {
+      "path": "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml",
+      "sha256": "55080a0b002e6045387408025b5fd5e3a3c7b10b545fa5593e097d7ab36146c5"
+    }
+  ],
+  "transformations": [
+    "Retain the exact three complete new proper/Latin/English objects and old absent-row states.",
+    "Retain the original full-row digests and selected JSON pointers; omit old full Mass payloads and their unrelated prayers, retaining their exact parsed hashes and terminal Postcommunion anchor hashes.",
+    "Replace private proposal locations with the exact declared canonical source destinations, hashes and sizes.",
+    "Omit broad source packets, all binary files, pending-review boilerplate and nonoperative frame/ending proposals."
+  ],
+  "scope_limit": "Three proper additions, six ledger additions and exactly 24 source files, including the separately admitted recipient publication carrier. No frame, conclusion, source-epoch, qualified-Latin authority, renderer or runtime operation.",
+  "predecessor_installation_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/install-plan.json",
+    "sha256": "38cd3c5a720bbbdf9d875cc90f769104178823b3006a66e19013d0dff753c979",
+    "byte_size": 78235
+  },
+  "recipient_carrier_delta": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/metadata-delta.json",
+    "sha256": "e527986b19b110aa4eafe98db0e7fbbda4613a8c54c1f5d4581f20d904ea0392",
+    "byte_size": 19053
+  }
+}

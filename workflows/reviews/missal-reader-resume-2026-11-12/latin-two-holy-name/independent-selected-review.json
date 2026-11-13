@@ -1,0 +1,114 @@
+{
+  "schema": "triptych-selected-independent-source-review/v1",
+  "source_receipt": {
+    "path": ".scratch/roman-sources/cleanliness-source-review/review-receipt.json",
+    "sha256": "5afefdfd76d2a96c61448f4d7c733a3205a06eba457325acbe5419438f2bfa40"
+  },
+  "transformation": "Select original cases 1–3 and their plan pins. No case body is edited. Original six-case receipt remains immutable in scratch; cases 4–6 are excluded from this package. No host absolute paths occur, so no host-prefix rewriting is required.",
+  "original_case_count": 6,
+  "selected_case_count": 3,
+  "reviewer": "/root/roman_sources/remaining_saints",
+  "status": "source-review-pass-pending-root-adoption",
+  "authority": "Independent bounded source and metadata review only. No publication grant, source activation, source_epoch exception, or runtime overlay-ordering decision.",
+  "selected_case_receipts": [
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-1.json",
+      "bytes": 3419,
+      "sha256": "c279c147839f461bbbd4e1cf1848173f2351ebae7515e88173a6a309ce167388"
+    },
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-2.json",
+      "bytes": 3391,
+      "sha256": "3f88ad1c2751e12ad0a990360444e5fbd84c9d3188ecc1fcce6d8f2201457111"
+    },
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-3.json",
+      "bytes": 2506,
+      "sha256": "c5297d7e6597397e4dd4db12e647a58b2d9e43d016de1563f35784619f31cc5d"
+    }
+  ],
+  "selected_plan_pins": [
+    {
+      "path": ".scratch/roman-sources/latin-cleanliness/correction-declarations.json",
+      "bytes": 36165,
+      "sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e"
+    },
+    {
+      "path": ".scratch/roman-sources/latin-cleanliness/handoff.json",
+      "bytes": 4677,
+      "sha256": "bdafb4fad6d25179c5616b3a1284965c0502375fbe3d17d786da809245b2deb1"
+    },
+    {
+      "path": ".scratch/roman-sources/latin-cleanliness/existing-owner-corrections.patch",
+      "bytes": 16402,
+      "sha256": "ce3d4302b480e2a1b25021fe0df438da70b1142cebc325aecbcae411d2e07a8a"
+    },
+    {
+      "path": ".scratch/roman-sources/additional-english-findings/holy-name-locator-declaration.json",
+      "bytes": 9375,
+      "sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6"
+    },
+    {
+      "path": ".scratch/roman-sources/additional-english-findings/holy-name-locator.patch",
+      "bytes": 7636,
+      "sha256": "ef09473a86f280070d41c6467f834b14a7df68c6f3d6aad15ef027cbf22cf16e"
+    }
+  ],
+  "original_metadata_checks": {
+    "path": ".scratch/roman-sources/cleanliness-source-review/metadata-checks.json",
+    "sha256": "a03c01ac975eff53839f333d9cd95e904c012eb0fe577ba98a0ee1e1e13706ea",
+    "checks": 373,
+    "failures": 0
+  },
+  "metadata_scope_note": "The original 373 passing metadata checks cover all six cases; this projection does not claim that all 373 belong to the selected three.",
+  "selected_exact_latin_additive_files": [
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+      "sha256": "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb",
+      "byte_size": 506
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/artifact.toml",
+      "sha256": "b2e52627a57a68c3304b5213959b163bbb3e8ef5d0e26c81ebb1fe5b0c828db6",
+      "byte_size": 2861,
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-3e45253b"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "2e7fc16a5e8549f175b1992b96abf71fd071902198d731b9dda57a478a4146ae",
+      "byte_size": 1693,
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "e881152aeaacc469e0be567aa9676664e4a551e006c4172c2887c62923718357",
+      "byte_size": 1594,
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "6a4399180b2718dd881653d29fdc521940279bb36cd80b1d331577855e8b2dcb",
+      "byte_size": 1975,
+      "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "2393df71e9225e72b2e35ffc807309c18a5749d6cd0abaf7b8a11d3a1cbf5a14",
+      "byte_size": 1566,
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "07290a8ae34349f6c41d1d163b7362c9e64ca3b02c5ce844bccef20e2c76d8e0",
+      "byte_size": 1467,
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "ee9afe0849805ed20d4b9321dca4147acfb26b2c7fdaecb020552d1410165bcc",
+      "byte_size": 1843,
+      "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion"
+    }
+  ],
+  "canonical_preimage_status_at_original_review": "All declared whole-file preimages and all exact owner dictionaries match current canonical files at review; the patch was reconstructed in memory and never applied."
+}

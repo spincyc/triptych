@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.officia-propria-sanctorum-romano-clero.sydney-cunninghame-1868.gregory-x-whole-la-e207e5b8"
+edition_id = "edition.catholic-church.officia-propria-sanctorum-romano-clero.sydney-cunninghame-1868"
+artifact_type = "verified-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Complete underlying1868Latin prayer, transcribed directly from the inspected old page; no modern prayer revision included."
+retrieved = "2026-11-12"
+sha256 = "e207e5b8aba7bc7efa8c170d557f20950d59c8e3a35eb507d6d024c01b8e69b2"
+byte_size = 233
+path = "src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/artifacts/gregory-x-whole-la-e207e5b8/latin.txt"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.officia-propria-sanctorum-romano-clero.sydney-cunninghame-1868.nsw-whole-pdf-d1efde02"]
+transformation = "Join physical wraps and split words; ordinary sentence initial for ornamental small capitals. Retain all words, punctuation, eius spelling and actual short Per Dominum. cue. No modern replacement in this historical transcription."
+notes = "Complete old Office prayer; its literal short cue is preserved. This carrier supplies no modern Mass appointment or modern English."

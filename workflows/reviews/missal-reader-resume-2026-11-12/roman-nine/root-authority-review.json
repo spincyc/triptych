@@ -1,0 +1,18 @@
+{
+  "schema": "triptych-root-roman-nine-authority-review/v1",
+  "status": "accepted-for-guarded-next-checkpoint-activation",
+  "reviewed_on": "2026-11-12",
+  "root_source_merits_sha256": "537b53df37ae3380e15b55a7575080ae45214321386e9f50bd624a2e2c2649bb",
+  "authority_sha256": "41eaae66a9fdab28fb806ac6bb182b36484237c76d2b450c673cbf951f50f585",
+  "helper_before_sha256": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+  "helper_after_sha256": "ed06e3c8bad7e7fb638962156c15cb4d9acda524b3327ab4252f6c46a41605d6",
+  "activation_plan_sha256": "4f405c703829f56cb596ec0e4b1155cdd11a37ae320bfaadfe2625d7bf31eb4e",
+  "prospective_proof_sha256": "02bc6ad75112519f63ac141209d521dee2c09cb98bf07a885a764c47e4f46ecf",
+  "review": "Read the complete staged activation plan and helper patch. Independently compared all 28 old scopes and prior routes, all nine new owner/body/row/controller/notice tuples against the actual merits receipt, and the helper AST outside its three declared constants. The author separately exercised all 37 source closures and missing/altered authority, altered body and foreign-calendar refusals against a scratch overlay.",
+  "canonical_changes": false,
+  "requirements": [
+    "Current checkpoint committed before source window opens.",
+    "Recheck actual installed source closures and exact current helper preimage before activation.",
+    "No implicit source-epoch change; source_epoch independently prepares the exact successor."
+  ]
+}

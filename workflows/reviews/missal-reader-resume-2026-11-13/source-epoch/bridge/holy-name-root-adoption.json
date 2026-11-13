@@ -1,0 +1,42 @@
+{
+  "schema": "triptych-root-holy-name-positive-complement-code-adoption/v1",
+  "reviewer": "Root",
+  "date": "2026-11-13",
+  "decision": "accept exact protected-positive-map helper and proposed bounded callable replacement",
+  "helper": {
+    "path": ".scratch/source-epoch/next-cohort/positive_complement_candidate.py",
+    "sha256": "57f87ae114c8f3f58f939d84a15dde79201fb7586d29435f9130e59e9b679bca",
+    "bytes": 4115
+  },
+  "integration": {
+    "path": ".scratch/source-epoch/next-cohort/positive-complement-integration.json",
+    "sha256": "6ec4e03abf158aabdbdadba1929745135a3dac66ce09dbf2fb6058c023a11382",
+    "bytes": 2258
+  },
+  "independent_review": {
+    "path": ".scratch/modern-legacy-review/holy-name-source-epoch-code-review/receipt.json",
+    "sha256": "a4f3cc6c73304c6739c7c11f4153ce893fce53aac9527d159fb353ddefd64d1d"
+  },
+  "author_controls": {
+    "path": ".scratch/source-epoch/next-cohort/merged-80cb-v1-evidence/positive-complement-controls-ec959b613e58.json",
+    "sha256": "ec959b613e583ff98cd402a1620e87c0d0bde6ca5894070394a8aa74d7cd5432",
+    "bytes": 2819
+  },
+  "root_review": [
+    "Read complete79-line helper, integration contract and full independent review. Rehashed exact code, controls, compiler, declaration/adoption/payload and input map.",
+    "Only exact Holy Name identity and three locator fields may change; whole old/new entry dictionaries, every translation, fixed English body and full publication TSV remain bound. Every other prior positive must remain exact.",
+    "Actual complete maps protect1420 Roman/173 postconciliar positives. Independent3214 negative cases include every other historical row, physical source pin tampering and combined original-gate type drift."
+  ],
+  "mandatory_integration": [
+    "Code-own and verify helper SHA57f87ae114c8f3f58f939d84a15dde79201fb7586d29435f9130e59e9b679bca and this actual Root adoption before import/execution.",
+    "Replace only module.positive_complement; original compiler bytes remain29d0add9b330248b4047881310175614d91adc82688bfc695451318696c0865b.",
+    "Keep entire original check_english_complements(protected, old_absent, positive, absent) after helper. Its canonical-JSON comparison is mandatory to reject Python-equal numeric/boolean type drift; this helper alone is not a type-strict validator.",
+    "Separately adopted Loreto adapter may change only old_absent. No historical Palm/legacy-four/Pentecost exceptions reopened."
+  ],
+  "limits": [
+    "No fixture derived or activated by this code admission.",
+    "No source/body merits or other positive metadata changes authorized.",
+    "Actual final merged source-epoch compiler checks remain required."
+  ],
+  "canonical_writes": false
+}

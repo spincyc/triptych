@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.gerard-oconnor.sources-orations-missale-parisiense-1738.rome-2004-volume-2.damasus-2130-historical-paragraph-20261112"
+edition_id = "edition.gerard-oconnor.sources-orations-missale-parisiense-1738.rome-2004-volume-2"
+artifact_type = "historical-prayer-transcription-excerpt"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Bounded claim only for the1738 Damasus prayer expression reproduced by this human 2004 carrier. Its historical source date precedes1931. No2004 scholarly apparatus or modern Apollinaris text is carried; reliability is qualified rather than claimed from an old page image."
+rights_jurisdiction = "United States"
+retrieved = "2026-11-12"
+sha256 = "b13d460f3163adba084ea695fce703030edd843817dc1cd493c4371112294271"
+byte_size = 201
+path = "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/artifacts/damasus-2130-historical-paragraph-20261112/latin.txt"
+derived_from = "artifact.gerard-oconnor.sources-orations-missale-parisiense-1738.rome-2004-volume-2.clerus-html-1406208e"
+transformation = "Decode Windows-1252; take exactly the whole P paragraph immediately after2130,O,PS; strip HTML tags and four trailing layout spaces; encode UTF-8 with one terminal LF. Preserve every prayer word and punctuation. No printed ending occurs in this paragraph."
+provenance = "Exact substring checked against the complete acquired HTML and derivedtext. The source is a human scholarly e-text reporting 1738, not an actual 1738 image."
+indexable = true
+encoding = "utf-8"
+notes = "Moderate historical fidelity confidence accepted under the expressly qualified independent carrier review. Whole-unit adaptation and publication of resulting study English remain separately reviewed."

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-vigil-first-reading-old-latin-20261112-easter-study-three"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "verified-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The complete printed Latin prayer appears in Wilson1894, whose underlying printing is in the United States public domain by publication age. This project literal transcription adds no new words and claims no exclusive rights in the underlying expression. The entire scan wrapper has a separate disposition; this finding covers only the complete old printed expression."
+rights_jurisdiction = "United States"
+provenance = "Literal complete source-local prayer independently read in Wilson1894 physicalPDF175/printed82 on2026-11-12, including its printed Per eundem Dominum cue. Scholarly apparatus digits and following gamma mark are excluded, not supplied as words."
+retrieved = "2026-11-12"
+sha256 = "ad9d7e76c1669f64425b1880705d7a38f5942a602486456c14be74db1ab78cae"
+byte_size = 252
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-vigil-first-reading-old-latin-20261112-easter-study-three/body.txt"
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+transformation = "Transcribe the complete old prayer at physicalPDF175/printed82, join printed line wraps with spaces, omit scholarly apparatus markers. Preserve the old word order, intelligant spelling and Per eundem Dominum ending; do not replace it with the modern ending."
+indexable = true
+encoding = "utf-8"
+notes = "Independent source/fidelity acceptance: review receipt workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-vigil-source-review.json. This is historical Latin evidence only, not the modern target body."

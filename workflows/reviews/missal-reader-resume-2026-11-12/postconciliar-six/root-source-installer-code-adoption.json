@@ -1,0 +1,53 @@
+{
+  "schema": "triptych-root-ordinary-time-six-installer-code-adoption/v1",
+  "date": "2026-11-13",
+  "decision": "adopt exact guarded six-owner source installer and read-only preflight API",
+  "references": {
+    "script": {
+      "path": ".scratch/modern-ordinarytime-orations/activation/install-v3.py",
+      "sha256": "aac979149920255e488f01a21ad3abe43f01b700749ad812fa75f454eedf8dbf",
+      "bytes": 22054
+    },
+    "manifest": {
+      "path": ".scratch/modern-ordinarytime-orations/activation/manifest-v3.json",
+      "sha256": "e4127454faffbe33bb8de6a47782e9af8cfcc14b20193190fe25f19b889e9119",
+      "bytes": 48313
+    },
+    "plan": {
+      "path": ".scratch/modern-ordinarytime-orations/activation/install-plan-v2.json",
+      "sha256": "5d38e6b809ee356b4e2a4cd54e5fbbde6721fc808304b73637fe922d08e20b60",
+      "bytes": 138344
+    },
+    "source_admission": {
+      "path": ".scratch/root/ordinary-time-six-source-admission.json",
+      "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7",
+      "bytes": 132846
+    },
+    "metadata_admissions": [
+      {
+        "path": ".scratch/root/ot11-source-binding-amendment.json",
+        "sha256": "06f23d7244de1be9d1bed3bf6faebb61caeb7bbabb96625f3ec9cc38173d324d",
+        "bytes": 3965
+      },
+      {
+        "path": ".scratch/root/ordinary-time-six-confidence-clarification.json",
+        "sha256": "0aa5ffe1586a402184a78f0060000b244099920caeb4d71b9a213a3c70dcd285",
+        "bytes": 2775
+      },
+      {
+        "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/review.json",
+        "sha256": "4addbec6b796a4583e5d415e0a844deac3b256c5634e7065195de715fe91f716",
+        "bytes": 8202
+      }
+    ]
+  },
+  "independent_review": {
+    "path": ".scratch/modern-ot6-activation-review/review.json",
+    "sha256": "75b272a9efff1ec0cf1085ad0c23c1e8201087173b9620bb012a731a53c9daec"
+  },
+  "root_review": "Read complete22054byte installer and independent review. Fixed plan and actualRoot admission plus metadata receipts constrain sourcebody/notice/provenance joins. Live identity-selected owner dictionaries, two preflights and exact byte/semantic inverses preserve unrelated content. Six English positives append without moving existing positives; six Latin rows replace at current indices. Newfiles use atomic no-clobber publication; existing owners use separate-file atomic replace. No canonical hardlink mutation. Explicit future Rootauthorization is required for apply, and failure after writes reports INCOMPLETE rather than rollback.",
+  "validation": "Actual merged-stage API and independent CLI projection produce identical95files/threeowners/25spans. Existing191English positive indices andquarantine18 preserved;16CLI plusfutureauthoritynegative controls pass.",
+  "staging_authority": "Source_epoch may now compose exact read-only preflight outputs into its isolated merged root and provide readmap to finite-six actual authority owner. No canonical writer window yet.",
+  "runtime_boundary": "Actual finite authority based on Root879b/0aa5/06f23 plus acceptedcode29d2 and currentd85 metadata remains separately verified; source staging alone is not activation.",
+  "canonical_writes": false
+}

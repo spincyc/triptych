@@ -1,0 +1,39 @@
+{
+  "schema": "triptych-root-easter2-merits-excerpt/v1",
+  "scope": "Faithful one-row excerpt, not byte-identical full eleven-row Root receipt; no authority for other owners.",
+  "original_root_receipt": {
+    "path": ".scratch/root/next-eleven-english-merits-admission.json",
+    "sha256": "fa61352e6b766cf6c3087e2a91eed30573b0dd1741029a716abfe648505ffc90"
+  },
+  "original_decision": "adopt eleven exact qualified English body merits; final source registration and code integration separately reviewed",
+  "date": "2026-11-13",
+  "row": {
+    "identity": [
+      "easter-2",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    "english_scalar_sha256": "492eb60a590bd945dc0ede1b100b0d82a584e8cf5d4ba51f013b9bcee963f6a0",
+    "candidate": {
+      "path": ".scratch/modern-partition-easter/orations/easter2-collect-candidates.json",
+      "sha256": "47b70bbd1217a65e28241c8fa79f33f550f81cda3b9449e2f9960aa2f304e101",
+      "byte_size": 13862
+    },
+    "independent_review": {
+      "path": ".scratch/modern-easter2-collect-review/review.json",
+      "sha256": "f6d7cb6f7d0d2242badc1ad059ca1c688252b04f0de19db95786e687fb51078c",
+      "byte_size": 17565
+    },
+    "decision": "accept exact fresh study English merits including separately marked response",
+    "confidence": "high for directly printed old petition; exact2008 unresolved",
+    "reason": "Root directly viewed complete Mabillon1729 AP295 printed258: the invocation begins at the lower-left Post nomina, continues at the right-column top, and ends before Ad Pacem. Festi, recursu, lavacro and the threefold washing/Spirit/blood relation are visibly old; no modern substantive petition difference remains beyond intelligentia/intellegentia spelling. The separately printed1862 full formula and marked response are a disclosed assembly. A changed Gallican-to-Roman appointment does not introduce new petition expression. The fresh English preserves all actions/agents and the distinct R. Amen. The FDLC withholding applies to a different English exemplar and remains preserved."
+  },
+  "row_sha256": "5d49e7895e9dbd26faca5c59ecf567245d3ddba80d43e3b2d71eb89cb9264397",
+  "exact_source_registration": {
+    "path": ".scratch/root/easter-two-source-registration-admission.json",
+    "sha256": "c407e82c89478c9ee3e6c2b94e401375b25771e79bb5c7da2c75551ed6280145",
+    "bytes": 11742
+  }
+}

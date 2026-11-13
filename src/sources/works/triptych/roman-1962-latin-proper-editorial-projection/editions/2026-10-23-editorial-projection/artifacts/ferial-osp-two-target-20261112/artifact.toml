@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.ferial-osp-two-target-20261112"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Only project organization/normalization under CC BY 4.0. Complete preexisting prayer wording independently established in Mame 1922 remains public domain under the existing 17 U.S.C. 103(b) route in missale-romanum-1962-facsimile-rights-v1.toml. No modern scan redistribution or new qualified-adaptation grant."
+provenance = "Complete source units personally read from whole-PDF-derived full-page images at 200/400 dpi on 2026-11-12. Text-free controls retain exact whole-file hashes and printed/artifact page distinctions. OCR supplied no accepted reading."
+retrieved = "2026-11-12"
+sha256 = "34789fa5ff4287a3e83872fcd49494fad749e7ceaf2144205fa95e18e204cfd5"
+byte_size = 244
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/latin.txt"
+encoding = "utf-8"
+indexable = true
+transformation = "Join wraps; remove stress; expand ligatures; apply actual target pointing. Explicitly expand historical Ascendant Dñum. to Dominum. Both complete petitions and actual short endings remain intact; no added Amen or expanded full formula."
+notes = "Bounded source expression only. No scan/image publication, official 1962 English status, generic rite appointment or execution conclusion is established."
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ferial-osp-two-historical-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]

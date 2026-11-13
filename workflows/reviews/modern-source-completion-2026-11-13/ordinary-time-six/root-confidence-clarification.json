@@ -1,0 +1,80 @@
+{
+  "schema": "triptych-root-source-admission-clarification/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root",
+  "decision": "correct-general-confidence-sentence-to-the-already-admitted-exact-tuples",
+  "parent_sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7",
+  "field": "source_fidelity_limits",
+  "before": "Source-based Latin study reconstructions, confidence medium; complete authenticated2008 correspondence unresolved and printed2002 fidelity unestablished. English is project study translation, not approved liturgical English. Existing refusal history remains evidence.",
+  "after": "Source-based Latin study reconstructions. Provenance confidence remains exactly as pinned in the36 accepted tuples: high for OT8/OT12 Postcommunion, medium for the other four. Legal merits confidence is moderate for all six. Target relationship remains unresolved; complete authenticated2008 correspondence and printed2002 fidelity remain unestablished. English is project study translation, not approved liturgical English. Existing refusal history remains evidence.",
+  "reason": "The parent general sentence incorrectly summarized all provenance confidence as medium. Its exact36tuples already preserve the actual four-medium/two-high values. This clarification corrects prose only; it changes no tuple, source grade, source/English body, scope, legal confidence or decision.",
+  "case_confidence": [
+    {
+      "identity": [
+        "ot-3",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "provenance_confidence": "medium",
+      "legal_merits_confidence": "moderate"
+    },
+    {
+      "identity": [
+        "ot-5",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "provenance_confidence": "medium",
+      "legal_merits_confidence": "moderate"
+    },
+    {
+      "identity": [
+        "ot-12",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "provenance_confidence": "medium",
+      "legal_merits_confidence": "moderate"
+    },
+    {
+      "identity": [
+        "ot-8",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "provenance_confidence": "high",
+      "legal_merits_confidence": "moderate"
+    },
+    {
+      "identity": [
+        "ot-12",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "provenance_confidence": "high",
+      "legal_merits_confidence": "moderate"
+    },
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "provenance_confidence": "medium",
+      "legal_merits_confidence": "moderate"
+    }
+  ],
+  "canonical_writes": false
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "triptych-independent-inactive-replay-cache-clarification/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root/modern_sources/pange_review",
+  "immutable_review": {
+    "path": ".scratch/modern-finite-latin-contract-review/backend-review.json",
+    "sha256": "011b0e5310572dc9fc02a25826c5f1fbaea6d9d2f76e3cbbd89ac594b14aba8c",
+    "bytes": 8384
+  },
+  "clarification": "The original inactive runner set TRIPTYCH_SOURCE_LIBRARY_CACHE and TRIPTYCH_CORPUS_CACHE to0 but omitted the source-library-specific TRIPTYCH_LIBRARY_CACHE. The earlier broad all-caches-disabled description was incomplete. This addendum records a new independent replay with the missing variable explicitly0; original receipt and frozen code remain unchanged.",
+  "independent_command": "TRIPTYCH_LIBRARY_CACHE=0 TRIPTYCH_FINITE_LATIN_RECEIPTS=.scratch/modern-finite-latin-contract-review/cache-disabled-replay PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 .scratch/modern-finite-latin-contract-review/backend-frozen-copy/inactive_checks.py",
+  "frozen_runner": {
+    "path": ".scratch/modern-finite-latin-contract-review/backend-frozen-copy/inactive_checks.py",
+    "sha256": "84283a265e55e55e902f392adbc6707eada7f3ba711f30678bae184118fbc44c",
+    "bytes": 4647
+  },
+  "new_receipt": {
+    "path": ".scratch/modern-finite-latin-contract-review/cache-disabled-replay/inactive-checks.json",
+    "sha256": "53dc7918b54f896974172984e23875cb3f57b046160f54e9e5af48575630984f",
+    "bytes": 3238
+  },
+  "prior_receipt": {
+    "path": ".scratch/modern-finite-latin-contract-review/inactive-replay/inactive-checks.json",
+    "sha256": "53dc7918b54f896974172984e23875cb3f57b046160f54e9e5af48575630984f",
+    "bytes": 3238
+  },
+  "receipt_bytes_identical": true,
+  "result": "56,882 validated source records;333 rows,619 Mass projections and5,765 Latin source readings unchanged; six priors bodyless; default authority remains empty. No product result or backend verdict changes.",
+  "author_addendum": {
+    "path": ".scratch/modern-finite-latin-contract/cache-disabled-replay/addendum.json",
+    "sha256": "70784e6cd79dcd7c1f32cf571d57fb0e898b43f43ccab9b251f040715495f18e",
+    "bytes": 944
+  },
+  "canonical_writes": false,
+  "prior_receipts_modified": false
+}

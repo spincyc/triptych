@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-third-reading-principal-text"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-third-reading-principal"
+artifact_sha256 = "ac7ccece48d6fb1b3ec75c8aee4d09dd17dc20aa2037afbd458182831e18fe04"
+locus = "vigil-third-reading-principal/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Deus, cujus antiqua miracula etiam nostris saeculis coruscare sentimus: dum quod uni populo, a persecutione Aegyptiaca liberando, dexterae tuae potentia contulisti, id in salutem gentium per aquam regenerationis operaris: praesta, ut in Abrahae filios, et in Israeliticam dignitatem, totius mundi transeat plenitudo. Per Dominum."
+transcription_segments = [{line = 1, text = "Deus, cujus antiqua miracula etiam nostris saeculis coruscare sentimus: dum quod uni populo, a persecutione Aegyptiaca liberando, dexterae tuae potentia contulisti, id in salutem gentium per aquam regenerationis operaris: praesta, ut in Abrahae filios, et in Israeliticam dignitatem, totius mundi transeat plenitudo. Per Dominum."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 dde4e6616f4b11ee3524a91f6d9c2bdbba2465195cb62998e5a1c4902664dbf8. Controlling complete page passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-third-reading-principal-page. The entire1862 prayer already combines the RedSea deliverance, baptismal salvation of the nations, Abraham and Israel in precisely this sequence. The two substitutions express the same time relation and the same narrated oppressor, whose name is independently visible in the old reading on this very page. This is not an assembly from Bible fragments. The whole variant and its full ending must be assessed as a finite expression."

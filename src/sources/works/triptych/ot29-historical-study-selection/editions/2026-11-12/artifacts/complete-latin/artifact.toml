@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.ot29-historical-study-selection.2026-11-12.complete-latin"
+edition_id = "edition.triptych.ot29-historical-study-selection.2026-11-12"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project-created identifies this editorial carrier only. Underlying Latin publication requires the exact qualified-nonoriginal-adaptation selection, source, proof, notice and surface tuple; no whole modern edition or scan-wrapper permission is inferred."
+rights_jurisdiction = "United States"
+provenance = "Exact accepted complete study expression, with historical sources, separately witnessed conclusion and marked response. The selected source relations are recorded explicitly; printed2002 and complete2008 remain unverified."
+retrieved = "2026-11-12"
+sha256 = "b31b7c34bdad8ce36c56d0688de0f323db8f20053d27700514e98391af973366"
+byte_size = 174
+path = "src/sources/works/triptych/ot29-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt"
+projected_from = ["artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13", "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb", "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"]
+transformation = "Retain the exact accepted body without change; physical lines1–3 contain petition, independently sourced complete short conclusion, and distinct people response."
+indexable = true
+encoding = "utf-8"
+notes = "Source-based Latin study reconstruction from complete historical prayers, with individually reviewed conventional changes and a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."

@@ -1,0 +1,197 @@
+{
+  "schema": "triptych-plenum-complete-installation-proposal/v3",
+  "status": "awaiting-independent-full-assembly-review-and-root-adoption",
+  "candidate_path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/candidate.json",
+  "candidate_sha256": "16ffaaa9d2cf7dc90c61bbf7ed6813b6d26567befd41f3577e4c9c672a948f45",
+  "identity": [
+    "ot-21",
+    "main",
+    "Prayer after Communion",
+    "all",
+    1
+  ],
+  "input_pins": {
+    "src/sources/calendars/postconciliar/propers.yaml": "f11d2bcbae85693d80f577fad4fa6e2e85c055d173170f86284ac5cd88438358",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "4cad587bb3b7f4e6cf1cbe0a86f25faf360ace05bb44ee4b82aa9f2a4fd2fdc9",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "469c5a92a928f6b2883b41e5077b654c83e33a2adce7e6703e2d1d19749b1c2f"
+  },
+  "new_source_files": [
+    "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/work.toml",
+    "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/edition.toml",
+    "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/latin.txt",
+    "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/artifact.toml",
+    "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/passages/plenum-complete-latin.toml",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot21-plenum-petition-source-20261112.toml",
+    "src/sources/works/triptych/ot21-plenum-study-english/work.toml",
+    "src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/edition.toml",
+    "src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+    "src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+    "src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/passages/complete-study-english.toml"
+  ],
+  "english_update": {
+    "before_untranslated": {
+      "mass": "ot-21",
+      "form_id": "main",
+      "proper": "Prayer after Communion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "rights-withheld",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "surfaces": [
+          "corpus-data",
+          "public-git",
+          "command-line",
+          "download"
+        ]
+      },
+      "rights": "permission",
+      "witness": "fdlc-mystagogy-2016",
+      "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+      "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78c-ordinary-14-23",
+      "verified_on_page": "2026-08-26",
+      "verified_artifact_page": 23,
+      "verified_printed_page": "23",
+      "verified_heading": "TWENTY-FIRST SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+      "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf",
+      "quarantined_text_sha256": [
+        "f65c1d4207469fc2f12208efcaab32373cbb2233147be2f70fe59ef51a3ac3de"
+      ],
+      "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    "after_entry": {
+      "mass": "ot-21",
+      "form_id": "main",
+      "form": "",
+      "proper": "Prayer after Communion",
+      "cycle": "all",
+      "occurrence": 1,
+      "incipit": "Plenum, quaesumus, Domine, in nobis remedium",
+      "relation": "variant",
+      "petition_relation": "verbatim",
+      "ancient_witness": "Pustet1862, Oratio in Consecratione Episcopi/Postcommunio, printed[110]/AP780",
+      "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+      "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot21-plenum-petition-source-20261112",
+      "ancient_reading": "Plenum, quæsumus Dómine, in nobis remédium tuæ miseratiónis operáre: ac tales nos esse pérfice propítius, et sic fovéri; ut tibi in ómnibus placére valeámus. Per Dóminum nostrum.",
+      "target_qualification": "secondary-digital-2002-comparison-only;2008-unresolved",
+      "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+      "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+      "conclusion_relation": "verbatim",
+      "study_english_passage_id": "passage.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+      "divergence": "Whole historical petition retained without lexical change; fresh study English petition independently accepted. Old main-source cue Per Dominum nostrum is omitted only in this explicit historical study assembly and replaced by separately witnessed complete short formula/response. Secondary2002 prints Per Christum cue but does not authenticate printed2002 or2008. Full source extent is declared, with distinct response; not an edited historical-human English prayer or approved2011 text. Prior exact approved-English refusal and quarantine fingerprint retained in preparation receipt.",
+      "source_latin_sha256": "36e86231010cd442ba153211c41e73fc7a2e5a3f34d6a7366b12a72c914674e3",
+      "source_latin_passage_id": "passage.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "translations": [
+        {
+          "lang": "en",
+          "rights": "project-created",
+          "text": "Work in us, we pray, O Lord, the full remedy of your mercy, and graciously form and sustain us so that we may please you in all things.\nThrough Christ our Lord.\nR. Amen."
+        }
+      ],
+      "witness_note": "New study English translated from a complete historical Latin petition, joined to a separately sourced traditional conclusion and marked response. This source assembly is not an approved liturgical translation. Correspondence with the 2008 Missal remains unverified."
+    }
+  },
+  "latin_update": {
+    "before_node": {
+      "name": "Prayer after Communion",
+      "incipit": "Plenum, quaesumus, Domine, in nobis remedium",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "reasons": [
+          {
+            "kind": "rights-withheld",
+            "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+          }
+        ]
+      }
+    },
+    "after_node": {
+      "name": "Prayer after Communion",
+      "incipit": "Plenum, quaesumus, Domine, in nobis remedium",
+      "source": "composed",
+      "text": "Plenum, quaesumus Domine, in nobis remedium tuae miserationis operare: ac tales nos esse perfice propitius, et sic foveri; ut tibi in omnibus placere valeamus.\nPer Christum Dominum nostrum.\nR. Amen.",
+      "notes": "Historical study source assembly: complete1862 Plenum petition with separately witnessed full short conclusion and marked response. Every petition word agrees with the secondary digital2002 witness, whose Per Christum cue differs from the old Per Dominum nostrum. This full expansion is independently sourced, not printed in full at the secondary target locus. Printed2002 fidelity and2008 correspondence remain unresolved; no exact modern-target claim."
+    },
+    "before_provenance_entries": [
+      {
+        "mass": "ot-21",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "98ab0eec1630824aa2d0a4d86137fc2b6808ffad35febce4b97b49f8cdcf04b9"
+      }
+    ],
+    "after_provenance_entry": {
+      "mass": "ot-21",
+      "form": "",
+      "proper": "Prayer after Communion",
+      "course": "",
+      "cycle": "",
+      "occurrence": 1,
+      "text_sha256": "36e86231010cd442ba153211c41e73fc7a2e5a3f34d6a7366b12a72c914674e3",
+      "provenance_status": "collated",
+      "source_id": "passage.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+      "source_date": "1862 petition;1945 complete common ending",
+      "locator": "Complete declared source-assembly carrier, lines1–3",
+      "relationship": "exact-transcription",
+      "verification_source_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot21-plenum-petition-source-20261112",
+      "verification_locator": "Pustet1862 AP780/[110], complete petition; separate full formula passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+      "transformations": [
+        "Retain complete1862 petition without lexical changes; remove stress accents and expand ae ligatures",
+        "Exclude old Per Dominum nostrum cue; do not expand it",
+        "Append separately witnessed complete Per Christum Dominum nostrum. and distinct marked R. Amen.",
+        "Preserve historical petition punctuation and three-unit source extent"
+      ],
+      "provenance_evidence": "Exact transcription of the explicitly declared source-based assembly, whose entire petition and full conclusion are independently witnessed. Assembly is not represented as contiguous in an old source; no protected modern clause is supplied. Secondary2002 petition-only comparison is explicitly limited.",
+      "provenance_authority": "Historical source assembly, independently reviewed; modern target2008 identity unresolved",
+      "provenance_confidence": "high",
+      "publication_status": "permitted",
+      "publication_basis": "public-domain",
+      "surfaces": [
+        "web",
+        "download",
+        "print",
+        "cli",
+        "corpus-data",
+        "public-git"
+      ],
+      "publication_source_ids": [
+        "artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "publication_locator": "Pustet1862 AP780/[110]; verified Lasance1945 ordinary p217 formula, exact registered old-source rights records",
+      "publication_evidence": "One entire independently public-domain historical petition is retained without lexical editing, followed by one independently witnessed complete conventional conclusion and marked response. No petition fragment is selected, no substantive modern clause is inserted, and no source body is represented as a contiguous historical prayer with this different ending. This finite source-based assembly is a historical study rendering; exact2008 target remains unresolved. Review must assess this complete bounded combination, not use small-word-change or vocabulary-overlap rules.",
+      "note": "Historical study source assembly: complete1862 Plenum petition with separately witnessed full short conclusion and marked response. Every petition word agrees with the secondary digital2002 witness, whose Per Christum cue differs from the old Per Dominum nostrum. This full expansion is independently sourced, not printed in full at the secondary target locus. Printed2002 fidelity and2008 correspondence remain unresolved; no exact modern-target claim."
+    }
+  },
+  "exact_target_disposition": "Available only as declared historical source assembly and new study English; Latin relationship exact-transcription to that assembly, never exact-target. Secondary2002 comparison is bounded and authenticated2008 is unresolved.",
+  "independent_review_required": "Whole finite expression assembly and full source/fidelity, then root adoption; prior body-only acceptance does not imply complete-prayer acceptance.",
+  "supersedes": {
+    "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal/installation-proposal.json",
+    "sha256": "b0d7e8f76e2c75d6808a9c10cff93f469fbd1997067bdcc5933b1e64d46013e0",
+    "reason": "Existing editorial-projection owning work requires exact target relation and official excerpt collation. This distinct work truthfully owns the historical source assembly without weakening that contract."
+  },
+  "unchanged_body_candidate_sha256": "16ffaaa9d2cf7dc90c61bbf7ed6813b6d26567befd41f3577e4c9c672a948f45",
+  "source_payload_changes": "None: Latin and English bytes unchanged. New source work/edition and referring IDs/paths only; distinct work contract added.",
+  "supersedes_qualification": {
+    "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/installation-proposal.json",
+    "sha256": "44b749af188830146f62443d2541e83dd97bdc98ec67fdaa7f6a5fa4d2b8a5be",
+    "reason": "Explicit reader-facing witness_note is needed because source divergence and target_qualification metadata alone are not carried to displayed English."
+  },
+  "qualification_dependency": "Root must propagate the existing translation caution through _calendars.texts_of, which currently drops it; no renderer or canonical source is changed by this preparer."
+}

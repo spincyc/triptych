@@ -163,7 +163,7 @@ class Propers(Surface):
                                ("companion", "companion"), ("urlLegacy", "url_legacy")):
             if key in options:
                 setattr(self, attribute, options[key])
-        selection = {name: options[name] for name in ("cycle", "witness", "properChoices", "variants", "alternative")
+        selection = {name: options[name] for name in ("cycle", "witness", "properChoices", "variants", "alternative", "sourceLocal1970")
                      if name in options}
         self.navigation.pending = options.get("location")
         self.pending_study = bool(options.get("study"))
@@ -648,6 +648,13 @@ class Propers(Surface):
     def action_choose(self) -> None:
         view = self.view or {}
         offers = []
+        historical = [event.get("sourceLocalActorChoice") for event in view.get("events") or []
+                      if (event.get("sourceLocalActorChoice") or {}).get("available")]
+        if historical:
+            selected = any(offer.get("selected") for offer in historical)
+            offers.append((("source-local-1970", not selected),
+                           "Return to unchanged source quotation" if selected else
+                           "Historical 1970 reading (current 2008 correspondence not established)"))
         path_ids = {path["id"] for path in view.get("sourcePaths") or []}
         for choice in view.get("unresolvedChoices") or []:
             ident = choice.get("id") or ""
@@ -703,6 +710,11 @@ class Propers(Surface):
                 selection["witness"] = value[1]
             elif kind == "ordinary-variant":
                 selection.setdefault("variants", {})[value[1]] = value[2]
+            elif kind == "source-local-1970":
+                if value[1]:
+                    selection["sourceLocal1970"] = True
+                else:
+                    selection.pop("sourceLocal1970", None)
             elif kind == "source-path":
                 selection["properChoices"] = value[1]
                 selection.pop("alternative", None)

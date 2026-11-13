@@ -8619,15 +8619,11 @@ sections:
             end: {chapter: 122, verse: 4}
           ref: Psalm 122:3-4
         notes: Used when another Gospel is read.
-      - name: Prayer after Communion
-        incipit: Deus, qui illuminas omnem hominem
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+      - name: "Prayer after Communion"
+        incipit: "Deus, qui illuminas omnem hominem"
+        source: "composed"
+        text: "Deus, qui illuminas omnem hominem venientem in hunc mundum, illumina, quaesumus, corda nostra gratiae tuae splendore, ut digna ac placita maiestati tuae cogitare semper, et te sincere diligere valeamus. Per Christum Dominum nostrum."
+        notes: "Complete1970 source-local prayer independently sourced from the1862 petition and short conclusion. Project study English; current2008 target correspondence remains unresolved. Historical1862 prayer ends Per Dominum; that source quotation remains intact in its own artifact. This derived execution uses actual1970 Per Christum cue,IGMR32 short branch andIGMR122 response placement. The people response Amen is separate."
       - name: Prayer over the People
         incipit: Tuere, Domine, supplices tuos
         source: composed
@@ -15779,18 +15775,7 @@ sections:
         psalm_numbering: 'vulgate'
       - name: 'Verse Before the Gospel'
         source: 'composed'
-        text_status:
-          state: 'unavailable'
-          scope: 'proper-body'
-          body_status: 'held-unpublished'
-          reasons:
-          - kind: 'rights-withheld'
-            source_id: 'artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e'
-        notes: 'OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately
-          held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial
-          path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
-          Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth
-          role is part of the native ferial course, not silently replaced by the optional course.'
+        notes: "Complete Latin of the governing OLM 1981 recipient n 252 (AP 192/printed 138), independently word-exact to the public-domain Pustet 1888 antiphon p 339/AP 393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112. Historical Bute 1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a 2008 altar-book collation."
         ordinary_disposition:
           kind: 'alternative'
           group: 'verse-before-gospel'
@@ -15801,6 +15786,7 @@ sections:
             attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252.
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
+        text: "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum."
       - name: 'Verse Before the Gospel'
         source: 'composed'
         text_status:
@@ -18559,15 +18545,11 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      - name: 'Solemn Intercession IV: For catechumens'
-        incipit: Oremus et pro catechumenis (nostris)
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+      - name: "Solemn Intercession IV: For catechumens"
+        incipit: "Oremus et pro catechumenis (nostris)"
+        source: "composed"
+        text: "Oremus et pro catechumenis (nostris), ut Deus et Dominus noster adaperiat aures praecordiorum ipsorum ianuamque misericordiae, ut, per lavacrum regenerationis accepta remissione omnium peccatorum, et ipsi inveniantur in Christo Iesu Domino nostro.\n\nOmnipotens sempiterne Deus, qui Ecclesiam tuam nova semper prole fecundas, auge fidem et intellectum catechumenis (nostris), ut, renati fonte baptismatis, adoptionis tuae filiis aggregentur. Per Christum Dominum nostrum. R. Amen."
+        notes: " Complete source-local1970 IV execution proposed from independently old1862 invitation and collect plus old full short formula. The historical cue stays in its own apparatus. Fresh study English is neither Lasance nor approved2011. Exact2008 correspondence remains unverified."
       - name: 'Solemn Intercession V: For the unity of Christians'
         incipit: Oremus et pro universis fratribus in Christum credentibus
         source: composed
@@ -18911,7 +18893,7 @@ sections:
           kind: alternative
           group: prayer-after-the-first-reading
           option: omnipotens-sempiterne-deus-qui-es
-          basis: "Alternative prayer, De creatione hominis."
+          basis: "Two alternative first-reading prayers are printed in the bounded secondary 2002 witness at AP 213: Omnipotens sempiterne Deus, qui es precedes Vel, De creatione hominis, which introduces Deus, qui mirabiliter creasti hominem. Both remain mutually exclusive options; the latter heading does not describe the first prayer. Exact 2008 correspondence remains unestablished."
         incipit: Omnipotens sempiterne Deus, qui es in omnium operum tuorum
         source: composed
         text_status:
@@ -18925,7 +18907,7 @@ sections:
           kind: alternative
           group: prayer-after-the-first-reading
           option: deus-qui-mirabiliter-creasti-hominem
-          basis: "Alternative prayer, De creatione hominis."
+          basis: "Two alternative first-reading prayers are printed in the bounded secondary 2002 witness at AP 213: Omnipotens sempiterne Deus, qui es precedes Vel, De creatione hominis, which introduces Deus, qui mirabiliter creasti hominem. Both remain mutually exclusive options; the latter heading does not describe the first prayer. Exact 2008 correspondence remains unestablished."
         incipit: Deus, qui mirabiliter creasti hominem
         source: composed
         notes: Alternative prayer, De creatione hominis.
@@ -27083,12 +27065,8 @@ sections:
       - name: Prayer over the Offerings
         incipit: Munera nostra
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Munera nostra, Domine, suscipe placatus, quae sanctificando nobis, quaesumus, salutaria fore concede.\nPer Christum Dominum nostrum.\nR. Amen."
+        notes: "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
       - name: Communion Antiphon
         ordinary_disposition:
           kind: alternative
@@ -27588,12 +27566,8 @@ sections:
       - name: Prayer over the Offerings
         incipit: Domine Deus noster
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Domine Deus noster, qui has potius creaturas ad fragilitatis nostrae subsidium condidisti, tribue, quaesumus, ut etiam aeternitatis nobis fiant sacramentum.\nPer Christum Dominum nostrum.\nR. Amen."
+        notes: "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
       - name: Communion Antiphon
         ordinary_disposition:
           kind: alternative
@@ -28357,12 +28331,8 @@ sections:
       - name: Prayer after Communion
         incipit: Satiati munere salutari
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Satiati munere salutari, tuam, Domine, misericordiam deprecamur, ut, hoc eodem quo nos temporaliter vegetas sacramento, perpetuae vitae participes benignus efficias.\nPer Christum Dominum nostrum.\nR. Amen."
+        notes: "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
     - key: ot-9
       name: Ninth Sunday in Ordinary Time
       registry: pc-s35
@@ -28616,12 +28586,8 @@ sections:
       - name: Prayer after Communion
         incipit: Rege nos Spiritu tuo
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Rege nos Spiritu tuo, quaesumus, Domine, quos pascis Filii tui Corpore et Sanguine, ut te, non solum verbo neque lingua, sed opere et veritate confitentes, intrare mereamur in regnum caelorum.\nPer Christum Dominum nostrum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from a complete historical prayer, with separately sourced full conclusion and marked response. The historical wording and individually reviewed revisions are recorded in the source apparatus. The comparison witness is a secondary digital reproduction. Correspondence with an authenticated printed 2002 or 2008 Missal remains unverified. This is a study text, not an approved liturgical edition."
     - key: ot-10
       name: Tenth Sunday in Ordinary Time
       registry: pc-s36
@@ -28993,12 +28959,8 @@ sections:
           B:
             source: composed
             incipit: Semen est verbum Dei
-            text_status:
-              state: unavailable
-              scope: proper-body
-              reasons:
-              - kind: rights-withheld
-                source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+            text: "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum."
+            notes: "Complete Latin of the governing OLM 1981 recipient n 92 (AP 110/printed 56), independently word-exact to the public-domain Pustet 1888 antiphon p 339/AP 393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112. Historical Bute 1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a 2008 altar-book collation."
           C:
             verses:
             - book: 1 John
@@ -29098,12 +29060,8 @@ sections:
       - name: Prayer after Communion
         incipit: Haec tua, Domine, sumpta sacra communio
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Haec tua, Domine, sumpta sacra communio, sicut fidelium in te unionem praesignat, sic in Ecclesia tua unitatis operetur effectum.\nPer Christum Dominum nostrum.\nR. Amen."
+        notes: "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation."
     - key: ot-12
       name: Twelfth Sunday in Ordinary Time
       registry: pc-s38
@@ -29288,12 +29246,8 @@ sections:
       - name: Prayer over the Offerings
         incipit: Suscipe, Domine, sacrificium placationis et laudis
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Suscipe, Domine, sacrificium placationis et laudis, et praesta, ut, huius operatione mundati, beneplacitum tibi nostrae mentis offeramus affectum.\nPer Christum Dominum nostrum.\nR. Amen."
+        notes: "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
       - name: Communion Antiphon
         ordinary_disposition:
           kind: alternative
@@ -29331,12 +29285,8 @@ sections:
       - name: Prayer after Communion
         incipit: Sacri Corporis et Sanguinis pretiosi alimonia
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Sacri Corporis et Sanguinis pretiosi alimonia renovati, quaesumus, Domine, clementiam tuam, ut, quod gerimus devotione frequenti, certa redemptione capiamus.\nPer Christum Dominum nostrum.\nR. Amen."
+        notes: "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
     - key: ot-13
       name: Thirteenth Sunday in Ordinary Time
       registry: pc-s39
@@ -29368,12 +29318,8 @@ sections:
       - name: Collect
         incipit: Deus, qui per adoptionem gratiae
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Deus, qui per adoptionem gratiae, lucis nos esse filios voluisti; praesta, quaesumus: ut errorum non involvamur tenebris; sed in splendore veritatis semper maneamus conspicui.\nPer Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus sancti Deus, per omnia saecula saeculorum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from a complete historical prayer, with separately sourced full conclusion and marked response. The historical wording and individually reviewed revisions are recorded in the source apparatus. The comparison witness is a secondary digital reproduction. Correspondence with an authenticated printed 2002 or 2008 Missal remains unverified. This is a study text, not an approved liturgical edition."
       - name: First Reading
         source: scripture
         cycles:
@@ -30064,12 +30010,8 @@ sections:
           A:
             incipit: Semen est verbum Dei, sator autem Christus
             source: composed
-            text_status:
-              state: unavailable
-              scope: proper-body
-              reasons:
-              - kind: rights-withheld
-                source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+            text: "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum."
+            notes: "Complete Latin of the governing OLM 1981 recipient n 103 (AP 115/printed 61), independently word-exact to the public-domain Pustet 1888 antiphon p 339/AP 393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112. Historical Bute 1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a 2008 altar-book collation."
           B:
             incipit: Pater Domini nostri Iesu Christi illuminet oculos cordis nostri
             source: scripture
@@ -30221,12 +30163,8 @@ sections:
       - name: Collect
         incipit: Propitiare, Domine, famulis tuis
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Propitiare, Domine, famulis tuis, et clementer gratiae tuae super eos dona multiplica: ut spe, fide et caritate ferventes, semper in mandatis tuis vigili custodia perseverent.\nPer Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus sancti Deus, per omnia saecula saeculorum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from a complete historical prayer, with separately sourced full conclusion and marked response. The historical wording and individually reviewed revisions are recorded in the source apparatus. The comparison witness is a secondary digital reproduction. Correspondence with an authenticated printed 2002 or 2008 Missal remains unverified. This is a study text, not an approved liturgical edition."
       - name: First Reading
         source: scripture
         cycles:
@@ -30727,12 +30665,8 @@ sections:
       - name: Collect
         incipit: Adesto, Domine, famulis tuis
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Adesto, Domine, famulis tuis, et perpetuam benignitatem largire poscentibus: ut his, qui te auctorem et gubernatorem gloriantur habere, et creata restaures, et restaurata conserves.\nPer Dominum nostrum Jesum Christum Filium tuum, qui tecum vivit et regnat in unitate Spiritus sancti Deus, per omnia saecula saeculorum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from a complete historical prayer, with separately sourced full conclusion and marked response. The historical wording and individually reviewed revisions are recorded in the source apparatus. The comparison witness is a secondary digital reproduction. Correspondence with an authenticated printed 2002 or 2008 Missal remains unverified. This is a study text, not an approved liturgical edition."
       - name: First Reading
         source: scripture
         cycles:
@@ -31414,12 +31348,8 @@ sections:
       - name: Prayer over the Offerings
         incipit: Suscipe, Domine, munera nostra
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Suscipe, Domine, munera nostra, quibus exercentur commercia gloriosa, ut, offerentes quae dedisti, teipsum mereamur accipere.\nPer Christum Dominum nostrum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from complete historical prayers, with individually reviewed conventional changes and a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
       - name: Communion Antiphon
         ordinary_disposition:
           kind: alternative
@@ -31455,12 +31385,8 @@ sections:
       - name: Prayer after Communion
         incipit: Per haec sacramenta, Domine, Christi participes effecti
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Per haec sacramenta, Domine, Christi participes effecti, clementiam tuam humiliter imploramus, ut, eius imaginis conformes in terris, et eius consortes in caelis fieri mereamur.\nQui vivit et regnat in saecula saeculorum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from a complete historical prayer, with separately sourced full conclusion and marked response. The historical wording and individually reviewed revisions are recorded in the source apparatus. The comparison witness is a secondary digital reproduction. Correspondence with an authenticated printed 2002 or 2008 Missal remains unverified. This is a study text, not an approved liturgical edition."
     - key: ot-21
       name: Twenty-first Sunday in Ordinary Time
       registry: pc-s47
@@ -31687,12 +31613,8 @@ sections:
       - name: Prayer after Communion
         incipit: Plenum, quaesumus, Domine, in nobis remedium
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Plenum, quaesumus Domine, in nobis remedium tuae miserationis operare: ac tales nos esse perfice propitius, et sic foveri; ut tibi in omnibus placere valeamus.\nPer Christum Dominum nostrum.\nR. Amen."
+        notes: "Historical study source assembly: complete 1862 Plenum petition with separately witnessed full short conclusion and marked response. Every petition word agrees with the secondary digital 2002 witness, whose Per Christum cue differs from the old Per Dominum nostrum. This full expansion is independently sourced, not printed in full at the secondary target locus. Printed 2002 fidelity and 2008 correspondence remain unresolved; no exact modern-target claim."
     - key: ot-22
       name: Twenty-second Sunday in Ordinary Time
       registry: pc-s48
@@ -33688,12 +33610,8 @@ sections:
       - name: Prayer after Communion
         incipit: Fac nos, quaesumus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Fac nos, quaesumus, Domine, caelestium rerum frequentatione proficere, ut et temporalibus beneficiis adiuvemur, et erudiamur aeternis.\nPer Christum Dominum nostrum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from complete historical prayers, with individually reviewed conventional changes and a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
     - key: ot-30
       name: Thirtieth Sunday in Ordinary Time
       registry: pc-s56
@@ -34391,12 +34309,8 @@ sections:
       - name: Prayer over the Offerings
         incipit: Sacrificiis praesentibus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Sacrificiis praesentibus, Domine, quaesumus, intende placatus, ut, quod passionis Filii tui mysterio gerimus, pio consequamur affectu.\nPer Christum Dominum nostrum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from complete historical prayers, with individually reviewed conventional changes and a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
       - name: Communion Antiphon
         ordinary_disposition:
           kind: alternative
@@ -34432,12 +34346,8 @@ sections:
       - name: Prayer after Communion
         incipit: Gratias tibi, Domine, referimus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Gratias tibi, Domine, referimus sacro munere vegetati, tuam clementiam implorantes, ut, per infusionem Spiritus tui, in quibus caelestis virtus introivit, sinceritatis gratia perseveret.\nPer Christum Dominum nostrum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from complete historical prayers, with individually reviewed conventional changes and a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
     - key: ot-33
       name: Thirty-third Sunday in Ordinary Time
       registry: pc-s59
@@ -34691,12 +34601,8 @@ sections:
       - name: Prayer after Communion
         incipit: Sumpsimus, Domine, sacri dona mysterii
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        "text": "Sumpsimus, Domine, sacri dona mysterii, humiliter deprecantes, ut, quae in sui commemorationem nos Filius tuus facere praecepit, in nostrae proficiant caritatis augmentum.\nPer Christum Dominum nostrum.\nR. Amen."
+        "notes": "Source-based Latin study reconstruction from complete historical prayers, with individually reviewed conventional changes and a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
     - key: most-holy-trinity
       name: The Most Holy Trinity
       registry: pc-s26
@@ -53532,41 +53438,28 @@ sections:
       kind: marian
       propers:
       - name: Collect
-        incipit: Deus, qui beatae Mariae Virginis domum
         source: composed
         text_status:
           state: unavailable
           scope: proper-body
+          body_status: held-unpublished
           reasons:
           - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      - name: Prayer over the Offerings
-        incipit: Accipe, quaesumus Domine
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      - name: Prayer after Communion
-        incipit: Quaesumus Domine Deus noster
-        source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-      notes: 'ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of
-        leaf n782, n783 (printed [113], [114]) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet
-        Ratisbon 1862 printing of the Missale Romanum, at the day heading Die x. In Festo Translationis
-        Almae Domus B. M. V., and not from any optical text layer. That printing attests its own 1862 `pro
-        aliquibus locis` appendix recension. It does not attest the Missale Romanum, editio typica tertia
-        2002/2008, which this file declares as its edition, which is in copyright and is not held here.
-        Whether the 2002 Missal appoints this same prayer on this day is an editorial determination that
-        has NOT been made. Accents and ae/oe ligatures are normalized to this file''s declared
-        orthography. Nothing here has been collated; the entry stands in open_collation_items.'
+            source_id: artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926
+        notes: The official2019 Latin annex supplies one own Collect for the10December optional memorial; its complete body was privately inspected and is withheld pending an independent publication basis. It differs materially from the old1862HolyHouse Collect. The whole source was acquired and hashed; neither acquisition nor official status supplies republication permission. Complete-as-printed means its actual abbreviated conclusion cue is held; no expanded spoken ending has been established or supplied.
+      notes: The decree dated 7 October 2019 and its annex published 31 October 2019 establish the optional memorial on 10 December. The Missale Romanum annex gives a broader direction to the Common of the Blessed Virgin Mary and prints one own Collect. The schema represents only the antiphon subset in common_from; the broader source direction is preserved here. Remaining lawful choices are unresolved in this bounded correction. No Common form is selected. The old three-prayer entry, consisting of incipits and typed gaps rather than Latin bodies, and all three previous English gap dictionaries are preserved verbatim in the superseded receipt. The distinct OLM annex, n. 689 bis, at HTML lines 178-190 gives First Reading, Responsorial Psalm, Gospel Acclamation and Gospel roles. Those appointments remain unrepresented and inactive here. The unrepresented reading appointments are a separate Lectionary gap. The partial missal-formulary status concerns only unresolved Missal material and choices.
+      text_status:
+        state: partial
+        scope: missal-formulary
+        reasons:
+        - kind: witness-gap
+          source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+      common_from:
+        scope: missal-antiphons
+        source_id: artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926
+        locus: Official2019 Latin Missale Romanum annex:10December; De Communi beatae Mariae Virginis; entire Common direction precedes ownCollect
+        options:
+        - mass: commune-beatae-mariae-virginis
     - key: our-lady-guadalupe
       name: Our Lady of Guadalupe
       registry: pc-12-12
@@ -60548,7 +60441,7 @@ sections:
       kind: sanctoral
       propers:
       - name: Collect
-        incipit: Da quaesumus omnipotens Deus
+        incipit: Deus, qui beatum Paulinum
         source: composed
         text_status:
           state: unavailable
@@ -60556,6 +60449,7 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        notes: The incipit identifies the Collect printed for Paulinus in a secondary witness of the 2002 Roman Missal, page 456 of that digital artifact. The complete Latin body remains unavailable, and correspondence with the complete controlling 2008 edition has not been established.
       - name: First Reading
         source: scripture
         verses:
@@ -62484,86 +62378,161 @@ sections:
         state: partial
         scope: missal-formulary
         reasons:
-        - kind: witness-gap
-          source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        - kind: rights-withheld
+          source_id: segment.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.missal-formulary-pages-1-2
       name: Saints Martha, Mary, and Lazarus
       registry: pc-07-29
       date: 07-29
       rank: Memorial
       kind: sanctoral
-      notes: 'The Lectionary citations were read at 200 dpi in the page images of the Ordo
-        lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
-        at artifact page 352, printed page 298, n. 607. The Ordo heads it De Communi sanctarum,
-        and this repository carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded and not resolved.
-        The Ordo heads the day S. Marthae alone and prints Evangelium huius memoriae est
-        proprium; this calendar carries the memorial of 29 July under the expanded title
-        it was given after 1981, and the citations are those the book appoints to that day.
-        The Ordo prints its responsorial psalms in Vulgate numbering; they are converted
-        here by scripts/_psalms from the tracked verse concordance, because this file declares
-        psalm_numbering hebrew. Nothing else of this Mass has been read - the Entrance and
-        Communion Antiphons and the three orations are printed in the Missal, not in the
-        Ordo, and are absent because no witness to them is on disk that this project may
-        publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.'
+      notes: 'The five existing Scripture appointments retain their 1981 Ordo lectionum Missae evidence and data unchanged: artifact page 352, printed page 298, no. 607, then headed S. Marthae and De Communi sanctarum, with the proper-Gospel instruction. That Common cue is reading evidence only. The decree dated 26 January 2021, Prot. N. 35/21, and its complete official annex directly identify the expanded 29 July memorial and its five Missal roles; each is represented here as a held-unpublished body without wording. The annex gives only the amended Lectionary title at no. 607 and supplies no replacement reading course. Its separate Common of Saints referral belongs to the Liturgy of the Hours and creates no Missal Common choice. The Missal section prints no Common referral or alternative. The Collect and two other orations retain their abbreviated conclusion-cue boundaries in source notes; no expansion is supplied. These are exact 2021 addition facts, not a complete-2008 or 2008-Common correspondence.
+        A separate complete U.S. English formulary is held under the confirmation of 30 September 2024, Prot. n. 431/24; the five exact English accounting rows retain that territorial and edition identity without activating wording. Its effective and promulgation dates remain unestablished. Neither source identification nor confirmation grants body publication permission. Source authority: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.decree-calendar-and-annex-authority; section boundaries: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.book-boundaries.'
       propers:
+      - name: Entrance Antiphon
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.entrance-appointment
+        notes: 'The 2021 official annex directly appoints this complete-as-printed Missal body for the 29 July memorial, artifact page 1. Exact source: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.entrance-appointment. The printed citation Cf. Lc 10, 38-39 is a comparison cue; it establishes no interchangeable Bible excerpt. No body or English translation is supplied; per-text publication assessment remains open.'
+      - name: Collect
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.collect-appointment
+        notes: 'The 2021 official annex directly appoints this complete-as-printed Missal body for the 29 July memorial, artifact page 1. Exact source: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.collect-appointment. The printed conclusion cue Qui tecum is not expanded. No body or English translation is supplied; per-text publication assessment remains open.'
       - name: First Reading
         source: scripture
         verses:
         - book: 1 John
           ranges:
-          - begin: {chapter: 4, verse: 7}
-            end: {chapter: 4, verse: 16}
+          - begin:
+              chapter: 4
+              verse: 7
+            end:
+              chapter: 4
+              verse: 16
           ref: 1 John 4:7-16
       - name: Responsorial Psalm
         source: scripture
         verses:
         - book: Psalms
           ranges:
-          - begin: {chapter: 34, verse: 2}
-            end: {chapter: 34, verse: 3}
-          - begin: {chapter: 34, verse: 4}
-            end: {chapter: 34, verse: 5}
-          - begin: {chapter: 34, verse: 6}
-            end: {chapter: 34, verse: 7}
-          - begin: {chapter: 34, verse: 8}
-            end: {chapter: 34, verse: 9}
-          - begin: {chapter: 34, verse: 10}
-            end: {chapter: 34, verse: 11}
+          - begin:
+              chapter: 34
+              verse: 2
+            end:
+              chapter: 34
+              verse: 3
+          - begin:
+              chapter: 34
+              verse: 4
+            end:
+              chapter: 34
+              verse: 5
+          - begin:
+              chapter: 34
+              verse: 6
+            end:
+              chapter: 34
+              verse: 7
+          - begin:
+              chapter: 34
+              verse: 8
+            end:
+              chapter: 34
+              verse: 9
+          - begin:
+              chapter: 34
+              verse: 10
+            end:
+              chapter: 34
+              verse: 11
           ref: Psalm 34:2-3, 4-5, 6-7, 8-9, 10-11
       - name: Gospel Acclamation
         source: scripture
         verses:
         - book: John
           ranges:
-          - begin: {chapter: 8, verse: 12}
-            end: {chapter: 8, verse: 12}
+          - begin:
+              chapter: 8
+              verse: 12
+            end:
+              chapter: 8
+              verse: 12
           ref: John 8:12
       - name: Gospel
         ordinary_disposition:
           kind: alternative
           group: gospel
           option: john-11-19-27
-          basis: "The Ordo prints this under Vel as an alternative to the preceding Gospel."
+          basis: The Ordo prints this under Vel as an alternative to the preceding Gospel.
         source: scripture
         verses:
         - book: John
           ranges:
-          - begin: {chapter: 11, verse: 19}
-            end: {chapter: 11, verse: 27}
+          - begin:
+              chapter: 11
+              verse: 19
+            end:
+              chapter: 11
+              verse: 27
           ref: John 11:19-27
       - name: Gospel (alternative)
         ordinary_disposition:
           kind: alternative
           group: gospel
           option: luke-10-38-42
-          basis: "The Ordo prints this under Vel as an alternative to the preceding Gospel."
+          basis: The Ordo prints this under Vel as an alternative to the preceding Gospel.
         source: scripture
         verses:
         - book: Luke
           ranges:
-          - begin: {chapter: 10, verse: 38}
-            end: {chapter: 10, verse: 42}
+          - begin:
+              chapter: 10
+              verse: 38
+            end:
+              chapter: 10
+              verse: 42
           ref: Luke 10:38-42
         notes: The Ordo prints this under Vel as an alternative to the preceding Gospel.
+      - name: Prayer over the Offerings
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.offerings-appointment
+        notes: 'The 2021 official annex directly appoints this complete-as-printed Missal body for the 29 July memorial, artifact page 1. Exact source: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.offerings-appointment. The printed conclusion cue Per Christum is not expanded. No body or English translation is supplied; per-text publication assessment remains open.'
+      - name: Communion Antiphon
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.communion-appointment
+        notes: 'The 2021 official annex directly appoints this complete-as-printed Missal body for the 29 July memorial, artifact page 1. Exact source: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.communion-appointment. The printed citation Cf. Io 11, 27 is a comparison cue; it establishes no interchangeable Bible excerpt. No body or English translation is supplied; per-text publication assessment remains open.'
+      - name: Prayer after Communion
+        source: composed
+        text_status:
+          state: unavailable
+          scope: proper-body
+          body_status: held-unpublished
+          reasons:
+          - kind: rights-withheld
+            source_id: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.postcommunion-appointment
+        notes: 'The 2021 official annex directly appoints this complete-as-printed Missal body for the 29 July memorial, artifact page 2. Exact source: passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.postcommunion-appointment. The printed conclusion cue Per Christum is not expanded. No body or English translation is supplied; per-text publication assessment remains open.'
     - key: saint-peter-chrysologus-bishop-doctor-church
       common_from:
         scope: missal-antiphons
@@ -63076,7 +63045,7 @@ sections:
       kind: sanctoral
       propers:
       - name: Collect
-        incipit: Deus, qui nos concedis
+        incipit: Quaesumus, omnipotens Deus
         source: composed
         text_status:
           state: unavailable
@@ -63084,6 +63053,7 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        notes: The incipit identifies the Collect printed for Sixtus and his companions in a secondary witness of the 2002 Roman Missal, digital artifact pages 475–476. The complete Latin body remains unavailable, and correspondence with the complete controlling 2008 edition has not been established.
       - name: First Reading
         source: scripture
         verses:
@@ -64891,7 +64861,7 @@ sections:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
       - name: Prayer over the Offerings
-        incipit: Tua, Domine, propitiatione
+        incipit: Intercessio, quaesumus, Domine
         source: composed
         text_status:
           state: unavailable
@@ -64899,6 +64869,7 @@ sections:
           reasons:
           - kind: rights-withheld
             source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        notes: The former Tua, Domine, propitiatione incipit belonged to the historical1862HolyName formulary and is preserved in the prior evidence receipt. Source-local secondary2002 AP491 has the Intercessio incipit and a materially different offering. This metadata correction carries no full Latin body and no authenticated2008 identity. The separately proposed English is qualified study text, not approved liturgical English.
       - name: Communion Antiphon
         source: scripture
         verses:
@@ -67689,13 +67660,9 @@ sections:
       propers:
       - name: Entrance Antiphon
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
-        notes: Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded.
+        notes: "Historical 1922 Latin and fresh project study English. Secondary digitally typeset 2002 AP 512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed 2002 fidelity and authenticated 2008 correspondence remain unresolved. Not approved contemporary English and not for recitation. Source appointment: ICEL 2010 AP 142 / printed 134; no text from that English carrier is copied. Following historical Psalm 32:1 and doxology are excluded."
+        incipit: "Gaudeamus omnes in Domino"
+        text: "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei."
       - name: First Reading
         source: scripture
         verses:

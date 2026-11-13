@@ -1,0 +1,180 @@
+{
+  "schema": "triptych.common-recovery-martha-successor.v1",
+  "status": "scratch-only; independently reviewed; awaits separate Root code adoption",
+  "root_commit": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "problem": "The accepted 2021 Martha model changes accurate note prose; the legacy parser then omits the retained OLM 1981 n607 Common-reading recovery row. Actual merged baseline was 13 tests with one failure, 167 derived rows versus 168 stored.",
+  "two_file_overrides": [
+    {
+      "path": "tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+      "preimage_sha256": "a3f3a1f61e9aa4e2faea889fb90417f103d969cc54821b1b976b6e4cb6f02639",
+      "candidate_path": ".scratch/modern-common-appointments/common-recovery-martha-successor/package/tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+      "candidate_sha256": "13315af4600c50e066ad7353d790b24023f59806ae926e1e42a6e0ef16866dbe",
+      "byte_size": 49140
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+      "preimage_sha256": "608c91f07582fe1589ac32c5ad0b79fb78c125289528cc2ecfcde50bf9ecf8d7",
+      "candidate_path": ".scratch/modern-common-appointments/common-recovery-martha-successor/package/src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+      "candidate_sha256": "4a7f0a1e261e7fc699c5964c4b9ccd726840956956e93b3face3edd8ff17a125",
+      "byte_size": 8762
+    }
+  ],
+  "successor_patch": {
+    "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/successor.patch",
+    "sha256": "43032e9af1acb8cb7b827ca050c9e3d470b297be724099be0329585e6aa2c1f0",
+    "byte_size": 20646
+  },
+  "patch_check": {
+    "exit_code": 0,
+    "applied_only_to_independent_scratch_preimage_copies": true,
+    "after_bytes_equal_candidates": true,
+    "accepted_preimages_unchanged": true
+  },
+  "base_package": {
+    "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/manifest.json",
+    "sha256": "5e48009a117f818088ecd53292adb8a860496806a03fc96831830dc70b35ac40",
+    "byte_size": 7705
+  },
+  "base_root_code_receipt": {
+    "path": ".scratch/root/common-recovery-code-adoption.json",
+    "sha256": "5de805a892ab84d1cf35d81d36d3c8cca81d728b75ed33665ea5ba814177a6ed",
+    "byte_size": 1903
+  },
+  "actual_merged_common_installation_receipt": {
+    "path": ".scratch/source-epoch/next-cohort/merged-80cb-v1-evidence/12-common-additions.json",
+    "sha256": "205b61ae946b0889afd2193fae451b579f8b15efbf801b62fd08c625da1704e6",
+    "byte_size": 126810
+  },
+  "semantics": {
+    "historical_source": "Exact OLM 1981 artifact ed4bc14e, independently viewed complete AP352 / printed298 / n607, S. Marthae, De Communi sanctarum, and proper Gospel instruction.",
+    "later_title_bridge": "Five pinned source records separate the historical 1981 reading heading from the 2021 three-saint calendar title and annex book boundaries. The separate Hours Common cue supplies no Missal or Lectionary Common authority.",
+    "current_node": "Requires exact current recipient, all five unchanged Scripture nodes including both Gospel dispositions, and all five unavailable 2021 Missal roles. Notes are not input evidence.",
+    "reading_hash_recipe": "SHA256 of json.dumps(readings, sort_keys=True, ensure_ascii=False, separators=(comma,colon)) plus one literal LF, UTF-8 encoded; exact node list order is retained.",
+    "reading_nodes_sha256": "5c2a296fc42deb7a7595d0b76bcda9accb4e76b5caef53378840f14b138f4de2",
+    "failure_behavior": "Missing, crossed, changed, authority-promoted or default/Common-injected evidence fails before row derivation. No expected output flags are read as evidence.",
+    "existing_guards": "The two earlier historical prayer corrections, six legacy marker cases, strict ICEL source path and separate official Loreto source path are preserved.",
+    "contract_schema": "Existing audit TOML identity/path is retained; schema advances from 1 to 2 for the bounded Martha stanza. No bibliographic source class or general permission facility is introduced."
+  },
+  "validation": {
+    "owning_tests": 16,
+    "failures": 0,
+    "errors": 0,
+    "baseline_exclusions": 0,
+    "independent_controls": 43,
+    "independent_findings": [],
+    "derived_rows": 168,
+    "stored_rows": 168,
+    "all_rows_exactly_preserved": true,
+    "wrong_edition_flags": 8,
+    "candidate_source_tree_ownership_errors": 0,
+    "unowned_json_path_negative_control": "refused"
+  },
+  "unchanged_inventory": {
+    "path": "src/sources/inventories/postconciliar-sanctoral-commons-v1.toml",
+    "sha256": "b5dd0abf24845d3cde049156af340eded8d87eb90dfd3550bac6a8724ced76e0"
+  },
+  "commands": {
+    "working_directory": "repository root",
+    "python": ".scratch/root/venv/bin/python",
+    "python_version": "3.14.10",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "owning": "PYTHONDONTWRITEBYTECODE=1 .scratch/root/venv/bin/python .scratch/modern-common-appointments/common-recovery-martha-successor/prepare-and-test.py",
+    "independent": "PYTHONDONTWRITEBYTECODE=1 .scratch/root/venv/bin/python .scratch/modern-common-appointments/common-recovery-martha-successor/independent-review/cold_review.py",
+    "ownership": "PYTHONDONTWRITEBYTECODE=1 .scratch/root/venv/bin/python .scratch/modern-common-appointments/common-recovery-martha-successor/check-ownership.py"
+  },
+  "receipts": [
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/validation.json",
+      "sha256": "40af410fea0def3b545dcb9057d1d4c8f894593bec112e103aeadc4a7fac47ec",
+      "byte_size": 5957
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/candidate-tests.log",
+      "sha256": "c8192aadefd2fd598d4e086a236ac03854856325b75e5027a7364bcc98b206ed",
+      "byte_size": 3273
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/prepare-and-test.py",
+      "sha256": "d7c3fbffaa8d2130060df70fca2052d8da11812db4d83eb9d61cb0c1baaec2bc",
+      "byte_size": 3208
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/ownership-validation.json",
+      "sha256": "1aa3808ad71c07b2eb5787f9b4551ea2a511d90ed0e2404d53a730290458dfe5",
+      "byte_size": 1407
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/check-ownership.py",
+      "sha256": "0abfbf86128086f706c281dc3618a9f6ac0cc14e501c547addd17ed865516f3a",
+      "byte_size": 2573
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/two-file-overrides.json",
+      "sha256": "52ce95b2b1730ebd73262a8da631bf8c18e1eee5be71a41c87d04b92f6341886",
+      "byte_size": 1958
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/package-overrides.py",
+      "sha256": "7a87f82ee5f23695dfd188f3fd1fae18ab60ff8ed05815d5e0343b347efeda3a",
+      "byte_size": 3841
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/olm-source-review/review.json",
+      "sha256": "2235c3a7dfb98ed73a01c620676953c5c7abb870131d33c3e196e92c61b9790b",
+      "byte_size": 4499
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/independent-review/review.json",
+      "sha256": "5eda5ab9461841f2a7612ecffcf1d07bf86e3a3607f5c955bd311869681bd242",
+      "byte_size": 14969
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/independent-review/cold_review.py",
+      "sha256": "ccab4f798378d119b369c063590331ec8f47071b4717a3f22dd19c5bf183a2ce",
+      "byte_size": 11782
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/independent-review/cold-owning-tests.log",
+      "sha256": "8b8f96f001c295839adf9a1e9c31f65db26a3755707bcb9ebcdd3a08e3612bb3",
+      "byte_size": 3306
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/independent-review/baseline-review.json",
+      "sha256": "50c0f8b1f34a7509833302d8fcd9b9d86368cb035cd574fdbe8b9c7b70a429e4",
+      "byte_size": 4799
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/independent-review/baseline-owning-tests.log",
+      "sha256": "18303ee289b7c421e61fea88e72898cf6af02a875ff7cb676b8b2a0929363f97",
+      "byte_size": 4754
+    }
+  ],
+  "integration_limits": [
+    "Use only these two overrides after the accepted semantic package; keep its recovery inventory and all 85 source/model maps unchanged. Preserve original adoption history and add a separate Root receipt.",
+    "Complete owning suite was run on independent copies of actual merged-stage dependencies, exactly pinned in validation and cold review. The stage had advanced beyond the earlier baseline; both successful runs used the same later calendar and English hashes.",
+    "No whole merged production-suite or public-reader completion is claimed. Root/source_epoch owns the final installed-tree run.",
+    "No new prayer/Scripture payload, English activation, source registration, Common/default choice, body authority, or authenticated 2008 correspondence is added.",
+    "Pinned metadata changes require explicit review and re-pinning; the fixture contains copies and no hardlinks."
+  ],
+  "preservation": {
+    "canonical_writes": [],
+    "index_writes": [],
+    "staged_writes": [],
+    "tracked_diff_empty": true,
+    "prior_manifests_and_reviews_unchanged": true
+  },
+  "public_derivative": {
+    "kind": "environment-path-normalization",
+    "raw_original_manifest": {
+      "path": ".scratch/modern-common-appointments/common-recovery-martha-successor/manifest.json",
+      "sha256": "9caf5191064afae97f035963bfb0fd05910682f894a0a24b9131ad862cbc3a43",
+      "byte_size": 9620
+    },
+    "changed_field": "/commands/working_directory",
+    "original_field_value_sha256": "2dcc2eecb3a08a27bd847ea46ebf8349b211e63a6b993f44b348d1c027e25ef4",
+    "public_value": "repository root",
+    "scope": "Only the environment-specific working directory label is normalized. Candidate bytes, source evidence, substantive review, validation results and Root code admission are unchanged. The raw original manifest remains immutable."
+  }
+}

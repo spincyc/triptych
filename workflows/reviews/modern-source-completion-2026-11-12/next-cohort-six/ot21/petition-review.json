@@ -1,0 +1,59 @@
+{
+  "schema": "independent-oration-source-fidelity-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "modern_sources/pange_review",
+  "candidate_path": ".scratch/modern-partition-ordinarytime/plenum-candidate.json",
+  "candidate_sha256": "1b6c4119d912399157a3aeca0f400e2a0dd0aa5e942d6c736ca48bf249682074",
+  "identity": [
+    "ot-21",
+    "main",
+    "Prayer after Communion",
+    "all",
+    1
+  ],
+  "disposition": "accept-complete-petition-and-study-English-body-only",
+  "historical_latin_body_sha256": "ebe655fe914bd83a239ca33f038c6c9a4a005f0569b4aa529468f0f8dbee39b9",
+  "study_english_body_sha256": "b6401a8a2fce54d3923c1d578a8d5fe72d614f956f935b716e1f430ed37d3370",
+  "source_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+  "source_artifact_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+  "inspection": {
+    "whole_pdf_hash_recomputed": true,
+    "independent_fresh_render_and_visual_read": [
+      779,
+      780
+    ],
+    "printed_pages": [
+      "[109]",
+      "[110]"
+    ],
+    "source_scope": "Oratio in Consecratione Episcopi, Postcommunio; starts lower left AP780 and ends top right AP780. Entire petition and its separately printed Per Dominum nostrum cue read.",
+    "comparison_artifact": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "comparison_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "comparison_pages_visually_read": [
+      285,
+      286
+    ]
+  },
+  "source_fidelity": [
+    "Historical transcription agrees with every source word and punctuation mark after joining page-column wrap. Accents and ae ligature retained as candidate.",
+    "All normalized petition tokens equal secondary2002 petition; no lexical word added, omitted or substituted.",
+    "Per Dominum nostrum is the old cue. Per Christum is the comparison cue. Neither cue by itself proves a complete expanded formula."
+  ],
+  "english_fidelity": [
+    "Work in us renders operare in nobis; full remedy of your mercy preserves plenum remedium tuae miserationis.",
+    "Graciously form and sustain us so that we may please you in all things is a defensible clean study rendering: form conveys tales nos esse perfice, sustain supplies the passive foveri with God as agent, graciously carries propitius, and the purpose clause retains sic/ut, tibi, in omnibus and valeamus.",
+    "No substantive petition proposition is imported from modern approved English or omitted. This is newly project-authored English, not historical-human or approved English."
+  ],
+  "conclusion_disposition": "Not accepted as a complete oration. English conclusion is null in this exact candidate; bind independently witnessed full formula before adding one, preserving old-versus-comparison cue distinction. A body-only display must say body only.",
+  "required_before_admission": [
+    "Retain complete old source expression and exact bounded source record with its actual historical appointment.",
+    "Record study English as project-created and retain qualified secondary2002 comparison and historical-source credit.",
+    "Preserve source body and conclusion as distinct evidence; do not silently pair a modern conclusion with the old cue as exact transcription.",
+    "Do not claim authenticated2008 wording/appointment or exact-target Latin.",
+    "Run owning source/registration/consumer gates after integration; this review performs no canonical mutation."
+  ],
+  "limitations": [
+    "Source/fidelity approval only, not publication registration or generated-consumer acceptance.",
+    "The actual comparison remains a secondary digital2002 witness with printed2002 fidelity and2008 authenticity unestablished."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "triptych-root-final-composition-test-adoption/v1",
+  "decision": "Adopt exact SIX and TEN final Roman preservation-test successors; bind actual Pius runtime adoption",
+  "files": [
+    {
+      "path": "tools/tests/test_postconciliar_finite_latin.py",
+      "before_sha256": "52c12463c19c67a18670159d8ba1baff3afe5196eba5562b026d22ac9ead2693",
+      "after_sha256": "05d5c09540c462b90c8c1ac961bee5e246c9d60347dd28c8b0a74751cad1cfea",
+      "postimage": ".scratch/modern-finite-latin-contract/final-composition-test-v1/after/tools/tests/test_postconciliar_finite_latin.py"
+    },
+    {
+      "path": "tools/tests/test_postconciliar_ten_finite_latin.py",
+      "before_sha256": "177631114c29b78f6334d3fefed480f37f9dcecde1d56bd8e3a212c7924b2ce2",
+      "after_sha256": "4507fc2d86ff7c985d3db2a3569c04c3d88515f6c6a13b0754b9dd92950b8f60",
+      "postimage": ".scratch/modern-ten-latin-contract/roman-final-composition-test/postimages/tools/tests/test_postconciliar_ten_finite_latin.py"
+    }
+  ],
+  "independent_review": {
+    "path": ".scratch/modern-final-composition-test-review/review.json",
+    "sha256": "5cf937a546686bb2dda011e3b64049ed5a2ec18dc3e2479cc71e77c36ed5e35b"
+  },
+  "actual_runtime_adoption": {
+    "path": ".scratch/root/pius-secret-actual-authority-adoption.json",
+    "sha256": "82998da797680af74b30094a1ebeb9442f397d376601b57c74368952263db231"
+  },
+  "root_review": "Read complete independent review and both patch deltas; independently reconstructed exact full-file replacements and verified current canonical preimages. Only obsolete Roman helper assertion and authority assertion change; legacy Q and all other bytes remain identical.",
+  "limits": [
+    "Final merged source and consumer suites remain required.",
+    "Original conditional review and historical standalone tests remain unchanged."
+  ],
+  "canonical_writes": false
+}

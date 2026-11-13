@@ -1,0 +1,116 @@
+{
+  "schema": 1,
+  "scope": "Only the two extended-Pentecost Collect recipient mappings",
+  "proposal_sha256": "226e03be1090bd57769691c129a2e53e155dfb0afee66c26930ed4a60fdc3ab9",
+  "scoped_file_count": 10,
+  "new_source_record_count": 9,
+  "new_publication_tsv_sha256": "67971f96d3215742bf024b22413f3a0cc5678baed09c8431595beff8e09c77d8",
+  "cases": [
+    {
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (before the readings)",
+        "all",
+        1
+      ],
+      "source_identity": [
+        "pentecost",
+        "vigil",
+        "Collect",
+        "all",
+        2
+      ],
+      "english_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066",
+      "before_object_sha256": "67217076044d3d81aa38414b97c4bce121c2d49fef2f3a8c9716f321466e8cc1",
+      "after_object_sha256": "5b80480a9a1db9803224528cb4754f56a20f462b30a34a7c44bcde7302ea35df",
+      "original_admitted_entry_object_sha256": "95dc72e540f0e80966b60528d934595348ebea4baf73f7fef2d1794db2bf5f62",
+      "changed_keys_from_source": [
+        "divergence",
+        "form_id",
+        "incipit",
+        "occurrence",
+        "proper"
+      ],
+      "prior_body_english_seal_matched": true,
+      "prior_mapping_seal_matched": true
+    },
+    {
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (after Gloria)",
+        "all",
+        1
+      ],
+      "source_identity": [
+        "pentecost",
+        "vigil",
+        "Collect",
+        "all",
+        1
+      ],
+      "english_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e",
+      "before_object_sha256": "939fa56d83a27849f436de7d788a5ececa64e60eb744dcc725fa10d32c6f1368",
+      "after_object_sha256": "cdedd233cf5a519d9653e24c6898c1c8674b0019c87c133c8accd3de17720612",
+      "original_admitted_entry_object_sha256": "7e5da0449cffefcedcfa69791b8e12397e7f5f1c50a1d2942c1cfbaef93ae99c",
+      "changed_keys_from_source": [
+        "divergence",
+        "form_id",
+        "incipit",
+        "proper"
+      ],
+      "prior_body_english_seal_matched": true,
+      "prior_mapping_seal_matched": true
+    }
+  ],
+  "prior_receipts": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-collect-mapping-review.json",
+      "sha256": "19a2e0086114a28ee46d086e0f1f01c97f0d926a8563b95600a0201bed0bc8c2"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json",
+      "sha256": "bf2e4449ced7c9ed61c13cc261f95fa3d01a49a2fd2ea74a37a688128e46c7be"
+    }
+  ],
+  "source_error_arrays_empty": true,
+  "real_current_full_overlay_passed_with_exactly_two_new_keys": true,
+  "old_overlay_entries_and_stale_witness_states_unchanged": true,
+  "actual_consumer_carries_both_texts_without_stale_warning": true,
+  "actual_consumer_checks": [
+    {
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (before the readings)",
+        "all",
+        1
+      ],
+      "recipient_incipit": "Praesta, quaesumus",
+      "carried_english_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066",
+      "stale": [],
+      "long_source_incipit_negative_control_refused": true,
+      "other_proper_fields_unchanged": true
+    },
+    {
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (after Gloria)",
+        "all",
+        1
+      ],
+      "recipient_incipit": "Omnipotens sempiterne Deus",
+      "carried_english_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e",
+      "stale": [],
+      "long_source_incipit_negative_control_refused": true,
+      "other_proper_fields_unchanged": true
+    }
+  ],
+  "canonical_inventory_sha256_before_and_after": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+  "image_manifest_sha256": "0883b0eee8ed94c2d69d4201ec508748ff47ec076c32106c4c3c790c643b76c1",
+  "inherited_evidence_manifest_sha256": "c229321db9ce82625516b098d5929aefcdec043b24ae3bb4e57eff4601950ad6",
+  "author_validation_sha256": "a1467d86aaa9833d6911d2d306a92334a99046f9ee2c94cbdadf55f5d36bc105",
+  "tracked_mutations": []
+}

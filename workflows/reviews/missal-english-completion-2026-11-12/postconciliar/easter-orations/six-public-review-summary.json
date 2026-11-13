@@ -1,0 +1,560 @@
+{
+  "schema": "triptych-easter-six-public-review-summary/v1",
+  "status": "independent-source-fidelity-registration-and-readers-accepted; exact-root-adoption-pending",
+  "scope": "Exactly five named Easter Vigil after-reading prayers and EasterVII Collect. No additional prayer or Latin body.",
+  "units": [
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Second Reading",
+        "all",
+        1
+      ],
+      "complete_old_prayer": "Deus, fidelium Pater summe, qui in toto orbe terrarum, promissionis tuae filios diffusa adoptionis gratia multiplicas: et per Paschale sacramentum, Abraham puerum tuum universarum, sicut jurasti, gentium efficis patrem: da populis tuis digne ad gratiam tuae vocationis introire. Per Dominum.",
+      "complete_old_prayer_sha256": "daeb30ff688c07ba3f8de62968746f856dc824635defc0cf670fa94d40c73470",
+      "complete_new_study_english": "God, most high Father of the faithful, you multiply the children of your promise throughout the whole world through the outpouring of the grace of adoption, and through the paschal sacrament you make Abraham your servant the father of all nations, as you swore. Grant that your peoples may enter worthily into the grace of your call. Through Christ our Lord. R. Amen.",
+      "english_sha256": "cebc04a250f6dfd0cd3371a05dbd5f4b85870cf9f8dcbcc91af5c425c84f3474",
+      "old_source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "old_artifact_pages": [
+        278
+      ],
+      "old_printed_pages": [
+        "192"
+      ],
+      "old_heading": "Sabbato Sancto; Oratio after third prophecy (Genesis22), immediately before fourth prophecy (Exodus14)",
+      "source_target_relation": "Old reading number/placement is explicitly preserved above; modern assignment comes only from the complete secondary2002 context and current target owner. No old/current appointment equivalence is inferred.",
+      "modern_comparison_edition": "Secondary digital 2002 Missale Romanum; printed-book fidelity and exact 2008 identity unestablished",
+      "modern_comparison_body_sha256": "8b2521991fa454cdb73bfdd0383061500ff80f0f07d8d9cd0cdaa55fa3462b89",
+      "complete_expression_basis": "One complete1862 prayer supplies every petition clause, including adoptionis gratia, Abraham and the final call-to-grace petition. Its old Genesis22 placement differs in reading number from the modern second reading. The only lexical substitution is introire/intrare; other petition changes are the exact listed word-order changes. The original body and old ending remain independently preserved.",
+      "exact_changes": [
+        "Transpose fidelium Pater summe to Pater summe fidelium.",
+        "Move in toto orbe terrarum from immediately after qui to immediately before multiplicas, and transpose orbe terrarum to terrarum orbe.",
+        "Replace introire with intrare: a real lexical substitution of closely synonymous verbs, not orthography.",
+        "Normalize jurasti/iurasti, accents, case and pointing.",
+        "Replace the old abbreviated Per Dominum. cue with the separately witnessed complete short conclusion Per Christum Dominum nostrum. and marked R.Amen. No automatic cue expansion is claimed."
+      ],
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Transpose fidelium Pater summe to Pater summe fidelium. Move in toto orbe terrarum from immediately after qui to immediately before multiplicas, and transpose orbe terrarum to terrarum orbe. Replace introire with intrare: a real lexical substitution of closely synonymous verbs, not orthography. Normalize jurasti/iurasti, accents, case and pointing. Replace the old abbreviated Per Dominum. cue with the separately witnessed complete short conclusion Per Christum Dominum nostrum. and marked R.Amen. No automatic cue expansion is claimed. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested.",
+      "translation_fidelity_notes": "Pater summe is most high Father; diffusa adoptionis gratia is rendered through the outpouring of the grace of adoption; populis remains plural peoples. New English follows the declared modern ordering with no unannounced new petition.",
+      "full_ending_sources": [
+        {
+          "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source",
+          "artifact_page": 776,
+          "printed_page": "[106]",
+          "extent": "Complete Per Christum Dominum nostrum. and separate R.Amen. above Benedictio Candelarum; freshly inspected; only response is used for the seventh-reading Qui-vivit ending.",
+          "text": "Per Christum Dominum nostrum. R. Amen."
+        }
+      ],
+      "source_proof": {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Prayer after the Second Reading",
+          "all",
+          1
+        ],
+        "english_artifact_id": "artifact.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-second-reading",
+        "english_artifact_sha256": "a6ff553754dc07c20ffbd0168e669083ac6bb1c2a7d5872c041eb08a1ecb4b30",
+        "english_passage_id": "passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-second-reading",
+        "english_body_sha256": "cebc04a250f6dfd0cd3371a05dbd5f4b85870cf9f8dcbcc91af5c425c84f3474",
+        "english_payload_path": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-second-reading/body.txt",
+        "english_physical_line": 1,
+        "historical_page_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-second-reading-page",
+        "historical_text_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-second-reading-text",
+        "historical_body_sha256": "daeb30ff688c07ba3f8de62968746f856dc824635defc0cf670fa94d40c73470",
+        "full_conclusion_passage_ids": [
+          "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source"
+        ],
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-second-reading-comparison",
+        "additional_context_passage_ids": []
+      },
+      "actual_consumed_public_qualification": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+      "prior_refusal_sha256": "2ae20e99b2d20ab216b9f1ef6ca8aa8cd1a50b182410c4228d657e2d76cc979e",
+      "proposal": {
+        "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/vigil-five-proposal.json",
+        "sha256": "c046154887ae55eec5567aa8efa3c2651766377cb199c92d217669a64929852b",
+        "byte_size": 74280
+      },
+      "candidate_packet": {
+        "path": ".scratch/modern-partition-easter/orations/vigil-five-candidates-v2.json",
+        "sha256": "d64c24b641327d7a0ce92933f68c3a760c29287ed40b1ad72b2e9d5eca22d0a6",
+        "byte_size": 46808
+      },
+      "independent_merits_review": {
+        "path": ".scratch/modern-easter-vigil-five-review/review.json",
+        "sha256": "5995436ef59d69a3966bea1236a69b79cd2d18ac3470ced558d54dead81d7d63",
+        "byte_size": 5452
+      }
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Third Reading",
+        "all",
+        1
+      ],
+      "complete_old_prayer": "Deus, cujus antiqua miracula etiam nostris saeculis coruscare sentimus: dum quod uni populo, a persecutione Aegyptiaca liberando, dexterae tuae potentia contulisti, id in salutem gentium per aquam regenerationis operaris: praesta, ut in Abrahae filios, et in Israeliticam dignitatem, totius mundi transeat plenitudo. Per Dominum.",
+      "complete_old_prayer_sha256": "dde4e6616f4b11ee3524a91f6d9c2bdbba2465195cb62998e5a1c4902664dbf8",
+      "complete_new_study_english": "God, whose ancient wonders we perceive still shining in our own times, through the water of rebirth you accomplish for the salvation of the nations what the power of your right hand once bestowed on one people freed from Pharaoh's persecution. Grant that the fullness of the whole world may enter among Abraham's children and share in Israel's dignity. Through Christ our Lord. R. Amen.",
+      "english_sha256": "e0b1e02213379dd917bc6787caa1b8a3524d252fd361db379204910788910767",
+      "old_source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "old_artifact_pages": [
+        279
+      ],
+      "old_printed_pages": [
+        "193"
+      ],
+      "old_heading": "Sabbato Sancto; Oratio after fourth prophecy and Exodus15 tract, continuing from bottom left to top right of the same full page",
+      "source_target_relation": "Old reading number/placement is explicitly preserved above; modern assignment comes only from the complete secondary2002 context and current target owner. No old/current appointment equivalence is inferred.",
+      "modern_comparison_edition": "Secondary digital 2002 Missale Romanum; printed-book fidelity and exact 2008 identity unestablished",
+      "modern_comparison_body_sha256": "272a59272a5f9e074f0fb3ffcb5ab7f94a729c2f8dd79abde0d4d6056e981c40",
+      "complete_expression_basis": "The entire1862 prayer already combines the RedSea deliverance, baptismal salvation of the nations, Abraham and Israel in precisely this sequence. The two substitutions express the same time relation and the same narrated oppressor, whose name is independently visible in the old reading on this very page. This is not an assembly from Bible fragments. The whole variant and its full ending must be assessed as a finite expression.",
+      "exact_changes": [
+        "Replace nostris saeculis with nostris temporibus: a real temporal-word substitution.",
+        "Replace persecutione Aegyptiaca with persecutione Pharaonis: the old Egyptian persecution is specifically attributed to Pharaoh, already named in the immediately preceding whole Exodus reading; not orthography.",
+        "Normalize cujus/cuius, accents, ligatures and pointing. Unlike the older Gelasian donor, this1862 petition already lacks a further et before in Abrahae.",
+        "Replace the old abbreviated Per Dominum. cue with the separately witnessed full Per Christum Dominum nostrum. and marked R.Amen."
+      ],
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Replace nostris saeculis with nostris temporibus: a real temporal-word substitution. Replace persecutione Aegyptiaca with persecutione Pharaonis: the old Egyptian persecution is specifically attributed to Pharaoh, already named in the immediately preceding whole Exodus reading; not orthography. Normalize cujus/cuius, accents, ligatures and pointing. Unlike the older Gelasian donor, this1862 petition already lacks a further et before in Abrahae. Replace the old abbreviated Per Dominum. cue with the separately witnessed full Per Christum Dominum nostrum. and marked R.Amen. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested.",
+      "translation_fidelity_notes": "The right-hand power, water of regeneration, salvation of the nations and both Abraham/Israel outcomes are all rendered. The fullness of the whole world remains the object of the request; English enter among/share in explains the two coordinated Latin in phrases without adding a further petition.",
+      "full_ending_sources": [
+        {
+          "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source",
+          "artifact_page": 776,
+          "printed_page": "[106]",
+          "extent": "Complete Per Christum Dominum nostrum. and separate R.Amen. above Benedictio Candelarum; freshly inspected; only response is used for the seventh-reading Qui-vivit ending.",
+          "text": "Per Christum Dominum nostrum. R. Amen."
+        }
+      ],
+      "source_proof": {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Prayer after the Third Reading",
+          "all",
+          1
+        ],
+        "english_artifact_id": "artifact.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-third-reading-principal",
+        "english_artifact_sha256": "50198b77c13f49a17efd4471b48117cf0a624ed562a98365b4e2808eb7f5293d",
+        "english_passage_id": "passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-third-reading-principal",
+        "english_body_sha256": "e0b1e02213379dd917bc6787caa1b8a3524d252fd361db379204910788910767",
+        "english_payload_path": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-principal/body.txt",
+        "english_physical_line": 1,
+        "historical_page_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-third-reading-principal-page",
+        "historical_text_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-third-reading-principal-text",
+        "historical_body_sha256": "dde4e6616f4b11ee3524a91f6d9c2bdbba2465195cb62998e5a1c4902664dbf8",
+        "full_conclusion_passage_ids": [
+          "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source"
+        ],
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-third-reading-principal-comparison",
+        "additional_context_passage_ids": []
+      },
+      "actual_consumed_public_qualification": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+      "prior_refusal_sha256": "cf1e0bce55433d013ae4ac02572f563eff46c6b6a69b2585d128374c0a7f9204",
+      "proposal": {
+        "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/vigil-five-proposal.json",
+        "sha256": "c046154887ae55eec5567aa8efa3c2651766377cb199c92d217669a64929852b",
+        "byte_size": 74280
+      },
+      "candidate_packet": {
+        "path": ".scratch/modern-partition-easter/orations/vigil-five-candidates-v2.json",
+        "sha256": "d64c24b641327d7a0ce92933f68c3a760c29287ed40b1ad72b2e9d5eca22d0a6",
+        "byte_size": 46808
+      },
+      "independent_merits_review": {
+        "path": ".scratch/modern-easter-vigil-five-review/review.json",
+        "sha256": "5995436ef59d69a3966bea1236a69b79cd2d18ac3470ced558d54dead81d7d63",
+        "byte_size": 5452
+      }
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Third Reading (alternative)",
+        "all",
+        1
+      ],
+      "complete_old_prayer": "Deus, qui primis temporibus impleta miracula novi testamenti luce reserasti, ut et Mare Rubrum forma sacri fontis exsisteret, et liberata plebs ab Aegyptiaca servitute, christiani populi sacramenta praeferret: da, ut omnes gentes Israelis privilegium merito fidei consecutae, Spiritus tui participatione regenerentur. Per Dominum... in unitate ejusdem.",
+      "complete_old_prayer_sha256": "a601e55a3d62378a4bc74e8eebcabac59606f86d20251e3e9ae01aa7e449fd0c",
+      "complete_new_study_english": "God, in the light of the New Testament you have revealed the wonders accomplished in earliest times, so that the Red Sea might be an image of the sacred font, and the people freed from slavery might foreshadow the Christian people's mysteries. Grant that all nations, having obtained Israel's privilege through the merit of faith, may be reborn by sharing in your Spirit. Through Christ our Lord. R. Amen.",
+      "english_sha256": "8a6cc4eb6ba7e456dd22186e37622d3ca1910ca19cfcabde250546533994a989",
+      "old_source_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "old_artifact_pages": [
+        505,
+        506
+      ],
+      "old_printed_pages": [
+        "391",
+        "392"
+      ],
+      "old_heading": "In Vigilia Pentecostes; Oratio after second prophecy and Exodus15 tract; starts bottom right of391, ends top left of392",
+      "source_target_relation": "Old reading number/placement is explicitly preserved above; modern assignment comes only from the complete secondary2002 context and current target owner. No old/current appointment equivalence is inferred.",
+      "modern_comparison_edition": "Secondary digital 2002 Missale Romanum; printed-book fidelity and exact 2008 identity unestablished",
+      "modern_comparison_body_sha256": "f08abd1ac29c351adff7ad68d5b4069352e302e3f29eb47564c0518543d837ab",
+      "complete_expression_basis": "One complete1922 Pentecost-vigil prayer contains the full RedSea/font and freed-people/Christian-mysteries comparison plus the whole faith-and-Spirit petition. Its old Pentecost placement differs from the modern EasterVigil alternative. Removing only the adjective Egyptian leaves the separately named RedSea context and all theological clauses intact; moving liberata does not add a clause. Each exact change requires finite review of the whole received expression.",
+      "exact_changes": [
+        "Change et liberata plebs ab Aegyptiaca servitute to et plebs a servitute liberata: move liberata, omit Aegyptiaca, and use a instead of ab before the new following consonant. These are disclosed body changes, not an exact old-target match.",
+        "The1922 old text already has ut et, exsisteret and merito fidei; the earlier1894 wording is not silently combined with it.",
+        "Replace old abbreviated Per Dominum... in unitate ejusdem. with the separately witnessed complete Per Christum Dominum nostrum. and marked R.Amen.",
+        "Normalize stress accents, ligatures, case and pointing."
+      ],
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Change et liberata plebs ab Aegyptiaca servitute to et plebs a servitute liberata: move liberata, omit Aegyptiaca, and use a instead of ab before the new following consonant. These are disclosed body changes, not an exact old-target match. The1922 old text already has ut et, exsisteret and merito fidei; the earlier1894 wording is not silently combined with it. Replace old abbreviated Per Dominum... in unitate ejusdem. with the separately witnessed complete Per Christum Dominum nostrum. and marked R.Amen. Normalize stress accents, ligatures, case and pointing. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested.",
+      "translation_fidelity_notes": "Reserasti is revealed/unlocked; forma is image; sacramenta praeferret is foreshadow the mysteries, with Christian people retained. Merito fidei is explicitly rendered through the merit of faith; participatione is by sharing, without changing the Spirit or rebirth petition.",
+      "full_ending_sources": [
+        {
+          "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source",
+          "artifact_page": 776,
+          "printed_page": "[106]",
+          "extent": "Complete Per Christum Dominum nostrum. and separate R.Amen. above Benedictio Candelarum; freshly inspected; only response is used for the seventh-reading Qui-vivit ending.",
+          "text": "Per Christum Dominum nostrum. R. Amen."
+        }
+      ],
+      "source_proof": {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Prayer after the Third Reading (alternative)",
+          "all",
+          1
+        ],
+        "english_artifact_id": "artifact.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-third-reading-alternative",
+        "english_artifact_sha256": "d805bf3c485719878e0422e6b9d96602b2dac289c1a33344731e1c776919afef",
+        "english_passage_id": "passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-third-reading-alternative",
+        "english_body_sha256": "8a6cc4eb6ba7e456dd22186e37622d3ca1910ca19cfcabde250546533994a989",
+        "english_payload_path": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-alternative/body.txt",
+        "english_physical_line": 1,
+        "historical_page_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-orations-20261112-vigil-third-reading-alternative-page",
+        "historical_text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-orations-20261112-vigil-third-reading-alternative-text",
+        "historical_body_sha256": "a601e55a3d62378a4bc74e8eebcabac59606f86d20251e3e9ae01aa7e449fd0c",
+        "full_conclusion_passage_ids": [
+          "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source"
+        ],
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-third-reading-alternative-comparison",
+        "additional_context_passage_ids": []
+      },
+      "actual_consumed_public_qualification": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+      "prior_refusal_sha256": "e6b8408532607594b244ba2141ed0429f37c56593f47a7481c018cd767a97341",
+      "proposal": {
+        "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/vigil-five-proposal.json",
+        "sha256": "c046154887ae55eec5567aa8efa3c2651766377cb199c92d217669a64929852b",
+        "byte_size": 74280
+      },
+      "candidate_packet": {
+        "path": ".scratch/modern-partition-easter/orations/vigil-five-candidates-v2.json",
+        "sha256": "d64c24b641327d7a0ce92933f68c3a760c29287ed40b1ad72b2e9d5eca22d0a6",
+        "byte_size": 46808
+      },
+      "independent_merits_review": {
+        "path": ".scratch/modern-easter-vigil-five-review/review.json",
+        "sha256": "5995436ef59d69a3966bea1236a69b79cd2d18ac3470ced558d54dead81d7d63",
+        "byte_size": 5452
+      }
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Fourth Reading",
+        "all",
+        1
+      ],
+      "complete_old_prayer": "Omnipotens sempiterne Deus, multiplica in honorem nominis tui, quod patrum fidei spopondisti, et promissionis filios sacra adoptione dilata; ut, quod priores sancti non dubitaverunt futurum, Ecclesia tua magna jam ex parte cognoscat impletum. Per Dominum.",
+      "complete_old_prayer_sha256": "da3faa06be61bf444eef0f897176af7c6c6029c1cffc1fbdfa59b97e9a908ba6",
+      "complete_new_study_english": "Almighty and everlasting God, increase, for the honor of your name, what you pledged to the faith of the fathers, and increase the number of the children of the promise through holy adoption, so that the Church may recognize already fulfilled in such great measure what the saints of old did not doubt would come to pass. Through Christ our Lord. R. Amen.",
+      "english_sha256": "073239a3db97e5af43555f51aef4c65b1acb848ffcc8af6c3ce62c2cb995e908",
+      "old_source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "old_artifact_pages": [
+        280
+      ],
+      "old_printed_pages": [
+        "194"
+      ],
+      "old_heading": "Sabbato Sancto; Oratio after fifth prophecy (Isaiah54/55), before sixth prophecy (Baruch3)",
+      "source_target_relation": "Old reading number/placement is explicitly preserved above; modern assignment comes only from the complete secondary2002 context and current target owner. No old/current appointment equivalence is inferred.",
+      "modern_comparison_edition": "Secondary digital 2002 Missale Romanum; printed-book fidelity and exact 2008 identity unestablished",
+      "modern_comparison_body_sha256": "172a0028e80dc56ecabbfc83ada391749667772b393ec577843fc38b88eea24a",
+      "complete_expression_basis": "The entire1862 prayer contains the full honor-of-name, promised-faith, adoption and recognition-of-fulfillment sequence. Its sole lexical adjustment removes your before Church and intensifies the already-great extent with tam. The full finite expression, including this intensifier and changed conclusion, requires independent assessment rather than a general old-prayer exemption.",
+      "exact_changes": [
+        "Replace Ecclesia tua magna jam ex parte with Ecclesia tam magna ex parte iam: remove tua, add tam before magna, and move iam after ex parte. This is a real possessive/intensifier and word-order variant.",
+        "The1862 text already has in honorem and ex parte; no further insertion is inferred from the older Gelasian reading.",
+        "Normalize jam/iam, accents and pointing.",
+        "Replace old abbreviated Per Dominum. with the separately witnessed full Per Christum Dominum nostrum. and marked R.Amen."
+      ],
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Replace Ecclesia tua magna jam ex parte with Ecclesia tam magna ex parte iam: remove tua, add tam before magna, and move iam after ex parte. This is a real possessive/intensifier and word-order variant. The1862 text already has in honorem and ex parte; no further insertion is inferred from the older Gelasian reading. Normalize jam/iam, accents and pointing. Replace old abbreviated Per Dominum. with the separately witnessed full Per Christum Dominum nostrum. and marked R.Amen. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested.",
+      "translation_fidelity_notes": "Tam magna ex parte is rendered in such great measure; priores sancti are the saints of old; the requested increase and adoption are distinct coordinated clauses, both retained.",
+      "full_ending_sources": [
+        {
+          "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source",
+          "artifact_page": 776,
+          "printed_page": "[106]",
+          "extent": "Complete Per Christum Dominum nostrum. and separate R.Amen. above Benedictio Candelarum; freshly inspected; only response is used for the seventh-reading Qui-vivit ending.",
+          "text": "Per Christum Dominum nostrum. R. Amen."
+        }
+      ],
+      "source_proof": {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Prayer after the Fourth Reading",
+          "all",
+          1
+        ],
+        "english_artifact_id": "artifact.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-fourth-reading",
+        "english_artifact_sha256": "1445aeab62d813dc3b0238e3cc5963cef443b103ce26e9f34d9bb78e0ecebab0",
+        "english_passage_id": "passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-fourth-reading",
+        "english_body_sha256": "073239a3db97e5af43555f51aef4c65b1acb848ffcc8af6c3ce62c2cb995e908",
+        "english_payload_path": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-fourth-reading/body.txt",
+        "english_physical_line": 1,
+        "historical_page_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-fourth-reading-page",
+        "historical_text_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-fourth-reading-text",
+        "historical_body_sha256": "da3faa06be61bf444eef0f897176af7c6c6029c1cffc1fbdfa59b97e9a908ba6",
+        "full_conclusion_passage_ids": [
+          "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source"
+        ],
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-fourth-reading-comparison",
+        "additional_context_passage_ids": []
+      },
+      "actual_consumed_public_qualification": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+      "prior_refusal_sha256": "985c8e2e618dc70319e795cc6ac7d02a4838b66bf20da68526d06a63d72d3159",
+      "proposal": {
+        "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/vigil-five-proposal.json",
+        "sha256": "c046154887ae55eec5567aa8efa3c2651766377cb199c92d217669a64929852b",
+        "byte_size": 74280
+      },
+      "candidate_packet": {
+        "path": ".scratch/modern-partition-easter/orations/vigil-five-candidates-v2.json",
+        "sha256": "d64c24b641327d7a0ce92933f68c3a760c29287ed40b1ad72b2e9d5eca22d0a6",
+        "byte_size": 46808
+      },
+      "independent_merits_review": {
+        "path": ".scratch/modern-easter-vigil-five-review/review.json",
+        "sha256": "5995436ef59d69a3966bea1236a69b79cd2d18ac3470ced558d54dead81d7d63",
+        "byte_size": 5452
+      }
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Seventh Reading",
+        "all",
+        1
+      ],
+      "complete_old_prayer": "Deus incommutabilis virtus, et lumen aeternum: respice propitius ad totius Ecclesiae tuae mirabile sacramentum, et opus salutis humanae, perpetuae dispositionis effectu tranquillius operare: totusque mundus experiatur et videat, dejecta erigi, inveterata renovari, et per ipsum redire omnia in integrum, a quo sumpsere principium: Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit.",
+      "complete_old_prayer_sha256": "8be0e050cfdf6f11a132b0fd25513b6e8183161236265cf8b3cfc4b585e9d036",
+      "complete_new_study_english": "God, unchanging power and eternal light, look graciously upon the mystery of the whole Church, and carry out the work of human salvation in greater peace through the effect of your unending design. May the whole world experience and see the fallen raised up, the old made new, and all things restored to wholeness through Christ himself, from whom they took their beginning. Who lives and reigns for ever and ever. R. Amen.",
+      "english_sha256": "2e4a5c7dd97f040599204c242361b26a83383ecb1e132b1b5efe5f7f5fa10857",
+      "old_source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "old_artifact_pages": [
+        277
+      ],
+      "old_printed_pages": [
+        "191"
+      ],
+      "old_heading": "Benedictio Cerei / Sabbato Sancto; Oratio after second prophecy (Noah), before third prophecy(Genesis22)",
+      "source_target_relation": "Old reading number/placement is explicitly preserved above; modern assignment comes only from the complete secondary2002 context and current target owner. No old/current appointment equivalence is inferred.",
+      "modern_comparison_edition": "Secondary digital 2002 Missale Romanum; printed-book fidelity and exact 2008 identity unestablished",
+      "modern_comparison_body_sha256": "610a78d5155fee8c531293cea74b7f9d9b4513d77f3f50f92215443976a4e954",
+      "complete_expression_basis": "The complete1862 prayer already contains every salvation/restoration clause and explicitly names the Lord Jesus Christ as the referent of per ipsum and a quo. The modern form omits two modifiers and relocates the Christ identification within the petition while using a complete short conclusion. Its old Noah-reading appointment is different from the modern seventh-readingEzekiel placement. No generic shortening or formula substitution authority is inferred.",
+      "exact_changes": [
+        "Omit tuae mirabile after Ecclesiae. The old your/wondrous modifiers are not translated as though retained.",
+        "Insert Christum after per ipsum, while removing the old concluding explicit identification Dominum nostrum Jesum Christum Filium tuum and abbreviated Qui tecum vivit. The named referent is already supplied in the same complete old prayer; it is relocated and shortened, not independently newly composed theology.",
+        "The1862 text already has et lumen and tranquillius. Those words do not require synthesis from Gelasian apparatus variants.",
+        "Use the separately witnessed complete Qui vivit et regnat in saecula saeculorum. conclusion and marked R.Amen, with their old sources declared separately.",
+        "Normalize dejecta/deiecta, accents, ligatures and pointing."
+      ],
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Omit tuae mirabile after Ecclesiae. The old your/wondrous modifiers are not translated as though retained. Insert Christum after per ipsum, while removing the old concluding explicit identification Dominum nostrum Jesum Christum Filium tuum and abbreviated Qui tecum vivit. The named referent is already supplied in the same complete old prayer; it is relocated and shortened, not independently newly composed theology. The1862 text already has et lumen and tranquillius. Those words do not require synthesis from Gelasian apparatus variants. Use the separately witnessed complete Qui vivit et regnat in saecula saeculorum. conclusion and marked R.Amen, with their old sources declared separately. Normalize dejecta/deiecta, accents, ligatures and pointing. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested.",
+      "translation_fidelity_notes": "Tranquillius is genuinely comparative and rendered in greater peace. Perpetuae dispositionis effectu is through the effect of your unending design. Deiecta/inveterata and omnia in integrum retain the three distinct restoration descriptions. The Christ himself attribution and full conclusion are explicit.",
+      "full_ending_sources": [
+        {
+          "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source",
+          "artifact_page": 776,
+          "printed_page": "[106]",
+          "extent": "Complete Per Christum Dominum nostrum. and separate R.Amen. above Benedictio Candelarum; freshly inspected; only response is used for the seventh-reading Qui-vivit ending.",
+          "text": "Per Christum Dominum nostrum. R. Amen."
+        },
+        {
+          "source_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+          "passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion",
+          "artifact_page": 145,
+          "printed_page": "52",
+          "extent": "Complete independently old Qui vivit et regnat in saecula saeculorum. at end of the John-Gospel exposition; freshly reread; no response is inferred from this source.",
+          "text": "Qui vivit et regnat in saecula saeculorum."
+        }
+      ],
+      "source_proof": {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Prayer after the Seventh Reading",
+          "all",
+          1
+        ],
+        "english_artifact_id": "artifact.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-seventh-reading-principal",
+        "english_artifact_sha256": "222a4f96f7e43921660a834015ee920c44cde556109d43968615c2a5acef05fe",
+        "english_passage_id": "passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-seventh-reading-principal",
+        "english_body_sha256": "2e4a5c7dd97f040599204c242361b26a83383ecb1e132b1b5efe5f7f5fa10857",
+        "english_payload_path": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-seventh-reading-principal/body.txt",
+        "english_physical_line": 1,
+        "historical_page_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-seventh-reading-principal-page",
+        "historical_text_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-seventh-reading-principal-text",
+        "historical_body_sha256": "8be0e050cfdf6f11a132b0fd25513b6e8183161236265cf8b3cfc4b585e9d036",
+        "full_conclusion_passage_ids": [
+          "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source",
+          "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion"
+        ],
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-seventh-reading-principal-comparison",
+        "additional_context_passage_ids": []
+      },
+      "actual_consumed_public_qualification": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+      "prior_refusal_sha256": "7717d98c2c08dd63fc67adf7f73bd7aa3144408260b29adce8b3065b0122b6ed",
+      "proposal": {
+        "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/vigil-five-proposal.json",
+        "sha256": "c046154887ae55eec5567aa8efa3c2651766377cb199c92d217669a64929852b",
+        "byte_size": 74280
+      },
+      "candidate_packet": {
+        "path": ".scratch/modern-partition-easter/orations/vigil-five-candidates-v2.json",
+        "sha256": "d64c24b641327d7a0ce92933f68c3a760c29287ed40b1ad72b2e9d5eca22d0a6",
+        "byte_size": 46808
+      },
+      "independent_merits_review": {
+        "path": ".scratch/modern-easter-vigil-five-review/review.json",
+        "sha256": "5995436ef59d69a3966bea1236a69b79cd2d18ac3470ced558d54dead81d7d63",
+        "byte_size": 5452
+      }
+    },
+    {
+      "identity": [
+        "easter-7",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "complete_old_prayer": "Adesto, Domine, supplicationibus nostris, ut sicut humani generis Salvatorem consedere tecum in tua maiestate confidimus, ita usque ad consummationem saeculi manere nobiscum, quemadmodum est pollicitus, sentiamus. Per.",
+      "complete_old_prayer_sha256": "5e0fe8abf00b9e99158fb77a963beac3a2e28ba9d6a8991e129ec029e50f44eb",
+      "complete_new_study_english": "Lord, attend graciously to our supplications, so that, as we believe the Savior of the human race to be with you in your majesty, we may experience his remaining with us until the end of the age, as he himself promised. Who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever. R. Amen.",
+      "english_sha256": "b91018fda323025df5cc567e417e46431f5256e201512d9eb39a760233c8578f",
+      "old_source_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+      "old_artifact_pages": [
+        201
+      ],
+      "old_printed_pages": [
+        "108"
+      ],
+      "old_heading": "BookI sectionLXIV, Item alia Missa; complete opening prayer of the second Ascension Mass",
+      "source_target_relation": "Old second Ascension Mass versus modern Easter7Sunday collect, with complete modernSundayheading context on259 and wholeCollect on260.",
+      "modern_comparison_edition": "Secondary digital 2002 Missale Romanum; printed-book fidelity and exact 2008 identity unestablished",
+      "modern_comparison_body_sha256": "c1e978ed26c5ac68236c5fbdfab660db31dbc60fd69b343f977ed3e0abd55a15",
+      "complete_expression_basis": "The entire old Ascension prayer already joins supplications, belief that the Savior shares the divine majesty, his abiding with us to the consummation of the age, and his own promise, in this sequence. The modern changes reorder the invocation, add a conventional graciousness qualifier and explicit pronouns, replace confidence with belief and a synonymous promise construction, and remove the seated predicate. The whole finite revised expression requires review; retaining common themes alone is not a sufficient basis. Old Ascension and modern Easter7 appointments are distinct.",
+      "exact_changes": [
+        "Transpose Adesto, Domine, supplicationibus nostris to Supplicationibus nostris, Domine, adesto propitius, adding propitius, a predicate adjective used adverbially.",
+        "Remove consedere, changing the explicit seated-with-you description to the retained with-you-in-your-majesty description. This predicate omission is substantive and explicitly disclosed.",
+        "Replace confidimus with credimus and move the verb between tua and maiestate.",
+        "Insert eum immediately after ita as the explicit subject of manere.",
+        "Replace quemadmodum est pollicitus with sicut ipse promisit: change the conjunction and synonymous promise verb while making the same subject explicit.",
+        "Replace the old Per. cue with the modern Qui tecum. long conclusion; its full words and separate Amen are independently old in Pustet1862AP88, and the exact secondary2002IGMR54 spells out the required modern form. No automatic truncation/expansion or exactoldwholebody identity is asserted."
+      ],
+      "strongest_contrary_argument": "This prayer has several coordinated lexical, syntactic and predicate changes, not merely spelling or one-word correction. The removal of seated, invocation intensifier and explicit pronouns may constitute an editorial arrangement even though each clause has an old antecedent. A decision based solely on70percent coverage or common theological ideas would be invalid. The proposed finite assessment concerns this complete old two-clause supplication whose only actual narrative predicate change is removal of seated, with the same Savior, majesty, abiding, promise and time bound otherwise preserved. No general formula assembly or modern-prayer revision exemption is requested.",
+      "translation_fidelity_notes": "Adesto propitius is attend graciously; humani generis is human race; credimus is believe, without reintroducing the removed seated predicate. Sentiamus is experiential and rendered experience his remaining, preserving both the abiding and end-of-age limit. Ipse and the promise remain explicit. Full God/Spirit/eternal conclusion and distinct response are retained.",
+      "full_ending_sources": [
+        {
+          "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026",
+          "artifact_page": 88,
+          "printed_page": "2",
+          "extent": "Contiguous full old Qui tecum vivit...per omnia saecula saeculorum conclusion and separate marked R.Amen, inside the complete Contra persecutores prayer. The preceding PerDominum...Filiumtuum part is not silently imported into this different conclusion.",
+          "text": "qui tecum vivit et regnat in unitate Spiritus sancti Deus, per omnia saecula saeculorum. R. Amen."
+        }
+      ],
+      "source_proof": {
+        "identity": [
+          "easter-7",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "english_artifact_id": "artifact.triptych.easter-orations-easter7-collect-study-english-20261112.2026-11-12.easter7-collect",
+        "english_artifact_sha256": "e9bc4391df03e4a654578fda3c8df1784fe3d9b6971005d1afe61fcbb99309f2",
+        "english_passage_id": "passage.triptych.easter-orations-easter7-collect-study-english-20261112.2026-11-12.easter7-collect",
+        "english_body_sha256": "b91018fda323025df5cc567e417e46431f5256e201512d9eb39a760233c8578f",
+        "english_payload_path": "src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/artifacts/easter7-collect/body.txt",
+        "english_physical_line": 1,
+        "historical_page_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-orations-20261112-easter7-collect-page",
+        "historical_text_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-orations-20261112-easter7-collect-text",
+        "historical_body_sha256": "5e0fe8abf00b9e99158fb77a963beac3a2e28ba9d6a8991e129ec029e50f44eb",
+        "full_conclusion_passage_ids": [
+          "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026"
+        ],
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-easter7-collect-comparison",
+        "additional_context_passage_ids": [
+          "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-easter7-collect-collect-ending-control"
+        ]
+      },
+      "actual_consumed_public_qualification": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+      "prior_refusal_sha256": "68e56c178b27c0f0bb60c415ff522dbc658f28b79e273b4deae3b0f4612d602d",
+      "proposal": {
+        "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/easter7-collect-proposal.json",
+        "sha256": "79f270bafd0070b70a3bcccb5faf93150886b5a0e1a47ba90635a375038c1881",
+        "byte_size": 18614
+      },
+      "candidate_packet": {
+        "path": ".scratch/modern-partition-easter/orations/easter7-collect-candidates.json",
+        "sha256": "11820e7f00a7b53c35fadb8fc41c4d92013eb4f4fea970ca0007acd1ec4463e5",
+        "byte_size": 12471
+      },
+      "independent_merits_review": {
+        "path": ".scratch/modern-easter7-collect-review/receipt.json",
+        "sha256": "cf0c237de853e4c4884e8f81f3a39031a012f7f410ccbe453d9e34f501549323",
+        "byte_size": 18478
+      }
+    }
+  ],
+  "independent_source_and_registration_receipts": [
+    {
+      "path": ".scratch/modern-easter-vigil-five-review/review.json",
+      "sha256": "5995436ef59d69a3966bea1236a69b79cd2d18ac3470ced558d54dead81d7d63",
+      "byte_size": 5452
+    },
+    {
+      "path": ".scratch/modern-easter7-collect-review/receipt.json",
+      "sha256": "cf0c237de853e4c4884e8f81f3a39031a012f7f410ccbe453d9e34f501549323",
+      "byte_size": 18478
+    },
+    {
+      "path": ".scratch/modern-easter-six-install-review/receipt.json",
+      "sha256": "47d93acba06d18edfd4aebbc1a1bb045af14c2db848f9d9d768750bf97a6e514",
+      "byte_size": 7741
+    }
+  ],
+  "validation_summary": {
+    "source_graph_records": 56923,
+    "source_graph_bindings": 4615,
+    "source_graph_errors": 0,
+    "source_files": 55,
+    "exact_gap_replacements": 6,
+    "unselected_producer_propers_preserved": 3533,
+    "native_chromium_combinations": 18,
+    "negative_controls": 43
+  },
+  "grammatical_addendum": "For EasterVII propitius is a predicate adjective used adverbially, not morphologically an adverb. This explicit accepted addendum corrects the descriptive label without changing frozen source files, English, or proposals.",
+  "public_safety": "This summary retains whole independently old Latin, new project English, exact scalar hashes, bounded differences and public metadata. It does not reproduce any complete protected modern comparison body, source image, approved English or private research packet. Referenced private receipts remain private evidence; their hashes do not promote their entire contents.",
+  "unchanged": [
+    "All existing Latin bodies and refusals",
+    "Exact 2008 authority remains unresolved",
+    "All appointments and mutually exclusive alternatives",
+    "Every unselected English positive and refusal; narrow dictionaries only",
+    "All six previous unavailable dictionaries retained by exact proposal receipt"
+  ],
+  "publication_grade": "Qualified project-created study English, neither historical-human nor approved liturgical English; not for recitation",
+  "runtime_boundary": "Existing project-study route consumes exact incipit and witness_note but does not runtime-enforce proposal/body hashes; authority is this exact independently reviewed finite package as adopted by Root."
+}

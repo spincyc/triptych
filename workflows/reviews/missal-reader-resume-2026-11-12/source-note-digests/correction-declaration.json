@@ -1,0 +1,301 @@
+{
+  "schema": "triptych-source-passage-note-digest-corrections/v1",
+  "as_of": "2026-11-12",
+  "state": "scratch-proposal-only",
+  "canonical_changes": false,
+  "scope": "Replace exactly three stale body-digest strings in passage notes with hashes of the current literal selected bytes already matched by the canonical calendar and Latin provenance ledger.",
+  "changes": [
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/octava-nativitatis-domini-collect.toml",
+      "record_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.octava-nativitatis-domini-collect",
+      "before_file_sha256": "82614af148789445fee812a37e29eea68899dc1bbcce245f86da611a18725f71",
+      "after_file_sha256": "da1a5546917e342799a5e669e2ab833156c5af135c2f3e25a51b20d2c2a0f096",
+      "changed_fields": [
+        "notes"
+      ],
+      "before_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.octava-nativitatis-domini-collect",
+        "edition_id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.christological-orations-a1c65ca5",
+        "artifact_sha256": "a1c65ca514dd2a5bc56284bd52599340201accca70cbe77897439ff486efa8d2",
+        "locus": "octava-nativitatis-domini, Collect; editorial-projection artifact physical lines 6-9; antecedent Pustet Ratisbon 1862, whole-book text layer lines 16593-16605 (that book's page images are registered storage=remote and were not available to this lane; every 1862 reading here rests on the text layer alone); target printed p. 33, no. 227; artifact PDF p. 114 (marginal number read on the page image)",
+        "physical_line_ranges": [
+          [
+            6,
+            9
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Exact project-created editorial-projection passage for the Roman-1962 octava-nativitatis-domini Collect.",
+        "verified_on": "2026-09-03",
+        "notes": "The selected lines hash as the retained calendar body 161577c9d4193c5370a819bde13faaa961f8c314e794913dd049af68e539efee. The artifact manifest owns every 1862-to-target transformation; the separate historical and target passages remain the witnesses."
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.octava-nativitatis-domini-collect",
+        "edition_id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.christological-orations-a1c65ca5",
+        "artifact_sha256": "a1c65ca514dd2a5bc56284bd52599340201accca70cbe77897439ff486efa8d2",
+        "locus": "octava-nativitatis-domini, Collect; editorial-projection artifact physical lines 6-9; antecedent Pustet Ratisbon 1862, whole-book text layer lines 16593-16605 (that book's page images are registered storage=remote and were not available to this lane; every 1862 reading here rests on the text layer alone); target printed p. 33, no. 227; artifact PDF p. 114 (marginal number read on the page image)",
+        "physical_line_ranges": [
+          [
+            6,
+            9
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Exact project-created editorial-projection passage for the Roman-1962 octava-nativitatis-domini Collect.",
+        "verified_on": "2026-09-03",
+        "notes": "The selected lines hash as the retained calendar body 9cddb71fbf9eb08abc14814574aef82e7939fde5068551293d53dbc7ff8d6589. The artifact manifest owns every 1862-to-target transformation; the separate historical and target passages remain the witnesses."
+      },
+      "stale_note_body_sha256": "161577c9d4193c5370a819bde13faaa961f8c314e794913dd049af68e539efee",
+      "verified_current_body_sha256": "9cddb71fbf9eb08abc14814574aef82e7939fde5068551293d53dbc7ff8d6589",
+      "byte_selection": {
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.christological-orations-a1c65ca5",
+        "artifact_record_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/christological-orations-a1c65ca5/artifact.toml",
+        "artifact_record_sha256": "ec5b88a39eb662700ede226168e2feb5ba0538ab1bcf9074dbe44c5780e97ad5",
+        "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/christological-orations-a1c65ca5/christological-orations-a1c65ca5.txt",
+        "artifact_sha256": "a1c65ca514dd2a5bc56284bd52599340201accca70cbe77897439ff486efa8d2",
+        "physical_line_ranges": [
+          [
+            6,
+            9
+          ]
+        ],
+        "selection_method": "Exact UTF-8 physical lines with original line terminators; no trim, normalization, or added newline."
+      },
+      "unchanged_body_control": {
+        "calendar": "src/sources/calendars/roman-1962/propers.yaml",
+        "mass": "octava-nativitatis-domini",
+        "proper": "Collect",
+        "body_sha256": "9cddb71fbf9eb08abc14814574aef82e7939fde5068551293d53dbc7ff8d6589",
+        "provenance_ledger": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+        "provenance_row_sha256": "686433d697c9666f3d515d9020f9c8b37899bef6baeab177ad0fb25363826729",
+        "provenance_status": "collated",
+        "relationship": "editorial-projection-exact-to-target",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ]
+      }
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-collect.toml",
+      "record_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-collect",
+      "before_file_sha256": "49b0a1528eb7cf2f030efb841adf746bf7004f2939d07d34edea908383d49675",
+      "after_file_sha256": "05603574d7a2f620c44f31af20b3a0e324b71ef2bdbddf1817b8b158431303f0",
+      "changed_fields": [
+        "notes"
+      ],
+      "before_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-collect",
+        "edition_id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33",
+        "artifact_sha256": "8f0f1a33bcd92be8742d2d69e89ddd5c455c180f33c64f1f584f40638e087995",
+        "locus": "missa-de-s-maria-in-sabbato-4, Collect; editorial-projection artifact physical lines 188-191; antecedent printed p. [52] (nearest printed-folio marker in the text layer; the layer places these markers mid-page, so the folio is +/-1); text-layer lines 85685-85692; Missae votivae de sancta Maria; target printed p. [46], no. 4522; artifact PDF p. 854",
+        "physical_line_ranges": [
+          [
+            188,
+            191
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Exact project-created editorial-projection passage for the Roman-1962 missa-de-s-maria-in-sabbato-4 Collect.",
+        "verified_on": "2026-09-03",
+        "notes": "The selected lines hash as the retained calendar body 283cbd5f2cde81de8bb0ad52c35d9b868d609f4528be9126f7561c6fbf00b77a. The artifact manifest owns every 1862-to-target transformation; the separate historical and target passages remain the witnesses."
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.missa-de-s-maria-in-sabbato-4-collect",
+        "edition_id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33",
+        "artifact_sha256": "8f0f1a33bcd92be8742d2d69e89ddd5c455c180f33c64f1f584f40638e087995",
+        "locus": "missa-de-s-maria-in-sabbato-4, Collect; editorial-projection artifact physical lines 188-191; antecedent printed p. [52] (nearest printed-folio marker in the text layer; the layer places these markers mid-page, so the folio is +/-1); text-layer lines 85685-85692; Missae votivae de sancta Maria; target printed p. [46], no. 4522; artifact PDF p. 854",
+        "physical_line_ranges": [
+          [
+            188,
+            191
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Exact project-created editorial-projection passage for the Roman-1962 missa-de-s-maria-in-sabbato-4 Collect.",
+        "verified_on": "2026-09-03",
+        "notes": "The selected lines hash as the retained calendar body ae2e3d4ba13f641b171cc893a79f28f69a4c83700fd2aac9c3fe3c691b9769d6. The artifact manifest owns every 1862-to-target transformation; the separate historical and target passages remain the witnesses."
+      },
+      "stale_note_body_sha256": "283cbd5f2cde81de8bb0ad52c35d9b868d609f4528be9126f7561c6fbf00b77a",
+      "verified_current_body_sha256": "ae2e3d4ba13f641b171cc893a79f28f69a4c83700fd2aac9c3fe3c691b9769d6",
+      "byte_selection": {
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.commons-2-orations-8f0f1a33",
+        "artifact_record_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/commons-2-orations-8f0f1a33/artifact.toml",
+        "artifact_record_sha256": "75c407c140acabe5e15a9328ecc8b7c29fbf86c449307cf2fd014f38232f05c5",
+        "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/commons-2-orations-8f0f1a33/commons-2-orations-8f0f1a33.txt",
+        "artifact_sha256": "8f0f1a33bcd92be8742d2d69e89ddd5c455c180f33c64f1f584f40638e087995",
+        "physical_line_ranges": [
+          [
+            188,
+            191
+          ]
+        ],
+        "selection_method": "Exact UTF-8 physical lines with original line terminators; no trim, normalization, or added newline."
+      },
+      "unchanged_body_control": {
+        "calendar": "src/sources/calendars/roman-1962/propers.yaml",
+        "mass": "missa-de-s-maria-in-sabbato-4",
+        "proper": "Collect",
+        "body_sha256": "ae2e3d4ba13f641b171cc893a79f28f69a4c83700fd2aac9c3fe3c691b9769d6",
+        "provenance_ledger": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+        "provenance_row_sha256": "83508d86abebbd57f475c2a7ee2402cc32ae36d90a57feb089e5df68a3bfd1b7",
+        "provenance_status": "collated",
+        "relationship": "editorial-projection-exact-to-target",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ]
+      }
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/comm-ss-machabaeorum-martyrum-collect.toml",
+      "record_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-machabaeorum-martyrum-collect",
+      "before_file_sha256": "fa5ea25cb27f24e2e8e8fa6dd3561f84a21f52ec8cf869ff3f5dd567952a2971",
+      "after_file_sha256": "932c6b96f03254e834559169c7bfc14f5ee68179301558aae410958c15437342",
+      "changed_fields": [
+        "notes"
+      ],
+      "before_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-machabaeorum-martyrum-collect",
+        "edition_id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact_sha256": "b43e63f0ec0b3fec2b25d124c8f8f15164c68cf5832490d4b4a579c3c39d845b",
+        "locus": "comm-ss-machabaeorum-martyrum, Collect; editorial-projection artifact physical lines 169-171; antecedent Pustet Ratisbon 1862, nearest preceding printed-folio marker 505 at text-layer line 69931; text-layer lines 69989-70005; target printed p. 609, no. 3235; artifact PDF p. 690",
+        "physical_line_ranges": [
+          [
+            169,
+            171
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Exact project-created editorial-projection passage for the Roman-1962 comm-ss-machabaeorum-martyrum Collect.",
+        "verified_on": "2026-09-03",
+        "notes": "The selected lines hash as the retained calendar body 509e4511234435918a2e4e8a3d3010a32c5db894036724e8bd5d3ff0bafed7f9. The artifact manifest owns every 1862-to-target transformation; the separate historical and target passages remain the witnesses."
+      },
+      "after_record": {
+        "schema": 1,
+        "record_type": "passage",
+        "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-ss-machabaeorum-martyrum-collect",
+        "edition_id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03",
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact_sha256": "b43e63f0ec0b3fec2b25d124c8f8f15164c68cf5832490d4b4a579c3c39d845b",
+        "locus": "comm-ss-machabaeorum-martyrum, Collect; editorial-projection artifact physical lines 169-171; antecedent Pustet Ratisbon 1862, nearest preceding printed-folio marker 505 at text-layer line 69931; text-layer lines 69989-70005; target printed p. 609, no. 3235; artifact PDF p. 690",
+        "physical_line_ranges": [
+          [
+            169,
+            171
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Exact project-created editorial-projection passage for the Roman-1962 comm-ss-machabaeorum-martyrum Collect.",
+        "verified_on": "2026-09-03",
+        "notes": "The selected lines hash as the retained calendar body e98bddf749de3b3bf53944e05faf649913f238257e13bc54ce175db6f753df7d. The artifact manifest owns every 1862-to-target transformation; the separate historical and target passages remain the witnesses."
+      },
+      "stale_note_body_sha256": "509e4511234435918a2e4e8a3d3010a32c5db894036724e8bd5d3ff0bafed7f9",
+      "verified_current_body_sha256": "e98bddf749de3b3bf53944e05faf649913f238257e13bc54ce175db6f753df7d",
+      "byte_selection": {
+        "artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.gap-sanctoral-3-orations-b43e63f0",
+        "artifact_record_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-sanctoral-3-orations-b43e63f0/artifact.toml",
+        "artifact_record_sha256": "baa9cce964af7b1201faf632a766fbe6a51191368415e7eaff2d09f1c6d5c761",
+        "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/gap-sanctoral-3-orations-b43e63f0/gap-sanctoral-3-orations-b43e63f0.txt",
+        "artifact_sha256": "b43e63f0ec0b3fec2b25d124c8f8f15164c68cf5832490d4b4a579c3c39d845b",
+        "physical_line_ranges": [
+          [
+            169,
+            171
+          ]
+        ],
+        "selection_method": "Exact UTF-8 physical lines with original line terminators; no trim, normalization, or added newline."
+      },
+      "unchanged_body_control": {
+        "calendar": "src/sources/calendars/roman-1962/propers.yaml",
+        "mass": "comm-ss-machabaeorum-martyrum",
+        "proper": "Collect",
+        "body_sha256": "e98bddf749de3b3bf53944e05faf649913f238257e13bc54ce175db6f753df7d",
+        "provenance_ledger": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+        "provenance_row_sha256": "bee9072c30905a38385d51f28811f5b47eb5f7558663ffa6dc4545fc7b542aeb",
+        "provenance_status": "collated",
+        "relationship": "editorial-projection-exact-to-target",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ]
+      }
+    }
+  ],
+  "limits": [
+    "No payload, physical bounds, target grade, source/edition identity, verified-on date, publication permission, recipient, or selected calendar body changes.",
+    "Original full dictionaries are preserved in this declaration. Only notes differ in each proposed successor.",
+    "This is a metadata correction, not a new source collation or an admission of any postconciliar Common body.",
+    "Require exact record preimages and unchanged payload/selected-body controls before any later root installation."
+  ],
+  "validation": {
+    "records": 3,
+    "notes_only": true,
+    "literal_selected_bytes_match_calendar": true,
+    "literal_selected_bytes_match_provenance_ledger": true,
+    "all_other_record_fields_exact": true
+  }
+}

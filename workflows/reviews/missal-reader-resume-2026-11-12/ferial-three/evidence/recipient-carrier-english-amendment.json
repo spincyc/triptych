@@ -1,0 +1,299 @@
+{
+  "schema": 1,
+  "date": "2026-11-13",
+  "reviewer": "/root/roman_sources/six_english_review",
+  "state": "frozen-independent-recipient-publication-carrier-amendment",
+  "verdict": "accept-exact-recipient-carrier-successor",
+  "scope": "Narrow metadata, carrier and exact-recipient binding amendment. The six literal bodies are unchanged from the frozen body review. No source image or translation review is repeated.",
+  "inputs": [
+    {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/install-plan.json",
+      "sha256": "c015358de877879ccaaf10e8bd1ce5c4af9c096d7c55a2bc024308583e0263d1",
+      "byte_size": 81954
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/metadata-delta.json",
+      "sha256": "e527986b19b110aa4eafe98db0e7fbbda4613a8c54c1f5d4581f20d904ea0392",
+      "byte_size": 19053
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/appointment-body-bindings.json",
+      "sha256": "48ddf0258bbd827c467fddfe832e63f9cb6401b8a252a4cc56d3841d01090e2e",
+      "byte_size": 44281
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/install-plan.json",
+      "sha256": "38cd3c5a720bbbdf9d875cc90f769104178823b3006a66e19013d0dff753c979",
+      "byte_size": 78235
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/appointment-body-bindings.json",
+      "sha256": "9932724dd17eb4975aa2fdfd1514e06085102375c8204e5a1e0156727db1aa4b",
+      "byte_size": 42389
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three-english-review/review.json",
+      "sha256": "57589732bf904d71335f479ed4bb159fd8072eab1a64d861b41e9bfa7c7c06b8",
+      "byte_size": 25410
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three-english-review/final-binding.json",
+      "sha256": "352c66df8b0e3c490ed3cbb10a1cdb0a065f47b2d5042384f94a5c2d2d6a8118",
+      "byte_size": 56902
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three-english-review/metadata-v3-binding.json",
+      "sha256": "48beaea6c75cdd6a300acfb05eadbd16c5923882aaead95da9e4435f2638fa36",
+      "byte_size": 23278
+    }
+  ],
+  "prior_root_admission": {
+    "path": ".scratch/root/ferial-three-source-admission.json",
+    "sha256": "3d9681a4ef811fd3cb1af55d4cef34d117c34d266e806b462fe38401ed0c74e2",
+    "byte_size": 6700
+  },
+  "old_binding_limit": "The prior receipts proved that the recipient body exactly matched the historical Monday donor and its carrier. They did not establish that mass-propers permits mismatched recipient/TSV owner columns. The current producer rejects that v3 join; this amendment replaces the publication carrier with an exact-recipient row while retaining the historical verification lineage.",
+  "exact_entry_changes": [
+    {
+      "field": "publication_artifact_id",
+      "old": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-2de93984",
+      "new": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient"
+    },
+    {
+      "field": "publication_artifact_sha256",
+      "old": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+      "new": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7"
+    },
+    {
+      "field": "publication_passage_id",
+      "old": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-lent-2-monday--main--oratio-super-populum--all--1",
+      "new": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient-text"
+    },
+    {
+      "field": "witness_note",
+      "old": "Historical source lent-2-monday/main/Oratio super populum/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.annual-oratio-early-20261023-lent-2-monday retained. No source-recipient calendar attestation or official 1962 English claimed. Recipient Passion Wednesday independently verified at 1962 PDF 205/printed 124 no 794 on 2026-11-12. Exact held donor Latin including wraps/final LF and exact held English reused unchanged. Fresh Lasance PDF 271 page-image comparison confirms the complete historical English; original donor passage ownership is retained. No old-witness Wednesday appointment is asserted.",
+      "new": "Historical source lent-2-monday/main/Oratio super populum/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.annual-oratio-early-20261023-lent-2-monday retained. No source-recipient calendar attestation or official 1962 English claimed. Recipient Passion Wednesday independently verified at 1962 PDF 205/printed 124 no 794 on 2026-11-12. Exact held donor Latin including wraps/final LF and exact held English reused unchanged. Fresh Lasance PDF 271 page-image comparison confirms the complete historical English; original donor passage ownership is retained. No old-witness Wednesday appointment is asserted. Publication-carrier correction 2026-11-13: a separate recipient TSV row carries passion-wednesday for the existing exact-owner producer contract. Its complete English is copied byte for byte from the unchanged donor publication TSV line 70. The original historical verification passage, donor locus, PDF artifact, IA bounds and source edition remain unchanged; the recipient carrier does not attest an old Wednesday appointment."
+    }
+  ],
+  "complete_new_Passion_Wednesday_English_entry": {
+    "mass": "passion-wednesday",
+    "form_id": "main",
+    "proper": "Oratio super populum",
+    "cycle": "all",
+    "occurrence": 1,
+    "witness": "lasance-1945",
+    "printed_page": "271",
+    "ia_leaf": 270,
+    "ia_leaf_range": [
+      270,
+      270
+    ],
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+    "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-verify-lent-2-monday--main--oratio-super-populum--all--1",
+    "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+    "collation_result": "confirmed",
+    "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient",
+    "publication_artifact_sha256": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7",
+    "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient-text",
+    "witness_note": "Historical source lent-2-monday/main/Oratio super populum/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.annual-oratio-early-20261023-lent-2-monday retained. No source-recipient calendar attestation or official 1962 English claimed. Recipient Passion Wednesday independently verified at 1962 PDF 205/printed 124 no 794 on 2026-11-12. Exact held donor Latin including wraps/final LF and exact held English reused unchanged. Fresh Lasance PDF 271 page-image comparison confirms the complete historical English; original donor passage ownership is retained. No old-witness Wednesday appointment is asserted. Publication-carrier correction 2026-11-13: a separate recipient TSV row carries passion-wednesday for the existing exact-owner producer contract. Its complete English is copied byte for byte from the unchanged donor publication TSV line 70. The original historical verification passage, donor locus, PDF artifact, IA bounds and source edition remain unchanged; the recipient carrier does not attest an old Wednesday appointment.",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "public-domain",
+        "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+        "text": "Be present to our supplications, O almighty God, and kindly grant the effect of Thy wonted mercy to those whom Thou dost permit confidently to rely on Thy goodness. Through our Lord."
+      }
+    ]
+  },
+  "rows": [
+    {
+      "identity": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "accept-exact-recipient-carrier-binding",
+      "complete_English_entry_sha256": "1dc16ed15a6954fdf5136933996a37b311b6db0158b77446ae054acb924b1fcd",
+      "complete_new_proper_sha256": "59993fc7590b696846d1b30ad20af45bff2f793b8caab3b7cfc33d19601a10e7",
+      "complete_Latin_row_sha256": "e40cb1478ed2e8dc5eda50e54cd19232d692adc9bc058db924475ebb82f6f17d",
+      "Latin_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+      "English_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269",
+      "publication_carrier": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/english.tsv",
+        "sha256": "f5667f63524494c630ef1c7ccb08bdc628966f581b29670f599149bf3af373bf",
+        "byte_size": 199
+      },
+      "publication_artifact": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/artifact.toml",
+        "sha256": "4eac4a4bdbf59f39b17b836e3f55c342591fe4c4c0835b1eb9cc5dd3486888a9",
+        "byte_size": 2014
+      },
+      "publication_passage": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-text.toml",
+        "sha256": "db221173a81b838065f73409f187bec3275acce6b3a0c0cc0ff91baeebc06f9f",
+        "byte_size": 1491
+      },
+      "verification_artifact": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ia-google-facsimile-pdf-4573991d/artifact.toml",
+        "sha256": "1abaf2370ebd4d7fd82807ab9285b4a7b3e1a487e1d9936fcead9865e3f5f16a",
+        "byte_size": 2665
+      },
+      "verification_passage": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-source.toml",
+        "sha256": "655004308418d33dd556e497eb6f02daab3ed5a205ebeec3abf87db568cbe1a5",
+        "byte_size": 1259
+      },
+      "carrier_identity_matches_all_five_recipient_fields": true,
+      "carrier_body_equals_accepted_English_exactly": true,
+      "literal_Latin_English_cues_and_appointment_controls_unchanged": true,
+      "historical_locus_PDF_derivation_and_leaf_bounds_match": true
+    },
+    {
+      "identity": [
+        "lent-4-thursday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "accept-exact-recipient-carrier-binding",
+      "complete_English_entry_sha256": "5ceaeff54634fb28ea20bc7f831f20a3a74e959553870505a3c031da7ee3264c",
+      "complete_new_proper_sha256": "286732f81128f846a5cead2eb4878ac66c73383ecc3fbfad98a2ab2100ad55db",
+      "complete_Latin_row_sha256": "289d848d8075ddac490f96e5189060345b831a21a6f30d28b2eab18383369531",
+      "Latin_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+      "English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e",
+      "publication_carrier": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/english.tsv",
+        "sha256": "fe009205998c6219bae88bac8b8c141f66236b9d114b5869651b371677e618be",
+        "byte_size": 299
+      },
+      "publication_artifact": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/artifact.toml",
+        "sha256": "cc3186b924016dc3ac16fbf34ec9c5ad690de48395ab7dfad9247df2b6cc8441",
+        "byte_size": 1704
+      },
+      "publication_passage": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-text.toml",
+        "sha256": "8db0730a81540ec6688ae638e0dcbbac4938d6631804e16e45075f91ed3bbf3b",
+        "byte_size": 1462
+      },
+      "verification_artifact": {
+        "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml",
+        "sha256": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4",
+        "byte_size": 1805
+      },
+      "verification_passage": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-source.toml",
+        "sha256": "36c85bf9e32b86b7e65c8888ea12d07c42151ae48c5095edc0ab17cddc4a394d",
+        "byte_size": 1318
+      },
+      "carrier_identity_matches_all_five_recipient_fields": true,
+      "carrier_body_equals_accepted_English_exactly": true,
+      "literal_Latin_English_cues_and_appointment_controls_unchanged": true,
+      "historical_locus_PDF_derivation_and_leaf_bounds_match": true
+    },
+    {
+      "identity": [
+        "passion-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "accept-exact-recipient-carrier-binding",
+      "complete_English_entry_sha256": "d3f075c746563a9a28be986ac0547aa5209910abd7f1ee810ce1da5a7efd3c43",
+      "complete_new_proper_sha256": "fcdf6015a27d3d6d95afb4245a24397a289a523351f58a7b04b080589673d9f3",
+      "complete_Latin_row_sha256": "989a985a264a533db4e63f262e077f5669f206e5c29ec021ed3e61573125abcc",
+      "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+      "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+      "publication_carrier": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+        "sha256": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7",
+        "byte_size": 278
+      },
+      "publication_artifact": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+        "sha256": "6ee61b34bbb6346b1b8f36c1ed3d32ab3af343594c4dff1e779ad38a17e40fcd",
+        "byte_size": 3072
+      },
+      "publication_passage": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+        "sha256": "55348fa03e59567eb92b568e80686474b5d1bc12fb275b0750a9701ec0150f43",
+        "byte_size": 2116
+      },
+      "verification_artifact": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+        "sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+        "byte_size": 3690
+      },
+      "verification_passage": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-append209-strict165-2026-10-23-verify-lent-2-monday--main--oratio-super-populum--all--1.toml",
+        "sha256": "045a6a33d77531140dc08913f5f553dd159e872bdc5b14d33342229a2bbd300d",
+        "byte_size": 2885
+      },
+      "carrier_identity_matches_all_five_recipient_fields": true,
+      "carrier_body_equals_accepted_English_exactly": true,
+      "literal_Latin_English_cues_and_appointment_controls_unchanged": true,
+      "historical_locus_PDF_derivation_and_leaf_bounds_match": true
+    }
+  ],
+  "all_24_source_file_hashes_verified": true,
+  "original_21_source_files_unchanged": true,
+  "all_27_source_proof_bindings_verified": true,
+  "new_source_files": [
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+      "sha256": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+      "sha256": "6ee61b34bbb6346b1b8f36c1ed3d32ab3af343594c4dff1e779ad38a17e40fcd"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+      "sha256": "55348fa03e59567eb92b568e80686474b5d1bc12fb275b0750a9701ec0150f43"
+    }
+  ],
+  "donor_binding": {
+    "donor_English_entry_sha256": "1837ec5f40edb38b23cd6ef87f313643ec76dd8000e9b8129dc1794a1cd0cfa5",
+    "donor_payload": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-append209-strict165-2026-10-23-2de93984/english.tsv",
+      "sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+      "byte_size": 49290
+    },
+    "recipient_payload": {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+      "sha256": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7",
+      "byte_size": 278
+    },
+    "donor_line": 70,
+    "recipient_line": 2,
+    "exact_English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+    "body_encoding": "Donor english_json field decoded and recipient plain english field parsed; their complete UTF-8 body bytes are identical, with no final LF in the body. TSV container serialization and owner columns differ.",
+    "rights_and_edition_fields_unchanged": true,
+    "historical_verification_locus_PDF_leaf_and_passage_unchanged": true,
+    "whole_Latin_equality_basis_unchanged": "Both recipient and donor retain accepted literal Latin SHA256 75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283, including conclusion, punctuation, wraps and final LF. Separate 1962 no. 794 recipient proof remains unchanged."
+  },
+  "producer_contract_review": {
+    "producer_source": {
+      "path": "tools/mass-propers",
+      "sha256": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+      "byte_size": 272825
+    },
+    "function": "validate_translation_publication_binding",
+    "observed_old_failure": {
+      "path": ".scratch/dedication-context/ferial-frame/composite38/propers-source-build.log",
+      "sha256": "2ccc7762c563865274f032032522bf0a0986d67523be88e0942236abe908a221",
+      "byte_size": 235
+    },
+    "checks": "Inspected actual producer requirements for exact mass/form_id/proper/cycle/occurrence, publication body, artifact and passage hashes, verification-PDF derivation, identical historical locus and leaf range. Independently checked those joins for all three successor entries. The old Adesto carrier fails the mass equality; the new row matches passion-wednesday.",
+    "execution_boundary": "This reviewer did not run the full producer or activate a canonical overlay. The separate author/Root producer proof remains the authority for a fresh end-to-end run."
+  },
+  "required_revisions": [],
+  "authority_boundary": "No new rights, historical Wednesday attestation, translation, full ending, response, actor or frame authority is introduced. The original donor remains unchanged. Earlier receipts remain immutable. The prior Root admission does not automatically admit this changed metadata; fresh Root amendment is still required. No canonical file was written."
+}

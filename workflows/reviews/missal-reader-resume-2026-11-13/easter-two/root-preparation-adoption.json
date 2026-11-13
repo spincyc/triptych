@@ -1,0 +1,56 @@
+{
+  "schema": "triptych-root-guarded-preparation-adoption/v1",
+  "decision": "Adopt exact Easter2 read-only prepare API and labeled public evidence successor",
+  "installer": {
+    "path": ".scratch/modern-easter2-public-safe-successor/activation/activate.py",
+    "sha256": "2eee15b2d8b25a1567ddfac43fdff8d197bff5347777ea9488555a69c776b1fb",
+    "bytes": 13911
+  },
+  "declaration": {
+    "path": ".scratch/modern-easter2-public-safe-successor/activation/installation-declaration.json",
+    "sha256": "6437339d601b83619fb39d61dcb4eca9c0641c69900b3627f20a7eb03b49a13b",
+    "bytes": 35853
+  },
+  "manifest": {
+    "path": ".scratch/modern-easter2-public-safe-successor/activation/activation-manifest.json",
+    "sha256": "ce41c54fbba198f45b1c9e20dbd918d5eb27dde5c1ff8cbb715a0941e67d676d",
+    "bytes": 16941
+  },
+  "independent_reviews": [
+    {
+      "path": ".scratch/modern-easter2-activation-review/review.json",
+      "sha256": "14e2e9d772b1c5c7288fe164e213f0ef237b923cf1e290f02e32083c5f73481d",
+      "bytes": 19291
+    },
+    {
+      "path": ".scratch/modern-easter2-public-safe-review/review.json",
+      "sha256": "1d13fb9357e4e1b9773b437eaa73740cd84a8f0054d66e58c787e3ce0c43e9c9"
+    }
+  ],
+  "public_evidence_amendment": {
+    "path": ".scratch/modern-easter2-public-safe-successor/public/registration-review.json",
+    "sha256": "cdf986383b705b2e3366c51dafdca4b9ed62072a38bf41e2a88e98b505d795f6",
+    "bytes": 20686
+  },
+  "root_review": "Read complete installer and both independent reviews. Verified all successor pins; independently reconstructed exactly two diagnostic-prefix substitutions and additive derivative label. Actual current canonical read-only preparation returns22 verified files and one entry after213 unchanged positives.",
+  "proof": {
+    "removed_raw_span": {
+      "start": 585602,
+      "end": 586989,
+      "sha256": "7b2d42798d5dddc0d03cf61d285cf9010e35a542863376c2d087774cd5749af7"
+    },
+    "preserved_raw_remainder_sha256": "360373fb27dcffe1b9793ebb700e07df1129354853e63e5643bc3bca4cd7f578",
+    "before_semantic_sha256": "70ac790402a78535fee20e15ac5777d29e50609c2c10d144391d6f2ece8a82be",
+    "after_semantic_sha256": "08b15f215e09c25fd635a3bb10a7a1cc04d955ae24e6b656f51d215cacbc95a0",
+    "all_unselected_raw_bytes_preserved": true,
+    "existing_positive_count": 213,
+    "new_positive_index": 213,
+    "inverse_semantic_check": true,
+    "unchanged_latin_sha256": "0a99b8f885832d7acbdd3468fce8da9439b560092fff6986d0f0d36e6136f912",
+    "source_record_pins_verified": 25,
+    "source_payload_pins_verified": 4,
+    "runtime_hash_binding": false
+  },
+  "scope": "Existing c407 source and fa613 English merits unchanged. Raw original review retained; only public derivative and dependent declaration bytes differ. Root atomic integration remains required.",
+  "canonical_writes": false
+}

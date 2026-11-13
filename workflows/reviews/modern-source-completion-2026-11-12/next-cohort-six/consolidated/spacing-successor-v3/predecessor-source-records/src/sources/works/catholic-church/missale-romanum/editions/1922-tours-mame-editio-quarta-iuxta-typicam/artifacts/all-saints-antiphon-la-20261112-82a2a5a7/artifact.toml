@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "checked-transcription-excerpt"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Complete bounded historical Latin printed by Mame at Tours in1922, under the original edition publication-date and faithful-reproduction basis already recorded on the independently held parent. The complete antiphon is sourced before the psalm verse and doxology; no modern expression, apparatus or translation is imported. This source derivative makes no claim over a modern Missal edition."
+retrieved = "2026-11-12"
+sha256 = "82a2a5a73ff9e82e3ffdae142f44688d2f1e92becab449ff1fd52ece4ffa807c"
+byte_size = 144
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/latin.txt"
+encoding = "utf-8"
+indexable = true
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+transformation = "Select source text from Gaudeamus through the full stop after Dei on physical lines1-2; join the internal source line break with one space. Exclude Exsultate through Gloria Patri. Keep the1922 spelling solemnitate and every source word, case and punctuation. Add one final storage LF."
+provenance = "Fresh image check of retained1922 excerptAP1 / originalAP862 / printed748; independently re-rendered and verified by separate AI source/fidelity reviewer on2026-11-12."
+notes = "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation."

@@ -235,14 +235,22 @@ module.exports = function liturgy(realm) {
     const section = T.renderProper(proper, bible, fragments, {
       numbering: owner.numbering || null,
       orations: state.orations,
+      sourceLocalActorScope: state.sourceLocal1970 && state.sourceLocalActorTarget === event.id ? 'source-local-1970' : null,
       textDisplay: state.textDisplay || 'selected',
       translationWitness: state.witness || null,
       heading: 'h3',
       cycle: event.selected && event.selected.cycle || null,
       orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null,
-      conclusionExecution: event.conclusionExecution || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
+      conclusionExecution: event.conclusionExecution || null, sourceLocalActorOffer: event.sourceLocalActorOffer || null, orationContext: event.orationContext || null, eventId: event.id, structure: owner,
     });
-    return { blocks: realm.dom.read(section) };
+    const offer = event.sourceLocalActorOffer;
+    const languages = state.textDisplay === 'latin-and-selected' ? [...new Set(['la', state.orations])] : [state.orations];
+    const available = offer && offer.scope === 'source-local-1970' && offer.state === 'available' &&
+      languages.every(language => offer.languages[language] && offer.languages[language].state === 'source-derived-complete');
+    return { blocks: realm.dom.read(section), sourceLocalActorChoice: offer ? {
+      scope: offer.scope, target: offer.target, available: Boolean(available),
+      selected: Boolean(state.sourceLocal1970 && state.sourceLocalActorTarget === event.id),
+    } : null };
   }
 
   function seat(event) {
@@ -299,6 +307,23 @@ module.exports = function liturgy(realm) {
   }
 
   async function events(result, calendar, mass, bible, state, ordinary, probe) {
+    if (state.sourceLocal1970) {
+      const offered = [];
+      function visit(event) {
+        if (event.kind === 'proper-choice') {
+          const selected = event.options.find(option => event.selection.state === 'selected' && option.id === event.selection.option);
+          if (selected) selected.events.forEach(visit);
+        } else if (event.kind === 'proper' && event.sourceLocalActorOffer) offered.push(event);
+      }
+      result.events.forEach(visit);
+      const languages = state.textDisplay === 'latin-and-selected' ? [...new Set(['la', state.orations])] : [state.orations];
+      const offer = offered.length === 1 && offered[0].sourceLocalActorOffer;
+      if (calendar !== 'postconciliar' || !offer || offer.scope !== 'source-local-1970' || offer.state !== 'available' ||
+          !languages.every(language => offer.languages[language] && offer.languages[language].state === 'source-derived-complete')) {
+        throw new Error('No unique available source-local 1970 reading is offered for this selected material.');
+      }
+      state = Object.assign({}, state, {sourceLocalActorTarget: offered[0].id});
+    }
     const owner = structure(calendar);
     const fragments = mass ? await T.fetchFragments(bible, T.citationsOf(mass), state, bibles()) : null;
     const elements = elementIndex(ordinary);
@@ -420,6 +445,7 @@ module.exports = function liturgy(realm) {
 
   function normal(options) {
     const state = Object.assign({ orations: T.SOURCE_LANGUAGE }, options || {});
+    if (state.sourceLocal1970 !== undefined && typeof state.sourceLocal1970 !== 'boolean') throw new Error('sourceLocal1970 must be an explicit boolean selection');
     if (!['la', 'en'].includes(state.orations)) throw new Error('orations are la or en');
     if (state.textDisplay && !['selected', 'latin-and-selected'].includes(state.textDisplay)) {
       throw new Error('text display is selected or latin-and-selected');
@@ -465,6 +491,23 @@ module.exports = function liturgy(realm) {
     function append(event) {
       const proper = sourceProper(event, owner);
       if (!proper) return;
+      // Study opens the exact quotation disclosure produced by the shared
+      // renderer. It does not copy an execution result or reconstruct a source.
+      if (state.sourceLocal1970 && event.sourceLocalActorOffer) {
+        const rendered = T.renderProper(proper, {}, null, {
+          orations: state.orations, textDisplay: state.textDisplay || 'selected',
+          translationWitness: state.witness || null,
+          sourceLocalActorOffer: event.sourceLocalActorOffer,
+          sourceLocalActorScope: 'source-local-1970',
+        });
+        const quotations = rendered.querySelectorAll('.source-local-actor-quotation');
+        if (!quotations.length) throw new Error('The selected historical source quotation is unavailable in Study.');
+        fragment.appendChild(T.el('h3', 'proper-name', proper.name || 'Proper'));
+        quotations.forEach((quotation) => {
+          quotation.setAttribute('open', '');
+          fragment.appendChild(quotation);
+        });
+      }
       const cycle = event.selected && event.selected.cycle;
       const owners = [proper].concat((cycle ? [cycle] : T.cycleKeysOf(proper)).map((key) => T.cycleOf(proper, key)));
       owners.forEach((textOwner) => {
@@ -497,7 +540,7 @@ module.exports = function liturgy(realm) {
       if (state.mass) asked.selectedReadableFormulary = { id: state.mass };
       if (state.form) asked.form = state.form;
       const adapted = A.adaptDay({ request: asked, derived, structure: owner, rubrics: rubricsOf(calendar),
-        ordinary: state.ordinary ? ordinaryOf(calendar) : null, nameExecutionUse: options && options.nameExecutionUse || null });
+        ordinary: (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null, nameExecutionUse: options && options.nameExecutionUse || null });
       const choice = dayReader().primaryDayChoice(adapted, branch);
       if (choice) return {option: branch.option || null,
         blocks: realm.dom.read(T.el('p', 'candidate-choice-reason', choice.reason))};
@@ -516,7 +559,7 @@ module.exports = function liturgy(realm) {
     if (state.cycle) asked.cycle = state.cycle;
     const owner = structure(calendar, key);
     const result = A.adaptPropers({ request: asked, structure: owner,
-      ordinary: state.ordinary ? ordinaryOf(calendar) : null });
+      ordinary: (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null });
     return study(result).concat(translationApparatus(result, owner, state));
   }
 
@@ -625,7 +668,7 @@ module.exports = function liturgy(realm) {
     const bible = bibleFor(state.bible);
     const derived = selectedDay(calendar, iso, state);
     const owner = structure(calendar, dayRootsFor(derived, state));
-    const ordinary = state.ordinary ? ordinaryOf(calendar) : null;
+    const ordinary = (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null;
     const rubrics = rubricsOf(calendar);
     const page = dayReader();
     Object.assign(runtime, { structure: owner, ordinary, mode: state.ordinary ? 'missal' : 'read' });
@@ -657,6 +700,7 @@ module.exports = function liturgy(realm) {
         continue;
       }
       const choice = page.primaryDayChoice(adapted, branch);
+      if (choice && state.sourceLocal1970) throw new Error('Choose an exact formulary and form before selecting a historical source-local reading.');
       const properFormChoice = choice && /^proper-form:/.test(choice.id);
       const key = choice && !properFormChoice ? null : resolvedKey(adapted);
       const { mass, context } = key ? massContext(calendar, key, state) : { mass: null, context: null };
@@ -735,7 +779,7 @@ module.exports = function liturgy(realm) {
     const owner = structure(calendar, key);
     const found = (owner.masses || []).find((one) => one.key === key);
     if (!found) throw new Error('no Mass ' + key + ' in ' + calendar);
-    const ordinary = state.ordinary ? ordinaryOf(calendar) : null;
+    const ordinary = (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null;
     const asked = Object.assign(request('propers', calendar, state, bible), {
       civilDate: null, formulary: { id: key, type: found.kind || null },
     });
@@ -783,6 +827,7 @@ module.exports = function liturgy(realm) {
    * explicitly supplied. The production builder owns selection and pairing. */
   async function comparePropers(calendar, key, options, selection) {
     const state = normal(options);
+    if (state.sourceLocal1970) throw new Error('This historical source-local reading has no equivalent comparison or reader URL. Return to the unchanged quotation first.');
     const bible = bibleFor(state.bible);
     const owner = structure(calendar, key);
     const wanted = selection || {};
@@ -835,6 +880,7 @@ module.exports = function liturgy(realm) {
    * view sets them; the terminal reads back what that view writes. */
   async function compare(primary, peer, iso, options) {
     const state = normal(options);
+    if (state.sourceLocal1970) throw new Error('This historical source-local reading has no equivalent comparison or reader URL. Return to the unchanged quotation first.');
     if (state.dedicationAttestation) {
       return {refused: 'Clear the stated celebration location before comparing calendars; confirm it again when returning to this Mass.', territories: []};
     }
@@ -897,6 +943,7 @@ module.exports = function liturgy(realm) {
    * the website. No terminal-only query grammar is introduced. */
   async function readerUrl(entrance, calendar, anchor, options, comparison) {
     const state = normal(options);
+    if (state.sourceLocal1970) throw new Error('This historical source-local reading has no equivalent comparison or reader URL. Return to the unchanged quotation first.');
     if (state.dedicationAttestation) {
       throw new Error('The stated celebration location is not carried in a reader link. Clear it before sharing; the location must be confirmed again when opening the link.');
     }
@@ -925,7 +972,7 @@ module.exports = function liturgy(realm) {
           if (!branch.orationSelection) { delete branchRequest.orationMass; delete branchRequest.orationTerritory; }
           if (derived.options.length > 1) branchRequest.calendar.territory = { id: branch.option };
           A.adaptDay({ request: branchRequest, derived, structure: structure(calendar), rubrics: rubricsOf(calendar),
-            ordinary: state.ordinary ? ordinaryOf(calendar) : null });
+            ordinary: (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null });
         }
       } else {
         const mass = (structure(calendar, anchor).masses || []).find((one) => one.key === anchor);
@@ -934,7 +981,7 @@ module.exports = function liturgy(realm) {
         asked.formulary = { id: anchor, type: mass.kind || null };
         if (state.form) asked.form = state.form;
         if (state.cycle) asked.cycle = state.cycle;
-        A.adaptPropers({ request: asked, structure: structure(calendar), ordinary: state.ordinary ? ordinaryOf(calendar) : null });
+        A.adaptPropers({ request: asked, structure: structure(calendar), ordinary: (state.ordinary || calendar === 'roman-1962') ? ordinaryOf(calendar) : null });
       }
     }
     if (state.location) asked.semanticLocation = { eventId: state.location };

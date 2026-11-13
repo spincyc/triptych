@@ -1,0 +1,184 @@
+{
+  "key": "saints-martha-mary-lazarus",
+  "text_status": {
+    "state": "partial",
+    "scope": "missal-formulary",
+    "reasons": [
+      {
+        "kind": "witness-gap",
+        "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+      }
+    ]
+  },
+  "name": "Saints Martha, Mary, and Lazarus",
+  "registry": "pc-07-29",
+  "date": "07-29",
+  "rank": "Memorial",
+  "kind": "sanctoral",
+  "notes": "The Lectionary citations were read at 200 dpi in the page images of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e, at artifact page 352, printed page 298, n. 607. The Ordo heads it De Communi sanctarum, and this repository carries identity-only Common records that do not resolve a target-edition formulary, so the heading is recorded and not resolved. The Ordo heads the day S. Marthae alone and prints Evangelium huius memoriae est proprium; this calendar carries the memorial of 29 July under the expanded title it was given after 1981, and the citations are those the book appoints to that day. The Ordo prints its responsorial psalms in Vulgate numbering; they are converted here by scripts/_psalms from the tracked verse concordance, because this file declares psalm_numbering hebrew. Nothing else of this Mass has been read - the Entrance and Communion Antiphons and the three orations are printed in the Missal, not in the Ordo, and are absent because no witness to them is on disk that this project may publish. See src/sources/inventories/postconciliar-sanctoral-acquisition-v1.toml.",
+  "propers": [
+    {
+      "name": "First Reading",
+      "source": "scripture",
+      "verses": [
+        {
+          "book": "1 John",
+          "ranges": [
+            {
+              "begin": {
+                "chapter": 4,
+                "verse": 7
+              },
+              "end": {
+                "chapter": 4,
+                "verse": 16
+              }
+            }
+          ],
+          "ref": "1 John 4:7-16"
+        }
+      ]
+    },
+    {
+      "name": "Responsorial Psalm",
+      "source": "scripture",
+      "verses": [
+        {
+          "book": "Psalms",
+          "ranges": [
+            {
+              "begin": {
+                "chapter": 34,
+                "verse": 2
+              },
+              "end": {
+                "chapter": 34,
+                "verse": 3
+              }
+            },
+            {
+              "begin": {
+                "chapter": 34,
+                "verse": 4
+              },
+              "end": {
+                "chapter": 34,
+                "verse": 5
+              }
+            },
+            {
+              "begin": {
+                "chapter": 34,
+                "verse": 6
+              },
+              "end": {
+                "chapter": 34,
+                "verse": 7
+              }
+            },
+            {
+              "begin": {
+                "chapter": 34,
+                "verse": 8
+              },
+              "end": {
+                "chapter": 34,
+                "verse": 9
+              }
+            },
+            {
+              "begin": {
+                "chapter": 34,
+                "verse": 10
+              },
+              "end": {
+                "chapter": 34,
+                "verse": 11
+              }
+            }
+          ],
+          "ref": "Psalm 34:2-3, 4-5, 6-7, 8-9, 10-11"
+        }
+      ]
+    },
+    {
+      "name": "Gospel Acclamation",
+      "source": "scripture",
+      "verses": [
+        {
+          "book": "John",
+          "ranges": [
+            {
+              "begin": {
+                "chapter": 8,
+                "verse": 12
+              },
+              "end": {
+                "chapter": 8,
+                "verse": 12
+              }
+            }
+          ],
+          "ref": "John 8:12"
+        }
+      ]
+    },
+    {
+      "name": "Gospel",
+      "ordinary_disposition": {
+        "kind": "alternative",
+        "group": "gospel",
+        "option": "john-11-19-27",
+        "basis": "The Ordo prints this under Vel as an alternative to the preceding Gospel."
+      },
+      "source": "scripture",
+      "verses": [
+        {
+          "book": "John",
+          "ranges": [
+            {
+              "begin": {
+                "chapter": 11,
+                "verse": 19
+              },
+              "end": {
+                "chapter": 11,
+                "verse": 27
+              }
+            }
+          ],
+          "ref": "John 11:19-27"
+        }
+      ]
+    },
+    {
+      "name": "Gospel (alternative)",
+      "ordinary_disposition": {
+        "kind": "alternative",
+        "group": "gospel",
+        "option": "luke-10-38-42",
+        "basis": "The Ordo prints this under Vel as an alternative to the preceding Gospel."
+      },
+      "source": "scripture",
+      "verses": [
+        {
+          "book": "Luke",
+          "ranges": [
+            {
+              "begin": {
+                "chapter": 10,
+                "verse": 38
+              },
+              "end": {
+                "chapter": 10,
+                "verse": 42
+              }
+            }
+          ],
+          "ref": "Luke 10:38-42"
+        }
+      ],
+      "notes": "The Ordo prints this under Vel as an alternative to the preceding Gospel."
+    }
+  ]
+}

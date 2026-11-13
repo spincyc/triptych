@@ -1,0 +1,189 @@
+{
+  "schema": "triptych-easter-study-three-source-admission-proposal/v1",
+  "status": "source-and-English-reviewed-pending-root-adoption",
+  "recorded_on": "2026-11-12",
+  "scope": "Exactly3 qualified project study-English owner joins; no modern Latin admission.",
+  "candidate_packet_sha256": "328759fe7aafa0af8d5085e7f628002e93ceb1f57dfcec6353747a1e08a16fa5",
+  "independent_source_reviews": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-vigil-source-review.json",
+      "sha256": "b541164e25d0989a6450c2ba358026e90c1fa1d16ec15a907d15e244be16aa0a"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-3-wednesday-source-review.json",
+      "sha256": "81fb704db88de6e01a265cbb7723400e4107ee7df349d3e77907291685694cf7"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-3-friday-source-review.json",
+      "sha256": "d89dc42bf373695bc9c2ad28785ad8892224aa777b05b6e5bb1fc19f0de87083"
+    }
+  ],
+  "source_proofs": [
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the First Reading",
+        "all",
+        1
+      ],
+      "english_artifact_id": "artifact.triptych.easter-vigil-first-reading-study-english-20261112.2026-11-12.principal-study-english",
+      "english_artifact_sha256": "2246601c41a326bf708d566c583ec49947937245e0ffa164be146f6382bcb3c6",
+      "english_passage_id": "passage.triptych.easter-vigil-first-reading-study-english-20261112.2026-11-12.principal-study-english",
+      "english_body_sha256": "6c1315dcc0dc085fb6bf21c89e2040c0a1683d972bb4a96d30b2816bb00d5a19",
+      "english_payload_path": "src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/artifacts/principal-study-english/body.txt",
+      "english_physical_line": 1,
+      "historical_page_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-vigil-first-reading-page-20261112-easter-study-three",
+      "historical_text_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-vigil-first-reading-text-20261112-easter-study-three",
+      "historical_body_sha256": "42ad01fa8ad311c2a880cd8536494913745e7bfbb568c302e86e79597c13931e",
+      "full_conclusion_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion",
+      "separate_response_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+      "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.vigil-first-reading-comparison-20261112-easter-study-three"
+    },
+    {
+      "identity": [
+        "easter-3-wednesday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "existing_admitted_identity": [
+        "easter-5-wednesday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "english_artifact_id": "artifact.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-study-en-9695a7ce",
+      "english_artifact_sha256": "9695a7cecc948f554b912e7720a368319abe8cadc843f32669da469898162e70",
+      "english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-study-english",
+      "english_body_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea",
+      "historical_page_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-page",
+      "historical_text_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-text",
+      "historical_body_sha256": "6f953e6be1e99ae2582aac48025b6e6e8214e8babc94893ada33f7965a6fdae1",
+      "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter3-wednesday-communion-comparison-20261112-easter-study-three",
+      "relation": "variant",
+      "explicit_new_owner_reuse": true
+    },
+    {
+      "identity": [
+        "easter-3-friday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "existing_admitted_identity": [
+        "easter-5-friday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "english_artifact_id": "artifact.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-study-en-9695a7ce",
+      "english_artifact_sha256": "9695a7cecc948f554b912e7720a368319abe8cadc843f32669da469898162e70",
+      "english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-study-english",
+      "english_body_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94",
+      "historical_page_passage_id": "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-page",
+      "historical_text_passage_id": "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-text",
+      "historical_body_sha256": "e9dd48f8d5d60dbcb62a05e69ba299051e17947a856f203822a4f002dae7e7d7",
+      "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter3-friday-communion-comparison-20261112-easter-study-three",
+      "relation": "abridged",
+      "explicit_new_owner_reuse": true
+    }
+  ],
+  "superseded_unavailable_dictionaries": [
+    {
+      "mass": "easter-vigil",
+      "form_id": "main",
+      "proper": "Prayer after the First Reading",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "935a4d758ec2362c8c7ce56f825819ba10eafcc1c0c77dc05f7176a8802f0c7d"
+      ],
+      "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    {
+      "mass": "easter-3-wednesday",
+      "form_id": "main",
+      "proper": "Communion Antiphon",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "verified_artifact_page": 63,
+      "verified_printed_page": 55,
+      "verified_heading": "Wednesday of the Third Week of Easter",
+      "verified_on_page": "2026-10-21",
+      "note": "The exact uncited English antiphon exemplar is positively held in the registered ICEL 2010 Antiphonary, artifact page 63, printed page 55; the 2026-10-20/21 seasonal source audit viewed the actual page image. This source-order Communion Antiphon occurrence 1 adds no English wording. The restricted artifact and the registered ICEL rights inventory establish no unconditional publication basis for this clonable/downloadable route. No no-exemplar claim, removed-body hash, Latin provenance row, or exact 2008 Latin-body claim is made.",
+      "reason": {
+        "kind": "rights-withheld",
+        "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "surfaces": [
+          "site-display",
+          "corpus-data",
+          "public-git",
+          "command-line",
+          "download"
+        ]
+      }
+    },
+    {
+      "mass": "easter-3-friday",
+      "form_id": "main",
+      "proper": "Communion Antiphon",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "verified_artifact_page": 63,
+      "verified_printed_page": 55,
+      "verified_heading": "Friday of the Third Week of Easter",
+      "verified_on_page": "2026-10-21",
+      "note": "The exact uncited English antiphon exemplar is positively held in the registered ICEL 2010 Antiphonary, artifact page 63, printed page 55; the 2026-10-20/21 seasonal source audit viewed the actual page image. This source-order Communion Antiphon occurrence 1 adds no English wording. The restricted artifact and the registered ICEL rights inventory establish no unconditional publication basis for this clonable/downloadable route. No no-exemplar claim, removed-body hash, Latin provenance row, or exact 2008 Latin-body claim is made.",
+      "reason": {
+        "kind": "rights-withheld",
+        "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "surfaces": [
+          "site-display",
+          "corpus-data",
+          "public-git",
+          "command-line",
+          "download"
+        ]
+      }
+    }
+  ],
+  "source_qualification": "Qualified project study English only. The comparison is the held secondary digital2002 typesetting; fidelity to printed2002 and correspondence with2008 remain unestablished. No official/approved English, historical-human translation or recitation authority is asserted. No target Latin body is admitted.",
+  "retained_original_owners": [
+    [
+      "easter-5-wednesday",
+      "main",
+      "Communion Antiphon",
+      "all",
+      1
+    ],
+    [
+      "easter-5-friday",
+      "main",
+      "Communion Antiphon",
+      "all",
+      1
+    ]
+  ]
+}

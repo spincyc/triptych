@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect-text"
+edition_id = "edition.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729"
+artifact_id = "artifact.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect"
+artifact_sha256 = "3ae510e3d2d03d8ccb2d7d4334cfb80eee22bd8f62b36a1ff1fba4b6a4433e17"
+locus = "easter2-collect/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Deus misericordiae sempiternae, qui in ipso Paschalis festi recursu fidem sacratae tibi plebis accendis : auge gratiam, quam dedisti : ut digna omnes intelligentia comprehendant, quo lavacro abluti, quo Spiritu regenerati, quo Sanguine sunt redempti. Per."
+transcription_segments = [{line = 1, text = "Deus misericordiae sempiternae, qui in ipso Paschalis festi recursu fidem sacratae tibi plebis accendis : auge gratiam, quam dedisti : ut digna omnes intelligentia comprehendant, quo lavacro abluti, quo Spiritu regenerati, quo Sanguine sunt redempti. Per."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 8fb33a3d50e6c946aebad0d1def0522504d39a6f07b6863dc5063433793a74ce. Controlling complete page passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect-page. One complete independently printed1729Gallican post-nomina prayer contains the entire receiving invocation and ordered petition word for word, except intelligentia/intellegentia spelling and typography. It already contains the paschal recurrence, the consecrated people, increase of grace, and the threefold washing/Spirit/blood understanding. The full appropriate conclusion is separately independently old. Modern appointment and cue expansion do not establish literal complete-old-recitation identity or exact2008authority."

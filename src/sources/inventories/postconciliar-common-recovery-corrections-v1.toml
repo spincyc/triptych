@@ -1,0 +1,140 @@
+# Independent evidence for two historical prayer corrections and one Lectionary recovery.
+# This input is separate from the Common recovery output and contains no flags or bodies.
+schema = 2
+record_type = "postconciliar-common-recovery-corrections"
+recorded_on = "2026-11-13"
+status = "historical-evidence-only"
+notes = "The 2026-10-23 corrections preserved historical sources while replacing inaccurate modern bindings. These exact evidence dependencies preserve that quarantine after prose revision. The separate Martha stanza retains the independently re-read 1981 Lectionary cue across the 2021 title change, without deriving a Missal or Hours Common choice. This contract neither resolves a Common nor authenticates a 2008 body. Evidence changes require review; the recovery output is never read to derive a flag."
+
+[sources.comparison-edition]
+path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/edition.toml"
+id = "edition.catholic-church.missale-romanum.vatican-typica-1970"
+sha256 = "710c2a5b1475926c735a5f3ccf2ca352e83ea12f9fef22b535eb16c1f97c53dc"
+
+[sources.comparison-artifact]
+path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/artifacts/ia-facsimile-pdf-76809791/artifact.toml"
+id = "artifact.catholic-church.missale-romanum.vatican-typica-1970.ia-facsimile-pdf-76809791"
+sha256 = "d03397a307ea78b8247f3cdc4513169600b09088939813ff4617017cc88a12dc"
+
+[sources.historical-edition]
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml"
+id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+sha256 = "a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466"
+
+[sources.historical-scan]
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+sha256 = "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4"
+
+[sources.historical-text]
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/postconciliar-antecedent-orations-en/artifact.toml"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
+sha256 = "5fba87e7d02ebdc15ba28d777a9b3b38bcdd9e20cc141c477f8378cf00a1b324"
+
+[sources.comparison-jerome]
+path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/postconciliar-jerome-emiliani-collect-comparison-20261023.toml"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1970.postconciliar-jerome-emiliani-collect-comparison-20261023"
+sha256 = "8b0f4db31fa16f8f0ffdd8fc3d408414c868d78d63c099f09f9e9365cf57cc52"
+
+[sources.historical-page-jerome]
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--postconciliar-antecedent--pc-116.toml"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-116"
+sha256 = "2b89fcbbf3524b2fb3a91dc4ab5c4af434690cf45478ddaabdf61df43b6cc0e1"
+
+[sources.historical-publication-jerome]
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/publish--postconciliar-antecedent--pc-116.toml"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-116"
+sha256 = "0d9f16c999e9d3754c88f8fde12ab3fdafd1f78fc44de9dafdc39ffbefffa676"
+
+[sources.comparison-george]
+path = "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/postconciliar-george-collect-comparison-20261023.toml"
+id = "passage.catholic-church.missale-romanum.vatican-typica-1970.postconciliar-george-collect-comparison-20261023"
+sha256 = "0ce496c4cd134f4a4bb74fcb201910a07c7e3c106659e33a5ea94ccf32603fdf"
+
+[sources.historical-page-george]
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--postconciliar-antecedent--pc-113.toml"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-113"
+sha256 = "7db11f8215d0ce39c78269acaaf52888731ba2ec6ea526e70d2b020fd7553dc4"
+
+[sources.historical-publication-george]
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/publish--postconciliar-antecedent--pc-113.toml"
+id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-113"
+sha256 = "6cfb262dbef65c33a30086b79db1c1e9741687e71cef83bb9843f995828b2a46"
+
+[[corrections]]
+mass_key = "saint-jerome-emiliani"
+registry = "pc-02-08"
+date = "02-08"
+section = "sanctoral"
+proper = "Collect"
+form_id = "main"
+cycle = "all"
+occurrence = 1
+comparison = "comparison-jerome"
+comparison_page = 515
+historical_verification = "historical-page-jerome"
+historical_publication = "historical-publication-jerome"
+historical_locus = "pc-116/collect"
+historical_page = 630
+historical_line = 19
+english_disposition = "revised-historical-antecedent"
+
+[[corrections]]
+mass_key = "saint-george-martyr"
+registry = "pc-04-23"
+date = "04-23"
+section = "sanctoral"
+proper = "Collect"
+form_id = "main"
+cycle = "all"
+occurrence = 1
+comparison = "comparison-george"
+comparison_page = 528
+historical_verification = "historical-page-george"
+historical_publication = "historical-publication-george"
+historical_locus = "pc-113/collect"
+historical_page = 579
+historical_line = 16
+english_disposition = "historical-source-only-no-modern-english"
+
+[sources.martha-ordo]
+path = "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/artifacts/internet-archive-scan-pdf-ed4bc14e/artifact.toml"
+id = "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+sha256 = "6aed43b819e64d5a1fa8ba0356764210278fb0167e6eefaf1f80522c477ea51d"
+
+[sources.martha-annex]
+path = "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/artifacts/official-annex-pdf-f7820b29/artifact.toml"
+id = "artifact.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.official-annex-pdf-f7820b29"
+sha256 = "b6d74c3e8e4ec977378ad794caff59992feb5201546da7695bbc810f819dd334"
+
+[sources.martha-decree]
+path = "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/artifacts/official-decree-html-7bd7579e/artifact.toml"
+id = "artifact.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.official-decree-html-7bd7579e"
+sha256 = "818a30f638566fe04eacb6abb860a9e591133c154071d16ed62d5188bdfcbd60"
+
+[sources.martha-book-boundaries]
+path = "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/book-boundaries.toml"
+id = "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.book-boundaries"
+sha256 = "dc6b868de0213ecfc8e59ee2c31a874d50556f25cd0ff5e918a0cccae2bca48f"
+
+[sources.martha-title-authority]
+path = "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/decree-calendar-and-annex-authority.toml"
+id = "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.decree-calendar-and-annex-authority"
+sha256 = "3a1c626fba8d6e1d191b5c447161ba700ac26771b0215f6a24ef29f7502ae3c6"
+
+[martha_lectionary]
+mass_key = "saints-martha-mary-lazarus"
+registry = "pc-07-29"
+date = "07-29"
+section = "sanctoral"
+recipient_title = "Saints Martha, Mary, and Lazarus"
+source_title = "S. Marthae"
+source_scope = "lectionary-readings"
+artifact_page = 352
+printed_page = 298
+entry_number = "607"
+raw_common_heading = "De Communi sanctarum."
+proper_gospel_cue = "Evangelium huius memoriae est proprium."
+reading_nodes_sha256 = "5c2a296fc42deb7a7595d0b76bcda9accb4e76b5caef53378840f14b138f4de2"
+verified_on_page = "2026-11-13"
+review_basis = "Direct complete OLM1981 AP352/printed298 image review: entry607 is bounded by606 and608. The historical title names Martha alone. The separately pinned2021 decree supplies the expanded identity; its book-boundaries passage says the Lectionary addition changes the title only and the separate Common cue belongs to Hours. No modern Missal Common, new reading appointment, body authority or default follows."

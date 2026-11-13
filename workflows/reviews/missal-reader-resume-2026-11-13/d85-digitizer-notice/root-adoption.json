@@ -1,0 +1,19 @@
+{
+  "schema": "triptych-root-artifact-notice-metadata-amendment/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root",
+  "decision": "accept-exact-rights-basis-absence-correction",
+  "proposal": {
+    "path": ".scratch/modern-new-orations-review/ot21-complete/inherited-formula-metadata-defect.json",
+    "sha256": "b5bbc76a404205a67af55e0ff3607b001670d3141a3bab750174195f1888316c"
+  },
+  "artifact_manifest_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+  "before_manifest_sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+  "field": "rights_basis",
+  "before": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. No digitiser notice or lettered insert is retained.",
+  "after": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern liturgical text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. The derivative retains the visible digitiser URL http://ccwatershed.org at the lower margin; no lettered insert is retained.",
+  "root_verification": "Independently rehashed the exact current manifest, retainedPDF and supplied raster. Directly viewed the whole printed217 image and observed the orange digitizer URL below the historical printed page. The prior no-notice assertion is false; the proposed wording accurately distinguishes modern digitizer presentation from old liturgical expression.",
+  "unchanged": "Artifact identity, payload/hash, rights_status, indexability and every prayer/formula byte. No new image publication or wider rights finding is granted.",
+  "integration_order": "Apply only after the first-six installer, which intentionally pins the old manifest; update only explicitly dependent later record controls against the final exact successor.",
+  "canonical_writes": false
+}

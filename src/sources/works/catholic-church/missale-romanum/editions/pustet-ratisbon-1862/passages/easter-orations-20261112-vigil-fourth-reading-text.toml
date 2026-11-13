@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-fourth-reading-text"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-fourth-reading"
+artifact_sha256 = "bc5c1d41964303f0ad8aa221c9a8215b5dfd5f43904a1550eefa63ee0287876a"
+locus = "vigil-fourth-reading/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Omnipotens sempiterne Deus, multiplica in honorem nominis tui, quod patrum fidei spopondisti, et promissionis filios sacra adoptione dilata; ut, quod priores sancti non dubitaverunt futurum, Ecclesia tua magna jam ex parte cognoscat impletum. Per Dominum."
+transcription_segments = [{line = 1, text = "Omnipotens sempiterne Deus, multiplica in honorem nominis tui, quod patrum fidei spopondisti, et promissionis filios sacra adoptione dilata; ut, quod priores sancti non dubitaverunt futurum, Ecclesia tua magna jam ex parte cognoscat impletum. Per Dominum."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 da3faa06be61bf444eef0f897176af7c6c6029c1cffc1fbdfa59b97e9a908ba6. Controlling complete page passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-fourth-reading-page. The entire1862 prayer contains the full honor-of-name, promised-faith, adoption and recognition-of-fulfillment sequence. Its sole lexical adjustment removes your before Church and intensifies the already-great extent with tam. The full finite expression, including this intensifier and changed conclusion, requires independent assessment rather than a general old-prayer exemption."

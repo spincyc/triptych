@@ -1,0 +1,19 @@
+{
+  "schema": "finite-existing-artifact-metadata-correction-proposal/v1",
+  "reviewed_on": "2026-11-12",
+  "status": "proposed-metadata-only-no-canonical-write",
+  "artifact_manifest_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+  "artifact_manifest_sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+  "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+  "artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+  "field": "rights_basis",
+  "before": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. No digitiser notice or lettered insert is retained.",
+  "after": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern liturgical text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. The derivative retains the visible digitiser URL http://ccwatershed.org at the lower margin; no lettered insert is retained.",
+  "actual_payload_path": ".scratch/artifact-cache/d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8/pages.pdf",
+  "artifact_page": 1,
+  "printed_page": "217",
+  "independently_rendered_evidence": ".scratch/modern-new-orations-review/ot21-complete/rasters/formula217.png",
+  "rendered_evidence_sha256": "8fa248af7b00a41b26863f0398787d98e2bd8fe18642f4a34811135955e58d9e",
+  "visible_evidence": "Orange http://ccwatershed.org URL at bottom margin of exact retained page, below old printed Ash Wednesday page content.",
+  "scope": "Correct the false absence statement only. No new source image publication, payload alteration, hash change, broad ownership claim or rights_status change proposed. Independently old formula-text evidence remains separate from digitizer presentation."
+}

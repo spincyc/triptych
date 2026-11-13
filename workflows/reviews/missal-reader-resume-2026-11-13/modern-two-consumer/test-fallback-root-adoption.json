@@ -1,0 +1,19 @@
+{
+  "schema": "triptych-root-test-only-adoption/v1",
+  "decision": "Adopt exact lazy explicit-fixture selection in source-local actor reader test",
+  "review": {
+    "path": ".scratch/reader-audit/modern-two-test-fallback/review/review.json",
+    "sha256": "3594b47c96ae34a77b788ad359f03b133757883afcfa0a9855cd8effc490c7ce"
+  },
+  "before": {
+    "path": ".scratch/reader-audit/modern-two-test-fallback/preimages/tools/tests/test_source_local_actor_reader.py",
+    "sha256": "db01f8afb526c71d609d5aa234b104ca97d9654ae91b8994925733e85af5943a"
+  },
+  "after": {
+    "path": ".scratch/reader-audit/modern-two-test-fallback/postimages/tools/tests/test_source_local_actor_reader.py",
+    "sha256": "7c14a29599f947fe0ca632f8530dde418d0b85d5eff886af8627b35416645fda"
+  },
+  "root_review": "Read complete patch and independent review. Reconstructed exact sole replacement and verified current canonical preimage. Absence still calls sealed resolver; explicit empty is not absence; resolver exceptions remain observable.",
+  "scope": "Test only; no source, producer or runtime policy change",
+  "canonical_writes": false
+}

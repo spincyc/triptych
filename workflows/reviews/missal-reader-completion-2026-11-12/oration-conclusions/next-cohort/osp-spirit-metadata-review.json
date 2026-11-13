@@ -1,0 +1,114 @@
+{
+  "schema": "triptych-independent-osp-spirit-source-closure-review/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root/oration_endings/review_4",
+  "state": "accepted-exact-metadata-merits-no-canonical-activation",
+  "handoff": {
+    "sha256": "2918be719d9276df23ece47c4eb8875660e97e10389647b006323c49d4de9c70"
+  },
+  "readmap": {
+    "sha256": "bd270a53aca20b736699d69db564045c4313808f95490f0ddaf75fa171d55eaf"
+  },
+  "durable_hook_receipt": {
+    "repository_path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/next-cohort/osp-spirit-source-hooks.json",
+    "sha256": "3d03c55e3922a726587ee734997c07db34ddf5eea9dd5263cce0eb614c4d20c8"
+  },
+  "unchanged_source_merits_receipt": {
+    "sha256": "a351279ba95b3c19275a5672b52610f726d9b04a0cce214c4a454212006dccc9"
+  },
+  "scope": "Seven new metadata records, four unchanged already-reviewed Breviary metadata records, eight existing dependencies, and the single durable source-hook receipt. Exact LentIIWednesday OSP only.",
+  "checks": {
+    "new_metadata_records": 7,
+    "unchanged_breviary_records": 4,
+    "unchanged_dependencies": 8,
+    "hook_resolutions": 7,
+    "readmap_entries": 12,
+    "isolated_graph_records": 19,
+    "isolated_graph_errors": [],
+    "new_source_image_pins": 10,
+    "current_target_and_counterexample_bodies_and_proofs_unchanged": true,
+    "private_paths_absent_from_durable_hook_receipt": true,
+    "canonical_changes": false
+  },
+  "independent_findings": [
+    "Directly read VolII title AP7: official collection, Rome1898. Directly read AP249/printed233: decree2682 Marsorum, distinguished from preceding2681. Existing question45 AP251 and answer/date AP253 were independently read in the unchanged merits review; new bounded locus identifies all three parts without importing other dubia or prayers.",
+    "Directly read VolV title AP5: IndexGeneralis, volumeV, Rome1901/MCMI. The mirror filename1898 is correctly rejected as edition identity. Independently read JoannaChantal AP255-256 from the prior merits review remains a historical countercontrol, never current execution authority.",
+    "1962RubricarumInstructum2 AP7 and dating AP8, independently read previously, concern incompatible prior decrees and effective1January1961. This passage does not assert universal retention or rejection. Existing exact1962 target AP166/unit572, RG115 AP17 and contrary target AP714/unit3422 remain separately pinned.",
+    "All seven durable hooks resolve to the intended parsed record and exact bytes. The original finite ordinary-family inference and contrary current eiusdem control remain unchanged; this metadata closure grants no general Spirit cohort, no22+4 admission, no new body/formula/response and no runtime activation."
+  ],
+  "source_records": [
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricarum-instructum-2-compatibility-20261112",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/rubricarum-instructum-2-compatibility-20261112.toml",
+      "sha256": "d668c8f8a15c3b6f093031cc2fb7884f60913e95b7351ce395b98ae7cd293a0a",
+      "parsed_sha256": "3130b05b7713954de55e73875578dba568d015b03684b810e95e093dcaa41d87"
+    },
+    {
+      "id": "artifact.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1898-volume-2.scan-pdf-442f3766",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1898-volume-2/artifacts/scan-pdf-442f3766/artifact.toml",
+      "sha256": "f6ac2b355967efa1227c481649670b9041ada60b6f77e4cd21fcef83bfc238ad",
+      "parsed_sha256": "db90bbf54d9fedd7747bc23050142c9308654e8b51762e8cb8f24f82829cb6f8"
+    },
+    {
+      "id": "edition.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1898-volume-2",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1898-volume-2/edition.toml",
+      "sha256": "e3c50ffcc643d3b91e521c8d28df25fda5cdca4189f007c5017b1047f9fd1738",
+      "parsed_sha256": "a0c11010f1022976578bf261131a5fb6ab75ad14674a0f99f84deba8a6fe1c90"
+    },
+    {
+      "id": "passage.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1898-volume-2.decree-2682-ad45-osp-spirit-20261112",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1898-volume-2/passages/decree-2682-ad45-osp-spirit-20261112.toml",
+      "sha256": "5de63c9f1747bcde5b7152fd6d10a2089437abd9a148c9b18fe2c52cad012e72",
+      "parsed_sha256": "fbc20b1301fa7561b20c5d375566bbdee532055f595b49c9e74337e3e4135b0c"
+    },
+    {
+      "id": "artifact.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1901-volume-5.scan-pdf-a947b474",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1901-volume-5/artifacts/scan-pdf-a947b474/artifact.toml",
+      "sha256": "cc9e5134da614a56044836525374567fd2dcd3c9c68ab7e52fd542fae2207f56",
+      "parsed_sha256": "0662bedcc474125c092bcd491781c188023243704ea8153a23556340aa3ea35d"
+    },
+    {
+      "id": "edition.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1901-volume-5",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1901-volume-5/edition.toml",
+      "sha256": "d4c35c186d04bdd23acbdbd83601c2701d79ab6132d4be6023347edbf9c4f2ae",
+      "parsed_sha256": "1eb91d56e6d1f3aaa40374900d3637eb8e9855223b4c01e4b0d7440d36002732"
+    },
+    {
+      "id": "passage.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1901-volume-5.joanna-chantal-conclusion-countercontrol-20261112",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1901-volume-5/passages/joanna-chantal-conclusion-countercontrol-20261112.toml",
+      "sha256": "f022fbae4cbb4bbab9c5ca98722361e58c3350fd44dc4d017c6dc0ac0908222c",
+      "parsed_sha256": "0f77c9235571176d9dcb7d089086dd9e4666f7e9dcb49acfa45115aed6166e8a"
+    }
+  ],
+  "private_pdf_measurements": [
+    {
+      "sha256": "442f3766b8e5da44e1e90f47028c278f1b6ec6f8bd1c3cfe5ba9e8b9f86c34e3",
+      "byte_size": 40005113,
+      "pages": 504
+    },
+    {
+      "sha256": "a947b4742e57fa9fedad68d944f674722ba11f47cf0897f0b75f7a2fa4698553",
+      "byte_size": 45458303,
+      "pages": 536
+    },
+    {
+      "sha256": "0fb25ed41ef8781118d910b8e3609f456000905096d5882789d410fe9baa1c71",
+      "byte_size": 60670513,
+      "pages": 1062
+    },
+    {
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "byte_size": 82815941,
+      "pages": 1088
+    }
+  ],
+  "limits": [
+    "Exactly one unchanged Lent II Wednesday OSP. No general Spirit cohort, semantic regex or universal retention of the1831 interpretation.",
+    "The1901 index is a contrary historical control; the current explicit Joanna Chantal source words prevail. No new Joanna execution is granted.",
+    "The1888 Breviary maps the exact prayer to the named historical Vespers locus; it does not supply an1831 printing or a1962 appointment.",
+    "Current1962 RG115 and actual target wording remain controlling. Full ordinary wording remains separately attributed table-derived execution, not a quotation printed in the target.",
+    "Only source metadata is proposed. Existing source bodies, formula payloads, response ownership and the independent Spirit1 receipt remain unchanged."
+  ],
+  "metadata_projection_of_sha256": "869d022a444a22c7ff04805c0b6fc63838a1907b1a0f701ca4d5fc6e4e5d157f",
+  "projection": "Private working-file locators omitted; review findings, source identifiers and hashes preserved."
+}

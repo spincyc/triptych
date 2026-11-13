@@ -1,0 +1,38 @@
+{
+  "schema": "triptych-root-pius-ending-runtime-adoption/v1",
+  "decision": "Adopt exact additive Pius ending authority b26 and typed Python f4d; bare JavaScript887 composes through separately adopted display wrapper",
+  "handoff": {
+    "path": ".scratch/oration-endings/pius-authority-successor/handoff.json",
+    "sha256": "2f3fd50481f99b6ea2e05e5e54828fb70c71dac6287d0f4e6121685694bfad9a"
+  },
+  "postimages": {
+    "scripts/_oration_endings.py": {
+      "staged_path": ".scratch/oration-endings/pius-authority-successor/postimages/scripts/_oration_endings.py",
+      "sha256": "f4dcb5af565042fd2a4c6f10a19bf6b641928373748fa34478e7fa72476125f2"
+    },
+    "src/web/browser/liturgy/oration-conclusions.js": {
+      "staged_path": ".scratch/oration-endings/pius-authority-successor/postimages/src/web/browser/liturgy/oration-conclusions.js",
+      "sha256": "887a44ad40ea412a8657f7bd26de59cefca0bb29ebdb83e040cd1dc4283d632e"
+    },
+    "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v4.json": {
+      "staged_path": ".scratch/oration-endings/pius-authority-successor/postimages/workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v4.json",
+      "sha256": "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744"
+    },
+    "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/root-adoption-v4.json": {
+      "staged_path": ".scratch/oration-endings/pius-authority-successor/postimages/workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/root-adoption-v4.json",
+      "sha256": "f34be55ab615bb5f982b1a47631854c95295e2bd87dcd99be03f61bf7f0952a2"
+    }
+  },
+  "independent_review": {
+    "path": ".scratch/oration-endings/review-4/pius-successor/review.json",
+    "sha256": "1da3d2e2866d56786ad4d5729b93bead35c5dd1580fbe97d25b0486b8b785240"
+  },
+  "root_review": "Read full handoff, code patch, additive proof and independent review. Rehashed all postimages, preimages, author evidence and actual source-family inputs. Independently reconstructed Python constant-only delta and proved whole authority equality except one appended Pius row and one appended English formula; all prior records and formulas preserved. Prior actual f34 source/family decision remains controlling.",
+  "limits": [
+    "No new source body, rights, whole historical English, approved translation, sibling Pius/Joseph, or pre1955 recension permission.",
+    "Pius formula execution needs its existing exact group context; no Secret voice or response appointment claim.",
+    "Secret/Ordinary junction correction and final native renderer acceptance are separate.",
+    "Public check uses actual protected-source scanner and full11178-artifact registry; it is not a claim that full current producer/release gate passed."
+  ],
+  "canonical_writes": false
+}

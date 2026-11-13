@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-3e45253b"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych created this bounded correction transcription and collation record and offers its editorial contributions under CC BY 4.0. The underlying petitions are independently present in the registered Pustet Ratisbon 1862 printing, public domain in the United States by publication date. The 1962 comparison supplies target punctuation and the same preexisting conclusion formulas at their already-held printed length. No 1962 page image, layout, rubric or marginal number is reproduced in the payload. No exclusive right is claimed in the underlying Latin."
+rights_jurisdiction = "United States"
+provenance = "Fresh complete-input hashes and bounded page-image collation on 2026-11-12: Pustet 1862 PDF pages 500 and 623 against CMAA 1962 PDF pages 569 and 733. The 1962 pages were read at actual 200 and 400 dpi. The Pustet PDF has invalid tiny page boxes; its pages were read at explicit 2400- and 4800-pixel long-side scales, not claimed dpi. This is a project editorial projection with two declared corrections, not a new historical witness."
+retrieved = "2026-11-12"
+sha256 = "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb"
+byte_size = 506
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Read the complete petitions on both page images; remove stress accents, expand ae/oe ligatures, use existing calendar j orthography, retain target punctuation and each already-held target conclusion without expansion. Remove Gregory OCR debris II and join intercession e to intercessione; transcribe the Gorgonius printed ae ligature as ae rather than the erroneous as. Retain existing body line wraps and terminal LF. Add two non-passage descriptive headings."
+indexable = true
+encoding = "utf-8"
+notes = "The previous sanctoral-w-1-orations-2e477eea and sanctoral-w-2-orations-f26ac956 artifacts and their passages remain unchanged as historical project records. The new passage IDs and owner-row changes are explicitly declared in the separate existing-positive correction packet. No conclusion expansion or English change is included."

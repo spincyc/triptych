@@ -1,0 +1,1312 @@
+{
+  "schema": "triptych-explicit-review-projection/v1",
+  "raw_input": {
+    "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/positive-transition-declarations.json",
+    "sha256": "479af2166863be876ae6d23b85f4c2c9a073de6da159c449d90f46677895bb63",
+    "bytes": 110084
+  },
+  "projection": {
+    "selection": "All fields of the eight-only receipt.",
+    "path_transformation": "Remove exactly the active repository absolute prefix from string values. Preserve all other content; this projection is not the original raw receipt.",
+    "raw_receipt_unchanged": true
+  },
+  "record": {
+    "schema": "ordinary-latin-existing-positive-transitions/v1",
+    "canonical_mutation": false,
+    "source_authority_activated": false,
+    "changes": [
+      {
+        "declaration": "existing-positive-latin-selection-replacement",
+        "status": "scratch-proposal-not-admitted",
+        "key": "praeparatio/confiteor-sacerdotis",
+        "target_id": "roman-1962:ordinary:praeparatio%2Fconfiteor-sacerdotis",
+        "reason": "The selected Cummiskey Latin abbreviates the priest confession with &c.; Mame prints the whole confession.",
+        "before": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1017, printed p. 216, artifact PDF p. 297",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 12, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1017, printed p. 216, artifact PDF p. 297, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 4: 1861 prints only the first three words and an &c.; the 1962 prints the whole priest's Confiteor. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body, not a conclusion cue.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "P. Confiteor Deo omnipotenti, &c.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "confiteor-sacerdotis",
+                "printed_marker": "P.",
+                "speaker": "priest",
+                "text": "P. Confiteor Deo omnipotenti, &c."
+              }
+            ]
+          },
+          "text_sha256": "6c600300fc0eca83edbff151ed19f29ff5aa437eb04fd498868f053c8ffa5478",
+          "translation_json_sha256": "a23856424bb886227be9127976eff7eae2701946cad643b95c215ae9cd381c7e",
+          "owner_provenance": {
+            "element": "confiteor-sacerdotis",
+            "lang": "la",
+            "relation": "antecedent",
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1017, printed p. 216, artifact PDF p. 297",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 12, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1017, printed p. 216, artifact PDF p. 297, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 4: 1861 prints only the first three words and an &c.; the 1962 prints the whole priest's Confiteor. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body, not a conclusion cue."
+          },
+          "owner_provenance_literal": "[[sections.element_provenance]]\nelement = \"confiteor-sacerdotis\"\nlang = \"la\"\nrelation = \"antecedent\"\ncollation = \"collated\"\ncollation_finding = \"passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1017, printed p. 216, artifact PDF p. 297\"\nnote = \"ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 12, printed p. xvi, IA leaf 26), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1017, printed p. 216, artifact PDF p. 297, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 4: 1861 prints only the first three words and an &c.; the 1962 prints the whole priest's Confiteor. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body, not a conclusion cue.\"\n\n",
+          "owner_provenance_literal_sha256": "86ae1ffa92337bb40437b8500743b279063a66a0ac93536296927c689fddf2de",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20",
+          "artifact_manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20/artifact.toml",
+          "artifact_manifest_sha256": "79ea55dd2934bad514a1a9334c598eb11cf16f4892ba4a4f656bf5536e5e58ba",
+          "payload_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20.tsv",
+          "payload_sha256": "2c5f7a2e4faf87599b1bf47643c2e777d023a0d5e818e4146104d0c6913ddf15"
+        },
+        "after": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1017, printed p. 216, artifact PDF p. 297",
+            "coverage_relationship": "exact-target",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 272, original PDF 386, left column, priest confession before Ministri respondent; checked word by word against the complete 1962 target at n. 1017, printed 216/PDF 297 on actual 200 and 400 dpi page images. The selected Cummiskey Latin abbreviates the priest confession with &c.; Mame prints the whole confession. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "target_wording": "word-exact",
+            "text": "Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Joanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis, et vobis, fratres: quia peccavi nimis cogitatione, verbo et opere: mea culpa, mea culpa, mea maxima culpa. Ideo precor beatam Mariam semper Virginem, beatum Michaelem Archangelum, beatum Joannem Baptistam, sanctos Apostolos Petrum et Paulum, omnes Sanctos, et vos, fratres, orare pro me ad Dominum Deum nostrum.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": null,
+                "speaker": "priest",
+                "text": "Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Joanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis, et vobis, fratres: quia peccavi nimis cogitatione, verbo et opere: mea culpa, mea culpa, mea maxima culpa. Ideo precor beatam Mariam semper Virginem, beatum Michaelem Archangelum, beatum Joannem Baptistam, sanctos Apostolos Petrum et Paulum, omnes Sanctos, et vos, fratres, orare pro me ad Dominum Deum nostrum."
+              }
+            ]
+          },
+          "text_sha256": "d2b373b0c0e42f239a6bd25e522757ee2abea5c4fbb97de73c5ed90867faef5c",
+          "translation_json_sha256": "dfdb6e61152af020ea98bd6a05032ddfb0b19682a9bccef7fdb97fd3062ac228",
+          "owner_declaration": {
+            "element": "confiteor-sacerdotis",
+            "replaces": {
+              "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20",
+              "text_sha256": "6c600300fc0eca83edbff151ed19f29ff5aa437eb04fd498868f053c8ffa5478"
+            },
+            "latin_turns": [
+              {
+                "key": "priest-1",
+                "seq": [
+                  1
+                ],
+                "speaker": "priest"
+              }
+            ],
+            "turns_basis": "Mame 1922 printed 272, original PDF 386, left column, priest confession before Ministri respondent; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-confiteor-sacerdotis. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied. The source actor context begins with Sacerdos on PDF 385, continues through Sacerdos repetit Antiphonam, and leads to the confession on PDF 386 before the explicitly distinct ministers response.",
+            "latin": {
+              "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+              "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+              "element": "confiteor-sacerdotis",
+              "column": "latin",
+              "relation": "antecedent",
+              "collation": "collated",
+              "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1017, printed p. 216, artifact PDF p. 297",
+              "target_wording": "word-exact",
+              "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 272, original PDF 386, left column, priest confession before Ministri respondent; checked word by word against the complete 1962 target at n. 1017, printed 216/PDF 297 on actual 200 and 400 dpi page images. The selected Cummiskey Latin abbreviates the priest confession with &c.; Mame prints the whole confession. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+            }
+          },
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+          "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-confiteor-sacerdotis",
+          "text_passage": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-confiteor-sacerdotis.toml",
+          "text_passage_sha256": "615008160011e26aa4fc126a9490f8e449fe91f05b282ae41186405ac1cc9438"
+        },
+        "target": {
+          "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum",
+          "passage_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-ad-gradum.toml",
+          "passage_sha256": "008359295bcc0d80a85af94972d46c2be414bb603e69e99ae3aca371e673e392",
+          "locator": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1017, printed p. 216, artifact PDF p. 297",
+          "whole_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+        },
+        "historical_source": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "whole_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_pages": [
+            386
+          ],
+          "printed_pages": "272",
+          "extent": "left column, priest confession before Ministri respondent"
+        },
+        "images": [
+          {
+            "witness": "mame",
+            "page": 385,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap385-200.png",
+            "sha256": "e9c28d766ee706bc4c299528f2ad5eea86ccd3cdf009cef820c373520c0ed227"
+          },
+          {
+            "witness": "mame",
+            "page": 385,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap385-400.png",
+            "sha256": "0338d08ddb6572cd7b86890f0cda99a8a5cafc898b4d33c1e202ac2ae768c525"
+          },
+          {
+            "witness": "mame",
+            "page": 386,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap386-200.png",
+            "sha256": "419f0bc8eca3a30ba7981f640db33064f608a819beb45bd9a571ed7a0f432aa7"
+          },
+          {
+            "witness": "mame",
+            "page": 386,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap386-400.png",
+            "sha256": "d499309040169a84d319f89964b7871122e13cf9dc5254df5c31fd632d1374df"
+          },
+          {
+            "witness": "cmaa",
+            "page": 297,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap297-200.png",
+            "sha256": "8e035cd674b70565f83fb0cf8a4ef5f4d8d3cdb7e602cd9cd1e72a72b6d45ab8"
+          },
+          {
+            "witness": "cmaa",
+            "page": 297,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap297-400.png",
+            "sha256": "09239186bf93e29f15ba639cfd179133a10e84a571f7008e090aaf9f8c0eb3dc"
+          }
+        ],
+        "english_unchanged": true,
+        "element_frame_unchanged": true,
+        "old_source_bytes_unchanged": true,
+        "owner_before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "owner_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "authority": "Requires Root explicit admission and separate existing-positive source_epoch exception. Not part of the earlier nine or five-addition package; no authority is activated by this declaration."
+      },
+      {
+        "declaration": "existing-positive-latin-selection-replacement",
+        "status": "scratch-proposal-not-admitted",
+        "key": "praeparatio/indulgentiam",
+        "target_id": "roman-1962:ordinary:praeparatio%2Findulgentiam",
+        "reason": "The selected Cummiskey Latin prints onmipotens; Mame prints omnipotens. The new response actor remains unassigned.",
+        "before": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1020, printed p. 217, artifact PDF p. 298",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 16, printed p. xvii, IA leaf 27), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1020, printed p. 217, artifact PDF p. 298, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 9: 1861 misprint (m and n transposed), recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "P. Indulgentiam, absolutionem, et remissionem peccatorum nostrorum, tribuat nobis onmipotens et misericors Dominus.\nR. Amen.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": "P.",
+                "speaker": "priest",
+                "text": "P. Indulgentiam, absolutionem, et remissionem peccatorum nostrorum, tribuat nobis onmipotens et misericors Dominus."
+              },
+              {
+                "action": null,
+                "dialogue_role": "response",
+                "key": "server-1",
+                "printed_marker": "R.",
+                "speaker": "server",
+                "text": "R. Amen."
+              }
+            ]
+          },
+          "text_sha256": "d03c0c53dd1a90322e867ea1816b9c73869b1d5f64a416ad43f1948e8110b93f",
+          "translation_json_sha256": "2f232d1439ba17724bb69524a19a4b0fcee6a8eb7e25a64ef7567b19fa666a0c",
+          "owner_provenance": {
+            "element": "indulgentiam",
+            "lang": "la",
+            "relation": "antecedent",
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1020, printed p. 217, artifact PDF p. 298",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 16, printed p. xvii, IA leaf 27), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1020, printed p. 217, artifact PDF p. 298, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 9: 1861 misprint (m and n transposed), recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees."
+          },
+          "owner_provenance_literal": "[[sections.element_provenance]]\nelement = \"indulgentiam\"\nlang = \"la\"\nrelation = \"antecedent\"\ncollation = \"collated\"\ncollation_finding = \"passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1020, printed p. 217, artifact PDF p. 298\"\nnote = \"ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-praeparatio-la seq 16, printed p. xvii, IA leaf 27), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1020, printed p. 217, artifact PDF p. 298, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 9: 1861 misprint (m and n transposed), recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees.\"\n\n",
+          "owner_provenance_literal_sha256": "554ed23148380f8d279119c15876f8bba174e62eac8c504679c6f864a0ad286f",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20",
+          "artifact_manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20/artifact.toml",
+          "artifact_manifest_sha256": "79ea55dd2934bad514a1a9334c598eb11cf16f4892ba4a4f656bf5536e5e58ba",
+          "payload_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20/ordinarium-praeparatio-la-turn-divided-complete-2026-10-20.tsv",
+          "payload_sha256": "2c5f7a2e4faf87599b1bf47643c2e777d023a0d5e818e4146104d0c6913ddf15"
+        },
+        "after": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1020, printed p. 217, artifact PDF p. 298",
+            "coverage_relationship": "exact-target",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 272, original PDF 386, right column, after priest absolution rubric and before Deus tu conversus; checked word by word against the complete 1962 target at n. 1020, printed 217/PDF 298 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints onmipotens; Mame prints omnipotens. The new response actor remains unassigned. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "target_wording": "word-exact",
+            "text": "Indulgentiam, absolutionem, et remissionem peccatorum nostrorum tribuat nobis omnipotens et misericors Dominus.\nR. Amen.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": null,
+                "speaker": "priest",
+                "text": "Indulgentiam, absolutionem, et remissionem peccatorum nostrorum tribuat nobis omnipotens et misericors Dominus."
+              },
+              {
+                "action": null,
+                "dialogue_role": "response",
+                "key": "response-1",
+                "printed_marker": "R.",
+                "speaker": null,
+                "text": "R. Amen."
+              }
+            ]
+          },
+          "text_sha256": "bf36bbded7b1e4c8a5d04e028d86e538a79aacc965d5f9a9a8128a7c15e13afa",
+          "translation_json_sha256": "1686702fe2b8d7ee829def66202fe7b722c57dc9da1ad5109f13903e508431a1",
+          "owner_declaration": {
+            "element": "indulgentiam",
+            "replaces": {
+              "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la-turn-divided-complete-2026-10-20",
+              "text_sha256": "d03c0c53dd1a90322e867ea1816b9c73869b1d5f64a416ad43f1948e8110b93f"
+            },
+            "latin_turns": [
+              {
+                "key": "priest-1",
+                "seq": [
+                  2
+                ],
+                "speaker": "priest"
+              },
+              {
+                "key": "response-1",
+                "seq": [
+                  3
+                ],
+                "dialogue_role": "response",
+                "printed_marker": "R."
+              }
+            ],
+            "turns_basis": "Mame 1922 printed 272, original PDF 386, right column, after priest absolution rubric and before Deus tu conversus; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-indulgentiam. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied. The separately printed barred R. Amen is a response at target 1962 n. 1020, printed 217/PDF 298; neither the marker nor this source supplies a server actor. Response and priest are separate source rows, not inherited Cummiskey turns.",
+            "latin": {
+              "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+              "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+              "element": "indulgentiam",
+              "column": "latin",
+              "relation": "antecedent",
+              "collation": "collated",
+              "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1020, printed p. 217, artifact PDF p. 298",
+              "target_wording": "word-exact",
+              "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 272, original PDF 386, right column, after priest absolution rubric and before Deus tu conversus; checked word by word against the complete 1962 target at n. 1020, printed 217/PDF 298 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints onmipotens; Mame prints omnipotens. The new response actor remains unassigned. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+            }
+          },
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+          "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-indulgentiam",
+          "text_passage": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-indulgentiam.toml",
+          "text_passage_sha256": "09f223ce0072a1a36c6586d13724a2a90f17ba9c76b0426df7970d0c096c4c7c"
+        },
+        "target": {
+          "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum",
+          "passage_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-ad-gradum.toml",
+          "passage_sha256": "008359295bcc0d80a85af94972d46c2be414bb603e69e99ae3aca371e673e392",
+          "locator": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; n. 1020, printed p. 217, artifact PDF p. 298",
+          "whole_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+        },
+        "historical_source": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "whole_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_pages": [
+            386
+          ],
+          "printed_pages": "272",
+          "extent": "right column, after priest absolution rubric and before Deus tu conversus"
+        },
+        "images": [
+          {
+            "witness": "mame",
+            "page": 386,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap386-200.png",
+            "sha256": "419f0bc8eca3a30ba7981f640db33064f608a819beb45bd9a571ed7a0f432aa7"
+          },
+          {
+            "witness": "mame",
+            "page": 386,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap386-400.png",
+            "sha256": "d499309040169a84d319f89964b7871122e13cf9dc5254df5c31fd632d1374df"
+          },
+          {
+            "witness": "cmaa",
+            "page": 298,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap298-200.png",
+            "sha256": "08e05e592d07112d1c487c5e10f3d33c252727bb882aa2f28e417f88a3a0b8b0"
+          },
+          {
+            "witness": "cmaa",
+            "page": 298,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap298-400.png",
+            "sha256": "17f332d26fba0140be96e016d155a0762e8db4bf5d5cda607727dbccfb35aebd"
+          }
+        ],
+        "english_unchanged": true,
+        "element_frame_unchanged": true,
+        "old_source_bytes_unchanged": true,
+        "owner_before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "owner_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "authority": "Requires Root explicit admission and separate existing-positive source_epoch exception. Not part of the earlier nine or five-addition package; no authority is activated by this declaration."
+      },
+      {
+        "declaration": "existing-positive-latin-selection-replacement",
+        "status": "scratch-proposal-not-admitted",
+        "key": "oblatio/suscipe-sancte-pater",
+        "target_id": "roman-1962:ordinary:oblatio%2Fsuscipe-sancte-pater",
+        "reason": "The selected Cummiskey Latin omits et before offensionibus; Mame prints it. Mame negligentiis and target neglegentiis are received spelling variants.",
+        "before": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1030, printed p. 220, artifact PDF p. 301",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 23, printed p. xxiii, IA leaf 33), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1030, printed p. 220, artifact PDF p. 301, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 24: 1962 prints a conjunction before the second noun of the series that the 1861 lacks (one added word); 1861 checked on its image, pdf p. 34. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing; negligentiis/neglegentiis (spelling).",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "Suscipe, sancte Pater, omnipotens æterne Deus, hanc immaculatam Hostiam, quam ego indignus famulus tuus offero tibi Deo meo vivo et vero, pro innumerabilibus peccatis, offensionibus et negligentiis meis, et pro omnibus circumstantibus; sed et pro omnibus fidelibus Christianis, vivis atque defunctis; ut mihi et illis proficiat ad salutem in vitam æternam. Amen."
+          },
+          "text_sha256": "cfc55f48c3b1655e74ff748775b32a2bad18f4a72dc7009018ea612f993f94c8",
+          "translation_json_sha256": "3b990a210b8ce1bf08db7885e25f2ea1d5c60a17d8c850917255f7fdc04c8a18",
+          "owner_provenance": {
+            "element": "suscipe-sancte-pater",
+            "lang": "la",
+            "relation": "antecedent",
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1030, printed p. 220, artifact PDF p. 301",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 23, printed p. xxiii, IA leaf 33), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1030, printed p. 220, artifact PDF p. 301, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 24: 1962 prints a conjunction before the second noun of the series that the 1861 lacks (one added word); 1861 checked on its image, pdf p. 34. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing; negligentiis/neglegentiis (spelling)."
+          },
+          "owner_provenance_literal": "[[sections.element_provenance]]\nelement = \"suscipe-sancte-pater\"\nlang = \"la\"\nrelation = \"antecedent\"\ncollation = \"collated\"\ncollation_finding = \"passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1030, printed p. 220, artifact PDF p. 301\"\nnote = \"ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 23, printed p. xxiii, IA leaf 33), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1030, printed p. 220, artifact PDF p. 301, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 24: 1962 prints a conjunction before the second noun of the series that the 1861 lacks (one added word); 1861 checked on its image, pdf p. 34. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing; negligentiis/neglegentiis (spelling).\"\n\n",
+          "owner_provenance_literal_sha256": "4d37dee0634dc8cc79e9531314942fa717653a7d23b4a8cb7e41a3225605c200",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20",
+          "artifact_manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la-turn-divided-complete-2026-10-20/artifact.toml",
+          "artifact_manifest_sha256": "75a1d563ec72925ef6ce668cb30e3eabe0acfbfa90b046eb77431843c5b38a5f",
+          "payload_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la-turn-divided-complete-2026-10-20/ordinarium-oblatio-la-turn-divided-complete-2026-10-20.tsv",
+          "payload_sha256": "ef9879f79f3a33ffc85f278c39418ad7e72fd2a7ba712905743eadd8f1394129"
+        },
+        "after": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1030, printed p. 220, artifact PDF p. 301",
+            "coverage_relationship": "exact-target",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 276, original PDF 390, right column, complete offering of the host before the following action rubric; checked word by word against the complete 1962 target at n. 1030, printed 220/PDF 301 on actual 200 and 400 dpi page images. The selected Cummiskey Latin omits et before offensionibus; Mame prints it. Mame negligentiis and target neglegentiis are received spelling variants. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "target_wording": "word-exact",
+            "text": "Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam, quam ego indignus famulus tuus offero tibi Deo meo vivo, et vero, pro innumerabilibus peccatis, et offensionibus, et negligentiis meis, et pro omnibus circumstantibus, sed et pro omnibus fidelibus christianis vivis atque defunctis: ut mihi et illis proficiat ad salutem in vitam aeternam. Amen.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": null,
+                "speaker": "priest",
+                "text": "Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam, quam ego indignus famulus tuus offero tibi Deo meo vivo, et vero, pro innumerabilibus peccatis, et offensionibus, et negligentiis meis, et pro omnibus circumstantibus, sed et pro omnibus fidelibus christianis vivis atque defunctis: ut mihi et illis proficiat ad salutem in vitam aeternam. Amen."
+              }
+            ]
+          },
+          "text_sha256": "1e69367abaffaaf79bb3cb2c8062eb15d442b48ecbd98ab6572b54727bf32a77",
+          "translation_json_sha256": "da5b785abe93f37a1b227446b556b36436f269c0868820ca0477bd8bf6793d50",
+          "owner_declaration": {
+            "element": "suscipe-sancte-pater",
+            "replaces": {
+              "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20",
+              "text_sha256": "cfc55f48c3b1655e74ff748775b32a2bad18f4a72dc7009018ea612f993f94c8"
+            },
+            "latin_turns": [
+              {
+                "key": "priest-1",
+                "seq": [
+                  4
+                ],
+                "speaker": "priest"
+              }
+            ],
+            "turns_basis": "Mame 1922 printed 276, original PDF 390, right column, complete offering of the host before the following action rubric; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-suscipe-sancte-pater. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied.",
+            "latin": {
+              "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+              "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+              "element": "suscipe-sancte-pater",
+              "column": "latin",
+              "relation": "antecedent",
+              "collation": "collated",
+              "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1030, printed p. 220, artifact PDF p. 301",
+              "target_wording": "word-exact",
+              "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 276, original PDF 390, right column, complete offering of the host before the following action rubric; checked word by word against the complete 1962 target at n. 1030, printed 220/PDF 301 on actual 200 and 400 dpi page images. The selected Cummiskey Latin omits et before offensionibus; Mame prints it. Mame negligentiis and target neglegentiis are received spelling variants. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+            }
+          },
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+          "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-suscipe-sancte-pater",
+          "text_passage": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-suscipe-sancte-pater.toml",
+          "text_passage_sha256": "133fdc29a381af75cef1020da3e4b0d121f67991c1141ada6f9f33ef51c9e4d8"
+        },
+        "target": {
+          "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium",
+          "passage_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-offertorium.toml",
+          "passage_sha256": "d671bb9f9a06f0e80f56544cff30ad555e122a9d0b33c06d72d3ce1bbccfb8a5",
+          "locator": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1030, printed p. 220, artifact PDF p. 301",
+          "whole_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+        },
+        "historical_source": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "whole_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_pages": [
+            390
+          ],
+          "printed_pages": "276",
+          "extent": "right column, complete offering of the host before the following action rubric"
+        },
+        "images": [
+          {
+            "witness": "mame",
+            "page": 390,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap390-200.png",
+            "sha256": "1523924ad0bc977014992feb235642457e2b2a7366f78dbd89c073f9d2e71f08"
+          },
+          {
+            "witness": "mame",
+            "page": 390,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap390-400.png",
+            "sha256": "0306da9052e79cb85ee6298f38cdd6a02e7482aa8df1d2175fd40ae814901db6"
+          },
+          {
+            "witness": "cmaa",
+            "page": 301,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap301-200.png",
+            "sha256": "4d55b831c99f75d66d90087bbf1d243efbb3495654e8a74d03e3bc513aaea778"
+          },
+          {
+            "witness": "cmaa",
+            "page": 301,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap301-400.png",
+            "sha256": "4480b22be9768594167cb51d6a2aeeefcd190e701ce825fb2e38ed56507b605c"
+          }
+        ],
+        "english_unchanged": true,
+        "element_frame_unchanged": true,
+        "old_source_bytes_unchanged": true,
+        "owner_before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "owner_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "authority": "Requires Root explicit admission and separate existing-positive source_epoch exception. Not part of the earlier nine or five-addition package; no authority is activated by this declaration."
+      },
+      {
+        "declaration": "existing-positive-latin-selection-replacement",
+        "status": "scratch-proposal-not-admitted",
+        "key": "oblatio/in-spiritu-humilitatis",
+        "target_id": "roman-1962:ordinary:oblatio%2Fin-spiritu-humilitatis",
+        "reason": "The selected Cummiskey Latin prints nodie; Mame prints hodie.",
+        "before": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1033, printed p. 221, artifact PDF p. 302",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 29, printed p. xxiv, IA leaf 34), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1033, printed p. 221, artifact PDF p. 302, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 19: 1861 misprint of one letter, recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "In spiritu humilitatis, et in animo contrito suscipiamur a te, Domine: et sic fiat sacrificium nostrum in conspectu tuo nodie, ut placeat tibi, Domine Deus."
+          },
+          "text_sha256": "03bde9df0f0c8d5c25f05b0c7001b59d7e954224eac4d0c576b85ff19589c31d",
+          "translation_json_sha256": "0ab3c94aa0a9e3e79573598cba59e35b8eb73020645ed5aa3e0fad58c9d8e918",
+          "owner_provenance": {
+            "element": "in-spiritu-humilitatis",
+            "lang": "la",
+            "relation": "antecedent",
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1033, printed p. 221, artifact PDF p. 302",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 29, printed p. xxiv, IA leaf 34), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1033, printed p. 221, artifact PDF p. 302, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 19: 1861 misprint of one letter, recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees."
+          },
+          "owner_provenance_literal": "[[sections.element_provenance]]\nelement = \"in-spiritu-humilitatis\"\nlang = \"la\"\nrelation = \"antecedent\"\ncollation = \"collated\"\ncollation_finding = \"passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1033, printed p. 221, artifact PDF p. 302\"\nnote = \"ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 29, printed p. xxiv, IA leaf 34), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1033, printed p. 221, artifact PDF p. 302, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 19: 1861 misprint of one letter, recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees.\"\n\n",
+          "owner_provenance_literal_sha256": "1ad69810ae41bfd4a32956643ec5626ab1e670a92ef5e436cc6d8cedc90af497",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20",
+          "artifact_manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la-turn-divided-complete-2026-10-20/artifact.toml",
+          "artifact_manifest_sha256": "75a1d563ec72925ef6ce668cb30e3eabe0acfbfa90b046eb77431843c5b38a5f",
+          "payload_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la-turn-divided-complete-2026-10-20/ordinarium-oblatio-la-turn-divided-complete-2026-10-20.tsv",
+          "payload_sha256": "ef9879f79f3a33ffc85f278c39418ad7e72fd2a7ba712905743eadd8f1394129"
+        },
+        "after": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1033, printed p. 221, artifact PDF p. 302",
+            "coverage_relationship": "exact-target",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 277, original PDF 391, left column, complete prayer after the chalice offering; checked word by word against the complete 1962 target at n. 1033, printed 221/PDF 302 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints nodie; Mame prints hodie. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "target_wording": "word-exact",
+            "text": "In spiritu humilitatis, et in animo contrito suscipiamur a te, Domine: et sic fiat sacrificium nostrum in conspectu tuo hodie, ut placeat tibi, Domine Deus.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": null,
+                "speaker": "priest",
+                "text": "In spiritu humilitatis, et in animo contrito suscipiamur a te, Domine: et sic fiat sacrificium nostrum in conspectu tuo hodie, ut placeat tibi, Domine Deus."
+              }
+            ]
+          },
+          "text_sha256": "caddeca3485b5d9ec6bdd24ead55031c8324e078aebdb590e4d47d5ed0478c89",
+          "translation_json_sha256": "d6f7d306d331659fa536a56d45a6ee8e4bcf8ed509be169ef69a167374fd1d50",
+          "owner_declaration": {
+            "element": "in-spiritu-humilitatis",
+            "replaces": {
+              "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20",
+              "text_sha256": "03bde9df0f0c8d5c25f05b0c7001b59d7e954224eac4d0c576b85ff19589c31d"
+            },
+            "latin_turns": [
+              {
+                "key": "priest-1",
+                "seq": [
+                  5
+                ],
+                "speaker": "priest"
+              }
+            ],
+            "turns_basis": "Mame 1922 printed 277, original PDF 391, left column, complete prayer after the chalice offering; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-in-spiritu-humilitatis. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied.",
+            "latin": {
+              "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+              "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+              "element": "in-spiritu-humilitatis",
+              "column": "latin",
+              "relation": "antecedent",
+              "collation": "collated",
+              "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1033, printed p. 221, artifact PDF p. 302",
+              "target_wording": "word-exact",
+              "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 277, original PDF 391, left column, complete prayer after the chalice offering; checked word by word against the complete 1962 target at n. 1033, printed 221/PDF 302 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints nodie; Mame prints hodie. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+            }
+          },
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+          "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-in-spiritu-humilitatis",
+          "text_passage": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-in-spiritu-humilitatis.toml",
+          "text_passage_sha256": "cbdd8ad736f2415600495b231f1d8ea6f1994c558b6d4f02045e2de2d92f0ee3"
+        },
+        "target": {
+          "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium",
+          "passage_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-offertorium.toml",
+          "passage_sha256": "d671bb9f9a06f0e80f56544cff30ad555e122a9d0b33c06d72d3ce1bbccfb8a5",
+          "locator": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1033, printed p. 221, artifact PDF p. 302",
+          "whole_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+        },
+        "historical_source": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "whole_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_pages": [
+            391
+          ],
+          "printed_pages": "277",
+          "extent": "left column, complete prayer after the chalice offering"
+        },
+        "images": [
+          {
+            "witness": "mame",
+            "page": 391,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap391-200.png",
+            "sha256": "1550edf30574572331cbd39258f4cb3a6b72cdac7c91d080cdac81ee9882f0dd"
+          },
+          {
+            "witness": "mame",
+            "page": 391,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap391-400.png",
+            "sha256": "1245e5c440c37e46c0bafd7f497657ef4fddbcf30be64e6f4de5c03588bd3d71"
+          },
+          {
+            "witness": "cmaa",
+            "page": 302,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap302-200.png",
+            "sha256": "7a24e39aa99ef2e4878092c2a6c918d44580941626fd5ddb7697eb69e2e7fcd1"
+          },
+          {
+            "witness": "cmaa",
+            "page": 302,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap302-400.png",
+            "sha256": "c3a8005e950e81a79d5675f9c6a70e36a370eb8e3223760ded2ef5e90c751093"
+          }
+        ],
+        "english_unchanged": true,
+        "element_frame_unchanged": true,
+        "old_source_bytes_unchanged": true,
+        "owner_before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "owner_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "authority": "Requires Root explicit admission and separate existing-positive source_epoch exception. Not part of the earlier nine or five-addition package; no authority is activated by this declaration."
+      },
+      {
+        "declaration": "existing-positive-latin-selection-replacement",
+        "status": "scratch-proposal-not-admitted",
+        "key": "oblatio/ne-perdas-cum-impiis",
+        "target_id": "roman-1962:ordinary:oblatio%2Fne-perdas-cum-impiis",
+        "reason": "The selected Cummiskey Latin omits Deus; Mame prints it. The verse ends with the source colon and is not expanded to the whole Psalm.",
+        "before": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 44, printed p. xxv-xxvi, IA leaf 35-36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 4: 1962 adds a vocative after the first clause that the 1861 lacks (one added word); 1861 checked on its image, pdf p. 36. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "Ne perdas cum impiis animam meam; et cum viris sanguinum vitam meam."
+          },
+          "text_sha256": "da8cc775f09237dccfa3128f19c966ab8bebcedc5b4e0b77232eedeb68356add",
+          "translation_json_sha256": "0f12825c293f60c80e4762639ad0be778582d308863c952d945b8ca137eb5e13",
+          "owner_provenance": {
+            "element": "ne-perdas-cum-impiis",
+            "lang": "la",
+            "relation": "antecedent",
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 44, printed p. xxv-xxvi, IA leaf 35-36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 4: 1962 adds a vocative after the first clause that the 1861 lacks (one added word); 1861 checked on its image, pdf p. 36. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing."
+          },
+          "owner_provenance_literal": "[[sections.element_provenance]]\nelement = \"ne-perdas-cum-impiis\"\nlang = \"la\"\nrelation = \"antecedent\"\ncollation = \"collated\"\ncollation_finding = \"passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302\"\nnote = \"ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-oblatio-la seq 44, printed p. xxv-xxvi, IA leaf 35-36), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1039, printed p. 221, artifact PDF p. 302, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: insert at 1861 token 4: 1962 adds a vocative after the first clause that the 1861 lacks (one added word); 1861 checked on its image, pdf p. 36. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing.\"\n\n",
+          "owner_provenance_literal_sha256": "a980912b492e50ee102d21db9edcd53b5900fbf12afc94daf1f52e3c6837a739",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20",
+          "artifact_manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la-turn-divided-complete-2026-10-20/artifact.toml",
+          "artifact_manifest_sha256": "75a1d563ec72925ef6ce668cb30e3eabe0acfbfa90b046eb77431843c5b38a5f",
+          "payload_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-oblatio-la-turn-divided-complete-2026-10-20/ordinarium-oblatio-la-turn-divided-complete-2026-10-20.tsv",
+          "payload_sha256": "ef9879f79f3a33ffc85f278c39418ad7e72fd2a7ba712905743eadd8f1394129"
+        },
+        "after": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302",
+            "coverage_relationship": "exact-target",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 278, original PDF 392, left column, complete Ne perdas Psalm verse, before In quorum manibus; checked word by word against the complete 1962 target at n. 1039, printed 221/PDF 302 on actual 200 and 400 dpi page images. The selected Cummiskey Latin omits Deus; Mame prints it. The verse ends with the source colon and is not expanded to the whole Psalm. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "target_wording": "word-exact",
+            "text": "Ne perdas cum impiis, Deus, animam meam, et cum viris sanguinum vitam meam:",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": null,
+                "speaker": "priest",
+                "text": "Ne perdas cum impiis, Deus, animam meam, et cum viris sanguinum vitam meam:"
+              }
+            ]
+          },
+          "text_sha256": "fc1e62afd8959a0634ac20e4776ae9081493b698e5484b2bc1259feddff763ec",
+          "translation_json_sha256": "237daed34afdfa279ae76526d924424b14aea7db642d915da46a6e28effb1527",
+          "owner_declaration": {
+            "element": "ne-perdas-cum-impiis",
+            "replaces": {
+              "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la-turn-divided-complete-2026-10-20",
+              "text_sha256": "da8cc775f09237dccfa3128f19c966ab8bebcedc5b4e0b77232eedeb68356add"
+            },
+            "latin_turns": [
+              {
+                "key": "priest-1",
+                "seq": [
+                  6
+                ],
+                "speaker": "priest"
+              }
+            ],
+            "turns_basis": "Mame 1922 printed 278, original PDF 392, left column, complete Ne perdas Psalm verse, before In quorum manibus; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-ne-perdas-cum-impiis. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied. The source actor is expressly Sacerdos at the Lavabo introduction on PDF 391; PDF 392 continues that same Psalm across the page break.",
+            "latin": {
+              "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+              "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+              "element": "ne-perdas-cum-impiis",
+              "column": "latin",
+              "relation": "antecedent",
+              "collation": "collated",
+              "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302",
+              "target_wording": "word-exact",
+              "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 278, original PDF 392, left column, complete Ne perdas Psalm verse, before In quorum manibus; checked word by word against the complete 1962 target at n. 1039, printed 221/PDF 302 on actual 200 and 400 dpi page images. The selected Cummiskey Latin omits Deus; Mame prints it. The verse ends with the source colon and is not expanded to the whole Psalm. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+            }
+          },
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+          "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-ne-perdas-cum-impiis",
+          "text_passage": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-ne-perdas-cum-impiis.toml",
+          "text_passage_sha256": "d491cded90c57b1ee285fc319d76a3c41231875143fa17d94062eba4bb48326a"
+        },
+        "target": {
+          "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium",
+          "passage_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-offertorium.toml",
+          "passage_sha256": "d671bb9f9a06f0e80f56544cff30ad555e122a9d0b33c06d72d3ce1bbccfb8a5",
+          "locator": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; n. 1039, printed p. 221, artifact PDF p. 302",
+          "whole_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+        },
+        "historical_source": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "whole_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_pages": [
+            392
+          ],
+          "printed_pages": "278",
+          "extent": "left column, complete Ne perdas Psalm verse, before In quorum manibus"
+        },
+        "images": [
+          {
+            "witness": "mame",
+            "page": 391,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap391-200.png",
+            "sha256": "1550edf30574572331cbd39258f4cb3a6b72cdac7c91d080cdac81ee9882f0dd"
+          },
+          {
+            "witness": "mame",
+            "page": 391,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap391-400.png",
+            "sha256": "1245e5c440c37e46c0bafd7f497657ef4fddbcf30be64e6f4de5c03588bd3d71"
+          },
+          {
+            "witness": "mame",
+            "page": 392,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap392-200.png",
+            "sha256": "c99d82d8db9549c75e2d3abf1f6581d05e56cc6063962e92fd15c39067987428"
+          },
+          {
+            "witness": "mame",
+            "page": 392,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap392-400.png",
+            "sha256": "6f9c9fa164c19b9a3fdefe77949b1077828800ea0a41bb2428c7e575c9c6946b"
+          },
+          {
+            "witness": "cmaa",
+            "page": 302,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap302-200.png",
+            "sha256": "7a24e39aa99ef2e4878092c2a6c918d44580941626fd5ddb7697eb69e2e7fcd1"
+          },
+          {
+            "witness": "cmaa",
+            "page": 302,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap302-400.png",
+            "sha256": "c3a8005e950e81a79d5675f9c6a70e36a370eb8e3223760ded2ef5e90c751093"
+          }
+        ],
+        "english_unchanged": true,
+        "element_frame_unchanged": true,
+        "old_source_bytes_unchanged": true,
+        "owner_before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "owner_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "authority": "Requires Root explicit admission and separate existing-positive source_epoch exception. Not part of the earlier nine or five-addition package; no authority is activated by this declaration."
+      },
+      {
+        "declaration": "existing-positive-latin-selection-replacement",
+        "status": "scratch-proposal-not-admitted",
+        "key": "canon/supplices",
+        "target_id": "roman-1962:ordinary:canon%2Fsupplices",
+        "reason": "The selected Cummiskey Latin prints praeferri; Mame prints perferri. Mame eumdem and target eundem are received spelling variants.",
+        "before": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1108, printed p. 309, artifact PDF p. 390",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 21, printed p. xxxvii-xxxviii, IA leaf 47-48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1108, printed p. 309, artifact PDF p. 390, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 7: different verb: 1861 prefix prae- where the 1962 prints per- (a different word, not a spelling); 1861 checked on its image, pdf p. 48. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "Supplices te rogamus, omnipotens Deus, jube hæc præferri per manus sancti angeli tui in sublime altare tuum, in conspectu divinæ Majestatis tuæ, ut quotquot ex hac altaris participatione, sacro-sanctum Filii tui corpus et sanguinem sumpserimus, omni benedictione cælesti et gratia repleamur. Per eumdem Christum Dominum nostrum. Amen."
+          },
+          "text_sha256": "0e3f5d99b19d5dd67a58eb6533031d9b5cbc29b7400441a1aae7328dd2f7d62d",
+          "translation_json_sha256": "aac79d90c5ae509c011a5aa614dd962e1c106d0758aee62020043094894b4194",
+          "owner_provenance": {
+            "element": "supplices",
+            "lang": "la",
+            "relation": "antecedent",
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1108, printed p. 309, artifact PDF p. 390",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 21, printed p. xxxvii-xxxviii, IA leaf 47-48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1108, printed p. 309, artifact PDF p. 390, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 7: different verb: 1861 prefix prae- where the 1962 prints per- (a different word, not a spelling); 1861 checked on its image, pdf p. 48. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing."
+          },
+          "owner_provenance_literal": "[[sections.element_provenance]]\nelement = \"supplices\"\nlang = \"la\"\nrelation = \"antecedent\"\ncollation = \"collated\"\ncollation_finding = \"passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1108, printed p. 309, artifact PDF p. 390\"\nnote = \"ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 21, printed p. xxxvii-xxxviii, IA leaf 47-48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1108, printed p. 309, artifact PDF p. 390, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 7: different verb: 1861 prefix prae- where the 1962 prints per- (a different word, not a spelling); 1861 checked on its image, pdf p. 48. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing.\"\n\n",
+          "owner_provenance_literal_sha256": "5dcc549a52dd50129ad7234e65c40494c9f3ce40d54a57431e9788648b81dbd5",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
+          "artifact_manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la-turn-divided-2026-10-20/artifact.toml",
+          "artifact_manifest_sha256": "d7b5d82b65fcf5cb8344afa5f3fb07124291ddc2211f7b1b37492c0ff1a539f1",
+          "payload_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la-turn-divided-2026-10-20/canon-missae-la-turn-divided-2026-10-20.tsv",
+          "payload_sha256": "6336518bed4b036f7845671dacb99ad0224b4e765c8339670f9f25e84dd196fd"
+        },
+        "after": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1108, printed p. 309, artifact PDF p. 390",
+            "coverage_relationship": "exact-target",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 343–344, original PDF 457,458, lower right on 343 through upper left on 344, complete Supplices with conclusion; checked word by word against the complete 1962 target at n. 1108, printed 309/PDF 390 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints praeferri; Mame prints perferri. Mame eumdem and target eundem are received spelling variants. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "target_wording": "word-exact",
+            "text": "Supplices te rogamus, omnipotens Deus: jube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae majestatis tuae: ut quotquot, ex hac altaris participatione sacrosanctum Filii tui, Cor✠pus, et San✠guinem sumpserimus, omni benedictione caelesti et gratia repleamur. Per eumdem Christum Dominum nostrum. Amen.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": null,
+                "speaker": "priest",
+                "text": "Supplices te rogamus, omnipotens Deus: jube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae majestatis tuae: ut quotquot, ex hac altaris participatione sacrosanctum Filii tui, Cor✠pus, et San✠guinem sumpserimus, omni benedictione caelesti et gratia repleamur. Per eumdem Christum Dominum nostrum. Amen."
+              }
+            ]
+          },
+          "text_sha256": "1ffb91d9ba3431dec455d1dc419af260ed709bee94398c2cb3bd02c0e65f06b5",
+          "translation_json_sha256": "cfde5fd35c98e0304bdf62f455e3c26e8ff6a1ab159910b6e7aa3679fe220d4c",
+          "owner_declaration": {
+            "element": "supplices",
+            "replaces": {
+              "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
+              "text_sha256": "0e3f5d99b19d5dd67a58eb6533031d9b5cbc29b7400441a1aae7328dd2f7d62d"
+            },
+            "latin_turns": [
+              {
+                "key": "priest-1",
+                "seq": [
+                  7
+                ],
+                "speaker": "priest"
+              }
+            ],
+            "turns_basis": "Mame 1922 printed 343–344, original PDF 457,458, lower right on 343 through upper left on 344, complete Supplices with conclusion; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-supplices. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied.",
+            "latin": {
+              "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+              "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+              "element": "supplices",
+              "column": "latin",
+              "relation": "antecedent",
+              "collation": "collated",
+              "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1108, printed p. 309, artifact PDF p. 390",
+              "target_wording": "word-exact",
+              "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 343–344, original PDF 457,458, lower right on 343 through upper left on 344, complete Supplices with conclusion; checked word by word against the complete 1962 target at n. 1108, printed 309/PDF 390 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints praeferri; Mame prints perferri. Mame eumdem and target eundem are received spelling variants. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+            }
+          },
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+          "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-supplices",
+          "text_passage": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-supplices.toml",
+          "text_passage_sha256": "fe23c64afdb7507210a7f8f2f35c8a8c2716548f4ebd5e6b8f72ecf686196532"
+        },
+        "target": {
+          "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis",
+          "passage_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/canon-anamnesis.toml",
+          "passage_sha256": "ce3ffbd65ba42ffde91efde8b052e919f19d359c76fad50cc6d55e788b2421cd",
+          "locator": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1108, printed p. 309, artifact PDF p. 390",
+          "whole_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+        },
+        "historical_source": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "whole_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_pages": [
+            457,
+            458
+          ],
+          "printed_pages": "343–344",
+          "extent": "lower right on 343 through upper left on 344, complete Supplices with conclusion"
+        },
+        "images": [
+          {
+            "witness": "mame",
+            "page": 457,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap457-200.png",
+            "sha256": "91950a02c09099c223e1596ec26c97cef95b76de28c656fa9b35168ff0e4e16b"
+          },
+          {
+            "witness": "mame",
+            "page": 457,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap457-400.png",
+            "sha256": "d51dc09c653e18dc2f2442b1e46e7b6ebfa39f52bb0442cf949f411b1d911f22"
+          },
+          {
+            "witness": "mame",
+            "page": 458,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap458-200.png",
+            "sha256": "5e74cdfbd177440fca6bde664efa4d0717cc69b5f7de3912adff4d098b1a538c"
+          },
+          {
+            "witness": "mame",
+            "page": 458,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap458-400.png",
+            "sha256": "4084f29afafb557aef45e77e64bc207d43cdd2cfcc12ee4ffcbb4393a91c6c43"
+          },
+          {
+            "witness": "cmaa",
+            "page": 390,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap390-200.png",
+            "sha256": "5d5e4c3a00573478bedf7622d68992354bf0f07412ee832323e9974d39004406"
+          },
+          {
+            "witness": "cmaa",
+            "page": 390,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap390-400.png",
+            "sha256": "9d2140a32603258375ee060a733164aa6f58a46daf75166de4875894a643aad9"
+          }
+        ],
+        "english_unchanged": true,
+        "element_frame_unchanged": true,
+        "old_source_bytes_unchanged": true,
+        "owner_before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "owner_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "authority": "Requires Root explicit admission and separate existing-positive source_epoch exception. Not part of the earlier nine or five-addition package; no authority is activated by this declaration."
+      },
+      {
+        "declaration": "existing-positive-latin-selection-replacement",
+        "status": "scratch-proposal-not-admitted",
+        "key": "canon/per-quem",
+        "target_id": "roman-1962:ordinary:canon%2Fper-quem",
+        "reason": "The selected Cummiskey Latin prints ereas; Mame prints creas.",
+        "before": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1111, printed p. 311, artifact PDF p. 392",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 28, printed p. xxxviii, IA leaf 48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1111, printed p. 311, artifact PDF p. 392, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 7: 1861 misprint of the first letter, recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "Per quem hæc omnia, Domine, semper bona ereas, sanctificas, vivificas, benedicis, et præstas nobis."
+          },
+          "text_sha256": "1a403af5c21b14feebf20d90999f6b9e058118e41ef86fb7e4e6f307533d3f4d",
+          "translation_json_sha256": "c178870d7bb8c8e19c4daa46bd26ce11b272ae492355ed2ec217d138312b8e2f",
+          "owner_provenance": {
+            "element": "per-quem",
+            "lang": "la",
+            "relation": "antecedent",
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1111, printed p. 311, artifact PDF p. 392",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 28, printed p. xxxviii, IA leaf 48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1111, printed p. 311, artifact PDF p. 392, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 7: 1861 misprint of the first letter, recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees."
+          },
+          "owner_provenance_literal": "[[sections.element_provenance]]\nelement = \"per-quem\"\nlang = \"la\"\nrelation = \"antecedent\"\ncollation = \"collated\"\ncollation_finding = \"passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1111, printed p. 311, artifact PDF p. 392\"\nnote = \"ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (canon-missae-la seq 28, printed p. xxxviii, IA leaf 48), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1111, printed p. 311, artifact PDF p. 392, read on the page image. Under the 2026-09-03 words rule it is a variant, so this antecedent is not the 1962 wording: replace at 1861 token 7: 1861 misprint of the first letter, recorded in the artifact's row note; misprint only. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Every word otherwise agrees.\"\n\n",
+          "owner_provenance_literal_sha256": "2be052cdb89a396a8a97715fdaaa2b863ce3fc78406c794be0c8ac1681913203",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
+          "artifact_manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la-turn-divided-2026-10-20/artifact.toml",
+          "artifact_manifest_sha256": "d7b5d82b65fcf5cb8344afa5f3fb07124291ddc2211f7b1b37492c0ff1a539f1",
+          "payload_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/canon-missae-la-turn-divided-2026-10-20/canon-missae-la-turn-divided-2026-10-20.tsv",
+          "payload_sha256": "6336518bed4b036f7845671dacb99ad0224b4e765c8339670f9f25e84dd196fd"
+        },
+        "after": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1111, printed p. 311, artifact PDF p. 392",
+            "coverage_relationship": "exact-target",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 345, original PDF 459, upper left, complete Per quem before the Discooperit rubric; checked word by word against the complete 1962 target at n. 1111, printed 311/PDF 392 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints ereas; Mame prints creas. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "target_wording": "word-exact",
+            "text": "Per quem haec omnia, Domine, semper bona creas, sancti✠ficas, vivi✠ficas, bene✠dicis, et praestas nobis.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": null,
+                "speaker": "priest",
+                "text": "Per quem haec omnia, Domine, semper bona creas, sancti✠ficas, vivi✠ficas, bene✠dicis, et praestas nobis."
+              }
+            ]
+          },
+          "text_sha256": "48bce51c0effd6e1c18ad95efae8bf5d62bba84dbec687c4950443ce9ccc0478",
+          "translation_json_sha256": "89a3d9d6bbc2faf71ed2c44ab137d4bfe212907c1e2fac4796197e1b59eb114d",
+          "owner_declaration": {
+            "element": "per-quem",
+            "replaces": {
+              "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.canon-missae-la-turn-divided-2026-10-20",
+              "text_sha256": "1a403af5c21b14feebf20d90999f6b9e058118e41ef86fb7e4e6f307533d3f4d"
+            },
+            "latin_turns": [
+              {
+                "key": "priest-1",
+                "seq": [
+                  8
+                ],
+                "speaker": "priest"
+              }
+            ],
+            "turns_basis": "Mame 1922 printed 345, original PDF 459, upper left, complete Per quem before the Discooperit rubric; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-per-quem. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied.",
+            "latin": {
+              "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+              "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+              "element": "per-quem",
+              "column": "latin",
+              "relation": "antecedent",
+              "collation": "collated",
+              "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1111, printed p. 311, artifact PDF p. 392",
+              "target_wording": "word-exact",
+              "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 345, original PDF 459, upper left, complete Per quem before the Discooperit rubric; checked word by word against the complete 1962 target at n. 1111, printed 311/PDF 392 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints ereas; Mame prints creas. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+            }
+          },
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+          "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-per-quem",
+          "text_passage": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-per-quem.toml",
+          "text_passage_sha256": "4991ba0d81a88b3be608632070c962557214b6857b54aede5ddf1ed8587cc5ca"
+        },
+        "target": {
+          "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis",
+          "passage_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/canon-anamnesis.toml",
+          "passage_sha256": "ce3ffbd65ba42ffde91efde8b052e919f19d359c76fad50cc6d55e788b2421cd",
+          "locator": "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; n. 1111, printed p. 311, artifact PDF p. 392",
+          "whole_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+        },
+        "historical_source": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "whole_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_pages": [
+            459
+          ],
+          "printed_pages": "345",
+          "extent": "upper left, complete Per quem before the Discooperit rubric"
+        },
+        "images": [
+          {
+            "witness": "mame",
+            "page": 459,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap459-200.png",
+            "sha256": "4fa1eafd16acd8c1556ae61a7844a9a54158d84c45396cbf4d46e05b4c351532"
+          },
+          {
+            "witness": "mame",
+            "page": 459,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap459-400.png",
+            "sha256": "e59e971eab1cd93f98f56cf264608519520856665672aff8af60ed3f18f43f3b"
+          },
+          {
+            "witness": "cmaa",
+            "page": 392,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap392-200.png",
+            "sha256": "ca9e097cfa65b3b9444ea8f629f5ef32946f4c94be8fadd1f84e28397052ae32"
+          },
+          {
+            "witness": "cmaa",
+            "page": 392,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap392-400.png",
+            "sha256": "47074795ef9f0c90555824f3d295f55a9b3ee488a95300e8686bdda94a7afe79"
+          }
+        ],
+        "english_unchanged": true,
+        "element_frame_unchanged": true,
+        "old_source_bytes_unchanged": true,
+        "owner_before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "owner_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "authority": "Requires Root explicit admission and separate existing-positive source_epoch exception. Not part of the earlier nine or five-addition package; no authority is activated by this declaration."
+      },
+      {
+        "declaration": "existing-positive-latin-selection-replacement",
+        "status": "scratch-proposal-not-admitted",
+        "key": "communio/agnus-dei",
+        "target_id": "roman-1962:ordinary:communio%2Fagnus-dei",
+        "reason": "The selected Cummiskey Latin abbreviates the repeated invocations with reference marks; Mame prints all three in full.",
+        "before": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1120, printed p. 318, artifact PDF p. 399",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 9, printed p. xl, IA leaf 50), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1120, printed p. 318, artifact PDF p. 399, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 6-12: 1861 prints the invocation once and marks the two repetitions by asterisks; the 1962 prints all three invocations in full. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "Agnus Dei, qui tollis peccata mundi, * miserere nobis, * miserere nobis, * dona nobis pacem."
+          },
+          "text_sha256": "4df9f753403912726ac9793cb722bd9721e379ec1081ddd207f3e522c0703a27",
+          "translation_json_sha256": "38f219c82eac370710b920f67714c5cf4c1c6fc80772285a4a714718688bf3b7",
+          "owner_provenance": {
+            "element": "agnus-dei",
+            "lang": "la",
+            "relation": "antecedent",
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1120, printed p. 318, artifact PDF p. 399",
+            "note": "ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 9, printed p. xl, IA leaf 50), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1120, printed p. 318, artifact PDF p. 399, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 6-12: 1861 prints the invocation once and marks the two repetitions by asterisks; the 1962 prints all three invocations in full. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body."
+          },
+          "owner_provenance_literal": "[[sections.element_provenance]]\nelement = \"agnus-dei\"\nlang = \"la\"\nrelation = \"antecedent\"\ncollation = \"collated\"\ncollation_finding = \"passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1120, printed p. 318, artifact PDF p. 399\"\nnote = \"ANTECEDENT WORDING, COLLATED, NOT WORD-EXACT (C2 gap G19). The 1861 Cummiskey facing Latin (ordinarium-communio-la seq 9, printed p. xl, IA leaf 50), collated word by word on 2026-10-19 with the 1962 typical edition, n. 1120, printed p. 318, artifact PDF p. 399, read on the page image. Under the 2026-09-03 words rule it is an abbreviated body, so this antecedent is not the 1962 wording: abbreviation at 1861 token 6-12: 1861 prints the invocation once and marks the two repetitions by asterisks; the 1962 prints all three invocations in full. Otherwise the differences are transformations only: j, ae/oe ligatures, accents, capitals, pointing. Abbreviated body.\"\n\n",
+          "owner_provenance_literal_sha256": "24180cddb9fd209ec9df47522988cf4e1d7fd21128b4426580199105f19b4fa2",
+          "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided-complete-2026-10-20",
+          "artifact_manifest": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la-turn-divided-complete-2026-10-20/artifact.toml",
+          "artifact_manifest_sha256": "ee222379c6c353472becb297226fe74b73dbb3a2932bda38628e392632668f3e",
+          "payload_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ordinarium-communio-la-turn-divided-complete-2026-10-20/ordinarium-communio-la-turn-divided-complete-2026-10-20.tsv",
+          "payload_sha256": "374ea015fdb79580f382c30d264865e0e2fc01248d9d828f3bbf7481baf6df3b"
+        },
+        "after": {
+          "translation": {
+            "collation": "collated",
+            "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1120, printed p. 318, artifact PDF p. 399",
+            "coverage_relationship": "exact-target",
+            "lang": "la",
+            "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 350, original PDF 464, upper left, all three complete invocations before the Requiem rubric; checked word by word against the complete 1962 target at n. 1120, printed 318/PDF 399 on actual 200 and 400 dpi page images. The selected Cummiskey Latin abbreviates the repeated invocations with reference marks; Mame prints all three in full. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+            "relation": "antecedent",
+            "rights": "public-domain",
+            "source_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+            "target_wording": "word-exact",
+            "text": "Agnus Dei, qui tollis peccata mundi: miserere nobis.\nAgnus Dei, qui tollis peccata mundi: miserere nobis.\nAgnus Dei, qui tollis peccata mundi: dona nobis pacem.",
+            "turns": [
+              {
+                "action": null,
+                "dialogue_role": null,
+                "key": "priest-1",
+                "printed_marker": null,
+                "speaker": "priest",
+                "text": "Agnus Dei, qui tollis peccata mundi: miserere nobis.\nAgnus Dei, qui tollis peccata mundi: miserere nobis.\nAgnus Dei, qui tollis peccata mundi: dona nobis pacem."
+              }
+            ]
+          },
+          "text_sha256": "74ff79d24a96e0a43f5d9385d3f8f7fa87cfb64a61da05acd827da18da0996b9",
+          "translation_json_sha256": "393c566393cce229c244664725fd47e4223e7fb18c6da27d5623421e1adeb747",
+          "owner_declaration": {
+            "element": "agnus-dei",
+            "replaces": {
+              "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+              "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-communio-la-turn-divided-complete-2026-10-20",
+              "text_sha256": "4df9f753403912726ac9793cb722bd9721e379ec1081ddd207f3e522c0703a27"
+            },
+            "latin_turns": [
+              {
+                "key": "priest-1",
+                "seq": [
+                  9,
+                  10,
+                  11
+                ],
+                "speaker": "priest"
+              }
+            ],
+            "turns_basis": "Mame 1922 printed 350, original PDF 464, upper left, all three complete invocations before the Requiem rubric; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-agnus-dei. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied. The priest action immediately preceding Agnus begins on PDF 463 and continues at the top of PDF 464 (breast striking and intelligibili voce dicit); all three invocations are fully printed as that one prayer turn.",
+            "latin": {
+              "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+              "artifact": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+              "element": "agnus-dei",
+              "column": "latin",
+              "relation": "antecedent",
+              "collation": "collated",
+              "collation_finding": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1120, printed p. 318, artifact PDF p. 399",
+              "target_wording": "word-exact",
+              "note": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 350, original PDF 464, upper left, all three complete invocations before the Requiem rubric; checked word by word against the complete 1962 target at n. 1120, printed 318/PDF 399 on actual 200 and 400 dpi page images. The selected Cummiskey Latin abbreviates the repeated invocations with reference marks; Mame prints all three in full. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+            }
+          },
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+          "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-agnus-dei",
+          "text_passage": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-agnus-dei.toml",
+          "text_passage_sha256": "e4dd83c6b8e95fd5282ed1225060932f9b28d578a46f035688cdee7649c291b5"
+        },
+        "target": {
+          "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio",
+          "passage_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ordo-missae-communio.toml",
+          "passage_sha256": "fe002c48bdf6973454746b21b3a00a068883eedd6ef9824d008e4766dde7edc9",
+          "locator": "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; n. 1120, printed p. 318, artifact PDF p. 399",
+          "whole_artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+        },
+        "historical_source": {
+          "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+          "whole_artifact_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+          "artifact_pages": [
+            464
+          ],
+          "printed_pages": "350",
+          "extent": "upper left, all three complete invocations before the Requiem rubric"
+        },
+        "images": [
+          {
+            "witness": "mame",
+            "page": 463,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap463-200.png",
+            "sha256": "857e635c2f6fcb02d6d5cf51156444b6cf179e0d3bd714a8b9b97aabb26ce939"
+          },
+          {
+            "witness": "mame",
+            "page": 463,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap463-400.png",
+            "sha256": "2d14dc863bc811886b403fdeaf4c69d9fccbc716189d1718fe4bafd9e5d60d4a"
+          },
+          {
+            "witness": "mame",
+            "page": 464,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap464-200.png",
+            "sha256": "d4b1eb4b82d5d53650d355ac7ad10dffd6997304fe9e8e9afec6a6e3a6c1db47"
+          },
+          {
+            "witness": "mame",
+            "page": 464,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap464-400.png",
+            "sha256": "c40174d22863a28208f9aa5d76ef236fc222e785910d250da78b098c8ad8e77d"
+          },
+          {
+            "witness": "cmaa",
+            "page": 399,
+            "dpi": 200,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap399-200.png",
+            "sha256": "af9792ac83897f9726e34088f98236fca6cb3820f46241d41621c148d63c73b0"
+          },
+          {
+            "witness": "cmaa",
+            "page": 399,
+            "dpi": 400,
+            "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap399-400.png",
+            "sha256": "5022563ea150e4c7d06e8a482ce395e22d7924ecc988881c15ff87ae211d458c"
+          }
+        ],
+        "english_unchanged": true,
+        "element_frame_unchanged": true,
+        "old_source_bytes_unchanged": true,
+        "owner_before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "owner_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "authority": "Requires Root explicit admission and separate existing-positive source_epoch exception. Not part of the earlier nine or five-addition package; no authority is activated by this declaration."
+      }
+    ],
+    "supersedes": {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/positive-transition-declarations.json",
+      "sha256": "1971f248de657b7101cdafc9809581330385feecbcbf4a6aa179868dfd86d4e1",
+      "reason": "Metadata-only Per quem following-rubric locator correction; all before/after prayer-body hashes and turn arrays remain unchanged."
+    }
+  }
+}

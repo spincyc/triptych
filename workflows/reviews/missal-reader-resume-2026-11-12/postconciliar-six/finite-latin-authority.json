@@ -1,0 +1,469 @@
+{
+  "schema": "triptych-postconciliar-finite-latin-authority/v1",
+  "method_id": "postconciliar-six-source-based-latin-20261112-v1",
+  "state": "adopted",
+  "adoption": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-six/root-code-adoption.json",
+    "sha256": "29d2bf9780e79448f91de0fe1b6098219468a6ade482513b01ad27cc7f9ced5b"
+  },
+  "scopes": [
+    {
+      "calendar": "postconciliar",
+      "key": [
+        "ot-11",
+        "",
+        "Prayer after Communion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "0a3149ee856378cfe4a83d31c9a6c9cc31561abe7a725930e7bdbefaa7868bd3",
+      "body_sha256": "cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736",
+      "source_id": "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+      "artifact_payload_sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "verification_source_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot11-haec-tua-whole-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "record_sha256": {
+        "work.triptych.ot11-haec-tua-latin-study-selection": "60c84d5cde910e7425b5fb8b5f9fbe93698a7ab9085c685c9b0cd396f5ed6c59",
+        "edition.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12": "aba3476a5012903cb7999ae339859e980fb8d910c11758d1722a5d119fbedcc8",
+        "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin": "d5bc1c657071685e791be29c03f66973a1079087d9cd18c80bac2a817352eaff",
+        "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin": "92c7dcac87c05690abff338516066d711f69d1d787ace9e042af070f4d23a5ba",
+        "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.modern-short-conclusions-20261112-89": "738124ef3de0496a72bce84f98510838a552593cd9dc9da2e6a7e2adefdee19d",
+        "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion": "02f2e4f2cc158faa4e7f2e0a20a3ca44252e8224ed56f9f30f4dd10ebbc84fc1",
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot11-haec-tua-whole-20261112": "9e5e25ab5748172357378c6250152da100da8e8e9b1ceea91b13814e6a12b35d",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8"
+      },
+      "public": {
+        "relationship": "source-based-latin-study-reconstruction",
+        "source_date": "1862 petition;1945 common conclusion",
+        "provenance_confidence": "medium",
+        "note": "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation.",
+        "notice": "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation."
+      },
+      "proof_files": {
+        "source_review": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-source-admission.json",
+          "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7"
+        },
+        "latin_merits": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/independent-latin-review.json",
+          "sha256": "aa6df50b3f73d436827aca5de026a73898cc6971de03056a982dca2556a1d0d2"
+        }
+      }
+    },
+    {
+      "calendar": "postconciliar",
+      "key": [
+        "ot-12",
+        "",
+        "Prayer after Communion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "ea1ad8276beb36ad71d1d809d9432f95ba94a524886506c42c2d561496c3c402",
+      "body_sha256": "876c5dbcf544df2efbeb0e77cf2486144830b243a57ed7713822a808bc5fb3a7",
+      "source_id": "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion",
+      "artifact_id": "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion",
+      "artifact_payload_sha256": "38f6b4e4d0cc47cd7dbafd071414f97576b3a41f6572d979fd4d5477fbae7c6c",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-12-postcommunion-secondary-comparison-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112": "0009f5323550e8eed6d6c08163a443d8d81b907747bf0930715f4bd531146e88",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112": "1a9188bbdf0fdcb87d939cb9809bfd70039b8377159012b90a93e5d3935df798",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0": "04b4a8bd8d62d7f636a6b9372323c6574f1b224dd16ac8519d3b2e7818674d8c",
+        "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion": "9cb135b6907af89240262fe59a5e4e280c99002dd2a3a742cdb9dbba3899f8a4",
+        "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion": "684fb9eb0507a268e625238c286fc3b36c0fba854e1e695b0142780a440fa4cb",
+        "artifact.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-12-postcommunion": "d207018ee73af35565edc760561001f2dcaf150a3c375e370cbdd61319df0ce5",
+        "artifact.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-8-postcommunion": "5efbc25935a5ecfdc6ffb7a2fcc7c19a7749305e0a49c635a39b595f8c3a014b",
+        "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002": "5824f7ed18fef3b3a76d1954dad313a9e002af287b181eed60a8b5e74b387e8b",
+        "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945": "3b36d666fd9269d21443fc4d7d07a0d859cc4f2d7f1864b227dc1b5ec46c61cd",
+        "edition.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12": "ff764d5d7dc580234b898963957f43faf42d7113248b5b96e1539a25f27005ca",
+        "edition.triptych.postconciliar-ot8-ot12-study-english.2026-11-12": "3cf462ab2c41e4248a7bcf075bc7a60d6387fd2f51dc2ba4dd2c56711284de86",
+        "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.modern-short-conclusions-20261112-89": "738124ef3de0496a72bce84f98510838a552593cd9dc9da2e6a7e2adefdee19d",
+        "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-12-postcommunion-secondary-comparison-20261112": "8b91d3a49e8b015e522aed9566dfe28d37efd9db9e26975ad82e17169858f2c8",
+        "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-8-postcommunion-secondary-comparison-20261112": "871a4d58f090893df9069a196fabc01f8d79e4edadd7103be33c08951d2f8da8",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112": "e3a364a5834252c941e425d7ad7e19b43a4fbba395bc2edf7265cf18f8460159",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112-image": "11cbdd38dd07d23e29f8caf42b7525ce5fb4f2b09e7b99991b5ce3047543eee0",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112": "160ae6c5832ff44be1b747b91780dead929924c00a5cff650fe3f3efc0baee65",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112-image": "09ea72bb136d94c5082a504c85f159c2b78c4137f259faa1bc0310d7c175ca5c",
+        "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion": "02f2e4f2cc158faa4e7f2e0a20a3ca44252e8224ed56f9f30f4dd10ebbc84fc1",
+        "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion": "f07f311f72b79b9eeea33c28b92a1b8931e3314f3e310841e5ebbacca7cc6767",
+        "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion": "48b50cbd86f3463f9d3fc56084a5bf94971aeb6dc123b01c90c1c37962504d25",
+        "passage.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-12-postcommunion": "2505edc6686e735fef20f854a0eaf7edc05e1015d86a2960a08bb3ab4ce75224",
+        "passage.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-8-postcommunion": "9e03eebfd0c14146ca32e0c693a39bef19879b3630ad877444af9922669c580b",
+        "segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61": "cb460ca6a27981c03a2ba8515225db91d183d93b537f49f8b6be7c6afa702b75",
+        "work.catholic-church.institutio-generalis-missalis-romani": "ed588b91dbd33b9204a8ea8d6efe85bc529f8d20bb5060090ff933f1b6c77d69",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly": "c75c469885fd0b90716ca843fc43bec85eb943dcf479fe12716f6f9d4aa88345",
+        "work.triptych.postconciliar-ot8-ot12-study-english": "4ff9c829491e7307a17f40358c14cbfe686d0ac26ec248bd9f6707b8a7186472"
+      },
+      "public": {
+        "relationship": "source-based-latin-study-reconstruction",
+        "source_date": "1896 old composition;1945 complete common formula;2026 declared study assembly",
+        "provenance_confidence": "high",
+        "note": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization.",
+        "notice": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
+      },
+      "proof_files": {
+        "source_review": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-source-admission.json",
+          "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7"
+        },
+        "latin_merits": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/independent-latin-review.json",
+          "sha256": "aa6df50b3f73d436827aca5de026a73898cc6971de03056a982dca2556a1d0d2"
+        }
+      }
+    },
+    {
+      "calendar": "postconciliar",
+      "key": [
+        "ot-12",
+        "",
+        "Prayer over the Offerings",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "9623d31af2588551e35710e9f2982bfd612f6eb54b54816bea7a4271c0d65637",
+      "body_sha256": "d2d0b7227e96809ac08bafe208fcb28b549cf1464e2daff3e09a5a12375f9054",
+      "source_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la",
+      "artifact_id": "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la",
+      "artifact_payload_sha256": "72b31ed2ed746e7491ef182e55dc5530f88e3e62fa1e45e79b37e31c63cb1ba9",
+      "verification_source_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3": "99cf50d7b8ebc5410e229374868a2367ad221602e09e4dbeff5fd9b9f91acd45",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112": "bf8a945661a1b7e3e0a5a648b94e3d17cfdffebb35abc9bf237d56dc388b7ed3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0": "04b4a8bd8d62d7f636a6b9372323c6574f1b224dd16ac8519d3b2e7818674d8c",
+        "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la": "4e084e9ba9b6e47240df2d7f48cc3020dc068ff594a29015b6ad86d102dfc06b",
+        "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002": "5824f7ed18fef3b3a76d1954dad313a9e002af287b181eed60a8b5e74b387e8b",
+        "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069",
+        "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894": "496d32217750750f5d5e11c9eae3b3d27a2add9cf541cdfb1d2e393ec34ae395",
+        "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945": "3b36d666fd9269d21443fc4d7d07a0d859cc4f2d7f1864b227dc1b5ec46c61cd",
+        "edition.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12": "407f1fe25f44dd0da5d76c8cff58077e0c7b6094bca8088ad06e499031322ebb",
+        "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.legacy-study-review-20261112-77": "12b7e37d4d22b017e7366958c59ceac94c66b30cf744b02b5fe718d302779f81",
+        "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112": "ef9205d58c25dffb1c0bfb21f1bee820244d4657aade635b882d00492e02e9dc",
+        "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion": "02f2e4f2cc158faa4e7f2e0a20a3ca44252e8224ed56f9f30f4dd10ebbc84fc1",
+        "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la": "e110ed52e919a263b195dc43c7f398416a7a3b189e81e1a6fa5dab44958285f9",
+        "segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61": "cb460ca6a27981c03a2ba8515225db91d183d93b537f49f8b6be7c6afa702b75",
+        "work.catholic-church.institutio-generalis-missalis-romani": "ed588b91dbd33b9204a8ea8d6efe85bc529f8d20bb5060090ff933f1b6c77d69",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-gelasianum-vetus": "e983ecd4a3d9889453d6eade30e16fde890746ff6168f9aec8bf758578f7d70b",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.ordinarytime-offerings-historical-adaptations": "0503bef06774aad80349917f84dabffbdcbbec359c5265764ca5a1eb15975d18"
+      },
+      "public": {
+        "relationship": "source-based-latin-study-reconstruction",
+        "source_date": "Old published whole prayer; Triptych finite adaptation proposal 2026-11-12",
+        "provenance_confidence": "medium",
+        "note": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use.",
+        "notice": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      },
+      "proof_files": {
+        "source_review": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-source-admission.json",
+          "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7"
+        },
+        "latin_merits": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/independent-latin-review.json",
+          "sha256": "aa6df50b3f73d436827aca5de026a73898cc6971de03056a982dca2556a1d0d2"
+        }
+      }
+    },
+    {
+      "calendar": "postconciliar",
+      "key": [
+        "ot-3",
+        "",
+        "Prayer over the Offerings",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "ad5ef8dd3520053738fa34b3f56f165faeceb210b019e912d30232352d5d08c9",
+      "body_sha256": "cb21f358f6fdabce9c2068955b0bec34f9447aa0d5cfb9f95ec307ef35d2c57c",
+      "source_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la",
+      "artifact_id": "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la",
+      "artifact_payload_sha256": "7f491ee46910aa495cb785d8e94be8999a0da6ab9df28a0416d18263a731cf71",
+      "verification_source_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112": "b5ac775b5dfc7fd860dd13f82dd178c6a2c2e9c01a1497e7a6f67902b478d8b8",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0": "04b4a8bd8d62d7f636a6b9372323c6574f1b224dd16ac8519d3b2e7818674d8c",
+        "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la": "8739187fe4f92119338e7b71d3b5f3f9de13024d26eaa6bf89b33fca5716331e",
+        "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002": "5824f7ed18fef3b3a76d1954dad313a9e002af287b181eed60a8b5e74b387e8b",
+        "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945": "3b36d666fd9269d21443fc4d7d07a0d859cc4f2d7f1864b227dc1b5ec46c61cd",
+        "edition.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12": "407f1fe25f44dd0da5d76c8cff58077e0c7b6094bca8088ad06e499031322ebb",
+        "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.legacy-study-review-20261112-77": "12b7e37d4d22b017e7366958c59ceac94c66b30cf744b02b5fe718d302779f81",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112": "45b5e14a82ce8973983007f3d178269de5dbcc8fd489207e6d50b18aef7b1d08",
+        "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion": "02f2e4f2cc158faa4e7f2e0a20a3ca44252e8224ed56f9f30f4dd10ebbc84fc1",
+        "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la": "b90b9b7f2581f5266482766ac300e12b961dc8527c2da5dcbd08fdd2ee2b184d",
+        "segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61": "cb460ca6a27981c03a2ba8515225db91d183d93b537f49f8b6be7c6afa702b75",
+        "work.catholic-church.institutio-generalis-missalis-romani": "ed588b91dbd33b9204a8ea8d6efe85bc529f8d20bb5060090ff933f1b6c77d69",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.ordinarytime-offerings-historical-adaptations": "0503bef06774aad80349917f84dabffbdcbbec359c5265764ca5a1eb15975d18"
+      },
+      "public": {
+        "relationship": "source-based-latin-study-reconstruction",
+        "source_date": "Old published whole prayer; Triptych finite adaptation proposal 2026-11-12",
+        "provenance_confidence": "medium",
+        "note": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use.",
+        "notice": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      },
+      "proof_files": {
+        "source_review": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-source-admission.json",
+          "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7"
+        },
+        "latin_merits": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/independent-latin-review.json",
+          "sha256": "aa6df50b3f73d436827aca5de026a73898cc6971de03056a982dca2556a1d0d2"
+        }
+      }
+    },
+    {
+      "calendar": "postconciliar",
+      "key": [
+        "ot-5",
+        "",
+        "Prayer over the Offerings",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "0aab2e5e85a1bd28496ccf57a03dfdcdc1b01bdf32da7b1992ceacb5f2353d2d",
+      "body_sha256": "d42378c196035ebc6bba7952f3b4d314fb3efc2c1cf9844b300e6ed664acc012",
+      "source_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la",
+      "artifact_id": "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la",
+      "artifact_payload_sha256": "b5776f8e2a255bdcbfefa0fa0eb2dacf1d1f1764c9acf68ad4d68563c06f66b1",
+      "verification_source_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3": "99cf50d7b8ebc5410e229374868a2367ad221602e09e4dbeff5fd9b9f91acd45",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112": "86e85d3bceb68945939d864d29adc548c0b481651cdaa4aee88af1ad04bcd3f7",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0": "04b4a8bd8d62d7f636a6b9372323c6574f1b224dd16ac8519d3b2e7818674d8c",
+        "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la": "ff612fb9010f51f929440d27626f0c0c5bb085dfdf695c34e7eed88b78effb06",
+        "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002": "5824f7ed18fef3b3a76d1954dad313a9e002af287b181eed60a8b5e74b387e8b",
+        "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069",
+        "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894": "496d32217750750f5d5e11c9eae3b3d27a2add9cf541cdfb1d2e393ec34ae395",
+        "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945": "3b36d666fd9269d21443fc4d7d07a0d859cc4f2d7f1864b227dc1b5ec46c61cd",
+        "edition.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12": "407f1fe25f44dd0da5d76c8cff58077e0c7b6094bca8088ad06e499031322ebb",
+        "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.legacy-study-review-20261112-77": "12b7e37d4d22b017e7366958c59ceac94c66b30cf744b02b5fe718d302779f81",
+        "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112": "cb615428bcef4234ec4a589b4548bcb1a427e06eb92ac1ead41317170f95fffd",
+        "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion": "02f2e4f2cc158faa4e7f2e0a20a3ca44252e8224ed56f9f30f4dd10ebbc84fc1",
+        "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la": "9968dd0aa8a0b4f9d6dd57dd69a99e031dbcf816b27c597f6b57f67c5ab09d31",
+        "segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61": "cb460ca6a27981c03a2ba8515225db91d183d93b537f49f8b6be7c6afa702b75",
+        "work.catholic-church.institutio-generalis-missalis-romani": "ed588b91dbd33b9204a8ea8d6efe85bc529f8d20bb5060090ff933f1b6c77d69",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-gelasianum-vetus": "e983ecd4a3d9889453d6eade30e16fde890746ff6168f9aec8bf758578f7d70b",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.ordinarytime-offerings-historical-adaptations": "0503bef06774aad80349917f84dabffbdcbbec359c5265764ca5a1eb15975d18"
+      },
+      "public": {
+        "relationship": "source-based-latin-study-reconstruction",
+        "source_date": "Old published whole prayer; Triptych finite adaptation proposal 2026-11-12",
+        "provenance_confidence": "medium",
+        "note": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use.",
+        "notice": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      },
+      "proof_files": {
+        "source_review": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-source-admission.json",
+          "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7"
+        },
+        "latin_merits": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/independent-latin-review.json",
+          "sha256": "aa6df50b3f73d436827aca5de026a73898cc6971de03056a982dca2556a1d0d2"
+        }
+      }
+    },
+    {
+      "calendar": "postconciliar",
+      "key": [
+        "ot-8",
+        "",
+        "Prayer after Communion",
+        "",
+        "",
+        1
+      ],
+      "row_sha256": "59e98a57e892d4284eafc8ac8f0b2200caae2e32fb93d782c54a0c8c823b304f",
+      "body_sha256": "965afcd29dd137e8775e8f2efcbc7dd893d64bdf530cfa8e31513a2fc11f1076",
+      "source_id": "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion",
+      "artifact_id": "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion",
+      "artifact_payload_sha256": "bb3ad6b3199882f075efc0c2f91c9fb7950cbfc1d11b121d2dcaaf2257bd7a0e",
+      "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-8-postcommunion-secondary-comparison-20261112",
+      "publication_source_ids": [
+        "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "projected_from": [
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "record_sha256": {
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112": "0009f5323550e8eed6d6c08163a443d8d81b907747bf0930715f4bd531146e88",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112": "1a9188bbdf0fdcb87d939cb9809bfd70039b8377159012b90a93e5d3935df798",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0": "04b4a8bd8d62d7f636a6b9372323c6574f1b224dd16ac8519d3b2e7818674d8c",
+        "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion": "9cb135b6907af89240262fe59a5e4e280c99002dd2a3a742cdb9dbba3899f8a4",
+        "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion": "684fb9eb0507a268e625238c286fc3b36c0fba854e1e695b0142780a440fa4cb",
+        "artifact.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-12-postcommunion": "d207018ee73af35565edc760561001f2dcaf150a3c375e370cbdd61319df0ce5",
+        "artifact.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-8-postcommunion": "5efbc25935a5ecfdc6ffb7a2fcc7c19a7749305e0a49c635a39b595f8c3a014b",
+        "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002": "5824f7ed18fef3b3a76d1954dad313a9e002af287b181eed60a8b5e74b387e8b",
+        "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069",
+        "edition.catholic-church.sacramentarium-veronense.feltoe-1896": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50",
+        "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945": "3b36d666fd9269d21443fc4d7d07a0d859cc4f2d7f1864b227dc1b5ec46c61cd",
+        "edition.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12": "ff764d5d7dc580234b898963957f43faf42d7113248b5b96e1539a25f27005ca",
+        "edition.triptych.postconciliar-ot8-ot12-study-english.2026-11-12": "3cf462ab2c41e4248a7bcf075bc7a60d6387fd2f51dc2ba4dd2c56711284de86",
+        "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.modern-short-conclusions-20261112-89": "738124ef3de0496a72bce84f98510838a552593cd9dc9da2e6a7e2adefdee19d",
+        "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-12-postcommunion-secondary-comparison-20261112": "8b91d3a49e8b015e522aed9566dfe28d37efd9db9e26975ad82e17169858f2c8",
+        "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-8-postcommunion-secondary-comparison-20261112": "871a4d58f090893df9069a196fabc01f8d79e4edadd7103be33c08951d2f8da8",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112": "e3a364a5834252c941e425d7ad7e19b43a4fbba395bc2edf7265cf18f8460159",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112-image": "11cbdd38dd07d23e29f8caf42b7525ce5fb4f2b09e7b99991b5ce3047543eee0",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112": "160ae6c5832ff44be1b747b91780dead929924c00a5cff650fe3f3efc0baee65",
+        "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112-image": "09ea72bb136d94c5082a504c85f159c2b78c4137f259faa1bc0310d7c175ca5c",
+        "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion": "02f2e4f2cc158faa4e7f2e0a20a3ca44252e8224ed56f9f30f4dd10ebbc84fc1",
+        "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion": "f07f311f72b79b9eeea33c28b92a1b8931e3314f3e310841e5ebbacca7cc6767",
+        "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion": "48b50cbd86f3463f9d3fc56084a5bf94971aeb6dc123b01c90c1c37962504d25",
+        "passage.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-12-postcommunion": "2505edc6686e735fef20f854a0eaf7edc05e1015d86a2960a08bb3ab4ce75224",
+        "passage.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-8-postcommunion": "9e03eebfd0c14146ca32e0c693a39bef19879b3630ad877444af9922669c580b",
+        "segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61": "cb460ca6a27981c03a2ba8515225db91d183d93b537f49f8b6be7c6afa702b75",
+        "work.catholic-church.institutio-generalis-missalis-romani": "ed588b91dbd33b9204a8ea8d6efe85bc529f8d20bb5060090ff933f1b6c77d69",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "work.catholic-church.sacramentarium-veronense": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c",
+        "work.francis-xavier-lasance.the-new-roman-missal": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908",
+        "work.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly": "c75c469885fd0b90716ca843fc43bec85eb943dcf479fe12716f6f9d4aa88345",
+        "work.triptych.postconciliar-ot8-ot12-study-english": "4ff9c829491e7307a17f40358c14cbfe686d0ac26ec248bd9f6707b8a7186472"
+      },
+      "public": {
+        "relationship": "source-based-latin-study-reconstruction",
+        "source_date": "1896 old composition;1945 complete common formula;2026 declared study assembly",
+        "provenance_confidence": "high",
+        "note": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization.",
+        "notice": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
+      },
+      "proof_files": {
+        "source_review": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-source-admission.json",
+          "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7"
+        },
+        "latin_merits": {
+          "path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/independent-latin-review.json",
+          "sha256": "aa6df50b3f73d436827aca5de026a73898cc6971de03056a982dca2556a1d0d2"
+        }
+      }
+    }
+  ]
+}

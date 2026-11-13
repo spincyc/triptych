@@ -1,0 +1,1132 @@
+{
+  "schema": "triptych-independent-bounded-antiphon-source-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "independent modern_sources/legacy_review agent; not candidate author",
+  "scope": "Exactly two unchanged historical human English recipient reuses and one fresh study-English rendering. Source fidelity and finite publication basis reviewed separately. No canonical edits, commits, pushes, generators or release operation.",
+  "overall_decision": "accept-three-bounded-source-proposals-with-enumerated-qualifications; canonical source integration and authentic2008 relation remain separate",
+  "counts": {
+    "source_proposals_reviewed": 3,
+    "source_fidelity_pass": 3,
+    "unchanged_historical_human_English_reuses": 2,
+    "fresh_project_study_English": 1,
+    "authenticated_2008_clearances": 0,
+    "approved_current_English_clearances": 0,
+    "canonical_mutations": 0
+  },
+  "input_manifest": [
+    {
+      "path": ".scratch/modern-partition-temporal/prepared-candidates.json",
+      "sha256": "3d14adf77d05eaa1e976b9668f33da93e5fb766aca747472009637f2358b85b1",
+      "bytes": 26452
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-study-candidate.json",
+      "sha256": "7b8203a97bdc3cd791bd89318ce42d1edeebd3af51201bc497303b9e58719fb3",
+      "bytes": 3434
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-input-preimage.json",
+      "sha256": "96fc9bcf6ae0bd81717db1c0dacdb41fb081c7f9f9ef09701beb8ef901b9bbed",
+      "bytes": 2511
+    },
+    {
+      "path": ".scratch/modern-sources/partitions/temporal.json",
+      "sha256": "3cb3c7ba08a87c39a70a16ebba610abb5798a91b80b0e27f9d8032d11fc0c6ae",
+      "bytes": 196407
+    },
+    {
+      "path": ".scratch/modern-sources/partitions/input-summary.json",
+      "sha256": "a7d1ae3efba0be1eb3f6542d790c9791ccb9c778490cfac6da83ca9311d9c59e",
+      "bytes": 1207
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "5f95e2f45e478da0efdd250a63ade50716db10f0bd785c6053a22c977e5fba7d",
+      "bytes": 995971
+    }
+  ],
+  "independent_source_renders": [
+    {
+      "path": ".scratch/modern-partition-temporal/prepared-candidates.json",
+      "sha256": "3d14adf77d05eaa1e976b9668f33da93e5fb766aca747472009637f2358b85b1",
+      "bytes": 26452
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-study-candidate.json",
+      "sha256": "7b8203a97bdc3cd791bd89318ce42d1edeebd3af51201bc497303b9e58719fb3",
+      "bytes": 3434
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-input-preimage.json",
+      "sha256": "96fc9bcf6ae0bd81717db1c0dacdb41fb081c7f9f9ef09701beb8ef901b9bbed",
+      "bytes": 2511
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+      "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "bytes": 75268976
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-1922.pdf",
+      "sha256": "0682b2daf9d056b72346dead1772a91b30ba6dbe61ef8db9844e9b4ff335560c",
+      "bytes": 577215
+    },
+    {
+      "path": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "bytes": 3333382
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/lasance-141.png",
+      "sha256": "82efd70e2a431435684bdbd283e722938b442443bfef60825b9a96f55ff7d67b",
+      "bytes": 94746,
+      "source_pdf": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+      "artifact_page": 141,
+      "render_command": [
+        "/usr/bin/pdftoppm",
+        "-f",
+        "141",
+        "-l",
+        "141",
+        "-r",
+        "130",
+        "-png",
+        "-singlefile",
+        ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+        ".scratch/modern-new-antiphons-review/lasance-141"
+      ]
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/lasance-145.png",
+      "sha256": "8f94e736bec42152e046024070dd1e35aaa8a14264680991c36db01d6bee26a6",
+      "bytes": 109312,
+      "source_pdf": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+      "artifact_page": 145,
+      "render_command": [
+        "/usr/bin/pdftoppm",
+        "-f",
+        "145",
+        "-l",
+        "145",
+        "-r",
+        "130",
+        "-png",
+        "-singlefile",
+        ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+        ".scratch/modern-new-antiphons-review/lasance-145"
+      ]
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/mame-1.png",
+      "sha256": "cfd96a144e13dbbb526169f64c4d9e69f464297820aa03690ced3a65e69c0d71",
+      "bytes": 309598,
+      "source_pdf": ".scratch/modern-partition-nonseasonal/all-saints-1922.pdf",
+      "artifact_page": 1,
+      "render_command": [
+        "/usr/bin/pdftoppm",
+        "-f",
+        "1",
+        "-l",
+        "1",
+        "-r",
+        "130",
+        "-png",
+        "-singlefile",
+        ".scratch/modern-partition-nonseasonal/all-saints-1922.pdf",
+        ".scratch/modern-new-antiphons-review/mame-1"
+      ]
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/secondary-109.png",
+      "sha256": "5c1a6cad9983adf50f72fe9c25b8ac66b592b1a1ce5ee190df76800ce3340d49",
+      "bytes": 219349,
+      "source_pdf": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "artifact_page": 109,
+      "render_command": [
+        "/usr/bin/pdftoppm",
+        "-f",
+        "109",
+        "-l",
+        "109",
+        "-r",
+        "130",
+        "-png",
+        "-singlefile",
+        ".scratch/modern-ordinary-candidates/target-2002.pdf",
+        ".scratch/modern-new-antiphons-review/secondary-109"
+      ]
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/secondary-110.png",
+      "sha256": "d63b3706a3c2f938c0d715d715cfc56497d851f56d658844028848920f55b82e",
+      "bytes": 218002,
+      "source_pdf": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "artifact_page": 110,
+      "render_command": [
+        "/usr/bin/pdftoppm",
+        "-f",
+        "110",
+        "-l",
+        "110",
+        "-r",
+        "130",
+        "-png",
+        "-singlefile",
+        ".scratch/modern-ordinary-candidates/target-2002.pdf",
+        ".scratch/modern-new-antiphons-review/secondary-110"
+      ]
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/secondary-512.png",
+      "sha256": "d076cd2b47f8e1cd2aa12c12d8bc52621bea67dec706a080518a1168baeb4ecb",
+      "bytes": 191329,
+      "source_pdf": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "artifact_page": 512,
+      "render_command": [
+        "/usr/bin/pdftoppm",
+        "-f",
+        "512",
+        "-l",
+        "512",
+        "-r",
+        "130",
+        "-png",
+        "-singlefile",
+        ".scratch/modern-ordinary-candidates/target-2002.pdf",
+        ".scratch/modern-new-antiphons-review/secondary-512"
+      ]
+    }
+  ],
+  "reviewed_controllers": [
+    {
+      "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+      "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1",
+      "bytes": 47983
+    },
+    {
+      "path": "guidance/liturgical-text-publication-policy.md",
+      "sha256": "81dee58829a694b6155f156d8f90d2a217baf48396c326c4c45f7b1948f328df",
+      "bytes": 69157
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+      "sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+      "bytes": 3690
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/main-reconciliation-v1/nativity-day-source-confirmation.json",
+      "sha256": "8e9d3b6e940a2c3cf41df0e891309a6d8f1ac6143cbab07645f9d721fcd7ba10",
+      "bytes": 1698
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+      "sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116",
+      "bytes": 2782
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-1922-pages-0682b2da/artifact.toml",
+      "sha256": "88d1242d2ddfb5a1047a1261f33f90a47e756b4cb903799d85116cde2acd2035",
+      "bytes": 1867
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-four-propers-la-checked-82edd79a/artifact.toml",
+      "sha256": "05dbab0f3a4d4ca5dfaa5ee3b4b4cce49b1cba4002907b709b2517da73fef5fa",
+      "bytes": 2659
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-four-propers-la-checked-82edd79a/all-saints-four-propers-la.txt",
+      "sha256": "82edd79a9096f329601d709160bd26f60911792846a3b7c39d42fe0a8657d144",
+      "bytes": 751
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/decision-packet/HANDOFF.md",
+      "sha256": "8c0a391b3837123b5b6e31b25bd8f9e0a974ad7af442ab7ccea6cee1e706868e",
+      "bytes": 2927
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase1-lasance-fresh/artifact.toml",
+      "sha256": "e415a7014e4d9bea10b730ea630907d16a5e21af116f2e7813df6788148ad794",
+      "bytes": 2082
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-phase1-lasance-fresh/text.tsv",
+      "sha256": "d59ada45000e7e6cfc96c0cce19cc389caaba459c607e73d6773692a6ae34975",
+      "bytes": 2876
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase1-nativity-dawn-entrance-antiphon-all-1-source.toml",
+      "sha256": "74c739eed811d31b7eb4110519581db19cfe497fc4f337abc3041544b2a77881",
+      "bytes": 2109
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase1-nativity-dawn-entrance-antiphon-all-1.toml",
+      "sha256": "8c389389b24884b8e4381e97784c2b12284a2522f9bb10e5521d566e863065ac",
+      "bytes": 1518
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/artifact.toml",
+      "sha256": "2310118fd5a9a43bb689b5721a0638241a1a13fa8249148c4190e807906fbf81",
+      "bytes": 2152
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261030-pc-nativity-day-punctuation-0d801929/text.tsv",
+      "sha256": "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576",
+      "bytes": 238
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-phase1-nativity-day-entrance-antiphon-all-1-source.toml",
+      "sha256": "05eeede2f75c37c62c41506c6b2853d99bebef7094ba1e2e1af394fa56437dec",
+      "bytes": 2108
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261030-pc-nativity-day-punctuation-0d801929.toml",
+      "sha256": "767aad0cb7c9f2b1a3a75650ea58f9158afbb10a11874ce80f09ba3ad2d4cdba",
+      "bytes": 1543
+    }
+  ],
+  "cases": [
+    {
+      "identity": [
+        "mary-mother-of-god",
+        "main",
+        "Entrance Antiphon (alternative)",
+        "all",
+        1
+      ],
+      "decision": "accept-bounded-historical-English-reuse-source-proposal",
+      "installed": false,
+      "candidate_pointer": {
+        "path": ".scratch/modern-partition-temporal/prepared-candidates.json",
+        "sha256": "3d14adf77d05eaa1e976b9668f33da93e5fb766aca747472009637f2358b85b1",
+        "json_pointer": "/candidates/0"
+      },
+      "source_fidelity": {
+        "decision": "pass",
+        "evidence_level": "fresh-direct-page-image-inspection",
+        "whole_source_image": {
+          "path": ".scratch/modern-new-antiphons-review/lasance-141.png",
+          "sha256": "82efd70e2a431435684bdbd283e722938b442443bfef60825b9a96f55ff7d67b",
+          "bytes": 94746,
+          "source_pdf": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+          "artifact_page": 141,
+          "render_command": [
+            "/usr/bin/pdftoppm",
+            "-f",
+            "141",
+            "-l",
+            "141",
+            "-r",
+            "130",
+            "-png",
+            "-singlefile",
+            ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+            ".scratch/modern-new-antiphons-review/lasance-141"
+          ]
+        },
+        "recipient_comparison_image": {
+          "path": ".scratch/modern-new-antiphons-review/secondary-110.png",
+          "sha256": "d63b3706a3c2f938c0d715d715cfc56497d851f56d658844028848920f55b82e",
+          "bytes": 218002,
+          "source_pdf": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+          "artifact_page": 110,
+          "render_command": [
+            "/usr/bin/pdftoppm",
+            "-f",
+            "110",
+            "-l",
+            "110",
+            "-r",
+            "130",
+            "-png",
+            "-singlefile",
+            ".scratch/modern-ordinary-candidates/target-2002.pdf",
+            ".scratch/modern-new-antiphons-review/secondary-110"
+          ]
+        },
+        "findings": [
+          "Directly inspected all of printed page 140 / PDF page 141. The complete Introit antiphon ends at no end.; the following Psalm 92:1 and Gloria are outside the candidate.",
+          "Every English word, sacred-name capitalization and punctuation agrees with the printed historical body after disclosed ornamental-initial and line-wrap normalization. Source wonderful and prince remain lower case; Our Lord, God, Father and Whose retain source capitalization.",
+          "Secondary 2002 PDF page 110 explicitly labels Lux fulgebit as Vel after Salve sancta Parens under 1 January / Sanctae Dei Genetricis Mariae. The proposal preserves the alternative identity and makes no default selection.",
+          "All historical Latin words occur in the same order in the secondary recipient antiphon. Comparison normalizes printed stress/ligatures, capitalization, pointing, and cujus/cuius. No appended Psalm, doxology or rubric enters the body."
+        ],
+        "english_utf8_sha256": "2481882b5f11a90dfd756ea60ee2b67659af56cbe026e6a0dd99aee006f3acee",
+        "historical_latin_utf8_sha256": "dab4ecdddcf48546c6ff79dd536c26cc8ac79bffcec20fc94f765a527b7d6735",
+        "no_English_changes": true,
+        "unchanged_from_exact_prior_entry": true,
+        "unchanged_from_registered_publication_payload": true,
+        "payload_line": 8,
+        "source_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-nativity-dawn-entrance-antiphon-all-1-source"
+      },
+      "finite_publication_basis": {
+        "decision": "accept-continuation-of-existing-body-specific-historical-admission-only",
+        "basis": "The exact same historical human English bytes, at the exact same source locus, already have a finite registered public-domain English publication artifact and receiving entry. This review adds a recipient comparison and carries that existing bounded basis forward; it grants no rights in any new Lasance expression.",
+        "jurisdiction": "United States",
+        "rights_inventory": {
+          "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+          "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1",
+          "bytes": 47983
+        },
+        "prior_entry_identity": [
+          "nativity",
+          "dawn",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "existing_publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-lasance-fresh",
+        "existing_publication_artifact_sha256": "d59ada45000e7e6cfc96c0cce19cc389caaba459c607e73d6773692a6ae34975",
+        "existing_publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-nativity-dawn-entrance-antiphon-all-1",
+        "existing_admission_evidence_level": "recorded-controller; exact body and source page freshly verified, renewal research not rerun",
+        "fresh_1937_or_1945_printing_corroboration": false,
+        "stratum_limitation": "The full scan is a later mixed printing, not an authenticated 1937 or 1945 physical printing. Neither this review nor the candidate author newly established the exact 1937/1945 textual stratum by another early copy. Prior body-specific admission is carried forward explicitly; ordinary pagination, nominal edition label and the absence of lettered insert pages are not by themselves proof of that stratum.",
+        "adverse_evidence": "The same scan contains the 1950 Assumption formulary on unlettered printed page 1159 / PDF page 1152, recorded by the Roman remaining-saints lane. This prevents a blanket rule clearing every ordinary-numbered page; it does not supply evidence that either exact already-admitted Nativity body changed.",
+        "whole_scan_status_unchanged": "remote/unresolved; no source images or whole PDF admitted for redistribution",
+        "not_approved_current_English": true,
+        "not_a_fresh_or_blanket_Lasance_clearance": true
+      },
+      "recipient_edition_relation": {
+        "compared": "secondary digital reproduction labelled 2002",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+        "artifact_page": 110,
+        "whole_body_lexical_relation": "same words and order after enumerated display/orthography normalization",
+        "printed_2002_fidelity_established": false,
+        "authenticated_2008_compared": false,
+        "current_2008_target_cleared": false
+      },
+      "original_target_preimage": {
+        "identity": [
+          "mary-mother-of-god",
+          "main",
+          "Entrance Antiphon (alternative)",
+          "all",
+          1
+        ],
+        "section": "seasonal",
+        "english_state": "untranslated",
+        "english_index": 130,
+        "english_record": {
+          "mass": "mary-mother-of-god",
+          "form_id": "main",
+          "proper": "Entrance Antiphon (alternative)",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
+            "surfaces": [
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          },
+          "rights": "permission",
+          "witness": "icel-antiphonary-2010",
+          "source_id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
+          "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "verified_on_page": "2026-08-21",
+          "verified_artifact_page": 22,
+          "verified_printed_page": "14",
+          "verified_heading": "1 January / SOLEMNITY OF MARY, THE HOLY MOTHER OF GOD",
+          "verified_url": "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf",
+          "quarantined_text_sha256": [
+            "384d54cb0b2ed002663ae3efd081c4c141529caf7af9d0778e0c2638c33d0697"
+          ],
+          "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        },
+        "latin_in_composed_census": true,
+        "proper": {
+          "name": "Entrance Antiphon (alternative)",
+          "ordinary_disposition": {
+            "kind": "alternative",
+            "group": "entrance-antiphon",
+            "option": "isaiah-9-1",
+            "basis": "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon."
+          },
+          "incipit": "Lux fulgebit hodie super nos",
+          "source": "mixed",
+          "verses": [
+            {
+              "book": "Isaiah",
+              "ranges": [
+                {
+                  "begin": {
+                    "chapter": 9,
+                    "verse": 1
+                  },
+                  "end": {
+                    "chapter": 9,
+                    "verse": 1
+                  }
+                }
+              ],
+              "ref": "Isaiah 9:1"
+            },
+            {
+              "book": "Isaiah",
+              "ranges": [
+                {
+                  "begin": {
+                    "chapter": 9,
+                    "verse": 5
+                  },
+                  "end": {
+                    "chapter": 9,
+                    "verse": 5
+                  }
+                }
+              ],
+              "ref": "Isaiah 9:5"
+            },
+            {
+              "book": "Luke",
+              "ranges": [
+                {
+                  "begin": {
+                    "chapter": 1,
+                    "verse": 33
+                  },
+                  "end": {
+                    "chapter": 1,
+                    "verse": 33
+                  }
+                }
+              ],
+              "ref": "Luke 1:33"
+            }
+          ],
+          "text_status": {
+            "state": "unavailable",
+            "scope": "proper-body",
+            "reasons": [
+              {
+                "kind": "rights-withheld",
+                "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+              }
+            ]
+          },
+          "notes": "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon."
+        },
+        "lane": "temporal"
+      },
+      "original_target_preimage_canonical_json_sha256": "15fe364a4dd2705ffd8e310ded58e18adb3a47663f33f82e85669b06933b2ce4",
+      "original_untranslated_refusal": {
+        "mass": "mary-mother-of-god",
+        "form_id": "main",
+        "proper": "Entrance Antiphon (alternative)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "icel-antiphonary-2010",
+        "source_id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "verified_on_page": "2026-08-21",
+        "verified_artifact_page": 22,
+        "verified_printed_page": "14",
+        "verified_heading": "1 January / SOLEMNITY OF MARY, THE HOLY MOTHER OF GOD",
+        "verified_url": "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf",
+        "quarantined_text_sha256": [
+          "384d54cb0b2ed002663ae3efd081c4c141529caf7af9d0778e0c2638c33d0697"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "original_untranslated_refusal_canonical_json_sha256": "6680d01e91ce36fffc511b01715d66d3a13fe168384606bbe16c6441a096c5c7",
+      "existing_source_entry_preimage": {
+        "mass": "nativity",
+        "form_id": "dawn",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Lux fulgebit hodie super nos",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "140",
+        "ia_leaf": 140,
+        "ia_leaf_range": [
+          140,
+          140
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "witness_note": "Historical antecedent English for study, freshly read from the Lasance and Walsh revised-1945 ordinary pages on 2026-10-29. Complete historical source pages 140 at PDF pages [141] and IA leaves [140] were inspected. The whole historical Latin body was compared with the separately hash-identified secondary 2002 reproduction at PDF pages [105]. Entire historical Latin antiphon agrees word for word with secondary2002 after stress, ligature, pointing and display normalization. Historical psalm verse and Gloria after antiphon are excluded, not translated into body. Historical English retained as read; initial ornamental small capitals rendered as ordinary initial capitalization. No authenticated2008 or printed2002 claim. Received i/j spellings ejus/eius and cujus/cuius are enumerated transformations, not word changes. These are the historical human translation and its literal source markers, not approved contemporary English or a source for recitation. Printed-2002 fidelity of the secondary digital reproduction and correspondence to the 2008 reimpressio remain unresolved. The independent ICEL approved-English restriction remains applicable; no ICEL body, modern Latin payload, protected page image or authenticated target-edition text is imported. The superseded unavailable record identifies the distinct prior translation or source route; its exact metadata and any quarantine fingerprint are retained in the dated source-review receipt. Historical antecedent availability does not extend any permission to bundled approved English.",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-nativity-dawn-entrance-antiphon-all-1-source",
+        "collated": "page-image, 2026-10-29",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-lasance-fresh",
+        "publication_artifact_sha256": "d59ada45000e7e6cfc96c0cce19cc389caaba459c607e73d6773692a6ae34975",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-nativity-dawn-entrance-antiphon-all-1",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "A light shall shine upon us this day: for Our Lord is born to us; and He shall be called wonderful, God, the prince of peace, the Father of the world to come; of Whose reign there shall be no end."
+          }
+        ]
+      },
+      "proposed_entry": {
+        "mass": "mary-mother-of-god",
+        "form_id": "main",
+        "proper": "Entrance Antiphon (alternative)",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Lux fulgebit hodie super nos",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "140",
+        "ia_leaf": 140,
+        "ia_leaf_range": [
+          140,
+          140
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "witness_note": "Complete historical Lasance Latin and English on artifact page 141, printed page 140, freshly inspected on 2026-11-12. Complete historical Latin antiphon agrees word for word with the receiving identity in the separately identified secondary 2002 digital reproduction, artifact page 110, after stress, pointing, capitalization and i/j spelling normalization. This is a new recipient of the exact already published historical human English; no translation was newly composed. Psalm verse, Gloria and rubrics are outside the body. The receiving body's relation to the authentic 2008 edition remains unestablished. Printed-2002 fidelity of the digital reproduction remains unestablished. The independent approved modern English restriction remains; the complete prior untranslated record is retained in this review packet. Historical English is for study, not approved contemporary English or approval for recitation. The alternative remains the source Vel option; no default selection is made.",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-nativity-dawn-entrance-antiphon-all-1-source",
+        "collated": "page-image, 2026-11-12",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-lasance-fresh",
+        "publication_artifact_sha256": "d59ada45000e7e6cfc96c0cce19cc389caaba459c607e73d6773692a6ae34975",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.modern-sources-20261112-mary-mother-of-god-entrance-reuse",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "A light shall shine upon us this day: for Our Lord is born to us; and He shall be called wonderful, God, the prince of peace, the Father of the world to come; of Whose reign there shall be no end."
+          }
+        ]
+      },
+      "integration_requirements": [
+        "Register the proposed receiving publication passage against the existing exact artifact and actual TSV line. Its proposed ID is presently a placeholder, not an already-registered source.",
+        "Preserve the complete original target/ICEL refusal record and its separate surface restrictions in a durable receipt. Do not infer a permission for approved English from historical English availability.",
+        "Retain historical-antecedent study labels and the unresolved authenticated-2008 relation. No Latin target clearance, approved-English coverage or modern-recitation claim is conferred.",
+        "Do not modify the exact prior source entry or its immutable payload/history."
+      ]
+    },
+    {
+      "identity": [
+        "christmas-december-31",
+        "main",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "decision": "accept-bounded-historical-English-reuse-source-proposal",
+      "installed": false,
+      "candidate_pointer": {
+        "path": ".scratch/modern-partition-temporal/prepared-candidates.json",
+        "sha256": "3d14adf77d05eaa1e976b9668f33da93e5fb766aca747472009637f2358b85b1",
+        "json_pointer": "/candidates/1"
+      },
+      "source_fidelity": {
+        "decision": "pass",
+        "evidence_level": "fresh-direct-page-image-inspection",
+        "whole_source_image": {
+          "path": ".scratch/modern-new-antiphons-review/lasance-145.png",
+          "sha256": "8f94e736bec42152e046024070dd1e35aaa8a14264680991c36db01d6bee26a6",
+          "bytes": 109312,
+          "source_pdf": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+          "artifact_page": 145,
+          "render_command": [
+            "/usr/bin/pdftoppm",
+            "-f",
+            "145",
+            "-l",
+            "145",
+            "-r",
+            "130",
+            "-png",
+            "-singlefile",
+            ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+            ".scratch/modern-new-antiphons-review/lasance-145"
+          ]
+        },
+        "recipient_comparison_image": {
+          "path": ".scratch/modern-new-antiphons-review/secondary-109.png",
+          "sha256": "5c1a6cad9983adf50f72fe9c25b8ac66b592b1a1ce5ee190df76800ce3340d49",
+          "bytes": 219349,
+          "source_pdf": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+          "artifact_page": 109,
+          "render_command": [
+            "/usr/bin/pdftoppm",
+            "-f",
+            "109",
+            "-l",
+            "109",
+            "-r",
+            "130",
+            "-png",
+            "-singlefile",
+            ".scratch/modern-ordinary-candidates/target-2002.pdf",
+            ".scratch/modern-new-antiphons-review/secondary-109"
+          ]
+        },
+        "findings": [
+          "Directly inspected all of printed page 144 / PDF page 145. The complete Introit antiphon ends at great counsel.; the following Psalm 97:1 and Gloria are outside the candidate.",
+          "Every English word and punctuation agrees after disclosed ornamental-initial and line-wrap normalization. The source has a semicolon after a Son is given to us; this independently confirms the 2026-10-30 correction and the proposed reuse of its successor artifact.",
+          "Secondary 2002 PDF page 109 explicitly assigns Puer natus to Die 31 decembris / De VII die infra octavam Nativitatis Domini. The full receiving antiphon ends before Dicitur Gloria in excelsis.",
+          "All historical Latin words occur in the same order in the secondary recipient antiphon. Comparison normalizes stress/ligatures, capitalization, pointing, cujus/cuius and ejus/eius. The whole source antiphon, including magni consilii Angelus, is independently supplied by this historical witness; the Isaiah Bible citation alone was not used as that whole body."
+        ],
+        "english_utf8_sha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+        "historical_latin_utf8_sha256": "079f1c519f62200d2b8ac6afeb9a952a289e906502e0d3b9e9c616f86f3609cb",
+        "no_English_changes": true,
+        "unchanged_from_exact_prior_entry": true,
+        "unchanged_from_registered_publication_payload": true,
+        "payload_line": 2,
+        "source_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-nativity-day-entrance-antiphon-all-1-source"
+      },
+      "finite_publication_basis": {
+        "decision": "accept-continuation-of-existing-body-specific-historical-admission-only",
+        "basis": "The exact same historical human English bytes, at the exact same source locus, already have a finite registered public-domain English publication artifact and receiving entry. This review adds a recipient comparison and carries that existing bounded basis forward; it grants no rights in any new Lasance expression.",
+        "jurisdiction": "United States",
+        "rights_inventory": {
+          "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+          "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1",
+          "bytes": 47983
+        },
+        "prior_entry_identity": [
+          "nativity",
+          "day",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "existing_publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929",
+        "existing_publication_artifact_sha256": "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576",
+        "existing_publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929",
+        "existing_admission_evidence_level": "recorded-controller; exact body and source page freshly verified, renewal research not rerun",
+        "fresh_1937_or_1945_printing_corroboration": false,
+        "stratum_limitation": "The full scan is a later mixed printing, not an authenticated 1937 or 1945 physical printing. Neither this review nor the candidate author newly established the exact 1937/1945 textual stratum by another early copy. Prior body-specific admission is carried forward explicitly; ordinary pagination, nominal edition label and the absence of lettered insert pages are not by themselves proof of that stratum.",
+        "adverse_evidence": "The same scan contains the 1950 Assumption formulary on unlettered printed page 1159 / PDF page 1152, recorded by the Roman remaining-saints lane. This prevents a blanket rule clearing every ordinary-numbered page; it does not supply evidence that either exact already-admitted Nativity body changed.",
+        "whole_scan_status_unchanged": "remote/unresolved; no source images or whole PDF admitted for redistribution",
+        "not_approved_current_English": true,
+        "not_a_fresh_or_blanket_Lasance_clearance": true
+      },
+      "recipient_edition_relation": {
+        "compared": "secondary digital reproduction labelled 2002",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+        "artifact_page": 109,
+        "whole_body_lexical_relation": "same words and order after enumerated display/orthography normalization",
+        "printed_2002_fidelity_established": false,
+        "authenticated_2008_compared": false,
+        "current_2008_target_cleared": false
+      },
+      "original_target_preimage": {
+        "identity": [
+          "christmas-december-31",
+          "main",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "section": "seasonal",
+        "english_state": "untranslated",
+        "english_index": 226,
+        "english_record": {
+          "mass": "christmas-december-31",
+          "form_id": "main",
+          "proper": "Entrance Antiphon",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "witness_passage_id": "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-christmas-december-31-entrance-1-english-body",
+          "verified_artifact_page": 22,
+          "verified_printed_page": 14,
+          "verified_on_page": "2026-10-21",
+          "note": "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 22, printed page 14. The source uses a messenger-of-counsel title reflecting a distinct textual form, rather than the series of royal names carried by the offered Hebrew/Vulgate Bible witnesses at the resolved Isaiah verse. The full approved English antiphon is not provided by those selected carriers. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied.",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+            "surfaces": [
+              "site-display",
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          }
+        },
+        "latin_in_composed_census": false,
+        "proper": {
+          "name": "Entrance Antiphon",
+          "source": "scripture",
+          "verses": [
+            {
+              "book": "Isaiah",
+              "ranges": [
+                {
+                  "begin": {
+                    "chapter": 9,
+                    "verse": 5
+                  },
+                  "end": {
+                    "chapter": 9,
+                    "verse": 5
+                  }
+                }
+              ],
+              "ref": "Isaiah 9:5"
+            }
+          ],
+          "notes": "Source appointment antiphonary:christmas-december-31|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 22 / printed page 14, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied."
+        },
+        "lane": "temporal"
+      },
+      "original_target_preimage_canonical_json_sha256": "274c803c73d5fedd3d0f3d2abe6ffdb498dc4a3a70f62f25f047451d5444e0d2",
+      "original_untranslated_refusal": {
+        "mass": "christmas-december-31",
+        "form_id": "main",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "witness_passage_id": "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-christmas-december-31-entrance-1-english-body",
+        "verified_artifact_page": 22,
+        "verified_printed_page": 14,
+        "verified_on_page": "2026-10-21",
+        "note": "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 22, printed page 14. The source uses a messenger-of-counsel title reflecting a distinct textual form, rather than the series of royal names carried by the offered Hebrew/Vulgate Bible witnesses at the resolved Isaiah verse. The full approved English antiphon is not provided by those selected carriers. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied.",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "surfaces": [
+            "site-display",
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        }
+      },
+      "original_untranslated_refusal_canonical_json_sha256": "38f799983148027767fc0202b554c934b1357cd07580cd6755e5f50ca783fbfa",
+      "existing_source_entry_preimage": {
+        "mass": "nativity",
+        "form_id": "day",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Puer natus est nobis",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "144",
+        "ia_leaf": 144,
+        "ia_leaf_range": [
+          144,
+          144
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "witness_note": "Historical antecedent English for study, freshly read from the Lasance and Walsh revised-1945 ordinary pages on 2026-10-29. Complete historical source pages 144 at PDF pages [145] and IA leaves [144] were inspected. The whole historical Latin body was compared with the separately hash-identified secondary 2002 reproduction at PDF pages [106]. Entire historical Latin antiphon agrees word for word with secondary2002 after stress, ligature, pointing and display normalization. Historical psalm verse and Gloria after antiphon are excluded, not translated into body. Historical English retained as read; initial ornamental small capitals rendered as ordinary initial capitalization. No authenticated2008 or printed2002 claim. Received i/j spellings ejus/eius and cujus/cuius are enumerated transformations, not word changes. These are the historical human translation and its literal source markers, not approved contemporary English or a source for recitation. Printed-2002 fidelity of the secondary digital reproduction and correspondence to the 2008 reimpressio remain unresolved. The independent ICEL approved-English restriction remains applicable; no ICEL body, modern Latin payload, protected page image or authenticated target-edition text is imported. The superseded unavailable record identifies the distinct prior translation or source route; its exact metadata and any quarantine fingerprint are retained in the dated source-review receipt. Historical antecedent availability does not extend any permission to bundled approved English. On 2026-10-30 the printed English was independently rechecked: the semicolon after given to us replaces the prior erroneous colon. All words, other punctuation, body boundaries, source/target qualifications, English rights and the separate Latin/ICEL restrictions remain unchanged; the prior source artifact and admission are retained.",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-nativity-day-entrance-antiphon-all-1-source",
+        "collated": "page-image, 2026-10-29",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929",
+        "publication_artifact_sha256": "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "A child is born to us, and a Son is given to us; Whose government is upon His shoulder; and His name shall be called the angel of great counsel."
+          }
+        ]
+      },
+      "proposed_entry": {
+        "mass": "christmas-december-31",
+        "form_id": "main",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Puer natus est nobis",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "144",
+        "ia_leaf": 144,
+        "ia_leaf_range": [
+          144,
+          144
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "witness_note": "Complete historical Lasance Latin and English on artifact page 145, printed page 144, freshly inspected on 2026-11-12. Complete historical Latin antiphon agrees word for word with the receiving identity in the separately identified secondary 2002 digital reproduction, artifact page 109, after stress, pointing, capitalization and i/j spelling normalization. This is a new recipient of the exact already published historical human English; no translation was newly composed. Psalm verse, Gloria and rubrics are outside the body. The receiving body's relation to the authentic 2008 edition remains unestablished. Printed-2002 fidelity of the digital reproduction remains unestablished. The independent approved modern English restriction remains; the complete prior untranslated record is retained in this review packet. Historical English is for study, not approved contemporary English or approval for recitation.",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-phase1-nativity-day-entrance-antiphon-all-1-source",
+        "collated": "page-image, 2026-11-12",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261030-pc-nativity-day-punctuation-0d801929",
+        "publication_artifact_sha256": "0d801929b436514d5db46b3dfbda469c56c88a81bf3cfb342901cd76fafa8576",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.modern-sources-20261112-christmas-december-31-entrance-reuse",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "A child is born to us, and a Son is given to us; Whose government is upon His shoulder; and His name shall be called the angel of great counsel."
+          }
+        ]
+      },
+      "integration_requirements": [
+        "Register the proposed receiving publication passage against the existing exact artifact and actual TSV line. Its proposed ID is presently a placeholder, not an already-registered source.",
+        "Preserve the complete original target/ICEL refusal record and its separate surface restrictions in a durable receipt. Do not infer a permission for approved English from historical English availability.",
+        "Retain historical-antecedent study labels and the unresolved authenticated-2008 relation. No Latin target clearance, approved-English coverage or modern-recitation claim is conferred.",
+        "Do not modify the exact prior source entry or its immutable payload/history."
+      ]
+    },
+    {
+      "identity": [
+        "all-saints",
+        "main",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "decision": "accept-bounded-historical-Latin-and-fresh-study-English-source-proposal",
+      "installed": false,
+      "candidate_pointer": {
+        "path": ".scratch/modern-partition-nonseasonal/all-saints-study-candidate.json",
+        "sha256": "7b8203a97bdc3cd791bd89318ce42d1edeebd3af51201bc497303b9e58719fb3",
+        "bytes": 3434
+      },
+      "source_fidelity": {
+        "decision": "pass",
+        "evidence_level": "fresh-direct-page-image-inspection",
+        "whole_source_image": {
+          "path": ".scratch/modern-new-antiphons-review/mame-1.png",
+          "sha256": "cfd96a144e13dbbb526169f64c4d9e69f464297820aa03690ced3a65e69c0d71",
+          "bytes": 309598,
+          "source_pdf": ".scratch/modern-partition-nonseasonal/all-saints-1922.pdf",
+          "artifact_page": 1,
+          "render_command": [
+            "/usr/bin/pdftoppm",
+            "-f",
+            "1",
+            "-l",
+            "1",
+            "-r",
+            "130",
+            "-png",
+            "-singlefile",
+            ".scratch/modern-partition-nonseasonal/all-saints-1922.pdf",
+            ".scratch/modern-new-antiphons-review/mame-1"
+          ]
+        },
+        "recipient_comparison_image": {
+          "path": ".scratch/modern-new-antiphons-review/secondary-512.png",
+          "sha256": "d076cd2b47f8e1cd2aa12c12d8bc52621bea67dec706a080518a1168baeb4ecb",
+          "bytes": 191329,
+          "source_pdf": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+          "artifact_page": 512,
+          "render_command": [
+            "/usr/bin/pdftoppm",
+            "-f",
+            "512",
+            "-l",
+            "512",
+            "-r",
+            "130",
+            "-png",
+            "-singlefile",
+            ".scratch/modern-ordinary-candidates/target-2002.pdf",
+            ".scratch/modern-new-antiphons-review/secondary-512"
+          ]
+        },
+        "findings": [
+          "Directly inspected the complete Mame1922 excerpt page1 / parent PDF page862 / printed page748 (printed number suppressed on this opening page). Entire Introit antiphon runs from Gaudeamus to Filium Dei.; Psalm32:1 and Gloria Patri remain outside the candidate.",
+          "The proposed historical Latin reproduces all source words after disclosed joined word divisions, stress removal and initial normalization. Source has solemnitate; modern secondary has sollemnitate, explicitly an orthographic difference rather than exact-byte identity.",
+          "The full recipient antiphon is on secondary2002 PDF page512 under Die1 novembris / Omnium Sanctorum / Sollemnitas. Apart from the enumerated orthography, stress, case and pointing differences it has the same lexical body in the same order.",
+          "English retains the first-person plural exhortation, rejoicing in the Lord, celebration in honor of all saints, the angels rejoicing at their solemnity, and their joint praise of the Son of God. Diem festum is rendered a feast, sub honore as in honor, and collaudant as together praise. Editorial sentence division is disclosed; no theological claim, concluding formula or extra verse is supplied."
+        ],
+        "historical_latin": {
+          "path": ".scratch/modern-partition-nonseasonal/all-saints-1922-antiphon-la.txt",
+          "sha256": "82a2a5a73ff9e82e3ffdae142f44688d2f1e92becab449ff1fd52ece4ffa807c",
+          "hash_scope": "UTF-8 body plus exactly one LF",
+          "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei."
+        },
+        "study_English": {
+          "path": ".scratch/modern-partition-nonseasonal/all-saints-study-en.txt",
+          "sha256": "8f8a7473313e2de7fb9cb053e9b69eef4cb42087460abbf2f66b21184086511d",
+          "hash_scope": "UTF-8 body plus exactly one LF",
+          "text": "Let us all rejoice in the Lord, celebrating a feast in honor of all the saints. The angels rejoice at their solemnity and together praise the Son of God.",
+          "classification": "New project study translation from the exact1922 source. Not a historical human translation and not approved2011/ICEL English.",
+          "fidelity_notes": [
+            "All source clauses retained; no following psalm or doxology added.",
+            "collaudant rendered together praise; no invented doctrinal or rubrical clause.",
+            "English sentence division is editorial."
+          ]
+        },
+        "source_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-own-propers-checked-2026-10-20"
+      },
+      "finite_publication_basis": {
+        "decision": "accept-project-study-rendering-of-independently-established-1922-body",
+        "basis": "The exact whole underlying Latin antiphon is supplied by the already registered Tours Mame1922 page witness and checked transcription. Its finite United States public-domain original-publication and faithful-reproduction basis is recorded by the parent artifact. The fresh English is project-created study prose from that body, not claimed historical human English or approved ICEL English.",
+        "jurisdiction": "United States",
+        "basis_controller": {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+          "sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116",
+          "bytes": 2782
+        },
+        "historical_page_controller": {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-1922-pages-0682b2da/artifact.toml",
+          "sha256": "88d1242d2ddfb5a1047a1261f33f90a47e756b4cb903799d85116cde2acd2035",
+          "bytes": 1867
+        },
+        "source_text_controller": {
+          "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-four-propers-la-checked-82edd79a/artifact.toml",
+          "sha256": "05dbab0f3a4d4ca5dfaa5ee3b4b4cce49b1cba4002907b709b2517da73fef5fa",
+          "bytes": 2659
+        },
+        "source_image_freshly_inspected": true,
+        "original_publication_identification": "recorded 1922 parent edition; this review reopens its registered exact excerpt, not the whole parent title-page research",
+        "source_is_whole_antiphon_not_Bible_component": true,
+        "new_English_project_created": true,
+        "approved_English_held_separately": true
+      },
+      "recipient_edition_relation": {
+        "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+        "artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+        "artifact_page": 512,
+        "fresh_read": "complete rendered page-image body",
+        "relationship": "Same lexical antiphon; accents/case/pointing differ, and1922 solemnitate corresponds to2002 sollemnitate. No literal byte/orthography identity is claimed;2008 not established.",
+        "authenticated2008_compared": false,
+        "printed_2002_fidelity_established": false,
+        "current_2008_target_cleared": false
+      },
+      "original_target_preimage": {
+        "identity": [
+          "all-saints",
+          "main",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "section": "sanctoral",
+        "english_state": "untranslated",
+        "english_index": 201,
+        "english_record": {
+          "mass": "all-saints",
+          "form_id": "main",
+          "proper": "Entrance Antiphon",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "verified_artifact_page": 142,
+          "verified_printed_page": 134,
+          "verified_heading": "ALL SAINTS",
+          "verified_on_page": "2026-10-20",
+          "note": "Exact 2010 ICEL English exemplar held and directly read on artifact page 142, printed page 134. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording.",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+            "surfaces": [
+              "site-display",
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          }
+        },
+        "latin_in_composed_census": true,
+        "proper": {
+          "name": "Entrance Antiphon",
+          "source": "composed",
+          "text_status": {
+            "state": "unavailable",
+            "scope": "proper-body",
+            "reasons": [
+              {
+                "kind": "witness-gap",
+                "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+              }
+            ]
+          },
+          "notes": "Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded."
+        },
+        "lane": "nonseasonal"
+      },
+      "original_target_preimage_canonical_json_sha256": "afcc34d81b07f6fef2cf031c4bc8e0a308f88366742fab380c7fa47af1c0fc08",
+      "original_untranslated_refusal": {
+        "mass": "all-saints",
+        "form_id": "main",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "verified_artifact_page": 142,
+        "verified_printed_page": 134,
+        "verified_heading": "ALL SAINTS",
+        "verified_on_page": "2026-10-20",
+        "note": "Exact 2010 ICEL English exemplar held and directly read on artifact page 142, printed page 134. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording.",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "surfaces": [
+            "site-display",
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        }
+      },
+      "original_untranslated_refusal_canonical_json_sha256": "f6684589947a9312089ae67558cbd3d18442ed65fd89e5a20ee8121b4529fad8",
+      "integration_requirements": [
+        "Prepare a registered project-study publication artifact/passage with exact body hash, source chain, author/model disclosure required by project conventions and these finite source qualifications; no such canonical proposal is in this input.",
+        "Preserve the exact original target witness-gap and independent approved-English refusal dictionaries in the durable admission record.",
+        "Publish only as a historical-source study rendering. Authenticated2008 full-body comparison is still needed before any current target-edition binding or Latin availability promotion."
+      ]
+    }
+  ],
+  "explicit_exclusion": {
+    "identity": [
+      "christmas-december-30",
+      "main",
+      "Entrance Antiphon",
+      "all",
+      1
+    ],
+    "candidate_in_input_file_but_not_reviewed_or_admitted": true,
+    "reason": "Author held this fresh Lasance body pending exact registered1937/1945 stratum or a separate body-specific basis. This review does not extend the prior admissions of two other bodies to it."
+  },
+  "safety_of_integration": {
+    "source_artifacts_reused": true,
+    "new_source_PDF_copies_needed_for_integration": false,
+    "review_rasters_are_ignored_evidence_only": true,
+    "full_prior_dictionaries_embedded": true,
+    "whole_modern_Latin_or_approved_English_payload_copied_into_receipt": false,
+    "source_rights_or_current_target_status_not_overwritten": true
+  },
+  "verification_limits": [
+    "The scanned pages and exact proposed words were freshly independently inspected; no renewal-law research was rerun.",
+    "An earlier authenticated Lasance printing was not obtained; the two English reuses carry the existing finite body-specific admission, explicitly not fresh independent1945-stratum proof.",
+    "The actual modern comparator is the hash-pinned secondary2002 digital reproduction. No printed2002 fidelity or authentic2008 identity has been established.",
+    "The input files are proposals only; the receiving publication passage IDs of the two reuses remain integration placeholders and the new study rendering has no staged canonical publication artifact.",
+    "No generated UI, renderer or source-epoch validation was run in this scratch-only source-review lane."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "triptych-nine-proposal-current-collision-scan/v1",
+  "state": "measured-current-graph-before-nine-proposed-installation",
+  "counts": {
+    "source_records": 56877,
+    "passages": 9726,
+    "readable": 4202
+  },
+  "target_hashes": [
+    "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980",
+    "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5",
+    "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+    "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e",
+    "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+    "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86",
+    "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb",
+    "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+    "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592"
+  ],
+  "artifact_hits": [],
+  "readable_passage_hits": [],
+  "ledger_hits": [],
+  "metadata_pin_count": 56877,
+  "metadata_pins_sha256": "fcbfe70fe1d5b13e05ebc14dea89a7296dd9341fa5b2ebaa6c31fa48db5b8be6",
+  "payloads_read": 275,
+  "payload_pins_sha256": "aba58d9ec84375851b8c7a467c46de4618c10dd063e328867debd114aed486cc",
+  "limit": "Uses actual source-reader over directly loaded current metadata and hashed payloads; no whole-library validation claim. Any preserved prior route still needs independent source and current-route review.",
+  "remaining_routes": {
+    "artifact_hits": [],
+    "readable_passage_hits": [],
+    "ledger_hits": []
+  },
+  "installation_plan": {
+    "path": ".scratch/roman-sources/combined-nine/install-plan.json",
+    "sha256": "50e61827c4a96e5bacbfe1a3b3cfe55941ef3ed9af7b7fe274ddbe32b61e8b82"
+  },
+  "active_authority": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/finite-latin-authority-v4.json",
+    "sha256": "9d9bd0cc9a36fd6bbf4b474631d0944baf260f5a3e91b5612c4a5031363e37b7"
+  },
+  "active_helper_sha256": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+  "toolchain_sha256": {
+    "tools/source-reader": "c4fe3c59b63f5c8a307dff177106f429cc54cede5786d9c8bceeb0928fad75c6",
+    "tools/source-library": "963a9ac27c43d0ab93c568271401a865d5252854343e059d2c4208787fefb450",
+    ".scratch/roman-sources/collision_scan_nine.py": "13fd7acfcca3b76794e21318c772b4a4182e9ff5b9e546651580446fd639d536"
+  },
+  "metadata_file_set_and_content_rechecked": true
+}

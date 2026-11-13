@@ -1,0 +1,234 @@
+{
+  "schema": "triptych-selected-review-projection/v1",
+  "state": "faithful-nine-only-projection-of-existing-review-not-new-review-or-adoption",
+  "projection_scope": "Independent complete English/body fidelity review, nine exact cases only",
+  "original_review": {
+    "path": ".scratch/roman-sources/next-twelve-english-review/review.json",
+    "sha256": "64030738f276146b90db2fe0cc65e038786564289a4e0cd7230dfedf7c65218b"
+  },
+  "reviewer": "/root/roman_sources/six_english_review",
+  "reviewed_at": "2026-11-12T19:33:21.970788+00:00",
+  "selection_rule": "Retain exactly the nine identities in the bound actual Root merits preparation. Original case objects are copied without edits; excluded-case bodies and unrelated evidence packets are not included.",
+  "selected_cases": [
+    {
+      "original_json_pointer": "/cases/0",
+      "original_case_canonical_sha256": "62f3c1b9186df4fe27d36741eb26f1fe4e5b8ed03f85b405073d66b902943883",
+      "case": {
+        "identity": [
+          "good-friday",
+          "main",
+          "First Prayer after Communion",
+          "all",
+          1
+        ],
+        "latin": "Super populum tuum, quaesumus, Domine, qui passionem et mortem Filii tui devota mente recoluit, benedictio copiosa descendat, indulgentia veniat, consolatio tribuatur, fides sancta succrescat, redemptio sempiterna firmetur. Per eundem Christum Dominum nostrum. R. Amen.\n",
+        "latin_sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+        "english": "Upon your people, who have devoutly recalled the Passion and death of your Son, let an abundant blessing descend, we pray, Lord; let pardon come, consolation be granted, holy faith increase, and everlasting redemption be made firm. Through the same Christ our Lord. R. Amen.\n",
+        "english_sha256": "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528",
+        "latin_action": {
+          "kind": "rubric",
+          "offset": 261,
+          "text": "R."
+        },
+        "english_action": {
+          "kind": "rubric",
+          "offset": 266,
+          "text": "R."
+        },
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "The relative clause unambiguously modifies the people and uses completed commemoration. All five petitions are separately rendered in order, including pardon, consolation, increasing holy faith and firm everlasting redemption. The full same-Christ conclusion and spoken Amen are retained; no adjacent Oremus/title imported.",
+        "required_revisions": []
+      }
+    },
+    {
+      "original_json_pointer": "/cases/1",
+      "original_case_canonical_sha256": "1b18c0dd4f7f85b924abb0a5f54ad54503c559ce3275dd7574d66481114930d8",
+      "case": {
+        "identity": [
+          "good-friday",
+          "main",
+          "Second Prayer after Communion",
+          "all",
+          1
+        ],
+        "latin": "Omnipotens et misericors Deus, qui Christi tui beata passione et morte nos reparasti: conserva in nobis operam misericordiae tuae; ut, huius mysterii participatione, perpetua devotione vivamus. Per eundem Christum Dominum nostrum. R. Amen.\n",
+        "latin_sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+        "english": "Almighty and merciful God, who have restored us through the blessed Passion and death of your Christ: preserve in us the work of your mercy, so that through participation in this mystery we may live in constant devotion. Through the same Christ our Lord. R. Amen.\n",
+        "english_sha256": "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84",
+        "latin_action": {
+          "kind": "rubric",
+          "offset": 231,
+          "text": "R."
+        },
+        "english_action": {
+          "kind": "rubric",
+          "offset": 255,
+          "text": "R."
+        },
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "The target merciful address, completed restoration by Christ's Passion and death, singular work of mercy, participation in this mystery and continuing devotion are all expressed. The English does not revert to the old eternal address, present tense, plural works or celebration wording. Full same-Christ conclusion and spoken Amen retained.",
+        "required_revisions": []
+      }
+    },
+    {
+      "original_json_pointer": "/cases/2",
+      "original_case_canonical_sha256": "53d26bf5f69baed972207fd10672a338cf7eabfe35d349b2d0b473db862ab12e",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Collect (Altera oratio)",
+          "all",
+          1
+        ],
+        "latin": "Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab infernarum eruis terrore portarum: praesta, quaesumus; ut, intercedente beato N. (Martyre tuo atque) Summo Pontifice, in tua veritate persistens, continua securitate muniatur. Per Dominum.\n",
+        "latin_sha256": "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5",
+        "english": "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed N. (your Martyr and) Supreme Pontiff, she may be fortified with continual security, remaining steadfast in your truth. Through the Lord.\n",
+        "english_sha256": "c43d59ab7ef49dd5f9b9af4952818cdedbf90b63cf789d10cc1e4db1a72fef72",
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "Complete God-address, Church foundation on apostolic rock, rescue from terror of infernal gates, saint-mediated intercession, remaining in truth and continuing security retained. Singular N./Supreme Pontiff and optional martyr designation preserved. Short conclusion stays short.",
+        "required_revisions": []
+      }
+    },
+    {
+      "original_json_pointer": "/cases/3",
+      "original_case_canonical_sha256": "ad37ab41c98099437516cb4d4f6321bff92bb6147e51f47bcac45b843d2abb74",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Collect (Altera oratio, in plurali)",
+          "all",
+          1
+        ],
+        "latin": "Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab infernarum eruis terrore portarum: praesta, quaesumus; ut, intercedentibus beatis N. et N. (Martyribus tuis atque) Summis Pontificibus, in tua veritate persistens, continua securitate muniatur. Per Dominum.\n",
+        "latin_sha256": "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e",
+        "english": "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed N. and N. (your Martyrs and) Supreme Pontiffs, she may be fortified with continual security, remaining steadfast in your truth. Through the Lord.\n",
+        "english_sha256": "a408bbaeb0aba387aea72db613abff2b6848e6150e8693ae8f6aea5aa9b64ccd",
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "All singular Collect meanings retained with exactly plural saint/intercession/title form. Church remains the singular subject of remaining steadfast and being fortified. Short conclusion stays short.",
+        "required_revisions": []
+      }
+    },
+    {
+      "original_json_pointer": "/cases/4",
+      "original_case_canonical_sha256": "1e6ae165e07ecad987d6b7ea9a31136ede8f33966b89410b948a55a207dc2fb7",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Secret (Altera secreta)",
+          "all",
+          1
+        ],
+        "latin": "Munera, quae tibi, Domine, laetantes offerimus, suscipe benignus, et praesta: ut, intercedente beato N. (intercedentibus beatis N. et N.), Ecclesia tua et fidei integritate laetetur, et temporum tranquillitate semper exsultet. Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\n",
+        "latin_sha256": "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86",
+        "english": "Kindly accept, Lord, the gifts we joyfully offer you, and grant that, through the intercession of blessed N. (through the intercession of blessed N. and N.), your Church may rejoice in the integrity of faith and always exult in the tranquility of the times. Through our Lord Jesus Christ, your Son: Who lives and reigns with you in unity.\n",
+        "english_sha256": "a0e9e1cd055d852590e8c62df914e45558f83569d2ff051c9ceca20cc3ab7a3a",
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "Joyful offered gifts, benevolent acceptance, intercession, integrity of faith and continual temporal peace retained. Parenthesized plural intercession remains an alternative to singular form. Printed longer conclusion translated only through in unitate; no unprinted Holy-Spirit or eternal-ending completion.",
+        "required_revisions": []
+      }
+    },
+    {
+      "original_json_pointer": "/cases/5",
+      "original_case_canonical_sha256": "896c005eba5ec7083979c9024e60d73cc5774ca45e7013ffa40f9b196822103a",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Postcommunion (Altera postcommunio)",
+          "all",
+          1
+        ],
+        "latin": "Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem dedisti: ut, beati N. (Martyris tui atque) Summi Pontificis deprecatione, nec pastori oboedientia gregis nec gregi desit cura pastoris. Per Dominum.\n",
+        "latin_sha256": "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980",
+        "english": "Increase, we ask, Lord, in your Church the spirit of grace that you have given, so that, through the prayer of blessed N. (your Martyr and) Supreme Pontiff, the shepherd may not lack the flock's obedience, nor the flock the shepherd's care. Through the Lord.\n",
+        "english_sha256": "927b5d3a21074a0c98c877986aa69df09cf917253024971c26bf659c70002de6",
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "Increase of the already-given spirit of grace retained. Reciprocal petition distinguishes the shepherd receiving flock obedience from flock receiving pastoral care. Singular saint with optional martyr designation and short conclusion retained.",
+        "required_revisions": []
+      }
+    },
+    {
+      "original_json_pointer": "/cases/6",
+      "original_case_canonical_sha256": "804ba2e3b78e3c9c6a1d6edbb36fcbcf7e9b33231bba353e1766a4e411091d4e",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Postcommunion (in plurali)",
+          "all",
+          1
+        ],
+        "latin": "Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem dedisti: ut, beatorum N. et N. (Martyrum tuorum atque) Summorum Pontificum deprecatione, nec pastori oboedientia gregis nec gregi desit cura pastoris. Per Dominum.\n",
+        "latin_sha256": "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb",
+        "english": "Increase, we ask, Lord, in your Church the spirit of grace that you have given, so that, through the prayer of blessed N. and N. (your Martyrs and) Supreme Pontiffs, the shepherd may not lack the flock's obedience, nor the flock the shepherd's care. Through the Lord.\n",
+        "english_sha256": "0b114210b02f860463a3d31a346b2abdcdc576efe0d19ed4c1f5d444621ad54f",
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "As singular Postcommunion but correctly plural named saints, martyrs and supreme pontiffs; deprecatione remains a collective prayer, while shepherd and flock remain singular. Short conclusion retained.",
+        "required_revisions": []
+      }
+    },
+    {
+      "original_json_pointer": "/cases/8",
+      "original_case_canonical_sha256": "075f0f0750a2a539c1e3dced3b5bacd81ea98253b49c314e35d7e1bcfd5cf202",
+      "case": {
+        "identity": [
+          "assumptione-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "id": "assumption-postcommunion",
+        "latin": "Sumptis, Domine, salutaribus sacramentis: da, quaesumus; ut, meritis et intercessione beatae Virginis Mariae in caelum assumptae, ad resurrectionis gloriam perducamur. Per Dominum.\n",
+        "latin_sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+        "english": "Having received the saving sacraments, O Lord, we ask you to grant that, through the merits and intercession of the Blessed Virgin Mary assumed into heaven, we may be led to the glory of the resurrection. Through our Lord.\n",
+        "english_sha256": "571ec8706ad543253335455e93fd2fe5dbcf16e6084a14fd72778d573b9f5f36",
+        "english_kind": "original-study-translation",
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "Completed reception of saving sacraments, supplication, merits and intercession of Mary assumed into heaven, and being led to resurrection glory are all retained. Participial having received correctly takes the prayer speakers as its subject. The conventional short English ending remains a cue, not a supplied full formula.",
+        "required_revisions": []
+      }
+    },
+    {
+      "original_json_pointer": "/cases/11",
+      "original_case_canonical_sha256": "ef7f0f733f0caac105b20bece9b714f41b232e222e9878f2e4a6dbb8fb8d293c",
+      "case": {
+        "identity": [
+          "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "id": "bellarmine-secret",
+        "latin": "Hostias tibi, Domine, in odorem suavitatis offerimus: et praesta; ut, beati Roberti monitis et exemplis edocti, per semitam mandatorum tuorum dilatato corde curramus. Per Dominum nostrum.\n",
+        "latin_sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+        "english": "We offer you sacrificial offerings, O Lord, as a sweet fragrance; and grant that, instructed by the counsels and examples of blessed Robert, we may run with an enlarged heart along the path of your commandments. Through our Lord.\n",
+        "english_sha256": "e52ebe481515425327be38e0eb18351cbb183f82c4c244cc86678dc2022a327e",
+        "english_kind": "original-study-translation",
+        "verdict": "accept-exact-body-fidelity",
+        "reason": "Plural sacrificial offerings and sweet-fragrance purpose, petition for instruction by Robert's counsels and examples, and running with an enlarged heart along the commandments' path are retained. The biblical heart/path metaphor is preserved. Short Per Dominum nostrum ending stays short.",
+        "required_revisions": []
+      }
+    }
+  ],
+  "excluded_case_dispositions": [
+    {
+      "name": "Palm conclusion",
+      "disposition": "held; no body reproduced or admission inferred"
+    },
+    {
+      "name": "Bellarmine Collect",
+      "disposition": "held; no body reproduced or admission inferred"
+    },
+    {
+      "name": "Bellarmine Postcommunion",
+      "disposition": "held; no body reproduced or admission inferred"
+    }
+  ],
+  "original_review_hash_preserved": true,
+  "source_evidence_boundary": "Original exact source observations, body hashes and witness loci are retained in these case objects. Source/carrier metadata and unchanged exact final bindings are supplied by the separately byte-exact merged-nine receipts and final installation manifest. This is a selection, not a new image-reading claim."
+}

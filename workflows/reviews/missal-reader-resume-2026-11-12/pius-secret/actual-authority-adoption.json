@@ -1,0 +1,73 @@
+{
+  "schema": "triptych-root-actual-authority-adoption/v1",
+  "decision": "Adopt exact Pius v6 authority and three-constant helper successor",
+  "authority": {
+    "path": ".scratch/roman-sources/pius-secret-authority/activation-proposal/finite-latin-authority-v6.json",
+    "sha256": "7212997024f229fa25f8d4a93901f572fc2b3df325d279120fd81f870db40c1b"
+  },
+  "helper": {
+    "path": ".scratch/roman-sources/pius-secret-authority/activation-proposal/_proper_finite_latin_20261029.py",
+    "sha256": "295dcd80507643b4182f998c6ce8fc74c89e2278f0b60bb2fd02049b31162984"
+  },
+  "independent_review": {
+    "path": ".scratch/roman-sources/pius-authority-independent-review/review.json",
+    "sha256": "d389fe44be08e18c587986389d3e593ca3953e2a6dec13493c1cbfc96ee5f058"
+  },
+  "root_review": "Read full final independent review and helper patch. Rehashed all ten primary inputs and eight source files; independently proved exact preservation of all 37 scopes/prior routes and helper AST outside the three declared constants. Prior actual eda3 source-owner decision controls source merits.",
+  "scope": {
+    "identity": [
+      "s-pii-x-papae-confessoris",
+      "main",
+      "Secret",
+      "all",
+      1
+    ],
+    "latin_key": [
+      "s-pii-x-papae-confessoris",
+      "",
+      "Secret",
+      "",
+      "",
+      1
+    ],
+    "Latin_sha256": "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16",
+    "English_sha256": "e903c088e8503efc55eabeb691e81fd63faeae988a2a57edd0417f86bc05444f",
+    "final_English_entry_sha256": "38d08645186939e5c7a62bccd13390b84c71e7869414b511463e932487160f57",
+    "resolved_Latin_row_sha256": "9aeb81d3f43219d6517315bf7da88d48548f6e9706b11460f06bcacf760f6ae3",
+    "inherited_Latin_row_sha256": "3d2ceb14bc9b0a45843520380fc0fe20381a900a4f75707be9faeeacc4e50315",
+    "proper_row_sha256": "ec7cc3b82664e2d57faf9247e707bfd122fc1ba482b548f186927390084028fe",
+    "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pius-x-secret-target-control-20261113",
+    "target_record_sha256": "7267c6785d63e635ce306554b39f3df1debd9a018d7ceaa1d5b024406543b1ea",
+    "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113",
+    "controller_passage_record_sha256": "64c3b634fda91da36130ab92329b3fd3299b408921c15229e3889dbd6e3a8d96",
+    "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113-44e8e1db",
+    "controller_artifact_record_sha256": "9c7a7a9ce25550cf556d79be4ce68511189d9b1c3d26a046b635e85d3038b35d",
+    "controller_payload_sha256": "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16",
+    "source_record_closure_sha256": "0ea3590d9d0db3a2b4b28b2a22dcdc8b408b5759405a9fbacf0fe20168107373",
+    "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+    "publication_basis": "qualified-nonoriginal-adaptation",
+    "confidence": "moderate",
+    "jurisdiction": "United States",
+    "binding_adoption_status": "accepted by actual Root source-owner decision",
+    "surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "publication_source_ids": [
+      "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113-44e8e1db",
+      "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-sunday-postcommunion-20261113"
+    ]
+  },
+  "limits": [
+    "PASS concerns the exact prospective v6 bytes72129970… and helper295dcd80… only; installing or substituting different bytes requires new checks.",
+    "No full source library, whole producer, source-epoch, conclusion/actor, browser or native build was rerun.",
+    "No page images were newly read and no publication-law merits were re-decided. Exact accepted Root source-owner case and source/English proof hashes were independently rehashed and joined.",
+    "Qualified adaptation notice remains moderate and United States-specific; only Pius Secret is added. Pius siblings and all residual holds remain outside this new tuple.",
+    "Inherited pre55 source validation is not permission: the exact inherited row remains unresolved with no surfaces and no independent older-recension attestation."
+  ],
+  "canonical_writes": false
+}

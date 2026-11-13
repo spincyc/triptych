@@ -1,0 +1,171 @@
+{
+  "schema": "triptych-ferial-three-independent-recipient-carrier-source-amendment/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "independent_of_author": true,
+  "verdict": "PASS exact source metadata and recipient publication binding amendment; not an installation approval",
+  "source_binding_blockers": [],
+  "final_source_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/install-plan.json",
+    "sha256": "c015358de877879ccaaf10e8bd1ce5c4af9c096d7c55a2bc024308583e0263d1",
+    "bytes": 81954
+  },
+  "metadata_delta": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/metadata-delta.json",
+    "sha256": "e527986b19b110aa4eafe98db0e7fbbda4613a8c54c1f5d4581f20d904ea0392",
+    "bytes": 19053
+  },
+  "appointment_body_bindings": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/appointment-body-bindings.json",
+    "sha256": "48ddf0258bbd827c467fddfe832e63f9cb6401b8a252a4cc56d3841d01090e2e",
+    "bytes": 44281
+  },
+  "prior_receipts_unchanged": [
+    {
+      "path": ".scratch/roman-sources/ferial-three-source-review/review.json",
+      "sha256": "3cea9775916c63df05cbadad718953897bd71b65ecc57ce79773ea8dec6535b3",
+      "bytes": 41375
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three-source-review/metadata-v3-supplement.json",
+      "sha256": "f64792c54c3e9347ab59b5fd04f4f1005f3d86768fb499d03124e31741f14f96",
+      "bytes": 12340
+    }
+  ],
+  "prior_root_admission": {
+    "path": ".scratch/root/ferial-three-source-admission.json",
+    "sha256": "3d9681a4ef811fd3cb1af55d4cef34d117c34d266e806b462fe38401ed0c74e2",
+    "byte_size": 6700
+  },
+  "exact_identity": [
+    "passion-wednesday",
+    "main",
+    "Oratio super populum",
+    "all",
+    1
+  ],
+  "new_English_entry_sha256": "d3f075c746563a9a28be986ac0547aa5209910abd7f1ee810ce1da5a7efd3c43",
+  "correction_to_prior_review_scope": {
+    "finding": "The original review established the exact historical donor English body and lineage, but did not execute the mass-propers recipient publication-TSV identity contract. Its prior metadata/binding PASS must not be read as a successful consumer or runtime build.",
+    "observed_refusal": "independent-recipient-fixture: publication passage mass does not match translation target",
+    "original_failed_build_log": {
+      "path": ".scratch/dedication-context/ferial-frame/composite38/propers-source-build.log",
+      "sha256": "2ccc7762c563865274f032032522bf0a0986d67523be88e0942236abe908a221",
+      "byte_size": 235
+    },
+    "prior_activation_still_held": {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/activation-plan.json",
+      "sha256": "50528bc2900ee671f244f8bfd24fce83d46678d76c81d0f18feea4f09c23b31a",
+      "disposition": "Not installable. This amendment does not clear or revise that frozen activation plan or its earlier seven-file durable map."
+    },
+    "replacement_boundary": "The successor changes the recipient publication carrier and passage. The historical verification passage, donor publication owner, source PDF, edition, rights basis and all literal prayer bodies remain unchanged."
+  },
+  "independent_findings": [
+    "The complete parsed plan delta consists of exactly four Passion Wednesday English metadata fields, three appended source files, their necessary object/binding hash repins and explicit private-successor state/provenance fields. All other plan values are identical to v3.",
+    "The first 21 source-file descriptors and their literal bytes are unchanged. All three complete proper objects, all three Latin provenance rows, the first two English entries, all six literal bodies and the donor input objects are unchanged.",
+    "The new 278-byte UTF-8 TSV contains one recipient row with passion-wednesday/main/Oratio super populum/all/1. Its complete English field equals the decoded donor publication TSV physical line 70 and the exact admitted English body byte for byte.",
+    "The new publication artifact remains derived from the original registered verification PDF and belongs to the same historical Lasance edition and bounded rights route. No new scan, printing date, edition permission or whole-book public-domain claim is inferred.",
+    "The new publication passage binds physical line 2 and carries exactly the retained donor verification/publication locus. Its context distinguishes the historical Lent II Monday source from the independently established Passion Wednesday appointment, and its notes disclaim a new image inspection.",
+    "The duplicated appointment-body binding contains the exact successor English entry/hash and precisely the two new source-proof records, preserving all former proof records and controls.",
+    "The unmodified mass-propers publication validator accepts the successor recipient and unchanged donor. It still rejects the old recipient metadata, wrong recipient mass, stale publication hash and an added English Amen."
+  ],
+  "declared_changed_fields": [
+    "publication_artifact_id",
+    "publication_artifact_sha256",
+    "publication_passage_id",
+    "witness_note"
+  ],
+  "new_source_files": [
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+      "sha256": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+      "sha256": "6ee61b34bbb6346b1b8f36c1ed3d32ab3af343594c4dff1e779ad38a17e40fcd"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+      "sha256": "55348fa03e59567eb92b568e80686474b5d1bc12fb275b0750a9701ec0150f43"
+    }
+  ],
+  "literal_body_pins": [
+    {
+      "identity": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+      "English_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269"
+    },
+    {
+      "identity": [
+        "lent-4-thursday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+      "English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e"
+    },
+    {
+      "identity": [
+        "passion-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+      "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f"
+    }
+  ],
+  "verification": {
+    "independent_checks": 372,
+    "failures": [],
+    "closed_source_records": 48,
+    "source_schema_and_relationship_checks": "Passed on the exact closed source fixture.",
+    "production_binding_method": "Unmodified tools/mass-propers validate_translation_publication_binding executed against the exact pinned closed source-record mapping and copied text payloads in reviewer-only fixture. Source-index discovery is supplied by the verified mapping; no full CLI build or runtime is claimed.",
+    "accepted": [
+      "new recipient entry",
+      "unchanged donor entry"
+    ],
+    "refused": {
+      "old_recipient_entry": "independent-recipient-fixture: publication passage mass does not match translation target",
+      "wrong_mass": "independent-recipient-fixture: publication passage mass does not match translation target",
+      "wrong_payload_hash": "independent-recipient-fixture: publication artifact hash is stale: inventory '0000000000000000000000000000000000000000000000000000000000000000', source record 'ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7'",
+      "changed_complete_English": "independent-recipient-fixture: translation body differs from its exact publication passage"
+    },
+    "new_image_reads": 0,
+    "canonical_mutations": false,
+    "audit": {
+      "path": ".scratch/roman-sources/ferial-three-source-review/recipient-carrier-audit.json",
+      "sha256": "21e21c2771b8a7110c0aa381edadfc3fea2aa4f90340344cdba4af46d377245a",
+      "bytes": 104801
+    },
+    "audit_script": {
+      "path": ".scratch/roman-sources/ferial-three-source-review/audit_recipient_carrier.py",
+      "sha256": "b2183a84037cbe855509e1a7f266c60f5bdbabfe35312b9a46daa569cb68f569",
+      "bytes": 11903
+    }
+  },
+  "integration_requirements": [
+    "Root must admit the exact successor English entry hash d3f075c746563a9a28be986ac0547aa5209910abd7f1ee810ce1da5a7efd3c43 and its three new source files. The earlier Root receipt binds a different complete entry and does not automatically authorize this successor.",
+    "A new reviewed activation/durable-evidence successor must bind this amendment, the new 24-file source plan and corrected complete English entry. The frozen activation plan 50528bc2900ee671f244f8bfd24fce83d46678d76c81d0f18feea4f09c23b31a remains held.",
+    "Owning integration must rerun the full producer/source checks with current recipient and donor preimages, then independently complete frame, conclusion and source-epoch checks before making rendering claims."
+  ],
+  "limits": [
+    "This is a source-factual and exact metadata/binding amendment, not fresh legal research, publication authority, Root adoption or an English semantic re-review.",
+    "No source image was reread. The pinned full source receipt supplies the unchanged image observations and their original limits.",
+    "The direct production validator used actual copied payloads and the independently verified closed record mapping. Source discovery was supplied by that mapping; this receipt does not claim a full mass-propers CLI build or runtime execution.",
+    "No installer was invoked and --apply was not run. Canonical sources, candidate files, donor owners, original proposals and prior receipts were not changed.",
+    "Inherited prior source-review references in the successor plan remain historical evidence for unchanged inputs; this amendment is the exact review of the new carrier and complete English entry."
+  ]
+}

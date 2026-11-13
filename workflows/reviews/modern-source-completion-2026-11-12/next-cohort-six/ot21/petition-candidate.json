@@ -1,0 +1,86 @@
+{
+  "schema": "ordinarytime-plenum-study-candidate/v1",
+  "identity": [
+    "ot-21",
+    "main",
+    "Prayer after Communion",
+    "all",
+    1
+  ],
+  "status": "source-prepared-needs-independent-fidelity-review",
+  "historical_latin_body": "Plenum, quæsumus Dómine, in nobis remédium tuæ miseratiónis operáre: ac tales nos esse pérfice propítius, et sic fovéri; ut tibi in ómnibus placére valeámus.",
+  "historical_latin_body_sha256": "ebe655fe914bd83a239ca33f038c6c9a4a005f0569b4aa529468f0f8dbee39b9",
+  "historical_conclusion_cue": "Per Dóminum nostrum.",
+  "study_english_body": "Work in us, we pray, O Lord, the full remedy of your mercy, and graciously form and sustain us so that we may please you in all things.",
+  "study_english_body_sha256": "b6401a8a2fce54d3923c1d578a8d5fe72d614f956f935b716e1f430ed37d3370",
+  "study_english_label": "New project study translation from public-domain Latin; not approved liturgical English.",
+  "english_conclusion": null,
+  "conclusion_disposition": "Body only. Do not expand old Per Dominum nostrum or modern secondary Per Christum from memory. Integrator must bind separately verified lawful formula and explicitly represent the change of cue.",
+  "source_manifest_path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml",
+  "source_manifest": {
+    "schema": 2,
+    "record_type": "artifact",
+    "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "artifact_type": "facsimile-pdf",
+    "media_type": "application/pdf",
+    "storage": "remote",
+    "rights_status": "public-domain",
+    "rights_basis": "The underlying Pustet printing was published at Ratisbon in 1862 and is in the United States public domain by publication date; its maximum possible United States term expired before URAA restoration. This exact PDF is a faithful machine reproduction of that public-domain scan and adds no human authorship. The decision relies on the publication date and the mechanical character of the reproduction, not an Internet Archive or Google rights label.",
+    "rights_jurisdiction": "United States",
+    "source_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf",
+    "provenance": "Exact complete Internet Archive PDF for item bub_gb_E7sPAAAAIAAJ, fetched whole over HTTPS on 2026-08-27 and hashed locally. Its 102,880,787-byte size agrees with the pre-existing verified acquisition record. Local pdfinfo reports 922 pages. No Triptych transformation or model was used.",
+    "retrieved": "2026-08-27",
+    "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+    "byte_size": 102880787,
+    "page_count": 922,
+    "indexable": false,
+    "notes": "Whole-document visual acquisition. Internet Archive flags this derivative pdf_degraded=invalid-page-size, and local pdfinfo reports 3.65356 by 6.08829 point page boxes; the record preserves that limitation rather than presenting the PDF as a clean reader file. The item also supplies the exact whole original image archive registered as ia-original-page-images-tar-fd220b49."
+  },
+  "source_actual_path": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+  "actual_whole_hash_checked": true,
+  "artifact_page": 780,
+  "printed_page": "[110]",
+  "historical_locus": "Benedictiones diversae / Oratio in Consecratione Episcopi / Postcommunio, complete body begins bottom left and ends top right",
+  "historical_heading_evidence": "Same exact PDF AP779 text layer names Oratio in Consecratione Episcopi; source body visually verified AP780.",
+  "historical_body_inspection": "Fresh whole-page visual comparison2026-11-12, not inferred from OCR or old notes.",
+  "target_secondary2002": {
+    "body": "Plenum, quǽsumus, Dómine,\nin nobis remédium tuæ miseratiónis operáre,\nac tales nos esse pérfice propítius et sic fovéri,\nut tibi in ómnibus placére valeámus.\nPer Christum.",
+    "sha256": "ce0726bc9d9fea4e06035ff7daa270e30debac655801536d60b1f726877d427c",
+    "pdf_pages": [
+      285,
+      286
+    ],
+    "artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+  },
+  "target_artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+  "target_edition_actually_compared": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+  "target_visual_pages": [
+    285,
+    286
+  ],
+  "target_2008_authenticated": false,
+  "relation": "Complete petition lexically identical after accents/ligatures/case/punctuation and line-wrap normalization. Historical cue Per Dominum nostrum differs from secondary2002 Per Christum. No word omitted/added in petition.",
+  "review_focus": [
+    "Verify literal old Latin direct image transcription and exact normalized petition equality.",
+    "Assess study rendering of tales nos esse perfice propitius et sic foveri; proposed form and sustain preserves paired actions but reviewer may improve without reference to approved modern English.",
+    "Keep full conclusion formula separately evidenced and authenticated2008 equivalence unresolved."
+  ],
+  "proposed_source_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ot21-plenum-latin-20261112",
+  "proposed_study_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ot21-plenum-study-en-20261112",
+  "canonical_writes": false,
+  "fresh_evidence_images": [
+    {
+      "path": ".scratch/modern-partition-ordinarytime/rasters/roman1862-ap780.png",
+      "sha256": "e15b3d6d4cba994df918c8b7a6f437ca2ffb94892d920767ec69ee0dbb39f040"
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/rasters/secondary2002-ap285.png",
+      "sha256": "514c1d9635a6067427bf192b101a0f1c88fd00d94f05126d509ef9c23a1f03e3"
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/rasters/secondary2002-ap286.png",
+      "sha256": "d9edefebad1b65f32f1437f15cf1e568dd8ed9104556ccca2ffcdec131259bd5"
+    }
+  ]
+}

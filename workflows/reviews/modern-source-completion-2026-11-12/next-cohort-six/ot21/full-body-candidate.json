@@ -1,0 +1,82 @@
+{
+  "schema": "triptych-plenum-complete-study-assembly/v1",
+  "identity": [
+    "ot-21",
+    "main",
+    "Prayer after Communion",
+    "all",
+    1
+  ],
+  "status": "prepared-awaiting-independent-whole-expression-and-fidelity-review",
+  "supersedes_body_only_packet": {
+    "path": ".scratch/modern-partition-ordinarytime/plenum-candidate.json",
+    "sha256": "1b6c4119d912399157a3aeca0f400e2a0dd0aa5e942d6c736ca48bf249682074"
+  },
+  "latin_petition_normalized": "Plenum, quaesumus Domine, in nobis remedium tuae miserationis operare: ac tales nos esse perfice propitius, et sic foveri; ut tibi in omnibus placere valeamus.",
+  "latin_petition_normalized_sha256": "93cca2a6e8fd1b90dfa4c164f90a10d2294c358f412dee22c9341549170490a9",
+  "latin_full": "Plenum, quaesumus Domine, in nobis remedium tuae miserationis operare: ac tales nos esse perfice propitius, et sic foveri; ut tibi in omnibus placere valeamus.\nPer Christum Dominum nostrum.\nR. Amen.",
+  "latin_full_sha256": "36e86231010cd442ba153211c41e73fc7a2e5a3f34d6a7366b12a72c914674e3",
+  "study_english_full": "Work in us, we pray, O Lord, the full remedy of your mercy, and graciously form and sustain us so that we may please you in all things.\nThrough Christ our Lord.\nR. Amen.",
+  "study_english_full_sha256": "4bf0aad8ec265a0e84f7859d6354313dd07b5f657a24f0091f85ad3479de5332",
+  "response_scope": "R. Amen. is a distinct response line in both languages; R. represents source response glyph, not prayer wording.",
+  "historical_petition": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "artifact_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+    "whole_actual_path": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+    "artifact_page": 780,
+    "printed_page": "[110]",
+    "source_extent": "Complete old Plenum petition, without its actual Per Dominum nostrum cue; every petition word retained, punctuation retained, accents removed and ae ligatures expanded.",
+    "source_literal_cue": "Per Dóminum nostrum.",
+    "independent_body_review": ".scratch/modern-new-orations-review/ot21/review.json"
+  },
+  "full_conclusion": {
+    "verification_passage_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+    "verification_passage": {
+      "schema": 2,
+      "record_type": "passage",
+      "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+      "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+      "artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "locus": "Lasance printed217; parentPDF217; retained derivative page1; common short endings in AshWednesday prayers",
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "context": "Independently complete old common short conclusion and distinct marked response; not a GoodFriday whole historical prayer or edited old English hybrid.",
+      "verified_on": "2026-10-30",
+      "notes": "Literal Latin: Per Christum Dominum nostrum. R. Amen. Literal historical English: Through Christ our Lord. R. Amen. The response marker distinguishes the response from the prayer ending. Only this separately witnessed common formula is applied in original project study English.",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    "artifact_actual_path": ".scratch/artifact-cache/d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8/pages.pdf",
+    "actual_artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+    "fresh_visual_image": ".scratch/modern-partition-ordinarytime/rasters/lasance1945-formula-p217.png",
+    "actual_printed_page": "217",
+    "actual_derivative_page": 1,
+    "latin": "Per Christum Dominum nostrum.\nR. Amen.",
+    "english": "Through Christ our Lord.\nR. Amen.",
+    "inspection": "Fresh complete page rendered and viewed2026-11-12; upper and middle source prayer endings both print complete common short formula with distinct response."
+  },
+  "comparison": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "actual_path": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+    "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "pages": [
+      285,
+      286
+    ],
+    "literal_cue": "Per Christum.",
+    "relation": "Complete petition word sequence identical to historical1862 after typography normalization. Old Per Dominum nostrum cue replaced only in this explicit assembly by separately held full short formula corresponding to secondary2002 Per Christum cue. The full expanded formula is not claimed printed at secondary2002 AP285–286.",
+    "printed_2002_authenticated": false,
+    "target2008_authenticated": false
+  },
+  "finite_whole_expression_basis_proposed": "One entire independently public-domain historical petition is retained without lexical editing, followed by one independently witnessed complete conventional conclusion and marked response. No petition fragment is selected, no substantive modern clause is inserted, and no source body is represented as a contiguous historical prayer with this different ending. This finite source-based assembly is a historical study rendering; exact2008 target remains unresolved. Review must assess this complete bounded combination, not use small-word-change or vocabulary-overlap rules.",
+  "publication_proposal": "Register project editorial Latin carrier under a separate dated source assembly edition; underlying prayer and formula publication basis public-domain through their exact old artifacts. Latin relation exact-transcription to this declared source assembly, not editorial-projection-exact-to-target. Bind complete new project-created English to exact permitted assembly Latin hash/passage/source IDs. No ICEL or approved2011 wording used."
+}

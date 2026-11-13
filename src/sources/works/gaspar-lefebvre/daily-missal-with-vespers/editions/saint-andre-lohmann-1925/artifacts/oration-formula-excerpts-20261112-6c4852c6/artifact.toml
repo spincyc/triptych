@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.oration-formula-excerpts-20261112-6c4852c6"
+edition_id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact_type = "normalized-text"
+media_type = "application/json; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Historical underlying English of the separately identified early Daily Missal with Vespers expression, catalogue-supported 1925 and independently bounded before 1931 by January 1927 physical library accession. The established United States historical-publication basis is recorded on artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.resume-orations-reader-completion-20261026-josaphat-one-60f936e7. This bounded publication retains only newly image-checked original formula wording. It does not clear the exact Google/CCWatershed PDF, image or text-layer payload, modern wrappers, commentary, illustrations or unreviewed inserts."
+derived_from = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf"
+provenance = "Complete hash-matched source PDF held and the listed primary pages directly read on 2026-11-12. Five active formula controls across the two editions were independently reviewed; exact prior source-control packet SHA256 efb7809d88d09fd849ec33a4f54c8df682ca1cfad7c233f7f30eea1f314dd9ea and independent merits receipt SHA256 85296c9b5b9cf5a08d872f606b05e3fa8e796754e8cdb9e977422c62b015a506. Durable registration/review mapping: workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/next-cohort/same-witness-formula-review.json."
+transformation = "Join page and line divisions and printed line-end hyphenation only. Preserve English words, case and punctuation. The terminal Amen is retained separately and does not assign an execution speaker. No Latin transcription, image, layout, watermark, host text or expanded target prayer is included."
+retrieved = "2026-11-12"
+sha256 = "6c4852c69c04ad341865de4766fd36f0960ffe444c663bdb2cec3813cbfd6ae0"
+byte_size = 5197
+path = "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/artifacts/oration-formula-excerpts-20261112-6c4852c6/formulas.json"
+encoding = "utf-8"
+indexable = true
+notes = "Local formula excerpts only, not a general conclusion table or an authorization to change historical prayer quotations. Underlying historical wording is not Triptych-authored. No target prayer body, modern formula or response appointment is added."

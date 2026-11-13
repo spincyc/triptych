@@ -1,0 +1,257 @@
+{
+  "record_type": "easter-study-source-preparation",
+  "date": "2026-11-12",
+  "canonical_changes": false,
+  "candidates": [
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the First Reading",
+        "all",
+        1
+      ],
+      "disposition": "source-prepared-awaiting-independent-review",
+      "route": "original project study English from complete independently old Latin petition, an explicitly enumerated word-order/spelling variant, and independently witnessed complete conclusion and response",
+      "english": "Almighty and everlasting God, wondrous in the ordering of all your works, may those you have redeemed understand that the making of the world in the beginning was no greater than the sacrifice of Christ, our Passover, at the end of the ages. Who lives and reigns for ever and ever. R. Amen.",
+      "english_sha256": "6c1315dcc0dc085fb6bf21c89e2040c0a1683d972bb4a96d30b2816bb00d5a19",
+      "english_file": ".scratch/modern-partition-easter/first-reading-study-english.txt",
+      "editorial_latin": "Omnipotens sempiterne Deus, qui es in omnium operum tuorum dispensatione mirabilis, intellegant redempti tui non fuisse excellentius quod initio factus est mundus, quam quod in fine saeculorum Pascha nostrum immolatus est Christus. Qui vivit et regnat in saecula saeculorum. R. Amen.",
+      "editorial_latin_sha256": "6e5f69ddd9a3a781b75df50dd830d172ddd0b10b7a4031e4245c287145400b35",
+      "editorial_latin_status": "Proposed project source expression for study translation; not an authenticated2008 or printed2002 transcription/admission.",
+      "historical_petition": "Omnipotens sempiterne Deus, qui in omnium operum tuorum dispensatione mirabilis es, intelligant redempti tui non fuisse excellentius quod initio factus est mundus, quam quod in fine saeculorum Pascha nostrum immolatus est Christus. Per eundem Dominum.",
+      "historical_petition_sha256": "42ad01fa8ad311c2a880cd8536494913745e7bfbb568c302e86e79597c13931e",
+      "source_evidence": [
+        {
+          "source_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+          "record_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/internet-archive-pdf-006a38a3/artifact.toml",
+          "record_sha256": "10a439e18ff4e2740f398e77088902d20650102f20bb7a9b012ba0f0e1f0b030",
+          "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+          "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+          "byte_size": 13625474,
+          "page_count": 497,
+          "source_url": "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf"
+        },
+        {
+          "source_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion",
+          "record_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion.toml",
+          "record_sha256": "39c81f55fbdd6b518c8994e6e449b8c73c6780002e81358dbf418e0235ce1dea",
+          "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+          "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d",
+          "artifact_sha256": "9ea0918d6a9ee489ccd4aa70c23b2d6e87162e4e93c6c4bfdf2b216156f1aac3",
+          "artifact_page_ranges": [
+            [
+              1,
+              1
+            ]
+          ],
+          "verified_on": "2026-10-30",
+          "locus": "Wilson1894 printed52; parentPDF145; retained derivative page1; BookI sectionxxxiv, closing John exposition"
+        },
+        {
+          "source_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+          "record_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+          "record_sha256": "d380657fdad6aa7a98b1e62f2ea4b8bd6247703e089e98a5ba8ea47754105974",
+          "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+          "artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+          "artifact_page_ranges": [
+            [
+              1,
+              1
+            ]
+          ],
+          "verified_on": "2026-10-30",
+          "locus": "Lasance printed217; parentPDF217; retained derivative page1; common short endings in AshWednesday prayers"
+        },
+        {
+          "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+          "record_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
+          "record_sha256": "e3219e5085493a3a38e9d77c1b9039c8d7d1dbdb8cebf848b4e237b081ffdb7f",
+          "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+          "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+          "byte_size": 3333382,
+          "page_count": 828,
+          "source_url": "https://media.musicasacra.com/books/latin_missal2002.pdf"
+        }
+      ],
+      "whole_expression_basis": [
+        {
+          "part": "complete petition",
+          "basis": "Wilson1894 AP175/printed82; body begins Omnipotens sempiterne Deus and ends Christus before separately printed Per eundem Dominum.",
+          "image": ".scratch/modern-partition-easter/gelasian-175.png",
+          "publication_basis": "Underlying1894 printing and ancient Latin expression are independently public-domain by publication age in the United States. The full digitized-volume wrapper has separate restrictions; this claim concerns only the printed old expression and project transcription."
+        },
+        {
+          "part": "word order/spelling",
+          "basis": "Compared with whole secondary2002 AP213: es moves from after mirabilis to after qui; intelligant becomes intellegant. No petition word/concept is added, omitted or substituted otherwise. Accents, case and punctuation are editorial.",
+          "image": ".scratch/modern-partition-easter/comparison-213.png"
+        },
+        {
+          "part": "complete short conclusion",
+          "basis": "Wilson1894 AP145/printed52 prints Qui vivit et regnat in saecula saeculorum. in full. This is a different independently old complete formula, not expansion of Per eundem Dominum.",
+          "image": ".scratch/modern-partition-easter/gelasian-145.png",
+          "passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion"
+        },
+        {
+          "part": "separate response",
+          "basis": "Lasance1945 retained source AP217 prints separately marked R. Amen.; only this conventional response is used.",
+          "image": ".scratch/modern-partition-easter/lasance-conclusion.png",
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion"
+        }
+      ],
+      "fidelity_notes": [
+        "Almighty and everlasting renders Omnipotens sempiterne; wondrous in the ordering of all your works renders the full relative clause without importing the older word order as a theological difference.",
+        "May those you have redeemed understand renders intelligant redempti tui.",
+        "The making of the world in the beginning / sacrifice of Christ our Passover at the end of the ages preserves the two compared quod clauses and non fuisse excellentius.",
+        "The separately witnessed complete short ending has Christ as antecedent. The distinct R. Amen. is preserved as a response, not folded into the prayer petition."
+      ],
+      "owner_issue": "Input ordinary_disposition labels this principal Omnipotens prayer as the De creatione hominis alternative. Secondary2002 AP213 prints the alternative only after this prayer and its R.Amen, beginning Deus qui mirabiliter creasti. Root must preserve the principal identity and correct/review disposition independently.",
+      "required_before_admission": [
+        "Independent source/body/English review.",
+        "Register complete old petition and proposed study-English source records through normal source workflow.",
+        "Express the distinct short conclusion/response proof and qualified secondary2002 comparison.",
+        "Resolve owner disposition; do not add or overwrite the alternative prayer."
+      ],
+      "limitations": [
+        "No2008 Latin completion claim.",
+        "No approved or official English claim.",
+        "No historical English author attribution.",
+        "No source-human English patchwork."
+      ]
+    },
+    {
+      "identity": [
+        "easter-3-wednesday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "disposition": "source-prepared-new-owner-reuse-awaiting-independent-review",
+      "route": "new exact owner binding to already admitted qualified project study English; original Easter5 owner remains unchanged",
+      "existing_admitted_identity": [
+        "easter-5-wednesday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "existing_source_join": {
+        "target": [
+          "easter-5-wednesday",
+          "main",
+          "Communion Antiphon",
+          "all",
+          1
+        ],
+        "source_page_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-page",
+        "historical_latin_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-la-54b9b8b5",
+        "historical_latin_artifact_sha256": "54b9b8b57a76fb064fb0cb442980f8312a8b5d0a0825e36d552cb942ebc6b24a",
+        "historical_latin_payload_sha256": "6f953e6be1e99ae2582aac48025b6e6e8214e8babc94893ada33f7965a6fdae1",
+        "historical_latin_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-text",
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-secondary2002-comparison",
+        "relation": "variant",
+        "english_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea",
+        "english_artifact_id": "artifact.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-study-en-9695a7ce",
+        "english_artifact_sha256": "9695a7cecc948f554b912e7720a368319abe8cadc843f32669da469898162e70",
+        "english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-study-english"
+      },
+      "english": "The Lord has risen and has shone upon us, whom he redeemed with his blood, alleluia.",
+      "english_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea",
+      "historical_body": "Surrexit Christus, et illuxit nobis, quos redemit sanguine suo. Alleluja.",
+      "historical_body_sha256": "6f953e6be1e99ae2582aac48025b6e6e8214e8babc94893ada33f7965a6fdae1",
+      "comparison_body": "Surréxit Dóminus et illúxit nobis, quos redémit sánguine suo, allelúia.",
+      "comparison_body_sha256": "1f9a1154971e05faabdcfce266f7ff7b1adb133c532cf9fdcee39a6fa49e3987",
+      "comparison_edition": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+      "new_target_pdf_page": 239,
+      "existing_target_pdf_page": 249,
+      "fresh_images": [
+        ".scratch/modern-partition-easter/comparison-238.png",
+        ".scratch/modern-partition-easter/comparison-239.png",
+        ".scratch/modern-partition-easter/comparison-249.png",
+        ".scratch/modern-partition-easter/pustet-ap373.png"
+      ],
+      "historical_relation": "variant",
+      "whole_body_difference": "Historical Christus -> secondary Dominus only; all remaining9 words match after accents/case, j/i and punctuation normalization.",
+      "fidelity_assessment": "Faithful original study English. Lord follows declared Dominus; risen and has shone upon us render surrexit/illuxit nobis; whom he redeemed with his blood renders the complete relative clause. No source-human attribution.",
+      "prior_source_review_path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-late-easter-source-review.json",
+      "fresh_inspection": "New Easter3 page and existing Easter5 comparison page, complete old source-local unit and surrounding boundary all viewed. Literal wording agrees between the two secondary2002 modern owners.",
+      "required_before_admission": [
+        "Independent review of new identity/context and exact English source reuse.",
+        "Create specific new comparison passage/owner admission; reuse existing body artifacts without overwriting their original source identity.",
+        "Preserve each exact prior ICEL unavailable record and both original late-Easter owners."
+      ],
+      "limitations": [
+        "The modern comparator is a secondary digital2002 witness, not authenticated2008.",
+        "No official English or exact Latin target completion claim."
+      ]
+    },
+    {
+      "identity": [
+        "easter-3-friday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "disposition": "source-prepared-new-owner-reuse-awaiting-independent-review",
+      "route": "new exact owner binding to already admitted qualified project study English; original Easter5 owner remains unchanged",
+      "existing_admitted_identity": [
+        "easter-5-friday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "existing_source_join": {
+        "target": [
+          "easter-5-friday",
+          "main",
+          "Communion Antiphon",
+          "all",
+          1
+        ],
+        "source_page_passage_id": "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-page",
+        "historical_latin_artifact_id": "artifact.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-la-f5195f15",
+        "historical_latin_artifact_sha256": "f5195f156b86996fb2acd00fbde5e3dbd8f9f89351eaab74bb9359143f6efa1c",
+        "historical_latin_payload_sha256": "e9dd48f8d5d60dbcb62a05e69ba299051e17947a856f203822a4f002dae7e7d7",
+        "historical_latin_passage_id": "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-text",
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-secondary2002-comparison",
+        "relation": "abridged",
+        "english_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94",
+        "english_artifact_id": "artifact.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-study-en-9695a7ce",
+        "english_artifact_sha256": "9695a7cecc948f554b912e7720a368319abe8cadc843f32669da469898162e70",
+        "english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-study-english"
+      },
+      "english": "He who was crucified has risen from the dead and redeemed us, alleluia.",
+      "english_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94",
+      "historical_body": "Crucifixus surrexit á mortuis, et redemit nos alleluja, alleluja.",
+      "historical_body_sha256": "e9dd48f8d5d60dbcb62a05e69ba299051e17947a856f203822a4f002dae7e7d7",
+      "comparison_body": "Crucifíxus surréxit a mórtuis, et redémit nos, allelúia.",
+      "comparison_body_sha256": "e525be011a07349d311c888c01449d84814b10cba646033ea0262511b17ab063",
+      "comparison_edition": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+      "new_target_pdf_page": 240,
+      "existing_target_pdf_page": 251,
+      "fresh_images": [
+        ".scratch/modern-partition-easter/comparison-240.png",
+        ".scratch/modern-partition-easter/comparison-251.png",
+        ".scratch/modern-partition-easter/mexico-114.png"
+      ],
+      "historical_relation": "abridged",
+      "whole_body_difference": "Modern drops the second final historical alleluja and changes no other body word; exactly8 retained words agree after accents/case, j/i and punctuation normalization.",
+      "fidelity_assessment": "Faithful original study English. He who was crucified renders substantive Crucifixus; has risen from the dead and redeemed us renders the two perfect verbs; one alleluia reflects disclosed omission.",
+      "prior_source_review_path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-late-easter-source-review.json",
+      "fresh_inspection": "New Easter3 page and existing Easter5 comparison page, complete old source-local unit and surrounding boundary all viewed. Literal wording agrees between the two secondary2002 modern owners.",
+      "required_before_admission": [
+        "Independent review of new identity/context and exact English source reuse.",
+        "Create specific new comparison passage/owner admission; reuse existing body artifacts without overwriting their original source identity.",
+        "Preserve each exact prior ICEL unavailable record and both original late-Easter owners."
+      ],
+      "limitations": [
+        "The modern comparator is a secondary digital2002 witness, not authenticated2008.",
+        "No official English or exact Latin target completion claim."
+      ]
+    }
+  ]
+}

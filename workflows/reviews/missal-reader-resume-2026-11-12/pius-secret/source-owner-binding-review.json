@@ -1,0 +1,241 @@
+{
+  "schema": "triptych-independent-pius-secret-source-owner-review/v1",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "date": "2026-11-13",
+  "verdict": "PASS for exact source, owner and study-English binding proposal; current finite authority deliberately still refuses. This is not runtime admission.",
+  "blockers": [],
+  "scope": "Only the exact Pius X Secret proposal in the pinned plan. No sibling Pius/Joseph expression, earlier cohort installer, conclusion execution or authority amendment is admitted by this receipt.",
+  "inputs": {
+    "plan": {
+      "path": ".scratch/roman-sources/pius-secret-admission/install-plan.json",
+      "sha256": "635d79ede8ceee7a55972310372e24942d3d0b76d947aa40596c4a12eb97d25d",
+      "bytes": 26381
+    },
+    "Root_merits": {
+      "path": ".scratch/root/pius-secret-expression-merits-admission.json",
+      "sha256": "88d776c57acddc43b97fc4bb981a5a16515ce56aab4e9ebdec5d7b31d44d5c73",
+      "bytes": 7885
+    },
+    "source_English_review": {
+      "path": ".scratch/roman-sources/residual-20261113/pius-secret-review/review.json",
+      "sha256": "7cd9ef3b7fcf1c6981d60256bd4b896031308964e051b9fa393d1dcb4e4f4374",
+      "bytes": 12649
+    },
+    "source_packet": {
+      "path": ".scratch/roman-sources/residual-20261113/pius-secret/packet.json",
+      "sha256": "dc9144048b47e934e8e06425e3fa4e34cdb94fde19e0fb0be7c4225a038dac3a",
+      "bytes": 11496
+    },
+    "closure": {
+      "path": ".scratch/roman-sources/pius-secret-admission/source-closure.json",
+      "sha256": "9119b5bc6447a70bdfbe0a6ff33b36896663f6d924101de5f399295c6b89bcb2",
+      "bytes": 6885
+    },
+    "author_validation": {
+      "path": ".scratch/roman-sources/pius-secret-admission/validation.json",
+      "sha256": "6e7fa3a13ee0c852c9212afb64d436461b1ac50d1721d24016b08984e9c1410b",
+      "bytes": 6036
+    },
+    "author_guard_receipt": {
+      "path": ".scratch/roman-sources/pius-secret-admission/current-guard-refusal.json",
+      "sha256": "c0454fde853a98b195a95f13945083e31ba473faf255f018ec1ae3422f725ece",
+      "bytes": 4003
+    },
+    "pre55_report": {
+      "path": ".scratch/roman-sources/pius-secret-admission/pre55-resolution.json",
+      "sha256": "7a93032bbb32fdd611c558ee07a5dcffcfd05a18efca991c55b0c9e555333509",
+      "bytes": 6707
+    }
+  },
+  "independent_audit": {
+    "path": ".scratch/roman-sources/pius-secret-binding-review/binding-audit.json",
+    "sha256": "d570c55a7e7264634a5c5dd72912df79a819f47733345f4094d74a8b20a060c8",
+    "bytes": 77814
+  },
+  "audit_program": {
+    "path": ".scratch/roman-sources/pius-secret-binding-review/audit.py",
+    "sha256": "420e30310660a73ca1c1b71f6b5cade371022968e3629428fad940bde42a4b01",
+    "bytes": 18297
+  },
+  "checks_passed": 369,
+  "check_failures": [],
+  "exact_identity": [
+    "s-pii-x-papae-confessoris",
+    "main",
+    "Secret",
+    "all",
+    1
+  ],
+  "body_hashes": {
+    "latin_LF": "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16",
+    "english_LF": "e903c088e8503efc55eabeb691e81fd63faeae988a2a57edd0417f86bc05444f",
+    "complete_old_unit_LF": "aaff5c03cdfaa1914530ab52805709e400ef2ec6e77484b61596ba3c58cd9e0e"
+  },
+  "object_hash_scheme": "compact sorted-key JSON, ensure_ascii=False",
+  "object_hashes": {
+    "old_proper_sha256": "f362a3fbb469b67a8c646b53eaba34af3394d45ed0966c2b8e524f3295e16407",
+    "old_latin_provenance_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+    "old_untranslated_sha256": "c16713dd9796466136d5db1517a99c0d768353f2fac709c1f60a748f33492fae",
+    "new_proper_sha256": "ec7cc3b82664e2d57faf9247e707bfd122fc1ba482b548f186927390084028fe",
+    "latin_provenance_sha256": "9aeb81d3f43219d6517315bf7da88d48548f6e9706b11460f06bcacf760f6ae3",
+    "english_entry_sha256": "38d08645186939e5c7a62bccd13390b84c71e7869414b511463e932487160f57",
+    "inherited_row_sha256": "3d2ceb14bc9b0a45843520380fc0fe20381a900a4f75707be9faeeacc4e50315"
+  },
+  "proposed_source_files": [
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pius-x-secret-target-control-20261113.toml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pius-x-secret-target-control-20261113.toml",
+      "sha256": "d24e260b39426433fb01ba37c5c9c8c8aa6b55ef787eb823d999dda3355c8b33",
+      "preimage": null
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/wilson1915-lent4-sunday-postcommunion-20261113/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/wilson1915-lent4-sunday-postcommunion-20261113/artifact.toml",
+      "sha256": "cba8434b38828551dd251b01e42dd5a64dc03df54d876048354c6591110b9e35",
+      "preimage": null
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/wilson1915-lent4-sunday-postcommunion-20261113/latin.txt",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/wilson1915-lent4-sunday-postcommunion-20261113/latin.txt",
+      "sha256": "aaff5c03cdfaa1914530ab52805709e400ef2ec6e77484b61596ba3c58cd9e0e",
+      "preimage": null
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/wilson1915-lent4-sunday-postcommunion-20261113-page-control.toml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/wilson1915-lent4-sunday-postcommunion-20261113-page-control.toml",
+      "sha256": "ba4f08ab8865770c7250d386c70a2bc830c8d87a40ac6f020cd6b8cb32028d55",
+      "preimage": null
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/wilson1915-lent4-sunday-postcommunion-20261113.toml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/wilson1915-lent4-sunday-postcommunion-20261113.toml",
+      "sha256": "e8c19427b386cc9fd00b05c1a0bf6bdaa022627d91698e9c17fe172b2e28edd2",
+      "preimage": null
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pius-x-secret-qualified-20261113-44e8e1db/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pius-x-secret-qualified-20261113-44e8e1db/artifact.toml",
+      "sha256": "f231d87ba70a5c74ef734a95878441090dba3c848d4eb4e9d93f7f6e35818947",
+      "preimage": null
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pius-x-secret-qualified-20261113-44e8e1db/latin.txt",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pius-x-secret-qualified-20261113-44e8e1db/latin.txt",
+      "sha256": "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16",
+      "preimage": null
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pius-x-secret-qualified-20261113.toml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pius-x-secret-qualified-20261113.toml",
+      "sha256": "203242b8badc2732605e6031ed098ebf265819b1a424b41cbea8c4921ce8d478",
+      "preimage": null
+    }
+  ],
+  "proposed_owner_files": [
+    {
+      "repository_path": "src/sources/calendars/roman-1962/propers.yaml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/calendars/roman-1962/propers.yaml",
+      "preimage_sha256": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953",
+      "postimage_sha256": "36f186f7ca1aeab62435ac6cfdfa411dbebd45e0692a7f1bd6fc49a6c0f22381"
+    },
+    {
+      "repository_path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "preimage_sha256": "e1898bf40bc10db519b48da5eab6cc273308590225f191f395847a7e97196658",
+      "postimage_sha256": "a7d9fa03b55fa6ed884c877d38dc9f4310a04b02670c9508a3455b95cf31177c"
+    },
+    {
+      "repository_path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "candidate_path": ".scratch/roman-sources/pius-secret-admission/prepared/src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "preimage_sha256": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf",
+      "postimage_sha256": "28f3a93b73aa1fc4a16988e91ad0f2ff841164fb6ddcc85425638cbb2a80cffb"
+    }
+  ],
+  "actual_images_independently_read": [
+    {
+      "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/images/cmaa-730-400.png",
+      "sha256": "09c02d2497b56a390be598d58c034e4569b62800491bd8c8f8383c7c575c3a57",
+      "bytes": 251840,
+      "resolution": "400 dpi, original detail",
+      "extent": "CMAA artifact page 730 / printed 649, complete no. 3564 Secret from Oblationibus through Per Dominum.; the following Communion and longer Postcommunion conclusion are excluded."
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/images/wilson1915-p97-400.png",
+      "sha256": "fd4a023775fc1a025d1e804aa7530f0a8a58902597184670df08496f1075fd9f",
+      "bytes": 2249044,
+      "resolution": "400 dpi, original detail",
+      "extent": "Wilson artifact page 97 / printed 39, HEBD. IV. QUADRAGESIMAE / DIE DOMINICO AD HIERUSALEM, entire Ad complendum before Alia oratio ad missam, including both apparatus notes."
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/images/cmaa-729-400.png",
+      "sha256": "2b9ac8ed6ae354e18f37d81d74cdf2db9100580e68e0ab109bede5e86b471bb4",
+      "bytes": 264236,
+      "resolution": "400 dpi, original detail",
+      "extent": "CMAA artifact page 729 / printed 648, Die 3 septembris / S. Pii X Papae et Conf. / III classis heading controlling the continuing Secret."
+    }
+  ],
+  "whole_PDFs_rehashed": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/cmaa-1962.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "bytes": 82815941
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/acquired/wilson1915.pdf",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681",
+      "bytes": 28655931
+    }
+  ],
+  "factual_findings": [
+    "The normalized complete target Secret agrees with the image, including the precise short Per Dominum. ending and absence of semper. Removal of stress accents, ligature expansion and wrap joining account for the stated target transcription transformation; no long conclusion, Amen, actor or rubric was added.",
+    "The complete Wilson Ad complendum retains both linked predicates in order and includes et semper fideli mente sumamus. The apparatus prints tractemur O for tractemus, and alternative word orders of semper/fideli mente; it does not supply a variant omitting semper.",
+    "The modern offering preface, altered sacramental object, Pius intercession, omitted temporal wording and Postcommunion-to-Secret reassignment are real differences. The proposal preserves these strongest contrary facts. The old complete prayer proves the central paired petition, not identity of the complete modern whole.",
+    "Root merits 88d776c5 explicitly adopt the exact whole adaptation at moderate confidence. The carrier and provenance repeat that bounded affirmative reason and contrary disposition, identify the editorial carrier as project-created, and use qualified-nonoriginal-adaptation rather than an unqualified public-domain target claim.",
+    "All eight proposed source files and fourteen core proof records match their file and parsed-record hashes. The target-control passage, whole old template and separate page control, projected text, source identities, artifact hashes and line ranges join exactly. No new PDF or image is proposed.",
+    "All three owning file preimages and postimages match. Semantic reconstruction permits exactly the Secret replacement, one Latin ledger append, the matching English no-exemplar replacement and one obsolete Mass-note correction. All other parsed objects remain exact; the Latin ledger original bytes remain an intact prefix.",
+    "The standard project-created study-English entry uses the exact Pius recipient identity, target Latin hash, target passage and publication source set. Its approved-study disclaimer and review path bind the already reviewed exact English bytes. It makes no historical English donor claim.",
+    "The data-only finite tuple exactly matches the proposed owner, inherited row, body, passage, artifact, verification control, source set, all fourteen proof record hashes, projected_from and line range. No authority was installed."
+  ],
+  "actual_English_consumer": {
+    "payload_schema": "accepted",
+    "historical_publication_function": "not applicable to the project-created study; no historical publication fields present",
+    "study_function": "pius-secret-proposed-English: study translation qualified Latin authority: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple",
+    "negative_cases": {
+      "mass": "pius-secret-proposed-English: study translation names no Latin source mass 'missing-recipient'",
+      "proper": "pius-secret-proposed-English: study translation requires a complete publishable Latin source body for ('s-pii-x-papae-confessoris', 'main', 'Collect', 'all', 1)",
+      "source_latin_sha256": "pius-secret-proposed-English: study translation source Latin hash is stale for ('s-pii-x-papae-confessoris', 'main', 'Secret', 'all', 1)",
+      "source_latin_passage_id": "pius-secret-proposed-English: study translation Latin passage differs from its exact source provenance"
+    },
+    "method": "Actual unmodified study validator with exact proposed postimage document, single owner Latin row and verified closed source mapping supplied through its supported context argument. No authority function was bypassed or replaced."
+  },
+  "pre55": {
+    "execution": "Independently called the actual unmodified mass-propers load_calendar on the author copy2 fixture, after verifying all three proposed owner hashes and the current pre55 propers owner. Its effective Secret and recension marker exactly match the pinned report.",
+    "meaning": "Normal later-witness mechanical inheritance from roman-1962. The inherited row remains publication unresolved with no surfaces and expressly says target-recension attestation is not established. This is not an exact-old-grade claim or independent pre55 attestation; no new exclusion or mask was proposed.",
+    "current_guard": "The inherited tuple currently refuses as expected. Any later finite recognition must retain this exact qualified interpretation."
+  },
+  "current_guard": {
+    "independent_functions": "Actual row, source-record, finite artifact, reading, inherited-source and study-English checks return only the expected pending exact finite scope/tuple refusals.",
+    "full_producer": "The author executed unmodified roman-1962 and roman-pre-1955 CLI calls; this reviewer rehashed their exact empty stdout and finite-only stderr logs. This reviewer did not repeat those complete CLI calls or obtain a positive producer run.",
+    "guard": {
+      "path": "scripts/_proper_finite_latin_20261029.py",
+      "sha256": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+      "bytes": 32828
+    },
+    "authority": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/finite-latin-authority-v4.json",
+      "sha256": "9d9bd0cc9a36fd6bbf4b474631d0944baf260f5a3e91b5612c4a5031363e37b7",
+      "bytes": 176852
+    }
+  },
+  "nonblocking_caveats": [
+    "Fourteen is the core proof closure count. Its already registered generic editorial work has a relations edge to the existing Lasance work. The independent isolated schema fixture therefore contains fifteen records: the fourteen pinned records plus that unchanged supporting work. The extra relation supplies no Pius body, date or rights evidence.",
+    "The Wilson PDF remains an externally delivered registered artifact. Its delivery path/hash/size/media type were checked against its owner and the whole held PDF was rehashed; no binary was copied into the fixture or proposed public files.",
+    "The 1915 and 1962 edition/date identities rely on their already registered edition records and exact whole-PDF identity; no new title-page date collation was performed in this task. Actual complete prayer and appointment images listed above were read independently.",
+    "The historical publication-binding function is inapplicable to this project-created study type. The substantive test was the separate actual study-translation validator, which passed all recipient/body/source joins and stopped at pending finite authority. This is not a claimed post-admission acceptance."
+  ],
+  "limits": [
+    "No independent legal re-research or new merits adoption. Root owns the whole-expression publication decision.",
+    "No conclusion expansion, bilingual response execution, runtime authority change or positive post-admission native producer validation was performed.",
+    "All writes by this reviewer stayed under the exclusive pius-secret-binding-review scratch directory. No hardlinks were created; fixture copies used copy2 with single-link and distinct-inode checks. No candidate, canonical or prior receipt was changed."
+  ]
+}

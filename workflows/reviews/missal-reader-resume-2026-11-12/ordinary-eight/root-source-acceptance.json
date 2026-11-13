@@ -1,0 +1,208 @@
+{
+  "schema": "triptych-explicit-review-projection/v1",
+  "raw_input": {
+    "path": ".scratch/root/ordinary-eight-source-review.json",
+    "sha256": "257de297fdf1c111e70a34a2d56582c97e87ac2e6d166ac60ad1567e964f8242",
+    "bytes": 15495
+  },
+  "projection": {
+    "selection": "All fields of the eight-only receipt.",
+    "path_transformation": "Remove exactly the active repository absolute prefix from string values. Preserve all other content; this projection is not the original raw receipt.",
+    "raw_receipt_unchanged": true
+  },
+  "record": {
+    "schema": "triptych-root-ordinary-eight-source-review/v1",
+    "reviewed_on": "2026-11-12",
+    "reviewer": "Codex integration reviewer",
+    "status": "accepted-source-merits-preparation",
+    "scope": "Exactly eight existing Latin selections and their source-owned spoken turns. No English, frame, remaining sixteen targets or old historical artifact changes.",
+    "source_review": {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/review-receipt.json",
+      "sha256": "1ecb0ea5813d575f947b0e79549c561693af560dc13d697980842416d4a5e1cf"
+    },
+    "plans": [
+      {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/handoff.json",
+        "bytes": 19532,
+        "sha256": "d74249f804f7ed14062fc63f49640780dfbadbe983b59066c2c8296ebb729695"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/positive-transition-declarations.json",
+        "bytes": 110084,
+        "sha256": "479af2166863be876ae6d23b85f4c2c9a073de6da159c449d90f46677895bb63"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/owner.patch",
+        "bytes": 35182,
+        "sha256": "4d551c76fc6894027d6e73f87b0c1d513037fe5c0b4a718f619171df450965a3"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/metadata-successor.json",
+        "bytes": 8247,
+        "sha256": "dbdbd383545d53bac4dece35aef515ba83f25b2dcd337f6b6b0e28f22ac06b02"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/hash-transitions.json",
+        "bytes": 5710,
+        "sha256": "409d15e587a83a800d213fba66bfe9e6231cf977b30238c3675bdf21df752312"
+      }
+    ],
+    "case_receipts": [
+      {
+        "path": ".scratch/roman-sources/ordinary-eight-source-review/case-1.json",
+        "bytes": 5039,
+        "sha256": "c111ad385e5974f61307cce3eeb4621438bd6949ff737a7b216e61e277c8f5ff"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-eight-source-review/case-2.json",
+        "bytes": 4152,
+        "sha256": "655a657b4fd7172384fa7def74feb542785b8492adf3a5389ae53e05115059d1"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-eight-source-review/case-3.json",
+        "bytes": 4475,
+        "sha256": "f101f4d033bc3d7404a829f7e8a52c80f2cc83cfa7932ff71e250c9f71710172"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-eight-source-review/case-4.json",
+        "bytes": 3928,
+        "sha256": "e3678a2d68bd2b76994a4bcad5b7f446d80782746409b909a1cf0d6f69f4aa06"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-eight-source-review/case-5.json",
+        "bytes": 4087,
+        "sha256": "83dd839dd0965bc756f03710302809765b65497e64abfa2c04a66beea44f2fc9"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-eight-source-review/case-6.json",
+        "bytes": 4735,
+        "sha256": "99f7ec80f1874e1e5cac01d7b0e26953fceaa6198f833707a8e98eb580d219db"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-eight-source-review/case-7.json",
+        "bytes": 3932,
+        "sha256": "1c3a4fc9561114bbd812e15833dedfcf6635ea7262333d98d7eb81429e9f2ea1"
+      },
+      {
+        "path": ".scratch/roman-sources/ordinary-eight-source-review/case-8.json",
+        "bytes": 4374,
+        "sha256": "e1610a08be6d19bd85e46a0f6be16fb34b1ac4128ab633f7775e6d7e7f1b323c"
+      }
+    ],
+    "cases": [
+      {
+        "key": "praeparatio/confiteor-sacerdotis",
+        "selected_latin_sha256": "d2b373b0c0e42f239a6bd25e522757ee2abea5c4fbb97de73c5ed90867faef5c",
+        "old_selected_latin_sha256": "6c600300fc0eca83edbff151ed19f29ff5aa437eb04fd498868f053c8ffa5478",
+        "selected_translation_dictionary_sha256": "dfdb6e61152af020ea98bd6a05032ddfb0b19682a9bccef7fdb97fd3062ac228",
+        "old_dictionary_sha256": "a23856424bb886227be9127976eff7eae2701946cad643b95c215ae9cd381c7e",
+        "source_passage_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-confiteor-sacerdotis.toml",
+        "source_passage_sha256": "615008160011e26aa4fc126a9490f8e449fe91f05b282ae41186405ac1cc9438",
+        "finding": "Read the entire priest confession through ad Dominum Deum nostrum on Mame printed272 and CMAA printed216. All words agree after declared typographic normalization. The selected body excludes the red breast-striking rubric and stops before the separate ministers Misereatur response. No Amen is supplied to this confession.",
+        "actor": "Mame PDF385 begins with Sacerdos and continues through Sacerdos repetit Antiphonam; PDF386 continues that priest actor into the confession and then explicitly distinguishes Ministri respondent. One priest turn is supported; no P. is printed or supplied."
+      },
+      {
+        "key": "praeparatio/indulgentiam",
+        "selected_latin_sha256": "bf36bbded7b1e4c8a5d04e028d86e538a79aacc965d5f9a9a8128a7c15e13afa",
+        "old_selected_latin_sha256": "d03c0c53dd1a90322e867ea1816b9c73869b1d5f64a416ad43f1948e8110b93f",
+        "selected_translation_dictionary_sha256": "1686702fe2b8d7ee829def66202fe7b722c57dc9da1ad5109f13903e508431a1",
+        "old_dictionary_sha256": "2f232d1439ba17724bb69524a19a4b0fcee6a8eb7e25a64ef7567b19fa666a0c",
+        "source_passage_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-indulgentiam.toml",
+        "source_passage_sha256": "09f223ce0072a1a36c6586d13724a2a90f17ba9c76b0426df7970d0c096c4c7c",
+        "finding": "Both witnesses print the complete formula with omnipotens, followed by the separate R. Amen. Mame pointing after absolutionem is retained. The extent stops before Deus tu conversus.",
+        "actor": "Mame PDF386 expressly says Postea Sacerdos ... facit absolutionem and continues with Signat se signo Crucis, dicens. Priest formula plus separately marked response is supported. No named actor is printed for the response; speaker=null is appropriate."
+      },
+      {
+        "key": "oblatio/suscipe-sancte-pater",
+        "selected_latin_sha256": "1e69367abaffaaf79bb3cb2c8062eb15d442b48ecbd98ab6572b54727bf32a77",
+        "old_selected_latin_sha256": "cfc55f48c3b1655e74ff748775b32a2bad18f4a72dc7009018ea612f993f94c8",
+        "selected_translation_dictionary_sha256": "da5b785abe93f37a1b227446b556b36436f269c0868820ca0477bd8bf6793d50",
+        "old_dictionary_sha256": "3b990a210b8ce1bf08db7885e25f2ea1d5c60a17d8c850917255f7fdc04c8a18",
+        "source_passage_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-suscipe-sancte-pater.toml",
+        "source_passage_sha256": "133fdc29a381af75cef1020da3e4b0d121f67991c1141ada6f9f33ef51c9e4d8",
+        "finding": "Read complete Suscipe through in vitam aeternam. Amen. Both witnesses print et offensionibus et negligentiis/neglegentiis; Mame negligentiis and pointing are preserved. The target uses the received spelling neglegentiis. No phrase or conclusion is expanded.",
+        "actor": "The Mame rubric immediately above assigns offering the paten to the celebrant/priest and says quam offerens, dicit. One priest turn is supported."
+      },
+      {
+        "key": "oblatio/in-spiritu-humilitatis",
+        "selected_latin_sha256": "caddeca3485b5d9ec6bdd24ead55031c8324e078aebdb590e4d47d5ed0478c89",
+        "old_selected_latin_sha256": "03bde9df0f0c8d5c25f05b0c7001b59d7e954224eac4d0c576b85ff19589c31d",
+        "selected_translation_dictionary_sha256": "d6f7d306d331659fa536a56d45a6ee8e4bcf8ed509be169ef69a167374fd1d50",
+        "old_dictionary_sha256": "0ab3c94aa0a9e3e79573598cba59e35b8eb73020645ed5aa3e0fad58c9d8e918",
+        "source_passage_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-in-spiritu-humilitatis.toml",
+        "source_passage_sha256": "cbdd8ad736f2415600495b231f1d8ea6f1994c558b6d4f02045e2de2d92f0ee3",
+        "finding": "Both complete prayers print hodie and end Domine Deus. The Mame comma after humilitatis is retained. No Amen or neighboring Veni sanctificator is imported.",
+        "actor": "The continued priest action after the chalice offering specifies joined hands and inclination, followed by dicit. One priest turn is supported."
+      },
+      {
+        "key": "oblatio/ne-perdas-cum-impiis",
+        "selected_latin_sha256": "fc1e62afd8959a0634ac20e4776ae9081493b698e5484b2bc1259feddff763ec",
+        "old_selected_latin_sha256": "da8cc775f09237dccfa3128f19c966ab8bebcedc5b4e0b77232eedeb68356add",
+        "selected_translation_dictionary_sha256": "237daed34afdfa279ae76526d924424b14aea7db642d915da46a6e28effb1527",
+        "old_dictionary_sha256": "0f12825c293f60c80e4762639ad0be778582d308863c952d945b8ca137eb5e13",
+        "source_passage_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-ne-perdas-cum-impiis.toml",
+        "source_passage_sha256": "d491cded90c57b1ee285fc319d76a3c41231875143fa17d94062eba4bb48326a",
+        "finding": "Both images print Deus in Ne perdas cum impiis, Deus, animam meam, et cum viris sanguinum vitam meam:. The selected extent is precisely this complete Psalm verse, ending with the printed colon before In quorum manibus; it is not the whole Lavabo psalm.",
+        "actor": "Mame PDF391 expressly introduces the Lavabo with Interim Sacerdos lavat manus, dicens; the verse continues on PDF392. One priest turn is supported."
+      },
+      {
+        "key": "canon/supplices",
+        "selected_latin_sha256": "1ffb91d9ba3431dec455d1dc419af260ed709bee94398c2cb3bd02c0e65f06b5",
+        "old_selected_latin_sha256": "0e3f5d99b19d5dd67a58eb6533031d9b5cbc29b7400441a1aae7328dd2f7d62d",
+        "selected_translation_dictionary_sha256": "cfde5fd35c98e0304bdf62f455e3c26e8ff6a1ab159910b6e7aa3679fe220d4c",
+        "old_dictionary_sha256": "aac79d90c5ae509c011a5aa614dd962e1c106d0758aee62020043094894b4194",
+        "source_passage_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-supplices.toml",
+        "source_passage_sha256": "fe23c64afdb7507210a7f8f2f35c8a8c2716548f4ebd5e6b8f72ecf686196532",
+        "finding": "Read continuously from lower-right Mame printed343 onto upper-left344, including perferri, all petition words, both crosses in Corpus/Sanguinem, and Per eumdem Christum Dominum nostrum. Amen. CMAA printed309 has the same complete prayer, with received spelling eundem. Red action rubrics are excluded and Mame pointing/j spelling is retained.",
+        "actor": "The continuing Canon rubric directs the celebrant to incline and speak; the intervening action rubrics remain outside the spoken text. One priest turn owns the complete two-page prayer."
+      },
+      {
+        "key": "canon/per-quem",
+        "selected_latin_sha256": "48bce51c0effd6e1c18ad95efae8bf5d62bba84dbec687c4950443ce9ccc0478",
+        "old_selected_latin_sha256": "1a403af5c21b14feebf20d90999f6b9e058118e41ef86fb7e4e6f307533d3f4d",
+        "selected_translation_dictionary_sha256": "89a3d9d6bbc2faf71ed2c44ab137d4bfe212907c1e2fac4796197e1b59eb114d",
+        "old_dictionary_sha256": "c178870d7bb8c8e19c4daa46bd26ce11b272ae492355ed2ec217d138312b8e2f",
+        "source_passage_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-per-quem.toml",
+        "source_passage_sha256": "4991ba0d81a88b3be608632070c962557214b6857b54aede5ddf1ed8587cc5ca",
+        "finding": "Both images print creas and the three crosses in sanctificas, vivificas, benedicis; the complete unit ends et praestas nobis. No Amen or following Per ipsum is added. The following rubric starts Discooperit in both witnesses; v2 corrects the mistaken Hic locator word without changing the prayer.",
+        "actor": "The continuing Canon action directs three signs over host and chalice while saying the formula. One priest turn is supported; the rubric is excluded."
+      },
+      {
+        "key": "communio/agnus-dei",
+        "selected_latin_sha256": "74ff79d24a96e0a43f5d9385d3f8f7fa87cfb64a61da05acd827da18da0996b9",
+        "old_selected_latin_sha256": "4df9f753403912726ac9793cb722bd9721e379ec1081ddd207f3e522c0703a27",
+        "selected_translation_dictionary_sha256": "393c566393cce229c244664725fd47e4223e7fb18c6da27d5623421e1adeb747",
+        "old_dictionary_sha256": "38f219c82eac370710b920f67714c5cf4c1c6fc80772285a4a714718688bf3b7",
+        "source_passage_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-agnus-dei.toml",
+        "source_passage_sha256": "e4dd83c6b8e95fd5282ed1225060932f9b28d578a46f035688cdee7649c291b5",
+        "finding": "Mame printed350 and CMAA printed318 each print all three complete invocations: two ending miserere nobis and the third dona nobis pacem. Three source rows preserve all repetitions. The following Requiem replacement rubric and neighboring Domine Jesu prayer are excluded.",
+        "actor": "Mame PDF463–464 continues the celebrant action: covering the chalice, genuflecting, rising, inclining and striking the breast, then intelligibili voce dicit. A single priest turn spans the three full invocations; no choir/minister alternation or source marker is invented."
+      }
+    ],
+    "review_performed": [
+      "Read all eight complete Latin bodies and independent whole-page source/target/actor findings, including every ending and response boundary. Image inspection is attributed to the independent source reviewer.",
+      "Independently verified every case receipt and exact body digest, turn concatenation, all twelve proposed owner/source files and current preimages or absent paths, plus final v2 plan/declaration hashes.",
+      "Read the complete Latin replacement parser patch. Its exact existing witness/artifact/body checks, explicit new source turns, duplicate/unknown-field refusals, unchanged English and unchanged conditional spans are appropriate; composite parser tests and independent runtime review remain required before activation."
+    ],
+    "publication_decision": "Accepted source-selected public-domain Mame 1922 words, with the existing exact publication-term/mechanical-reproduction basis. Complete bounded Ordinary pages and title were independently inspected; no 1962-only expression is imported. No general permission for a modern edition is inferred.",
+    "target_grade": "Word-exact is the existing comparison category permitting declared accents/ligatures, j/i, capitalization, pointing and crosses, including negligentiis/neglegentiis and eumdem/eundem. It is not a claim that the Mame string is byte-identical to the 1962 print.",
+    "source_operations": {
+      "new_files": 11,
+      "new_artifacts": 1,
+      "new_payloads": 1,
+      "new_passages": 9,
+      "existing_owner_files": 1,
+      "english_changes": 0,
+      "old_source_overwrites": 0
+    },
+    "owner_preimage_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+    "owner_postimage_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+    "payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+    "canonical_changes": false,
+    "requires": [
+      "Durable eight-only source evidence mapping; no broad held-case payload copy.",
+      "Independent parser review and composite OSP/Ordinary regression checks.",
+      "Exact source_epoch positive-transition admission and owning source graph checks."
+    ]
+  }
+}

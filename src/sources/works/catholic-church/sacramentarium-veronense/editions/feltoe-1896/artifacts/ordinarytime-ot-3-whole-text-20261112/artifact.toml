@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112"
+edition_id = "edition.catholic-church.sacramentarium-veronense.feltoe-1896"
+artifact_type = "transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The complete underlying Latin prayer text was published in 1896 and is public domain in the United States by publication date. This artifact is a new declared reading transcription of that old expression. No image, modern editorial contribution, front matter, or typography of the verification PDF is distributed. The PDF retains its own separate rights status."
+provenance = "Complete old prayer image-read at artifact page 92, printed 68. Fresh entire AP92 image read on 2026-11-12 at 180 dpi; complete two-line offering prayer before the separate preface. Dne and scificando abbreviations expanded in the declared reading. No modern target reread or retranscription."
+retrieved = "2026-11-12"
+sha256 = "82aa01d78666c2094f005f4fed960a821a92188bea2766eae4d70124f80a591d"
+byte_size = 99
+path = "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinarytime-ot-3-whole-text-20261112/latin.txt"
+projected_from = ["artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13"]
+transformation = "Line breaks joined; Domine and sanctificando printed as marked contractions and expanded; punctuation retained; no printed lexical reading replaced."
+encoding = "utf-8"
+indexable = true
+notes = "Actual source cue is retained exactly as declared; it is not expanded. Verification PDF is not an affirmative publication-source artifact for the later adaptation."

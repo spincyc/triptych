@@ -1,0 +1,102 @@
+{
+  "schema": "triptych-ferial-three-recipient-cli-proof/v1",
+  "date": "2026-11-13",
+  "state": "PASS-unmodified-source-body-producer",
+  "command": [
+    "/usr/bin/python3",
+    "tools/mass-propers",
+    "--root",
+    ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/producer-fixture/src/sources/calendars",
+    "--calendar",
+    "roman-1962",
+    "--mass",
+    "passion-wednesday",
+    "show",
+    "--format",
+    "json"
+  ],
+  "environment": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "TRIPTYCH_LIBRARY_CACHE": "0"
+  },
+  "exit_code": 0,
+  "producer": {
+    "path": "tools/mass-propers",
+    "sha256": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+    "byte_size": 272825
+  },
+  "fixture_manifest": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/fixture-manifest.json",
+    "sha256": "153b4e03b714f0a73316ae706e7a5c445e99b850a95c8e453f3889734569d21d",
+    "byte_size": 15199
+  },
+  "fixture_shape": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/fixture-shape-v2.json",
+    "sha256": "243df99851f9f68f9faf1b1cc7a3a23c07aa782fead61102edcaf81ce18d7cb0",
+    "byte_size": 1984
+  },
+  "source_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/install-plan.json",
+    "sha256": "c015358de877879ccaaf10e8bd1ce5c4af9c096d7c55a2bc024308583e0263d1",
+    "byte_size": 81954
+  },
+  "stdout": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/passion-wednesday-producer-v4.json",
+    "sha256": "ca7b7bafad5feb571e85192706cc50335252289bd366566dc7d86c3868cc4c26",
+    "byte_size": 47917
+  },
+  "stderr": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/passion-wednesday-producer-v4.stderr",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "byte_size": 0
+  },
+  "selected_output_json_pointer": "/appointed/10",
+  "selected_proper_canonical_sha256": "6ab647478fed4785e94cc188a9b6bffb99bedad7c42f569f6c143054684267a4",
+  "identity": [
+    "passion-wednesday",
+    "main",
+    "Oratio super populum",
+    "all",
+    1
+  ],
+  "emitted_Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+  "emitted_English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+  "exact_candidate_body_equality": true,
+  "direct_recipient_taken_from_null": true,
+  "Latin_not_withheld": true,
+  "literal_short_cues_unchanged": true,
+  "canonical_owner_hashes_unchanged": {
+    "src/sources/calendars/roman-1962/propers.yaml": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "e1898bf40bc10db519b48da5eab6cc273308590225f191f395847a7e97196658",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf"
+  },
+  "all_24_candidate_source_hashes_verified": true,
+  "all_24_canonical_source_destinations_absent": true,
+  "prior_fixture_failures": [
+    {
+      "stderr": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/passion-wednesday-producer.stderr",
+        "sha256": "0cdc2181c798e1cbd7ddf358f5d14826247817e0852e67f47b36ba13086983a3",
+        "byte_size": 363
+      },
+      "disposition": "Symlink source manifests are refused by the existing source-library guard; materialized exact private copies."
+    },
+    {
+      "stderr": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/passion-wednesday-producer-v2.stderr",
+        "sha256": "ca4331a03bad05adbd0c096ebf7c491a817fc41b8374a2f5f9f91144a698ce8b",
+        "byte_size": 175
+      },
+      "disposition": "Private fixture lacked required publication-root directory shape; added empty regular roots, with no publication corpus or coverage claim."
+    },
+    {
+      "stderr": {
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/passion-wednesday-producer-v3.stderr",
+        "sha256": "eb22b3420a7bb24df482449e2c75588f2d3659b516eb235b458bcf4a2d940e66",
+        "byte_size": 5855
+      },
+      "disposition": "Symlink workflow receipts resolved outside the fixture and failed existing authority guards; materialized exact original receipts and unchanged code."
+    }
+  ],
+  "scope": "Actual full CLI process validates the complete translation overlay and emits this selected recipient with exact accepted Latin and English. This proves source-body producer compatibility only, not source-epoch, frame placement, full conclusion, date composition, browser or native rendering. No validator was changed or bypassed; no canonical file was written."
+}

@@ -1,0 +1,2018 @@
+{
+  "schema": "triptych-ordinary-time-six-source-install-plan/v1",
+  "status": "Source merits and exact OT11 binding metadata accepted; source installer preparation only. Code/runtime admission and canonical execution remain separate.",
+  "root_admission": {
+    "path": ".scratch/root/ordinary-time-six-source-admission.json",
+    "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7",
+    "bytes": 132846
+  },
+  "queue": {
+    "path": ".scratch/modern-ordinarytime-orations/six-latin-review-queue-v3.json",
+    "sha256": "f2e5c33acd47b1cc62bd94154c5aba1d1222c7cfb0c27ede9e079bf7eb656d72",
+    "bytes": 5462
+  },
+  "metadata_addendum": {
+    "path": ".scratch/modern-ordinarytime-orations/offerings_early/passage-notes-v3/metadata-addendum.json",
+    "sha256": "103004af9112cc11fdbf9625421191e69db7331ef1641bf17fa53e34afe3976f",
+    "bytes": 16125
+  },
+  "independent_latin_review": {
+    "path": ".scratch/modern-six-latin-merits-review/receipt.json",
+    "sha256": "aa6df50b3f73d436827aca5de026a73898cc6971de03056a982dca2556a1d0d2",
+    "bytes": 17830
+  },
+  "english_updates": [
+    {
+      "before_untranslated": {
+        "mass": "ot-3",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "b6cbdecc628506561f2df389376a5dbbe256d1c6d574ab0d7aaf66ecaef32ec8"
+        ],
+        "note": "an ancient ancestor was identified in the Hadrianum at 0.50 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "after_entry": {
+        "mass": "ot-3",
+        "form_id": "main",
+        "form": "",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Munera nostra",
+        "relation": "variant",
+        "petition_relation": "qualified-nonoriginal-adaptation",
+        "ancient_witness": "XX. Item alia / third prayer (offering prayer before preface), printed 68/AP92",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112",
+        "ancient_reading": "Hostias Domine suscipe placatus oblatas quas sanctificando nobis quaesumus efficias salutares per.",
+        "target_qualification": "secondary-digital-2002-comparison-only;printed2002-and2008-unestablished",
+        "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+        "conclusion_relation": "verbatim",
+        "study_english_passage_id": "passage.triptych.ordinarytime-offerings-study-english.2026-11-12.ot-3-complete-en",
+        "source_latin_sha256": "cb21f358f6fdabce9c2068955b0bec34f9447aa0d5cfb9f95ec307ef35d2c57c",
+        "source_latin_passage_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Lord, graciously receive our gifts, and, by sanctifying them, grant, we pray, that they may be for our salvation.\nThrough Christ our Lord.\nR. Amen."
+          }
+        ],
+        "witness_note": "New study English from a qualified adaptation of an independently sourced historical prayer, with a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This study rendering is not an approved liturgical translation and supplies no authority for liturgical recitation.",
+        "divergence": "Finite qualified adaptation of one complete old prayer; exact lexical and syntactic changes retained in source review. Full traditional ending is separately witnessed and justified by the secondary digital 2002 offering-prayer rule. No old whole-body identity or authenticated 2008 correspondence is claimed. Prior English refusals and quarantine fingerprints remain preserved in the preparation receipt."
+      },
+      "identity": [
+        "ot-3",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "live_before_untranslated": [
+        {
+          "mass": "ot-3",
+          "form_id": "main",
+          "proper": "Prayer over the Offerings",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "rejected_detectors": [
+            "liturgies-net-2026-08-22"
+          ],
+          "quarantined_text_sha256": [
+            "b6cbdecc628506561f2df389376a5dbbe256d1c6d574ab0d7aaf66ecaef32ec8"
+          ],
+          "note": "an ancient ancestor was identified in the Hadrianum at 0.50 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        }
+      ],
+      "live_proper_dictionary": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Munera nostra",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_english_body_sha256": "3040c0ec648c436311e26c2aee929f1798b1e06b25daf445fb423219e0464a76"
+    },
+    {
+      "before_untranslated": {
+        "mass": "ot-5",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "570a2daf98823752f87271227554b057334e4a3cf07b86e207ec84ecdf45a514"
+        ],
+        "note": "an ancient ancestor was identified in the Gelasianum Vetus at 0.75 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "after_entry": {
+        "mass": "ot-5",
+        "form_id": "main",
+        "form": "",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Domine Deus noster",
+        "relation": "variant",
+        "petition_relation": "qualified-nonoriginal-adaptation",
+        "ancient_witness": "Feria vii Hebdom. tertia / Secreta, printed 37/AP130",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112",
+        "ancient_reading": "Domine Deus noster, qui in his potius creaturis quas ad fragilitatis nostrae subsidium condidisti, tuo quoque nomini munera iussisti dicanda constitui, tribue, quaesumus, ut et vitae nobis praesentis auxilium et aeternitatis efficiant sacramentum. Per.",
+        "target_qualification": "secondary-digital-2002-comparison-only;printed2002-and2008-unestablished",
+        "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+        "conclusion_relation": "verbatim",
+        "study_english_passage_id": "passage.triptych.ordinarytime-offerings-study-english.2026-11-12.ot-5-complete-en",
+        "source_latin_sha256": "d42378c196035ebc6bba7952f3b4d314fb3efc2c1cf9844b300e6ed664acc012",
+        "source_latin_passage_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la",
+          "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Lord our God, you fashioned these creatures especially to sustain our weakness; grant, we pray, that they may also become for us a sacrament of eternity.\nThrough Christ our Lord.\nR. Amen."
+          }
+        ],
+        "witness_note": "New study English from a qualified adaptation of an independently sourced historical prayer, with a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This study rendering is not an approved liturgical translation and supplies no authority for liturgical recitation.",
+        "divergence": "Finite qualified adaptation of one complete old prayer; exact lexical and syntactic changes retained in source review. Full traditional ending is separately witnessed and justified by the secondary digital 2002 offering-prayer rule. No old whole-body identity or authenticated 2008 correspondence is claimed. Prior English refusals and quarantine fingerprints remain preserved in the preparation receipt."
+      },
+      "identity": [
+        "ot-5",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "live_before_untranslated": [
+        {
+          "mass": "ot-5",
+          "form_id": "main",
+          "proper": "Prayer over the Offerings",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "rejected_detectors": [
+            "liturgies-net-2026-08-22"
+          ],
+          "quarantined_text_sha256": [
+            "570a2daf98823752f87271227554b057334e4a3cf07b86e207ec84ecdf45a514"
+          ],
+          "note": "an ancient ancestor was identified in the Gelasianum Vetus at 0.75 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        }
+      ],
+      "live_proper_dictionary": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Domine Deus noster",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_english_body_sha256": "e0d379c5fa84eb1aff112b188cd7d2e847845b918bd43f2645e07a536154feb2"
+    },
+    {
+      "before_untranslated": {
+        "mass": "ot-12",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "pewmissal-com-2026-08-23"
+        ],
+        "quarantined_text_sha256": [
+          "437e8354305fe8fe454b4c6f47cf212cdc82017fbe76b2fb3aa6cc00ce7be67a"
+        ],
+        "note": "an ancient ancestor was identified in the Gelasianum Vetus at 0.78 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "after_entry": {
+        "mass": "ot-12",
+        "form_id": "main",
+        "form": "",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Suscipe, Domine, sacrificium placationis et laudis",
+        "relation": "variant",
+        "petition_relation": "qualified-nonoriginal-adaptation",
+        "ancient_witness": "I.xvii (end, before XVIII) / Secreta, printed 17/AP110",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112",
+        "ancient_reading": "Suscipe, Domine, sacrificium, cuius te voluisti dignanter immolatione placari; praesta, quaesumus, ut huius operatione mundati, beneplacitum tibi nostrae mentis offeramus affectum. Per.",
+        "target_qualification": "secondary-digital-2002-comparison-only;printed2002-and2008-unestablished",
+        "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+        "conclusion_relation": "verbatim",
+        "study_english_passage_id": "passage.triptych.ordinarytime-offerings-study-english.2026-11-12.ot-12-complete-en",
+        "source_latin_sha256": "d2d0b7227e96809ac08bafe208fcb28b549cf1464e2daff3e09a5a12375f9054",
+        "source_latin_passage_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la",
+          "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Receive, O Lord, the sacrifice of propitiation and praise; grant that, cleansed by its working, we may offer you a devotion of mind pleasing to you.\nThrough Christ our Lord.\nR. Amen."
+          }
+        ],
+        "witness_note": "New study English from a qualified adaptation of an independently sourced historical prayer, with a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This study rendering is not an approved liturgical translation and supplies no authority for liturgical recitation.",
+        "divergence": "Finite qualified adaptation of one complete old prayer; exact lexical and syntactic changes retained in source review. Full traditional ending is separately witnessed and justified by the secondary digital 2002 offering-prayer rule. No old whole-body identity or authenticated 2008 correspondence is claimed. Prior English refusals and quarantine fingerprints remain preserved in the preparation receipt."
+      },
+      "identity": [
+        "ot-12",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "live_before_untranslated": [
+        {
+          "mass": "ot-12",
+          "form_id": "main",
+          "proper": "Prayer over the Offerings",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "rejected_detectors": [
+            "pewmissal-com-2026-08-23"
+          ],
+          "quarantined_text_sha256": [
+            "437e8354305fe8fe454b4c6f47cf212cdc82017fbe76b2fb3aa6cc00ce7be67a"
+          ],
+          "note": "an ancient ancestor was identified in the Gelasianum Vetus at 0.78 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        }
+      ],
+      "live_proper_dictionary": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Suscipe, Domine, sacrificium placationis et laudis",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_english_body_sha256": "f8f61f4895ee8847b29af20bdd8b6fc7248056012d4ae45ebbc9e08dc5c169b6"
+    },
+    {
+      "identity": [
+        "ot-8",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "ot-8",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "175b26612224f38f02da2538180a532d1e8d324fa8c022f25433bc7a5c50b62a"
+        ],
+        "note": "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "live_before_untranslated": [
+        {
+          "mass": "ot-8",
+          "form_id": "main",
+          "proper": "Prayer after Communion",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "rejected_detectors": [
+            "liturgies-net-2026-08-22"
+          ],
+          "quarantined_text_sha256": [
+            "175b26612224f38f02da2538180a532d1e8d324fa8c022f25433bc7a5c50b62a"
+          ],
+          "note": "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        }
+      ],
+      "live_proper_dictionary": {
+        "name": "Prayer after Communion",
+        "incipit": "Satiati munere salutari",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_entry": {
+        "mass": "ot-8",
+        "form_id": "main",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Satiati munere salutari",
+        "relation": "variant",
+        "petition_relation": "qualified-conventional-revision",
+        "ancient_witness": "Feltoe1896 AP89–90, printed65–66, XVI Item alia, last prayer continuing top next page",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112",
+        "ancient_reading": "Satiati munere salutari tuam Dne misericordiam deprecamur ut hoc eodem sacramento quo nos temporaliter vegetas efficias perpetuae vitae participes per.",
+        "target_qualification": "secondary-digital-2002-comparison-only;2008-unresolved",
+        "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+        "conclusion_relation": "verbatim",
+        "study_english_passage_id": "passage.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-8-postcommunion",
+        "source_latin_sha256": "965afcd29dd137e8775e8f2efcbc7dd893d64bdf530cfa8e31513a2fc11f1076",
+        "source_latin_passage_id": "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112",
+          "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "witness_note": "Project study English of an old complete prayer with the separately reviewed conventional Latin changes, followed by an independently witnessed short conclusion and distinct response. The full comparison and conclusion rule are source-local to a secondary digital2002 witness; authenticated printed2002 and complete2008 correspondence remain unestablished. This is neither historical human English nor approved liturgical English or recitation authorization.",
+        "divergence": "The exact complete modified Latin and new English were independently reviewed, with finite differences and strongest contrary originality cases preserved in the accepted candidate and merits receipt. No exact-old wording, authenticated2008 match or approved liturgical English claim.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Filled with the saving gift, Lord, we implore your mercy: through this very sacrament by which you sustain us in this life, graciously make us sharers in everlasting life.\nThrough Christ our Lord.\nR. Amen."
+          }
+        ]
+      },
+      "after_english_body_sha256": "724354a748dcf5dc2cc3adfd1d38a6da75833f1cfdd13667402f80e0db6d3cf5"
+    },
+    {
+      "identity": [
+        "ot-12",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "ot-12",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2016",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 17,
+        "verified_printed_page": "17",
+        "verified_heading": "TWELFTH SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+        "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+        "quarantined_text_sha256": [
+          "20f2af0f053a80c16ea101f9c1b04c116a44487bbcd866dcbbc333b05cc43830"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "live_before_untranslated": [
+        {
+          "mass": "ot-12",
+          "form_id": "main",
+          "proper": "Prayer after Communion",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+            "surfaces": [
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          },
+          "rights": "permission",
+          "witness": "fdlc-mystagogy-2016",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+          "verified_on_page": "2026-08-26",
+          "verified_artifact_page": 17,
+          "verified_printed_page": "17",
+          "verified_heading": "TWELFTH SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+          "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+          "quarantined_text_sha256": [
+            "20f2af0f053a80c16ea101f9c1b04c116a44487bbcd866dcbbc333b05cc43830"
+          ],
+          "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        }
+      ],
+      "live_proper_dictionary": {
+        "name": "Prayer after Communion",
+        "incipit": "Sacri Corporis et Sanguinis pretiosi alimonia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_entry": {
+        "mass": "ot-12",
+        "form_id": "main",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Sacri Corporis et Sanguinis pretiosi alimonia",
+        "relation": "variant",
+        "petition_relation": "qualified-conventional-revision",
+        "ancient_witness": "Feltoe1896 AP32 printed8, prayer beginning Sacri corporis at lines18–21",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112",
+        "ancient_reading": "Sacri corporis et sanguinis pretiosi renovati libamine quaesumus Dne clementiam tuam ut quod frequenti devotione gerimus certa redemptione capiamus per.",
+        "target_qualification": "secondary-digital-2002-comparison-only;2008-unresolved",
+        "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+        "conclusion_relation": "verbatim",
+        "study_english_passage_id": "passage.triptych.postconciliar-ot8-ot12-study-english.2026-11-12.ot-12-postcommunion",
+        "source_latin_sha256": "876c5dbcf544df2efbeb0e77cf2486144830b243a57ed7713822a808bc5fb3a7",
+        "source_latin_passage_id": "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112",
+          "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "witness_note": "Project study English of an old complete prayer with the separately reviewed conventional Latin changes, followed by an independently witnessed short conclusion and distinct response. The full comparison and conclusion rule are source-local to a secondary digital2002 witness; authenticated printed2002 and complete2008 correspondence remain unestablished. This is neither historical human English nor approved liturgical English or recitation authorization.",
+        "divergence": "The exact complete modified Latin and new English were independently reviewed, with finite differences and strongest contrary originality cases preserved in the accepted candidate and merits receipt. No exact-old wording, authenticated2008 match or approved liturgical English claim.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Renewed by the nourishment of the sacred Body and precious Blood, we ask your kindness, Lord, that we may receive as sure redemption what we celebrate with frequent devotion.\nThrough Christ our Lord.\nR. Amen."
+          }
+        ]
+      },
+      "after_english_body_sha256": "a4a69d845629704462d486980d5c9c7bebd49481d1d09e62f7c7c2ca0e04fc4f"
+    },
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "ot-11",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2016",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 15,
+        "verified_printed_page": "15",
+        "verified_heading": "ELEVENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+        "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+        "quarantined_text_sha256": [
+          "6a80adab4158f81ac915d34128e3a062621c446282afb7eefe66582f970dd705"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "after_entry": {
+        "mass": "ot-11",
+        "form_id": "main",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Haec tua, Domine, sumpta sacra communio",
+        "relation": "variant",
+        "petition_relation": "variant",
+        "ancient_reading": "Hæc tua, Dómine, sumpta sacra commúnio, sicut fidélium in te uniónem præsignat: sic in tua Ecclésia unitátis, quæsumus, operétur efféctum. Per Dóminum.",
+        "target_qualification": "secondary-digital-2002-comparison-only;2008-unresolved",
+        "source_latin_sha256": "cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "May this sacred communion of yours that we have received, O Lord, bring about unity in your Church, just as it signifies the union of the faithful in you.\nThrough Christ our Lord.\nR. Amen."
+          }
+        ],
+        "witness_note": "New study English from an independently witnessed historical Latin prayer, with the stated minor editorial selection and separately sourced traditional conclusion and marked response. It is not an approved liturgical translation. Correspondence with the 2008 Missal remains unverified.",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot11-haec-tua-whole-20261112",
+        "source_latin_passage_id": "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "study_english_passage_id": "passage.triptych.ot11-haec-tua-study-english.2026-11-12.complete-study-english",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+        "conclusion_relation": "independently-witnessed-formula",
+        "divergence": "Parenthetic quaesumus omitted, in tua Ecclesia transposed to in Ecclesia tua; all substantive petition words and two-part relation retained. Separately sourced full short ending and response. Historical whole-source reading preserved; no authenticated2008 relation claimed.",
+        "conclusion_rule_passage_id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.modern-short-conclusions-20261112-89",
+        "conclusion_rule_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+      },
+      "live_before_untranslated": [
+        {
+          "mass": "ot-11",
+          "form_id": "main",
+          "proper": "Prayer after Communion",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+            "surfaces": [
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          },
+          "rights": "permission",
+          "witness": "fdlc-mystagogy-2016",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+          "verified_on_page": "2026-08-26",
+          "verified_artifact_page": 15,
+          "verified_printed_page": "15",
+          "verified_heading": "ELEVENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+          "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+          "quarantined_text_sha256": [
+            "6a80adab4158f81ac915d34128e3a062621c446282afb7eefe66582f970dd705"
+          ],
+          "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        }
+      ],
+      "live_proper_dictionary": {
+        "name": "Prayer after Communion",
+        "incipit": "Haec tua, Domine, sumpta sacra communio",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_english_body_sha256": "6ac80aaf2dc748ea904714aa07c6b707868f1f1d77c6a1642f33e24bd3980374"
+    }
+  ],
+  "latin_updates": [
+    {
+      "identity": [
+        "ot-3",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Munera nostra",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Munera nostra",
+        "source": "composed",
+        "text": "Munera nostra, Domine, suscipe placatus, quae sanctificando nobis, quaesumus, salutaria fore concede.\nPer Christum Dominum nostrum.\nR. Amen.",
+        "notes": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-3",
+          "form": "",
+          "proper": "Prayer over the Offerings",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "b6c1d99d16779a3d7371717bc165090709f6bef54e447b3e6ad1262c122b181a"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-3",
+        "form": "",
+        "proper": "Prayer over the Offerings",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "cb21f358f6fdabce9c2068955b0bec34f9447aa0d5cfb9f95ec307ef35d2c57c",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la",
+        "source_date": "Old published whole prayer; Triptych finite adaptation proposal 2026-11-12",
+        "locator": "Declared complete study source carrier, lines 1–3",
+        "relationship": "source-based-latin-study-reconstruction",
+        "verification_source_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112",
+        "verification_locator": "Complete old prayer at XX. Item alia / third prayer (offering prayer before preface), printed 68/AP92; separate Lasance1945 p217 full ending and response",
+        "transformations": [
+          "Hostias => Munera nostra: Replaces sacrificial offerings by conventional gifts wording and explicitly states the speakers as offerers.",
+          "oblatas => : Removes the redundant offered modifier.",
+          "quas => quae: Required feminine-to-neuter gender agreement; accusative plural retained across the result-clause recast.",
+          "efficias salutares => salutaria fore concede: Recasts the existing requested salvific result as granting the gifts to be salutary; no independent benefit or new clause coordination.",
+          "Do not expand actual old cue; append independently sourced complete short conclusion and marked response."
+        ],
+        "provenance_evidence": "Exact transcription of the declared finite adaptation carrier, with a separate old source and individually recorded transformations. This is neither exact transcription of the old petition nor exact-to-authenticated-modern-target.",
+        "provenance_authority": "Independent source/fidelity review and root finite adoption required before installation",
+        "provenance_confidence": "medium",
+        "publication_status": "permitted",
+        "publication_basis": "qualified-nonoriginal-adaptation",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-3-complete-la",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ordinarytime-ot-3-whole-text-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "publication_locator": "One complete old-text transcription and separately witnessed complete short conclusion; original PDFs retained only as separately qualified verification evidence",
+        "publication_authority": "PROPOSED Latin-specific finite whole-expression assessment; independent source/body merits reviewed, but separate exact Latin carrier, surfaces and consumer-qualification admission by Root is required",
+        "publication_evidence": "Feltoe1896 witnesses one complete offering prayer with the same suscipe placatus, sanctificando nobis quaesumus, and salutary-gifts result in precisely that order. The proposed recasting substitutes conventional offering vocabulary, deletes the redundant offered modifier, changes inflections required by the neuter gifts noun, and recasts the existing final request as a grant. No extra request, image, or clause from a different prayer is supplied. The qualified argument therefore rests on one whole old unit and the finite aggregate conventional recasting, not on overlap or on combining the Feltoe and Wilson forms. Strongest contrary: The complete resulting modern wording is not printed here. Munera nostra and salutaria fore concede were deliberate lexical and syntactic choices; semantic continuity does not prove lack of expressive authorship. The replacement cadence could meet the low originality threshold. The new source strengthens continuity of one whole prayer but does not itself authorize the modern expression.",
+        "note": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      }
+    },
+    {
+      "identity": [
+        "ot-5",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Domine Deus noster",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Domine Deus noster",
+        "source": "composed",
+        "text": "Domine Deus noster, qui has potius creaturas ad fragilitatis nostrae subsidium condidisti, tribue, quaesumus, ut etiam aeternitatis nobis fiant sacramentum.\nPer Christum Dominum nostrum.\nR. Amen.",
+        "notes": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-5",
+          "form": "",
+          "proper": "Prayer over the Offerings",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "12da6c81c3c6db49f95ae52117944e857749fe2bce18b1037d92de1c468f1056"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-5",
+        "form": "",
+        "proper": "Prayer over the Offerings",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "d42378c196035ebc6bba7952f3b4d314fb3efc2c1cf9844b300e6ed664acc012",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la",
+        "source_date": "Old published whole prayer; Triptych finite adaptation proposal 2026-11-12",
+        "locator": "Declared complete study source carrier, lines 1–3",
+        "relationship": "source-based-latin-study-reconstruction",
+        "verification_source_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112",
+        "verification_locator": "Complete old prayer at Feria vii Hebdom. tertia / Secreta, printed 37/AP130; separate Lasance1945 p217 full ending and response",
+        "transformations": [
+          "in his potius creaturis quas => has potius creaturas: Makes the retained creatures the direct object of condidisti after deleting the intervening dedication clause.",
+          "tuo quoque nomini munera iussisti dicanda constitui => : Omits the statement that God ordered offerings to be dedicated to his name.",
+          "et vitae nobis praesentis auxilium et => etiam: Omits the explicit present-life-aid petition; the earlier created-for-frailty clause still supplies the temporal side of the comparison.",
+          "aeternitatis efficiant sacramentum => aeternitatis nobis fiant sacramentum: Recasts the existing sacrament-of-eternity result with a copula and puts the beneficiaries beside it.",
+          "Do not expand actual old cue; append independently sourced complete short conclusion and marked response."
+        ],
+        "provenance_evidence": "Exact transcription of the declared finite adaptation carrier, with a separate old source and individually recorded transformations. This is neither exact transcription of the old petition nor exact-to-authenticated-modern-target.",
+        "provenance_authority": "Independent source/fidelity review and root finite adoption required before installation",
+        "provenance_confidence": "medium",
+        "publication_status": "permitted",
+        "publication_basis": "qualified-nonoriginal-adaptation",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-5-complete-la",
+          "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-5-whole-text-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "publication_locator": "One complete old-text transcription and separately witnessed complete short conclusion; original PDFs retained only as separately qualified verification evidence",
+        "publication_authority": "PROPOSED Latin-specific finite whole-expression assessment; independent source/body merits reviewed, but separate exact Latin carrier, surfaces and consumer-qualification admission by Root is required",
+        "publication_evidence": "One complete old prayer already connects creatures made to support human frailty with their becoming a sacrament of eternity. The shortened expression retains that distinctive creation-to-eternity relationship and its order. It removes the intermediate dedication statement and an explicit repetition of present help, then makes the minimum case and verb changes needed to connect the surviving clauses. It neither imports a separate donor prayer nor invents a new proposition. The finite proposal is a qualification for this exact single-source condensation, not a general claim that deletion is nonoriginal. Strongest contrary: This is not deletion-only: two substantive clauses are removed and the sentence is grammatically reworked. The modern version chooses which theology to retain, suppresses an express dedication command and one benefit, and sharpens the earthly-to-eternal contrast. An abridgment can carry protected authorship under Compendium709.3, and the omission example there concerns a mere beginning/end cut rather than this internal condensation.",
+        "note": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      }
+    },
+    {
+      "identity": [
+        "ot-12",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Suscipe, Domine, sacrificium placationis et laudis",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Suscipe, Domine, sacrificium placationis et laudis",
+        "source": "composed",
+        "text": "Suscipe, Domine, sacrificium placationis et laudis, et praesta, ut, huius operatione mundati, beneplacitum tibi nostrae mentis offeramus affectum.\nPer Christum Dominum nostrum.\nR. Amen.",
+        "notes": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-12",
+          "form": "",
+          "proper": "Prayer over the Offerings",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "1baf19e519be6fd0a7c52fb6c7d8354288371db4dd2954932f17683e02dd92b7"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-12",
+        "form": "",
+        "proper": "Prayer over the Offerings",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "d2d0b7227e96809ac08bafe208fcb28b549cf1464e2daff3e09a5a12375f9054",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la",
+        "source_date": "Old published whole prayer; Triptych finite adaptation proposal 2026-11-12",
+        "locator": "Declared complete study source carrier, lines 1–3",
+        "relationship": "source-based-latin-study-reconstruction",
+        "verification_source_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112",
+        "verification_locator": "Complete old prayer at I.xvii (end, before XVIII) / Secreta, printed 17/AP110; separate Lasance1945 p217 full ending and response",
+        "transformations": [
+          "cuius te voluisti dignanter immolatione placari => placationis et laudis: Replaces the gracious divine acceptance/appeasement relative clause with a conventional purpose description, adding praise.",
+          "praesta, quaesumus => et praesta: Adds a coordinating conjunction and removes the conventional request marker.",
+          "Do not expand actual old cue; append independently sourced complete short conclusion and marked response."
+        ],
+        "provenance_evidence": "Exact transcription of the declared finite adaptation carrier, with a separate old source and individually recorded transformations. This is neither exact transcription of the old petition nor exact-to-authenticated-modern-target.",
+        "provenance_authority": "Independent source/fidelity review and root finite adoption required before installation",
+        "provenance_confidence": "medium",
+        "publication_status": "permitted",
+        "publication_basis": "qualified-nonoriginal-adaptation",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.ordinarytime-offerings-historical-adaptations.2026-11-12.ot-12-complete-la",
+          "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinarytime-ot-12-whole-text-20261112",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "publication_locator": "One complete old-text transcription and separately witnessed complete short conclusion; original PDFs retained only as separately qualified verification evidence",
+        "publication_authority": "PROPOSED Latin-specific finite whole-expression assessment; independent source/body merits reviewed, but separate exact Latin carrier, surfaces and consumer-qualification admission by Root is required",
+        "publication_evidence": "The complete one-source prayer already gives the expressive order: receive the sacrifice by which God is appeased; purify those offering it through its operation; accept their inward devotion. All of the final, distinctive petition is retained. The shorter opening uses the independently old formula placationis et laudis to describe the same sacrifice, then ordinary coordination joins the existing second petition. It does not import a new developed petition or reorder the old prayer. This supports a narrow qualified nonoriginality inference for the aggregate, not a rule that every phrase-sized replacement is free. Strongest contrary: Praise is newly explicit, divine willingness is removed, and the reform chooses a shorter classification of the sacrifice from elsewhere. Even a conventional phrase can be selected and coordinated creatively. The complete resulting prayer was not found verbatim in an older book.",
+        "note": "Source-based Latin study reconstruction with individually reviewed conventional changes to a complete historical prayer, joined to a separately sourced complete conclusion and marked response. Comparison is limited to a secondary digital 2002 witness; authenticated printed 2002 fidelity and correspondence with the 2008 Missal remain unestablished. This is not an official Missal text and supplies no authority for liturgical use."
+      }
+    },
+    {
+      "identity": [
+        "ot-8",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer after Communion",
+        "incipit": "Satiati munere salutari",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer after Communion",
+        "incipit": "Satiati munere salutari",
+        "source": "composed",
+        "text": "Satiati munere salutari, tuam, Domine, misericordiam deprecamur, ut, hoc eodem quo nos temporaliter vegetas sacramento, perpetuae vitae participes benignus efficias.\nPer Christum Dominum nostrum.\nR. Amen.",
+        "notes": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-8",
+          "form": "",
+          "proper": "Prayer after Communion",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "42dcff83325a5ddba90df1708e0890ad6430fcbc61aaf51cee36a2ce240e4c04"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-8",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "965afcd29dd137e8775e8f2efcbc7dd893d64bdf530cfa8e31513a2fc11f1076",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion",
+        "source_date": "1896 old composition;1945 complete common formula;2026 declared study assembly",
+        "locator": "Exact accepted declared study carrier, physical lines1–3",
+        "relationship": "source-based-latin-study-reconstruction",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-8-postcommunion-secondary-comparison-20261112",
+        "verification_locator": "secondary digital2002 only page275; source-local IGMR89/AP24; exact candidate/body review, not authenticated2008",
+        "transformations": [
+          "{\"kind\": \"word-order\", \"old\": \"hoc eodem sacramento quo nos temporaliter vegetas\", \"comparison\": \"hoc eodem quo nos temporaliter vegetas sacramento\"}",
+          "{\"kind\": \"word-order\", \"old\": \"efficias perpetuae vitae participes\", \"comparison\": \"perpetuae vitae participes efficias\"}",
+          "{\"kind\": \"lexical-addition\", \"word\": \"benignus\", \"position\": \"immediately before efficias\", \"meaning\": \"graciously / as one who is gracious; modifier of the addressed giver\"}",
+          "Expand documented Dne abbreviation; normalize stress accents and ligatures; retain exact accepted pointing.",
+          "Preserve old per. as historical evidence; use separately witnessed Per Christum Dominum nostrum and distinct R. Amen under exact source-local IGMR89 recipient decision."
+        ],
+        "provenance_evidence": "Complete old foundation, secondary comparison, exact candidate Latin and English, and separate conclusion independently reviewed in workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ot8-ot12/independent-merits-review.json SHA d46d3d4b792606f359f827b50a3a5f3c976a3a1ca1ae81f60f97319c42f6692c. Collation is of the declared study assembly only.",
+        "provenance_authority": "Declared source-based Latin study reconstruction; authenticated2008 target remains unresolved",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "qualified-nonoriginal-adaptation",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112",
+          "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "publication_locator": "Exact per-owner old prayer and full formula in accepted candidate; complete whole-expression merits and adverse case in independent receipt",
+        "publication_evidence": "CONDITIONAL POSTIMAGE ONLY: Root finite Latin decision is required. Individualized old whole expression plus conventional revisions; no permission inferred from English acceptance. The old whole sentence already supplies the complete architecture and its distinctive contrast: having received the saving gift, an appeal to mercy asks that the very sacrament sustaining temporal life make its recipients participants in perpetual life. Moving sacramento around its relative clause and efficias after its complement leaves that expression intact. Benignus is a real predicative addition, but it gives the same invoked merciful giver a routine graciousness qualification at the same requested act. The coordinated terminal cadence and changed placement have been assessed together: they neither replace the old contrast with another rhetorical design nor develop an additional image or clause. They remain conventional local adjustments to the preexisting expressive sentence. On this exact evidence I find a defensible nonoriginal-minor-revision basis, not merely a high similarity score or an atomized claim that individual words are free. Strongest contrary: A modern editor could argue that delaying sacramento and bringing benignus efficias to the end creates a deliberate new cadence, with benignus contributing an actual shade of meaning. Originality has a low threshold, and no complete pre1931 witness for this exact altered reading has been found within the packet search boundary. That is a genuine adverse consideration, but intentional editing and alternative word orders alone do not supply new protectable expression. Here the specific conventional qualification and routine local inversions leave the inherited sentence and its expressive contrast substantially untransformed. This is a narrow review judgment, not a legal ruling or a general license for added epithets.",
+        "notice": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization.",
+        "note": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
+      }
+    },
+    {
+      "identity": [
+        "ot-12",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer after Communion",
+        "incipit": "Sacri Corporis et Sanguinis pretiosi alimonia",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer after Communion",
+        "incipit": "Sacri Corporis et Sanguinis pretiosi alimonia",
+        "source": "composed",
+        "text": "Sacri Corporis et Sanguinis pretiosi alimonia renovati, quaesumus, Domine, clementiam tuam, ut, quod gerimus devotione frequenti, certa redemptione capiamus.\nPer Christum Dominum nostrum.\nR. Amen.",
+        "notes": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-12",
+          "form": "",
+          "proper": "Prayer after Communion",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "cbb41b53d4b7115ca24a965444a080e21ce4984932a7ed1d1341c24712e1333c"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-12",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "876c5dbcf544df2efbeb0e77cf2486144830b243a57ed7713822a808bc5fb3a7",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion",
+        "source_date": "1896 old composition;1945 complete common formula;2026 declared study assembly",
+        "locator": "Exact accepted declared study carrier, physical lines1–3",
+        "relationship": "source-based-latin-study-reconstruction",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-12-postcommunion-secondary-comparison-20261112",
+        "verification_locator": "secondary digital2002 only page278; source-local IGMR89/AP24; exact candidate/body review, not authenticated2008",
+        "transformations": [
+          "{\"kind\": \"noun-substitution-and-word-order\", \"old\": \"renovati libamine\", \"comparison\": \"alimonia renovati\", \"meaning\": \"old libamen denotes a sacramental draught/offering; modern alimonia emphasizes nourishment\"}",
+          "{\"kind\": \"word-order\", \"old\": \"quod frequenti devotione gerimus\", \"comparison\": \"quod gerimus devotione frequenti\"}",
+          "Expand documented Dne abbreviation; normalize stress accents and ligatures; retain exact accepted pointing.",
+          "Preserve old per. as historical evidence; use separately witnessed Per Christum Dominum nostrum and distinct R. Amen under exact source-local IGMR89 recipient decision."
+        ],
+        "provenance_evidence": "Complete old foundation, secondary comparison, exact candidate Latin and English, and separate conclusion independently reviewed in workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ot8-ot12/independent-merits-review.json SHA d46d3d4b792606f359f827b50a3a5f3c976a3a1ca1ae81f60f97319c42f6692c. Collation is of the declared study assembly only.",
+        "provenance_authority": "Declared source-based Latin study reconstruction; authenticated2008 target remains unresolved",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "qualified-nonoriginal-adaptation",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-12-postcommunion",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-12-postcommunion-reviewed-whole-20261112",
+          "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "publication_locator": "Exact per-owner old prayer and full formula in accepted candidate; complete whole-expression merits and adverse case in independent receipt",
+        "publication_evidence": "CONDITIONAL POSTIMAGE ONLY: Root finite Latin decision is required. Individualized old whole expression plus conventional revisions; no permission inferred from English acceptance. The complete old prayer supplies the reception-and-renewal opening, appeal to divine clemency and antithesis between recurring ritual celebration and secured redemption. Alimonia changes the instrumental noun from sacramental draught/offering to nourishment; that lexical and semantic distinction is acknowledged, not normalized away. In this particular sentence, however, it remains an ordinary sacramental-food designation governed by the same Body-and-Blood genitives and modifying the same renovati. Moving the participle after that instrument and rearranging gerimus/devotione frequenti preserves the old linked construction. Assessed as a whole, these revisions do not develop the food term into a new comparison, add an image to the redemption petition, or recast the inherited coordination. I find the changes conventional and minor in expression, despite their real semantic nuance. The affirmative basis is the complete old composition plus that individualized judgment, not a rule that single-noun changes are always free. Strongest contrary: Alimonia can deliberately foreground nourishment where libamen foregrounds a draught or offering, and in a brief prayer even one word can make an original expressive change. The rearranged opening could therefore be alleged to be a newly fashioned presentation of eucharistic renewal. This is the strongest of the three adverse cases. It does not prevail here because the new noun functions as a routine direct label within the unchanged old instrumental phrase; the rest of the expressive coordination, including the devotion/redemption contrast, is inherited complete. The record supports a qualified affirmative under the repository presumption, not certainty that a court would decide the same way.",
+        "notice": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization.",
+        "note": "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."
+      }
+    },
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer after Communion",
+        "incipit": "Haec tua, Domine, sumpta sacra communio",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer after Communion",
+        "incipit": "Haec tua, Domine, sumpta sacra communio",
+        "source": "composed",
+        "text": "Haec tua, Domine, sumpta sacra communio, sicut fidelium in te unionem praesignat, sic in Ecclesia tua unitatis operetur effectum.\nPer Christum Dominum nostrum.\nR. Amen.",
+        "notes": "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-11",
+          "form": "",
+          "proper": "Prayer after Communion",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "7361450b88c423234b57f22ff5ea7246d1b4a90e5b521e5e068edfab0f956b24"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-11",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+        "source_date": "1862 petition;1945 common conclusion",
+        "locator": "Complete declared finite source selection, lines1–3",
+        "relationship": "source-based-latin-study-reconstruction",
+        "verification_source_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot11-haec-tua-whole-20261112",
+        "verification_locator": "Pustet1862 AP731–732/[61]–[62], with independently witnessed Lasance1945p217 ending",
+        "transformations": [
+          "Remove the parenthetic old quaesumus, which does not change the predicate or petition.",
+          "Move old in tua Ecclesia to in Ecclesia tua; retain the same noun and possessive, case and referent.",
+          "Normalize accents/ligatures and punctuation as explicitly declared; no new petition word supplied.",
+          "Replace the printed old Per Dominum cue with independently witnessed complete short conclusion and separately marked response; this is a declared source assembly, not a claim of contiguous old printing."
+        ],
+        "provenance_evidence": "The old prayer differs by deletion of parenthetic quaesumus and relocation of tua. All substantive words and the whole sicut/sic relation remain. Full short ending and separate response are independently witnessed; not contiguous old printing.",
+        "provenance_authority": "Exact to the declared project Latin study carrier only; secondarydigital2002 comparison; printed2002/2008 unresolved",
+        "provenance_confidence": "medium",
+        "publication_status": "permitted",
+        "publication_basis": "qualified-nonoriginal-adaptation",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "publication_locator": "Pustet1862 AP732/[62] and Lasance1945p217",
+        "publication_evidence": "Proposed exact whole-expression finite basis; Root Latin adoption pending. Evidence .scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/latin-proposal-v2/proof-bundle.json SHA256 de287106328d78b6278f5ca191ccfa42209f4fe75e7886eb1259ad88dfbebd7a",
+        "note": "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation.",
+        "publication_authority": "ordinarytime-ot11-finite-latin-study-20261112",
+        "notice": "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation."
+      }
+    }
+  ],
+  "files": [
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/work.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/work.toml",
+      "sha256": "8e2127ca13a65794d9d7c3aff3054433b9c730aed55a643a96bd477b4a65bbdc",
+      "bytes": 995,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/edition.toml",
+      "sha256": "46e59301abfd4ab7c30ac5be2c02fb7d530713c33ec473c674c061230e7a29ac",
+      "bytes": 799,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/work.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/work.toml",
+      "sha256": "5b5217563d2e9441128fd69395bb2a3cb685cf026de1e2ff259d769b37c7e97b",
+      "bytes": 782,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "3cad4b8ae56ea05ae29d3b0fd26ebb29591eff91148f5c82b21654ab59c08acf",
+      "bytes": 781,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinarytime-ot-3-whole-text-20261112/latin.txt",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinarytime-ot-3-whole-text-20261112/latin.txt",
+      "sha256": "82aa01d78666c2094f005f4fed960a821a92188bea2766eae4d70124f80a591d",
+      "bytes": 99,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinarytime-ot-3-whole-text-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinarytime-ot-3-whole-text-20261112/artifact.toml",
+      "sha256": "1ea2740a09c424a54fb0384ea1a4031ef536a138a07a14f8548a9b451c93fc5e",
+      "bytes": 1823,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ordinarytime-ot-3-whole-text-20261112.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ordinarytime-ot-3-whole-text-20261112.toml",
+      "sha256": "2f645bf154b7fd8c362c1a687de49de00eb77d51d134f45b0fd4cb36cf7bbe1b",
+      "bytes": 1166,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ordinarytime-ot-3-image-20261112.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ordinarytime-ot-3-image-20261112.toml",
+      "sha256": "37d987ffa18ae1eba44037e3c1fb43be0a51ec2e0ebb13a1972b2065689ede94",
+      "bytes": 824,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-3-complete-la/latin.txt",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-3-complete-la/latin.txt",
+      "sha256": "7f491ee46910aa495cb785d8e94be8999a0da6ab9df28a0416d18263a731cf71",
+      "bytes": 141,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-3-complete-en/english.txt",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-3-complete-en/english.txt",
+      "sha256": "16be4d03de7856eb2fd01ab2ce32f40fc9a95a59321206804a394ef61f00a43f",
+      "bytes": 148,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-3-complete-en/artifact.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-3-complete-en/artifact.toml",
+      "sha256": "7a5a21ac9f17b058748642615b70168431935bb4bbd452b9f9b3210b28b1a07e",
+      "bytes": 2190,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/passages/ot-3-complete-en.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/passages/ot-3-complete-en.toml",
+      "sha256": "c6e931e9cd5423be0309a6334e7660a07e8b39c7ab36b5aa7101635b5c9ab427",
+      "bytes": 839,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinarytime-ot-5-whole-text-20261112/latin.txt",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinarytime-ot-5-whole-text-20261112/latin.txt",
+      "sha256": "c251a765e5823bf56ccc581a060be5dd12388a7548f0bb82546cb3132aab0b0c",
+      "bytes": 253,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinarytime-ot-5-whole-text-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinarytime-ot-5-whole-text-20261112/artifact.toml",
+      "sha256": "47a6431659530316ce15956ef52c302577301b12aae3d9efc76ec4f45152429c",
+      "bytes": 1798,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/ordinarytime-ot-5-whole-text-20261112.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/ordinarytime-ot-5-whole-text-20261112.toml",
+      "sha256": "f9d67e7fae9925e0734c509d9070c46141999708c94e30fd62e6605edec734b4",
+      "bytes": 1262,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/ordinarytime-ot-5-image-20261112.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/ordinarytime-ot-5-image-20261112.toml",
+      "sha256": "951d4a64ce1d90b46a93b0db59887bc0609a8f1402e5e3cabe3a534d4ca0ea5a",
+      "bytes": 820,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-5-complete-la/latin.txt",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-5-complete-la/latin.txt",
+      "sha256": "b5776f8e2a255bdcbfefa0fa0eb2dacf1d1f1764c9acf68ad4d68563c06f66b1",
+      "bytes": 196,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-5-complete-en/english.txt",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-5-complete-en/english.txt",
+      "sha256": "ea2cc24b138fb627889c36d6eedcdc1192e0d3f1b72df693ebb9b026f3da980a",
+      "bytes": 188,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-5-complete-en/artifact.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-5-complete-en/artifact.toml",
+      "sha256": "d1f694405766f7fefc63d80c7d646802fb5808684cdc1b9d800a220599692bbd",
+      "bytes": 2190,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/passages/ot-5-complete-en.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/passages/ot-5-complete-en.toml",
+      "sha256": "bf6c513949b5785640bc8774018d048877a5374f373a58ac79eab1c7c6444226",
+      "bytes": 839,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinarytime-ot-12-whole-text-20261112/latin.txt",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinarytime-ot-12-whole-text-20261112/latin.txt",
+      "sha256": "b5c4fb2c9335e755725ac6f2a77a3fa1d1f50edbf73029d105eb7045dc827670",
+      "bytes": 186,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinarytime-ot-12-whole-text-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinarytime-ot-12-whole-text-20261112/artifact.toml",
+      "sha256": "1fb0cf00acea9178c948d617baba5ad77df6c7344a4383de8a01d074f7724a56",
+      "bytes": 1800,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/ordinarytime-ot-12-whole-text-20261112.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/ordinarytime-ot-12-whole-text-20261112.toml",
+      "sha256": "24fa3544538c00f5c9b1802957c9bd93f4589116e9b5b059832805a1abc0f193",
+      "bytes": 1267,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/ordinarytime-ot-12-image-20261112.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/ordinarytime-ot-12-image-20261112.toml",
+      "sha256": "02683b896ea3796d1d9aebdb16b2d75c2415275011021ad17aac14c37d09b26d",
+      "bytes": 824,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-12-complete-la/latin.txt",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-12-complete-la/latin.txt",
+      "sha256": "72b31ed2ed746e7491ef182e55dc5530f88e3e62fa1e45e79b37e31c63cb1ba9",
+      "bytes": 186,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-12-complete-en/english.txt",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-12-complete-en/english.txt",
+      "sha256": "f48976dd5dfb2d5512978b70bb5db7619ae2eb4f822ff76dc1c27ef0148e567c",
+      "bytes": 183,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-12-complete-en/artifact.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/artifacts/ot-12-complete-en/artifact.toml",
+      "sha256": "4c4a7710f450aaa3078abe6e5985dfe35012ffb502cf48650b5ed1ba9c007e42",
+      "bytes": 2193,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/files/src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/passages/ot-12-complete-en.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-study-english/editions/2026-11-12/passages/ot-12-complete-en.toml",
+      "sha256": "9703d313ace7e20f106912c27cc7bfe9d24e8f4121e1d77f2d1ef8a0bb0ba8d7",
+      "bytes": 842,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/latin-selection-files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-3-complete-la/artifact.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-3-complete-la/artifact.toml",
+      "sha256": "737bc7a008490ee8a9837e1c700f4708cb9e034470294243650005f5ff9e24fc",
+      "bytes": 2322,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/latin-selection-files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-5-complete-la/artifact.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-5-complete-la/artifact.toml",
+      "sha256": "646cf188366ea3feef46a1ce504d3587df8bfde5c26e949d69997de2991ac4ba",
+      "bytes": 2329,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/latin-selection-files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-12-complete-la/artifact.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/artifacts/ot-12-complete-la/artifact.toml",
+      "sha256": "b43d97d6b9fed3f4e09f7d654eeedfeaaac1a6ddc6fdc67a107956e9324689bc",
+      "bytes": 2332,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/passage-notes-v3/files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/passages/ot-3-complete-la.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/passages/ot-3-complete-la.toml",
+      "sha256": "35e63ee0183ff666627787e99ef299612304ed9686f19af1589c212e4337653c",
+      "bytes": 1122,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/passage-notes-v3/files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/passages/ot-5-complete-la.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/passages/ot-5-complete-la.toml",
+      "sha256": "4d4a8e73cabf2f1b8c1421500a2dcd39e348704d3edc3db489b4f4ccafbaa1c1",
+      "bytes": 1122,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/passage-notes-v3/files/src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/passages/ot-12-complete-la.toml",
+      "destination": "src/sources/works/triptych/ordinarytime-offerings-historical-adaptations/editions/2026-11-12/passages/ot-12-complete-la.toml",
+      "sha256": "a5035a17146cc17089234c317d483e78c3141a0afec59e3717b78dc82c2f82b7",
+      "bytes": 1125,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/modern-short-conclusions-20261112-89.toml",
+      "destination": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/modern-short-conclusions-20261112-89.toml",
+      "sha256": "68aa57f096199241e8ded1f6b4599c80d09ba91e74102ef0bed20a85ef3eb26e",
+      "bytes": 1432,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/work.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/work.toml",
+      "sha256": "8ce3da9ca5ee63467dfb23e0346fb4a1c4abe4aa0c7c8bf83e08183f44bb3c4d",
+      "bytes": 720,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/edition.toml",
+      "sha256": "77fba6e3aa3701a7e02e94d78750dcbe4f99031e4c71e60a4a085757dc967dd7",
+      "bytes": 693,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-study-english/work.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-study-english/work.toml",
+      "sha256": "96384aa139c2aaf6d12624a127066cac499f3f3a11c69ea0154d808ea7d7f618",
+      "bytes": 635,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "83793a8887a8beff083af46f9b82b9fdfc43ebfd8c9720fee62f4cfe61d059d5",
+      "bytes": 625,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot-8-postcommunion-reviewed-whole-20261112-image.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot-8-postcommunion-reviewed-whole-20261112-image.toml",
+      "sha256": "94b6de8dc7d10564efd0aa7ad34e8d53643c7b4d077d3b810bb6e318a1a2fd9c",
+      "bytes": 1346,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ot-8-postcommunion-reviewed-whole-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ot-8-postcommunion-reviewed-whole-20261112/artifact.toml",
+      "sha256": "5f7e73e859893e7c4fcd90789e9dd87315f205e35a28cfabc1579b011736318e",
+      "bytes": 2055,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot-8-postcommunion-reviewed-whole-20261112.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot-8-postcommunion-reviewed-whole-20261112.toml",
+      "sha256": "52392cbbbb656c336170f5aef38df311e1cdc6a0de850d80a00038320596e6cb",
+      "bytes": 1111,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-8-postcommunion-secondary-comparison-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-8-postcommunion-secondary-comparison-20261112.toml",
+      "sha256": "101099e6106f1b645ef6268cf47a55bcb9dd89d8fefa6b969d2328495655e832",
+      "bytes": 1076,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-8-postcommunion/artifact.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-8-postcommunion/artifact.toml",
+      "sha256": "d30087307df3e3d17a2102a2d8a35d2dce275598c4c1f088dd1b26155c84334c",
+      "bytes": 2688,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/passages/ot-8-postcommunion.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/passages/ot-8-postcommunion.toml",
+      "sha256": "b3b7d336b96dd8a66f76177168532e6c7dd1350847b631db0bb3f4001c60be24",
+      "bytes": 1301,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/artifacts/ot-8-postcommunion/artifact.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/artifacts/ot-8-postcommunion/artifact.toml",
+      "sha256": "5dbbc5825dc727be1ed34e65f39e44b27202d8da030fdacdbcef3751fc5f49fb",
+      "bytes": 2224,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/passages/ot-8-postcommunion.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/passages/ot-8-postcommunion.toml",
+      "sha256": "81ba653731d1f1659fcb24eb0b1c10b1df98c112761464767a20ee004145929e",
+      "bytes": 1285,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot-12-postcommunion-reviewed-whole-20261112-image.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot-12-postcommunion-reviewed-whole-20261112-image.toml",
+      "sha256": "64e6a60f19ca78d93fa962eeb0ac28021d57f2dbd06972a31c9d44f86ee88b84",
+      "bytes": 1374,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ot-12-postcommunion-reviewed-whole-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ot-12-postcommunion-reviewed-whole-20261112/artifact.toml",
+      "sha256": "468b3fa704fd5a6f8c570f2864237aa2ef0c1a0b6aece4efeb7d6afcb39e1641",
+      "bytes": 2041,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot-12-postcommunion-reviewed-whole-20261112.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot-12-postcommunion-reviewed-whole-20261112.toml",
+      "sha256": "30d2ba51b27959e6bc1d7b4abf45924133155391ee4399c4e5a8788847231211",
+      "bytes": 1097,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-12-postcommunion-secondary-comparison-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-12-postcommunion-secondary-comparison-20261112.toml",
+      "sha256": "1140c8417b723f5893fd3eae7f6bce377977333df9bf141bd6a9a39d742c87b4",
+      "bytes": 1078,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-12-postcommunion/artifact.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-12-postcommunion/artifact.toml",
+      "sha256": "bc699f6188708f08161ca66e98330679f7ad0a4cdfda40cc88c865abf58fc9f2",
+      "bytes": 2691,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/passages/ot-12-postcommunion.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/passages/ot-12-postcommunion.toml",
+      "sha256": "9fa446575bdb5401b90c9555dd849b336887c02fd6d367eae60c770a698233b3",
+      "bytes": 1303,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/artifacts/ot-12-postcommunion/artifact.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/artifacts/ot-12-postcommunion/artifact.toml",
+      "sha256": "00511f5768ed12198feea47cf6192b4c76f0ce3ba7874141f0d4cae319ece545",
+      "bytes": 2227,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/passages/ot-12-postcommunion.toml",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/passages/ot-12-postcommunion.toml",
+      "sha256": "d356250b30fa9041a51468ed2a613c7afad3d421e5437b0f2ce0035d60f42505",
+      "bytes": 1287,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ot-12-postcommunion-reviewed-whole-20261112/latin.txt",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ot-12-postcommunion-reviewed-whole-20261112/latin.txt",
+      "sha256": "8c12dc771828a53de53bba8f24fdccba6d7d34497e5648cb65fc053b141d0f27",
+      "bytes": 153,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ot-8-postcommunion-reviewed-whole-20261112/latin.txt",
+      "destination": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ot-8-postcommunion-reviewed-whole-20261112/latin.txt",
+      "sha256": "d89f114e899b23e694ff0054722797b42be89f2e58c0523557e07d34729dfb01",
+      "bytes": 152,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-12-postcommunion/latin.txt",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-12-postcommunion/latin.txt",
+      "sha256": "38f6b4e4d0cc47cd7dbafd071414f97576b3a41f6572d979fd4d5477fbae7c6c",
+      "bytes": 197,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-8-postcommunion/latin.txt",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-8-postcommunion/latin.txt",
+      "sha256": "bb3ad6b3199882f075efc0c2f91c9fb7950cbfc1d11b121d2dcaaf2257bd7a0e",
+      "bytes": 205,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/artifacts/ot-12-postcommunion/english.txt",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/artifacts/ot-12-postcommunion/english.txt",
+      "sha256": "e16f3a0805d572ce66514fca02062952d0f2c2083f12dea785ebba058ce65100",
+      "bytes": 209,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/artifacts/ot-8-postcommunion/english.txt",
+      "destination": "src/sources/works/triptych/postconciliar-ot8-ot12-study-english/editions/2026-11-12/artifacts/ot-8-postcommunion/english.txt",
+      "sha256": "5a61bd1cc8bc8a0da0a4cfd57f747121ba391e58efb8b31af47b53ff2b89babc",
+      "bytes": 206,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot11-haec-tua-whole-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot11-haec-tua-whole-20261112.toml",
+      "sha256": "157ece271aab53f830c1c7c9100b4114c7699939ce3dab08758e12da56339f9b",
+      "bytes": 1016,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/work.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/work.toml",
+      "sha256": "2d262d0dff4fd7c11ebd6b2920282bd2c0836ff0f17925023bc5b07d0c9c37b7",
+      "bytes": 823,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/work.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/work.toml",
+      "sha256": "91f7f67ebae816f9f1d195ccb85ddfa3c6944226ced961491904c9472c946f32",
+      "bytes": 817,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "82c1140f80eb2c98f612dc52db702fd14f1c256e932588d2607ce8aad52a18f6",
+      "bytes": 668,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "sha256": "166689e6ad0c64937a9b1c22475c8c80442baa073b8225361c9e2f3f6e8d1397",
+      "bytes": 189,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "sha256": "fa2a947da7bda7e83bdd1ca5a73ed3944063aada98fe37533c482f6fa8380399",
+      "bytes": 1380,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "sha256": "e0f1a11cf99fecc6b42bb59254cb881def8ae6fd22e1f08066086e216e7b208c",
+      "bytes": 766,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/latin-proposal-v1/files/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/edition.toml",
+      "sha256": "6b6901f8281febb4905db8c1f1a4db8bfa51959dea2d2b04e0da51421e98cc80",
+      "bytes": 702,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/latin-proposal-v1/files/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/latin.txt",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "bytes": 169,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/latin-proposal-v1/files/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/artifact.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/artifact.toml",
+      "sha256": "9604416c9a27d5dda9ed1302cee4337b7f238769e737622fa959b515dfa3b0a3",
+      "bytes": 2737,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/latin-proposal-v1/files/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/passages/complete-latin.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/passages/complete-latin.toml",
+      "sha256": "584db73cb7e5612a6d3d3a1c6d8446027453c0760d8d9736cc3aab73c6e90ca9",
+      "bytes": 1203,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/root/ordinary-time-six-source-admission.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-source-admission.json",
+      "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7",
+      "bytes": 132846,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/six-latin-review-queue-v3.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/final-source-queue.json",
+      "sha256": "f2e5c33acd47b1cc62bd94154c5aba1d1222c7cfb0c27ede9e079bf7eb656d72",
+      "bytes": 5462,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/offerings_early/passage-notes-v3/metadata-addendum.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/passage-notes-metadata-addendum.json",
+      "sha256": "103004af9112cc11fdbf9625421191e69db7331ef1641bf17fa53e34afe3976f",
+      "bytes": 16125,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/receipt.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/independent-latin-review.json",
+      "sha256": "aa6df50b3f73d436827aca5de026a73898cc6971de03056a982dca2556a1d0d2",
+      "bytes": 17830,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/owners/ot-3-offerings.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/latin-owners/ot-3-offerings.json",
+      "sha256": "056b6b15c32504335f5062fa14547010c16dfd7fc1b8075d05d51465f6ed6f45",
+      "bytes": 23116,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/owners/ot-5-offerings.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/latin-owners/ot-5-offerings.json",
+      "sha256": "f3bfb4d74967fe04cea6eac2124f5d744929b412bc9c083df2bac4d7dcab9588",
+      "bytes": 23219,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/owners/ot-12-offerings.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/latin-owners/ot-12-offerings.json",
+      "sha256": "74abac484aec836fa6785178e28c551ea9ac55cc9d4e879dddb67980229ca42e",
+      "bytes": 23422,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/owners/ot-8-postcommunion.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/latin-owners/ot-8-postcommunion.json",
+      "sha256": "2009fe6421769c738baeeb798f86e4ddf3274d6e63c7f4be7621a086ef4290b3",
+      "bytes": 25328,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/owners/ot-12-postcommunion.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/latin-owners/ot-12-postcommunion.json",
+      "sha256": "78fb9fbb78c5c8fad2d4b6a93c93187d9786f492267ff11716c0dffa48b3e2ba",
+      "bytes": 25445,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/owners/ot-11-postcommunion.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/latin-owners/ot-11-postcommunion.json",
+      "sha256": "7c051af8ca51f22e4463faf4b58bd4c6b5e8e60fc4e1393e1d72b9dd498cb6db",
+      "bytes": 23214,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/tuple-audit.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/latin-audits/tuple-audit.json",
+      "sha256": "c58171a786aa0d7e08acb6a3c898b835490975de81e1258eb237aa319bf94f27",
+      "bytes": 265753,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-six-latin-merits-review/passage-note-successor-review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/latin-audits/passage-note-successor-review.json",
+      "sha256": "5456dadd774265fcf309bda8912a2b508abfa97d3c5fe35693d8df123008ef2a",
+      "bytes": 122750,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/early-offerings-review/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/early-offerings-source-english-review.json",
+      "sha256": "ee75a91a2462607bb58240d743403a6b7c6b9914a040824631ec373407a256ff",
+      "bytes": 14468,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/finite-review/review-v1.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ot8-ot12/independent-merits-review.json",
+      "sha256": "d46d3d4b792606f359f827b50a3a5f3c976a3a1ca1ae81f60f97319c42f6692c",
+      "bytes": 33102,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/finite-review/ot11-v3-rule-delta-review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/ot11-rule-metadata-review.json",
+      "sha256": "0294f273eb231a98fdf978fb3da98a61c918680427540fa5366477db4493185e",
+      "bytes": 5955,
+      "role": "public-safe review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/activation/ot8-ot12-public-candidate-excerpt.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ot8-ot12/accepted-candidate.json",
+      "sha256": "66cdabb653c3ea8eb5e1e0d6db3f5083ae92ff538bdaeb60b42b0f3234a9d841",
+      "bytes": 25958,
+      "role": "public-safe metadata/review evidence"
+    },
+    {
+      "scratch_path": ".scratch/root/ordinary-time-six-confidence-clarification.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-confidence-clarification.json",
+      "sha256": "0aa5ffe1586a402184a78f0060000b244099920caeb4d71b9a213a3c70dcd285",
+      "bytes": 2775,
+      "role": "public-safe metadata/review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/activation/ot11-binding-amendment-proposal.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/ot11-binding-amendment-proposal.json",
+      "sha256": "9c30320a6b8f016134cc2ae53d71396954627f3a9a92a9e899f66883629b74b0",
+      "bytes": 14712,
+      "role": "public-safe metadata/review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/ot11-binding-independent-review.json",
+      "sha256": "4addbec6b796a4583e5d415e0a844deac3b256c5634e7065195de715fe91f716",
+      "bytes": 8202,
+      "role": "public-safe metadata/review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/replay/checks.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/ot11-binding-independent-checks.json",
+      "sha256": "067bc9ceb9f63ad69280026c7f77f74875fd5204fd4cdc06ebb9c617899592a3",
+      "bytes": 18044,
+      "role": "public-safe metadata/review evidence"
+    },
+    {
+      "scratch_path": ".scratch/root/ot11-source-binding-amendment.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/root-ot11-binding-admission.json",
+      "sha256": "06f23d7244de1be9d1bed3bf6faebb61caeb7bbabb96625f3ec9cc38173d324d",
+      "bytes": 3965,
+      "role": "public-safe metadata/review evidence"
+    },
+    {
+      "scratch_path": ".scratch/modern-finite-latin-contract-review/cache-clarification.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/independent-cache-clarification.json",
+      "sha256": "b093bd7e98f9bb335746ede2add5066182ce15b8e9cdb7630dc521b52ee53e9d",
+      "bytes": 2232,
+      "role": "public-safe metadata/review evidence"
+    }
+  ],
+  "existing_dependencies": [
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/artifact.toml",
+      "sha256": "2c4de2bcfc11bb17dfebc7864b0e7e931aab080e19b65855e0af7276753eb30e",
+      "bytes": 2790,
+      "role": "verification-only: original old source PDF"
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/internet-archive-pdf-006a38a3/artifact.toml",
+      "sha256": "10a439e18ff4e2740f398e77088902d20650102f20bb7a9b012ba0f0e1f0b030",
+      "bytes": 2497,
+      "role": "verification-only: original old source PDF"
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "sha256": "d380657fdad6aa7a98b1e62f2ea4b8bd6247703e089e98a5ba8ea47754105974",
+      "bytes": 1226,
+      "role": "independent full short formula and marked response"
+    },
+    {
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-77.toml",
+      "sha256": "c774e45d39b13dc5742415a42bde193c08e3dd04e1b403f71c9540e6545d20b2",
+      "bytes": 1202,
+      "role": "source-local secondary 2002 offering-prayer short conclusion rule; no printed-2002/2008 authentication"
+    }
+  ],
+  "private_input_pins": [
+    {
+      "path": ".scratch/modern-ordinarytime-orations/offerings_early/latin-selection-proposal-v3-passage-notes.json",
+      "sha256": "e1ac91887b53795051f34a949f983eef3053b12ca382860d88c9dee28c1d8843",
+      "bytes": 210041
+    },
+    {
+      "path": ".scratch/modern-ordinarytime-orations/offerings_early/installation-proposal-v2.json",
+      "sha256": "1b85245e77686df2bdb44eb9095bfb2bd89ca257546888d37fbecce45fe78c1d",
+      "bytes": 55979
+    },
+    {
+      "path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v2-note/installation-proposal.json",
+      "sha256": "93a653a69e297c472c21c42e73b9298656b0f64d5745781ac682679821b10247",
+      "bytes": 94259
+    },
+    {
+      "path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v2-note/finite-latin-admission-proposal.json",
+      "sha256": "1cb2bea464114ec2fb7a32b2f10f4055c80681e18907d53b96766f9e3e8c9741",
+      "bytes": 24638
+    },
+    {
+      "path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/latin-proposal-v2/proposal.json",
+      "sha256": "f8a73c392d24006fc7516702771d5e43de5672a061144c1c7a6ebb216d453adb",
+      "bytes": 24581
+    },
+    {
+      "path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/candidate-v3.json",
+      "sha256": "720ad2038f044b6ce81cc5976167f3c4e846eb81823c4d0bfe7643dd3b6f41c4",
+      "bytes": 24539
+    }
+  ],
+  "preservation": "Six exact protected-English refusal dictionaries and Latin before dictionaries are retained here. Unselected bytes, quarantine registry, other cohorts and code remain unchanged. No approved English is copied.",
+  "public_scope": "Only selected accepted bodies and old source expressions, source metadata, public-safe reviews and actual Root receipt are mapped. Original private proposals/comparison snapshots, full modern comparison bodies and images are not copied. Review references to private originals remain historical pins, not promoted payloads.",
+  "dual_ot11_carrier": "Root-adopted two-field English binding amendment selects the finite Latin carrier. Four superseded original-edition files are omitted from this new-file proposal, never deleted canonically. Their original bytes and pins remain in antecedent scratch evidence; the shared work and all English source files remain unchanged.",
+  "durable_plan_path": "workflows/reviews/modern-source-completion-2026-11-13/ordinary-time-six/installation-plan.json",
+  "predecessor_plan": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/install-plan.json",
+    "sha256": "d25b4cb43f2bb21ce4ba0d025d0f65fb2ad787166a3709bda6bc3ff1abd019df",
+    "bytes": 133954
+  },
+  "metadata_amendment_candidate": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/ot11-binding-amendment-proposal.json",
+    "sha256": "9c30320a6b8f016134cc2ae53d71396954627f3a9a92a9e899f66883629b74b0",
+    "bytes": 14712
+  },
+  "metadata_admissions": [
+    {
+      "path": ".scratch/root/ot11-source-binding-amendment.json",
+      "sha256": "06f23d7244de1be9d1bed3bf6faebb61caeb7bbabb96625f3ec9cc38173d324d",
+      "bytes": 3965
+    },
+    {
+      "path": ".scratch/root/ordinary-time-six-confidence-clarification.json",
+      "sha256": "0aa5ffe1586a402184a78f0060000b244099920caeb4d71b9a213a3c70dcd285",
+      "bytes": 2775
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/review.json",
+      "sha256": "4addbec6b796a4583e5d415e0a844deac3b256c5634e7065195de715fe91f716",
+      "bytes": 8202
+    }
+  ],
+  "never_installed_source_omissions": [
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/edition.toml",
+      "sha256": "4c70c31e00d3d509e782d3976ee68fda5f6f13548987e2001c17fa31da2fea82",
+      "bytes": 676,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "bytes": 169,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "sha256": "9f3b894f51a8800cbf017cbfecc590b960fa980431a35e5d5e3f09887c6954ce",
+      "bytes": 2181,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "sha256": "2afa519aa5465bebfd45885c17970b66d189fea265b603547f667a15524b8bea",
+      "bytes": 766,
+      "role": "English-source dependency"
+    }
+  ],
+  "public_reference_resolution": "The exact Postcommunion source/English review is mapped at its existing cited workflow path. Its accepted-candidate path contains an explicitly labelled public-safe selected excerpt with original private candidate hash; comparison bodies/images are excluded, not silently represented as the original full candidate."
+}

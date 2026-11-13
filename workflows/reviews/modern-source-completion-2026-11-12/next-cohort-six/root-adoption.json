@@ -1,0 +1,327 @@
+{
+  "schema": "triptych-root-modern-six-group-admission/v1",
+  "status": "accepted",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "scope": "Exactly ten Proper English uses, five Proper Latin owners, one Ordinary Latin selection and two neutral first-reading option-basis explanations in the bound plan. No other source choices or complete-Mass claim.",
+  "installation_plan": {
+    "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/install-plan.json",
+    "sha256": "7da2bb12bbd2bb24979e185ee3f3a900650793fa1444e873be09ef47879eba4f"
+  },
+  "merit_inputs": {
+    "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/root-merit-inputs.json",
+    "sha256": "f42044c1cc905e383614b0387d3d31e58a5190f734197c983605cd8dd26bead8"
+  },
+  "metadata_successor_review": {
+    "path": ".scratch/modern-next-cohort-spacing-review/receipt.json",
+    "sha256": "aa749f33df64e96cf0cc3e2ff0fb65f5ec45cb1adeba5707f54bf9b2c01b3e55"
+  },
+  "independent_source_and_fidelity_reviews": [
+    {
+      "group": "easter-three",
+      "path": ".scratch/modern-new-orations-review/easter-vigil/review.json",
+      "durable_path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-vigil-source-review.json",
+      "sha256": "b541164e25d0989a6450c2ba358026e90c1fa1d16ec15a907d15e244be16aa0a"
+    },
+    {
+      "group": "easter-three",
+      "path": ".scratch/modern-new-orations-review/easter-3-wednesday/review.json",
+      "durable_path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-3-wednesday-source-review.json",
+      "sha256": "81fb704db88de6e01a265cbb7723400e4107ee7df349d3e77907291685694cf7"
+    },
+    {
+      "group": "easter-three",
+      "path": ".scratch/modern-new-orations-review/easter-3-friday/review.json",
+      "durable_path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-3-friday-source-review.json",
+      "sha256": "d89dc42bf373695bc9c2ad28785ad8892224aa777b05b6e5bb1fc19f0de87083"
+    },
+    {
+      "group": "semen",
+      "path": ".scratch/modern-new-acclamations-review/review.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/source-review.json",
+      "sha256": "c49c1aed1affe1a728c3be023f2dce339966e916fee2d2cbbecae702ffeacd0e"
+    },
+    {
+      "group": "semen",
+      "path": ".scratch/modern-new-acclamations-review/semen-install-addendum.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/install-review.json",
+      "sha256": "570e19e354e5b6dad3c4de106576c99c14d0fd7d3b97c7de3d20947948a4fd5c"
+    },
+    {
+      "group": "in-spiritu",
+      "path": ".scratch/modern-in-spiritu-review/review.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/in-spiritu/independent-review.json",
+      "sha256": "5768c83e5cee91917894d5fff377525bc61036ae777fc5ae40cb58853642e4ae"
+    },
+    {
+      "group": "ot21",
+      "path": ".scratch/modern-new-orations-review/ot21/review.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/petition-review.json",
+      "sha256": "cbc465cf1c4cd021e79fafaffc6fcfd680d49eff75605d7639d9d13872b9331c"
+    },
+    {
+      "group": "ot21",
+      "path": ".scratch/modern-new-orations-review/ot21-complete/review.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/complete-review.json",
+      "sha256": "32b0e0dfedfd435d5d70313b33439e3a2568f24f7c9bb0e656c1826e1f8dcd71"
+    },
+    {
+      "group": "all-saints",
+      "path": ".scratch/modern-new-antiphons-review/receipt.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/all-saints/source-review.json",
+      "sha256": "bd94d75113edc325a1f907837269046b9de7e622f48d082cce61f047deca51f2"
+    },
+    {
+      "group": "all-saints",
+      "path": ".scratch/modern-new-antiphons-review/all-saints-installation/receipt.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/all-saints/install-review.json",
+      "sha256": "83d9ef0581fc42e3332cc8ccb2c12b23f31b56aae308f713b8a2b544c55b3d4e"
+    },
+    {
+      "group": "easter-three",
+      "path": ".scratch/modern-new-orations-review/easter-install/review.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/easter-three/install-review.json",
+      "sha256": "1e1ed83bb3b7074af6073271b0d34893aafe55071ba9eab49664dedb8fb23b1c"
+    },
+    {
+      "group": "pentecost-two",
+      "path": ".scratch/modern-temporal-collects-review/review.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/pentecost-two/scoped-install-review.json",
+      "sha256": "424a147b1e7f75dc02f74185f3e7b6befade0c2bdf707c432f720c06676ae875"
+    },
+    {
+      "group": "shared",
+      "path": ".scratch/modern-study-qualification-addendum/review.json",
+      "durable_path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/shared/qualification-addendum.json",
+      "sha256": "a2131d7c0459893555406e07828b72ef64ecccb2b5133d2b7b93d000262a5d27"
+    }
+  ],
+  "cases": [
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "grade": "Exact full governing OLM 1981, independently old full body; historical Bute human English; no approved 2011."
+    },
+    {
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "grade": "Exact full governing OLM 1981, independently old full body; historical Bute human English; no approved 2011."
+    },
+    {
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "grade": "Exact full governing OLM 1981, independently old full body; historical Bute human English; no approved 2011."
+    },
+    {
+      "identity": [
+        "ot-21",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "4bf0aad8ec265a0e84f7859d6354313dd07b5f657a24f0091f85ad3479de5332",
+      "grade": "Qualified complete historical assembly plus new study English; printed 2002 fidelity and 2008 target unresolved."
+    },
+    {
+      "identity": [
+        "all-saints",
+        "main",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "8619e91f083fe507174da1c631422c015f70eebb7ee0390cb214288fdf9f5384",
+      "grade": "Complete 1922 historical Latin plus new study English; secondary 2002 comparison, 2008 unresolved."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the First Reading",
+        "all",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "6c1315dcc0dc085fb6bf21c89e2040c0a1683d972bb4a96d30b2816bb00d5a19",
+      "grade": "Qualified study English only; ancient complete source expressions and separate formulas as declared; no Latin/2008 upgrade."
+    },
+    {
+      "identity": [
+        "easter-3-wednesday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea",
+      "grade": "Qualified study English only; ancient complete source expressions and separate formulas as declared; no Latin/2008 upgrade."
+    },
+    {
+      "identity": [
+        "easter-3-friday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94",
+      "grade": "Qualified study English only; ancient complete source expressions and separate formulas as declared; no Latin/2008 upgrade."
+    },
+    {
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (before the readings)",
+        "all",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066",
+      "grade": "Two receiving uses of unchanged existing study English; official 2008 referral/incipits plus secondary whole body; no complete 2008 Latin, branch/default or conclusion expansion."
+    },
+    {
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (after Gloria)",
+        "all",
+        1
+      ],
+      "language": "en",
+      "body_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e",
+      "grade": "Two receiving uses of unchanged existing study English; official 2008 referral/incipits plus secondary whole body; no complete 2008 Latin, branch/default or conclusion expansion."
+    },
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "grade": "exact governing OLM1981 body, not Missal2008"
+    },
+    {
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "grade": "exact governing OLM1981 body, not Missal2008"
+    },
+    {
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "grade": "exact governing OLM1981 body, not Missal2008"
+    },
+    {
+      "identity": [
+        "ot-21",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "36e86231010cd442ba153211c41e73fc7a2e5a3f34d6a7366b12a72c914674e3",
+      "grade": "historical source expression; modern2008 target unresolved"
+    },
+    {
+      "identity": [
+        "all-saints",
+        "main",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+      "grade": "historical source expression; modern2008 target unresolved"
+    },
+    {
+      "identity": "praeparatio-donorum/in-spiritu-humilitatis",
+      "language": "la",
+      "body_sha256": "879af4f72ecacf07cf4106e51bd1361cae6e3c1b3050c80fe8470b5f8224fc05",
+      "grade": "word-exact to complete official2022 quotation expressly citing Missal2008 p515; prayer words only"
+    }
+  ],
+  "decisions": [
+    {
+      "group": "semen",
+      "finding": "Accept the complete historical Bute 1908 human English and complete old Pustet 1888 Latin for exactly OLM 1981 n. 92 cycle B, n. 103 cycle A and n. 252 ferial recipients. The independent whole-unit collation supports the governing Lectionary Latin. Preserve the historical free English rendering and chant marker; neither an approved 2011 translation nor a 2008 altar-book body is established. The Lent optional n. 250 course remains separate."
+    },
+    {
+      "group": "in-spiritu",
+      "finding": "Select the complete independent Pustet 1862 Latin prayer, including hodie and without Amen. The official Latin Desiderio desideravi 60 quotation and its note 20 explicitly cite Missale Romanum 2008 p. 515 and establish this complete prayer word sequence, with the declared typography/pointing qualification. This is not a whole-page, rubric or whole-Ordo attestation. Existing Cummiskey nodie remains in its immutable artifact; historical English stays unchanged and separately qualified."
+    },
+    {
+      "group": "ot21",
+      "finding": "Accept the complete historical 1862 Plenum petition plus the separately sourced full short conclusion and response as an explicitly owned historical assembly, and the faithful fresh study English. The secondary 2002 cue motivates the separate formula choice; the assembled whole is not claimed as an exact old printing or an authenticated 2008 prayer. Both Latin and English must retain this qualification."
+    },
+    {
+      "group": "all-saints",
+      "finding": "Accept the complete Mame 1922 Gaudeamus antiphon and faithful fresh study English. The secondary 2002 orthographic and pointing differences are stated. The body ends at Dei and excludes the following Psalm and doxology. Modern 2008 wording and approved contemporary English remain unestablished."
+    },
+    {
+      "group": "easter-three",
+      "finding": "Accept the complete old Vigil first-reading petition with separately sourced full relative conclusion/response in fresh study English, and the two exact existing study-English antiphon reuses for Easter III Wednesday and Friday. Retain historical/secondary target qualifications and unavailable Latin. The two first-reading choices remain mutually exclusive; the corrected common basis describes Vel and the following heading without selecting a default."
+    },
+    {
+      "group": "pentecost-two",
+      "finding": "Accept the two unchanged existing study-English collects at the extended Vigil recipients supported by the official 2008 referral and incipits, with separate older complete-body evidence and secondary comparison. Preserve their literal short endings, exact option identities and unavailable Latin; no complete 2008 body or full-ending execution is inferred."
+    }
+  ],
+  "review_performed": [
+    "Read all ten full English bodies, all five full Proper Latin bodies, complete Ordinary before/after selection, independent source/fidelity findings and both neutral option descriptions. Source-page image inspections are attributed to the independent reviewers.",
+    "Independently verified all 105 mapped file hashes and absent destinations, all four current owner-file preimages, all sixteen selected body hashes, unchanged Ordinary English, and each declared whitespace insertion in the final metadata successor.",
+    "Read the independent final spacing/graph/join review. Original source/body reviews remain immutable; only the separate metadata review covers changed prose bytes."
+  ],
+  "publication_boundary": "Only the individually recorded complete historical-expression and project study-translation bases are accepted. Historical availability is not blanket permission for a modern edition, approved English, Common arrangement or unheld text. Prior rejected approved-English routes and quarantine hashes remain preserved.",
+  "canonical_changes": false,
+  "integration_requires": [
+    "Persist final plan, minimal durable evidence and exact predecessor metadata with this actual review; preserve all original receipts.",
+    "Apply only exact guarded owner dictionaries and new source files, never overwrite stale whole-owner snapshots.",
+    "Perform source-epoch conservation and actual owning source/runtime checks after installation.",
+    "Preserve all displayed qualifications, mutually exclusive choices and explicit unresolved target grades; validate browser and terminal consumers.",
+    "Resolve the separately recorded inherited d85 digitizer-notice metadata defect through its own exact declaration; this admission does not silently amend that source record."
+  ]
+}

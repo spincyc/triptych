@@ -1,0 +1,132 @@
+{
+  "schema": "triptych-root-ferial-three-source-admission/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted",
+  "scope": "Exactly three named 1962 Oratio super populum bodies, source and historical English bindings. No frame placement or full conclusion execution is admitted here.",
+  "cases": [
+    {
+      "identity": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+      "English_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269",
+      "proper_sha256": "59993fc7590b696846d1b30ad20af45bff2f793b8caab3b7cfc33d19601a10e7",
+      "Latin_row_sha256": "e40cb1478ed2e8dc5eda50e54cd19232d692adc9bc058db924475ebb82f6f17d",
+      "English_entry_sha256": "1dc16ed15a6954fdf5136933996a37b311b6db0158b77446ae054acb924b1fcd"
+    },
+    {
+      "identity": [
+        "lent-4-thursday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+      "English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e",
+      "proper_sha256": "286732f81128f846a5cead2eb4878ac66c73383ecc3fbfad98a2ab2100ad55db",
+      "Latin_row_sha256": "289d848d8075ddac490f96e5189060345b831a21a6f30d28b2eab18383369531",
+      "English_entry_sha256": "5ceaeff54634fb28ea20bc7f831f20a3a74e959553870505a3c031da7ee3264c"
+    },
+    {
+      "identity": [
+        "passion-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+      "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+      "proper_sha256": "fcdf6015a27d3d6d95afb4245a24397a289a523351f58a7b04b080589673d9f3",
+      "Latin_row_sha256": "989a985a264a533db4e63f262e077f5669f206e5c29ec021ed3e61573125abcc",
+      "English_entry_sha256": "cb09e86d681e28f90db02cf2b189c5341c1c73ca3de9ba8f02efc95ecf9f310d"
+    }
+  ],
+  "final_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/install-plan.json",
+    "sha256": "38cd3c5a720bbbdf9d875cc90f769104178823b3006a66e19013d0dff753c979"
+  },
+  "final_metadata_proofs": {
+    "body_bindings": {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/appointment-body-bindings.json",
+      "sha256": "9932724dd17eb4975aa2fdfd1514e06085102375c8204e5a1e0156727db1aa4b"
+    },
+    "metadata_delta": {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/metadata-delta.json",
+      "sha256": "c342740e96ff3028ecbdb4a5caa0259ebd3936baa3f7fc4faefcf7963e14ea7b"
+    },
+    "independent_source_delta": {
+      "path": ".scratch/roman-sources/ferial-three-source-review/metadata-v3-supplement.json",
+      "sha256": "f64792c54c3e9347ab59b5fd04f4f1005f3d86768fb499d03124e31741f14f96"
+    },
+    "independent_english_delta": {
+      "path": ".scratch/roman-sources/ferial-three-english-review/metadata-v3-binding.json",
+      "sha256": "48beaea6c75cdd6a300acfb05eadbd16c5923882aaead95da9e4435f2638fa36"
+    }
+  },
+  "independent_original_reviews": [
+    {
+      "path": ".scratch/roman-sources/ferial-three-source-review/review.json",
+      "sha256": "3cea9775916c63df05cbadad718953897bd71b65ecc57ce79773ea8dec6535b3"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three-english-review/review.json",
+      "sha256": "57589732bf904d71335f479ed4bb159fd8072eab1a64d861b41e9bfa7c7c06b8"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three-english-review/final-binding.json",
+      "sha256": "352c66df8b0e3c490ed3cbb10a1cdb0a065f47b2d5042384f94a5c2d2d6a8118"
+    }
+  ],
+  "review_performed": [
+    "Read all three complete Latin and historical English bodies, source-image findings, actual day headings, donor/recipient distinctions, literal short endings, publication extents and independent English fidelity findings. Source-image inspection remains attributed to the independent reviewers.",
+    "Read all three final factual metadata clarifications; independently checked declared spacing-only edits, final plan/proof hashes, all 21 new source-file hashes, exact six body hashes and current owner-file preimages.",
+    "Accepted the received complete historical prayers and exact declared typographic/contraction transformations. No conclusion or response was supplied from memory."
+  ],
+  "decisions": [
+    {
+      "identity": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "finding": "The complete Mame 1922 prayer supports this 1962 appointment with an explicitly recorded Dñum. to Dominum expansion. The complete historical English is separately identified and image-checked in the concrete title-dated Lasance 1946 printing, using the existing bounded 1937/1945 nonrenewal basis. No inference is made about every part of a later mixed scan."
+    },
+    {
+      "identity": [
+        "lent-4-thursday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "finding": "Mame 1922 supplies the complete Latin petition and printed Per Dominum. Cummiskey 1861 supplies the complete historical English, including always and the original Thro’ cue and source punctuation. The alternative Lasance rendering omitting always is not selected."
+    },
+    {
+      "identity": [
+        "passion-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "finding": "Exact previously admitted Lent II Monday donor bodies are reused, with an independently established Passion Wednesday appointment. The donor retains its own source ownership; the same-day Mame longer ending is not substituted."
+    }
+  ],
+  "publication_scope": "Existing bounded historical-expression routes only. The old full source expressions and declared mechanical normalization support these selected words; this does not expand the finite qualified-Latin authority or grant rights to full scans or modern editions.",
+  "canonical_changes": false,
+  "integration_requirements": [
+    "Copy minimal durable source and English evidence with the final review references.",
+    "Recheck exact recipient and donor preimages after intervening source admissions.",
+    "Independently admit the source-epoch successor; preserve the original 25 direct proof records and 17 historical replay streams.",
+    "Run owning source checks and complete the separately sourced OSP placement and conclusion execution before claiming complete renderings."
+  ]
+}

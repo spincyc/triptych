@@ -1,0 +1,194 @@
+{
+  "schema": "triptych-lent-two-selected-installation-dictionaries/v1",
+  "identity": [
+    "good-friday",
+    "main",
+    "Solemn Intercession IV: For catechumens",
+    "all",
+    1
+  ],
+  "frozen_proposal": {
+    "path": ".scratch/modern-lent-orations/good-friday/successor-v2/installation-proposal.json",
+    "sha256": "b51f2b945a687315f911d5328381fb6b70305de8a10b292c1f8107407117469b"
+  },
+  "root_source_admission_sha256": "98026a592e22e4beb47f5c363338459c03061795eb88c96f83e13ebfc3256162",
+  "before_proper": {
+    "name": "Solemn Intercession IV: For catechumens",
+    "incipit": "Oremus et pro catechumenis (nostris)",
+    "source": "composed",
+    "text_status": {
+      "state": "unavailable",
+      "scope": "proper-body",
+      "reasons": [
+        {
+          "kind": "rights-withheld",
+          "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+        }
+      ]
+    }
+  },
+  "after_proper": {
+    "name": "Solemn Intercession IV: For catechumens",
+    "incipit": "Oremus et pro catechumenis (nostris)",
+    "source": "composed",
+    "text": "Oremus et pro catechumenis (nostris), ut Deus et Dominus noster adaperiat aures praecordiorum ipsorum ianuamque misericordiae, ut, per lavacrum regenerationis accepta remissione omnium peccatorum, et ipsi inveniantur in Christo Iesu Domino nostro.\n\nOmnipotens sempiterne Deus, qui Ecclesiam tuam nova semper prole fecundas, auge fidem et intellectum catechumenis (nostris), ut, renati fonte baptismatis, adoptionis tuae filiis aggregentur. Per Christum Dominum nostrum. R. Amen.",
+    "notes": " Complete source-local1970 IV execution proposed from independently old1862 invitation and collect plus old full short formula. The historical cue stays in its own apparatus. Fresh study English is neither Lasance nor approved2011. Exact2008 correspondence remains unverified."
+  },
+  "before_english": {
+    "mass": "good-friday",
+    "form_id": "main",
+    "proper": "Solemn Intercession IV: For catechumens",
+    "cycle": "all",
+    "occurrence": 1,
+    "lang": "en",
+    "extent": "body",
+    "availability": "unavailable",
+    "reason": {
+      "kind": "rights-withheld",
+      "source_id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+      "surfaces": [
+        "corpus-data",
+        "public-git",
+        "command-line",
+        "download"
+      ]
+    },
+    "rights": "permission",
+    "witness": "icel-music-2010",
+    "source_id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+    "witness_artifact_id": "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-4",
+    "verified_on_page": "2026-08-22",
+    "verified_artifact_page": 1,
+    "verified_heading": "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / IV. For catechumens",
+    "verified_url": "https://www.icelweb.org/musicfolder/GoodFriday4.pdf",
+    "quarantined_text_sha256": [
+      "1dd81f97a85dac8e286c8310016d45c6594760bf6997448cd83c64c7cd1e853f"
+    ],
+    "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+  },
+  "after_english": {
+    "mass": "good-friday",
+    "form_id": "main",
+    "form": "",
+    "proper": "Solemn Intercession IV: For catechumens",
+    "cycle": "all",
+    "occurrence": 1,
+    "incipit": "Oremus et pro catechumenis (nostris)",
+    "relation": "source-local-execution",
+    "ancient_witness": "Pustet Ratisbon1862 complete catechumen invitation and petition, separately full short formula",
+    "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.good-friday-catechumens-whole-20261112",
+    "target_witness_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1970.good-friday-catechumens-full-execution-20261112",
+    "target_qualification": "exact-source-local-1970-p253;2008-unestablished",
+    "study_english_passage_id": "passage.triptych.good-friday-catechumens-study.2026-11-12-english.complete-unit",
+    "source_latin_sha256": "933157bf9ec7df33c41603a8990ee4f0e5fa28b8f278182d62fabcd95efadac5",
+    "source_latin_passage_id": "passage.triptych.good-friday-catechumens-study.2026-11-12-latin.complete-unit",
+    "source_latin_publication_source_ids": [
+      "artifact.triptych.good-friday-catechumens-study.2026-11-12-latin.complete-unit",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.catechumens-old-complete-and-short-formula-20261112"
+    ],
+    "divergence": "Old fixed nostris becomes explicitly optional in1970. Old Per Dominum cue retained separately;1970 locally prints independently old Per Christum Dominum nostrum with response. No old English ending substitution. This finite application needs independent review.",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "project-created",
+        "text": "Let us pray also for (our) catechumens, that our God and Lord may open the ears of their hearts and the gate of mercy, so that, having received forgiveness of all sins through the washing of rebirth, they too may be found in Christ Jesus our Lord.\n\nAlmighty everlasting God, who always make your Church fruitful with new offspring, increase the faith and understanding of (our) catechumens, so that, reborn in the baptismal font, they may be gathered among your adopted children. Through Christ our Lord. R. Amen."
+      }
+    ],
+    "witness_note": "New study translation of complete source-local1970 invitation and collect, including actual full short conclusion and response. Not approved English; exact2008 identity unverified. The prior approved-English refusal, including its surface restriction and quarantine fingerprint, remains preserved in prior_source_refusals; this study route grants no additional approved-English permission.",
+    "prior_source_refusals": [
+      {
+        "mass": "good-friday",
+        "form_id": "main",
+        "proper": "Solemn Intercession IV: For catechumens",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "icel-music-2010",
+        "source_id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+        "witness_artifact_id": "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-4",
+        "verified_on_page": "2026-08-22",
+        "verified_artifact_page": 1,
+        "verified_heading": "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / IV. For catechumens",
+        "verified_url": "https://www.icelweb.org/musicfolder/GoodFriday4.pdf",
+        "quarantined_text_sha256": [
+          "1dd81f97a85dac8e286c8310016d45c6594760bf6997448cd83c64c7cd1e853f"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      }
+    ]
+  },
+  "before_latin_provenance": {
+    "mass": "good-friday",
+    "form": "",
+    "proper": "Solemn Intercession IV: For catechumens",
+    "course": "",
+    "cycle": "",
+    "occurrence": 1,
+    "body_status": "removed",
+    "text_sha256": "47b4b41e58fc7d8d737a7c07ffc1f51b2246e091fdd70c3465d7aefb64ddd29a"
+  },
+  "after_latin_provenance": {
+    "mass": "good-friday",
+    "form": "",
+    "proper": "Solemn Intercession IV: For catechumens",
+    "course": "",
+    "cycle": "",
+    "occurrence": 1,
+    "text_sha256": "933157bf9ec7df33c41603a8990ee4f0e5fa28b8f278182d62fabcd95efadac5",
+    "provenance_status": "collated",
+    "source_id": "passage.triptych.good-friday-catechumens-study.2026-11-12-latin.complete-unit",
+    "source_date": "1862 underlying expression;1970 source-local execution;2026 study projection",
+    "locator": "Complete proposed Latin study artifact lines1-3",
+    "relationship": "exact-transcription",
+    "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1970.good-friday-catechumens-full-execution-20261112",
+    "verification_locator": "1970 AP246/p253 whole IV; not2008",
+    "transformations": [
+      "Accents, ligatures, j/i and pointing normalized",
+      "Explicit optional nostris twice from1970; source-old fixed form retained",
+      "Old full short formula applied only where1970 prints it; historical cue retained separately"
+    ],
+    "provenance_evidence": "Complete old invitation and petition checked on1862AP258; complete old short formula checked onAP266; whole actual execution checked on1970AP246.",
+    "provenance_authority": "Proposed finite source-local1970 admission; independent review pending",
+    "provenance_confidence": "high",
+    "publication_status": "permitted",
+    "publication_basis": "public-domain",
+    "surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "publication_source_ids": [
+      "artifact.triptych.good-friday-catechumens-study.2026-11-12-latin.complete-unit",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.catechumens-old-complete-and-short-formula-20261112"
+    ],
+    "publication_locator": "Pustet1862 AP258/p172 complete invitation and petition, AP266/p180 complete short formula and response; source-local1970 AP246/p253 execution",
+    "publication_evidence": "Whole underlying words independently old; modern witness supplies execution and option facts only. Proposed status activates only after independent acceptance.",
+    "note": "No authenticated2008 identity or global ending-expansion authority."
+  },
+  "root_postimage_pins": {
+    "Latin_body_sha256": "933157bf9ec7df33c41603a8990ee4f0e5fa28b8f278182d62fabcd95efadac5",
+    "English_body_sha256": "ab097101e6cf19bcd78e15fe8159ba3dfb20db2acbd20c90e6283210abdc0ed5",
+    "proper_sha256": "2f9921198851856bea23d6c02899079715529ea7ba1f517fcf4b50843bc38ba3",
+    "English_entry_sha256": "3b261909c92f1d036835d9214fb10e28ed63e8a42442a655689bbb526847c941",
+    "Latin_provenance_sha256": "8601ea4dc3f5a51c1053eb89a8a246b0b48d96a4dfc94830f027b0eb51ae69a1"
+  },
+  "scope": "Exact selected dictionaries only; no prayer words or authority fields changed. Pending wording in frozen dictionaries records the earlier proposal state; the later exact Root admission controls source merits. Consumer activation remains separate."
+}

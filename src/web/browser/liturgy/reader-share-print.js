@@ -383,6 +383,10 @@
         status.textContent = 'Wait for a valid reader selection before sharing.';
         return;
       }
+      if (shell.querySelector('[data-source-local-view="sequence"]')) {
+        status.textContent = 'Return to the source quotation before sharing. Historical source sequence selections are not included in reader links.';
+        return;
+      }
       const url = canonicalUrl(entrance, win.location, win.LiturgyReaderState);
       status.textContent = await share({
         title: shareTitle(entrance, shell, state), url: url,

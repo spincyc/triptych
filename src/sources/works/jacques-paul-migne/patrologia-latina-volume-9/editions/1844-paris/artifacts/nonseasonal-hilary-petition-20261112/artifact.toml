@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.nonseasonal-hilary-petition-20261112"
+edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-9.1844-paris"
+artifact_type = "verified-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the entire Hilary prayer printed in 1844 at PL9 col.208. Its old expression is independently public domain in the United States by publication date; modern apparatus and modern target revisions are not part of this Latin artifact."
+rights_jurisdiction = "United States"
+retrieved = "2026-11-12"
+sha256 = "fe80f7a10285b65eac7930208940249b722f32f09546b782fca203b9877ab4cf"
+byte_size = 173
+path = "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-petition-20261112/latin.txt"
+derived_from = "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.internet-archive-pdf-eab6d2f4"
+transformation = "Direct transcription from PDF120 at200 dpi and400 dpi. Join line breaks and word-wrap hyphenation, retain ligatures and abbreviation B. No conclusion is printed and none is supplied."
+provenance = "Whole source PDF SHAeab6d2f448b2087b2f4919e7fb5ef53a77c21214d4bf0c669ea132c495867c0a acquired and checked; the cited St Gatian Tours manuscript was not itself inspected."
+indexable = true
+encoding = "utf-8"
+notes = "Historical source only; not an assertion that the modern Hilary prayer is verbatim this text."

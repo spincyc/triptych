@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-seventh-reading-principal-text"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-seventh-reading-principal"
+artifact_sha256 = "5bdd01a171faa4fde36cf8cbd497599b5036f86ebd51fa0050feebe7176623e3"
+locus = "vigil-seventh-reading-principal/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Deus incommutabilis virtus, et lumen aeternum: respice propitius ad totius Ecclesiae tuae mirabile sacramentum, et opus salutis humanae, perpetuae dispositionis effectu tranquillius operare: totusque mundus experiatur et videat, dejecta erigi, inveterata renovari, et per ipsum redire omnia in integrum, a quo sumpsere principium: Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit."
+transcription_segments = [{line = 1, text = "Deus incommutabilis virtus, et lumen aeternum: respice propitius ad totius Ecclesiae tuae mirabile sacramentum, et opus salutis humanae, perpetuae dispositionis effectu tranquillius operare: totusque mundus experiatur et videat, dejecta erigi, inveterata renovari, et per ipsum redire omnia in integrum, a quo sumpsere principium: Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 8be0e050cfdf6f11a132b0fd25513b6e8183161236265cf8b3cfc4b585e9d036. Controlling complete page passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-seventh-reading-principal-page. The complete1862 prayer already contains every salvation/restoration clause and explicitly names the Lord Jesus Christ as the referent of per ipsum and a quo. The modern form omits two modifiers and relocates the Christ identification within the petition while using a complete short conclusion. Its old Noah-reading appointment is different from the modern seventh-readingEzekiel placement. No generic shortening or formula substitution authority is inferred."

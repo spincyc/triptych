@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112"
+edition_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition."
+rights_jurisdiction = "United States"
+derived_from = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+transformation = "Copy the complete unchanged Bute 1908 human English scalar from the verified historical semen.tsv into exactly three new recipient rows. Preserve every word, punctuation, capitalization and chant asterisk. Existing body and saint-recipient artifact remain unchanged. Direct PDF parent remains the separately inspected verification artifact; this derivative adds only recipient metadata."
+retrieved = "2026-11-12"
+sha256 = "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b"
+byte_size = 469
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/semen.tsv"
+indexable = true
+encoding = "utf-8"
+

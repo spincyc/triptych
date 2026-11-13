@@ -1,0 +1,141 @@
+{
+  "schema": "triptych.common-recovery-semantic-fix-proposal.v1",
+  "status": "scratch-only; independently reviewed; no canonical writes",
+  "root_commit": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "canonical_preimages": [
+    {
+      "path": "src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+      "preimage": "absent",
+      "candidate_sha256": "608c91f07582fe1589ac32c5ad0b79fb78c125289528cc2ecfcde50bf9ecf8d7",
+      "byte_size": 5499
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-sanctoral-commons-v1.toml",
+      "preimage": "4537bdac96e547a95b84254769fe6ddfdef87c548d075186bfec51f018abbbee",
+      "candidate_sha256": "b5dd0abf24845d3cde049156af340eded8d87eb90dfd3550bac6a8724ced76e0",
+      "byte_size": 116951
+    },
+    {
+      "path": "tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+      "preimage": "df2d7e29847560ab020b7143a6137947987aa5d65b483e159125a65bed2edc1d",
+      "candidate_sha256": "a3f3a1f61e9aa4e2faea889fb90417f103d969cc54821b1b976b6e4cb6f02639",
+      "byte_size": 36850
+    }
+  ],
+  "proposal_patch": {
+    "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/proposal.patch",
+    "sha256": "7d417c63c28e69ce0b64af0e3b79ad58b54388893224feb2caa469d5fad70abc",
+    "byte_size": 34710
+  },
+  "patch_check": {
+    "command": "git apply --check .scratch/modern-common-appointments/common-recovery-semantic-fix/proposal.patch",
+    "exit_code": 0,
+    "scope": "Root preimages; no application performed"
+  },
+  "supersedes_recovery_companion": {
+    "manifest": {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/manifest.json",
+      "sha256": "d0608ccfb054ee45511ef23d5a6febb94f1bd580eb9ad531fce9f95c19cb06b5",
+      "byte_size": 2597
+    },
+    "scope": "Use this combined three-file patch instead of the earlier two-file recovery patch. Inventory bytes are identical to that companion; only the owning test changes further and the separate correction contract is added."
+  },
+  "coordinated_loreto_dependency": {
+    "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/loreto-structural-correction-v7.json",
+    "sha256": "7c69a2ce1fbba78db143bcad3be86c7153b20248308a43ef10da1a384b549dc1",
+    "byte_size": 21216
+  },
+  "source_correction_history": "79d48aa624d48404c592e46a5584f7abe5f212bb",
+  "semantics": {
+    "contract": "Two exact historical Collect correction recipients, independently linked to 11 pinned canonical source metadata records. No prayer bodies or output flag values occur in the contract.",
+    "jerome": "Retain revised historical antecedent English with exact verification/publication identities; do not promote it to a modern translation.",
+    "george": "Retain historical English source evidence with no modern Collect binding and exact no-exemplar accounting.",
+    "calendar_boundaries": "Exact partial 2008 witness gap and unavailable Latin Collect required for both identities. Missing, duplicate, crossed or promoted evidence fails before deriving any rows.",
+    "legacy_cases": "Six existing exact-marker cases remain unchanged; no additional marker or paraphrase matching introduced.",
+    "output": "All 168 rows remain byte-for-byte identical to the frozen Loreto inventory, including eight wrong-edition flags. ICEL and Loreto paths remain separate and unresolved."
+  },
+  "validation": {
+    "owning_tests": 13,
+    "failures": 0,
+    "errors": 0,
+    "baseline_exclusions": 0,
+    "independent_additional_controls": 15,
+    "ownership": "Actual source-library candidate-tree inventory ownership accepted; same bytes at unowned JSON path refused. Inventory audit contract is not registered as a bibliographic source manifest.",
+    "independent_findings": []
+  },
+  "commands": {
+    "working_directory": "repository root",
+    "python": ".scratch/root/venv/bin/python",
+    "python_version": "3.14.10",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "owning": "PYTHONDONTWRITEBYTECODE=1 .scratch/root/venv/bin/python .scratch/modern-common-appointments/common-recovery-semantic-fix/prepare-and-test.py",
+    "independent": "PYTHONDONTWRITEBYTECODE=1 .scratch/root/venv/bin/python .scratch/modern-common-appointments/common-recovery-semantic-fix/independent-review/cold_review.py",
+    "ownership": "PYTHONDONTWRITEBYTECODE=1 .scratch/root/venv/bin/python .scratch/modern-common-appointments/common-recovery-semantic-fix/check-ownership.py"
+  },
+  "receipts": [
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/validation.json",
+      "sha256": "a96d2eb994b5b1a2e934d6340ddd59d5034264c7a4b2bd719206c59a067ab585",
+      "byte_size": 634
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/candidate-tests.txt",
+      "sha256": "2673900ef707b385d32f2efd172874104d5eba53fb91c0d95e007b2f5effbbc3",
+      "byte_size": 2756
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/prepare-and-test.py",
+      "sha256": "a2aaa3c8b2a16f40057a4633efea3a6032f0f8c15c5f27ba68bf072ae477a2b4",
+      "byte_size": 3924
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/ownership-validation.json",
+      "sha256": "a507d22d3b47f418eb56efd4202457a70da516a1e6b44413bb009d6be1f7add8",
+      "byte_size": 1388
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/check-ownership.py",
+      "sha256": "434b2b158722fe61e92c243a82e373459db23d47bcf8d5d2ffa9dcfb31bb4072",
+      "byte_size": 2550
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/independent-review/review.json",
+      "sha256": "fde02eae2e4bf3797554efc39a5b42b7e7394e8327f48c812073b8b25f466f90",
+      "byte_size": 4879
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/independent-review/cold_review.py",
+      "sha256": "a5e60cbfba46f6be86abbb1273b95c70d6bdcc519f6741b5fedefa938e160259",
+      "byte_size": 9287
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/independent-review/cold-owning-tests.log",
+      "sha256": "4dad24c3bc6c209b88683f0abf96d9a8466a9a0ed78f49217df436e53f76a6c0",
+      "byte_size": 2665
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/independent-review/baseline-owning.log",
+      "sha256": "1e9559a171d5004ed7ef6fde7940e7bd2a75ed838fa97dc0381a7a4d263febb2",
+      "byte_size": 3247
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/independent-review/design-review.json",
+      "sha256": "2466fdeab6c4e96fb98169f395ecda84f6b52c6b951badbeb50fb7a0aef88757",
+      "byte_size": 3633
+    }
+  ],
+  "maintenance": "Any pinned source metadata change intentionally requires review and re-pinning. This is a bounded recovery evidence contract, not a general source validator or permission checker. Existing owning test is extended; no new CLI or source-library class is introduced.",
+  "integration_limits": [
+    "The patch does not install the separately reviewed Loreto v7 calendar/English/source-record dependencies. Root owns coordinated installation.",
+    "Current installed-root source/calendar/overlay and producer closure remain root checks. This receipt proves the entire owning recovery suite and candidate tree ownership, not complete public-reader completion."
+  ],
+  "preservation": {
+    "root_head": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+    "tracked_diff_empty": true,
+    "canonical_writes": [],
+    "index_writes": [],
+    "source_body_publication": false
+  }
+}

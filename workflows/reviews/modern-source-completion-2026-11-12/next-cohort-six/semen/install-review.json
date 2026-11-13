@@ -1,0 +1,522 @@
+{
+  "schema": "independent-semen-installation-addendum/v1",
+  "reviewed_on": "2026-11-12",
+  "verdict": "accepted-exact-finite-three-recipient-installation",
+  "proposal": {
+    "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/proposal-v2.json",
+    "sha256": "5ddffab68daf6703cd0782145c7fc63f58e52b2da2728e2d9b6171e0d8ed2efc",
+    "bytes": 29589
+  },
+  "prior_source_review": {
+    "path": ".scratch/modern-new-acclamations-review/review.json",
+    "sha256": "c49c1aed1affe1a728c3be023f2dce339966e916fee2d2cbbecae702ffeacd0e",
+    "bytes": 26617
+  },
+  "file_manifest": {
+    "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/new-source-files-manifest.json",
+    "sha256": "aa7387785325df557f6499ea8b823f92c80177ef9229a2cf38c45728724a436c",
+    "bytes": 3261
+  },
+  "source_files": [
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/artifact.toml",
+      "sha256": "b83c5a04ffa2320772dbd26552373134c22975e57dfc7f414282777011da1b5e",
+      "bytes": 1925
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/semen.tsv",
+      "sha256": "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b",
+      "bytes": 469
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/artifact.toml",
+      "sha256": "7c6cecec036a3dd7af37e3a0f92fe1d022847b9133ff8a2a0c80572a205628e1",
+      "bytes": 1858
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/body.txt",
+      "sha256": "7d4de76a5d4ec72697821f5fad118df11e19aa42d14d15126087f4df74a73ec6",
+      "bytes": 88
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot11-b-20261112.toml",
+      "sha256": "5f01358e4c12e2505aac4d40461e263eb5d7ccadea522ea0e6d86d7c8da5d6b1",
+      "bytes": 904
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot11-b-20261112.toml",
+      "sha256": "38981da111716709dd450d034a9dd5b1cd1fb7660134a3380833e2b665a680ae",
+      "bytes": 1110
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot11-b-20261112.toml",
+      "sha256": "e3015e37594d0c2e9d6378f57ffef391e62964b8248e0c381c43e2e2ea0976cf",
+      "bytes": 1254
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot15-a-20261112.toml",
+      "sha256": "187a1ea5d5706f320229ca4e7c551fbfeb944a4ede4e8ad48ee1a5ce666ecefd",
+      "bytes": 905
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot15-a-20261112.toml",
+      "sha256": "08ebf25dc3533a6ac41de5cbc0c47cc25436c71864c5b0bd5f1bbe4f518f8d8f",
+      "bytes": 1112
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot15-a-20261112.toml",
+      "sha256": "f9edbdb16b3d0d38492ca187d8591592b2af44be5ce708e08ee47a25d57b50d1",
+      "bytes": 1254
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-lent5-tuesday-ferial-20261112.toml",
+      "sha256": "9c70510b58697fecbdb43dcba1014568df6a0457bb40f4d5f565885c4f2088eb",
+      "bytes": 936
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-lent5-tuesday-ferial-20261112.toml",
+      "sha256": "20fb2716c083bfde97b1f0851f619d29d9524eea145a97112563684763a4acac",
+      "bytes": 1157
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-lent5-tuesday-ferial-20261112.toml",
+      "sha256": "be2752d4baa0af63efdf5fc2044e47cf02bd85d6467faeed5d14f2f9b4fc22a5",
+      "bytes": 1298
+    }
+  ],
+  "source_fidelity": "Accepted full prior image review. Latin exactly applies the declared asterisk/accent/ligature/colon-to-semicolon normalization to the complete old1888 scalar. All three OLM1981 appointments were independently viewed. English is exactly the entire unchanged1908 human translation.",
+  "new_admissions": {
+    "Latin": 3,
+    "historical_English": 3,
+    "distinct_verse_units": 1
+  },
+  "rejected_predecessor": {
+    "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/proposal.json",
+    "sha256": "222cbd4d7aefc7d082a45c3aba23ff08747eb25761fc4ec0375d0ef2d1f90fdb",
+    "defect": "OT11B and OT15A Latin provenance course was empty; actual nested cycle keys require cycles. v2 corrects only those two fields; predecessor preserved."
+  },
+  "target_scope": "OLM1981 n92B, n103A and n252 ferial. No exact2008Missal or approved2011English claim.",
+  "finite_before_records": [
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "ot-11",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "B",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No authoritative Lectionary exemplar establishing the exact approved English for this cycle-specific source-owned slot is held. No English wording is retained."
+      },
+      "before_untranslated_sha256": "f862b9530bbf7ec136bc69f83778c88a849adc3977c1851608d0aa75fc86a645"
+    },
+    {
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "ot-15",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "A",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-23"
+        ],
+        "quarantined_text_sha256": [
+          "d240fe86bbe050283938f40d3a438f6172827fcb54ce882a7de32b77ca03ac6f"
+        ],
+        "note": "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. The liturgies.net row is a rejected source candidate. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable exemplar. No English wording is retained."
+      },
+      "before_untranslated_sha256": "565503858c65e39cffebffff1546d115424f506c5c93089630046903b672df94"
+    },
+    {
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "lent-5-tuesday",
+        "form_id": "main",
+        "proper": "Verse Before the Gospel",
+        "cycle": "all",
+        "occurrence": 1,
+        "extent": "body",
+        "lang": "en",
+        "availability": "unavailable",
+        "note": "OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth role is part of the native ferial course, not silently replaced by the optional course. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made.",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "before_untranslated_sha256": "8b1dbf6d53189b7dde5ea5b6cf755b572767336badd181b07cd4cb5d42f713be"
+    }
+  ],
+  "latin_consumer_decisions": [
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "key": {
+        "mass": "ot-11",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "B",
+        "occurrence": 1
+      },
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "projection": {
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance": {
+          "status": "collated",
+          "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot11-b-20261112",
+          "source_date": "1888",
+          "locator": "Pustet1888 p339/AP393 complete antiphon; normalized body.txt line1",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112",
+          "verification_locator": "Governing OLM1981 n92, AP110/printed56",
+          "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet1888 and this OLM1981 recipient. Source-specific target is the Lectionary1981 acclamation, not a2008 altar-book oration.",
+          "provenance_authority": "Source-local OLM1981 word-exact collation, independently reviewed2026-11-12",
+          "provenance_confidence": "high",
+          "transformations": [
+            "Remove historical chant asterisk",
+            "Remove stress accents; expand ae ligature",
+            "Normalize colon after Christus to semicolon; join line wraps",
+            "No lexical addition, omission or substitution"
+          ]
+        },
+        "publication": {
+          "status": "permitted",
+          "basis": "public-domain",
+          "surfaces": [
+            "cli",
+            "corpus-data",
+            "download",
+            "print",
+            "public-git",
+            "web"
+          ],
+          "source_ids": [
+            "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+            "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+          ],
+          "locator": "Whole underlying1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+          "evidence": "Entire underlying Latin expression appears in1888 printing; its maximum95-year US term ended before2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis."
+        },
+        "withheld": false,
+        "reason": null,
+        "note": "Exact governing OLM1981 body on all recorded output surfaces; historical human English separate, no approved2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      },
+      "coverage": {
+        "relationship": "exact-target",
+        "collation": "collated",
+        "publication_basis": "public-domain"
+      },
+      "target_scope": "Exact governing OLM1981 recipient, not authenticated2008 altar-book correspondence."
+    },
+    {
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "key": {
+        "mass": "ot-15",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "A",
+        "occurrence": 1
+      },
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "projection": {
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance": {
+          "status": "collated",
+          "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot15-a-20261112",
+          "source_date": "1888",
+          "locator": "Pustet1888 p339/AP393 complete antiphon; normalized body.txt line1",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112",
+          "verification_locator": "Governing OLM1981 n103, AP115/printed61",
+          "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet1888 and this OLM1981 recipient. Source-specific target is the Lectionary1981 acclamation, not a2008 altar-book oration.",
+          "provenance_authority": "Source-local OLM1981 word-exact collation, independently reviewed2026-11-12",
+          "provenance_confidence": "high",
+          "transformations": [
+            "Remove historical chant asterisk",
+            "Remove stress accents; expand ae ligature",
+            "Normalize colon after Christus to semicolon; join line wraps",
+            "No lexical addition, omission or substitution"
+          ]
+        },
+        "publication": {
+          "status": "permitted",
+          "basis": "public-domain",
+          "surfaces": [
+            "cli",
+            "corpus-data",
+            "download",
+            "print",
+            "public-git",
+            "web"
+          ],
+          "source_ids": [
+            "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+            "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+          ],
+          "locator": "Whole underlying1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+          "evidence": "Entire underlying Latin expression appears in1888 printing; its maximum95-year US term ended before2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis."
+        },
+        "withheld": false,
+        "reason": null,
+        "note": "Exact governing OLM1981 body on all recorded output surfaces; historical human English separate, no approved2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      },
+      "coverage": {
+        "relationship": "exact-target",
+        "collation": "collated",
+        "publication_basis": "public-domain"
+      },
+      "target_scope": "Exact governing OLM1981 recipient, not authenticated2008 altar-book correspondence."
+    },
+    {
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "key": {
+        "mass": "lent-5-tuesday",
+        "form": "",
+        "proper": "Verse Before the Gospel",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1
+      },
+      "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "projection": {
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance": {
+          "status": "collated",
+          "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-lent5-tuesday-ferial-20261112",
+          "source_date": "1888",
+          "locator": "Pustet1888 p339/AP393 complete antiphon; normalized body.txt line1",
+          "relationship": "editorial-projection-exact-to-target",
+          "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112",
+          "verification_locator": "Governing OLM1981 n252, AP192/printed138",
+          "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet1888 and this OLM1981 recipient. Source-specific target is the Lectionary1981 acclamation, not a2008 altar-book oration.",
+          "provenance_authority": "Source-local OLM1981 word-exact collation, independently reviewed2026-11-12",
+          "provenance_confidence": "high",
+          "transformations": [
+            "Remove historical chant asterisk",
+            "Remove stress accents; expand ae ligature",
+            "Normalize colon after Christus to semicolon; join line wraps",
+            "No lexical addition, omission or substitution"
+          ]
+        },
+        "publication": {
+          "status": "permitted",
+          "basis": "public-domain",
+          "surfaces": [
+            "cli",
+            "corpus-data",
+            "download",
+            "print",
+            "public-git",
+            "web"
+          ],
+          "source_ids": [
+            "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+            "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+          ],
+          "locator": "Whole underlying1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+          "evidence": "Entire underlying Latin expression appears in1888 printing; its maximum95-year US term ended before2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis."
+        },
+        "withheld": false,
+        "reason": null,
+        "note": "Exact governing OLM1981 body on all recorded output surfaces; historical human English separate, no approved2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      },
+      "coverage": {
+        "relationship": "exact-target",
+        "collation": "collated",
+        "publication_basis": "public-domain"
+      },
+      "target_scope": "Exact governing OLM1981 recipient, not authenticated2008 altar-book correspondence."
+    }
+  ],
+  "whole_file_pin_status": [
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "proposal_sha256": "88e54e407656a75ee00dab1ac029cf960612c65aabbcde78d4e82236486b3d27",
+      "current": {
+        "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+        "sha256": "5f95e2f45e478da0efdd250a63ade50716db10f0bd785c6053a22c977e5fba7d",
+        "bytes": 995971
+      },
+      "matches": false
+    },
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "proposal_sha256": "6184b6912644a80cc6c117a5ca9ff46e8994db4ef4f7a15b87f5339922e7885e",
+      "current": {
+        "path": "src/sources/calendars/postconciliar/propers.yaml",
+        "sha256": "f11d2bcbae85693d80f577fad4fa6e2e85c055d173170f86284ac5cd88438358",
+        "bytes": 3161463
+      },
+      "matches": false
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "proposal_sha256": "1e34ae24eca4f20f570b78030bcb64238b79d56439c94126b456e81cf4a9f428",
+      "current": {
+        "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+        "sha256": "469c5a92a928f6b2883b41e5077b654c83e33a2adce7e6703e2d1d19749b1c2f",
+        "bytes": 81290
+      },
+      "matches": false
+    }
+  ],
+  "validation_scope": "Independent actual source graph loader validates full snapshot graph and tracked text. Registered external witness metadata remains metadata-only; relevant exact images and PDFs were separately checked in prior review. Actual English publication binding and Latin projected-document keys/decisions were independently exercised. No production generation or browser acceptance claim.",
+  "checks": {
+    "status": "PASS",
+    "count": 97,
+    "items": [
+      "frozen-corrected-proposal",
+      "prior-review-hash",
+      "exact-three-English-and-Latin-updates",
+      "exact-thirteen-source-files",
+      "manifest-complete-and-distinct",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/artifact.toml",
+      "unique-new-source-id:artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/semen.tsv",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/artifact.toml",
+      "unique-new-source-id:artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/body.txt",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot11-b-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot11-b-20261112",
+      "new-file-hash:src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot11-b-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot11-b-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot11-b-20261112",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot15-a-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot15-a-20261112",
+      "new-file-hash:src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot15-a-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot15-a-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot15-a-20261112",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-lent5-tuesday-ferial-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-lent5-tuesday-ferial-20261112",
+      "new-file-hash:src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-lent5-tuesday-ferial-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112",
+      "new-file-hash:src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-lent5-tuesday-ferial-20261112.toml",
+      "unique-new-source-id:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-lent5-tuesday-ferial-20261112",
+      "artifact-payload-hash:artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+      "artifact-payload-size:artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+      "artifact-payload-hash:artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+      "artifact-payload-size:artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+      "passage-parent-hash:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot11-b-20261112",
+      "passage-lines-exist:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot11-b-20261112",
+      "passage-parent-hash:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot11-b-20261112",
+      "passage-lines-exist:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot11-b-20261112",
+      "passage-parent-hash:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot15-a-20261112",
+      "passage-lines-exist:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot15-a-20261112",
+      "passage-parent-hash:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot15-a-20261112",
+      "passage-lines-exist:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot15-a-20261112",
+      "passage-parent-hash:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-lent5-tuesday-ferial-20261112",
+      "passage-lines-exist:passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-lent5-tuesday-ferial-20261112",
+      "passage-parent-hash:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-lent5-tuesday-ferial-20261112",
+      "passage-lines-exist:passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-lent5-tuesday-ferial-20261112",
+      "Latin-exact-declared-normalization",
+      "Latin-exact-previously-viewed-OLM-body",
+      "Latin-no-chant-frame-or-asterisk",
+      "English-three-exact-old-body-copies",
+      "English-live-finite-preimage:ot-11",
+      "English-before-hash:ot-11",
+      "English-no-existing-active-entry:ot-11",
+      "English-entry-exact-source-body:ot-11",
+      "English-entry-historical-grade:ot-11",
+      "English-live-finite-preimage:ot-15",
+      "English-before-hash:ot-15",
+      "English-no-existing-active-entry:ot-15",
+      "English-entry-exact-source-body:ot-15",
+      "English-entry-historical-grade:ot-15",
+      "English-live-finite-preimage:lent-5-tuesday",
+      "English-before-hash:lent-5-tuesday",
+      "English-no-existing-active-entry:lent-5-tuesday",
+      "English-entry-exact-source-body:lent-5-tuesday",
+      "English-entry-historical-grade:lent-5-tuesday",
+      "Latin-live-finite-node-preimage:ot-11",
+      "Latin-correct-cycle-course:ot-11",
+      "Latin-live-finite-sidecar-preimage:ot-11",
+      "Latin-live-finite-node-preimage:ot-15",
+      "Latin-correct-cycle-course:ot-15",
+      "Latin-live-finite-sidecar-preimage:ot-15",
+      "Latin-live-finite-node-preimage:lent-5-tuesday",
+      "Latin-correct-cycle-course:lent-5-tuesday",
+      "Latin-live-finite-sidecar-preimage:lent-5-tuesday",
+      "Lent-coupled-ferial-disposition-preserved",
+      "Lent-optional-second-role-stays-held",
+      "independent-full-source-graph-structural-validation",
+      "actual-English-publication-consumer:ot-11",
+      "actual-English-publication-consumer:ot-15",
+      "actual-English-publication-consumer:lent-5-tuesday",
+      "actual-Latin-key-has-one-text-owner:ot-11",
+      "actual-Latin-body-exact-source-normalization:ot-11",
+      "actual-Latin-row-schema:ot-11",
+      "actual-Latin-source-binding:ot-11",
+      "actual-Latin-all-surfaces-permitted:ot-11",
+      "actual-Latin-exact-target-grade:ot-11",
+      "actual-Latin-key-has-one-text-owner:ot-15",
+      "actual-Latin-body-exact-source-normalization:ot-15",
+      "actual-Latin-row-schema:ot-15",
+      "actual-Latin-source-binding:ot-15",
+      "actual-Latin-all-surfaces-permitted:ot-15",
+      "actual-Latin-exact-target-grade:ot-15",
+      "actual-Latin-key-has-one-text-owner:lent-5-tuesday",
+      "actual-Latin-body-exact-source-normalization:lent-5-tuesday",
+      "actual-Latin-row-schema:lent-5-tuesday",
+      "actual-Latin-source-binding:lent-5-tuesday",
+      "actual-Latin-all-surfaces-permitted:lent-5-tuesday",
+      "actual-Latin-exact-target-grade:lent-5-tuesday"
+    ]
+  },
+  "installation_conditions": [
+    "Merge only exact finite dictionaries; recheck live before states. Whole-file pins drifted during concurrent work.",
+    "Retain prior refusal/removal records and this accepted review durably in workflows; do not rely on disposable scratch.",
+    "Keep OT cycle boundaries and Lent occurrence1 ferial choice; preserve optional n250.",
+    "Run final integrated source/epoch and projection/browser checks at Root."
+  ],
+  "canonical_writes": false
+}

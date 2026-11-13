@@ -1,0 +1,1628 @@
+{
+  "schema": "triptych-six-nonseasonal-guarded-staging-declaration/v1",
+  "scope": "Six exact English replacements and three source-qualified incipit metadata corrections only; no Latin body/rights/2008/Common/appointment changes. Raymond held.",
+  "canonical_inventory": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+  "canonical_calendar": "src/sources/calendars/postconciliar/propers.yaml",
+  "root_merits": {
+    "path": ".scratch/root/next-eleven-english-merits-admission.json",
+    "sha256": "fa61352e6b766cf6c3087e2a91eed30573b0dd1741029a716abfe648505ffc90"
+  },
+  "independent_registration_review": {
+    "path": ".scratch/modern-nonseasonal-six-install-review/receipt-v2.json",
+    "sha256": "60cefdbe2a2df1ec59678b6ede1d76eadd282eae8788276ef7e2015b74c330fe"
+  },
+  "accepted_package": {
+    "path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/proposal.json",
+    "sha256": "5f495b1356a0751550d7d87ecfa0dc0a20df68ffbc46c08dc59c23b575b4a02f"
+  },
+  "accepted_scope_addendum": {
+    "path": ".scratch/modern-nonseasonal-orations/resume-20261113/ending-scope-addendum-v1/proposal.json",
+    "sha256": "7aa9a6b203ad8732790b82598e04451d70bfbc46f0c5fb61aa32c2bb1e78c21b"
+  },
+  "source_manifest": {
+    "path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/source-manifest.json",
+    "sha256": "10662d152665047ec99c0b586c208fb7a5a7c66a684f7ab0d09be640b3e02901"
+  },
+  "updates": [
+    {
+      "identity": [
+        "most-holy-name-mary",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "old_gap": {
+        "mass": "most-holy-name-mary",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The historical Marian Common Secret is a light variant rather than the exact target body. No English wording is retained."
+      },
+      "new_entry": {
+        "mass": "most-holy-name-mary",
+        "form": "",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Intercessio, quaesumus, Domine",
+        "relation": "adapted",
+        "ancient_witness": "Missale Ambrosianum, Milan,1712, Assumption offering, AP414/printed376",
+        "witness_edition_id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+        "witness_artifact_id": "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3",
+        "ancient_reading": "Intercessio, quaesumus, Domine, Beatae Mariae semper Virginis munera nostra commendet: nosque in eius veneratione Maiestati tuae reddat acceptos. Per Dominum.",
+        "ancient_passage_id": "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.assumption-offering-20261112",
+        "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "witness_note": "Project study English from a qualified adaptation of the complete 1712 Ambrosian Assumption offering: the reference to Mary’s name is specified, possessive word order changes, and the short conclusion is separately attested in historical Latin and English and selected by the recipient’s printed cue and rule. Comparison is limited to a secondary reproduction labelled 2002; authenticated 2008 wording remains unestablished. This is not approved liturgical English and is not for recitation.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "We pray, Lord, that the intercession of blessed Mary, ever Virgin, may commend our gifts and, as we honor her name, make us pleasing to your majesty. Through Christ our Lord."
+          }
+        ],
+        "extent": "body",
+        "study_english_passage_id": "passage.triptych.holy-name-mary-offering-study-english-20261112.2026-11-12-holy-name-mary-offering.recipient-english-publication",
+        "english_merits_review_sha256": "328c68d0f0f3242551c22201df226daaf6106a7dc7da1ced373ffff7d87e6506"
+      },
+      "proper_before": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Tua, Domine, propitiatione",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_after": {
+        "name": "Prayer over the Offerings",
+        "incipit": "Intercessio, quaesumus, Domine",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        },
+        "notes": "The former Tua, Domine, propitiatione incipit belonged to the historical1862HolyName formulary and is preserved in the prior evidence receipt. Source-local secondary2002 AP491 has the Intercessio incipit and a materially different offering. This metadata correction carries no full Latin body and no authenticated2008 identity. The separately proposed English is qualified study text, not approved liturgical English."
+      },
+      "proper_before_logical_sha256": "a51c588be806d86d577a72d31bc52c8c6db8bac9774e848a1bfff9ef2b0877c0",
+      "proper_after_logical_sha256": "b00c9b23cb4343d961e609cce9609122f2eadefb8b095b3250c66952ce325be0",
+      "incipit_metadata_correction": true,
+      "latin_body_and_status_unchanged": true,
+      "merits_review": {
+        "path": ".scratch/modern-nonseasonal-prayer-review/mary-review.json",
+        "sha256": "328c68d0f0f3242551c22201df226daaf6106a7dc7da1ced373ffff7d87e6506"
+      },
+      "root_english_scalar_sha256": "b7292a42b88adfa1e7daad70bbb43ed1c45bda9648342ae8a76f6ab19fe26751",
+      "root_english_body_no_terminal_lf_sha256": "b7292a42b88adfa1e7daad70bbb43ed1c45bda9648342ae8a76f6ab19fe26751"
+    },
+    {
+      "identity": [
+        "saints-sixtus-ii-pope-companions-martyrs",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_gap": {
+        "mass": "saints-sixtus-ii-pope-companions-martyrs",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The day's printing points to a generic plural-martyrs Common with placeholders, and the relation is light rather than exact. No English wording is retained."
+      },
+      "new_entry": {
+        "mass": "saints-sixtus-ii-pope-companions-martyrs",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Quaesumus, omnipotens Deus",
+        "relation": "variant",
+        "ancient_witness": "Paris1738 prayer no3135, as transcribed by Gerard O’Connor2004",
+        "divergence": "The complete Paris1738 prayer as transcribed by O’Connor2004 is retained as the base, with conventional word order and explicit extension from Sixtus to his companions, requiring plural agreement. Source-qualified study English independently accepted; no original1738page/cue or complete2008identity. Dumas’s1736 date remains distinct from O’Connor’s1738 attribution.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "We ask, almighty God, that through the power of the Holy Spirit you make us teachable in faith and steadfast in professing it, for you granted blessed Sixtus and his companions to lay down their lives for your word and the testimony of Jesus. Through our Lord Jesus Christ your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever."
+          }
+        ],
+        "witness_note": "Study English based on a complete Paris prayer attributed to 1738 in Gerard O’Connor’s 2004 scholarly transcription, adapted to include Sixtus’s companions. The original 1738 page and ending cue have not been checked. Dumas’s source list dates the Paris missal to 1736, while O’Connor identifies 1738; this discrepancy remains unresolved, so Dumas supplies only a Paris-source reference. The full conclusion is independently attested in an 1862 missal and selected by the cue and rule in a secondary witness of the 2002 Roman Missal. Correspondence with the complete controlling 2008 edition has not been established. Not an approved liturgical translation.",
+        "study_english_passage_id": "passage.triptych.sixtus-ii-companions-collect-study-english-20261112.study-english-20261112.complete-prayer"
+      },
+      "proper_before": {
+        "name": "Collect",
+        "incipit": "Deus, qui nos concedis",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_after": {
+        "name": "Collect",
+        "incipit": "Quaesumus, omnipotens Deus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        },
+        "notes": "The incipit identifies the Collect printed for Sixtus and his companions in a secondary witness of the 2002 Roman Missal, digital artifact pages 475–476. The complete Latin body remains unavailable, and correspondence with the complete controlling 2008 edition has not been established."
+      },
+      "proper_before_logical_sha256": "2d198ab5692929d1856a38b2a3ecbfeab8f1f8c3eba55679a768a5216387c12c",
+      "proper_after_logical_sha256": "a4de44c283c8c1e2e33ea4c8c69ffc725c02da15f5be804184d5ff64d83758cc",
+      "incipit_metadata_correction": true,
+      "latin_body_and_status_unchanged": true,
+      "merits_review": {
+        "path": ".scratch/modern-nonseasonal-prayer-review/sixtus-review.json",
+        "sha256": "d30ef36263b1b32e5437d68f989a7da1c780c7ed3f91a3637898fd432fa6a81d"
+      },
+      "root_english_scalar_sha256": "afd2b3efdaab42743f844cfae6beee8aeea8d83cb339037d8916344f85fe7df3",
+      "root_english_body_no_terminal_lf_sha256": "afd2b3efdaab42743f844cfae6beee8aeea8d83cb339037d8916344f85fe7df3"
+    },
+    {
+      "identity": [
+        "saint-hilary-bishop-doctor-church",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_gap": {
+        "mass": "saint-hilary-bishop-doctor-church",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "6e3153a2724070a95bd0a92f0866ef4d6148976473e67286835c1258fd7d1940"
+        ],
+        "note": "The witness reaches this day and reaches it by reference. Read on the 1861 page image on 2026-08-20: leaf n543, printed p. 535, running head `13th AND 14th JANUARY.`, prints `XIV. St. HILARY, bp. c... All as in Mass XII. p. 485, with a Commem. of St. Felix, by the following Collect, &c.` The only oration printed under that heading is FELIX's commemoration (`COLLECT. Concede.--Grant, we beseech thee, O Almighty God, that the examples of thy saints may excite us to the amendment of our lives`), which is not this prayer. Mass XII is the witness's Mass of Doctors, whose orations print `N.` and, in the Secret and Postcommunion, name a Confessor where this calendar's Latin names a Bishop and Doctor. The roman-1962 overlay refused the same three slots on the same evidence on 2026-08-02 and this lane confirms it rather than reversing it. Nothing is carried. Incipit of the Latin refused here: `Deus, qui populo tuo`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n543_w1400.jpg (leaf n543, printed p. 535, heading `13th AND 14th JANUARY. / XIV. St. HILARY, bp. c.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "new_entry": {
+        "mass": "saint-hilary-bishop-doctor-church",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "finite-historical-adaptation-study",
+        "ancient_reading": "Præsta, quæsumus, omnipotens Deus, ut excellentiam verbi tui, quam B. Hilarius confessor gloriosus asseruit, et convenienter intelligere valeamus, et veraciter confiteri.",
+        "ancient_passage_id": "passage.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.nonseasonal-hilary-collect-source-20261112",
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.nonseasonal-hilary-collect-comparison-20261112",
+        "conclusion_witness_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026",
+        "conclusion_rule_passage_id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.legacy-study-review-20261112-54",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Grant, we beseech you, almighty God, that we may both fittingly understand and truly profess the divinity of your Son, which blessed Hilary the bishop steadfastly affirmed. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for all ages of ages.\n"
+          }
+        ],
+        "witness_note": "Study English from a finite adaptation of the complete Hilary prayer printed in PL9 (1844), column 208. The earlier St Gatian Tours manuscript was not inspected, and the printed extract has no conclusion cue. The adaptation changes the divine title, the bishop’s steadfastness description and the profession verb. The complete prayer and cue were compared with a secondary reproduction labelled 2002; the full conclusion is independently attested in an 1862 missal. Correspondence with the complete authenticated 2008 Missal remains unestablished. This is not approved liturgical English.",
+        "form": "",
+        "incipit": "Praesta, quaesumus, omnipotens Deus, ut divinitatem Filii tui, quam beatus Hilar",
+        "study_english_passage_id": "passage.triptych.nonseasonal-hilary-apollinaris-study-english-20261112.study-english-20261112.hilary-collect-publication",
+        "target_witness_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.nonseasonal-hilary-collect-comparison-20261112",
+        "ancient_witness": "PL9, Paris1844, col208, wholeHilaryCollect",
+        "witness_edition_id": "edition.jacques-paul-migne.patrologia-latina-volume-9.1844-paris",
+        "witness_artifact_id": "artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.internet-archive-pdf-eab6d2f4"
+      },
+      "proper_before": {
+        "name": "Collect",
+        "incipit": "Praesta, quaesumus, omnipotens Deus, ut divinitatem Filii tui, quam beatus Hilar",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_after": {
+        "name": "Collect",
+        "incipit": "Praesta, quaesumus, omnipotens Deus, ut divinitatem Filii tui, quam beatus Hilar",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_before_logical_sha256": "98b3b40873d46c99a4e12148fa0cdb01df4e48bf741c8db4a4c72d4068e48bb8",
+      "proper_after_logical_sha256": "98b3b40873d46c99a4e12148fa0cdb01df4e48bf741c8db4a4c72d4068e48bb8",
+      "incipit_metadata_correction": false,
+      "latin_body_and_status_unchanged": true,
+      "merits_review": {
+        "path": ".scratch/modern-nonseasonal-three-prayer-review/doctors-martyrs-independent-review-v1.json",
+        "sha256": "9eff4479c35a6bf5c9943ac945440d79cfeb37fc21b3c385849cd59410af3aca"
+      },
+      "root_english_scalar_sha256": "60e91ab3a0a3418166cb31dce43ed96333dd71bb3ac8d5d0edaf85885b1c02a4",
+      "root_english_body_no_terminal_lf_sha256": "a0171779e1a634bfb19c21d7f6dd5dac9d560a25d32b1b8476c4846bf10c9c33"
+    },
+    {
+      "identity": [
+        "saint-apollinaris-bishop-martyr",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_gap": {
+        "mass": "saint-apollinaris-bishop-martyr",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "extent": "body",
+        "lang": "en",
+        "availability": "unavailable",
+        "note": "The photographed official decree of 18 December 2001, published in Notitiae (2002), nos. 432-433, pp. 313-314 and 318 (PDF19-20 and24), affirmatively appoints a materially different Apollinaris Collect, beginning Dirige fideles tuos, with Per Dominum cue. Evidence: passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.apollinaris-collect. The former positive English came from the unrelated preconciliar Deus fidelium remunerator animarum prayer; its complete source text remains available in the Cummiskey 1861 source artifact and publish-postconciliar-antecedent-pc-119 passage, but is no longer seated as this modern Collect. The separate secondary2002 comparison agrees with the promulgated Collect; no authenticated2008 collation is claimed. No lawful English exemplar for the appointed prayer is established, and no new prayer translation is supplied.",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "new_entry": {
+        "mass": "saint-apollinaris-bishop-martyr",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "finite-historical-adaptation-study",
+        "ancient_reading": "Dirige oves tuas, Domine, in viam salutis aeternae, quam beati Pontificis Damasi vita cum doctrina monstravit: et fac nos eodem intercedente, sic eius subsequi vestigia, ut cum ipso coronari mereamur.",
+        "ancient_passage_id": "passage.gerard-oconnor.sources-orations-missale-parisiense-1738.rome-2004-volume-2.paris1738-damasus-2130-carrier-20261112",
+        "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.nonseasonal-apollinaris-collect-comparison-20261112",
+        "conclusion_witness_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026",
+        "conclusion_rule_passage_id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.legacy-study-review-20261112-54",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Guide your faithful, Lord, along the way of eternal salvation, which blessed Apollinaris the bishop showed by his teaching and martyrdom; and, through his intercession, make us so persevere in your commandments that we may be worthy to be crowned with him. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for all ages of ages.\n"
+          }
+        ],
+        "witness_note": "Study English from a finite adaptation of the complete Damasus prayer attributed to the Paris Missal of 1738 in Gerard O’Connor’s 2004 scholarly transcription. No original 1738 page or ending cue was checked. The adaptation changes sheep to the faithful, life and teaching to teaching and martyrdom, and following the saint’s footsteps to perseverance in God’s commandments. The complete prayer and cue were compared with a secondary reproduction labelled 2002; the full conclusion is independently attested in an 1862 missal. Correspondence with the complete authenticated 2008 Missal remains unestablished. This is not approved liturgical English.",
+        "form": "",
+        "incipit": "Dirige fideles tuos",
+        "study_english_passage_id": "passage.triptych.nonseasonal-hilary-apollinaris-study-english-20261112.study-english-20261112.apollinaris-collect-publication",
+        "target_witness_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.nonseasonal-apollinaris-collect-comparison-20261112",
+        "ancient_witness": "Gerard O’Connor2004Clerus humanconcordance, no2130, reporting complete1738DamasusCollect; no1738pageimage",
+        "witness_edition_id": "edition.gerard-oconnor.sources-orations-missale-parisiense-1738.rome-2004-volume-2",
+        "witness_artifact_id": "artifact.gerard-oconnor.sources-orations-missale-parisiense-1738.rome-2004-volume-2.damasus-2130-historical-paragraph-20261112"
+      },
+      "proper_before": {
+        "name": "Collect",
+        "incipit": "Dirige fideles tuos",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_after": {
+        "name": "Collect",
+        "incipit": "Dirige fideles tuos",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_before_logical_sha256": "3d5527d775fa6dbde781ebbfcd306a29fcbd59b34f665a61e428c85efde4ac96",
+      "proper_after_logical_sha256": "3d5527d775fa6dbde781ebbfcd306a29fcbd59b34f665a61e428c85efde4ac96",
+      "incipit_metadata_correction": false,
+      "latin_body_and_status_unchanged": true,
+      "merits_review": {
+        "path": ".scratch/modern-nonseasonal-three-prayer-review/doctors-martyrs-independent-review-v1.json",
+        "sha256": "9eff4479c35a6bf5c9943ac945440d79cfeb37fc21b3c385849cd59410af3aca"
+      },
+      "root_english_scalar_sha256": "58670ddd435a4c52c9a1603b6698ce1a7754b55e823af7d32f60a161d88fee76",
+      "root_english_body_no_terminal_lf_sha256": "340d23853f46eebdda234d018338058cdb9431f09c4573184850dee70e1d0a62"
+    },
+    {
+      "identity": [
+        "saint-turibius-mogrovejo-bishop",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_gap": {
+        "mass": "saint-turibius-mogrovejo-bishop",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "extent": "body",
+        "lang": "en",
+        "availability": "unavailable",
+        "note": "Own Collect appointment established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 737, and its 03-23 heading context in registered secondary 2002 artifact p. 434; expected target postconciliar.2002.sanctoral.03-23.1:collect:1. The source establishes the role, not a complete authenticated 2008 body or a publishable English whole-prayer exemplar. No English source, witness, permission, text or hash is invented.",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "new_entry": {
+        "mass": "saint-turibius-mogrovejo-bishop",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "O God, who increased your Church through the apostolic cares and zeal for truth of blessed Turibius, bishop, grant that the people consecrated to you may ever receive fresh growth in faith and holiness. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for all ages of ages."
+          }
+        ],
+        "witness_note": "Study English from a qualified adaptation of the complete Gregory X Office prayer printed in Sydney in 1868. The complete prayer was compared with a secondary reproduction labelled 2002; official 2008 evidence supplies only the correction apostolico to apostolicis. The Office witness is not the modern Mass source, and correspondence with the complete authenticated 2008 Missal remains unestablished. This is not approved liturgical English.",
+        "divergence": "Study English from a qualified adaptation of the complete Gregory X Office prayer printed in Sydney in 1868. The complete prayer was compared with a secondary reproduction labelled 2002; official 2008 evidence supplies only the correction apostolico to apostolicis. The Office witness is not the modern Mass source, and correspondence with the complete authenticated 2008 Missal remains unestablished. This is not approved liturgical English.",
+        "form": "",
+        "study_english_passage_id": "passage.triptych.turibius-collect-study-english-20261112.2026-11-12.turibius-collect",
+        "target_qualification": "secondary2002 with finiteofficial2008correction; fullauthenticated2008identityunestablished",
+        "target_witness_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.turibius-whole-source-local-comparison-20261112",
+        "official_correction_passage_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.turibius-finite-correction-20261112",
+        "ancient_witness": "Complete1868GregoryXOfficeprayer, not modernMasswitness",
+        "witness_edition_id": "edition.catholic-church.officia-propria-sanctorum-romano-clero.sydney-cunninghame-1868",
+        "ancient_passage_id": "passage.catholic-church.officia-propria-sanctorum-romano-clero.sydney-cunninghame-1868.gregory-x-whole-prayer-20261112",
+        "conclusion_witness_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026",
+        "conclusion_rule_passage_id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.legacy-study-review-20261112-54"
+      },
+      "proper_before": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387"
+            }
+          ]
+        },
+        "notes": "Own Collect appointment positively established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 737, and its 03-23 heading context checked in the registered secondary 2002 reproduction, artifact p. 434. Existing expected target postconciliar.2002.sanctoral.03-23.1:collect:1. This records the role only; no complete authenticated 2008 body, Latin publication basis or English whole-prayer exemplar is established. No wording or Common oration is inferred."
+      },
+      "proper_after": {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "segment.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.notitiae-pages-368-387"
+            }
+          ]
+        },
+        "notes": "Own Collect appointment positively established by the official 2008 Variationes, Notitiae 44, printed p. 373 / artifact p. 55, entry p. 737, and its 03-23 heading context checked in the registered secondary 2002 reproduction, artifact p. 434. Existing expected target postconciliar.2002.sanctoral.03-23.1:collect:1. This records the role only; no complete authenticated 2008 body, Latin publication basis or English whole-prayer exemplar is established. No wording or Common oration is inferred."
+      },
+      "proper_before_logical_sha256": "9cf923057f028e3f58c36dacb4855957733e100f319f3cb00397eda3658d98df",
+      "proper_after_logical_sha256": "9cf923057f028e3f58c36dacb4855957733e100f319f3cb00397eda3658d98df",
+      "incipit_metadata_correction": false,
+      "latin_body_and_status_unchanged": true,
+      "merits_review": {
+        "path": ".scratch/modern-nonseasonal-three-prayer-review/turibius-independent-review-v1.json",
+        "sha256": "902be265bd8b516f0a046f530dd5d8c1dea92a8c28803b12322b28039139f225"
+      },
+      "root_english_scalar_sha256": "7740ce2fcedb681b415d417ab0c8284f60f160014c7025cc44a7725c70facc4e",
+      "root_english_body_no_terminal_lf_sha256": "7740ce2fcedb681b415d417ab0c8284f60f160014c7025cc44a7725c70facc4e"
+    },
+    {
+      "identity": [
+        "saint-paulinus-nola-bishop",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "old_gap": {
+        "mass": "saint-paulinus-nola-bishop",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The witness supplies a generic confessor-bishop Common with a placeholder and a light textual relation, not this exact target body. No English wording is retained."
+      },
+      "new_entry": {
+        "mass": "saint-paulinus-nola-bishop",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Deus, qui beatum Paulinum",
+        "relation": "variant",
+        "ancient_witness": "Manualechorale1765 Gregoryprayer as transcribed byGiacomoBaroffio2022,AP46",
+        "divergence": "One old complete GregoryBarbarigo prayer forms the base. The Paulinus-specific change characterizes love of poverty rather than compassion toward poor persons, and changes name/title. It is not the same-feast oldPaulinus prayer. The proper metadata incipit is corrected from its obsolete antecedent to the independently read secondary2002 incipit; this is explicitly source-qualified, not an authenticated2008correction. The actual catalogue exemplis and explicit exempla emendation remain distinguished. Independently reviewed studyEnglish only.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "O God, who willed that blessed Paulinus the bishop should be renowned for his love of poverty and pastoral care, graciously grant that we may imitate the examples of charity of him whose merits we celebrate. Through our Lord Jesus Christ your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever."
+          }
+        ],
+        "witness_note": "Study English based on the complete prayer attributed to a 1765 book in Giacomo Baroffio’s 2022 scholarly catalogue. The original 1765 page and its ending cue have not been checked. The catalogue reads exemplis; the explicit correction to exempla is supported by grammar and the complete prayer printed in the official 1960 record. The adaptation changes the named bishop to Paulinus and compassion for poor people to love of poverty. The full conclusion is independently attested in an 1862 missal. Compared with a secondary witness of the 2002 Roman Missal; correspondence with the complete controlling 2008 edition has not been established. Not an approved liturgical translation.",
+        "study_english_passage_id": "passage.triptych.paulinus-nola-collect-study-english-20261112.study-english-20261112.complete-prayer"
+      },
+      "proper_before": {
+        "name": "Collect",
+        "incipit": "Da quaesumus omnipotens Deus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "proper_after": {
+        "name": "Collect",
+        "incipit": "Deus, qui beatum Paulinum",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        },
+        "notes": "The incipit identifies the Collect printed for Paulinus in a secondary witness of the 2002 Roman Missal, page 456 of that digital artifact. The complete Latin body remains unavailable, and correspondence with the complete controlling 2008 edition has not been established."
+      },
+      "proper_before_logical_sha256": "b98185059df9c22be8034bfb3c4642d7bd11761f8af778de48564adb98f72cc6",
+      "proper_after_logical_sha256": "a3bb96460ed262c00d8cb3dacfb352f4e7bb9867a321d0ce58385677f69e34ec",
+      "incipit_metadata_correction": true,
+      "latin_body_and_status_unchanged": true,
+      "merits_review": {
+        "path": ".scratch/modern-nonseasonal-three-prayer-review/paulinus-independent-review-v1.json",
+        "sha256": "e2ed315493e1b717eec7009fddd5e58ece37bea79075e8e104773c5d749015ee"
+      },
+      "root_english_scalar_sha256": "577f9e42c61797df14a2dd3f6851961f83dd7a83c89e74aae10c4f5d5bda1e74",
+      "root_english_body_no_terminal_lf_sha256": "577f9e42c61797df14a2dd3f6851961f83dd7a83c89e74aae10c4f5d5bda1e74"
+    }
+  ],
+  "files": [
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/passages/assumption-offering-20261112.toml",
+      "destination": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/passages/assumption-offering-20261112.toml",
+      "sha256": "44c696fd7fb67c76d57efe192f0c0f9f5e3c650f007e46d1f0c0a2077d766c12",
+      "bytes": 1003,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/assumption-offering-20261112/artifact.toml",
+      "destination": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/assumption-offering-20261112/artifact.toml",
+      "sha256": "4c77ed79af50e2af2085092ad91d401bd3b7f52117993fd0fb69b3a95659fb6a",
+      "bytes": 1807,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/assumption-offering-20261112/latin.txt",
+      "destination": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/assumption-offering-20261112/latin.txt",
+      "sha256": "af65286cd202350a80005a3cfcd0af4e1dc1e38c2fe75e3e06a3d80dc5b28e5a",
+      "bytes": 159,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/work.toml",
+      "sha256": "0780b351166b5300299d563f6d584f10d5f2ff8fe6ed8f1e04c99cdc34caee0b",
+      "bytes": 980,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/edition.toml",
+      "destination": "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/edition.toml",
+      "sha256": "3c2cf6bc44eae0ce89d68cfa73cf58f65219af5cbdc83ce65ecdb7d2f92a8466",
+      "bytes": 1042,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/passages/complete-en.toml",
+      "destination": "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/passages/complete-en.toml",
+      "sha256": "3893038d366a6802ba28e9e5992e10baa6e52cc85c0c5ef47e270de7a24d451b",
+      "bytes": 1264,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/passages/recipient-english-publication.toml",
+      "destination": "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/passages/recipient-english-publication.toml",
+      "sha256": "7b7f68188bc7417d63ef74db1c2d81e1e1c868607d5d7db7cbe15c367c801d28",
+      "bytes": 1346,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/recipient-english-tsv/artifact.toml",
+      "destination": "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/recipient-english-tsv/artifact.toml",
+      "sha256": "9fbefecc61eea3a8e8e9eca153d1f1566cfab88f6661db89b6db79dffcc0ad38",
+      "bytes": 2483,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/recipient-english-tsv/english.tsv",
+      "destination": "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/recipient-english-tsv/english.tsv",
+      "sha256": "caea6f083d686e495834b068da63f3987848390c6e24a681449c4fb0c5b1c609",
+      "bytes": 284,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/complete-en/artifact.toml",
+      "destination": "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/complete-en/artifact.toml",
+      "sha256": "4766a278a52dd55a791c4a8ed0d1c9f5856dc65cca5b9b0876fd48957bf2f72a",
+      "bytes": 2725,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/complete-en/english.txt",
+      "destination": "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/complete-en/english.txt",
+      "sha256": "3f1e5b84930a4bd090777bc065c87dd6c92061ccb58555ec6ba2b5d757423b1d",
+      "bytes": 175,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/work.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+      "bytes": 521,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml",
+      "sha256": "fa9da57d68f8c80a51376a87dbeed3b19c1d1d0043a4a9b202a3c8de9e1dd7ad",
+      "bytes": 6574,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/edition.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/edition.toml",
+      "sha256": "5c6564d7db4b668729be36a92bcf07a29f932ad80e244f6bb0a04e08906443bf",
+      "bytes": 841,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/early-saints-sixtus-target-rule-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/early-saints-sixtus-target-rule-20261112.toml",
+      "sha256": "e347875c0d41802c9a67ae3e6ae8ce5d0097892a7eb09e9663cf6b4241c09ed3",
+      "bytes": 1126,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/early-saints-sixtus-target-cue-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/early-saints-sixtus-target-cue-20261112.toml",
+      "sha256": "277d6d087e5d64e0dfc445f41a70d96ee2c6111efc16f6a56245b5a39e134bc0",
+      "bytes": 1119,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
+      "sha256": "e3219e5085493a3a38e9d77c1b9039c8d7d1dbdb8cebf848b4e237b081ffdb7f",
+      "bytes": 3011,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/early-saints-sixtus-old-full-ending-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/early-saints-sixtus-old-full-ending-20261112.toml",
+      "sha256": "5185fc19c37be88d5d652bb7e5b9749ae7a27fe252aecce4d4733334aebe93ab",
+      "bytes": 1115,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml",
+      "sha256": "50af0360ef7cee43b0be7a77f211e8c63dc57f7db868a0a4f103f2e3b6056fc8",
+      "bytes": 1760,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/work.toml",
+      "destination": "src/sources/works/holy-see/notitiae/work.toml",
+      "sha256": "a38c4a4885bf3c761bab70eea6fffccbf5c6d744a0d782ad014424850debe3fa",
+      "bytes": 518,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/editions/volume-7-number-63-1971/edition.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-7-number-63-1971/edition.toml",
+      "sha256": "8d48ab163adc191a6e3eb8960c2f17dd5335f5732c3319b74d88532d286939d7",
+      "bytes": 387,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/editions/volume-7-number-60-1971/edition.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-7-number-60-1971/edition.toml",
+      "sha256": "f5b63ec784974e6667b97711a69cfe43ffb65bb30ae74aeb0b74c79fcccbf722",
+      "bytes": 387,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/editions/volume-7-number-60-1971/passages/sixtus-paris-source-pointer-20261112.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-7-number-60-1971/passages/sixtus-paris-source-pointer-20261112.toml",
+      "sha256": "151c2f194741870c30e603ed96ce14200bd4b8296add340a43a0de85c1afbfb7",
+      "bytes": 869,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/editions/volume-7-number-60-1971/artifacts/official-complete-pdf-ae175b69/artifact.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-7-number-60-1971/artifacts/official-complete-pdf-ae175b69/artifact.toml",
+      "sha256": "0872753f2500661a31498c2404aae315ee318d8ebd822dbab3dcd2701e2c9b7f",
+      "bytes": 970,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/editions/volume-7-number-63-1971/passages/sixtus-paris-source-pointer-20261112.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-7-number-63-1971/passages/sixtus-paris-source-pointer-20261112.toml",
+      "sha256": "417553c36eb802ddc68f4919273e47e16b4f9976b37a1f9c8dde939ebc8f1774",
+      "bytes": 904,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/editions/volume-7-number-63-1971/artifacts/official-complete-pdf-ac3df66a/artifact.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-7-number-63-1971/artifacts/official-complete-pdf-ac3df66a/artifact.toml",
+      "sha256": "fd3ae9db00b0da3633f26d2a7dc8888e6c0f3897c80782b4724d0050c4e9a942",
+      "bytes": 970,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense/work.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense/work.toml",
+      "sha256": "4a7d90b7aab3a73f300aa03174b5f9a212e856333e3081f687c20b528b7968bd",
+      "bytes": 309,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense/editions/rome-2004-volume2-clerus/edition.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense/editions/rome-2004-volume2-clerus/edition.toml",
+      "sha256": "3129dea27cf796a8f931f21213b534af5a0f36c032ecea20ac58f272e8ebba61",
+      "bytes": 515,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense/editions/rome-2004-volume2-clerus/passages/early-saints-sixtus-old-petition-verification-20261112.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense/editions/rome-2004-volume2-clerus/passages/early-saints-sixtus-old-petition-verification-20261112.toml",
+      "sha256": "cad91b972d559283b58a72f1d473a52b744985cd773a8c57e168ae1cf4c5a604",
+      "bytes": 900,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense/editions/rome-2004-volume2-clerus/artifacts/complete-carrier/artifact.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense/editions/rome-2004-volume2-clerus/artifacts/complete-carrier/artifact.toml",
+      "sha256": "2a180f3ae4851f1bbfef07f0ac7fef4a7ab4c8afab08820b183c8834eb07085f",
+      "bytes": 959,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/work.toml",
+      "sha256": "5185d41c447b707113268a11ce9a0491b8475155ff31abfa3ae93a5a94ceedb3",
+      "bytes": 700,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/edition.toml",
+      "destination": "src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/edition.toml",
+      "sha256": "cd170bda7af27967c048f3fb190d5bfec79768764962058c70498e0922499d2c",
+      "bytes": 457,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/passages/complete-prayer-verification.toml",
+      "destination": "src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/passages/complete-prayer-verification.toml",
+      "sha256": "e7ad2d42615d057763146e3dc7b4adf29b70129a98b91d3a0942d9751f53b6f1",
+      "bytes": 2530,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/passages/complete-prayer-publication.toml",
+      "destination": "src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/passages/complete-prayer-publication.toml",
+      "sha256": "30e877845260f711462c988da910222b2c4d80ec67c8faa25cffb072b4906bab",
+      "bytes": 2517,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/artifacts/complete-prayer/artifact.toml",
+      "destination": "src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/artifacts/complete-prayer/artifact.toml",
+      "sha256": "f1ead0bc24d3ff7ae8f74d9b6d4006244964df09269180472bd23b3544b76ff2",
+      "bytes": 2570,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/artifacts/complete-prayer/recipient-en.tsv",
+      "destination": "src/sources/works/triptych/sixtus-ii-companions-collect-study-english-20261112/editions/study-english-20261112/artifacts/complete-prayer/recipient-en.tsv",
+      "sha256": "e20b5216aadae5c972c0b4c667ed6bc910743c481d472476e5f3ef8845be6523",
+      "bytes": 475,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/early-saints-paulinus-target-rule-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/early-saints-paulinus-target-rule-20261112.toml",
+      "sha256": "7e4bf0f93650ce6d2c741ee7bdfc597b7c8d3ffa571c3dfb9619024aa7432735",
+      "bytes": 1149,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/early-saints-paulinus-target-cue-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/early-saints-paulinus-target-cue-20261112.toml",
+      "sha256": "8ac8320c29e6fb4322158490a9056c5d679d18e51ef5b7bdde3b69fa24493428",
+      "bytes": 1144,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/early-saints-paulinus-old-full-ending-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/early-saints-paulinus-old-full-ending-20261112.toml",
+      "sha256": "eb52276289558643796a4218397d07b6ada2df636ce238a00b978c65ab45cac3",
+      "bytes": 1138,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/acta-apostolicae-sedis/work.toml",
+      "destination": "src/sources/works/holy-see/acta-apostolicae-sedis/work.toml",
+      "sha256": "dbd515d5261517853daef65aeb4db095e8e4140990356bd620bd06c98c98fc88",
+      "bytes": 480,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-52-1960/edition.toml",
+      "destination": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-52-1960/edition.toml",
+      "sha256": "2148283b74135b95f5f9c106c8b931be35de281e54e7741ddb18f638bafad971",
+      "bytes": 643,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-52-1960/passages/early-saints-paulinus-gregory-control-20261112.toml",
+      "destination": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-52-1960/passages/early-saints-paulinus-gregory-control-20261112.toml",
+      "sha256": "a678ecca3697ce6845d52c1b3707d4a38beaab9b82e9a73d62b8463b5ee9cb65",
+      "bytes": 1092,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-52-1960/artifacts/vatican-ocr-pdf-c734079d/artifact.toml",
+      "destination": "src/sources/works/holy-see/acta-apostolicae-sedis/editions/volume-52-1960/artifacts/vatican-ocr-pdf-c734079d/artifact.toml",
+      "sha256": "b75a7d32c871796e633b0742d2c5becc2b4d199a5ba02cae6502a9154bf30c93",
+      "bytes": 1758,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/giacomo-baroffio/orationale-sanctorum-italicum/work.toml",
+      "destination": "src/sources/works/giacomo-baroffio/orationale-sanctorum-italicum/work.toml",
+      "sha256": "98693c3fffd7dfe9b664b26a9d1d31d6903fee5e793983021ca1ebf33193bb58",
+      "bytes": 234,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/giacomo-baroffio/orationale-sanctorum-italicum/editions/220201-version-220208-carrier/edition.toml",
+      "destination": "src/sources/works/giacomo-baroffio/orationale-sanctorum-italicum/editions/220201-version-220208-carrier/edition.toml",
+      "sha256": "a936a8b969ecd7b2e99772a8b0d80488e751d12e4a96dea4ee8cc0b8468f2b5b",
+      "bytes": 447,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/giacomo-baroffio/orationale-sanctorum-italicum/editions/220201-version-220208-carrier/passages/early-saints-paulinus-old-petition-verification-20261112.toml",
+      "destination": "src/sources/works/giacomo-baroffio/orationale-sanctorum-italicum/editions/220201-version-220208-carrier/passages/early-saints-paulinus-old-petition-verification-20261112.toml",
+      "sha256": "dec4c68d8877c0e29c2590d9c195778b75c0b772cfd4ad37163547eb6ead5c59",
+      "bytes": 1124,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/giacomo-baroffio/orationale-sanctorum-italicum/editions/220201-version-220208-carrier/artifacts/complete-carrier/artifact.toml",
+      "destination": "src/sources/works/giacomo-baroffio/orationale-sanctorum-italicum/editions/220201-version-220208-carrier/artifacts/complete-carrier/artifact.toml",
+      "sha256": "3a4a2052e1371177d1f6b1b9e23d583c6a5b9cc8f0ffcff2661d2811abc31c8f",
+      "bytes": 1042,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/work.toml",
+      "sha256": "c946124808a01c554a16238e8d6069d6fa0e0c6425dc85f448a61c9296faced6",
+      "bytes": 652,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/edition.toml",
+      "destination": "src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/edition.toml",
+      "sha256": "76e95fc0b82a8ede1d67feae6068e0e2a1818d556f3f870c4c71ec010d4b84f1",
+      "bytes": 445,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/passages/complete-prayer-verification.toml",
+      "destination": "src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/passages/complete-prayer-verification.toml",
+      "sha256": "4b67f73a3e9dfcbcda0417617c465f103ff1ba6284730ae0f7bb0bd83452ac15",
+      "bytes": 2477,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/passages/complete-prayer-publication.toml",
+      "destination": "src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/passages/complete-prayer-publication.toml",
+      "sha256": "6246c4d68cc58301854a105a1f9251354492cc873d7dd10c3665b915e6e1c874",
+      "bytes": 2464,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/artifacts/complete-prayer/artifact.toml",
+      "destination": "src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/artifacts/complete-prayer/artifact.toml",
+      "sha256": "1888beaac1e682c70d878b649a2905938f4796e855c58268b2f54e39a66c41a9",
+      "bytes": 2640,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/artifacts/complete-prayer/recipient-en.tsv",
+      "destination": "src/sources/works/triptych/paulinus-nola-collect-study-english-20261112/editions/study-english-20261112/artifacts/complete-prayer/recipient-en.tsv",
+      "sha256": "749a36cd497500ad92fbbcd2a0ef379ee0aa1db57ca8c26f393014c597a07f00",
+      "bytes": 426,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/nonseasonal-apollinaris-collect-comparison-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/nonseasonal-apollinaris-collect-comparison-20261112.toml",
+      "sha256": "9531768aed08af8b094c65364167852994c90ffdcfb5902d5d7b5500af4ad331",
+      "bytes": 1049,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/nonseasonal-hilary-collect-comparison-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/nonseasonal-hilary-collect-comparison-20261112.toml",
+      "sha256": "6c3bd5ddfb0f67fabb959879b3a035e2e863a4d93bbdfe20e7f033904a2116c3",
+      "bytes": 1046,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/work.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/work.toml",
+      "sha256": "97e0fb7a882185cd73383e0a10084a79cf5ef25d0fd87d017c57d2ead18ca20b",
+      "bytes": 449,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/edition.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/edition.toml",
+      "sha256": "d47c6332b5d84989cfff22499e008b65badbf6918a94e718c8cbcf79a9fa15f0",
+      "bytes": 585,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/passages/paris1738-damasus-2130-carrier-20261112.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/passages/paris1738-damasus-2130-carrier-20261112.toml",
+      "sha256": "9cefe1e608175cf01266f4e1d5bd7b9097e683e832aabb9e85e6dfa9850c51f3",
+      "bytes": 1518,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/artifacts/clerus-html-1406208e/artifact.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/artifacts/clerus-html-1406208e/artifact.toml",
+      "sha256": "835ac3fdd74fca9c12de3f524d6de3c25d6e733eaf31a885dfb85482043985ed",
+      "bytes": 1116,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/artifacts/damasus-2130-historical-paragraph-20261112/artifact.toml",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/artifacts/damasus-2130-historical-paragraph-20261112/artifact.toml",
+      "sha256": "7559c6fbc0ce8c3f8c3081c2d930ada10e626b835e15dc65cf0499a005a4c7b1",
+      "bytes": 1852,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/artifacts/damasus-2130-historical-paragraph-20261112/latin.txt",
+      "destination": "src/sources/works/gerard-oconnor/sources-orations-missale-parisiense-1738/editions/rome-2004-volume-2/artifacts/damasus-2130-historical-paragraph-20261112/latin.txt",
+      "sha256": "b13d460f3163adba084ea695fce703030edd843817dc1cd493c4371112294271",
+      "bytes": 201,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/passages/nonseasonal-hilary-petition-transcription-20261112.toml",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/passages/nonseasonal-hilary-petition-transcription-20261112.toml",
+      "sha256": "2f4f4b272a1ef6f58f60ef2cdaed2c999568626a8b98f795afb876561aabc71d",
+      "bytes": 1064,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/passages/nonseasonal-hilary-collect-source-20261112.toml",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/passages/nonseasonal-hilary-collect-source-20261112.toml",
+      "sha256": "5a64b6b4061b457093535dca38819065d468fa9c338ae2838d7e8fd27cd95280",
+      "bytes": 939,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/artifact.toml",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/artifact.toml",
+      "sha256": "b092f5c97f3b3609761ff29fa3a85f77b9d45f33a10cbda2a495485f158e0c5d",
+      "bytes": 1153,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/page120.png",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-page120-20261112/page120.png",
+      "sha256": "3d9471fa7a6e446da05e12724ab83a3c1f9cd930b539e3243e6456c37c81cae6",
+      "bytes": 3586491,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-petition-20261112/artifact.toml",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-petition-20261112/artifact.toml",
+      "sha256": "19100883d44a83b0940d3c3c7754518203216312fe961acb851aceb396776e6f",
+      "bytes": 1558,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-petition-20261112/latin.txt",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/nonseasonal-hilary-petition-20261112/latin.txt",
+      "sha256": "fe80f7a10285b65eac7930208940249b722f32f09546b782fca203b9877ab4cf",
+      "bytes": 173,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/work.toml",
+      "sha256": "5df94bd9f64878acc78ab2eeb28fd871a20de9e8ed13ae38df4e31e4fd9035ab",
+      "bytes": 885,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "destination": "src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "sha256": "2125a6f588b8db6b0bf09e781e161e21278e8d3e034ab4457e15df4851412d4f",
+      "bytes": 834,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/passages/apollinaris-collect-publication.toml",
+      "destination": "src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/passages/apollinaris-collect-publication.toml",
+      "sha256": "9b73cb72cf4b2fd0b0397cc3aec8c082d0e4ab26d48db919c10362a6184c0b53",
+      "bytes": 2467,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/passages/hilary-collect-publication.toml",
+      "destination": "src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/passages/hilary-collect-publication.toml",
+      "sha256": "10a09d4db8ff1b40809b39a34cb1250364adb5fe267efb46c0fd81ef8f05949a",
+      "bytes": 2229,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/artifacts/frozen-two-collects-v1/artifact.toml",
+      "destination": "src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/artifacts/frozen-two-collects-v1/artifact.toml",
+      "sha256": "9f9e13db59195edea8f2159d35ca1e2bcf66a196d8f82219197f35d3de5ce676",
+      "bytes": 2298,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/artifacts/frozen-two-collects-v1/text.tsv",
+      "destination": "src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/artifacts/frozen-two-collects-v1/text.tsv",
+      "sha256": "07d9d874edb0ad83de78e5a032da2247a2d0c0f048fc07aa98baa00e7bfc46c2",
+      "bytes": 2056,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/work.toml",
+      "destination": "src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/work.toml",
+      "sha256": "2be39baaaf259a1a0f4061ebdce2aaca8d3e8cfbd66fa055a604d7a190adf6fc",
+      "bytes": 431,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/turibius-whole-source-local-comparison-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/turibius-whole-source-local-comparison-20261112.toml",
+      "sha256": "c4d77e5b6c67b4144b46a8160d2b2fd466838904497232838e2c71bee9178b2c",
+      "bytes": 1103,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/edition.toml",
+      "destination": "src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/edition.toml",
+      "sha256": "0bd7e281c1b913362079e570ae3a408e6787eadeb326c1a4be1201bf1ef094a8",
+      "bytes": 615,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/passages/gregory-x-page-control-20261112.toml",
+      "destination": "src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/passages/gregory-x-page-control-20261112.toml",
+      "sha256": "dcd3807c3bd1546f99d405225677e09aaa04cf9e0b2962de7298de7b56ab8fec",
+      "bytes": 984,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/passages/gregory-x-whole-prayer-20261112.toml",
+      "destination": "src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/passages/gregory-x-whole-prayer-20261112.toml",
+      "sha256": "60e74867eb777d4c5be817528ca9e457e3df15ad31ec736a8f56a72699a66a28",
+      "bytes": 1460,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/artifacts/nsw-whole-pdf-d1efde02/artifact.toml",
+      "destination": "src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/artifacts/nsw-whole-pdf-d1efde02/artifact.toml",
+      "sha256": "26cb6c915d4088f63050eca760f6197f5b3729755d33fe11acb3da75b8fdef7b",
+      "bytes": 1105,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/artifacts/gregory-x-whole-la-e207e5b8/artifact.toml",
+      "destination": "src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/artifacts/gregory-x-whole-la-e207e5b8/artifact.toml",
+      "sha256": "c765fef9a1dd4f78911af5c8245a950d854c48bddcb5818fe4f75459705eec4d",
+      "bytes": 1412,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/artifacts/gregory-x-whole-la-e207e5b8/latin.txt",
+      "destination": "src/sources/works/catholic-church/officia-propria-sanctorum-romano-clero/editions/sydney-cunninghame-1868/artifacts/gregory-x-whole-la-e207e5b8/latin.txt",
+      "sha256": "e207e5b8aba7bc7efa8c170d557f20950d59c8e3a35eb507d6d024c01b8e69b2",
+      "bytes": 233,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/turibius-finite-correction-20261112.toml",
+      "destination": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/turibius-finite-correction-20261112.toml",
+      "sha256": "a36a5dd2e074b236e26311ee2fb04689c25258e254707d917c717575b96dec75",
+      "bytes": 1004,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/turibius-collect-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/turibius-collect-study-english-20261112/work.toml",
+      "sha256": "28395c3cbc00a2d0d7eb48504f2e5c743d3ea166eea8aa8434059546f5721b56",
+      "bytes": 996,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/turibius-collect-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "destination": "src/sources/works/triptych/turibius-collect-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "sha256": "5f68de122049e5097a8c24907b6b6eefc61bbce3bec6c1f60002940ecd2d0a68",
+      "bytes": 950,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/turibius-collect-study-english-20261112/editions/2026-11-12-study-english/passages/turibius-collect.toml",
+      "destination": "src/sources/works/triptych/turibius-collect-study-english-20261112/editions/2026-11-12-study-english/passages/turibius-collect.toml",
+      "sha256": "624c78df950664bf90b6855ab230c002345c22e29f02045f3724b56a72d3dbd5",
+      "bytes": 1903,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/turibius-collect-study-english-20261112/editions/2026-11-12-study-english/artifacts/recipient-study-en-72f383fe/artifact.toml",
+      "destination": "src/sources/works/triptych/turibius-collect-study-english-20261112/editions/2026-11-12-study-english/artifacts/recipient-study-en-72f383fe/artifact.toml",
+      "sha256": "a58fc297c9cc8ac9469ef0c81d2917b0d12243f46b8d4850700e41c4177b9f52",
+      "bytes": 2193,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/turibius-collect-study-english-20261112/editions/2026-11-12-study-english/artifacts/recipient-study-en-72f383fe/text.tsv",
+      "destination": "src/sources/works/triptych/turibius-collect-study-english-20261112/editions/2026-11-12-study-english/artifacts/recipient-study-en-72f383fe/text.tsv",
+      "sha256": "72f383fe1b610f740ea790f9b87babc14bfa1b303ae83c52b540339349957848",
+      "bytes": 466,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "destination": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "sha256": "d380657fdad6aa7a98b1e62f2ea4b8bd6247703e089e98a5ba8ea47754105974",
+      "bytes": 1226,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/ia-text-pdf-180769e3/artifact.toml",
+      "destination": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/ia-text-pdf-180769e3/artifact.toml",
+      "sha256": "f55f5965ff3b52642a870bc0bb617f0f857e32554ec4f90fe1d0d101d5dc703c",
+      "bytes": 2428,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml",
+      "destination": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/segments/notitiae-pages-368-387.toml",
+      "sha256": "c51827a83391804e3e161ad272a9f41add34927b4f14bbf3e316a5245cb322a0",
+      "bytes": 896,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-54.toml",
+      "destination": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-54.toml",
+      "sha256": "0cfe6248c48aa0da047cc63c075dc690293213dc8a0e2b4977d17efcc3a00b31",
+      "bytes": 1201,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/edition.toml",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/edition.toml",
+      "sha256": "88a29f443cd9e42296aaf0dc296db609da64dc693a375c13e1b7e2ff07679b80",
+      "bytes": 1691,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/artifact.toml",
+      "sha256": "be75e44ebba91a14d5411e2603b8354727fa1c22e94f2f34ea418abb8288aac7",
+      "bytes": 1874,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/latin.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/latin.txt",
+      "sha256": "e085b59f15592f63937a0a9665b9ac228b96a32295d7c4116a054dc177c8f602",
+      "bytes": 477,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/artifacts/father-through-son/artifact.toml",
+      "destination": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/artifacts/father-through-son/artifact.toml",
+      "sha256": "0416e73c81b6746359beb2c73f46c3c0d86c9095a21132928a840ff9d7f07bce",
+      "bytes": 2301,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/artifacts/father-through-son/formula.json",
+      "destination": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/artifacts/father-through-son/formula.json",
+      "sha256": "48a01afaff4cb9b12c454c516b79592601fb24b341e8eaa924c873697624779d",
+      "bytes": 1740,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/internet-archive-pdf-eab6d2f4/artifact.toml",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/editions/1844-paris/artifacts/internet-archive-pdf-eab6d2f4/artifact.toml",
+      "sha256": "1bdd896b112e61ea28d89038d07abfa0952c88ceb96ea2d3695579d3a137c001",
+      "bytes": 2079,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/work.toml",
+      "destination": "src/sources/works/jacques-paul-migne/patrologia-latina-volume-9/work.toml",
+      "sha256": "9a45ac683fca6a3a73e954f3e942c25adaf9c2e4a5be5feb72e640b00d98f835",
+      "bytes": 1593,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/long-conclusion-response-page88-20261026.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/long-conclusion-response-page88-20261026.toml",
+      "sha256": "75f298a297b9313111691a4f073826335c252fe2265e1762343912cbc4de7bb3",
+      "bytes": 1426,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/artifacts/official-pdf-74c8d174/artifact.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/artifacts/official-pdf-74c8d174/artifact.toml",
+      "sha256": "527d1bc88436b492cc164c47f805e8cec51be9e4b7f30e852a8a6da571ab9892",
+      "bytes": 1224,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/edition.toml",
+      "destination": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/edition.toml",
+      "sha256": "f14676b96528f60955272890e0687b72c4cf8cb66b6a3911cb98ac7058b76e88",
+      "bytes": 5962,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "destination": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "sha256": "dc71449fba4dd7ffceacc3ad09e57ac8307343811bbfba92f807eacfc2663525",
+      "bytes": 2205,
+      "kind": "source-record-or-payload",
+      "disposition": "required-existing-adopted-dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "destination": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "sha256": "b7e8a0e5a311139b1acb582276e9d5e194de092d4e8407b6d397bbed586f7ee0",
+      "bytes": 909,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/edition.toml",
+      "destination": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/edition.toml",
+      "sha256": "061025437feaa2dda34bf03c55921d6389e399c3a58d73f2457e3990f41f4eb7",
+      "bytes": 2512,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/segments/missale-romanum-artifact-pages-8-61.toml",
+      "destination": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/segments/missale-romanum-artifact-pages-8-61.toml",
+      "sha256": "444fa4c316f1f363663463e41a2c157273738f75d72cafbeb56a22941a59b792",
+      "bytes": 1323,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/edition.toml",
+      "destination": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/edition.toml",
+      "sha256": "0333fa291a389ad04fae9b2e5cbe06a510444dd9a03627915b0b7785c63e6883",
+      "bytes": 675,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/archdiocese-of-milan/missale-ambrosianum/work.toml",
+      "destination": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/work.toml",
+      "sha256": "726fd65cc696c09937471521eaca472b51e6ddf8b8811bac918806028bf03e17",
+      "bytes": 1708,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/edition.toml",
+      "destination": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/edition.toml",
+      "sha256": "990c452e676b49d93632f93e7072491efaae61e2ce9859976ec7846cbc98f62d",
+      "bytes": 899,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/institutio-generalis-missalis-romani/work.toml",
+      "destination": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/work.toml",
+      "sha256": "ddff455b5c3c5c592d9d437d4c65d8c1d54ff454ab336499f38c19a3713e3255",
+      "bytes": 657,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
+      "destination": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
+      "sha256": "c40e462e77cb754586a920072d53280e7a39f4c9090d12e8a92de31fa33d5a05",
+      "bytes": 1447,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/artifact.toml",
+      "sha256": "1b4d285486f240559d6d31264483a732996caa969d1648d78f064b82d6968f3e",
+      "bytes": 2220,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/source.pdf",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/source.pdf",
+      "sha256": "a8fa7ec08dab8614ecfb0563a15c3725cf670ddac6d04dbf0b0caeed6d561975",
+      "bytes": 433790,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/edition.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-44-numbers-503-504-2008/edition.toml",
+      "sha256": "141bfdc2adc83f2faca91c846cd50c2473933f0a93e486376b2571816c33c06d",
+      "bytes": 706,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/triptych/oration-conclusion-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/oration-conclusion-study-english-20261112/work.toml",
+      "sha256": "672eba54d1eda157370d0e8907ef32a83a0f5950db7123a0f0891c2ea16aa866",
+      "bytes": 1099,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+      "destination": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+      "sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+      "bytes": 3690,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/work.toml",
+      "destination": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/work.toml",
+      "sha256": "514b0949da5cada6d58c0c38aef0c6e0fed72811ea801c11ec2421529287a626",
+      "bytes": 865,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/holy-see/reimpressio-emendata-missalis-romani-notice-2008/work.toml",
+      "destination": "src/sources/works/holy-see/reimpressio-emendata-missalis-romani-notice-2008/work.toml",
+      "sha256": "bc20565cc074ea1e5a4548c90d66f820001ab667123cb94809ae39e7e3031a46",
+      "bytes": 798,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+      "destination": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/pages.pdf",
+      "sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "bytes": 502778,
+      "kind": "source-record-or-payload",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/mary-source-review.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/mary-source-review.json",
+      "sha256": "328c68d0f0f3242551c22201df226daaf6106a7dc7da1ced373ffff7d87e6506",
+      "bytes": 12342,
+      "kind": "unchanged-independent-merits-receipt",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/workflows/reviews/modern-nonseasonal-orations-20261112/sixtus-independent-review-v1.json",
+      "destination": "workflows/reviews/modern-nonseasonal-orations-20261112/sixtus-independent-review-v1.json",
+      "sha256": "d30ef36263b1b32e5437d68f989a7da1c780c7ed3f91a3637898fd432fa6a81d",
+      "bytes": 13261,
+      "kind": "unchanged-independent-merits-receipt",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/workflows/reviews/missal-reader-resume-2026-11-12/nonseasonal/hilary-apollinaris-independent-review-v1.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/nonseasonal/hilary-apollinaris-independent-review-v1.json",
+      "sha256": "9eff4479c35a6bf5c9943ac945440d79cfeb37fc21b3c385849cd59410af3aca",
+      "bytes": 12665,
+      "kind": "unchanged-independent-merits-receipt",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/workflows/reviews/missal-reader-resume-2026-11-12/nonseasonal-orations/turibius-source-fidelity-review.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/nonseasonal-orations/turibius-source-fidelity-review.json",
+      "sha256": "902be265bd8b516f0a046f530dd5d8c1dea92a8c28803b12322b28039139f225",
+      "bytes": 8519,
+      "kind": "unchanged-independent-merits-receipt",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/closure/workflows/reviews/modern-nonseasonal-orations-20261112/paulinus-independent-review-v1.json",
+      "destination": "workflows/reviews/modern-nonseasonal-orations-20261112/paulinus-independent-review-v1.json",
+      "sha256": "e2ed315493e1b717eec7009fddd5e58ece37bea79075e8e104773c5d749015ee",
+      "bytes": 9022,
+      "kind": "unchanged-independent-merits-receipt",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/ending-scope-addendum-v1/files/workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/recipient-conclusion-scope-clarification.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/recipient-conclusion-scope-clarification.json",
+      "sha256": "db0c93f4163c9eae960317fa23d2df2917242f63398bb98164080a9775545736",
+      "bytes": 10219,
+      "kind": "unchanged-accepted-authority-or-clarification",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/root/next-eleven-english-merits-admission.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/root-eleven-english-merits-admission.json",
+      "sha256": "fa61352e6b766cf6c3087e2a91eed30573b0dd1741029a716abfe648505ffc90",
+      "bytes": 25257,
+      "kind": "unchanged-accepted-authority-or-clarification",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/root/nonseasonal-six-source-registration-admission.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/root-six-source-registration-admission.json",
+      "sha256": "13c942a7cf060001795244b25c23181afa32dc7c78d8bbbd5ffd9820eb32f685",
+      "bytes": 4842,
+      "kind": "unchanged-actual-Root-source-registration",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    },
+    {
+      "scratch_path": ".scratch/modern-nonseasonal-orations/resume-20261113/guarded-installation-v2/public-registration-review.json",
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/six-registration-public-review.json",
+      "sha256": "a16cbf5f2ee5936e6cdfe34bffcd21d0e3913f2254513a55496d4cda6c836f6b",
+      "bytes": 5193,
+      "kind": "public-safe-registration-summary",
+      "disposition": "create-if-absent-or-retain-byte-identical"
+    }
+  ],
+  "durable_declaration": "workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/guarded-installation-declaration.json",
+  "required_prospective_dependency": {
+    "target_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+    "before_sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+    "after_sha256": "dc71449fba4dd7ffceacc3ad09e57ac8307343811bbfba92f807eacfc2663525",
+    "scope": "Root-accepted rights_basis-only d85 successor applies prospectively after first-six; canonical remains old metadata. Historical source-review pins are preserved in original package and pre-repair manifest.",
+    "owner_handoff": ".scratch/modern-sources/d85-metadata-repair/handoff.json",
+    "owner_handoff_sha256": "2d2e69fd29c7a2883db1cd0c46f34d9f025335becb4ec2f5d54895f12c01db49"
+  },
+  "required_focused_runtime_patches": [
+    {
+      "path": ".scratch/reader-audit/qualified-study-credit/change.patch",
+      "sha256": "2b7e2acdb1f3b079dc46f74dc4015cf0de85f1c78a6a4074c0350925d82c2399"
+    },
+    {
+      "path": ".scratch/reader-audit/qualified-study-credit-nonseasonal/change.patch",
+      "sha256": "88d73e1695af959a28b8ea1bac0f7347e35024c7301cd143bcf37c99ee67eeef"
+    }
+  ],
+  "runtime_boundary": "This staging tool never installs code or activates a runtime. Root must merge the exact adopted focused credit patches and execute combined source-epoch/consumer checks. Whole earlier978ede42 tool is not a dependency.",
+  "read_only_api": "prepare(input_root) returns verified bytes and exact observed owner preimages; it never writes. The CLI only creates a new owned scratch projection, with no canonical apply option. Root owns serialized compare-before-write/atomic owner replacement.",
+  "file_counts": {
+    "source_records_or_payloads": 118,
+    "durable_existing_merits_reviews": 5,
+    "durable_adoption_registration_scope_records": 4,
+    "durable_declaration": 1,
+    "total_mapped_including_declaration": 128
+  },
+  "old_refusals_preserved": "Every exact prior gap dictionary remains in this durable declaration and the independent review. No quarantined body is restored.",
+  "root_source_registration": {
+    "path": ".scratch/root/nonseasonal-six-source-registration-admission.json",
+    "sha256": "13c942a7cf060001795244b25c23181afa32dc7c78d8bbbd5ffd9820eb32f685"
+  },
+  "authority_successor": {
+    "predecessor_declaration": {
+      "path": ".scratch/modern-nonseasonal-orations/resume-20261113/guarded-installation-v1/installation-declaration.json",
+      "sha256": "8c3405d03069bd32be6f4a1f399ce375fcb39cc759e89086b8d6ac7f206f44a9"
+    },
+    "changes": [
+      "Bind exact actual Root source registration13c942 independently of English meritsfa613 and independent registration60ce",
+      "Add unchanged actual Root source registration as durable authority",
+      "Replace two newly proposed raw private registration/scope-review dossiers with one public-safe exact-hash summary; original five explicitly adopted historical merits receipts and exact durable scope clarification remain unchanged"
+    ],
+    "source_entries_bodies_and_owner_deltas_unchanged": true
+  }
+}

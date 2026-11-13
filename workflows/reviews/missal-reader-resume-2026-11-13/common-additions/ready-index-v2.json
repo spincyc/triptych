@@ -1,0 +1,1206 @@
+{
+  "schema": "triptych-ready-common-addition-cohorts/v2",
+  "prepared_on": "2026-11-13",
+  "root_commit_at_recovery": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "state": "All work scratch-only; canonical freeze respected; Root owns installation, generators, index, commits and push.",
+  "cohorts": [
+    {
+      "id": "three-passage-note-digests",
+      "state": "Root accepted metadata-only; ready for allocated window",
+      "manifest": {
+        "path": ".scratch/modern-common-appointments/note-digest-corrections/manifest.json",
+        "sha256": "c56511e6b5398470cc6f0d9b3f63aa9526456898abdc158d29e69d358970510e"
+      },
+      "installation_plan": {
+        "path": ".scratch/modern-common-appointments/note-digest-corrections/guarded-installation-plan.json",
+        "sha256": "7f98fc81f21f94445202a5349920ac364997af8feac9380d61325fe732285292"
+      },
+      "root_review": {
+        "path": ".scratch/root/note-digest-corrections-review.json",
+        "sha256": "e3efa4184c37c8fb36f50f29ab5997ed278a10a45c0e5593b517074dfdd6e870"
+      },
+      "files": [
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/octava-nativitatis-domini-collect.toml",
+          "package_path": ".scratch/modern-common-appointments/note-digest-corrections/package/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/octava-nativitatis-domini-collect.toml",
+          "preimage_sha256": "82614af148789445fee812a37e29eea68899dc1bbcce245f86da611a18725f71",
+          "proposed_sha256": "da1a5546917e342799a5e669e2ab833156c5af135c2f3e25a51b20d2c2a0f096"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-collect.toml",
+          "package_path": ".scratch/modern-common-appointments/note-digest-corrections/package/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-collect.toml",
+          "preimage_sha256": "49b0a1528eb7cf2f030efb841adf746bf7004f2939d07d34edea908383d49675",
+          "proposed_sha256": "05603574d7a2f620c44f31af20b3a0e324b71ef2bdbddf1817b8b158431303f0"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/comm-ss-machabaeorum-martyrum-collect.toml",
+          "package_path": ".scratch/modern-common-appointments/note-digest-corrections/package/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/comm-ss-machabaeorum-martyrum-collect.toml",
+          "preimage_sha256": "fa5ea25cb27f24e2e8e8fa6dd3561f84a21f52ec8cf869ff3f5dd567952a2971",
+          "proposed_sha256": "932c6b96f03254e834559169c7bfc14f5ee68179301558aae410958c15437342"
+        }
+      ],
+      "durable_review_package": ".scratch/modern-common-appointments/note-digest-corrections/durable-package",
+      "limits": "Exactly three notes digest strings; all source bounds, body bytes, target grades and permissions remain unchanged. Re-pin later selection proofs only against exact reviewed successors."
+    },
+    {
+      "id": "earlier-additions-fifty-four-metadata-records",
+      "state": "Root source/model accepted; canonical release and actual installed checks remain.",
+      "manifest": {
+        "path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/metadata-manifest.json",
+        "sha256": "3d751f01891a3e53539a9d8d5e7594873b3a58e9698a8fabeda5b7c46907b540"
+      },
+      "durable_review_handoff": {
+        "path": ".scratch/modern-common-appointments/dated-addition-sources/durable-adoption/manifest.json",
+        "sha256": "aeba4172d3119743adcd528705a81fc87d8b6214019119623d3f0fd8e630ad45"
+      },
+      "counts": {
+        "records": 54,
+        "new": 52,
+        "guarded_replacements": 2,
+        "by_type": {
+          "edition": 10,
+          "passage": 29,
+          "segment": 6,
+          "work": 5,
+          "artifact": 4
+        }
+      },
+      "files": [
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/edition.toml",
+          "id": "edition.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "e05a01ffdef4eb68f61a217169e5202f091a9a56d2eaa499487b7ddc10794b4b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-02-08-saint-josephine-bakhita-virgin.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-02-08-saint-josephine-bakhita-virgin.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-02-08-saint-josephine-bakhita-virgin",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "c7d4c7b8cacacd00e543d78d831679231712b8ef3c5c01b11f6e58f83bd7d944"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-04-23-saint-adalbert-bishop-martyr.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-04-23-saint-adalbert-bishop-martyr.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-04-23-saint-adalbert-bishop-martyr",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "ebc5bd6fa64565927237c15bf0080da4b4bed31afbea1ccbc7f476540fdf4cc0"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-04-28-saint-louis-grignion-montfort-priest.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-04-28-saint-louis-grignion-montfort-priest.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-04-28-saint-louis-grignion-montfort-priest",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "c7eea73be099b5f5864deb510abceedfd905e94a0d62b7fe70f193b1ec2ce7af"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-05-13-our-lady-fatima.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-05-13-our-lady-fatima.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-05-13-our-lady-fatima",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "b68bef220347250df0d6d6c05f10b75d4639820267765ea76c100c647aa7369b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-05-21-saints-christopher-magallanes-priest-companions-martyrs.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-05-21-saints-christopher-magallanes-priest-companions-martyrs.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-05-21-saints-christopher-magallanes-priest-companions-martyrs",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "7780ca0928638754a1ea71202afda0aebf7aa376d4a8fed3258aa8952eb00df1"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-05-22-saint-rita-cascia-religious.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-05-22-saint-rita-cascia-religious.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-05-22-saint-rita-cascia-religious",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "73833676107df841d0d7c1ed6011a6430f50b8923bb1314c128fb031c0944a20"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-07-09-saints-augustine-zhao-rong-priest-companions.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-07-09-saints-augustine-zhao-rong-priest-companions.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-07-09-saints-augustine-zhao-rong-priest-companions",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "be8bbe8150fca5821ed7eb0561b0a47faac054bfb2c93e6c112c565ab50ed0e4"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-07-24-saint-sharbel-makhluf-priest.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-07-24-saint-sharbel-makhluf-priest.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-07-24-saint-sharbel-makhluf-priest",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "fd16a0c1a150a0bc64e0042740cde4a338ac35977170c0ab195f2672ac23ce26"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-08-02-saint-peter-julian-eymard-priest.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-08-02-saint-peter-julian-eymard-priest.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-08-02-saint-peter-julian-eymard-priest",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "c3268a65751a74c0cbd9c53183cec78d9d3c12fcb452e56c863f37852cf76a8c"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-08-09-saint-teresa-benedicta-cross-virgin-martyr.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-08-09-saint-teresa-benedicta-cross-virgin-martyr.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-08-09-saint-teresa-benedicta-cross-virgin-martyr",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "1cccd2681858706db4663cfd2bf1a62d1fa87800aa4a942236a02eba17ceaab1"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-09-28-saints-lawrence-ruiz-companions-martyrs.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-09-28-saints-lawrence-ruiz-companions-martyrs.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-09-28-saints-lawrence-ruiz-companions-martyrs",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "f1f54f0b0b83fbd8bd36da1a336b24a96280bac29ab0c7e3490ffae26e19286e"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-11-25-saint-catherine-alexandria-virgin-martyr.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/course-11-25-saint-catherine-alexandria-virgin-martyr.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.course-11-25-saint-catherine-alexandria-virgin-martyr",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "e0a0f7e182bdc03799128ef94fcc24bb933097707ace7d31e63dace3378c849c"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/insertion-authority.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/passages/insertion-authority.toml",
+          "id": "passage.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.insertion-authority",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "587caadcc8aaa233fc8cbfb419913a96156d34ca9fc7cb927d4678b574efb31d"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/segments/inspected-2015-dated-courses.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-notitiae-additions-2015/segments/inspected-2015-dated-courses.toml",
+          "id": "segment.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.inspected-2015-dated-courses",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "109da32a7c649000094fef783c5dc9ae854c01a81a8bd62d6a9b660cb6f17369"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/edition.toml",
+          "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433",
+          "precondition": {
+            "kind": "unchanged",
+            "sha256": "6b058059bb89ee464d6044e6feba72a95e94f33be57c34f609d275f377b51739"
+          },
+          "proposed_sha256": "463dba1555573028ead3a9040c9cbe84dbaa273317b33537034a71479da3c2ec"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/augustine-zhao-rong-collect-appointment-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/augustine-zhao-rong-collect-appointment-20261112.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.augustine-zhao-rong-collect-appointment-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "bcefe22d16693599204318774c220c3c290965db006976208820c789d4ed3705"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/bakhita-collect-appointment-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/bakhita-collect-appointment-20261112.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.bakhita-collect-appointment-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "d1a9b01a2320b5fa0cf9b5ff5557a35e8e03963a05fa184ae04698c6990c46ee"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/catherine-alexandria-collect-appointment-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/catherine-alexandria-collect-appointment-20261112.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.catherine-alexandria-collect-appointment-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "d3e413184f9c1cedaace094b89ab589daccbd73ae41995c32fe6585c96ffa208"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/fatima-collect-appointment-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/fatima-collect-appointment-20261112.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.fatima-collect-appointment-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "4861e5e24ffee5070b96c41920f457a695adf7dfc16b3ab2328f0557b65898b0"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/magallanes-collect-appointment-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/magallanes-collect-appointment-20261112.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.magallanes-collect-appointment-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "a6ba55cdd1dbfb194c326fa4679bff83985cc7adb4319cc2ce77ad2eaf35c27e"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/rita-collect-appointment-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/rita-collect-appointment-20261112.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.rita-collect-appointment-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "f72f52b09d33075241dd7f27cea6e58bf4d0b645899a5dc1815eaf9b19acb909"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/sharbel-makhluf-collect-appointment-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/sharbel-makhluf-collect-appointment-20261112.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.sharbel-makhluf-collect-appointment-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "03488ca79127d810982f8fd5ccabfa1342602117bdf525fdfb6609ce47fc2457"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/teresa-benedicta-collect-appointment-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/teresa-benedicta-collect-appointment-20261112.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.teresa-benedicta-collect-appointment-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "ca1bd8981ee07e14342859f40f13b75a500583a8c05ead210ad887c18424422e"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/segments/decree-and-missal-additions-pages-313-321-20261112.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/segments/decree-and-missal-additions-pages-313-321-20261112.toml",
+          "id": "segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001.latin-notitiae-432-433.decree-and-missal-additions-pages-313-321-20261112",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "434b07e96c60e1859c8cb3413f71b552d8bdbabd9adbeb38143742c402baa3e8"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/work.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/work.toml",
+          "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.additiones-ad-libros-liturgicos-2001",
+          "precondition": {
+            "kind": "unchanged",
+            "sha256": "6d9986448f09597b5d8a83eed711f35686abf99eea27351a9664ec89902dc7bc"
+          },
+          "proposed_sha256": "8f6add9c95d8d6d6b9e7264846f581d3ba9639d98f47802f70ab48219511a86c"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/editions/latin-notitiae-357/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/editions/latin-notitiae-357/edition.toml",
+          "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-adalberti-1995.latin-notitiae-357",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "028eace4bf7776ba9679cd3cc2bee149300f64075bac8af2d1db68e4295dceaa"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/editions/latin-notitiae-357/passages/adalbert-collect-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/editions/latin-notitiae-357/passages/adalbert-collect-appointment.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-adalberti-1995.latin-notitiae-357.adalbert-collect-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "c24541a8092767fb43a14c3668e572e9009e419ac2d6bec6e0b4336f7fce9c54"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/editions/latin-notitiae-357/passages/promulgation.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/editions/latin-notitiae-357/passages/promulgation.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-adalberti-1995.latin-notitiae-357.promulgation",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "b3938c3fbd0e901e683f40b890b04459cf10e4a9ee9ea906b940303eea03e86a"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/editions/latin-notitiae-357/segments/notitiae-pages-190-193.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/editions/latin-notitiae-357/segments/notitiae-pages-190-193.toml",
+          "id": "segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-adalberti-1995.latin-notitiae-357.notitiae-pages-190-193",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "8aa165920aeae8c7132d594277c44b12b4438823dfff07632170abf06c1f890b"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/work.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-adalberti-1995/work.toml",
+          "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-adalberti-1995",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "32b7ec9635ba9fcb82d1dd8cc289fc128f6f6f587beda9abade40730b74c8dc6"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/editions/latin-notitiae-362/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/editions/latin-notitiae-362/edition.toml",
+          "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996.latin-notitiae-362",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "94013019bcb5ae402f98dd1b223a9dff712b91377691c63b1d650a75284fb78a"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/editions/latin-notitiae-362/passages/montfort-collect-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/editions/latin-notitiae-362/passages/montfort-collect-appointment.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996.latin-notitiae-362.montfort-collect-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "3683e721f755f21f245758c3f311ca8213d19b946d965ab8b8f78322cd31bba4"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/editions/latin-notitiae-362/passages/promulgation.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/editions/latin-notitiae-362/passages/promulgation.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996.latin-notitiae-362.promulgation",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "ca894f8401c971fee36c9dc2f4079b55380b77eea4a83bfcb8a0c665dbd75450"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/editions/latin-notitiae-362/segments/notitiae-pages-656-659.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/editions/latin-notitiae-362/segments/notitiae-pages-656-659.toml",
+          "id": "segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996.latin-notitiae-362.notitiae-pages-656-659",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "7c05fd2bcbd56e7504e3f36d95caca3a07a624b5adcc60a51966786a25847b71"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/work.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996/work.toml",
+          "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "848351081019cbdc4326ad261d8271f8abfe6ed86b095a027deae34d02d68239"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/editions/latin-notitiae-357/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/editions/latin-notitiae-357/edition.toml",
+          "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-petri-iuliani-eymard-1995.latin-notitiae-357",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "2158989641649bf71925593d97070a6d29e1c05ac6e12a06320e7a52d19024f2"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/editions/latin-notitiae-357/passages/eymard-collect-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/editions/latin-notitiae-357/passages/eymard-collect-appointment.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-petri-iuliani-eymard-1995.latin-notitiae-357.eymard-collect-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "cd70ffecf87d473c56fab8b48354fc9f4c4c7e8fd8a1ad199441f9d0cb83f7a7"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/editions/latin-notitiae-357/passages/promulgation.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/editions/latin-notitiae-357/passages/promulgation.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-petri-iuliani-eymard-1995.latin-notitiae-357.promulgation",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "79f915725523582fb2e767c35929088bc5437357c1563ab50f424f3a59ec8cdd"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/editions/latin-notitiae-357/segments/notitiae-pages-201-204.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/editions/latin-notitiae-357/segments/notitiae-pages-201-204.toml",
+          "id": "segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-petri-iuliani-eymard-1995.latin-notitiae-357.notitiae-pages-201-204",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "cd5252fdf16fe78134f4936f2425fbb631f3227788526c21aa71895fcc56016e"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/work.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sancti-petri-iuliani-eymard-1995/work.toml",
+          "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-petri-iuliani-eymard-1995",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "aae8dad59b17e509ccb8690571e2a4766b717f76c0a5f5486be6298883545174"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/editions/latin-notitiae-261/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/editions/latin-notitiae-261/edition.toml",
+          "id": "edition.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988.latin-notitiae-261",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "669bd90b064e360542deac07fcb0b59d9bff13873064e86ef8b2c39063e61ff3"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/editions/latin-notitiae-261/passages/lawrence-ruiz-collect-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/editions/latin-notitiae-261/passages/lawrence-ruiz-collect-appointment.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988.latin-notitiae-261.lawrence-ruiz-collect-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "3bc2aae7ef120575244cb861a08665811bb9eb232832e23be4b5ae436e12f0c9"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/editions/latin-notitiae-261/passages/promulgation.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/editions/latin-notitiae-261/passages/promulgation.toml",
+          "id": "passage.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988.latin-notitiae-261.promulgation",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "9ae0f990a61882d34d8d7f7201f1be86ac1f2d4ade00ff4c5ff79a72d7e09117"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/editions/latin-notitiae-261/segments/decree-and-mass-pages-237-238-253.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/editions/latin-notitiae-261/segments/decree-and-mass-pages-237-238-253.toml",
+          "id": "segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988.latin-notitiae-261.decree-and-mass-pages-237-238-253",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "231ee003825450d6227e48731bb0a116546ad9708f305613255de95e221eeb0e"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/work.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988/work.toml",
+          "id": "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "aced6c9e489a668463916d5fc8649d65f8a9158442cd793d66fd9b24ab9e300e"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-24-number-261-1988/artifacts/official-pdf-91e4e1b/artifact.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/holy-see/notitiae/editions/volume-24-number-261-1988/artifacts/official-pdf-91e4e1b/artifact.toml",
+          "id": "artifact.holy-see.notitiae.volume-24-number-261-1988.official-pdf-91e4e1b",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "6dbeed14ae415d2a93f5301039452c3d01583377f978bde83de353ef60eb736b"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-24-number-261-1988/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/holy-see/notitiae/editions/volume-24-number-261-1988/edition.toml",
+          "id": "edition.holy-see.notitiae.volume-24-number-261-1988",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "c33b9135ca8f473681cc3587cdd9c1e34ae88682a4bfc7486424177d0fa1893b"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-32-number-357-1996/artifacts/official-pdf-ad5dc119/artifact.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/holy-see/notitiae/editions/volume-32-number-357-1996/artifacts/official-pdf-ad5dc119/artifact.toml",
+          "id": "artifact.holy-see.notitiae.volume-32-number-357-1996.official-pdf-ad5dc119",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "310a8d306dd81784bb421e6afecd903006f17379fb2ba0d5edcb88d9977135cd"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-32-number-357-1996/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/holy-see/notitiae/editions/volume-32-number-357-1996/edition.toml",
+          "id": "edition.holy-see.notitiae.volume-32-number-357-1996",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "2ba6a1dcc4f84a1639868075b137fb4998c10d53dd3328959870ba2b44258de6"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-32-number-362-1996/artifacts/official-pdf-ad005f2b/artifact.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/holy-see/notitiae/editions/volume-32-number-362-1996/artifacts/official-pdf-ad005f2b/artifact.toml",
+          "id": "artifact.holy-see.notitiae.volume-32-number-362-1996.official-pdf-ad005f2b",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "5bc31eb307b07db5d7191e76913dacfeb0c8021bc59ebc2bc35b7cc84329a445"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-32-number-362-1996/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/holy-see/notitiae/editions/volume-32-number-362-1996/edition.toml",
+          "id": "edition.holy-see.notitiae.volume-32-number-362-1996",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "ebebcb2b84fb491e07efbb814370079927205f162fea47dfb3a601001634e9d6"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-51-numbers-587-592-2015/artifacts/official-pdf-5161428d/artifact.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/holy-see/notitiae/editions/volume-51-numbers-587-592-2015/artifacts/official-pdf-5161428d/artifact.toml",
+          "id": "artifact.holy-see.notitiae.volume-51-numbers-587-592-2015.official-pdf-5161428d",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "97ed6faf411b6f711ccae9981e24ede36e3b43e318e7d41f8621b06436b34436"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-51-numbers-587-592-2015/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/dated-addition-sources/metadata-package/records/src/sources/works/holy-see/notitiae/editions/volume-51-numbers-587-592-2015/edition.toml",
+          "id": "edition.holy-see.notitiae.volume-51-numbers-587-592-2015",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "8cb2fa5a230c1aee376d5a8952306580db0e63247f2d13a96499a4e8d3ee9811"
+        }
+      ],
+      "unchanged_controls": [
+        {
+          "path": "src/sources/works/holy-see/notitiae/work.toml",
+          "sha256": "a38c4a4885bf3c761bab70eea6fffccbf5c6d744a0d782ad014424850debe3fa"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-38-numbers-432-433-2002/edition.toml",
+          "sha256": "92d26c4582a3e1a7f1c5db5a93771df9b2bab68e5baab6e62d44b05820384efd"
+        },
+        {
+          "path": "src/sources/works/holy-see/notitiae/editions/volume-38-numbers-432-433-2002/artifacts/official-pdf-81b1d7ef/artifact.toml",
+          "sha256": "f1f3f1ae6b7d73fddff611c27baf00fe2d961b3fab5e80695814e99c740be53b"
+        },
+        {
+          "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+          "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd"
+        },
+        {
+          "path": "src/sources/works/catholic-church/ordo-lectionum-missae/work.toml",
+          "sha256": "ad7180529504a200c4c6ed21c7666bef71f2ee530d5b2c91c914b76ca1995c36"
+        },
+        {
+          "path": "src/sources/works/second-vatican-council/sacrosanctum-concilium/work.toml",
+          "sha256": "0b18cfb0c39989b6c2ed1e61c7f4f003e2d3286ad1a78bc1e2563596670902ae"
+        },
+        {
+          "path": "src/sources/works/holy-see/acta-apostolicae-sedis/work.toml",
+          "sha256": "dbd515d5261517853daef65aeb4db095e8e4140990356bd620bd06c98c98fc88"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/edition.toml",
+          "sha256": "6b058059bb89ee464d6044e6feba72a95e94f33be57c34f609d275f377b51739"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/apollinaris-collect.toml",
+          "sha256": "31fc5509611f9d393f9c698c0ba6acd0150ad0ca0af1235ea3b670d7aa2fe5eb"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/passages/promulgation.toml",
+          "sha256": "c28035f1377cbb863bcca0462bf70508e35a214d400d7e2af686b69a92fe4309"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/editions/latin-notitiae-432-433/segments/notitiae-pages-313-318.toml",
+          "sha256": "2844736670ad3e5311dfae07199f7eee667a1bcde39614731fe7a874cddcad13"
+        },
+        {
+          "path": "src/sources/works/congregation-for-divine-worship-and-the-discipline-of-the-sacraments/additiones-ad-libros-liturgicos-2001/work.toml",
+          "sha256": "6d9986448f09597b5d8a83eed711f35686abf99eea27351a9664ec89902dc7bc"
+        }
+      ],
+      "limits": "Twelve earlier Collect witnesses and twelve2015 reading courses only. No target2008 body availability, calendar/status, Common choices, payloads or publication permission."
+    },
+    {
+      "id": "martha-mary-lazarus-current-addition",
+      "state": "Root source/model accepted; canonical release and actual installed checks remain.",
+      "manifest": {
+        "path": ".scratch/modern-common-appointments/martha-2021-metadata/integration-manifest.json",
+        "sha256": "42cc4284c034f21d8ce653bb2b51f8b692097631bad87878a747b4b87cf56aaa"
+      },
+      "independent_review": {
+        "path": ".scratch/modern-common-appointments/martha-2021-independent-review/review.json",
+        "sha256": "6213f68eac403e0cad5aec9e99370ec7dffacc477493278287eb4ec96fa83f31"
+      },
+      "files": [
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/work.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/work.toml",
+          "id": "work.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "c97ccd567e820eaae0b4882ee4db75d799bd84d76f46de2eb26ae8ef9296c274"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/edition.toml",
+          "id": "edition.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "68ce3786f01f4357b68f7c16343ad476151fc646c896d45286d3cd08773c095f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/artifacts/official-annex-pdf-f7820b29/artifact.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/artifacts/official-annex-pdf-f7820b29/artifact.toml",
+          "id": "artifact.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.official-annex-pdf-f7820b29",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "b6d74c3e8e4ec977378ad794caff59992feb5201546da7695bbc810f819dd334"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/artifacts/official-decree-html-7bd7579e/artifact.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/artifacts/official-decree-html-7bd7579e/artifact.toml",
+          "id": "artifact.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.official-decree-html-7bd7579e",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "818a30f638566fe04eacb6abb860a9e591133c154071d16ed62d5188bdfcbd60"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/segments/missal-formulary-pages-1-2.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/segments/missal-formulary-pages-1-2.toml",
+          "id": "segment.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.missal-formulary-pages-1-2",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "9318a212280fff23c80f301c4351da50785d95aff6095e97da098b5d507c4415"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/entrance-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/entrance-appointment.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.entrance-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "e21130e551aac5f2694a48a83f28c3cb04cc31e807229dcc912059d84528affd"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/collect-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/collect-appointment.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.collect-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "8ce022dc01260d48da3a4e15cbaec5d1325974471cd9a02161e43258cd10f691"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/offerings-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/offerings-appointment.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.offerings-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "e7e990c40d2d503860dc2b3c74d226aa54b6e1acffd25e872d2f8ff7dc53da01"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/communion-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/communion-appointment.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.communion-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "cfa56bb8c42642f960f76ba061314a11973e6c7daab67fb6564397c049c60226"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/postcommunion-appointment.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/postcommunion-appointment.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.postcommunion-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "c9025155b922e2d6115659c0f9a9b82918186b18a46fbb5cc69012ae8e53b543"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/book-boundaries.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/book-boundaries.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.book-boundaries",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "dc6b868de0213ecfc8e59ee2c31a874d50556f25cd0ff5e918a0cccae2bca48f"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/decree-calendar-and-annex-authority.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/decree-calendar-and-annex-authority.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.decree-calendar-and-annex-authority",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "3a1c626fba8d6e1d191b5c447161ba700ac26771b0215f6a24ef29f7502ae3c6"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/edition.toml",
+          "id": "edition.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "4ae14f1e721f02a21ebbc60471d68d79e2426ad383926408ccd747100793bac2"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/artifacts/official-final-texts-pdf-ae553ebc/artifact.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/artifacts/official-final-texts-pdf-ae553ebc/artifact.toml",
+          "id": "artifact.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.official-final-texts-pdf-ae553ebc",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "5d6d57886e94f002151e6b2c04b5e7c3555c19ec56b94dc6900205c7784b6f18"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/entrance-witness.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/entrance-witness.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.entrance-witness",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "9d09865b5525fbcd765b3eea04b5e54cc8aa9bc8ec9e75906744686efcfa9222"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/collect-witness.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/collect-witness.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.collect-witness",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "c422f56059d5afccc814252aa9b81a0e115ed6257a8e0cd3962a5e8b70894362"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/offerings-witness.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/offerings-witness.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.offerings-witness",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "aa9715c4266473707ad3452a5601be90f423f477ca4d0e14916d3e50c15325cd"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/communion-witness.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/communion-witness.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.communion-witness",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "b7708cff2dc42fcf94364255728136d00d2b46890ed8db1928fbfbb3aac0ac1a"
+        },
+        {
+          "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/postcommunion-witness.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2024-confirmed-us-english-formulary/passages/postcommunion-witness.toml",
+          "id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.postcommunion-witness",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "f3189872fc47539ec03221e30c1110f9591752a7b196740843ecf188add4eb18"
+        },
+        {
+          "path": "src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/work.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/work.toml",
+          "id": "work.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2024-10",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "849cc3fe9e1ddb7b9ca098a87aa78a255fc3ff342cf845cedfe9548a4490caaf"
+        },
+        {
+          "path": "src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/editions/2024-october-official-pdf/edition.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/editions/2024-october-official-pdf/edition.toml",
+          "id": "edition.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2024-10.2024-october-official-pdf",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "2c3f04ee3ff724ec66523499f559f2c29208cb633c56ab32d4ef87515eb06815"
+        },
+        {
+          "path": "src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/editions/2024-october-official-pdf/artifacts/official-pdf-f6855821/artifact.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/editions/2024-october-official-pdf/artifacts/official-pdf-f6855821/artifact.toml",
+          "id": "artifact.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2024-10.2024-october-official-pdf.official-pdf-f6855821",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "83c168d73ba0e2f73960024d329d839fb0d5a279bbc80a2f988cd3851ef14a74"
+        },
+        {
+          "path": "src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/editions/2024-october-official-pdf/passages/martha-approval-and-confirmation-report.toml",
+          "package_path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/package/src/sources/works/united-states-conference-of-catholic-bishops/divine-worship-newsletter-2024-10/editions/2024-october-official-pdf/passages/martha-approval-and-confirmation-report.toml",
+          "id": "passage.united-states-conference-of-catholic-bishops.divine-worship-newsletter-2024-10.2024-october-official-pdf.martha-approval-and-confirmation-report",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "67a8e4f064d66db803a950029551113616a05b59f84222526dc64e4afd372f4c"
+        }
+      ],
+      "calendar": {
+        "path": "src/sources/calendars/postconciliar/propers.yaml",
+        "mass": "saints-martha-mary-lazarus",
+        "node_preimage_sha256": "7f52cb446c2b4ccb69c0c617e7c56ea29b4042de9b641c13a2f248df84f08351",
+        "proposed_node_sha256": "65ba7990b273431f21c1430c8487bc7d2c25a679542ff04e8e2a33ab750ad75b",
+        "node_serialization": "UTF-8 compact sorted-key JSON with ensure_ascii=False and terminal LF",
+        "delta": ".scratch/modern-common-appointments/martha-2021-metadata/appointment-delta.json",
+        "added_proper_count": 5,
+        "readings_unchanged": true
+      },
+      "english_accounting": {
+        "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+        "file_sha256_at_preparation": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+        "proposal": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/negative-accounting-proposal.toml",
+        "target_preimages": "All five exact tuple keys absent from current sidecar; require fresh per-key absence, not whole-file hash equality.",
+        "keys": [
+          {
+            "mass": "saints-martha-mary-lazarus",
+            "form_id": "main",
+            "proper": "Entrance Antiphon",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en"
+          },
+          {
+            "mass": "saints-martha-mary-lazarus",
+            "form_id": "main",
+            "proper": "Collect",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en"
+          },
+          {
+            "mass": "saints-martha-mary-lazarus",
+            "form_id": "main",
+            "proper": "Prayer over the Offerings",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en"
+          },
+          {
+            "mass": "saints-martha-mary-lazarus",
+            "form_id": "main",
+            "proper": "Communion Antiphon",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en"
+          },
+          {
+            "mass": "saints-martha-mary-lazarus",
+            "form_id": "main",
+            "proper": "Prayer after Communion",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en"
+          }
+        ],
+        "negative_row_count": 5,
+        "territory": "Dioceses of the United States of America",
+        "confirmation_date": "2024-09-30",
+        "protocol": "431/24",
+        "approval_date_reported": "2024-06-14",
+        "approval_date_qualification": "USCCB labelled unofficial English translation of the confirmation decree, October 2024 newsletter, AP 3 / printed 39.",
+        "effective_date": null,
+        "promulgation_date": null
+      },
+      "limits": "Five text-free held-Latin appointments and five held-English negative rows, not publication of bodies. Five existing readings unchanged. U.S. English confirmation2024-09-30, effective date unestablished. No Missal Common referral."
+    },
+    {
+      "id": "loreto-current-addition-and-recovery-companion",
+      "state": "Root source/model accepted; canonical release and actual installed checks remain.",
+      "proposal": {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/loreto-structural-correction-v7.json",
+        "sha256": "7c69a2ce1fbba78db143bcad3be86c7153b20248308a43ef10da1a384b549dc1"
+      },
+      "source_model_review": {
+        "path": ".scratch/modern-common-appointments/loreto-review/source-model-review-v2.json",
+        "sha256": "0e8b098f27978802b12fab1797fe6f663edb751b16d1fb55096ba487531e8f48"
+      },
+      "independent_companion_review": {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/review.json",
+        "sha256": "4873efec98442eb60227edde3d49bcd9771203ac76b9a2870ed94f70faef631b"
+      },
+      "independent_v7_addendum": {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/v7-successor-addendum.json",
+        "sha256": "a0bd7d9b480fb587a524c041e8804934209461c6956b2a4ddb71f7ed99d03a4b"
+      },
+      "full_overlay_check": {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/overlay-validation.json",
+        "sha256": "562fbdab8f2cd6ded482173c1f4a0fade0731a021a07241747a2eca1f20c8159"
+      },
+      "recovery_check": {
+        "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/validation.json",
+        "sha256": "a96d2eb994b5b1a2e934d6340ddd59d5034264c7a4b2bd719206c59a067ab585",
+        "byte_size": 634
+      },
+      "files": [
+        {
+          "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/artifacts/official-html-9c6e1926/artifact.toml",
+          "package_path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/artifacts/official-html-9c6e1926/artifact.toml",
+          "id": "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "cabbbdd492aa3c98e381a7049cde9265a9ce6b301997c2a0d1fa61aecfc0c672"
+        },
+        {
+          "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/edition.toml",
+          "package_path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/edition.toml",
+          "id": "edition.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "79824541f32ae4a6b159cbb0a20956bd21e89ccb011512bcfc39d451a96ab0ec"
+        },
+        {
+          "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/passages/missal-appointment.toml",
+          "package_path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/passages/missal-appointment.toml",
+          "id": "passage.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.missal-appointment",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "49e4ea8727fc1c7e4c472be0dd78f48551f92658943185c18c63adef42df2679"
+        },
+        {
+          "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/passages/own-collect-held.toml",
+          "package_path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/passages/own-collect-held.toml",
+          "id": "passage.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.own-collect-held",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "e417688990ab02b5617fb51842a9c848adc4e1fd1fa7e49fa510198465225e9e"
+        },
+        {
+          "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/work.toml",
+          "package_path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/work.toml",
+          "id": "work.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019",
+          "precondition": {
+            "kind": "absent"
+          },
+          "proposed_sha256": "6137fe0354ce2312933c79ca785ccc3a835cb794e8c6e14b7ebaaaace79e6a08"
+        },
+        {
+          "path": "src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+          "package_path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/package/src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+          "proposed_sha256": "608c91f07582fe1589ac32c5ad0b79fb78c125289528cc2ecfcde50bf9ecf8d7",
+          "precondition": {
+            "kind": "absent"
+          }
+        },
+        {
+          "path": "src/sources/inventories/postconciliar-sanctoral-commons-v1.toml",
+          "package_path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/package/src/sources/inventories/postconciliar-sanctoral-commons-v1.toml",
+          "proposed_sha256": "b5dd0abf24845d3cde049156af340eded8d87eb90dfd3550bac6a8724ced76e0",
+          "preimage_sha256": "4537bdac96e547a95b84254769fe6ddfdef87c548d075186bfec51f018abbbee"
+        },
+        {
+          "path": "tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+          "package_path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/package/tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+          "proposed_sha256": "a3f3a1f61e9aa4e2faea889fb90417f103d969cc54821b1b976b6e4cb6f02639",
+          "preimage_sha256": "df2d7e29847560ab020b7143a6137947987aa5d65b483e159125a65bed2edc1d"
+        }
+      ],
+      "calendar": {
+        "path": "src/sources/calendars/postconciliar/propers.yaml",
+        "mass": "our-lady-loreto",
+        "node_preimage_sha256": "bd1623539e7540e46024e1753e6ac3595e5bdb3ec7bc9aaaad0045daf5570c0a",
+        "proposed_node_sha256": "c492a6ec51ddd34f2070f0b0aa2c8575dc7a49c15277882696d6e20113cb9857",
+        "node_serialization": "UTF-8 compact sorted-key JSON with ensure_ascii=False and terminal LF",
+        "own_role_count_before": 3,
+        "own_role_count_after": 1
+      },
+      "english_accounting": {
+        "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+        "before_exact_dictionaries": [
+          {
+            "mass": "our-lady-loreto",
+            "form_id": "main",
+            "proper": "Collect",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+            "availability": "unavailable",
+            "reason": {
+              "kind": "no-exemplar"
+            },
+            "rejected_detectors": [
+              "liturgies-net-2026-08-22"
+            ],
+            "quarantined_text_sha256": [
+              "3bd5c0268864f4c0bf43a9e84931f408f1d0db2b3a563d8b711a5491025d340f"
+            ],
+            "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. Incipit of the Latin refused here: `Deus, qui beatae Mariae Virginis domum`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+          },
+          {
+            "mass": "our-lady-loreto",
+            "form_id": "main",
+            "proper": "Prayer after Communion",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+            "availability": "unavailable",
+            "reason": {
+              "kind": "no-exemplar"
+            },
+            "rejected_detectors": [
+              "liturgies-net-2026-08-22"
+            ],
+            "quarantined_text_sha256": [
+              "6ed1f2c3878a4d1808b89bfe180527dd5bf2eb77a94379e99b274ed45f47760a"
+            ],
+            "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. One near miss was tested and refused: the 1962 index's low-sunday Postcommunion is the same oration MINUS the clause `intercedente beata Maria semper virgine`, which this calendar's Latin has. Carrying that English would be publishing a rendering that drops the only Marian words in the prayer, on a Marian day. Refused. Incipit of the Latin refused here: `Quaesumus Domine Deus noster`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+          },
+          {
+            "mass": "our-lady-loreto",
+            "form_id": "main",
+            "proper": "Prayer over the Offerings",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+            "availability": "unavailable",
+            "reason": {
+              "kind": "no-exemplar"
+            },
+            "rejected_detectors": [
+              "liturgies-net-2026-08-22"
+            ],
+            "quarantined_text_sha256": [
+              "15dd32da4b3ae9c62a4367d728e4a66ddd03c0242a45c06f40e1ccc527cc809c"
+            ],
+            "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. Incipit of the Latin refused here: `Accipe, quaesumus Domine`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+          }
+        ],
+        "after_exact_dictionaries": [
+          {
+            "mass": "our-lady-loreto",
+            "form_id": "main",
+            "proper": "Collect",
+            "cycle": "all",
+            "occurrence": 1,
+            "lang": "en",
+            "extent": "body",
+            "availability": "unavailable",
+            "reason": {
+              "kind": "no-exemplar"
+            },
+            "note": "The official 2019 bulletin supplies the Latin own Collect, complete as printed with its abbreviated conclusion cue. It supplies no English prayer witness. No acquired qualified English witness or independently prepared study translation is established here, so English remains no-exemplar. The prior historical Holy House refusal dictionaries and fingerprints remain verbatim in the superseded receipt. No complete spoken Latin ending is reconstructed."
+          }
+        ],
+        "positive_entries_changed": 0,
+        "row_delta": -2,
+        "english_completions": 0
+      },
+      "latin_tombstones": {
+        "inventory": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+        "inventory_sha256": "117769a895aacabe098a438fccf19f1a6ae7fedd16f9c867374c176e0020ed38",
+        "entries": [
+          {
+            "mass": "our-lady-loreto",
+            "form": "",
+            "proper": "Collect",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1,
+            "body_status": "removed",
+            "text_sha256": "b147c63b74abe94a08adcc610ef2efc1ac0d00a9e487da6a0935f35184df39f2"
+          },
+          {
+            "mass": "our-lady-loreto",
+            "form": "",
+            "proper": "Prayer after Communion",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1,
+            "body_status": "removed",
+            "text_sha256": "1ea4c44f1a080c4027988e2bd1614da7fdd1cc93d7cd9a85f56a912b2fdde140"
+          },
+          {
+            "mass": "our-lady-loreto",
+            "form": "",
+            "proper": "Prayer over the Offerings",
+            "course": "",
+            "cycle": "",
+            "occurrence": 1,
+            "body_status": "removed",
+            "text_sha256": "99158fc1f46e0666298bfbc120f85449b990c48c9d590acfcbe54f745abddb13"
+          }
+        ],
+        "disposition": "Preserve verbatim as historical removals, not acquired2019body evidence; no additional Latin completion or reclassification."
+      },
+      "limits": "Retire unsupported historical own-prayer seats, preserve exact old entry/refusals and all three Latin removal tombstones. One2019 own Collect held privately; English remains no-exemplar. Broader BMV direction is distinct from the stored antiphon subset. Separate OLM reading gap; no default, body, whole2008 or expanded-ending claim.",
+      "integration_dependency": "Install the combined three-file recovery successor with Loreto source/model dependencies only after separate Root CODE acceptance. All 13 owning tests and 15 independent controls pass; no inherited failures or exclusions remain. All 168 rows and eight quarantine flags preserved.",
+      "superseded_recovery_manifest": {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/manifest.json",
+        "sha256": "d0608ccfb054ee45511ef23d5a6febb94f1bd580eb9ad531fce9f95c19cb06b5"
+      },
+      "recovery_manifest": {
+        "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/manifest.json",
+        "sha256": "5e48009a117f818088ecd53292adb8a860496806a03fc96831830dc70b35ac40",
+        "byte_size": 7705
+      },
+      "independent_semantic_review": {
+        "path": ".scratch/modern-common-appointments/common-recovery-semantic-fix/independent-review/review.json",
+        "sha256": "fde02eae2e4bf3797554efc39a5b42b7e7394e8327f48c812073b8b25f466f90",
+        "byte_size": 4879
+      }
+    }
+  ],
+  "fresh_guard_summary": {
+    "source_and_companion_paths": 88,
+    "unique_paths": 88,
+    "all_absences_preimages_and_package_hashes_match": true,
+    "both_calendar_node_preimages_match": true,
+    "martha_english_keys_absent": 5,
+    "loreto_old_english_rows_match": 3,
+    "calendar_sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+    "english_sidecar_sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+    "owning_recovery_tests": 13,
+    "recovery_failures": 0,
+    "recovery_errors": 0,
+    "recovery_baseline_exclusions": 0,
+    "independent_recovery_controls": 15
+  },
+  "integration_order": [
+    "Allocate one source window after the current product record finishes; recheck every exact guard.",
+    "Adopt durable metadata-only reviews and source records; apply only declared node/English-row changes with exact historical retention.",
+    "Install the reviewed combined three-file recovery successor with its source/model dependencies after Root CODE acceptance. Preserve all quarantine flags and historical dictionaries.",
+    "Run actual full source-library, calendar/English accounting and root-owned reader/producer/source-epoch closure. No source-ready receipt alone grants activation or text publication."
+  ],
+  "remaining_dependencies": [
+    "No complete authenticated2008 Common book is held; earlier witnesses and finite corrections are not whole-body or whole-form proof.",
+    "These cohorts do not publish new Latin or English prayer bodies or expand conclusion cues.",
+    "Martha U.S. English effective/promulgation date remains unestablished.",
+    "The full ordered289-option Common lectionary inventory remains restricted scratch under the existing publication disposition."
+  ],
+  "supporting_mature_packages": [
+    {
+      "path": ".scratch/modern-common-appointments/source-relation-tooling/manifest.json",
+      "sha256": "9aa607fc1426e91b8370b911a1950a8b10ee6aae4594ab999a6cf7a8e7365c63"
+    },
+    {
+      "path": ".scratch/modern-common-appointments/official-common-quotes/metadata-manifest.json",
+      "sha256": "a95103a2c5528e42cd5d56bc7a9dd2a4c85e0a05fed632f2e36c0b9a7ff7f1a3"
+    },
+    {
+      "path": ".scratch/modern-common-appointments/common-universe/p961-review/review.json",
+      "sha256": "3e62a9c03644d8ba4d6f3f92a30d4a4533fcd3995f7491e35ed8b483ffc954aa"
+    },
+    {
+      "path": ".scratch/modern-common-appointments/five-common-cue-relations/review.json",
+      "sha256": "a957245b50de123e3435e02541cdb28f4002a8c6cc7defd7b21240ea18b5488d"
+    },
+    {
+      "path": ".scratch/modern-common-appointments/three-common-variant-relations/manifest.json",
+      "sha256": "6df4cf7de4d41808f69d34ef389cf60e945f1f123e014dd7161e0d0587745c9a"
+    }
+  ],
+  "broader_source_queue": {
+    "path": ".scratch/modern-common-appointments/next-cohorts.json",
+    "sha256": "b618cca8e57ae5e6a75d20a2e54f43d12e6c75461ce22d0b1c9af2427bb7996e"
+  },
+  "canonical_changes_by_this_resume": false,
+  "supersedes_index": {
+    "path": ".scratch/modern-common-appointments/ready-cohorts-2026-11-13.json",
+    "sha256": "fd009e44a6205399eb37bac70354ed0836ddf9a1759d26e28e019b4f3d6df2eb",
+    "byte_size": 90627
+  },
+  "root_source_model_acceptance": {
+    "path": ".scratch/root/common-addition-metadata-admission.json",
+    "sha256": "505b625ea5501c0a2fbcbcd04bd53a7d7ce5b10c31c6c2f2b52e9948c0206549",
+    "byte_size": 3082
+  },
+  "recovery_code_adoption": "Awaiting separate Root CODE decision; independent review complete."
+}

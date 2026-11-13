@@ -1,0 +1,670 @@
+{
+  "schema": "triptych-independent-merged-nine-English-binding-review/v1",
+  "recorded_at": "2026-11-12T20:00:18.767337+00:00",
+  "reviewer": "/root/roman_sources/six_english_review",
+  "state": "completed-final-nine-metadata-binding-audit",
+  "inputs": [
+    {
+      "path": ".scratch/roman-sources/combined-nine/install-plan-v3.json",
+      "sha256": "5ea0888075d6258d067d403442d3fcf9bf678bcf2b84a61c95c7fd10d71220fe",
+      "bytes": 252486
+    },
+    {
+      "path": ".scratch/roman-sources/combined-nine/root-merit-inputs-v2.json",
+      "sha256": "b96a6e068cce278ff755fedc6aecd806850e25d952ad6e4790626598df1442ab",
+      "bytes": 108796
+    }
+  ],
+  "accepted_receipts": [
+    {
+      "path": ".scratch/roman-sources/next-twelve-english-review/review.json",
+      "sha256": "64030738f276146b90db2fe0cc65e038786564289a4e0cd7230dfedf7c65218b",
+      "bytes": 67810
+    },
+    {
+      "path": ".scratch/roman-sources/next-twelve-english-review/saints-two-final-binding.json",
+      "sha256": "411b301e2b32c6ada754d4b6e773ccc21198a4e472c63103133f1b444c60a755",
+      "bytes": 28460
+    }
+  ],
+  "accepted_lane_plans": [
+    {
+      "path": ".scratch/roman-sources/gf-first-second-merits/install-plan.json",
+      "sha256": "a03d0c95ce29fe45d0119558a0b4c1c0bb867ac9e7b6a75ebd61fa3567bbd1e1",
+      "bytes": 45044
+    },
+    {
+      "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+      "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+      "bytes": 77804
+    },
+    {
+      "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/install-plan.json",
+      "sha256": "47f93c8d110017ae1369bb07d053a263e381156b3b754a6da661749b442d665b",
+      "bytes": 54804
+    }
+  ],
+  "summary": {
+    "identities_checked": 9,
+    "accepted_bindings": 9,
+    "required_revisions": 0,
+    "English_entry_change": "translation_review only",
+    "translation_review_repeated": false,
+    "publication_adoption": null
+  },
+  "scope": "Bounded final English metadata audit against prior exact-body and final carrier/row acceptances. Full new-proper and Latin-provenance objects, English translations including actions, and Latin source bindings remain identical to the accepted lane objects. Within each English entry, only translation_review changes. Adjacent integration metadata is distinguished from the English-entry comparison.",
+  "cases": [
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "First Prayer after Communion",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/gf-first-second-merits/install-plan.json",
+        "sha256": "a03d0c95ce29fe45d0119558a0b4c1c0bb867ac9e7b6a75ebd61fa3567bbd1e1",
+        "source_review": {
+          "path": ".scratch/roman-sources/gf-first-second-merits/source-review.json",
+          "sha256": "739a3ec1f864aa415e3f72ab5c31f70222c979a6ffa460fb7892dac0b5297683",
+          "independent": false
+        }
+      },
+      "latin_sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+      "english_sha256": "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528",
+      "new_proper_sha256": "cfe47d637caf1c985ec196406f81d38b195fb2ec706e9b745d5b7396460832e4",
+      "latin_provenance_sha256": "cadd1b6e4ce5170710fdf4a11ec661ea5a2c40f66fb274d2973a2f0ff04a0845",
+      "lane_original_English_entry_hashes": {
+        "complete_English_entry_sha256": "ef9c5f0fb671b5ae6baea6434c6f2b802481a01d4599c5c0bbdaff9a304f9da5"
+      },
+      "merged_English_entry_sha256": "12e3f0df49d8e3d45f4663fb5714ca386afa1dd29654dacbe26c6d284c948bd9",
+      "current_alias_fields": {
+        "complete_English_entry_sha256": "12e3f0df49d8e3d45f4663fb5714ca386afa1dd29654dacbe26c6d284c948bd9",
+        "final_english_entry_sha256": "12e3f0df49d8e3d45f4663fb5714ca386afa1dd29654dacbe26c6d284c948bd9"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": false,
+      "original_translation_review": null,
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112-d0f0e56b",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-first-second-antecedents-20261112-1fc31f67",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"
+      ],
+      "unchanged_text_structure": {
+        "latin": {
+          "text_sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+          "checked": "Complete target image collation at200/400dpi on2026-11-12; exact R. marker is nonspoken and following Amen spoken.",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 261,
+              "text": "R."
+            }
+          ]
+        },
+        "english": {
+          "text_sha256": "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528",
+          "checked": "Original study English of the exact source-checked target Latin; complete same-Christ conclusion retained; R. nonspoken and following Amen spoken.",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 266,
+              "text": "R."
+            }
+          ]
+        }
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-first-after-communion-qualified-20261112-d0f0e56b/latin.txt",
+        "candidate_path": ".scratch/roman-sources/gf-first-second-merits/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-first-after-communion-qualified-20261112-d0f0e56b/latin.txt",
+        "sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18"
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Second Prayer after Communion",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/gf-first-second-merits/install-plan.json",
+        "sha256": "a03d0c95ce29fe45d0119558a0b4c1c0bb867ac9e7b6a75ebd61fa3567bbd1e1",
+        "source_review": {
+          "path": ".scratch/roman-sources/gf-first-second-merits/source-review.json",
+          "sha256": "739a3ec1f864aa415e3f72ab5c31f70222c979a6ffa460fb7892dac0b5297683",
+          "independent": false
+        }
+      },
+      "latin_sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+      "english_sha256": "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84",
+      "new_proper_sha256": "5adb7bfceeb40b590fc234491ad009bb2ffa0c058c9291e4f929fac05c3f755a",
+      "latin_provenance_sha256": "32cc1843e05943b94f19225da47b0c4522518a1490e3c71624b847efa3080687",
+      "lane_original_English_entry_hashes": {
+        "complete_English_entry_sha256": "b843e081a15ab6826c1e41129f80a5a5ff18bdc09be728562a11c089104bdf72"
+      },
+      "merged_English_entry_sha256": "576fc3431cbedbed9f7cc6d9020a1ffa8a983121d41ad3d66f28f223a21cbd55",
+      "current_alias_fields": {
+        "complete_English_entry_sha256": "576fc3431cbedbed9f7cc6d9020a1ffa8a983121d41ad3d66f28f223a21cbd55",
+        "final_english_entry_sha256": "576fc3431cbedbed9f7cc6d9020a1ffa8a983121d41ad3d66f28f223a21cbd55"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": false,
+      "original_translation_review": null,
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112-9330da55",
+        "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-first-second-antecedents-20261112-1fc31f67",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"
+      ],
+      "unchanged_text_structure": {
+        "latin": {
+          "text_sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+          "checked": "Complete target image collation at200/400dpi on2026-11-12; exact R. marker is nonspoken and following Amen spoken.",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 231,
+              "text": "R."
+            }
+          ]
+        },
+        "english": {
+          "text_sha256": "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84",
+          "checked": "Original study English of the exact source-checked target Latin; complete same-Christ conclusion retained; R. nonspoken and following Amen spoken.",
+          "actions": [
+            {
+              "kind": "rubric",
+              "offset": 255,
+              "text": "R."
+            }
+          ]
+        }
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-second-after-communion-qualified-20261112-9330da55/latin.txt",
+        "candidate_path": ".scratch/roman-sources/gf-first-second-merits/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-second-after-communion-qualified-20261112-9330da55/latin.txt",
+        "sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d"
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Collect (Altera oratio)",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+        "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+        "source_review": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+          "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+        }
+      },
+      "latin_sha256": "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5",
+      "english_sha256": "c43d59ab7ef49dd5f9b9af4952818cdedbf90b63cf789d10cc1e4db1a72fef72",
+      "new_proper_sha256": "2a9eb4623a02a367223518e4d25065f0059fc467e0bfc89f691872508bd8c80e",
+      "latin_provenance_sha256": "071c4c0e18f641a0fba1e0c989823f1b11fa74142a73dd87b0a81fbda3be5513",
+      "lane_original_English_entry_hashes": {
+        "english_entry_sha256": "3fcce2660519e02407e78ce4f219ba4490a041ed72fdace6238fbdb9308f82aa"
+      },
+      "merged_English_entry_sha256": "4aabac7b77a432ed413de48308cbefed11a3d7c2657dbe19ef13feb41d18d264",
+      "current_alias_fields": {
+        "english_entry_sha256": "4aabac7b77a432ed413de48308cbefed11a3d7c2657dbe19ef13feb41d18d264",
+        "final_english_entry_sha256": "4aabac7b77a432ed413de48308cbefed11a3d7c2657dbe19ef13feb41d18d264"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": true,
+      "original_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-common-palm/source-and-english-review.json",
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-singular",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-singular-1cf945da",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"
+      ],
+      "unchanged_text_structure": {
+        "latin": null,
+        "english": null
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-collect-singular-1cf945da/latin.txt",
+        "candidate_path": ".scratch/roman-sources/common-palm-merits/final-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-collect-singular-1cf945da/latin.txt",
+        "sha256": "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5",
+        "preimage": null
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Collect (Altera oratio, in plurali)",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+        "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+        "source_review": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+          "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+        }
+      },
+      "latin_sha256": "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e",
+      "english_sha256": "a408bbaeb0aba387aea72db613abff2b6848e6150e8693ae8f6aea5aa9b64ccd",
+      "new_proper_sha256": "e7328c8eb1c9857223acc0013e86961ce624db982e9dfeeafb81557e76250550",
+      "latin_provenance_sha256": "72475f08a9a75a2693a6fd47a7772c81425ccee6e3e8b0f7131ce78cac0df49e",
+      "lane_original_English_entry_hashes": {
+        "english_entry_sha256": "55bb9a0a4dd6c2a05b96e104f7167456e1e02d34612f8401ab58e992cbdf56d9"
+      },
+      "merged_English_entry_sha256": "1319635ecc05b5caf7da550c654f5f5260392b3c9c9eaddd430d62ab70a2ca92",
+      "current_alias_fields": {
+        "english_entry_sha256": "1319635ecc05b5caf7da550c654f5f5260392b3c9c9eaddd430d62ab70a2ca92",
+        "final_english_entry_sha256": "1319635ecc05b5caf7da550c654f5f5260392b3c9c9eaddd430d62ab70a2ca92"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": true,
+      "original_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-common-palm/source-and-english-review.json",
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-plural",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-plural-73e57cb3",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"
+      ],
+      "unchanged_text_structure": {
+        "latin": null,
+        "english": null
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-collect-plural-73e57cb3/latin.txt",
+        "candidate_path": ".scratch/roman-sources/common-palm-merits/final-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-collect-plural-73e57cb3/latin.txt",
+        "sha256": "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e",
+        "preimage": null
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Secret (Altera secreta)",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+        "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+        "source_review": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+          "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+        }
+      },
+      "latin_sha256": "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86",
+      "english_sha256": "a0e9e1cd055d852590e8c62df914e45558f83569d2ff051c9ceca20cc3ab7a3a",
+      "new_proper_sha256": "e33b179beb6c99824d7441efeb09673dd692e11e32ddd0d5298dd8c3424e318c",
+      "latin_provenance_sha256": "b7d676480d1a68b5ca12c3f7b188d8070125d28cf256e6d96189d9da82a376a1",
+      "lane_original_English_entry_hashes": {
+        "english_entry_sha256": "e12ce415ece71e5ccb17ba0306bcb98e8f638324a8744c0eea1b8db6c781371b"
+      },
+      "merged_English_entry_sha256": "f8f401ee824333f48c22b79c602b4c7163853ca243fc8b10a74122e96b1dce2d",
+      "current_alias_fields": {
+        "english_entry_sha256": "f8f401ee824333f48c22b79c602b4c7163853ca243fc8b10a74122e96b1dce2d",
+        "final_english_entry_sha256": "f8f401ee824333f48c22b79c602b4c7163853ca243fc8b10a74122e96b1dce2d"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": true,
+      "original_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-common-palm/source-and-english-review.json",
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-secret-a5ad120a",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-secret-munera-antecedent-20261112",
+        "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.common-secret-faith-peace-antecedent-20261112"
+      ],
+      "unchanged_text_structure": {
+        "latin": null,
+        "english": null
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-secret-a5ad120a/latin.txt",
+        "candidate_path": ".scratch/roman-sources/common-palm-merits/final-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-secret-a5ad120a/latin.txt",
+        "sha256": "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86",
+        "preimage": null
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion (Altera postcommunio)",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+        "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+        "source_review": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+          "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+        }
+      },
+      "latin_sha256": "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980",
+      "english_sha256": "927b5d3a21074a0c98c877986aa69df09cf917253024971c26bf659c70002de6",
+      "new_proper_sha256": "d56d51cb3e2862549f2490cb91e579375213dff8b5359fc01b64a90a985a374b",
+      "latin_provenance_sha256": "ce73948fb6a14841ac3dc32467e31b6e534f0c637adff9f4454aeb3bb0496129",
+      "lane_original_English_entry_hashes": {
+        "english_entry_sha256": "d94a7eb9ad9ac50300846f1aea802b0cb151cfd749e9514478eaad091ca450bb"
+      },
+      "merged_English_entry_sha256": "4f61f4a08c6fa202344edd14df0c1eb1ac9c434a87a3b8ea9ecb49b652dbcc5d",
+      "current_alias_fields": {
+        "english_entry_sha256": "4f61f4a08c6fa202344edd14df0c1eb1ac9c434a87a3b8ea9ecb49b652dbcc5d",
+        "final_english_entry_sha256": "4f61f4a08c6fa202344edd14df0c1eb1ac9c434a87a3b8ea9ecb49b652dbcc5d"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": true,
+      "original_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-common-palm/source-and-english-review.json",
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-singular",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-singular-0f6aba28",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-pastor-antecedent-20261112"
+      ],
+      "unchanged_text_structure": {
+        "latin": null,
+        "english": null
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-postcommunion-singular-0f6aba28/latin.txt",
+        "candidate_path": ".scratch/roman-sources/common-palm-merits/final-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-postcommunion-singular-0f6aba28/latin.txt",
+        "sha256": "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980",
+        "preimage": null
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion (in plurali)",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+        "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+        "source_review": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+          "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+        }
+      },
+      "latin_sha256": "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb",
+      "english_sha256": "0b114210b02f860463a3d31a346b2abdcdc576efe0d19ed4c1f5d444621ad54f",
+      "new_proper_sha256": "cc811bf67f940a533e856f1e1be966e7e9b935a1dcf8888838858281040473e4",
+      "latin_provenance_sha256": "62d135941434b1972184f6ad4f40f17d0dce44078ea8c99826c0c04da57784c5",
+      "lane_original_English_entry_hashes": {
+        "english_entry_sha256": "0d6b3ef418e3afc293ae8dad78de18006c67545a561bc4c54f53f3993f010188"
+      },
+      "merged_English_entry_sha256": "a5df2aed39f79dc3f22f2fda256b92fe03ba077645f857a3672bb8f18c5cc39c",
+      "current_alias_fields": {
+        "english_entry_sha256": "a5df2aed39f79dc3f22f2fda256b92fe03ba077645f857a3672bb8f18c5cc39c",
+        "final_english_entry_sha256": "a5df2aed39f79dc3f22f2fda256b92fe03ba077645f857a3672bb8f18c5cc39c"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": true,
+      "original_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-common-palm/source-and-english-review.json",
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-plural",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-plural-b9e6e57f",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112",
+        "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-pastor-antecedent-20261112"
+      ],
+      "unchanged_text_structure": {
+        "latin": null,
+        "english": null
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-postcommunion-plural-b9e6e57f/latin.txt",
+        "candidate_path": ".scratch/roman-sources/common-palm-merits/final-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-common-pontiff-five/artifacts/pontiff-altera-postcommunion-plural-b9e6e57f/latin.txt",
+        "sha256": "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb",
+        "preimage": null
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/install-plan.json",
+        "sha256": "47f93c8d110017ae1369bb07d053a263e381156b3b754a6da661749b442d665b",
+        "source_review": null
+      },
+      "latin_sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+      "english_sha256": "e52ebe481515425327be38e0eb18351cbb183f82c4c244cc86678dc2022a327e",
+      "new_proper_sha256": "b1d010da3ef61435e55e00cecbce931cb081ef333a48bce851346680b24b0dea",
+      "latin_provenance_sha256": "b509c815e139214138f3db6d3ad54c59521d7e56db9dd7b0bda1943e6ae40716",
+      "lane_original_English_entry_hashes": {
+        "english_entry_sha256": "284469bbe63de85a4fd48d00db5eae47248f6ddf70d2e9cf7ab41382722189f4"
+      },
+      "merged_English_entry_sha256": "ec82ef4c903b8ed153dcdb6dbd4ee3e7c621f42a4d3ea3be0e15ce1418bb0afe",
+      "current_alias_fields": {
+        "english_entry_sha256": "ec82ef4c903b8ed153dcdb6dbd4ee3e7c621f42a4d3ea3be0e15ce1418bb0afe",
+        "final_english_entry_sha256": "ec82ef4c903b8ed153dcdb6dbd4ee3e7c621f42a4d3ea3be0e15ce1418bb0afe"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": false,
+      "original_translation_review": null,
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret-fefc86d1",
+        "artifact.society-of-jesus.acta-romana-societatis-iesu.volume-iii-bound.acta1923-bellarmine-secret-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-john-berchmans-postcommunion-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-alphonsus-collect-20261112"
+      ],
+      "unchanged_text_structure": {
+        "latin": null,
+        "english": null
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/bellarmine-secret-fefc86d1/latin.txt",
+        "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/bellarmine-secret-fefc86d1/latin.txt",
+        "sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+        "preimage": null
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "assumptione-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "verdict": "accept-merged-English-metadata-binding",
+      "lane_plan": {
+        "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/install-plan.json",
+        "sha256": "47f93c8d110017ae1369bb07d053a263e381156b3b754a6da661749b442d665b",
+        "source_review": null
+      },
+      "latin_sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+      "english_sha256": "571ec8706ad543253335455e93fd2fe5dbcf16e6084a14fd72778d573b9f5f36",
+      "new_proper_sha256": "d8c437b7a08ef62f3fbbcde3b7d620ec5bbf5b8c1bd4b7de376758bb0ebce88b",
+      "latin_provenance_sha256": "9d879e763efaa3d81b098bac253ca73d5df30ef009bbd42f68938d6831107778",
+      "lane_original_English_entry_hashes": {
+        "english_entry_sha256": "d6968f804809a19fc1f78590360604136e3f7d35eab56fb582d2920d97b92d64"
+      },
+      "merged_English_entry_sha256": "e126ec7584d5feaa20b9f3c11716d188fbc17eccc600a2d2ca4cfa7b6eccd0e0",
+      "current_alias_fields": {
+        "english_entry_sha256": "e126ec7584d5feaa20b9f3c11716d188fbc17eccc600a2d2ca4cfa7b6eccd0e0",
+        "final_english_entry_sha256": "e126ec7584d5feaa20b9f3c11716d188fbc17eccc600a2d2ca4cfa7b6eccd0e0"
+      },
+      "changed_English_entry_fields": [
+        "translation_review"
+      ],
+      "original_translation_review_present": false,
+      "original_translation_review": null,
+      "merged_translation_review": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion-23b359b9",
+        "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-monday-postcommunion-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-holy-shroud-collect-20261112",
+        "artifact.society-of-jesus.acta-romana-societatis-iesu.volume-iii-bound.acta1923-bellarmine-collect-20261112"
+      ],
+      "unchanged_text_structure": {
+        "latin": null,
+        "english": null
+      },
+      "unchanged_carrier": {
+        "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/assumption-postcommunion-23b359b9/latin.txt",
+        "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/assumption-postcommunion-23b359b9/latin.txt",
+        "sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+        "preimage": null
+      },
+      "root_merit_input_fields_match": true,
+      "required_revisions": []
+    }
+  ],
+  "untranslated_preimage_hash_alias_correction": {
+    "checked": true,
+    "cases": [
+      {
+        "identity": [
+          "good-friday",
+          "main",
+          "First Prayer after Communion",
+          "all",
+          1
+        ],
+        "retained_original_list_hashes": {
+          "old_untranslated_parsed_sha256": "196d661d1c027307b0fbe78cb526179e6b84218fe6635b2c13aefca9d4a9720b"
+        },
+        "current_object_sha256": "f334a84718a54c93a7bf0d3a78a179ca09c4a86154303a99bcfd75afbd4c7c1b"
+      },
+      {
+        "identity": [
+          "good-friday",
+          "main",
+          "Second Prayer after Communion",
+          "all",
+          1
+        ],
+        "retained_original_list_hashes": {
+          "old_untranslated_parsed_sha256": "c2e551f60bc0931fd49ee81391e359c80a2ada2d841e4e35614df98406b32531"
+        },
+        "current_object_sha256": "1a940157c75c18e244bab3896b7311ba539d55a40ae55ef756b619a0b704b89c"
+      },
+      {
+        "identity": [
+          "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "retained_original_list_hashes": {
+          "old_untranslated_sha256": "b0ace9e78d3bb856a05f230a0108313f0a22286149bf92b326fb6279dee339fb"
+        },
+        "current_object_sha256": "65da56f82d02cc6ec94000360899896806550828dd241b345c6df929ccac19ef"
+      },
+      {
+        "identity": [
+          "assumptione-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "retained_original_list_hashes": {
+          "old_untranslated_sha256": "f5a1c728631757a13dcbf9a4a332ec11966c076ac4dbbaaeda2700fa83ce16b2"
+        },
+        "current_object_sha256": "16939ab4163d096b1edf1c9c7ac05d5df3d887841e49a9776027dfa1d771074f"
+      }
+    ],
+    "scope": "The four original singleton-list hashes remain explicitly labelled as lane aliases; current adjacent object hashes were independently recomputed. No translation change."
+  },
+  "proposed_review_locator": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json",
+  "locator_boundary": "The unified path is proposed metadata for the actual Root receipt, still pending at assignment. This audit does not assert that a Root adoption receipt exists there and does not activate publication.",
+  "source_boundary": "The merged source-file path/hash map equals the union of the accepted lane plans (87 files). The nine existing target carriers were checked for exact body equality. Source factual closure, chronology and rights assessment were not repeated.",
+  "root_merit_inputs_boundary": "Verified all nine complete Latin/English strings, body hashes, final English-entry hashes, proper/provenance hashes, controller passage/payload bindings, lane-plan references and proposed review locator against the final merged plan. Whole-expression merits and authority remain Root-owned.",
+  "excluded_identities": [
+    [
+      "palm-sunday",
+      "main",
+      "Oration to Conclude the Procession",
+      "all",
+      1
+    ],
+    [
+      "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+      "main",
+      "Postcommunion",
+      "all",
+      1
+    ]
+  ],
+  "hash_convention": "Text hashes cover exact UTF-8 bytes including one terminal LF. Complete object hashes use compact sorted-key JSON with ensure_ascii=False.",
+  "canonical_writes": false,
+  "previous_receipts_unchanged": true
+}

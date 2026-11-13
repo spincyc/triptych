@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin"
+edition_id = "edition.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Proposed project editorial carrier only; no exclusive right is claimed in received Latin. Publication of its complete qualified-nonoriginal-adaptation requires the separately adopted exact ordinarytime-ot11-finite-latin-study-20261112 owner/body/proof/surface tuple. This scratch record supplies no permission and must not be installed before an independently reviewed closed gate recognizes it."
+rights_jurisdiction = "United States"
+provenance = "Exact complete Pustet1862 prayer with the two disclosed finite edits, independently complete Lasance1945 short formula and marked response, compared only with secondarydigital2002. Root Latin merits and reader qualification review pending."
+retrieved = "2026-11-12"
+sha256 = "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f"
+byte_size = 169
+path = "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/latin.txt"
+indexable = true
+encoding = "utf-8"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb", "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"]
+transformation = "Remove the parenthetic old quaesumus, which does not change the predicate or petition. Move old in tua Ecclesia to in Ecclesia tua; retain the same noun and possessive, case and referent. Normalize accents/ligatures and punctuation as explicitly declared; no new petition word supplied. Replace the printed old Per Dominum cue with independently witnessed complete short conclusion and separately marked response; this is a declared source assembly, not a claim of contiguous old printing."
+notes = "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation. Proposal only; project-created does not independently clear the underlying changed Latin expression."

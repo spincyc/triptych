@@ -1,0 +1,29 @@
+{
+  "schema": "triptych-root-notes-digest-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "status": "accepted-metadata-only-for-next-source-window",
+  "proposal_sha256": "c56511e6b5398470cc6f0d9b3f63aa9526456898abdc158d29e69d358970510e",
+  "checks": "Read all three proposed full old/new dictionaries and independently rehashed unchanged artifact bytes, exact physical line selections, canonical calendar bodies and Latin ledger hashes; only stale notes digest strings may change. No new source collation or permission finding.",
+  "changes": [
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/octava-nativitatis-domini-collect.toml",
+      "before_file_sha256": "82614af148789445fee812a37e29eea68899dc1bbcce245f86da611a18725f71",
+      "after_file_sha256": "da1a5546917e342799a5e669e2ab833156c5af135c2f3e25a51b20d2c2a0f096",
+      "verified_current_body_sha256": "9cddb71fbf9eb08abc14814574aef82e7939fde5068551293d53dbc7ff8d6589"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/missa-de-s-maria-in-sabbato-4-collect.toml",
+      "before_file_sha256": "49b0a1528eb7cf2f030efb841adf746bf7004f2939d07d34edea908383d49675",
+      "after_file_sha256": "05603574d7a2f620c44f31af20b3a0e324b71ef2bdbddf1817b8b158431303f0",
+      "verified_current_body_sha256": "ae2e3d4ba13f641b171cc893a79f28f69a4c83700fd2aac9c3fe3c691b9769d6"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/comm-ss-machabaeorum-martyrum-collect.toml",
+      "before_file_sha256": "fa5ea25cb27f24e2e8e8fa6dd3561f84a21f52ec8cf869ff3f5dd567952a2971",
+      "after_file_sha256": "932c6b96f03254e834559169c7bfc14f5ee68179301558aae410958c15437342",
+      "verified_current_body_sha256": "e98bddf749de3b3bf53944e05faf649913f238257e13bc54ce175db6f753df7d"
+    }
+  ],
+  "canonical_changes": false
+}

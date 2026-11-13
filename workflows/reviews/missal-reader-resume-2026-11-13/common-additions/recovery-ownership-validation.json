@@ -1,0 +1,22 @@
+{
+  "schema": "triptych.common-recovery-inventory-ownership-check.v1",
+  "path": "src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+  "candidate_sha256": "608c91f07582fe1589ac32c5ad0b79fb78c125289528cc2ecfcde50bf9ecf8d7",
+  "actual_source_library_sha256": "963a9ac27c43d0ab93c568271401a865d5252854343e059d2c4208787fefb450",
+  "checks": [
+    "source-library::_record_manifest_paths",
+    "source-library::_validate_source_tree"
+  ],
+  "candidate_tree_errors": [],
+  "not_a_source_manifest": true,
+  "content_owner": "tools/tests/test_postconciliar_sanctoral_commons_inventory.py::load_correction_evidence / _reviewed_correction_keys",
+  "ownership_rule": "Existing src/sources/inventories/*.toml audit-inventory ownership at tools/source-library:2325; deliberately separate from bibliographic source manifest schemas. No new source-library record class is declared.",
+  "negative_control": {
+    "mutation": "Same bytes at an unowned .json inventory path in a separate scratch source tree",
+    "errors": [
+      "src/sources/inventories/postconciliar-common-recovery-corrections-v1.json: file is outside the source-library schema and has no artifact owner"
+    ]
+  },
+  "scope": "Actual candidate source-tree ownership validation and exact content-owner tests; not complete graph validation of this deliberately partial fixture.",
+  "canonical_writes": false
+}

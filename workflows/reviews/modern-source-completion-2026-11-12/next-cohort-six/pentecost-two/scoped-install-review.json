@@ -1,0 +1,338 @@
+{
+  "schema": "triptych-independent-extended-pentecost-collect-recipient-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "/root/modern_sources/ordinary_review",
+  "verdict": "accept-two-source-qualified-extended-pentecost-study-english-recipients",
+  "scope": "Exactly Collect (before the readings) and Collect (after Gloria), pentecost/extended-vigil/all/occurrence1. The other two proposal rows, Latin publication, full target-book identity and whole-form completion are outside this acceptance.",
+  "proposal": {
+    "path": ".scratch/modern-partition-temporal/install-proposal-v2/proposal.json",
+    "sha256": "226e03be1090bd57769691c129a2e53e155dfb0afee66c26930ed4a60fdc3ab9",
+    "scoped_files": [
+      {
+        "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-before-readings-appointment.toml",
+        "sha256": "ca9ceee7bc3667aac1a8e33ae297cad6249855db7c88fe022e2662980de4da08",
+        "bytes": 1339
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-before-readings-comparison.toml",
+        "sha256": "07f91159cc8060789a71a3d23fec67e90c6e8bea45c688fafc8cd8183b8350b3",
+        "bytes": 1338
+      },
+      {
+        "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-after-gloria-appointment.toml",
+        "sha256": "462a97ba3de2beb0ee35675059b4f44ba7a51df6931f37ea3fa52b84ee78575b",
+        "bytes": 1318
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-after-gloria-comparison.toml",
+        "sha256": "9df27aec421cfcd6e08fb0a5bc89c8c524b98a81e7115d6d84765a381a7b2824",
+        "bytes": 1317
+      },
+      {
+        "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/work.toml",
+        "sha256": "d37d7dd5f9ad3810621e5e53f61d75b60e76d69fe0b06a6fc6fd9b531c32aff4",
+        "bytes": 726
+      },
+      {
+        "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/edition.toml",
+        "sha256": "bbfa5d11fad9f5788b850f04988ef7d009a7e81e7409f1cb95641051ea0bf841",
+        "bytes": 624
+      },
+      {
+        "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/text.tsv",
+        "sha256": "67971f96d3215742bf024b22413f3a0cc5678baed09c8431595beff8e09c77d8",
+        "bytes": 696
+      },
+      {
+        "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/artifact.toml",
+        "sha256": "741c8ebdf7efdad4f932168a84fc2fd22bf90248e0fb62c2ea48d42ca710ed7c",
+        "bytes": 1770
+      },
+      {
+        "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/before-readings.toml",
+        "sha256": "31b44fa56a876ba23aed717cbe405e37764d44436ddd82c9cc59c1af0dfe3a2b",
+        "bytes": 3503
+      },
+      {
+        "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/after-gloria.toml",
+        "sha256": "4a9abf64e2c2eca66f0032b8d39ec21a49b3ebbcf0f1547ff8d243288ed7a134",
+        "bytes": 3748
+      }
+    ]
+  },
+  "independent_verification": {
+    "path": ".scratch/modern-temporal-collects-review/verification.json",
+    "sha256": "d4289791c10dadade6a83895e40f34037ed5aa3f8a558fe50cf5e098c4dbdcd4",
+    "source_errors": ".scratch/modern-temporal-collects-review/source-errors.json",
+    "all_final_error_arrays_empty": true
+  },
+  "findings": [
+    {
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (before the readings)",
+        "all",
+        1
+      ],
+      "original_source_identity": [
+        "pentecost",
+        "vigil",
+        "Collect",
+        "all",
+        2
+      ],
+      "full_before_unavailable_dictionary": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (before the readings)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 62 / printed p. 380, nn. 2-3. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The two opening branches appoint the same incipit; neither branch is selected in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "full_source_dictionary": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 2,
+        "relation": "variant",
+        "ancient_reading": "Praesta quaesumus omnipotens deus. ut claritatis tuae super nos splendor effulgeat. et lux tuae lucis corda eorum qui per gratiam tuam renati sunt. sancti spiritus inlustratione confirmet. per dominum nostrum iesum christum in unitate eiusdem.",
+        "divergence": "Every petition word agrees after received inlustratione/illustratione spelling and the two local word-order changes per gratiam tuam renati sunt to per tuam gratiam sunt renati. Pointing, capitalization and accents differ. The older conclusion prints per dominum nostrum iesum christum in unitate eiusdem.; the bounded-secondary short cue Per Dominum. takes only its directly witnessed first two words. No full conclusion is supplied or silently harmonized. Printed e-caudata is transcribed ae; apparatus markers 3 and 4 are excluded from the prayer words. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts.",
+        "incipit": "Praesta, quaesumus, omnipotens Deus, ut claritatis tuae",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; Orationes ad Missam in Sabbato Pentecosten post ascensum fontis, first prayer",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Grant, we ask, almighty God, that the splendor of your glory may shine upon us, and that the light of your light may strengthen, through the illumination of the Holy Spirit, the hearts of those who have been reborn by your grace. Through our Lord."
+          }
+        ]
+      },
+      "full_after_dictionary": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (before the readings)",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "ancient_reading": "Praesta quaesumus omnipotens deus. ut claritatis tuae super nos splendor effulgeat. et lux tuae lucis corda eorum qui per gratiam tuam renati sunt. sancti spiritus inlustratione confirmet. per dominum nostrum iesum christum in unitate eiusdem.",
+        "divergence": "Every petition word agrees after received inlustratione/illustratione spelling and the two local word-order changes per gratiam tuam renati sunt to per tuam gratiam sunt renati. Pointing, capitalization and accents differ. The older conclusion prints per dominum nostrum iesum christum in unitate eiusdem.; the bounded-secondary short cue Per Dominum. takes only its directly witnessed first two words. No full conclusion is supplied or silently harmonized. Printed e-caudata is transcribed ae; apparatus markers 3 and 4 are excluded from the prayer words. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts. The receiving incipit is the exact short incipit on the extended slot; the complete source identity and longer original source incipit remain unchanged in the separately retained admitted simple-Vigil dictionary. New receiving use: Official2008 nn2-3 name the same Praesta prayer in both opening branches and explicitly refer to Ad Missam in Vigilia, Missal p443. Secondary2002 AP264-265 establishes the complete named Vigil prayer and its role. The adjacent Saturday-morning Praesta on AP264 is a different full prayer and is excluded. This is a source-qualified referral, not a complete2008body equivalence. No opening branch/default, R.Amen, expanded conclusion, other simple-Vigil proper or complete-form claim is inferred. Source-appointment passage passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.modern-sources-20261112-pentecost-extended-before-readings-appointment; receiving comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-pentecost-extended-before-readings-comparison; exact unchanged study-English publication passage.triptych.modern-sources-20261112-pentecost-extended-study-recipients.2026-11-12.before-readings. Prior source-local mapping review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-collect-mapping-review.json and accepted ancient-body/English review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json remain controlling. The prior unavailable record is preserved verbatim in the install proposal.",
+        "incipit": "Praesta, quaesumus",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; Orationes ad Missam in Sabbato Pentecosten post ascensum fontis, first prayer",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Grant, we ask, almighty God, that the splendor of your glory may shine upon us, and that the light of your light may strengthen, through the illumination of the Holy Spirit, the hearts of those who have been reborn by your grace. Through our Lord."
+          }
+        ]
+      },
+      "english_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066",
+      "english_verdict": "Complete existing English dictionary and string unchanged; source seal hashes including final-LF convention verified. No Amen or conclusion expansion.",
+      "placement_verdict": "Official2008 AP62/printed380 nn2–3 names Praesta quaesumus and explicitly points to Ad Missam in Vigilia p443 in both opening branches. Secondary2002 AP265 has the full claritatis prayer as the Vel Collect under that heading.",
+      "old_source_verdict": "Fresh whole Hadrianum1915 AP135/printed77 first prayer under Orationes ad Missam in Sabbato Pentecosten post ascensum fontis matches the retained ancient body. E-caudata normalization, inlustratione/illustratione, two local word-order changes and the longer old ending remain explicit. English Through our Lord preserves only the separately accepted first two-word cue.",
+      "publication_verdict": "Exact new TSV row coordinates and English bytes match this entry; ranged publication passage selects that one line; source appointment and secondary comparison passages resolve through their actual owning work, edition and artifact/segment."
+    },
+    {
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (after Gloria)",
+        "all",
+        1
+      ],
+      "original_source_identity": [
+        "pentecost",
+        "vigil",
+        "Collect",
+        "all",
+        1
+      ],
+      "full_before_unavailable_dictionary": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (after Gloria)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, nn. 9-10. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The source places Gloria before this Collect; the hymn body and its Ordinary placement are not fabricated in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "full_source_dictionary": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "ancient_reading": "Omnipotens sempiterne Deus, qui paschale sacramentum quinquaginta dierum voluisti mysterio contineri, praesta ut gentium facta dispersio divisione linguarum ad unam confessionem tui nominis caelesti munere congregetur. Per.",
+        "divergence": "All petition lexical words preexist. There are three linked grammatical inflection changes: ancient dispersio divisione ... congregetur becomes bounded-secondary dispersione divisiones ... congregentur. Wilson p.123 note 2 independently prints the ancient V reading divisiones, and note 4 prints congregentur V; his main text follows the other cited witnesses. The new English follows the bounded-secondary grammar. Pointing, capitalization and accents also differ. The main ancient cue is literally Per.; the generic short cue Per Dominum. is separately printed in this edition at p.106, parent artifact p.199, and is not expanded here. Independently printed short-cue source: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts.",
+        "incipit": "Omnipotens sempiterne Deus, qui paschale sacramentum",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; BookI, sectionLXXX, Orationes et Preces Dominica Pentecosten, first prayer; p123 apparatus notes2and4",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Almighty, everlasting God, who willed the paschal sacrament to be contained within the mystery of fifty days, grant that, after the scattering of the nations, the divisions of tongues may be gathered by a heavenly gift into one confession of your name. Through our Lord."
+          }
+        ]
+      },
+      "full_after_dictionary": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (after Gloria)",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "ancient_reading": "Omnipotens sempiterne Deus, qui paschale sacramentum quinquaginta dierum voluisti mysterio contineri, praesta ut gentium facta dispersio divisione linguarum ad unam confessionem tui nominis caelesti munere congregetur. Per.",
+        "divergence": "All petition lexical words preexist. There are three linked grammatical inflection changes: ancient dispersio divisione ... congregetur becomes bounded-secondary dispersione divisiones ... congregentur. Wilson p.123 note 2 independently prints the ancient V reading divisiones, and note 4 prints congregentur V; his main text follows the other cited witnesses. The new English follows the bounded-secondary grammar. Pointing, capitalization and accents also differ. The main ancient cue is literally Per.; the generic short cue Per Dominum. is separately printed in this edition at p.106, parent artifact p.199, and is not expanded here. Independently printed short-cue source: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts. The receiving incipit is the exact short incipit on the extended slot; the complete source identity and longer original source incipit remain unchanged in the separately retained admitted simple-Vigil dictionary. New receiving use: Official2008 n10 names the Omnipotens prayer after Gloria and explicitly refer to Ad Missam in Vigilia, Missal p443. Secondary2002 AP264-265 establishes the complete named Vigil prayer and its role. The adjacent Saturday-morning Praesta on AP264 is a different full prayer and is excluded. This is a source-qualified referral, not a complete2008body equivalence. No opening branch/default, R.Amen, expanded conclusion, other simple-Vigil proper or complete-form claim is inferred. Source-appointment passage passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.modern-sources-20261112-pentecost-extended-after-gloria-appointment; receiving comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-pentecost-extended-after-gloria-comparison; exact unchanged study-English publication passage.triptych.modern-sources-20261112-pentecost-extended-study-recipients.2026-11-12.after-gloria. Prior source-local mapping review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-collect-mapping-review.json and accepted ancient-body/English review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json remain controlling. The prior unavailable record is preserved verbatim in the install proposal.",
+        "incipit": "Omnipotens sempiterne Deus",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; BookI, sectionLXXX, Orationes et Preces Dominica Pentecosten, first prayer; p123 apparatus notes2and4",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Almighty, everlasting God, who willed the paschal sacrament to be contained within the mystery of fifty days, grant that, after the scattering of the nations, the divisions of tongues may be gathered by a heavenly gift into one confession of your name. Through our Lord."
+          }
+        ]
+      },
+      "english_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e",
+      "english_verdict": "Complete existing English dictionary and string unchanged; source seal hashes including final-LF convention verified. No Amen or conclusion expansion.",
+      "placement_verdict": "Official2008 AP65/printed383 nn9–10 places Gloria before the Omnipotens sempiterne Deus Collect and explicitly refers to Ad Missam in Vigilia p443. Secondary2002 AP265 has the full paschale sacramentum prayer as its first Collect.",
+      "old_source_verdict": "Fresh retained Gelasian1894 bundle AP2/printed122 first I.LXXX prayer and AP3/printed123 apparatus independently confirm dispersio divisione ... congregetur and distinct V readings divisiones/congregentur. Three selected grammatical inflections remain disclosed. Main old cue Per. is not expanded by assumption: bundle AP1/printed106 independently prints Per Dominum.; English retains the short cue only.",
+      "publication_verdict": "Exact new TSV row coordinates and English bytes match this entry; ranged publication passage selects that one line; source appointment and secondary comparison passages resolve through their actual owning work, edition and artifact/segment."
+    }
+  ],
+  "fresh_image_evidence": [
+    {
+      "source_path": ".scratch/modern-official2008-latin/acquired/notitiae2008.pdf",
+      "source_sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "artifact_page": 62,
+      "raster_path": ".scratch/modern-temporal-collects-review/official2008-62.png",
+      "raster_sha256": "cd2e9add1b83c52b2adb7e9b369d27177b0777724633183ecc56e2716f0e4984"
+    },
+    {
+      "source_path": ".scratch/modern-official2008-latin/acquired/notitiae2008.pdf",
+      "source_sha256": "74c8d1740284984d0f4d64b2223edf805dadfa55aec8a92f8cfba9ab901eca0f",
+      "artifact_page": 65,
+      "raster_path": ".scratch/modern-temporal-collects-review/official2008-65.png",
+      "raster_sha256": "de0ded249babef537fda2818d35e3b3292e13455eec2effb15d98147fd891553"
+    },
+    {
+      "source_path": ".scratch/modern-partition-temporal/acquired/secondary2002.pdf",
+      "source_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_page": 264,
+      "raster_path": ".scratch/modern-temporal-collects-review/secondary2002-264.png",
+      "raster_sha256": "c817b41ab5d513a6a587d389eabb9425452981fb9911b8ff8d037a3953532ce8"
+    },
+    {
+      "source_path": ".scratch/modern-partition-temporal/acquired/secondary2002.pdf",
+      "source_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_page": 265,
+      "raster_path": ".scratch/modern-temporal-collects-review/secondary2002-265.png",
+      "raster_sha256": "b7d255c3125a54f786228de3697c3118485b0f9e3e90fdebd5edbb47af15bba0"
+    }
+  ],
+  "inherited_source_bytes_and_fresh_page_checks": [
+    {
+      "record": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/artifact.toml",
+      "record_sha256": "fc2ef0aaf9ac2dc554e609df81009ccf4bdca39068e6231252960f4915e42b77",
+      "payload": ".scratch/modern-temporal-collects-review/gelasian-bundle.pdf",
+      "sha256": "c4d7d3c11ff5fd9d0545ff9c0185f4bcbaf855f5f5c13b9ae027bae8d72d48f5",
+      "bytes": 414988,
+      "recovered_from": "c448036bd6:src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1/wilson-1894-pp106-122-123.pdf"
+    },
+    {
+      "source": ".scratch/modern-temporal-collects-review/gelasian-bundle.pdf",
+      "artifact_page": 1,
+      "raster": ".scratch/modern-temporal-collects-review/gelasian-bundle-1.png",
+      "sha256": "8ebabd1ad25bdeee8b0ecf22047b2c718aacd66a1d8fe8456a6c38f7503a9b6c"
+    },
+    {
+      "source": ".scratch/modern-temporal-collects-review/gelasian-bundle.pdf",
+      "artifact_page": 2,
+      "raster": ".scratch/modern-temporal-collects-review/gelasian-bundle-2.png",
+      "sha256": "4e6e55b005e9cdf62e0ad674a117ea43bcfd376f9433030c594e1f0529d02217"
+    },
+    {
+      "source": ".scratch/modern-temporal-collects-review/gelasian-bundle.pdf",
+      "artifact_page": 3,
+      "raster": ".scratch/modern-temporal-collects-review/gelasian-bundle-3.png",
+      "sha256": "bef00e1b509a52a6a0135a8e05c39bb7994916be717ca2f65b3a916801ac9827"
+    },
+    {
+      "record": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/artifact.toml",
+      "record_sha256": "13f26a56084ef752aed19acc46d4ac74dce893174409b24a85646c9805bb2cd6",
+      "payload": ".scratch/modern-temporal-collects-review/hadrianum.pdf",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681",
+      "bytes": 28655931,
+      "recovered_from": "c448036bd6:src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf"
+    },
+    {
+      "source": ".scratch/modern-temporal-collects-review/hadrianum.pdf",
+      "artifact_page": 135,
+      "raster": ".scratch/modern-temporal-collects-review/hadrianum-135.png",
+      "sha256": "28a6c1efea765f846c55ad748b4a27b9d282893593fbd2bd12d57878131a1064"
+    }
+  ],
+  "prior_seals_verified": [
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-collect-mapping-review.json",
+      "sha256": "19a2e0086114a28ee46d086e0f1f01c97f0d926a8563b95600a0201bed0bc8c2"
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json",
+      "sha256": "bf2e4449ced7c9ed61c13cc261f95fa3d01a49a2fd2ea74a37a688128e46c7be"
+    }
+  ],
+  "adversarial_assessment": {
+    "incipit_alone_is_insufficient": "Fresh secondary AP264 Saturday/Ad Missam matutinam begins the same short Praesta formula but continues with a different paschal-festival petition. It is excluded. The official supplement explicitly refers to the named Pentecost Vigil p443; fresh secondary AP264–265 establishes the complete two prayers in that named role, with Omnipotens first and Praesta after Vel.",
+    "full_2008_body_is_not_held_here": "Official AP62 and AP65 supply appointments, short incipits and a page referral, not the two full prayer bodies. A same-title secondary2002 reproduction cannot authenticate printed2002 or complete2008 wording. Acceptance is therefore source-qualified project study English only.",
+    "publication_basis_is_separate_from_appointment": "No modern target text is newly published. The already accepted original project-English strings reuse complete independently evidenced old Latin with the exact finite variants and shortened conclusions recorded in the prior seal. The official appointment creates no copyright permission or approved-English status.",
+    "no_branch_inference": "The opening branches both point to Praesta; this does not select either branch. After-Gloria placement follows official nn9–10. Neither acceptance imports a normal Ordinary frame, response, other Vigil proper, reading-omission pathway or complete formulary."
+  },
+  "initial_candidate_defect_and_successor": {
+    "initial_proposal_sha256": "232f03bce1312573cb848a1b11799c4b9238b77fdea4b5dd3ddb6da285fea421",
+    "failure": "Both original receiving entries retained the longer simple-Vigil source incipit. Production carry_translations suppressed both as stale despite successful overlay loading.",
+    "negative_control": ".scratch/modern-temporal-collects-review/initial-negative-control.json",
+    "negative_control_sha256": "febc16080fcf8a8d0f78881e196157c2794c29baef1dde36393af48304ec0a24",
+    "correction": "The successor assigns each receiving entry its exact existing recipient incipit, preserving original admitted source dictionaries, source-qualified referral proof and English bytes. The actual production carry function now returns both translations with no stale warning. No matching guard was weakened and no target Latin was changed."
+  },
+  "coverage_effect": {
+    "new_receiving_english_uses": 2,
+    "new_english_compositions": 0,
+    "new_latin_bodies": 0,
+    "approved_english_bodies": 0,
+    "exact_2008_full_bodies": 0
+  },
+  "integration_requirements": [
+    "Root must adopt only the two exact reviewed English deltas and these nine source records plus one TSV; preserve the prior unavailable dictionaries and prior review receipts in durable admission history.",
+    "Preserve source-qualified study-English cautions, the actual existing Latin witness gaps and the partial extended-Vigil frame. Do not label the bodies exact or approved 2008 English.",
+    "Apply exact deltas to the current shared inventory; do not overwrite concurrent work with a whole-file snapshot. Complete root-owned source-epoch/publication gates and actual reader inspection after integration.",
+    "Mary and December31 antiphons have independent owners; this review neither approves their bodies nor resolves the separate historical-English Scripture consumer gate."
+  ],
+  "tracked_mutations": []
+}

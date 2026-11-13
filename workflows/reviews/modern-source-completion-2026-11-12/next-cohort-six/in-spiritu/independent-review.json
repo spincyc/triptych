@@ -1,0 +1,204 @@
+{
+  "schema": "triptych-independent-bounded-source-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "/root/modern_sources/ordinary_review",
+  "candidate_author": "/root/modern_sources/official_2008_latin",
+  "verdict": "accept-in-spiritu-latin-source-selection-and-finite-word-exact-2008-comparison",
+  "scope": "Only the Latin selection of postconciliar Ordinary praeparatio-donorum/in-spiritu-humilitatis, n.26. Replace the selected 1861 Cummiskey witness with the independently verified complete 1862 Pustet prayer. Preserve Cummiskey source bytes and the existing historical English.",
+  "candidate_path": ".scratch/modern-official2008-latin/in-spiritu/candidate.json",
+  "candidate_sha256": "4e4325c656bad4426575f11e3a98efaf0392ad602926879b605669e968fa0c91",
+  "manifest_path": ".scratch/modern-official2008-latin/in-spiritu/manifest.json",
+  "manifest_sha256": "40a35d7c52ae72bc3cfb28bdd9af88a13e149ac800f07a0ddfad6edd39649e24",
+  "verification_path": ".scratch/modern-in-spiritu-review/verification.json",
+  "verification_sha256": "935f7030956a3ba897751ce191ec72c527481e69a1f0078a82c0d1e1e447b4c3",
+  "checker_path": ".scratch/modern-in-spiritu-review/check.py",
+  "checker_sha256": "019d5b632debe070ba3434481d8fc4dcf30f927b1556a77231ecc9a92a46c576",
+  "accepted_files": [
+    {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "c3ce6ec8a816711c5a6dcb87a0f3c330aa63d20d6614e2247d6a3b59defc5885",
+      "byte_size": 177221
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/in-spiritu-humilitatis-la-20261112/artifact.toml",
+      "sha256": "c0ada45fc1383da71d3772eefc2b13e2692e686a51758b369896f625afb8bdc8",
+      "byte_size": 2394
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/in-spiritu-humilitatis-la-20261112/text.tsv",
+      "sha256": "fc9c8d10dc3a3994c92b06f9f94b0f182127498e28100b39bfe77f92b3400371",
+      "byte_size": 400
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/in-spiritu-humilitatis-la-20261112.toml",
+      "sha256": "1a5e35b7a6468c4d46c83b830952605376e829366ff33554cdd13cf04edb9791",
+      "byte_size": 1343
+    },
+    {
+      "path": "src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/artifacts/official-pdf-280996b7/artifact.toml",
+      "sha256": "5f46061d18fbce2742189e872e2a558f9c2774517dc9d9c1a8cd0f9064461bbc",
+      "byte_size": 1543
+    },
+    {
+      "path": "src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/edition.toml",
+      "sha256": "8c38cffda9f25fcff4795823051c829e49a4cf2ededa00d0a1e833270de916fe",
+      "byte_size": 710
+    },
+    {
+      "path": "src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/passages/desiderio-desideravi-60-in-spiritu-2008-quotation.toml",
+      "sha256": "afc39ff050f86abaf3f338b933a56bd180b5d873fa53a485b5cca644a5c4d692",
+      "byte_size": 1571
+    },
+    {
+      "path": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/ordinary-in-spiritu-2008-source-admission-2026-11-12.json",
+      "sha256": "4e4325c656bad4426575f11e3a98efaf0392ad602926879b605669e968fa0c91",
+      "byte_size": 16797
+    }
+  ],
+  "body_transition": {
+    "prior_source": "Cummiskey Philadelphia1861 ordinarium-oblatio-la, literal nodie retained in its original artifact",
+    "prior_body_sha256": "03bde9df0f0c8d5c25f05b0c7001b59d7e954224eac4d0c576b85ff19589c31d",
+    "new_source": "Pustet Ratisbon1862, printed218 / complete facsimile AP304 / IA n303",
+    "new_body_sha256": "879af4f72ecacf07cf4106e51bd1361cae6e3c1b3050c80fe8470b5f8224fc05",
+    "new_carrier_tsv_sha256": "fc9c8d10dc3a3994c92b06f9f94b0f182127498e28100b39bfe77f92b3400371",
+    "whole_body_selection": "One uninterrupted source prayer, with all its words, order and ending; no Amen is present or supplied.",
+    "count_effect": {
+      "held_latin_bodies": 0,
+      "word_exact_target_latin_bodies": 1,
+      "english_bodies": 0
+    }
+  },
+  "independent_page_findings": [
+    {
+      "source": "Pustet Ratisbon1862 complete facsimile",
+      "whole_pdf_sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "artifact_page": 304,
+      "printed_page": "218",
+      "extent": "Lower left column, after its preceding posture rubric and before Erectus expandit manus",
+      "finding": "Whole PDF independently rehashed and page freshly rendered and read. The proposed TSV faithfully transcribes the complete prayer. The source clearly reads hodie with h, has a comma after humilitatis, no comma between te and Domine, a colon after Domine, and the recorded remaining punctuation. Initial small capitals, stress accents and printer wrapping are the only normalized source display conventions. The prayer ends at Domine Deus with no Amen; adjacent rubrics and other prayers are not imported."
+    },
+    {
+      "source": "Official Notitiae2022, volume58, number599 / new series7",
+      "whole_pdf_sha256": "280996b7185a36a807df82cd58ebd72960527072ff330b122785abc20e825ccf",
+      "artifact_page": 55,
+      "printed_page": "53",
+      "extent": "Desiderio desideravi, Latin paragraph60, complete In spiritu quotation and note20",
+      "finding": "Whole official PDF independently rehashed; fresh cover and identity pages1-2 identify the dicastery, year2022, volume58 and issue599/newseries7. Page55 explicitly quotes the complete prayer and attaches note20 citing Missale Romanum (2008), p.515. All prayer words and their order agree with the independently sourced Pustet body, including hodie. No Amen occurs in the quotation. Punctuation and display differ and are not represented as identical.",
+      "source_status": "Official secondary quotation explicitly identifying its 2008 Missal source. This is not a photograph of Missal p.515 and does not prove the surrounding rubrics, typography, chant or complete Ordinary.",
+      "excluded_adjacent_unit": "The separate Lava me quotation and note21 are outside this acceptance."
+    }
+  ],
+  "exact_target_semantics": {
+    "retained_relation": "antecedent",
+    "accepted_collation": "collated",
+    "accepted_target_wording": "word-exact",
+    "generated_coverage_relationship": "exact-target",
+    "finding": "The current Ordinary contract deliberately distinguishes source identity from whole-prayer word identity. The source remains the 1862 antecedent, while an expressly cited complete2008 quotation establishes the same prayer-word sequence for this element. The existing word-exact flag is appropriate because the contract grades words rather than literal string typography. It does not assert photographic or punctuation identity. The compiler derives exact-target from a collated word-exact declaration with a cited finding; no runtime relaxation or new blanket grade is introduced.",
+    "evidence": "tools/mass-ordinary TARGET_WORDINGS contract and relation_of implementation were read directly; production side_text and complete calendar_structure were independently executed on the proposed source graph.",
+    "strongest_source_counterargument": "An official later quotation may not establish every property of the original altar-book page, and quotation pointing may differ from the quoted edition. It must not substitute for collation of a complete Missal or execution directions.",
+    "answer": "This acceptance is limited to the complete prayer words expressly quoted and attributed to the2008 Missal. It makes none of those page, rubric or whole-book claims. Source punctuation is retained and the reader note states the exact comparison route."
+  },
+  "whole_expression_publication_assessment": {
+    "basis": "public-domain",
+    "jurisdiction": "United States",
+    "surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "independent_publication_source": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "finding": "The whole uninterrupted prayer already occurs in the1862 printing. No phrase is assembled from another source, no petition clause or ending is changed, and no modern expressive recasting is reproduced. The new carrier is a faithful normalized transcription of that independently public-domain expression. The official modern quotation supplies comparison evidence only.",
+    "strongest_adverse_argument": "Official availability and a modern quotation convey no redistribution license for the modern book or journal, which retain distinct rights in their own contributions. A shared incipit or a list of old phrases would not establish that the displayed whole prayer is old.",
+    "answer": "The independently checked old page contains every word of this entire displayed prayer in one unit. Publication uses its source wording and pointing, without modern surrounding material. Modern PDF, page images, annotation, typography and rubrics are absent from the proposal. The affirmative basis therefore does not depend on an inferred modern license or on a vague assertion of antiquity.",
+    "nature_of_assessment": "Finite internal project source/publication assessment; no rightsholder permission, legal adjudication, liturgical approval or whole-edition clearance is claimed.",
+    "primary_legal_sources_consulted_in_session": [
+      "https://www.copyright.gov/title17/92chap1.html#103",
+      "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf"
+    ],
+    "reconsider_if": [
+      "any prayer word, source selection or body hash changes",
+      "a response or ending is added",
+      "the explicit quotation attribution is contradicted",
+      "the comparison is extended to another element or surrounding execution"
+    ]
+  },
+  "historical_source_and_english_preservation": {
+    "original_Cummiskey_latin_artifact_sha256": "1625f8f09a81fa70be3373021ba48eae603c271b196134c4b636358b79c26d4e",
+    "original_Cummiskey_english_artifact_sha256": "b3a9ed6f1f15d9c08ee5603d9ce6bcb7846771648ece1271abf834e418b7203a",
+    "unchanged_english_body_sha256": "21b8e62e5264185c7049624a498793b2a23972a43c834aaf4e1bdb92f5e0a4f7",
+    "unchanged_english_dictionary_json_sha256": "d4b009a3ff9cb6bd821b7e4064b270b85d50e7bda27bd01ab99f66687dcb7655",
+    "finding": "Both current Cummiskey artifact bytes are independently hash-verified and unchanged. The original Latin body still contains nodie and the complete prior selection dictionary remains in the candidate receipt. The new Latin selection names a distinct Pustet artifact; no Cummiskey spelling is repaired. Every English selection field, generated English translation and body byte remains unchanged, including its historical attribution and uncollated status. No approved2011 English or new English translation is admitted."
+  },
+  "metadata_and_full_graph_review": {
+    "source_records": 5,
+    "new_source_payloads": 1,
+    "protected_source_payloads": 0,
+    "finding": "All eight proposal file hashes and sizes match the frozen manifest. The new old-source passage selects exactly the sole TSV data row. The restricted modern source passage selects only AP55 and contains comparison metadata, not the quoted body. The periodical edition remains a container distinct from the already cataloged papal work. The complete merged source ownership graph retains all real owning works for locus-pattern validation; schema, paths, relationships, loci, work dates, licenses, cycles, artifact bytes and passage bounds all pass.",
+    "baseline_source_errors": [],
+    "syntax_errors": [],
+    "merged_graph_errors": {
+      "_validate_relationships": [],
+      "_validate_loci": [],
+      "_validate_work_dates": [],
+      "_validate_artifact_licenses": [],
+      "_validate_cycles": []
+    },
+    "artifact_errors": [],
+    "locator_errors": []
+  },
+  "inventory_and_compiler_review": {
+    "before_inventory_sha256": "239fa6ed41030f2f33cb753007262fbd8f2733e86530f8c616a73a696916dbbb",
+    "proposed_inventory_sha256": "c3ce6ec8a816711c5a6dcb87a0f3c330aa63d20d6614e2247d6a3b59defc5885",
+    "inventory_delta": {
+      "selected_element": "in-spiritu-humilitatis latin only",
+      "new_witnesses": 1,
+      "declared_source_summary_replacements": {
+        "and every one of them is carried as printed and named in the element's own note.": 1,
+        "and nodie for hodie at In spiritu humilitatis are the 1861 printer's and not the Holy See's.": 1
+      },
+      "all_other_fields_unchanged": true
+    },
+    "complete_generation": {
+      "sections": 7,
+      "elements": 72,
+      "changed_elements": [
+        "praeparatio-donorum/in-spiritu-humilitatis"
+      ]
+    },
+    "finding": "Independent parsed comparison proves only this Latin selection, one new witness and two declared retrospective source-summary clarifications change. All other inventory fields and elements match. Complete production generation changes only praeparatio-donorum/in-spiritu-humilitatis; its English generated record is identical. The generated Latin has the correct public-domain Pustet source, antecedent/collated status, word-exact target wording and exact-target coverage.",
+    "source_library_sha256": "963a9ac27c43d0ab93c568271401a865d5252854343e059d2c4208787fefb450",
+    "mass_ordinary_sha256": "64a40ac97bae51378127556029be33c37d7a34cc05d93f756ed279b48648bb14"
+  },
+  "independent_rasters": [
+    {
+      "path": ".scratch/modern-in-spiritu-review/notitiae2022-1.png",
+      "sha256": "59fea50c91dcde2cfcf8e52a2573cb86fc45a0b6bb3a14e8ee421312865cf74e"
+    },
+    {
+      "path": ".scratch/modern-in-spiritu-review/notitiae2022-2.png",
+      "sha256": "9726e8e16a4cf4fe6289985fac3884aa4f94228e1dd70d65bded1133cd4b5f98"
+    },
+    {
+      "path": ".scratch/modern-in-spiritu-review/notitiae2022-55.png",
+      "sha256": "5ac910e93517bbc1cce1f3725cba171aa06e8d03d3d65103a46a7e5fa407e55f"
+    },
+    {
+      "path": ".scratch/modern-in-spiritu-review/pustet-304.png",
+      "sha256": "b61da93406066497ed6cc9e692976c43c84c7865b799d37f17444ab742209052"
+    }
+  ],
+  "required_source_changes": [],
+  "source_or_publication_blockers_for_exact_candidate": [],
+  "root_integration_requirements": [
+    "Adopt this finite Latin selection and exact-word comparison, linking the independent review separately from the author prepared receipt.",
+    "Apply the reviewed field deltas to the live Ordinary inventory rather than replacing a whole file containing concurrent work; register only the exact manifest source records/carrier and receipt.",
+    "Preserve original Cummiskey artifacts, English dictionary/body and the prior source-selection receipt. Keep the Pustet source identity and comparison qualification visible.",
+    "Coordinate exact source selection/body/provenance changes with source_epoch and refresh owning inventories/notices through their owners.",
+    "Run integrated source/publication/Ordinary checks and inspect Latin, English and paired reader output, especially correcthodie, no addedAmen, source credit and word-exact qualification.",
+    "Do not extend this adoption to Lava me, another Ordinary unit, approved English, modern source images or complete2008book/rubric claims."
+  ],
+  "review_mutations": "Scratch review files only; no canonical files, generators, commits or publication actions."
+}

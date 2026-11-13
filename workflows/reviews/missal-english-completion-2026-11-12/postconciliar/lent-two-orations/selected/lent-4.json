@@ -1,0 +1,174 @@
+{
+  "schema": "triptych-lent-two-selected-installation-dictionaries/v1",
+  "identity": [
+    "lent-4",
+    "main",
+    "Prayer after Communion",
+    "all",
+    1
+  ],
+  "frozen_proposal": {
+    "path": ".scratch/modern-lent-orations/offerings-communions/successor-v2/installation-proposal.json",
+    "sha256": "e3eab5784fcfaaefb7ab98332169c232602087cc1364a7051e95191b9792dab3"
+  },
+  "root_source_admission_sha256": "98026a592e22e4beb47f5c363338459c03061795eb88c96f83e13ebfc3256162",
+  "before_proper": {
+    "name": "Prayer after Communion",
+    "incipit": "Deus, qui illuminas omnem hominem",
+    "source": "composed",
+    "text_status": {
+      "state": "unavailable",
+      "scope": "proper-body",
+      "reasons": [
+        {
+          "kind": "rights-withheld",
+          "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+        }
+      ]
+    }
+  },
+  "after_proper": {
+    "name": "Prayer after Communion",
+    "incipit": "Deus, qui illuminas omnem hominem",
+    "source": "composed",
+    "text": "Deus, qui illuminas omnem hominem venientem in hunc mundum, illumina, quaesumus, corda nostra gratiae tuae splendore, ut digna ac placita maiestati tuae cogitare semper, et te sincere diligere valeamus. Per Christum Dominum nostrum.",
+    "notes": "Complete1970 source-local prayer independently sourced from the1862 petition and short conclusion. Project study English; current2008 target correspondence remains unresolved. Historical1862 prayer ends Per Dominum; that source quotation remains intact in its own artifact. This derived execution uses actual1970 Per Christum cue,IGMR32 short branch andIGMR122 response placement. The people response Amen is separate."
+  },
+  "before_english": {
+    "mass": "lent-4",
+    "form_id": "main",
+    "proper": "Prayer after Communion",
+    "cycle": "all",
+    "occurrence": 1,
+    "lang": "en",
+    "extent": "body",
+    "availability": "unavailable",
+    "reason": {
+      "kind": "no-exemplar"
+    },
+    "rejected_detectors": [
+      "liturgies-net-2026-08-22"
+    ],
+    "quarantined_text_sha256": [
+      "c42fdac00fae1275f2450cfdd71a22e25d647beedbb67a44fce1950205e9466d"
+    ],
+    "note": "an ancient ancestor was identified in the Hadrianum at 0.52 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+  },
+  "after_english": {
+    "mass": "lent-4",
+    "form_id": "main",
+    "form": "",
+    "proper": "Prayer after Communion",
+    "cycle": "all",
+    "occurrence": 1,
+    "incipit": "Deus, qui illuminas omnem hominem",
+    "relation": "source-local-execution",
+    "ancient_witness": "Pustet Ratisbon1862, complete Postcommunion Ad repellendas malas cogitationes,p[86]/AP756; separately sourced short formula,p180/AP266",
+    "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-whole-historical-prayer-20261112",
+    "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-whole-historical-prayer-20261112",
+    "ancient_reading": "Deus, qui illúminas omnem hóminem veniéntem in hunc mundum: illúmina, quaesumus, corda nostra grátiae tuae splendóre; ut digna ac plácita majestáti tuae cogitáre semper, et te sincére dilígere valeámus. Per Dóminum.",
+    "target_witness_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1970.lent4-postcommunion-context-20261112",
+    "target_qualification": "exact-source-local1970;2008-unestablished",
+    "study_english_passage_id": "passage.triptych.lent4-postcommunion-source-local-study.2026-11-12-english-study.publish-lent4-postcommunion-20261112",
+    "divergence": "Complete1970 source-local prayer independently sourced from the1862 petition and short conclusion. Project study English; current2008 target correspondence remains unresolved. Historical1862 prayer ends Per Dominum; that source quotation remains intact in its own artifact. This derived execution uses actual1970 Per Christum cue,IGMR32 short branch andIGMR122 response placement. The people response Amen is separate.",
+    "source_latin_sha256": "4e1117ba2b67c248ce8781d7b6a60482aad44f9804477187f12110c1dfb24902",
+    "source_latin_passage_id": "passage.triptych.lent4-postcommunion-source-local-study.2026-11-12-latin-projection.publish-lent4-postcommunion-20261112",
+    "source_latin_publication_source_ids": [
+      "artifact.triptych.lent4-postcommunion-source-local-study.2026-11-12-latin-projection.normalized-latin",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-whole-historical-prayer-20261112",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+    ],
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "project-created",
+        "text": "O God, who enlighten everyone coming into this world, illuminate our hearts, we pray, with the splendor of your grace, so that we may always think what is worthy and pleasing to your majesty, and love you sincerely. Through Christ our Lord."
+      }
+    ],
+    "witness_note": "Complete1970 source-local prayer independently sourced from the1862 petition and short conclusion. Project study English; current2008 target correspondence remains unresolved. Historical1862 prayer ends Per Dominum; that source quotation remains intact in its own artifact. This derived execution uses actual1970 Per Christum cue,IGMR32 short branch andIGMR122 response placement. The people response Amen is separate.",
+    "prior_source_refusals": [
+      {
+        "mass": "lent-4",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "c42fdac00fae1275f2450cfdd71a22e25d647beedbb67a44fce1950205e9466d"
+        ],
+        "note": "an ancient ancestor was identified in the Hadrianum at 0.52 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      }
+    ]
+  },
+  "before_latin_provenance": {
+    "mass": "lent-4",
+    "form": "",
+    "proper": "Prayer after Communion",
+    "course": "",
+    "cycle": "",
+    "occurrence": 1,
+    "body_status": "removed",
+    "text_sha256": "4271e3c4479fdc10764278bcce73e719a56d2ee5291c50cd8375c0c37d200dc2"
+  },
+  "after_latin_provenance": {
+    "mass": "lent-4",
+    "form": "",
+    "proper": "Prayer after Communion",
+    "course": "",
+    "cycle": "",
+    "occurrence": 1,
+    "text_sha256": "4e1117ba2b67c248ce8781d7b6a60482aad44f9804477187f12110c1dfb24902",
+    "provenance_status": "collated",
+    "source_id": "passage.triptych.lent4-postcommunion-source-local-study.2026-11-12-latin-projection.publish-lent4-postcommunion-20261112",
+    "source_date": "1862 underlying petition/formula;2026 finite study projection",
+    "locator": "Complete normalized Latin scalar,latin.tsv line2",
+    "relationship": "exact-transcription",
+    "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1970.lent4-postcommunion-context-20261112",
+    "verification_locator": "1970 AP201–202/p208–209; actual short cue andIGMR32/122",
+    "transformations": [
+      "Join syllabic line breaks and omit stress accents.",
+      "Normalize majestas spelling j to i (majestati -> maiestati).",
+      "Standardize pointing: colon and semicolon after mundum/splendore to commas.",
+      "Retain old long cue in source artifact; separately derive complete1970 short execution from independently witnessed short formula."
+    ],
+    "provenance_evidence": "Whole1862 petition and complete formula visually read;1970 actual prayer context and rule separately read. Source-local relation only.",
+    "provenance_authority": "Finite source-local1970 relation, pending independent adoption",
+    "provenance_confidence": "high",
+    "publication_status": "permitted",
+    "publication_basis": "public-domain",
+    "surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "publication_source_ids": [
+      "artifact.triptych.lent4-postcommunion-source-local-study.2026-11-12-latin-projection.normalized-latin",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-whole-historical-prayer-20261112",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+    ],
+    "publication_locator": "Complete1862 petition plus independently witnessed conventional short formula; project projection metadata gives derivation.",
+    "publication_evidence": "Registered1862 publication-date public-domain basis reaches both complete underlying textual components. Restricted1970 is only appointment/execution evidence, not a payload supplier.",
+    "note": "Complete1970 source-local prayer independently sourced from the1862 petition and short conclusion. Project study English; current2008 target correspondence remains unresolved. Historical1862 prayer ends Per Dominum; that source quotation remains intact in its own artifact. This derived execution uses actual1970 Per Christum cue,IGMR32 short branch andIGMR122 response placement. The people response Amen is separate."
+  },
+  "root_postimage_pins": {
+    "Latin_body_sha256": "4e1117ba2b67c248ce8781d7b6a60482aad44f9804477187f12110c1dfb24902",
+    "English_body_sha256": "4c3552e40c862d669ba70cc8cd1a7d9ed1a2bcce26e44f5f034ec6ff5de6bf2b",
+    "proper_sha256": "5f62cc9e8413dabdb8d0a98892b3e558bb6a8f6731bb4ca00d6c9f8af81162ce",
+    "English_entry_sha256": "068bd8260acfbd29615eb172df8aa4e4ad38d337c80916bcbe33bf2efed2e15c",
+    "Latin_provenance_sha256": "52d24098ae59f739a485ae8513b11a07150aa91473ae244ee237ecd17e6a038d"
+  },
+  "scope": "Exact selected dictionaries only; no prayer words or authority fields changed. Pending wording in frozen dictionaries records the earlier proposal state; the later exact Root admission controls source merits. Consumer activation remains separate."
+}

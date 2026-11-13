@@ -23,6 +23,10 @@ RELATIONSHIPS = (
     "bible-reconstruction", "unresolved",
 )
 COLLATIONS = ("collated", "uncollated", "not-applicable", "unresolved")
+# These source-declared adaptations qualify the credit, never the coverage grade.
+QUALIFIED_STUDY_RELATIONS = (
+    "variant", "adapted", "finite-historical-adaptation-study",
+)
 
 
 def identity(*parts: object) -> str:
@@ -139,10 +143,21 @@ def witness(row: dict, witnesses: dict) -> dict:
         # A witness row may declare its relation to this calendar's target once
         # for every body it supplies; an entry's own relation still wins.
         declared = dict(row, witness_relation=metadata["witness_relation"])
+    # The producer preserves an entry-specific adaptation qualification on
+    # project English. Its credit is narrower than the shared witness label;
+    # it changes no publication, collation or relationship grade.
+    qualified_label = (
+        row.get("source_label")
+        if (row.get("relation") in QUALIFIED_STUDY_RELATIONS and row.get("lang") == "en"
+            and row.get("rights") == "project-created" and not source_id
+            and not canonical and isinstance(row.get("source_label"), str)
+            and row["source_label"].strip())
+        else None
+    )
     return {
         "id": canonical or "project-created",
         "source_id": canonical,
-        "label": str(metadata.get("label") or row.get("source_label") or
+        "label": str(qualified_label or metadata.get("label") or row.get("source_label") or
                      canonical or "This project"),
         "aliases": aliases,
         "relationship": relationship(declared),

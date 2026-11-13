@@ -1,0 +1,2745 @@
+{
+  "schema": "triptych-next-cohort-root-merit-inputs/v1",
+  "status": "Review inputs only; no new merits authority asserted",
+  "install_plan": {
+    "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/install-plan.json",
+    "sha256": "7da2bb12bbd2bb24979e185ee3f3a900650793fa1444e873be09ef47879eba4f",
+    "bytes": 206281
+  },
+  "english": [
+    {
+      "group": "semen",
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "before": [
+        {
+          "mass": "ot-11",
+          "form_id": "main",
+          "proper": "Gospel Acclamation",
+          "cycle": "B",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "note": "No authoritative Lectionary exemplar establishing the exact approved English for this cycle-specific source-owned slot is held. No English wording is retained."
+        }
+      ],
+      "after": {
+        "mass": "ot-11",
+        "form_id": "main",
+        "cycle": "B",
+        "occurrence": 1,
+        "proper": "Gospel Acclamation",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+        "publication_artifact_sha256": "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot11-b-20261112",
+        "verified_on_page": "2026-11-12",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Complete unchanged historical Bute 1908 human English, for study, printed 439/AP 523. Independent Pustet 1888 whole Latin printed 339/AP 393 matches every word of governing OLM 1981 n 92 printed 56/AP 110 at this exact recipient, subject only to declared typography normalization. Recipient comparison passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112. Historical English retains its free rendering he shall never be moved and chant asterisk; it is not new study English or approved 2011 English. Prior absence dictionary and any quarantine hash are preserved verbatim in the preparation receipt. No extra all-cycle recipient or modern Missal 2008 body is asserted.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      },
+      "full_english": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved.",
+      "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "latin_before": {
+        "source": "composed",
+        "incipit": "Semen est verbum Dei",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "grade": "Exact full governing OLM 1981, independently old full body; historical Bute human English; no approved 2011."
+    },
+    {
+      "group": "semen",
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "before": [
+        {
+          "mass": "ot-15",
+          "form_id": "main",
+          "proper": "Gospel Acclamation",
+          "cycle": "A",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "rejected_detectors": [
+            "liturgies-net-2026-08-23"
+          ],
+          "quarantined_text_sha256": [
+            "d240fe86bbe050283938f40d3a438f6172827fcb54ce882a7de32b77ca03ac6f"
+          ],
+          "note": "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. The liturgies.net row is a rejected source candidate. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable exemplar. No English wording is retained."
+        }
+      ],
+      "after": {
+        "mass": "ot-15",
+        "form_id": "main",
+        "cycle": "A",
+        "occurrence": 1,
+        "proper": "Gospel Acclamation",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+        "publication_artifact_sha256": "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot15-a-20261112",
+        "verified_on_page": "2026-11-12",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Complete unchanged historical Bute 1908 human English, for study, printed 439/AP 523. Independent Pustet 1888 whole Latin printed 339/AP 393 matches every word of governing OLM 1981 n 103 printed 61/AP 115 at this exact recipient, subject only to declared typography normalization. Recipient comparison passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112. Historical English retains its free rendering he shall never be moved and chant asterisk; it is not new study English or approved 2011 English. Prior absence dictionary and any quarantine hash are preserved verbatim in the preparation receipt. No extra all-cycle recipient or modern Missal 2008 body is asserted.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      },
+      "full_english": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved.",
+      "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "latin_before": {
+        "incipit": "Semen est verbum Dei, sator autem Christus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "grade": "Exact full governing OLM 1981, independently old full body; historical Bute human English; no approved 2011."
+    },
+    {
+      "group": "semen",
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "before": [
+        {
+          "mass": "lent-5-tuesday",
+          "form_id": "main",
+          "proper": "Verse Before the Gospel",
+          "cycle": "all",
+          "occurrence": 1,
+          "extent": "body",
+          "lang": "en",
+          "availability": "unavailable",
+          "note": "OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth role is part of the native ferial course, not silently replaced by the optional course. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made.",
+          "reason": {
+            "kind": "no-exemplar"
+          }
+        }
+      ],
+      "after": {
+        "mass": "lent-5-tuesday",
+        "form_id": "main",
+        "cycle": "all",
+        "occurrence": 1,
+        "proper": "Verse Before the Gospel",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+        "publication_artifact_sha256": "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-lent5-tuesday-ferial-20261112",
+        "verified_on_page": "2026-11-12",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Complete unchanged historical Bute 1908 human English, for study, printed 439/AP 523. Independent Pustet 1888 whole Latin printed 339/AP 393 matches every word of governing OLM 1981 n 252 printed 138/AP 192 at this exact recipient, subject only to declared typography normalization. Recipient comparison passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112. Historical English retains its free rendering he shall never be moved and chant asterisk; it is not new study English or approved 2011 English. Prior absence dictionary and any quarantine hash are preserved verbatim in the preparation receipt. No extra all-cycle recipient or modern Missal 2008 body is asserted.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      },
+      "full_english": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved.",
+      "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "latin_before": {
+        "name": "Verse Before the Gospel",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "body_status": "held-unpublished",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+            }
+          ]
+        },
+        "notes": "OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth role is part of the native ferial course, not silently replaced by the optional course.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "verse-before-gospel",
+          "option": "ferial",
+          "basis": "OLM 1981 n. 250, artifact page 192 / printed page 138: the complete optional First Reading, Responsorial Psalm, Verse Before the Gospel and Gospel course may be used on any Monday-Saturday of this week in all years A/B/C. Sunday nonuse, especially in years B/C, is a preference, not an exclusive eligibility condition or an attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication permission is inferred."
+        }
+      },
+      "grade": "Exact full governing OLM 1981, independently old full body; historical Bute human English; no approved 2011."
+    },
+    {
+      "group": "ot21",
+      "identity": [
+        "ot-21",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "before": [
+        {
+          "mass": "ot-21",
+          "form_id": "main",
+          "proper": "Prayer after Communion",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+            "surfaces": [
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          },
+          "rights": "permission",
+          "witness": "fdlc-mystagogy-2016",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78c-ordinary-14-23",
+          "verified_on_page": "2026-08-26",
+          "verified_artifact_page": 23,
+          "verified_printed_page": "23",
+          "verified_heading": "TWENTY-FIRST SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+          "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78c_ORDINARY_14-23_SPI2016.pdf",
+          "quarantined_text_sha256": [
+            "f65c1d4207469fc2f12208efcaab32373cbb2233147be2f70fe59ef51a3ac3de"
+          ],
+          "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        }
+      ],
+      "after": {
+        "mass": "ot-21",
+        "form_id": "main",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Plenum, quaesumus, Domine, in nobis remedium",
+        "relation": "variant",
+        "petition_relation": "verbatim",
+        "ancient_witness": "Pustet 1862, Oratio in Consecratione Episcopi/Postcommunio, printed [110]/AP 780",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot21-plenum-petition-source-20261112",
+        "ancient_reading": "Plenum, quæsumus Dómine, in nobis remédium tuæ miseratiónis operáre: ac tales nos esse pérfice propítius, et sic fovéri; ut tibi in ómnibus placére valeámus. Per Dóminum nostrum.",
+        "target_qualification": "secondary-digital-2002-comparison-only;2008-unresolved",
+        "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+        "conclusion_relation": "verbatim",
+        "study_english_passage_id": "passage.triptych.ot21-plenum-study-english.2026-11-12.complete-study-english",
+        "divergence": "Whole historical petition retained without lexical change; fresh study English petition independently accepted. Old main-source cue Per Dominum nostrum is omitted only in this explicit historical study assembly and replaced by separately witnessed complete short formula/response. Secondary 2002 prints Per Christum cue but does not authenticate printed 2002 or 2008. Full source extent is declared, with distinct response; not an edited historical-human English prayer or approved 2011 text. Prior exact approved-English refusal and quarantine fingerprint retained in preparation receipt.",
+        "source_latin_sha256": "36e86231010cd442ba153211c41e73fc7a2e5a3f34d6a7366b12a72c914674e3",
+        "source_latin_passage_id": "passage.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+        "source_latin_publication_source_ids": [
+          "artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Work in us, we pray, O Lord, the full remedy of your mercy, and graciously form and sustain us so that we may please you in all things.\nThrough Christ our Lord.\nR. Amen."
+          }
+        ],
+        "witness_note": "New study English translated from a complete historical Latin petition, joined to a separately sourced traditional conclusion and marked response. This source assembly is not an approved liturgical translation. Correspondence with the 2008 Missal remains unverified."
+      },
+      "full_english": "Work in us, we pray, O Lord, the full remedy of your mercy, and graciously form and sustain us so that we may please you in all things.\nThrough Christ our Lord.\nR. Amen.",
+      "body_sha256": "4bf0aad8ec265a0e84f7859d6354313dd07b5f657a24f0091f85ad3479de5332",
+      "latin_before": {
+        "name": "Prayer after Communion",
+        "incipit": "Plenum, quaesumus, Domine, in nobis remedium",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "grade": "Qualified complete historical assembly plus new study English; printed 2002 fidelity and 2008 target unresolved."
+    },
+    {
+      "group": "all-saints",
+      "identity": [
+        "all-saints",
+        "main",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "before": [
+        {
+          "mass": "all-saints",
+          "form_id": "main",
+          "proper": "Entrance Antiphon",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "verified_artifact_page": 142,
+          "verified_printed_page": 134,
+          "verified_heading": "ALL SAINTS",
+          "verified_on_page": "2026-10-20",
+          "note": "Exact 2010 ICEL English exemplar held and directly read on artifact page 142, printed page 134. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording.",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+            "surfaces": [
+              "site-display",
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          }
+        }
+      ],
+      "after": {
+        "mass": "all-saints",
+        "form_id": "main",
+        "form": "",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Gaudeamus omnes in Domino",
+        "relation": "variant",
+        "ancient_witness": "Missale Romanum, Tours Mame 1922, 1 November, Introit antiphon; original AP 862 / printed 748",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+        "ancient_reading": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei.",
+        "target_witness_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.all-saints-antiphon-comparison-20261112",
+        "target_qualification": "secondary2002-comparison; authenticated2008-unestablished",
+        "study_english_passage_id": "passage.triptych.postconciliar-all-saints-antiphon-study-english-20261112.2026-11-12.all-saints-study-english",
+        "source_latin_sha256": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+        "source_latin_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+        "source_latin_publication_source_ids": [
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+        ],
+        "divergence": "Historical 1922 Latin and fresh project study English. Secondary digitally typeset 2002 AP 512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed 2002 fidelity and authenticated 2008 correspondence remain unresolved. Not approved contemporary English and not for recitation. Entire antiphon only. Fresh study English preserves all clauses; together praise renders collaudant. The earlier approved-English rights-withheld dictionary is retained intact in the dated admission proposal and is not a refusal of this separately authored source route.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "notice": "Historical-source study translation; not approved liturgical English. Exact2008 correspondence remains unestablished.",
+            "text": "Let us all rejoice in the Lord, celebrating a feast in honor of all the saints. The angels rejoice at their solemnity and together praise the Son of God."
+          }
+        ],
+        "witness_note": "Historical 1922 Latin and fresh project study English. The secondary digitally typeset 2002 comparison has the same lexical antiphon, with accents, case, pointing and solemnitate/sollemnitate spelling differences. Fidelity to printed 2002 and correspondence with the authenticated 2008 Missal remain unestablished. This is not approved contemporary English and is not for recitation."
+      },
+      "full_english": "Let us all rejoice in the Lord, celebrating a feast in honor of all the saints. The angels rejoice at their solemnity and together praise the Son of God.",
+      "body_sha256": "8619e91f083fe507174da1c631422c015f70eebb7ee0390cb214288fdf9f5384",
+      "latin_before": {
+        "name": "Entrance Antiphon",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+            }
+          ]
+        },
+        "notes": "Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded."
+      },
+      "grade": "Complete 1922 historical Latin plus new study English; secondary 2002 comparison, 2008 unresolved."
+    },
+    {
+      "group": "easter-three",
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the First Reading",
+        "all",
+        1
+      ],
+      "before": [
+        {
+          "mass": "easter-vigil",
+          "form_id": "main",
+          "proper": "Prayer after the First Reading",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "reason": {
+            "kind": "no-exemplar"
+          },
+          "rejected_detectors": [
+            "liturgies-net-2026-08-22"
+          ],
+          "quarantined_text_sha256": [
+            "935a4d758ec2362c8c7ce56f825819ba10eafcc1c0c77dc05f7176a8802f0c7d"
+          ],
+          "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+        }
+      ],
+      "after": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the First Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Omnipotens sempiterne Deus, qui es in omnium operum tuorum",
+        "relation": "variant",
+        "ancient_witness": "Wilson 1894; printed 82; Book I section xliii, complete prayer after De Noe heading",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-vigil-first-reading-old-latin-20261112-easter-study-three",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-vigil-first-reading-text-20261112-easter-study-three",
+        "ancient_reading": "Omnipotens sempiterne Deus, qui in omnium operum tuorum dispensatione mirabilis es, intelligant redempti tui non fuisse excellentius quod initio factus est mundus, quam quod in fine saeculorum Pascha nostrum immolatus est Christus. Per eundem Dominum.",
+        "divergence": "Compared with whole secondary 2002 AP 213: es moves from after mirabilis to after qui; intelligant becomes intellegant. No petition word/concept is added, omitted or substituted otherwise. Accents, case and punctuation are editorial. Old Per eundem Dominum cue is replaced by the separately witnessed complete Qui vivit conclusion and R. Amen response. Qualified project study English only. The comparison is the held secondary digital 2002 typesetting; fidelity to printed 2002 and correspondence with 2008 remain unestablished. No official/approved English, historical-human translation or recitation authority is asserted. No target Latin body is admitted. Exact English source passage.triptych.easter-vigil-first-reading-study-english-20261112.2026-11-12.principal-study-english. Complete old short conclusion passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion. Separate response passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.vigil-first-reading-comparison-20261112-easter-study-three.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Almighty and everlasting God, wondrous in the ordering of all your works, may those you have redeemed understand that the making of the world in the beginning was no greater than the sacrifice of Christ, our Passover, at the end of the ages. Who lives and reigns for ever and ever. R. Amen."
+          }
+        ],
+        "witness_note": "Project-created study English from the complete prayer printed in Wilson 1894, with its short conclusion and response independently sourced. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation."
+      },
+      "full_english": "Almighty and everlasting God, wondrous in the ordering of all your works, may those you have redeemed understand that the making of the world in the beginning was no greater than the sacrifice of Christ, our Passover, at the end of the ages. Who lives and reigns for ever and ever. R. Amen.",
+      "body_sha256": "6c1315dcc0dc085fb6bf21c89e2040c0a1683d972bb4a96d30b2816bb00d5a19",
+      "latin_before": {
+        "name": "Prayer after the First Reading",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "prayer-after-the-first-reading",
+          "option": "omnipotens-sempiterne-deus-qui-es",
+          "basis": "Alternative prayer, De creatione hominis."
+        },
+        "incipit": "Omnipotens sempiterne Deus, qui es in omnium operum tuorum",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "grade": "Qualified study English only; ancient complete source expressions and separate formulas as declared; no Latin/2008 upgrade."
+    },
+    {
+      "group": "easter-three",
+      "identity": [
+        "easter-3-wednesday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "before": [
+        {
+          "mass": "easter-3-wednesday",
+          "form_id": "main",
+          "proper": "Communion Antiphon",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "verified_artifact_page": 63,
+          "verified_printed_page": 55,
+          "verified_heading": "Wednesday of the Third Week of Easter",
+          "verified_on_page": "2026-10-21",
+          "note": "The exact uncited English antiphon exemplar is positively held in the registered ICEL 2010 Antiphonary, artifact page 63, printed page 55; the 2026-10-20/21 seasonal source audit viewed the actual page image. This source-order Communion Antiphon occurrence 1 adds no English wording. The restricted artifact and the registered ICEL rights inventory establish no unconditional publication basis for this clonable/downloadable route. No no-exemplar claim, removed-body hash, Latin provenance row, or exact 2008 Latin-body claim is made.",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+            "surfaces": [
+              "site-display",
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          }
+        }
+      ],
+      "after": {
+        "mass": "easter-3-wednesday",
+        "form_id": "main",
+        "proper": "Communion Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "form": "",
+        "ancient_witness": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862; physical PDF page 373 / printed 287",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-la-54b9b8b5",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-text",
+        "ancient_reading": "Surrexit Christus, et illuxit nobis, quos redemit sanguine suo. Alleluja.",
+        "divergence": "The one lexical variation is historical Christus against Dominus in the inspected secondary 2002 reproduction; the study English renders the latter common divine title as Lord. Every other body word agrees. The historical Greater Alleluia verse is a complete source-local unit: the leading two Alleluias and V. are chant framing, and the following Exivi a Patre / John 16:28 verse is separate. The historical comma after Christus, full stop before final Alleluja and final capital differ from the modern pointing and case; stress accents and final Alleluja / allelúia spelling differ. These are fully disclosed differences, not an exact historical English transfer. The comparison is bounded to the exact secondary digitally typeset 2002 reproduction; fidelity to printed 2002 and agreement with the 2008 reimpressio remain unresolved. New Triptych study English, not historical human English, not approved liturgical English, and not for recitation. No ICEL English source was used. The new third-week owner was independently compared in full with the fifth-week owner: passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter3-wednesday-communion-comparison-20261112-easter-study-three. The existing English body/artifact/passages and original fifth-week owner remain unchanged.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "The Lord has risen and has shone upon us, whom he redeemed with his blood, alleluia."
+          }
+        ],
+        "witness_note": "Project-created study English from the complete Greater Alleluia verse printed in Pustet 1862, with the disclosed Christus/Dominus variant rendered as Lord. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation."
+      },
+      "full_english": "The Lord has risen and has shone upon us, whom he redeemed with his blood, alleluia.",
+      "body_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea",
+      "latin_before": {
+        "name": "Communion Antiphon",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+            }
+          ]
+        },
+        "notes": "Source appointment antiphonary:easter-3-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 63 / printed page 55, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading."
+      },
+      "grade": "Qualified study English only; ancient complete source expressions and separate formulas as declared; no Latin/2008 upgrade."
+    },
+    {
+      "group": "easter-three",
+      "identity": [
+        "easter-3-friday",
+        "main",
+        "Communion Antiphon",
+        "all",
+        1
+      ],
+      "before": [
+        {
+          "mass": "easter-3-friday",
+          "form_id": "main",
+          "proper": "Communion Antiphon",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "verified_artifact_page": 63,
+          "verified_printed_page": 55,
+          "verified_heading": "Friday of the Third Week of Easter",
+          "verified_on_page": "2026-10-21",
+          "note": "The exact uncited English antiphon exemplar is positively held in the registered ICEL 2010 Antiphonary, artifact page 63, printed page 55; the 2026-10-20/21 seasonal source audit viewed the actual page image. This source-order Communion Antiphon occurrence 1 adds no English wording. The restricted artifact and the registered ICEL rights inventory establish no unconditional publication basis for this clonable/downloadable route. No no-exemplar claim, removed-body hash, Latin provenance row, or exact 2008 Latin-body claim is made.",
+          "reason": {
+            "kind": "rights-withheld",
+            "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+            "surfaces": [
+              "site-display",
+              "corpus-data",
+              "public-git",
+              "command-line",
+              "download"
+            ]
+          }
+        }
+      ],
+      "after": {
+        "mass": "easter-3-friday",
+        "form_id": "main",
+        "proper": "Communion Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "abridged",
+        "form": "",
+        "ancient_witness": "edition.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815; physical PDF page 114 / printed 114",
+        "witness_edition_id": "edition.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815",
+        "witness_artifact_id": "artifact.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-la-f5195f15",
+        "ancient_passage_id": "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-text",
+        "ancient_reading": "Crucifixus surrexit á mortuis, et redemit nos alleluja, alleluja.",
+        "divergence": "The inspected secondary 2002 reproduction omits the second final alleluja of the complete 1815 antiphon. No body word is added or substituted. The historical acute preposition á, other stress accents, j/i in alleluja / allelúia, and lack of a source comma after nos versus the modern comma are orthographic or pointing differences. The study English renders the retained historical words with one final alleluia under the disclosed abridged route. No historical English is attributed to this Latin-only source. The following Dicite in nationibus versicle/response is separately labelled and excluded. The comparison is bounded to the exact secondary digitally typeset 2002 reproduction; fidelity to printed 2002 and agreement with the 2008 reimpressio remain unresolved. New Triptych study English, not historical human English, not approved liturgical English, and not for recitation. No ICEL English source was used. The new third-week owner was independently compared in full with the fifth-week owner: passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter3-friday-communion-comparison-20261112-easter-study-three. The existing English body/artifact/passages and original fifth-week owner remain unchanged.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "He who was crucified has risen from the dead and redeemed us, alleluia."
+          }
+        ],
+        "witness_note": "Project-created study English from the complete antiphon printed at Mexico in 1815, with one repeated final Alleluia omitted. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation."
+      },
+      "full_english": "He who was crucified has risen from the dead and redeemed us, alleluia.",
+      "body_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94",
+      "latin_before": {
+        "name": "Communion Antiphon",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+            }
+          ]
+        },
+        "notes": "Source appointment antiphonary:easter-3-friday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 63 / printed page 55, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the weekday Mass appointed under the source weekday heading."
+      },
+      "grade": "Qualified study English only; ancient complete source expressions and separate formulas as declared; no Latin/2008 upgrade."
+    },
+    {
+      "group": "pentecost-two",
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (before the readings)",
+        "all",
+        1
+      ],
+      "before": [
+        {
+          "mass": "pentecost",
+          "form_id": "extended-vigil",
+          "proper": "Collect (before the readings)",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 62 / printed p. 380, nn. 2-3. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The two opening branches appoint the same incipit; neither branch is selected in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+          "reason": {
+            "kind": "no-exemplar"
+          }
+        }
+      ],
+      "after": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (before the readings)",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "ancient_reading": "Praesta quaesumus omnipotens deus. ut claritatis tuae super nos splendor effulgeat. et lux tuae lucis corda eorum qui per gratiam tuam renati sunt. sancti spiritus inlustratione confirmet. per dominum nostrum iesum christum in unitate eiusdem.",
+        "divergence": "Every petition word agrees after received inlustratione/illustratione spelling and the two local word-order changes per gratiam tuam renati sunt to per tuam gratiam sunt renati. Pointing, capitalization and accents differ. The older conclusion prints per dominum nostrum iesum christum in unitate eiusdem.; the bounded-secondary short cue Per Dominum. takes only its directly witnessed first two words. No full conclusion is supplied or silently harmonized. Printed e-caudata is transcribed ae; apparatus markers 3 and 4 are excluded from the prayer words. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts. The receiving incipit is the exact short incipit on the extended slot; the complete source identity and longer original source incipit remain unchanged in the separately retained admitted simple-Vigil dictionary. New receiving use: Official 2008 nn 2-3 name the same Praesta prayer in both opening branches and explicitly refer to Ad Missam in Vigilia, Missal p 443. Secondary 2002 AP 264-265 establishes the complete named Vigil prayer and its role. The adjacent Saturday-morning Praesta on AP 264 is a different full prayer and is excluded. This is a source-qualified referral, not a complete 2008 body equivalence. No opening branch/default, R. Amen, expanded conclusion, other simple-Vigil proper or complete-form claim is inferred. Source-appointment passage passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.modern-sources-20261112-pentecost-extended-before-readings-appointment; receiving comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-pentecost-extended-before-readings-comparison; exact unchanged study-English publication passage.triptych.modern-sources-20261112-pentecost-extended-study-recipients.2026-11-12.before-readings. Prior source-local mapping review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-collect-mapping-review.json and accepted ancient-body/English review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json remain controlling. The prior unavailable record is preserved verbatim in the install proposal.",
+        "incipit": "Praesta, quaesumus",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; Orationes ad Missam in Sabbato Pentecosten post ascensum fontis, first prayer",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Grant, we ask, almighty God, that the splendor of your glory may shine upon us, and that the light of your light may strengthen, through the illumination of the Holy Spirit, the hearts of those who have been reborn by your grace. Through our Lord."
+          }
+        ],
+        "witness_note": "Project study English, reused unchanged from an independently witnessed ancient expression through the official extended-Vigil referral to the named simple-Vigil prayer. Complete Latin comparison is limited to the separately identified secondary digital 2002 reproduction; fidelity to printed 2002 remains unestablished. The official 2008 excerpt supplies only the incipit and page referral, so the complete 2008 body remains unestablished. The short Through our Lord cue is retained without expansion or Amen. This is neither historical human English nor approved liturgical English or recitation authorization. Opening branches and prayer alternatives remain unselected."
+      },
+      "full_english": "Grant, we ask, almighty God, that the splendor of your glory may shine upon us, and that the light of your light may strengthen, through the illumination of the Holy Spirit, the hearts of those who have been reborn by your grace. Through our Lord.",
+      "body_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066",
+      "latin_before": {
+        "name": "Collect (before the readings)",
+        "source": "composed",
+        "incipit": "Praesta, quaesumus",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module"
+            }
+          ]
+        },
+        "notes": "Official 2008 Supplementum, Notitiae artifact p. 62 / printed p. 380, nn. 2-3. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The two opening branches appoint the same incipit; neither branch is selected in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module"
+      },
+      "grade": "Two receiving uses of unchanged existing study English; official 2008 referral/incipits plus secondary whole body; no complete 2008 Latin, branch/default or conclusion expansion."
+    },
+    {
+      "group": "pentecost-two",
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (after Gloria)",
+        "all",
+        1
+      ],
+      "before": [
+        {
+          "mass": "pentecost",
+          "form_id": "extended-vigil",
+          "proper": "Collect (after Gloria)",
+          "cycle": "all",
+          "occurrence": 1,
+          "lang": "en",
+          "extent": "body",
+          "availability": "unavailable",
+          "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, nn. 9-10. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The source places Gloria before this Collect; the hymn body and its Ordinary placement are not fabricated in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+          "reason": {
+            "kind": "no-exemplar"
+          }
+        }
+      ],
+      "after": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (after Gloria)",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "ancient_reading": "Omnipotens sempiterne Deus, qui paschale sacramentum quinquaginta dierum voluisti mysterio contineri, praesta ut gentium facta dispersio divisione linguarum ad unam confessionem tui nominis caelesti munere congregetur. Per.",
+        "divergence": "All petition lexical words preexist. There are three linked grammatical inflection changes: ancient dispersio divisione ... congregetur becomes bounded-secondary dispersione divisiones ... congregentur. Wilson p. 123 note 2 independently prints the ancient V reading divisiones, and note 4 prints congregentur V; his main text follows the other cited witnesses. The new English follows the bounded-secondary grammar. Pointing, capitalization and accents also differ. The main ancient cue is literally Per.; the generic short cue Per Dominum. is separately printed in this edition at p. 106, parent artifact p. 199, and is not expanded here. Independently printed short-cue source: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts. The receiving incipit is the exact short incipit on the extended slot; the complete source identity and longer original source incipit remain unchanged in the separately retained admitted simple-Vigil dictionary. New receiving use: Official 2008 n 10 names the Omnipotens prayer after Gloria and explicitly refer to Ad Missam in Vigilia, Missal p 443. Secondary 2002 AP 264-265 establishes the complete named Vigil prayer and its role. The adjacent Saturday-morning Praesta on AP 264 is a different full prayer and is excluded. This is a source-qualified referral, not a complete 2008 body equivalence. No opening branch/default, R. Amen, expanded conclusion, other simple-Vigil proper or complete-form claim is inferred. Source-appointment passage passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.modern-sources-20261112-pentecost-extended-after-gloria-appointment; receiving comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-pentecost-extended-after-gloria-comparison; exact unchanged study-English publication passage.triptych.modern-sources-20261112-pentecost-extended-study-recipients.2026-11-12.after-gloria. Prior source-local mapping review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-collect-mapping-review.json and accepted ancient-body/English review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json remain controlling. The prior unavailable record is preserved verbatim in the install proposal.",
+        "incipit": "Omnipotens sempiterne Deus",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; Book I, section LXXX, Orationes et Preces Dominica Pentecosten, first prayer; p 123 apparatus notes 2 and 4",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Almighty, everlasting God, who willed the paschal sacrament to be contained within the mystery of fifty days, grant that, after the scattering of the nations, the divisions of tongues may be gathered by a heavenly gift into one confession of your name. Through our Lord."
+          }
+        ],
+        "witness_note": "Project study English, reused unchanged from an independently witnessed ancient expression through the official extended-Vigil referral to the named simple-Vigil prayer. Complete Latin comparison is limited to the separately identified secondary digital 2002 reproduction; fidelity to printed 2002 remains unestablished. The official 2008 excerpt supplies only the incipit and page referral, so the complete 2008 body remains unestablished. The short Through our Lord cue is retained without expansion or Amen. This is neither historical human English nor approved liturgical English or recitation authorization. Opening branches and prayer alternatives remain unselected."
+      },
+      "full_english": "Almighty, everlasting God, who willed the paschal sacrament to be contained within the mystery of fifty days, grant that, after the scattering of the nations, the divisions of tongues may be gathered by a heavenly gift into one confession of your name. Through our Lord.",
+      "body_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e",
+      "latin_before": {
+        "name": "Collect (after Gloria)",
+        "source": "composed",
+        "incipit": "Omnipotens sempiterne Deus",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module"
+            }
+          ]
+        },
+        "notes": "Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, nn. 9-10. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The source places Gloria before this Collect; the hymn body and its Ordinary placement are not fabricated in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module"
+      },
+      "grade": "Two receiving uses of unchanged existing study English; official 2008 referral/incipits plus secondary whole body; no complete 2008 Latin, branch/default or conclusion expansion."
+    }
+  ],
+  "latin": [
+    {
+      "group": "semen",
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "before_node": {
+        "source": "composed",
+        "incipit": "Semen est verbum Dei",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "source": "composed",
+        "incipit": "Semen est verbum Dei",
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.",
+        "notes": "Complete Latin of the governing OLM 1981 recipient n 92 (AP 110/printed 56), independently word-exact to the public-domain Pustet 1888 antiphon p 339/AP 393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112. Historical Bute 1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a 2008 altar-book collation."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-11",
+          "form": "",
+          "proper": "Gospel Acclamation",
+          "course": "cycles",
+          "cycle": "B",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "5de6fd5ea89615fba71cc7bb1494ee15002c718180b4d071a761704faa9be4a1"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-11",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "B",
+        "occurrence": 1,
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot11-b-20261112",
+        "source_date": "1888",
+        "locator": "Pustet 1888 p 339/AP 393 complete antiphon; normalized body.txt line 1",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112",
+        "verification_locator": "Governing OLM 1981 n 92, AP 110/printed 56",
+        "transformations": [
+          "Remove historical chant asterisk",
+          "Remove stress accents; expand ae ligature",
+          "Normalize colon after Christus to semicolon; join line wraps",
+          "No lexical addition, omission or substitution"
+        ],
+        "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet 1888 and this OLM 1981 recipient. Source-specific target is the Lectionary 1981 acclamation, not a 2008 altar-book oration.",
+        "provenance_authority": "Source-local OLM 1981 word-exact collation, independently reviewed 2026-11-12",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+        ],
+        "publication_locator": "Whole underlying 1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+        "publication_evidence": "Entire underlying Latin expression appears in 1888 printing; its maximum 95-year US term ended before 2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis.",
+        "note": "Exact governing OLM 1981 body on all recorded output surfaces; historical human English separate, no approved 2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      },
+      "live_path": [
+        "sections",
+        "seasonal",
+        "masses",
+        158,
+        "propers",
+        5,
+        "cycles",
+        "B"
+      ],
+      "target_grade": "exact governing OLM1981 body, not Missal2008"
+    },
+    {
+      "group": "semen",
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "before_node": {
+        "incipit": "Semen est verbum Dei, sator autem Christus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "incipit": "Semen est verbum Dei, sator autem Christus",
+        "source": "composed",
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.",
+        "notes": "Complete Latin of the governing OLM 1981 recipient n 103 (AP 115/printed 61), independently word-exact to the public-domain Pustet 1888 antiphon p 339/AP 393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112. Historical Bute 1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a 2008 altar-book collation."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-15",
+          "form": "",
+          "proper": "Gospel Acclamation",
+          "course": "cycles",
+          "cycle": "A",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "5de6fd5ea89615fba71cc7bb1494ee15002c718180b4d071a761704faa9be4a1"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-15",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "cycles",
+        "cycle": "A",
+        "occurrence": 1,
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot15-a-20261112",
+        "source_date": "1888",
+        "locator": "Pustet 1888 p 339/AP 393 complete antiphon; normalized body.txt line 1",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112",
+        "verification_locator": "Governing OLM 1981 n 103, AP 115/printed 61",
+        "transformations": [
+          "Remove historical chant asterisk",
+          "Remove stress accents; expand ae ligature",
+          "Normalize colon after Christus to semicolon; join line wraps",
+          "No lexical addition, omission or substitution"
+        ],
+        "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet 1888 and this OLM 1981 recipient. Source-specific target is the Lectionary 1981 acclamation, not a 2008 altar-book oration.",
+        "provenance_authority": "Source-local OLM 1981 word-exact collation, independently reviewed 2026-11-12",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+        ],
+        "publication_locator": "Whole underlying 1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+        "publication_evidence": "Entire underlying Latin expression appears in 1888 printing; its maximum 95-year US term ended before 2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis.",
+        "note": "Exact governing OLM 1981 body on all recorded output surfaces; historical human English separate, no approved 2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      },
+      "live_path": [
+        "sections",
+        "seasonal",
+        "masses",
+        162,
+        "propers",
+        7,
+        "cycles",
+        "A"
+      ],
+      "target_grade": "exact governing OLM1981 body, not Missal2008"
+    },
+    {
+      "group": "semen",
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Verse Before the Gospel",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "body_status": "held-unpublished",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+            }
+          ]
+        },
+        "notes": "OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth role is part of the native ferial course, not silently replaced by the optional course.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "verse-before-gospel",
+          "option": "ferial",
+          "basis": "OLM 1981 n. 250, artifact page 192 / printed page 138: the complete optional First Reading, Responsorial Psalm, Verse Before the Gospel and Gospel course may be used on any Monday-Saturday of this week in all years A/B/C. Sunday nonuse, especially in years B/C, is a preference, not an exclusive eligibility condition or an attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication permission is inferred."
+        }
+      },
+      "after_node": {
+        "name": "Verse Before the Gospel",
+        "source": "composed",
+        "notes": "Complete Latin of the governing OLM 1981 recipient n 252 (AP 192/printed 138), independently word-exact to the public-domain Pustet 1888 antiphon p 339/AP 393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112. Historical Bute 1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a 2008 altar-book collation.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "verse-before-gospel",
+          "option": "ferial",
+          "basis": "OLM 1981 n. 250, artifact page 192 / printed page 138: the complete optional First Reading, Responsorial Psalm, Verse Before the Gospel and Gospel course may be used on any Monday-Saturday of this week in all years A/B/C. Sunday nonuse, especially in years B/C, is a preference, not an exclusive eligibility condition or an attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication permission is inferred."
+        },
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum."
+      },
+      "before_provenance_entries": [],
+      "after_provenance_entry": {
+        "mass": "lent-5-tuesday",
+        "form": "",
+        "proper": "Verse Before the Gospel",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-lent5-tuesday-ferial-20261112",
+        "source_date": "1888",
+        "locator": "Pustet 1888 p 339/AP 393 complete antiphon; normalized body.txt line 1",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112",
+        "verification_locator": "Governing OLM 1981 n 252, AP 192/printed 138",
+        "transformations": [
+          "Remove historical chant asterisk",
+          "Remove stress accents; expand ae ligature",
+          "Normalize colon after Christus to semicolon; join line wraps",
+          "No lexical addition, omission or substitution"
+        ],
+        "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet 1888 and this OLM 1981 recipient. Source-specific target is the Lectionary 1981 acclamation, not a 2008 altar-book oration.",
+        "provenance_authority": "Source-local OLM 1981 word-exact collation, independently reviewed 2026-11-12",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+        ],
+        "publication_locator": "Whole underlying 1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+        "publication_evidence": "Entire underlying Latin expression appears in 1888 printing; its maximum 95-year US term ended before 2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis.",
+        "note": "Exact governing OLM 1981 body on all recorded output surfaces; historical human English separate, no approved 2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      },
+      "live_path": [
+        "sections",
+        "seasonal",
+        "masses",
+        84,
+        "propers",
+        5
+      ],
+      "target_grade": "exact governing OLM1981 body, not Missal2008"
+    },
+    {
+      "group": "ot21",
+      "identity": [
+        "ot-21",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer after Communion",
+        "incipit": "Plenum, quaesumus, Domine, in nobis remedium",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer after Communion",
+        "incipit": "Plenum, quaesumus, Domine, in nobis remedium",
+        "source": "composed",
+        "text": "Plenum, quaesumus Domine, in nobis remedium tuae miserationis operare: ac tales nos esse perfice propitius, et sic foveri; ut tibi in omnibus placere valeamus.\nPer Christum Dominum nostrum.\nR. Amen.",
+        "notes": "Historical study source assembly: complete 1862 Plenum petition with separately witnessed full short conclusion and marked response. Every petition word agrees with the secondary digital 2002 witness, whose Per Christum cue differs from the old Per Dominum nostrum. This full expansion is independently sourced, not printed in full at the secondary target locus. Printed 2002 fidelity and 2008 correspondence remain unresolved; no exact modern-target claim."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-21",
+          "form": "",
+          "proper": "Prayer after Communion",
+          "course": "",
+          "cycle": "",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "98ab0eec1630824aa2d0a4d86137fc2b6808ffad35febce4b97b49f8cdcf04b9"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-21",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "36e86231010cd442ba153211c41e73fc7a2e5a3f34d6a7366b12a72c914674e3",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+        "source_date": "1862 petition;1945 complete common ending",
+        "locator": "Complete declared source-assembly carrier, lines 1–3",
+        "relationship": "exact-transcription",
+        "verification_source_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot21-plenum-petition-source-20261112",
+        "verification_locator": "Pustet 1862 AP 780/[110], complete petition; separate full formula passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+        "transformations": [
+          "Retain complete 1862 petition without lexical changes; remove stress accents and expand ae ligatures",
+          "Exclude old Per Dominum nostrum cue; do not expand it",
+          "Append separately witnessed complete Per Christum Dominum nostrum. and distinct marked R. Amen.",
+          "Preserve historical petition punctuation and three-unit source extent"
+        ],
+        "provenance_evidence": "Exact transcription of the explicitly declared source-based assembly, whose entire petition and full conclusion are independently witnessed. Assembly is not represented as contiguous in an old source; no protected modern clause is supplied. Secondary 2002 petition-only comparison is explicitly limited.",
+        "provenance_authority": "Historical source assembly, independently reviewed; modern target 2008 identity unresolved",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+          "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+        ],
+        "publication_locator": "Pustet 1862 AP 780/[110]; verified Lasance 1945 ordinary p 217 formula, exact registered old-source rights records",
+        "publication_evidence": "One entire independently public-domain historical petition is retained without lexical editing, followed by one independently witnessed complete conventional conclusion and marked response. No petition fragment is selected, no substantive modern clause is inserted, and no source body is represented as a contiguous historical prayer with this different ending. This finite source-based assembly is a historical study rendering; exact 2008 target remains unresolved. Review must assess this complete bounded combination, not use small-word-change or vocabulary-overlap rules.",
+        "note": "Historical study source assembly: complete 1862 Plenum petition with separately witnessed full short conclusion and marked response. Every petition word agrees with the secondary digital 2002 witness, whose Per Christum cue differs from the old Per Dominum nostrum. This full expansion is independently sourced, not printed in full at the secondary target locus. Printed 2002 fidelity and 2008 correspondence remain unresolved; no exact modern-target claim."
+      },
+      "live_path": [
+        "sections",
+        "seasonal",
+        "masses",
+        168,
+        "propers",
+        10
+      ],
+      "target_grade": "historical source expression; modern2008 target unresolved"
+    },
+    {
+      "group": "all-saints",
+      "identity": [
+        "all-saints",
+        "main",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Entrance Antiphon",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "witness-gap",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+            }
+          ]
+        },
+        "notes": "Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded."
+      },
+      "after_node": {
+        "name": "Entrance Antiphon",
+        "source": "composed",
+        "incipit": "Gaudeamus omnes in Domino",
+        "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei.",
+        "notes": "Historical 1922 Latin and fresh project study English. Secondary digitally typeset 2002 AP 512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed 2002 fidelity and authenticated 2008 correspondence remain unresolved. Not approved contemporary English and not for recitation. Source appointment: ICEL 2010 AP 142 / printed 134; no text from that English carrier is copied. Following historical Psalm 32:1 and doxology are excluded."
+      },
+      "before_provenance_entries": [],
+      "after_provenance_entry": {
+        "mass": "all-saints",
+        "form": "",
+        "proper": "Entrance Antiphon",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+        "source_date": "1922",
+        "locator": "Mame 1922 original AP 862 / printed 748, Introit antiphon only; exact selected derivative line 1",
+        "relationship": "exact-transcription",
+        "verification_source_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-own-propers-checked-2026-10-20",
+        "verification_locator": "Original checked 1922 text lines 1-2; image excerpt AP 1 / original AP 862 / printed 748",
+        "transformations": [
+          "Select whole historical antiphon before Psalm 32:1 and Gloria Patri",
+          "Join one internal source line break with a space; retain all 1922 words, spelling, case and punctuation",
+          "Omit final storage LF in calendar string"
+        ],
+        "provenance_evidence": "Entire old antiphon independently re-read on original page image and checked-source artifact. Secondary 2002 lexical correspondence is qualified by solemnitate/sollemnitate orthography; no 2008 identity asserted.",
+        "provenance_authority": "Historical source exactness; modern target relation remains qualified",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+        ],
+        "publication_locator": "Complete 1922 historical antiphon, independently registered original-publication/mechanical-reproduction basis",
+        "publication_evidence": "Every published Latin word is in the independently held 1922 source; no modern expression or apparatus is added. Study English has its separate project-created source artifact.",
+        "notice": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation.",
+        "note": "Historical 1922 Latin and fresh project study English. Secondary digitally typeset 2002 AP 512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed 2002 fidelity and authenticated 2008 correspondence remain unresolved. Not approved contemporary English and not for recitation."
+      },
+      "live_path": [
+        "sections",
+        "sanctoral",
+        "masses",
+        167,
+        "propers",
+        0
+      ],
+      "target_grade": "historical source expression; modern2008 target unresolved"
+    }
+  ],
+  "ordinary": {
+    "identity": "praeparatio-donorum/in-spiritu-humilitatis",
+    "live_path": [
+      "sections",
+      3,
+      "elements",
+      3
+    ],
+    "before_element": {
+      "key": "in-spiritu-humilitatis",
+      "kind": "prayer",
+      "speaker": "priest",
+      "name": "In spiritu humilitatis",
+      "latin_incipit": "In spiritu humilitatis",
+      "missal_number": "n. 26",
+      "absent_english": "priest-prayer-said-quietly",
+      "english": {
+        "reading_note": "Historical English (Cummiskey, 1861), not the approved 2011 translation. The complete older English prayer is retained without an added Amen.",
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+        "elements": [
+          "in-spiritu-humilitatis"
+        ],
+        "column": "english",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "note": "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxiv, Internet Archive leaves 34, read from the already registered page-checked transcription. The complete English prayer has no Amen. Its facing Latin has the independently recorded nodie misprint; the English remains its own source column and does not repair that Latin. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+      },
+      "latin": {
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
+        "elements": [
+          "in-spiritu-humilitatis"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "note": "ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of the 1861 Philadelphia Cummiskey hand missal at its In spiritu humilitatis, printed page xxiv, Internet Archive leaf 34. The Latin of the Missale Romanum, editio typica tertia 2002 with its emended reprint of 2008 is not served here. The repository holds and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish this word identity; these are the 1861 printing's words. THE WITNESS MISPRINTS nodie FOR hodie, and it is carried as printed and not corrected: the letter is an n, with no ascender, read at 200 per cent magnification against the h of hoc on the same page and recorded in the artifact's own transcriber's note. It is that printer's error. Nothing here attributes it to the Missal, and correcting it silently would have manufactured a target witness this project has not established. The visually checked 1862 Pustet page at passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-303 prints hodie and confirms only that the 1861 n is not the older prayer's general reading; it does not establish the postconciliar target. UNCOLLATED: the identity of this text with the controlling edition's is not established here. This repository's study of this Order of Mass states at n. 26, in 00-order-of-mass/sections/40-preparation-of-the-gifts.tex:108-110, that the prayer is taken from the Song of the Three Young Men and is retained from the older Order, and it quotes the 2002 Latin of the opening clause only, as far as suscipiamur a te, Domine. That clause and this witness agree word for word. The rest of the prayer, the misprint among it, has not been compared with anything.\n"
+      }
+    },
+    "after_element": {
+      "key": "in-spiritu-humilitatis",
+      "kind": "prayer",
+      "speaker": "priest",
+      "name": "In spiritu humilitatis",
+      "latin_incipit": "In spiritu humilitatis",
+      "missal_number": "n. 26",
+      "absent_english": "priest-prayer-said-quietly",
+      "english": {
+        "reading_note": "Historical English (Cummiskey, 1861), not the approved 2011 translation. The complete older English prayer is retained without an added Amen.",
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+        "elements": [
+          "in-spiritu-humilitatis"
+        ],
+        "column": "english",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "note": "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxiv, Internet Archive leaves 34, read from the already registered page-checked transcription. The complete English prayer has no Amen. Its facing Latin has the independently recorded nodie misprint; the English remains its own source column and does not repair that Latin. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+      },
+      "latin": {
+        "witness": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "artifact": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.in-spiritu-humilitatis-la-20261112",
+        "elements": [
+          "in-spiritu-humilitatis"
+        ],
+        "column": "latin",
+        "relation": "antecedent",
+        "collation": "collated",
+        "target_wording": "word-exact",
+        "collation_finding": "passage.holy-see.notitiae.volume-58-number-599-2022.desiderio-desideravi-60-in-spiritu-2008-quotation; workflows/reviews/missal-english-completion-2026-10-29/postconciliar/ordinary-in-spiritu-2008-source-admission-2026-11-12.json",
+        "reading_note": "Latin from Pustet (1862), collated word for word to the complete prayer expressly cited from the 2008 Missal in Desiderio desideravi. Source punctuation is retained; this is not a complete liturgical edition.",
+        "note": "The Latin is independently transcribed from Pustet, Ratisbon 1862, printed p. 218 / complete PDF p. 304 / IA n 303. It reads hodie and contains no Amen. Stress accents are removed, physical wrapping joined and initial small capitals rendered in sentence case; all source words, word order and punctuation remain. The whole prayer agrees word for word, apart from those display conventions and punctuation, with the official Latin Desiderio desideravi 60 quotation, Notitiae 2022 printed p. 53 / PDF p. 55, note 20 expressly citing Missale Romanum (2008), p. 515. The comparison establishes this one complete prayer’s wording, not a complete 2008 exemplar, modern rubrics, chant, liturgical approval or approved English. Cummiskey 1861 remains a separate source: its literal nodie is preserved in its original artifact and in the prior source-selection receipt; no Cummiskey byte is repaired or attributed to Pustet. Historical English retains its existing, independently identified Cummiskey witness and its own uncollated status."
+      }
+    },
+    "before_witnesses_same_id": [],
+    "append_witness": {
+      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+      "lang": "la",
+      "label": "Historical Latin, Pustet 1862; this prayer collated to an explicit 2008 Missal quotation",
+      "rights": "public-domain",
+      "caution": "The independent 1862 Pustet printing supplies the selected prayer. Its complete words agree with the 2008 Missal quotation expressly identified by the Holy See in Desiderio desideravi 60, note 20. Source punctuation is retained and stress accents removed. This verifies only the named prayer, not a complete Ordinary, modern rubrics or an authorized altar book.",
+      "artifacts": [
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.in-spiritu-humilitatis-la-20261112"
+      ]
+    },
+    "prose_replacements": {
+      "and every one of them is carried as printed and named in the element's own note.": "and every one remains in that source artifact. The In spiritu humilitatis selection now names the independently collated 1862 Pustet source; no 1861 artifact byte is repaired.",
+      "and nodie for hodie at In spiritu humilitatis are the 1861 printer's and not the Holy See's.": "and nodie for hodie in its In spiritu humilitatis row are the 1861 printer's and not the Holy See's. That row remains in the source artifact; the current selection of this prayer independently names Pustet 1862."
+    },
+    "prior_latin_body": "In spiritu humilitatis, et in animo contrito suscipiamur a te, Domine: et sic fiat sacrificium nostrum in conspectu tuo nodie, ut placeat tibi, Domine Deus.",
+    "prior_latin_body_sha256": "03bde9df0f0c8d5c25f05b0c7001b59d7e954224eac4d0c576b85ff19589c31d",
+    "new_latin_body": "In spiritu humilitatis, et in animo contrito suscipiamur a te Domine: et sic fiat sacrificium nostrum in conspectu tuo hodie, ut placeat tibi, Domine Deus.",
+    "new_latin_body_sha256": "879af4f72ecacf07cf4106e51bd1361cae6e3c1b3050c80fe8470b5f8224fc05",
+    "english_unchanged": {
+      "source_dictionary": {
+        "reading_note": "Historical English (Cummiskey, 1861), not the approved 2011 translation. The complete older English prayer is retained without an added Amen.",
+        "witness": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-en",
+        "elements": [
+          "in-spiritu-humilitatis"
+        ],
+        "column": "english",
+        "relation": "antecedent",
+        "collation": "uncollated",
+        "note": "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxiv, Internet Archive leaves 34, read from the already registered page-checked transcription. The complete English prayer has no Amen. Its facing Latin has the independently recorded nodie misprint; the English remains its own source column and does not repair that Latin. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
+      },
+      "body_sha256": "21b8e62e5264185c7049624a498793b2a23972a43c834aaf4e1bdb92f5e0a4f7",
+      "artifact_sha256": "b3a9ed6f1f15d9c08ee5603d9ce6bcb7846771648ece1271abf834e418b7203a",
+      "exact_dictionary_equal": true
+    },
+    "target_grade": "word-exact to complete official2022 quotation expressly citing Missal2008 p515; prayer words only"
+  },
+  "neutral_option_basis_updates": [
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the First Reading",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer after the First Reading",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "prayer-after-the-first-reading",
+          "option": "omnipotens-sempiterne-deus-qui-es",
+          "basis": "Alternative prayer, De creatione hominis."
+        },
+        "incipit": "Omnipotens sempiterne Deus, qui es in omnium operum tuorum",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer after the First Reading",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "prayer-after-the-first-reading",
+          "option": "omnipotens-sempiterne-deus-qui-es",
+          "basis": "Two alternative first-reading prayers are printed in the bounded secondary 2002 witness at AP 213: Omnipotens sempiterne Deus, qui es precedes Vel, De creatione hominis, which introduces Deus, qui mirabiliter creasti hominem. Both remain mutually exclusive options; the latter heading does not describe the first prayer. Exact 2008 correspondence remains unestablished."
+        },
+        "incipit": "Omnipotens sempiterne Deus, qui es in omnium operum tuorum",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "allowed_change": "ordinary_disposition.basis only; identical basis required across the alternative group; kind/group/option unchanged",
+      "live_path": [
+        "sections",
+        "seasonal",
+        "masses",
+        96,
+        "propers",
+        10
+      ]
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the First Reading (alternative)",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Prayer after the First Reading (alternative)",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "prayer-after-the-first-reading",
+          "option": "deus-qui-mirabiliter-creasti-hominem",
+          "basis": "Alternative prayer, De creatione hominis."
+        },
+        "incipit": "Deus, qui mirabiliter creasti hominem",
+        "source": "composed",
+        "notes": "Alternative prayer, De creatione hominis.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "name": "Prayer after the First Reading (alternative)",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "prayer-after-the-first-reading",
+          "option": "deus-qui-mirabiliter-creasti-hominem",
+          "basis": "Two alternative first-reading prayers are printed in the bounded secondary 2002 witness at AP 213: Omnipotens sempiterne Deus, qui es precedes Vel, De creatione hominis, which introduces Deus, qui mirabiliter creasti hominem. Both remain mutually exclusive options; the latter heading does not describe the first prayer. Exact 2008 correspondence remains unestablished."
+        },
+        "incipit": "Deus, qui mirabiliter creasti hominem",
+        "source": "composed",
+        "notes": "Alternative prayer, De creatione hominis.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "allowed_change": "ordinary_disposition.basis only; identical basis required across the alternative group; kind/group/option unchanged",
+      "live_path": [
+        "sections",
+        "seasonal",
+        "masses",
+        96,
+        "propers",
+        11
+      ]
+    }
+  ],
+  "file_map": [
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/artifact.toml",
+      "sha256": "e2ff4a923b9b521932c4e8bb35472baa924587e05190a1497c0ca9083ac9bb11",
+      "bytes": 1926,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/artifact.toml",
+        "sha256": "b83c5a04ffa2320772dbd26552373134c22975e57dfc7f414282777011da1b5e",
+        "bytes": 1925
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/semen.tsv",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/semen.tsv",
+      "sha256": "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b",
+      "bytes": 469,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/artifact.toml",
+      "sha256": "6a399bdc3056af1fd4681fdc2f3aa143b3d3fad99f7252647f88ffadf8f94e9f",
+      "bytes": 1860,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/artifact.toml",
+        "sha256": "7c6cecec036a3dd7af37e3a0f92fe1d022847b9133ff8a2a0c80572a205628e1",
+        "bytes": 1858
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/body.txt",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/body.txt",
+      "sha256": "7d4de76a5d4ec72697821f5fad118df11e19aa42d14d15126087f4df74a73ec6",
+      "bytes": 88,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot11-b-20261112.toml",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot11-b-20261112.toml",
+      "sha256": "507bfec06bda55ce8a4508e0d2d853f65a5610d4f2d52079fbc50d5aa0a1dcae",
+      "bytes": 910,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot11-b-20261112.toml",
+        "sha256": "5f01358e4c12e2505aac4d40461e263eb5d7ccadea522ea0e6d86d7c8da5d6b1",
+        "bytes": 904
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot11-b-20261112.toml",
+      "destination": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot11-b-20261112.toml",
+      "sha256": "34a02b0e535fde4869c160a59dacbae1879f12f33ae06e136a40d18a385de9dd",
+      "bytes": 1115,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot11-b-20261112.toml",
+        "sha256": "38981da111716709dd450d034a9dd5b1cd1fb7660134a3380833e2b665a680ae",
+        "bytes": 1110
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot11-b-20261112.toml",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot11-b-20261112.toml",
+      "sha256": "e3015e37594d0c2e9d6378f57ffef391e62964b8248e0c381c43e2e2ea0976cf",
+      "bytes": 1254,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot15-a-20261112.toml",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot15-a-20261112.toml",
+      "sha256": "f740b03ce4c6256065795a1b13b150bd1fa3412b13c431f25924e219ccefcb06",
+      "bytes": 911,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot15-a-20261112.toml",
+        "sha256": "187a1ea5d5706f320229ca4e7c551fbfeb944a4ede4e8ad48ee1a5ce666ecefd",
+        "bytes": 905
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot15-a-20261112.toml",
+      "destination": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot15-a-20261112.toml",
+      "sha256": "2e59b9e6c867a49b4278eed22302ce7e6da340a77cd3075b5c77d3bbec2cbd02",
+      "bytes": 1117,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot15-a-20261112.toml",
+        "sha256": "08ebf25dc3533a6ac41de5cbc0c47cc25436c71864c5b0bd5f1bbe4f518f8d8f",
+        "bytes": 1112
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot15-a-20261112.toml",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot15-a-20261112.toml",
+      "sha256": "f9edbdb16b3d0d38492ca187d8591592b2af44be5ce708e08ee47a25d57b50d1",
+      "bytes": 1254,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-lent5-tuesday-ferial-20261112.toml",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-lent5-tuesday-ferial-20261112.toml",
+      "sha256": "d59f2fa9b9ef8cc3e1b76227fd0d81671f549eb8fdd5216079fe6b258a02616f",
+      "bytes": 942,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-lent5-tuesday-ferial-20261112.toml",
+        "sha256": "9c70510b58697fecbdb43dcba1014568df6a0457bb40f4d5f565885c4f2088eb",
+        "bytes": 936
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-lent5-tuesday-ferial-20261112.toml",
+      "destination": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-lent5-tuesday-ferial-20261112.toml",
+      "sha256": "0456405be1cdf8b804e1e6f2c5e84daf7d351e252b91edbb280ac545eaddc139",
+      "bytes": 1161,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-lent5-tuesday-ferial-20261112.toml",
+        "sha256": "20fb2716c083bfde97b1f0851f619d29d9524eea145a97112563684763a4acac",
+        "bytes": 1157
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/files/src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-lent5-tuesday-ferial-20261112.toml",
+      "destination": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-lent5-tuesday-ferial-20261112.toml",
+      "sha256": "be2752d4baa0af63efdf5fc2044e47cf02bd85d6467faeed5d14f2f9b4fc22a5",
+      "bytes": 1298,
+      "group": "semen",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/work.toml",
+      "destination": "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/work.toml",
+      "sha256": "869cb62fc9c96843b4e4d1232ce1436c42e288bf3c85e8c41ffe4691d315ed30",
+      "bytes": 890,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/work.toml",
+        "sha256": "792eaa4493984ab973345db2cdaa448a0c29f1773722a75ea1a1682cd32b5fe4",
+        "bytes": 885
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/edition.toml",
+      "sha256": "f4e76c6d0d42465da2dd2406e3300e1ce97279e574b15d69af81fa5dafa775b8",
+      "bytes": 909,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/edition.toml",
+        "sha256": "575dee4d20b24e8eea49d6638712dc36804faed3dde383302116976323f0bac7",
+        "bytes": 902
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/latin.txt",
+      "destination": "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/latin.txt",
+      "sha256": "bdcbbbc226e40954aba73906c2aa5f1ebfa8f6a00cb34bd7057e45fd78a4622a",
+      "bytes": 199,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/artifact.toml",
+      "destination": "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/artifact.toml",
+      "sha256": "174f637310fa1850e507a60b22684eb54faeca4bc88c499c3cd0c2b8681978aa",
+      "bytes": 2456,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/artifact.toml",
+        "sha256": "84bbfbdc569a0a58bcde72fdf794645e38b8b4fe6c3dbb420e41cb05a73f34c1",
+        "bytes": 2444
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/passages/plenum-complete-latin.toml",
+      "destination": "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/passages/plenum-complete-latin.toml",
+      "sha256": "55e17f7d74a4cf9e1601a62a03b3465903d6f72e977baab093d658f760119895",
+      "bytes": 975,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/passages/plenum-complete-latin.toml",
+        "sha256": "d2931432e52b1667ce8939bf23a0836dc1d7df656a47548b80b0b6a34fcbe17f",
+        "bytes": 971
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot21-plenum-petition-source-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot21-plenum-petition-source-20261112.toml",
+      "sha256": "977fe61a7a0ce712041427b277a5ba079315797ae389372977aec3ca1e4985ab",
+      "bytes": 1079,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot21-plenum-petition-source-20261112.toml",
+        "sha256": "89e2aed8c24aa47d1cc8b3f323c638b2ceee49d4d1edd337a6ddc8b4d10deac6",
+        "bytes": 1076
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/ot21-plenum-study-english/work.toml",
+      "destination": "src/sources/works/triptych/ot21-plenum-study-english/work.toml",
+      "sha256": "39f32ec6652c8274b23f0bb43acf13196915c99dab4b97f9b7e9d05b5e3f6df2",
+      "bytes": 705,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/work.toml",
+        "sha256": "8e79041e0dcc87ea4666565a550b62f28a8233b28e64b0d9a0d3f03f74199cbb",
+        "bytes": 702
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "ee947b4c9d034f47bfe6e37234197ebf6eb145d609984e9bf10389750f551dce",
+      "bytes": 623,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/edition.toml",
+        "sha256": "407303d136832a06b7f3d762493b851cd968a1ca6df923d491afab7c8842c204",
+        "bytes": 622
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "destination": "src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "sha256": "bcde0e7303dbb189fd35d7041981accfef2035e919facf7041bed913243b5266",
+      "bytes": 170,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "destination": "src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "sha256": "3d5c1fb82d1f4b8f97ae7ed88e3e38f92d60c64bdd6a22dff1614dacb5fc1cc4",
+      "bytes": 1390,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+        "sha256": "53762bd6b562f00344937be86aa12db236d55b477e87c85526d39c45649bb0b6",
+        "bytes": 1388
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/files/src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "destination": "src/sources/works/triptych/ot21-plenum-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "sha256": "eb4e67de2d7c5cd7cc8064d2b6ded9676c53afc75f28eb4cb74072d2507a9fdf",
+      "bytes": 889,
+      "group": "ot21",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/latin.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/latin.txt",
+      "sha256": "82a2a5a73ff9e82e3ffdae142f44688d2f1e92becab449ff1fd52ece4ffa807c",
+      "bytes": 144,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/artifact.toml",
+      "sha256": "a60884032d55f1e9c7ffe01afb1d79585da4cda2e5cd1d92ef8d3d0c6767616d",
+      "bytes": 2179,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/artifact.toml",
+        "sha256": "3151492432891efa64fe413802e2ab1597c5526c1e20e531f68131614bc33dfd",
+        "bytes": 2164
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/all-saints-antiphon-la-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/all-saints-antiphon-la-20261112.toml",
+      "sha256": "22071eb1c164547fa4bcf52e8a8db6ed4de2a2d761e0b0e96a9850dc2757e326",
+      "bytes": 1910,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/all-saints-antiphon-la-20261112.toml",
+        "sha256": "7b265b519f0e42ac560cdc820a527958fd761e41d01889547b0ae58fc27a140f",
+        "bytes": 1904
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/all-saints-antiphon-comparison-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/all-saints-antiphon-comparison-20261112.toml",
+      "sha256": "30dd1aa7603cad9252778c19067ba9f013950c58e4eb8ad9e4894629b5e1609c",
+      "bytes": 1170,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/all-saints-antiphon-comparison-20261112.toml",
+        "sha256": "135f162a24c182707700d620cbb5d28e6a851265c08a9a583fc90253d4c90dc5",
+        "bytes": 1163
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/english.txt",
+      "destination": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/english.txt",
+      "sha256": "8f8a7473313e2de7fb9cb053e9b69eef4cb42087460abbf2f66b21184086511d",
+      "bytes": 154,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/work.toml",
+      "sha256": "0dffc371584142dc44dbcf999e868ac753df73a8225f49a3bd32c4437aac004a",
+      "bytes": 979,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/work.toml",
+        "sha256": "bb8ed6de337ad1c78c7e80fd84b438465cfcf55219fe8a5dbc9a2dfa8e188aab",
+        "bytes": 973
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "destination": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "sha256": "2ad9ae42fb1142aa598ee9b109c2337aaf8114a2b255165067bc98eb9073958e",
+      "bytes": 878,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+        "sha256": "4056877fc0e32dbd18f21b51ac2977a34978e5a4d898637cac4377336ede62dc",
+        "bytes": 871
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/artifact.toml",
+      "destination": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/artifact.toml",
+      "sha256": "147c01335ee45e2730c11025fe663aed481122b7e056d517014b268cdb1d5f8a",
+      "bytes": 2006,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/artifact.toml",
+        "sha256": "0d0e2bfc6247566c121a720af7bd8b00c39f6fbebeab2bae7a30776eb00c4038",
+        "bytes": 1998
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/passages/all-saints-study-english.toml",
+      "destination": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/passages/all-saints-study-english.toml",
+      "sha256": "1b159c4f6f08e5f66f9ce46aa0c9d568ee695688d25d8572cc8519e9bf412f3c",
+      "bytes": 1726,
+      "group": "all-saints",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/package/src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/passages/all-saints-study-english.toml",
+        "sha256": "a3eaba68ed10fa88a10d9edc0d76c977bc9e6796491894b408ea5e9b29aeed60",
+        "bytes": 1719
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/in-spiritu-humilitatis-la-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/in-spiritu-humilitatis-la-20261112/artifact.toml",
+      "sha256": "064b34e8c6052f0c022380906e9a2d07605e66573a4d86562b27c79fd2912e30",
+      "bytes": 2398,
+      "group": "in-spiritu",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-official2008-latin/in-spiritu/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/in-spiritu-humilitatis-la-20261112/artifact.toml",
+        "sha256": "c0ada45fc1383da71d3772eefc2b13e2692e686a51758b369896f625afb8bdc8",
+        "bytes": 2394
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-official2008-latin/in-spiritu/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/in-spiritu-humilitatis-la-20261112/text.tsv",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/in-spiritu-humilitatis-la-20261112/text.tsv",
+      "sha256": "fc9c8d10dc3a3994c92b06f9f94b0f182127498e28100b39bfe77f92b3400371",
+      "bytes": 400,
+      "group": "in-spiritu",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/in-spiritu-humilitatis-la-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/in-spiritu-humilitatis-la-20261112.toml",
+      "sha256": "a0f6edec589f7dcc075d0296ae798dc2403682d9d2cd7224ef2237ef4622618a",
+      "bytes": 1346,
+      "group": "in-spiritu",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-official2008-latin/in-spiritu/proposed/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/in-spiritu-humilitatis-la-20261112.toml",
+        "sha256": "1a5e35b7a6468c4d46c83b830952605376e829366ff33554cdd13cf04edb9791",
+        "bytes": 1343
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/artifacts/official-pdf-280996b7/artifact.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/artifacts/official-pdf-280996b7/artifact.toml",
+      "sha256": "e878038f1a765b515847887c3c28056ba8eefe2a1a01e7435786d86f4b9ba282",
+      "bytes": 1545,
+      "group": "in-spiritu",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-official2008-latin/in-spiritu/proposed/src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/artifacts/official-pdf-280996b7/artifact.toml",
+        "sha256": "5f46061d18fbce2742189e872e2a558f9c2774517dc9d9c1a8cd0f9064461bbc",
+        "bytes": 1543
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-official2008-latin/in-spiritu/proposed/src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/edition.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/edition.toml",
+      "sha256": "8c38cffda9f25fcff4795823051c829e49a4cf2ededa00d0a1e833270de916fe",
+      "bytes": 710,
+      "group": "in-spiritu",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/passages/desiderio-desideravi-60-in-spiritu-2008-quotation.toml",
+      "destination": "src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/passages/desiderio-desideravi-60-in-spiritu-2008-quotation.toml",
+      "sha256": "fc4c9fc3248c33df33fe54a2f51472789014c726816b8493f4b38f87b979ed14",
+      "bytes": 1575,
+      "group": "in-spiritu",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-official2008-latin/in-spiritu/proposed/src/sources/works/holy-see/notitiae/editions/volume-58-number-599-2022/passages/desiderio-desideravi-60-in-spiritu-2008-quotation.toml",
+        "sha256": "afc39ff050f86abaf3f338b933a56bd180b5d873fa53a485b5cca644a5c4d692",
+        "bytes": 1571
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-official2008-latin/in-spiritu/proposed/workflows/reviews/missal-english-completion-2026-10-29/postconciliar/ordinary-in-spiritu-2008-source-admission-2026-11-12.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/ordinary-in-spiritu-2008-source-admission-2026-11-12.json",
+      "sha256": "4e4325c656bad4426575f11e3a98efaf0392ad602926879b605669e968fa0c91",
+      "bytes": 16797,
+      "group": "in-spiritu",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-vigil-first-reading-old-latin-20261112-easter-study-three/body.txt",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-vigil-first-reading-old-latin-20261112-easter-study-three/body.txt",
+      "sha256": "ad9d7e76c1669f64425b1880705d7a38f5942a602486456c14be74db1ab78cae",
+      "bytes": 252,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-vigil-first-reading-old-latin-20261112-easter-study-three/artifact.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-vigil-first-reading-old-latin-20261112-easter-study-three/artifact.toml",
+      "sha256": "d659aba89dd597d593343938ec626e0cf638a4c9fac44966ddbf196130b3183d",
+      "bytes": 2066,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-vigil-first-reading-old-latin-20261112-easter-study-three/artifact.toml",
+        "sha256": "74583629722a54f60dab460aae8da817a94860c73ae42efaeeffa9200f4965e3",
+        "bytes": 2057
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-vigil-first-reading-page-20261112-easter-study-three.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-vigil-first-reading-page-20261112-easter-study-three.toml",
+      "sha256": "d40144cd52f47e0febfda3c30734facdc1216060c7515bb6e3bf1e72fffa19e8",
+      "bytes": 1172,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-vigil-first-reading-page-20261112-easter-study-three.toml",
+        "sha256": "1ecedd8a7fbce7306b27bb1ff7c5cd124257b66ac3f5bf08d96127d8ef98f096",
+        "bytes": 1171
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-vigil-first-reading-text-20261112-easter-study-three.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-vigil-first-reading-text-20261112-easter-study-three.toml",
+      "sha256": "9982cd0d788d7919249cf9010c9152c437e3b134d58f451a7b95671bdb5be137",
+      "bytes": 1671,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/work.toml",
+      "sha256": "36a3aa7dd1f378dfc2be8c2cd2844ed8641e5621cd733829ac64d0eed07e43bd",
+      "bytes": 1017,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/work.toml",
+        "sha256": "61e77ece1d303973b00c9b636b3a4ea0667eee4252e434bab06a6e288e120dfe",
+        "bytes": 1013
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/edition.toml",
+      "sha256": "5736c8e6158a296e914c48762445b57b2eb17ac419ec32d398e6901adb6b75f3",
+      "bytes": 840,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/edition.toml",
+        "sha256": "d69e3b60efce724c0e65e1c59ed0b2d806b0ab2c8abee30c08c80d047a91d7ca",
+        "bytes": 834
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/artifacts/principal-study-english/body.txt",
+      "destination": "src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/artifacts/principal-study-english/body.txt",
+      "sha256": "2246601c41a326bf708d566c583ec49947937245e0ffa164be146f6382bcb3c6",
+      "bytes": 291,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/artifacts/principal-study-english/artifact.toml",
+      "destination": "src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/artifacts/principal-study-english/artifact.toml",
+      "sha256": "1c54e3257472ffd3b3148ef1e5f98f0b10b364bfbf85675dfb57616c0b40df79",
+      "bytes": 2410,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/artifacts/principal-study-english/artifact.toml",
+        "sha256": "4832b0efaddcd14645c55ddce999717a9d06d7921cc7449d27110ccc5899eda5",
+        "bytes": 2404
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/passages/principal-study-english.toml",
+      "destination": "src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/passages/principal-study-english.toml",
+      "sha256": "467273cc65c219d6b602cfe585358bfa7af0e417284cf3e969500243f914599c",
+      "bytes": 2313,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/triptych/easter-vigil-first-reading-study-english-20261112/editions/2026-11-12/passages/principal-study-english.toml",
+        "sha256": "934a7c301c9639f7bc01a5c72d86d979060bed581a616b133a19d0c0c220ac4d",
+        "bytes": 2310
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/vigil-first-reading-comparison-20261112-easter-study-three.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/vigil-first-reading-comparison-20261112-easter-study-three.toml",
+      "sha256": "6336a9006110b82954fc335de634bcf6b0219430ee088f7a95693cf85ce7522e",
+      "bytes": 1513,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/vigil-first-reading-comparison-20261112-easter-study-three.toml",
+        "sha256": "cef00560ded29f9c1c29fb40fca8e8beb9f2f8b8d4a27a274e18b0a6003a869f",
+        "bytes": 1506
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter3-wednesday-communion-comparison-20261112-easter-study-three.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter3-wednesday-communion-comparison-20261112-easter-study-three.toml",
+      "sha256": "9df2d16eb02a14f42d52def1c12a871f3de41ca3673d1b0e49d833819feca447",
+      "bytes": 1428,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter3-wednesday-communion-comparison-20261112-easter-study-three.toml",
+        "sha256": "929b38bf3a39063b2b3f1bb311fdc5a72f90770c8200f446f9f77f849da1489e",
+        "bytes": 1420
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter3-friday-communion-comparison-20261112-easter-study-three.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter3-friday-communion-comparison-20261112-easter-study-three.toml",
+      "sha256": "4c6a9fe0fddb2fbda749fa63c145b42bbbc01ce05d4082f6e5ba18d61617f15a",
+      "bytes": 1472,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-easter/three-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter3-friday-communion-comparison-20261112-easter-study-three.toml",
+        "sha256": "ece2d86c9436b31e3c19fb2ae3e6714504d65205b05b021779f052b2630a9b24",
+        "bytes": 1464
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-new-orations-review/easter-vigil/review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-vigil-source-review.json",
+      "sha256": "b541164e25d0989a6450c2ba358026e90c1fa1d16ec15a907d15e244be16aa0a",
+      "bytes": 8057,
+      "group": "easter-three",
+      "role": "source-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-orations-review/easter-3-wednesday/review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-3-wednesday-source-review.json",
+      "sha256": "81fb704db88de6e01a265cbb7723400e4107ee7df349d3e77907291685694cf7",
+      "bytes": 5742,
+      "group": "easter-three",
+      "role": "source-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-orations-review/easter-3-friday/review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/easter-3-friday-source-review.json",
+      "sha256": "d89dc42bf373695bc9c2ad28785ad8892224aa777b05b6e5bb1fc19f0de87083",
+      "bytes": 5884,
+      "group": "easter-three",
+      "role": "source-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/three-install-proposal/files/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/admission-proposal.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-study-three/admission-proposal.json",
+      "sha256": "3547c5d87e9b712f19a05b29fe69ee594721fb991d6ab862abefa9600a8e92b9",
+      "bytes": 10827,
+      "group": "easter-three",
+      "role": "source-record-or-admission",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-before-readings-appointment.toml",
+      "destination": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-before-readings-appointment.toml",
+      "sha256": "da2f328c4d38cc2d18c929c626d7e8b390b3db48ae2a2eb4895645a22639882a",
+      "bytes": 1348,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-before-readings-appointment.toml",
+        "sha256": "ca9ceee7bc3667aac1a8e33ae297cad6249855db7c88fe022e2662980de4da08",
+        "bytes": 1339
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-before-readings-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-before-readings-comparison.toml",
+      "sha256": "6d94cf6220e467a97d9a863267436fa1df2cd62c564c9ed0b04225d333153768",
+      "bytes": 1349,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-before-readings-comparison.toml",
+        "sha256": "07f91159cc8060789a71a3d23fec67e90c6e8bea45c688fafc8cd8183b8350b3",
+        "bytes": 1338
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-after-gloria-appointment.toml",
+      "destination": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-after-gloria-appointment.toml",
+      "sha256": "d38d54911078f750c238b5fed2e393e5db1aed363a0ff49f9ba9c41e901308ec",
+      "bytes": 1327,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-after-gloria-appointment.toml",
+        "sha256": "462a97ba3de2beb0ee35675059b4f44ba7a51df6931f37ea3fa52b84ee78575b",
+        "bytes": 1318
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-after-gloria-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-after-gloria-comparison.toml",
+      "sha256": "4d5b5702d5a6163895b4d11fb031e5bee3b5a6a13d4fecc744ea1cda439965ed",
+      "bytes": 1328,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-after-gloria-comparison.toml",
+        "sha256": "9df27aec421cfcd6e08fb0a5bc89c8c524b98a81e7115d6d84765a381a7b2824",
+        "bytes": 1317
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/work.toml",
+      "destination": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/work.toml",
+      "sha256": "6000d55158a73f262e3a973609f3f7a8a4dcea8d3016cd5df9d14c862cc102ff",
+      "bytes": 727,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/work.toml",
+        "sha256": "d37d7dd5f9ad3810621e5e53f61d75b60e76d69fe0b06a6fc6fd9b531c32aff4",
+        "bytes": 726
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/edition.toml",
+      "destination": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/edition.toml",
+      "sha256": "f7e48cb369e44c4e3d1d18287f17edf47199fcf7de31bc657de81edeac3255b8",
+      "bytes": 625,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/edition.toml",
+        "sha256": "bbfa5d11fad9f5788b850f04988ef7d009a7e81e7409f1cb95641051ea0bf841",
+        "bytes": 624
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/text.tsv",
+      "destination": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/text.tsv",
+      "sha256": "67971f96d3215742bf024b22413f3a0cc5678baed09c8431595beff8e09c77d8",
+      "bytes": 696,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/artifact.toml",
+      "destination": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/artifact.toml",
+      "sha256": "bed7402bf7896294c34421be2033bbc4e7d8fa87ed9871c71099125eed05c3e1",
+      "bytes": 1773,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/artifact.toml",
+        "sha256": "741c8ebdf7efdad4f932168a84fc2fd22bf90248e0fb62c2ea48d42ca710ed7c",
+        "bytes": 1770
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/before-readings.toml",
+      "destination": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/before-readings.toml",
+      "sha256": "d41af8185dbe4cd1be0165865db2aa8e78ea83d0a60e632cbb8b182ce2fe0753",
+      "bytes": 3512,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/before-readings.toml",
+        "sha256": "31b44fa56a876ba23aed717cbe405e37764d44436ddd82c9cc59c1af0dfe3a2b",
+        "bytes": 3503
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/after-gloria.toml",
+      "destination": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/after-gloria.toml",
+      "sha256": "432f192911995f876f011a990bafeac0a91854e10b045d3b100e224e889942c1",
+      "bytes": 3760,
+      "group": "pentecost-two",
+      "role": "source-record-or-payload",
+      "live_destination": null,
+      "spacing_predecessor": {
+        "path": ".scratch/modern-partition-temporal/install-proposal-v2/files/src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/after-gloria.toml",
+        "sha256": "4a9abf64e2c2eca66f0032b8d39ec21a49b3ebbcf0f1547ff8d243288ed7a134",
+        "bytes": 3748
+      }
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/proposal-v2.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/final-proposal.json",
+      "sha256": "5ddffab68daf6703cd0782145c7fc63f58e52b2da2728e2d9b6171e0d8ed2efc",
+      "bytes": 29589,
+      "group": "semen",
+      "role": "final-reviewed-proposal",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-official2008-latin/in-spiritu/candidate.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/in-spiritu/final-proposal.json",
+      "sha256": "4e4325c656bad4426575f11e3a98efaf0392ad602926879b605669e968fa0c91",
+      "bytes": 16797,
+      "group": "in-spiritu",
+      "role": "final-reviewed-proposal",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/installation-proposal-v3.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/final-proposal.json",
+      "sha256": "c249aaf635ed0cef4e1a599544e024d749462b24c118445422e09436052c887e",
+      "bytes": 14404,
+      "group": "ot21",
+      "role": "final-reviewed-proposal",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-nonseasonal/all-saints-installation-v2/installation.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/all-saints/final-proposal.json",
+      "sha256": "ddfe5005181a193af80536ca4306e46f00ae7576ac45b68cdb5b28e9ac44b222",
+      "bytes": 15649,
+      "group": "all-saints",
+      "role": "final-reviewed-proposal",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/three-install-proposal/proposal-v3.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/easter-three/final-proposal.json",
+      "sha256": "a735dd958bf401c666d331c3b43988403750eb39ccbbdb574a2c00be06f45ee6",
+      "bytes": 28995,
+      "group": "easter-three",
+      "role": "final-reviewed-proposal",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-study-qualification-addendum/temporal-proposal-v3.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/pentecost-two/final-proposal.json",
+      "sha256": "f15964221edd40b97a9c684048aeaf42ce13085b0f40c326354c3392a1a55235",
+      "bytes": 37877,
+      "group": "pentecost-two",
+      "role": "final-reviewed-proposal",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-acclamations-review/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/source-review.json",
+      "sha256": "c49c1aed1affe1a728c3be023f2dce339966e916fee2d2cbbecae702ffeacd0e",
+      "bytes": 26617,
+      "group": "semen",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-acclamations-review/semen-install-addendum.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/install-review.json",
+      "sha256": "570e19e354e5b6dad3c4de106576c99c14d0fd7d3b97c7de3d20947948a4fd5c",
+      "bytes": 30649,
+      "group": "semen",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-in-spiritu-review/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/in-spiritu/independent-review.json",
+      "sha256": "5768c83e5cee91917894d5fff377525bc61036ae777fc5ae40cb58853642e4ae",
+      "bytes": 15382,
+      "group": "in-spiritu",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-orations-review/ot21/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/petition-review.json",
+      "sha256": "cbc465cf1c4cd021e79fafaffc6fcfd680d49eff75605d7639d9d13872b9331c",
+      "bytes": 3791,
+      "group": "ot21",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-orations-review/ot21-complete/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/complete-review.json",
+      "sha256": "32b0e0dfedfd435d5d70313b33439e3a2568f24f7c9bb0e656c1826e1f8dcd71",
+      "bytes": 21314,
+      "group": "ot21",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-antiphons-review/receipt.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/all-saints/source-review.json",
+      "sha256": "bd94d75113edc325a1f907837269046b9de7e622f48d082cce61f047deca51f2",
+      "bytes": 64940,
+      "group": "all-saints",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-antiphons-review/all-saints-installation/receipt.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/all-saints/install-review.json",
+      "sha256": "83d9ef0581fc42e3332cc8ccb2c12b23f31b56aae308f713b8a2b544c55b3d4e",
+      "bytes": 25727,
+      "group": "all-saints",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-orations-review/easter-install/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/easter-three/install-review.json",
+      "sha256": "1e1ed83bb3b7074af6073271b0d34893aafe55071ba9eab49664dedb8fb23b1c",
+      "bytes": 10819,
+      "group": "easter-three",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-temporal-collects-review/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/pentecost-two/scoped-install-review.json",
+      "sha256": "424a147b1e7f75dc02f74185f3e7b6befade0c2bdf707c432f720c06676ae875",
+      "bytes": 32173,
+      "group": "pentecost-two",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-study-qualification-addendum/review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/shared/qualification-addendum.json",
+      "sha256": "a2131d7c0459893555406e07828b72ef64ecccb2b5133d2b7b93d000262a5d27",
+      "bytes": 93623,
+      "group": "shared",
+      "role": "independent-review",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-candidates.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/original-two-source-candidates.json",
+      "sha256": "b51d43378bfc7ac4add71509115a158c3621b953ed6bf2a99b86e20a21b35891",
+      "bytes": 11355,
+      "group": "semen",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-lent-holyweek/candidate-package.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/lent-source-candidates-original.json",
+      "sha256": "8afd019ee5d04a5d787f6132ae23a1350dbb85c03b3e9cce3f47cf348401eb3a",
+      "bytes": 34673,
+      "group": "semen",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-lent-holyweek/candidate-package-v2.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/lent-source-candidates-v2.json",
+      "sha256": "48798e2d5b54937c8dcab57663dee029a89eb148b8852af7325bd50216d46091",
+      "bytes": 35309,
+      "group": "semen",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/proposal.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/rejected-runtime-key-predecessor.json",
+      "sha256": "222cbd4d7aefc7d082a45c3aba23ff08747eb25761fc4ec0375d0ef2d1f90fdb",
+      "bytes": 29577,
+      "group": "semen",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/new-source-files-manifest.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/source-manifest.json",
+      "sha256": "aa7387785325df557f6499ea8b823f92c80177ef9229a2cf38c45728724a436c",
+      "bytes": 3261,
+      "group": "semen",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/semen-install-proposal/runtime-validation-v2.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/semen/author-runtime-validation.json",
+      "sha256": "23cf3a3ea0bb8eff89a2b649ee812d6108e10e6075e6e86bd3b2e49862eb059d",
+      "bytes": 13530,
+      "group": "semen",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-official2008-latin/in-spiritu/manifest.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/in-spiritu/source-manifest-with-unadopted-old-inventory-pin.json",
+      "sha256": "40a35d7c52ae72bc3cfb28bdd9af88a13e149ac800f07a0ddfad6edd39649e24",
+      "bytes": 1951,
+      "group": "in-spiritu",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/candidate.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/full-body-candidate.json",
+      "sha256": "16ffaaa9d2cf7dc90c61bbf7ed6813b6d26567befd41f3577e4c9c672a948f45",
+      "bytes": 6444,
+      "group": "ot21",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/plenum-full-proposal-v2/new-source-files-manifest.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/source-manifest.json",
+      "sha256": "e91b8a40ce0507eec8b5174873b1331e15194a9045c9ffc31fde8166870fd679",
+      "bytes": 2338,
+      "group": "ot21",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-ordinarytime/plenum-candidate.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/petition-candidate.json",
+      "sha256": "1b6c4119d912399157a3aeca0f400e2a0dd0aa5e942d6c736ca48bf249682074",
+      "bytes": 6149,
+      "group": "ot21",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-new-orations-review/ot21-complete/inherited-formula-metadata-defect.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/ot21/separate-inherited-metadata-defect.json",
+      "sha256": "b5bbc76a404205a67af55e0ff3607b001670d3141a3bab750174195f1888316c",
+      "bytes": 2442,
+      "group": "ot21",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-nonseasonal/all-saints-study-candidate.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/all-saints/source-candidate.json",
+      "sha256": "7b8203a97bdc3cd791bd89318ce42d1edeebd3af51201bc497303b9e58719fb3",
+      "bytes": 3434,
+      "group": "all-saints",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-nonseasonal/all-saints-input-preimage.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/all-saints/original-preimage.json",
+      "sha256": "96fc9bcf6ae0bd81717db1c0dacdb41fb081c7f9f9ef09701beb8ef901b9bbed",
+      "bytes": 2511,
+      "group": "all-saints",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-nonseasonal/all-saints-installation/installation.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/all-saints/pre-note-proposal.json",
+      "sha256": "a954b429ff848481dc3e2b258f8da9e9f4a49992ef50bc1eb9d695e0e97a39a4",
+      "bytes": 14827,
+      "group": "all-saints",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/study-candidates.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/easter-three/source-candidates.json",
+      "sha256": "328759fe7aafa0af8d5085e7f628002e93ceb1f57dfcec6353747a1e08a16fa5",
+      "bytes": 19377,
+      "group": "easter-three",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/three-install-proposal/files-manifest.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/easter-three/source-manifest.json",
+      "sha256": "626aacf5d9f3a62d415e0337705fe6d83e636957341493e202ea62469e6fe9b9",
+      "bytes": 4306,
+      "group": "easter-three",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/three-install-proposal/proposal-v2.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/easter-three/pre-note-proposal.json",
+      "sha256": "802d6bf4b8877084b0b5b9445e50841b255e156a32711d81166318da4f9e992d",
+      "bytes": 27349,
+      "group": "easter-three",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-temporal/install-proposal-v2/proposal.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/pentecost-two/pre-note-four-row-proposal.json",
+      "sha256": "226e03be1090bd57769691c129a2e53e155dfb0afee66c26930ed4a60fdc3ab9",
+      "bytes": 36049,
+      "group": "pentecost-two",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-temporal-collects-review/note-successor-review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/pentecost-two/independent-note-review.json",
+      "sha256": "48e4bdb306911fd9fb99a0411fafcf5cd3e6dd8d43c43f9f192a497d2e2c4912",
+      "bytes": 2844,
+      "group": "pentecost-two",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-temporal-collects-review/verification.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/pentecost-two/scoped-independent-verification.json",
+      "sha256": "d4289791c10dadade6a83895e40f34037ed5aa3f8a558fe50cf5e098c4dbdcd4",
+      "bytes": 4194,
+      "group": "pentecost-two",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-study-qualification-addendum/python-consumers-review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/shared/python-consumers-review.json",
+      "sha256": "0b8099171820d41e425cb51acdbeb1fd1f075ed7bacbf32bd9060761e9907880",
+      "bytes": 89692,
+      "group": "shared",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-study-qualification-addendum/browser-review.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/shared/browser-review.json",
+      "sha256": "d30b84f4c8bec4c4462bf532da00f839ffd3cc7c1ca37410afe508558c05e9aa",
+      "bytes": 7932,
+      "group": "shared",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    },
+    {
+      "scratch_path": ".scratch/modern-study-qualification-addendum/browser-actual-320.json",
+      "destination": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/shared/browser-actual-320.json",
+      "sha256": "c58535af0d541e1fc2fffb72b5731336765497cb13dd9ad1aa496783a285d2e5",
+      "bytes": 3090,
+      "group": "shared",
+      "role": "candidate-or-manifest",
+      "live_destination": null
+    }
+  ],
+  "excluded_changes": [
+    [
+      "mary-mother-of-god",
+      "main",
+      "Entrance Antiphon (alternative)",
+      "all",
+      1
+    ],
+    [
+      "christmas-december-31",
+      "main",
+      "Entrance Antiphon",
+      "all",
+      1
+    ]
+  ],
+  "separate_metadata_defect": {
+    "current_record": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+      "bytes": 2121
+    },
+    "action": "UNCHANGED; Root owns any truthful digitizer-notice successor separately. This plan carries no metadata correction and no new payload permission."
+  },
+  "merits_questions": [
+    "Accept only each recorded finite full-expression basis and target grade; do not infer modern edition authority from historical availability.",
+    "Preserve each approved-English refusal in durable exact proposal and consolidated evidence despite availability of a separate historical/study English route.",
+    "Do the live selected preimages and all output qualification checks still match at actual adoption?",
+    "Adopt source files and durable independent reviews together; no installed source graph may point only to disposable evidence."
+  ],
+  "spacing_successor": {
+    "predecessor_plan": {
+      "path": ".scratch/modern-next-cohort-plan/install-plan.json",
+      "sha256": "c9646fcf3baa770bebeb244a699599307af06180f93b27a9331ed783cc544280",
+      "bytes": 188574
+    },
+    "metadata_delta": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/metadata-delta.json",
+      "sha256": "b4f915a0ff2f4cc8b3b7f566d40845f4a190d3036b814874d323652266fdec72",
+      "bytes": 203015
+    },
+    "source_manifest_successor": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/source-manifest-successor.json",
+      "sha256": "d7bd242c56352d67efaab379afd102765227c831e2842d8f5c18b915c65e47a7",
+      "bytes": 55389
+    },
+    "review_status": "independent exact metadata delta review pending",
+    "original_receipts": "All original accepted candidate/source/review bytes remain immutable and bound. They establish underlying body/source merit; successor whitespace metadata has its own explicit review."
+  }
+}

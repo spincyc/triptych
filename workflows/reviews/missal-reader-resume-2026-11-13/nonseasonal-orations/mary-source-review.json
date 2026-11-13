@@ -1,0 +1,169 @@
+{
+  "schema": "triptych-independent-prayer-source-review/v1",
+  "date": "2026-11-12",
+  "reviewer": "Independent Codex agent partition_later_accepted; automated source and fidelity review, not a claim of human review",
+  "owner": "mary",
+  "identity": [
+    "most-holy-name-mary",
+    "main",
+    "Prayer over the Offerings",
+    "all",
+    1
+  ],
+  "frozen_candidate": {
+    "path": ".scratch/modern-nonseasonal-orations/marian/holy-name-mary-offering-candidate.json",
+    "sha256": "1c49d261a01c30cfe8e257b8ed9e36399c835ac8bc0f86f3e14da281a844ffec",
+    "bytes": 6328
+  },
+  "exact_english_scalar_sha256": "b7292a42b88adfa1e7daad70bbb43ed1c45bda9648342ae8a76f6ab19fe26751",
+  "exact_english_carrier_lf_sha256": "3f1e5b84930a4bd090777bc065c87dd6c92061ccb58555ec6ba2b5d757423b1d",
+  "private_complete_latin_scalar_sha256": "d639398a43d54f43a83523a9833aa71a0aa977f89dc3e3a7d553de9d09129fd4",
+  "verification": {
+    "path": ".scratch/modern-nonseasonal-prayer-review/verification.json",
+    "sha256": "1889c6a15776b374997a77f5a72a05804b6048046904b8a97d7048f05dcf7ce6",
+    "bytes": 9674
+  },
+  "exhaustive_comparison": {
+    "owner": "mary",
+    "independently_checked_transformation_exhaustive": true,
+    "old_complete_petition_and_short_cue_sha256": "2e79ae4eb9dbfa17dccc6f5b6449fee8e2ce64f80c89d0391d8da348521f891b",
+    "complete_proposed_latin_sha256": "d639398a43d54f43a83523a9833aa71a0aa977f89dc3e3a7d553de9d09129fd4",
+    "normalization": "accent/ligature/case/I-J/punctuation only for lexical comparison",
+    "lexical_operations": [
+      "Insert nominis before veneratione",
+      "Invert Maiestati tuae",
+      "Replace actual old short cue with independently attested short formula selected by actual secondary2002 recipient cue and IGMR77"
+    ],
+    "no_unexplained_residual_words": true
+  },
+  "governing_policy": {
+    "path": "guidance/liturgical-text-publication-policy.md",
+    "sha256": "81dee58829a694b6155f156d8f90d2a217baf48396c326c4c45f7b1948f328df",
+    "sections": [
+      "1: per-text and per-surface presumption, especially independently old text and explicit ambiguous-defensible basis",
+      "8.2: independent witness comparison, substantive change assessment, no transfer by similarity or an incipit",
+      "10: identity, assignment, rights, translation and witness status remain separate",
+      "12-14: truthful source claims, exact boundaries, provenance and unresolved-state discipline"
+    ],
+    "interpretation": "The positive historical-identity route is not asserted for a substantively changed modern whole. Where accepted below, section1(6) is a separate finite assessment of the entire resulting expression, not an inference that old components or newly drafted English clear any adaptation."
+  },
+  "scope_limits": [
+    "Source/fidelity/whole-expression review only; source graph, per-owner ledger admission, consumed reader qualification and runtime integration require separate review.",
+    "No canonical files written, no generator run, no permission outreach.",
+    "Actual modern comparison is the registered secondary retypesetting labelled2002, not an authenticated2008 Missal.",
+    "No approved liturgical English, generic Missal permission, or licence to reproduce modern apparatus is asserted.",
+    "This receipt contains locators and hashes rather than the restricted modern Latin comparison body."
+  ],
+  "current_preimages_equal": true,
+  "canonical_changes_by_review": false,
+  "verdict": "accept-finite-source-qualified-study-english-merits",
+  "publication_basis": "ambiguous-defensible for the exact complete English candidate on repository, generated web-data, reader-display and download surfaces; the underlying1712 petition and independently attested old conclusion have separate old-text bases",
+  "historical_source": {
+    "source": {
+      "path": ".scratch/modern-nonseasonal-orations/marian/ambrosian1712.pdf",
+      "sha256": "180769e3a6989ee863bf6404090ab430fd786fa10def1442485cc8537beaf4ce",
+      "bytes": 99996171,
+      "pages": 625
+    },
+    "actual_unit": "AP414, printed376, right-column Oratio super oblatam, ends with actual Per Dominum short cue; heading AP413/375 identifies Assumption; title AP11 identifies Milan1712.",
+    "complete_extent": "Entire historical petition and its short cue, not surrounding orations, rubrics or modern BSB final card.",
+    "source_qualification": "Ambrosian Assumption, not a historical Roman Holy Name assignment. The1712 source does not print the modern name-specific petition or the selected short ending.",
+    "existing_rights_evidence": {
+      "path": "src/sources/inventories/ambrosian-and-mozarabic-rights-v1.toml",
+      "sha256": "f214bd4841f573b4ff8a85ae312c034602bfc12b1e01f8980cce078631603d35",
+      "bytes": 48083
+    },
+    "evidence_distinction": "Publication-age layer already reviewed in the repository; fullPDF hash, title, heading, complete prayer and target cue/rule freshly inspected here."
+  },
+  "ending": {
+    "actual_recipient_cue": "Secondary2002 AP491, Super oblata, Per Christum",
+    "recipient_rule": "Same held witness AP22, IGMR77, prayer over offerings addressed to the Father",
+    "old_complete_formula_source": {
+      "path": ".scratch/modern-nonseasonal-orations/marian/lasance-conclusion217.pdf",
+      "sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "bytes": 502778,
+      "pages": 1
+    },
+    "fresh_image_finding": "Printed217 contains complete Latin short formula and the complete English Through Christ our Lord, followed by distinct response Amen.",
+    "rights_layer": "Lasance1945 ordinary page exact recovered artifact; English layer existing nonrenewal inventory, Latin-missale-romanum layer independently old. Modern host footer excluded.",
+    "rights_inventory": {
+      "path": "src/sources/inventories/lasance-new-roman-missal-rights-v1.toml",
+      "sha256": "2125b5c00cfec520ec15ccb50d6935375c5180df20f64cac22a478ec411154b1",
+      "bytes": 47983
+    },
+    "response_excluded": true
+  },
+  "modern_comparison": "Freshly inspected secondary2002 AP491 appointment/body/cue and AP22 rule; all candidate words accounted for by the declared operations; no2008 authentication.",
+  "whole_expression_assessment": {
+    "affirmative": "The entire old prayer already provides the two coordinated requests, their agency, objects, sequence and address: Mary’s intercession commends the gifts and renders the worshippers acceptable to divine majesty. The modern name reference specializes the devotional object within that intact relation. It introduces no new request, image, clause sequence or joined donor passage. The possessive inversion is conventional Latin ordering. The conclusion is an independently old complete formula, selected by the actual recipient cue and rule. Considered together, these are sufficiently bounded conventional adaptations to support the exact source-qualified study-English publication under section1(6). This is a whole-expression judgment, not a count of unchanged words.",
+    "strongest_contrary": "Moving an Ambrosian Assumption prayer into a Roman feast of the Holy Name and changing the devotional object is intentional modern editorial work. The semantic specialization is real, and selection of this particular prayer plus a different conclusion could be argued to create a derivative whole; the exact resulting modern prayer has not been found as one complete old witness.",
+    "disposition_of_contrary": "The objection defeats an exact-old-identity/public-domain-target label. For this finite English expression it does not defeat the separate section1(6) basis: the old two-request architecture survives intact, and the only new substantive content is an ordinary specification of whose name is venerated. Cross-rite assignment supplies context, not additional expressive wording. The exact old conclusion is independently evidenced. Neither the container’s unresolved wrapper nor its date alone supplies this finding.",
+    "what_would_overturn": "Evidence that the held old petition was materially misread or carries later authorship; additional unexplained modern wording; a particular governing restriction sufficient to defeat this finite basis; or a target/surface change outside the reviewed exact expression."
+  },
+  "english_fidelity": {
+    "verdict": "accept exact frozen English",
+    "findings": [
+      "Intercession remains the subject of both coordinated verbs; gifts are commended and worshippers are made acceptable.",
+      "As we honor her name is a faithful circumstantial rendering of the devotional phrase, preserving the added name reference rather than translating the old prayer unchanged.",
+      "Blessed Mary, ever Virgin and your majesty retain their referents and force.",
+      "Complete short conclusion matches the independently attested old English; separate Amen is excluded."
+    ],
+    "material_translation_errors_found": false
+  },
+  "latin_scope": "Historical1712 transcription and separate old conclusion are verified. The candidate modern-adapted Latin is inspected privately for this English merits review; this receipt grants no canonical Latin admission or exact-target status. This is a limit of reviewed scope, not a claim that translating removes rights in underlying expression.",
+  "required_integration_qualification": [
+    "Project study English from a qualified historical-source adaptation; Ambrosian1712 prayer, name specialization and separately evidenced short conclusion.",
+    "Comparison only to secondary2002; authenticated2008 wording unresolved.",
+    "Retain precise owner preimage and replace stale current-state notices only through a separately reviewed successor."
+  ],
+  "fresh_images": [
+    {
+      "source": ".scratch/modern-nonseasonal-orations/marian/ambrosian1712.pdf",
+      "source_sha256": "180769e3a6989ee863bf6404090ab430fd786fa10def1442485cc8537beaf4ce",
+      "artifact_page": 11,
+      "path": ".scratch/modern-nonseasonal-prayer-review/ambrosian1712-ap11.png",
+      "sha256": "ef78fcd2e6736aa11d153f6ce320c9b22188548e5227e2930a5a5971e5b68f3e",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-nonseasonal-orations/marian/ambrosian1712.pdf",
+      "source_sha256": "180769e3a6989ee863bf6404090ab430fd786fa10def1442485cc8537beaf4ce",
+      "artifact_page": 413,
+      "path": ".scratch/modern-nonseasonal-prayer-review/ambrosian1712-ap413.png",
+      "sha256": "f38bcb7afa60faff2f3ecc19a4213ae1312aeea41c3168cf7012798be411a408",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-nonseasonal-orations/marian/ambrosian1712.pdf",
+      "source_sha256": "180769e3a6989ee863bf6404090ab430fd786fa10def1442485cc8537beaf4ce",
+      "artifact_page": 414,
+      "path": ".scratch/modern-nonseasonal-prayer-review/ambrosian1712-ap414.png",
+      "sha256": "bd465d549b1829163f5b3cb5e75ba7b40eedbef8d31b262b71a529c8bb307f09",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "source_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_page": 22,
+      "path": ".scratch/modern-nonseasonal-prayer-review/secondary2002-ap22.png",
+      "sha256": "f4f6223c61e3086c23242b0985723e598473bb3dfb398a1cf4e5abd0d5ad6728",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-ordinary-candidates/target-2002.pdf",
+      "source_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "artifact_page": 491,
+      "path": ".scratch/modern-nonseasonal-prayer-review/secondary2002-ap491.png",
+      "sha256": "0ed15cc6652050db08117b0fb763676c91587a0ce9e16d412c594d88b91dcc76",
+      "independently_rendered_and_visually_inspected": true
+    },
+    {
+      "source": ".scratch/modern-nonseasonal-orations/marian/lasance-conclusion217.pdf",
+      "source_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "artifact_page": 1,
+      "path": ".scratch/modern-nonseasonal-prayer-review/lasance217.png",
+      "sha256": "b16df89c01071a86f98d5e450e1b43d508ddabfe74af1841a2026c00e6b9deea",
+      "independently_rendered_and_visually_inspected": true
+    }
+  ]
+}

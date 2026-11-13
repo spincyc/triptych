@@ -1,0 +1,379 @@
+{
+  "schema": "triptych-independent-merged-nine-binding/v1",
+  "date": "2026-11-12",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "verdict": "PASS exact merged metadata/source/controller joins and expected current refusal; Root adoption remains pending",
+  "inputs": [
+    {
+      "path": ".scratch/roman-sources/combined-nine/install-plan-v3.json",
+      "sha256": "5ea0888075d6258d067d403442d3fcf9bf678bcf2b84a61c95c7fd10d71220fe",
+      "bytes": 252486
+    },
+    {
+      "path": ".scratch/roman-sources/combined-nine/authority-pending-v2.json",
+      "sha256": "12320f32478a1e02ebbdc0079f52bf54e6630bf5a415854f877ced2236556a91",
+      "bytes": 184738
+    },
+    {
+      "path": ".scratch/roman-sources/combined-nine/root-merit-inputs-v2.json",
+      "sha256": "b96a6e068cce278ff755fedc6aecd806850e25d952ad6e4790626598df1442ab",
+      "bytes": 108796
+    },
+    {
+      "path": ".scratch/roman-sources/combined-nine/collision-scan.json",
+      "sha256": "5db4ade5b22a07f3a640f8623b1f3f1387d851ebda18f444c931257cf97715d0",
+      "bytes": 2427
+    }
+  ],
+  "checks": 1479,
+  "failures": [],
+  "audit_detail": {
+    "path": ".scratch/roman-sources/next-twelve-source-review/merged-nine-binding-audit.json",
+    "sha256": "31cdc75d4d4c75dc33c23c243cbfb3ae28cafd518a09927c175b2211c8e8ed78",
+    "bytes": 527583
+  },
+  "cases": [
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "First Prayer after Communion",
+        "all",
+        1
+      ],
+      "Latin_sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+      "English_sha256": "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528",
+      "new_proper_sha256": "cfe47d637caf1c985ec196406f81d38b195fb2ec706e9b745d5b7396460832e4",
+      "Latin_row_sha256": "cadd1b6e4ce5170710fdf4a11ec661ea5a2c40f66fb274d2973a2f0ff04a0845",
+      "final_English_entry_sha256": "12e3f0df49d8e3d45f4663fb5714ca386afa1dd29654dacbe26c6d284c948bd9",
+      "source_record_closure_sha256": "3bb93761dbd36c5f14d076b4912906b4632d4cd8835cc725669bae323c934154"
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Second Prayer after Communion",
+        "all",
+        1
+      ],
+      "Latin_sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+      "English_sha256": "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84",
+      "new_proper_sha256": "5adb7bfceeb40b590fc234491ad009bb2ffa0c058c9291e4f929fac05c3f755a",
+      "Latin_row_sha256": "32cc1843e05943b94f19225da47b0c4522518a1490e3c71624b847efa3080687",
+      "final_English_entry_sha256": "576fc3431cbedbed9f7cc6d9020a1ffa8a983121d41ad3d66f28f223a21cbd55",
+      "source_record_closure_sha256": "37a40d179a86db5925cef769cb3c6ba58c27d68fb6bb336208bb4d2ed00a3826"
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Collect (Altera oratio)",
+        "all",
+        1
+      ],
+      "Latin_sha256": "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5",
+      "English_sha256": "c43d59ab7ef49dd5f9b9af4952818cdedbf90b63cf789d10cc1e4db1a72fef72",
+      "new_proper_sha256": "2a9eb4623a02a367223518e4d25065f0059fc467e0bfc89f691872508bd8c80e",
+      "Latin_row_sha256": "071c4c0e18f641a0fba1e0c989823f1b11fa74142a73dd87b0a81fbda3be5513",
+      "final_English_entry_sha256": "4aabac7b77a432ed413de48308cbefed11a3d7c2657dbe19ef13feb41d18d264",
+      "source_record_closure_sha256": "11932ce8b630938a3f1dc324e20d6ed5f267805e4904048975b57c2b4ee4c6fe"
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Collect (Altera oratio, in plurali)",
+        "all",
+        1
+      ],
+      "Latin_sha256": "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e",
+      "English_sha256": "a408bbaeb0aba387aea72db613abff2b6848e6150e8693ae8f6aea5aa9b64ccd",
+      "new_proper_sha256": "e7328c8eb1c9857223acc0013e86961ce624db982e9dfeeafb81557e76250550",
+      "Latin_row_sha256": "72475f08a9a75a2693a6fd47a7772c81425ccee6e3e8b0f7131ce78cac0df49e",
+      "final_English_entry_sha256": "1319635ecc05b5caf7da550c654f5f5260392b3c9c9eaddd430d62ab70a2ca92",
+      "source_record_closure_sha256": "6ad2e31bf7b583cca16b08c6e746c2956a9f1494e8ec78ec815254c26a7330e6"
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Secret (Altera secreta)",
+        "all",
+        1
+      ],
+      "Latin_sha256": "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86",
+      "English_sha256": "a0e9e1cd055d852590e8c62df914e45558f83569d2ff051c9ceca20cc3ab7a3a",
+      "new_proper_sha256": "e33b179beb6c99824d7441efeb09673dd692e11e32ddd0d5298dd8c3424e318c",
+      "Latin_row_sha256": "b7d676480d1a68b5ca12c3f7b188d8070125d28cf256e6d96189d9da82a376a1",
+      "final_English_entry_sha256": "f8f401ee824333f48c22b79c602b4c7163853ca243fc8b10a74122e96b1dce2d",
+      "source_record_closure_sha256": "68bb07b605d4e82923cfc0759dd51455f4da042c7e0d4a080309846dda79584b"
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion (Altera postcommunio)",
+        "all",
+        1
+      ],
+      "Latin_sha256": "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980",
+      "English_sha256": "927b5d3a21074a0c98c877986aa69df09cf917253024971c26bf659c70002de6",
+      "new_proper_sha256": "d56d51cb3e2862549f2490cb91e579375213dff8b5359fc01b64a90a985a374b",
+      "Latin_row_sha256": "ce73948fb6a14841ac3dc32467e31b6e534f0c637adff9f4454aeb3bb0496129",
+      "final_English_entry_sha256": "4f61f4a08c6fa202344edd14df0c1eb1ac9c434a87a3b8ea9ecb49b652dbcc5d",
+      "source_record_closure_sha256": "6f292c188f9ad8fdf923eb32abe3cf1e07e1d117029bd4cb05609eadc0967699"
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion (in plurali)",
+        "all",
+        1
+      ],
+      "Latin_sha256": "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb",
+      "English_sha256": "0b114210b02f860463a3d31a346b2abdcdc576efe0d19ed4c1f5d444621ad54f",
+      "new_proper_sha256": "cc811bf67f940a533e856f1e1be966e7e9b935a1dcf8888838858281040473e4",
+      "Latin_row_sha256": "62d135941434b1972184f6ad4f40f17d0dce44078ea8c99826c0c04da57784c5",
+      "final_English_entry_sha256": "a5df2aed39f79dc3f22f2fda256b92fe03ba077645f857a3672bb8f18c5cc39c",
+      "source_record_closure_sha256": "336340118a601c022f2e380f977712047ed364410e8ede5d23a3a45a782bf6d3"
+    },
+    {
+      "identity": [
+        "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "Latin_sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+      "English_sha256": "e52ebe481515425327be38e0eb18351cbb183f82c4c244cc86678dc2022a327e",
+      "new_proper_sha256": "b1d010da3ef61435e55e00cecbce931cb081ef333a48bce851346680b24b0dea",
+      "Latin_row_sha256": "b509c815e139214138f3db6d3ad54c59521d7e56db9dd7b0bda1943e6ae40716",
+      "final_English_entry_sha256": "ec82ef4c903b8ed153dcdb6dbd4ee3e7c621f42a4d3ea3be0e15ce1418bb0afe",
+      "source_record_closure_sha256": "5c702e1bfc4d65218717e2ec0fe2eb4b90541c216a2eda9e7e9bbf3f3624dad5"
+    },
+    {
+      "identity": [
+        "assumptione-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "Latin_sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+      "English_sha256": "571ec8706ad543253335455e93fd2fe5dbcf16e6084a14fd72778d573b9f5f36",
+      "new_proper_sha256": "d8c437b7a08ef62f3fbbcde3b7d620ec5bbf5b8c1bd4b7de376758bb0ebce88b",
+      "Latin_row_sha256": "9d879e763efaa3d81b098bac253ca73d5df30ef009bbd42f68938d6831107778",
+      "final_English_entry_sha256": "e126ec7584d5feaa20b9f3c11716d188fbc17eccc600a2d2ca4cfa7b6eccd0e0",
+      "source_record_closure_sha256": "84a0b634425cc14d8cfd3ce49d916bd0173a057e97d80c55d2e6d5428e8cebf3"
+    }
+  ],
+  "current_guard_refusals": [
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "First Prayer after Communion",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Second Prayer after Communion",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Collect (Altera oratio)",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Collect (Altera oratio, in plurali)",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Secret (Altera secreta)",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion (Altera postcommunio)",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    },
+    {
+      "identity": [
+        "commune-summorum-pontificum",
+        "main",
+        "Postcommunion (in plurali)",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    },
+    {
+      "identity": [
+        "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    },
+    {
+      "identity": [
+        "assumptione-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "claims_row": true,
+      "claims_artifact": true,
+      "row_problems": [
+        "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      ],
+      "artifact_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope"
+      ],
+      "reading_problems": [
+        "finite Latin carrier is outside the exact adopted artifact scope",
+        "finite Latin reading requires its exact adopted passage/controller/ranges"
+      ]
+    }
+  ],
+  "findings": [
+    "All87 source files, nine proper bodies/objects and nine Latin rows match the independently reviewed GF/Common/Saints2 proposals. English body and actions remain unchanged; only translation_review points to the proposed shared Root review, with final entry hashes checked.",
+    "All28 existing scope objects and prior_routes remain identical; their current controller hashes match. Exactly nine new scope objects join the exact target/artifact/passage/payload/row/surface data and full71-record union of controller closures.",
+    "Root merits inputs preserve the independently reviewed complete comparisons, positive arguments and strongest contrary evidence. They are proposed inputs, not an adoption or a replacement for Root judgment.",
+    "Palm conclusion and Bellarmine Collect/Postcommunion target bodies are absent from new carriers/scopes/rows. Two GF older-frame operations retain recension-replaced exclusions and change only the referenced record kind; inherited-row pins retain unresolved status and no surfaces.",
+    "The collision report points to the preceding merged plan, whose exact nine target hashes equal the final version. Its metadata manifest digest was independently recomputed against the current56877-record source metadata and matches; toolchain/helper/authority pins match. Zero routes is the bound scan finding, not inferred from an empty old prior_routes list.",
+    "Current helper independently recognizes and refuses all nine pending rows, carriers and selected readings. Its active authority remains v4 with28 scopes. No pending authority was installed or substituted for this refusal check."
+  ],
+  "limits": [
+    "No witness rereads were needed or performed. The original twelve-case and Saints-two supplemental receipts remain unchanged; their source findings and limitations control.",
+    "This is a bounded merged binding review, not legal adoption, an authority-successor implementation review, English fidelity review, or a global repository/source-library validation.",
+    "The full275-payload collision scan was not independently rerun; its code, exact target set, current metadata snapshot and toolchain bindings were checked. A later source graph change requires a new relevant collision check.",
+    "The shared Root review locator is proposed and need not yet exist. Public-notice text is bound in scope metadata; rendered notices and activation behavior remain integration work.",
+    "No candidate, canonical, authority or earlier receipt was changed. Only the reviewer scratch audit and receipt were written."
+  ],
+  "resolved_metadata_issue": "The reviewed v3 successor fixes four normalized old_untranslated preimage hashes (GF2 and Saints2). Current hash fields now bind adjacent merged objects; original singleton-list hashes are retained under lane_original_untranslated_singleton_list_hashes. No source, body, Latin row, English body or pending-authority scope changed in that correction."
+}

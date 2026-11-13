@@ -1,0 +1,22 @@
+{
+  "schema": "triptych-root-source-metadata-amendment/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root",
+  "decision": "accept-exact-three-metadata-field-successor",
+  "successor_sha256": "24626ded338d22da0ec8dc8fb2875591a92c505eb9881cba3ee8f6004a931c5d",
+  "independent_review_sha256": "296a77393458aceee4930068cc175724b5d97faa367e6cbcb156a27a1a46893d",
+  "original_root_merits_sha256": "af653c80c2398d53f742024528b9c9c02c354a3f88e78ea11673fa80c28f5e80",
+  "root_work": [
+    "Read the complete successor with all three before/after documents and the independent review findings.",
+    "Independently rehashed the successor, independent review, original admission and both original declarations.",
+    "Parsed the three actual prepared TOML files; each matches its complete declared after document and exact SHA-256.",
+    "Compared complete before/after dictionaries: the two CMAA changes remove only optional artifact_page_ranges, retaining exact printed/PDF/unit locators in locus and notes; the Holy Name change restores only the required semantic locus, retaining PDF106/leaf105/printed95 in the range, context and explicit erratum."
+  ],
+  "rationale": "These metadata repairs satisfy the existing artifact page-count and work locus contracts without changing their controlling records. They do not alter prayer bodies, owner bindings, historical evidence, grades, publication rights or the earlier merits decision.",
+  "remaining_gates": [
+    "Fresh guarded merged installation after the canonical freeze is released.",
+    "Source-epoch successor and actual merged source, producer and consumer validation."
+  ],
+  "canonical_writes": false,
+  "new_image_collation_claimed": false
+}

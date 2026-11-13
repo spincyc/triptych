@@ -1,0 +1,103 @@
+{
+  "schema": "triptych-root-latin-two-and-holy-name-corrections/v1",
+  "status": "accepted",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "Codex integration reviewer",
+  "scope": "Two exact Latin transcription repairs and one English locator erratum. No English body, appointment, conclusion expansion, target grade or publication permission change.",
+  "latin_declaration": {
+    "path": ".scratch/roman-sources/latin-cleanliness/correction-declarations.json",
+    "sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e"
+  },
+  "holy_name_declaration": {
+    "path": ".scratch/roman-sources/additional-english-findings/holy-name-locator-declaration.json",
+    "sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6"
+  },
+  "independent_source_review": {
+    "path": ".scratch/roman-sources/cleanliness-source-review/review-receipt.json",
+    "sha256": "5afefdfd76d2a96c61448f4d7c733a3205a06eba457325acbe5419438f2bfa40"
+  },
+  "selected_source_cases": [
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-1.json",
+      "bytes": 3419,
+      "sha256": "c279c147839f461bbbd4e1cf1848173f2351ebae7515e88173a6a309ce167388"
+    },
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-2.json",
+      "bytes": 3391,
+      "sha256": "3f88ad1c2751e12ad0a990360444e5fbd84c9d3188ecc1fcce6d8f2201457111"
+    },
+    {
+      "path": ".scratch/roman-sources/cleanliness-source-review/case-3.json",
+      "bytes": 2506,
+      "sha256": "c5297d7e6597397e4dd4db12e647a58b2d9e43d016de1563f35784619f31cc5d"
+    }
+  ],
+  "decisions": [
+    {
+      "identity": [
+        "s-gregorii-i-papae-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "before_sha256": "2cf35f33ef127fb916f8a8f1428449b802536b04bceefcda7b79e23735efa5ff",
+      "after_sha256": "20a1441c3dbfa8349ab0ae1bd6b1b15ea8c78df41d29068e15340415d49b50f6",
+      "exact_replacement": {
+        "before": "ut II intercession e beati",
+        "after": "ut intercessione beati"
+      },
+      "finding": "Both page images print ut intercessione beati Gregorii (stress accents omitted here). Neither prints II, and intercessione is one word. The entire petition was read against both witnesses. The 1862 prints Per Dominum. after the petition; the old provenance claim that it prints no conclusion is incorrect. The 1962 prints the retained conclusion through in unitate. The historical decorative initial and small-cap tail read Annue; they are not the recognizer string 4 Nnue. The historical text has no comma after quaesumus; the target punctuation is retained."
+    },
+    {
+      "identity": [
+        "comm-s-gorgonii-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "before_sha256": "63f58c33a7b4d65a87d53d35a3d0493f78ecc6557d568ce4fcfdbe638635dfba",
+      "after_sha256": "8294aa96abf2c6d1b207cea9ae97a96667b8f5b97fe70d1102acf566fa1baaa4",
+      "exact_replacement": {
+        "before": "vegetet: quas in Martyre",
+        "after": "vegetet: quae in Martyre"
+      },
+      "finding": "Both page images print quae as the ae ligature in vegetet: quae in Martyre, not quas. The entire petition was read against both witnesses. The 1862 ends pascatur. and proceeds directly to De Spiritu sancto. Postcomm.; it prints no conclusion at this place, contrary to the old provenance claim of a short conclusion cue. The 1962 prints pascatur: Qui tecum vivit et regnat in unitate.; the existing target punctuation and conclusion remain unchanged."
+    },
+    {
+      "identity": [
+        "most-holy-name-of-jesus",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "unchanged_body_sha256": "a0136939dba2112dfd3a0dda1cca88770218a124a024e241f8bb4390a5bdc199",
+      "changed_fields": [
+        "ia_leaf",
+        "ia_leaf_range",
+        "witness_note"
+      ],
+      "locator": {
+        "printed_page": "95",
+        "ia_leaf": 105,
+        "artifact_page": 106
+      },
+      "finding": "Accept independently page-checked PDF 106 / printed 95 / IA leaf 105. Immutable TSV row 57 remains unchanged and receives an explicit external locator erratum; historical feast placement and target relation remain separate."
+    }
+  ],
+  "review_performed": [
+    "Read complete before/after Latin bodies, exact lexical changes, source/target ending distinctions and independent whole-page findings. The Gregory witness prints Per Dominum; the Gorgonius witness has no ending at that location. Existing target ending bytes remain unchanged.",
+    "Read the complete Holy Name metadata patch, original and corrected owner dictionaries, immutable payload treatment and independent page findings.",
+    "Independently verified all source input/new-file hashes, exact single Latin replacements and preserved grade/permission fields, Holy Name unchanged body/payload, changed-field set, patch hash and current file preimages."
+  ],
+  "canonical_changes": false,
+  "integration_requires": [
+    "Persist minimal exact declarations and independent source findings before guarded installation.",
+    "Declare both existing-positive Latin changes and exact metadata-only English successor to source_epoch; retain original historical oracles and raw streams.",
+    "Rebind only overlapping supplemental ending descriptors to the corrected actual owner proofs; preserve unaffected native descriptors.",
+    "Run actual source, generator and consumer checks after integration."
+  ]
+}

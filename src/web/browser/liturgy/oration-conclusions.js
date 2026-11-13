@@ -7,10 +7,12 @@
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
   'use strict';
   const METHOD_ID = 'roman-1962-rg115-conclusion-execution-20261112';
+  const V2_METHOD_ID = 'missal-finite-oration-conclusion-execution-20261112-v2';
   const GROUP_RULE = 'RGMR 436-437; 442-443; 480; 505';
-  const ACTIVE_AUTHORITY_SHA256 = 'c5fb8fb02eb062a53cdb5d316bb476f5586550691ce6a613e8cf2889241b4f43';
+  // This exact authority is activated by its adjacent root-adoption record.
+  const ACTIVE_AUTHORITY_SHA256 = 'b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744';
   // BEGIN GENERATED CONCLUSION PINS — derived from the single finite authority.
-  const GENERATED_AUTHORITY_SHA256 = "c5fb8fb02eb062a53cdb5d316bb476f5586550691ce6a613e8cf2889241b4f43";
+  const GENERATED_AUTHORITY_SHA256 = "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744";
   const PUBLIC_PINS = Object.freeze({
   "[\"advent-1\",\"main\",\"Postcommunion\",\"all\",1]": "9d8c3de90fe2ba0f9f24b5009e1754535dd0db659e711964ef462341c4110171",
   "[\"advent-2\",\"main\",\"Postcommunion\",\"all\",1]": "df5f2fab381f6162b102734c5a7a9d846bd7137c6c1cc21bc3539b9eb043fe60",
@@ -442,6 +444,32 @@
   "[\"pentecost-ember-friday\",\"main\",\"Postcommunion\",\"all\",1]": "7127cfea67520a7f46ebce659aae70eefd0f48a8611cb9486bcb6763b8382284",
   "[\"pentecost-ember-wednesday\",\"main\",\"Postcommunion\",\"all\",1]": "39d36c0ec4883ded94042377a632c0d988d1f09e8ea4e281a8e950c9e62c23f2",
   "[\"pentecost-ember-wednesday\",\"main\",\"Secret\",\"all\",1]": "f019b8cd49d9bf768a1dad3e168a66ca5ca341a2c1ac31a47b7154be8032de4e",
+  "[\"postconciliar\",\"ascension\",\"day\",\"Collect\",\"all\",2]": "02f45b23158e883ecece70ce15a51e82eec798184feb4c2a26386caf78acb083",
+  "[\"postconciliar\",\"epiphany\",\"day\",\"Collect\",\"all\",1]": "8f93fa9ec05bc66c58654a7d678ee80834b6abe55d5bfcf42602165e13615823",
+  "[\"postconciliar\",\"nativity\",\"dawn\",\"Collect\",\"all\",1]": "fb0f722746e209e52e18767c383fee5be4b4220bf3e7a53d347d822fb0b40541",
+  "[\"postconciliar\",\"nativity\",\"day\",\"Collect\",\"all\",1]": "effe0c5a658a0695fb484cacab2a858d5f635133cb2ab66c58f331187da70217",
+  "[\"postconciliar\",\"ot-10\",\"main\",\"Collect\",\"all\",1]": "b9dd05fef36167105627d39fc2946d21fe9b5cca60fe066377ff096c4ff9048a",
+  "[\"postconciliar\",\"ot-12\",\"main\",\"Collect\",\"all\",1]": "a2f0dcf64e828d52310d1ea87151314b36b27f3bd26c37fb02d0f3c30968b50a",
+  "[\"postconciliar\",\"ot-15\",\"main\",\"Collect\",\"all\",1]": "3ec42cafbb28896435d4a3077e951bffab8acb0817847ff53f013c7857b2cd01",
+  "[\"postconciliar\",\"ot-2\",\"main\",\"Collect\",\"all\",1]": "465651ebc9d4d328e3b40052d829db1a53858db5c0a43149a82269fc029aa757",
+  "[\"postconciliar\",\"ot-20\",\"main\",\"Collect\",\"all\",1]": "1015374e37b9a99e199d22467d83cfa236f34a052a157d4562c2590d09275abc",
+  "[\"postconciliar\",\"ot-21\",\"main\",\"Collect\",\"all\",1]": "f26204579a58ca34ef9ab9f0fd60c50778bec21cc11c7170b09d0b0de3985a96",
+  "[\"postconciliar\",\"ot-22\",\"main\",\"Collect\",\"all\",1]": "69dc03857b308a4b077e978dc7c6ec4674e003873f9f973ca66f843c81bd1978",
+  "[\"postconciliar\",\"ot-24\",\"main\",\"Collect\",\"all\",1]": "5ee6990f694a8b920f1bddaab6c8f53a641c8aeb1df13a9beeea9df7bc128c7a",
+  "[\"postconciliar\",\"ot-26\",\"main\",\"Collect\",\"all\",1]": "fa58a6092d027fcf1a8b0d37054f6a9fa314d38eea0034b7cfce6c4eef6b9f39",
+  "[\"postconciliar\",\"ot-27\",\"main\",\"Collect\",\"all\",1]": "5f898829d922faafc306223ca773e96c3e4c743b255e10aeb03ad7496bf84348",
+  "[\"postconciliar\",\"ot-28\",\"main\",\"Collect\",\"all\",1]": "49b72c94b51826ce4f7d5346fe2467e38d01ef327351e72f503309e982a6f297",
+  "[\"postconciliar\",\"ot-29\",\"main\",\"Collect\",\"all\",1]": "a73a206d5ad24c63d1b48d1e09fe3a8d6751572477934f083dedf7fa04908760",
+  "[\"postconciliar\",\"ot-3\",\"main\",\"Collect\",\"all\",1]": "479a8b00b6d4fe78f8d9756cdfb3319dc71196ae1508ed49e8c046af8dcf2a86",
+  "[\"postconciliar\",\"ot-30\",\"main\",\"Collect\",\"all\",1]": "5ffbaeef41d5450b82babb3034ff7f49124aa2915f5852e7cef713e3dcb30d0a",
+  "[\"postconciliar\",\"ot-31\",\"main\",\"Collect\",\"all\",1]": "d719277f8387c2c9571bebffe4f4a5bf6a36234f22ac0f3005306db8e8449fbb",
+  "[\"postconciliar\",\"ot-32\",\"main\",\"Collect\",\"all\",1]": "4742496645547b948c369d594401e7613b08788f4724cb82a0503271db8685b4",
+  "[\"postconciliar\",\"ot-33\",\"main\",\"Collect\",\"all\",1]": "1cf1912c64ee257a949c65944b433946ccc41613ad38de193cc0b6c47e8ba13a",
+  "[\"postconciliar\",\"ot-4\",\"main\",\"Collect\",\"all\",1]": "a2351de0505bf0a5e71970eb2f4ccd4c697efe3a9f77158b5d0c2a82240cba77",
+  "[\"postconciliar\",\"ot-7\",\"main\",\"Collect\",\"all\",1]": "4083b2ae41114f896994d0449d5a2b20f58b4859fc6c22895cf2f5e937843eed",
+  "[\"postconciliar\",\"ot-8\",\"main\",\"Collect\",\"all\",1]": "a641f826bfcce863c20b0bd1a6250f1c04d6b21df76f4e08dca08051b0bd4184",
+  "[\"postconciliar\",\"ot-9\",\"main\",\"Collect\",\"all\",1]": "7d08f945f3ce27e969227e77667caba7cb5381d77accbc1b1552499cbb9156db",
+  "[\"postconciliar\",\"pentecost\",\"day\",\"Collect\",\"all\",1]": "af5b5549c57482073f816c557bcb91e92494862f2ec7d85033228dc3f7a6491f",
   "[\"pretiosissimi-sanguinis-domini-nostri-iesu-christi\",\"main\",\"Postcommunion\",\"all\",1]": "1ec65b2ee4a77fdf934dd686c12e37f7071a477eaef3087c0c499b8d9f6aec24",
   "[\"pretiosissimi-sanguinis-domini-nostri-iesu-christi\",\"main\",\"Secret\",\"all\",1]": "17f6a12901a2cd9b2deb914466dd6e790a7075d85de3de7fd9ab8e1df79da12f",
   "[\"purificatione-beatae-mariae-virginis\",\"main\",\"Collect\",\"all\",1]": "961e9683328e5788bc780f5d8484fe8735e23f5cf744121a78315c9de69fc6fe",
@@ -453,6 +481,319 @@
   "[\"rogation-mass\",\"main\",\"Collect\",\"all\",1]": "505e748f93262b14925e4a0b32d4ca8266b48e511438c4dbc8d01e55224a4a6e",
   "[\"rogation-mass\",\"main\",\"Postcommunion\",\"all\",1]": "6886a0d087af6432d7ebeeea77459496930d06cf202bb6e435b66bdb1594cca3",
   "[\"rogation-mass\",\"main\",\"Secret\",\"all\",1]": "14323354627c672370242b578fa14dda2b51fd8341745bee7a35e99ac8a89944",
+  "[\"roman-1962\",\"advent-2\",\"main\",\"Collect\",\"all\",1]": "754105a16de4ef1418b3b4a58234bcf99c3a80a51eab57dd28a0da71d92ed316",
+  "[\"roman-1962\",\"advent-ember-friday\",\"main\",\"Secret\",\"all\",1]": "448fda960f1de0d1471e57c16d941fe29e3f16680d62bc848df4614bd6b91957",
+  "[\"roman-1962\",\"annuntiatio-beatae-mariae-virginis\",\"main\",\"Collect\",\"all\",1]": "ae27622fe16f8943d34c569575e8ebc2b3352e3ca6bf012feb8de051256be33a",
+  "[\"roman-1962\",\"annuntiatio-beatae-mariae-virginis\",\"main\",\"Postcommunion\",\"all\",1]": "20452c3b863e9903416843b7bcf30a4f8a649776b5fb3dde96019effcdf4ad23",
+  "[\"roman-1962\",\"annuntiatio-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "c86017bfad26e4dfbf6b358c22b6e583b0fb2906bb323766f3cb363f1e05a237",
+  "[\"roman-1962\",\"ash-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "1aeae8c8adbd2e0261791dd37ef4cd040c99560158a0e896ff109528e7dd3e84",
+  "[\"roman-1962\",\"beatae-mariae-virginis-a-rosario\",\"main\",\"Collect\",\"all\",1]": "b8e8d7a76f16b2860bb5b572ec5ac5784005c0a0efd73360b92407871e403e3c",
+  "[\"roman-1962\",\"beatae-mariae-virginis-reginae\",\"main\",\"Postcommunion\",\"all\",1]": "7672b2b446061af983362cc508e0191cc0bb34f829e214f13927ba29116e06b0",
+  "[\"roman-1962\",\"beatae-mariae-virginis-reginae\",\"main\",\"Secret\",\"all\",1]": "22877ca4475631b064e7558dc716674f98db8e2a0790a687cc30f7bf26f262e0",
+  "[\"roman-1962\",\"chrism-mass\",\"main\",\"Collect\",\"all\",1]": "4f6d51457d3d56723046004741acd887767f36bf0831471ecee2aeec4d51ad78",
+  "[\"roman-1962\",\"chrism-mass\",\"main\",\"Postcommunion\",\"all\",1]": "24c751ce9ee4adc26f84a9c26bfcf528f6442c847577eb2a9ed5334959ba4822",
+  "[\"roman-1962\",\"chrism-mass\",\"main\",\"Secret\",\"all\",1]": "40f038337b2f4bc5696d8caa230218e53077050fcea60ba51cf6109f9ee9cfc7",
+  "[\"roman-1962\",\"christ-the-king\",\"main\",\"Collect\",\"all\",1]": "b4e5d5232d3f804046a6daa65e152cc31b9f73608b48977d5bbcadd1a3cdad21",
+  "[\"roman-1962\",\"christ-the-king\",\"main\",\"Postcommunion\",\"all\",1]": "c6d8ce7eb4703a22583af6177602022a2c23cf8e83f3d8e16d73e0f517132472",
+  "[\"roman-1962\",\"christ-the-king\",\"main\",\"Secret\",\"all\",1]": "b910595b435a5a6c2c783169e267f30ad19f200d1c175b8457345182715d8e0a",
+  "[\"roman-1962\",\"comm-beatae-mariae-virginis-a-mercede\",\"main\",\"Collect\",\"all\",1]": "dbe06789567d4135cb0d323f82b8b978d0e5e2d080485623e92d076ae5eaf969",
+  "[\"roman-1962\",\"comm-s-alexii-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "a70a1644c09c252a3ac6cf8386c2e0e8eecebefe9c2f0daf2fb411f10a68a95c",
+  "[\"roman-1962\",\"comm-s-bonifatii-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "86f2a5f174751cf759a94fbea8cc11a52744ebe7db8bfb57404a9b06b14818e8",
+  "[\"roman-1962\",\"comm-s-bonifatii-martyris\",\"main\",\"Secret\",\"all\",1]": "f9f77f9fef00e93fa9930593563674f61911bdf147b455d35ba614888b310f4b",
+  "[\"roman-1962\",\"comm-s-canuti-regis-martyris\",\"main\",\"Collect\",\"all\",1]": "2b154027baaad6e5fac52cb9505b29f6d5f19e99e29bb6f84325199c7e312a68",
+  "[\"roman-1962\",\"comm-s-canuti-regis-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "1fcfe8d65ef4a205ab89639ecf99e0036f96160ea8677d70dad275858fa83b4b",
+  "[\"roman-1962\",\"comm-s-canuti-regis-martyris\",\"main\",\"Secret\",\"all\",1]": "59862c8a11612439d7158498f139c43135fce240cb5dbc85ea54a7d22dbbf215",
+  "[\"roman-1962\",\"comm-s-chrysogoni-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "f409fd24cfea901a91d88bd739d652fcf98959f6a359795303aec90a333ac270",
+  "[\"roman-1962\",\"comm-s-eusebii-confessoris\",\"main\",\"Collect\",\"all\",1]": "244e9a940ce20dd052b9759f3072769cd1f137c3d453744ec3c5e7f709e985af",
+  "[\"roman-1962\",\"comm-s-gorgonii-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "b54d2c4679f36cdd8bd880422ec264a1a02f026a779087c7c82f589bee3a0224",
+  "[\"roman-1962\",\"comm-s-gorgonii-martyris\",\"main\",\"Secret\",\"all\",1]": "66e34fa246d58f688ce662f425d66f7b7ea265f543c5c0e6e4a50ea03d324e1b",
+  "[\"roman-1962\",\"comm-s-hermetis-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "a953023f18bf567c0dc7fa50b7a4747709ef1808b9a99045524b00dfc1e736de",
+  "[\"roman-1962\",\"comm-s-hermetis-martyris\",\"main\",\"Secret\",\"all\",1]": "b397c348f38782148d3e4a9b84609dc35c6b4be600e61f4aa1f98e7d689123cd",
+  "[\"roman-1962\",\"comm-s-mennae-martyris\",\"main\",\"Collect\",\"all\",1]": "e62198db1a63c014b6fd133eb1fe08113670325404f2c93681c2efa6514ffc9e",
+  "[\"roman-1962\",\"comm-s-pauli-apostoli\",\"main\",\"Collect\",\"all\",1]": "430d9e661403471462297a8642651c3e24fcc044fc03b20189b76d22b1e3eca6",
+  "[\"roman-1962\",\"comm-s-pauli-apostoli\",\"main\",\"Postcommunion\",\"all\",1]": "5db1cb0bff15361d8a06cbd1875eacedde17aabe47333be98f2b7d24c0611d15",
+  "[\"roman-1962\",\"comm-s-pauli-apostoli\",\"main\",\"Secret\",\"all\",1]": "d00d6e1391ba094983ecbf51131620377d10c68fa1019702850eec24a527e0bc",
+  "[\"roman-1962\",\"comm-s-petri-apostoli\",\"main\",\"Collect\",\"all\",1]": "29806437242d6e1f3a01b18e941d1245fc18f7b98e23beb3305302496c162114",
+  "[\"roman-1962\",\"comm-s-petri-apostoli\",\"main\",\"Secret\",\"all\",1]": "cf7367c25facc6f9c8255df5a0bc7ee211e99c2c7e6a6f938ad71034f4265644",
+  "[\"roman-1962\",\"comm-s-petri-apostoli-2\",\"main\",\"Collect\",\"all\",1]": "d70cbad6813528b470e9259003ef753b62e73d012aedf44799c1184e27618709",
+  "[\"roman-1962\",\"comm-s-petri-apostoli-2\",\"main\",\"Postcommunion\",\"all\",1]": "c849dbf600bfc639c3771c6f04bfbe5f811a754516d5112313a9e71841f7a8ec",
+  "[\"roman-1962\",\"comm-s-petri-apostoli-2\",\"main\",\"Secret\",\"all\",1]": "2cbe0c59154e1567ad7b9ff13097732b8f639d5c7d7a67c19e4bcb2c7be212b3",
+  "[\"roman-1962\",\"comm-s-praxedis-virginis\",\"main\",\"Collect\",\"all\",1]": "6ddf6a0888d997df149a1ebbff5ecc26815f52f4d25d5b207cf676f96ed2c298",
+  "[\"roman-1962\",\"comm-s-priscae-virginis-martyris\",\"main\",\"Collect\",\"all\",1]": "d1562dda19930edf4916f23bb3b45d7246308b98b43d3950096c7a799eba83df",
+  "[\"roman-1962\",\"comm-s-romani-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "3ca2fec9849bd51eda2cdb87ee91515b7f510e888a724ec206f4cd28df782f0e",
+  "[\"roman-1962\",\"comm-s-romani-martyris\",\"main\",\"Secret\",\"all\",1]": "034a2257bcf925f2da23792ea7c78e3cd8e1b11e9c554ef5b076cb7b46cca6a8",
+  "[\"roman-1962\",\"comm-s-sabbae-abbatis\",\"main\",\"Collect\",\"all\",1]": "daf3bd540b02e3a2e74a5d79b86ad9ee5e1808357eca57d7d9d21131720aecff",
+  "[\"roman-1962\",\"comm-s-sabbae-abbatis\",\"main\",\"Postcommunion\",\"all\",1]": "a0c536c74255c8ef7eb575793e100f99575b439fac1c81d3734a69e7a8713b26",
+  "[\"roman-1962\",\"comm-s-sabbae-abbatis\",\"main\",\"Secret\",\"all\",1]": "d5bfa6f48ae6eb12774727d91a3484a52645902b080533df1f9dba69b539fd9e",
+  "[\"roman-1962\",\"comm-s-sabinae-martyris\",\"main\",\"Collect\",\"all\",1]": "e47c79eabffb29566534594baec918eb0ddad9fa5d899152deaa8931261ad2d9",
+  "[\"roman-1962\",\"comm-s-sabinae-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "75e1c69c73caba679012b453c6ce535a79fa7d434d91c735db233db1e1691a7c",
+  "[\"roman-1962\",\"comm-s-sabinae-martyris\",\"main\",\"Secret\",\"all\",1]": "b842aeacb01ff00bffc72ea8f9398272d271a9f492ebc86db8e4338d26248c5b",
+  "[\"roman-1962\",\"comm-s-saturnini-martyris\",\"main\",\"Collect\",\"all\",1]": "4e568eed33adec8e35b080f36c8ff3528768967ab55a6f64617d3965cd1345d0",
+  "[\"roman-1962\",\"comm-s-saturnini-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "3803fac6a169c751d042dde7f3b5e610b4ae719e920e802c2e43f418d0a1c0f9",
+  "[\"roman-1962\",\"comm-s-saturnini-martyris\",\"main\",\"Secret\",\"all\",1]": "7da2fdbea247284236242ce644cc08a459631d0be9027205f47cdc588e41404d",
+  "[\"roman-1962\",\"comm-s-silvestri-i-papae-confessoris\",\"main\",\"Collect\",\"all\",1]": "0220fa00745ef5f2f33dbb05a32fd6aa6cc237e7cf0fb1a63a4c15bb7bc6f6f3",
+  "[\"roman-1962\",\"comm-s-theclae-virginis-martyris\",\"main\",\"Collect\",\"all\",1]": "67f897f2b2bdff024630f993a0da72fe21b950a3e61b8105f41cacdd973c1e97",
+  "[\"roman-1962\",\"comm-s-urbani-i-papae-martyris\",\"main\",\"Collect\",\"all\",1]": "422c296a2cc6f66a26249e22367996b1a7480c10d51454662c33b400127c7307",
+  "[\"roman-1962\",\"comm-s-zephyrini-papae-martyris\",\"main\",\"Collect\",\"all\",1]": "091c0b21ba9d8656bde773a8e0eeb7a1e08dec73d3a6feffea5a017f4394119d",
+  "[\"roman-1962\",\"comm-septem-dolorum-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "c1ec46f7734277368c7a7ea1b8790fd374e5df309d58d6513a72cc0bf264f3ae",
+  "[\"roman-1962\",\"comm-ss-alexandri-eventii-theoduli-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "45c154f58cd2697f5b450f506f8339a89426a25932548d5f89870ef524abc711",
+  "[\"roman-1962\",\"comm-ss-alexandri-eventii-theoduli-martyrum\",\"main\",\"Secret\",\"all\",1]": "2c1040a418d307f8a32002198e46fe1d2c8d5443320126a9311b0767e19f96d5",
+  "[\"roman-1962\",\"comm-ss-chrysanthi-dariae-martyrum\",\"main\",\"Secret\",\"all\",1]": "32989bb18d5c83260414a95d07d6cd80959455a71f82740ca02d677fcb15203b",
+  "[\"roman-1962\",\"comm-ss-cypriani-iustinae-virginis-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "1049ebf3afba5596250c4d3f8782fc64d2cf7a26c263dbc09a9cc39e95c095cb",
+  "[\"roman-1962\",\"comm-ss-cypriani-iustinae-virginis-martyrum\",\"main\",\"Secret\",\"all\",1]": "a2a8867dcc32da9753e47ddea7ee138f3408fed91c103827afc0bc58dec75311",
+  "[\"roman-1962\",\"comm-ss-euphemiae-virginis-luciae-geminiani\",\"main\",\"Collect\",\"all\",1]": "a60f6a216ccc0dbd3169977a4fc6a1ce99102112bee5098f39a37d8089db3620",
+  "[\"roman-1962\",\"comm-ss-gervasii-protasii-martyrum\",\"main\",\"Collect\",\"all\",1]": "cb5331effc74f47d3a0e92016c10c6fb2fae55b1e91c0e7f2094ec03e7c2b96c",
+  "[\"roman-1962\",\"comm-ss-gervasii-protasii-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "dbcd713867d0d2d1731a686e6a27c1b087dd0e4fee6c5a73dfc736c7c55e1b26",
+  "[\"roman-1962\",\"comm-ss-gervasii-protasii-martyrum\",\"main\",\"Secret\",\"all\",1]": "8edc4dd717b3e1c1ab616d6ea7072804e22b0b169bb9a25dee9b2d51d4fcb327",
+  "[\"roman-1962\",\"comm-ss-hippolyti-cassiani-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "8c5a1043848083c47825b787274ebebe4a9e7b3cf7b1a48a244cc22ab4356df4",
+  "[\"roman-1962\",\"comm-ss-hippolyti-cassiani-martyrum\",\"main\",\"Secret\",\"all\",1]": "e60c97660cbeeec012dedd76af11fbdd2f68e30ba357c790246b86e8f689fa90",
+  "[\"roman-1962\",\"comm-ss-mauritii-sociorum-martyrum\",\"main\",\"Collect\",\"all\",1]": "36fc4721e9d272a0d58002a9999bd76a1663d8af328a069f2399d2bbbb3eda3b",
+  "[\"roman-1962\",\"comm-ss-placidi-sociorum-martyrum\",\"main\",\"Collect\",\"all\",1]": "8a8149c5febed6106aa1fdf156e044fc9f274ad6c52e912a3cfe784bafaea3e1",
+  "[\"roman-1962\",\"comm-ss-placidi-sociorum-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "bed1fbf4d4eebeecc2694042dd98c758aff602e00c0cb90cc39dfd3d51902322",
+  "[\"roman-1962\",\"comm-ss-placidi-sociorum-martyrum\",\"main\",\"Secret\",\"all\",1]": "5843dac38d464efdaf1009aa5bebcef63730cdee27aad650c37cf0724383b1aa",
+  "[\"roman-1962\",\"comm-ss-processi-martiniani-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "6c93dfb9c2537199839d1b9b27adb4d10be6aee4ad500e0fa3ebf4e9724bf38b",
+  "[\"roman-1962\",\"comm-ss-proti-hyacinthi-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "df6cc0c8c34829591dab3ab7a4f5767e350df1f0e53baf42569f3f0dfb05b43c",
+  "[\"roman-1962\",\"comm-ss-proti-hyacinthi-martyrum\",\"main\",\"Secret\",\"all\",1]": "bd8087da3f7c5294cef559c13273f15ed0f22b584eb803be18fceafea3719a80",
+  "[\"roman-1962\",\"comm-ss-symphorosae-septem-eius-filiorum\",\"main\",\"Collect\",\"all\",1]": "9c8d804b3a7ac74bb49c2577f9a9d932c50a44f71391713df36850ee15ef8cad",
+  "[\"roman-1962\",\"comm-ss-symphorosae-septem-eius-filiorum\",\"main\",\"Postcommunion\",\"all\",1]": "f763e426e3ed7e1771b7256826adfb4b649a15425099018ed580365d0f07ef61",
+  "[\"roman-1962\",\"comm-ss-symphorosae-septem-eius-filiorum\",\"main\",\"Secret\",\"all\",1]": "9f56ed095b997b34035cff0a96cdc22ebad14da6917d94062338f59ee172dd8c",
+  "[\"roman-1962\",\"comm-ss-ursulae-ac-sociarum-virginum\",\"main\",\"Collect\",\"all\",1]": "d87f9d87200728bd2737d967bd7898b74c621989c43f06b69328ce2d593fbab6",
+  "[\"roman-1962\",\"comm-ss-ursulae-ac-sociarum-virginum\",\"main\",\"Postcommunion\",\"all\",1]": "c14a73ec42a7d5beb20d8234bf050eaa6a73c83a98ada71b71c823fb067750ba",
+  "[\"roman-1962\",\"comm-ss-ursulae-ac-sociarum-virginum\",\"main\",\"Secret\",\"all\",1]": "702a5a6b827ba68cc41f6b3fba566911563ce7d24953d6c4379fac0ece213559",
+  "[\"roman-1962\",\"comm-ss-xysti-ii-papae-felicissimi\",\"main\",\"Collect\",\"all\",1]": "cece1e55222a338520f115cd71a93e000d5ade0b349b9efc4d39432e0ce790a4",
+  "[\"roman-1962\",\"commemoratione-omnium-fidelium-defunctorum\",\"first\",\"Collect\",\"all\",1]": "ce158be1912a1f01bdf56ad1f7ac774ec6c75a6f68cc30528acd6926ef78b1b1",
+  "[\"roman-1962\",\"commemoratione-omnium-fidelium-defunctorum\",\"first\",\"Postcommunion\",\"all\",1]": "812e6a89855c0bc92a90836c6a6c1a362fa154f4d3a4f8923537b69eec55ce22",
+  "[\"roman-1962\",\"commemoratione-omnium-fidelium-defunctorum\",\"first\",\"Secret\",\"all\",1]": "7de2be01eff548d52c609b699fb0fbb19095cc4809d1a5132f8db83ab4b9093b",
+  "[\"roman-1962\",\"commemoratione-omnium-fidelium-defunctorum\",\"second\",\"Secret\",\"all\",1]": "b0d73c593f914112edd5190c7b771c43dad58c676471498f371b72d57509fd3f",
+  "[\"roman-1962\",\"commemoratione-omnium-fidelium-defunctorum\",\"third\",\"Postcommunion\",\"all\",1]": "cedcfe0fa600fdaea45f4f90e2038c5fcca13b079034caf12ed0f28863d16738",
+  "[\"roman-1962\",\"commemoratione-omnium-fidelium-defunctorum\",\"third\",\"Secret\",\"all\",1]": "c19a0ecf304b3e5b511040056362908149dcd8fe1c58b1c601939862f994d9ee",
+  "[\"roman-1962\",\"commune-confessoris-non-pontificis-1\",\"main\",\"Postcommunion\",\"all\",1]": "3d41e5c125c867cc2f64fb895be9ab7515535a4f11455bf98c50e58f32bed5bf",
+  "[\"roman-1962\",\"commune-confessoris-non-pontificis-1\",\"main\",\"Secret\",\"all\",1]": "9f8c933718fde8e7171d24a3355426b1bf6651b1e84675b383f7dcaa3cc3bcd8",
+  "[\"roman-1962\",\"commune-festorum-bmv\",\"main\",\"Postcommunion\",\"all\",1]": "5abafd874804fb48cc015d9d784698a52151ea686f6b5a12160b47b701a21005",
+  "[\"roman-1962\",\"commune-festorum-bmv\",\"main\",\"Secret\",\"all\",1]": "8cc71ff2e39dd68073c123fc43d028cade3fc6750ec00422215c9d648518c81a",
+  "[\"roman-1962\",\"commune-plurimorum-martyrum-2\",\"main\",\"Secret\",\"all\",1]": "f8a88d7384b7b23e38a11e8bcd1fa0ced64614a3cdf238d0674434251a709083",
+  "[\"roman-1962\",\"commune-unius-martyris-3\",\"main\",\"Secret\",\"all\",1]": "8c4d7d1671cefb72b6536642ee6a1f2c3464573eccfce7e78274c3fc44b00ef5",
+  "[\"roman-1962\",\"corpus-christi\",\"main\",\"Postcommunion\",\"all\",1]": "c5dce5c5e6f50dd4b377a01bd9766066c1961b7bde222bb208cc86009c126eaf",
+  "[\"roman-1962\",\"easter-friday\",\"main\",\"Collect\",\"all\",1]": "ff4b56ef2dc575088404d03e9efa1d82c2ceed7f5a3aee2c43a97bb9875b1736",
+  "[\"roman-1962\",\"easter-friday\",\"main\",\"Postcommunion\",\"all\",1]": "55086916a1e014e638a0ceafb9758d0da490370591097c1baf25887465719474",
+  "[\"roman-1962\",\"easter-sunday\",\"main\",\"Collect\",\"all\",1]": "78e63155729764cb9687ff0ba979abcff038ce94d6bdda81905d42554dc920b5",
+  "[\"roman-1962\",\"easter-tuesday\",\"main\",\"Collect\",\"all\",1]": "d39ffc227709a0043c5155a9fedc1a7737ecd59b73fc0a4e662eced343db13fa",
+  "[\"roman-1962\",\"easter-vigil\",\"main\",\"Collect\",\"all\",1]": "27528ef133e2f963881482a573de57a21e1afadc59a68fabb7189b14cd77b5dd",
+  "[\"roman-1962\",\"easter-wednesday\",\"main\",\"Collect\",\"all\",1]": "70bd60b5180066c4336b5ddf39442dc11b2c7f687ea80e8e78fcdb6c68a19f4b",
+  "[\"roman-1962\",\"epiphania-domini\",\"main\",\"Postcommunion\",\"all\",1]": "3fb831fb9ea74d90ebff69efcf8b13aa3e7877a58944bc5cc95e7fb560f0f840",
+  "[\"roman-1962\",\"friday-after-ash-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "89f5235d172161f426fffc82621ceb60a5456e7ee509c0d5e978d4a6e8d1d6a8",
+  "[\"roman-1962\",\"holy-family\",\"main\",\"Collect\",\"all\",1]": "868a551e48c2efad0a9317e7eddf0656b8ded31408a1fcc0faa6edc8b2da99dc",
+  "[\"roman-1962\",\"holy-family\",\"main\",\"Postcommunion\",\"all\",1]": "f1842e67c73ac6e8b91968be3723ced927e23aa1a3989b729b141ce9c502e6bd",
+  "[\"roman-1962\",\"holy-family\",\"main\",\"Secret\",\"all\",1]": "f4c9dbc175f7d9dac19fe064e6e23bf94ef89baef9af6e531a65cd18e9444ebe",
+  "[\"roman-1962\",\"holy-monday\",\"main\",\"Collect\",\"all\",1]": "f992f3c23abc540c49e87f763a74e77f655d9dbc186d12fb6f1060b4a485a5f7",
+  "[\"roman-1962\",\"holy-monday\",\"main\",\"Oratio super populum\",\"all\",1]": "30221c1356db9a1bad670aa67a1d77462a7b4f58102bda3a6a0402e2a0a1e034",
+  "[\"roman-1962\",\"holy-tuesday\",\"main\",\"Collect\",\"all\",1]": "4273208516048bb068893225b9bee8951fe2dd606ac50a8903339cdbe645dc70",
+  "[\"roman-1962\",\"holy-tuesday\",\"main\",\"Oratio super populum\",\"all\",1]": "ec63f50d9d561b96a3e9be88049403801d7c837757da7b774bc0530c83476810",
+  "[\"roman-1962\",\"holy-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "826fb23d431f9b3efdceb82836abc131793b69a95df384e3c2145829823cb4cd",
+  "[\"roman-1962\",\"holy-wednesday\",\"main\",\"Postcommunion\",\"all\",1]": "9610679dea3d368bf611986eae386d1cc957b140fce031235ab151bcdf7a16fe",
+  "[\"roman-1962\",\"holy-wednesday\",\"main\",\"Secret\",\"all\",1]": "49fcd855cd3ca7256a81c746ed7a7e0b71800daa2b6765b141d288d3761629b8",
+  "[\"roman-1962\",\"immaculati-cordis-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "f113967f850352b468cbf5df6ad67c40413e2c416c39ae2e5483b7f4edeb44d9",
+  "[\"roman-1962\",\"lent-1\",\"main\",\"Collect\",\"all\",1]": "19e0be39e908580682ba0cd9eb5a1deb5d12ccda1737ba7b53564deadd4549df",
+  "[\"roman-1962\",\"lent-1-ember-friday\",\"main\",\"Oratio super populum\",\"all\",1]": "17ec2a977b3f3f0936f85cf83c2497f27ddb1bf7e576dc1f905421594bcb4103",
+  "[\"roman-1962\",\"lent-1-ember-saturday\",\"longer\",\"Oratio\",\"all\",6]": "818560ce7ca3152221eeba2ba6e746ef484a51978c8abb66ebb27cce8c094a11",
+  "[\"roman-1962\",\"lent-1-ember-saturday\",\"shorter\",\"Oratio\",\"all\",2]": "4932374497d5e4a6a5ae83faad1cd4f21aabfe7eeb41e0166bcae8af42fdc213",
+  "[\"roman-1962\",\"lent-1-ember-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "f1773ef57832e55b05ddca395530b04e9fd5c58e355cfab8729c3ed32b4c33dc",
+  "[\"roman-1962\",\"lent-1-monday\",\"main\",\"Oratio super populum\",\"all\",1]": "16898535a65bac54b36e76a3fdf307d31e4a7b6f66421d4ee1d3df1b1af22d16",
+  "[\"roman-1962\",\"lent-1-thursday\",\"main\",\"Oratio super populum\",\"all\",1]": "d9d9ba1b315faa01c18fa44fab1a1141a3ac2a1da8d93bfa4331cd62d75bdba8",
+  "[\"roman-1962\",\"lent-1-tuesday\",\"main\",\"Oratio super populum\",\"all\",1]": "c5ce46b3ef0dd9fa8b3d5ef0e5d02024ef81bd38b964bf4ebc198b3eede6eac6",
+  "[\"roman-1962\",\"lent-2-friday\",\"main\",\"Oratio super populum\",\"all\",1]": "7d178334da728da5640ed773d46984a97e762f127a035d3c87561df6c40a306a",
+  "[\"roman-1962\",\"lent-2-monday\",\"main\",\"Oratio super populum\",\"all\",1]": "2bf68e84d241bc3d5842a821eeacd43adc0b8094f9c27a3c62db7d8d617a7b80",
+  "[\"roman-1962\",\"lent-2-saturday\",\"main\",\"Oratio super populum\",\"all\",1]": "aea7b36a4e96ecd7f84cabba4dc03c4f83e7fa4ba1c4fb6ed798b3a98bf120cf",
+  "[\"roman-1962\",\"lent-2-thursday\",\"main\",\"Oratio super populum\",\"all\",1]": "68ee4a8fcf1b3fb1ad7eb4704f6f573843f25f1ecd01b20b2195253fee7989a3",
+  "[\"roman-1962\",\"lent-2-tuesday\",\"main\",\"Oratio super populum\",\"all\",1]": "d85c7718ff30b8ebb1490792bc1d13c8d3136ad06d1463a15ef9adfce42a5d0e",
+  "[\"roman-1962\",\"lent-2-tuesday\",\"main\",\"Postcommunion\",\"all\",1]": "4da0f756643489901ed6b06f3740ccb9796bd252753ee2cdc99cff8dc05b3288",
+  "[\"roman-1962\",\"lent-2-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "b4aff2e49914bc5c278c9ae5abf2cc1283d4ca508ae76e99293fd005ca9a39d6",
+  "[\"roman-1962\",\"lent-3-friday\",\"main\",\"Oratio super populum\",\"all\",1]": "84ce04c228880c5accb3ccbade1128ca528628661d8ebc038a08eeb9e122ae88",
+  "[\"roman-1962\",\"lent-3-monday\",\"main\",\"Oratio super populum\",\"all\",1]": "ebf485ac8708da06f82fbaca902f695cde292079cb719a8ace148cef8d1b5016",
+  "[\"roman-1962\",\"lent-3-saturday\",\"main\",\"Oratio super populum\",\"all\",1]": "481e286ed434ba47ae30f6ca84adf0b55773e749b397a628b6f9e25a03098df6",
+  "[\"roman-1962\",\"lent-3-saturday\",\"main\",\"Postcommunion\",\"all\",1]": "a179b1efb8e637c1ff001e0a82df14d59e998590f89531d95fec6ac42bf15790",
+  "[\"roman-1962\",\"lent-3-thursday\",\"main\",\"Oratio super populum\",\"all\",1]": "835c4bd19ee1166bb4b9822753a32b3016c6a2db4f61b1da5ab9c9fe269a497d",
+  "[\"roman-1962\",\"lent-3-tuesday\",\"main\",\"Oratio super populum\",\"all\",1]": "45750093f4755c6efd1fe819eb4820bc15d1a82338203d7cf29db2e768d1d71b",
+  "[\"roman-1962\",\"lent-3-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "101b2ee1ca827ed1116e5c4b64fa52ab674289e661ec638b45722e0a823428a3",
+  "[\"roman-1962\",\"lent-4-friday\",\"main\",\"Oratio super populum\",\"all\",1]": "1260ee846f962e40e60813f9202fd59a458a50b261f38f96e83b6d9a2f8d4023",
+  "[\"roman-1962\",\"lent-4-monday\",\"main\",\"Oratio super populum\",\"all\",1]": "020576fe32aecb96552cb5da51466be5d4985d95e01a1199fcaad2e8de2545c2",
+  "[\"roman-1962\",\"lent-4-saturday\",\"main\",\"Oratio super populum\",\"all\",1]": "8863932c9e8bf9bb023e2ba8e6a42623ad365d730f0b6382161ca0420471b15c",
+  "[\"roman-1962\",\"lent-4-thursday\",\"main\",\"Oratio super populum\",\"all\",1]": "3d4b47031b525b12672c8bd169d51e0401ab383565c921ac7adc23257a68048d",
+  "[\"roman-1962\",\"lent-4-tuesday\",\"main\",\"Oratio super populum\",\"all\",1]": "f53455bf25faa9e8d6d4bee64b152a660159541c796d47f6f52cd7d49628fc09",
+  "[\"roman-1962\",\"lent-4-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "e1d79e4b435542003d45d89714bec1f6f32c122680bf3edd113d4c2e9516dbca",
+  "[\"roman-1962\",\"mass-of-the-lords-supper\",\"main\",\"Collect\",\"all\",1]": "626f15e00cb7fe114235e6711d242661dd217d79ae4e1da01ac1861bac2f78ab",
+  "[\"roman-1962\",\"missa-de-s-maria-in-sabbato-3\",\"main\",\"Postcommunion\",\"all\",1]": "d2bbcd60da727fc8dd7218cf5a4e465f1c8ea113e613e1580c0f910c405735a9",
+  "[\"roman-1962\",\"most-holy-name-of-jesus\",\"main\",\"Collect\",\"all\",1]": "38c6b30899dfef4f613dd942fcb9c330c3cfd57c33737750f50cd020ddfa465d",
+  "[\"roman-1962\",\"most-holy-name-of-jesus\",\"main\",\"Postcommunion\",\"all\",1]": "1950c03ffa7a759a50b3d9987332c452643a0ee656815360c750a4019ef2d8d4",
+  "[\"roman-1962\",\"most-holy-name-of-jesus\",\"main\",\"Secret\",\"all\",1]": "f65bcbe5305f61727c4e3e6221fb2d8fcb56b11d674d441c5ceba0d2b8613196",
+  "[\"roman-1962\",\"nativitate-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "9469248f817b2153a9e3016ad92a30a8d1b86a6e627f369eeeaae648e5c803f6",
+  "[\"roman-1962\",\"nativitate-domini-octave\",\"day\",\"Collect\",\"all\",1]": "256042e76685d5efbd50d3f61b08e35ab25cee4cb01cba44c30ffc620c8894b5",
+  "[\"roman-1962\",\"nativitate-domini-octave\",\"day\",\"Postcommunion\",\"all\",1]": "45f572d9c24286d7d9b9427790db8ebdfba01c8c2f5f6f6409a13942dcf69730",
+  "[\"roman-1962\",\"nativitate-domini-octave\",\"day\",\"Secret\",\"all\",1]": "de959babb461645a6650b38e3f2ff90005d66fe0875b8a4da98a1d25dd31e427",
+  "[\"roman-1962\",\"palm-sunday\",\"main\",\"Collect\",\"all\",1]": "8889aa85237fea5ea392b282a0f4c7c8f623a3d9efd9fa95a71da05183e11a57",
+  "[\"roman-1962\",\"passion-friday\",\"main\",\"Oratio super populum\",\"all\",1]": "d039309069e04219f356071901782f05b40f607c9127c69763b1f3f773215116",
+  "[\"roman-1962\",\"passion-monday\",\"main\",\"Oratio super populum\",\"all\",1]": "432c96a0bbe021c2988eb21a3826ffe2b8f53b35cda0165acf55b97c5ffd2667",
+  "[\"roman-1962\",\"passion-saturday\",\"main\",\"Oratio super populum\",\"all\",1]": "5695a9b67e6a8105c6e15ae094688545688fdd6688c07d529a404c633d9059ed",
+  "[\"roman-1962\",\"passion-thursday\",\"main\",\"Collect\",\"all\",1]": "896481745b5177bc1ad0d2b866a66216b0ed506de150e731f3bf31f57224305f",
+  "[\"roman-1962\",\"passion-thursday\",\"main\",\"Oratio super populum\",\"all\",1]": "7a59e398ac3cc7e8fc6ad75e0b8e129d2bca072daa60dca48f1d4e1e1de3ea7e",
+  "[\"roman-1962\",\"passion-tuesday\",\"main\",\"Oratio super populum\",\"all\",1]": "80623fd92e59c2cf20bb2a89fe3e9e5ecd94f270c614da697933586a9ac60801",
+  "[\"roman-1962\",\"passion-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "7cc13667a54f2e9c2f83a47cabadeffa086c7f8c2f1d019077d201528c8113fc",
+  "[\"roman-1962\",\"pentecost-13\",\"main\",\"Collect\",\"all\",1]": "d82121166c8e44d1af20154eb892d23abcc72971f2893327777e04be5654eccc",
+  "[\"roman-1962\",\"pentecost-13\",\"main\",\"Postcommunion\",\"all\",1]": "612ce41c39729b8274e746ae70553a308a0a73811488ba3afe09afb1061b28c8",
+  "[\"roman-1962\",\"pentecost-13\",\"main\",\"Secret\",\"all\",1]": "bc82de457e17d6582c320719dd115b26e697a623769b9c5c0c9812f19b4cbbff",
+  "[\"roman-1962\",\"pentecost-14\",\"main\",\"Collect\",\"all\",1]": "743e8e94ce96013c407699771b81dfe2f61a9284342fe1953a2a6a890f0e167d",
+  "[\"roman-1962\",\"pentecost-14\",\"main\",\"Postcommunion\",\"all\",1]": "883be5d0f085068cf1a1ef586fade2bde2b475e7e3fb34c2672adaca52ec6a4b",
+  "[\"roman-1962\",\"pentecost-14\",\"main\",\"Secret\",\"all\",1]": "c4cce1a2fa571e2e4bb69f3852cfec40edc5bc038ee69faee064d8c45aabcedb",
+  "[\"roman-1962\",\"pentecost-15\",\"main\",\"Collect\",\"all\",1]": "d307984f176105b068c1841d1cffb53083e99bd9d11bf54c7e53da0d02be9896",
+  "[\"roman-1962\",\"pentecost-15\",\"main\",\"Postcommunion\",\"all\",1]": "bc728cda88f315680b9ad089d6ebdf9904343ed70a87acea81dd8314245c4614",
+  "[\"roman-1962\",\"pentecost-15\",\"main\",\"Secret\",\"all\",1]": "1f9fac8bcc8cf3f7635f95355dcedc3d786e494c680791ab3a14f49cc6f7f288",
+  "[\"roman-1962\",\"pentecost-19\",\"main\",\"Collect\",\"all\",1]": "b6eb3c3458a563cd383384db4e79d608b983480de86af8c902a14180efcdb212",
+  "[\"roman-1962\",\"pentecost-19\",\"main\",\"Postcommunion\",\"all\",1]": "251a0bbdf52279d16bab8be0c21878ac0e1382b368e2cd23bbf2d12171e47177",
+  "[\"roman-1962\",\"pentecost-19\",\"main\",\"Secret\",\"all\",1]": "87e30afceb563e83eedc42026db88896b58390686506ca66d912b1c1c594e181",
+  "[\"roman-1962\",\"pentecost-2\",\"main\",\"Collect\",\"all\",1]": "e9d1e025164919b319a334b42127dc0dca8f4e08c19b581fbe601714b1e6c86f",
+  "[\"roman-1962\",\"pentecost-8\",\"main\",\"Collect\",\"all\",1]": "1d4ed4651c92c52e87c018f035fc9b92b709347384647f7aef13d48505d62eb2",
+  "[\"roman-1962\",\"pentecost-9\",\"main\",\"Collect\",\"all\",1]": "01fc3b8f8051dc4bbbe944a0a6544e623576f7f39100bd283538770e297e3b85",
+  "[\"roman-1962\",\"pentecost-monday\",\"main\",\"Postcommunion\",\"all\",1]": "e921f740de5085a3720c4674f84325cd0ae5b7ae7deb43680f08e11b8caeaac9",
+  "[\"roman-1962\",\"pentecost-monday\",\"main\",\"Secret\",\"all\",1]": "1c18f8554c4db89f44edd64ba0e306d852b55a708c822929cf70f64baf2c4913",
+  "[\"roman-1962\",\"pentecost-tuesday\",\"main\",\"Secret\",\"all\",1]": "0aa084261dc9a56a11a0f21f520e109e39f6e1cc8a096b509098b81d4461a559",
+  "[\"roman-1962\",\"praesentatione-beatae-mariae-virginis\",\"main\",\"Postcommunion\",\"all\",1]": "3669ad99883d5539f5800f50671e949c7fc7c3edeb81ed28210b871db23b23b9",
+  "[\"roman-1962\",\"praesentatione-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "f91fc3789943cee9e7be82ba6e1ecfa1e809dbda1fc4abe41047899bcf3d49d8",
+  "[\"roman-1962\",\"s-alfonsi-mariae-ligorio-episcopi-confessoris\",\"main\",\"Collect\",\"all\",1]": "e604bcc1bbe2222970baa5d9c09422403c734ca1d7b63d067c6ef7c83121b89b",
+  "[\"roman-1962\",\"s-alfonsi-mariae-ligorio-episcopi-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "1d91a49a80dae0680917a53f9d05bb281fd133b0555df2e6c89339cf1bbd3cc3",
+  "[\"roman-1962\",\"s-alfonsi-mariae-ligorio-episcopi-confessoris\",\"main\",\"Secret\",\"all\",1]": "a553c153e03eaffdeacc5f9bbd4f4181d8f5a2cc35ac7d4749d752753c48ac38",
+  "[\"roman-1962\",\"s-aloisii-gonzagae-confessoris\",\"main\",\"Collect\",\"all\",1]": "8c15afdc5847bde643eeb86c2a8d26b8f12db7d216908d0c4f9779af4107d069",
+  "[\"roman-1962\",\"s-andreae-avellini-confessoris\",\"main\",\"Collect\",\"all\",1]": "8e28b8654cf4cf502d1c0e310a5660ba61b98e1f241da0d888cbc2793a6cfd16",
+  "[\"roman-1962\",\"s-angelae-mericiae-virginis\",\"main\",\"Collect\",\"all\",1]": "379a55ee88b1614433d964cd6c482d07b6af82178702d3251e0fceab38d4242c",
+  "[\"roman-1962\",\"s-antonii-abbatis\",\"main\",\"Collect\",\"all\",1]": "77d70d298cc227b203415ce01f4c4ed4a345a8f98919ae3d6a650c318fd044bf",
+  "[\"roman-1962\",\"s-antonii-abbatis\",\"main\",\"Postcommunion\",\"all\",1]": "7f172978a5a14552be031850334ff9278b11fe90aee574fee8b2f82861b1da6b",
+  "[\"roman-1962\",\"s-antonii-abbatis\",\"main\",\"Secret\",\"all\",1]": "f501eb55435b3674e2c4ee6a6cc5c3cde51095958056f74e1a2ddf5366ce1cff",
+  "[\"roman-1962\",\"s-antonii-mariae-zaccaria-confessoris\",\"main\",\"Collect\",\"all\",1]": "578b599943eab5dc35e92a89a7475723da65e53e0f7f7516d98c8864ef6617c0",
+  "[\"roman-1962\",\"s-antonii-padua-confessoris-ecclesiae-doctoris\",\"main\",\"Collect\",\"all\",1]": "7be30283710f17ff60e050c0da8c5f10996327f96e2d2b6a1e79e6994e257d03",
+  "[\"roman-1962\",\"s-antonii-padua-confessoris-ecclesiae-doctoris\",\"main\",\"Postcommunion\",\"all\",1]": "c4634c768b9d522e035c28318cc011152bcf823d884a93978ec307864bdc6c7a",
+  "[\"roman-1962\",\"s-antonini-episcopi-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "682f12db68c1b0383176c0d1ab81f51b9ee25742c4558c0657b006256717442a",
+  "[\"roman-1962\",\"s-augustini-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Collect\",\"all\",1]": "8b20d3a750669bda4a2184db8ea3f9a9a400e133e19f5f9454658e642ef0c42b",
+  "[\"roman-1962\",\"s-augustini-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Postcommunion\",\"all\",1]": "67dd552bbd3475097dac61e33232b445358080e6c21a8090893d3fa1ded6a3aa",
+  "[\"roman-1962\",\"s-augustini-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Secret\",\"all\",1]": "de2af8369bc110c6878ee56c8d78879708622f467de7c01401d8939d0c580576",
+  "[\"roman-1962\",\"s-basilii-magni-episcopi-confessoris-ecclesiae\",\"main\",\"Collect\",\"all\",1]": "d75eaaf491deeeb3df1ce2bd5521ac679bc7c2200394fa910e64546413ee66ae",
+  "[\"roman-1962\",\"s-basilii-magni-episcopi-confessoris-ecclesiae\",\"main\",\"Postcommunion\",\"all\",1]": "303c862797bdd79cbf6187a727ddb23c97ca5e5eda7d9759a5622a51a5c17d04",
+  "[\"roman-1962\",\"s-basilii-magni-episcopi-confessoris-ecclesiae\",\"main\",\"Secret\",\"all\",1]": "97c42b54cdf1f16a176f161ac84cf3ee6e60d4f8decd02bdff0d6de5a4956c34",
+  "[\"roman-1962\",\"s-bedae-venerabilis-confessoris-ecclesiae-doctoris\",\"main\",\"Collect\",\"all\",1]": "be82a084082594de1c9fb3f8fe27ec500a45471a7f9f8f17de9755ae23e726af",
+  "[\"roman-1962\",\"s-bernardi-abbatis-ecclesiae-doctoris\",\"main\",\"Collect\",\"all\",1]": "c0835f3ab5e30709fbd0a990abccb49c232197762f9da832a08c583b2d62d7d2",
+  "[\"roman-1962\",\"s-bernardi-abbatis-ecclesiae-doctoris\",\"main\",\"Postcommunion\",\"all\",1]": "af300034cc24ceb76c8f71cd749cf71e94b1bf081a87dd4eafde911c74d15398",
+  "[\"roman-1962\",\"s-bernardi-abbatis-ecclesiae-doctoris\",\"main\",\"Secret\",\"all\",1]": "253444cb3aefe4d6ac652ed7f7c369eec008b376f1309aa97a8a7b757fb65b1d",
+  "[\"roman-1962\",\"s-bernardini-senensis-confessoris\",\"main\",\"Secret\",\"all\",1]": "bc9ac84a2e64b38703ecbbd12f319ddb6dab4ae2615a5a83c3de171586e77214",
+  "[\"roman-1962\",\"s-bibianae-virginis-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "fda07a1454cfab1cc8a5987b77d9ea0a85e333b973d9cf7474a61c41a695867f",
+  "[\"roman-1962\",\"s-bibianae-virginis-martyris\",\"main\",\"Secret\",\"all\",1]": "4c8f211960cd0ec6516917e6485352ca38ac4dd3d4d03402562b0a2a2239a1db",
+  "[\"roman-1962\",\"s-birgittae-viduae\",\"main\",\"Collect\",\"all\",1]": "75877df4da926a64d50f736f6c7985b0e3540a8720375ddd85e80e279982d848",
+  "[\"roman-1962\",\"s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Collect\",\"all\",1]": "a7c7826d12eecea9396b84473318d6d24629ca7ae9d772de617527398c0d6504",
+  "[\"roman-1962\",\"s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Postcommunion\",\"all\",1]": "8fa46b9f3d2ce3caced0ca2edb20a7ae2251e93a6e838e97aa0a22ff9a252fa9",
+  "[\"roman-1962\",\"s-bonaventurae-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Secret\",\"all\",1]": "fc53b58bd637c2a8b66c8ecc1970fa4a2cff7822818264b084f4fa19a75ee018",
+  "[\"roman-1962\",\"s-brunonis-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "13ec5cb90e6f7537cd0d27be9332fa6778c364406d77902679ea950250938524",
+  "[\"roman-1962\",\"s-camilli-lellis-confessoris\",\"main\",\"Secret\",\"all\",1]": "b2e1df209039a8f760782b2b750531a544e60659e79625a5d117f45c0b4e63ac",
+  "[\"roman-1962\",\"s-catharinae-virginis-martyris\",\"main\",\"Collect\",\"all\",1]": "744ac43094944565df834c45c8c8c0022de8e598c1cd3d2eed7828f807fd9beb",
+  "[\"roman-1962\",\"s-clementis-i-papae-martyris\",\"main\",\"Collect\",\"all\",1]": "a0784958bdb3facdb85ba50be97513a9b19a26ec0570fb9fa56673fbac6dddc9",
+  "[\"roman-1962\",\"s-clementis-i-papae-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "45357a13aca9e327c278dd04a2c39cd6e574c84cdffae8d5618520c778139916",
+  "[\"roman-1962\",\"s-clementis-i-papae-martyris\",\"main\",\"Secret\",\"all\",1]": "fcc83c9e48ccb890d63396812ff8c395d6b8778bc2e20eb254567eff247e0af8",
+  "[\"roman-1962\",\"s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae\",\"main\",\"Collect\",\"all\",1]": "7eef65db4a02f359ac5363aa4eda7921c249d73b5c012dd87a4d11d2e9f44ba7",
+  "[\"roman-1962\",\"s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae\",\"main\",\"Postcommunion\",\"all\",1]": "3dda64dbfb33f1264795aa49fa68a90185fd40bb117ca74dba991e4384181a7e",
+  "[\"roman-1962\",\"s-cyrilli-episcopi-alexandrini-confessoris-ecclesiae\",\"main\",\"Secret\",\"all\",1]": "adf5ef6cd5f1f3c843af36f4e5b7bf4d2809ca96600d8b2812d156c73684f171",
+  "[\"roman-1962\",\"s-damasi-i-papae-confessoris\",\"main\",\"Collect\",\"all\",1]": "d2ea5b4aac0408a8d965f0dee9ed2133b3731e48512809ee5288a8d3baecced7",
+  "[\"roman-1962\",\"s-ephraem-syri-diaconi-confessoris-ecclesiae\",\"main\",\"Collect\",\"all\",1]": "af0b50f69f1293bf7b8fdbb8e2553df662f8d54b1fef550862875cb099cb4f82",
+  "[\"roman-1962\",\"s-fidelis-sigmaringa-martyris\",\"main\",\"Collect\",\"all\",1]": "cc9c48265ff7bb68c06f61b56a14b73cd8a31cfe968722c248bb98c155df6fbe",
+  "[\"roman-1962\",\"s-francisci-borgiae-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "fa02e962e54a8da83c7c9d850f092e584f4a4dde64b56b6a6f82531eabc0a4f4",
+  "[\"roman-1962\",\"s-francisci-borgiae-confessoris\",\"main\",\"Secret\",\"all\",1]": "91e4eed89234fcacb81db7ffa4921ff180cdf054825fed6d9de726894c41d464",
+  "[\"roman-1962\",\"s-gregorii-i-papae-confessoris-ecclesiae\",\"main\",\"Postcommunion\",\"all\",1]": "ce06b42fc2840a456c8671793a4291d6fd4ce69b796705e305f4dcda45604bb1",
+  "[\"roman-1962\",\"s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae\",\"main\",\"Collect\",\"all\",1]": "ab9ccbfa003ac4e017ed3767e2aea605963cd48480d110940de5c72dae585d42",
+  "[\"roman-1962\",\"s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae\",\"main\",\"Postcommunion\",\"all\",1]": "a9dea6fa85ea2f9ae96eaf5ee6441256a3822935d321b3f3de43d1e7ffc5ec70",
+  "[\"roman-1962\",\"s-gregorii-nazianzeni-episcopi-confessoris-ecclesiae\",\"main\",\"Secret\",\"all\",1]": "f164fa1a00e741d7d3cb5d5ce808c04d3ef0e19c81a9564c9322ed61075a9e8e",
+  "[\"roman-1962\",\"s-gregorii-thaumaturgi-episcopi-confessoris\",\"main\",\"Collect\",\"all\",1]": "378b70eaf56c4c71fd142f967b8327b8499bd87a0b186aa80060ec38d6c0d6f6",
+  "[\"roman-1962\",\"s-gregorii-thaumaturgi-episcopi-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "0b8af39c500086c9625793f282cd5778d54dcb7a664935a1d0665dee212a27e2",
+  "[\"roman-1962\",\"s-gregorii-vii-papae-confessoris\",\"main\",\"Collect\",\"all\",1]": "8cd3459219a60acb104878a12760c2803dd4ba880dd424dee875e44884c0d780",
+  "[\"roman-1962\",\"s-hermenegildi-martyris\",\"main\",\"Secret\",\"all\",1]": "4f8e258826c61ec6fc8554cc5bb11107a3866965ce97fe1fa04c0dc58441a081",
+  "[\"roman-1962\",\"s-hilarii-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Collect\",\"all\",1]": "1bd59a8f77ec2eb3956dbd5912e1fd42ac16f299d805137c68dbd688d2b32ce3",
+  "[\"roman-1962\",\"s-hilarii-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Postcommunion\",\"all\",1]": "03cbe51bb7f06cc15d9b49fb3744b09e74f1d88fa6cc96b4d3d060599cd14f62",
+  "[\"roman-1962\",\"s-hilarii-episcopi-confessoris-ecclesiae-doctoris\",\"main\",\"Secret\",\"all\",1]": "9ee00bec303fe6b6198d493044c6317762e8f917f11a3a6b1680ebe9ad0f6dc6",
+  "[\"roman-1962\",\"s-ioachim-patris-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "2f9f36f98158a3ebdff67fb165f4eaf19728489cbee1e4880601e0f719002c55",
+  "[\"roman-1962\",\"s-ioannae-franciscae-fremiot-chantal-viduae\",\"main\",\"Collect\",\"all\",1]": "de20d5fe64da07047d9b1db3e2cea0bd93bc640845bf981c1b00073b2d2ebabb",
+  "[\"roman-1962\",\"s-ioannis-a-deo-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "6b0623ca46234b137e38d819bd4db0d1a3f49c514a4db53b54c3424e58e37fe3",
+  "[\"roman-1962\",\"s-ioannis-baptistae-la-salle-confessoris\",\"main\",\"Secret\",\"all\",1]": "eadf7a9fd885d0cb8b7ef978e8273d7d2215d0a8f207166f29c6bc8dede4e3bf",
+  "[\"roman-1962\",\"s-ioannis-bosco-confessoris\",\"main\",\"Collect\",\"all\",1]": "02cee35139e035765f9f21f6e67f82ae69ec52ac1cefaadf07be9cc090ac03ab",
+  "[\"roman-1962\",\"s-ioannis-bosco-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "a4157f82b577381df76ef7e74c1cb86fbd84110bfe16e95a43832cd0aa147207",
+  "[\"roman-1962\",\"s-ioannis-bosco-confessoris\",\"main\",\"Secret\",\"all\",1]": "d24408f23cdbc79cdb378136fae94c20e062592ca6a8f413701347e631ed4bb2",
+  "[\"roman-1962\",\"s-ioannis-capistrano-confessoris\",\"main\",\"Collect\",\"all\",1]": "70f359af9e9d2255c48c7f6238fbf0e91e463a1e40322c0f1866b657327f9fdb",
+  "[\"roman-1962\",\"s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae\",\"main\",\"Postcommunion\",\"all\",1]": "9598d493329665cfe60606a5e6179c986ca6bbd4830fff30e024eafabe671165",
+  "[\"roman-1962\",\"s-ioannis-chrysostomi-episcopi-confessoris-ecclesiae\",\"main\",\"Secret\",\"all\",1]": "3d7c12288732f5923d29a1be0f6f82ab22864bcd11418721bfc46f582c39e3c6",
+  "[\"roman-1962\",\"s-ioannis-damasceni-confessoris-ecclesiae-doctoris\",\"main\",\"Collect\",\"all\",1]": "08088f4f816d0be6ace0a70fca389bf429ebec06c3a82b7eeb88d7e0856c13f1",
+  "[\"roman-1962\",\"s-ioannis-eudes-confessoris\",\"main\",\"Collect\",\"all\",1]": "546562f12b9475fd23f087c4add0bc507133098a6d780406ca166a97175590ab",
+  "[\"roman-1962\",\"s-ioannis-gualberti-abbatis\",\"main\",\"Collect\",\"all\",1]": "4e50d57d442690d5042a5dfef6fa75c3edf1d4f0cffab6d2e6b0fa9bf2a5d7eb",
+  "[\"roman-1962\",\"s-ioannis-gualberti-abbatis\",\"main\",\"Postcommunion\",\"all\",1]": "bf030e1968cce76e6f75326eac1fb4e11b22c99a36e2e15ec68d53740772c794",
+  "[\"roman-1962\",\"s-ioannis-gualberti-abbatis\",\"main\",\"Secret\",\"all\",1]": "6decb2d6cfaf44005b86c505e561d1960ca75cb9fe2858cfc8ed9c363a1a8ead",
+  "[\"roman-1962\",\"s-ioannis-mariae-vianney-confessoris\",\"main\",\"Collect\",\"all\",1]": "916aefad97deaf465b08a56e97c54ebd88f065ce540d0a849d3020bacfdf66b3",
+  "[\"roman-1962\",\"s-ioannis-matha-confessoris\",\"main\",\"Collect\",\"all\",1]": "eb2a3c242e4e5fb3ce68fcac07a9f2281bc46a5d4ba1e6448b2090488c07f819",
+  "[\"roman-1962\",\"s-iosephi-cupertino-confessoris\",\"main\",\"Collect\",\"all\",1]": "917e39c0086d31656a9188f658a193a5dabe3620d750af7e814c6c12dcbcb6e9",
+  "[\"roman-1962\",\"s-iosephi-cupertino-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "da4095b51c021b57bca5e23ae62880746114f2297a2930a72dcaa6b87d5362c1",
+  "[\"roman-1962\",\"s-iosephi-cupertino-confessoris\",\"main\",\"Secret\",\"all\",1]": "4f260a0eebb232be46787cba090a4548f8d3be593003e8415448c5001d740cfe",
+  "[\"roman-1962\",\"s-irenaei-episcopi-martyris\",\"main\",\"Secret\",\"all\",1]": "1f079357336e14ad7feecb3b5ef4c39bf92526d4c85db8c36e2c389dc2ba5925",
+  "[\"roman-1962\",\"s-iustini-martyris\",\"main\",\"Secret\",\"all\",1]": "f35c916d2506dfaaed7c0bb5fc0b8c420a93789933fc7eb26878ade9091b3618",
+  "[\"roman-1962\",\"s-ludovici-regis-confessoris\",\"main\",\"Secret\",\"all\",1]": "575e9bb58f416d58d3b78d665139a8124c6fda1ceb7c64095c23064fe4da7566",
+  "[\"roman-1962\",\"s-marcelli-i-papae-martyris\",\"main\",\"Collect\",\"all\",1]": "ca5882326e40ab5031e2f154b6dacf687f7a102d214a5d4e94bd62ac10eabeee",
+  "[\"roman-1962\",\"s-margaritae-mariae-alacoque-virginis\",\"main\",\"Collect\",\"all\",1]": "d543fa2c77320e1c660f1666de47515bd875640fb54d979e18a05ddd4fd3a576",
+  "[\"roman-1962\",\"s-margaritae-mariae-alacoque-virginis\",\"main\",\"Secret\",\"all\",1]": "293c8a76690edc59b248093cef80c4187af2fa64df448adeeae5d54a87000af3",
+  "[\"roman-1962\",\"s-marthae-virginis\",\"main\",\"Collect\",\"all\",1]": "8a97a876bb9fb0586204184bfc679fe6449736789237206d728e25852b7135c7",
+  "[\"roman-1962\",\"s-paschalis-baylon-confessoris\",\"main\",\"Collect\",\"all\",1]": "77216edddb20789dd00f7cfaa3479cc1e3dba47e3ed37ac103dfe423cfdd8ecd",
+  "[\"roman-1962\",\"s-pauli-primi-eremitae-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "00d2e134095e0e4a8ef64c2270661e2d6070efe06393ee210353f2e88630494b",
+  "[\"roman-1962\",\"s-pauli-primi-eremitae-confessoris\",\"main\",\"Secret\",\"all\",1]": "4c322ff06734c5dc4f2d76c29bf4f701228b3d8c1ef286732c06ca051acbe0a4",
+  "[\"roman-1962\",\"s-petri-alcantara-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "3c930407632435d05da488c2745acc56f2249fef30c25323bf024a0a8248b6fb",
+  "[\"roman-1962\",\"s-petri-caelestini-papae-confessoris\",\"main\",\"Collect\",\"all\",1]": "468113a642b4c8891cb3f0ce02833dab17cdef5f11fcc9988d93c77e83901281",
+  "[\"roman-1962\",\"s-petri-canisii-confessoris-ecclesiae-doctoris\",\"main\",\"Collect\",\"all\",1]": "8a4bd66022a0838c6617e05be5abe9afd0a66827ad8cb1f23dcecb8a525a1f88",
+  "[\"roman-1962\",\"s-petri-chrysologi-episcopi-confessoris-ecclesiae\",\"main\",\"Postcommunion\",\"all\",1]": "43b5e2a0bcd2d30cb64cb07a062420c9d57cf81910e30882ee99b51874ee9f2f",
+  "[\"roman-1962\",\"s-petri-chrysologi-episcopi-confessoris-ecclesiae\",\"main\",\"Secret\",\"all\",1]": "19b33e3ff63b62337e834bc577715fd7c0bc86845cc39bc0e10c02b74dfac009",
+  "[\"roman-1962\",\"s-petri-nolasci-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "55b017d754c2dfef14c6391a2147895797b103c9ed42d5fca2a505393e80791a",
+  "[\"roman-1962\",\"s-petri-nolasci-confessoris\",\"main\",\"Secret\",\"all\",1]": "9b34fef126494e57727c174ab8cb13a80cb204798da61baca35927a520a2287f",
+  "[\"roman-1962\",\"s-pii-x-papae-confessoris\",\"main\",\"Secret\",\"all\",1]": "71bcfb47904aede7538d0ec6bdbc76438524af9bd9d7f97ba0df3898d7cf44fc",
+  "[\"roman-1962\",\"s-polycarpi-episcopi-martyris\",\"main\",\"Collect\",\"all\",1]": "633fc8cadb7b11ea61577932773cd5e32ab18f5de8d28178ffab65128cf93867",
+  "[\"roman-1962\",\"s-polycarpi-episcopi-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "a5b5580ac51fd6efe1ef3161ad54cfb56f8c0db867755c8663d08256d07302a3",
+  "[\"roman-1962\",\"s-polycarpi-episcopi-martyris\",\"main\",\"Secret\",\"all\",1]": "257d9d76bee59c017bcfd4ec0ef6bceb691205138a6ce58b9eb2c96f69168d96",
+  "[\"roman-1962\",\"s-raphaelis-archangeli\",\"main\",\"Collect\",\"all\",1]": "0bf3fb08b4ed53ab40822ab15b33f2ceaae8877b882f028faca0662f87d89e06",
+  "[\"roman-1962\",\"s-rosae-limanae-virginis\",\"main\",\"Collect\",\"all\",1]": "dfe53f854c57f13d9a7fb6fef4f0c8a10b4b24a3355600a02eafdf54abf2a0cc",
+  "[\"roman-1962\",\"s-silvestri-abbatis\",\"main\",\"Collect\",\"all\",1]": "3477553f21aea2da5c0e6d0ebcc180926bf53be2e0f8654355dcdd60d876c18f",
+  "[\"roman-1962\",\"s-silvestri-abbatis\",\"main\",\"Postcommunion\",\"all\",1]": "2b860471a6c32eee68f454e784a7a28360fcca964caf93e20c69072b66d0f788",
+  "[\"roman-1962\",\"s-silvestri-abbatis\",\"main\",\"Secret\",\"all\",1]": "ed352d3a21b0b9ffab511ed62ef21b1c3d5ea459cf5484e83a978ce25c2555b5",
+  "[\"roman-1962\",\"s-stephani-regis-confessoris\",\"main\",\"Secret\",\"all\",1]": "ed58e9f6181bc6f11a6f0b4229dcea5228d2930e65f179df049a2f3a5ffebeeb",
+  "[\"roman-1962\",\"s-teresiae-a-iesu-infante-virginis\",\"main\",\"Collect\",\"all\",1]": "acf555a468e3a189894180a41f05ed8814b0c74558368d2768d8ec819b32c903",
+  "[\"roman-1962\",\"s-teresiae-a-iesu-infante-virginis\",\"main\",\"Postcommunion\",\"all\",1]": "7818811b62fe5bdf44918bfa09924ed2b55b1d0063f0f40c6aab6558c57a649d",
+  "[\"roman-1962\",\"s-teresiae-a-iesu-infante-virginis\",\"main\",\"Secret\",\"all\",1]": "16a1bc1c98d4869f1475efb2bf1082b60c0c295a873526d9d5eb292582fc2dd8",
+  "[\"roman-1962\",\"s-teresiae-virginis\",\"main\",\"Collect\",\"all\",1]": "72e8b6489f295ce8d7e48ad9f6c668b4f5106db28635b6abb461f0899718ad05",
+  "[\"roman-1962\",\"s-thomae-aquino-confessoris-ecclesiae-doctoris\",\"main\",\"Postcommunion\",\"all\",1]": "4d480c14c81a1dd7519e8572d497ae7be78f82af2d4ddda7b23362f696ba0d3c",
+  "[\"roman-1962\",\"s-thomae-aquino-confessoris-ecclesiae-doctoris\",\"main\",\"Secret\",\"all\",1]": "b08051e6c397bc8edb7355208c31f468348c09181fa40e91228a4ec7ce0d1b67",
+  "[\"roman-1962\",\"s-timothei-episcopi-martyris\",\"main\",\"Collect\",\"all\",1]": "526424fd4e6cbde624289f7e2863e5430131f79e31fdfa03dbfebe690e2b1597",
+  "[\"roman-1962\",\"s-timothei-episcopi-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "d34b90d7ebb6747d6445cf1f898ef485740bed9e3fad1427b3b1967034886cd4",
+  "[\"roman-1962\",\"s-timothei-episcopi-martyris\",\"main\",\"Secret\",\"all\",1]": "f468852584129c6136f5041b4f15687bf8dab296bc03d0414454d04f61f697d3",
+  "[\"roman-1962\",\"s-titi-episcopi-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "075609df468245e981abd3f67948ca7bec2172a85d2605a23a1e862089fda358",
+  "[\"roman-1962\",\"s-vincentii-a-paulo-confessoris\",\"main\",\"Postcommunion\",\"all\",1]": "4f72381f6bd94e4f40f0a5c46b5ba4bc278345bdbf5242b7a6dcb3a95624c5df",
+  "[\"roman-1962\",\"sanctissimi-nominis-beatae-mariae-virginis\",\"main\",\"Postcommunion\",\"all\",1]": "cb173f1e51ea2e2aa9c7583998fd230a45c7037561adbd224a68940b13df8185",
+  "[\"roman-1962\",\"sanctissimi-nominis-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "11cc79c6c789e7db39271c15a44fc72c37111aaf2963a5cd06b3065aa4e4a0c3",
+  "[\"roman-1962\",\"saturday-after-ash-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "ac5199d5fdff8d1a84b286b972d0300df03aa523032ac3744751fb3331aa725d",
+  "[\"roman-1962\",\"second-day-within-octave-s-stephani\",\"main\",\"Collect\",\"all\",1]": "3feb8fef99376003dda4cb6e1b2df30831696bbdea9a853086ba04cf5a6ce99f",
+  "[\"roman-1962\",\"septem-dolorum-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "6991f0541243d95dbe50eb76fa28f6828390666801f2ae61b91da86acc093759",
+  "[\"roman-1962\",\"september-ember-wednesday\",\"main\",\"Collect\",\"all\",1]": "c949481fce2d9af7e052cd6ab2a5dc8f6338b0e1713638a0ebda157e5d272f8d",
+  "[\"roman-1962\",\"ss-cornelii-papae-cypriani-episcopi-martyrum\",\"main\",\"Collect\",\"all\",1]": "1141a05176d1ce6686a8698023778bebe67179bd0da12686598f82c7a1abacd3",
+  "[\"roman-1962\",\"ss-cosmae-damiani-martyrum\",\"main\",\"Collect\",\"all\",1]": "7f59bfc0ee3b589b81d1ef2f5b1e54e9118276614da91ad07b99ec1127a0e163",
+  "[\"roman-1962\",\"ss-fabiani-papae-sebastiani-martyrum\",\"main\",\"Secret\",\"all\",1]": "3c67ca9ebd8f43cf5a3eb6fd4dd4f12ed37c04cc5648deeae38a24fafca8c085",
+  "[\"roman-1962\",\"ss-ianuarii-episcopi-sociorum-martyrum\",\"main\",\"Collect\",\"all\",1]": "518a0affb68af038ea30b2d165fcdb0af150a9f30977427684142f2effcddf03",
+  "[\"roman-1962\",\"ss-ianuarii-episcopi-sociorum-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "8cecebb238e7a4e981bc733f4c0fa48884516ef13280cff51991c9d5bb0523e6",
+  "[\"roman-1962\",\"ss-ianuarii-episcopi-sociorum-martyrum\",\"main\",\"Secret\",\"all\",1]": "853c09e0c84c60ee01e5e41a2a738742bc4236af933793273996cd1ad8e930fa",
+  "[\"roman-1962\",\"ss-perpetuae-felicitatis-martyrum\",\"main\",\"Postcommunion\",\"all\",1]": "f4687f40aab680cb1db8b63798364f6e47db695896b697c6d13eeee2a078985d",
+  "[\"roman-1962\",\"ss-philippi-iacobi-apostolorum\",\"main\",\"Collect\",\"all\",1]": "f0270395a5d5bb78eee5d98e80e3e4ee9d4b19e002f173b11f515fa9bde7582b",
+  "[\"roman-1962\",\"ss-septem-fundatorum-ordinis-servorum-beatae\",\"main\",\"Collect\",\"all\",1]": "fb0bf67eab5de79fadab01a7a1bc8cca9e8b98041fbd023e6ed8785ce907505a",
+  "[\"roman-1962\",\"ss-vincentii-anastasii-martyrum\",\"main\",\"Secret\",\"all\",1]": "ef31f5f8c257e9c5f8919fd9d7567090b394067f24726536f3e8a6c6ef414052",
+  "[\"roman-1962\",\"thursday-after-ash-wednesday\",\"main\",\"Collect\",\"all\",1]": "48395b4660943ebcbcf72df5fe4ffa0fd36d63ac875748e805fc2fdc96f2b511",
+  "[\"roman-1962\",\"thursday-after-ash-wednesday\",\"main\",\"Oratio super populum\",\"all\",1]": "b4ecfe9377907e05bf5691046cf48d88bc1b1748427ef9c90af352b7876c4460",
+  "[\"roman-1962\",\"transfiguratione-domini-nostri-iesu-christi\",\"main\",\"Postcommunion\",\"all\",1]": "33156eb9eb7b3f569e7030bcf8fd592ef7e199d3d22e27a6d43b10a7bc3cd0a9",
+  "[\"roman-1962\",\"vigil-nativity-lord\",\"main\",\"Collect\",\"all\",1]": "9388ec34144d8fb0bd785473b0c3850881a74aaeedac6a1b16ccd920c1eb41fa",
+  "[\"roman-1962\",\"vigil-saints-peter-paul\",\"main\",\"Collect\",\"all\",1]": "919984baae4dd4d9432dbf21f24a6d2e51c748760d44a9bfe527348e886a1c0e",
+  "[\"roman-1962\",\"vigil-saints-peter-paul\",\"main\",\"Secret\",\"all\",1]": "1675ff4fd154bf68d85d357ad6a560440f9688e2de22c57e4ddcc4bcf642645d",
+  "[\"roman-1962\",\"visitatione-beatae-mariae-virginis\",\"main\",\"Secret\",\"all\",1]": "929b09a488b2ef07e17e254539ffbab4a654f466971acc03da293506708cb361",
   "[\"s-agathae-virginis-martyris\",\"main\",\"Collect\",\"all\",1]": "2060ea4965722b4cd479455cbbc4a2abc2b7bd05abcbbcf5295980e196c40c9a",
   "[\"s-agathae-virginis-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "3dac6e467c61422827e8f4546f07272981b2a700c317407e76def5fab9bc6d14",
   "[\"s-agathae-virginis-martyris\",\"main\",\"Secret\",\"all\",1]": "4a2b95a3fd6fd9e27297901c11cbfaa980c9856ac346da469c9f9711ba912c45",
@@ -768,6 +1109,132 @@
   "[\"visitatione-beatae-mariae-virginis\",\"main\",\"Postcommunion\",\"all\",1]": "438d80aee105eb4e18c408d824616fe017ce0b3efaf9c0fa0b861092af2f6510"
 });
   // END GENERATED CONCLUSION PINS
+  // Separate finite editorial authority. Activation requires exact Root adoption;
+  // an ending-authority successor requires a newly reviewed editorial authority.
+  const ACTIVE_DISPLAY_AUTHORITY_SHA256 = '231c2cfa81cc193060d5d00ab85882b0b1ae2c4b3b22a9380df524931c1de1d3';
+  const GENERATED_DISPLAY_AUTHORITY_SHA256 = "231c2cfa81cc193060d5d00ab85882b0b1ae2c4b3b22a9380df524931c1de1d3";
+  const DISPLAY_ENDING_AUTHORITY_SHA256 = "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744";
+  const DISPLAY_METHOD_ID = "roman-1962-finite-english-editorial-readings-20261112";
+  const DISPLAY_SOURCE_REVIEW_SHA256 = "5afefdfd76d2a96c61448f4d7c733a3205a06eba457325acbe5419438f2bfa40";
+  const DISPLAY_PINS = Object.freeze({
+  "[\"commune-unius-martyris-3\",\"main\",\"Postcommunion\",\"all\",1]": "29363b5e3c9c9caccf691e5dd5ac0e60eeffb06eef7ffe8a64b545c21d10e42c",
+  "[\"comm-s-mennae-martyris\",\"main\",\"Postcommunion\",\"all\",1]": "8aa321f6cd29ba0f286b12027e1d46071fc3ef2b6359c67f42cc0437b355266d",
+  "[\"s-matthiae-apostoli\",\"main\",\"Secret\",\"all\",1]": "0823e3e6cf2e0ade3a882e919b08f15ecf7e0cabad8bfbdc1298a633ea3541b1"
+});
+  const DISPLAY_RECORDS = {
+  "[\"commune-unius-martyris-3\",\"main\",\"Postcommunion\",\"all\",1]": {
+    "target": [
+      "commune-unius-martyris-3",
+      "main",
+      "Postcommunion",
+      "all",
+      1
+    ],
+    "language": "en",
+    "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+    "source_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+    "translation_binding_sha256": "ac4e28fcb678f5dcada51f1246bd7949e198ff7ab1cd58ad2af3d5c50d293843",
+    "public_descriptor_sha256": "2f512e275a5a9bad1a72358ef20f1e3f49f30fd4a15ce2b176934644d05c92dd",
+    "native_admission_sha256": "2bca8bb122622bdb9a0c37cf5a91382f0377969727c9a20d50a625cb875f7e4f",
+    "cue_start": 177,
+    "operation": {
+      "end": 16,
+      "new": "beseech",
+      "offset_unit": "utf16",
+      "old": "bseech",
+      "source_prefix_sha256": "5aa51681af03cbd57a1738cbccd5dd8933d475a1ad1c754302ad38e94c0e142c",
+      "start": 10,
+      "strictly_before_original_cue": true
+    },
+    "annotation": "The printed source reads “bseech”; the reading text supplies the missing e.",
+    "source_review_sha256": "bdec3898ee7b7a01f636c3c1c845aeee986ac1093789e30f475bed10aba39a25",
+    "variants": {
+      "conclusion-provider": {
+        "priest_text_sha256": "017100e4801f09143839ed49bc01c62d0b59fc1bcb3964950518b0d8a8e85bba",
+        "display_text_sha256": "a2ee47e2cf9cf92d4c6710913a30c3e60942615b3bdcc7b4a2a8fa63c0f045c3"
+      },
+      "petition": {
+        "priest_text_sha256": "5aa51681af03cbd57a1738cbccd5dd8933d475a1ad1c754302ad38e94c0e142c",
+        "display_text_sha256": "3e35538b574f0c11a0322039bd2c3fe8ae3ae362154ebeb4d4b3c7fc49b10b80"
+      }
+    }
+  },
+  "[\"comm-s-mennae-martyris\",\"main\",\"Postcommunion\",\"all\",1]": {
+    "target": [
+      "comm-s-mennae-martyris",
+      "main",
+      "Postcommunion",
+      "all",
+      1
+    ],
+    "language": "en",
+    "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+    "source_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+    "translation_binding_sha256": "266f9af85e4840b695909b3eb9e2201d6f4d3f723d89ae4a2ba0d5c20c20a89e",
+    "public_descriptor_sha256": "693c0630d8803e542bdbdcc0172f0edeafda43a16001486a9bbe456380a6f24c",
+    "native_admission_sha256": "d414986ec4a8e693302e41189bd27d9f59267f6c90b07b284d7d69b392d1969c",
+    "cue_start": 177,
+    "operation": {
+      "end": 16,
+      "new": "beseech",
+      "offset_unit": "utf16",
+      "old": "bseech",
+      "source_prefix_sha256": "5aa51681af03cbd57a1738cbccd5dd8933d475a1ad1c754302ad38e94c0e142c",
+      "start": 10,
+      "strictly_before_original_cue": true
+    },
+    "annotation": "The printed source reads “bseech”; the reading text supplies the missing e.",
+    "source_review_sha256": "bdec3898ee7b7a01f636c3c1c845aeee986ac1093789e30f475bed10aba39a25",
+    "variants": {
+      "conclusion-provider": {
+        "priest_text_sha256": "017100e4801f09143839ed49bc01c62d0b59fc1bcb3964950518b0d8a8e85bba",
+        "display_text_sha256": "a2ee47e2cf9cf92d4c6710913a30c3e60942615b3bdcc7b4a2a8fa63c0f045c3"
+      },
+      "petition": {
+        "priest_text_sha256": "5aa51681af03cbd57a1738cbccd5dd8933d475a1ad1c754302ad38e94c0e142c",
+        "display_text_sha256": "3e35538b574f0c11a0322039bd2c3fe8ae3ae362154ebeb4d4b3c7fc49b10b80"
+      }
+    }
+  },
+  "[\"s-matthiae-apostoli\",\"main\",\"Secret\",\"all\",1]": {
+    "target": [
+      "s-matthiae-apostoli",
+      "main",
+      "Secret",
+      "all",
+      1
+    ],
+    "language": "en",
+    "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+    "source_body_sha256": "dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262",
+    "translation_binding_sha256": "f0e79dec458b1625cd685b6c014f249c1ad33d32b7bf5430b5eb60a7d99c5f5b",
+    "public_descriptor_sha256": "70397af8d95e8c97825d1d07200bc50ed14b5334c4ecb8d1f2c7153e6d362fe7",
+    "native_admission_sha256": "4b93d41347866e36fab590bb24b83968b92e55daf898dff368dc8ddb3c46e47c",
+    "cue_start": 182,
+    "operation": {
+      "end": 181,
+      "new": ".",
+      "offset_unit": "utf16",
+      "old": "",
+      "source_prefix_sha256": "14b5394d03b99b1030aa00adaf7ba1f59f5bfc11e42f3f7041099e684d837ed7",
+      "start": 181,
+      "strictly_before_original_cue": true
+    },
+    "annotation": "The printed source has no punctuation between “defended” and “Through”; the reading text supplies a period after “defended”.",
+    "source_review_sha256": "bdec3898ee7b7a01f636c3c1c845aeee986ac1093789e30f475bed10aba39a25",
+    "variants": {
+      "conclusion-provider": {
+        "priest_text_sha256": "d2fe94319daf77d2648eae87dfb11fe592a90fc8cb571d6deae34c255173e5ff",
+        "display_text_sha256": "c1143f97208ed2d14a3f256c273d589aa1f68db17a5ea0655b97f21cc0efcedd"
+      },
+      "petition": {
+        "priest_text_sha256": "14b5394d03b99b1030aa00adaf7ba1f59f5bfc11e42f3f7041099e684d837ed7",
+        "display_text_sha256": "5cdf44df727948cead2e34728b3cfb9cce6367dba5a18c17653560fef281d927"
+      }
+    }
+  }
+};
+
   function canonical(value) {
     if (Array.isArray(value)) return '[' + value.map(canonical).join(',') + ']';
     if (value && typeof value === 'object') return '{' + Object.keys(value).sort().map(key => JSON.stringify(key) + ':' + canonical(value[key])).join(',') + '}';
@@ -808,26 +1275,88 @@
     return hash.map(value => (value >>> 0).toString(16).padStart(8, '0')).join('');
   }
   function requireValue(condition, reason) { if (!condition) throw new Error(reason); }
+  function isV2(source) { return source && source.schema === 'triptych-oration-conclusion-source/v2'; }
+  function equal(left, right) { return canonical(left) === canonical(right); }
   function validate(source) {
     requireValue(ACTIVE_AUTHORITY_SHA256 && ACTIVE_AUTHORITY_SHA256 === GENERATED_AUTHORITY_SHA256, 'conclusion authority inactive');
-    requireValue(source && source.schema === 'triptych-oration-conclusion-source/v1' && source.method_id === METHOD_ID, 'unknown conclusion descriptor');
-    requireValue(sha(canonical(source)) === PUBLIC_PINS[JSON.stringify(source.target)], 'changed or unlisted conclusion descriptor');
+    const v2 = isV2(source);
+    requireValue(source && (v2 ? source.method_id === V2_METHOD_ID : source.schema === 'triptych-oration-conclusion-source/v1' && source.method_id === METHOD_ID), 'unknown conclusion descriptor');
+    requireValue(Array.isArray(source.target) && source.target.length === 5, 'missing conclusion target');
+    const key = JSON.stringify(v2 ? [source.calendar, ...source.target] : source.target);
+    requireValue(sha(canonical(source)) === PUBLIC_PINS[key], 'changed or unlisted conclusion descriptor');
     return source;
   }
-  function memberProjection(member, context, slot) {
+  function wordingProjection(member, source, part, context, petition) {
+    const choice = source.context.constraints && source.context.constraints.wording_choice;
+    if (!choice) {
+      requireValue((context.massCategory === undefined ? 'mass-of-office' : context.massCategory) === source.context.mass_category, 'different execution context');
+      return petition;
+    }
+    const use = context.prayerUse, groups = context.groups;
+    requireValue(use && equal(use.sourceTarget, source.target) && use.choiceId === choice.id, 'unbound prayer use');
+    requireValue(Array.isArray(groups) && groups.length === 1 && groups[0].conclusion_group === 1 && groups[0].kind === 'principal' && Array.isArray(groups[0].members) && groups[0].members.length === 1 && groups[0].members[0].id === member.id, 'wording requires one principal prayer');
+    const branches = choice.branches.filter(branch => branch.id === use.branch && branch.required_use === use.kind);
+    requireValue(branches.length === 1, 'unreviewed prayer-use branch');
+    const branch = branches[0], selected = branch.languages[member.language];
+    requireValue(['principal-office-mass', 'principal-votive-mass'].includes(branch.required_use), 'unsupported prayer use');
+    const category = branch.required_use === 'principal-votive-mass' ? 'votive' : 'mass-of-office';
+    requireValue((context.massCategory === undefined ? 'mass-of-office' : context.massCategory) === category, 'prayer use and Mass category differ');
+    requireValue(selected && selected.offset_units === 'utf16' && selected.body_sha256 === part.body_sha256, 'wording source owner differs');
+    requireValue(Number.isInteger(selected.start) && Number.isInteger(selected.end) && 0 <= selected.start && selected.start < selected.end && selected.end <= part.cue_start, 'wording leaves petition');
+    requireValue(member.text.slice(selected.start, selected.end) === selected.source && typeof selected.selected_literal === 'string' && selected.selected_literal, 'wording source partition differs');
+    return petition.slice(0, selected.start) + selected.selected_literal + petition.slice(selected.end);
+  }
+  function memberProjection(member, context, slot, executionKind = 'grouped-mass-orations') {
     const source = validate(member.source), language = member.language;
     requireValue(JSON.stringify(member.target) === JSON.stringify(source.target) && member.target[2] === slot, 'different source owner');
-    requireValue(source.calendar === context.calendar && (context.massCategory || 'mass-of-office') === source.context.mass_category, 'different execution context');
+    requireValue(source.calendar === context.calendar, 'different execution calendar');
+    const v2 = isV2(source);
+    if (v2) requireValue(source.context.execution_kind === executionKind && source.context.required_slot === slot, 'different execution context');
+    else requireValue(executionKind === 'grouped-mass-orations' && (context.massCategory === undefined ? 'mass-of-office' : context.massCategory) === source.context.mass_category, 'different execution context');
     requireValue(language === 'la' || language === 'en', 'unknown language');
-    requireValue(language !== 'en' || member.witness === source.source_id, 'different selected witness');
+    requireValue(language !== 'en' || member.witness === source.source_id || v2 && source.source_id === '' && member.witness === null, 'different selected witness');
     const part = source.languages[language], text = member.text;
-    requireValue(typeof text === 'string' && sha(text) === part.body_sha256, 'different source text');
-    requireValue(part.offset_units === 'utf16' && part.cue_end === text.length && text.slice(part.cue_start) === part.cue, 'source partition differs');
+    requireValue(part && typeof text === 'string' && sha(text) === part.body_sha256, 'different source text');
+    requireValue(part.offset_units === 'utf16' && Number.isInteger(part.cue_start) && Number.isInteger(part.cue_end) && part.cue_start > 0 && part.cue_start < part.cue_end && part.cue_end === text.length && text.slice(part.cue_start) === part.cue, 'source partition differs');
     requireValue(typeof member.id === 'string' && member.id, 'unbound member');
-    return {id: member.id, language, source_text: text, petition: text.slice(0, part.cue_start), conclusion: part.full_conclusion,
-      source_hooks: [source.rule_passage_id, source.formula_passage_id, source.source_publication_passage_id]};
+    let petition = text.slice(0, part.cue_start);
+    if (v2) {
+      requireValue(typeof part.full_conclusion === 'string' && part.full_conclusion && Array.isArray(part.source_hooks) && part.source_hooks.length > 0, 'unbound conclusion source');
+      requireValue(part.response && typeof part.response.speaker === 'string' && typeof part.response.text === 'string' && part.response.text, 'unbound conclusion response');
+      if (part.conclusion_mode === 'source-complete') requireValue(text.slice(part.cue_start, part.cue_start + part.full_conclusion.length) === part.full_conclusion, 'complete source conclusion differs');
+      if (executionKind === 'grouped-mass-orations') petition = wordingProjection(member, source, part, context, petition);
+      else requireValue((context.massCategory === undefined ? 'mass-of-office' : context.massCategory) === source.context.mass_category, 'different execution context');
+    }
+    const result = {id: member.id, language, source_text: text, petition, conclusion: part.full_conclusion,
+      source_hooks: v2 ? part.source_hooks : [source.rule_passage_id, source.formula_passage_id, source.source_publication_passage_id],
+      response: v2 ? part.response : source.response, source_method: source.method_id, v2};
+    if (v2) {
+      requireValue(source.qualification && typeof source.qualification[language] === 'string' && source.body_fidelity && source.body_fidelity[language] && typeof source.body_fidelity[language] === 'object', 'missing execution qualification');
+      result.qualification = source.qualification[language];
+      result.body_fidelity = source.body_fidelity[language];
+    }
+    return result;
+  }
+  function projectedMember(member, final, method) {
+    const result = {id: member.id, source_text: member.source_text,
+      priest_text: member.petition + (final ? member.conclusion : ''),
+      role: final ? 'conclusion-provider' : 'petition', source_hooks: member.source_hooks};
+    if (method === V2_METHOD_ID) result.source_method = member.source_method;
+    if (member.v2) {
+      result.qualification = member.qualification;
+      result.body_fidelity = member.body_fidelity;
+    }
+    return result;
+  }
+  function unresolved(method, reason) {
+    return {schema: 'triptych-oration-conclusion-group/v1', state: 'unresolved',
+      execution_extent: {state: 'unresolved', method_id: method}, reasons: [reason], members: []};
+  }
+  function groupMethod(context) {
+    return context && Array.isArray(context.groups) && context.groups.some(group => group && Array.isArray(group.members) && group.members.some(member => member && isV2(member.source))) ? V2_METHOD_ID : METHOD_ID;
   }
   function executeGroup(context) {
+    const method = groupMethod(context);
     try {
       requireValue(context && context.calendar === 'roman-1962' && context.rule === GROUP_RULE, 'unproved grouping rule');
       const groups = context.groups;
@@ -845,15 +1374,115 @@
       });
       requireValue(new Set(members.map(member => member.id)).size === members.length && new Set(members.map(member => member.language)).size === 1, 'duplicate or mixed-language members');
       return {schema: 'triptych-oration-conclusion-group/v1', state: 'source-derived-complete',
-        execution_extent: {state: 'source-derived-complete', method_id: METHOD_ID}, conclusion_group: number, slot,
-        members: members.map((member, index) => ({id: member.id, source_text: member.source_text,
-          priest_text: member.petition + (index === members.length - 1 ? member.conclusion : ''),
-          role: index === members.length - 1 ? 'conclusion-provider' : 'petition', source_hooks: member.source_hooks})),
-        response: {speaker: 'response', text: 'Amen.', provider_id: members[members.length - 1].id}};
+        execution_extent: {state: 'source-derived-complete', method_id: method}, conclusion_group: number, slot,
+        members: members.map((member, index) => projectedMember(member, index === members.length - 1, method)),
+        response: {...members[members.length - 1].response, provider_id: members[members.length - 1].id}};
     } catch (error) {
-      return {schema: 'triptych-oration-conclusion-group/v1', state: 'unresolved',
-        execution_extent: {state: 'unresolved', method_id: METHOD_ID}, reasons: ['conclusion-group-source-or-context-unbound'], members: []};
+      return unresolved(method, 'conclusion-group-source-or-context-unbound');
     }
   }
-  return Object.freeze({METHOD_ID, GROUP_RULE, ACTIVE_AUTHORITY_SHA256, GENERATED_AUTHORITY_SHA256, PUBLIC_PINS, canonical, sha, validate, executeGroup});
+  function executeStudy(context) {
+    try {
+      requireValue(context && context.calendar === 'postconciliar' && context.executionScope === 'source-local-study', 'unproved study scope');
+      const member = context.member, source = validate(member.source), selected = context.selection;
+      requireValue(isV2(source) && source.context.execution_kind === 'source-local-study' && member.language === 'en' && source.target[2] === 'Collect', 'unreviewed study recipient');
+      const constraints = source.context.constraints && source.context.constraints.source_local_study;
+      requireValue(constraints && constraints.requires_explicit_selection === true && constraints.only_one_collect === true && constraints.current_2008_admitted === false && constraints.latin_body_available === false, 'unbound study constraints');
+      requireValue(constraints.source_selection && typeof constraints.source_selection === 'object' && !Array.isArray(constraints.source_selection), 'unbound bibliographic study selection');
+      requireValue(equal(context.sourceRule, source.context.source_rule), 'different study source rule');
+      requireValue(selected && equal(selected.target, constraints.target) && equal(selected.target, source.target) && equal(selected.source_selection, constraints.source_selection) && selected.rule_id === constraints.rule_id && selected.only_one_collect === true && equal(selected.alternative, constraints.alternative), 'different study selection');
+      const projected = memberProjection(member, context, source.target[2], 'source-local-study');
+      return {schema: 'triptych-oration-conclusion-group/v1', state: 'source-derived-complete',
+        execution_extent: {state: 'source-derived-complete', method_id: V2_METHOD_ID},
+        execution_scope: 'source-local-study', source_rule: source.context.source_rule,
+        current_2008_admitted: false, latin_body_available: false,
+        conclusion_group: 1, slot: source.target[2], members: [projectedMember(projected, true, V2_METHOD_ID)],
+        response: {...projected.response, provider_id: projected.id}};
+    } catch (error) {
+      return unresolved(V2_METHOD_ID, 'conclusion-study-source-or-context-unbound');
+    }
+  }
+  function executeProperRite(context) {
+    try {
+      requireValue(context && context.calendar === 'roman-1962', 'unreviewed proper rite calendar');
+      const rite = context.rite, member = context.member, source = validate(member.source);
+      requireValue(isV2(source) && source.context.execution_kind === 'proper-rite', 'missing proper rite conclusion source');
+      const expected = source.context, target = source.target;
+      requireValue(rite && equal(Object.keys(rite).sort(), ['appointment', 'appointmentLocus', 'id', 'locus', 'ownConclusion', 'semanticRole', 'sourceIndex']), 'unknown proper rite fields');
+      requireValue(rite && rite.id === 'oratio-super-populum' && rite.id === expected.rite_id && rite.semanticRole === 'prayer-over-people' && rite.semanticRole === expected.semantic_role && rite.ownConclusion === true && rite.locus === expected.rite_locus, 'different proper rite');
+      requireValue(rite.appointment && equal(rite.appointment, {mass: target[0], form_id: target[1], proper: target[2], occurrence: target[4]}), 'different rite appointment');
+      requireValue(Number.isInteger(rite.sourceIndex) && rite.sourceIndex >= 0 && rite.sourceIndex === expected.source_index && typeof rite.appointmentLocus === 'string' && rite.appointmentLocus && rite.appointmentLocus === expected.appointment_locus, 'unbound rite source row');
+      requireValue(member.id === 'proper/' + context.calendar + '/' + target[0] + '/' + String(rite.sourceIndex + 1).padStart(3, '0'), 'different rite event owner');
+      const projected = memberProjection(member, context, target[2], 'proper-rite');
+      return {schema: 'triptych-oration-conclusion-group/v1', state: 'source-derived-complete',
+        execution_extent: {state: 'source-derived-complete', method_id: V2_METHOD_ID},
+        execution_kind: 'proper-rite', rite, conclusion_group: 1, slot: target[2],
+        members: [projectedMember(projected, true, V2_METHOD_ID)], response: {...projected.response, provider_id: projected.id}};
+    } catch (error) {
+      return unresolved(V2_METHOD_ID, 'conclusion-rite-source-or-context-unbound');
+    }
+  }
+  function applyDisplayCorrections(context, projected) {
+    // executeGroup owns all source admission and actual member roles. This
+    // additive presentation stage neither repairs its inputs nor changes its result.
+    if (!ACTIVE_DISPLAY_AUTHORITY_SHA256 || projected.state !== 'source-derived-complete') return projected;
+    const inputs = context.groups.flatMap(group => group.members);
+    const members = projected.members.map(function (member) {
+      const input = inputs.find(one => one.id === member.id);
+      const key = input && JSON.stringify(input.target), row = key && DISPLAY_RECORDS[key];
+      if (!row || input.language !== 'en') return member;
+      try {
+        requireValue(ACTIVE_DISPLAY_AUTHORITY_SHA256 === GENERATED_DISPLAY_AUTHORITY_SHA256 &&
+          ACTIVE_AUTHORITY_SHA256 === DISPLAY_ENDING_AUTHORITY_SHA256 &&
+          GENERATED_AUTHORITY_SHA256 === DISPLAY_ENDING_AUTHORITY_SHA256, 'editorial authority differs');
+        requireValue(sha(canonical(row)) === DISPLAY_PINS[key], 'editorial record differs');
+        const source = validate(input.source), part = source.languages.en, operation = row.operation;
+        requireValue(input.witness === row.source_id && source.source_id === row.source_id &&
+          sha(canonical(source)) === row.public_descriptor_sha256 &&
+          source.translation_binding_sha256 === row.translation_binding_sha256 &&
+          part.body_sha256 === row.source_body_sha256 && part.cue_start === row.cue_start &&
+          input.text === member.source_text && sha(member.source_text) === row.source_body_sha256,
+          'editorial source binding differs');
+        const method = groupMethod(context);
+        requireValue(source.schema === 'triptych-oration-conclusion-source/v1' && source.method_id === METHOD_ID &&
+          projected.execution_extent.state === 'source-derived-complete' &&
+          projected.execution_extent.method_id === method && projected.slot === input.target[2] &&
+          (method === METHOD_ID ? !Object.prototype.hasOwnProperty.call(member, 'source_method') :
+            method === V2_METHOD_ID && member.source_method === METHOD_ID),
+          'editorial execution differs');
+        const final = projected.members[projected.members.length - 1];
+        requireValue(projected.response.speaker === 'response' && projected.response.text === 'Amen.' &&
+          projected.response.provider_id === final.id &&
+          member.role === (member.id === final.id ? 'conclusion-provider' : 'petition'),
+          'editorial role or response differs');
+        const variant = row.variants[member.role], prefix = member.source_text.slice(0, row.cue_start);
+        const suffix = member.role === 'conclusion-provider' ? part.full_conclusion : '';
+        requireValue(variant && sha(member.priest_text) === variant.priest_text_sha256 &&
+          member.priest_text === prefix + suffix, 'editorial execution preimage differs');
+        requireValue(operation.offset_unit === 'utf16' && operation.strictly_before_original_cue === true &&
+          Number.isInteger(operation.start) && Number.isInteger(operation.end) &&
+          operation.start >= 0 && operation.start <= operation.end && operation.end < row.cue_start &&
+          sha(prefix) === operation.source_prefix_sha256 &&
+          prefix.slice(operation.start, operation.end) === operation.old,
+          'editorial operation differs');
+        const display = member.priest_text.slice(0, operation.start) + operation.new + member.priest_text.slice(operation.end);
+        const shift = operation.new.length - (operation.end - operation.start);
+        requireValue(sha(display) === variant.display_text_sha256 &&
+          display.slice(row.cue_start + shift) === suffix, 'editorial result differs');
+        return Object.assign({}, member, {display_text: display, display_correction: {
+          state: 'applied', method_id: DISPLAY_METHOD_ID, authority_sha256: ACTIVE_DISPLAY_AUTHORITY_SHA256,
+          source_review_sha256: DISPLAY_SOURCE_REVIEW_SHA256, target: row.target.slice(), annotation: row.annotation
+        }});
+      } catch (error) {
+        return Object.assign({}, member, {display_correction: {state: 'unavailable',
+          reasons: ['finite-editorial-reading-unbound']}});
+      }
+    });
+    return Object.assign({}, projected, {members});
+  }
+  function executeDisplayGroup(context) {
+    return applyDisplayCorrections(context, executeGroup(context));
+  }
+
+  return Object.freeze({ACTIVE_DISPLAY_AUTHORITY_SHA256, GENERATED_DISPLAY_AUTHORITY_SHA256, executeDisplayGroup, METHOD_ID, V2_METHOD_ID, GROUP_RULE, ACTIVE_AUTHORITY_SHA256, GENERATED_AUTHORITY_SHA256, PUBLIC_PINS, canonical, sha, validate, executeGroup, executeStudy, executeProperRite});
 });

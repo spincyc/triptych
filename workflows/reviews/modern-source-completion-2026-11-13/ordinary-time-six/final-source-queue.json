@@ -1,0 +1,148 @@
+{
+  "schema": "triptych-six-ordinarytime-latin-review-queue/v1",
+  "date": "2026-11-13",
+  "scope": "Six exact complete Latin carriers proposed separately from their accepted English/source merits; no automatic Latin permission.",
+  "count": 6,
+  "groups": [
+    {
+      "identities": [
+        [
+          "ot-3",
+          "main",
+          "Prayer over the Offerings",
+          "all",
+          1
+        ],
+        [
+          "ot-5",
+          "main",
+          "Prayer over the Offerings",
+          "all",
+          1
+        ],
+        [
+          "ot-12",
+          "main",
+          "Prayer over the Offerings",
+          "all",
+          1
+        ]
+      ],
+      "latin": {
+        "path": ".scratch/modern-ordinarytime-orations/offerings_early/latin-selection-proposal-v3-passage-notes.json",
+        "sha256": "e1ac91887b53795051f34a949f983eef3053b12ca382860d88c9dee28c1d8843",
+        "bytes": 210041
+      },
+      "body_review": {
+        "path": ".scratch/modern-ordinarytime-orations/early-offerings-review/review.json",
+        "sha256": "ee75a91a2462607bb58240d743403a6b7c6b9914a040824631ec373407a256ff",
+        "bytes": 14468
+      }
+    },
+    {
+      "identities": [
+        [
+          "ot-8",
+          "main",
+          "Prayer after Communion",
+          "all",
+          1
+        ],
+        [
+          "ot-12",
+          "main",
+          "Prayer after Communion",
+          "all",
+          1
+        ]
+      ],
+      "latin": {
+        "path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v2-note/finite-latin-admission-proposal.json",
+        "sha256": "1cb2bea464114ec2fb7a32b2f10f4055c80681e18907d53b96766f9e3e8c9741",
+        "bytes": 24638
+      },
+      "installation": {
+        "path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v2-note/installation-proposal.json",
+        "sha256": "93a653a69e297c472c21c42e73b9298656b0f64d5745781ac682679821b10247",
+        "bytes": 94259
+      },
+      "body_review": {
+        "path": ".scratch/modern-ordinarytime-orations/finite-review/review-v1.json",
+        "sha256": "d46d3d4b792606f359f827b50a3a5f3c976a3a1ca1ae81f60f97319c42f6692c",
+        "bytes": 33102
+      }
+    },
+    {
+      "identities": [
+        [
+          "ot-11",
+          "main",
+          "Prayer after Communion",
+          "all",
+          1
+        ]
+      ],
+      "latin": {
+        "path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/latin-proposal-v2/proposal.json",
+        "sha256": "f8a73c392d24006fc7516702771d5e43de5672a061144c1c7a6ebb216d453adb",
+        "bytes": 24581
+      },
+      "body_review": {
+        "path": ".scratch/modern-ordinarytime-orations/finite-review/review-v1.json",
+        "sha256": "d46d3d4b792606f359f827b50a3a5f3c976a3a1ca1ae81f60f97319c42f6692c",
+        "bytes": 33102
+      }
+    }
+  ],
+  "rule_successor": {
+    "path": ".scratch/modern-ordinarytime-orations/ot8-ot12/proposed-igmr89-v2-locus.toml",
+    "sha256": "68aa57f096199241e8ded1f6b4599c80d09ba91e74102ef0bed20a85ef3eb26e",
+    "bytes": 1432
+  },
+  "rule_delta": {
+    "path": ".scratch/modern-ordinarytime-orations/ot8-ot12/proposed-igmr89-v2-locus.json",
+    "sha256": "efea49d994f9a211653e06e3daa5eb2eed59a854c83d74f097d3454b9f353073",
+    "bytes": 1308
+  },
+  "independent_latin_reviewer": "/root/modern_sources/legacy_review/three_cold_review",
+  "separate_code_owner": "/root/modern_sources/finite_latin_contract",
+  "root_decision": "pending exact per-expression Latin merits and final activation",
+  "known_contract_gaps": [
+    "Existing finite source gate rejects postconciliar calendar.",
+    "Qualified public_latin_state hardcodes editorial-projection-exact-to-target and drops source note; a source-based study relationship and visible Latin-specific qualifier are required.",
+    "Current refusal is expected, and no positive admitted runtime check is claimed."
+  ],
+  "preservation": [
+    "No accepted Latin/English body bytes changed.",
+    "No unmodified-old-petition substitution.",
+    "All prior protected English refusals and modern2008 target limitations preserved.",
+    "No shared gate or canonical code/source changed by this lane."
+  ],
+  "canonical_writes": false,
+  "metadata_successor": {
+    "predecessor": {
+      "path": ".scratch/modern-ordinarytime-orations/six-latin-review-queue.json",
+      "sha256": "c5afa5788cb51e4e0ae0bd175843e1287a80dd436c42313e745dcf70fa167190",
+      "byte_size": 4195
+    },
+    "exact_delta": {
+      "path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v2-note/note-only-delta.json",
+      "sha256": "d28414de0df9cea65efd07645e679a7e38252d504364ef713116827f7663838b",
+      "byte_size": 18709
+    },
+    "scope": "Only OT8/12 provenance note and dependent row/proposal hashes; no bodies, grades or source reviews changed."
+  },
+  "passage_note_successor": {
+    "predecessor": {
+      "path": ".scratch/modern-ordinarytime-orations/six-latin-review-queue-v2.json",
+      "sha256": "819b1824c179b2463c355750e60237d7fece8aa8901f6a17584b7d9e04a376be",
+      "byte_size": 4825
+    },
+    "metadata_addendum": {
+      "path": ".scratch/modern-ordinarytime-orations/offerings_early/passage-notes-v3/metadata-addendum.json",
+      "sha256": "103004af9112cc11fdbf9625421191e69db7331ef1641bf17fa53e34afe3976f",
+      "byte_size": 16125
+    },
+    "scope": "Early OT3/5/12 Offerings selected Latin passage notes only; OT8/12 and OT11 proposals unchanged."
+  }
+}

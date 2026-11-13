@@ -1,0 +1,206 @@
+{
+  "schema": "triptych-ot11-english-source-binding-amendment-proposal/v1",
+  "status": "Proposed exact metadata correction; Root acceptance and independent integration review required. No canonical mutation.",
+  "identity": [
+    "ot-11",
+    "main",
+    "Prayer after Communion",
+    "all",
+    1
+  ],
+  "accepted_source_snapshot": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/install-plan.json",
+    "sha256": "d25b4cb43f2bb21ce4ba0d025d0f65fb2ad787166a3709bda6bc3ff1abd019df",
+    "bytes": 133954
+  },
+  "parent_root_admission": {
+    "path": ".scratch/root/ordinary-time-six-source-admission.json",
+    "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7",
+    "bytes": 132846
+  },
+  "before_English_entry": {
+    "mass": "ot-11",
+    "form_id": "main",
+    "form": "",
+    "proper": "Prayer after Communion",
+    "cycle": "all",
+    "occurrence": 1,
+    "incipit": "Haec tua, Domine, sumpta sacra communio",
+    "relation": "variant",
+    "petition_relation": "variant",
+    "ancient_reading": "Hæc tua, Dómine, sumpta sacra commúnio, sicut fidélium in te uniónem præsignat: sic in tua Ecclésia unitátis, quæsumus, operétur efféctum. Per Dóminum.",
+    "target_qualification": "secondary-digital-2002-comparison-only;2008-unresolved",
+    "source_latin_sha256": "cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "project-created",
+        "text": "May this sacred communion of yours that we have received, O Lord, bring about unity in your Church, just as it signifies the union of the faithful in you.\nThrough Christ our Lord.\nR. Amen."
+      }
+    ],
+    "witness_note": "New study English from an independently witnessed historical Latin prayer, with the stated minor editorial selection and separately sourced traditional conclusion and marked response. It is not an approved liturgical translation. Correspondence with the 2008 Missal remains unverified.",
+    "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot11-haec-tua-whole-20261112",
+    "source_latin_passage_id": "passage.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+    "source_latin_publication_source_ids": [
+      "artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+    ],
+    "study_english_passage_id": "passage.triptych.ot11-haec-tua-study-english.2026-11-12.complete-study-english",
+    "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+    "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+    "conclusion_relation": "independently-witnessed-formula",
+    "divergence": "Parenthetic quaesumus omitted, in tua Ecclesia transposed to in Ecclesia tua; all substantive petition words and two-part relation retained. Separately sourced full short ending and response. Historical whole-source reading preserved; no authenticated2008 relation claimed.",
+    "conclusion_rule_passage_id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.modern-short-conclusions-20261112-89",
+    "conclusion_rule_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+  },
+  "after_English_entry": {
+    "mass": "ot-11",
+    "form_id": "main",
+    "form": "",
+    "proper": "Prayer after Communion",
+    "cycle": "all",
+    "occurrence": 1,
+    "incipit": "Haec tua, Domine, sumpta sacra communio",
+    "relation": "variant",
+    "petition_relation": "variant",
+    "ancient_reading": "Hæc tua, Dómine, sumpta sacra commúnio, sicut fidélium in te uniónem præsignat: sic in tua Ecclésia unitátis, quæsumus, operétur efféctum. Per Dóminum.",
+    "target_qualification": "secondary-digital-2002-comparison-only;2008-unresolved",
+    "source_latin_sha256": "cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "project-created",
+        "text": "May this sacred communion of yours that we have received, O Lord, bring about unity in your Church, just as it signifies the union of the faithful in you.\nThrough Christ our Lord.\nR. Amen."
+      }
+    ],
+    "witness_note": "New study English from an independently witnessed historical Latin prayer, with the stated minor editorial selection and separately sourced traditional conclusion and marked response. It is not an approved liturgical translation. Correspondence with the 2008 Missal remains unverified.",
+    "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot11-haec-tua-whole-20261112",
+    "source_latin_passage_id": "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+    "source_latin_publication_source_ids": [
+      "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+    ],
+    "study_english_passage_id": "passage.triptych.ot11-haec-tua-study-english.2026-11-12.complete-study-english",
+    "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+    "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "conclusion_witness_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+    "conclusion_reading": "Per Christum Dominum nostrum. R. Amen.",
+    "conclusion_relation": "independently-witnessed-formula",
+    "divergence": "Parenthetic quaesumus omitted, in tua Ecclesia transposed to in Ecclesia tua; all substantive petition words and two-part relation retained. Separately sourced full short ending and response. Historical whole-source reading preserved; no authenticated2008 relation claimed.",
+    "conclusion_rule_passage_id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.modern-short-conclusions-20261112-89",
+    "conclusion_rule_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+  },
+  "before_complete_entry_sha256": "253f75406fad2893afde936ebe11fd90ccbbd41f9bef87c25f7e158f14e8c536",
+  "after_complete_entry_sha256": "174444ea8f24db116e8dd6803df4642cb122a51b72a231236a07d330c48e1901",
+  "exact_field_delta": [
+    {
+      "pointer": "/source_latin_passage_id",
+      "before": "passage.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+      "after": "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin"
+    },
+    {
+      "pointer": "/source_latin_publication_source_ids",
+      "before": [
+        "artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "after": [
+        "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ]
+    }
+  ],
+  "body_sha256": "6ac80aaf2dc748ea904714aa07c6b707868f1f1d77c6a1642f33e24bd3980374",
+  "Latin_body_sha256": "cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736",
+  "English_wording_notice_rights_and_source_payloads_unchanged": true,
+  "Latin_node_and_provenance_row_unchanged": true,
+  "proposed_installation_omissions": [
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/edition.toml",
+      "sha256": "4c70c31e00d3d509e782d3976ee68fda5f6f13548987e2001c17fa31da2fea82",
+      "bytes": 676,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "bytes": 169,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "sha256": "9f3b894f51a8800cbf017cbfecc590b960fa980431a35e5d5e3f09887c6954ce",
+      "bytes": 2181,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "sha256": "2afa519aa5465bebfd45885c17970b66d189fea265b603547f667a15524b8bea",
+      "bytes": 766,
+      "role": "English-source dependency"
+    }
+  ],
+  "omission_scope": "Omit these four superseded original Latin-edition files from the proposed new-file write set. They remain in private scratch; no canonical deletion. Shared Latin work and the finite edition remain.",
+  "old_and_new_artifact_payload_sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+  "old_and_new_projected_from_exact": [
+    "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+    "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+    "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+  ],
+  "English_source_files_unchanged": [
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/work.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/work.toml",
+      "sha256": "91f7f67ebae816f9f1d195ccb85ddfa3c6944226ced961491904c9472c946f32",
+      "bytes": 817,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "82c1140f80eb2c98f612dc52db702fd14f1c256e932588d2607ce8aad52a18f6",
+      "bytes": 668,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "sha256": "166689e6ad0c64937a9b1c22475c8c80442baa073b8225361c9e2f3f6e8d1397",
+      "bytes": 189,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "sha256": "fa2a947da7bda7e83bdd1ca5a73ed3944063aada98fe37533c482f6fa8380399",
+      "bytes": 1380,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "sha256": "e0f1a11cf99fecc6b42bb59254cb881def8ae6fd22e1f08066086e216e7b208c",
+      "bytes": 766,
+      "role": "source"
+    }
+  ],
+  "source_graph_refusal": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/source-graph-initial.txt",
+    "sha256": "3c365beef04670c2f711c992943121fe5bdec397802f3934c05efbcc3364c950",
+    "bytes": 282
+  },
+  "binding_reason": "The bound English inventory must name the exact selected Latin provenance passage and publication sources. Identical bodies in separately named carriers do not satisfy strict identity, and a single tracked payload cannot have two artifact owners.",
+  "independent_boundary_probe": "Separate finite_latin_contract lane is reproducing the validator boundary and a corrected registered graph. This proposal does not claim that runtime proof.",
+  "canonical_writes": false,
+  "runtime_activation": false
+}

@@ -1,0 +1,548 @@
+{
+  "current_owner_at_build": {
+    "bytes": 3573628,
+    "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+    "sha256": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf"
+  },
+  "digest_convention": "JSON owner digests use UTF-8, ensure_ascii=False, sort_keys=True, separators=(comma,colon), no terminal newline. Body digests cover exact UTF-8 strings. File digests cover all bytes.",
+  "head": "92032f517865220d7ec7019a31b23f8a3217a78e",
+  "overlay_snapshot": {
+    "bytes": 3573628,
+    "path": ".scratch/roman-sources/english-cleanliness/inputs/overlay.toml",
+    "sha256": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf"
+  },
+  "rows": [
+    {
+      "annotation": "The printed source reads “bseech”; the reading text supplies the missing e.",
+      "classification": "actual-printed-feature-not-transcription-error",
+      "historical_source_postimage": "unchanged",
+      "historical_source_postimage_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+      "identity": [
+        "commune-unius-martyris-3",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "old_body": "Grant, we bseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord.",
+      "old_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+      "owner": {
+        "entry": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 1330,
+          "ia_leaf_range": [
+            1330,
+            1330
+          ],
+          "mass": "commune-unius-martyris-3",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-verify-commune-unius-martyris-3--main--postcommunion--all--1",
+          "printed_page": "1312",
+          "proper": "Postcommunion",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-5a4e83f7",
+          "publication_artifact_sha256": "5a4e83f7611d09f25d9d2debd3d080f16ee0e691244f76767a1c99bb38692cd3",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-publish-commune-unius-martyris-3--main--postcommunion--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "Grant, we bseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Historical source commune-unius-martyris-3/main/Postcommunion/all/1; same-witness-conclusion-table. Complete petitions equal and actual Latin conclusion prefixes match the same printed family through-our-lord at passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked rule/formula passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription. Actual English short cue retained literally, without expansion or response. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 4660ffec2644091dce38f1e120e65d63b7ef11aa702b85fa048ceb94130f4ca7. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-unius-martyris-3-orations retained. No source-recipient calendar attestation or official 1962 English claimed."
+        },
+        "entry_index_at_snapshot": 312,
+        "entry_sha256": "ac4e28fcb678f5dcada51f1246bd7949e198ff7ab1cd58ad2af3d5c50d293843",
+        "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+      },
+      "proposal": {
+        "bytes": 1528,
+        "path": ".scratch/roman-sources/english-cleanliness/commune-unius-martyris-3--postcommunion--corrected-reading.json",
+        "sha256": "65dee4ae487f1ef4aabae2a590fb3ae9b1fde52057f8c18ec5b38785dd86e854"
+      },
+      "proposed_reading_body": "Grant, we beseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord.",
+      "proposed_reading_body_sha256": "06a0614120387b9c65bbb4c28f3832b2490e5c5a1c932a5f31d6319e76fe0403",
+      "source": {
+        "artifact_manifest": {
+          "bytes": 2780,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-phase2-2026-10-23-5a4e83f7/artifact.toml",
+          "sha256": "810b86775c03bd72c5839f5e6bb024537fdaf5abec3b1842a5d8d347cb0da938"
+        },
+        "ia_leaf": 1330,
+        "images": [
+          {
+            "bytes": 82446,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-1331-200.png",
+            "sha256": "c8dfa4139f2b90d49ce94915e15a0ecd261e61a42b1df33f3d383ffd1d8e4b3c"
+          },
+          {
+            "bytes": 411310,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-1331-400.png",
+            "sha256": "1688b92f3a402df47058b137e0226a60af87e611277d2c0e2f33a66db027984f"
+          },
+          {
+            "bytes": 50998,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-1331-400-prayer.png",
+            "sha256": "64af43b70df99cf26e6be2e26eb3999df7f56761746668383c6c1d7d1c3050ec"
+          }
+        ],
+        "literal_english_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+        "payload": {
+          "bytes": 37794,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-phase2-2026-10-23-5a4e83f7/english.tsv",
+          "sha256": "5a4e83f7611d09f25d9d2debd3d080f16ee0e691244f76767a1c99bb38692cd3"
+        },
+        "payload_line_bytes_sha256": "4a2354af94d0984a1a758d19b2f21104c73ca2404ee8f63f13a3f9f9396539a5",
+        "payload_physical_line": 35,
+        "pdf_page": 1331,
+        "printed_page": 1312,
+        "publication_passage": {
+          "bytes": 1726,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-phase2-2026-10-23-publish-commune-unius-martyris-3--main--postcommunion--all--1.toml",
+          "sha256": "aef27d47f26c130e99edaca95b7c8cef597ebb9b4dd526ec5d9c4b652240f14e"
+        },
+        "verify_passage": {
+          "bytes": 2703,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-phase2-2026-10-23-verify-commune-unius-martyris-3--main--postcommunion--all--1.toml",
+          "sha256": "8d63de45251bf602528cdab7f8105ba7b81727ae1a7df2321b3fde390365fd9c"
+        },
+        "whole_pdf": {
+          "bytes": 75268976,
+          "path": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+          "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
+        }
+      },
+      "source_epoch_change_declaration": {
+        "class": "existing-positive-additive-editorial-reading-proposal",
+        "new_proposed_reading_body_sha256": "06a0614120387b9c65bbb4c28f3832b2490e5c5a1c932a5f31d6319e76fe0403",
+        "not_authorized_by_this_record": "No source_epoch bypass, unreviewed activation, replacement historical translation, source payload edit, generic typo correction, or conclusion expansion.",
+        "positive_after": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 1330,
+          "ia_leaf_range": [
+            1330,
+            1330
+          ],
+          "mass": "commune-unius-martyris-3",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-verify-commune-unius-martyris-3--main--postcommunion--all--1",
+          "printed_page": "1312",
+          "proper": "Postcommunion",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-5a4e83f7",
+          "publication_artifact_sha256": "5a4e83f7611d09f25d9d2debd3d080f16ee0e691244f76767a1c99bb38692cd3",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-publish-commune-unius-martyris-3--main--postcommunion--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "Grant, we bseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Historical source commune-unius-martyris-3/main/Postcommunion/all/1; same-witness-conclusion-table. Complete petitions equal and actual Latin conclusion prefixes match the same printed family through-our-lord at passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked rule/formula passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription. Actual English short cue retained literally, without expansion or response. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 4660ffec2644091dce38f1e120e65d63b7ef11aa702b85fa048ceb94130f4ca7. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-unius-martyris-3-orations retained. No source-recipient calendar attestation or official 1962 English claimed."
+        },
+        "positive_after_sha256": "ac4e28fcb678f5dcada51f1246bd7949e198ff7ab1cd58ad2af3d5c50d293843",
+        "positive_before": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 1330,
+          "ia_leaf_range": [
+            1330,
+            1330
+          ],
+          "mass": "commune-unius-martyris-3",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-verify-commune-unius-martyris-3--main--postcommunion--all--1",
+          "printed_page": "1312",
+          "proper": "Postcommunion",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-5a4e83f7",
+          "publication_artifact_sha256": "5a4e83f7611d09f25d9d2debd3d080f16ee0e691244f76767a1c99bb38692cd3",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-phase2-2026-10-23-publish-commune-unius-martyris-3--main--postcommunion--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "Grant, we bseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Historical source commune-unius-martyris-3/main/Postcommunion/all/1; same-witness-conclusion-table. Complete petitions equal and actual Latin conclusion prefixes match the same printed family through-our-lord at passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-verify; tracked rule/formula passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription. Actual English short cue retained literally, without expansion or response. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 4660ffec2644091dce38f1e120e65d63b7ef11aa702b85fa048ceb94130f4ca7. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-commune-unius-martyris-3-orations retained. No source-recipient calendar attestation or official 1962 English claimed."
+        },
+        "positive_before_sha256": "ac4e28fcb678f5dcada51f1246bd7949e198ff7ab1cd58ad2af3d5c50d293843",
+        "requires": "A separate reviewed, exact-identity/hash-bound execution or presentation record; preserve literal historical text and visible annotation."
+      }
+    },
+    {
+      "annotation": "The printed source reads “bseech”; the reading text supplies the missing e.",
+      "classification": "actual-printed-feature-not-transcription-error",
+      "historical_source_postimage": "unchanged",
+      "historical_source_postimage_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+      "identity": [
+        "comm-s-mennae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "old_body": "Grant, we bseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord.",
+      "old_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+      "owner": {
+        "entry": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 1330,
+          "ia_leaf_range": [
+            1330,
+            1330
+          ],
+          "mass": "comm-s-mennae-martyris",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-verify-comm-s-mennae-martyris--main--postcommunion--all--1",
+          "printed_page": "1312",
+          "proper": "Postcommunion",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-2de93984",
+          "publication_artifact_sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-comm-s-mennae-martyris--main--postcommunion--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "Grant, we bseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Historical source comm-s-mennae-martyris/main/Postcommunion/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 e20901eac87b8ebf187effd60b30e33fcebf6dd2846867cad74247ba6ef21603. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.phase2-comm-s-mennae-martyris-orations-recheck-2026-10-22 retained. No source-recipient calendar attestation or official 1962 English claimed."
+        },
+        "entry_index_at_snapshot": 805,
+        "entry_sha256": "266f9af85e4840b695909b3eb9e2201d6f4d3f723d89ae4a2ba0d5c20c20a89e",
+        "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+      },
+      "proposal": {
+        "bytes": 1528,
+        "path": ".scratch/roman-sources/english-cleanliness/comm-s-mennae-martyris--postcommunion--corrected-reading.json",
+        "sha256": "65dee4ae487f1ef4aabae2a590fb3ae9b1fde52057f8c18ec5b38785dd86e854"
+      },
+      "proposed_reading_body": "Grant, we beseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord.",
+      "proposed_reading_body_sha256": "06a0614120387b9c65bbb4c28f3832b2490e5c5a1c932a5f31d6319e76fe0403",
+      "source": {
+        "artifact_manifest": {
+          "bytes": 2805,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-append209-strict165-2026-10-23-2de93984/artifact.toml",
+          "sha256": "ebc3621029809b6e0aa75de9b1fdbbd25f9bae1d3c28f2dd89ece24143fa81dc"
+        },
+        "ia_leaf": 1330,
+        "images": [
+          {
+            "bytes": 82446,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-1331-200.png",
+            "sha256": "c8dfa4139f2b90d49ce94915e15a0ecd261e61a42b1df33f3d383ffd1d8e4b3c"
+          },
+          {
+            "bytes": 411310,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-1331-400.png",
+            "sha256": "1688b92f3a402df47058b137e0226a60af87e611277d2c0e2f33a66db027984f"
+          },
+          {
+            "bytes": 50998,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-1331-400-prayer.png",
+            "sha256": "64af43b70df99cf26e6be2e26eb3999df7f56761746668383c6c1d7d1c3050ec"
+          }
+        ],
+        "literal_english_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+        "payload": {
+          "bytes": 49290,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-append209-strict165-2026-10-23-2de93984/english.tsv",
+          "sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e"
+        },
+        "payload_line_bytes_sha256": "fa7e8ef1fa3fef9612176d960cd4bcb82ad38b80f8bc2ba7b06fe462cecef016",
+        "payload_physical_line": 20,
+        "pdf_page": 1331,
+        "printed_page": 1312,
+        "publication_passage": {
+          "bytes": 1673,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-append209-strict165-2026-10-23-publish-comm-s-mennae-martyris--main--postcommunion--all--1.toml",
+          "sha256": "8a8c4ccd8b94235f738d1890c6d94c9d126eb8a6918d1e3b0cf002f00a52e494"
+        },
+        "verify_passage": {
+          "bytes": 2775,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-append209-strict165-2026-10-23-verify-comm-s-mennae-martyris--main--postcommunion--all--1.toml",
+          "sha256": "b09ad754f70f455d14963f2aaae7658b8b2d88eee55a0a19f4d1be8a7170223f"
+        },
+        "whole_pdf": {
+          "bytes": 75268976,
+          "path": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+          "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
+        }
+      },
+      "source_epoch_change_declaration": {
+        "class": "existing-positive-additive-editorial-reading-proposal",
+        "new_proposed_reading_body_sha256": "06a0614120387b9c65bbb4c28f3832b2490e5c5a1c932a5f31d6319e76fe0403",
+        "not_authorized_by_this_record": "No source_epoch bypass, unreviewed activation, replacement historical translation, source payload edit, generic typo correction, or conclusion expansion.",
+        "positive_after": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 1330,
+          "ia_leaf_range": [
+            1330,
+            1330
+          ],
+          "mass": "comm-s-mennae-martyris",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-verify-comm-s-mennae-martyris--main--postcommunion--all--1",
+          "printed_page": "1312",
+          "proper": "Postcommunion",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-2de93984",
+          "publication_artifact_sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-comm-s-mennae-martyris--main--postcommunion--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "Grant, we bseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Historical source comm-s-mennae-martyris/main/Postcommunion/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 e20901eac87b8ebf187effd60b30e33fcebf6dd2846867cad74247ba6ef21603. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.phase2-comm-s-mennae-martyris-orations-recheck-2026-10-22 retained. No source-recipient calendar attestation or official 1962 English claimed."
+        },
+        "positive_after_sha256": "266f9af85e4840b695909b3eb9e2201d6f4d3f723d89ae4a2ba0d5c20c20a89e",
+        "positive_before": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 1330,
+          "ia_leaf_range": [
+            1330,
+            1330
+          ],
+          "mass": "comm-s-mennae-martyris",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-verify-comm-s-mennae-martyris--main--postcommunion--all--1",
+          "printed_page": "1312",
+          "proper": "Postcommunion",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-2de93984",
+          "publication_artifact_sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-comm-s-mennae-martyris--main--postcommunion--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "Grant, we bseech Thee, O Lord, our God, that we, who in this life joyfully assist in the commemoration of Thy saints, may hereafter rejoice in beholding them forever in heaven. Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Historical source comm-s-mennae-martyris/main/Postcommunion/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 e20901eac87b8ebf187effd60b30e33fcebf6dd2846867cad74247ba6ef21603. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.phase2-comm-s-mennae-martyris-orations-recheck-2026-10-22 retained. No source-recipient calendar attestation or official 1962 English claimed."
+        },
+        "positive_before_sha256": "266f9af85e4840b695909b3eb9e2201d6f4d3f723d89ae4a2ba0d5c20c20a89e",
+        "requires": "A separate reviewed, exact-identity/hash-bound execution or presentation record; preserve literal historical text and visible annotation."
+      }
+    },
+    {
+      "annotation": "The printed source has no punctuation between “defended” and “Through”; the reading text supplies a period after “defended”.",
+      "classification": "actual-printed-feature-not-transcription-error",
+      "historical_source_postimage": "unchanged",
+      "historical_source_postimage_body_sha256": "dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262",
+      "identity": [
+        "s-matthiae-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "old_body": "May the prayer of Thy holy apostle Matthias, O Lord, accompany the sacrifices which we present to be sanctified unto Thy name; and by it do Thou cause us to be purified and defended Through our Lord.",
+      "old_body_sha256": "dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262",
+      "owner": {
+        "entry": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "Independent complete source page-image review and EXISTING full-sequence method application, 2026-10-26",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 930,
+          "ia_leaf_range": [
+            930,
+            930
+          ],
+          "mass": "s-matthiae-apostoli",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-verify-s-matthiae-apostoli--main--secret--all--1",
+          "printed_page": "932",
+          "proper": "Secret",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-57a17611",
+          "publication_artifact_sha256": "57a176114b198adab4748f16f8e04bb2e1d1a4d05e9c396485f4825e5eb0ea55",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-publish-s-matthiae-apostoli--main--secret--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "May the prayer of Thy holy apostle Matthias, O Lord, accompany the sacrifices which we present to be sanctified unto Thy name; and by it do Thou cause us to be purified and defended Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Literal historical own-appointment English. Complete source and target actual endings were compared; no generic short-ending rule or new finite grant. Exact receiving application {\"application_path\": \"workflows/reviews/missal-reader-completion-2026-10-26/existing-source-methods-forward-five.json\", \"application_sha256\": \"5eba1be1b20d6fa73bd94db48a67f5e90a2add78ddbafcbbaf1ab3ea564f8f02\", \"context_index\": 3, \"context_sha256\": \"e15de78b039df53d8ade4a7c5ed66b3e2608e3223a22808c2a1840c3aaaca898\", \"target\": [\"s-matthiae-apostoli\", \"main\", \"Secret\", \"all\", 1], \"existing_comparison_route\": \"existing-strict-complete-sequence\", \"source_Latin_sha256\": \"15362eb4628ea30a2b6e93f91e7804e9a2f9bd7c03c1b3220ec8527d609e9fd5\", \"English_sha256\": \"dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262\", \"target_Latin_sha256\": \"354bf98613b16aaf2b75195cb6aef23ed100a84c9fa0977e13a96988c7c127f7\", \"complete_target_proof_sha256\": \"7c4a74f3013f03680aead4d89c3396d05ad85d26c95ec8113efa500dbac9c8cf\", \"complete_absence_sha256\": \"cdc65022add28aa745273db8c7705dddef563e2a25f692316807e744aad11aa1\", \"source_peer_review_sha256\": \"7170c76e349a90be9740e2ad8e59272bbafa3cc39b92401fc5be3a6bb1eb024a\", \"raw_public_POS_changes\": 0, \"private_POS_materializations\": 0, \"new_finite_adoption\": false, \"English_expansion\": false, \"donor_fanout\": false}. No official1962English, English expansion, source repair or source-calendar equivalence by implication."
+        },
+        "entry_index_at_snapshot": 1186,
+        "entry_sha256": "f0e79dec458b1625cd685b6c014f249c1ad33d32b7bf5430b5eb60a7d99c5f5b",
+        "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml"
+      },
+      "proposal": {
+        "bytes": 1617,
+        "path": ".scratch/roman-sources/english-cleanliness/s-matthiae-apostoli--secret--corrected-reading.json",
+        "sha256": "2f2bd057ff8faf6d67356e2730a3eb21bb896a087f39079bc9d17fe90ec02983"
+      },
+      "proposed_reading_body": "May the prayer of Thy holy apostle Matthias, O Lord, accompany the sacrifices which we present to be sanctified unto Thy name; and by it do Thou cause us to be purified and defended. Through our Lord.",
+      "proposed_reading_body_sha256": "1757c6043674e055f4bc7633cc3c306e21b9edf1417a255fdaa3ebd9cf57704a",
+      "source": {
+        "artifact_manifest": {
+          "bytes": 2587,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-reader-completion-20261026-existing-forward-five-57a17611/artifact.toml",
+          "sha256": "d8293e45f2c91f2f750d4fbd0a2d5d754046823a4a305cae3e6fc23df5450f12"
+        },
+        "ia_leaf": 930,
+        "images": [
+          {
+            "bytes": 106733,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-931-200.png",
+            "sha256": "d2d6920d36bd4d76bb3ced65b8b8292d7b70f23444fc81831b1272b4695721d9"
+          },
+          {
+            "bytes": 941392,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-931-400.png",
+            "sha256": "043cb1dafbcfd8409b2bb6a043f4864cc72f9f298eb41cef65134ca9d3dfab5a"
+          },
+          {
+            "bytes": 99707,
+            "path": ".scratch/roman-sources/english-cleanliness/images/lasance-931-400-prayer.png",
+            "sha256": "c471d861a735a72f41cef49a90a996fe1a415fbf673ceb3f82a95779af068017"
+          }
+        ],
+        "literal_english_body_sha256": "dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262",
+        "payload": {
+          "bytes": 294,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-reader-completion-20261026-existing-forward-five-57a17611/english.tsv",
+          "sha256": "57a176114b198adab4748f16f8e04bb2e1d1a4d05e9c396485f4825e5eb0ea55"
+        },
+        "payload_line_bytes_sha256": "f27cf0b214eae87e20c2a92ab099a666e41181a1c4be7b6f099dc3a232b23211",
+        "payload_physical_line": 2,
+        "pdf_page": 931,
+        "printed_page": 932,
+        "publication_passage": {
+          "bytes": 2682,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-reader-completion-20261026-existing-forward-five-publish-s-matthiae-apostoli--main--secret--all--1.toml",
+          "sha256": "1d422cc523e866129727202cfaba9acce1e3cce0942aee1a648e2a5fea89936e"
+        },
+        "verify_passage": {
+          "bytes": 3233,
+          "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-reader-completion-20261026-existing-forward-five-verify-s-matthiae-apostoli--main--secret--all--1.toml",
+          "sha256": "bc0be0b96a1e45b9ccefc9da506f6daf5bfc233917b652ea8618d19c6c298b6d"
+        },
+        "whole_pdf": {
+          "bytes": 75268976,
+          "path": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+          "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
+        }
+      },
+      "source_epoch_change_declaration": {
+        "class": "existing-positive-additive-editorial-reading-proposal",
+        "new_proposed_reading_body_sha256": "1757c6043674e055f4bc7633cc3c306e21b9edf1417a255fdaa3ebd9cf57704a",
+        "not_authorized_by_this_record": "No source_epoch bypass, unreviewed activation, replacement historical translation, source payload edit, generic typo correction, or conclusion expansion.",
+        "positive_after": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "Independent complete source page-image review and EXISTING full-sequence method application, 2026-10-26",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 930,
+          "ia_leaf_range": [
+            930,
+            930
+          ],
+          "mass": "s-matthiae-apostoli",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-verify-s-matthiae-apostoli--main--secret--all--1",
+          "printed_page": "932",
+          "proper": "Secret",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-57a17611",
+          "publication_artifact_sha256": "57a176114b198adab4748f16f8e04bb2e1d1a4d05e9c396485f4825e5eb0ea55",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-publish-s-matthiae-apostoli--main--secret--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "May the prayer of Thy holy apostle Matthias, O Lord, accompany the sacrifices which we present to be sanctified unto Thy name; and by it do Thou cause us to be purified and defended Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Literal historical own-appointment English. Complete source and target actual endings were compared; no generic short-ending rule or new finite grant. Exact receiving application {\"application_path\": \"workflows/reviews/missal-reader-completion-2026-10-26/existing-source-methods-forward-five.json\", \"application_sha256\": \"5eba1be1b20d6fa73bd94db48a67f5e90a2add78ddbafcbbaf1ab3ea564f8f02\", \"context_index\": 3, \"context_sha256\": \"e15de78b039df53d8ade4a7c5ed66b3e2608e3223a22808c2a1840c3aaaca898\", \"target\": [\"s-matthiae-apostoli\", \"main\", \"Secret\", \"all\", 1], \"existing_comparison_route\": \"existing-strict-complete-sequence\", \"source_Latin_sha256\": \"15362eb4628ea30a2b6e93f91e7804e9a2f9bd7c03c1b3220ec8527d609e9fd5\", \"English_sha256\": \"dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262\", \"target_Latin_sha256\": \"354bf98613b16aaf2b75195cb6aef23ed100a84c9fa0977e13a96988c7c127f7\", \"complete_target_proof_sha256\": \"7c4a74f3013f03680aead4d89c3396d05ad85d26c95ec8113efa500dbac9c8cf\", \"complete_absence_sha256\": \"cdc65022add28aa745273db8c7705dddef563e2a25f692316807e744aad11aa1\", \"source_peer_review_sha256\": \"7170c76e349a90be9740e2ad8e59272bbafa3cc39b92401fc5be3a6bb1eb024a\", \"raw_public_POS_changes\": 0, \"private_POS_materializations\": 0, \"new_finite_adoption\": false, \"English_expansion\": false, \"donor_fanout\": false}. No official1962English, English expansion, source repair or source-calendar equivalence by implication."
+        },
+        "positive_after_sha256": "f0e79dec458b1625cd685b6c014f249c1ad33d32b7bf5430b5eb60a7d99c5f5b",
+        "positive_before": {
+          "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+          "collated": "Independent complete source page-image review and EXISTING full-sequence method application, 2026-10-26",
+          "collation_result": "confirmed",
+          "cycle": "all",
+          "form_id": "main",
+          "ia_leaf": 930,
+          "ia_leaf_range": [
+            930,
+            930
+          ],
+          "mass": "s-matthiae-apostoli",
+          "occurrence": 1,
+          "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-verify-s-matthiae-apostoli--main--secret--all--1",
+          "printed_page": "932",
+          "proper": "Secret",
+          "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-57a17611",
+          "publication_artifact_sha256": "57a176114b198adab4748f16f8e04bb2e1d1a4d05e9c396485f4825e5eb0ea55",
+          "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-reader-completion-20261026-existing-forward-five-publish-s-matthiae-apostoli--main--secret--all--1",
+          "translations": [
+            {
+              "lang": "en",
+              "rights": "public-domain",
+              "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+              "text": "May the prayer of Thy holy apostle Matthias, O Lord, accompany the sacrifices which we present to be sanctified unto Thy name; and by it do Thou cause us to be purified and defended Through our Lord."
+            }
+          ],
+          "witness": "lasance-1945",
+          "witness_note": "Literal historical own-appointment English. Complete source and target actual endings were compared; no generic short-ending rule or new finite grant. Exact receiving application {\"application_path\": \"workflows/reviews/missal-reader-completion-2026-10-26/existing-source-methods-forward-five.json\", \"application_sha256\": \"5eba1be1b20d6fa73bd94db48a67f5e90a2add78ddbafcbbaf1ab3ea564f8f02\", \"context_index\": 3, \"context_sha256\": \"e15de78b039df53d8ade4a7c5ed66b3e2608e3223a22808c2a1840c3aaaca898\", \"target\": [\"s-matthiae-apostoli\", \"main\", \"Secret\", \"all\", 1], \"existing_comparison_route\": \"existing-strict-complete-sequence\", \"source_Latin_sha256\": \"15362eb4628ea30a2b6e93f91e7804e9a2f9bd7c03c1b3220ec8527d609e9fd5\", \"English_sha256\": \"dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262\", \"target_Latin_sha256\": \"354bf98613b16aaf2b75195cb6aef23ed100a84c9fa0977e13a96988c7c127f7\", \"complete_target_proof_sha256\": \"7c4a74f3013f03680aead4d89c3396d05ad85d26c95ec8113efa500dbac9c8cf\", \"complete_absence_sha256\": \"cdc65022add28aa745273db8c7705dddef563e2a25f692316807e744aad11aa1\", \"source_peer_review_sha256\": \"7170c76e349a90be9740e2ad8e59272bbafa3cc39b92401fc5be3a6bb1eb024a\", \"raw_public_POS_changes\": 0, \"private_POS_materializations\": 0, \"new_finite_adoption\": false, \"English_expansion\": false, \"donor_fanout\": false}. No official1962English, English expansion, source repair or source-calendar equivalence by implication."
+        },
+        "positive_before_sha256": "f0e79dec458b1625cd685b6c014f249c1ad33d32b7bf5430b5eb60a7d99c5f5b",
+        "requires": "A separate reviewed, exact-identity/hash-bound execution or presentation record; preserve literal historical text and visible annotation."
+      }
+    }
+  ],
+  "schema": "triptych-scratch-existing-positive-reading-declarations/v1",
+  "source_review": {
+    "bytes": 44536,
+    "path": ".scratch/roman-sources/english-cleanliness/source-feature-review.json",
+    "sha256": "bdec3898ee7b7a01f636c3c1c845aeee986ac1093789e30f475bed10aba39a25"
+  },
+  "state": "Reviewable proposal only; no canonical mutations."
+}

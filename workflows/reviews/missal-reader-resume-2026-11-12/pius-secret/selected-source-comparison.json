@@ -1,0 +1,199 @@
+{
+  "schema": "triptych-pius-secret-retained-whole-merits/v1",
+  "state": "Private selected-case merits and English draft; no admission or install proposal",
+  "retained_assessment": {
+    "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/assessment.json",
+    "sha256": "01cc41b51a84240d1133dc70ea73f1afd479f229517f42108cb5c3f7bf39ce81"
+  },
+  "selected_case_pointer": "/cases/4",
+  "case": {
+    "id": "pius-x-secret",
+    "identity": [
+      "s-pii-x-papae-confessoris",
+      "main",
+      "Secret",
+      "all",
+      1
+    ],
+    "target_latin": "Oblationibus nostris, quaesumus, Domine, benigne susceptis, da nobis, ut haec divina mysteria, sancto Pio Summo Pontifice intercedente, sinceris tractemus obsequiis et fideli mente sumamus. Per Dominum.\n",
+    "target_latin_sha256": "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16",
+    "target_witness": {
+      "pdf_page": 730,
+      "printed_page": "649",
+      "entry": 3564,
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a"
+    },
+    "target_images": [
+      {
+        "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/images/cmaa-730-200.png",
+        "sha256": "f088883b00020c80c81307b72ffc47a5ed834744b81ffa1db591678272f3ad0e",
+        "bytes": 227590
+      },
+      {
+        "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/images/cmaa-730-400.png",
+        "sha256": "09c02d2497b56a390be598d58c034e4569b62800491bd8c8f8383c7c575c3a57",
+        "bytes": 251840
+      }
+    ],
+    "target_image_read": [
+      200,
+      400
+    ],
+    "target_appointment": "Die3septembris S.Pii X Papae et Conf.; own Secret at no.3564",
+    "old_wholes": [
+      "wilson1915-lent4-sunday-postcommunion"
+    ],
+    "source_points": [
+      {
+        "target": "Oblationibus nostris, quaesumus, Domine, benigne susceptis",
+        "support": "Absent from the complete WilsonSunday prayer. No retained named old whole in this assessment establishes this exact introductory offering clause."
+      },
+      {
+        "target": "da nobis, ut",
+        "support": "Wilson begins Da nobis misericors deus . ut; retained request frame, with divine address relocated/replaced."
+      },
+      {
+        "target": "haec divina mysteria",
+        "support": "Replaces Wilson sancta tua quibus incessanter explemur; both refer to holy sacramental gifts, but not the same words or complete thought."
+      },
+      {
+        "target": "sancto Pio Summo Pontifice intercedente",
+        "support": "New saint/title/intercession insertion, absent from Wilson. Conventional form may support an argument but is not already admitted here."
+      },
+      {
+        "target": "sinceris tractemus obsequiis et fideli mente sumamus",
+        "support": "Wilson whole contains exactly sinceris tractemus obsequiis . et semper fideli mente sumamus. Target omits semper; apparatus keeps semper in its other order variants rather than authorizing omission."
+      },
+      {
+        "target": "Per Dominum.",
+        "support": "Same literal short ending apart from capitalization/point spacing."
+      }
+    ],
+    "whole_comparison": "Wilson supplies a complete two-part prayer asking that the repeatedly received holy gifts be handled with sincere devotion and received with a faithful mind. PiusSecret keeps both linked predicates, their order, request frame and ending, but adds an offering preface, recasts the sacramental object, inserts Pius' intercession, omits semper, and reassigns the whole from postcommunion to Secret.",
+    "positive": "This is a concrete old whole with the distinctive paired petition intact, not merely unrelated fragments. The alterations can be argued as a functional adjustment to Secret and saint intercession using conventional liturgical wording. It therefore warrants one bounded exact whole-expression merits review without new acquisition.",
+    "contrary": "The selected modern whole is not a one-name or one-functional-word substitution. Its new opening, object phrase, intercessory insertion, omission and change of liturgical role may form an expressive adaptation. Wilson proves the central petition is old, but does not establish the complete modern arrangement or its freedom from protection. No blanket sibling decision reaches it.",
+    "class": "one-concrete-whole-template-merits-review-candidate",
+    "prior_gap_disposition": "Modern1954/1955 formulary remains held; older conventional phrases do not by themselves clear the complete modern prayer.",
+    "prior_bounded_negative": {
+      "mass": "s-pii-x-papae-confessoris",
+      "proper": "Secret",
+      "occurrence": 1,
+      "section": "sanctoral",
+      "verdict": "absent",
+      "confidence": "high",
+      "lane": "gap-sanctoral-3",
+      "target_locus": "printed p. 649, no. 3564; artifact PDF p. 730",
+      "corroboration": "Swept end to end by folded character 7-grams over the whole of four public-domain witnesses -- Pustet Ratisbon 1862 (1,572,371 folded characters), Tours Mame 1922 (1,681,602), Vatican typica 1604 (1,305,147) and Venice 1570 (1,046,101), appendices and Commons included -- on the incipit and on distinctive interior words together, over the column-correct -raw extractions. Positive control: the same index and the same query located 99 of this lane's other 103 orations at char-level agreement 0.893-0.994.",
+      "evidence": "Absent for the same reason as this Mass's Collect; the same Mame leaf (printed p. 708, artifact PDF p. 822) was read and carries no 3 September Mass. Best char-level agreement in any witness is 0.63, and that best window is a different prayer that happens to share the common formulaic vocabulary of a Secret."
+    },
+    "negative_qualification": "Preserved as a reported bounded search over four named witnesses. This assessment does not rerun that sweep or infer universal absence from a canonization/feast date. Reuse or adaptation of older material is assessed separately against complete retained prayers.",
+    "current_Latin_preimage": {
+      "name": "Secret",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "reasons": [
+          {
+            "kind": "witness-gap",
+            "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+          }
+        ]
+      }
+    },
+    "current_Latin_preimage_sha256": "f362a3fbb469b67a8c646b53eaba34af3394d45ed0966c2b8e524f3295e16407",
+    "current_English_preimage": {
+      "mass": "s-pii-x-papae-confessoris",
+      "form_id": "main",
+      "proper": "Secret",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+    },
+    "current_English_preimage_sha256": "e33b2ceb32a106a9354f6b627ce76fb2635c652d748a7e7454671fa8d7b9f092",
+    "publication_ready": false,
+    "root_admission": null,
+    "next_action": "Bounded PiusSecret whole-expression merits review can proceed on these exact bytes; independent source/English review and Root merits remain necessary. No translation or install plan has been authored.",
+    "whole_word_comparisons": [
+      {
+        "old_unit": "wilson1915-lent4-sunday-postcommunion",
+        "old_body_sha256": "aaff5c03cdfaa1914530ab52805709e400ef2ec6e77484b61596ba3c58cd9e0e",
+        "target_body_sha256": "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16",
+        "method": "Case-folded Latin words, punctuation ignored; exact spelling kept. All non-equal blocks shown. Similarity is not an authority or rights measure.",
+        "changes": [
+          {
+            "operation": "insert",
+            "old_words": "",
+            "target_words": "oblationibus nostris quaesumus domine benigne susceptis"
+          },
+          {
+            "operation": "delete",
+            "old_words": "misericors deus",
+            "target_words": ""
+          },
+          {
+            "operation": "replace",
+            "old_words": "sancta tua quibus incessanter explemur",
+            "target_words": "haec divina mysteria sancto pio summo pontifice intercedente"
+          },
+          {
+            "operation": "delete",
+            "old_words": "semper",
+            "target_words": ""
+          }
+        ]
+      }
+    ]
+  },
+  "complete_old_unit": {
+    "source": "wilson1915",
+    "printed": "39",
+    "pdf": 97,
+    "body": "Da nobis misericors deus . ut sancta tua quibus incessanter explemur . sinceris tractemus obsequiis . et semper fideli mente sumamus . per dominum.\n",
+    "image_checks": [
+      200,
+      400
+    ],
+    "note": "Apparatus records tractemus/tractemur O; semper fideli mente/fideli semper mente C/fideli mente semper O. Incidental old unit relevant to PiusX Secret, not a whole match.",
+    "appointment": "HEBD. IV. QUADRAGESIMAE / DIE DOMINICO AD HIERUSALEM / Ad complendum; complete prayer before Alia oratio ad missam, not the following Monday prayer.",
+    "role": "concrete whole older petition template for Pius X Secret; not an exact target whole",
+    "body_sha256": "aaff5c03cdfaa1914530ab52805709e400ef2ec6e77484b61596ba3c58cd9e0e",
+    "normalization": "Join printed wraps and division hyphens; remove stress accents, expand ligatures, retain lexical spelling and actual short ending; point spacing normalized. No long conclusion supplied.",
+    "images": [
+      {
+        "path": ".scratch/roman-sources/remaining-saints/images/wilson1915-p97-200.png",
+        "sha256": "99d51e91afb72d0638b38f7f5351096fd43673a4dea7148a264c5ea49868161f",
+        "bytes": 1059620
+      },
+      {
+        "path": ".scratch/roman-sources/remaining-saints/images/wilson1915-p97-400.png",
+        "sha256": "fd4a023775fc1a025d1e804aa7530f0a8a58902597184670df08496f1075fd9f",
+        "bytes": 2249044
+      }
+    ],
+    "image_read": [
+      200,
+      400
+    ]
+  },
+  "study_English": {
+    "text": "Graciously receive our offerings, we beseech Thee, O Lord, and grant that, through the intercession of Saint Pius, Supreme Pontiff, we may celebrate these divine mysteries with sincere devotion and receive them with a faithful mind. Through our Lord.\n",
+    "path": ".scratch/roman-sources/residual-20261113/pius-secret/study-english-draft.txt",
+    "sha256": "e903c088e8503efc55eabeb691e81fd63faeae988a2a57edd0417f86bc05444f",
+    "status": "Fresh assistant original study draft; independent review pending; no historical or approved translation claim",
+    "translation_choices": [
+      "Render the opening ablative absolute as a coordinated petition, preserving its offering/acceptance relation.",
+      "sinceris obsequiis as sincere devotion; fideli mente as a faithful mind.",
+      "Literal short Per Dominum cue retained as Through our Lord; no full execution claim."
+    ]
+  },
+  "coordinator_disposition": "Concrete complete old paired petition makes bounded whole-expression merits review useful. Target adds opening, recasts object, adds intercession, omits semper and changes role. No automatic source authority; keep held pending independent source/English and Root exact merits.",
+  "prior_five_case_holds": "Other five Pius/Joseph bodies remain held; only case names/dispositions in original assessment, no other complete target bodies copied here.",
+  "canonical_changes": false
+}

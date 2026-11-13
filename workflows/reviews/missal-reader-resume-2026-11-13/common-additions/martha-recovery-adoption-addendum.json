@@ -1,0 +1,76 @@
+{
+  "schema": "triptych-common-additions-martha-recovery-adoption-addendum/v1",
+  "date": "2026-11-13",
+  "prior_handoff": {
+    "path": ".scratch/modern-common-appointments/durable-installation/manifest-v2.json",
+    "sha256": "7dce1ffcce6f5f588e7585ef71d1e98e9a3793bbc72c599ed6b0fd7b6e4bbddb",
+    "byte_size": 2453
+  },
+  "source_model_acceptance_sha256": "505b625ea5501c0a2fbcbcd04bd53a7d7ce5b10c31c6c2f2b52e9948c0206549",
+  "first_recovery_code_acceptance_sha256": "5de805a892ab84d1cf35d81d36d3c8cca81d728b75ed33665ea5ba814177a6ed",
+  "martha_recovery_code_acceptance": {
+    "canonical_path": "workflows/reviews/missal-reader-resume-2026-11-13/common-additions/root-martha-recovery-code-admission.json",
+    "sha256": "ad093ccc6727b259754626c0acf47c39b503bbb16e0b6b046a928a2690596410"
+  },
+  "accepted_successor_manifest_sha256": "9caf5191064afae97f035963bfb0fd05910682f894a0a24b9131ad862cbc3a43",
+  "two_successor_operations": [
+    {
+      "path": "tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+      "preimage_sha256": "a3f3a1f61e9aa4e2faea889fb90417f103d969cc54821b1b976b6e4cb6f02639",
+      "candidate_path": ".scratch/modern-common-appointments/common-recovery-martha-successor/package/tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+      "candidate_sha256": "13315af4600c50e066ad7353d790b24023f59806ae926e1e42a6e0ef16866dbe",
+      "byte_size": 49140
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+      "preimage_sha256": "608c91f07582fe1589ac32c5ad0b79fb78c125289528cc2ecfcde50bf9ecf8d7",
+      "candidate_path": ".scratch/modern-common-appointments/common-recovery-martha-successor/package/src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+      "candidate_sha256": "4a7f0a1e261e7fc699c5964c4b9ccd726840956956e93b3face3edd8ff17a125",
+      "byte_size": 8762
+    }
+  ],
+  "folded_final_canonical_maps": [
+    {
+      "path": "tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+      "candidate_path": ".scratch/modern-common-appointments/common-recovery-martha-successor/package/tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+      "original_root_precondition": {
+        "kind": "unchanged",
+        "sha256": "df2d7e29847560ab020b7143a6137947987aa5d65b483e159125a65bed2edc1d"
+      },
+      "accepted_intermediate_sha256": "a3f3a1f61e9aa4e2faea889fb90417f103d969cc54821b1b976b6e4cb6f02639",
+      "final_candidate_sha256": "13315af4600c50e066ad7353d790b24023f59806ae926e1e42a6e0ef16866dbe"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+      "candidate_path": ".scratch/modern-common-appointments/common-recovery-martha-successor/package/src/sources/inventories/postconciliar-common-recovery-corrections-v1.toml",
+      "original_root_precondition": {
+        "kind": "absent"
+      },
+      "accepted_intermediate_sha256": "608c91f07582fe1589ac32c5ad0b79fb78c125289528cc2ecfcde50bf9ecf8d7",
+      "final_candidate_sha256": "4a7f0a1e261e7fc699c5964c4b9ccd726840956956e93b3face3edd8ff17a125"
+    }
+  ],
+  "unchanged_maps": "All 85 source metadata records, both model node changes, all English dictionaries/history, and the recovery inventory remain exactly as declared in the frozen prior bundle. Only the two recovery test/evidence after-bytes above supersede the corresponding earlier ready-index maps.",
+  "history": "Original receipts, ready indexes, source/model declarations, first code acceptance and review-time pending statements remain immutable. Their isolated success did not cover merged Martha. This separate accepted successor resolves the observed 167/168 derived-row failure without changing inventory or model definitions.",
+  "validation": {
+    "owning_tests": 16,
+    "failures": 0,
+    "errors": 0,
+    "baseline_exclusions": 0,
+    "independent_controls": 43,
+    "independent_findings": [],
+    "derived_rows": 168,
+    "stored_rows": 168,
+    "all_rows_exactly_preserved": true,
+    "wrong_edition_flags": 8,
+    "candidate_source_tree_ownership_errors": 0,
+    "unowned_json_path_negative_control": "refused"
+  },
+  "limits": [
+    "The historical OLM1981 cue remains Lectionary-only and unresolved. Its source/page facts are distinct from the2021 title/Hours bridge.",
+    "No body, modern Common default, whole2008 admission or publication permission.",
+    "Canonical installation still belongs to Root; actual final merged and installed gates remain required."
+  ],
+  "canonical_writes": false,
+  "source_publication_permission": false
+}

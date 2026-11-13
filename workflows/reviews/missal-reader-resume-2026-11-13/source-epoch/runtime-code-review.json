@@ -1,0 +1,74 @@
+{
+  "schema": "triptych-root-exact-source-compiler-runtime-review/v1",
+  "status": "accepted",
+  "code_parent": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "accepted_code_owned_successors": {
+    "scripts/_calendars.py": {
+      "before_sha256": "fa14a540f00ede6a13835cc65e50656a2384934f4d94e9d946d84a9a92d269f7",
+      "after_sha256": "b1e0b30e5f07c72dbc56a4daeed1326d53280732a3064de9f98d6738ce19347b"
+    },
+    "scripts/_missal_coverage.py": {
+      "before_sha256": "10dbc61463d145cb642d52829be8e026e4fee46720b2f3e9221fe3f6ff397f70",
+      "after_sha256": "8230ea23db5abd65eec1a323d50f96ed8fd52e17ff55e0395a5e5daecaa56dbb"
+    },
+    "scripts/_oration_conclusion_supplement.py": {
+      "before_sha256": null,
+      "after_sha256": "f315e9b9843f6960c076ec960e8c2c0e7eaed2c0ecf0920315a27de29912cb75"
+    },
+    "scripts/_oration_endings.py": {
+      "before_sha256": "6450ff3667f74fedcbd3874e928d46de23a3f9186519ed63f61f41204cb1113c",
+      "after_sha256": "f4dcb5af565042fd2a4c6f10a19bf6b641928373748fa34478e7fa72476125f2"
+    },
+    "scripts/_proper_finite_latin_20261029.py": {
+      "before_sha256": "265855db9750c54cc9bd503ba867cd72d17072ffe3ea80b0af8a27f45416fbf3",
+      "after_sha256": "295dcd80507643b4182f998c6ce8fc74c89e2278f0b60bb2fd02049b31162984"
+    },
+    "scripts/_proper_finite_latin_20261112_postconciliar.py": {
+      "before_sha256": null,
+      "after_sha256": "fb850ed016fc9e54e3d211d161df84518c3354e6f6fc31de30422a2c3b65a9ad"
+    },
+    "scripts/_proper_finite_latin_20261113_postconciliar_ten.py": {
+      "before_sha256": null,
+      "after_sha256": "9d168804f87079625812e61cb88ea179cabc87ac980c162645f29daeba4d0360"
+    },
+    "scripts/_proper_finite_latin_postconciliar.py": {
+      "before_sha256": null,
+      "after_sha256": "5a79e8f2bd5f087729bdbb46ea546cf30fd2fda6da5f0bb59477b19c42b663a1"
+    },
+    "scripts/_proper_qualified_latin.py": {
+      "before_sha256": "0136f6bb020938867d4ca1e75816c56c363a15603a8fede2aee9126c96b24949",
+      "after_sha256": "6e4b31a28f52284f663b0321461cd65c96683de5f301585b1de00258d483f23f"
+    },
+    "scripts/_source_local_actor_sequences.py": {
+      "before_sha256": null,
+      "after_sha256": "cdb2ff638a476411393be613ae726bb367d2b5d0bc7430afa28f065c0ac65ea7"
+    },
+    "tools/mass-propers": {
+      "before_sha256": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+      "after_sha256": "3335f7912c317026292c87f2ad9b9976e5e396effa45cf82edb0e324da886c6b"
+    }
+  },
+  "proposal_sha256": "6e25d4802b721e3d2c022f56b02cc4d5d56563e055fbb3a049690632c91072cc",
+  "patch_sha256": "9fc46e6108794d41761f70c38069f2ac1113e2c003e7ca7984c31c9490891db5",
+  "actual_root_evidence": [
+    {
+      "path": ".scratch/root/runtime-forty-cli-structural-source-materialization.json",
+      "sha256": "b6aa3cd1f8e8d3c30165f66519b35a5520c04c9b91396b67201378e5bb09597f"
+    },
+    {
+      "path": ".scratch/root/increment-22-31-materialization/receipt.json",
+      "sha256": "35eb6fd2207b61b5f50baee577108895e0e7787662f4652476f1d9abc570ff86"
+    },
+    {
+      "path": ".scratch/root/increment-32-36-materialization/receipt.json",
+      "sha256": "b008d642b5a7bb32cc6ea8e0a8044176a7d98dd4aa856d863f24e1ddf001ab30"
+    },
+    {
+      "path": ".scratch/root/pius-ending-runtime-successor-adoption.json",
+      "sha256": "785abf7a18f23935f91f1b11bcddad8039d72cd2b12b788558f8a7e6889f0bd4"
+    }
+  ],
+  "root_review": "Composition review of previously admitted code, not new logic review. Rehashed exact11 staged postimages and80cb parent preimages; verified every successor against actual Root adoption/materialization evidence; reproduced full aggregate1960-line patch. Prior component merits and bounds remain controlling.",
+  "scope": "Permit only these exact code-owned11 successors in finite source compiler. Every other loaded repository file retains committed-parent equality; source metadata cannot add runtime successors. No source/body/rights or fixture acceptance is inferred.",
+  "canonical_writes": false
+}

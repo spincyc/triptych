@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Original Lasance/Walsh revised-1945 English on ordinary pages: existing United States nonrenewal of A110108/A192159, with unchanged insert-excluded expression anchor artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759, SHA256 80b34759fb18ec60f6205460c2ac24dc9e4a861938a94ef1f8e04a08a398ac9a. See src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Lettered inserts 1298a-1298n and 1302a-1302d excluded. No scan-image or whole mixed-book publication authority."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+provenance = "Exact already-admitted historical English copied from passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-publish-lent-2-monday--main--oratio-super-populum--all--1, TSV physical line 70, donor lent-2-monday/main/Oratio super populum/all/1. The same complete Latin and English were independently reviewed for the recipient Passion Wednesday on 2026-11-12. The original verification passage, historical Lent II Monday locus, PDF identity and leaf range remain unchanged. This new TSV records only the independently established recipient identity; it does not claim a historical Wednesday appointment."
+transformation = "Copy the complete donor English bytes without normalization, punctuation change, expansion or added response. Write one separate recipient TSV row with mass passion-wednesday, form_id main, proper Oratio super populum, cycle all and occurrence 1. Retain the original verification-PDF derivation and historical source locus. The new artifact changes the publication carrier identity only; the donor remains unchanged."
+retrieved = "2026-11-13"
+sha256 = "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7"
+byte_size = 278
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Recipient carrier required by the existing mass-propers exact TSV owner guard. Complete unchanged English SHA256 64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f; complete unchanged Latin SHA256 75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283. Prior donor carrier SHA256 2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e and its line 70 remain the exact quotation source. No fresh rights grant, source-date inference, full ending, frame or runtime authority."

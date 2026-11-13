@@ -1,0 +1,115 @@
+{
+  "schema": "triptych-study-qualification-actual-320-browser-addendum/v1",
+  "status": "PASS",
+  "viewport": {
+    "width": 320,
+    "height": 900
+  },
+  "actual": {
+    "results": [
+      {
+        "identity": [
+          "easter-vigil",
+          "main",
+          "Prayer after the First Reading",
+          "all",
+          1
+        ],
+        "exact_note": true,
+        "selection_note": true,
+        "visible": true,
+        "width": 320,
+        "note_overflow": false,
+        "selected_body_sha256": "6c1315dcc0dc085fb6bf21c89e2040c0a1683d972bb4a96d30b2816bb00d5a19"
+      },
+      {
+        "identity": [
+          "easter-3-wednesday",
+          "main",
+          "Communion Antiphon",
+          "all",
+          1
+        ],
+        "exact_note": true,
+        "selection_note": true,
+        "visible": true,
+        "width": 320,
+        "note_overflow": false,
+        "selected_body_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea"
+      },
+      {
+        "identity": [
+          "easter-3-friday",
+          "main",
+          "Communion Antiphon",
+          "all",
+          1
+        ],
+        "exact_note": true,
+        "selection_note": true,
+        "visible": true,
+        "width": 320,
+        "note_overflow": false,
+        "selected_body_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94"
+      },
+      {
+        "identity": [
+          "pentecost",
+          "extended-vigil",
+          "Collect (before the readings)",
+          "all",
+          1
+        ],
+        "exact_note": true,
+        "selection_note": true,
+        "visible": true,
+        "width": 320,
+        "note_overflow": false,
+        "selected_body_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066"
+      },
+      {
+        "identity": [
+          "pentecost",
+          "extended-vigil",
+          "Collect (after Gloria)",
+          "all",
+          1
+        ],
+        "exact_note": true,
+        "selection_note": true,
+        "visible": true,
+        "width": 320,
+        "note_overflow": false,
+        "selected_body_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e"
+      },
+      {
+        "identity": [
+          "all-saints",
+          "main",
+          "Entrance Antiphon",
+          "all",
+          1
+        ],
+        "exact_note": true,
+        "selection_note": true,
+        "visible": true,
+        "width": 320,
+        "note_overflow": false,
+        "selected_body_sha256": "8619e91f083fe507174da1c631422c015f70eebb7ee0390cb214288fdf9f5384"
+      }
+    ],
+    "negative_controls": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "full_page_screenshot": {
+    "path": ".scratch/modern-study-qualification-addendum/browser-actual-320.png",
+    "sha256": "e919faeb54321f2d5bdfcb783be783a00c91089d0c3729f1f24b3ecb26243534"
+  },
+  "scope": "Actual Chromium CDP emulated 320px viewport, all six unchanged bodies and exact visible qualifications. Supplements command-line run whose actual viewport minimum was500px."
+}

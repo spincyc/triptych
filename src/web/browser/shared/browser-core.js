@@ -1919,11 +1919,11 @@ window.Triptych = (function () {
   const SPEAKER_WORDS = {
     priest: 'Priest', server: 'Server', all: 'All', bishop: 'Bishop',
     communicant: 'Communicant', 'deacon-or-priest': 'Deacon or priest',
-    lector: 'Reader', deacon: 'Deacon'
+    lector: 'Reader', deacon: 'Deacon', people: 'People'
   };
   const SPEAKER_CUES = {
     priest: 'P', server: 'S', all: 'All', bishop: 'B',
-    communicant: 'C', 'deacon-or-priest': 'D/P', lector: 'L', deacon: 'D'
+    communicant: 'C', 'deacon-or-priest': 'D/P', lector: 'L', deacon: 'D', people: 'People'
   };
   const DIALOGUE_ROLE_WORDS = { versicle: 'Versicle', response: 'Response' };
   const DIALOGUE_ROLE_CUES = { versicle: '℣', response: '℟' };
@@ -2273,7 +2273,7 @@ window.Triptych = (function () {
         return;
       }
       if (node.nodeType !== 1) return;
-      if (node.matches(COPY_DEFERS)) throw DEFER;
+      if (node.matches(COPY_DEFERS) && !node.hasAttribute('data-source-local-cue')) throw DEFER;
       if (node.matches(COPY_SKIP) || node.hidden) return;
       const style = getComputedStyle(node);
       if (style.display === 'none' || style.visibility === 'hidden') return;
@@ -2671,6 +2671,18 @@ window.Triptych = (function () {
     if (!execution || execution.state !== 'source-derived-complete') return null;
     const original = orationFor(owner, language, held.translationWitness || null);
     const member = execution.member;
+    const qualifiedSource = Object.prototype.hasOwnProperty.call(member, 'qualification');
+    const oldMethod = 'roman-1962-rg115-conclusion-execution-20261112';
+    const newMethod = 'missal-finite-oration-conclusion-execution-20261112-v2';
+    const newGroup = execution.execution_extent && execution.execution_extent.method_id === newMethod;
+    const newMember = member.source_method === newMethod;
+    if ((newGroup && ![oldMethod, newMethod].includes(member.source_method)) ||
+        (member.source_method && ![oldMethod, newMethod].includes(member.source_method)) ||
+        (newMember && (!qualifiedSource || !newGroup)) || (qualifiedSource && !newMember) ||
+        (qualifiedSource && (typeof member.qualification !== 'string' || !member.qualification.trim() ||
+          !member.body_fidelity || typeof member.body_fidelity !== 'object' || Array.isArray(member.body_fidelity)))) {
+      throw new Error('conclusion execution lacks its exact source qualification');
+    }
     if (!original.text || original.text !== member.source_text) {
       throw new Error('conclusion execution no longer matches its exact quoted source');
     }
@@ -2686,8 +2698,14 @@ window.Triptych = (function () {
       stanzas: sourceStructure.stanzas.filter(function (offset) { return offset < prefix; }),
       actions: sourceStructure.actions.filter(function (action) { return action.end <= prefix; })
     };
-    const body = composedBody(member.priest_text, structure,
-      composedLabel((member.role === 'petition' ? 'Prayer in the shared conclusion group' :
+    const correction = member.display_correction;
+    // These three finite readings have no source-owned internal structure.
+    // If one is added later, retain the admitted execution until its display
+    // offsets receive a separate review; never reuse offsets after insertion.
+    const corrected = correction && correction.state === 'applied' && !sourceStructure;
+    const body = composedBody(corrected ? member.display_text : member.priest_text, structure,
+      composedLabel((corrected ? (member.role === 'petition' ? 'Editorial reading in the shared conclusion group' : 'Editorial reading with sourced conclusion') :
+        member.role === 'petition' ? 'Prayer in the shared conclusion group' :
         'Prayer with sourced conclusion') + ' · ' + languageName(language)));
     body.dataset.speaker = 'priest';
     wrapper.appendChild(body);
@@ -2699,21 +2717,61 @@ window.Triptych = (function () {
       wrapper.appendChild(response);
     }
     container.appendChild(wrapper);
+    if (correction) {
+      const note = el('p', 'composed-note conclusion-editorial-note', corrected
+        ? correction.annotation
+        : 'Editorial correction unavailable; the source-derived execution is retained.');
+      note.lang = 'en';
+      note.setAttribute('role', 'note');
+      note.setAttribute('data-copy', 'skip');
+      container.appendChild(note);
+    }
     const qualification = el('p', 'composed-note conclusion-execution-qualification',
-      'Source-derived execution for this dated Mass; the historical wording and ending cue are retained below.' +
-      (language === 'en' ? ' Historical English, not an approved liturgical translation.' : ''));
+      qualifiedSource
+        ? (held.conclusionExecution.scope === 'proper-rite'
+          ? 'Source-derived execution for this appointed prayer; the source quotation is retained below. '
+          : 'Source-derived execution for this dated Mass; the source quotation is retained below. ') + member.qualification
+        : (held.conclusionExecution.scope === 'proper-rite'
+          ? 'Source-derived execution for this appointed prayer; the historical wording and ending cue are retained below.'
+          : 'Source-derived execution for this dated Mass; the historical wording and ending cue are retained below.') +
+          (language === 'en' ? ' Historical English, not an approved liturgical translation.' : ''));
     qualification.lang = 'en';
     qualification.setAttribute('data-copy', 'skip');
     container.appendChild(qualification);
     const quotation = el('details', 'conclusion-source-quotation');
     quotation.setAttribute('data-copy', 'skip');
-    quotation.appendChild(el('summary', 'composed-note', 'Historical source quotation and ending cue'));
+    quotation.appendChild(el('summary', 'composed-note', qualifiedSource ? 'Source quotation' : 'Historical source quotation and ending cue'));
     const quoted = composedBody(member.source_text, original.structure, null);
     quoted.lang = language;
     quotation.appendChild(quoted);
     quotation.appendChild(translationCredits(original));
     container.appendChild(quotation);
     return Object.assign({}, original, {shown: true, executionScoped: true});
+  }
+
+  function latinStudyPresentation(owner) {
+    const latin = owner.latin, provenance = latin && latin.provenance;
+    if (!provenance || provenance.relationship !== 'source-based-latin-study-reconstruction') return null;
+    const publication = latin.publication;
+    const present = function (text) { return typeof text === 'string' && !!text.trim(); };
+    const sourceId = function (text, prefix) {
+      return present(text) && text.startsWith(prefix) && /^[a-zA-Z0-9_.-]+$/.test(text);
+    };
+    const surfaces = publication && publication.surfaces;
+    if (latin.withheld !== false || latin.state !== undefined && latin.state !== 'available' ||
+        !present(owner.text) || !/^[a-f0-9]{64}$/.test(latin.text_sha256 || '') ||
+        provenance.status !== 'collated' || !sourceId(provenance.source_id, 'passage.') ||
+        !present(provenance.source_date) || !['medium', 'high'].includes(provenance.provenance_confidence) ||
+        !publication || publication.status !== 'permitted' || publication.basis !== 'qualified-nonoriginal-adaptation' ||
+        !Array.isArray(surfaces) || surfaces.slice().sort().join(',') !== 'cli,corpus-data,download,print,public-git,web' ||
+        !Array.isArray(publication.source_ids) || !publication.source_ids.length ||
+        new Set(publication.source_ids).size !== publication.source_ids.length ||
+        !publication.source_ids.every(function (id) { return sourceId(id, 'artifact.'); }) ||
+        !present(latin.note) || !present(publication.notice)) {
+      throw new Error('Latin study reconstruction lacks its complete qualified source presentation');
+    }
+    return {note: latin.note, notice: publication.notice,
+      credit: 'Latin study reconstruction source: ' + provenance.source_date};
   }
 
   function renderSingleOrationState(container, owner, held, scope, parentSource) {
@@ -2732,11 +2790,22 @@ window.Triptych = (function () {
     // A Latin fallback is the owner's own text, and carries its structure;
     // a structure travels only with the exact words it was checked against.
     const structure = oration.text ? oration.structure : (owner.text_structure || null);
+    const study = shown && shownLang === SOURCE_LANGUAGE ? latinStudyPresentation(owner) : null;
     if (shown) {
-      // A `mixed` body is the Missal's own wording of a scriptural text, so it
-      // is not labelled as a composition that is not scripture.
-      const kind = (owner.source || parentSource) === 'mixed'
-        ? 'Missal text' : 'Composed text — not scripture';
+      const bodySource = owner.source || parentSource;
+      let kind = bodySource === 'mixed' ? 'Missal text' : 'Composed text — not scripture';
+      if (bodySource === 'scripture') {
+        const coverage = unitCoverageOf(owner);
+        const language = coverage && (coverage.languages || []).find(function (row) { return row.lang === shownLang; });
+        const witness = language && (language.witnesses || []).find(function (row) {
+          return oration.source && (row.id === oration.source || row.source_id === oration.source ||
+            (row.aliases || []).includes(oration.source));
+        });
+        // The grade belongs to the selected witness. An unrelated witness or
+        // an unclassified translation does not acquire a historical claim.
+        const relationship = witness ? witness.relationship : shownLang === SOURCE_LANGUAGE && language && language.relationship;
+        kind = relationship === 'historical-antecedent' ? 'Historical scriptural text' : 'Scriptural text';
+      }
       const composed = composedBody(shown, structure, composedLabel(kind +
         (shownLang !== SOURCE_LANGUAGE ? ' · ' + languageName(shownLang)
           : (asked !== SOURCE_LANGUAGE ? ' · ' + languageName(SOURCE_LANGUAGE) : ''))));
@@ -2745,6 +2814,15 @@ window.Triptych = (function () {
         composed.setAttribute('data-unit-original', SOURCE_LANGUAGE);
       }
       container.appendChild(composed);
+      if (study) {
+        [study.note].concat(study.notice === study.note ? [] : [study.notice]).forEach(function (text) {
+          const note = el('p', 'composed-note latin-source-qualification', text);
+          note.lang = 'en'; note.setAttribute('role', 'note'); note.setAttribute('data-copy', 'skip');
+          container.appendChild(note);
+        });
+        const credit = el('p', 'composed-note latin-source-credit', study.credit);
+        credit.lang = 'en'; credit.setAttribute('data-copy', 'skip'); container.appendChild(credit);
+      }
       const latinProvenance = owner.latin && owner.latin.provenance;
       if (shownLang === SOURCE_LANGUAGE && owner.latin && owner.latin.withheld === false &&
           owner.latin.state !== 'unavailable' &&
@@ -2807,7 +2885,8 @@ window.Triptych = (function () {
       clause(asked);
     }
     if (asked !== SOURCE_LANGUAGE && !held.separateOriginal) {
-      if (shown && shownLang === SOURCE_LANGUAGE) sentences.push('The Latin original is shown.');
+      if (shown && shownLang === SOURCE_LANGUAGE) sentences.push(study
+        ? 'The Latin study reconstruction is shown.' : 'The Latin original is shown.');
       else if (!latinHeld) clause(SOURCE_LANGUAGE);
     }
     const note = el('p', 'composed-note unit-absence', sentences.join(' '));
@@ -2896,7 +2975,192 @@ window.Triptych = (function () {
     container.appendChild(translationCredits(oration));
   }
 
+  // This is an offered historical reading of one source, never an automatic
+  // execution of the current Mass. The producer/executor owns its authority.
+  function sourceLocalActorReading(owner, held) {
+    try {
+      const offer = held.sourceLocalActorOffer;
+      if (!offer || offer.state !== 'available' || offer.scope !== 'source-local-1970' ||
+          held.conclusionExecution || held.nameExecution || held.executionSource) return null;
+      const target = offer.target;
+      if (!Array.isArray(target) || target.length !== 5 ||
+          !target.slice(0, 4).every(value => typeof value === 'string' && value.trim()) ||
+          !Number.isInteger(target[4]) || target[4] < 1 || owner.name !== target[2] ||
+          (owner.form_id || 'main') !== target[1]) return null;
+      const equal = (left, right) => {
+        const ordered = value => Array.isArray(value) ? value.map(ordered) :
+          value && typeof value === 'object' ? Object.keys(value).sort().reduce((out, key) => {
+            out[key] = ordered(value[key]); return out;
+          }, {}) : value;
+        return JSON.stringify(ordered(left)) === JSON.stringify(ordered(right));
+      };
+      const coverage = unitCoverageOf(owner);
+      const coordinate = coverage && coverage.target_id.split(':');
+      if (!coordinate || coordinate.length !== 3 ||
+          !equal(decodeURIComponent(coordinate[0]).split(':').map(decodeURIComponent),
+            ['postconciliar', 'proper', target[0], target[1], target[2], String(target[4])]) ||
+          decodeURIComponent(coordinate[1]) !== (coverage.cycle_family || 'all') ||
+          decodeURIComponent(coordinate[2]) !== target[3]) return null;
+      const sources = owner.source_local_actor_sequences;
+      if (!Array.isArray(sources) || sources.length !== 1) return null;
+      const source = sources[0];
+      const method = 'postconciliar-finite-source-local-actor-sequences-20261113';
+      if (!source || source.schema !== 'triptych-source-local-actor-source/v1' ||
+          source.method_id !== method || source.calendar !== 'postconciliar' ||
+          !equal(source.target, target) || source.source_preserved !== true ||
+          source.target_2008_authenticated !== false ||
+          source.context.execution_scope !== offer.scope ||
+          typeof source.qualification !== 'string' || !source.qualification.trim()) return null;
+      const asked = held.orations || SOURCE_LANGUAGE;
+      const languages = held.textDisplay === 'latin-and-selected' && asked !== SOURCE_LANGUAGE
+        ? [SOURCE_LANGUAGE, asked] : [asked];
+      if (!languages.every(language => ['en', 'la'].includes(language))) return null;
+      const readings = [];
+      for (const language of languages) {
+        const original = orationFor(owner, language, language === SOURCE_LANGUAGE ? null : held.translationWitness || null);
+        if (original.missing || original.lang !== language || !original.text) return null;
+        const candidates = language === SOURCE_LANGUAGE ? [owner.latin] :
+          (owner.translations || []).filter(row => row.lang === language && row.text === original.text &&
+            (!held.translationWitness || coverageWitnessMatches(owner, language, held.translationWitness, row)));
+        if (candidates.length !== 1) return null;
+        const publication = candidates[0] && candidates[0].publication_owner;
+        const part = source.languages[language];
+        if (!part || !publication || publication.schema !== 'triptych-source-local-publication-owner/v1' ||
+            publication.calendar !== source.calendar || publication.language !== language ||
+            !equal(publication.target, target) || publication.passage_id !== part.publication_passage_id ||
+            publication.body_sha256 !== part.body_sha256 || !Array.isArray(part.sequence)) return null;
+        const accounted = [];
+        const spanText = span => {
+          if (!span || span.offset_units !== 'utf16' || !Number.isInteger(span.start) ||
+              !Number.isInteger(span.end) || span.start < 0 || span.end <= span.start || span.end > original.text.length) {
+            throw new Error('Invalid source-local span');
+          }
+          accounted.push([span.start, span.end]);
+          return original.text.slice(span.start, span.end);
+        };
+        const sequence = part.sequence.map(spec => {
+          const unit = Object.assign({}, spec);
+          if (!Array.isArray(unit.source_hooks) || !unit.source_hooks.length ||
+              !unit.source_hooks.every(value => typeof value === 'string' && value.trim())) throw new Error('Unbound source-local unit');
+          if (unit.kind === 'action') {
+            if (unit.role !== 'silent-prayer' || unit.action !== 'silent-prayer' || unit.participants !== 'all' ||
+                unit.speaker !== null || unit.dialogue_role !== null || unit.text !== null ||
+                unit.spoken_text !== null || unit.source_span !== null) throw new Error('Invalid source-local action');
+          } else {
+            if (unit.kind !== 'spoken' || ![null, 'priest', 'people'].includes(unit.speaker) ||
+                ![null, 'response'].includes(unit.dialogue_role)) throw new Error('Invalid source-local turn');
+            if (unit.source_span !== null) unit.text = spanText(unit.source_span);
+            else if (unit.role !== 'response' || unit.dialogue_role !== 'response' || unit.speaker !== 'people' ||
+                     unit.response_source !== 'separately-sourced-response' || unit.text !== 'Amen.') throw new Error('Invalid source-local response');
+            if (unit.nonspoken_role_marker && (unit.dialogue_role !== 'response' ||
+                unit.nonspoken_role_marker.text !== 'R.' || spanText(unit.nonspoken_role_marker) !== 'R.')) throw new Error('Invalid source marker');
+            if (typeof unit.text !== 'string' || !unit.text.trim()) throw new Error('Empty source-local turn');
+          }
+          return unit;
+        });
+        if (sequence.filter(unit => unit.dialogue_role === 'response').length !== 1 ||
+            sequence[sequence.length - 1].role !== 'response') return null;
+        let end = 0;
+        for (const span of accounted.sort((a, b) => a[0] - b[0])) {
+          if (span[0] < end || original.text.slice(end, span[0]).trim()) return null;
+          end = span[1];
+        }
+        if (original.text.slice(end).trim()) return null;
+        const expected = {
+          schema: 'triptych-source-local-actor-sequence/v1', state: 'source-derived-complete',
+          execution_extent: {state: 'source-derived-complete', method_id: method},
+          execution_scope: offer.scope, calendar: source.calendar, target: target, language: language,
+          source_text: original.text, body_sha256: part.body_sha256, source_preserved: true,
+          target_2008_authenticated: false, qualification: source.qualification,
+          source_selection: source.context.source_selection, sequence: sequence
+        };
+        const result = offer.languages[language];
+        if (!equal(result, expected)) return null;
+        readings.push({language: language, result: result});
+      }
+      // Freeze the validated local view against later mutation of adapter data.
+      return JSON.parse(JSON.stringify(readings));
+    } catch (_error) { return null; }
+  }
+
+  function sourceLocalActorSequence(reading) {
+    const result = reading.result;
+    const wrapper = el('div', 'source-local-actor-sequence');
+    wrapper.lang = reading.language;
+    wrapper.setAttribute('data-execution-scope', result.execution_scope);
+    wrapper.setAttribute('data-source-target', JSON.stringify(result.target));
+    const label = el('p', 'composed-label source-local-actor-label', '1970 source sequence');
+    label.lang = 'en'; label.setAttribute('data-copy', 'skip');
+    wrapper.appendChild(label);
+    for (const unit of result.sequence) {
+      if (unit.kind === 'action') {
+        const action = el('p', 'composed-note source-local-actor-action', 'All pray in silence');
+        action.lang = 'en'; action.setAttribute('data-copy', 'skip');
+        action.setAttribute('data-action', 'silent-prayer'); action.setAttribute('data-participants', 'all');
+        wrapper.appendChild(action);
+        continue;
+      }
+      const turn = el('p', 'composed source-local-actor-turn');
+      if (unit.speaker) turn.setAttribute('data-speaker', unit.speaker);
+      if (unit.dialogue_role) turn.setAttribute('data-dialogue-role', unit.dialogue_role);
+      const cue = structuredTurnCue(unit);
+      if (cue) {
+        cue.setAttribute('data-source-local-cue', 'true');
+        cue.setAttribute('data-copy', 'skip');
+        turn.appendChild(cue);
+      }
+      if (unit.nonspoken_role_marker) turn.setAttribute('data-printed-marker', unit.nonspoken_role_marker.text);
+      turn.appendChild(el('span', 'source-local-actor-words', unit.text));
+      wrapper.appendChild(turn);
+    }
+    const qualification = el('p', 'composed-note source-local-actor-qualification', result.qualification);
+    qualification.lang = 'en'; qualification.setAttribute('role', 'note'); qualification.setAttribute('data-copy', 'skip');
+    wrapper.appendChild(qualification);
+    const quotation = el('details', 'source-local-actor-quotation');
+    quotation.setAttribute('data-copy', 'skip');
+    quotation.appendChild(el('summary', 'composed-note', 'Source quotation'));
+    quotation.appendChild(el('p', 'composed source-local-actor-source-text', result.source_text));
+    wrapper.appendChild(quotation);
+    return wrapper;
+  }
+
   function renderOrationState(container, owner, held, scope, parentSource) {
+    const readings = sourceLocalActorReading(owner, held);
+    if (!readings) return renderQuotedOrationState(container, owner, held, scope, parentSource);
+    const controls = el('div', 'source-local-actor-controls');
+    controls.setAttribute('data-copy', 'skip');
+    const toggle = el('button'); toggle.type = 'button';
+    controls.appendChild(toggle);
+    const content = el('div', 'source-local-actor-reading');
+    let selected = held.sourceLocalActorScope === 'source-local-1970';
+    let result;
+    function render() {
+      const stillBound = JSON.stringify(sourceLocalActorReading(owner, held)) === JSON.stringify(readings);
+      if (!stillBound) selected = false;
+      controls.hidden = !stillBound;
+      clear(content);
+      result = renderQuotedOrationState(content, owner, held, scope, parentSource);
+      if (!result.creditsShown) orationCredits(content, result);
+      result.creditsShown = true;
+      if (selected) readings.forEach(reading => {
+        const side = readings.length === 1 ? content : Array.from(content.querySelectorAll('[data-text-language]')).find(node => node.getAttribute('data-text-language') === reading.language);
+        const quoted = side.querySelector('.composed');
+        const sequence = sourceLocalActorSequence(reading);
+        quoted.parentNode.insertBefore(sequence, quoted);
+        quoted.remove();
+      });
+      if (selected) content.querySelectorAll('.composed-note, .translation-credits').forEach(note => note.setAttribute('data-copy', 'skip'));
+      content.setAttribute('data-source-local-view', selected ? 'sequence' : 'quotation');
+      toggle.textContent = selected ? 'Show source quotation' : 'Read the 1970 source sequence';
+      toggle.setAttribute('aria-pressed', String(selected));
+    }
+    toggle.addEventListener('click', function () { selected = !selected; render(); });
+    render();
+    container.appendChild(controls); container.appendChild(content);
+    return result;
+  }
+
+  function renderQuotedOrationState(container, owner, held, scope, parentSource) {
     const asked = held.orations || SOURCE_LANGUAGE;
     if (held.textDisplay !== 'latin-and-selected' || asked === SOURCE_LANGUAGE) {
       return renderSingleOrationState(container, owner, held, scope, parentSource);
@@ -2947,6 +3211,49 @@ window.Triptych = (function () {
     result.creditsShown = true;
     result.shown = result.shown || originalResult.shown;
     return result;
+  }
+
+  function citationReadingRole(citation, source) {
+    if (!Object.prototype.hasOwnProperty.call(citation, 'reading_role')) return null;
+    const role = citation.reading_role;
+    if (!role || typeof role !== 'object' || Array.isArray(role) ||
+        Object.keys(role).sort().join(',') !== 'kind,locus,schema,source_id' ||
+        role.schema !== 'triptych-proper-citation-role/v1' ||
+        !['embedded-quotation', 'following-psalm'].includes(role.kind) ||
+        typeof role.source_id !== 'string' || !/^passage\.[a-z0-9][a-z0-9_.-]*$/.test(role.source_id) ||
+        typeof role.locus !== 'string' || !role.locus.trim() || source !== 'mixed' ||
+        role.kind === 'following-psalm' && citation.book !== 'Psalms') {
+      throw new Error('invalid source-owned Proper citation role');
+    }
+    return role;
+  }
+
+  function appendProperCitation(container, citation, source, bodyShown, bible, fragments, numbering, companion, showRef) {
+    const role = citationReadingRole(citation, source);
+    const rendered = renderScriptureCitation(citation, bible, fragments, numbering, {showRef: showRef === true}, companion);
+    if (role && role.kind === 'embedded-quotation' && bodyShown) {
+      const apparatus = el('details', 'source-citation-apparatus');
+      apparatus.setAttribute('data-copy', 'skip');
+      apparatus.setAttribute('data-citation-role', role.kind);
+      apparatus.setAttribute('data-citation-source', role.source_id);
+      apparatus.appendChild(el('summary', 'composed-note',
+        'Scripture reference · ' + citation.ref + ' · quoted in the text above'));
+      apparatus.appendChild(el('p', 'composed-note', 'Reference text only; not an additional appointed reading.'));
+      apparatus.appendChild(rendered);
+      container.appendChild(apparatus);
+      return;
+    }
+    if (role && role.kind === 'following-psalm') {
+      const editions = [bible, companion && companion.bible].filter(Boolean)
+        .map(function (one) { return one.label || one.id; }).filter(Boolean)
+        .filter(function (name, index, all) { return all.indexOf(name) === index; });
+      const note = el('p', 'unit-claim',
+        'Following psalm · Bible reconstruction' + (editions.length ? ' · ' + editions.join(' / ') : '') +
+        '; target Missal wording not established. Doxology and antiphon repetition are not supplied here.');
+      note.setAttribute('data-unit-claim', 'bible-reconstruction');
+      container.appendChild(note);
+    }
+    container.appendChild(rendered);
   }
 
   function renderScriptureCitation(citation, bible, fragments, numbering, options, companion) {
@@ -3060,13 +3367,14 @@ window.Triptych = (function () {
 
     const citations = proper.citations || [];
     // One quiet claim before the passages it qualifies, never a note per verse.
-    const claim = citations.length
-      ? citationClaim(proper, null, proper.source, missalTextShown, companion ? null : bible) : null;
+    const claim = citations.some(function (citation) {
+      const role = citationReadingRole(citation, proper.source);
+      return !role || role.kind === 'embedded-quotation' && !missalTextShown;
+    }) ? citationClaim(proper, null, proper.source, missalTextShown, companion ? null : bible) : null;
     if (claim) section.appendChild(claim);
     for (const citation of citations) {
-      section.appendChild(
-        renderScriptureCitation(citation, bible, fragments, numbering, { showRef: false }, companion)
-      );
+      appendProperCitation(section, citation, proper.source, missalTextShown,
+        bible, fragments, numbering, companion);
     }
 
     // A cycle-varying proper reads differently in each year of the lectionary.
@@ -3091,11 +3399,14 @@ window.Triptych = (function () {
         cycleTextShown = Boolean(
           renderOrationState(block, cycle, held, 'for this cycle', proper.source).shown);
       }
-      const cycleClaim = cycle.citations.length
-        ? citationClaim(cycle, proper, cycle.source || proper.source, cycleTextShown, companion ? null : bible) : null;
+      const cycleClaim = cycle.citations.some(function (citation) {
+        const role = citationReadingRole(citation, cycle.source || proper.source);
+        return !role || role.kind === 'embedded-quotation' && !cycleTextShown;
+      }) ? citationClaim(cycle, proper, cycle.source || proper.source, cycleTextShown, companion ? null : bible) : null;
       if (cycleClaim) block.appendChild(cycleClaim);
       for (const citation of cycle.citations) {
-        block.appendChild(renderScriptureCitation(citation, bible, fragments, numbering, null, companion));
+        appendProperCitation(block, citation, cycle.source || proper.source, cycleTextShown,
+          bible, fragments, numbering, companion, true);
       }
       section.appendChild(block);
     }

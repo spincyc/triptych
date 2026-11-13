@@ -1,0 +1,19 @@
+{
+  "schema": "triptych-root-test-only-adoption/v1",
+  "decision": "Adopt exact four scoped mocks in two synthetic-calendar coverage tests",
+  "handoff": {
+    "path": ".scratch/coverage-audit/synthetic-coverage-isolation/handoff.json",
+    "sha256": "caf1415f94858028e89120cb44937af1669af93975809545076c894d4369c4e2"
+  },
+  "path": "tools/tests/test_missal_coverage.py",
+  "before_sha256": "c510a5f88c866cb5de6543d819fa8ff5640c4e4439320602c2eb1918224d8647",
+  "after_sha256": "fef00dbefd3b8e8b7421e093defe797c25ae125d852e4456e6e6959fdc5fc7d6",
+  "postimage": ".scratch/coverage-audit/synthetic-coverage-isolation/postimages/tools/tests/test_missal_coverage.py",
+  "independent_review": {
+    "path": ".scratch/reader-audit/synthetic-coverage-isolation-review/review.json",
+    "sha256": "229f26663fd3b25ad7e384ca50964b54bc765e184a63a52512dcbd50aeb3cd16"
+  },
+  "root_review": "Read full patch and independent review, rehashed all evidence, independently reproduced exact patch against current canonical preimage. Empty optional source maps match the deliberately fabricated calendar universe; original assertions and real producer admission guards remain unchanged.",
+  "verification": "Author and independent reviewer each pass32 original coverage/readiness methods; actual source graph and final product gates remain separate.",
+  "canonical_writes": false
+}

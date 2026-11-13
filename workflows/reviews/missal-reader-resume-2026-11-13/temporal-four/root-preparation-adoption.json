@@ -1,0 +1,81 @@
+{
+  "schema": "triptych-root-guarded-preparation-adoption/v1",
+  "decision": "Adopt exact temporal-four read-only prepare API and explicit one-file public-history amendment",
+  "installer": {
+    "path": ".scratch/modern-temporal-orations/activation-20261113/activate.py",
+    "sha256": "9c4ebbe04f94523c2f371dbbe62e8ea3c4ebe7a6b50e21445cf46443dc4d2d21",
+    "bytes": 13502
+  },
+  "declaration": {
+    "path": ".scratch/modern-temporal-orations/activation-20261113/installation-declaration.json",
+    "sha256": "d4a04c74391d99051af420c84b9ca3ba526bb4201bc570b89ded83f372051142",
+    "bytes": 69897
+  },
+  "independent_review": {
+    "path": ".scratch/modern-temporal-four-installer-review/receipt.json",
+    "sha256": "df8c9b0c3d78ef3ffe6fd597651a7e48f40f60f46dd82257f18cc641d12208fc",
+    "bytes": 7723
+  },
+  "history_amendment": {
+    "path": ".scratch/modern-temporal-orations/activation-20261113/history-amendment-request.json",
+    "sha256": "4cd505a3524f45bb6bcbd7e37a3c7f91d399f87b5c4a98bfb65fbaa00bd1c9f0",
+    "bytes": 1427
+  },
+  "exact_history_transition": {
+    "destination": "workflows/reviews/modern-source-completion-2026-11-12/temporal/three-orations-frozen-candidates.json",
+    "original_private_dossier_sha256": "a6fc4a0c16a94ea2aaaf6144c0b1abc5fc55dfb96ba81b65a7e64b78f279bbc1",
+    "sanitized_derivative_sha256": "aaa2dfff2a0db4bf7199bb8801aa792a93b935a580cee0e0f09f3323f2442c6b",
+    "pending_Root_amendment_adoption": true,
+    "semantic_scope": "One workflow history derivative only;48 source bytes and all four accepted before/after dictionaries unchanged."
+  },
+  "root_review": "Read full installer, independent receipt, amendment request and history review. Rehashed exact frozen package. Actual canonical read-only prepare verifies49 files,48 byte-identical sources, all source/dependency pins and four accepted dictionaries, preserving213 positives. Independently compared public history updates to actual Root source decision and scanned private path markers.",
+  "proof": {
+    "removed_raw_spans": [
+      {
+        "start_byte": 522576,
+        "end_byte": 523605,
+        "sha256": "76659e7d433e85deb179fe91a7098a39436590423f29b33896f3840587acfbac"
+      },
+      {
+        "start_byte": 556100,
+        "end_byte": 557131,
+        "sha256": "1669b450d47fd32ce7b2a6107dedc514509c47d33fe01f9c8a01d52ff7c49a9d"
+      },
+      {
+        "start_byte": 648356,
+        "end_byte": 648692,
+        "sha256": "f1ad097f014a59c8c6573c9aa0c32808e402fa5c663d9d32051be270fb8c6b72"
+      },
+      {
+        "start_byte": 650792,
+        "end_byte": 651144,
+        "sha256": "5f6ffe7cc6c3be00da26b6e75a5c9a29a8170e11309cb4d16c980e5a4fd0c949"
+      }
+    ],
+    "preserved_raw_remainder_sha256": "c02a8fd5ef383de8dddb60ccc4d8fbc7009e47fa31f92dd4d0390ac502b83cfd",
+    "appended_bytes_sha256": "4e21127d9776bc2a90bc522775d9b698eaf9d60f56c44cbdab7aeea3a151e311",
+    "before_semantic_sha256": "70ac790402a78535fee20e15ac5777d29e50609c2c10d144391d6f2ece8a82be",
+    "after_semantic_sha256": "fb0bae1b7f0d24f8ec1f9d63e3bfdfe3f8606bf5baa4208cf1a3a2e32c3d6142",
+    "all_unselected_raw_bytes_preserved": true,
+    "existing_positive_count": 213,
+    "existing_positive_indices_unchanged": true,
+    "new_positive_indices": [
+      213,
+      214,
+      215,
+      216
+    ],
+    "inverse_semantic_check": true,
+    "inverse_byte_check": true,
+    "before_inventory_sha256": "ff7fabedeb53a520f296a8037925e9cefc0207e39b2b5e8aaa917282bf8b2b8d",
+    "after_inventory_sha256": "e5f88d9411d4593197ad58156897910d49aad88e4a4618f3224ed9ca8182ba04",
+    "unchanged_calendar_sha256": "da180df5d07745e8aabbf273afa58278c48c393dc81af925a68bece3fab4751a",
+    "unchanged_latin_sha256": "0a99b8f885832d7acbdd3468fce8da9439b560092fff6986d0f0d36e6136f912",
+    "source_record_pins_verified": 29,
+    "source_payload_pins_verified": 4,
+    "runtime_hash_binding": false,
+    "history_amendment_Root_adoption_pending": true
+  },
+  "scope": "Adopt the declared a6fc to aaa2 workflow derivative replacement only; accepted48 source payloads and four English dictionaries unchanged. Original private history remains retained. No appended responses, Latin or calendar activation.",
+  "canonical_writes": false
+}

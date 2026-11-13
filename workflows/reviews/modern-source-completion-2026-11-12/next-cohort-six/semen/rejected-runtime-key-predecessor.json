@@ -1,0 +1,467 @@
+{
+  "schema": "triptych-semen-three-installation-proposal/v1",
+  "status": "prepared-for-root-adoption-no-canonical-writes",
+  "source_independent_review": ".scratch/modern-new-acclamations-review/review.json",
+  "source_independent_review_sha256": "c49c1aed1affe1a728c3be023f2dce339966e916fee2d2cbbecae702ffeacd0e",
+  "input_pins": {
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "88e54e407656a75ee00dab1ac029cf960612c65aabbcde78d4e82236486b3d27",
+    "src/sources/calendars/postconciliar/propers.yaml": "6184b6912644a80cc6c117a5ca9ff46e8994db4ef4f7a15b87f5339922e7885e",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "1e34ae24eca4f20f570b78030bcb64238b79d56439c94126b456e81cf4a9f428"
+  },
+  "identity_count": 3,
+  "physical_source_body_count": 1,
+  "english_updates": [
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "ot-11",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "B",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No authoritative Lectionary exemplar establishing the exact approved English for this cycle-specific source-owned slot is held. No English wording is retained."
+      },
+      "before_untranslated_sha256": "f862b9530bbf7ec136bc69f83778c88a849adc3977c1851608d0aa75fc86a645",
+      "after_entry": {
+        "mass": "ot-11",
+        "form_id": "main",
+        "cycle": "B",
+        "occurrence": 1,
+        "proper": "Gospel Acclamation",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+        "publication_artifact_sha256": "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot11-b-20261112",
+        "verified_on_page": "2026-11-12",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Complete unchanged historical Bute1908 human English, for study, printed439/AP523. Independent Pustet1888 whole Latin printed339/AP393 matches every word of governing OLM1981 n92 printed56/AP110 at this exact recipient, subject only to declared typography normalization. Recipient comparison passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112. Historical English retains its free rendering he shall never be moved and chant asterisk; it is not new study English or approved2011 English. Prior absence dictionary and any quarantine hash are preserved verbatim in the preparation receipt. No extra all-cycle recipient or modern Missal2008 body is asserted.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      }
+    },
+    {
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "ot-15",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "A",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-23"
+        ],
+        "quarantined_text_sha256": [
+          "d240fe86bbe050283938f40d3a438f6172827fcb54ce882a7de32b77ca03ac6f"
+        ],
+        "note": "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. The liturgies.net row is a rejected source candidate. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable exemplar. No English wording is retained."
+      },
+      "before_untranslated_sha256": "565503858c65e39cffebffff1546d115424f506c5c93089630046903b672df94",
+      "after_entry": {
+        "mass": "ot-15",
+        "form_id": "main",
+        "cycle": "A",
+        "occurrence": 1,
+        "proper": "Gospel Acclamation",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+        "publication_artifact_sha256": "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot15-a-20261112",
+        "verified_on_page": "2026-11-12",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Complete unchanged historical Bute1908 human English, for study, printed439/AP523. Independent Pustet1888 whole Latin printed339/AP393 matches every word of governing OLM1981 n103 printed61/AP115 at this exact recipient, subject only to declared typography normalization. Recipient comparison passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112. Historical English retains its free rendering he shall never be moved and chant asterisk; it is not new study English or approved2011 English. Prior absence dictionary and any quarantine hash are preserved verbatim in the preparation receipt. No extra all-cycle recipient or modern Missal2008 body is asserted.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      }
+    },
+    {
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "lent-5-tuesday",
+        "form_id": "main",
+        "proper": "Verse Before the Gospel",
+        "cycle": "all",
+        "occurrence": 1,
+        "extent": "body",
+        "lang": "en",
+        "availability": "unavailable",
+        "note": "OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth role is part of the native ferial course, not silently replaced by the optional course. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made.",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "before_untranslated_sha256": "8b1dbf6d53189b7dde5ea5b6cf755b572767336badd181b07cd4cb5d42f713be",
+      "after_entry": {
+        "mass": "lent-5-tuesday",
+        "form_id": "main",
+        "cycle": "all",
+        "occurrence": 1,
+        "proper": "Verse Before the Gospel",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-three-recipients-20261112",
+        "publication_artifact_sha256": "536ac5021f963bc1e0adc4ebc59275c772ccbdd7bf628dad78c1f3319238038b",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-lent5-tuesday-ferial-20261112",
+        "verified_on_page": "2026-11-12",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Complete unchanged historical Bute1908 human English, for study, printed439/AP523. Independent Pustet1888 whole Latin printed339/AP393 matches every word of governing OLM1981 n252 printed138/AP192 at this exact recipient, subject only to declared typography normalization. Recipient comparison passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112. Historical English retains its free rendering he shall never be moved and chant asterisk; it is not new study English or approved2011 English. Prior absence dictionary and any quarantine hash are preserved verbatim in the preparation receipt. No extra all-cycle recipient or modern Missal2008 body is asserted.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      }
+    }
+  ],
+  "latin_updates": [
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "before_node": {
+        "source": "composed",
+        "incipit": "Semen est verbum Dei",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "source": "composed",
+        "incipit": "Semen est verbum Dei",
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.",
+        "notes": "Complete Latin of the governing OLM1981 recipient n92 (AP110/printed56), independently word-exact to the public-domain Pustet1888 antiphon p339/AP393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112. Historical Bute1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a2008 altar-book collation."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-11",
+          "form": "",
+          "proper": "Gospel Acclamation",
+          "course": "cycles",
+          "cycle": "B",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "5de6fd5ea89615fba71cc7bb1494ee15002c718180b4d071a761704faa9be4a1"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-11",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "B",
+        "occurrence": 1,
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot11-b-20261112",
+        "source_date": "1888",
+        "locator": "Pustet1888 p339/AP393 complete antiphon; normalized body.txt line1",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112",
+        "verification_locator": "Governing OLM1981 n92, AP110/printed56",
+        "transformations": [
+          "Remove historical chant asterisk",
+          "Remove stress accents; expand ae ligature",
+          "Normalize colon after Christus to semicolon; join line wraps",
+          "No lexical addition, omission or substitution"
+        ],
+        "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet1888 and this OLM1981 recipient. Source-specific target is the Lectionary1981 acclamation, not a2008 altar-book oration.",
+        "provenance_authority": "Source-local OLM1981 word-exact collation, independently reviewed2026-11-12",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+        ],
+        "publication_locator": "Whole underlying1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+        "publication_evidence": "Entire underlying Latin expression appears in1888 printing; its maximum95-year US term ended before2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis.",
+        "note": "Exact governing OLM1981 body on all recorded output surfaces; historical human English separate, no approved2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      }
+    },
+    {
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "before_node": {
+        "incipit": "Semen est verbum Dei, sator autem Christus",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "after_node": {
+        "incipit": "Semen est verbum Dei, sator autem Christus",
+        "source": "composed",
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.",
+        "notes": "Complete Latin of the governing OLM1981 recipient n103 (AP115/printed61), independently word-exact to the public-domain Pustet1888 antiphon p339/AP393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112. Historical Bute1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a2008 altar-book collation."
+      },
+      "before_provenance_entries": [
+        {
+          "mass": "ot-15",
+          "form": "",
+          "proper": "Gospel Acclamation",
+          "course": "cycles",
+          "cycle": "A",
+          "occurrence": 1,
+          "body_status": "removed",
+          "text_sha256": "5de6fd5ea89615fba71cc7bb1494ee15002c718180b4d071a761704faa9be4a1"
+        }
+      ],
+      "after_provenance_entry": {
+        "mass": "ot-15",
+        "form": "",
+        "proper": "Gospel Acclamation",
+        "course": "",
+        "cycle": "A",
+        "occurrence": 1,
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-ot15-a-20261112",
+        "source_date": "1888",
+        "locator": "Pustet1888 p339/AP393 complete antiphon; normalized body.txt line1",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112",
+        "verification_locator": "Governing OLM1981 n103, AP115/printed61",
+        "transformations": [
+          "Remove historical chant asterisk",
+          "Remove stress accents; expand ae ligature",
+          "Normalize colon after Christus to semicolon; join line wraps",
+          "No lexical addition, omission or substitution"
+        ],
+        "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet1888 and this OLM1981 recipient. Source-specific target is the Lectionary1981 acclamation, not a2008 altar-book oration.",
+        "provenance_authority": "Source-local OLM1981 word-exact collation, independently reviewed2026-11-12",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+        ],
+        "publication_locator": "Whole underlying1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+        "publication_evidence": "Entire underlying Latin expression appears in1888 printing; its maximum95-year US term ended before2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis.",
+        "note": "Exact governing OLM1981 body on all recorded output surfaces; historical human English separate, no approved2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      }
+    },
+    {
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "before_node": {
+        "name": "Verse Before the Gospel",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "body_status": "held-unpublished",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e"
+            }
+          ]
+        },
+        "notes": "OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth role is part of the native ferial course, not silently replaced by the optional course.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "verse-before-gospel",
+          "option": "ferial",
+          "basis": "OLM 1981 n. 250, artifact page 192 / printed page 138: the complete optional First Reading, Responsorial Psalm, Verse Before the Gospel and Gospel course may be used on any Monday-Saturday of this week in all years A/B/C. Sunday nonuse, especially in years B/C, is a preference, not an exclusive eligibility condition or an attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication permission is inferred."
+        }
+      },
+      "after_node": {
+        "name": "Verse Before the Gospel",
+        "source": "composed",
+        "notes": "Complete Latin of the governing OLM1981 recipient n252 (AP192/printed138), independently word-exact to the public-domain Pustet1888 antiphon p339/AP393 after removal of chant asterisk/stress accents, ae expansion and pointing normalization. Source proof passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112. Historical Bute1908 English is separately labelled. This exact source-local Lectionary body has no dependence on a2008 altar-book collation.",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "verse-before-gospel",
+          "option": "ferial",
+          "basis": "OLM 1981 n. 250, artifact page 192 / printed page 138: the complete optional First Reading, Responsorial Psalm, Verse Before the Gospel and Gospel course may be used on any Monday-Saturday of this week in all years A/B/C. Sunday nonuse, especially in years B/C, is a preference, not an exclusive eligibility condition or an attested actual-use fact. Appointment facts verified 2026-10-22; passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication permission is inferred."
+        },
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum."
+      },
+      "before_provenance_entries": [],
+      "after_provenance_entry": {
+        "mass": "lent-5-tuesday",
+        "form": "",
+        "proper": "Verse Before the Gospel",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+        "provenance_status": "collated",
+        "source_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-latin-publish-lent5-tuesday-ferial-20261112",
+        "source_date": "1888",
+        "locator": "Pustet1888 p339/AP393 complete antiphon; normalized body.txt line1",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-lent5-tuesday-ferial-20261112",
+        "verification_locator": "Governing OLM1981 n252, AP192/printed138",
+        "transformations": [
+          "Remove historical chant asterisk",
+          "Remove stress accents; expand ae ligature",
+          "Normalize colon after Christus to semicolon; join line wraps",
+          "No lexical addition, omission or substitution"
+        ],
+        "provenance_evidence": "Complete exact word sequence established by independent fresh full-page review of Pustet1888 and this OLM1981 recipient. Source-specific target is the Lectionary1981 acclamation, not a2008 altar-book oration.",
+        "provenance_authority": "Source-local OLM1981 word-exact collation, independently reviewed2026-11-12",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112",
+          "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen"
+        ],
+        "publication_locator": "Whole underlying1888 antiphon with affirmative United States publication-date basis; exact artifact manifests",
+        "publication_evidence": "Entire underlying Latin expression appears in1888 printing; its maximum95-year US term ended before2026. Mechanical normalization creates no new lexical expression. Availability and OLM carrier restriction are not the rights basis.",
+        "note": "Exact governing OLM1981 body on all recorded output surfaces; historical human English separate, no approved2011 English claim. Prior removal/unavailability records retained in preparation receipt."
+      }
+    }
+  ],
+  "new_source_files": [
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/artifact.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/semen-three-recipients-20261112/semen.tsv",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/artifact.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/body.txt",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot11-b-20261112.toml",
+    "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot11-b-20261112.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot11-b-20261112.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-ot15-a-20261112.toml",
+    "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-ot15-a-20261112.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-ot15-a-20261112.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/passages/semen-publish-lent5-tuesday-ferial-20261112.toml",
+    "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/passages/semen-verify-lent5-tuesday-ferial-20261112.toml",
+    "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/passages/semen-latin-publish-lent5-tuesday-ferial-20261112.toml"
+  ],
+  "source_body_reuse": "Original1888 Latin and1908 Bute English artifacts unchanged. Consumer requires recipient TSV identity, so one shared three-row English derivative is necessary; direct PDF parent preserves existing verification chain. Latin is one normalized old body, not copied restricted scan payload.",
+  "glyphs": "Latin intentionally uses accentless ae typography exactly matching governing OLM1981; Bute English keeps historical ASCII asterisk. Asterisks are not mixed across source renditions.",
+  "owning_work_locus_patterns": {
+    "src/sources/works/catholic-church/breviarium-romanum/work.toml": null,
+    "src/sources/works/catholic-church/ordo-lectionum-missae/work.toml": null
+  }
+}

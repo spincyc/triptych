@@ -503,11 +503,14 @@
       });
     const needsOrdinary = requestedMode === 'missal' ||
       (requestedMode === 'study' && parsed.recognized.ordinary === '1') || explicitOrdinary;
+    // Proper rites use the source Ordinary catalog even in unframed Read.
+    // Loading metadata does not request or render the Ordinary.
+    const loadsOrdinary = needsOrdinary || missal === 'roman-1962';
     const paths = [
       'structure/rubrics/' + missal + '.json',
       'structure/calendar/' + missal + '/' + year + '.json'
     ];
-    if (needsOrdinary) paths.push('structure/ordinary/' + missal + '.json');
+    if (loadsOrdinary) paths.push('structure/ordinary/' + missal + '.json');
     const peer = requestedMode === 'compare' ? parsed.recognized['peer-missal'] : null;
     if (peer) paths.push('structure/rubrics/' + peer + '.json',
       'structure/calendar/' + peer + '/' + year + '.json');
@@ -529,7 +532,7 @@
     }) : load('structure/propers/' + missal + '.json');
     let peerStructure = null;
     if (peer) {
-      const offset = needsOrdinary ? 3 : 2;
+      const offset = loadsOrdinary ? 3 : 2;
       const peerDerived = Model.derive({ date: preliminary.date,
         rubrics: rows[offset], year: rows[offset + 1] });
       peerStructure = DayReadPayload ? DayReadPayload.loadStructure({
@@ -570,7 +573,7 @@
     structures[missal] = structure;
     if (peer) structures[peer] = selectedStructures[1];
     const ordinaries = {};
-    if (needsOrdinary && rows[2]) ordinaries[missal] = rows[2];
+    if (loadsOrdinary && rows[2]) ordinaries[missal] = rows[2];
     const context = Adapters.validationContext({
       entrance: 'day',
       bibles: manifests.bibles,
@@ -586,7 +589,7 @@
       rubrics: rows[0],
       structure: structure,
       structures: structures,
-      ordinary: needsOrdinary ? rows[2] : null,
+      ordinary: loadsOrdinary ? rows[2] : null,
       context: context
     };
   }
@@ -1934,7 +1937,7 @@
       heading: heading,
       cycle: event.selected && event.selected.cycle || null,
       orationGroups: event.orationGroups || null, executionSource: event.executionSource || null, nameExecution: event.nameExecution || null,
-      conclusionExecution: event.conclusionExecution || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
+      conclusionExecution: event.conclusionExecution || null, sourceLocalActorOffer: event.sourceLocalActorOffer || null, orationContext: event.orationContext || null, eventId: event.id, structure: structure
     });
     const choice = renderTranslationWitnessChoice(
       event, resolvableTranslationWitnessState(result, structure, state), prefix, result,
@@ -2568,7 +2571,7 @@
       runtime.rubrics = assembled.rubrics;
       runtime.structure = assembled.structure;
       runtime.mode = normalized.state.requestedMode;
-      runtime.ordinary = normalized.state.options.ordinary ? assembled.ordinary : null;
+      runtime.ordinary = assembled.ordinary;
       runtime.branch = assembled.derived.options.length === 1 ? assembled.derived.options[0] : null;
       runtime.branches = [];
       runtime.deferred = [];

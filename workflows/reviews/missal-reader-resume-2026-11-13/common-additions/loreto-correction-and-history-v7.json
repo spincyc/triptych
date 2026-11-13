@@ -1,0 +1,371 @@
+{
+  "indices": [
+    11,
+    12,
+    13
+  ],
+  "status": "source-only-structural-correction-for-review",
+  "mass_before": {
+    "key": "our-lady-loreto",
+    "name": "Our Lady of Loreto",
+    "registry": "pc-12-10",
+    "date": "12-10",
+    "rank": "Optional memorial",
+    "kind": "marian",
+    "propers": [
+      {
+        "name": "Collect",
+        "incipit": "Deus, qui beatae Mariae Virginis domum",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Prayer over the Offerings",
+        "incipit": "Accipe, quaesumus Domine",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      {
+        "name": "Prayer after Communion",
+        "incipit": "Quaesumus Domine Deus noster",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      }
+    ],
+    "notes": "ANTECEDENT, NOT THE CONTROLLING EDITION. This Latin was read on 2026-08-20 from the PAGE IMAGE of leaf n782, n783 (printed [113], [114]) of Internet Archive item bub_gb_E7sPAAAAIAAJ, the Pustet Ratisbon 1862 printing of the Missale Romanum, at the day heading Die x. In Festo Translationis Almae Domus B. M. V., and not from any optical text layer. That printing attests its own 1862 `pro aliquibus locis` appendix recension. It does not attest the Missale Romanum, editio typica tertia 2002/2008, which this file declares as its edition, which is in copyright and is not held here. Whether the 2002 Missal appoints this same prayer on this day is an editorial determination that has NOT been made. Accents and ae/oe ligatures are normalized to this file's declared orthography. Nothing here has been collated; the entry stands in open_collation_items."
+  },
+  "mass_after": {
+    "key": "our-lady-loreto",
+    "name": "Our Lady of Loreto",
+    "registry": "pc-12-10",
+    "date": "12-10",
+    "rank": "Optional memorial",
+    "kind": "marian",
+    "propers": [
+      {
+        "name": "Collect",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "body_status": "held-unpublished",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926"
+            }
+          ]
+        },
+        "notes": "The official2019 Latin annex supplies one own Collect for the10December optional memorial; its complete body was privately inspected and is withheld pending an independent publication basis. It differs materially from the old1862HolyHouse Collect. The whole source was acquired and hashed; neither acquisition nor official status supplies republication permission. Complete-as-printed means its actual abbreviated conclusion cue is held; no expanded spoken ending has been established or supplied."
+      }
+    ],
+    "notes": "The decree dated 7 October 2019 and its annex published 31 October 2019 establish the optional memorial on 10 December. The Missale Romanum annex gives a broader direction to the Common of the Blessed Virgin Mary and prints one own Collect. The schema represents only the antiphon subset in common_from; the broader source direction is preserved here. Remaining lawful choices are unresolved in this bounded correction. No Common form is selected. The old three-prayer entry, consisting of incipits and typed gaps rather than Latin bodies, and all three previous English gap dictionaries are preserved verbatim in the superseded receipt. The distinct OLM annex, n. 689 bis, at HTML lines 178-190 gives First Reading, Responsorial Psalm, Gospel Acclamation and Gospel roles. Those appointments remain unrepresented and inactive here. The unrepresented reading appointments are a separate Lectionary gap. The partial missal-formulary status concerns only unresolved Missal material and choices.",
+    "text_status": {
+      "state": "partial",
+      "scope": "missal-formulary",
+      "reasons": [
+        {
+          "kind": "witness-gap",
+          "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+        }
+      ]
+    },
+    "common_from": {
+      "scope": "missal-antiphons",
+      "source_id": "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926",
+      "locus": "Official2019 Latin Missale Romanum annex:10December; De Communi beatae Mariae Virginis; entire Common direction precedes ownCollect",
+      "options": [
+        {
+          "mass": "commune-beatae-mariae-virginis"
+        }
+      ]
+    }
+  },
+  "gap_after": [
+    {
+      "mass": "our-lady-loreto",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The official 2019 bulletin supplies the Latin own Collect, complete as printed with its abbreviated conclusion cue. It supplies no English prayer witness. No acquired qualified English witness or independently prepared study translation is established here, so English remains no-exemplar. The prior historical Holy House refusal dictionaries and fingerprints remain verbatim in the superseded receipt. No complete spoken Latin ending is reconstructed."
+    }
+  ],
+  "remove_current_gap_identities": [
+    [
+      "our-lady-loreto",
+      "main",
+      "Prayer after Communion",
+      "all",
+      1
+    ],
+    [
+      "our-lady-loreto",
+      "main",
+      "Prayer over the Offerings",
+      "all",
+      1
+    ]
+  ],
+  "superseded_prior_gaps": [
+    {
+      "mass": "our-lady-loreto",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "3bd5c0268864f4c0bf43a9e84931f408f1d0db2b3a563d8b711a5491025d340f"
+      ],
+      "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. Incipit of the Latin refused here: `Deus, qui beatae Mariae Virginis domum`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    {
+      "mass": "our-lady-loreto",
+      "form_id": "main",
+      "proper": "Prayer after Communion",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "6ed1f2c3878a4d1808b89bfe180527dd5bf2eb77a94379e99b274ed45f47760a"
+      ],
+      "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. One near miss was tested and refused: the 1962 index's low-sunday Postcommunion is the same oration MINUS the clause `intercedente beata Maria semper virgine`, which this calendar's Latin has. Carrying that English would be publishing a rendering that drops the only Marian words in the prayer, on a Marian day. Refused. Incipit of the Latin refused here: `Quaesumus Domine Deus noster`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    {
+      "mass": "our-lady-loreto",
+      "form_id": "main",
+      "proper": "Prayer over the Offerings",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "15dd32da4b3ae9c62a4367d728e4a66ddd03c0242a45c06f40e1ccc527cc809c"
+      ],
+      "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. Incipit of the Latin refused here: `Accipe, quaesumus Domine`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    }
+  ],
+  "retention_requirement": "Preserve the exact prior three-prayer entry and all three English unavailable dictionaries in dated superseded history before replacing current definitions. Existing Latin removed-body tombstones remain unchanged. No historical prayer is admitted as a 2019 own text.",
+  "scope_limit": "No default Common form, no chosen oration from the Common, and no expansion of tool schema. tools/mass-propers public_common_from currently accepts only missal-antiphons (lines922–930); proposed field uses that supported subset and notes exact broader2019direction. A future schema change could model fullgenericCommon more directly.",
+  "source_artifact": "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926",
+  "source_passages": [
+    "passage.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.missal-appointment",
+    "passage.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.own-collect-held"
+  ],
+  "not_admission_of_text": true,
+  "supersedes_packet_sha256": "2d28c37f898099ce0f9a2576b4fd0d0847a164147c21b6bc59f04c3fbc9629da",
+  "revision": "v7: clarify that unrepresented OLM reading appointments are a separate Lectionary gap, outside missal-formulary status. All statuses, roles, Common pointer, English dictionaries and retained historical evidence remain unchanged.",
+  "english_ledger_plan": {
+    "current_untranslated_rows_before": [
+      {
+        "mass": "our-lady-loreto",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "3bd5c0268864f4c0bf43a9e84931f408f1d0db2b3a563d8b711a5491025d340f"
+        ],
+        "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. Incipit of the Latin refused here: `Deus, qui beatae Mariae Virginis domum`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      {
+        "mass": "our-lady-loreto",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "6ed1f2c3878a4d1808b89bfe180527dd5bf2eb77a94379e99b274ed45f47760a"
+        ],
+        "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. One near miss was tested and refused: the 1962 index's low-sunday Postcommunion is the same oration MINUS the clause `intercedente beata Maria semper virgine`, which this calendar's Latin has. Carrying that English would be publishing a rendering that drops the only Marian words in the prayer, on a Marian day. Refused. Incipit of the Latin refused here: `Quaesumus Domine Deus noster`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      {
+        "mass": "our-lady-loreto",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "15dd32da4b3ae9c62a4367d728e4a66ddd03c0242a45c06f40e1ccc527cc809c"
+        ],
+        "note": "THE WITNESS DOES NOT PRINT THIS DAY. Read on the 1861 page images on 2026-08-20: leaf n538 (printed p. 530) carries the Mass of `VIII. CONCEPTION of the B. V. M.`, and leaf n539 (printed p. 531, running head `11th AND 13th DECEMBER.`) carries that Mass's end and then `XI. St. DAMASUS, p. c.` There is no 10 December formulary between them. The 1862 prints this Mass only in its `pro aliquibus locis` appendix, which the 1861 lay missal does not carry. Nothing is carried. Incipit of the Latin refused here: `Accipe, quaesumus Domine`. Read on the page image https://archive.org/download/romanmissaltran00churgoog/page/n539_w1400.jpg (leaf n539, printed p. 531, heading `11th AND 13th DECEMBER.`) by lane pc-antecedent-english on 2026-08-20. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      }
+    ],
+    "current_untranslated_rows_after": [
+      {
+        "mass": "our-lady-loreto",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The official 2019 bulletin supplies the Latin own Collect, complete as printed with its abbreviated conclusion cue. It supplies no English prayer witness. No acquired qualified English witness or independently prepared study translation is established here, so English remains no-exemplar. The prior historical Holy House refusal dictionaries and fingerprints remain verbatim in the superseded receipt. No complete spoken Latin ending is reconstructed."
+      }
+    ],
+    "current_positive_english_entries_added": [],
+    "current_positive_english_entries_removed": [],
+    "own_proper_count_before": 3,
+    "own_proper_count_after": 1,
+    "untranslated_english_row_delta": -2,
+    "disposition_by_identity": [
+      {
+        "identity": [
+          "our-lady-loreto",
+          "main",
+          "Collect",
+          "all",
+          1
+        ],
+        "action": "Replace obsolete historicalHolyHouse gap with modern2019ownCollect English no-exemplar gap; preserve fulloldrow inhistory."
+      },
+      {
+        "identity": [
+          "our-lady-loreto",
+          "main",
+          "Prayer over the Offerings",
+          "all",
+          1
+        ],
+        "action": "Retire the unsupported historical Holy House own-prayer seat and its current English gap together; preserve the full old dictionary in history. Record the broader BMV direction while leaving remaining lawful choices unresolved. No replacement English body identity is invented."
+      },
+      {
+        "identity": [
+          "our-lady-loreto",
+          "main",
+          "Prayer after Communion",
+          "all",
+          1
+        ],
+        "action": "Retire the unsupported historical Holy House own-prayer seat and its current English gap together; preserve the full old dictionary in history. Record the broader BMV direction while leaving remaining lawful choices unresolved. No replacement English body identity is invented."
+      }
+    ],
+    "gap_count_interpretation": "A reduction bytwo is retirement ofincorrectownappointments, nottwo newlyavailableEnglishprayers. The genericCommon remains unresolved and mass partialstatus remains.",
+    "no_silent_gap_loss": "Beforemutatingcurrentledger, append verbatimprior mass and allthree dictionaries to datedsupersededreceipt; retain sourceandquarantinehistory."
+  },
+  "untouched_latin_tombstones": {
+    "inventory": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+    "inventory_sha256": "117769a895aacabe098a438fccf19f1a6ae7fedd16f9c867374c176e0020ed38",
+    "entries": [
+      {
+        "mass": "our-lady-loreto",
+        "form": "",
+        "proper": "Collect",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "b147c63b74abe94a08adcc610ef2efc1ac0d00a9e487da6a0935f35184df39f2"
+      },
+      {
+        "mass": "our-lady-loreto",
+        "form": "",
+        "proper": "Prayer after Communion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "1ea4c44f1a080c4027988e2bd1614da7fdd1cc93d7cd9a85f56a912b2fdde140"
+      },
+      {
+        "mass": "our-lady-loreto",
+        "form": "",
+        "proper": "Prayer over the Offerings",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "body_status": "removed",
+        "text_sha256": "99158fc1f46e0666298bfbc120f85449b990c48c9d590acfcbe54f745abddb13"
+      }
+    ],
+    "disposition": "Preserve verbatim as historical removals, not acquired2019body evidence; no additional Latin completion or reclassification."
+  }
+}

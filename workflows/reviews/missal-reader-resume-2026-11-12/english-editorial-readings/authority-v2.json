@@ -1,0 +1,126 @@
+{
+  "schema": "triptych-finite-english-editorial-readings/v1",
+  "method_id": "roman-1962-finite-english-editorial-readings-20261112",
+  "ending_authority_sha256": "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744",
+  "ending_method_id": "roman-1962-rg115-conclusion-execution-20261112",
+  "source_review_sha256": "5afefdfd76d2a96c61448f4d7c733a3205a06eba457325acbe5419438f2bfa40",
+  "correction_declarations_sha256": "9d2da9463eb14c3739b117677dd62ee3797ad22d2464b489977ba435c1d11a62",
+  "ordering_plan_sha256": "152b7b7bd17941ea1b81d2912538cd7ea277de265f8621f281ea3d0005b0aab8",
+  "records": [
+    {
+      "target": [
+        "commune-unius-martyris-3",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "language": "en",
+      "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "source_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+      "translation_binding_sha256": "ac4e28fcb678f5dcada51f1246bd7949e198ff7ab1cd58ad2af3d5c50d293843",
+      "public_descriptor_sha256": "2f512e275a5a9bad1a72358ef20f1e3f49f30fd4a15ce2b176934644d05c92dd",
+      "native_admission_sha256": "2bca8bb122622bdb9a0c37cf5a91382f0377969727c9a20d50a625cb875f7e4f",
+      "cue_start": 177,
+      "operation": {
+        "end": 16,
+        "new": "beseech",
+        "offset_unit": "utf16",
+        "old": "bseech",
+        "source_prefix_sha256": "5aa51681af03cbd57a1738cbccd5dd8933d475a1ad1c754302ad38e94c0e142c",
+        "start": 10,
+        "strictly_before_original_cue": true
+      },
+      "annotation": "The printed source reads “bseech”; the reading text supplies the missing e.",
+      "source_review_sha256": "bdec3898ee7b7a01f636c3c1c845aeee986ac1093789e30f475bed10aba39a25",
+      "variants": {
+        "conclusion-provider": {
+          "priest_text_sha256": "017100e4801f09143839ed49bc01c62d0b59fc1bcb3964950518b0d8a8e85bba",
+          "display_text_sha256": "a2ee47e2cf9cf92d4c6710913a30c3e60942615b3bdcc7b4a2a8fa63c0f045c3"
+        },
+        "petition": {
+          "priest_text_sha256": "5aa51681af03cbd57a1738cbccd5dd8933d475a1ad1c754302ad38e94c0e142c",
+          "display_text_sha256": "3e35538b574f0c11a0322039bd2c3fe8ae3ae362154ebeb4d4b3c7fc49b10b80"
+        }
+      }
+    },
+    {
+      "target": [
+        "comm-s-mennae-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "language": "en",
+      "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "source_body_sha256": "7a8afa935a57f8be1fdd945a1dc9da9ebb1c79a8825f1cd1ade2766b05f9fd97",
+      "translation_binding_sha256": "266f9af85e4840b695909b3eb9e2201d6f4d3f723d89ae4a2ba0d5c20c20a89e",
+      "public_descriptor_sha256": "693c0630d8803e542bdbdcc0172f0edeafda43a16001486a9bbe456380a6f24c",
+      "native_admission_sha256": "d414986ec4a8e693302e41189bd27d9f59267f6c90b07b284d7d69b392d1969c",
+      "cue_start": 177,
+      "operation": {
+        "end": 16,
+        "new": "beseech",
+        "offset_unit": "utf16",
+        "old": "bseech",
+        "source_prefix_sha256": "5aa51681af03cbd57a1738cbccd5dd8933d475a1ad1c754302ad38e94c0e142c",
+        "start": 10,
+        "strictly_before_original_cue": true
+      },
+      "annotation": "The printed source reads “bseech”; the reading text supplies the missing e.",
+      "source_review_sha256": "bdec3898ee7b7a01f636c3c1c845aeee986ac1093789e30f475bed10aba39a25",
+      "variants": {
+        "conclusion-provider": {
+          "priest_text_sha256": "017100e4801f09143839ed49bc01c62d0b59fc1bcb3964950518b0d8a8e85bba",
+          "display_text_sha256": "a2ee47e2cf9cf92d4c6710913a30c3e60942615b3bdcc7b4a2a8fa63c0f045c3"
+        },
+        "petition": {
+          "priest_text_sha256": "5aa51681af03cbd57a1738cbccd5dd8933d475a1ad1c754302ad38e94c0e142c",
+          "display_text_sha256": "3e35538b574f0c11a0322039bd2c3fe8ae3ae362154ebeb4d4b3c7fc49b10b80"
+        }
+      }
+    },
+    {
+      "target": [
+        "s-matthiae-apostoli",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "language": "en",
+      "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "source_body_sha256": "dd101c35df430d5785beb3c60cb6012bd2c1af12c9b5a8492b6cf2c615ddc262",
+      "translation_binding_sha256": "f0e79dec458b1625cd685b6c014f249c1ad33d32b7bf5430b5eb60a7d99c5f5b",
+      "public_descriptor_sha256": "70397af8d95e8c97825d1d07200bc50ed14b5334c4ecb8d1f2c7153e6d362fe7",
+      "native_admission_sha256": "4b93d41347866e36fab590bb24b83968b92e55daf898dff368dc8ddb3c46e47c",
+      "cue_start": 182,
+      "operation": {
+        "end": 181,
+        "new": ".",
+        "offset_unit": "utf16",
+        "old": "",
+        "source_prefix_sha256": "14b5394d03b99b1030aa00adaf7ba1f59f5bfc11e42f3f7041099e684d837ed7",
+        "start": 181,
+        "strictly_before_original_cue": true
+      },
+      "annotation": "The printed source has no punctuation between “defended” and “Through”; the reading text supplies a period after “defended”.",
+      "source_review_sha256": "bdec3898ee7b7a01f636c3c1c845aeee986ac1093789e30f475bed10aba39a25",
+      "variants": {
+        "conclusion-provider": {
+          "priest_text_sha256": "d2fe94319daf77d2648eae87dfb11fe592a90fc8cb571d6deae34c255173e5ff",
+          "display_text_sha256": "c1143f97208ed2d14a3f256c273d589aa1f68db17a5ea0655b97f21cc0efcedd"
+        },
+        "petition": {
+          "priest_text_sha256": "14b5394d03b99b1030aa00adaf7ba1f59f5bfc11e42f3f7041099e684d837ed7",
+          "display_text_sha256": "5cdf44df727948cead2e34728b3cfb9cce6367dba5a18c17653560fef281d927"
+        }
+      }
+    }
+  ],
+  "ending_authority_successor_review": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/pius-ending-successor-review.json",
+    "sha256": "2d652e68da0d5098055e77903072fcae1592a1a170cc2c82b022b2855f88c6b3"
+  }
+}

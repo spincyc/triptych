@@ -1,0 +1,104 @@
+{
+  "schema": "triptych-latin-two-holy-name-activation-plan/v1",
+  "status": "prepared-only-canonical-freeze-in-force",
+  "durable_declarations": [
+    {
+      "original_path": ".scratch/roman-sources/latin-cleanliness/correction-declarations.json",
+      "original_sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e",
+      "durable_path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/latin-correction-declarations.json",
+      "durable_sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e",
+      "transformation": "Byte-identical copy; no host absolute prefix present; no projection required."
+    },
+    {
+      "original_path": ".scratch/roman-sources/additional-english-findings/holy-name-locator-declaration.json",
+      "original_sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6",
+      "durable_path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/holy-name-locator-declaration.json",
+      "durable_sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6",
+      "transformation": "Byte-identical copy; no host absolute prefix present; no projection required."
+    }
+  ],
+  "evidence_mapping": [
+    {
+      "original_path": ".scratch/roman-sources/latin-cleanliness/correction-declarations.json",
+      "original_sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e",
+      "durable_path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/latin-correction-declarations.json",
+      "durable_sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e",
+      "transformation": "Byte-identical copy; no host absolute prefix present; no projection required."
+    },
+    {
+      "original_path": ".scratch/roman-sources/additional-english-findings/holy-name-locator-declaration.json",
+      "original_sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6",
+      "durable_path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/holy-name-locator-declaration.json",
+      "durable_sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6",
+      "transformation": "Byte-identical copy; no host absolute prefix present; no projection required."
+    },
+    {
+      "original_path": ".scratch/root/latin-two-holy-name-admission.json",
+      "original_sha256": "af653c80c2398d53f742024528b9c9c02c354a3f88e78ea11673fa80c28f5e80",
+      "durable_path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/root-admission.json",
+      "durable_sha256": "af653c80c2398d53f742024528b9c9c02c354a3f88e78ea11673fa80c28f5e80",
+      "transformation": "Byte-identical copy; no host absolute prefix present; no projection required."
+    },
+    {
+      "original_path": ".scratch/roman-sources/cleanliness-source-review/case-1.json",
+      "original_sha256": "c279c147839f461bbbd4e1cf1848173f2351ebae7515e88173a6a309ce167388",
+      "durable_path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-1.json",
+      "durable_sha256": "c279c147839f461bbbd4e1cf1848173f2351ebae7515e88173a6a309ce167388",
+      "transformation": "Byte-identical copy; no host absolute prefix present; no projection required."
+    },
+    {
+      "original_path": ".scratch/roman-sources/cleanliness-source-review/case-2.json",
+      "original_sha256": "3f88ad1c2751e12ad0a990360444e5fbd84c9d3188ecc1fcce6d8f2201457111",
+      "durable_path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-2.json",
+      "durable_sha256": "3f88ad1c2751e12ad0a990360444e5fbd84c9d3188ecc1fcce6d8f2201457111",
+      "transformation": "Byte-identical copy; no host absolute prefix present; no projection required."
+    },
+    {
+      "original_path": ".scratch/roman-sources/cleanliness-source-review/case-3.json",
+      "original_sha256": "c5297d7e6597397e4dd4db12e647a58b2d9e43d016de1563f35784619f31cc5d",
+      "durable_path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/independent-case-3.json",
+      "durable_sha256": "c5297d7e6597397e4dd4db12e647a58b2d9e43d016de1563f35784619f31cc5d",
+      "transformation": "Byte-identical copy; no host absolute prefix present; no projection required."
+    }
+  ],
+  "source_scope": {
+    "new_source_files": 8,
+    "existing_small_source_passage_metadata_changes": 2,
+    "latin_positive_changes": 2,
+    "english_body_changes": 0,
+    "holy_name_english_binding_fields": [
+      "ia_leaf",
+      "ia_leaf_range",
+      "witness_note"
+    ]
+  },
+  "explicit_metadata_successor": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/latin-two-holy-name/source-metadata-successor.json",
+    "sha256": "24626ded338d22da0ec8dc8fb2875591a92c505eb9881cba3ee8f6004a931c5d",
+    "scope": "Three source-schema metadata fields only; original declarations remain immutable."
+  },
+  "install_protocol": [
+    "Dry-run the guarded installer against the actual merged source tree during Root’s exclusive install window. It compares complete exact target dictionaries and raw Latin row bytes, not array indices or stale whole-owner snapshots.",
+    "Review the emitted read-map and source-owner patch. Original declarations govern source_epoch; there is no new generic transition schema or implicit exception.",
+    "Root must release the checkpoint, admit the exact transitions, and provide the fresh read-map SHA256 to --apply --checkpoint-released --approved-read-map-sha256. The flag asserts the operator’s external release; it does not manufacture permission.",
+    "The installer re-reads the current owners, preserves unrelated bytes and values, rejects any changed preimage, and checks all raw files again before writing. Per-file replacement is atomic; the batch requires an exclusive install window.",
+    "Rebind only the overlapping supplemental Gorgonius Postcommunion English descriptor to the new proper/proof pins. Its English binding/body/formula stays exact. Holy Name Collect Latin and all native754 authority records stay unchanged.",
+    "After merged installation, run source-library validation, the source_epoch exact-declaration adapter, owning producer checks and relevant consumer/ending tests. A preparation receipt does not replace these activation gates."
+  ],
+  "preserved": [
+    "All earlier correction declarations and independent review digests",
+    "Immutable old Latin payloads/passages",
+    "Holy Name English TSV including its stale row57 locator, with explicit erratum",
+    "All English text and publication permissions/grades",
+    "Queued Roman9/ferial3 source additions",
+    "Ordinary8 and OSP owner/parser work",
+    "Native754 ending authority"
+  ],
+  "excluded": [
+    "Other independent-review cases 4–6",
+    "Broad research or image binaries",
+    "Any new conclusion words",
+    "Any canonical write during preparation",
+    "Any source-epoch authority activation by this plan"
+  ]
+}

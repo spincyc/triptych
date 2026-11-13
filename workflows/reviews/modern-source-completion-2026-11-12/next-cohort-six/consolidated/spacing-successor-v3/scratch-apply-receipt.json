@@ -1,0 +1,121 @@
+{
+  "schema": "triptych-next-cohort-scratch-apply/v1",
+  "status": "SCRATCH PROJECTION ONLY; not adopted",
+  "plan_sha256": "7da2bb12bbd2bb24979e185ee3f3a900650793fa1444e873be09ef47879eba4f",
+  "root": ".scratch/modern-next-cohort-plan/spacing-successor/v3/dry-run-final-root",
+  "live_input_pins_at_apply": {
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": {
+      "sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+      "bytes": 1004208
+    },
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": {
+      "sha256": "117769a895aacabe098a438fccf19f1a6ae7fedd16f9c867374c176e0020ed38",
+      "bytes": 108045
+    },
+    "src/sources/calendars/postconciliar/propers.yaml": {
+      "sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+      "bytes": 3163294
+    },
+    "src/sources/inventories/postconciliar-ordo-missae-v1.toml": {
+      "sha256": "239fa6ed41030f2f33cb753007262fbd8f2733e86530f8c616a73a696916dbbb",
+      "bytes": 176729
+    }
+  },
+  "projected_output_pins": {
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/dry-run-final-root/src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "a4d5bac0eedecabc616db0fdf29abf910d9243e29116c009359f7207b47fbd4c",
+      "bytes": 1025487
+    },
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/dry-run-final-root/src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "sha256": "e61adad4a01d4621e041bef28847869ac3ad70e90276f456c7d0e636ce3fd935",
+      "bytes": 120684
+    },
+    "src/sources/calendars/postconciliar/propers.yaml": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/dry-run-final-root/src/sources/calendars/postconciliar/propers.yaml",
+      "sha256": "8fbf6213e7d714faa08a6c694de26e2107b85985029068b3508fa76a26c8e8bc",
+      "bytes": 3597176
+    },
+    "src/sources/inventories/postconciliar-ordo-missae-v1.toml": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/dry-run-final-root/src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "ae9bf6c98c04425ac0847159ecb2c49abdfea49df6701f387bb10745c0463bfb",
+      "bytes": 177090
+    }
+  },
+  "semantic_before_sha256": {
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "6e10c19c3e36239efba4036de9754e338e2e8bb55f24ef61d956e7d86c8cc140",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "5c52ba65de358036765a0c0b206b817fe147077b81b60490cfb090e0742d55c9",
+    "src/sources/calendars/postconciliar/propers.yaml": "c8c0704641cde9a314edef620b313c79869c759ce9d6e4808fe600c5b0b3feac",
+    "src/sources/inventories/postconciliar-ordo-missae-v1.toml": "3cb18f01cd8d68255adf252a3f05785838f22c0c9fe7c641d46fc1d170472631"
+  },
+  "semantic_after_sha256": {
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": "ce5c2ce1247b9a96c5e6eb383c1a0acb0d11ef40147d16a031dd5946aa7fdcce",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": "a9fd42784dcc688c54c787c00d841f75891bb72779f66a672df842f960705626",
+    "src/sources/calendars/postconciliar/propers.yaml": "8e9489029fdda0876aab9357a8a0b8f3bc7a19db884f94b622c6a6b1387df98c",
+    "src/sources/inventories/postconciliar-ordo-missae-v1.toml": "502c72a07675ef51517e531d016a755d340f6512467be593b27e8c62a8580de0"
+  },
+  "english_entries_before": 173,
+  "english_entries_after": 183,
+  "english_untranslated_before": 403,
+  "english_untranslated_after": 393,
+  "selected_preimages_pass": true,
+  "unselected_semantic_objects_preserved": true,
+  "unselected_TOML_blocks_preserved": true,
+  "current_Hildegard_Newman_gaps_preserved": [
+    {
+      "mass": "saint-hildegard-bingen-virgin-doctor-church",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The newly represented Collect is attested in a complete held official Latin annex, but no exact English exemplar is acquired and qualified by this source admission. Latin acquisition and its withheld body do not establish an English rights-withheld state. No English text, witness identity, publication permission, or historical-English correspondence is inferred. Latin appointment evidence: passage.catholic-church.roman-calendar-three-doctors-additions-2021.2021-official-latin-annex.missal-and-lectionary-appointments."
+    },
+    {
+      "mass": "saint-john-henry-newman-priest-doctor",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "note": "The newly represented Collect is attested in a complete held official Latin annex, but no exact English exemplar is acquired and qualified by this source admission. Latin acquisition and its withheld body do not establish an English rights-withheld state. No English text, witness identity, publication permission, or historical-English correspondence is inferred. Latin appointment evidence: passage.catholic-church.roman-calendar-newman-additions-2025.2025-official-latin-annex.missal-and-lectionary-appointments. The USCCB memorial page is a known English acquisition lead; its available wording is not an acquired hash-bound English artifact in this admission."
+    }
+  ],
+  "ordinary_English_dictionary_unchanged": true,
+  "source_files_mapped": 105,
+  "separate_d85_metadata_unchanged": true,
+  "canonical_final_pins": {
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml": {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+      "bytes": 1004208
+    },
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml": {
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "sha256": "117769a895aacabe098a438fccf19f1a6ae7fedd16f9c867374c176e0020ed38",
+      "bytes": 108045
+    },
+    "src/sources/calendars/postconciliar/propers.yaml": {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+      "bytes": 3163294
+    },
+    "src/sources/inventories/postconciliar-ordo-missae-v1.toml": {
+      "path": "src/sources/inventories/postconciliar-ordo-missae-v1.toml",
+      "sha256": "239fa6ed41030f2f33cb753007262fbd8f2733e86530f8c616a73a696916dbbb",
+      "bytes": 176729
+    }
+  },
+  "canonical_writes": false
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "triptych-postconciliar-ten-code-runtime-adoption/v1",
+  "date": "2026-11-13",
+  "method": "postconciliar-ten-source-based-latin-20261113-v1",
+  "decision": "accept frozen four-file finite-ten backend and dispatcher design; prepare exact actual-authority activation in staging",
+  "raw_admission_sha256": "522d340ef3e41c20f980ca5a1534c88a8fe006708b68fa59380110c7a35e99be",
+  "source_admission_sha256": "fec9b901b30557bef7f813c875c28071e2f29dd041ab58c60c23b03c6f782410",
+  "body_admission_sha256": "3670f4674a3a6dba13d2a4c3ad53f6a8c2cabccb469e32f08b885c4c74a69dfc",
+  "metadata_admission_sha256s": [
+    "138916b67fa7237b286ebc93ec468fc3be850453c51309dded92cddce8a88b92",
+    "0b823b676c8fce1cc4572a9c76b298de7af2854baac39e7ba283e929e3ab3289"
+  ],
+  "inactive_contract_sha256": "58166341488d91ad7dd113b48dea2b8b67997fe2957a4dfae93999cde3f5af1d",
+  "inactive_package_manifest_sha256": "ca7f6e8495dc1ed18925887a3422642b686b072f1c3757142eb3d874d05d511f",
+  "independent_code_review_sha256": "de38d17bb3a992812c6b1253366ffe395292a87b487b9e74540d26b7b7de4a7c",
+  "accepted_inactive_files": {
+    "scripts/_proper_finite_latin_20261113_postconciliar_ten.py": {
+      "sha256": "5803a6afcc3f881f8b7a077e5edbd5aa31f1945cab7f34d21e57af575e559ee4",
+      "bytes": 22012
+    },
+    "scripts/_proper_finite_latin_postconciliar.py": {
+      "sha256": "5a79e8f2bd5f087729bdbb46ea546cf30fd2fda6da5f0bb59477b19c42b663a1",
+      "bytes": 2483
+    },
+    "scripts/_proper_qualified_latin.py": {
+      "sha256": "6e4b31a28f52284f663b0321461cd65c96683de5f301585b1de00258d483f23f",
+      "bytes": 20034
+    },
+    "tools/tests/test_postconciliar_ten_finite_latin.py": {
+      "sha256": "177631114c29b78f6334d3fefed480f37f9dcecde1d56bd8e3a212c7924b2ce2",
+      "bytes": 28264
+    }
+  },
+  "source_proof": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ten/source-contract-adoption.json",
+    "sha256": "55b8f5bfdaab2ceaf6c6768470922f04565e51bd919bf28d642fc90762293299"
+  },
+  "body_proof": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ten/body-merits-adoption.json",
+    "sha256": "4f4491e0a074c391b07e75d335c8b96ea5991907b45a1007f3c16a38f2914f98"
+  },
+  "explicit_ancestor_successors": [
+    {
+      "field": "notes",
+      "before_file_sha256": "096d31901eb26e98b6e4dd1ddffcdd7a92d24ed461aa13aa3d74e9680e22af09",
+      "after_file_sha256": "363a9080c175ed7e0541282c8cc574ad344289637427f435fd78fc27b4ad187b",
+      "before_record_sha256": "b4ed0883d295bb50d929f32b0a1dc2bc41a126651466ba12c8d3fc659c3cf228",
+      "after_record_sha256": "9a2937ad11e2ea152e1100d652f89c7bd0167948525daed72055ce569815366f",
+      "root_admission_sha256": "138916b67fa7237b286ebc93ec468fc3be850453c51309dded92cddce8a88b92",
+      "source_id": "artifact.a-m-de-noboa.preparacion-y-accion-de-gracias-para-la-santa-misa.madrid-aguado-1851.idus-whole-pdf"
+    },
+    {
+      "field": "rights_basis",
+      "before_file_sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+      "after_file_sha256": "dc71449fba4dd7ffceacc3ad09e57ac8307343811bbfba92f807eacfc2663525",
+      "before_record_sha256": "58fd7f0599b2262f2bf41f726df5b5e39f71a3ebb7e2543baab323677ba435be",
+      "after_record_sha256": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+      "root_admission_sha256": "0b823b676c8fce1cc4572a9c76b298de7af2854baac39e7ba283e929e3ab3289",
+      "source_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+    }
+  ],
+  "scope": "Exactly ten selected owners, twenty body merits and sixty Latin surface tuples; source-based historical study reconstruction. Authenticated 2008 target correspondence remains unresolved; project English is not an approved liturgical translation.",
+  "remaining": "Actual Root staging authorization only. Final active-code review, preservation installer, cold product input closure and integrated native Day acceptance remain separate; this file does not assert their completion."
+}

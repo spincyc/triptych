@@ -1,0 +1,420 @@
+{
+  "schema": 1,
+  "prepared_on": "2026-11-12",
+  "scope": "Four exact English receiver proposals; no canonical mutations. Dec31 requires a finite historical-English Scripture-body consumer extension; do not recast it as project-created.",
+  "canonical_inventory": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+  "inventory_sha256_at_preparation": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+  "frozen_antiphon_candidate_sha256": "3d14adf77d05eaa1e976b9668f33da93e5fb766aca747472009637f2358b85b1",
+  "changes": [
+    {
+      "input_index": 24,
+      "identity": [
+        "mary-mother-of-god",
+        "main",
+        "Entrance Antiphon (alternative)",
+        "all",
+        1
+      ],
+      "before": {
+        "mass": "mary-mother-of-god",
+        "form_id": "main",
+        "proper": "Entrance Antiphon (alternative)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "icel-antiphonary-2010",
+        "source_id": "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "verified_on_page": "2026-08-21",
+        "verified_artifact_page": 22,
+        "verified_printed_page": "14",
+        "verified_heading": "1 January / SOLEMNITY OF MARY, THE HOLY MOTHER OF GOD",
+        "verified_url": "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf",
+        "quarantined_text_sha256": [
+          "384d54cb0b2ed002663ae3efd081c4c141529caf7af9d0778e0c2638c33d0697"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "after": {
+        "mass": "mary-mother-of-god",
+        "form_id": "main",
+        "proper": "Entrance Antiphon (alternative)",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Lux fulgebit hodie super nos",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "140",
+        "ia_leaf": 140,
+        "ia_leaf_range": [
+          140,
+          140
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "witness_note": "Complete historical Lasance Latin and English on artifact page 141, printed page 140, freshly inspected on 2026-11-12. Complete historical Latin antiphon agrees word for word with the receiving identity in the separately identified secondary 2002 digital reproduction, artifact page 110, after stress, pointing, capitalization and i/j spelling normalization. This is a new recipient of the exact already published historical human English; no translation was newly composed. Psalm verse, Gloria and rubrics are outside the body. The receiving body's relation to the authentic 2008 edition remains unestablished. Printed-2002 fidelity of the digital reproduction remains unestablished. The independent approved modern English restriction remains; the complete prior untranslated record is retained in this review packet. Historical English is for study, not approved contemporary English or approval for recitation. The alternative remains the source Vel option; no default selection is made. Independent exact source/English reuse review: workflows/reviews/modern-source-completion-2026-11-12/temporal/antiphon-source-review.json. The review accepts unchanged reuse under the existing body-specific admission; it does not establish a new whole-book1945 stratum finding. Receiving comparison: passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-mary-mother-of-god-entrance-comparison.",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.modern-sources-20261112-mary-mother-of-god-entrance-source",
+        "collated": "page-image, 2026-11-12",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.modern-sources-20261112-temporal-antiphon-recipients",
+        "publication_artifact_sha256": "c37d4caf104815db21c0e4f7863b81a05f00545a346531dd2b750f88ace81260",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.modern-sources-20261112-mary-mother-of-god-entrance-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "A light shall shine upon us this day: for Our Lord is born to us; and He shall be called wonderful, God, the prince of peace, the Father of the world to come; of Whose reign there shall be no end."
+          }
+        ]
+      },
+      "route": "oldHumanEnglish",
+      "english_sha256": "2481882b5f11a90dfd756ea60ee2b67659af56cbe026e6a0dd99aee006f3acee",
+      "source_review": "workflows/reviews/modern-source-completion-2026-11-12/temporal/antiphon-source-review.json",
+      "source_review_sha256": "bd94d75113edc325a1f907837269046b9de7e622f48d082cce61f047deca51f2",
+      "installation_state": "reviewed; ready for parent adoption"
+    },
+    {
+      "input_index": 50,
+      "identity": [
+        "christmas-december-31",
+        "main",
+        "Entrance Antiphon",
+        "all",
+        1
+      ],
+      "before": {
+        "mass": "christmas-december-31",
+        "form_id": "main",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "witness_passage_id": "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-christmas-december-31-entrance-1-english-body",
+        "verified_artifact_page": 22,
+        "verified_printed_page": 14,
+        "verified_on_page": "2026-10-21",
+        "note": "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 22, printed page 14. The source uses a messenger-of-counsel title reflecting a distinct textual form, rather than the series of royal names carried by the offered Hebrew/Vulgate Bible witnesses at the resolved Isaiah verse. The full approved English antiphon is not provided by those selected carriers. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied.",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+          "surfaces": [
+            "site-display",
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        }
+      },
+      "after": {
+        "mass": "christmas-december-31",
+        "form_id": "main",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Puer natus est nobis",
+        "witness": "lasance-1945",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "printed_page": "144",
+        "ia_leaf": 144,
+        "ia_leaf_range": [
+          144,
+          144
+        ],
+        "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "witness_note": "Complete historical Lasance Latin and English on artifact page 145, printed page 144, freshly inspected on 2026-11-12. Complete historical Latin antiphon agrees word for word with the receiving identity in the separately identified secondary 2002 digital reproduction, artifact page 109, after stress, pointing, capitalization and i/j spelling normalization. This is a new recipient of the exact already published historical human English; no translation was newly composed. Psalm verse, Gloria and rubrics are outside the body. The receiving body's relation to the authentic 2008 edition remains unestablished. Printed-2002 fidelity of the digital reproduction remains unestablished. The independent approved modern English restriction remains; the complete prior untranslated record is retained in this review packet. Historical English is for study, not approved contemporary English or approval for recitation. Independent exact source/English reuse review: workflows/reviews/modern-source-completion-2026-11-12/temporal/antiphon-source-review.json. The review accepts unchanged reuse under the existing body-specific admission; it does not establish a new whole-book1945 stratum finding. Receiving comparison: passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-christmas-december-31-entrance-comparison.",
+        "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.modern-sources-20261112-christmas-december-31-entrance-source",
+        "collated": "page-image, 2026-11-12",
+        "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.modern-sources-20261112-temporal-antiphon-recipients",
+        "publication_artifact_sha256": "c37d4caf104815db21c0e4f7863b81a05f00545a346531dd2b750f88ace81260",
+        "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.modern-sources-20261112-christmas-december-31-entrance-publication",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "text": "A child is born to us, and a Son is given to us; Whose government is upon His shoulder; and His name shall be called the angel of great counsel."
+          }
+        ],
+        "extent": "body"
+      },
+      "route": "oldHumanEnglish",
+      "english_sha256": "935ddab7999ced30303b493dbaabfc2121d6a586f3dd40b260cd11ce4d451bfb",
+      "source_review": "workflows/reviews/modern-source-completion-2026-11-12/temporal/antiphon-source-review.json",
+      "source_review_sha256": "bd94d75113edc325a1f907837269046b9de7e622f48d082cce61f047deca51f2",
+      "installation_state": "source/publication ready; historical-English Scripture-body consumer admission required"
+    },
+    {
+      "input_index": 0,
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (before the readings)",
+        "all",
+        1
+      ],
+      "before": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (before the readings)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 62 / printed p. 380, nn. 2-3. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The two opening branches appoint the same incipit; neither branch is selected in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "after": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (before the readings)",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "ancient_reading": "Praesta quaesumus omnipotens deus. ut claritatis tuae super nos splendor effulgeat. et lux tuae lucis corda eorum qui per gratiam tuam renati sunt. sancti spiritus inlustratione confirmet. per dominum nostrum iesum christum in unitate eiusdem.",
+        "divergence": "Every petition word agrees after received inlustratione/illustratione spelling and the two local word-order changes per gratiam tuam renati sunt to per tuam gratiam sunt renati. Pointing, capitalization and accents differ. The older conclusion prints per dominum nostrum iesum christum in unitate eiusdem.; the bounded-secondary short cue Per Dominum. takes only its directly witnessed first two words. No full conclusion is supplied or silently harmonized. Printed e-caudata is transcribed ae; apparatus markers 3 and 4 are excluded from the prayer words. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts. The receiving incipit is the exact short incipit on the extended slot; the complete source identity and longer original source incipit remain unchanged in the separately retained admitted simple-Vigil dictionary. New receiving use: Official2008 nn2-3 name the same Praesta prayer in both opening branches and explicitly refer to Ad Missam in Vigilia, Missal p443. Secondary2002 AP264-265 establishes the complete named Vigil prayer and its role. The adjacent Saturday-morning Praesta on AP264 is a different full prayer and is excluded. This is a source-qualified referral, not a complete2008body equivalence. No opening branch/default, R.Amen, expanded conclusion, other simple-Vigil proper or complete-form claim is inferred. Source-appointment passage passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.modern-sources-20261112-pentecost-extended-before-readings-appointment; receiving comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-pentecost-extended-before-readings-comparison; exact unchanged study-English publication passage.triptych.modern-sources-20261112-pentecost-extended-study-recipients.2026-11-12.before-readings. Prior source-local mapping review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-collect-mapping-review.json and accepted ancient-body/English review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json remain controlling. The prior unavailable record is preserved verbatim in the install proposal.",
+        "incipit": "Praesta, quaesumus",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; Orationes ad Missam in Sabbato Pentecosten post ascensum fontis, first prayer",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Grant, we ask, almighty God, that the splendor of your glory may shine upon us, and that the light of your light may strengthen, through the illumination of the Holy Spirit, the hearts of those who have been reborn by your grace. Through our Lord."
+          }
+        ],
+        "witness_note": "Project study English, reused unchanged from an independently witnessed ancient expression through the official extended-Vigil referral to the named simple-Vigil prayer. Complete Latin comparison is limited to the separately identified secondary digital 2002 reproduction; fidelity to printed 2002 remains unestablished. The official 2008 excerpt supplies only the incipit and page referral, so the complete 2008 body remains unestablished. The short Through our Lord cue is retained without expansion or Amen. This is neither historical human English nor approved liturgical English or recitation authorization. Opening branches and prayer alternatives remain unselected."
+      },
+      "route": "projectStudyEnglish",
+      "original_admitted_entry": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 2,
+        "relation": "variant",
+        "ancient_reading": "Praesta quaesumus omnipotens deus. ut claritatis tuae super nos splendor effulgeat. et lux tuae lucis corda eorum qui per gratiam tuam renati sunt. sancti spiritus inlustratione confirmet. per dominum nostrum iesum christum in unitate eiusdem.",
+        "divergence": "Every petition word agrees after received inlustratione/illustratione spelling and the two local word-order changes per gratiam tuam renati sunt to per tuam gratiam sunt renati. Pointing, capitalization and accents differ. The older conclusion prints per dominum nostrum iesum christum in unitate eiusdem.; the bounded-secondary short cue Per Dominum. takes only its directly witnessed first two words. No full conclusion is supplied or silently harmonized. Printed e-caudata is transcribed ae; apparatus markers 3 and 4 are excluded from the prayer words. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts.",
+        "incipit": "Praesta, quaesumus, omnipotens Deus, ut claritatis tuae",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915; Orationes ad Missam in Sabbato Pentecosten post ascensum fontis, first prayer",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.english-completion-20261029-postconciliar-pentecost-vigil-collect-2-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Grant, we ask, almighty God, that the splendor of your glory may shine upon us, and that the light of your light may strengthen, through the illumination of the Holy Spirit, the hearts of those who have been reborn by your grace. Through our Lord."
+          }
+        ]
+      },
+      "english_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066",
+      "source_appointment_passage_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.modern-sources-20261112-pentecost-extended-before-readings-appointment",
+      "secondary_comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-pentecost-extended-before-readings-comparison",
+      "study_publication_passage_id": "passage.triptych.modern-sources-20261112-pentecost-extended-study-recipients.2026-11-12.before-readings",
+      "installation_state": "source-prepared; independent new-recipient mapping and unchanged-English review pending"
+    },
+    {
+      "input_index": 6,
+      "identity": [
+        "pentecost",
+        "extended-vigil",
+        "Collect (after Gloria)",
+        "all",
+        1
+      ],
+      "before": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (after Gloria)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "note": "Exact official Latin appointment is independently recorded, but no exact English exemplar is held for this target. The Latin-only official witness does not establish an English rights-withheld state. No English body, witness, permission or hash is invented. Official 2008 Supplementum, Notitiae artifact p. 65 / printed p. 383, nn. 9-10. The excerpt appoints this Collect by a short incipit and a pointer to Missal p. 443; its complete target body is not reproduced by this finite witness. The source places Gloria before this Collect; the hymn body and its Ordinary placement are not fabricated in this partial form. Source: passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.english-completion-20261029-postconciliar-phase2-pentecost-extended-module",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "after": {
+        "mass": "pentecost",
+        "form_id": "extended-vigil",
+        "proper": "Collect (after Gloria)",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "ancient_reading": "Omnipotens sempiterne Deus, qui paschale sacramentum quinquaginta dierum voluisti mysterio contineri, praesta ut gentium facta dispersio divisione linguarum ad unam confessionem tui nominis caelesti munere congregetur. Per.",
+        "divergence": "All petition lexical words preexist. There are three linked grammatical inflection changes: ancient dispersio divisione ... congregetur becomes bounded-secondary dispersione divisiones ... congregentur. Wilson p.123 note 2 independently prints the ancient V reading divisiones, and note 4 prints congregentur V; his main text follows the other cited witnesses. The new English follows the bounded-secondary grammar. Pointing, capitalization and accents also differ. The main ancient cue is literally Per.; the generic short cue Per Dominum. is separately printed in this edition at p.106, parent artifact p.199, and is not expanded here. Independently printed short-cue source: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts. The receiving incipit is the exact short incipit on the extended slot; the complete source identity and longer original source incipit remain unchanged in the separately retained admitted simple-Vigil dictionary. New receiving use: Official2008 n10 names the Omnipotens prayer after Gloria and explicitly refer to Ad Missam in Vigilia, Missal p443. Secondary2002 AP264-265 establishes the complete named Vigil prayer and its role. The adjacent Saturday-morning Praesta on AP264 is a different full prayer and is excluded. This is a source-qualified referral, not a complete2008body equivalence. No opening branch/default, R.Amen, expanded conclusion, other simple-Vigil proper or complete-form claim is inferred. Source-appointment passage passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.modern-sources-20261112-pentecost-extended-after-gloria-appointment; receiving comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-pentecost-extended-after-gloria-comparison; exact unchanged study-English publication passage.triptych.modern-sources-20261112-pentecost-extended-study-recipients.2026-11-12.after-gloria. Prior source-local mapping review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase2-pentecost-collect-mapping-review.json and accepted ancient-body/English review workflows/reviews/missal-english-completion-2026-10-29/postconciliar/phase4-first18/review-03-bf2e4449ced7.json remain controlling. The prior unavailable record is preserved verbatim in the install proposal.",
+        "incipit": "Omnipotens sempiterne Deus",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; BookI, sectionLXXX, Orationes et Preces Dominica Pentecosten, first prayer; p123 apparatus notes2and4",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Almighty, everlasting God, who willed the paschal sacrament to be contained within the mystery of fifty days, grant that, after the scattering of the nations, the divisions of tongues may be gathered by a heavenly gift into one confession of your name. Through our Lord."
+          }
+        ],
+        "witness_note": "Project study English, reused unchanged from an independently witnessed ancient expression through the official extended-Vigil referral to the named simple-Vigil prayer. Complete Latin comparison is limited to the separately identified secondary digital 2002 reproduction; fidelity to printed 2002 remains unestablished. The official 2008 excerpt supplies only the incipit and page referral, so the complete 2008 body remains unestablished. The short Through our Lord cue is retained without expansion or Amen. This is neither historical human English nor approved liturgical English or recitation authorization. Opening branches and prayer alternatives remain unselected."
+      },
+      "route": "projectStudyEnglish",
+      "original_admitted_entry": {
+        "mass": "pentecost",
+        "form_id": "vigil",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "ancient_reading": "Omnipotens sempiterne Deus, qui paschale sacramentum quinquaginta dierum voluisti mysterio contineri, praesta ut gentium facta dispersio divisione linguarum ad unam confessionem tui nominis caelesti munere congregetur. Per.",
+        "divergence": "All petition lexical words preexist. There are three linked grammatical inflection changes: ancient dispersio divisione ... congregetur becomes bounded-secondary dispersione divisiones ... congregentur. Wilson p.123 note 2 independently prints the ancient V reading divisiones, and note 4 prints congregentur V; his main text follows the other cited witnesses. The new English follows the bounded-secondary grammar. Pointing, capitalization and accents also differ. The main ancient cue is literally Per.; the generic short cue Per Dominum. is separately printed in this edition at p.106, parent artifact p.199, and is not expanded here. Independently printed short-cue source: passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-short-conclusion-cues-source. The comparison is bounded to the inspected secondary digitally typeset 2002 reproduction; printed-2002 fidelity and correspondence to 2008 remain unresolved. The English is new project study English from the independently witnessed ancient expression with only the explicitly described changes, never approved liturgical English or a text for recitation. The separate approved-English or historical-antecedent unavailable record is retained exactly in the dated review receipt; its witness-specific restriction remains applicable. No ICEL wording was consulted for the drafts.",
+        "incipit": "Omnipotens sempiterne Deus, qui paschale sacramentum",
+        "ancient_witness": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; BookI, sectionLXXX, Orationes et Preces Dominica Pentecosten, first prayer; p123 apparatus notes2and4",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-ordinary-four-gelasian-pages-c4d7d3c1",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-pentecost-vigil-collect-1-study-source",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Almighty, everlasting God, who willed the paschal sacrament to be contained within the mystery of fifty days, grant that, after the scattering of the nations, the divisions of tongues may be gathered by a heavenly gift into one confession of your name. Through our Lord."
+          }
+        ]
+      },
+      "english_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e",
+      "source_appointment_passage_id": "passage.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504.modern-sources-20261112-pentecost-extended-after-gloria-appointment",
+      "secondary_comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.modern-sources-20261112-pentecost-extended-after-gloria-comparison",
+      "study_publication_passage_id": "passage.triptych.modern-sources-20261112-pentecost-extended-study-recipients.2026-11-12.after-gloria",
+      "installation_state": "source-prepared; independent new-recipient mapping and unchanged-English review pending"
+    }
+  ],
+  "files": [
+    {
+      "path": "workflows/reviews/modern-source-completion-2026-11-12/temporal/antiphon-source-review.json",
+      "sha256": "bd94d75113edc325a1f907837269046b9de7e622f48d082cce61f047deca51f2",
+      "bytes": 64940
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/modern-sources-20261112-mary-mother-of-god-entrance-source.toml",
+      "sha256": "b394390a6c4b2f9a46ed7df2ac403c0d6d3a191d2cef3a9b17c0fe1e5a8851fd",
+      "bytes": 2226
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-mary-mother-of-god-entrance-comparison.toml",
+      "sha256": "8dc4289f94e458258e38e37acd0c48147c4727ae168a8d122e77510a81c969b6",
+      "bytes": 2239
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/modern-sources-20261112-christmas-december-31-entrance-source.toml",
+      "sha256": "b1fbac37ebbe591b61f1c6e10a488a406f52f3686c806bf1eecfdb928899954a",
+      "bytes": 2144
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-christmas-december-31-entrance-comparison.toml",
+      "sha256": "5c80c5dec7edd1e69f4cdc95bff096700c3ac0e63c638cb599c42847a462664d",
+      "bytes": 2157
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/modern-sources-20261112-temporal-antiphon-recipients/text.tsv",
+      "sha256": "c37d4caf104815db21c0e4f7863b81a05f00545a346531dd2b750f88ace81260",
+      "bytes": 517
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/modern-sources-20261112-temporal-antiphon-recipients/artifact.toml",
+      "sha256": "5c3e7a2553e42604ee2b33213d4fa8db19f5b7328d8c89e3b17f4e3ec971c3f0",
+      "bytes": 1792
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/modern-sources-20261112-mary-mother-of-god-entrance-publication.toml",
+      "sha256": "7cc68a5666fd73f5f96837eccc57ce8e04f0ce5b60652d82f80320515b128a30",
+      "bytes": 2226
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/modern-sources-20261112-christmas-december-31-entrance-publication.toml",
+      "sha256": "1e63116922fe3fa82e2cc7304b10a877f3173edd333bedc3c7e9c51904e7565d",
+      "bytes": 2144
+    },
+    {
+      "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-before-readings-appointment.toml",
+      "sha256": "ca9ceee7bc3667aac1a8e33ae297cad6249855db7c88fe022e2662980de4da08",
+      "bytes": 1339
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-before-readings-comparison.toml",
+      "sha256": "07f91159cc8060789a71a3d23fec67e90c6e8bea45c688fafc8cd8183b8350b3",
+      "bytes": 1338
+    },
+    {
+      "path": "src/sources/works/holy-see/variationes-et-additiones-missalis-romani-2008/editions/latin-notitiae-503-504/passages/modern-sources-20261112-pentecost-extended-after-gloria-appointment.toml",
+      "sha256": "462a97ba3de2beb0ee35675059b4f44ba7a51df6931f37ea3fa52b84ee78575b",
+      "bytes": 1318
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/modern-sources-20261112-pentecost-extended-after-gloria-comparison.toml",
+      "sha256": "9df27aec421cfcd6e08fb0a5bc89c8c524b98a81e7115d6d84765a381a7b2824",
+      "bytes": 1317
+    },
+    {
+      "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/work.toml",
+      "sha256": "d37d7dd5f9ad3810621e5e53f61d75b60e76d69fe0b06a6fc6fd9b531c32aff4",
+      "bytes": 726
+    },
+    {
+      "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/edition.toml",
+      "sha256": "bbfa5d11fad9f5788b850f04988ef7d009a7e81e7409f1cb95641051ea0bf841",
+      "bytes": 624
+    },
+    {
+      "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/text.tsv",
+      "sha256": "67971f96d3215742bf024b22413f3a0cc5678baed09c8431595beff8e09c77d8",
+      "bytes": 696
+    },
+    {
+      "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/artifacts/english-recipients/artifact.toml",
+      "sha256": "741c8ebdf7efdad4f932168a84fc2fd22bf90248e0fb62c2ea48d42ca710ed7c",
+      "bytes": 1770
+    },
+    {
+      "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/before-readings.toml",
+      "sha256": "31b44fa56a876ba23aed717cbe405e37764d44436ddd82c9cc59c1af0dfe3a2b",
+      "bytes": 3503
+    },
+    {
+      "path": "src/sources/works/triptych/modern-sources-20261112-pentecost-extended-study-recipients/editions/2026-11-12-source-qualified-reuse/passages/after-gloria.toml",
+      "sha256": "4a9abf64e2c2eca66f0032b8d39ec21a49b3ebbcf0f1547ff8d243288ed7a134",
+      "bytes": 3748
+    }
+  ],
+  "prior_refusals_preserved": true,
+  "no_target_latin_publication": true,
+  "metadata_only_predecessor": {
+    "path": ".scratch/modern-partition-temporal/install-proposal-v2/proposal.json",
+    "sha256": "226e03be1090bd57769691c129a2e53e155dfb0afee66c26930ed4a60fdc3ab9",
+    "bytes": 36049
+  },
+  "metadata_only_delta": "Add only after.witness_note for input_index 0 and 6; all other proposal content, source files, recipient incipits, ancient readings, translations and refusals remain unchanged."
+}

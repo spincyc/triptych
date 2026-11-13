@@ -130,6 +130,7 @@
       textDisplay: state.textDisplay,
       translationWitness: state.languages.translationWitness || null,
       heading: heading || 'h2', cycle: selectedCycle,
+      conclusionExecution: event.conclusionExecution || null, sourceLocalActorOffer: event.sourceLocalActorOffer || null,
       orationGroups: event.orationGroups || null, orationContext: event.orationContext || null, eventId: event.id, structure: runtime.structure
     });
     if (translationChoice) {

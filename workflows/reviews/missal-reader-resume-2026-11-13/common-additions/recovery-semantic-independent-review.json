@@ -1,0 +1,111 @@
+{
+  "scope": "Independent frozen code/evidence review of Jerome and George semantic recovery and Loreto integration",
+  "review_date": "2026-11-13",
+  "status": "accepted within bounded recovery-only scope",
+  "findings": [],
+  "owning_tests": {
+    "run": 13,
+    "failures": 0,
+    "errors": 0,
+    "log": "cold-owning-tests.log"
+  },
+  "independent_controls": [
+    {
+      "name": "actual missing historical George verification record",
+      "result": "refused",
+      "message": "invalid correction evidence: missing historical-page-george"
+    },
+    {
+      "name": "changed historical George record bytes",
+      "result": "refused",
+      "message": "invalid correction evidence: changed source record historical-page-george"
+    },
+    {
+      "name": "wrong source identity with valid unchanged bytes",
+      "result": "refused",
+      "message": "invalid correction evidence: source identity comparison-george"
+    },
+    {
+      "name": "absolute source path",
+      "result": "refused",
+      "message": "invalid correction evidence: unsafe source path for comparison-george"
+    },
+    {
+      "name": "traversal source path",
+      "result": "refused",
+      "message": "invalid correction evidence: unsafe source path for comparison-george"
+    },
+    {
+      "name": "expected output inventory cannot be an evidence source",
+      "result": "refused",
+      "message": "invalid correction evidence: unsafe source path for comparison-george"
+    },
+    {
+      "name": "valid but wrong 1970 passage repinned under Jerome alias",
+      "result": "refused",
+      "message": "invalid correction evidence: source ownership, locus or verification comparison-jerome"
+    },
+    {
+      "name": "rehashed 1970 artifact metadata promoted to tracked",
+      "result": "refused",
+      "message": "invalid correction evidence: 1970 witness must remain restricted"
+    },
+    {
+      "name": "source symlink escapes supplied root",
+      "result": "refused",
+      "message": "invalid correction evidence: unsafe source path for comparison-george"
+    },
+    {
+      "name": "renamed canonical recipient saint-jerome-emiliani",
+      "result": "refused",
+      "message": "invalid correction evidence: missing or duplicate recipient saint-jerome-emiliani"
+    },
+    {
+      "name": "renamed canonical recipient saint-george-martyr",
+      "result": "refused",
+      "message": "invalid correction evidence: missing or duplicate recipient saint-george-martyr"
+    },
+    {
+      "name": "English form identity drift saint-jerome-emiliani",
+      "result": "refused",
+      "message": "invalid correction evidence: English recipient tuple saint-jerome-emiliani"
+    },
+    {
+      "name": "English form identity drift saint-george-martyr",
+      "result": "refused",
+      "message": "invalid correction evidence: English recipient tuple saint-george-martyr"
+    },
+    {
+      "name": "historical Jerome English assigned modern edition",
+      "result": "refused",
+      "message": "invalid correction evidence: historical revised English source saint-jerome-emiliani"
+    },
+    {
+      "name": "all expected-output flags false",
+      "result": "derivation unchanged",
+      "row_count": 168
+    }
+  ],
+  "output": {
+    "rows": 168,
+    "wrong_edition_flags": 8,
+    "exact_frozen_loreto_inventory_match": true,
+    "all_unresolvable": true,
+    "no_target_formulary_body_authority": true
+  },
+  "frozen_inputs": {
+    "test_sha256": "a3f3a1f61e9aa4e2faea889fb90417f103d969cc54821b1b976b6e4cb6f02639",
+    "contract_sha256": "608c91f07582fe1589ac32c5ad0b79fb78c125289528cc2ecfcde50bf9ecf8d7",
+    "inventory_sha256": "b5dd0abf24845d3cde049156af340eded8d87eb90dfd3550bac6a8724ced76e0",
+    "calendar_fixture_sha256": "ae07b231a52acf6c1beacf81e5929a39e47fb40e2a132ab882b7fb03a041cece",
+    "script_sha256": "a5e60cbfba46f6be86abbb1273b95c70d6bdcc519f6741b5fedefa938e160259"
+  },
+  "assessment": [
+    "The two true flags are derived from separately pinned comparison and historical-source dependencies plus exact current English dispositions. Expected recovery rows are not loaded as evidence.",
+    "Missing recipients, wrong source bytes and identities, crossed legitimate sources, modern authority promotion and incorrect English bindings fail. No failed check falls back to a false flag.",
+    "All 168 rows match the frozen Loreto companion; 19 ICEL antiphonary rows and one official Loreto annex row remain separate. The six existing prose-marked flags are unchanged.",
+    "No protected prayer bodies, new English, body authority, Common resolution or authenticated 2008 correspondence are introduced."
+  ],
+  "maintenance_limit": "Exact metadata-record hashes intentionally require review when those source records change, including editorial prose. This is a bounded reviewed evidence contract, not a general source validator.",
+  "canonical_mutation": false
+}

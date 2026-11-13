@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-first-second-antecedents-20261112-1fc31f67"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Literal readings and apparatus of the Oxford 1894 Wilson printing, public domain in the United States by date of publication. This record contains no later target variants and makes no publication claim about the modern whole prayers."
+source_url = "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf"
+provenance = "Fresh direct inspection at 200 and 400 dpi of the complete registered parent PDF: page130/printed37 main Super populum; page131/printed38 notes36-37; page114/printed21 controlling note6; page111/printed18 alternate Super populum; page155/printed62 complete Omnipotens prayer. The full parent PDF hash was reverified. OCR was used only to locate pages."
+retrieved = "2026-11-12"
+sha256 = "1fc31f6701fe5c3aed057ffd6a8e25b0cf7c06323c4aae472f0df3a7259b0204"
+byte_size = 698
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/good-friday-first-second-antecedents-20261112-1fc31f67/latin.txt"
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+transformation = "Transcribe complete prayers and complete relevant apparatus notes as six physical lines; join line wraps, omit superscript footnote numbers and marginal witness sigla from prayer bodies, retain bracketed restored text in the p18 reading. Do not expand Per. or Per Dominum nostrum. The nonlexical printed gamma mark following the first and fifth readings is omitted from the prayer transcription; it is visible in the page control. Notes36,37,6 retain their identifiers. No target substitution is made."
+indexable = true
+encoding = "utf-8"
+notes = "Line1 is the complete p37 Ad Populum body; lines2-4 are controlling notes; line5 is the complete p18 alternate with visible editorial brackets; line6 is the complete p62 Feria iv Hebdom. sexta prayer. Printed62 gives no footnote marker within that prayer; the adjacent note28 belongs to the following Praesta prayer. These are antecedents only, not exact ancient attestations of either 1962 whole."

@@ -1,0 +1,60 @@
+{
+  "schema": "triptych-root-structural-source-metadata-admission/v1",
+  "reviewer": "Root",
+  "date": "2026-11-13",
+  "decision": "accept exact Christmas three-orations appointment and Omnes two citation-role source metadata transitions",
+  "handoff": {
+    "path": ".scratch/reader-audit/runtime-cohort/source-metadata-handoff/handoff.json",
+    "sha256": "01c111d9479d6f0a95c386d6b2b8b864af8f1b7a50127b2aa4d131173da75861"
+  },
+  "source_only_patches": [
+    {
+      "path": ".scratch/reader-audit/runtime-cohort/source-metadata-handoff/christmas-source-only.patch",
+      "sha256": "301886f2e6df59a4a8f94ce9ec29e7842a8356945dfdc2f992332c8f2ce6e2c5"
+    },
+    {
+      "path": ".scratch/reader-audit/runtime-cohort/omnes-source-author.patch",
+      "sha256": "74c39d77cb7c98a4d0c7e31940723506ebc49ea50cb0fd40cd0197dc120d4adb"
+    }
+  ],
+  "source_reviews": [
+    {
+      "path": ".scratch/roman-calendar-years/christmas-octave/review/source-review.json",
+      "sha256": "3a22bf5d056ad5b57586b82c5da8535de1f7c73d712137295f1de2a7dcf0f17e"
+    },
+    {
+      "path": ".scratch/roman-calendar-years/christmas-octave/review/review.json",
+      "sha256": "d92ea2d457d158e3f7c4c0880c557ad3a09bd60313a4d88951d73f6012c6f6a7"
+    },
+    {
+      "path": ".scratch/reader-audit/structural-ordinary/omnes-review/review.json",
+      "sha256": "2254e385c2db88fde5115fb751eecc8cd8fa11c91c953921c64ad71b972f7355"
+    }
+  ],
+  "omnes_transition": {
+    "path": ".scratch/roman-sources/omnes-appointment/metadata-transition.json",
+    "sha256": "059ec3e63564f3e22a8afb3779df4b6fd0a044b2b3ed8f31b69a4ba93ce53806"
+  },
+  "omnes_source_control": {
+    "path": ".scratch/roman-sources/omnes-appointment/source-control-proof.json",
+    "sha256": "7ddd781c4d91382a04447601a916bdaeaa55a5f053879e46c5c81eda5ba0cc30"
+  },
+  "root_review": [
+    "Read both complete source-only patches, full Christmas source/implementation review, full Omnes proof/transition and independent source/runtime review. Rehashed all compact handoff pins, exact Omnes row bytes and source passage. Both patches apply-check against current canonical owners.",
+    "Christmas source independently images eight exact pages: three feast commemorations appoint the same three petitions as shared octave formulary; printed conclusion extents differ. Only Collect/Secret/Postcommunion owners are supplied; weekday-only/occurrence/Sunday-exclusion rules and liturgical identity remain intact. No fifth-day whole Mass is appointed on other dates.",
+    "Omnes exact old proper is restored by removing only two new reading_role fields. Current raw row preimage occurs exactly once. Embedded Benedictus/Hosanna stays within the antiphon; existing Matthew label is project apparatus. Separately headed Psalm147 is a following unit, with target wording/doxology/repetition not supplied by this metadata.",
+    "Independent page-image findings are credited to named source reviewers. Root adds no fresh personal image-view claim or new text transcription. Existing Latin/English/source controller/rights bytes remain exact."
+  ],
+  "integration": [
+    "Apply only declared source hunks and two new metadata passages to current merged owners. Never copy stale whole proper/rubric snapshots.",
+    "Preserve explicit Omnes positive-node semantic transition ea7c45428327c180fe8c9cad12a68b3acf218cbbf506543358c82a2ddf6814b3 to51d5045150baa0b26695d52b090b3a585e8a00be900fb1cd18dbf7b960f56832 in source epoch; no generic positive metadata exemption.",
+    "Base40 already owns reviewed runtime propagation; actual final compiler/native/source acceptance must bind installed source postimages and preserve all unaffected scopes.",
+    "Existing f79 separately owns Nativity conclusion/response execution. This appointment admission itself supplies no ending algorithm."
+  ],
+  "limits": [
+    "No new body, translation, publication rights, current-recension or whole-rite completion claim.",
+    "Psalm147 target and repeated/doxological execution remain separate.",
+    "Original evidence and previous authority scopes stay immutable."
+  ],
+  "canonical_application_pending": true
+}

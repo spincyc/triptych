@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Underlying1862 prayer and conventional formula are public domain by publication date; modern1970 rubric supplies execution relation only, not public text."
+provenance = "Direct full image inspection1862 AP266/p180; final short formula of Veniat quaesumus and its separate response."
+transformation = "Join line break, remove stress accents, represent response mark as R.; no lexical alteration."
+retrieved = "2026-11-12"
+sha256 = "c95348e5613879f39580014755519448804f196af0443568dc47708e66ce4663"
+byte_size = 39
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-short-conclusion-20261112/latin.txt"
+indexable = true
+encoding = "utf-8"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"]

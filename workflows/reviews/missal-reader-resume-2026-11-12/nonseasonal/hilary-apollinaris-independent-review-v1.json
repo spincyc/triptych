@@ -1,0 +1,133 @@
+{
+  "reviewer": "/root/modern_sources/partition_temporal/nativity_epiphany_orations; did not author these candidate prayers or English",
+  "reviewed_on": "2026-11-12",
+  "canonical_mutation": false,
+  "method": "Read the complete old source unit as actually available, complete source-local modern prayer and its literal cue, full independently old conclusion and source-local rule. Evaluate whole-expression merits separately from historical-carrier confidence and separately from English fidelity. No similarity-score or fixed-word-count decision.",
+  "policy_scope": "Repository editorial decision under guidance/liturgical-text-publication-policy.md section1(6), with section8.2(8) requiring a separate basis for actual modern revisions. This is that finite proposed study-English assessment, not a claim that section8.2 exact-old-witness transfer alone clears the revised body. No general copyright-law determination or permission for other prayers is asserted.",
+  "permitted_scope_recommended_if_root_adopts": [
+    "Exact reviewed project study-English body in public repository",
+    "Exact reviewed project study-English in static data",
+    "Exact reviewed project study-English in reader display",
+    "Exact reviewed project study-English in download"
+  ],
+  "exclusions": [
+    "No approved liturgical English or recitation authority",
+    "No whole modern Latin publication decision",
+    "No original carrier PDF/HTML apparatus redistribution decision",
+    "No authenticated complete2008 equivalence",
+    "No transfer or modification of received old human English",
+    "No change to canonical Latin withholding or prior refusal history"
+  ],
+  "inspection_manifest": {
+    "path": ".scratch/modern-nonseasonal-three-prayer-review/fresh-inspection-manifest.json",
+    "sha256": "610204bcbc637b992adf419bc3b4842b91d315568861fa16fc40ffb8eed1ad0e"
+  },
+  "conclusion_review": {
+    "status": "pass for each individually addressed recipient",
+    "source_rule": "Secondary2002 artifact0b458944, PDF18 IGMR54, freshly image-read. Collects addressed to Father use default long Through branch when the Son is not mentioned at their end.",
+    "source_expression": "Pustet1862 originalPDF88/printed2, Contra persecutores Ecclesiae; full formula freshly image-read. Actual complete expression is independently old, not inferred by expanding Per Dominum from memory.",
+    "selection": "All four modern source-local prayers print Per Dominum. None ends with mention of the Son; Hilary mentions the Son earlier, which does not select the final-mention branch. The addressed Lord in Apollinaris is governed by the actual default cue; it is not silently treated as a direct-Son prayer.",
+    "english": "All complete reviewed formulas faithfully render the old Latin. Hilary/Apollinaris/Turibius use fixed formula hash0890d51c. Paulinus independently uses the faithful for ever and ever rendering; it is not falsely called byte-identical to0890d51c.",
+    "response": "Amen belongs to the people separately in both IGMR54 and the printed1862 formula witness. None of the four English body strings includes it."
+  },
+  "schema": "triptych-independent-finite-study-review/v1",
+  "owner": "doctors-martyrs",
+  "candidate_packet": {
+    "path": ".scratch/modern-nonseasonal-orations/doctors-martyrs/finite-review-candidates-v1.json",
+    "sha256": "b4305ef62354ac79ed30c7ae2f095275835bc1e7b29ea47c8ad8bf8697ee91d0"
+  },
+  "status": "substantive-review-complete; installation prerequisites remain",
+  "results": [
+    {
+      "identity": [
+        "saint-hilary-bishop-doctor-church",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_fidelity": {
+        "decision": "pass-direct1844-printed-whole-petition",
+        "confidence": "high for this printed1844 reading",
+        "finding": "PL9 PDF120 col208 explicitly heads Ex ms. Missali S. Gatiani Turon. Collecta. Its entire Praesta prayer agrees with the candidate historical Latin after joined line division. It ends at confiteri with a period and prints no conclusion cue. The cited manuscript is not inspected and is not needed to establish this1844 printed expression.",
+        "boundary": "No missing historical ending is invented. The modern Per Dominum and full1862 formula have their own controls."
+      },
+      "exact_delta_review": "Pass: excellentiam verbi to divinitatem Filii; B. to beatus; confessor gloriosus to episcopus constanter; confiteri to profiteri. These are genuine finite changes, not typography. Modern AP417 complete prayer and cue were directly read.",
+      "whole_expression": {
+        "decision": "accept-finite-ambiguous-defensible-study-English-basis",
+        "confidence": "moderate; policy1(6), not exact-text identity",
+        "reason": "The independently printed old whole unit already contains the particular Hilary-centered relative clause and the paired request to understand fittingly and confess truly. The changed doctrinal nouns, factual episcopal title, steadfastness adverb and profession verb preserve that complete arrangement. Taken together they specify the inherited prayer’s subject and mode without a new episode, image or petition sequence. The basis is the old complete expression plus this specific conventional restatement, not merely the availability of its ingredients.",
+        "contrary_argument_weighed": "The changes deliberately sharpen the theological object and recast glorious confession as episcopal steadfastness. They cannot support historical human-English transfer and are not proven old exact wording. Nevertheless the substantive theological difference does not by itself defeat the finite argument that the new verbal contribution is ordinary description within an independently established complete prayer; under1(6) I favor this exact fresh study body.",
+        "scope": "No precedent for any other doctor prayer or generic four-substitution allowance."
+      },
+      "english_fidelity": {
+        "decision": "pass-without-word-changes",
+        "hashes": {
+          "exact_embedded_string_sha256": "60e91ab3a0a3418166cb31dce43ed96333dd71bb3ac8d5d0edaf85885b1c02a4",
+          "body_without_final_LF_sha256": "a0171779e1a634bfb19c21d7f6dd5dac9d560a25d32b1b8476c4846bf10c9c33",
+          "ends_in_LF": true
+        },
+        "findings": [
+          "Divinity of your Son preserves the revised object rather than translating the old excellentiam verbi.",
+          "Steadfastly affirmed accurately renders constanter asseruit.",
+          "Both fittingly understand and truly profess preserves et...et and the different infinitives.",
+          "Full conclusion is complete and correctly selected."
+        ]
+      },
+      "installation_status": "not-ready; fix consumed metadata and exact bindings without changing reviewed English",
+      "required_successor_changes": [
+        "Supply exact runtime form/incipit selectors; use the current canonical incipit preimage literally unless a separate metadata correction is reviewed.",
+        "Consumed witness_note must identify actual1844 PL9 whole-petition witness and actual secondary2002 comparison, and state that there is no complete2008 authentication; outer packet qualification alone is insufficient.",
+        "Label body hash extent: v1 supplied a0171779 hashes text without final LF; embedded text with LF hashes60e91ab3. Bind the actual public artifact bytes, preserving both historical claims accurately.",
+        "Complete source/project-English artifact graph and runtime/visible-qualification checks remain installation work."
+      ]
+    },
+    {
+      "identity": [
+        "saint-apollinaris-bishop-martyr",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "source_fidelity": {
+        "decision": "accept-qualified-human-carrier; not-original1738-image-verification",
+        "confidence": "moderate for historical attribution; high for exact acquired carrier wording",
+        "finding": "The acquired Clerus HTML explicitly identifies Rev. Gerard O’Connor, Pontificium Institutum Liturgicum, Volume2 Concordantia et Indices Missalis Parisiensis1738, Rome2004. No2130 prints the entire Damasus prayer exactly as the candidate reports, with no conclusion. No3039 reports the parallel Sampson prayer. Named scholarly purpose and explicit whole-prayer numbering make this a usable human transmission witness; internal repetition is a consistency check, not independent corroboration.",
+        "boundary": "The2004 carrier must remain the source edition. It does not become a1738 facsimile or prove each original letter. No modern apparatus is covered by the underlying-old-expression judgment."
+      },
+      "exact_delta_review": "Pass: oves tuas to fideles tuos; Damasus life/teaching phrase to Apollinaris bishop teaching/martyrdom phrase with required grammatical recasting; eius subsequi vestigia to in mandatis tuis perseverare. The whole remaining sequence and crown request are preserved. Complete secondaryAP467 and its literal Per Dominum were directly read.",
+      "whole_expression": {
+        "decision": "accept-finite-ambiguous-defensible-study-English-basis-with-carrier-qualification",
+        "confidence": "moderate, lower source certainty than an original old facsimile",
+        "reason": "The whole older prayer, not three isolated scraps, already gives the distinctive ordered progression from guidance on the saint-shown way of eternal salvation, through his intercession and our conduct, to being crowned with him. The modern version replaces the sheep and footsteps metaphors with plain faithful/commandment language and changes the saint’s factual mode of witness to teaching and martyrdom. Those coordinated changes materially alter meaning, but the full rhetorical progression and closing petition remain independently inherited. I find a defensible narrow study-English basis under1(6) for this conventional recasting of that entire older prayer.",
+        "contrary_argument_weighed": "The replacement of imitation by perseverance in God’s commands is more than a name change, and the combination of changed metaphor, martyrdom and moral object could be an original modern selection. The oldpage is also unverified. I do not erase either objection: source uncertainty is expressly carried by the qualified human witness, while the expression assessment rests on the unchanged complete rhetorical sequence and nonextended ordinary replacement language. This is an affirmative exact-unit judgment, not a rule that three replacements or conventional ingredients are automatically free.",
+        "scope": "Acceptance is for the reported older prayer as transmitted by this named human carrier and the exact reviewed English; no original1738 facsimile claim or other adaptation follows."
+      },
+      "english_fidelity": {
+        "decision": "pass-without-word-changes",
+        "hashes": {
+          "exact_embedded_string_sha256": "58670ddd435a4c52c9a1603b6698ce1a7754b55e823af7d32f60a161d88fee76",
+          "body_without_final_LF_sha256": "340d23853f46eebdda234d018338058cdb9431f09c4573184850dee70e1d0a62",
+          "ends_in_LF": true
+        },
+        "findings": [
+          "Your faithful preserves fideles tuos; the older sheep metaphor is not silently retained.",
+          "Showed by his teaching and martyrdom faithfully renders doctrine/martyrdom as means.",
+          "Through his intercession and perseverance in your commandments preserve the actual modern moral petition.",
+          "May be worthy to be crowned with him preserves mereamur/coronari/cum ipso.",
+          "The default Father long conclusion is complete and appropriate."
+        ]
+      },
+      "installation_status": "not-ready; material carrier qualification absent from consumed note",
+      "required_successor_changes": [
+        "Put the Clerus2004 named human-transcription carrier, no original1738 image, absent old cue, finite adaptation and actual secondary2002 scope directly into consumed witness_note. Current generic note fails this requirement even though the outer packet is accurate.",
+        "Supply exact current runtime incipit/form recipient selectors.",
+        "Label hashes by extent: v1 supplied340d2385 hashes text without finalLF; embedded LF string hashes58670ddd. Preserve exact words and bind the public artifact’s actual bytes.",
+        "Complete the source/project-English artifact graph and runtime/visible-qualification checks."
+      ]
+    }
+  ],
+  "reviewed_english_changed": false,
+  "original_three_scope": "Hilary, Apollinaris, Turibius are independently disposed; Paulinus is additive and does not change those results."
+}

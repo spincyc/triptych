@@ -1,0 +1,198 @@
+{
+  "schema": "triptych-omnes-citation-metadata-transition-proposal/v1",
+  "state": "pending-next-cohort-review-and-source-epoch-transition",
+  "identity": [
+    "palm-sunday",
+    "main",
+    "Procession Antiphon",
+    "all",
+    5
+  ],
+  "latin_key": [
+    "palm-sunday",
+    "",
+    "Procession Antiphon",
+    "",
+    "",
+    4
+  ],
+  "source_owner": {
+    "path": "src/sources/calendars/roman-1962/propers.yaml",
+    "sha256": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953"
+  },
+  "candidate_owner_sha256": "e3e1c4107fc6e33ae5dd382931f11050ab0e4632d56fa509364d214e36bb72b4",
+  "old_proper": {
+    "name": "Procession Antiphon",
+    "ordinary_disposition": {
+      "kind": "unplaced",
+      "group": "blessing-and-procession-of-palms",
+      "region": "before-frame",
+      "basis": "The source places this unit in the contiguous palm rite before the Mass Introit."
+    },
+    "incipit": "Omnes collaudant nomen tuum",
+    "source": "mixed",
+    "verses": [
+      {
+        "book": "Matthew",
+        "ranges": [
+          {
+            "begin": {
+              "chapter": 21,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 9
+            }
+          }
+        ],
+        "ref": "Matthew 21:9"
+      },
+      {
+        "book": "Psalms",
+        "ranges": [
+          {
+            "begin": {
+              "chapter": 147
+            },
+            "end": {
+              "chapter": 147
+            }
+          }
+        ],
+        "ref": "Psalm 147"
+      }
+    ],
+    "text": "Omnes collaudant nomen tuum, et dicunt: « Benedictus qui venit in nomine Domini: Hosanna in excelsis ».\n",
+    "notes": "Exact bounded body from direct 2026-11-12 source/target page-image collation. Qualified United States whole-expression assessment; moderate confidence. Publication is limited to the code-pinned exact owner/body/controller/surface tuple under method english-completion-20261029-finite-latin-v1. The source record itself grants no authority or wider scope. A changed English body or controller requires its own review; no vanished historical receipt is replayed or inferred."
+  },
+  "new_proper": {
+    "name": "Procession Antiphon",
+    "ordinary_disposition": {
+      "kind": "unplaced",
+      "group": "blessing-and-procession-of-palms",
+      "region": "before-frame",
+      "basis": "The source places this unit in the contiguous palm rite before the Mass Introit."
+    },
+    "incipit": "Omnes collaudant nomen tuum",
+    "source": "mixed",
+    "verses": [
+      {
+        "book": "Matthew",
+        "ranges": [
+          {
+            "begin": {
+              "chapter": 21,
+              "verse": 9
+            },
+            "end": {
+              "chapter": 21,
+              "verse": 9
+            }
+          }
+        ],
+        "ref": "Matthew 21:9",
+        "reading_role": {
+          "schema": "triptych-proper-citation-role/v1",
+          "kind": "embedded-quotation",
+          "source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-embedded-quotation-following-psalm-20261112",
+          "locus": "CMAA 1962 PDF p. 215, printed p. 134, bottom-left: Antiphona 5, no. 838; Benedictus/Hosanna words are inside the complete Omnes antiphon guillemets, not a separately appointed Matthew reading."
+        }
+      },
+      {
+        "book": "Psalms",
+        "ranges": [
+          {
+            "begin": {
+              "chapter": 147
+            },
+            "end": {
+              "chapter": 147
+            }
+          }
+        ],
+        "ref": "Psalm 147",
+        "reading_role": {
+          "schema": "triptych-proper-citation-role/v1",
+          "kind": "following-psalm",
+          "source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-embedded-quotation-following-psalm-20261112",
+          "locus": "CMAA 1962 PDF p. 215, printed p. 134, right column: separately headed Psalmus 147, no. 839; followed by a doxology and Et repetitur antiphona before the repeated Omnes."
+        }
+      }
+    ],
+    "text": "Omnes collaudant nomen tuum, et dicunt: « Benedictus qui venit in nomine Domini: Hosanna in excelsis ».\n",
+    "notes": "Exact bounded body from direct 2026-11-12 source/target page-image collation. Qualified United States whole-expression assessment; moderate confidence. Publication is limited to the code-pinned exact owner/body/controller/surface tuple under method english-completion-20261029-finite-latin-v1. The source record itself grants no authority or wider scope. A changed English body or controller requires its own review; no vanished historical receipt is replayed or inferred."
+  },
+  "old_proper_sha256": "ea7c45428327c180fe8c9cad12a68b3acf218cbbf506543358c82a2ddf6814b3",
+  "new_proper_sha256": "51d5045150baa0b26695d52b090b3a585e8a00be900fb1cd18dbf7b960f56832",
+  "raw_preimage": {
+    "path": ".scratch/roman-sources/omnes-appointment/raw-row-preimage.yaml",
+    "sha256": "9357091765dbc29454b87d849f7c13ed2556ebc204016e75ae4c296473eeb0b3"
+  },
+  "raw_postimage": {
+    "path": ".scratch/roman-sources/omnes-appointment/raw-row-postimage.yaml",
+    "sha256": "d35ec0ea169ca1a6ef3e111d5f2f07bc57fbadae51b246f27052907db7fad79e"
+  },
+  "diff": {
+    "path": ".scratch/roman-sources/omnes-appointment/source-row.diff",
+    "sha256": "8db72dc72bdc845ab76c0d16b2e74e19ad8a3fbd5c41bc57c0e87d14e4bd6caf"
+  },
+  "changes": [
+    {
+      "pointer": "verses/0/reading_role",
+      "before": null,
+      "after": {
+        "schema": "triptych-proper-citation-role/v1",
+        "kind": "embedded-quotation",
+        "source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-embedded-quotation-following-psalm-20261112",
+        "locus": "CMAA 1962 PDF p. 215, printed p. 134, bottom-left: Antiphona 5, no. 838; Benedictus/Hosanna words are inside the complete Omnes antiphon guillemets, not a separately appointed Matthew reading."
+      }
+    },
+    {
+      "pointer": "verses/1/reading_role",
+      "before": null,
+      "after": {
+        "schema": "triptych-proper-citation-role/v1",
+        "kind": "following-psalm",
+        "source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-embedded-quotation-following-psalm-20261112",
+        "locus": "CMAA 1962 PDF p. 215, printed p. 134, right column: separately headed Psalmus 147, no. 839; followed by a doxology and Et repetitur antiphona before the repeated Omnes."
+      }
+    }
+  ],
+  "preserved": [
+    "Both original citation refs, books, ranges and their source order",
+    "Exact admitted Latin body, original project English, Latin ledger and English row",
+    "All v4-bound existing source/controller records and authority bytes",
+    "Psalm147 target wording remains unresolved; no doxology/repetition/whole-rite completion claim",
+    "Older-frame inapplicability"
+  ],
+  "source_epoch_transition": {
+    "required": true,
+    "reason": "The source-owned positive proper object gains two citation descriptors, and generated positive citation objects must carry them. This is an explicit metadata transition, not an undeclared no-op despite unchanged bodies.",
+    "exact_old_source_node_sha256": "ea7c45428327c180fe8c9cad12a68b3acf218cbbf506543358c82a2ddf6814b3",
+    "exact_new_source_node_sha256": "51d5045150baa0b26695d52b090b3a585e8a00be900fb1cd18dbf7b960f56832",
+    "new_source_record_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.omnes-embedded-quotation-following-psalm-20261112",
+    "new_source_record_sha256": "353be1aa6c844f9a7072000485e9ffd88d4090d8baf69bdeec23eee9064f2949",
+    "generated_pre_post_hashes": "Reader/generator lane must capture actual successor objects after implementing role propagation; this source proposal does not invent their hashes.",
+    "no_epoch_or_cohort_update_performed": true
+  },
+  "reader_contract": {
+    "descriptor_schema": "triptych-proper-citation-role/v1",
+    "supported_kinds": [
+      "embedded-quotation",
+      "following-psalm"
+    ],
+    "raw_location": "Each element of Proper.verses[].reading_role",
+    "generated_location": "Each corresponding citation.reading_role, copied unchanged",
+    "suppression_preconditions": [
+      "Descriptor is structurally valid and kind is embedded-quotation",
+      "Current proper source is mixed",
+      "An actual authorized selected-language body or authorized Latin fallback body is being displayed"
+    ],
+    "embedded_behavior": "Keep the Matthew reference in source apparatus. Suppress only its extra standalone spoken Bible expansion when all preconditions hold; never lexical deduplication or wholesale citation suppression.",
+    "following_behavior": "Keep Psalm147 separate; any available Bible reconstruction is explicitly identified as such, with target wording unestablished. The role does not satisfy the Psalm or authorize the doxology/repeat.",
+    "missing_or_invalid_role": "Cannot suppress a reading. Missing roles preserve legacy behavior; unknown kinds/invalid descriptor must be rejected or preserved unsuppressed by the reader schema.",
+    "source_authority_boundary": "Role records identify source structure only and grant no text/publication authority."
+  },
+  "renderer_owner": "/root/reader_audit; runtime/schema/tests are separate scratch work, not included as implemented here."
+}

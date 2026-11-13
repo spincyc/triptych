@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.oration-formula-excerpts-20261112-5357837e"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "application/json; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Original historical English printed in Philadelphia in 1861, whose affirmative United States public-domain-by-publication-date basis is recorded on the exact parent source artifact. Only the independently image-checked underlying formula wording is retained. The Google digitisation front matter, watermarks, layout, images and host material remain excluded; no right to republish the complete source PDF is asserted."
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+provenance = "Complete hash-matched source PDF held and the listed primary pages directly read on 2026-11-12. Five active formula controls across the two editions were independently reviewed; exact prior source-control packet SHA256 efb7809d88d09fd849ec33a4f54c8df682ca1cfad7c233f7f30eea1f314dd9ea and independent merits receipt SHA256 85296c9b5b9cf5a08d872f606b05e3fa8e796754e8cdb9e977422c62b015a506. Durable registration/review mapping: workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/next-cohort/same-witness-formula-review.json."
+transformation = "Join page and line divisions and printed line-end hyphenation only. Preserve English words, case and punctuation. The terminal Amen is retained separately and does not assign an execution speaker. No Latin transcription, image, layout, watermark, host text or expanded target prayer is included."
+retrieved = "2026-11-12"
+sha256 = "5357837e3770ae2ae7fa18c76a25707a226ddf5c3b7bba21cb0c254939460437"
+byte_size = 3843
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/oration-formula-excerpts-20261112-5357837e/formulas.json"
+encoding = "utf-8"
+indexable = true
+notes = "Local formula excerpts only, not a general conclusion table or an authorization to change historical prayer quotations. Underlying historical wording is not Triptych-authored. No target prayer body, modern formula or response appointment is added."

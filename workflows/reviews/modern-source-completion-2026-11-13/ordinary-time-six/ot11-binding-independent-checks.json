@@ -1,0 +1,256 @@
+{
+  "schema": "triptych-ot11-binding-observation/v1",
+  "input_plan": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/install-plan.json",
+    "sha256": "d25b4cb43f2bb21ce4ba0d025d0f65fb2ad787166a3709bda6bc3ff1abd019df",
+    "bytes": 133954
+  },
+  "candidate": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/ot11-binding-amendment-proposal.json",
+    "sha256": "9c30320a6b8f016134cc2ae53d71396954627f3a9a92a9e899f66883629b74b0",
+    "bytes": 14712
+  },
+  "source_records": 56937,
+  "original_source_graph_errors": [
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/artifact.toml: tracked sha256 is already owned by artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin"
+  ],
+  "corrected_source_graph_errors": [],
+  "corrected_projection": ".scratch/modern-finite-latin-contract-review/ot11-amendment/replay/corrected-source-projection",
+  "inactive_context_refusal": "study translation source library: source library prevents Latin publication: src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/artifact.toml: tracked sha256 is already owned by artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+  "observations": [
+    {
+      "label": "original exact English, both carriers registered; supplied parsed overlay context only",
+      "result": "postconciliar-proper-translations-v1.toml: study translation Latin passage differs from its exact source provenance"
+    },
+    {
+      "label": "candidate binding correction on valid corrected graph; production authority still inactive",
+      "result": "postconciliar-proper-translations-v1.toml: study translation qualified Latin authority: Postconciliar finite Latin requires its exact adopted owner/body/proof/surface tuple"
+    },
+    {
+      "label": "original exact English under synthetic authority still fails carrier identity",
+      "result": "postconciliar-proper-translations-v1.toml: study translation Latin passage differs from its exact source provenance"
+    },
+    {
+      "label": "candidate binding correction under synthetic authority",
+      "result": "pass"
+    },
+    {
+      "label": "passage-only correction refuses stale artifact binding",
+      "result": "postconciliar-proper-translations-v1.toml: study translation publication sources differ from its Latin decision"
+    },
+    {
+      "label": "artifact-only correction refuses stale passage binding",
+      "result": "postconciliar-proper-translations-v1.toml: study translation Latin passage differs from its exact source provenance"
+    },
+    {
+      "label": "changed whole-body binding remains refused",
+      "result": "postconciliar-proper-translations-v1.toml: study translation source Latin hash is stale for ('ot-11', 'main', 'Prayer after Communion', 'all', 1)"
+    }
+  ],
+  "carrier_equivalence": {
+    "old_passage": {
+      "schema": 2,
+      "record_type": "passage",
+      "id": "passage.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+      "edition_id": "edition.triptych.ot11-haec-tua-latin-study-selection.2026-11-12",
+      "artifact_id": "artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+      "artifact_sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "locus": "ot-11/prayer-after-communion/complete-latin",
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected"
+      ],
+      "context": "Three complete units: finite historical-petition selection, separately witnessed short formula, distinct marked response. Independent review pending.",
+      "notes": "No2008 identity claim. Exact candidate only; no self-approval by the preparer."
+    },
+    "new_passage": {
+      "schema": 2,
+      "record_type": "passage",
+      "id": "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+      "edition_id": "edition.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12",
+      "artifact_id": "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+      "artifact_sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "locus": "ot-11/prayer-after-communion/complete-latin",
+      "physical_line_ranges": [
+        [
+          1,
+          3
+        ]
+      ],
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected"
+      ],
+      "context": "One complete proposed Latin study reconstruction: petition, complete short conclusion, separate marked response. It is exact to this carrier, not an authenticated modern Missal transcription.",
+      "notes": "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation. Separate Root adoption pending; no self-approval."
+    },
+    "old_artifact": {
+      "schema": 1,
+      "record_type": "artifact",
+      "id": "artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+      "edition_id": "edition.triptych.ot11-haec-tua-latin-study-selection.2026-11-12",
+      "artifact_type": "editorial-projection",
+      "media_type": "text/plain; charset=utf-8",
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "rights_basis": "Project editorial carrier and new English, where applicable. Underlying complete1862 petition and independently printed common1945 conclusion are public-domain sources. Finite derivative expression assessment remains pending and no exclusive right in received Latin is claimed.",
+      "rights_jurisdiction": "United States",
+      "provenance": "Author checked complete Pustet1862 AP731–732/[61]–[62], Lasance1945 formula217 and secondarydigital2002 AP277 on actual images. Source selection and fresh English require independent whole-expression/fidelity review before installation.",
+      "retrieved": "2026-11-12",
+      "sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "byte_size": 169,
+      "path": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "indexable": true,
+      "encoding": "utf-8",
+      "notes": "Candidate only. Whole body SHA256 without terminal LF cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736. This record is not an independent acceptance receipt.",
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+      ],
+      "transformation": "Retain entire old petition expression except explicitly omit parenthetic quaesumus and transpose in tua Ecclesia to in Ecclesia tua. Normalize stress accents, ligatures and punctuation. Remove old printed Per Dominum cue. Append independently witnessed complete Per Christum Dominum nostrum and separately marked R. Amen on separate lines. No added petition words; this is not contiguous old printing."
+    },
+    "new_artifact": {
+      "schema": 1,
+      "record_type": "artifact",
+      "id": "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+      "edition_id": "edition.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12",
+      "artifact_type": "editorial-projection",
+      "media_type": "text/plain; charset=utf-8",
+      "storage": "tracked",
+      "rights_status": "project-created",
+      "rights_basis": "Proposed project editorial carrier only; no exclusive right is claimed in received Latin. Publication of its complete qualified-nonoriginal-adaptation requires the separately adopted exact ordinarytime-ot11-finite-latin-study-20261112 owner/body/proof/surface tuple. This scratch record supplies no permission and must not be installed before an independently reviewed closed gate recognizes it.",
+      "rights_jurisdiction": "United States",
+      "provenance": "Exact complete Pustet1862 prayer with the two disclosed finite edits, independently complete Lasance1945 short formula and marked response, compared only with secondarydigital2002. Root Latin merits and reader qualification review pending.",
+      "retrieved": "2026-11-12",
+      "sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "byte_size": 169,
+      "path": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/latin.txt",
+      "indexable": true,
+      "encoding": "utf-8",
+      "projected_from": [
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+      ],
+      "transformation": "Remove the parenthetic old quaesumus, which does not change the predicate or petition. Move old in tua Ecclesia to in Ecclesia tua; retain the same noun and possessive, case and referent. Normalize accents/ligatures and punctuation as explicitly declared; no new petition word supplied. Replace the printed old Per Dominum cue with independently witnessed complete short conclusion and separately marked response; this is a declared source assembly, not a claim of contiguous old printing.",
+      "notes": "Source-based Latin study reconstruction from the 1862 prayer, with minor editorial changes and a separately sourced traditional ending and response. Compared only with a secondary digital text labelled 2002; correspondence with the printed 2002 and 2008 Missals remains unverified. This is not an approved liturgical text or an authorization for recitation. Proposal only; project-created does not independently clear the underlying changed Latin expression."
+    },
+    "old_payload": {
+      "path": ".scratch/modern-ordinarytime-orations/activation/accepted-source-projection/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "bytes": 169
+    },
+    "new_payload": {
+      "path": ".scratch/modern-ordinarytime-orations/activation/accepted-source-projection/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/finite-latin-proposal-2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "bytes": 169
+    },
+    "payloads_byte_equal": true,
+    "body_sha256": "cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736",
+    "physical_line_ranges": [
+      [
+        1,
+        3
+      ]
+    ],
+    "record_sha256": {
+      "passage.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin": "995c45bbc45ce94275bfc24c551a764c10abab8a72086168a0ded811a24bcfce",
+      "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin": "92c7dcac87c05690abff338516066d711f69d1d787ace9e042af070f4d23a5ba",
+      "artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin": "05e4f9df5965b644b2fafb071eedfd8b4718e748cd1be5e8024cfd32423066e1",
+      "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin": "d5bc1c657071685e791be29c03f66973a1079087d9cd18c80bac2a817352eaff"
+    },
+    "projected_from_exactly_equal": true,
+    "unchanged_testimony_records": {
+      "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+      "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb": "58fd7f0599b2262f2bf41f726df5b5e39f71a3ebb7e2543baab323677ba435be",
+      "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8"
+    }
+  },
+  "English_source_files_byte_unchanged": [
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/work.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/work.toml",
+      "sha256": "91f7f67ebae816f9f1d195ccb85ddfa3c6944226ced961491904c9472c946f32",
+      "bytes": 817,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "82c1140f80eb2c98f612dc52db702fd14f1c256e932588d2607ce8aad52a18f6",
+      "bytes": 668,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "sha256": "166689e6ad0c64937a9b1c22475c8c80442baa073b8225361c9e2f3f6e8d1397",
+      "bytes": 189,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "sha256": "fa2a947da7bda7e83bdd1ca5a73ed3944063aada98fe37533c482f6fa8380399",
+      "bytes": 1380,
+      "role": "source"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "sha256": "e0f1a11cf99fecc6b42bb59254cb881def8ae6fd22e1f08066086e216e7b208c",
+      "bytes": 766,
+      "role": "source"
+    }
+  ],
+  "changed_fields": [
+    "source_latin_passage_id",
+    "source_latin_publication_source_ids"
+  ],
+  "omitted_duplicate_files": [
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/edition.toml",
+      "sha256": "4c70c31e00d3d509e782d3976ee68fda5f6f13548987e2001c17fa31da2fea82",
+      "bytes": 676,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f",
+      "bytes": 169,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "sha256": "9f3b894f51a8800cbf017cbfecc590b960fa980431a35e5d5e3f09887c6954ce",
+      "bytes": 2181,
+      "role": "English-source dependency"
+    },
+    {
+      "scratch_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/source-package/src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "destination": "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "sha256": "2afa519aa5465bebfd45885c17970b66d189fea265b603547f667a15524b8bea",
+      "bytes": 766,
+      "role": "English-source dependency"
+    }
+  ],
+  "source_lineage": "Existing bound Latin carrier projected_from testimony is byte/data-identical; the new carrier retains the same 1862/1945/secondary2002 witnesses. Superseded candidate carrier remains in original scratch evidence, never installed.",
+  "actual_runtime_acceptance": false,
+  "production_activation_empty": true,
+  "english_and_latin_bodies_unchanged": true,
+  "frozen_packages_unchanged": true,
+  "code_changes": [],
+  "canonical_writes": false
+}

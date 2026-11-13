@@ -9,6 +9,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import _proper_finite_latin_20261029 as finite_20261029
+import _proper_finite_latin_postconciliar as finite_postconciliar
 
 BASIS = "qualified-nonoriginal-adaptation"
 KEY_FIELDS = ("mass", "form", "proper", "course", "cycle", "occurrence")
@@ -70,6 +71,8 @@ def _legacy_passage_exact(passage, artifact):
 
 
 def row_problems(row):
+    if finite_postconciliar.claims_row(row):
+        return finite_postconciliar.row_problems(row)
     if not _legacy_row_exact(row) and finite_20261029.claims_row(row):
         return finite_20261029.row_problems(row)
     if not _qualified_row(row):
@@ -85,6 +88,8 @@ def row_problems(row):
 
 
 def authority_problems(root, *, row=None):
+    if row is not None and finite_postconciliar.claims_row(row):
+        return finite_postconciliar.authority_problems(root, row=row)
     if (row is not None and not _legacy_row_exact(row)
             and not _legacy_row_exact(row, inherited=True)
             and finite_20261029.claims_row(row)):
@@ -115,6 +120,8 @@ INHERITED_ROW_SHA256 = {('commune-summorum-pontificum', '', 'Collect', '', '', 1
 
 
 def inherited_row_exact(row):
+    if finite_postconciliar.claims_row(row):
+        return False
     if _legacy_row_exact(row, inherited=True):
         return True
     if _legacy_row_exact(row):
@@ -130,6 +137,8 @@ def inherited_row_exact(row):
 
 
 def source_problems(row, sources, *, effective_calendar=""):
+    if finite_postconciliar.claims_row(row):
+        return finite_postconciliar.source_problems(row, sources, effective_calendar=effective_calendar)
     if (not _legacy_row_exact(row)
             and not _legacy_row_exact(row, inherited=True)
             and finite_20261029.claims_row(row)):
@@ -167,6 +176,8 @@ def source_problems(row, sources, *, effective_calendar=""):
 
 def artifact_problems(root, artifact, *, sources=None):
     """Keep the normal Sources reader inside the same finite authority."""
+    if finite_postconciliar.claims_artifact(artifact):
+        return finite_postconciliar.artifact_problems(root, artifact, sources=sources)
     if not _legacy_artifact_exact(artifact) and finite_20261029.claims_artifact(artifact):
         return finite_20261029.artifact_problems(root, artifact, sources=sources)
     if (artifact.get("id") not in ARTIFACT_SHA256 and
@@ -213,6 +224,8 @@ def reading_problems(root, passage, artifact, *, sources=None, text=_UNSELECTED_
     selected = {}
     if text is not _UNSELECTED_TEXT:
         arguments["text"] = selected["text"] = text
+    if finite_postconciliar.claims_reading(passage, artifact, **selected):
+        return finite_postconciliar.reading_problems(root, passage, artifact, **arguments)
     legacy_passage = _legacy_passage_exact(passage, artifact)
     if (not legacy_passage
             and finite_20261029.claims_reading(passage, artifact, **selected)):
@@ -242,6 +255,8 @@ def reading_problems(root, passage, artifact, *, sources=None, text=_UNSELECTED_
 def public_scope(latin):
     """Public qualification for an already validated exact Latin body."""
     provenance = latin.get("provenance") or {}
+    if finite_postconciliar.claims_public(latin):
+        return finite_postconciliar.public_scope(latin)
     scope = next((one for one in SCOPES
                   if one["body_sha256"] == latin.get("text_sha256")
                   and one["source_id"] == provenance.get("source_id")), None)
@@ -267,4 +282,5 @@ def cache_fingerprint(root):
             value = "missing-or-invalid"
         digest.update((str(path) + "\0" + value + "\0").encode("utf-8"))
     digest.update(finite_20261029.cache_fingerprint(root).encode("ascii"))
+    digest.update(finite_postconciliar.cache_fingerprint(root).encode("ascii"))
     return digest.hexdigest()

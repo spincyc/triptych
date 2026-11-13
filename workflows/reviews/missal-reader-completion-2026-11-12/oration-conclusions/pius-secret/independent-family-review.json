@@ -1,0 +1,164 @@
+{
+  "schema": "triptych-independent-pius-secret-family-review-projection/v1",
+  "raw_independent_review_sha256": "5b9fb28ebe089c0d7cf848a0f4d8b244542ab2b3d98c9f2c5f58fedfc91c1559",
+  "reviewed_on": "2026-11-13",
+  "decision": "accept-exact-bilingual-ending-family-and-formula-merits; owner binding and runtime admission remain separate",
+  "calendar": "roman-1962",
+  "target": [
+    "s-pii-x-papae-confessoris",
+    "main",
+    "Secret",
+    "all",
+    1
+  ],
+  "languages": [
+    "la",
+    "en"
+  ],
+  "scope": {
+    "whole_current_candidate_Latin_and_English_petitions_read": true,
+    "primary_target_and_appointment_pages_read": [
+      729,
+      730
+    ],
+    "rule_page_read": 17,
+    "Lasance_formula_page_read": 818,
+    "ending_semantic_holds": 0,
+    "source_body_publication_decision_reopened": false,
+    "final_owner_binding_reviewed": false,
+    "runtime_descriptor_reviewed": false,
+    "runtime_execution_tests_executed": false,
+    "canonical_mutations": 0
+  },
+  "source_family_findings": [
+    "The AP729 heading identifies September 3, Pius X Pope and Confessor, III class. AP730 continues that formulary; no.3564 is its own Secret. The running September5 header and later September5 heading do not move this prayer to another Mass.",
+    "Read the whole offering/acceptance clause, grant request, divine mysteries, named Pius intercession and paired sincere-devotion/faithful-mind predicates. The printed Per Dominum cue ends this complete Secret before the Communion antiphon. The neighboring Postcommunion is a different prayer and supplies no words here.",
+    "The complete prayer addresses the divine recipient of the offerings and requests through the Lord in its separate cue. Read jointly with that exact cue, the 1962 RG115a branch and the explicit Lasance Father-family table, this supports ordinary Father-through-Son. The judgment does not infer the Father from Domine alone.",
+    "Pius, Supreme Pontiff, is the interceding saint; he is not a reference to Christ. Neither an earlier Son mention nor a final Son-relative clause calls for RG115b/c. The prayer does not address the Son under115d.",
+    "The faithful mind belongs to the worshippers. There is no reference to the Holy Spirit in this whole petition, so115e does not require eiusdem. No particular116 ending, N. placeholder, optional saint wording or inline response is printed in the bounded Secret."
+  ],
+  "accepted_formula": {
+    "family": "through-our-lord",
+    "rule": {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/rubricae-generales-conclusions-115-116-20261112.toml",
+      "sha256": "98f5aef0d9c83ec32f7c7c14d54719c3459a335e851e431482406ec1b7b01789",
+      "bytes": 1421,
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-conclusions-115-116-20261112",
+      "applied_span": "115a",
+      "contrasting_spans_read": [
+        "115b",
+        "115c",
+        "115d",
+        "115e",
+        "116"
+      ]
+    },
+    "table": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json",
+      "sha256": "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934",
+      "bytes": 3524,
+      "json_pointer": "/formulas/0",
+      "row_sha256": "0fa5a20ed03d417a81238b67fe4da17caf00dc0388c5d66399413c0fb77f5b82"
+    },
+    "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-conclusion-table-2026-10-23-transcription",
+    "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+    "source_record_pins": [
+      {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/artifact.toml",
+        "sha256": "80abea0f7a194c3a4ee6808fc5aee30468a666b716ec4f74c4b1c5872b4523de",
+        "bytes": 2351
+      },
+      {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-conclusion-table-2026-10-23-transcription.toml",
+        "sha256": "4a8fcb7d97c1701750e89412f57ca7d8b209673d6e7caeec9f87903c8e76efd5",
+        "bytes": 1051
+      },
+      {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-conclusion-table-2026-10-23-verify.toml",
+        "sha256": "2a3bc5c48de57ea5608481d7671a739e1ecf7a440011c8603a3208c331fcdb07",
+        "bytes": 1414
+      }
+    ],
+    "Latin_sha256": "deef97283051942f67f7e6c1d550537f3390060806230a9c8e312e5d07dcfb2a",
+    "English_sha256": "055e1b77cda8b92fc5318cea53418f417b377c66e265db4f6c175efc9a07c321",
+    "response": {
+      "speaker": "response",
+      "text": "Amen."
+    },
+    "Latin_fidelity": "The full held Lasance Latin preserves our Lord Jesus Christ, your Son, the relative subject living/reigning with the addressee, unity of the Holy Spirit, God, and duration. Preserve the source transcription Jesum/filium and its punctuation; it is the declared normalized historical transcription, not a claim of byte-identical facsimile typography.",
+    "English_fidelity": "The exact Lasance English retains all those relations in its historical formula: Thy Son, Who liveth and reigneth with Thee, unity of the Holy Ghost, God and world without end. The Thee/Thy register fits the exact original-study petition. No new English formula was authored in this review.",
+    "response_fidelity": "The table marks Amen separately after each complete Latin/English formula. The completed priest formula must exclude the marker and response. A separate response event remains conditional on the exact actual group provider; no new actor or posture is inferred."
+  },
+  "body_and_partition_checks": {
+    "la": {
+      "complete_body_LF_sha256": "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16",
+      "body_without_structural_LF_sha256": "cdd9d0f7f4558da6d6c0039578626acf459349835a2d6878882ad94fd10ef85a",
+      "exact_cue": "Per Dominum.",
+      "cue_start_codepoint": 190,
+      "cue_end_codepoint": 202,
+      "cue_start_utf16": 190,
+      "cue_end_utf16": 202,
+      "petition_sha256": "807fd534d0a0f5024dce3043633bfc243fc58991655c03e8f60d6af70d6fbf22",
+      "full_conclusion_sha256": "deef97283051942f67f7e6c1d550537f3390060806230a9c8e312e5d07dcfb2a",
+      "separately_composed_execution_text_sha256": "500f8b88e3b40159f1d93a8b33e920d36708b518b523da0300d16ab93e4934cd",
+      "whole_petition_read": true,
+      "formula_includes_response": false,
+      "source_quote_must_remain_unchanged": true
+    },
+    "en": {
+      "complete_body_LF_sha256": "e903c088e8503efc55eabeb691e81fd63faeae988a2a57edd0417f86bc05444f",
+      "body_without_structural_LF_sha256": "cebfbde89d3598ffbbfda443867ff923864173261e0d79cba49843acec89e280",
+      "exact_cue": "Through our Lord.",
+      "cue_start_codepoint": 233,
+      "cue_end_codepoint": 250,
+      "cue_start_utf16": 233,
+      "cue_end_utf16": 250,
+      "petition_sha256": "d0599abd017d9ee091903e4c59098ec6949c30d371dc5302e5785daadb63aea0",
+      "full_conclusion_sha256": "055e1b77cda8b92fc5318cea53418f417b377c66e265db4f6c175efc9a07c321",
+      "separately_composed_execution_text_sha256": "215ba537d1ed583b61f56c53ba5ed8bf4a1465f1b8b85c68a95e423c83fad698",
+      "whole_petition_read": true,
+      "formula_includes_response": false,
+      "source_quote_must_remain_unchanged": true
+    }
+  },
+  "attribution_requirements": [
+    "Keep the complete original-study English source quote and its literal short cue unchanged. The selected body remains original study English, with source_id empty and runtime witness null; do not replace that witness with the formula edition.",
+    "Attribute the supplied Latin and English conclusions separately to the identified Lasance table under the1962 rule. The resulting completed Pius X prayer is a derived execution, not a whole historical Pius translation or an approved liturgical English text.",
+    "The underlying Latin body merits are owned by the exact Root admission88d776c5…; this ending review neither reopens those merits nor extends them to other Pius/Joseph bodies."
+  ],
+  "context_requirements": [
+    "Exact source owner Pius X/main/Secret/all/1 and mass-of-office context, with the actual appointed prayer group independently validated. A matching phrase or recipient name cannot authorize another owner.",
+    "Only an actual final conclusion provider receives the full ending and distinct Amen. A nonfinal member of a proven shared-conclusion group contributes its exact petition only; no independent cue suppression is authorized before the entire group validates.",
+    "The final source-library record, complete proper object, English binding, Latin proof, selected study witness, descriptor and source epochs must be bound to their actual approved bytes before runtime admission."
+  ],
+  "pending_binding_boundary": {
+    "status": "The source owner reported this newer plan during review. It is observed as an external pending owner-binding stage, not adopted or independently owner-audited here. No missing source/proof/binding pin has been invented.",
+    "observed_source_plan_sha256": "635d79ede8ceee7a55972310372e24942d3d0b76d947aa40596c4a12eb97d25d",
+    "approved_final_binding_sha256": null,
+    "approved_final_Latin_proof_sha256": null,
+    "approved_public_descriptor_sha256": null
+  },
+  "negative_boundaries_not_runtime_test_results": [
+    "A different target, source body or cue, English witness, formula, rule, source control or context requires fresh exact validation; this is a finite single-target merits finding.",
+    "Do not reuse the neighboring Pius Collect same-Christ cue or Postcommunion longer cue. No family selection is made for either sibling.",
+    "Do not treat study English as same-witness Lasance, merge Amen into priest_text, or append a response to every member of a shared group.",
+    "The existing f79 authority is untouched. Its reported zero-overlap check belongs to the author; this receipt makes no independent runtime/authority activation claim."
+  ],
+  "validation": {
+    "input_and_source_hashes": "passed",
+    "target_identity_and_body_LF_scalar_pins": "passed",
+    "formula_table_row_and_bilingual_text_pins": "passed",
+    "separate_response_check": "passed",
+    "two_exact_cue_partitions": "passed",
+    "fixtures_created": 0,
+    "hardlinks_created": 0,
+    "read_only_primary_sources": true
+  },
+  "nonclaims": [
+    "No canonical source/body/authority/runtime/source-epoch changes.",
+    "No new body translation or formula wording.",
+    "No final owner admission, public descriptor approval, product recording or browser/terminal execution test.",
+    "Future fixtures, if separately required, must use copy2 or Git archive only; no canonical/shared/cache/release hardlinks."
+  ],
+  "projection": "Metadata-only selection from the exact independent review. Private working paths and session identifiers omitted; no source or review claim added."
+}

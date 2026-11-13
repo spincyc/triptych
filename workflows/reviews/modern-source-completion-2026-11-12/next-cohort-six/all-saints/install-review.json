@@ -1,0 +1,374 @@
+{
+  "schema": "triptych-independent-All-Saints-installation-metadata-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "modern_sources/legacy_review, independent of candidate and metadata author",
+  "decision": "accept-exact-finite-metadata-package-for-root-integration-after-checkpoint; do-not-install-whole-snapshots",
+  "identity": [
+    "all-saints",
+    "main",
+    "Entrance Antiphon",
+    "all",
+    1
+  ],
+  "installation": {
+    "path": ".scratch/modern-partition-nonseasonal/all-saints-installation/installation.json",
+    "sha256": "a954b429ff848481dc3e2b258f8da9e9f4a49992ef50bc1eb9d695e0e97a39a4",
+    "bytes": 14827
+  },
+  "prior_source_fidelity_review": {
+    "path": ".scratch/modern-new-antiphons-review/receipt.json",
+    "sha256": "bd94d75113edc325a1f907837269046b9de7e622f48d082cce61f047deca51f2",
+    "bytes": 64940
+  },
+  "source_fidelity_decision": "Unchanged from accepted source-body review. This addendum independently binds the frozen identical Latin/English to the actual new metadata and owner mutations; it does not claim authenticated2008 equivalence.",
+  "new_source_manifest": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/latin.txt",
+      "sha256": "82a2a5a73ff9e82e3ffdae142f44688d2f1e92becab449ff1fd52ece4ffa807c",
+      "bytes": 144
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/artifact.toml",
+      "sha256": "3151492432891efa64fe413802e2ab1597c5526c1e20e531f68131614bc33dfd",
+      "bytes": 2164
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/all-saints-antiphon-la-20261112.toml",
+      "sha256": "7b265b519f0e42ac560cdc820a527958fd761e41d01889547b0ae58fc27a140f",
+      "bytes": 1904
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/all-saints-antiphon-comparison-20261112.toml",
+      "sha256": "135f162a24c182707700d620cbb5d28e6a851265c08a9a583fc90253d4c90dc5",
+      "bytes": 1163
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/english.txt",
+      "sha256": "8f8a7473313e2de7fb9cb053e9b69eef4cb42087460abbf2f66b21184086511d",
+      "bytes": 154
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/work.toml",
+      "sha256": "bb8ed6de337ad1c78c7e80fd84b438465cfcf55219fe8a5dbc9a2dfa8e188aab",
+      "bytes": 973
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "sha256": "4056877fc0e32dbd18f21b51ac2977a34978e5a4d898637cac4377336ede62dc",
+      "bytes": 871
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/artifact.toml",
+      "sha256": "0d0e2bfc6247566c121a720af7bd8b00c39f6fbebeab2bae7a30776eb00c4038",
+      "bytes": 1998
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/passages/all-saints-study-english.toml",
+      "sha256": "a3eaba68ed10fa88a10d9edc0d76c977bc9e6796491894b408ea5e9b29aeed60",
+      "bytes": 1719
+    }
+  ],
+  "full_original_and_proposed_owner_records": {
+    "prior_proper": {
+      "name": "Entrance Antiphon",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "reasons": [
+          {
+            "kind": "witness-gap",
+            "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+          }
+        ]
+      },
+      "notes": "Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded."
+    },
+    "proposed_proper": {
+      "name": "Entrance Antiphon",
+      "source": "composed",
+      "incipit": "Gaudeamus omnes in Domino",
+      "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei.",
+      "notes": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation. Source appointment: ICEL2010 AP142 / printed134; no text from that English carrier is copied. Following historical Psalm32:1 and doxology are excluded."
+    },
+    "prior_english_untranslated": {
+      "mass": "all-saints",
+      "form_id": "main",
+      "proper": "Entrance Antiphon",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "verified_artifact_page": 142,
+      "verified_printed_page": 134,
+      "verified_heading": "ALL SAINTS",
+      "verified_on_page": "2026-10-20",
+      "note": "Exact 2010 ICEL English exemplar held and directly read on artifact page 142, printed page 134. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording.",
+      "reason": {
+        "kind": "rights-withheld",
+        "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "surfaces": [
+          "site-display",
+          "corpus-data",
+          "public-git",
+          "command-line",
+          "download"
+        ]
+      }
+    },
+    "proposed_english_entry": {
+      "mass": "all-saints",
+      "form_id": "main",
+      "form": "",
+      "proper": "Entrance Antiphon",
+      "cycle": "all",
+      "occurrence": 1,
+      "incipit": "Gaudeamus omnes in Domino",
+      "relation": "variant",
+      "ancient_witness": "Missale Romanum, Tours Mame1922,1 November, Introit antiphon; originalAP862 / printed748",
+      "witness_edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+      "witness_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+      "ancient_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+      "ancient_reading": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei.",
+      "target_witness_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.all-saints-antiphon-comparison-20261112",
+      "target_qualification": "secondary2002-comparison; authenticated2008-unestablished",
+      "study_english_passage_id": "passage.triptych.postconciliar-all-saints-antiphon-study-english-20261112.2026-11-12.all-saints-study-english",
+      "source_latin_sha256": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+      "source_latin_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+      "source_latin_publication_source_ids": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+      ],
+      "divergence": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation. Entire antiphon only. Fresh study English preserves all clauses; together praise renders collaudant. The earlier approved-English rights-withheld dictionary is retained intact in the dated admission proposal and is not a refusal of this separately authored source route.",
+      "translations": [
+        {
+          "lang": "en",
+          "rights": "project-created",
+          "notice": "Historical-source study translation; not approved liturgical English. Exact2008 correspondence remains unestablished.",
+          "text": "Let us all rejoice in the Lord, celebrating a feast in honor of all the saints. The angels rejoice at their solemnity and together praise the Son of God."
+        }
+      ]
+    },
+    "prior_latin_provenance_entry": null,
+    "proposed_latin_provenance_entry": {
+      "mass": "all-saints",
+      "form": "",
+      "proper": "Entrance Antiphon",
+      "course": "",
+      "cycle": "",
+      "occurrence": 1,
+      "text_sha256": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+      "provenance_status": "collated",
+      "source_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+      "source_date": "1922",
+      "locator": "Mame1922 originalAP862 / printed748, Introit antiphon only; exact selected derivative line1",
+      "relationship": "exact-transcription",
+      "verification_source_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-own-propers-checked-2026-10-20",
+      "verification_locator": "Original checked1922 text lines1-2; image excerptAP1 / originalAP862 / printed748",
+      "transformations": [
+        "Select whole historical antiphon before Psalm32:1 and Gloria Patri",
+        "Join one internal source line break with a space; retain all1922 words, spelling, case and punctuation",
+        "Omit final storage LF in calendar string"
+      ],
+      "provenance_evidence": "Entire old antiphon independently re-read on original page image and checked-source artifact. Secondary2002 lexical correspondence is qualified by solemnitate/sollemnitate orthography; no2008 identity asserted.",
+      "provenance_authority": "Historical source exactness; modern target relation remains qualified",
+      "provenance_confidence": "high",
+      "publication_status": "permitted",
+      "publication_basis": "public-domain",
+      "surfaces": [
+        "web",
+        "download",
+        "print",
+        "cli",
+        "corpus-data",
+        "public-git"
+      ],
+      "publication_source_ids": [
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+      ],
+      "publication_locator": "Complete1922 historical antiphon, independently registered original-publication/mechanical-reproduction basis",
+      "publication_evidence": "Every published Latin word is in the independently held1922 source; no modern expression or apparatus is added. Study English has its separate project-created source artifact.",
+      "notice": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation.",
+      "note": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation."
+    }
+  },
+  "English_publication_binding": {
+    "artifact_id": "artifact.triptych.postconciliar-all-saints-antiphon-study-english-20261112.2026-11-12.all-saints-study-en-8f8a7473",
+    "artifact_sha256": "8f8a7473313e2de7fb9cb053e9b69eef4cb42087460abbf2f66b21184086511d",
+    "passage_id": "passage.triptych.postconciliar-all-saints-antiphon-study-english-20261112.2026-11-12.all-saints-study-english",
+    "text_sha256_without_storage_lf": "8619e91f083fe507174da1c631422c015f70eebb7ee0390cb214288fdf9f5384",
+    "text": "Let us all rejoice in the Lord, celebrating a feast in honor of all the saints. The angels rejoice at their solemnity and together praise the Son of God.",
+    "rights": "project-created"
+  },
+  "Latin_publication_binding": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+    "artifact_sha256": "82a2a5a73ff9e82e3ffdae142f44688d2f1e92becab449ff1fd52ece4ffa807c",
+    "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+    "text_sha256_without_storage_lf": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+    "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei.",
+    "rights": "public-domain"
+  },
+  "independent_checks": {
+    "status": "passed",
+    "nine_source_file_hashes": true,
+    "unique_new_source_record_IDs": 7,
+    "all_before_and_after_snapshot_hashes": true,
+    "exact_one_proper_replacement": true,
+    "all_other_calendar_nodes_unchanged": true,
+    "all_prior_English_positive_entries_unchanged": 173,
+    "exact_one_English_gap_replaced": true,
+    "all_other_English_gaps_unchanged": 400,
+    "all_other_English_metadata_unchanged": true,
+    "one_Latin_provenance_row_appended": true,
+    "all_prior_Latin_records_and_metadata_unchanged": 330,
+    "source_English_and_Latin_artifact_passage_text_joins": true,
+    "source_text_parent_extent_exact": true,
+    "reviewed_candidate_bodies_unchanged": true,
+    "three_field_study_Latin_binding_exact": true,
+    "canonical_current_target_preimages_still_match": true,
+    "current_whole_file_status": [
+      {
+        "path": "src/sources/calendars/postconciliar/propers.yaml",
+        "current_sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+        "matches_staged_preimage": false
+      },
+      {
+        "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+        "current_sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+        "matches_staged_preimage": false
+      },
+      {
+        "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+        "current_sha256": "602653d00a6f9f409a11e38c4bd98d05736eb97fa34b2b703d0d95b5617d5d75",
+        "matches_staged_preimage": false
+      }
+    ],
+    "runtime_payload_qualifications_preserved": true
+  },
+  "ownership_and_payload_findings": [
+    "Nine new files contain exactly two text payloads and seven TOML work/edition/artifact/passage records. All declared exact sizes/hashes match the frozen package; none of these proposed source paths exists in the current canonical source tree at this review.",
+    "Historical Latin is owned by the actual1922 Mame edition. Its selected derivative is exactly the complete antiphon ending Dei., drawn from physical lines1–2 of the existing82edd79a text and ending before Exsultate on line2. Its one-line passage, text field, transcription segment and artifact hash agree. No Psalm32:1 or Gloria is included.",
+    "The modern comparison passage is text-free under the registered secondary2002 artifact, AP512. It explicitly names solemnitate/sollemnitate and does not label the source an authenticated2008 witness.",
+    "Fresh study English is owned by a separate Triptych work/edition and project-created artifact. Work and artifact metadata disclose AI authorship/review and deny human review/liturgical approval. Exact one-line passage and text payload equal the independently accepted English, including sentence division; no oldhuman or approvedICEL authorship is claimed.",
+    "Each publication binding resolves artifact→artifactsha→passage→one physical line→exact text. The calendar Latin and Latin provenance row carry the same no-storage-LF hash aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871. The English overlay text has hash8619e91f083fe507174da1c631422c015f70eebb7ee0390cb214288fdf9f5384; stored text adds exactly one LF.",
+    "All three explicit study-to-Latin fields match the selected canonical owner and permitted historical publication source IDs. English is project-created without a false historical translation source_id. The registered study English passage ID separately identifies the exact authored payload.",
+    "Every previously positive English entry, unrelated untranslated gap, other calendar node, and prior Latin provenance row/metadata is preserved semantically in the reviewed staged delta. Exact preimages were independently reconstructed from postimages using the reverse convenience patch, then checked against the declared original hashes; this does not presume current canonical whole files still equal those old bases."
+  ],
+  "runtime_review": {
+    "CLI_result": "Two read-only mass-propers show invocations on the frozen validation-root for All Saints, requesting Latin and English JSON, returned0. Exact historical Latin and study English carry the intended provenance, source date, note and notice in the composed owner.",
+    "CLI_artifacts": [
+      {
+        "path": ".scratch/modern-new-antiphons-review/all-saints-installation/runtime-la.json",
+        "sha256": "4f87552ebf694bf1cd901224fc700a796df11940d8b0c88ed5954dcd9a52493d",
+        "bytes": 12598
+      },
+      {
+        "path": ".scratch/modern-new-antiphons-review/all-saints-installation/runtime-en.json",
+        "sha256": "4f87552ebf694bf1cd901224fc700a796df11940d8b0c88ed5954dcd9a52493d",
+        "bytes": 12598
+      },
+      {
+        "path": ".scratch/modern-new-antiphons-review/all-saints-installation/runtime-owner.json",
+        "sha256": "864ac52cfbed0ec1c25e6bcbb1f3ade422e9dec5131ce371a77449cf74cc38e3",
+        "bytes": 4283
+      }
+    ],
+    "browser_renderer_result": "Production browser-core.js was executed in a Node VM using the existing test DOM pattern against that exact composed owner. The complete Latin source qualification appears in Latin-only and paired modes; the exact English historical-source/2008-unestablished notice appears in English-only and paired modes. All checks passed.",
+    "browser_renderer_check": {
+      "path": ".scratch/modern-new-antiphons-review/all-saints-installation/render-check.json",
+      "sha256": "8f6655e65903ced22f01b561204704629bbcdbc7bcd8047e4d924f166a8aef72",
+      "bytes": 4094
+    },
+    "browser_code_sha256": "971f50fb69b014857c601c7a5beeb39a8e6220fc91b12725443fc4442d981703",
+    "modes": [
+      {
+        "options": {
+          "orations": "la"
+        },
+        "latin_qualification": [
+          "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation."
+        ],
+        "English_notice": []
+      },
+      {
+        "options": {
+          "orations": "en"
+        },
+        "latin_qualification": [],
+        "English_notice": [
+          "Historical-source study translation; not approved liturgical English. Exact2008 correspondence remains unestablished."
+        ]
+      },
+      {
+        "options": {
+          "orations": "en",
+          "textDisplay": "latin-and-selected"
+        },
+        "latin_qualification": [
+          "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation."
+        ],
+        "English_notice": [
+          "Historical-source study translation; not approved liturgical English. Exact2008 correspondence remains unestablished."
+        ]
+      }
+    ],
+    "limits": "This is actual production renderer execution with a minimal DOM, not a live browser screenshot, served-site check, full browser-product generation, or release validation."
+  },
+  "preservation_and_integration_boundary": {
+    "canonical_write_freeze_observed": true,
+    "canonical_mutations": 0,
+    "new_source_artifacts_installed": 0,
+    "whole_snapshot_installation_forbidden": "All three current canonical owner files now differ from the staged before hashes. Copying package snapshots wholesale would overwrite unrelated concurrent work. The convenience patch is an old-base diff, not an instruction to reset current files.",
+    "finite_preconditions": "At review, the current All Saints Entrance proper and exact English gap still equal the embedded originals, no All Saints Entrance positive English entry exists, and no Latin provenance row exists for it. Root must recheck those exact per-owner preconditions and install only the nine new sources plus the one proper replacement, one gap→study-entry change and one new Latin row.",
+    "durable_refusal_preservation": "Retain the full embedded original2008 witness-gap proper and ICEL English refusal dictionary in the durable admission receipt; new historical-source availability does not free the restricted approved English.",
+    "publication_scope": "The Latin availability is the independently established complete1922 source and the English is its new project study rendering. The lexical secondary2002 comparison remains qualified. No authenticated2008 target-text clearance or approvedEnglish completeness is created.",
+    "root_remaining_work": "Durable source/admission receipt, finite current-tree merge, source-epoch reconciliation, any broader required validators/generators and actual release checks belong to root after checkpoint."
+  },
+  "verification_artifacts": [
+    {
+      "path": ".scratch/modern-new-antiphons-review/all-saints-installation/checks.json",
+      "sha256": "bbf1aea439c8607c169e7bdd9b778e78d2aaa3b87df46391d7d222d51063d04f",
+      "bytes": 1539
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/all-saints-installation/verify.py",
+      "sha256": "5e06af8dc3330d67c5970e0add396e3a4b1a4b50442013a3485d524326bc09a3",
+      "bytes": 6163
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/all-saints-installation/check-render.mjs",
+      "sha256": "e14e40a66003770b60cc1489ee582b9a7f860ca97ed1827a6b10c50f68f7c4a8",
+      "bytes": 3786
+    },
+    {
+      "path": ".scratch/modern-new-antiphons-review/all-saints-installation/reverse-patch.log",
+      "sha256": "c7075afbdb39b9852207435f23188c482d2ca428787eaa0a8a2e9343257a4bfa",
+      "bytes": 227
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-installation/checks.json",
+      "sha256": "60785e0c0b390b1be4ddeefe0d7c90211c2673721d13c645e5bcaa61127de7fc",
+      "bytes": 1082
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-installation/source-library-check.log",
+      "sha256": "8174a3cedce0a672fa709ae2bdbdd4af251f764b78b029728beebfdc3732b94f",
+      "bytes": 149
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-installation/calendar-check.json",
+      "sha256": "91fcdf0d79260fc04ef1470a438b1b9571440b8ea9c2e4b9acac213d91643275",
+      "bytes": 694
+    },
+    {
+      "path": ".scratch/modern-partition-nonseasonal/all-saints-installation/candidate.patch",
+      "sha256": "fda5a8e97cd47761511779a6f8d4fe29d5f52138207123f0bf78a21ec1f08d79",
+      "bytes": 10538
+    }
+  ],
+  "author_full_graph_checks": "Author reported full staged source-library and calendar checks passed, with one inherited Psalm56 numbering exception. This addendum independently checked the finite payload/owner joins and actual composed output/renderer; it does not relabel the author full-graph run as an independent rerun.",
+  "validation_harness_corrections": "Initial local check mistakenly compared the entire first two parent-source lines, including the following Exsultate, instead of the declared antiphon extent. It was corrected to stop at Dei.; the candidate needed no change. The first renderer harness lacked querySelector; adding the standard DOM lookup completed the paired-mode check. Neither harness issue changed candidate files or production code."
+}

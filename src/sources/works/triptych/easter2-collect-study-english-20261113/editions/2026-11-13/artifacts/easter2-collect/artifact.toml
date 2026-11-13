@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.easter2-collect-study-english-20261113.2026-11-13.easter2-collect"
+edition_id = "edition.triptych.easter2-collect-study-english-20261113.2026-11-13"
+artifact_type = "project-study-translation"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "New Triptych-authored study English underCC BY4.0 from the complete independently old prayer with the exact finite revisions disclosed, plus independently old complete conclusion/response. No approved or historical-human whole English is copied. Underlying public-domain Latin remains unowned."
+rights_jurisdiction = "United States"
+provenance = "New AI-authored project study English from the complete independently old petition and separately old full ending. No approvedEnglish body or historical-human translation is copied."
+retrieved = "2026-11-12"
+sha256 = "f41e6f641337a6ac19b79089eafda311ecba1bc86245f6b8c5a86afdd39be7fd"
+byte_size = 469
+path = "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/artifacts/easter2-collect/body.txt"
+projected_from = ["artifact.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026"]
+transformation = "Create new study English from the whole old prayer with these exact changes: Normalize the old spelling intelligentia to the modern comparison intellegentia. All substantive petition words and their order are unchanged. Normalize ligatures, stress accents, case, punctuation and print line wrapping; the old source already prints festi, recursu and lavacro, so no grammatical repairs of those words are imported from the modern text. The old printed Per. cue is retained as such in the historical body. The receiving Per Dominum cue is assembled as the full Father-addressed conclusion actually printed in secondary2002IGMR54, separately and completely witnessed with distinct R.Amen in Pustet1862AP88. No expansion is falsely attributed to Mabillon. Recursu is the recurrence of the feast, not merely time within Easter. Sacratae tibi modifies the people consecrated to God. Digna intellegentia is worthy insight. The three passive clauses preserve their distinct washing, Spirit and blood instruments and redeemed/born-anew/cleansed senses. Full Father-addressed conclusion and separate response are rendered; neither is expanded from the old Per. without the independent formula source."
+indexable = true
+encoding = "utf-8"
+notes = "Project-created study English from the complete Gallican post-nomina prayer printed in 1729, with one spelling normalization and a separately witnessed full 1862 conclusion and marked response. The comparison is a secondary digital 2002 Roman Collect; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation."

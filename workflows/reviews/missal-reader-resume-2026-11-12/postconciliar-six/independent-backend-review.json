@@ -1,0 +1,146 @@
+{
+  "schema": "triptych-independent-inactive-finite-latin-code-review/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root/modern_sources/pange_review",
+  "verdict": "accept-inactive-backend-contract; not actual Latin admission, activation, or combined browser acceptance",
+  "canonical_head": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "scope": {
+    "owners": [
+      [
+        "ot-3",
+        "Prayer over the Offerings"
+      ],
+      [
+        "ot-5",
+        "Prayer over the Offerings"
+      ],
+      [
+        "ot-12",
+        "Prayer over the Offerings"
+      ],
+      [
+        "ot-8",
+        "Prayer after Communion"
+      ],
+      [
+        "ot-11",
+        "Prayer after Communion"
+      ],
+      [
+        "ot-12",
+        "Prayer after Communion"
+      ]
+    ],
+    "calendar": "postconciliar",
+    "form_course_cycle": "empty",
+    "occurrence": 1,
+    "body_merits": "separate reviewer and Root decision; not adjudicated here"
+  },
+  "frozen_author_package": {
+    "manifest": {
+      "path": ".scratch/modern-finite-latin-contract/20261113T125449Z-inactive-six-latin-contract/manifest.json",
+      "sha256": "98a51819bc33fd8618cc7d9f1afb72318e893bfae946bbeb7e02c76b0348e2f4",
+      "bytes": 5337
+    },
+    "postimages": {
+      "postimages/scripts/_calendars.py": {
+        "sha256": "5242cab4ec28f9cae80181dbc2e5b393db803ca43ed3884165ef80e8bd8efc37",
+        "bytes": 144381
+      },
+      "postimages/scripts/_proper_finite_latin_20261112_postconciliar.py": {
+        "sha256": "cc2224144f9fd6520b97e4954d8d47ba6b58725a52aa49d8b38718dad68681d8",
+        "bytes": 20094
+      },
+      "postimages/scripts/_proper_qualified_latin.py": {
+        "sha256": "a85c54d94bea3ce7eb96a24e5f03dbe32509d3f5e245227b740a960bc3267799",
+        "bytes": 20161
+      },
+      "postimages/tools/mass-propers": {
+        "sha256": "8dd5994d5861cf747b7db1dc0bbade675003ce4c8f7c6c644bfdfc9c2d40b9ff",
+        "bytes": 273302
+      },
+      "postimages/tools/tests/test_postconciliar_finite_latin.py": {
+        "sha256": "52c12463c19c67a18670159d8ba1baff3afe5196eba5562b026d22ac9ead2693",
+        "bytes": 26424
+      }
+    },
+    "public_fixture": {
+      "path": "six-public-fixtures.1645f8bc7695.synthetic.json",
+      "sha256": "1645f8bc769572d7c73e7cb7aed4d5aefc4b4490f13ad432aed6163d2357b67c"
+    }
+  },
+  "independent_evidence": [
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/frozen-integrity.json",
+      "sha256": "4e488956e2ee9abbc82bec6872b00e1cf31f806c1062acf025c60eaa51f45278",
+      "bytes": 1650
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/replay/checks.json",
+      "sha256": "0020ce10679828a6369a0feed6f7fef3cc14b235cb0ed3d3288eb19fd9503ab2",
+      "bytes": 611
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/inactive-replay/inactive-checks.json",
+      "sha256": "53dc7918b54f896974172984e23875cb3f57b046160f54e9e5af48575630984f",
+      "bytes": 3238
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/independent-probes.json",
+      "sha256": "f8c26c6b1243d63247779171056cba77a9eee848079a67f11d6e0acafb8ae08c",
+      "bytes": 13525
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/source-proposal-joins.json",
+      "sha256": "a6d261abeeaa4a7d4dc78e76cd6e750b4d1c95d5838f812b18df48b9d9dd026b",
+      "bytes": 2650
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/verify_frozen.py",
+      "sha256": "ca6f4662ba7ed5dc7df5a037c40853b4e6e6a8ecf925dbec3f80dbb95d5ee47a",
+      "bytes": 1316
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/independent_probes.py",
+      "sha256": "75c9d0b35d561d435daa53920f5d5b1f7e8822508c3c2014cd9f7ad0ab6828d6",
+      "bytes": 4826
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/verify_source_joins.py",
+      "sha256": "d4bd035611525c403e5d7a3ffb55bff64ff85cbcc42b4aae346386485358aa83",
+      "bytes": 2292
+    }
+  ],
+  "findings": [
+    "All 34 frozen file hashes and sizes match; canonical code preimages equal committed HEAD; git apply --check passes; worktree clean.",
+    "Exact frozen replay passes 19 synthetic and 19 exact-candidate test cases under explicit temporary synthetic authority, plus 26 existing Roman/historical CLI tests. Tests never constitute source or Latin permission.",
+    "Independent inactive replay reproduces 56,882 source records with no graph errors, 333 current Postconciliar provenance rows, 619 current sanitized Mass projections and 5,765 Latin source readings unchanged. Six current priors remain bodyless.",
+    "Independent joins verify 143 source-record references against actual pinned TOML bytes and parsed digests. All six proposed rows and complete Latin nodes equal their immutable source proposals; joined English entries/translations equal their original proposals.",
+    "64 additional probes pass: all six owners reject disconnected row body/passage/verification/publication-source fields even when only a synthetic row digest is re-pinned; removed qualification/grade/surface fields and noncanonical proof paths reject. A missing public notice is restored only from the exact pinned scope, matching the private/public projection contract.",
+    "New default authority digest is empty. Recognition signatures refuse copies and do not grant permission. No environment variable enables production admission. Authority is uncached, path/hash bounded to canonical review files, and requires exactly the six owner/body/source tuples plus whole row, carrier bytes, source-record/projection/range proofs and all six publication surfaces.",
+    "Actual body verification belongs to publication_records/source validation and sanitize_source_proper/sanitize_mass before rights_safe_copy. The projection helper alone does not hash sibling proper.text. The stale-body sanitizer test independently passes and drops altered body before serialization. CLI additionally hashes displayed body.",
+    "New source-based-latin-study-reconstruction relationship, Latin note, source date/confidence and exact notice survive backend projection, direct Latin and missing-language fallback. Coverage remains unresolved target relationship; collated source status/high confidence do not become exact 2008 target identity. Sources edition payload retains selected passage Latin qualification.",
+    "Existing Roman finite module bytes, constants, adoption and tests remain unchanged. Dispatcher additions are finite branches, not a generic calendar permission. Existing exact-transcription/historical CLI behavior remains covered."
+  ],
+  "resolved_pre_freeze_finding": {
+    "earlier_probe": {
+      "path": ".scratch/modern-finite-latin-contract-review/probe-draft-links/report.json",
+      "sha256": "c80d74e67a29fb9c72cc9f87e96fa22827f8452d2fdad7d590926a5e2e279291",
+      "bytes": 740
+    },
+    "issue": "Draft row digest could be re-pinned independently from source/body scope identities in synthetic authority.",
+    "resolution": "Frozen helper explicitly binds text_sha256, source_id, verification_source_id and publication_source_ids to scope; independent six-owner replay rejects each disconnected field."
+  },
+  "required_before_actual_activation": [
+    "Root must separately adopt the six exact Latin expressions and real source/Latin merits receipts; no proof file may be copied from synthetic tests.",
+    "Install the exact canonical source graph, selected Latin notes, source rows and carrier bytes together with the reviewed consumers; preserve original English and target limitations.",
+    "Freeze and independently accept browser selected/paired/fallback qualification companion. This backend receipt does not claim native-browser acceptance.",
+    "When activation digest is introduced, add authority and every proof path to _browser_product_recipes.py input closure and re-record affected product manifests through normal workflow.",
+    "Run cohesive actual source/code/browser producer and native checks after real adoption. Inactive and synthetic proofs do not establish active production closure.",
+    "Integrate focused mass-propers changes with reader-audit English-credit work against exact final preimages; do not replace shared whole-file postimages blindly."
+  ],
+  "canonical_writes": false,
+  "generators_run": false,
+  "commits": false,
+  "prior_receipts_modified": false
+}

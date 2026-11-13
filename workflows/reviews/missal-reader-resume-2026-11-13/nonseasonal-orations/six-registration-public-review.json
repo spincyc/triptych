@@ -1,0 +1,108 @@
+{
+  "schema": "triptych-six-nonseasonal-public-registration-review/v1",
+  "date": "2026-11-13",
+  "reviewer": "Independent delegated automated reviewer; subsequently adopted by Root",
+  "decision": "Six exact English-only registrations accepted, with the precise recipient-conclusion scope clarification.",
+  "reviewed_package_sha256": "5f495b1356a0751550d7d87ecfa0dc0a20df68ffbc46c08dc59c23b575b4a02f",
+  "independent_registration_receipt_sha256": "60cefdbe2a2df1ec59678b6ede1d76eadd282eae8788276ef7e2015b74c330fe",
+  "independent_scope_clarification_receipt_sha256": "3d05f13737ecdf62c22a41e5c2f184136197df354f8f48f374ff318015beb289",
+  "root_English_merits_sha256": "fa61352e6b766cf6c3087e2a91eed30573b0dd1741029a716abfe648505ffc90",
+  "root_source_registration_sha256": "13c942a7cf060001795244b25c23181afa32dc7c78d8bbbd5ffd9820eb32f685",
+  "recipients": [
+    {
+      "identity": [
+        "most-holy-name-mary",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "English_scalar_sha256": "b7292a42b88adfa1e7daad70bbb43ed1c45bda9648342ae8a76f6ab19fe26751",
+      "English_without_terminal_lf_sha256": "b7292a42b88adfa1e7daad70bbb43ed1c45bda9648342ae8a76f6ab19fe26751",
+      "relation": "adapted",
+      "decision": "accept final English-only registration and bounded consumer joins"
+    },
+    {
+      "identity": [
+        "saints-sixtus-ii-pope-companions-martyrs",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "English_scalar_sha256": "afd2b3efdaab42743f844cfae6beee8aeea8d83cb339037d8916344f85fe7df3",
+      "English_without_terminal_lf_sha256": "afd2b3efdaab42743f844cfae6beee8aeea8d83cb339037d8916344f85fe7df3",
+      "relation": "variant",
+      "decision": "accept final English-only registration and bounded consumer joins"
+    },
+    {
+      "identity": [
+        "saint-hilary-bishop-doctor-church",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "English_scalar_sha256": "60e91ab3a0a3418166cb31dce43ed96333dd71bb3ac8d5d0edaf85885b1c02a4",
+      "English_without_terminal_lf_sha256": "a0171779e1a634bfb19c21d7f6dd5dac9d560a25d32b1b8476c4846bf10c9c33",
+      "relation": "finite-historical-adaptation-study",
+      "decision": "accept final English-only registration and bounded consumer joins"
+    },
+    {
+      "identity": [
+        "saint-apollinaris-bishop-martyr",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "English_scalar_sha256": "58670ddd435a4c52c9a1603b6698ce1a7754b55e823af7d32f60a161d88fee76",
+      "English_without_terminal_lf_sha256": "340d23853f46eebdda234d018338058cdb9431f09c4573184850dee70e1d0a62",
+      "relation": "finite-historical-adaptation-study",
+      "decision": "accept final English-only registration and bounded consumer joins"
+    },
+    {
+      "identity": [
+        "saint-turibius-mogrovejo-bishop",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "English_scalar_sha256": "7740ce2fcedb681b415d417ab0c8284f60f160014c7025cc44a7725c70facc4e",
+      "English_without_terminal_lf_sha256": "7740ce2fcedb681b415d417ab0c8284f60f160014c7025cc44a7725c70facc4e",
+      "relation": "variant",
+      "decision": "accept final English-only registration and bounded consumer joins"
+    },
+    {
+      "identity": [
+        "saint-paulinus-nola-bishop",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "English_scalar_sha256": "577f9e42c61797df14a2dd3f6851961f83dd7a83c89e74aae10c4f5d5bda1e74",
+      "English_without_terminal_lf_sha256": "577f9e42c61797df14a2dd3f6851961f83dd7a83c89e74aae10c4f5d5bda1e74",
+      "relation": "variant",
+      "decision": "accept final English-only registration and bounded consumer joins"
+    }
+  ],
+  "review_scope": [
+    "Exact source graph and publication joins; all118 source/dependency files",
+    "Six old English refusals preserved as history; exact English bodies and complete conclusions",
+    "Three explicit secondary2002-qualified incipit/notes corrections; three other proper dictionaries unchanged",
+    "Qualified source/carrier/ending notes; unchanged Latin withholding and complete2008 uncertainty",
+    "519 registration checks,103 source records,12 actual CLI runs,35 negative controls and18 Chromium views",
+    "Only focused adopted credit patches; original translation relation values retained",
+    "Separate scope clarification confines Hilary’s earlier Son reference to Hilary; every recipient uses its own actual cue and same-witness rule"
+  ],
+  "limitations": [
+    "Automated source/registration review, not human or liturgical approval",
+    "No new source-image inspection by the registration reviewer",
+    "No modern Latin publication or full2008 authentication",
+    "Final combined source-epoch and product-release checks remain separate"
+  ],
+  "private_evidence_boundary": "Full scratch runtime dossiers and host paths are not copied into this public summary. Exact hashes above bind the separately held immutable independent receipts.",
+  "scope_clarification_durable_path": "workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/recipient-conclusion-scope-clarification.json"
+}

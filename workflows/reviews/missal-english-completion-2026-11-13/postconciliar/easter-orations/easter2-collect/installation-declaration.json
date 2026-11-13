@@ -1,0 +1,543 @@
+{
+  "schema": "triptych-easter2-guarded-installation/v1",
+  "status": "exact-English-and-source-registration-adopted; installer-and-activation-gates-separate",
+  "canonical_inventory": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+  "unchanged_calendar": "src/sources/calendars/postconciliar/propers.yaml",
+  "unchanged_latin": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+  "durable_declaration": "workflows/reviews/missal-english-completion-2026-11-13/postconciliar/easter-orations/easter2-collect/installation-declaration.json",
+  "root_source_adoption": {
+    "path": ".scratch/root/easter-two-source-registration-admission.json",
+    "sha256": "c407e82c89478c9ee3e6c2b94e401375b25771e79bb5c7da2c75551ed6280145",
+    "bytes": 11742
+  },
+  "root_english_merits": {
+    "path": ".scratch/root/next-eleven-english-merits-admission.json",
+    "sha256": "fa61352e6b766cf6c3087e2a91eed30573b0dd1741029a716abfe648505ffc90",
+    "bytes": 25257
+  },
+  "proposal": {
+    "path": ".scratch/modern-partition-easter/easter2-install-proposal/easter2-collect-proposal.json",
+    "sha256": "fd2f82af1216f16550e6accfd499b4f5cf391dfb0311373b21d17ca78896cd4c",
+    "bytes": 19335
+  },
+  "source_manifest": {
+    "path": ".scratch/modern-partition-easter/easter2-install-proposal/files-manifest.json",
+    "sha256": "b0470f92b2fd22944b3f892a1cc904cfde3e4739fcdbdd7173acb64c709e0801",
+    "bytes": 4277
+  },
+  "independent_source_review": {
+    "path": ".scratch/modern-easter2-collect-review/review.json",
+    "sha256": "f6d7cb6f7d0d2242badc1ad059ca1c688252b04f0de19db95786e687fb51078c",
+    "bytes": 17565
+  },
+  "independent_registration_review": {
+    "path": ".scratch/modern-easter2-install-review/review.json",
+    "sha256": "dc459accaaff6c0cdb06a9bbcc2a9baf5ff6db9edc6da39e4a571925e0955c24",
+    "bytes": 19282
+  },
+  "updates": [
+    {
+      "identity": [
+        "easter-2",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "easter-2",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2012",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects.collect-mystogogy-easter",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 3,
+        "verified_heading": "SECOND SUNDAY OF EASTER (OR OF DIVINE MERCY) / April 7, 2013 / COLLECT",
+        "verified_url": "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.easter.pdf",
+        "quarantined_text_sha256": [
+          "529e4ac3a24ce1000c2d9aaa8b0e707ac46f22a587d7b70863d5831d1368b835"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "before_untranslated_sha256": "2def00de22f053736bab07c33139af5c1350a25736d4b07d9c7c8f003374b63e",
+      "after_entry": {
+        "mass": "easter-2",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Deus misericordiae sempiternae",
+        "relation": "variant",
+        "ancient_witness": "De Liturgia Gallicana libriIII, Paris, apudMontalant,1729; printed258; Missale Gothicum, XLIII Missa in die Sabbato Octavae Paschae, Post nomina",
+        "witness_edition_id": "edition.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729",
+        "witness_artifact_id": "artifact.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect",
+        "ancient_passage_id": "passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect-text",
+        "ancient_reading": "Deus misericordiae sempiternae, qui in ipso Paschalis festi recursu fidem sacratae tibi plebis accendis : auge gratiam, quam dedisti : ut digna omnes intelligentia comprehendant, quo lavacro abluti, quo Spiritu regenerati, quo Sanguine sunt redempti. Per.",
+        "divergence": "Normalize the old spelling intelligentia to the modern comparison intellegentia. All substantive petition words and their order are unchanged. Normalize ligatures, stress accents, case, punctuation and print line wrapping; the old source already prints festi, recursu and lavacro, so no grammatical repairs of those words are imported from the modern text. The old printed Per. cue is retained as such in the historical body. The receiving Per Dominum cue is assembled as the full Father-addressed conclusion actually printed in secondary2002IGMR54, separately and completely witnessed with distinct R.Amen in Pustet1862AP88. No expansion is falsely attributed to Mabillon. Exact new study English passage.triptych.easter2-collect-study-english-20261113.2026-11-13.easter2-collect. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter2-collect-20261113-easter2-collect-comparison. Project-created study English from the complete Gallican post-nomina prayer printed in 1729, with one spelling normalization and a separately witnessed full 1862 conclusion and marked response. The comparison is a secondary digital 2002 Roman Collect; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "witness_note": "Project-created study English from the complete Gallican post-nomina prayer printed in 1729, with one spelling normalization and a separately witnessed full 1862 conclusion and marked response. The comparison is a secondary digital 2002 Roman Collect; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "God of everlasting mercy, at the very recurrence of the paschal feast you kindle the faith of the people consecrated to you. Increase the grace you have given, so that all may understand with worthy insight by what washing they have been cleansed, by what Spirit they have been born anew, and by what blood they have been redeemed. Through our Lord Jesus Christ, your Son, who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever. R. Amen."
+          }
+        ]
+      },
+      "english_sha256": "492eb60a590bd945dc0ede1b100b0d82a584e8cf5d4ba51f013b9bcee963f6a0",
+      "after_entry_sha256": "f5e969dc54b824b9043227ae99c6d4fb12d59f8e871acf68cb63dcbf3a883649",
+      "unchanged_proper": {
+        "name": "Collect",
+        "incipit": "Deus misericordiae sempiternae",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "unchanged_proper_sha256": "21b12c04bbfb65a16f7e499718d1d99f03bc87eb29117467fc15ff09a68053fd"
+    }
+  ],
+  "files": [
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/work.toml",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/work.toml",
+      "sha256": "e969ec4f38d7e0cb126a34230792c5879a7f54c9650446770b98deea52409135",
+      "bytes": 571,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/edition.toml",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/edition.toml",
+      "sha256": "5f949ccd97e1eef3bcb6a5440d0509019cb8f148787a86af7d3500beac5eaee1",
+      "bytes": 666,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/ia-whole-pdf-616a58b8/artifact.toml",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/ia-whole-pdf-616a58b8/artifact.toml",
+      "sha256": "a252d3bc3237ec3bf7567649ad4aeedf486d79d70bf7973d205348ecbf9704b9",
+      "bytes": 1407,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-title-20261113.toml",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-title-20261113.toml",
+      "sha256": "dd34b700e5d96d088bbe5eb37ddf89c3d4de314e8378bb5e46a08d28f287451b",
+      "bytes": 777,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-gothicum-heading-20261113.toml",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-gothicum-heading-20261113.toml",
+      "sha256": "87db02a281f29b0b02a72dd9476b27d942b0f36ebdcc906ab966fd3bf5742c1b",
+      "bytes": 946,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/triptych/easter2-collect-study-english-20261113/work.toml",
+      "destination": "src/sources/works/triptych/easter2-collect-study-english-20261113/work.toml",
+      "sha256": "6be1b317e5920aff04422cf7e0deb7129b02dae7c1ef4cee78a601275b5a7119",
+      "bytes": 1130,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/edition.toml",
+      "destination": "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/edition.toml",
+      "sha256": "e96e32d7ba50c4f235f8ff7cc1aad77b6301dc268fae4a6ad28a3a492f29c349",
+      "bytes": 915,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/easter2-collect-20261113-easter2-collect/body.txt",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/easter2-collect-20261113-easter2-collect/body.txt",
+      "sha256": "3ae510e3d2d03d8ccb2d7d4334cfb80eee22bd8f62b36a1ff1fba4b6a4433e17",
+      "bytes": 256,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/easter2-collect-20261113-easter2-collect/artifact.toml",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/easter2-collect-20261113-easter2-collect/artifact.toml",
+      "sha256": "9682ad7809222806645b729f0a12895cb3d011771a987796a22698c2159a2679",
+      "bytes": 2447,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-collect-20261113-easter2-collect-page.toml",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-collect-20261113-easter2-collect-page.toml",
+      "sha256": "68fab70ab2df7e18dde9a17579765c4fde176d4e2c4c8dc07b488b4059b3681d",
+      "bytes": 1081,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-collect-20261113-easter2-collect-text.toml",
+      "destination": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-collect-20261113-easter2-collect-text.toml",
+      "sha256": "191a2ad47d009bbc00376b8f9d2574890ab002d6fed1d02939a1b786700cdf4e",
+      "bytes": 2227,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/artifacts/easter2-collect/body.txt",
+      "destination": "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/artifacts/easter2-collect/body.txt",
+      "sha256": "f41e6f641337a6ac19b79089eafda311ecba1bc86245f6b8c5a86afdd39be7fd",
+      "bytes": 469,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/artifacts/easter2-collect/artifact.toml",
+      "destination": "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/artifacts/easter2-collect/artifact.toml",
+      "sha256": "59b1240d401018de33b82738d3a50e941bf3e0a069ed36264bb4498736092525",
+      "bytes": 3057,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/passages/easter2-collect.toml",
+      "destination": "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/passages/easter2-collect.toml",
+      "sha256": "21f7f7b2259d06d434a003c12177bb9d2cf980f218f1e5c12ad05b60a9e6c8f1",
+      "bytes": 2534,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter2-collect-20261113-easter2-collect-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter2-collect-20261113-easter2-collect-comparison.toml",
+      "sha256": "8250d9d3a40f6c1e12acfe41388bf38819988eade51a60706cda4172663c8bc0",
+      "bytes": 1938,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter2-collect-20261113-easter2-collect-collect-ending-control.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter2-collect-20261113-easter2-collect-collect-ending-control.toml",
+      "sha256": "ae01f3984712965b7dfaf578f38b57cb211adfe5bb2377c0ef169bf278431391",
+      "bytes": 1139,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-install-proposal/files/workflows/reviews/missal-english-completion-2026-11-13/postconciliar/easter-orations/easter2-collect/admission-proposal.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-13/postconciliar/easter-orations/easter2-collect/admission-proposal.json",
+      "sha256": "3edd50c0c497442345ff92a0b63e44741699df8bf9cfd4ceff0d6df09c735f83",
+      "bytes": 13241,
+      "role": "Root-adopted-source-file"
+    },
+    {
+      "scratch_path": ".scratch/modern-easter2-collect-review/review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-13/postconciliar/easter-orations/easter2-collect/source-merits-review.json",
+      "sha256": "f6d7cb6f7d0d2242badc1ad059ca1c688252b04f0de19db95786e687fb51078c",
+      "bytes": 17565,
+      "role": "independent-source-merits"
+    },
+    {
+      "scratch_path": ".scratch/modern-easter2-public-safe-successor/public/registration-review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-13/postconciliar/easter-orations/easter2-collect/registration-review.json",
+      "sha256": "cdf986383b705b2e3366c51dafdca4b9ed62072a38bf41e2a88e98b505d795f6",
+      "bytes": 20686,
+      "role": "independent-registration-public-safe-derivative"
+    },
+    {
+      "scratch_path": ".scratch/root/easter-two-source-registration-admission.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-13/postconciliar/easter-orations/easter2-collect/root-source-adoption.json",
+      "sha256": "c407e82c89478c9ee3e6c2b94e401375b25771e79bb5c7da2c75551ed6280145",
+      "bytes": 11742,
+      "role": "actual-Root-source-adoption"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/easter2-activation/root-merits-excerpt.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-13/postconciliar/easter-orations/easter2-collect/root-merits-excerpt.json",
+      "sha256": "1d5c9e51f65843d00b0b8934111f586292ae27df69f4066dcec49e36b45b263a",
+      "bytes": 2355,
+      "role": "one-owner-Root-merits-excerpt"
+    }
+  ],
+  "source_record_dependencies": [
+    {
+      "id": "passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect-page",
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-collect-20261113-easter2-collect-page.toml",
+      "record_sha256": "a98cbaedc56aa731b93f3814c214dcaeefb4a91621026d890afe5f535147c846",
+      "from_new_file": true
+    },
+    {
+      "id": "edition.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729",
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/edition.toml",
+      "record_sha256": "98da6bd991ec9b52f14fe925c2696fa4ba1c6669de3b8b4fca1cded268686def",
+      "from_new_file": true
+    },
+    {
+      "id": "work.jean-mabillon.de-liturgia-gallicana",
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/work.toml",
+      "record_sha256": "f28eafa286f3951b2f751bac7a9c10ae8bd21c16cef2f1253988cce7d1c4dca3",
+      "from_new_file": true
+    },
+    {
+      "id": "artifact.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.ia-whole-pdf-616a58b8",
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/ia-whole-pdf-616a58b8/artifact.toml",
+      "record_sha256": "94227b8334ef5f218bd9886be098107d04e2f60ae9044844a641a4286dd9d292",
+      "from_new_file": true
+    },
+    {
+      "id": "passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect-text",
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-collect-20261113-easter2-collect-text.toml",
+      "record_sha256": "72ba54561a27ddc7a6706290ec846ea21f543ea10a48faf6cdfdcaadb4155f3e",
+      "from_new_file": true
+    },
+    {
+      "id": "artifact.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-collect-20261113-easter2-collect",
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/easter2-collect-20261113-easter2-collect/artifact.toml",
+      "record_sha256": "258a77d1e4abca5c333dd8afc3f7709b25473c1020d3fe88b986fb4e1a650af4",
+      "from_new_file": true
+    },
+    {
+      "id": "passage.triptych.easter2-collect-study-english-20261113.2026-11-13.easter2-collect",
+      "path": "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/passages/easter2-collect.toml",
+      "record_sha256": "937e904a84ef7ea4a197f9079178886ad2647eb539b187cc61aace575d285360",
+      "from_new_file": true
+    },
+    {
+      "id": "edition.triptych.easter2-collect-study-english-20261113.2026-11-13",
+      "path": "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/edition.toml",
+      "record_sha256": "0cb505cf6840fb603e8df968d29ed784b8a62514afc1abb7ca387121b84e2b6f",
+      "from_new_file": true
+    },
+    {
+      "id": "work.triptych.easter2-collect-study-english-20261113",
+      "path": "src/sources/works/triptych/easter2-collect-study-english-20261113/work.toml",
+      "record_sha256": "e80a839fea4f2f94969104ff121e7195dbd0315fc0379821725791d9ca163d1c",
+      "from_new_file": true
+    },
+    {
+      "id": "artifact.triptych.easter2-collect-study-english-20261113.2026-11-13.easter2-collect",
+      "path": "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/artifacts/easter2-collect/artifact.toml",
+      "record_sha256": "ae48eb295a3e72165b0857c4e53a8bb4d108996e4e4ad2fa1f5f9ed9e2b3241c",
+      "from_new_file": true
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/artifact.toml",
+      "record_sha256": "ab6f74ba3649e9c45c9f0741dcc05440d1b784b252206cd30d10dbdaf67bdea6",
+      "from_new_file": false
+    },
+    {
+      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml",
+      "record_sha256": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+      "from_new_file": false
+    },
+    {
+      "id": "work.catholic-church.missale-romanum",
+      "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "record_sha256": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+      "from_new_file": false
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/artifact.toml",
+      "record_sha256": "3bf0f4109c343586174463a20e9fb89f58313a22bb50a672759e8e6cedb9d6c9",
+      "from_new_file": false
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml",
+      "record_sha256": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+      "from_new_file": false
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter2-collect-20261113-easter2-collect-comparison",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter2-collect-20261113-easter2-collect-comparison.toml",
+      "record_sha256": "df462690766a4fab8718b01e46ae505140df7766e8aca72a955067cbd3b13b11",
+      "from_new_file": true
+    },
+    {
+      "id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/edition.toml",
+      "record_sha256": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069",
+      "from_new_file": false
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
+      "record_sha256": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8",
+      "from_new_file": false
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/long-conclusion-response-page88-20261026.toml",
+      "record_sha256": "f2717ac9a65b3182cdcdbc5d04269be56cb281a678739e92b58900bac1134236",
+      "from_new_file": false
+    },
+    {
+      "id": "passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-title-20261113",
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-title-20261113.toml",
+      "record_sha256": "250682b4118e550883f7bc83954c7becb9a7e0a782b9c3b90b184faf7477b8dd",
+      "from_new_file": true
+    },
+    {
+      "id": "passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-gothicum-heading-20261113",
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/passages/easter2-gothicum-heading-20261113.toml",
+      "record_sha256": "80e3b7ebcf1b429348b94875db697eb64a23ae1467419383608fbbce50cc3964",
+      "from_new_file": true
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter2-collect-20261113-easter2-collect-collect-ending-control",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter2-collect-20261113-easter2-collect-collect-ending-control.toml",
+      "record_sha256": "72f4329974758ab23a90cdd0966e5a8a0720ad9bd9e145b7fe2f87a939616bd9",
+      "from_new_file": true
+    },
+    {
+      "id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects.collect-mystogogy-easter",
+      "path": "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2012-2013-collects/artifacts/collect-mystogogy-easter/artifact.toml",
+      "record_sha256": "1a45c8740f05a90c5adb291abfc0b327a72d62640211cc7a0fe0484e2637158f",
+      "from_new_file": false
+    },
+    {
+      "id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects",
+      "path": "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/editions/2012-2013-collects/edition.toml",
+      "record_sha256": "80c29e4a16d70a464eb9c70e9424013f68ad91e87538e3944808e6cfa8af977f",
+      "from_new_file": false
+    },
+    {
+      "id": "work.federation-of-diocesan-liturgical-commissions.mystagogical-reflections",
+      "path": "src/sources/works/federation-of-diocesan-liturgical-commissions/mystagogical-reflections/work.toml",
+      "record_sha256": "972d035a9f63ad270c8b430c3c8e9ee1eb77a9ef0beddc2eddf8c0b9998b8878",
+      "from_new_file": false
+    }
+  ],
+  "source_payload_dependencies": [
+    {
+      "path": "src/sources/works/jean-mabillon/de-liturgia-gallicana/editions/paris-montalant-1729/artifacts/easter2-collect-20261113-easter2-collect/body.txt",
+      "sha256": "3ae510e3d2d03d8ccb2d7d4334cfb80eee22bd8f62b36a1ff1fba4b6a4433e17",
+      "from_new_file": true,
+      "storage": "held-file"
+    },
+    {
+      "path": "src/sources/works/triptych/easter2-collect-study-english-20261113/editions/2026-11-13/artifacts/easter2-collect/body.txt",
+      "sha256": "f41e6f641337a6ac19b79089eafda311ecba1bc86245f6b8c5a86afdd39be7fd",
+      "from_new_file": true,
+      "storage": "held-file"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/latin.txt",
+      "sha256": "e085b59f15592f63937a0a9665b9ac228b96a32295d7c4116a054dc177c8f602",
+      "from_new_file": false,
+      "storage": "held-file"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/source.pdf",
+      "sha256": "a8fa7ec08dab8614ecfb0563a15c3725cf670ddac6d04dbf0b0caeed6d561975",
+      "from_new_file": false,
+      "storage": "registered-external",
+      "delivery_record": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/source.pdf",
+        "sha256": "a8fa7ec08dab8614ecfb0563a15c3725cf670ddac6d04dbf0b0caeed6d561975",
+        "bytes": 433790,
+        "kind": "source-evidence",
+        "media_type": "application/pdf",
+        "origin_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf",
+        "archive": "ddc6d1ec4b8c25f9a3b165815381f5d7d67554ff3387179eff02c9f91fb5da16",
+        "member": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/source.pdf"
+      },
+      "archive_record": {
+        "id": "ddc6d1ec4b8c25f9a3b165815381f5d7d67554ff3387179eff02c9f91fb5da16",
+        "name": "triptych-binaries-0004-ddc6d1ec4b8c25f9.tar",
+        "sha256": "ddc6d1ec4b8c25f9a3b165815381f5d7d67554ff3387179eff02c9f91fb5da16",
+        "bytes": 509378560,
+        "urls": [
+          "https://github.com/spincyc/triptych-artifacts/releases/download/evidence-2026-11-02-v1/triptych-binaries-0004-ddc6d1ec4b8c25f9.tar"
+        ]
+      }
+    }
+  ],
+  "observed_live_input_pins": [
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+      "bytes": 1004208
+    },
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+      "bytes": 3163294
+    }
+  ],
+  "observed_existing_English_entries": 173,
+  "runtime_limit": "Existing unbound study route checks exactowner/incipit but does not runtimepin source or Englishbody. Exact sourceepoch/installation hashes enforce this reviewed expression; no falsechangedbody-refusal claim. No Latin/calendar/default/schema/code or current2008 authority change.",
+  "public_safe_evidence_boundary": "Only the 17 Root-adopted source/finite-receipt files, unchanged exact source review, explicitly labelled public-safe path-normalized registration-review derivative, one-owner Root source receipt, clearly marked one-row Root merits excerpt, and this successor declaration are mapped. The original registration review is verified by its unchanged private receipt hash and remains immutable; it is not mapped for public installation. The original eleven-row Root receipt is verified by hash, not copied wholesale. No private full modern comparison packet or page image is included.",
+  "preservation": "Remove only exact selected unavailable block; preserve every other byte, comment, quarantine and dictionary, append new positive after all current positive indices. Calendar and Latin unchanged.",
+  "remaining_gates": [
+    "Independent review of this one-evidence public-safe successor.",
+    "Root acceptance of this exact successor map before source_epoch staging.",
+    "Root source_epoch stage and explicit integration window.",
+    "Final merged sourcegraph, producer and actual consumer checks."
+  ],
+  "canonical_writes": false,
+  "public_safe_evidence_successor": {
+    "scope": "One evidence payload only: registration-review.json receives an explicitly labelled public-safe derivative. The dependent declaration and installer/manifest pins change; all 17 Root-adopted source files, exact English update, source joins, owner preimages and integration requirements remain identical.",
+    "predecessor_installer": {
+      "path": ".scratch/modern-partition-easter/easter2-activation/activate.py",
+      "sha256": "7ad197dd339846fec9429b17948d1c623ce1a8d6cce9d242f0f60fd0b6a701ca",
+      "bytes": 13911
+    },
+    "predecessor_declaration": {
+      "path": ".scratch/modern-partition-easter/easter2-activation/installation-declaration.json",
+      "sha256": "acfcf4a2d99b6043427522941b2ad3f8ecc7321b1a7b705db94e67b0145e2a72",
+      "bytes": 32024
+    },
+    "predecessor_manifest": {
+      "path": ".scratch/modern-partition-easter/easter2-activation/activation-manifest.json",
+      "sha256": "a067e7b0a1ea119abfd973eefcb3fa2cde47cae1307c19806379cdd7815438db",
+      "bytes": 13417
+    },
+    "original_registration_review": {
+      "path": ".scratch/modern-easter2-install-review/review.json",
+      "sha256": "dc459accaaff6c0cdb06a9bbcc2a9baf5ff6db9edc6da39e4a571925e0955c24",
+      "bytes": 19282
+    },
+    "public_registration_review": {
+      "path": ".scratch/modern-easter2-public-safe-successor/public/registration-review.json",
+      "sha256": "cdf986383b705b2e3366c51dafdca4b9ed62072a38bf41e2a88e98b505d795f6",
+      "bytes": 20686
+    },
+    "unchanged_destination": "workflows/reviews/missal-english-completion-2026-11-13/postconciliar/easter-orations/easter2-collect/registration-review.json",
+    "transformation": {
+      "schema": "triptych-public-safe-evidence-derivative/v1",
+      "status": "public-safe path-normalized derivative; not the literal original execution or review receipt",
+      "original_receipt": {
+        "path": ".scratch/modern-easter2-install-review/review.json",
+        "sha256": "dc459accaaff6c0cdb06a9bbcc2a9baf5ff6db9edc6da39e4a571925e0955c24",
+        "bytes": 19282
+      },
+      "transformation": "Exactly two absolute repository-root prefixes in diagnostic strings are replaced with <REPOSITORY_ROOT>/. All other original bytes and review statements are retained; this additive metadata labels the derivative.",
+      "public_prefix": "<REPOSITORY_ROOT>/",
+      "private_prefix_sha256": "2cd81631ddd638cd408f4808189b7328a237bcfe0245f06f3bd52242f930abd6",
+      "replacement_count": 2,
+      "json_pointers": [
+        "/runtime_contract/refusal_controls/5/diagnostic",
+        "/runtime_contract/refusal_controls/6/diagnostic"
+      ],
+      "normalized_original_sha256": "bc070faa6f8e834ec9c2e4eaf2a64e45bcee17ea65ec5d0c82fd431ef57ca2e2",
+      "exact_inverse": "Remove this _public_safe_derivative metadata member and restore the two private repository-root prefixes using the private scratch-only normalization proof; the result reproduces the original receipt SHA-256. The private prefix is deliberately not published.",
+      "scope": "No new source, English, rights, owner, runtime or activation authority. Original review conclusions and limitations remain unchanged."
+    },
+    "original_files_and_authorities_immutable": true,
+    "remaining_gate": "Independent successor review and Root acceptance before Root staging. This successor does not itself grant integration authority."
+  }
+}

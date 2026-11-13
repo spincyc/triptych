@@ -1,0 +1,258 @@
+{
+  "schema": "triptych-ferial-three-independent-recipient-activation-evidence-review/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "independent_of_author": true,
+  "verdict": "PASS exact bounded durable mapping, source owner postimages and guarded installer preparation; no application performed",
+  "blockers": [],
+  "activation_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/activation/activation-plan.json",
+    "sha256": "84b20b5b38b23a74e75e78900f9369b11a18347819e04fda53b0503c00d17fb3",
+    "bytes": 21727
+  },
+  "evidence_map": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/activation/evidence-map.json",
+    "sha256": "87ca39bfa94bac57934c7cba33de32652d41ca9959b009fb6496617aee837ae7",
+    "bytes": 17809
+  },
+  "guarded_install_driver": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/activation/install_sources.py",
+    "sha256": "1d04f9b0b5448299c72a42bda65b97192d4180c400a6dba2fb6b24a6136998f2",
+    "bytes": 14881
+  },
+  "prepared_receipt": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/activation/prepared-receipt.json",
+    "sha256": "443b13d3bb2210a170b59e29ecda7f2461c37464a893b48911f2cbdaf8de2fc6",
+    "bytes": 20362
+  },
+  "actual_Root_records": {
+    "original": {
+      "path": ".scratch/root/ferial-three-source-admission.json",
+      "sha256": "3d9681a4ef811fd3cb1af55d4cef34d117c34d266e806b462fe38401ed0c74e2",
+      "byte_size": 6700
+    },
+    "recipient_amendment": {
+      "path": ".scratch/root/ferial-recipient-carrier-amendment.json",
+      "sha256": "95e6c46916f6f6d116fd34b1a2888e75a9ec0fc0010628061a4b9dd33a5add02",
+      "byte_size": 4644
+    }
+  },
+  "source_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/install-plan.json",
+    "sha256": "c015358de877879ccaaf10e8bd1ce5c4af9c096d7c55a2bc024308583e0263d1",
+    "byte_size": 81954
+  },
+  "body_bindings": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/appointment-body-bindings.json",
+    "sha256": "48ddf0258bbd827c467fddfe832e63f9cb6401b8a252a4cc56d3841d01090e2e",
+    "byte_size": 44281
+  },
+  "independent_source_amendment": {
+    "path": ".scratch/roman-sources/ferial-three-source-review/recipient-carrier-source-amendment.json",
+    "sha256": "9306494706b4cfcc7f5d96021174851a39bb1a0ce3a54ad35e209027618ab4c4",
+    "bytes": 11446
+  },
+  "durable_scope": {
+    "file_count": 12,
+    "byte_exact_originals": 10,
+    "explicit_projections": 2,
+    "findings": [
+      "All ten original records are byte-exact copies of the exact raw pinned inputs, including both actual Root decisions, both recipient-carrier amendments and the narrow producer proof. Prior receipts remain unedited historical records.",
+      "The installation projection preserves the three complete admitted proper/Latin/English objects, their absent prior row states, exact original row JSON pointers/digests, 24 source destinations/hashes/sizes, owner paths, donor pins and rights-record references.",
+      "The source-binding projection preserves the exact three selected binding objects, original raw packet and row hashes, original selected-row JSON pointers and all 27 source-proof bindings, including the two appended recipient publication records.",
+      "The prepared evidence tree contains exactly the twelve mapped JSON files. It contains no PDF/raster payload, embedded data URI, full source book or recursively copied packet. No complete unrelated prayer body from the three original recipient Mass objects occurs in the decoded durable values; nine such complete Latin bodies were checked.",
+      "Scratch references inside byte-exact originals remain historical input locators. The proposed durable references point to exact mapped files; no transitive scratch input is represented as a new durable payload."
+    ],
+    "files": [
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/source-review.json",
+        "sha256": "3cea9775916c63df05cbadad718953897bd71b65ecc57ce79773ea8dec6535b3",
+        "bytes": 41375,
+        "mode": "byte-exact-admitted-only-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/source-metadata-v3-supplement.json",
+        "sha256": "f64792c54c3e9347ab59b5fd04f4f1005f3d86768fb499d03124e31741f14f96",
+        "bytes": 12340,
+        "mode": "byte-exact-admitted-only-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/english-body-review.json",
+        "sha256": "57589732bf904d71335f479ed4bb159fd8072eab1a64d861b41e9bfa7c7c06b8",
+        "bytes": 25410,
+        "mode": "byte-exact-admitted-only-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/english-original-binding.json",
+        "sha256": "352c66df8b0e3c490ed3cbb10a1cdb0a065f47b2d5042384f94a5c2d2d6a8118",
+        "bytes": 56902,
+        "mode": "byte-exact-admitted-only-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/english-metadata-v3-binding.json",
+        "sha256": "48beaea6c75cdd6a300acfb05eadbd16c5923882aaead95da9e4435f2638fa36",
+        "bytes": 23278,
+        "mode": "byte-exact-admitted-only-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/recipient-carrier-source-amendment.json",
+        "sha256": "9306494706b4cfcc7f5d96021174851a39bb1a0ce3a54ad35e209027618ab4c4",
+        "bytes": 11446,
+        "mode": "byte-exact-bounded-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/recipient-carrier-english-amendment.json",
+        "sha256": "ab8c85649aed399cd8e889c808ce42c31c52528d2a07753e427d813a1ee72eac",
+        "bytes": 22857,
+        "mode": "byte-exact-bounded-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/root-source-admission-original.json",
+        "sha256": "3d9681a4ef811fd3cb1af55d4cef34d117c34d266e806b462fe38401ed0c74e2",
+        "bytes": 6700,
+        "mode": "byte-exact-bounded-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/root-recipient-carrier-amendment.json",
+        "sha256": "95e6c46916f6f6d116fd34b1a2888e75a9ec0fc0010628061a4b9dd33a5add02",
+        "bytes": 4644,
+        "mode": "byte-exact-bounded-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/recipient-carrier-producer-proof.json",
+        "sha256": "887dc1366bebdaecae51c1f502bddd9e27ee132bde7886970221c4ae40fac8d6",
+        "bytes": 4936,
+        "mode": "byte-exact-bounded-original"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/installation-manifest-recipient-successor.json",
+        "sha256": "300012233751bb072998716424e8762f1b8380da12b5ba981084f2e71690a964",
+        "bytes": 35852,
+        "mode": "explicit-projection"
+      },
+      {
+        "repository_path": "workflows/reviews/missal-reader-resume-2026-11-12/ferial-three/evidence/source-bindings-recipient-successor.json",
+        "sha256": "cf45c2695fb00d32f5b00b3c2ec3960d115d7890697f299eaab272cba6588708",
+        "bytes": 22464,
+        "mode": "explicit-projection"
+      }
+    ]
+  },
+  "source_owner_postimages": {
+    "observed_HEAD": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+    "before": {
+      "src/sources/calendars/roman-1962/propers.yaml": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953",
+      "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "e1898bf40bc10db519b48da5eab6cc273308590225f191f395847a7e97196658",
+      "src/sources/inventories/roman-1962-proper-translations-v1.toml": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf"
+    },
+    "after": {
+      "src/sources/calendars/roman-1962/propers.yaml": "3aaa6249adc5cab9981b1391cc379b994ba41e66938bd3a944f0642622814811",
+      "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "55b4894ccae2fe6aff78bdf08a72b34498b990260be760241b94f41297dcb9a3",
+      "src/sources/inventories/roman-1962-proper-translations-v1.toml": "c5883fbc9c4bd9a0a7244cded2a7cdeb65e2d469b187b999197d794e0c4adf09"
+    },
+    "new_source_files": 24,
+    "source_proof_bindings": 27,
+    "unique_source_proofs": 25,
+    "findings": [
+      "All 24 prepared source outputs are byte-identical to the exact admitted source-plan candidates; all canonical new destinations were absent during this audit.",
+      "The calendar postimage differs semantically by exactly three proper insertions after the exact terminal Postcommunion anchors. Its byte-level changes comprise three insertions only.",
+      "The Latin and English inventory postimages append exactly three admitted entries each; the existing ledger bytes remain a literal prefix and all other parsed values remain equal.",
+      "The donor Lent II Monday proper and ledger ownership remain unchanged. The corrected Passion Wednesday complete English entry hash is d3f075c746563a9a28be986ac0547aa5209910abd7f1ee810ce1da5a7efd3c43.",
+      "The prepared owners.patch is the exact unified diff of the independently compared owner preimages and postimages. No frame, ending, refusal-removal, source-epoch, controller or renderer delta is present."
+    ]
+  },
+  "installer_guards": {
+    "method": "Only extracted read-only Root-admission/preflight AST, optimization refusal and run-name guard executed with in-memory mocks. Installer never invoked; --apply never run.",
+    "application_refusal_cases": [
+      "missing_checkpoint",
+      "short_checkpoint",
+      "wrong_HEAD",
+      "wrong_branch",
+      "uncommitted_owner",
+      "missing_root",
+      "outside_root",
+      "missing_root_hash",
+      "wrong_root_hash",
+      "rejected_root",
+      "changed_entry",
+      "missing_plan_pin",
+      "original_root_instead",
+      "reserialized_root",
+      "missing_durable",
+      "changed_durable"
+    ],
+    "Root_admission_refusal_cases": [
+      "bad_status",
+      "bad_parent",
+      "bad_plan",
+      "bad_files",
+      "bad_identity",
+      "bad_entry",
+      "unaccepted_original",
+      "changed_Latin",
+      "changed_English"
+    ],
+    "optimization_and_run_name": "Extracted optimization guard refuses -O. Run-name guard accepts only the declared bounded lowercase slug syntax and rejects traversal/absolute/dotted/uppercase names.",
+    "actual_Root_binding": "The always-run gate checks the exact accepted original and amendment hashes, structured parent/source-plan/new-file/identity references, and all complete admitted objects and six body hashes. Application additionally requires final durable receipt bytes to equal the exact actual Root amendment, so a rewritten, merely similar or original-only record cannot pass.",
+    "application_boundary": "Checkpoint length and current HEAD/branch, committed owner bytes, exact durable evidence files, current recipient and donor preimages, absent source destinations, and exclusive source creation are checked before mutation. The final mutation block repeats owner bytes and source-absence checks.",
+    "invoked_installer": false,
+    "ran_apply": false
+  },
+  "actual_CLI_proof_binding": {
+    "proof": {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/producer-proof.json",
+      "sha256": "887dc1366bebdaecae51c1f502bddd9e27ee132bde7886970221c4ae40fac8d6",
+      "byte_size": 4936
+    },
+    "process_attribution": "Author process record, independently rehashed and compared; not rerun for this bounded audit.",
+    "reported_exit_code": 0,
+    "stdout": {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/passion-wednesday-producer-v4.json",
+      "sha256": "ca7b7bafad5feb571e85192706cc50335252289bd366566dc7d86c3868cc4c26",
+      "byte_size": 47917
+    },
+    "stderr": {
+      "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/passion-wednesday-producer-v4.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "byte_size": 0
+    },
+    "producer": {
+      "path": "tools/mass-propers",
+      "sha256": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f",
+      "byte_size": 272825
+    },
+    "selected_appointment_pointer": "/appointed/10",
+    "selected_proper_hash_pointer": "/appointed/10/proper",
+    "selected_proper_canonical_sha256": "6ab647478fed4785e94cc188a9b6bffb99bedad7c42f569f6c143054684267a4",
+    "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+    "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+    "findings": "The selected appointed object contains the exact admitted Latin and English, has taken_from null, and does not withhold Latin. The stdout/stderr hashes and empty stderr match the process record. The proof copies no broad output packet into durable evidence.",
+    "locator_clarification": "selected_output_json_pointer selects the appointment wrapper; selected_proper_canonical_sha256 hashes its nested /proper object, as the field name states."
+  },
+  "independent_checks": 655,
+  "check_failures": [],
+  "audit": {
+    "path": ".scratch/roman-sources/ferial-three-source-review/recipient-activation-audit.json",
+    "sha256": "32e127ab82bc620828db7ebfb89330ff40782f7b706044b7df053124e9c4acf9",
+    "bytes": 147566
+  },
+  "audit_script": {
+    "path": ".scratch/roman-sources/ferial-three-source-review/audit_recipient_activation.py",
+    "sha256": "43a4c4bf4c40e80fa0489e87992a66ad9cd105d7be5fe1e582edede556bfc88c",
+    "bytes": 23801
+  },
+  "held_predecessor": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/activation-plan.json",
+    "sha256": "50528bc2900ee671f244f8bfd24fce83d46678d76c81d0f18feea4f09c23b31a",
+    "disposition": "Remains frozen and held. This PASS applies only to the new 84b20b5b… activation package."
+  },
+  "limits": [
+    "Prepared evidence destinations have not been copied by this review. Application requires all twelve mapped files at their exact durable destinations and the exact actual Root amendment bytes at the supplied durable review path.",
+    "The installer rechecks current committed owner preimages and all exact recipient/donor/source guards. Concurrent integration must continue to honor its exclusive mutation boundary.",
+    "Actual CLI proof and selected raw output were rehashed and compared; the earlier author process was not rerun by this bounded audit.",
+    "No images reopened; no source/English/rights conclusions newly adopted; no whole PDFs reread or rehashed by this bounded mapping audit.",
+    "This review supplies no new source-image, English fidelity, legal, rights or publication decision. It checks the durable representation of actual existing Root decisions and the exact admitted source plan.",
+    "The full original source and English reviews retain their stated limits. Source-body CLI compatibility is distinct from source-epoch, frame, conclusion and complete rendering acceptance.",
+    "No canonical file, candidate input, earlier receipt or frozen activation package was edited. Writes were confined to the assigned reviewer scratch directory. Root retains final durable copying and integration responsibility."
+  ]
+}

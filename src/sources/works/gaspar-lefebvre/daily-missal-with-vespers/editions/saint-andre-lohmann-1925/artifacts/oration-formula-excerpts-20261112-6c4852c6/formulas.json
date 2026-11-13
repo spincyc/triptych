@@ -1,0 +1,110 @@
+{
+  "schema": "triptych-historical-oration-formula-excerpts/v1",
+  "edition_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+  "source_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+  "source_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+  "verified_on": "2026-11-12",
+  "scope": "Exact complete historical English formula excerpts at identified local prayers. These pages do not constitute a general printed conclusion table. Finite target applicability and derived extraction/capitalization are separately reviewed.",
+  "transcription": "Join page and line divisions and printed line-end hyphenation only. Preserve English words, case and punctuation. The terminal Amen is retained separately and does not assign an execution speaker. No Latin transcription, image, layout, watermark, host text or expanded target prayer is included.",
+  "formulas": {
+    "lefebvre-through-our-lord-morning-prayer": {
+      "control_id": "lefebvre-through-our-lord-morning-prayer",
+      "context": "Morning Prayers, O Lord God Almighty / Domine Deus omnipotens",
+      "english": "Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, for ever and ever.",
+      "source_segments": [
+        "Through our Lord Jesus Christ, Thy Son, Who liveth and reigneth with Thee in the unity of the Holy Ghost, God, for ever and ever."
+      ],
+      "source_segment_roles": [
+        "printed prayer conclusion"
+      ],
+      "terminal_amen": {
+        "text": "Amen.",
+        "printed_marker": "R.",
+        "speaker_assignment": "not assigned by this excerpt registration"
+      },
+      "absolute_pages": [
+        42,
+        43
+      ],
+      "printed_pages": [
+        "8",
+        "9"
+      ],
+      "primary_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+      "primary_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+      "image_receipts": [
+        {
+          "absolute_page": 42,
+          "image_sha256": "bf2426f12d6f11cbc651ff3020e4217d8d7681f6de52b5932b551951578e2a7d"
+        },
+        {
+          "absolute_page": 43,
+          "image_sha256": "2512e0bc18755f86765cf39c03e74b970df8061be88ea4f53b5ba0fe39690619"
+        }
+      ],
+      "reviewed_control_sha256": "aaf212ebaca32234b41e2d7df158e6b02034a25c823d4645d6a515b31a76d752"
+    },
+    "lefebvre-who-livest-advent-1": {
+      "control_id": "lefebvre-who-livest-advent-1",
+      "context": "Mass for the First Sunday of Advent, Collect, Excita quaesumus",
+      "english": "Who livest and reignest with God the Father in the unity of the Holy Ghost, God, world without end.",
+      "source_segments": [
+        "Who livest and reignest with God the Father in the unity of the Holy Ghost, God, world without end."
+      ],
+      "source_segment_roles": [
+        "printed prayer conclusion"
+      ],
+      "terminal_amen": {
+        "text": "Amen.",
+        "printed_marker": "R.",
+        "speaker_assignment": "not assigned by this excerpt registration"
+      },
+      "absolute_pages": [
+        367
+      ],
+      "printed_pages": [
+        "333"
+      ],
+      "primary_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+      "primary_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+      "image_receipts": [
+        {
+          "absolute_page": 367,
+          "image_sha256": "c90a0846cbfa718625725bc7736e4a34d3c711dd977e6cbbc69a456575c960b4"
+        }
+      ],
+      "reviewed_control_sha256": "3459a68bcf92f1155a0c462fd4a8a5d42c784fca40be7c488ab064d7c91a8515"
+    },
+    "lefebvre-through-the-same-libera-nos": {
+      "control_id": "lefebvre-through-the-same-libera-nos",
+      "context": "Ordinary of the Mass, Libera nos",
+      "english": "Through the same Jesus Christ Thy Son our Lord, Who liveth and reigneth with Thee in the unity of the Holy Ghost, one God, for ever and ever.",
+      "source_segments": [
+        "Through the same Jesus Christ Thy Son our Lord, Who liveth and reigneth with Thee in the unity of the Holy Ghost, one God, for ever and ever."
+      ],
+      "source_segment_roles": [
+        "printed prayer conclusion"
+      ],
+      "terminal_amen": {
+        "text": "Amen.",
+        "printed_marker": "R.",
+        "speaker_assignment": "not assigned by this excerpt registration"
+      },
+      "absolute_pages": [
+        102
+      ],
+      "printed_pages": [
+        "68"
+      ],
+      "primary_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+      "primary_artifact_sha256": "28c9046c5acfa19297ab9aeaa14ac4f8d8fcffab1307b51215b94fa4ca6172a2",
+      "image_receipts": [
+        {
+          "absolute_page": 102,
+          "image_sha256": "6b585ce14d9f3b161ff1e1fb8e76fe0ea6f965f87cb052730f738024fa8b6570"
+        }
+      ],
+      "reviewed_control_sha256": "a81cbd37c3ccb3df76db5f1a95958cae69f559203536af8aea4c475486444ac2"
+    }
+  }
+}

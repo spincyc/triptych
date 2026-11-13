@@ -1,0 +1,112 @@
+{
+  "schema": "independent-oration-source-fidelity-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "modern_sources/pange_review",
+  "candidate_path": ".scratch/modern-partition-easter/study-candidates.json",
+  "candidate_sha256": "328759fe7aafa0af8d5085e7f628002e93ceb1f57dfcec6353747a1e08a16fa5",
+  "canonical_mutation": false,
+  "identity": [
+    "easter-vigil",
+    "main",
+    "Prayer after the First Reading",
+    "all",
+    1
+  ],
+  "disposition": "accept-complete-source-assembled-study-English; owner-label-correction-required",
+  "english_sha256": "6c1315dcc0dc085fb6bf21c89e2040c0a1683d972bb4a96d30b2816bb00d5a19",
+  "editorial_latin_sha256": "6e5f69ddd9a3a781b75df50dd830d172ddd0b10b7a4031e4245c287145400b35",
+  "historical_petition_sha256": "42ad01fa8ad311c2a880cd8536494913745e7bfbb568c302e86e79597c13931e",
+  "source_records": [
+    {
+      "source_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+      "record_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/internet-archive-pdf-006a38a3/artifact.toml",
+      "record_sha256": "10a439e18ff4e2740f398e77088902d20650102f20bb7a9b012ba0f0e1f0b030",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "sha256": "006a38a39250d39c9745acfb4f4a098374027e719dc7ad7e32972fa6a82489bc",
+      "byte_size": 13625474,
+      "page_count": 497,
+      "source_url": "https://archive.org/download/LiberSacramentorumRomanaeEcclesiae/LiberSacramentorumRomanaeEcclesiae.pdf"
+    },
+    {
+      "source_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion",
+      "record_path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/english-completion-20261029-postconciliar-opening2-qui-vivit-conclusion.toml",
+      "record_sha256": "39c81f55fbdd6b518c8994e6e449b8c73c6780002e81358dbf418e0235ce1dea",
+      "edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.english-completion-20261029-postconciliar-opening2-wilson-pages52-61-75-9ea0918d",
+      "artifact_sha256": "9ea0918d6a9ee489ccd4aa70c23b2d6e87162e4e93c6c4bfdf2b216156f1aac3",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "verified_on": "2026-10-30",
+      "locus": "Wilson1894 printed52; parentPDF145; retained derivative page1; BookI sectionxxxiv, closing John exposition"
+    },
+    {
+      "source_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+      "record_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "record_sha256": "d380657fdad6aa7a98b1e62f2ea4b8bd6247703e089e98a5ba8ea47754105974",
+      "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+      "artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+      "artifact_page_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "verified_on": "2026-10-30",
+      "locus": "Lasance printed217; parentPDF217; retained derivative page1; common short endings in AshWednesday prayers"
+    },
+    {
+      "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "record_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
+      "record_sha256": "e3219e5085493a3a38e9d77c1b9039c8d7d1dbdb8cebf848b4e237b081ffdb7f",
+      "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "byte_size": 3333382,
+      "page_count": 828,
+      "source_url": "https://media.musicasacra.com/books/latin_missal2002.pdf"
+    }
+  ],
+  "inspection": {
+    "independent_whole_pdf_hash_recomputed": true,
+    "independent_fresh_renders_visually_read": [
+      "Wilson1894 AP175/printed82",
+      "retained Wilson pages52/61/75 derivative AP1 = parentAP145/printed52",
+      "retained Lasance conclusion217 derivative AP1"
+    ],
+    "comparison_image_visually_read": "secondary2002 AP213"
+  },
+  "whole_expression_finding": [
+    "Entire old petition at WilsonAP175 is present and correctly transcribed, including its separately identified Per eundem Dominum cue. Scholarly apparatus numbers are excluded.",
+    "The proposed petition moves es after qui and uses intellegant for intelligant; all other normalized petition words preserve order and content. These declared changes supply no new petition proposition.",
+    "Full Qui vivit et regnat in saecula saeculorum is independently printed at WilsonAP145/printed52. Using it is an explicitly assembled different old conclusion, not an expansion of Per eundem Dominum.",
+    "A separately marked response Amen is independently printed in the retained Lasancep217 witness. Keep its response role distinct from the prayer petition."
+  ],
+  "english_fidelity": [
+    "Almighty and everlasting God, wondrous in the ordering of all your works carries the complete divine address and relative clause.",
+    "May those you have redeemed understand preserves the jussive intelligant/redempti tui.",
+    "The making of the world in the beginning was no greater than the sacrifice of Christ our Passover at the end of the ages preserves both compared quod clauses, non fuisse excellentius and the passive immolatus est Christus.",
+    "Who lives and reigns for ever and ever correctly translates the independently evidenced full short conclusion; R. Amen remains a separate response."
+  ],
+  "owner_finding": {
+    "verified": "SecondaryAP213 prints this Omnipotens prayer and its response before Vel, De creatione hominis, which introduces the following Deus qui mirabiliter creasti alternative.",
+    "canonical_problem": "Principal owner ordinary_disposition.basis currently says Alternative prayer, De creatione hominis.",
+    "bounded_correction": "Clarify the basis of the principal Omnipotens option. Preserve its identity, the separate following option and shared mutually exclusive group; kind=alternative alone is not proven erroneous and must not be changed into mandatory performance on this review."
+  },
+  "required_before_admission": [
+    "Register and bind the complete old petition, separately old full conclusion, response and newly project-created English with exact hashes.",
+    "Describe editorial Latin as a declared source assembly/variant, never exact transcription of one old page or an authenticated2008 target.",
+    "Preserve historical cue versus assembled conclusion and the es/intelligant variants in the reader qualification.",
+    "Correct the copied principal-owner basis label under source-owner validation without merging or overwriting the following alternative.",
+    "Preserve the prior approved-English unavailable record and run owning source/epoch/consumer gates."
+  ],
+  "limitations": [
+    "No authenticated2008 wording, appointment or whole-edition equivalence established.",
+    "Secondary2002 is a digitally typeset comparison witness; fidelity to an actual printed2002 edition is unestablished.",
+    "No approved/official English, historical-human translation or permission for liturgical recitation is asserted.",
+    "Source/fidelity review is separate from registration, source-epoch, generation and rendered-consumer acceptance."
+  ]
+}

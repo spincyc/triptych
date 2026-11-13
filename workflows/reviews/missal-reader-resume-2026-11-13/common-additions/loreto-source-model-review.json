@@ -1,0 +1,146 @@
+{
+  "schema": "triptych-loreto-source-model-review/v1",
+  "reviewed_on": "2026-11-13",
+  "reviewer": "Common appointments source reviewer",
+  "status": "accepted-source-model-and-negative-accounting; integration companions and installed gates remain separate",
+  "proposal": {
+    "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/loreto-structural-correction-v7.json",
+    "sha256": "7c69a2ce1fbba78db143bcad3be86c7153b20248308a43ef10da1a384b549dc1"
+  },
+  "predecessor_v5": {
+    "path": ".scratch/modern-nonseasonal-orations/marian/installation-v4/loreto-structural-correction-v5.json",
+    "sha256": "29238031824f70a77a2321790ce14def93ec8315554d5c759e14ab85d79b5602"
+  },
+  "source_artifact": {
+    "id": "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926",
+    "url": "https://press.vatican.va/content/salastampa/en/bollettino/pubblico/2019/10/31/191031e.html",
+    "sha256": "9c6e192689f8f226eb41da1b04fa52b9aac12b708a1e858443d5f87e241daff2",
+    "byte_size": 19994,
+    "read_scope": "Complete held HTML read directly, including English decree and all Latin book sections."
+  },
+  "source_facts": {
+    "decree_date": "2019-10-07",
+    "bulletin_date": "2019-10-31",
+    "celebration_date": "12-10",
+    "rank": "Optional memorial",
+    "missal_section_lines": [
+      166,
+      177
+    ],
+    "own_collect_complete_as_printed_lines": [
+      171,
+      177
+    ],
+    "missal_common_direction": "Blessed Virgin Mary; no particular Common form selected",
+    "literal_conclusion": "Abbreviated source cue, not an expanded spoken ending",
+    "english_prayer_in_this_source": false,
+    "separate_olm_section_lines": [
+      178,
+      190
+    ],
+    "olm_entry": "689 bis",
+    "olm_role_count": 4,
+    "olm_activation": false,
+    "hours_section_begins_at_line": 191
+  },
+  "metadata_records": [
+    {
+      "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/artifacts/official-html-9c6e1926/artifact.toml",
+      "id": "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926",
+      "sha256": "cabbbdd492aa3c98e381a7049cde9265a9ce6b301997c2a0d1fa61aecfc0c672",
+      "preimage": "absent"
+    },
+    {
+      "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/edition.toml",
+      "id": "edition.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31",
+      "sha256": "79824541f32ae4a6b159cbb0a20956bd21e89ccb011512bcfc39d451a96ab0ec",
+      "preimage": "absent"
+    },
+    {
+      "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/passages/missal-appointment.toml",
+      "id": "passage.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.missal-appointment",
+      "sha256": "49e4ea8727fc1c7e4c472be0dd78f48551f92658943185c18c63adef42df2679",
+      "preimage": "absent"
+    },
+    {
+      "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/passages/own-collect-held.toml",
+      "id": "passage.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.own-collect-held",
+      "sha256": "e417688990ab02b5617fb51842a9c848adc4e1fd1fa7e49fa510198465225e9e",
+      "preimage": "absent"
+    },
+    {
+      "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/work.toml",
+      "id": "work.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019",
+      "sha256": "6137fe0354ce2312933c79ca785ccc3a835cb794e8c6e14b7ebaaaace79e6a08",
+      "preimage": "absent"
+    }
+  ],
+  "model_findings": [
+    "The current three-prayer entry is a qualified historical Holy House antecedent, not an established appointment of this2019 memorial. Its current node and all three English refusal dictionaries were matched exactly; no old body is reinstated.",
+    "The proposed modern own Collect names the exact held Latin artifact and remains unavailable for publication. English independently remains no-exemplar; a Latin-only annex cannot establish held English.",
+    "The source gives a broad BMV Common direction. common_from records only its supported antiphon subset. No whole-form borrow, oration choice or default is created; remaining lawful choices and the four OLM appointments remain unresolved.",
+    "The partial remaining-formulary witness-gap correctly names the declared2008 source edition. This does not claim that a complete2008 book or body is held.",
+    "The three removed-Latin provenance tombstones remain unchanged historical removals. Retiring two unsupported own-prayer roles and their English gaps is not an English or Latin completion."
+  ],
+  "corrected_findings": [
+    {
+      "finding": "Original English gap incorrectly borrowed Latin rights-withheld evidence",
+      "resolution": "Immutable successors use no-exemplar, with language acquisition distinguished."
+    },
+    {
+      "finding": "Partial witness-gap omitted its required source identity",
+      "resolution": "v4 and later name the declared2008 edition; exact2019 Collect witness remains separate."
+    },
+    {
+      "finding": "Draft source locus used AD instead of printed IN; source notes omitted inactive OLM scope and misdescribed preserved bodies",
+      "resolution": "Metadata v2 and node v5 correct the heading, scope, abbreviated cue and entry-retention language."
+    },
+    {
+      "finding": "v5 duplicated an older English after-row in its ledger plan",
+      "resolution": "v6 makes the duplicate list exactly equal to the already corrected gap_after; no other source or node fact changes."
+    },
+    {
+      "finding": "v5/v6 mass note included the unrepresented Lectionary roles within missal-formulary status",
+      "resolution": "v7 separates the Lectionary gap from Missal material, matching calendar README lines759–761. Roles/status/pointer/English dictionaries are unchanged."
+    }
+  ],
+  "guards": {
+    "mass_key": "our-lady-loreto",
+    "mass_before_sha256": "bd1623539e7540e46024e1753e6ac3595e5bdb3ec7bc9aaaad0045daf5570c0a",
+    "mass_after_sha256": "c492a6ec51ddd34f2070f0b0aa2c8575dc7a49c15277882696d6e20113cb9857",
+    "node_serialization": "UTF-8 compact sorted-key JSON with ensure_ascii=False and terminal LF",
+    "prior_english_dictionaries": 3,
+    "after_english_dictionaries": 1,
+    "prior_english_dictionary_hashes": [
+      "c2301e77769fec356f8b35fbdd39c0c8fd81980b3e403bd6c6157fdbcf2fdd1f",
+      "f15d49bbc48e720821fa4d336ca2e29e957f2523cc8b9fda5ef477b0fbc7ee21",
+      "92ae6c47796585f20557d7b3beacfebae676418b7703abc8fa267a4640626ffb"
+    ],
+    "untouched_latin_tombstones": 3,
+    "positive_english_entries_changed": 0
+  },
+  "validation": {
+    "complete_source_candidate_and_node": {
+      "path": ".scratch/modern-common-appointments/loreto-review/owning-graph-check-v4.json",
+      "sha256": "e31d469941d1e84cf5ae4eba43d59b65039c7233aacffc556635add4da53b0dc"
+    },
+    "current_v6_full_overlay_and_node": {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/overlay-validation.json",
+      "sha256": "562fbdab8f2cd6ded482173c1f4a0fade0731a021a07241747a2eca1f20c8159"
+    },
+    "recovery_companion": {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/validation.json",
+      "sha256": "7984eaf0657505aa19e410fe60ea7d4d5f3388ea3fca966f9abb2cb7c3729d4f"
+    },
+    "qualification": "The five source records and node role, identity, status and Common-pointer fields are unchanged from the full v4 graph check. Actual v6 full overlay/node checks pass; v7 changes only the qualified final note sentence. Recovery companion adds two passing tests; its three failures exactly match the inherited baseline and require separate disposition."
+  },
+  "integration_dependencies": [
+    "Install only the five exact absent source metadata records and guarded Loreto node/English changes; preserve exact old node/refusals in durable history and leave Latin removal tombstones unchanged.",
+    "Adopt the separately reviewed recovery inventory/test companion; the old parser mislabels every common_from source as ICEL and cannot accept this official annex.",
+    "Rerun installed source-library, calendar/English accounting and reader production gates under the Root-owned window.",
+    "Resolve or explicitly disposition the existing Jerome/George recovery mismatches separately; this proposal preserves all167 old recovery rows."
+  ],
+  "body_publication_admitted": false,
+  "canonical_changes": false,
+  "supersedes_review_sha256": "0a874a934acd6f5202f21bf369093b37d217e903fe2a6af3ea6de913e2b600eb"
+}

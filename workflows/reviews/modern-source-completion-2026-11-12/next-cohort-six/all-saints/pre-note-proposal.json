@@ -1,0 +1,234 @@
+{
+  "schema": "modern-all-saints-finite-installation/v1",
+  "status": "prepared-for-metadata-review; no canonical files written",
+  "candidate_sha256": "7b8203a97bdc3cd791bd89318ce42d1edeebd3af51201bc497303b9e58719fb3",
+  "independent_source_review": {
+    "path": ".scratch/modern-new-antiphons-review/receipt.json",
+    "sha256": "bd94d75113edc325a1f907837269046b9de7e622f48d082cce61f047deca51f2"
+  },
+  "scope": [
+    "all-saints",
+    "main",
+    "Entrance Antiphon",
+    "all",
+    1
+  ],
+  "prior_proper": {
+    "name": "Entrance Antiphon",
+    "source": "composed",
+    "text_status": {
+      "state": "unavailable",
+      "scope": "proper-body",
+      "reasons": [
+        {
+          "kind": "witness-gap",
+          "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+        }
+      ]
+    },
+    "notes": "Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded."
+  },
+  "proposed_proper": {
+    "name": "Entrance Antiphon",
+    "source": "composed",
+    "incipit": "Gaudeamus omnes in Domino",
+    "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei.",
+    "notes": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation. Source appointment: ICEL2010 AP142 / printed134; no text from that English carrier is copied. Following historical Psalm32:1 and doxology are excluded."
+  },
+  "prior_english_untranslated": {
+    "mass": "all-saints",
+    "form_id": "main",
+    "proper": "Entrance Antiphon",
+    "cycle": "all",
+    "occurrence": 1,
+    "lang": "en",
+    "extent": "body",
+    "availability": "unavailable",
+    "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+    "verified_artifact_page": 142,
+    "verified_printed_page": 134,
+    "verified_heading": "ALL SAINTS",
+    "verified_on_page": "2026-10-20",
+    "note": "Exact 2010 ICEL English exemplar held and directly read on artifact page 142, printed page 134. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording.",
+    "reason": {
+      "kind": "rights-withheld",
+      "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "surfaces": [
+        "site-display",
+        "corpus-data",
+        "public-git",
+        "command-line",
+        "download"
+      ]
+    }
+  },
+  "proposed_english_entry": {
+    "mass": "all-saints",
+    "form_id": "main",
+    "form": "",
+    "proper": "Entrance Antiphon",
+    "cycle": "all",
+    "occurrence": 1,
+    "incipit": "Gaudeamus omnes in Domino",
+    "relation": "variant",
+    "ancient_witness": "Missale Romanum, Tours Mame1922,1 November, Introit antiphon; originalAP862 / printed748",
+    "witness_edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+    "witness_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+    "ancient_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+    "ancient_reading": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei.",
+    "target_witness_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.all-saints-antiphon-comparison-20261112",
+    "target_qualification": "secondary2002-comparison; authenticated2008-unestablished",
+    "study_english_passage_id": "passage.triptych.postconciliar-all-saints-antiphon-study-english-20261112.2026-11-12.all-saints-study-english",
+    "source_latin_sha256": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+    "source_latin_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+    "source_latin_publication_source_ids": [
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+    ],
+    "divergence": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation. Entire antiphon only. Fresh study English preserves all clauses; together praise renders collaudant. The earlier approved-English rights-withheld dictionary is retained intact in the dated admission proposal and is not a refusal of this separately authored source route.",
+    "translations": [
+      {
+        "lang": "en",
+        "rights": "project-created",
+        "notice": "Historical-source study translation; not approved liturgical English. Exact2008 correspondence remains unestablished.",
+        "text": "Let us all rejoice in the Lord, celebrating a feast in honor of all the saints. The angels rejoice at their solemnity and together praise the Son of God."
+      }
+    ]
+  },
+  "prior_latin_provenance_entry": null,
+  "proposed_latin_provenance_entry": {
+    "mass": "all-saints",
+    "form": "",
+    "proper": "Entrance Antiphon",
+    "course": "",
+    "cycle": "",
+    "occurrence": 1,
+    "text_sha256": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+    "provenance_status": "collated",
+    "source_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+    "source_date": "1922",
+    "locator": "Mame1922 originalAP862 / printed748, Introit antiphon only; exact selected derivative line1",
+    "relationship": "exact-transcription",
+    "verification_source_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-own-propers-checked-2026-10-20",
+    "verification_locator": "Original checked1922 text lines1-2; image excerptAP1 / originalAP862 / printed748",
+    "transformations": [
+      "Select whole historical antiphon before Psalm32:1 and Gloria Patri",
+      "Join one internal source line break with a space; retain all1922 words, spelling, case and punctuation",
+      "Omit final storage LF in calendar string"
+    ],
+    "provenance_evidence": "Entire old antiphon independently re-read on original page image and checked-source artifact. Secondary2002 lexical correspondence is qualified by solemnitate/sollemnitate orthography; no2008 identity asserted.",
+    "provenance_authority": "Historical source exactness; modern target relation remains qualified",
+    "provenance_confidence": "high",
+    "publication_status": "permitted",
+    "publication_basis": "public-domain",
+    "surfaces": [
+      "web",
+      "download",
+      "print",
+      "cli",
+      "corpus-data",
+      "public-git"
+    ],
+    "publication_source_ids": [
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a"
+    ],
+    "publication_locator": "Complete1922 historical antiphon, independently registered original-publication/mechanical-reproduction basis",
+    "publication_evidence": "Every published Latin word is in the independently held1922 source; no modern expression or apparatus is added. Study English has its separate project-created source artifact.",
+    "notice": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation.",
+    "note": "Historical1922 Latin and fresh project study English. Secondary digitally typeset2002 AP512 has the same lexical antiphon with accents, case, pointing and solemnitate/sollemnitate orthographic variation. Printed2002 fidelity and authenticated2008 correspondence remain unresolved. Not approved contemporary English and not for recitation."
+  },
+  "new_source_files": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/latin.txt",
+      "sha256": "82a2a5a73ff9e82e3ffdae142f44688d2f1e92becab449ff1fd52ece4ffa807c",
+      "bytes": 144
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-saints-antiphon-la-20261112-82a2a5a7/artifact.toml",
+      "sha256": "3151492432891efa64fe413802e2ab1597c5526c1e20e531f68131614bc33dfd",
+      "bytes": 2164
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/all-saints-antiphon-la-20261112.toml",
+      "sha256": "7b265b519f0e42ac560cdc820a527958fd761e41d01889547b0ae58fc27a140f",
+      "bytes": 1904
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/all-saints-antiphon-comparison-20261112.toml",
+      "sha256": "135f162a24c182707700d620cbb5d28e6a851265c08a9a583fc90253d4c90dc5",
+      "bytes": 1163
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/english.txt",
+      "sha256": "8f8a7473313e2de7fb9cb053e9b69eef4cb42087460abbf2f66b21184086511d",
+      "bytes": 154
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/work.toml",
+      "sha256": "bb8ed6de337ad1c78c7e80fd84b438465cfcf55219fe8a5dbc9a2dfa8e188aab",
+      "bytes": 973
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "sha256": "4056877fc0e32dbd18f21b51ac2977a34978e5a4d898637cac4377336ede62dc",
+      "bytes": 871
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/artifacts/all-saints-study-en-8f8a7473/artifact.toml",
+      "sha256": "0d0e2bfc6247566c121a720af7bd8b00c39f6fbebeab2bae7a30776eb00c4038",
+      "bytes": 1998
+    },
+    {
+      "path": "src/sources/works/triptych/postconciliar-all-saints-antiphon-study-english-20261112/editions/2026-11-12-study-english/passages/all-saints-study-english.toml",
+      "sha256": "a3eaba68ed10fa88a10d9edc0d76c977bc9e6796491894b408ea5e9b29aeed60",
+      "bytes": 1719
+    }
+  ],
+  "modified_files": [
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "before_sha256": "f11d2bcbae85693d80f577fad4fa6e2e85c055d173170f86284ac5cd88438358",
+      "after_sha256": "a1347c4c302906ac75173071a286f88b7d822e3e37f3b987e71253fa6ad63473"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "before_sha256": "4cad587bb3b7f4e6cf1cbe0a86f25faf360ace05bb44ee4b82aa9f2a4fd2fdc9",
+      "after_sha256": "cfa3ee85576b4096d3622a60eaeacb217d7b3b846cce5037590570307fd103ab"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+      "before_sha256": "469c5a92a928f6b2883b41e5077b654c83e33a2adce7e6703e2d1d19749b1c2f",
+      "after_sha256": "ff4ffcad111bdee8550e9b9247e61549f7a66ab17f1487f365ad5ef3f18762c0"
+    }
+  ],
+  "english_publication_binding": {
+    "artifact_id": "artifact.triptych.postconciliar-all-saints-antiphon-study-english-20261112.2026-11-12.all-saints-study-en-8f8a7473",
+    "artifact_sha256": "8f8a7473313e2de7fb9cb053e9b69eef4cb42087460abbf2f66b21184086511d",
+    "passage_id": "passage.triptych.postconciliar-all-saints-antiphon-study-english-20261112.2026-11-12.all-saints-study-english",
+    "text_sha256_without_storage_lf": "8619e91f083fe507174da1c631422c015f70eebb7ee0390cb214288fdf9f5384",
+    "text": "Let us all rejoice in the Lord, celebrating a feast in honor of all the saints. The angels rejoice at their solemnity and together praise the Son of God.",
+    "rights": "project-created"
+  },
+  "latin_publication_binding": {
+    "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112-82a2a5a7",
+    "artifact_sha256": "82a2a5a73ff9e82e3ffdae142f44688d2f1e92becab449ff1fd52ece4ffa807c",
+    "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-antiphon-la-20261112",
+    "text_sha256_without_storage_lf": "aaf52dc3d6ec0264d07419eef1881e77e8de64b10b48ee3ac8478c7547550871",
+    "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei.",
+    "rights": "public-domain"
+  },
+  "limits": [
+    "Qualified historical-source study availability only; no exact2008 or approved-English claim",
+    "Original approved-English absence preserved in this proposal for durable admission receipt",
+    "No modern wholebody copied or reconstructed",
+    "No unrelated proper, positive translation, gap or source record changed",
+    "Root owns final admission, durable receipt, reader qualification checks and generators"
+  ],
+  "checks": {
+    "exact_proper_only": true,
+    "exact_one_english_gap_replaced": true,
+    "all_prior_positive_english_unchanged": true,
+    "one_latin_entry_added_no_former_bodyhash_invented": true
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "schema": 1,
+  "date": "2026-11-12",
+  "reviewer": "/root/roman_sources/six_english_review",
+  "state": "frozen-independent-historical-English-body-review",
+  "verdict": "accept-all-three-exact-v2-bodies",
+  "scope": "Independent source-image fidelity, complete target-Latin meaning, historical wording and literal ending boundaries. Body-only review; no new translation and no publication, rights, adoption or runtime-execution authority.",
+  "packet": {
+    "path": ".scratch/roman-sources/ferial-three/body-source-packet-v2.json",
+    "sha256": "6c45067e4852bff557657bdfd99cd16da3c0776df42ae97e6b00dae1f3676bae",
+    "byte_size": 28435
+  },
+  "superseded_input": {
+    "packet": {
+      "path": ".scratch/roman-sources/ferial-three/body-source-packet.json",
+      "sha256": "3083fab4d22e0f467261d5642664c03cfc9dfcba3d4faf9b211c9cdbbbf479e1"
+    },
+    "reason": "Independent ending reviewer identified two Cummiskey punctuation omissions in the early candidate. Reinspection at original400dpi confirms commas after sins and sight. They are restored; words, literal Thro’., all Latin and otherEnglish are unchanged. The early packet remains unchanged as an audit record."
+  },
+  "superseded_input_disposition": "The early Populi English SHA 2cebd186cfff55a3f99535ed19a54f207b7ad1231e17e1c794170f5a13a040de is not accepted as an exact transcription because it lacks two printed commas. Ending reviewer raised this before freeze; this reviewer independently confirmed the correction on the original-resolution image. Earlier provisional no-correction message is superseded by this receipt.",
+  "method": "Personally read all three complete historical English page bodies, all three complete target Latin prayers and three Mame comparanda. Rechecked the three English pages at original resolution, including all punctuation and endings. Personally inspected relevant title/copyright and appointment-context images. Recomputed all five whole-PDF hashes, all 34 packet raster hashes, and all six accepted body hashes. Hash checks are distinct from image reading: only the listed 17 rasters are claimed as personally viewed.",
+  "source_inputs": {
+    "cmaa": {
+      "path": ".scratch/roman-sources/gf-pair/acquired/cmaa-1962.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+      "registered_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "byte_size": 82815941
+    },
+    "mame": {
+      "path": ".scratch/roman-sources/queenship-pair/acquired/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "registered_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "byte_size": 51720493
+    },
+    "lasance": {
+      "path": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+      "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "registered_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "byte_size": 75268976
+    },
+    "lasance1946": {
+      "path": ".scratch/modern-partition-temporal/acquired/lasance1946.pdf",
+      "sha256": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+      "registered_sha256": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77",
+      "byte_size": 135628123
+    },
+    "cummiskey": {
+      "path": ".scratch/modern-ordinary-candidates/cummiskey-1861.pdf",
+      "sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "registered_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "byte_size": 24767551
+    }
+  },
+  "viewed_rasters": [
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p148-context.png",
+      "sha256": "b0f5b5454e3c069bb9d326ca07cf851b6168d54163caa2d762b63c9aa7f7bced"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p149-400.png",
+      "sha256": "d86f85eb661a0ea91fd6c9d4897fc9094ddd442cccc02361d06444957cb2f614"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p193-context.png",
+      "sha256": "ea2c87f375a8f6ab892f8106f46bea06e739fec11785c248990a1b7d85a17bef"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p194-context.png",
+      "sha256": "8958b3c49aad6ddb155d117522a109dd14c03f5560078417ddb63a5ab5b0da41"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p195-400.png",
+      "sha256": "38250ff118402f6ded6df7d7802c204c6fcabefd0a51e83c1b30b24a7f3f335c"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p203-context.png",
+      "sha256": "bb5461c991f3dfc3996e5d33333674396ed7926429f5e9f34189ae02ee57033e"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p205-400.png",
+      "sha256": "b8f4a0cfadeaa2ce5776f1416ec04921afa2ae0dee41529652ed6124101a1fda"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cummiskey-p211-context.png",
+      "sha256": "c84b47e8f637becd8e027b19e7f44060ab1af85b8d0088510799a07c02f63618"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cummiskey-p213-context.png",
+      "sha256": "9f0e64cdb5f14943f1642e3810648eff8a8d0a33c8a519151a2c5cd1dc8bcf6d"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/cummiskey-p214-400.png",
+      "sha256": "b2f9dc47cd19505f2970b992f9e4c724d8f626d81948c5be83d2ab59fd9cf037"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/lasance-p271-400.png",
+      "sha256": "60720146fea421f72f948b2703de700b1d21a49f4acb0f48dce0f722ce318e17"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p10-400.png",
+      "sha256": "75d9010cc14d6b184f89e0d51f546aee88a9e2ececcad4cb216caa48b2137549"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p255-400.png",
+      "sha256": "063eb721daf2606699d9acd426c71ffdb21a128ad543a6c60b37245ee414c08f"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p9-400.png",
+      "sha256": "6f70f1929d865e35a584a60ae0c113783c2330a1be092597512d90b0a0b4a85c"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/mame-p200-400.png",
+      "sha256": "9d118cf80911b77424e093001d6ea4a32d64158444afbd63d13042720aa78ee5"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/mame-p216-400.png",
+      "sha256": "5709eb12bf1ce65297496bdd08b5f1780de0d0ccb7e42d36a0e5ac992e44ce33"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three/rasters/mame-p258-400.png",
+      "sha256": "775e97a27c8eaf344ad994c46e29afcfc0bc1758c4a599a884738202b85cb322"
+    }
+  ],
+  "all_packet_raster_hashes_verified": 34,
+  "cases": [
+    {
+      "identity": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "accept-exact-body",
+      "Latin": "Ascendant ad te, Domine, preces nostrae: et ab Ecclesia tua cunctam repelle nequitiam. Per Dominum.\n",
+      "Latin_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+      "English": "Let our prayers ascend unto Thee, O Lord, and repel all evil from Thy Church. Through our Lord.",
+      "English_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269",
+      "Latin_final_LF": true,
+      "English_final_LF": false,
+      "target": {
+        "artifact": "cmaa",
+        "body_artifact_page": 149,
+        "printed_page": 68,
+        "unit": 458,
+        "heading_artifact_page": 148,
+        "heading_printed_page": 67,
+        "column": "L",
+        "prior_postcommunion_unit": 457,
+        "cue_artifact_page": 149,
+        "actual_ending": "Per Dominum."
+      },
+      "historical_latin": {
+        "artifact": "mame",
+        "artifact_page": 200,
+        "printed_page": 86,
+        "source_owner": "lent-1-tuesday",
+        "complete_normalized_historical_body": "Ascendant ad te, Domine, preces nostrae: et ab Ecclesia tua cunctam repelle nequitiam. Per Dñum.\n",
+        "comparison": "Complete petition equals target after stress/ligature/wrap normalization; printed Dnum with contraction mark is represented Dñum. here and explicitly expanded to Dominum in the target carrier. No prayer words change."
+      },
+      "english_source": {
+        "artifact": "lasance1946",
+        "artifact_page": 255,
+        "printed_page": 245,
+        "historical_owner": "lent-1-tuesday",
+        "full_printed_body_reflowed": "Let our prayers ascend unto Thee, O Lord, and repel all evil from Thy Church. Through our Lord.",
+        "Latin_in_witness": "Ascendant ad te, Domine, preces nostrae: et ab Ecclesia tua cunctam repelle nequitiam. Per Dominum.",
+        "complete_comparison": [
+          [
+            "Ascendant ... preces nostrae",
+            "Let our prayers ascend unto Thee"
+          ],
+          [
+            "Domine",
+            "O Lord"
+          ],
+          [
+            "ab Ecclesia tua ... repelle",
+            "repel ... from Thy Church"
+          ],
+          [
+            "cunctam ... nequitiam",
+            "all evil"
+          ],
+          [
+            "Per Dominum.",
+            "Through our Lord."
+          ]
+        ],
+        "transformation": "Join physical wraps and division hyphens; preserve words, punctuation and sacred-name case. No supplied Amen or expanded conclusion. Cummiskey printed apostrophe represented U+2019.",
+        "rights_extent": "Exact complete ordinary-page English newly image-collated in the separately identified 1946 printing, AP255/p245. Actual title AP9 says1946; copyright AP10 says1937,1945. Existing unrenewed A110108/A192159 position supplies the historical English basis. No use of a later mixed printing label as proof of the stratum. No prior exact English row found by exact-string search; this is a new checked historical passage, not an inherited recipient permission.",
+        "later_printing_corroboration": {
+          "artifact": "lasance",
+          "artifact_page": 245,
+          "printed_page": 245,
+          "whole_body_equal": true,
+          "role": "Corroboration only; new publication carrier derives from concrete1946 printing."
+        }
+      },
+      "findings": [
+        "The entire English body matches the concrete 1946 Lasance AP255, printed p. 245, with physical wraps joined. The title at AP9 says 1946 and AP10 prints copyright 1937, 1945. This is identification of the actual witness, not a rights finding.",
+        "Both petitions remain: our prayers ascend to the Lord, and he repels all evil from his Church. The second imperative addresses the Lord; the coordination in the historical English is faithful to the Latin.",
+        "Unto Thee, Thy Church, and Through our Lord. retain the historical words, capitalization and actual short conclusion. No Amen, Humiliate/Bow down cue or concluding-prayers direction is included.",
+        "Target no. 458 at CMAA AP149/p68 follows the Tuesday Mass begun at AP148/p67 and precedes the actual Feria quarta heading. The Wednesday running header does not make it a Wednesday prayer.",
+        "Mame AP200/p86 corroborates the entire Latin with printed Per Dñum.; the target and historical English print their own short cues. Expansion of the Mame contraction is declared and no full ending has been supplied."
+      ],
+      "required_revisions": [],
+      "ending_boundary": "Literal printed short cue only; no full-ending expansion or supplied Amen.",
+      "entry_metadata_binding": "Pending separately frozen final entry/metadata plan."
+    },
+    {
+      "identity": [
+        "lent-4-thursday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "accept-exact-body",
+      "Latin": "Populi tui, Deus, institutor et rector, peccata, quibus impugnatur, expelle: ut semper tibi placitus, et tuo munimine sit securus. Per Dominum.\n",
+      "Latin_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+      "English": "O God, the author and governor of thy people, deliver them from the sins, by which they are assaulted, that they may be always well pleasing in thy sight, and safe under thy protection. Thro’.",
+      "English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e",
+      "Latin_final_LF": true,
+      "English_final_LF": false,
+      "target": {
+        "artifact": "cmaa",
+        "body_artifact_page": 195,
+        "printed_page": 114,
+        "unit": 731,
+        "heading_artifact_page": 193,
+        "heading_printed_page": 112,
+        "column": "L",
+        "prior_postcommunion_unit": 730,
+        "cue_artifact_page": 194,
+        "actual_ending": "Per Dominum."
+      },
+      "historical_latin": {
+        "artifact": "mame",
+        "artifact_page": 258,
+        "printed_page": 144,
+        "source_owner": "lent-4-thursday",
+        "complete_normalized_historical_body": "Populi tui, Deus, institutor et rector, peccata, quibus impugnatur, expelle: ut semper tibi placitus, et tuo munimine sit securus. Per Dominum.",
+        "comparison": "Complete petition and short Per Dominum ending equal target after typography and wrap normalization. Target pointing is retained."
+      },
+      "english_source": {
+        "artifact": "cummiskey",
+        "artifact_page": 214,
+        "printed_page": 203,
+        "historical_owner": "lent-4-thursday",
+        "full_printed_body_reflowed": "O God, the author and governor of thy people, deliver them from the sins, by which they are assaulted, that they may be always well pleasing in thy sight, and safe under thy protection. Thro’.",
+        "Latin_in_witness": null,
+        "complete_comparison": [
+          [
+            "Populi tui, Deus, institutor et rector",
+            "O God, the author and governor of thy people"
+          ],
+          [
+            "peccata, quibus impugnatur, expelle",
+            "deliver them from the sins by which they are assaulted"
+          ],
+          [
+            "ut semper tibi placitus",
+            "that they may be always well pleasing in thy sight"
+          ],
+          [
+            "et tuo munimine sit securus",
+            "and safe under thy protection"
+          ],
+          [
+            "Per Dominum.",
+            "Thro’. (literal abbreviation only; full English conclusion requires separate exact mixed-witness review)"
+          ]
+        ],
+        "transformation": "Join physical wraps and division hyphens; preserve words, punctuation and sacred-name case. No supplied Amen or expanded conclusion. Cummiskey printed apostrophe represented U+2019.",
+        "context": "Actual Thursday heading at Cummiskey AP211/p200, continued212-213/p201-202. PC Caelestia at AP213, cue and Prayer Populi at AP214/p203 before actual Friday heading. English-only source incipit; complete semantic comparison is with separately image-checked Mame and target, not a claim that Cummiskey prints full Latin."
+      },
+      "findings": [
+        "The entire corrected English body matches Cummiskey AP214, printed p. 203. The original-resolution image confirms commas after sins and sight. Those commas were absent in early packet 3083fab4 and have been restored in the accepted v2 bytes.",
+        "Author and governor renders institutor et rector; deliver them from the sins by which they are assaulted preserves the force of peccata, quibus impugnatur, expelle. English plural they/them refers naturally to the people expressed collectively in the Latin.",
+        "Always explicitly renders semper. Well pleasing in thy sight and safe under thy protection preserve both requested outcomes. Lowercase thy and the literal Thro’. abbreviation are retained.",
+        "Cummiskey prints only the Latin incipit Populi, not the full Latin prayer. Full Latin comparison uses target no. 731 at CMAA AP195/p114 and Mame AP258/p144, both personally inspected.",
+        "The actual Thursday heading is Cummiskey AP211/p200; its Postcommunion is at AP213/p202 and this prayer is at AP214/p203 before the Friday heading. Target Thursday begins at CMAA AP193/p112; AP194/p113 supplies its Postcommunion and Super populum cue before the prayer on AP195.",
+        "Let us pray, Bow down your heads to God, PRAYER and Populi are source labels/cues outside the selected prayer body. Thro’. is an authentic abbreviated ending, not a certification of a supplied full English conclusion."
+      ],
+      "required_revisions": [],
+      "ending_boundary": "Literal printed short cue only; no full-ending expansion or supplied Amen.",
+      "entry_metadata_binding": "Pending separately frozen final entry/metadata plan."
+    },
+    {
+      "identity": [
+        "passion-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "accept-exact-body",
+      "Latin": "Adesto supplicationibus nostris, omnipotens Deus: et, quibus fiduciam\nsperandae pietatis indulges; consuetae misericordiae tribue benignus\neffectum. Per Dominum.\n",
+      "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+      "English": "Be present to our supplications, O almighty God, and kindly grant the effect of Thy wonted mercy to those whom Thou dost permit confidently to rely on Thy goodness. Through our Lord.",
+      "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+      "Latin_final_LF": true,
+      "English_final_LF": false,
+      "target": {
+        "artifact": "cmaa",
+        "body_artifact_page": 205,
+        "printed_page": 124,
+        "unit": 794,
+        "heading_artifact_page": 203,
+        "heading_printed_page": 122,
+        "column": "R",
+        "prior_postcommunion_unit": 793,
+        "cue_artifact_page": 205,
+        "actual_ending": "Per Dominum."
+      },
+      "historical_latin": {
+        "artifact": "mame",
+        "artifact_page": 216,
+        "printed_page": 102,
+        "source_owner": "lent-2-monday",
+        "complete_normalized_historical_body": "Adesto supplicationibus nostris, omnipotens Deus: et, quibus fiduciam sperandae pietatis indulges; consuetae misericordiae tribue benignus effectum. Per Dominum.",
+        "comparison": "Complete petition and short Per Dominum ending equal target after typography and wrap normalization. Target pointing is retained."
+      },
+      "english_source": {
+        "artifact": "lasance",
+        "artifact_page": 271,
+        "printed_page": 271,
+        "historical_owner": "lent-2-monday",
+        "full_printed_body_reflowed": "Be present to our supplications, O almighty God, and kindly grant the effect of Thy wonted mercy to those whom Thou dost permit confidently to rely on Thy goodness. Through our Lord.",
+        "Latin_in_witness": "Adesto supplicationibus nostris, omnipotens Deus: et, quibus fiduciam sperandae pietatis indulges: consuetae misericordiae tribue benignus effectum. Per Dominum.",
+        "complete_comparison": [
+          [
+            "Adesto supplicationibus nostris, omnipotens Deus",
+            "Be present to our supplications, O almighty God"
+          ],
+          [
+            "quibus fiduciam sperandae pietatis indulges",
+            "those whom Thou dost permit confidently to rely on Thy goodness"
+          ],
+          [
+            "consuetae misericordiae tribue benignus effectum",
+            "kindly grant the effect of Thy wonted mercy"
+          ],
+          [
+            "Per Dominum.",
+            "Through our Lord."
+          ]
+        ],
+        "transformation": "Join physical wraps and division hyphens; preserve words, punctuation and sacred-name case. No supplied Amen or expanded conclusion. Cummiskey printed apostrophe represented U+2019."
+      },
+      "findings": [
+        "The complete English body matches the Lasance AP271/p271 donor, including lowercase almighty, wonted mercy, Thou dost permit confidently to rely, and the short Through our Lord. conclusion.",
+        "Be present to our supplications preserves the opening petition. The reordered request for the effect of wonted mercy preserves consuetae misericordiae tribue benignus effectum, while those whom Thou dost permit confidently to rely on Thy goodness renders quibus fiduciam sperandae pietatis indulges without omitting its beneficiaries or confidence in divine goodness.",
+        "The complete target at CMAA AP205/p124 no. 794 has the same words and short Per Dominum. The Lasance parallel Latin has a colon after indulges where target and Mame have a semicolon; this pointing difference is declared and changes neither petition nor English meaning.",
+        "The exact held donor is lent-2-monday/main/Oratio super populum/all/1. Complete canonical Latin including punctuation, wraps and final LF equals the candidate. The complete English entry equals the packet donor object, and the source passage resolves to the exact matching English at tracked carrier line 70.",
+        "The donor page precedes the actual Tuesday heading despite the Tuesday running header. It does not attest the recipient appointment. The recipient Passion Wednesday heading is independently visible at CMAA AP203/p122; no. 794 follows its Postcommunion and Super populum cue on AP205 and precedes the actual Thursday heading.",
+        "Mame AP216/p102 supplies the exact Monday donor prayer and short ending. No longer same-day ending or saint-name addition has been substituted. The separate Humiliate/Bow down cue and Concluding Prayers direction are excluded from the body."
+      ],
+      "required_revisions": [],
+      "ending_boundary": "Literal printed short cue only; no full-ending expansion or supplied Amen.",
+      "entry_metadata_binding": "Pending separately frozen final entry/metadata plan."
+    }
+  ],
+  "adesto_exact_donor_binding": {
+    "identity": [
+      "lent-2-monday",
+      "main",
+      "Oratio super populum",
+      "all",
+      1
+    ],
+    "complete_English_entry_sha256": "1837ec5f40edb38b23cd6ef87f313643ec76dd8000e9b8129dc1794a1cd0cfa5",
+    "complete_proper_sha256": "72e46a73946703360184e0ec1d86b4414eae37ca2bd6df3d939576e82bc28095",
+    "canonical_Latin_literal_equal": true,
+    "complete_English_entry_equal": true,
+    "source_passage_and_carrier_body_equal": true,
+    "carrier_line": 70,
+    "artifact_record": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-append209-strict165-2026-10-23-2de93984/artifact.toml",
+      "sha256": "ebc3621029809b6e0aa75de9b1fdbbd25f9bae1d3c28f2dd89ece24143fa81dc",
+      "byte_size": 2805
+    },
+    "passage_record": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-append209-strict165-2026-10-23-publish-lent-2-monday--main--oratio-super-populum--all--1.toml",
+      "sha256": "097bace1cf1c75da8a0e4029aee8f87ffb484e4a5b911dbf206b0aa2b45181d5",
+      "byte_size": 1985
+    },
+    "carrier": {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-append209-strict165-2026-10-23-2de93984/english.tsv",
+      "sha256": "2de939841af3d8f329a47db94216969354ed775f62de5cd0241132f5817e095e",
+      "byte_size": 49290
+    },
+    "read_only_canonical_input_snapshots": [
+      {
+        "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+        "sha256": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf",
+        "byte_size": 3573628
+      },
+      {
+        "path": "src/sources/calendars/roman-1962/propers.yaml",
+        "sha256": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953",
+        "byte_size": 2692072
+      }
+    ],
+    "hash_convention": "UTF-8 JSON with ensure_ascii=False, sort_keys=True and compact separators, no final LF, for complete object hashes; literal UTF-8 for body hashes."
+  },
+  "metadata_observation": "The shared English transformation sentence mentions Cummiskey apostrophe handling in the two Lasance cases. That generic note has no effect on their bodies and does not certify a Cummiskey source for them.",
+  "required_body_revisions": [],
+  "remaining_work": "Bind a separate receipt to final complete entries, action metadata and source-carrier postimages once the author freezes that package. No final metadata package is certified here.",
+  "authority_boundary": "All three are historical-English candidates. No official 1962 English status is claimed. Rights reasoning is owned by the separate source/Root review. The current Root freeze remains in force; this receipt authorizes no canonical write or source publication."
+}

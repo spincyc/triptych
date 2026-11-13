@@ -1,0 +1,248 @@
+{
+  "schema": "triptych-independent-easter2-collect-source-review/v1",
+  "date": "2026-11-12",
+  "reviewer": "Independent Codex agent partition_later_accepted; automated review, not a claim of human review",
+  "verdict": "accept-exact-source-qualified-study-English-source-and-fidelity-merits",
+  "identity": [
+    "easter-2",
+    "main",
+    "Collect",
+    "all",
+    1
+  ],
+  "frozen_candidate": {
+    "path": ".scratch/modern-partition-easter/orations/easter2-collect-candidates.json",
+    "sha256": "47b70bbd1217a65e28241c8fa79f33f550f81cda3b9449e2f9960aa2f304e101",
+    "bytes": 13862
+  },
+  "independent_acquisition": {
+    "path": ".scratch/modern-easter-old-collects/easter2-source.json",
+    "sha256": "d819f62c5354e10c08367d63dbc446e341c7c026d267ea7922571aa06e085551",
+    "bytes": 5073
+  },
+  "checks": {
+    "path": ".scratch/modern-easter2-collect-review/checks.json",
+    "sha256": "e870e29cb533b2fb81e5eeaeff5bb4df1c5c3fa3ca2af4fda621e316e85fa5c3",
+    "bytes": 5663
+  },
+  "fresh_image_manifest": {
+    "path": ".scratch/modern-easter2-collect-review/images.json",
+    "sha256": "78f133da1aa5c9570a63b0d42ac8c2e642350990ccb0326d30e8ce62a6e8cd0d",
+    "bytes": 3482
+  },
+  "exact_old_unit_sha256": "8fb33a3d50e6c946aebad0d1def0522504d39a6f07b6863dc5063433793a74ce",
+  "private_complete_latin_comparison_with_marked_response_sha256": "4072e843df4132c6b9d60c36cd2f51658a912eb74f3af1928f43649c3a4622f6",
+  "exact_english_with_marked_response_sha256": "492eb60a590bd945dc0ede1b100b0d82a584e8cf5d4ba51f013b9bcee963f6a0",
+  "scope": "Exactly this complete Easter2 study-English expression, including its explicitly marked response. Source/whole-expression/fidelity merits only. Canonical source registration, finite owner admission, actual producer/reader qualification and any Latin admission remain separate.",
+  "governing_policy": {
+    "path": "guidance/liturgical-text-publication-policy.md",
+    "sha256": "81dee58829a694b6155f156d8f90d2a217baf48396c326c4c45f7b1948f328df",
+    "sections": [
+      "1: affirmative independently old underlying text; per-expression/per-surface basis",
+      "8.2: inspect complete old witness, compare actual recipient, assess changes separately",
+      "10: text identity, appointment, publication basis, translation and witness status are separate",
+      "12-14: truthful text supply, explicit boundaries and source qualification"
+    ],
+    "application": "Affirmative old-text basis for the entire substantive petition as printed1729 and independently old full conclusion/response, followed by a project-created English translation. This is not permission inferred from acquisition, an incipit, an old-component percentage, a quarantined hash, or a broad modern-Missal label."
+  },
+  "historical_whole_unit": {
+    "source": {
+      "path": ".scratch/modern-easter-old-collects/acquired/mabillon1729.pdf",
+      "sha256": "616a58b8eef7a4e6d70834027f04626100b07e5d210249e7f6c4b077ca82871d",
+      "bytes": 22187821,
+      "source_id": "artifact.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.ia-whole-pdf-616a58b8",
+      "pages": 537
+    },
+    "title_page": "Freshly rendered/viewed AP5: Jean Mabillon, De Liturgia Gallicana libriIII, Parisiis, apud Montalant, MDCCXXIX. This establishes the1729 printed edition actually used.",
+    "collection_heading": "Freshly rendered/viewed AP226/printed188: Missale Gothicum seu Gothico Gallicanum within BookIII.",
+    "locus": "AP295/printed258, XLIII Missa in die Sabbato Octavae Paschae, Post nomina.",
+    "extent": "The invocation starts at the bottom of the left column, continues without omission at the top of the right column, and ends with redempti. Per. before the distinct Ad Pacem heading. The preceding Collectio and following Ad Pacem/Contestatio are excluded.",
+    "old_short_cue": "Per. remains literal in the historical transcription; its letters alone do not establish a full Roman conclusion.",
+    "transcription": "Complete author transcription independently verified from fresh full-page image; joined line breaks/hyphens, long-s and ligature normalization only. The title, collection and appointment are separately confirmed.",
+    "historical_appointment": "Gallican Saturday of the Easter octave, post nomina; not an assertion that this was historically a Roman Sunday Collect.",
+    "rights_layers": "The exact1729 printed prayer is independently old under the repository’s recorded publication-age basis. Any editorial wording already present in1729 is part of that old printed expression. Modern Google/scan wrapper additions and the whole PDF container are outside this publication finding."
+  },
+  "actual_recipient_comparison": {
+    "source": {
+      "path": ".scratch/modern-legacy-review/secondary-2002.pdf",
+      "sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "bytes": 3333382,
+      "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "pages": 828
+    },
+    "pages": [
+      230,
+      231
+    ],
+    "finding": "AP230 ends with DominicaII Paschae seu de divina Misericordia heading; AP231 contains the entire Collect and actual Per Dominum cue. The complete petition was independently read on the page image.",
+    "exhaustive_difference": "All substantive words and their order agree with the complete1729 petition. The sole lexical spelling difference is intelligentia/intellegentia; accents, ligatures, capitalization, pointing and physical wraps are normalized as disclosed.",
+    "source_status": "Registered secondary digital retypesetting labelled2002. No authenticated2008 source identity, edition-wide conclusion or approved-English authority is inferred."
+  },
+  "full_ending_and_response": {
+    "source": {
+      "path": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "bytes": 102880787,
+      "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "pages": 922
+    },
+    "locus": "Pustet Ratisbon1862 AP88/printed2, complete Contra persecutores Ecclesiae prayer, contiguous full Father-addressed conclusion and separately marked response.",
+    "finding": "Every word of the complete conclusion and Amen is independently printed in this old source. I/J, stress accents, Sancti capitalization and punctuation normalization are disclosed; no missing ending words are supplied from model memory.",
+    "selection_control": "The actual receiving Collect prints Per Dominum. Same held secondary2002 witness AP18 IGMR54 supplies the full Father-addressed form and explicitly identifies the people’s Amen. This is a source-local rule applied only to this exact recipient.",
+    "assembly": "Historical petition and independently old full conclusion/response are separate source units. The received complete reading is their declared finite assembly, not a claim that Mabillon printed that expanded ending.",
+    "date_correction": "The assigned work note said1888; the actual frozen packet and inspected whole source are1862.",
+    "response_boundary": {
+      "separate_marker": "R.",
+      "text": "Amen.",
+      "included_in_frozen_candidate_scalar": true,
+      "not_priest_prayer_text": true
+    },
+    "integration_requirement": "Preserve the distinct response designation. The accepted scalar includes R. Amen.; stripping or moving it changes the scalar/body pin and must be recorded explicitly in a metadata successor rather than silently reusing this hash."
+  },
+  "whole_expression_assessment": {
+    "affirmative": "A single complete independently old prayer supplies the invocation, paschal recurrence, faith of the consecrated people, request for increased grace and the threefold washing/Spirit/blood understanding in exactly the same order. No clause has been replaced or excerpt from another donor inserted into that petition. The only remaining petition change is spelling, with no change in sense. Its complete Roman conclusion and marked response are independently old and selected by the actual fixed recipient cue/rule. The full expression therefore has an affirmative old-text basis; the new English is project-created. This is materially stronger than a recentonized prayer whose discretionary clause choices survive in translation.",
+    "strongest_contrary": "The modern Missal deliberately reappoints a Gallican post-nomina as a Roman Collect, while the old source abbreviates the ending. A modern scholarly discussion quotes manuscript-style grammatical forms differing from the received prayer, raising the possibility of hidden modern normalization. Treating that diplomatic quotation, Mabillon’s edition and the current Missal as identical would overclaim source exactness and could conceal a substantive modern revision.",
+    "disposition_of_contrary": "Fresh AP295 inspection directly resolves the wording issue: Mabillon1729 already prints festi, recursu and lavacro, so those forms are not imported from the modern Missal. Even if they reflect early editorial normalization, they are visibly present in the independently old printed expression used here; no claim about exact manuscript spelling is needed. The full ending is independently evidenced and its assembly is explicit. The different appointment and conventional prescribed ending do not introduce unexplained modern petition wording or a new substantive clause arrangement.",
+    "finding_aid_separation": {
+      "source": {
+        "path": ".scratch/modern-easter-old-collects/acquired/notitiae2013.pdf",
+        "sha256": "10c37abcf7fbc25bbf3377503bfcafd06096c4fed2be83e2e4c0cd2a12da9bef",
+        "bytes": 2605391
+      },
+      "image_locus": "Notitiae2013 AP50/printed110 freshly rendered/viewed",
+      "finding": "The modern article quotes variant forms and explicitly cites Mabillon1729 printed258. Its quotation and scholarly prose are finding-aid evidence, not the publication source for the old prayer or the fresh English. It supplies no authenticated2008 witness in this review.",
+      "limits": "No wholesale republication of the modern article or its apparatus is approved."
+    },
+    "what_would_overturn": "A substantive misreading of the inspected1729 unit or1862 conclusion; an unexplained changed word/order in a different recipient version; a particular restriction defeating the old printed-expression basis; or a requested body/surface outside this exact finite scope."
+  },
+  "english_fidelity": {
+    "verdict": "accept exact frozen English, including explicitly marked response",
+    "provenance": "Author declares fresh AI-authored study English from old Latin and independently old full ending; no approved English or historical human translation is adopted as an exemplar. This review checks fidelity against Latin; it is not a claim of human translation or a forensic clean-room audit.",
+    "findings": [
+      {
+        "clause": "Invocation and opening",
+        "assessment": "God of everlasting mercy retains the genitive characterization. Breaking the relative into direct address changes English syntax without changing God as the agent."
+      },
+      {
+        "clause": "Paschal recurrence",
+        "assessment": "At the very recurrence of the paschal feast preserves in ipso ... recursu, including recurrence rather than merely a vague time in Easter."
+      },
+      {
+        "clause": "Faith and people",
+        "assessment": "Kindle the faith of the people consecrated to you correctly places sacratae tibi with plebis and retains God’s action upon their faith."
+      },
+      {
+        "clause": "Increase and understanding",
+        "assessment": "Increase the grace you have given retains the imperative and past gift; so that all may understand with worthy insight preserves the purpose and digna intelligentia without turning worthiness into a different subject."
+      },
+      {
+        "clause": "Threefold image",
+        "assessment": "By what washing they have been cleansed, by what Spirit they have been born anew, and by what blood they have been redeemed preserves each ablative instrument, passive action, parallel order and theological distinction."
+      },
+      {
+        "clause": "Conclusion",
+        "assessment": "The full Father-addressed conclusion retains Christ as Son, living and reigning with the Father in the unity of the Holy Spirit, God, and the eternal ending. R. Amen is visibly a response, not an extra petition."
+      }
+    ],
+    "material_omissions_or_unsupported_additions_found": false,
+    "style_note": "The recurrence phrase is deliberately literal but intelligible; no fidelity correction is required."
+  },
+  "publication_scope": {
+    "underlying_petition": "public-domain old1729 printed expression under the project’s recorded UnitedStates basis",
+    "underlying_conclusion_response": "independently old1862 Latin formula and marked response",
+    "english": "project-created study translation of that completely evidenced expression",
+    "surfaces": [
+      "public repository",
+      "generated web data",
+      "reader display",
+      "command-line",
+      "download"
+    ],
+    "not_granted": [
+      "exact authenticated2008 authority",
+      "approved liturgical English",
+      "Latin ledger or canonical calendar admission",
+      "permission for protected modern article or scan-wrapper matter",
+      "release or reuse of the separately restricted FDLC approved-English exemplar"
+    ]
+  },
+  "prior_state": {
+    "exact_proper_preimage": {
+      "name": "Collect",
+      "incipit": "Deus misericordiae sempiternae",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "reasons": [
+          {
+            "kind": "rights-withheld",
+            "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+          }
+        ]
+      }
+    },
+    "proper_preimage_sha256": "21b12c04bbfb65a16f7e499718d1d99f03bc87eb29117467fc15ff09a68053fd",
+    "exact_english_gap_preimage": {
+      "mass": "easter-2",
+      "form_id": "main",
+      "proper": "Collect",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "rights-withheld",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects",
+        "surfaces": [
+          "corpus-data",
+          "public-git",
+          "command-line",
+          "download"
+        ]
+      },
+      "rights": "permission",
+      "witness": "fdlc-mystagogy-2012",
+      "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects",
+      "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects.collect-mystogogy-easter",
+      "verified_on_page": "2026-08-26",
+      "verified_artifact_page": 3,
+      "verified_heading": "SECOND SUNDAY OF EASTER (OR OF DIVINE MERCY) / April 7, 2013 / COLLECT",
+      "verified_url": "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.easter.pdf",
+      "quarantined_text_sha256": [
+        "529e4ac3a24ce1000c2d9aaa8b0e707ac46f22a587d7b70863d5831d1368b835"
+      ],
+      "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    "english_gap_preimage_sha256": "2def00de22f053736bab07c33139af5c1350a25736d4b07d9c7c8f003374b63e",
+    "candidate_worklist_live_gap_equal": true,
+    "separate_restricted_route": "The existing FDLC approved-English withholding and its surface limits concern a different expression/exemplar. They are preserved in the exact before-state; this new source basis neither rescinds that restriction nor treats its quarantine fingerprint as a licence.",
+    "mutual_exclusion_preserved_at_review": true
+  },
+  "remaining_gate": [
+    "Register the exact source graph and complete source payloads, with whole-unit loci and this finite rights/fidelity basis.",
+    "Prepare precise owner-bound English gap-to-entry delta, leaving unselected entries and the Latin/calendar state outside this scope.",
+    "Retain and actually render the project-study, historical-source, secondary2002 and unresolved2008 qualifications, plus distinct response boundary.",
+    "Independently validate canonical-shaped metadata, exact source/payload joins, runtime positive/negative controls and producer/reader exposure."
+  ],
+  "validation_summary": {
+    "whole_source_hashes_verified": 3,
+    "fresh_independently_rendered_and_viewed_images": 8,
+    "full_historical_unit_and_acquisition_carrier_equal": true,
+    "one_spelling_difference_only": true,
+    "complete_ending_response_equal_after_declared_normalization": true,
+    "exact_current_owner_and_gap_preserved": true,
+    "canonical_writes": false,
+    "generators_run": false
+  },
+  "source_inspection_date": "2026-11-12",
+  "sealed_on": "2026-11-13",
+  "seal_verification": {
+    "receipt_and_source_file_pins_checked": 26,
+    "fresh_images_pinned": 8,
+    "exact_frozen_candidate_unchanged": true,
+    "blocking_missing_source_or_fidelity_evidence": [],
+    "canonical_writes": false
+  }
+}

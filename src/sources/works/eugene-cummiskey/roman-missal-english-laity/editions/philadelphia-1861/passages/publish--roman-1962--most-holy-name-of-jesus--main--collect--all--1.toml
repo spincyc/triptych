@@ -9,4 +9,4 @@ physical_line_ranges = [[57, 57]]
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Normalized historical English row for most-holy-name-of-jesus / Collect; alignment status candidate."
 verified_on = "2026-08-27"
-notes = "Byte range is one complete TSV data line; visual controller is the same-slug verify passage. This record proves the historical English byte and does not independently establish target identity."
+notes = "Byte range is one complete TSV data line; visual controller is the same-slug verify passage. This record proves the historical English byte and does not independently establish target identity. Locator metadata erratum recorded 2026-11-12: immutable row 57 contains leaf 103-103 / PDF 104-104, while the actual page-image body is at leaf n105 / PDF p. 106, printed p. 95. The same-slug verification passage and current owner entry carry the corrected locator. The TSV payload, English text, publication hash and physical line range remain unchanged."

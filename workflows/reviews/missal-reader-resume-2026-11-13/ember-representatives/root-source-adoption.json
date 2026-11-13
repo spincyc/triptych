@@ -1,0 +1,20 @@
+{
+  "schema": "triptych-root-ember-representatives-source-adoption/v1",
+  "decision": "Adopt exact current restoration of nine source storage representatives and nine separately verified shorter equivalents",
+  "path": "src/sources/calendars/roman-1962/rubrics.yaml",
+  "before_sha256": "2c6ff675b22dc7266f7e2e72f1f2589f89c4b1a4e61d45448393516d9d3b8b86",
+  "after_sha256": "0773966e95eaf4399d07011ff0689ce349e35a054bc05e1920797d84d3e6cbbd",
+  "patch_sha256": "2261d4e62e5b0d6d7a902bc82d98da6f7cd19c0abef927ecedc57811554742fe",
+  "source_postimage": ".scratch/dedication-context/residual-frames/ember-declaration-recovery/postimages/src/sources/calendars/roman-1962/rubrics.yaml",
+  "independent_review": {
+    "path": ".scratch/dedication-context/residual-frames/ember-declaration-review/receipt.json",
+    "sha256": "c528d005913115f2e5500ec728ec8f4451499ab5748322040f324aac5f9cb912"
+  },
+  "root_review": "Read full exact patch and independent source review; verified current preimage and review pins. Independently reconstructed exact112-line addition. Supplied patch has historical hunk location1095; current preimage insertion is1116 after Christmas metadata. Header-only offset is documented, original patch retained. This is current source adoption; no missing historical Root decision is invented.",
+  "basis": "RGMR443 appoints first prayer of commemorated multiple-lesson feria;442 governs insertion in celebrated feria;468 governs longer/shorter celebration;480/505 govern corresponding Secret/Postcommunion. Printed conclusion cues and differing local rubrics remain literal.",
+  "limits": [
+    "No longer-form preference, body change, generic deduplication, eligibility change or fourth donor OSP.",
+    "Nine focused tests and98 independent checks establish bounded restoration, not complete Ember frames or product acceptance."
+  ],
+  "canonical_writes": false
+}

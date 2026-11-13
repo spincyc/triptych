@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.nonseasonal-hilary-apollinaris-study-english-20261112.study-english-20261112.frozen-two-collects-v1"
+edition_id = "edition.triptych.nonseasonal-hilary-apollinaris-study-english-20261112.study-english-20261112"
+artifact_type = "project-study-translation-proposal"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Fresh project study-English expression, with the underlying finite historical adaptation bases accepted by independent review receipt SHA9eff4479c35a6bf5c9943ac945440d79cfeb37fc21b3c385849cd59410af3aca. This artifact is a stagingproposal, not an accepted publication decision. Historical Latin and separately identified conclusion sources retain their own rights; no approved English is copied."
+rights_jurisdiction = "United States"
+retrieved = "2026-11-12"
+sha256 = "07d9d874edb0ad83de78e5a032da2247a2d0c0f048fc07aa98baa00e7bfc46c2"
+byte_size = 2056
+path = "src/sources/works/triptych/nonseasonal-hilary-apollinaris-study-english-20261112/editions/2026-11-12-study-english/artifacts/frozen-two-collects-v1/text.tsv"
+projected_from = ["artifact.jacques-paul-migne.patrologia-latina-volume-9.1844-paris.nonseasonal-hilary-petition-20261112", "artifact.gerard-oconnor.sources-orations-missale-parisiense-1738.rome-2004-volume-2.damasus-2130-historical-paragraph-20261112", "artifact.triptych.oration-conclusion-study-english-20261112.study-english-20261112.father-through-son"]
+transformation = "Preserve both complete English body byte strings from frozen candidate SHA b4305ef62354ac79ed30c7ae2f095275835bc1e7b29ea47c8ad8bf8697ee91d0 exactly; place each as one TSV cell. Add consumed witnessnotes stating exact source carrier limits and unresolved2008 identity. The conclusion expression is copied exactly from its independently sourced project-study formula artifact."
+provenance = "Own researchlane freezing and source registration only. Independent reviewer decision accepted both exact bodies without word changes; no canonicalwrite or installationauthority."
+indexable = true
+encoding = "utf-8"
+notes = "No modern Latin full body is retained. Two standalone Collects; not a continuous text and not a general permission for other adaptations."

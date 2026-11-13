@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.temporal-three-study-orations-20261112.2026-11-12.english"
+edition_id = "edition.triptych.temporal-three-study-orations-20261112.2026-11-12"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Original project English, proposed under the project CC BY4.0 authorship offer. Underlying finite modern-expression basis remains pending independent review; this artifact registration is conditional staging and does not grant publication or activation."
+projected_from = ["artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"]
+transformation = "Copy each frozen full English string exactly, including its separately identified complete conclusion; encode only TSV identity fields. No new words, response, old-human attribution or target Latin are introduced."
+retrieved = "2026-11-12"
+sha256 = "b66094d85dab4f6d420c7f104b9b1d74913fddfaed31d239954bc769c5798f83"
+byte_size = 916
+path = "src/sources/works/triptych/temporal-three-study-orations-20261112/editions/2026-11-12/artifacts/english/text.tsv"
+encoding = "utf-8"
+indexable = true
+notes = "Three candidates remain unactivated. Frozen source-qualified entry dictionaries are preserved in the proposal; runtime entries differ only by the declared neutral witness_note sentence, keeping source qualifications visible. English and every other entry field are unchanged. No source_latin binding is invented for an unheld modern target."

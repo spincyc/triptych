@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112-9330da55"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Finite United States qualified-nonoriginal-adaptation assessment under method english-completion-20261029-finite-latin-v1. Publication is limited to the exact body, source and action scope admitted by the code-pinned authority. This marker does not itself admit a carrier. No exact ancient-whole claim, holder permission or general formula license is asserted. Only Triptych editorial contributions are offered under CC BY 4.0."
+provenance = "The complete target at 1962 printed181/PDF262 no.969 was read at200/400dpi. Fresh source reconstruction uses the complete independently read Wilson1894 antecedent and relevant apparatus, with the complete received conclusion independently read in Pustet1862. The earlier absent ready-case packet supplies no text or validation."
+retrieved = "2026-11-12"
+sha256 = "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d"
+byte_size = 240
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-second-after-communion-qualified-20261112-9330da55/latin.txt"
+projected_from = ["artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-first-second-antecedents-20261112-1fc31f67", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join printed wraps, remove stress accents, expand ae ligatures, normalize response sign to R., append one LF. Preserve all words and pointing. Keep R. as a typed nonspoken action and the following Amen spoken. Historical variants, literal abbreviated endings and changed placement are retained separately in the source comparison."
+indexable = true
+encoding = "utf-8"
+notes = "Whole-expression differences: Omnipotens sempiterne Deus becomes Omnipotens et misericors Deus. After Christi tui beata passione target adds et morte. Present reparas becomes perfect reparasti. Plural opera misericordiae tuae becomes singular operam misericordiae tuae. ut in huius celebritate mysterii becomes ut, huius mysterii participatione,. Pointing changes after reparasti to colon and tuae to semicolon; target commas mark the participatione phrase. The old literal Per. becomes Per eundem Christum Dominum nostrum. R. Amen.; target Oremus and Oratio secunda are adjacent framing, not included in this compared body. The modern Good Friday after-Communion placement differs from old Feria iv Hebdom. sexta. Strongest contrary: The accumulated changes recast the divine address, explicitly add death, shift the restoration from present to completed action, change plural works to one work, and replace celebration with participation in the mystery. These coordinated theological and rhetorical choices must be considered together. Conventional vocabulary and a recognizable old prayer skeleton do not prove that the whole modern arrangement is unprotected. No exact premodern whole target witness has been established."

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.temporal-orations-20261112-christ-king-offerings-latin"
+edition_id = "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only this old1929 Latin prayer under the existing bounded printing finding in src/sources/inventories/christ-the-king-early-witnesses-rights-v1.toml; not the complete mixed facsimile, German, watermark, or any modern revision."
+provenance = "Exact complete Latin and literal cue copied byte-for-byte from frozen preparation packet a6fc4a0c16a94ea2aaaf6144c0b1abc5fc55dfb96ba81b65a7e64b78f279bbc1. Preparation agent freshly image-collated the whole source pages; staging agent verifies bytes and records that provenance without claiming a fresh body-image review."
+derived_from = "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92"
+transformation = "Preserve the frozen candidate transcription exactly, including capitalization, pointing and literal conclusion cue. No target words or expanded ending are inserted. Independently reviewed fidelity remains pending."
+retrieved = "2026-11-12"
+sha256 = "247041b3a45d17879169276b2faef5dd981f623ff94ea2813eee8a02f1fcb0d9"
+byte_size = 237
+path = "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/temporal-orations-20261112-christ-king-offerings-latin/latin.txt"
+encoding = "utf-8"
+indexable = true
+notes = "Only historical Latin wording. Modern revision rights and recipient adoption remain pending independent review."

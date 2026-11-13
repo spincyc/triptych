@@ -38,6 +38,27 @@ from pathlib import Path
 # calendar imports this module, and PyYAML costs 6.8ms to import --- for a
 # parse that, with the cache warm, usually never happens.
 
+PROPER_CITATION_ROLE_SCHEMA = "triptych-proper-citation-role/v1"
+
+
+def citation_reading_role(entry: dict, owner_source: str | None = None) -> dict | None:
+    """A source-declared citation use; neither text similarity nor a new body claim."""
+    if "reading_role" not in entry:
+        return None
+    role = entry["reading_role"]
+    if (not isinstance(role, dict)
+        or set(role) != {"schema", "kind", "source_id", "locus"}
+        or role.get("schema") != PROPER_CITATION_ROLE_SCHEMA
+        or role.get("kind") not in {"embedded-quotation", "following-psalm"}
+        or not isinstance(role.get("source_id"), str)
+        or not re.fullmatch(r"passage\.[a-z0-9][a-z0-9_.-]*", role["source_id"])
+        or not isinstance(role.get("locus"), str) or not role["locus"].strip()
+        or role["kind"] == "following-psalm" and entry.get("book") != "Psalms"
+        or owner_source != "mixed"):
+        raise ValueError("invalid source-owned Proper citation role")
+    return dict(role)
+
+
 MASS_INDEX_SCHEMA = "triptych-calendar-masses/v1"
 MASS_INDEX = "propers.yaml"
 
@@ -2828,6 +2849,14 @@ def _latin_source_presentation(proper: dict) -> tuple[str, str]:
     latin = proper.get("latin")
     if not proper.get("text") or not isinstance(latin, dict):
         return "", ""
+    from _proper_qualified_latin import finite_postconciliar
+    if finite_postconciliar.claims_public(latin):
+        scope = finite_postconciliar.public_scope(latin)
+        if (scope is None or not isinstance(proper.get("text"), str)
+                or hashlib.sha256(proper["text"].encode("utf-8")).hexdigest() != scope["body_sha256"]):
+            raise ValueError("source-based finite Latin reading lacks exact admission")
+        note = "\n\n".join(dict.fromkeys([scope["note"], scope["notice"]]))
+        return "Latin source: " + scope["source_date"], note
     provenance = latin.get("provenance")
     publication = latin.get("publication")
     if not (

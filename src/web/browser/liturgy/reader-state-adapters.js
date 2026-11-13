@@ -11,13 +11,13 @@
 (function (root, factory) {
   let api;
   if (typeof module === 'object' && module && module.exports) {
-    api = factory(require('./reader-state.js'), require('./ordinary-seating.js'), require('./assembly-model.js'), require('./oration-conclusions.js'));
+    api = factory(require('./reader-state.js'), require('./ordinary-seating.js'), require('./assembly-model.js'), require('./oration-conclusions.js'), require('./source-local-actor-sequences.js'));
     module.exports = api;
   } else {
-    api = factory(root.LiturgyReaderState, root.OrdinarySeating, root.MassAssembly, root.TriptychOrationConclusions);
+    api = factory(root.LiturgyReaderState, root.OrdinarySeating, root.MassAssembly, root.TriptychOrationConclusions, root.TriptychSourceLocalActorSequences);
     root.LiturgyReaderStateAdapters = api;
   }
-}(typeof globalThis !== 'undefined' ? globalThis : this, function (Contract, Seating, Model, Conclusions) {
+}(typeof globalThis !== 'undefined' ? globalThis : this, function (Contract, Seating, Model, Conclusions, ActorSequences) {
   if (!Contract || !Seating) throw new Error('reader-state adapters require contract and seating');
 
   function pad(value) {
@@ -548,7 +548,8 @@
           cycles: cycleRows, weekdayCycles: weekdayCycleRows,
           cycleDimension: selection ? selection.dimension : null,
           sourceId: null, rights: null, missing: false,
-          availability: 'held', text: cycleText || proper.text
+          availability: 'held', text: cycleText || proper.text,
+          ...(selectedOwner(proper, selection).latin && selectedOwner(proper, selection).latin.publication_owner ? {publicationOwner: selectedOwner(proper, selection).latin.publication_owner} : {})
         };
       }
       const owner = selectedOwner(proper, selection);
@@ -602,7 +603,8 @@
           cycleDimension: selection ? selection.dimension : null,
           sourceId: witness || translation.source_id || translation.source || null,
           rights: translation.rights || null, missing: false,
-          availability: 'held', text: translation.text
+          availability: 'held', text: translation.text,
+          ...(translation.publication_owner ? {publicationOwner: translation.publication_owner} : {})
         };
       }
       if (translations.length > 1 && !witness) {
@@ -719,6 +721,52 @@
     return hooks;
   }
 
+  /** A verified historical reading offer, never an enacted current Mass event.
+   * The actual selected language material supplies its publication owner;
+   * the actor descriptor may not supply or repair that independent identity.
+   */
+  function sourceLocalActorOffer(proper, eventId, mass, request, structure, cycleMode) {
+    if (!hasOwn(proper, 'source_local_actor_sequences')) return null;
+    const rows = proper.source_local_actor_sequences;
+    const descriptor = Array.isArray(rows) && rows.length === 1 ? rows[0] : null;
+    const target = descriptor && descriptor.target;
+    const scope = 'source-local-1970';
+    const absent = function () { return {state: 'unresolved', sequence: [],
+      reasons: ['source-local-actor-source-or-context-unbound']}; };
+    const languages = {};
+    const identity = Array.isArray(target) && target.length === 5 &&
+      structure.calendar === 'postconciliar' && request.edition.id === structure.calendar &&
+      target[0] === mass.key && target[1] === (proper.form_id || 'main') &&
+      target[2] === proper.name && target[3] === 'all' && Number.isInteger(target[4]) && target[4] > 0 &&
+      proper.coverage && proper.coverage.target_id === conclusionCoverageTarget(structure.calendar, target);
+    const executor = ActorSequences && Conclusions && typeof ActorSequences.create === 'function'
+      ? ActorSequences.create({canonical: Conclusions.canonical, sha: Conclusions.sha}) : null;
+    ['en', 'la'].forEach(function (language) {
+      const requested = Object.assign({}, request.languages, {orations: language});
+      if (language === 'la') delete requested.translationWitness;
+      const selected = selectedMaterial(proper, Object.assign({}, request, {languages: requested}), structure, cycleMode);
+      const owner = selected && selected.publicationOwner;
+      const publicLatin = language !== 'la' || proper.latin && proper.latin.withheld === false &&
+        proper.latin.publication && proper.latin.publication.status === 'permitted';
+      const bound = identity && executor && publicLatin && selected.kind === 'composed' &&
+        selected.language === language && selected.availability === 'held' && !selected.missing &&
+        typeof selected.text === 'string' && selected.text && owner &&
+        Object.keys(owner).sort().join(',') === 'body_sha256,calendar,language,passage_id,schema,target' &&
+        owner.schema === 'triptych-source-local-publication-owner/v1' &&
+        owner.calendar === structure.calendar && owner.language === language &&
+        Conclusions.canonical(owner.target) === Conclusions.canonical(target) &&
+        typeof owner.passage_id === 'string' && /^passage\.[a-zA-Z0-9_.-]+$/.test(owner.passage_id) &&
+        owner.body_sha256 === Conclusions.sha(selected.text);
+      languages[language] = bound ? executor.execute({calendar: structure.calendar,
+        executionScope: scope, selection: {target: target, source_selection: descriptor.context && descriptor.context.source_selection},
+        member: {id: eventId, target: target, language: language, text: selected.text,
+          publication_passage_id: owner.passage_id, source: descriptor}}) : absent();
+    });
+    return {scope: scope, state: Object.values(languages).some(function (row) {
+      return row.state === 'source-derived-complete';
+    }) ? 'available' : 'unresolved', target: identity ? target.slice() : null, languages: languages};
+  }
+
   function projectProper(
     proper, index, mass, request, structure, cycleMode, seat, semanticSlotOverride
   ) {
@@ -733,7 +781,7 @@
         }]);
       });
     }
-    return {
+    const event = {
       id: properEventId(request.edition.id, mass.key, index),
       kind: 'proper',
       semanticSlot: semanticSlotOverride || semanticSlot(proper),
@@ -744,6 +792,8 @@
       seat: seat || null,
       sourceHooks: sourceHooks(proper, selected, request.edition.id, mass.key, index)
     };
+    const offer = sourceLocalActorOffer(proper, event.id, mass, request, structure, cycleMode);
+    return offer ? Object.assign(event, {sourceLocalActorOffer: offer}) : event;
   }
 
   function ordinaryTranslationApplicability(scope, context) {
@@ -919,8 +969,9 @@
     };
   }
 
-  function ordinaryElements(ordinary, request, propers, predicateFacts, appointments, sourceRows) {
+  function ordinaryElements(ordinary, request, propers, predicateFacts, appointments, sourceRows, riteContext) {
     const predicates = Object.assign({}, predicateFacts || {});
+    if (riteContext) predicates['proper-rite-context'] = riteContext;
     Object.assign(predicates, Seating.predicateFacts({
       properAppointments: appointments, properRows: sourceRows,
       calendarCycles: calendarCyclesFor(request)
@@ -944,25 +995,7 @@
   }
 
   function assertSeatingComplete(placed) {
-    const rows = (placed.before || []).concat(placed.after || []);
-    for (const bucket of placed.buckets.values()) {
-      rows.push.apply(rows, bucket);
-    }
-    const conserved = rows.reduce(function (count, row) {
-      return count + (row && row.kind === 'proper_choice'
-        ? (row.options || []).reduce(function (held, option) {
-            return held + (option.rows || []).length;
-          }, 0) : 1);
-    }, 0);
-    const unusable = rows.some(function (row) {
-      if (!row || !row.seat) return true;
-      if (row.seat.placement !== 'unseated') return !row.seat.key;
-      return !row.seat.key || !row.seat.group || !row.seat.basis ||
-        ['before-frame', 'after-frame'].indexOf(row.seat.region) < 0;
-    });
-    if (placed.broke || unusable || conserved !== placed.sourceCount) {
-      throw new Error('appointed Proper has no usable semantic Ordinary seat');
-    }
+    return Seating.assertCompleteSeating(placed);
   }
 
   function projectedSeat(seat, placement, mass, request) {
@@ -1230,8 +1263,9 @@
   }
 
   function seatedEvents(
-    mass, properRows, request, structure, ordinary, cycleMode, predicateFacts, dayContext
+    mass, properRows, request, structure, ordinary, cycleMode, predicateFacts, dayContext, sourceOrdinary
   ) {
+    const riteBindings = new WeakMap();
     const owners = new Map(properRows.filter(function (row) { return row.sourceMass; })
       .map(function (row) { return [row.proper, row]; }));
     function projectMember(row, seat, semantic) {
@@ -1244,12 +1278,21 @@
       if (dedication && source && source.sourceMass === dedication.target.mass && row.proper.name === dedication.proper) {
         semantic = semanticSlot({name: 'Secret'});
       }
-      return projectProper(row.proper, source ? source.sourceProperIndex : row.sourceIndex,
+      const rite = riteBindings.get(row.proper);
+      if (rite) semantic = {state: 'mapped', identity: {id: rite.semanticRole}};
+      const event = projectProper(row.proper, source ? source.sourceProperIndex : row.sourceIndex,
         owner || mass, request, structure, cycleMode, seat, semantic);
+      return rite ? Object.assign({}, event, {properRite: rite}) : event;
     }
     const prepared = prepareAppointments(mass, properRows, request, structure, dayContext);
     const sourceRows = properRows;
     properRows = prepared.rows;
+    const riteContext = {calendar: request.edition.id, mass: mass.key,
+      formId: dayContext && dayContext.formId || request.form || 'main', properRows: properRows};
+    const riteSource = ordinary || sourceOrdinary;
+    if (riteSource) Seating.properRitesFor(riteSource, riteContext).bindings.forEach(function (binding) {
+      riteBindings.set(binding.proper, binding.descriptor);
+    });
     if (!ordinary) {
       const unframed = Seating.unframedEvents(
         properRows, function (proper) { return proper && proper.name === 'Placeholder'; },
@@ -1266,11 +1309,11 @@
     }
     const resolution = ordinaryElements(
       ordinary, request, properRows.map(function (row) { return row.proper; }),
-      predicateFacts, prepared, sourceRows
+      predicateFacts, prepared, sourceRows, riteContext
     );
     const placed = Seating.seatPropers(
       properRows,
-      Seating.seats(ordinary, resolution.shown),
+      Seating.seats(ordinary, resolution.shown, riteContext),
       function (proper) { return proper && proper.name === 'Placeholder'; },
       prepared.selections
     );
@@ -1725,6 +1768,12 @@
         }).forEach(function (option) { (option.events || []).forEach(visit); });
       }
       const reasons = new Set();
+      (event.properRiteExecution && event.properRiteExecution.unresolved || []).forEach(function (reason) {
+        reasons.add(reason);
+        out.push({kind: 'explicit-semantic-absence', scope: 'oration-execution',
+          repositoryTerm: 'unresolved', event: event.id, reason: reason,
+          sourceHooks: [{kind: 'locus', id: event.properRite.locus}]});
+      });
       (event.orationGroups || []).forEach(function (group) {
         (group.execution && group.execution.unresolved || []).forEach(function (reason) {
           if (reasons.has(reason)) return;
@@ -2313,10 +2362,10 @@
         date: derived.date,
         anchors: derived.liturgicalYear && derived.liturgicalYear.anchors || null,
         appointments: formularyAppointments(mass, formSelection.form, branch.winner)
-      }), {date: derived.date, season: derived.season, conditionFacts: input.conditionFacts, usageContext: {
+      }), {date: derived.date, season: derived.season, formId: formSelection.id || 'main', conditionFacts: input.conditionFacts, usageContext: {
         calendar: derived.calendar, entrance: request.entrance, branch: branch, readable: readable,
         mass: mass, formId: formSelection.id || 'main'
-      }}
+      }}, input.ordinary
     );
     let events = withOrationGroups(
       seated.events, branch, readable, mass, adaptedRequest, input.structure, null, {
@@ -2329,6 +2378,7 @@
     );
     events = withFiniteNameExecution(events, branch, readable, mass, adaptedRequest, input.structure, input.nameExecutionUse || null);
     events = withConclusionExecution(events, branch, readable, mass, adaptedRequest, input.structure);
+    events = withProperRiteExecution(events, adaptedRequest, input.structure);
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: readable.state
@@ -2687,6 +2737,69 @@
     return events.map(attach);
   }
 
+  function conclusionCoverageTarget(calendar, target) {
+    if (!Array.isArray(target) || target.length !== 5) return null;
+    // Coverage identities encode each component, then encode that source
+    // identity as the first component of the language/cycle unit identity.
+    function identity(parts) {
+      return parts.map(function (one) {
+        return encodeURIComponent(String(one)).replace(/[!'()*]/g, function (character) {
+          return '%' + character.charCodeAt(0).toString(16).toUpperCase();
+        });
+      }).join(':');
+    }
+    return identity([identity([calendar, 'proper', target[0], target[1], target[2], target[4]]), 'all', 'all']);
+  }
+
+  function withProperRiteExecution(events, request, structure) {
+    function apply(event) {
+      if (event.kind === 'proper-choice') return Object.assign({}, event, {options: event.options.map(function (option) {
+        return event.selection.state === 'selected' && option.id === event.selection.option
+          ? Object.assign({}, option, {events: option.events.map(apply)}) : option;
+      })});
+      if (event.kind !== 'proper' || !event.properRite) return event;
+      const hook = (event.sourceHooks || []).find(function (row) { return row.kind === 'proper-structure'; });
+      const match = hook && /^([^/]+)\/([^/]+)\/(\d{3})$/.exec(hook.id);
+      const owner = match && match[1] === structure.calendar && structure.masses.find(function (row) { return row.key === match[2]; });
+      const proper = owner && owner.propers[Number(match[3]) - 1];
+      const sources = proper && proper.conclusion_execution || [];
+      let source = sources.length === 1 ? sources[0] : null;
+      const target = source && source.target;
+      const expected = conclusionCoverageTarget(structure.calendar, target);
+      if (!expected || !proper || !proper.coverage || proper.coverage.target_id !== expected ||
+          event.executionSource || event.nameExecution) source = null;
+      const languages = {}, executions = {}, hooks = [];
+      ['la', 'en'].forEach(function (language) {
+        const languageRequest = Object.assign({}, request.languages, {orations: language});
+        if (language === 'la') delete languageRequest.translationWitness;
+        const selected = proper && selectedMaterial(proper, Object.assign({}, request, {languages: languageRequest}), structure, request.entrance === 'day' ? 'day' : 'propers');
+        const member = {id: event.id, target: target || [], source: source,
+          text: selected && selected.text, witness: selected && selected.sourceId, language: language};
+        const projected = Conclusions && typeof Conclusions.executeProperRite === 'function'
+          ? Conclusions.executeProperRite({calendar: structure.calendar, rite: event.properRite, member: member})
+          : {state: 'unresolved', execution_extent: {state: 'unresolved'},
+            reasons: ['proper-rite-conclusion-method-unavailable'], members: []};
+        languages[language] = projected;
+        const rendered = (projected.members || []).find(function (one) { return one.id === event.id; });
+        executions[language] = {state: projected.state, execution_extent: projected.execution_extent,
+          scope: 'proper-rite', conclusion_group: 'proper-rite/' + event.properRite.id,
+          member: rendered || null, response: rendered && projected.response && projected.response.provider_id === rendered.id ? projected.response : null};
+        (projected.members || []).forEach(function (one) {
+          (one.source_hooks || []).forEach(function (id) { hooks.push({kind: 'publication', id: id}); });
+        });
+      });
+      const selected = languages[request.languages.orations];
+      const unresolved = selected && selected.state === 'source-derived-complete' ? []
+        : selected && selected.reasons && selected.reasons.length ? selected.reasons : ['proper-rite-conclusion-unresolved'];
+      return Object.assign({}, event, {
+        properRiteExecution: {scope: 'proper-rite', languages: languages, unresolved: unresolved},
+        conclusionExecution: {scope: 'proper-rite', languages: executions},
+        sourceHooks: uniqueSourceHooks([event, {sourceHooks: hooks.concat([{kind: 'locus', id: event.properRite.locus}])}])
+      });
+    }
+    return events.map(apply);
+  }
+
   function withConclusionExecution(events, branch, readable, mass, request, structure) {
     if (!Conclusions || request.edition.id !== 'roman-1962' || !branch.settled ||
         readable.state !== 'said' || !branch.oration_execution ||
@@ -2703,14 +2816,35 @@
       // The public source identity belongs to the quoted owner, including a
       // source-resolved Common, rather than to a new synthetic weekday key.
       const target = source && source.target;
-      const expected = target && [structure.calendar, 'proper', target[0], target[1], target[2], target[4], 'all', 'all'].join(':');
-      if (!proper || !proper.coverage || decodeURIComponent(proper.coverage.target_id || '') !== expected ||
+      const expected = conclusionCoverageTarget(structure.calendar, target);
+      if (!expected || !proper || !proper.coverage || proper.coverage.target_id !== expected ||
           event.executionSource || event.nameExecution) source = null;
       const languages = Object.assign({}, request.languages, {orations: language});
       if (language === 'la') delete languages.translationWitness;
       const selected = proper && selectedMaterial(proper, Object.assign({}, request, {languages: languages}), structure, 'day');
       return {id: event.id, target: target || [], source: source,
         text: selected && selected.text, witness: selected && selected.sourceId, language: language};
+    }
+    function principalPrayerUse(partition) {
+      if (partition.length !== 1 || !branch.winner || branch.winner.key !== mass.key ||
+          typeof mass.date !== 'string' || !/^\d{2}-\d{2}$/.test(mass.date) ||
+          typeof request.civilDate !== 'string' || request.civilDate.slice(5) !== mass.date) return null;
+      const group = partition[0];
+      if (group.kind !== 'principal' || group.position !== 1 || group.conclusion_group !== 1 ||
+          group.conclusion_final !== true || group.members.length !== 1) return null;
+      const member = group.members[0], proper = sourceOf(member);
+      if (!proper || member.executionSource || member.nameExecution ||
+          (proper.conclusion_execution || []).length !== 1) return null;
+      const source = proper.conclusion_execution[0];
+      if (source.schema !== 'triptych-oration-conclusion-source/v2' ||
+          !Array.isArray(source.target) || source.target[0] !== mass.key ||
+          source.target[1] !== (proper.form_id || 'main')) return null;
+      const choice = source.context && source.context.constraints && source.context.constraints.wording_choice;
+      if (!choice || choice.unknown_context !== 'unresolved' || !Array.isArray(choice.branches)) return null;
+      const branches = choice.branches.filter(function (one) { return one.required_use === 'principal-office-mass'; });
+      if (branches.length !== 1) return null;
+      return {kind: 'principal-office-mass', sourceTarget: source.target.slice(),
+        choiceId: choice.id, branch: branches[0].id};
     }
     function apply(event) {
       if (event.kind === 'proper-choice') return Object.assign({}, event, {options: event.options.map(function (option) {
@@ -2731,12 +2865,13 @@
         }); })) return;
         const languages = {};
         ['la', 'en'].forEach(function (language) {
-          const projected = Conclusions.executeGroup({calendar: structure.calendar, massCategory: 'mass-of-office',
+          const prayerUse = principalPrayerUse(partition);
+          const projected = Conclusions.executeDisplayGroup(Object.assign({calendar: structure.calendar, massCategory: 'mass-of-office',
             rule: branch.oration_execution.locus, groups: partition.map(function (group) {
               return {kind: group.kind, position: group.position, conclusion_group: group.conclusion_group,
                 conclusion_final: group.conclusion_final, slot: group.slot,
                 members: group.members.map(function (member) { return memberInput(member, language); })};
-            })});
+            })}, prayerUse ? {prayerUse: prayerUse} : {}));
           languages[language] = projected;
           (projected.members || []).forEach(function (member) {
             if (!byMember.has(member.id)) byMember.set(member.id, {languages: {}});
@@ -2752,7 +2887,7 @@
         const result = results.find(function (one) { return one.conclusion_group === group.conclusion_group; });
         const selected = result && result.languages[request.languages.orations];
         const execution = selected && selected.state === 'source-derived-complete' ? Object.assign({}, group.execution, {
-          state: 'source-derived-complete', source_method: Conclusions.METHOD_ID,
+          state: 'source-derived-complete', source_method: selected.execution_extent.method_id,
           unresolved: (group.execution && group.execution.unresolved || []).filter(function (reason) {
             return !['intermediate-conclusion-spans-unbound', 'later-shared-conclusion-unbound'].includes(reason);
           })}) : group.execution;
@@ -2888,7 +3023,7 @@
       mass, formSelection.rows, request, input.structure, ordinary, 'propers',
       Seating.predicateFacts({
         appointments: formularyAppointments(mass, formSelection.form, null)
-      }), {conditionFacts: input.conditionFacts}
+      }), {conditionFacts: input.conditionFacts, formId: formSelection.id || 'main'}, input.ordinary
     );
     const relation = mass.oration_relation;
     if (relation && (Object.keys(relation).sort().join(',') !== 'companion,host,locus,scope,slots' ||
@@ -2904,13 +3039,14 @@
         JSON.stringify(relation.slots) !== JSON.stringify(['Collect', 'Secret', 'Postcommunion']))) {
       throw new Error('invalid source-qualified inseparable oration relation');
     }
-    const events = relation ? seated.events.map(function (event) {
+    let events = relation ? seated.events.map(function (event) {
       if (event.kind !== 'proper' || relation.slots.indexOf(event.editionSlotLabel) < 0) return event;
       return Object.assign({}, event, {orationContext: {
         kind: 'inseparable-use-context-unresolved', relation: relation,
         reason: 'date-independent-propers-does-not-establish-mass-of-office'
       }});
     }) : seated.events;
+    events = withProperRiteExecution(events, request, input.structure);
     assertExplicitWitnesses(events, request, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, type: mass.kind || null
@@ -2937,7 +3073,7 @@
         scope: 'civil-date-and-calendar-result',
         repositoryTerm: 'semantic-absence',
         reason: 'propers-entrance-is-date-independent'
-      }].concat(relation ? [{kind: 'explicit-semantic-absence', scope: 'inseparable-oration-assembly',
+      }].concat(orationExecutionAbsences(events), relation ? [{kind: 'explicit-semantic-absence', scope: 'inseparable-oration-assembly',
         repositoryTerm: 'unresolved', reason: 'mass-of-office-use-context-not-established',
         sourceHooks: [{kind: 'locus', id: relation.locus}], relation: relation}] : [],
         claimLocalCollectAbsences(mass, request, formSelection.form)),
@@ -3354,10 +3490,11 @@
       if (dedicationSelection && held.sourceMass === dedicationSelection.target.mass && generatedProper.name === dedicationSelection.proper) {
         semanticSlotOverride = semanticSlot({name: 'Secret'});
       }
-      return {
+      const rite = riteBindings.get(generatedProper);
+      const event = Object.assign({
         id: properEventId(request.edition.id, held.sourceMass, held.sourceProperIndex),
         kind: 'proper',
-        semanticSlot: semanticSlotOverride || semanticSlot(generatedProper),
+        semanticSlot: rite ? {state: 'mapped', identity: {id: rite.semanticRole}} : semanticSlotOverride || semanticSlot(generatedProper),
         editionSlotLabel: proper.name || null,
         form: proper.form || null,
         sourceKind: proper.source || null,
@@ -3366,8 +3503,18 @@
         sourceHooks: sourceHooks(
           proper, selected, request.edition.id, held.sourceMass, held.sourceProperIndex
         )
-      };
+      }, rite ? {properRite: rite} : {});
+      const sourceMass = input.structure.masses.find(function (one) { return one.key === held.sourceMass; });
+      const offer = sourceLocalActorOffer(generatedProper, event.id, sourceMass, adaptedRequest, input.structure, 'day');
+      return offer ? Object.assign(event, {sourceLocalActorOffer: offer}) : event;
     }
+    const riteContext = {calendar: request.edition.id, mass: generatedMass.key,
+      formId: formSelection.id || 'main', properRows: prepared.rows};
+    const riteBindings = new WeakMap();
+    const riteSource = input.ordinary || day.ordinary;
+    if (riteSource && !riteSource.refused) Seating.properRitesFor(riteSource, riteContext).bindings.forEach(function (binding) {
+      riteBindings.set(binding.proper, binding.descriptor);
+    });
     let events;
     let ordinaryUnresolved = [];
     if (request.options && request.options.ordinary && frame.applicability === 'full' &&
@@ -3385,11 +3532,11 @@
             input.derived.liturgicalYear.anchors || null,
           appointments: formularyAppointments(
             generatedMass, formSelection.form, branch.winner)
-        }), prepared, generatedRows
+        }), prepared, generatedRows, riteContext
       );
       ordinaryUnresolved = resolution.unresolved;
       const placed = Seating.seatPropers(
-        prepared.rows, Seating.seats(ordinary, resolution.shown), null, prepared.selections
+        prepared.rows, Seating.seats(ordinary, resolution.shown, riteContext), null, prepared.selections
       );
       assertSeatingComplete(placed);
       events = projectSeatingEvents(
@@ -3437,10 +3584,36 @@
         function () { throw new Error('unframed Proper sequence carried an Ordinary event'); }
       );
     }
+    const privateSource = mass.oration_sources || null;
+    const privateRows = privateSource && privateSource.rows || [];
+    if (privateSource && (Object.keys(privateSource).sort().join('|') !== 'calendar|principal|rows|schema' ||
+        privateSource.schema !== 'triptych-oration-source-rows/v1' || privateSource.calendar !== request.edition.id ||
+        privateSource.principal !== generatedMass.key || !Array.isArray(privateRows) || !privateRows.length ||
+        privateRows.some(function (row) {
+          return !row || Object.keys(row).sort().join('|') !== 'mass|proper|source_index' ||
+            typeof row.mass !== 'string' || !row.mass || !Number.isInteger(row.source_index) || row.source_index < 0 ||
+            !row.proper || typeof row.proper !== 'object';
+        }) || new Set(privateRows.map(function (row) { return JSON.stringify([row.mass, row.source_index]); })).size !== privateRows.length)) {
+      throw new Error('mass-today prayer-only source rows have an invalid scope or identity');
+    }
+    const usedPrivateRows = new Set();
     events = withOrationGroups(events, branch, readable, generatedMass, adaptedRequest, input.structure,
       function (member, anchor) {
         const owners = (day.masses || []).filter(function (one) { return one.key === member.key; });
-        if (owners.length !== 1) throw new Error('mass-today oration member lacks one exact raw source owner');
+        const sourceRow = privateRows.find(function (row) {
+          return row.mass === member.key && row.source_index === member.sourceIndex;
+        });
+        if (owners.length + (sourceRow ? 1 : 0) !== 1) throw new Error('mass-today oration member lacks one exact raw source owner');
+        if (sourceRow) {
+          assertCliProperIdentity(member.proper, sourceRow.proper, false);
+          const selected = cliMaterial(sourceRow.proper, adaptedRequest, member.proper);
+          usedPrivateRows.add(sourceRow);
+          return {id: properEventId(request.edition.id, member.key, member.sourceIndex), kind: 'proper',
+            semanticSlot: semanticSlot(member.proper), editionSlotLabel: sourceRow.proper.name,
+            form: sourceRow.proper.form || null, sourceKind: sourceRow.proper.source || null, selected: selected,
+            seat: anchor.seat || null,
+            sourceHooks: sourceHooks(sourceRow.proper, selected, request.edition.id, member.key, member.sourceIndex)};
+        }
         const owner = owners[0];
         const generatedOwner = input.structure.masses.find(function (one) { return one.key === member.key; });
         const generatedRows = generatedOwner.propers.map(function (proper, sourceIndex) {
@@ -3467,8 +3640,12 @@
           derived: input.derived, rubrics: input.rubrics, structure: input.structure,
           territory: branch.option, mass: generatedMass.key, formId: formSelection.id || 'main'
         })});
+    if (usedPrivateRows.size !== privateRows.length) {
+      throw new Error('mass-today includes a prayer-only source row outside the appointed groups');
+    }
     events = withFiniteNameExecution(events, branch, readable, generatedMass, adaptedRequest, input.structure, input.nameExecutionUse || null);
     events = withConclusionExecution(events, branch, readable, generatedMass, adaptedRequest, input.structure);
+    events = withProperRiteExecution(events, adaptedRequest, input.structure);
     assertExplicitWitnesses(events, adaptedRequest, input.structure);
     const resolved = {
       edition: request.edition.id, formulary: mass.key, standing: mass.standing

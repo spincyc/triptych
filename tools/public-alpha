@@ -333,6 +333,8 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "requirements-public-alpha.txt",
     POSTCONCILIAR_TRANSLATIONS_RELATIVE.as_posix(),
     "tools/public-alpha",
+    "tools/mass-propers",
+    "scripts/_calendars.py",
     "scripts/_proper_components.py",
     "scripts/_markdown_render.py",
     "scripts/_document_schema.py",
@@ -2063,6 +2065,11 @@ def validate_liturgical_public_data(
     except (OSError, UnicodeError, json.JSONDecodeError) as exc:
         raise ReleaseError(f"cannot read liturgical structure {label}: {exc}") from exc
     reader_metadata = parts[:3] == ("structure", "propers", "reader")
+    # A postconciliar Mass envelope is an exact copy of its monolith Mass
+    # (`_validate_proper_read_calendar` refuses any difference), so the
+    # source-local descriptors are validated once, in the monolith.
+    split_postconciliar_mass = (len(parts) == 5
+                                and parts[:4] == ("structure", "propers", "mass", "postconciliar"))
     if reader_metadata and (len(parts) != 4 or proper_reader_binding != hashlib.sha256(raw).hexdigest()):
         raise ReleaseError(f"{label}: reader metadata requires an exact validated source join")
     if parts[:3] == ("structure", "propers", "search"):
@@ -2109,14 +2116,109 @@ def validate_liturgical_public_data(
     name_seen: set[tuple] = set()
     execution_seen: set[tuple] = set()
     conclusion_authority = None
+    actor_sources = None
+    actor_seen: set[tuple] = set()
+    conclusion_owner_model = None
+    conclusion_source_documents = {}
+
+    def conclusion_source_form(calendar: str, borrowed: dict) -> str:
+        """Resolve the donor's exact display label with the owning source model."""
+        nonlocal conclusion_owner_model
+        if conclusion_owner_model is None:
+            from importlib.machinery import SourceFileLoader
+            from importlib.util import module_from_spec, spec_from_loader
+            loader = SourceFileLoader("_public_alpha_conclusion_owner", str(ROOT / "tools" / "mass-propers"))
+            specification = spec_from_loader(loader.name, loader)
+            conclusion_owner_model = module_from_spec(specification)
+            sys.modules[loader.name] = conclusion_owner_model
+            loader.exec_module(conclusion_owner_model)
+        if calendar not in conclusion_source_documents:
+            document = conclusion_owner_model.load_calendar(ROOT / "src/sources/calendars", calendar)
+            conclusion_source_documents[calendar] = conclusion_owner_model._calendars.mass_index(document)
+        donor = conclusion_source_documents[calendar].get(borrowed.get("mass"))
+        if donor is None:
+            raise ValueError("conclusion borrowed source mass is absent")
+        label = borrowed.get("form")
+        if label is None:
+            label = ""
+        if not isinstance(label, str):
+            raise ValueError("conclusion borrowed source form label is invalid")
+        _, trouble = conclusion_owner_model._calendars._form_propers(donor, label)
+        if trouble:
+            raise ValueError(f"conclusion borrowed source form: {trouble}")
+        if label and len([form for form in donor.get("forms") or []
+                          if isinstance(form, dict) and form.get("name") == label]) != 1:
+            raise ValueError("conclusion borrowed source form is ambiguous")
+        return conclusion_owner_model.form_id_for_label(donor, label)
+
     def visit_execution(value: object, trail: tuple = (), mass_key: str | None = None) -> None:
-        nonlocal conclusion_authority
+        nonlocal conclusion_authority, actor_sources
         if isinstance(value, list):
             for index, item in enumerate(value): visit_execution(item, trail + (index,), mass_key)
         elif isinstance(value, dict):
             if isinstance(value.get("propers"), list) and isinstance(value.get("key"), str):
                 mass_key = value["key"]
             for key, item in value.items():
+                if key == "source_local_actor_sequences" and not split_postconciliar_mass:
+                    try:
+                        import _source_local_actor_sequences
+                        import _missal_coverage
+                        if not isinstance(payload, dict) or payload.get("schema") != "triptych-propers-structure/v1" or payload.get("calendar") != "postconciliar" or parts != ("structure", "propers", "postconciliar.json"):
+                            raise ValueError("source-local actor sequence outside postconciliar Proper structure")
+                        if len(trail) != 4 or trail[0] != "masses" or type(trail[1]) is not int or trail[2] != "propers" or type(trail[3]) is not int:
+                            raise ValueError("source-local actor descriptor outside its proper row")
+                        if not isinstance(item, list) or len(item) != 1 or not isinstance(item[0], dict):
+                            raise ValueError("one finite source-local actor descriptor required")
+                        if actor_sources is None:
+                            actor_sources = _source_local_actor_sequences.load_sources(ROOT / "src/sources/calendars", "postconciliar")
+                        target = item[0].get("target")
+                        if not isinstance(target, list) or len(target) != 5:
+                            raise ValueError("source-local actor target missing")
+                        bound = actor_sources.get(tuple(target))
+                        if bound is None or tuple(target) in actor_seen:
+                            raise ValueError("unlisted or repeated source-local actor target")
+                        if value.get("taken_from") or [mass_key, value.get("form_id"), value.get("name")] != target[:3]:
+                            raise ValueError("source-local actor descriptor owner differs")
+                        target_id = _missal_coverage.identity(
+                            _missal_coverage.identity("postconciliar", "proper", target[0], target[1], target[2], target[4]), "all", target[3])
+                        if not isinstance(value.get("coverage"), dict) or value["coverage"].get("target_id") != target_id:
+                            raise ValueError("source-local actor occurrence differs")
+                        _source_local_actor_sequences.validate_public_owner(value, bound)
+                        actor_seen.add(tuple(target))
+                    except (ValueError, KeyError, TypeError, OSError) as error:
+                        raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
+                if key == "publication_owner" and not split_postconciliar_mass:
+                    # Publication metadata has no freestanding authority: it
+                    # belongs to a finite proper's selected language body.
+                    try:
+                        import _source_local_actor_sequences
+                        if not isinstance(item, dict) or item.get("schema") != "triptych-source-local-publication-owner/v1":
+                            raise ValueError("unknown publication owner")
+                        if not isinstance(payload, dict) or payload.get("schema") != "triptych-propers-structure/v1" or payload.get("calendar") != "postconciliar" or parts != ("structure", "propers", "postconciliar.json"):
+                            raise ValueError("publication owner outside postconciliar Proper structure")
+                        if actor_sources is None:
+                            actor_sources = _source_local_actor_sequences.load_sources(ROOT / "src/sources/calendars", "postconciliar")
+                        target = item.get("target")
+                        if not isinstance(target, list) or len(target) != 5:
+                            raise ValueError("publication target missing")
+                        bound = actor_sources.get(tuple(target))
+                        language = item.get("language")
+                        if bound is None or language not in {"en", "la"} or _source_local_actor_sequences.sha(item) != _source_local_actor_sequences.sha(bound["publication_owners"].get(language)):
+                            raise ValueError("unbound publication owner")
+                        if language == "la" and trail and trail[-1] == "latin":
+                            parent_trail = trail[:-1]
+                        elif language == "en" and len(trail) >= 2 and trail[-2] == "translations" and type(trail[-1]) is int:
+                            parent_trail = trail[:-2]
+                            if value.get("lang") != "en" or value.get("rights") != "project-created" or value.get("source_id") is not None or _source_local_actor_sequences.sha(value.get("text") or "") != item["body_sha256"]:
+                                raise ValueError("publication owner is not on its selected English body")
+                        else:
+                            raise ValueError("publication owner is outside its language selection")
+                        parent = payload
+                        for step in parent_trail:
+                            parent = parent[step]
+                        _source_local_actor_sequences.validate_public_owner(parent, bound)
+                    except (ValueError, KeyError, TypeError, IndexError, OSError) as error:
+                        raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
                 if key == "conclusion_execution":
                     try:
                         import _oration_endings
@@ -2127,23 +2229,55 @@ def validate_liturgical_public_data(
                             _, conclusion_authority = _oration_endings.authority(ROOT)
                         source = _oration_endings.validate_public(item[0], ROOT, authority_rows=conclusion_authority)
                         target = source["target"]
-                        if payload.get("calendar") != "roman-1962" or parts[:2] != ("structure", "propers"):
-                            raise ValueError("conclusion execution outside Roman1962 propers")
-                        borrowed = value.get("taken_from") or {}
-                        owner = borrowed.get("mass") or mass_key
-                        form = (borrowed.get("form") or "main") if borrowed else value.get("form_id")
-                        proper = borrowed.get("proper") or value.get("name")
-                        if [owner, form, proper] != target[:3]:
-                            raise ValueError("conclusion descriptor source owner differs")
-                        target_id = _missal_coverage.identity(
-                            _missal_coverage.identity("roman-1962", "proper", target[0], target[1], target[2], target[4]), "all", target[3])
-                        if (value.get("coverage") or {}).get("target_id") != target_id:
-                            raise ValueError("conclusion source occurrence differs")
-                        if _oration_endings.sha(value.get("text") or "") != source["target_latin_sha256"]:
-                            raise ValueError("conclusion current Latin differs")
-                        english = [row for row in value.get("translations") or [] if row.get("lang") == "en" and row.get("source_id") == source["source_id"]]
-                        if len(english) != 1 or _oration_endings.sha(english[0].get("text") or "") != source["source_text_sha256"]:
-                            raise ValueError("conclusion current English witness differs")
+                        if source.get("schema") == "triptych-oration-conclusion-source/v2":
+                            calendar = source["calendar"]
+                            if calendar not in {"roman-1962", "postconciliar"} or payload.get("calendar") != calendar or parts[:2] != ("structure", "propers"):
+                                raise ValueError("conclusion execution outside its source calendar propers")
+                            borrowed = value.get("taken_from") or {}
+                            owner = borrowed.get("mass") or mass_key
+                            form = conclusion_source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
+                            proper = borrowed.get("proper") or value.get("name")
+                            if [owner, form, proper] != target[:3]:
+                                raise ValueError("conclusion descriptor source owner differs")
+                            target_id = _missal_coverage.identity(
+                                _missal_coverage.identity(calendar, "proper", target[0], target[1], target[2], target[4]), "all", target[3])
+                            if (value.get("coverage") or {}).get("target_id") != target_id:
+                                raise ValueError("conclusion source occurrence differs")
+                            # The exact descriptor hash binds each language's
+                            # formula, hooks, response and source limitations.
+                            # Only an admitted language requires its own body.
+                            for language, part in source["languages"].items():
+                                if language == "la":
+                                    body = value.get("text")
+                                elif language == "en":
+                                    english = [row for row in value.get("translations") or []
+                                               if isinstance(row, dict) and row.get("lang") == "en"
+                                               and (row.get("source_id") if row.get("source_id") is not None else "") == source["source_id"]]
+                                    if len(english) != 1:
+                                        raise ValueError("conclusion current English witness differs")
+                                    body = english[0].get("text")
+                                else:
+                                    raise ValueError("conclusion language is unsupported")
+                                if not isinstance(body, str) or not body or _oration_endings.sha(body) != part["body_sha256"]:
+                                    raise ValueError(f"conclusion current {language} body differs")
+                        else:
+                            if payload.get("calendar") != "roman-1962" or parts[:2] != ("structure", "propers"):
+                                raise ValueError("conclusion execution outside Roman1962 propers")
+                            borrowed = value.get("taken_from") or {}
+                            owner = borrowed.get("mass") or mass_key
+                            form = conclusion_source_form(source["calendar"], borrowed) if borrowed else value.get("form_id")
+                            proper = borrowed.get("proper") or value.get("name")
+                            if [owner, form, proper] != target[:3]:
+                                raise ValueError("conclusion descriptor source owner differs")
+                            target_id = _missal_coverage.identity(
+                                _missal_coverage.identity("roman-1962", "proper", target[0], target[1], target[2], target[4]), "all", target[3])
+                            if (value.get("coverage") or {}).get("target_id") != target_id:
+                                raise ValueError("conclusion source occurrence differs")
+                            if _oration_endings.sha(value.get("text") or "") != source["target_latin_sha256"]:
+                                raise ValueError("conclusion current Latin differs")
+                            english = [row for row in value.get("translations") or [] if row.get("lang") == "en" and row.get("source_id") == source["source_id"]]
+                            if len(english) != 1 or _oration_endings.sha(english[0].get("text") or "") != source["source_text_sha256"]:
+                                raise ValueError("conclusion current English witness differs")
                     except (ValueError, KeyError, TypeError, OSError) as error:
                         raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
                 if key == "name_execution_source_coverage":
@@ -2200,6 +2334,17 @@ def validate_liturgical_public_data(
                         raise ReleaseError(f"{label} {_address(trail)}: {error}") from error
                 visit_execution(item, trail + (key,), mass_key)
     visit_execution(payload)
+    if (isinstance(payload, dict) and payload.get("schema") == "triptych-propers-structure/v1"
+            and payload.get("calendar") == "postconciliar"
+            and parts == ("structure", "propers", "postconciliar.json")):
+        try:
+            import _source_local_actor_sequences
+            if actor_sources is None:
+                actor_sources = _source_local_actor_sequences.load_sources(ROOT / "src/sources/calendars", "postconciliar")
+            if actor_seen != set(actor_sources):
+                raise ValueError("finite source-local actor descriptors are missing")
+        except (ValueError, KeyError, TypeError, OSError) as error:
+            raise ReleaseError(f"{label}: {error}") from error
     if not reader_metadata and isinstance(payload, dict) and "name_execution_source_coverage" in payload and len(name_seen) != 2:
         raise ReleaseError(f"{label}: finite name coverage disagrees with actual separate source domain")
     if not reader_metadata and isinstance(payload, dict) and "execution_source_coverage" in payload:

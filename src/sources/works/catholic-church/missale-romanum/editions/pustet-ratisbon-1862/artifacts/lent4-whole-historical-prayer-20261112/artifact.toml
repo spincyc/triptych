@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-whole-historical-prayer-20261112"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Underlying1862 prayer and conventional formula are public domain by publication date; modern1970 rubric supplies execution relation only, not public text."
+provenance = "Direct full image inspection1862 AP756 printed[86] on2026-11-12; no historical long cue expansion."
+transformation = "Join printed line wraps and render printed ae ligatures as ae letter pairs. Preserve all prayer words, stress accents and pointing in the retained review transcription, including the actual complete Per Dominum cue; no conclusion expansion or substitution."
+retrieved = "2026-11-12"
+sha256 = "4725b909f5f92ab24db66e19be94794423d786a6d09f78d7ff2625f2288d9800"
+byte_size = 229
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-whole-historical-prayer-20261112/latin.txt"
+indexable = true
+encoding = "utf-8"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"]

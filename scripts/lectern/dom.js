@@ -227,7 +227,8 @@ function read(root) {
     }
     if (node.nodeType === 1) {
       const names = node.classList.names;
-      if (names.includes('visually-hidden') || node.hasAttribute('hidden')) return;
+      // Browser buttons are operated through the terminal's own chooser.
+      if (names.includes('visually-hidden') || names.includes('source-local-actor-controls') || node.hasAttribute('hidden')) return;
       const inner = {
         tags: trail.tags.concat(node.localName),
         classes: trail.classes.concat(names),
@@ -236,9 +237,10 @@ function read(root) {
       if (node.dataset && node.dataset.cycle) inner.classes.push('cycle-' + node.dataset.cycle);
       // The browser closes routine translation research by default. The
       // terminal's Study asks the same owner for an explicitly open disclosure.
-      if (node.tagName === 'DETAILS' && names.includes('translation-apparatus') &&
-          !node.hasAttribute('open')) {
-        inner.classes.push('translation-apparatus-closed');
+      const apparatus = ['translation-apparatus', 'source-citation-apparatus', 'source-local-actor-quotation']
+        .find((name) => names.includes(name));
+      if (node.tagName === 'DETAILS' && apparatus && !node.hasAttribute('open')) {
+        inner.classes.push(apparatus + '-closed');
         const summary = node.children.find((child) => child.tagName === 'SUMMARY');
         if (summary) walk(summary, inner);
         current = null;

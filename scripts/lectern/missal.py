@@ -70,7 +70,7 @@ def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary") -> Ink:
         if (("stanza" in names and "stanza" in previous_block) or
                 ("passage" in names and "passage" in previous_block)):
             ink.line()
-        action = "is-action" in names
+        action = "is-action" in names or "source-local-actor-action" in names
         gloss = "is-gloss" in names
         rubric = "is-rubric" in names and block.get("tag") != "summary"
         if action or gloss or rubric:
@@ -114,7 +114,7 @@ def blocks(ink: Ink, items: list[dict], *, accent: str = "$primary") -> Ink:
             previous = names
         if action or gloss or rubric:
             ink(" ]", "italic $text-muted" if gloss else "italic $rubric")
-        if "translation-apparatus-closed" in block.get("classes", []):
+        if {"translation-apparatus-closed", "source-local-actor-quotation-closed"} & set(block.get("classes", [])):
             ink("  (d Study)", "$text-muted")
         ink.line()
         previous_block = block.get("classes", [])

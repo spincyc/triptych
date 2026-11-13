@@ -1,0 +1,12 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.lent-2-wednesday-vespers-prayer-20261112"
+edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888"
+artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.ia-scan-pdf-0fb25ed4"
+artifact_sha256 = "0fb25ed41ef8781118d910b8e3609f456000905096d5882789d410fe9baa1c71"
+locus = "Infra Hebdomadam II Quadragesimae, Feria Quarta, Ad Magnificat Oratio Deus innocentiae restitutor et amator; printed 155–156, PDF183–184"
+artifact_page_ranges = [[183, 184]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-12"
+context = "Wednesday heading is at printed 155 right top. On printed 156 the Benedictus prayer is followed by Ad Magnif. and its Oratio. The complete Deus innocentiae prayer starts lower left, continues upper right, and ends Per Dominum before the explicit Thursday heading. The complete petition and its context were directly read independently by researcher and source reviewer."
+notes = "Every petition word and its order agrees with the 1962 Lent II Wednesday Oratio super populum body whose SHA-256 is 678a6859acd215df004643f63a80b46a21c0e6232716c498f1f05087a2976369; accents, ligatures and punctuation differ, so no byte identity is asserted. This supplies the historical prayer-to-locus relation for the weekday Vespers prayer named in SRC 2682 ad 45. It is later than 1831 and does not establish wording in a particular 1831 printing. The abbreviated Per Dominum does not itself print a full conclusion. Any 1962 application requires separate current-source and rubrical adjudication."

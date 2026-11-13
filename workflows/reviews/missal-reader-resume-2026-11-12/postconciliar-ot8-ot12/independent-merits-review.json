@@ -1,0 +1,344 @@
+{
+  "schema": "triptych-independent-finite-oration-merits-review/v1",
+  "date": "2026-11-12",
+  "reviewer": "independent source/whole-expression/English review lane",
+  "independence": "Reviewer authored none of the three candidates and changed no candidate wording. Source images were personally inspected in this review; author conclusions were evaluated as proposals.",
+  "scope": "Exact three Postcommunion bodies, source evidence, whole-expression minor-revision basis, new English fidelity and source-local conclusion. Source metadata/runtime/installation/publication acceptance are outside this review.",
+  "decision": "Three qualified affirmative merits recommendations; no English corrections required; no activation.",
+  "legal_basis": {
+    "jurisdiction": "United States; repository publication analysis, not legal advice or a prayer-specific legal ruling",
+    "governing_repository_policy": "guidance/liturgical-text-publication-policy.md sections1,8,12-14; guidance/sources.md; guidance/missals.md section5; guidance/propers-for-agents.md",
+    "statute": {
+      "url": "https://www.copyright.gov/title17/92chap1.html#103",
+      "locus": "17 USC103(b), read via official US Copyright Office; definition of derivative work in101 also inspected",
+      "checked_on": "2026-11-12"
+    },
+    "compendium": [
+      {
+        "url": "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf",
+        "path": ".scratch/modern-ordinarytime-orations/ot8-ot12/copyright-compendium-ch300.pdf",
+        "sha256": "363f7898364800c62b7a8457133955df3884cf5950510abaffecf656bd39c37d",
+        "edition": "Third Edition,2021-01-28",
+        "read_loci": "311.2,printed15-16;313.4(C),printed28"
+      },
+      {
+        "url": "https://www.copyright.gov/comp3/chap700/ch700-literary-works.pdf",
+        "path": ".scratch/modern-ordinarytime-orations/ot8-ot12/copyright-compendium-ch700.pdf",
+        "sha256": "7a01186c055fd8ba6226c11b6d6c84ee78a1ecf8625d82fcd9a6b383ef497a8f",
+        "edition": "Third Edition,2021-01-28",
+        "read_loci": "709.3 and709.4,printed13-14"
+      }
+    ],
+    "test_applied": "Separate the complete preexisting expressive prayer from the alleged new expression; evaluate the combination of revisions as a whole for nontrivial original expression. No numerical threshold, token-percentage safe harbor, automatic lexical-change prohibition, or rule that every unchanged theological proposition is unprotectable was used. The short-phrase rule alone does not decide any row.",
+    "result_status": "Individualized inference from source comparison under the repository presumption; modern edition rights remain in force for its original matter. No general modern-edition license is claimed.",
+    "search_limit": "The author packet reports bounded old-source searches without an exact old complete changed reading. This reviewer verified the positive source images, not a fresh exhaustive negative search; absence from the tradition is not asserted."
+  },
+  "common_conclusion_review": {
+    "id": "common-conclusion-review",
+    "source_local_rule": "Secondary digital2002 IGMR89, entire article at AP24 of artifact0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7, directly image-read. One Postcommunion, three short branches and a distinct people Amen are stated.",
+    "rule_image": ".scratch/modern-ordinarytime-orations/ot8-ot12/secondary2002-igmr89-ap24.png",
+    "rule_image_sha256": "9806e425d4e0a2d80a7b071db6cbf78ab1a2b30edde043bf81f42008a123d836",
+    "proposed_rule_record": ".scratch/oration-endings/modern-rule/formula-catalog/proposed-igmr89.toml",
+    "proposed_rule_record_sha256": "5e009e0bf52d7b56fdfbb6aa6f7c244386d3eb565b91a19aa98693bf517fb70a",
+    "recipient_decisions": [
+      {
+        "target": "ot-8/main/Prayer after Communion/all/1",
+        "decision": "Father short branch. Complete petition addresses Domine and divine mercy, has no final Son reference or direct Son address, and the exact comparison prints Per Christum."
+      },
+      {
+        "target": "ot-11/main/Prayer after Communion/all/1",
+        "decision": "Father short branch. Complete petition addresses Domine, has no Son reference at its end or direct Son address, and the exact comparison prints Per Christum."
+      },
+      {
+        "target": "ot-12/main/Prayer after Communion/all/1",
+        "decision": "Father short branch. Body and Blood are mentioned at the opening, not a final mention of the Son activating the relative branch. The complete prayer addresses Domine and ends with the redemption petition; it does not directly address the Son. Its exact comparison prints Per Christum."
+      }
+    ],
+    "formula_source": "Lasance/Walsh revised1945, printed217, retained pages.pdf derivative page1, SHA d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8; complete actual page directly inspected.",
+    "formula_latin": "Per Christum Dominum nostrum.",
+    "formula_english": "Through Christ our Lord.",
+    "response": "R. Amen.",
+    "response_decision": "The source prints a separate response glyph before Amen in both languages. R. is the candidate plain-text marker for that response; Amen is not silently merged into the priest formula.",
+    "historical_cues": {
+      "ot-8": "per.",
+      "ot-12": "per.",
+      "ot-11": "Per Dominum."
+    },
+    "comparison_cues": {
+      "ot-8": "Per Christum.",
+      "ot-12": "Per Christum.",
+      "ot-11": "Per Christum."
+    },
+    "assembly_decision": "Accepted as an explicitly attributed source-local study assembly from a complete separately witnessed formula. It is not an expansion asserted to be printed in Feltoe/Pustet or a composite historical-human translation.",
+    "primary1970_role": "Entire IGMR32 across AP31-32/printed34-35 also image-read; it corroborates historical rules only. It is not a bridge authenticating2002/2008 or the prayer bodies.",
+    "catalog_sha256": "277b689e7d0875c70b7ba09732cc37c5d979c3b8ba91736b8bbd3ed3ebdeb7f4"
+  },
+  "targets": [
+    {
+      "identity": [
+        "ot-8",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "candidate_path": ".scratch/modern-ordinarytime-orations/ot8-ot12/candidates.json",
+      "candidate_sha256": "c2588cac4dbfa8303718b217367345db1ec7fa7b69ce316895d37bd5ecfa12e3",
+      "latin_sha256": "965afcd29dd137e8775e8f2efcbc7dd893d64bdf530cfa8e31513a2fc11f1076",
+      "english_sha256": "724354a748dcf5dc2cc3adfd1d38a6da75833f1cfdd13667402f80e0db6d3cf5",
+      "historical_complete_text_with_cue_sha256": "20a0fadaad8251c293c9aa310dff55196085fc9702c97962666c0198074885f3",
+      "secondary_comparison_body_sha256": "9001e0a3e56c1936aa9acda85bbe1c7565462de6afcd6b409d0fb83b0b2795f3",
+      "source_body_verdict": "accepted-as-declared-qualified-editorial-candidate",
+      "whole_expression_verdict": "qualified-affirmative-for-exact-complete-expression",
+      "english_verdict": "accepted-as-new-project-study-English;no-correction-required",
+      "historical_locus": "Feltoe1896 AP89–90, printed65–66, XVI Item alia, last prayer continuing top next page",
+      "old_complete_text_with_cue": "Satiati munere salutari tuam Dne misericordiam deprecamur ut hoc eodem sacramento quo nos temporaliter vegetas efficias perpetuae vitae participes per.",
+      "source_transcription_qualification": "Feltoe prints an abbreviation bar over Dne; the packet plain-text Dne is an abbreviation representation, not a facsimile glyph transcription. The candidate expands the vocative to Domine. Its lowercase per. remains a source cue, not an independently complete conclusion.",
+      "source_delta_check": [
+        {
+          "kind": "word-order",
+          "old": "hoc eodem sacramento quo nos temporaliter vegetas",
+          "comparison": "hoc eodem quo nos temporaliter vegetas sacramento"
+        },
+        {
+          "kind": "word-order",
+          "old": "efficias perpetuae vitae participes",
+          "comparison": "perpetuae vitae participes efficias"
+        },
+        {
+          "kind": "lexical-addition",
+          "word": "benignus",
+          "position": "immediately before efficias",
+          "meaning": "graciously / as one who is gracious; modifier of the addressed giver"
+        }
+      ],
+      "prior_english_disposition": {
+        "mass": "ot-8",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "175b26612224f38f02da2538180a532d1e8d324fa8c022f25433bc7a5c50b62a"
+        ],
+        "note": "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "conclusion_review_ref": "common-conclusion-review",
+      "limits": [
+        "Affirmative independent body/source/English merits recommendation only; Root adoption, source-record review and actual consumer verification remain separate. No canonical mutation or approval activation occurred in this review.",
+        "The ordinary exact-old-witness route is not satisfied: these are declared editorial selections, not verbatim old prayers or an assertion that every lexical difference is orthographic.",
+        "Comparison reaches only the exact secondary digital2002 artifact. Neither authenticated printed2002 nor complete2008 identity, current territorial authority, liturgical approval or recitation authorization is established.",
+        "Keep each whole old source, its actual abbreviated cue, the exact comparison and editorial changes recoverable. Never substitute a different historical body silently in this modern slot.",
+        "Retain prior approved-English no-exemplar or rights-withheld records and all quarantine fingerprints as distinct, durable decisions. Fresh project study English does not supersede those decisions about another expression.",
+        "This conclusion extends to no other target, wording, ordering, conclusion, source, translation or surface by analogy. Changed bodies need an immutable successor and renewed review."
+      ],
+      "source_findings": [
+        "Viewed complete Feltoe1896 AP89/printed65 and AP90/printed66, including the prayer crossing the page boundary and the apparatus. The final prayer under XVI Item alia begins Satiati at the foot of AP89 and ends participes per. at the top of AP90; it is not the next Auxiliare prayer.",
+        "The printed main text includes ut. AP90 note1 says Muratori and Ballerini omit ut; neither the note nor either alternative is silently selected.",
+        "Viewed the complete secondary2002 AP274 heading DOMINICA VIII and its continuation AP275, where the full Postcommunion and Per Christum cue occur before DOMINICA IX. The packet comparison agrees at word level and records its accent/ligature normalization."
+      ],
+      "whole_expression_reason": "The old whole sentence already supplies the complete architecture and its distinctive contrast: having received the saving gift, an appeal to mercy asks that the very sacrament sustaining temporal life make its recipients participants in perpetual life. Moving sacramento around its relative clause and efficias after its complement leaves that expression intact. Benignus is a real predicative addition, but it gives the same invoked merciful giver a routine graciousness qualification at the same requested act. The coordinated terminal cadence and changed placement have been assessed together: they neither replace the old contrast with another rhetorical design nor develop an additional image or clause. They remain conventional local adjustments to the preexisting expressive sentence. On this exact evidence I find a defensible nonoriginal-minor-revision basis, not merely a high similarity score or an atomized claim that individual words are free.",
+      "strongest_contrary": "A modern editor could argue that delaying sacramento and bringing benignus efficias to the end creates a deliberate new cadence, with benignus contributing an actual shade of meaning. Originality has a low threshold, and no complete pre1931 witness for this exact altered reading has been found within the packet search boundary. That is a genuine adverse consideration, but intentional editing and alternative word orders alone do not supply new protectable expression. Here the specific conventional qualification and routine local inversions leave the inherited sentence and its expressive contrast substantially untransformed. This is a narrow review judgment, not a legal ruling or a general license for added epithets.",
+      "english_findings": [
+        "Filled with the saving gift preserves the completed reception of satiati munere salutari; it does not turn the participle into a request to be fed.",
+        "We implore your mercy preserves the address and supplication; the imperative graciously make us renders the dependent petition idiomatically without changing its agent or beneficiaries.",
+        "This very sacrament by which you sustain us in this life preserves the instrumental and relative relation; sharers in everlasting life preserves participes perpetuae vitae. Graciously expressly carries benignus rather than dropping the reviewed addition."
+      ],
+      "bounded_alternative_if_Root_declines": "The exact Feltoe whole old prayer remains independently usable as that historical source, with its source cue and independently justified study translation. It cannot be installed silently as the changed secondary2002 body. Alternatively obtain affirmative rights or a complete independently witnessed old occurrence of the precise changed expression."
+    },
+    {
+      "identity": [
+        "ot-12",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "candidate_path": ".scratch/modern-ordinarytime-orations/ot8-ot12/candidates.json",
+      "candidate_sha256": "c2588cac4dbfa8303718b217367345db1ec7fa7b69ce316895d37bd5ecfa12e3",
+      "latin_sha256": "876c5dbcf544df2efbeb0e77cf2486144830b243a57ed7713822a808bc5fb3a7",
+      "english_sha256": "a4a69d845629704462d486980d5c9c7bebd49481d1d09e62f7c7c2ca0e04fc4f",
+      "historical_complete_text_with_cue_sha256": "23fdfbc99a0854f43b515887c3bd213c5cc2297e586a2b224c41309694119efc",
+      "secondary_comparison_body_sha256": "7b0120e6063d3907584a5cbc54ee2ee32769f08f1a819de2cf16de7a66785523",
+      "source_body_verdict": "accepted-as-declared-qualified-editorial-candidate",
+      "whole_expression_verdict": "qualified-affirmative-for-exact-complete-expression",
+      "english_verdict": "accepted-as-new-project-study-English;no-correction-required",
+      "historical_locus": "Feltoe1896 AP32 printed8, prayer beginning Sacri corporis at lines18–21",
+      "old_complete_text_with_cue": "Sacri corporis et sanguinis pretiosi renovati libamine quaesumus Dne clementiam tuam ut quod frequenti devotione gerimus certa redemptione capiamus per.",
+      "source_transcription_qualification": "Feltoe prints an abbreviation bar over Dne; the packet plain-text Dne is an abbreviation representation, not a facsimile glyph transcription. The candidate expands the vocative to Domine. Its lowercase per. remains a source cue, not an independently complete conclusion.",
+      "source_delta_check": [
+        {
+          "kind": "noun-substitution-and-word-order",
+          "old": "renovati libamine",
+          "comparison": "alimonia renovati",
+          "meaning": "old libamen denotes a sacramental draught/offering; modern alimonia emphasizes nourishment"
+        },
+        {
+          "kind": "word-order",
+          "old": "quod frequenti devotione gerimus",
+          "comparison": "quod gerimus devotione frequenti"
+        }
+      ],
+      "prior_english_disposition": {
+        "mass": "ot-12",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2016",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 17,
+        "verified_printed_page": "17",
+        "verified_heading": "TWELFTH SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+        "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+        "quarantined_text_sha256": [
+          "20f2af0f053a80c16ea101f9c1b04c116a44487bbcd866dcbbc333b05cc43830"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "conclusion_review_ref": "common-conclusion-review",
+      "limits": [
+        "Affirmative independent body/source/English merits recommendation only; Root adoption, source-record review and actual consumer verification remain separate. No canonical mutation or approval activation occurred in this review.",
+        "The ordinary exact-old-witness route is not satisfied: these are declared editorial selections, not verbatim old prayers or an assertion that every lexical difference is orthographic.",
+        "Comparison reaches only the exact secondary digital2002 artifact. Neither authenticated printed2002 nor complete2008 identity, current territorial authority, liturgical approval or recitation authorization is established.",
+        "Keep each whole old source, its actual abbreviated cue, the exact comparison and editorial changes recoverable. Never substitute a different historical body silently in this modern slot.",
+        "Retain prior approved-English no-exemplar or rights-withheld records and all quarantine fingerprints as distinct, durable decisions. Fresh project study English does not supersede those decisions about another expression.",
+        "This conclusion extends to no other target, wording, ordering, conclusion, source, translation or surface by analogy. Changed bodies need an immutable successor and renewed review."
+      ],
+      "source_findings": [
+        "Viewed complete Feltoe1896 AP32/printed8, reading Sacri corporis through capiamus per. and the surrounding prayers. Note3 reports manuscript renobati; the declared 1896 printed main text reads renovati.",
+        "Viewed complete secondary2002 AP277 carrying DOMINICA XII and AP278 carrying its full Postcommunion before DOMINICA XIII. The comparison reads alimonia renovati and quod gerimus devotione frequenti, with Per Christum cue."
+      ],
+      "whole_expression_reason": "The complete old prayer supplies the reception-and-renewal opening, appeal to divine clemency and antithesis between recurring ritual celebration and secured redemption. Alimonia changes the instrumental noun from sacramental draught/offering to nourishment; that lexical and semantic distinction is acknowledged, not normalized away. In this particular sentence, however, it remains an ordinary sacramental-food designation governed by the same Body-and-Blood genitives and modifying the same renovati. Moving the participle after that instrument and rearranging gerimus/devotione frequenti preserves the old linked construction. Assessed as a whole, these revisions do not develop the food term into a new comparison, add an image to the redemption petition, or recast the inherited coordination. I find the changes conventional and minor in expression, despite their real semantic nuance. The affirmative basis is the complete old composition plus that individualized judgment, not a rule that single-noun changes are always free.",
+      "strongest_contrary": "Alimonia can deliberately foreground nourishment where libamen foregrounds a draught or offering, and in a brief prayer even one word can make an original expressive change. The rearranged opening could therefore be alleged to be a newly fashioned presentation of eucharistic renewal. This is the strongest of the three adverse cases. It does not prevail here because the new noun functions as a routine direct label within the unchanged old instrumental phrase; the rest of the expressive coordination, including the devotion/redemption contrast, is inherited complete. The record supports a qualified affirmative under the repository presumption, not certainty that a court would decide the same way.",
+      "english_findings": [
+        "Renewed by the nourishment preserves both renovati and the changed alimonia; sacred Body and precious Blood preserve the two attributed genitives.",
+        "We ask your kindness, Lord is a direct rendering of quaesumus clementiam tuam and retains the divine addressee.",
+        "Receive as sure redemption what we celebrate with frequent devotion is somewhat close and formal English, but defensibly expresses the result of receiving the thing celebrated. It keeps quod as the object of capiamus, retains the celebrative sense of gerimus and the devotion/redemption contrast. It does not add an automatic assurance independent of the petition. No mandatory wording correction is warranted."
+      ],
+      "bounded_alternative_if_Root_declines": "Feltoe supplies a complete old libamine prayer that can be presented and translated under its own historical identity. That is a positive source route but not a silent replacement for the alimonia candidate. A precise old whole alimonia witness or affirmative permission would reopen the changed-body route."
+    },
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "candidate_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/candidate-v2.json",
+      "candidate_sha256": "c4e9157c94576a0863871ffc8df0393ad0dcc18c722e1dd1083fe508b86060a3",
+      "superseded_candidate_path": ".scratch/modern-ordinarytime-orations/postcomm_early/prepared/ot11/candidate.json",
+      "superseded_candidate_sha256": "5ae191172259e919c442027e33daaffb61f4d4dc38fd231e3fa3e70102f7aa36",
+      "successor_scope_check": "Independently compared top-level fields. Complete old source, comparison, Latin and English are unchanged; v2 changes conclusion binding metadata and proposed source/postimage contracts only. The source/body judgment therefore applies to v2 exact hashes.",
+      "latin_sha256": "cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736",
+      "english_sha256": "6ac80aaf2dc748ea904714aa07c6b707868f1f1d77c6a1642f33e24bd3980374",
+      "historical_complete_text_with_cue_sha256": "6b83bd9feb29acfcad144c04afe2199173a635cabe098090a52de51202fb635d",
+      "secondary_comparison_body_sha256": "d6a69cd72b5f5c2491de018dc8015a0f059f12ccafb6ca712cdeb23c146f7cb5",
+      "source_body_verdict": "accepted-as-declared-qualified-editorial-candidate",
+      "whole_expression_verdict": "qualified-affirmative-for-exact-complete-expression",
+      "english_verdict": "accepted-as-new-project-study-English;no-correction-required",
+      "old_complete_text_with_cue": "Hæc tua, Dómine, sumpta sacra commúnio, sicut fidélium in te uniónem præsignat: sic in tua Ecclésia unitátis, quæsumus, operétur efféctum. Per Dóminum.",
+      "source_findings": [
+        "Viewed complete Pustet1862 AP731/printed[61] with heading Missa ad tollendum Schisma and AP732/printed[62]. The Postcommunion at the top left of AP732 belongs to that preceding Mass, before the new Missa pro quacumque Necessitate heading; its whole petition ends effectu[m] and Per Dominum.",
+        "The packet correctly retains the old in tua Ecclesia and parenthetic quaesumus. Old and comparison share the complete two-part sicut/sic expression linking sacramental sign and ecclesial effect.",
+        "Viewed secondary2002 AP276 heading DOMINICA XI and complete AP277 Postcommunion before DOMINICA XII. Its in Ecclesia tua, omission of quaesumus and Per Christum cue agree with the packet."
+      ],
+      "source_delta_check": [
+        "Remove the parenthetic old quaesumus, which does not change the predicate or petition.",
+        "Move old in tua Ecclesia to in Ecclesia tua; retain the same noun and possessive, case and referent.",
+        "Normalize accents/ligatures and punctuation as explicitly declared; no new petition word supplied.",
+        "Replace the printed old Per Dominum cue with independently witnessed complete short conclusion and separately marked response; this is a declared source assembly, not a claim of contiguous old printing."
+      ],
+      "whole_expression_reason": "The whole old prayer already states the distinctive relationship: the received communion signifies faithful union in God and is asked to effect unity in the Church. Removing the formulaic parenthetic quaesumus does not create a new relation or eliminate the petition, which remains in operetur. Moving the adjacent possessive tua around Ecclesia is a conventional Latin alternative with the same referent and relation. Considered jointly, this is a routine smoothing of the inherited paired construction, not a newly composed abridgment or a fresh coordination of source fragments. The separate conventional short ending also contributes no new expressive arrangement of the petition. A finite affirmative is defensible without claiming literal identity or relying merely on the small number of changed tokens.",
+      "strongest_contrary": "The deleted parenthesis and revised possessive placement can be described as editorial compression improving a short prayer cadence, and an abridgment can be original even when its words are old. Here the deletion is an interchangeable conventional entreaty, the subjunctive request remains, and no original selection of substantive matter or alteration of the paired rhetorical relation results. The combination stays within minor editorial variation. No conclusion about another deletion, an added clause or a reordered sequence follows.",
+      "english_findings": [
+        "This sacred communion of yours that we have received renders haec tua sumpta sacra communio. Sumpta is unfolded as a relative clause without introducing another agent or object.",
+        "May ... bring about unity in your Church renders unitatis operetur effectum as a petition for achieved unity, not merely symbolic unity.",
+        "Just as it signifies the union of the faithful in you preserves sicut/sic and both kinds of union. Moving the comparison after the principal English request preserves its logical relation. Signifies is defensible for praesignat here as sacramental prefiguration/signification; the Latin does not require adding a separate future event in this study rendering."
+      ],
+      "prior_english_disposition": {
+        "mass": "ot-11",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "rights-withheld",
+          "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+          "surfaces": [
+            "corpus-data",
+            "public-git",
+            "command-line",
+            "download"
+          ]
+        },
+        "rights": "permission",
+        "witness": "fdlc-mystagogy-2016",
+        "source_id": "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion",
+        "witness_artifact_id": "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2016-collect-and-prayer-after-communion.combo-col-pac-78b-ordinary-trinity-13",
+        "verified_on_page": "2026-08-26",
+        "verified_artifact_page": 15,
+        "verified_printed_page": "15",
+        "verified_heading": "ELEVENTH SUNDAY IN ORDINARY TIME / Prayer after Communion:",
+        "verified_url": "https://fdlc.org/wp-content/uploads/2026/05/ComboColPaC78b_ORDINARY_Trin-13_SPI2016.pdf",
+        "quarantined_text_sha256": [
+          "6a80adab4158f81ac915d34128e3a062621c446282afb7eefe66582f970dd705"
+        ],
+        "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "conclusion_review_ref": "common-conclusion-review",
+      "metadata_followup": "OT11 v2 still proposes its context rule through1970 IGMR32. That cannot by itself govern the secondary2002 prayer. This review independently verifies the same-artifact IGMR89/AP24 branch and accepts the candidate conclusion on that source-local relation. The later metadata packet should bind that exact rule and this finite recipient decision explicitly before any activation.",
+      "bounded_alternative_if_Root_declines": "The whole Pustet prayer and its printed Per Dominum cue remain a positive historical witness. A historical presentation can retain them, but no changed historical body may silently fill the secondary2002 slot.",
+      "limits": [
+        "Affirmative independent body/source/English merits recommendation only; Root adoption, source-record review and actual consumer verification remain separate. No canonical mutation or approval activation occurred in this review.",
+        "The ordinary exact-old-witness route is not satisfied: these are declared editorial selections, not verbatim old prayers or an assertion that every lexical difference is orthographic.",
+        "Comparison reaches only the exact secondary digital2002 artifact. Neither authenticated printed2002 nor complete2008 identity, current territorial authority, liturgical approval or recitation authorization is established.",
+        "Keep each whole old source, its actual abbreviated cue, the exact comparison and editorial changes recoverable. Never substitute a different historical body silently in this modern slot.",
+        "Retain prior approved-English no-exemplar or rights-withheld records and all quarantine fingerprints as distinct, durable decisions. Fresh project study English does not supersede those decisions about another expression.",
+        "This conclusion extends to no other target, wording, ordering, conclusion, source, translation or surface by analogy. Changed bodies need an immutable successor and renewed review."
+      ]
+    }
+  ],
+  "verification": {
+    "hash_receipt": ".scratch/modern-ordinarytime-orations/finite-review/hash-checks.json",
+    "hash_receipt_sha256": "01fe6a774b117fee9c503c1dfe7cd0008eed263051f34e7aaf5e9bdb25eb85a7",
+    "file_pin_count": 24,
+    "body_hashes": "All exact Latin, English, old and comparison hashes recomputed; passed.",
+    "visual_inspection": "Complete identified old pages, complete secondary2002 prayer pages and preceding headings, complete source-local IGMR89, full1970 rule pages and full Lasance217 independently viewed.",
+    "not_run": "Canonical validation, runtime projection, browser/CLI review, publication acceptance and source-record-schema approval intentionally excluded from this merits lane."
+  },
+  "changed_resources": [
+    ".scratch/modern-ordinarytime-orations/finite-review/ only"
+  ],
+  "canonical_writes": false,
+  "approval_activation": false
+}

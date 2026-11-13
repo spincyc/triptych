@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-orations-20261112-easter7-collect-text"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-orations-20261112-easter7-collect"
+artifact_sha256 = "132f98c3e2a75e7cd1f98e49e77458890c2b49221a006b906df3b1e7dc0f06b2"
+locus = "easter7-collect/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Adesto, Domine, supplicationibus nostris, ut sicut humani generis Salvatorem consedere tecum in tua maiestate confidimus, ita usque ad consummationem saeculi manere nobiscum, quemadmodum est pollicitus, sentiamus. Per."
+transcription_segments = [{line = 1, text = "Adesto, Domine, supplicationibus nostris, ut sicut humani generis Salvatorem consedere tecum in tua maiestate confidimus, ita usque ad consummationem saeculi manere nobiscum, quemadmodum est pollicitus, sentiamus. Per."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 5e0fe8abf00b9e99158fb77a963beac3a2e28ba9d6a8991e129ec029e50f44eb. Controlling complete page passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-orations-20261112-easter7-collect-page. The entire old Ascension prayer already joins supplications, belief that the Savior shares the divine majesty, his abiding with us to the consummation of the age, and his own promise, in this sequence. The modern changes reorder the invocation, add a conventional graciousness qualifier and explicit pronouns, replace confidence with belief and a synonymous promise construction, and remove the seated predicate. The whole finite revised expression requires review; retaining common themes alone is not a sufficient basis. Old Ascension and modern Easter7 appointments are distinct."

@@ -1,0 +1,71 @@
+{
+  "schema": "triptych-root-ending-locator-metadata-amendment/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root",
+  "decision": "accept-exact-one-passage-metadata-successor-and-four-source-control-rebindings",
+  "handoff": {
+    "path": ".scratch/oration-endings/review-1/osp/metadata-successor/handoff.json",
+    "sha256": "11a8586959511d254e4316cd75fb04072652554612a4216a341e6fb52f618f96"
+  },
+  "independent_review": {
+    "path": ".scratch/oration-endings/review-4/osp/1946-metadata-successor/review.json",
+    "sha256": "1ab98421b1bac342147a817a700720c2f6a9c301d2d85fa05107afcbaa57f17a"
+  },
+  "root_work": [
+    "Read complete handoff and exact correction rationale. Independently rehashed and parsed both passage files; the sole changes remove invalid physical_line_ranges and replace locus with exact JSON keys/fields while retaining original printed/PDF pages.",
+    "Independently rehashed unchanged nonindexable artifact manifest and complete formula JSON, and the independent full-graph review receipt."
+  ],
+  "accepted_after": {
+    "path": ".scratch/oration-endings/review-1/osp/metadata-successor/postimages/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+    "sha256": "4573c1e567b9da2e0b925f0800f189c77f915d3a162d4388eef5648f44d57e6a"
+  },
+  "source_control_scope": [
+    {
+      "target": [
+        "holy-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "language": "en",
+      "formula_key": "who-with-thee"
+    },
+    {
+      "target": [
+        "holy-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "language": "la",
+      "formula_key": "who-with-thee"
+    },
+    {
+      "target": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "language": "en",
+      "formula_key": "through-our-lord"
+    },
+    {
+      "target": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "language": "la",
+      "formula_key": "through-our-lord"
+    }
+  ],
+  "limits": "No validator relaxation, indexability change, prayer/formula/body/public-descriptor change or additional ending-merits decision. Preserve all original reviews; final merged control indexes, actual producer and native consumers still need validation.",
+  "canonical_writes": false,
+  "runtime_activation": false
+}

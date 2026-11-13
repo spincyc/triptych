@@ -1,0 +1,252 @@
+{
+  "schema": "triptych-loreto-recovery-companion-independent-review/v1",
+  "status": "pass-with-existing-baseline-failures",
+  "reviewer": "/root/modern_common_appointments/common_universe/olm_doctors_virgins",
+  "root_commit": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "manifest": {
+    "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/manifest.json",
+    "sha256": "d0608ccfb054ee45511ef23d5a6febb94f1bd580eb9ad531fce9f95c19cb06b5",
+    "byte_size": 2597
+  },
+  "proposal_patch": {
+    "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/proposal.patch",
+    "sha256": "8d6e206c8d10f8011602de365ace57e5fb592ae42efb359c518d97f8bb6cbcca",
+    "byte_size": 10115
+  },
+  "reviewed_files": [
+    {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/package/src/sources/inventories/postconciliar-sanctoral-commons-v1.toml",
+      "sha256": "b5dd0abf24845d3cde049156af340eded8d87eb90dfd3550bac6a8724ced76e0",
+      "byte_size": 116951
+    },
+    {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/package/tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+      "sha256": "5edf209c81b00dfaaa5427698d6d2b9ed369f5dcb5e883e3887b24c72bda18fe",
+      "byte_size": 20060
+    }
+  ],
+  "source_html": {
+    "path": ".scratch/modern-nonseasonal-orations/marian/loreto2019.html",
+    "sha256": "9c6e192689f8f226eb41da1b04fa52b9aac12b708a1e858443d5f87e241daff2",
+    "byte_size": 19994
+  },
+  "source_statement_review": {
+    "read_actual_held_html": true,
+    "statement_metadata": [
+      "IN MISSALE ROMANUM",
+      "Die 10 decembris",
+      "Beatae Mariae Virginis de Loreto",
+      "De Communi beatae Mariae Virginis",
+      "Collecta"
+    ],
+    "scope": "Finite Missal heading, date, Common referral and following Collect heading only; no new source acquisition or prayer-fidelity finding."
+  },
+  "source_metadata_dependencies": [
+    {
+      "path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/work.toml",
+      "sha256": "6137fe0354ce2312933c79ca785ccc3a835cb794e8c6e14b7ebaaaace79e6a08",
+      "byte_size": 504
+    },
+    {
+      "path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/edition.toml",
+      "sha256": "79824541f32ae4a6b159cbb0a20956bd21e89ccb011512bcfc39d451a96ab0ec",
+      "byte_size": 697
+    },
+    {
+      "path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/passages/missal-appointment.toml",
+      "sha256": "49e4ea8727fc1c7e4c472be0dd78f48551f92658943185c18c63adef42df2679",
+      "byte_size": 1074
+    },
+    {
+      "path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/passages/own-collect-held.toml",
+      "sha256": "e417688990ab02b5617fb51842a9c848adc4e1fd1fa7e49fa510198465225e9e",
+      "byte_size": 1115
+    },
+    {
+      "path": ".scratch/modern-nonseasonal-orations/marian/installation-v2/source-drafts/src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/artifacts/official-html-9c6e1926/artifact.toml",
+      "sha256": "cabbbdd492aa3c98e381a7049cde9265a9ce6b301997c2a0d1fa61aecfc0c672",
+      "byte_size": 1072
+    }
+  ],
+  "v5": {
+    "path": ".scratch/modern-nonseasonal-orations/marian/installation-v4/loreto-structural-correction-v5.json",
+    "sha256": "29238031824f70a77a2321790ce14def93ec8315554d5c759e14ab85d79b5602",
+    "byte_size": 21043
+  },
+  "v6": {
+    "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/loreto-structural-correction-v6.json",
+    "sha256": "2d28c37f898099ce0f9a2576b4fd0d0847a164147c21b6bc59f04c3fbc9629da",
+    "byte_size": 21119
+  },
+  "v6_changes": {
+    "sole_substantive_change": "english_ledger_plan.current_untranslated_rows_after now exactly equals gap_after",
+    "administrative_changes": [
+      "revision",
+      "supersedes_packet_sha256"
+    ],
+    "all_mass_source_refusal_and_latin_tombstone_data_preserved": true
+  },
+  "patch_scope": [
+    "recovery inventory",
+    "owning inventory test"
+  ],
+  "preservation": {
+    "all_167_old_rows_identical_as_values_and_raw_blocks": true,
+    "old_witness_entries_unchanged": true,
+    "antiphonary_helper_source_bytes_unchanged": true,
+    "all_old_derived_rows_unchanged": true,
+    "three_prior_english_gaps_preserved_in_proposal": true,
+    "three_latin_tombstones_unchanged": true,
+    "packet_v5_martha_report_root_index_canonical_files_unchanged": true
+  },
+  "source_and_recipient_guards": {
+    "seven_mutations": [
+      {
+        "field": "common_from.source_id",
+        "refused": true
+      },
+      {
+        "field": "common_from.scope",
+        "refused": true
+      },
+      {
+        "field": "common_from.locus",
+        "refused": true
+      },
+      {
+        "field": "common_from.options",
+        "refused": true
+      },
+      {
+        "field": "mass.key",
+        "refused": true
+      },
+      {
+        "field": "mass.registry",
+        "refused": true
+      },
+      {
+        "field": "mass.date",
+        "refused": true
+      }
+    ],
+    "loreto_rejected_by_antiphonary_path": true,
+    "source_label": "official-missal-annex / loreto-2019",
+    "scope": "missal-antiphons only; broader lawful choices explicitly unresolved",
+    "no_default_or_common_form_chosen": true,
+    "no_body_authority_or_complete_2008_claim": true
+  },
+  "independent_tests": {
+    "baseline": {
+      "tests": 7,
+      "failures": [
+        "PostconciliarSanctoralCommonsInventoryTest.test_held_ordo_evidence_keeps_precedence_over_common_direction (mass='saint-george-martyr')",
+        "PostconciliarSanctoralCommonsInventoryTest.test_held_ordo_evidence_keeps_precedence_over_common_direction (mass='saint-jerome-emiliani')",
+        "PostconciliarSanctoralCommonsInventoryTest.test_inventory_is_exact_current_note_recovery"
+      ],
+      "errors": []
+    },
+    "candidate": {
+      "tests": 9,
+      "failures": [
+        "PostconciliarSanctoralCommonsInventoryTest.test_held_ordo_evidence_keeps_precedence_over_common_direction (mass='saint-george-martyr')",
+        "PostconciliarSanctoralCommonsInventoryTest.test_held_ordo_evidence_keeps_precedence_over_common_direction (mass='saint-jerome-emiliani')",
+        "PostconciliarSanctoralCommonsInventoryTest.test_inventory_is_exact_current_note_recovery"
+      ],
+      "errors": []
+    },
+    "focused_new_tests": {
+      "tests": 2,
+      "failures": [],
+      "errors": []
+    },
+    "no_new_failures_or_errors": true,
+    "baseline_disagreements": [
+      {
+        "mass": "saint-jerome-emiliani",
+        "only_disagreement": "wrong_edition_evidence",
+        "stored": true,
+        "derived": false
+      },
+      {
+        "mass": "saint-george-martyr",
+        "only_disagreement": "wrong_edition_evidence",
+        "stored": true,
+        "derived": false
+      }
+    ]
+  },
+  "reused_overlay_receipt": {
+    "pin": {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/overlay-validation.json",
+      "sha256": "562fbdab8f2cd6ded482173c1f4a0fade0731a021a07241747a2eca1f20c8159",
+      "byte_size": 1100
+    },
+    "scope": "Reviewed pinned prior in-memory full-overlay receipt; not rerun or claimed as installed validation by this reviewer."
+  },
+  "blocking_findings": [],
+  "nonblocking_findings": [
+    {
+      "kind": "inherited-test-failures",
+      "detail": "The baseline and candidate both fail only the same three test/subtest cases, caused by the preserved Jerome/George wrong_edition_evidence disagreements. This bounded companion does not repair them and does not claim the full inventory suite is green."
+    },
+    {
+      "kind": "inherited-wording-scope",
+      "location": "v6 mass_after.notes, final sentence (unchanged from v5)",
+      "detail": "The sentence saying the partial-formulary gap includes unrepresented reading appointments can blur the typed missal-formulary scope, which src/sources/calendars/README.md explicitly excludes from Lectionary options. The separate disclosure that reading appointments remain unrepresented is accurate; this is an inherited wording qualification, not a companion regression.",
+      "candidate": {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/loreto-structural-correction-v6.json",
+        "line": 89,
+        "sha256": "2d28c37f898099ce0f9a2576b4fd0d0847a164147c21b6bc59f04c3fbc9629da"
+      },
+      "prior": {
+        "path": ".scratch/modern-nonseasonal-orations/marian/installation-v4/loreto-structural-correction-v5.json",
+        "line": 89,
+        "sha256": "29238031824f70a77a2321790ce14def93ec8315554d5c759e14ab85d79b5602"
+      },
+      "governing_scope": {
+        "path": "src/sources/calendars/README.md",
+        "line": 761,
+        "sha256": "5aa7de5cb58b1e8d38a997d9db90e08c392da19ffbdf832735d5300601712766"
+      }
+    }
+  ],
+  "limits": [
+    "The recovery inventory remains metadata and is not a resolver input. The underlying v6 structural correction and five source records are coordinated integration dependencies.",
+    "No canonical write, package mutation, staged change, commit, generator, network acquisition, or delegation performed.",
+    "Only the owning inventory suite and focused seven guard mutations were independently replayed; no broad test suite or complete-source-graph rerun."
+  ],
+  "execution_receipt": {
+    "command": "PYTHONDONTWRITEBYTECODE=1 .scratch/root/venv/bin/python .scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/check.py",
+    "working_directory": "repository root",
+    "python_version": "3.14.10",
+    "python_executable": ".scratch/root/venv/bin/python",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1"
+    },
+    "executed_script_sha256": "7c6c381a9760d1954d425a040b857ef11539132d73674041a21b8d684bef64b1",
+    "current_reproducer": {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/check.py",
+      "sha256": "4269be620452c3e1f078623e623e0be816e4a3df2ad5dde6d77a40571ccd8452",
+      "byte_size": 16422
+    },
+    "logs": [
+      {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/cold_loreto_baseline.txt",
+        "sha256": "e3bf09ed52c4f2bf37cf5704ad04b4643cde795438b549a33d90076c4045954a",
+        "byte_size": 3134
+      },
+      {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/cold_loreto_candidate.txt",
+        "sha256": "3208383196c2c4e9e83c1647b121aed31e5381cb679d2686f7eb89cbaf9d28d3",
+        "byte_size": 3448
+      },
+      {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/cold_loreto_candidate-focused.txt",
+        "sha256": "7ec4cdeac2609823d6c0d274d6c362de9b27cbe407c1bf47928ff80816b0460c",
+        "byte_size": 101
+      }
+    ],
+    "post_replay_changes": "Only this review report and the review script received the inherited wording finding; command/environment receipt metadata was then added. Frozen packet, canonical files and tests were unchanged; tests were not repeated."
+  }
+}

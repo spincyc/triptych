@@ -1,0 +1,335 @@
+{
+  "scope": "Independent cold review of the Martha Lectionary recovery successor against the actual merged Martha+Loreto stage",
+  "review_date": "2026-11-13",
+  "status": "accepted within bounded recovery-only scope",
+  "findings": [],
+  "owning_tests": {
+    "run": 16,
+    "failures": 0,
+    "errors": 0
+  },
+  "independent_controls": [
+    {
+      "name": "actual missing martha-title-authority file",
+      "result": "refused",
+      "message": "invalid correction evidence: missing martha-title-authority"
+    },
+    {
+      "name": "changed martha-title-authority source bytes",
+      "result": "refused",
+      "message": "invalid correction evidence: changed source record martha-title-authority"
+    },
+    {
+      "name": "actual missing martha-book-boundaries file",
+      "result": "refused",
+      "message": "invalid correction evidence: missing martha-book-boundaries"
+    },
+    {
+      "name": "changed martha-book-boundaries source bytes",
+      "result": "refused",
+      "message": "invalid correction evidence: changed source record martha-book-boundaries"
+    },
+    {
+      "name": "old-recipient-title",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha current recipient identity or unreviewed selection"
+    },
+    {
+      "name": "renamed-key",
+      "result": "refused",
+      "message": "invalid correction evidence: missing or duplicate Martha recipient"
+    },
+    {
+      "name": "changed-registry",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha current recipient identity or unreviewed selection"
+    },
+    {
+      "name": "changed-date",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha current recipient identity or unreviewed selection"
+    },
+    {
+      "name": "missing-recipient",
+      "result": "refused",
+      "message": "invalid correction evidence: missing or duplicate Martha recipient"
+    },
+    {
+      "name": "duplicate-recipient",
+      "result": "refused",
+      "message": "invalid correction evidence: missing or duplicate Martha recipient"
+    },
+    {
+      "name": "changed-reading",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha unchanged five historical reading nodes"
+    },
+    {
+      "name": "gospel-alternatives-swapped",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha unchanged five historical reading nodes"
+    },
+    {
+      "name": "missing-held-role",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha five held Missal roles"
+    },
+    {
+      "name": "wrong-held-source",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha held role or body authority Entrance Antiphon"
+    },
+    {
+      "name": "held-body-injected",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha held role or body authority Entrance Antiphon"
+    },
+    {
+      "name": "held-default-injected",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha held role or body authority Entrance Antiphon"
+    },
+    {
+      "name": "mass-common-from",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha current recipient identity or unreviewed selection"
+    },
+    {
+      "name": "mass-takes-from",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha current recipient identity or unreviewed selection"
+    },
+    {
+      "name": "mass-default",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha current recipient identity or unreviewed selection"
+    },
+    {
+      "name": "mass-forms",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha current recipient identity or unreviewed selection"
+    },
+    {
+      "name": "mass-authority",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha held Missal-formulary boundary"
+    },
+    {
+      "name": "contract source_title changed to Saints Martha, Mary, and Lazarus",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha historical reading contract"
+    },
+    {
+      "name": "contract recipient_title changed to Saint Martha",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha historical reading contract"
+    },
+    {
+      "name": "contract source_scope changed to missal-formulary",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha historical reading contract"
+    },
+    {
+      "name": "contract raw_common_heading changed to De Communi sanctorum.",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha historical reading contract"
+    },
+    {
+      "name": "contract raw_common_heading changed to De Communi martyrum.",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha historical reading contract"
+    },
+    {
+      "name": "contract artifact_page changed to 353",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha historical reading contract"
+    },
+    {
+      "name": "contract entry_number changed to 608",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha historical reading contract"
+    },
+    {
+      "name": "contract proper_gospel_cue changed to ",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha historical reading contract"
+    },
+    {
+      "name": "missing semantic dependency martha-ordo",
+      "result": "refused",
+      "message": "invalid correction evidence: missing Martha source records"
+    },
+    {
+      "name": "missing semantic dependency martha-annex",
+      "result": "refused",
+      "message": "invalid correction evidence: missing Martha source records"
+    },
+    {
+      "name": "missing semantic dependency martha-decree",
+      "result": "refused",
+      "message": "invalid correction evidence: missing Martha source records"
+    },
+    {
+      "name": "missing semantic dependency martha-book-boundaries",
+      "result": "refused",
+      "message": "invalid correction evidence: missing Martha source records"
+    },
+    {
+      "name": "missing semantic dependency martha-title-authority",
+      "result": "refused",
+      "message": "invalid correction evidence: missing Martha source records"
+    },
+    {
+      "name": "martha-book-boundaries artifact_page_ranges altered",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha complete annex boundary"
+    },
+    {
+      "name": "martha-book-boundaries locus altered",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha title and book-boundary evidence martha-book-boundaries"
+    },
+    {
+      "name": "martha-title-authority edition_id altered",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha title and book-boundary evidence martha-title-authority"
+    },
+    {
+      "name": "martha-title-authority states altered",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha title and book-boundary evidence martha-title-authority"
+    },
+    {
+      "name": "martha-annex storage altered",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha title and book-boundary evidence martha-book-boundaries"
+    },
+    {
+      "name": "martha-decree sha256 altered",
+      "result": "refused",
+      "message": "invalid correction evidence: Martha title and book-boundary evidence martha-title-authority"
+    },
+    {
+      "name": "conflicting old prose markers cannot override semantic Martha evidence",
+      "result": "derivation unchanged"
+    },
+    {
+      "name": "expected-output false flags changed to true",
+      "result": "derivation unchanged"
+    },
+    {
+      "name": "unused contract output flags cannot grant authority",
+      "result": "derivation unchanged"
+    }
+  ],
+  "output": {
+    "rows": 168,
+    "exact_staged_inventory_match": true,
+    "wrong_edition_count": 8,
+    "martha_scope": "lectionary-readings",
+    "martha_authority_and_resolution_flags_false": true,
+    "martha_wrong_edition_flag_false": true,
+    "all_other_rows_unchanged": true
+  },
+  "frozen_inputs": {
+    "test_sha256": "13315af4600c50e066ad7353d790b24023f59806ae926e1e42a6e0ef16866dbe",
+    "contract_sha256": "4a7f0a1e261e7fc699c5964c4b9ccd726840956956e93b3face3edd8ff17a125",
+    "script_sha256": "ccab4f798378d119b369c063590331ec8f47071b4717a3f22dd19c5bf183a2ce",
+    "owner_validation_sha256": "40af410fea0def3b545dcb9057d1d4c8f894593bec112e103aeadc4a7fac47ec",
+    "olm_source_review_sha256": "2235c3a7dfb98ed73a01c620676953c5c7abb870131d33c3e196e92c61b9790b",
+    "calendar_stage_sha256": "923d1cd2d9973302e45f9a9406458961f28be9f804ccc40a76a17bffe540e8c6",
+    "inventory_stage_sha256": "b5dd0abf24845d3cde049156af340eded8d87eb90dfd3550bac6a8724ced76e0"
+  },
+  "staged_input_pins": [
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "sha256": "923d1cd2d9973302e45f9a9406458961f28be9f804ccc40a76a17bffe540e8c6"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "41dc1f7dc4a0e839b5ce91ac8e87d7b9d68d30ff012b3410f4fb1e0a10f6cddc"
+    },
+    {
+      "path": "src/sources/inventories/postconciliar-sanctoral-commons-v1.toml",
+      "sha256": "b5dd0abf24845d3cde049156af340eded8d87eb90dfd3550bac6a8724ced76e0"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/2010-english-icel-antiphonary/artifacts/antiphonary-pdf/artifact.toml",
+      "sha256": "0a749a245f1ee3ce1d8d3250d91742503065e9d1dee8eed6dfb065181f9d9dc8"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/artifacts/ia-facsimile-pdf-76809791/artifact.toml",
+      "sha256": "d03397a307ea78b8247f3cdc4513169600b09088939813ff4617017cc88a12dc"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/edition.toml",
+      "sha256": "710c2a5b1475926c735a5f3ccf2ca352e83ea12f9fef22b535eb16c1f97c53dc"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/postconciliar-george-collect-comparison-20261023.toml",
+      "sha256": "0ce496c4cd134f4a4bb74fcb201910a07c7e3c106659e33a5ea94ccf32603fdf"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/postconciliar-jerome-emiliani-collect-comparison-20261023.toml",
+      "sha256": "8b0f4db31fa16f8f0ffdd8fc3d408414c868d78d63c099f09f9e9365cf57cc52"
+    },
+    {
+      "path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/artifacts/internet-archive-scan-pdf-ed4bc14e/artifact.toml",
+      "sha256": "6aed43b819e64d5a1fa8ba0356764210278fb0167e6eefaf1f80522c477ea51d"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/artifacts/official-annex-pdf-f7820b29/artifact.toml",
+      "sha256": "b6d74c3e8e4ec977378ad794caff59992feb5201546da7695bbc810f819dd334"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/artifacts/official-decree-html-7bd7579e/artifact.toml",
+      "sha256": "818a30f638566fe04eacb6abb860a9e591133c154071d16ed62d5188bdfcbd60"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/book-boundaries.toml",
+      "sha256": "dc6b868de0213ecfc8e59ee2c31a874d50556f25cd0ff5e918a0cccae2bca48f"
+    },
+    {
+      "path": "src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/decree-calendar-and-annex-authority.toml",
+      "sha256": "3a1c626fba8d6e1d191b5c447161ba700ac26771b0215f6a24ef29f7502ae3c6"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml",
+      "sha256": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/postconciliar-antecedent-orations-en/artifact.toml",
+      "sha256": "5fba87e7d02ebdc15ba28d777a9b3b38bcdd9e20cc141c477f8378cf00a1b324"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/edition.toml",
+      "sha256": "a6a946e4c1f7b470392972302a03036b151260f728ffe8a26d683f0493af7466"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/publish--postconciliar-antecedent--pc-113.toml",
+      "sha256": "6cfb262dbef65c33a30086b79db1c1e9741687e71cef83bb9843f995828b2a46"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/publish--postconciliar-antecedent--pc-116.toml",
+      "sha256": "0d9f16c999e9d3754c88f8fde12ab3fdafd1f78fc44de9dafdc39ffbefffa676"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--postconciliar-antecedent--pc-113.toml",
+      "sha256": "7db11f8215d0ce39c78269acaaf52888731ba2ec6ea526e70d2b020fd7553dc4"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--postconciliar-antecedent--pc-116.toml",
+      "sha256": "2b89fcbbf3524b2fb3a91dc4ab5c4af434690cf45478ddaabdf61df43b6cc0e1"
+    },
+    {
+      "path": "src/sources/works/holy-see/inscription-beatae-mariae-virginis-de-loreto-2019/editions/vatican-bulletin-2019-10-31/artifacts/official-html-9c6e1926/artifact.toml",
+      "sha256": "cabbbdd492aa3c98e381a7049cde9265a9ce6b301997c2a0d1fa61aecfc0c672"
+    }
+  ],
+  "source_review_attribution": "The separate OLM source reader directly reviewed AP352. This code-review lane read that metadata report and the pinned accepted 2021 source metadata; it claims no new page-image transcription.",
+  "assessment": "The historical S. Marthae heading remains separate from the three-saint 2021 recipient. Exact current reading/held-role data and source records are checked before recovering the existing Lectionary-only row. The Hours cue cannot become a Missal Common or fallback. No prayer body, English activation, current-2008 correspondence, default, or resolution is added.",
+  "old_accepted_semantic_fix_and_review_unchanged": true,
+  "staged_inputs_unchanged_after_run": true,
+  "hardlinks_created": false,
+  "canonical_or_staged_mutation": false
+}

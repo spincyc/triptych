@@ -29,6 +29,7 @@ import _missal_coverage  # noqa: E402
 import _oration_execution  # noqa: E402
 import _name_execution  # noqa: E402
 import _oration_endings  # noqa: E402
+import _source_local_actor_sequences  # noqa: E402
 import _proper_qualified_latin  # noqa: E402
 from _psalms import (  # noqa: E402
     PSALMS,
@@ -525,13 +526,57 @@ def unavailable_translation_states(proper: dict) -> list[dict]:
     ]
 
 
+# The public metadata of these already admitted OLM acclamations names their
+# historical text carrier. The unresolved whole scan remains private evidence.
+# This finite projection supplies no body, source or publication authority.
+LASANCE_ACCLAMATION_PUBLIC_CARRIER = (
+    "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945."
+    "acclamations-historical-latin-20261112"
+)
+LASANCE_ACCLAMATION_PUBLIC_BODIES = frozenset({
+    ("passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-dies-sanctificatus-historical-latin-20261112",
+     "1f7e9e52b87aea04b1fbd3d7de15bce31c1c4971b7a489a7cd4dbf272d93a797"),
+    ("passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-surrexit-christus-historical-latin-20261112",
+     "3038efc01f0f7b132cc7d03b53fff17d7d2e7b3a0950dc8e7243295de4b87e12"),
+    ("passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-surrexit-christus-historical-latin-20261112",
+     "25f2a27baa91440142ef50d70e6fe88c5052b07a75fb740d6c785cd10b17bc1f"),
+    ("passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.acclamation-veni-sancte-spiritus-historical-latin-20261112",
+     "c2911d568be5dd806f0a75b7b2bafd0858b31e7e82caececcf55342e93ced8b0"),
+})
+
+
+def public_latin_source_metadata(latin: dict) -> dict:
+    """Project only the exact admitted acclamation carrier/body combinations."""
+
+    publication = latin.get("publication") or {}
+    provenance = latin.get("provenance") or {}
+    source = provenance.get("source_id")
+    body_hash = latin.get("text_sha256")
+    if (publication.get("status") == "permitted"
+            and publication.get("basis") == "public-domain"
+            and provenance.get("status") == "collated"
+            and provenance.get("relationship") == "editorial-projection-exact-to-target"
+            and isinstance(source, str) and isinstance(body_hash, str)
+            and (source, body_hash) in LASANCE_ACCLAMATION_PUBLIC_BODIES
+            and publication.get("source_ids") == [
+                LASANCE_ACCLAMATION_PUBLIC_CARRIER, LASANCE_1945_PAGE_ARTIFACT]):
+        return {**latin, "publication": {
+            **publication, "source_ids": [LASANCE_ACCLAMATION_PUBLIC_CARRIER],
+        }}
+    return latin
+
+
 def public_latin_state(latin: dict, target: str) -> dict:
     """Collapse an unavailable Latin audit to a neutral public state."""
+
+    if (_proper_qualified_latin.finite_postconciliar.claims_public(latin)
+            and _proper_qualified_latin.finite_postconciliar.public_scope(latin) is None):
+        raise ValueError("source-based finite Latin public metadata lacks exact admission")
 
     if not latin.get("withheld") and latin.get("state") != "unavailable":
         publication = latin.get("publication") or {}
         if publication.get("basis") != "qualified-nonoriginal-adaptation":
-            return latin
+            return public_latin_source_metadata(latin)
         # The full comparison proof remains source-owned. An assembled prayer
         # carries only its exact normalized controller and public qualification.
         provenance = latin.get("provenance") or {}
@@ -541,7 +586,8 @@ def public_latin_state(latin: dict, target: str) -> dict:
             return {
                 "text_sha256": latin["text_sha256"],
                 "provenance": {"status": "collated", "source_id": scope["source_id"],
-                               "relationship": "editorial-projection-exact-to-target"},
+                               "relationship": scope.get("relationship", "editorial-projection-exact-to-target"),
+                               **{key: scope[key] for key in ("source_date", "provenance_confidence") if key in scope}},
                 "publication": {
                     "status": "permitted", "basis": publication["basis"],
                     "surfaces": list(publication.get("surfaces") or []),
@@ -549,6 +595,7 @@ def public_latin_state(latin: dict, target: str) -> dict:
                     "notice": scope["notice"],
                 },
                 "withheld": False, "reason": None,
+                **({"note": scope["note"]} if "note" in scope else {}),
             }
         return {"target": target or "Proper", "state": "unavailable",
                 "held": False, "available": False, "withheld": True}
@@ -1496,7 +1543,8 @@ def spans_in(entry: dict, source: str, target: str) -> list[dict]:
 
 
 def citation_structure(
-    entry: dict, source: str, tokens: dict[str, str], divergences: dict | None = None
+    entry: dict, source: str, tokens: dict[str, str], divergences: dict | None = None,
+    owner_source: str | None = None,
 ) -> dict:
     """A citation with its verses resolved for every way an edition is addressed.
 
@@ -1525,6 +1573,9 @@ def citation_structure(
         "loci": {},
         "unresolved": None,
     }
+    role = _calendars.citation_reading_role(entry, owner_source)
+    if role:
+        structure["reading_role"] = role
     if book == PSALMS:
         structure["numbering"] = source
     if structure["token"] is None:
@@ -3444,6 +3495,14 @@ def carry_translations(
             witness = (witnesses or {}).get(source_id) or {}
             if source_id or str(witness.get("label") or "").strip():
                 item["source_label"] = str(witness.get("label") or source_id)
+            if (recorded.get("relation") in _missal_coverage.QUALIFIED_STUDY_RELATIONS
+                    and item.get("lang") == "en"
+                    and item.get("rights") == "project-created" and not source_id):
+                # A project-owned English adaptation does not establish that
+                # its entire Latin basis is public domain. Preserve the typed
+                # source relation for coverage; the exact caution stays below.
+                item["relation"] = recorded["relation"]
+                item["source_label"] = "Triptych study translation · qualified source basis"
             cautions = []
             for caution in (
                 witness.get("caution"),
@@ -3531,6 +3590,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
     name_sources = (_name_execution.load_name_sources(root, calendar, owner)
                     if mass_keys is None or mass_keys & {key[0] for key in _name_execution.TARGETS} else {})
     conclusion_sources = _oration_endings.load_sources(root, calendar, owner)
+    actor_sources = _source_local_actor_sequences.load_sources(root, calendar, owner)
     joined_orations = oration_relations(root, calendar)
     overlay, untranslated, stale, witnesses = (
         translation_overlay(calendar, root) if source_keys is None
@@ -3606,7 +3666,7 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
             def cited(owner: dict) -> list[dict]:
                 numbering = owner.get("psalm_numbering") or inherited
                 return [
-                    citation_structure(entry, numbering, tokens, divergences)
+                    citation_structure(entry, numbering, tokens, divergences, owner.get("source") or carried.get("source"))
                     for entry in (owner.get("verses") or [])
                     if isinstance(entry, dict) and entry.get("ref")
                 ]
@@ -3777,6 +3837,10 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                 built_proper["execution_sources"] = [execution_sources[execution_key]]
             if execution_key in conclusion_sources:
                 built_proper["conclusion_execution"] = [conclusion_sources[execution_key]]
+            if execution_key in actor_sources and not taken_from and [mass["key"], current_form_id] == list(execution_key[:2]):
+                actor = actor_sources[execution_key]
+                built_proper = _source_local_actor_sequences.attach_publication_owners(built_proper, actor)
+                built_proper["source_local_actor_sequences"] = [actor["source"]]
             name_key = (mass["key"], current_form_id, proper["name"], CYCLE_ALL, identity[3])
             if name_key in name_sources:
                 built_proper["name_execution_sources"] = [name_sources[name_key]]
@@ -5712,6 +5776,20 @@ def render_reading(
                   + (f", {taken_from['proper']}" if taken_from.get("proper") else "")
                   + ")")
         texts = select_texts(proper, lang, witness, availability)
+        def print_selected_texts():
+            for body, attribution, note in texts:
+                if body:
+                    print()
+                    if attribution:
+                        print(f"  [{attribution}]")
+                    print("\n".join(wrap(stanza_paragraphs(body, proper), "  ")))
+                if note:
+                    print(f"\n  ({note})")
+        roles = [_calendars.citation_reading_role(entry, proper.get("source"))
+                 for entry in proper.get("verses") or [] if isinstance(entry, dict)]
+        text_first = any(roles) and any(body for body, _, _ in texts)
+        if text_first:
+            print_selected_texts()
         bible_claim_printed = False
         for entry in proper.get("verses") or []:
             if isinstance(entry, dict) and entry.get("ref"):
@@ -5719,7 +5797,15 @@ def render_reading(
                 found = resolved.get(str(entry["ref"])) or {}
                 note = found.get("note")
                 print(f"  {entry['ref']}" + (f"  ({note})" if note else ""))
+                role = _calendars.citation_reading_role(entry, proper.get("source"))
+                if role and role["kind"] == "embedded-quotation" and any(body for body, _, _ in texts):
+                    print("  Scripture reference quoted in the held antiphon; not an additional reading")
+                    continue
                 if found.get("text"):
+                    if role and role["kind"] == "following-psalm":
+                        print("  Following psalm · Bible reconstruction; target Missal wording not established")
+                        print("  Doxology and antiphon repetition are not supplied here")
+                        bible_claim_printed = True
                     if not bible_claim_printed and proper.get("source") in {"scripture", "mixed"}:
                         if proper.get("source") == "mixed" and any(body for body, _, _ in texts):
                             bible_id = str((payload.get("bible") or {}).get("id") or "")
@@ -5743,14 +5829,8 @@ def render_reading(
             ]
             if refs:
                 print(f"  {cycle}: {', '.join(refs)}")
-        for body, attribution, note in texts:
-            if body:
-                print()
-                if attribution:
-                    print(f"  [{attribution}]")
-                print("\n".join(wrap(stanza_paragraphs(body, proper), "  ")))
-            if note:
-                print(f"\n  ({note})")
+        if not text_first:
+            print_selected_texts()
     return 0
 
 

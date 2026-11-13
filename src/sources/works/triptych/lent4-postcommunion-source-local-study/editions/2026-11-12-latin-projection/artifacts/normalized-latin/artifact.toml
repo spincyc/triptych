@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.lent4-postcommunion-source-local-study.2026-11-12-latin-projection.normalized-latin"
+edition_id = "edition.triptych.lent4-postcommunion-source-local-study.2026-11-12-latin-projection"
+artifact_type = "checked-transcription"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Underlying1862 prayer and conventional formula are public domain by publication date; modern1970 rubric supplies execution relation only, not public text."
+provenance = "Complete candidate prepared2026-11-12; independent acceptance is not claimed. Candidate SHA0d3a1a9789062da0651e612996265fcbba84c841720b2b2555133df2343acf6a"
+transformation = "Normalize1862 petition as declared; replace historical cue only in separately attributed source-local1970 execution with separately sourced complete short formula. New English translates complete resulting source-local prayer."
+retrieved = "2026-11-12"
+sha256 = "a8e9742320d98b26db98d2d032aebf90af9e83d2ad7bf92b8fac5986cfc94099"
+byte_size = 317
+path = "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/artifacts/normalized-latin/latin.tsv"
+indexable = true
+encoding = "utf-8"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-whole-historical-prayer-20261112", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112"]

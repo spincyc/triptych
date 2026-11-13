@@ -1,0 +1,383 @@
+{
+  "schema": "triptych-ordinary-eight-durable-evidence-mapping/v1",
+  "status": "scratch-prepared-not-installed",
+  "canonical_writes": false,
+  "source_authority_activated": false,
+  "durable_destination": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight",
+  "prepared_directory": ".scratch/roman-sources/ordinary-exact-upgrades/v2/activation/prepared/workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight",
+  "scope": [
+    "praeparatio/confiteor-sacerdotis",
+    "praeparatio/indulgentiam",
+    "oblatio/suscipe-sancte-pater",
+    "oblatio/in-spiritu-humilitatis",
+    "oblatio/ne-perdas-cum-impiis",
+    "canon/supplices",
+    "canon/per-quem",
+    "communio/agnus-dei"
+  ],
+  "raw_inputs": [
+    {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/handoff.json",
+      "sha256": "85d72649979a50f8455affe05d34174ecd38707facad2b3de3c8c5cbfb1850d4",
+      "bytes": 16481
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/positive-transition-declarations.json",
+      "sha256": "1971f248de657b7101cdafc9809581330385feecbcbf4a6aa179868dfd86d4e1",
+      "bytes": 109685
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/handoff.json",
+      "sha256": "d74249f804f7ed14062fc63f49640780dfbadbe983b59066c2c8296ebb729695",
+      "bytes": 19532
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/positive-transition-declarations.json",
+      "sha256": "479af2166863be876ae6d23b85f4c2c9a073de6da159c449d90f46677895bb63",
+      "bytes": 110084
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/metadata-successor.json",
+      "sha256": "dbdbd383545d53bac4dece35aef515ba83f25b2dcd337f6b6b0e28f22ac06b02",
+      "bytes": 8247
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/hash-transitions.json",
+      "sha256": "409d15e587a83a800d213fba66bfe9e6231cf977b30238c3675bdf21df752312",
+      "bytes": 5710
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/validation-results.json",
+      "sha256": "902bf6deb413fb7b1e339295af99c897ef17d1359118a46e7f77d29ac50450ec",
+      "bytes": 1274
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/review-receipt.json",
+      "sha256": "1ecb0ea5813d575f947b0e79549c561693af560dc13d697980842416d4a5e1cf",
+      "bytes": 15330
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-parser-review/review.json",
+      "sha256": "59169d741bb9bb577dbe8f131374f0907ef10aaf30d012422d0d80b165142f23",
+      "bytes": 18516
+    },
+    {
+      "path": ".scratch/root/ordinary-eight-source-review.json",
+      "sha256": "257de297fdf1c111e70a34a2d56582c97e87ac2e6d166ac60ad1567e964f8242",
+      "bytes": 15495
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/case-1.json",
+      "sha256": "c111ad385e5974f61307cce3eeb4621438bd6949ff737a7b216e61e277c8f5ff",
+      "bytes": 5039
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/case-2.json",
+      "sha256": "655a657b4fd7172384fa7def74feb542785b8492adf3a5389ae53e05115059d1",
+      "bytes": 4152
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/case-3.json",
+      "sha256": "f101f4d033bc3d7404a829f7e8a52c80f2cc83cfa7932ff71e250c9f71710172",
+      "bytes": 4475
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/case-4.json",
+      "sha256": "e3678a2d68bd2b76994a4bcad5b7f446d80782746409b909a1cf0d6f69f4aa06",
+      "bytes": 3928
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/case-5.json",
+      "sha256": "83dd839dd0965bc756f03710302809765b65497e64abfa2c04a66beea44f2fc9",
+      "bytes": 4087
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/case-6.json",
+      "sha256": "99f7ec80f1874e1e5cac01d7b0e26953fceaa6198f833707a8e98eb580d219db",
+      "bytes": 4735
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/case-7.json",
+      "sha256": "1c3a4fc9561114bbd812e15833dedfcf6635ea7262333d98d7eb81429e9f2ea1",
+      "bytes": 3932
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/case-8.json",
+      "sha256": "e1610a08be6d19bd85e46a0f6be16fb34b1ac4128ab633f7775e6d7e7f1b323c",
+      "bytes": 4374
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/metadata-checks-v2.json",
+      "sha256": "e6fed4cf5709c95bf60b907db23c0acdeb8d95c6f821294fa5740b81327c2e32",
+      "bytes": 105906
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/successor-checks.json",
+      "sha256": "1fc338d34894ca44b21cc9638169a512f9dccc462690a61e78ddeff364ee7bc5",
+      "bytes": 8830
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-source-review/metadata-checks-v1.json",
+      "sha256": "7df38f8b2c328b9701fac03276bbc26e4dc45e130d3e1b395fad21fbc17a90ce",
+      "bytes": 103775
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-parser-review/checks.json",
+      "sha256": "77ac1bc55275afe00a9ff462e7f916d7e6a8201ac9eb8372b1e2003e9241dcf9",
+      "bytes": 15832
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-parser-review/review_checks.py",
+      "sha256": "792a9fdb265da5e86e6dbb8e98bb38c56bf736a0492f8304256b40981881fba0",
+      "bytes": 8248
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-parser-review/v2_and_boundaries.py",
+      "sha256": "796e760136c2cd2c900f573af7f217c6dbd2cfaf20542353a930303f649d573e",
+      "bytes": 5779
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-eight-parser-review/v2-checks.json",
+      "sha256": "6cbdcce85de9c09dbaf213f1cc5ca8bb2090b4c1afe0ae9202f45ebc7b44371e",
+      "bytes": 5882
+    }
+  ],
+  "projection_policy": "The repository absolute prefix is removed by an explicit recursive string transform; raw receipt digests are retained. Source-reviewed content is unchanged. Eight case receipts are joined only under the source-review projection and retain their exact original raw pins.",
+  "durable_files": [
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/source-review.json",
+      "sha256": "4af951b7dccd037ff1b0b7d1125d36745f0ebbb518a65967d2977c662e6a1a81",
+      "bytes": 53337
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/parser-review.json",
+      "sha256": "2f54717923f58934e2d310dfc746a12427f11212e88f6eaf00da8605542fcc08",
+      "bytes": 19769
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/root-source-acceptance.json",
+      "sha256": "7592502d6e7c69d0df71e5c6cc717d7154662a0f54acc8ed08081f7756b74d7c",
+      "bytes": 16434
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/positive-transitions.json",
+      "sha256": "956b9e1f3e32fdddb69a286aab23a3923cb6201616fee549211f4c73a9ae9245",
+      "bytes": 110648
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/metadata-successor.json",
+      "sha256": "2a9fb5fe7dcd1c7a6323865f0c2735018d4947c71f6ea9fb8fa359a61df55962",
+      "bytes": 8693
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/raw-evidence-digests.json",
+      "sha256": "04ed9e78cacc92d5828b7190b066c57ce2dbb0c4f86d94046e865d0ad98b5aa0",
+      "bytes": 5647
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/owner.patch",
+      "sha256": "4d551c76fc6894027d6e73f87b0c1d513037fe5c0b4a718f619171df450965a3",
+      "bytes": 35182
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/parser.patch",
+      "sha256": "d518515b2e8878a448ddd5d53a0b3426a8a93a83a2187d1f1c370dfbefba4ff4",
+      "bytes": 8148
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/integration-hunks.json",
+      "sha256": "62df80375bad0ad8ff554793b1977673c339d0eebb3475c3f5870d5a057160c8",
+      "bytes": 12457
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/selected-latin-fixture.json",
+      "sha256": "57083a0c99333e8e8d86be2db11aea2ce1dbce14eed9a9bf408d880b5722841e",
+      "bytes": 29347
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/source-epoch-transition-candidate.json",
+      "sha256": "b0601db78d3566d82df1a45d7962c155e8daca28e204d14f0447176a6ec07aac",
+      "bytes": 45954
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/activation-plan.json",
+      "sha256": "f8c56b242bd4dbb1a0585e47435a1501a661e61d57ebaeba9bd71155a679b178",
+      "bytes": 17545
+    }
+  ],
+  "new_source_operations": [
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/artifact.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/artifact.toml",
+      "sha256": "e4bc7b5486c2be046c9a2d3e0c039884ca51cb74be20c2e93976f693bd047b6b",
+      "byte_size": 2559,
+      "record_type": "artifact",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/text.tsv",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/text.tsv",
+      "sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+      "byte_size": 2144,
+      "record_type": "artifact-payload",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-agnus-dei.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-agnus-dei.toml",
+      "sha256": "e4dd83c6b8e95fd5282ed1225060932f9b28d578a46f035688cdee7649c291b5",
+      "byte_size": 2518,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-confiteor-sacerdotis.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-confiteor-sacerdotis.toml",
+      "sha256": "615008160011e26aa4fc126a9490f8e449fe91f05b282ae41186405ac1cc9438",
+      "byte_size": 3053,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-images.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-images.toml",
+      "sha256": "55c325d8e7ab6019a289f7396a6367906757447dcd4e292c28e92f5af933acb1",
+      "byte_size": 1470,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-in-spiritu-humilitatis.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-in-spiritu-humilitatis.toml",
+      "sha256": "cbdd8ad736f2415600495b231f1d8ea6f1994c558b6d4f02045e2de2d92f0ee3",
+      "byte_size": 2185,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-indulgentiam.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-indulgentiam.toml",
+      "sha256": "09f223ce0072a1a36c6586d13724a2a90f17ba9c76b0426df7970d0c096c4c7c",
+      "byte_size": 2449,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-ne-perdas-cum-impiis.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-ne-perdas-cum-impiis.toml",
+      "sha256": "d491cded90c57b1ee285fc319d76a3c41231875143fa17d94062eba4bb48326a",
+      "byte_size": 2266,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-per-quem.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-per-quem.toml",
+      "sha256": "4991ba0d81a88b3be608632070c962557214b6857b54aede5ddf1ed8587cc5ca",
+      "byte_size": 2063,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-supplices.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-supplices.toml",
+      "sha256": "fe23c64afdb7507210a7f8f2f35c8a8c2716548f4ebd5e6b8f72ecf686196532",
+      "byte_size": 2698,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-suscipe-sancte-pater.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-suscipe-sancte-pater.toml",
+      "sha256": "133fdc29a381af75cef1020da3e4b0d121f67991c1141ada6f9f33ef51c9e4d8",
+      "byte_size": 2760,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    }
+  ],
+  "existing_source_dependencies": {
+    "id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+    "manifest": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+    "manifest_sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116",
+    "whole_pdf_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005"
+  },
+  "raw_fixture": {
+    "native_fixture": {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/activation/fixtures/structure/ordinary/roman-1962.json",
+      "sha256": "ad1cc1ba71bb2aa2d2b67ca72447aa6362fa17b5eaa9add75c28ac6bf76a5f42",
+      "bytes": 830305
+    },
+    "native_shape": "One mass-ordinary calendar structure document; served as structure/ordinary/roman-1962.json.",
+    "raw_show_fixture": {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/after-ordinary.json",
+      "sha256": "2d0063d322b2b7563be2e555fa52647c2b5a77dd85fa03c129a98eef98a5b048",
+      "bytes": 830326
+    },
+    "raw_show_shape": "{\"v\":1,\"ordinary\":[calendar structure]}",
+    "generator": {
+      "parser": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/parser/mass-ordinary",
+        "sha256": "783cd75298c2eed14dcfd023e4dbe5a640d9688bb49fab52966dfa14234526ae",
+        "bytes": 211373
+      },
+      "runner": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/parser/runner.py",
+        "sha256": "d14749ac7df0e05b038bd0448c0a3834b7a4e4e382fbe5b1da2cecf5ff4675e0",
+        "bytes": 358
+      },
+      "source_owner": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+        "sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "bytes": 469403
+      },
+      "argv": [
+        "python3",
+        ".scratch/roman-sources/ordinary-exact-upgrades/parser/runner.py",
+        "structure",
+        "--calendar",
+        "roman-1962",
+        "--root",
+        ".scratch/roman-sources/ordinary-exact-upgrades/v2/validation-root/src/sources",
+        "--out",
+        ".scratch/roman-sources/ordinary-exact-upgrades/v2/activation/fixtures",
+        "--json"
+      ]
+    },
+    "use": "Exact-eight-only candidate fixture for native reader overlay; regenerate after the final OSP/runtime/source merge. Full fixture remains scratch and is not copied as durable evidence."
+  },
+  "excluded_from_durable_copy": [
+    "comparison-24.json",
+    "remaining-sixteen.json",
+    "baseline-24.json",
+    "items.json",
+    "before-ordinary.json",
+    "after-ordinary.json"
+  ],
+  "activation_plan": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/activation-plan.json",
+    "sha256": "f8c56b242bd4dbb1a0585e47435a1501a661e61d57ebaeba9bd71155a679b178",
+    "bytes": 17545
+  },
+  "source_epoch_candidate": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/source-epoch-transition-candidate.json",
+    "sha256": "b0601db78d3566d82df1a45d7962c155e8daca28e204d14f0447176a6ec07aac",
+    "bytes": 45954
+  },
+  "guarded_owner_and_parser_hunks": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/integration-hunks.json",
+    "sha256": "62df80375bad0ad8ff554793b1977673c339d0eebb3475c3f5870d5a057160c8",
+    "bytes": 12457
+  },
+  "derivative_evidence_policy": "Scratch image paths in projected receipts are historical audit locations, not new durable binary payloads. Reproduce from the registered whole Mame/CMAA artifacts, exact artifact SHA, physical page numbers and recorded 200/400 dpi using pdftoppm; all eight case extents and source/target passage locators remain explicit. Existing artifact-store delivery bindings remain controlling."
+}

@@ -1,0 +1,162 @@
+{
+  "schema": "triptych-root-easter-six-study-english-admission/v1",
+  "status": "accepted-finite-source-and-English-merits",
+  "reviewed_on": "2026-11-13",
+  "reviewer": "Codex integration reviewer",
+  "scope": "Exactly six English prayer uses in the pinned proposals; no Latin, appointment, approved-English or exact-2008 admission.",
+  "handoff": {
+    "path": ".scratch/modern-partition-easter/orations-six-root-handoff/handoff.json",
+    "sha256": "079b1a15c0b44508f23aa9e9b1b52e6121558a5f5de0cd4a54a7a82fd483b17a"
+  },
+  "proposals": [
+    {
+      "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/vigil-five-proposal.json",
+      "sha256": "c046154887ae55eec5567aa8efa3c2651766377cb199c92d217669a64929852b",
+      "byte_size": 74280
+    },
+    {
+      "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/easter7-collect-proposal.json",
+      "sha256": "79f270bafd0070b70a3bcccb5faf93150886b5a0e1a47ba90635a375038c1881",
+      "byte_size": 18614
+    }
+  ],
+  "source_files_manifest": {
+    "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files-manifest.json",
+    "sha256": "9838a506954a80062998eee166f7563831e6f53bd02cf3f22d9868e42dafca5a",
+    "byte_size": 15104
+  },
+  "independent_receipts": [
+    {
+      "path": ".scratch/modern-easter-vigil-five-review/review.json",
+      "sha256": "5995436ef59d69a3966bea1236a69b79cd2d18ac3470ced558d54dead81d7d63",
+      "byte_size": 5452
+    },
+    {
+      "path": ".scratch/modern-easter7-collect-review/receipt.json",
+      "sha256": "cf0c237de853e4c4884e8f81f3a39031a012f7f410ccbe453d9e34f501549323",
+      "byte_size": 18478
+    },
+    {
+      "path": ".scratch/modern-easter-six-install-review/receipt.json",
+      "sha256": "47d93acba06d18edfd4aebbc1a1bb045af14c2db848f9d9d768750bf97a6e514",
+      "byte_size": 7741
+    }
+  ],
+  "cases": [
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Second Reading",
+        "all",
+        1
+      ],
+      "english_sha256": "cebc04a250f6dfd0cd3371a05dbd5f4b85870cf9f8dcbcc91af5c425c84f3474",
+      "old_whole_sha256": "daeb30ff688c07ba3f8de62968746f856dc824635defc0cf670fa94d40c73470",
+      "prior_refusal_sha256": "2ae20e99b2d20ab216b9f1ef6ca8aa8cd1a50b182410c4228d657e2d76cc979e",
+      "decision": "accepted as qualified project study English",
+      "basis": "The complete old adoption, Abraham and call-to-grace prayer remains the governing expression. Local phrase movement and the synonymous entrance verb do not introduce a new petition or selection; the full short conclusion is independently witnessed.",
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Transpose fidelium Pater summe to Pater summe fidelium. Move in toto orbe terrarum from immediately after qui to immediately before multiplicas, and transpose orbe terrarum to terrarum orbe. Replace introire with intrare: a real lexical substitution of closely synonymous verbs, not orthography. Normalize jurasti/iurasti, accents, case and pointing. Replace the old abbreviated Per Dominum. cue with the separately witnessed complete short conclusion Per Christum Dominum nostrum. and marked R.Amen. No automatic cue expansion is claimed. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Third Reading",
+        "all",
+        1
+      ],
+      "english_sha256": "e0b1e02213379dd917bc6787caa1b8a3524d252fd361db379204910788910767",
+      "old_whole_sha256": "dde4e6616f4b11ee3524a91f6d9c2bdbba2465195cb62998e5a1c4902664dbf8",
+      "prior_refusal_sha256": "cf1e0bce55433d013ae4ac02572f563eff46c6b6a69b2585d128374c0a7f9204",
+      "decision": "accepted as qualified project study English",
+      "basis": "The complete Red Sea, baptism and Abraham/Israel petition retains its ordered expression. The temporal synonym and explicit Pharaoh reference identify the same events; the latter is a real substitution, not typography. The old adjacent reading is context only.",
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Replace nostris saeculis with nostris temporibus: a real temporal-word substitution. Replace persecutione Aegyptiaca with persecutione Pharaonis: the old Egyptian persecution is specifically attributed to Pharaoh, already named in the immediately preceding whole Exodus reading; not orthography. Normalize cujus/cuius, accents, ligatures and pointing. Unlike the older Gelasian donor, this1862 petition already lacks a further et before in Abrahae. Replace the old abbreviated Per Dominum. cue with the separately witnessed full Per Christum Dominum nostrum. and marked R.Amen. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Third Reading (alternative)",
+        "all",
+        1
+      ],
+      "english_sha256": "8a6cc4eb6ba7e456dd22186e37622d3ca1910ca19cfcabde250546533994a989",
+      "old_whole_sha256": "a601e55a3d62378a4bc74e8eebcabac59606f86d20251e3e9ae01aa7e449fd0c",
+      "prior_refusal_sha256": "e6b8408532607594b244ba2141ed0429f37c56593f47a7481c018cd767a97341",
+      "decision": "accepted as qualified project study English",
+      "basis": "The entire old Pentecost-vigil typological prayer supplies both comparisons and the faith/Spirit petition. Relocating the freed predicate and omitting Egyptian retain that expression. Historical and modern appointments and the changed conclusion stay distinct.",
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Change et liberata plebs ab Aegyptiaca servitute to et plebs a servitute liberata: move liberata, omit Aegyptiaca, and use a instead of ab before the new following consonant. These are disclosed body changes, not an exact old-target match. The1922 old text already has ut et, exsisteret and merito fidei; the earlier1894 wording is not silently combined with it. Replace old abbreviated Per Dominum... in unitate ejusdem. with the separately witnessed complete Per Christum Dominum nostrum. and marked R.Amen. Normalize stress accents, ligatures, case and pointing. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Fourth Reading",
+        "all",
+        1
+      ],
+      "english_sha256": "073239a3db97e5af43555f51aef4c65b1acb848ffcc8af6c3ce62c2cb995e908",
+      "old_whole_sha256": "da3faa06be61bf444eef0f897176af7c6c6029c1cffc1fbdfa59b97e9a908ba6",
+      "prior_refusal_sha256": "985c8e2e618dc70319e795cc6ac7d02a4838b66bf20da68526d06a63d72d3159",
+      "decision": "accepted as qualified project study English",
+      "basis": "The entire increase, adoption and fulfillment prayer supplies every clause. Removing the possessive and intensifying the already stated extent are disclosed local revisions; the faithful English preserves the population meaning of dilata.",
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Replace Ecclesia tua magna jam ex parte with Ecclesia tam magna ex parte iam: remove tua, add tam before magna, and move iam after ex parte. This is a real possessive/intensifier and word-order variant. The1862 text already has in honorem and ex parte; no further insertion is inferred from the older Gelasian reading. Normalize jam/iam, accents and pointing. Replace old abbreviated Per Dominum. with the separately witnessed full Per Christum Dominum nostrum. and marked R.Amen. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested."
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Seventh Reading",
+        "all",
+        1
+      ],
+      "english_sha256": "2e4a5c7dd97f040599204c242361b26a83383ecb1e132b1b5efe5f7f5fa10857",
+      "old_whole_sha256": "8be0e050cfdf6f11a132b0fd25513b6e8183161236265cf8b3cfc4b585e9d036",
+      "prior_refusal_sha256": "7717d98c2c08dd63fc67adf7f73bd7aa3144408260b29adce8b3065b0122b6ed",
+      "decision": "accepted as qualified project study English",
+      "basis": "The complete old salvation/restoration sequence survives. Contracting and relocating the same already named Christ referent and removing two modifiers support a qualified finite adaptation finding. This is the strongest contrary case among the five Vigil prayers, so no general abridgment rule is inferred.",
+      "strongest_contrary_argument": "This is not an exact complete old-target prayer: Omit tuae mirabile after Ecclesiae. The old your/wondrous modifiers are not translated as though retained. Insert Christum after per ipsum, while removing the old concluding explicit identification Dominum nostrum Jesum Christum Filium tuum and abbreviated Qui tecum vivit. The named referent is already supplied in the same complete old prayer; it is relocated and shortened, not independently newly composed theology. The1862 text already has et lumen and tranquillius. Those words do not require synthesis from Gelasian apparatus variants. Use the separately witnessed complete Qui vivit et regnat in saecula saeculorum. conclusion and marked R.Amen, with their old sources declared separately. Normalize dejecta/deiecta, accents, ligatures and pointing. Merely recognizing old words or common formulas would not decide rights in a revised whole arrangement. The proposed finite basis is the complete old prayer preserving the same clauses and narrated/theological referents, with only the specifically identified local revisions and independently old full conclusion. Each unit requires an individual acceptance; no threshold, generic shortness or general centonization ruling is requested."
+    },
+    {
+      "identity": [
+        "easter-7",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "english_sha256": "b91018fda323025df5cc567e417e46431f5256e201512d9eb39a760233c8578f",
+      "old_whole_sha256": "5e0fe8abf00b9e99158fb77a963beac3a2e28ba9d6a8991e129ec029e50f44eb",
+      "prior_refusal_sha256": "68e56c178b27c0f0bb60c415ff522dbc658f28b79e273b4deae3b0f4612d602d",
+      "decision": "accepted as qualified project study English",
+      "basis": "The complete old correlative supplication supplies the same Savior, divine majesty, continuing presence, promise and temporal limit. Removing seated and revising belief, invocation and pronouns are substantive coordinated changes; their routine adaptation of this single expression provides a defensible but only moderate-confidence basis.",
+      "strongest_contrary_argument": "This prayer has several coordinated lexical, syntactic and predicate changes, not merely spelling or one-word correction. The removal of seated, invocation intensifier and explicit pronouns may constitute an editorial arrangement even though each clause has an old antecedent. A decision based solely on70percent coverage or common theological ideas would be invalid. The proposed finite assessment concerns this complete old two-clause supplication whose only actual narrative predicate change is removal of seated, with the same Savior, majesty, abiding, promise and time bound otherwise preserved. No general formula assembly or modern-prayer revision exemption is requested."
+    }
+  ],
+  "rights_assessment": {
+    "policy": "guidance/liturgical-text-publication-policy.md section 1 priority 6",
+    "jurisdiction": "United States",
+    "confidence": "moderate",
+    "nature": "Finite repository editorial assessment, not a judicial determination or holder permission. The old foundations and complete formulas are independently sourced; the entire adapted expressions, including coordinated changes, have been considered individually. No similarity threshold or general old-phrase exemption is applied.",
+    "authorities_reopened_on": "2026-11-13",
+    "primary_authorities": [
+      "https://www.copyright.gov/title17/92chap1.html",
+      "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf"
+    ],
+    "legal_limits": "Sections 101–103 distinguish new authorship from prior material; the Compendium requires qualitative originality even in derivative revisions. These authorities do not decide the status of any named prayer."
+  },
+  "verification": [
+    "Read all six whole old prayers, all six complete English prayers, exact changes, independent source/fidelity findings and strongest contrary cases. Image collation of historical pages is attributed to the independent reviewers.",
+    "Independently verified 55 file hashes/sizes and absent destinations, both complete owner preimages, six exact unavailable rows, source/body/receipt pins and unchanged appointment/Latin scope.",
+    "Read the 43-adverse-case, actual producer and 18-native-combination receipt. Inspected the 320px Vigil Propers and Easter7 Day screenshots."
+  ],
+  "integration_requirements": [
+    "Persist only the reviewed public-safe evidence projection and final actual Root receipt; preserve original research digests.",
+    "Install exact six row replacements and 55 source files through guarded current preimages; no whole-owner overwrite.",
+    "Keep all prior refused approved-English routes and exact2008 absence. Preserve alternative mutual exclusion and Ascension territorial selection.",
+    "Repair the generic reader credit for qualified adaptations: it must not call the complete adapted Latin unconditionally public-domain. Existing detailed qualification remains visible.",
+    "Keep complete conclusions and the separate people response; perform source-epoch and actual combined consumer checks after installation."
+  ],
+  "canonical_writes": false
+}

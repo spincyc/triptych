@@ -1,0 +1,60 @@
+{
+  "schema": "triptych-root-ot11-source-binding-amendment/v1",
+  "reviewer": "Root",
+  "date": "2026-11-13",
+  "decision": "accept exact two English binding field changes and omit exactly four never-installed duplicate Latin carrier files",
+  "proposal": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/ot11-binding-amendment-proposal.json",
+    "sha256": "9c30320a6b8f016134cc2ae53d71396954627f3a9a92a9e899f66883629b74b0"
+  },
+  "independent_review": {
+    "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/review.json",
+    "sha256": "4addbec6b796a4583e5d415e0a844deac3b256c5634e7065195de715fe91f716"
+  },
+  "parent_admission": {
+    "path": ".scratch/root/ordinary-time-six-source-admission.json",
+    "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7",
+    "bytes": 132846
+  },
+  "before_complete_entry_sha256": "253f75406fad2893afde936ebe11fd90ccbbd41f9bef87c25f7e158f14e8c536",
+  "after_complete_entry_sha256": "174444ea8f24db116e8dd6803df4642cb122a51b72a231236a07d330c48e1901",
+  "exact_field_delta": [
+    {
+      "pointer": "/source_latin_passage_id",
+      "before": "passage.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+      "after": "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin"
+    },
+    {
+      "pointer": "/source_latin_publication_source_ids",
+      "before": [
+        "artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "after": [
+        "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ]
+    }
+  ],
+  "omitted_new_file_destinations": [
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/edition.toml",
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/passages/complete-latin.toml"
+  ],
+  "root_review": [
+    "Read complete amendment, original and corrected carrier records, all boundary observations and independent cold review.",
+    "Rehashed proposal/review and every cited independent evidence file; checked exact before/after dictionary difference and full hashes.",
+    "Rehashed four omitted and five unchanged English source files; all nine destinations are absent canonically.",
+    "Compared complete169-byte old/new payloads and unchanged underlying projected_from list; both carriers select the same complete3lines.",
+    "Body, rights, notice, language, oldsource quotation, conclusion, selected Latin row and current2008 limit remain unchanged."
+  ],
+  "scope": "Supersedes only those two fields and four new-file inclusions in parent879b source snapshot. The original snapshot remains immutable evidence, not the final installation map.",
+  "boundaries": [
+    "No canonical deletion, validator change, general same-body alias, new source rights or target-recension promotion.",
+    "Independent56,937-record graph and synthetic-positive binding checks pass; production activation still needs real authority and actual merged producer/native proof.",
+    "Canonical integration window remains separate."
+  ]
+}

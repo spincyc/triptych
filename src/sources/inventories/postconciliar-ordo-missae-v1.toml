@@ -63,7 +63,7 @@ not_decided_here = [
   "The Prefaces, of which the Missal prints fifty; they are proper to the day and belong to the propers layer, not to the invariant frame.",
   "Where a proper stands that this file does not seat. The chants of the Paschal Triduum and the whole of the Good Friday liturgy are left unplaced; a page reading this file must show them in the Missal's own order beside the proper they follow rather than invent a seat for them.",
   "Whether elements carried here at the `uncollated` grade are word-identical with the editio typica. They are carried because the words themselves are attested in a public-domain witness this project has read at a named leaf, never because an older text has been silently relabelled as the target. That is not an established identity and it is not written down as one. At the Pax the study quotes the target versicle but does not establish the response at n. 127; eight Roman Canon children each name the untested extent or configuration that keeps the complete older row uncollated; and the other six state their own exact evidence bounds beside their words. The repository's verified 2002 Ordo evidence plus the official bounded 2008 variation list does not by itself establish all those identities; settling them requires the missing word-level comparisons.",
-  "Whether an antecedent witness's spelling should ever be brought toward the controlling edition's. It is not, anywhere here. The 1861 column prints justum for iustum, Jesu for Iesu, the ae- and oe-ligatures, Et expecto for Et exspecto, and at least one plain misprint - nodie for hodie - and every one of them is carried as printed and named in the element's own note. Smoothing them would manufacture a target witness this project has not established; carrying them silently under a heading naming the editio typica would attribute a lay printer's misprints to the Holy See. Naming them is the only honest third option and it is what this file does.",
+  "Whether an antecedent witness's spelling should ever be brought toward the controlling edition's. It is not, anywhere here. The 1861 column prints justum for iustum, Jesu for Iesu, the ae- and oe-ligatures, Et expecto for Et exspecto, and at least one plain misprint - nodie for hodie - and every one remains in that source artifact. The In spiritu humilitatis selection now names the independently collated 1862 Pustet source; no 1861 artifact byte is repaired. Smoothing them would manufacture a target witness this project has not established; carrying them silently under a heading naming the editio typica would attribute a lay printer's misprints to the Holy See. Naming them is the only honest third option and it is what this file does.",
 ]
 
 # ---------------------------------------------------------------- witnesses
@@ -92,7 +92,7 @@ id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 lang = "la"
 label = "Antecedent Latin (NOT the Missale Romanum's text): the facing Latin column of The Roman Missal translated into the English language for the use of the laity, first revised edition (Philadelphia: Eugene Cummiskey, 1861)"
 rights = "public-domain"
-caution = "NOT the Latin of the Missale Romanum. The controlling 2008 Latin is a work of the Holy See, is under copyright, is not distributable on this surface, and is not served under this witness; no element here claims that the 1861 words are that book's text. The repository does hold and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish every antecedent identity. What is here is the facing Latin column of an 1861 Philadelphia lay hand missal - never an altar book, never an approved liturgical translation, and pre-1955 in its rubrics and its discipline - which prints the ancient prayers this Order of Mass received. It is joined element by element, and only where an element's Latin is that ancient prayer; where the reform composed, recast or rearranged, nothing is carried and the element says why. Its orthography and its misprints are its own and are carried as printed: justum for iustum, Jesu for Iesu, Et expecto for Et exspecto, the ae- and oe-ligatures, and nodie for hodie at In spiritu humilitatis are the 1861 printer's and not the Holy See's. Every element carrying Latin states beside its own words which prayer of that book it is, at which printed page and Internet Archive leaf, which accidents it carries, and whether its identity with the controlling edition has been established or is so far only asserted. Nothing here may be used for recitation."
+caution = "NOT the Latin of the Missale Romanum. The controlling 2008 Latin is a work of the Holy See, is under copyright, is not distributable on this surface, and is not served under this witness; no element here claims that the 1861 words are that book's text. The repository does hold and has read a verified 2002 Ordo witness and the official bounded 2008 variation list, but that evidence does not establish every antecedent identity. What is here is the facing Latin column of an 1861 Philadelphia lay hand missal - never an altar book, never an approved liturgical translation, and pre-1955 in its rubrics and its discipline - which prints the ancient prayers this Order of Mass received. It is joined element by element, and only where an element's Latin is that ancient prayer; where the reform composed, recast or rearranged, nothing is carried and the element says why. Its orthography and its misprints are its own and are carried as printed: justum for iustum, Jesu for Iesu, Et expecto for Et exspecto, the ae- and oe-ligatures, and nodie for hodie in its In spiritu humilitatis row are the 1861 printer's and not the Holy See's. That row remains in the source artifact; the current selection of this prayer independently names Pustet 1862. Every element carrying Latin states beside its own words which prayer of that book it is, at which printed page and Internet Archive leaf, which accidents it carries, and whether its identity with the controlling edition has been established or is so far only asserted. Nothing here may be used for recitation."
 artifacts = [
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-praeparatio-la",
   "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la",
@@ -951,37 +951,16 @@ collation = "uncollated"
 note = "HISTORICAL ENGLISH ANTECEDENT, NOT THE APPROVED ENGLISH OF THIS MISSAL. The English column of the 1861 Philadelphia Cummiskey hand missal, printed pages xxiv, Internet Archive leaves 34, read from the already registered page-checked transcription. The complete English prayer has no Amen. Its facing Latin has the independently recorded nodie misprint; the English remains its own source column and does not repair that Latin. All source spelling, capitals, punctuation, abbreviations and printed cues remain unchanged. UNCOLLATED as English: no identity with the approved 2011 English or complete controlling-2008 wording is claimed; the existing Latin relation and its own collation limits remain separate. This historical study witness is not a text for recitation."
 
 [sections.elements.latin]
-witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ordinarium-oblatio-la"
+witness = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.in-spiritu-humilitatis-la-20261112"
 elements = ["in-spiritu-humilitatis"]
 column = "latin"
 relation = "antecedent"
-collation = "uncollated"
-note = """
-ANTECEDENT, NOT THE CONTROLLING EDITION. The Latin here is the facing column of \
-the 1861 Philadelphia Cummiskey hand missal at its In spiritu humilitatis, \
-printed page xxiv, Internet Archive leaf 34. The Latin of the Missale Romanum, \
-editio typica tertia 2002 with its emended reprint of 2008 is not served here. \
-The repository holds and has read a verified 2002 Ordo witness and the official \
-bounded 2008 variation list, but that evidence does not establish this word \
-identity; these are the 1861 printing's words. THE WITNESS MISPRINTS nodie FOR \
-hodie, and it is carried as printed \
-and not corrected: the letter is an n, with no ascender, read at 200 per cent \
-magnification against the h of hoc on the same page and recorded in the \
-artifact's own transcriber's note. It is that printer's error. Nothing here \
-attributes it to the Missal, and correcting it silently would have manufactured \
-a target witness this project has not established. The visually checked 1862 \
-Pustet page at passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordo-missae-leaf-303 \
-prints hodie and confirms only that the 1861 n is not the older prayer's general \
-reading; it does not establish the postconciliar target. \
-UNCOLLATED: the identity of this text with the controlling edition's is not \
-established here. This repository's study of this Order of Mass states at n. 26, \
-in 00-order-of-mass/sections/40-preparation-of-the-gifts.tex:108-110, that the \
-prayer is taken from the Song of the Three Young Men and is retained from the \
-older Order, and it quotes the 2002 Latin of the opening clause only, as far as \
-suscipiamur a te, Domine. That clause and this witness agree word for word. The \
-rest of the prayer, the misprint among it, has not been compared with anything.
-"""
+collation = "collated"
+target_wording = "word-exact"
+collation_finding = "passage.holy-see.notitiae.volume-58-number-599-2022.desiderio-desideravi-60-in-spiritu-2008-quotation; workflows/reviews/missal-english-completion-2026-10-29/postconciliar/ordinary-in-spiritu-2008-source-admission-2026-11-12.json"
+reading_note = "Latin from Pustet (1862), collated word for word to the complete prayer expressly cited from the 2008 Missal in Desiderio desideravi. Source punctuation is retained; this is not a complete liturgical edition."
+note = "The Latin is independently transcribed from Pustet, Ratisbon 1862, printed p. 218 / complete PDF p. 304 / IA n 303. It reads hodie and contains no Amen. Stress accents are removed, physical wrapping joined and initial small capitals rendered in sentence case; all source words, word order and punctuation remain. The whole prayer agrees word for word, apart from those display conventions and punctuation, with the official Latin Desiderio desideravi 60 quotation, Notitiae 2022 printed p. 53 / PDF p. 55, note 20 expressly citing Missale Romanum (2008), p. 515. The comparison establishes this one complete prayer’s wording, not a complete 2008 exemplar, modern rubrics, chant, liturgical approval or approved English. Cummiskey 1861 remains a separate source: its literal nodie is preserved in its original artifact and in the prior source-selection receipt; no Cummiskey byte is repaired or attributed to Pustet. Historical English retains its existing, independently identified Cummiskey witness and its own uncollated status."
 
 [[sections.elements]]
 key = "lava-me"
@@ -2406,3 +2385,12 @@ default = true
 id = "preparation-perceptio"
 name = "Perceptio Corporis et Sanguinis tui"
 default = false
+
+[[witnesses]]
+id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+lang = "la"
+label = "Historical Latin, Pustet 1862; this prayer collated to an explicit 2008 Missal quotation"
+rights = "public-domain"
+caution = "The independent 1862 Pustet printing supplies the selected prayer. Its complete words agree with the 2008 Missal quotation expressly identified by the Holy See in Desiderio desideravi 60, note 20. Source punctuation is retained and stress accents removed. This verifies only the named prayer, not a complete Ordinary, modern rubrics or an authorized altar book."
+artifacts = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.in-spiritu-humilitatis-la-20261112"]
+

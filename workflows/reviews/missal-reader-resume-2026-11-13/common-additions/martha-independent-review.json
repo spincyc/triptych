@@ -1,0 +1,190 @@
+{
+  "schema": "triptych.martha-2021-independent-combined-review.v1",
+  "date": "2026-11-13",
+  "reviewer": "/root/modern_common_appointments/common_universe",
+  "status": "accepted-for-bounded-source-metadata-and-appointment-review; root-integration-checks-remain",
+  "frozen_integration_manifest": {
+    "path": ".scratch/modern-common-appointments/martha-2021-metadata/integration-manifest.json",
+    "sha256": "42cc4284c034f21d8ce653bb2b51f8b692097631bad87878a747b4b87cf56aaa",
+    "byte_size": 27284
+  },
+  "expected_and_current_root_commit": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "source_review": {
+    "path": ".scratch/modern-common-appointments/martha-2021-independent-review/source-review.json",
+    "sha256": "0800de06759330f14279d1c7ad36fed3a6dd56f0551dd2d390de56de881b3b17",
+    "byte_size": 6601
+  },
+  "independent_metadata_review": {
+    "path": ".scratch/modern-common-appointments/martha-2021-independent-review/metadata/review.json",
+    "sha256": "ba7f87b225a07c9094d6770130f416745a45974ac243545afa9e26cab8420752",
+    "byte_size": 30831
+  },
+  "frozen_byte_receipt": {
+    "path": ".scratch/modern-common-appointments/martha-2021-independent-review/frozen-byte-receipt.json",
+    "sha256": "5e465ee9d5295d8b650fe648a20bf00a0bc266b5e6ffa7333a322c720ef8368a",
+    "byte_size": 20901
+  },
+  "coverage": {
+    "metadata_records_fully_read": 23,
+    "record_types": {
+      "work": 2,
+      "edition": 3,
+      "artifact": 4,
+      "segment": 1,
+      "passage": 13
+    },
+    "source_artifacts_rehashed": 4,
+    "source_page_images_independently_viewed_and_rehashed": 10,
+    "official_decree_html_read_completely": true,
+    "frozen_input_files_rehashed": 50,
+    "source_corrections_required": 0,
+    "metadata_blockers": 0
+  },
+  "accepted_findings": [
+    "The 2021 decree and annex establish five Missal roles for July 29, Saints Martha, Mary, and Lazarus; the complete Missal section contains no Common referral or alternative.",
+    "The annex Lectionary section changes the no. 607 title without supplying a new reading course. All five existing reading nodes, including both Gospel alternatives, remain exactly unchanged.",
+    "The Common referral appears only in the separately headed Liturgy of the Hours section. No Missal Common, forced selection or default is added.",
+    "Latin Collect cue is Qui tecum.; Offerings and Postcommunion cues are Per Christum. No conclusion expansion is supplied.",
+    "The complete one-page U.S. English PDF holds all five units and fully printed English conclusions. Its footer confirms U.S. territory, September 30 2024 and protocol 431/24, with ICEL 2010/2023 notices and no per-slot notice-year allocation.",
+    "The newsletter page 39 reports confirmation and expressly labels its decree translation unofficial. The reported June 14 approval is qualified accordingly. No Martha effective or promulgation date is established, and page 40 dates belong to a different rite.",
+    "The English and Latin antiphon citation differences are retained. No Bible excerpt is substituted for a whole antiphon.",
+    "All 23 metadata destinations and record IDs remain absent at root and current tree. The exact Mass node preimage is unchanged, and all five English tuple keys remain absent from both positive and negative rows.",
+    "The proposal adds only five held-unpublished nodes plus five negative English accounting rows alongside metadata. No body, positive translation, Latin provenance row, full-2008 correspondence or publication grant is supplied."
+  ],
+  "appointment": {
+    "before": {
+      "path": ".scratch/modern-common-appointments/martha-2021-metadata/node-before.json",
+      "sha256": "a7e5a82f328020831909c1b526d79705ded404d1ca63f78c8b73b1f77014b602",
+      "byte_size": 5295
+    },
+    "after": {
+      "path": ".scratch/modern-common-appointments/martha-2021-metadata/node-after-proposed.json",
+      "sha256": "1e094471b1c33df360d82e102989387aa322d613eb037384ed1a2148c5a65f72",
+      "byte_size": 10505
+    },
+    "current_preimage_sha256": "7f52cb446c2b4ccb69c0c617e7c56ea29b4042de9b641c13a2f248df84f08351",
+    "proposed_node_sha256": "65ba7990b273431f21c1430c8487bc7d2c25a679542ff04e8e2a33ab750ad75b",
+    "new_nodes": [
+      "Entrance Antiphon",
+      "Collect",
+      "Prayer over the Offerings",
+      "Communion Antiphon",
+      "Prayer after Communion"
+    ],
+    "existing_readings_preserved_exactly": 5,
+    "no_new_body_or_scripture_substitution": true,
+    "old_reading_choice_data_preserved": true,
+    "identity_fields_preserved": true,
+    "only_mass_fields_changed": [
+      "notes",
+      "propers",
+      "text_status"
+    ],
+    "new_nodes_unavailable_held_unpublished": true
+  },
+  "english_accounting": {
+    "proposal": {
+      "path": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/negative-accounting-proposal.toml",
+      "sha256": "cf7df9081f091f4f072a098682e8016edc36c32036794717cc9e19223c9afd79",
+      "byte_size": 9378
+    },
+    "keys": [
+      {
+        "mass": "saints-martha-mary-lazarus",
+        "form_id": "main",
+        "proper": "Entrance Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en"
+      },
+      {
+        "mass": "saints-martha-mary-lazarus",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en"
+      },
+      {
+        "mass": "saints-martha-mary-lazarus",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en"
+      },
+      {
+        "mass": "saints-martha-mary-lazarus",
+        "form_id": "main",
+        "proper": "Communion Antiphon",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en"
+      },
+      {
+        "mass": "saints-martha-mary-lazarus",
+        "form_id": "main",
+        "proper": "Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en"
+      }
+    ],
+    "absence_checks": [
+      {
+        "scope": "current",
+        "any_positive_entries_for_mass": 0,
+        "any_negative_entries_for_mass": 0,
+        "all_five_exact_tuple_keys_absent": true
+      },
+      {
+        "scope": "root_commit",
+        "any_positive_entries_for_mass": 0,
+        "any_negative_entries_for_mass": 0,
+        "all_five_exact_tuple_keys_absent": true
+      }
+    ],
+    "exact_witness_metadata_bindings_match": true,
+    "all_5_rows_unavailable_rights_withheld": true,
+    "scope": "U.S. confirmed English exemplar metadata only; no positive translation."
+  },
+  "drift": {
+    "packet_preparation_head": "92032f517865220d7ec7019a31b23f8a3217a78e",
+    "root_head": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+    "head_differs": true,
+    "calendar_at_preparation": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+    "calendar_current": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+    "calendar_file_changed": false,
+    "english_overlay_at_preparation": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+    "english_overlay_current": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+    "english_overlay_file_changed": false,
+    "exact_martha_preimage_unchanged": true,
+    "all_five_english_keys_still_absent": true,
+    "source_and_calendar_tools_unchanged": true,
+    "existing_full_graph_receipts_are_current_root_validation": false
+  },
+  "validation_disposition": {
+    "fresh_checks": "Direct artifact/image/record/receipt hashes; all 23 records fully read; finite source-schema/path/relationship/locus checks; current/root absent IDs and destinations; exact Mass preimage; unchanged five reading values; absent five English keys, including positives; exact witness metadata joins.",
+    "reused_checks": "The pinned complete graph and overlay receipts report 56,882 control records, 56,905 candidate records, 4,615 bindings, zero errors, and their two intended negative-control refusals. They are historical in-memory candidate checks, not installed-root validation.",
+    "preparation_head": "92032f517865220d7ec7019a31b23f8a3217a78e",
+    "preparation_vs_root": "Preparation HEAD differs. Complete calendar and overlay hashes, scoped Martha node, five absent keys and source/calendar tool hashes still agree. A commit difference alone does not establish source-graph drift.",
+    "root_next_checks": "If root integrates this frozen packet, recheck absent destinations/IDs and exact node/key guards, then run current installed source/calendar/overlay validation and required producer closure. No such integration or generation occurred in this review."
+  },
+  "limits": [
+    "Permission or activation for any full prayer body or future display route",
+    "Latin abbreviated-conclusion expansion",
+    "An English effective or promulgation date",
+    "Full installed-root source graph, overlay or producer closure",
+    "The incidental indexed-HTML citation contrast was not independently re-fetched; the actual governing English PDF was read and supports its recorded citation.",
+    "The inherited 1981 reading transcription was preserved, not re-audited against its page image in this bounded task."
+  ],
+  "preservation": {
+    "frozen_50_input_hashes_rechecked_at_close": true,
+    "canonical_tracked_diff_empty": true,
+    "root_head_unchanged": true,
+    "metadata_auditor_index_bytes_unchanged": true,
+    "canonical_writes": [],
+    "packet_writes": [],
+    "source_publication_activation": false
+  }
+}

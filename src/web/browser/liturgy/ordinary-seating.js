@@ -331,6 +331,92 @@
     return held;
   }
 
+  /** Exact source-owned insertions. No date, label, or caller boolean appoints one. */
+  function properRitesFor(file, context) {
+    const declared = file && Object.prototype.hasOwnProperty.call(file, 'proper_rites') ? file.proper_rites : [];
+    if (!Array.isArray(declared)) throw new Error('Proper rites must be a source declaration list');
+    const states = {}, bindings = [], seen = new Set(), coordinates = new Set();
+    const supplied = context !== undefined && context !== null;
+    if (supplied && (!context || context.calendar !== file.calendar ||
+        typeof context.mass !== 'string' || !context.mass ||
+        typeof context.formId !== 'string' || !context.formId ||
+        !Array.isArray(context.properRows))) {
+      throw new Error('Proper rite requires exact calendar, principal Mass, form and rows');
+    }
+    if (supplied && context.properRows.some((row, index) =>
+        formIdOf(properRow(row, index).proper) !== context.formId)) {
+      throw new Error('Proper rite context contradicts the selected source form');
+    }
+    function exact(value, keys) {
+      return value && typeof value === 'object' && !Array.isArray(value) &&
+        Object.keys(value).sort().join(',') === keys.slice().sort().join(',');
+    }
+    function nonempty(value) { return typeof value === 'string' && Boolean(value.trim()); }
+    for (const rite of declared) {
+      if (!exact(rite, ['id', 'edition', 'semantic_role', 'own_conclusion', 'locus', 'appointments']) ||
+          !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(rite.id || '') || seen.has(rite.id) ||
+          rite.edition !== file.calendar || !nonempty(rite.semantic_role) ||
+          rite.own_conclusion !== true || !nonempty(rite.locus) ||
+          !Array.isArray(rite.appointments) || !rite.appointments.length) {
+        throw new Error('Proper rite declaration is malformed or belongs to another edition');
+      }
+      seen.add(rite.id);
+      const elements = (file.sections || []).flatMap(section => section.elements || []);
+      const claimed = (file.slots || []).filter(slot => slot.rite === rite.id);
+      const cues = elements.filter(element => (element.conditions || []).some(condition =>
+        condition.kind === 'include-when-proper-rite' && condition.rite === rite.id));
+      if (claimed.length !== 1 || cues.length !== 1 || cues[0].conditions.length !== 1 ||
+          claimed[0].where !== 'before' || (claimed[0].propers || []).length ||
+          elements.findIndex(element => element.key === claimed[0].anchor) !== elements.indexOf(cues[0]) + 1) {
+        throw new Error('Proper rite requires its one adjacent source cue and finite before-seat');
+      }
+      const own = [];
+      for (const appointment of rite.appointments) {
+        if (!exact(appointment, ['mass', 'form_id', 'proper', 'occurrence', 'locus']) ||
+            !['mass', 'form_id', 'proper', 'locus'].every(key => nonempty(appointment[key])) ||
+            !Number.isInteger(appointment.occurrence) || appointment.occurrence < 1) {
+          throw new Error('Proper rite appointment lacks exact source coordinates and locus');
+        }
+        const identity = {mass: appointment.mass, form_id: appointment.form_id,
+          proper: appointment.proper, occurrence: appointment.occurrence};
+        const coordinate = appointmentCoordinate(identity);
+        if (coordinates.has(coordinate)) throw new Error('Proper rite appointment is claimed more than once');
+        coordinates.add(coordinate);
+        if (supplied && appointment.mass === context.mass && appointment.form_id === context.formId) {
+          own.push({appointment, identity});
+        }
+      }
+      if (!supplied) { states[rite.id] = null; continue; }
+      if (own.length > 1) throw new Error('Proper rite has more than one principal appointment in this form');
+      states[rite.id] = own.length === 1;
+      for (const target of own) {
+        const occurrences = new Map();
+        const matches = [];
+        context.properRows.forEach((input, index) => {
+          const row = properRow(input, index), proper = row.proper;
+          if (!proper || typeof proper.name !== 'string') throw new Error('Proper rite has malformed principal rows');
+          const owner = input && input.sourceMass || context.mass;
+          if (owner !== context.mass || formIdOf(proper) !== context.formId) return;
+          const count = (occurrences.get(proper.name) || 0) + 1;
+          occurrences.set(proper.name, count);
+          if (proper.name !== target.appointment.proper || count !== target.appointment.occurrence) return;
+          if (proper.appointment_applicability) throw new Error('Foreign source applicability cannot appoint a proper rite');
+          if (proper.appointment_identity && appointmentCoordinate(proper.appointment_identity) !== appointmentCoordinate(target.identity)) {
+            throw new Error('Proper rite row contradicts its source appointment identity');
+          }
+          matches.push({proper, sourceIndex: row.sourceIndex});
+        });
+        if (matches.length !== 1) throw new Error('Declared proper rite lacks its exact principal source appointment');
+        bindings.push({proper: matches[0].proper, descriptor: {
+          id: rite.id, semanticRole: rite.semantic_role, ownConclusion: rite.own_conclusion,
+          locus: rite.locus, appointmentLocus: target.appointment.locus,
+          appointment: target.identity, sourceIndex: matches[0].sourceIndex
+        }});
+      }
+    }
+    return {states, bindings};
+  }
+
   function conditionsResolve(element, selected, predicates, appointed) {
     let unresolved = null;
     const appointments = appointed || {};
@@ -357,6 +443,13 @@
         if ((condition.options || []).indexOf(value) < 0) {
           return { show: false, unresolved: null };
         }
+      } else if (condition.kind === 'include-when-proper-rite') {
+        const states = appointments.__properRites && appointments.__properRites.states;
+        if (!states || !Object.prototype.hasOwnProperty.call(states, condition.rite)) {
+          throw new Error('Ordinary condition names an undeclared proper rite');
+        }
+        if (states[condition.rite] === false) return {show: false, unresolved: null};
+        if (states[condition.rite] !== true) unresolved = unresolved || condition;
       } else if (condition.kind === 'include-when-any') {
         const states = (condition.predicates || []).map(
           (key) => predicateState(predicates, key));
@@ -417,6 +510,7 @@
       }
     }
     Object.defineProperty(held, '__standIns', { value: standIns, enumerable: false });
+    Object.defineProperty(held, '__properRites', {value: properRitesFor(file, predicates && predicates['proper-rite-context']), enumerable: false});
     return held;
   }
 
@@ -455,7 +549,9 @@
     return resolveElements(file, wanted, predicates).shown;
   }
 
-  function seats(file, shown) {
+  function seats(file, shown, context) {
+    const rites = properRitesFor(file, context);
+    const byProper = new WeakMap();
     const where = new Map();
     shown.forEach((row, index) => where.set(row.element.key, index));
     const slots = file.slots || [];
@@ -474,18 +570,30 @@
       // An unresolvable anchor loses the seat, never the proper.
       if (anchor === undefined) return;
       at[ordinal] = anchor + (slot.where === 'after' ? 1 : 0);
+      if (slot.rite) {
+        if (!Object.prototype.hasOwnProperty.call(rites.states, slot.rite) || (slot.propers || []).length) {
+          throw new Error('Proper rite slot must name one held declaration instead of a generic name');
+        }
+        rites.bindings.filter(binding => binding.descriptor.id === slot.rite).forEach(binding => {
+          if (byProper.has(binding.proper)) throw new Error('Proper rite has more than one usable seat');
+          byProper.set(binding.proper, ordinal);
+        });
+        return;
+      }
       for (const name of slot.propers || []) {
         byName.set(name, ordinal);
         if (slot.qualified) qualified.set(name, ordinal);
       }
     });
-    return { slots: slots, at: at, byName: byName, qualified: qualified };
+    return { slots: slots, at: at, byName: byName, qualified: qualified, byProper: byProper };
   }
 
   const QUALIFIER = /^(.+?) \(.+\)$/;
 
   /** The slot a proper name resolves to, or -1 for a name no slot claims. */
-  function slotOf(seating, name) {
+  function slotOf(seating, proper) {
+    if (proper && typeof proper === 'object' && seating.byProper && seating.byProper.has(proper)) return seating.byProper.get(proper);
+    const name = typeof proper === 'string' ? proper : proper && proper.name;
     if (seating.byName.has(name)) return seating.byName.get(name);
     const held = seating.qualified || new Map();
     const family = QUALIFIER.exec(name);
@@ -1261,7 +1369,7 @@
       }
       let ordinal = null;
       if (seating) members.forEach((member) => {
-        const found = usableSlotOf(seating, member.proper && member.proper.name);
+        const found = usableSlotOf(seating, member.proper);
         if (found < 0 || (ordinal !== null && found !== ordinal)) {
           throw new Error('alternative Proper group must share one usable semantic Ordinary seat');
         }
@@ -1309,7 +1417,7 @@
         continue;
       }
       if (disposition.kind === 'unplaced') {
-        if (seating && usableSlotOf(seating, row.proper && row.proper.name) >= 0) {
+        if (seating && usableSlotOf(seating, row.proper) >= 0) {
           throw new Error('unplaced Proper annotation is stale because a usable slot now claims it');
         }
         if (alternativeGroups.has(disposition.group)) {
@@ -1372,6 +1480,28 @@
     return units;
   }
 
+  function assertCompleteSeating(placed) {
+    const rows = (placed.before || []).concat(placed.after || []);
+    for (const bucket of placed.buckets.values()) {
+      rows.push.apply(rows, bucket);
+    }
+    const conserved = rows.reduce(function (count, row) {
+      return count + (row && row.kind === 'proper_choice'
+        ? (row.options || []).reduce(function (held, option) {
+            return held + (option.rows || []).length;
+          }, 0) : 1);
+    }, 0);
+    const unusable = rows.some(function (row) {
+      if (!row || !row.seat) return true;
+      if (row.seat.placement !== 'unseated') return !row.seat.key;
+      return !row.seat.key || !row.seat.group || !row.seat.basis ||
+        ['before-frame', 'after-frame'].indexOf(row.seat.region) < 0;
+    });
+    if (placed.broke || unusable || conserved !== placed.sourceCount) {
+      throw new Error('appointed Proper has no usable semantic Ordinary seat');
+    }
+  }
+
   function seatPropers(propers, seating, isPlaceholder, selections) {
     const before = [];
     const buckets = new Map();
@@ -1391,7 +1521,7 @@
         continue;
       }
       const ordinal = unit.kind === 'proper_choice'
-        ? unit.ordinal : usableSlotOf(seating, unit.proper && unit.proper.name);
+        ? unit.ordinal : usableSlotOf(seating, unit.proper);
       if (ordinal < 0) {
         unit.seat = null;
         (riding || before).push(unit);
@@ -1488,7 +1618,9 @@
     });
     const shown = (file.sections || []).flatMap((section) =>
       (section.elements || []).map((element) => ({section, element})));
-    const seating = supplied.full ? seats(file, shown) : null;
+    const riteContext = {calendar: supplied.calendar, mass: supplied.mass, formId: supplied.form_id, properRows: copies};
+    properRitesFor(file, riteContext);
+    const seating = supplied.full ? seats(file, shown, riteContext) : null;
     const units = properUnits(copies, seating, (proper) => placeholders.has(proper), prepared.selections);
     let candidates = 0;
     let choices = 0;
@@ -1496,7 +1628,7 @@
       return unit.kind === 'proper_choice' ? unit.options.flatMap((option) => option.rows) : [unit];
     }
     function ordinalOf(unit) {
-      return unit.kind === 'proper_choice' ? unit.ordinal : usableSlotOf(seating, unit.proper.name);
+      return unit.kind === 'proper_choice' ? unit.ordinal : usableSlotOf(seating, unit.proper);
     }
     function checkOrder(projected) {
       let reached = -1;
@@ -1731,7 +1863,42 @@
       const key = member.source_key;
       const held = key && owners.get(key);
       if (!held) fail('oration-source-owner-unbound', 'oration member lacks its exact source owner: ' + member.of);
-      const matching = admittedRows(held).filter(function (row) { return familyMatches(row, slot); });
+      let matching = admittedRows(held).filter(function (row) { return familyMatches(row, slot); });
+      // RGMR 443 appoints the feria's first prayer, also said at Lauds.
+      // The three Ember Saturdays print that prayer, its Secret and its
+      // Postcommunion in both forms. The reviewed finite relation names one
+      // storage owner of each same appointed prayer; it chooses no Mass form
+      // and does not erase different literal conclusion abbreviations.
+      const representatives = multiple.commemorated_representatives || [];
+      if (!Array.isArray(representatives)) {
+        fail('unsupported-oration-context', 'invalid commemorated source representatives');
+      }
+      const named = representatives.filter(function (one) { return one.mass === key; });
+      if (named.length > 1) fail('ambiguous-oration-source-owner', 'duplicate commemorated source representative: ' + key);
+      if (named.length) {
+        const appointment = named[0];
+        if (appointment.role !== 'editorial-source-coordinate' || !appointment.locus ||
+            !Array.isArray(appointment.slots) ||
+            JSON.stringify(appointment.slots.map(function (one) { return one.slot; })) !==
+              JSON.stringify(['Collect', 'Secret', 'Postcommunion'])) {
+          fail('unsupported-oration-context', 'unsupported commemorated source representative: ' + key);
+        }
+        const identity = appointment.slots.find(function (one) { return one.slot === slot; });
+        const representative = identity.representative, equivalent = identity.equivalent;
+        function matchesIdentity(row, expected) {
+          const provenance = row.proper.latin && row.proper.latin.provenance;
+          return expected && Number.isInteger(expected.source_index) &&
+            expected.source_index === row.sourceIndex && expected.form_id === row.proper.form_id &&
+            typeof expected.source_id === 'string' && provenance && provenance.source_id === expected.source_id;
+        }
+        if (!identity.locus || !representative || !equivalent ||
+            representative.form_id === equivalent.form_id || matching.length !== 2 ||
+            matching.filter(function (row) { return matchesIdentity(row, representative); }).length !== 1 ||
+            matching.filter(function (row) { return matchesIdentity(row, equivalent); }).length !== 1) {
+          fail('oration-source-slot-unbound', 'commemorated source identity no longer matches both printed occurrences of ' + slot + ': ' + key);
+        }
+        matching = matching.filter(function (row) { return matchesIdentity(row, representative); });
+      }
       if (matching.length !== 1) {
         fail('oration-source-slot-unbound', 'oration member lacks a unique source-qualified ' + slot + ': ' + key);
       }
@@ -1802,6 +1969,7 @@
     chosenOption: chosenOption,
     selectionMap: selectionMap,
     predicateFacts: predicateFacts,
+    properRitesFor: properRitesFor,
     properCitations: properCitations,
     appointmentsFor: appointmentsFor,
     conditionsShow: conditionsShow,
@@ -1819,6 +1987,7 @@
     semanticProperId: semanticProperId,
     properUnits: properUnits,
     seatPropers: seatPropers,
+    assertCompleteSeating: assertCompleteSeating,
     massEvents: massEvents,
     unframedEvents: unframedEvents,
     orationPlan: orationPlan

@@ -1,0 +1,1268 @@
+{
+  "schema": "triptych-nine-merit-input-projection/v1",
+  "state": "proposed-input-projection-not-a-review-or-adoption",
+  "original_merit_inputs": {
+    "path": ".scratch/roman-sources/combined-nine/root-merit-inputs-v2.json",
+    "sha256": "b96a6e068cce278ff755fedc6aecd806850e25d952ad6e4790626598df1442ab"
+  },
+  "selected_cases": [
+    {
+      "original_json_pointer": "/cases/0",
+      "original_case_canonical_sha256": "479e72a274d977a3780c6428895763bf8b7de8fe697f06db042c8c068d2acca5",
+      "case": {
+        "identity": [
+          "good-friday",
+          "main",
+          "First Prayer after Communion",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "good-friday",
+          "",
+          "First Prayer after Communion",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Super populum tuum, quaesumus, Domine, qui passionem et mortem Filii tui devota mente recoluit, benedictio copiosa descendat, indulgentia veniat, consolatio tribuatur, fides sancta succrescat, redemptio sempiterna firmetur. Per eundem Christum Dominum nostrum. R. Amen.\n",
+        "English": "Upon your people, who have devoutly recalled the Passion and death of your Son, let an abundant blessing descend, we pray, Lord; let pardon come, consolation be granted, holy faith increase, and everlasting redemption be made firm. Through the same Christ our Lord. R. Amen.\n",
+        "Latin_sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+        "English_sha256": "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528",
+        "final_English_entry_sha256": "12e3f0df49d8e3d45f4663fb5714ca386afa1dd29654dacbe26c6d284c948bd9",
+        "resolved_Latin_row_sha256": "cadd1b6e4ce5170710fdf4a11ec661ea5a2c40f66fb274d2973a2f0ff04a0845",
+        "inherited_Latin_row_sha256": "3e4d1871c8d7bfb4a9b9b67641d30dbecc8e694915200ece8f0e41a53611d31c",
+        "proper_row_sha256": "cfe47d637caf1c985ec196406f81d38b195fb2ec706e9b745d5b7396460832e4",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-first-after-communion-target-control-20261112",
+        "target_record_sha256": "868ca4ea59879b8477ca48a7f9c023a83f823dd20db1ff4bcc05bfd59d380fdc",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112",
+        "controller_passage_record_sha256": "06fc74bb866bfb035f8312724896e9c3fb26f5440ec22bff3867bd24b4e35e42",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112-d0f0e56b",
+        "controller_artifact_record_sha256": "012b2e08b02cf40f9b6143f9d2b04c9c738b765396aadfc5cf26b4d5e81a0ec9",
+        "controller_payload_sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+        "source_plan": {
+          "path": ".scratch/roman-sources/gf-first-second-merits/install-plan.json",
+          "sha256": "a03d0c95ce29fe45d0119558a0b4c1c0bb867ac9e7b6a75ebd61fa3567bbd1e1",
+          "source_review": {
+            "path": ".scratch/roman-sources/gf-first-second-merits/source-review.json",
+            "sha256": "739a3ec1f864aa415e3f72ab5c31f70222c979a6ffa460fb7892dac0b5297683",
+            "independent": false
+          }
+        },
+        "source_record_closure_sha256": "3bb93761dbd36c5f14d076b4912906b4632d4cd8835cc725669bae323c934154",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "source_packet": {
+            "path": ".scratch/roman-sources/gf-first-second-merits/body-source-packet.json",
+            "sha256": "908a3443c2df89468e906071e2b71d62ec3dfcc3cdaee2988bb8c2483a00890f"
+          },
+          "prior_negative_finding": {
+            "mass": "good-friday",
+            "proper": "First Prayer after Communion",
+            "occurrence": 1,
+            "section": "seasonal",
+            "verdict": "new-matter",
+            "confidence": "high",
+            "lane": "triduum",
+            "target_locus": "printed p. 181, no. 968 (Oratio prima of the three said in thanksgiving after Communion); artifact PDF p. 262",
+            "corroboration": "not attempted in the 1570 or 1604; their records forbid resting a negative on a raw search over them and I did not read their Good Friday leaves for this | 1604 and 1570 swept whole in the second pass; see notes.",
+            "evidence": "WHAT I CHECKED. (1) I read the 1862's own end of the Good Friday liturgy, text-layer lines 33352-33460, printed pp. 178-179. After the priest's communion it prints `Quod ore sumpsimus, Domine...` and then, in terms, `Non dicitur Corpus tuum, Domine, nec Postcommunio, nec Placeat tibi, nec datur benedictio: sed, facta reverentia Altari, Sacerdos cum ministris discedit`. The pre-1955 rite has NO prayers after Communion on this day; the 1955 Ordo added three, because it restored the Communion of the people. (2) I then searched the whole 1862 by incipit and by four distinctive phrases -- `Super p.pulum tuum`, `benedicti. copi.sa`, `indulg.ntia veniat`, `succr.scat`, `devota mente` -- over the flattened, dehyphenated stream. `Super populum` occurs many times as the Lenten rubric `Oratio super populum` and once as `benedictio copiosa descendat: quae et sanctificationem nobis clementer...`, which is a DIFFERENT Lenten super populum prayer, not this one. `devota mente` and `succrescat` occur nowhere in the book. SAME CANDOUR AS FOR no. 924: the prayer is very likely ancient, but no tracked public-domain witness carries it, so it may not be published from this facsimile on the evidence available here. || THREE-BOOK SWEEP ADDED IN THE SECOND PASS. The lane's first pass swept the 1862 alone. On the coordinator's rule that new-matter needs the whole shelf behind it, I re-swept all three tracked public-domain witnesses -- 1862 Pustet (108,905 lines), 1604 Vatican typica (63,205 lines), 1570 Venice (84,443 lines), the last two with long s folded to s -- on rare word PAIRS taken adjacent in the 1962 text and matched fuzzily (>=0.85 character similarity, same initial letter) within a twelve-word window, so neither a lost ornamental capital nor a damaged accent can hide a hit. POSITIVE CONTROL for the procedure: it fires on prayers this lane proved present (oblationibus+hostiarum 3 hits in the 1862, hostiarum+initiata 2, productum+silice 1, paschalia+inflammari 1, illustras+conserva 1, segetum+spinarum 1). RESULT: zero in all three books on succrescat+firmetur, firmetur+eundem, devota+recoluit, recoluit+copiosa, copiosa+indulgentia, tribuatur+succrescat, succrescat+redemptio, redemptio+firmetur. Single token succrescat occurs nowhere in any of the three. The two isolated ones (indulgentia+consolatio in the 1862, recoluit+descendat in the 1862 and 1570) are common-word coincidences, opened and not this prayer."
+          },
+          "whole_expression_argument": "Consider the resulting prayer as one adapted blessing: the entire inherited ordered fivefold petition remains consecutive and unchanged, addressed to the same people with the same descent-of-blessing construction. The inserted nine-word relative clause identifies those people by the liturgical action just completed: devout remembrance of the Son's Passion and death. It adds no new requested gift, image, comparison or independent petition. The reordered supplication and the received same-Christ conclusion/response are conventional liturgical framing. On that bounded view, the whole can be proposed as a functional contextual adaptation of the single old blessing, rather than a newly selected collection of old fragments. This is an arguable finite qualified-nonoriginal-adaptation assessment at moderate confidence, not proof of an exact ancient whole or an adopted publication conclusion. The full relative clause and the new placement must still be judged as part of the resulting whole.",
+          "strongest_contrary": "The newly inserted full relative clause gives a specific commemorative rationale and ties the old blessing to the Good Friday assembly. Even where its vocabulary is conventional, this substantive clause and the resulting whole-prayer arrangement cannot be classed as mere spelling, inflection or punctuation. No exact premodern witness for that entire target clause in this whole has been established. The antiquity of the five petitions and the conventional conclusion do not alone settle originality of the modern whole.",
+          "complete_comparison": {
+            "identity": [
+              "good-friday",
+              "main",
+              "First Prayer after Communion",
+              "all",
+              1
+            ],
+            "state": "provisional exact merits and study-English draft; no adoption",
+            "Latin": "Super populum tuum, quaesumus, Domine, qui passionem et mortem Filii tui devota mente recoluit, benedictio copiosa descendat, indulgentia veniat, consolatio tribuatur, fides sancta succrescat, redemptio sempiterna firmetur. Per eundem Christum Dominum nostrum. R. Amen.\n",
+            "Latin_sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+            "English": "Upon your people, who have devoutly recalled the Passion and death of your Son, let an abundant blessing descend, we pray, Lord; let pardon come, consolation be granted, holy faith increase, and everlasting redemption be made firm. Through the same Christ our Lord. R. Amen.\n",
+            "English_sha256": "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528",
+            "Latin_file": {
+              "path": ".scratch/roman-sources/gf-first-second-merits/good-friday-first-after-communion-latin.txt",
+              "sha256": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18"
+            },
+            "English_file": {
+              "path": ".scratch/roman-sources/gf-first-second-merits/good-friday-first-after-communion-english.txt",
+              "sha256": "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528"
+            },
+            "Latin_action": {
+              "kind": "rubric",
+              "offset": 261,
+              "text": "R."
+            },
+            "English_action": {
+              "kind": "rubric",
+              "offset": 266,
+              "text": "R."
+            },
+            "historical_whole_body": "Super populum tuum, Domine, quaesumus, benedictio copiosa descendat, indulgentia veniat, consolatio tribuatur, fides sancta succrescat, redemptio sempiterna firmetur. Per.\n",
+            "historical_whole_body_sha256": "d78a9bfbac8ae9391122dce0ad3383ae6350db07cf98f289ed42edd0f83cc529",
+            "historical_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-first-antecedent-20261112",
+            "full_measured_differences": [
+              "Opening order Domine, quaesumus becomes quaesumus, Domine.",
+              "Target adds the entire relative clause qui passionem et mortem Filii tui devota mente recoluit after Domine.",
+              "The consecutive five blessing petitions are preserved, including indulgentia veniat, whose old reading is supported by the whole p37 printing and its apparatus.",
+              "The old literal Per. becomes Per eundem Christum Dominum nostrum. R. Amen.; target Oremus and Oratio prima are adjacent framing, not included in this compared body.",
+              "The modern Good Friday after-Communion placement is distinct from the old Ad Populum context."
+            ],
+            "proposed_whole_expression_reason": "Consider the resulting prayer as one adapted blessing: the entire inherited ordered fivefold petition remains consecutive and unchanged, addressed to the same people with the same descent-of-blessing construction. The inserted nine-word relative clause identifies those people by the liturgical action just completed: devout remembrance of the Son's Passion and death. It adds no new requested gift, image, comparison or independent petition. The reordered supplication and the received same-Christ conclusion/response are conventional liturgical framing. On that bounded view, the whole can be proposed as a functional contextual adaptation of the single old blessing, rather than a newly selected collection of old fragments. This is an arguable finite qualified-nonoriginal-adaptation assessment at moderate confidence, not proof of an exact ancient whole or an adopted publication conclusion. The full relative clause and the new placement must still be judged as part of the resulting whole.",
+            "strongest_contrary": "The newly inserted full relative clause gives a specific commemorative rationale and ties the old blessing to the Good Friday assembly. Even where its vocabulary is conventional, this substantive clause and the resulting whole-prayer arrangement cannot be classed as mere spelling, inflection or punctuation. No exact premodern witness for that entire target clause in this whole has been established. The antiquity of the five petitions and the conventional conclusion do not alone settle originality of the modern whole.",
+            "proposed_publication_basis": "qualified-nonoriginal-adaptation",
+            "proposed_publication_confidence": "moderate",
+            "English_fidelity_notes": [
+              "The English relative clause modifies your people, rendering the collective singular populum ... recoluit naturally as people ... have recalled.",
+              "Devoutly recalled renders devota mente recoluit without adding an act of worship absent from the Latin.",
+              "All five petitions remain separately expressed and in order: blessing descend, pardon come, consolation be granted, holy faith increase, everlasting redemption be made firm.",
+              "The complete same-Christ conclusion is translated, and R. remains a nonspoken action with Amen spoken."
+            ],
+            "prior_status": "Explicitly unadopted by the durable 2026-10-30 stop receipts; no previous English bytes or full ready-case packet recovered.",
+            "new_evidence": "The frozen 2026-11-12 source packet binds a complete Wilson1894 historical whole, controlling apparatus where applicable, the exact modern target, and the independently witnessed received conclusion. This exceeds the earlier three-missal bounded negative finding. It does not establish whether the absent 2026-10-30 ready packet already used Wilson, so no claim of discovery relative to that unavailable packet is made.",
+            "narrow_scope": "Only this exact good-friday/main proper/all/1 body, final R. marker/Amen, and its exact provisional study English. No Oremus/title/context rubric, other prayer, entire Good Friday sequence, whole missal or approved liturgical translation is included."
+          }
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/cases/1",
+      "original_case_canonical_sha256": "735e643abafcf29bdc3a85420c627126059af589fee2d26d422c15385dc6dbb8",
+      "case": {
+        "identity": [
+          "good-friday",
+          "main",
+          "Second Prayer after Communion",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "good-friday",
+          "",
+          "Second Prayer after Communion",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Omnipotens et misericors Deus, qui Christi tui beata passione et morte nos reparasti: conserva in nobis operam misericordiae tuae; ut, huius mysterii participatione, perpetua devotione vivamus. Per eundem Christum Dominum nostrum. R. Amen.\n",
+        "English": "Almighty and merciful God, who have restored us through the blessed Passion and death of your Christ: preserve in us the work of your mercy, so that through participation in this mystery we may live in constant devotion. Through the same Christ our Lord. R. Amen.\n",
+        "Latin_sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+        "English_sha256": "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84",
+        "final_English_entry_sha256": "576fc3431cbedbed9f7cc6d9020a1ffa8a983121d41ad3d66f28f223a21cbd55",
+        "resolved_Latin_row_sha256": "32cc1843e05943b94f19225da47b0c4522518a1490e3c71624b847efa3080687",
+        "inherited_Latin_row_sha256": "f56316ea02ccdc1cf297cc098a57a2ef0f86c3374c58dd34b25214a153b1092a",
+        "proper_row_sha256": "5adb7bfceeb40b590fc234491ad009bb2ffa0c058c9291e4f929fac05c3f755a",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.good-friday-second-after-communion-target-control-20261112",
+        "target_record_sha256": "160fa1f346fb00657c9d47c5eb37f0fc491142bec12b764e144c4cf4c21e8ef4",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112",
+        "controller_passage_record_sha256": "e91bde74ad44fbdb15f49408d6f6e37894b2ebc3e0a943f2da84ab5d33f60d29",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112-9330da55",
+        "controller_artifact_record_sha256": "82c4958a3914cf12aff169f25b4ef9450fc04d42165363f3d647368f9b0dcc3c",
+        "controller_payload_sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+        "source_plan": {
+          "path": ".scratch/roman-sources/gf-first-second-merits/install-plan.json",
+          "sha256": "a03d0c95ce29fe45d0119558a0b4c1c0bb867ac9e7b6a75ebd61fa3567bbd1e1",
+          "source_review": {
+            "path": ".scratch/roman-sources/gf-first-second-merits/source-review.json",
+            "sha256": "739a3ec1f864aa415e3f72ab5c31f70222c979a6ffa460fb7892dac0b5297683",
+            "independent": false
+          }
+        },
+        "source_record_closure_sha256": "37a40d179a86db5925cef769cb3c6ba58c27d68fb6bb336208bb4d2ed00a3826",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "source_packet": {
+            "path": ".scratch/roman-sources/gf-first-second-merits/body-source-packet.json",
+            "sha256": "908a3443c2df89468e906071e2b71d62ec3dfcc3cdaee2988bb8c2483a00890f"
+          },
+          "prior_negative_finding": {
+            "mass": "good-friday",
+            "proper": "Second Prayer after Communion",
+            "occurrence": 1,
+            "section": "seasonal",
+            "verdict": "new-matter",
+            "confidence": "high",
+            "lane": "triduum",
+            "target_locus": "printed p. 181, no. 969 (Oratio secunda); artifact PDF p. 262",
+            "corroboration": "not attempted in the 1570 or 1604 | 1604 and 1570 swept whole in the second pass; see notes.",
+            "evidence": "WHAT I CHECKED. The same reading of the 1862's Good Friday ending as for no. 968 establishes that no prayer stands in this slot. For the whole-book search I used `Omnipotens et miseric` (three hits, all opened and all different prayers: line 19580 `Purificent nos, quaesumus, omnipotens et misericors Deus, Sacramenta quae sumpsimus`; line 45174 `Praesta nobis, quaesumus omnipotens et misericors Deus`, the Ascension Postcommunion; line 87010 `Omnipotens et misericors Deus, qui humano generi et salutis remedia, et vitae aeternae munera contulisti`, a Mass for the dying), plus `be.ta passi.ne et morte`, `participati.ne, perp.tua` and `.peram miseric.rdiae`, none of which hits. Same candour as for no. 968 about the prayer's probable antiquity. || THREE-BOOK SWEEP ADDED IN THE SECOND PASS. The lane's first pass swept the 1862 alone. On the coordinator's rule that new-matter needs the whole shelf behind it, I re-swept all three tracked public-domain witnesses -- 1862 Pustet (108,905 lines), 1604 Vatican typica (63,205 lines), 1570 Venice (84,443 lines), the last two with long s folded to s -- on rare word PAIRS taken adjacent in the 1962 text and matched fuzzily (>=0.85 character similarity, same initial letter) within a twelve-word window, so neither a lost ornamental capital nor a damaged accent can hide a hit. POSITIVE CONTROL for the procedure: it fires on prayers this lane proved present (oblationibus+hostiarum 3 hits in the 1862, hostiarum+initiata 2, productum+silice 1, paschalia+inflammari 1, illustras+conserva 1, segetum+spinarum 1). RESULT: zero in all three books on reparasti+conserva, conserva+operam, vivamus+eundem, devotione+eundem, devotione+vivamus, participatione+devotione, mysterii+devotione, perpetua+vivamus. The hits on operam+misericordiae and participatione+vivamus are ordinary collect vocabulary, not this text."
+          },
+          "whole_expression_argument": "Consider the resulting prayer as one adapted collect: its complete inherited movement remains divine restoration through Christ's Passion, a request to preserve mercy's work within the speakers, and the purpose of living in perpetual devotion in relation to the mystery. The modern wording makes death explicit, casts restoration as accomplished, names the mercy already central to the old petition, uses a collective singular work, and connects the petition to participation after Communion. The changes adjust the old collect to its specific liturgical use without adding a new requested benefit, metaphor, narrative or separate source-selected petition. With the independently witnessed conventional same-Christ conclusion and response, that whole is a viable finite qualified-nonoriginal-adaptation proposal at moderate confidence. This is an inference about the measured adaptation, not a grant based on familiar words or the old prayer's age. The cumulative changes in address, tense, number and celebration/participation still require a whole-expression decision.",
+          "strongest_contrary": "The accumulated changes recast the divine address, explicitly add death, shift the restoration from present to completed action, change plural works to one work, and replace celebration with participation in the mystery. These coordinated theological and rhetorical choices must be considered together. Conventional vocabulary and a recognizable old prayer skeleton do not prove that the whole modern arrangement is unprotected. No exact premodern whole target witness has been established.",
+          "complete_comparison": {
+            "identity": [
+              "good-friday",
+              "main",
+              "Second Prayer after Communion",
+              "all",
+              1
+            ],
+            "state": "provisional exact merits and study-English draft; no adoption",
+            "Latin": "Omnipotens et misericors Deus, qui Christi tui beata passione et morte nos reparasti: conserva in nobis operam misericordiae tuae; ut, huius mysterii participatione, perpetua devotione vivamus. Per eundem Christum Dominum nostrum. R. Amen.\n",
+            "Latin_sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+            "English": "Almighty and merciful God, who have restored us through the blessed Passion and death of your Christ: preserve in us the work of your mercy, so that through participation in this mystery we may live in constant devotion. Through the same Christ our Lord. R. Amen.\n",
+            "English_sha256": "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84",
+            "Latin_file": {
+              "path": ".scratch/roman-sources/gf-first-second-merits/good-friday-second-after-communion-latin.txt",
+              "sha256": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d"
+            },
+            "English_file": {
+              "path": ".scratch/roman-sources/gf-first-second-merits/good-friday-second-after-communion-english.txt",
+              "sha256": "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84"
+            },
+            "Latin_action": {
+              "kind": "rubric",
+              "offset": 231,
+              "text": "R."
+            },
+            "English_action": {
+              "kind": "rubric",
+              "offset": 255,
+              "text": "R."
+            },
+            "historical_whole_body": "Omnipotens sempiterne Deus, qui Christi tui beata passione nos reparas, conserva in nobis opera misericordiae tuae, ut in huius celebritate mysterii perpetua devotione vivamus. Per.\n",
+            "historical_whole_body_sha256": "6384807a561e95f293bd0b6f8664d74a9a7b3b7f76c49cd6dd3e71de3310cba2",
+            "historical_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-second-antecedent-20261112",
+            "full_measured_differences": [
+              "Omnipotens sempiterne Deus becomes Omnipotens et misericors Deus.",
+              "After Christi tui beata passione target adds et morte.",
+              "Present reparas becomes perfect reparasti.",
+              "Plural opera misericordiae tuae becomes singular operam misericordiae tuae.",
+              "ut in huius celebritate mysterii becomes ut, huius mysterii participatione,.",
+              "Pointing changes after reparasti to colon and tuae to semicolon; target commas mark the participatione phrase.",
+              "The old literal Per. becomes Per eundem Christum Dominum nostrum. R. Amen.; target Oremus and Oratio secunda are adjacent framing, not included in this compared body.",
+              "The modern Good Friday after-Communion placement differs from old Feria iv Hebdom. sexta."
+            ],
+            "proposed_whole_expression_reason": "Consider the resulting prayer as one adapted collect: its complete inherited movement remains divine restoration through Christ's Passion, a request to preserve mercy's work within the speakers, and the purpose of living in perpetual devotion in relation to the mystery. The modern wording makes death explicit, casts restoration as accomplished, names the mercy already central to the old petition, uses a collective singular work, and connects the petition to participation after Communion. The changes adjust the old collect to its specific liturgical use without adding a new requested benefit, metaphor, narrative or separate source-selected petition. With the independently witnessed conventional same-Christ conclusion and response, that whole is a viable finite qualified-nonoriginal-adaptation proposal at moderate confidence. This is an inference about the measured adaptation, not a grant based on familiar words or the old prayer's age. The cumulative changes in address, tense, number and celebration/participation still require a whole-expression decision.",
+            "strongest_contrary": "The accumulated changes recast the divine address, explicitly add death, shift the restoration from present to completed action, change plural works to one work, and replace celebration with participation in the mystery. These coordinated theological and rhetorical choices must be considered together. Conventional vocabulary and a recognizable old prayer skeleton do not prove that the whole modern arrangement is unprotected. No exact premodern whole target witness has been established.",
+            "proposed_publication_basis": "qualified-nonoriginal-adaptation",
+            "proposed_publication_confidence": "moderate",
+            "English_fidelity_notes": [
+              "Almighty and merciful renders the target et misericors, not the old sempiterne.",
+              "Have restored us preserves the target completed reparasti, not the old present reparas.",
+              "The blessed Passion and death of your Christ includes target et morte and Christi tui.",
+              "The work of your mercy is singular, matching operam, not the old plural opera.",
+              "Through participation in this mystery renders huius mysterii participatione, not the old in huius celebritate mysterii.",
+              "Constant devotion renders perpetua devotione. The complete same-Christ conclusion is translated; R. remains a nonspoken action with Amen spoken."
+            ],
+            "prior_status": "Explicitly unadopted by the durable 2026-10-30 stop receipts; no previous English bytes or full ready-case packet recovered.",
+            "new_evidence": "The frozen 2026-11-12 source packet binds a complete Wilson1894 historical whole, controlling apparatus where applicable, the exact modern target, and the independently witnessed received conclusion. This exceeds the earlier three-missal bounded negative finding. It does not establish whether the absent 2026-10-30 ready packet already used Wilson, so no claim of discovery relative to that unavailable packet is made.",
+            "narrow_scope": "Only this exact good-friday/main proper/all/1 body, final R. marker/Amen, and its exact provisional study English. No Oremus/title/context rubric, other prayer, entire Good Friday sequence, whole missal or approved liturgical translation is included."
+          }
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/cases/2",
+      "original_case_canonical_sha256": "e3c2dcfc7e8be97a7a230cdbcce0111bdc8ea5b72b7db21d76cf4316cead9353",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Collect (Altera oratio)",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "commune-summorum-pontificum",
+          "",
+          "Collect (Altera oratio)",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab infernarum eruis terrore portarum: praesta, quaesumus; ut, intercedente beato N. (Martyre tuo atque) Summo Pontifice, in tua veritate persistens, continua securitate muniatur. Per Dominum.\n",
+        "English": "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed N. (your Martyr and) Supreme Pontiff, she may be fortified with continual security, remaining steadfast in your truth. Through the Lord.\n",
+        "Latin_sha256": "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5",
+        "English_sha256": "c43d59ab7ef49dd5f9b9af4952818cdedbf90b63cf789d10cc1e4db1a72fef72",
+        "final_English_entry_sha256": "4aabac7b77a432ed413de48308cbefed11a3d7c2657dbe19ef13feb41d18d264",
+        "resolved_Latin_row_sha256": "071c4c0e18f641a0fba1e0c989823f1b11fa74142a73dd87b0a81fbda3be5513",
+        "inherited_Latin_row_sha256": "1a90be7285db72c516b5df34ec9782679d8dc22d7f6bfd6822dc590444d8eb4b",
+        "proper_row_sha256": "2a9eb4623a02a367223518e4d25065f0059fc467e0bfc89f691872508bd8c80e",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-altera-collect-singular-target-review-20261112",
+        "target_record_sha256": "b1d57c4e923e9d4449961de10e409378dae437ae5503f1ef5d1793384c4044a5",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-singular",
+        "controller_passage_record_sha256": "45d3e0846b22a60a0b731778a39ba1e20ecae64366c3a9cc9c233821bfb74919",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-singular-1cf945da",
+        "controller_artifact_record_sha256": "6fa6726901f63107098ac776ba8e7dab9f5cb263e84b8f6704f0334890198e37",
+        "controller_payload_sha256": "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5",
+        "source_plan": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+          "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+          "source_review": {
+            "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+            "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+          }
+        },
+        "source_record_closure_sha256": "11932ce8b630938a3f1dc324e20d6ed5f267805e4904048975b57c2b4ee4c6fe",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "case_record": {
+            "path": ".scratch/roman-sources/common-palm-merits/cases/pontiff-altera-collect-singular.json",
+            "sha256": "385b192490418113794ef8041319ebeb35520b5e3ce1db3f9cd1809b68a4438b"
+          },
+          "prior_negative_finding": {
+            "current_latin": {
+              "state": "unavailable",
+              "scope": "proper-body",
+              "reasons": [
+                {
+                  "kind": "witness-gap",
+                  "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+                }
+              ]
+            },
+            "current_english": {
+              "mass": "commune-summorum-pontificum",
+              "form_id": "main",
+              "proper": "Collect (Altera oratio)",
+              "cycle": "all",
+              "occurrence": 1,
+              "lang": "en",
+              "extent": "body",
+              "availability": "unavailable",
+              "reason": {
+                "kind": "rights-withheld",
+                "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                "surfaces": [
+                  "site-display",
+                  "corpus-data",
+                  "public-git",
+                  "command-line",
+                  "download"
+                ]
+              },
+              "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+              "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap",
+              "verified_artifact_page": 511,
+              "verified_on_page": "2026-08-27",
+              "verified_printed_page": "502-504",
+              "note": "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
+            },
+            "durable_nonadoption": "The 2026-10-30 stop records confirm the Common/Palm source and review lanes were interrupted without final source-result acknowledgments. No finished old review or exact acceptance is inferred. Their six future-adopted cases were GF2, Queen2, Urban1 and Omnes1; this body is outside that set.",
+            "prior_records": [
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman.json",
+                "sha256": "bfbe5077e7c18c4d122158e0e41ed4bbb037133e6012c71ec679d64b366aa561"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman-closure.json",
+                "sha256": "57516ec9e8ffca43e9e70d0f90bc8e5518e298704254b9c7ec7a7730cb3a1c4a"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/future-cohort-handoff/roman-finite28-stop.json",
+                "sha256": "57a62ff2c025636662dfe07d8e4b305860026e346b10ffdec29615c5fbdd5cf2"
+              }
+            ]
+          },
+          "actual_new_evidence": [
+            {
+              "key": "feltoe-collect-whole-20261112",
+              "sha256": "2ba50bddb43a5d2eb14265770b0aabc5a60750509101ec8df6ce6b2190b51810",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+              "locus": "Feltoe 1896, printed p. 44, June, XVII Item alia, lines 11-13 (PDF p. 68).",
+              "source_units_path": ".scratch/roman-sources/urban-omnes/source-units.json",
+              "complete_body": "Omnipotens sempiterne Deus qui ecclesiam tuam in apostolica soliditate fundatam ab infernarum eruis terrore portarum praesta ut in tua veritate persistens nulla recipiat consortia perfidorum per.\n"
+            },
+            {
+              "key": "feltoe-protection-whole-20261112",
+              "sha256": "d18b79835bfa47efb99bd4b1a9f43b2c6b758b67d9dfb590e9c4253770103a75",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+              "locus": "Feltoe 1896, printed p. 45, June, end of XVIII Item alia, complete prayer lines 9-10 (PDF p. 69).",
+              "source_units_path": ".scratch/roman-sources/urban-omnes/source-units.json",
+              "complete_body": "Protege Domine populum tuum et apostolorum patrocinio confidentem perpetua defensione conserva per.\n"
+            },
+            {
+              "key": "urban-old-whole-20261112",
+              "sha256": "ed368e8aeabdcdfb257d04ca01cb274c7002ce7224ac642b92a9e0c2d605be4d",
+              "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112",
+              "locus": "Mame 1922, complete Urban Oratio, printed p. 599 / PDF p. 713.",
+              "source_units_path": ".scratch/roman-sources/urban-omnes/source-units.json",
+              "complete_body": "Da, quaesumus, omnipotens Deus: ut, qui beati Urbani Martyris tui atque Pontificis solemnia colimus, ejus apud te intercessionibus adjuvemur. Per Dominum.\n"
+            }
+          ],
+          "whole_expression_argument": "The connected old prayer carries the main expression and syntax; the changes can plausibly be evaluated as customary ecclesial naming, biblical rock specification and a conventional protection formula. That is a candidate argument only. Across the whole, the preserved Church/foundation/gates/fidelity construction carries the expression; the proposed argument treats the apostolic-rock specification, intercession and positive protection formula together as a conventional application, not merely as separately old phrases.",
+          "strongest_contrary": "The cumulative replacement of the old negative fidelity petition with affirmative security, insertion of saint-mediated intercession, and choice of rock imagery may constitute a minimally original revised whole. The proposed Urban result is a distinct body and cannot confer authority on these two Common forms.",
+          "complete_comparison": [
+            "The whole Feltoe p44 prayer supplies the Church/foundation/gates-of-hell construction and in tua veritate persistens, in the same connected petition.",
+            "Target drops Omnipotens sempiterne, changes apostolica to apostolicae petrae, adds quaesumus and the generic named-saint intercession with optional martyr wording and Summo Pontifice or plural equivalents.",
+            "The complete old ending nulla recipiat consortia perfidorum is replaced by continua securitate muniatur. The old protection prayer is thematic and formulaic support for continual apostolic protection, not an exact attestation of this replacement.",
+            "The complete Mame Urban prayer demonstrates old named martyr/pontiff intercession; it does not print these generic placeholders, Summo or their location in this collect.",
+            "Target retains literal Per Dominum. Both Common prayers print veritate, while Urban prints virtute. Singular/plural slots and optional parentheses belong to their exact separate bodies."
+          ]
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/cases/3",
+      "original_case_canonical_sha256": "51c332fbad79fb43aec78403eb31295d9143404419386e0ffb75c26382ecb326",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Collect (Altera oratio, in plurali)",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "commune-summorum-pontificum",
+          "",
+          "Collect (Altera oratio, in plurali)",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Deus, qui Ecclesiam tuam, in apostolicae petrae soliditate fundatam, ab infernarum eruis terrore portarum: praesta, quaesumus; ut, intercedentibus beatis N. et N. (Martyribus tuis atque) Summis Pontificibus, in tua veritate persistens, continua securitate muniatur. Per Dominum.\n",
+        "English": "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed N. and N. (your Martyrs and) Supreme Pontiffs, she may be fortified with continual security, remaining steadfast in your truth. Through the Lord.\n",
+        "Latin_sha256": "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e",
+        "English_sha256": "a408bbaeb0aba387aea72db613abff2b6848e6150e8693ae8f6aea5aa9b64ccd",
+        "final_English_entry_sha256": "1319635ecc05b5caf7da550c654f5f5260392b3c9c9eaddd430d62ab70a2ca92",
+        "resolved_Latin_row_sha256": "72475f08a9a75a2693a6fd47a7772c81425ccee6e3e8b0f7131ce78cac0df49e",
+        "inherited_Latin_row_sha256": "f38f0bc8a6ab27d6d9f687eee2208ad618f3fecd3b966ad18a070ab2bbb68c91",
+        "proper_row_sha256": "e7328c8eb1c9857223acc0013e86961ce624db982e9dfeeafb81557e76250550",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-altera-collect-plural-target-review-20261112",
+        "target_record_sha256": "b5c320bee8b995e9d17fc34a2ce405f4ee151d9b30c4d68dca5b0d9c65c3d019",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-plural",
+        "controller_passage_record_sha256": "2966fb9df39ec29a57b7866a915053339fcece89aa8f15885246a29145256601",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-plural-73e57cb3",
+        "controller_artifact_record_sha256": "0cff6eea5e017b5174c65615f5edf9d8f8d57e0f47daa46266323a904f9375c6",
+        "controller_payload_sha256": "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e",
+        "source_plan": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+          "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+          "source_review": {
+            "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+            "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+          }
+        },
+        "source_record_closure_sha256": "6ad2e31bf7b583cca16b08c6e746c2956a9f1494e8ec78ec815254c26a7330e6",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "case_record": {
+            "path": ".scratch/roman-sources/common-palm-merits/cases/pontiff-altera-collect-plural.json",
+            "sha256": "a5aecb9e87a5d0d83b43324350d225ff469ae3cb1c6f9cd1565ebfd2579d54ff"
+          },
+          "prior_negative_finding": {
+            "current_latin": {
+              "state": "unavailable",
+              "scope": "proper-body",
+              "reasons": [
+                {
+                  "kind": "witness-gap",
+                  "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+                }
+              ]
+            },
+            "current_english": {
+              "mass": "commune-summorum-pontificum",
+              "form_id": "main",
+              "proper": "Collect (Altera oratio, in plurali)",
+              "cycle": "all",
+              "occurrence": 1,
+              "lang": "en",
+              "extent": "body",
+              "availability": "unavailable",
+              "reason": {
+                "kind": "witness-gap",
+                "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+              },
+              "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+              "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap",
+              "verified_artifact_page": 511,
+              "verified_on_page": "2026-08-27",
+              "verified_printed_page": "502-504",
+              "note": "Cummiskey's numbered Commons end at Mass XXI and pass directly to the Dedication Mass; it has no Common of one or more Supreme Pontiffs. Lasance supplies no plural form. The bounded passage proves this absence without recording a body."
+            },
+            "durable_nonadoption": "The 2026-10-30 stop records confirm the Common/Palm source and review lanes were interrupted without final source-result acknowledgments. No finished old review or exact acceptance is inferred. Their six future-adopted cases were GF2, Queen2, Urban1 and Omnes1; this body is outside that set.",
+            "prior_records": [
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman.json",
+                "sha256": "bfbe5077e7c18c4d122158e0e41ed4bbb037133e6012c71ec679d64b366aa561"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman-closure.json",
+                "sha256": "57516ec9e8ffca43e9e70d0f90bc8e5518e298704254b9c7ec7a7730cb3a1c4a"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/future-cohort-handoff/roman-finite28-stop.json",
+                "sha256": "57a62ff2c025636662dfe07d8e4b305860026e346b10ffdec29615c5fbdd5cf2"
+              }
+            ]
+          },
+          "actual_new_evidence": [
+            {
+              "key": "feltoe-collect-whole-20261112",
+              "sha256": "2ba50bddb43a5d2eb14265770b0aabc5a60750509101ec8df6ce6b2190b51810",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112",
+              "locus": "Feltoe 1896, printed p. 44, June, XVII Item alia, lines 11-13 (PDF p. 68).",
+              "source_units_path": ".scratch/roman-sources/urban-omnes/source-units.json",
+              "complete_body": "Omnipotens sempiterne Deus qui ecclesiam tuam in apostolica soliditate fundatam ab infernarum eruis terrore portarum praesta ut in tua veritate persistens nulla recipiat consortia perfidorum per.\n"
+            },
+            {
+              "key": "feltoe-protection-whole-20261112",
+              "sha256": "d18b79835bfa47efb99bd4b1a9f43b2c6b758b67d9dfb590e9c4253770103a75",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112",
+              "locus": "Feltoe 1896, printed p. 45, June, end of XVIII Item alia, complete prayer lines 9-10 (PDF p. 69).",
+              "source_units_path": ".scratch/roman-sources/urban-omnes/source-units.json",
+              "complete_body": "Protege Domine populum tuum et apostolorum patrocinio confidentem perpetua defensione conserva per.\n"
+            },
+            {
+              "key": "urban-old-whole-20261112",
+              "sha256": "ed368e8aeabdcdfb257d04ca01cb274c7002ce7224ac642b92a9e0c2d605be4d",
+              "passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112",
+              "locus": "Mame 1922, complete Urban Oratio, printed p. 599 / PDF p. 713.",
+              "source_units_path": ".scratch/roman-sources/urban-omnes/source-units.json",
+              "complete_body": "Da, quaesumus, omnipotens Deus: ut, qui beati Urbani Martyris tui atque Pontificis solemnia colimus, ejus apud te intercessionibus adjuvemur. Per Dominum.\n"
+            }
+          ],
+          "whole_expression_argument": "The connected old prayer carries the main expression and syntax; the changes can plausibly be evaluated as customary ecclesial naming, biblical rock specification and a conventional protection formula. That is a candidate argument only. Across the whole, the preserved Church/foundation/gates/fidelity construction carries the expression; the proposed argument treats the apostolic-rock specification, intercession and positive protection formula together as a conventional application, not merely as separately old phrases. Pluralization is grammatically mechanical within the printed generic form, but this second exact body still requires its own decision and does not inherit the singular decision.",
+          "strongest_contrary": "The cumulative replacement of the old negative fidelity petition with affirmative security, insertion of saint-mediated intercession, and choice of rock imagery may constitute a minimally original revised whole. The proposed Urban result is a distinct body and cannot confer authority on these two Common forms.",
+          "complete_comparison": [
+            "The whole Feltoe p44 prayer supplies the Church/foundation/gates-of-hell construction and in tua veritate persistens, in the same connected petition.",
+            "Target drops Omnipotens sempiterne, changes apostolica to apostolicae petrae, adds quaesumus and the generic named-saint intercession with optional martyr wording and Summo Pontifice or plural equivalents.",
+            "The complete old ending nulla recipiat consortia perfidorum is replaced by continua securitate muniatur. The old protection prayer is thematic and formulaic support for continual apostolic protection, not an exact attestation of this replacement.",
+            "The complete Mame Urban prayer demonstrates old named martyr/pontiff intercession; it does not print these generic placeholders, Summo or their location in this collect.",
+            "Target retains literal Per Dominum. Both Common prayers print veritate, while Urban prints virtute. Singular/plural slots and optional parentheses belong to their exact separate bodies."
+          ]
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/cases/4",
+      "original_case_canonical_sha256": "a6af21193a98dcf840c76139b68946b8d480f9d4c658ff508d2553fe32ed3a4a",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Secret (Altera secreta)",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "commune-summorum-pontificum",
+          "",
+          "Secret (Altera secreta)",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Munera, quae tibi, Domine, laetantes offerimus, suscipe benignus, et praesta: ut, intercedente beato N. (intercedentibus beatis N. et N.), Ecclesia tua et fidei integritate laetetur, et temporum tranquillitate semper exsultet. Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\n",
+        "English": "Kindly accept, Lord, the gifts we joyfully offer you, and grant that, through the intercession of blessed N. (through the intercession of blessed N. and N.), your Church may rejoice in the integrity of faith and always exult in the tranquility of the times. Through our Lord Jesus Christ, your Son: Who lives and reigns with you in unity.\n",
+        "Latin_sha256": "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86",
+        "English_sha256": "a0e9e1cd055d852590e8c62df914e45558f83569d2ff051c9ceca20cc3ab7a3a",
+        "final_English_entry_sha256": "f8f401ee824333f48c22b79c602b4c7163853ca243fc8b10a74122e96b1dce2d",
+        "resolved_Latin_row_sha256": "b7d676480d1a68b5ca12c3f7b188d8070125d28cf256e6d96189d9da82a376a1",
+        "inherited_Latin_row_sha256": "99f1666014481449b762099d2e3e3161d9bac4365e21368a2c31e59449d9e4f6",
+        "proper_row_sha256": "e33b179beb6c99824d7441efeb09673dd692e11e32ddd0d5298dd8c3424e318c",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-altera-secret-target-review-20261112",
+        "target_record_sha256": "e2b27793356d6dc6b73e6aa1a61b369f058a7f8cf3d250383052508034885a59",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-secret",
+        "controller_passage_record_sha256": "0c866144d13567c6cc817f53ed7ae1b487c2866338d0963f7c31af328841600a",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-secret-a5ad120a",
+        "controller_artifact_record_sha256": "180ec330e30d92f8ea20c3316923ee66cb21df432c2f8e080b169c4fd7ac5bf1",
+        "controller_payload_sha256": "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86",
+        "source_plan": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+          "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+          "source_review": {
+            "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+            "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+          }
+        },
+        "source_record_closure_sha256": "68bb07b605d4e82923cfc0759dd51455f4da042c7e0d4a080309846dda79584b",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "case_record": {
+            "path": ".scratch/roman-sources/common-palm-merits/cases/pontiff-altera-secret.json",
+            "sha256": "6119601b12f10514990e01060ec486a3cae871afff7569c79422f7bcc857508a"
+          },
+          "prior_negative_finding": {
+            "current_latin": {
+              "state": "unavailable",
+              "scope": "proper-body",
+              "reasons": [
+                {
+                  "kind": "witness-gap",
+                  "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+                }
+              ]
+            },
+            "current_english": {
+              "mass": "commune-summorum-pontificum",
+              "form_id": "main",
+              "proper": "Secret (Altera secreta)",
+              "cycle": "all",
+              "occurrence": 1,
+              "lang": "en",
+              "extent": "body",
+              "availability": "unavailable",
+              "reason": {
+                "kind": "rights-withheld",
+                "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                "surfaces": [
+                  "site-display",
+                  "corpus-data",
+                  "public-git",
+                  "command-line",
+                  "download"
+                ]
+              },
+              "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+              "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap",
+              "verified_artifact_page": 511,
+              "verified_on_page": "2026-08-27",
+              "verified_printed_page": "502-504",
+              "note": "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
+            },
+            "durable_nonadoption": "The 2026-10-30 stop records confirm the Common/Palm source and review lanes were interrupted without final source-result acknowledgments. No finished old review or exact acceptance is inferred. Their six future-adopted cases were GF2, Queen2, Urban1 and Omnes1; this body is outside that set.",
+            "prior_records": [
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman.json",
+                "sha256": "bfbe5077e7c18c4d122158e0e41ed4bbb037133e6012c71ec679d64b366aa561"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman-closure.json",
+                "sha256": "57516ec9e8ffca43e9e70d0f90bc8e5518e298704254b9c7ec7a7730cb3a1c4a"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/future-cohort-handoff/roman-finite28-stop.json",
+                "sha256": "57a62ff2c025636662dfe07d8e4b305860026e346b10ffdec29615c5fbdd5cf2"
+              }
+            ]
+          },
+          "actual_new_evidence": [
+            {
+              "key": "feltoe-munera",
+              "parent": "feltoe",
+              "slug": "common-secret-munera-antecedent-20261112",
+              "page": 71,
+              "locus": "Feltoe1896 printed47 / PDF71, June XXIII Item alia, complete second prayer, lines26-28",
+              "transformation": "Join lines and discretionary hyphenation; expand barred Dne to Domine; omit dagger, superscript6 and marginal numbering; preserve every main-text word and per. unexpanded. The main text after nobis has a dagger; note6 says: The text seems to need eorum before intercessionibus. No eorum is supplied here.",
+              "artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-secret-munera-antecedent-20261112",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.common-secret-munera-antecedent-20261112",
+              "sha256": "bb3f5017e0d0f2a2a6f338ca1be9e2cc24dd977022e06730b8d1e579dc33ff38",
+              "complete_body": "Munera tibi Domine laetantes offerimus quae beatorum apostolorum Petri et Pauli nataliciis nobis intercessionibus confidimus profutura per.\n"
+            },
+            {
+              "key": "wilson-faith",
+              "parent": "wilson",
+              "slug": "common-secret-faith-peace-antecedent-20261112",
+              "page": 198,
+              "locus": "Wilson1915 printed140 / PDF198, Oratio in tempore belli, complete Alia prayer",
+              "transformation": "Join lines; expand printed e caudata in tue to ae; omit the slash and fo.137 manuscript-folio annotation before exultet; retain lower case, separated punctuation points, uirtute, conprime, exultet and the literal per. cue. No Ecclesia or saint intercession substituted.",
+              "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.common-secret-faith-peace-antecedent-20261112",
+              "passage_id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.common-secret-faith-peace-antecedent-20261112",
+              "sha256": "b67ef293ca7a4382d728657ffaf53dd0d3e48268a3b186a3eb61c662869ab764",
+              "complete_body": "Omnipotens deus romani nominis inimicos . uirtute quaesumus tuae conprime maiestatis . ut populus tuus . et fidei integritate laetetur . et temporum tranquillitate semper exultet . per.\n"
+            }
+          ],
+          "whole_expression_argument": "The offering opening and paired faith/peace predicate are independently documented whole-prayer components; the intervening petition and naming are customary forms. This materially improves the evidence beyond a witness-gap. The whole-expression proposal is that a conventional gift-acceptance/intercession bridge joins the already expressed apostolic offering and faith/peace petition without independent narrative development. The cross-prayer selection and change of setting remain material rather than being dismissed as spelling.",
+          "strongest_contrary": "Selection and combination of parts from different prayers, conversion of a wartime people-petition into a Church offering prayer, and the intercessory bridge can have expressive significance. Component antiquity does not by itself settle the whole.",
+          "complete_comparison": [
+            "The full Feltoe prayer begins Munera tibi Domine laetantes offerimus and concerns apostolic intercession; target turns the offered gifts into a relative clause, adds suscipe benignus et praesta and a generic saint-intercession insertion, and omits the old Petri et Pauli/nataliciis/profutura predicate.",
+            "The whole Wilson wartime prayer supplies the complete paired predicate et fidei integritate laetetur et temporum tranquillitate semper exultet. Target replaces populus tuus with Ecclesia tua, inserts the saint-intercession clause, and spells exsultet.",
+            "Wilson invocation/petition for subduing enemies is omitted; Feltoe opening and Wilson ending are combined across two complete old prayers. Neither witness prints this exact resulting whole.",
+            "The target conclusion is exactly Per Dominum nostrum Iesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. It is not expanded beyond the source."
+          ]
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/cases/5",
+      "original_case_canonical_sha256": "76b1172ae5b2e1fab1663fc111864c8fd84666e0e207bc1f6971763cfddc1493",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Postcommunion (Altera postcommunio)",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "commune-summorum-pontificum",
+          "",
+          "Postcommunion (Altera postcommunio)",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem dedisti: ut, beati N. (Martyris tui atque) Summi Pontificis deprecatione, nec pastori oboedientia gregis nec gregi desit cura pastoris. Per Dominum.\n",
+        "English": "Increase, we ask, Lord, in your Church the spirit of grace that you have given, so that, through the prayer of blessed N. (your Martyr and) Supreme Pontiff, the shepherd may not lack the flock's obedience, nor the flock the shepherd's care. Through the Lord.\n",
+        "Latin_sha256": "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980",
+        "English_sha256": "927b5d3a21074a0c98c877986aa69df09cf917253024971c26bf659c70002de6",
+        "final_English_entry_sha256": "4f61f4a08c6fa202344edd14df0c1eb1ac9c434a87a3b8ea9ecb49b652dbcc5d",
+        "resolved_Latin_row_sha256": "ce73948fb6a14841ac3dc32467e31b6e534f0c637adff9f4454aeb3bb0496129",
+        "inherited_Latin_row_sha256": "2229f0d5a5df5dc2490564748db2cfabb4a7f86135789416d27b81e0f877d414",
+        "proper_row_sha256": "d56d51cb3e2862549f2490cb91e579375213dff8b5359fc01b64a90a985a374b",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-altera-postcommunion-singular-target-review-20261112",
+        "target_record_sha256": "caee84502f8fb4f0d0fe64d7e6f8527e4123e14ca1b54d3ecd97da3ef213f73c",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-singular",
+        "controller_passage_record_sha256": "90c6a5c19202ed57aff52abbb0b5a6b174dcddc9c6cc6be24b4aa5a9d5dff03d",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-singular-0f6aba28",
+        "controller_artifact_record_sha256": "ea31ca00e83ee65e4fc2ac7423d2421a95c560e8ccb82a7f962f12754ba8a958",
+        "controller_payload_sha256": "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980",
+        "source_plan": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+          "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+          "source_review": {
+            "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+            "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+          }
+        },
+        "source_record_closure_sha256": "6f292c188f9ad8fdf923eb32abe3cf1e07e1d117029bd4cb05609eadc0967699",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "case_record": {
+            "path": ".scratch/roman-sources/common-palm-merits/cases/pontiff-altera-postcommunion-singular.json",
+            "sha256": "8cb6674ec2abb634e4347da8d516b791d380899ed5400e3097dbe3495fbb131b"
+          },
+          "prior_negative_finding": {
+            "current_latin": {
+              "state": "unavailable",
+              "scope": "proper-body",
+              "reasons": [
+                {
+                  "kind": "witness-gap",
+                  "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+                }
+              ]
+            },
+            "current_english": {
+              "mass": "commune-summorum-pontificum",
+              "form_id": "main",
+              "proper": "Postcommunion (Altera postcommunio)",
+              "cycle": "all",
+              "occurrence": 1,
+              "lang": "en",
+              "extent": "body",
+              "availability": "unavailable",
+              "reason": {
+                "kind": "rights-withheld",
+                "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+                "surfaces": [
+                  "site-display",
+                  "corpus-data",
+                  "public-git",
+                  "command-line",
+                  "download"
+                ]
+              },
+              "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+              "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap",
+              "verified_artifact_page": 511,
+              "verified_on_page": "2026-08-27",
+              "verified_printed_page": "502-504",
+              "note": "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
+            },
+            "durable_nonadoption": "The 2026-10-30 stop records confirm the Common/Palm source and review lanes were interrupted without final source-result acknowledgments. No finished old review or exact acceptance is inferred. Their six future-adopted cases were GF2, Queen2, Urban1 and Omnes1; this body is outside that set.",
+            "prior_records": [
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman.json",
+                "sha256": "bfbe5077e7c18c4d122158e0e41ed4bbb037133e6012c71ec679d64b366aa561"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman-closure.json",
+                "sha256": "57516ec9e8ffca43e9e70d0f90bc8e5518e298704254b9c7ec7a7730cb3a1c4a"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/future-cohort-handoff/roman-finite28-stop.json",
+                "sha256": "57a62ff2c025636662dfe07d8e4b305860026e346b10ffdec29615c5fbdd5cf2"
+              }
+            ]
+          },
+          "actual_new_evidence": [
+            {
+              "key": "feltoe-multiplica",
+              "parent": "feltoe",
+              "slug": "common-postcommunion-multiplica-antecedent-20261112",
+              "page": 153,
+              "locus": "Feltoe1896 printed129 / PDF153, September VI Item alia, complete last prayer, lines21-23",
+              "transformation": "Join lines and discretionary hyphenation; expand barred Dne, spm and sca to Domine, spiritum and sancta; preserve word order, all other words and literal per. No later intercession or pastor/flock ending is inserted.",
+              "artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112",
+              "sha256": "1925031041dc675e763af983fa1cb0ab4123a5c14aa242fd311550b84be15a39",
+              "complete_body": "Multiplica Domine quaesumus in ecclesia tua spiritum gratiae quem dedisti ut per dignum pontificis institutum crescat tuorum devotio sancta fidelium per.\n"
+            },
+            {
+              "key": "feltoe-pastor",
+              "parent": "feltoe",
+              "slug": "common-postcommunion-pastor-antecedent-20261112",
+              "page": 152,
+              "locus": "Feltoe1896 printed128 / PDF152, September V Item alia continued, complete last prayer, lines30-33",
+              "transformation": "Join lines and discretionary hyphenation; expand barred Ds to Deus; omit marginal432 and superscript notes7-8; preserve main-text benigne and gregi and literal per. Note7 records Mur. and Ball. benignus; note8 records MS. grex. Main-text readings control.",
+              "artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-pastor-antecedent-20261112",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-pastor-antecedent-20261112",
+              "sha256": "b9721772f6f12867a59b091056a0a68a27edc49c0b0448bd03bc4c64e966e170",
+              "complete_body": "Deus dierum temporumque nostrorum potens et benigne moderator collatis in me per gratiam tuam propitiare muneribus et in hunc affectum dirige cor plebis et praesulis ut nec pastori oboedientia gregis nec gregi desit cura pastoris per.\n"
+            }
+          ],
+          "whole_expression_argument": "The strongly distinctive reciprocal pastor/flock ending is independently old, and the target joins it to an independently old episcopal grace prayer. The remaining bridge is conventional intercession and grammatical inflection; a bounded qualified adaptation assessment is materially supported. Considered together, the resulting petition remains within the old episcopal-grace and pastoral-duty setting: a conventional saint-intercession bridge joins an old gift petition to an old reciprocal pastoral petition. This is a proposed whole-expression rationale, not an exact old-whole claim.",
+          "strongest_contrary": "The act of joining two prayers and interposing saintly intercession alters both original petitions. Even when the words are old, an expressive selection/arrangement must be assessed as a whole; neither generic singular nor plural follows automatically from another admitted saint prayer.",
+          "complete_comparison": [
+            "The complete Feltoe p129 prayer supplies Multiplica Domine quaesumus in ecclesia tua spiritum gratiae quem dedisti; target reverses Domine/quaesumus and adds punctuation.",
+            "Target removes the whole p129 petition per dignum pontificis institutum crescat tuorum devotio sancta fidelium, and substitutes a generic saint-intercession bridge plus the complete final clause of the p128 Deus dierum prayer.",
+            "The p128 complete prayer supplies exactly nec pastori oboedientia gregis nec gregi desit cura pastoris, including its reciprocal pastoral construction. Target does not originate that antithesis.",
+            "Singular and plural differ in the exact named-saint/title phrase, with optional martyr wording and deprecatione. Both print literal Per Dominum.; neither old whole prints the new combination."
+          ]
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/cases/6",
+      "original_case_canonical_sha256": "4c06a4494d1180c468e4fa4532953421095478089f84a10df69a8d96aa874e5c",
+      "case": {
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Postcommunion (in plurali)",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "commune-summorum-pontificum",
+          "",
+          "Postcommunion (in plurali)",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Multiplica, quaesumus, Domine, in Ecclesia tua spiritum gratiae, quem dedisti: ut, beatorum N. et N. (Martyrum tuorum atque) Summorum Pontificum deprecatione, nec pastori oboedientia gregis nec gregi desit cura pastoris. Per Dominum.\n",
+        "English": "Increase, we ask, Lord, in your Church the spirit of grace that you have given, so that, through the prayer of blessed N. and N. (your Martyrs and) Supreme Pontiffs, the shepherd may not lack the flock's obedience, nor the flock the shepherd's care. Through the Lord.\n",
+        "Latin_sha256": "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb",
+        "English_sha256": "0b114210b02f860463a3d31a346b2abdcdc576efe0d19ed4c1f5d444621ad54f",
+        "final_English_entry_sha256": "a5df2aed39f79dc3f22f2fda256b92fe03ba077645f857a3672bb8f18c5cc39c",
+        "resolved_Latin_row_sha256": "62d135941434b1972184f6ad4f40f17d0dce44078ea8c99826c0c04da57784c5",
+        "inherited_Latin_row_sha256": "0cdf57fccf69b0db334c273dc4b1365074b0606c4db59ca4ac244738fb85c689",
+        "proper_row_sha256": "cc811bf67f940a533e856f1e1be966e7e9b935a1dcf8888838858281040473e4",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pontiff-altera-postcommunion-plural-target-review-20261112",
+        "target_record_sha256": "503df96a15280c943004ac67dba526a2c127abe4ce4fa4716d6686a8a5d04f43",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-plural",
+        "controller_passage_record_sha256": "15a1dcd83a43e13d890ae3d797c7d043cdfd26eb2cf6b547c0dee937ddd5a207",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-plural-b9e6e57f",
+        "controller_artifact_record_sha256": "1ebec4fa8a3fa179530a449163e9880a911a6b38b44a9c4cdf10411414603f33",
+        "controller_payload_sha256": "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb",
+        "source_plan": {
+          "path": ".scratch/roman-sources/common-palm-merits/final-proposal/install-plan.json",
+          "sha256": "b72ecda87f04664482ec621589fd68d1d6f97d53b8f2c2d0463a6bf0f2959bd4",
+          "source_review": {
+            "path": ".scratch/roman-sources/common-palm-merits/final-proposal/source-and-english-review.json",
+            "sha256": "3cb480c71324bc8b76c320ae9e9783117ad8a6c6fabb8443a0908da28275c995"
+          }
+        },
+        "source_record_closure_sha256": "336340118a601c022f2e380f977712047ed364410e8ede5d23a3a45a782bf6d3",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "case_record": {
+            "path": ".scratch/roman-sources/common-palm-merits/cases/pontiff-altera-postcommunion-plural.json",
+            "sha256": "e32b008343e4309437667bb749a919a5e5584878c1526cb81d2e31b32b2b8e55"
+          },
+          "prior_negative_finding": {
+            "current_latin": {
+              "state": "unavailable",
+              "scope": "proper-body",
+              "reasons": [
+                {
+                  "kind": "witness-gap",
+                  "source_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+                }
+              ]
+            },
+            "current_english": {
+              "mass": "commune-summorum-pontificum",
+              "form_id": "main",
+              "proper": "Postcommunion (in plurali)",
+              "cycle": "all",
+              "occurrence": 1,
+              "lang": "en",
+              "extent": "body",
+              "availability": "unavailable",
+              "reason": {
+                "kind": "witness-gap",
+                "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+              },
+              "witness_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+              "witness_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap",
+              "verified_artifact_page": 511,
+              "verified_on_page": "2026-08-27",
+              "verified_printed_page": "502-504",
+              "note": "Cummiskey's numbered Commons end at Mass XXI and pass directly to the Dedication Mass; it has no Common of one or more Supreme Pontiffs. Lasance supplies no plural form. The bounded passage proves this absence without recording a body."
+            },
+            "durable_nonadoption": "The 2026-10-30 stop records confirm the Common/Palm source and review lanes were interrupted without final source-result acknowledgments. No finished old review or exact acceptance is inferred. Their six future-adopted cases were GF2, Queen2, Urban1 and Omnes1; this body is outside that set.",
+            "prior_records": [
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman.json",
+                "sha256": "bfbe5077e7c18c4d122158e0e41ed4bbb037133e6012c71ec679d64b366aa561"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/stop-records-2026-10-30/roman-closure.json",
+                "sha256": "57516ec9e8ffca43e9e70d0f90bc8e5518e298704254b9c7ec7a7730cb3a1c4a"
+              },
+              {
+                "path": "workflows/reviews/missal-english-completion-2026-10-29/next-english-2026-10-30/future-cohort-handoff/roman-finite28-stop.json",
+                "sha256": "57a62ff2c025636662dfe07d8e4b305860026e346b10ffdec29615c5fbdd5cf2"
+              }
+            ]
+          },
+          "actual_new_evidence": [
+            {
+              "key": "feltoe-multiplica",
+              "parent": "feltoe",
+              "slug": "common-postcommunion-multiplica-antecedent-20261112",
+              "page": 153,
+              "locus": "Feltoe1896 printed129 / PDF153, September VI Item alia, complete last prayer, lines21-23",
+              "transformation": "Join lines and discretionary hyphenation; expand barred Dne, spm and sca to Domine, spiritum and sancta; preserve word order, all other words and literal per. No later intercession or pastor/flock ending is inserted.",
+              "artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112",
+              "sha256": "1925031041dc675e763af983fa1cb0ab4123a5c14aa242fd311550b84be15a39",
+              "complete_body": "Multiplica Domine quaesumus in ecclesia tua spiritum gratiae quem dedisti ut per dignum pontificis institutum crescat tuorum devotio sancta fidelium per.\n"
+            },
+            {
+              "key": "feltoe-pastor",
+              "parent": "feltoe",
+              "slug": "common-postcommunion-pastor-antecedent-20261112",
+              "page": 152,
+              "locus": "Feltoe1896 printed128 / PDF152, September V Item alia continued, complete last prayer, lines30-33",
+              "transformation": "Join lines and discretionary hyphenation; expand barred Ds to Deus; omit marginal432 and superscript notes7-8; preserve main-text benigne and gregi and literal per. Note7 records Mur. and Ball. benignus; note8 records MS. grex. Main-text readings control.",
+              "artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-pastor-antecedent-20261112",
+              "passage_id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-pastor-antecedent-20261112",
+              "sha256": "b9721772f6f12867a59b091056a0a68a27edc49c0b0448bd03bc4c64e966e170",
+              "complete_body": "Deus dierum temporumque nostrorum potens et benigne moderator collatis in me per gratiam tuam propitiare muneribus et in hunc affectum dirige cor plebis et praesulis ut nec pastori oboedientia gregis nec gregi desit cura pastoris per.\n"
+            }
+          ],
+          "whole_expression_argument": "The strongly distinctive reciprocal pastor/flock ending is independently old, and the target joins it to an independently old episcopal grace prayer. The remaining bridge is conventional intercession and grammatical inflection; a bounded qualified adaptation assessment is materially supported. Considered together, the resulting petition remains within the old episcopal-grace and pastoral-duty setting: a conventional saint-intercession bridge joins an old gift petition to an old reciprocal pastoral petition. This is a proposed whole-expression rationale, not an exact old-whole claim.",
+          "strongest_contrary": "The act of joining two prayers and interposing saintly intercession alters both original petitions. Even when the words are old, an expressive selection/arrangement must be assessed as a whole; neither generic singular nor plural follows automatically from another admitted saint prayer. Plural inflection of the intercessors does not itself clear the underlying composite prayer, and no generic permission to instantiate other plural forms is proposed.",
+          "complete_comparison": [
+            "The complete Feltoe p129 prayer supplies Multiplica Domine quaesumus in ecclesia tua spiritum gratiae quem dedisti; target reverses Domine/quaesumus and adds punctuation.",
+            "Target removes the whole p129 petition per dignum pontificis institutum crescat tuorum devotio sancta fidelium, and substitutes a generic saint-intercession bridge plus the complete final clause of the p128 Deus dierum prayer.",
+            "The p128 complete prayer supplies exactly nec pastori oboedientia gregis nec gregi desit cura pastoris, including its reciprocal pastoral construction. Target does not originate that antithesis.",
+            "Singular and plural differ in the exact named-saint/title phrase, with optional martyr wording and deprecatione. Both print literal Per Dominum.; neither old whole prints the new combination."
+          ]
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/cases/7",
+      "original_case_canonical_sha256": "2328b7a70704a09599258376cee333f705d4010488b43ef26082acd3721e6325",
+      "case": {
+        "identity": [
+          "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+          "",
+          "Secret",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Hostias tibi, Domine, in odorem suavitatis offerimus: et praesta; ut, beati Roberti monitis et exemplis edocti, per semitam mandatorum tuorum dilatato corde curramus. Per Dominum nostrum.\n",
+        "English": "We offer you sacrificial offerings, O Lord, as a sweet fragrance; and grant that, instructed by the counsels and examples of blessed Robert, we may run with an enlarged heart along the path of your commandments. Through our Lord.\n",
+        "Latin_sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+        "English_sha256": "e52ebe481515425327be38e0eb18351cbb183f82c4c244cc86678dc2022a327e",
+        "final_English_entry_sha256": "ec82ef4c903b8ed153dcdb6dbd4ee3e7c621f42a4d3ea3be0e15ce1418bb0afe",
+        "resolved_Latin_row_sha256": "b509c815e139214138f3db6d3ad54c59521d7e56db9dd7b0bda1943e6ae40716",
+        "inherited_Latin_row_sha256": "0154614054df50105134d1727ebdeab2198f015fd47630ef5ce72e810bbabb64",
+        "proper_row_sha256": "b1d010da3ef61435e55e00cecbce931cb081ef333a48bce851346680b24b0dea",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.bellarmine-secret-target-control-20261112",
+        "target_record_sha256": "cc989714da059028e9a8634ef244d189c5cd0e9dcc0ab9bf89a0064a6bcbec0b",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret",
+        "controller_passage_record_sha256": "b8854b8d86cd94156fa0d820f50ead06cd6e5ca2b6c2a2a2a4c2c4a70ae9873f",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret-fefc86d1",
+        "controller_artifact_record_sha256": "61932aa7390fccf2f395a6d1f97e2bc44b8039fd4199951ff04ea130cb56f48a",
+        "controller_payload_sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+        "source_plan": {
+          "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/install-plan.json",
+          "sha256": "47f93c8d110017ae1369bb07d053a263e381156b3b754a6da661749b442d665b",
+          "source_review": null
+        },
+        "source_record_closure_sha256": "5c702e1bfc4d65218717e2ec0fe2eb4b90541c216a2eda9e7e9bbf3f3624dad5",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "case_record": {
+            "path": ".scratch/roman-sources/saints-four-merits/whole-expression-merits.json",
+            "sha256": "e130565c4cfe0efcd996f9013c4733b17c8a0ac4fc2b6a5f59e6ee87dc97d41d"
+          },
+          "complete_merits": {
+            "id": "bellarmine-secret",
+            "target_latin_sha256_with_lf": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+            "english_sha256_with_lf": "e52ebe481515425327be38e0eb18351cbb183f82c4c244cc86678dc2022a327e",
+            "independent_decision_required": true,
+            "positive_whole_expression_argument": "Taken as a whole, the prayer is a compact conventional offertory: offer sacrificial gifts as a sweet odor, then ask to follow the commandments with an enlarged heart through the saint’s teaching and examples. The 1923 prayer already links these offerings, their sweet odor and Robert’s examples. The older Berchmans Postcommunion contains the complete concluding commandment-path/enlarged-heart petition with viam; the older Alphonsus Collect contains the instruction/example idiom. The target’s syntax joins these conventional functions in their expected offertory sequence. This gives a concrete, finite argument that the remaining changes do not introduce sufficient new expressive authorship in this particular complete prayer.",
+            "strongest_contrary": "The 1923 whole prayer asks that offerings be accepted and that the worshippers immolate a holocaust of fidelity; the 1931 prayer instead states the offering and asks to run the commandments. Neither older source supplies the whole target. Hostias tibi ... offerimus, et praesta; ut, the combined monitis et exemplis edocti, and per semitam replace old syntax and select a different movement of thought. A new arrangement of unprotected material may itself be protected. The 1931 title and 23 December approval defeat the catalogue-1929 shortcut.",
+            "recommended_disposition": "Submit as the stronger Bellarmine candidate for a narrowly reasoned ambiguous-but-defensible merits decision. This is an argument for Root to evaluate, not an established public-domain finding. Hold persists unless that exact complete expression and both publication languages/surfaces are admitted.",
+            "what_would_change": "Independent review accepts the complete-expression argument and Root explicitly adopts this exact body, or a new earlier whole witness or exact permission supersedes the merits route.",
+            "previous_negative_findings": "The1923 whole prayer is materially different. The1931 source replaces both the offering syntax and the second petition, combines older motifs in a new arrangement, and has explicit23Dec1931 approval. No complete pre1931 target witness is established.",
+            "new_evidence_since_stop": "Actual complete acquired Acta III and VI page images and the true 1931 fascicle/approval chronology; complete old formula witnesses and target image collation. For Assumption specifically, Wilson 1915 exact opening and Mame 1922 exact ending. These are new source findings relative to the old stop, not newly discovered in this final drafting step.",
+            "not_new_evidence": "No additional historical prayer witness was acquired in this four-case drafting step; fresh study English and current official copyright sources do not supply an old target witness.",
+            "whole_units": {
+              "acta1923-bellarmine-secret": {
+                "source": "actaIII",
+                "printed": "551",
+                "pdf": 573,
+                "body": "Quas offerimus Hostias, Domine, in odorem suavitatis admittere digneris: et fac nos, beati Roberti exemplis inhaerentes, iugiter in tuo servitio fidelitatis holocaustum immolare. Per Dominum.",
+                "image_checks": [
+                  200,
+                  400
+                ],
+                "body_sha256_no_lf": "36d3aa8f2e9d8f5e24806b262bf6e221cccd25a03e9779a4f14e9111cfa5490d"
+              },
+              "mame1922-john-berchmans-postcommunion": {
+                "source": "mame1922",
+                "printed": "[64]",
+                "pdf": 1094,
+                "body": "Caelesti epulo refectis praesta nobis, quaesumus, misericors Deus: ut, beati Joannis vestigia sequentes, viam mandatorum tuorum dilatato corde curramus. Per Dominum.",
+                "image_checks": [
+                  200,
+                  400
+                ],
+                "identity_note": "Previous page1093 is headed S.Joannis Berchmans Conf.; not John Leonardi. Prayer begins at lower left and continues at top right.",
+                "body_sha256_no_lf": "fd559a8d7517188f5236ef195990f1d0ede3b6c903d70a188055db5e4be5a7e6"
+              },
+              "mame1922-alphonsus-collect": {
+                "source": "mame1922",
+                "printed": "676",
+                "pdf": 790,
+                "body": "Deus, qui per beatum Alfonsum Mariam Confessorem tuum atque Pontificem, animarum zelo succensum, Ecclesiam tuam nova prole foecundasti: quaesumus; ut, ejus salutaribus monitis edocti et exemplis roborati, ad te pervenire feliciter valeamus. Per Dominum.",
+                "image_checks": [
+                  200,
+                  400
+                ],
+                "body_sha256_no_lf": "2914b392ef2a3ecc3f28b1d1c8d0cbccff2974462cde0cace7da798a91b95a38"
+              }
+            },
+            "later_complete_witness": {
+              "source": "actaVI",
+              "printed": "772",
+              "pdf": 790,
+              "body": "Hostias tibi, Domine, in odorem suavitatis offerimus: et praesta; ut, beati Roberti monitis et exemplis edocti, per semitam mandatorum tuorum dilatato corde curramus. Per Dominum.",
+              "image_checks": [
+                200,
+                400
+              ],
+              "body_sha256_no_lf": "3c0f8ad6b3cf8c567323bb2ad77573d9ad14967e558ac1f9f38f60c027d1921e"
+            },
+            "lexical_diff_old_to_1931_discovery_only": "- Quas - offerimus - Hostias, ?        -\n + Hostias + tibi,   Domine,   in   odorem   suavitatis + offerimus: - admittere - digneris:   et - fac - nos, + praesta; + ut,   beati   Roberti + monitis + et   exemplis - inhaerentes, - iugiter - in - tuo - servitio - fidelitatis - holocaustum - immolare. + edocti, + per + semitam + mandatorum + tuorum + dilatato + corde + curramus.   Per   Dominum.",
+            "later_to_target_conclusion_relation": "1931 Collect prints Per Dominum.; 1962 Collect prints Per Dominum. The 1931 Secret prints Per Dominum.; 1962 prints Per Dominum nostrum. The 1931 Postcommunion prints Per Dominum etc.; 1962 prints Per Dominum nostrum. Punctuation also differs at some loci. These are not silently treated as entire literal identities."
+          }
+        }
+      }
+    },
+    {
+      "original_json_pointer": "/cases/8",
+      "original_case_canonical_sha256": "26e5b5152b407d473a90eb14f421622fb4066d7765e3dea250e05cfcb994d2a2",
+      "case": {
+        "identity": [
+          "assumptione-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "latin_key": [
+          "assumptione-beatae-mariae-virginis",
+          "",
+          "Postcommunion",
+          "",
+          "",
+          1
+        ],
+        "Latin": "Sumptis, Domine, salutaribus sacramentis: da, quaesumus; ut, meritis et intercessione beatae Virginis Mariae in caelum assumptae, ad resurrectionis gloriam perducamur. Per Dominum.\n",
+        "English": "Having received the saving sacraments, O Lord, we ask you to grant that, through the merits and intercession of the Blessed Virgin Mary assumed into heaven, we may be led to the glory of the resurrection. Through our Lord.\n",
+        "Latin_sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+        "English_sha256": "571ec8706ad543253335455e93fd2fe5dbcf16e6084a14fd72778d573b9f5f36",
+        "final_English_entry_sha256": "e126ec7584d5feaa20b9f3c11716d188fbc17eccc600a2d2ca4cfa7b6eccd0e0",
+        "resolved_Latin_row_sha256": "9d879e763efaa3d81b098bac253ca73d5df30ef009bbd42f68938d6831107778",
+        "inherited_Latin_row_sha256": "06f0865dfe6f51593723eefe53070d64d2815d5f64b357f78ff59f1effa221f4",
+        "proper_row_sha256": "d8c437b7a08ef62f3fbbcde3b7d620ec5bbf5b8c1bd4b7de376758bb0ebce88b",
+        "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.assumption-postcommunion-target-control-20261112",
+        "target_record_sha256": "353698c06a3ebed5b779ec32c9085343889eb5fee9f8645856a368f53e963b5b",
+        "controller_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion",
+        "controller_passage_record_sha256": "4d276a40f7dfc9908cf272c4b6b234b0a35cc64f55f59540bfd41e58a1a4fa32",
+        "controller_artifact_id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion-23b359b9",
+        "controller_artifact_record_sha256": "334425d81b66771bfbd9018fcb5a7ef7879ef6ae3195bcb3eb8ab383baa47baf",
+        "controller_payload_sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+        "source_plan": {
+          "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/install-plan.json",
+          "sha256": "47f93c8d110017ae1369bb07d053a263e381156b3b754a6da661749b442d665b",
+          "source_review": null
+        },
+        "source_record_closure_sha256": "84a0b634425cc14d8cfd3ce49d916bd0173a057e97d80c55d2e6d5428e8cebf3",
+        "public_notice": "Qualified United States editorial assessment of this exact adaptation under publication policy section 1 priority 6; moderate confidence. The source record preserves the opposing originality argument. This is not holder permission or an unqualified public-domain claim. Triptych owns only its editorial carrier.",
+        "whole_expression_merits": {
+          "case_record": {
+            "path": ".scratch/roman-sources/saints-four-merits/whole-expression-merits.json",
+            "sha256": "e130565c4cfe0efcd996f9013c4733b17c8a0ac4fc2b6a5f59e6ee87dc97d41d"
+          },
+          "complete_merits": {
+            "id": "assumption-postcommunion",
+            "target_latin_sha256_with_lf": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+            "english_sha256_with_lf": "571ec8706ad543253335455e93fd2fe5dbcf16e6084a14fd72778d573b9f5f36",
+            "independent_decision_required": true,
+            "positive_whole_expression_argument": "The complete target follows a conventional Postcommunion sequence: after receiving saving sacraments, ask through the saint’s merits/intercession to be brought to resurrection glory. Wilson 1915 prints the exact opening in a complete older Postcommunion; Mame 1922 prints the exact final resurrection-glory clause in the Holy Shroud Collect; the 1923 Bellarmine Collect prints the merits/intercession formula. The intermediate naming of the Blessed Virgin and her Assumption is an ordinary identification of the feast, and the connective da, quaesumus; ut is formulaic. Considered as this short complete prayer, rather than as a percentage of old words, the proposed argument is that the residual authorship is a conventional functional joining of inherited prayer clauses, without a distinctive new expressive passage.",
+            "strongest_contrary": "No old witness here prints the whole Assumption target. The 1950 Mass deliberately joins reception of sacraments, Mary’s heavenly Assumption and the worshippers’ future resurrection. That particular theological progression can be expressive selection/arrangement even if every ingredient is traditional. The connector and full Marian application are not established as an exact older combined unit. Lasance’s Signum magnum Mass occurs on an ordinary numbered page in a mixed facsimile and cannot be dated 1945 from pagination. A prior agent’s ready label never became Root admission, and its vanished bodies are not evidence.",
+            "recommended_disposition": "Submit separately for a finite ambiguous-but-defensible merits decision, with the complete 1950 arrangement squarely before Root. It has a plausible conventional-formula argument but no established older whole witness. Continue hold unless the exact body and the new study English route are expressly admitted.",
+            "what_would_change": "Independent full-source review and a fresh Root decision on this precise whole-expression argument; alternatively a new dated complete earlier witness or exact permission.",
+            "previous_negative_findings": "No whole pre1950 Assumption target witness has been established. The1950 arrangement combines received sacraments, merits/intercession of Mary assumed into heaven, and resurrection glory. Lasance has the1950 Mass on unlettered pages; ordinary pagination does not make its English part of1945. Prior ready report never reached Root adoption and its old bodies are absent.",
+            "new_evidence_since_stop": "Actual complete acquired Acta III and VI page images and the true 1931 fascicle/approval chronology; complete old formula witnesses and target image collation. For Assumption specifically, Wilson 1915 exact opening and Mame 1922 exact ending. These are new source findings relative to the old stop, not newly discovered in this final drafting step. A further bounded official acquisition in this drafting step supplies AAS 42 (1950), pp. 793–795: new Mass and decree dated 31 October 1950, issue footer 4 November 1950. It is an archival OCR reconstruction, not a native facsimile.",
+            "not_new_evidence": "No new pre-1931 complete target witness. The official 1950 digital rendering has visible OCR errors, including perducantur at the Postcommunion, and is not used as an exact prayer-body authority. New study English and current copyright sources do not supply an old target witness.",
+            "whole_units": {
+              "wilson1915-lent4-monday-postcommunion": {
+                "source": "wilson1915",
+                "printed": "39",
+                "pdf": 97,
+                "body": "Sumptis domine salutaribus sacramentis . ad redemptionis aeternae quaesumus proficiamus augmentum . per dominum.",
+                "image_checks": [
+                  200,
+                  400
+                ],
+                "note": "Book prints caudate e in aeternae. This transcription normalizes that graph to ae; spacing and paragraph marks are typographic.",
+                "body_sha256_no_lf": "b0ef8d03f47ccdef7a5c601f82e27c6198fb69242c375512b2656acda371ccf2"
+              },
+              "mame1922-holy-shroud-collect": {
+                "source": "mame1922",
+                "printed": "[13]",
+                "pdf": 1043,
+                "body": "Deus, qui nobis in sancta Sindone, qua corpus tuum sacratissimum e cruce depositum, a Joseph involutum fuit, passionis tuae vestigia reliquisti: concede propitius; ut per mortem et sepulturam tuam, ad resurrectionis gloriam perducamur: Qui vivis.",
+                "image_checks": [
+                  200,
+                  400
+                ],
+                "body_sha256_no_lf": "1cbb1bf5676e4f7972c9d7edf5fd7d255abc3568b0c96474d97ee1d421ba0d19"
+              },
+              "acta1923-bellarmine-collect": {
+                "source": "actaIII",
+                "printed": "550",
+                "pdf": 572,
+                "body": "Deus, qui ad catholicam fidem tuendam et ad Apostolicae Sedis iura propugnanda, beatum Robertum, Confessorem tuum atque Pontificem, mirabili sapientia et virtute decorasti: eius meritis et intercessione concede, ut nos in veritatis cognitione crescamus et errantium corda ad Ecclesiae tuae redeant unitatem. Per Dominum.",
+                "image_checks": [
+                  200,
+                  400
+                ],
+                "body_sha256_no_lf": "242292aed98e3b2de4f449d3b51ccb4d1ca0e308a981a8f972cd62a896906248"
+              }
+            },
+            "later_complete_witness": null,
+            "chronology_control": {
+              "id": "aas1950-assumption-approval",
+              "artifact_sha256": "0e49e17ea397a77420632ff2b7290e6a5520b60c207db03b87853692204e99f8",
+              "loci": "PDF/printed 793–795; decree 795 dated 31 October 1950; issue footer on 793 dated 4 November 1950",
+              "role": "official digital delivery corroborates the dated replacement of the older Mass",
+              "limitation": "Archival OCR reconstruction with visible errors; viewing a raster of this PDF does not turn it into a historical facsimile. Exact target remains CMAA PDF709."
+            }
+          }
+        }
+      }
+    }
+  ],
+  "mass_notes_changes": [
+    {
+      "mass": "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+      "old_notes": "Only the scripture-bearing propers are recorded; the orations the Missal prints for this day are appointed and not transcribed here. Identity, rank and the printed citations were read on 2026-08-01 from the embedded text layer of the CMAA facsimile of the controlling edition at printed p. 528 (digital p. 609), not from the facsimile images, and nothing here has been visually collated.",
+      "new_notes": "Identity, rank and printed scriptural citations were initially recorded on 2026-08-01 from the text layer of the CMAA 1962 facsimile, printed 528 / PDF609. This was not a complete visual collation of the formulary. Later per-proper source and Latin-provenance records identify the exact page-image checks and publication basis for each available body; remaining orations retain their typed unavailable states.",
+      "old_notes_sha256": "3fe397ffc742dc9d5d902052bfeb4be5012e0f3323c13706db70c19dbd10efb8",
+      "new_notes_sha256": "c70382b87592c52b88f183bcb3f7c76aa0ef2f80deda68de0a380bf659c728d3",
+      "reason": "Remove the obsolete assertion that this formulary carries only scriptural bodies and that nothing has been visually collated; retain the actual limits of the initial citation audit."
+    },
+    {
+      "mass": "assumptione-beatae-mariae-virginis",
+      "old_notes": "Only the scripture-bearing propers are recorded; the orations the Missal prints for this day are appointed and not transcribed here. Identity, rank and the printed citations were read on 2026-08-01 from the embedded text layer of the CMAA facsimile of the controlling edition at printed p. 627 (digital p. 708), not from the facsimile images, and nothing here has been visually collated.",
+      "new_notes": "Identity, rank and printed scriptural citations were initially recorded on 2026-08-01 from the text layer of the CMAA 1962 facsimile, printed 627 / PDF708. This was not a complete visual collation of the formulary. Later per-proper source and Latin-provenance records identify the exact page-image checks and publication basis for each available body; remaining orations retain their typed unavailable states.",
+      "old_notes_sha256": "6111ea5a8258043c268b507e3796332813df4c0dc11b3458e4e681854033dbc0",
+      "new_notes_sha256": "00e7596676a530193acce8e4805fa596bc2be925fd65752b98b05b6ce921d4c7",
+      "reason": "Remove the obsolete assertion that this formulary carries only scriptural bodies and that nothing has been visually collated; retain the actual limits of the initial citation audit."
+    }
+  ],
+  "older_frame_operations": [
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "First Prayer after Communion",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "good-friday",
+        "form_id": "main",
+        "proper": "First Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "good-friday",
+        "form_id": "main",
+        "proper": "First Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      }
+    },
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Second Prayer after Communion",
+        "all",
+        1
+      ],
+      "before": {
+        "record": "untranslated",
+        "mass": "good-friday",
+        "form_id": "main",
+        "proper": "Second Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      },
+      "after": {
+        "record": "entry",
+        "mass": "good-friday",
+        "form_id": "main",
+        "proper": "Second Prayer after Communion",
+        "cycle": "all",
+        "occurrence": 1,
+        "reason": "recension-replaced",
+        "basis": "calendar-departure"
+      }
+    }
+  ],
+  "excluded_case_dispositions": [
+    {
+      "name": "Palm conclusion",
+      "disposition": "held; no body reproduced or admission inferred"
+    },
+    {
+      "name": "Bellarmine Collect",
+      "disposition": "held; no body reproduced or admission inferred"
+    },
+    {
+      "name": "Bellarmine Postcommunion",
+      "disposition": "held; no body reproduced or admission inferred"
+    }
+  ],
+  "scope_limits": [
+    "No permission or unqualified public-domain claim.",
+    "Nine exact qualified Latin adaptations and corresponding original study English only; no general source-family grant.",
+    "Complete source body availability does not assert rite execution, expanded endings, name substitutions or option choice.",
+    "Existing pre-1955 mechanical inheritance keeps later-witness qualifications; no independent older-recension attestation.",
+    "No canonical installation or guard activation while Root checkpoint freeze remains active."
+  ],
+  "installation_manifest": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/evidence/installation-manifest-projection.json",
+    "sha256": "ca313de04e005c18ffadd108ba9777ebdfc7c0035cd98e07809797cb285e5bd1"
+  },
+  "transformation": "Nine case objects and explicit owner operations copied exactly; broad predecessor packet references are represented only by their original digest and precise selected-case pointers."
+}

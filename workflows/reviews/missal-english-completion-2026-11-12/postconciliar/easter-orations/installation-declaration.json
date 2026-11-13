@@ -1,0 +1,917 @@
+{
+  "schema": "triptych-easter-six-guarded-installation/v1",
+  "status": "source-and-English-merits-admitted; installation-not-authorized-by-this-file",
+  "canonical_inventory": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+  "unchanged_calendar": "src/sources/calendars/postconciliar/propers.yaml",
+  "durable_declaration": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-orations/installation-declaration.json",
+  "root_adoption": {
+    "path": ".scratch/root/easter-six-source-admission.json",
+    "sha256": "4891f74301e60ac9876a23ea4a079cc75a56f7e37ddca98dc522f1668fb4da8d",
+    "bytes": 15274
+  },
+  "root_adoption_destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-orations/root-adoption.json",
+  "private_original_handoff": {
+    "path": ".scratch/modern-partition-easter/orations-six-root-handoff/handoff.json",
+    "sha256": "079b1a15c0b44508f23aa9e9b1b52e6121558a5f5de0cd4a54a7a82fd483b17a"
+  },
+  "private_original_proposals": [
+    {
+      "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/vigil-five-proposal.json",
+      "sha256": "c046154887ae55eec5567aa8efa3c2651766377cb199c92d217669a64929852b",
+      "byte_size": 74280
+    },
+    {
+      "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/easter7-collect-proposal.json",
+      "sha256": "79f270bafd0070b70a3bcccb5faf93150886b5a0e1a47ba90635a375038c1881",
+      "byte_size": 18614
+    }
+  ],
+  "private_original_source_manifest": {
+    "path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files-manifest.json",
+    "sha256": "9838a506954a80062998eee166f7563831e6f53bd02cf3f22d9868e42dafca5a",
+    "byte_size": 15104
+  },
+  "source_merits_and_runtime_receipt_pins": [
+    {
+      "path": ".scratch/modern-easter-vigil-five-review/review.json",
+      "sha256": "5995436ef59d69a3966bea1236a69b79cd2d18ac3470ced558d54dead81d7d63",
+      "byte_size": 5452
+    },
+    {
+      "path": ".scratch/modern-easter7-collect-review/receipt.json",
+      "sha256": "cf0c237de853e4c4884e8f81f3a39031a012f7f410ccbe453d9e34f501549323",
+      "byte_size": 18478
+    },
+    {
+      "path": ".scratch/modern-easter-six-install-review/receipt.json",
+      "sha256": "47d93acba06d18edfd4aebbc1a1bb045af14c2db848f9d9d768750bf97a6e514",
+      "byte_size": 7741
+    }
+  ],
+  "updates": [
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Second Reading",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Second Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "3152c10ffdc1e161b344d1c565a0c8594ea913b5b42654b434c5fdc1e77f5cc2"
+        ],
+        "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "before_untranslated_sha256": "2ae20e99b2d20ab216b9f1ef6ca8aa8cd1a50b182410c4228d657e2d76cc979e",
+      "after_entry": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Second Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Deus, Pater summe fidelium",
+        "relation": "variant",
+        "ancient_witness": "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition; printed192; Sabbato Sancto; Oratio after third prophecy (Genesis22), immediately before fourth prophecy (Exodus14)",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-second-reading",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-second-reading-text",
+        "ancient_reading": "Deus, fidelium Pater summe, qui in toto orbe terrarum, promissionis tuae filios diffusa adoptionis gratia multiplicas: et per Paschale sacramentum, Abraham puerum tuum universarum, sicut jurasti, gentium efficis patrem: da populis tuis digne ad gratiam tuae vocationis introire. Per Dominum.",
+        "divergence": "Transpose fidelium Pater summe to Pater summe fidelium. Move in toto orbe terrarum from immediately after qui to immediately before multiplicas, and transpose orbe terrarum to terrarum orbe. Replace introire with intrare: a real lexical substitution of closely synonymous verbs, not orthography. Normalize jurasti/iurasti, accents, case and pointing. Replace the old abbreviated Per Dominum. cue with the separately witnessed complete short conclusion Per Christum Dominum nostrum. and marked R.Amen. No automatic cue expansion is claimed. Exact new study English passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-second-reading. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-second-reading-comparison. Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "witness_note": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "God, most high Father of the faithful, you multiply the children of your promise throughout the whole world through the outpouring of the grace of adoption, and through the paschal sacrament you make Abraham your servant the father of all nations, as you swore. Grant that your peoples may enter worthily into the grace of your call. Through Christ our Lord. R. Amen."
+          }
+        ]
+      },
+      "english_sha256": "cebc04a250f6dfd0cd3371a05dbd5f4b85870cf9f8dcbcc91af5c425c84f3474",
+      "unchanged_proper": {
+        "name": "Prayer after the Second Reading",
+        "incipit": "Deus, Pater summe fidelium",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "unchanged_proper_sha256": "6955edcb01d694e36766eb8fb04ae931c059ba8f35ea1165e3cf9a4549deff7f"
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Third Reading",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Third Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "22c53d0c586282a395acff17bbb97715f71a25b058601fec4ff0618dabad731b"
+        ],
+        "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "before_untranslated_sha256": "cf1e0bce55433d013ae4ac02572f563eff46c6b6a69b2585d128374c0a7f9204",
+      "after_entry": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Third Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Deus, cuius antiqua miracula",
+        "relation": "variant",
+        "ancient_witness": "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition; printed193; Sabbato Sancto; Oratio after fourth prophecy and Exodus15 tract, continuing from bottom left to top right of the same full page",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-third-reading-principal",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-third-reading-principal-text",
+        "ancient_reading": "Deus, cujus antiqua miracula etiam nostris saeculis coruscare sentimus: dum quod uni populo, a persecutione Aegyptiaca liberando, dexterae tuae potentia contulisti, id in salutem gentium per aquam regenerationis operaris: praesta, ut in Abrahae filios, et in Israeliticam dignitatem, totius mundi transeat plenitudo. Per Dominum.",
+        "divergence": "Replace nostris saeculis with nostris temporibus: a real temporal-word substitution. Replace persecutione Aegyptiaca with persecutione Pharaonis: the old Egyptian persecution is specifically attributed to Pharaoh, already named in the immediately preceding whole Exodus reading; not orthography. Normalize cujus/cuius, accents, ligatures and pointing. Unlike the older Gelasian donor, this1862 petition already lacks a further et before in Abrahae. Replace the old abbreviated Per Dominum. cue with the separately witnessed full Per Christum Dominum nostrum. and marked R.Amen. Exact new study English passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-third-reading-principal. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-third-reading-principal-comparison. Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "witness_note": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "God, whose ancient wonders we perceive still shining in our own times, through the water of rebirth you accomplish for the salvation of the nations what the power of your right hand once bestowed on one people freed from Pharaoh's persecution. Grant that the fullness of the whole world may enter among Abraham's children and share in Israel's dignity. Through Christ our Lord. R. Amen."
+          }
+        ]
+      },
+      "english_sha256": "e0b1e02213379dd917bc6787caa1b8a3524d252fd361db379204910788910767",
+      "unchanged_proper": {
+        "name": "Prayer after the Third Reading",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "prayer-after-the-third-reading",
+          "option": "deus-cuius-antiqua-miracula",
+          "basis": "Either of the two prayers may be used."
+        },
+        "incipit": "Deus, cuius antiqua miracula",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "unchanged_proper_sha256": "b173f3c8c70ae827bee388ba20911f1e7088687f5d75212a46d304763c758883"
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Third Reading (alternative)",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Third Reading (alternative)",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "69cc63874522f1922cbca01378dd1078ced838201679487ab91e3608a07ba433"
+        ],
+        "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "before_untranslated_sha256": "e6b8408532607594b244ba2141ed0429f37c56593f47a7481c018cd767a97341",
+      "after_entry": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Third Reading (alternative)",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Deus, qui primis temporibus impleta miracula",
+        "relation": "variant",
+        "ancient_witness": "Missale Romanum, Tours: Alfred Mame, 1922, editio quarta iuxta typicam Vaticanam; printed391,392; In Vigilia Pentecostes; Oratio after second prophecy and Exodus15 tract; starts bottom right of391, ends top left of392",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-orations-20261112-vigil-third-reading-alternative",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-orations-20261112-vigil-third-reading-alternative-text",
+        "ancient_reading": "Deus, qui primis temporibus impleta miracula novi testamenti luce reserasti, ut et Mare Rubrum forma sacri fontis exsisteret, et liberata plebs ab Aegyptiaca servitute, christiani populi sacramenta praeferret: da, ut omnes gentes Israelis privilegium merito fidei consecutae, Spiritus tui participatione regenerentur. Per Dominum... in unitate ejusdem.",
+        "divergence": "Change et liberata plebs ab Aegyptiaca servitute to et plebs a servitute liberata: move liberata, omit Aegyptiaca, and use a instead of ab before the new following consonant. These are disclosed body changes, not an exact old-target match. The1922 old text already has ut et, exsisteret and merito fidei; the earlier1894 wording is not silently combined with it. Replace old abbreviated Per Dominum... in unitate ejusdem. with the separately witnessed complete Per Christum Dominum nostrum. and marked R.Amen. Normalize stress accents, ligatures, case and pointing. Exact new study English passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-third-reading-alternative. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-third-reading-alternative-comparison. Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "witness_note": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "God, in the light of the New Testament you have revealed the wonders accomplished in earliest times, so that the Red Sea might be an image of the sacred font, and the people freed from slavery might foreshadow the Christian people's mysteries. Grant that all nations, having obtained Israel's privilege through the merit of faith, may be reborn by sharing in your Spirit. Through Christ our Lord. R. Amen."
+          }
+        ]
+      },
+      "english_sha256": "8a6cc4eb6ba7e456dd22186e37622d3ca1910ca19cfcabde250546533994a989",
+      "unchanged_proper": {
+        "name": "Prayer after the Third Reading (alternative)",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "prayer-after-the-third-reading",
+          "option": "deus-qui-primis-temporibus-impleta",
+          "basis": "Either of the two prayers may be used."
+        },
+        "incipit": "Deus, qui primis temporibus impleta miracula",
+        "source": "composed",
+        "notes": "Either of the two prayers may be used.",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "unchanged_proper_sha256": "c1f1989f3f46a21fd9b9b1640d3f68406db6cafd610df532a3f5e887589be667"
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Fourth Reading",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Fourth Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "5cd68b9de07615af5979afe6b93ab2ad2f0e6969de78a91829a6445826aa1b86"
+        ],
+        "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "before_untranslated_sha256": "985c8e2e618dc70319e795cc6ac7d02a4838b66bf20da68526d06a63d72d3159",
+      "after_entry": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Fourth Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Omnipotens sempiterne Deus, multiplica in honorem nominis tui",
+        "relation": "variant",
+        "ancient_witness": "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition; printed194; Sabbato Sancto; Oratio after fifth prophecy (Isaiah54/55), before sixth prophecy (Baruch3)",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-fourth-reading",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-fourth-reading-text",
+        "ancient_reading": "Omnipotens sempiterne Deus, multiplica in honorem nominis tui, quod patrum fidei spopondisti, et promissionis filios sacra adoptione dilata; ut, quod priores sancti non dubitaverunt futurum, Ecclesia tua magna jam ex parte cognoscat impletum. Per Dominum.",
+        "divergence": "Replace Ecclesia tua magna jam ex parte with Ecclesia tam magna ex parte iam: remove tua, add tam before magna, and move iam after ex parte. This is a real possessive/intensifier and word-order variant. The1862 text already has in honorem and ex parte; no further insertion is inferred from the older Gelasian reading. Normalize jam/iam, accents and pointing. Replace old abbreviated Per Dominum. with the separately witnessed full Per Christum Dominum nostrum. and marked R.Amen. Exact new study English passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-fourth-reading. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-fourth-reading-comparison. Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "witness_note": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Almighty and everlasting God, increase, for the honor of your name, what you pledged to the faith of the fathers, and increase the number of the children of the promise through holy adoption, so that the Church may recognize already fulfilled in such great measure what the saints of old did not doubt would come to pass. Through Christ our Lord. R. Amen."
+          }
+        ]
+      },
+      "english_sha256": "073239a3db97e5af43555f51aef4c65b1acb848ffcc8af6c3ce62c2cb995e908",
+      "unchanged_proper": {
+        "name": "Prayer after the Fourth Reading",
+        "incipit": "Omnipotens sempiterne Deus, multiplica in honorem nominis tui",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "unchanged_proper_sha256": "11bf468f8a1355d478dab51e05100d41f8406832aba01f95b48a7bb9daec397b"
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Seventh Reading",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Seventh Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "76b47c739cc260972bc8dc76d645bab3af3ab841f7e24728f7fe64012b19cd0f"
+        ],
+        "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "before_untranslated_sha256": "7717d98c2c08dd63fc67adf7f73bd7aa3144408260b29adce8b3065b0122b6ed",
+      "after_entry": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Prayer after the Seventh Reading",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Deus, incommutabilis virtus et lumen aeternum",
+        "relation": "variant",
+        "ancient_witness": "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition; printed191; Benedictio Cerei / Sabbato Sancto; Oratio after second prophecy (Noah), before third prophecy(Genesis22)",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-seventh-reading-principal",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-seventh-reading-principal-text",
+        "ancient_reading": "Deus incommutabilis virtus, et lumen aeternum: respice propitius ad totius Ecclesiae tuae mirabile sacramentum, et opus salutis humanae, perpetuae dispositionis effectu tranquillius operare: totusque mundus experiatur et videat, dejecta erigi, inveterata renovari, et per ipsum redire omnia in integrum, a quo sumpsere principium: Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit.",
+        "divergence": "Omit tuae mirabile after Ecclesiae. The old your/wondrous modifiers are not translated as though retained. Insert Christum after per ipsum, while removing the old concluding explicit identification Dominum nostrum Jesum Christum Filium tuum and abbreviated Qui tecum vivit. The named referent is already supplied in the same complete old prayer; it is relocated and shortened, not independently newly composed theology. The1862 text already has et lumen and tranquillius. Those words do not require synthesis from Gelasian apparatus variants. Use the separately witnessed complete Qui vivit et regnat in saecula saeculorum. conclusion and marked R.Amen, with their old sources declared separately. Normalize dejecta/deiecta, accents, ligatures and pointing. Exact new study English passage.triptych.easter-orations-vigil-five-study-english-20261112.2026-11-12.vigil-seventh-reading-principal. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-vigil-seventh-reading-principal-comparison. Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "witness_note": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "God, unchanging power and eternal light, look graciously upon the mystery of the whole Church, and carry out the work of human salvation in greater peace through the effect of your unending design. May the whole world experience and see the fallen raised up, the old made new, and all things restored to wholeness through Christ himself, from whom they took their beginning. Who lives and reigns for ever and ever. R. Amen."
+          }
+        ]
+      },
+      "english_sha256": "2e4a5c7dd97f040599204c242361b26a83383ecb1e132b1b5efe5f7f5fa10857",
+      "unchanged_proper": {
+        "name": "Prayer after the Seventh Reading",
+        "ordinary_disposition": {
+          "kind": "alternative",
+          "group": "prayer-after-the-seventh-reading",
+          "option": "deus-incommutabilis-virtus-et-lumen",
+          "basis": "Either of the two prayers may be used."
+        },
+        "incipit": "Deus, incommutabilis virtus et lumen aeternum",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "unchanged_proper_sha256": "87b594cd8cae345510194281d840cf21cdf24871e92917ac2562338d7f7a5315"
+    },
+    {
+      "identity": [
+        "easter-7",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "before_untranslated": {
+        "mass": "easter-7",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "1986866ab04a12ffaecebd38ace86f2361b54d14a1193009e9338532c488f6cb"
+        ],
+        "note": "an ancient ancestor was identified in the Veronense at 0.70 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "before_untranslated_sha256": "68e56c178b27c0f0bb60c415ff522dbc658f28b79e273b4deae3b0f4612d602d",
+      "after_entry": {
+        "mass": "easter-7",
+        "form_id": "main",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Supplicationibus nostris, Domine",
+        "relation": "variant",
+        "ancient_witness": "The Gelasian Sacramentary: Liber sacramentorum Romanae ecclesiae, edited with introduction, critical notes and appendix by H. A. Wilson; printed108; BookI sectionLXIV, Item alia Missa; complete opening prayer of the second Ascension Mass",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-orations-20261112-easter7-collect",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.easter-orations-20261112-easter7-collect-text",
+        "ancient_reading": "Adesto, Domine, supplicationibus nostris, ut sicut humani generis Salvatorem consedere tecum in tua maiestate confidimus, ita usque ad consummationem saeculi manere nobiscum, quemadmodum est pollicitus, sentiamus. Per.",
+        "divergence": "Transpose Adesto, Domine, supplicationibus nostris to Supplicationibus nostris, Domine, adesto propitius, adding the adverb propitius. Remove consedere, changing the explicit seated-with-you description to the retained with-you-in-your-majesty description. This predicate omission is substantive and explicitly disclosed. Replace confidimus with credimus and move the verb between tua and maiestate. Insert eum immediately after ita as the explicit subject of manere. Replace quemadmodum est pollicitus with sicut ipse promisit: change the conjunction and synonymous promise verb while making the same subject explicit. Replace the old Per. cue with the modern Qui tecum. long conclusion; its full words and separate Amen are independently old in Pustet1862AP88, and the exact secondary2002IGMR54 spells out the required modern form. No automatic truncation/expansion or exactoldwholebody identity is asserted. Exact new study English passage.triptych.easter-orations-easter7-collect-study-english-20261112.2026-11-12.easter7-collect. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-orations-20261112-easter7-collect-comparison. Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "witness_note": "Project-created study English from a complete independently old prayer, with the individually documented changes and a separately witnessed full conclusion. The modern comparison is a secondary digital 2002 witness; agreement with printed 2002 and the exact 2008 text remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Lord, attend graciously to our supplications, so that, as we believe the Savior of the human race to be with you in your majesty, we may experience his remaining with us until the end of the age, as he himself promised. Who lives and reigns with you in the unity of the Holy Spirit, God, for ever and ever. R. Amen."
+          }
+        ]
+      },
+      "english_sha256": "b91018fda323025df5cc567e417e46431f5256e201512d9eb39a760233c8578f",
+      "unchanged_proper": {
+        "name": "Collect",
+        "incipit": "Supplicationibus nostris, Domine",
+        "source": "composed",
+        "text_status": {
+          "state": "unavailable",
+          "scope": "proper-body",
+          "reasons": [
+            {
+              "kind": "rights-withheld",
+              "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+            }
+          ]
+        }
+      },
+      "unchanged_proper_sha256": "3dbb716fae4e1bdb5a59a31887004dc8d7a684acb820f87d0f9a997e81a14342"
+    }
+  ],
+  "files": [
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/work.toml",
+      "sha256": "597d4142b039d039a406810e355806b5184e876c0ddb462ee51dee2aa24dfca8",
+      "bytes": 1071,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/edition.toml",
+      "sha256": "9653c4a021786b4112d7baaeeac5c357bbe07eaa874a8434b8f5a2d388be36e3",
+      "bytes": 896,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-second-reading/body.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-second-reading/body.txt",
+      "sha256": "48fd0f61d38e37c1c611fcf03d40505ddfd2830302509c0c53937107ca7f104d",
+      "bytes": 292,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-second-reading/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-second-reading/artifact.toml",
+      "sha256": "7fd8aa5c3009f1e34b6dd85b86eb6deab94b121582ad1d095cc8daf740ad0c4c",
+      "bytes": 2344,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-second-reading-page.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-second-reading-page.toml",
+      "sha256": "bb994b00763788996cac8d69d25f2fbf59ca7bec30bfe9a010348409d17ebcac",
+      "bytes": 1036,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-second-reading-text.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-second-reading-text.toml",
+      "sha256": "a16ad4fa70b59c40a3a11e40142f5feffc9b654d3bb895eb968d094d86d2bc00",
+      "bytes": 2173,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-second-reading/body.txt",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-second-reading/body.txt",
+      "sha256": "a6ff553754dc07c20ffbd0168e669083ac6bb1c2a7d5872c041eb08a1ecb4b30",
+      "bytes": 368,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-second-reading/artifact.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-second-reading/artifact.toml",
+      "sha256": "7a8179b8b7ae444e7f8f1ed021425e2bfdf9c24bb1e7e98311477d96419e596d",
+      "bytes": 2826,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-second-reading.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-second-reading.toml",
+      "sha256": "2bd2948dcb83e0215e42235609cbbed5e1e01ec9472bdd51191127fc1443315a",
+      "bytes": 2410,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-second-reading-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-second-reading-comparison.toml",
+      "sha256": "2793432c0059b13b73c55366e3b19fc2304586d6aea5f8ebe4dfa7fc44beb7fd",
+      "bytes": 1766,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-third-reading-principal/body.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-third-reading-principal/body.txt",
+      "sha256": "ac7ccece48d6fb1b3ec75c8aee4d09dd17dc20aa2037afbd458182831e18fe04",
+      "bytes": 330,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-third-reading-principal/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-third-reading-principal/artifact.toml",
+      "sha256": "29bfe364044909c673fd6e5fdd28925bea29e2ce8b480fa6dce4e72a4f2e8c71",
+      "bytes": 2421,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-third-reading-principal-page.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-third-reading-principal-page.toml",
+      "sha256": "1b6edf74c63751cc34bb355bab367c4ff6b85ad5fd9df3f2bfe59d51b6e72208",
+      "bytes": 1079,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-third-reading-principal-text.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-third-reading-principal-text.toml",
+      "sha256": "0237f073225ea8edff2d0115748a42b7c74f1a9fa4f48c1df3b878f4a0faf816",
+      "bytes": 2319,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-principal/body.txt",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-principal/body.txt",
+      "sha256": "50198b77c13f49a17efd4471b48117cf0a624ed562a98365b4e2808eb7f5293d",
+      "bytes": 387,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-principal/artifact.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-principal/artifact.toml",
+      "sha256": "397f442061ea48bb518928cfe9faceec144f9219b642e8b99bc9bb8509ba5cbd",
+      "bytes": 2954,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-third-reading-principal.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-third-reading-principal.toml",
+      "sha256": "12916faed46aef95d670c05c985782eaa7c4ff25ae7d2dd8fd02c4d19ade676b",
+      "bytes": 2474,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-third-reading-principal-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-third-reading-principal-comparison.toml",
+      "sha256": "52f45a2442ee3451de00c104a763af497a89f2fd10204ead78accdc296e12537",
+      "bytes": 1834,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/easter-orations-20261112-vigil-third-reading-alternative/body.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/easter-orations-20261112-vigil-third-reading-alternative/body.txt",
+      "sha256": "ea4197abe67371a83a37e35d98f2ea537684d13b80522e4ec0f8e20f1f074dde",
+      "bytes": 353,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/easter-orations-20261112-vigil-third-reading-alternative/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/easter-orations-20261112-vigil-third-reading-alternative/artifact.toml",
+      "sha256": "4de9ad724c33b996e35761fdd38f9044021feb0a3eea6ea9b9fec37957d64e0e",
+      "bytes": 2552,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-orations-20261112-vigil-third-reading-alternative-page.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-orations-20261112-vigil-third-reading-alternative-page.toml",
+      "sha256": "f24f987e54995ee3edbd39a148cff04391b717040512cc60dd49c2d256dc673d",
+      "bytes": 1155,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-orations-20261112-vigil-third-reading-alternative-text.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-orations-20261112-vigil-third-reading-alternative-text.toml",
+      "sha256": "a312d80b0d515d429feed0c79b1d4693256453a55a5ba1242edd9b09ece9feb6",
+      "bytes": 2501,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-alternative/body.txt",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-alternative/body.txt",
+      "sha256": "d805bf3c485719878e0422e6b9d96602b2dac289c1a33344731e1c776919afef",
+      "bytes": 406,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-alternative/artifact.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-third-reading-alternative/artifact.toml",
+      "sha256": "8d32d0792013df5b346e9487db255c7cfe6df7c4c7d3ab9203732c9b5a189edb",
+      "bytes": 2947,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-third-reading-alternative.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-third-reading-alternative.toml",
+      "sha256": "b62edcad45d3394773330fc0974fd4800e70088ce80b956b6b2c347c38159c94",
+      "bytes": 2555,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-third-reading-alternative-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-third-reading-alternative-comparison.toml",
+      "sha256": "0b27fc743ca4d31ddd4a4d6fac9f93c90d7a6fd2d311cf914b32d1df8dc27e17",
+      "bytes": 1814,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-fourth-reading/body.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-fourth-reading/body.txt",
+      "sha256": "bc5c1d41964303f0ad8aa221c9a8215b5dfd5f43904a1550eefa63ee0287876a",
+      "bytes": 256,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-fourth-reading/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-fourth-reading/artifact.toml",
+      "sha256": "678fa02f7bbb1c03e06529468a76b0eb4593d0678692de243569a45fecd67aaf",
+      "bytes": 2317,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-fourth-reading-page.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-fourth-reading-page.toml",
+      "sha256": "2bc05905dbafb4e730a19b484fc2e539144af6808981978aaaae4f494cae4aac",
+      "bytes": 1024,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-fourth-reading-text.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-fourth-reading-text.toml",
+      "sha256": "1663cbcf19348ae3033e41a0b19874bd5d9fa2300f70320a788f9e8706368a23",
+      "bytes": 2086,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-fourth-reading/body.txt",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-fourth-reading/body.txt",
+      "sha256": "1445aeab62d813dc3b0238e3cc5963cef443b103ce26e9f34d9bb78e0ecebab0",
+      "bytes": 356,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-fourth-reading/artifact.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-fourth-reading/artifact.toml",
+      "sha256": "77b53edadd102e5bf099560f8bf3b42970e8508c3c3ff595954fb2e8117bfa97",
+      "bytes": 2709,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-fourth-reading.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-fourth-reading.toml",
+      "sha256": "fb2f609848e5099a23f1cdd0ed7b929815eb6ef5e13d143d6b2a4398d45c89ae",
+      "bytes": 2386,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-fourth-reading-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-fourth-reading-comparison.toml",
+      "sha256": "1fd1db990a28a4f1a6ccf69c9ce6199f1884104053247fca856bd329011824b2",
+      "bytes": 1707,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-seventh-reading-principal/body.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-seventh-reading-principal/body.txt",
+      "sha256": "5bdd01a171faa4fde36cf8cbd497599b5036f86ebd51fa0050feebe7176623e3",
+      "bytes": 392,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-seventh-reading-principal/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-orations-20261112-vigil-seventh-reading-principal/artifact.toml",
+      "sha256": "cf8aae7b07e2d9611b7a52cebd37837efc0abea8d05e81e7968642e8dd08e444",
+      "bytes": 2432,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-seventh-reading-principal-page.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-seventh-reading-principal-page.toml",
+      "sha256": "e589e0bbf330af1b487d5e9aafaa15ca2e08f01043325accd385fef962ad3f86",
+      "bytes": 1060,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-seventh-reading-principal-text.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/easter-orations-20261112-vigil-seventh-reading-principal-text.toml",
+      "sha256": "a794380464100ad68124842f9398cacf8c6d97a6c6ecc5f3bfcf3813f34af83b",
+      "bytes": 2481,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-seventh-reading-principal/body.txt",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-seventh-reading-principal/body.txt",
+      "sha256": "222a4f96f7e43921660a834015ee920c44cde556109d43968615c2a5acef05fe",
+      "bytes": 424,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-seventh-reading-principal/artifact.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/artifacts/vigil-seventh-reading-principal/artifact.toml",
+      "sha256": "72f22e4ce5227f302393597f561e44c61871aa6b292151f3e31f3729b35e58ac",
+      "bytes": 3301,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-seventh-reading-principal.toml",
+      "destination": "src/sources/works/triptych/easter-orations-vigil-five-study-english-20261112/editions/2026-11-12/passages/vigil-seventh-reading-principal.toml",
+      "sha256": "f98db8b40a98c95b591786c610b5d4edec2c9a1167099ffc77e2152c6f810315",
+      "bytes": 2697,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-seventh-reading-principal-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-vigil-seventh-reading-principal-comparison.toml",
+      "sha256": "5a95efff59ea9c6ccfe779a17160d81a46ef6ad9ce4b9690328bb6a10414760b",
+      "bytes": 2006,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-orations/vigil-five/admission-proposal.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-orations/vigil-five/admission-proposal.json",
+      "sha256": "d3e2dc00a4d22daf545e2261000df14a2e6584d04fbe75d1bad7d6b69aedbeee",
+      "bytes": 44925,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/work.toml",
+      "destination": "src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/work.toml",
+      "sha256": "753344c52610d530618dff32a1bed162eb22e2bf63959c594024504c56d1f32f",
+      "bytes": 1081,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/edition.toml",
+      "destination": "src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/edition.toml",
+      "sha256": "4c1ec619ef99d7d34be37786adb8a3d6ea55952b4c96c88353ad70ef7d34a4fc",
+      "bytes": 911,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-orations-20261112-easter7-collect/body.txt",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-orations-20261112-easter7-collect/body.txt",
+      "sha256": "132f98c3e2a75e7cd1f98e49e77458890c2b49221a006b906df3b1e7dc0f06b2",
+      "bytes": 219,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-orations-20261112-easter7-collect/artifact.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/easter-orations-20261112-easter7-collect/artifact.toml",
+      "sha256": "2edfe8b70443cd0e0ad7767a530e31a0a4c3ff66601849a25435266bc7254c8f",
+      "bytes": 2538,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-orations-20261112-easter7-collect-page.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-orations-20261112-easter7-collect-page.toml",
+      "sha256": "04c87ec987062075e057a44eaffdc6be8108f97902494aee0348ca1663eeb5f9",
+      "bytes": 965,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-orations-20261112-easter7-collect-text.toml",
+      "destination": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/easter-orations-20261112-easter7-collect-text.toml",
+      "sha256": "c923cd3f2684f570b1689e83dff469fdff835a84ab36f7cd834436dc3440649d",
+      "bytes": 2221,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/artifacts/easter7-collect/body.txt",
+      "destination": "src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/artifacts/easter7-collect/body.txt",
+      "sha256": "e9bc4391df03e4a654578fda3c8df1784fe3d9b6971005d1afe61fcbb99309f2",
+      "bytes": 316,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/artifacts/easter7-collect/artifact.toml",
+      "destination": "src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/artifacts/easter7-collect/artifact.toml",
+      "sha256": "f78912e6a4ef14ac7ce0206e3ec5a07222a9c0d8e32e723c40ecd1492a3dc735",
+      "bytes": 3295,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/passages/easter7-collect.toml",
+      "destination": "src/sources/works/triptych/easter-orations-easter7-collect-study-english-20261112/editions/2026-11-12/passages/easter7-collect.toml",
+      "sha256": "5287a35704a5795c522df592afa1ae346644c338b031a1d687b7f0c24a0e1e30",
+      "bytes": 2243,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-easter7-collect-comparison.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-easter7-collect-comparison.toml",
+      "sha256": "5104bfae2f0d7507e3b8b2cdd073b1870e2038c3a520bc7cadb6c9338c9b35b5",
+      "bytes": 2139,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-easter7-collect-collect-ending-control.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/easter-orations-20261112-easter7-collect-collect-ending-control.toml",
+      "sha256": "0c6b7a8a12689d005736cd46bcdacc1ebc1224b07c9495b85d2a9f8d1c7f8bee",
+      "bytes": 1163,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-v3-install-proposal/files/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-orations/easter7-collect/admission-proposal.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-orations/easter7-collect/admission-proposal.json",
+      "sha256": "ce20f59fc11d6a116640161a3f6b641aaa1e71d0eb6f3ecd25c0b7ad793156cb",
+      "bytes": 11171,
+      "role": "admitted-source"
+    },
+    {
+      "scratch_path": ".scratch/modern-partition-easter/orations-six-root-handoff/public-review-summary.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-orations/six-public-review-summary.json",
+      "sha256": "1ea09e3bc676b0ce665cd7a7bbd12f27b451ce75e4991f537b6028114cf814e8",
+      "bytes": 52511,
+      "role": "public-safe-review-summary"
+    },
+    {
+      "scratch_path": ".scratch/root/easter-six-source-admission.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/easter-orations/root-adoption.json",
+      "sha256": "4891f74301e60ac9876a23ea4a079cc75a56f7e37ddca98dc522f1668fb4da8d",
+      "bytes": 15274,
+      "role": "actual-root-adoption"
+    }
+  ],
+  "observed_live_input_pins": [
+    {
+      "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+      "sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+      "bytes": 1004208
+    },
+    {
+      "path": "src/sources/calendars/postconciliar/propers.yaml",
+      "sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+      "bytes": 3163294
+    }
+  ],
+  "public_evidence_boundary": "Only the 55 admitted source files, exact Root receipt, reviewed public-safe summary and this selected-dictionary declaration are proposed for durable installation. Full private research/comparison packets and source images are excluded. Original research pins remain provenance, not unresolved download promises.",
+  "canonical_changes": [
+    "Six exact unavailable-English rows removed and six exact new English rows appended.",
+    "No calendar, Latin, appointments, source-epoch, generated products, code, index, stage, commit or push changes."
+  ],
+  "required_consumer_repair": "Qualified adaptations must not receive the blanket credit from public-domain Latin; retain exact caution and complete separate response.",
+  "root_integration_remaining": [
+    "Actual separately authorized guarded installation.",
+    "Independent installer review.",
+    "Reader credit repair, source-epoch conservation and final actual combined consumer checks."
+  ],
+  "canonical_writes": false
+}

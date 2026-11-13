@@ -1,0 +1,67 @@
+{
+  "schema": "triptych-root-ferial-three-recipient-carrier-amendment/v1",
+  "status": "accepted-exact-metadata-successor",
+  "date": "2026-11-13",
+  "reviewer": "Codex integration reviewer",
+  "parent_admission": {
+    "path": ".scratch/root/ferial-three-source-admission.json",
+    "sha256": "3d9681a4ef811fd3cb1af55d4cef34d117c34d266e806b462fe38401ed0c74e2",
+    "byte_size": 6700
+  },
+  "source_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/install-plan.json",
+    "sha256": "c015358de877879ccaaf10e8bd1ce5c4af9c096d7c55a2bc024308583e0263d1"
+  },
+  "metadata_delta": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/metadata-delta.json",
+    "sha256": "e527986b19b110aa4eafe98db0e7fbbda4613a8c54c1f5d4581f20d904ea0392"
+  },
+  "independent_reviews": [
+    {
+      "path": ".scratch/roman-sources/ferial-three-source-review/recipient-carrier-source-amendment.json",
+      "sha256": "9306494706b4cfcc7f5d96021174851a39bb1a0ce3a54ad35e209027618ab4c4"
+    },
+    {
+      "path": ".scratch/roman-sources/ferial-three-english-review/recipient-carrier-amendment.json",
+      "sha256": "ab8c85649aed399cd8e889c808ce42c31c52528d2a07753e427d813a1ee72eac"
+    }
+  ],
+  "identity": [
+    "passion-wednesday",
+    "main",
+    "Oratio super populum",
+    "all",
+    1
+  ],
+  "accepted_English_entry_sha256": "d3f075c746563a9a28be986ac0547aa5209910abd7f1ee810ce1da5a7efd3c43",
+  "new_source_files": [
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/english.tsv",
+      "sha256": "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/ferial-osp-20261113-passion-wednesday-recipient/artifact.toml",
+      "sha256": "6ee61b34bbb6346b1b8f36c1ed3d32ab3af343594c4dff1e779ad38a17e40fcd"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/metadata-v3/activation/recipient-carrier-successor/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/ferial-osp-20261113-passion-wednesday-recipient-text.toml",
+      "sha256": "55348fa03e59567eb92b568e80686474b5d1bc12fb275b0750a9701ec0150f43"
+    }
+  ],
+  "decision": "Accept the separate Passion Wednesday publication carrier and its four exact English-entry metadata changes. It correctly identifies the recipient for the existing producer while preserving the historical Lent II Monday verification and complete unchanged English. The original Root admission continues to govern all six literal bodies and their source merits.",
+  "verification": [
+    "Read all three complete new files, four before/after fields and independent source/English amendments.",
+    "Independently verified24 source-file hashes/absent destinations,21 unchanged descriptors, all three unchanged proper/Latin objects and six body pins, both other complete rows, donor objects and three donor-file hashes.",
+    "Decoded the actual original donor TSV line70 and compared complete UTF-8 English to the new recipient row and admitted body hash.",
+    "Read the372-check source review and actual unmodified validator positives/refusals. Full producer/frame/conclusion acceptance remains a separate gate."
+  ],
+  "limits": [
+    "No new rights, old Wednesday appointment, conclusion expansion, response, frame or validator exception.",
+    "Frozen old50528bc activation remains held; install only the new guarded plan with this exact amendment and final durable mapping.",
+    "Record actual whole-source and combined consumer verification after installation."
+  ],
+  "canonical_writes": false
+}

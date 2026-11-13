@@ -1,0 +1,322 @@
+{
+  "schema": "triptych-durable-study-conclusion-recipient-review/v1",
+  "reviewed_on": "2026-11-12",
+  "proposal_sha256": "3919714339e62c86f1d1515f5f897c3157f494c546c30eab18f845c8e30d9be4",
+  "scope": "Three exact source-body/controller/binding tuples, one separately authored English conclusion, and two finite Queenship wording contexts only.",
+  "decision": "accepted-on-source-and-fidelity-merits-with-runtime-and-authority-holds",
+  "formula_review": {
+    "formula_id": "triptych-study-father-through-son-20261112",
+    "formula_sha256": "0890d51cbb9a41c7dd2ef60fde4c1f4618ff692122327a67c299b165dbd81420",
+    "latin_source_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026",
+    "latin_source_artifact_sha256": "e085b59f15592f63937a0a9665b9ac228b96a32295d7c4116a054dc177c8f602",
+    "latin_formula_sha256": "623077e6050a62aca6accc522304ef36b62d22a81fe8edb76772989cc3b6c477",
+    "decision": "accepted-original-study-translation",
+    "reasons": [
+      "Every element of the held Latin formula is represented: through our Lord Jesus Christ; your Son; who lives and reigns with you; unity of the Holy Spirit; God; duration through all ages of ages.",
+      "No same-Spirit word is introduced. The English preserves the Father as addressee and the Son as the relative-clause subject.",
+      "For all ages of ages is a close study rendering of the Latin duration, not a claim to a received English liturgical formula.",
+      "Amen remains a distinct response, as the primary historical source marks it."
+    ],
+    "attribution": "Original Triptych study English only. No Lasance/Walsh authorship or approved liturgical translation claim."
+  },
+  "source_images_read": [
+    {
+      "locus": "1962CMAA PDF17/printedXIX, RG115-116",
+      "image_sha256": "b023aad66759557a7fe910dbbaf8296b69b001ddc6683bcaf08792dc190ec482"
+    },
+    {
+      "locus": "1962CMAA PDF509, Proprium Sanctorum prefatory votive rubric",
+      "image_sha256": "724324931b7609bef9703c1f680275a5d8a71a8df1e95ca1b84418a997fa8185"
+    },
+    {
+      "locus": "1962CMAA PDF622/printed541, Queenship Postcommunion2695 and votive chant direction",
+      "image_sha256": "94b430939bee5e2540c38866092c9881bc741d856241d26a127a7b351c337742"
+    },
+    {
+      "locus": "Pustet1862 originalPDF88/printed2, Contra persecutores full conclusion and distinct response",
+      "image_sha256": "a986892c8fa2870fc5aa083f69b3ef2a68e10e4541779fffc7c43fb63240a56b"
+    }
+  ],
+  "checks": {
+    "current_complete_source_bodies": 3,
+    "current_complete_bindings": 3,
+    "current_complete_latin_proofs": 3,
+    "exact_cue_and_wording_spans": "passed-codepoint-utf8-utf16",
+    "formula_matches_retained_source_line": true,
+    "runtime_or_browser_tests": "not-run; frozen canonical implementation outside reviewer scope"
+  },
+  "rows": [
+    {
+      "target": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "proposal_row_sha256": "2c4e7a9a9e537d64751c95b7641030c5a3596d1d426cbbce9e46df1214bbd4df",
+      "source_body_sha256": "70106bd8c00991c3bc01d4ad07276f74a51e4a9792faf365980fb43be72e5f09",
+      "binding_sha256": "85c37508444051eccbaee7407a48e6c0f9247891a9a649c64f5523040123243a",
+      "target_latin_sha256": "7f341d63aab2e4ed324368c9abd2df37cfe89b67ba93c2d1416e8aa63612ec20",
+      "target_latin_proof_sha256": "4a8701267d10c3690b41e4081711ec75366a353e53a669a15bcce98f35318896",
+      "family": "through-our-lord",
+      "family_decision": "accepted-for-exact-finite-execution-proposal",
+      "reason": "Both complete petitions were read. Each addresses God/the Lord with the plain Per Dominum cue; none contains a contrary address to the Son, mention of the Holy Spirit, or particular contrary ending.",
+      "activation": "not-authorized-by-this-review"
+    },
+    {
+      "target": [
+        "beatae-mariae-virginis-reginae",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "proposal_row_sha256": "acbfab2f3d568bb3ac4d383d0c1ff294b285e255abf6ca4bb3d39ce21e928b4c",
+      "source_body_sha256": "28b0f46096d20021a1063d651c50e281bda9709a49587860da271462faf2e665",
+      "binding_sha256": "0bdb01803da0bec9665a899d38705a9ac7229759541e675dfd573f38a04f953d",
+      "target_latin_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+      "target_latin_proof_sha256": "04e3ed06a5a1bfebb319f17b6eb13e63a8314c511b22a653cfdc61c1fd55a637",
+      "family": "through-our-lord",
+      "family_decision": "accepted-for-exact-finite-execution-proposal",
+      "reason": "Both complete petitions were read. Each addresses God/the Lord with the plain Per Dominum cue; none contains a contrary address to the Son, mention of the Holy Spirit, or particular contrary ending.",
+      "activation": "not-authorized-by-this-review",
+      "wording_choice_sha256": "de59fc29d41efd75cbff64f1982996ec432cb7515ec8b6f385d76ae75fc68eaa",
+      "context_decisions": [
+        {
+          "id": "festal-formulary",
+          "decision": "accepted-only-for-explicitly-established-principal-queenship-office-mass",
+          "latin_branch": "festivitate",
+          "english_branch": "feast"
+        },
+        {
+          "id": "votive-formulary",
+          "decision": "accepted-only-for-explicitly-admitted-principal-queenship-votive-mass",
+          "latin_branch": "memoria",
+          "english_branch": "commemoration"
+        }
+      ],
+      "held_contexts": [
+        "occurring-commemoration",
+        "impeded-votive-prayer-adjoined-to-another-mass",
+        "transferred-office-without-exact-binding",
+        "unknown-or-default-inferred-context"
+      ],
+      "context_reason": "AP509 directs the word substitutions in its votive-Mass paragraph. AP622 prints festivitate (memoria) in this prayer and expressly describes Queenship votive chant use. The English word commemoration denotes the retained translation of memoria, not an automatic occurring-commemoration role. The two finite contexts need positive runtime facts; neither civil date nor generic group role supplies those facts."
+    },
+    {
+      "target": [
+        "comm-s-urbani-i-papae-martyris",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "proposal_row_sha256": "8220bf2b81ad15d90e068f611c208d3ac6e6f8017956163cee2e5e5214b4cdfc",
+      "source_body_sha256": "5af06636570d6aaf4e6c4d943dfdeb4083b51a667ddc641913ff027179316406",
+      "binding_sha256": "e7967ab8db859f54b9aeb429488554f19311e8f7c89bfe4b1c672ed59ae46106",
+      "target_latin_sha256": "6a400cc997227b26e04d2b3a9c84f26b14735475688cbf9a3d6798ce2954a8bd",
+      "target_latin_proof_sha256": "e60c9b1cef53958105ec023d4dd962cb3cd2d85049e140eb3ab6f3086dadf8ce",
+      "family": "through-our-lord",
+      "family_decision": "accepted-for-exact-finite-execution-proposal",
+      "reason": "Both complete petitions were read. Each addresses God/the Lord with the plain Per Dominum cue; none contains a contrary address to the Son, mention of the Holy Spirit, or particular contrary ending.",
+      "activation": "not-authorized-by-this-review"
+    }
+  ],
+  "required_before_activation": [
+    "Root adoption of an exact new execution authority and its formula/source bindings.",
+    "Runtime exact calendar/target/body/binding/proof/source-language and empty project-source identity matching.",
+    "An affirmative source-derived group-conclusion position; later shared prayers own their own conclusion.",
+    "Queenship wording selection only from the reviewed positive prayer-use context, with all other cases visibly unresolved.",
+    "Preserve original quoted bodies, cues and parenthetical wording; keep derived execution separate and correctly attributed."
+  ],
+  "nonclaims": [
+    "No canonical changes, activation, publication or annual-completeness claim.",
+    "No new clearance or re-review of the already accepted prayer bodies.",
+    "No general votive admission, transferred-office rule or commemoration substitution is inferred."
+  ],
+  "cohort": "roman-study-3",
+  "metadata_only": true,
+  "reviewer_kind": "independent-AI-agent",
+  "staged_on": "2026-11-12",
+  "receipt_role": "Durable metadata projection of the exact accepted independent review; no new review, source-body approval or execution activation is inferred by registration.",
+  "input_fingerprints": {
+    "roman_proposal": {
+      "sha256": "3919714339e62c86f1d1515f5f897c3157f494c546c30eab18f845c8e30d9be4",
+      "role": "nonoperational original review/proposal provenance"
+    },
+    "roman_independent_review": {
+      "sha256": "6d20ea3c4e3dc302d6a121d6445e95cef194ce0696ab26858bd25e5f3b4463f7",
+      "role": "nonoperational original review/proposal provenance"
+    }
+  },
+  "source_snapshot_hashes_are_historical": true,
+  "formula_source": {
+    "formula_id": "triptych-study-father-through-son-20261112",
+    "edition_id": "edition.triptych.oration-conclusion-study-english-20261112.study-english-20261112",
+    "passage_ids": [
+      "passage.triptych.oration-conclusion-study-english-20261112.study-english-20261112.father-through-son"
+    ]
+  },
+  "required_runtime_conditions": [
+    "Calendar must be roman-1962; exact target/form/cycle/occurrence, source-language and empty project-source identity, complete original binding/body/proof hashes must match.",
+    "Use this conclusion only when the source-derived assembly proves that this prayer supplies the group conclusion. If later prayers share the conclusion, they supply their own conclusion family.",
+    "Literal source cues and parenthetical text remain available unchanged; the execution projection is separately labeled and hashed.",
+    "Do not infer a queenship wording branch from being a commemoration; exact prayer-use context is required.",
+    "No new finite execution authority, public source carrier, or approved-English permission is created by this scratch proposal."
+  ],
+  "wording_choice": {
+    "id": "roman-1962-queenship-postcommunion-occasion",
+    "kind": "source-wording-choice",
+    "claim": "The source parenthesis is a votive-use alternative; it is not an automatic switch based on an occurring commemoration.",
+    "latin_body_sha256": "73348b62074d4b381e839250b545d5fd781369a899f8bf3b3ca509af46ed278f",
+    "english_body_sha256": "28b0f46096d20021a1063d651c50e281bda9709a49587860da271462faf2e665",
+    "latin_span": {
+      "literal": "festivitate (memoria)",
+      "codepoint": [
+        70,
+        91
+      ],
+      "utf8": [
+        70,
+        91
+      ],
+      "utf16": [
+        70,
+        91
+      ]
+    },
+    "english_span": {
+      "literal": "feast (commemoration)",
+      "codepoint": [
+        61,
+        82
+      ],
+      "utf8": [
+        61,
+        82
+      ],
+      "utf16": [
+        61,
+        82
+      ]
+    },
+    "branches": [
+      {
+        "id": "festal-formulary",
+        "latin_source_span": {
+          "literal": "festivitate",
+          "codepoint": [
+            70,
+            81
+          ],
+          "utf8": [
+            70,
+            81
+          ],
+          "utf16": [
+            70,
+            81
+          ]
+        },
+        "english_source_span": {
+          "literal": "feast",
+          "codepoint": [
+            61,
+            66
+          ],
+          "utf8": [
+            61,
+            66
+          ],
+          "utf16": [
+            61,
+            66
+          ]
+        },
+        "condition": "An explicitly established principal Mass of the Queenship Office, using its feast formulary. This proposal does not independently authorize votive or transferred/adjoined use."
+      },
+      {
+        "id": "votive-formulary",
+        "latin_source_span": {
+          "literal": "memoria",
+          "codepoint": [
+            83,
+            90
+          ],
+          "utf8": [
+            83,
+            90
+          ],
+          "utf16": [
+            83,
+            90
+          ]
+        },
+        "english_source_span": {
+          "literal": "commemoration",
+          "codepoint": [
+            68,
+            81
+          ],
+          "utf8": [
+            68,
+            81
+          ],
+          "utf16": [
+            68,
+            81
+          ]
+        },
+        "condition": "An explicitly admitted principal votive Mass of the Queenship, with this prayer appointed from the votive use of its formulary; permission to choose that votive Mass must be established elsewhere."
+      }
+    ],
+    "unknown_context_behavior": "Keep literal source wording available and mark execution unresolved. Do not select a branch from the civil date, the string commemoration, a generic group role, or a default.",
+    "other_contexts": "Occurring commemoration, impeded votive prayer joined to another Mass, transferred Office, and other combinations require separate exact rule/context binding before this finite choice is used. The simple principal/votive proposal does not settle them.",
+    "source_controls": [
+      {
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "artifact_page": 509,
+        "printed_page": "Unnumbered Proprium Sanctorum heading page",
+        "locus": "Prefatory votive-use rubric",
+        "finding": "In the context of using the feasts of this Proper as votive Masses, the rubric directs replacement of natalis/natalicium/festivitas by commemoratio/memoria. This supplies the category distinction; it does not license a generic commemoration-role substitution.",
+        "inspection": "Direct page-image reading2026-11-12",
+        "image_sha256": "724324931b7609bef9703c1f680275a5d8a71a8df1e95ca1b84418a997fa8185"
+      },
+      {
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "artifact_page": 622,
+        "printed_page": "541",
+        "locus": "Queenship Postcommunion2695 and local votive chant direction",
+        "finding": "The prayer actually prints festivitate(memoria); the same page expressly provides a votive Mass chant branch. The first word is the feast reading; the parenthesized memoria is consistent with and governed by the prefatory votive rule.",
+        "inspection": "Direct page-image reading2026-11-12",
+        "image_sha256": "94b430939bee5e2540c38866092c9881bc741d856241d26a127a7b351c337742"
+      }
+    ]
+  },
+  "canonical_source_controls": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/rubricae-generales-conclusions-115-116-20261112.toml",
+      "sha256": "98f5aef0d9c83ec32f7c7c14d54719c3459a335e851e431482406ec1b7b01789",
+      "kind": "Roman1962-conclusion-rule"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/study3-proprium-sanctorum-votive-wording-20261112.toml",
+      "sha256": "2aececc78d887519baaffcdccb37dcd42c4f5b16385a96abdd8c9006b19280c2",
+      "kind": "finite-Roman-prayer-use-context"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/study3-queenship-postcommunion-prayer-use-20261112.toml",
+      "sha256": "617a17c31f9e933e2948e739c075ed94b052ecea9ed1ae6ac65f9480831ce76b",
+      "kind": "finite-Roman-prayer-use-context"
+    }
+  ],
+  "rule_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-conclusions-115-116-20261112",
+  "source_snapshot_hashes": {
+    "src/sources/calendars/roman-1962/propers.yaml": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953",
+    "src/sources/inventories/roman-1962-proper-translations-v1.toml": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf",
+    "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml": "e1898bf40bc10db519b48da5eab6cc273308590225f191f395847a7e97196658",
+    "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/latin.txt": "e085b59f15592f63937a0a9665b9ac228b96a32295d7c4116a054dc177c8f602",
+    "workflows/reviews/missal-reader-resume-2026-11-12/roman-six/source-and-english-review.json": "e0c69066cd32cbe1b572564966b179085a240e4a58c46b793ffd20b38535d63a"
+  }
+}

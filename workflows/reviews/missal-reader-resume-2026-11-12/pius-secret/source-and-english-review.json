@@ -1,0 +1,178 @@
+{
+  "schema": 1,
+  "date": "2026-11-13",
+  "reviewer": "/root/roman_sources/six_english_review",
+  "state": "frozen-independent-one-case-source-and-study-English-review",
+  "packet": {
+    "path": ".scratch/roman-sources/residual-20261113/pius-secret/packet.json",
+    "sha256": "dc9144048b47e934e8e06425e3fa4e34cdb94fde19e0fb0be7c4225a038dac3a",
+    "byte_size": 11496
+  },
+  "retained_assessment": {
+    "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/assessment.json",
+    "sha256": "01cc41b51a84240d1133dc70ea73f1afd479f229517f42108cb5c3f7bf39ce81",
+    "byte_size": 71492
+  },
+  "selected_case_pointer": "/cases/4",
+  "selected_case_identical_to_retained_assessment": true,
+  "scope": "Complete Pius X Secret target Latin, complete Wilson Sunday Ad complendum comparandum, and one fresh study-English draft. Bounded retained-evidence merits review only; no admission or install audit.",
+  "method": "Personally read the complete target and old prayer in the supplied 400 dpi rasters at original resolution, including Wilson apparatus. Read the immediately preceding target page for the actual feast heading. Recomputed whole-PDF, packet, raster and body hashes. Checked all token comparison operations after the source reading; no broad search or other five-case review.",
+  "source_inputs": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/cmaa-1962.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "byte_size": 82815941
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/acquired/wilson1915.pdf",
+      "sha256": "96fd93c73f8c9df47b6911981155b8b02cf2f2183ca6e87baad15128682d8681",
+      "byte_size": 28655931
+    }
+  ],
+  "supplied_rasters": [
+    {
+      "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/images/cmaa-730-200.png",
+      "sha256": "f088883b00020c80c81307b72ffc47a5ed834744b81ffa1db591678272f3ad0e",
+      "byte_size": 227590,
+      "personally_viewed_at_original_resolution": false
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/images/cmaa-730-400.png",
+      "sha256": "09c02d2497b56a390be598d58c034e4569b62800491bd8c8f8383c7c575c3a57",
+      "byte_size": 251840,
+      "personally_viewed_at_original_resolution": true
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/images/wilson1915-p97-200.png",
+      "sha256": "99d51e91afb72d0638b38f7f5351096fd43673a4dea7148a264c5ea49868161f",
+      "byte_size": 1059620,
+      "personally_viewed_at_original_resolution": false
+    },
+    {
+      "path": ".scratch/roman-sources/remaining-saints/images/wilson1915-p97-400.png",
+      "sha256": "fd4a023775fc1a025d1e804aa7530f0a8a58902597184670df08496f1075fd9f",
+      "byte_size": 2249044,
+      "personally_viewed_at_original_resolution": true
+    }
+  ],
+  "appointment_context_raster": {
+    "path": ".scratch/roman-sources/remaining-saints/residual-six-20261113/images/cmaa-729-400.png",
+    "sha256": "2b9ac8ed6ae354e18f37d81d74cdf2db9100580e68e0ab109bede5e86b471bb4",
+    "byte_size": 264236,
+    "personally_viewed_at_original_resolution": true
+  },
+  "target": {
+    "identity": [
+      "s-pii-x-papae-confessoris",
+      "main",
+      "Secret",
+      "all",
+      1
+    ],
+    "verdict": "accept-exact-transcription-and-appointment",
+    "body": {
+      "text": "Oblationibus nostris, quaesumus, Domine, benigne susceptis, da nobis, ut haec divina mysteria, sancto Pio Summo Pontifice intercedente, sinceris tractemus obsequiis et fideli mente sumamus. Per Dominum.\n",
+      "sha256": "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16",
+      "byte_size": 203,
+      "final_LF": true
+    },
+    "locus": "CMAA 1962 AP730, printed 649, Secreta no. 3564; actual appointment heading on AP729, printed 648.",
+    "findings": [
+      "AP729 explicitly heads Die 3 septembris / S. Pii X Papae et Conf. / III classis. AP730 continues that Mass, and the distinct Secreta no. 3564 is the complete selected target. The later Die 5 septembris heading and the running Festa septembris (5) header do not reassign the prayer.",
+      "The entire offering clause, da nobis request, haec divina mysteria object, Pius intercession, paired tractemus and sumamus petitions, and printed punctuation match after stress-accent, ligature and line-wrap normalization.",
+      "The literal Per Dominum. ends the selected Secret before Antiphona ad Communionem no. 3565. The neighboring Postcommunion uses a different longer printed cue and contributes no words to this body.",
+      "No Secret-specific alternative, rubric, response, Amen or actor marker occurs inside the selected body. The short cue and final LF are retained without expansion."
+    ]
+  },
+  "comparandum": {
+    "id": "wilson1915-lent4-sunday-postcommunion",
+    "verdict": "accept-exact-normalized-transcription-and-appointment",
+    "body": {
+      "text": "Da nobis misericors deus . ut sancta tua quibus incessanter explemur . sinceris tractemus obsequiis . et semper fideli mente sumamus . per dominum.\n",
+      "sha256": "aaff5c03cdfaa1914530ab52805709e400ef2ec6e77484b61596ba3c58cd9e0e",
+      "byte_size": 148,
+      "final_LF": true
+    },
+    "locus": "Wilson 1915 AP97, printed 39; HEBD. IV. QUADRAGESIMAE / DIE DOMINICO AD HIERUSALEM / Ad complendum.",
+    "findings": [
+      "The selected old whole is the complete Sunday Ad complendum under its own explicit heading. It follows Super oblata and ends before Alia oratio ad missam. The following FERIA .II. AD SANCTOS QUATTUOR CORONATORUM is a separate appointment.",
+      "Main text reads Da nobis misericors deus . ut sancta tua quibus incessanter explemur . sinceris tractemus obsequiis . et semper fideli mente sumamus . per dominum. The normalized points and lowercase spelling are retained; line wraps are joined and apparatus markers excluded.",
+      "Apparatus 1 gives tractemus / tractemur O. The candidate correctly follows main-text tractemus, without substituting the variant.",
+      "Apparatus 2 gives semper fideli mente / fideli semper mente C / fideli mente semper O. Every listed ordering keeps semper. These variants do not attest the target omission.",
+      "The printed per dominum. is a literal short conclusion; no full ending, response or Amen has been added."
+    ]
+  },
+  "English": {
+    "verdict": "accept-exact-fresh-study-draft-fidelity",
+    "file": {
+      "path": ".scratch/roman-sources/residual-20261113/pius-secret/study-english-draft.txt",
+      "sha256": "e903c088e8503efc55eabeb691e81fd63faeae988a2a57edd0417f86bc05444f",
+      "byte_size": 251
+    },
+    "body": {
+      "text": "Graciously receive our offerings, we beseech Thee, O Lord, and grant that, through the intercession of Saint Pius, Supreme Pontiff, we may celebrate these divine mysteries with sincere devotion and receive them with a faithful mind. Through our Lord.\n",
+      "sha256": "e903c088e8503efc55eabeb691e81fd63faeae988a2a57edd0417f86bc05444f",
+      "byte_size": 251,
+      "final_LF": true
+    },
+    "findings": [
+      "Graciously receive our offerings, we beseech Thee, O Lord, and grant renders the opening passive ablative absolute as a coordinated request. It makes the implied acceptance request explicit while retaining the divine addressee, our offerings, gracious acceptance and the subsequent grant. This is an acceptable communicative rendering, although it does not reproduce the Latin subordinate syntax.",
+      "We may celebrate these divine mysteries is acceptable here for haec divina mysteria ... tractemus: the English names the liturgical handling or performance of the mysteries in this Secret context. Celebrate is a contextual choice rather than a word-for-word gloss; it does not introduce a claim of festivity or a new petition.",
+      "With sincere devotion renders sinceris obsequiis as the reverent service attending the action. Receive them with a faithful mind preserves the second predicate, fideli mente and the shared sacramental object. The draft keeps the two related petitions distinct.",
+      "Through the intercession of Saint Pius, Supreme Pontiff preserves sancto Pio Summo Pontifice intercedente, including the saint, title and intercessory agency.",
+      "The English correctly follows the target omission of semper; always must not be imported from the older comparandum. It likewise does not import misericors deus or quibus incessanter explemur.",
+      "Through our Lord. is the short counterpart of Per Dominum. No supplied full conclusion, Amen, response, rubric or actor instruction appears. Complete draft bytes, including final LF, are accepted unchanged.",
+      "This finding concerns a fresh assistant-produced study draft only; it establishes neither historical English provenance nor approved liturgical status."
+    ],
+    "required_revisions": []
+  },
+  "whole_expression_comparison": {
+    "method": "Case-folded Latin words with punctuation ignored; spelling retained. This comparison describes differences and is not an authority measure.",
+    "word_counts": {
+      "old": 20,
+      "target": 26
+    },
+    "all_non_equal_operations": [
+      {
+        "operation": "insert",
+        "old_words": "",
+        "target_words": "oblationibus nostris quaesumus domine benigne susceptis"
+      },
+      {
+        "operation": "delete",
+        "old_words": "misericors deus",
+        "target_words": ""
+      },
+      {
+        "operation": "replace",
+        "old_words": "sancta tua quibus incessanter explemur",
+        "target_words": "haec divina mysteria sancto pio summo pontifice intercedente"
+      },
+      {
+        "operation": "delete",
+        "old_words": "semper",
+        "target_words": ""
+      }
+    ],
+    "operations_match_packet": true,
+    "positive_evidence": [
+      "A concrete complete old prayer supplies da nobis ... ut, the distinctive sinceris tractemus obsequiis petition, the linked fideli mente sumamus petition in the same order, and the short per dominum ending. The evidence is stronger than a collection of unrelated phrase fragments.",
+      "Both wholes concern the right treatment and reception of holy sacramental gifts. The retained complete old context makes the shared paired petition intelligible."
+    ],
+    "strongest_contrary": [
+      "The target adds the complete offering-and-acceptance preface Oblationibus nostris, quaesumus, Domine, benigne susceptis, absent from this old whole.",
+      "The old misericors deus address is removed. Sancta tua quibus incessanter explemur is replaced by haec divina mysteria and the Pius/title/intercession insertion; this changes more than a saint name or one functional word.",
+      "The target omits semper. The examined apparatus attests different positions of that word, not its omission.",
+      "The old prayer is Ad complendum; the target is Secreta. The old postcommunion reference to gifts repeatedly received and the new offering preface differ in liturgical function as well as wording.",
+      "These pages establish neither literal old whole identity nor proven historical derivation of the complete target. The inference that its additional or rearranged language is conventional does not itself establish authority or freedom to publish the modern arrangement."
+    ],
+    "finding": "Accept this as a concrete old whole-template comparison for separate exact merits consideration. Do not treat it as an exact old witness of the complete Pius X Secret."
+  },
+  "limits": [
+    "The retained source identity is Wilson 1915; this review does not newly establish edition chronology or source rights from a title-page or legal investigation.",
+    "The reported 1954/1955 formulary chronology and prior four-witness negative sweep are not re-established here and are not treated as proof of universal absence.",
+    "No source-manifest, full proposed entry, final action metadata or install package is present for binding review. The stale selected-case statement that no translation was authored describes the earlier retained assessment; this packet now separately supplies the exact fresh draft reviewed above.",
+    "The other five cases remain outside this review. No canonical preimage revalidation or producer test was necessary for this private body/evidence-only task."
+  ],
+  "authority_boundary": "No admission or publication decision is made. The coordinator hold remains unchanged pending fresh exact Root merits or stronger source/permission evidence. English acceptance does not authorize the underlying Latin. Only this exclusive reviewer scratch was written; the packet and all prior receipts remain unchanged."
+}

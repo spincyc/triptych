@@ -1,0 +1,21 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.ot21-plenum-historical-latin-assembly.2026-11-12.plenum-complete-latin"
+edition_id = "edition.triptych.ot21-plenum-historical-latin-assembly.2026-11-12"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych source-relation record and mechanical editorial carrier are project-created. Every underlying Latin word belongs to independently public-domain complete historical units: whole1862 petition and complete1945 common short formula/response. No exclusive ownership of received Latin is claimed; separate per-text decision cites both affirmative old-source bases."
+rights_jurisdiction = "United States"
+provenance = "Source petition independently re-read in exact Pustet1862 PDF363d6fc3 at AP780/[110]. Formula independently re-read in exact registered Lasance derivative d85c36fb at page1/printed217. Secondary2002 artifact0b458944 AP285–286 is bounded comparison testimony only. No modern page or modern approved English payload is retained."
+retrieved = "2026-11-12"
+sha256 = "bdcbbbc226e40954aba73906c2aa5f1ebfa8f6a00cb34bd7057e45fd78a4622a"
+byte_size = 199
+path = "src/sources/works/triptych/ot21-plenum-historical-latin-assembly/editions/2026-11-12/artifacts/plenum-complete-latin/latin.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3", "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb", "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"]
+transformation = "Keep the entire independently verified Plenum petition, omit its actual Per Dominum nostrum cue, remove stress accents and expand ae ligatures without changing words or punctuation. Append separately printed complete Per Christum Dominum nostrum. and marked R. Amen. on separate lines. This explicit historical study assembly has no added substantive petition expression, and is not a claim that either donor prints the assembled whole."
+indexable = true
+encoding = "utf-8"
+notes = "Candidate source carrier requires independent finite whole-expression/fidelity acceptance and Root adoption. Target relation remains secondary2002-only; no authenticated2008 or exact-target Latin claim."
+

@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12.ot-8-postcommunion"
+edition_id = "edition.triptych.postconciliar-ot8-ot12-historical-latin-study-assembly.2026-11-12"
+artifact_type = "historical-editorial-study-assembly"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Project-created describes this editorial carrier only. Underlying Latin is proposed solely as qualified-nonoriginal-adaptation, under the individualized whole-expression analysis and strongest contrary argument in workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ot8-ot12/accepted-candidate.json and independent-merits-review.json. Root finite publication admission is pending; this is not an unqualified public-domain claim or a license for the modern edition."
+projected_from = ["artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ot-8-postcommunion-reviewed-whole-20261112", "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944", "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"]
+transformation = "Copy exact accepted candidate latin body without any change; physical lines1–3 distinguish petition, conclusion, response. All historical and conventional modern-form differences are separately recorded per owner."
+provenance = "Exact accepted-candidate SHA c2588cac4dbfa8303718b217367345db1ec7fa7b69ce316895d37bd5ecfa12e3; independent-merits-review SHA d46d3d4b792606f359f827b50a3a5f3c976a3a1ca1ae81f60f97319c42f6692c. Both source cues remain recoverable; the full formula is separately sourced under source-local IGMR89."
+retrieved = "2026-11-12"
+sha256 = "bb3ad6b3199882f075efc0c2f91c9fb7950cbfc1d11b121d2dcaaf2257bd7a0e"
+byte_size = 205
+path = "src/sources/works/triptych/postconciliar-ot8-ot12-historical-latin-study-assembly/editions/2026-11-12/artifacts/ot-8-postcommunion/latin.txt"
+indexable = true
+encoding = "utf-8"
+notes = "Source-based Latin study reconstruction of a complete historical prayer with individually reviewed conventional changes, followed by a separately witnessed short conclusion and distinct response. The comparison and conclusion rule belong to a secondary digital2002 witness. Authenticated printed2002 and complete2008 correspondence remain unestablished; this is not an approved liturgical text or recitation authorization."

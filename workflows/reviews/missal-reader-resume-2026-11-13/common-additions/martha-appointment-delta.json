@@ -1,0 +1,103 @@
+{
+  "schema": "triptych.martha-2021-structural-appointment-proposal.v1",
+  "state": "scratch-only-awaiting-independent-source-and-integration-review",
+  "calendar_path": "src/sources/calendars/postconciliar/propers.yaml",
+  "mass": "saints-martha-mary-lazarus",
+  "calendar_file_sha256_at_preparation": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+  "node_serialization": "UTF-8 compact sorted-key JSON with ensure_ascii=False and terminal LF",
+  "node_preimage_sha256": "7f52cb446c2b4ccb69c0c617e7c56ea29b4042de9b641c13a2f248df84f08351",
+  "proposed_node_sha256": "65ba7990b273431f21c1430c8487bc7d2c25a679542ff04e8e2a33ab750ad75b",
+  "before": ".scratch/modern-common-appointments/martha-2021-metadata/node-before.json",
+  "after": ".scratch/modern-common-appointments/martha-2021-metadata/node-after-proposed.json",
+  "added_slots": [
+    {
+      "name": "Entrance Antiphon",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "body_status": "held-unpublished",
+        "reasons": [
+          {
+            "kind": "rights-withheld",
+            "source_id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.entrance-appointment"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Collect",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "body_status": "held-unpublished",
+        "reasons": [
+          {
+            "kind": "rights-withheld",
+            "source_id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.collect-appointment"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Prayer over the Offerings",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "body_status": "held-unpublished",
+        "reasons": [
+          {
+            "kind": "rights-withheld",
+            "source_id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.offerings-appointment"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Communion Antiphon",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "body_status": "held-unpublished",
+        "reasons": [
+          {
+            "kind": "rights-withheld",
+            "source_id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.communion-appointment"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Prayer after Communion",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "body_status": "held-unpublished",
+        "reasons": [
+          {
+            "kind": "rights-withheld",
+            "source_id": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.postcommunion-appointment"
+          }
+        ]
+      }
+    }
+  ],
+  "readings": "All five existing Lectionary nodes preserved byte-equivalent as canonical JSON values; no reading-selection or Common-reading resolution is introduced.",
+  "status_basis": "Unlike an earlier historical witness, this is the expressly governing 2021 dated addition to the current named memorial. Exact Latin exemplars are privately held, so held-unpublished is proposed; no-exemplar and a blanket 2008 witness-gap would misdescribe these five acquired roles. The state is still unavailable for each body and partial at Mass level.",
+  "antiphon_model_boundary": "Composed denotes a source-owned whole proper-body owner, not a claim of original literary composition. Printed Cf citations stay nonresolving source notes. Adding source: scripture would incorrectly replace the unadmitted antiphon with a selected Bible excerpt.",
+  "common_boundary": "No Missal Common pointer is added. The 1981 Lectionary Common direction remains historical reading evidence; the 2021 Hours Common direction remains in the Hours.",
+  "conclusion_boundary": "Collect: abbreviated Qui tecum; Offerings and Postcommunion: abbreviated Per Christum. No conclusion expansion, name substitution or text execution is proposed.",
+  "english_and_ledger_boundary": "No English overlay or Latin provenance ledger is changed in the canonical tree. The separate five-row English proposal records exact held U.S. exemplars, with body publication withheld for the current bundled surfaces; adopt those rows with the five appointments to preserve target accounting. No positive translation or Latin provenance row is proposed.",
+  "english_companion": {
+    "metadata_manifest": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/metadata-manifest.json",
+    "metadata_manifest_sha256": "0a180208bdb78987896a4e6e7ddead7477e2a3733da7d726c2df0406dfa797e2",
+    "accounting_proposal": ".scratch/modern-common-appointments/martha-2021-metadata/english-audit/negative-accounting-proposal.toml",
+    "accounting_proposal_sha256": "cf7df9081f091f4f072a098682e8016edc36c32036794717cc9e19223c9afd79",
+    "exact_target_count": 5
+  },
+  "canonical_writes": []
+}

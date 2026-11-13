@@ -1,0 +1,104 @@
+{
+  "schema": "triptych-source-record-closure/v1",
+  "record_hash_scheme": "compact sorted-key JSON, ensure_ascii=False",
+  "records": [
+    {
+      "id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+      "record_sha256": "fdb933f89d995c26b55f9a15ac5bb6610da2fd00b70c1ba4a4fa32eb6483d4c2",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "manifest_sha256": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf",
+      "candidate": false
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+      "record_sha256": "b76fe85e63e921097d884482753273213c8c67255545e2859ff5ad9c16cff6da",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/artifact.toml",
+      "manifest_sha256": "13f26a56084ef752aed19acc46d4ac74dce893174409b24a85646c9805bb2cd6",
+      "candidate": false
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-sunday-postcommunion-20261113",
+      "record_sha256": "c0dc920d31384fc3162946381c4d2d0ec48227915da1f55455508c5bf86c97e7",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/wilson1915-lent4-sunday-postcommunion-20261113/artifact.toml",
+      "manifest_sha256": "cba8434b38828551dd251b01e42dd5a64dc03df54d876048354c6591110b9e35",
+      "candidate": true
+    },
+    {
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113-44e8e1db",
+      "record_sha256": "9c7a7a9ce25550cf556d79be4ce68511189d9b1c3d26a046b635e85d3038b35d",
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/pius-x-secret-qualified-20261113-44e8e1db/artifact.toml",
+      "manifest_sha256": "f231d87ba70a5c74ef734a95878441090dba3c848d4eb4e9d93f7f6e35818947",
+      "candidate": true
+    },
+    {
+      "id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+      "record_sha256": "a66686660b5b9282cc8a5128ab7f32639246e6d95adc4a6121a518ae570f3fd2",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml",
+      "manifest_sha256": "2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10",
+      "candidate": false
+    },
+    {
+      "id": "edition.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915",
+      "record_sha256": "383ba61c1c5772c97ad3e8e2cae55423e87eb9099552f391a989fb16ec3ba362",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/edition.toml",
+      "manifest_sha256": "13a47b3f68978894a35e8836fa4f4fc119c09e3ba3c45bddf69158a7694f5578",
+      "candidate": false
+    },
+    {
+      "id": "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29",
+      "record_sha256": "df1f629f4084219178b3f047d84dc7b1be4ba3c2119186991172344023cef248",
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/edition.toml",
+      "manifest_sha256": "ee2bd5610f0fcdcf6d7b566961b9d997a902c2f4af79480073c07eb5c57313ae",
+      "candidate": false
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.pius-x-secret-target-control-20261113",
+      "record_sha256": "7267c6785d63e635ce306554b39f3df1debd9a018d7ceaa1d5b024406543b1ea",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/pius-x-secret-target-control-20261113.toml",
+      "manifest_sha256": "d24e260b39426433fb01ba37c5c9c8c8aa6b55ef787eb823d999dda3355c8b33",
+      "candidate": true
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-sunday-postcommunion-20261113",
+      "record_sha256": "1ea3c751cc03592115af2bd3576b42703f76feffd6c713fa6bd63190a865995f",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/wilson1915-lent4-sunday-postcommunion-20261113.toml",
+      "manifest_sha256": "e8c19427b386cc9fd00b05c1a0bf6bdaa022627d91698e9c17fe172b2e28edd2",
+      "candidate": true
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-sunday-postcommunion-20261113-page-control",
+      "record_sha256": "88d1e60b16c24f6df0e34029579e56c659b3a469fcc55639a0d2c791eb93b093",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/wilson1915-lent4-sunday-postcommunion-20261113-page-control.toml",
+      "manifest_sha256": "ba4f08ab8865770c7250d386c70a2bc830c8d87a40ac6f020cd6b8cb32028d55",
+      "candidate": true
+    },
+    {
+      "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113",
+      "record_sha256": "64c3b634fda91da36130ab92329b3fd3299b408921c15229e3889dbd6e3a8d96",
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/passages/pius-x-secret-qualified-20261113.toml",
+      "manifest_sha256": "203242b8badc2732605e6031ed098ebf265819b1a424b41cbea8c4921ce8d478",
+      "candidate": true
+    },
+    {
+      "id": "work.catholic-church.missale-romanum",
+      "record_sha256": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "manifest_sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+      "candidate": false
+    },
+    {
+      "id": "work.catholic-church.sacramentarium-gregorianum-hadrianum",
+      "record_sha256": "52e107516f47de8cf4dc8e5571fd04a5462f69868051ce6bd802e22b2d5c371b",
+      "repository_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/work.toml",
+      "manifest_sha256": "a801fe981738068dc5f02764d856715549c8ee63e28b6635973242b765eb79e3",
+      "candidate": false
+    },
+    {
+      "id": "work.triptych.roman-1962-latin-proper-editorial-projection",
+      "record_sha256": "8ef8aaadda31ce665541c16b72e7415415bbebd566bd6243f8d74457017c9bb4",
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/work.toml",
+      "manifest_sha256": "ec158d3a6a6b806eae829bf0ee477f401ef7bcf848cb831e3a286d2e96e291a5",
+      "candidate": false
+    }
+  ]
+}

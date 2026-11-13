@@ -1,0 +1,307 @@
+{
+  "schema": "triptych-lent-two-guarded-installation/v1",
+  "reviewed_head": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "root_source_admission": {
+    "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/root-source-admission.json",
+    "sha256": "98026a592e22e4beb47f5c363338459c03061795eb88c96f83e13ebfc3256162",
+    "durable_path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/root-source-admission.json"
+  },
+  "updates": [
+    {
+      "identity": [
+        "good-friday",
+        "main",
+        "Solemn Intercession IV: For catechumens",
+        "all",
+        1
+      ],
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/selected/good-friday.json",
+      "sha256": "d0f20e7ff935163e3c30aa4c3a57fe522bde97835294232036d4365006c5f71d",
+      "durable_path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/selected/good-friday.json"
+    },
+    {
+      "identity": [
+        "lent-4",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/selected/lent-4.json",
+      "sha256": "0b77982a74ea21fbae9b59599eebff6ef43f62d8d3970d408f6beaf269415aea",
+      "durable_path": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/selected/lent-4.json"
+    }
+  ],
+  "files": [
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/catechumens-old-complete-and-short-formula-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/catechumens-old-complete-and-short-formula-20261112/artifact.toml",
+      "sha256": "ee1a750cc7c4890b2d73cf074ff359114c80eb5a54203cce0a907343ed950057",
+      "bytes": 1487
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/catechumens-old-complete-and-short-formula-20261112/latin.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/catechumens-old-complete-and-short-formula-20261112/latin.txt",
+      "sha256": "52a438e98acc96c808afb7addaba8b66f0bd90ba6ee472768bf40416063e7cd3",
+      "bytes": 534
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/catechumens-old-complete-transcription-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/catechumens-old-complete-transcription-20261112.toml",
+      "sha256": "420f7dd847b7cced46ca281094cd5cd42c15a40ee2122f2a61cf9dc355311a41",
+      "bytes": 909
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/good-friday-catechumens-short-words-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/good-friday-catechumens-short-words-20261112.toml",
+      "sha256": "dacff4aa6c39ecc9e29ca6d13ce02b658f5e81ba2c8767b03db02d1590a05494",
+      "bytes": 1028
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/good-friday-catechumens-whole-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/good-friday-catechumens-whole-20261112.toml",
+      "sha256": "fdd940700f7aff7df3dbae0b9a344da84f7d5becb17cac2f0409c1569ee9e009",
+      "bytes": 1080
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/good-friday-catechumens-full-execution-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/good-friday-catechumens-full-execution-20261112.toml",
+      "sha256": "fdd1f2afb041492c6aa120dc4960be73f9f74424c1a77a0e293500252a739e1e",
+      "bytes": 1170
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-english/artifacts/complete-unit/artifact.toml",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-english/artifacts/complete-unit/artifact.toml",
+      "sha256": "aaa83b3ad0636e556c7fe7777ceba86612ea7f5b095a03b25487bcd3c438118d",
+      "bytes": 1501
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-english/artifacts/complete-unit/english.txt",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-english/artifacts/complete-unit/english.txt",
+      "sha256": "1120f219d6974052f762e26c933aba91f5b45624cd9eb267ee12af60147e914a",
+      "bytes": 514
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-english/edition.toml",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-english/edition.toml",
+      "sha256": "e21d8653feff57babfab681c86f546b579d6462bffc4f7174078c21f099912b5",
+      "bytes": 566
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-english/passages/complete-unit.toml",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-english/passages/complete-unit.toml",
+      "sha256": "8b3f0ed8a26c41c32808bf7ca48197768c56000873d7d0c8d86ecff99cfe4bb1",
+      "bytes": 775
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-latin/artifacts/complete-unit/artifact.toml",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-latin/artifacts/complete-unit/artifact.toml",
+      "sha256": "ced02e0c53740f5155974d81414cad5aef117367c9f7d57f2656fb45b8a364e7",
+      "bytes": 1659
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-latin/artifacts/complete-unit/latin.txt",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-latin/artifacts/complete-unit/latin.txt",
+      "sha256": "cbbe050eb0106a7f4b6ad3bb0083403225a83f1ca742e8f6d1c4d8e7c8bfc33c",
+      "bytes": 479
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-latin/edition.toml",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-latin/edition.toml",
+      "sha256": "3cb3e88fa6418a38adc1ae6ed79fc9b2ed61667ae6b70b6c4ba92ac57d1b1c04",
+      "bytes": 562
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-latin/passages/complete-unit.toml",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/editions/2026-11-12-latin/passages/complete-unit.toml",
+      "sha256": "026f17b136c0f0ecb4b74c17589d4d6504c4d6c506e5cdc2d2ec470e50c9363b",
+      "bytes": 769
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/good-friday-catechumens-study/work.toml",
+      "destination": "src/sources/works/triptych/good-friday-catechumens-study/work.toml",
+      "sha256": "4417c6909111920f5053e7996ebdc49b938500a20fb025bdbab26d2cce26d5e1",
+      "bytes": 687
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-short-conclusion-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-short-conclusion-20261112/artifact.toml",
+      "sha256": "8c325bb9d21b2d875c0e7108715651664a02a797dc3926d24a004a599cb7d582",
+      "bytes": 1198
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-short-conclusion-20261112/latin.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-short-conclusion-20261112/latin.txt",
+      "sha256": "c95348e5613879f39580014755519448804f196af0443568dc47708e66ce4663",
+      "bytes": 39
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-whole-historical-prayer-20261112/artifact.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-whole-historical-prayer-20261112/artifact.toml",
+      "sha256": "514931bfa7b6dcaefea350ab5d05caf34a8b7ce3af7c4e7c481a8b14d9c8c079",
+      "bytes": 1363
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-whole-historical-prayer-20261112/latin.txt",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/lent4-whole-historical-prayer-20261112/latin.txt",
+      "sha256": "4725b909f5f92ab24db66e19be94794423d786a6d09f78d7ff2625f2288d9800",
+      "bytes": 229
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lent4-short-conclusion-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lent4-short-conclusion-20261112.toml",
+      "sha256": "7c3eccad4ebe360cd57d9d28ccb516fae561325d0718e41ce3e5043aba562754",
+      "bytes": 717
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lent4-whole-historical-prayer-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/lent4-whole-historical-prayer-20261112.toml",
+      "sha256": "45d46d507fe24cb19715408756cfbc523a8902aa6ab33fc3edaf204610e18bd1",
+      "bytes": 735
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/lent4-postcommunion-context-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/lent4-postcommunion-context-20261112.toml",
+      "sha256": "60805830a774a062ea00fb3cdfcc3059921b9d14f8393e1260a77076d7247614",
+      "bytes": 782
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/lent4-postcommunion-execution-rule-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/lent4-postcommunion-execution-rule-20261112.toml",
+      "sha256": "84ea64a895722ff122fbd628322320cfa71e4f4bbdf5fcf753dc6227a3aa9c52",
+      "bytes": 798
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-english-study/artifacts/study-english/artifact.toml",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-english-study/artifacts/study-english/artifact.toml",
+      "sha256": "a791d2bf8e36e3dad94e982d2a0b7cba963681eb752a712ad415a0c9407ba82b",
+      "bytes": 1456
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-english-study/artifacts/study-english/english.tsv",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-english-study/artifacts/study-english/english.tsv",
+      "sha256": "33579759ec15d64ecb9c1b721f9af8e62a5030acfcc823273fd61cabb4636ee6",
+      "bytes": 327
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-english-study/edition.toml",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-english-study/edition.toml",
+      "sha256": "ebc816e8968a63e121a28471de0172295446d0ce6b2320b8c585dc23d03d7dc7",
+      "bytes": 548
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-english-study/passages/publish-lent4-postcommunion-20261112.toml",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-english-study/passages/publish-lent4-postcommunion-20261112.toml",
+      "sha256": "078330c7f3943e9989ef2a72ec3e9bfb57aed8b136b273a44b4d090317c79f31",
+      "bytes": 762
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/artifacts/normalized-latin/artifact.toml",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/artifacts/normalized-latin/artifact.toml",
+      "sha256": "e22fa96ed9e0abc4c53abe3610f8e734834c002054c38567100c7f33f91a9924",
+      "bytes": 1540
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/artifacts/normalized-latin/latin.tsv",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/artifacts/normalized-latin/latin.tsv",
+      "sha256": "a8e9742320d98b26db98d2d032aebf90af9e83d2ad7bf92b8fac5986cfc94099",
+      "bytes": 317
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/edition.toml",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/edition.toml",
+      "sha256": "14c38e120359927b8d688f4072b1c5a8d200d8d6a6c73fe4073b008166cf2eb6",
+      "bytes": 556
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/passages/publish-lent4-postcommunion-20261112.toml",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/editions/2026-11-12-latin-projection/passages/publish-lent4-postcommunion-20261112.toml",
+      "sha256": "c0ff24037bf445209d89e9da9398eef18628ebb649a95a25b8516db3d4836405",
+      "bytes": 760
+    },
+    {
+      "payload": "payload/src/sources/works/triptych/lent4-postcommunion-source-local-study/work.toml",
+      "destination": "src/sources/works/triptych/lent4-postcommunion-source-local-study/work.toml",
+      "sha256": "f80e14cd1c04738503f4809a731d0e1b8881c6542fda6173f1de2827bb049f9d",
+      "bytes": 599
+    },
+    {
+      "payload": "payload/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/good-friday-intercession-actors-20261112.toml",
+      "destination": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/good-friday-intercession-actors-20261112.toml",
+      "sha256": "e8900d19eedc762bd95a25e798fb8a38ff740ddbe44237136364271b07564fc1",
+      "bytes": 1418
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/root-source-admission.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/root-source-admission.json",
+      "sha256": "98026a592e22e4beb47f5c363338459c03061795eb88c96f83e13ebfc3256162",
+      "bytes": 21384
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/good-friday-source-review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/good-friday-source-review.json",
+      "sha256": "3b92617f08ea7d1015dc5a56edb0aa57e1905705051ae3c8fe6e8d9a9a70c48b",
+      "bytes": 6989
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/lent4-communion-source-review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/lent4-communion-source-review.json",
+      "sha256": "4e79c809ed5a337aa779a6946fef3b760664110fd4272fb25cc1c79f673686c7",
+      "bytes": 7549
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/registration-review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/registration-review.json",
+      "sha256": "afa3d47c85e6f17233b0780cb21e08e36cef60885cab50c3d16d9a78097ee134",
+      "bytes": 9626
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/execution-addendum-review.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/execution-addendum-review.json",
+      "sha256": "dd7600f71a738b56af8657fb0598e2bea6f7c14f26e0f4970c5ee7f6c20f2989",
+      "bytes": 3186
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/good-friday-sequence-consumer-addendum.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/reviews/good-friday-sequence-consumer-addendum.json",
+      "sha256": "6b530de658946e773533e30ae7fe03f8ca9751fa2d17a72630ee9862f5149664",
+      "bytes": 3264
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/execution-input-v2.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/execution-input-v2.json",
+      "sha256": "1ae6ad610521ee2a16dfe132c9866716c031870108f82c755f8e23020c0d5ba4",
+      "bytes": 14795
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/selected/good-friday.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/selected/good-friday.json",
+      "sha256": "d0f20e7ff935163e3c30aa4c3a57fe522bde97835294232036d4365006c5f71d",
+      "bytes": 11568
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/selected/lent-4.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/selected/lent-4.json",
+      "sha256": "0b77982a74ea21fbae9b59599eebff6ef43f62d8d3970d408f6beaf269415aea",
+      "bytes": 11329
+    },
+    {
+      "payload": "payload/workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/evidence-map.json",
+      "destination": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/evidence-map.json",
+      "sha256": "4a9ac50f714419fcb0f079ea7f6668dfe8c7b4e9d4ee2b09fe78e1271bb09371",
+      "bytes": 23874
+    }
+  ],
+  "durable_declaration": "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/installation-declaration.json",
+  "owners": [
+    "src/sources/calendars/postconciliar/propers.yaml",
+    "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+    "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml"
+  ],
+  "source_files": 33,
+  "case_count": 2,
+  "canonical_application": false,
+  "runtime_activation": false,
+  "no_current2008_upgrade": true,
+  "preservation": "The entire current owners are never reserialized. Only exactly matched selected source spans are changed. Untouched raw bytes and quarantine header remain unchanged. Exact previous dictionaries are retained in selected records and English prior_source_refusals."
+}

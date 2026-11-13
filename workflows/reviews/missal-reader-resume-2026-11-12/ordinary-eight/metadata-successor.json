@@ -1,0 +1,109 @@
+{
+  "schema": "triptych-explicit-review-projection/v1",
+  "raw_input": {
+    "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/metadata-successor.json",
+    "sha256": "dbdbd383545d53bac4dece35aef515ba83f25b2dcd337f6b6b0e28f22ac06b02",
+    "bytes": 8247
+  },
+  "projection": {
+    "selection": "All fields of the eight-only receipt.",
+    "path_transformation": "Remove exactly the active repository absolute prefix from string values. Preserve all other content; this projection is not the original raw receipt.",
+    "raw_receipt_unchanged": true
+  },
+  "record": {
+    "schema": "ordinary-eight-metadata-successor/v1",
+    "predecessor_handoff": {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/handoff.json",
+      "sha256": "85d72649979a50f8455affe05d34174ecd38707facad2b3de3c8c5cbfb1850d4"
+    },
+    "reason": "Independent source reviewer identified that the rubric following Per quem starts Discooperit in both Mame PDF 459/printed345 and CMAA PDF392/printed311. Hic was an erroneous locator word, outside the selected prayer.",
+    "reviewer": "/root/roman_sources/remaining_saints",
+    "confirmed_by_preparer": "Both original 400 dpi images re-read; no Hic appears before Discooperit.",
+    "source_changes": [
+      {
+        "source_file": "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+        "before_sha256": "23b91c019c6e677ecff777f1f0cccd47bdf35351dec2701b0246c0ee6419cde4",
+        "after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "phrase_replacements": 2,
+        "before_phrase": "before the Hic discooperit rubric",
+        "after_phrase": "before the Discooperit rubric"
+      },
+      {
+        "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-per-quem.toml",
+        "before_sha256": "37b44f1e5c7e8ffc596998e2f81a96114e5ff271fa40f3428742422e2c114ffa",
+        "after_sha256": "4991ba0d81a88b3be608632070c962557214b6857b54aede5ddf1ed8587cc5ca",
+        "phrase_replacements": 3,
+        "before_phrase": "before the Hic discooperit rubric",
+        "after_phrase": "before the Discooperit rubric"
+      }
+    ],
+    "owner_fields": [
+      {
+        "field": "/sections/3/latin_replacements/1/turns_basis",
+        "before": "Mame 1922 printed 345, original PDF 459, upper left, complete Per quem before the Hic discooperit rubric; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-per-quem. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied.",
+        "after": "Mame 1922 printed 345, original PDF 459, upper left, complete Per quem before the Discooperit rubric; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-per-quem. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied."
+      },
+      {
+        "field": "/sections/3/latin_replacements/1/latin/note",
+        "before": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 345, original PDF 459, upper left, complete Per quem before the Hic discooperit rubric; checked word by word against the complete 1962 target at n. 1111, printed 311/PDF 392 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints ereas; Mame prints creas. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+        "after": "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 345, original PDF 459, upper left, complete Per quem before the Discooperit rubric; checked word by word against the complete 1962 target at n. 1111, printed 311/PDF 392 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints ereas; Mame prints creas. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+      }
+    ],
+    "passage_fields": [
+      {
+        "field": "/context",
+        "before": "upper left, complete Per quem before the Hic discooperit rubric",
+        "after": "upper left, complete Per quem before the Discooperit rubric"
+      },
+      {
+        "field": "/notes",
+        "before": "Mame 1922 printed 345, original PDF 459, upper left, complete Per quem before the Hic discooperit rubric; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-per-quem. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied. ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 345, original PDF 459, upper left, complete Per quem before the Hic discooperit rubric; checked word by word against the complete 1962 target at n. 1111, printed 311/PDF 392 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints ereas; Mame prints creas. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification.",
+        "after": "Mame 1922 printed 345, original PDF 459, upper left, complete Per quem before the Discooperit rubric; source and target actual 200 and 400 dpi page images checked 2026-11-12. passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112-per-quem. The source rubric assigns the prayer to the priest; no P. marker is printed or supplied. ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 345, original PDF 459, upper left, complete Per quem before the Discooperit rubric; checked word by word against the complete 1962 target at n. 1111, printed 311/PDF 392 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints ereas; Mame prints creas. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
+      }
+    ],
+    "images": [
+      {
+        "witness": "mame",
+        "page": 459,
+        "dpi": 200,
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap459-200.png",
+        "sha256": "4fa1eafd16acd8c1556ae61a7844a9a54158d84c45396cbf4d46e05b4c351532"
+      },
+      {
+        "witness": "mame",
+        "page": 459,
+        "dpi": 400,
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/mame-ap459-400.png",
+        "sha256": "e59e971eab1cd93f98f56cf264608519520856665672aff8af60ed3f18f43f3b"
+      },
+      {
+        "witness": "cmaa",
+        "page": 392,
+        "dpi": 200,
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap392-200.png",
+        "sha256": "ca9e097cfa65b3b9444ea8f629f5ef32946f4c94be8fadd1f84e28397052ae32"
+      },
+      {
+        "witness": "cmaa",
+        "page": 392,
+        "dpi": 400,
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/images/cmaa-ap392-400.png",
+        "sha256": "47074795ef9f0c90555824f3d295f55a9b3ee488a95300e8686bdda94a7afe79"
+      }
+    ],
+    "body_changes": [],
+    "turn_array_changes": [],
+    "payload_changes": [],
+    "parser_changes": [],
+    "proof_propagation": [
+      "Per quem after.translation.note and its canonical JSON hash",
+      "Per quem after.owner_declaration.turns_basis and latin.note",
+      "Per quem historical_source.extent and text_passage hash",
+      "Every declaration owner_after_sha256 because the one owner file hash changes",
+      "comparison-24 historical source extent",
+      "owner patch, preparation receipt and final handoff source/proof pins"
+    ],
+    "canonical_writes": false,
+    "source_authority_activated": false
+  }
+}

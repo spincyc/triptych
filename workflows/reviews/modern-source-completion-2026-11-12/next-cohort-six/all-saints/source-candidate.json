@@ -1,0 +1,59 @@
+{
+  "schema": "modern-bounded-study-candidate/v1",
+  "status": "prepared-not-admitted; independent-review-needed",
+  "coordinate": [
+    "all-saints",
+    "main",
+    "Entrance Antiphon",
+    "all",
+    1
+  ],
+  "historical_source": {
+    "edition_id": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+    "source_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-propers-la-checked-82edd79a",
+    "source_sha256": "82edd79a9096f329601d709160bd26f60911792846a3b7c39d42fe0a8657d144",
+    "page_artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-1922-pages-0682b2da",
+    "page_artifact_sha256": "0682b2daf9d056b72346dead1772a91b30ba6dbe61ef8db9844e9b4ff335560c",
+    "page_locator": {
+      "excerpt_page": 1,
+      "parent_artifact_page": 862,
+      "printed_page": 748
+    },
+    "source_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-saints-four-own-propers-checked-2026-10-20",
+    "extent": "Entire antiphon only. Following Psalm32:1 and Gloria Patri are excluded.",
+    "fresh_image_read": "2026-11-12",
+    "affirmative_basis": "Registered1922 original-publication United States public-domain basis and faithful source transcription; not modern content inferred from age or a quarantine hash."
+  },
+  "latin_source": {
+    "path": ".scratch/modern-partition-nonseasonal/all-saints-1922-antiphon-la.txt",
+    "sha256": "82a2a5a73ff9e82e3ffdae142f44688d2f1e92becab449ff1fd52ece4ffa807c",
+    "hash_scope": "UTF-8 body plus exactly one LF",
+    "text": "Gaudeamus omnes in Domino, diem festum celebrantes sub honore Sanctorum omnium: de quorum solemnitate gaudent Angeli, et collaudant Filium Dei."
+  },
+  "fresh_study_english": {
+    "path": ".scratch/modern-partition-nonseasonal/all-saints-study-en.txt",
+    "sha256": "8f8a7473313e2de7fb9cb053e9b69eef4cb42087460abbf2f66b21184086511d",
+    "hash_scope": "UTF-8 body plus exactly one LF",
+    "text": "Let us all rejoice in the Lord, celebrating a feast in honor of all the saints. The angels rejoice at their solemnity and together praise the Son of God.",
+    "classification": "New project study translation from the exact1922 source. Not a historical human translation and not approved2011/ICEL English.",
+    "fidelity_notes": [
+      "All source clauses retained; no following psalm or doxology added.",
+      "collaudant rendered together praise; no invented doctrinal or rubrical clause.",
+      "English sentence division is editorial."
+    ]
+  },
+  "target_comparison": {
+    "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+    "artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+    "artifact_page": 512,
+    "fresh_read": "complete rendered page-image body",
+    "relationship": "Same lexical antiphon; accents/case/pointing differ, and1922 solemnitate corresponds to2002 sollemnitate. No literal byte/orthography identity is claimed;2008 not established.",
+    "authenticated2008_compared": false
+  },
+  "gates_remaining": [
+    "Independent source/image/transcription review.",
+    "Independent English fidelity review.",
+    "Authenticated2008 full-body comparison before a modern target binding."
+  ],
+  "proposed_canonical_mutations": []
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "triptych-loreto-recovery-successor-acceptance/v1",
+  "status": "accepted-bounded-metadata-successor",
+  "reviewer": "/root/modern_common_appointments/common_universe/olm_doctors_virgins",
+  "root_commit": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "prior_review": {
+    "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/review.json",
+    "sha256": "4873efec98442eb60227edde3d49bcd9771203ac76b9a2870ed94f70faef631b",
+    "byte_size": 11651
+  },
+  "v6": {
+    "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/loreto-structural-correction-v6.json",
+    "sha256": "2d28c37f898099ce0f9a2576b4fd0d0847a164147c21b6bc59f04c3fbc9629da",
+    "byte_size": 21119
+  },
+  "v7": {
+    "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/loreto-structural-correction-v7.json",
+    "sha256": "7c69a2ce1fbba78db143bcad3be86c7153b20248308a43ef10da1a384b549dc1",
+    "byte_size": 21216
+  },
+  "governing_scope": {
+    "path": "src/sources/calendars/README.md",
+    "sha256": "5aa7de5cb58b1e8d38a997d9db90e08c392da19ffbdf832735d5300601712766",
+    "byte_size": 66187,
+    "lines": [
+      759,
+      760,
+      761
+    ]
+  },
+  "actual_deltas": {
+    "substantive_path": "mass_after.notes",
+    "replaced_sentence": "The partial-formulary gap therefore includes unrepresented reading appointments and unresolved remaining choices.",
+    "replacement_sentences": "The unrepresented reading appointments are a separate Lectionary gap. The partial missal-formulary status concerns only unresolved Missal material and choices.",
+    "administrative_paths": [
+      "revision",
+      "supersedes_packet_sha256"
+    ],
+    "all_other_values_equal": true
+  },
+  "resolved_finding": {
+    "kind": "inherited-wording-scope",
+    "disposition": "Resolved in v7: four unrepresented OLM reading roles remain a separate Lectionary gap; partial missal-formulary status is limited to unresolved Missal material and choices."
+  },
+  "preserved": {
+    "typed_statuses": true,
+    "own_roles": true,
+    "common_pointer": true,
+    "english_dictionaries": true,
+    "source_records_and_retained_historical_evidence": true,
+    "v6_report_and_history": true,
+    "test_logs": [
+      {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/cold_loreto_baseline.txt",
+        "sha256": "e3bf09ed52c4f2bf37cf5704ad04b4643cde795438b549a33d90076c4045954a",
+        "byte_size": 3134
+      },
+      {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/cold_loreto_candidate.txt",
+        "sha256": "3208383196c2c4e9e83c1647b121aed31e5381cb679d2686f7eb89cbaf9d28d3",
+        "byte_size": 3448
+      },
+      {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion-independent-review/cold_loreto_candidate-focused.txt",
+        "sha256": "7ec4cdeac2609823d6c0d274d6c362de9b27cbe407c1bf47928ff80816b0460c",
+        "byte_size": 101
+      }
+    ],
+    "recovery_code_and_inventory": [
+      {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/package/src/sources/inventories/postconciliar-sanctoral-commons-v1.toml",
+        "sha256": "b5dd0abf24845d3cde049156af340eded8d87eb90dfd3550bac6a8724ced76e0",
+        "byte_size": 116951
+      },
+      {
+        "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/package/tools/tests/test_postconciliar_sanctoral_commons_inventory.py",
+        "sha256": "5edf209c81b00dfaaa5427698d6d2b9ed369f5dcb5e883e3887b24c72bda18fe",
+        "byte_size": 20060
+      }
+    ],
+    "patch": {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/proposal.patch",
+      "sha256": "8d6e206c8d10f8011602de365ace57e5fb592ae42efb359c518d97f8bb6cbcca",
+      "byte_size": 10115
+    },
+    "recovery_manifest": {
+      "path": ".scratch/modern-common-appointments/loreto-review/recovery-companion/manifest.json",
+      "sha256": "d0608ccfb054ee45511ef23d5a6febb94f1bd580eb9ad531fce9f95c19cb06b5",
+      "byte_size": 2597
+    }
+  },
+  "verification_scope": "Actual parsed v6/v7 value comparison and direct reading of calendar README lines 759–761. No source review expansion, body/publication finding, source mutation or packet edit.",
+  "tests_rerun": false,
+  "test_evidence": "Prior v6 baseline/candidate/focused logs remain unchanged. This wording correction changes no status, option, source/recipient guard, recovery inventory, executable code or English dictionary. The three known baseline failures remain outside this correction.",
+  "blocking_findings": [],
+  "canonical_writes": false,
+  "packet_writes": false,
+  "source_body_text_in_report": false
+}

@@ -23848,6 +23848,41 @@ whole = true
 locator = "Notitiae, volume 25 (1989), number 273: printed pp. 351–382 / artifact pp. 43–74"
 basis = "segment segment.anthony-ward.entry-point-to-the-rotulus-of-ravenna.1989-notitiae-273.notitiae-pages-351-382: The complete article from its own heading on printed p. 351 / artifact p. 43 through Anthony Ward’s signature in the upper portion of printed p. 382 / artifact p. 74. The page-based extent also contains a separate Missale Romanum notice below the article’s conclusion on the last page; that notice is not part of Ward’s work. Complete article containment does not establish a complete original Rotulus, a diplomatic transcription, 42 complete prayers, an annual Mass book or Ravenna receiving use."
 
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Decree and liturgical texts for the addition of Saint Adalbert, bishop and martyr to the General Roman Calendar"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-adalberti-1995"
+locator = "Notitiae, volume 32 (1996), number 357: printed pp. 190–193 / artifact pp. 12–15"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-adalberti-1995.latin-notitiae-357.notitiae-pages-190-193: introductory notice, complete decree and Mass proper section through its reading directions, printed pp. 190–193."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Decree and liturgical texts for the addition of Saint Peter Julian Eymard, priest to the General Roman Calendar"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-petri-iuliani-eymard-1995"
+locator = "Notitiae, volume 32 (1996), number 357: printed pp. 201–204 / artifact pp. 23–26"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-petri-iuliani-eymard-1995.latin-notitiae-357.notitiae-pages-201-204: introductory notice, complete decree and Mass proper section through its reading directions, printed pp. 201–204."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship and the Discipline of the Sacraments"
+title = "Decree and liturgical texts for the addition of Saint Louis-Marie Grignion de Montfort, priest to the General Roman Calendar"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996"
+locator = "Notitiae, volume 32 (1996), number 362: printed pp. 656–659 / artifact pp. 25–28"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sancti-ludovici-mariae-grignion-de-montfort-1996.latin-notitiae-362.notitiae-pages-656-659: introductory notice, complete decree and Mass proper section through its reading directions, printed pp. 656–659."
+
+[[containers.constituents]]
+author = "Congregation for Divine Worship"
+title = "De celebratione Sanctorum Laurentii Ruiz et Sociorum Martyrum"
+work_id = "work.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988"
+locator = "Notitiae, volume 24 (1988), number 261: printed pp. 237–238 and 253 / artifact pp. 13–14 and 29"
+basis = "segment segment.congregation-for-divine-worship-and-the-discipline-of-the-sacraments.de-celebratione-sanctorum-laurentii-ruiz-et-sociorum-1988.latin-notitiae-261.decree-and-mass-pages-237-238-253: the decree on printed pp. 237–238 and the separate Mass block on printed p. 253, joined by the decree's footnote to the attached proper texts; the intervening pages are not claimed."
+
+[[containers.constituents]]
+author = "Catholic Church"
+title = "Ordo lectionum Missae"
+work_id = "work.catholic-church.ordo-lectionum-missae"
+locator = "Notitiae, volume 51 (2015), numbers 587–592: the additions article, printed pp. 349–360 / artifact pp. 47–58; reviewed pages printed 349, 352–355 and 357–358"
+basis = "segment segment.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015.inspected-2015-dated-courses: the article of additions to the Ordo lectionum Missae, its insertion-authority footnote and twelve dated courses. Only these additions are printed here, not the whole Ordo lectionum Missae."
+
 [[containers]]
 id = "work.catholic-church.missale-romanum"
 manifest_sha256 = "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd"
@@ -65595,3 +65630,17 @@ whole = false
 locator = "The Greek Fragments division begins on printed 399 (physical PDF 412) and precedes the appendix division beginning on printed 707. The division also includes modern introductory matter."
 extent_unresolved = "This collected fragment section is not a complete surviving original commentary or scholia work; the individual fragments, source attributions and Scripture ranges have not been inventoried in this intake."
 basis = "The book’s title explicitly distinguishes the fourteen homilies from Greek fragments of the homilies, commentaries and scholia; the contents and division heading identify their location. This is a collective holding with attribution limits, not a claim that every paragraph in the division is Origen’s prose. Its separately credited NETS biblical quotations and modern material are excluded from the homily English derivative and no payload from this section is admitted."
+
+[[containers]]
+id = "artifact.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.ia-whole-pdf-616a58b8"
+manifest_sha256 = "a252d3bc3237ec3bf7567649ad4aeedf486d79d70bf7973d205348ecbf9704b9"
+status = "partial"
+basis = "Work description: 'BookIII includes the separately headed MissaleGothicum.' Edition notes: 'BookIII MissaleGothicum headingAP226/printed188 independently image-checked'. Passage passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.easter2-gothicum-heading-20261113 reads that heading at artifact p. 226."
+unresolved = "The record names only the Missale Gothicum among the Gallican documents Mabillon prints; the others are not enumerated."
+
+[[containers.constituents]]
+author = "Catholic Church"
+title = "Missale Gothicum"
+work_id = "work.catholic-church.missale-gothicum"
+locator = "Book III, from printed p. 188 / artifact p. 226"
+basis = "Edition notes and the heading passage above; the Postnomina at artifact p. 295 / printed p. 258 belongs to this contained collection."

@@ -1,0 +1,144 @@
+{
+  "schema": "ordinarytime-historical-semen-candidates/v1",
+  "status": "source-prepared-read-only",
+  "reviewed_on": "2026-11-12",
+  "rows": [
+    {
+      "identity": [
+        "ot-11",
+        "main",
+        "Gospel Acclamation",
+        "B",
+        1
+      ],
+      "english": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved.",
+      "english_body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "english_kind": "historical-human-translation",
+      "approved_2011_english": false,
+      "new_study_translation": false,
+      "latin_historical_body": "Semen est * verbum Dei, sator autem Christus: omnis qui invénit eum, manébit in ætérnum.",
+      "latin_historical_body_sha256": "9a8ade73802471a7a675b1b625c0d311fb301fe80821511739e7fed466b34f4a",
+      "target_carrier_body": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.",
+      "target_carrier_body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "relation": "Complete source-local words match OLM1981 after removal of chant asterisk, accent/ligature expansion, and colon versus semicolon normalization. No lexical addition/deletion. No comparison with authenticated2008 Missal.",
+      "olm1981": {
+        "edition_id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+        "artifact_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+        "artifact_sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+        "whole_path": ".scratch/modern-partition-ordinarytime/olm1981.pdf",
+        "artifact_page": 110,
+        "printed_page": 56,
+        "lectionary_number": 92,
+        "cycle": "B",
+        "verified_on": "2026-11-12",
+        "method": "whole page visually inspected",
+        "raster_path": ".scratch/modern-partition-ordinarytime/rasters/olm-ap110.png",
+        "proposed_verification_passage_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot11-b-20261112"
+      },
+      "proposed_publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot11-b-20261112",
+      "publication_note": "Existing Bute source artifact has saint recipients. Integrator should either add a shared recipient derivative with these two exact rows and Lent5Tuesday, or adopt supported existing whole-source scalar reuse without pretending the existing recipient publication passage already targets OT. No duplicate whole source artifact needed.",
+      "integration_blockers": [
+        "Distinct recipient publication passage and explicit historical route label required.",
+        "Do not replace the cycle-specific identities with legacy all census identities.",
+        "No authenticated2008 target equivalence asserted."
+      ]
+    },
+    {
+      "identity": [
+        "ot-15",
+        "main",
+        "Gospel Acclamation",
+        "A",
+        1
+      ],
+      "english": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved.",
+      "english_body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+      "english_kind": "historical-human-translation",
+      "approved_2011_english": false,
+      "new_study_translation": false,
+      "latin_historical_body": "Semen est * verbum Dei, sator autem Christus: omnis qui invénit eum, manébit in ætérnum.",
+      "latin_historical_body_sha256": "9a8ade73802471a7a675b1b625c0d311fb301fe80821511739e7fed466b34f4a",
+      "target_carrier_body": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.",
+      "target_carrier_body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3",
+      "relation": "Complete source-local words match OLM1981 after removal of chant asterisk, accent/ligature expansion, and colon versus semicolon normalization. No lexical addition/deletion. No comparison with authenticated2008 Missal.",
+      "olm1981": {
+        "edition_id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+        "artifact_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+        "artifact_sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+        "whole_path": ".scratch/modern-partition-ordinarytime/olm1981.pdf",
+        "artifact_page": 115,
+        "printed_page": 61,
+        "lectionary_number": 103,
+        "cycle": "A",
+        "verified_on": "2026-11-12",
+        "method": "whole page visually inspected",
+        "raster_path": ".scratch/modern-partition-ordinarytime/rasters/olm-ap115.png",
+        "proposed_verification_passage_id": "passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.semen-verify-ot15-a-20261112"
+      },
+      "proposed_publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.semen-publish-ot15-a-20261112",
+      "publication_note": "Existing Bute source artifact has saint recipients. Integrator should either add a shared recipient derivative with these two exact rows and Lent5Tuesday, or adopt supported existing whole-source scalar reuse without pretending the existing recipient publication passage already targets OT. No duplicate whole source artifact needed.",
+      "integration_blockers": [
+        "Distinct recipient publication passage and explicit historical route label required.",
+        "Do not replace the cycle-specific identities with legacy all census identities.",
+        "No authenticated2008 target equivalence asserted."
+      ]
+    }
+  ],
+  "shared_latin_source": {
+    "schema": 2,
+    "record_type": "artifact",
+    "id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen",
+    "edition_id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+    "artifact_type": "normalized-text",
+    "media_type": "text/tab-separated-values; charset=utf-8",
+    "storage": "tracked",
+    "rights_status": "public-domain",
+    "rights_basis": "The identified printed book was published by Friedrich Pustet in 1888. Its 1888 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label.",
+    "rights_jurisdiction": "United States",
+    "derived_from": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf",
+    "transformation": "Finite direct image transcription on 2026-10-29 of only the complete historical antiphon printed on p. 339. Printed line wraps are joined with spaces; heading and page furniture omitted. Every word, punctuation mark, capitalization and printed chant asterisk retained. The English is repeated for two independently identified OLM1981 use rows; it remains one historical physical body. No new English, approved modern wording or conclusion supplied.",
+    "retrieved": "2026-10-29",
+    "sha256": "129a2f73517c43fca3d9211581d6b2ad6b5754c22b0af664561836a5b4ff5c76",
+    "byte_size": 196,
+    "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/semen.tsv",
+    "indexable": true,
+    "encoding": "utf-8"
+  },
+  "shared_english_source": {
+    "schema": 2,
+    "record_type": "artifact",
+    "id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+    "edition_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+    "artifact_type": "normalized-text",
+    "media_type": "text/tab-separated-values; charset=utf-8",
+    "storage": "tracked",
+    "rights_status": "public-domain",
+    "rights_basis": "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition.",
+    "rights_jurisdiction": "United States",
+    "derived_from": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+    "transformation": "Finite direct image transcription on 2026-10-29 of only the complete historical antiphon printed on p. 439. Printed line wraps are joined with spaces; heading and page furniture omitted. Every word, punctuation mark, capitalization and printed chant asterisk retained. The English is repeated for two independently identified OLM1981 use rows; it remains one historical physical body. No new English, approved modern wording or conclusion supplied.",
+    "retrieved": "2026-10-29",
+    "sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+    "byte_size": 397,
+    "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-semen/semen.tsv",
+    "indexable": true,
+    "encoding": "utf-8"
+  },
+  "fresh_page_image_inspection": [
+    {
+      "path": ".scratch/modern-partition-ordinarytime/latin1888-page339.jpg",
+      "sha256": "b68ef0d6180b0f7a00e06269a71e44ab1b9eebc79ca69ca7086f952fe3b71849",
+      "recovery": "git show c448036bd6:<registered image path>; hash matches existing artifact",
+      "whole_body_visually_verified": true
+    },
+    {
+      "path": ".scratch/modern-partition-ordinarytime/bute1908-page439.jpg",
+      "sha256": "d9f23026a095f366bed46c750760db865214623ae2a2e7545633e268111e63c4",
+      "recovery": "git show c448036bd6:<registered image path>; hash matches existing artifact",
+      "whole_body_visually_verified": true
+    }
+  ],
+  "latin_verification_passage_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-verify-semen",
+  "english_verification_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+  "rights_scope": "Affirmative historical print-date basis from source manifests covers entire 1888 Latin and1908 human English bodies in United States. No OLM1981 page payload or modern approved English admitted."
+}

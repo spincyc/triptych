@@ -1,0 +1,168 @@
+{
+  "schema": "triptych-latin-two-holy-name-source-metadata-successor/v1",
+  "status": "prepared-for-narrow-independent-review-and-root-admission",
+  "basis": "Current source-library validation requires a page_count on the controlling artifact for structured page ranges and enforces the existing Cummiskey work locus grammar. Parent authorized the existing source-bound pattern: retain exact prose locators and omit unsupported optional ranges; restore the required semantic locus.",
+  "original_latin_declaration_sha256": "ec6044328e2b661eddcf0a8a1afdacca4987e3a5bb3ea5d8fb0eb0316e853c6e",
+  "original_holy_name_declaration_sha256": "8bb9cb7eea3cc345dfeee23ba066e8f2034dc2738cfbb150136bed90137ae4d6",
+  "original_root_admission_sha256": "af653c80c2398d53f742024528b9c9c02c354a3f88e78ea11673fa80c28f5e80",
+  "changes": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "kind": "remove-optional-page-range",
+      "before_sha256": "e881152aeaacc469e0be567aa9676664e4a551e006c4172c2887c62923718357",
+      "after_sha256": "7c5441b6ececdf7858f6349b56c4f42d42cc9d3dcbd12a202a052e1cfa205baf",
+      "before_document": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "s-gregorii-i-papae-confessoris-ecclesiae, Secret; printed p. 488, no. 2281, artifact PDF p. 569, left column",
+        "artifact_page_ranges": [
+          [
+            569,
+            569
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Controlling 1962 wording, punctuation and printed conclusion length for this complete oration. This target record is not the independent publication-rights witness.",
+        "verified_on": "2026-11-12",
+        "notes": "Both page images print ut intercessione beati Gregorii (stress accents omitted here). Neither prints II, and intercessione is one word. The entire petition was read against both witnesses. The 1862 prints Per Dominum. after the petition; the old provenance claim that it prints no conclusion is incorrect. The 1962 prints the retained conclusion through in unitate. The historical decorative initial and small-cap tail read Annue; they are not the recognizer string 4 Nnue. The historical text has no comma after quaesumus; the target punctuation is retained. Complete body read on page images at actual 200 and 400 dpi from the hash-checked whole CMAA facsimile. No embedded OCR or grammatical inference settles this correction."
+      },
+      "after_document": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "s-gregorii-i-papae-confessoris-ecclesiae, Secret; printed p. 488, no. 2281, artifact PDF p. 569, left column",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Controlling 1962 wording, punctuation and printed conclusion length for this complete oration. This target record is not the independent publication-rights witness.",
+        "verified_on": "2026-11-12",
+        "notes": "Both page images print ut intercessione beati Gregorii (stress accents omitted here). Neither prints II, and intercessione is one word. The entire petition was read against both witnesses. The 1862 prints Per Dominum. after the petition; the old provenance claim that it prints no conclusion is incorrect. The 1962 prints the retained conclusion through in unitate. The historical decorative initial and small-cap tail read Annue; they are not the recognizer string 4 Nnue. The historical text has no comma after quaesumus; the target punctuation is retained. Complete body read on page images at actual 200 and 400 dpi from the hash-checked whole CMAA facsimile. No embedded OCR or grammatical inference settles this correction."
+      }
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "kind": "remove-optional-page-range",
+      "before_sha256": "07290a8ae34349f6c41d1d163b7362c9e64ca3b02c5ce844bccef20e2c76d8e0",
+      "after_sha256": "0bc0c70a673105647690047d37d59ddece3a0e3677e62a0f3db54a485ab2064d",
+      "before_document": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "comm-s-gorgonii-martyris, Postcommunion; printed p. 652, no. 3585, artifact PDF p. 733, left column",
+        "artifact_page_ranges": [
+          [
+            733,
+            733
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Controlling 1962 wording, punctuation and printed conclusion length for this complete oration. This target record is not the independent publication-rights witness.",
+        "verified_on": "2026-11-12",
+        "notes": "Both page images print quae as the ae ligature in vegetet: quae in Martyre, not quas. The entire petition was read against both witnesses. The 1862 ends pascatur. and proceeds directly to De Spiritu sancto. Postcomm.; it prints no conclusion at this place, contrary to the old provenance claim of a short conclusion cue. The 1962 prints pascatur: Qui tecum vivit et regnat in unitate.; the existing target punctuation and conclusion remain unchanged. Complete body read on page images at actual 200 and 400 dpi from the hash-checked whole CMAA facsimile. No embedded OCR or grammatical inference settles this correction."
+      },
+      "after_document": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+        "edition_id": "edition.catholic-church.missale-romanum.vatican-typica-1962",
+        "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+        "artifact_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+        "locus": "comm-s-gorgonii-martyris, Postcommunion; printed p. 652, no. 3585, artifact PDF p. 733, left column",
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "Controlling 1962 wording, punctuation and printed conclusion length for this complete oration. This target record is not the independent publication-rights witness.",
+        "verified_on": "2026-11-12",
+        "notes": "Both page images print quae as the ae ligature in vegetet: quae in Martyre, not quas. The entire petition was read against both witnesses. The 1862 ends pascatur. and proceeds directly to De Spiritu sancto. Postcomm.; it prints no conclusion at this place, contrary to the old provenance claim of a short conclusion cue. The 1962 prints pascatur: Qui tecum vivit et regnat in unitate.; the existing target punctuation and conclusion remain unchanged. Complete body read on page images at actual 200 and 400 dpi from the hash-checked whole CMAA facsimile. No embedded OCR or grammatical inference settles this correction."
+      }
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--most-holy-name-of-jesus--main--collect--all--1.toml",
+      "kind": "restore-work-locus-grammar",
+      "before_sha256": "2c3d76cc0e34bb62b7f56954c09a654fd814e4cd0ab600e23018b96e55c53ff1",
+      "after_sha256": "650dfd4d1eed122cc82ef5e86470392de1d0a42bad08b9fab9415c10e3ef940c",
+      "before_document": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-most-holy-name-of-jesus--main--collect--all--1",
+        "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+        "artifact_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+        "locus": "most-holy-name-of-jesus/collect; printed p. 95; artifact PDF p. 106; IA leaf n105",
+        "artifact_page_ranges": [
+          [
+            106,
+            106
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "printed p. 95 historical English body for most-holy-name-of-jesus / Collect.",
+        "verified_on": "2026-11-12",
+        "notes": "The 1861 keeps this feast on the Second Sunday after Epiphany, not on the Sunday between 2 and 5 January as the 1962 does. Leaf n104, printed p. 94, heads it `II. SUNDAY after EPIPHANY. The FEAST of the HOLY NAME JESUS.` over the Introit `In nomine Jesu`, and its Kalendar at leaf n774, printed p. 766, prints `Second Sunday after Epiphany- Feast of the most Holy Name of Jesus, d. of II. class 94`. The formulary is the same one, and the Latin cue set before this English is `Deus qui`, which answers the 1962's `Deus, qui Unigenitum`. The day placement is a recension difference and not a difference of text. Alignment status in the normalized evidence artifact: candidate. Locator erratum, independently image-checked 2026-11-12 at actual 200 and 400 dpi: the complete Collect is on artifact PDF p. 106, printed p. 95, Internet Archive leaf n105. The former PDF p. 104 / leaf n103 locator instead reaches printed p. 93 and does not contain this Collect. The source English, source IDs, rights, source appointment, target relation and immutable publication payload are unchanged. The publication TSV row 57 retains its earlier leaf/PDF locator metadata as historical bytes; the corrected locator is owned by this entry and its verification passage."
+      },
+      "after_document": {
+        "schema": 2,
+        "record_type": "passage",
+        "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-most-holy-name-of-jesus--main--collect--all--1",
+        "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+        "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+        "artifact_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+        "locus": "most-holy-name-of-jesus/collect",
+        "artifact_page_ranges": [
+          [
+            106,
+            106
+          ]
+        ],
+        "states": [
+          "cataloged",
+          "acquired",
+          "inspected",
+          "verified"
+        ],
+        "context": "printed p. 95 historical English body for most-holy-name-of-jesus / Collect.",
+        "verified_on": "2026-11-12",
+        "notes": "The 1861 keeps this feast on the Second Sunday after Epiphany, not on the Sunday between 2 and 5 January as the 1962 does. Leaf n104, printed p. 94, heads it `II. SUNDAY after EPIPHANY. The FEAST of the HOLY NAME JESUS.` over the Introit `In nomine Jesu`, and its Kalendar at leaf n774, printed p. 766, prints `Second Sunday after Epiphany- Feast of the most Holy Name of Jesus, d. of II. class 94`. The formulary is the same one, and the Latin cue set before this English is `Deus qui`, which answers the 1962's `Deus, qui Unigenitum`. The day placement is a recension difference and not a difference of text. Alignment status in the normalized evidence artifact: candidate. Locator erratum, independently image-checked 2026-11-12 at actual 200 and 400 dpi: the complete Collect is on artifact PDF p. 106, printed p. 95, Internet Archive leaf n105. The former PDF p. 104 / leaf n103 locator instead reaches printed p. 93 and does not contain this Collect. The source English, source IDs, rights, source appointment, target relation and immutable publication payload are unchanged. The publication TSV row 57 retains its earlier leaf/PDF locator metadata as historical bytes; the corrected locator is owned by this entry and its verification passage."
+      }
+    }
+  ],
+  "preserved": [
+    "All original raw declarations, admission and independent case receipts",
+    "All prayer bytes, owner dictionaries, source IDs, permissions and grades",
+    "Exact CMAA printed-page, PDF-page and unit locators in locus and notes",
+    "Holy Name corrected PDF106 range and explicit IA leaf105 erratum",
+    "The existing controlling CMAA artifact and Cummiskey work manifests"
+  ],
+  "scope": "Exactly three metadata fields across three prepared passage files; no source controller or owner edit."
+}

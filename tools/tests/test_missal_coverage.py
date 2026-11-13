@@ -403,6 +403,8 @@ class GeneratorCoverageTests(unittest.TestCase):
                      mock.patch.object(propers, "load_calendar", return_value=document), \
                      mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
                      mock.patch.object(propers, "publication_records", return_value=({}, [])), \
+                     mock.patch.object(propers._oration_endings, "load_sources", return_value={}), \
+                     mock.patch.object(propers._source_local_actor_sequences, "load_sources", return_value={}), \
                      mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args, **kwargs: value), \
                      mock.patch.object(propers._missal_coverage, "expectations", return_value={"state": "unresolved"}):
                     report = propers.calendar_structure(ROOT / "src/sources/calendars", "postconciliar", {})
@@ -428,6 +430,8 @@ class GeneratorCoverageTests(unittest.TestCase):
         with mock.patch.object(propers, "load_calendar", return_value=document), \
              mock.patch.object(propers, "translation_overlay", return_value=({}, {}, [], {})), \
              mock.patch.object(propers, "publication_records", return_value=({}, [])), \
+             mock.patch.object(propers._oration_endings, "load_sources", return_value={}), \
+             mock.patch.object(propers._source_local_actor_sequences, "load_sources", return_value={}), \
              mock.patch.object(propers, "sanitize_proper", side_effect=lambda value, *args, **kwargs: value), \
              mock.patch.object(propers, "citation_structure", return_value={"ref": "Psalm 1"}), \
              mock.patch.object(propers._missal_coverage, "expectations", return_value={"state": "unresolved"}):

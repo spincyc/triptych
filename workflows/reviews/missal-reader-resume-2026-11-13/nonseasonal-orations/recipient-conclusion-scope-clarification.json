@@ -1,0 +1,179 @@
+{
+  "schema": "triptych-evidence-scope-clarification/v1",
+  "date": "2026-11-13",
+  "purpose": "Correct the scope in which copied multi-recipient review prose is promoted as evidence for the six-recipient installation. Preserve historical receipts byte-exact.",
+  "original_installation_proposal": {
+    "path": ".scratch/modern-nonseasonal-orations/resume-20261113/installation-v1/proposal.json",
+    "sha256": "5f495b1356a0751550d7d87ecfa0dc0a20df68ffbc46c08dc59c23b575b4a02f"
+  },
+  "affected_fields": [
+    {
+      "durable_receipt_path": "workflows/reviews/missal-reader-resume-2026-11-12/nonseasonal-orations/turibius-source-fidelity-review.json",
+      "receipt_sha256": "902be265bd8b516f0a046f530dd5d8c1dea92a8c28803b12322b28039139f225",
+      "json_pointer": "/conclusion_review/selection",
+      "original_text": "All four modern source-local prayers print Per Dominum. None ends with mention of the Son; Hilary mentions the Son earlier, which does not select the final-mention branch. The addressed Lord in Apollinaris is governed by the actual default cue; it is not silently treated as a direct-Son prayer.",
+      "original_receipt_preserved": true
+    },
+    {
+      "durable_receipt_path": "workflows/reviews/missal-reader-resume-2026-11-12/nonseasonal/hilary-apollinaris-independent-review-v1.json",
+      "receipt_sha256": "9eff4479c35a6bf5c9943ac945440d79cfeb37fc21b3c385849cd59410af3aca",
+      "json_pointer": "/conclusion_review/selection",
+      "original_text": "All four modern source-local prayers print Per Dominum. None ends with mention of the Son; Hilary mentions the Son earlier, which does not select the final-mention branch. The addressed Lord in Apollinaris is governed by the actual default cue; it is not silently treated as a direct-Son prayer.",
+      "original_receipt_preserved": true
+    },
+    {
+      "durable_receipt_path": "workflows/reviews/modern-nonseasonal-orations-20261112/paulinus-independent-review-v1.json",
+      "receipt_sha256": "e2ed315493e1b717eec7009fddd5e58ece37bea79075e8e104773c5d749015ee",
+      "json_pointer": "/conclusion_review/selection",
+      "original_text": "All four modern source-local prayers print Per Dominum. None ends with mention of the Son; Hilary mentions the Son earlier, which does not select the final-mention branch. The addressed Lord in Apollinaris is governed by the actual default cue; it is not silently treated as a direct-Son prayer.",
+      "original_receipt_preserved": true
+    }
+  ],
+  "clarification": "The copied /conclusion_review/selection paragraph discusses a four-recipient review group. Its statement that Hilary mentions the Son earlier is a Hilary-only observation. It must never be promoted as a finding that Apollinaris, Turibius, Paulinus or Sixtus mentions the Son earlier, nor as the reason selecting any of their endings. Every recipient’s actual source-local cue and the rule in that same compared witness independently control its own ending. Mary’s Offering uses the separate short-conclusion rule.",
+  "recipient_findings": [
+    {
+      "identity": [
+        "most-holy-name-mary",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "actual_compared_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "actual_compared_edition_scope": "Secondary digital reproduction labelled2002; not authenticated complete2008",
+      "artifact_page": 491,
+      "actual_recipient_cue": "Per Christum.",
+      "same_witness_rule": "IGMR77",
+      "rule_artifact_page": 22,
+      "selected_branch": "Short conclusion addressed to the Father",
+      "recipient_specific_scope": "Full short Latin and human English independently printed Lasance1945 AP217; historical1712 Per Dominum cue is not assigned to the modern recipient.",
+      "independent_merits_review": {
+        "path": ".scratch/modern-nonseasonal-prayer-review/mary-review.json",
+        "sha256": "328c68d0f0f3242551c22201df226daaf6106a7dc7da1ced373ffff7d87e6506"
+      },
+      "response": "Amen belongs separately to the people; excluded from every priest prayer body."
+    },
+    {
+      "identity": [
+        "saints-sixtus-ii-pope-companions-martyrs",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "actual_compared_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "actual_compared_edition_scope": "Secondary digital reproduction labelled2002; not authenticated complete2008",
+      "artifact_page": [
+        475,
+        476
+      ],
+      "actual_recipient_cue": "Per Dominum.",
+      "same_witness_rule": "IGMR54",
+      "rule_artifact_page": 18,
+      "selected_branch": "Long Father-through-Son",
+      "recipient_specific_scope": "Actual recipient cue on continued AP476; no claim that the attributed1738 scholarly transcript prints an old ending.",
+      "independent_merits_review": {
+        "path": ".scratch/modern-nonseasonal-prayer-review/sixtus-review.json",
+        "sha256": "d30ef36263b1b32e5437d68f989a7da1c780c7ed3f91a3637898fd432fa6a81d"
+      },
+      "response": "Amen belongs separately to the people; excluded from every priest prayer body."
+    },
+    {
+      "identity": [
+        "saint-hilary-bishop-doctor-church",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "actual_compared_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "actual_compared_edition_scope": "Secondary digital reproduction labelled2002; not authenticated complete2008",
+      "artifact_page": 417,
+      "actual_recipient_cue": "Per Dominum.",
+      "same_witness_rule": "IGMR54",
+      "rule_artifact_page": 18,
+      "selected_branch": "Long Father-through-Son",
+      "recipient_specific_scope": "The Son is mentioned earlier in this Hilary petition, not at its end. This observation belongs only to Hilary.",
+      "independent_merits_review": {
+        "path": ".scratch/modern-nonseasonal-three-prayer-review/doctors-martyrs-independent-review-v1.json",
+        "sha256": "9eff4479c35a6bf5c9943ac945440d79cfeb37fc21b3c385849cd59410af3aca"
+      },
+      "response": "Amen belongs separately to the people; excluded from every priest prayer body."
+    },
+    {
+      "identity": [
+        "saint-apollinaris-bishop-martyr",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "actual_compared_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "actual_compared_edition_scope": "Secondary digital reproduction labelled2002; not authenticated complete2008",
+      "artifact_page": 467,
+      "actual_recipient_cue": "Per Dominum.",
+      "same_witness_rule": "IGMR54",
+      "rule_artifact_page": 18,
+      "selected_branch": "Long Father-through-Son",
+      "recipient_specific_scope": "Its own actual Per Dominum cue controls the addressed Lord; Hilary’s earlier Son reference is not a finding about this petition.",
+      "independent_merits_review": {
+        "path": ".scratch/modern-nonseasonal-three-prayer-review/doctors-martyrs-independent-review-v1.json",
+        "sha256": "9eff4479c35a6bf5c9943ac945440d79cfeb37fc21b3c385849cd59410af3aca"
+      },
+      "response": "Amen belongs separately to the people; excluded from every priest prayer body."
+    },
+    {
+      "identity": [
+        "saint-turibius-mogrovejo-bishop",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "actual_compared_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "actual_compared_edition_scope": "Secondary digital reproduction labelled2002; not authenticated complete2008",
+      "artifact_page": 434,
+      "actual_recipient_cue": "Per Dominum.",
+      "same_witness_rule": "IGMR54",
+      "rule_artifact_page": 18,
+      "selected_branch": "Long Father-through-Son",
+      "recipient_specific_scope": "Its own actual Per Dominum cue controls. No Son mention is inferred from the shared Hilary observation; official2008 evidence covers only apostolico→apostolicis.",
+      "independent_merits_review": {
+        "path": ".scratch/modern-nonseasonal-three-prayer-review/turibius-independent-review-v1.json",
+        "sha256": "902be265bd8b516f0a046f530dd5d8c1dea92a8c28803b12322b28039139f225"
+      },
+      "response": "Amen belongs separately to the people; excluded from every priest prayer body."
+    },
+    {
+      "identity": [
+        "saint-paulinus-nola-bishop",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "actual_compared_artifact_sha256": "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7",
+      "actual_compared_edition_scope": "Secondary digital reproduction labelled2002; not authenticated complete2008",
+      "artifact_page": 456,
+      "actual_recipient_cue": "Per Dominum.",
+      "same_witness_rule": "IGMR54",
+      "rule_artifact_page": 18,
+      "selected_branch": "Long Father-through-Son",
+      "recipient_specific_scope": "Its own actual Per Dominum cue controls. No Son mention is inferred from the shared Hilary observation; no original1765 cue is invented.",
+      "independent_merits_review": {
+        "path": ".scratch/modern-nonseasonal-three-prayer-review/paulinus-independent-review-v1.json",
+        "sha256": "e2ed315493e1b717eec7009fddd5e58ece37bea79075e8e104773c5d749015ee"
+      },
+      "response": "Amen belongs separately to the people; excluded from every priest prayer body."
+    }
+  ],
+  "inspection_boundary": "This clarification reuses the exact held source inspections and accepted independent merits receipts named per recipient; it adds no fresh modern transcription or claim to have newly inspected source pages.",
+  "unchanged": [
+    "All six English strings including terminal-LF extents",
+    "All six selected reader witness notes",
+    "All historical source records and source/publication grades",
+    "All original review receipt bytes",
+    "All canonical Latin withholding and complete2008 uncertainty"
+  ],
+  "scope": "Evidence interpretation only; no new body merit, target-edition or liturgical approval. Reviewer must bind this addendum separately from original receipts."
+}

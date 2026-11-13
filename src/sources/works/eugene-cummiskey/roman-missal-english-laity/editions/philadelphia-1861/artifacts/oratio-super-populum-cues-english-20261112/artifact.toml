@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.oratio-super-populum-cues-english-20261112"
+edition_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "Only the original words of the 1861 Philadelphia Cummiskey printing are transcribed. That identified historical text is public domain in the United States under the affirmative basis recorded on the parent artifact. The exact Google-digitised PDF remains rights-unresolved because of its added front matter and watermark; none of that added material, any facsimile page, modern translation, or neighboring prayer is included. Faithful transcription adds no exclusive right in the words, which are excluded from Triptych CC BY 4.0."
+rights_jurisdiction = "United States"
+provenance = "The complete already-held Cummiskey 1861 PDF was rehashed to the registered SHA256 before reuse. Read both cue sentences directly on whole original PDF 130/printed 119/IA n129 at 220 and 400 dpi. They stand after the Ash Wednesday Postcommunions and before the prayer over the people; the Thursday heading lower on the page does not own the preceding cue. No P/R letters or response marks are printed with these sentences. OCR was not used as the authority. Compared the two sentences with the separately read Latin cue controlled by 1962 Ritus XI.2-3; the English supplies the complete corresponding invitation and command, with no additional clause."
+retrieved = "2026-11-12"
+sha256 = "beed6200b8e006f724153ddd807c1a157fd37d0cdbdb63a3c3a674f75635c66a"
+byte_size = 534
+path = "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/oratio-super-populum-cues-english-20261112/text.tsv"
+indexable = true
+encoding = "utf-8"
+derived_from = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+transformation = "Transcribe the two complete English sentences at printed 119 exactly, retaining their words, capitals and full stops. Split their printed sentence boundary into two source rows and collapse the separating display space. Do not copy the adjacent prayer heading, prayer body, Google watermark, or invented actor/response markers."
+notes = "Historical lay-missal English, not approved liturgical English. The printed page supplies no P/R actor cue. Any 1962 execution actor is separately attributed to the 1962 Ritus source."

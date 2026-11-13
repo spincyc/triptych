@@ -636,6 +636,42 @@ def check_implied(document: dict, basis_index: dict[str, int], where: str) -> li
     return problems
 
 
+def check_implied_orations(document: dict, propers: dict, assigned: dict, where: str) -> list[str]:
+    """Prayer-only implied appointments require one exact, resolved main-form owner."""
+    problems = []
+    index = _calendars.mass_index(propers)
+    slots = ["Collect", "Secret", "Postcommunion"]
+    for entry in document.get("implied") or []:
+        appointed = entry.get("appointed_mass") or {}
+        if "orations" not in appointed:
+            continue
+        rule = appointed["orations"]
+        prefix = f"{where}: implied rule {entry.get('id')!r} oration appointment"
+        if (not isinstance(rule, dict) or set(rule) != {"source_key", "slots", "locus"} or
+                not isinstance(rule.get("source_key"), str) or not rule["source_key"] or
+                rule.get("slots") != slots or not isinstance(rule.get("locus"), str) or
+                not rule["locus"].strip()):
+            problems.append(f"{prefix} must carry one source key, the three exact slots and its locus")
+            continue
+        owner = index.get(rule["source_key"])
+        if not owner or rule["source_key"] not in assigned or owner.get("forms"):
+            problems.append(f"{prefix} must name a held single-form Mass")
+            continue
+        resolved, errors = _calendars.resolve_propers(propers, owner, appointments=True)
+        if errors:
+            problems.extend(f"{prefix}: {error}" for error in errors)
+            continue
+        for slot in slots:
+            matches = [(form, proper) for form, proper, _ in resolved
+                       if _calendars.proper_family(proper.get("name", "")) == slot]
+            if (len(matches) != 1 or matches[0][0] or matches[0][1].get("name") != slot or
+                    any(matches[0][1].get(field) for field in (
+                        "ordinary_disposition", "appointment_identity", "appointment_applicability",
+                        "source_path_relation", "appointment_replacement"))):
+                problems.append(f"{prefix} needs one unconditional main-form {slot}")
+    return problems
+
+
 def check_weekday_oration_selection(document: dict, masses: dict, assigned: dict,
                                     where: str) -> list[str]:
     """Validate the source-owned, incomplete permission without appointing it."""
@@ -1070,7 +1106,159 @@ def check_oration_execution(document: dict, where: str) -> list[str]:
     execution = (document.get("orations") or {}).get("execution")
     if "execution" not in (document.get("orations") or {}):
         return []
-    expected = {'scope': 'dated-mass-of-office', 'locus': 'RGMR 436-437; 442-443; 480; 505', 'conclusions': {'principal': 1, 'commemorations': 2}, 'multiple_lessons': {'locus': 'RGMR 442-443', 'reading_names': ['Lesson', 'First Lesson', 'Second Lesson', 'Third Lesson', 'Fourth Lesson', 'Fifth Lesson', 'Epistle'], 'prayer_names': ['Collect', 'Oratio'], 'insertion': 'after-last-prayer-before-final-reading', 'commemorated_source': 'first-prayer'}}
+    expected = {'scope': 'dated-mass-of-office',
+     'locus': 'RGMR 436-437; 442-443; 480; 505',
+     'conclusions': {'principal': 1, 'commemorations': 2},
+     'multiple_lessons': {'locus': 'RGMR 442-443',
+                          'reading_names': ['Lesson',
+                                            'First Lesson',
+                                            'Second Lesson',
+                                            'Third Lesson',
+                                            'Fourth Lesson',
+                                            'Fifth Lesson',
+                                            'Epistle'],
+                          'prayer_names': ['Collect', 'Oratio'],
+                          'insertion': 'after-last-prayer-before-final-reading',
+                          'commemorated_source': 'first-prayer',
+                          'commemorated_representatives': [{'mass': 'advent-ember-saturday',
+                                                            'role': 'editorial-source-coordinate',
+                                                            'locus': 'RGMR 443; 468; 480; 505; RG 115-116',
+                                                            'slots': [{'slot': 'Collect',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 1,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-longer-collect'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 25,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-shorter-collect'},
+                                                                       'locus': 'advent-ember-saturday '
+                                                                                'longer, '
+                                                                                'printed8/PDF89,unit53; '
+                                                                                'literal Oratio head.; '
+                                                                                'advent-ember-saturday '
+                                                                                'shorter, '
+                                                                                'printed12/PDF93,unit77; '
+                                                                                'literal Oratio head.'},
+                                                                      {'slot': 'Secret',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 21,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-longer-secret'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 33,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-shorter-secret'},
+                                                                       'locus': 'advent-ember-saturday '
+                                                                                'longer, '
+                                                                                'printed12/PDF93,unit73; '
+                                                                                'literal Secreta head.; '
+                                                                                'advent-ember-saturday '
+                                                                                'shorter, '
+                                                                                'printed13/PDF94,unit85; '
+                                                                                'literal Secreta head.'},
+                                                                      {'slot': 'Postcommunion',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 23,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-longer-postcommunion'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 35,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-shorter-postcommunion'},
+                                                                       'locus': 'advent-ember-saturday '
+                                                                                'longer, '
+                                                                                'printed12/PDF93,unit75; '
+                                                                                'literal Postcommunio '
+                                                                                'head.; '
+                                                                                'advent-ember-saturday '
+                                                                                'shorter, '
+                                                                                'printed13/PDF94,unit87; '
+                                                                                'literal Postcommunio '
+                                                                                'head.'}]},
+                                                           {'mass': 'lent-1-ember-saturday',
+                                                            'role': 'editorial-source-coordinate',
+                                                            'locus': 'RGMR 443; 468; 480; 505; RG 115-116',
+                                                            'slots': [{'slot': 'Collect',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 1,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-longer-collect'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 26,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-shorter-collect'},
+                                                                       'locus': 'lent-1-ember-saturday '
+                                                                                'longer, '
+                                                                                'printed73/PDF154,unit494; '
+                                                                                'literal Oratio head.; '
+                                                                                'lent-1-ember-saturday '
+                                                                                'shorter, '
+                                                                                'printed77/PDF158,unit519; '
+                                                                                'literal Oratio head.'},
+                                                                      {'slot': 'Secret',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 21,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-longer-secret'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 34,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-shorter-secret'},
+                                                                       'locus': 'lent-1-ember-saturday '
+                                                                                'longer, '
+                                                                                'printed77/PDF158,unit514; '
+                                                                                'literal Secreta head.; '
+                                                                                'lent-1-ember-saturday '
+                                                                                'shorter, '
+                                                                                'printed78/PDF159,unit527; '
+                                                                                'literal Secreta head.'},
+                                                                      {'slot': 'Postcommunion',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 23,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-longer-postcommunion'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 36,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-shorter-postcommunion'},
+                                                                       'locus': 'lent-1-ember-saturday '
+                                                                                'longer, '
+                                                                                'printed77/PDF158,unit516; '
+                                                                                'literal Postcommunio '
+                                                                                'head.; '
+                                                                                'lent-1-ember-saturday '
+                                                                                'shorter, '
+                                                                                'printed79/PDF160,unit529; '
+                                                                                'literal Postcommunio '
+                                                                                'head.'}]},
+                                                           {'mass': 'september-ember-saturday',
+                                                            'role': 'editorial-source-coordinate',
+                                                            'locus': 'RGMR 443; 468; 480; 505; RG 115-116',
+                                                            'slots': [{'slot': 'Collect',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 1,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-longer-collect'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 25,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-shorter-collect'},
+                                                                       'locus': '1962 control printed '
+                                                                                'p.404, no.1634; artifact '
+                                                                                'PDF p.485.; 1962 control '
+                                                                                'printed p.408, no.1658; '
+                                                                                'artifact PDF p.489.'},
+                                                                      {'slot': 'Secret',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 21,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-longer-secret'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 33,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-shorter-secret'},
+                                                                       'locus': '1962 control printed '
+                                                                                'p.407, no.1654; artifact '
+                                                                                'PDF p.488.; 1962 control '
+                                                                                'printed p.410, no.1666; '
+                                                                                'artifact PDF p.491.'},
+                                                                      {'slot': 'Postcommunion',
+                                                                       'representative': {'form_id': 'longer',
+                                                                                          'source_index': 23,
+                                                                                          'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-longer-postcommunion'},
+                                                                       'equivalent': {'form_id': 'shorter',
+                                                                                      'source_index': 35,
+                                                                                      'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-shorter-postcommunion'},
+                                                                       'locus': '1962 control printed '
+                                                                                'p.408, no.1656; artifact '
+                                                                                'PDF p.489.; 1962 control '
+                                                                                'printed p.410, no.1668; '
+                                                                                'artifact PDF p.491.'}]}]}}
     # JSON preserves boolean/int distinction; Python equality alone does not.
     if document.get("calendar") != "roman-1962" or json.dumps(execution, sort_keys=True) != json.dumps(expected, sort_keys=True):
         return [f"{where}: unsupported source oration execution contract"]
@@ -1551,6 +1739,10 @@ def build(root: Path, only: str | None) -> tuple[list[dict], list[str], dict[str
         problems.extend(found)
         problems.extend(check_date_observances(document, assigned, where))
         problems.extend(check_implied(document, basis_index, where))
+        if any("orations" in (entry.get("appointed_mass") or {})
+               for entry in document.get("implied") or []):
+            problems.extend(check_implied_orations(
+                document, _calendars.load_document(root, name, effective=True), assigned, where))
         problems.extend(check_weekday_oration_selection(document, masses, assigned, where))
         if "dedication_anniversary_context" in document:
             problems.extend(check_dedication_anniversary_context(

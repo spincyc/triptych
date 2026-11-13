@@ -1,0 +1,235 @@
+{
+  "schema": "triptych-lent-two-source-execution-input/v1",
+  "status": "source-input-addendum-awaiting-independent-actor-span-review-and-root-adapter-adoption",
+  "scope": "Two exact full prayer units only; source bodies and prior source packets remain immutable",
+  "source_local_2008_limit": "1970 source-local execution facts do not authenticate current2008 roles, target wording, or universal availability.",
+  "new_source_files": [
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/good-friday-intercession-actors-20261112.toml",
+      "path": ".scratch/modern-lent-orations/execution-addendum/files/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/good-friday-intercession-actors-20261112.toml",
+      "sha256": "e8900d19eedc762bd95a25e798fb8a38ff740ddbe44237136364271b07564fc1"
+    }
+  ],
+  "new_evidence": [
+    {
+      "path": ".scratch/modern-lent-orations/coordinator/1970-ap244.png",
+      "sha256": "3b31c9825e29125d419c879412d79f3a9a620d0bafc979f098b7adfc6c8a8f54"
+    }
+  ],
+  "records": [
+    {
+      "calendar": "postconciliar",
+      "target": [
+        "good-friday",
+        "main",
+        "Solemn Intercession IV: For catechumens",
+        "all",
+        1
+      ],
+      "source_local_execution_edition": "edition.catholic-church.missale-romanum.vatican-typica-1970",
+      "candidate_installation": {
+        "path": ".scratch/modern-lent-orations/good-friday/successor-v2/installation-proposal.json",
+        "sha256": "b51f2b945a687315f911d5328381fb6b70305de8a10b292c1f8107407117469b"
+      },
+      "proper_sha256": "2f9921198851856bea23d6c02899079715529ea7ba1f517fcf4b50843bc38ba3",
+      "translation_binding_sha256": "3b261909c92f1d036835d9214fb10e28ed63e8a42442a655689bbb526847c941",
+      "latin_provenance_sha256": "8601ea4dc3f5a51c1053eb89a8a246b0b48d96a4dfc94830f027b0eb51ae69a1",
+      "target_2008_authenticated": false,
+      "source_body_mutation": false,
+      "languages": {
+        "en": {
+          "source_body": "Let us pray also for (our) catechumens, that our God and Lord may open the ears of their hearts and the gate of mercy, so that, having received forgiveness of all sins through the washing of rebirth, they too may be found in Christ Jesus our Lord.\n\nAlmighty everlasting God, who always make your Church fruitful with new offspring, increase the faith and understanding of (our) catechumens, so that, reborn in the baptismal font, they may be gathered among your adopted children. Through Christ our Lord. R. Amen.",
+          "body_sha256": "ab097101e6cf19bcd78e15fe8159ba3dfb20db2acbd20c90e6283210abdc0ed5",
+          "offset_units": "utf16",
+          "source_publication_passage_id": "passage.triptych.good-friday-catechumens-study.2026-11-12-english.complete-unit",
+          "priest_units": [
+            {
+              "role": "invitation",
+              "speaker": "priest",
+              "start": 0,
+              "end": 247,
+              "text": "Let us pray also for (our) catechumens, that our God and Lord may open the ears of their hearts and the gate of mercy, so that, having received forgiveness of all sins through the washing of rebirth, they too may be found in Christ Jesus our Lord."
+            },
+            {
+              "role": "collect-and-complete-conclusion",
+              "speaker": "priest",
+              "start": 249,
+              "end": 504,
+              "text": "Almighty everlasting God, who always make your Church fruitful with new offspring, increase the faith and understanding of (our) catechumens, so that, reborn in the baptismal font, they may be gathered among your adopted children. Through Christ our Lord."
+            }
+          ],
+          "between_unit_action": {
+            "between_units": "silent-prayer",
+            "spoken_text": null,
+            "condition": "Source-local1970 rubric10 only. Conference-added acclamation or kneeling invitations are conditional under rubric11 and are not supplied by this packet."
+          },
+          "response": {
+            "speaker": "response",
+            "text": "Amen.",
+            "source": "exact-selected-source-body-span",
+            "start": 508,
+            "end": 513,
+            "already_in_source_body": true,
+            "append_to_source_body": false,
+            "actor_limit": "Local IV prints R.Amen; rubric10 assigns priest invitation/collect but does not itself name the final respondent. Preserve the explicit response role without upgrading it to a named people actor.",
+            "nonspoken_role_marker": {
+              "start": 505,
+              "end": 507,
+              "text": "R."
+            }
+          },
+          "response_projection_policy": "Render exactly one separately attributed response from the reviewed span; preserve source quotation unchanged."
+        },
+        "la": {
+          "source_body": "Oremus et pro catechumenis (nostris), ut Deus et Dominus noster adaperiat aures praecordiorum ipsorum ianuamque misericordiae, ut, per lavacrum regenerationis accepta remissione omnium peccatorum, et ipsi inveniantur in Christo Iesu Domino nostro.\n\nOmnipotens sempiterne Deus, qui Ecclesiam tuam nova semper prole fecundas, auge fidem et intellectum catechumenis (nostris), ut, renati fonte baptismatis, adoptionis tuae filiis aggregentur. Per Christum Dominum nostrum. R. Amen.",
+          "body_sha256": "933157bf9ec7df33c41603a8990ee4f0e5fa28b8f278182d62fabcd95efadac5",
+          "offset_units": "utf16",
+          "source_publication_passage_id": "passage.triptych.good-friday-catechumens-study.2026-11-12-latin.complete-unit",
+          "priest_units": [
+            {
+              "role": "invitation",
+              "speaker": "priest",
+              "start": 0,
+              "end": 247,
+              "text": "Oremus et pro catechumenis (nostris), ut Deus et Dominus noster adaperiat aures praecordiorum ipsorum ianuamque misericordiae, ut, per lavacrum regenerationis accepta remissione omnium peccatorum, et ipsi inveniantur in Christo Iesu Domino nostro."
+            },
+            {
+              "role": "collect-and-complete-conclusion",
+              "speaker": "priest",
+              "start": 249,
+              "end": 469,
+              "text": "Omnipotens sempiterne Deus, qui Ecclesiam tuam nova semper prole fecundas, auge fidem et intellectum catechumenis (nostris), ut, renati fonte baptismatis, adoptionis tuae filiis aggregentur. Per Christum Dominum nostrum."
+            }
+          ],
+          "between_unit_action": {
+            "between_units": "silent-prayer",
+            "spoken_text": null,
+            "condition": "Source-local1970 rubric10 only. Conference-added acclamation or kneeling invitations are conditional under rubric11 and are not supplied by this packet."
+          },
+          "response": {
+            "speaker": "response",
+            "text": "Amen.",
+            "source": "exact-selected-source-body-span",
+            "start": 473,
+            "end": 478,
+            "already_in_source_body": true,
+            "append_to_source_body": false,
+            "actor_limit": "Local IV prints R.Amen; rubric10 assigns priest invitation/collect but does not itself name the final respondent. Preserve the explicit response role without upgrading it to a named people actor.",
+            "nonspoken_role_marker": {
+              "start": 470,
+              "end": 472,
+              "text": "R."
+            }
+          },
+          "response_projection_policy": "Render exactly one separately attributed response from the reviewed span; preserve source quotation unchanged."
+        }
+      },
+      "source_local_rule_passage_ids": [
+        "passage.catholic-church.missale-romanum.vatican-typica-1970.good-friday-intercession-actors-20261112",
+        "passage.catholic-church.missale-romanum.vatican-typica-1970.good-friday-catechumens-full-execution-20261112"
+      ],
+      "source_span_method": "Exact source-controlled UTF16 spans proposed for this finite row. All source-body and binding hashes must match; no pattern-based or incipit-based truncation."
+    },
+    {
+      "calendar": "postconciliar",
+      "target": [
+        "lent-4",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "source_local_execution_edition": "edition.catholic-church.missale-romanum.vatican-typica-1970",
+      "candidate_installation": {
+        "path": ".scratch/modern-lent-orations/offerings-communions/successor-v2/installation-proposal.json",
+        "sha256": "e3eab5784fcfaaefb7ab98332169c232602087cc1364a7051e95191b9792dab3"
+      },
+      "proper_sha256": "5f62cc9e8413dabdb8d0a98892b3e558bb6a8f6731bb4ca00d6c9f8af81162ce",
+      "translation_binding_sha256": "068bd8260acfbd29615eb172df8aa4e4ad38d337c80916bcbe33bf2efed2e15c",
+      "latin_provenance_sha256": "52d24098ae59f739a485ae8513b11a07150aa91473ae244ee237ecd17e6a038d",
+      "target_2008_authenticated": false,
+      "source_body_mutation": false,
+      "languages": {
+        "en": {
+          "source_body": "O God, who enlighten everyone coming into this world, illuminate our hearts, we pray, with the splendor of your grace, so that we may always think what is worthy and pleasing to your majesty, and love you sincerely. Through Christ our Lord.",
+          "body_sha256": "4c3552e40c862d669ba70cc8cd1a7d9ed1a2bcce26e44f5f034ec6ff5de6bf2b",
+          "offset_units": "utf16",
+          "source_publication_passage_id": "passage.triptych.lent4-postcommunion-source-local-study.2026-11-12-english-study.publish-lent4-postcommunion-20261112",
+          "priest_units": [
+            {
+              "role": "postcommunion-and-complete-conclusion",
+              "speaker": "priest",
+              "start": 0,
+              "end": 240,
+              "text": "O God, who enlighten everyone coming into this world, illuminate our hearts, we pray, with the splendor of your grace, so that we may always think what is worthy and pleasing to your majesty, and love you sincerely. Through Christ our Lord."
+            }
+          ],
+          "between_unit_action": null,
+          "response": {
+            "speaker": "people",
+            "text": "Amen.",
+            "source": "separately-sourced-response",
+            "already_in_source_body": false,
+            "append_to_source_body": false,
+            "formula_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112",
+            "execution_rule_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1970.lent4-postcommunion-execution-rule-20261112"
+          },
+          "response_projection_policy": "Emit one separately attributed response only after finite source/actor admission; the present scalar alone has no response."
+        },
+        "la": {
+          "source_body": "Deus, qui illuminas omnem hominem venientem in hunc mundum, illumina, quaesumus, corda nostra gratiae tuae splendore, ut digna ac placita maiestati tuae cogitare semper, et te sincere diligere valeamus. Per Christum Dominum nostrum.",
+          "body_sha256": "4e1117ba2b67c248ce8781d7b6a60482aad44f9804477187f12110c1dfb24902",
+          "offset_units": "utf16",
+          "source_publication_passage_id": "passage.triptych.lent4-postcommunion-source-local-study.2026-11-12-latin-projection.publish-lent4-postcommunion-20261112",
+          "priest_units": [
+            {
+              "role": "postcommunion-and-complete-conclusion",
+              "speaker": "priest",
+              "start": 0,
+              "end": 232,
+              "text": "Deus, qui illuminas omnem hominem venientem in hunc mundum, illumina, quaesumus, corda nostra gratiae tuae splendore, ut digna ac placita maiestati tuae cogitare semper, et te sincere diligere valeamus. Per Christum Dominum nostrum."
+            }
+          ],
+          "between_unit_action": null,
+          "response": {
+            "speaker": "people",
+            "text": "Amen.",
+            "source": "separately-sourced-response",
+            "already_in_source_body": false,
+            "append_to_source_body": false,
+            "formula_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.lent4-short-conclusion-20261112",
+            "execution_rule_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1970.lent4-postcommunion-execution-rule-20261112"
+          },
+          "response_projection_policy": "Emit one separately attributed response only after finite source/actor admission; the present scalar alone has no response."
+        }
+      },
+      "source_local_rule_passage_ids": [
+        "passage.catholic-church.missale-romanum.vatican-typica-1970.lent4-postcommunion-context-20261112",
+        "passage.catholic-church.missale-romanum.vatican-typica-1970.lent4-postcommunion-execution-rule-20261112"
+      ],
+      "source_span_method": "Exact source-controlled UTF16 spans proposed for this finite row. All source-body and binding hashes must match; no pattern-based or incipit-based truncation."
+    }
+  ],
+  "required_consumer_contract": [
+    "Bind exact calendar, five-part recipient, installation proposal and complete Latin/English dictionaries, not incipit alone.",
+    "Preserve the original source scalar and its hash; expose separately derived priest units and response.",
+    "For Good Friday use exact reviewed response span and suppress any second generated Amen. Literal R. is a nonspoken role mark.",
+    "For Lent4 publish the separately sourced Amen once, with speaker people, after the complete short priest conclusion. Do not claim the existing scalar or external unconsumed descriptor already does this.",
+    "Do not apply Roman1962 conclusion-group logic or the separate26legacyCollect authority to these new recipients.",
+    "Refuse execution after any body/binding/provenance/source-control/owner change until a reviewed successor is bound.",
+    "Actual renderer/CLI/Python adapter adoption and source-epoch changes remain Root/oration_endings-owned. This input addendum itself is not adapter activation."
+  ],
+  "not_supplied": [
+    "Whole current2008 rite",
+    "Conference-specific optional GoodFriday acclamations or kneeling invitations",
+    "Any changes to the34 held prayer bodies",
+    "Approved2011 English"
+  ],
+  "supersedes": {
+    "prior": {
+      "path": ".scratch/modern-lent-orations/execution-addendum/execution-input.json",
+      "sha256": "b1475b5d6412dcd0060500b6cd4c2a6044926290953ba3b769d4f1c5dd0398a4"
+    },
+    "reason": "Independent fresh actor review confirms GoodFriday final source mark as response, not an expressly named people actor. Lent4 retains people under explicitIGMR122. Source bodies and all offsets are unchanged."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema": "triptych-root-display-authority-successor-adoption/v1",
+  "decision": "Adopt exact display authority231c and activate only its empty candidate pin; retain all three previously adopted corrections",
+  "handoff": {
+    "path": ".scratch/reader-audit/display-corrections/pius-rebind/handoff.json",
+    "sha256": "5db086d90ce7edf7c835186a09c75384bd4d14f9d2c2e05ab114b1b25261d0b6"
+  },
+  "independent_review": {
+    "path": ".scratch/coverage-audit/pius-display-rebind-review/review-receipt.json",
+    "sha256": "fd151dbb35fc9ec51efb7658037c668c3d5dbff9770bbac17d43497dfb3511e4"
+  },
+  "actual_ending_adoption": {
+    "path": ".scratch/root/pius-ending-runtime-successor-adoption.json",
+    "sha256": "785abf7a18f23935f91f1b11bcddad8039d72cd2b12b788558f8a7e6889f0bd4"
+  },
+  "candidate_files": [
+    {
+      "path": "src/web/browser/liturgy/oration-conclusions.js",
+      "before_sha256": "ff572ab7a9b71e744ba22c750980f14427cf3ae5a56ff20394cb0f41fe85256d",
+      "after_sha256": "c0979a61b47226782ef2b88820e38bb3e0eba025fe6ff869d5f49d0531140650",
+      "mode": "0644",
+      "source": ".scratch/reader-audit/display-corrections/pius-rebind/postimages/src/web/browser/liturgy/oration-conclusions.js"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/authority-v2.json",
+      "before_sha256": null,
+      "after_sha256": "231c2cfa81cc193060d5d00ab85882b0b1ae2c4b3b22a9380df524931c1de1d3",
+      "mode": "0644",
+      "source": ".scratch/reader-audit/display-corrections/pius-rebind/postimages/workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/authority-v2.json"
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/pius-ending-successor-review.json",
+      "before_sha256": null,
+      "after_sha256": "2d652e68da0d5098055e77903072fcae1592a1a170cc2c82b022b2855f88c6b3",
+      "mode": "0644",
+      "source": ".scratch/reader-audit/display-corrections/pius-rebind/postimages/workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/pius-ending-successor-review.json"
+    }
+  ],
+  "active_helper": {
+    "path": "src/web/browser/liturgy/oration-conclusions.js",
+    "postimage": ".scratch/root/pius-display-active-orations.js",
+    "sha256": "ee89a328ed2e801c0bc96eb31528a8c8e794aa7788679c28e0a6e0c0130e9098"
+  },
+  "root_review": "Read complete independent receipt and all changed JavaScript hunks. Verified exact candidate/evidence/current preimage pins. Independently proved only ending_authority_sha256 and ending_authority_successor_review differ in the complete authority. Contrary to the review wording added, the latter field already exists and is updated; no other value changes. Exact active helper is the reviewed inactive candidate with only its empty ACTIVE_DISPLAY_AUTHORITY_SHA256 assigned231c.",
+  "limits": [
+    "Bare887 must not replace the wrapper.",
+    "No fourth display correction, new source body, Secret actor appointment or global authority.",
+    "Final composed native and sealed-product gates remain required."
+  ],
+  "canonical_writes": false
+}

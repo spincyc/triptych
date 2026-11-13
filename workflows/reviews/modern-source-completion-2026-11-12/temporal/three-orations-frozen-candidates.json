@@ -1,0 +1,525 @@
+{
+  "schema": "triptych-temporal-four-sanitized-source-history/v1",
+  "record_role": "public-safe derivative history, not the original private candidate dossier",
+  "prepared_on": "2026-11-13",
+  "source_registration_admission": {
+    "schema": "triptych-root-temporal-four-source-registration-admission/v1",
+    "sha256": "4b630ef807ada8c3dd26ec092c4948ad303a9f1867faf92797376187980aaa48",
+    "decision": "accept exact four study-English registrations and declared finite metadata successors"
+  },
+  "body_merits_sha256": "fa61352e6b766cf6c3087e2a91eed30573b0dd1741029a716abfe648505ffc90",
+  "independent_registration_review_sha256": "7ff9b8aade2142d0be6bf4ad66d7da1cd400809c28c73e3d5efd5a027bad8091",
+  "original_private_dossier_sha256": "a6fc4a0c16a94ea2aaaf6144c0b1abc5fc55dfb96ba81b65a7e64b78f279bbc1",
+  "original_accepted_file_map_sha256": "59961ab7a83469291fbff95cfe2dee65b534ca7f1ad9f60f69d93b8769225603",
+  "scope": "Exactly four accepted qualified project study English bodies and48 unchanged source records/payloads. This replaces only one proposed public history destination with a sanitized derivative; the original dossier remains private and immutable.",
+  "updates": [
+    {
+      "identity": [
+        "christ-the-king",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "before": {
+        "mass": "christ-the-king",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "b0a6cdeabc32ff6db1b05a0d8eef1fd00d2a8f2279769ee38cf79fa752c53bf6"
+        ],
+        "note": "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "after": {
+        "mass": "christ-the-king",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "incipit": "Hostiam tibi, Domine, humanae reconciliationis",
+        "ancient_witness": "Complete historical schott prayer, printed 1107; source-local secondary2002 comparison only",
+        "witness_edition_id": "edition.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929",
+        "witness_artifact_id": "artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.facsimile-4511fa92",
+        "ancient_passage_id": "passage.anselm-schott.das-vollstandige-romische-messbuch.herder-second-revised-1929.temporal-orations-20261112-christ-king-offerings",
+        "ancient_reading": "Hostiam tibi, Domine, humanae reconciliationis offerimus: praesta, quaesumus: ut Quem sacrificiis praesentibus immolamus, Ipse cunctis Gentibus unitatis et pacis dona concedat, Jesus Christus Filius tuus Dominus noster: Qui tecum vivit.",
+        "divergence": "The complete1929 Secret is independently old and is held as a previously checked Latin body; it is freshly rechecked against AP1177 here. offerimus becomes offerentes; the first-person offering statement becomes a participial clause. praesta, quaesumus becomes suppliciter deprecamur, a conventional petition frame. The three-word phrase suppliciter deprecamur is the modern replacement requiring explicit whole-expression assessment, not an unchanged reading. The relative clause quem sacrificiis praesentibus immolamus is omitted; Jesus Christus and Dominus noster are omitted from the identifying apposition. Filius tuus is retained and moved after ipse. No reconciliation, unity, peace, or all-nations petition is added. Source Qui tecum vivit is only its literal old cue. The receiving secondary page prints the complete short Qui vivit et regnat in saecula saeculorum. This exact complete formula is independently old in Wilson1894 AP145/printed52; its new English is separately offered for review. No old long ending is transplanted.",
+        "witness_note": "Complete older schott prayer, printed 1107, freshly image-collated2026-11-12. The complete1929 Secret is independently old and is held as a previously checked Latin body; it is freshly rechecked against AP1177 here. offerimus becomes offerentes; the first-person offering statement becomes a participial clause. praesta, quaesumus becomes suppliciter deprecamur, a conventional petition frame. The three-word phrase suppliciter deprecamur is the modern replacement requiring explicit whole-expression assessment, not an unchanged reading. The relative clause quem sacrificiis praesentibus immolamus is omitted; Jesus Christus and Dominus noster are omitted from the identifying apposition. Filius tuus is retained and moved after ipse. No reconciliation, unity, peace, or all-nations petition is added. Source Qui tecum vivit is only its literal old cue. The receiving secondary page prints the complete short Qui vivit et regnat in saecula saeculorum. This exact complete formula is independently old in Wilson1894 AP145/printed52; its new English is separately offered for review. No old long ending is transplanted. The receiving comparison is the inspected secondary digitally typeset reproduction labelled2002, SHA0b458944. Its fidelity to a printed2002 original and its agreement with authenticated2008 remain unresolved. This is fresh Triptych study English, not unchanged historical English, approved liturgical English, or permission for celebration. No approved modern English was consulted to draft it. The full old Latin and its literal printed cue remain separately preserved; the original unavailable record and any quarantine fingerprints remain in this dated packet. No Amen is appended. A finite whole-expression and independent fidelity review must accept this specific variant before activation; this proposal supplies no general permission to translate modern compositions.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "As we offer you, O Lord, the sacrificial victim of humanity’s reconciliation, we humbly beseech you that your Son himself may bestow the gifts of unity and peace upon all nations. Who lives and reigns for ages of ages."
+          }
+        ]
+      },
+      "english_scalar_sha256": "168f1ecc193618b5e17111f3b29ddb6f892d0492f1096127a0aac95f89fbbcee",
+      "metadata_successor_fields": [
+        "witness_note"
+      ]
+    },
+    {
+      "identity": [
+        "most-holy-trinity",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "before": {
+        "mass": "most-holy-trinity",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "rejected_detectors": [
+          "liturgies-net-2026-08-22"
+        ],
+        "quarantined_text_sha256": [
+          "1a8f82a5ada97089412921e4e2e97be59914a06f2ab04924355691529521e7fa"
+        ],
+        "note": "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+      },
+      "after": {
+        "mass": "most-holy-trinity",
+        "form_id": "main",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "incipit": "Sanctifica, quaesumus, Domine Deus noster",
+        "ancient_witness": "Complete historical pustet prayer, printed 314; source-local secondary2002 comparison only",
+        "witness_edition_id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+        "witness_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "ancient_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.temporal-orations-20261112-trinity-offerings",
+        "ancient_reading": "Sanctifica, quaesumus Domine Deus noster, per tui sancti nominis invocationem, hujus oblationis hostiam: et per eam nosmetipsos tibi perfice munus aeternum. Per Dominum.",
+        "divergence": "The complete old Trinity Secret is freshly image-read in Pustet1862 AP400/printed314. The earlier no-ancestor statement is disproved for the prayer family; it never proved that no older source existed. The receiving body omits sancti before nominis. It replaces hujus oblationis hostiam with haec munera nostrae servitutis, and consequently changes per eam to per ea. This is a substantive nominal-object change and associated grammatical agreement, not spelling normalization. The old collocation munera nostrae servitutis is independently printed within a complete older offering prayer in Veronense1896 AP90/printed66; that whole supporting prayer is retained separately. This establishes the collocation’s age but does not independently establish the modern composite as a whole. The source prints only Per Dominum.; the secondary receiving body prints Per Christum. The complete independent old short Per Christum Dominum nostrum. and source-local IGMR77 are separate ending evidence; no source cue is silently expanded.",
+        "witness_note": "Complete older pustet prayer, printed 314, freshly image-collated2026-11-12. The complete old Trinity Secret is freshly image-read in Pustet1862 AP400/printed314. The earlier no-ancestor statement is disproved for the prayer family; it never proved that no older source existed. The receiving body omits sancti before nominis. It replaces hujus oblationis hostiam with haec munera nostrae servitutis, and consequently changes per eam to per ea. This is a substantive nominal-object change and associated grammatical agreement, not spelling normalization. The old collocation munera nostrae servitutis is independently printed within a complete older offering prayer in Veronense1896 AP90/printed66; that whole supporting prayer is retained separately. This establishes the collocation’s age but does not independently establish the modern composite as a whole. The source prints only Per Dominum.; the secondary receiving body prints Per Christum. The complete independent old short Per Christum Dominum nostrum. and source-local IGMR77 are separate ending evidence; no source cue is silently expanded. The receiving comparison is the inspected secondary digitally typeset reproduction labelled2002, SHA0b458944. Its fidelity to a printed2002 original and its agreement with authenticated2008 remain unresolved. This is fresh Triptych study English, not unchanged historical English, approved liturgical English, or permission for celebration. No approved modern English was consulted to draft it. The full old Latin and its literal printed cue remain separately preserved; the original unavailable record and any quarantine fingerprints remain in this dated packet. No Amen is appended. A finite whole-expression and independent fidelity review must accept this specific variant before activation; this proposal supplies no general permission to translate modern compositions.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Sanctify, we ask, O Lord our God, through the invocation of your name, these gifts of our service; and through them make us ourselves an everlasting gift to you. Through Christ our Lord."
+          }
+        ]
+      },
+      "english_scalar_sha256": "05efe217bf3d98ec097ef6fda5b66b8bb845163adc546d7d0ef3560b94f0b829",
+      "metadata_successor_fields": [
+        "witness_note"
+      ]
+    },
+    {
+      "identity": [
+        "ascension",
+        "vigil",
+        "Collect",
+        "all",
+        1
+      ],
+      "before": {
+        "mass": "ascension",
+        "form_id": "vigil",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No authoritative exemplar establishing the exact approved English for this source-owned slot is held. No English wording is retained."
+      },
+      "after": {
+        "mass": "ascension",
+        "form_id": "vigil",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "incipit": "Deus, cuius Filius hodie",
+        "ancient_witness": "Complete historical gelasian prayer, printed 107; source-local secondary2002 comparison only",
+        "witness_edition_id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+        "witness_artifact_id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+        "ancient_passage_id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.temporal-orations-20261112-ascension-vigil-collect",
+        "ancient_reading": "Deus, qui ad declaranda tua miracula maiestatis post resurrectionem a mortuis hodie in caelos, apostolis adstantibus, ascendisti, concede nobis tuae pietatis auxilium, ut secundum tuam promissionem et tu nobiscum semper in terris, et nos tecum in caelo vivere mereamur. Per.",
+        "divergence": "Complete old prayer freshly image-read Wilson1894 AP200/printed107, Orationes et preces in Ascensa Domini; number572 is the later Mohlberg numbering, not Wilson’s printed number. Modern text changes direct address to Christ into address to the Father: Deus, qui…ascendisti becomes Deus, cuius Filius…ascendit. tua/tu/tecum becomes eius/ille/cum eo. This is explicit semantic recipient change requiring whole-expression review, never an orthographic variant. The old clauses ad declaranda tua miracula maiestatis and post resurrectionem a mortuis are omitted; tuae pietatis auxilium is replaced by quaesumus. adstantibus becomes astantibus. The ascent, Apostles present, promise, life with us on earth, and our life with him in heaven all preexist in this one complete old prayer. Old literal Per. is retained in source apparatus and is not expanded. Secondary AP255 expressly prints Qui tecum.; secondary IGMR54 AP18 supplies its modern source-local long conclusion role. Independent Pustet1862 AP88 long formula supplies the complete contiguous Qui suffix, with initial capital only. The existing independently reviewed Triptych Who-formula English is reused unchanged; this new recipient still requires separate mapping review.",
+        "witness_note": "Complete older gelasian prayer, printed 107, freshly image-collated2026-11-12. Complete old prayer freshly image-read Wilson1894 AP200/printed107, Orationes et preces in Ascensa Domini; number572 is the later Mohlberg numbering, not Wilson’s printed number. Modern text changes direct address to Christ into address to the Father: Deus, qui…ascendisti becomes Deus, cuius Filius…ascendit. tua/tu/tecum becomes eius/ille/cum eo. This is explicit semantic recipient change requiring whole-expression review, never an orthographic variant. The old clauses ad declaranda tua miracula maiestatis and post resurrectionem a mortuis are omitted; tuae pietatis auxilium is replaced by quaesumus. adstantibus becomes astantibus. The ascent, Apostles present, promise, life with us on earth, and our life with him in heaven all preexist in this one complete old prayer. Old literal Per. is retained in source apparatus and is not expanded. Secondary AP255 expressly prints Qui tecum.; secondary IGMR54 AP18 supplies its modern source-local long conclusion role. Independent Pustet1862 AP88 long formula supplies the complete contiguous Qui suffix, with initial capital only. The existing independently reviewed Triptych Who-formula English is reused unchanged; this new recipient still requires separate mapping review. The receiving comparison is the inspected secondary digitally typeset reproduction labelled2002, SHA0b458944. Its fidelity to a printed2002 original and its agreement with authenticated2008 remain unresolved. This is fresh Triptych study English, not unchanged historical English, approved liturgical English, or permission for celebration. No approved modern English was consulted to draft it. The full old Latin and its literal printed cue remain separately preserved; the original unavailable record and any quarantine fingerprints remain in this dated packet. No Amen is appended. A finite whole-expression and independent fidelity review must accept this specific variant before activation; this proposal supplies no general permission to translate modern compositions.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "O God, whose Son today ascended into heaven while the Apostles stood by, grant us, we ask, that in accordance with his promise he may live with us always on earth and we may be worthy to live with him in heaven. Who lives and reigns with you in the unity of the Holy Spirit, God, for all ages of ages."
+          }
+        ]
+      },
+      "english_scalar_sha256": "d1da842adedb0d2c206472fb590bdf7b7d3cfe441040a1f25587ff79e0c80350",
+      "metadata_successor_fields": [
+        "witness_note"
+      ]
+    },
+    {
+      "identity": [
+        "pentecost",
+        "day",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "before": {
+        "mass": "pentecost",
+        "form_id": "day",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "No authoritative exemplar establishing the exact approved English for this source-owned slot is held. No English wording is retained."
+      },
+      "after": {
+        "mass": "pentecost",
+        "form_id": "day",
+        "proper": "Prayer over the Offerings",
+        "cycle": "all",
+        "occurrence": 1,
+        "relation": "variant",
+        "incipit": "Praesta, quaesumus, Domine, ut, secundum promissionem",
+        "ancient_witness": "Ambrosian Missal, Milan1712, In die sancto Pentecostes, printed pp[202, 203]",
+        "witness_edition_id": "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712",
+        "witness_artifact_id": "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3",
+        "ancient_passage_id": "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.pentecost-day-offerings-old-latin-20261112",
+        "ancient_reading": "Praesta, quaesumus, Domine: ut, secundum promissionem Filij tui, Domini nostri, Iesu Christi, Spiritus Sanctus & huius nobis sacrificij copiosius reuelet arcanum, & omnem propitius reseret veritatem. Per eundem Dominum nostrum &c. in vnitate eiusdem Spiritus Sancti.",
+        "divergence": "Local transcription typography: printed long-s normalized to s; physical word divisions joined; source & remains in source body but is compared as et. Explicit source ligature declaration: printed æ/Æ expands to ae/Ae, including Praesta and quaesumus; no frozen source bytes change. Source Filij/sacrificij/reuelet/vnitate correspond to Filii/sacrificii/revelet/unitate under explicitly local i/j and u/v spelling. Secondary omits the four-word apposition Domini nostri Iesu Christi after Filii tui; recipient remains the Father and the Son remains explicitly named. Secondary omits et before huius; the following et omnem remains. The old et…et coordination becomes simple conjunction without adding a new proposition. Source long cue Per eundem Dominum nostrum &c. in vnitate eiusdem Spiritus Sancti is not expanded. Secondary uses Per Christum; independently old complete Per Christum Dominum nostrum is selected in this finite study reconstruction. No same-Son/same-Spirit wording is silently transferred.",
+        "witness_note": "Adapted project study English from the complete Pentecost prayer in the Ambrosian Missal (Milan, 1712), printed pp. 202–203 / whole-source pages 240–241, checked in fresh images. The receiving comparison is the secondary digital reproduction labelled 2002, page 266; fidelity to the printed 2002 book and complete authentic 2008 correspondence remain unestablished. The source prayer and receiving comparison both address the Father. The comparison omits the conventional apposition Domini nostri Iesu Christi after Filii tui and the first et of the old et…et coordination; the Son, Holy Spirit, sacrifice, mystery, truth and request remain the same. Source long-s and æ/Æ are normalized, lines joined, and i/j and u/v correspondences declared locally; & is retained in the historical body and compared as et. The actual source cue Per eundem Dominum nostrum &c. in vnitate eiusdem Spiritus Sancti is preserved without expansion. The project ending uses the separately complete old formula Per Christum Dominum nostrum from Pustet 1862, printed p. 180, under the Father-directed short-conclusion rule in primary 1970 IGMR 32 and secondary 2002 IGMR 77. No same-Son or same-Spirit wording is silently imported. Independent review accepts this finite whole-prayer adaptation and English fidelity for source preparation; exact source registration, conclusion binding and runtime presentation remain integration gates. This is project study English, with no claim to approved modern English or unchanged historical human English. The full old body and actual source cue remain separately recoverable. The prior no-exemplar record is preserved as dated history. The study draft was sealed before any consultation of the separate official 2014 English exemplar.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "project-created",
+            "text": "Grant, we beseech you, O Lord, that, according to the promise of your Son, the Holy Spirit may disclose to us more abundantly the mystery of this sacrifice and graciously open all truth to us. Through Christ our Lord."
+          }
+        ]
+      },
+      "english_scalar_sha256": "ae9eb8c3d7053082cad008ab1ec402bf12616ff92c815a6f138c91e6cf33c234",
+      "metadata_successor_fields": [
+        "incipit",
+        "witness_artifact_id"
+      ]
+    }
+  ],
+  "whole_expression_findings": [
+    {
+      "identity": [
+        "christ-the-king",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "affirmative": "The complete old prayer already supplies one continuous movement from offering the victim of human reconciliation to asking the Son for unity and peace for all nations. The revised whole shortens its explicit sacrificial identification and relocates the existing Son reference while retaining the same actors, objects, purpose and requested result. The new petition frame is conventional grammatical reframing of that one unit rather than a new substantive prayer or a selection of unrelated old petitions. Considered together with the independently old complete short conclusion, that constrained abridgment supplies a defensible argument that the new contribution lacks independently original authorship. This is not inferred merely from theological similarity or a small word count.",
+      "strongest_contrary": "Suppressing the explicit present-sacrifice identification and shortening the divine titles changes the emphasis and rhetorical progression. Choosing those omissions and the replacement petition frame can amount to creative editorial recasting even if every central theological idea is old. Copyright’s low originality threshold does not require a new doctrine. The entire revised sequence is not held in an exact old witness, so its source relationship is a substantive variant and the affirmative conclusion remains qualified."
+    },
+    {
+      "identity": [
+        "most-holy-trinity",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "affirmative": "One complete old Trinity prayer supplies the invocation, causal means, command, second petition, intensive human object and everlasting-gift destination in their original sequence. The modern whole changes the conventional designation of the offering object and its necessary agreement without composing a new predicate, image, consequence or clause. The independently old service-gifts designation corroborates conventional diction, but the affirmative argument rests on its constrained use within the already complete and unchanged two-petition structure. The full resulting expression can defensibly be assessed as a conventional object substitution and grammatical adjustment rather than independently creative new authorship.",
+      "strongest_contrary": "Victim-of-this-offering and gifts-of-our-service are not semantically interchangeable labels. Selecting the latter deemphasizes the explicit sacrificial-victim term and introduces a service-centered characterization. Combining that old phrase with a different old prayer, omitting holy and adjusting agreement can constitute editorial selection and adaptation; age of both ingredients is insufficient by itself. No exact independently old whole witness of the revised sequence is established."
+    },
+    {
+      "identity": [
+        "ascension",
+        "vigil",
+        "Collect",
+        "all",
+        1
+      ],
+      "affirmative": "The complete old prayer already connects Christ’s ascent before the Apostles and his promise with both earthly companionship and our heavenly companionship. The revision changes who is addressed, but consistently preserves who ascended, promised and accompanies us. Its linked verb and pronoun conversions are determined by that single address conversion; it introduces no new action, subject of the ascension or promise, substantive petition, scene or outcome. The remaining changes abridge qualifications and replace the aid phrase with conventional petition framing. Considered as the complete expression, this is defensibly a constrained address conversion and abridgment of one old unit rather than a newly constructed prayer. The separate complete ending is independently old and selected by an actually witnessed receiving cue.",
+      "strongest_contrary": "Addressing the Father instead of Christ is meaningful theological and rhetorical editing, and suppressing the old majesty, resurrection and aid clauses is deliberate selection. A derivative prayer can acquire original authorship through the combined recasting even without adding a new event. Referential consistency proves fidelity, not copyright status. No exact old whole witness establishes this revised sequence, and the old source alone cannot clear the modern expression."
+    },
+    {
+      "identity": [
+        "pentecost",
+        "day",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "affirmative": "The independently old prayer already contains the entire Son-promise/Holy-Spirit/sacrificial-mystery/all-truth structure, in the same order and with the same Father as addressee. Removing the conventional explicit Son apposition leaves the same already named referent; simplifying et...et to the surviving conjunction introduces no new relation or selected petition. The separate standard short conclusion changes the expression and is disclosed, but is independently old in its complete words. Taken as this finite whole, these are defensible nonoriginal changes; no creative new petition architecture or changed divine agent is supplied. Accepted under policy1 item6/8.2 as a qualified nonoriginal study adaptation, not exact historical identity.",
+      "strongest_contrary": "The shortened Christ-title apposition, conjunction and conclusion are actual editorial changes. Protected derivative expression can use entirely old words; showing every fragment somewhere is insufficient. This is why the acceptance depends on the preserved whole prayer and its same addressee/referents/coordination, plus an exact independently witnessed formula, rather than a word-count threshold or mechanical cue expansion."
+    }
+  ],
+  "source_file_pins": [
+    {
+      "path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/temporal-orations-20261112-christ-king-offerings-latin/latin.txt",
+      "sha256": "247041b3a45d17879169276b2faef5dd981f623ff94ea2813eee8a02f1fcb0d9",
+      "bytes": 237
+    },
+    {
+      "path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/artifacts/temporal-orations-20261112-christ-king-offerings-latin/artifact.toml",
+      "sha256": "4ebeec9d2cf0b26cf5c2e60d792a58a7eccede1e654307dc7b58d2ddd3b97fc0",
+      "bytes": 1849
+    },
+    {
+      "path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/temporal-orations-20261112-christ-king-offerings.toml",
+      "sha256": "d6028f7fd063b57fceaa633fd0b5484b7c58dc5dd4dbd45f10125bf05b439e60",
+      "bytes": 1947
+    },
+    {
+      "path": "src/sources/works/anselm-schott/das-vollstandige-romische-messbuch/editions/herder-second-revised-1929/passages/temporal-orations-20261112-christ-king-offerings-checked.toml",
+      "sha256": "a6b66c26846be9a3b8d647d21ad5de9eca4435be79fafc9032a0b4b7bac6eaec",
+      "bytes": 1047
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/temporal-orations-20261112-christ-king-offerings-comparison.toml",
+      "sha256": "36cd0050e45fcfa137c30bc24693a68cf23a3f7a7a1f4453eb2c1e7c53348c7f",
+      "bytes": 2794
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/temporal-orations-20261112-trinity-offerings-latin/latin.txt",
+      "sha256": "7b2248b972746205b3367c115fa0bcd9997aa94b77550a1bf959aaed6f7cda97",
+      "bytes": 170
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/temporal-orations-20261112-trinity-offerings-latin/artifact.toml",
+      "sha256": "8e2023951aee79dffb1866f4c42646ca44dad24840f52d81831b004b22afa464",
+      "bytes": 1713
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/temporal-orations-20261112-trinity-offerings.toml",
+      "sha256": "77c062fdb16fa8e339cfd8906f570f4d1dc97782cf6c0a5d25a68cf4c323d809",
+      "bytes": 1864
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/temporal-orations-20261112-trinity-offerings-checked.toml",
+      "sha256": "cf36432a89bc48e2fe9d3c42bcb66915da4a706ab0e5f834922d5f59b81827af",
+      "bytes": 943
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/temporal-orations-20261112-trinity-offerings-comparison.toml",
+      "sha256": "f8545e5f39afe2ff4e1d941aa4abbf1c23e19e27ec9225bb7cf579d58837bbe3",
+      "bytes": 2778
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/temporal-orations-20261112-ascension-vigil-collect-latin/latin.txt",
+      "sha256": "111d7e29e98edfd9aa3c61f8380f7edc0c6e9662b05dad0ba2cc7a50a7278f1d",
+      "bytes": 275
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/temporal-orations-20261112-ascension-vigil-collect-latin/artifact.toml",
+      "sha256": "3b3981724a72b0c3101799d20a3b9ead447e69cf64bc8f20e383ccd4bc35ce90",
+      "bytes": 1757
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/temporal-orations-20261112-ascension-vigil-collect.toml",
+      "sha256": "435b58c08982e2853ff533c3af7a8fa3cae8b830b95e1089396966bc07c490a5",
+      "bytes": 2429
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/temporal-orations-20261112-ascension-vigil-collect-checked.toml",
+      "sha256": "7e2ebcdddb347a2fd96e68ba041d3d51017cb50fcbf3273896c12751edf430cb",
+      "bytes": 989
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/temporal-orations-20261112-ascension-vigil-collect-comparison.toml",
+      "sha256": "7ab123f5ca74854c9f9e723ee4652d1054268273f70da767d16f8d4c106e5a06",
+      "bytes": 2969
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/temporal-orations-20261112-trinity-complete-support-latin/latin.txt",
+      "sha256": "73396477336bba298236fb3118584e5cb2a20125ff2f5e113ee58f8e8a79aeda",
+      "bytes": 178
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/temporal-orations-20261112-trinity-complete-support-latin/artifact.toml",
+      "sha256": "0e36773be10bdb1827d4ac05fc5b7ece7aa580299b41d6bb7a10b23ded8cc50d",
+      "bytes": 1466
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/temporal-orations-20261112-trinity-complete-support.toml",
+      "sha256": "b32e21201446076c5bead67d19aa1c7b9a6fc66899ec5f93a954f6bb88d18804",
+      "bytes": 783
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/temporal-orations-20261112-trinity-complete-support-checked.toml",
+      "sha256": "1452d7a082d376ff30f30d0ea3b0c4b1a9be98f935fff45bf8ff63bdf3773b28",
+      "bytes": 960
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/temporal-orations-20261112-short-third-person-formula-latin/latin.txt",
+      "sha256": "bb250486715fd396ee819f3002deecfb5bde4f8fc84d4eb57b3a67b8c2b99234",
+      "bytes": 80
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/temporal-orations-20261112-short-third-person-formula-latin/artifact.toml",
+      "sha256": "5b9aa446219c0fbea3ef406b767cfbd1619d36666acf5e7911be7be7bec4bcff",
+      "bytes": 1590
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/temporal-orations-20261112-short-third-person-formula.toml",
+      "sha256": "2b54160202c145e58c0b6dc3b89b3e6033dba50c9938005d637f891ef4f972bb",
+      "bytes": 1127
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/temporal-orations-20261112-short-third-person-formula-checked.toml",
+      "sha256": "bbaa56c2f7b5af2bdc673fe224ebab4439f5a9edb7f8da6b11f59d5ea270e077",
+      "bytes": 925
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/temporal-orations-20261112-short-third-person-formula-apparatus.toml",
+      "sha256": "e6071137355c01a654c7d3d3a9fdc7d37aa58ddc8731ff6ab7b228c895425faf",
+      "bytes": 849
+    },
+    {
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/temporal-orations-20261112-three-rule-54.toml",
+      "sha256": "3318dee5bc028478d2b51dcb3ef50c70dac9382f3dfc7dfeef7cf164b860c84f",
+      "bytes": 1369
+    },
+    {
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/temporal-orations-20261112-three-rule-77.toml",
+      "sha256": "c6bd8d8368e3b3bd97c2fa2369e65cb9e19d9f71fea7a7ae461229b02a2487b5",
+      "bytes": 1482
+    },
+    {
+      "path": "src/sources/works/triptych/temporal-three-study-orations-20261112/work.toml",
+      "sha256": "2132444d4d428e47ec1c6cb5b1b0510133963443ecfcf8e3abd4f84403796031",
+      "bytes": 693
+    },
+    {
+      "path": "src/sources/works/triptych/temporal-three-study-orations-20261112/editions/2026-11-12/edition.toml",
+      "sha256": "89de895bee9a3291c1598aa9e5776c258add4ee01ca637b16e9f3ca2c3306858",
+      "bytes": 617
+    },
+    {
+      "path": "src/sources/works/triptych/temporal-three-study-orations-20261112/editions/2026-11-12/artifacts/english/text.tsv",
+      "sha256": "b66094d85dab4f6d420c7f104b9b1d74913fddfaed31d239954bc769c5798f83",
+      "bytes": 916
+    },
+    {
+      "path": "src/sources/works/triptych/temporal-three-study-orations-20261112/editions/2026-11-12/artifacts/english/artifact.toml",
+      "sha256": "e3c32ac5992c147d1d0608e0a47e52e8b9a933e9e5a39d21a5886b9f85e4cb96",
+      "bytes": 1841
+    },
+    {
+      "path": "src/sources/works/triptych/temporal-three-study-orations-20261112/editions/2026-11-12/passages/christ-king-offerings.toml",
+      "sha256": "8fcba50a0dbe037da61beaf2833de765a31fdc7f88d12df897c5c149abb0a055",
+      "bytes": 3228
+    },
+    {
+      "path": "src/sources/works/triptych/temporal-three-study-orations-20261112/editions/2026-11-12/passages/trinity-offerings.toml",
+      "sha256": "1dc501ccc27fd8dff7dce1ce5992653500e94fa2f04853adddd81474058298fe",
+      "bytes": 3166
+    },
+    {
+      "path": "src/sources/works/triptych/temporal-three-study-orations-20261112/editions/2026-11-12/passages/ascension-vigil-collect.toml",
+      "sha256": "2c43e16f546b6e51c24c90382523f7506f279766f73d7421c77c7b04c0abdcee",
+      "bytes": 3371
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/pentecost-day-offerings-old-latin-20261112-latin/artifact.toml",
+      "sha256": "03bceb8dafba2c3586c3ef0ff7d75ede2e9c2fd84e50177421f4c5c4761f0734",
+      "bytes": 2401
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/pentecost-day-offerings-old-latin-20261112-latin/text.tsv",
+      "sha256": "ebb735a2f600713221e2ae1c228706dd44c78797665a408c0e60ca7e8eaa078d",
+      "bytes": 698
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/passages/pentecost-day-offerings-old-latin-20261112.toml",
+      "sha256": "d17e72d02c18291c51a712bd5e71af9a8bb9649d7543249649dcb43544b46175",
+      "bytes": 1722
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/passages/pentecost-day-offerings-study-20261112-checked-latin.toml",
+      "sha256": "ee6e1345b2e37becf7702b7f01ce88851a45f71a096abdf45118e27cad647945",
+      "bytes": 2041
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/passages/pentecost-day-offerings-study-20261112-petition.toml",
+      "sha256": "1ae5354a7b49ecf09aae075588afe0ecc68e4611b689602db3b6d7b1c850c12a",
+      "bytes": 1016
+    },
+    {
+      "path": "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/passages/pentecost-day-offerings-study-20261112-source-cue.toml",
+      "sha256": "46c893c0111a8a1faa93f679c2b8447932c0afe50d60cb4295f7b58fb2162c7d",
+      "bytes": 1022
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/pentecost-two-study-short-conclusion-20261112.toml",
+      "sha256": "f4332fadad6cd7dd8905b685952cfcee828d75b13f3f728d120e0daea1db64d4",
+      "bytes": 1362
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1970/passages/pentecost-two-study-igmr32-20261112.toml",
+      "sha256": "db8146e784739ba7a25cf5e58e28cc423d073623b93ad1c351fa3a435667dc25",
+      "bytes": 1111
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/pentecost-day-offerings-study-20261112-comparison.toml",
+      "sha256": "87106c0acdcebfa579baa13e94cb7ac709c84ad8704123187b6996323a104205",
+      "bytes": 2506
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/pentecost-day-offerings-study-20261112-igmr77.toml",
+      "sha256": "33a87156f0c6b4d7bbc47c8f9f1f4c59e1423c89afb02d4773ace122d8cf3dff",
+      "bytes": 964
+    },
+    {
+      "path": "src/sources/works/triptych/pentecost-day-study-offerings-20261113/editions/2026-11-13/artifacts/english/artifact.toml",
+      "sha256": "dcafeffeeb3958241e0556a8e30ca494c38ba9939ca362f4a916725d6e118154",
+      "bytes": 1323
+    },
+    {
+      "path": "src/sources/works/triptych/pentecost-day-study-offerings-20261113/editions/2026-11-13/artifacts/english/text.tsv",
+      "sha256": "8d4e0a5f9c7f31dc939e8365aca10577d755cca36c68a4feb20bf1a240cd9432",
+      "bytes": 320
+    },
+    {
+      "path": "src/sources/works/triptych/pentecost-day-study-offerings-20261113/editions/2026-11-13/edition.toml",
+      "sha256": "28dcbfef20b709a1c019935203ba7427f67a72b9aeeb4f1f8176aa8a0e308880",
+      "bytes": 619
+    },
+    {
+      "path": "src/sources/works/triptych/pentecost-day-study-offerings-20261113/editions/2026-11-13/passages/day-offerings.toml",
+      "sha256": "dd6960f23a2bef646188db06ed85bf741ef4b342c373c7d5e4b60dd4071fc738",
+      "bytes": 2861
+    },
+    {
+      "path": "src/sources/works/triptych/pentecost-day-study-offerings-20261113/work.toml",
+      "sha256": "8887c7d21ff9d420adae0bd15adfd79e663d4a9f35bd522025375759eed9fd8f",
+      "bytes": 563
+    }
+  ],
+  "limits": [
+    "No complete modern comparison body or approved English is included in this history.",
+    "Original unavailable dictionaries and quarantine fingerprints are preserved in the exact before records.",
+    "Secondary digital2002 comparison is not authenticated2008.",
+    "Priest bodies contain complete accepted conclusions; no congregational Amen or complete response execution is added.",
+    "Legacy identity/incipit runtime is unbound to source/body hashes; exact installation and source-epoch pins remain required."
+  ]
+}

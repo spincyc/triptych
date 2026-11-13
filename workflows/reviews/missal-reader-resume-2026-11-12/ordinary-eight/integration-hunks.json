@@ -1,0 +1,238 @@
+{
+  "schema": "triptych-ordinary-eight-reviewed-hunks/v1",
+  "owner": {
+    "path": "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+    "reviewed_base_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+    "eight_only_postimage_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+    "patch": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/owner.patch",
+    "hunks": [
+      {
+        "ordinal": 1,
+        "header": "@@ -193,7 +193,7 @@",
+        "patch_hunk_sha256": "d5a545a7777ad70d02c5ed8516619048c83572abed1b6fb4fada8fad6ec8ce82",
+        "before_context_sha256": "97bb37789309215aa15fa57deeb2109295c1064f48b4477675196d29e0e8a159",
+        "after_context_sha256": "4f5de61a64c13c8e244da3953b8d0b6ee1f34a8cb909919136e874db45d10501",
+        "before_lines": 7,
+        "after_lines": 7
+      },
+      {
+        "ordinal": 2,
+        "header": "@@ -923,14 +923,6 @@",
+        "patch_hunk_sha256": "117f182ec8f947572ee01c891f29d35dd17b96443e646526b90f69c693129a07",
+        "before_context_sha256": "f13e7ef0df48ae1fb181a252cbc7514567dcc0df0d4cdce7716a58dcd6e5f9c5",
+        "after_context_sha256": "768b82be5c4b5b3e4a434676beb1336b6db1f8f27bfdaf38b2122bdf64083d6f",
+        "before_lines": 14,
+        "after_lines": 6
+      },
+      {
+        "ordinal": 3,
+        "header": "@@ -956,14 +948,6 @@",
+        "patch_hunk_sha256": "bcced7806b839a8549b5344c23addb0def41c748b577af0d4894109451491d69",
+        "before_context_sha256": "34e667b08d7a0d06d2f163c3ac4d535d8acfb2b8b9b35b58c37ba46fee0540f0",
+        "after_context_sha256": "48e0eab56fbb031acb5213b078a85d9fecc7e99c3d73b411384b1263aad42d37",
+        "before_lines": 14,
+        "after_lines": 6
+      },
+      {
+        "ordinal": 4,
+        "header": "@@ -1399,6 +1383,40 @@",
+        "patch_hunk_sha256": "6183e49d1587be8917cadb4d930a8b1b0fdac5e7f3a9b5b1a685f6b421c6d5f2",
+        "before_context_sha256": "b2e52db9b287cf9a17d7bd86f6a4ca9b3a361e950cb05835df523918cf3132e2",
+        "after_context_sha256": "df95bbe8e10060a173233b10bbba8902ab4b0bb5b070424cf3f229f963d2e829",
+        "before_lines": 6,
+        "after_lines": 40
+      },
+      {
+        "ordinal": 5,
+        "header": "@@ -1732,14 +1750,6 @@",
+        "patch_hunk_sha256": "0255bafa83e82adf2f23e71575e40093026caef88fde82999610c05ec65cc680",
+        "before_context_sha256": "006e5a29d70caf8c6a02c1341432b185828e95ef1bec20c9ff0dd96af5324d6d",
+        "after_context_sha256": "0e952abd44aae5743570b6ba00602093c099c08a6930c5b82944207d369fa5c1",
+        "before_lines": 14,
+        "after_lines": 6
+      },
+      {
+        "ordinal": 6,
+        "header": "@@ -1758,14 +1768,6 @@",
+        "patch_hunk_sha256": "1763268411c30cc45e71bb3f7222e068c09a7d705bf4acb1390e5c1509242e64",
+        "before_context_sha256": "94872d797c1aa14fc7d7c9ff63c2ca7a8e67227c2440d1570b68dc1f7e8d6747",
+        "after_context_sha256": "af502480b32f0917232b639cd2843b59d80e22754feeff647444b8e2e47b4964",
+        "before_lines": 14,
+        "after_lines": 6
+      },
+      {
+        "ordinal": 7,
+        "header": "@@ -1827,14 +1829,6 @@",
+        "patch_hunk_sha256": "a80722dfd1915e498032568079d5b8e9e9f873145161af7349fcc7d792b62f3f",
+        "before_context_sha256": "9a5fe792da108ab6fa225c507dbfaf1f79674ac7d095077ec0aaa4f6140def5e",
+        "after_context_sha256": "aa04b25c741433c35940a3a535155107462fc3ed87cf6a43adb1b9bd2cc1fb79",
+        "before_lines": 14,
+        "after_lines": 6
+      },
+      {
+        "ordinal": 8,
+        "header": "@@ -2349,6 +2343,57 @@",
+        "patch_hunk_sha256": "f298eb64ba660e75819796fa655cab2b7789b9bae70006d9c23840b0b19f63f0",
+        "before_context_sha256": "d742526a56318199c3f62cf96770cbd4ea24ff04ad2f51c968c2b04079cc7725",
+        "after_context_sha256": "f6c34a24fbcfa3bc42ee5db511b6212fd80196ed95dd73c9060e5500995a02b4",
+        "before_lines": 6,
+        "after_lines": 57
+      },
+      {
+        "ordinal": 9,
+        "header": "@@ -3379,14 +3424,6 @@",
+        "patch_hunk_sha256": "5b0f5c8bfeba35c7e61d86488ab882be5d3077039edf6a8825054cf9cb4fb1e4",
+        "before_context_sha256": "57bb2b240f2aaa130f34fe62a6125be1f324353d0f6c5b060473a1c96ddd9b3a",
+        "after_context_sha256": "eadab23b0feb9f9a6f95132aa6dc4eff773d027d811b918db14ed3a1d49943b0",
+        "before_lines": 14,
+        "after_lines": 6
+      },
+      {
+        "ordinal": 10,
+        "header": "@@ -3412,14 +3449,6 @@",
+        "patch_hunk_sha256": "d6b16fd74487c9e1309913e53c85ced277f127f43886183a47d44ec45eca7fc7",
+        "before_context_sha256": "8635756d3706fa31fba333d22464aaf71dfb84c893634206fdbba2daabd0b409",
+        "after_context_sha256": "3f17bad263e95284c7209dc16b8561095a51fd3729c2e15d873d03bb4440b431",
+        "before_lines": 14,
+        "after_lines": 6
+      },
+      {
+        "ordinal": 11,
+        "header": "@@ -3728,6 +3757,40 @@",
+        "patch_hunk_sha256": "e3bef26358acbc0644d60ad80f90224d8712d4badf4161c196c2c72fcb427552",
+        "before_context_sha256": "34b9cf65a03d0294fbcafb0e048b5a57500f661d4cfe458a9f7b8719e5ecec13",
+        "after_context_sha256": "341d2268aa96aea67346fd7e769bbc577f188f8baaec5174eae6a63f436a5afd",
+        "before_lines": 6,
+        "after_lines": 40
+      },
+      {
+        "ordinal": 12,
+        "header": "@@ -3889,14 +3952,6 @@",
+        "patch_hunk_sha256": "c17f491d91bfd2a5efe521cdd4b2bce87bbbac2bf1ee968d82084a2d7d5dd99f",
+        "before_context_sha256": "49996748fb1f98f549d89385e0bc5bf2c7d90d6a959dc6d133ca46070808e672",
+        "after_context_sha256": "5a41e8b0bfa48bc9013d8de65ea630b2a2564ea54160e1afc8ffad333bb14b40",
+        "before_lines": 14,
+        "after_lines": 6
+      },
+      {
+        "ordinal": 13,
+        "header": "@@ -4178,6 +4233,23 @@",
+        "patch_hunk_sha256": "5f331c192dd32422c37023162e5eb9c243c7ce5b8405fdf9195af5632f80d4da",
+        "before_context_sha256": "24a92c9e498fcf1fa7d19c71c8e70e8eac231eb39b5cafe619fc8e9714ebdcbc",
+        "after_context_sha256": "da1c45a0613d77c4ade7d748492cce783468b8d03bd583992e0aed6d175dbd34",
+        "before_lines": 6,
+        "after_lines": 23
+      }
+    ],
+    "scope": "Append one reviewed artifact to Mame-la, remove exactly eight old Latin element_provenance blocks and add exactly eight guarded latin_replacements tables; all other owner semantics preserved."
+  },
+  "parser": {
+    "path": "tools/mass-ordinary",
+    "reviewed_base_sha256": "64a40ac97bae51378127556029be33c37d7a34cc05d93f756ed279b48648bb14",
+    "eight_only_postimage_sha256": "783cd75298c2eed14dcfd023e4dbe5a640d9688bb49fab52966dfa14234526ae",
+    "patch": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/parser.patch",
+    "hunks": [
+      {
+        "ordinal": 1,
+        "header": "@@ -589,6 +589,11 @@",
+        "patch_hunk_sha256": "cbb28ec12498448d70dede2d3d40af053fba2942eac3e527c1eb1f590a0c9081",
+        "before_context_sha256": "cca4eac2d59cab62392ec8f6ba2e4da9bd5b735cbc8ef0d260e41d3866c8369e",
+        "after_context_sha256": "6cd262db48d8cc810b9a27b987018a2924014a94fe073106b2b53e9a260a59df",
+        "before_lines": 6,
+        "after_lines": 11
+      },
+      {
+        "ordinal": 2,
+        "header": "@@ -2265,6 +2270,77 @@",
+        "patch_hunk_sha256": "0c7beb9849dc22aa68151ce9567dab1810693df302c98ba6e43a9d7000395723",
+        "before_context_sha256": "01bf43325e0c27c9d51631ca1ac7812135d58ed4ec0321280a958b0e304993e7",
+        "after_context_sha256": "4220c021be63f61356d2e0c6ffeb26ac801282dcfd342949b6c4dc88c6c4470d",
+        "before_lines": 6,
+        "after_lines": 77
+      },
+      {
+        "ordinal": 3,
+        "header": "@@ -2483,6 +2559,9 @@",
+        "patch_hunk_sha256": "44e6457c1f02f447f5773c25f92f49b6587172ee8b0626951f100d73b9cbb394",
+        "before_context_sha256": "a3142f77e7de59337fff568ad8a3ab19bbce70f376df94849cb1fa70ecacb176",
+        "after_context_sha256": "bca1af0c5bdf3c041b297e23566fc41fa771f01d5e15645e1b6808bec4dec3ef",
+        "before_lines": 6,
+        "after_lines": 9
+      },
+      {
+        "ordinal": 4,
+        "header": "@@ -2509,6 +2588,19 @@",
+        "patch_hunk_sha256": "1fe010c9007143d2e33532087b36eed30be3e3480dd8caae658a35f6c8cc44cb",
+        "before_context_sha256": "63738627756932a8655d3c8a616c7f74c941aa2ba27ae62cf4b5ea7d7c616a34",
+        "after_context_sha256": "185c1f91759d0461cfe2a32f31bdfb6972ffff6b239722a78f1454bbb303555d",
+        "before_lines": 6,
+        "after_lines": 19
+      },
+      {
+        "ordinal": 5,
+        "header": "@@ -2541,6 +2633,8 @@",
+        "patch_hunk_sha256": "c305d2692a8bcce8917fdff441034762652cbf62c7809ee32e001751e834b8cc",
+        "before_context_sha256": "8dade267e826a0b53dcbf4b93c957786179bab7b51bec7c35eaff11d5d6ffc9e",
+        "after_context_sha256": "3dbe56fa5bd2ebe12683838e3ede5d7cae869303312109a38f3cd794be568ad8",
+        "before_lines": 6,
+        "after_lines": 8
+      },
+      {
+        "ordinal": 6,
+        "header": "@@ -3169,6 +3263,7 @@",
+        "patch_hunk_sha256": "6d1940805a00d5c48fa0087fbcb58f5ba6645e8989707be449dd279867ce02e3",
+        "before_context_sha256": "b28db0f76bb6b74a6ef3bd573496ba8262d442e67ec6dac5e6c7b62e090f1f61",
+        "after_context_sha256": "05b94634e1cf4afc088dcf5eeaa43188bed9cc38bf75f6a9a806ce6f3601b78e",
+        "before_lines": 6,
+        "after_lines": 7
+      }
+    ],
+    "scope": "Add Latin replacement closed fields/resolver/application and inline refusal. Existing English helper path is unchanged."
+  },
+  "shared_witness_array": {
+    "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+    "lang": "la",
+    "reviewed_base": [
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd",
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae",
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112",
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112",
+      "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112"
+    ],
+    "eight_only_append": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112",
+    "osp_candidate_append": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112",
+    "guard": "If OSP is also selected, preserve both exact additions once and preserve the base sequence. Do not replace the artifact-array line with either standalone postimage. Any other concurrent addition requires Root explicit reconciliation."
+  },
+  "osp_candidate": {
+    "manifest": {
+      "path": ".scratch/dedication-context/ferial-frame/candidates/20261112T203028Z-osp-frame/manifest.json",
+      "sha256": "62e567b3a4bef71889149fb605a93dfbef2c84257574e613a38d09c31653b362",
+      "bytes": 5860
+    },
+    "patch": {
+      "path": ".scratch/dedication-context/ferial-frame/candidates/20261112T203028Z-osp-frame/changes.patch",
+      "sha256": "41d50eb448dc6d6cfe871198721119751bbb710fa1a12841ce05a63a27c4e461",
+      "bytes": 156987
+    },
+    "status": "integration candidate; standalone conclusion source/helper gate remains open",
+    "dependencies": [
+      "oration_endings executeProperRite plus exact source descriptors (not yet integrated)",
+      "roman_sources ferial-three body package remains separate and not admitted in this candidate",
+      "coverage_audit raw expanded CLI ending projection remains separate"
+    ],
+    "shared_paths": [
+      {
+        "path": "tools/mass-ordinary",
+        "base_sha256": "64a40ac97bae51378127556029be33c37d7a34cc05d93f756ed279b48648bb14",
+        "candidate_sha256": "53fcdc75cccc0001b12045bf73fb9726ecc8076a2150da545b74c13a30f2e83f"
+      },
+      {
+        "path": "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+        "base_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+        "candidate_sha256": "e08e163d6e935dc6b884a876d9e984827b5e82a4564b493908f4b46c1b16fe4a"
+      }
+    ],
+    "required_action": "Root merges exact reviewed hunks and records final composite parser/owner hashes. No combined hash or OSP gate completion is claimed here."
+  },
+  "activation_performed": false
+}

@@ -1,0 +1,81 @@
+{
+  "schema": "triptych-historical-oration-formula-excerpts/v1",
+  "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+  "source_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+  "source_artifact_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+  "verified_on": "2026-11-12",
+  "scope": "Exact complete historical English formula excerpts at identified local prayers. These pages do not constitute a general printed conclusion table. Finite target applicability and derived extraction/capitalization are separately reviewed.",
+  "transcription": "Join page and line divisions and printed line-end hyphenation only. Preserve English words, case and punctuation. The terminal Amen is retained separately and does not assign an execution speaker. No Latin transcription, image, layout, watermark, host text or expanded target prayer is included.",
+  "formulas": {
+    "cummiskey-through-the-same-libera-nos": {
+      "control_id": "cummiskey-through-the-same-libera-nos",
+      "context": "Canon of the Mass, Libera nos; page break splits Latin Per eundem and English disturbance",
+      "english": "Through the same Jesus Christ, thy Son our Lord, who with thee and the Holy Ghost liveth and reigneth, God. World without end.",
+      "source_segments": [
+        "Through the same Jesus Christ, thy Son our Lord, who with thee and the Holy Ghost liveth and reigneth, God.",
+        "World without end."
+      ],
+      "source_segment_roles": [
+        "priest prayer",
+        "priest spoken P."
+      ],
+      "terminal_amen": {
+        "text": "Amen.",
+        "printed_marker": "R.",
+        "speaker_assignment": "not assigned by this excerpt registration"
+      },
+      "absolute_pages": [
+        50,
+        51
+      ],
+      "printed_pages": [
+        "xxxix",
+        "xl"
+      ],
+      "primary_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "primary_artifact_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "image_receipts": [
+        {
+          "absolute_page": 50,
+          "image_sha256": "84320696485a845bdc028d9a173aba769a7a0c0720b7f48c8d4e58a41926204a"
+        },
+        {
+          "absolute_page": 51,
+          "image_sha256": "c232b537e090915c3830e3b7ae4c88e71a6b6123c3cd6c8f23466ad7eeb5c11d"
+        }
+      ],
+      "reviewed_control_sha256": "6e7dfb377f2746fabcb8080178d4eb2fc301551a90b81eda95d27ce25145ff5f"
+    },
+    "cummiskey-who-with-god-the-father-perceptio": {
+      "control_id": "cummiskey-who-with-god-the-father-perceptio",
+      "context": "Canon of the Mass, Perceptio corporis tui",
+      "english": "who with God the Father, in the unity of the Holy Ghost, livest and reignest God for ever and ever.",
+      "source_segments": [
+        "who with God the Father, in the unity of the Holy Ghost, livest and reignest God for ever and ever."
+      ],
+      "source_segment_roles": [
+        "printed prayer conclusion"
+      ],
+      "terminal_amen": {
+        "text": "Amen.",
+        "printed_marker": null,
+        "speaker_assignment": "not assigned by this excerpt registration"
+      },
+      "absolute_pages": [
+        52
+      ],
+      "printed_pages": [
+        "xli"
+      ],
+      "primary_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "primary_artifact_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "image_receipts": [
+        {
+          "absolute_page": 52,
+          "image_sha256": "51050605354b8f40431ebfe23cf2dce6abf7db5303ff270a19bf14820426da86"
+        }
+      ],
+      "reviewed_control_sha256": "027859b7e38d92122c84382757f7d9f6c59a9388faae07d6e617d187a9d1e815"
+    }
+  }
+}

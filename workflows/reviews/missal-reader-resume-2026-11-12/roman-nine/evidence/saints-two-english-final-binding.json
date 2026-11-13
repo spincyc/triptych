@@ -1,0 +1,377 @@
+{
+  "schema": "triptych-independent-saints-two-final-binding-review/v1",
+  "recorded_at": "2026-11-12T19:46:40.697461+00:00",
+  "reviewer": "/root/roman_sources/six_english_review",
+  "state": "completed-exact-body-and-metadata-binding-check",
+  "inputs": [
+    {
+      "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/install-plan.json",
+      "sha256": "47f93c8d110017ae1369bb07d053a263e381156b3b754a6da661749b442d665b",
+      "bytes": 54804
+    },
+    {
+      "path": ".scratch/roman-sources/saints-four-merits/candidate-projections.json",
+      "sha256": "596586d5003bf2a54de88245c41391c0460d911d6bcf8d57e2924fb7ae4133df",
+      "bytes": 18316
+    },
+    {
+      "path": ".scratch/roman-sources/next-twelve-english-review/review.json",
+      "sha256": "64030738f276146b90db2fe0cc65e038786564289a4e0cd7230dfedf7c65218b",
+      "bytes": 67810
+    }
+  ],
+  "summary": {
+    "cases": 2,
+    "accepted_bindings": 2,
+    "required_revisions": 0,
+    "publication_adoption": null
+  },
+  "scope": "Separate final metadata/body binding receipt for Bellarmine Secret and Assumption Postcommunion only. The earlier twelve-body fidelity receipt remains frozen and unchanged. This confirms the unchanged accepted bodies against the new intended row/carrier package; it does not adopt rights, publication or authority fields.",
+  "hash_convention": "Text hashes cover exact UTF-8 bytes including one terminal LF; complete object hashes use compact sorted-key JSON with ensure_ascii=False.",
+  "cases": [
+    {
+      "identity": [
+        "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "verdict": "accept-final-metadata-body-binding",
+      "latin": "Hostias tibi, Domine, in odorem suavitatis offerimus: et praesta; ut, beati Roberti monitis et exemplis edocti, per semitam mandatorum tuorum dilatato corde curramus. Per Dominum nostrum.\n",
+      "latin_sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+      "english": "We offer you sacrificial offerings, O Lord, as a sweet fragrance; and grant that, instructed by the counsels and examples of blessed Robert, we may run with an enlarged heart along the path of your commandments. Through our Lord.\n",
+      "english_sha256": "e52ebe481515425327be38e0eb18351cbb183f82c4c244cc86678dc2022a327e",
+      "new_proper_sha256": "b1d010da3ef61435e55e00cecbce931cb081ef333a48bce851346680b24b0dea",
+      "latin_provenance_sha256": "b509c815e139214138f3db6d3ad54c59521d7e56db9dd7b0bda1943e6ae40716",
+      "english_entry_sha256": "284469bbe63de85a4fd48d00db5eae47248f6ddf70d2e9cf7ab41382722189f4",
+      "complete_proposed_row_sha256": "f6f66c8e6db087115482f91aff6be4679eb3528629d378f223e6c4e90b402523",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret-fefc86d1",
+        "artifact.society-of-jesus.acta-romana-societatis-iesu.volume-iii-bound.acta1923-bellarmine-secret-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-john-berchmans-postcommunion-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-alphonsus-collect-20261112"
+      ],
+      "carrier_binding": {
+        "passage_manifest": {
+          "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/passages/bellarmine-secret.toml",
+          "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/passages/bellarmine-secret.toml",
+          "sha256": "82014a8d2a0c0756a2aa9202009ebf6eabd2f318b35a276cc313e6710f600429",
+          "preimage": null,
+          "bytes": 1293
+        },
+        "artifact_manifest": {
+          "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/bellarmine-secret-fefc86d1/artifact.toml",
+          "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/bellarmine-secret-fefc86d1/artifact.toml",
+          "sha256": "89ba8f14fd23068afde214b30c3c4a4a894ce4985cf06cf2da6fb31436b32580",
+          "preimage": null,
+          "bytes": 4062
+        },
+        "payload": {
+          "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/bellarmine-secret-fefc86d1/latin.txt",
+          "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/bellarmine-secret-fefc86d1/latin.txt",
+          "sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+          "preimage": null,
+          "bytes": 188
+        },
+        "target_control": {
+          "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bellarmine-secret-target-control-20261112.toml",
+          "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bellarmine-secret-target-control-20261112.toml",
+          "sha256": "f976e739904d30d4fe82076424c3c195cfa56ac2ad4ce261b2fb87283a195449",
+          "preimage": null,
+          "bytes": 789
+        },
+        "physical_line_ranges": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "checks": [
+        "Identity and form/cycle/occurrence mappings agree with the accepted exact-body candidate.",
+        "Final Latin/English bytes equal both the frozen candidate projections and the frozen combined fidelity review, including exactly one terminal LF.",
+        "Full new-proper, Latin-provenance and English-entry hashes recomputed and match; old serialized row hashes also match their supplied preimages.",
+        "English source Latin hash and passage match provenance; declared source-artifact list agrees across both rows. Passage resolves to exact complete one-line carrier, with matching manifest size/hash and payload bytes.",
+        "Actual short ending preserved; no long conclusion, response, rubric, historical-English substitution or text_structure action introduced."
+      ],
+      "required_revisions": []
+    },
+    {
+      "identity": [
+        "assumptione-beatae-mariae-virginis",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "verdict": "accept-final-metadata-body-binding",
+      "latin": "Sumptis, Domine, salutaribus sacramentis: da, quaesumus; ut, meritis et intercessione beatae Virginis Mariae in caelum assumptae, ad resurrectionis gloriam perducamur. Per Dominum.\n",
+      "latin_sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+      "english": "Having received the saving sacraments, O Lord, we ask you to grant that, through the merits and intercession of the Blessed Virgin Mary assumed into heaven, we may be led to the glory of the resurrection. Through our Lord.\n",
+      "english_sha256": "571ec8706ad543253335455e93fd2fe5dbcf16e6084a14fd72778d573b9f5f36",
+      "new_proper_sha256": "d8c437b7a08ef62f3fbbcde3b7d620ec5bbf5b8c1bd4b7de376758bb0ebce88b",
+      "latin_provenance_sha256": "9d879e763efaa3d81b098bac253ca73d5df30ef009bbd42f68938d6831107778",
+      "english_entry_sha256": "d6968f804809a19fc1f78590360604136e3f7d35eab56fb582d2920d97b92d64",
+      "complete_proposed_row_sha256": "b62967afc8221303c1abaea6291b9b351acb326d2179050b2d01f8e13cfad52d",
+      "source_latin_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion",
+      "source_latin_publication_source_ids": [
+        "artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion-23b359b9",
+        "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-monday-postcommunion-20261112",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-holy-shroud-collect-20261112",
+        "artifact.society-of-jesus.acta-romana-societatis-iesu.volume-iii-bound.acta1923-bellarmine-collect-20261112"
+      ],
+      "carrier_binding": {
+        "passage_manifest": {
+          "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/passages/assumption-postcommunion.toml",
+          "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/passages/assumption-postcommunion.toml",
+          "sha256": "d6cc7c3ecdd5c25ac3e664b6485b7a1bd4cbbdc756948c17e5609ea459fc2382",
+          "preimage": null,
+          "bytes": 1314
+        },
+        "artifact_manifest": {
+          "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/assumption-postcommunion-23b359b9/artifact.toml",
+          "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/assumption-postcommunion-23b359b9/artifact.toml",
+          "sha256": "c17c648da1f9f86f08f9015034fc0ee2cc386bae071d772b3fbfb338c0b4fd77",
+          "preimage": null,
+          "bytes": 4206
+        },
+        "payload": {
+          "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/assumption-postcommunion-23b359b9/latin.txt",
+          "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/assumption-postcommunion-23b359b9/latin.txt",
+          "sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+          "preimage": null,
+          "bytes": 181
+        },
+        "target_control": {
+          "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-postcommunion-target-control-20261112.toml",
+          "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-postcommunion-target-control-20261112.toml",
+          "sha256": "ada50350a2ed488aa89c49959de6d31f4edceb7cebcba5a489e58b3f8f19c48a",
+          "preimage": null,
+          "bytes": 803
+        },
+        "physical_line_ranges": [
+          [
+            1,
+            1
+          ]
+        ]
+      },
+      "checks": [
+        "Identity and form/cycle/occurrence mappings agree with the accepted exact-body candidate.",
+        "Final Latin/English bytes equal both the frozen candidate projections and the frozen combined fidelity review, including exactly one terminal LF.",
+        "Full new-proper, Latin-provenance and English-entry hashes recomputed and match; old serialized row hashes also match their supplied preimages.",
+        "English source Latin hash and passage match provenance; declared source-artifact list agrees across both rows. Passage resolves to exact complete one-line carrier, with matching manifest size/hash and payload bytes.",
+        "Actual short ending preserved; no long conclusion, response, rubric, historical-English substitution or text_structure action introduced."
+      ],
+      "required_revisions": []
+    }
+  ],
+  "source_file_integrity": [
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-alphonsus-collect-20261112/artifact.toml",
+      "sha256": "f9ddca9459f6ca64261c68867db6354c60bd20c74f1a0213cd1807826087f0ae",
+      "bytes": 1601
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-alphonsus-collect-20261112/latin.txt",
+      "sha256": "aafb99dd599a48f92c46bfe23d3798f3c2053bedcef010ee11578e8076d3eb65",
+      "bytes": 254
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-holy-shroud-collect-20261112/artifact.toml",
+      "sha256": "f46c62ff5b8084151b40e1455130aa7c0deb76d62fde13df612583ab02e98d1d",
+      "bytes": 1609
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-holy-shroud-collect-20261112/latin.txt",
+      "sha256": "85a93d7e62e123f2ca5d2c739bb428c58456b23ed7070e063b5a57814260a78d",
+      "bytes": 247
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-john-berchmans-postcommunion-20261112/artifact.toml",
+      "sha256": "43966eab7b01cbb4ab30d11befc629e245abf3af1ac577bbe26c7b622cead557",
+      "bytes": 1636
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-john-berchmans-postcommunion-20261112/latin.txt",
+      "sha256": "9d2a65c52ceec7f16cf76cbb8e60e4ec5dd41039935d0dc24b5e8ad74776d269",
+      "bytes": 166
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/mame1922-alphonsus-collect-20261112-page-control.toml",
+      "sha256": "f57980b9c702d5b9df17edc08d536f2c455d0178a7f5e0a06010b1de51e55fd8",
+      "bytes": 870
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/mame1922-alphonsus-collect-20261112.toml",
+      "sha256": "16b34c745caf7e243b04c15ca8773b8bd36c17b4cdaf397bab39139dfc35360b",
+      "bytes": 891
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/mame1922-holy-shroud-collect-20261112-page-control.toml",
+      "sha256": "d84f1407edcaf27fb31ff3b47c964d76ee985570e8e3a0f910f3e74550e7f43e",
+      "bytes": 876
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/mame1922-holy-shroud-collect-20261112.toml",
+      "sha256": "fcc8da53512a68e18d11406271aba5c1e8d8e76698cd09848bbbf60e6d7ee44d",
+      "bytes": 899
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/mame1922-john-berchmans-postcommunion-20261112-page-control.toml",
+      "sha256": "9d46011a24932b687037e2894c77f9f2ae8448b3a9647238f7a4228a656d0636",
+      "bytes": 894
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/mame1922-john-berchmans-postcommunion-20261112.toml",
+      "sha256": "eb926b90ecaa55d7a07f42aad29eb3a6ceb6fe5d11b2ab40703f63b1307ae39e",
+      "bytes": 926
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/assumption-postcommunion-target-control-20261112.toml",
+      "sha256": "ada50350a2ed488aa89c49959de6d31f4edceb7cebcba5a489e58b3f8f19c48a",
+      "bytes": 803
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/bellarmine-secret-target-control-20261112.toml",
+      "sha256": "f976e739904d30d4fe82076424c3c195cfa56ac2ad4ce261b2fb87283a195449",
+      "bytes": 789
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/wilson1915-lent4-monday-postcommunion-20261112/artifact.toml",
+      "sha256": "62fa08ec12ffffe2aebf31cb33c484dde12c50a7730ad2e3a1dc22f730ada7c7",
+      "bytes": 1583
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/wilson1915-lent4-monday-postcommunion-20261112/latin.txt",
+      "sha256": "ad26f816fbc85b7946fbe0c1d11b6dd2ce66aaad7d5c224525732e7e737c60f6",
+      "bytes": 113
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/wilson1915-lent4-monday-postcommunion-20261112-page-control.toml",
+      "sha256": "59b07bf6bea18d8cc914bd7fcb1014bd973239a6fae07ab2446c0f074734269d",
+      "bytes": 852
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/passages/wilson1915-lent4-monday-postcommunion-20261112.toml",
+      "sha256": "228d74783563ec7dd8232fca004d0bb4f8c4f508f755354c4369c6d3c2ab2ee9",
+      "bytes": 889
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/artifacts/acta1923-bellarmine-collect-20261112/artifact.toml",
+      "sha256": "0ee2145fd496f605133aeda5cb8ca09f882e467eb8c40ed705062e4549e88e2f",
+      "bytes": 1549
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/artifacts/acta1923-bellarmine-collect-20261112/latin.txt",
+      "sha256": "4320ecd8595abd365d9fff20645886e3973cb1317a54ee2986e2d82dabd17aa9",
+      "bytes": 321
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/artifacts/acta1923-bellarmine-secret-20261112/artifact.toml",
+      "sha256": "88b414fbafade5661f3c2f77e69eacf145c1bf50b51dc15b2f0fdf0ee3a4817f",
+      "bytes": 1546
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/artifacts/acta1923-bellarmine-secret-20261112/latin.txt",
+      "sha256": "389527a0ff864db955a22f7e1c4b83f2cab2766640dd68246ba02bae06ccdcd4",
+      "bytes": 192
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/artifacts/ia-whole-pdf-9859c565/artifact.toml",
+      "sha256": "f2654092cb6ae68e5ff76132e9db1e260aeb2df9ed1c304c621f126ea22fac81",
+      "bytes": 1128
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/edition.toml",
+      "sha256": "0b7adbbb6124a9975ad5210ea0a835378087343e34c36962ed4e774b4f3557c7",
+      "bytes": 541
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/passages/acta1923-bellarmine-collect-20261112-page-control.toml",
+      "sha256": "46aca2eab541ec1c037b5843f6d258919cb40ce4a4311fb083c95a1db9ee78d1",
+      "bytes": 831
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/passages/acta1923-bellarmine-collect-20261112.toml",
+      "sha256": "77a24dd385556fbefb78a995fdf7b215244f7d4c16a39278b14e810b3037974f",
+      "bytes": 852
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/passages/acta1923-bellarmine-secret-20261112-page-control.toml",
+      "sha256": "8c7506b08fb580960160e234d3d3bdcef7d10bf1a31a1005e831857bf2331c29",
+      "bytes": 829
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/passages/acta1923-bellarmine-secret-20261112.toml",
+      "sha256": "9d1ad0f59a18322e8a47bd6f09c6ca42f7e0d85c7bd677d15ec61b43b83090fa",
+      "bytes": 849
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-vi-bound/artifacts/ia-whole-pdf-7e1ba085/artifact.toml",
+      "sha256": "9c5272b793a9bb50fe7ae23631e54ad0713ade616f7f9a72e2c3e18abb0fd0f5",
+      "bytes": 1185
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-vi-bound/edition.toml",
+      "sha256": "892a0cb0a681be479981f6ef81f1b6f81727fe97b0e19df5d155214e3a559863",
+      "bytes": 597
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-vi-bound/passages/bellarmine-revision-1931-control.toml",
+      "sha256": "e4d7f9e134a16d20538b8d39743fe892ef7ca5d561fcf9e87fd0a60de469d174",
+      "bytes": 959
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/work.toml",
+      "sha256": "7c1f1506989df58e936ab2193f2ed2ee9c4256352d1183aa7856e110ba70c7ca",
+      "bytes": 413
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/assumption-postcommunion-23b359b9/artifact.toml",
+      "sha256": "c17c648da1f9f86f08f9015034fc0ee2cc386bae071d772b3fbfb338c0b4fd77",
+      "bytes": 4206
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/assumption-postcommunion-23b359b9/latin.txt",
+      "sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+      "bytes": 181
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/bellarmine-secret-fefc86d1/artifact.toml",
+      "sha256": "89ba8f14fd23068afde214b30c3c4a4a894ce4985cf06cf2da6fb31436b32580",
+      "bytes": 4062
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/artifacts/bellarmine-secret-fefc86d1/latin.txt",
+      "sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+      "bytes": 188
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/edition.toml",
+      "sha256": "550ebd88f978bf53519108011316ae6f49c43bdaf583a5a8a17a4540937c32d4",
+      "bytes": 876
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/passages/assumption-postcommunion.toml",
+      "sha256": "d6cc7c3ecdd5c25ac3e664b6485b7a1bd4cbbdc756948c17e5609ea459fc2382",
+      "bytes": 1314
+    },
+    {
+      "candidate_path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-12-saints-two-editorial-projection/passages/bellarmine-secret.toml",
+      "sha256": "82014a8d2a0c0756a2aa9202009ebf6eabd2f318b35a276cc313e6710f600429",
+      "bytes": 1293
+    }
+  ],
+  "source_factual_closure_boundary": "All 39 proposed file hashes were recomputed to bind this exact package. Only the two selected body-to-passage-to-artifact/payload chains and target-control identities were inspected here for functional bindings. Independent source reviewer separately owns the factual closure of all 39 files / 44 source records, source images, chronology, source-date and rights claims.",
+  "ending_boundaries": {
+    "bellarmine-secret": "Latin Per Dominum nostrum.; English Through our Lord. Both short cues remain bounded.",
+    "assumption-postcommunion": "Latin Per Dominum.; English Through our Lord. remains the previously accepted conventional short cue.",
+    "structure": "Neither selected body contains an in-body response or rubric requiring typed action metadata. No surrounding Amen/dialogue or longer ending has been imported."
+  },
+  "preserved_scope": "No Bellarmine Collect/Postcommunion, Palm, Albert, alternate historical English or other identity is admitted by this receipt. Mass-note factual amendments, canonical preimage freshness, guard execution and source-wide publication merits remain outside this binding review.",
+  "canonical_mutations": false,
+  "frozen_combined_receipt_unchanged": true
+}

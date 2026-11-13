@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112-d0f0e56b"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "Finite United States qualified-nonoriginal-adaptation assessment under method english-completion-20261029-finite-latin-v1. Publication is limited to the exact body, source and action scope admitted by the code-pinned authority. This marker does not itself admit a carrier. No exact ancient-whole claim, holder permission or general formula license is asserted. Only Triptych editorial contributions are offered under CC BY 4.0."
+provenance = "The complete target at 1962 printed181/PDF262 no.968 was read at200/400dpi. Fresh source reconstruction uses the complete independently read Wilson1894 antecedent and relevant apparatus, with the complete received conclusion independently read in Pustet1862. The earlier absent ready-case packet supplies no text or validation."
+retrieved = "2026-11-12"
+sha256 = "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18"
+byte_size = 270
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-29-editorial-projection/artifacts/good-friday-first-after-communion-qualified-20261112-d0f0e56b/latin.txt"
+projected_from = ["artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-first-second-antecedents-20261112-1fc31f67", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Join printed wraps, remove stress accents, expand ae ligatures, normalize response sign to R., append one LF. Preserve all words and pointing. Keep R. as a typed nonspoken action and the following Amen spoken. Historical variants, literal abbreviated endings and changed placement are retained separately in the source comparison."
+indexable = true
+encoding = "utf-8"
+notes = "Whole-expression differences: Opening order Domine, quaesumus becomes quaesumus, Domine. Target adds the entire relative clause qui passionem et mortem Filii tui devota mente recoluit after Domine. The consecutive five blessing petitions are preserved, including indulgentia veniat, whose old reading is supported by the whole p37 printing and its apparatus. The old literal Per. becomes Per eundem Christum Dominum nostrum. R. Amen.; target Oremus and Oratio prima are adjacent framing, not included in this compared body. The modern Good Friday after-Communion placement is distinct from the old Ad Populum context. Strongest contrary: The newly inserted full relative clause gives a specific commemorative rationale and ties the old blessing to the Good Friday assembly. Even where its vocabulary is conventional, this substantive clause and the resulting whole-prayer arrangement cannot be classed as mere spelling, inflection or punctuation. No exact premodern witness for that entire target clause in this whole has been established. The antiquity of the five petitions and the conventional conclusion do not alone settle originality of the modern whole."

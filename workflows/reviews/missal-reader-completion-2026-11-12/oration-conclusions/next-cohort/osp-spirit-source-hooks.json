@@ -1,0 +1,165 @@
+{
+  "schema": "triptych-osp-spirit-source-hooks/v1",
+  "date": "2026-11-12",
+  "state": "metadata registration proposal; independently approved finite ending merits unchanged; no activation",
+  "target": [
+    "lent-2-wednesday",
+    "main",
+    "Oratio super populum",
+    "all",
+    1
+  ],
+  "reviewed_candidate_sha256": "463814b3ff3763433247c25a07c307f1c8d49b552aa6564d9a3ab8bb1086d8e8",
+  "independent_source_adjudication_receipt_sha256": "a351279ba95b3c19275a5672b52610f726d9b04a0cce214c4a454212006dccc9",
+  "semantic_family_decision": {
+    "kind": "finite-source-grounded-editorial-synthesis",
+    "proposal": "ordinary through-our-Lord family for this exact unchanged prayer",
+    "requires_independent_review": true,
+    "historical_prayer_mapping_primary_pages": "Pustet1888 Breviarium Parsverna AP183–184, printed155–156",
+    "historical_interpretation_primary_pages": "OfficialSRCDecretaII1898, decree2682ad45, questionAP251/printed235, responseAP253/printed237",
+    "current_controls": "Actual1962 prayer AP166/printed85/unit572; RG115a/e AP17/printedXIX; RubricarumInstructum§2 AP7",
+    "general_semantic_regex_or_rule": false
+  },
+  "hooks": {
+    "historical_prayer_mapping": {
+      "passage_id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.lent-2-wednesday-vespers-prayer-20261112",
+      "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-verna/passages/lent-2-wednesday-vespers-prayer-20261112.toml",
+      "sha256": "d36106e63fa93b37ddb533222d073ac08ddad57f4fa771c432fb8d1e194c8ef4",
+      "parsed_sha256": "e8f28a2b3e8dd579bf97f162d774fb94adfa32c0123adaf113221bfa8839b2f4"
+    },
+    "historical_semantic_interpretation": {
+      "passage_id": "passage.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1898-volume-2.decree-2682-ad45-osp-spirit-20261112",
+      "path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1898-volume-2/passages/decree-2682-ad45-osp-spirit-20261112.toml",
+      "sha256": "5de63c9f1747bcde5b7152fd6d10a2089437abd9a148c9b18fe2c52cad012e72",
+      "parsed_sha256": "fbc20b1301fa7561b20c5d375566bbdee532055f595b49c9e74337e3e4135b0c"
+    },
+    "current_compatibility_scope": {
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricarum-instructum-2-compatibility-20261112",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/rubricarum-instructum-2-compatibility-20261112.toml",
+      "sha256": "d668c8f8a15c3b6f093031cc2fb7884f60913e95b7351ce395b98ae7cd293a0a",
+      "parsed_sha256": "3130b05b7713954de55e73875578dba568d015b03684b810e95e093dcaa41d87"
+    },
+    "current_family_rule": {
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricae-generales-conclusions-115-116-20261112",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/rubricae-generales-conclusions-115-116-20261112.toml",
+      "sha256": "98f5aef0d9c83ec32f7c7c14d54719c3459a335e851e431482406ec1b7b01789",
+      "parsed_sha256": "e10b3f6af9f0a0ce4a3adddbb11dcb5a033fe8b284dbcd36c94ed1813b600c32"
+    },
+    "current_target_prayer": {
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.annual-oratio-early-20261023-lent-2-wednesday",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/annual-oratio-early-20261023-lent-2-wednesday.toml",
+      "sha256": "898b49fd834e8cb0d873fb37f067875b02042c8a1fc1d681a91b0e4bb9681981",
+      "parsed_sha256": "b2a0f096f368a1f07cee16ffe87a8ceeaa3029e78965c6faff3a6681eab30ea4"
+    },
+    "historical_contrary_control": {
+      "passage_id": "passage.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1901-volume-5.joanna-chantal-conclusion-countercontrol-20261112",
+      "path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1901-volume-5/passages/joanna-chantal-conclusion-countercontrol-20261112.toml",
+      "sha256": "f022fbae4cbb4bbab9c5ca98722361e58c3350fd44dc4d017c6dc0ac0908222c",
+      "parsed_sha256": "0f77c9235571176d9dcb7d089086dd9e4666f7e9dcb49acfa45115aed6166e8a"
+    },
+    "current_contrary_control": {
+      "passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.five-residual-20261023-s-ioannae-franciscae-fremiot-chantal-viduae-postcommunion",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/five-residual-20261023-s-ioannae-franciscae-fremiot-chantal-viduae-postcommunion.toml",
+      "sha256": "185d0987b27cda557c1eee56ae9dbbca1a982b0610b650e44121193f562e1bfe",
+      "parsed_sha256": "1184d736a5bb4872a16cf59ead3ddab4398145006ff0a350489e45a11d531b6d"
+    }
+  },
+  "source_postimages": [
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.rubricarum-instructum-2-compatibility-20261112",
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/rubricarum-instructum-2-compatibility-20261112.toml",
+      "sha256": "d668c8f8a15c3b6f093031cc2fb7884f60913e95b7351ce395b98ae7cd293a0a",
+      "parsed_sha256": "3130b05b7713954de55e73875578dba568d015b03684b810e95e093dcaa41d87"
+    },
+    {
+      "id": "artifact.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1898-volume-2.scan-pdf-442f3766",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1898-volume-2/artifacts/scan-pdf-442f3766/artifact.toml",
+      "sha256": "f6ac2b355967efa1227c481649670b9041ada60b6f77e4cd21fcef83bfc238ad",
+      "parsed_sha256": "db90bbf54d9fedd7747bc23050142c9308654e8b51762e8cb8f24f82829cb6f8"
+    },
+    {
+      "id": "edition.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1898-volume-2",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1898-volume-2/edition.toml",
+      "sha256": "e3c50ffcc643d3b91e521c8d28df25fda5cdca4189f007c5017b1047f9fd1738",
+      "parsed_sha256": "a0c11010f1022976578bf261131a5fb6ab75ad14674a0f99f84deba8a6fe1c90"
+    },
+    {
+      "id": "passage.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1898-volume-2.decree-2682-ad45-osp-spirit-20261112",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1898-volume-2/passages/decree-2682-ad45-osp-spirit-20261112.toml",
+      "sha256": "5de63c9f1747bcde5b7152fd6d10a2089437abd9a148c9b18fe2c52cad012e72",
+      "parsed_sha256": "fbc20b1301fa7561b20c5d375566bbdee532055f595b49c9e74337e3e4135b0c"
+    },
+    {
+      "id": "artifact.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1901-volume-5.scan-pdf-a947b474",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1901-volume-5/artifacts/scan-pdf-a947b474/artifact.toml",
+      "sha256": "cc9e5134da614a56044836525374567fd2dcd3c9c68ab7e52fd542fae2207f56",
+      "parsed_sha256": "0662bedcc474125c092bcd491781c188023243704ea8153a23556340aa3ea35d"
+    },
+    {
+      "id": "edition.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1901-volume-5",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1901-volume-5/edition.toml",
+      "sha256": "d4c35c186d04bdd23acbdbd83601c2701d79ab6132d4be6023347edbf9c4f2ae",
+      "parsed_sha256": "1eb91d56e6d1f3aaa40374900d3637eb8e9855223b4c01e4b0d7440d36002732"
+    },
+    {
+      "id": "passage.holy-see.decreta-authentica-congregationis-sacrorum-rituum.rome-1901-volume-5.joanna-chantal-conclusion-countercontrol-20261112",
+      "repository_path": "src/sources/works/holy-see/decreta-authentica-congregationis-sacrorum-rituum/editions/rome-1901-volume-5/passages/joanna-chantal-conclusion-countercontrol-20261112.toml",
+      "sha256": "f022fbae4cbb4bbab9c5ca98722361e58c3350fd44dc4d017c6dc0ac0908222c",
+      "parsed_sha256": "0f77c9235571176d9dcb7d089086dd9e4666f7e9dcb49acfa45115aed6166e8a"
+    },
+    {
+      "id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.ia-scan-pdf-0fb25ed4",
+      "repository_path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-verna/artifacts/ia-scan-pdf-0fb25ed4/artifact.toml",
+      "sha256": "75107b558583874aca09db4cd791cb81c3a6398ae1cfd55d14f6f55d632dbd59",
+      "parsed_sha256": "23f8c2856714ccf048789c8780bd78306955b1399fee92385742b9c1edc8b057"
+    },
+    {
+      "id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888",
+      "repository_path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-verna/edition.toml",
+      "sha256": "3504316b41b472f4383ba4b0514a9c85e3d0a8200096a38486091324757b3c02",
+      "parsed_sha256": "41781ed44ce35c1a44d5baea4d934417835254153b2167a769227cf5989e8ce3"
+    },
+    {
+      "id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.lent-2-wednesday-vespers-prayer-20261112",
+      "repository_path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-verna/passages/lent-2-wednesday-vespers-prayer-20261112.toml",
+      "sha256": "d36106e63fa93b37ddb533222d073ac08ddad57f4fa771c432fb8d1e194c8ef4",
+      "parsed_sha256": "e8f28a2b3e8dd579bf97f162d774fb94adfa32c0123adaf113221bfa8839b2f4"
+    },
+    {
+      "id": "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.title-and-approval-20261112",
+      "repository_path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-verna/passages/title-and-approval-20261112.toml",
+      "sha256": "867f968dd675fada02d582df1a0ccb731556811865918c82f5f2e81dad3cb2dd",
+      "parsed_sha256": "6b498a39590e210f777d9834d4c63e397996d3cf01bb9ea2091882a93ba742c8"
+    }
+  ],
+  "current_contrary_control": {
+    "target": [
+      "s-ioannae-franciscae-fremiot-chantal-viduae",
+      "main",
+      "Postcommunion",
+      "all",
+      1
+    ],
+    "identity_status": "Current canonical owner and proof uniquely identified; image independently read.",
+    "latin_sha256": "2794019c53ed54413c5afbf873d542885581ca44f6988d1815e63edf11491051",
+    "proper_sha256": "e73edadee20eed22a5946d2f68adc9cad8146f245405dddfa3e71224148073a8",
+    "latin_proof_sha256": "c7c4d8c48db914cb7457d60826f02bfe4a4cd57ef84b2d2d17504d229114aac1",
+    "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-23.five-residual-20261023-s-ioannae-franciscae-fremiot-chantal-viduae-postcommunion",
+    "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.five-residual-20261023-s-ioannae-franciscae-fremiot-chantal-viduae-postcommunion",
+    "historical": "Official1901 volumeV printed247-248 explicitly says Joanna Francisca deChantal's Oratio and Postcommunio in Missa do not conclude in unitate eiusdem Spiritus Sancti, referring to2682ad45.",
+    "current": "Actual1962 printed633, unit3422, artifact page714 prints Spiritum nobis, Domine, tuae caritatis infunde and Per Dominum nostrum ... in unitate eiusdem.",
+    "consequence": "A named historical interpretation cannot be presumed to govern all1962 continuations. The current explicit cue prevails. No reason for the historical/current difference is invented; its existence prevents a universal carry-forward inference."
+  },
+  "limits": [
+    "Exactly one unchanged Lent II Wednesday OSP. No general Spirit cohort, semantic regex or universal retention of the1831 interpretation.",
+    "The1901 index is a contrary historical control; the current explicit Joanna Chantal source words prevail. No new Joanna execution is granted.",
+    "The1888 Breviary maps the exact prayer to the named historical Vespers locus; it does not supply an1831 printing or a1962 appointment.",
+    "Current1962 RG115 and actual target wording remain controlling. Full ordinary wording remains separately attributed table-derived execution, not a quotation printed in the target.",
+    "Only source metadata is proposed. Existing source bodies, formula payloads, response ownership and the independent Spirit1 receipt remain unchanged."
+  ],
+  "validation": {
+    "isolated_source_graph_records": 19,
+    "isolated_source_graph_errors": [],
+    "all_seven_hooks_resolve": true
+  }
+}

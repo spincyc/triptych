@@ -1,0 +1,361 @@
+{
+  "schema": "triptych-finite-parent-delivery-successor-proof/v1",
+  "status": "pass",
+  "helper_sha256": "65874a65409a53a9a6e9e401cf8c05ff670694fda8580785ba72b951f65ea8b5",
+  "wrapper_sha256": "935fee38e2b1d38f4bdf583ec2741226540fd5e0970ecb2396c28aac3d069aa6",
+  "unchanged_original16_control_source_sha256": "798c2b550451a2b41da3178a00b9b0966c2418509eb2d727900983819d9f4de2",
+  "original16_controls_pass": true,
+  "actual_parent_proof": {
+    "schema": "triptych-accepted-80cb-source-parent-proof/v1",
+    "status": "pass",
+    "parent_git_revision": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+    "fixture_sha256": "f4f1b85f2abf94391a478fa0f16eac20362eea461a16cc8e3d92f083b76d3d33",
+    "manifest_sha256": "f427c98032220558654aef37d8ccc483ed8dcccb22e4678bbfcf8cdeed4c4658",
+    "acceptance_path": "workflows/reviews/missal-reader-resume-2026-11-12/source-epoch/source-batch-acceptance-v2.json",
+    "acceptance_sha256": "31f4bd15ab80164ea60007e009c6688c1995e33d85066270a378bf0dbe8286b1",
+    "accepted_fixture_core_sha256": "e166e0150538ccec850ac8482b159b9f10776f5c9a3988a681d22b5f2c8ab542",
+    "input_verification": {
+      "git_blob_inputs": 7334,
+      "actual_local_payloads": 115,
+      "input_manifest_sha256": "f427c98032220558654aef37d8ccc483ed8dcccb22e4678bbfcf8cdeed4c4658",
+      "metadata_only_success": false
+    },
+    "historical_fields": [
+      "schema",
+      "baseline_revision",
+      "baseline_roman_document_sha256",
+      "latin_baseline_rows",
+      "latin_baseline_bodies",
+      "latin_baseline_present_keys",
+      "latin_baseline_supplemented_keys",
+      "projection_baseline_source_files",
+      "english_219_keys",
+      "english_baseline_source_files",
+      "english_historical_source_files",
+      "english_historical_absence_scope"
+    ],
+    "original_replays": [
+      {
+        "path": "src/sources/calendars/postconciliar/propers.yaml",
+        "original_sha256": "69731f40de5d8c4539c4660f7035681ba3429beffd447ac6e29a5c1b98b6829d",
+        "parent_sha256": "bf44546907e0e2643c30a375d37745b9624172bb920a4c6a503c362d05c7ce28",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "src/sources/calendars/roman-1962/propers.yaml",
+        "original_sha256": "018642eee26d09e3bb014fa60baa0f820ab3637c9d6e349378c696a7b79d6877",
+        "parent_sha256": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml",
+        "original_sha256": "5943f9788ff9ebe3b614086d824039a2993039f58d3819e85f26ffafb3c38a58",
+        "parent_sha256": "117769a895aacabe098a438fccf19f1a6ae7fedd16f9c867374c176e0020ed38",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "src/sources/inventories/postconciliar-proper-translations-v1.toml",
+        "original_sha256": "9bf6fe5ecc3b397888a0316f7b5c06e40f65e9dfc1eb96c3bc78d111e7c41597",
+        "parent_sha256": "81fc33d4f26ba6d5c55222366739feaabd5fe9c5cf69bfdbcecd4797b9ad3db9",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml",
+        "original_sha256": "c2bf07d5551fbe7ae2748ce7390c37b0d707df7cf275d400126b04cacd8600f0",
+        "parent_sha256": "6b9b70f19e7d1473619a18022ce91ca430df36485b776933b4313ec85116ce57",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+        "original_sha256": "560e82057dc0480a5b1fe835304ba57ed476b346a38cab6fac550298582016ea",
+        "parent_sha256": "e1898bf40bc10db519b48da5eab6cc273308590225f191f395847a7e97196658",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+        "original_sha256": "79946d1bc6e015d8624d67ce243b59cf3ee634fc5997310aa6d764953349d815",
+        "parent_sha256": "4e4b87ffc28e95251ac7510ad60a33cf664962424d8cba0abecc8fb405067caf",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "src/sources/inventories/roman-pre-1955-proper-translations-v1.toml",
+        "original_sha256": "465e15d42b7301b22c2d93be1b95b00eb326ee0cd2ad1f928520952a89e89faa",
+        "parent_sha256": "497e9e6511f5191576dfbedfe14c55a2ec67c1f4d0e420b73a4a0a82d1885eae",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_proper_latin.py",
+        "original_sha256": "98daa1922358c0d977ddfc97352812d395c6f578591e48691bc1393c6b1ace8d",
+        "parent_sha256": "075b4cb36c55fb3cd5b2719eb8496e417c57316d806c1532ec878e36a1e1d18f",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_roman_1962_common_virgin_ii_english_phase4.py",
+        "original_sha256": "bc3ec297a6ca1edd3f155ccc29381526fee006d2e39a2c43bc0ce06fb81a51d4",
+        "parent_sha256": "604a8a9592bafe0b9bcc03d8879f86805af58d4f25b3b17f90f8647dc89f07f3",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_roman_1962_common_virgin_ii_word_repair.py",
+        "original_sha256": "ddb972cdd5fe9651d1ecc0b33bbc1bf4deca7f1b5f5c7d75b87bc03c54603f9e",
+        "parent_sha256": "50a5df73661d88e02028073bcb93e97d8c29d3e6d680c9d0338f17d60f54f063",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_roman_1962_english13_phase5.py",
+        "original_sha256": "dedf9a58d3f9e6b311bf5caf8f7aa7c51dcc9543d6ee17e4288e834c8cdc0215",
+        "parent_sha256": "cb9265ac684392086cfb9347cb9c5e778fda2563e48b5f5d431ed811ae15fa6d",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_roman_1962_english31_phase4.py",
+        "original_sha256": "86b29add67ac575fb147300f4ab6e66c47863a16c4cf5166896a88e710f5335c",
+        "parent_sha256": "e7067e3fc899d473c2619da91789893b102960e88531eafb3fb5114d9aa4627f",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_roman_1962_lasance_commons_easter_phase3.py",
+        "original_sha256": "9c11f0b870c14916dfa2530c1e733f262a5c9f526cd613744a06ea7ce3c05190",
+        "parent_sha256": "e61a6847c080ba9ee4d922339ec05f20cbc98da4d289f3d54f1b47b6018edb91",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_roman_1962_latin22_phase5.py",
+        "original_sha256": "7dc3a1569140e14f32fa2c98e607577b05871f3c197a307db67107d731d6afca",
+        "parent_sha256": "ddb555d009e04cc11f89f2907678a94bb7af517d5cd71b8e6a238d8f6588e23c",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_roman_1962_octnov_commemoration_source_repair.py",
+        "original_sha256": "c13d838baf217cf25be163e465a4f90322d8ecf04e89322f237eec105764686e",
+        "parent_sha256": "e97c80208342900b5b2b313230627f454aee11b85d6dbb2ef9aef2f8d1f22d6f",
+        "altered_current_bytes_refused": true
+      },
+      {
+        "path": "tools/tests/test_roman_1962_winter_ursula_source_repair.py",
+        "original_sha256": "e7354e1d015919cc47f235fca3aa1f5134afc8fe250765eb24b6d2eafbc71f05",
+        "parent_sha256": "e623d07cb6969c87cbfd59551c159fddaf046ae057cc87be174cc4a7c30aaa7d",
+        "altered_current_bytes_refused": true
+      }
+    ],
+    "complete_original_direct25_oracles_sha256": "687f3d90d9fa467184bd5bbd2846fcb55b9b3805f79d2214b42b7624a42213c2",
+    "complete_original_direct25_oracles_unchanged": true,
+    "direct_declaration_sha256": "70716afc9012297f8600c837b129332a1b924b9520b8861d9d6ad33ae4f47752",
+    "delivery_helper_sha256": "65874a65409a53a9a6e9e401cf8c05ff670694fda8580785ba72b951f65ea8b5",
+    "immutable_support_sha256": "6fd8b3552071f4ef479bbdc6c4d693331b8ceb91e48dcb016e91033fd6ba03fc",
+    "wrapper_sha256": "935fee38e2b1d38f4bdf583ec2741226540fd5e0970ecb2396c28aac3d069aa6",
+    "separate_actual_current_additions": [
+      {
+        "path": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+        "sha256": "a2c3faecd154022fe00d1c09ed043c3441b78c7e4ae6430164ef287a81f1988e",
+        "bytes": 167718
+      },
+      {
+        "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+        "sha256": "b86a5a1adc0ec7f92e9585b1fafefddc47d0a8c2fd4887589bbbf0063616d759",
+        "bytes": 445268
+      },
+      {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+        "sha256": "21722c83217e64738042331b1f8185fbd0c497ea9db43b5cb7498c5b3c762997",
+        "bytes": 623510
+      },
+      {
+        "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+        "sha256": "adab3b804ccdae4e930f71543d5ac24c28b5e54906d76a708e104cc738cfcb69",
+        "bytes": 131148
+      },
+      {
+        "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+        "sha256": "1891b45b9a8554097eacd35bce0b3fc3b4c871d70820bfc48e17d0945d2a1cf4",
+        "bytes": 101806
+      }
+    ],
+    "canonical_writes": 0,
+    "source_permission_created": false,
+    "successor_fixture_derived": false
+  },
+  "finite_current_controls": [
+    {
+      "case": "exact-five-additive-declaration",
+      "accepted": true
+    },
+    {
+      "case": "missing-current-pin:src/sources/artifact-delivery.json",
+      "refused": true
+    },
+    {
+      "case": "changed-whole-bytes:src/sources/artifact-delivery.json",
+      "refused": true
+    },
+    {
+      "case": "missing-current-pin:workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ten/source-contract-adoption.json",
+      "refused": true
+    },
+    {
+      "case": "changed-whole-bytes:workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ten/source-contract-adoption.json",
+      "refused": true
+    },
+    {
+      "case": "missing-new-payload",
+      "refused": true
+    },
+    {
+      "case": "missing-new-archive",
+      "refused": true
+    },
+    {
+      "case": "unknown-extra-top-level",
+      "refused": true
+    },
+    {
+      "case": "actual-offline:src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "accepted": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "changed-owner:src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "missing-actual-bytes:src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "changed-actual-bytes:src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "actual-offline:src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "accepted": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "changed-owner:src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "missing-actual-bytes:src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "changed-actual-bytes:src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "actual-offline:src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "accepted": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "changed-owner:src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "missing-actual-bytes:src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "changed-actual-bytes:src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "actual-offline:src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "accepted": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "changed-owner:src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "missing-actual-bytes:src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "changed-actual-bytes:src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "actual-offline:src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "accepted": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "missing-selected-pin:src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "changed-owner:src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "missing-actual-bytes:src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "changed-actual-bytes:src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/pages.pdf",
+      "refused": true
+    },
+    {
+      "case": "unlisted-current-payload",
+      "refused": true
+    },
+    {
+      "case": "exact-d85-owner-successor",
+      "accepted": true
+    },
+    {
+      "case": "missing-d85-pin:src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "changed-d85-bytes:src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "refused": true
+    },
+    {
+      "case": "missing-d85-pin:workflows/reviews/missal-reader-resume-2026-11-13/d85-digitizer-notice/root-adoption.json",
+      "refused": true
+    },
+    {
+      "case": "changed-d85-bytes:workflows/reviews/missal-reader-resume-2026-11-13/d85-digitizer-notice/root-adoption.json",
+      "refused": true
+    }
+  ],
+  "canonical_writes": false,
+  "current_input_map_sha256": "e21b39c08055fceee7ef3172e486a0c151b1e14d3eeb95e49c9aefa112330861",
+  "network_fetches": 0,
+  "metadata_only_success": false,
+  "fixture_derived": false
+}

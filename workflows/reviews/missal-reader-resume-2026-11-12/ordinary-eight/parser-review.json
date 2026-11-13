@@ -1,0 +1,357 @@
+{
+  "schema": "triptych-explicit-review-projection/v1",
+  "raw_input": {
+    "path": ".scratch/roman-sources/ordinary-eight-parser-review/review.json",
+    "sha256": "59169d741bb9bb577dbe8f131374f0907ef10aaf30d012422d0d80b165142f23",
+    "bytes": 18516
+  },
+  "projection": {
+    "selection": "All fields of the eight-only receipt.",
+    "path_transformation": "Remove exactly the active repository absolute prefix from string values. Preserve all other content; this projection is not the original raw receipt.",
+    "raw_receipt_unchanged": true
+  },
+  "record": {
+    "blocking_code_findings": [],
+    "canonical_mutations": false,
+    "checks": {
+      "english_and_frames_unchanged": 200,
+      "exact_changed_keys": [
+        "praeparatio/confiteor-sacerdotis",
+        "praeparatio/indulgentiam",
+        "oblatio/suscipe-sancte-pater",
+        "oblatio/in-spiritu-humilitatis",
+        "oblatio/ne-perdas-cum-impiis",
+        "canon/supplices",
+        "canon/per-quem",
+        "communio/agnus-dei"
+      ],
+      "new_source_turns": [
+        {
+          "key": "praeparatio/confiteor-sacerdotis",
+          "text_sha256": "d2b373b0c0e42f239a6bd25e522757ee2abea5c4fbb97de73c5ed90867faef5c",
+          "turns": [
+            {
+              "action": null,
+              "dialogue_role": null,
+              "key": "priest-1",
+              "printed_marker": null,
+              "speaker": "priest",
+              "text": "Confiteor Deo omnipotenti, beatae Mariae semper Virgini, beato Michaeli Archangelo, beato Joanni Baptistae, sanctis Apostolis Petro et Paulo, omnibus Sanctis, et vobis, fratres: quia peccavi nimis cogitatione, verbo et opere: mea culpa, mea culpa, mea maxima culpa. Ideo precor beatam Mariam semper Virginem, beatum Michaelem Archangelum, beatum Joannem Baptistam, sanctos Apostolos Petrum et Paulum, omnes Sanctos, et vos, fratres, orare pro me ad Dominum Deum nostrum."
+            }
+          ]
+        },
+        {
+          "key": "praeparatio/indulgentiam",
+          "text_sha256": "bf36bbded7b1e4c8a5d04e028d86e538a79aacc965d5f9a9a8128a7c15e13afa",
+          "turns": [
+            {
+              "action": null,
+              "dialogue_role": null,
+              "key": "priest-1",
+              "printed_marker": null,
+              "speaker": "priest",
+              "text": "Indulgentiam, absolutionem, et remissionem peccatorum nostrorum tribuat nobis omnipotens et misericors Dominus."
+            },
+            {
+              "action": null,
+              "dialogue_role": "response",
+              "key": "response-1",
+              "printed_marker": "R.",
+              "speaker": null,
+              "text": "R. Amen."
+            }
+          ]
+        },
+        {
+          "key": "oblatio/suscipe-sancte-pater",
+          "text_sha256": "1e69367abaffaaf79bb3cb2c8062eb15d442b48ecbd98ab6572b54727bf32a77",
+          "turns": [
+            {
+              "action": null,
+              "dialogue_role": null,
+              "key": "priest-1",
+              "printed_marker": null,
+              "speaker": "priest",
+              "text": "Suscipe, sancte Pater, omnipotens aeterne Deus, hanc immaculatam hostiam, quam ego indignus famulus tuus offero tibi Deo meo vivo, et vero, pro innumerabilibus peccatis, et offensionibus, et negligentiis meis, et pro omnibus circumstantibus, sed et pro omnibus fidelibus christianis vivis atque defunctis: ut mihi et illis proficiat ad salutem in vitam aeternam. Amen."
+            }
+          ]
+        },
+        {
+          "key": "oblatio/in-spiritu-humilitatis",
+          "text_sha256": "caddeca3485b5d9ec6bdd24ead55031c8324e078aebdb590e4d47d5ed0478c89",
+          "turns": [
+            {
+              "action": null,
+              "dialogue_role": null,
+              "key": "priest-1",
+              "printed_marker": null,
+              "speaker": "priest",
+              "text": "In spiritu humilitatis, et in animo contrito suscipiamur a te, Domine: et sic fiat sacrificium nostrum in conspectu tuo hodie, ut placeat tibi, Domine Deus."
+            }
+          ]
+        },
+        {
+          "key": "oblatio/ne-perdas-cum-impiis",
+          "text_sha256": "fc1e62afd8959a0634ac20e4776ae9081493b698e5484b2bc1259feddff763ec",
+          "turns": [
+            {
+              "action": null,
+              "dialogue_role": null,
+              "key": "priest-1",
+              "printed_marker": null,
+              "speaker": "priest",
+              "text": "Ne perdas cum impiis, Deus, animam meam, et cum viris sanguinum vitam meam:"
+            }
+          ]
+        },
+        {
+          "key": "canon/supplices",
+          "text_sha256": "1ffb91d9ba3431dec455d1dc419af260ed709bee94398c2cb3bd02c0e65f06b5",
+          "turns": [
+            {
+              "action": null,
+              "dialogue_role": null,
+              "key": "priest-1",
+              "printed_marker": null,
+              "speaker": "priest",
+              "text": "Supplices te rogamus, omnipotens Deus: jube haec perferri per manus sancti Angeli tui in sublime altare tuum, in conspectu divinae majestatis tuae: ut quotquot, ex hac altaris participatione sacrosanctum Filii tui, Cor✠pus, et San✠guinem sumpserimus, omni benedictione caelesti et gratia repleamur. Per eumdem Christum Dominum nostrum. Amen."
+            }
+          ]
+        },
+        {
+          "key": "canon/per-quem",
+          "text_sha256": "48bce51c0effd6e1c18ad95efae8bf5d62bba84dbec687c4950443ce9ccc0478",
+          "turns": [
+            {
+              "action": null,
+              "dialogue_role": null,
+              "key": "priest-1",
+              "printed_marker": null,
+              "speaker": "priest",
+              "text": "Per quem haec omnia, Domine, semper bona creas, sancti✠ficas, vivi✠ficas, bene✠dicis, et praestas nobis."
+            }
+          ]
+        },
+        {
+          "key": "communio/agnus-dei",
+          "text_sha256": "74ff79d24a96e0a43f5d9385d3f8f7fa87cfb64a61da05acd827da18da0996b9",
+          "turns": [
+            {
+              "action": null,
+              "dialogue_role": null,
+              "key": "priest-1",
+              "printed_marker": null,
+              "speaker": "priest",
+              "text": "Agnus Dei, qui tollis peccata mundi: miserere nobis.\nAgnus Dei, qui tollis peccata mundi: miserere nobis.\nAgnus Dei, qui tollis peccata mundi: dona nobis pacem."
+            }
+          ]
+        }
+      ],
+      "no_declaration_calendars": [
+        {
+          "calendar": "roman-1962",
+          "output_sha256": "0414682f8ce7e8dd8275abba869d86e3f2d2f27c2c3ec91f5b4914ece34d8111",
+          "unchanged": true
+        },
+        {
+          "calendar": "roman-pre-1955",
+          "output_sha256": "3644d09e6a6080970303e82cc126f913c051d90fde507db487a5ed0768b1fdce",
+          "unchanged": true
+        },
+        {
+          "calendar": "postconciliar",
+          "output_sha256": "1eeafa1d5f4beab8f2bfaaed701d32788edeec60c7d01e2878eef86c016a5e23",
+          "unchanged": true
+        }
+      ],
+      "refusal_cases": 41,
+      "refused": 41,
+      "unexpected_acceptance": 0,
+      "v2_hash_checks": [
+        {
+          "body_sha256": "d2b373b0c0e42f239a6bd25e522757ee2abea5c4fbb97de73c5ed90867faef5c",
+          "key": "praeparatio/confiteor-sacerdotis",
+          "source_passage_sha256": "615008160011e26aa4fc126a9490f8e449fe91f05b282ae41186405ac1cc9438",
+          "source_payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "target_passage_sha256": "008359295bcc0d80a85af94972d46c2be414bb603e69e99ae3aca371e673e392"
+        },
+        {
+          "body_sha256": "bf36bbded7b1e4c8a5d04e028d86e538a79aacc965d5f9a9a8128a7c15e13afa",
+          "key": "praeparatio/indulgentiam",
+          "source_passage_sha256": "09f223ce0072a1a36c6586d13724a2a90f17ba9c76b0426df7970d0c096c4c7c",
+          "source_payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "target_passage_sha256": "008359295bcc0d80a85af94972d46c2be414bb603e69e99ae3aca371e673e392"
+        },
+        {
+          "body_sha256": "1e69367abaffaaf79bb3cb2c8062eb15d442b48ecbd98ab6572b54727bf32a77",
+          "key": "oblatio/suscipe-sancte-pater",
+          "source_passage_sha256": "133fdc29a381af75cef1020da3e4b0d121f67991c1141ada6f9f33ef51c9e4d8",
+          "source_payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "target_passage_sha256": "d671bb9f9a06f0e80f56544cff30ad555e122a9d0b33c06d72d3ce1bbccfb8a5"
+        },
+        {
+          "body_sha256": "caddeca3485b5d9ec6bdd24ead55031c8324e078aebdb590e4d47d5ed0478c89",
+          "key": "oblatio/in-spiritu-humilitatis",
+          "source_passage_sha256": "cbdd8ad736f2415600495b231f1d8ea6f1994c558b6d4f02045e2de2d92f0ee3",
+          "source_payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "target_passage_sha256": "d671bb9f9a06f0e80f56544cff30ad555e122a9d0b33c06d72d3ce1bbccfb8a5"
+        },
+        {
+          "body_sha256": "fc1e62afd8959a0634ac20e4776ae9081493b698e5484b2bc1259feddff763ec",
+          "key": "oblatio/ne-perdas-cum-impiis",
+          "source_passage_sha256": "d491cded90c57b1ee285fc319d76a3c41231875143fa17d94062eba4bb48326a",
+          "source_payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "target_passage_sha256": "d671bb9f9a06f0e80f56544cff30ad555e122a9d0b33c06d72d3ce1bbccfb8a5"
+        },
+        {
+          "body_sha256": "1ffb91d9ba3431dec455d1dc419af260ed709bee94398c2cb3bd02c0e65f06b5",
+          "key": "canon/supplices",
+          "source_passage_sha256": "fe23c64afdb7507210a7f8f2f35c8a8c2716548f4ebd5e6b8f72ecf686196532",
+          "source_payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "target_passage_sha256": "ce3ffbd65ba42ffde91efde8b052e919f19d359c76fad50cc6d55e788b2421cd"
+        },
+        {
+          "body_sha256": "48bce51c0effd6e1c18ad95efae8bf5d62bba84dbec687c4950443ce9ccc0478",
+          "key": "canon/per-quem",
+          "source_passage_sha256": "4991ba0d81a88b3be608632070c962557214b6857b54aede5ddf1ed8587cc5ca",
+          "source_payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "target_passage_sha256": "ce3ffbd65ba42ffde91efde8b052e919f19d359c76fad50cc6d55e788b2421cd"
+        },
+        {
+          "body_sha256": "74ff79d24a96e0a43f5d9385d3f8f7fa87cfb64a61da05acd827da18da0996b9",
+          "key": "communio/agnus-dei",
+          "source_passage_sha256": "e4dd83c6b8e95fd5282ed1225060932f9b28d578a46f035688cdee7649c291b5",
+          "source_payload_sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+          "target_passage_sha256": "fe002c48bdf6973454746b21b3a00a068883eedd6ef9824d008e4766dde7edc9"
+        }
+      ]
+    },
+    "date": "2026-11-12",
+    "decision": "accept-parser-proposal-for-the-eight-declared-transitions-subject-to-existing-source-and-integration-gates",
+    "findings": [
+      {
+        "area": "old owner/witness/artifact/body",
+        "reason": "Each declaration selects one existing emitted spoken element. The old witness and artifact must match the section Latin source, and the unique old Latin translation must match witness plus exact post-cut UTF-8 body SHA256. Missing bodies cannot become replacements; additional_texts applies only after this guard. Old Latin element provenance cannot be inherited onto the new source.",
+        "result": "pass"
+      },
+      {
+        "area": "new source and target relationship",
+        "reason": "New witness/artifact/column and one distinct raw-artifact selector are explicit; language-specific witness rights and registered artifact membership remain controlling. All eight actual payload/body/source-passage/target-passage references match the v2 declarations. Existing relation_of enforces relation/collation/word-exact metadata consistency, while source-image review and exact source_epoch admission remain separate.",
+        "result": "pass for exact reviewed inputs"
+      },
+      {
+        "area": "closed schema/identity/language/cycles",
+        "reason": "Unknown replacement/replaces/source/turn fields, duplicate targets/selectors, nonexistent or cross-section targets, explicit cycle/lang fields, inline-section use, wrong-language witness and malformed declarations refuse. Selection joins raw artifact rows, not recursively resolved Ordinary elements; a self-referential Ordinary key is refused as an absent artifact key.",
+        "result": "pass"
+      },
+      {
+        "area": "turn ownership and conditional spans",
+        "reason": "The new Latin row is rebuilt through side_text and structured_turns from the new artifact row sequence, requiring its own nonempty turns_basis and at least one spoken turn. The partition must exactly cover selected sequence in order; duplicate/missing rows, old offset fields and invented printed markers refuse. Conditional spans are validated after replacement. The parser does not independently infer whether a declared valid speaker is historically correct; the source-review lane owns that finding.",
+        "result": "pass"
+      },
+      {
+        "area": "English/frame preservation",
+        "reason": "All200 emitted occurrences retain their full English translations, English coverage and element frames. Exactly eight Latin elements change. With no Latin replacement declarations, complete output is identical for Roman1962, Roman pre1955 and postconciliar calendars.",
+        "result": "pass"
+      },
+      {
+        "area": "v2 metadata successor",
+        "reason": "Parser patch, all eight prayer bodies and turn arrays are unchanged. Reassembly changes only canon/per-quem Latin.note from the corrected rubric description; no English or frame change.",
+        "result": "pass"
+      }
+    ],
+    "inherited_helper_ast_unchanged": [
+      "payload_rows",
+      "relation_of",
+      "side_text",
+      "structured_turns",
+      "artifact_english_replacements"
+    ],
+    "inherited_nonblocking_trust_boundaries": [
+      {
+        "disposition": "Not introduced by this patch; do not describe the parser as checking new payload digests. Retain full source-library validation and exact v2 new-body/source_epoch checks before adoption/publication.",
+        "finding": "Direct calendar_structure accepts changed new payload bytes even when its registered manifest SHA remains unchanged, because unchanged payload_rows reads the TSV without digest verification. The replacement guard pins the old body, not the new payload bytes.",
+        "id": "payload-integrity-external"
+      },
+      {
+        "disposition": "Not introduced by this patch; independent source review and exact owner transition admission remain necessary. This review verified that the actual eight target IDs/files/hashes exist and match their declarations, without re-reading images.",
+        "finding": "Direct calendar_structure accepts a nonempty but nonexistent collation_finding identifier with collated/word-exact metadata. Unchanged relation_of checks metadata consistency rather than resolving or reading the target passage.",
+        "id": "target-finding-resolution-external"
+      }
+    ],
+    "integration_conflict": {
+      "other_candidate_parser_sha256": "53fcdc75cccc0001b12045bf73fb9726ecc8076a2150da545b74c13a30f2e83f",
+      "other_patch": {
+        "path": ".scratch/dedication-context/ferial-frame/parser/tools-mass-ordinary.patch",
+        "sha256": "72312ed5955463d6afb2d597e60fba7329b5a5b5cf0a520164d9ee33018c43f3"
+      },
+      "overlapping_original_context_ranges": [],
+      "required_disposition": "Root must merge the reviewed hunks rather than replace the whole parser, then rerun combined Ordinary/source/OSP tests and record the final composite runtime hash. No merge or activation performed by this reviewer.",
+      "same_canonical_owner": "tools/mass-ordinary",
+      "semantic_overlap": "Both modify calendar_structure. OSP adds conditions/proper-rite slots and source-bearing inserted cues; this proposal adds Latin replacement guards and inline-section rejection. The OSP owner reports no replacement-helper changes.",
+      "textual_overlap": false
+    },
+    "reproduction": {
+      "results": {
+        "path": ".scratch/roman-sources/ordinary-eight-parser-review/checks.json",
+        "sha256": "77ac1bc55275afe00a9ff462e7f916d7e6a8201ac9eb8372b1e2003e9241dcf9"
+      },
+      "script": {
+        "path": ".scratch/roman-sources/ordinary-eight-parser-review/review_checks.py",
+        "sha256": "792a9fdb265da5e86e6dbb8e98bb38c56bf736a0492f8304256b40981881fba0"
+      },
+      "v2_and_boundary_script": {
+        "path": ".scratch/roman-sources/ordinary-eight-parser-review/v2_and_boundaries.py",
+        "sha256": "796e760136c2cd2c900f573af7f217c6dbd2cfaf20542353a930303f649d573e"
+      },
+      "v2_results": {
+        "path": ".scratch/roman-sources/ordinary-eight-parser-review/v2-checks.json",
+        "sha256": "6cbdcce85de9c09dbaf213f1cc5ca8bb2090b4c1afe0ae9202f45ebc7b44371e"
+      }
+    },
+    "required_adoption_gates": [
+      "Use the corrected v2 source owner and declarations, guarded by the current exact owner preimage.",
+      "Retain the independent source-image review and Root explicit acceptance.",
+      "Admit exactly these eight existing-positive Latin transitions through source_epoch; do not conflate them with prior additions/replacements.",
+      "Validate the complete source library and exact new payload/body/proof hashes after integration.",
+      "Recheck all English/frame invariants and OSP behavior on the merged parser; renew the runtime hash for source_epoch."
+    ],
+    "reviewed_inputs": {
+      "parser_before": {
+        "path": "tools/mass-ordinary",
+        "sha256": "64a40ac97bae51378127556029be33c37d7a34cc05d93f756ed279b48648bb14"
+      },
+      "parser_candidate": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/parser/mass-ordinary",
+        "sha256": "783cd75298c2eed14dcfd023e4dbe5a640d9688bb49fab52966dfa14234526ae"
+      },
+      "patch": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/parser/mass-ordinary.patch",
+        "sha256": "d518515b2e8878a448ddd5d53a0b3426a8a93a83a2187d1f1c370dfbefba4ff4"
+      },
+      "v1_handoff": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/handoff.json",
+        "sha256": "85d72649979a50f8455affe05d34174ecd38707facad2b3de3c8c5cbfb1850d4"
+      },
+      "v2_handoff": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/handoff.json",
+        "sha256": "d74249f804f7ed14062fc63f49640780dfbadbe983b59066c2c8296ebb729695"
+      },
+      "v2_metadata_successor": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/hash-transitions.json",
+        "sha256": "409d15e587a83a800d213fba66bfe9e6231cf977b30238c3675bdf21df752312"
+      },
+      "v2_owner": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+        "sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322"
+      },
+      "v2_transitions": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/positive-transition-declarations.json",
+        "sha256": "479af2166863be876ae6d23b85f4c2c9a073de6da159c449d90f46677895bb63"
+      }
+    },
+    "schema": "triptych-independent-ordinary-latin-parser-review/v1",
+    "scope": "Independent code/guard review of the supplied parser patch and exact eight source-bound owner transitions. No source-page image review, canonical adoption, merged OSP implementation, or new publication authority is claimed.",
+    "source_authority_activated": false
+  }
+}

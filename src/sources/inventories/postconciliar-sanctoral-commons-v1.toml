@@ -6,7 +6,7 @@
 
 inventory_schema = 1
 record_type = "postconciliar-sanctoral-commons-recovery"
-recorded_on = "2026-10-21"
+recorded_on = "2026-11-13"
 calendar = "postconciliar"
 target_edition = "Missale Romanum, editio typica tertia, reimpressio emendata 2008"
 calendar_path = "src/sources/calendars/postconciliar/propers.yaml"
@@ -31,6 +31,11 @@ current calendar records, but this recovery table does not independently
 register or re-verify those remote annexes. Every row therefore remains
 resolvable = false and target_formulary_body_authority = false. The table must
 never be consumed as takes_from/common_from data.
+
+The separately identified 2019 Loreto Missal annex is recorded under its own
+registered witness, not as an Antiphonary or an Ordo heading. Its broader
+Common referral is preserved while the stored pointer records only the
+antiphon subset. No form, oration, body or default is selected.
 """
 
 wrong_edition_rule = """
@@ -41,21 +46,22 @@ on the same row and it never licenses the antecedent as target-Missal evidence.
 """
 
 [counts.rows]
-rows = 167
+rows = 168
 ordo_1981 = 144
 official_additiones = 4
+official_missal_annexes = 1
 antiphonary = 19
 alternatives = 88
 with_subselection = 87
 wrong_edition_evidence = 8
 
 [counts.sections]
-marian = 7
+marian = 8
 sanctoral = 160
 
 [counts.category_appearances]
 "dedication-of-a-church" = 0
-"blessed-virgin-mary" = 8
+"blessed-virgin-mary" = 9
 "martyrs" = 47
 "pastors" = 92
 "doctors-of-the-church" = 31
@@ -73,6 +79,12 @@ artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiph
 artifact_sha256 = "e6b82741acc77fb5e0d7c887813f6f2652b4ec088abc8526f5c77320e9762aca"
 storage = "remote"
 role = "Common directions for antiphons only; no orations or whole formularies"
+
+[witnesses.loreto-2019]
+artifact_id = "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926"
+artifact_sha256 = "9c6e192689f8f226eb41da1b04fa52b9aac12b708a1e858443d5f87e241daff2"
+storage = "remote"
+role = "Official 2019 Missal Common direction; recorded antiphon subset only, with broader lawful choices unresolved; no body authority"
 
 [[rows]]
 key = "postconciliar-common.saint-raymond-penyafort-priest"
@@ -3527,6 +3539,27 @@ artifact_page = 149
 printed_page = 141
 categories = ["saints-and-holy-women"]
 subselections = ["For One Saint"]
+alternatives = false
+wrong_edition_evidence = false
+target_formulary_body_authority = false
+resolvable = false
+
+[[rows]]
+key = "postconciliar-common.our-lady-loreto"
+mass_key = "our-lady-loreto"
+registry = "pc-12-10"
+date = "12-10"
+section = "marian"
+celebration = "Our Lady of Loreto"
+basis = "official-missal-annex"
+evidence_scope = "missal-antiphons"
+source = "loreto-2019"
+source_artifact_id = "artifact.holy-see.inscription-beatae-mariae-virginis-de-loreto-2019.vatican-bulletin-2019-10-31.official-html-9c6e1926"
+source_locus = "Official2019 Latin Missale Romanum annex:10December; De Communi beatae Mariae Virginis; entire Common direction precedes ownCollect"
+source_referral = "De Communi beatae Mariae Virginis"
+source_referral_scope = "Broader Missal direction; this stored pointer records only its antiphon subset. Remaining lawful choices are unresolved."
+categories = ["blessed-virgin-mary"]
+subselections = []
 alternatives = false
 wrong_edition_evidence = false
 target_formulary_body_authority = false

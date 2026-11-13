@@ -396,8 +396,10 @@
     const wantsOrdinary = requestedMode === 'missal' ||
       parsed.present.indexOf('ordinary-lang') >= 0 ||
       (parsed.variantKeys || []).some(function (key) { return parsed.present.indexOf(key) >= 0; });
+    // Source-bound Proper rites remain readable without an Ordinary frame.
+    const loadsOrdinary = wantsOrdinary || missal === 'roman-1962';
     let ordinary = null;
-    if (wantsOrdinary) {
+    if (loadsOrdinary) {
       const entry = (manifests.ordinaryIndex.calendars || []).find(function (row) {
         return row.calendar === missal;
       });

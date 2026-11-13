@@ -1,0 +1,84 @@
+{
+  "schema": "triptych-olm-historical-common-heading-review/v1",
+  "reviewed_on": "2026-11-13",
+  "reviewer": "/root/modern_common_appointments/common_universe/olm_dedication_mary",
+  "scope": "One exact historical Lectionary entry, independently re-viewed for a semantic recovery contract; no new appointment or body authority.",
+  "source": {
+    "artifact_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+    "source_path": ".scratch/modern-partition-nonseasonal/olm1981.pdf",
+    "sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+    "bytes": 21487058,
+    "source_record": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/artifacts/internet-archive-scan-pdf-ed4bc14e/artifact.toml",
+    "artifact_page": 352,
+    "printed_page": 298,
+    "image_path": ".scratch/modern-common-appointments/common-recovery-martha-successor/olm-source-review/rasters/.scratch/modern-common-appointments/common-recovery-martha-successor/olm-source-review/olm-352/pages/page-1.png",
+    "image_sha256": "e9e44639c80a8633c583ca61a24232c9d514e52c4c764aa8ed433f81ef415ff4",
+    "image_review": "Direct complete-page image review; PDF extracted with pdfseparate and rendered by tools/pdf-review from the existing exact held PDF. No new download or OCR inference."
+  },
+  "verified_facts": {
+    "section_heading": "PROPRIUM DE SANCTIS",
+    "entry_number": 607,
+    "date_heading": "Die 29 iulii",
+    "civil_month_day": "07-29",
+    "title": "S. Marthae",
+    "rank_marker_as_printed": "mo",
+    "common_heading": "De Communi sanctarum.",
+    "proper_gospel_cue": "Evangelium huius memoriae est proprium.",
+    "sequence": "Entry 607 title/date, proper-Gospel instruction, Common heading, then the four reading roles; the Gospel role prints two alternatives.",
+    "heading_scope": "The Common heading is inside OLM 1981 entry 607 for Saint Martha. It is neither a Missal Common referral nor an Hours heading.",
+    "entry_boundary_controls": {
+      "preceding_entry": 606,
+      "preceding_date": "Die 26 iulii",
+      "following_entry": 608,
+      "following_date": "Die 30 iulii"
+    },
+    "common_option_cross_references": [
+      {
+        "role": "Lectio I",
+        "raw_citation": "1 Io 4, 7-16",
+        "common_number": "740,17"
+      },
+      {
+        "role": "Ps. resp.",
+        "raw_citation": "Ps 33, 2-3. 4-5. 6-7. 8-9. 10-11",
+        "common_number": "739,5"
+      },
+      {
+        "role": "Alleluia",
+        "raw_citation": "Io 8, 12",
+        "common_number": "741,8"
+      }
+    ],
+    "proper_gospel_alternatives": [
+      {
+        "option": 1,
+        "raw_citation": "Io 11, 19-27"
+      },
+      {
+        "option": 2,
+        "raw_citation": "Lc 10, 38-42",
+        "printed_connector": "Vel"
+      }
+    ]
+  },
+  "successor_boundary": {
+    "historical_identity": "The 1981 title is Saint Martha alone; it is not the later three-saint title.",
+    "consulted_metadata_passage": "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.book-boundaries",
+    "consulted_metadata_path": ".scratch/modern-common-appointments/martha-2021-metadata/package/src/sources/works/catholic-church/roman-calendar-martha-mary-lazarus-additions-2021/editions/2021-official-latin-decree-and-annex/passages/book-boundaries.toml",
+    "qualification": "The parent-owned 2021 book-boundaries passage says the annex supplies the new Lectionary 607 title and memorial designation only; its Common referral belongs to the Hours. This review independently confirms the 1981 Common direction as qualified historical Lectionary evidence and does not infer a modern Missal equivalence or a newly enacted 2021 reading course.",
+    "2021_annex_independently_image_reviewed_here": false
+  },
+  "validation": {
+    "exact_source_sha256_match": true,
+    "printed_page_and_entry_read_directly": true,
+    "all_entry607_content_on_one_page": true,
+    "additional_control_page_needed": false,
+    "uncertainties": []
+  },
+  "restrictions": [
+    "No Scripture text, prayer text, Gospel incipit or descriptive pericope title is reproduced.",
+    "No modern Common selection, default, takes_from edge, English rendering or body provenance is established.",
+    "The source PDF and raster remain restricted scratch; only bounded metadata is reported.",
+    "No canonical files or other lane files changed."
+  ]
+}

@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.semen-source-local-latin-20261112"
+edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+artifact_type = "normalized-text"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The identified printed book was published by Friedrich Pustet in 1888. Its 1888 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label."
+rights_jurisdiction = "United States"
+derived_from = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+transformation = "Mechanical normalization of the entire independently public-domain Pustet1888 antiphon: remove chant asterisk; remove acute stress accents on invenit, manebit, aeternum; expand ae ligature; change colon after Christus to semicolon. Join printed wraps as spaces. No lexical word added, omitted or substituted. The complete normalized old body separately matches each inspected OLM1981 recipient. No OLM page payload retained."
+retrieved = "2026-11-12"
+sha256 = "7d4de76a5d4ec72697821f5fad118df11e19aa42d14d15126087f4df74a73ec6"
+byte_size = 88
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/semen-source-local-latin-20261112/body.txt"
+indexable = true
+encoding = "utf-8"
+

@@ -1,0 +1,310 @@
+{
+  "schema": "triptych-selected-review-projection/v1",
+  "state": "faithful-nine-only-projection-of-existing-review-not-new-review-or-adoption",
+  "projection_scope": "Independent original-page source review, nine exact cases only",
+  "original_review": {
+    "path": ".scratch/roman-sources/next-twelve-source-review/review.json",
+    "sha256": "84002ae39a02daaa7a1470f3dff67041067092e4ce21095b4b05e7efb668587b"
+  },
+  "reviewer": "/root/roman_sources/six_source_review",
+  "reviewed_at": "2026-11-12",
+  "selection_rule": "Retain exactly the nine identities in the bound actual Root merits preparation. Original case objects are copied without edits; excluded-case bodies and unrelated evidence packets are not included.",
+  "selected_cases": [
+    {
+      "original_json_pointer": "/cases/0",
+      "original_case_canonical_sha256": "246046c63a7c1a99be6dbf435382f04113f1ec373e7b18a590ea07341d70429a",
+      "case": {
+        "case": "good-friday-first-after-communion",
+        "identity": [
+          "good-friday",
+          "main",
+          "First Prayer after Communion",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18",
+        "English_sha256_bound_only": "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528",
+        "complete_proposed_object_hashes": {
+          "new_proper": "cfe47d637caf1c985ec196406f81d38b195fb2ec706e9b745d5b7396460832e4",
+          "latin_provenance": "cadd1b6e4ce5170710fdf4a11ec661ea5a2c40f66fb274d2973a2f0ff04a0845",
+          "english_entry": "ef9c5f0fb671b5ae6baea6434c6f2b802481a01d4599c5c0bbdaff9a304f9da5"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF262 / printed181, no.968: entire First Prayer after Communion through R. Amen; 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Wilson1894 printed37/PDF130, entire Super populum tuum prayer and notes36–37 on printed38/PDF131; alternate entire prayer printed18/PDF111 and linked note6 printed21/PDF114.",
+          "Pustet1862 printed135/PDF221: complete conventional same-Christ conclusion and response in full surrounding prayer, genuinely reused from this reviewer’s frozen six-case receipt."
+        ],
+        "verified_comparison": "Target reorders Domine/quaesumus, adds qui passionem et mortem Filii tui devota mente recoluit, retains the five old petitions, and prints the full same-Christ conclusion/response. Wilson p37 has no new relative clause; p18 brackets indulgentia veniat, and p21 apparatus records omission in V and restoration from other witnesses. The apparatus is not silently promoted to uniform manuscript evidence.",
+        "strongest_whole_expression_contrary": "The inserted relative clause adds a specific Passion/death commemoration rationale to the complete prayer and changes its liturgical application. Old petitions plus an old conclusion do not establish this revised whole as an old exact witness.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    },
+    {
+      "original_json_pointer": "/cases/1",
+      "original_case_canonical_sha256": "a81f86e72b7fa971dc3877dd89af9c791dd3c7d515d1587d4e59ef6b55ccd6a3",
+      "case": {
+        "case": "good-friday-second-after-communion",
+        "identity": [
+          "good-friday",
+          "main",
+          "Second Prayer after Communion",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d",
+        "English_sha256_bound_only": "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84",
+        "complete_proposed_object_hashes": {
+          "new_proper": "5adb7bfceeb40b590fc234491ad009bb2ffa0c058c9291e4f929fac05c3f755a",
+          "latin_provenance": "32cc1843e05943b94f19225da47b0c4522518a1490e3c71624b847efa3080687",
+          "english_entry": "b843e081a15ab6826c1e41129f80a5a5ff18bdc09be728562a11c089104bdf72"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF262 / printed181, no.969: entire Second Prayer after Communion through R. Amen; 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Wilson1894 printed62/PDF155, entire first Feria IV Hebdomada VI prayer; printed63/PDF156 apparatus continuation.",
+          "Pustet1862 printed135/PDF221 conventional conclusion/response reused as above."
+        ],
+        "verified_comparison": "Target replaces sempiterne with et misericors, adds et morte, changes reparas to reparasti and opera to operam, and recasts in huius celebritate mysterii as huius mysterii participatione. The old prayer concludes Per.; target prints the full conventional ending and response. Note28 on the adjacent page belongs to the following Praesta prayer, not this unit.",
+        "strongest_whole_expression_contrary": "The cumulative tense, mercy, death and participation revisions change the meaning and framing of the entire petition; they are more than typography or an unchanged ancient body.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    },
+    {
+      "original_json_pointer": "/cases/2",
+      "original_case_canonical_sha256": "f37c3f26a2f718f06b048d3b1183097c6934b70d4df2ade37bff4eb3de1b61ee",
+      "case": {
+        "case": "pontiff-altera-collect-singular",
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Collect (Altera oratio)",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5",
+        "English_sha256_bound_only": "c43d59ab7ef49dd5f9b9af4952818cdedbf90b63cf789d10cc1e4db1a72fef72",
+        "complete_proposed_object_hashes": {
+          "new_proper": "2a9eb4623a02a367223518e4d25065f0059fc467e0bfc89f691872508bd8c80e",
+          "latin_provenance": "071c4c0e18f641a0fba1e0c989823f1b11fa74142a73dd87b0a81fbda3be5513",
+          "english_entry": "3fcce2660519e02407e78ce4f219ba4490a041ed72fdace6238fbdb9308f82aa"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF810 / printed[2], no.4178: entire alternative Collect including optional parentheses and literal Per Dominum.; 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Feltoe1896 printed44/PDF68, June XVII Item alia, complete prayer lines11–13; printed45/PDF69, end of XVIII Item alia, complete Protege prayer lines9–10. Both genuinely reused from this reviewer’s six-case receipt.",
+          "Mame1922 printed599/PDF713, complete Urban Oratio; genuinely reused from the same receipt."
+        ],
+        "verified_comparison": "Target retains the connected Church/foundation/gates/fidelity structure, drops Omnipotens sempiterne, changes apostolica to apostolicae petrae, adds quaesumus and named-saint/title intercession, and replaces nulla recipiat consortia perfidorum with continua securitate muniatur. Protege is thematic formula support, not exact wording. Urban supplies an old intercession example, not this placement or Summo/generic slots. Common prints veritate; Urban prints virtute. The singular optional martyr wording is retained exactly.",
+        "strongest_whole_expression_contrary": "The combined rock specification, saint-mediated intercession and affirmative-security replacement can be an expressive revised whole. Neither an Urban adoption nor the other grammatical number supplies this case’s authority.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    },
+    {
+      "original_json_pointer": "/cases/3",
+      "original_case_canonical_sha256": "b20a0b11802dcf9a0a21acb557f9557a282e7c7d2973a480a75cb078f6c2fb2e",
+      "case": {
+        "case": "pontiff-altera-collect-plural",
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Collect (Altera oratio, in plurali)",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e",
+        "English_sha256_bound_only": "a408bbaeb0aba387aea72db613abff2b6848e6150e8693ae8f6aea5aa9b64ccd",
+        "complete_proposed_object_hashes": {
+          "new_proper": "e7328c8eb1c9857223acc0013e86961ce624db982e9dfeeafb81557e76250550",
+          "latin_provenance": "72475f08a9a75a2693a6fd47a7772c81425ccee6e3e8b0f7131ce78cac0df49e",
+          "english_entry": "55bb9a0a4dd6c2a05b96e104f7167456e1e02d34612f8401ab58e992cbdf56d9"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF810 / printed[2], no.4179: entire alternative Collect including optional parentheses and literal Per Dominum.; 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Feltoe1896 printed44/PDF68, June XVII Item alia, complete prayer lines11–13; printed45/PDF69, end of XVIII Item alia, complete Protege prayer lines9–10. Both genuinely reused from this reviewer’s six-case receipt.",
+          "Mame1922 printed599/PDF713, complete Urban Oratio; genuinely reused from the same receipt."
+        ],
+        "verified_comparison": "Target retains the connected Church/foundation/gates/fidelity structure, drops Omnipotens sempiterne, changes apostolica to apostolicae petrae, adds quaesumus and named-saint/title intercession, and replaces nulla recipiat consortia perfidorum with continua securitate muniatur. Protege is thematic formula support, not exact wording. Urban supplies an old intercession example, not this placement or Summo/generic slots. Common prints veritate; Urban prints virtute. The plural forms are separately printed and separately hash-bound.",
+        "strongest_whole_expression_contrary": "The combined rock specification, saint-mediated intercession and affirmative-security replacement can be an expressive revised whole. Neither an Urban adoption nor the other grammatical number supplies this case’s authority.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    },
+    {
+      "original_json_pointer": "/cases/4",
+      "original_case_canonical_sha256": "fbb3fe74400298f6f1caed1f04e77c20eb07ec12b3a734cb138a13a12619688b",
+      "case": {
+        "case": "pontiff-altera-secret",
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Secret (Altera secreta)",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86",
+        "English_sha256_bound_only": "a0e9e1cd055d852590e8c62df914e45558f83569d2ff051c9ceca20cc3ab7a3a",
+        "complete_proposed_object_hashes": {
+          "new_proper": "e33b179beb6c99824d7441efeb09673dd692e11e32ddd0d5298dd8c3424e318c",
+          "latin_provenance": "b7d676480d1a68b5ca12c3f7b188d8070125d28cf256e6d96189d9da82a376a1",
+          "english_entry": "e12ce415ece71e5ccb17ba0306bcb98e8f638324a8744c0eea1b8db6c781371b"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF811 / printed[3], no.4188: whole prayer crosses lower left to upper right column and ends literally in unitate.; both columns and complete bounds read at 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Feltoe1896 printed47/PDF71, June XXIII Item alia, complete second prayer lines26–28 plus critical note6.",
+          "Wilson1915 printed140/PDF198, Oratio in tempore belli, complete Alia prayer."
+        ],
+        "verified_comparison": "Feltoe supplies Munera tibi Domine laetantes offerimus in a complete apostolic natal/intercession prayer; its main text has nobis and critical note6 suggests eorum, which is not silently inserted. Wilson supplies the paired faith-integrity/time-tranquillity predicate in an entire wartime prayer. Target converts the offering opening to a relative construction, adds suscipe benignus et praesta and generic intercession, replaces populus tuus with Ecclesia tua, changes exultet to exsultet, omits the old enemy-subduing petition, and joins the two antecedents. Its literal printed conclusion is preserved without expansion.",
+        "strongest_whole_expression_contrary": "The newly selected cross-prayer combination and conversion of a wartime people-petition into a Church offering petition remain meaningful arrangement; old components do not settle the whole.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    },
+    {
+      "original_json_pointer": "/cases/5",
+      "original_case_canonical_sha256": "ae281a01dcfbec1a2596f6e7ecffe768a376662665cb871a4b3831d928eb3370",
+      "case": {
+        "case": "pontiff-altera-postcommunion-singular",
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Postcommunion (Altera postcommunio)",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980",
+        "English_sha256_bound_only": "927b5d3a21074a0c98c877986aa69df09cf917253024971c26bf659c70002de6",
+        "complete_proposed_object_hashes": {
+          "new_proper": "d56d51cb3e2862549f2490cb91e579375213dff8b5359fc01b64a90a985a374b",
+          "latin_provenance": "ce73948fb6a14841ac3dc32467e31b6e534f0c637adff9f4454aeb3bb0496129",
+          "english_entry": "d94a7eb9ad9ac50300846f1aea802b0cb151cfd749e9514478eaad091ca450bb"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF811 / printed[3], no.4191: entire alternative Postcommunion through literal Per Dominum.; 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Feltoe1896 printed129/PDF153, September VI Item alia, entire final Multiplica prayer lines21–23.",
+          "Feltoe1896 printed128/PDF152, September V Item alia continued, entire final Deus dierum prayer lines30–33 plus apparatus."
+        ],
+        "verified_comparison": "Target reorders the Multiplica opening, removes its full per dignum pontificis institutum… petition, inserts generic saint-intercession, and joins the exact old reciprocal pastor/flock ending of Deus dierum. The complete latter prayer already prints nec pastori oboedientia gregis nec gregi desit cura pastoris. Main-text benigne and gregi are retained in the historical unit rather than the note variants. Singular intercessor/title is exact to its own printed target.",
+        "strongest_whole_expression_contrary": "The old antithesis is established, but the joining of two entire source prayers through a new intercessory bridge is still a whole-expression selection/arrangement question.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    },
+    {
+      "original_json_pointer": "/cases/6",
+      "original_case_canonical_sha256": "3eac8698e50acd63c46df36c43bae4ed47089596e5acec5262580fc46ec2b395",
+      "case": {
+        "case": "pontiff-altera-postcommunion-plural",
+        "identity": [
+          "commune-summorum-pontificum",
+          "main",
+          "Postcommunion (in plurali)",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb",
+        "English_sha256_bound_only": "0b114210b02f860463a3d31a346b2abdcdc576efe0d19ed4c1f5d444621ad54f",
+        "complete_proposed_object_hashes": {
+          "new_proper": "cc811bf67f940a533e856f1e1be966e7e9b935a1dcf8888838858281040473e4",
+          "latin_provenance": "62d135941434b1972184f6ad4f40f17d0dce44078ea8c99826c0c04da57784c5",
+          "english_entry": "0d6b3ef418e3afc293ae8dad78de18006c67545a561bc4c54f53f3993f010188"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF811 / printed[3], no.4192: entire alternative Postcommunion through literal Per Dominum.; 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Feltoe1896 printed129/PDF153, September VI Item alia, entire final Multiplica prayer lines21–23.",
+          "Feltoe1896 printed128/PDF152, September V Item alia continued, entire final Deus dierum prayer lines30–33 plus apparatus."
+        ],
+        "verified_comparison": "Target reorders the Multiplica opening, removes its full per dignum pontificis institutum… petition, inserts generic saint-intercession, and joins the exact old reciprocal pastor/flock ending of Deus dierum. The complete latter prayer already prints nec pastori oboedientia gregis nec gregi desit cura pastoris. Main-text benigne and gregi are retained in the historical unit rather than the note variants. Plural intercessors/titles are exact to their own printed target.",
+        "strongest_whole_expression_contrary": "The old antithesis is established, but the joining of two entire source prayers through a new intercessory bridge is still a whole-expression selection/arrangement question.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    },
+    {
+      "original_json_pointer": "/cases/7",
+      "original_case_canonical_sha256": "5263e9997326f9e1afc7fb41ff6f7dec242ea6980a05e32688ce295b734d6e5c",
+      "case": {
+        "case": "assumption-postcommunion",
+        "identity": [
+          "assumptione-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+        "English_sha256_bound_only": "571ec8706ad543253335455e93fd2fe5dbcf16e6084a14fd72778d573b9f5f36",
+        "complete_proposed_object_hashes": {
+          "new_proper": "d8c437b7a08ef62f3fbbcde3b7d620ec5bbf5b8c1bd4b7de376758bb0ebce88b",
+          "english_candidate": "baedd7f2a7989c88ab6059d24c8e4fad460c0fcb4a6b31dbd74cc969b493b629"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF709 / printed628, no.3387: complete Postcommunion through literal Per Dominum.; 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Wilson1915 printed39/PDF97, entire Lent IV Monday Postcommunion.",
+          "Mame1922 printed[13]/PDF1043, entire Holy Shroud Collect.",
+          "Acta Romana III printed550/PDF572, entire 1923 Bellarmine Collect."
+        ],
+        "verified_comparison": "The older complete units separately supply the received-saving-sacraments opening, resurrection-glory ending, and merits/intercession formula. None supplies the entire Marian Assumption application and arrangement. The exact target reads perducamur. AAS42 PDF/printed793–795 corroborates the new Mass and decree dated31 October1950; its official archival OCR reconstruction visibly reads perducantur and is used only for chronology.",
+        "strongest_whole_expression_contrary": "The complete 1950 prayer joins sacramental reception, Mary’s Assumption and the worshippers’ future resurrection in a particular theological progression. No old whole here establishes that arrangement. Ordinary numbered Lasance pages do not date it1945.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    },
+    {
+      "original_json_pointer": "/cases/10",
+      "original_case_canonical_sha256": "5e0d990287b7a099eeed8ad6336225d52acb6ce10f9706d754ec635f0203df2a",
+      "case": {
+        "case": "bellarmine-secret",
+        "identity": [
+          "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "Latin_sha256_utf8_one_terminal_LF": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+        "English_sha256_bound_only": "e52ebe481515425327be38e0eb18351cbb183f82c4c244cc86678dc2022a327e",
+        "complete_proposed_object_hashes": {
+          "new_proper": "b1d010da3ef61435e55e00cecbce931cb081ef333a48bce851346680b24b0dea",
+          "english_candidate": "44f41f8c11bdfffa2a0c6b839faf421988e9e706b8b64ad084c6670dbf8cc898"
+        },
+        "source_factual_verdict": "PASS",
+        "source_factual_errors": [],
+        "target_unit_independently_read": "CMAA PDF611 / printed530, no.2595: complete Secret through literal Per Dominum nostrum.; 200 and 400 dpi.",
+        "complete_historical_units_independently_read": [
+          "Acta Romana III printed551/PDF573, entire1923 Secret.",
+          "Mame1922 printed[64]/PDF1094, entire Berchmans Postcommunion crossing lower left to upper right; identity confirmed from preceding PDF1093.",
+          "Mame1922 printed676/PDF790, entire Alphonsus Collect.",
+          "Acta Romana VI printed772/PDF790, entire1931 Secret; fascicle title PDF707 and approval printed774/PDF792."
+        ],
+        "verified_comparison": "The1923 prayer asks acceptance of offerings and immolation of a holocaust of fidelity. Target states the offering and asks to run the commandments. Berchmans has viam mandatorum tuorum dilatato corde curramus, not per semitam; Alphonsus has monitis edocti et exemplis roborati, not the combined monitis et exemplis edocti. The1931 Secret ends Per Dominum.; target ends Per Dominum nostrum. The identity is John Berchmans, not John Leonardi.",
+        "strongest_whole_expression_contrary": "A new offering syntax and selected commandment-path petition create a new overall movement of thought. The several old whole units strengthen a conventional-formula argument but do not attest this complete target.",
+        "publication_disposition": "No publication authority from this receipt. The source facts support presenting a finite whole-expression argument to Root; all prior holds remain until a fresh exact decision and subsequent authority/controller review."
+      }
+    }
+  ],
+  "excluded_case_dispositions": [
+    {
+      "name": "Palm conclusion",
+      "disposition": "held; no body reproduced or admission inferred"
+    },
+    {
+      "name": "Bellarmine Collect",
+      "disposition": "held; no body reproduced or admission inferred"
+    },
+    {
+      "name": "Bellarmine Postcommunion",
+      "disposition": "held; no body reproduced or admission inferred"
+    }
+  ],
+  "original_review_hash_preserved": true,
+  "source_evidence_boundary": "Original exact source observations, body hashes and witness loci are retained in these case objects. Source/carrier metadata and unchanged exact final bindings are supplied by the separately byte-exact merged-nine receipts and final installation manifest. This is a selection, not a new image-reading claim."
+}

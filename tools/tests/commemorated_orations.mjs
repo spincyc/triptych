@@ -41,15 +41,56 @@ for (const mode of ['read','missal']) for(const language of ['la','en']) {
  for(const member of flat(result)) if(language==='la')assert.equal(member.selected.text,raw(member).text);
  assert.equal(result.explicitAbsences.some(a=>a.reason==='intermediate-conclusion-spans-unbound'),false);checks++;
 }
-for(const date of ['2026-01-19','2026-03-04','2026-03-27','2026-10-21']) {
- const result=adapt(date);assert.equal(prayers(result).length,3);
- assert.ok(prayers(result).every(e=>e.orationGroups.length===2&&e.orationGroups.every(g=>g.conclusion_group===2)));
- assert.equal(result.explicitAbsences.filter(a=>a.reason==='intermediate-conclusion-spans-unbound').length,date==='2026-03-27'?2:3);
- if(date==='2026-03-27') {
-  const post=prayers(result).find(e=>e.editionSlotLabel==='Postcommunion');
-  assert.deepEqual(post.orationGroups.flatMap(g=>g.members.map(m=>m.conclusionExecution.languages.la.member.role)),['petition','conclusion-provider']);
+function assertSharedExecution(event,language,complete) {
+ const groups=event.orationGroups,members=groups.flatMap(group=>group.members);
+ assert.equal(groups.length,2);assert.ok(groups.every(group=>group.conclusion_group===2));
+ assert.deepEqual(groups.map(group=>group.execution.state),Array(2).fill(complete?'source-derived-complete':'unresolved'));
+ if(!complete) {
+  assert.ok(groups.every(group=>group.execution.unresolved.includes('intermediate-conclusion-spans-unbound')));
+  assert.ok(members.every(member=>!member.conclusionExecution?.languages?.[language]));
+  return;
  }
- for(const member of flat(result))assert.equal(member.selected.text,raw(member).text);checks++;
+ const executions=members.map(member=>member.conclusionExecution.languages[language]);
+ assert.deepEqual(executions.map(execution=>execution.member.role),['petition','conclusion-provider']);
+ for(let index=0;index<members.length;index++) {
+  const member=members[index],execution=executions[index];
+  assert.equal(execution.state,'source-derived-complete');
+  assert.equal(execution.execution_extent.state,'source-derived-complete');
+  assert.equal(execution.member.id,member.id);
+  assert.equal(execution.member.source_text,member.selected.text);
+  assert.ok(execution.member.priest_text.length>0);
+  assert.ok(execution.member.source_hooks.length>0);
+ }
+ assert.equal(executions[0].response,null);
+ assert.deepEqual(executions[1].response,{speaker:'response',text:'Amen.',provider_id:members[1].id});
+}
+// The finite successor closes these exact language/slot groups. Source-name
+// holes and English Canute remain unresolved; Latin admission never fills them.
+const completeSharedSlots={
+ '2026-01-19':{la:['Collect','Secret','Postcommunion'],en:[]},
+ '2026-03-04':{la:['Secret','Postcommunion'],en:['Secret','Postcommunion']},
+ '2026-03-27':{la:['Collect','Secret','Postcommunion'],en:['Postcommunion']},
+ '2026-10-21':{la:[],en:[]}
+};
+for(const [date,languages]of Object.entries(completeSharedSlots))for(const language of ['la','en'])for(const mode of ['read','missal']) {
+ const result=adapt(date,mode,language),complete=languages[language];assert.equal(prayers(result).length,3);
+ for(const event of prayers(result))assertSharedExecution(event,language,complete.includes(event.editionSlotLabel));
+ assert.equal(result.explicitAbsences.filter(absence=>absence.reason==='intermediate-conclusion-spans-unbound').length,3-complete.length);
+ for(const member of flat(result))if(language==='la')assert.equal(member.selected.text,raw(member).text);
+ if(date==='2026-03-04'||date==='2026-10-21')assert.ok(result.explicitAbsences.some(absence=>absence.reason==='source-name-placeholder-unbound'));
+ checks++;
+}
+// A missing provider descriptor or changed intermediate body refuses the entire
+// selected slot while retaining the two independently bound complete slots.
+for(const slot of ['Collect','Secret','Postcommunion'])for(const mutation of ['missing-provider','changed-intermediate']) {
+ const source=clone(structure);
+ const owner=source.masses.find(mass=>mass.key===(mutation==='missing-provider'?'comm-s-canuti-regis-martyris':'comm-ss-marii-marthae-audifacis-abachum'));
+ const proper=owner.propers.find(proper=>proper.name===slot);
+ if(mutation==='missing-provider')delete proper.conclusion_execution;else proper.text+=' CHANGED';
+ const result=adapt('2026-01-19','read','la',source);assert.equal(prayers(result).length,3);
+ for(const event of prayers(result))assertSharedExecution(event,'la',event.editionSlotLabel!==slot);
+ assert.equal(result.explicitAbsences.filter(absence=>absence.reason==='intermediate-conclusion-spans-unbound').length,1);
+ checks++;
 }
 const advent=derive('2026-12-03').options[0];
 assert.equal(advent.orations.low_mass[1].source_key,'advent-1');
@@ -59,6 +100,36 @@ for(const date of ['2027-01-25','2027-02-22','2060-02-22','2026-06-30']) {
  const result=adapt(date);const groups=prayers(result).flatMap(e=>e.orationGroups).filter(g=>g.kind==='inseparable');
  assert.equal(groups.length,3);assert.ok(groups.every(g=>g.members.length===2&&g.count===1));
  for(const member of groups.flatMap(g=>g.members))assert.equal(member.selected.text,raw(member).text||null);checks++;
+}
+// RGMR 443 donor selection survives the two printed forms of each Ember Saturday.
+// These coordinates are declared storage representatives of the same appointed
+// prayers. The principal Mass has no Ember form selected.
+for(const [date,donor] of [['2029-02-24','lent-1-ember-saturday'],
+ ['2030-09-21','september-ember-saturday'],['2030-12-21','advent-ember-saturday']]) {
+ for(const mode of ['read','missal']) for(const language of ['la','en']) {
+  const before=JSON.stringify(structure),result=adapt(date,mode,language);
+  const members=flat(result).filter(member=>member.id.includes('/'+donor+'/'));
+  assert.equal(members.length,3);
+  assert.deepEqual(members.map(member=>member.sourceHooks.find(h=>h.kind==='proper-structure').id),
+   [2,22,24].map(index=>'roman-1962/'+donor+'/'+String(index).padStart(3,'0')));
+  for(const member of members) {
+   const source=raw(member);assert.equal(source.form_id,'longer');
+   assert.equal(member.selected.text,language==='la'?source.text:source.translations.find(t=>t.lang==='en').text);
+  }
+  assert.equal(JSON.stringify(structure),before);checks++;
+ }
+ for(const mutate of [
+  m=>{m.propers[1]={name:'Introit',form_id:'longer'};},
+  m=>{m.propers[1].form_id='shorter';},
+  m=>{m.propers[1].latin.provenance.source_id+='-wrong';},
+  m=>{m.propers.push(clone(m.propers[1]));},
+  m=>{m.propers.find(p=>p.name==='Collect'&&p.form_id==='shorter').latin.provenance.source_id+='-wrong';},
+  m=>{m.propers[21].latin.provenance.source_id+='-wrong';},
+  m=>{m.propers[23].latin.provenance.source_id+='-wrong';}
+ ]) {
+  const changed=clone(structure);mutate(changed.masses.find(m=>m.key===donor));
+  assert.throws(()=>adapt(date,'read','la',changed),e=>e.code==='oration-source-slot-unbound');checks++;
+ }
 }
 // A subordinate's conditional appointment uses the existing source fact domain.
 for(const [date,key] of [['2025-05-11','ss-philippi-iacobi-apostolorum'],['2030-04-13','s-hermenegildi-martyris']]) {

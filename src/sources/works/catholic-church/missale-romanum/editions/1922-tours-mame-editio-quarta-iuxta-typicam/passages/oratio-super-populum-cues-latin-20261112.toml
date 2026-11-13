@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112"
+artifact_sha256 = "28665e7430be0a60f7b0d35d53b0a6f228df930d04d4b9507a54a6a758508ab4"
+locus = "Two cue utterances before the prayer over the people; printed lxxv, original PDF 85, IA n84"
+physical_line_ranges = [[2, 3]]
+states = ["cataloged", "acquired", "inspected", "verified"]
+verified_on = "2026-11-12"
+context = "Original Mame Ritus servandus XI.2-3. The complete cue in red at the lower right of printed lxxv is distinct from the following black action rubric. XI.3 continuing on lxxvi explicitly gives Oremus to the celebrant and Humiliate to the deacon at Solemn Mass. The historical applicability and dismissal wording remain evidence only; the target 1962 rule controls execution."
+notes = "Select only the two red spoken utterances in Ritus XI.2. Split at the printed full stop after Oremus; join the physical line wrap within vestra, omit stress accents, and collapse interword spacing. Preserve source words, capital letters and punctuation, including the comma after Deo that separates the cue from the following action rubric. Do not include the action rubric, source actor names, or invented speaker/response markers in either text row. Target execution and actor evidence: passage.catholic-church.missale-romanum.vatican-typica-1962.oratio-super-populum-placement-actors-20261112."
+text = "Oremus.\nHumiliate capita vestra Deo,"
+transcription_segments = [{ line = 2, text = "Oremus." }, { line = 3, text = "Humiliate capita vestra Deo," }]

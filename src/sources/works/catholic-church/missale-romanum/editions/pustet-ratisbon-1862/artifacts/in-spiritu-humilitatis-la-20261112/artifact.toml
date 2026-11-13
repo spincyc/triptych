@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.in-spiritu-humilitatis-la-20261112"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The complete prayer is independently printed in Pustet, Ratisbon 1862, printed p. 218. The registered whole facsimile establishes the publication-date and mechanical-reproduction United States public-domain basis. This faithful transcription of the whole old expression adds no new prayer wording. No modern target typography, chant, rubrics, surrounding arrangement, page image, editorial matter or translation is reproduced. Official modern quotation supplies comparison evidence only; its accessibility is not the publication basis."
+provenance = "Read directly on 2026-11-12 from a fresh raster of the complete hash-matched Pustet 1862 PDF, artifact p. 304 / IA leaf n 303 / printed p. 218. The whole prayer occupies the lower left column between its own preceding rubric and Erectus expandit manus. The source reads hodie, with h, and carries no Amen. This is an independent source, not a repair of Cummiskey 1861 nodie."
+retrieved = "2026-11-12"
+sha256 = "fc9c8d10dc3a3994c92b06f9f94b0f182127498e28100b39bfe77f92b3400371"
+byte_size = 400
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/in-spiritu-humilitatis-la-20261112/text.tsv"
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+transformation = "Transcribe this one complete old prayer. Remove printed Latin stress accents; join physical line wraps and discretionary line-end hyphens; render its initial small capitals in sentence case. Preserve the old words, their order and punctuation. Supply no word, response or conclusion. The official 2008 quotation is not a transcription donor."
+indexable = true
+encoding = "utf-8"
+notes = "Header and one complete data row. The selected source is the 1862 printing, not a typical edition. A separate per-element collation establishes agreement of this whole prayer wording with the explicitly attributed 2008 Missal quotation; no full Ordinary or rubrical identity is claimed."

@@ -12,12 +12,17 @@ from collections.abc import Mapping
 
 BASIS = "qualified-nonoriginal-adaptation"
 METHOD_ID = "english-completion-20261029-finite-latin-v1"
-ADOPTION_PATH = 'workflows/reviews/missal-reader-resume-2026-11-12/roman-six/finite-latin-authority-v4.json'
+ADOPTION_PATH = 'workflows/reviews/missal-reader-resume-2026-11-12/pius-secret/finite-latin-authority-v6.json'
 # Set only to the actual independently reviewed root adoption's byte digest.
-ADOPTION_SHA256 = '9d9bd0cc9a36fd6bbf4b474631d0944baf260f5a3e91b5612c4a5031363e37b7'
+ADOPTION_SHA256 = '7212997024f229fa25f8d4a93901f572fc2b3df325d279120fd81f870db40c1b'
 # These recognition pins survive missing authority data. They classify copied
 # bodies for refusal; only the exact authority below can authorize new wording.
-RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Alleluia', '', '', 1],
+RECOGNITION = ({'key': ['assumptione-beatae-mariae-virginis', '', 'Postcommunion', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion-23b359b9',
+  'body_sha256': '23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf',
+  'artifact_payload_sha256': '23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf'},
+ {'key': ['beatae-mariae-virginis-reginae', '', 'Alleluia', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified-01c6691e',
   'body_sha256': '01c6691e3d76f113226e381bcb55c959ab40f630541c544fbbfadb0a110f2071',
@@ -62,6 +67,16 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Alleluia', '', ''
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.comm-s-zephyrini-papae-martyris--collect--1',
   'body_sha256': 'f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad',
   'artifact_payload_sha256': 'f8732dcb77e4139160ed879dc19947b26595c5d3541442c3f9ec67cc5bf774ad'},
+ {'key': ['commune-summorum-pontificum', '', 'Collect (Altera oratio)', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-singular',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-singular-1cf945da',
+  'body_sha256': '1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5',
+  'artifact_payload_sha256': '1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5'},
+ {'key': ['commune-summorum-pontificum', '', 'Collect (Altera oratio, in plurali)', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-plural',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-plural-73e57cb3',
+  'body_sha256': '73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e',
+  'artifact_payload_sha256': '73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e'},
  {'key': ['commune-summorum-pontificum', '', 'Collect (in plurali)', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-plural-collect-qualified-77215320',
@@ -72,11 +87,26 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Alleluia', '', ''
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77',
   'body_sha256': 'bfd0be06cd5ff6e036d7a9e22ee73a2bec99a413c24cc12baefc939a3db52bce',
   'artifact_payload_sha256': '3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b'},
+ {'key': ['commune-summorum-pontificum', '', 'Postcommunion (Altera postcommunio)', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-singular',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-singular-0f6aba28',
+  'body_sha256': '0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980',
+  'artifact_payload_sha256': '0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980'},
+ {'key': ['commune-summorum-pontificum', '', 'Postcommunion (in plurali)', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-plural',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-plural-b9e6e57f',
+  'body_sha256': 'b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb',
+  'artifact_payload_sha256': 'b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb'},
  {'key': ['commune-summorum-pontificum', '', 'Secret', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-secret-qualified',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pontiff-two-qualified-3920bd77',
   'body_sha256': '513de5a7dff9120d02f2fcc6cbc4c5a9d19a69ffd18e9075c5325885a98e43ab',
   'artifact_payload_sha256': '3920bd772a32ebba24b336a71f9bcd30eeff745c60630d5fe20739609e58a75b'},
+ {'key': ['commune-summorum-pontificum', '', 'Secret (Altera secreta)', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-secret',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-secret-a5ad120a',
+  'body_sha256': 'a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86',
+  'artifact_payload_sha256': 'a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86'},
  {'key': ['easter-vigil', '', 'Blessing of the Lighted Candle', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.lighted-candle-qualified-05954809',
@@ -87,6 +117,11 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Alleluia', '', ''
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.cross-offertory-qualified-18060fef',
   'body_sha256': '18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79',
   'artifact_payload_sha256': '18060fef847e0615136dba2a6e73b16797e3b944665c4e1475dc8643be33fa79'},
+ {'key': ['good-friday', '', 'First Prayer after Communion', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112-d0f0e56b',
+  'body_sha256': 'd0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18',
+  'artifact_payload_sha256': 'd0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18'},
  {'key': ['good-friday', '', 'Improperia', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.improperia-whole-qualified-83cbd703',
@@ -97,6 +132,11 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Alleluia', '', ''
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-prostration-qualified-20261030-01972432',
   'body_sha256': '019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d',
   'artifact_payload_sha256': '019724327e76e8d3c2cee2c31467b4304ee9e38713197fbede6e2dd117ddad5d'},
+ {'key': ['good-friday', '', 'Second Prayer after Communion', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112-9330da55',
+  'body_sha256': '9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d',
+  'artifact_payload_sha256': '9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d'},
  {'key': ['good-friday', '', 'Third Prayer after Communion', '', '', 1],
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-third-after-communion-qualified-20261030-69644887',
@@ -156,7 +196,17 @@ RECOGNITION = ({'key': ['beatae-mariae-virginis-reginae', '', 'Alleluia', '', ''
   'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1',
   'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29-sanctoral-english-completion.s-laurentii-brundusio-confessoris-ecclesiae-doctoris--collect--1',
   'body_sha256': '9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005',
-  'artifact_payload_sha256': '9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005'})
+  'artifact_payload_sha256': '9d2e1a29fd2df2395e01d7078745f77af00df9a266f597ea9b822c49d4eb8005'},
+ {'key': ['s-roberti-bellarmino-episcopi-confessoris-ecclesiae', '', 'Secret', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret-fefc86d1',
+  'body_sha256': 'fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592',
+  'artifact_payload_sha256': 'fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592'},
+ {'key': ['s-pii-x-papae-confessoris', '', 'Secret', '', '', 1],
+  'source_id': 'passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113',
+  'artifact_id': 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113-44e8e1db',
+  'body_sha256': '44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16',
+  'artifact_payload_sha256': '44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16'})
 PRIOR_ROUTES = {'row_sha256': [], 'artifacts': [], 'readings': []}
 TRUSTED_ROOT = Path(__file__).resolve().parents[1]
 KEY_FIELDS = ("mass", "form", "proper", "course", "cycle", "occurrence")

@@ -1,0 +1,317 @@
+{
+  "schema": "triptych-ot8-ot12-public-source-candidate-excerpt/v1",
+  "status": "Explicit public-safe excerpt of the pinned candidate, not a byte-identical copy or new review. Root source admission is retained separately.",
+  "original_private_candidate": {
+    "path": ".scratch/modern-ordinarytime-orations/ot8-ot12-install/prepared-v1/files/workflows/reviews/missal-reader-resume-2026-11-12/postconciliar-ot8-ot12/accepted-candidate.json",
+    "sha256": "c2588cac4dbfa8303718b217367345db1ec7fa7b69ce316895d37bd5ecfa12e3",
+    "bytes": 34168
+  },
+  "retained_fields": [
+    "identity",
+    "historical_whole",
+    "finite_deltas",
+    "modern_expression_assessment",
+    "proposed_latin",
+    "proposed_latin_sha256",
+    "proposed_english",
+    "proposed_english_sha256",
+    "english_kind",
+    "english_fidelity_notes",
+    "conclusion",
+    "witness_note",
+    "installation_constraints"
+  ],
+  "excluded_material": [
+    "secondary_comparison full modern witness bodies",
+    "comparison page images and image-pin collection",
+    "unselected search notes and private research snapshots"
+  ],
+  "rows": [
+    {
+      "identity": [
+        "ot-8",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "historical_whole": {
+        "literal_with_cue": "Satiati munere salutari tuam Dne misericordiam deprecamur ut hoc eodem sacramento quo nos temporaliter vegetas efficias perpetuae vitae participes per.",
+        "sha256": "20a0fadaad8251c293c9aa310dff55196085fc9702c97962666c0198074885f3",
+        "source": {
+          "manifest_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/artifact.toml",
+          "artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "edition_id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
+          "registered_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+          "actual_path": ".scratch/artifact-cache/3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a/sacramentariumle00cath.pdf",
+          "actual_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+          "whole_artifact_available": true,
+          "rights_status": "public-domain",
+          "rights_basis": "C. L. Feltoe's Sacramentarium Leonianum (Cambridge: at the University Press, 1896) is in the United States public domain by date of publication (first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md). This exact file is the Internet Archive's 2011 digitization of the University of Toronto (PIMS) copy; a mechanical digitization of a public-domain printing adds no original authorship, and the file carries no digitiser notice page. The entire 19,868,448-byte file is retained as a reasonably sized reusable facsimile, as the 28,655,931-byte Wilson 1915 Gregorian scan is.",
+          "fresh_inspection": "whole payload text read and bounded passages inspected; source-specific visual level appears per row"
+        },
+        "locus": "Feltoe1896 AP89–90, printed65–66, XVI Item alia, last prayer continuing top next page",
+        "editorial_observation": "Feltoe prints ut at AP90 with note1: Muratori and Ballerini omit it. Adopted printed main text includes ut."
+      },
+      "finite_deltas": [
+        {
+          "kind": "word-order",
+          "old": "hoc eodem sacramento quo nos temporaliter vegetas",
+          "comparison": "hoc eodem quo nos temporaliter vegetas sacramento"
+        },
+        {
+          "kind": "word-order",
+          "old": "efficias perpetuae vitae participes",
+          "comparison": "perpetuae vitae participes efficias"
+        },
+        {
+          "kind": "lexical-addition",
+          "word": "benignus",
+          "position": "immediately before efficias",
+          "meaning": "graciously / as one who is gracious; modifier of the addressed giver"
+        }
+      ],
+      "modern_expression_assessment": {
+        "recommendation": "qualified affirmative for this complete expression only, subject to independent review and Root decision",
+        "positive": [
+          "One complete old prayer supplies the whole ordered expression: reception of the saving gift; appeal to divine mercy; the same sacrament sustaining present life; petition for participation in everlasting life. No new clause, image, actor, temporal relation, or requested result is introduced.",
+          "The two changes of position leave every dependency and proposition intact: sacramento remains the instrumental antecedent of quo; efficias still governs the same nos and participes. These are ordinary Latin ordering alternatives rather than a new expressive sequence assembled from disparate sources.",
+          "The sole added lexical item benignus is a conventional predicative adjective of the same addressed giver, rendered adverbially as graciously. The prayer already invokes that giver’s misericordia. It adds an ordinary polite qualification to the same act rather than a distinctive new description or theological proposition.",
+          "Assessed together, the ordering adjustments and this routine graciousness modifier do not create a recognizably new prayer expression beyond the complete old composition. The proposed narrow United States basis is the old whole work plus minor conventional editorial variations, not a claim that every word taken separately is free or that any short addition is automatically harmless."
+        ],
+        "strongest_contrary": [
+          "The modern editor chose both the placement of the relative clause and a terminal cadence with benignus efficias. That coordinated rhetorical choice may be alleged to be original derivative authorship even though its ingredients are commonplace; the creativity threshold is low.",
+          "Benignus is an actual addition, not a spelling correction. No whole pre1931 witness containing the complete changed expression has been located in the declared search boundary. The modern edition supplied the comparison and cannot be concealed as an unused source.",
+          "An affirmative decision therefore depends on an individualized assessment that this exact configuration remains minor and conventional. It cannot establish a reusable rule for other additions, reordered clauses, or newly composed prayers."
+        ],
+        "basis": "Public-domain complete old composition plus specifically reviewed nonoriginal conventional editorial variations; not an exact-old-text assertion, modern-edition licence, fair-use exception, or exemption for every short change.",
+        "legal_sources": [
+          {
+            "path": ".scratch/modern-ordinarytime-orations/ot8-ot12/copyright-compendium-ch300.pdf",
+            "sha256": "363f7898364800c62b7a8457133955df3884cf5950510abaffecf656bd39c37d",
+            "bytes": 641671,
+            "url": "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf",
+            "edition": "Third Edition, 2021-01-28",
+            "locus": "311.2, printed15–16; 313.4(C), printed28",
+            "status": "Primary United States administrative source, checked2026-11-12; not a prayer-specific legal ruling."
+          },
+          {
+            "path": ".scratch/modern-ordinarytime-orations/ot8-ot12/copyright-compendium-ch700.pdf",
+            "sha256": "7a01186c055fd8ba6226c11b6d6c84ee78a1ecf8625d82fcd9a6b383ef497a8f",
+            "bytes": 843189,
+            "url": "https://www.copyright.gov/comp3/chap700/ch700-literary-works.pdf",
+            "edition": "Third Edition, 2021-01-28",
+            "locus": "709.4, printed13–14",
+            "status": "Primary United States administrative source, checked2026-11-12; not a prayer-specific legal ruling."
+          }
+        ]
+      },
+      "proposed_latin": "Satiati munere salutari, tuam, Domine, misericordiam deprecamur, ut, hoc eodem quo nos temporaliter vegetas sacramento, perpetuae vitae participes benignus efficias.\nPer Christum Dominum nostrum.\nR. Amen.",
+      "proposed_latin_sha256": "965afcd29dd137e8775e8f2efcbc7dd893d64bdf530cfa8e31513a2fc11f1076",
+      "proposed_english": "Filled with the saving gift, Lord, we implore your mercy: through this very sacrament by which you sustain us in this life, graciously make us sharers in everlasting life.\nThrough Christ our Lord.\nR. Amen.",
+      "proposed_english_sha256": "724354a748dcf5dc2cc3adfd1d38a6da75833f1cfdd13667402f80e0db6d3cf5",
+      "english_kind": "Original project study translation; no approved or historical-human English source is claimed.",
+      "english_fidelity_notes": [
+        "Satiati is completed reception, not a request to be fed; saving gift retains munere salutari.",
+        "Misericordiam deprecamur remains an appeal for mercy, with the second-person divine addressee.",
+        "This very sacrament retains hoc eodem; by which and through preserve quo and the instrumental sacramento relation.",
+        "Sustain us in this life renders temporaliter vegetas without identifying the sacrament with ordinary food.",
+        "Graciously explicitly renders the reviewed benignus addition; sharers in everlasting life retains participes perpetuae vitae."
+      ],
+      "conclusion": {
+        "source": {
+          "verification_passage_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+          "verification_passage": {
+            "schema": 2,
+            "record_type": "passage",
+            "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+            "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+            "artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+            "locus": "Lasance printed217; parentPDF217; retained derivative page1; common short endings in AshWednesday prayers",
+            "states": [
+              "cataloged",
+              "acquired",
+              "inspected",
+              "verified"
+            ],
+            "context": "Independently complete old common short conclusion and distinct marked response; not a GoodFriday whole historical prayer or edited old English hybrid.",
+            "verified_on": "2026-10-30",
+            "notes": "Literal Latin: Per Christum Dominum nostrum. R. Amen. Literal historical English: Through Christ our Lord. R. Amen. The response marker distinguishes the response from the prayer ending. Only this separately witnessed common formula is applied in original project study English.",
+            "artifact_page_ranges": [
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "artifact_actual_path": ".scratch/artifact-cache/d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8/pages.pdf",
+          "actual_artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+          "fresh_visual_image": ".scratch/modern-partition-ordinarytime/rasters/lasance1945-formula-p217.png",
+          "actual_printed_page": "217",
+          "actual_derivative_page": 1,
+          "latin": "Per Christum Dominum nostrum.\nR. Amen.",
+          "english": "Through Christ our Lord.\nR. Amen.",
+          "inspection": "Fresh complete page rendered and viewed2026-11-12; upper and middle source prayer endings both print complete common short formula with distinct response."
+        },
+        "historical_cue_preserved": "per.",
+        "comparison_cue_preserved": "Per Christum.",
+        "application_rule": "secondary2002 IGMR89, AP24, same comparison artifact; corroborating primary1970 IGMR32, AP31–32/printed34–35. Neither establishes2008.",
+        "addressee": "Father/default: second-person Lord; no Son mentioned at the end; no direct address to the Son.",
+        "literal_source_formula_separately_verified": true,
+        "response": "R. Amen.",
+        "response_is_not_priest_formula": true,
+        "source_local_execution_not_feltoe_expansion": true
+      },
+      "witness_note": "Project study English of an old complete prayer with the separately reviewed conventional Latin changes, followed by an independently witnessed short conclusion and distinct response. The full comparison and conclusion rule are source-local to a secondary digital2002 witness; authenticated printed2002 and complete2008 correspondence remain unestablished. This is neither historical human English nor approved liturgical English or recitation authorization.",
+      "installation_constraints": [
+        "No activation until independent whole-expression and English-fidelity decisions accept these exact hashes.",
+        "Use a dedicated project work for this qualified historical editorial assembly; do not broaden the exact-target projection work.",
+        "Preserve the complete old English refusal and quarantine dictionaries in durable supersession evidence.",
+        "Exact2008 target grade stays unresolved; neutral witness_note must survive actual browser and CLI consumers.",
+        "No different historical-variant body may silently replace this candidate if its affirmative basis fails."
+      ]
+    },
+    {
+      "identity": [
+        "ot-12",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "historical_whole": {
+        "literal_with_cue": "Sacri corporis et sanguinis pretiosi renovati libamine quaesumus Dne clementiam tuam ut quod frequenti devotione gerimus certa redemptione capiamus per.",
+        "sha256": "23fdfbc99a0854f43b515887c3bd213c5cc2297e586a2b224c41309694119efc",
+        "source": {
+          "manifest_path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/artifact.toml",
+          "artifact_id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+          "edition_id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
+          "registered_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+          "actual_path": ".scratch/artifact-cache/3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a/sacramentariumle00cath.pdf",
+          "actual_sha256": "3b991b133889bbd4803831455bb4f49de30ecb4d8386534cee1f80f79541967a",
+          "whole_artifact_available": true,
+          "rights_status": "public-domain",
+          "rights_basis": "C. L. Feltoe's Sacramentarium Leonianum (Cambridge: at the University Press, 1896) is in the United States public domain by date of publication (first published abroad before 1931, as derived for calendar year 2026 under guidance/missals.md). This exact file is the Internet Archive's 2011 digitization of the University of Toronto (PIMS) copy; a mechanical digitization of a public-domain printing adds no original authorship, and the file carries no digitiser notice page. The entire 19,868,448-byte file is retained as a reasonably sized reusable facsimile, as the 28,655,931-byte Wilson 1915 Gregorian scan is.",
+          "fresh_inspection": "whole payload text read and bounded passages inspected; source-specific visual level appears per row"
+        },
+        "locus": "Feltoe1896 AP32 printed8, prayer beginning Sacri corporis at lines18–21",
+        "editorial_observation": "Feltoe prints renovati with note3 reporting manuscript renobati. The 1896 edited main text, not unedited manuscript spelling, is the declared witness."
+      },
+      "finite_deltas": [
+        {
+          "kind": "noun-substitution-and-word-order",
+          "old": "renovati libamine",
+          "comparison": "alimonia renovati",
+          "meaning": "old libamen denotes a sacramental draught/offering; modern alimonia emphasizes nourishment"
+        },
+        {
+          "kind": "word-order",
+          "old": "quod frequenti devotione gerimus",
+          "comparison": "quod gerimus devotione frequenti"
+        }
+      ],
+      "modern_expression_assessment": {
+        "recommendation": "qualified affirmative for this complete expression only, subject to independent review and Root decision",
+        "positive": [
+          "One complete old prayer supplies the entire sacramental-reception, appeal-to-clemency, repeated-celebration and redemptive-effect structure. The modern form does not juxtapose fragments from different prayers or add a new petition, actor, purpose, or theological result.",
+          "Alimonia replaces the ablative libamine in the same instrumental relation to renovati and the same genitive Body-and-Blood object. Nourishment and sacramental draught/offering are not identical lexical meanings; the difference is expressly retained in both the comparison and the new English.",
+          "Despite that lexical distinction, the replacement is an ordinary functional sacramental-food noun, not a newly fashioned image or phrase. Moving renovati after its instrument and gerimus before devotione frequenti does not change any semantic or syntactic dependency.",
+          "Assessed as one expression, the complete old prayer remains the expressive composition. The proposed narrow United States basis treats the commonplace noun replacement and ordinary ordering adjustments as minor editorial variations, while refusing to call them lexical identity or a pre1931 exact reading."
+        ],
+        "strongest_contrary": [
+          "The deliberate move from libamen to alimonia can foreground nourishment instead of sacrificial draught/offering. That is a real editorial choice and may be argued to supply meaningful expressive variation rather than a merely mechanical correction.",
+          "The new word order and noun could be assessed together as a deliberate reshaping of a short liturgical composition. The low originality threshold makes a count-based argument insufficient, and the old whole source does not independently print the altered reading.",
+          "If the reviewer judges that sacramental nourishment is a distinctive new emphasis in this exact sentence rather than a conventional functional substitution, the complete modern-form candidate must remain held; the different old prayer cannot silently fill its slot."
+        ],
+        "basis": "Public-domain complete old composition plus specifically reviewed nonoriginal conventional editorial variations; not an exact-old-text assertion, modern-edition licence, fair-use exception, or exemption for every short change.",
+        "legal_sources": [
+          {
+            "path": ".scratch/modern-ordinarytime-orations/ot8-ot12/copyright-compendium-ch300.pdf",
+            "sha256": "363f7898364800c62b7a8457133955df3884cf5950510abaffecf656bd39c37d",
+            "bytes": 641671,
+            "url": "https://www.copyright.gov/comp3/chap300/ch300-copyrightable-authorship.pdf",
+            "edition": "Third Edition, 2021-01-28",
+            "locus": "311.2, printed15–16; 313.4(C), printed28",
+            "status": "Primary United States administrative source, checked2026-11-12; not a prayer-specific legal ruling."
+          },
+          {
+            "path": ".scratch/modern-ordinarytime-orations/ot8-ot12/copyright-compendium-ch700.pdf",
+            "sha256": "7a01186c055fd8ba6226c11b6d6c84ee78a1ecf8625d82fcd9a6b383ef497a8f",
+            "bytes": 843189,
+            "url": "https://www.copyright.gov/comp3/chap700/ch700-literary-works.pdf",
+            "edition": "Third Edition, 2021-01-28",
+            "locus": "709.4, printed13–14",
+            "status": "Primary United States administrative source, checked2026-11-12; not a prayer-specific legal ruling."
+          }
+        ]
+      },
+      "proposed_latin": "Sacri Corporis et Sanguinis pretiosi alimonia renovati, quaesumus, Domine, clementiam tuam, ut, quod gerimus devotione frequenti, certa redemptione capiamus.\nPer Christum Dominum nostrum.\nR. Amen.",
+      "proposed_latin_sha256": "876c5dbcf544df2efbeb0e77cf2486144830b243a57ed7713822a808bc5fb3a7",
+      "proposed_english": "Renewed by the nourishment of the sacred Body and precious Blood, we ask your kindness, Lord, that we may receive as sure redemption what we celebrate with frequent devotion.\nThrough Christ our Lord.\nR. Amen.",
+      "proposed_english_sha256": "a4a69d845629704462d486980d5c9c7bebd49481d1d09e62f7c7c2ca0e04fc4f",
+      "english_kind": "Original project study translation; no approved or historical-human English source is claimed.",
+      "english_fidelity_notes": [
+        "Renewed preserves renovati; by the nourishment explicitly renders alimonia rather than silently reverting to libamine.",
+        "Sacred Body and precious Blood preserve the two genitives and their attributes.",
+        "We ask your kindness renders quaesumus clementiam tuam as a request to the addressed Lord.",
+        "What we celebrate with frequent devotion retains the relative object and gerimus/devotione frequenti relation.",
+        "Receive as sure redemption is a deliberately close study rendering of certa redemptione capiamus; independent review must assess its English clarity and ablative relation."
+      ],
+      "conclusion": {
+        "source": {
+          "verification_passage_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+          "verification_passage": {
+            "schema": 2,
+            "record_type": "passage",
+            "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+            "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+            "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+            "artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+            "locus": "Lasance printed217; parentPDF217; retained derivative page1; common short endings in AshWednesday prayers",
+            "states": [
+              "cataloged",
+              "acquired",
+              "inspected",
+              "verified"
+            ],
+            "context": "Independently complete old common short conclusion and distinct marked response; not a GoodFriday whole historical prayer or edited old English hybrid.",
+            "verified_on": "2026-10-30",
+            "notes": "Literal Latin: Per Christum Dominum nostrum. R. Amen. Literal historical English: Through Christ our Lord. R. Amen. The response marker distinguishes the response from the prayer ending. Only this separately witnessed common formula is applied in original project study English.",
+            "artifact_page_ranges": [
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "artifact_actual_path": ".scratch/artifact-cache/d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8/pages.pdf",
+          "actual_artifact_sha256": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+          "fresh_visual_image": ".scratch/modern-partition-ordinarytime/rasters/lasance1945-formula-p217.png",
+          "actual_printed_page": "217",
+          "actual_derivative_page": 1,
+          "latin": "Per Christum Dominum nostrum.\nR. Amen.",
+          "english": "Through Christ our Lord.\nR. Amen.",
+          "inspection": "Fresh complete page rendered and viewed2026-11-12; upper and middle source prayer endings both print complete common short formula with distinct response."
+        },
+        "historical_cue_preserved": "per.",
+        "comparison_cue_preserved": "Per Christum.",
+        "application_rule": "secondary2002 IGMR89, AP24, same comparison artifact; corroborating primary1970 IGMR32, AP31–32/printed34–35. Neither establishes2008.",
+        "addressee": "Father/default: second-person Lord; no Son mentioned at the end; no direct address to the Son.",
+        "literal_source_formula_separately_verified": true,
+        "response": "R. Amen.",
+        "response_is_not_priest_formula": true,
+        "source_local_execution_not_feltoe_expansion": true
+      },
+      "witness_note": "Project study English of an old complete prayer with the separately reviewed conventional Latin changes, followed by an independently witnessed short conclusion and distinct response. The full comparison and conclusion rule are source-local to a secondary digital2002 witness; authenticated printed2002 and complete2008 correspondence remain unestablished. This is neither historical human English nor approved liturgical English or recitation authorization.",
+      "installation_constraints": [
+        "No activation until independent whole-expression and English-fidelity decisions accept these exact hashes.",
+        "Use a dedicated project work for this qualified historical editorial assembly; do not broaden the exact-target projection work.",
+        "Preserve the complete old English refusal and quarantine dictionaries in durable supersession evidence.",
+        "Exact2008 target grade stays unresolved; neutral witness_note must survive actual browser and CLI consumers.",
+        "No different historical-variant body may silently replace this candidate if its affirmative basis fails."
+      ]
+    }
+  ],
+  "canonical_writes": false
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "triptych-root-ending-translation-locator-amendment/v1",
+  "reviewer": "Root",
+  "date": "2026-11-13",
+  "decision": "accept exact162 listed pointer replacements, no runtime search or automatic rebinding",
+  "proposal": {
+    "path": ".scratch/oration-endings/next-cohort/final/source-locator-delta-proposal.json",
+    "sha256": "605e949a14bf8b1b54bcbd7ee32db0ab3fb7c6e48e218d53510eef812771e155"
+  },
+  "independent_review": {
+    "path": ".scratch/oration-endings/review-4/locator-successor/review.json",
+    "sha256": "437b9ad33abe8a3648250f6bc857ffe6f213a60413ce5493ddbce36903e12088"
+  },
+  "input_pins": {
+    "proposal": {
+      "path": ".scratch/oration-endings/next-cohort/final/source-locator-delta-proposal.json",
+      "sha256": "605e949a14bf8b1b54bcbd7ee32db0ab3fb7c6e48e218d53510eef812771e155"
+    },
+    "authority": {
+      "path": ".scratch/oration-endings/next-cohort/final/preliminary-f73/authority-candidate.json",
+      "sha256": "f73e20824450bb674fa46323b9701880b3381689e674d0e5155fb7e85a5930db"
+    },
+    "old_map": {
+      "path": ".scratch/oration-endings/next-cohort/final/preliminary-f73/staged-read-map.json",
+      "sha256": "7d8641d3fcc8170c031dd06ea08ff5a4544c732a6340f5c77c3f7aaa2cafb8ae"
+    },
+    "new_map": {
+      "path": ".scratch/source-epoch/next-cohort/merged-80cb-v1-evidence/merged-source-read-map-b3c5874702cf.json",
+      "sha256": "b3c5874702cfc4e3a9502a4f7aab03bddb6a83cc02dd2df41a0086416014aa0b"
+    },
+    "control_map": {
+      "path": ".scratch/source-epoch/next-cohort/merged-80cb-v1-evidence/merged-source-read-map-2c09ca553628.json",
+      "sha256": "2c09ca553628ab6f1b179bc0e75a702cee558a328ded3614daf6accf95327af4"
+    },
+    "old_ledger": {
+      "path": ".scratch/oration-endings/next-cohort/final/postimages/src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "sha256": "32f06ac0b679b137d7049a3272e618e37fdb6595907bb8c38aca07e054704886"
+    },
+    "new_ledger": {
+      "path": ".scratch/oration-endings/next-cohort/final/locator-proposal-inputs/roman-translations-97ec8b50.toml",
+      "sha256": "97ec8b50c3bde504d91ce05293b5d6da8c7dc63257d50be7a57305d967c919bd"
+    }
+  },
+  "root_verification": {
+    "input_files_rehashed": 7,
+    "complete_rows_checked": 162,
+    "old_new_dictionary_equal": true,
+    "unique_row_hash_in_both_ledgers": true,
+    "exact_target_identity": true
+  },
+  "preservation": [
+    "No body, formula, public descriptor, Latin-proof or legacy754 changes.",
+    "Exactly128 owners;158pointer shifts+9 and4shifts+7, no arithmetic generalization.",
+    "Four1946 source controls remain covered separately by Root ba7a8b7b receipt."
+  ],
+  "limits": [
+    "Final compiled source-loader and actual native assembly still required.",
+    "New source-body merits are governed by their separate Root receipts."
+  ]
+}

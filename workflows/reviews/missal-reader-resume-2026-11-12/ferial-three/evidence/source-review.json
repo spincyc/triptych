@@ -1,0 +1,641 @@
+{
+  "schema": "triptych-independent-ferial-three-source-review/v1",
+  "date": "2026-11-12",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "independent_of_author": true,
+  "verdict": "PASS exact complete-source comparison, source facts, proposed metadata and current preimage binding; no publication adoption or runtime admission",
+  "install_plan": {
+    "path": ".scratch/roman-sources/ferial-three/install-plan.json",
+    "sha256": "1f346195b4177a7c3db55609c23c1244c137e1cc36d42089102b0e80fa939cf2",
+    "bytes": 76763
+  },
+  "body_source_packet": {
+    "path": ".scratch/roman-sources/ferial-three/body-source-packet-v2.json",
+    "sha256": "6c45067e4852bff557657bdfd99cd16da3c0776df42ae97e6b00dae1f3676bae",
+    "bytes": 28435
+  },
+  "author_source_review": {
+    "path": ".scratch/roman-sources/ferial-three/source-review.json",
+    "sha256": "e32f28ad607b1fec752cf70bb82d432a89382dc245ca3f691cd54d4a3bf744e9",
+    "bytes": 8086
+  },
+  "appointment_body_bindings": {
+    "path": ".scratch/roman-sources/ferial-three/appointment-body-bindings.json",
+    "sha256": "07369a33d5be29fe9d050f4c650d94f9e236acefb0fe8b99da4e1048b3ff1953",
+    "bytes": 42041
+  },
+  "source_file_count": 21,
+  "new_source_record_count": 17,
+  "closed_source_record_count": 46,
+  "independent_binding_checks": 537,
+  "binding_failures": [],
+  "blockers": [],
+  "cases": [
+    {
+      "identity": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "PASS exact source and factual metadata",
+      "Latin_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+      "English_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269",
+      "target": "CMAA PDF148/p67 actual Tuesday heading; PDF149/p68 L column unit458 after PC457 and separate cue, before actual Wednesday heading.",
+      "historical_Latin": "Mame PDF200/p86, entire Ascendant prayer and contracted Per Dñum.; complete petition is the same. Historical transcript preserves the contraction; target projection explicitly expands it to Dominum. No added petition words.",
+      "historical_English": "Concrete title-dated Lasance1946 PDF255/p245: exact complete Latin/English Ascendant and Through our Lord. Title PDF9 and copyright/approvals PDF10 independently read at200/400dpi. Mixed later PDF245/p245 confirms wording only.",
+      "rights_extent": "Existing registered 1937/1945 ordinary English expression basis, concretely identified through the1946 printing. No reliance on the mixed later book label as proof of date; no extension to lettered inserts, whole scan or unrelated words.",
+      "contrary_evidence": "Historical Latin glyph identity would be false because Dñum. is contracted. The complete target is supported only with the expressly recorded conventional expansion."
+    },
+    {
+      "identity": [
+        "lent-4-thursday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "PASS v2 exact source and factual metadata",
+      "Latin_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+      "English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e",
+      "target": "CMAA PDF193/p112 actual Thursday heading; PDF194/p113 PC730 and cue; PDF195/p114 L top unit731 before actual Friday heading.",
+      "historical_Latin": "Mame PDF258/p144 complete Populi prayer and Per Dominum. preserve all target words including semper after declared typography/wrap handling.",
+      "historical_English": "Cummiskey PDF211/p200 actual Thursday heading, PDF212-213 continuation and PC Caelestia, PDF214/p203 complete Prayer Populi before Friday. Entire English includes always and literal Thro’. Source commas after sins and sight are independently confirmed and present in v2. Cummiskey does not print the complete Latin here.",
+      "rights_extent": "Existing1861 United States underlying book-text route. PDF12 title and PDF13 publication/approval leaf independently read; PDF10 duplicate worn title also shows1861. Google framing and whole-scan rights remain unresolved and outside the proposed derivative.",
+      "contrary_evidence": "Lasance mixed PDF349/p349 parallel Latin includes semper; its English has no explicit always. That English is excluded rather than emended. The Cummiskey short cue does not itself prove any full spoken conclusion or a same-witness conclusion table."
+    },
+    {
+      "identity": [
+        "passion-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "verdict": "PASS exact held donor reuse and independent recipient source control",
+      "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+      "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+      "target": "CMAA actual Wednesday heading begins PDF203/p122 lower right, not PDF204; formulary continues PDF204/p123. PDF205/p124 PC793 and cue in L column, complete Adesto unit794 R top before actual Thursday heading.",
+      "historical_Latin": "Mame PDF216/p102 entire LentII Monday Adesto including semicolon after indulges and Per Dominum. matches target after declared typography. Canonical LentII Monday donor text is byte-identical to proposed PassionWednesday body, including wraps and final LF.",
+      "historical_English": "Mixed Lasance PDF271/p271 entire parallel Adesto prayer and English Through our Lord. independently reread. English equals the exact previously admitted donor payload; existing source/passages retain LentII Monday ownership.",
+      "rights_extent": "Reuse of the exact existing admitted donor English and Latin source bindings, not a fresh dating or rights claim about the complete mixed Lasance scan. New1962 passage establishes the recipient appointment separately.",
+      "contrary_evidence": "Lasance parallel Latin has colon after indulges versus target/Mame semicolon; no literal pointing identity with Lasance is claimed. Independently rendered/read Mame PDF273/p159 actual same-day prayer ends Per Dominum nostrum Jesum Christum.; it is not the selected exact short-ending donor. No old-source Wednesday English appointment is established."
+    }
+  ],
+  "exact_proposed_row_hashes": [
+    {
+      "identity": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+      "English_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269",
+      "complete_new_proper_sha256": "2ec6002632cef0e46b5d356b025b72914cc534413f35720393ce0fd0bafecc31",
+      "complete_Latin_row_sha256": "785244d48f09da0b7927a16acfcb66cbaceede2f11b7fb56cd2ca4b7f7ead71c",
+      "complete_English_entry_sha256": "66912f6f4e99ef470b61e72ebd6e52cebb9c335d02ebc623744b7a040631d6a0",
+      "old_mass_parsed_sha256": "3d302cd537f2e48af9ef11e7f511b1c44a084571b2c96b2ff31f7723403857f6",
+      "old_propers_parsed_sha256": "1947750ebc0f521d161df8522e4afab51987b1b59446ba55df603d3d1858b79a"
+    },
+    {
+      "identity": [
+        "lent-4-thursday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+      "English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e",
+      "complete_new_proper_sha256": "1c200265ed83130bee3da4d460496814d64fbee3b48578758867d6fa0b3aacee",
+      "complete_Latin_row_sha256": "60a9fdf040c5c672a3acec14796b5ffd80f4dd73fbdfaee4ba7f014151b267e3",
+      "complete_English_entry_sha256": "62c485af401bde8d011cc04f046262905d6cd62cede994bbd4fee8d34246fd10",
+      "old_mass_parsed_sha256": "72ac0207f12c2bb669047a76a3921e89162cf4618bcff92771dd17ba7878f88c",
+      "old_propers_parsed_sha256": "b86e87fb50ecabf99345ecb83802085f39e95d92e0e1efdf6da7a5073c24f772"
+    },
+    {
+      "identity": [
+        "passion-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "Latin_sha256": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+      "English_sha256": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f",
+      "complete_new_proper_sha256": "d1652d3e2771939557545ac628e1d9cbe25ed307deb9d06870289a1a91e20e4c",
+      "complete_Latin_row_sha256": "3258c563bcfd4901f611ef9ba845b9193a213e9057fe9ab807c18ce7dfaf4ce0",
+      "complete_English_entry_sha256": "67454c43ccb16ea7008297037a8e430e70503dbe54e20445f45d324a6da4f306",
+      "old_mass_parsed_sha256": "ee488702afc1db1cb19cc7cca82dae26e285a2496758a9a94749b513b2828eb1",
+      "old_propers_parsed_sha256": "c29b40ee67a715121c8339bdad2bfcdedfff36cec6b0bc815208109c67f4ee85"
+    }
+  ],
+  "source_files": [
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/artifact.toml",
+      "sha256": "f91af47fd4548e1176f56e4d6b6b35b18c552d23c7b5aa7fc47aa7347d6e2766"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/text.txt",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ferial-osp-two-historical-20261112/text.txt",
+      "sha256": "a767a82cc0ffb5cb0a6bbd233046597b18b200b3fdec1cff7dcecc2becc72593"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-1-tuesday-source.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-1-tuesday-source.toml",
+      "sha256": "57c7bd8417ecb4f99156ebecfb14968f0efec5cfcfd8300838fb0b5f8514cebe"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-1-tuesday-text.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-1-tuesday-text.toml",
+      "sha256": "57d77d304dc2601696e057504112c2dbace1a0cd84b16b445017a4eecf1a3f7c"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-4-thursday-source.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-4-thursday-source.toml",
+      "sha256": "41a35d63064318ed78efa1b65bee0480650cd8afc3affa2baebb52510c1facb0"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-4-thursday-text.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ferial-osp-20261112-lent-4-thursday-text.toml",
+      "sha256": "278d094805524bf933244ce27d3871db6275c9ba243f9d503c451283f79e43c3"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-1-tuesday.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-1-tuesday.toml",
+      "sha256": "6677f7b0edf2830c2ff3c29dee8be917d0a54aacf67a240d90624a4ab201c8b5"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-4-thursday.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-lent-4-thursday.toml",
+      "sha256": "8383b54650f633ae84c49f657c0e586299166615ab1ea25cc4a600c41c29b36c"
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-passion-wednesday.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/ferial-osp-20261112-passion-wednesday.toml",
+      "sha256": "0d1693f9691c6681edc1ad933ac8eaba08efe0a1a8ab6974225b993ccdf19d39"
+    },
+    {
+      "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/artifact.toml",
+      "sha256": "9b9c8824848128d11300baff159628639e03843e4de43043410cdc9a004de65d"
+    },
+    {
+      "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/english.tsv",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ferial-osp-20261112-lent-4-thursday-english/english.tsv",
+      "sha256": "fe009205998c6219bae88bac8b8c141f66236b9d114b5869651b371677e618be"
+    },
+    {
+      "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-source.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-source.toml",
+      "sha256": "abcb6216f1af1514dfd483de988459c7e2d2202e93ac5fb9bf772646cbc630d3"
+    },
+    {
+      "repository_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-text.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/ferial-osp-20261112-lent-4-thursday-english-text.toml",
+      "sha256": "be690fcba35ee06264dee866e4c9318e2259d700b671f6d9013d678be15e28fb"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/artifact.toml",
+      "sha256": "6943ab9dc4786a5bc3c757d5036155fb48791de2072753ae8cf2e113a870d0c5"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/english.tsv",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/ferial-osp-20261112-lent-1-tuesday-english/english.tsv",
+      "sha256": "f5667f63524494c630ef1c7ccb08bdc628966f581b29670f599149bf3af373bf"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-source.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-source.toml",
+      "sha256": "e4f04c9832e4f1b4952c45c944d98938e0931de2cf53bfdcf167f010287c5162"
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-text.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/ferial-osp-20261112-lent-1-tuesday-english-text.toml",
+      "sha256": "fcd95adcccad97e8766e610b24851d6e455870ff7162e5f34aa008b77d146376"
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/artifact.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/artifact.toml",
+      "sha256": "389f324988f2d239bb62cf48e16a0c775078d5519ecda81f3ba8aed3872dfc3b"
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/latin.txt",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/artifacts/ferial-osp-two-target-20261112/latin.txt",
+      "sha256": "34789fa5ff4287a3e83872fcd49494fad749e7ceaf2144205fa95e18e204cfd5"
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-1-tuesday.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-1-tuesday.toml",
+      "sha256": "c7fb66bf553f8ff4fa7e98f7692bcbc120ecd25e814b0b614c24132738f98b4d"
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-4-thursday.toml",
+      "candidate_path": ".scratch/roman-sources/ferial-three/proposed/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-23-editorial-projection/passages/ferial-osp-20261112-lent-4-thursday.toml",
+      "sha256": "1856839a8870e13f25b31802d8ef0f7c3f4a7f4424949630aa32f37a0a2504a1"
+    }
+  ],
+  "method": "Personally read the complete selected prayers and their literal endings on every supplied200/400dpi full page, and the supplied actual-heading/continuation contexts. Read source title/copyright evidence directly. Independently rehashed all five whole PDFs, checked the34 supplied raster hashes, rerendered all13 supplied200dpi pages and all8 context pages from those PDFs, and measured zero pixel differences. OCR was only a frontmatter locating attempt; it supplied no accepted reading. Independently parsed and checked all21 proposed files,17 new records and the46-record source closure, exact current recipient/donor preimages, source/payload joins and proof-package hashes.",
+  "actual_image_reads": {
+    "packet_images": [
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p148-context.png",
+        "sha256": "b0f5b5454e3c069bb9d326ca07cf851b6168d54163caa2d762b63c9aa7f7bced",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p149-200.png",
+        "sha256": "dd38ad2e2c11e3212c4e406161973470981bfa0fcf793975fccc730f2302115d",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p149-400.png",
+        "sha256": "d86f85eb661a0ea91fd6c9d4897fc9094ddd442cccc02361d06444957cb2f614",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p193-context.png",
+        "sha256": "ea2c87f375a8f6ab892f8106f46bea06e739fec11785c248990a1b7d85a17bef",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p194-context.png",
+        "sha256": "8958b3c49aad6ddb155d117522a109dd14c03f5560078417ddb63a5ab5b0da41",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p195-200.png",
+        "sha256": "3274f5ab75ea61ce20daebfdeaaf804a608c31ed3ad4f46168f76b0b1f466517",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p195-400.png",
+        "sha256": "38250ff118402f6ded6df7d7802c204c6fcabefd0a51e83c1b30b24a7f3f335c",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p203-context.png",
+        "sha256": "bb5461c991f3dfc3996e5d33333674396ed7926429f5e9f34189ae02ee57033e",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p204-context.png",
+        "sha256": "8050d167d18c3310bc7f3e8b5038776dfa695fb88c549b112254142c7937435d",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p205-200.png",
+        "sha256": "31e0f8bd2f4f4b34940499d8f2baaaff2c1ca9996b2d9f155e6b34dd65a7c3d5",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cmaa-p205-400.png",
+        "sha256": "b8f4a0cfadeaa2ce5776f1416ec04921afa2ae0dee41529652ed6124101a1fda",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cummiskey-p211-context.png",
+        "sha256": "c84b47e8f637becd8e027b19e7f44060ab1af85b8d0088510799a07c02f63618",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cummiskey-p212-context.png",
+        "sha256": "05c6e57acbce09afc7eaf6d0c2bfc477d5c2ead9548c9c0f36d5cf44891bf0ad",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cummiskey-p213-context.png",
+        "sha256": "9f0e64cdb5f14943f1642e3810648eff8a8d0a33c8a519151a2c5cd1dc8bcf6d",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cummiskey-p214-200.png",
+        "sha256": "6fe3f99ddb768060827ca5fbea396e63f4556eee6ffbf757c81406a24d514d46",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/cummiskey-p214-400.png",
+        "sha256": "b2f9dc47cd19505f2970b992f9e4c724d8f626d81948c5be83d2ab59fd9cf037",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance-p245-200.png",
+        "sha256": "a561010cae8aeffee05ccfa15cb7a5d813b3879a2945148a3c6085e6f87f0459",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance-p245-400.png",
+        "sha256": "2f8a13054d4fc0dfd2c97293ea32892c4c8b51888d42269b8df6fff2f8f7ae04",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance-p271-200.png",
+        "sha256": "91d4f9f36a95217e3d0ef10e7d6a70c6c5f12b007f9746820d932185442389d6",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance-p271-400.png",
+        "sha256": "60720146fea421f72f948b2703de700b1d21a49f4acb0f48dce0f722ce318e17",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance-p349-200.png",
+        "sha256": "c86e8335203357549c2e7f623e635188dc3eb03319f81d2c98fcdf7a9d60b960",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance-p349-400.png",
+        "sha256": "c599007a7d0ad91b439e44a68c89e19f2bb6d2737c622ba6cfc22355801abe67",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p10-200.png",
+        "sha256": "37cfa92954bfe72eca3b279f6c8527ef3235dbf4b98bef7df569ab8eb995646f",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p10-400.png",
+        "sha256": "75d9010cc14d6b184f89e0d51f546aee88a9e2ececcad4cb216caa48b2137549",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p255-200.png",
+        "sha256": "4b86794859fda94d5df35ab5cc9dd749f959bb42bd9fdc624873ad68f2e85b0a",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p255-400.png",
+        "sha256": "063eb721daf2606699d9acd426c71ffdb21a128ad543a6c60b37245ee414c08f",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p9-200.png",
+        "sha256": "33a7b26b7a0bff615f2e0b0d5074c8fc1eac4fa3c1ebea68a99816abca43c3f5",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/lasance1946-p9-400.png",
+        "sha256": "6f70f1929d865e35a584a60ae0c113783c2330a1be092597512d90b0a0b4a85c",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/mame-p200-200.png",
+        "sha256": "11b86b13685eff2fd9107dce692fd5d6e2079775e9fa103ce1bf0efcada42001",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/mame-p200-400.png",
+        "sha256": "9d118cf80911b77424e093001d6ea4a32d64158444afbd63d13042720aa78ee5",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/mame-p216-200.png",
+        "sha256": "12fcce01d4bb0c850da868716e0050c83b0a9f55028e16ce07ece8221eceb2f9",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/mame-p216-400.png",
+        "sha256": "5709eb12bf1ce65297496bdd08b5f1780de0d0ccb7e42d36a0e5ac992e44ce33",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/mame-p258-200.png",
+        "sha256": "5eec8a18f48fe4ae7badfceed25eb92c050094d16957405575f513e9644f242f",
+        "actually_viewed": true
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three/rasters/mame-p258-400.png",
+        "sha256": "775e97a27c8eaf344ad994c46e29afcfc0bc1758c4a599a884738202b85cb322",
+        "actually_viewed": true
+      }
+    ],
+    "additional_images": [
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front-004.png",
+        "sha256": "b5a9d5ad7977cf1a162a530929f4c4a73ae39c2268b88c1b7276204e8cea2761",
+        "bytes": 3435
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front-005.png",
+        "sha256": "145b4ab7a8f4c0150e7f0ff3a1bd91283828817906327ce118caf05c82485039",
+        "bytes": 4084
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front-006.png",
+        "sha256": "d197267a5a9dce881eb38f135e76e77502af701aee460e94ffb9ea68fa1425b3",
+        "bytes": 3343
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front-007.png",
+        "sha256": "952b56ae3a7097c5bb8879801e9e40a0b9be3d5596748febb8aa42ba1e6cd2db",
+        "bytes": 3847
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front-008.png",
+        "sha256": "82cbe057ea21cde0b33fc9c3f114d17d5007bbdbc49086c1be62534e24e265a9",
+        "bytes": 4196
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front-009.png",
+        "sha256": "623967332da6de42a444cbc56808637e7806c9b4ba9bf2dc2b757902d9414056",
+        "bytes": 390413
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front200-010.png",
+        "sha256": "c84283932b01a12504071a5bfa5ab0f279572fc5c9e50aada55405fad85af737",
+        "bytes": 39626
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front200-011.png",
+        "sha256": "b46867399515014ca4332dda5a704796ac8fedc3d19906fd18c9bfa74406a4e1",
+        "bytes": 76934
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front200-012.png",
+        "sha256": "7a96e30f3aa315009d606f5837d44d4df3133e358d3b480cb6174e5d8fb2b065",
+        "bytes": 40483
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/cummiskey-front200-013.png",
+        "sha256": "d84546c30e856b1dcb1293e120ab2fb2eb2e258e0654207454c87d7c50dd0d5c",
+        "bytes": 62030
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/mame-p273-200.png",
+        "sha256": "e1ea6dbd8dab05d9491fcb42cbced10cd0768fa8c502aec669bd9ed1aa175107",
+        "bytes": 454993
+      },
+      {
+        "path": ".scratch/roman-sources/ferial-three-source-review/rasters/mame-p273-400.png",
+        "sha256": "ec7073a91849a32354559d8fde4eb200bd6b8a324c0f7f7ceb16ebf610c18ff7",
+        "bytes": 1160433
+      }
+    ],
+    "total_actually_viewed": 46,
+    "meaningful_additional_units": "Cummiskey PDF10 duplicate title, PDF12 clear title and PDF13 publication/approval at200dpi; Mame PDF273/p159 complete contrary same-day Adesto at200/400dpi. Other additional viewed frontmatter pages4-9 and11 were reconnaissance only.",
+    "not_viewed": "Generated Cummiskey120dpi pages2-3 were not opened and supply no evidence.",
+    "independent_packet_rerenders": 21,
+    "packet_pixel_comparison_failures": 0,
+    "image_audit": {
+      "path": ".scratch/roman-sources/ferial-three-source-review/image-bindings.json",
+      "sha256": "1edaeaf4f83ab2382ad5551cbfdddc5d3255ff33ae3c2a30edca3f917fe9c83d",
+      "bytes": 21368
+    }
+  },
+  "whole_pdf_bindings": [
+    {
+      "source": "cmaa",
+      "path": ".scratch/roman-sources/gf-pair/acquired/cmaa-1962.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "artifact_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+      "registered_sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "byte_size": 82815941
+    },
+    {
+      "source": "mame",
+      "path": ".scratch/roman-sources/queenship-pair/acquired/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a",
+      "registered_sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "byte_size": 51720493
+    },
+    {
+      "source": "lasance",
+      "path": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+      "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "registered_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+      "byte_size": 75268976
+    },
+    {
+      "source": "lasance1946",
+      "path": ".scratch/modern-partition-temporal/acquired/lasance1946.pdf",
+      "sha256": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77",
+      "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+      "registered_sha256": "4573991d962eb6a6391bc2555b8445bdfebd84de1ccffd7828f84e74d308ca77",
+      "byte_size": 135628123
+    },
+    {
+      "source": "cummiskey",
+      "path": ".scratch/modern-ordinary-candidates/cummiskey-1861.pdf",
+      "sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "registered_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "byte_size": 24767551
+    }
+  ],
+  "reused_prior_factual_review": {
+    "receipt": {
+      "path": ".scratch/roman-sources/ordinary-source-review/review.json",
+      "sha256": "9d19fa9dff378eb569776ed91b962a469be952aaeec5338e74ef6e39835cd090",
+      "bytes": 47886
+    },
+    "fact": "Mame1922 actual title PDF13 and approval PDF15 dated17May1922 were personally read in this same reviewer lane earlier. Those date facts are reused; all current Mame prayer pages were freshly read. No earlier prayer verdict substitutes for this new comparison."
+  },
+  "prior_appointment_review": {
+    "path": ".scratch/dedication-context/ferial-frame/independent-review/source-review.json",
+    "sha256": "6fe015b22a4bf775ce4a197172202b556e3c8672457ce5b74f9441d67336c9e1",
+    "scope": "Separately read prior report for general placement/rubric support only. This lane independently read current recipient actual-heading and prayer pages. It did not reread general rubrics PDF33/65/66; no body admission is inferred from that report."
+  },
+  "publication_boundary": "New derivative artifacts contain only the checked historical prayer wording or declared target normalization. CMAA1962 and full scan artifacts remain text-free verification controls, not new binary publication grants. Existing Latin row/schema/source bindings pass their preexisting-expression route; these proposals do not invoke or extend the earlier finite qualified-expression scopes. Root still owns the exact adoption decision. Historical English stays an antecedent human translation, not official1962English or new study English.",
+  "resolved_draft_error": {
+    "superseded": {
+      "path": ".scratch/roman-sources/ferial-three/body-source-packet.json",
+      "sha256": "3083fab4d22e0f467261d5642664c03cfc9dfcba3d4faf9b211c9cdbbbf479e1",
+      "bytes": 27900
+    },
+    "final": {
+      "path": ".scratch/roman-sources/ferial-three/body-source-packet-v2.json",
+      "sha256": "6c45067e4852bff557657bdfd99cd16da3c0776df42ae97e6b00dae1f3676bae",
+      "bytes": 28435
+    },
+    "error": "Early Populi English omitted commas after sins and sight; ending reviewer reported this first. This reviewer independently confirms both on the400dpi image. V2 restores only those commas; all Latin and other English are unchanged.",
+    "old_English_sha256": "2cebd186cfff55a3f99535ed19a54f207b7ad1231e17e1c794170f5a13a040de",
+    "final_English_sha256": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e"
+  },
+  "nonblocking_caveats": [
+    "Two existing tracked historical PDF excerpts are now externally delivered. Their delivery metadata exactly matches the preserved manifest hashes/byte counts. This review did not reopen those exact excerpt binaries; it read the selected Mame unit directly from the rehashed complete PDF. The inherited Pustet conclusion material is not used to invent a longer ending here.",
+    "The Lasance Ascendant artifact transformation contains an irrelevant shared sentence about representing the Cummiskey apostrophe as U+2019; no such character occurs in this Ascendant body. It changes no source identity, text byte or factual conclusion.",
+    "The general publication-evidence language mentions contraction expansion across both new Latin rows; only Ascendant actually expands a contraction. Populi retains its printed Per Dominum. The per-case transformations and exact payloads distinguish this correctly."
+  ],
+  "external_delivery_limits": [
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.annual-oratio-early-20261023-pages",
+      "delivery": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/annual-oratio-early-20261023-pages/source.pdf",
+        "sha256": "1c1f106ba6be66521f1ac9f9d83fd5358ec1fe0f733b1d123ebbb0cf41be3334",
+        "bytes": 1611685,
+        "kind": "source-evidence",
+        "media_type": "application/pdf",
+        "origin_url": "https://archive.org/download/missaleromanum0000unse/missaleromanum0000unse.pdf",
+        "archive": "ddc6d1ec4b8c25f9a3b165815381f5d7d67554ff3387179eff02c9f91fb5da16",
+        "member": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/annual-oratio-early-20261023-pages/source.pdf"
+      },
+      "exact_excerpt_bytes_not_reopened": true
+    },
+    {
+      "artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.phase5-latin22-petitions-and-formulas-20261022",
+      "delivery": {
+        "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/phase5-latin22-petitions-and-formulas-20261022/source.pdf",
+        "sha256": "5d088d757984a53622d0b3cd763390204986df08e867241ad546bbee891283e1",
+        "bytes": 3541348,
+        "kind": "source-evidence",
+        "media_type": "application/pdf",
+        "origin_url": "https://archive.org/download/bub_gb_E7sPAAAAIAAJ/bub_gb_E7sPAAAAIAAJ.pdf",
+        "archive": "ddc6d1ec4b8c25f9a3b165815381f5d7d67554ff3387179eff02c9f91fb5da16",
+        "member": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/phase5-latin22-petitions-and-formulas-20261022/source.pdf"
+      },
+      "exact_excerpt_bytes_not_reopened": true
+    }
+  ],
+  "limits": [
+    "Source-factual review and exact metadata binding only. No fresh legal research, legal adoption, whole-book dating inference, blanket public-domain claim, or canonical publication authority is supplied.",
+    "Historical English was compared literally to the printed source, including punctuation and short cues. This receipt is not the separate English semantic/fidelity review.",
+    "No full spoken conclusion, Amen, execution expansion, generic rite placement, renderer behavior, complete Mass output or broad calendar completeness was approved or tested. Appointment/conclusion integration requires the owning lane and Root.",
+    "No modern material was admitted merely because its components were old. These cases depend on complete contiguous historical prayers and exact donor equality, with all observed differences stated.",
+    "Current preimages matched the frozen plan during the audit. Integration must recheck them after intervening canonical edits.",
+    "Only this reviewer scratch directory was written. Candidate/source inputs, canonical files, authority records and earlier receipts were not edited."
+  ],
+  "prior_receipts_unchanged": [
+    {
+      "path": ".scratch/roman-sources/six-source-review/review.json",
+      "sha256": "d6204deaca1a69ee69ca24cdc71a848315caf6a6a27cb9bfa830c4c710fee549",
+      "bytes": 76796
+    },
+    {
+      "path": ".scratch/roman-sources/ordinary-source-review/review.json",
+      "sha256": "9d19fa9dff378eb569776ed91b962a469be952aaeec5338e74ef6e39835cd090",
+      "bytes": 47886
+    },
+    {
+      "path": ".scratch/roman-sources/next-twelve-source-review/review.json",
+      "sha256": "84002ae39a02daaa7a1470f3dff67041067092e4ce21095b4b05e7efb668587b",
+      "bytes": 60323
+    },
+    {
+      "path": ".scratch/roman-sources/next-twelve-source-review/saints-two-supplement.json",
+      "sha256": "c60ffd148ae227ac7e820517d3a4c145e758a8c4641544cdaff776fbcd8098a2",
+      "bytes": 13842
+    },
+    {
+      "path": ".scratch/roman-sources/next-twelve-source-review/merged-nine-binding.json",
+      "sha256": "267df0865341075ca8c3fe80e3f0c18b107bf9d6bc3bb7ee1dd11114543578a2",
+      "bytes": 16838
+    }
+  ],
+  "binding_audit": {
+    "path": ".scratch/roman-sources/ferial-three-source-review/binding-audit.json",
+    "sha256": "de2b2466b886cf0559c56a415064ae22a57bc72ea7592a7da66ecf543843cd7e",
+    "bytes": 415918
+  },
+  "replay_script": {
+    "path": ".scratch/roman-sources/ferial-three-source-review/audit.py",
+    "sha256": "95f91d2ee1247f2a07cb9003931efd3cda23f326cc15a86e8bc4bdc0c4fdda9d",
+    "bytes": 13215
+  }
+}

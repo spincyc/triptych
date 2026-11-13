@@ -821,6 +821,8 @@ def language_account(
             )
             if admitted is not None:
                 propers = [row["proper"] for row in admitted]
+            propers = list(propers) + [row["proper"] for row in
+                (mass.get("oration_sources") or {}).get("rows", [])]
             for proper in propers:
                 selected = None
                 for lang in SUPPORTED_LANGUAGES:
@@ -1210,8 +1212,164 @@ def join_dedication_context(mass: dict, owner: dict, selection: dict, derived: d
     mass._ordinary_source_rows = ordinary_rows
 
 
+def project_dated_conclusions(payload: dict, ranked: dict, arguments: argparse.Namespace) -> None:
+    """Consume the reader's verified atomic execution; never edit a source body."""
+    if not arguments.expanded:
+        return
+    machine = arguments.json or arguments.format in {"json", "yaml"}
+    # Canonical-record machine output makes no requested-language enactment.
+    if machine and not arguments.lang:
+        return
+    language = requested_language(arguments)
+    if language not in {"en", "la"}:
+        return
+    for day in payload["days"]:
+        if day["calendar"] != "roman-1962" or not day.get("settled") or day.get("choice_required"):
+            continue
+        selected = [mass for mass in day.get("masses") or [] if mass.get("selected")]
+        if len(selected) != 1:
+            continue
+        mass = selected[0]
+        if mass.get("standing") != "said" or mass.get("form_choice_required") or mass.get("key") == "good-friday":
+            continue
+        ordinary = day.get("ordinary")
+        framed = bool(isinstance(ordinary, dict) and not ordinary.get("refused") and not day.get("ordinary_suppressed"))
+        request = {
+            "schema": "triptych-liturgy-reader-state/v1", "entrance": "day", "civilDate": payload["date"],
+            "edition": {"id": day["calendar"]}, "calendar": {"id": day["calendar"]},
+            "bible": {"id": payload["scripture"]["id"], "numbering": (indexed_bible(payload["scripture"]["id"]) or {}).get("numbering")},
+            "languages": {"orations": language, "ordinary": language},
+            "requestedMode": "missal" if framed else "read",
+            "options": {"ordinary": framed, "legitimate": ordinary_selection_map(ordinary or {}, arguments.ordinary_variant)},
+            "coverage": [], "unresolvedChoices": [], "sourceHooks": [],
+        }
+        if arguments.mass:
+            request["selectedReadableFormulary"] = {"id": arguments.mass}
+        if arguments.form:
+            request["form"] = arguments.form
+        if arguments.territory:
+            request["calendar"]["territory"] = {"id": arguments.territory}
+        if arguments.witness:
+            request["languages"]["translationWitness"] = arguments.witness
+        if getattr(arguments, "proper_choice", None):
+            request["properChoices"] = dict(choice.split("=", 1) for choice in arguments.proper_choice)
+        harness = r"""
+const fs=require('fs'),path=require('path'),A=require(process.argv[1]);
+let raw='';process.stdin.on('data',c=>raw+=c);process.stdin.on('end',()=>{
+ const i=JSON.parse(raw),read=p=>JSON.parse(fs.readFileSync(path.join(process.argv[2],p),'utf8'));
+ const result=A.adaptCli({request:i.request,derived:i.derived,payload:i.payload,
+  structure:read('structure/propers/roman-1962.json'),rubrics:read('structure/rubrics/roman-1962.json'),
+  ordinary:read('structure/ordinary/roman-1962.json')});
+ const members=new Map(),groups=[],properRites=[],language=i.request.languages.orations;
+ function visit(event){
+  if(event.kind==='proper-choice'){
+   const selected=event.options.find(o=>event.selection.state==='selected'&&o.id===event.selection.option);
+   if(selected)selected.events.forEach(visit);return;
+  }
+  if(event.kind!=='proper')return;
+  if(event.properRiteExecution)properRites.push({id:event.id,source:event.properRite,
+   execution:event.properRiteExecution.languages[language],unresolved:event.properRiteExecution.unresolved||[]});
+  const execution=event.conclusionExecution&&event.conclusionExecution.languages[language];
+  if(execution&&execution.state==='source-derived-complete'){const row={id:event.id,sourceHooks:event.sourceHooks,execution};
+   if(members.has(event.id)&&JSON.stringify(members.get(event.id).execution)!==JSON.stringify(execution))throw Error('conflicting conclusion member');
+   members.set(event.id,row);}
+  for(const group of event.conclusionGroups||[])groups.push({anchor:event.id,conclusion_group:group.conclusion_group,slot:group.slot,execution:group.languages[language]});
+  for(const group of event.orationGroups||[])group.members.forEach(visit);
+ }
+ result.events.forEach(visit);
+ process.stdout.write(JSON.stringify({schema:'triptych-source-execution-projection/v1',calendar:i.request.edition.id,
+  civilDate:i.request.civilDate,mass:result.resolved.formulary,form:result.resolved.form||'main',language,
+  members:Array.from(members.values()),groups,properRites}));
+});
+"""
+        try:
+            with verified_products(ROOT, product_ids=["propers", "rubrics", "ordinary"]) as products:
+                finished = subprocess.run(["node", "-e", harness, str(READER_ADAPTERS), str(products.data_root)],
+                    input=json.dumps({"request": request, "derived": ranked[day["calendar"]], "payload": payload}),
+                    capture_output=True, text=True, check=False)
+        except ProductError as error:
+            raise Refused(f"dated conclusion source data is unavailable: {error}") from error
+        if finished.returncode:
+            raise Refused(f"dated conclusion projection failed: {finished.stderr.strip()[:1000]}")
+        projection = json.loads(finished.stdout)
+        if projection["members"] or projection["groups"] or projection["properRites"]:
+            mass["derived_execution"] = projection
+
+
+def project_source_local_1970(payload: dict, ranked: dict, arguments: argparse.Namespace) -> None:
+    """Select one already verified historical offer from the shared CLI adapter."""
+    if not getattr(arguments, "source_local_1970", False):
+        return
+    language = requested_language(arguments)
+    days = [day for day in payload["days"] if day["calendar"] == "postconciliar"]
+    if len(days) != 1 or not days[0].get("settled") or days[0].get("choice_required"):
+        raise Refused("source-local 1970 selection requires one settled postconciliar reading")
+    day = days[0]
+    selected = [mass for mass in day.get("masses") or [] if mass.get("selected")]
+    if len(selected) != 1 or selected[0].get("form_choice_required"):
+        raise Refused("source-local 1970 selection requires one selected formulary and form")
+    mass = selected[0]
+    request = {
+        "schema": "triptych-liturgy-reader-state/v1", "entrance": "day", "civilDate": payload["date"],
+        "edition": {"id": "postconciliar"}, "calendar": {"id": "postconciliar"},
+        "bible": {"id": payload["scripture"]["id"], "numbering": (indexed_bible(payload["scripture"]["id"]) or {}).get("numbering")},
+        "languages": {"orations": language}, "requestedMode": "read",
+        "options": {"ordinary": False, "legitimate": {}},
+        "coverage": [], "unresolvedChoices": [], "sourceHooks": [],
+    }
+    if arguments.mass:
+        request["selectedReadableFormulary"] = {"id": arguments.mass}
+    if arguments.form:
+        request["form"] = arguments.form
+    if arguments.territory:
+        request["calendar"]["territory"] = {"id": arguments.territory}
+    if arguments.witness:
+        request["languages"]["translationWitness"] = arguments.witness
+    if getattr(arguments, "proper_choice", None):
+        request["properChoices"] = dict(choice.split("=", 1) for choice in arguments.proper_choice)
+    harness = r"""
+const fs=require('fs'),path=require('path'),A=require(process.argv[1]);
+let raw='';process.stdin.on('data',c=>raw+=c);process.stdin.on('end',()=>{
+ const i=JSON.parse(raw),read=p=>JSON.parse(fs.readFileSync(path.join(process.argv[2],p),'utf8'));
+ const result=A.adaptCli({request:i.request,derived:i.derived,payload:i.payload,
+  structure:read('structure/propers/postconciliar.json'),rubrics:read('structure/rubrics/postconciliar.json'),
+  ordinary:read('structure/ordinary/postconciliar.json')});
+ const offers=[];
+ function visit(event){
+  if(event.kind==='proper-choice'){
+   const option=event.options.find(o=>event.selection.state==='selected'&&o.id===event.selection.option);
+   if(option)option.events.forEach(visit);return;
+  }
+  if(event.kind==='proper'&&event.sourceLocalActorOffer)offers.push({id:event.id,offer:event.sourceLocalActorOffer});
+ }
+ result.events.forEach(visit);
+ if(offers.length!==1)throw Error('no unique applicable source-local 1970 offer');
+ const row=offers[0],offer=row.offer,execution=offer.languages[i.request.languages.orations];
+ if(offer.scope!=='source-local-1970'||offer.state!=='available'||!execution||execution.state!=='source-derived-complete')throw Error('source-local 1970 offer unavailable for selected material');
+ process.stdout.write(JSON.stringify({schema:'triptych-source-local-selection/v1',scope:offer.scope,
+  calendar:i.request.edition.id,civilDate:i.request.civilDate,mass:result.resolved.formulary,
+  form:result.resolved.form||'main',language:i.request.languages.orations,target:offer.target,
+  members:[{id:row.id,execution}]}));
+});
+"""
+    try:
+        with verified_products(ROOT, product_ids=["propers", "rubrics", "ordinary"]) as products:
+            finished = subprocess.run(["node", "-e", harness, str(READER_ADAPTERS), str(products.data_root)],
+                input=json.dumps({"request": request, "derived": ranked["postconciliar"], "payload": payload}),
+                capture_output=True, text=True, check=False)
+    except ProductError as error:
+        raise Refused(f"source-local 1970 source data is unavailable: {error}") from error
+    if finished.returncode:
+        raise Refused(f"source-local 1970 selection refused: {finished.stderr.strip()[:1000]}")
+    mass["source_local_actor_selection"] = json.loads(finished.stdout)
+
+
 def run_show(arguments: argparse.Namespace) -> dict:
     lang = requested_language(arguments)
+    if getattr(arguments, "source_local_1970", False) and (
+        arguments.calendar != "postconciliar" or not arguments.expanded or arguments.lang not in {"en", "la"}
+    ):
+        raise Refused("--source-local-1970 requires --calendar postconciliar, --expanded and explicit --lang en or la")
     if getattr(arguments, "oration_mass", None) and not arguments.calendar:
         raise ValueError("--oration-mass requires an explicit --calendar")
     if getattr(arguments, "dedication_location", None) and not arguments.calendar:
@@ -1355,6 +1513,8 @@ def run_show(arguments: argparse.Namespace) -> dict:
             for found in (source_branch.get("readable") or [])
             if isinstance(found, dict) and found.get("key")
         ]
+        proper_keys.extend(key for branch in source_branches
+                           for key in appointed_oration_source_keys(branch))
         proper_keys.extend(str(branch["orationSelection"]["owner"])
                            for branch in source_branches if branch.get("orationSelection"))
         proper_keys.extend(str(branch["dedicationSelection"]["target"]["mass"])
@@ -1460,6 +1620,30 @@ def run_show(arguments: argparse.Namespace) -> dict:
                         "formulary": formulary,
                         "name": candidate.get("name"),
                     })
+                source_choices = [one for one in source_branch.get("massChoices") or []
+                                  if isinstance(one, dict) and len(one.get("among") or []) > 1]
+                source_choice_keys = []
+                for source_choice in source_choices:
+                    exact_keys = set()
+                    if source_choice.get("preferred") and not any(
+                        source_choice["preferred"] in {candidate.get("key"), candidate.get("id")}
+                        for candidate in source_choice["among"]
+                    ):
+                        raise Refused("a source-preferred Mass is not among its authorized options")
+                    for candidate in source_choice["among"]:
+                        identities = {candidate.get("key"), candidate.get("id")} - {None, ""}
+                        readable = [one for one in source_branch.get("readable") or []
+                                    if identities.intersection({one.get("key"), one.get("id")}) and one.get("state") in {"said", "option"}]
+                        if len(readable) != 1:
+                            raise Refused("a source-authored Mass choice lacks one exact readable identity")
+                        mass_key = readable[0]["key"]
+                        if mass_key in exact_keys:
+                            raise Refused("source-authored Mass options repeat one readable identity")
+                        exact_keys.add(mass_key)
+                        selectable.append({"key": mass_key, "mass": mass_key, "formulary": None,
+                            "name": candidate.get("label") or readable[0].get("label"),
+                            "source_choice": source_choice.get("id") or "authorized-formulary-choice"})
+                    source_choice_keys.append(exact_keys)
                 selected_here = index == selected_branch_index
                 selectable_keys = {
                     str(value)
@@ -1485,9 +1669,15 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     if isinstance(winner_formulary, dict)
                     else None
                 ) or (winner.get("key") if isinstance(winner, dict) else None)
-                selected_mass = requested_mass or (winner_key if selected_here else None)
+                unresolved_source_choices = [one for one, keys in zip(source_choices, source_choice_keys)
+                    if not one.get("preferred") and requested_mass not in keys]
+                if requested_mass and unresolved_source_choices:
+                    raise Refused("the selected Mass does not resolve every source-authored formulary choice")
+                selected_mass = requested_mass or (
+                    winner_key if selected_here and not unresolved_source_choices else None
+                )
                 intrinsic_choice = bool(
-                    source_branch.get("choiceRequired")
+                    source_branch.get("choiceRequired") or unresolved_source_choices
                     or ((choice or {}).get("required") and not winner_key)
                 )
                 masses = [
@@ -1499,6 +1689,11 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     mass["selected"] = bool(
                         selected_here and selected_mass and mass.get("key") == selected_mass
                     )
+                    if mass["selected"] and getattr(mass, "_source_readable", {}).get("state") == "said":
+                        mass._oration_source_owners = private_oration_owners(
+                            str(day["calendar"]), source_branch, arguments,
+                            day.get("lectionary"), proper_payloads,
+                        )
                 branch_rows.append({
                     "id": branch_id,
                     "option": source_branch.get("option"),
@@ -1507,6 +1702,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     "settled": bool(source_branch.get("settled")),
                     "winner": winner,
                     "choice": choice,
+                    **({"source_choices": source_choices} if source_choices else {}),
                     "choice_required": bool(
                         intrinsic_choice and selected_mass is None
                     ),
@@ -1594,7 +1790,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
             "unsettled": unsettled,
             "ranking_refused": ranking_refused,
         }
-        if arguments.why:
+        if arguments.why or getattr(arguments, "source_local_1970", False):
             row["why"] = {
                 "lectionary": day.get("lectionary"),
                 "unresolved": day.get("unresolved"),
@@ -1704,9 +1900,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                     "error": str(error),
                 })
 
-    machine_events = arguments.expanded and (
-        arguments.json or arguments.format in {"json", "yaml"}
-    )
+    machine_events = arguments.expanded
     source_path_rows: dict[int, list[dict]] = {}
     for row in days:
         readable = row.get("masses") or [
@@ -1785,7 +1979,8 @@ def run_show(arguments: argparse.Namespace) -> dict:
             )
 
     bible = chosen_bible or indexed_bible(arguments.bible)
-    language = language_account(days, arguments.lang, bible, source_path_rows)
+    language = language_account(days, arguments.lang if arguments.json or arguments.format in {"json", "yaml"}
+                                else lang, bible, source_path_rows)
     if arguments.json or arguments.format in {"json", "yaml"}:
         for row in days:
             # Branches share their Mass objects with the selected projection;
@@ -1800,7 +1995,7 @@ def run_show(arguments: argparse.Namespace) -> dict:
                 mass.pop("_calendar_cycles", None)
                 mass.pop("_source_path_passages", None)
 
-    return {
+    payload = {
         "status": "partial" if problems else "ok",
         "problems": problems,
         "date": when,
@@ -1819,6 +2014,9 @@ def run_show(arguments: argparse.Namespace) -> dict:
             else None
         ),
     }
+    project_dated_conclusions(payload, ranked, arguments)
+    project_source_local_1970(payload, ranked, arguments)
+    return payload
 
 
 def wrap(text: str, indent: str) -> list[str]:
@@ -1916,6 +2114,52 @@ def ordinary_predicates(propers: list[dict]) -> dict[str, bool]:
     return predicates
 
 
+
+def appointed_oration_source_keys(branch: dict) -> list[str]:
+    """Exact source owners of a settled Office Mass's appointed prayer units."""
+    execution = branch.get("oration_execution") or {}
+    if not branch.get("settled") or execution.get("scope") != "dated-mass-of-office":
+        return []
+    series = (branch.get("orations") or {}).get("all") or (branch.get("orations") or {}).get("low_mass") or []
+    keys = []
+    for unit in series:
+        for member in unit.get("members") or [unit]:
+            key = member.get("source_key")
+            if isinstance(key, str) and key and key not in keys:
+                keys.append(key)
+    return keys
+
+
+def private_oration_owners(
+    calendar: str, branch: dict, arguments: argparse.Namespace,
+    lectionary: dict | None, payloads: dict[str, dict],
+) -> list[dict]:
+    """Load prayer-only owners without declaring a new readable Mass or form."""
+    readable = {row.get("key") for row in branch.get("readable") or []}
+    owners = []
+    for key in appointed_oration_source_keys(branch):
+        if key in readable:
+            continue
+        payload = payloads.get(key)
+        if payload is None:
+            argv = ["show", "--calendar", calendar, "--mass", key]
+            for flag in ("bible", "lang", "witness"):
+                value = getattr(arguments, flag, None)
+                if value:
+                    argv += [f"--{flag}", str(value)]
+            payload = invoke("mass-propers", argv)
+        if not isinstance(payload, dict) or (payload.get("mass") or {}).get("key") != key:
+            raise Refused(f"appointed oration source {key!r} returned a different source owner")
+        owner = propers_of(calendar, key, arguments, lectionary, payload=payload)
+        if owner.get("refused"):
+            raise Refused(f"appointed oration source {key!r} is unavailable: {owner['refused']}")
+        rows = owner.get("_oration_source_rows") or []
+        if not rows:
+            raise Refused(f"appointed oration source {key!r} carries no source prayer rows")
+        owners.append({"key": key, "sourcePaths": owner.get("proper_source_paths") or [], "rows": rows})
+    return owners
+
+
 def oration_context_for(day: dict, mass: dict, date: str | None = None) -> dict:
     branch = getattr(mass, "_source_branch", {})
     readable = getattr(mass, "_source_readable", {})
@@ -1927,7 +2171,8 @@ def oration_context_for(day: dict, mass: dict, date: str | None = None) -> dict:
         "principalCommonReference": mass.get("takes_from"),
         "unresolvedDedicationContext": branch.get("unresolvedDedicationContext") if not branch.get("dedicationSelection") else None,
         "series": (branch.get("orations") or {}).get("all") or (branch.get("orations") or {}).get("low_mass") or [],
-        "owners": [{"key": owner.get("key"), "sourcePaths": owner.get("proper_source_paths") or [], "rows": getattr(owner, "_oration_source_rows", [])} for owner in day.get("masses") or []],
+        "owners": [{"key": owner.get("key"), "sourcePaths": owner.get("proper_source_paths") or [], "rows": getattr(owner, "_oration_source_rows", [])} for owner in day.get("masses") or []]
+            + getattr(mass, "_oration_source_owners", []),
     }
 
 
@@ -1957,11 +2202,19 @@ def mass_events(
         "  });\n"
         "  const predicates = Object.assign(\n"
         "    {}, model.predicateFacts(predicateContext), input.predicates);\n"
+        "  const sourceContext = input.proper_appointment_context || {};\n"
+        "  const formIds = [...new Set(appointments.rows.map(row => row.proper.form_id || 'main'))];\n"
+        "  const riteContext = sourceContext.calendar && sourceContext.mass ? {\n"
+        "    calendar:sourceContext.calendar, mass:sourceContext.mass,\n"
+        "    formId:sourceContext.formId || (formIds.length === 1 ? formIds[0] : null), properRows:appointments.rows\n"
+        "  } : null;\n"
+        "  predicates['proper-rite-context'] = riteContext;\n"
         "  const resolved = input.ordinary ? model.resolveElements(\n"
         "    input.ordinary, input.wanted, predicates) : {shown:[],unresolved:[],selected:{}};\n"
         "  const shown = resolved.shown;\n"
         "  const placed = input.ordinary ? model.seatPropers(\n"
-        "    appointments.rows, model.seats(input.ordinary, shown), null, appointments.selections) : null;\n"
+        "    appointments.rows, model.seats(input.ordinary, shown, riteContext), null, appointments.selections) : null;\n"
+        "  if (placed) model.assertCompleteSeating(placed);\n"
         "  const events = input.ordinary ? model.massEvents(shown, placed) :\n"
         "    model.unframedEvents(appointments.rows, null, appointments.selections);\n"
         "  const activeRows = [];\n"
@@ -2099,7 +2352,7 @@ def proper_appointment_context_for(calendar: str, mass: dict, predicate_context:
         if scope in choices:
             raise Refused("--proper-choice repeats an appointment group")
         choices[scope] = option
-    context = {"calendar": calendar, "mass": mass["key"], "entrance": "day", "date": predicate_context.get("date"), "season": predicate_context.get("season"), "facts": mass.get(_calendars.PROPER_APPOINTMENT_FACTS) or {}, "choices": choices}
+    context = {"calendar": calendar, "mass": mass["key"], "formId": mass.get("selected_form") or "main", "entrance": "day", "date": predicate_context.get("date"), "season": predicate_context.get("season"), "facts": mass.get(_calendars.PROPER_APPOINTMENT_FACTS) or {}, "choices": choices}
     if mass.get("proper_source_paths"):
         context = _ProperAppointmentContext(context)
         context._bible_passages = mass.get("_source_path_passages") or {}
@@ -2178,7 +2431,16 @@ def expanded_event_projection(
     def proper_source_index(index: int) -> int:
         return mass["proper_origins"][index]["source_index"] if mass.get("proper_origins") else index
 
+    private_owners = {owner["key"] for owner in getattr(mass, "_oration_source_owners", [])}
+    private_rows: dict[tuple[str, int], dict] = {}
+
     def group_projection(groups):
+        for group in groups:
+            for member in group["members"]:
+                if member["key"] in private_owners:
+                    identity = (member["key"], member["sourceIndex"])
+                    private_rows.setdefault(identity, {"mass": identity[0], "source_index": identity[1],
+                                                       "proper": copy.deepcopy(member["proper"])})
         return [{**{key: value for key, value in group.items() if key != "members"},
                  "members": [{"id": f"proper/{calendar}/{member['key']}/{member['sourceIndex'] + 1:03d}",
                               "key": member["key"], "source_index": member["sourceIndex"],
@@ -2227,6 +2489,9 @@ def expanded_event_projection(
     ids = [event["id"] for event in events]
     if len(ids) != len(set(ids)):
         raise Refused("the expanded event stream repeats a semantic identity")
+    if private_rows:
+        mass["oration_sources"] = {"schema": "triptych-oration-source-rows/v1",
+            "calendar": calendar, "principal": mass_key, "rows": list(private_rows.values())}
     return events
 
 
@@ -2254,6 +2519,8 @@ def proper_lines(
     witness: str | None,
     seat: dict | None,
     why: bool,
+    conclusion: dict | None = None,
+    source_local: dict | None = None,
 ) -> list[str]:
     """One proper of the day, expanded: its words, and where they came from."""
     body = indent + "  "
@@ -2301,13 +2568,121 @@ def proper_lines(
                   if isinstance(row, dict) and row.get("lang") == lang}
         label = "rights restricted" if "rights-restricted" in states else "unavailable"
         lines.append(body + style.note(f"{lang} antiphon body unavailable: {label}"))
+    source_texts = list(_calendars.texts_of(proper, lang, witness))
+    def append_selected_texts():
+        if source_local:
+            if (conclusion or source_local.get("schema") != "triptych-source-local-actor-sequence/v1"
+                    or source_local.get("state") != "source-derived-complete"
+                    or (source_local.get("execution_extent") or {}).get("method_id") != "postconciliar-finite-source-local-actor-sequences-20261113"
+                    or source_local.get("execution_scope") != "source-local-1970"
+                    or source_local.get("calendar") != "postconciliar" or source_local.get("language") != lang
+                    or source_local.get("target_2008_authenticated") is not False
+                    or source_local.get("source_preserved") is not True
+                    or not isinstance(source_local.get("qualification"), str)
+                    or not source_local["qualification"].strip()
+                    or [text for text, _, _ in source_texts if text] != [source_local.get("source_text")]):
+                raise Refused("source-local 1970 reading no longer matches its exact selected quotation")
+            sequence = source_local.get("sequence") or []
+            if len([unit for unit in sequence if unit.get("dialogue_role") == "response"]) != 1:
+                raise Refused("source-local 1970 reading must retain one response")
+            lines.append(body + style.note("Historical source-local 1970 reading; current 2008 correspondence is not established."))
+            lines.extend(style.note(line) for line in wrap_lines(source_local["qualification"], body, WIDTH))
+            for unit in sequence:
+                if unit.get("kind") == "action":
+                    if (unit.get("action") != "silent-prayer" or unit.get("participants") != "all"
+                            or unit.get("speaker") is not None or unit.get("text") is not None
+                            or unit.get("spoken_text") is not None):
+                        raise Refused("source-local action is not the verified nonspoken silence")
+                    lines.append(body + style.note("All pray in silence (not spoken)."))
+                    continue
+                if unit.get("kind") != "spoken" or not isinstance(unit.get("text"), str) or not unit["text"]:
+                    raise Refused("source-local spoken unit is unavailable")
+                speaker = unit.get("speaker")
+                if speaker == "priest":
+                    label = "Priest"
+                elif speaker == "people":
+                    label = "People"
+                elif speaker is None and unit.get("dialogue_role") == "response":
+                    label = "Response (speaker not specified by this source)"
+                else:
+                    raise Refused("source-local spoken actor is unbound")
+                lines.append(body + style.note(label + ":"))
+                lines.extend(wrap_lines(unit["text"], body, WIDTH))
+            lines.append(body + style.note("Original source quotation (not an additional spoken sequence):"))
+        if conclusion:
+            member = conclusion.get("member") or {}
+            if conclusion.get("state") != "source-derived-complete" or len([text for text, _, _ in source_texts if text]) != 1 or not any(
+                text == member.get("source_text") for text, _, _ in source_texts
+            ):
+                raise Refused("conclusion execution no longer matches its exact quoted source")
+            old_method = "roman-1962-rg115-conclusion-execution-20261112"
+            new_method = "missal-finite-oration-conclusion-execution-20261112-v2"
+            new_group = (conclusion.get("execution_extent") or {}).get("method_id") == new_method
+            source_method = member.get("source_method")
+            qualified = "qualification" in member
+            if ((source_method is not None and not isinstance(source_method, str))
+                    or (new_group and source_method not in {old_method, new_method})
+                    or (source_method and source_method not in {old_method, new_method})
+                    or (source_method == new_method and (not qualified or not new_group))
+                    or (qualified and source_method != new_method)
+                    or (qualified and (not isinstance(member["qualification"], str)
+                        or not member["qualification"].strip()
+                        or not isinstance(member.get("body_fidelity"), dict)))):
+                raise Refused("conclusion execution lacks its exact source qualification")
+            # The shared helper owns these three finite editorial readings.
+            # Render its result; never repair a quotation or recalculate an ending.
+            correction = member.get("display_correction")
+            source_structure = proper.get("text_structure") if lang == "la" else next(
+                (row.get("text_structure") for row in proper.get("translations") or []
+                 if row.get("lang") == lang and row.get("text") == member["source_text"]
+                 and (witness is None or row.get("source_id") == witness)), None)
+            corrected = bool(correction and correction.get("state") == "applied" and not source_structure)
+            if corrected and (not isinstance(member.get("display_text"), str) or not member["display_text"]
+                    or not isinstance(correction.get("annotation"), str) or not correction["annotation"].strip()):
+                raise Refused("conclusion editorial reading lacks its validated display and annotation")
+            label = ("Editorial reading in the shared conclusion group" if member.get("role") == "petition"
+                     else "Editorial reading with sourced conclusion") if corrected else (
+                     "Source-derived execution for this selected proper rite" if conclusion.get("scope") == "proper-rite"
+                     else "Source-derived execution for this dated Mass")
+            lines.append(body + style.note(label))
+            lines.extend(wrap_lines(member["display_text"] if corrected else member["priest_text"], body, WIDTH))
+            if conclusion.get("response"):
+                lines.append(body + "R. " + conclusion["response"]["text"])
+            if correction:
+                note = correction["annotation"] if corrected else "Editorial correction unavailable; the source-derived execution is retained."
+                lines.extend(style.note(line) for line in wrap_lines(note, body, WIDTH))
+            if qualified:
+                lines.extend(style.note(line) for line in wrap_lines(member["qualification"], body, WIDTH))
+            elif lang == "en":
+                lines.append(body + style.note("Source-derived English for study; not an approved liturgical translation."))
+            lines.append(body + style.note("Source quotation:" if qualified else "Source quotation and ending cue:"))
+        for text, attribution, note in source_texts:
+            if text:
+                lines.append("")
+                if attribution:
+                    lines.append(body + style.note(f"[{attribution}]"))
+                lines.extend(wrap_lines(text, body, WIDTH))
+            if note:
+                lines.append(body + style.note(f"({note})"))
+    roles = [_calendars.citation_reading_role(verse, proper.get("source"))
+             for verse in proper.get("verses") or [] if isinstance(verse, dict)]
+    text_first = any(roles) and any(text for text, _, _ in source_texts)
+    if text_first:
+        append_selected_texts()
     for verse in proper.get("verses") or []:
         if not isinstance(verse, dict) or not verse.get("ref"):
             continue
         note = str(verse.get("note") or "")
         lines.append("")
         lines.append(body + style.note(str(verse["ref"]) + (f"  ({note})" if note else "")))
+        role = _calendars.citation_reading_role(verse, proper.get("source"))
+        if role and role["kind"] == "embedded-quotation" and any(text for text, _, _ in source_texts):
+            lines.append(body + style.note("Scripture reference quoted in the held antiphon; not an additional reading"))
+            continue
         if verse.get("text"):
+            if role and role["kind"] == "following-psalm":
+                lines.append(body + style.note("Following psalm · Bible reconstruction; target Missal wording not established"))
+                lines.append(body + style.note("Doxology and antiphon repetition are not supplied here"))
             lines.extend(wrap_lines(str(verse["text"]), body + "  ", WIDTH))
         else:
             # A citation the named bible does not answer keeps its reference
@@ -2316,14 +2691,8 @@ def proper_lines(
                 "[unresolved: the bible named here carries no text for this reference]"
             ))
 
-    for text, attribution, note in _calendars.texts_of(proper, lang, witness):
-        if text:
-            lines.append("")
-            if attribution:
-                lines.append(body + style.note(f"[{attribution}]"))
-            lines.extend(wrap_lines(text, body, WIDTH))
-        if note:
-            lines.append(body + style.note(f"({note})"))
+    if not text_first:
+        append_selected_texts()
     latin_note = latin_availability_note(proper, lang)
     if latin_note:
         lines.append(body + style.note(latin_note))
@@ -2455,19 +2824,48 @@ def render_expanded_mass(
         for line in wrap_lines(what, "    ", WIDTH):
             print(style.note(line))
 
-    def pour(held: list) -> None:
+    execution = mass.get("derived_execution") or {}
+    if execution and (execution.get("calendar") != calendar or execution.get("civilDate") != (arguments.date or dt.date.today().isoformat())
+                      or execution.get("mass") != mass["key"] or execution.get("form") != (mass.get("selected_form") or "main")
+                      or execution.get("language") != requested_language(arguments)):
+        raise Refused("dated conclusion display scope changed")
+    historical = mass.get("source_local_actor_selection") or {}
+    if historical and (not getattr(arguments, "source_local_1970", False)
+            or historical.get("scope") != "source-local-1970" or calendar != "postconciliar"
+            or historical.get("calendar") != calendar
+            or historical.get("civilDate") != (arguments.date or dt.date.today().isoformat())
+            or historical.get("mass") != mass["key"] or historical.get("form") != (mass.get("selected_form") or "main")
+            or historical.get("language") != requested_language(arguments)):
+        raise Refused("source-local 1970 display scope changed")
+    source_local = {row["id"]: row["execution"] for row in historical.get("members") or []}
+    executed = {row["id"]: row["execution"] for row in execution.get("members") or []}
+    def event_id(key, index):
+        return f"proper/{calendar}/{key}/{index + 1:03d}"
+    def own_event_id(event):
+        origins = mass.get("proper_origins") or []
+        origin = origins[event["sourceIndex"]] if origins else {"mass": mass["key"], "source_index": event["sourceIndex"]}
+        return event_id(origin["mass"], origin["source_index"])
+    def pour(held: list, conclusion=None, historical=None) -> None:
         for proper, seat in held:
             for line in proper_lines(
                 proper, style, indent,
                 lang=requested_language(arguments), witness=arguments.witness,
-                seat=seat, why=arguments.why,
+                seat=seat, why=arguments.why, conclusion=conclusion, source_local=historical,
             ):
                 print(line)
 
     def pour_event(event, seat=None):
-        pour([(event["proper"], seat)])
+        identifier = own_event_id(event)
+        pour([(event["proper"], seat)], executed.get(identifier), source_local.get(identifier))
+        for rite in execution.get("properRites") or []:
+            if rite["id"] == identifier and (rite.get("execution") or {}).get("state") != "source-derived-complete":
+                aside("Source-derived proper rite conclusion unresolved; exact source quotation is retained.")
+        for group in execution.get("groups") or []:
+            if group["anchor"] == identifier and group["execution"]["state"] != "source-derived-complete":
+                aside("Source-derived conclusion group " + str(group["conclusion_group"]) + " unresolved; exact source quotations are retained.")
         for group in event.get("orationGroups") or []:
-            if group["position"] == 2 and 'intermediate-conclusion-spans-unbound' in group['execution'].get('unresolved', []):
+            complete_group = any(row["anchor"] == identifier and row["conclusion_group"] == group["conclusion_group"] and row["execution"]["state"] == "source-derived-complete" for row in execution.get("groups") or [])
+            if not complete_group and group["position"] == 2 and 'intermediate-conclusion-spans-unbound' in group['execution'].get('unresolved', []):
                 aside("Oration execution unresolved: printed ending cues are retained; exact intermediate conclusion spans are not established.")
             if 'source-name-placeholder-unbound' in group['execution'].get('unresolved', []):
                 aside("Oration execution unresolved: the source name placeholder is retained; occurrence-specific wording is not established.")
@@ -2475,7 +2873,7 @@ def render_expanded_mass(
                 if member["key"] == mass.get("key") and member["sourceIndex"] == event["sourceIndex"]:
                     continue
                 aside(str(member.get("of_name") or member["key"]) + "; conclusion group " + str(group["conclusion_group"]))
-                pour([(member["proper"], seat)])
+                pour([(member["proper"], seat)], executed.get(event_id(member["key"], member["sourceIndex"])))
 
     def pour_choice(event):
         selection = event.get("selection") or {"state": "required", "option": None}
@@ -2502,7 +2900,7 @@ def render_expanded_mass(
                 "the Ordinary is printed once, above; this formulary's propers "
                 "are set out here in the missal's own order."
             )
-        if not (oration_context or {}).get("execution") and not mass.get("proper_source_paths") and not any(_calendars.ORDINARY_DISPOSITION in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in propers) and not appointment_context["choices"]:
+        if not historical and not (oration_context or {}).get("execution") and not mass.get("proper_source_paths") and not any(_calendars.ORDINARY_DISPOSITION in proper or "appointment_replacement" in proper or _calendars.APPOINTMENT_APPLICABILITY in proper or _calendars.SOURCE_PATH_RELATION in proper for proper in propers) and not appointment_context["choices"]:
             pour([(proper, None) for proper in propers])
             return
         resolution = mass.get("_source_path_resolution") or mass_events(None, source_rows, None, predicate_context, appointment_context, oration_context)
@@ -2629,6 +3027,10 @@ def render(payload: object, arguments: argparse.Namespace) -> int:
             for choice in (selected_branch or {}).get("selectable") or []:
                 if isinstance(choice, dict) and choice.get("key"):
                     print("  " + style.note(f"  {choice['key']}"))
+            if arguments.expanded:
+                # Full reading begins only after the same source choice as Day.
+                # Machine records keep inspectable alternatives without enacted events.
+                continue
         # A day the rubrics settle is stated. A day they do not is stated as
         # not settled, with the reason — which is a different thing from the
         # arithmetic layer's older "no precedence is stated", and must not be
@@ -2882,6 +3284,8 @@ def main(argv: list[str] | None = None) -> int:
         ),
     )
     shared.add_argument("--witness", help="show only this translation's source_id")
+    shared.add_argument("--source-local-1970", action="store_true", help=(
+        "explicitly read one offered historical 1970 actor sequence; requires postconciliar, expanded and an explicit language; no current 2008 correspondence claim"))
     shared.add_argument(
         "--json", action="store_true", help="emit one compact key-sorted JSON object (cli-v1)"
     )

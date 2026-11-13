@@ -269,7 +269,7 @@ class Day(Surface):
             self.compare_territory = "" if options["compare_territory"] == "universal" else options["compare_territory"]
         if options.get("replace"):
             self.choices[(self.calendar, self.date.isoformat())] = {}
-        self.pending_selection = {key: options[key] for key in ("form", "witness", "properChoices", "variants", "orationMass", "orationTerritory")
+        self.pending_selection = {key: options[key] for key in ("form", "witness", "properChoices", "variants", "orationMass", "orationTerritory", "sourceLocal1970")
                                   if key in options}
         self.navigation.pending = options.get("location")
         self.pending_study = bool(options.get("study"))
@@ -580,6 +580,13 @@ class Day(Surface):
                     mark = " (selected)" if form["id"] == selected_form else ""
                     found.append(((calendar, row.get("option"), "proper-form", form["id"], row),
                                   f"{prefix}{form['name']}   (formulary form){mark}"))
+            historical = [event.get("sourceLocalActorChoice") for event in row.get("events") or []
+                          if (event.get("sourceLocalActorChoice") or {}).get("available")]
+            if historical:
+                selected = any(offer.get("selected") for offer in historical)
+                found.append(((calendar, row.get("option"), "source-local-1970", not selected, row),
+                              prefix + ("Return to unchanged source quotation" if selected else
+                                        "Historical 1970 reading (current 2008 correspondence not established)")))
             for path in row.get("sourcePaths") or []:
                 for option in path["options"]:
                     if not option["unavailable"] and option.get("properChoices"):
@@ -684,6 +691,11 @@ class Day(Surface):
                 selection["witness"] = choice
             elif kind == "ordinary-variant":
                 selection.setdefault("variants", {})[choice[0]] = choice[1]
+            elif kind == "source-local-1970":
+                if choice:
+                    selection["sourceLocal1970"] = True
+                else:
+                    selection.pop("sourceLocal1970", None)
             elif kind == "source-path":
                 selection["properChoices"] = choice
                 selection.pop("alternative", None)

@@ -45,8 +45,24 @@ latin_text_status:
 # conditions stand in the Common and its referrals in the two November feasts.
 # It was read directly on 2026-11-12; the bounded inspection below records the
 # source-only evidence separately from the public rule and the supplied fact.
+# Christmas-octave commemoration prayers are another proper appointment,
+# checked directly against the three feasts and the shared octave formulary.
 # ---------------------------------------------------------------------------
 derived_from:
+  christmas_octave_orations:
+    artifact_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+    artifact_sha256: 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
+    inspected_on: '2026-11-12'
+    method: direct-page-images
+    resolution_dpi: 200
+    passage: passage.catholic-church.missale-romanum.vatican-typica-1962.christmas-octave-commemoration-orations
+    boundary: >-
+      Appointment and prayer-body identity only. The octave commemorations
+      printed with the three feasts have the same petitions as the shared
+      octave formulary; their printed conclusion cues differ in extent.
+      Existing bodies, translations and conclusion execution retain their
+      separate source authority. This does not appoint the fifth day's whole
+      Mass on any other date.
   annual_calendar:
     artifact_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
     artifact_sha256: 648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a
@@ -638,6 +654,11 @@ implied:
   weekday_only: true
   basis: row-17-day-within-the-christmas-octave
   certain: true
+  appointed_mass:
+    orations:
+      source_key: fifth-day-within-octave
+      slots: [Collect, Secret, Postcommunion]
+      locus: passage.catholic-church.missale-romanum.vatican-typica-1962.christmas-octave-commemoration-orations
 - id: christmastide-feria
   label: a feria of Christmastide
   season: christmastide
@@ -1095,6 +1116,118 @@ orations:
       prayer_names: [Collect, Oratio]
       insertion: after-last-prayer-before-final-reading
       commemorated_source: first-prayer
+      # These are storage representatives of nine identical appointed prayers,
+      # not a preference or selection of the longer Mass form. Each shorter
+      # occurrence was separately checked; printed conclusion cues remain distinct.
+      commemorated_representatives:
+      - mass: advent-ember-saturday
+        role: editorial-source-coordinate
+        locus: RGMR 443; 468; 480; 505; RG 115-116
+        slots:
+        - slot: Collect
+          representative:
+            form_id: longer
+            source_index: 1
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-longer-collect
+          equivalent:
+            form_id: shorter
+            source_index: 25
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-shorter-collect
+          locus: advent-ember-saturday longer, printed8/PDF89,unit53; literal Oratio head.; advent-ember-saturday shorter, printed12/PDF93,unit77; literal Oratio
+            head.
+        - slot: Secret
+          representative:
+            form_id: longer
+            source_index: 21
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-longer-secret
+          equivalent:
+            form_id: shorter
+            source_index: 33
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-shorter-secret
+          locus: advent-ember-saturday longer, printed12/PDF93,unit73; literal Secreta head.; advent-ember-saturday shorter, printed13/PDF94,unit85; literal Secreta
+            head.
+        - slot: Postcommunion
+          representative:
+            form_id: longer
+            source_index: 23
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-longer-postcommunion
+          equivalent:
+            form_id: shorter
+            source_index: 35
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.advent-ember-saturday-shorter-postcommunion
+          locus: advent-ember-saturday longer, printed12/PDF93,unit75; literal Postcommunio head.; advent-ember-saturday shorter, printed13/PDF94,unit87; literal
+            Postcommunio head.
+      - mass: lent-1-ember-saturday
+        role: editorial-source-coordinate
+        locus: RGMR 443; 468; 480; 505; RG 115-116
+        slots:
+        - slot: Collect
+          representative:
+            form_id: longer
+            source_index: 1
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-longer-collect
+          equivalent:
+            form_id: shorter
+            source_index: 26
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-shorter-collect
+          locus: lent-1-ember-saturday longer, printed73/PDF154,unit494; literal Oratio head.; lent-1-ember-saturday shorter, printed77/PDF158,unit519; literal
+            Oratio head.
+        - slot: Secret
+          representative:
+            form_id: longer
+            source_index: 21
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-longer-secret
+          equivalent:
+            form_id: shorter
+            source_index: 34
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-shorter-secret
+          locus: lent-1-ember-saturday longer, printed77/PDF158,unit514; literal Secreta head.; lent-1-ember-saturday shorter, printed78/PDF159,unit527; literal
+            Secreta head.
+        - slot: Postcommunion
+          representative:
+            form_id: longer
+            source_index: 23
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-longer-postcommunion
+          equivalent:
+            form_id: shorter
+            source_index: 36
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.lent-1-ember-saturday-shorter-postcommunion
+          locus: lent-1-ember-saturday longer, printed77/PDF158,unit516; literal Postcommunio head.; lent-1-ember-saturday shorter, printed79/PDF160,unit529;
+            literal Postcommunio head.
+      - mass: september-ember-saturday
+        role: editorial-source-coordinate
+        locus: RGMR 443; 468; 480; 505; RG 115-116
+        slots:
+        - slot: Collect
+          representative:
+            form_id: longer
+            source_index: 1
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-longer-collect
+          equivalent:
+            form_id: shorter
+            source_index: 25
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-shorter-collect
+          locus: 1962 control printed p.404, no.1634; artifact PDF p.485.; 1962 control printed p.408, no.1658; artifact PDF p.489.
+        - slot: Secret
+          representative:
+            form_id: longer
+            source_index: 21
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-longer-secret
+          equivalent:
+            form_id: shorter
+            source_index: 33
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-shorter-secret
+          locus: 1962 control printed p.407, no.1654; artifact PDF p.488.; 1962 control printed p.410, no.1666; artifact PDF p.491.
+        - slot: Postcommunion
+          representative:
+            form_id: longer
+            source_index: 23
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-longer-postcommunion
+          equivalent:
+            form_id: shorter
+            source_index: 35
+            source_id: passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.september-ember-saturday-shorter-postcommunion
+          locus: 1962 control printed p.408, no.1656; artifact PDF p.489.; 1962 control printed p.410, no.1668; artifact PDF p.491.
   what_counts:
     locus: RGMR 433
     what: the oration of the Mass being celebrated; the orations of a commemorated

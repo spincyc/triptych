@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.assumption-offering-20261112"
+edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+artifact_type = "checked-transcription"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only the complete historical prayer at printed376 of the image-verified1712 Milan printing is transcribed. The publication predates1931. The modern BSB card at the end of the containing scan is excluded; acquisition of that mixed container is not blanket rights clearance."
+derived_from = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+provenance = "Full PDF hash180769e3a6989ee863bf6404090ab430fd786fa10def1442485cc8537beaf4ce verified. Fresh complete AP414/printed376 page inspection, with enlarged reading; title AP11 and Assumption heading AP413/printed375 independently inspected 2026-11-12. Right-column Oratio super oblatam. Source prints actual Per Dominum. cue."
+retrieved = "2026-11-12"
+sha256 = "af65286cd202350a80005a3cfcd0af4e1dc1e38c2fe75e3e06a3d80dc5b28e5a"
+byte_size = 159
+path = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/assumption-offering-20261112/latin.txt"
+indexable = true
+encoding = "utf-8"
+transformation = "Join line wraps and printer hyphenation; normalize long s, ae ligatures, stress accents and i/j to project Latin. Preserve words, colon, source capitalization and the actual Per Dominum. cue. No conclusion expansion."
+notes = "Historical source only. It is an Assumption prayer in the Ambrosian rite, not an exact Holy Name modern Roman witness."

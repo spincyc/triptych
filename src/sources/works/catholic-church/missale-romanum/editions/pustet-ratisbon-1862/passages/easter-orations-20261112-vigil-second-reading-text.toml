@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-second-reading-text"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-second-reading"
+artifact_sha256 = "48fd0f61d38e37c1c611fcf03d40505ddfd2830302509c0c53937107ca7f104d"
+locus = "vigil-second-reading/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Deus, fidelium Pater summe, qui in toto orbe terrarum, promissionis tuae filios diffusa adoptionis gratia multiplicas: et per Paschale sacramentum, Abraham puerum tuum universarum, sicut jurasti, gentium efficis patrem: da populis tuis digne ad gratiam tuae vocationis introire. Per Dominum."
+transcription_segments = [{line = 1, text = "Deus, fidelium Pater summe, qui in toto orbe terrarum, promissionis tuae filios diffusa adoptionis gratia multiplicas: et per Paschale sacramentum, Abraham puerum tuum universarum, sicut jurasti, gentium efficis patrem: da populis tuis digne ad gratiam tuae vocationis introire. Per Dominum."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 daeb30ff688c07ba3f8de62968746f856dc824635defc0cf670fa94d40c73470. Controlling complete page passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-orations-20261112-vigil-second-reading-page. One complete1862 prayer supplies every petition clause, including adoptionis gratia, Abraham and the final call-to-grace petition. Its old Genesis22 placement differs in reading number from the modern second reading. The only lexical substitution is introire/intrare; other petition changes are the exact listed word-order changes. The original body and old ending remain independently preserved."

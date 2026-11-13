@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.holy-name-mary-offering-study-english-20261112.2026-11-12-holy-name-mary-offering.recipient-english-tsv"
+edition_id = "edition.triptych.holy-name-mary-offering-study-english-20261112.2026-11-12-holy-name-mary-offering"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Project-created study English offered under CC BY4.0, with the exact underlying whole-expression basis accepted as ambiguous-defensible for repository, generated web-data, reader-display and download surfaces. Complete1712petition and oldconclusion have separate historical bases. This does not admit canonical modern Latin or authenticate2008. Exact English merits accepted in workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/mary-source-review.json SHA256 328c68d0f0f3242551c22201df226daaf6106a7dc7da1ced373ffff7d87e6506. Independent automated review, not human or liturgical approval; installation remains a separate root decision."
+rights_jurisdiction = "United States"
+provenance = "Frozen candidate1c49d261a01c30cfe8e257b8ed9e36399c835ac8bc0f86f3e14da281a844ffec; English bytes unchanged. Complete1712petition with declared nominis insertion and possessive inversion, plus independently attested short formula and scoped recipient rule."
+retrieved = "2026-11-12"
+sha256 = "caea6f083d686e495834b068da63f3987848390c6e24a681449c4fb0c5b1c609"
+byte_size = 284
+path = "src/sources/works/triptych/holy-name-mary-offering-study-english-20261112/editions/2026-11-12-holy-name-mary-offering/artifacts/recipient-english-tsv/english.tsv"
+derived_from = "artifact.triptych.holy-name-mary-offering-study-english-20261112.2026-11-12-holy-name-mary-offering.complete-en"
+transformation = "Encode exactly one frozen English body as JSON in a recipient-keyed TSV cell. Header line1; data line2. No terminalLF added inside logical English body; separateAmen excluded."
+indexable = true
+encoding = "utf-8"
+notes = "Exact accepted English carrier, with separately recorded historical and modern comparison limits. Exact English merits accepted in workflows/reviews/missal-reader-resume-2026-11-13/nonseasonal-orations/mary-source-review.json SHA256 328c68d0f0f3242551c22201df226daaf6106a7dc7da1ced373ffff7d87e6506. Independent automated review, not human or liturgical approval; installation remains a separate root decision."

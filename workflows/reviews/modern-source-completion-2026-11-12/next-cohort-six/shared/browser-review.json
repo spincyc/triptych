@@ -1,0 +1,255 @@
+{
+  "schema": "triptych-six-study-qualification-real-chromium-component-review/v1",
+  "scope": "Actual shared BrowserCore renderProper and orationFor in Chromium, fed the six actual disk-overlay outputs. Both narrow and wide component rendering checked. This is not a complete route, civil-date or deployed-site test.",
+  "browser": "/usr/bin/chromium",
+  "source": {
+    "path": "src/web/browser/shared/browser-core.js",
+    "sha256": "971f50fb69b014857c601c7a5beeb39a8e6220fc91b12725443fc4442d981703"
+  },
+  "input": {
+    "path": ".scratch/modern-study-qualification-addendum/browser-input.json",
+    "sha256": "6a0b4ec591469ffb72fbc1eaf82d04497b07da2690e317027c649d4f8a3488c3"
+  },
+  "stylesheet_pins": [
+    {
+      "path": "src/web/browser/shared/browser-core.css",
+      "sha256": "52694dd9bde2ab3a666eb690dcc6b1ad8597a6aa1d679344a131916ed8062b56"
+    },
+    {
+      "path": "src/web/browser/liturgy/liturgy.css",
+      "sha256": "5333873c3fbcdabb5cd10b1d92897feaa27fad7d532e70c17fd2130088f936b6"
+    }
+  ],
+  "runs": [
+    {
+      "requested_width": 1440,
+      "result": {
+        "results": [
+          {
+            "identity": [
+              "easter-vigil",
+              "main",
+              "Prayer after the First Reading",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 1440,
+            "note_overflow": false,
+            "selected_body_sha256": "6c1315dcc0dc085fb6bf21c89e2040c0a1683d972bb4a96d30b2816bb00d5a19"
+          },
+          {
+            "identity": [
+              "easter-3-wednesday",
+              "main",
+              "Communion Antiphon",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 1440,
+            "note_overflow": false,
+            "selected_body_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea"
+          },
+          {
+            "identity": [
+              "easter-3-friday",
+              "main",
+              "Communion Antiphon",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 1440,
+            "note_overflow": false,
+            "selected_body_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94"
+          },
+          {
+            "identity": [
+              "pentecost",
+              "extended-vigil",
+              "Collect (before the readings)",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 1440,
+            "note_overflow": false,
+            "selected_body_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066"
+          },
+          {
+            "identity": [
+              "pentecost",
+              "extended-vigil",
+              "Collect (after Gloria)",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 1440,
+            "note_overflow": false,
+            "selected_body_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e"
+          },
+          {
+            "identity": [
+              "all-saints",
+              "main",
+              "Entrance Antiphon",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 1440,
+            "note_overflow": false,
+            "selected_body_sha256": "8619e91f083fe507174da1c631422c015f70eebb7ee0390cb214288fdf9f5384"
+          }
+        ],
+        "negative_controls": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "screenshot": {
+        "path": ".scratch/modern-study-qualification-addendum/browser-1440.png",
+        "sha256": "6bed8568c57c9d38748cf92eb7f6c72ee2d565e3666eaedee6e2913dac786b11"
+      },
+      "rendered_dom": {
+        "path": ".scratch/modern-study-qualification-addendum/browser-1440.html",
+        "sha256": "c8a062aa658ba5b283f45fc43eb2611d3e98964038cf2695e72f5fa6d53a062d"
+      },
+      "browser_exit": 0
+    },
+    {
+      "requested_width": 320,
+      "result": {
+        "results": [
+          {
+            "identity": [
+              "easter-vigil",
+              "main",
+              "Prayer after the First Reading",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 500,
+            "note_overflow": false,
+            "selected_body_sha256": "6c1315dcc0dc085fb6bf21c89e2040c0a1683d972bb4a96d30b2816bb00d5a19"
+          },
+          {
+            "identity": [
+              "easter-3-wednesday",
+              "main",
+              "Communion Antiphon",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 500,
+            "note_overflow": false,
+            "selected_body_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea"
+          },
+          {
+            "identity": [
+              "easter-3-friday",
+              "main",
+              "Communion Antiphon",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 500,
+            "note_overflow": false,
+            "selected_body_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94"
+          },
+          {
+            "identity": [
+              "pentecost",
+              "extended-vigil",
+              "Collect (before the readings)",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 500,
+            "note_overflow": false,
+            "selected_body_sha256": "ac34c4afd5c25948d3151350c1a2f653cd6eb6d9c4161b3ee49af95070e50066"
+          },
+          {
+            "identity": [
+              "pentecost",
+              "extended-vigil",
+              "Collect (after Gloria)",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 500,
+            "note_overflow": false,
+            "selected_body_sha256": "f39297ffc2bd1806838302e46492126d2762bd4252978dd1a430b5196eaf146e"
+          },
+          {
+            "identity": [
+              "all-saints",
+              "main",
+              "Entrance Antiphon",
+              "all",
+              1
+            ],
+            "exact_note": true,
+            "selection_note": true,
+            "visible": true,
+            "width": 500,
+            "note_overflow": false,
+            "selected_body_sha256": "8619e91f083fe507174da1c631422c015f70eebb7ee0390cb214288fdf9f5384"
+          }
+        ],
+        "negative_controls": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "screenshot": {
+        "path": ".scratch/modern-study-qualification-addendum/browser-320.png",
+        "sha256": "6cf91e814c6f53037baa2b7f0f7b7d8337c331d44f9a5012b093ec47d1433ac2"
+      },
+      "rendered_dom": {
+        "path": ".scratch/modern-study-qualification-addendum/browser-320.html",
+        "sha256": "80a4e103e4fdc8ed54873ec220cdb5cee935ff377760d2b2f1dbc1573690137e"
+      },
+      "browser_exit": 0
+    }
+  ],
+  "status": "PASS",
+  "canonical_writes": false
+}

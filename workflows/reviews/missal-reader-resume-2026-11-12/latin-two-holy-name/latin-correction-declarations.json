@@ -1,0 +1,457 @@
+{
+  "schema": "triptych-existing-positive-latin-corrections/v1",
+  "date": "2026-11-12",
+  "status": "prepared-for-independent-review-not-applied",
+  "hash_serialization": "Raw UTF-8 text bytes, including terminal LF; objects use ensure_ascii=False, sort_keys=True, separators=(comma,colon).",
+  "source_epoch_action": "Declare these exact two existing-positive corrections separately; this packet does not activate or bypass source_epoch.",
+  "input_files": [
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "sha256": "e04c5008db6e9f3644aa02babab6ee7e9cc10688675c6881fc3b13cc5e902953"
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "sha256": "e1898bf40bc10db519b48da5eab6cc273308590225f191f395847a7e97196658"
+    },
+    {
+      "path": ".scratch/oration-endings/review-2/latin-remainder/partition.json",
+      "sha256": "f6b8a9653b43e9a757b9a2afd37c39975415308ffe98677e62477e87e751e6d5"
+    },
+    {
+      "path": "tools/mass-propers",
+      "sha256": "c7b7e58cec3bcc88b2e5d22aa82e8f1e9a03ce55f899401e84fe090a9af9481f"
+    },
+    {
+      "path": "tools/audit-latin-body-substitutions",
+      "sha256": "3a9b77a612de7aadeec996e38fddc0c742b2b73ac1f1cd72b0f53bc182956d5c"
+    },
+    {
+      "path": "scripts/_latin_body_damage.py",
+      "sha256": "f58092133fc3d8782cd91d3c935f93d96c9334dee54357097ae087f79d7c1b6d"
+    }
+  ],
+  "correction_count": 2,
+  "corrections": [
+    {
+      "target": [
+        "s-gregorii-i-papae-confessoris-ecclesiae",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "language": "la",
+      "change_class": "existing-positive-source-transcription-correction",
+      "scope": "Two source-read lexical corrections only; no English, conclusion expansion, model or appointment change. Separate source_epoch declaration required before integration.",
+      "replacement": {
+        "before": "ut II intercession e beati",
+        "after": "ut intercessione beati"
+      },
+      "finding": "Both page images print ut intercessione beati Gregorii (stress accents omitted here). Neither prints II, and intercessione is one word. The entire petition was read against both witnesses. The 1862 prints Per Dominum. after the petition; the old provenance claim that it prints no conclusion is incorrect. The 1962 prints the retained conclusion through in unitate. The historical decorative initial and small-cap tail read Annue; they are not the recognizer string 4 Nnue. The historical text has no comma after quaesumus; the target punctuation is retained.",
+      "body_before": "Annue nobis, quaesumus, Domine: ut II intercession e beati Gregorii haec\nnobis prosit oblatio, quam immolando totius mundi tribuisti relaxari\ndelicta. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et\nregnat in unitate.\n",
+      "body_after": "Annue nobis, quaesumus, Domine: ut intercessione beati Gregorii haec\nnobis prosit oblatio, quam immolando totius mundi tribuisti relaxari\ndelicta. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et\nregnat in unitate.\n",
+      "body_before_sha256": "2cf35f33ef127fb916f8a8f1428449b802536b04bceefcda7b79e23735efa5ff",
+      "body_after_sha256": "20a1441c3dbfa8349ab0ae1bd6b1b15ea8c78df41d29068e15340415d49b50f6",
+      "proper_before": {
+        "name": "Secret",
+        "incipit": "Annue nobis, quaesumus",
+        "source": "composed",
+        "notes": "Printed p. 488, no. 2281, marked P. Printed locus printed p. 488, marginal no. 2281; artifact PDF p. 569. Preexisting material under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet Ratisbon 1862 at printed p. 414; text-layer lines 59292-59304; this is the 1862's own entry for the day.",
+        "text": "Annue nobis, quaesumus, Domine: ut II intercession e beati Gregorii haec\nnobis prosit oblatio, quam immolando totius mundi tribuisti relaxari\ndelicta. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et\nregnat in unitate.\n"
+      },
+      "proper_after": {
+        "name": "Secret",
+        "incipit": "Annue nobis, quaesumus",
+        "source": "composed",
+        "notes": "Printed p. 488, no. 2281, marked P. Printed locus printed p. 488, marginal no. 2281; artifact PDF p. 569. Preexisting material under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet Ratisbon 1862 at printed p. 414; text-layer lines 59292-59304; this is the 1862's own entry for the day.",
+        "text": "Annue nobis, quaesumus, Domine: ut intercessione beati Gregorii haec\nnobis prosit oblatio, quam immolando totius mundi tribuisti relaxari\ndelicta. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et\nregnat in unitate.\n"
+      },
+      "proper_before_sha256": "47cdf362813ac2744e47915f5619ae1cc963cbf291170d9a4804d00127edac41",
+      "proper_after_sha256": "9d24bfe86fdf0fe536e6abde1dce57864626a3d5dd66fdcdee8ee37b87d53444",
+      "owner_row_before": {
+        "mass": "s-gregorii-i-papae-confessoris-ecclesiae",
+        "form": "",
+        "proper": "Secret",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "2cf35f33ef127fb916f8a8f1428449b802536b04bceefcda7b79e23735efa5ff",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.s-gregorii-i-papae-confessoris-ecclesiae-secret",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 31-34; antecedent printed p. 414; text-layer lines 59292-59304; this is the 1862's own entry for the day",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-s-gregorii-i-papae-confessoris-ecclesiae-orations",
+        "verification_locator": "printed p. 488, marginal no. 2281; artifact PDF p. 569",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: the 1862 reads `Secreta 4 Nnue` where the 1962 reads `Annue`; the 1862 supplies the saint's name as `Greg6rii` where the 1962 has `Gregorii`; 5 further place(s) differ only in orthography, ligature or the recogniser's letterforms; the 1862 prints no conclusion at this place; the 1962 prints `Per Dominum nostrum Iesum Christum Filium tuum Qui tecum vivit et regnat in unitate`; the 1862 sets 12 point(s) of punctuation in this oration where the 1962 sets 8; the 1922 Mame supplies the saint's name as `Leénis` where the 1962 has `Gregorii`; the 1922 Mame reads `tétius` where the 1962 reads `totius` (letterforms inferred, not read: the difference is at the level of the recogniser); 3 further place(s) differ only in orthography, ligature or the recogniser's letterforms; the 1922 Mame prints the conclusion as `Per Dominum Secreta de Octava ut infra de S Maria Secreta wa Domine propitiatione et beatze` where the 1962 prints `Per Dominum nostrum Iesum Christum Filium tuum Qui tecum vivit et regnat in unitate`. Corroboration: 1922 Tours Mame, printed p. 647 (artifact PDF p. 761), target-body character coverage 0.93, found by whole-book sweep (bounding-box reflow); Benziger 1962 conformed printing, target-body character coverage 0.77.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-1-orations-2e477eea",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, printed p. 414; text-layer lines 59292-59304; this is the 1862's own entry for the day; artifact rights_status public-domain on a book first published in 1862",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "owner_row_after": {
+        "mass": "s-gregorii-i-papae-confessoris-ecclesiae",
+        "form": "",
+        "proper": "Secret",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "20a1441c3dbfa8349ab0ae1bd6b1b15ea8c78df41d29068e15340415d49b50f6",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+        "source_date": "2026-11-12 corrected project editorial projection; historical petition Pustet Ratisbon 1862",
+        "locator": "corrected projection physical lines 3-6; historical printed p. 414, artifact PDF p. 500, right column, Secreta under S. Gregorii",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+        "verification_locator": "printed p. 488, no. 2281, artifact PDF p. 569, left column",
+        "transformations": [
+          "read complete petition on both page images",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "retain the target printing's punctuation",
+          "retain the target's existing conclusion at its printed length",
+          "retain existing body line wraps and terminal LF",
+          "replace the declared recognizer damage with the printed reading"
+        ],
+        "provenance_evidence": "Both page images print ut intercessione beati Gregorii (stress accents omitted here). Neither prints II, and intercessione is one word. The entire petition was read against both witnesses. The 1862 prints Per Dominum. after the petition; the old provenance claim that it prints no conclusion is incorrect. The 1962 prints the retained conclusion through in unitate. The historical decorative initial and small-cap tail read Annue; they are not the recognizer string 4 Nnue. The historical text has no comma after quaesumus; the target punctuation is retained. The old source artifacts and passages are retained unchanged. This new source ID owns only the corrected project transcription. Historical page-image witness: passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret. Target images were read at actual 200/400 dpi; historical images at 2400/4800-pixel long-side scales because of invalid PDF page boxes. Full input hashes match the registered whole artifacts. No Mame or Benziger corroboration is claimed by this fresh review.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-3e45253b",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, printed p. 414, artifact PDF p. 500, right column, Secreta under S. Gregorii; complete petition read from the public-domain whole facsimile",
+        "publication_evidence": "The corrected petition readings are independently present in the 1862 Pustet page image. Its registered whole facsimile rights record grounds United States public-domain status in the 1862 publication date and mechanical reproduction. The already-held 1962 conclusion is unchanged; this correction adds no new conclusion words or 1962-only matter. The existing repository pairing of preexisting material under 17 U.S.C. 103(b) with an independent public-domain witness remains the publication basis, as recorded in src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml. The new artifact owns only the declared project editorial contribution."
+      },
+      "owner_row_before_sha256": "d8f0d0422d9b0f8954c7fda7af70e1882cb078148d49c6911722718e377054bf",
+      "owner_row_after_sha256": "2266e8803d3e959ae489e537fcf342ad5418de1a3b1fe7e131faca5b22b77401",
+      "owner_row_before_raw_sha256": "cde28d96086520e31194ce1bfce5c5bd9c610d116623963ee0a5d51a8066cd32",
+      "owner_row_after_raw_sha256": "b70656ea4f691c6b274a30f162f9566a57a4da0b06308c7d4b17e070e17be105",
+      "owner_row_changes": [
+        "text_sha256",
+        "source_id",
+        "source_date",
+        "locator",
+        "verification_source_id",
+        "verification_locator",
+        "transformations",
+        "provenance_evidence",
+        "publication_source_ids",
+        "publication_locator",
+        "publication_evidence"
+      ],
+      "old_source_files_preserved": [
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+          "sha256": "24c7ee774fa5bed73dfa1529a86753dbd2fdfe933a92824531b072dde3dc2db3"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/sanctoral-w-1-orations-2e477eea/artifact.toml",
+          "sha256": "e1a501d6f8ae89777e55f29cf0eca6c1015ac9a924666024d4fb642ca058b427"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/sanctoral-w-1-orations-2e477eea/sanctoral-w-1-orations-2e477eea.txt",
+          "sha256": "2e477eea12d3316cdfdeb2445422e85baaf0c48be9800b2555946eee3f19671c"
+        }
+      ],
+      "new_payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+      "new_payload_sha256": "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb",
+      "new_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+      "historical_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret",
+      "page_images": [
+        {
+          "path": ".scratch/roman-sources/latin-cleanliness/images/cmaa-569-200.png",
+          "sha256": "33a9423ffa9233252dafc9e9c850ca08bb88dfca3ee922f63e309887462fdf0b"
+        },
+        {
+          "path": ".scratch/roman-sources/latin-cleanliness/images/cmaa-569-400.png",
+          "sha256": "8048d26abb09d3dd680ab6ad21d335a4c9399b6f898264ff2858b8358603dd3d"
+        },
+        {
+          "path": ".scratch/roman-sources/latin-cleanliness/images/pustet-500-scale2400.png",
+          "sha256": "927df3c9086df7ebda92f7f9ec2d8284b58f7474a70ba1d155f16e379c1a0449"
+        },
+        {
+          "path": ".scratch/roman-sources/latin-cleanliness/images/pustet-500-scale4800.png",
+          "sha256": "ed841548b142d8483a8b1e9ae86e7958814c8b5923eeac42c37a0c28166e4821"
+        }
+      ]
+    },
+    {
+      "target": [
+        "comm-s-gorgonii-martyris",
+        "main",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "change_class": "existing-positive-source-transcription-correction",
+      "scope": "Two source-read lexical corrections only; no English, conclusion expansion, model or appointment change. Separate source_epoch declaration required before integration.",
+      "replacement": {
+        "before": "vegetet: quas in Martyre",
+        "after": "vegetet: quae in Martyre"
+      },
+      "finding": "Both page images print quae as the ae ligature in vegetet: quae in Martyre, not quas. The entire petition was read against both witnesses. The 1862 ends pascatur. and proceeds directly to De Spiritu sancto. Postcomm.; it prints no conclusion at this place, contrary to the old provenance claim of a short conclusion cue. The 1962 prints pascatur: Qui tecum vivit et regnat in unitate.; the existing target punctuation and conclusion remain unchanged.",
+      "body_before": "Familiam tuam, Deus, suavitas aeterna contingat et vegetet: quas in Martyre\ntuo Gorgonio Christi Filii tui bono jugiter odore pascatur: Qui tecum vivit\net regnat in unitate.\n",
+      "body_after": "Familiam tuam, Deus, suavitas aeterna contingat et vegetet: quae in Martyre\ntuo Gorgonio Christi Filii tui bono jugiter odore pascatur: Qui tecum vivit\net regnat in unitate.\n",
+      "body_before_sha256": "63f58c33a7b4d65a87d53d35a3d0493f78ecc6557d568ce4fcfdbe638635dfba",
+      "body_after_sha256": "8294aa96abf2c6d1b207cea9ae97a96667b8f5b97fe70d1102acf566fa1baaa4",
+      "proper_before": {
+        "name": "Postcommunion",
+        "incipit": "Familiam tuam, Deus, suavitas aeterna",
+        "source": "composed",
+        "notes": "Printed locus printed p. 652, no. 3585; artifact PDF p. 733 (left column). Preexisting material under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet Ratisbon 1862 at 1862 sanctoral, 9 September, 'Pro S. Gorgonio. Postcomm.'; text-layer lines 73848-73852; approx. printed p. 537.",
+        "text": "Familiam tuam, Deus, suavitas aeterna contingat et vegetet: quas in Martyre\ntuo Gorgonio Christi Filii tui bono jugiter odore pascatur: Qui tecum vivit\net regnat in unitate.\n"
+      },
+      "proper_after": {
+        "name": "Postcommunion",
+        "incipit": "Familiam tuam, Deus, suavitas aeterna",
+        "source": "composed",
+        "notes": "Printed locus printed p. 652, no. 3585; artifact PDF p. 733 (left column). Preexisting material under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet Ratisbon 1862 at 1862 sanctoral, 9 September, 'Pro S. Gorgonio. Postcomm.'; text-layer lines 73848-73852; approx. printed p. 537.",
+        "text": "Familiam tuam, Deus, suavitas aeterna contingat et vegetet: quae in Martyre\ntuo Gorgonio Christi Filii tui bono jugiter odore pascatur: Qui tecum vivit\net regnat in unitate.\n"
+      },
+      "proper_before_sha256": "774d05c48e5cf01f160754dc3f3c76cb884f37e38ef267cee8d08aa084374116",
+      "proper_after_sha256": "5decd607dc013f6aefdbaf79273f697297207d7829f778e47f4423424cad3594",
+      "owner_row_before": {
+        "mass": "comm-s-gorgonii-martyris",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "63f58c33a7b4d65a87d53d35a3d0493f78ecc6557d568ce4fcfdbe638635dfba",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.comm-s-gorgonii-martyris-postcommunion",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 83-85; antecedent 1862 sanctoral, 9 September, 'Pro S. Gorgonio. Postcomm.'; text-layer lines 73848-73852; approx. printed p. 537",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-comm-s-gorgonii-martyris-orations",
+        "verification_locator": "printed p. 652, no. 3585; artifact PDF p. 733 (left column)",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1862 prints the short conclusion cue where the 1962 writes out Qui tecum vivit et regnat in unitate (7 tokens); 1862 layer shows six accents as & or digits; no word differs. Corroboration: none attempted beyond the 1862; all 20 words of the petition align.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.sanctoral-w-2-orations-f26ac956",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, 1862 sanctoral, 9 September, 'Pro S. Gorgonio. Postcomm.'; text-layer lines 73848-73852; approx. printed p. 537; artifact rights_status public-domain on a book first published in 1862",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "owner_row_after": {
+        "mass": "comm-s-gorgonii-martyris",
+        "form": "",
+        "proper": "Postcommunion",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "8294aa96abf2c6d1b207cea9ae97a96667b8f5b97fe70d1102acf566fa1baaa4",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+        "source_date": "2026-11-12 corrected project editorial projection; historical petition Pustet Ratisbon 1862",
+        "locator": "corrected projection physical lines 10-12; historical printed p. 537, artifact PDF p. 623, left column, Pro S. Gorgonio. Postcomm.",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+        "verification_locator": "printed p. 652, no. 3585, artifact PDF p. 733, left column",
+        "transformations": [
+          "read complete petition on both page images",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "retain the target printing's punctuation",
+          "retain the target's existing conclusion at its printed length",
+          "retain existing body line wraps and terminal LF",
+          "replace the declared recognizer damage with the printed reading"
+        ],
+        "provenance_evidence": "Both page images print quae as the ae ligature in vegetet: quae in Martyre, not quas. The entire petition was read against both witnesses. The 1862 ends pascatur. and proceeds directly to De Spiritu sancto. Postcomm.; it prints no conclusion at this place, contrary to the old provenance claim of a short conclusion cue. The 1962 prints pascatur: Qui tecum vivit et regnat in unitate.; the existing target punctuation and conclusion remain unchanged. The old source artifacts and passages are retained unchanged. This new source ID owns only the corrected project transcription. Historical page-image witness: passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion. Target images were read at actual 200/400 dpi; historical images at 2400/4800-pixel long-side scales because of invalid PDF page boxes. Full input hashes match the registered whole artifacts. No Mame or Benziger corroboration is claimed by this fresh review.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-3e45253b",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, printed p. 537, artifact PDF p. 623, left column, Pro S. Gorgonio. Postcomm.; complete petition read from the public-domain whole facsimile",
+        "publication_evidence": "The corrected petition readings are independently present in the 1862 Pustet page image. Its registered whole facsimile rights record grounds United States public-domain status in the 1862 publication date and mechanical reproduction. The already-held 1962 conclusion is unchanged; this correction adds no new conclusion words or 1962-only matter. The existing repository pairing of preexisting material under 17 U.S.C. 103(b) with an independent public-domain witness remains the publication basis, as recorded in src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml. The new artifact owns only the declared project editorial contribution."
+      },
+      "owner_row_before_sha256": "561542fae18f9bb5ac59511c72247a4cfa6d8e906d98ca2723d06bafeca5b198",
+      "owner_row_after_sha256": "6c16c0b254d65c352d70cc25a3255b2e304ec5019168ecc4eecdf3fad8170cce",
+      "owner_row_before_raw_sha256": "1d932eff5917fcf9a5f4605f3c770dc7a7592e9bca0654f382aa871d646c47d9",
+      "owner_row_after_raw_sha256": "fd208bea91b94993b84456e9ddbc8c4dd4b3541ae7f007a184b4a7bb9cf80941",
+      "owner_row_changes": [
+        "text_sha256",
+        "source_id",
+        "source_date",
+        "locator",
+        "verification_source_id",
+        "verification_locator",
+        "transformations",
+        "provenance_evidence",
+        "publication_source_ids",
+        "publication_locator",
+        "publication_evidence"
+      ],
+      "old_source_files_preserved": [
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/comm-s-gorgonii-martyris-postcommunion.toml",
+          "sha256": "c1375e3d424d2b8d3555c7e3cd2bb20c41ab7eaafe6859ce0a8ba16f034a6b22"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/sanctoral-w-2-orations-f26ac956/artifact.toml",
+          "sha256": "bda8ff131d50a01bc1433ff040f6276276db12b5881eccc4fd2340b1df14613e"
+        },
+        {
+          "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/sanctoral-w-2-orations-f26ac956/sanctoral-w-2-orations-f26ac956.txt",
+          "sha256": "f26ac956893280f92e216ea7ec1dcdfef5868da9e0ed302df559696de0f70e0a"
+        }
+      ],
+      "new_payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+      "new_payload_sha256": "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb",
+      "new_passage_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+      "historical_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+      "target_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+      "page_images": [
+        {
+          "path": ".scratch/roman-sources/latin-cleanliness/images/cmaa-733-200.png",
+          "sha256": "cf3b0fd90c7b929118943b4e251aab86b8e6bfe49e8707132bfcdbd20cc57cad"
+        },
+        {
+          "path": ".scratch/roman-sources/latin-cleanliness/images/cmaa-733-400.png",
+          "sha256": "086bf99306bbb5c72f0c0db8691882cc1e2bbe1d008a28abfd5539ab54e3cec1"
+        },
+        {
+          "path": ".scratch/roman-sources/latin-cleanliness/images/pustet-623-scale2400.png",
+          "sha256": "d1b54f2e9ad10ad958069c276ec5e8c6a05a50aaab59f21435062674b393b578"
+        },
+        {
+          "path": ".scratch/roman-sources/latin-cleanliness/images/pustet-623-scale4800.png",
+          "sha256": "23924ba95984771344d2a214216e9a6b577d06ecd01c990246cc462d657347e5"
+        }
+      ]
+    }
+  ],
+  "new_source_files": [
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+      "sha256": "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb",
+      "byte_size": 506
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/artifact.toml",
+      "sha256": "b2e52627a57a68c3304b5213959b163bbb3e8ef5d0e26c81ebb1fe5b0c828db6",
+      "byte_size": 2861,
+      "id": "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-3e45253b"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "2e7fc16a5e8549f175b1992b96abf71fd071902198d731b9dda57a478a4146ae",
+      "byte_size": 1693,
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "e881152aeaacc469e0be567aa9676664e4a551e006c4172c2887c62923718357",
+      "byte_size": 1594,
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret.toml",
+      "sha256": "6a4399180b2718dd881653d29fdc521940279bb36cd80b1d331577855e8b2dcb",
+      "byte_size": 1975,
+      "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-s-gregorii-i-papae-confessoris-ecclesiae-secret"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "2393df71e9225e72b2e35ffc807309c18a5749d6cd0abaf7b8a11d3a1cbf5a14",
+      "byte_size": 1566,
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "07290a8ae34349f6c41d1d163b7362c9e64ca3b02c5ce844bccef20e2c76d8e0",
+      "byte_size": 1467,
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion.toml",
+      "sha256": "ee9afe0849805ed20d4b9321dca4147acfb26b2c7fdaecb020552d1410165bcc",
+      "byte_size": 1843,
+      "id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion"
+    }
+  ],
+  "owner_patch": {
+    "path": ".scratch/roman-sources/latin-cleanliness/existing-owner-corrections.patch",
+    "sha256": "ce3d4302b480e2a1b25021fe0df438da70b1142cebc325aecbcae411d2e07a8a"
+  },
+  "validation": {
+    "current_review_targets_and_hashes_match": true,
+    "prepared_toml_roundtrips": true,
+    "payload_line_ranges_exact": true,
+    "only_two_latin_body_changes_in_calendar": true,
+    "english_unchanged": true,
+    "old_source_payloads_unchanged": true,
+    "no_canonical_writes": true,
+    "canonical_source_library_check": "deferred to parent integration"
+  }
+}

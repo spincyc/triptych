@@ -1,0 +1,263 @@
+{
+  "schema": "triptych-modern-two-consumer-composition/v1",
+  "state": "frozen; independently reviewed; Root final code adoption pending",
+  "scope": "Explicit historical 1970 reading of the two source-bound prayers, four language materials; unchanged default quoted source and unresolved authenticated current-2008 status.",
+  "base": "Adopted final-runtime-v3 plus adopted CLI694 successor; unchanged files retain declared preimages.",
+  "files": [
+    {
+      "path": "scripts/lectern/adapters/liturgy.js",
+      "before_sha256": "42f9a54da4e22ac7dd680d4df732bb74e9a9ff6c589e8a9894801cfd7aaf11fb",
+      "after_sha256": "522610e27df72c8a774688d0d1564b825a74cfae3e37c75add43b0d76480f271",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/scripts/lectern/adapters/liturgy.js",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/terminal-cli/amendment-v2/postimages/scripts/lectern/adapters/liturgy.js"
+    },
+    {
+      "path": "scripts/lectern/dom.js",
+      "before_sha256": "843d2ca3105ff6ac2091842b05709242ee7167cb3e6b9e220db84a84c7af4594",
+      "after_sha256": "7f7e7e1649c3fe427832a09a5e0b0783bb8535cded4a66488b0b8d61b7684121",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/scripts/lectern/dom.js",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/terminal-cli/amendment-v2/postimages/scripts/lectern/dom.js"
+    },
+    {
+      "path": "scripts/lectern/missal.py",
+      "before_sha256": "cc8ba5bb535bb887c2da16a820b9928b13354843265791a3ba3cc597157c28fc",
+      "after_sha256": "57c97138b3076a51bdc1d920e80e04e2e9a102454ad92f97e25bc4d531530be5",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/scripts/lectern/missal.py",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/terminal-cli/amendment-v2/postimages/scripts/lectern/missal.py"
+    },
+    {
+      "path": "scripts/lectern/surfaces/day.py",
+      "before_sha256": "84c5d8fd800857299f99059040a6558273b2aa7ac7cdb3bf9c35f3e5bb4fb9b8",
+      "after_sha256": "fed5005e30eec20aaf47ae3dfed866a3ab3a419775de3e6d4ababe163bef494e",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/scripts/lectern/surfaces/day.py",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/terminal-cli/postimages/scripts/lectern/surfaces/day.py"
+    },
+    {
+      "path": "scripts/lectern/surfaces/propers.py",
+      "before_sha256": "2af6664e8af8275d633ee45d5cb10d7d54773dd56996ed32a7f216996a36b95d",
+      "after_sha256": "d113c96ca9623f65952f0f208497f44a45bf6331b0b82eb2c3f903f6c2fcc80d",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/scripts/lectern/surfaces/propers.py",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/terminal-cli/postimages/scripts/lectern/surfaces/propers.py"
+    },
+    {
+      "path": "src/web/browser/liturgy/day-reader.html",
+      "before_sha256": "586ef01656277b4ff8606b9c70561a7c0b1415d1e49f3caf0c04273c87839884",
+      "after_sha256": "36a076b4b286584ca33df38003d9ed06a25db6688381ec59efcc3900ec1095d7",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/day-reader.html",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/day-reader.html"
+    },
+    {
+      "path": "src/web/browser/liturgy/day-reader.js",
+      "before_sha256": "ffce4fa13bd89d0ccb74b7b2801eede2b5d02f1c799cbd054374d9d37db4c92f",
+      "after_sha256": "43e3e9b07f95ef086cb39dfe57eecba466a0ec9c9ce8213ae385616792acea86",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/day-reader.js",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/day-reader.js"
+    },
+    {
+      "path": "src/web/browser/liturgy/day.html",
+      "before_sha256": "bb5caf66b487110ba7ca09ecdf0dc219473585f92d365cbbe99acee4ada39e85",
+      "after_sha256": "750a8795faec41f62dcddff9d572c64c3d9d9668d7eacb194c6d7b2105de3e3c",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/day.html",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/day.html"
+    },
+    {
+      "path": "src/web/browser/liturgy/index.html",
+      "before_sha256": "7f7dc50d0a10d0654b2f0fc36701291e62ca9576626a4c34c8be40c2eebeecbc",
+      "after_sha256": "f12d085271a6de1f9986aa311b5ad6f20f442d26779ffaa25f20d9b5b37f1b52",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/index.html",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/index.html"
+    },
+    {
+      "path": "src/web/browser/liturgy/propers-events.js",
+      "before_sha256": "ee6519360c5e139fc74c6f9d51ff7aecf02c3e652c5d2470d35306078d2e9da5",
+      "after_sha256": "6a720383ef16b4936b3b7d1e2dcbd9d0a11f7007e52813619732e6258fa36b89",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/propers-events.js",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/propers-events.js"
+    },
+    {
+      "path": "src/web/browser/liturgy/propers-reader.html",
+      "before_sha256": "81375cb61e6c48a60020891275cd0ff69a223045941ad596be4799c865b8f170",
+      "after_sha256": "3778c1f3b548655ca2229c978493fee8399a78df2b940e8505d2e636e0b27380",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/propers-reader.html",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/propers-reader.html"
+    },
+    {
+      "path": "src/web/browser/liturgy/reader-share-print.css",
+      "before_sha256": "351aea3233027c0545e971139b29c1cb93a1c4e301957cd816a7a1fa2aa65197",
+      "after_sha256": "77ae2c97b35432a45b2ccce4565736ed2e8ae0d7a1b26229e4d169113781c37f",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/reader-share-print.css",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/renderer/amendment-v2/files/src/web/browser/liturgy/reader-share-print.css"
+    },
+    {
+      "path": "src/web/browser/liturgy/reader-share-print.js",
+      "before_sha256": "c047ecff988a572ab10251f1fc6f91a22a38832993a75539098a3695d351a89a",
+      "after_sha256": "2131c3035d1f487e550407e8d42310a96bcd4a7cc724d4c59d5202e21d851ad3",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/reader-share-print.js",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/share/files/src/web/browser/liturgy/reader-share-print.js"
+    },
+    {
+      "path": "src/web/browser/liturgy/reader-state-adapters.js",
+      "before_sha256": "3f662d0243bc15eae4d0f5f9f269b88ea835d0301c99e193486b2d0b76f9a642",
+      "after_sha256": "d83373df8c84406f6647c4ccb4c7171fecedbe76f741fa9b7b5f4c673c87d421",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/reader-state-adapters.js",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/reader-state-adapters.js"
+    },
+    {
+      "path": "src/web/browser/liturgy/reader-visual-reset-day.html",
+      "before_sha256": "2238659672bca8ce4f83d6420eb2368ba8df34847802283fe4fd529cee4b87fc",
+      "after_sha256": "191ab167771cb48801c3bb43f90055e50f8501f6bf997004241ec6fe2d93f955",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/reader-visual-reset-day.html",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/reader-visual-reset-day.html"
+    },
+    {
+      "path": "src/web/browser/liturgy/reader-visual-reset-propers.html",
+      "before_sha256": "7bfca7af1f496720ca7b2236cb63f7c9883ced76575534f1b0545a92d5d6cb9b",
+      "after_sha256": "e22f3cd09b572f919c4623daf1c0992e26b9519d5af9a27ac55c75a8bd2c7c43",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/liturgy/reader-visual-reset-propers.html",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/src/web/browser/liturgy/reader-visual-reset-propers.html"
+    },
+    {
+      "path": "src/web/browser/shared/browser-core.js",
+      "before_sha256": "7dff445625fdbe5b82fdf1cd410e79b10bd5309f86fa13ca8b4025aa6c381e6b",
+      "after_sha256": "3be756fe5760458e0c97ece183b369be7fb61d626e02286af94926646979c907",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/src/web/browser/shared/browser-core.js",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/renderer/amendment-v2/files/src/web/browser/shared/browser-core.js"
+    },
+    {
+      "path": "tools/mass-today",
+      "before_sha256": "694d4843e843c0b0639289a53925bc01ae54a6fdb507543c399dce9c00e1280f",
+      "after_sha256": "526ca4b3e841e64ed6ca83615ab5e31ad23c8e2150d1d27a4c23905ad974373d",
+      "mode": "0755",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/tools/mass-today",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/terminal-cli/postimages/tools/mass-today"
+    },
+    {
+      "path": "tools/tests/test_source_local_actor_reader.py",
+      "before_sha256": null,
+      "after_sha256": "db01f8afb526c71d609d5aa234b104ca97d9654ae91b8994925733e85af5943a",
+      "mode": "0644",
+      "postimage": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/postimages/tools/tests/test_source_local_actor_reader.py",
+      "reviewed_source": ".scratch/reader-audit/modern-two-consumer/adapter/postimages/tools/tests/test_source_local_actor_reader.py"
+    }
+  ],
+  "patch": {
+    "path": ".scratch/reader-audit/modern-two-consumer/final-consumer-v1/changes.patch",
+    "sha256": "c7d13a0f9f1ac3cec3f89ac923cfc525b6ba61cf1953f4f9368957c93a6f54f2"
+  },
+  "required_separately_owned_helper": {
+    "path": "src/web/browser/liturgy/source-local-actor-sequences.js",
+    "source": ".scratch/oration-endings/modern-two-actors/producer-candidate/active-private/postimages/src/web/browser/liturgy/source-local-actor-sequences.js",
+    "sha256": "5d73b681d8ed742b84dd7b735f1a80b572cfaaf4dc02dc6780b7cefe83cdb08a"
+  },
+  "evidence": [
+    {
+      "path": ".scratch/reader-audit/modern-two-consumer/native-acceptance.json",
+      "sha256": "89a7c1360bee262264591d67ef6b523b84dd3ed093b12551e69ace099fdecc5f"
+    },
+    {
+      "path": ".scratch/reader-audit/modern-two-consumer/independent-terminal-review/review.json",
+      "sha256": "27d9c6edc98524e65381b182224628db1c5d64bdb021aaaad1b9e8ac84d17eec"
+    },
+    {
+      "path": ".scratch/coverage-audit/modern-two-adapter-review/review-receipt.json",
+      "sha256": "f52f8ff5485189af892dccc665a75e89dd4ce33cf4e34ba41d265b2743c701b4"
+    },
+    {
+      "path": ".scratch/reader-audit/modern-two-consumer/adapter/preimages.json",
+      "sha256": "0b34f0be9f512fb2124342c6f06481f173cf6072d4ac93103102a606070e0a0e"
+    },
+    {
+      "path": ".scratch/reader-audit/modern-two-consumer/renderer/proposal.json",
+      "sha256": "7c110a55de750c2ee8c640f41157ec55d73650b15473683c5a75eaa01e220cca"
+    },
+    {
+      "path": ".scratch/reader-audit/modern-two-consumer/renderer/amendment-v2/proposal.json",
+      "sha256": "c36037b0e376807ec2ee1a463d910877fa277b2c28480f26f1d5bab955393650"
+    },
+    {
+      "path": ".scratch/reader-audit/modern-two-consumer/share/manifest.json",
+      "sha256": "eb6fd33a2d68b89f311572452f48ec10c89e7ac05825042b661487a72deecbd2"
+    },
+    {
+      "path": ".scratch/reader-audit/modern-two-consumer/terminal-cli/handoff.json",
+      "sha256": "b0c71736474d98f2b7296ec076506743a785ab71c24280edaae8a08910cb78fb"
+    },
+    {
+      "path": ".scratch/reader-audit/modern-two-consumer/terminal-cli/amendment-v2/handoff.json",
+      "sha256": "b3c1655ff1b62bc1c25a11d0d0fcdecf49d8d883e9aceff7cb7a8e33566dd315"
+    },
+    {
+      "path": ".scratch/root/modern-two-actor-code-adoption.json",
+      "sha256": "e528c3e1deee71b3b0de7f0ee4cd9a1a8a2089ade62ad7ffb2a88cdef0c7ff30"
+    },
+    {
+      "path": ".scratch/root/modern-two-producer-code-adoption.json",
+      "sha256": "d652d60f3f3ad64287039c4c31ed8d837c1eabb731f2969acd3c172e122ad852"
+    },
+    {
+      "path": ".scratch/root/ending-typed-target-code-adoption.json",
+      "sha256": "22c2308139fff21d2c85aa40de3926850c3f3be04ca3d787362e49f4e2d39321"
+    },
+    {
+      "path": ".scratch/root/borrowed-form-gate-code-adoption.json",
+      "sha256": "e0dee26c1bd76a06e7a9098205dd7ff7a291f6dca10435858e87b0d0edb147ce"
+    },
+    {
+      "path": ".scratch/root/runtime-forty-composition-adoption.json",
+      "sha256": "5142d02493078c8190053c0e37b58665ab07f8634bb8919f122c7c13d6d9b1fd"
+    },
+    {
+      "path": ".scratch/reader-audit/cli-source-presentation-review/review.json",
+      "sha256": "e91bbc69de839fb2816650a014cf698d86260c0c31756bb96df7672700da6d10"
+    }
+  ],
+  "composition_checks": {
+    "exact_preimages": 18,
+    "new_absent_file": 1,
+    "patch_check": true,
+    "replayed_postimages": 19,
+    "hardlinks_used": false
+  },
+  "actual_consumer_checks": {
+    "browser": 12,
+    "browser_modes": [
+      "English",
+      "Latin",
+      "paired"
+    ],
+    "surfaces": [
+      "Day",
+      "Propers"
+    ],
+    "cli_json_and_text": 4,
+    "terminal_Read_Study": 8,
+    "terminal_paired_GoodFriday": true,
+    "actual_Textual_checks": 61,
+    "headless_Textual_components": 2,
+    "native_copy_print_share": true
+  },
+  "limits": [
+    "Current source/product central composition and sealed production startup remain Root/source_epoch responsibilities.",
+    "The actual CLI main fixture uses source producers and explicit verified-product test data with empty Bible passages; this is not a sealed whole-Mass content completeness claim.",
+    "Source authority and producer activation are separately adopted; this packet changes consumers and one focused durable test only.",
+    "Further Chrism additional-readable transport and Secret/Ordinary junction corrections are separate candidates."
+  ],
+  "canonical_writes": false
+}

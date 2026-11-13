@@ -1,0 +1,2629 @@
+{
+  "schema": "triptych-postconciliar-ten-source-contract-adoption/v1",
+  "date": "2026-11-13",
+  "method": "postconciliar-ten-source-based-latin-20261113-v1",
+  "decision": "adopt exact named source registrations and sixty Latin publication tuples",
+  "raw_admission_sha256": "fec9b901b30557bef7f813c875c28071e2f29dd041ab58c60c23b03c6f782410",
+  "body_admission_sha256": "3670f4674a3a6dba13d2a4c3ad53f6a8c2cabccb469e32f08b885c4c74a69dfc",
+  "metadata_admission_sha256": "138916b67fa7237b286ebc93ec468fc3be850453c51309dded92cddce8a88b92",
+  "metadata_amendment": {
+    "source_id": "artifact.a-m-de-noboa.preparacion-y-accion-de-gracias-para-la-santa-misa.madrid-aguado-1851.idus-whole-pdf",
+    "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/editions/madrid-aguado-1851/artifacts/idus-whole-pdf/artifact.toml",
+    "field": "notes",
+    "before_file_sha256": "096d31901eb26e98b6e4dd1ddffcdd7a92d24ed461aa13aa3d74e9680e22af09",
+    "after_file_sha256": "363a9080c175ed7e0541282c8cc574ad344289637427f435fd78fc27b4ad187b",
+    "before_record_sha256": "b4ed0883d295bb50d929f32b0a1dc2bc41a126651466ba12c8d3fc659c3cf228",
+    "after_record_sha256": "9a2937ad11e2ea152e1100d652f89c7bd0167948525daed72055ce569815366f",
+    "scope": "Ancestor artifact notes only; all bodies and sixty selected tuples unchanged."
+  },
+  "source_files": [
+    {
+      "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/editions/madrid-aguado-1851/artifacts/idus-whole-pdf/artifact.toml",
+      "sha256": "363a9080c175ed7e0541282c8cc574ad344289637427f435fd78fc27b4ad187b",
+      "bytes": 1327
+    },
+    {
+      "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/editions/madrid-aguado-1851/edition.toml",
+      "sha256": "dab4d9e83c18f930541892721e1b2a4230159b3a1ffdaf01ac23796c4167f717",
+      "bytes": 598
+    },
+    {
+      "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/editions/madrid-aguado-1851/passages/ot32-postcommunion-source-2-20261112.toml",
+      "sha256": "2454e561bf80644177fecce1d36828caf4859e88a46bf30bef5ba47f0031d3f1",
+      "bytes": 1082
+    },
+    {
+      "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/work.toml",
+      "sha256": "375e7a6e25f5826b5daf42126e647b54dfa6e1f5f7aaccc8c00c45d41447dc7e",
+      "bytes": 342
+    },
+    {
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/modern-short-conclusions-20261112-89.toml",
+      "sha256": "68aa57f096199241e8ded1f6b4599c80d09ba91e74102ef0bed20a85ef3eb26e",
+      "bytes": 1432
+    },
+    {
+      "path": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "sha256": "ccece4208590fc19a446c82cac88e5ed3fbfa8fbfc132d23fc6df5bb387df007",
+      "bytes": 1485
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collect-13-historical-20261112/artifact.toml",
+      "sha256": "a398087616af896046e2304107e8dcfb6ecbdd92d758c9b9481af48c9b2236f0",
+      "bytes": 1484
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collect-13-historical-20261112/latin.txt",
+      "sha256": "8b370d8c080825dcd7b575d665e30241e1cd34f941649e1332eafe899f42a4ab",
+      "bytes": 181
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collect-16-historical-20261112/artifact.toml",
+      "sha256": "232cc955d3f0107c9a0572bc844166b4b8cf591f31c69fa5cba3a31f31f1b29b",
+      "bytes": 1563
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collect-16-historical-20261112/latin.txt",
+      "sha256": "34b8f7ada1064e0af003102043f241c5c0a0f3ef9b0b4009aba75a408efa8261",
+      "bytes": 191
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "sha256": "08f7c2a4d71f9c402f808bb0a0072aa4e784a41d2d9b075ab2e5e95e0fa655b8",
+      "bytes": 1510
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/edition.toml",
+      "sha256": "1ee2bd64f9056d147b0ca8f6feae0e52c7c6b82d6f23d7e2f5e7157b9839a2fd",
+      "bytes": 556
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/passages/ordinary-collect-13-historical-20261112.toml",
+      "sha256": "ecfa6b471e9b68643b989655ac1c640dac18893f3de0174e0b796674182e0d24",
+      "bytes": 962
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/passages/ordinary-collect-16-historical-20261112.toml",
+      "sha256": "30d029342aa380860b5f1a009ab52d53c0c83a8d7f417d5078158dab32c8ce19",
+      "bytes": 1041
+    },
+    {
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/work.toml",
+      "sha256": "55d0031d0503997f543e43a9bf1b60bb1e5313e778f53f4ea0c831478562598d",
+      "bytes": 380
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collect-18-historical-20261112/artifact.toml",
+      "sha256": "b2840315c58f76df871cc84b0a9cf60b818332b91ac404bcd854bc83f9b4ab13",
+      "bytes": 1420
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collect-18-historical-20261112/latin.txt",
+      "sha256": "d4287dbc875181bad56ccbb956c6ae0926056c03a2df0a010706e0d616379c2e",
+      "bytes": 190
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "sha256": "2c80f620a6ff9d7dd18fa1247815343ee6c975791bff1aa5f4a22bb8f6b2f2ba",
+      "bytes": 1471
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ordinary-collect-18-historical-20261112.toml",
+      "sha256": "443da00414c4650f8b3164a733e4439df7fa5f139a72fae7a4b2ed98bc2e54be",
+      "bytes": 910
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot32-postcommunion-source-1-20261112.toml",
+      "sha256": "b84ebaa58769929dc23d12676de9176333042b2fb279971ccd71d922faf854e5",
+      "bytes": 963
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot33-postcommunion-source-1-20261112.toml",
+      "sha256": "bbb7fe8bb7382a53a01152561010f93fb8944587ea0e22c899899b4128e0f1ab",
+      "bytes": 975
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-13-collect-remaining-five-comparison-20261113.toml",
+      "sha256": "47c627b73b15e9c96a9df74cb62776b4061d69d291a6660069621b57d6741a0e",
+      "bytes": 867
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-16-collect-remaining-five-comparison-20261113.toml",
+      "sha256": "0774fb7c405cc5e9a46400e53d8ada6ca0f59e4a9b5b738ab8007dbc8ab298cf",
+      "bytes": 867
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-18-collect-remaining-five-comparison-20261113.toml",
+      "sha256": "d88e9a0ee96e744ce151cf610451340ae356f45f6d4e68fe8f81afce3814fcc2",
+      "bytes": 867
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-20-offerings-study-comparison-20261112.toml",
+      "sha256": "2d36b26e61c526b2a9305636ab5aa8acb36bc423f700b3de6e6bbc04c1ef7bd4",
+      "bytes": 1182
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-20-postcommunion-remaining-five-comparison-20261113.toml",
+      "sha256": "3bd5b1a576fc272c7ee753587d15a261cc1728e09bcaa89a0ac0f099670a5ff2",
+      "bytes": 918
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-29-postcommunion-study-comparison-20261113.toml",
+      "sha256": "81102f277a99ff5e1356bc218c642d83802dd21318dd0334a1dfe7500ec1eb59",
+      "bytes": 1041
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-32-offerings-study-comparison-20261112.toml",
+      "sha256": "fabca3ffc4bb55039284f08cfdc8a34931f11fc96cb690d7d5e3f7342a82e371",
+      "bytes": 1155
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-32-postcommunion-study-comparison-20261113.toml",
+      "sha256": "1dbbf787a349c75bcdfe45cb23f08c0c30613684f4e617a90f45ca4f6e9812aa",
+      "bytes": 1093
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-33-postcommunion-study-comparison-20261113.toml",
+      "sha256": "aaa7b4bba34bf7b0b36e6fe10893e9aee078d62ad7ab7af05162ef44f47b9693",
+      "bytes": 1112
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-9-postcommunion-remaining-five-comparison-20261113.toml",
+      "sha256": "c533fe07fe95473ee6f1b8335cf1375eeae44120bddafa77e5b58d497203f285",
+      "bytes": 887
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "sha256": "dad3ae6a989d99d5b30ac7cea0ea5b20d783b343da927d1fc951acc9f0b964ae",
+      "bytes": 1482
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/wilson-suscipe-20261112/artifact.toml",
+      "sha256": "f72753512a8d012ed181e550d09b54f29c1355b25455829b7630d0661c93eac6",
+      "bytes": 1504
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/wilson-suscipe-20261112/latin.txt",
+      "sha256": "1a847e5b3e129bee8876e81c74152a35f67d4524cbe3f538f44d12cf3079108e",
+      "bytes": 142
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/temporal-orations-20261112-short-third-person-formula.toml",
+      "sha256": "2b54160202c145e58c0b6dc3b89b3e6033dba50c9938005d637f891ef4f972bb",
+      "bytes": 1127
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/wilson-suscipe-20261112-image.toml",
+      "sha256": "f5073b1d63bc7faeb470861600f213df747f2678ca2a962dddb78d3a34bd7c8b",
+      "bytes": 1014
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/wilson-suscipe-20261112.toml",
+      "sha256": "1eb68323d34b2c21518731f1f71a3f231cdc34c5caa0a1754b53b5e2d77cd86b",
+      "bytes": 1037
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-exercemus-20261112/artifact.toml",
+      "sha256": "502ff6057232994ae57d8f6ff6377fb9f7b82919501c455bc066df313ecabeb2",
+      "bytes": 1550
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-exercemus-20261112/latin.txt",
+      "sha256": "131ea39d70fa2587813c90ac0342b686a0edcc967c88999681288c6476e9862e",
+      "bytes": 94
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-sacrificiis-20261112/artifact.toml",
+      "sha256": "13ad64a59640785e36574a260d50cf0c3da403fee1d0b4f42da5cd02cd3eb749",
+      "bytes": 1425
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-sacrificiis-20261112/latin.txt",
+      "sha256": "7a23b7d85601affeb3fa270c509d0b3deed0bccbd91f9ef51491969463ea565b",
+      "bytes": 109
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "sha256": "08c3b82419e4bbd3c6be1034eaf82e78bab64b8d7972b02054ddfece024dd884",
+      "bytes": 1460
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-exercemus-20261112-image.toml",
+      "sha256": "e738bddb015f1087fabefdf0c9c063111d76fdf0a6f440e47e21f08e279f6a32",
+      "bytes": 1024
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-exercemus-20261112.toml",
+      "sha256": "0affb232285a3f4f034ceac8c0d865327966a13eeb6c531160aa923e1668023a",
+      "bytes": 1091
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-sacrificiis-20261112-image.toml",
+      "sha256": "3637bc987916e27f4aab307ae19c112dc954e1f79abdd08a51e0155c10418082",
+      "bytes": 969
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-sacrificiis-20261112.toml",
+      "sha256": "ca67a82ce7055a013c038117686d6acc4bcd261faf4f8ff9ba11a955c005eab0",
+      "bytes": 965
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot29-postcommunion-source-1-20261112.toml",
+      "sha256": "874a10098f0f5188f1d86e1e861bd09166d86f2591180634bfb364de49b4dbe5",
+      "bytes": 1023
+    },
+    {
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot33-postcommunion-source-2-20261112.toml",
+      "sha256": "038c1d166f1171eef087d4a77a3bc1bf9c81d0e844d3366ec3391f6f05567921",
+      "bytes": 1083
+    },
+    {
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/artifacts/google-page-408-949e9875/artifact.toml",
+      "sha256": "7c6ecd72a97ed065d4091b8df4968010d09811e8f223b04240106ea5be5494e3",
+      "bytes": 1921
+    },
+    {
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/artifacts/google-page-lxv-1f5fed6c/artifact.toml",
+      "sha256": "f44cbac65572bb58297f85c64c10b6cfce9c5ee913d2203faff3763e2fa2cc03",
+      "bytes": 1923
+    },
+    {
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/edition.toml",
+      "sha256": "3b73e257ce10ee179a8065dd3469e20629b17b36e17a7fe038dfc57cf96d2d28",
+      "bytes": 1146
+    },
+    {
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/passages/ot20-per-haec-sacramenta-whole-20261112.toml",
+      "sha256": "399705f2ff095e9b8525962f7d11b7aa31012cfa805bea884f82abbd5cff031a",
+      "bytes": 1049
+    },
+    {
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/passages/ot9-rege-nos-whole-20261112.toml",
+      "sha256": "d57db0cc2aedbcc59db1a2593432fb2894202b82b14b6e54dda438ce45311a9f",
+      "bytes": 1109
+    },
+    {
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/artifacts/father-through-son/artifact.toml",
+      "sha256": "0416e73c81b6746359beb2c73f46c3c0d86c9095a21132928a840ff9d7f07bce",
+      "bytes": 2301
+    },
+    {
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/artifacts/father-through-son/formula.json",
+      "sha256": "48a01afaff4cb9b12c454c516b79592601fb24b341e8eaa924c873697624779d",
+      "bytes": 1740
+    },
+    {
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "sha256": "b7e8a0e5a311139b1acb582276e9d5e194de092d4e8407b6d397bbed586f7ee0",
+      "bytes": 909
+    },
+    {
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/passages/father-through-son.toml",
+      "sha256": "5927fdc71404df58c58ac506da47e189cad4a3587aedcc388093ea9c7e1069f7",
+      "bytes": 1359
+    },
+    {
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/work.toml",
+      "sha256": "672eba54d1eda157370d0e8907ef32a83a0f5950db7123a0f0891c2ea16aa866",
+      "bytes": 1099
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-13-collect/artifact.toml",
+      "sha256": "f52da6c20d3a671c55361a26257cbd6d08e0269e7ff789e2b8103ec9b252b092",
+      "bytes": 2327
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-13-collect/latin.txt",
+      "sha256": "1ee73133bf87e64edf16ed050c6ad9bdb223b5ccf763dec7ca6d0dc2e3aac1b3",
+      "bytes": 322
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-16-collect/artifact.toml",
+      "sha256": "3519050ebb2325290a7fd0faf03cfdd712a0286554661b760041208bc0524429",
+      "bytes": 2327
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-16-collect/latin.txt",
+      "sha256": "da87093bd19b1948fb59fe261d0533ced4c6c1fc8489196824788f8ddc34729a",
+      "bytes": 322
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-18-collect/artifact.toml",
+      "sha256": "c807f3dc9fd0c789f8b6a125f60c472ea23d112b64578fa9e07c06ccfa62dd58",
+      "bytes": 2303
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-18-collect/latin.txt",
+      "sha256": "b531e489e2977ace9516ce5a118c75e6848e3b1464224bb639819a252eb568b0",
+      "bytes": 328
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-20-postcommunion/artifact.toml",
+      "sha256": "e97451426541339e5d691193e186abef4b5204d86ef2c79094b85450c4029ad0",
+      "bytes": 2361
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-20-postcommunion/latin.txt",
+      "sha256": "24d50d3d53ba5769198ded3edc82695cd31d156552910740cb9814cbfc21d145",
+      "bytes": 230
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-9-postcommunion/artifact.toml",
+      "sha256": "c7599922a9be71ffef5cc7da07b9a17a61981a9626611928b9aa4a2005ddf2ee",
+      "bytes": 2257
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-9-postcommunion/latin.txt",
+      "sha256": "32cfbbf3bab75d129dbea6b6d1e1a73d3df5a3363621b404250e39b8323fb70b",
+      "bytes": 232
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/edition.toml",
+      "sha256": "fba113ba21eba369564cc99e14f73ece4fce087e53c71a13f9b1c124403a8158",
+      "bytes": 654
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-13-collect.toml",
+      "sha256": "253c45a7f5dbfcef406d3085f84b4450e8742098d25c683b437a06833d88f027",
+      "bytes": 1254
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-16-collect.toml",
+      "sha256": "b5ed3a6e004d90d983dfcb74bfbcd10c07c9d2d4c7fa1a1c20d339b93df02165",
+      "bytes": 1254
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-18-collect.toml",
+      "sha256": "8d8d2d3072d59f2436a43b996332e71e00c46b5f49261d1febb600b44046dd24",
+      "bytes": 1254
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-20-postcommunion.toml",
+      "sha256": "5ffeb71ce8b130439cc75bcb765d1e93201123ac8e3dbf79fe2636b36558bd28",
+      "bytes": 1266
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-9-postcommunion.toml",
+      "sha256": "b281f33709967ef8fac1d05793a650ec59f14321bb2cad4ae6d8f8e859f30cc6",
+      "bytes": 1264
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/work.toml",
+      "sha256": "ea89c1975774651084f6e5fcd5fc86203336c30a065d18c77c9f1ccbd375b821",
+      "bytes": 853
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-13-collect/artifact.toml",
+      "sha256": "48dbdc6004577608a93f442f7d81697929bdd0d06c06768c0a1f8fe76b59c4c2",
+      "bytes": 1965
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-13-collect/english.txt",
+      "sha256": "8dfb9277fd22e750643fad91d684028bff11e63808f230ccb02572ff7b89d240",
+      "bytes": 349
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-16-collect/artifact.toml",
+      "sha256": "11c0045c733832cedf55fd464424d47bf1ac7c90af5ad41c37426514c4894fdd",
+      "bytes": 1987
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-16-collect/english.txt",
+      "sha256": "a490614e1cd7be2a8e254b37ba8c5df69f611cca732de7c0c5e257637611e2f9",
+      "bytes": 345
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-18-collect/artifact.toml",
+      "sha256": "8bb592f18b4f66ecd544ac117ae8900eee52e6106a4afa40ecd2875806af8ff0",
+      "bytes": 1975
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-18-collect/english.txt",
+      "sha256": "bcaa0c01e60ceb230f70574c5930f546eae874f79412d5340041c7bdac409163",
+      "bytes": 366
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-20-postcommunion/artifact.toml",
+      "sha256": "4eb87333ef5f6b061a3d102491db3ced220c642840fbf6008f881894540e6ead",
+      "bytes": 2089
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-20-postcommunion/english.txt",
+      "sha256": "6ca13983aaf1564158667ef32a940cc88ae3d74120b689eb10cd04be2d48f702",
+      "bytes": 248
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-9-postcommunion/artifact.toml",
+      "sha256": "ef41035545eb2440a631943046ef7342f24686396f09323c7b62725425b30963",
+      "bytes": 1984
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-9-postcommunion/english.txt",
+      "sha256": "2181296aff626968951e29ef7a991d7de880487dbcce28a60aa173111d54896a",
+      "bytes": 260
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/edition.toml",
+      "sha256": "bdb887120487e1e2bfe794fbcc8109846e720809622677d6da48cbb836732e28",
+      "bytes": 624
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-13-collect.toml",
+      "sha256": "077162fb7919711a4e9289c815e9758a1dc448cf40e22b7f76526f9444cea25f",
+      "bytes": 996
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-16-collect.toml",
+      "sha256": "08739c5935ec76a20ee8aa4c73b1807c1c7389794b92d0f5790844a2ecb66a15",
+      "bytes": 1018
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-18-collect.toml",
+      "sha256": "ba0b35df5a35f2a31c6d66828651ac957e8b3d019e2e06f48bab7c41d363c711",
+      "bytes": 1006
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-20-postcommunion.toml",
+      "sha256": "99b3490dded6a0af1e8ecc02c31831f777fa8571bd685cbc15d1d6c7eb198613",
+      "bytes": 1062
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-9-postcommunion.toml",
+      "sha256": "cdb51bf7e0bdec6197d165efbf8e957ec8195b45b010773291bf41fb04f0ebf4",
+      "bytes": 1060
+    },
+    {
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/work.toml",
+      "sha256": "7a2db3ac1f7b3753f1d105a39b6f00278741b2704d6221fe1e276f570aaf29ce",
+      "bytes": 818
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/editions/2026-11-12/artifacts/complete/artifact.toml",
+      "sha256": "d93253b5581c21cf41e3339936f04c1e031bdaf4569d6ec2abfd7149a2ea48de",
+      "bytes": 2256
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/editions/2026-11-12/artifacts/complete/latin.txt",
+      "sha256": "92a03777c2f4d28d94adca1bc9ad48128562a61e1a55a7686a09943112be0e80",
+      "bytes": 165
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/editions/2026-11-12/edition.toml",
+      "sha256": "2884311b6f6ac3205e37a13a378cc1a3da37c779925ee3cbe3ec048dc22acf90",
+      "bytes": 746
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/editions/2026-11-12/passages/complete.toml",
+      "sha256": "58c5af52cd3bc50e14c77d1057c3a3c63e8f5ef80d66ecca3658a616a2ef87a2",
+      "bytes": 1130
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/work.toml",
+      "sha256": "3837273bca620b0fb3984e77830ebdea2c2f732c4bf66cd2663e1cb256ff9322",
+      "bytes": 844
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/editions/2026-11-12/artifacts/complete/artifact.toml",
+      "sha256": "4af7658a6a841baadf6d7eb28c0b809b47e82ca1b247254cc0319f34a6ef594a",
+      "bytes": 1788
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/editions/2026-11-12/artifacts/complete/english.txt",
+      "sha256": "ad0c69923dea0241ce07d00e1ff5a3b403227a20cb4b25897887f41f3847f093",
+      "bytes": 192
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "0c07a06c31591fcf0dd73ed59027b2f80bef509a4f6dad9080fa2b528011c2f5",
+      "bytes": 549
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/editions/2026-11-12/passages/complete.toml",
+      "sha256": "fb3f239f9a313f03867112f4c5d2ad63bb3dac9b63b22a138763557cbb071c8a",
+      "bytes": 935
+    },
+    {
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/work.toml",
+      "sha256": "2d22a120704b384db9df6ea4a1172d64a141ee2813738afbd888286ff47833b7",
+      "bytes": 643
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/editions/2026-11-12/artifacts/complete/artifact.toml",
+      "sha256": "414d74fe5765bf1d1a24cea0d725ded270288b1285132717d64b44ca3c2666b4",
+      "bytes": 2456
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/editions/2026-11-12/artifacts/complete/latin.txt",
+      "sha256": "67d6996a2513feffbf3e0863ff304d10548f44472b7f57d802f12785e9017aeb",
+      "bytes": 174
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/editions/2026-11-12/edition.toml",
+      "sha256": "54c748be02f2adb65259e4de959f250fb438c285e0643b15a962503f2fae91d5",
+      "bytes": 746
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/editions/2026-11-12/passages/complete.toml",
+      "sha256": "5e23de00c8244f54ad142e303aad4e4aecec4609ef9931346b28379d4b6cb7d5",
+      "bytes": 1130
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/work.toml",
+      "sha256": "3d7fea3462068a11eee5d3373575d9d1e2d109ea9e965a53b6995e941608fb70",
+      "bytes": 844
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/editions/2026-11-12/artifacts/complete/artifact.toml",
+      "sha256": "7374307d1e080145bd47032e026d3cd74c923a021294d249ee20656fe22735c0",
+      "bytes": 1788
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/editions/2026-11-12/artifacts/complete/english.txt",
+      "sha256": "457f7eee75cc41f3a9939a0ee18a0ccb52a2eeefbbaf0bd08b7a3e95366ddc37",
+      "bytes": 189
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "b3b12f792431a9e3a07b628f08d8e43f7193ec172fee0ba024b36abd9f9aa35b",
+      "bytes": 549
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/editions/2026-11-12/passages/complete.toml",
+      "sha256": "dfcaffed1a312cc71f0a1f982ed2ea0c17cb6f0346e8783c344cd1a99f31fa69",
+      "bytes": 935
+    },
+    {
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/work.toml",
+      "sha256": "4cd54005830c33e34f56c2124e396d1da27f811a194a9f7191319f776200a1be",
+      "bytes": 643
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "sha256": "58377dfbf3ec8dfab0597abc69ba13b7dae8527043dd65b4766e1361391794ca",
+      "bytes": 2134
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "b31b7c34bdad8ce36c56d0688de0f323db8f20053d27700514e98391af973366",
+      "bytes": 174
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/editions/2026-11-12/edition.toml",
+      "sha256": "115a0ebc4e40fb5e9b59464319dda97fbcb98defe68b7d6228694e010f7a2f5d",
+      "bytes": 870
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "sha256": "1ca734db83ceef5879ca3c01ce506e49462e8044f821cad80f6393173bbf30ee",
+      "bytes": 1103
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/work.toml",
+      "sha256": "a6dec9648a8c46f0ccaa77a54ad91453590e08c5afa86e7716aebe7940ee3da4",
+      "bytes": 834
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "sha256": "f80c5b0602745943b330ca5ba6c1a78b83fd20c85233b883823df9f04d4fa717",
+      "bytes": 2016
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "sha256": "23707b2d4162e957f37af3275eee68eeb6c8e0d2b7fafc28d806684cf3d446fc",
+      "bytes": 205
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "ed878e366ac29c7b98be3b4ef68160431436bbd7119e96f8860564266259e017",
+      "bytes": 820
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "sha256": "2d1bf4bca1aeedb983bab029d09f71abeb6aa3dfd5b4154e0609ad8eadecef85",
+      "bytes": 1088
+    },
+    {
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/work.toml",
+      "sha256": "16c07524789a3bbc51e6c0b3ab6cc31c1549a0ef3eff0b862efcda0737574cca",
+      "bytes": 766
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "sha256": "330132a4ab87e136fc317612782fe4a39f4f1650f37cae51ffa6fc57f2acea9b",
+      "bytes": 2240
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "4ac81b99c1469d8c36b00f9a446bb3cf46d310bdc884dac29774e9381dd0ef1a",
+      "bytes": 226
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/editions/2026-11-12/edition.toml",
+      "sha256": "03c34dc7f9c3c0a777b95685764d726a80ab50878e94af1144ae94f9807ebd4b",
+      "bytes": 870
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "sha256": "b35e2375d7a4db98e52e2995d3924daec310610671b4288c78a40ed7fffc9093",
+      "bytes": 1103
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/work.toml",
+      "sha256": "afbf155f532812ba7cc48b63529a2ce097147dde0a5963e9c555ebe5a0fc987e",
+      "bytes": 834
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "sha256": "06bb14081081586117991b02153801f428808074d2236dcd65e2011302a39c0c",
+      "bytes": 2122
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "sha256": "e7846d607f159ba223556826d5f5fd384460dcf83a0a0687e57f1baa0573d6f3",
+      "bytes": 238
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "c5513dbf68641fce606d21cdcf46322ac7e6cf8baac933594bb3f33bee03ddc0",
+      "bytes": 820
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "sha256": "238d8fb87115631fd38a019bc299ad7adbbc117bad93ccd3fe638544cd5fc4d0",
+      "bytes": 1088
+    },
+    {
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/work.toml",
+      "sha256": "3c785f9d4fb76d026345304e31b079a09100b255507983114df53fdf62c2fd1e",
+      "bytes": 766
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "sha256": "4f8737308e36c04dfe80399517be809dce33e28940236db119df3c71fe91c427",
+      "bytes": 2225
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+      "sha256": "679113f3b0578d20b6a34e79d77cfda2cc6fc11c262d3d39dee1643d094fcefa",
+      "bytes": 211
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/editions/2026-11-12/edition.toml",
+      "sha256": "762619e87c6166e9afdd93e61e674c57712978972f6706e065ad5d9bd03ac49e",
+      "bytes": 870
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "sha256": "c6fe706673e8a7dd4186669ec7610a20ade3fd254f2999b4da3e6d75e0ec0f5e",
+      "bytes": 1103
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/work.toml",
+      "sha256": "fe192bf00e36ef03834427ff074978a470f8decbb2bd527d382681b362d0ad1f",
+      "bytes": 834
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "sha256": "91ea3c4536beebc4b69d50a51ee8d72559e7c8f12cc7d6a7fb5d89f99be5ddb5",
+      "bytes": 2107
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/english.txt",
+      "sha256": "44cf3ccd74cb5fb3b8ca0e8ede5092d11bfc2d0c16e2b40cb9b55fe1ef061a30",
+      "bytes": 191
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/editions/2026-11-12/edition.toml",
+      "sha256": "ba561c3e8eff73cd1706784284d6eeeca38c2165b7bb488e87141d8ae34a979a",
+      "bytes": 820
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "sha256": "e3b66c66a1668fc145de2ef3b2f95e6891c7f43d808b00c1c67036f793feb136",
+      "bytes": 1088
+    },
+    {
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/work.toml",
+      "sha256": "9ca9857e4d7ee8466fba4352be6e2c01c9fbeec3897e687a2304cb61b0b2fe2f",
+      "bytes": 766
+    }
+  ],
+  "source_record_closure": [
+    {
+      "id": "artifact.a-m-de-noboa.preparacion-y-accion-de-gracias-para-la-santa-misa.madrid-aguado-1851.idus-whole-pdf",
+      "record_type": "artifact",
+      "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/editions/madrid-aguado-1851/artifacts/idus-whole-pdf/artifact.toml",
+      "parsed_sha256": "9a2937ad11e2ea152e1100d652f89c7bd0167948525daed72055ce569815366f"
+    },
+    {
+      "id": "artifact.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912.ordinary-collects-old-pages-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "parsed_sha256": "d6b41cb1cf342bcc21c149d1c8294c5146c3e9fa9a57d50830aa40e0f764e382"
+    },
+    {
+      "id": "artifact.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.ordinary-collect-13-historical-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collect-13-historical-20261112/artifact.toml",
+      "parsed_sha256": "0cc0ba40094ee5fa9531be01f04204463209993b4a2ef7dc168405a87e6876de"
+    },
+    {
+      "id": "artifact.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.ordinary-collect-16-historical-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collect-16-historical-20261112/artifact.toml",
+      "parsed_sha256": "5dbbc7a132f6e468a43046853902b11bd782e2a6cc57ebcc29e2a33810dcd150"
+    },
+    {
+      "id": "artifact.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.ordinary-collects-old-pages-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "parsed_sha256": "2a0d5b46b9bd01dc9e7d4c413531c4ba1068954f381ef3c5173868f66bc33d56"
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml",
+      "parsed_sha256": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d"
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-controls-20261026",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-controls-20261026/artifact.toml",
+      "parsed_sha256": "3bf0f4109c343586174463a20e9fb89f58313a22bb50a672759e8e6cedb9d6c9"
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ignatius-petition-formula-text-20261026",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ignatius-petition-formula-text-20261026/artifact.toml",
+      "parsed_sha256": "ab6f74ba3649e9c45c9f0741dcc05440d1b784b252206cd30d10dbdaf67bdea6"
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ordinary-collect-18-historical-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collect-18-historical-20261112/artifact.toml",
+      "parsed_sha256": "76159eee4f3388fe0fb4cfbe10e555c81ecd403ffa6896893d69d5734906f53b"
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ordinary-collects-old-pages-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "parsed_sha256": "a8674ef8760e459cb06fba45756e2e2d4f33f70ec46ef7d96f42828816d39825"
+    },
+    {
+      "id": "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/artifacts/secondary-digital-pdf-0b458944/artifact.toml",
+      "parsed_sha256": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/internet-archive-pdf-006a38a3/artifact.toml",
+      "parsed_sha256": "99cf50d7b8ebc5410e229374868a2367ad221602e09e4dbeff5fd9b9f91acd45"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.ordinary-collects-old-pages-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "parsed_sha256": "b75668ccf38cac1bca407ffdcf2e651c019b272d33cd5a8c03350284f8722358"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.wilson-suscipe-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/wilson-suscipe-20261112/artifact.toml",
+      "parsed_sha256": "dee33df8d0e85cff75775563ea48a553ddff8c2c43fcba9f998210d77c8b5c6c"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-exercemus-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-exercemus-20261112/artifact.toml",
+      "parsed_sha256": "fecd0702db8ebf9f655f72d518f495a9b9014784e20ecfd756d8113cd178804f"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-sacrificiis-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/feltoe-sacrificiis-20261112/artifact.toml",
+      "parsed_sha256": "c367ef322f101184d78fa848aee58e72b11b5697162d2a4c087858c096a19093"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.internet-archive-pdf-3b991b13",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/internet-archive-pdf-3b991b13/artifact.toml",
+      "parsed_sha256": "813839a6047816716e979576044f6b3836640e91b5ee2ee3326e939684c89784"
+    },
+    {
+      "id": "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.ordinary-collects-old-pages-20261112",
+      "record_type": "artifact",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/artifacts/ordinary-collects-old-pages-20261112/artifact.toml",
+      "parsed_sha256": "0c5ea89633fb5f668533bcf5d7d8400322159d4bd36119417a9d40537baa03ea"
+    },
+    {
+      "id": "artifact.diocese-of-paris.missale-parisiense.1738-paris-bibliopolae.google-page-408-949e9875",
+      "record_type": "artifact",
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/artifacts/google-page-408-949e9875/artifact.toml",
+      "parsed_sha256": "5120b24e8b85ced8586010fe55f97d2067c198ba217e2df8f672df2f203142e0"
+    },
+    {
+      "id": "artifact.diocese-of-paris.missale-parisiense.1738-paris-bibliopolae.google-page-lxv-1f5fed6c",
+      "record_type": "artifact",
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/artifacts/google-page-lxv-1f5fed6c/artifact.toml",
+      "parsed_sha256": "499ee94df150059d855f94232335ff2b7aa9cc918b928bbf83cf70f30ef158cc"
+    },
+    {
+      "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+      "record_type": "artifact",
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+      "parsed_sha256": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d"
+    },
+    {
+      "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "record_type": "artifact",
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+      "parsed_sha256": "04b4a8bd8d62d7f636a6b9372323c6574f1b224dd16ac8519d3b2e7818674d8c"
+    },
+    {
+      "id": "artifact.triptych.oration-conclusion-study-english-20261112.study-english-20261112.father-through-son",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/artifacts/father-through-son/artifact.toml",
+      "parsed_sha256": "f9c03958811ae9d203e5425f1b24291de9a9649e5a4fb7e368b3cdc8e76638cb"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-13-collect/artifact.toml",
+      "parsed_sha256": "6137f735c1b3ad572a9bd93bc806aff9b9a1505ceed64a358c26731e8fe37f1e"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-16-collect/artifact.toml",
+      "parsed_sha256": "36f640c31d9a59f3e6bee4a64c2c4311e35ff9704072e53973630a92bb867fce"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-18-collect/artifact.toml",
+      "parsed_sha256": "2f3890edba8d0a7b15a910ec6d9156f3a5b227fa19911aab76c4cc6bdce721df"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-20-postcommunion/artifact.toml",
+      "parsed_sha256": "eb250fa4225afe3ed2b8a03700bbc5977825fff5374fcd62bde8dc338570c8f9"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/artifacts/ot-9-postcommunion/artifact.toml",
+      "parsed_sha256": "b40bcb3ea9abfe2b76f2d8cb6c13be571a729eb001d4a3d9d1ca9fd6f2ca3270"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-13-collect",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-13-collect/artifact.toml",
+      "parsed_sha256": "9eb3a9b0ee7a15b149838c6caf33bc412154992f0ba623a435fe160aa25ff6b3"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-16-collect",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-16-collect/artifact.toml",
+      "parsed_sha256": "382797cc0f2d6709cabac5fad2467b10eca048b78849efdcca13fb51a339dec4"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-18-collect",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-18-collect/artifact.toml",
+      "parsed_sha256": "f7e8684f07c0191798b11350de23d4944ab9f6eb3f80faa39f72593e34a60f42"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-20-postcommunion",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-20-postcommunion/artifact.toml",
+      "parsed_sha256": "f8fc5993d6e6040bfb9211710c0b7cbf5f3b377dfed36c4bc9f0a0dfd7f22612"
+    },
+    {
+      "id": "artifact.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-9-postcommunion",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/artifacts/ot-9-postcommunion/artifact.toml",
+      "parsed_sha256": "f54c7466b73ffa3314ccd29d704583397f04c9443ebbdf3f926e04df4083e527"
+    },
+    {
+      "id": "artifact.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/editions/2026-11-12/artifacts/complete/artifact.toml",
+      "parsed_sha256": "54b1ea80aa8bc9481c00dca1eb66fa93245c5803e09c7d421bf59aaf2cf36b79"
+    },
+    {
+      "id": "artifact.triptych.ot-20-offerings-study-english.2026-11-12.complete",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/editions/2026-11-12/artifacts/complete/artifact.toml",
+      "parsed_sha256": "add08b86afff39bb3a42263b309e3660dd403e411ecf1ea61fddbcddee3125fd"
+    },
+    {
+      "id": "artifact.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/editions/2026-11-12/artifacts/complete/artifact.toml",
+      "parsed_sha256": "45b9e682e83cdecdd391da71f7acb6c2c67dedc544df72698c03542927b4707a"
+    },
+    {
+      "id": "artifact.triptych.ot-32-offerings-study-english.2026-11-12.complete",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/editions/2026-11-12/artifacts/complete/artifact.toml",
+      "parsed_sha256": "1e647611fefd510cae12734bab336df47bb6863b6f479ab439ef509099d0f1af"
+    },
+    {
+      "id": "artifact.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "parsed_sha256": "f604bb2e264d8dea4a3ab89ce6dd1e4024b4781741908436826c925eec261ed5"
+    },
+    {
+      "id": "artifact.triptych.ot29-source-based-study-english.2026-11-12.complete-study-english",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "parsed_sha256": "571a0fa2816e2b2f3a105ba9968dbc407b5d21062ec94df288816e7442b37c1d"
+    },
+    {
+      "id": "artifact.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "parsed_sha256": "ff344d5853e7a1a761b3d128308455d6888206765c1a74e0581e8f18adbe6fad"
+    },
+    {
+      "id": "artifact.triptych.ot32-source-based-study-english.2026-11-12.complete-study-english",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "parsed_sha256": "6977d23fcd77c89fc110238fb7009ca1f24969c42e4a376a9080a2a306300a8e"
+    },
+    {
+      "id": "artifact.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+      "parsed_sha256": "2b8f5c05a3350ce859588e22343dafa1e02068f8cc96ae69a368ec595a3c1912"
+    },
+    {
+      "id": "artifact.triptych.ot33-source-based-study-english.2026-11-12.complete-study-english",
+      "record_type": "artifact",
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/editions/2026-11-12/artifacts/complete-study-english/artifact.toml",
+      "parsed_sha256": "3054471aaddb4cc64341d2bfaefe59a52b8c17770b730c7a874625ece787a950"
+    },
+    {
+      "id": "edition.a-m-de-noboa.preparacion-y-accion-de-gracias-para-la-santa-misa.madrid-aguado-1851",
+      "record_type": "edition",
+      "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/editions/madrid-aguado-1851/edition.toml",
+      "parsed_sha256": "d96df9639b4fe477fe96c1ea19804f1b4e90c9bf33a91b359cd250c32cc34b9d"
+    },
+    {
+      "id": "edition.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002",
+      "record_type": "edition",
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/edition.toml",
+      "parsed_sha256": "5824f7ed18fef3b3a76d1954dad313a9e002af287b181eed60a8b5e74b387e8b"
+    },
+    {
+      "id": "edition.catholic-church.liber-mozarabicus-sacramentorum.ferotin-1912",
+      "record_type": "edition",
+      "path": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/editions/ferotin-1912/edition.toml",
+      "parsed_sha256": "5146921ce99b353a55cced90816a81f630311d046771e51f8275e8597c96a16d"
+    },
+    {
+      "id": "edition.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904",
+      "record_type": "edition",
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/edition.toml",
+      "parsed_sha256": "061da905552bc0005ef590bfd4bfb25b399bdc6afadf7bc05fed8015592d4456"
+    },
+    {
+      "id": "edition.catholic-church.missale-romanum.pustet-ratisbon-1862",
+      "record_type": "edition",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/edition.toml",
+      "parsed_sha256": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6"
+    },
+    {
+      "id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+      "record_type": "edition",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/edition.toml",
+      "parsed_sha256": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069"
+    },
+    {
+      "id": "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894",
+      "record_type": "edition",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/edition.toml",
+      "parsed_sha256": "496d32217750750f5d5e11c9eae3b3d27a2add9cf541cdfb1d2e393ec34ae395"
+    },
+    {
+      "id": "edition.catholic-church.sacramentarium-veronense.feltoe-1896",
+      "record_type": "edition",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/edition.toml",
+      "parsed_sha256": "3035ab54bd51f5a33aff927ba8bb9f4406342275a3b5b7903d0b5270d324ed50"
+    },
+    {
+      "id": "edition.diocese-of-paris.missale-parisiense.1738-paris-bibliopolae",
+      "record_type": "edition",
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/edition.toml",
+      "parsed_sha256": "4c81035597539f7ce43b950d899cd295fc43b02889a33910314e722a0eb5a1ae"
+    },
+    {
+      "id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+      "record_type": "edition",
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/edition.toml",
+      "parsed_sha256": "3b36d666fd9269d21443fc4d7d07a0d859cc4f2d7f1864b227dc1b5ec46c61cd"
+    },
+    {
+      "id": "edition.triptych.oration-conclusion-study-english-20261112.study-english-20261112",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/edition.toml",
+      "parsed_sha256": "3fccb9e6f88fc1e7ec5363b1e6c8406a8bc9ed2c020be212b871f7ba43b0235d"
+    },
+    {
+      "id": "edition.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/edition.toml",
+      "parsed_sha256": "abc490ca8d46c60e488d1685b4cb1f0a98861103bedecc15593a26def2d79063"
+    },
+    {
+      "id": "edition.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/edition.toml",
+      "parsed_sha256": "a5ef8b5473eb98af1adb4030d812a17870d58a3c916ba91f92504553a5e2c6b0"
+    },
+    {
+      "id": "edition.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "8ad8b21a9dea1f07264a7ef9763a3063451774bb750c7ce9853384903279c183"
+    },
+    {
+      "id": "edition.triptych.ot-20-offerings-study-english.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "712514f5427e2874a4cdf0e61b95be24ade6137ab57f71f641f829ea4ef1859a"
+    },
+    {
+      "id": "edition.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "bc180577a216d7891ef58cc94784c3a62c0bbcfd5763e7166bad440bd7f3654c"
+    },
+    {
+      "id": "edition.triptych.ot-32-offerings-study-english.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "314a7bac2e056467306fe932c90a769fa1eac0f7c6c9ac5df856f8055b369f11"
+    },
+    {
+      "id": "edition.triptych.ot29-historical-study-selection.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "5f51931ee0ceccd14ecef2140e87e1672fcfc003af5f87a2ec4307ad15f5e511"
+    },
+    {
+      "id": "edition.triptych.ot29-source-based-study-english.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "fbfaa33714841c981f87acdf1086d59ccc7ed72a3cee00605e06d815982903ab"
+    },
+    {
+      "id": "edition.triptych.ot32-historical-study-selection.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "9fadc6528db4eb400ea1d673424dff3a5181155e169886311a0dfdab6c7313e6"
+    },
+    {
+      "id": "edition.triptych.ot32-source-based-study-english.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "31dbcead5911d7cf9e7c76e069c43dccc65e1169ffb8484f1992acb8bf520e4c"
+    },
+    {
+      "id": "edition.triptych.ot33-historical-study-selection.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "0070c6a242a718d7dc42b5c7702caa10277a0e30129cd876f1c3abd4d25f3b72"
+    },
+    {
+      "id": "edition.triptych.ot33-source-based-study-english.2026-11-12",
+      "record_type": "edition",
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/editions/2026-11-12/edition.toml",
+      "parsed_sha256": "8d2d8b450b40e8dd7eef96dd3423f0589e7610fb18d670c279082c6ace9e9e0f"
+    },
+    {
+      "id": "passage.a-m-de-noboa.preparacion-y-accion-de-gracias-para-la-santa-misa.madrid-aguado-1851.ot32-postcommunion-source-2-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/editions/madrid-aguado-1851/passages/ot32-postcommunion-source-2-20261112.toml",
+      "parsed_sha256": "a91810790cd98dc1139608659e162dd598929e0986ccab11c43faea281d97946"
+    },
+    {
+      "id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.legacy-study-review-20261112-54",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-54.toml",
+      "parsed_sha256": "d4ca4e02704f7308c80797dbdbfe13bef5b0f2b624db266e10da2ce49e8ea23a"
+    },
+    {
+      "id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.legacy-study-review-20261112-77",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/legacy-study-review-20261112-77.toml",
+      "parsed_sha256": "12b7e37d4d22b017e7366958c59ceac94c66b30cf744b02b5fe718d302779f81"
+    },
+    {
+      "id": "passage.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.modern-short-conclusions-20261112-89",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/passages/modern-short-conclusions-20261112-89.toml",
+      "parsed_sha256": "738124ef3de0496a72bce84f98510838a552593cd9dc9da2e6a7e2adefdee19d"
+    },
+    {
+      "id": "passage.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.ordinary-collect-13-historical-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/passages/ordinary-collect-13-historical-20261112.toml",
+      "parsed_sha256": "0122fbadf1668deac35e3a574227310c98b045eb9a5c82ffe979cf21159e7ff0"
+    },
+    {
+      "id": "passage.catholic-church.manuale-ambrosianum.magistretti-pars-altera-1904.ordinary-collect-16-historical-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/editions/magistretti-pars-altera-1904/passages/ordinary-collect-16-historical-20261112.toml",
+      "parsed_sha256": "ebb9030ba03dd907b8d3a1c6013893708b1c652de2edbf6514883e238e14b276"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.long-conclusion-response-page88-20261026",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/long-conclusion-response-page88-20261026.toml",
+      "parsed_sha256": "f2717ac9a65b3182cdcdbc5d04269be56cb281a678739e92b58900bac1134236"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ordinary-collect-18-historical-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ordinary-collect-18-historical-20261112.toml",
+      "parsed_sha256": "e91d7684ab056a14f2ee44a4d1cc8c8149365b6387fd5bde5d92e6fae86c389f"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot32-postcommunion-source-1-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot32-postcommunion-source-1-20261112.toml",
+      "parsed_sha256": "a7c43fb9687a4f0c5302fbc918e8c5138b5d7d6761c82807aa74c4f7834133ea"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.ot33-postcommunion-source-1-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/ot33-postcommunion-source-1-20261112.toml",
+      "parsed_sha256": "0b538c6a0dd90cdb3f7350099d7259093e59ef1990c183ecf0e5fb7d85e6fcbb"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-13-collect-remaining-five-comparison-20261113",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-13-collect-remaining-five-comparison-20261113.toml",
+      "parsed_sha256": "21ab17be07bf4ed453af010c35385b13c19a7f15d908e94e87e9247c35501eea"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-16-collect-remaining-five-comparison-20261113",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-16-collect-remaining-five-comparison-20261113.toml",
+      "parsed_sha256": "078d4f09b32c705552444c441df86534e19b91329a2c8a12d84168510a48e884"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-18-collect-remaining-five-comparison-20261113",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-18-collect-remaining-five-comparison-20261113.toml",
+      "parsed_sha256": "33d2def8d71baea7e291e219ca2b68dab24787dcbedc818836bdff749623b3ef"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-20-offerings-study-comparison-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-20-offerings-study-comparison-20261112.toml",
+      "parsed_sha256": "32fb267dfa98fca547afe8d8444080c234ef3bba2e0e76aec2c46c86b3ca8ca6"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-20-postcommunion-remaining-five-comparison-20261113",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-20-postcommunion-remaining-five-comparison-20261113.toml",
+      "parsed_sha256": "73dc2f61d82e73672f76f573411b6c1639d6c119c7a62854e715e619c3364f65"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-29-postcommunion-study-comparison-20261113",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-29-postcommunion-study-comparison-20261113.toml",
+      "parsed_sha256": "9c05c720306f7d7dce517a2da0bd2132db1985f14e8d973225c7d2fe3ef83ac6"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-32-offerings-study-comparison-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-32-offerings-study-comparison-20261112.toml",
+      "parsed_sha256": "c62214ba0cd5f38d58fbad660f23be53cbcee49ae75d17c942e2cdbb6523bf1c"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-32-postcommunion-study-comparison-20261113",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-32-postcommunion-study-comparison-20261113.toml",
+      "parsed_sha256": "820f3ae2948bde092c7d81f5c818b2536de55f629eed5267d37b5f9616f20030"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-33-postcommunion-study-comparison-20261113",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-33-postcommunion-study-comparison-20261113.toml",
+      "parsed_sha256": "81d8af2536eb7c5d6b267c20dc2204bf015d84cfadf3a8a11e8c202baca56f52"
+    },
+    {
+      "id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.ot-9-postcommunion-remaining-five-comparison-20261113",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-tertia-2002/passages/ot-9-postcommunion-remaining-five-comparison-20261113.toml",
+      "parsed_sha256": "e2a9717fc1b4275f92b28e9713e35920c68a6c6f87160d304e273069e424a2b2"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.temporal-orations-20261112-short-third-person-formula",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/temporal-orations-20261112-short-third-person-formula.toml",
+      "parsed_sha256": "cca87032d13d53711cafdae5a210607394cc497b44355d0867b0e0308b14b0e6"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.wilson-suscipe-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/wilson-suscipe-20261112.toml",
+      "parsed_sha256": "58f84dcfe73e17ebed2b3aadd774c699bd010056977f1ec24dd623682b35511a"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.wilson-suscipe-20261112-image",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/passages/wilson-suscipe-20261112-image.toml",
+      "parsed_sha256": "9865a7a52cb0f6d7545bea47e7cd82625f07eb3a294c46dd17b1aa1160f78f74"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-exercemus-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-exercemus-20261112.toml",
+      "parsed_sha256": "f66356df36cd92dbad19c9c022ff65b7eab85f98971314270b601ebe009d655d"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-exercemus-20261112-image",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-exercemus-20261112-image.toml",
+      "parsed_sha256": "a442878c174b62a82ce3cc6b222c4dc09618f308e77467e308a3a13807fe6679"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-sacrificiis-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-sacrificiis-20261112.toml",
+      "parsed_sha256": "25dbe99d265dd9432e75caa9092fadaa9fb57f4285bff277b75a3c79885f8d21"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-sacrificiis-20261112-image",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/feltoe-sacrificiis-20261112-image.toml",
+      "parsed_sha256": "dc6ffa5bb94ac8158bb33f13ce3bcdf6bbab47ff2d24bcd77e4f809615d790d4"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot29-postcommunion-source-1-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot29-postcommunion-source-1-20261112.toml",
+      "parsed_sha256": "fb209a5798063b592ae5060cc3f4f245056eb0a2463b47a13d5ec6063338beaf"
+    },
+    {
+      "id": "passage.catholic-church.sacramentarium-veronense.feltoe-1896.ot33-postcommunion-source-2-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/editions/feltoe-1896/passages/ot33-postcommunion-source-2-20261112.toml",
+      "parsed_sha256": "a405951d29d4f32422ffc6dd3c06c1ab186f19d34eba9785075ab33be7716f50"
+    },
+    {
+      "id": "passage.diocese-of-paris.missale-parisiense.1738-paris-bibliopolae.ot20-per-haec-sacramenta-whole-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/passages/ot20-per-haec-sacramenta-whole-20261112.toml",
+      "parsed_sha256": "3c44bf0ae8cefef260c68f161c82f68b4f520d094a3b376b1bccf391b81ea836"
+    },
+    {
+      "id": "passage.diocese-of-paris.missale-parisiense.1738-paris-bibliopolae.ot9-rege-nos-whole-20261112",
+      "record_type": "passage",
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/editions/1738-paris-bibliopolae/passages/ot9-rege-nos-whole-20261112.toml",
+      "parsed_sha256": "e4ab5dcf8848691e63ebb68318af9308fff6ed299dbb016ee80caa156753040f"
+    },
+    {
+      "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-per-christum-conclusion",
+      "record_type": "passage",
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/english-completion-20261029-postconciliar-opening2-per-christum-conclusion.toml",
+      "parsed_sha256": "02f2e4f2cc158faa4e7f2e0a20a3ca44252e8224ed56f9f30f4dd10ebbc84fc1"
+    },
+    {
+      "id": "passage.triptych.oration-conclusion-study-english-20261112.study-english-20261112.father-through-son",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/editions/2026-11-12-study-english/passages/father-through-son.toml",
+      "parsed_sha256": "1e5935b46977d90457636624ecfae946de5d503234c51560dd0f04deea7a7569"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-13-collect.toml",
+      "parsed_sha256": "d98422b4d9bb0342d65739129a5c7907e15ffdb71f298fe4598944ce6dbd9044"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-16-collect.toml",
+      "parsed_sha256": "0d1a60c10f3af6ae7873b9cec9f1d06e6d8b0ffbf2f00bd85cabb2a5df1c9989"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-18-collect.toml",
+      "parsed_sha256": "fae951c5141be13000c2b583a031cdac1c20e6d4ed047111442e8e1f28c3dcaa"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-20-postcommunion.toml",
+      "parsed_sha256": "18a4b52762d39fb76793f87607e6655347e088609854bfa2a87057093d957722"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/editions/2026-11-13/passages/ot-9-postcommunion.toml",
+      "parsed_sha256": "8fe8f93a912b402fcb1033d962d03aea6d9d65b590a28db5d8b526e264f9f23b"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-13-collect",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-13-collect.toml",
+      "parsed_sha256": "5773a07d9caed144b29620d6b403d710c1d8d4996db0d50cb8bf5cc3f8d142c6"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-16-collect",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-16-collect.toml",
+      "parsed_sha256": "53b101847c41d8e1c5332622e19cc5ec0df973041d3a9b77e2d9f34037761356"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-18-collect",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-18-collect.toml",
+      "parsed_sha256": "8f20d150c2162778e9adf5739d3fa7e4f93306a976482ae5e3fe15fb13917900"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-20-postcommunion",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-20-postcommunion.toml",
+      "parsed_sha256": "a22d01b2259a7fc118155f13ed44528274a1b2b85426b360063f11a7f452492d"
+    },
+    {
+      "id": "passage.triptych.ordinarytime-remaining-five-study-english-20261113.2026-11-13.ot-9-postcommunion",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/editions/2026-11-13/passages/ot-9-postcommunion.toml",
+      "parsed_sha256": "fd3050f16053efcd116c2c9537ae9e2306b0164a6f2279218f98f8eae73474d0"
+    },
+    {
+      "id": "passage.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/editions/2026-11-12/passages/complete.toml",
+      "parsed_sha256": "53a67aaa8cb404dc9227dda1d7ec51b791c9078f950c49556f9bd2367031a556"
+    },
+    {
+      "id": "passage.triptych.ot-20-offerings-study-english.2026-11-12.complete",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/editions/2026-11-12/passages/complete.toml",
+      "parsed_sha256": "5a904c5c79dda8aaea11a6665ab09ce1e5f6a6a627251fd55f7d412107bfb076"
+    },
+    {
+      "id": "passage.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/editions/2026-11-12/passages/complete.toml",
+      "parsed_sha256": "c96e4e3e97ff6563eb59ad8cb7e41ff5067aa49d5d42ee26f051baaec18db5f4"
+    },
+    {
+      "id": "passage.triptych.ot-32-offerings-study-english.2026-11-12.complete",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/editions/2026-11-12/passages/complete.toml",
+      "parsed_sha256": "6953ba4014fbb45e13b9ae7b1cbad9b665647a8db3406f190b93ea4146538e83"
+    },
+    {
+      "id": "passage.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "parsed_sha256": "14dac663a358ccbd48eb7e72009003da4d0210846a7db7fe7d6d2fb99c9daa92"
+    },
+    {
+      "id": "passage.triptych.ot29-source-based-study-english.2026-11-12.complete-study-english",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "parsed_sha256": "42c4b51c8d5e0b9506a15b13ccbf474ec9b2e9344250dde70474ef863eda0009"
+    },
+    {
+      "id": "passage.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "parsed_sha256": "c6e1e9e28cc18c462ba85845ac621002177c4ab6c4134ab68e5be4f2476ce8c6"
+    },
+    {
+      "id": "passage.triptych.ot32-source-based-study-english.2026-11-12.complete-study-english",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "parsed_sha256": "ebec94b00aa85f8b29e0cf5f329688b1b6f64a216d5286269fd8cdb83c30a9fe"
+    },
+    {
+      "id": "passage.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/editions/2026-11-12/passages/complete-latin.toml",
+      "parsed_sha256": "73ddea061dd31efb9874fd583aeabb6d0fe84868b8ae8f90e150b687524df18c"
+    },
+    {
+      "id": "passage.triptych.ot33-source-based-study-english.2026-11-12.complete-study-english",
+      "record_type": "passage",
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/editions/2026-11-12/passages/complete-study-english.toml",
+      "parsed_sha256": "3b7114d5de7e54eda213415f044db087d1ff4556fc42ea6f783f3507c3544951"
+    },
+    {
+      "id": "segment.catholic-church.institutio-generalis-missalis-romani.latin-missale-romanum-typica-tertia-2002.missale-romanum-artifact-pages-8-61",
+      "record_type": "segment",
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/editions/latin-missale-romanum-typica-tertia-2002/segments/missale-romanum-artifact-pages-8-61.toml",
+      "parsed_sha256": "cb460ca6a27981c03a2ba8515225db91d183d93b537f49f8b6be7c6afa702b75"
+    },
+    {
+      "id": "work.a-m-de-noboa.preparacion-y-accion-de-gracias-para-la-santa-misa",
+      "record_type": "work",
+      "path": "src/sources/works/a-m-de-noboa/preparacion-y-accion-de-gracias-para-la-santa-misa/work.toml",
+      "parsed_sha256": "0b5643d4b22ed151cb9abc794e512981a2bfd74552b1550ae9c8db0144041410"
+    },
+    {
+      "id": "work.catholic-church.institutio-generalis-missalis-romani",
+      "record_type": "work",
+      "path": "src/sources/works/catholic-church/institutio-generalis-missalis-romani/work.toml",
+      "parsed_sha256": "ed588b91dbd33b9204a8ea8d6efe85bc529f8d20bb5060090ff933f1b6c77d69"
+    },
+    {
+      "id": "work.catholic-church.liber-mozarabicus-sacramentorum",
+      "record_type": "work",
+      "path": "src/sources/works/catholic-church/liber-mozarabicus-sacramentorum/work.toml",
+      "parsed_sha256": "4749e93f1a33fb9fb17f6e3d5b3de60e763fcd7bc5ed0283be18fdf49e445a2e"
+    },
+    {
+      "id": "work.catholic-church.manuale-ambrosianum",
+      "record_type": "work",
+      "path": "src/sources/works/catholic-church/manuale-ambrosianum/work.toml",
+      "parsed_sha256": "bfc5aff5852b4e30c9b23adcdbb4933a2bfe528d4d10c5d97b53c0d765a57d99"
+    },
+    {
+      "id": "work.catholic-church.missale-romanum",
+      "record_type": "work",
+      "path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "parsed_sha256": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc"
+    },
+    {
+      "id": "work.catholic-church.sacramentarium-gelasianum-vetus",
+      "record_type": "work",
+      "path": "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/work.toml",
+      "parsed_sha256": "e983ecd4a3d9889453d6eade30e16fde890746ff6168f9aec8bf758578f7d70b"
+    },
+    {
+      "id": "work.catholic-church.sacramentarium-veronense",
+      "record_type": "work",
+      "path": "src/sources/works/catholic-church/sacramentarium-veronense/work.toml",
+      "parsed_sha256": "5c487b4841745743c55817e248ae9c78758aa3591f958f20554d9b04e2d1d07c"
+    },
+    {
+      "id": "work.diocese-of-paris.missale-parisiense",
+      "record_type": "work",
+      "path": "src/sources/works/diocese-of-paris/missale-parisiense/work.toml",
+      "parsed_sha256": "64a1d7fd169f426c21e66c76505f99505f420c0368616aa3f72dbe0e8d122a08"
+    },
+    {
+      "id": "work.francis-xavier-lasance.the-new-roman-missal",
+      "record_type": "work",
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
+      "parsed_sha256": "59c175e33dfb2e91fc49300f83542ce7b04a01f1461024bae9ae8b4d8e15a908"
+    },
+    {
+      "id": "work.triptych.oration-conclusion-study-english-20261112",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/oration-conclusion-study-english-20261112/work.toml",
+      "parsed_sha256": "17de7e9e0ee16340524c547f7781b7bb8350e5a4995bf0daa18d4a716606e5c3"
+    },
+    {
+      "id": "work.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-latin-study-reconstruction-20261113/work.toml",
+      "parsed_sha256": "0108e846c128a31817f599742a815cedb0173c0c2faf812e33a897045de4f75c"
+    },
+    {
+      "id": "work.triptych.ordinarytime-remaining-five-study-english-20261113",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ordinarytime-remaining-five-study-english-20261113/work.toml",
+      "parsed_sha256": "477cff69c8d4e46af7f6a00f63aaff487491126d5e29047f3920b2fb87b9fc13"
+    },
+    {
+      "id": "work.triptych.ot-20-offerings-finite-latin-reconstruction",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot-20-offerings-finite-latin-reconstruction/work.toml",
+      "parsed_sha256": "05f53957f926850fb23ca9912abc55d4905cf431ebc8c519f6236b8eced1c8bb"
+    },
+    {
+      "id": "work.triptych.ot-20-offerings-study-english",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot-20-offerings-study-english/work.toml",
+      "parsed_sha256": "0ab6c90688beb4c4bc7faf2a8ad88f9a09fb1df9d218bec44ed715a055246110"
+    },
+    {
+      "id": "work.triptych.ot-32-offerings-finite-latin-reconstruction",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot-32-offerings-finite-latin-reconstruction/work.toml",
+      "parsed_sha256": "bd81b07f2b61ba787e14ae043cfd8a80eeeff773d548659aedeb3c0779f6f25f"
+    },
+    {
+      "id": "work.triptych.ot-32-offerings-study-english",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot-32-offerings-study-english/work.toml",
+      "parsed_sha256": "03a579b1fdf6041adbe78c43e15148172e91491368503aa8776aa737b5641b93"
+    },
+    {
+      "id": "work.triptych.ot29-historical-study-selection",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot29-historical-study-selection/work.toml",
+      "parsed_sha256": "2b91a32f192437ce94c1127dc3dbb83c878cdb9392150ff0ad51ca85616c73b8"
+    },
+    {
+      "id": "work.triptych.ot29-source-based-study-english",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot29-source-based-study-english/work.toml",
+      "parsed_sha256": "7fc51786826552c0b2d5b2009a9e15e042cc8677252119b36f6ba61465322fab"
+    },
+    {
+      "id": "work.triptych.ot32-historical-study-selection",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot32-historical-study-selection/work.toml",
+      "parsed_sha256": "0327f1d8f4a89d2a8fb4d834ccfada98f3c8536dac4456b23cb5d59e1818a28f"
+    },
+    {
+      "id": "work.triptych.ot32-source-based-study-english",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot32-source-based-study-english/work.toml",
+      "parsed_sha256": "7ca012c1761d0c70923794316bd159c1f0fefc82aaa34455d90308bc56b7e12f"
+    },
+    {
+      "id": "work.triptych.ot33-historical-study-selection",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot33-historical-study-selection/work.toml",
+      "parsed_sha256": "c29fb5bfc0dfe118884014078a90d75c811878141dbdb1f9dca242595a19c4ab"
+    },
+    {
+      "id": "work.triptych.ot33-source-based-study-english",
+      "record_type": "work",
+      "path": "src/sources/works/triptych/ot33-source-based-study-english/work.toml",
+      "parsed_sha256": "dfaee380dc4d95f620123154bff26b0b3cbd005699b6f32147ccfcee895dd1f3"
+    }
+  ],
+  "surface_tuples": [
+    {
+      "owner": [
+        "ot-13",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "fdd07fe54189d7d80d62951e7286cf34c7b85152d52a9051a4a26e0e70572558",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "row_sha256": "91552d87ce35127953d740cc9ef291645027159854db2596b7cdd49574628372",
+      "artifact_record_sha256": "6137f735c1b3ad572a9bd93bc806aff9b9a1505ceed64a358c26731e8fe37f1e",
+      "passage_record_sha256": "d98422b4d9bb0342d65739129a5c7907e15ffdb71f298fe4598944ce6dbd9044",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-13",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "fdd07fe54189d7d80d62951e7286cf34c7b85152d52a9051a4a26e0e70572558",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "row_sha256": "91552d87ce35127953d740cc9ef291645027159854db2596b7cdd49574628372",
+      "artifact_record_sha256": "6137f735c1b3ad572a9bd93bc806aff9b9a1505ceed64a358c26731e8fe37f1e",
+      "passage_record_sha256": "d98422b4d9bb0342d65739129a5c7907e15ffdb71f298fe4598944ce6dbd9044",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-13",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "fdd07fe54189d7d80d62951e7286cf34c7b85152d52a9051a4a26e0e70572558",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "row_sha256": "91552d87ce35127953d740cc9ef291645027159854db2596b7cdd49574628372",
+      "artifact_record_sha256": "6137f735c1b3ad572a9bd93bc806aff9b9a1505ceed64a358c26731e8fe37f1e",
+      "passage_record_sha256": "d98422b4d9bb0342d65739129a5c7907e15ffdb71f298fe4598944ce6dbd9044",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-13",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "fdd07fe54189d7d80d62951e7286cf34c7b85152d52a9051a4a26e0e70572558",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "row_sha256": "91552d87ce35127953d740cc9ef291645027159854db2596b7cdd49574628372",
+      "artifact_record_sha256": "6137f735c1b3ad572a9bd93bc806aff9b9a1505ceed64a358c26731e8fe37f1e",
+      "passage_record_sha256": "d98422b4d9bb0342d65739129a5c7907e15ffdb71f298fe4598944ce6dbd9044",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-13",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "fdd07fe54189d7d80d62951e7286cf34c7b85152d52a9051a4a26e0e70572558",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "row_sha256": "91552d87ce35127953d740cc9ef291645027159854db2596b7cdd49574628372",
+      "artifact_record_sha256": "6137f735c1b3ad572a9bd93bc806aff9b9a1505ceed64a358c26731e8fe37f1e",
+      "passage_record_sha256": "d98422b4d9bb0342d65739129a5c7907e15ffdb71f298fe4598944ce6dbd9044",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-13",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "fdd07fe54189d7d80d62951e7286cf34c7b85152d52a9051a4a26e0e70572558",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-13-collect",
+      "row_sha256": "91552d87ce35127953d740cc9ef291645027159854db2596b7cdd49574628372",
+      "artifact_record_sha256": "6137f735c1b3ad572a9bd93bc806aff9b9a1505ceed64a358c26731e8fe37f1e",
+      "passage_record_sha256": "d98422b4d9bb0342d65739129a5c7907e15ffdb71f298fe4598944ce6dbd9044",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-16",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "51c9d78dae29d24905046e2eddd8e8ea4637a00297eb9f33de7a8176637ddf0f",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "row_sha256": "0a6cfd9d0aca09bd2172a3eb3d615197fd124e410b1329c31818eb84a5798ad1",
+      "artifact_record_sha256": "36f640c31d9a59f3e6bee4a64c2c4311e35ff9704072e53973630a92bb867fce",
+      "passage_record_sha256": "0d1a60c10f3af6ae7873b9cec9f1d06e6d8b0ffbf2f00bd85cabb2a5df1c9989",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-16",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "51c9d78dae29d24905046e2eddd8e8ea4637a00297eb9f33de7a8176637ddf0f",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "row_sha256": "0a6cfd9d0aca09bd2172a3eb3d615197fd124e410b1329c31818eb84a5798ad1",
+      "artifact_record_sha256": "36f640c31d9a59f3e6bee4a64c2c4311e35ff9704072e53973630a92bb867fce",
+      "passage_record_sha256": "0d1a60c10f3af6ae7873b9cec9f1d06e6d8b0ffbf2f00bd85cabb2a5df1c9989",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-16",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "51c9d78dae29d24905046e2eddd8e8ea4637a00297eb9f33de7a8176637ddf0f",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "row_sha256": "0a6cfd9d0aca09bd2172a3eb3d615197fd124e410b1329c31818eb84a5798ad1",
+      "artifact_record_sha256": "36f640c31d9a59f3e6bee4a64c2c4311e35ff9704072e53973630a92bb867fce",
+      "passage_record_sha256": "0d1a60c10f3af6ae7873b9cec9f1d06e6d8b0ffbf2f00bd85cabb2a5df1c9989",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-16",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "51c9d78dae29d24905046e2eddd8e8ea4637a00297eb9f33de7a8176637ddf0f",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "row_sha256": "0a6cfd9d0aca09bd2172a3eb3d615197fd124e410b1329c31818eb84a5798ad1",
+      "artifact_record_sha256": "36f640c31d9a59f3e6bee4a64c2c4311e35ff9704072e53973630a92bb867fce",
+      "passage_record_sha256": "0d1a60c10f3af6ae7873b9cec9f1d06e6d8b0ffbf2f00bd85cabb2a5df1c9989",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-16",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "51c9d78dae29d24905046e2eddd8e8ea4637a00297eb9f33de7a8176637ddf0f",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "row_sha256": "0a6cfd9d0aca09bd2172a3eb3d615197fd124e410b1329c31818eb84a5798ad1",
+      "artifact_record_sha256": "36f640c31d9a59f3e6bee4a64c2c4311e35ff9704072e53973630a92bb867fce",
+      "passage_record_sha256": "0d1a60c10f3af6ae7873b9cec9f1d06e6d8b0ffbf2f00bd85cabb2a5df1c9989",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-16",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "51c9d78dae29d24905046e2eddd8e8ea4637a00297eb9f33de7a8176637ddf0f",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-16-collect",
+      "row_sha256": "0a6cfd9d0aca09bd2172a3eb3d615197fd124e410b1329c31818eb84a5798ad1",
+      "artifact_record_sha256": "36f640c31d9a59f3e6bee4a64c2c4311e35ff9704072e53973630a92bb867fce",
+      "passage_record_sha256": "0d1a60c10f3af6ae7873b9cec9f1d06e6d8b0ffbf2f00bd85cabb2a5df1c9989",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-18",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "cf89091cf8350fc93248130a5bb7a6ec80cdb86367847d9f158e83d47e5e32b9",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "row_sha256": "6d6588427e1b9850a2d26bdac7e384e6ab6aa9d5ca187197f35ff868f09aea39",
+      "artifact_record_sha256": "2f3890edba8d0a7b15a910ec6d9156f3a5b227fa19911aab76c4cc6bdce721df",
+      "passage_record_sha256": "fae951c5141be13000c2b583a031cdac1c20e6d4ed047111442e8e1f28c3dcaa",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-18",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "cf89091cf8350fc93248130a5bb7a6ec80cdb86367847d9f158e83d47e5e32b9",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "row_sha256": "6d6588427e1b9850a2d26bdac7e384e6ab6aa9d5ca187197f35ff868f09aea39",
+      "artifact_record_sha256": "2f3890edba8d0a7b15a910ec6d9156f3a5b227fa19911aab76c4cc6bdce721df",
+      "passage_record_sha256": "fae951c5141be13000c2b583a031cdac1c20e6d4ed047111442e8e1f28c3dcaa",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-18",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "cf89091cf8350fc93248130a5bb7a6ec80cdb86367847d9f158e83d47e5e32b9",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "row_sha256": "6d6588427e1b9850a2d26bdac7e384e6ab6aa9d5ca187197f35ff868f09aea39",
+      "artifact_record_sha256": "2f3890edba8d0a7b15a910ec6d9156f3a5b227fa19911aab76c4cc6bdce721df",
+      "passage_record_sha256": "fae951c5141be13000c2b583a031cdac1c20e6d4ed047111442e8e1f28c3dcaa",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-18",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "cf89091cf8350fc93248130a5bb7a6ec80cdb86367847d9f158e83d47e5e32b9",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "row_sha256": "6d6588427e1b9850a2d26bdac7e384e6ab6aa9d5ca187197f35ff868f09aea39",
+      "artifact_record_sha256": "2f3890edba8d0a7b15a910ec6d9156f3a5b227fa19911aab76c4cc6bdce721df",
+      "passage_record_sha256": "fae951c5141be13000c2b583a031cdac1c20e6d4ed047111442e8e1f28c3dcaa",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-18",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "cf89091cf8350fc93248130a5bb7a6ec80cdb86367847d9f158e83d47e5e32b9",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "row_sha256": "6d6588427e1b9850a2d26bdac7e384e6ab6aa9d5ca187197f35ff868f09aea39",
+      "artifact_record_sha256": "2f3890edba8d0a7b15a910ec6d9156f3a5b227fa19911aab76c4cc6bdce721df",
+      "passage_record_sha256": "fae951c5141be13000c2b583a031cdac1c20e6d4ed047111442e8e1f28c3dcaa",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-18",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "cf89091cf8350fc93248130a5bb7a6ec80cdb86367847d9f158e83d47e5e32b9",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-18-collect",
+      "row_sha256": "6d6588427e1b9850a2d26bdac7e384e6ab6aa9d5ca187197f35ff868f09aea39",
+      "artifact_record_sha256": "2f3890edba8d0a7b15a910ec6d9156f3a5b227fa19911aab76c4cc6bdce721df",
+      "passage_record_sha256": "fae951c5141be13000c2b583a031cdac1c20e6d4ed047111442e8e1f28c3dcaa",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-9",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "dbdb37f66752edf5f91ab107c842bbea7bec105d6ab505c4fb23492b7ee5c788",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "row_sha256": "cc2438cc747dd6b6c5be12e97fd5f8b72cd06ef3a090798f991158f764b028ae",
+      "artifact_record_sha256": "b40bcb3ea9abfe2b76f2d8cb6c13be571a729eb001d4a3d9d1ca9fd6f2ca3270",
+      "passage_record_sha256": "8fe8f93a912b402fcb1033d962d03aea6d9d65b590a28db5d8b526e264f9f23b",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-9",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "dbdb37f66752edf5f91ab107c842bbea7bec105d6ab505c4fb23492b7ee5c788",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "row_sha256": "cc2438cc747dd6b6c5be12e97fd5f8b72cd06ef3a090798f991158f764b028ae",
+      "artifact_record_sha256": "b40bcb3ea9abfe2b76f2d8cb6c13be571a729eb001d4a3d9d1ca9fd6f2ca3270",
+      "passage_record_sha256": "8fe8f93a912b402fcb1033d962d03aea6d9d65b590a28db5d8b526e264f9f23b",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-9",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "dbdb37f66752edf5f91ab107c842bbea7bec105d6ab505c4fb23492b7ee5c788",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "row_sha256": "cc2438cc747dd6b6c5be12e97fd5f8b72cd06ef3a090798f991158f764b028ae",
+      "artifact_record_sha256": "b40bcb3ea9abfe2b76f2d8cb6c13be571a729eb001d4a3d9d1ca9fd6f2ca3270",
+      "passage_record_sha256": "8fe8f93a912b402fcb1033d962d03aea6d9d65b590a28db5d8b526e264f9f23b",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-9",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "dbdb37f66752edf5f91ab107c842bbea7bec105d6ab505c4fb23492b7ee5c788",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "row_sha256": "cc2438cc747dd6b6c5be12e97fd5f8b72cd06ef3a090798f991158f764b028ae",
+      "artifact_record_sha256": "b40bcb3ea9abfe2b76f2d8cb6c13be571a729eb001d4a3d9d1ca9fd6f2ca3270",
+      "passage_record_sha256": "8fe8f93a912b402fcb1033d962d03aea6d9d65b590a28db5d8b526e264f9f23b",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-9",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "dbdb37f66752edf5f91ab107c842bbea7bec105d6ab505c4fb23492b7ee5c788",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "row_sha256": "cc2438cc747dd6b6c5be12e97fd5f8b72cd06ef3a090798f991158f764b028ae",
+      "artifact_record_sha256": "b40bcb3ea9abfe2b76f2d8cb6c13be571a729eb001d4a3d9d1ca9fd6f2ca3270",
+      "passage_record_sha256": "8fe8f93a912b402fcb1033d962d03aea6d9d65b590a28db5d8b526e264f9f23b",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-9",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "dbdb37f66752edf5f91ab107c842bbea7bec105d6ab505c4fb23492b7ee5c788",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-9-postcommunion",
+      "row_sha256": "cc2438cc747dd6b6c5be12e97fd5f8b72cd06ef3a090798f991158f764b028ae",
+      "artifact_record_sha256": "b40bcb3ea9abfe2b76f2d8cb6c13be571a729eb001d4a3d9d1ca9fd6f2ca3270",
+      "passage_record_sha256": "8fe8f93a912b402fcb1033d962d03aea6d9d65b590a28db5d8b526e264f9f23b",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "111ca00384932d15adc3d2e60105ff8651c2a27444da38a0d94e78049255e505",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "row_sha256": "dea652e5b12b668ed00a19c989c2fc4a9ab38319bc4961a925bd5b15b0d17656",
+      "artifact_record_sha256": "eb250fa4225afe3ed2b8a03700bbc5977825fff5374fcd62bde8dc338570c8f9",
+      "passage_record_sha256": "18a4b52762d39fb76793f87607e6655347e088609854bfa2a87057093d957722",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "111ca00384932d15adc3d2e60105ff8651c2a27444da38a0d94e78049255e505",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "row_sha256": "dea652e5b12b668ed00a19c989c2fc4a9ab38319bc4961a925bd5b15b0d17656",
+      "artifact_record_sha256": "eb250fa4225afe3ed2b8a03700bbc5977825fff5374fcd62bde8dc338570c8f9",
+      "passage_record_sha256": "18a4b52762d39fb76793f87607e6655347e088609854bfa2a87057093d957722",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "111ca00384932d15adc3d2e60105ff8651c2a27444da38a0d94e78049255e505",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "row_sha256": "dea652e5b12b668ed00a19c989c2fc4a9ab38319bc4961a925bd5b15b0d17656",
+      "artifact_record_sha256": "eb250fa4225afe3ed2b8a03700bbc5977825fff5374fcd62bde8dc338570c8f9",
+      "passage_record_sha256": "18a4b52762d39fb76793f87607e6655347e088609854bfa2a87057093d957722",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "111ca00384932d15adc3d2e60105ff8651c2a27444da38a0d94e78049255e505",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "row_sha256": "dea652e5b12b668ed00a19c989c2fc4a9ab38319bc4961a925bd5b15b0d17656",
+      "artifact_record_sha256": "eb250fa4225afe3ed2b8a03700bbc5977825fff5374fcd62bde8dc338570c8f9",
+      "passage_record_sha256": "18a4b52762d39fb76793f87607e6655347e088609854bfa2a87057093d957722",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "111ca00384932d15adc3d2e60105ff8651c2a27444da38a0d94e78049255e505",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "row_sha256": "dea652e5b12b668ed00a19c989c2fc4a9ab38319bc4961a925bd5b15b0d17656",
+      "artifact_record_sha256": "eb250fa4225afe3ed2b8a03700bbc5977825fff5374fcd62bde8dc338570c8f9",
+      "passage_record_sha256": "18a4b52762d39fb76793f87607e6655347e088609854bfa2a87057093d957722",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "111ca00384932d15adc3d2e60105ff8651c2a27444da38a0d94e78049255e505",
+      "source_id": "passage.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "artifact_id": "artifact.triptych.ordinarytime-remaining-five-latin-study-reconstruction-20261113.2026-11-13.ot-20-postcommunion",
+      "row_sha256": "dea652e5b12b668ed00a19c989c2fc4a9ab38319bc4961a925bd5b15b0d17656",
+      "artifact_record_sha256": "eb250fa4225afe3ed2b8a03700bbc5977825fff5374fcd62bde8dc338570c8f9",
+      "passage_record_sha256": "18a4b52762d39fb76793f87607e6655347e088609854bfa2a87057093d957722",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "9df264da8c50ed0bbb4ea2f625daa3c1dca6fa7ba9b7a414bd5944510f2f538d",
+      "source_id": "passage.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "71fde45650ae232e6fb8812abe7014cdc2c6e8cc875f73a23fcf59ddf55112d3",
+      "artifact_record_sha256": "54b1ea80aa8bc9481c00dca1eb66fa93245c5803e09c7d421bf59aaf2cf36b79",
+      "passage_record_sha256": "53a67aaa8cb404dc9227dda1d7ec51b791c9078f950c49556f9bd2367031a556",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "9df264da8c50ed0bbb4ea2f625daa3c1dca6fa7ba9b7a414bd5944510f2f538d",
+      "source_id": "passage.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "71fde45650ae232e6fb8812abe7014cdc2c6e8cc875f73a23fcf59ddf55112d3",
+      "artifact_record_sha256": "54b1ea80aa8bc9481c00dca1eb66fa93245c5803e09c7d421bf59aaf2cf36b79",
+      "passage_record_sha256": "53a67aaa8cb404dc9227dda1d7ec51b791c9078f950c49556f9bd2367031a556",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "9df264da8c50ed0bbb4ea2f625daa3c1dca6fa7ba9b7a414bd5944510f2f538d",
+      "source_id": "passage.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "71fde45650ae232e6fb8812abe7014cdc2c6e8cc875f73a23fcf59ddf55112d3",
+      "artifact_record_sha256": "54b1ea80aa8bc9481c00dca1eb66fa93245c5803e09c7d421bf59aaf2cf36b79",
+      "passage_record_sha256": "53a67aaa8cb404dc9227dda1d7ec51b791c9078f950c49556f9bd2367031a556",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "9df264da8c50ed0bbb4ea2f625daa3c1dca6fa7ba9b7a414bd5944510f2f538d",
+      "source_id": "passage.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "71fde45650ae232e6fb8812abe7014cdc2c6e8cc875f73a23fcf59ddf55112d3",
+      "artifact_record_sha256": "54b1ea80aa8bc9481c00dca1eb66fa93245c5803e09c7d421bf59aaf2cf36b79",
+      "passage_record_sha256": "53a67aaa8cb404dc9227dda1d7ec51b791c9078f950c49556f9bd2367031a556",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "9df264da8c50ed0bbb4ea2f625daa3c1dca6fa7ba9b7a414bd5944510f2f538d",
+      "source_id": "passage.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "71fde45650ae232e6fb8812abe7014cdc2c6e8cc875f73a23fcf59ddf55112d3",
+      "artifact_record_sha256": "54b1ea80aa8bc9481c00dca1eb66fa93245c5803e09c7d421bf59aaf2cf36b79",
+      "passage_record_sha256": "53a67aaa8cb404dc9227dda1d7ec51b791c9078f950c49556f9bd2367031a556",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-20",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "9df264da8c50ed0bbb4ea2f625daa3c1dca6fa7ba9b7a414bd5944510f2f538d",
+      "source_id": "passage.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-20-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "71fde45650ae232e6fb8812abe7014cdc2c6e8cc875f73a23fcf59ddf55112d3",
+      "artifact_record_sha256": "54b1ea80aa8bc9481c00dca1eb66fa93245c5803e09c7d421bf59aaf2cf36b79",
+      "passage_record_sha256": "53a67aaa8cb404dc9227dda1d7ec51b791c9078f950c49556f9bd2367031a556",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b3a22356bd12d54e562a3d4e86f7defaabbb355b5de542d4572dfee61b7bb90a",
+      "source_id": "passage.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "134734c47e74ffe4f86ed22401460e78a02a3acc36b293e66ab780a98b0b958b",
+      "artifact_record_sha256": "45b9e682e83cdecdd391da71f7acb6c2c67dedc544df72698c03542927b4707a",
+      "passage_record_sha256": "c96e4e3e97ff6563eb59ad8cb7e41ff5067aa49d5d42ee26f051baaec18db5f4",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b3a22356bd12d54e562a3d4e86f7defaabbb355b5de542d4572dfee61b7bb90a",
+      "source_id": "passage.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "134734c47e74ffe4f86ed22401460e78a02a3acc36b293e66ab780a98b0b958b",
+      "artifact_record_sha256": "45b9e682e83cdecdd391da71f7acb6c2c67dedc544df72698c03542927b4707a",
+      "passage_record_sha256": "c96e4e3e97ff6563eb59ad8cb7e41ff5067aa49d5d42ee26f051baaec18db5f4",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b3a22356bd12d54e562a3d4e86f7defaabbb355b5de542d4572dfee61b7bb90a",
+      "source_id": "passage.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "134734c47e74ffe4f86ed22401460e78a02a3acc36b293e66ab780a98b0b958b",
+      "artifact_record_sha256": "45b9e682e83cdecdd391da71f7acb6c2c67dedc544df72698c03542927b4707a",
+      "passage_record_sha256": "c96e4e3e97ff6563eb59ad8cb7e41ff5067aa49d5d42ee26f051baaec18db5f4",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b3a22356bd12d54e562a3d4e86f7defaabbb355b5de542d4572dfee61b7bb90a",
+      "source_id": "passage.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "134734c47e74ffe4f86ed22401460e78a02a3acc36b293e66ab780a98b0b958b",
+      "artifact_record_sha256": "45b9e682e83cdecdd391da71f7acb6c2c67dedc544df72698c03542927b4707a",
+      "passage_record_sha256": "c96e4e3e97ff6563eb59ad8cb7e41ff5067aa49d5d42ee26f051baaec18db5f4",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b3a22356bd12d54e562a3d4e86f7defaabbb355b5de542d4572dfee61b7bb90a",
+      "source_id": "passage.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "134734c47e74ffe4f86ed22401460e78a02a3acc36b293e66ab780a98b0b958b",
+      "artifact_record_sha256": "45b9e682e83cdecdd391da71f7acb6c2c67dedc544df72698c03542927b4707a",
+      "passage_record_sha256": "c96e4e3e97ff6563eb59ad8cb7e41ff5067aa49d5d42ee26f051baaec18db5f4",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer over the Offerings",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "b3a22356bd12d54e562a3d4e86f7defaabbb355b5de542d4572dfee61b7bb90a",
+      "source_id": "passage.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "artifact_id": "artifact.triptych.ot-32-offerings-finite-latin-reconstruction.2026-11-12.complete",
+      "row_sha256": "134734c47e74ffe4f86ed22401460e78a02a3acc36b293e66ab780a98b0b958b",
+      "artifact_record_sha256": "45b9e682e83cdecdd391da71f7acb6c2c67dedc544df72698c03542927b4707a",
+      "passage_record_sha256": "c96e4e3e97ff6563eb59ad8cb7e41ff5067aa49d5d42ee26f051baaec18db5f4",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-29",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "6cbb1c373bc78e0ac6762983bb35ccd24d972771dc1df7a455342e322c7b459e",
+      "source_id": "passage.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "704e1f3457d6ae74b38eb33b6e4c6f509cc26c85044d6093a70f1860f900f1c7",
+      "artifact_record_sha256": "f604bb2e264d8dea4a3ab89ce6dd1e4024b4781741908436826c925eec261ed5",
+      "passage_record_sha256": "14dac663a358ccbd48eb7e72009003da4d0210846a7db7fe7d6d2fb99c9daa92",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-29",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "6cbb1c373bc78e0ac6762983bb35ccd24d972771dc1df7a455342e322c7b459e",
+      "source_id": "passage.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "704e1f3457d6ae74b38eb33b6e4c6f509cc26c85044d6093a70f1860f900f1c7",
+      "artifact_record_sha256": "f604bb2e264d8dea4a3ab89ce6dd1e4024b4781741908436826c925eec261ed5",
+      "passage_record_sha256": "14dac663a358ccbd48eb7e72009003da4d0210846a7db7fe7d6d2fb99c9daa92",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-29",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "6cbb1c373bc78e0ac6762983bb35ccd24d972771dc1df7a455342e322c7b459e",
+      "source_id": "passage.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "704e1f3457d6ae74b38eb33b6e4c6f509cc26c85044d6093a70f1860f900f1c7",
+      "artifact_record_sha256": "f604bb2e264d8dea4a3ab89ce6dd1e4024b4781741908436826c925eec261ed5",
+      "passage_record_sha256": "14dac663a358ccbd48eb7e72009003da4d0210846a7db7fe7d6d2fb99c9daa92",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-29",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "6cbb1c373bc78e0ac6762983bb35ccd24d972771dc1df7a455342e322c7b459e",
+      "source_id": "passage.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "704e1f3457d6ae74b38eb33b6e4c6f509cc26c85044d6093a70f1860f900f1c7",
+      "artifact_record_sha256": "f604bb2e264d8dea4a3ab89ce6dd1e4024b4781741908436826c925eec261ed5",
+      "passage_record_sha256": "14dac663a358ccbd48eb7e72009003da4d0210846a7db7fe7d6d2fb99c9daa92",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-29",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "6cbb1c373bc78e0ac6762983bb35ccd24d972771dc1df7a455342e322c7b459e",
+      "source_id": "passage.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "704e1f3457d6ae74b38eb33b6e4c6f509cc26c85044d6093a70f1860f900f1c7",
+      "artifact_record_sha256": "f604bb2e264d8dea4a3ab89ce6dd1e4024b4781741908436826c925eec261ed5",
+      "passage_record_sha256": "14dac663a358ccbd48eb7e72009003da4d0210846a7db7fe7d6d2fb99c9daa92",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-29",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "6cbb1c373bc78e0ac6762983bb35ccd24d972771dc1df7a455342e322c7b459e",
+      "source_id": "passage.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot29-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "704e1f3457d6ae74b38eb33b6e4c6f509cc26c85044d6093a70f1860f900f1c7",
+      "artifact_record_sha256": "f604bb2e264d8dea4a3ab89ce6dd1e4024b4781741908436826c925eec261ed5",
+      "passage_record_sha256": "14dac663a358ccbd48eb7e72009003da4d0210846a7db7fe7d6d2fb99c9daa92",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "18b6feba170a0dd93eb4317365fb6c6ff9e911c9743a76e2d2f7631eba33c98b",
+      "source_id": "passage.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "713ecf030ece3d007f7fe0bb2fa411e085c8915247338377f45e53d9739183e9",
+      "artifact_record_sha256": "ff344d5853e7a1a761b3d128308455d6888206765c1a74e0581e8f18adbe6fad",
+      "passage_record_sha256": "c6e1e9e28cc18c462ba85845ac621002177c4ab6c4134ab68e5be4f2476ce8c6",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "18b6feba170a0dd93eb4317365fb6c6ff9e911c9743a76e2d2f7631eba33c98b",
+      "source_id": "passage.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "713ecf030ece3d007f7fe0bb2fa411e085c8915247338377f45e53d9739183e9",
+      "artifact_record_sha256": "ff344d5853e7a1a761b3d128308455d6888206765c1a74e0581e8f18adbe6fad",
+      "passage_record_sha256": "c6e1e9e28cc18c462ba85845ac621002177c4ab6c4134ab68e5be4f2476ce8c6",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "18b6feba170a0dd93eb4317365fb6c6ff9e911c9743a76e2d2f7631eba33c98b",
+      "source_id": "passage.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "713ecf030ece3d007f7fe0bb2fa411e085c8915247338377f45e53d9739183e9",
+      "artifact_record_sha256": "ff344d5853e7a1a761b3d128308455d6888206765c1a74e0581e8f18adbe6fad",
+      "passage_record_sha256": "c6e1e9e28cc18c462ba85845ac621002177c4ab6c4134ab68e5be4f2476ce8c6",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "18b6feba170a0dd93eb4317365fb6c6ff9e911c9743a76e2d2f7631eba33c98b",
+      "source_id": "passage.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "713ecf030ece3d007f7fe0bb2fa411e085c8915247338377f45e53d9739183e9",
+      "artifact_record_sha256": "ff344d5853e7a1a761b3d128308455d6888206765c1a74e0581e8f18adbe6fad",
+      "passage_record_sha256": "c6e1e9e28cc18c462ba85845ac621002177c4ab6c4134ab68e5be4f2476ce8c6",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "18b6feba170a0dd93eb4317365fb6c6ff9e911c9743a76e2d2f7631eba33c98b",
+      "source_id": "passage.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "713ecf030ece3d007f7fe0bb2fa411e085c8915247338377f45e53d9739183e9",
+      "artifact_record_sha256": "ff344d5853e7a1a761b3d128308455d6888206765c1a74e0581e8f18adbe6fad",
+      "passage_record_sha256": "c6e1e9e28cc18c462ba85845ac621002177c4ab6c4134ab68e5be4f2476ce8c6",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-32",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "18b6feba170a0dd93eb4317365fb6c6ff9e911c9743a76e2d2f7631eba33c98b",
+      "source_id": "passage.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot32-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "713ecf030ece3d007f7fe0bb2fa411e085c8915247338377f45e53d9739183e9",
+      "artifact_record_sha256": "ff344d5853e7a1a761b3d128308455d6888206765c1a74e0581e8f18adbe6fad",
+      "passage_record_sha256": "c6e1e9e28cc18c462ba85845ac621002177c4ab6c4134ab68e5be4f2476ce8c6",
+      "surface": "public-git"
+    },
+    {
+      "owner": [
+        "ot-33",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "a879429dc4cd91a83742a2e6ba818fb2f45054396c507a540f8614ba86bc3027",
+      "source_id": "passage.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "a1f57eca23c378a2205232f30f42c495a3f4635456f70566ce2748b6874a0546",
+      "artifact_record_sha256": "2b8f5c05a3350ce859588e22343dafa1e02068f8cc96ae69a368ec595a3c1912",
+      "passage_record_sha256": "73ddea061dd31efb9874fd583aeabb6d0fe84868b8ae8f90e150b687524df18c",
+      "surface": "web"
+    },
+    {
+      "owner": [
+        "ot-33",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "a879429dc4cd91a83742a2e6ba818fb2f45054396c507a540f8614ba86bc3027",
+      "source_id": "passage.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "a1f57eca23c378a2205232f30f42c495a3f4635456f70566ce2748b6874a0546",
+      "artifact_record_sha256": "2b8f5c05a3350ce859588e22343dafa1e02068f8cc96ae69a368ec595a3c1912",
+      "passage_record_sha256": "73ddea061dd31efb9874fd583aeabb6d0fe84868b8ae8f90e150b687524df18c",
+      "surface": "download"
+    },
+    {
+      "owner": [
+        "ot-33",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "a879429dc4cd91a83742a2e6ba818fb2f45054396c507a540f8614ba86bc3027",
+      "source_id": "passage.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "a1f57eca23c378a2205232f30f42c495a3f4635456f70566ce2748b6874a0546",
+      "artifact_record_sha256": "2b8f5c05a3350ce859588e22343dafa1e02068f8cc96ae69a368ec595a3c1912",
+      "passage_record_sha256": "73ddea061dd31efb9874fd583aeabb6d0fe84868b8ae8f90e150b687524df18c",
+      "surface": "print"
+    },
+    {
+      "owner": [
+        "ot-33",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "a879429dc4cd91a83742a2e6ba818fb2f45054396c507a540f8614ba86bc3027",
+      "source_id": "passage.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "a1f57eca23c378a2205232f30f42c495a3f4635456f70566ce2748b6874a0546",
+      "artifact_record_sha256": "2b8f5c05a3350ce859588e22343dafa1e02068f8cc96ae69a368ec595a3c1912",
+      "passage_record_sha256": "73ddea061dd31efb9874fd583aeabb6d0fe84868b8ae8f90e150b687524df18c",
+      "surface": "cli"
+    },
+    {
+      "owner": [
+        "ot-33",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "a879429dc4cd91a83742a2e6ba818fb2f45054396c507a540f8614ba86bc3027",
+      "source_id": "passage.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "a1f57eca23c378a2205232f30f42c495a3f4635456f70566ce2748b6874a0546",
+      "artifact_record_sha256": "2b8f5c05a3350ce859588e22343dafa1e02068f8cc96ae69a368ec595a3c1912",
+      "passage_record_sha256": "73ddea061dd31efb9874fd583aeabb6d0fe84868b8ae8f90e150b687524df18c",
+      "surface": "corpus-data"
+    },
+    {
+      "owner": [
+        "ot-33",
+        "main",
+        "Prayer after Communion",
+        "all",
+        1
+      ],
+      "language": "la",
+      "body_sha256": "a879429dc4cd91a83742a2e6ba818fb2f45054396c507a540f8614ba86bc3027",
+      "source_id": "passage.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "artifact_id": "artifact.triptych.ot33-historical-study-selection.2026-11-12.complete-latin",
+      "row_sha256": "a1f57eca23c378a2205232f30f42c495a3f4635456f70566ce2748b6874a0546",
+      "artifact_record_sha256": "2b8f5c05a3350ce859588e22343dafa1e02068f8cc96ae69a368ec595a3c1912",
+      "passage_record_sha256": "73ddea061dd31efb9874fd583aeabb6d0fe84868b8ae8f90e150b687524df18c",
+      "surface": "public-git"
+    }
+  ],
+  "independent_registration_review_sha256s": [
+    "b204658b6403e2e43855e47e053eff51592351766b1c38bed741177143a9d8da",
+    "dd126e77855efb796640c02bf7d3456f4aa7da29463b5d9c2b376f233ae1f9ec"
+  ],
+  "metadata_review_sha256": "b8c60a213749f8403f21576885e5f71515fc1bc7ee26ecc6b371ff43f9d422bb",
+  "provenance_confidence": "medium",
+  "whole_expression_assessment_confidence": "moderate",
+  "qualification": "Source-based Latin study reconstruction and fresh project study English; authenticated printed2002/current2008 and approved liturgical English remain unestablished. No recitation authority.",
+  "preservation": "The exact four named public refusal-history files and all39 private archive members must be durably verified before any owner mutation.",
+  "runtime": "Separate exact code/runtime authority and successful actual producer checks are required; this source decision does not report runtime installation.",
+  "shared_ancestor_amendment": {
+    "raw_admission_sha256": "0b823b676c8fce1cc4572a9c76b298de7af2854baac39e7ba283e929e3ab3289",
+    "source_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+    "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+    "field": "rights_basis",
+    "before_file_sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+    "after_file_sha256": "dc71449fba4dd7ffceacc3ad09e57ac8307343811bbfba92f807eacfc2663525",
+    "before_record_sha256": "58fd7f0599b2262f2bf41f726df5b5e39f71a3ebb7e2543baab323677ba435be",
+    "after_record_sha256": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+    "scope": "Separately owned ancestor metadata only. Ten installation queue, bodies, selected rows and sixty publication tuples remain unchanged. The exact successor must already be present before ten owner mutation."
+  },
+  "predecessor_source_proof_sha256": "ad9c1400722c20661f7a461faec7d50d34e5f3e3b46db0770167d967833880ae"
+}

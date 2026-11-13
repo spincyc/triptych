@@ -1,0 +1,65 @@
+{
+  "schema": "triptych-independent-good-friday-sequence-consumer-constraint/v1",
+  "reviewed_on": "2026-11-12",
+  "scope": "Clarify the accepted source-derived consumer boundary without mutating any frozen prayer, proposal, source file or previous review.",
+  "prior_registration_review": {
+    "path": ".scratch/modern-lent-orations/independent-review/registration-review.json",
+    "sha256": "afa3d47c85e6f17233b0780cb21e08e36cef60885cab50c3d16d9a78097ee134"
+  },
+  "prior_actor_span_review": {
+    "path": ".scratch/modern-lent-orations/independent-review/execution-addendum-review.json",
+    "sha256": "dd7600f71a738b56af8657fb0598e2bea6f7c14f26e0f4970c5ee7f6c20f2989"
+  },
+  "execution_input": {
+    "path": ".scratch/modern-lent-orations/execution-addendum/execution-input-v2.json",
+    "sha256": "1ae6ad610521ee2a16dfe132c9866716c031870108f82c755f8e23020c0d5ba4"
+  },
+  "verdict": "Confirmed: a dedicated, finitely owned Good Friday IV sequence is required for execution rendering.",
+  "calendar": "postconciliar",
+  "target": [
+    "good-friday",
+    "main",
+    "Solemn Intercession IV: For catechumens",
+    "all",
+    1
+  ],
+  "ordered_sequence": [
+    {
+      "kind": "spoken",
+      "role": "invitation",
+      "speaker": "priest",
+      "extent": "exact first reviewed source span"
+    },
+    {
+      "kind": "action",
+      "role": "silent-prayer",
+      "speaker": null,
+      "spoken_text": null,
+      "basis": "1970 local rubric10 and the IV paragraph boundary, not a generic blank-paragraph inference"
+    },
+    {
+      "kind": "spoken",
+      "role": "collect-and-complete-short-conclusion",
+      "speaker": "priest",
+      "extent": "exact second reviewed source span, including locally printed whole short ending"
+    },
+    {
+      "kind": "spoken",
+      "role": "response",
+      "speaker": "response",
+      "extent": "exact existing Amen source span; R. is a nonspoken role marker",
+      "append_duplicate": false
+    }
+  ],
+  "excluded_adapter_authorities": [
+    "generic grouped-orations conclusion logic",
+    "generic Oratio super populum or Prayer over the People helper",
+    "Roman1962 six-record conclusion execution method",
+    "the separate26 legacy Collect authority",
+    "implicit inference of silence or speaker from paragraph shape alone"
+  ],
+  "source_limit": "The exact sequence is independently established for the1970 source-local witness only; no current2008 role/rite equivalence follows. Conference-added acclamations or traditional deacon kneeling invitations remain conditional and are not supplied.",
+  "binding_requirement": "Adapter activation must bind the exact recipient, full source bodies, complete source/provenance/translation dictionaries and reviewed UTF16 spans. A source/body/owner change requires a reviewed successor. Keep source quotations unchanged and visible qualification with both languages.",
+  "lent4_boundary": "Lent IV remains its separately proved short postcommunion branch with one externally sourced people Amen underIGMR122; it is not evidence for reusing the Good Friday sequence.",
+  "implementation_status": "Source/sequence constraint only; no adapter implementation, invocation, activation, full-route browser check or canonical mutation performed by this addendum."
+}

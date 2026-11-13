@@ -1,0 +1,120 @@
+{
+  "schema": "triptych-next-cohort-spacing-independent-review/v1",
+  "review_date": "2026-11-12",
+  "reviewer": "modern_sources/legacy_review",
+  "disposition": "accepted-spacing-only-metadata-successor; root-body-merits-and-adoption-remain-separate",
+  "scope": "Consolidated first six groups only: Semen three recipients, In spiritu Ordinary, OT21, All Saints, three Easter English uses, two extended Pentecost English uses. This receipt reviews only the successor metadata delta and its executable joins.",
+  "predecessor": {
+    "path": ".scratch/modern-next-cohort-plan/install-plan.json",
+    "sha256": "c9646fcf3baa770bebeb244a699599307af06180f93b27a9331ed783cc544280",
+    "bytes": 188574
+  },
+  "reviewed_successor": {
+    "install_plan": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/install-plan.json",
+      "sha256": "7da2bb12bbd2bb24979e185ee3f3a900650793fa1444e873be09ef47879eba4f",
+      "bytes": 206281
+    },
+    "root_merit_inputs": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/root-merit-inputs.json",
+      "sha256": "f42044c1cc905e383614b0387d3d31e58a5190f734197c983605cd8dd26bead8",
+      "bytes": 180813
+    },
+    "metadata_delta": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/metadata-delta.json",
+      "sha256": "b4f915a0ff2f4cc8b3b7f566d40845f4a190d3036b814874d323652266fdec72",
+      "bytes": 203015
+    },
+    "source_manifest_successor": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/source-manifest-successor.json",
+      "sha256": "d7bd242c56352d67efaab379afd102765227c831e2842d8f5c18b915c65e47a7",
+      "bytes": 55389
+    },
+    "scratch_apply_receipt": {
+      "path": ".scratch/modern-next-cohort-plan/spacing-successor/v3/scratch-apply-receipt.json",
+      "sha256": "d9db4c82aea359ce7a2ff9067833dc2f235957e6fcdaef8aa27d162bdc517dcc",
+      "bytes": 6948
+    }
+  },
+  "field_level_findings": {
+    "proposed_prose_string_fields": 63,
+    "source_TOML_descriptive_string_fields": 83,
+    "source_TOML_files": 45,
+    "change_kind": "Insertion of whitespace only; all existing non-whitespace characters and their order are unchanged. No whitespace was removed or substituted.",
+    "administrative_changes": "Exactly 45 source-map entries receive a new scratch path, file SHA256, byte count and exact predecessor pin. A top-level spacing_successor block identifies the separate successor evidence. Durable source destinations and the complete 105-entry mapping scope remain unchanged.",
+    "readable_examples": [
+      "OLM1981 → OLM 1981",
+      "Pustet1888 → Pustet 1888",
+      "approved2011 → approved 2011"
+    ],
+    "numeric_token_control": "Grouped byte counts such as 3,492,215; numeric Bible references such as 32:1; and the existing UTF8 technical token remain exact. Earlier formatting artifacts were corrected in separately frozen v3.",
+    "source_manifest_entries": 61,
+    "original_candidate_review_documents": 44,
+    "complete_delta_evidence": {
+      "path": ".scratch/modern-next-cohort-spacing-review/field-delta-audit.json",
+      "sha256": "253159cf5df360f7ade0d7b861370feddc5770a33853536de15f961ca1a7cba3",
+      "bytes": 248065
+    },
+    "mapping_evidence": {
+      "path": ".scratch/modern-next-cohort-spacing-review/metadata-map-audit.json",
+      "sha256": "88f83372896848215861ae77e17bf7bd9ad8c6ef8da128ca52f2dbd57470f443",
+      "bytes": 685
+    }
+  },
+  "protected_invariants": {
+    "all_complete_Latin_and_English_body_strings_byte_exact": true,
+    "all_TSV_and_other_body_payload_files_byte_exact": true,
+    "all_source_record_IDs_URLs_paths_loci_hash_fields_and_formal_status_grades_unchanged": true,
+    "embedded_IDs_URLs_paths_and_full_hash_tokens_preserved_in_changed_prose": true,
+    "all_before_live_prior_refusal_dictionaries_unchanged": true,
+    "all_existing_English_dictionaries_including_In_spiritu_unchanged": true,
+    "all_original_source_body_reviews_and_candidate_pins_exact": true,
+    "per_row_target_grade_values_unchanged": true,
+    "human_source_grade_explanations_change_spacing_only": true,
+    "all_original105_mapping_destinations_preserved": true,
+    "all61_successor_source_manifest_rows_match_actual_bytes_and_predecessors": true,
+    "root_merit_inputs_match_complete_final_plan": true,
+    "predecessor_c9646f_plan_unchanged": true,
+    "separate_legacy_six_candidate_merits_metadata_and_installation_receipts_unchanged": true
+  },
+  "fresh_executable_verification": {
+    "method": "Independent reviewer loaded the complete final staged source graph and independently resolved the selected actual owners, publication records, artifact payloads, TSV lines, English overlays and Ordinary sides. These checks are reviewer executions, not merely author test claims.",
+    "full_source_graph": {
+      "records": 56933,
+      "bindings": 4615,
+      "errors": []
+    },
+    "finite_check_count": 171,
+    "proper_English_uses": 10,
+    "proper_Latin_owners": 5,
+    "Ordinary_Latin_owner": 1,
+    "all_six_publication_surfaces_checked_for_five_Proper_Latin_owners": true,
+    "Ordinary_named_prayer_validated_through_side_text": true,
+    "source_body_hash_and_passage_payload_joins_pass": true,
+    "exact_target_grades_remain": [
+      "Semen recipients: exact governing OLM 1981, unchanged",
+      "OT21 and All Saints: modern target unresolved, unchanged",
+      "In spiritu: named complete prayer word-exact quotation with limited 2008 target scope, unchanged"
+    ],
+    "receipt": {
+      "path": ".scratch/modern-next-cohort-spacing-review/finite-join-review.json",
+      "sha256": "8005bbcbefb3c695aa6c93d3e80a1a093c37ed54d2a4f770b361c182d42c415d",
+      "bytes": 34739
+    },
+    "output": {
+      "path": ".scratch/modern-next-cohort-spacing-review/finite-join-output.txt",
+      "sha256": "6c2bb4f33591509607678c534c667b554c6bac24c6489cc22288d952e1c49930",
+      "bytes": 114
+    }
+  },
+  "original_merits_boundary": "Original candidate/source/fidelity reviews remain immutable and are not represented as having reviewed changed metadata bytes. This new independent receipt covers exactly the v3 metadata successor. No fresh source-image collation, new translation, new copyright conclusion or new edition identity was needed or claimed.",
+  "integration_constraints": [
+    "Root retains each original complete-expression source/publication decision and independently adopts the final finite scope.",
+    "Persist this receipt and its exact delta/mapping proof with the successor plan and original reviews. Preserve the 45 predecessor TOML records under the separately identified evidence destinations supplied by the author handoff.",
+    "Apply the finite dictionaries only after checking current selected preimages; no old whole-calendar or inventory snapshot overwrite.",
+    "The inherited Lasance d85 metadata defect remains separately owned and unchanged by this spacing successor."
+  ],
+  "canonical_writes": false,
+  "source_or_runtime_code_changes": false,
+  "remaining_checks": "Root source-epoch, integrated public-browser and final adoption checks remain with root; this is a completed metadata successor review."
+}

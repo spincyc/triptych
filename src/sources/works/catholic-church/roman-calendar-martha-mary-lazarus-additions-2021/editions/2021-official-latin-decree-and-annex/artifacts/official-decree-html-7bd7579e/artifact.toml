@@ -1,0 +1,16 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.official-decree-html-7bd7579e"
+edition_id = "edition.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex"
+artifact_type = "official-decree-html"
+media_type = "text/html"
+storage = "restricted"
+rights_status = "restricted"
+rights_basis = "The official delivery is held for bounded source identification and inspection. Public access establishes no permission to redistribute the complete modern decree/annex, its liturgical wording, translations or typography. This metadata-only registration grants no per-body publication permission; exact payloads remain outside the public tree."
+source_url = "https://www.vatican.va/roman_curia/congregations/ccdds/documents/rc_con_ccdds_doc_20210126_decreto-santi_la.html"
+provenance = "Complete official HTTPS delivery fetched directly on 2026-11-12, HTTP 200 with no redirect, and hashed before inspection. The full decree body, protocol number, date and signatures were read in the delivered HTML; no model stood in the retrieval path."
+retrieved = "2026-11-12"
+sha256 = "7bd7579e1b7d5653147fd7c2597e224a109e13c9581c6a13d2e264d366a24962"
+byte_size = 7705
+indexable = false
+notes = "Physical HTML line 54 contains the complete decree body as multiple p elements. Document paragraphs, rather than the web tool display line numbers, govern the bounded passage locator. This is an HTML witness, not a page facsimile."

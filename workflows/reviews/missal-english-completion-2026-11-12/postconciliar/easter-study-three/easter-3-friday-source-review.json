@@ -1,0 +1,79 @@
+{
+  "schema": "independent-oration-source-fidelity-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "modern_sources/pange_review",
+  "candidate_path": ".scratch/modern-partition-easter/study-candidates.json",
+  "candidate_sha256": "328759fe7aafa0af8d5085e7f628002e93ceb1f57dfcec6353747a1e08a16fa5",
+  "canonical_mutation": false,
+  "identity": [
+    "easter-3-friday",
+    "main",
+    "Communion Antiphon",
+    "all",
+    1
+  ],
+  "disposition": "accept-new-owner-binding-to-exact-existing-study-English",
+  "existing_admitted_identity": [
+    "easter-5-friday",
+    "main",
+    "Communion Antiphon",
+    "all",
+    1
+  ],
+  "english_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94",
+  "existing_source_join": {
+    "target": [
+      "easter-5-friday",
+      "main",
+      "Communion Antiphon",
+      "all",
+      1
+    ],
+    "source_page_passage_id": "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-page",
+    "historical_latin_artifact_id": "artifact.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-la-f5195f15",
+    "historical_latin_artifact_sha256": "f5195f156b86996fb2acd00fbde5e3dbd8f9f89351eaab74bb9359143f6efa1c",
+    "historical_latin_payload_sha256": "e9dd48f8d5d60dbcb62a05e69ba299051e17947a856f203822a4f002dae7e7d7",
+    "historical_latin_passage_id": "passage.catholic-church.english-completion-20261029-postconciliar-phase2-late-easter-commemoratio-et-suffragia-sanctorum.mexico-1815.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-historical-text",
+    "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-secondary2002-comparison",
+    "relation": "abridged",
+    "english_sha256": "3946e0fe404b1c217d46ce397e337ec69334c48a8aeb33a7627ea044eb81da94",
+    "english_artifact_id": "artifact.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-study-en-9695a7ce",
+    "english_artifact_sha256": "9695a7cecc948f554b912e7720a368319abe8cadc843f32669da469898162e70",
+    "english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-friday-communion-study-english"
+  },
+  "historical_body_sha256": "e9dd48f8d5d60dbcb62a05e69ba299051e17947a856f203822a4f002dae7e7d7",
+  "comparison_body_sha256": "e525be011a07349d311c888c01449d84814b10cba646033ea0262511b17ab063",
+  "source_unit": "Mexico1815 constituent Commemoratio et suffragia sanctorum, PDFAP114/printed114, complete Ad Laudes antiphon. The following Dicite in nationibus versicle/response is separate.",
+  "inspection": {
+    "whole_source_hashes_recomputed": [
+      "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "78b296aa96f9121e0e12a8695cda4087b97f8018a4fffe01645b4dbea947eda1",
+      "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+    ],
+    "source_and_comparison_images_visually_read": [
+      ".scratch/modern-partition-easter/comparison-240.png",
+      ".scratch/modern-partition-easter/comparison-251.png",
+      ".scratch/modern-partition-easter/mexico-114.png"
+    ],
+    "additional_week_context": "SecondaryAP236 Dominica III Paschae visually read; AP237-238 course continuity inspected; AP238 Feria quarta continues intoAP239; AP240 carries Feria sexta and its complete communion."
+  },
+  "findings": [
+    "Exactly one repeated final alleluia is omitted; every retained normalized token agrees. The new owner retains the admitted abridged relation.",
+    "New third-week and previously admitted fifth-week complete comparison bodies visually agree, including final alleluia count; neither owner is inferred from incipit alone.",
+    "Exact English matches the already admitted current overlay body and retained project-created English artifact. This is reuse under a new owner, not a new translation or retroactive historical-English attribution.",
+    "Existing phase2 late-Easter independent source review supports the same bounded variant/abridged study route; its historical-source and modern-comparison qualifications remain necessary."
+  ],
+  "required_before_admission": [
+    "Add a specific new owner comparison passage and admission binding. Reuse existing body artifacts and preserve their original identities and accepted fifth-week owners.",
+    "Keep prior exact approved-English unavailable records separately retained.",
+    "Retain project-created study status, source differences, secondary2002 restriction and unresolved2008 relation in reader qualification.",
+    "If historical Latin is later paired, declare its Christus/Dominus or double/single alleluia mismatch; this English acceptance does not authorize an unqualified exact Latin pair.",
+    "Run owning source/epoch/consumer validation; no canonical or generated output was changed by this review."
+  ],
+  "limitations": [
+    "No authenticated2008 wording, appointment or whole-edition equivalence established.",
+    "Secondary2002 is a digitally typeset comparison witness; fidelity to an actual printed2002 edition is unestablished.",
+    "No approved/official English, historical-human translation or permission for liturgical recitation is asserted.",
+    "Source/fidelity review is separate from registration, source-epoch, generation and rendered-consumer acceptance."
+  ]
+}

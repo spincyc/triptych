@@ -1,0 +1,43 @@
+{
+  "schema": "triptych-finite-display-ending-successor-review/v1",
+  "predecessor_ending_authority": {
+    "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v2.json",
+    "sha256": "c5fb8fb02eb062a53cdb5d316bb476f5586550691ce6a613e8cf2889241b4f43"
+  },
+  "successor_ending_authority": {
+    "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v3.json",
+    "sha256": "f79b35b7afa2d949b2e63e4f18d3e9cac5e6fa5e1f5f017fd99bd0b1a5212185"
+  },
+  "successor_helper": {
+    "path": "src/web/browser/liturgy/oration-conclusions.js",
+    "sha256": "29c2500e26c0c1eaddaa2d9bdbe8199993c74037d8861ba1beb6d5d850193d90"
+  },
+  "unchanged_original_records": 754,
+  "unchanged_three_records": [
+    [
+      "commune-unius-martyris-3",
+      "main",
+      "Postcommunion",
+      "all",
+      1
+    ],
+    [
+      "comm-s-mennae-martyris",
+      "main",
+      "Postcommunion",
+      "all",
+      1
+    ],
+    [
+      "s-matthiae-apostoli",
+      "main",
+      "Secret",
+      "all",
+      1
+    ]
+  ],
+  "scope": "Exact three v1 display corrections only; no new source or ending authority granted.",
+  "mixed_group_contract": "The atomic group method equals groupMethod(context); each original corrected member retains METHOD_ID in source_method in a v2-containing group. Old-only groups omit source_method.",
+  "source_review_sha256": "5afefdfd76d2a96c61448f4d7c733a3205a06eba457325acbe5419438f2bfa40",
+  "root_adoption": "finite display adoption pending; its activation pin remains empty. Ending pin preserves the separately supplied active scratch candidate."
+}

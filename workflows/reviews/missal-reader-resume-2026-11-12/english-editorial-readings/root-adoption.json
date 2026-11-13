@@ -1,0 +1,37 @@
+{
+  "schema": "triptych-root-finite-display-three-adoption/v1",
+  "reviewer": "Root",
+  "date": "2026-11-13",
+  "decision": "adopt exact display authority d898 and permit its separate active pin",
+  "handoff": {
+    "path": ".scratch/reader-audit/display-corrections/successor-final/handoff.json",
+    "sha256": "6a519c2f7c9159c357357aa90cec98268997cf85d140d747e57a69459544b602"
+  },
+  "authority": {
+    "path": ".scratch/reader-audit/display-corrections/successor-final/postimages/workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/authority-v1.json",
+    "sha256": "d898d9c5443a9675e47cd076b12a7cee95c06a97980866b07e2e211eaef786d9"
+  },
+  "source_review": {
+    "path": ".scratch/roman-sources/cleanliness-source-review/review-receipt.json",
+    "sha256": "5afefdfd76d2a96c61448f4d7c733a3205a06eba457325acbe5419438f2bfa40"
+  },
+  "correction_declarations": {
+    "path": ".scratch/roman-sources/english-cleanliness/correction-declarations.json",
+    "sha256": "9d2da9463eb14c3739b117677dd62ee3797ad22d2464b489977ba435c1d11a62"
+  },
+  "root_review": [
+    "Read full final helper additions and authority rebind, independent source cases4/5/6, and three literal/corrected prayer bodies.",
+    "Directly inspected complete Lasance printed1312/PDF1331 and printed932/PDF931 source images: bseech and absent period after defended are printed features.",
+    "Rehashed final packet files/snapshots and all declared source images; all three positive owner dictionaries remain unchanged.",
+    "Only two exact bseech→beseech display substitutions and one exact period insertion are admitted after ending execution. Both petition-only and conclusion-provider text hashes/roles are pinned.",
+    "Annotations remain visible; literal historical quotations, source payloads, prayer conclusions and response remain unaltered."
+  ],
+  "scope": [
+    "commune-unius-martyris-3/main/Postcommunion/all/1",
+    "comm-s-mennae-martyris/main/Postcommunion/all/1",
+    "s-matthiae-apostoli/main/Secret/all/1"
+  ],
+  "runtime": "Compose exact wrapper over adopted f79 helper; activate only separate ACTIVE_DISPLAY_AUTHORITY_SHA256=d898d9c5443a9675e47cd076b12a7cee95c06a97980866b07e2e211eaef786d9. No generic spelling replacement.",
+  "source_promotion": "Preserve original source-review, correction-declarations and ordering-plan bytes in the declared durable review directory.",
+  "remaining_validation": "Actual combined native Day/Propers/Lectern proof remains required before publication. Canonical execution window remains separate."
+}

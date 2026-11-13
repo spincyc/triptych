@@ -1,0 +1,205 @@
+{
+  "schema": "triptych-selected-review-projection/v1",
+  "state": "two-accepted-cases-only-projection-not-new-review",
+  "original_review": {
+    "path": ".scratch/roman-sources/next-twelve-source-review/saints-two-supplement.json",
+    "sha256": "c60ffd148ae227ac7e820517d3a4c145e758a8c4641544cdaff776fbcd8098a2"
+  },
+  "transformation": "Complete receipt retained except absolute repository prefix removed from two diagnostic strings; no case, source assertion, body/hash binding or refusal meaning changed. Original receipt is immutable.",
+  "review": {
+    "schema": "triptych-independent-saints-two-supplement/v1",
+    "reviewer": "/root/roman_sources/six_source_review",
+    "date": "2026-11-12",
+    "verdict": "PASS supplemental factual metadata, exact source/row binding, current preimages and expected refusal; no publication adoption",
+    "prior_receipt_unchanged": {
+      "path": ".scratch/roman-sources/next-twelve-source-review/review.json",
+      "sha256": "84002ae39a02daaa7a1470f3dff67041067092e4ce21095b4b05e7efb668587b",
+      "bytes": 60323
+    },
+    "install_plan": {
+      "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/install-plan.json",
+      "sha256": "47f93c8d110017ae1369bb07d053a263e381156b3b754a6da661749b442d665b",
+      "bytes": 54804
+    },
+    "checks_count": 528,
+    "failures": [],
+    "source_file_count": 39,
+    "new_source_records": 31,
+    "closed_source_records": 44,
+    "rows": [
+      {
+        "id": "bellarmine-secret",
+        "identity": [
+          "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "latin_sha256": "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592",
+        "english_sha256": "e52ebe481515425327be38e0eb18351cbb183f82c4c244cc86678dc2022a327e",
+        "new_proper_sha256": "b1d010da3ef61435e55e00cecbce931cb081ef333a48bce851346680b24b0dea",
+        "latin_provenance_sha256": "b509c815e139214138f3db6d3ad54c59521d7e56db9dd7b0bda1943e6ae40716",
+        "english_entry_sha256": "284469bbe63de85a4fd48d00db5eae47248f6ddf70d2e9cf7ab41382722189f4",
+        "old_proper_sha256": "f362a3fbb469b67a8c646b53eaba34af3394d45ed0966c2b8e524f3295e16407",
+        "old_latin_provenance_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "old_untranslated_sha256": "b0ace9e78d3bb856a05f230a0108313f0a22286149bf92b326fb6279dee339fb"
+      },
+      {
+        "id": "assumption-postcommunion",
+        "identity": [
+          "assumptione-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "latin_sha256": "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf",
+        "english_sha256": "571ec8706ad543253335455e93fd2fe5dbcf16e6084a14fd72778d573b9f5f36",
+        "new_proper_sha256": "d8c437b7a08ef62f3fbbcde3b7d620ec5bbf5b8c1bd4b7de376758bb0ebce88b",
+        "latin_provenance_sha256": "9d879e763efaa3d81b098bac253ca73d5df30ef009bbd42f68938d6831107778",
+        "english_entry_sha256": "d6968f804809a19fc1f78590360604136e3f7d35eab56fb582d2920d97b92d64",
+        "old_proper_sha256": "9edec75cbb88e17b83ccde16b4bf96b8c6b186f08c7c5402bcef50ac72590ace",
+        "old_latin_provenance_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+        "old_untranslated_sha256": "f5a1c728631757a13dcbf9a4a332ec11966c076ac4dbbaaeda2700fa83ce16b2"
+      }
+    ],
+    "mass_notes_changes": [
+      {
+        "mass": "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+        "old_notes": "Only the scripture-bearing propers are recorded; the orations the Missal prints for this day are appointed and not transcribed here. Identity, rank and the printed citations were read on 2026-08-01 from the embedded text layer of the CMAA facsimile of the controlling edition at printed p. 528 (digital p. 609), not from the facsimile images, and nothing here has been visually collated.",
+        "new_notes": "Identity, rank and printed scriptural citations were initially recorded on 2026-08-01 from the text layer of the CMAA 1962 facsimile, printed 528 / PDF609. This was not a complete visual collation of the formulary. Later per-proper source and Latin-provenance records identify the exact page-image checks and publication basis for each available body; remaining orations retain their typed unavailable states.",
+        "old_notes_sha256": "3fe397ffc742dc9d5d902052bfeb4be5012e0f3323c13706db70c19dbd10efb8",
+        "new_notes_sha256": "c70382b87592c52b88f183bcb3f7c76aa0ef2f80deda68de0a380bf659c728d3",
+        "reason": "Remove the obsolete assertion that this formulary carries only scriptural bodies and that nothing has been visually collated; retain the actual limits of the initial citation audit."
+      },
+      {
+        "mass": "assumptione-beatae-mariae-virginis",
+        "old_notes": "Only the scripture-bearing propers are recorded; the orations the Missal prints for this day are appointed and not transcribed here. Identity, rank and the printed citations were read on 2026-08-01 from the embedded text layer of the CMAA facsimile of the controlling edition at printed p. 627 (digital p. 708), not from the facsimile images, and nothing here has been visually collated.",
+        "new_notes": "Identity, rank and printed scriptural citations were initially recorded on 2026-08-01 from the text layer of the CMAA 1962 facsimile, printed 627 / PDF708. This was not a complete visual collation of the formulary. Later per-proper source and Latin-provenance records identify the exact page-image checks and publication basis for each available body; remaining orations retain their typed unavailable states.",
+        "old_notes_sha256": "6111ea5a8258043c268b507e3796332813df4c0dc11b3458e4e681854033dbc0",
+        "new_notes_sha256": "00e7596676a530193acce8e4805fa596bc2be925fd65752b98b05b6ce921d4c7",
+        "reason": "Remove the obsolete assertion that this formulary carries only scriptural bodies and that nothing has been visually collated; retain the actual limits of the initial citation audit."
+      }
+    ],
+    "historical_payloads_matched_to_previously_read_whole_units": [
+      {
+        "payload_sha256": "aafb99dd599a48f92c46bfe23d3798f3c2053bedcef010ee11578e8076d3eb65",
+        "unit": "mame1922-alphonsus-collect",
+        "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-alphonsus-collect-20261112/latin.txt"
+      },
+      {
+        "payload_sha256": "85a93d7e62e123f2ca5d2c739bb428c58456b23ed7070e063b5a57814260a78d",
+        "unit": "mame1922-holy-shroud-collect",
+        "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-holy-shroud-collect-20261112/latin.txt"
+      },
+      {
+        "payload_sha256": "9d2a65c52ceec7f16cf76cbb8e60e4ec5dd41039935d0dc24b5e8ad74776d269",
+        "unit": "mame1922-john-berchmans-postcommunion",
+        "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/mame1922-john-berchmans-postcommunion-20261112/latin.txt"
+      },
+      {
+        "payload_sha256": "ad26f816fbc85b7946fbe0c1d11b6dd2ce66aaad7d5c224525732e7e737c60f6",
+        "unit": "wilson1915-lent4-monday-postcommunion",
+        "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/wilson1915-lent4-monday-postcommunion-20261112/latin.txt"
+      },
+      {
+        "payload_sha256": "4320ecd8595abd365d9fff20645886e3973cb1317a54ee2986e2d82dabd17aa9",
+        "unit": "acta1923-bellarmine-collect",
+        "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/artifacts/acta1923-bellarmine-collect-20261112/latin.txt"
+      },
+      {
+        "payload_sha256": "389527a0ff864db955a22f7e1c4b83f2cab2766640dd68246ba02bae06ccdcd4",
+        "unit": "acta1923-bellarmine-secret",
+        "path": ".scratch/roman-sources/saints-four-merits/two-install-proposal/candidate-tree/src/sources/works/society-of-jesus/acta-romana-societatis-iesu/editions/volume-iii-bound/artifacts/acta1923-bellarmine-secret-20261112/latin.txt"
+      }
+    ],
+    "current_guard_refusal": [
+      {
+        "identity": [
+          "s-roberti-bellarmino-episcopi-confessoris-ecclesiae",
+          "main",
+          "Secret",
+          "all",
+          1
+        ],
+        "claims_row": true,
+        "claims_artifact": true,
+        "row_problems": [
+          "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+        ],
+        "artifact_problems": [
+          "finite Latin carrier is outside the exact adopted artifact scope"
+        ],
+        "reading_problems": [
+          "finite Latin carrier is outside the exact adopted artifact scope",
+          "finite Latin reading requires its exact adopted passage/controller/ranges"
+        ],
+        "full_row_schema_problems": [
+          "bellarmine-secret: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+        ],
+        "source_binding_problems": [
+          "bellarmine-secret: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+        ],
+        "English_study_binding_refusal": ".scratch/roman-sources/next-twelve-source-review/saints-two-supplement.json: study translation qualified Latin authority: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      },
+      {
+        "identity": [
+          "assumptione-beatae-mariae-virginis",
+          "main",
+          "Postcommunion",
+          "all",
+          1
+        ],
+        "claims_row": true,
+        "claims_artifact": true,
+        "row_problems": [
+          "finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+        ],
+        "artifact_problems": [
+          "finite Latin carrier is outside the exact adopted artifact scope"
+        ],
+        "reading_problems": [
+          "finite Latin carrier is outside the exact adopted artifact scope",
+          "finite Latin reading requires its exact adopted passage/controller/ranges"
+        ],
+        "full_row_schema_problems": [
+          "assumption-postcommunion: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+        ],
+        "source_binding_problems": [
+          "assumption-postcommunion: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+        ],
+        "English_study_binding_refusal": ".scratch/roman-sources/next-twelve-source-review/saints-two-supplement.json: study translation qualified Latin authority: finite Latin assessment requires its exact adopted owner/body/proof/surface tuple"
+      }
+    ],
+    "source_factual_findings": [
+      "Both complete Latin/English LF bodies and new_proper objects exactly match the previously reviewed frozen Saints drafts. Six historical transcriptions exactly equal their previously image-read whole units plus one LF. No new image read was necessary or claimed.",
+      "All39 proposed files were read; all31 new source records and44-record closure were independently checked. Source dates and bounds retain actual1923 and1931 Acta evidence; no catalogue1929 shortcut is used.",
+      "Whole Acta PDFs are remote unresolved research controls, not newly published binaries. The1931 witness is contrary/chronological evidence; the1950 AAS archival OCR source remains chronology only and cannot replace CMAA perducamur or exact target image control.",
+      "Two editorial carriers retain project-created carrier-only qualification, strongest contrary whole-expression evidence, stable finite method and exact scope markers. Intended permitted/qualified row fields do not create authority.",
+      "Both Mass-note edits remove the now-obsolete assertion that nothing was visually collated while accurately retaining the initial text-layer limitation; they do not claim a complete visual audit of the formulary.",
+      "Bellarmine Collect/Postcommunion live hold preimages remain intact. No other proper/English route is admitted by these two proposals."
+    ],
+    "limits": [
+      "This supplemental receipt extends exact binding to the new two-case full carrier/row proposal only. It leaves the twelve-case source receipt unchanged.",
+      "Root still owns the fresh whole-expression merits/adoption decision. No legal research, approval or legal-source endorsement is supplied. Historical date premises are fact-checked; jurisdictional conclusions are not adopted here.",
+      "English bytes, schema and source links were checked, not English translation fidelity; that is separately reviewed. The study notice is present in proposed English records; rendered public notice was not tested.",
+      "Current canonical owner files and row/note preimages match the frozen plan at check time. A later integration must recheck them after any intervening change.",
+      "Current v4 authority and28 active scopes reject both rows, carriers, selected readings and study-English binding exactly as expected. This is a refusal check, not implementation or approval of an authority successor.",
+      "Only this reviewer scratch directory was written. No candidate/canonical file, old receipt, source PDF or authority file was edited."
+    ],
+    "existing_whole_pdf_delivery_limit": [
+      {
+        "artifact_id": "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.ia-pdf-96fd93c7",
+        "registered_path": "src/sources/works/catholic-church/sacramentarium-gregorianum-hadrianum/editions/wilson-1915/artifacts/ia-pdf-96fd93c7/source.pdf",
+        "held_path": ".scratch/roman-sources/remaining-saints/acquired/wilson1915.pdf",
+        "note": "Existing whole-PDF record; full hash-identical PDF independently held in scratch. No new tracked binary is proposed."
+      }
+    ],
+    "audit_detail": {
+      "path": ".scratch/roman-sources/next-twelve-source-review/saints-two-supplement-audit.json",
+      "sha256": "16c5e5c0da1abe0c6733e0d4f24d319c5f9b23cc0a7658103d91dd6d92df2eb8",
+      "bytes": 206106
+    }
+  }
+}

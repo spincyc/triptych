@@ -227,3 +227,32 @@
 @media print {
   .reader-document .name-execution-apparatus { display: block; break-inside: avoid; }
 }
+
+.reader-instrument .source-local-actor-controls { margin: 0 0 0.75rem; }
+.reader-instrument .source-local-actor-controls button {
+  min-height: 44px;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--instrument-control-line);
+  border-radius: 0.35rem;
+  background: var(--instrument-paper);
+  color: var(--instrument-ink);
+  font: 500 0.82rem/1.4 var(--instrument-sans);
+  cursor: pointer;
+}
+/* These source-owned turns use the existing cue vocabulary within a Proper. */
+.reader-instrument .reader-document .source-local-actor-turn {
+  position: relative;
+  padding-inline-start: 2.25rem;
+}
+.reader-instrument .reader-document .source-local-actor-turn > .speaker-tag.is-opening-cue {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-inline-end: auto;
+  width: 1.5rem;
+}
+.source-local-actor-source-text { white-space: pre-wrap; }
+/* A chosen historical source sequence prints once, with its qualification. */
+@media print {
+  .source-local-actor-quotation,
+  .source-local-actor-controls { display: none !important; }
+}

@@ -1,0 +1,54 @@
+{
+  "schema": "triptych-d85-exact-metadata-repair/v1",
+  "status": "Root accepted metadata merits; guarded preparation only",
+  "owner": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb/artifact.toml",
+  "before_file_sha256": "617e48d287ca3a1b6409d74e9adf1cc8faad0e97bc52fe02706ed4f257b45252",
+  "after_file_sha256": "dc71449fba4dd7ffceacc3ad09e57ac8307343811bbfba92f807eacfc2663525",
+  "before_parsed_sha256": "58fd7f0599b2262f2bf41f726df5b5e39f71a3ebb7e2543baab323677ba435be",
+  "after_parsed_sha256": "502236ce9ddd24186ae913e2e13b27bbc0b60fad6bcc39299884bc7a15d3e64d",
+  "only_field": "rights_basis",
+  "before_value": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. No digitiser notice or lettered insert is retained.",
+  "after_value": "Mechanical extraction of independently image-checked ordinary printed pages of the identified public-domain historical book. No modern liturgical text is included. The old book is United States public domain by publication date for Wilson1894, and the separately verified Lasance1945 nonrenewal finding for the ordinary Lasance page. The derivative retains the visible digitiser URL http://ccwatershed.org at the lower margin; no lettered insert is retained.",
+  "unchanged_fields": [
+    "artifact_type",
+    "byte_size",
+    "derived_from",
+    "edition_id",
+    "id",
+    "indexable",
+    "media_type",
+    "notes",
+    "page_count",
+    "path",
+    "provenance",
+    "record_type",
+    "retrieved",
+    "rights_jurisdiction",
+    "rights_status",
+    "schema",
+    "sha256",
+    "source_url",
+    "storage",
+    "transformation"
+  ],
+  "artifact_payload_sha256_unchanged": "d85c36fbb0e7acebc16ddacd55fc7a38419c01400d0eb24132e20d748fb473e8",
+  "artifact_id_unchanged": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb",
+  "root_admission": {
+    "source": ".scratch/root/d85-digitizer-notice-amendment.json",
+    "destination": "workflows/reviews/missal-reader-resume-2026-11-13/d85-digitizer-notice/root-adoption.json",
+    "sha256": "0b823b676c8fce1cc4572a9c76b298de7af2854baac39e7ba283e929e3ab3289"
+  },
+  "independent_defect": {
+    "source": ".scratch/modern-new-orations-review/ot21-complete/inherited-formula-metadata-defect.json",
+    "destination": "workflows/reviews/missal-reader-resume-2026-11-13/d85-digitizer-notice/independent-defect.json",
+    "sha256": "b5bbc76a404205a67af55e0ff3607b001670d3141a3bab750174195f1888316c"
+  },
+  "declaration_destination": "workflows/reviews/missal-reader-resume-2026-11-13/d85-digitizer-notice/metadata-repair.json",
+  "order_requirement": "After complete first-six source installation. The read-only API checks that exact first-six Root receipt is present; Root must additionally serialize integration and verify its complete source/owner output.",
+  "first_six_receipt": {
+    "path": "workflows/reviews/modern-source-completion-2026-11-12/next-cohort-six/root-adoption.json",
+    "sha256": "18bfdabe99c4402a6732e0d595e4a600b3f6f92ccd48297121ef495cc1dc66d1"
+  },
+  "dependency_requirement": "Only explicitly dependent later source-record digests may be rebound through this exact accepted metadata successor; immutable historical receipts remain unchanged.",
+  "canonical_writes": false
+}

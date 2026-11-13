@@ -1,0 +1,186 @@
+{
+  "schema": "triptych-independent-1946-formula-metadata-successor-durable-review/v1",
+  "date": "2026-11-13",
+  "state": "accepted-exact-metadata-correction-no-canonical-activation",
+  "reviewer_role": "independent source and execution reviewer",
+  "raw_independent_review_sha256": "1ab98421b1bac342147a817a700720c2f6a9c301d2d85fa05107afcbaa57f17a",
+  "reviewed_handoff_sha256": "11a8586959511d254e4316cd75fb04072652554612a4216a341e6fb52f618f96",
+  "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-checked-transcription-20261112",
+  "source_metadata_delta": {
+    "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+    "before_sha256": "40cade79159fe46ed7e06e373d4d11906f618c35f57b87b35d48621705caa829",
+    "after_sha256": "4573c1e567b9da2e0b925f0800f189c77f915d3a162d4388eef5648f44d57e6a",
+    "parsed_changes": [
+      "Remove physical_line_ranges.",
+      "Replace locus with the precise structured JSON introduction/formula-key/field locator."
+    ],
+    "all_other_fields_unchanged": true
+  },
+  "correction_to_prior_review": "Supersedes only the earlier acceptance of physical_line_ranges in the1946 passage proposal. Counting49JSON lines did not establish search eligibility; the controlling artifact deliberately has indexable=false. Prior formula/body/endings merits and sealed packets remain unchanged.",
+  "independent_findings": [
+    "Exactly two parsed fields differ: physical_line_ranges is removed, and locus now identifies source_intro, all5formula keys and the4actual entry fields. Schema2, passage/edition/artifact identity, artifact SHA, verification/context/notes and source permissions remain unchanged.",
+    "The existing schema2 passage contract permits a descriptive locus for a nonindexable JSON artifact pinned by exact artifact ID/hash. The successor creates no machine-readable line or JSON-pointer claim and does not relabel source indexability or change the validator.",
+    "All5 bilingual formula hashes and the complete3483byte table payload are unchanged. No prayer body or response wording changes, and1945/1946 witness identities remain distinct.",
+    "The complete actual56986record graph reproduces the predecessor failure with its controlling artifact present; the successor graph passes with zero errors and exactly one changed parsed source record.",
+    "Frozen f73 authority has exactly4old-passage SHA occurrences, all in the permitted HolyWednesday and Lent1Tuesday EN/LA source controls. The mechanical permitted replacement leaves every public descriptor, formula catalog, body/formula hash and legacy754record unchanged. Actual downstream producer rebuild remains a separate required step."
+  ],
+  "full_graph_checks": {
+    "records_before": 56986,
+    "records_after": 56986,
+    "baseline_errors": [
+      "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml: physical_line_ranges requires an indexable tracked UTF-8 artifact"
+    ],
+    "after_errors": [],
+    "only_changed_record_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.prayer-conclusions-checked-transcription-20261112",
+    "controlling_artifact_and_payload_present": true
+  },
+  "unchanged_artifact": {
+    "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/prayer-conclusions-checked-20261023/artifact.toml",
+    "sha256": "027e14529d4ca1db6c43bfbd5e6f9aaf298cb76dd3fdc3772cb98480cc431f7b"
+  },
+  "unchanged_formula_payload": {
+    "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/prayer-conclusions-checked-20261023/conclusions.json",
+    "sha256": "b90aa8e6630ca32be43f8405f71c95aefbd870ddac5dd2c71ff1b9831f3d4b59"
+  },
+  "unchanged_formula_hashes": {
+    "through-our-lord": {
+      "full_english": "055e1b77cda8b92fc5318cea53418f417b377c66e265db4f6c175efc9a07c321",
+      "full_latin": "deef97283051942f67f7e6c1d550537f3390060806230a9c8e312e5d07dcfb2a"
+    },
+    "through-the-same": {
+      "full_english": "107091c694ebeb6a682614b30fd14210574458c91d4ac69c38593abbfc4dff4d",
+      "full_latin": "7f34d5d4cdb72032aef3e1578a7a873c77a6037f62d351774c8fa957a40447a4"
+    },
+    "unity-of-the-same": {
+      "full_english": "c1fff6ad98a868061cad50b9e7877153267e27a9662d091a5c572dba1e2d6f12",
+      "full_latin": "bfae440faddfd9f76fdcc3351beb047e26fb7fea06a382753b31f11d9f2faa72"
+    },
+    "who-with-thee": {
+      "full_english": "cd1410d18f6a99a81d4cedab46e794b18d5c49c6ee7fab8de0cc93d1e0fb456d",
+      "full_latin": "2728747dc29f61e4cb355cb8fc85db282033617b671a74b3d64d376f6c5760bb"
+    },
+    "who-livest": {
+      "full_english": "1bba3ec936328c38ea70a29f438f86bcee3eec789755cf1933143cc229f09c53",
+      "full_latin": "8ae693e2a9d24a9e868d4842c3dc7516da8bb62a5e80fdbc7110a67dbc332841"
+    }
+  },
+  "authority_predecessor_sha256": "f73e20824450bb674fa46323b9701880b3381689e674d0e5155fb7e85a5930db",
+  "permitted_native_control_delta": [
+    {
+      "target": [
+        "holy-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "language": "en",
+      "native_record_ordinal": 304,
+      "source_control_ordinal": 11,
+      "before_control": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+        "sha256": "40cade79159fe46ed7e06e373d4d11906f618c35f57b87b35d48621705caa829",
+        "kind": "staged-1946-publication-passage"
+      },
+      "after_control": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+        "sha256": "4573c1e567b9da2e0b925f0800f189c77f915d3a162d4388eef5648f44d57e6a",
+        "kind": "staged-1946-publication-passage"
+      },
+      "body_sha256": "e925aef0719e104a889d0abcb6e5cc7540392ab7908b1bfbc890e20c29f8a38f",
+      "formula_id": "formula-82413d11b75731240953f95f274a453c8bc7b7b686851e200f61cb5ad3fcd788",
+      "formula_sha256": "cd1410d18f6a99a81d4cedab46e794b18d5c49c6ee7fab8de0cc93d1e0fb456d",
+      "public_sha256": "826fb23d431f9b3efdceb82836abc131793b69a95df384e3c2145829823cb4cd"
+    },
+    {
+      "target": [
+        "holy-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "language": "la",
+      "native_record_ordinal": 304,
+      "source_control_ordinal": 11,
+      "before_control": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+        "sha256": "40cade79159fe46ed7e06e373d4d11906f618c35f57b87b35d48621705caa829",
+        "kind": "staged-1946-publication-passage"
+      },
+      "after_control": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+        "sha256": "4573c1e567b9da2e0b925f0800f189c77f915d3a162d4388eef5648f44d57e6a",
+        "kind": "staged-1946-publication-passage"
+      },
+      "body_sha256": "359843b7ed66997981419510228d5d61620c45bb9a42b835dc42d5c8deb61d47",
+      "formula_id": "formula-c85a34b3bc88e64b6eb1bd6df030d3534a04573d245d3ce5039f9d162b555759",
+      "formula_sha256": "2728747dc29f61e4cb355cb8fc85db282033617b671a74b3d64d376f6c5760bb",
+      "public_sha256": "826fb23d431f9b3efdceb82836abc131793b69a95df384e3c2145829823cb4cd"
+    },
+    {
+      "target": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "language": "en",
+      "native_record_ordinal": 311,
+      "source_control_ordinal": 4,
+      "before_control": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+        "sha256": "40cade79159fe46ed7e06e373d4d11906f618c35f57b87b35d48621705caa829",
+        "kind": "staged-1946-publication-passage"
+      },
+      "after_control": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+        "sha256": "4573c1e567b9da2e0b925f0800f189c77f915d3a162d4388eef5648f44d57e6a",
+        "kind": "staged-1946-publication-passage"
+      },
+      "body_sha256": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269",
+      "formula_id": "formula-a83691c15188adb690d3f23ef01eaf480675e79a8cdf1a0f736e7913d80eb4bc",
+      "formula_sha256": "055e1b77cda8b92fc5318cea53418f417b377c66e265db4f6c175efc9a07c321",
+      "public_sha256": "c5ce46b3ef0dd9fa8b3d5ef0e5d02024ef81bd38b964bf4ebc198b3eede6eac6"
+    },
+    {
+      "target": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "language": "la",
+      "native_record_ordinal": 311,
+      "source_control_ordinal": 4,
+      "before_control": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+        "sha256": "40cade79159fe46ed7e06e373d4d11906f618c35f57b87b35d48621705caa829",
+        "kind": "staged-1946-publication-passage"
+      },
+      "after_control": {
+        "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/prayer-conclusions-checked-transcription-20261112.toml",
+        "sha256": "4573c1e567b9da2e0b925f0800f189c77f915d3a162d4388eef5648f44d57e6a",
+        "kind": "staged-1946-publication-passage"
+      },
+      "body_sha256": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+      "formula_id": "formula-5aeb3b07b7fd6fa8fee2467c373b81bdb8b3a346ae38cd156f754d3125b15335",
+      "formula_sha256": "deef97283051942f67f7e6c1d550537f3390060806230a9c8e312e5d07dcfb2a",
+      "public_sha256": "c5ce46b3ef0dd9fa8b3d5ef0e5d02024ef81bd38b964bf4ebc198b3eede6eac6"
+    }
+  ],
+  "expected_authority_parsed_sha256_after_only_four_rebindings": "964b8f5e5be461b31c159820134c82300c5870651207dd849e06ce80b1dbf841",
+  "source_library_tool": {
+    "path": "tools/source-library",
+    "sha256": "963a9ac27c43d0ab93c568271401a865d5252854343e059d2c4208787fefb450"
+  },
+  "canonical_changes": false,
+  "limits": [
+    "The original40cade passage and all previous source and ending merit packets remain unchanged.",
+    "Only these four exact EN/LA source controls may replace the old passage-file hash after independent review. Record ordinals are informative; exact targets/languages and old hash are mandatory.",
+    "No artifact manifest, formula or prayer body, formula catalog, public language descriptor, source indexability, validator or broader cohort change is permitted by this metadata correction.",
+    "The actual producer must be rerun against the reviewed successor; this full-graph validation is not a claim that downstream producer work has completed."
+  ]
+}

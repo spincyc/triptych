@@ -1,0 +1,136 @@
+{
+  "schema": "triptych-independent-ot11-binding-amendment-review/v1",
+  "date": "2026-11-13",
+  "reviewer": "/root/modern_sources/pange_review",
+  "verdict": "accept-exact-two-field-binding-amendment-and-four-never-installed-omissions; Root metadata adoption and integrated actual activation remain separate",
+  "proposal": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/ot11-binding-amendment-proposal.json",
+    "sha256": "9c30320a6b8f016134cc2ae53d71396954627f3a9a92a9e899f66883629b74b0",
+    "bytes": 14712
+  },
+  "original_install_plan": {
+    "path": ".scratch/modern-ordinarytime-orations/activation/install-plan.json",
+    "sha256": "d25b4cb43f2bb21ce4ba0d025d0f65fb2ad787166a3709bda6bc3ff1abd019df",
+    "bytes": 133954
+  },
+  "parent_source_only_admission": {
+    "path": ".scratch/root/ordinary-time-six-source-admission.json",
+    "sha256": "879b0c4ffd5ddc0b39cb83e34c47b88ba46e270279c2e3b1b8a61cdb5dc2e4d7",
+    "bytes": 132846
+  },
+  "identity": [
+    "ot-11",
+    "main",
+    "Prayer after Communion",
+    "all",
+    1
+  ],
+  "exact_delta": [
+    {
+      "pointer": "/source_latin_passage_id",
+      "before": "passage.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+      "after": "passage.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin"
+    },
+    {
+      "pointer": "/source_latin_publication_source_ids",
+      "before": [
+        "artifact.triptych.ot11-haec-tua-latin-study-selection.2026-11-12.complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ],
+      "after": [
+        "artifact.triptych.ot11-haec-tua-latin-study-selection.finite-latin-proposal-2026-11-12.complete-latin",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3",
+        "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.english-completion-20261029-postconciliar-opening2-lasance-conclusion217-d85c36fb"
+      ]
+    }
+  ],
+  "omitted_destinations": [
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/edition.toml",
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/latin.txt",
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/artifacts/complete-latin/artifact.toml",
+    "src/sources/works/triptych/ot11-haec-tua-latin-study-selection/editions/2026-11-12/passages/complete-latin.toml"
+  ],
+  "immutable_antecedents": [
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/backend-review.json",
+      "sha256": "011b0e5310572dc9fc02a25826c5f1fbaea6d9d2f76e3cbbd89ac594b14aba8c",
+      "bytes": 8384
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/browser-review.json",
+      "sha256": "02c21349334757951b1d40eccbd87514cee8e2e8286e7385e72f35f0e57d1cbd",
+      "bytes": 6594
+    }
+  ],
+  "independent_evidence": [
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/inspection.json",
+      "sha256": "41752bbdc60342c1d6381a0356a3a217325f8fed54bde5845fd4105b9c067472",
+      "bytes": 1494
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/validator-identity.json",
+      "sha256": "9fa4be47b1cc8f084b7c1df273a03fd138ee9797baa28c137241393d5797e535",
+      "bytes": 320
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/replay/checks.json",
+      "sha256": "067bc9ceb9f63ad69280026c7f77f74875fd5204fd4cdc06ebb9c617899592a3",
+      "bytes": 18044
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/metadata_inspection.py",
+      "sha256": "2009c552d3d754637ce61c865064739f31f795b4dfe9cc148e5496bb0202c88c",
+      "bytes": 3986
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/replay_boundary.py",
+      "sha256": "435b234ec57aa3b9523c1a4cb033d59c0842954067925337b11351c279912d9f",
+      "bytes": 12508
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/author-boundary.py",
+      "sha256": "52587581d5c4087a448b560e957970f06bce4e7da1bda1b782a3a2862dbff4a8",
+      "bytes": 12507
+    },
+    {
+      "path": ".scratch/modern-finite-latin-contract-review/ot11-amendment/author-checks.json",
+      "sha256": "abe3ed46eb183211dc90809705b6396e726ad0e70cf10a8206a7c56fa10ef1c7",
+      "bytes": 18041
+    }
+  ],
+  "findings": [
+    "Exactly source_latin_passage_id and source_latin_publication_source_ids change. Every other complete English-entry field is equal, including English text, rights, note, old whole-source quotation, conclusion witnesses and 2008 limitation. The full inventory parse has no other changes.",
+    "Both selected Latin carriers are exactly 169 bytes with payload SHA256 d776c9b12e4705fdb82d014856714067b6d001d813699b2d354e7aaab919ba2f; no-terminal-LF body SHA256 cb11f78fd7bc664d8596cf62fe763738549a054552d2facef67105325f60e736. Both select physical lines1–3 and retain the identical complete projected_from list for 1862 petition,1945 conclusion and secondary2002 comparison.",
+    "The exact finite Latin node and provenance row are unchanged. English body SHA256 remains6ac80aaf2dc748ea904714aa07c6b707868f1f1d77c6a1642f33e24bd3980374; all five English source files are byte-identical. Shared Latin work and selected finite edition remain.",
+    "All four omitted original Latin-edition files are absent canonically and were only proposed new files. The source write set changes91→87; no canonical deletion and no removal of source testimony. Earlier scratch donor package remains retained.",
+    "Independent complete-copy replay reproduces original graph duplicate-payload-owner refusal, then validates corrected source graph56,937 records with zero errors. The exact old and selected carrier records remain separately identified in the receipt.",
+    "Unchanged validate_study_translation_binding function is byte-identical between canonical and frozen backend (SHA25664a39990fc67fe263f73d8fd9fb32776022ec678ae1fc0b6e4ceaa45f0d86a64). Old carrier identity fails even under explicit temporary synthetic authority; exact two-field amendment passes. Passage-only, artifact-only and changed-body controls still fail.",
+    "Production authority remains empty and correctly refuses the corrected candidate. Synthetic test success establishes binding mechanics only. No general same-body alias, validator bypass, source-rights widening or 2008 target promotion is introduced."
+  ],
+  "replay_scope": {
+    "overlay_copy_method": "shutil.copytree(copy_function=shutil.copy2); no symlinks or multiple links in copied files",
+    "source_graph_errors_after": [],
+    "source_record_count": 56937,
+    "actual_validator_observations": 7,
+    "synthetic_authority_only_for_positive": true,
+    "production_activation_empty": true,
+    "cache_variables_disabled": [
+      "TRIPTYCH_LIBRARY_CACHE",
+      "TRIPTYCH_SOURCE_LIBRARY_CACHE",
+      "TRIPTYCH_CORPUS_CACHE"
+    ],
+    "harness_modifications": "Only output-directory and frozen-backend-package path relocation. Initial reviewer script name inspect.py shadowed Python standard library; renamed metadata_inspection.py before successful replay. No product-code changes."
+  },
+  "required_next_steps": [
+    "Root adoption must name this exact metadata amendment and supersede the two binding fields and four proposed-file inclusions in the existing install map.",
+    "Keep original accepted source and amendment lineage; do not overwrite the predecessor proposal or frozen backend/browser receipts.",
+    "Actual canonical installation, real authority/input-closure adoption and cohesive producer/Day/browser validation remain pending."
+  ],
+  "source_body_merits_reopened": false,
+  "canonical_head": "80cbdbb0357d00c809049c4f44b6d42f3c7a6a7c",
+  "canonical_writes": false,
+  "shared_validator_changes": false,
+  "prior_receipts_modified": false
+}

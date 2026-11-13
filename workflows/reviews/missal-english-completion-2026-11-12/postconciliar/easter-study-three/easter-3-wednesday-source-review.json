@@ -1,0 +1,80 @@
+{
+  "schema": "independent-oration-source-fidelity-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "modern_sources/pange_review",
+  "candidate_path": ".scratch/modern-partition-easter/study-candidates.json",
+  "candidate_sha256": "328759fe7aafa0af8d5085e7f628002e93ceb1f57dfcec6353747a1e08a16fa5",
+  "canonical_mutation": false,
+  "identity": [
+    "easter-3-wednesday",
+    "main",
+    "Communion Antiphon",
+    "all",
+    1
+  ],
+  "disposition": "accept-new-owner-binding-to-exact-existing-study-English",
+  "existing_admitted_identity": [
+    "easter-5-wednesday",
+    "main",
+    "Communion Antiphon",
+    "all",
+    1
+  ],
+  "english_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea",
+  "existing_source_join": {
+    "target": [
+      "easter-5-wednesday",
+      "main",
+      "Communion Antiphon",
+      "all",
+      1
+    ],
+    "source_page_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-page",
+    "historical_latin_artifact_id": "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-la-54b9b8b5",
+    "historical_latin_artifact_sha256": "54b9b8b57a76fb064fb0cb442980f8312a8b5d0a0825e36d552cb942ebc6b24a",
+    "historical_latin_payload_sha256": "6f953e6be1e99ae2582aac48025b6e6e8214e8babc94893ada33f7965a6fdae1",
+    "historical_latin_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-historical-text",
+    "comparison_passage_id": "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-secondary2002-comparison",
+    "relation": "variant",
+    "english_sha256": "ea518a19a0d2575defe641dde3d2929ff5e4df02e6ce7b8dee8de82b84b3dbea",
+    "english_artifact_id": "artifact.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-study-en-9695a7ce",
+    "english_artifact_sha256": "9695a7cecc948f554b912e7720a368319abe8cadc843f32669da469898162e70",
+    "english_passage_id": "passage.triptych.english-completion-20261029-postconciliar-phase2-late-easter-study-english.2026-10-29.english-completion-20261029-postconciliar-phase2-late-easter-easter-5-wednesday-communion-study-english"
+  },
+  "historical_body_sha256": "6f953e6be1e99ae2582aac48025b6e6e8214e8babc94893ada33f7965a6fdae1",
+  "comparison_body_sha256": "1f9a1154971e05faabdcfce266f7ff7b1adb133c532cf9fdcee39a6fa49e3987",
+  "source_unit": "Pustet1862 AP373/printed287, complete Greater Alleluia verse. Leading Alleluia framing and the following Exivi a Patre verse are separate.",
+  "inspection": {
+    "whole_source_hashes_recomputed": [
+      "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "78b296aa96f9121e0e12a8695cda4087b97f8018a4fffe01645b4dbea947eda1",
+      "0b458944824d2ee92854b9664f83e553af0342e0b15a9dc14b00e846405523d7"
+    ],
+    "source_and_comparison_images_visually_read": [
+      ".scratch/modern-partition-easter/comparison-238.png",
+      ".scratch/modern-partition-easter/comparison-239.png",
+      ".scratch/modern-partition-easter/comparison-249.png",
+      ".scratch/modern-partition-easter/pustet-ap373.png"
+    ],
+    "additional_week_context": "SecondaryAP236 Dominica III Paschae visually read; AP237-238 course continuity inspected; AP238 Feria quarta continues intoAP239; AP240 carries Feria sexta and its complete communion."
+  },
+  "findings": [
+    "Exactly Christus -> Dominus; every other normalized token agrees. The new owner therefore retains the admitted variant relation, not exact historical-source identity.",
+    "New third-week and previously admitted fifth-week complete comparison bodies visually agree, including final alleluia count; neither owner is inferred from incipit alone.",
+    "Exact English matches the already admitted current overlay body and retained project-created English artifact. This is reuse under a new owner, not a new translation or retroactive historical-English attribution.",
+    "Existing phase2 late-Easter independent source review supports the same bounded variant/abridged study route; its historical-source and modern-comparison qualifications remain necessary."
+  ],
+  "required_before_admission": [
+    "Add a specific new owner comparison passage and admission binding. Reuse existing body artifacts and preserve their original identities and accepted fifth-week owners.",
+    "Keep prior exact approved-English unavailable records separately retained.",
+    "Retain project-created study status, source differences, secondary2002 restriction and unresolved2008 relation in reader qualification.",
+    "If historical Latin is later paired, declare its Christus/Dominus or double/single alleluia mismatch; this English acceptance does not authorize an unqualified exact Latin pair.",
+    "Run owning source/epoch/consumer validation; no canonical or generated output was changed by this review."
+  ],
+  "limitations": [
+    "No authenticated2008 wording, appointment or whole-edition equivalence established.",
+    "Secondary2002 is a digitally typeset comparison witness; fidelity to an actual printed2002 edition is unestablished.",
+    "No approved/official English, historical-human translation or permission for liturgical recitation is asserted.",
+    "Source/fidelity review is separate from registration, source-epoch, generation and rendered-consumer acceptance."
+  ]
+}

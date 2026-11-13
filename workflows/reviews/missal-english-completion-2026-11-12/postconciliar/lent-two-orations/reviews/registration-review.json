@@ -1,0 +1,104 @@
+{
+  "schema": "triptych-independent-two-oration-registration-review/v1",
+  "reviewed_on": "2026-11-12",
+  "reviewer": "/root/modern_sources/ordinary_review; independent agent, not human review",
+  "verdict": "accept both source-qualified complete prayer bodies and their registration proposals; accept finite actor/span inputs; full execution adapter adoption remains pending",
+  "accepted_packets": [
+    {
+      "name": "good-friday",
+      "proposal": ".scratch/modern-lent-orations/good-friday/successor-v2/installation-proposal.json",
+      "sha256": "b51f2b945a687315f911d5328381fb6b70305de8a10b292c1f8107407117469b",
+      "file_root": ".scratch/modern-lent-orations/good-friday/successor-v2/files",
+      "manifest": ".scratch/modern-lent-orations/good-friday/successor-v2/new-files-manifest.json"
+    },
+    {
+      "name": "lent4",
+      "proposal": ".scratch/modern-lent-orations/offerings-communions/successor-v2/installation-proposal.json",
+      "sha256": "e3eab5784fcfaaefb7ab98332169c232602087cc1364a7051e95191b9792dab3",
+      "file_root": ".scratch/modern-lent-orations/offerings-communions/successor-v2/new-files"
+    }
+  ],
+  "accepted_source_files": {
+    "count": 32,
+    "source_records": 25,
+    "good_friday": 15,
+    "lent4": 17,
+    "no_modern_pdf_image_or_protected_english_payload": true
+  },
+  "separate_actor_addendum": {
+    "path": ".scratch/modern-lent-orations/execution-addendum/execution-input-v2.json",
+    "sha256": "1ae6ad610521ee2a16dfe132c9866716c031870108f82c755f8e23020c0d5ba4",
+    "additional_metadata_records": 1,
+    "review_only_not_activation": true
+  },
+  "independent_receipts": [
+    {
+      "path": ".scratch/modern-lent-orations/independent-review/good-friday-source-review.json",
+      "sha256": "3b92617f08ea7d1015dc5a56edb0aa57e1905705051ae3c8fe6e8d9a9a70c48b"
+    },
+    {
+      "path": ".scratch/modern-lent-orations/independent-review/lent4-communion-source-review.json",
+      "sha256": "4e79c809ed5a337aa779a6946fef3b760664110fd4272fb25cc1c79f673686c7"
+    },
+    {
+      "path": ".scratch/modern-lent-orations/independent-review/source-verification.json",
+      "sha256": "fd430e9cea401fe587a9e840b32d93feb88ce59fb56f617611c2d7711cc519bb"
+    },
+    {
+      "path": ".scratch/modern-lent-orations/independent-review/registration-verification.json",
+      "sha256": "497b4c2c90527fa1bec45ebdefb28ee8e46065bc230bec2388a127f9687be2f4"
+    },
+    {
+      "path": ".scratch/modern-lent-orations/independent-review/render-review.json",
+      "sha256": "863f24f5fe408ebde34de1af28ec1e4b73547944a61da02ca2232a832ece6d37"
+    },
+    {
+      "path": ".scratch/modern-lent-orations/independent-review/execution-addendum-review.json",
+      "sha256": "dd7600f71a738b56af8657fb0598e2bea6f7c14f26e0f4970c5ee7f6c20f2989"
+    },
+    {
+      "path": ".scratch/modern-lent-orations/independent-review/command-receipt.json",
+      "sha256": "d0953662d818d45b4402775246aad726ba602ff7e16348762cd5ef5d02fd6e56"
+    }
+  ],
+  "exact_preservation": {
+    "input_files": "All source packet input pins match unchanged canonical files before and after the isolated replay.",
+    "proper_nodes": "Only the two exact complete receiving nodes change; both original nodes and Latin provenance entries remain in frozen proposals.",
+    "english_refusals": "Each installed after_entry now embeds its entire original untranslated dictionary in prior_source_refusals, including its exact quarantine fingerprint and rights/exemplar circumstances. This was checked against the original canonical dictionary and parsed disk overlay.",
+    "coverage": "Two project study-English additions and two public-domain source-qualified Latin bodies; neither Latin body has exact-target coverage. Approved English remains unavailable.",
+    "good_friday_incipit_remediation": "Frozen successor V2 uses the exact live receiving incipit, including parenthetical nostris. The prior prefix-only spelling would suppress the English at the actual carry boundary; the successor is verified through that boundary.",
+    "lent4_metadata_remediation": "Original37ddd49e proposal remains intact. Successore3eab578 changes one artifact transformation note to disclose ae ligature rendering and embeds the prior English refusal; every prayer body, source scalar, response fact, source ID, receiving field and grade remains unchanged."
+  },
+  "validation": {
+    "whole_source_library": "PASS: actual full source-library loader on isolated merged root containing all current owning works, editions, artifacts, passages and publication bindings, plus both proposals. No filtered-owner shortcut; zero errors.",
+    "publication_and_binding": "PASS: both exact Latin scalars permitted on all six requested surfaces; source Latin bindings, complete publication-source sets and actual disk translation overlay joins pass.",
+    "negative_controls": "Twelve native controls rejected: stale Latin hash, wrong/unregistered Latin passage, wrong publication-source set, wrong cycle, wrong occurrence and receiving-incipit mismatch for each row. Altered Latin body also fails its publication decision.",
+    "selectors": "PASS: actual mass-propers.select_texts and shared _calendars.texts_of return exact Latin/English and nonempty corresponding source qualifications including unresolved2008.",
+    "coverage": "Actual latin_evidence maps both to relationship unresolved, collation collated, public-domain. The exact-transcription relationship refers to their named source projection and does not assert current2008 fidelity.",
+    "browser": "PASS: production renderProper with native repository DOM, all eight language/display cases. Every prayer word and source qualification is visible. Good Friday R. is displayed as the accessible response mark; that semantic role formatting is accounted for in the text comparison. No full-route Chromium or layout acceptance is claimed.",
+    "response_count": "Good Friday has exactly one visible Amen per selected language, already present in its source body. Lent4 has zero Amen in spoken prayer nodes in the current production path; the separately sourced descriptor is not consumed."
+  },
+  "whole_expression_and_ending_findings": {
+    "good_friday": "The entire old invitation and petition plus separately old short formula support the exact locally printed1970 whole unit. Preserve old fixed nostris and Per Dominum in source apparatus. Modern optional nostris in both positions and locally printed full short ending/R.Amen are explicit bounded1970 facts; no general conclusion-rule expansion is inferred.",
+    "lent4": "The entire old prayer petition is unchanged after declared normalization. Preserve old Per Dominum; actual1970 Per Christum plus freshIGMR32 Father-directed short postcommunion branch selects the separately old complete formula. SpecificIGMR122 establishes people Amen after the prayer.",
+    "english": "Both complete new project study translations are faithful. No historical-human, approved2011, human-review, liturgical-approval or current2008 identity is conferred.",
+    "modern_arrangement_counterargument": "Complete-unit review was performed; generic old Bible words, a common formula or similar incipit alone would not suffice. The finite old petitions remain whole, their modern execution facts are shown separately, and no modern substantive prayer words or expressive recasting enter either admitted body."
+  },
+  "finite_actor_and_span_input": {
+    "good_friday": "Fresh AP244/p251 rubric10 assigns both invitation and collect to priest and an intervening silence to all. Conference-added acclamation/kneeling calls in rubric11 remain conditional and unselected. Final local R.Amen is assigned response, not an unsupported named people actor. Exact UTF16 spans account for all prayer words once; R. is nonspoken and no second Amen may be appended.",
+    "lent4": "The entire unchanged priest scalar includes its complete short conclusion. One external Amen is separately sourced and assigned people byIGMR122. The input does not pretend that this missing response already exists in the scalar or current renderer.",
+    "binding": "All complete proper, translation-binding, Latin-provenance, body and proposal hashes match. The extra actor passage passed schema, exact page bounds and its full work/edition/artifact ownership-chain checks.",
+    "activation_boundary": "The accepted JSON input and a freeform separate_response descriptor are not executable authority by themselves. Root/oration_endings must adopt a finite fail-closed adapter tied to the exact source and recipient pins."
+  },
+  "remaining_integration": [
+    "Root owns canonical source/ledger adoption, source-epoch and public register changes; install exact records and preserve the reviewed before-state receipts.",
+    "Consume the separately sourced Lent4 people Amen once after the full short conclusion in browser and CLI while preserving the unchanged priest scalar.",
+    "If the new finite actor projection is adopted, preserve GoodFriday existing response exactly once and expose its source-local silence/actors without adding conference-specific words or claiming2008 equivalence.",
+    "Run the integrated consumer checks after adapter adoption; these source/body checks do not claim a complete current Mass or complete two-unit execution adapter."
+  ],
+  "blockers_to_source_body_admission": [],
+  "blockers_to_complete_execution_claim": [
+    "Lent4 separately sourced people Amen remains absent from the current reader/CLI prayer output. The new finite actor/span input has not been adopted by a production adapter."
+  ],
+  "canonical_writes_by_reviewer": false
+}

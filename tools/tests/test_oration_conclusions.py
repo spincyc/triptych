@@ -30,8 +30,9 @@ class OrationConclusions(unittest.TestCase):
             raise unittest.SkipTest("finite conclusion authority awaits exact review activation")
         cls.owner = module("_conclusion_owner", ROOT / "tools/mass-propers")
         cls.calendar_root = ROOT / "src/sources/calendars"
-        cls.declaration, cls.expected = endings.authority(ROOT)
-        cls.sources = endings.load_sources(cls.calendar_root, "roman-1962", cls.owner)
+        cls.declaration, all_expected = endings.authority(ROOT)
+        cls.expected = {key: row for key, row in all_expected.items() if len(key) == 5}
+        cls.sources = {key: row for key, row in endings.load_sources(cls.calendar_root, "roman-1962", cls.owner).items() if key in cls.expected}
         cls.document = cls.owner.load_calendar(cls.calendar_root, "roman-1962")
         cls.masses = {mass["key"]: mass for _, mass in cls.owner.masses_of(cls.document)}
         import tomllib
@@ -134,7 +135,8 @@ class OrationConclusions(unittest.TestCase):
     def test_browser_projector_matches_python_and_generated_pins(self):
         cases = [self.context(language, grouped) for language in ("en", "la") for grouped in (False, True)]
         expected = [endings.execute_group(context, repository=ROOT, authority_rows=self.expected) for context in cases]
-        pins = {endings.canonical(row["target"]): row["public_sha256"] for row in self.expected.values()}
+        pins = {endings.canonical(row["target"]): row["public_sha256"] for row in self.declaration["records"]}
+        pins.update({endings.canonical([row["calendar"], *row["target"]]): row["public_sha256"] for row in self.declaration.get("supplemental_records", [])})
         payload = {"authority_sha256": endings.AUTHORITY_SHA256, "pins": pins, "cases": cases, "expected": expected}
         done = subprocess.run(["node", str(ROOT / "tools/tests/oration_conclusions.mjs"), str(ROOT)], input=json.dumps(payload), text=True, capture_output=True)
         self.assertEqual(done.returncode, 0, done.stderr)

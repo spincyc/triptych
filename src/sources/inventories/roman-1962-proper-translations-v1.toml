@@ -3718,91 +3718,85 @@ May my soul thy goodness praise,
 Safe in Paradise with Thee.
 '''
 
-[[untranslated]]
+[[entries]]
 mass = "commune-summorum-pontificum"
 form_id = "main"
 proper = "Collect (Altera oratio, in plurali)"
 cycle = "all"
 occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-witness_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-witness_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap"
-verified_artifact_page = 511
-verified_on_page = "2026-08-27"
-verified_printed_page = "502-504"
-note = "Cummiskey's numbered Commons end at Mass XXI and pass directly to the Dedication Mass; it has no Common of one or more Supreme Pontiffs. Lasance supplies no plural form. The bounded passage proves this absence without recording a body."
+source_latin_sha256 = "73e57cb335e04e4e0cb15a060a91dfb07286ab7b074528b9090064fe6869871e"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-plural"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-plural-73e57cb3", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
 
-[[untranslated]]
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed N. and N. (your Martyrs and) Supreme Pontiffs, she may be fortified with continual security, remaining steadfast in your truth. Through the Lord.\n"
+
+[[entries]]
 mass = "commune-summorum-pontificum"
 form_id = "main"
 proper = "Postcommunion (in plurali)"
 cycle = "all"
 occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-witness_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-witness_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap"
-verified_artifact_page = 511
-verified_on_page = "2026-08-27"
-verified_printed_page = "502-504"
-note = "Cummiskey's numbered Commons end at Mass XXI and pass directly to the Dedication Mass; it has no Common of one or more Supreme Pontiffs. Lasance supplies no plural form. The bounded passage proves this absence without recording a body."
+source_latin_sha256 = "b9e6e57fbe6ecca90b080632c6ce9e6060c9f5b17226818f5696a7a96632fbeb"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-plural"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-plural-b9e6e57f", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-pastor-antecedent-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
 
-[[untranslated]]
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Increase, we ask, Lord, in your Church the spirit of grace that you have given, so that, through the prayer of blessed N. and N. (your Martyrs and) Supreme Pontiffs, the shepherd may not lack the flock's obedience, nor the flock the shepherd's care. Through the Lord.\n"
+
+[[entries]]
 mass = "commune-summorum-pontificum"
 form_id = "main"
 proper = "Collect (Altera oratio)"
 cycle = "all"
 occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-witness_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-witness_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap"
-verified_artifact_page = 511
-verified_on_page = "2026-08-27"
-verified_printed_page = "502-504"
-note = "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
+source_latin_sha256 = "1cf945da1c8045a5e6f780105f1ea2bf7739555115805d8bf99b354b5b1359d5"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-singular"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-collect-singular-1cf945da", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-collect-whole-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.feltoe-protection-whole-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.urban-old-whole-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
 
-[[untranslated]]
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who rescue your Church, founded on the firmness of the apostolic rock, from the terror of the gates of hell: grant, we ask, that through the intercession of blessed N. (your Martyr and) Supreme Pontiff, she may be fortified with continual security, remaining steadfast in your truth. Through the Lord.\n"
+
+[[entries]]
 mass = "commune-summorum-pontificum"
 form_id = "main"
 proper = "Secret (Altera secreta)"
 cycle = "all"
 occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-witness_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-witness_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap"
-verified_artifact_page = 511
-verified_on_page = "2026-08-27"
-verified_printed_page = "502-504"
-note = "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
+source_latin_sha256 = "a5ad120afd387baae5c1f66c3243b01c9a7859d588d8e64a1357b6b898579b86"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-secret"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-secret-a5ad120a", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-secret-munera-antecedent-20261112", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.common-secret-faith-peace-antecedent-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
 
-[[untranslated]]
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Kindly accept, Lord, the gifts we joyfully offer you, and grant that, through the intercession of blessed N. (through the intercession of blessed N. and N.), your Church may rejoice in the integrity of faith and always exult in the tranquility of the times. Through our Lord Jesus Christ, your Son: Who lives and reigns with you in unity.\n"
+
+[[entries]]
 mass = "commune-summorum-pontificum"
 form_id = "main"
 proper = "Postcommunion (Altera postcommunio)"
 cycle = "all"
 occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"] }
-witness_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-witness_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-supreme-pontiff-common-gap"
-verified_artifact_page = 511
-verified_on_page = "2026-08-27"
-verified_printed_page = "502-504"
-note = "The only held Lasance generic-slot reading is on the excluded 1302a-1302d insert and has no affirmative publication binding. Independently, bounded Cummiskey pp. 502-504 show that its numbered Commons end at Mass XXI and pass directly to the Dedication Mass, so it supplies no public-domain Common of Supreme Pontiffs as a fallback. No body is recorded."
+source_latin_sha256 = "0f6aba2892447670715ec789df2bc51b5c3edd37009ff97dc716d23f0b9cc980"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-singular"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.common-pontiff-five-2026-11-12.pontiff-altera-postcommunion-singular-0f6aba28", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-multiplica-antecedent-20261112", "artifact.catholic-church.sacramentarium-veronense.feltoe-1896.common-postcommunion-pastor-antecedent-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
 
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Increase, we ask, Lord, in your Church the spirit of grace that you have given, so that, through the prayer of blessed N. (your Martyr and) Supreme Pontiff, the shepherd may not lack the flock's obedience, nor the flock the shepherd's care. Through the Lord.\n"
 
 [[entries]]
 mass = "palm-sunday"
@@ -3948,29 +3942,57 @@ availability = "unavailable"
 reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
 note = "Cummiskey printed pp. 289-291 retains an Emperor/N.N. petition and older Jewish-people wording where the 1962 target has all civil rulers and revised prayers. This composite slot is not an exact whole-body translation."
 
-[[untranslated]]
+[[entries]]
 mass = "good-friday"
 form_id = "main"
 proper = "First Prayer after Communion"
 cycle = "all"
 occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "After Communion Cummiskey has only the ordinary Quod ore sumpsimus before Vespers/Respice; it has no English for the first 1955 post-Communion prayer in the 1962 target."
+source_latin_sha256 = "d0f0e56ba2658b8e485bb6c2fe6e587877602257ba5474cba77955ee6bdb0c18"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-first-after-communion-qualified-20261112-d0f0e56b", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-first-second-antecedents-20261112-1fc31f67", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
 
-[[untranslated]]
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Upon your people, who have devoutly recalled the Passion and death of your Son, let an abundant blessing descend, we pray, Lord; let pardon come, consolation be granted, holy faith increase, and everlasting redemption be made firm. Through the same Christ our Lord. R. Amen.\n"
+notice = "Original study translation by Triptych."
+
+[entries.translations.text_structure]
+text_sha256 = "f478132d01c4736773e9b64faba0c18591a97f3da23ca81193452503b2932528"
+checked = "Original study English of the exact source-checked target Latin; complete same-Christ conclusion retained; R. nonspoken and following Amen spoken."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 266
+text = "R."
+
+[[entries]]
 mass = "good-friday"
 form_id = "main"
 proper = "Second Prayer after Communion"
 cycle = "all"
 occurrence = 1
+source_latin_sha256 = "9330da554a16ecbb9e040768cdedba3eea1cdd08ba88d2166b23b1a622058f7d"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.good-friday-second-after-communion-qualified-20261112-9330da55", "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.good-friday-first-second-antecedents-20261112-1fc31f67", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.received-conclusion-printed135-20261112-58788348"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "witness-gap", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861" }
-note = "After Communion Cummiskey has only the ordinary Quod ore sumpsimus before Vespers/Respice; it has no English for the second 1955 post-Communion prayer in the 1962 target."
+rights = "project-created"
+text = "Almighty and merciful God, who have restored us through the blessed Passion and death of your Christ: preserve in us the work of your mercy, so that through participation in this mystery we may live in constant devotion. Through the same Christ our Lord. R. Amen.\n"
+notice = "Original study translation by Triptych."
+
+[entries.translations.text_structure]
+text_sha256 = "a345a2e7efa6c1e965ab11f82f3d62742c615b0a01939cbd45c53af883041e84"
+checked = "Original study English of the exact source-checked target Latin; complete same-Christ conclusion retained; R. nonspoken and following Amen spoken."
+
+[[entries.translations.text_structure.actions]]
+kind = "rubric"
+offset = 255
+text = "R."
 
 [[entries]]
 mass = "good-friday"
@@ -4421,17 +4443,22 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
 
-[[untranslated]]
+[[entries]]
 mass = "assumptione-beatae-mariae-virginis"
 form_id = "main"
 proper = "Postcommunion"
 cycle = "all"
 occurrence = 1
+source_latin_sha256 = "23b359b97c9082456b44d660b532b9fe07710b62da1c60ee8d7bbe77a6bfcfaf"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.assumption-postcommunion-23b359b9", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-monday-postcommunion-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-holy-shroud-collect-20261112", "artifact.society-of-jesus.acta-romana-societatis-iesu.volume-iii-bound.acta1923-bellarmine-collect-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+rights = "project-created"
+text = "Having received the saving sacraments, O Lord, we ask you to grant that, through the merits and intercession of the Blessed Virgin Mary assumed into heaven, we may be led to the glory of the resurrection. Through our Lord.\n"
+notice = "Original study translation by Triptych; not an approved liturgical translation."
 
 [[untranslated]]
 mass = "s-ioseph-opificis-sponsi-beatae-mariae"
@@ -4485,17 +4512,22 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
 
-[[untranslated]]
+[[entries]]
 mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
 form_id = "main"
 proper = "Secret"
 cycle = "all"
 occurrence = 1
+source_latin_sha256 = "fefc86d1657183e9f354fa827b7cd272b7767b1e075cb0e7ed2342b0a680f592"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.saints-two-editorial-projection-2026-11-12.bellarmine-secret-fefc86d1", "artifact.society-of-jesus.acta-romana-societatis-iesu.volume-iii-bound.acta1923-bellarmine-secret-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-john-berchmans-postcommunion-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.mame1922-alphonsus-collect-20261112"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/roman-nine/source-and-english-review.json"
+
+[[entries.translations]]
 lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
+rights = "project-created"
+text = "We offer you sacrificial offerings, O Lord, as a sweet fragrance; and grant that, instructed by the counsels and examples of blessed Robert, we may run with an enlarged heart along the path of your commandments. Through our Lord.\n"
+notice = "Original study translation by Triptych; not an approved liturgical translation."
 
 [[untranslated]]
 mass = "s-roberti-bellarmino-episcopi-confessoris-ecclesiae"
@@ -4553,18 +4585,6 @@ note = "No exact English exemplar is bound to this source-established but text-f
 [[untranslated]]
 mass = "s-pii-x-papae-confessoris"
 form_id = "main"
-proper = "Secret"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "No exact English exemplar is bound to this source-established but text-free Latin proper slot."
-
-[[untranslated]]
-mass = "s-pii-x-papae-confessoris"
-form_id = "main"
 proper = "Postcommunion"
 cycle = "all"
 occurrence = 1
@@ -4584,8 +4604,8 @@ occurrence = 1
 incipit = "Deus, qui Unigenitum"
 witness = "cummiskey-1861"
 printed_page = "95"
-ia_leaf = 103
-ia_leaf_range = [103, 103]
+ia_leaf = 105
+ia_leaf_range = [105, 105]
 artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
 passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-most-holy-name-of-jesus--main--collect--all--1"
 publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-recovered-en"
@@ -4593,7 +4613,7 @@ publication_artifact_sha256 = "c61752839c8b04282bac27592749d63a4f0227d3fa051e624
 publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-most-holy-name-of-jesus--main--collect--all--1"
 collated = "page-image and tracked transcription, 2026-08-27"
 collation_result = "confirmed"
-witness_note = "The 1861 keeps this feast on the Second Sunday after Epiphany, not on the Sunday between 2 and 5 January as the 1962 does. Leaf n104, printed p. 94, heads it `II. SUNDAY after EPIPHANY. The FEAST of the HOLY NAME JESUS.` over the Introit `In nomine Jesu`, and its Kalendar at leaf n774, printed p. 766, prints `Second Sunday after Epiphany- Feast of the most Holy Name of Jesus, d. of II. class 94`. The formulary is the same one, and the Latin cue set before this English is `Deus qui`, which answers the 1962's `Deus, qui Unigenitum`. The day placement is a recension difference and not a difference of text. Page-image collation confirms that this historical English body answers the complete target Latin identity; publication is limited to the 1861 wording and does not claim that Cummiskey appoints the 1962 celebration."
+witness_note = "The 1861 keeps this feast on the Second Sunday after Epiphany, not on the Sunday between 2 and 5 January as the 1962 does. Leaf n104, printed p. 94, heads it `II. SUNDAY after EPIPHANY. The FEAST of the HOLY NAME JESUS.` over the Introit `In nomine Jesu`, and its Kalendar at leaf n774, printed p. 766, prints `Second Sunday after Epiphany- Feast of the most Holy Name of Jesus, d. of II. class 94`. The formulary is the same one, and the Latin cue set before this English is `Deus qui`, which answers the 1962's `Deus, qui Unigenitum`. The day placement is a recension difference and not a difference of text. Page-image collation confirms that this historical English body answers the complete target Latin identity; publication is limited to the 1861 wording and does not claim that Cummiskey appoints the 1962 celebration. Locator erratum, independently image-checked 2026-11-12 at actual 200 and 400 dpi: the complete Collect is on artifact PDF p. 106, printed p. 95, Internet Archive leaf n105. The former PDF p. 104 / leaf n103 locator instead reaches printed p. 93 and does not contain this Collect. The source English, source IDs, rights, source appointment, target relation and immutable publication payload are unchanged. The publication TSV row 57 retains its earlier leaf/PDF locator metadata as historical bytes; the corrected locator is owned by this entry and its verification passage."
 
 [[entries.translations]]
 lang = "en"
@@ -35777,3 +35797,80 @@ source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-pr
 source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.queenship-regular-alleluia-qualified-01c6691e", "artifact.society-of-bollandists.acta-sanctorum.1866-paris-rome-palme-october-2.queenship-invocation-text-20261029", "artifact.salesian-society.bollettino-salesiano.1892-april-issue-4.queenship-hymn-stanza-text-20261029", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"]
 translation_review = "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/sources/source-review-06325027601a1cc3.json"
 translations = [{lang = "en", rights = "project-created", text = "Alleluia, alleluia. V. Hail, Queen of mercy; protect us from the enemy and receive us at the hour of death. Alleluia.\n"}]
+
+[[entries]]
+mass = "lent-1-tuesday"
+form_id = "main"
+proper = "Oratio super populum"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+printed_page = "245"
+ia_leaf = 254
+ia_leaf_range = [254, 254]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english-source"
+collated = "complete page-image and bounded checked transcription, 2026-11-12"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english"
+publication_artifact_sha256 = "f5667f63524494c630ef1c7ccb08bdc628966f581b29670f599149bf3af373bf"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ferial-osp-20261112-lent-1-tuesday-english-text"
+witness_note = "Complete prayer at printed p. 245, artifact PDF page 255. Full parallel Latin and English read at 200/400 dpi; complete Latin word sequence and actual Per Dominum. match the target. English exact in concrete 1946 printing. Title/copyright PDF 9-10 read at 200/400 dpi. Exact complete target Latin SHA256 125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c. Concrete 1946 printing establishes this historical English stratum, without extending the mixed later-printing label. Complete parallel Latin and actual ending equal target under typography only. No modern approved liturgical-English claim."
+translations = [{ lang = "en", rights = "public-domain", source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946", text = "Let our prayers ascend unto Thee, O Lord, and repel all evil from Thy Church. Through our Lord." }]
+
+[[entries]]
+mass = "lent-4-thursday"
+form_id = "main"
+proper = "Oratio super populum"
+cycle = "all"
+occurrence = 1
+witness = "cummiskey-1861"
+printed_page = "203"
+ia_leaf = 213
+ia_leaf_range = [213, 213]
+artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
+passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english-source"
+collated = "complete page-image and bounded checked transcription, 2026-11-12"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english"
+publication_artifact_sha256 = "fe009205998c6219bae88bac8b8c141f66236b9d114b5869651b371677e618be"
+publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ferial-osp-20261112-lent-4-thursday-english-text"
+witness_note = "Complete prayer at printed p. 203, artifact PDF page 214. Actual Thursday heading at Cummiskey AP 211/p 200, continued 212-213/p 201-202. PC Caelestia at AP 213, cue and Prayer Populi at AP 214/p 203 before actual Friday heading. English-only source incipit; complete semantic comparison is with separately image-checked Mame and target, not a claim that Cummiskey prints full Latin. Exact complete target Latin SHA256 686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53. Whole historical English meaning compared to separately source-checked target/Mame Latin, including semper/always. Source prints incipit Populi. and literal Thro’., not full Latin or a full conclusion. Execution with a separate Lasance full formula requires its own exact mixed-witness review; no same-witness table has been established. No modern approved liturgical-English claim."
+translations = [{ lang = "en", rights = "public-domain", source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", text = "O God, the author and governor of thy people, deliver them from the sins, by which they are assaulted, that they may be always well pleasing in thy sight, and safe under thy protection. Thro’." }]
+
+[[entries]]
+mass = "passion-wednesday"
+form_id = "main"
+proper = "Oratio super populum"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945"
+printed_page = "271"
+ia_leaf = 270
+ia_leaf_range = [270, 270]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.resume-orations-append209-strict165-2026-10-23-verify-lent-2-monday--main--oratio-super-populum--all--1"
+collated = "page-image, same-witness conclusion table where needed, and bounded tracked transcription, 2026-10-23"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient"
+publication_artifact_sha256 = "ebf49e96e95ac44003e799c8c9c4c2821c21401d4838a08adb25516b9bfe25e7"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.ferial-osp-20261113-passion-wednesday-recipient-text"
+witness_note = "Historical source lent-2-monday/main/Oratio super populum/all/1; strict. Complete Latin word sequence and actual ending equal under typography only. Cross-owner reuse requires entire literal canonical Latin equality including conclusion, punctuation, wraps and final LF, SHA256 75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283. Original target proof passage.catholic-church.missale-romanum.vatican-typica-1962.annual-oratio-early-20261023-lent-2-monday retained. No source-recipient calendar attestation or official 1962 English claimed. Recipient Passion Wednesday independently verified at 1962 PDF 205/printed 124 no 794 on 2026-11-12. Exact held donor Latin including wraps/final LF and exact held English reused unchanged. Fresh Lasance PDF 271 page-image comparison confirms the complete historical English; original donor passage ownership is retained. No old-witness Wednesday appointment is asserted. Publication-carrier correction 2026-11-13: a separate recipient TSV row carries passion-wednesday for the existing exact-owner producer contract. Its complete English is copied byte for byte from the unchanged donor publication TSV line 70. The original historical verification passage, donor locus, PDF artifact, IA bounds and source edition remain unchanged; the recipient carrier does not attest an old Wednesday appointment."
+translations = [{ lang = "en", rights = "public-domain", source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", text = "Be present to our supplications, O almighty God, and kindly grant the effect of Thy wonted mercy to those whom Thou dost permit confidently to rely on Thy goodness. Through our Lord." }]
+
+[[entries]]
+mass = "s-pii-x-papae-confessoris"
+form_id = "main"
+proper = "Secret"
+cycle = "all"
+occurrence = 1
+source_latin_sha256 = "44e8e1dbfb9352308bd4067bd5818d50039ab6c5f9452aa5f3d35166f04d7b16"
+source_latin_passage_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113"
+source_latin_publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-29.pius-x-secret-qualified-20261113-44e8e1db", "artifact.catholic-church.sacramentarium-gregorianum-hadrianum.wilson-1915.wilson1915-lent4-sunday-postcommunion-20261113"]
+translation_review = "workflows/reviews/missal-reader-resume-2026-11-12/pius-secret/source-and-english-review.json"
+
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Graciously receive our offerings, we beseech Thee, O Lord, and grant that, through the intercession of Saint Pius, Supreme Pontiff, we may celebrate these divine mysteries with sincere devotion and receive them with a faithful mind. Through our Lord.\n"
+notice = "Original study translation by Triptych; not an approved liturgical translation."

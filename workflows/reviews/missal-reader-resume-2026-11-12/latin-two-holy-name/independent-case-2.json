@@ -1,0 +1,49 @@
+{
+  "reviewer": "/root/roman_sources/remaining_saints",
+  "status": "source-review-pass-pending-root-adoption",
+  "canonical_writes": 0,
+  "authority": "Independent bounded source and metadata review only. No publication grant, source activation, source_epoch exception, or runtime overlay-ordering decision.",
+  "case": [
+    "comm-s-gorgonii-martyris",
+    "main",
+    "Postcommunion",
+    "all",
+    1
+  ],
+  "kind": "existing-Latin-transcription-correction",
+  "finding": "Both exact whole-PDF page images print the ae ligature in quae in Martyre, not quas. Complete petitions agree after declared accent/ligature/j normalization. Pustet proceeds directly from pascatur. to De Spiritu sancto. Postcomm.; no conclusion is printed for Gorgonius at that place.",
+  "historical_locus": "Pustet Ratisbon 1862, printed537, PDF623, left column Pro S. Gorgonio. Postcomm.",
+  "target_locus": "CMAA 1962, printed652, marginal3585, PDF733, left column.",
+  "historical_ending": "pascatur. [No following conclusion at this place.]",
+  "target_ending": "pascatur: Qui tecum vivit et regnat in unitate.",
+  "body_before_sha256": "63f58c33a7b4d65a87d53d35a3d0493f78ecc6557d568ce4fcfdbe638635dfba",
+  "body_after_sha256": "8294aa96abf2c6d1b207cea9ae97a96667b8f5b97fe70d1102acf566fa1baaa4",
+  "proper_before_sha256": "774d05c48e5cf01f160754dc3f3c76cb884f37e38ef267cee8d08aa084374116",
+  "proper_after_sha256": "5decd607dc013f6aefdbaf79273f697297207d7829f778e47f4423424cad3594",
+  "owner_row_before_sha256": "561542fae18f9bb5ac59511c72247a4cfa6d8e906d98ca2723d06bafeca5b198",
+  "owner_row_after_sha256": "6c16c0b254d65c352d70cc25a3255b2e304ec5019168ecc4eecdf3fad8170cce",
+  "exact_change": {
+    "before": "vegetet: quas in Martyre",
+    "after": "vegetet: quae in Martyre"
+  },
+  "images_independently_read": [
+    {
+      "path": ".scratch/roman-sources/latin-cleanliness/images/cmaa-733-400.png",
+      "bytes": 233198,
+      "sha256": "086bf99306bbb5c72f0c0db8691882cc1e2bbe1d008a28abfd5539ab54e3cec1"
+    },
+    {
+      "path": ".scratch/roman-sources/latin-cleanliness/images/pustet-623-scale4800.png",
+      "bytes": 4109125,
+      "sha256": "23924ba95984771344d2a214216e9a6b577d06ecd01c990246cc462d657347e5"
+    }
+  ],
+  "source_tuple": {
+    "payload_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/latin-cleanliness-2026-11-12-3e45253b/latin-cleanliness-2026-11-12-3e45253b.txt",
+    "payload_sha256": "3e45253b02b90d9b62111f6fbd070488df9299d657fc6bafa5fdcb68b65621cb",
+    "source_passage": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+    "historical_passage": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion",
+    "target_passage": "passage.catholic-church.missale-romanum.vatican-typica-1962.latin-cleanliness-2026-11-12-comm-s-gorgonii-martyris-postcommunion"
+  },
+  "limitations": "Existing target conclusion words and length remain unchanged. The fresh historical collation corrects earlier conclusion descriptions; it does not independently grant rights in any modern revision. Eight additive files comprise one text payload and seven TOML records. Old projection bodies/passages remain immutable."
+}

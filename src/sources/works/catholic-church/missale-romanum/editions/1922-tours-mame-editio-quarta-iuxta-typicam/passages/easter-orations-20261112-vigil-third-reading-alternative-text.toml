@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-orations-20261112-vigil-third-reading-alternative-text"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-orations-20261112-vigil-third-reading-alternative"
+artifact_sha256 = "ea4197abe67371a83a37e35d98f2ea537684d13b80522e4ec0f8e20f1f074dde"
+locus = "vigil-third-reading-alternative/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Deus, qui primis temporibus impleta miracula novi testamenti luce reserasti, ut et Mare Rubrum forma sacri fontis exsisteret, et liberata plebs ab Aegyptiaca servitute, christiani populi sacramenta praeferret: da, ut omnes gentes Israelis privilegium merito fidei consecutae, Spiritus tui participatione regenerentur. Per Dominum... in unitate ejusdem."
+transcription_segments = [{line = 1, text = "Deus, qui primis temporibus impleta miracula novi testamenti luce reserasti, ut et Mare Rubrum forma sacri fontis exsisteret, et liberata plebs ab Aegyptiaca servitute, christiani populi sacramenta praeferret: da, ut omnes gentes Israelis privilegium merito fidei consecutae, Spiritus tui participatione regenerentur. Per Dominum... in unitate ejusdem."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 a601e55a3d62378a4bc74e8eebcabac59606f86d20251e3e9ae01aa7e449fd0c. Controlling complete page passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-orations-20261112-vigil-third-reading-alternative-page. One complete1922 Pentecost-vigil prayer contains the full RedSea/font and freed-people/Christian-mysteries comparison plus the whole faith-and-Spirit petition. Its old Pentecost placement differs from the modern EasterVigil alternative. Removing only the adjective Egyptian leaves the separately named RedSea context and all theological clauses intact; moving liberata does not add a clause. Each exact change requires finite review of the whole received expression."

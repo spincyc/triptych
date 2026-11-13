@@ -1,0 +1,418 @@
+{
+  "schema": "scratch-review-package-v1",
+  "prepared_on": "2026-11-12",
+  "owning_lane": "lent_holyweek",
+  "scope": "Three bounded source-local English candidates; no canonical edits or publication decisions.",
+  "sources": {
+    "olm1981": {
+      "id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+      "manifest_path": "src/sources/works/catholic-church/ordo-lectionum-missae/editions/latin-editio-typica-altera-1981/artifacts/internet-archive-scan-pdf-ed4bc14e/artifact.toml",
+      "manifest": {
+        "schema": 2,
+        "record_type": "artifact",
+        "id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+        "edition_id": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+        "artifact_type": "page-image-scan-pdf",
+        "media_type": "application/pdf",
+        "storage": "restricted",
+        "rights_status": "restricted",
+        "rights_basis": "The exact PDF is a page-image scan of a 1981 Vatican liturgical book whose publisher asserts copyright. Public availability from a third-party archive does not establish permission to redistribute either the underlying official text or this scan, so Triptych retains only identity and review metadata.",
+        "source_url": "https://archive.org/download/OLM1981/Ordo%20lectionum%20Missae%20%28editio%20typica%20altera%2C%201981%29.pdf",
+        "provenance": "Exact 600-page PDF acquired over HTTPS from the Internet Archive item OLM1981. The scanned title page and decree identify the 1981 second typical edition; the file carries an Adobe Paper Capture optical text layer over page images.",
+        "retrieved": "2026-07-25",
+        "sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d",
+        "byte_size": 21487058,
+        "page_count": 600,
+        "indexable": false,
+        "notes": "Artifact page numbers and the book's Roman-numeral Praenotanda pagination coincide for the front matter: artifact page 32 is printed page XXXII. Every registered passage records artifact pages. The optical text layer is a discovery aid only; the registered passages were read in rendered page images at 200 dpi. Only those pages were inspected."
+      },
+      "held_path": ".scratch/modern-partition-ordinarytime/olm1981.pdf",
+      "observed_file_sha256": "ed4bc14e6c5f885be9cb220f4edbdd23c1db749b53c1489058d6e54cfaf7fd0d"
+    },
+    "lasance1945": {
+      "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+      "manifest_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+      "manifest": {
+        "schema": 2,
+        "record_type": "artifact",
+        "id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "edition_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945",
+        "artifact_type": "facsimile-pdf",
+        "media_type": "application/pdf",
+        "storage": "remote",
+        "rights_status": "unresolved",
+        "rights_basis": "MIXED, WHICH IS WHY THESE EXACT WHOLE-BOOK BYTES ARE NOT TRACKED OR REDISTRIBUTED. The underlying English of the 1937 and 1945 registered editions is in the United States public domain by failure to renew, established at registration-number level in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. This later printing also contains the appendix at printed pages 1298a-1298n, new matter first published after October 1954 for which that record establishes no registration, renewal result, or publication date from a physical copy. Other lettered insert matter, including printed pages 1302a-1302d, has likewise not been established as part of either registered edition. A single rights status cannot say public domain except for unresolved leaves, so this record is unresolved over the whole PDF. The independently registered tracked OCR derivative artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.new-roman-missal-text-80b34759 excludes pages 1298a-1298n and 1302a-1302d and carries the affirmative United States public-domain basis used for publication. The page images registered here are evidence for visual inspection and exact loci, not a redistribution source. Nothing rests on availability from, or any rights representation by, the Internet Archive.",
+        "rights_jurisdiction": "United States",
+        "source_url": "https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937.pdf",
+        "provenance": "Fetched as the complete PDF with curl from the exact URL above on 2026-08-26 into the repository's ignored .scratch area and hashed before use. The complete object is 75,268,976 bytes and 1,879 PDF pages. PDF metadata identifies an Adobe Acrobat 8.1 combined full-page facsimile created and modified on 2009-07-07; those technical dates do not identify the book's edition or printing. Internet Archive's whole scandata XML was separately fetched from https://archive.org/download/fr-lasance-missal-1937/fr-lasance-missal-1937_scandata.xml for the leaf-to-printed-page audit: 668,982 bytes, sha256 217d6b70f6645fe88b7b6028983297a4c84200ea079d2434c881b7310fb1212e. Every registered prayer page was rendered from these exact PDF bytes and visually inspected. No model stood between either server response and its recorded hash or size, or between the PDF and its recorded page count.",
+        "retrieved": "2026-08-26",
+        "sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70",
+        "byte_size": 75268976,
+        "page_count": 1879,
+        "indexable": false,
+        "notes": "Internet Archive item fr-lasance-missal-1937 is an opaque delivery locator supplied by a private uploader, not bibliographic evidence. Its name is wrong: the exact images show the Benziger 1945 revised edition in a printing of about 1955-56, as established and bounded in the edition record and the Lasance rights inventory. Do not describe this artifact as the 1937 edition or broaden it into a witness for a different edition. Artifact page N corresponds to Internet Archive BookReader leaf n(N-1); the passage records state the visible printed pagination, full IA leaf range, and full one-based artifact-page range independently. Every page image is stamped http://ccwatershed.org, but no host rights claim is relied on. Exact wording was read from rendered page images; the OCR artifacts remain finding aids only."
+      },
+      "held_path": ".scratch/roman-sources/remaining-saints/acquired/lasance1945.pdf",
+      "observed_file_sha256": "6cf3c3d01b853bc4a35c1cc9b0a4e54a0489a5ccf5d9a742bb681ac10608ce70"
+    },
+    "pustet_latin_cell": {
+      "id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen",
+      "manifest_path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/artifact.toml",
+      "manifest": {
+        "schema": 2,
+        "record_type": "artifact",
+        "id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen",
+        "edition_id": "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888",
+        "artifact_type": "normalized-text",
+        "media_type": "text/tab-separated-values; charset=utf-8",
+        "storage": "tracked",
+        "rights_status": "public-domain",
+        "rights_basis": "The identified printed book was published by Friedrich Pustet in 1888. Its 1888 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label.",
+        "rights_jurisdiction": "United States",
+        "derived_from": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf",
+        "transformation": "Finite direct image transcription on 2026-10-29 of only the complete historical antiphon printed on p. 339. Printed line wraps are joined with spaces; heading and page furniture omitted. Every word, punctuation mark, capitalization and printed chant asterisk retained. The English is repeated for two independently identified OLM1981 use rows; it remains one historical physical body. No new English, approved modern wording or conclusion supplied.",
+        "retrieved": "2026-10-29",
+        "sha256": "129a2f73517c43fca3d9211581d6b2ad6b5754c22b0af664561836a5b4ff5c76",
+        "byte_size": 196,
+        "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/semen.tsv",
+        "indexable": true,
+        "encoding": "utf-8"
+      }
+    },
+    "bute_english_cells": {
+      "id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+      "manifest_path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-semen/artifact.toml",
+      "manifest": {
+        "schema": 2,
+        "record_type": "artifact",
+        "id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+        "edition_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+        "artifact_type": "normalized-text",
+        "media_type": "text/tab-separated-values; charset=utf-8",
+        "storage": "tracked",
+        "rights_status": "public-domain",
+        "rights_basis": "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition.",
+        "rights_jurisdiction": "United States",
+        "derived_from": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "transformation": "Finite direct image transcription on 2026-10-29 of only the complete historical antiphon printed on p. 439. Printed line wraps are joined with spaces; heading and page furniture omitted. Every word, punctuation mark, capitalization and printed chant asterisk retained. The English is repeated for two independently identified OLM1981 use rows; it remains one historical physical body. No new English, approved modern wording or conclusion supplied.",
+        "retrieved": "2026-10-29",
+        "sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+        "byte_size": 397,
+        "path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-semen/semen.tsv",
+        "indexable": true,
+        "encoding": "utf-8"
+      }
+    }
+  },
+  "recovered_artifacts": [
+    {
+      "artifact_id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-page339",
+      "manifest": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-page339/artifact.toml",
+      "original_path": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-page339/source-page.jpg",
+      "scratch_path": ".scratch/modern-partition-lent-holyweek/english-completion-20261029-postconciliar-latin1888-page339.jpg",
+      "sha256": "b68ef0d6180b0f7a00e06269a71e44ab1b9eebc79ca69ca7086f952fe3b71849",
+      "recovery": "git show c448036bd6:path; exact registered hash verified"
+    },
+    {
+      "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-page439",
+      "manifest": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-page439/artifact.toml",
+      "original_path": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-page439/source-page.jpg",
+      "scratch_path": ".scratch/modern-partition-lent-holyweek/english-completion-20261029-postconciliar-bute1908-page439.jpg",
+      "sha256": "d9f23026a095f366bed46c750760db865214623ae2a2e7545633e268111e63c4",
+      "recovery": "git show c448036bd6:path; exact registered hash verified"
+    }
+  ],
+  "candidates": [
+    {
+      "candidate_id": "lent-holyweek-holy-monday-ave-rex-20261112",
+      "identity": [
+        "holy-monday",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "prior_unavailable_record": {
+        "mass": "holy-monday",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The 2026-10-22 held-image check of OLM 1981 artifact page 194 / printed page 140, n. 257, establishes an uncited pre-Gospel role, not an English exemplar. No exact English body is held or published for this terminal source-owned slot. Wednesday's n. 259 referral to nn. 257-258 resolves to this same owner for its Monday option, not to a separately owned Wednesday body. This exact English absence supplies no inferred Bible citation, Latin wording or classification, target-2008 correspondence, quarantine fingerprint, or publication permission."
+      },
+      "prior_unavailable_record_sha256": "a84957600daf62a712f32ca852ec50e38a37ba2ad9aa3d188e7222eb650a9d5b",
+      "route": "project-created-study-English-from-independent-public-domain-Latin-selection",
+      "status": "prepared-for-independent-fidelity-and-whole-expression-review",
+      "historical_source": {
+        "source_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "source_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+        "artifact_page": 1455,
+        "printed_page": "1436",
+        "heading": "Votive Masses / Passion of Our Lord / Lesser Alleluia",
+        "image": ".scratch/modern-partition-lent-holyweek/lasance-ap1455.png",
+        "inspection": "Fresh visual whole-verse inspection 2026-11-12; page rendered at maximum dimension 2400 pixels. Latin and English verse only, omitting the Alleluia frames; second Greater Alleluia verse is not substituted.",
+        "historical_latin_diplomatic": "Ave Rex noster, tu solus nostros es miserátus erróres: Patri obédiens, ductus es ad crucifigéndum, ut agnus mansuétus ad occisiónem.",
+        "historical_latin_diplomatic_sha256": "7a883073ea110b4b1faf27ab619a16269f3587b9e4012f5ac9a08f138c9d56bd",
+        "historical_latin_normalized": "Ave Rex noster, tu solus nostros es miseratus errores: Patri obediens, ductus es ad crucifigendum, ut agnus mansuetus ad occisionem.",
+        "historical_latin_normalized_sha256": "ff520ff0317c1ee4cd3895ea1375b60e95f29b1fae2811b43a9cef4c75c3bc28",
+        "historical_human_english": "Hail Thou, Our King: Thou alone didst pity our errors: obedient to the Father, Thou wast led to be crucified, as a meek lamb to the slaughter,",
+        "historical_human_english_sha256": "3fb1c182b6f9d649d8c2a5695207a65509f78340fe1da6f0ea725ee29eae7ec3",
+        "normalization": "Stress accents removed only in normalized Latin; line breaks and alignment collapsed. Capitalization and punctuation retained in the diplomatic body. No verse word is supplied from a modern text.",
+        "independent_basis": "The complete ordinary numbered-page 1436 passage is independently witnessed in the registered 1945 Lasance volume. Existing Lasance 1937/1945 nonrenewal review governs the historical body; this is outside the separately withheld lettered-page additions. Whole scan access restrictions and digitizer additions are not treated as a license for those additions."
+      },
+      "actual_comparison": {
+        "edition": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+        "artifact_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+        "artifact_page": 194,
+        "printed_page": "140",
+        "number": 257,
+        "image": ".scratch/modern-partition-lent-holyweek/olm-ap194.png",
+        "inspection": "Fresh visual whole-body inspection 2026-11-12; source-local 1981 appointment and words, no 2008 correspondence claimed.",
+        "text": "Ave, Rex noster: tu solus nostros es miseratus errores.",
+        "body_sha256": "58b3298f9d9bbe5a58703060419f6442a4aba91221007375c2af9a9e6f1b3433"
+      },
+      "selection": {
+        "retained_old_word_ranges": [
+          [
+            1,
+            9
+          ]
+        ],
+        "omitted_old_word_ranges": [
+          [
+            10,
+            20
+          ]
+        ],
+        "description": "Retains the first nine words of the complete old 20-word verse, ending errores; omits the following obedience/slaughter clause. No word added or substituted. Modern comma/colon/full stop differ from the printed old punctuation.",
+        "historical_word_count": 20,
+        "selected_word_count": 9
+      },
+      "proposed_study_latin": "Ave, Rex noster: tu solus nostros es miseratus errores.",
+      "proposed_study_latin_sha256": "58b3298f9d9bbe5a58703060419f6442a4aba91221007375c2af9a9e6f1b3433",
+      "proposed_study_english": "Hail, our King: you alone have had mercy on our errors.",
+      "proposed_study_english_sha256": "68ab0b82062252fb3ae5bdd03cc40039126c13bff51f4fde4cf726f02094f977",
+      "proposed_translation": {
+        "lang": "en",
+        "rights": "project-created",
+        "text": "Hail, our King: you alone have had mercy on our errors."
+      },
+      "proposed_recipient_passage_suffix": "holy-monday-ave-rex-study-20261112",
+      "limits": [
+        "The original English is freshly composed from the independently witnessed old Latin selection, not a modernization or abridgment of Lasance English.",
+        "Historical human English is evidence of the longer old verse only. It is not transferred as the exact English of either shorter target.",
+        "No approved 2011 English acquired or cleared; no authenticated 2008 Latin correspondence; no target Latin body publication proposed.",
+        "Whole-expression finite selection assessment and independent translation fidelity review remain pending.",
+        "Holy Wednesday n259 resolves to these existing Monday/Tuesday owners; it does not create a new Wednesday body."
+      ]
+    },
+    {
+      "candidate_id": "lent-holyweek-holy-tuesday-ave-rex-20261112",
+      "identity": [
+        "holy-tuesday",
+        "main",
+        "Gospel Acclamation",
+        "all",
+        1
+      ],
+      "prior_unavailable_record": {
+        "mass": "holy-tuesday",
+        "form_id": "main",
+        "proper": "Gospel Acclamation",
+        "cycle": "all",
+        "occurrence": 1,
+        "lang": "en",
+        "extent": "body",
+        "availability": "unavailable",
+        "reason": {
+          "kind": "no-exemplar"
+        },
+        "note": "The 2026-10-22 held-image check of OLM 1981 artifact page 194 / printed page 140, n. 258, establishes an uncited pre-Gospel role, not an English exemplar. No exact English body is held or published for this terminal source-owned slot. Wednesday's n. 259 referral to nn. 257-258 resolves to this same owner for its Tuesday option, not to a separately owned Wednesday body. This exact English absence supplies no inferred Bible citation, Latin wording or classification, target-2008 correspondence, quarantine fingerprint, or publication permission."
+      },
+      "prior_unavailable_record_sha256": "abe8fd31c7590c21c9cd7d44e6e8add1aa2d245f23e6bc0067c9138ce21b05c6",
+      "route": "project-created-study-English-from-independent-public-domain-Latin-selection",
+      "status": "prepared-for-independent-fidelity-and-whole-expression-review",
+      "historical_source": {
+        "source_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.internet-archive-facsimile-pdf-6cf3c3d0",
+        "source_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+        "artifact_page": 1455,
+        "printed_page": "1436",
+        "heading": "Votive Masses / Passion of Our Lord / Lesser Alleluia",
+        "image": ".scratch/modern-partition-lent-holyweek/lasance-ap1455.png",
+        "inspection": "Fresh visual whole-verse inspection 2026-11-12; page rendered at maximum dimension 2400 pixels. Latin and English verse only, omitting the Alleluia frames; second Greater Alleluia verse is not substituted.",
+        "historical_latin_diplomatic": "Ave Rex noster, tu solus nostros es miserátus erróres: Patri obédiens, ductus es ad crucifigéndum, ut agnus mansuétus ad occisiónem.",
+        "historical_latin_diplomatic_sha256": "7a883073ea110b4b1faf27ab619a16269f3587b9e4012f5ac9a08f138c9d56bd",
+        "historical_latin_normalized": "Ave Rex noster, tu solus nostros es miseratus errores: Patri obediens, ductus es ad crucifigendum, ut agnus mansuetus ad occisionem.",
+        "historical_latin_normalized_sha256": "ff520ff0317c1ee4cd3895ea1375b60e95f29b1fae2811b43a9cef4c75c3bc28",
+        "historical_human_english": "Hail Thou, Our King: Thou alone didst pity our errors: obedient to the Father, Thou wast led to be crucified, as a meek lamb to the slaughter,",
+        "historical_human_english_sha256": "3fb1c182b6f9d649d8c2a5695207a65509f78340fe1da6f0ea725ee29eae7ec3",
+        "normalization": "Stress accents removed only in normalized Latin; line breaks and alignment collapsed. Capitalization and punctuation retained in the diplomatic body. No verse word is supplied from a modern text.",
+        "independent_basis": "The complete ordinary numbered-page 1436 passage is independently witnessed in the registered 1945 Lasance volume. Existing Lasance 1937/1945 nonrenewal review governs the historical body; this is outside the separately withheld lettered-page additions. Whole scan access restrictions and digitizer additions are not treated as a license for those additions."
+      },
+      "actual_comparison": {
+        "edition": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+        "artifact_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+        "artifact_page": 194,
+        "printed_page": "140",
+        "number": 258,
+        "image": ".scratch/modern-partition-lent-holyweek/olm-ap194.png",
+        "inspection": "Fresh visual whole-body inspection 2026-11-12; source-local 1981 appointment and words, no 2008 correspondence claimed.",
+        "text": "Ave, Rex noster, Patri obediens, ductus es ad crucifigendum, ut agnus mansuetus ad occisionem.",
+        "body_sha256": "d4d22df5323c706ee90c425bdf70ea654b2d0c5efff371fcd1a852db858c7bf5"
+      },
+      "selection": {
+        "retained_old_word_ranges": [
+          [
+            1,
+            3
+          ],
+          [
+            10,
+            20
+          ]
+        ],
+        "omitted_old_word_ranges": [
+          [
+            4,
+            9
+          ]
+        ],
+        "description": "Retains Ave Rex noster plus the following Patri obediens through ad occisionem clause in source order; omits the six-word mercy clause. No word added or substituted. Modern punctuation differs.",
+        "historical_word_count": 20,
+        "selected_word_count": 14
+      },
+      "proposed_study_latin": "Ave, Rex noster, Patri obediens, ductus es ad crucifigendum, ut agnus mansuetus ad occisionem.",
+      "proposed_study_latin_sha256": "d4d22df5323c706ee90c425bdf70ea654b2d0c5efff371fcd1a852db858c7bf5",
+      "proposed_study_english": "Hail, our King: obedient to the Father, you were led to be crucified, like a gentle lamb to slaughter.",
+      "proposed_study_english_sha256": "bcd7c05f45263990cc38c6f1679d781db217eb3a5828b3248f8649d2dfea1f75",
+      "proposed_translation": {
+        "lang": "en",
+        "rights": "project-created",
+        "text": "Hail, our King: obedient to the Father, you were led to be crucified, like a gentle lamb to slaughter."
+      },
+      "proposed_recipient_passage_suffix": "holy-tuesday-ave-rex-study-20261112",
+      "limits": [
+        "The original English is freshly composed from the independently witnessed old Latin selection, not a modernization or abridgment of Lasance English.",
+        "Historical human English is evidence of the longer old verse only. It is not transferred as the exact English of either shorter target.",
+        "No approved 2011 English acquired or cleared; no authenticated 2008 Latin correspondence; no target Latin body publication proposed.",
+        "Whole-expression finite selection assessment and independent translation fidelity review remain pending.",
+        "Holy Wednesday n259 resolves to these existing Monday/Tuesday owners; it does not create a new Wednesday body."
+      ]
+    },
+    {
+      "candidate_id": "lent-holyweek-lent5-tuesday-ferial-semen-20261112",
+      "identity": [
+        "lent-5-tuesday",
+        "main",
+        "Verse Before the Gospel",
+        "all",
+        1
+      ],
+      "prior_unavailable_record": {
+        "mass": "lent-5-tuesday",
+        "form_id": "main",
+        "proper": "Verse Before the Gospel",
+        "cycle": "all",
+        "occurrence": 1,
+        "extent": "body",
+        "lang": "en",
+        "availability": "unavailable",
+        "note": "OLM 1981 n.252, AP192/p138: uncited composed ferial Verse Before the Gospel. Its exact Latin body is privately held but not transcribed; exact English is not held. This missing body remains explicitly unavailable on the ferial path, distinct from the optional n.250 verse. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. This unavailable fourth role is part of the native ferial course, not silently replaced by the optional course. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made.",
+        "reason": {
+          "kind": "no-exemplar"
+        }
+      },
+      "prior_unavailable_record_sha256": "8b1dbf6d53189b7dde5ea5b6cf755b572767336badd181b07cd4cb5d42f713be",
+      "route": "unchanged-historical-human-English-of-whole-independent-Latin-antecedent",
+      "status": "prepared-for-independent-review-and-recipient-binding",
+      "historical_latin": {
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-semen",
+        "body": "Semen est * verbum Dei, sator autem Christus: omnis qui invénit eum, manébit in ætérnum.",
+        "body_sha256": "9a8ade73802471a7a675b1b625c0d311fb301fe80821511739e7fed466b34f4a",
+        "source_file": "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/english-completion-20261029-postconciliar-latin1888-semen/semen.tsv",
+        "artifact_page": 393,
+        "printed_page": "339",
+        "image": ".scratch/modern-partition-lent-holyweek/english-completion-20261029-postconciliar-latin1888-page339.jpg",
+        "inspection": "Fresh visual complete antiphon inspection of exact hash-verified recovered registered JPEG."
+      },
+      "historical_english": {
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+        "body": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved.",
+        "body_sha256": "7e025357311fc727eb8f27402ef09586cf13ac70b932b0aa1fcf4e7365544798",
+        "source_file": "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/english-completion-20261029-postconciliar-bute1908-semen/semen.tsv",
+        "artifact_page": 523,
+        "printed_page": "439",
+        "image": ".scratch/modern-partition-lent-holyweek/english-completion-20261029-postconciliar-bute1908-page439.jpg",
+        "inspection": "Fresh visual complete antiphon inspection of exact hash-verified recovered registered JPEG. Bute wording is unchanged, including the free final clause."
+      },
+      "actual_comparison": {
+        "edition": "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+        "artifact_id": "artifact.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.internet-archive-scan-pdf-ed4bc14e",
+        "artifact_page": 192,
+        "printed_page": "138",
+        "number": 252,
+        "image": ".scratch/modern-partition-lent-holyweek/olm-ap192.png",
+        "inspection": "Fresh visual whole-body inspection, 2026-11-12. Native ferial verse, not the optional n250 verse above.",
+        "text": "Semen est verbum Dei, sator autem Christus; omnis qui invenit eum, manebit in aeternum.",
+        "body_sha256": "b4b8cc5177823122346529f2af2de0d5c7e93c90de73e948353426314bdab5a3"
+      },
+      "proposed_entry": {
+        "mass": "lent-5-tuesday",
+        "form_id": "main",
+        "cycle": "all",
+        "occurrence": 1,
+        "proper": "Verse Before the Gospel",
+        "witness": "bute-1908-breviary",
+        "witness_relation": "antecedent",
+        "relation": "antecedent-printing",
+        "artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf",
+        "passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-verify-semen",
+        "ia_leaf": 522,
+        "ia_leaf_range": [
+          522,
+          522
+        ],
+        "printed_page": "439",
+        "publication_artifact_id": "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen",
+        "publication_artifact_sha256": "34d4f7ee1e4bfe5d8190df8ca2fc7954f72970cf9833e23137d0cc56cf92c828",
+        "publication_passage_id": "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-semen-publish-lent5-tuesday-ferial-20261112",
+        "verified_on_page": "2026-11-12",
+        "verified_heading": "SEXAGESIMA / Tuesday / Third Day / VESPERS / Antiphon at the Song of the Blessed Virgin",
+        "verified_url": "https://archive.org/download/romanbreviaryref01cathuoft/romanbreviaryref01cathuoft.pdf",
+        "witness_note": "Complete historical human English of the independently source-established Breviary antiphon, for study. Fresh page inspection on 2026-11-12 establishes every Latin word in Pustet1888 printed339/AP393 and OLM1981 n252 printed138/AP192. Differences are stress accents, the ae ligature, punctuation and the Breviary chant asterisk; no word is added, dropped or changed. Bute1908 printed439/AP523 supplies the complete unchanged historical English, including his free rendering he shall never be moved for manebit in aeternum and the chant asterisk. This is the native ferial occurrence1, distinct from optional n250 occurrence2. No authenticated2008 collation, approved modern English or current target Latin publication is claimed. Prior no-exemplar English refusal is preserved in the preparation packet.",
+        "translations": [
+          {
+            "lang": "en",
+            "source_id": "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908",
+            "rights": "public-domain",
+            "text": "The seed is the word of God, * and the Sower is Christ; if any man find Him, he shall never be moved."
+          }
+        ]
+      },
+      "recipient_binding_options": {
+        "preferred": "Reuse the existing immutable Bute body artifact and source cell with a new recipient-specific publication passage, if the loader supports historical-source scalar selection independent of the existing saint row identity.",
+        "if_validator_requires_target_row": "Create one shared target-specific derivative for all three new recipients (OT11B, OT15A, Lent5Tuesday ferial) from the unchanged registered source body; coordinate with parent and OT lane. Do not create three drifting body artifacts."
+      },
+      "limits": [
+        "Historical human English is not original project study English, approved modern English, or a current Latin body.",
+        "No authenticated2008 whole-body correspondence is established.",
+        "The old note saying no English exemplar was held is now superseded only for this historical-source route; it remains preserved verbatim above."
+      ]
+    }
+  ],
+  "supersedes": {
+    "path": ".scratch/modern-partition-lent-holyweek/candidate-package.json",
+    "sha256": "8afd019ee5d04a5d787f6132ae23a1350dbb85c03b3e9cce3f47cf348401eb3a",
+    "corrections": [
+      "Independent review and reinspection: Lesser Alleluia historical English source terminal comma retained before excluded Alleluia frame, instead of supplied full stop.",
+      "Independent review and reinspection: OLM1981 n252 prints semicolon after Christus, not colon. Pustet1888 source colon unchanged."
+    ],
+    "unchanged": "All proposed English payloads, old Latin selections and prior refusal dictionaries unchanged."
+  }
+}

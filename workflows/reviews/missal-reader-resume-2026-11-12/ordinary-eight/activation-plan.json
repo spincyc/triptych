@@ -1,0 +1,279 @@
+{
+  "schema": "triptych-ordinary-eight-guarded-activation-plan/v1",
+  "status": "prepared-unactivated",
+  "scope": [
+    "praeparatio/confiteor-sacerdotis",
+    "praeparatio/indulgentiam",
+    "oblatio/suscipe-sancte-pater",
+    "oblatio/in-spiritu-humilitatis",
+    "oblatio/ne-perdas-cum-impiis",
+    "canon/supplices",
+    "canon/per-quem",
+    "communio/agnus-dei"
+  ],
+  "source_authority_activated": false,
+  "canonical_mutations": false,
+  "source_operations": [
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/artifact.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/artifact.toml",
+      "sha256": "e4bc7b5486c2be046c9a2d3e0c039884ca51cb74be20c2e93976f693bd047b6b",
+      "byte_size": 2559,
+      "record_type": "artifact",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/text.tsv",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ordinary-eight-exact-latin-20261112/text.tsv",
+      "sha256": "e0235256819d19a8e3948ee31330014016ecd6072d0ec39f101fe310fe013a2a",
+      "byte_size": 2144,
+      "record_type": "artifact-payload",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-agnus-dei.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-agnus-dei.toml",
+      "sha256": "e4dd83c6b8e95fd5282ed1225060932f9b28d578a46f035688cdee7649c291b5",
+      "byte_size": 2518,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-confiteor-sacerdotis.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-confiteor-sacerdotis.toml",
+      "sha256": "615008160011e26aa4fc126a9490f8e449fe91f05b282ae41186405ac1cc9438",
+      "byte_size": 3053,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-images.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-images.toml",
+      "sha256": "55c325d8e7ab6019a289f7396a6367906757447dcd4e292c28e92f5af933acb1",
+      "byte_size": 1470,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-in-spiritu-humilitatis.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-in-spiritu-humilitatis.toml",
+      "sha256": "cbdd8ad736f2415600495b231f1d8ea6f1994c558b6d4f02045e2de2d92f0ee3",
+      "byte_size": 2185,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-indulgentiam.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-indulgentiam.toml",
+      "sha256": "09f223ce0072a1a36c6586d13724a2a90f17ba9c76b0426df7970d0c096c4c7c",
+      "byte_size": 2449,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-ne-perdas-cum-impiis.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-ne-perdas-cum-impiis.toml",
+      "sha256": "d491cded90c57b1ee285fc319d76a3c41231875143fa17d94062eba4bb48326a",
+      "byte_size": 2266,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-per-quem.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-per-quem.toml",
+      "sha256": "4991ba0d81a88b3be608632070c962557214b6857b54aede5ddf1ed8587cc5ca",
+      "byte_size": 2063,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-supplices.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-supplices.toml",
+      "sha256": "fe23c64afdb7507210a7f8f2f35c8a8c2716548f4ebd5e6b8f72ecf686196532",
+      "byte_size": 2698,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    },
+    {
+      "source_file": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-suscipe-sancte-pater.toml",
+      "prepared_file": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/ordinary-eight-exact-latin-20261112-suscipe-sancte-pater.toml",
+      "sha256": "133fdc29a381af75cef1020da3e4b0d121f67991c1141ada6f9f33ef51c9e4d8",
+      "byte_size": 2760,
+      "record_type": "passage",
+      "change": "new-source-file",
+      "before_sha256": null
+    }
+  ],
+  "owner_operation": {
+    "path": "src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+    "before_sha256": "9373c27f1a1c8efecf1c806cb0a9087d912dfb9f419b08a1849cf03f494cb9f5",
+    "standalone_after_sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+    "method": "Apply exact reviewed hunks; combine only the explicitly named Mame artifact-array additions if OSP is selected. Never copy the standalone whole owner over sibling work.",
+    "hunks": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/integration-hunks.json"
+  },
+  "parser_operation": {
+    "path": "tools/mass-ordinary",
+    "before_sha256": "64a40ac97bae51378127556029be33c37d7a34cc05d93f756ed279b48648bb14",
+    "standalone_after_sha256": "783cd75298c2eed14dcfd023e4dbe5a640d9688bb49fab52966dfa14234526ae",
+    "method": "Merge reviewed exact8 and selected OSP parser hunks; preserve both mechanisms. Never replace tools/mass-ordinary with either standalone mirror.",
+    "hunks": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/integration-hunks.json"
+  },
+  "fixture": {
+    "native_fixture": {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/activation/fixtures/structure/ordinary/roman-1962.json",
+      "sha256": "ad1cc1ba71bb2aa2d2b67ca72447aa6362fa17b5eaa9add75c28ac6bf76a5f42",
+      "bytes": 830305
+    },
+    "native_shape": "One mass-ordinary calendar structure document; served as structure/ordinary/roman-1962.json.",
+    "raw_show_fixture": {
+      "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/after-ordinary.json",
+      "sha256": "2d0063d322b2b7563be2e555fa52647c2b5a77dd85fa03c129a98eef98a5b048",
+      "bytes": 830326
+    },
+    "raw_show_shape": "{\"v\":1,\"ordinary\":[calendar structure]}",
+    "generator": {
+      "parser": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/parser/mass-ordinary",
+        "sha256": "783cd75298c2eed14dcfd023e4dbe5a640d9688bb49fab52966dfa14234526ae",
+        "bytes": 211373
+      },
+      "runner": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/parser/runner.py",
+        "sha256": "d14749ac7df0e05b038bd0448c0a3834b7a4e4e382fbe5b1da2cecf5ff4675e0",
+        "bytes": 358
+      },
+      "source_owner": {
+        "path": ".scratch/roman-sources/ordinary-exact-upgrades/v2/prepared/src/sources/inventories/roman-1962-ordo-missae-v1.toml",
+        "sha256": "100ae93ce291df65766d9492ca78751723da2e9495f96710ce3364f21c25e322",
+        "bytes": 469403
+      },
+      "argv": [
+        "python3",
+        ".scratch/roman-sources/ordinary-exact-upgrades/parser/runner.py",
+        "structure",
+        "--calendar",
+        "roman-1962",
+        "--root",
+        ".scratch/roman-sources/ordinary-exact-upgrades/v2/validation-root/src/sources",
+        "--out",
+        ".scratch/roman-sources/ordinary-exact-upgrades/v2/activation/fixtures",
+        "--json"
+      ]
+    },
+    "use": "Exact-eight-only candidate fixture for native reader overlay; regenerate after the final OSP/runtime/source merge. Full fixture remains scratch and is not copied as durable evidence."
+  },
+  "evidence": [
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/source-review.json",
+      "sha256": "4af951b7dccd037ff1b0b7d1125d36745f0ebbb518a65967d2977c662e6a1a81",
+      "bytes": 53337
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/parser-review.json",
+      "sha256": "2f54717923f58934e2d310dfc746a12427f11212e88f6eaf00da8605542fcc08",
+      "bytes": 19769
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/root-source-acceptance.json",
+      "sha256": "7592502d6e7c69d0df71e5c6cc717d7154662a0f54acc8ed08081f7756b74d7c",
+      "bytes": 16434
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/positive-transitions.json",
+      "sha256": "956b9e1f3e32fdddb69a286aab23a3923cb6201616fee549211f4c73a9ae9245",
+      "bytes": 110648
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/metadata-successor.json",
+      "sha256": "2a9fb5fe7dcd1c7a6323865f0c2735018d4947c71f6ea9fb8fa359a61df55962",
+      "bytes": 8693
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/raw-evidence-digests.json",
+      "sha256": "04ed9e78cacc92d5828b7190b066c57ce2dbb0c4f86d94046e865d0ad98b5aa0",
+      "bytes": 5647
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/owner.patch",
+      "sha256": "4d551c76fc6894027d6e73f87b0c1d513037fe5c0b4a718f619171df450965a3",
+      "bytes": 35182
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/parser.patch",
+      "sha256": "d518515b2e8878a448ddd5d53a0b3426a8a93a83a2187d1f1c370dfbefba4ff4",
+      "bytes": 8148
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/integration-hunks.json",
+      "sha256": "62df80375bad0ad8ff554793b1977673c339d0eebb3475c3f5870d5a057160c8",
+      "bytes": 12457
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/selected-latin-fixture.json",
+      "sha256": "57083a0c99333e8e8d86be2db11aea2ce1dbce14eed9a9bf408d880b5722841e",
+      "bytes": 29347
+    },
+    {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/ordinary-eight/source-epoch-transition-candidate.json",
+      "sha256": "b0601db78d3566d82df1a45d7962c155e8daca28e204d14f0447176a6ec07aac",
+      "bytes": 45954
+    }
+  ],
+  "dependencies": [
+    {
+      "owner": "/root/dedication_context",
+      "candidate": {
+        "path": ".scratch/dedication-context/ferial-frame/candidates/20261112T203028Z-osp-frame/manifest.json",
+        "sha256": "62e567b3a4bef71889149fb605a93dfbef2c84257574e613a38d09c31653b362",
+        "bytes": 5860
+      },
+      "need": "Finalize OSP source/helper gates and exact selected parser/owner hunks before producing a combined hash."
+    },
+    {
+      "owner": "/root/reader_audit",
+      "need": "Pin final candidate runtime cohort and generated native Ordinary fixture; run selected Day/Ordinary overlay tests."
+    },
+    {
+      "owner": "/root",
+      "need": "Record formal exact-eight durable adoption and exact source_epoch positive-transition exception before activation."
+    }
+  ],
+  "inherited_trust_boundaries": [
+    {
+      "disposition": "Not introduced by this patch; do not describe the parser as checking new payload digests. Retain full source-library validation and exact v2 new-body/source_epoch checks before adoption/publication.",
+      "finding": "Direct calendar_structure accepts changed new payload bytes even when its registered manifest SHA remains unchanged, because unchanged payload_rows reads the TSV without digest verification. The replacement guard pins the old body, not the new payload bytes.",
+      "id": "payload-integrity-external"
+    },
+    {
+      "disposition": "Not introduced by this patch; independent source review and exact owner transition admission remain necessary. This review verified that the actual eight target IDs/files/hashes exist and match their declarations, without re-reading images.",
+      "finding": "Direct calendar_structure accepts a nonempty but nonexistent collation_finding identifier with collated/word-exact metadata. Unchanged relation_of checks metadata consistency rather than resolving or reading the target passage.",
+      "id": "target-finding-resolution-external"
+    }
+  ],
+  "ordered_gates": [
+    "Rehash raw source/root/parser review receipts and verify every durable projection against its declared transform.",
+    "Require each of the eleven new source destinations absent, or already present with exact identical bytes and explicit Root disposition; verify artifact payload SHA, size and passage source binding.",
+    "Merge parser and owner hunks in isolation with all selected sibling work; record final composite preimages/postimages and patch. Preserve the two source-owned artifact-array additions and all original Cummiskey files.",
+    "Regenerate native Ordinary and raw show fixtures with the exact final merged parser/source; verify all eight approved text/dictionary/turn hashes and all unaffected English/frame/availability values.",
+    "Run existing source-library validation and explicit payload/body/proof-target resolution/hash checks. The inherited payload_rows does not check payload digests, and relation_of does not resolve target finding identifiers; parser success alone is insufficient.",
+    "Run independent Latin replacement refusal checks plus the selected OSP and reader cohort regressions; resolve the separate OSP conclusion-source/helper gate.",
+    "Admit exactly eight declared existing-positive Ordinary transitions into the source_epoch contract with durable Root admission and exact final runtime/source hashes; fail on undeclared drift.",
+    "Only Root activates the accepted composite epoch and refreshes browser products; this packet performs no activation."
+  ],
+  "explicit_exclusions": [
+    "The sixteen remaining held-but-not-exact target bodies, comparison-24.json, remaining-sixteen.json, raw finding OCR and unrelated source searches are not published or admitted by this packet.",
+    "All English selections, existing source-witness bytes, target frames and appointment placeholders remain outside these eight changes.",
+    "Full native/show fixtures stay scratch integration artifacts, not durable held-sixteen research copies."
+  ],
+  "rollback": "If any preimage, source/proof hash, body/turn hash or composite test differs, stop before canonical activation and return the exact mismatch to Root. Do not regenerate acceptance pins to conceal drift."
+}

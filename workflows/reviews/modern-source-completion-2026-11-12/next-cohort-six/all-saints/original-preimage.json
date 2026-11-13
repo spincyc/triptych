@@ -1,0 +1,61 @@
+{
+  "source_path": ".scratch/modern-sources/partitions/nonseasonal.json",
+  "source_sha256": "8b6e444a5ecb39402be63e89e841b54290042cb2ff2fe4c31d32ede141d69906",
+  "target_index": 41,
+  "target_preimage": {
+    "identity": [
+      "all-saints",
+      "main",
+      "Entrance Antiphon",
+      "all",
+      1
+    ],
+    "section": "sanctoral",
+    "english_state": "untranslated",
+    "english_index": 201,
+    "english_record": {
+      "mass": "all-saints",
+      "form_id": "main",
+      "proper": "Entrance Antiphon",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "witness_artifact_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+      "verified_artifact_page": 142,
+      "verified_printed_page": 134,
+      "verified_heading": "ALL SAINTS",
+      "verified_on_page": "2026-10-20",
+      "note": "Exact 2010 ICEL English exemplar held and directly read on artifact page 142, printed page 134. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording.",
+      "reason": {
+        "kind": "rights-withheld",
+        "source_id": "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf",
+        "surfaces": [
+          "site-display",
+          "corpus-data",
+          "public-git",
+          "command-line",
+          "download"
+        ]
+      }
+    },
+    "latin_in_composed_census": true,
+    "proper": {
+      "name": "Entrance Antiphon",
+      "source": "composed",
+      "text_status": {
+        "state": "unavailable",
+        "scope": "proper-body",
+        "reasons": [
+          {
+            "kind": "witness-gap",
+            "source_id": "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008"
+          }
+        ]
+      },
+      "notes": "Structural appointment and uncited presence directly checked in registered ICEL2010 Antiphonary, artifact page 142, printed page 134; foreword artifact 6 / printed iv declares2002/2008 antiphons. Exact 2010 English is held under restricted rights; no wording copied. Exact target 2008 Latin body is not established. Compiler Graduale Romanum/Simplex assignments are excluded."
+    },
+    "lane": "nonseasonal"
+  }
+}

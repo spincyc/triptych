@@ -1,0 +1,244 @@
+{
+  "schema": "triptych-ferial-three-independent-source-metadata-supplement/v1",
+  "date": "2026-11-12",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "independent_of_author": true,
+  "verdict": "PASS combined v1-to-v3 metadata delta and exact source/body binding; no publication adoption",
+  "blockers": [],
+  "prior_full_source_receipt": {
+    "path": ".scratch/roman-sources/ferial-three-source-review/review.json",
+    "sha256": "3cea9775916c63df05cbadad718953897bd71b65ecc57ce79773ea8dec6535b3",
+    "bytes": 41375
+  },
+  "install_plan": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/install-plan.json",
+    "sha256": "38cd3c5a720bbbdf9d875cc90f769104178823b3006a66e19013d0dff753c979",
+    "bytes": 78235
+  },
+  "metadata_delta": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/metadata-delta.json",
+    "sha256": "c342740e96ff3028ecbdb4a5caa0259ebd3936baa3f7fc4faefcf7963e14ea7b",
+    "bytes": 108658
+  },
+  "appointment_body_bindings": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/appointment-body-bindings.json",
+    "sha256": "9932724dd17eb4975aa2fdfd1514e06085102375c8204e5a1e0156727db1aa4b",
+    "bytes": 42389
+  },
+  "author_metadata_review": {
+    "path": ".scratch/roman-sources/ferial-three/metadata-v3/source-review.json",
+    "sha256": "5eb922912180dc535d59b62076f7fad59a8b440ed9e68e59f692e11b9b1c68d1",
+    "bytes": 2596
+  },
+  "body_source_packet_unchanged": {
+    "path": ".scratch/roman-sources/ferial-three/body-source-packet-v2.json",
+    "sha256": "6c45067e4852bff557657bdfd99cd16da3c0776df42ae97e6b00dae1f3676bae",
+    "bytes": 28435
+  },
+  "method": [
+    "Rehashed frozen v1 and v2 input packets and all old/new proposed source files. The existing full source receipt remains byte-exact.",
+    "Parsed old/new source TOML and replayed every declared field edit into the old source records, proposed rows and duplicated appointment binding. Exact structure equality establishes that the inventory exhausts the metadata edits.",
+    "Checked all declared old/new field hashes, whitespace classification, protected source identifiers, source paths and inline hashes; recalculated complete proper, Latin-provenance and English-entry object hashes and all six body hashes.",
+    "Checked metadata path/hash repinning, target-passage duplication, source-file delta inventory, complete duplicated appointment binding, administrative successor references and author review references. New candidate paths point to the frozen v3 proposal.",
+    "Read the three factual corrections against the observations already recorded in the full source review. No images were reopened for this metadata supplement."
+  ],
+  "results": {
+    "independent_binding_checks": 600,
+    "binding_failures": [],
+    "additional_administrative_reference_pins": [
+      {
+        "field": "parent_plan",
+        "path": ".scratch/roman-sources/ferial-three/install-plan.json",
+        "sha256": "1f346195b4177a7c3db55609c23c1244c137e1cc36d42089102b0e80fa939cf2",
+        "bytes": 76763
+      },
+      {
+        "field": "superseded_spacing_plan",
+        "path": ".scratch/roman-sources/ferial-three/metadata-spacing-v2/install-plan.json",
+        "sha256": "7a0329abe6d38a80e62d21ab227536e3b40bf6b4ad6210bceff42c811e7b0e82",
+        "bytes": 78236
+      },
+      {
+        "field": "combined_delta",
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/metadata-delta.json",
+        "sha256": "c342740e96ff3028ecbdb4a5caa0259ebd3936baa3f7fc4faefcf7963e14ea7b",
+        "bytes": 108658
+      },
+      {
+        "field": "body_packet_unchanged",
+        "path": ".scratch/roman-sources/ferial-three/body-source-packet-v2.json",
+        "sha256": "6c45067e4852bff557657bdfd99cd16da3c0776df42ae97e6b00dae1f3676bae",
+        "bytes": 28435
+      },
+      {
+        "field": "parent_source_review",
+        "path": ".scratch/roman-sources/ferial-three/source-review.json",
+        "sha256": "e32f28ad607b1fec752cf70bb82d432a89382dc245ca3f691cd54d4a3bf744e9",
+        "bytes": 8086
+      },
+      {
+        "field": "parent_independent_source_review",
+        "path": ".scratch/roman-sources/ferial-three-source-review/review.json",
+        "sha256": "3cea9775916c63df05cbadad718953897bd71b65ecc57ce79773ea8dec6535b3",
+        "bytes": 41375
+      },
+      {
+        "field": "parent_English_body_review",
+        "path": ".scratch/roman-sources/ferial-three-english-review/review.json",
+        "sha256": "57589732bf904d71335f479ed4bb159fd8072eab1a64d861b41e9bfa7c7c06b8",
+        "bytes": 25410
+      },
+      {
+        "field": "parent_English_binding_review",
+        "path": ".scratch/roman-sources/ferial-three-english-review/final-binding.json",
+        "sha256": "352c66df8b0e3c490ed3cbb10a1cdb0a065f47b2d5042384f94a5c2d2d6a8118",
+        "bytes": 56902
+      },
+      {
+        "field": "previous_spacing_review",
+        "path": ".scratch/roman-sources/ferial-three/metadata-spacing-v2/source-review.json",
+        "sha256": "917bda9e39dc8a1eec61b359a4b90de21d9a848f61ece6d95ae1d32dca9458a7",
+        "bytes": 2336
+      },
+      {
+        "field": "combined_delta",
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/metadata-delta.json",
+        "sha256": "c342740e96ff3028ecbdb4a5caa0259ebd3936baa3f7fc4faefcf7963e14ea7b",
+        "bytes": 108658
+      },
+      {
+        "field": "body_packet_unchanged",
+        "path": ".scratch/roman-sources/ferial-three/body-source-packet-v2.json",
+        "sha256": "6c45067e4852bff557657bdfd99cd16da3c0776df42ae97e6b00dae1f3676bae",
+        "bytes": 28435
+      },
+      {
+        "field": "appointment_body_bindings",
+        "path": ".scratch/roman-sources/ferial-three/metadata-v3/appointment-body-bindings.json",
+        "sha256": "9932724dd17eb4975aa2fdfd1514e06085102375c8204e5a1e0156727db1aa4b",
+        "bytes": 42389
+      }
+    ],
+    "declared_field_edits": 68,
+    "whitespace_only_field_edits": 65,
+    "factual_clarifications": 3,
+    "proposed_source_files": 21,
+    "changed_metadata_manifests": 17,
+    "byte_identical_source_payloads": 4,
+    "body_hashes_unchanged": 6,
+    "source_ids_permissions_controls_unchanged": true,
+    "frozen_v1_and_v2_preserved": true,
+    "source_file_and_row_hash_repinning_exact": true
+  },
+  "factual_clarifications": [
+    {
+      "field": "Lasance Ascendant artifact.transformation",
+      "finding": "The irrelevant Cummiskey apostrophe sentence is removed. The concrete Ascendant English source remains the dated 1946 Lasance carrier; its complete English body and short cue are unchanged.",
+      "prior_observation": "Lasance AP 255 / printed 245; dated title and copyright pages were read in the full source review.",
+      "resolved_prior_caveat_index": 1
+    },
+    {
+      "field": "Lent 1 Tuesday Latin publication_evidence",
+      "finding": "The note now specifies the actual Ascendant expansion Dñum. to Dominum. The Mame source image supports that declared transformation.",
+      "prior_observation": "Mame AP 200 / printed 86, complete Ascendant with Per Dñum.",
+      "resolved_prior_caveat_index": 2
+    },
+    {
+      "field": "Lent 4 Thursday Latin publication_evidence",
+      "finding": "The note now specifies that Populi makes no contraction expansion. Its historical Per Dominum. is already written in full.",
+      "prior_observation": "Mame AP 258 / printed 144, complete Populi with Per Dominum.",
+      "resolved_prior_caveat_index": 2
+    }
+  ],
+  "exact_proposed_row_hash_deltas": [
+    {
+      "identity": [
+        "lent-1-tuesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "complete_new_proper_sha256": {
+        "old": "2ec6002632cef0e46b5d356b025b72914cc534413f35720393ce0fd0bafecc31",
+        "new": "59993fc7590b696846d1b30ad20af45bff2f793b8caab3b7cfc33d19601a10e7"
+      },
+      "complete_Latin_row_sha256": {
+        "old": "785244d48f09da0b7927a16acfcb66cbaceede2f11b7fb56cd2ca4b7f7ead71c",
+        "new": "e40cb1478ed2e8dc5eda50e54cd19232d692adc9bc058db924475ebb82f6f17d"
+      },
+      "complete_English_entry_sha256": {
+        "old": "66912f6f4e99ef470b61e72ebd6e52cebb9c335d02ebc623744b7a040631d6a0",
+        "new": "1dc16ed15a6954fdf5136933996a37b311b6db0158b77446ae054acb924b1fcd"
+      },
+      "Latin_sha256_unchanged": "125407d5e3f86a40f183bfd44aab5d4dfca963c237011d1b63950df108a1452c",
+      "English_sha256_unchanged": "a2111e206cf20169d881ad31c3ac89289c026b05b9426e2cc3862abc2a506269"
+    },
+    {
+      "identity": [
+        "lent-4-thursday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "complete_new_proper_sha256": {
+        "old": "1c200265ed83130bee3da4d460496814d64fbee3b48578758867d6fa0b3aacee",
+        "new": "286732f81128f846a5cead2eb4878ac66c73383ecc3fbfad98a2ab2100ad55db"
+      },
+      "complete_Latin_row_sha256": {
+        "old": "60a9fdf040c5c672a3acec14796b5ffd80f4dd73fbdfaee4ba7f014151b267e3",
+        "new": "289d848d8075ddac490f96e5189060345b831a21a6f30d28b2eab18383369531"
+      },
+      "complete_English_entry_sha256": {
+        "old": "62c485af401bde8d011cc04f046262905d6cd62cede994bbd4fee8d34246fd10",
+        "new": "5ceaeff54634fb28ea20bc7f831f20a3a74e959553870505a3c031da7ee3264c"
+      },
+      "Latin_sha256_unchanged": "686b694d151ec9c4aafc794efbc20c73cbf200f51c01975dd4a9bcd690a88d53",
+      "English_sha256_unchanged": "e390892db6cfeb7824e37e1994177f0e5696de80df8d1dd6a0d0ad4428a45e8e"
+    },
+    {
+      "identity": [
+        "passion-wednesday",
+        "main",
+        "Oratio super populum",
+        "all",
+        1
+      ],
+      "complete_new_proper_sha256": {
+        "old": "d1652d3e2771939557545ac628e1d9cbe25ed307deb9d06870289a1a91e20e4c",
+        "new": "fcdf6015a27d3d6d95afb4245a24397a289a523351f58a7b04b080589673d9f3"
+      },
+      "complete_Latin_row_sha256": {
+        "old": "3258c563bcfd4901f611ef9ba845b9193a213e9057fe9ab807c18ce7dfaf4ce0",
+        "new": "989a985a264a533db4e63f262e077f5669f206e5c29ec021ed3e61573125abcc"
+      },
+      "complete_English_entry_sha256": {
+        "old": "67454c43ccb16ea7008297037a8e430e70503dbe54e20445f45d324a6da4f306",
+        "new": "cb09e86d681e28f90db02cf2b189c5341c1c73ca3de9ba8f02efc95ecf9f310d"
+      },
+      "Latin_sha256_unchanged": "75709afda7f83c9d3c195e8482a9353e5076218481ecc80fe228a5e2b5a97283",
+      "English_sha256_unchanged": "64ca276562f1443f8f36e86f3f0d871fa986ebe643cabbbbce8f39b83e36ce4f"
+    }
+  ],
+  "remaining_nonblocking_caveats": [
+    "Two existing tracked historical PDF excerpts are now externally delivered. Their delivery metadata exactly matches the preserved manifest hashes/byte counts. This review did not reopen those exact excerpt binaries; it read the selected Mame unit directly from the rehashed complete PDF. The inherited Pustet conclusion material is not used to invent a longer ending here."
+  ],
+  "limits": [
+    "This supplement binds only the exact frozen v3 metadata successor to the unchanged bodies and source facts in the pinned full review. It neither replaces nor edits that receipt.",
+    "No new witness, image, source unit, source-body comparison, full source-graph validation, canonical preimage check or current publication-guard run was performed. Earlier full-review findings retain their stated limits; integration must recheck live preimages.",
+    "Historical English bytes and metadata joins were checked for equality. English fidelity remains the separate English reviewer's responsibility.",
+    "The clarified publication-evidence sentences identify actual transformations under the already reviewed route; this supplement supplies no fresh legal research, rights grant, blanket public-domain finding or Root adoption.",
+    "No canonical files, proposed source files, authority/controller records, v1/v2 packets or earlier receipts were changed. Writes were confined to this reviewer scratch directory."
+  ],
+  "binding_audit": {
+    "path": ".scratch/roman-sources/ferial-three-source-review/metadata-delta-audit.json",
+    "sha256": "ed469618d78c8ce67a8774ea17f29230b43d330b4ed16ded7c529e2636556ece",
+    "bytes": 272031
+  },
+  "replay_script": {
+    "path": ".scratch/roman-sources/ferial-three-source-review/audit_metadata_delta.py",
+    "sha256": "d3063785d180b4ff1a60b6cb4a691b1e2d4b5f475875933c3adccea54cc9e435",
+    "bytes": 7535
+  }
+}

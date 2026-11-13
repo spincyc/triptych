@@ -1165,6 +1165,27 @@
       ? row.label : 'This text is not shown here';
   }
 
+  function hasNoOrdinaryWords(element, file, lang) {
+    // Only the explicit structural absence and its matching coverage may
+    // silence a warning. Missing or contradictory metadata remains visible.
+    const languages = Array.isArray(file.languages) ? file.languages.filter((one) => one && one.lang === lang) : [];
+    if (languages.length !== 1 || !element.absent ||
+        element.absent[languages[0].absent] !== 'not-a-text' ||
+        (element.translations != null && !Array.isArray(element.translations)) ||
+        (element.translations || []).some((one) => one && one.lang === lang)) return false;
+    const absences = Array.isArray(file.absences) ? file.absences.filter((one) => one && one.key === 'not-a-text') : [];
+    if (absences.length !== 1 || absences[0].kind !== 'not-applicable' || absences[0].state !== 'unavailable') return false;
+    if (file.language_absences != null) {
+      const scoped = Array.isArray(file.language_absences) ? file.language_absences.filter((one) =>
+        one && one.lang === lang && one.key === 'not-a-text') : [];
+      if (scoped.length !== 1 || scoped[0].kind !== 'not-applicable' || scoped[0].state !== 'unavailable') return false;
+    }
+    const coverage = element.coverage;
+    const rows = coverage && coverage.schema === 'triptych-missal-unit-coverage/v1' &&
+      Array.isArray(coverage.languages) ? coverage.languages.filter((one) => one && one.lang === lang) : [];
+    return rows.length === 1 && rows[0].availability === 'inapplicable';
+  }
+
   /**
    * The heading an element gets, or none.
    *
@@ -1230,8 +1251,14 @@
     const section = T.el('section', 'proper ordinary-element is-' + element.kind);
     const heading = elementHeading(element);
     if (heading) section.appendChild(heading);
+    if (hasNoOrdinaryWords(element, file, 'la') && element.latin_incipit && element.latin_incipit !== element.name) {
+      const incipit = T.el('p', 'proper-incipit', element.latin_incipit);
+      incipit.lang = 'la';
+      section.appendChild(incipit);
+    }
     const pair = T.el('div', 'text-pair');
     for (const lang of ['la', language.lang]) {
+      if (hasNoOrdinaryWords(element, file, lang)) continue;
       const selected = window.LiturgyReaderStateAdapters.selectOrdinaryTranslation(element, file, lang, null, context);
       const raw = selected.availability === 'held' && (element.translations || []).find(function (row) {
         return row.lang === lang && (row.source_id || row.source || null) === selected.sourceId && row.text === selected.text;
@@ -1260,7 +1287,8 @@
     // where the reader is looking when they want to know.
     const explicit = options || {};
     const requested = chosenLanguage(file);
-    if (!options && state.textDisplay === 'latin-and-selected' && requested && requested.lang !== 'la') {
+    if (!options && state.textDisplay === 'latin-and-selected' && requested && requested.lang !== 'la' &&
+        !['la', requested.lang].every((lang) => hasNoOrdinaryWords(element, file, lang))) {
       return renderPairedElement(element, file, requested, context);
     }
     const section = T.el('section', (options ? 'text-side-body is-' : 'proper ordinary-element is-') + element.kind);
@@ -1343,7 +1371,9 @@
     const choice = selected && selected.availability === 'choice-required';
     if (choice) section.appendChild(T.el('p', 'composed-note unit-absence',
       'Several ' + T.languageName(language.lang) + ' Ordinary witnesses are held; no witness was selected.'));
-    if ((options || guarded) && !held && !choice) {
+    if ((options || guarded) && !held && !choice &&
+        !(selected && selected.absenceKey === 'not-a-text' && !selected.applicability &&
+          hasNoOrdinaryWords(element, file, language.lang))) {
       const applicability = selected.applicability;
       const reason = applicability ? (applicability.state === 'unresolved'
         ? 'Applicability is unresolved: no appointed formulary context is established for this held source text.'
@@ -1356,6 +1386,7 @@
     const anywhere = translations.length > 0;
     for (const one of languagesOf(file)) {
       if (options || (guarded && one.lang === language.lang)) continue;
+      if (hasNoOrdinaryWords(element, file, one.lang)) continue;
       if (translations.some((row) => row.lang === one.lang)) continue;
       if (anywhere && (!language || one.lang !== language.lang)) continue;
       section.appendChild(T.notice(

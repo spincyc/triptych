@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.pentecost-day-offerings-old-latin-20261112-latin"
+edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_basis = "The underlying Milan1712 printing is public domain in the United States by its publication date. Existing edition evidence and the repository Ambrosian/Mozarabic rights inventory establish that basis. Faithful mechanical reproduction of these historical pages creates no new exclusive right. This derivative excludes the modern library card and logos in the complete container. This faithful transcription claims no new exclusive rights in the historical words."
+rights_jurisdiction = "United States"
+provenance = "Fresh source-image transcription2026-11-12 of In die sancto Pentecostes, Oratio super oblatam, printed202–203 / parent AP240–241. Whole source body, separately selected petition and actual printed source cue are retained as three source-apparatus rows."
+retrieved = "2026-11-12"
+sha256 = "ebb735a2f600713221e2ae1c228706dd44c78797665a408c0e60ca7e8eaa078d"
+byte_size = 698
+path = "src/sources/works/archdiocese-of-milan/missale-ambrosianum/editions/milan-de-sirturis-1712/artifacts/pentecost-day-offerings-old-latin-20261112-latin/text.tsv"
+derived_from = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+transformation = "Join physical lines and split words; normalize long-s to s and printed æ/Æ to ae/Ae, including Praesta and quaesumus. Preserve historical i/j and u/v and source &, capitals and words; regularize punctuation/spacing locally. The petition ends at veritatem. The source cue starts Per eundem and remains unexpanded."
+indexable = true
+encoding = "utf-8"
+notes = "The source cue is preserved without liturgical completion. It does not supply a modern conclusion; independently old complete short formula and recipient rule are separately assessed. The second row is labelled petition-only source apparatus, not a complete prayer. The checked text is explicitly derived from original whole-source AP240–241. Existing whole PDF SHA180769e3 is held and rehashed; no new PDF derivative delivery is required."
