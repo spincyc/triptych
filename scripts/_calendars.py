@@ -1094,7 +1094,83 @@ def load_document(
     if not effective or not isinstance(base_name, str) or not base_name:
         return document
     base = load_document(root, base_name, effective=True, _chain=(*_chain, calendar))
-    return _apply_departures(document, base, base_name)
+    return _withhold_inherited_frames(_apply_departures(document, base, base_name))
+
+
+# A recension inherits a formulary's words through `text_from`, not a seat its
+# BASE Ordinary declares for them (2026-11-13). The roman-1962 Ordinary seats the
+# Lenten prayer over the people through its finite `proper_rites` declaration
+# (RGMR 506), so those 1962 formularies no longer withhold their frame. A
+# recension whose own Ordinary leaves such a Proper unplaced names each exact
+# inherited coordinate whose generic frame therefore stays withheld:
+#
+#     withheld_frames:
+#       basis: >- why this recension's Ordinary has no seat for these rows
+#       forms:
+#       - {mass: ash-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+#
+# Only an inherited form that holds the named occurrence and has no frame of its
+# own may be named; a stated departure records its frame on its own row.
+WITHHELD_FRAMES = "withheld_frames"
+
+
+def _withhold_inherited_frames(document: dict) -> dict:
+    declared = document.get(WITHHELD_FRAMES)
+    if declared is None:
+        return document
+    if not isinstance(declared, dict) or set(declared) != {"basis", "forms"}:
+        raise ValueError(f"{WITHHELD_FRAMES} requires exactly basis and forms")
+    basis = declared["basis"]
+    rows = declared["forms"]
+    if not isinstance(basis, str) or not basis.strip():
+        raise ValueError(f"{WITHHELD_FRAMES}.basis must be a nonempty string")
+    if not isinstance(rows, list) or not rows:
+        raise ValueError(f"{WITHHELD_FRAMES}.forms must be a nonempty list")
+    wanted: dict[tuple[str, str], dict] = {}
+    for row in rows:
+        coordinate = validate_appointment_coordinate(row)
+        target = (coordinate["mass"], coordinate["form_id"])
+        if target in wanted:
+            raise ValueError(f"{WITHHELD_FRAMES} names {target[0]}/{target[1]} twice")
+        wanted[target] = coordinate
+    frame = {"applicability": "unavailable", "basis": basis}
+    seen: set[tuple[str, str]] = set()
+    sections = {}
+    for name, body in (document.get("sections") or {}).items():
+        masses = []
+        for mass in (body.get("masses") or []) if isinstance(body, dict) else []:
+            named = [target for target in wanted if target[0] == mass.get("key")]
+            if not named:
+                masses.append(mass)
+                continue
+            stamp = mass.get(RECENSION)
+            if not isinstance(stamp, dict) or stamp.get("stated") is not False:
+                raise ValueError(f"{WITHHELD_FRAMES}.{mass.get('key')}: only an inherited mass "
+                                 "may be named; a stated departure records its own frame")
+            mass = dict(mass)
+            forms = mass.get("forms") if isinstance(mass.get("forms"), list) else []
+            if forms:
+                mass["forms"] = forms = [dict(form) if isinstance(form, dict) else form for form in forms]
+            for target in named:
+                coordinate = wanted[target]
+                holder = mass if target[1] == "main" and not forms else next(
+                    (form for form in forms if isinstance(form, dict) and form.get("id") == target[1]), None)
+                held = sum(1 for proper in (holder or {}).get("propers") or []
+                           if isinstance(proper, dict) and proper.get("name") == coordinate["proper"])
+                if holder is None or held < coordinate["occurrence"]:
+                    raise ValueError(f"{WITHHELD_FRAMES}.{target[0]}/{target[1]} does not hold "
+                                     f"{coordinate['proper']!r} occurrence {coordinate['occurrence']}")
+                if "ordinary_frame" in holder or "ordinary_frame" in mass:
+                    raise ValueError(f"{WITHHELD_FRAMES}.{target[0]}/{target[1]} already declares a frame")
+                holder["ordinary_frame"] = dict(frame)
+                seen.add(target)
+            masses.append(mass)
+        sections[name] = dict(body, masses=masses) if isinstance(body, dict) else body
+    unknown = sorted(f"{mass}/{form}" for mass, form in set(wanted) - seen)
+    if unknown:
+        raise ValueError(f"{WITHHELD_FRAMES} names forms the recension does not inherit: "
+                         + ", ".join(unknown))
+    return dict(document, sections=sections)
 
 
 def _also(mass: dict) -> list[dict]:

@@ -842,6 +842,50 @@ attested_appointments:
     preface: {option: beata-maria-virgine, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1022, printed [56]; raw text page line 41; expected-target row roman-pre-1955:body:marian-saturday-after-pentecost:preface-referral:1"}
   commune-summorum-pontificum:
     preface: {option: apostolis, locus: "Bonn witness (registered 2004 reimpressio of the 28th edition iuxta typicam Vaticanam 1920), artifact p. 1024, printed [58]; raw text page line 56; expected-target row roman-pre-1955:body:common-popes:preface-referral:1"}
+# The Ordinary frame this recension withholds from inherited Lenten ferias
+# (2026-11-13). scripts/_calendars.py owns the mechanism (WITHHELD_FRAMES).
+withheld_frames:
+  basis: >-
+    The roman-1962 Ordinary seats this inherited prayer over the people through
+    its finite proper rite (RGMR 506; Ritus servandus XI.2-3), a 1962 rubrical
+    seat that inheritance of the formulary's words does not carry. This
+    recension's own Ordinary inventory leaves the oration super populum of the
+    Lenten ferias unplaced, so the generic frame is withheld and the Proper rows
+    keep the Missal's order.
+  forms:
+  - {mass: ash-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: thursday-after-ash-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: friday-after-ash-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: saturday-after-ash-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-1-monday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-1-thursday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-1-ember-friday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-2-monday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-2-tuesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-2-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-2-thursday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-2-friday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-2-saturday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-3-monday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-3-tuesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-3-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-3-thursday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-3-friday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-3-saturday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-4-monday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-4-tuesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-4-friday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-4-saturday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: passion-monday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: passion-tuesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: passion-thursday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: passion-friday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: passion-saturday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: holy-monday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: holy-tuesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-1-tuesday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: lent-4-thursday, form_id: main, proper: Oratio super populum, occurrence: 1}
+  - {mass: passion-wednesday, form_id: main, proper: Oratio super populum, occurrence: 1}
 sections:
   seasonal:
     kind: seasonal
