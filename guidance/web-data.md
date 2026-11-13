@@ -160,7 +160,8 @@ union of the family keys as the products' canonical site sources.
 
 `tools/browser-products audit` is the executable proof that the keys are
 complete. It runs each producer cold with an audit hook installed through a
-temporary `sitecustomize`, so every Python child is observed as well, records
+temporary `sitecustomize`, so every Python child is observed as well (a
+forked child, such as each web-edition conversion, inherits the hook), records
 each repository file opened or probed and each directory listed, and fails if
 a family touches a path outside its key or reads ignored state such as
 `build/` or another `.scratch/` tree. A non-Python child is reported and the
