@@ -209,6 +209,41 @@ FALSE_ICEL_ACCLAMATION_SHA256 = frozenset(
 POSTCONC_QUARANTINE_SHA256 = FALSE_ICEL_ACCLAMATION_SHA256 | {
     PALM_SIMPLE_NORMALIZED_SHA256
 }
+
+
+def _admitted_latin_releases() -> frozenset[str]:
+    """Quarantined words a public-domain Latin witness admits for that target.
+
+    The liturgies.net body for Easter III's Year C acclamation was the Latin
+    verse itself, labelled as ICEL English. The Latin provenance sidecar later
+    admitted those exact words for the same target from Lasance 1945, word-exact
+    to OLM 1981 n. 48C, as the Latin body. Only such an exact same-target,
+    public-domain, CLI- and download-permitted row releases a digest, and the
+    release is pinned below so that it cannot grow without review.
+    """
+    rows = tomllib.loads(
+        (ROOT / "src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml")
+        .read_text(encoding="utf-8")
+    )["entries"]
+    released = set()
+    for target, _, _, digest in FALSE_ICEL_ACCLAMATION_CANDIDATES:
+        for row in rows:
+            if (row.get("mass") == target["mass"] and row.get("proper") == target["proper"]
+                    and row.get("cycle") == target["cycle"]
+                    and row.get("text_sha256") == digest
+                    and row.get("publication_status") == "permitted"
+                    and row.get("publication_basis") == "public-domain"
+                    and {"cli", "download"} <= set(row.get("surfaces") or ())):
+                released.add(digest)
+    return frozenset(released)
+
+
+ADMITTED_LATIN_RELEASES = _admitted_latin_releases()
+if ADMITTED_LATIN_RELEASES != {
+    "3038efc01f0f7b132cc7d03b53fff17d7d2e7b3a0950dc8e7243295de4b87e12",
+}:
+    raise AssertionError("reviewed Latin releases of quarantined words changed")
+POSTCONC_QUARANTINE_PUBLIC_SHA256 = POSTCONC_QUARANTINE_SHA256 - ADMITTED_LATIN_RELEASES
 POSTCONC_QUARANTINE_BASELINE_ROWS = 172
 FDLC_TARGET_FIELDS = (
     "mass",
@@ -886,6 +921,15 @@ def rubric_latin_findings(document: object, calendar: str, label: str) -> list[s
     return findings
 
 
+RUBRIC_REPRESENTATIVE_ADDRESS = re.compile(
+    r"\$\.orations\.execution\.multiple_lessons\.commemorated_representatives"
+    r"\[\d+\]\.slots\[\d+\]\.(?:representative|equivalent)"
+)
+RUBRIC_REPRESENTATIVE_SOURCE_PREFIX = (
+    "passage.triptych.roman-1962-latin-proper-editorial-projection."
+)
+
+
 def public_rubric_findings(
     document: object,
     calendar: str | None,
@@ -904,6 +948,13 @@ def public_rubric_findings(
         for key, child in row.items():
             normalized = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "_", str(key))
             normalized = normalized.casefold().replace("-", "_")
+            if (key == "source_id" and RUBRIC_REPRESENTATIVE_ADDRESS.fullmatch(address)
+                    and isinstance(child, str)
+                    and child.startswith(RUBRIC_REPRESENTATIVE_SOURCE_PREFIX)):
+                # The Ember Saturday representatives bind each slot to the
+                # project's own editorial-projection passage, the identity the
+                # public Proper structure already carries for that body.
+                continue
             if normalized in RUBRICS_PRIVATE_PUBLIC_FIELDS:
                 findings.append(
                     f"{label} {address}.{key}: protected rubric provenance field"
@@ -3040,7 +3091,7 @@ class PublicDataBoundary(unittest.TestCase):
                 paths,
                 protected_digests([*protected, *ellc]),
                 identities,
-                text_fingerprints=POSTCONC_QUARANTINE_SHA256,
+                text_fingerprints=POSTCONC_QUARANTINE_PUBLIC_SHA256,
                 pdftotext=pdftotext,
             ),
             "a protected artifact reached a download",
@@ -3098,7 +3149,7 @@ class CliBoundary(unittest.TestCase):
                         set(),
                         f"mass-propers {mass} JSON",
                         path=Path("mass-propers.json"),
-                        text_fingerprints=POSTCONC_QUARANTINE_SHA256,
+                        text_fingerprints=POSTCONC_QUARANTINE_PUBLIC_SHA256,
                         exact_text_fingerprints=postconciliar_quarantine_hashes(),
                     ),
                     f"mass-propers {mass} returned a quarantined body",
