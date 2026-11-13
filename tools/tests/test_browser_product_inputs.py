@@ -157,6 +157,24 @@ class RepositoryClosureTests(unittest.TestCase):
                 self.assertTrue(set(inputs.HARNESS) <= code)
                 self.assertTrue(self.harness <= code)
 
+    def test_reader_metadata_cannot_create_a_publication_input_cycle(self):
+        # Broad source scopes must remain sensitive to authored bodies without
+        # binding lookup output back through the release descriptor into itself.
+        SCRATCH.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as directory:
+            root = Path(directory)
+            _write(root, "src/sources/body.tsv", "original body\n")
+            _write(root, "src/index/corpus/index.json", '{"binding":"first"}\n')
+            recipe = copy.deepcopy(next(row for row in self.recipes if row["id"] == "documents"))
+            recipe.update(input_trees=["src"], input_files=[])
+            with patch.object(products, "family_code", return_value={"documents": set()}):
+                original = products._identity_batch(root, [recipe])["documents"]
+                _write(root, "src/index/corpus/index.json", '{"binding":"second"}\n')
+                _write(root, "src/index/documents/readers.json", '{}\n')
+                self.assertEqual(original, products._identity_batch(root, [recipe])["documents"])
+                _write(root, "src/sources/body.tsv", "changed body\n")
+                self.assertNotEqual(original, products._identity_batch(root, [recipe])["documents"])
+
     def test_no_family_takes_tests_guidance_or_project_records_wholesale(self):
         # A single file the audit shows a producer reading may be declared; a
         # whole guidance, review or code tree, or a project record, may not.

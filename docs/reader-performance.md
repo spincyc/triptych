@@ -149,12 +149,34 @@ filter or changed sort must cover the complete discovery catalogue.
 
 The earlier observations were about 42 seconds for a warm Day open and
 15 minutes 38 seconds for a cache-assisted rebuild of five of thirteen
-browser-product families. The latter was not a fully cold site build. Those
-are baseline observations, not timings of indexed reading. New startup,
-partial-clone and complete-build timings require their own recorded runs.
+browser-product families. The latter was not a fully cold site build.
 
-The Sources discovery split reduced the observed initial JSON from about
-11.2 MB to a 194 KB root plus a 68 KB first shard of 128 works, about 97.7%
-less before opening edition details. These are uncompressed payload sizes,
-not measured network latency or the size of a complete search. Whole-catalogue
-search still reads all discovery shards.
+The November 2026 implementation measurements include:
+
+| Operation | Before | Indexed or selective path |
+| --- | ---: | ---: |
+| Sources initial discovery JSON | 11.23 MB | 262.5 KB |
+| Day, 15 January, initial JSON | 23.30 MB | 1.50 MB |
+| Liturgy Compare initial JSON | 30.69 MB | 2.61 MB |
+| Postconciliar Browse initial JSON | 8.76 MB | 1.17 MB |
+| History catalogue derivation | 19.83 s | 0.54 s |
+| One article conversion | 2.05 s | 1.15 s |
+
+Transfer figures are uncompressed payload sizes, not network latency. Sources
+initial discovery is a 194 KB root plus one 68 KB shard of 128 works; it renders
+40 works per page. Complete search, changed filtering/sorting and deep-ID
+navigation still load all discovery shards. History's catalogue remains
+11.58 MB: its generation is faster, but this change does not split its web
+transfer. Selected History texts and comparisons avoid the complete producer.
+
+The liturgy comparisons used the actual new producer output and the previous
+complete output through native browser readers. All 1,599 selected Mass
+payloads matched the complete Mass objects, and the reader tests retained
+the same text, choices, qualifications and existing invalid-state refusals.
+Complete calendars remain generated for independent publication checks and
+legacy consumers; the interactive readers fetch the thin discovery and selected
+Mass payloads. Those generated products remain outside Git.
+
+The timings above are individual local observations, not throughput guarantees.
+Index authoring and independent complete publication checks still perform full
+corpus work. They are not a first-reader bootstrap requirement.
