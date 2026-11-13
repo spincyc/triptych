@@ -8,10 +8,10 @@ browser products. These are separate operations with different costs.
 ## First checkout
 
 Use a partial clone to defer historical file contents while retaining the
-complete commit graph:
+selected branch's complete history:
 
 ```sh
-git clone --filter=blob:none https://github.com/spincyc/triptych.git
+git clone --single-branch --filter=blob:none https://github.com/spincyc/triptych.git
 cd triptych
 ```
 
@@ -198,10 +198,15 @@ remained absent. No browser-data family was prepared. The original working
 checkout measured 7.11/2.58 seconds for the same cold/warm Day snapshots while
 other validation work was running.
 
+The final Genesis 1 Catena snapshot settled in 3.97 seconds cold and 2.42 seconds
+warm, including all 50 chapter-count indicators. It fetched one selected
+chapter and one count record. An actual Origen publication reader, opened from
+its catalogue entry, converted and displayed its body in 4.78 seconds.
+
 The first complete metadata derivation took 9 minutes 38 seconds; an unchanged
 `refresh --readers` took 7.71 seconds and reused all 80,287 inputs without
 rehashing or reparsing them. This is maintainer work: the resulting metadata
 ships in Git, so a first-time reader does not repeat it. The measured metadata
-occupied about 54.4 MB as files and 16.4 MB as compressed Git blobs, including
+occupied about 54.6 MB as files and 16.4 MB as compressed Git blobs, including
 the generic integrity/address layer and all five discovery surfaces. This
 adds lookup metadata without duplicating reading bodies or rewriting history.

@@ -62,6 +62,15 @@ def _lectern_tool():
     return tool
 
 
+async def mounted_surface(app, pilot):
+    """Startup selects its first surface after the loading frame is painted."""
+    for _ in range(200):
+        if (owner := app.current()) is not None:
+            return owner
+        await pilot.pause(0.05)
+    raise AssertionError("Timed out waiting for the initial surface to mount")
+
+
 class SurfaceMetadataTests(unittest.TestCase):
     def test_the_parser_uses_the_shared_module_names(self) -> None:
         from lectern import SURFACES
@@ -603,7 +612,7 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
             app = TriptychApp(start="sources")
             async with app.run_test(size=(140, 42)) as pilot:
                 try:
-                    owner = app.current()
+                    owner = await mounted_surface(app, pilot)
                     owner.opening = opening
                     owner.open_at(*held, 0)
                     await self.wait_for(pilot, ready.is_set, "real passage delivery barrier")
@@ -630,7 +639,7 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
         with patch.object(Law, "start", lambda self: None):
             app = TriptychApp(start="law")
             async with app.run_test(size=(140, 42)) as pilot:
-                owner = app.current()
+                owner = await mounted_surface(app, pilot)
                 owner.show_act(gratian, False)
                 owner.show_act(rex, False)
                 owner.action_back()
@@ -662,7 +671,7 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
         with patch.object(History, "start", lambda self: None), patch.object(History, "show_record", shown):
             app = TriptychApp(start="history")
             async with app.run_test(size=(140, 42)) as pilot:
-                owner = app.current()
+                owner = await mounted_surface(app, pilot)
                 owner.view = "catalogue"
                 owner.show_views()
                 owner.records = ids
@@ -702,7 +711,7 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
             app = TriptychApp(start="texts")
             async with app.run_test(size=(140, 42)) as pilot:
                 try:
-                    owner = app.current()
+                    owner = await mounted_surface(app, pilot)
                     owner.opening = opening
                     owner.cursor = (at, 0)
                     owner.load_record()
@@ -782,7 +791,7 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
         with patch.object(Propers, "start", lambda self: None):
             app = TriptychApp(start="propers")
             async with app.run_test(size=(140, 42)) as pilot:
-                owner = app.current()
+                owner = await mounted_surface(app, pilot)
                 owner.opened_with(opening)
                 await self.idle(app, pilot)
                 owner.read("roman-1962", row["key"], None)
@@ -808,7 +817,7 @@ class ReaderInteractionTests(unittest.IsolatedAsyncioTestCase):
             with self.subTest(ref=ref), patch.object(Catena, "start", lambda self: None):
                 app = TriptychApp(start="catena", intent={"ref": ref})
                 async with app.run_test(size=(140, 42)) as pilot:
-                    owner = app.current()
+                    owner = await mounted_surface(app, pilot)
                     self.assertIsNone(owner.current)
                     with patch.object(app, "notify") as notify, patch.object(owner, "load") as load:
                         owner.opened_with(opening)
@@ -885,7 +894,44 @@ class ResidualTextTests(unittest.IsolatedAsyncioTestCase):
     idle = ReaderInteractionTests.idle
     BAD_LEAF = "biographies/NO-SUCH-LECTERN-REVIEW-27d6"
 
-    async def test_initial_bad_leaf_refusal_rejects_the_key_selected_late_real_record(self) -> None:
+    async def test_initial_bad_leaf_blocks_keys_until_the_refusal_is_displayed(self) -> None:
+        from textual.widgets import Static
+        from lectern.app import TriptychApp
+        from lectern.surfaces.texts import Texts
+
+        ready, release = threading.Event(), threading.Event()
+        deliver = Texts.deliver
+
+        def gated(owner, callback, *args, **kwargs):
+            if callback.__name__ == "located" and args[0].get("problem"):
+                ready.set()
+                if not release.wait(15):
+                    raise AssertionError("Initial lookup delivery barrier was not released")
+            return deliver(owner, callback, *args, **kwargs)
+
+        with patch.object(Texts, "deliver", gated):
+            app = TriptychApp(start="texts", intent={"leaf": self.BAD_LEAF, "provider": "gpt"})
+            async with app.run_test(size=(140, 42)) as pilot:
+                try:
+                    owner = await mounted_surface(app, pilot)
+                    await self.wait_for(pilot, ready.is_set, "initial real lookup refusal")
+                    self.assertTrue(app.starting)
+                    self.assertTrue(app.query_one("#reader").disabled)
+                    await pilot.press("down", "down")
+                    self.assertIsNone(owner.cursor)
+                    self.assertIsNone(owner.record)
+                    release.set()
+                    await self.idle(app, pilot)
+                    self.assertFalse(app.starting)
+                    self.assertFalse(app.query_one("#reader").disabled)
+                    self.assertIsNone(owner.cursor)
+                    self.assertIsNone(owner.record)
+                    self.assertIn("This address cannot be followed",
+                                  str(owner.query_one("#texts-record-text", Static).render()))
+                finally:
+                    release.set()
+
+    async def test_pending_bad_leaf_refusal_rejects_the_key_selected_late_real_record(self) -> None:
         from textual.widgets import OptionList, Static
         from lectern.app import TriptychApp
         from lectern.surfaces.texts import Texts
@@ -906,16 +952,20 @@ class ResidualTextTests(unittest.IsolatedAsyncioTestCase):
             return deliver(owner, callback, *args, **kwargs)
 
         with patch.object(Texts, "deliver", gated):
-            app = TriptychApp(start="texts", intent={"leaf": self.BAD_LEAF, "provider": "gpt"})
+            app = TriptychApp(start="texts")
             async with app.run_test(size=(140, 42)) as pilot:
                 try:
-                    owner = app.current()
-                    await self.wait_for(pilot, lookup_ready.is_set, "initial real lookup refusal")
+                    owner = await mounted_surface(app, pilot)
+                    await self.idle(app, pilot)
+                    # Startup deliberately disables input. Exercise this race
+                    # once the catalogue is interactive and an address is asked.
+                    owner.follow(leaf=self.BAD_LEAF, provider="gpt")
+                    await self.wait_for(pilot, lookup_ready.is_set, "pending real lookup refusal")
                     listing = owner.query_one("#texts-list", OptionList)
                     await self.wait_for(
                         pilot, lambda: listing.has_focus and listing.size.width > 0 and
                         owner._drawn_width == max(12, listing.size.width - 1),
-                        "laid-out and focused initial catalogue")
+                        "laid-out and focused catalogue")
                     await pilot.pause(0.05)
                     await pilot.press("down", "down")
                     await self.wait_for(pilot, record_ready.is_set,
@@ -927,7 +977,7 @@ class ResidualTextTests(unittest.IsolatedAsyncioTestCase):
                     await self.wait_for(pilot, lambda: owner.cursor is None and
                                         "This address cannot be followed" in str(
                                             owner.query_one("#texts-record-text", Static).render()),
-                                        "initial refusal displayed")
+                                        "pending refusal displayed")
                     self.assertGreater(owner._token, old_token)
                     self.assertIsNone(owner.record)
                     before = str(owner.query_one("#texts-record-text", Static).render())
@@ -946,7 +996,7 @@ class ResidualTextTests(unittest.IsolatedAsyncioTestCase):
 
         app = TriptychApp(start="texts")
         async with app.run_test(size=(140, 42)) as pilot:
-            owner = app.current()
+            owner = await mounted_surface(app, pilot)
             await self.wait_for(pilot, lambda: bool(owner.found), "real catalogue")
             await self.idle(app, pilot)
             await pilot.press("down", "down")
@@ -988,9 +1038,9 @@ class SnapshotBusyBridgeTests(unittest.TestCase):
 
                 call = owned.call
 
-                def observed(*args):
+                def observed(*args, **kwargs):
                     try:
-                        return call(*args)
+                        return call(*args, **kwargs)
                     except Exception as error:
                         errors.append(error)
                         raise
@@ -1326,8 +1376,8 @@ class PropersCoverageNoticeTests(unittest.IsolatedAsyncioTestCase):
         )
         with patch.object(propers.Propers, "start", lambda self: None):
             app = TriptychApp(start="propers")
-            async with app.run_test(size=(140, 42)):
-                owner = app.current()
+            async with app.run_test(size=(140, 42)) as pilot:
+                owner = await mounted_surface(app, pilot)
                 for calendar, key, language, ordinary in cases:
                     with self.subTest(calendar=calendar, language=language, ordinary=ordinary):
                         view = bridge.call("liturgy", "propers", calendar, key,
@@ -1385,8 +1435,8 @@ class PropersCoverageNoticeTests(unittest.IsolatedAsyncioTestCase):
         real = bridge.call("liturgy", "propers", "roman-1962", "advent-1", {"orations": "la"})
         with patch.object(Propers, "start", lambda self: None):
             app = TriptychApp(start="propers")
-            async with app.run_test(size=(140, 42)):
-                owner = app.current()
+            async with app.run_test(size=(140, 42)) as pilot:
+                owner = await mounted_surface(app, pilot)
                 for notice in ("", None, "absent"):
                     with self.subTest(notice=notice):
                         view = deepcopy(real)

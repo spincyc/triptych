@@ -22,7 +22,7 @@ Name the document and page or section if you can, but a high-level concern is en
 Git keeps the project’s files and history. An AI coding agent can edit, check, and rebuild them.
 
 1. Clone the repository using the address shown by its hosting site. If you already have a copy, update it and begin from a clean `main`.
-   `git clone --filter=blob:none <repository-url>` keeps the commit graph while
+   `git clone --single-branch --filter=blob:none <repository-url>` keeps the branch's history while
    deferring historical file contents until Git needs them. A normal checkout
    still downloads the current source tree. Do not use `--depth`: edition
    revision dates need complete history and refuse a shallow clone.
