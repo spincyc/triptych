@@ -226,6 +226,78 @@ class AuditHookTests(unittest.TestCase):
         self.assertEqual(len(report["unaudited_children"]), 1)
 
 
+class ExcludedPathAuditTests(unittest.TestCase):
+    """An excluded path is keyed by name only; the audit holds producers to that."""
+
+    def setUp(self):
+        SCRATCH.mkdir(parents=True, exist_ok=True)
+        self.root = Path(self.enterContext(tempfile.TemporaryDirectory(dir=SCRATCH))).resolve()
+        _write(self.root, "src/in/declared.txt", "declared\n")
+        _write(self.root, "src/in/review.toml", "review\n")
+        _write(self.root, "src/in/archive/run/record.json", "{}\n")
+        _write(self.root, "scripts/producer.py", '''
+            import argparse, json, os
+            from pathlib import Path
+            parser = argparse.ArgumentParser(); parser.add_argument("--out"); parser.add_argument("--mode")
+            args = parser.parse_args()
+            source = Path(__file__).resolve().parents[1] / "src/in"
+            values = [(source / "declared.txt").read_text(), sorted(os.listdir(source)),
+                      (source / "review.toml").is_file(), (source / "archive").is_dir()]
+            if args.mode == "open-file":
+                values.append((source / "review.toml").read_text())
+            elif args.mode == "list-directory":
+                values.append(os.listdir(source / "archive"))
+            elif args.mode == "probe-beneath":
+                values.append((source / "archive/run/record.json").exists())
+            (Path(args.out) / "bibles.json").write_text(json.dumps(values))
+        ''')
+        self.recipe = recipes._recipe("probe", "bibles.json", ["scripts/producer.py"], ["src/in"],
+                                      excludes=["src/in/archive", "src/in/review.toml"], delivery="browser-data")
+        self.enterContext(patch.object(recipes, "RECIPES", (self.recipe,)))
+        self.enterContext(patch.object(products, "_recipes", side_effect=lambda: [copy.deepcopy(self.recipe)]))
+
+    def audit(self, mode=None):
+        if mode is not None:
+            self.recipe["argv"] = ["scripts/producer.py", "--mode", mode]
+        return inputs.audit(self.root)["probe"]
+
+    def test_listing_the_parent_and_probing_the_excluded_path_itself_pass(self):
+        report = self.audit()
+        self.assertTrue(report["ok"], report)
+        self.assertIn("src/in/review.toml", report["probed_paths"])
+        self.assertIn("src/in", report["listed_paths"])
+
+    def test_opening_an_excluded_file_fails(self):
+        report = self.audit("open-file")
+        self.assertFalse(report["ok"])
+        self.assertEqual(report["outside"], ["src/in/review.toml"])
+
+    def test_listing_an_excluded_directory_fails(self):
+        report = self.audit("list-directory")
+        self.assertFalse(report["ok"])
+        self.assertEqual(report["listed_outside"], ["src/in/archive"])
+
+    def test_probing_beneath_an_excluded_directory_fails(self):
+        report = self.audit("probe-beneath")
+        self.assertFalse(report["ok"])
+        self.assertEqual(report["outside"], ["src/in/archive/run/record.json"])
+
+    def test_excluded_root_is_the_declared_path_and_never_a_name_prefix(self):
+        excludes = ("src/in/archive", "src/in/review.toml")
+        self.assertEqual(inputs.excluded_root("src/in/archive", excludes), "src/in/archive")
+        self.assertEqual(inputs.excluded_root("src/in/archive/run/record.json", excludes), "src/in/archive")
+        self.assertEqual(inputs.excluded_root("src/in/review.toml", excludes), "src/in/review.toml")
+        for name in ("src/in/archive-neighbor/x", "src/in/review.toml.bak", "src/in", "src/in/declared.txt"):
+            self.assertIsNone(inputs.excluded_root(name, excludes), name)
+        self.assertIsNone(inputs.excluded_root("src/in/archive", ()))
+        # `**` spans whole segments and stops at the shallowest match.
+        deep = ("src/p/**/evaluations",)
+        self.assertEqual(inputs.excluded_root("src/p/evaluations", deep), "src/p/evaluations")
+        self.assertEqual(inputs.excluded_root("src/p/a/b/evaluations/run/evaluations/x", deep), "src/p/a/b/evaluations")
+        for name in ("src/p/a/evaluations-old/x", "src/q/a/evaluations/x", "src/p/a/my-evaluations/x"):
+            self.assertIsNone(inputs.excluded_root(name, deep), name)
+
+
 @unittest.skipUnless(os.environ.get("TRIPTYCH_BROWSER_PRODUCT_AUDIT") == "1",
                      "set TRIPTYCH_BROWSER_PRODUCT_AUDIT=1 to run every real producer cold (about ten minutes)")
 class FullAuditTests(unittest.TestCase):

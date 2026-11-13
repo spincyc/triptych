@@ -153,12 +153,31 @@ class RecipeTests(unittest.TestCase):
             if "PROVIDER=gpt" in command:
                 expected += " articles/faith/second"
             self.assertEqual(documents, expected)
-        self.assertEqual(metadata.call_count, len(selected))
-        for call, recipe in zip(metadata.call_args_list, selected):
-            self.assertEqual(call.args[0], printing._tool(self.root, "check-generation-metadata",
-                             "--provider", recipe["provider"], "--document", recipe["document"]))
+        # The gates run side by side, so their call order is not fixed.
+        self.assertCountEqual(
+            [call.args[0] for call in metadata.call_args_list],
+            [printing._tool(self.root, "check-generation-metadata", "--provider", recipe["provider"],
+                            "--document", recipe["document"]) for recipe in selected])
         self.assertTrue(all(recipe["status"] == "valid" for recipe in result))
         self.assertTrue(all("source-check" not in recipe["dependencies"] for recipe in result))
+
+    def test_batch_metadata_gates_raise_the_first_failure_in_selection_order(self):
+        first = self.recipe()
+        selected = [dict(first, id=f"publication:gpt/articles/faith/{name}",
+                         document=f"articles/faith/{name}") for name in ("a", "b", "c")]
+
+        def gate(argv, root, **kwargs):
+            document = argv[argv.index("--document") + 1]
+            if document != "articles/faith/a":
+                raise printing.PrintError(f"bad metadata: {document}")
+            return ""
+
+        with patch.object(printing, "_run", side_effect=gate) as metadata, \
+                patch.object(printing, "_declared_dependencies_many") as dependencies:
+            with self.assertRaisesRegex(printing.PrintError, "bad metadata: articles/faith/b"):
+                printing.check_many(selected, root=self.root)
+        self.assertEqual(metadata.call_count, len(selected))
+        dependencies.assert_not_called()
 
     def test_batch_make_failure_or_absent_target_does_not_return_partial_checks(self):
         recipe = self.recipe()

@@ -424,9 +424,23 @@ def check_many(recipes: list[dict], *, root: Path = ROOT) -> list[dict]:
     root = Path(root).resolve()
     recipes = list(recipes)
     publications = [recipe for recipe in recipes if recipe["family"] == "publication"]
-    for recipe in publications:
-        _run(_tool(root, "check-generation-metadata", "--provider", recipe["provider"],
-                   "--document", recipe["document"]), root)
+
+    def metadata_gate(recipe: dict) -> PrintError | None:
+        try:
+            _run(_tool(root, "check-generation-metadata", "--provider", recipe["provider"],
+                       "--document", recipe["document"]), root)
+        except PrintError as error:
+            return error
+        return None
+
+    # Each edition's gate is its own read-only process, so they run side by
+    # side; the first failure in selection order is the one raised.
+    from concurrent.futures import ThreadPoolExecutor
+    available = getattr(os, "process_cpu_count", os.cpu_count)() or 1
+    with ThreadPoolExecutor(max_workers=max(1, min(available, 8))) as pool:
+        for error in pool.map(metadata_gate, publications):
+            if error is not None:
+                raise error
     dependencies = _declared_dependencies_many(root, publications)
     checked = []
     for recipe in recipes:

@@ -344,6 +344,32 @@ body = ["body"]
             self.derive()
 
 
+    def test_prefetched_stamps_are_the_ones_derived_one_at_a_time(self) -> None:
+        self.write("src/claude/doc/sections/homily.tex", "Homily, revised.\n")
+        homily = self.commit("revise the homily")
+        self.write("src/claude/other/main.tex", "\\input{\\Undefined/sections/body}\n")
+        self.commit("add an edition whose closure cannot be read")
+        editions = [("claude", "doc"), ("claude", "doc-homily"), ("claude", "other")]
+        repository = revision.Repository(self.root)
+        with patch.object(revision, "history_of", wraps=revision.history_of) as walked:
+            revision.prefetch_revisions(self.root, editions, repository=repository, jobs=3)
+        self.assertEqual(walked.call_count, 2)
+        with patch.object(revision, "history_of") as walked:
+            held = {document: revision.revision(self.root, provider, document, repository=repository)
+                    for provider, document in editions[:2]}
+            # The held error is the one deriving it alone raises, and is raised
+            # only when that edition is asked for.
+            with self.assertRaisesRegex(revision.RevisionError, "cannot expand"):
+                revision.revision(self.root, "claude", "other", repository=repository)
+        walked.assert_not_called()
+        self.assertEqual(held["doc"].record(), revision.revision(self.root, "claude", "doc").record())
+        self.assertEqual(held["doc-homily"].timestamp, stamp(homily))
+        self.assertEqual(held["doc-homily"].record(),
+                         revision.revision(self.root, "claude", "doc-homily").record())
+        with self.assertRaisesRegex(revision.RevisionError, "cannot expand"):
+            revision.revision(self.root, "claude", "other")
+
+
 class WithoutUsableHistoryTests(Fixture):
     def test_uncommitted_or_untracked_sources_are_stamped_now_and_say_so(self) -> None:
         self.write("src/claude/doc/sections/body.tex", "Body, being edited.\n")

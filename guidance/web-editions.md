@@ -34,12 +34,32 @@ duplicates and were deleted with that check.
    `tools/web-edition products`. It converts every reader output — each
    eligible or conditional leaf's canonical edition and its synthesis and homily
    companions, less withdrawals and holds — from that output's own entrypoint,
-   each in a fresh interpreter, with the Pandoc that
-   `src/common/web-edition-toolchain.toml` pins (CI installs its exact official
-   binary with `scripts/_install_web_edition_pandoc.py`). Every fidelity audit
-   below runs on every conversion; one failure fails the family, and nothing
-   partial is adopted. The product is content-keyed like every family, so a
-   warm deploy reuses its verified bytes without converting.
+   with the Pandoc that `src/common/web-edition-toolchain.toml` pins (CI
+   installs its exact official binary with
+   `scripts/_install_web_edition_pandoc.py`). Every fidelity audit below runs
+   on every conversion; one failure fails the family, every failing output is
+   named, and nothing partial is adopted. The product is content-keyed like
+   every family, so a warm deploy reuses its verified bytes without converting.
+
+   Each output converts in a process of its own. Until 2026-11-13 that was a
+   fresh interpreter, which parsed the whole source library (about 115,000
+   TOML files) and the chronology corpus again for every proper output. On
+   2026-11-13 the maintainer decided that each output may instead convert in
+   a process **forked from one parent that has already parsed the read-only,
+   repository-wide state** every conversion consults: when more than one
+   output converts, `share_parent_state` in `tools/web-edition` fills the
+   source-library indexes, the chronology and Bible tables, and the work
+   tree's revision state, and `SHARED_CACHES` names each cache it may fill.
+   Each is a pure function of repository inputs, keyed by no leaf; the
+   chronology caches stay valid only while their inputs' file identity, which
+   each conversion's assembly checks again, is unchanged. The isolation
+   guarantee is unchanged: **one leaf's macro and parse state can never reach
+   another's.** The parent
+   converts no leaf, it forks only while single-threaded, it refuses to fork
+   while any other cache of a repository module holds anything
+   (`parent_leaf_state`), and no process converts two outputs; a worker pool
+   that reused processes would break this and is not allowed. A child killed
+   by a signal fails the family like any other failing output.
 2. **figures** — a TikZ picture becomes an image named by its source identity
    (`scripts/_web_edition_figures.py`). `make web-figures` (`tools/web-edition
    figures`) compiles each figure twice, standalone with its leaf's own

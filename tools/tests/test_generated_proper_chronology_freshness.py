@@ -55,7 +55,7 @@ def _kind(root: Path, leaf: Path) -> str | None:
 class GeneratedProperChronologyFreshnessTests(unittest.TestCase):
     def test_source_maintenance_and_publication_reach_the_freshness_gate(self):
         makefile = (ROOT / "Makefile").read_text()
-        for goal in ("check-sources", "check-deployment-sources", "public-site"):
+        for goal in ("check-sources", "check-deployment-sources", "public-site", "pages-site"):
             with self.subTest(goal=goal):
                 reached = make_reached(goal, makefile)
                 self.assertIn("check-proper-chronology-current", reached)

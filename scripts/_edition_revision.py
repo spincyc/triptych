@@ -202,6 +202,9 @@ class Repository:
         self._tracked: set[str] | None = None
         self._changed: set[str] | None = None
         self._pre_images: dict[str, tuple[str | None, set[str]]] = {}
+        # Stamps `prefetch_revisions` derived for this same state, or the
+        # error deriving each raised; `revision` answers from them unchanged.
+        self._revisions: dict[tuple[str, str], object] = {}
 
     def pre_image(self, commit: str) -> tuple[str | None, set[str]]:
         """A commit's first parent and the paths it changed, read without blobs."""
@@ -508,12 +511,13 @@ def _now() -> dt.datetime:
 
 def revision_of(root: Path, provider: str, document: str, entry: Path, *,
                 repository: Repository | None = None, now: dt.datetime | None = None,
-                assembly=None) -> Revision:
+                assembly=None, found: Closure | None = None) -> Revision:
     root = Path(root).resolve()
     repository = Repository(root) if repository is None else repository
     if repository.root != root:
         raise RevisionError("repository state belongs to another root")
-    found = closure(root, provider, entry, assembly=assembly)
+    if found is None:
+        found = closure(root, provider, entry, assembly=assembly)
     if not found.paths:
         raise RevisionError(f"{provider}/{document}: the edition reads no provider source")
     tracked, changed = repository.tracked(), repository.changed()
@@ -539,10 +543,63 @@ def revision(root: Path, provider: str, document: str, *,
     """The stamp of the edition Make and the gate call ``<provider>/<document>``."""
     root = Path(root).resolve()
     repository = Repository(root) if repository is None else repository
+    held = (repository._revisions.get((provider, document))
+            if now is None and repository.root == root else None)
+    if isinstance(held, Exception):
+        raise held
+    if held is not None:
+        return held
     assembly = Assembly(root) if assembly is None else assembly
     return revision_of(root, provider, document,
                        entrypoint(root, provider, document, assembly=assembly),
                        repository=repository, now=now, assembly=assembly)
+
+
+def prefetch_revisions(root: Path, editions, *, repository: Repository, assembly=None,
+                       jobs: int | None = None) -> None:
+    """Derive many editions' stamps into ``repository`` before they are asked for.
+
+    Each stamp is exactly what `revision` derives: the closures are read in
+    order through the one assembly, then the ``git log`` walks, which are
+    independent and dominate the cost, run concurrently. A derivation's
+    error is held and raised where `revision` is later asked for that
+    edition, so a batch fails at the same edition, with the same error, as
+    it would one at a time.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    root = Path(root).resolve()
+    if repository.root != root:
+        raise RevisionError("repository state belongs to another root")
+    assembly = Assembly(root) if assembly is None else assembly
+    keys = list(dict.fromkeys((provider, document) for provider, document in editions
+                              if (provider, document) not in repository._revisions))
+    repository.tracked()
+    repository.changed()
+    closures: dict[tuple[str, str], object] = {}
+    for provider, document in keys:
+        try:
+            entry = entrypoint(root, provider, document, assembly=assembly)
+            closures[(provider, document)] = (entry, closure(root, provider, entry, assembly=assembly))
+        except Exception as error:  # held, and raised where this edition is asked for
+            closures[(provider, document)] = error
+
+    def finish(key):
+        held = closures[key]
+        if isinstance(held, Exception):
+            return held
+        entry, found = held
+        try:
+            return revision_of(root, key[0], key[1], entry, repository=repository,
+                               assembly=assembly, found=found)
+        except Exception as error:
+            return error
+
+    available = getattr(os, "process_cpu_count", os.cpu_count)() or 1
+    workers = max(1, min(jobs if jobs is not None else available, 8))
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for key, value in zip(keys, pool.map(finish, keys)):
+            repository._revisions[key] = value
 
 
 def revision_for_entrypoint(root: Path, provider: str, entry: Path, *,

@@ -583,23 +583,31 @@ def _c7_identity_reference(root, recipes):
     """Frozen per-family membership/classification algorithm, sharing unchanged IO.
 
     Each family is its declared scope plus its computed code closure; the
-    aggregate is derived from the family commitments, never a wider walk.
+    aggregate is derived from the family commitments, never a wider walk. An
+    excluded path that is present is keyed by its name and kind (a file, or a
+    directory with files beneath it), never by its bytes or descendants.
     """
     code = products.family_code(root, recipes)
     specs = {recipe["id"]: products._input_spec(recipe, code[recipe["id"]]) for recipe in recipes}
     trees = sorted({tree for spec in specs.values() for tree in spec[0]})
     trees = tuple(tree for tree in trees if not any(tree.startswith(parent + "/") for parent in trees if parent != tree))
     files = tuple(sorted({name for spec in specs.values() for name in spec[1]}))
+    markers = {}
     def discover():
         found = products._paths(root, trees, files)
         selected = {}
         for key, (scopes, exact, excludes) in specs.items():
-            selected[key] = {name for name in found
-                             if (name in exact or any(name.startswith(tree + "/") for tree in scopes)
-                                 or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json"))))
-                             and not any(name == excluded or name.startswith(excluded + "/") for excluded in excludes)}
+            scoped = {name for name in found
+                      if name in exact or any(name.startswith(tree + "/") for tree in scopes)
+                      or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json")))}
+            selected[key] = {name for name in scoped
+                             if not any(name == excluded or name.startswith(excluded + "/") for excluded in excludes)}
+            markers[key] = {excluded: "directory" if any(name.startswith(excluded + "/") for name in scoped) else "file"
+                            for excluded in excludes
+                            if any(name == excluded or name.startswith(excluded + "/") for name in scoped)}
         return selected
     memberships = discover()
+    before_markers = copy.deepcopy(markers)
     union = set().union(*memberships.values())
     external = products.safe_files._external_identities(root, union)
     union.update(external)
@@ -620,16 +628,18 @@ def _c7_identity_reference(root, recipes):
     after = discover()
     for key in after:
         after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
-    if memberships != after:
+    if memberships != after or markers != before_markers:
         raise products.ProductError("canonical input membership changed while hashing")
     result = {}
     for key, members in memberships.items():
         components = {category: [] for category in ("content", "rights", "generator", "lock")}
-        for name in sorted(members):
-            components[products._component(name)].append(values[name])
+        names = sorted(members | set(markers[key]))
+        for name in names:
+            components[products._component(name)].append(
+                values[name] if name in members else {"path": name, "excluded": markers[key][name]})
         identity = {"schema": products.INPUT_SCHEMA,
                     **{category: products._sha(products._json(items)) for category, items in components.items()},
-                    "membership": products._sha(products._json(sorted(members))), "count": len(members), "source_paths": sorted(members)}
+                    "membership": products._sha(products._json(names)), "count": len(names), "source_paths": sorted(members)}
         identity["sha256"] = products._sha(products._json({name: value for name, value in identity.items() if name != "source_paths"}))
         result[key] = identity
     aggregate = {"schema": products.AGGREGATE_SCHEMA, "families": {key: result[key]["sha256"] for key in sorted(result)}}
@@ -708,8 +718,35 @@ class BrowserIdentityLoopTests(unittest.TestCase):
         with patch.object(products.safe_files, "_external_identities", return_value=self.external), \
              patch.object(products, "_component", wraps=products._component) as component:
             actual = products._identity_batch(self.root, self.recipes)
+        # Each present excluded path is classified once too, by its name.
         self.assertEqual(Counter(call.args[0] for call in component.call_args_list),
-                         Counter(actual[None]["source_paths"]))
+                         Counter(actual[None]["source_paths"]) + Counter(["src/a/excluded", "src/a/omit.json"]))
+
+    def test_an_excluded_path_is_keyed_by_name_and_kind_never_by_bytes_or_descendants(self):
+        def identity():
+            with patch.object(products.safe_files, "_external_identities", return_value={}):
+                actual = products._identity_batch(self.root, self.recipes)
+                self.assertEqual(actual, _c7_identity_reference(self.root, self.recipes))
+            return actual["a"]
+        before = identity()
+        self.assertNotIn("src/a/omit.json", before["source_paths"])
+        (self.root / "src/a/omit.json").write_text("revised review record\n")
+        (self.root / "src/a/excluded/run").mkdir()
+        (self.root / "src/a/excluded/run/record.json").write_text("{}\n")
+        (self.root / "src/a/excluded/omit.txt").write_text("revised\n")
+        self.assertEqual(identity(), before)
+        # Appearance and disappearance are what a listing or probe can see.
+        (self.root / "src/a/omit.json").unlink()
+        removed = identity()
+        self.assertNotEqual(removed["sha256"], before["sha256"])
+        self.assertNotEqual(removed["membership"], before["membership"])
+        shutil.rmtree(self.root / "src/a/excluded")
+        self.assertNotEqual(identity()["membership"], removed["membership"])
+        # The same name as a file instead of a directory is a different kind.
+        (self.root / "src/a/excluded").write_text("now a file\n")
+        replaced = identity()
+        self.assertEqual(replaced["membership"], removed["membership"])
+        self.assertNotEqual(replaced["content"], removed["content"])
 
     def test_both_discoveries_remain_fresh_and_reject_membership_mutation(self):
         reading = products._read
@@ -738,6 +775,36 @@ class BrowserIdentityLoopTests(unittest.TestCase):
         self.assertNotEqual(before[None]["sha256"], after[None]["sha256"])
         self.assertNotEqual(before["a"]["sha256"], after["a"]["sha256"])
         self.assertEqual(before["neighbor"], after["neighbor"])
+
+
+class RecipeExclusionValidationTests(unittest.TestCase):
+    """An exclusion narrows one declared data tree and never reaches code."""
+
+    @staticmethod
+    def recipe(excludes, trees=("src/a",)):
+        return [{"id": "a", "version": 1, "output_prefixes": ["structure/a"], "argv": ["scripts/produce_a.py"],
+                 "input_trees": list(trees), "input_files": [], "exclude_paths": list(excludes),
+                 "delivery": "browser-data"}]
+
+    def test_paths_and_double_star_segments_inside_a_declared_tree_are_accepted(self):
+        for excludes in ([], ["src/a/review.toml"], ["src/a/**/evaluations", "src/a/b/notes"]):
+            with self.subTest(excludes=excludes):
+                products._validate_recipes(self.recipe(excludes))
+
+    def test_outside_code_nested_repeated_and_wildcard_exclusions_are_refused(self):
+        cases = {
+            "outside": (["src/b/x"], ("src/a",)),
+            "the tree itself": (["src/a"], ("src/a",)),
+            "code": (["scripts/_helper.py"], ("src/a", "scripts")),
+            "nested": (["src/a/x", "src/a/x/y"], ("src/a",)),
+            "repeated": (["src/a/x", "src/a/x"], ("src/a",)),
+            "partial wildcard": (["src/a/*-review.toml"], ("src/a",)),
+            "trailing double star": (["src/a/**"], ("src/a",)),
+            "unsafe": (["src/a/../b"], ("src/a",)),
+        }
+        for label, (excludes, trees) in cases.items():
+            with self.subTest(label), self.assertRaises(products.ProductError):
+                products._validate_recipes(self.recipe(excludes, trees))
 
 
 class BrowserCandidateReuseTests(unittest.TestCase):

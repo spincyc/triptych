@@ -114,18 +114,21 @@ jobs:
           python scripts/_install_web_edition_pandoc.py --fetch --bin-dir "$RUNNER_TEMP/web-edition-toolchain"
           printf '%s\n' "$RUNNER_TEMP/web-edition-toolchain" >> "$GITHUB_PATH"
 
-      # public-site prepares and verifies the committed product descriptor before
+      # pages-site prepares and verifies the committed product descriptor before
       # source gates and consumers. Missing families reproduce its exact bytes
-      # offline; stale inputs fail without a whole-corpus research replay. Its
-      # figure step (tools/web-edition figures) compiles each web edition's TikZ
-      # figures, twice and refused unless byte-identical, inside the pinned TeX
-      # image (no network); the SVGs are not committed products, and the site
-      # build checks every reader's figure set against them.
+      # offline; stale inputs fail without a whole-corpus research replay. It
+      # then runs every check-deployment-sources gate beside the site build, on
+      # the runner's other cores, and fails this step if any gate fails, so
+      # neither verification nor upload follows a failed gate. Its figure step
+      # (tools/web-edition figures) compiles each web edition's TikZ figures,
+      # twice and refused unless byte-identical, inside the pinned TeX image (no
+      # network); the SVGs are not committed products, and the site build checks
+      # every reader's figure set against them.
       - name: Validate sources and build public artifact
         run: |
           set -euo pipefail
           [[ "$TEXLIVE_IMAGE" =~ ^ghcr\.io/[a-z0-9._/-]+@sha256:[0-9a-f]{64}$ ]] || { echo 'TEXLIVE_IMAGE must name an immutable digest' >&2; exit 1; }
-          make public-site WEB_FIGURES_RUNNER="docker:$TEXLIVE_IMAGE"
+          make pages-site WEB_FIGURES_RUNNER="docker:$TEXLIVE_IMAGE"
 
       # Keep the restored path constant so GitHub can reuse older per-family
       # candidates. Save mechanically verified products before the independent

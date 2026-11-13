@@ -39,6 +39,39 @@ class DocumentAssemblyTests(unittest.TestCase):
         self.assertTrue(self.assembly().is_file(generated))
         self.assertFalse(generated.exists())
 
+    def test_prefetched_dependency_traces_finish_exactly_as_asked_one_at_a_time(self):
+        self.declare()
+        traced = []
+        projection = self.projections["fake"]
+
+        def dependency_trace(context):
+            traced.append(context.document)
+            return {"reads": ["src/common/read.json"]}
+
+        def dependencies(context, trace=None):
+            trace = dependency_trace(context) if trace is None else trace
+            return {context.root / value for value in trace["reads"]}
+
+        projection.dependency_trace = dependency_trace
+        projection.dependencies = dependencies
+        alone = self.assembly().dependencies(self.leaf)
+        self.assertEqual(traced, ["fixture/leaf"])
+        assembly = self.assembly()
+        assembly.prefetch_dependencies([self.leaf, self.leaf], jobs=2)
+        self.assertEqual(traced, ["fixture/leaf", "fixture/leaf"])
+        self.assertEqual(assembly.dependencies(self.leaf), alone)
+        self.assertEqual(len(traced), 2)
+        self.assertIn(self.root / "src/common/read.json", alone)
+
+        def failing(context):
+            raise types.DocumentTypeError("trace refused")
+
+        projection.dependency_trace = failing
+        assembly = self.assembly()
+        assembly.prefetch_dependencies([self.leaf])
+        with self.assertRaisesRegex(types.DocumentTypeError, "trace refused"):
+            assembly.dependencies(self.leaf)
+
     def test_web_input_and_companion_selection_use_the_same_current_projection(self):
         self.declare()
         (self.root / "src/common/preamble.tex").write_text("% shared preamble\n")

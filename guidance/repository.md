@@ -314,6 +314,13 @@ make check
 make public-site
 ```
 
+The Pages build job runs `make pages-site`: the same deployment source gates
+and site build as `make check-deployment-sources` and `make public-site`, but
+with the gates beside the single-process site build instead of before it. A
+failing gate fails that step, so `public-alpha verify`, cache retention and the
+upload never follow it; the site it may have assembled never leaves the runner.
+Locally, `make public-site` keeps the stricter order.
+
 `make` and `make all` select the source-only site path. `make pdf` remains an
 explicit developer opt-in for a corpus PDF build; it is not a normal check or
 deployment prerequisite. Prefer the selected-document print command for an

@@ -9,9 +9,9 @@ in requirements-public-alpha.txt.
 from __future__ import annotations
 
 import argparse
-from concurrent.futures import ThreadPoolExecutor
 from contextlib import ExitStack
 from collections import Counter
+import gc
 import hashlib
 import html
 from html.parser import HTMLParser
@@ -19,10 +19,13 @@ import json
 import os
 import re
 import shutil
+import signal
 import subprocess
 import sys
 import tempfile
+import threading
 import tomllib
+import traceback
 from pathlib import Path
 from typing import NamedTuple
 from urllib.parse import quote, unquote
@@ -3176,7 +3179,8 @@ def edition_revision(provider: str, entry: Path) -> str:
     """The edition's derived "Last revised" value; scripts/_edition_revision.py owns the rule."""
     from _edition_revision import RevisionError, revision_for_entrypoint
     try:
-        return revision_for_entrypoint(SRC.parent, provider, entry).display
+        return revision_for_entrypoint(SRC.parent, provider, entry,
+                                       repository=_SHARED.get("repository")).display
     except (RevisionError, ValueError) as exc:
         raise ConversionError(f"cannot derive the revision stamp: {exc}") from exc
 
@@ -3816,6 +3820,7 @@ INDEX_SCHEMA = "triptych-web-editions/v1"
 
 
 def product_record(row: dict) -> dict:
+    _SHARED["converted"] = True
     declaration = row["declaration"]
     figures: list[dict] = []
     markdown = convert_output(row, figures)
@@ -3841,28 +3846,213 @@ def canonical_json(value) -> bytes:
                        allow_nan=False) + "\n").encode("utf-8")
 
 
-def convert_rows(rows: list[dict], *, jobs: int | None = None) -> list[dict]:
-    """Convert each output in its own interpreter, in parallel, in row order.
+# On 2026-11-13 the maintainer decided that each reader output may convert in a
+# process forked from one parent that has already parsed the read-only,
+# repository-wide indexes every conversion consults, instead of in a fresh
+# interpreter that parsed them all again (guidance/web-editions.md, "convert").
+# The isolation guarantee is unchanged: every output still converts in a
+# process of its own, a fresh fork of a parent that has converted no leaf, so
+# one leaf's macro and parse state can never reach another's.
+#
+# The caches the parent fills (`share_parent_state`), by qualified name. Each
+# is a pure function of repository inputs that every proper output otherwise
+# re-derived identically; none is keyed by a leaf. `parent_leaf_state` refuses
+# a fork while any other cache of a repository module holds anything.
+SHARED_CACHES = frozenset((
+    "_chronology._strict_loader", "_chronology.load", "_chronology.scripture_systems",
+    "_chronology.verse_counts",
+    "_deuterocanon._index", "_deuterocanon._printed", "_deuterocanon._rows",
+    "_proper_chronology._calendar_document", "_proper_chronology._short_book_names",
+    "_proper_chronology._tokens",
+    "_proper_chronology_page._bible_titles", "_proper_chronology_page._book_short_names",
+    "_proper_chronology_page._source_records",
+    "_psalms._concordance", "_psalms.witness_merges",
+))
+# What this process shares with the conversions it forks: the work tree's
+# revision state (`repository`), and whether it ever converted a leaf.
+_SHARED: dict = {}
 
-    One leaf's macro state can never reach another's. Any failure fails the
-    whole set, with every failing output named.
+
+def share_parent_state() -> None:
+    """Fill, once and before any fork, the state every conversion would re-derive.
+
+    That is the source library's record index and its record manifests
+    (_document_schema, _proper_chronology_page), the chronology corpus and the
+    Bible, Psalter and deuterocanon tables behind every proper's Scriptural
+    Date and Location page, and the work tree's tracked and changed paths that
+    every revision stamp asks git for. `scriptural_date_location.prepare`
+    records the file identity of the chronology inputs first; each
+    conversion's own assembly checks it again and clears those caches if an
+    input has since changed. A step that fails leaves its cache empty, so each
+    conversion that needs it meets, and reports, the same error it always did.
     """
-    def one(row):
-        finished = subprocess.run(
-            [sys.executable, "-B", str(Path(__file__).resolve()), "--product-json",
-             row["provider"] + "/" + row["document"]],
-            capture_output=True, text=True, cwd=ROOT, check=False)
-        if finished.returncode:
-            return row, None, finished.stderr.strip()
-        return row, json.loads(finished.stdout), ""
+    import _chronology
+    import _deuterocanon
+    import _document_schema
+    import _edition_revision
+    import _proper_chronology
+    import _proper_chronology_page
+    import _psalms
+    from document_projections import scriptural_date_location
 
+    corpus = ROOT / "src/sources/chronology"
+
+    def repository():
+        state = _edition_revision.Repository(ROOT)
+        state.tracked()
+        state.changed()
+        _SHARED["repository"] = state
+
+    for step in (
+        lambda: scriptural_date_location.prepare(ROOT),
+        lambda: _document_schema._source_index(ROOT),
+        lambda: _proper_chronology_page._source_records(str(ROOT)),
+        lambda: _proper_chronology_page._bible_titles(str(ROOT)),
+        _proper_chronology_page._book_short_names,
+        lambda: _chronology.load(corpus),
+        _chronology.verse_counts,
+        _chronology.scripture_systems,
+        lambda: _proper_chronology._calendar_document(ROOT),
+        _proper_chronology._tokens,
+        _proper_chronology._short_book_names,
+        _psalms._concordance,
+        _psalms.witness_merges,
+        _deuterocanon._rows,
+        repository,
+    ):
+        try:
+            step()
+        except Exception:  # noqa: BLE001 - each conversion that needs it meets it
+            pass
+
+
+def parent_leaf_state() -> list[str]:
+    """What this process holds that a fresh conversion must not inherit.
+
+    Empty for a pristine parent: no leaf converted here, no populated cache in
+    a repository module but the shared ones, and nothing leaf-derived in the
+    shared revision state.
+    """
+    held = ["a leaf was converted in this process"] if _SHARED.get("converted") else []
+    code = (ROOT / "scripts", ROOT / "tools")
+    for name, module in sorted(sys.modules.items()):
+        source = getattr(module, "__file__", None)
+        if not source or not any(Path(source).resolve().is_relative_to(tree) for tree in code):
+            continue
+        for attribute, value in sorted(vars(module).items()):
+            info = getattr(value, "cache_info", None)
+            if (callable(info) and getattr(value, "__module__", None) == module.__name__
+                    and info().currsize and f"{name}.{attribute}" not in SHARED_CACHES):
+                held.append(f"{name}.{attribute}")
+    repository = _SHARED.get("repository")
+    if repository is not None and (repository._pre_images or repository._revisions):
+        held.append("_edition_revision.Repository history")
+    return held
+
+
+def _convert_in_child(row: dict, base: Path):
+    """Run in a forked child: convert one output, record it, and exit."""
+    code = 1
+    # The import path of the fresh `tools/web-edition` interpreter this child
+    # replaces, which never held the working directory. A parent started with
+    # `python -c` (the cold recipe harness) holds it as "", and distribution
+    # metadata lookups would then list the repository root.
+    sys.path[:] = [entry for entry in sys.path if entry != ""]
+    try:
+        log = os.open(base.with_suffix(".log"), os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o600)
+        os.dup2(log, 1)
+        os.dup2(log, 2)
+        os.close(log)
+        try:
+            record = product_record(row)
+        except ConversionError as error:
+            sys.stderr.write(str(error))
+        except BaseException:  # noqa: BLE001 - reported as the output's failure
+            traceback.print_exc()
+        else:
+            base.with_suffix(".json").write_text(
+                json.dumps(record, ensure_ascii=False, sort_keys=True), encoding="utf-8")
+            code = 0
+    finally:
+        try:
+            sys.stdout.flush()
+            sys.stderr.flush()
+        finally:
+            os._exit(code)
+
+
+def _child_outcome(base: Path, status: int) -> tuple[dict | None, str]:
+    log = base.with_suffix(".log")
+    detail = log.read_text(encoding="utf-8", errors="replace").strip() if log.is_file() else ""
+    code = os.waitstatus_to_exitcode(status)
+    if code < 0:
+        try:
+            name = signal.Signals(-code).name
+        except ValueError:
+            name = str(-code)
+        return None, f"conversion killed by signal {name}" + (f": {detail}" if detail else "")
+    record = base.with_suffix(".json")
+    if code or not record.is_file():
+        return None, detail or f"conversion exited {code}"
+    return json.loads(record.read_text(encoding="utf-8")), ""
+
+
+def convert_rows(rows: list[dict], *, jobs: int | None = None) -> list[dict]:
+    """Convert each output in its own forked process, in parallel, in row order.
+
+    Each output converts in a fresh fork of this process, which has filled
+    only the shared read-only caches (`share_parent_state`) and never
+    converts a leaf, so one leaf's macro and parse state can never reach
+    another's; no process converts two outputs. The parent forks only while
+    single-threaded. Any failure, a child killed by a signal included, fails
+    the whole set, with every failing output named. A single output has
+    nothing to share, so it forks from the unwarmed parent.
+    """
+    if len(rows) > 1:
+        share_parent_state()
+    held = parent_leaf_state()
+    if held:
+        raise ConversionError("refusing to fork conversions from a parent holding leaf state: "
+                              + ", ".join(held))
+    if threading.active_count() != 1:
+        raise ConversionError("conversions fork only from a single-threaded parent")
+    workers = max(1, jobs or getattr(os, "process_cpu_count", os.cpu_count)() or 1)
+    outcomes: list[tuple[dict | None, str] | None] = [None] * len(rows)
+    running: dict[int, int] = {}
+    with tempfile.TemporaryDirectory(prefix="web-editions-") as scratch:
+        def reap() -> None:
+            pid, status = os.wait()
+            index = running.pop(pid, None)
+            if index is not None:
+                outcomes[index] = _child_outcome(Path(scratch) / str(index), status)
+
+        sys.stdout.flush()
+        sys.stderr.flush()
+        # Frozen objects are never traversed by a child's collector, so the
+        # shared state stays shared instead of being copied into every child.
+        gc.freeze()
+        try:
+            for index, row in enumerate(rows):
+                while len(running) >= workers:
+                    reap()
+                pid = os.fork()
+                if pid == 0:
+                    _convert_in_child(row, Path(scratch) / str(index))
+                running[pid] = index
+            while running:
+                reap()
+        finally:
+            gc.unfreeze()
+            for pid in running:
+                os.kill(pid, signal.SIGKILL)
+            for pid in running:
+                os.waitpid(pid, 0)
     failures, records = [], []
-    with ThreadPoolExecutor(max_workers=jobs or os.cpu_count() or 1) as pool:
-        for row, record, error in pool.map(one, rows):
-            if record is None:
-                failures.append(f"{row['provider']}/{row['document']}: {error}")
-            else:
-                records.append(record)
+    for row, (record, error) in zip(rows, outcomes):
+        if record is None:
+            failures.append(f"{row['provider']}/{row['document']}: {error}")
+        else:
+            records.append(record)
     if failures:
         raise ConversionError(f"{len(failures)} web edition(s) failed:\n" + "\n".join(failures))
     return records
@@ -3897,9 +4087,10 @@ def check_main(argv: list[str]) -> int:
 def build_products(out: Path, *, jobs: int | None = None) -> dict:
     """Write every reader output as one JSON product below ``out``.
 
-    Each output converts in its own interpreter, so one leaf's macro state can
-    never reach another's, and outputs are collected in identity order. The
-    run fails if any output fails; nothing partial is left to adopt.
+    Each output converts in its own process forked from a parent that has
+    converted no leaf (`convert_rows`), so one leaf's macro state can never
+    reach another's, and outputs are collected in identity order. The run
+    fails if any output fails; nothing partial is left to adopt.
     """
     toolchain = pinned_pandoc()
     rows = reader_outputs()

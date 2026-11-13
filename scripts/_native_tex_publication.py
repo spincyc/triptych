@@ -391,8 +391,11 @@ def build_catalog(root: Path, *, documents: dict, revision: str,
             "assets": dict(sorted(assets.items())), "source_paths": source_paths}
 
 
-def catalog(root: Path, *, documents=None, revision=None, scratch_root=None) -> dict:
-    """Derive offline.  Callers may hold it only within one source snapshot."""
+def catalog(root: Path, *, documents=None, revision=None, scratch_root=None, assembly=None) -> dict:
+    """Derive offline.  Callers may hold it only within one source snapshot.
+
+    `assembly` lets the caller share its operation-scoped document assembly.
+    """
     from _native_print import admission_inputs, admitted_documents, source_revision
     from _native_print_bundles import prepare_catalog
     from _native_tex_assets import public_manifest, payload_paths
@@ -401,7 +404,7 @@ def catalog(root: Path, *, documents=None, revision=None, scratch_root=None) -> 
     documents = admitted_documents(root) if documents is None else documents
     revision = source_revision(root) if revision is None else revision
     sources = prepare_catalog(root, scratch_root=scratch_root,
-                              documents=documents, revision=revision)
+                              documents=documents, revision=revision, assembly=assembly)
     # The release dispositions and web declarations decide the admitted universe.
     sources["source_paths"] = sorted({*sources["source_paths"], *admission_inputs(root)})
     return build_catalog(root, documents=documents, revision=revision,

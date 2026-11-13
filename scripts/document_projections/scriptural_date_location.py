@@ -9,6 +9,7 @@ model is ``scripts/_proper_chronology_page.py``.
 
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 
@@ -41,17 +42,7 @@ def prepare(root: Path) -> None:
     import _psalms
     import _psalter
 
-    sources = root / "src/sources"
-    paths = set()
-    for tree, suffixes in (
-        ("chronology", {".yaml", ".toml"}), ("calendars", {".yaml"}),
-        ("bibles", {".yaml", ".json"}), ("works", {".toml", ".tsv"}),
-    ):
-        paths.update(path for path in (sources / tree).rglob("*")
-                     if path.suffix in suffixes and path.is_file())
-    state = tuple((str(path), stat.st_dev, stat.st_ino, stat.st_size,
-                   stat.st_mtime_ns, stat.st_ctime_ns)
-                  for path in sorted(paths) for stat in (path.stat(),))
+    state = _input_state(root)
     if _INPUT_STATE.get(root) == state:
         return
     for module in (_chronology, wiring, page, _deuterocanon, _psalms, _psalter):
@@ -64,17 +55,49 @@ def prepare(root: Path) -> None:
     _INPUT_STATE[root] = state
 
 
-def dependencies(context) -> set[Path]:
-    """Canonical inputs of the computation, including cited bibliography.
+_WATCHED = (
+    ("chronology", (".yaml", ".toml")), ("calendars", (".yaml",)),
+    ("bibles", (".yaml", ".json")), ("works", (".toml", ".tsv")),
+)
 
-    The chronology adapter owns the cold read trace; the source graph owns
-    citation ancestry. Neither a hand-maintained date list nor a generated
-    leaf snapshot serves as the dependency authority.
+
+def _input_state(root: Path) -> tuple:
+    """The file identity of every watched input, in path order.
+
+    Every operation (each new `Assembly`) asks this, so it is a scandir walk
+    over plain strings: the same files `rglob("*")` reaches -- symlinked
+    directories are not descended, symlinked files are followed -- with the
+    same stat fields, at a fifth of the cost of building and sorting ~67,000
+    Path objects.
     """
-    from _document_schema import _evidence_ancestry
+    found = []
+    for tree, suffixes in _WATCHED:
+        pending = [os.path.join(root, "src", "sources", tree)]
+        while pending:
+            try:
+                listing = os.scandir(pending.pop())
+            except OSError:
+                continue
+            with listing:
+                for entry in listing:
+                    if entry.is_dir(follow_symlinks=False):
+                        pending.append(entry.path)
+                    elif os.path.splitext(entry.name)[1] in suffixes and entry.is_file():
+                        stat = entry.stat()
+                        found.append((entry.path, stat.st_dev, stat.st_ino, stat.st_size,
+                                      stat.st_mtime_ns, stat.st_ctime_ns))
+    found.sort()
+    return tuple(found)
 
+
+def dependency_trace(context) -> dict[str, list[str]]:
+    """The cold read trace of the computation: one independent process.
+
+    Split from `dependencies` so an assembly can run many leaves' traces side
+    by side (`Assembly.prefetch_dependencies`); it touches no shared state.
+    """
     try:
-        reads = wiring.computation_reads(context.document, root=context.root,
+        return wiring.computation_reads(context.document, root=context.root,
                                         provider=context.provider)
     except wiring.ChronologyWiringError as exc:
         if ("missing appointment dependency:" not in str(exc)
@@ -82,7 +105,20 @@ def dependencies(context) -> set[Path]:
             raise
         # The absent-input page is intentional. Adding the appointment input
         # changes assembly bytes and therefore the render identity.
-        reads = {"reads": [], "modules": [], "source_files": [], "sources": []}
+        return {"reads": [], "modules": [], "source_files": [], "sources": []}
+
+
+def dependencies(context, trace: dict[str, list[str]] | None = None) -> set[Path]:
+    """Canonical inputs of the computation, including cited bibliography.
+
+    The chronology adapter owns the cold read trace; the source graph owns
+    citation ancestry. Neither a hand-maintained date list nor a generated
+    leaf snapshot serves as the dependency authority. ``trace`` is this
+    leaf's `dependency_trace`, when the caller has already run it.
+    """
+    from _document_schema import _evidence_ancestry
+
+    reads = dependency_trace(context) if trace is None else trace
     paths = {context.root / value for key in ("reads", "modules", "source_files")
              for value in reads[key]}
     paths.update(_evidence_ancestry(context.root, set(), source_ids=reads["sources"]))

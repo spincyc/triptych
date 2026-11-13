@@ -6,6 +6,7 @@ Schema checks, owning genre gates, and rendered review remain separate facts.
 """
 from __future__ import annotations
 
+import copy
 import fnmatch
 import hashlib
 import importlib
@@ -61,6 +62,7 @@ OPERATIONAL_RECORDS = {
 _SOURCE_INDEX: dict[Path, dict[str, Path]] = {}
 _SOURCE_MODULE = None
 _FILE_HASHES: dict[Path, tuple[tuple, bytes]] = {}
+_REGISTRIES: dict[Path, tuple[tuple, dict]] = {}
 INPUT_RE = re.compile(r"\\(?:input|include)\s*\{([^{}]+)\}")
 INHERIT_RE = re.compile(r"\\AIInheritedGenerationMetadata\{([^{}]+)\}")
 
@@ -229,6 +231,22 @@ def registry(root: Path = ROOT) -> dict:
     path = Path(root) / REGISTRY
     if not path.is_file():
         path = ROOT / REGISTRY
+    # One operation asks for the registry about ten thousand times. Reuse the
+    # validated parse only while the file's identity/stats agree, as
+    # `_file_hash` does, and hand every caller its own copy.
+    before = path.stat()
+    signature = (before.st_dev, before.st_ino, before.st_size, before.st_mtime_ns, before.st_ctime_ns)
+    held = _REGISTRIES.get(path)
+    if held is not None and held[0] == signature:
+        return copy.deepcopy(held[1])
+    data = _registry_data(path)
+    after = path.stat()
+    if signature == (after.st_dev, after.st_ino, after.st_size, after.st_mtime_ns, after.st_ctime_ns):
+        _REGISTRIES[path] = (signature, copy.deepcopy(data))
+    return data
+
+
+def _registry_data(path: Path) -> dict:
     data = tomllib.loads(path.read_text(encoding="utf-8"))
     _strict(data, {"schema_version", "record_type", "manifest_name", "description", "types"}, "registry")
     if data.get("schema_version") != 1 or data.get("record_type") != "document-schema-registry":
@@ -1133,14 +1151,19 @@ def evidence_metadata(root: Path, paths, *, source_ids=()) -> set[Path]:
     return _evidence_ancestry(root, initial, source_ids=source_ids)
 
 
-def identities(root: Path, record: dict, *, output: str | None = None) -> dict:
-    """Source identities, not a rendered-artifact or witness-byte approval."""
+def identities(root: Path, record: dict, *, output: str | None = None, assembly=None) -> dict:
+    """Source identities, not a rendered-artifact or witness-byte approval.
+
+    `assembly` is the caller's operation-scoped `_document_types.Assembly`,
+    shared so many records need not each re-prepare the same projections.
+    """
     root = Path(root).resolve()
     if record.get("discovery_error"):
         raise SchemaError(record["discovery_error"])
     leaf_dir = root / record["source_dir"]
-    from _document_types import Assembly
-    assembly = Assembly(root)
+    if assembly is None:
+        from _document_types import Assembly
+        assembly = Assembly(root)
     virtual = assembly.files(leaf_dir)
     owner = _owner(root, record["provider"], record["leaf"])
     content = _source_files(root, leaf_dir, evidence=False)
@@ -1305,7 +1328,7 @@ def gates(root: Path, record: dict, phase: str) -> list[dict]:
 
 
 def validate(root: Path, record: dict, *, phase: str = "source", run_gates: bool = False,
-             require_manifest: bool = True) -> dict:
+             require_manifest: bool = True, assembly=None) -> dict:
     root = Path(root).resolve()
     report = {"id": record.get("id"), "phase": phase, "ok": False, "errors": [], "warnings": [], "external_gates": []}
     if phase not in {"source", "content", "render"}:
@@ -1319,7 +1342,7 @@ def validate(root: Path, record: dict, *, phase: str = "source", run_gates: bool
         checked = _normalise(root, raw, path)
         if require_manifest and checked["manifest_origin"] != "declared":
             report["errors"].append("missing publication.toml; adapter discovery is not a manifest")
-        _literal_closure(root, checked)
+        _literal_closure(root, checked, assembly=assembly)
         if phase in {"content", "render"}:
             report["errors"].extend(_content_checks(root, checked))
         report["external_gates"] = gates(root, checked, phase)

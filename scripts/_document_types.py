@@ -71,6 +71,7 @@ other record lists the sections again (guidance/document-schemas.md).
 from __future__ import annotations
 
 import importlib
+import os
 import pkgutil
 import re
 import tomllib
@@ -756,6 +757,8 @@ class Assembly:
         self._files: dict[Path, dict[Path, str]] = {}
         self._owners: dict[Path, Path | None] = {}
         self._dependencies: dict[Path, set[Path]] = {}
+        self._content_dependencies: dict[Path, frozenset[Path]] = {}
+        self._traces: dict[tuple[Path, str], object] = {}
         self._prepared: set[str] = set()
 
     def owner(self, path: Path) -> Path | None:
@@ -843,10 +846,58 @@ class Assembly:
                      for slot in render_edition(decl, edition, projections)[1]}:
             hook = getattr(projections[name], "dependencies", None)
             if hook is not None:
-                paths.update(hook(decl.context(self.root)))
+                held = self._traces.pop((leaf, name), None)
+                if isinstance(held, Exception):
+                    raise held
+                paths.update(hook(decl.context(self.root)) if held is None
+                             else hook(decl.context(self.root), trace=held))
         paths.difference_update(self.files(leaf))
         self._dependencies[leaf] = paths
         return paths
+
+    def prefetch_dependencies(self, leaves, *, jobs: int | None = None) -> None:
+        """Run many leaves' projection dependency traces side by side.
+
+        A projection may split its ``dependencies(context)`` hook into a
+        ``dependency_trace(context)`` that only runs an independent process,
+        and a ``dependencies(context, trace=...)`` that finishes from it. The
+        traces of every leaf not yet asked for run concurrently here; each is
+        held, with any error it raised, until `dependencies` is asked for
+        that leaf, which then returns or raises exactly what it would have.
+        """
+        from concurrent.futures import ThreadPoolExecutor
+
+        projections = self.projections if self.projections is not None else discover_projections()
+        work = []
+        for leaf in dict.fromkeys(Path(value).resolve() for value in leaves):
+            if leaf in self._dependencies:
+                continue
+            try:
+                decl = declaration(self.root, leaf)
+                names = sorted({slot.partition("/")[0] for edition in decl.editions
+                                for slot in render_edition(decl, edition, projections)[1]}) \
+                    if decl is not None else []
+            except Exception:
+                continue  # `dependencies` raises it, where this leaf is asked for
+            for name in names:
+                trace = getattr(projections.get(name), "dependency_trace", None)
+                if trace is not None and (leaf, name) not in self._traces:
+                    work.append(((leaf, name), trace, decl.context(self.root)))
+
+        def run(item):
+            _key, trace, context = item
+            try:
+                return trace(context)
+            except Exception as error:  # held, and raised where the leaf is asked for
+                return error
+
+        if not work:
+            return
+        available = getattr(os, "process_cpu_count", os.cpu_count)() or 1
+        workers = max(1, min(jobs if jobs is not None else available, 8, len(work)))
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            for (key, _trace, _context), result in zip(work, pool.map(run, work)):
+                self._traces[key] = result
 
     def content_dependencies(self, path: Path) -> set[Path]:
         """Projection inputs only when this generated content is actually read.
@@ -862,11 +913,18 @@ class Assembly:
         if decl is None or Path(path).name in {
                 decl.type.editions[name].entrypoint for name in decl.editions}:
             return set()
-        return {dependency for dependency in self.dependencies(leaf)
+        # The filtered set is a property of the leaf, not of which of its
+        # generated files is read, so it is computed once per leaf.
+        held = self._content_dependencies.get(leaf)
+        if held is None:
+            held = frozenset(
+                dependency for dependency in self.dependencies(leaf)
                 if not dependency.is_relative_to(decl.type.path)
                 and dependency not in {leaf / PUBLICATION, leaf / COMPONENTS,
                                        self.root / "scripts/_document_types.py"}
-                and dependency.relative_to(self.root).parts[0] in {"src", "scripts"}}
+                and dependency.relative_to(self.root).parts[0] in {"src", "scripts"})
+            self._content_dependencies[leaf] = held
+        return set(held)
 
 
 def stage(root: Path, provider: str, entrypoint: str, destination: Path) -> Path:

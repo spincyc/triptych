@@ -978,13 +978,29 @@ def held_source_inventory(name: str, derive: Callable[[], object]):
     return inventory[key]
 
 
+def document_assembly():
+    """The one document assembly this build, check or verification reads through.
+
+    Source validation, source identities and native print bundles each read
+    the leaves' generated content and template dependencies. An `Assembly` is
+    an operation-scoped cache (scripts/_document_types.py), so they share one
+    for the operation rather than each re-preparing every projection and
+    re-tracing every chronology computation. A separate command, verification
+    included, holds its own and so never sees another command's state.
+    """
+    from _document_types import Assembly
+    return held_source_inventory("document-assembly", lambda: Assembly(ROOT))
+
+
 def publication_source_records() -> dict[tuple[str, str], tuple[dict, dict]]:
     """Every independently identified output and its canonical source owner."""
     def derive():
         from _document_schema import discover, validate
         result = {}
+        assembly = document_assembly()
         for record in discover(ROOT):
-            report = validate(ROOT, record, phase="source", run_gates=False)
+            report = validate(ROOT, record, phase="source", run_gates=False,
+                              assembly=assembly)
             if report.get("errors"):
                 raise ReleaseError(
                     f"{record['id']}: invalid canonical source declaration: "
@@ -1010,7 +1026,8 @@ def publication_source_identity(provider: str, leaf: str) -> dict:
     except KeyError as exc:
         raise ReleaseError(f"no canonical source for {provider}/{leaf}") from exc
     identity = held_source_inventory(
-        f"publication-identity:{record['id']}", lambda: identities(ROOT, record)
+        f"publication-identity:{record['id']}",
+        lambda: identities(ROOT, record, assembly=document_assembly()),
     )
     return {
         "source": output["source_path"],
@@ -5147,7 +5164,7 @@ def native_tex_catalog() -> dict:
             return native_tex_catalog()
     def derive():
         from _native_tex_publication import catalog
-        return catalog(ROOT)
+        return catalog(ROOT, assembly=document_assembly())
     return held_source_inventory("native-tex-catalog", derive)
 
 

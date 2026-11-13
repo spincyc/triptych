@@ -12,9 +12,11 @@ from collections import Counter, defaultdict
 import gzip
 import hashlib
 import json
+import os
 from pathlib import Path, PurePosixPath
 import posixpath
 import re
+import stat
 import subprocess
 import sys
 import tempfile
@@ -61,14 +63,27 @@ def _relative(value: str) -> str:
 
 
 def _source(root: Path, value: str) -> Path:
+    # The same checks as `Path.is_symlink`, `resolve().is_relative_to(root)`
+    # and `is_file`, made on strings: one bundle catalogue asks this of about
+    # 900,000 paths, and the pathlib objects were most of what it cost.
     value = _relative(value)
-    current = root
+    base = os.fspath(root)
+    current = base
     for part in value.split("/"):
-        current = current / part
-        _need(not current.is_symlink(), "native source path contains a symlink: " + value)
-    _need(current.resolve().is_relative_to(root) and current.is_file(),
+        current = os.path.join(current, part)
+        try:
+            linked = stat.S_ISLNK(os.lstat(current).st_mode)
+        except (OSError, ValueError):
+            linked = False
+        _need(not linked, "native source path contains a symlink: " + value)
+    real = os.path.realpath(current)
+    try:
+        regular = stat.S_ISREG(os.stat(current).st_mode)
+    except (OSError, ValueError):
+        regular = False
+    _need((real == base or real.startswith(base.rstrip("/") + "/")) and regular,
           "missing native source file: " + value)
-    return current
+    return Path(current)
 
 
 def _fingerprints(root: Path, paths, cache: dict | None = None) -> list[dict]:
@@ -511,13 +526,13 @@ def validate_bundle(bundle: dict) -> dict:
 
 def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
                     documents: dict | None = None, revision: str | None = None,
-                    output_ids=None) -> dict:
+                    output_ids=None, assembly=None) -> dict:
     """Prepare source transports and a route map for the held admitted universe."""
     from _native_print import admitted_documents, source_revision
     import _print_document as printing
     from _document_types import Assembly
     root = Path(root).resolve()
-    assembly = Assembly(root)
+    assembly = Assembly(root) if assembly is None else assembly
     documents = admitted_documents(root) if documents is None else documents
     revision = source_revision(root) if revision is None else revision
     wanted = sorted(documents if output_ids is None else output_ids)
@@ -534,11 +549,20 @@ def prepare_catalog(root: Path = ROOT, *, scratch_root: Path | None = None,
     # Without one, each publication bundle refuses with the reason itself.
     repository = None
     if any(recipe["family"] == "publication" for recipe in checked):
-        from _edition_revision import Repository, RevisionError
+        from _edition_revision import Repository, RevisionError, prefetch_revisions
         try:
             repository = Repository(root)
         except RevisionError:
             repository = None
+        # The leaves' chronology traces are independent processes; run them
+        # side by side before the closures below ask for them one by one.
+        assembly.prefetch_dependencies(
+            root / "src" / recipe["provider"] / recipe["canonical"] for recipe in checked
+            if recipe["family"] == "publication")
+        if repository is not None:
+            prefetch_revisions(root, [(recipe["provider"], recipe["document"]) for recipe in checked
+                                      if recipe["family"] == "publication"],
+                               repository=repository, assembly=assembly)
     for identity, recipe in zip(wanted, checked, strict=True):
         bundle = prepare_bundle(identity, root=root, scratch_root=scratch_root, documents=documents,
                                 revision=revision, recipe=recipe, fingerprint_cache=cache,

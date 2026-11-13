@@ -43,6 +43,18 @@ class DocumentSchemaTests(unittest.TestCase):
         self.assertTrue(schema.validate(self.root, record)["ok"])
         self.assertEqual(schema.dumps_manifest(record), schema.dumps_manifest(self.data))
 
+    def test_identity_and_validation_read_through_the_callers_operation_assembly(self):
+        from unittest import mock
+        import _document_types
+        record = self.load()
+        alone = schema.identities(self.root, record)
+        assembly = _document_types.Assembly(self.root)
+        with mock.patch.object(_document_types, "Assembly",
+                               side_effect=AssertionError("the caller's assembly was not used")):
+            shared = schema.identities(self.root, record, assembly=assembly)
+            self.assertTrue(schema.validate(self.root, record, assembly=assembly)["ok"])
+        self.assertEqual(alone, shared)
+
     def test_identity_and_closure_use_current_template_without_refreshing_leaf(self):
         type_dir = self.root / "src/common/document-types/article-fixture-v1"
         type_dir.mkdir(parents=True)
