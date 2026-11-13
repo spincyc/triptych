@@ -25,7 +25,7 @@ import tempfile
 from typing import Any, Iterator
 
 import _safe_files as safe_files
-from _browser_product_inputs import ClosureError, family_code
+from _browser_product_inputs import CODE_TREES, ClosureError, excluded_root, family_code
 
 MANIFEST_RELATIVE = "release/browser-products.json"
 SCHEMA = "triptych-browser-products/v1"
@@ -301,15 +301,23 @@ def _identity_batch(root: Path, recipes=None) -> dict:
         trees = tuple(tree for tree in trees if not any(tree.startswith(parent + "/") for parent in trees if parent != tree))
         files = tuple(sorted({name for spec in specs.values() for name in spec[1]}))
         found = _paths(root, trees, files)
-        selected = {}
+        selected, excluded = {}, {}
         for key, (scopes, exact, excludes) in specs.items():
-            prefixes, excluded_prefixes = tuple(scope + "/" for scope in scopes), tuple(excluded + "/" for excluded in excludes)
-            selected[key] = {name for name in found
-                             if (name in exact or name.startswith(prefixes)
-                                 or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json"))))
-                             and name not in excludes and not name.startswith(excluded_prefixes)}
-        return selected
-    memberships = discover()
+            prefixes = tuple(scope + "/" for scope in scopes)
+            scoped = {name for name in found
+                      if name in exact or name.startswith(prefixes)
+                      or "/" not in name and (name.startswith("requirements") or name.endswith((".lock", "-lock.json")))}
+            # A present excluded path is keyed by its name and kind only: what
+            # a listing of its parent or a probe of the path itself can see.
+            marked = {}
+            for name in scoped if excludes else ():
+                path = excluded_root(name, excludes)
+                if path is not None:
+                    marked[path] = "directory" if path != name else marked.get(path, "file")
+            selected[key] = {name for name in scoped if not marked or excluded_root(name, excludes) is None}
+            excluded[key] = marked
+        return selected, excluded
+    memberships, markers = discover()
     names = set().union(*memberships.values())
     try:
         external = safe_files._external_identities(root, names)
@@ -334,18 +342,22 @@ def _identity_batch(root: Path, recipes=None) -> dict:
                     raise ProductError(f"rights record is not UTF-8: {name}") from error
             value = {"path": name, "sha256": _sha(body), "bytes": len(body)}
         values[name] = value
-    after = discover()
+    after, after_markers = discover()
     for key in after:
         after[key].update(name for name, value in external.items() if value["manifest"] in after[key] or name in after[key])
-    if memberships != after:
+    if memberships != after or markers != after_markers:
         raise ProductError("canonical input membership changed while hashing")
+    for name in sorted({name for marked in markers.values() for name in marked} - categories.keys()):
+        categories[name] = _component(name)
     result = {}
     for key, members in memberships.items():
         components = {category: [] for category in ("content", "rights", "generator", "lock")}
-        for name in sorted(members):
-            components[categories[name]].append(values[name])
+        marked = markers[key]
+        keyed = sorted(members | set(marked))
+        for name in keyed:
+            components[categories[name]].append({"path": name, "excluded": marked[name]} if name in marked else values[name])
         identity = {"schema": INPUT_SCHEMA, **{category: _sha(_json(items)) for category, items in components.items()},
-                    "membership": _sha(_json(sorted(members))), "count": len(members), "source_paths": sorted(members)}
+                    "membership": _sha(_json(keyed)), "count": len(keyed), "source_paths": sorted(members)}
         identity["sha256"] = _sha(_json({name: value for name, value in identity.items() if name != "source_paths"}))
         result[key] = identity
     # `source_paths` of the aggregate is the union of family keys: what a held
@@ -411,6 +423,7 @@ def _validate_recipes(recipes):
                 raise ProductError(f"invalid recipe paths: {field}")
             for name in recipe[field]:
                 _relative(name)
+        _validate_exclusions(recipe)
         if not recipe["output_prefixes"]:
             raise ProductError("browser recipe has no output ownership")
         for prefix in recipe["output_prefixes"]:
@@ -420,6 +433,23 @@ def _validate_recipes(recipes):
         if not isinstance(recipe["argv"], list):
             raise ProductError("recipe argv must be a list")
     return recipes
+
+
+def _validate_exclusions(recipe):
+    """An exclusion narrows one declared data tree; it never reaches code.
+
+    Segments are literal or `**`. Exclusions are distinct and do not nest, so
+    each excluded path has one owner (`excluded_root`).
+    """
+    excludes = recipe["exclude_paths"]
+    for name in excludes:
+        parts = name.split("/")
+        if (parts[-1] == "**" or any(part != "**" and any(mark in part for mark in "*?[]") for part in parts)
+                or any(name.startswith(tree + "/") for tree in CODE_TREES)
+                or not any(name.startswith(tree + "/") for tree in recipe["input_trees"])):
+            raise ProductError(f"browser recipe exclusion must name a path inside a declared data tree: {name}")
+        if excludes.count(name) > 1 or any(other != name and name.startswith(other + "/") for other in excludes):
+            raise ProductError(f"browser recipe exclusions repeat or nest: {name}")
 
 
 def _recipes():

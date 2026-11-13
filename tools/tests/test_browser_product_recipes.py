@@ -38,6 +38,26 @@ class RecipeTests(unittest.TestCase):
         self.assertEqual(recipe["output_prefixes"], ["web-editions"])
         self.assertEqual(recipe["input_trees"], ["src", "release/publications"])
 
+    def test_review_records_are_excluded_and_calendar_and_bible_scopes_are_narrow(self):
+        # Audited 2026-11-12: no producer opens these records, and these
+        # families read nothing outside the narrowed trees.
+        actual = {recipe["id"]: recipe for recipe in products._recipes()}
+        self.assertEqual(actual["bibles"]["input_trees"], ["src/sources/bibles"])
+        self.assertEqual(actual["calendar"]["input_trees"], ["src/sources/calendars"])
+        self.assertEqual(actual["rubrics"]["input_trees"], ["src/sources/calendars"])
+        self.assertEqual(recipes._REVIEW_RECORDS, [
+            "src/sources/inventories/classification-review-v1.toml",
+            "src/sources/inventories/claude-classification-review-v1.toml",
+            "src/sources/inventories/claude-publications-v1.toml",
+            "src/sources/inventories/publications-v1.toml",
+            "src/sources/inventories/source-family-migration-v1.toml",
+        ])
+        inventories = "src/sources/inventories"
+        for identifier, recipe in actual.items():
+            with self.subTest(family=identifier):
+                holds = any(inventories == tree or inventories.startswith(tree + "/") for tree in recipe["input_trees"])
+                self.assertEqual(recipe["exclude_paths"], recipes._REVIEW_RECORDS if holds else [])
+
     def test_recipe_factory_requires_delivery_and_runner_expands_out_once(self):
         with self.assertRaises(TypeError):
             recipes._recipe("missing", "missing", ["producer.py"], [])
@@ -95,6 +115,33 @@ class RecipeTests(unittest.TestCase):
         for key in ("PYTHONPYCACHEPREFIX", "TRIPTYCH_LIBRARY_CACHE_DIR"):
             self.assertNotEqual(environments[0][key], environments[1][key])
             self.assertNotEqual(environments[0][key], inherited[key])
+
+    def test_families_run_side_by_side_and_report_the_first_failure_in_recipe_order(self):
+        import threading
+        import time
+        table = tuple(recipes._recipe(name, f"structure/{name}", [f"scripts/{name}.py"], ["src/sources"],
+                                      delivery="browser-data") for name in ("first", "second", "third"))
+        both = threading.Barrier(3, timeout=30)
+        def concurrent(root, out, recipe, environment):
+            both.wait()  # would time out if the families ran one after another
+            (out / "structure" / recipe["id"]).mkdir(parents=True)
+            (out / "structure" / recipe["id"] / "index.json").write_text('{"id": "%s"}' % recipe["id"])
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary, patch.object(recipes, "RECIPES", table), \
+             patch.object(recipes, "_run", side_effect=concurrent):
+            result = recipes.generate(ROOT, Path(temporary) / "data")
+            self.assertEqual([item["id"] for item in result["products"]], ["first", "second", "third"])
+        def failing(root, out, recipe, environment):
+            if recipe["id"] == "second":
+                time.sleep(0.5)  # fails last in time, first in recipe order
+                raise recipes.RecipeError("second failed")
+            if recipe["id"] == "third":
+                raise recipes.RecipeError("third failed")
+            (out / "structure/first").mkdir(parents=True)
+            (out / "structure/first/index.json").write_text("{}")
+        with tempfile.TemporaryDirectory(dir=SCRATCH) as temporary, patch.object(recipes, "RECIPES", table), \
+             patch.object(recipes, "_run", side_effect=failing):
+            with self.assertRaisesRegex(recipes.RecipeError, "second failed"):
+                recipes.generate(ROOT, Path(temporary) / "data")
 
     def test_a_wrong_family_output_cannot_enter_staging(self):
         def wrong(root, out, recipe, environment):

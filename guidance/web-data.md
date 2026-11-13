@@ -113,8 +113,10 @@ A family's input identity covers what its producer can read, and nothing else:
 Both halves over-approximate. Code a producer could load counts even when a run
 does not execute it, so `act-history` stales when `tools/public-alpha` changes,
 and most source-text families still declare all of `src/sources` although each
-run reads less of it. Guidance, tests, docs, project records, review records no
-producer reads, and code outside every closure belong to no key. A rights or
+run reads less of it; `bibles` declares only `src/sources/bibles`, and
+`calendar` and `rubrics` only `src/sources/calendars`. Guidance, tests, docs,
+project records, review records no producer reads, and code outside every
+closure belong to no key. A rights or
 publication record is an input only of a family that reads it: `documents`
 reads `release/publications/`, `act-history` hashes the liturgical-text
 publication policy, and `propers` and `sources` read the reviewed authority
@@ -122,6 +124,31 @@ records their recipes name. Publication does not rest on these keys: current
 rights/withheld-text filters, publishable-edition and hold/withdrawal
 membership checks, and reader/print completeness checks remain independent
 mandatory gates.
+
+**Exclusions.** A recipe's `exclude_paths` carves paths out of its declared
+trees. Each is a repository path inside one of those trees, never under
+`scripts/` or `tools/`; its segments are literal, or `**` for any number of
+whole segments. An excluded path that exists stays in the key by name and kind
+(a file, or a directory holding files), because a listing of its parent or a
+probe of the path itself sees exactly that: its appearance or disappearance
+stales the family. Its bytes, and everything beneath a directory, do not. The
+audit holds a producer to the same line: it fails a family that opens or lists
+an excluded path or touches anything beneath one.
+
+Every family whose trees contain `src/sources/inventories` excludes the five
+provider review and bookkeeping records there (`publications-v1.toml`,
+`classification-review-v1.toml`, their `claude-` counterparts, and
+`source-family-migration-v1.toml`), which change with nearly every
+publication. No code closure names them, and on 2026-11-12 the audit found no
+producer opening them: the source library's tree walk only lists and probes
+them. A provider's run archives and standing findings under a leaf's
+`evaluations/` stay in the key of every family that holds a provider tree
+(`act-history`, `documents`, `propers`, `sources`, `web-editions`). Each of
+them walks into those directories, though none opened a file there: the source
+library's symlink preflight, its `**/research/source-bindings.toml` discovery
+(which would load a bindings file placed in an archive) and its cache
+fingerprint all descend through them. Excluding them first needs those walks
+to stop at `evaluations/`, a change to the library rather than to a recipe.
 
 The descriptor's aggregate identity commits to the sorted family input
 commitments and to nothing else, so a change outside every family's key stales
@@ -147,7 +174,9 @@ reading a new data file, and declare that file or tree in the recipe.
 changed. A re-record is required after changing a family's declared data, a
 module in its code closure, the harness, a dependency pin, or a recipe, and
 only then. An edit to guidance, tests, docs, an unread review record or
-unrelated code leaves every key, and so the deployment, as it was.
+unrelated code leaves every key, and so the deployment, as it was. So does
+refreshing an excluded record in place, such as a provider publication
+inventory; creating or deleting one stales the families that exclude it.
 
 When changed inputs include edition content, commit those sources before
 recording. An uncommitted edition's revision stamp uses the build time, so
@@ -938,6 +967,10 @@ make public-site
 verifies warm families and rebuilds only genuine exact misses from canonical
 inputs, offline. `check` checks existing cache bytes without generation or
 network. A cache restored from CI is only a candidate until these checks pass.
+A cold pass runs the missing families' producers side by side, each in its
+own process and staging directory, and collects them in recipe order; most
+producers are single-threaded, so one after another they left all but one
+core idle.
 
 When `check` reports changed inputs ([what a family key
 covers](#what-a-family-key-covers) says when), review the effects and run

@@ -18,10 +18,12 @@ repository path outside that family's key.
 from __future__ import annotations
 
 import ast
+from functools import lru_cache
 import hashlib
 import json
 import os
 from pathlib import Path, PurePosixPath
+import re
 import shutil
 import stat
 import tempfile
@@ -46,6 +48,34 @@ _PARSED: dict[str, tuple] = {}
 
 class ClosureError(ValueError):
     """The code closure could not be computed from the current checkout."""
+
+
+@lru_cache(maxsize=None)
+def _exclusion(excludes: tuple) -> re.Pattern | None:
+    if not excludes:
+        return None
+    def pattern(path):
+        # `**` is any number of whole path segments, at the shallowest depth.
+        parts = path.split("/")
+        return "".join("(?:[^/]+/)*?" if part == "**" else re.escape(part) + ("/" if index < len(parts) - 1 else "")
+                       for index, part in enumerate(parts))
+    return re.compile("(" + "|".join(pattern(path) for path in excludes) + ")(?:/|$)")
+
+
+def excluded_root(name: str, excludes) -> str | None:
+    """The recipe exclusion at or above `name`, or None.
+
+    An exclusion is a repository path whose segments are literal, or `**` for
+    any number of whole segments (`src/claude/**/evaluations`). An excluded
+    path stays in its family's key as a name, so the key still changes when
+    it appears or disappears; its bytes, and for a directory everything
+    beneath it, do not. `audit` holds a producer to exactly that: it may list
+    the parent and probe the excluded path itself, and may not open it, list
+    it, or touch anything beneath it.
+    """
+    pattern = _exclusion(tuple(excludes))
+    found = pattern.match(name) if pattern is not None else None
+    return found.group(1) if found else None
 
 
 class _Index:
@@ -482,6 +512,9 @@ def audit(root: Path, product_ids=None, *, log=None) -> dict:
       member, a declared input file, or inside a declared tree;
     - every directory it listed is inside a declared tree or the code trees
       (the import system lists those), so membership changes are covered;
+    - it never opened or listed a path its recipe excludes, nor touched
+      anything beneath one; probing the excluded path itself is allowed, as
+      its name stays in the key (`excluded_root`);
     - it read nothing from ignored state (`build/`, `.git`, `.scratch/` other
       than its private cold scratch and staging), which no key can cover;
     - every Python child kept the audit environment. A non-Python child (the
@@ -544,8 +577,19 @@ def _judge(root: Path, recipe: dict, identity: dict, events: list, excluded=froz
             return ""
         return path[len(prefix):] if path.startswith(prefix) else None
 
-    def covered_file(name):
-        return name in members or name in declared or (_within(name, trees) and not _within(name, excludes))
+    # An excluded path is keyed by name alone (`excluded_root`): probing the
+    # path itself sees only what its name commits, and listing its parent only
+    # names it. Opening it, listing it, or touching anything beneath it would
+    # read what no key commits.
+    def exclusion(name):
+        found = excluded_root(name, excludes)
+        return None if found is None else "path" if found == name else "beneath"
+
+    def covered_file(name, kind):
+        within = exclusion(name)
+        if within is not None:
+            return within == "path" and kind == "probe"
+        return name in members or name in declared or _within(name, trees)
 
     ancestors = {""}
     for scope in (*trees, *declared, *members):
@@ -553,6 +597,9 @@ def _judge(root: Path, recipe: dict, identity: dict, events: list, excluded=froz
         ancestors.update("/".join(parts[:index]) for index in range(1, len(parts)))
 
     def covered_directory(name, listing):
+        within = exclusion(name)
+        if within is not None:
+            return within == "path" and not listing
         if _within(name, trees) or _within(name, CODE_TREES):
             return True
         # Probing an ancestor of the key's scope reveals nothing outside it.
@@ -609,7 +656,7 @@ def _judge(root: Path, recipe: dict, identity: dict, events: list, excluded=froz
         (opened if kind == "open" else probed).add(name)
         if name in excluded:
             excluded_reads.add(name)
-        elif not covered_file(name):
+        elif not covered_file(name, kind):
             outside.add(name)
     flagged = outside | listed_outside | ignored
     return {"opened": len(opened), "probed": len(probed), "listed": len(listed), "members": len(members),

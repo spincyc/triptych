@@ -8,10 +8,13 @@ listed here; `_browser_product_inputs` computes each producer's code closure,
 and `tools/browser-products audit` proves that the two together cover every
 repository path the producer touches. Source and act-history deliberately
 retain broad data scopes, and the other source-text consumers the whole source
-library, until a narrower data closure has been proved.
+library, until a narrower data closure has been proved. `exclude_paths` carves
+out of a declared tree what the audit shows no producer opens; an excluded
+path stays keyed by name (guidance/web-data.md, "What a family key covers").
 """
 from __future__ import annotations
 
+from concurrent.futures import ThreadPoolExecutor
 import json
 import os
 from pathlib import Path
@@ -30,7 +33,25 @@ _BROAD = ["src/sources", "src/gpt", "src/claude", "src/common", "web"]
 _SOURCE = ["src/sources"]
 # The source library preflights and loads every publication's bindings.
 _LIBRARY = ["src/sources", "src/gpt", "src/claude"]
-_CALENDAR = ["src/sources/calendars", "src/sources/inventories"]
+# calendar-days and calendar-rubrics read only the calendar directory; the one
+# inventory path in `_calendars` (recension act ids) is reached only from
+# `recension_problems`, which neither tool calls (2026-11-12 audit).
+_CALENDAR = ["src/sources/calendars"]
+# Provider review and bookkeeping records: what each publication passed, how
+# its sources were classified, and the source-family migration ledger. They
+# change with nearly every publication, and no producer opens them: no code
+# closure names them, and the source library's tree walk only lists and
+# probes them (2026-11-12 audit). An exclusion keeps their names in the key.
+_REVIEW_RECORDS = [
+    "src/sources/inventories/classification-review-v1.toml",
+    "src/sources/inventories/claude-classification-review-v1.toml",
+    "src/sources/inventories/claude-publications-v1.toml",
+    "src/sources/inventories/publications-v1.toml",
+    "src/sources/inventories/source-family-migration-v1.toml",
+]
+# Run archives under a leaf's evaluations/ stay in every key that holds a
+# provider tree: the whole-library load (preflight and binding discovery)
+# walks them, and would load a research/source-bindings.toml placed there.
 # Reviewed authority records the proper text pipeline reads by fixed path.
 _LATIN_AUTHORITIES = [
     "workflows/reviews/missal-english-completion-2026-10-29/roman-1962/finite-latin-authority-v2.json",
@@ -43,45 +64,50 @@ _EXECUTION_AUTHORITIES = [
 ]
 
 
-def _recipe(identifier, prefix, argv, trees, files=(), *, delivery):
+def _recipe(identifier, prefix, argv, trees, files=(), *, excludes=(), delivery):
     return {
         "id": identifier, "version": 1, "output_prefixes": [prefix],
         "argv": argv, "input_trees": list(trees), "input_files": list(files),
-        "exclude_paths": [], "delivery": delivery,
+        "exclude_paths": list(excludes), "delivery": delivery,
     }
 
 
 # Tokens are expanded as complete argv entries, never as shell text. Options
 # that determine corpus membership or civil dates are explicit and timeless.
 RECIPES = (
-    _recipe("bibles", "bibles.json", ["tools/index-bible", "manifest", "--bible-root", "{root}/src/sources/bibles"], _SOURCE, delivery="browser-data"),
+    # `index-bible manifest` takes its editions from code and checks only that
+    # each edition's chapter directory exists.
+    _recipe("bibles", "bibles.json", ["tools/index-bible", "manifest", "--bible-root", "{root}/src/sources/bibles"], ["src/sources/bibles"], delivery="browser-data"),
     _recipe("encyclicals", "encyclicals", ["scripts/_encyclicals.py", "--root", "{root}", "structure"],
             ["src/sources/papal-documents", "release/papal-documents"], ["release/papal-documents.json"], delivery="browser-data"),
     _recipe("act-history", "structure/act-history", ["tools/act-history", "structure"], _BROAD,
-            ["guidance/liturgical-text-publication-policy.md"], delivery="browser-data"),
+            ["guidance/liturgical-text-publication-policy.md"], excludes=_REVIEW_RECORDS, delivery="browser-data"),
     _recipe("calendar", "structure/calendar", ["tools/calendar-days", "structure", "--root", "{root}/src/sources/calendars", "--first", "2020", "--last", "2120"], _CALENDAR, delivery="browser-data"),
     _recipe("catena", "structure/catena", ["scripts/_catena.py", "--root", "{root}", "structure"], _SOURCE,
-            ["src/web/browser/catena/catena-model.js"], delivery="browser-data"),
+            ["src/web/browser/catena/catena-model.js"], excludes=_REVIEW_RECORDS, delivery="browser-data"),
     # Assembly resolves both provider-owned inputs and fallbacks under src/;
     # its postconciliar projection also reads the fixed registry authority.
     _recipe("documents", "structure/documents", ["tools/document-library", "structure"],
             ["src", "web", "workflows/fragments", "workflows/pipelines", "workflows/schema", "release/publications"],
-            ["guidance/liturgy/postconciliar-propers-registry.md"], delivery="browser-data"),
-    _recipe("ordinary", "structure/ordinary", ["tools/mass-ordinary", "structure", "--root", "{root}/src/sources"], _SOURCE, delivery="browser-data"),
-    _recipe("paragraphs", "structure/paragraphs", ["scripts/_catena.py", "--root", "{root}", "paragraphs"], _SOURCE, delivery="browser-data"),
+            ["guidance/liturgy/postconciliar-propers-registry.md"], excludes=_REVIEW_RECORDS, delivery="browser-data"),
+    _recipe("ordinary", "structure/ordinary", ["tools/mass-ordinary", "structure", "--root", "{root}/src/sources"], _SOURCE,
+            excludes=_REVIEW_RECORDS, delivery="browser-data"),
+    _recipe("paragraphs", "structure/paragraphs", ["scripts/_catena.py", "--root", "{root}", "paragraphs"], _SOURCE,
+            excludes=_REVIEW_RECORDS, delivery="browser-data"),
     _recipe("propers", "structure/propers", ["tools/mass-propers", "structure", "--root", "{root}/src/sources/calendars"], _LIBRARY,
-            [*_LATIN_AUTHORITIES, *_EXECUTION_AUTHORITIES], delivery="browser-data"),
-    _recipe("readings", "structure/readings", ["tools/reading-plan", "structure", "--root", "{root}/src/sources/reading-plans"], _SOURCE, delivery="browser-data"),
+            [*_LATIN_AUTHORITIES, *_EXECUTION_AUTHORITIES], excludes=_REVIEW_RECORDS, delivery="browser-data"),
+    _recipe("readings", "structure/readings", ["tools/reading-plan", "structure", "--root", "{root}/src/sources/reading-plans"], _SOURCE,
+            excludes=_REVIEW_RECORDS, delivery="browser-data"),
     _recipe("rubrics", "structure/rubrics", ["tools/calendar-rubrics", "structure", "--root", "{root}/src/sources/calendars"], _CALENDAR, delivery="browser-data"),
     _recipe("sources", "structure/sources", ["tools/source-reader", "structure", "--strict"], _BROAD,
-            _LATIN_AUTHORITIES, delivery="browser-data"),
+            _LATIN_AUTHORITIES, excludes=_REVIEW_RECORDS, delivery="browser-data"),
     # Every web reader's Markdown, converted at build time from canonical TeX
     # (guidance/web-editions.md). Consumed by the site build, never published as
     # browser data; the pinned Pandoc lock lives under src/common.
     # Release records decide each reader's publication status, so they are
     # inputs too (the cold audit found the read).
     _recipe("web-editions", "web-editions", ["tools/web-edition", "products"], ["src", "release/publications"],
-            ["guidance/liturgy/postconciliar-propers-registry.md"],
+            ["guidance/liturgy/postconciliar-propers-registry.md"], excludes=_REVIEW_RECORDS,
             delivery="site-build"),
 )
 
@@ -217,12 +243,20 @@ def generate(root: Path, out: Path, product_ids=None, *, environment=None) -> di
             "TRIPTYCH_LIBRARY_CACHE_DIR": str(Path(state) / "library"),
             "TRIPTYCH_SOURCE_LIBRARY_CACHE": "0", "LC_ALL": "C.UTF-8", "TZ": "UTC",
         }
-        for recipe in RECIPES:
-            if recipe["id"] not in requested:
-                continue
+        selected = [recipe for recipe in RECIPES if recipe["id"] in requested]
+        for recipe in selected:
+            (Path(state) / recipe["id"]).mkdir()
+        # Each family is its own offline process writing its own staging
+        # directory, so they run side by side: most are single-threaded, and
+        # run one after another they left all but one core idle. Collection
+        # stays in recipe order, so which failure is reported, and everything
+        # moved into `out`, does not depend on scheduling.
+        with ThreadPoolExecutor(max_workers=len(selected)) as pool:
+            runs = {recipe["id"]: pool.submit(_run, root, Path(state) / recipe["id"], recipe, environment)
+                    for recipe in selected}
+        for recipe in selected:
+            runs[recipe["id"]].result()
             family_out = Path(state) / recipe["id"]
-            family_out.mkdir()
-            _run(root, family_out, recipe, environment)
             emitted = _files(family_out)
             if not emitted or any(not _owned(name, recipe) for name in emitted):
                 raise RecipeError(f"{recipe['id']} emitted no complete family or wrote outside its owned paths")
