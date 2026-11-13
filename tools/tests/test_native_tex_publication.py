@@ -443,7 +443,8 @@ class PublicAlphaNativeTeXTest(unittest.TestCase):
         for helper in ("scripts/_native_print.py", "src/web/browser/shared/native-print.js",
                        "src/web/browser/shared/native-print.css"):
             self.base.write(helper, (fixtures.fixtures.REPOSITORY_ROOT / helper).read_bytes())
-        module = type("NativePublication", (), {"catalog": lambda _, root: self.catalog})()
+        module = type("NativePublication", (),
+                      {"catalog": lambda _, root, assembly=None: self.catalog})()
         patch = mock.patch.dict("sys.modules", {"_native_tex_publication": module})
         patch.start()
         self.addCleanup(patch.stop)

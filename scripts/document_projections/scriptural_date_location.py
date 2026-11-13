@@ -64,17 +64,14 @@ def prepare(root: Path) -> None:
     _INPUT_STATE[root] = state
 
 
-def dependencies(context) -> set[Path]:
-    """Canonical inputs of the computation, including cited bibliography.
+def dependency_trace(context) -> dict[str, list[str]]:
+    """The cold read trace of the computation: one independent process.
 
-    The chronology adapter owns the cold read trace; the source graph owns
-    citation ancestry. Neither a hand-maintained date list nor a generated
-    leaf snapshot serves as the dependency authority.
+    Split from `dependencies` so an assembly can run many leaves' traces side
+    by side (`Assembly.prefetch_dependencies`); it touches no shared state.
     """
-    from _document_schema import _evidence_ancestry
-
     try:
-        reads = wiring.computation_reads(context.document, root=context.root,
+        return wiring.computation_reads(context.document, root=context.root,
                                         provider=context.provider)
     except wiring.ChronologyWiringError as exc:
         if ("missing appointment dependency:" not in str(exc)
@@ -82,7 +79,20 @@ def dependencies(context) -> set[Path]:
             raise
         # The absent-input page is intentional. Adding the appointment input
         # changes assembly bytes and therefore the render identity.
-        reads = {"reads": [], "modules": [], "source_files": [], "sources": []}
+        return {"reads": [], "modules": [], "source_files": [], "sources": []}
+
+
+def dependencies(context, trace: dict[str, list[str]] | None = None) -> set[Path]:
+    """Canonical inputs of the computation, including cited bibliography.
+
+    The chronology adapter owns the cold read trace; the source graph owns
+    citation ancestry. Neither a hand-maintained date list nor a generated
+    leaf snapshot serves as the dependency authority. ``trace`` is this
+    leaf's `dependency_trace`, when the caller has already run it.
+    """
+    from _document_schema import _evidence_ancestry
+
+    reads = dependency_trace(context) if trace is None else trace
     paths = {context.root / value for key in ("reads", "modules", "source_files")
              for value in reads[key]}
     paths.update(_evidence_ancestry(context.root, set(), source_ids=reads["sources"]))
