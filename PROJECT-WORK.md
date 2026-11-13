@@ -5,7 +5,7 @@ This is Triptych's provider-neutral operational memory. Read it together with
 handoff, and before reporting completion. “Published,” “built,” “committed,”
 “pushed,” “review copy,” and “complete” are different states.
 
-Last reconciled: 2026-11-12.
+Last reconciled: 2026-11-13.
 
 ## Claude 1962 resumed Sixth Sunday after the Epiphany, 2026-11-15
 
@@ -82,7 +82,7 @@ to the 180-minute limit is left to the Pages workflow's owner.
 
 <!-- promised-deliverable: gpt-1962-67-production-2026-11-09 -->
 
-**In progress: main integrated; a fresh workflow run is required.** The
+**In progress: all three content reviews accepted; publication validation underway.** The
 maintainer requested the TLM propers documents for the upcoming Sunday and
 publication to main. The target is GPT identity 67, the universal 1962 resumed
 Sixth Sunday after the Epiphany on 15 November 2026. The eleven appointed
@@ -90,19 +90,21 @@ elements include the Trinity Preface. The controlling Missal images and two
 dated Ordos establish the appointment; the evidence preserves the Epistle's
 printed citation anomaly, resumed prayer endings and local-calendar limits.
 
-Proper-study version 19, run `b42047a822a7e83e`, has accepted research,
-expansive-study, concise-study and homily reviews. The current documents contain
+Proper-study version 19, run `b42047a822a7e83e`, recorded accepted research,
+expansive-study, concise-study and homily reviews. That historical family contained
 6,598 substantive study words, 3,377 concise-study words and 1,185 spoken homily
 words. The homily's estimate is 10 minutes 18 seconds at 115 words per minute,
 not a timed performance. Research, study and homily repairs received fresh
 independent reviews; the concise review passed without findings. One isolated
 redundant Offertory sentence remains advisory (STU-002).
 
-The source records reconcile fifty-four bindings and sixty-one dispositions.
+The revalidated source records reconcile fifty-six bindings and sixty-three
+dispositions, including two existing Augustine passages added after the merge.
 Nine binary witnesses are verified and preserved in an offline-only pack
-outside the disposable workspace. The complete source check passed against
-the iteration-0 homily family; inventories are synchronized after the later
-prose repair and artifact audit, with final global validation still pending. All 167 source-family review states
+outside the disposable workspace. Source registration and the complete source
+check pass against the integrated research on 12 November. Later authoring and
+publication records will need their own inventory synchronization and checks.
+All 167 source-family review states
 remain pending, without an invented family-wide acceptance. A staged revision
 validation defect was repaired in `1b68bd930e`; its focused tests and actual
 conversions pass, with broader fixture-test limits recorded in the cycle audit.
@@ -111,9 +113,21 @@ The reviewed source checkpoint is committed as `89e6f0ff1e`. After the
 12 November merge from main, the three content seals remain exact, while a
 shared commentary-map addition makes the research seal stale. Canonical web
 review passes, but the install stage stops run `b42047a822a7e83e` as BLOCKED
-at that research prerequisite. Its immutable audit is retained before a new
-run against the integrated sources. Remaining work
-is renewed research review, canonical web review, publication wiring and gates, terminal
+at that research prerequisite. Its immutable audit is retained in `6855b2c0d3`.
+New run `eaa5e2381738f740`, seeded at that integrated checkpoint, passes its
+scope gate, context, research, registration, research preflight and independent
+research review. All 1,767 research inputs match. The reconciled 6,914-word
+expansive study passes authoring, preflight and independent review with all
+nineteen sealed inputs unchanged. Its one advisory, STU-REG-001, concerns the
+same Offertory closer. The 3,562-word concise study passes derivation, preflight
+and independent review without findings; all sixteen sealed inputs match.
+After recovery from a service usage interruption, the same homily worker finishes
+its reconciliation, verifies retained evidence hashes and returns PASS. The
+unchanged 1,185-word speech passes preflight and fresh independent review without
+findings. Artifact validation confirms one owner, three outputs, eight current
+generated files and exact accepted-review inputs. Fetching main on 13 November
+finds no newer upstream changes. Remaining work is artifact gates, the reviewed
+source checkpoint, canonical web review, publication wiring and gates, terminal
 run archive, three native print compilation checks, desktop/mobile reader and
 print-control checks, validated publication to main, successful Pages deployment
 and verification of all three live readers. Content acceptance does not yet

@@ -1,0 +1,73 @@
+{
+  "run_id": "eaa5e2381738f740",
+  "stage": "homily-review",
+  "iteration": 0,
+  "packet_sha256": "5ce5c7f7c0229001c6b5e09684916fc6ec20d6817079d9b18bd6cb6278fe4ff2",
+  "reviewed_deliverable": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/homily.tex",
+  "verdict": "PASS",
+  "findings": [],
+  "inspection": [
+    {
+      "material": "All ten REVIEW_INPUTS files",
+      "extent": "Read the complete sealed file contents, including homily entrypoint, spoken component, terminal apparatus, scope, interpretations, bindings, and the four shared TeX files; actual file hashes matched before and after review."
+    },
+    {
+      "material": "sections/homily/10-body.tex",
+      "extent": "All fifteen paragraphs, continuous silent reading first, then paragraph/claim checks and a second continuous silent reading. No audible rehearsal."
+    },
+    {
+      "material": "sections/homily/90-apparatus.tex",
+      "extent": "Entire source-and-delivery note and all three reference items; checked selected sources and arithmetic, edition limits and separation of speech from note."
+    },
+    {
+      "material": "sections/30-word-received-in-trial.tex and sections/concise/10-commentary.tex",
+      "extent": "Read both complete components to compare the homily with its reviewed upstream argument and the current comparison, including the added Augustine alternatives. The homily legitimately selects the Chrysostom/Aquinas argument without reciting those other alternatives."
+    },
+    {
+      "material": "Missale Romanum 1962",
+      "extent": "Viewed the retained page images missal-502.png (printed 421), missal-503.png (printed 422), missal-130.png (printed 49). Read target title, Collect no. 1760, Epistle no. 1761, Alleluia no. 1763, Gospel no. 1764, Offertory no. 1765, Secret no. 1766, Postcommunion no. 1768, and winter Epistle no. 338 for the erroneous printed citation. Original complete PDF independently rehashed. No new full-book collation or image rendering."
+    },
+    {
+      "material": "Douay–Rheims (Challoner), Gutenberg 1581 registered verse controllers",
+      "extent": "Matthew 13:1–58 complete, 1 Thessalonians 1:1–10 complete, Psalm 129:1–8 complete (Vulgate numbering). Reviewed original retained TSV bytes, not a new translation."
+    },
+    {
+      "material": "Chrysostom, Homilies on Matthew, 46.2–3",
+      "extent": "NPNF1-10 CCEL exact retained controller, physical lines 27185–27330; the passage includes preceding tares context, the mustard/leaven explanation, contact and quantity, and the apostolic-virtue argument through its first concluding question. No Greek-original or printed-volume collation and no whole-volume reading."
+    },
+    {
+      "material": "Chrysostom, Homilies on First Thessalonians, homily I",
+      "extent": "NPNF1-13 CCEL exact retained controller, physical lines 29098–29348, including exposition of 1:1–7 and the opening moral application. Oxford preface lines 16504–16514 and 16557–16563 checked for its own setting/translation attribution; no new work-composition date asserted."
+    },
+    {
+      "material": "Aquinas, Super I ad Thessalonicenses, caput 1 lectio 1 [87862]",
+      "extent": "Read the complete unit in its exact retained Corpus Thomisticum HTML via a mechanical tag-stripped reading aid; boundary ends at [87863]. Checked the header identifying Turin 1953 and Alarcon revision, faith/work/labor, charity, hope/endurance, imitation/example, and final resurrection/deliverance. The 92,000-byte HTML was independently rehashed. Restricted reading aid remains only in this scratch directory."
+    }
+  ],
+  "judgments": {
+    "exegetical_claim": "The Gospel can become fruitful through weak disciples who remain among those to whom they are sent; the Thessalonians show received faith becoming exemplary conduct during affliction. Continuing dependence on grace does not postpone faithful action.",
+    "text_substitution_test": "The movement depends on the woman hiding leaven in much meal after failed seed and hostile weeds, then the Epistle moving from imitation to example in actual affliction and ending with the risen Son awaited. Replacing these readings with unrelated ones would remove the actual mechanism and evidence. The Collect specifies words and deeds; the Secret supplies cleansing, renewal, direction and protection; the two cries from the depths and Postcommunion retain ongoing dependence. These are substantive uses, not decorative verse mentions.",
+    "source_fidelity": "Chrysostom explicitly connects leaven with mixture/contact and challenges the miracle excuse by apostolic freedom from wealth/glory. His Thessalonian exposition distinguishes grievous events from Spirit-given joy; the homily does not demand an untroubled appearance. Aquinas expressly connects faith with work and labor and hope with endurance, and identifies resurrection and freedom from future punishment in 1:10. The homily does not attribute its complete Mass connection or patient-speech application to either author.",
+    "oral_clarity": "Continuous finished speech, clear scene and recoverable transitions, no inline citations, unexplained Latin, dates recited aloud, invented anecdotes, clerical identity, stage directions, or dependence on visible notes. Named authorities contribute developed reasoning while the preacher carries the argument.",
+    "pastoral_fruit_and_hope": "One practicable second-person response—patient truthful speech when hostility tempts contempt—grows from the Collect and exemplary conduct, and recognizes that the hearer cannot control another person’s reception. Ending reaches resurrection and the risen Son rather than stopping at present influence.",
+    "register": "No recurring maxim-closer, tag/refrain, listener-life inventory, stock call, emphatic fragment, immediate question-answer device, or authority-list pattern found. The ending applies the achieved argument to the assembly and concludes in the text’s hope. No source qualification was dropped or newly attributed during this review.",
+    "prayer_and_rights_boundary": "Prayer descriptions remain explanatory prose, with no newly composed liturgical prayer or substitute recitation. No restricted Aquinas payload copied into the result or any tracked artifact.",
+    "delivery": "Independent plain-body count: 1,185 words, 15 paragraphs, 87 sentences, longest sentence 25 words. Estimates: 10m46s at 110 wpm; 10m18s at 115 wpm; 9m53s at 120 wpm. Compatible with the approximate 10–12-minute default. No timed performance certified."
+  },
+  "limits": [
+    "This is the packet’s independent homily/source review; it does not renew a whole research, study, synthesis, source-library, publication, HTML, PDF, or deployment acceptance.",
+    "Only the exact loci named above were independently inspected as external source text; other sources listed in the sealed research records were read as records, not independently reopened in this lane.",
+    "No fresh network retrieval, Greek-original collation, original NPNF print-image collation, or full Corpus Thomisticum work reading; exact retained witnesses and their recorded edition boundaries govern.",
+    "No audible rehearsal, timed human delivery, print export or print pagination/font/layout review; no browser rendering reviewed.",
+    "Existing audit reports were not accepted as substitutes for this inspection; historical authorial rehearsal events cannot be independently recreated from prose."
+  ],
+  "changes": "Only files under .scratch/gpt-1962-67-revalidation-homily-review-0. No reviewed source, coordinator record, commit, push or workflow transition changed.",
+  "supporting_files": [
+    "seal-check.json",
+    "delivery-metrics.json",
+    "source-integrity.json",
+    "aquinas-87862-reading-aid.txt",
+    "result.json"
+  ],
+  "result_validation": "Passed the workflow module’s dependency-free _validate_result with workflows/schema/proper-study-homily-review.json and evaluator stage type. No workflow engine instantiated or advanced."
+}

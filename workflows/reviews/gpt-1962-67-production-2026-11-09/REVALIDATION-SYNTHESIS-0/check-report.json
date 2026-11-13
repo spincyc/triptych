@@ -1,0 +1,97 @@
+{
+  "stage": "derive-synthesis",
+  "iteration": 0,
+  "checks": [
+    {
+      "name": "document-types-refresh",
+      "command": "tools/tpt document-types refresh --leaf gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/document-types-refresh.log",
+      "log_sha256": "f06e60d7a4336f7b67c5f6dae61193c9740ed579eea936f73f148658490be684"
+    },
+    {
+      "name": "components",
+      "command": "tools/check-proper-components --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --phase content --edition synthesis",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/components.log",
+      "log_sha256": "8a35693e1ca488cec192299f86ebc842161e9a4b8c7306040136a3cee1c77644"
+    },
+    {
+      "name": "preflight",
+      "command": "tools/check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --edition synthesis",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/preflight.log",
+      "log_sha256": "21bf126496966a9911c5ff8d8e9811f5fd76713cdfc1d5d19f761190bb416985"
+    },
+    {
+      "name": "schema",
+      "command": "tools/document-schema check --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --phase content --json",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/schema.log",
+      "log_sha256": "e4b73b9084c226cd4b19bd3962b0d636a9f593806187c2c9b1d9f6694ab659ac"
+    },
+    {
+      "name": "metadata",
+      "command": "tools/check-generation-metadata --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/metadata.log",
+      "log_sha256": "3c95ad663772b992a5cf941975a7a309de3e70d86ca647f2fde65f6d4baae1fe"
+    },
+    {
+      "name": "web-declaration",
+      "command": "tools/check-web-edition --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/web-declaration.log",
+      "log_sha256": "2249a559f53e6be25000557cb1a82081525844e9d903def475b6d38e3beab0c4"
+    },
+    {
+      "name": "tool-registry",
+      "command": "tmt check",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/tool-registry.log",
+      "log_sha256": "dc51b8c96c2d745df3bd5590d990230a482fd247123599548e0632fdbf97fc22"
+    },
+    {
+      "name": "provenance",
+      "command": "tools/check-content-preflight --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany --edition synthesis --check provenance-matches-run --run-workflow proper-study --run-workflow-version 19 --run-workflow-digest 73706a2ab569c88974452c4aec8fe2b7540a23ad1192efa39d574ddfbd334645 --run-id eaa5e2381738f740 --run-seed-commit 6855b2c0d3fc44250d5e2fc4807b00bfaad34d0d",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/provenance.log",
+      "log_sha256": "6c919051ae245187ee7089d20dcc41262f58f744ac7ac1249f628bcd7b5e23c6"
+    },
+    {
+      "name": "web-probe",
+      "command": "python .scratch/gpt-1962-67-revalidation-synthesis-0/convert.py",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/web-probe.log",
+      "log_sha256": "4136fcaba04f3f1dd8c9cdd6d4f2d775e01f81ea5f57b112bdd916dea01a86f0"
+    },
+    {
+      "name": "verification",
+      "command": "python .scratch/gpt-1962-67-revalidation-synthesis-0/verify.py",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/verification.log",
+      "log_sha256": "bd800edbb10ef46a302c57c2363a46a1d62e1c704e53dcce7906ac7429fc1bfb"
+    },
+    {
+      "name": "whitespace",
+      "command": "git diff --check",
+      "exit_code": 0,
+      "log": ".scratch/gpt-1962-67-revalidation-synthesis-0/whitespace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "word_count": {
+    "method": "Themes and developed commentary prose; excludes headings, markers, footnotes, inventory, overview, generated chronology and terminal apparatus. Hyphenated forms count once.",
+    "components": {
+      "04-themes": 863,
+      "10-commentary": 2699
+    },
+    "substantive_words": 3562
+  },
+  "limitations": [
+    "No global source suite rerun while coordinator-owned inventory hashes await refresh.",
+    "No print export or physical-page inspection.",
+    "Conversion proof is not independent web or synthesis acceptance."
+  ],
+  "initial_supplementary_assertion": "The first overview check expected unbolded labels; corrected to the converter\u2019s actual bold Markdown labels, without changing canonical content."
+}

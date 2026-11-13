@@ -327,3 +327,249 @@ every review receives a fresh worker at xhigh with its compiled packet and no
 authoring conversation. The coordinator alone advances the engine and commits
 or publishes work. The current source/reader workflow performs no print-layout
 review; the three native print compilation checks remain a deployment gate.
+
+
+## Integrated-source run, 12 November 2026
+
+The earlier run is archived in `6855b2c0d3`, preserving thirty actual results,
+thirty packets and its one intervention. JSON parsing, archive privacy scan,
+whitespace checks and the refreshed source inventory pass (155 publications,
+3,685 source-surface files, twelve nonpublication owners). All 167 family
+review states remain pending. No native-print, site-build or deployment pass
+is asserted by this checkpoint.
+
+The new run is `eaa5e2381738f740`, seeded at
+`6855b2c0d3fc44250d5e2fc4807b00bfaad34d0d` with the same proper-study version 19
+and digest, GPT provider, 15 November 2026 date, adult parish assembly and no
+research handoff. It starts against the integrated source map, retaining the
+existing three-document family and registered evidence. Earlier verdicts are
+historical evidence, not this run's acceptance. Its program scope gate passes,
+and a fresh resolve-context worker is dispatched at high. The original task
+and promised deliverable remain open through current reviews, publication
+gates, the final archive, native compilation, site validation and live delivery.
+
+Resolve-context iteration 0 passes. The worker rehashes the complete registered
+CMAA Missal PDF and two dated Ordo responses, reopens ten controlling images,
+and checks current online corroboration without replacing the registered
+controllers. Eleven elements, slot 25 of 26, the Trinity Preface and exclusion
+of St Albert and institutional/local additions are confirmed. Only the context
+record changes, distinguishing this bounded revalidation from complete text
+collation and the initial source plan from existing evidence. Identity and
+selected source-schema checks pass. The global source check passes library
+validation, then stops at the expected stale context hash. The worker's
+inventory refresh completes before the coordinator's serialization message;
+its two-line diff updates only the context hash and aggregate snapshot. It
+performs no further shared writes or repeated global suite. The exact scope
+is retained in [REVALIDATION-CONTEXT-0.json](REVALIDATION-CONTEXT-0.json).
+The engine dispatches fresh research iteration 0 at high against the integrated
+library; the following registration stage owns shared inventory synchronization.
+
+Research iteration 0 passes after independently rehashing eighteen complete
+acquisitions, twenty-eight retained text witnesses and the nine-member evidence
+pack. This is retained-byte revalidation, not a new retrieval or hydration
+roundtrip. The worker rereads the controlling Missal, Pustet and Cummiskey
+pages and carrying reception loci, completes uncapped discovery for all eight
+distinct appointed Scripture passages and the formulary, and inspects the
+existing Augustine *Quaestiones evangeliorum* I.11 and I.12 witnesses and edges.
+Those two already registered passages become bounded alternatives in the
+research, bringing the local bindings to fifty-six. The Psalm 43 context extent
+is corrected to verses 1–26. The commentary fragment registry is an explicit
+review dependency. The three downstream documents remain unchanged.
+Source-library validation and whitespace checks pass; chronology record and
+orientation-v3 annotations report already current. This stage makes no new
+Greek-original or Augustine printed-column collation, exhaustive reception or
+rights-clearance claim. Source registration iteration 0 is dispatched to one
+fresh high-effort worker with the actual receipt and retained-byte handoff,
+including the required Psalm disposition correction and two Augustine edges.
+
+Source-registration iteration 0 passes. Fifty-six bindings reconcile with
+sixty-three dispositions: three admission rows naming six existing passages,
+sixteen unchanged concrete deferrals and forty-four non-commentary uses.
+The worker independently verifies eighteen deliveries, twenty-nine text
+witnesses and all nine archive members. It corrects the Psalm disposition and
+adds two Augustine admission rows without creating or changing a shared source
+identity, fingerprint or edge. Both classification files, the Claude inventory,
+all family memberships and all review states are preserved; the ledger still
+has 167 pending units and no atomic-coverage acceptance. Strict working Sources
+generation and replay pass for 18,510 files. All required checks pass, including
+`make check-sources` (23 corpus tests, 17 chronology tests and six generated-
+document tests), selected schema and whitespace checks. No release or browser
+product is installed. The program research preflight is next.
+
+Research preflight iteration 0 passes both the research-records check and strict
+source-projection currency check. A fresh independent research reviewer is
+dispatched at xhigh with the exact sealed packet and neutral retained-evidence
+locations, without authoring discussion or a requested verdict.
+
+A preliminary disclosure screen of the six outgoing commits through
+`6855b2c0d3` examines all 157 newly reachable blobs (17,048,153 bytes).
+All are text; no token-shaped secret or local-address match is found. Four
+historical work-register blobs repeat the existing main-branch explanation of
+an Emscripten virtual filesystem default; inspection confirms that this is no
+personal path. This checkpoint does not replace the final outgoing-range audit.
+The six complete commit messages and author/committer identities are also
+inspected: they use the existing project GitHub noreply identity and describe
+the authorized scope and actual validation state.
+
+Research review iteration 0 passes without findings. The fresh reviewer checks
+all 1,744 file hashes and 23 computation inputs, completes 57 retained-byte
+checks, visually inspects the controlling Missal and historical antecedent
+pages, and reads the carrying reception and chronology loci. Both interpretations
+pass their consequential-difficulty tests against actual witnesses. The closing
+seal check is unchanged. Exact inspections and limits are retained in
+[REVALIDATION-RESEARCH-REVIEW-0/review-notes.txt](REVALIDATION-RESEARCH-REVIEW-0/review-notes.txt),
+with its three supporting JSON checks copied unchanged after privacy inspection.
+The apparent Jerome extent issue clears on a second image inspection. The
+reviewer also investigates compact chronology omissions and proposal spans;
+after a coordinator pointer to the applicable guidance, it reconciles the
+specific 5 November maintainer direction in Scripture chronology §10.3 with
+the generic packet wording and verifies every alternative and occasion gap in
+the generated evidence appendix. No chronology defect or source change is
+required. This is research approval only; authoring and downstream reviews
+remain separate stages.
+
+The engine accepts that review and dispatches fresh author-study iteration 0
+at high. The author receives the existing draft, current accepted research and
+exact new-run packet, with upstream evidence and companion prose outside its
+ownership. Shared inventories remain coordinator-owned until authoring settles.
+
+Author-study iteration 0 passes at 6,914 substantive words. It integrates
+Augustine's distinct seed and leaven explanations into the second interpretation
+and comparison, adds their precise reference and limits, and corrects the
+omitted negation in the explanation of Matthew 13:34. Four study sections,
+generation provenance and the production audit change. All twenty-two Latin
+and English appointed-text bodies, accepted research, companion prose,
+declarations and generated entrypoints remain unchanged. Historical model
+contributions are preserved and the exact new run is recorded.
+Scoped component, twelve content checks, schema, provenance, metadata, web
+declaration and canonical conversion pass. Source-library validation passes;
+the aggregate source check stops at five stale inventory hashes before the
+final audit append. The coordinator is synchronizing those shared records.
+The exact checks, preservation evidence and word-count method are retained in
+[REVALIDATION-AUTHOR-STUDY-0/check-report.json](REVALIDATION-AUTHOR-STUDY-0/check-report.json)
+and its sibling records. No print or independent content acceptance is claimed.
+
+The coordinator refreshes the owning publication inventory and family ledger;
+both checks pass (155 publications, 3,685 source-surface files, twelve owners,
+167 pending review units). Parsed review states and the classification-review
+file are unchanged. This clears the recorded inventory staleness, without
+claiming another full global source-suite run. The engine accepts authoring and
+dispatches program study preflight iteration 0.
+
+Study preflight iteration 0 passes every declared source/component check and
+the canonical web conversion. The engine seals the study and dispatches one
+fresh independent reviewer at xhigh with the complete packet and neutral source
+locations, without author discussion or a requested verdict.
+
+Study review iteration 0 passes. The fresh reviewer reads the complete authored
+study and checks its carrying claims against the exact retained biblical,
+patristic and liturgical witnesses. Both interpretations and all eleven
+elements pass their substantive coverage and difficulty checks. All nineteen
+sealed inputs remain unchanged. STU-REG-001 is advisory: the isolated redundant
+Offertory closer, the same passage earlier noted as STU-002. No blocking
+finding is raised and no silent repair is made. Detailed inspections and final
+hash checks are retained unchanged in
+[REVALIDATION-STUDY-REVIEW-0/inspection-evidence.json](REVALIDATION-STUDY-REVIEW-0/inspection-evidence.json)
+and its sibling `final-checks.json`. This review does not re-adjudicate generated
+chronology or certify print layout, web rendering or either companion. The
+engine accepts the study and dispatches fresh derive-synthesis iteration 0 at
+high, with accepted upstream content protected.
+
+Derive-synthesis iteration 0 passes at 3,562 substantive words (863 themes,
+2,699 developed commentary). Augustine's seed and leaven explanations enter
+the existing interleaved comparison with their source qualification. Three
+concise sections, generation metadata and the production audit change;
+ninety-nine other leaf resources, including accepted upstream sources, homily,
+declarations and entrypoints, remain byte-identical. Scoped components, twelve
+content checks, schema, metadata, provenance, web declaration, registry and
+conversion fidelity pass. The supplementary overview assertion initially
+expected unbolded labels and was corrected to the converter's actual bold
+Markdown labels; no source or converter workaround was made. Exact checks and
+preservation evidence are retained in
+[REVALIDATION-SYNTHESIS-0/check-report.json](REVALIDATION-SYNTHESIS-0/check-report.json)
+and its sibling verification record. Shared inventory synchronization is
+coordinator-owned; no new global source-suite or print-layout pass is claimed.
+
+The coordinator refreshes and checks the publication inventory and family
+ledger after concise authoring. Both pass; classification bytes and all 167
+review states are unchanged. The engine accepts derivation and dispatches
+program synthesis preflight iteration 0.
+
+Synthesis preflight iteration 0 passes. The engine dispatches one fresh
+independent reviewer at xhigh, with the exact sealed packet and neutral source
+locations. No authoring conversation or requested verdict is supplied.
+
+Synthesis review iteration 0 passes without findings. Reading the concise work
+before the expansive study recovers both distinct arguments. Exact source
+comparisons find their reasons and qualifications preserved. The reviewer
+checks all sixteen sealed inputs and forty-seven retained delivery/text files;
+all match. A concrete lookup in an independently converted and locally rendered
+chronology table distinguishes the Gospel's narrated event from composition,
+including the stated derived-date qualifications. This is a table-fragment
+usability check, not complete-site, companion publication or print acceptance.
+The initial Chromium attempt hits its Unix-socket path limit; a relative
+process-local temporary directory succeeds without a source change.
+Evidence and closing hashes are retained in
+[REVALIDATION-SYNTHESIS-REVIEW-0/evidence.md](REVALIDATION-SYNTHESIS-REVIEW-0/evidence.md).
+Its one private reviewer-handle clause is removed from the public copy; the
+retention receipt records original and retained hashes. Inspection text and
+the closing hash record are unchanged. The engine accepts synthesis and
+dispatches fresh derive-homily iteration 0 at high.
+
+## Recovery, 13 November 2026
+
+The homily worker was interrupted by a service usage limit after writing
+scoped check logs, conversion and preservation evidence, and its production
+audit, but before returning a structured result. No result was fabricated or
+submitted on its behalf. On the maintainer's explicit instruction to recover,
+resume, complete and push, the coordinator confirms that the engine still
+awaits derive-homily iteration 0: twelve results received, thirteen packets
+emitted, and no terminal disposition. The original packet hash is unchanged.
+Fetching main again confirms `92032f5178`, already merged; no new upstream
+change needs integration. The same interrupted worker is resumed to verify its
+retained work and finish the actual stage result. Earlier reviews remain intact.
+
+The resumed homily worker returns PASS. The 1,185-word, fifteen-paragraph
+speech and its apparatus remain unchanged: the current sources support its
+selected first interpretation. Only the generation contribution and production
+audit changed. Scoped checks completed on 12 November are preserved with their
+actual dates; the worker verifies their current source and evidence hashes on
+13 November. The estimated 10:18 at 115 words per minute is not a timed
+performance. The check report, preservation/conversion verification and word
+count are retained in [REVALIDATION-HOMILY-0](REVALIDATION-HOMILY-0/).
+The coordinator refreshes and checks the publication inventory and migration
+ledger; all 167 review states and classification decisions are unchanged.
+
+Homily preflight iteration 0 passes. The engine dispatches one fresh reviewer
+at xhigh with the exact sealed homily-review packet and neutral primary-witness
+locations, without an authoring conversation or requested verdict.
+
+Homily review iteration 0 passes without findings. The reviewer independently
+checks the complete speech and apparatus, current upstream argument, exact
+Chrysostom and Aquinas loci, biblical contexts, and three controlling Missal
+images. All ten sealed inputs and seven rehashed source payloads match. The
+1,185-word estimate remains 10:18 at 115 words per minute; no audible rehearsal,
+HTML or print inspection is claimed. Exact inspections and limits are retained
+in [REVALIDATION-HOMILY-REVIEW-0/inspection-evidence.json](REVALIDATION-HOMILY-REVIEW-0/inspection-evidence.json).
+
+Build-artifacts iteration 0 passes: one owner, three outputs, no content-schema
+errors with registered gates; eight generated files are current. All four
+accepted-review comparisons and 1,767 unique sealed-file hashes match. Only
+the production audit changes; accepted prose and evidence are preserved.
+[REVALIDATION-ARTIFACTS-0](REVALIDATION-ARTIFACTS-0/) retains the validation
+summary and source identities. This source/HTML stage produces no print export.
+
+Artifact gates iteration 0 pass: the complete source-output contract, generated
+assembly and accepted-review inputs validate. Before dispatching generate-web,
+the coordinator prepares a coherent commit of the reviewed source and evidence
+checkpoint, as required for stable edition revision stamps.
+
+Checkpoint inventory synchronization passes: 155 publications, 3,685 source
+surface files, twelve owners; all 167 family-review states remain pending and
+classification bytes are unchanged. The source checkpoint includes only this
+production, its retained review evidence and the owning inventory records.
+
+The staged whitespace check identifies one surplus final blank line in the
+retained research-review notes. Only that blank line is removed from the public
+copy; original scratch evidence remains unchanged. Its retention receipt records
+both hashes. All inspection text and review verdicts are preserved.

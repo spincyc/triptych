@@ -1,0 +1,60 @@
+{
+  "stage": "resolve-context",
+  "iteration": 0,
+  "run_id": "eaa5e2381738f740",
+  "checked_on": "2026-11-12",
+  "document_root": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+  "authorization": "guidance/liturgy/propers-production-plan.md exact GPT identity authorized 2026-11-09; no reference-only authorization; complete mode retained",
+  "inventory_keys": ["introit", "collect", "epistle", "gradual", "alleluia", "gospel", "offertory", "secret", "preface", "communion", "postcommunion"],
+  "calendar": {
+    "requested_date": "2026-11-15",
+    "slot": 25,
+    "total_after_pentecost_slots": 26,
+    "nominal_formulary": "resumed-epiphany-6",
+    "universal_winner": "resumed-epiphany-6",
+    "rank": "II",
+    "commemorated": [],
+    "other_candidate": "St Albert the Great, III class, omitted",
+    "computed_anchors": {"easter": "2026-04-05", "pentecost": "2026-05-24", "advent_1": "2026-11-29"},
+    "limitations": "Universal-calendar study; no unspecified local patron, dedication, religious-calendar overlay or ICRSP additional Or pro Papa imported. No postconciliar cycle or text imported."
+  },
+  "rehashed_sources": [
+    {
+      "source_id": "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf",
+      "path": ".scratch/gpt-1962-67-context-0/missale62.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "images_reopened": [10, 15, 16, 20, 129, 130, 374, 502, 503, 800],
+      "image_paths": ".scratch/gpt-1962-67-context-0/missal-NNN.png",
+      "read_loci": ["RG18(b), PDF10", "RG91 precedence table items15 and24, printedXVII/PDF15", "RG109 and111(b), printedXVIII/PDF16", "RGMR298, printedXXII/PDF20", "winter Sixth Sunday, printed48-49/PDF129-130, nos337-345", "Trinity Preface, printed293/PDF374/no1082", "resumed Sixth Sunday, printed421-422/PDF502-503/nos1759-1768", "15 November St Albert rank, printed719/PDF800"],
+      "findings": "Eleven required units and their boundaries confirmed. Five chants follow resumed seasonal substitution. Epistle citation typo 1,1-20 confirmed against actual body and winter 1,2-10 heading. Trinity Preface explicitly appointed; winter and resumed conclusion cues differ."
+    },
+    {
+      "source_id": "artifact.icrsp-france.ordo.2026-11-09-web.html-60cdeed4",
+      "path": ".scratch/gpt-1962-67-research-0/icrsp-november.html",
+      "sha256": "60cdeed44008cdfefcc426873fe8a662db053456b640179ceb8dc6ea3b50ab32",
+      "read_locus": "j2026-11-15, bounded heading, flags, Office and Mass entry",
+      "finding": "XXV Sunday after Pentecost, Sixth after Epiphany, II class, green, Gloria, Creed, Trinity Preface; Or pro Papa remains institutional."
+    },
+    {
+      "source_id": "artifact.fsspx.ordo.2026-11-09-web.html-abd8b0e2",
+      "path": ".scratch/gpt-1962-67-research-0/fsspx-nov15.html",
+      "sha256": "abd8b0e276f1e0b7d77f79c618e2c24df17e40360ec52754b3c254778637e3e0",
+      "read_locus": "Dated November15 heading, Mass inventory and separate other-calendar notice",
+      "finding": "Resumed Sixth after Epiphany, II class, green, 1Thess1:2-10 and Mt13:31-35; St Fintan notice limited to Chur."
+    }
+  ],
+  "live_web_crosscheck": {
+    "urls": ["https://icrspfrance.fr/ordo.php?d=2026-11-01", "https://ordo.fsspx.org/day/2026-11-15?lang=en"],
+    "finding": "Current online views agree on the appointment. FSSPX now titles the day XXV Sunday after Pentecost with Texts of the VI Sunday after Epiphany. These mutable browser views are supplemental corroboration only; the context retains its exact registered archived responses as the evidence controllers. No new source bodies were acquired or registered."
+  },
+  "checks": {
+    "check-proper-identity": "PASS: Identity67 registered in roman-1962",
+    "document-schema-source": "PASS: 1 document, 3 outputs, 0 source schema errors; owning validators not run",
+    "calendar-days": "PASS: requested date and three anchors recomputed; results are finding aids, occurrence established separately",
+    "git-diff-check": "PASS for context.md",
+    "make-check-sources": "Before inventory refresh: source library valid (11019 artifacts,14334 editions,9657 passages,10822 segments,10959 works,4669 bindings); structural inventory valid; inventory replay failed solely on context.md stale SHA256. No post-refresh global suite run, per coordinator serialization instruction.",
+    "source-inventory-refresh": "Completed: publications-v1.toml aggregate snapshot and context.md SHA256 only, two lines changed. audited_on was already 2026-11-12 and remains unchanged. Shared diff preserved for coordinator integration."
+  },
+  "changed_resources": ["src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/context.md", "src/sources/inventories/publications-v1.toml"],
+  "scope_limits": ["Appointment, inventory, boundaries and source-plan revalidation only", "No renewed complete Latin or historical English collation", "No reception sweep, chronology review, rights re-adjudication, research acceptance, downstream prose review, build, publication or print inspection", "Existing entrypoints and source-library identities preserved", "No commits, pushes, engine advancement, nested agents or archived-record changes"]
+}

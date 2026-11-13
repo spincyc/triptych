@@ -1,0 +1,264 @@
+{
+  "stage": "study-review",
+  "iteration": 0,
+  "run_id": "eaa5e2381738f740",
+  "packet": "build/tpt-runs/eaa5e2381738f740/packets/study-review-0000.txt",
+  "artifact": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex",
+  "review_method": [
+    "Fresh independent reading of the complete packet and applicable global, repository, editorial, source, document-schema and three-document/liturgical profile guidance.",
+    "Read the complete canonical study: main.tex and all seven authored section files, together with the publication/element manifests, verified appointed-text record, scope, interpretation account, source bindings and declared review dependencies. Revisited the two developed readings and terminal qualifications after checking their sources.",
+    "Read exact retained source texts and viewed the identified original page images independently. Previous context/research reviewer result files and review conclusions were not used as evidence. Read source-receipts.json for identities and delivery locations, and inspected current exact artifact records for relevant sources.",
+    "Recomputed the 19 engine-sealed input hashes before and after inspection. Independently rehashed all 18 retained acquired deliveries, 29 retained text witnesses, the offline archive and its nine members. The text and member records also match their actual bytes. These integrity checks are not claims to whole-work reading, fresh acquisition, or corpus-wide validation.",
+    "Did not delegate, edit reviewed artifacts, commit, push, run a workflow transition, or write outside the assigned scratch directory."
+  ],
+  "mode_and_scope": {
+    "mode": "complete",
+    "outcome": "The publication manifest, reviewed scope/verified text and production-plan authorization agree on complete appointed text. No reference-only exception is invoked. The conditional Research PDF locator/anchor checks therefore do not apply.",
+    "inventory": "Eleven appointed elements are present: composite Introit with its separate psalm verse, Collect, Epistle, Gradual, Alleluia, Gospel, Offertory, Secret, Trinity Preface, Communion, Postcommunion. Ordinary cues and historical short conclusions are preserved and explained.",
+    "occurrence": "The universal-calendar resumed Sixth Sunday identity and exclusions are consistent with RG18(b), precedence, RG109/111(b) and RGMR298. The retained November 2026 ICRSP entry explicitly names the twenty-fifth Sunday after Pentecost/sixth after Epiphany, Gloria, Creed and Trinity Preface; its Oratio pro Papa remains an institutional addition. The retained FSSPX delivery identifies VI Sunday after Epiphany (Transferred) for 2026-11-15. This is inspection of the dated retained deliveries, not a fresh live-site claim.",
+    "optional_print": "No print PDF was assigned or reviewed. No 20–50-page certification, pagination, layout, export or live-link certification is supplied.",
+    "chronology": "The generated Scriptural Date and Location appendix was not re-reviewed as authored prose or re-adjudicated for dates, as the packet requires. No authored sentence elsewhere was found to replace its disputed chronology with a newly asserted event/composition date."
+  },
+  "source_inspections": [
+    {
+      "witness": "1962 Missale Romanum, exact CMAA controller; retained missale62.pdf and original context page renderings",
+      "loci": [
+        "printed 421–422 nos1759–1768 / PDF502–503",
+        "printed 293 no1082 / PDF374",
+        "printed 49 no338 / PDF130",
+        "RG18 / PDF10; precedence / PDF15; RG109 and111(b) / PDF16; RGMR298 / PDF20"
+      ],
+      "actual_inspection": "Visually read all appointed Latin bodies on the source images, including the entire Trinity Preface and its dialogue/Sanctus, the Epistle continuation across the page, chant repetitions, conclusions and adjacent heading boundaries. Read the governing rubric passages.",
+      "outcome": "The study distinguishes the resumed formulary from the winter chants, reproduces the correct resumed text, and truthfully corrects the erroneous printed 1Thess1,1–20 heading by the actual body and winter parallel 1Thess1,2–10. The Alleluia and Offertory have different repetition patterns. The resumed Postcommunion short conclusion is not silently lengthened. No local commemoration is imported.",
+      "limits": "No whole-Missal collation or legal conclusion about redistributing the modern controller."
+    },
+    {
+      "witness": "Pustet Ratisbon 1862 Missale Romanum; exact full PDF and six retained page renderings",
+      "loci": [
+        "printed 44–45 / PDF130–131",
+        "printed 239–240 / PDF325–326",
+        "printed 357–358 / PDF443–444"
+      ],
+      "actual_inspection": "Read the Sixth-after-Epiphany prayers and lessons, Trinity Preface, and Twenty-third-after-Pentecost chant bodies in original page images.",
+      "outcome": "These provide the identified historical Latin antecedents. Their different winter chants, Twenty-third-Sunday lessons and prayers remain outside the resumed appointment. The study does not import older second/third orations or treat this antecedent as the1962 calendar authority."
+    },
+    {
+      "witness": "Cummiskey Philadelphia 1861 historical English, exact page deliveries and Preface-dialogue rendering",
+      "loci": [
+        "printed 102 / n112",
+        "subsequent anomalous printed 101 / n114",
+        "printed xxvii / PDF38",
+        "printed xxviii / n38",
+        "printed xxix / n39"
+      ],
+      "actual_inspection": "Read Collect, Secret, Postcommunion, complete Preface dialogue, common opening, Trinity insertion and Sanctus cue against the study. Inspected the exact associated TSV artifact records.",
+      "outcome": "The archaic English wording and its own abbreviated conclusions are retained. Secret has no closing cue in this witness. The Preface is truthfully assembled from its common opening and proper insertion; this historical study English is not presented as an approved1962 translation."
+    },
+    {
+      "witness": "Registered Douay–Rheims Challoner Gutenberg1581 verse tables; exact retained TSVs",
+      "loci": [
+        "Jeremias29:1–32",
+        "Psalms43:1–26,77:1–72,84:1–14,129:1–8",
+        "Matthew13:1–58",
+        "Mark 11:1–33",
+        "1Thessalonians1–5 complete"
+      ],
+      "actual_inspection": "Read the complete chapters/psalms and entire short epistle, not only appointed verses.",
+      "outcome": "Supports the exilic waiting context, gratitude and renewed petition in Psalm84, the lament following Psalm43:8–9, forgiveness/waiting/redemption in Psalm129, Matthew’s preceding sower/tares and subsequent inquiry/judgment, Mark’s faith/forgiveness context, and the whole-letter account of conduct and resurrection. Psalm43 correctly ends at26 in this witness. Liturgical adaptations are visibly distinguished from biblical counterparts."
+    },
+    {
+      "witness": "Chrysostom Homilies on Matthew, NPNF 1-10, retained adb8f1c9a988-source.txt",
+      "loci": [
+        "46.2–3 in continuous source around physical27170–27430",
+        "47.1 opening around 27480–27545"
+      ],
+      "actual_inspection": "Read the relevant continuous units and nearby boundaries: preceding sower/tares discouragement; mustard seed; leaven mixed into meal; three measures as much meal; objection about apostolic miracles; virtue; invitation to inquiry and this occasion’s parabolic teaching.",
+      "outcome": "Reading A accurately teaches why weakness and opposition prompt the parables, why contact matters, and why the miracles objection does not excuse failure to practice virtue. The three-measures contrast with Jerome survives the actual source rather than being invented. The source’s explanations are not attributed as a whole-Mass construction.",
+      "limits": "Historical English witness, no fresh Greek or printed-edition collation."
+    },
+    {
+      "witness": "Chrysostom Homilies on First Thessalonians, NPNF 1-13, retained54274dd9aa73-source.txt",
+      "loci": [
+        "Homily 1 on1:1–7 around 29098–29348",
+        "Oxford preface around 16504–16514 and 16557–16563"
+      ],
+      "actual_inspection": "Read the homily’s exposition of the opening, faith/work, costly charity, endurance, Spirit-given joy and example to other believers, plus preface attribution.",
+      "outcome": "The study accurately distinguishes Chrysostom’s labor-of-charity explanation from Aquinas’s construction, explains the coexistence of bodily affliction and spiritual joy, and correctly identifies James Tweed as translator. The furnace illustration and example to existing believers are present.",
+      "limits": "This study review does not claim to have reread Homily 2 or established original Greek wording/composition dates."
+    },
+    {
+      "witness": "Thomas Aquinas, Super I ad Thessalonicenses, exact Corpus Thomisticum HTML fe77f056",
+      "loci": [
+        "Chapter 1 lectio 1 [87862], complete"
+      ],
+      "actual_inspection": "Read the complete first lectio after stripping HTML markup locally for reading. Checked the source’s salutation, gratitude/intercession, work and labor of faith, charitable works/enduring hope, alternative explanations of power/Spirit/fullness, imitation insofar as following Christ, and two objects of expectation.",
+      "outcome": "The study’s account is accurate and substantive. It explicitly notes that the salutation precedes the appointed thanksgiving when drawing on the Trinitarian explanation. Miracles and morally complete preaching remain alternatives, not a single paraphrase. Resurrection and freedom from punishment are not reduced to present reputation.",
+      "limits": "Modern reserved-rights expression is used by attribution and original explanatory paraphrase; no redistribution, fresh critical-text verification, or whole-work reading is claimed."
+    },
+    {
+      "witness": "Jerome, Matthew commentaryII in PL26 and Jeremiah commentaryV in PL24, exact page-image witnesses",
+      "loci": [
+        "PL26 cols89–94 / PDF52–54, relevant13:31–35",
+        "PL24 cols893–894 / PDF451, Jeremiah 29:10–14"
+      ],
+      "actual_inspection": "Read the Latin image columns directly: small Gospel preaching, soul/world, sower alternatives, branches, leaven as scriptural knowledge, two faculty schemes, caution about Trinitarian dogma, Asaph and historical mysteries; also waiting, prayer and whole-hearted seeking in Jeremiah.",
+      "outcome": "Reading B preserves offered alternatives rather than forcing one decoding, identifies prudence/opposition to vice/desire for virtue, and preserves Jerome’s explicit warning against proving dogma from uncertain parabolic interpretation. The prayer connections are the study’s reasoned synthesis. Historical exilic restoration remains the literal foundation.",
+      "limits": "No assertion that Jerome composed an interpretation of this Mass, no neighboring-unit or whole-volume collation."
+    },
+    {
+      "witness": "Augustine, Quaestiones evangeliorum, exact normalized historical Latin aed43fd30cbd, with current artifact record",
+      "loci": [
+        "Book I questions XI andXII, physical 16–17; capitula and adjacentX/XIII boundaries"
+      ],
+      "actual_inspection": "Read both complete answers in the retained Latin. Checked fervor/poison-expelling mustard and sect teachings, woman as wisdom, leaven as love, heart/soul/mind, three yields and Noah/Daniel/Job.",
+      "outcome": "The study accurately presents distinct alternatives and explains their contribution. It marks its comparison with Jerome and its Collect/Postcommunion applications as its own reasoning. It does not turn the transcription’s mistaken internal MatthewXII,37 citation into a study assertion.",
+      "limits": "No print-column collation, reacquisition of parent website, historical English witness, or independent modern translation is claimed."
+    },
+    {
+      "witness": "Augustine, Expositions of the Psalms, exact NPNF 1-8 d68419503330",
+      "loci": [
+        "Latin 43.6–8 under NPNF Psalm44, with surrounding 4–10 context around 14920–15030",
+        "Latin 84.2–6 under NPNF Psalm85 around 41518–41672",
+        "Latin 129.1–8 under NPNF Psalm130 around 62171–62340, complete"
+      ],
+      "actual_inspection": "Read the relevant continuous historical English exposition and completed the end of 84.6 on a separate read. Read all 129.1–8.",
+      "outcome": "Supports prophetic past/future rescue, bondage to sin and conversion from God, Jonah and the refusal to pray, Christ’s propitiatory sacrifice, bodily resurrection as the morning-watch hope, and the distinction between temporal goods and the final good. The study acknowledges that129’s later verses exceed the two selected chant verses.",
+      "limits": "Historical English has editorial abridgments; no fresh Latin or original-print collation."
+    },
+    {
+      "witness": "Bellarmine, O’Sullivan English Psalm commentary, exact historical-text357551e186b7",
+      "loci": [
+        "Psalm43 explanations7–9 with full-psalm context",
+        "Psalm84 explanation1",
+        "Psalm129 explanations3–5",
+        "Translator’s Preface"
+      ],
+      "actual_inspection": "Read the relevant explanation paragraphs and the preface’s stated omissions of philological discussion.",
+      "outcome": "The different temporal emphasis from Augustine on rescue, full liberty at resurrection, and two necessities of penitence are faithfully stated. Explanation numbers are clearly identified as commentary numbers. The study states the translation’s abridgment.",
+      "limits": "Web historical-text transcription checked, no fresh1866 facsimile or underlying Latin collation."
+    },
+    {
+      "witness": "Bede, In Marci evangelium expositio, retained Latin b8197766e84d",
+      "loci": [
+        "Mark 11 surrounding physical332–341; paragraphs beginning Et respondens Jesus and Et cum stabitis ad orandum"
+      ],
+      "actual_inspection": "Read the continuous Latin around the fig tree/Temple and faith/mountain/forgiveness sequence.",
+      "outcome": "Faith working through charity, pardon/eternal life for those without extraordinary perfection, and forgiving the neighbor support the study’s treatment. The study truthfully says no separate11:24 comment is displayed and uses the surrounding sequence rather than claiming one.",
+      "limits": "No new print-image collation or new shared passage admission."
+    },
+    {
+      "witness": "Schuster, Levelis-Marke English Sacramentary, original images of volume I 1924 and volume III 1927",
+      "loci": [
+        "I title / PDF9 and complete Sixth-Sunday chapter printed 416–418 / PDF432–434",
+        "III complete Twenty-third-Sunday chapter printed 186–189 / PDF202–205"
+      ],
+      "actual_inspection": "Read all these original images, including chapter boundaries and the political application at the end of I 418.",
+      "outcome": "Direct Collect/Secret/Postcommunion interpretation and their exact locations are correct. The selected matching chants in III are clearly distinguished from that chapter’s different readings/prayers. The study neither makes the wrong seasonal volume a witness nor adopts the broader historical/political generalizations as premises. Its four verbs and nourishment/hunger explanations are supported.",
+      "limits": "Levelis-Marke’s English was checked; no original Italian collation."
+    }
+  ],
+  "interpretation_assessment": {
+    "count": 2,
+    "reading_A": "The word received in trial becomes a witness to others. Chrysostom supplies the sequence-specific missionary problem, contact through leaven and virtue/miracles distinction; Aquinas supplies active faith, charity, hope, qualified imitation, preaching alternatives and final expectation. These are substantive contributions from distinct eligible authors. Augustine, Jerome and Bede develop related questions without replacing the main reasoning.",
+    "reading_B": "The Gospel reforms the whole person and teaches desire. Jerome supplies scriptural knowledge and ordered faculties; Augustine supplies love as leaven, the cry acknowledging need, propitiation and resurrection-directed hope. Bellarmine adds a distinct account of penitence and Bede constrains confident prayer through charity. This is substantively different from repeating Reading A’s public witness theme.",
+    "four_senses": "Each reading has its own four-senses conclusion grounded in its developed argument. Literal sense concerns the actual narrative/epistle/prayer actions; allegorical sense concerns Christ and the Church; moral sense concerns transformed conduct; anagogical sense concerns resurrection and final deliverance. Moral application does not substitute for literal setting or final hope.",
+    "comparison": "The final comparison preserves actual differences over the three measures, characterizes the readings as complementary, and does not invent doctrinal disagreement or historical compositional intent.",
+    "depth": "Both readings explain particular questions and the source’s inference at length, then reason through liturgical consequences. Every element contributes in the running exposition. Neither reading begins or closes with a coverage roll call. No gallery, generic theme list or four-senses table supplies missing development."
+  },
+  "element_coverage": [
+    {
+      "element": "Introit",
+      "reading_A": "30:35: waiting and prayer amid incomplete restoration",
+      "reading_B": "40:49–51: release from sin, whole-hearted seeking, literal exiles retained"
+    },
+    {
+      "element": "Collect",
+      "reading_A": "30:19: active virtues and visible integrity of words/deeds",
+      "reading_B": "40:7,23,27: tending understanding, ordering faculties and affections toward action"
+    },
+    {
+      "element": "Epistle",
+      "reading_A": "30:17–33,53: reception, example, endurance, risen Son",
+      "reading_B": "40:39,75: changed allegiance and conduct, final risen Son"
+    },
+    {
+      "element": "Gradual",
+      "reading_A": "30:35–37: praise/future rescue and martyr fidelity amid injury",
+      "reading_B": "40:53: reformed life permits lament without promising immunity"
+    },
+    {
+      "element": "Alleluia",
+      "reading_A": "30:41: constrained community still asks",
+      "reading_B": "40:43–45: cry acknowledges need and possible mercy"
+    },
+    {
+      "element": "Gospel",
+      "reading_A": "30:5–13,23,55: weak disciples, contact, virtue and inquiry",
+      "reading_B": "40:5–37: understanding, love, ordered faculties, dogmatic limit and inquiry"
+    },
+    {
+      "element": "Offertory",
+      "reading_A": "30:41: gifts received and continued dependence",
+      "reading_B": "40:45,59,63: petition during offering and humility before divine gift"
+    },
+    {
+      "element": "Secret",
+      "reading_A": "30:43: four requests shape sustained witness, editorialconnection stated",
+      "reading_B": "40:57–61: sacrifice, cleansing/renewal, governance/protection"
+    },
+    {
+      "element": "Trinity Preface",
+      "reading_A": "30:45: service of the living God becomes thanksgiving",
+      "reading_B": "40:31: revealed confession and Jerome’s prohibition on deriving dogma from parable"
+    },
+    {
+      "element": "Communion",
+      "reading_A": "30:47: confidence in seeking mercy requires forgiving neighbor",
+      "reading_B": "40:67–69: charitable petition and its proper object"
+    },
+    {
+      "element": "Postcommunion",
+      "reading_A": "30:49: continuednourishmentforsustained witness",
+      "reading_B": "40:27,71–75: desire educated by gift and resurrection-directed hope"
+    }
+  ],
+  "consequential_difficulty_tests": [
+    {
+      "study_locus": "sections/30-word-received-in-trial.tex:5–13",
+      "source_locus": "Chrysostom Matthew 46.2",
+      "question": "Why do these parables answer disciples discouraged by the preceding sower and tares?",
+      "outcome": "PASS: checked the actual sequence, imagined fewness, mustard growth, necessary mixing and much-meal explanation. The prose teaches the chain from difficulty to inference and then identifies its own Mass-level application."
+    },
+    {
+      "study_locus": "sections/40-whole-person-and-desire.tex:17–31 and sections/50-comparison.tex:3",
+      "source_locus": "Jerome PL26 cols91–92; Augustine Quaestiones I.12; Chrysostom Matthew 46.2",
+      "question": "What do the three measures signify, and can they establish Trinitarian doctrine?",
+      "outcome": "PASS: different actual explanations remain distinct; Jerome’s dogmatic caution is stated; Augustine’s own alternatives are not collapsed. The Preface’s confession is grounded in its words/revelation, not numerical symbolism."
+    },
+    {
+      "study_locus": "sections/30-word-received-in-trial.tex:31–37",
+      "source_locus": "Chrysostom First Thessalonians homily1 on1:6; Aquinas first lectio; Augustine43.6–8",
+      "question": "How can joy and praise coexist with suffering that has not ended?",
+      "outcome": "PASS: the actual source distinguishes bodily harm and Spirit-given joy; the prose explains this without denying pain or redefining every loss as victory."
+    },
+    {
+      "study_locus": "sections/40-whole-person-and-desire.tex:43–75",
+      "source_locus": "Augustine129.1–8; Bellarmine129 explanations3–5; Bede Mark 11 faith/forgiveness sequence",
+      "question": "How can prayer ask confidently while admitting guilt and avoiding an assurance of every temporal desire?",
+      "outcome": "PASS: the inference follows the checked sequence from crying/mercy through propitiation and resurrection, and connects faith with forgiveness. The study marks the use of full-psalm material beyond the appointed chant verses."
+    }
+  ],
+  "register_assessment": {
+    "outcome": "No recurring blocking pattern found. The narrative gives reasons after naming authorities, construes Latin, distinguishes source explanation from editorial application and uses its comparison to preserve actual differences.",
+    "advisory": "STU-REG-001: one immediate restatement in sections/20-commentary.tex:47. The final sentence repeats the two preceding statements about gifts already received and the appeal to mercy.",
+    "specific_qualifications": "Negative qualifications about miracles/virtue, parabolic proof of dogma, prayer’s temporal object and joy in affliction answer questions arising from the cited sources and the study’s argument. They do not collectively function as a recurring substitute for explanation. Transitions pointing to later developed interpretations are ordinary navigation, not production vocabulary."
+  },
+  "limits": [
+    "No new network acquisition, live-website verification or whole-source reading beyond the stated units.",
+    "No independent re-performance of the prior research-discovery sweep, source-registration admission review, original-language collations not stated above, or chronology adjudication.",
+    "Retained prior-stage source images were inspected as source witnesses. This is not reliance on the previous reviewer’s verdict, nor a claim that this reviewer rendered every image anew.",
+    "Rights/status descriptions are checked against the existing exact source records and the published scope; this review does not establish new legal clearance.",
+    "No optional print export or its physical layout/page count was reviewed. No synthesis companion or homily verdict is supplied.",
+    "Only the assigned scratch output was written. Engine review_inputs field is intentionally omitted from result.json."
+  ]
+}

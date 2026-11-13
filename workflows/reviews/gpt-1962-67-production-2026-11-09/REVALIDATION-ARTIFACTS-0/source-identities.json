@@ -1,0 +1,18 @@
+{
+  "run_id": "eaa5e2381738f740",
+  "stage": "build-artifacts",
+  "iteration": 0,
+  "packet_sha256": "92aea9f84a164a6ecf3442b465f4cc222f935fa68f1640c345128532b71044fa",
+  "content": "3b467694fa527e06609dc7232241f1bb78e1891178e5cf4102975853987e2980",
+  "evidence": "5561a06ed9e89d7b69fb6e5745d5421ab8bd4ceb7e8056d0cfab58a5d6729cf3",
+  "render": "c425b975d43889ef35d830fac8f3227d835ee88d5319556272848a8fa822eca0",
+  "outputs": {
+    "canonical": "13b4f2bb231a3ac010f325147bed784e0dc52b772aa297bd638ad1b213c25545",
+    "homily": "6e3eaaf87550002ff14369a58cfa8a00c138cbe8282a99e02eef1155d3c7f858",
+    "synthesis": "1bf9be7a162e43802bd386383bd60fe0713c3065eb2962db71b6fcd6f2540065"
+  },
+  "limitations": [
+    "Source identity does not establish semantic or rendered review acceptance.",
+    "Evidence identity covers audit/binding metadata and controlling source-record ancestry, not external witness payload verification."
+  ]
+}

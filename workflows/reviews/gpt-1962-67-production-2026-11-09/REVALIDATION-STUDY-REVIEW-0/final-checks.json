@@ -1,0 +1,123 @@
+{
+  "packet_sha256": "d17969a8d147bb33f6b7192e37ca43e90f96d4e9d9c4e413d2e15168ef19c388",
+  "packet_match": true,
+  "input_checks": [
+    {
+      "file": "src/common/chronology-table.tex",
+      "expected": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "actual": "0f0cc49a1d51e03a12335c935bfbfa3dc1632ace8b02e0dc96910a960b777e68",
+      "match": true
+    },
+    {
+      "file": "src/common/preamble.tex",
+      "expected": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "actual": "93c252c481a4938db4b70b9f09a0edeaa667a0db8bf94e643caa07e7f2b34619",
+      "match": true
+    },
+    {
+      "file": "src/common/propers-format.tex",
+      "expected": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "actual": "7fd57a91416b5e024011f781e2f124fa2fe07132fbec315abb6f5c0c323ceeec",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generated/scriptural-date-location.tex",
+      "expected": "fff4bdaea9e1a356804873f764ae48d6ca8605574f95c71dc144a2c98155a5d6",
+      "actual": "fff4bdaea9e1a356804873f764ae48d6ca8605574f95c71dc144a2c98155a5d6",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/main.tex",
+      "expected": "ca1269d5b030634b98c12f683bad45b9419952fc32199919dbdf052b292b49b5",
+      "actual": "ca1269d5b030634b98c12f683bad45b9419952fc32199919dbdf052b292b49b5",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md",
+      "expected": "27eca32be2965b939ce9b00276865b8ce2bb052e8d080c7420fa957c12f36575",
+      "actual": "27eca32be2965b939ce9b00276865b8ce2bb052e8d080c7420fa957c12f36575",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-annotations.tex",
+      "expected": "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc",
+      "actual": "f478264fc9bb9d6fde4fa4d3c983d32ae3af664959ac134e8a256f2e77fc20dc",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology-table.tex",
+      "expected": "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8",
+      "actual": "23664a0ad048a58eee45e9980e18fed62e86d9e5eb0f413b8816a23f23b2eed8",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/chronology.toml",
+      "expected": "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812",
+      "actual": "8fcc29d24d763d0022dd4c965e04cb21d42a9c59d89e8273f9bc8b0307d82812",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md",
+      "expected": "58975963d276a0d7fb1168f37acb1c2a98789e38cda97d25188c854429520b31",
+      "actual": "58975963d276a0d7fb1168f37acb1c2a98789e38cda97d25188c854429520b31",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+      "expected": "55b2fa3201a6ce69a1c21bcbbdb868948798ba797af29b8e8f0adde2b3d79f0b",
+      "actual": "55b2fa3201a6ce69a1c21bcbbdb868948798ba797af29b8e8f0adde2b3d79f0b",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml",
+      "expected": "00cca9ce5c5e36eba9bcaecabc84eb57fbd44d5b5b8eab5343e993b581fc120a",
+      "actual": "00cca9ce5c5e36eba9bcaecabc84eb57fbd44d5b5b8eab5343e993b581fc120a",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/00-opening.tex",
+      "expected": "bb8db906a8ec343bb77488e4a6c4d9d4899fc2a5657e500b7a4affd09832ac6e",
+      "actual": "bb8db906a8ec343bb77488e4a6c4d9d4899fc2a5657e500b7a4affd09832ac6e",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/10-appointed-text.tex",
+      "expected": "00d6972383b7dbbc7e44c882e89ec7899718e30d1fdc2a6043c4a519d916cefb",
+      "actual": "00d6972383b7dbbc7e44c882e89ec7899718e30d1fdc2a6043c4a519d916cefb",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/20-commentary.tex",
+      "expected": "7c96b2bddebb9d6d3279427f669dc4b9d4243d7fbd57f8c66f7c58eb0ea26e59",
+      "actual": "7c96b2bddebb9d6d3279427f669dc4b9d4243d7fbd57f8c66f7c58eb0ea26e59",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/30-word-received-in-trial.tex",
+      "expected": "8be7083d2680dcf1365b0c0934da670334790e70a13fbf01ae34bcf9e95fe30b",
+      "actual": "8be7083d2680dcf1365b0c0934da670334790e70a13fbf01ae34bcf9e95fe30b",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/40-whole-person-and-desire.tex",
+      "expected": "a0466e95465215c1baad0de270d898adad5fb9d1ebc5c174226b521ad3f8f6bf",
+      "actual": "a0466e95465215c1baad0de270d898adad5fb9d1ebc5c174226b521ad3f8f6bf",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/50-comparison.tex",
+      "expected": "36e9690025e154659b5f55d27a965db9948669cf5918747e4aecbe59c0065aa6",
+      "actual": "36e9690025e154659b5f55d27a965db9948669cf5918747e4aecbe59c0065aa6",
+      "match": true
+    },
+    {
+      "file": "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/sections/90-apparatus.tex",
+      "expected": "270237d2d8d3ccf58d552a4710bfc5d2764867afd8f19a50acdeb001a6375d8e",
+      "actual": "270237d2d8d3ccf58d552a4710bfc5d2764867afd8f19a50acdeb001a6375d8e",
+      "match": true
+    }
+  ],
+  "result_schema_check": "required fields and PASS/no-blocking consistency checked locally; engine schema validation not claimed",
+  "result_sha256": "ac2cea76d6af828eec47848f40bb1a1c732796eb3f8c17ef2d44753722b3298d",
+  "inspection_evidence_sha256": "7f97fc5c1b7c84029a2042115abee27f6e0e329fea12827d10330224b44b9923"
+}

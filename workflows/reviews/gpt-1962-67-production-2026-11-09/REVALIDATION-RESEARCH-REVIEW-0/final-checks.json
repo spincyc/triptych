@@ -1,0 +1,45 @@
+{
+  "packet_sha256": "79f8eb13c759cbf77e4e7a9745b04aa7835afda4180c1cfb74ed12152d9649e5",
+  "counts": {
+    "files": 1744,
+    "chronology_computation_inputs": 15,
+    "source_admission_computation_inputs": 8,
+    "dispositions": {
+      "not-commentary": 44,
+      "deferred": 16,
+      "admitted": 3
+    },
+    "bindings": 56,
+    "admitted_passages": 6
+  },
+  "closing_seal_mismatches": [],
+  "source_dispositions_command": {
+    "command": "python3 scripts/_proper_study.py source-dispositions --mode source --provider gpt --document liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany",
+    "exit_code": 0,
+    "output": "proper-study source-dispositions : liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
+  },
+  "result_shape_valid": true,
+  "head": "6855b2c0d3fc44250d5e2fc4807b00bfaad34d0d",
+  "branch": "feature/propers/codex",
+  "git_status_porcelain": [
+    " M PROJECT-WORK.md",
+    " M src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/propers/verified.md",
+    " M src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/context.md",
+    " M src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/interpretations.md",
+    " M src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/review-dependencies.toml",
+    " M src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/scope.md",
+    " M src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-bindings.toml",
+    " M src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/source-dispositions.toml",
+    " M src/sources/inventories/publications-v1.toml",
+    " M src/sources/inventories/source-family-migration-v1.toml",
+    " M workflows/reviews/gpt-1962-67-production-2026-11-09/CYCLES.md",
+    "?? workflows/reviews/gpt-1962-67-production-2026-11-09/REVALIDATION-CONTEXT-0.json"
+  ],
+  "review_files": {
+    ".scratch/gpt-1962-67-revalidation-research-review-0/result.json": "5568ac440ee1c14d21c36be0a0929b10f0d559f82bd6db419930f9cc03d6d8bc",
+    ".scratch/gpt-1962-67-revalidation-research-review-0/review-notes.txt": "a9c1dcbc22c48393b592fcc21c9cc5c9e628bbbbcca3a40dda3672f46388b24c",
+    ".scratch/gpt-1962-67-revalidation-research-review-0/seal-check.json": "ed3ff09302586100a2d441cbda53e5899ab051a8b4210b2a2024790113c48167",
+    ".scratch/gpt-1962-67-revalidation-research-review-0/byte-integrity.json": "d71353e2953cf6764ea837a8d465d67536b65ac3ffbed865a59988c14d214a31"
+  },
+  "no_reviewed_input_modified": true
+}

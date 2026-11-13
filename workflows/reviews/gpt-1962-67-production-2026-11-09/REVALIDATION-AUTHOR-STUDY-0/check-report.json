@@ -1,0 +1,29 @@
+{
+  "stage": "author-study",
+  "iteration": 0,
+  "run_id": "eaa5e2381738f740",
+  "checks": {
+    "document_type_refresh": "PASS: generated entrypoints current; refresh.log",
+    "research_component_manifest": "PASS: 1 manifest; components.log",
+    "research_content_preflight": "PASS: all 12 ordinary checks; preflight.log",
+    "document_schema_content": "PASS: 1 document, 3 outputs, 0 errors; schema.log; registered gate wrapper not invoked",
+    "exact_run_provenance": "PASS; provenance.log",
+    "generation_metadata": "PASS; metadata.log",
+    "web_declaration": "PASS; web-declaration.log",
+    "canonical_web_probe": "PASS with converter fidelity checks; web-probe.log",
+    "tool_registry": "PASS; tool-registry.log",
+    "source_library": "PASS; check-sources.log",
+    "aggregate_check_sources": "NOT PASS: five stale publication inventory hashes reported before final audit append; coordinator owns refresh; check-sources.log",
+    "appointed_text_comparison": "PASS: all 11 Latin and all 11 English bodies match accepted verified record; verification.json",
+    "protected_resources": "PASS: stage-start hash comparison confirms accepted research and companion prose unchanged; verification.json",
+    "git_diff_check": "PASS",
+    "print_proof": "NOT REQUESTED; NOT PERFORMED",
+    "independent_editorial_or_web_acceptance": "NOT PERFORMED"
+  },
+  "substantive_word_count": 6914,
+  "count_evidence": "word-count.json",
+  "current_branch": "feature/propers/codex",
+  "committed": false,
+  "pushed": false,
+  "workflow_advanced": false
+}

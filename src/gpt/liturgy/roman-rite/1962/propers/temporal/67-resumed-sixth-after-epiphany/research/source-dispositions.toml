@@ -83,10 +83,10 @@ reason = "Primary biblical or liturgical text control, not an authored biblical 
 [[sources]]
 id = "existing-witness-8"
 binding_index = 8
-binding_sha256 = "3d3c5289614260bdf1606f2a3174d7c649f9e98133c9536ad0dea51df5feea70"
+binding_sha256 = "4791119581e2e72e91831e8e6f6233151d8bf3d7f57ef00c1b2f217f9e965e12"
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
 source_fingerprint = "sha256:04b581584ed78f861cef34251b2da71ddc94429cd7228ea8cc6585a2aa4a5a41"
-locus = "Ps.43.1-27; Ps.77.1-72; Ps.84.1-14; Ps.129.1-8"
+locus = "Ps.43.1-26; Ps.77.1-72; Ps.84.1-14; Ps.129.1-8"
 relationship = "not-commentary"
 disposition = "not-commentary"
 reason = "Primary biblical or liturgical text control, not an authored biblical commentary excerpt."
@@ -706,3 +706,27 @@ disposition = "deferred"
 reason = "The neighboring columns were read as context, including rejected speculation. Their full commentary-unit Scripture reach was not resolved into a candidate; no extent is inferred from the appointed Introit."
 scripture_extents = []
 missing_criteria = ["scripture-extent", "complete-native-unit-boundaries", "bounded-verbatim-transcription"]
+
+[[sources]]
+id = "augustine-quaestiones-1-11"
+binding_index = 55
+binding_sha256 = "a6f8bf0c4d6db29aaeb15e8d1008593e64b4761ef9386800ff8f5270212e4329"
+source_id = "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-11"
+source_fingerprint = "sha256:f8be8c0e0fab19060bb5b05a4c953eeed0e7ca6cf219788340671d01859f893c"
+locus = "Quaestiones evangeliorum I.11, complete answer, physical line 16; capitula line5 and adjacent questions read."
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Existing verified passage and canonical edge independently reread against the exact retained Latin controller. Matthew13:31–32: the answer itself expounds growth beyond the herbs, although the heading names verse31 alone. Admission reuses the dated digital transcription, original Latin voice and recorded composition range; no Migne printed-column collation or English translation is claimed. The existing English-availability record remains not-surveyed."
+passage_ids = ["passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-11"]
+
+[[sources]]
+id = "augustine-quaestiones-1-12"
+binding_index = 56
+binding_sha256 = "002e8691ce4da751432183739c19acade83e7866c649c26360a07ed2a8a7844f"
+source_id = "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-12"
+source_fingerprint = "sha256:b6c1e298cf7f0ff491bd2a94f9aba523f4014ad618df671d480798f1206974c0"
+locus = "Quaestiones evangeliorum I.12, complete answer, physical line 17; capitula line5 and adjacent questions read."
+relationship = "direct-exegesis"
+disposition = "admitted"
+reason = "Existing verified passage and canonical edge independently reread against the exact retained Latin controller. Matthew13:33: woman as wisdom, leaven as love, and three alternative threefold groups; supporting citations receive no separate edge. Admission reuses the dated digital transcription, original Latin voice and recorded composition range; no Migne printed-column collation or English translation is claimed. The existing English-availability record remains not-surveyed."
+passage_ids = ["passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-12"]

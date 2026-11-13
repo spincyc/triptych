@@ -1,0 +1,109 @@
+{
+  "run_id": "eaa5e2381738f740",
+  "stage": "derive-homily",
+  "iteration": 0,
+  "packet_sha256": "d08f4fbac8584a913e73bd8c2ccb3c3f6cc99be45deb230375f30a59e848aa35",
+  "checks": [
+    {
+      "check": "components",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/components.log",
+      "log_sha256": "e9064dc66386c147dbad31276a51ccdc2fe62686c5ba5819693283b65f848021"
+    },
+    {
+      "check": "preflight",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/preflight.log",
+      "log_sha256": "8eb8680749b63259841820e7485e82a57c0ccb0ce5b87c9e41873d96f1f57ed0"
+    },
+    {
+      "check": "provenance",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/provenance.log",
+      "log_sha256": "e858fce2efd4094eb6f665fb4e59d9536bafb48dc48a65e196a8b3cbf213b1ee"
+    },
+    {
+      "check": "schema",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/schema.log",
+      "log_sha256": "dfd8975714105e5d366379f38c1e27181b640ebf536429cc7f3793c40b0269f5"
+    },
+    {
+      "check": "metadata",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/metadata.log",
+      "log_sha256": "13c6f7ce5f4071b8774078c93d6ca68a4147e1b117dbf18f534ee2666183970d"
+    },
+    {
+      "check": "web-declaration",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/web-declaration.log",
+      "log_sha256": "f39a51bf28c1c452bb6407e1c3a30bf132af1053c1047e68921060cd6e0eb256"
+    },
+    {
+      "check": "tool-registry",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/tool-registry.log",
+      "log_sha256": "8fc5e1c58c6473be0fdf64544c5ed1eeb979272956420166f8d3ab1ac92d8ab4"
+    },
+    {
+      "check": "refresh",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/refresh.log",
+      "log_sha256": "f06e60d7a4336f7b67c5f6dae61193c9740ed579eea936f73f148658490be684"
+    },
+    {
+      "check": "web-probe",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/web-probe.log",
+      "log_sha256": "3988c89486d83df4ac565a7b1dc6b7361be2c6558ce02721631956ee731bd162"
+    },
+    {
+      "check": "verification",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/verification.log",
+      "log_sha256": "bba2ada8704168b26ba49a052188f8978c4d07bbbd5481b57c58f04a704badca"
+    },
+    {
+      "check": "whitespace",
+      "performed_on": "2026-11-12",
+      "status": "PASS",
+      "log": ".scratch/gpt-1962-67-revalidation-homily-0/whitespace.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "recovery_check": {
+    "performed_on": "2026-11-13",
+    "status": "PASS",
+    "scope": "Current hashes match stage-start snapshot plus exactly the two recorded changed files; generated reader and six retained evidence controllers match completed verification.json. Recorded checks were not rerun or redated."
+  },
+  "changed_files": [
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/generation-metadata.tex",
+    "src/gpt/liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany/research/production-review.md"
+  ],
+  "retained_unchanged": [
+    "homily body and terminal apparatus",
+    "both studies and accepted research",
+    "publication and component declarations",
+    "generated entrypoints and chronology"
+  ],
+  "scope_limits": [
+    "Document-schema registered gate wrapper not invoked; homily components, preflight and generation checks separately passed.",
+    "Global source suite not rerun: shared inventory synchronization remains coordinator-owned.",
+    "No new acquisition, independent homily verdict, browser visual acceptance, print export, audible rehearsal or timed human delivery."
+  ],
+  "verification": ".scratch/gpt-1962-67-revalidation-homily-0/verification.json",
+  "word_count": 1185,
+  "paragraph_count": 15,
+  "delivery_estimate": "10 minutes 18 seconds at 115 words per minute; arithmetic estimate only."
+}

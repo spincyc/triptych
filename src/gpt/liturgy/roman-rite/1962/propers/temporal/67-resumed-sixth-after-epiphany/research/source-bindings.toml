@@ -67,7 +67,7 @@ verified_on = "2026-11-09"
 
 [[bindings]]
 source_id = "artifact.english-college-of-douay.douay-rheims-bible.challoner-gutenberg-1581.verse-text-21-psalms-578f023d"
-loci = ["Ps.43.1-27", "Ps.77.1-72", "Ps.84.1-14", "Ps.129.1-8"]
+loci = ["Ps.43.1-26", "Ps.77.1-72", "Ps.84.1-14", "Ps.129.1-8"]
 role = "textual-control"
 states = ["cataloged", "acquired", "inspected", "verified"]
 context = "Exact tracked verse table read at stated complete context; selected biblical English quoted mechanically, preserving the distinction from liturgical adaptations. Inspected extent: Psalms43,77,84,129 complete; Vulgate numbering."
@@ -468,3 +468,21 @@ role = "context"
 states = ["cataloged", "acquired"]
 context = "Registration-created exact derivative of the separately bound delivery. Complete bytes were hashed and measured; retained only as supporting evidence. No additional whole-source reading or transcription verification is asserted."
 source_fingerprint = "sha256:55411e66611b8ffc810c6b39333091a2f743fe92192b7bc73c6b8f3d7abe5e46"
+
+[[bindings]]
+source_id = "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-11"
+loci = ["1.11"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole question XI read in the exact retained Latin at physical line 16, with the capitula at line 5 and questions X and XII delimiting it. Fervour of faith, poison-expulsion and herbs as sectarian doctrines are Augustine’s reading. The native locus is 1.11; the actual Scripture edge is Matthew13:31–32 because the answer expounds becoming greater than the herbs, despite its heading naming verse31 alone. The existing edge was inspected. This verifies the dated digital transcription and its scope, not collation with a Migne page image."
+source_fingerprint = "sha256:f8be8c0e0fab19060bb5b05a4c953eeed0e7ca6cf219788340671d01859f893c"
+verified_on = "2026-11-12"
+
+[[bindings]]
+source_id = "passage.augustine.quaestiones-euangeliorum.latin-migne-corpus-corporum-wikisource-web-2026-09-05.1-12"
+loci = ["1.12"]
+role = "reception"
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Whole question XII read in the exact retained Latin at physical line 17, with XI and XIII delimiting it. Woman as wisdom, leaven as love, and the alternative threefold groups are explicit. The native locus is 1.12; the actual Scripture edge is Matthew13:33. Supporting allusions receive no new edges. The source’s Matth.XII,37 reference is preserved although the cited words are Matthew22:37. This verifies the dated digital transcription and its scope, not collation with a Migne page image."
+source_fingerprint = "sha256:b6c1e298cf7f0ff491bd2a94f9aba523f4014ad618df671d480798f1206974c0"
+verified_on = "2026-11-12"

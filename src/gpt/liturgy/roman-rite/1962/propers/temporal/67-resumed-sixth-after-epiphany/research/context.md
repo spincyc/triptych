@@ -2,9 +2,19 @@ appointed_text_completeness = "complete"
 
 # Resumed Sixth Sunday after the Epiphany: context and source plan
 
-Resolved and source images inspected on 10 November 2026 (UTC), for Sunday,
-15 November 2026. This record settles the subject and inventory; publication
-transcription, reception research and source registration follow separately.
+Originally resolved on 10 November 2026 (UTC), for Sunday, 15 November 2026;
+the appointment, boundaries and source plan were independently revalidated on
+12 November 2026. This record settles the subject and inventory. Existing
+transcriptions, reception research and registered sources remain subject to
+their own stages of the current workflow.
+
+The revalidation rehashed the complete registered CMAA PDF and both registered
+dated Ordo responses, reread the November 15 entries, and reopened the ten
+Missal page images listed below. The calendar computation again returned
+resumption slot 25 of 26. The complete eleven-element inventory, II-class
+rank, Trinity Preface, and exclusion of St Albert's commemorative prayers
+were confirmed. This was an appointment and boundary check, not a renewed
+word-for-word collation of the Latin or historical English.
 
 ## Identity, authority and scope
 
@@ -176,9 +186,13 @@ not running heads alone, delimit the target.
 ## Existing source library and lawful source plan
 
 The source library and its relevant calendar, translation and Latin-provenance
-inventories were searched before new acquisition. The following are source
-routes and further checks, not claims that their older verification events
-have been repeated for this leaf.
+inventories were searched before new acquisition. The following table retains
+the initial source plan and its required checks. The leaf now holds
+`propers/retrieved.txt`, `propers/verified.md`, `research/scope.md` and
+`research/source-bindings.toml`; their existence and named source routes were
+checked during revalidation. The table is a checklist for independently
+revalidating that evidence, not a direction to replace valid acquired sources
+or a claim that the complete research has passed review.
 
 | Material | Existing owner and precise route | Research work still required |
 | --- | --- | --- |
@@ -213,9 +227,9 @@ share a locus but retain their different ritual placements and verbal forms.
 The three prayers and Trinity Preface need textual and reception research
 alongside the biblical passages.
 
-Create the passage-by-passage reception matrix, exact-source inspection
-records, interpretation audit, source bindings and controlling dependency
-closure within this owner. Generate chronology through `proper-chronology`
+Revalidate the existing passage-by-passage reception matrix, exact-source
+inspection records, interpretation audit, source bindings and controlling
+dependency closure within this owner. Generate or check chronology through `proper-chronology`
 and the shared corpus, retaining its actual alternatives and unresolved
 states; this context record supplies no biblical dates. The present stage
 claims no reception sweep, historical antecedent collation, English image

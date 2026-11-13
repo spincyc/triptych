@@ -1,14 +1,14 @@
 migration_ledger_schema = 1
 record_type = "reviewed-source-family-migration-ledger"
-audited_on = "2026-11-12"
+audited_on = "2026-11-13"
 inventory_path = "src/sources/inventories/publications-v1.toml"
-inventory_snapshot = "sha256:d219a0935913ad342bb54d89f026eb34a3e875c0c8e16e897910b612152e45fb"
+inventory_snapshot = "sha256:d06cc34817dcc0028aec8e59f14215baf83368ab263f0ee656d498294bca4ce0"
 classification_review_path = "src/sources/inventories/classification-review-v1.toml"
 classification_snapshot = "sha256:3e31ca144b739b9ac7ffb3d846bc30d705061feed3f565c4ed29f5e5b665b738"
 canonical_catalog_snapshot = "sha256:3d5d9b3ae56d8dbfb00c026854cd9fa2079c77be833ec2e07018bf9188fddb5f"
 coverage_granularity = "owner-record-family"
 atomic_citation_coverage = false
-snapshot = "sha256:7b670da41d4cce07b8426a3441d9d00807f38f8db1fa8a3d5af35d7b4486d6d9"
+snapshot = "sha256:06a6b206904c0fa5b3424c352fc353a7cb500fd9a80fb1a617e16b7b603a1b29"
 families = []
 
 [[review_units]]
@@ -508,7 +508,7 @@ review_state = "pending"
 
 [[review_units]]
 owner_id = "liturgy/roman-rite/1962/propers/temporal/67-resumed-sixth-after-epiphany"
-surface_snapshot = "sha256:5de9edecbf0ac0e931e98028c9c5d3e894ab01d8bfaeaf0ee7279354fd0856ae"
+surface_snapshot = "sha256:1f4013ec7326ac90bec50c1e3fbc11c38b75fc3a6add96de8167a37109fb9b07"
 review_state = "pending"
 
 [[review_units]]
