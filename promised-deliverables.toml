@@ -4,12 +4,12 @@ schema_version = 1
 id = "indexed-corpus-performance-2026-11-12"
 owner = "guidance/web-data.md"
 promise = "Use a shared tracked metadata index over the existing corpus to accelerate fresh-checkout reading, terminal and Pages readers, and repeated builds without tracking duplicate complete reading bodies or requiring generated-product archives."
-state = "in_progress"
+state = "candidate"
 
   [[deliverables.requirements]]
   id = "thin-index-integrity"
   criterion = "Deterministic bounded index shards contain only lookup/dependency metadata, support incremental updates, detect stale membership and consumed bytes, and pass independent full validation."
-  status = "open"
+  status = "pass"
   evidence = ["scripts/_corpus_index.py", "tools/tests/test_corpus_index.py", "src/index/readers.json"]
   check = "path_exists"
 
@@ -37,8 +37,15 @@ state = "in_progress"
   [[deliverables.requirements]]
   id = "integrated-performance-validation"
   criterion = "Affected source, producer and reader gates pass, superseded reader-verification guidance is updated, measured results and limits are recorded, and coherent work is committed on the workspace branch."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md", "docs/reader-performance.md", "guidance/web-data.md"]
+  check = "path_exists"
+
+  [[deliverables.requirements]]
+  id = "main-integration-and-deployment"
+  criterion = "Requested 2026-11-13: the work is rebased onto current main without rewriting published history, the deployment gates pass at the rebased tip, origin/main is fast-forwarded to it, and the resulting Pages deployment and affected reader routes are verified live."
+  status = "open"
+  evidence = ["PROJECT-WORK.md"]
   check = "path_exists"
 
 [[deliverables]]

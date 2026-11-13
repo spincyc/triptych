@@ -11,11 +11,13 @@ Last reconciled: 2026-11-13.
 
 <!-- promised-deliverable: indexed-corpus-performance-2026-11-12 -->
 
-**In progress.** The maintainer authorized a shared, Git-tracked thin index over
+**Candidate: rebased onto `main`, validated, and pushed to `main` with this
+record; the Pages deployment is verified separately.** The maintainer authorized
+a shared, Git-tracked thin index over
 the existing canonical corpus, without copied complete reading bodies, to improve
 fresh-checkout preparation, Lectern, the GitHub Pages readers and repeated
 build work. The index is lookup metadata, not a second authoring source or a
-published cache archive. Ordinary reading will verify the selected canonical
+published cache archive. Ordinary reading verifies the selected canonical
 records; complete independent source and publication checks remain available.
 This deliberately replaces whole-corpus verification on every reader launch.
 
@@ -29,7 +31,7 @@ These measurements establish the problem, not performance guarantees.
 Implementation lanes cover the source locator/dependency index, selected-record
 projection through existing domain owners, shared web/terminal lazy loaders,
 bounded Sources discovery, and operation-scoped publication preparation.
-Runtime and metadata checkpoints are committed on `feature/tui-perf`. The
+The work was implemented on `feature/tui-perf` and rebased onto `main`. The
 integrated reader run passes 173 tests with one expected skip, plus 18 actual
 reading/layout checks. Day settles in 6.67 seconds cold and 2.59 seconds warm;
 Genesis 1 Catena in 3.97/2.42 seconds. A selected publication body opens in
@@ -55,7 +57,44 @@ generation fix changes only generation identifiers and three content hashes.
 The final five-module regression run passes 343 of 346 tests, with only the
 three inherited assertions below. Six synthetic rendering fixtures now avoid
 unrelated complete print discovery while retaining their actual renderer and
-content assertions. Complete source/site gates and release reconciliation remain.
+content assertions.
+
+On 13 November the branch was rebased onto `main` at `edecdbc2e1`. Main's
+twenty new commits had independently added the same operation-scoped document
+assembly, forked web-edition conversions from one warmed parent, introduced
+per-recipe input exclusions, and published the GPT resumed Sixth Sunday study.
+The reconciliation keeps main's implementations and retains this work's indexed single-publication handoff and cross-repository
+assembly guard. The reader-index exclusion now follows main's recipe rule: only
+`documents` and `web-editions`, whose trees hold `src/index`, exclude it. All
+thirteen producer input audits pass under main's stricter listing rules. Two
+cold builds again agree, now over 29,130 files and 252,079,343 bytes. Outputs
+differ from main only at the 1,816 paths this work changes: 1,779 keep their
+pre-rebase hashes, and the other 37 are aggregates that now include main's new
+publication and sources. Scoped release reconciliation refreshes the same 39
+bindings: 37 reviewed site inputs, the rights table and its digest. Index
+refresh hashed 210 changed inputs and parsed main's 21 new source records.
+Commentary and liturgy surfaces are byte-identical; Publications, History and
+Sources add main's new publication and editions.
+
+All deployment gates pass at checkpoint `9917821493`. `make pages-site`, the
+gates beside the site build as Pages runs them, took 7 minutes 29 seconds, and
+`tools/tpt public-alpha verify --deployment-target github-pages` took 5 minutes
+25 seconds. The verified site has 45,197 files and 770,836,242 bytes. The
+remaining evidence was taken one rebase earlier, on a tree that differed only
+by main's last ledger edit and the index's generation commit. There the
+sequential `make check-deployment-sources public-site` took 13 minutes 48
+seconds and produced the same site. Independent full
+index validation hashes all 80,465 inputs and parses all 56,796 records. The
+374-test reader, index, producer and merge-affected suite passes with two
+expected skips; it enables the real-calendar, generated-Pages and Chromium
+liturgy checks, and the skipped in-suite audit ran separately. The 346-test site
+regression set fails only the three inherited assertions below, with unchanged
+messages. Day settles in 5.34 seconds cold and 2.13 seconds warm, byte-identical
+to the earlier verified reading. The inherited
+`test_cancel_stops_and_reaps_preparation_and_its_stubborn_producer` races
+SIGKILL delivery under load; it failed in three of five isolated reruns during
+an earlier artifact verification, and its test and implementation match
+`main`.
 
 The metadata audit confirms 1,943 index files, 54,644,047 bytes as files and
 16,403,578 bytes as compressed Git blobs. Titles, short search incipits and
@@ -70,12 +109,15 @@ two expect an already-translated Collect to remain absent, and one expects an
 older chronology wording. Their exact cases are recorded in the performance
 guide; authored corpus text is unchanged by this work.
 
-Acceptance requires measured cold and warm readers, content/rights parity and
-stale-input refusal tests, index size and update-churn checks, partial-clone
-compatibility, and integrated source/build checks. No deployment or history
-rewrite is authorized by this implementation request. On 13 November the
-maintainer explicitly requested recovery, completion and pushing the work;
-publication is limited to the assigned `feature/tui-perf` branch.
+Acceptance covers measured cold and warm readers, content/rights parity and
+stale-input refusals, index size and update costs, partial-clone compatibility,
+and complete source/build/artifact checks. Full publication verification still
+does complete corpus work; first-time reading does not repeat it. The original
+implementation request authorized neither deployment nor history rewriting. On
+13 November the maintainer asked for the work to be recovered, completed,
+rebased onto `main` and pushed to `main`. The rebase rewrote only the
+unpublished workspace branch; `main` advances by fast-forward, and that push
+authorizes the Pages deployment it triggers.
 
 ## Claude 1962 resumed Sixth Sunday after the Epiphany, 2026-11-15
 

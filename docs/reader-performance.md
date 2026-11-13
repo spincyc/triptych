@@ -238,8 +238,22 @@ route for their invented publication; this avoids rebuilding the unrelated
 complete native print catalogue for each quotation, list or anchor assertion.
 Native print admission remains part of the complete site gates.
 
+After rebasing onto `main`, `make check-deployment-sources public-site`
+passed in 13 minutes 48 seconds with a warm verified product cache. That run included independent complete index
+rederivation and all 21 web figures. The independent `tools/tpt public-alpha
+verify --deployment-target github-pages` passed in 5 minutes 33 seconds. The
+verified artifact has 45,197 files and 770,836,242 bytes. These are local
+full-maintenance costs, not first-reader bootstrap times, and they include
+main's concurrent product build and shared document assembly. The Day snapshot
+on that tree took 5.34 seconds cold and 2.13 seconds warm and exactly
+matched the previously verified reading. At the final rebased checkpoint,
+`9917821493`, `make pages-site` passed in 7 minutes 29 seconds and verification
+in 5 minutes 25 seconds. Later agent-guidance and work-record edits change no
+site input or reader-index binding.
+
 Three existing corpus expectations failed both here and against the starting
-code at `92032f5178`: the whole-body-hold assertion and renderer `missing` flag
+code at `92032f5178`, and again with unchanged messages after rebasing onto
+`main`: the whole-body-hold assertion and renderer `missing` flag
 in `test_oration_execution_source.py`, and
 `test_complete_shared_chronology_table_preserves_starred_rows_through_pandoc`
 in `test_web_edition_conversion.py`. The former expect a Collect that is already
