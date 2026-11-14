@@ -1040,6 +1040,9 @@ the coordinator, and each needs its own owning lane.
 - **`guidance/missals.md` §5's Latin rights findings** — the pre-1931 line, the
   1935 Berne date, the altar book's own APSA claim, Vatican Law N. CXCVII, and
   URAA restoration. §8.1 adds PSP above them; it displaces none of them.
+  URAA restoration is narrowed for Holy See publications first issued in
+  Vatican City in 1931–1975 by `src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml`
+  (maintainer decision 2026-11-14); it stands for later printings.
 
 ---
 
