@@ -725,7 +725,6 @@ module.exports = function liturgy(realm) {
         // Retain its source ID so the terminal's chooser selects the same Mass.
         row.primaryDayChoice = choice.id;
         row.title = properFormChoice ? 'Choose a Mass form' : 'Choose a formulary';
-        row.notice = choice.reason;
         row.resolved = properFormChoice ? adapted.resolved : null;
         row.events = [];
         row.sourcePaths = [];
