@@ -69,9 +69,14 @@ const fs = require('fs');
 const model = require(process.argv[1]);
 const input = JSON.parse(fs.readFileSync(0, 'utf8'));
 const facts = model.predicateFacts(input.context);
+// Source-declared proper rites resolve only with the exact principal Mass,
+// form and rows, as reader-state-adapters supplies them (2026-11-13).
+const riteContext = {calendar: input.ordinary.calendar, mass: input.mass.key,
+  formId: 'main', properRows: input.mass.propers};
+facts['proper-rite-context'] = riteContext;
 const resolution = model.resolveElements(input.ordinary, {}, facts);
 const placed = model.seatPropers(
-  input.mass.propers, model.seats(input.ordinary, resolution.shown));
+  input.mass.propers, model.seats(input.ordinary, resolution.shown, riteContext));
 const events = model.massEvents(resolution.shown, placed);
 process.stdout.write(JSON.stringify({
   appointments: resolution.appointed,
@@ -221,7 +226,10 @@ class MissalExemplarParityTests(unittest.TestCase):
     def test_postconciliar_day_and_pre_1955_full_event_parity(self) -> None:
         post = self.expanded_mass(self.post_cli_json)
         post_ids = self.assert_full_event_parity(post, "postDayMissal")
-        self.assertEqual(len(post_ids), 71)
+        # 77 on main; the reviewed n. 131 private-preparation admission adds
+        # ordinary-element/ritus-communionis/domine-fili-dei-vivi (2026-11-12).
+        self.assertEqual(len(post_ids), 78)
+        self.assertIn("ordinary-element/ritus-communionis/domine-fili-dei-vivi", post_ids)
         self.assertEqual(post["selected_form"], "day")
         self.assertEqual(post["ordinary_appointments"], {
             "dismissal": "paschal-double-alleluia", "preface": "pentecost",
