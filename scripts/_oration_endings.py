@@ -13,6 +13,7 @@ import json
 from pathlib import Path
 import re
 import tomllib
+import _calendars
 import _oration_conclusion_supplement as supplement
 
 METHOD_ID = "roman-1962-rg115-conclusion-execution-20261112"
@@ -154,10 +155,10 @@ def load_sources(calendar_root, calendar, owner, *, read_bytes=None):
     document = owner.load_calendar(calendar_root, calendar)
     masses = {mass["key"]: mass for _, mass in owner.masses_of(document)}
     overlay_path = calendar_root.parent / "inventories/roman-1962-proper-translations-v1.toml"
-    ledger = tomllib.loads(overlay_path.read_text())
+    ledger = _calendars.parse_toml(overlay_path.read_bytes())
     entries = {owner.translation_record_identity(row, document): row for row in ledger["entries"]}
     proof_path = calendar_root.parent / "inventories/roman-1962-proper-latin-provenance-v1.toml"
-    proofs = tomllib.loads(proof_path.read_text())["entries"]
+    proofs = _calendars.parse_toml(proof_path.read_bytes())["entries"]
     proof_index = {(row["mass"], owner.form_id_for_label(masses[row["mass"]], row.get("form", "")), row["proper"], row.get("cycle") or "all", row["occurrence"]): row for row in proofs}
     result = {}
     for key, native in expected.items():

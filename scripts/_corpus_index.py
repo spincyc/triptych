@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import argparse
 import builtins
+import copy
 import fcntl
 from fnmatch import fnmatchcase
 from functools import wraps
@@ -92,6 +93,7 @@ _SOURCE_PATH = re.compile(
     r'(?:edition\.toml|artifacts/[^/]+/artifact\.toml|(?:segments|passages)/[^/]+\.toml))'
     r'|corpora/[^/]+\.toml)\Z')
 _ACTIVE: ContextVar[tuple | None] = ContextVar('corpus_verified_reads', default=None)
+_DERIVATIONS: ContextVar[dict | None] = ContextVar('corpus_session_derivations', default=None)
 _OPEN, _IO_OPEN = builtins.open, io.open
 _PATH_METHODS = {name: getattr(Path, name) for name in ('glob', 'rglob', 'exists', 'is_file', 'is_dir')}
 _PATCH_LOCK = threading.RLock()
@@ -483,6 +485,55 @@ class CorpusIndex:
             if failures:
                 _poison(failures[0])
                 raise failures[0]
+
+
+@contextmanager
+def session_derivations(cache):
+    """Let ``session_derived`` reuse whole derivations within one reader session.
+
+    The caller owns *cache* for one ``CorpusIndex`` lifetime. Maintenance,
+    checks and publication builds never enter this context, so each of their
+    derivations runs exactly as written.
+    """
+    token = _DERIVATIONS.set(cache)
+    try:
+        yield
+    finally:
+        _DERIVATIONS.reset(token)
+
+
+def session_derived(key, compute):
+    """Return ``compute()``, reusing an identical earlier derivation in session.
+
+    *key* names the derivation and every argument it depends on other than
+    verified canonical reads. A selected reader projection can need the same
+    calendar-wide derivation for every Mass it opens: reuse is limited to
+    that within one ``session_derivations`` and ``verified_reads`` context.
+    Reuse re-reads and verifies every canonical input the first computation
+    consumed and records each as the caller's own dependency, as the
+    computation would have. A computation that failed or poisoned the session
+    is not kept, and callers receive independent objects.
+    """
+    cache, active = _DERIVATIONS.get(), _ACTIVE.get()
+    if cache is None or active is None:
+        return compute()
+    index, dependencies, failures = active
+    held = cache.get(key)
+    if held is not None:
+        value, inputs = held
+        for relative in inputs:
+            index.read(relative)
+        return copy.deepcopy(value)
+    consumed, poisoned = {}, len(failures)
+    token = _ACTIVE.set((index, consumed, failures))
+    try:
+        value = compute()
+    finally:
+        _ACTIVE.reset(token)
+        dependencies.update(consumed)
+    if len(failures) == poisoned:
+        cache[key] = (copy.deepcopy(value), tuple(consumed))
+    return value
 
 
 class _ReadOnlyBytes(io.BytesIO):

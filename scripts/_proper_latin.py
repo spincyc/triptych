@@ -29,6 +29,7 @@ import sys
 import tomllib
 
 import _calendars
+from _corpus_index import session_derived
 from _tooling import code_fingerprint, prune_cache, tree_fingerprint
 
 
@@ -686,7 +687,16 @@ def _row_problems(where: str, row: Mapping[str, object]) -> list[str]:
 
 
 def read_sidecar(path: Path) -> tuple[dict[LatinKey, dict], list[str]]:
-    """Read one sidecar. Invalid rows remain unusable and therefore fail closed."""
+    """Read one sidecar. Invalid rows remain unusable and therefore fail closed.
+
+    The validated sidecar covers its whole calendar, so an indexed reader reuses
+    it for each selected Mass it opens (`_corpus_index.session_derived`).
+    """
+    return session_derived(("proper-latin/sidecar", os.fspath(path)),
+                           lambda: _read_sidecar(path))
+
+
+def _read_sidecar(path: Path) -> tuple[dict[LatinKey, dict], list[str]]:
     try:
         document = _calendars.read_toml(path)
     except (OSError, tomllib.TOMLDecodeError) as error:

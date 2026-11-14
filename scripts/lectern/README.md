@@ -34,7 +34,10 @@ passes immutable, verified bytes to the browser realm. It checks newly consumed
 canonical bytes against that view; changing sources requires index maintenance
 and a new reader session. Selected projections have a bounded memory cache and
 a disposable disk cache under `.scratch/reader-data`, bound to code, history
-and verified dependencies. `TRIPTYCH_BROWSER_DATA_ROOT` still controls full
+and verified dependencies. Calendar-wide derivations that every selected Mass
+needs are computed once per session and re-verified on reuse, as
+[Web data](../../guidance/web-data.md#tracked-discovery-and-ordinary-indexed-reading)
+states. `TRIPTYCH_BROWSER_DATA_ROOT` still controls full
 publication builds; it is not the ordinary reading cache. Explicit verified
 browser-product snapshot mode remains available for product audits.
 

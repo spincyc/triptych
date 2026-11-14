@@ -20,6 +20,7 @@ import sys
 from _indexed_source_library import indexed_records
 from _proper_latin import reading_records
 from _calendars import verified_parse_cache
+from _corpus_index import session_derivations
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFESTS = "src/index/reader-manifests.json"
@@ -51,15 +52,21 @@ def _route(relative):
 
 
 @contextmanager
-def _reading(index):
+def _reading(index, *, reuse=False):
     # The older parser cache uses timestamps. The reader's exact-content owner
     # must see canonical reads, including equal-size edits with restored mtimes.
     previous = os.environ.get("TRIPTYCH_YAML_CACHE")
     os.environ["TRIPTYCH_YAML_CACHE"] = "0"
     if not hasattr(index, "_reader_parse_cache"):
         index._reader_parse_cache = {}
+    if not hasattr(index, "_reader_derivations"):
+        index._reader_derivations = {}
+    # Only selected reading reuses calendar-wide derivations between records;
+    # maintenance derives discovery from scratch.
+    derivations = session_derivations(index._reader_derivations) if reuse else nullcontext()
     try:
-        with index.verified_reads(), reading_records(indexed_records(index)), verified_parse_cache(index._reader_parse_cache):
+        with (index.verified_reads(), reading_records(indexed_records(index)),
+              verified_parse_cache(index._reader_parse_cache), derivations):
             yield
     finally:
         if previous is None:
@@ -194,7 +201,7 @@ def resolve(relative: str, root: Path, index) -> bytes | None:
         else:
             return None
         return family(relative, root, index)
-    with _reading(index):
+    with _reading(index, reuse=True):
         calendars = root / "src/sources/calendars"
         if mass:
             from _reader_bibles import bible_context

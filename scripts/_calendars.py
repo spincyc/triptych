@@ -998,18 +998,36 @@ def read_toml(path: Path):
     return _cached_parse(path, "toml", tomllib.loads)
 
 
+def parse_toml(body: bytes):
+    """Parse TOML bytes a caller has itself read, and checked where it must.
+
+    Inside an indexed reader this shares one parse of the exact bytes with
+    `read_toml`: a calendar's large ledgers are read by several owners for
+    each selected Mass. Elsewhere, and below `_YAML_CACHE_FLOOR`, it is
+    `tomllib.loads` of the UTF-8 text: hundreds of small source records would
+    only evict the ledgers from the bounded cache.
+    """
+    verified = _VERIFIED_PARSE_CACHE.get()
+    if verified is None or len(body) < _YAML_CACHE_FLOOR:
+        return tomllib.loads(body.decode("utf-8"))
+    return _verified_parse(verified, body, "toml", tomllib.loads)
+
+
+def _verified_parse(verified, body: bytes, kind: str, parse):
+    key = (kind, hashlib.sha256(body).digest())
+    if key not in verified:
+        parsed = parse(body.decode("utf-8"))
+        if len(verified) >= _YAML_CACHE_KEEP:
+            verified.pop(next(iter(verified)))
+        verified[key] = parsed
+    return copy.deepcopy(verified[key])
+
+
 def _cached_parse(path: Path, kind: str, parse):
     """Parse *path* with *parse*, through the JSON cache described above."""
     verified = _VERIFIED_PARSE_CACHE.get()
     if verified is not None:
-        body = path.read_bytes()
-        key = (kind, hashlib.sha256(body).digest())
-        if key not in verified:
-            parsed = parse(body.decode("utf-8"))
-            if len(verified) >= _YAML_CACHE_KEEP:
-                verified.pop(next(iter(verified)))
-            verified[key] = parsed
-        return copy.deepcopy(verified[key])
+        return _verified_parse(verified, path.read_bytes(), kind, parse)
     entry = _cache_entry(path, kind)
     if entry is not None:
         try:

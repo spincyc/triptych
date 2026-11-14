@@ -343,6 +343,52 @@ class CorpusIndexTests(unittest.TestCase):
             with self.assertRaisesRegex(corpus.CorpusIndexError, 'changed during reader derivation'):
                 corpus.refresh(self.root, readers=True)
 
+    def test_session_derivation_reuse_replays_and_reverifies_its_inputs(self):
+        index = corpus.CorpusIndex(self.root)
+        runs = []
+
+        def derive():
+            runs.append(1)
+            return {'text': [(self.root / self.payload).read_text()]}
+
+        key = ('test', self.payload)
+        with corpus.session_derivations({}):
+            with index.verified_reads() as first:
+                value = corpus.session_derived(key, derive)
+            value['text'].append('caller mutation')
+            with index.verified_reads() as second:
+                again = corpus.session_derived(key, derive)
+            self.assertEqual(runs, [1])
+            self.assertEqual(again, {'text': ['Original whole source\n']})
+            self.assertIn(self.payload, second)
+            self.assertEqual(second, first)
+            self.put(self.payload, 'Changed after the first derivation\n')
+            with self.assertRaisesRegex(corpus.CorpusIndexError, 'stale corpus input'):
+                with index.verified_reads():
+                    corpus.session_derived(key, derive)
+        self.assertEqual(runs, [1])
+
+    def test_session_derivation_is_inert_outside_a_reader_session_and_keeps_no_failure(self):
+        index = corpus.CorpusIndex(self.root)
+        runs = []
+        with index.verified_reads():
+            corpus.session_derived('key', lambda: runs.append(1))
+            corpus.session_derived('key', lambda: runs.append(1))
+        with corpus.session_derivations({}):
+            corpus.session_derived('key', lambda: runs.append(1))
+            corpus.session_derived('key', lambda: runs.append(1))
+        self.assertEqual(len(runs), 4)
+
+        def fail():
+            runs.append(1)
+            raise ValueError('controlled failure')
+
+        with corpus.session_derivations({}), index.verified_reads():
+            for _ in range(2):
+                with self.assertRaisesRegex(ValueError, 'controlled failure'):
+                    corpus.session_derived('failing', fail)
+        self.assertEqual(len(runs), 6)
+
 
 if __name__ == '__main__':
     unittest.main()

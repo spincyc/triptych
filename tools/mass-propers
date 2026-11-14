@@ -25,6 +25,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 from _browser_products import ProductError, assert_working_output, committed_data_root, working_data_root  # noqa: E402
 
 import _calendars  # noqa: E402
+from _corpus_index import session_derived  # noqa: E402
 import _missal_coverage  # noqa: E402
 import _oration_execution  # noqa: E402
 import _name_execution  # noqa: E402
@@ -2651,9 +2652,11 @@ def scripture_translation_targets(document: dict) -> set[tuple[str, str, str, st
     """Exact Scripture owners in one calendar, with no empty cycle container."""
 
     targets = set()
+    owner_masses = _calendars.mass_index(document)
     for _, mass in masses_of(document):
         for form, proper, taken_from in appointed_propers(document, mass):
-            identity = source_slot_identity(document, mass, form, proper, taken_from)
+            identity = source_slot_identity(document, mass, form, proper, taken_from,
+                                            owner_masses=owner_masses)
             owners = cycle_owners(proper)
             if not owners and proper.get("source") == "scripture":
                 targets.add((*identity[:3], CYCLE_ALL, identity[3]))
@@ -2661,6 +2664,18 @@ def scripture_translation_targets(document: dict) -> set[tuple[str, str, str, st
                 if (child.get("source") or proper.get("source")) == "scripture":
                     targets.add((*identity[:3], cycle, identity[3]))
     return targets
+
+
+def calendar_scripture_targets(root: Path, calendar: str) -> set[tuple[str, str, str, str, int]]:
+    """`scripture_translation_targets` of one loaded calendar.
+
+    The targets cover every Mass of the calendar, so an indexed reader reuses
+    them for each selected Mass it opens (`_corpus_index.session_derived`).
+    """
+    return session_derived(
+        ("mass-propers/scripture-translation-targets", str(root), calendar),
+        lambda: scripture_translation_targets(load_calendar(root, calendar)),
+    )
 
 
 def scripture_body_translation_problems(
@@ -2827,8 +2842,7 @@ def translation_overlay(
     owners = translation_ledger_calendars(calendar, root)
     if not owners:
         return {}, {}, [], {}
-    document = load_calendar(root, calendar)
-    scripture_targets = scripture_translation_targets(document)
+    scripture_targets = calendar_scripture_targets(root, calendar)
     owner_scripture_targets = {calendar: scripture_targets}
     overlay: dict[tuple[str, str, str, str, int], dict] = {}
     stale = []
@@ -2855,7 +2869,7 @@ def translation_overlay(
         owner_document = _calendars.load_document(root, owner, effective=False)
         study_context = None
         if owner not in owner_scripture_targets:
-            owner_scripture_targets[owner] = scripture_translation_targets(load_calendar(root, owner))
+            owner_scripture_targets[owner] = calendar_scripture_targets(root, owner)
 
         # A translation may cite either the conceptual edition or the exact
         # expression artifact whose bytes were transcribed. Both identifiers
@@ -3589,7 +3603,11 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
                          if mass_keys is None or mass_keys & set(_oration_execution.HOSTS) else {})
     name_sources = (_name_execution.load_name_sources(root, calendar, owner)
                     if mass_keys is None or mass_keys & {key[0] for key in _name_execution.TARGETS} else {})
-    conclusion_sources = _oration_endings.load_sources(root, calendar, owner)
+    # Calendar-wide and the same for every selected Mass an indexed reader opens.
+    conclusion_sources = session_derived(
+        ("oration-endings/sources", str(root), calendar),
+        lambda: _oration_endings.load_sources(root, calendar, owner),
+    )
     actor_sources = _source_local_actor_sequences.load_sources(root, calendar, owner)
     joined_orations = oration_relations(root, calendar)
     overlay, untranslated, stale, witnesses = (
