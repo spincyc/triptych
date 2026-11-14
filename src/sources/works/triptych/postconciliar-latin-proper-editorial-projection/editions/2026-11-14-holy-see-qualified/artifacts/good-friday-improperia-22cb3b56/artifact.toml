@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.good-friday-improperia-22cb3b56"
+edition_id = "edition.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "qualified-public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Admitted under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [later_typical_editions]: Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission. First Holy See publication: Ordo Hebdomadae Sanctae instauratus, editio typica, Typis Polyglottis Vaticanis 1956 (decree Maxima redemptionis of 16 November 1955, AAS 47 (1955) p. 840, prescribes the Ordo in its Vatican typical edition); not opened, so the wording is verified through the Missale Romanum editio typica 1962 reprint (DECISIONS 13a); reprinted in the Missale Romanum editio typica 1962, printed pp. 177-178, nos. 952-953. The bytes are a project transcription of the earlier Holy See wording at the 2002 target's extent; the 2002 edition is only a text-free comparison and is neither source nor carrier."
+sha256 = "22cb3b5676a7bbc4c3ffb22de2a1fa02827d21d8738a4d92e05999ba5dcf09df"
+byte_size = 2074
+path = "src/sources/works/triptych/postconciliar-latin-proper-editorial-projection/editions/2026-11-14-holy-see-qualified/artifacts/good-friday-improperia-22cb3b56/latin.txt"
+retrieved = "2026-11-14"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+provenance = "Transcribed on 2026-11-14 from 1962 Vatican typical edition printed pp. 177-178, artifact pp. 258-259, nos. 952-953 and compared word for word with the 2002 target (Feria VI in Passione Domini, Adoratio Crucis, Improperia (artifact pp. 197-200))."
+transformation = "read the 2002 target on its digitally typeset text layer cross-checked against the rendered page, and the 1962 carrier on its page images; join printed line wraps; remove stress accents; expand printed ae/oe ligatures to ae/oe; use the calendar's i orthography; retain the 2002 target's pointing, capitals, line division and extent."

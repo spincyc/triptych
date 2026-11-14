@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-thursday-communion-english-7d92aacd"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "verified-transcription"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Original 1937/1945 ordinary-page English of the Lasance/Walsh New Roman Missal, United States public domain by nonrenewal of A 110108 and A 192159 (src/sources/inventories/lasance-new-roman-missal-rights-v1.toml); printed p. 993 is an ordinary numbered page, not a lettered insert. The facing Latin is a pre-1931 text, so no qualified basis is involved."
+sha256 = "7d92aacdf6ce7a16d58f67ead17ed7c9e7e970d8970937d6b7cfe5487e57d415"
+byte_size = 407
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/gap-campaign-20261114-thursday-communion-english-7d92aacd/english.tsv"
+retrieved = "2026-11-14"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Transcribe printed p. 993 (PDF p. 1003), April 28 St Paul of the Cross, Greater Alleluia, the English of the first verse from Christ died for all through Alleluia, read on the page image; join line wraps; keep the printing's words, capitals and pointing; one row per receiving Mass."
+provenance = "Read on the page image of the exact 1946 printing on 2026-11-14."
+encoding = "utf-8"
+indexable = true
