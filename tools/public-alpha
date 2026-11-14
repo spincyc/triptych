@@ -34,6 +34,7 @@ from _corpus import (  # noqa: E402
     eligible_document_ids as corpus_eligible_document_ids,
 )
 from _scanning import markers_for, present  # noqa: E402
+import _qualified_public_domain  # noqa: E402
 from _browser_products import MANIFEST_RELATIVE as BROWSER_PRODUCTS_MANIFEST_RELATIVE  # noqa: E402
 from _markdown_render import (  # noqa: E402
     MARKDOWN_EXTENSIONS, MarkdownRenderError, render_markdown,
@@ -195,7 +196,12 @@ POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS = frozenset((
 # structure families and the offered Bible fragments; a hand-maintained family
 # allowlist made served browser data invisible to the authorization record.
 LITURGICAL_RIGHTS_STRUCTURE_KINDS = ("calendar", "ordinary", "propers", "rubrics")
-PUBLIC_LITURGICAL_TEXT_RIGHTS = frozenset(("public-domain", "project-created"))
+# `qualified-public-domain` is the policy priority-6 state: authorized on every
+# public liturgy surface, but only beside its adopted record's verbatim notice,
+# which `visit` below requires wherever the token is carried with words.
+PUBLIC_LITURGICAL_TEXT_RIGHTS = frozenset(
+    ("public-domain", "project-created", _qualified_public_domain.BASIS)
+)
 ICEL_SOURCE_MARKERS = (
     "international-commission-on-english-in-the-liturgy",
     "icel-antiphonary",
@@ -335,6 +341,10 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "tools/public-alpha",
     "tools/mass-propers",
     "scripts/_calendars.py",
+    # `_calendars` names each calendar's book from the designator registry,
+    # and the shelf labels below read the same registry.
+    "scripts/_missal_designators.py",
+    "src/sources/inventories/missal-designators-v1.toml",
     "scripts/_proper_components.py",
     "scripts/_markdown_render.py",
     "scripts/_document_schema.py",
@@ -2537,6 +2547,20 @@ def validate_liturgical_public_data(
                 f"{label} {location}: rights {rights!r} and rights_status "
                 f"{rights_status!r} do not name the same public authorization"
             )
+        # A priority-6 text is never public without its marking: a Latin
+        # publication decision or a translation carrying words on the qualified
+        # token must carry the adopted record's verbatim notice beside them.
+        qualified_words = (
+            (value.get("basis") == _qualified_public_domain.BASIS
+             and value.get("status") == "permitted")
+            or (rights == _qualified_public_domain.BASIS and "text" in value
+                and parts[1] == "propers")
+        )
+        if qualified_words and value.get("notice") not in _qualified_public_domain.notices():
+            raise ReleaseError(
+                f"{label} {location}: {_qualified_public_domain.BASIS} words lack "
+                "their adopted record's verbatim notice"
+            )
 
         state = value.get("state")
         if isinstance(state, str) and state in RESTRICTED_PROJECTION_STATES:
@@ -2769,6 +2793,10 @@ def validate_propers_read_payload_sources(
                 fail("reader index requires a read_payload binding")
             continue
         fields = {"id", "edition", "edition_short", "read_payload"}
+        if "edition_qualification" in row:
+            if not isinstance(row["edition_qualification"], str) or not row["edition_qualification"].strip():
+                fail(f"{calendar} index row has an empty edition qualification")
+            fields.add("edition_qualification")
         if "reader_index" in row or "reader_file" in row:
             fields.update({"reader_index", "reader_file"})
         if set(row) != fields:
@@ -2793,7 +2821,7 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
     optional_structure_fields = {
         "roman-1962": {"proper_appointment_facts", "execution_source_coverage", "name_execution_source_coverage"},
         "roman-pre-1955": {"advisory", "recension_coverage", "stands_before"},
-    }.get(calendar, set())
+    }.get(calendar, set()) | {"edition_qualification"}
     monolith_path = proper_root / f"{calendar}.json"
     monolith, monolith_raw = read(monolith_path)
     # Source-owned appointment facts are optional generator output. The exact
@@ -4887,13 +4915,27 @@ def navigation_state(source_relative: str) -> tuple[str, str, str]:
     return ("", "", "")
 
 
+def missal_designator(calendar: str) -> str:
+    """The registry's designator for a reader calendar's book; no copy lives here."""
+    import _missal_designators
+
+    identity = _missal_designators.calendar_identity(ROOT, calendar)
+    if identity is None:
+        raise ReleaseError(f"the missal designator registry names no book for {calendar}")
+    return identity["edition"]
+
+
 def reader_shelf(source_relative: str) -> tuple[str, str] | None:
     """Resolve a web edition to the reader-facing shelf that owns its subject."""
     if not source_relative.startswith("web/"):
         return None
+    # A missal's shelf is named by the book's designator, resolved only for
+    # a page that sits on it.
+    missal_shelves = (
+        ("/liturgy/roman-rite/1962/", "roman-1962", "library/traditional-latin-mass.html"),
+        ("/liturgy/roman-rite/postconciliar/", "postconciliar", "library/novus-ordo-liturgy.html"),
+    )
     routes = (
-        ("/liturgy/roman-rite/1962/", "1962 Missal", "library/traditional-latin-mass.html"),
-        ("/liturgy/roman-rite/postconciliar/", "Postconciliar Missal", "library/novus-ordo-liturgy.html"),
         ("/liturgy/roman-rite/comparative/", "Liturgy", "library/liturgy.html"),
         ("/history/catholic-exorcism/", "Catholic Exorcism", "library/catholic-exorcism.html"),
         ("/curriculums/ecclesiastical-latin/", "Ecclesiastical Latin", "library/ecclesiastical-latin.html"),
@@ -4908,6 +4950,9 @@ def reader_shelf(source_relative: str) -> tuple[str, str] | None:
         ("/articles/", "Faith", "library/faith.html"),
     )
     normalized = "/" + source_relative.removeprefix("web/").split("/", 1)[-1] + "/"
+    for marker, calendar, destination in missal_shelves:
+        if marker in normalized:
+            return missal_designator(calendar), destination
     for marker, label, destination in routes:
         if marker in normalized:
             return label, destination

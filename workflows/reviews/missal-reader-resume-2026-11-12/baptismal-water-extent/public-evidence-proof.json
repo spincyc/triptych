@@ -1,0 +1,67 @@
+{
+  "schema": "triptych-water-public-evidence-proof/v1",
+  "originals": [
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/candidate-manifest.json",
+      "sha256": "0b67bd8d762597780057f9c3b568ddf89d052f4186601dfa97191007b989e9f0",
+      "bytes": 22017
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/positive-transition-proposal.json",
+      "sha256": "52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2",
+      "bytes": 55229
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/evidence/root-source-adoption.json",
+      "sha256": "e5247c34f6f5ef9aa200533b3e106aa0f7617723885f7a259fb6c8215b93a087",
+      "bytes": 8888
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/evidence/source-review.json",
+      "sha256": "0abbcd83ca64cd2b861026bf76cbbb0b06a333fcaf2ba269749e41a95d0377fc",
+      "bytes": 45676
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/evidence/v4-review.json",
+      "sha256": "1889c1b391ea9337e7cf8b1634bff8d911c213a48d241a44ac1e7d7aaac6d527",
+      "bytes": 5945
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/evidence/v5-review.json",
+      "sha256": "3910848d967e765856dded9d8d5e243324ae2ea6a308f3ded5f5a55fe2e6de3e",
+      "bytes": 3417
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/prepare.py",
+      "sha256": "111b24964608b667df8681d51641ed644f203050e61c00392584461bff4a9732",
+      "bytes": 16891
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/driver-successor.json",
+      "sha256": "58256c1ab09923a5adf1e522c3fdf115c83c3cf61dce4606c702049bef2e459b",
+      "bytes": 1827
+    }
+  ],
+  "byte_identical_original_count": 8,
+  "all_selected_originals_have_no_host_absolute_home_paths": true,
+  "projections": [
+    {
+      "original": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/current-read-map/read-map.json",
+        "sha256": "6d6f4baefbaa22ea853852900eeb404e23e3a5ac8d76118ca2ec38f9d453500a",
+        "bytes": 57373
+      },
+      "projection": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/prepared-map-controls.projection.json",
+        "sha256": "6c11dd42e2834a7c971955d58d6aae7dfa6a5b77d5a96f3a10a297839d35994f",
+        "bytes": 12776
+      },
+      "transform": "Select the exact root-adoption/driver/candidate/transition pins, target identity, semantic raw/body/dictionary hashes, ten file before/after hashes, preserved source controls and invariants. Drop duplicated complete target dictionaries/bodies and keep whole-owner postimage bytes private.",
+      "exact_selected_values_match": true,
+      "not_a_byte_identical_original": true
+    }
+  ],
+  "no_images_or_whole_pdf_delivery": true,
+  "no_source_or_review_decision_changed": true,
+  "canonical_writes": 0
+}

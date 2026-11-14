@@ -8,6 +8,9 @@
   const MODES = ['read', 'missal', 'study', 'compare'];
   const SHELLS = ['persistent', 'reveal'];
   const M1_FIXTURE_ROOT = '/tools/tests/fixtures/liturgy-reader-state/v1/';
+  // The missals' names come from the Propers manifest, which carries each
+  // book's designator from the designator registry; the shell holds none.
+  const PROPERS_INDEX = 'structure/propers/index.json';
   const DEFAULT_STATE = 'day-read';
   const INITIATED_AT = performance.now();
 
@@ -17,35 +20,33 @@
       date: '2026-08-02', bible: 'douay-rheims', orations: 'la', ordinaryLanguage: 'en',
       display: 'translation', ordinary: false,
       fixture: 'day-roman-1962-2026-08-02.json',
-      meta: '1962 Roman Missal · Universal · Douay–Rheims · Latin orations'
     },
     'day-postconciliar': {
       entrance: 'day', mode: 'read', edition: 'postconciliar', mass: 'advent-1',
       date: '2026-11-29', bible: 'douay-rheims', orations: 'la', ordinaryLanguage: 'en',
       display: 'translation', ordinary: false, ordinaryOption: 'ep-i',
       fixture: 'day-postconciliar-2026-11-29.json',
-      meta: 'Postconciliar Roman Missal · Universal · Douay–Rheims · Latin orations'
     },
     'day-missal': {
       entrance: 'day', mode: 'missal', edition: 'roman-1962', mass: 'pentecost-10',
       date: '2026-08-02', bible: 'douay-rheims', orations: 'la', ordinaryLanguage: 'en',
       display: 'translation', ordinary: true,
       fixture: 'day-roman-1962-2026-08-02.json', long: true,
-      meta: '1962 Missal · long shell exercise · Ordinary outline is prototype-only'
+      meta: 'long shell exercise · Ordinary outline is prototype-only'
     },
     'day-study': {
       entrance: 'day', mode: 'study', edition: 'roman-1962', mass: 'pentecost-10',
       date: '2026-08-02', bible: 'douay-rheims', orations: 'la', ordinaryLanguage: 'en',
       display: 'translation', ordinary: false,
       fixture: 'day-roman-1962-2026-08-02.json', initialSurface: 'study',
-      meta: '1962 Missal · Study shell · production-backed M1 Day fixture'
+      meta: 'Study shell · production-backed M1 Day fixture'
     },
     'propers-formulary': {
       entrance: 'propers', mode: 'read', edition: 'roman-1962', mass: 'advent-1',
       date: null, bible: 'douay-rheims', orations: 'la', ordinaryLanguage: 'en',
       display: 'translation', ordinary: false,
       fixture: 'propers-roman-1962-advent-1.json',
-      meta: '1962 Missal · formulary-first · calendar-independent'
+      meta: 'formulary-first · calendar-independent'
     },
     'propers-browse': {
       entrance: 'propers', mode: 'read', edition: 'roman-1962', mass: 'advent-1',
@@ -59,7 +60,7 @@
       date: null, bible: 'douay-rheims', orations: 'la', ordinaryLanguage: 'en',
       display: 'translation', ordinary: false, ordinaryOption: 'ep-i',
       fixture: 'propers-postconciliar-transfiguration-cycles.json',
-      meta: 'Postconciliar Missal · formulary-first · cycle-bearing fixture'
+      meta: 'formulary-first · cycle-bearing fixture'
     },
     unavailable: {
       entrance: 'day', mode: 'read', edition: 'roman-1962', mass: 'fixture-diagnostics',
@@ -90,7 +91,7 @@
       date: null, bible: 'douay-rheims', secondaryBible: 'clementine-vulgate', orations: 'la',
       ordinaryLanguage: 'en', display: 'bilingual', ordinary: false,
       fixture: 'propers-roman-1962-advent-1.json', bilingual: true,
-      meta: '1962 Missal · Douay-Rheims and Clementine Vulgate · paired by the same Proper'
+      meta: 'Douay-Rheims and Clementine Vulgate · paired by the same Proper'
     }
   });
 
@@ -118,6 +119,7 @@
   });
 
   const runtime = {
+    missalNames: null,
     stateName: null,
     config: null,
     shell: 'persistent',
@@ -272,6 +274,22 @@
     }).format(stamp);
   }
 
+  // Fetched once; until it arrives, or if a missal is absent from it, the
+  // opaque calendar key is shown rather than a name the shell made up.
+  async function loadMissalNames() {
+    if (runtime.missalNames) return runtime.missalNames;
+    const index = await T.loadJSON(PROPERS_INDEX);
+    runtime.missalNames = {};
+    ((index && index.missals) || []).forEach((row) => {
+      runtime.missalNames[row.id] = { edition: row.edition || row.id, short: row.edition_short || row.id };
+    });
+    return runtime.missalNames;
+  }
+
+  function missalName(id) {
+    return (runtime.missalNames && runtime.missalNames[id]) || { edition: id, short: id };
+  }
+
   function structurePath(edition) {
     return 'structure/propers/' + edition + '.json';
   }
@@ -317,7 +335,7 @@
 
   function selectionMeta(config) {
     if (config.synthetic) return config.meta;
-    const edition = config.edition === 'roman-1962' ? '1962 Roman Missal' : 'Postconciliar Roman Missal';
+    const edition = missalName(config.edition).edition;
     const bible = config.display === 'bilingual'
       ? 'Douay–Rheims + Clementine Vulgate'
       : config.bible === 'clementine-vulgate' ? 'Clementine Vulgate' : 'Douay–Rheims';
@@ -416,6 +434,7 @@
   async function renderActual(config, token) {
     const bibleResult = await T.loadBibles();
     if (!bibleResult.ok) throw new Error(bibleResult.message);
+    await loadMissalNames();
     const structure = await T.loadJSON(structurePath(config.edition));
     const mass = massFrom(structure, config.mass);
     if (!mass) throw new Error(
@@ -719,8 +738,8 @@
     fields.appendChild(field('Direct date', dateInput));
 
     const edition = node('select');
-    addOption(edition, 'roman-1962', '1962 Missal');
-    addOption(edition, 'postconciliar', 'Postconciliar Missal');
+    addOption(edition, 'roman-1962', missalName('roman-1962').short);
+    addOption(edition, 'postconciliar', missalName('postconciliar').short);
     edition.value = config.edition;
     edition.addEventListener('change', () => openHeldDay(config.date, edition.value));
     fields.appendChild(field('Edition', edition));
@@ -812,8 +831,8 @@
     const fragment = document.createDocumentFragment();
     const fields = node('div', 'surface-fields');
     const edition = node('select');
-    addOption(edition, 'roman-1962', '1962 Missal');
-    addOption(edition, 'postconciliar', 'Postconciliar Missal');
+    addOption(edition, 'roman-1962', missalName('roman-1962').short);
+    addOption(edition, 'postconciliar', missalName('postconciliar').short);
     edition.value = config.edition.startsWith('synthetic') ? 'roman-1962' : config.edition;
     edition.addEventListener('change', () => {
       setState(edition.value === 'postconciliar' ? 'propers-postconciliar' : 'propers-formulary');

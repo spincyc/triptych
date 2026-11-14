@@ -69,17 +69,14 @@ COMPANION_SCHEMAS = {
     "triptych-calendar-rubrics/v1": "calendar-rubrics",
 }
 
-# The identity of the book a calendar's masses are printed in. Both fields
-# belong to the mass index, because that is the file that transcribes the book;
-# a companion source in the same directory names the same book but is not what
-# identifies it, and reads these from the index instead of writing them out
-# again. `restated_identity` refuses the second copy.
-#
-# `edition` identifies the printing bibliographically. `edition_short` is the
-# name a reader would say — "1962 Missal" — because a select control has room
-# for one of them and a reader has patience for one of them, and it is not the
-# sixty-eight characters of "Missale Romanum, editio typica tertia 2008,
-# reimpressio emendata 2008".
+# The identity of the book a calendar's masses are printed in. Since
+# 2026-11-14 both names come from the missal designator registry
+# (`_missal_designators`), which gives every coherent missal one affirmative
+# designator: `edition` is that designator and `edition_short` its derived
+# final segment ("1962 typical edition"), the one a select control has room
+# for. Neither the mass index nor a companion beside it may write either out
+# again; `restated_identity` refuses the copy. A synthetic calendar root with
+# no registry keeps its own header, which is what fixtures exercise.
 INDEX_OWNED = ("edition", "edition_short")
 
 # The one way a mass or a proper says "this text is appointed here, and it is
@@ -790,8 +787,22 @@ def header(path: Path, field: str) -> str | None:
     return found.group(1).strip("'\"") if found else None
 
 
+def designated_identity(root: Path, calendar: str) -> dict | None:
+    """The registry's names for a calendar's book, or None without a registry."""
+    import _missal_designators
+
+    return _missal_designators.calendar_identity(_repository_for_calendar_root(root), calendar)
+
+
 def index_header(root: Path, calendar: str, field: str) -> str | None:
-    """A header field read from the calendar's mass index and nowhere else."""
+    """A header field read from the calendar's mass index and nowhere else.
+
+    The book's names are the exception: the designator registry owns them.
+    """
+    if field in INDEX_OWNED:
+        identity = designated_identity(root, calendar)
+        if identity is not None:
+            return identity[field]
     return header(root / calendar / MASS_INDEX, field)
 
 
@@ -850,7 +861,18 @@ def restated_identity(root: Path, calendar: str | None = None) -> list[str]:
     defect, and it is the only thing a check can catch before the drift.
     """
     problems: list[str] = []
-    _, companions, _ = partition(root, calendar)
+    indexes, companions, _ = partition(root, calendar)
+    for index in indexes:
+        if designated_identity(root, index.parent.name) is None:
+            continue
+        for field in INDEX_OWNED:
+            found = header(index, field)
+            if found is not None:
+                problems.append(
+                    f"{index}: restates {field} {found!r}; the missal designator "
+                    "registry owns the book's name and every consumer reads it "
+                    "from there. Delete the line."
+                )
     for companion in companions:
         path = Path(companion["path"])
         index = root / path.parent.name / MASS_INDEX
@@ -858,7 +880,7 @@ def restated_identity(root: Path, calendar: str | None = None) -> list[str]:
             found = header(path, field)
             if found is None:
                 continue
-            owned = header(index, field)
+            owned = index_header(root, path.parent.name, field)
             if found == owned:
                 problems.append(
                     f"{path}: restates {field} {found!r}, which {index} owns and "
@@ -1089,12 +1111,20 @@ def load_document(
     if calendar in _chain:
         cycle = " -> ".join((*_chain, calendar))
         raise ValueError(f"calendar recension inheritance cycle: {cycle}")
-    document = _read(root / calendar / MASS_INDEX)
+    document = _with_designation(root, calendar, _read(root / calendar / MASS_INDEX))
     base_name = document.get(RECENSION_BASE)
     if not effective or not isinstance(base_name, str) or not base_name:
         return document
     base = load_document(root, base_name, effective=True, _chain=(*_chain, calendar))
     return _withhold_inherited_frames(_apply_departures(document, base, base_name))
+
+
+def _with_designation(root: Path, calendar: str, document: dict) -> dict:
+    """The document carrying the registry's names for its book, never a copy of its own."""
+    identity = designated_identity(root, calendar)
+    if identity is None:
+        return document
+    return {**document, **{field: identity[field] for field in INDEX_OWNED}}
 
 
 # A recension inherits a formulary's words through `text_from`, not a seat its

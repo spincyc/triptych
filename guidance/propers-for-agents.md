@@ -208,7 +208,7 @@ Assume more of the same kind exist.
 | A celebration in the **spine and in no section** | The two artifacts had different histories and nothing compared them. Three Christmas octave days sat in the gap. | Now caught: `spine_problems` in `check-calendar-masses`. |
 | A verse **past the end of a chapter** | `index-bible` derives a chapter's bounds from the verses the edition prints, so it clamps rather than reports. `Mark 4:41`, `1 Thessalonians 4:18` and `Acts 7:60` were each dropped this way. | Partly closed: `Mark 4:41` and `Acts 7:60` now resolve and only `1 Thessalonians 4:18` still reports. The remedy is a `merged-verse` row in the edition's verse-aliases artifact, because the Douay and Clementine disagree here. |
 | **1962 commemorations** | They existed only as prose inside a `name` string, so none could be looked up or commemorated. | Now caught: the sixty folded into feast names are dated entries of rank `Comm.`, 104 in all, and `check-calendar-masses` refuses a `comm.` anywhere but the start of a name. Their three appointed oration identities are typed text-free witness gaps, not placeholders or invented bodies. |
-| The **book's identity** retyped in a second file | `edition` sat in `propers.yaml` and again in `rubrics.yaml`, in both calendars — four hand-typed copies of two strings, with nothing comparing them. They agreed; nothing made them agree. | Now caught: the mass index owns `edition` and `edition_short`, `calendar-rubrics` reads both from it, and `_calendars.restated_identity` refuses a companion that carries either — whether or not its value matches. |
+| The **book's identity** retyped in a second file | `edition` sat in `propers.yaml` and again in `rubrics.yaml`, in both calendars — four hand-typed copies of two strings, with nothing comparing them. They agreed; nothing made them agree. | Now caught: since 2026-11-14 the missal designator registry (`src/sources/inventories/missal-designators-v1.toml`) owns the book's one designator, `edition_short` is derived from it, every tool reads both through `_calendars`, and `_calendars.restated_identity` refuses a mass index or companion that carries either — whether or not its value matches. |
 | One formulary **retyped under a second mass** | The schema could not say "this mass takes that text", so a day the Missal carries by a pointer had to be carried by a copy, and nothing compared the copies. The four resumed Sundays after the Epiphany held one set of orations twice and disagreed in five ways — `caelestis`/`coelestis`, `Caelestibus`/`Coelestibus`, `caelestibus`/`coelestibus`, one Introit citation encoded as a contiguous range against three discrete verses, and a dozen truncated incipits. The English was duplicated with it, twelve sidecar rows for four orations. | Now expressible: `takes_from` on a mass or a proper, resolved once by `_calendars.resolve_propers` for both the validator and the browser. The four Sundays now reference `epiphany-3`..`-6` and `pentecost-23` under RGMR 298. **Partly caught** — `span_problems` detects a copy where a span appoints a reference. Outside a declared span nothing does. |
 | A witness's **recension** recorded only in prose | The 1962 sidecar's `caution` said its two books' rubrics, seasonal second and third orations, Holy Week and sanctoral "are not those of 1962" — a prose statement of the exact fact the recension model exists to carry, in a field no tool reads. 176 collations had been run against the 1861 under a 1962 heading. | Now caught: every `[[sources]]` row states `attests`/`attests_kind`/`attests_basis` in the act history's own vocabulary, and `source_attestation_problems` in `check-calendar-masses` refuses a row that states none, names an act the history does not carry, uses a kind no witness uses, or contradicts the history about a witness both files hold. A row naming no `source_id` — the project as its own witness — is exempt and witnesses no printing. |
 | The **recension stamp** dropped between the derivation and the page | `_calendars.stamp` marks every entry of a recension with `{calendar, kind, stated, text_from, basis, act?, also[{kind, basis, act?}]}` and the tests assert it, but `mass-propers` rebuilt each mass from a key whitelist that omitted it. `roman-pre-1955.json` held 490 masses, zero occurrences of `text_from`, and declared `edition: Missale Romanum, editio typica Vaticana 1920` over text transcribed from a 1962 printing. | Now carried and rendered: the structure pass emits `recension` where the stamp is present, carries the aggregate `stands_before` boundary, and both readers expose the boundary and any row-level act-history station. An `unrecorded` station is not restated as a proved causal act. |
@@ -346,6 +346,15 @@ already in the public domain: the Canon, the Ordo Missae prayers, and **the
 seasonal orations**. A new edition's copyright "extends only to the material
 contributed by the author of such work" and gives no exclusive right in the
 preexisting material.
+
+Since 2026-11-14 the "probably protected to the end of 2057" bullet is
+superseded for the edition's own 1931–1975 Holy See matter:
+`src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml` owns that holding (policy priority 6,
+confidence medium-low), and `scripts/_qualified_public_domain.py` the per-text
+contract. Such matter in the list below may be published, one text at a time,
+on the `qualified-public-domain` token with its notice, never as
+`public-domain`; the 103(b) route stays first wherever a pre-1931 witness
+carries the words.
 
 What it does not free, and what must not be published from the facsimile:
 
@@ -720,8 +729,9 @@ unavailable/rights dispositions rather than target-edition formularies. Counts
 of represented masses, propers, translations, or non-placeholder rows must not
 be reported as textual, provenance, rights, or whole-book completeness.
 
-**Pre-1955.** A structural-only RECENSION and not a corpus:
-`roman-pre-1955` holds only stated structural departure rows. Known-different
+**Roman Missal, 1920 typical edition** (calendar key `roman-pre-1955`). A
+structural-only RECENSION and not a corpus: `roman-pre-1955` holds only stated
+structural departure rows. Known-different
 formularies whose target wording is not held use typed whole-Mass unavailable
 status, not pseudo-Proper placeholders, and every unstated formulary is
 mechanically inherited from `roman-1962` without target-recension collation.

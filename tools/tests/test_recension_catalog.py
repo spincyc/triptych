@@ -257,24 +257,24 @@ class RealCatalogTests(unittest.TestCase):
             for row in problems
         ))
 
-    def test_catalog_label_must_match_the_calendar_source_edition(self) -> None:
-        source = CALENDARS / "roman-1962" / "propers.yaml"
-        original = _recensions._document
+    def test_a_book_state_takes_its_name_from_the_designator_registry(self) -> None:
+        def change(document: dict) -> None:
+            document["recensions"][2]["label"] = "Missale Romanum, editio typica 1962"
 
-        def changed(path: Path):
-            document = original(path)
-            if path == source:
-                document = copy.deepcopy(document)
-                document["edition"] = "A different book"
-            return document
-
-        with mock.patch.object(_recensions, "_document", side_effect=changed):
-            problems = _recensions.catalog_problems(
-                CALENDARS, repository=ROOT, required=True
-            )
+        problems = self.problems_after(change)
         self.assertTrue(any(
-            "declares edition 'A different book'" in row for row in problems
-        ))
+            "label names a book state" in row and "missal designator registry" in row
+            for row in problems
+        ), problems)
+
+    def test_an_interval_gap_still_describes_itself(self) -> None:
+        def change(document: dict) -> None:
+            del document["recensions"][1]["label"]
+
+        problems = self.problems_after(change)
+        self.assertTrue(any(
+            "recensions[1].label must be a non-empty string" in row for row in problems
+        ), problems)
 
     def test_language_coverage_reference_must_identify_the_language(self) -> None:
         def change(document: dict) -> None:

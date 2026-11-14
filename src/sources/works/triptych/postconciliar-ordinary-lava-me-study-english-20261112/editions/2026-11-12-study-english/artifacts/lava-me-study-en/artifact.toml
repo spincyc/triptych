@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.postconciliar-ordinary-lava-me-study-english-20261112.study-english-20261112.lava-me-study-en"
+edition_id = "edition.triptych.postconciliar-ordinary-lava-me-study-english-20261112.study-english-20261112"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_jurisdiction = "United States"
+rights_basis = "New Triptych study English, offered under the project CC BY 4.0 terms, independently drafted from the complete public-domain medieval Latin antiphon. No approved English or protected modern English is copied."
+provenance = "Drafted on 2026-11-12 directly from the complete Lava me antiphon in artifact.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript.lava-me-la-20261112 after its native manuscript image had been read. Both imperatives, both first-person objects, the address to the Lord, wrongdoing and sin are rendered; no Amen or conclusion is added."
+retrieved = "2026-11-12"
+sha256 = "a2b96b9f701dd378f32c0ebe06f6bca3bfd88639393700f7f99e0e6e5acb6aa1"
+byte_size = 91
+path = "src/sources/works/triptych/postconciliar-ordinary-lava-me-study-english-20261112/editions/2026-11-12-study-english/artifacts/lava-me-study-en/text.tsv"
+projected_from = ["artifact.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript.lava-me-la-20261112"]
+transformation = "Translate the complete old expression freshly for study. Put the vocative first in natural English; render lava me ab iniquitate mea as washing the speaker free of wrongdoing, and a peccato meo munda me as cleansing the speaker of sin. Preserve the paired petitions and first-person singular. No liturgical response or new doctrinal clause is supplied."
+indexable = true
+encoding = "utf-8"
+notes = "One header and one whole-prayer row. Must remain identified as project study English, not the approved 2011 translation or a text authorized for recitation. No human review is claimed."

@@ -1,0 +1,218 @@
+{
+  "schema": "triptych-water-prepared-map-controls-projection/v1",
+  "kind": "Explicit selected-control projection; not the original read-map",
+  "original": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/current-read-map/read-map.json",
+    "sha256": "6d6f4baefbaa22ea853852900eeb404e23e3a5ac8d76118ca2ec38f9d453500a",
+    "bytes": 57373
+  },
+  "source_adoption": {
+    "root_source_adoption_sha256": "e5247c34f6f5ef9aa200533b3e106aa0f7617723885f7a259fb6c8215b93a087",
+    "independent_reviews": [
+      {
+        "path": ".scratch/roman-sources/baptismal-water-independent-review/review.json",
+        "sha256": "0abbcd83ca64cd2b861026bf76cbbb0b06a333fcaf2ba269749e41a95d0377fc"
+      },
+      {
+        "path": ".scratch/roman-sources/baptismal-water-independent-review/v4-delta/review.json",
+        "sha256": "1889c1b391ea9337e7cf8b1634bff8d911c213a48d241a44ac1e7d7aaac6d527"
+      },
+      {
+        "path": ".scratch/roman-sources/baptismal-water-independent-review/v5-delta/review.json",
+        "sha256": "3910848d967e765856dded9d8d5e243324ae2ea6a308f3ded5f5a55fe2e6de3e"
+      }
+    ],
+    "state": "source-adopted-preparation-only"
+  },
+  "driver_sha256": "111b24964608b667df8681d51641ed644f203050e61c00392584461bff4a9732",
+  "candidate_manifest_sha256": "0b67bd8d762597780057f9c3b568ddf89d052f4186601dfa97191007b989e9f0",
+  "transition_sha256": "52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2",
+  "target": [
+    "easter-vigil",
+    "main",
+    "Blessing of the Baptismal Water",
+    "all",
+    1
+  ],
+  "latin_key": [
+    "easter-vigil",
+    "",
+    "Blessing of the Baptismal Water",
+    "",
+    "",
+    1
+  ],
+  "semantic_hashes": {
+    "proper": {
+      "before_sha256": "95a1e215adc9b790024643088b971614418ea3d7b578b73d8616043c64d836fa",
+      "after_sha256": "32d0b83f76a3dca487fbd1bc473952438d6a6be10a7e31d576e0c35c659bec35"
+    },
+    "latin_proof_raw_dictionary": {
+      "before_sha256": "00bb1e4017882c4ae5e4d70c0567dc7091612603274ad347fc47c86cb4b26eca",
+      "after_sha256": "c44ac8eae0884dd523eba0d5c529d39a4c0581f666375a0d9b53276c15b0463f"
+    },
+    "latin_proof_default_resolved": {
+      "before_sha256": "00bb1e4017882c4ae5e4d70c0567dc7091612603274ad347fc47c86cb4b26eca",
+      "after_sha256": "c44ac8eae0884dd523eba0d5c529d39a4c0581f666375a0d9b53276c15b0463f"
+    },
+    "english_binding": {
+      "before_sha256": "32855b857e415a840423ec734cda7b338b19d767ebe46d0af747a78f3702d1b0",
+      "after_sha256": "86b687df4e6422c43c364be9ae3643de7d05f0b8ec6d749e8a6d39643e5288a2"
+    },
+    "latin_raw_toml_row": {
+      "before_sha256": "153d03527f46eee6e61f8bb1a06bf8383b1896bff79cbdb2ac0c9159bee37c51",
+      "after_sha256": "5d2b0c4dcc894121602db074dabfa00718d678b37fe0d3bcac82f1c252ab80cc"
+    },
+    "english_raw_toml_row": {
+      "before_sha256": "7a9be4fb43ab01777ecbf897940f56672c9f92033d69042c3736f73b35541b82",
+      "after_sha256": "30a50916bc41cfd08d37c407e7eca1b6aa08ff02bca4d1d86411ba67a13e4272"
+    },
+    "latin_body": {
+      "before_sha256": "7d0b92da77830536605070fff500cde9e657c80dfc6709422dfecd372a9ce80a",
+      "after_sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864"
+    }
+  },
+  "english_body_sha256": "942ea5bc30d9f063bc1e92dc8b0d4b921bbea9f2cda5624613462d9e9958ebea",
+  "files": [
+    {
+      "canonical_path": "src/sources/calendars/roman-1962/propers.yaml",
+      "postimage_path": "postimages/src/sources/calendars/roman-1962/propers.yaml",
+      "before_sha256": "62f383398a475cc4b728bbcb4fe1a7c5d4332bfad273f9aabd81b51e6191501e",
+      "after_sha256": "1145ba74e32bc128412c239d2237ac853b9763f1afec84aa80714acbc1e6183a",
+      "byte_size": 2688328
+    },
+    {
+      "canonical_path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "postimage_path": "postimages/src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "before_sha256": "7125c247780bd79669d092f54d6280bc97cdec23a422faeb5ab3d48dc8381626",
+      "after_sha256": "3c878613f4127fc7bb2aaa8880d1b8e5b232a8495798e543e76cc6ef1970fdc1",
+      "byte_size": 5531288
+    },
+    {
+      "canonical_path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "postimage_path": "postimages/src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "before_sha256": "dfaea2a57da61581df6d39812000ec62a2b7f220193c761d8dd1f93b10e7939b",
+      "after_sha256": "dcc0e3f17b51c5f9f85b53ce1e70f127d1f18e17c400bb1c0ef6f6c643b424dc",
+      "byte_size": 3588334
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "postimage_path": "postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "before_sha256": null,
+      "after_sha256": "764b4c8a3bf50357778f674a2efebe8989f8dbb34666cde6e5eb4940259ec3bc",
+      "byte_size": 1376
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "postimage_path": "postimages/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "before_sha256": null,
+      "after_sha256": "ed338c41af82e199a27f857a3af0b4874b8f7c0a8dce5405c22c4b65fd59e35c",
+      "byte_size": 1282
+    },
+    {
+      "canonical_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+      "postimage_path": "postimages/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+      "before_sha256": "b8ce7d0a845b00ada0201bc42bbd734852d7409d3ec1aa7fa08cdeff2656804f",
+      "after_sha256": "437e746040481c25ea879dce4df782234aa85307f71a288c08e0bc92313c176f",
+      "byte_size": 2136
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "postimage_path": "postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "before_sha256": null,
+      "after_sha256": "6903fd813f56a15aab429f435580a45af8a2df573d5885836ea4a879b9438cad",
+      "byte_size": 3166
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "postimage_path": "postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "before_sha256": null,
+      "after_sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+      "byte_size": 4383
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "postimage_path": "postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "before_sha256": null,
+      "after_sha256": "6922a40f5fdd2b670114eebdcfc1ef3b1d48e2ec61f44aaf09453896e8cf3eb6",
+      "byte_size": 877
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "postimage_path": "postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "before_sha256": null,
+      "after_sha256": "e62aab8e1aac89968eafc2e490152290f88a0fb031d938ba059ab9db23178a65",
+      "byte_size": 1511
+    }
+  ],
+  "preserved_files": [
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/passages/roman-1962-easter-vigil-baptismal-water.toml",
+      "sha256": "f8408291ab5af7a3567cdae2c9a2f448acdae4696c50fbb849f171158b99c519"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/temporal-easter-vigil-orations.toml",
+      "sha256": "c6c97331bb527224fcea99ff4a8cd6230b4dd36c8d36fab2a596498fba95b770"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+      "sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/edition.toml",
+      "sha256": "c5570791955722356a338b95201c30372b26a9fa44e82882e504daa7a23b7b89"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/missale-romanum-1862-text-f34bc7cf/artifact.toml",
+      "sha256": "f11f0261f3faa3eead52eac8cc04962cdf54f2b4955ff94bcdf8780d959d487c"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/missale-romanum-1862-text-f34bc7cf/missale-romanum-1862-text.txt",
+      "sha256": "f34bc7cf9293ffb353159e94118f4316bb4cc0a60230b315904dc77ba2502162"
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/ia-facsimile-pdf-363d6fc3/artifact.toml",
+      "sha256": "50af0360ef7cee43b0be7a77f211e8c63dc57f7db868a0a4f103f2e3b6056fc8"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/ia-scan-pdf/artifact.toml",
+      "sha256": "92f2c4d89f3576a89dbb54b3cf0622240d5201df6ed1fe1898d706a97ac953e4"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-recovered-en/artifact.toml",
+      "sha256": "df434b69afad44bcebab8ef02ee89dfc09d2799472c97bd161afca4a8b2317bb"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/artifacts/roman-1962-recovered-en/roman-1962-recovered-en.tsv",
+      "sha256": "c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/publish--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+      "sha256": "89d7d35482cb78cf8732cea97e0741b9782a122bf273b86784dbaaf44ec10dda"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/triduum-orations-21aa7a98/artifact.toml",
+      "sha256": "294ed6e5f18738d9e699f82c91d7ef30f833a7729c08e7fbf42b989d29c9df3e"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/artifacts/triduum-orations-21aa7a98/triduum-orations-21aa7a98.txt",
+      "sha256": "21aa7a98079e7a845e4a316ce18030a77bf531f7ed38639c3dc6fd0b4e522d78"
+    },
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-09-03-editorial-projection/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "sha256": "0d48384556fd8880cdc35cd81f9a0aee6b1609a3dcf7ff5bb5c8c90592fd52ab"
+    }
+  ],
+  "invariants": {
+    "exact_old_latin_prefix": true,
+    "english_body_payload_rights_locators_unchanged": true,
+    "english_binding_note_only": true,
+    "verification_passage_note_only": true,
+    "ordinary_frames_unchanged": true,
+    "all_unrelated_owner_values_and_bytes_preserved": true,
+    "source_six_bytes_match_v1": true,
+    "no_other_holy_week_or_native_ending_changes": true
+  },
+  "omitted": "Raw dictionary/body content and whole-owner postimage bytes are omitted from this map summary. Exact before/after dictionaries are in the byte-identical adopted transition; whole-owner postimages stay scratch for Root’s fresh merge.",
+  "authority": "Actual Root source adoption is preserved separately. This projection creates no additional adoption or installation authority."
+}

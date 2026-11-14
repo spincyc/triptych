@@ -207,15 +207,14 @@
    * --------------------------------------------------------------------- */
 
   /**
-   * A missal has three names, and they are not interchangeable.
+   * A missal has one designator, and the page uses two forms of it.
    *
-   *   short    "1962 Missal" — what a reader would say, and what the control
-   *            shows. Authored in the calendar source beside the edition it
-   *            shortens, never composed here.
-   *   edition  "Missale Romanum, editio typica 1962" — the bibliographic
-   *            identification. It is what the page prints against the texts
-   *            themselves, because a page serving prayers must say which book
-   *            they were read out of.
+   *   short    "1962 typical edition" — the designator's final segment, which
+   *            the control shows. Derived by the designator registry, never
+   *            composed here.
+   *   edition  "Roman Missal, 1962 typical edition" — the designator itself. It
+   *            is what the page prints against the texts, because a page
+   *            serving prayers must say which book they were read out of.
    *   label    the id made readable, and only until the file has been fetched.
    */
   function described(id, label, edition, short) {

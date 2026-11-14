@@ -18,6 +18,11 @@ trap 'rm -rf "$sandbox"' EXIT INT TERM
 # Active reduction overrides are a closed source contract. Build one valid
 # fixture and mutate one invariant at a time so malformed authority cannot be
 # emitted for the browser to interpret loosely.
+# A case root's books are named by the repository's designator registry, which
+# `_calendars` looks for beside the root's parent.
+mkdir -p "$sandbox/src/sources/inventories"
+ln -s "$repo/src/sources/inventories/missal-designators-v1.toml" \
+	"$sandbox/src/sources/inventories/missal-designators-v1.toml"
 make_override_source() {
 	case_name="$1"
 	case_root="$sandbox/override-$case_name"

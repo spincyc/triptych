@@ -682,17 +682,17 @@ consumed calendar, CLI or model inputs change.
 
 #### C3: source and translation completion lanes
 
-- **1962:** recover remaining Latin and historical English against exact target
+- **1962 typical edition (`roman-1962`):** recover remaining Latin and historical English against exact target
   slots; collate the 1861 Ordinary's inherited wording and target differences;
   supply exact sung Propers; resolve Common-set selections. Include Holy Week,
   Christmas/All Souls forms, commemorations, and exceptional frames explicitly.
-- **Postconciliar:** complete assignments and versification, model actual
+- **2008 emended reprint (`postconciliar`):** complete assignments and versification, model actual
   liturgical fragments separately from Bible expansion, review project study
   translations, and acquire/collate target Latin. Approved English requires an
   exact exemplar and a permitted publication route. The existing
   [publication policy](liturgical-text-publication-policy.md) owns that decision;
   a live daily-readings feed is not an arbitrary-date downloadable Lectionary.
-- **Pre-1955:** retain honest partial access while joining and collating the
+- **1920 typical edition (`roman-pre-1955`):** retain honest partial access while joining and collating the
   accepted Bonn witness and historical calendar, with the 1922 Mame conformed
   printing as control. Do not relabel either as the 1920 Vatican impression or
   treat inherited 1962 wording as independent evidence of its ancestor. The

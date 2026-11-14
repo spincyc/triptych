@@ -1,0 +1,39 @@
+{
+  "schema": "triptych-water-source-adopted-readonly-driver-successor/v1",
+  "predecessor": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/v5/guarded-install.py",
+    "sha256": "1669f57dc53085e50864327c95762ace9648c2e8dbbfa669ec070e46b8f6d70e",
+    "bytes": 15765
+  },
+  "successor": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/prepare.py",
+    "sha256": "111b24964608b667df8681d51641ed644f203050e61c00392584461bff4a9732",
+    "bytes": 16891
+  },
+  "actual_root_adoption": {
+    "path": ".scratch/root/baptismal-water-v5-source-adoption.json",
+    "sha256": "e5247c34f6f5ef9aa200533b3e106aa0f7617723885f7a259fb6c8215b93a087",
+    "bytes": 8888
+  },
+  "unchanged_candidate_manifest": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/candidate-manifest.json",
+    "sha256": "0b67bd8d762597780057f9c3b568ddf89d052f4186601dfa97191007b989e9f0",
+    "bytes": 22017
+  },
+  "unchanged_transition": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/positive-transition-proposal.json",
+    "sha256": "52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2",
+    "bytes": 55229
+  },
+  "changes": [
+    "Pin and validate the actual typed Root adoption, exact source/owner/note scope and three independent source review bytes.",
+    "Remove all application CLI options and the complete application/preflight/write branch; only scratch postimages, map, patch and receipt remain.",
+    "Record actual source-adoption and reviews in the read-map without requiring source_epoch activation."
+  ],
+  "preserved": [
+    "All v5 semantic node/row/source-controller guards",
+    "All body, source-six, notes, proof and English binding objects",
+    "Every frozen v1–v5 source and review artifact"
+  ],
+  "canonical_writes": 0
+}

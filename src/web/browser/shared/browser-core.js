@@ -2774,6 +2774,28 @@ window.Triptych = (function () {
       credit: 'Latin study reconstruction source: ' + provenance.source_date};
   }
 
+  /**
+   * A text admitted on the policy's priority-6 `qualified-public-domain` basis
+   * is never shown unmarked: its adopted rights record's verbatim notice, and
+   * the Holy See publication the words were first published in, travel beside
+   * the words. A permitted qualified body without its notice is a producer
+   * defect and fails closed rather than rendering as if it were public domain.
+   */
+  const QUALIFIED_PUBLIC_DOMAIN = 'qualified-public-domain';
+  function latinQualifiedPresentation(owner) {
+    const latin = owner.latin, publication = latin && latin.publication;
+    if (!publication || publication.basis !== QUALIFIED_PUBLIC_DOMAIN) return null;
+    if (latin.withheld !== false || publication.status !== 'permitted') return null;
+    const present = function (text) { return typeof text === 'string' && !!text.trim(); };
+    if (!present(publication.notice)) {
+      throw new Error('qualified-public-domain Latin lacks its rights notice');
+    }
+    const first = present(publication.first_publication) ? publication.first_publication : null;
+    return {notice: publication.notice,
+      credit: first ? 'First published: ' + first +
+        (present(publication.first_publication_body) ? ' · ' + publication.first_publication_body : '') : null};
+  }
+
   function renderSingleOrationState(container, owner, held, scope, parentSource) {
     const conclusion = renderConclusionExecution(container, owner, held);
     if (conclusion) return conclusion;
@@ -2814,6 +2836,17 @@ window.Triptych = (function () {
         composed.setAttribute('data-unit-original', SOURCE_LANGUAGE);
       }
       container.appendChild(composed);
+      const qualified = shownLang === SOURCE_LANGUAGE ? latinQualifiedPresentation(owner) : null;
+      if (qualified) {
+        const mark = el('p', 'composed-note latin-rights-qualification', qualified.notice);
+        mark.lang = 'en'; mark.setAttribute('role', 'note'); mark.setAttribute('data-copy', 'skip');
+        mark.setAttribute('data-publication-basis', QUALIFIED_PUBLIC_DOMAIN);
+        container.appendChild(mark);
+        if (qualified.credit) {
+          const credit = el('p', 'composed-note latin-source-credit', qualified.credit);
+          credit.lang = 'en'; credit.setAttribute('data-copy', 'skip'); container.appendChild(credit);
+        }
+      }
       if (study) {
         [study.note].concat(study.notice === study.note ? [] : [study.notice]).forEach(function (text) {
           const note = el('p', 'composed-note latin-source-qualification', text);
@@ -2847,7 +2880,7 @@ window.Triptych = (function () {
           typeof context.label === 'string' && context.label.trim() &&
           owner.latin.withheld === false &&
           owner.latin.publication && owner.latin.publication.status === 'permitted' &&
-          ['public-domain', 'project-created', 'permission', 'licensed'].includes(owner.latin.publication.basis) &&
+          ['public-domain', 'project-created', 'permission', 'licensed', QUALIFIED_PUBLIC_DOMAIN].includes(owner.latin.publication.basis) &&
           owner.latin.provenance && owner.latin.provenance.status === 'collated' &&
           owner.latin.provenance.relationship === 'editorial-projection-exact-to-target') {
         const note = el('p', 'composed-note unit-witness-context',
@@ -2966,6 +2999,10 @@ window.Triptych = (function () {
     }
     // Required acknowledgements always travel verbatim with the words. They
     // never enter a closed disclosure, even for a classified public-domain source.
+    // A priority-6 `qualified-public-domain` translation must carry one.
+    if (oration.rights === QUALIFIED_PUBLIC_DOMAIN && !(typeof oration.notice === 'string' && oration.notice.trim())) {
+      throw new Error('qualified-public-domain translation lacks its rights notice');
+    }
     if (oration.notice) credits.appendChild(el('p', 'composed-note translation-notice', oration.notice));
     return credits;
   }

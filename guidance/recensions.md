@@ -588,6 +588,9 @@ afflatu*, at AAS 3 (1911) 641–642 — fetched from vatican.va and read here
 [verified, sha256 `590a78b6…`]. That is a stronger position than the calendar
 beside it holds: the 1962 rubrics rest on the 1960 code, which is
 `holy-see-post-1929` and cite-only, and this one is pre-1931 and publishable.
+(Narrowed 2026-11-14: the 1960 code is a 1931–1975 Holy See publication,
+publishable text by text on the `qualified-public-domain` basis of
+`src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml`; the 1911 rule needs no such qualification.)
 
 **And it is not a table.** It is five criteria, taken in order until one
 separates two days:
@@ -820,3 +823,24 @@ custom source/publication validator is `_proper_target_overrides.py`, called
 by `_proper_latin.py` and `mass-propers`; the owning calendar check validates
 it too. Its exact three-owner boundary requires an explicit successor schema
 and source-reviewed cohort before expansion.
+
+## 11. The book a recension names, and the key it keeps
+
+Added 2026-11-14. Rule 5 asks that a recension be named for the book it
+transcribes. The name now lives in one place, the missal designator registry
+(`src/sources/inventories/missal-designators-v1.toml`; `guidance/missals.md`
+§10). A calendar index no longer writes `edition` or `edition_short`, and
+`check-calendar-masses` refuses one that does.
+
+`roman-pre-1955` is the 1920 typical edition, as its header always said, and
+the reader names it "Roman Missal, 1920 typical edition". The key itself breaks
+Rule 5, since it states a reform boundary in an identifier. It predates this
+rule's application and is published in URLs and preferences, so it stays as an
+opaque compatibility key and is never shown as a name. The boundary it encodes
+lives where Rule 5 puts it: in `stands_before` and in the designator's
+qualification.
+
+A recension is offered as a missal only where it contributes text of its own.
+In a Mass it does not state, only bodies collated to its own witness count as
+its contribution. Bodies inherited through `text_from` count as the base's
+(Rule 9). `guidance/web-data.md` owns the exact test.

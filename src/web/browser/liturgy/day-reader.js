@@ -396,11 +396,19 @@
     ]);
     if (!loaded[0].ok) throw new Error(loaded[0].message);
     runtime.bibles = loaded[0].bibles;
-    runtime.missals = ((loaded[1] && loaded[1].calendars) || []).map(function (row) {
+    // The rubrics layer says which calendars can be resolved; the Propers
+    // manifest says which missals contribute text of their own and may be
+    // offered. A missal must be in both.
+    const offered = {};
+    ((loaded[2] && loaded[2].missals) || []).forEach(function (row) { offered[row.id] = row; });
+    runtime.missals = ((loaded[1] && loaded[1].calendars) || []).filter(function (row) {
+      return Object.prototype.hasOwnProperty.call(offered, row.calendar);
+    }).map(function (row) {
       return {
         id: row.calendar,
         label: row.edition_short || row.edition || T.titleCase(row.calendar),
         edition: row.edition || null,
+        qualification: offered[row.calendar].edition_qualification || null,
         code: row.code || null
       };
     });
@@ -668,6 +676,7 @@
     selection.appendChild(definitionList([
       ['Date', state.civilDate],
       ['Missal', missal && (missal.edition || missal.label) || state.edition.id],
+      ['Missal qualification', missal && missal.qualification],
       ['Territorial result', runtime.branches.length > 1
         ? runtime.branches.map(function (row) { return row.branch.option; }).join('; ')
         : (runtime.branch && runtime.branch.option || 'Universal')],

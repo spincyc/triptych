@@ -156,6 +156,14 @@ it has without improving what it means.
 The controlling operational analysis is now
 `postconciliar-latin-rights-v1.toml`; the retained label is not itself a legal
 conclusion.
+NARROWED 2026-11-14: for a Holy See publication first issued in Vatican City in
+1931-1975 -- the `ordo-hebdomadae-sanctae-1956` and `missale-romanum-1962-typica`
+rows here -- "protected in the United States by URAA restoration" is superseded
+by src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml, under which its twenty-year
+Vatican term had expired before 1996 (policy priority 6, confidence medium-low).
+`may_publish_text` on those rows still describes the book; its texts may be
+published one at a time on the `qualified-public-domain` token within that
+record's limits.
 """
 
 extent = """

@@ -29,6 +29,7 @@ import sys
 import tomllib
 
 import _calendars
+import _qualified_public_domain
 from _tooling import code_fingerprint, prune_cache, tree_fingerprint
 
 
@@ -64,10 +65,14 @@ PUBLICATION_BASES = frozenset(
         "restricted",
         "non-exact-historical-witness",
         "qualified-nonoriginal-adaptation",
+        "qualified-public-domain",
     }
 )
+# `qualified-public-domain` is the scoped policy priority-6 token whose whole
+# contract is owned by `_qualified_public_domain` and its adopted rights record.
 AFFIRMATIVE_PUBLICATION_BASES = frozenset(
-    {"public-domain", "project-created", "permission", "licensed", "qualified-nonoriginal-adaptation"}
+    {"public-domain", "project-created", "permission", "licensed",
+     "qualified-nonoriginal-adaptation", "qualified-public-domain"}
 )
 SURFACES = frozenset(
     {"web", "download", "print", "cli", "corpus-data", "public-git"}
@@ -107,6 +112,13 @@ ENTRY_FIELDS = frozenset(
         "publication_retrieved",
         "notice",
         "note",
+        # Declared only by a `qualified-public-domain` row: the Holy See
+        # publication that first published these words (record limits L1-L3).
+        "first_publication",
+        "first_publication_year",
+        "first_publication_imprint",
+        "first_publication_body",
+        "us_formality",
     }
 )
 REMOVED_BODY_STATUS = "removed"
@@ -177,6 +189,7 @@ class LatinDecision:
     note: str = ""
     reason: str = ""
     target_context: dict | None = None
+    first_publication: tuple[tuple[str, object], ...] = ()
 
     def permits(self, wanted: Iterable[str]) -> bool:
         return (
@@ -228,6 +241,9 @@ class LatinDecision:
         ):
             if value:
                 publication[field] = value
+        # The qualified token's checked first-publication declaration travels
+        # with its notice, so a reader sees which Holy See publication it rests on.
+        publication.update(self.first_publication)
         projected_context = None
         if permitted and self.target_context:
             from _proper_target_overrides import public_context
@@ -436,6 +452,10 @@ def _decision(
         notice=str(row.get("notice") or ""),
         note=str(row.get("note") or ""),
         target_context=row.get("_target_context"),
+        first_publication=tuple(
+            (field, row[field]) for field in _qualified_public_domain.ROW_FIELDS
+            if field in row
+        ),
     )
 
 
@@ -482,6 +502,9 @@ def decision_for(
 def _row_problems(where: str, row: Mapping[str, object]) -> list[str]:
     from _proper_qualified_latin import row_problems
     problems: list[str] = [f"{where}: {one}" for one in row_problems(row)]
+    problems.extend(
+        f"{where}: {one}" for one in _qualified_public_domain.latin_row_problems(row)
+    )
     unknown = sorted(set(row) - ENTRY_FIELDS)
     if unknown:
         problems.append(f"{where}: unknown fields: {', '.join(unknown)}")
@@ -733,6 +756,10 @@ def read_sidecar(path: Path) -> tuple[dict[LatinKey, dict], list[str]]:
             continue
         row = {**defaults, **candidate}
         found = _row_problems(where, row)
+        found.extend(
+            f"{where}: {one}"
+            for one in _qualified_public_domain.calendar_problems(row, expected_calendar)
+        )
         problems.extend(found)
         key = LatinKey.from_mapping(row)
         if key in records:
@@ -953,6 +980,16 @@ def _source_record_problems(
         problems.append(
             f"{where}: {basis} publication requires a publication_source_ids artifact "
             f"with rights_status {basis!r}"
+        )
+    elif basis == _qualified_public_domain.BASIS:
+        problems.extend(
+            f"{where}: {one}"
+            for one in _qualified_public_domain.calendar_problems(row, effective_calendar)
+        )
+        problems.extend(
+            f"{where}: {one}"
+            for one in _qualified_public_domain.source_problems(
+                row, sources, _backing_artifact, calendar=effective_calendar)
         )
     return problems
 

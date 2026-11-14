@@ -1,0 +1,213 @@
+{
+  "schema": "triptych-easter-orations-finite-study-admission-proposal/v1",
+  "status": "individual-source-fidelity-accepted-pending-registration-and-root-adoption",
+  "independent_merits_review_path": ".scratch/modern-easter-next-four-review/review.json",
+  "independent_merits_review_sha256": "c7d8eb6fcb4c27eb89ff620a88dbf1cf291eda73627d56427198a1e9c3e3767d",
+  "excluded_unresolved_owners": [
+    [
+      "easter-vigil",
+      "main",
+      "Collect",
+      "all",
+      1
+    ],
+    [
+      "easter-sunday",
+      "main",
+      "Collect",
+      "all",
+      1
+    ]
+  ],
+  "candidate_packet_path": ".scratch/modern-partition-easter/orations/next-four-candidates.json",
+  "candidate_packet_sha256": "d89bdef446e560cff9e3f5ead83c329a654c83999527134b467aa4daa9f09aac",
+  "source_proofs": [
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Prayer after the Litany",
+        "all",
+        1
+      ],
+      "english_artifact_id": "artifact.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-litany-prayer",
+      "english_artifact_sha256": "6a8165f994374c78dbf1f9ae7175bce8a9bcf533fa05027c3c3c2bea27cd81f7",
+      "english_passage_id": "passage.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-litany-prayer",
+      "english_body_sha256": "752e057602e112260b39d351fe19936b8fc5a18dfeed0df7f9e223ae1bce5626",
+      "english_payload_path": "src/sources/works/triptych/easter-orations-litany-fire-study-english-20261112/editions/2026-11-12/artifacts/vigil-litany-prayer/body.txt",
+      "english_physical_line": 1,
+      "historical_page_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer-page",
+      "historical_text_passage_id": "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer-text",
+      "historical_body_sha256": "19de2829bbdbbbdb9b260309ae3d3af85da3e74e4d17d4845d14fa2b5931e6f4",
+      "full_conclusion_passage_ids": [
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source"
+      ],
+      "comparison_passage_id": "passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-vigil-litany-prayer-comparison",
+      "additional_context_passage_ids": [
+        "passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-title",
+        "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-litany-fire-20261112-vigil-litany-prayer-secondary-comparison"
+      ],
+      "source_record_sha256": {
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer-page": "fb07b132fbb0b433911f28b636bcb0cb6da7ec9a7e3f3f390ca819cf123bac43",
+        "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam": "d6a7395d27d4ce93e6074620ec6cf6c665b2bbcd2978d988a0cf3e4430f856b1",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a": "2f678647fd7e4c62f263650880fab4cc0559036bdfd9ebc75c0b90a2f71c216a",
+        "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer-text": "78a4baced3e88e758cd5e0ea98e5d9620476b2a212116727dd5db727d791462d",
+        "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer": "bf06a42eed1396aee6ffcd4c2228cf7720e1d8aa40c7e19fa76371105d387906",
+        "passage.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-litany-prayer": "413ecbfdacfdc2c0c0c432391341ded26aeed2018a59e9e1fa9e6a7643541420",
+        "edition.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12": "0b814e38fba53db0d0f1b9628021aedbc047cc800b9345f8840f6776b779004b",
+        "work.triptych.easter-orations-litany-fire-study-english-20261112": "e0f3c3397a3de1e9b41576cecff1f2b07d0a80938a36d0606d8695ecef001b53",
+        "artifact.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-litany-prayer": "736b7c65d80602ac7d820f55fec6babd8fac787c1476dc4a64b4c49ac97b1208",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "edition.catholic-church.missale-romanum.pustet-ratisbon-1862": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+        "passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-vigil-litany-prayer-comparison": "2eb452f5b33706032ac16743216830b5643765ad41768114c209e42cceb1bf07",
+        "edition.holy-see.easter-vigil-papal-celebration.2014-04-19": "790310aa7c095e27d47cf93d57d3e9e0f852e9a7feaa0c5f583eedbde70af569",
+        "work.holy-see.easter-vigil-papal-celebration": "19bd349973961d22efbe2c214bdaa6be1b484345305fc8e8b3bc42e389d8879f",
+        "artifact.holy-see.easter-vigil-papal-celebration.2014-04-19.official-vatican-pdf-e599d5c5": "e16129f9f195fe922c21595475b26d4a605e926d59f8407c80c505972843449e",
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source": "3fdde481a4d5ed37be7604419870035870360856e24750c06a6af86a23df07a2",
+        "passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-title": "c015716bfb86ff33ad80ae9ec4981a8ea4ecf86b95e5aca4bcbe71db1518f08c",
+        "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-litany-fire-20261112-vigil-litany-prayer-secondary-comparison": "e6fc05c996a4cbaf77d7956e781109ff40d827aaa94e750e398c05f11dc468a4",
+        "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8"
+      },
+      "source_payload_sha256": {
+        "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/easter-litany-fire-20261112-vigil-litany-prayer/body.txt": "f672b20c5da0383b3c1d4866fb483059b57036d9ef74cd48fcbfecab9b9ac02c",
+        "src/sources/works/triptych/easter-orations-litany-fire-study-english-20261112/editions/2026-11-12/artifacts/vigil-litany-prayer/body.txt": "6a8165f994374c78dbf1f9ae7175bce8a9bcf533fa05027c3c3c2bea27cd81f7"
+      },
+      "finite_assessment": {
+        "complete_old_expression_basis": "One complete independently old font-introduction prayer supplies the entire invocation and ordered new-peoples/font/adoption/humble-ministry/divine-effect petition. The only prayer-body deletion relative to the official2014comparison is the repeated mysteriis, adesto phrase; the independently old short conclusion is a separately controlled formula. The old full unit is retained without deletion; no independently old exact shortened whole Latin unit is claimed.",
+        "exact_changes": [
+          "Omit the contiguous old words mysteriis, adesto, leaving the old invocation adesto magnae pietatis tuae sacramentis with one invitation to presence instead of the repeated one.",
+          "Replace the actually printed full old long Per Dominum conclusion with the independently old full short Per Christum conclusion and distinct response.",
+          "The secondarydigital2002AP218 reads mysterio in place of ministerio. The acquired official Vatican2014VigilAP28/printed55 reads ministerio, matching the complete1922donor. This proposal explicitly follows that official2014 comparison; it does not silently emend the2002witness or authenticate2008."
+        ],
+        "translation_notes": "Recreandos receives new birth, preserving its regenerative force rather than amusement. Plural populos remains peoples. Parturit remains the font bearing them for God. Ministerium is ministry according to the actual official2014reading, not the different2002mysterio. The final contrast retains human humble action and divine effective power.",
+        "strongest_contrary_argument": "Removing the first of two linked invocation nouns and a repeated imperative creates a real shortened arrangement, and replacing the long conclusion changes the full expression. Those changes cannot be cleared merely because all remaining words are old. The finite assessment concerns this exact old prayer with one repetitive invocation contraction and a separately old standard ending, while the complete old petition, source context and disputed modern reading remain visible.",
+        "source_appointment_relation": "Old font-introduction prayer versus the official2014EasterVigil prayer after the litany. The latter is the modern comparison for this study owner; no exact2008Missal or approvedEnglish identity is inferred."
+      }
+    },
+    {
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Fire",
+        "all",
+        1
+      ],
+      "english_artifact_id": "artifact.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-fire-blessing",
+      "english_artifact_sha256": "2177a09aa7969fd8b29d4aebba8e3e595f5624730b05f69d70d6e85fdb3524b5",
+      "english_passage_id": "passage.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-fire-blessing",
+      "english_body_sha256": "c73b39bef692cd7db0acacd0095b85b473d676d6e10a7903ee8ad1295f38c92f",
+      "english_payload_path": "src/sources/works/triptych/easter-orations-litany-fire-study-english-20261112/editions/2026-11-12/artifacts/vigil-fire-blessing/body.txt",
+      "english_physical_line": 1,
+      "historical_page_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing-page",
+      "historical_text_passage_id": "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing-text",
+      "historical_body_sha256": "8234af8fd67aba45ffa4738ea6298d7c2d4f6fc8eb6c847c9f28af4687440380",
+      "full_conclusion_passage_ids": [
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source"
+      ],
+      "comparison_passage_id": "passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-vigil-fire-blessing-comparison",
+      "additional_context_passage_ids": [
+        "passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-title",
+        "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-litany-fire-20261112-vigil-fire-blessing-secondary-comparison"
+      ],
+      "source_record_sha256": {
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing-page": "ad1b96a5bb24ba2cd3154fe29e7b682d278923c82fa309af240fcdc847f2b70f",
+        "edition.catholic-church.missale-romanum.pustet-ratisbon-1862": "86e1385684b9245b8ad26bb8d927e343a9e0512ceac3413142fc4682d108a4b6",
+        "work.catholic-church.missale-romanum": "657d4b1a196f387e9dc07020b8f60cdeef8ceeb64d38c0d6275ff5e1274b09fc",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3": "fd9118af60aa7df6f250a9f8547d7b43b5269a60b81419551fa382d56e5f681d",
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing-text": "7d4d9c5d65a63b89fc645c638089b55bd299261f1330b2ed102e4c6f74f0bddb",
+        "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing": "302aad6711f3c47084cac5aa98cb7a6c116754999804d54c943fa05a963549c8",
+        "passage.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-fire-blessing": "77e5e2afaff4c3c5dd19a76e10a1788d7291a62d7a6a8d557213d4623fa082ef",
+        "edition.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12": "0b814e38fba53db0d0f1b9628021aedbc047cc800b9345f8840f6776b779004b",
+        "work.triptych.easter-orations-litany-fire-study-english-20261112": "e0f3c3397a3de1e9b41576cecff1f2b07d0a80938a36d0606d8695ecef001b53",
+        "artifact.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-fire-blessing": "ea25f6118f5436441f4c4bb10264044bc91bcfe90963d65900a1abbbeb1c76f5",
+        "passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-vigil-fire-blessing-comparison": "f5633b9dededa3806f32fbb0d5cc17d8de685b145ad8b6480d06e3a8dc505b98",
+        "edition.holy-see.easter-vigil-papal-celebration.2014-04-19": "790310aa7c095e27d47cf93d57d3e9e0f852e9a7feaa0c5f583eedbde70af569",
+        "work.holy-see.easter-vigil-papal-celebration": "19bd349973961d22efbe2c214bdaa6be1b484345305fc8e8b3bc42e389d8879f",
+        "artifact.holy-see.easter-vigil-papal-celebration.2014-04-19.official-vatican-pdf-e599d5c5": "e16129f9f195fe922c21595475b26d4a605e926d59f8407c80c505972843449e",
+        "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.english-completion-20261029-postconciliar-phase2-pentecost-short-conclusion-source": "3fdde481a4d5ed37be7604419870035870360856e24750c06a6af86a23df07a2",
+        "passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-title": "c015716bfb86ff33ad80ae9ec4981a8ea4ecf86b95e5aca4bcbe71db1518f08c",
+        "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-litany-fire-20261112-vigil-fire-blessing-secondary-comparison": "af6df87bbd683169861ffe4b64acf52a89f2c491118ad8626a64331f50b93242",
+        "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002": "5facfefac6e184a3da1c8a50d4c36992db5669cb8205d3909547f4a4a9001069",
+        "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944": "1241ea357a0243b8f5ea56b214a5d9edf775759b4c82bb595700b64a58d77df8",
+        "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.lucernarium": "d59d4202a3add23b88cb012a037fa8dcf58797ffb7aba243bf21f1c22d5bec67",
+        "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21": "6bf5a660d8a27e7fdd0a0c2a05b7d9b6921f4ee3e903a0f895bcfca0670d9158",
+        "work.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal": "da714d0b9681e11ded05e6010a8ebed9c97edc220b5bbd5fa3c4df2373644ed4"
+      },
+      "source_payload_sha256": {
+        "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/easter-litany-fire-20261112-vigil-fire-blessing/body.txt": "05317d3d05f22959ae9a04fcb4ca88c3ab63485627cd4cc4437b3c28cea4ce8a",
+        "src/sources/works/triptych/easter-orations-litany-fire-study-english-20261112/editions/2026-11-12/artifacts/vigil-fire-blessing/body.txt": "2177a09aa7969fd8b29d4aebba8e3e595f5624730b05f69d70d6e85fdb3524b5"
+      },
+      "finite_assessment": {
+        "complete_old_expression_basis": "The complete old fire blessing supplies the same whole invocation, gift of divine radiance through the Son, blessing of this new fire, heavenly-desire petition and final everlasting-feast petition in the same sequence. Three specifically enumerated omissions remove two explanatory appositions and an anaphoric conclusion qualifier; no new petition or image is supplied. This is a finite adapted-study proposal, not an unchanged old Latin body.",
+        "exact_changes": [
+          "Omit angularem scilicet lapidem after Filium tuum, removing the explicit cornerstone apposition.",
+          "Omit productum e silice, nostris profuturum usibus before novum hunc ignem, removing the physical flint-origin and practical-use descriptions.",
+          "Omit eumdem in the old full short conclusion; the complete exact Per Christum Dominum nostrum and response are separately attested in PustetAP776.",
+          "Normalize coelestibus to caelestibus, capitalization, ligatures, accents and punctuation; the cross is an action marker, not an English word."
+        ],
+        "translation_notes": "Claritas is consistently radiance. The same fire, faithful recipients, heavenly desires, paschal feasts, pure minds and ultimate feasts all remain. The omitted cornerstone/flint/use qualifiers are not reintroduced. The two linked ut/ita petitions are retained without replacing the feasts with a generic destination.",
+        "strongest_contrary_argument": "The editor deliberately removes a Christological cornerstone image and the material origin/use clauses; this changes the complete expression and could be an editorial adaptation despite adding no new words. A generic omission exemption would be invalid. The proposed individual assessment relies on a complete old prayer whose two governing petitions and ordered imagery remain intact after removal of bounded explanatory modifiers.",
+        "source_appointment_relation": "Old HolySaturday new-fire blessing versus official2014Vigil new-fire blessing; complete local units and endings are compared. The separate second and third1862fire prayers are not combined with the first."
+      }
+    }
+  ],
+  "superseded_unavailable_dictionaries": [
+    {
+      "mass": "easter-vigil",
+      "form_id": "main",
+      "proper": "Prayer after the Litany",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "no-exemplar"
+      },
+      "rejected_detectors": [
+        "liturgies-net-2026-08-22"
+      ],
+      "quarantined_text_sha256": [
+        "ef6884bfa688dab95cc9ffc773b377938ac896a62509d7f51f3f48168176ed87"
+      ],
+      "note": "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    },
+    {
+      "mass": "easter-vigil",
+      "form_id": "main",
+      "proper": "Blessing of the Fire",
+      "cycle": "all",
+      "occurrence": 1,
+      "lang": "en",
+      "extent": "body",
+      "availability": "unavailable",
+      "reason": {
+        "kind": "rights-withheld",
+        "source_id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+        "surfaces": [
+          "corpus-data",
+          "public-git",
+          "command-line",
+          "download"
+        ]
+      },
+      "rights": "permission",
+      "witness": "icel-music-2010",
+      "source_id": "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21",
+      "witness_artifact_id": "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.lucernarium",
+      "verified_on_page": "2026-08-22",
+      "verified_artifact_page": 1,
+      "verified_heading": "THE EASTER VIGIL / First Part: The Solemn Beginning of the Vigil or Lucernarium / The Blessing of the Fire and Preparation of the Candle",
+      "verified_url": "https://www.icelweb.org/musicfolder/Lucernarium.pdf",
+      "quarantined_text_sha256": [
+        "5a27634c4aa73604aead01ee4c09c9ae97ac01c21ebbce0118a07b354657df1a"
+      ],
+      "note": "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
+    }
+  ],
+  "source_qualification": "Project-created adapted study English from a complete independently old prayer, with the individually reviewed omissions and separately witnessed full conclusion and response. The modern comparison is the official Vatican booklet for the specific Easter Vigil of 19 April 2014; it does not authenticate the exact 2008 Missal. This is neither historical human English nor approved liturgical English, and is not for recitation.",
+  "canonical_latin_or_appointment_changes": false,
+  "modern_source2008_authenticated": false
+}

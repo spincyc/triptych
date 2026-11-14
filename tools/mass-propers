@@ -31,6 +31,7 @@ import _name_execution  # noqa: E402
 import _oration_endings  # noqa: E402
 import _source_local_actor_sequences  # noqa: E402
 import _proper_qualified_latin  # noqa: E402
+import _qualified_public_domain  # noqa: E402
 from _psalms import (  # noqa: E402
     PSALMS,
     SYSTEMS,
@@ -94,7 +95,7 @@ EXAMPLES = {
             "tools/mass-propers show --calendar roman-1962 --mass advent-1",
             (
                 "First Sunday of Advent",
-                "Missale Romanum, editio typica 1962 · seasonal · 01",
+                "Roman Missal, 1962 typical edition · seasonal · 01",
                 "==============================================================================",
                 "",
                 "Introit",
@@ -109,7 +110,7 @@ EXAMPLES = {
             "tools/mass-propers show --calendar roman-1962 --mass advent-1 --format yaml",
             (
                 "calendar: roman-1962",
-                "edition: Missale Romanum, editio typica 1962",
+                "edition: Roman Missal, 1962 typical edition",
                 "psalm_numbering: vulgate",
                 "kind: seasonal",
                 "mass:",
@@ -204,8 +205,8 @@ WIDTH = 78
 LANDING_MISSAL = "roman-1962"
 
 # There is no chronological order here, deliberately. No calendar declares a
-# date -- only an `edition` line of prose that happens to contain a year -- and
-# reading 1962 out of "Missale Romanum, editio typica 1962" would be a date
+# date -- only a designator that happens to contain a year -- and
+# reading 1962 out of "Roman Missal, 1962 typical edition" would be a date
 # guessed from a string, which is the same accident in a second place. The
 # order below is the declared landing missal first and the rest as the
 # directory yields them, which is stable and states what it is.
@@ -457,7 +458,9 @@ def find_mass(root: Path, calendar: str, key: str) -> dict:
 # A grant for one surface is not permission for the generated JSON, its public
 # Git history, a downloadable artifact, or CLI output.  Those surfaces need a
 # separately recorded distribution basis; an acknowledgement cannot widen one.
-PUBLISHABLE_RIGHTS = ("public-domain", "project-created")
+# `qualified-public-domain` (policy priority 6) is published only with its
+# record's verbatim notice beside the words; `_qualified_public_domain` owns it.
+PUBLISHABLE_RIGHTS = ("public-domain", "project-created", _qualified_public_domain.BASIS)
 GOSPEL_PROPER_NAMES = frozenset(
     {"Gospel Acclamation", "Verse before the Gospel", "Verse Before the Gospel"}
 )
@@ -473,6 +476,8 @@ def translation_is_publishable(proper: dict, translation: dict) -> bool:
     """
 
     if translation.get("rights") not in PUBLISHABLE_RIGHTS:
+        return False
+    if _qualified_public_domain.translation_problems(translation):
         return False
     return not (
         proper.get("name") in GOSPEL_PROPER_NAMES
@@ -575,6 +580,10 @@ def public_latin_state(latin: dict, target: str) -> dict:
 
     if not latin.get("withheld") and latin.get("state") != "unavailable":
         publication = latin.get("publication") or {}
+        if (publication.get("basis") == _qualified_public_domain.BASIS
+                and publication.get("notice") != _qualified_public_domain.notice("latin")):
+            # A priority-6 text never reaches a public surface unmarked.
+            raise ValueError("qualified-public-domain Latin lacks its record's verbatim notice")
         if publication.get("basis") != "qualified-nonoriginal-adaptation":
             return public_latin_source_metadata(latin)
         # The full comparison proof remains source-owned. An assembled prayer
@@ -1621,7 +1630,8 @@ TRANSLATION_ABSENCE_SURFACES = frozenset(
     {"site-display", "corpus-data", "public-git", "command-line", "download"}
 )
 LEDGER_TRANSLATION_RIGHTS = frozenset(
-    {"public-domain", "licensed", "project-created", "permission"}
+    {"public-domain", "licensed", "project-created", "permission",
+     _qualified_public_domain.BASIS}
 )
 LEDGER_TRANSLATION_FIELDS = frozenset(
     {"lang", "text", "rights", "source_id", "notice", "text_structure"}
@@ -1702,8 +1712,12 @@ def validate_translation_payload(
             not isinstance(source_id, str) or not source_id.strip()
         ):
             raise ValueError(f"{where} source_id must be a nonempty string")
-        if rights in {"public-domain", "licensed", "permission"} and not source_id:
+        if (rights in {"public-domain", "licensed", "permission", _qualified_public_domain.BASIS}
+                and not source_id):
             raise ValueError(f"{where} {rights} translation requires source_id")
+        qualified = _qualified_public_domain.translation_problems(translation)
+        if qualified:
+            raise ValueError(f"{where} " + "; ".join(qualified))
         witness_key = str(source_id) if isinstance(source_id, str) else ""
         witness = (witnesses or {}).get(witness_key)
         if rights != "project-created" and witnesses is not None and witness is None:
@@ -1838,8 +1852,15 @@ def validate_study_translation_binding(
     publication = latin.get("publication") or {}
     basis = publication.get("basis")
     if (provenance.get("status") != "collated"
-            or basis not in {"public-domain", _proper_qualified_latin.BASIS}):
+            or basis not in {"public-domain", _proper_qualified_latin.BASIS,
+                             _qualified_public_domain.BASIS}):
         raise ValueError(f"{path}: bound study translation requires collated public-domain or independently qualified Latin")
+    if basis == _qualified_public_domain.BASIS:
+        # Study English over priority-6 Latin is a derivative of it and is
+        # published on the same qualified basis, visibly.
+        trouble = _qualified_public_domain.study_translation_problems(studies)
+        if trouble:
+            raise ValueError(f"{path}: " + "; ".join(trouble))
     if (provenance.get("source_id") != passage_id
             or (sources.get(passage_id) or {}).get("record_type") != "passage"):
         raise ValueError(f"{path}: study translation Latin passage differs from its exact source provenance")
@@ -4012,12 +4033,12 @@ def calendar_structure(root: Path, calendar: str, tokens: dict[str, str], *,
         "schema": "triptych-propers-structure/v1",
         "calendar": calendar,
         "edition": document.get("edition"),
-        # The name a reader would say, for the control; `edition` stays the
-        # bibliographic identification and is what the page prints against the
-        # texts themselves. Carried from the source rather than shortened here,
-        # so that no tool and no page holds a second opinion about what the two
-        # books are called.
+        # `edition` is the book's designator and `edition_short` the derived
+        # name a control shows; both come from the missal designator registry
+        # through `load_calendar`, so no tool and no page holds a second opinion
+        # about what the books are called.
         "edition_short": document.get("edition_short"),
+        **_designation_qualification(root, calendar),
         "numbering": source,
         # The witnesses this missal's orations may be read in, in the order a
         # control should offer them; the first row of a language is its default.
@@ -4087,6 +4108,37 @@ def _serialise_structure(payload: dict) -> str:
 READ_CATALOG_SCHEMA = "triptych-propers-read-catalog/v1"
 READ_MASS_SCHEMA = "triptych-propers-read-mass/v1"
 READ_MASS_KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
+
+
+def _designation_qualification(root: Path, calendar: str) -> dict:
+    """The registry's qualification line, printed beside the designator."""
+    identity = _calendars.designated_identity(root, calendar)
+    qualification = (identity or {}).get("edition_qualification")
+    return {"edition_qualification": qualification} if qualification else {}
+
+
+def contributed_bodies(structure: dict) -> int:
+    """Published Proper bodies, Latin or English, that this missal itself contributes.
+
+    The reader offers a missal only where this is positive (promise
+    missal-reader-contribution-filter). It is counted from the same canonical
+    coverage the page reports: a body is an `available` unit after the
+    publication filter, so Scripture reconstructions, incipits, citations,
+    placeholders and empty records never count. A recension's inherited bodies
+    are its base's contribution, not its own (guidance/recensions.md Rule 9):
+    in a Mass it does not state, only bodies collated to its own witness count.
+    """
+    total = 0
+    for mass in structure.get("masses") or []:
+        stamp = mass.get("recension")
+        own = not isinstance(stamp, dict) or bool(stamp.get("stated"))
+        for row in (mass.get("coverage") or {}).get("languages") or []:
+            if row.get("lang") not in {"la", "en"}:
+                continue
+            available = int(row.get("available") or 0)
+            collated = int((row.get("collations") or {}).get("collated") or 0)
+            total += available if own else min(available, collated)
+    return total
 
 
 def reader_structure(structure: dict) -> dict:
@@ -4364,11 +4416,18 @@ def run_structure(arguments: argparse.Namespace) -> dict:
         # and has not yet written, which under `--check` it never will.
         if where not in files and not where.exists():
             continue
+        # Offered only where the missal contributes actual text of its own;
+        # a structure of placeholders and inherited bodies stays data, not a
+        # choice (promise missal-reader-contribution-filter).
+        served = json.loads(files[where] if where in files else where.read_text(encoding="utf-8"))
+        if contributed_bodies(served) <= 0:
+            continue
         document = load_calendar(root, name)
         entry = {
             "id": name,
             "edition": document.get("edition"),
             "edition_short": document.get("edition_short"),
+            **_designation_qualification(root, name),
         }
         catalog_path = catalog_dir / f"{name}.json"
         if catalog_path in files or catalog_path.is_file():

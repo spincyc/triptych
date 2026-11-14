@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing-text"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing"
+artifact_sha256 = "05317d3d05f22959ae9a04fcb4ca88c3ab63485627cd4cc4437b3c28cea4ce8a"
+locus = "vigil-fire-blessing/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Deus, qui per Filium tuum, angularem scilicet lapidem, claritatis tuae ignem fidelibus contulisti: productum e silice, nostris profuturum usibus, novum hunc ignem sanctifica: et concede nobis, ita per haec festa Paschalia coelestibus desideriis inflammari; ut ad perpetuae claritatis, puris mentibus, valeamus festa pertingere. Per eumdem Christum Dominum nostrum. R. Amen."
+transcription_segments = [{line = 1, text = "Deus, qui per Filium tuum, angularem scilicet lapidem, claritatis tuae ignem fidelibus contulisti: productum e silice, nostris profuturum usibus, novum hunc ignem sanctifica: et concede nobis, ita per haec festa Paschalia coelestibus desideriis inflammari; ut ad perpetuae claritatis, puris mentibus, valeamus festa pertingere. Per eumdem Christum Dominum nostrum. R. Amen."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 8234af8fd67aba45ffa4738ea6298d7c2d4f6fc8eb6c847c9f28af4687440380. Controlling complete page passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing-page. The complete old fire blessing supplies the same whole invocation, gift of divine radiance through the Son, blessing of this new fire, heavenly-desire petition and final everlasting-feast petition in the same sequence. Three specifically enumerated omissions remove two explanatory appositions and an anaphoric conclusion qualifier; no new petition or image is supplied. This is a finite adapted-study proposal, not an unchanged old Latin body."

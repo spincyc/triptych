@@ -1,6 +1,6 @@
 schema: triptych-calendar-masses/v1
-edition: Missale Romanum, editio typica 1962
-edition_short: 1962 Missal
+# The book this calendar transcribes is named by its row in
+# src/sources/inventories/missal-designators-v1.toml; do not restate it here.
 calendar: roman-1962
 series: deterministic fixed-date feast masses
 ordering: sections in christological, common, marian, sanctoral, seasonal order;
@@ -10728,13 +10728,7 @@ sections:
       - name: Blessing of the Baptismal Water
         incipit: Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis
         source: composed
-        notes: >-
-          Printed locus printed p. 200, no. 992; artifact PDF p. 281. Preexisting
-          material under 17 U.S.C. 103(b), corroborated in the tracked public-domain
-          Pustet Ratisbon 1862 at printed p. 201-202 (folio marker 201 at line 35748);
-          text-layer lines 35794-35802.
-          Where the church has no baptismal font this blessing is omitted and the rite
-          passes from the first part of the Litany to the renewal of baptismal promises.
+        notes: "Printed prayer-text extent: nn. 992–996, printed pp. 200–207; artifact PDF pp. 281–288. The existing n. 992 body is preserved byte for byte and followed by n. 993 (including its printed doxology, dialogue, long blessing and conclusion) and the three oil/chrism formulas nn. 994–996. The complete older Latin comparison is Mame 1922, printed pp. 254–264, artifact PDF pp. 368–378; Pustet 1862, printed pp. 201–207, artifact PDF pp. 287–293 corroborates with separately recorded differences. This is the printed prayer text once, not a complete performed-rite transcript: the initial greeting/Oremus, rubrics, minister assignment, gestures and source-directed repetitions require a separate frame. The procession tract n. 997 and font prayer n. 998 are outside this selected body; their separate source entries do not by themselves establish complete ritual assembly, which requires their own source controls and frame. Where the church has no baptismal font this blessing is omitted and the rite passes from the first part of the Litany to the renewal of baptismal promises. Historical English remains an unchanged selected Cummiskey 1861 quotation, with abbreviated cues, its printed word by fire, old sign positions, and a project-omitted preface dialogue; it is not an exact performed-text rendering of 1962."
         text: |
           Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto
           sacramentis: et ad recreandos novos populos, quos tibi fons baptismatis
@@ -10742,6 +10736,83 @@ sections:
           est ministerio, virtutis tuae impleatur effectu. Per Dominum nostrum Jesum
           Christum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti
           Deus:
+          
+          Per omnia saecula saeculorum. R. Amen. V. Dominus vobiscum. R. Et cum
+          spiritu tuo. V. Sursum corda. R. Habemus ad Dominum. V. Gratias agamus
+          Domino Deo nostro. R. Dignum et justum est.
+          
+          Vere dignum et justum est, aequum et salutare, nos tibi semper et ubique
+          gratias agere: Domine, sancte Pater, omnipotens aeterne Deus: Qui
+          invisibili potentia sacramentorum tuorum mirabiliter operaris effectum: et
+          licet nos tantis mysteriis exsequendis simus indigni: tu tamen gratiae
+          tuae dona non deserens, etiam ad nostras preces aures tuae pietatis
+          inclinas. Deus, cujus Spiritus super aquas inter ipsa mundi primordia
+          ferebatur: ut jam tunc virtutem sanctificationis aquarum natura
+          conciperet. Deus, qui nocentis mundi crimina per aquas abluens,
+          regenerationis speciem in ipsa diluvii effusione signasti: ut, unius
+          ejusdemque elementi mysterio, et finis esset vitiis, et origo virtutibus.
+          Respice, Domine, in faciem Ecclesiae tuae, et multiplica in ea
+          regenerationes tuas, qui gratiae tuae affluentis impetu laetificas
+          civitatem tuam: fontemque baptismatis aperis toto orbe terrarum gentibus
+          innovandis: ut, tuae majestatis imperio, sumat Unigeniti tui gratiam de
+          Spiritu Sancto.
+          
+          Qui hanc aquam, regenerandis hominibus praeparatam, arcana sui numinis
+          admixtione fecundet: ut, sanctificatione concepta, ab immaculato divini
+          fontis utero, in novam renata creaturam, progenies caelestis emergat: et
+          quos aut sexus in corpore aut aetas discernit in tempore, omnes in unam
+          pariat gratia mater infantiam. Procul ergo hinc, jubente te, Domine, omnis
+          spiritus immundus abscedat: procul tota nequitia diabolicae fraudis
+          absistat. Nihil hic loci habeat contrariae virtutis admixtio: non
+          insidiando circumvolet: non latendo subrepat: non inficiendo corrumpat.
+          
+          Sit haec sancta et innocens creatura, libera ab omni impugnatoris incursu,
+          et totius nequitiae purgata discessu. Sit fons vivus, aqua regenerans,
+          unda purificans: ut omnes hoc lavacro salutifero diluendi, operante in eis
+          Spiritu Sancto, perfectae purgationis indulgentiam consequantur.
+          
+          Unde bene + dico te, creatura aquae, per Deum vivum, per Deum verum, per
+          Deum sanctum: per Deum, qui te in principio verbo separavit ab arida:
+          cujus Spiritus super te ferebatur.
+          
+          Qui te de paradisi fonte manare fecit, et in quatuor fluminibus totam
+          terram rigare praecepit. Qui te in deserto amaram, suavitate indita, fecit
+          esse potabilem, et sitienti populo de petra produxit. Bene + dico te et
+          per Jesum Christum Filium ejus unicum, Dominum nostrum: qui te in Cana
+          Galilaeae signo admirabili sua potentia convertit in vinum. Qui pedibus
+          super te ambulavit: et a Joanne in Jordane in te baptizatus est. Qui te
+          una cum sanguine de latere suo produxit: et discipulis suis jussit, ut
+          credentes baptizarentur in te, dicens: «Ite, docete omnes gentes,
+          baptizantes eos in nomine Patris, et Filii, et Spiritus Sancti».
+          
+          Haec nobis praecepta servantibus, tu, Deus omnipotens, clemens adesto: tu
+          benignus aspira.
+          
+          Tu has simplices aquas tuo ore benedicito: ut praeter naturalem
+          emundationem, quam lavandis possunt adhibere corporibus, sint etiam
+          purificandis mentibus efficaces.
+          
+          Descendat in hanc plenitudinem fontis virtus Spiritus Sancti.
+          
+          Totamque hujus aquae substantiam regenerandi fecundet effectu.
+          
+          Hic omnium peccatorum maculae deleantur: hic natura ad imaginem tuam
+          condita, et ad honorem sui reformata principii, cunctis vetustatis
+          squaloribus emundetur: ut omnis homo, sacramentum hoc regenerationis
+          ingressus, in verae innocentiae novam infantiam renascatur.
+          
+          Per Dominum nostrum Jesum Christum, Filium tuum: Qui venturus est judicare
+          vivos et mortuos, et saeculum per ignem. R. Amen.
+          
+          Sanctificetur +, et fecundetur fons iste oleo salutis renascentibus ex eo,
+          in vitam aeternam. R. Amen.
+          
+          Infusio chrismatis Domini nostri Jesu Christi +, et Spiritus Sancti
+          Paracliti, fiat in nomine sanctae Trinitatis. R. Amen.
+          
+          Commixtio chrismatis sanctificationis, et olei unctionis, et aquae
+          baptismatis, pariter fiat in nomine Patris, et Fi + lii, et Spiritus
+          Sancti. R. Amen.
       - name: Tract at the Procession to the Font
         incipit: Sicut cervus desiderat ad fontes aquarum
         source: scripture

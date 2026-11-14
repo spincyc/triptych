@@ -21,7 +21,11 @@ src/sources/calendars/
 ## Recension capability catalog
 
 `recensions.json` is the single identity and capability catalog for the Roman
-book states and language/territory expressions named by tracked evidence. It is
+book states and language/territory expressions named by tracked evidence. Their
+display names are not here: every coherent missal, and so every calendar
+directory below, is named by its row in
+`src/sources/inventories/missal-designators-v1.toml`, and no `propers.yaml` or
+companion restates `edition` or `edition_short` (`guidance/missals.md` §10). It is
 JSON so the YAML-only calendar discovery cannot turn an unsupported row into a
 calendar selector. `check-calendar-masses` validates the catalog, every cited
 source record, and the one-to-one mapping between its `calendar` fields and the

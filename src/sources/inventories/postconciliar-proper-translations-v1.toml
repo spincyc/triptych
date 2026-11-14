@@ -3246,7 +3246,7 @@ sha256 = "44ef8380662dbc72ec152a13741f405111119b1c5b527e612b1493fcc24145c8"
 
 [[english_quarantine.admission_receipts]]
 path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p2-lent-holyweek-admission.json"
-sha256 = "c5300043a7682c2b3929552d8a70909ae3f28cc5bfb71a40f209605b97bb4dac"
+sha256 = "2926aa9ce9e90487d91e4c99663d23b0aeb19ae5aa70ad31fcc38a6c017e3c76"
 
 [[english_quarantine.admission_receipts]]
 path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json"
@@ -8031,20 +8031,6 @@ rejected_detectors = ["liturgies-net-2026-08-22"]
 quarantined_text_sha256 = ["c0a5388812d1681fa2955f20ad7a722ca0021be125fd516e03bbc30c85fce1cb"]
 note = "an ancient ancestor was identified in the Veronense at 0.53 word coverage, but the missal's text is a revision of it substantial enough that translating the missal would be translating the reform's own composition. No English is published; see `what_is_published`. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
-
-[[untranslated]]
-mass = "easter-sunday"
-form_id = "main"
-proper = "Prayer after Communion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["2bc8ddc402b84913a8453a541eb2c1ee93258fb203c7e9dd4d07c3e5bdd0b3b5"]
-note = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
 mass = "easter-vigil"
@@ -14143,7 +14129,61 @@ divergence = "Local transcription typography: printed long-s normalized to s; ph
 witness_note = "Adapted project study English from the complete Pentecost prayer in the Ambrosian Missal (Milan, 1712), printed pp. 202–203 / whole-source pages 240–241, checked in fresh images. The receiving comparison is the secondary digital reproduction labelled 2002, page 266; fidelity to the printed 2002 book and complete authentic 2008 correspondence remain unestablished. The source prayer and receiving comparison both address the Father. The comparison omits the conventional apposition Domini nostri Iesu Christi after Filii tui and the first et of the old et…et coordination; the Son, Holy Spirit, sacrifice, mystery, truth and request remain the same. Source long-s and æ/Æ are normalized, lines joined, and i/j and u/v correspondences declared locally; & is retained in the historical body and compared as et. The actual source cue Per eundem Dominum nostrum &c. in vnitate eiusdem Spiritus Sancti is preserved without expansion. The project ending uses the separately complete old formula Per Christum Dominum nostrum from Pustet 1862, printed p. 180, under the Father-directed short-conclusion rule in primary 1970 IGMR 32 and secondary 2002 IGMR 77. No same-Son or same-Spirit wording is silently imported. Independent review accepts this finite whole-prayer adaptation and English fidelity for source preparation; exact source registration, conclusion binding and runtime presentation remain integration gates. This is project study English, with no claim to approved modern English or unchanged historical human English. The full old body and actual source cue remain separately recoverable. The prior no-exemplar record is preserved as dated history. The study draft was sealed before any consultation of the separate official 2014 English exemplar."
 translations = [{"lang" = "en", "rights" = "project-created", "text" = "Grant, we beseech you, O Lord, that, according to the promise of your Son, the Holy Spirit may disclose to us more abundantly the mystery of this sacrifice and graciously open all truth to us. Through Christ our Lord."}]
 
-# Gap campaign 2026-11-14, batch p2-lent-holyweek: twelve historical antecedent English uses and nineteen project study translations; see workflows/reviews/gap-campaign-2026-11-14/postconciliar/p2-lent-holyweek-admission.json.
+[[entries]]
+mass = "easter-sunday"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+incipit = "Perpetuo, Deus, Ecclesiam tuam"
+relation = "variant"
+ancient_witness = "Missale Ambrosianum, Milan: Beniamin and the brothers de Sirturis, 1712, with Masses printed at Milan in 1733 bound in; printed164; In die Sancto Paschae, Missa de Solemnitate Paschali; complete Oratio post Communionem at top right before the separate FeriaIIinAlbis heading. The mass heading begins AP200/printed162, following the distinct Missa pro Baptizatis."
+witness_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+witness_artifact_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.easter-sunday-postcommunion-20261113-easter-sunday-postcommunion"
+ancient_passage_id = "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.easter-sunday-postcommunion-20261113-easter-sunday-postcommunion-text"
+ancient_reading = "Perpetuo Deus Ecclesiam tuam pio favore prosequere: ut paschalibus resuscitata mysteriis ad Resurrectionis perveniat claritatem. Per Dominum nostrum."
+divergence = "Replace prosequere with tuere, changing the request to attend/accompany the Church in loving favor to guard her. Replace resuscitata with renovata, changing raised/revived to renewed by the paschal mysteries. Replace the actually printed old Per Dominum nostrum cue with the modern Per Christum cue, using the whole independently old Per Christum Dominum nostrum. R. Amen. formula from PustetAP776. Mechanically normalize historical u/v, stress accents, ligatures and punctuation. No additional clause or changed word order is supplied. Exact new study English passage.triptych.easter-sunday-postcommunion-study-english-20261113.2026-11-13.easter-sunday-postcommunion. Modern comparison passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.easter-sunday-postcommunion-20261113-easter-sunday-postcommunion-comparison. Project-created adapted study English from a complete 1712 Ambrosian Easter Day prayer, with two substantive verb replacements and a separately witnessed full conclusion and marked response. The comparison is a secondary digital 2002 Roman prayer; agreement with printed 2002 and exact 2008 wording remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation."
+witness_note = "Project-created adapted study English from a complete 1712 Ambrosian Easter Day prayer, with two substantive verb replacements and a separately witnessed full conclusion and marked response. The comparison is a secondary digital 2002 Roman prayer; agreement with printed 2002 and exact 2008 wording remains unestablished. This is neither historical human English nor approved liturgical English, and is not for recitation."
+translations = [{"lang" = "en", "rights" = "project-created", "text" = "God, always guard your Church with your loving favor, so that, renewed through the paschal mysteries, she may reach the radiance of the resurrection. Through Christ our Lord. R. Amen."}]
+
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Prayer after the Litany"
+cycle = "all"
+occurrence = 1
+incipit = "Omnipotens sempiterne Deus, adesto magnae pietatis tuae sacramentis"
+relation = "variant"
+ancient_witness = "Missale Romanum, Tours: Alfred Mame, 1922, editio quarta iuxta typicam Vaticanam; printed254; Sabbato Sancto; complete Omnipotens sempiterne Deus prayer introducing the blessing of the font, right column through separately marked sung ending at the bottom of the same page"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer-text"
+ancient_reading = "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis; et ad recreandos novos populos, quos tibi fons baptismatis parturit, spiritum adoptionis emitte; ut, quod nostrae humilitatis gerendum est ministerio, virtutis tuae impleatur effectu. Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: Per omnia saecula saeculorum. R. Amen."
+divergence = "Omit the contiguous old words mysteriis, adesto, leaving the old invocation adesto magnae pietatis tuae sacramentis with one invitation to presence instead of the repeated one. Replace the actually printed full old long Per Dominum conclusion with the independently old full short Per Christum conclusion and distinct response. The secondarydigital2002AP218 reads mysterio in place of ministerio. The acquired official Vatican2014VigilAP28/printed55 reads ministerio, matching the complete1922donor. This proposal explicitly follows that official2014 comparison; it does not silently emend the2002witness or authenticate2008. Exact new study English passage.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-litany-prayer. Modern comparison passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-vigil-litany-prayer-comparison. Project-created adapted study English from a complete independently old prayer, with the individually reviewed omissions and separately witnessed full conclusion and response. The modern comparison is the official Vatican booklet for the specific Easter Vigil of 19 April 2014; it does not authenticate the exact 2008 Missal. This is neither historical human English nor approved liturgical English, and is not for recitation."
+witness_note = "Project-created adapted study English from a complete independently old prayer, with the individually reviewed omissions and separately witnessed full conclusion and response. The modern comparison is the official Vatican booklet for the specific Easter Vigil of 19 April 2014; it does not authenticate the exact 2008 Missal. This is neither historical human English nor approved liturgical English, and is not for recitation. The Litany prayer belongs to the baptismal context and is said when there are candidates for Baptism; this study translation does not decide that condition. The official2014 ministerio reading is retained, distinct from secondary2002 mysterio."
+translations = [{"lang" = "en", "rights" = "project-created", "text" = "Almighty and everlasting God, be present to the sacraments of your great compassion, and send forth the spirit of adoption to give new birth to the new peoples whom the baptismal font bears for you, so that what our humble ministry is to carry out may be fulfilled by the working of your power. Through Christ our Lord. R. Amen."}]
+
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Blessing of the Fire"
+cycle = "all"
+occurrence = 1
+incipit = "Deus, qui per Filium tuum"
+relation = "variant"
+ancient_witness = "Missale Romanum, the Pustet printing of Ratisbon, 1862: a commercial hand-format printing conformed to the Roman text, NOT a typical edition; printedunnumbered Sabbato Sancto opening; signature12*; Sabbato Sancto; first Oratio after the rubric benedicit novum ignem, complete left-column prayer through its R.Amen"
+witness_edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing"
+ancient_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.easter-litany-fire-20261112-vigil-fire-blessing-text"
+ancient_reading = "Deus, qui per Filium tuum, angularem scilicet lapidem, claritatis tuae ignem fidelibus contulisti: productum e silice, nostris profuturum usibus, novum hunc ignem sanctifica: et concede nobis, ita per haec festa Paschalia coelestibus desideriis inflammari; ut ad perpetuae claritatis, puris mentibus, valeamus festa pertingere. Per eumdem Christum Dominum nostrum. R. Amen."
+divergence = "Omit angularem scilicet lapidem after Filium tuum, removing the explicit cornerstone apposition. Omit productum e silice, nostris profuturum usibus before novum hunc ignem, removing the physical flint-origin and practical-use descriptions. Omit eumdem in the old full short conclusion; the complete exact Per Christum Dominum nostrum and response are separately attested in PustetAP776. Normalize coelestibus to caelestibus, capitalization, ligatures, accents and punctuation; the cross is an action marker, not an English word. Exact new study English passage.triptych.easter-orations-litany-fire-study-english-20261112.2026-11-12.vigil-fire-blessing. Modern comparison passage.holy-see.easter-vigil-papal-celebration.2014-04-19.easter-litany-fire-20261112-vigil-fire-blessing-comparison. Project-created adapted study English from a complete independently old prayer, with the individually reviewed omissions and separately witnessed full conclusion and response. The modern comparison is the official Vatican booklet for the specific Easter Vigil of 19 April 2014; it does not authenticate the exact 2008 Missal. This is neither historical human English nor approved liturgical English, and is not for recitation."
+witness_note = "Project-created adapted study English from a complete independently old prayer, with the individually reviewed omissions and separately witnessed full conclusion and response. The modern comparison is the official Vatican booklet for the specific Easter Vigil of 19 April 2014; it does not authenticate the exact 2008 Missal. This is neither historical human English nor approved liturgical English, and is not for recitation. The complete old first fire blessing is the donor; the separate later old fire prayers are not combined."
+translations = [{"lang" = "en", "rights" = "project-created", "text" = "God, through your Son you have bestowed the fire of your radiance upon the faithful. Sanctify this new fire, and grant that through these paschal feasts we may be so inflamed with heavenly desires that, with pure minds, we may reach the feasts of everlasting radiance. Through Christ our Lord. R. Amen."}]
+
+
+# Gap campaign 2026-11-14, batch p2-lent-holyweek: twelve historical antecedent English uses and seventeen project study translations (two Easter Vigil duplicates dropped at the merge of f54a20f201); see workflows/reviews/gap-campaign-2026-11-14/postconciliar/p2-lent-holyweek-admission.json.
 [[entries]]
 mass = "ash-wednesday"
 form_id = "main"
@@ -14653,42 +14693,6 @@ ancient_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-18
 lang = "en"
 rights = "project-created"
 text = "1 and 2: My people, what have I done to you? Or in what have I grieved you? Answer me!\n1: Because I brought you out of the land of Egypt, you have made ready a Cross for your Saviour.\n1: Hagios o Theos.\n2: Holy God.\n1: Hagios Ischyros.\n2: Holy and Strong.\n1: Hagios Athanatos, eleison himas.\n2: Holy and Immortal, have mercy on us.\n1 and 2: Because I led you through the desert for forty years, and fed you with manna, and brought you into a land exceedingly good, you have made ready a Cross for your Saviour.\n1: Hagios o Theos.\n2: Holy God.\n1: Hagios Ischyros.\n2: Holy and Strong.\n1: Hagios Athanatos, eleison himas.\n2: Holy and Immortal, have mercy on us.\n1 and 2: What more ought I to have done for you, and did not do? I indeed planted you as my chosen and most beautiful vineyard, and you have become exceedingly bitter to me: for you gave me vinegar to drink in my thirst, and with a lance you pierced the side of your Saviour.\n1: Hagios o Theos.\n2: Holy God.\n1: Hagios Ischyros.\n2: Holy and Strong.\n1: Hagios Athanatos, eleison himas.\n2: Holy and Immortal, have mercy on us.\n\nCantors: For your sake I scourged Egypt with its first-born, and you handed me over to be scourged.\n1 and 2 repeat: My people, what have I done to you? Or in what have I grieved you? Answer me!\nCantors: I led you out of Egypt, having drowned Pharaoh in the Red Sea, and you handed me over to the chief priests.\n1 and 2 repeat: My people ...\nCantors: I opened the sea before you, and you opened my side with a lance.\n1 and 2 repeat: My people ...\nCantors: I went before you in a pillar of cloud, and you led me to the praetorium of Pilate.\n1 and 2 repeat: My people ...\nCantors: I fed you with manna in the desert, and you struck me with blows and scourges.\n1 and 2 repeat: My people ...\nCantors: I gave you the water of salvation to drink from the rock, and you gave me gall and vinegar to drink.\n1 and 2 repeat: My people ...\nCantors: For your sake I struck the kings of the Canaanites, and you struck my head with a reed.\n1 and 2 repeat: My people ...\nCantors: I gave you a royal sceptre, and you gave my head a crown of thorns.\n1 and 2 repeat: My people ...\nCantors: I exalted you with great power, and you hanged me on the gibbet of the Cross.\n1 and 2 repeat: My people ..."
-
-[[entries]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Blessing of the Fire"
-cycle = "all"
-occurrence = 1
-relation = "abridged"
-ancient_reading = "Deus, qui per Filium tuum, angularem scilicet lapidem, claritatis tuae ignem fidelibus contulisti: productum e silice, nostris profuturum usibus, novum hunc ignem sancti+fica: et concede nobis, ita per haec festa paschalia caelestibus desideriis inflammari; ut ad perpetuae claritatis, puris mentibus, valeamus festa pertingere. Per eumdem Christum Dominum nostrum. R. Amen."
-divergence = "The target omits angularem scilicet lapidem and productum e silice, nostris profuturum usibus, and the eumdem of the conclusion; nothing is added, substituted or reordered. The preceding invitation Oremus is outside the prayer body. The sign of the cross printed in sanctifica is kept as +. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
-ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 226"
-witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
-ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-lent-holyweek-easter-vigil-blessing-of-the-fire-1-study-source"
-[[entries.translations]]
-lang = "en"
-rights = "project-created"
-text = "O God, who through your Son have conferred upon the faithful the fire of your brightness, sanctify + this new fire, and grant us, through these paschal feasts, to be so kindled with heavenly desires that with pure minds we may be able to reach the feasts of perpetual brightness. Through Christ our Lord. R. Amen."
-
-[[entries]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Prayer after the Litany"
-cycle = "all"
-occurrence = 1
-relation = "abridged"
-ancient_reading = "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis: et ad recreandos novos populos, quos tibi fons baptismatis parturit, spiritum adoptionis emitte; ut, quod nostrae humilitatis gerendum est ministerio, virtutis tuae impleatur effectu. Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: Per omnia saecula saeculorum. R. Amen."
-divergence = "The target, the 2002 text corrected by the official 2008 Variationes (Notitiae 44, p. 371: at Missal p. 363 ministerio for mysterio; DECISIONS 6b), omits mysteriis, adesto and adds nothing. Its conclusion Per Christum Dominum nostrum. R. Amen. is the separately witnessed complete formula printed on Mame 1922 p. 226 and Pustet 1862 p. 180, not the witness's long conclusion. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
-ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 254"
-witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
-ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-lent-holyweek-easter-vigil-prayer-after-the-litany-1-study-source"
-[[entries.translations]]
-lang = "en"
-rights = "project-created"
-text = "Almighty and everlasting God, be present at the sacraments of your great loving-kindness, and send forth the spirit of adoption to re-create the new peoples whom the font of baptism brings forth for you, so that what must be performed by the ministry of our lowliness may be accomplished by the effect of your power. Through Christ our Lord. R. Amen."
 
 [[entries]]
 mass = "lent-5-monday"

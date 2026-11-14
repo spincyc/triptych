@@ -1,0 +1,222 @@
+{
+  "schema": "triptych-requiem-three-public-evidence-map/v1",
+  "state": "source adopted; read-only preparation; independent successor review and current-map decision remain separate",
+  "source_packet_original_sha256": "8c3b514f872c7aab6a64124559aab5a83927e224badcba129457ae8666b98878",
+  "actual_root_source_adoption_sha256": "4b77a8613f8245ba57a83b80b89241f351eb4d7e215535433f2e8dfeb9deaab4",
+  "prior_driver_review_original_sha256": "f1efd2f5f1b5f0c3d5f5ae63790c90276b22da79cb51d44ab8b12d30cec8e0f8",
+  "successor_driver_sha256": "5986312618aa407d8348190707d76231dcda2e86d46f053c8850a1a42fb05f2b",
+  "source_outputs": [
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/artifacts/requiem-english-fidelity-three-20261113-ea9fe7c8/artifact.toml",
+      "sha256": "d89cb62327b9029bbaa348cb2cfe32777247cce0fa861fb3d862664a734b428a",
+      "byte_size": 4600
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/artifacts/requiem-english-fidelity-three-20261113-ea9fe7c8/english.tsv",
+      "sha256": "ea9fe7c8a4b8f716e4046af0dd943d9bf27a25c7ab43315ecf41ff053a9c16ec",
+      "byte_size": 897
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-second-collect-english.toml",
+      "sha256": "2071dae9d349dd5613dc9f834173c897b0a223678a23a993b88704628c104612",
+      "byte_size": 2054
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-second-collect-source.toml",
+      "sha256": "4a5f9a724f62774ade404fd23fb33c4ea32a63fcfe8cdb8c1fb0fa9fecee3e3c",
+      "byte_size": 2035
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-second-postcommunion-english.toml",
+      "sha256": "bed24edb01cb328689dabd8068bd0dc9ed35aa7e5ab8c471092211162212246f",
+      "byte_size": 1972
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-second-postcommunion-source.toml",
+      "sha256": "29f54d83404135c0079a4c17fc1b333e37ad2cfa3cdda605940739413e2e0d3c",
+      "byte_size": 1954
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-third-collect-english.toml",
+      "sha256": "e2b0444cd836df4751d4aaba6a4e35352123373d641eb60d2bcd0f0ef2f3c321",
+      "byte_size": 2014
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-third-collect-source.toml",
+      "sha256": "639dcbb897e1ddee5f08b3486a82d453233e8f0ed4722687e80be6d2c7a24fbc",
+      "byte_size": 2283
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-three-early-printing-control-20261113.toml",
+      "sha256": "93548460b8d6be2aa5e3a50bfb7daa13ec006d12f625dc2a45efed8877dd45fc",
+      "byte_size": 1962
+    }
+  ],
+  "owner_operations": [
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Collect",
+        "all",
+        1
+      ],
+      "owner_path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "old_entry_sha256": "d0cf453d2e3bd5f9d25462d089c471c14bcbe4f8f3ecf1020bc64dfb0d4e4cef",
+      "new_entry_sha256": "ee0a91b9217e566479d401df48d6356fa395be2d09aeaad78fd5426481a39e3b"
+    },
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "owner_path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "old_entry_sha256": "f1e576a0a29d2c933aa817e866fcf1f665a47b30e2aa15ff82e880b969661ea8",
+      "new_entry_sha256": "b732d0fb1cccd0eb16f958c87047d1aa1f45a10e4421c1b0e750a897d7ebd7a5"
+    },
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "third",
+        "Collect",
+        "all",
+        1
+      ],
+      "owner_path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "old_entry_sha256": "6807c2f10b01c26993331f767869f464c5c4c0004966cde07079f91b3103afb4",
+      "new_entry_sha256": "01396a8b7dad6218a1cc00a42bc3053ea2bef08255f51158219da54b67e25fd6"
+    }
+  ],
+  "evidence_outputs": [
+    {
+      "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/root-source-adoption.json",
+      "sha256": "4b77a8613f8245ba57a83b80b89241f351eb4d7e215535433f2e8dfeb9deaab4",
+      "byte_size": 10725,
+      "kind": "byte-exact-original",
+      "lineage": {
+        "original_path": ".scratch/root/requiem-three-english-source-adoption.json",
+        "original_sha256": "4b77a8613f8245ba57a83b80b89241f351eb4d7e215535433f2e8dfeb9deaab4",
+        "role": "actual source/merits adoption",
+        "pointer_status": "Internal scratch references are archival evidence pointers, not required operational read paths. Earlier pending-status statements remain historical."
+      }
+    },
+    {
+      "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/independent-source-English-review.json",
+      "sha256": "83fbca7042225e8cfe7c4bfe24631d4f880ccd5a41649754f1ae95f04ecbb8fe",
+      "byte_size": 28055,
+      "kind": "byte-exact-original",
+      "lineage": {
+        "original_path": ".scratch/roman-sources/requiem-english-independent-review/review.json",
+        "original_sha256": "83fbca7042225e8cfe7c4bfe24631d4f880ccd5a41649754f1ae95f04ecbb8fe",
+        "role": "complete bounded source/English review",
+        "pointer_status": "Internal scratch references are archival evidence pointers, not required operational read paths. Earlier pending-status statements remain historical."
+      }
+    },
+    {
+      "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/independent-prepare-driver-v1-review.json",
+      "sha256": "f1efd2f5f1b5f0c3d5f5ae63790c90276b22da79cb51d44ab8b12d30cec8e0f8",
+      "byte_size": 11137,
+      "kind": "byte-exact-original",
+      "lineage": {
+        "original_path": ".scratch/roman-sources/requiem-english-independent-review/prepare-driver/review.json",
+        "original_sha256": "f1efd2f5f1b5f0c3d5f5ae63790c90276b22da79cb51d44ab8b12d30cec8e0f8",
+        "role": "historical preparation-only predecessor review",
+        "pointer_status": "Internal scratch references are archival evidence pointers, not required operational read paths. Earlier pending-status statements remain historical."
+      }
+    },
+    {
+      "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/source-closure.json",
+      "sha256": "e6acb4e8c0c1ef1f975f980194cfe017898199eed7bff077d8e2220ec07a736e",
+      "byte_size": 17544,
+      "kind": "byte-exact-original",
+      "lineage": {
+        "original_path": ".scratch/roman-sources/requiem-english-fidelity/source-closure.json",
+        "original_sha256": "e6acb4e8c0c1ef1f975f980194cfe017898199eed7bff077d8e2220ec07a736e",
+        "role": "exact 34-record source closure",
+        "pointer_status": "Internal scratch references are archival evidence pointers, not required operational read paths. Earlier pending-status statements remain historical."
+      }
+    },
+    {
+      "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/admitted-source-projection.json",
+      "sha256": "933532b36fd1e8cef575b8fed866b7fe8e4b69e281196b924726c79ff71864bb",
+      "byte_size": 29592,
+      "kind": "explicit-selected-field-projection",
+      "lineage": {
+        "original_path": ".scratch/roman-sources/requiem-english-fidelity/correction-packet.json",
+        "original_sha256": "8c3b514f872c7aab6a64124559aab5a83927e224badcba129457ae8666b98878",
+        "selected_case_pointers": [
+          "/rows/0",
+          "/rows/1",
+          "/rows/2"
+        ],
+        "selected_row_fields": [
+          "identity",
+          "new_entry",
+          "old_entry_sha256",
+          "new_entry_sha256",
+          "new_English_sha256",
+          "proper_sha256",
+          "target_Latin_sha256",
+          "Latin_proof_sha256",
+          "source_appointment",
+          "source_range",
+          "source_date_basis",
+          "strongest_date_contrary",
+          "fidelity_qualification",
+          "literal_conclusion_relation",
+          "source_records"
+        ],
+        "selected_source_fields": [
+          "repository_path",
+          "sha256"
+        ],
+        "omitted": [
+          "whole owner snapshots",
+          "old source quotations",
+          "PDF and raster bytes",
+          "execution logs and local fixture trees",
+          "unrelated f79 record payloads"
+        ],
+        "status": "Explicit field projection; not a byte-exact copy or replacement original receipt."
+      }
+    },
+    {
+      "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/preparation-proof-projection.json",
+      "sha256": "dd26a78546757cbcc7a49f5354b15e4344a2797cf2d6b6998604f84424956d41",
+      "byte_size": 18096,
+      "kind": "explicit-selected-field-projection",
+      "lineage": {
+        "original_path": ".scratch/roman-sources/requiem-english-activation/fresh/operation-proof.json",
+        "original_sha256": "5cc8bef51e48280429e66dd471b44b448146d5465ad05fce9a5ae3b1be70f68f",
+        "selected_fields": [
+          "state",
+          "packet_sha256",
+          "independent_review_sha256",
+          "driver_sha256",
+          "owner_path",
+          "owner_preimage_sha256",
+          "owner_postimage_sha256",
+          "operations",
+          "unchanged_raw_segments",
+          "semantic_controls",
+          "all_other_raw_bytes_unchanged",
+          "all_other_parsed_objects_unchanged",
+          "proper_and_Latin_owners_written",
+          "source_closure_record_count",
+          "limits"
+        ],
+        "omitted": [
+          "host input_root",
+          "absolute input paths",
+          "local frozen read-map path"
+        ],
+        "status": "Explicit field projection of the local preparation proof; not an application receipt."
+      }
+    }
+  ],
+  "export_policy": "Only the four enumerated byte-exact originals and two labeled field projections are included. Original hashes and selected-case pointers are retained. No transitive scratch copying, binary evidence or whole-owner snapshot is included in this evidence map.",
+  "application": "No application operation exists. A fresh semantic owner merge and separate exact driver/map adoption are required before any canonical mutation."
+}

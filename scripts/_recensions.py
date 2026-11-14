@@ -53,7 +53,6 @@ RECENSION_REQUIRED = frozenset(
     {
         "id",
         "kind",
-        "label",
         "identity_status",
         "language",
         "evidence_refs",
@@ -62,12 +61,14 @@ RECENSION_REQUIRED = frozenset(
         "activation_requirements",
     }
 )
-RECENSION_OPTIONAL = frozenset({"calendar", "year", "period", "coverage_ref"})
+# A book state's display name is its designator in the missal designator
+# registry (`_missal_designators`), never a label here. Only an interval gap,
+# which is not a book and has no designator, describes itself with `label`.
+RECENSION_OPTIONAL = frozenset({"calendar", "year", "period", "coverage_ref", "label"})
 EXPRESSION_REQUIRED = frozenset(
     {
         "id",
         "parent",
-        "label",
         "identity_status",
         "language",
         "territory",
@@ -591,8 +592,14 @@ def _recension(
         problems.append(f"{where}.id {identifier!r} is repeated")
     else:
         ids.add(identifier)
-    _text(problems, f"{where}.label", row.get("label"))
     kind = row.get("kind")
+    if kind == "interval-gap":
+        _text(problems, f"{where}.label", row.get("label"))
+    elif "label" in row:
+        problems.append(
+            f"{where}.label names a book state; its designator belongs to the "
+            "missal designator registry"
+        )
     if kind not in KINDS:
         problems.append(f"{where}.kind has unknown value {kind!r}")
     identity = row.get("identity_status")
@@ -645,12 +652,6 @@ def _recension(
                 if declared != calendar:
                     problems.append(
                         f"{where}.calendar is {calendar!r}, but {source} declares {declared!r}"
-                    )
-                edition = document.get("edition") if isinstance(document, dict) else None
-                if edition != row.get("label"):
-                    problems.append(
-                        f"{where}.label is {row.get('label')!r}, but {source} "
-                        f"declares edition {edition!r}"
                     )
     _references(problems, repository, f"{where}.evidence_refs", row.get("evidence_refs"))
     capabilities = _capabilities(
@@ -743,7 +744,6 @@ def _expression(
         or parent_row.get("identity_status") != "identified"
     ):
         problems.append(f"{where}.parent must name an identified book-state, got {parent!r}")
-    _text(problems, f"{where}.label", row.get("label"))
     if row.get("identity_status") != "identified":
         problems.append(f"{where}.identity_status must be 'identified'")
     language = row.get("language")
@@ -980,4 +980,7 @@ def catalog_problems(
         problems.append(f"{path}: unregistered calendar indexes: {', '.join(missing)}")
     if extra:
         problems.append(f"{path}: registered calendars without indexes: {', '.join(extra)}")
+    import _missal_designators
+
+    problems.extend(_missal_designators.problems(root, required=required))
     return problems

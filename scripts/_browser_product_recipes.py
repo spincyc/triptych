@@ -33,10 +33,13 @@ _BROAD = ["src/sources", "src/gpt", "src/claude", "src/common", "web"]
 _SOURCE = ["src/sources"]
 # The source library preflights and loads every publication's bindings.
 _LIBRARY = ["src/sources", "src/gpt", "src/claude"]
-# calendar-days and calendar-rubrics read only the calendar directory; the one
-# inventory path in `_calendars` (recension act ids) is reached only from
-# `recension_problems`, which neither tool calls (2026-11-12 audit).
+# calendar-days and calendar-rubrics read the calendar directory and, through
+# `_calendars.load_document` and `index_header`, the missal designator registry
+# that names each calendar's book (2026-11-14). The other inventory path in
+# `_calendars` (recension act ids) is reached only from `recension_problems`,
+# which neither tool calls (2026-11-12 audit).
 _CALENDAR = ["src/sources/calendars"]
+_DESIGNATORS = ["src/sources/inventories/missal-designators-v1.toml"]
 # Provider review and bookkeeping records: what each publication passed, how
 # its sources were classified, and the source-family migration ledger. They
 # change with nearly every publication, and no producer opens them: no code
@@ -131,7 +134,7 @@ RECIPES = (
             ["src/sources/papal-documents", "release/papal-documents"], ["release/papal-documents.json"], delivery="browser-data"),
     _recipe("act-history", "structure/act-history", ["tools/act-history", "structure"], _BROAD,
             ["guidance/liturgical-text-publication-policy.md"], excludes=_REVIEW_RECORDS, delivery="browser-data"),
-    _recipe("calendar", "structure/calendar", ["tools/calendar-days", "structure", "--root", "{root}/src/sources/calendars", "--first", "2020", "--last", "2120"], _CALENDAR, delivery="browser-data"),
+    _recipe("calendar", "structure/calendar", ["tools/calendar-days", "structure", "--root", "{root}/src/sources/calendars", "--first", "2020", "--last", "2120"], _CALENDAR, _DESIGNATORS, delivery="browser-data"),
     _recipe("catena", "structure/catena", ["scripts/_catena.py", "--root", "{root}", "structure"], _SOURCE,
             ["src/web/browser/catena/catena-model.js"], excludes=_REVIEW_RECORDS, delivery="browser-data"),
     # Assembly resolves both provider-owned inputs and fallbacks under src/;
@@ -147,7 +150,7 @@ RECIPES = (
             [*_LATIN_AUTHORITIES, *_EXECUTION_AUTHORITIES], excludes=_REVIEW_RECORDS, delivery="browser-data"),
     _recipe("readings", "structure/readings", ["tools/reading-plan", "structure", "--root", "{root}/src/sources/reading-plans"], _SOURCE,
             excludes=_REVIEW_RECORDS, delivery="browser-data"),
-    _recipe("rubrics", "structure/rubrics", ["tools/calendar-rubrics", "structure", "--root", "{root}/src/sources/calendars"], _CALENDAR, delivery="browser-data"),
+    _recipe("rubrics", "structure/rubrics", ["tools/calendar-rubrics", "structure", "--root", "{root}/src/sources/calendars"], _CALENDAR, _DESIGNATORS, delivery="browser-data"),
     _recipe("sources", "structure/sources", ["tools/source-reader", "structure", "--strict"], _BROAD,
             _LATIN_AUTHORITIES, excludes=_REVIEW_RECORDS, delivery="browser-data"),
     # Every web reader's Markdown, converted at build time from canonical TeX

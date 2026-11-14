@@ -792,7 +792,8 @@
    "route": "study-draft",
    "relation": "abridged",
    "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
-   "printed_page": "226"
+   "printed_page": "226",
+   "superseded_on_merge": "2026-11-14: dropped when feature/missal-reader f54a20f201 was merged; the install-lane entry for this slot is kept (see merge_resolution)."
   },
   {
    "target_index": 121,
@@ -802,7 +803,8 @@
    "route": "study-draft",
    "relation": "abridged",
    "witness": "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
-   "printed_page": "254"
+   "printed_page": "254",
+   "superseded_on_merge": "2026-11-14: dropped when feature/missal-reader f54a20f201 was merged; the install-lane entry for this slot is kept (see merge_resolution)."
   },
   {
    "target_index": 51,
@@ -1692,5 +1694,30 @@
    "reason": "no Douay-Rheims English used as antecedent; Scripture-derived antiphons received study drafts"
   }
  ],
- "notes": "Conclusions (DECISIONS 4a): the published Latin reproduces the conclusion at the length the target prints it; every conclusion word comes from a separately witnessed public-domain formula (Pustet 1862 p.55 and p.180, Mame 1922 p.173, Wilson 1894 p.52). Eight removed untranslated rows carried quarantined hashes; they are preserved verbatim above so the quarantine scanner conserves them."
+ "notes": "Conclusions (DECISIONS 4a): the published Latin reproduces the conclusion at the length the target prints it; every conclusion word comes from a separately witnessed public-domain formula (Pustet 1862 p.55 and p.180, Mame 1922 p.173, Wilson 1894 p.52). Eight removed untranslated rows carried quarantined hashes; they are preserved verbatim above so the quarantine scanner conserves them.",
+ "merge_resolution": {
+  "merged_on": "2026-11-14",
+  "merged_commit": "f54a20f201 (feature/missal-reader, 'Merge the previous run's accepted source packages')",
+  "ruling": "Coordinator, 2026-11-14: the target is the 2002 text with any Notitiae 2008 variation (DECISIONS 6b), not the 2014 Vatican booklet. Re-check both candidate entries for each doubly-filled slot against that target and the witness page images, keep the one whose relation label and English are correct, and if both are faithful keep the install-lane entry, which carries the previous root's independent review.",
+  "slots": [
+   {
+    "mass": "easter-vigil",
+    "form_id": "main",
+    "proper": "Blessing of the Fire",
+    "target_index": 103,
+    "kept": "install-lane entry (commit 9687352163), relation variant, ancient witness Pustet 1862 artifact page 265 (signature 12*)",
+    "dropped": "integrate-lane entry, relation abridged, ancient witness Mame 1922 printed p. 226 (artifact page 340), and its two text-free locus passage records",
+    "check": "Target: secondary 2002 artifact page 205; Notitiae 2008 records no variation for this prayer. Both ancient readings were re-read on fresh page images: Pustet artifact page 265 and Mame artifact page 340, matching each entry's transcription. Both witnesses differ from the target only by omissions: angularem scilicet lapidem; productum e silice, nostris profuturum usibus; and eumdem in the conclusion. Both English texts render every target word faithfully. Install-lane collapses 'valeamus ... pertingere' to 'may reach' and omits the + action marker, both acceptable. Its relation label variant is broader than abridged, but it is consistent with existing corpus use for omission-only adaptations, so it is not wrong. Both are faithful, so the install-lane entry is kept."
+   },
+   {
+    "mass": "easter-vigil",
+    "form_id": "main",
+    "proper": "Prayer after the Litany",
+    "target_index": 121,
+    "kept": "install-lane entry (commit 9687352163), relation variant, ancient witness Mame 1922 printed p. 254 (artifact page 368)",
+    "dropped": "integrate-lane entry, relation abridged, the same Mame witness, and its text-free locus passage record",
+    "check": "Target: secondary 2002 artifact page 218 reads mysterio; Notitiae 44 (2008) p. 371 (artifact page 53, re-read on the page image) corrects Missal p. 363 to 'gerendum est ministerio', so the 2008 target reads ministerio (DECISIONS 6b). Mame p. 254 was re-read on a fresh image: it adds mysteriis, adesto and prints the long Per Dominum conclusion. Both English texts translate ministerio and every other target word faithfully. The install-lane entry records the 2014 Vatican booklet as its reason for ministerio; Notitiae 2008 p. 371 is the governing basis and gives the same reading, so its English is correct for the 2008 target. Both are faithful, so the install-lane entry is kept."
+   }
+  ]
+ }
 }

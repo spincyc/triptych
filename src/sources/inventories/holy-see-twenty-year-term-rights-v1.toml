@@ -1,0 +1,483 @@
+# Whether a Holy See publication first issued in Vatican City between 1931 and
+# 1975 was "restored" in the United States by 17 U.S.C. 104A, settled once so
+# that it is not settled again.
+#
+# On 1 January 1996 -- the date 104A tests -- the copyright law in force in
+# Vatican City was the Italian Copyright Act, l. 633/1941, as received by
+# Vatican Law N. XII of 12 January 1960. That Act gives a work created and
+# published under the name and at the expense of a public body a term of twenty
+# years from first publication. If that term reached the Holy See's own
+# publications, every such work first published 1931-1975 had already expired
+# at home on the test date, and a work already in the United States public
+# domain for want of a formality was never restored.
+#
+# This record OWNS that holding. Every other page that speaks to the United
+# States status of twentieth-century Holy See publications points here rather
+# than restating it (guidance/sources.md, "Settle a recurring rights question
+# once"). It is text-free: it contains no liturgical wording, and statute text
+# is quoted only where the holding turns on it.
+#
+# It is not legal advice, it is not an opinion of counsel, and it binds nobody
+# outside this repository. Jurisdiction throughout: the United States. Evidence
+# labels: [verified] read on 2026-11-14 from bytes fetched that day (sha256
+# given); [sourced] from a cited secondary source fetched that day; [recorded]
+# from a tracked repository record; [inference] reasoning, never evidence.
+
+rights_schema = 1
+record_type = "holy-see-twenty-year-term-rights"
+recorded_on = "2026-11-14"
+jurisdiction = "United States"
+status = "adopted"
+basis_token = "qualified-public-domain"
+policy_basis = "guidance/liturgical-text-publication-policy.md section 1, priority 6: ambiguous but defensible basis -- prefer publication, document the argument, mark the basis explicitly"
+confidence = "medium-low"
+civil_law_status = "defensible-not-adjudicated"
+supersedes_in_part = [
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml [the_underlying_edition] (its United States term finding, for the 1962 edition's own 1931-1975 matter)",
+]
+
+[decision]
+decided_on = "2026-11-14"
+decided_by = "the maintainer"
+instruction = "if the italian copyright holds, apply it"
+reading = """
+The decision of record. The research put to the maintainer (lane r2-rights,
+2026-11-14; its memo, renewal sweep and fetched evidence stayed in campaign
+scratch and are restated here so that this record stands alone) found that the
+route HOLDS WITH LIMITS: defensible as a policy section 1 priority-6 basis, not as
+a priority-1 public-domain finding, confidence medium-low. The instruction is
+applied exactly that far: within the limits L1-L5 below, under the explicit
+token `qualified-public-domain`, and nowhere else.
+
+It reverses a recorded rights position -- the 1962 facsimile record's finding
+that the 1962 typical edition is "probably protected in the United States until
+the end of 2057" -- for the 1931-1975 Holy See matter this record covers. Under
+the publication policy a reversal of a recorded rights position is the
+maintainer's decision and belongs in a rights record; this is that record. A
+further reversal, in either direction, is likewise the maintainer's and must be
+recorded here with its date.
+"""
+
+holding = """
+A HOLY SEE PUBLICATION FIRST PUBLISHED IN VATICAN CITY IN 1931-1975 THAT WAS
+ALREADY IN THE UNITED STATES PUBLIC DOMAIN FOR WANT OF A FORMALITY WAS ARGUABLY
+NOT RESTORED BY 17 U.S.C. 104A, BECAUSE ITS SOURCE-COUNTRY TERM HAD EXPIRED BY
+1 JANUARY 1996. This is a defensible basis, not an adjudicated or a probable one:
+confidence medium-low that a United States court would so hold, high that the
+statutes say what is quoted below. It is published on the explicit, visible
+token `qualified-public-domain`, never as `public-domain`.
+
+The chain. Every link is statute text read from fetched bytes except link 4.
+
+  1.  17 U.S.C. 104A(h)(6)(B): a restored work "is not in the public domain in
+      its source country through expiration of term of protection". For a source
+      country adhering to Berne the date of restoration is 1 January 1996
+      (104A(h)(2)(A)); the source country of a published work is the eligible
+      country of first publication (104A(h)(8)(C)). The Holy See has adhered to
+      Berne since 12 September 1935 (Copyright Office Circular 38a).
+  2.  On 1 January 1996 Vatican City applied "la legislazione dello Stato
+      italiano" on copyright by force of Law N. XII of 12 January 1960, art. 1,
+      "in quanto" not contrary to divine law, the general principles of canon
+      law or the 1929 Treaty and Concordat, and so far as "ivi applicabile".
+      Its art. 2 applies copyright protection to "i testi delle leggi e degli
+      atti ufficiali pubblicati dalla Santa Sede e dallo Stato della Città del
+      Vaticano"; its art. 3 repeals the copyright reception of the 1929 Law on
+      the sources of law. Law XII stood until Law N. CXXXII of 19 March 2011.
+  3.  That legislation was l. 633/1941. Art. 11: "Alle Amministrazioni dello
+      Stato, al Partito Nazionale Fascista, alle Provincie ed ai Comuni spetta il
+      diritto di autore sulle opere create e pubblicate sotto il loro nome ed a
+      loro conto e spese", with the same right for non-profit private bodies and
+      for academies and other public cultural bodies. Art. 29: the duration of
+      the rights held under art. 11 "è di vent'anni a partire dalla prima
+      pubblicazione, qualunque sia la forma nella quale la pubblicazione è stata
+      effettuata". Art. 199 applies the Act to works published before it.
+      Arts. 5, 11 and 29 were never amended: normattiva gives each, as in force
+      on 1 January 1996, as the text in force since 18-12-1942.
+  4.  [INFERENCE -- THE DECISIVE LINK] As received "in quanto applicabile" in
+      Vatican City, art. 11 reached works created and published under the name
+      and at the expense of the Holy See and its Curia. Support: Law XII art. 2
+      places Holy See publications inside the received regime, and the only
+      rule the Act has for a work published under a public body's name at its
+      expense is art. 11 with art. 29; Law CXXXII of 2011, art. 5, re-enacted
+      art. 11's "sotto il loro nome" pattern for the Holy See and Vatican City
+      and, in its section 4, art. 29's operative phrase "qualunque sia la forma
+      nella quale la pubblicazione è stata effettuata" with seventy years for
+      twenty -- naturally read as lengthening a term the legislator understood
+      to apply. Italian administrative practice and Wikimedia Commons read
+      arts. 11 and 29 as a twenty-year term for ITALIAN public bodies; they say
+      nothing of the Holy See. No Vatican judgment or doctrine applying or
+      refusing art. 29 for the Holy See was located.
+  5.  Hence, on that inference, a work first published 1931-1975 had a source
+      term that ended no later than 31 December 1995 (art. 30: terms in years
+      run from the year of publication, fractions of a year to the author, and
+      for periodicals from the end of each year) and was not restored. If it
+      was in the United States public domain through a formality, it stays
+      there.
+
+Where the inference is not needed [inference from the same statutes]: if
+art. 11 did NOT reach the Holy See, a liturgical text published without an
+individual author's name is an anonymous or collective work, fifty years from
+first publication (arts. 26-27 as received in 1960). That term too had ended by
+31 December 1995 for works first published 1931-1945. The decisive link is
+therefore load-bearing for 1946-1975 publications, which include everything
+of the 1950s, the 1955 Holy Week and the 1962 typical edition.
+"""
+
+# ==============================================================================
+# THE MACHINE CONTRACT
+# ==============================================================================
+#
+# Read by scripts/_qualified_public_domain.py, which owns the token's checks for
+# every consumer (Latin provenance ledgers, English translation ledgers, the
+# Ordinary inventories, the source library and the public gates). The values
+# here ARE the limits below in executable form; changing one changes what may
+# be published, and is a maintainer decision to be dated in [decision].
+
+[admission]
+token = "qualified-public-domain"
+first_publication_years = [1931, 1975]
+imprints = ["Typis Polyglottis Vaticanis", "Acta Apostolicae Sedis", "Libreria Editrice Vaticana"]
+bodies = ["Roman Pontiff", "Sacred Congregation of Rites", "Sacred Congregation for Divine Worship", "Secretariat of State", "State of Vatican City"]
+
+[admission.later_editions]
+# A later typical edition adds no right in unchanged preexisting wording
+# (17 U.S.C. 103(b)); see [later_typical_editions]. In a target calendar the
+# row is admitted from the EARLIER Holy See publication, and the later edition
+# is only the text-free comparison named by verification_source_id.
+target_calendars = ["postconciliar"]
+target_editions = [
+  "edition.catholic-church.missale-romanum.vatican-typica-1970",
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008",
+  "edition.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504",
+  "edition.holy-see.notitiae.volume-44-numbers-503-504-2008",
+  "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+  "edition.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015",
+]
+# A first_publication citing a Missal edition of this year or later is refused
+# in every calendar: the 1970 and 1975 editions are excluded until L3 is
+# evidenced for the printing, and later ones are outside L1.
+excluded_first_publication_terms = ["Missale Romanum", "Ordo Missae", "Missal"]
+excluded_first_publication_from = 1970
+
+[admission.us_formalities]
+# The United States route by which the work is independently public domain
+# (L3), and the last first-publication year it can reach.
+published-abroad-without-us-notice = 1975
+us-notice-unrenewed = 1963
+
+[admission.notices]
+# Every text admitted on this record carries one of these verbatim, at the
+# point of use, on every surface. They are the record's visible marking.
+latin = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+english_carried = "Published on a qualified basis (publication policy priority 6; confidence medium-low): English from a United States book whose own copyright was not renewed, translating a Holy See text first published in Vatican City in 1931-1975 whose Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+english_study = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+
+[how_to_admit]
+note = "What each consumer requires of a text admitted on this record; scripts/_qualified_public_domain.py enforces it and tools/tests/test_qualified_public_domain.py holds it. Admission is per text, after the ordinary exact-witness collation; the token never substitutes for it."
+carrier_artifact = "A tracked source-library artifact carrying the admitted words: rights_status = \"qualified-public-domain\", rights_jurisdiction = \"United States\", and a rights_basis that contains this record's path and its verbatim [admission.notices].latin (or .english_carried for English)."
+latin_provenance_row = "In <calendar>-proper-latin-provenance-v1.toml: provenance_status = \"collated\" with an exact relationship (exact-transcription, collated-exact or editorial-projection-exact-to-target) and the usual witness fields; publication_status = \"permitted\"; publication_basis = \"qualified-public-domain\"; all six surfaces; publication_authority = this record's path; notice = [admission.notices].latin verbatim; publication_source_ids naming at least one carrier artifact above and nothing that is not public-domain or qualified-public-domain; publication_locator and publication_evidence; first_publication (the Holy See publication that first printed the words), first_publication_year (1931-1975), first_publication_imprint and first_publication_body (from [admission]), us_formality (from [admission.us_formalities], within its year)."
+postconciliar_row = "The same row, in postconciliar-proper-latin-provenance-v1.toml, where the 2002/2008 (or OLM 1981) wording equals the earlier Holy See text word for word: every first_publication field describes the EARLIER publication (never a 1970-or-later Missal, never a 1964-1977 printing with notice); source_id witnesses that earlier publication; verification_source_id is a text-free comparison passage on a target edition listed in [admission.later_editions], with verification_locator; and no publication source, carrier or carrier parent (projected_from, derived_from) belongs to a target edition."
+english_carried = "A translation entry with lang = \"en\", rights = \"qualified-public-domain\", source_id naming the registered United States book, notice = [admission.notices].english_carried verbatim; its [[sources]] row carries rights = \"qualified-public-domain\" and a rights_basis citing this record and the book's unrenewed registration, confirmed on the copyright leaf."
+english_study = "A project study translation over Latin admitted here stays rights = \"project-created\" and carries notice = [admission.notices].english_study verbatim."
+ordinary_witness = "An Ordinary inventory [[witnesses]] row with rights = \"qualified-public-domain\", acknowledgement = [admission.notices].latin (lang la) or .english_carried (lang en) verbatim, and artifacts whose source-library rights_status is qualified-public-domain."
+
+[later_typical_editions]
+ruled_on = "2026-11-14"
+ruled_by = "the gap-campaign coordinator, applying the maintainer's instruction of the same day"
+rule = """
+The qualified basis also reaches a target slot of a later typical edition --
+the 2002 editio typica tertia, the 2008 reprint and Variationes, and the 1981
+Ordo lectionum Missae -- whose wording equals, word for word, a Holy See text
+first published in 1931-1975 that meets L1-L5. A later edition's copyright
+"extends only to the material contributed by the author of such work" and
+"does not imply any exclusive right in the preexisting material" (17 U.S.C.
+103(b), recorded at missale-romanum-1962-facsimile-rights-v1.toml), so it adds
+no right in unchanged preexisting wording. The words are admitted from the
+earlier Holy See publication; the later edition, which stays restricted under
+postconciliar-latin-rights-v1.toml, is only the text-free comparison that
+shows the identity, and is never a source, carrier or carrier parent.
+"""
+does_not_reach = "New or changed matter of a later edition (postconciliar-latin-rights-v1.toml [scope_partition].modern_new_or_changed_matter); wording first published in a 1970-or-later Missal edition; any 1964-1977 printing with a United States notice."
+
+# ==============================================================================
+# SCOPE AND LIMITS
+# ==============================================================================
+
+[scope]
+covers = """
+Works created and published under the name and at the expense of the Holy See
+(the Roman Pontiff and the dicasteries of the Roman Curia, including the Sacred
+Congregation of Rites and the Sacred Congregation for Divine Worship) or of the
+State of Vatican City, FIRST published in Vatican City (Typis Polyglottis
+Vaticanis, Acta Apostolicae Sedis, Libreria Editrice Vaticana) between
+1 January 1931 and 31 December 1975, and independently in the United States
+public domain by a formality (L3).
+"""
+typical_items = [
+  "Acta Apostolicae Sedis printings 1931-1975 of liturgical decrees and Mass formularies (e.g. AAS 42 (1950), 46 (1954), 47 (1955), 48 (1956)); the AAS printings examined carry no copyright notice [verified, OCR as lead; AAS 47 (1955) title page and verso read on the page image].",
+  "Ordo Sabbati Sancti instauratus (1951) and Ordo Hebdomadae Sanctae instauratus (1955/56), Vatican typical printings. The Holy Week decree Maxima redemptionis (AAS 47 (1955) p. 840) prescribes the Ordo 'in editione typica Vaticana descriptum' [verified, page image]: the Ordo's text was first published in the Vatican typical edition, not in AAS.",
+  "The Missale Romanum editio typica of 1962 (Typis Polyglottis Vaticanis) for its own new matter first published in it -- the 1960 rubrics as printed, post-1920 sanctoral formularies first published there -- with the Twin Books risk of L3 live, because the book carries no notice [recorded, guidance/missals.md].",
+]
+first_publication_rule = """
+The year that counts is the FIRST publication of the words. A text first
+published in AAS in 1955 and reprinted in the 1962 typical edition is a 1955
+publication; a text the 1962 book reprints from a pre-1931 edition is not this
+record's at all -- it is public domain on the ordinary pre-1931 basis
+(17 U.S.C. 103(b) plus a public-domain witness, missale-romanum-1962-facsimile-
+rights-v1.toml) and must not be marked with this qualified token.
+"""
+excludes = [
+  "Anything first published before 1931: public domain on the ordinary basis (priority 1). Marking it qualified would understate it, and the token refuses it.",
+  "Anything first published 1976 or later: the 2002 editio typica tertia, the 2008 Variationes, all later reprints and new matter (L1).",
+  "The 1970 and 1975 postconciliar typical editions, UNTIL a page image of the specific printing's title verso shows it was published without a United States-effective notice (L3): a 1964-1977 publication with notice was renewed automatically and is protected. The 1970 scan examined lacks its title verso; the 1975 editio altera was not examined. src/sources/inventories/postconciliar-latin-rights-v1.toml governs those editions unchanged.",
+  "Works first published outside Vatican City, including a private publisher's first printing of a Holy See text in Italy or elsewhere (L2).",
+  "Works published under an individual author's name (not researched here; life-plus terms apply).",
+  "Any work shown to carry a United States-effective notice and a renewal registration, and any 1964-1977 work published with notice (L3).",
+  "The canonical permission question in its entirety (L5).",
+]
+
+[limits]
+L1_years = "First publication 1931-1975 inclusive. 1975 has zero margin: twenty years from a 1975 publication ends no later than 31 December 1995 on any counting [inference from art. 29 and art. 30, 'le frazioni di anno giovano all'autore']. 1976 and later fail."
+L2_body = "Created and published under the name AND at the expense of the Holy See or Vatican City (art. 11 wording), first published in Vatican City. A Typis Polyglottis Vaticanis imprint or an AAS printing is taken as satisfying this [inference]; the expense limb was not separately evidenced for any item."
+L3_us_formalities = """
+This record only removes RESTORATION. The work must independently be in the
+United States public domain: (i) published abroad without a United States
+notice -- the majority rule and the Copyright Office's reading; or (ii) published
+1931-1963 with a notice and never renewed. A 1964-1977 publication with notice is
+protected (automatic renewal). In the Ninth Circuit, Twin Books Corp. v. Walt
+Disney Co., 83 F.3d 1162 (9th Cir. 1996), treats a foreign-language work
+published abroad without notice as UNPUBLISHED in the United States, so neither
+the formality lapse nor this record applies there; Cornell's chart (last updated
+1 January 2026) lists that special case -- "Published in a language other than
+English, and without subsequent republication with a copyright notice" ->
+"Treat as an unpublished work" -- and says it "may apply in the rest of the
+country" [verified]. This is the largest residual risk for the no-notice items,
+the 1962 typical edition among them.
+"""
+L4_simultaneous = "104A(h)(6)(D): a United States publication within 30 days of the Vatican one takes the work out of 104A altogether; then United States notice and renewal alone decide, and an unrenewed 1931-1963 United States printing leaves the text public domain without this record. Not a bar in itself. No Vatican first-publication date was verified. The one United States Latin-and-English Holy Week printing found (Benziger, A237569, 21 Feb 1956) is unrenewed; the first United States restored-Holy-Week printings bear 14 February - 21 March 1956 notice dates [verified, CCE], against a decree of 16 November 1955."
+L5_canonical = "This record addresses United States civil copyright only. The canonical permission norms (Postquam Summus Pontifex n. 3; can. 826 section 3) are governed by liturgical-text-publication-policy.md section 8.1 and are untouched. The Holy See's present-day ownership claims (PSP n. 2; the 2005 Secretariat of State decree) are not answered here: they speak to current Vatican law and to canonical permission, not to the 1996 source-country term."
+L6_derivatives = "An English translation is a derivative of its Latin (Copyright Office Circular 14: 'The copyright in a derivative work covers only the additions, changes, or other new material'; 'The unauthorized adaptation of a work may constitute copyright infringement' [verified]). Where this record frees the Latin, a United States English translation is free only if its own copyright lapsed (unrenewed 1931-1963 registration, or published without notice), one printing at a time; it is then carried as `qualified-public-domain` with notices.english_carried. A project study translation over Latin admitted here stays `project-created` and carries notices.english_study. Where this record does not apply, an unrenewed English translation of protected Latin still reproduces protected matter."
+
+# ==============================================================================
+# THE COUNTER-ARGUMENTS, AND WHAT WOULD OVERTURN THE HOLDING
+# ==============================================================================
+
+[against]
+note = "Stated at strength, ranked, because the holding is medium-low and a reader must be able to attack it on its own terms."
+items = [
+  "1. Art. 11 may not reach the Holy See. No authority applies or refuses art. 29 for it (WIPO Lex, Commons, Ius Ecclesiae and web searches found none). The only located doctrinal commentary (J. C. Riofrío Martínez-Villalba, Ius Ecclesiae 24 (2012) 209-232) never mentions arts. 11 or 29 and says 'La legislación vaticana nunca había fijado un plazo de protección', pointing to Berne art. 7 [sourced]. Art. 11 names Italian public-law categories; the Holy See is not Vatican City State; and Law CXXXII art. 5 section 2 had to DEFINE 'Santa Sede', which can be read as filling a gap. If so, 1946-1975 items were not expired on 1 January 1996 and were restored.",
+  "2. Twin Books, for every no-notice foreign-language publication (L3).",
+  "3. A 1964-1977 notice on a given printing (excluded by L3; decisive for the 1970 and 1975 editions).",
+  "4. A RENEWED United States printing within 30 days of the Vatican publication (L4). None found.",
+  "5. Art. 11's 'expense' limb is unproven per item; Italian doctrine mostly treats creation (art. 6) as the original title and art. 11 original ownership as a minority reading [sourced, Riofrío], which a court could use to narrow art. 11.",
+  "6. For 1931-1959 items the received law before 1960 was the 1925 Italian decree (official acts in the public domain; anonymous works fifty years, no State-works term); l. 633 reached them only through art. 199 from 1960 [verified text; application inference].",
+  "7. Law XII art. 1 receives Italian law only so far as it is not contrary to the general principles of canon law and is applicable in Vatican City; one could argue a short term over the Church's liturgical books is inapplicable. No source argues it.",
+  "8. A United States court must find Vatican law under FRCP 44.1 with no Vatican precedent; expert evidence could go either way.",
+]
+
+[what_would_overturn_it]
+items = [
+  "The 2010 Relazione illustrativa to Law CXXXII (cited by Riofrío; not public), a Vatican judgment, or an authoritative Vatican commentary stating that arts. 11/29 of l. 633/1941 did not reach Holy See publications before 2011. The general received terms would then govern (fifty years from publication for anonymous or collective works), and 1946-1975 works were not expired in 1996.",
+  "A reading that art. 11 confers only exploitation rights for twenty years after which individual authors' own rights revive (art. 29's second sentence provides such a reversion only for academies' communications; its first sentence provides none).",
+  "A United States court adopting Twin Books outside the Ninth Circuit, or a showing that a given item was published with a United States-effective notice and renewed (or, for 1964-1977, published with notice at all).",
+  "Evidence of a RENEWED United States publication within 30 days of a Vatican first publication.",
+  "Evidence that a given item was first published outside Vatican City, or not under the Holy See's name and at its expense.",
+]
+what_does_not_overturn_it = [
+  "Vatican Laws N. CXXXII (2011) and N. CXCVII (2017), which fix seventy years: 104A tests the source-country status on 1 January 1996, and a later source-country term does not restore a United States copyright.",
+  "Present-day claims of the Holy See or LEV (the 2005 Secretariat of State decree; Postquam Summus Pontifex n. 2; the 2002 edition's APSA notice): they speak to current Vatican law and canonical permission, not to the 1996 source-country term of a 1931-1975 work.",
+  "The l. 633/1941 art. 5 'official acts' route, which missale-romanum-1962-facsimile-rights-v1.toml refused. This record does not use it, and Vatican Law XII art. 2 independently closes it: from 1960 Vatican law applied copyright protection to the texts of the Holy See's laws and official acts.",
+  "Internet Archive tags, the absence of a work from the Copyright Office's online catalog, or the availability of a download.",
+]
+
+# ==============================================================================
+# THE VATICAN-CITY RECEPTION OF ITALIAN COPYRIGHT LAW, 1929-2017
+# ==============================================================================
+
+[reception]
+note = "Corrects the reception history the 1962 facsimile record stated; see that record's [[corrections]] id holy-see-twenty-year-term-2026-11-14."
+periods = [
+  "1929-1960. Law N. II of 7 June 1929 on the sources of law: art. 3 receives the Kingdom's laws 'in via suppletiva' as in force at its date, so far as applicable; art. 20 c) n. 2 receives the Italian legislation then in force on 'la proprietà artistica e letteraria' [verified, WIPO Lex typed transcription, not the AAS Supplement facsimile]. The Italian law in force on 7 June 1929 was R.D.L. 7 November 1925 n. 1950 (official acts in the public domain, art. 7; life plus fifty, art. 26; anonymous works fifty years from publication, art. 29; no State-works term) [verified, normattiva at 1929-06-08]. l. 633/1941 did NOT reach Vatican City under the 1929 law.",
+  "1960-2011. Law N. XII of 12 January 1960: art. 1 receives the Italian copyright legislation; art. 2 protects Holy See and Vatican City official texts; art. 3 repeals art. 20 c) n. 2 of the 1929 law; art. 4 in force on publication [verified, page image]. l. 633/1941 with arts. 11, 29 and 199 governs. THIS IS THE LAW ON 1 JANUARY 1996. Whether the 1960 reception was static or dynamic (Riofrío and a 2011 L'Osservatore Romano account relayed by the SDB archive both say static) does not matter: arts. 5, 11 and 29 were unchanged throughout.",
+  "2009. Law N. LXXI on the sources of law (in force 1 January 2009): Italian legislation is received only 'previo recepimento'; no change to copyright [verified, Ius Ecclesiae transcription].",
+  "2011-2017. Law N. CXXXII of 19 March 2011: art. 2 official texts protected 'in qualunque forma'; art. 5 sections 1-4 copyright of the Holy See and Vatican City in works 'create o pubblicate sotto il loro nome o realizzate per loro conto', 'Santa Sede' defined to include the dicasteries and organisms of the Roman Curia, SEVENTY years from the year of first publication; art. 8 repeals all earlier copyright provisions [verified, page images].",
+  "2017-. Law N. CXCVII of 1 September 2017, in force 1 October 2017: same arts. 1, 2 and 5 (seventy years) [verified].",
+]
+no_seventy_year_term_before_2011 = "No Vatican term of seventy years existed before Law CXXXII of 2011. On 1 January 1996 the received terms were twenty years from first publication (art. 29), fifty years from first publication for anonymous and collective works (arts. 26-27), and life plus fifty (art. 25)."
+
+# ==============================================================================
+# UNITED STATES ENGLISH IN 1950-1963 HAND MISSALS
+# ==============================================================================
+
+[us_english_witnesses]
+note = """
+Registration-level findings of the r2-rights renewal sweep (Stanford renewal
+dump, NYPL cce-renewals and the Copyright Office bulk renewal file, each
+negative with at least two same-search positive controls) [verified by the
+sub-lane; two negatives and one control re-checked]. A registration listed here
+is NOT yet a carried witness: before any English is carried as
+`qualified-public-domain`, a page image of the scan's copyright leaf must tie the
+printing to the registration and its contents must be confirmed on page images.
+Non-renewal frees only the matter first published in that registration;
+embedded third-party Scripture (CCD Epistles and Gospels, Kleist-Lilly) is a
+separate right.
+"""
+holy_week_unrenewed = ["A233381 NCWC/Prucha 1956", "A225794 Notre Dame 1956", "A243234 Paulist 1956", "A237569 Benziger Latin-English 1956", "A224135 Paluch 1956", "A276899 Paluch 1957", "A228247 Kalvelage 1956", "A262247 Doyle 1956", "A466326 Diekmann/Liturgical Press 1957", "A228111 Conception Abbey 1956", "A279295 St Anthony Guild 1957", "A231789 America Press 1956"]
+daily_missals_unrenewed = ["A216539 Saint Joseph 1955", "A306426 Saint Joseph 1957", "A380062 Saint Joseph 1959", "A653999 Saint Joseph Latin-English 1963", "A50904 Saint Joseph 1950 (medium confidence: thin January-February 1978 renewal records)", "A298956 Maryknoll 1957", "A495470 Maryknoll 1961", "A384861 St. Paul 1955", "A431149 St. Paul 1959", "A524932 St. Paul 1961", "A376611 Blessed Sacrament (Benziger) 1959", "A616849 Jesus, Mary and Joseph (Benziger) 1962", "A574562 Cathedral (Lohmann) 1961", "A438737 Saint Dominic 1960", "A306424 Saint Pius X 1956"]
+excluded = ["A226904 My Holy Week missal: renewed RE220566", "McLaughlin & Reilly A364911, A364912, A383316, A274904: renewed", "Kleist-Lilly New Testament (Doyle 1957, A281743): renewed RE142957", "Saint Andrew Gospels translation AF18729: renewed RE378133", "Saint Andrew Daily Missal base text: Belgian first publication, a URAA question; Lohmann A108251/A273250 free only their US new matter", "A680001 Maryknoll consecutive missal (17 January 1964): outside 1950-1963, not relied on"]
+holy_see_latin_in_the_us = "Zero renewals in the four corpora name LEV, the Vatican Polyglot Press or the Sacred Congregation of Rites as claimant, or Missale Romanum, Ordo Hebdomadae Sanctae, AAS, Missae propriae or the 1960 Rubricae as title. No United States Latin Missale Romanum registration after Benziger A5373 (1945); all Benziger 1942-1945 registrations unrenewed [verified by the sub-lane]."
+
+# ==============================================================================
+# WHAT THIS RECORD SUPERSEDES -- each now points here in a sentence
+# ==============================================================================
+
+[supersedes]
+note = "Narrowed, not deleted. The superseded statements remain where they were made, with a dated pointer to this record; historical review records under workflows/ are left untouched."
+items = [
+  "src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml: the holding's 'PROBABLY PROTECTED ... UNTIL THE END OF 2057' paragraph; [the_underlying_edition].answer; [the_underlying_edition.uraa_conditions].not_expired_in_source_country (a seventy-year Vatican term on 1 January 1996 -- none existed before 2011) and .term_if_restored; [the_underlying_edition.the_official_acts_argument].what_it_is (l. 633/1941 came in by Law XII of 1960, not by the 1929 Law on Sources); [the_underlying_edition.routes_examined_and_refused].renewal_search; [the_underlying_edition.what_is_new_matter]; [the_underlying_edition.verdict]; [what_would_change_the_answer] items 2 and 4. Corrected in place with dated notes and a [[corrections]] entry.",
+  "guidance/missals.md section 5: the bullet 'URAA restoration ... the mechanism that actually protects twentieth-century Holy See printings in the US' and the 1962 paragraph 'The underlying edition is probably in copyright until the end of 2057'.",
+  "guidance/propers-for-agents.md 'The 1962 Latin: what you may publish, and on what basis': the bullet 'The 1962 Vatican editio typica is probably protected in the United States to the end of 2057 by URAA restoration' and the list of what must not be published from the facsimile.",
+  "guidance/liturgical-text-publication-policy.md section 15.3: 'URAA restoration' among the missals.md section 5 findings that still stand.",
+  "src/sources/inventories/canon-law-acts-v1.toml [withheld].holy-see-post-1929: its reason rests on Law CXCVII (2017), which does not govern the 1996 test. Every row it labels is 1983 or 1990 law (outside this record's years), so no row changes; the label's reason now points here.",
+  "src/sources/inventories/missal-acquisition-audit-v1.toml: its definition of the holy-see-post-1929 label ('protected in the United States by URAA restoration'), for its ordo-hebdomadae-sanctae-1956 and missale-romanum-1962-typica rows. A dated pointer narrows it; the rows' may_publish_text still describes the books.",
+  "guidance/recensions.md section 9.7: 'the 1960 code, which is holy-see-post-1929 and cite-only'. A dated pointer narrows it.",
+  "src/sources/calendars/roman-pre-1955/propers.yaml: its Holy Week coverage note repeats the audit's holy-see-post-1929 label for the 1956 Ordo Hebdomadae Sanctae. Left unedited -- calendar data is owned by the lanes that admit texts, and the note's cited source (the audit row) now carries the pointer; the next edit of that note should cite this record.",
+]
+not_superseded = [
+  "src/sources/inventories/postconciliar-latin-rights-v1.toml: its withholding of new or changed postconciliar matter, and of the 1970 and 1975 states until L3 is evidenced for the printing, stands; 2002 and 2008 are outside the years. Its [scope_partition] now points here for unchanged 1931-1975 Holy See wording ([later_typical_editions]).",
+  "The 17 U.S.C. 103(b) plus public-domain-witness route for preexisting material (missale-romanum-1962-facsimile-rights-v1.toml): it remains the priority-1 basis and is always preferred where a pre-1931 witness carries the words.",
+  "Published 1962 propers scope prose that restates 'to the end of 2057' (src/claude/liturgy/roman-rite/1962/propers/temporal/48-55*/ and the ordinary research note of 2026-07-27): those are dated publication records of their own lanes, true of the record they cite when written; they are corrected when those publications are next revised, not here.",
+]
+
+# ==============================================================================
+# EVIDENCE -- every item fetched whole on 2026-11-14 by the r2-rights lane
+# ==============================================================================
+
+[evidence]
+note = "The legal sources are registered, text-free and hash-only, in the source library (see [source_library]). Bytes were not committed: no redistribution basis was established for the WIPO Lex scans, the normattiva pages or the vaticanstate.va PDF."
+
+[[evidence.item]]
+what = "17 U.S.C. 104A(h)(2), (h)(6), (h)(8)"
+url = "https://www.copyright.gov/title17/92chap1.html#104a (tracked, retrieved 2026-10-21); cross-read at https://www.law.cornell.edu/uscode/text/17/104A"
+retrieved = "2026-10-21; 2026-11-14"
+sha256 = ["97999d678e2877c8142da81a0dce819b210e9f92aa5a405d130bf2f2e50c7d75 (copyright.gov Chapter 1, tracked)", "b38ba15fd631622f05eb23e41d27d299f6ee9576914dd94ddaabe9c5bc7c9d55 (LII)"]
+level = "verified"
+
+[[evidence.item]]
+what = "Vatican Law N. XII of 12 January 1960 on copyright, arts. 1-4 (page image read)"
+url = "https://wipolex-res.wipo.int/edocs/lexdocs/laws/it/va/va002it.pdf (WIPO Lex legislation/details/9256)"
+retrieved = "2026-11-14"
+sha256 = ["06bc81ab5ed6658f1f33f9bd5a64a017ba1e715cec1b4890e570c6adce069ab1"]
+level = "verified"
+
+[[evidence.item]]
+what = "l. 633/1941 arts. 5, 11, 29, 199 as in force on 1 January 1996 (normattiva point-in-time view, '...;633~artN!vig=1996-01-01')"
+url = "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-22;633~art11!vig=1996-01-01 (and ~art5, ~art29, ~art199)"
+retrieved = "2026-11-14"
+sha256 = ["59b548ad17a4ef2a7ea898fed0025aa79770e98bf321003f306fec14659fb988 (art. 5)", "8248ba23b6602bce710badfafdd51d4a7ef07f9454c96f2e4e9e063a15ffee23 (art. 11)", "80a0183608f40b333a8d0c36071444137834be3bcc3b1698c97fbb530553a0c9 (art. 29)", "b631bf6636e7fdb7d5984804a5860bcc49aa60b3396ec6cf421e58ae2571835c (art. 199)"]
+level = "verified"
+
+[[evidence.item]]
+what = "l. 633/1941 arts. 26, 27, 30 as in force on 1 January 1996 (collective and anonymous works fifty years from first publication; counting from the year of publication, periodicals from the end of each year)"
+url = "https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1941-04-22;633~art26!vig=1996-01-01 (and ~art27, ~art30)"
+retrieved = "2026-11-14"
+sha256 = ["6e035b2a9021d46f1cb4a55ce9af7f4456064c780d12b8a695d106a21201e427 (art. 26)", "0d77ed5be91708faabfe149fc6635907d2030c4d33edab0d48ce87f32b198b66 (art. 27)", "5f3fa5d880fae25baa484bd588afaab38ca344afdf3af89e0269bd3d605bc634 (art. 30)"]
+level = "verified"
+
+[[evidence.item]]
+what = "Vatican Law N. CXXXII of 19 March 2011, arts. 2, 5 sections 1-4, 8 (page images read)"
+url = "https://wipolex-res.wipo.int/edocs/lexdocs/laws/it/va/va003it.pdf (WIPO Lex legislation/details/9257)"
+retrieved = "2026-11-14"
+sha256 = ["7534b64b8e0e3807c7e40fd5b64cf9b729f4b934984e16398bf7d14ceb75ace7"]
+level = "verified"
+
+[[evidence.item]]
+what = "Vatican Law N. II of 7 June 1929 on the sources of law, arts. 3 and 20 c) 2) (WIPO Lex typed transcription)"
+url = "https://wipolex-res.wipo.int/edocs/lexdocs/laws/it/va/va008it.pdf (WIPO Lex legislation/details/9294)"
+retrieved = "2026-11-14"
+sha256 = ["d3b883f7aa64b15d3cc75f4e97eb38bd4efda87f847bba3961c8b705ecb93ea7"]
+level = "verified (transcription, not the AAS Supplement facsimile)"
+
+[[evidence.item]]
+what = "Vatican Law N. CXCVII of 1 September 2017, arts. 1, 2, 5, 8"
+url = "https://www.vaticanstate.va/phocadownload/leggi-decreti/normativa-altre-materie/Legge%20N.%20CXCVII%20All.%2025.pdf"
+retrieved = "2026-11-14"
+sha256 = ["9654273b114bf3cad2b8003b7b74c6f10f334f203788b9f8d48b88173baf8df7"]
+level = "verified"
+
+[[evidence.item]]
+what = "Copyright Office Circular 38a (revised 10/2026): Holy See -- Berne (Paris) Sept. 12, 1935; UCC Geneva Oct. 5, 1955; Phonograms July 18, 1977; UCC Paris May 6, 1980"
+url = "https://www.copyright.gov/circs/circ38a.pdf"
+retrieved = "2026-11-14"
+sha256 = ["e327704341028fcdbe6bd42211690666fad85af8fe009e6f204e4946e5f3f2d0"]
+level = "verified"
+
+[[evidence.item]]
+what = "Copyright Office Circular 14, Copyright in Derivative Works and Compilations"
+url = "https://www.copyright.gov/circs/circ14.pdf"
+retrieved = "2026-11-14"
+sha256 = ["928aa3a506f94d5772bad430bbb01ff54aec812194aff33d3aab6b95a2ceffc1"]
+level = "verified"
+
+[[evidence.item]]
+what = "Hirtle, Copyright Term and the Public Domain in the United States (Cornell, last updated 1 January 2026): 1931-1977 works published abroad, and the Twin Books special case"
+url = "https://copyright.cornell.edu/publicdomain"
+retrieved = "2026-11-14"
+sha256 = ["bc8a453794e39e842e91806ba01e694fa0c33843ad78ab61034a5bc97b38752d"]
+level = "verified (text read; a secondary source on the law)"
+
+[[evidence.item]]
+what = "J. C. Riofrío Martínez-Villalba, commentary on Law CXXXII, Ius Ecclesiae 24 (2012) 209-232: Law XII received the Italian law in force in 1960; does not discuss art. 29"
+url = "https://iusecclesiae.it/article/download/1985/503/438"
+retrieved = "2026-11-14"
+sha256 = ["5620196858f2113688aa652f8beca760556c57f7054af47d163766c727d65e7d"]
+level = "sourced"
+
+[[evidence.item]]
+what = "Regione Siciliana circular (2005): publications of the Italian public administration, academies, public cultural bodies and non-profit bodies protected for 20 years from first publication"
+url = "https://www2.regione.sicilia.it/beniculturali/dirbenicult/info/news/circolari2005/Circolaredirittoautore.pdf"
+retrieved = "2026-11-14"
+sha256 = ["c455e343d0f6600d68cae14ecd6d206b8286c959615387d72a9dca532da2b168"]
+level = "sourced"
+
+[[evidence.item]]
+what = "AAS 47 (1955) and sibling volumes 42 (1950), 46 (1954), 48 (1956), 54 (1962): no copyright notice string in the OCR; AAS 47 title page and verso carry none (page image); Maxima redemptionis at p. 840"
+url = "https://www.vatican.va/archive/aas/documents/AAS-47-1955-ocr.pdf (and the four sibling volumes)"
+retrieved = "2026-11-14"
+sha256 = ["87faf82170a12abb564990fb189f289258327b1279469768be4af4883eb74d58 (1955)"]
+level = "verified (OCR of four volumes is a lead; one title opening and p. 840 read on the image)"
+
+[source_library]
+note = "Text-free registrations of the controlling legal sources. The WIPO Lex scans are restricted (hash-only: Law XII art. 2 and Law CXXXII art. 2 assert protection over the laws' own texts and WIPO's terms were not reviewed); the normattiva pages are remote and unresolved (portal terms not reviewed; single-article point-in-time fetches, a bound each artifact states); 17 U.S.C. 104A is a passage on the tracked, public-domain copyright.gov Title 17 Chapter 1 artifact."
+vatican_law_xii_1960 = [
+  "artifact.vatican-city-state.law-xii-1960-copyright.1960-printed-italian-text.wipo-lex-scan-pdf-06bc81ab",
+  "passage.vatican-city-state.law-xii-1960-copyright.1960-printed-italian-text.art-1",
+  "passage.vatican-city-state.law-xii-1960-copyright.1960-printed-italian-text.art-2",
+  "passage.vatican-city-state.law-xii-1960-copyright.1960-printed-italian-text.art-3",
+  "passage.vatican-city-state.law-xii-1960-copyright.1960-printed-italian-text.art-4",
+]
+italian_law_633_1941_at_1996 = [
+  "edition.italy.law-633-1941-copyright.2026-11-14-normattiva-vigente-1996-01-01",
+  "passage.italy.law-633-1941-copyright.2026-11-14-normattiva-vigente-1996-01-01.art-5",
+  "passage.italy.law-633-1941-copyright.2026-11-14-normattiva-vigente-1996-01-01.art-11",
+  "passage.italy.law-633-1941-copyright.2026-11-14-normattiva-vigente-1996-01-01.art-26",
+  "passage.italy.law-633-1941-copyright.2026-11-14-normattiva-vigente-1996-01-01.art-27",
+  "passage.italy.law-633-1941-copyright.2026-11-14-normattiva-vigente-1996-01-01.art-29",
+  "passage.italy.law-633-1941-copyright.2026-11-14-normattiva-vigente-1996-01-01.art-30",
+  "passage.italy.law-633-1941-copyright.2026-11-14-normattiva-vigente-1996-01-01.art-199",
+]
+vatican_law_cxxxii_2011 = [
+  "artifact.vatican-city-state.law-cxxxii-2011-copyright-and-related-rights.2011-tipografia-vaticana-printing.wipo-lex-scan-pdf-7534b64b",
+  "passage.vatican-city-state.law-cxxxii-2011-copyright-and-related-rights.2011-tipografia-vaticana-printing.art-1",
+  "passage.vatican-city-state.law-cxxxii-2011-copyright-and-related-rights.2011-tipografia-vaticana-printing.art-2",
+  "passage.vatican-city-state.law-cxxxii-2011-copyright-and-related-rights.2011-tipografia-vaticana-printing.art-5",
+  "passage.vatican-city-state.law-cxxxii-2011-copyright-and-related-rights.2011-tipografia-vaticana-printing.art-8",
+]
+us_code_104a = [
+  "passage.united-states-code.copyright-chapter-1.2026-10-21-official-web.section-104a-h-2-6-8",
+]
+
+[payload_guard]
+contains_liturgical_payload = false
+contains_source_quotation = "statute and commentary text only"

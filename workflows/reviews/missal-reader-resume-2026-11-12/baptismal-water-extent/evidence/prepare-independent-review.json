@@ -1,0 +1,292 @@
+{
+  "schema": "triptych-independent-water-adopted-readonly-codejoin-review/v1",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "verdict": "PASS: exact actual source-adoption join, read-only preparation and bounded durable mapping",
+  "independent_checks_passed": 160,
+  "failures": 0,
+  "inputs": [
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/prepare.py",
+      "sha256": "111b24964608b667df8681d51641ed644f203050e61c00392584461bff4a9732",
+      "byte_size": 16891
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v5/guarded-install.py",
+      "sha256": "1669f57dc53085e50864327c95762ace9648c2e8dbbfa669ec070e46b8f6d70e",
+      "byte_size": 15765
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/current-read-map/read-map.json",
+      "sha256": "6d6f4baefbaa22ea853852900eeb404e23e3a5ac8d76118ca2ec38f9d453500a",
+      "byte_size": 57373
+    },
+    {
+      "path": ".scratch/root/baptismal-water-v5-source-adoption.json",
+      "sha256": "e5247c34f6f5ef9aa200533b3e106aa0f7617723885f7a259fb6c8215b93a087",
+      "byte_size": 8888
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/candidate-manifest.json",
+      "sha256": "0b67bd8d762597780057f9c3b568ddf89d052f4186601dfa97191007b989e9f0",
+      "byte_size": 22017
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/positive-transition-proposal.json",
+      "sha256": "52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2",
+      "byte_size": 55229
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/driver-validation.json",
+      "sha256": "405a9538a9610a1ce6dd8090b44fb7410f0045fc221cf8488d3588de8152978e",
+      "byte_size": 2670
+    }
+  ],
+  "verification": {
+    "path": ".scratch/roman-sources/baptismal-water-independent-review/adopted-read-only/verification.json",
+    "sha256": "9f84992100f529edfe1f31d12101e9cdeff145878ae1d195b0d168447d143966",
+    "byte_size": 22658
+  },
+  "durable_verification": {
+    "path": ".scratch/roman-sources/baptismal-water-independent-review/adopted-read-only/durable-verification.json",
+    "sha256": "533be9aaf32db20b47b28f0a4ee852a218f5be84e34955fc34b9c0514ed15167",
+    "byte_size": 14285
+  },
+  "audit_scripts": [
+    {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/adopted-read-only/audit.py",
+      "sha256": "f80732e0d64164a6520c782c20f7df754f03fff993ce95b266eb0fb331f51558",
+      "byte_size": 10809
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/adopted-read-only/audit-durable.py",
+      "sha256": "862a4a70d0abbafd1acedc81010e2098e7e1cfce92d819a7d11b11ef51804bd9",
+      "byte_size": 4832
+    }
+  ],
+  "actual_root_source_adoption_sha256": "e5247c34f6f5ef9aa200533b3e106aa0f7617723885f7a259fb6c8215b93a087",
+  "findings": [
+    "Local Root record is byte-identical to the actual source-adoption record. The driver checks its exact hash, accepted schema/status, target/Latin identity, candidate/transition pins, all six source declarations, owner-splice hashes, verification-note extent and the exact three passing independent reviews. Actual read-only adoption_controls accepts the intended data and rejects three source/owner/note mutations.",
+    "All eleven preexisting helper ASTs are unchanged. Removing only the adoption call and its read-map metadata restores the full v5 prepare AST. No application option, application preflight/write branch, atomic canonical replacement or args.apply path remains. The isolated parser prefix refuses --apply at normal and optimized execution before file access.",
+    "Main constrains a fresh output beneath scratch and rechecks all consumed input bytes plus new-source absence before writing its scratch outputs. No live preparation rerun or canonical mutation was performed in this review.",
+    "The exact current map matches the approved v5 semantic rows and body hashes. Six new source files remain byte-exact; only one proper text/note pair, one Latin source row, one English witness note and one existing verification note change. Complete parsed-object comparisons and exact raw inverses preserve all other calendar/ledger bytes. Historical English remains SHA942ea5bc… and final Latin SHA82487ee7….",
+    "Durable mapping contains exactly ten evidence files: eight byte-identical originals, one expressly labelled selected-control projection, and its proof. All original and projection digests/fields match. The six source files are mapped once to their canonical source destinations; the single verification-note operation has exact old/new raw hashes. No binaries, full-owner postimage delivery, recursive exports or English supplement are included."
+  ],
+  "current_map": "6d6f4baefbaa22ea853852900eeb404e23e3a5ac8d76118ca2ec38f9d453500a",
+  "current_owner_pins": [
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "sha256": "62f383398a475cc4b728bbcb4fe1a7c5d4332bfad273f9aabd81b51e6191501e"
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "sha256": "7125c247780bd79669d092f54d6280bc97cdec23a422faeb5ab3d48dc8381626"
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "sha256": "dfaea2a57da61581df6d39812000ec62a2b7f220193c761d8dd1f93b10e7939b"
+    },
+    {
+      "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+      "sha256": "b8ce7d0a845b00ada0201bc42bbd734852d7409d3ec1aa7fa08cdeff2656804f"
+    }
+  ],
+  "final_outputs": [
+    {
+      "canonical_path": "src/sources/calendars/roman-1962/propers.yaml",
+      "postimage_path": "postimages/src/sources/calendars/roman-1962/propers.yaml",
+      "before_sha256": "62f383398a475cc4b728bbcb4fe1a7c5d4332bfad273f9aabd81b51e6191501e",
+      "after_sha256": "1145ba74e32bc128412c239d2237ac853b9763f1afec84aa80714acbc1e6183a",
+      "byte_size": 2688328
+    },
+    {
+      "canonical_path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "postimage_path": "postimages/src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "before_sha256": "7125c247780bd79669d092f54d6280bc97cdec23a422faeb5ab3d48dc8381626",
+      "after_sha256": "3c878613f4127fc7bb2aaa8880d1b8e5b232a8495798e543e76cc6ef1970fdc1",
+      "byte_size": 5531288
+    },
+    {
+      "canonical_path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "postimage_path": "postimages/src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "before_sha256": "dfaea2a57da61581df6d39812000ec62a2b7f220193c761d8dd1f93b10e7939b",
+      "after_sha256": "dcc0e3f17b51c5f9f85b53ce1e70f127d1f18e17c400bb1c0ef6f6c643b424dc",
+      "byte_size": 3588334
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "postimage_path": "postimages/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "before_sha256": null,
+      "after_sha256": "764b4c8a3bf50357778f674a2efebe8989f8dbb34666cde6e5eb4940259ec3bc",
+      "byte_size": 1376
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "postimage_path": "postimages/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "before_sha256": null,
+      "after_sha256": "ed338c41af82e199a27f857a3af0b4874b8f7c0a8dce5405c22c4b65fd59e35c",
+      "byte_size": 1282
+    },
+    {
+      "canonical_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+      "postimage_path": "postimages/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+      "before_sha256": "b8ce7d0a845b00ada0201bc42bbd734852d7409d3ec1aa7fa08cdeff2656804f",
+      "after_sha256": "437e746040481c25ea879dce4df782234aa85307f71a288c08e0bc92313c176f",
+      "byte_size": 2136
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "postimage_path": "postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "before_sha256": null,
+      "after_sha256": "6903fd813f56a15aab429f435580a45af8a2df573d5885836ea4a879b9438cad",
+      "byte_size": 3166
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "postimage_path": "postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "before_sha256": null,
+      "after_sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+      "byte_size": 4383
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "postimage_path": "postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "before_sha256": null,
+      "after_sha256": "6922a40f5fdd2b670114eebdcfc1ef3b1d48e2ec61f44aaf09453896e8cf3eb6",
+      "byte_size": 877
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "postimage_path": "postimages/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "before_sha256": null,
+      "after_sha256": "e62aab8e1aac89968eafc2e490152290f88a0fb031d938ba059ab9db23178a65",
+      "byte_size": 1511
+    }
+  ],
+  "durable_map": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/durable-map.json",
+    "sha256": "351641d4776c18a7782bde72ba0321bb0644cc646b7f6e138a9e6c285940009f",
+    "byte_size": 12540
+  },
+  "durable_evidence_files": [
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/candidate-manifest.json",
+        "sha256": "0b67bd8d762597780057f9c3b568ddf89d052f4186601dfa97191007b989e9f0",
+        "bytes": 22017
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/candidate-manifest.json",
+      "kind": "Byte-identical original; already public-safe",
+      "original_sha256": "0b67bd8d762597780057f9c3b568ddf89d052f4186601dfa97191007b989e9f0",
+      "transformation": "None. Relative original evidence locators remain unchanged."
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/positive-transition-proposal.json",
+        "sha256": "52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2",
+        "bytes": 55229
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/positive-transition-proposal.json",
+      "kind": "Byte-identical original; already public-safe",
+      "original_sha256": "52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2",
+      "transformation": "None. Relative original evidence locators remain unchanged."
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/evidence/root-source-adoption.json",
+        "sha256": "e5247c34f6f5ef9aa200533b3e106aa0f7617723885f7a259fb6c8215b93a087",
+        "bytes": 8888
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/evidence/root-source-adoption.json",
+      "kind": "Byte-identical original; already public-safe",
+      "original_sha256": "e5247c34f6f5ef9aa200533b3e106aa0f7617723885f7a259fb6c8215b93a087",
+      "transformation": "None. Relative original evidence locators remain unchanged."
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/evidence/source-review.json",
+        "sha256": "0abbcd83ca64cd2b861026bf76cbbb0b06a333fcaf2ba269749e41a95d0377fc",
+        "bytes": 45676
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/evidence/source-review.json",
+      "kind": "Byte-identical original; already public-safe",
+      "original_sha256": "0abbcd83ca64cd2b861026bf76cbbb0b06a333fcaf2ba269749e41a95d0377fc",
+      "transformation": "None. Relative original evidence locators remain unchanged."
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/evidence/v4-review.json",
+        "sha256": "1889c1b391ea9337e7cf8b1634bff8d911c213a48d241a44ac1e7d7aaac6d527",
+        "bytes": 5945
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/evidence/v4-review.json",
+      "kind": "Byte-identical original; already public-safe",
+      "original_sha256": "1889c1b391ea9337e7cf8b1634bff8d911c213a48d241a44ac1e7d7aaac6d527",
+      "transformation": "None. Relative original evidence locators remain unchanged."
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/evidence/v5-review.json",
+        "sha256": "3910848d967e765856dded9d8d5e243324ae2ea6a308f3ded5f5a55fe2e6de3e",
+        "bytes": 3417
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/evidence/v5-review.json",
+      "kind": "Byte-identical original; already public-safe",
+      "original_sha256": "3910848d967e765856dded9d8d5e243324ae2ea6a308f3ded5f5a55fe2e6de3e",
+      "transformation": "None. Relative original evidence locators remain unchanged."
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/prepare.py",
+        "sha256": "111b24964608b667df8681d51641ed644f203050e61c00392584461bff4a9732",
+        "bytes": 16891
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/prepare.py",
+      "kind": "Byte-identical original; already public-safe",
+      "original_sha256": "111b24964608b667df8681d51641ed644f203050e61c00392584461bff4a9732",
+      "transformation": "None. Relative original evidence locators remain unchanged."
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/driver-successor.json",
+        "sha256": "58256c1ab09923a5adf1e522c3fdf115c83c3cf61dce4606c702049bef2e459b",
+        "bytes": 1827
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/driver-successor.json",
+      "kind": "Byte-identical original; already public-safe",
+      "original_sha256": "58256c1ab09923a5adf1e522c3fdf115c83c3cf61dce4606c702049bef2e459b",
+      "transformation": "None. Relative original evidence locators remain unchanged."
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/prepared-map-controls.projection.json",
+        "sha256": "6c11dd42e2834a7c971955d58d6aae7dfa6a5b77d5a96f3a10a297839d35994f",
+        "bytes": 12776
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/prepared-map-controls.projection.json",
+      "kind": "Explicit selected-control projection",
+      "original_read_map_sha256": "6d6f4baefbaa22ea853852900eeb404e23e3a5ac8d76118ca2ec38f9d453500a"
+    },
+    {
+      "source": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/adopted-read-only/public/public-evidence-proof.json",
+        "sha256": "00668c03c9e6a31c2ef49be395eedf652091638293e50c1b0e18ef64e531ab08",
+        "bytes": 3044
+      },
+      "destination": "workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent/public-evidence-proof.json",
+      "kind": "Projection and verbatim-copy verification"
+    }
+  ],
+  "qualifications": [
+    "Root source adoption is actual and bounded to the printed Latin/source-note extent. It is not source_epoch activation, an ending/helper expansion or complete Vigil/English/performed-rite approval.",
+    "Current input hashes matched at review. Any later owner drift requires fresh semantic preparation; stale complete owner snapshots must not be replayed.",
+    "The publicly archived prepare.py is audit evidence, not a registered tool or self-contained runnable public package. Its prepared source tree remains scratch-only, as the explicit mapping states. Internal scratch links in copied originals are historical evidence references."
+  ],
+  "blockers": [],
+  "limits": [
+    "Read-only actual adoption function, isolated parser refusal, AST comparison and current staged-byte inverse audit. No preparation run on live root, actual driver application, source-image reread, English/rights re-review, source_epoch activation, canonical write or hardlink.",
+    "Read/hash/selected-field comparison only; no copies into canonical paths. Archived public driver is audit evidence and has no complete runnable public prepared tree. Relative scratch pointers remain historical evidence locators. No transitive copying, binaries, full-owner postimage delivery or English supplement included."
+  ],
+  "canonical_writes": 0,
+  "authority_writes": 0,
+  "hardlinks_created": 0
+}

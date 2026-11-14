@@ -75,7 +75,8 @@ def is_witness_state_body(latin: object) -> bool:
     return (is_public_context(context)
             and latin.get("withheld") is False
             and publication.get("status") == "permitted"
-            and publication.get("basis") in {"public-domain", "project-created", "permission", "licensed"}
+            and publication.get("basis") in {"public-domain", "project-created", "permission", "licensed",
+                                             "qualified-public-domain"}
             and provenance.get("status") == "collated"
             and provenance.get("relationship") in LATIN_TARGET_RELATIONSHIPS)
 
