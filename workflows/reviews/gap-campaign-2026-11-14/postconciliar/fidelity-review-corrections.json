@@ -1,0 +1,161 @@
+{
+ "recorded_on": "2026-11-14",
+ "review": {
+  "path": "gap-campaign/fidelity-review/review.json",
+  "sha256": "c04e1c61b62adaa2e598d59c49967b688aced4e3b24ee85b774012b8bb97908e",
+  "verdicts": {
+   "ok": 220,
+   "minor": 8,
+   "major": 1
+  }
+ },
+ "direction": "Coordinator, 2026-11-14: apply the review's minor corrections as given, replace the Basil & Gregory Lasance English with project study English, store the OT13 Prayer after Communion Latin cue at the target's printed extent.",
+ "english": [
+  {
+   "calendar": "postconciliar",
+   "mass": "easter-sunday",
+   "proper": "Prayer after Communion",
+   "verdict": "minor",
+   "old_sha256": "5717c6531507d81d97bfd232125bd6ead3ace478558eab650318ecc7dcb4649c",
+   "new_sha256": "03edaf2eac09e90088d724c47561dd5fe3a6902ad4268425f7919d38e538c0a8",
+   "problem": "English adds 'R. Amen.' after the conclusion; the target prints only the cue 'Per Christum.' (the other English-only Prayers after Communion in this campaign, e.g. OT-13, stop at 'Through Christ our Lord.').",
+   "artifact_files": "study-English artifact body, artifact record and passage updated to the corrected text"
+  },
+  {
+   "calendar": "postconciliar",
+   "mass": "mass-of-the-lords-supper",
+   "proper": "Prayer after Communion",
+   "verdict": "minor",
+   "old_sha256": "65098927cff1467bd35ad411fc3d315ce882e59b3c08b708c4ad0f4f5eea192c",
+   "new_sha256": "ff719dfde562b5e83c97c47f542afa0f449fd5010d48436d73dd7714563148ea",
+   "problem": "'aeterna' agrees with the understood 'Cena'; 'filled with the eternal' leaves the referent unresolved (antecedent lost)."
+  },
+  {
+   "calendar": "postconciliar",
+   "mass": "good-friday",
+   "proper": "Solemn Intercession II: For the Pope",
+   "verdict": "minor",
+   "old_sha256": "c240eaacda3d09254b6c6c2955b7ace1ceffcdf8a38f44d59a2bba6922da4e30",
+   "new_sha256": "4fc0c2dc80d877d0f4b770c8dec898b6106e8088836fbba855a8f662ae7f1960",
+   "problem": "'qui elegit eum in ordine episcopatus' (ablative) is 'chose him in the order of the episcopate', not 'for the order of bishops' (purpose/destination); the 1962 study English of the same clause ([good-friday Solemn Intercessions]) already reads 'in the order of the episcopate'."
+  },
+  {
+   "calendar": "postconciliar",
+   "mass": "good-friday",
+   "proper": "Improperia",
+   "verdict": "minor",
+   "old_sha256": "3c71f7263433c59e34c4a82ec5b376018011cd8a7159b8e874a02696820f13f2",
+   "new_sha256": "90bcda89539033c0aad7b8e64e702a05e25f56829b721379a1e850753a97a8d9",
+   "problem": "(1) Trisagion: 'Sanctus Fortis' / 'Sanctus Immortalis' are substantival vocatives ('Holy Strong One', 'Holy Immortal One'); 'Holy and Strong' / 'Holy and Immortal' insert 'and' and turn the titles into paired adjectives (x3 each). (2) 'et tu me flagellatum tradidisti': perfect participle = 'you handed me over, scourged', not 'to be scourged' (that would be flagellandum)."
+  },
+  {
+   "calendar": "postconciliar",
+   "mass": "easter-3-friday",
+   "proper": "Entrance Antiphon",
+   "verdict": "minor",
+   "old_sha256": "748cb35f543fe83005a7f64e07828b4237873a83f5945ae9fca688b308f71eb2",
+   "new_sha256": "f0f0998f67a4d24be2c35eec4152bd410374a9ebeb41a6125b9063c8fbdf826e",
+   "problem": "Without a comma after 'slain' the infinitive can be read as the purpose of the slaying; the Latin sets 'qui occisus est' off with commas."
+  },
+  {
+   "calendar": "postconciliar",
+   "mass": "easter-5-friday",
+   "proper": "Entrance Antiphon",
+   "verdict": "minor",
+   "old_sha256": "748cb35f543fe83005a7f64e07828b4237873a83f5945ae9fca688b308f71eb2",
+   "new_sha256": "f0f0998f67a4d24be2c35eec4152bd410374a9ebeb41a6125b9063c8fbdf826e",
+   "problem": "Same as easter-3-friday Entrance Antiphon: comma needed after 'slain'."
+  },
+  {
+   "calendar": "postconciliar",
+   "mass": "advent-2",
+   "proper": "Collect",
+   "verdict": "minor",
+   "old_sha256": "73b895239bc510c243fcf8139e1ce068c151dfc94917b9125cec917a75ff06a6",
+   "new_sha256": "8bb8d5cd304703737f5cb36a5d2bcc5bedce4fe1b94fec4c726698df1b942ec2",
+   "problem": "'festinantes' (acc. pl., object of impediant) refers to the same 'nos' as the second clause; 'those hastening' makes it third person and breaks the reference to 'us'."
+  },
+  {
+   "calendar": "roman-1962",
+   "mass": "easter-vigil",
+   "proper": "Exsultet (Praeconium paschale)",
+   "verdict": "minor",
+   "old_sha256": "f4eaae861a3bb2c1e698bf343fb2d39c245f3bab9a51cb41ab4d6fa0966c6847",
+   "new_sha256": "75fcbb29318e6e8e262ce4302f8bc18162dad30800e68ca1a2b17a59dba6269f",
+   "problem": "'ad tam miram huius sancti luminis claritatem': 'tam' (so) is not rendered."
+  }
+ ],
+ "withdrawn_entries": [
+  {
+   "mass": "saints-basil-great-gregory-nazianzen-bishops",
+   "proper": "Entrance Antiphon",
+   "verdict": "major",
+   "problem": "Transcription is exact (Lasance PDF p. 1343, printed 1321, image read), but the English does not render the target Latin in its last clause: 'nomina autem eorum vivent in saeculum saeculi' ('for ever and ever') is given as 'their names shall live unto generation and generation', which is the Douay rendering of the Vulgate Ecclus 44:14 'in generationem et generationem' - a different Latin. Fails the clause-by-clause test of DECISIONS 9d; the antecedent route requires the English to render the identical Latin.",
+   "withdrawn_entry": {
+    "mass": "saints-basil-great-gregory-nazianzen-bishops",
+    "form_id": "main",
+    "proper": "Entrance Antiphon",
+    "cycle": "all",
+    "occurrence": 1,
+    "witness": "lasance-1945-printing-1946",
+    "witness_relation": "antecedent",
+    "relation": "antecedent-printing",
+    "printed_page": "1321",
+    "ia_leaf": 1342,
+    "ia_leaf_range": [
+     1342,
+     1342
+    ],
+    "artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d",
+    "passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-source",
+    "collated": "page-image, complete historical body, 2026-11-14",
+    "collation_result": "confirmed",
+    "publication_artifact_id": "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-english",
+    "publication_artifact_sha256": "a144a784adf80d59c9681d1732d44c98c953a47531824c4c9f7a841122c70560",
+    "publication_passage_id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-publication",
+    "witness_note": "Historical human English for study, printed p. 1321, PDF page [1343], IA leaf [1342], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon Sapientiam of the Common of Several Martyrs, bounded before Ecclus. 44, 32. The Latin it translates agrees word for word with the target Latin under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged.",
+    "translations": [
+     {
+      "lang": "en",
+      "rights": "public-domain",
+      "source_id": "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946",
+      "text": "Let the people show forth the wisdom of the saints, and the church declare their praise; and their names shall live unto generation and generation."
+     }
+    ]
+   },
+   "replacement": {
+    "relation": "verbatim",
+    "rights": "project-created",
+    "text_sha256": "d2f179d2d17a6c2da05c204d5aec7917d81ea2273462d9717c401f9e4d3198fb"
+   }
+  }
+ ],
+ "latin": [
+  {
+   "calendar": "postconciliar",
+   "mass": "ot-13",
+   "proper": "Prayer after Communion",
+   "change": "conclusion stored at the printed cue Per Christum.",
+   "old_text_sha256": "f2d5c07c95d53b0505ea69daed444f8fcba37d669e10e069a4a86a13244502ec",
+   "new_text_sha256": "88d183be4ac742b05e94f8c71ae9296907b651d4386fb4a6354de4eed82879cb",
+   "carrier_from": "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.ot-13-postcommunion-f2d5c07c",
+   "carrier_to": "artifact.triptych.postconciliar-latin-proper-editorial-projection.2026-11-14-holy-see-qualified.ot-13-postcommunion-88d183be",
+   "old_carrier_record_sha256": "5c30bb445415608cd10414978a3c89685d10220fa8d7d23b7a2831d868f33c91",
+   "bound_study_english": "source_latin_sha256 and source_latin_publication_source_ids follow the new carrier"
+  }
+ ],
+ "removed_records": [
+  {
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-source",
+   "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-source.toml",
+   "sha256": "396b8d33b026cd25eea1e1ed8727c847107069ef5f8ab0775942873c178d2d43",
+   "reason": "referenced only by the withdrawn Lasance entry"
+  },
+  {
+   "id": "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-publication",
+   "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/passages/gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-publication.toml",
+   "sha256": "abd180d46c6c33190e3c411b1517cd2f06b7137f4f92fbbe9c129c80775d53b2",
+   "reason": "referenced only by the withdrawn Lasance entry"
+  }
+ ]
+}
