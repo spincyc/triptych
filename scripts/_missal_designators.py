@@ -7,6 +7,9 @@ authority, or an approved translation or adaptation. A printing, lay missal,
 facsimile, critical edition or partial book is a witness and keeps its
 bibliographic identity in the source library instead of receiving one.
 
+Editions the records name without establishing them are kept in the
+registry's `leads` table, never given a designator, so that they stay visible.
+
 A designator names what the book IS. Limits, cut-off dates, witnesses and
 inherited material belong in `qualification`, never in the designator, and the
 lexical check below refuses the relative words that once stood in for a name.
@@ -40,6 +43,20 @@ KINDS = frozenset(
 )
 REQUIRED = frozenset({"key", "designator", "kind", "rite", "language", "year", "sources"})
 OPTIONAL = frozenset({"act", "recension", "calendar", "qualification", "witnesses"})
+# A book whose authority rests on its own printed statement or on a decree
+# recorded elsewhere, and not on a row of the act histories, says so.
+NO_ACT = "No separate act row is recorded."
+# Editions the records name but whose identity or authority is not yet
+# established: kept visible, never given a designator.
+LEAD_FIELDS = frozenset({"key", "subject", "status", "reason", "sources"})
+LEAD_STATUSES = frozenset(
+    {
+        "reported-unverified",
+        "authority-locus-unconfirmed",
+        "copy-not-registered",
+        "unestablished",
+    }
+)
 KEY = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 LANGUAGE = re.compile(r"[a-z]{2,3}(?:-[A-Z]{2})?\Z")
 EDITION_ID = re.compile(r"edition\.([a-z0-9-]+)\.([a-z0-9-]+)\.([a-z0-9-]+)\Z")
@@ -118,6 +135,59 @@ def _act_ids(repository: Path) -> set[str]:
     return found
 
 
+def _edition_exists(repository: Path, identifier: object) -> bool:
+    """Whether a source-library edition record carries this id.
+
+    The id's last segment usually names the edition directory; where it does
+    not, the work's edition records are read for the id itself.
+    """
+    found = EDITION_ID.fullmatch(identifier) if isinstance(identifier, str) else None
+    if not found:
+        return False
+    work = repository / "src/sources/works" / found.group(1) / found.group(2) / "editions"
+    if (work / found.group(3) / "edition.toml").is_file():
+        return True
+    for record in work.glob("*/edition.toml"):
+        try:
+            with record.open("rb") as handle:
+                if tomllib.load(handle).get("id") == identifier:
+                    return True
+        except (OSError, tomllib.TOMLDecodeError):
+            continue
+    return False
+
+
+@lru_cache(maxsize=None)
+def _record_ids(path: Path, mtime_ns: int, size: int) -> frozenset[str]:
+    """Every record id a TOML or JSON evidence file holds, gathered once."""
+    del mtime_ns, size  # cache keys: reparsing follows any on-disk change
+    from _recensions import _document, _walk  # late: _recensions imports _calendars
+
+    return frozenset(
+        row["id"] for row in _walk(_document(path))
+        if isinstance(row, dict) and isinstance(row.get("id"), str)
+    )
+
+
+def _reference(repository: Path, reference: object, where: str) -> str | None:
+    """`_recensions`' reference check, with `#id=` lookups served from an index.
+
+    The timeline inventory holds some fifteen hundred records; walking it
+    once per reference made the registry check the slowest part of the
+    calendar gate.
+    """
+    from _recensions import _reference_problem
+
+    if isinstance(reference, str) and "#id=" in reference:
+        raw, _, wanted = reference.partition("#id=")
+        source = repository / raw
+        if source.is_file() and not source.is_symlink():
+            stat = source.stat()
+            if wanted in _record_ids(source, stat.st_mtime_ns, stat.st_size):
+                return None
+    return _reference_problem(repository, reference, where)
+
+
 def _catalog_rows(repository: Path) -> dict[str, dict]:
     import json
 
@@ -135,17 +205,15 @@ def _catalog_rows(repository: Path) -> dict[str, dict]:
 
 def problems(repository: Path, *, required: bool = False) -> list[str]:
     """Every way the registry fails to give each coherent missal one name."""
-    from _recensions import _reference_problem  # late: _recensions imports _calendars
-
     repository = Path(repository)
     path = repository / REGISTRY
     document = load(repository)
     if document is None:
         return [f"{path}: the missal designator registry is missing"] if required else []
     out: list[str] = []
-    top_fields = {"schema", "as_of", "missals"}
-    if set(document) != top_fields:
-        out.append(f"{path}: top level must hold exactly {sorted(top_fields)}")
+    top_fields = {"schema", "as_of", "missals", "leads"}
+    if not {"schema", "as_of", "missals"} <= set(document) <= top_fields:
+        out.append(f"{path}: top level must hold schema, as_of, missals and optional leads")
     if document.get("schema") != SCHEMA:
         out.append(f"{path}: schema must be {SCHEMA!r}, got {document.get('schema')!r}")
     as_of = document.get("as_of")
@@ -225,12 +293,14 @@ def problems(repository: Path, *, required: bool = False) -> list[str]:
         act = row.get("act")
         if act is not None and act not in acts:
             out.append(f"{where}.act names no recorded act: {act!r}")
+        if act is None and NO_ACT not in str(row.get("qualification") or ""):
+            out.append(f"{where}: a missal with no act row must say {NO_ACT!r} in its qualification")
         sources = row.get("sources")
         if not isinstance(sources, list) or not sources:
             out.append(f"{where}.sources must be a non-empty list")
         else:
             for position, reference in enumerate(sources):
-                problem = _reference_problem(repository, reference, f"{where}.sources[{position}]")
+                problem = _reference(repository, reference, f"{where}.sources[{position}]")
                 if problem:
                     out.append(problem)
         witnesses = row.get("witnesses", [])
@@ -238,11 +308,7 @@ def problems(repository: Path, *, required: bool = False) -> list[str]:
             out.append(f"{where}.witnesses must be a list")
             witnesses = []
         for witness in witnesses:
-            found = EDITION_ID.fullmatch(witness) if isinstance(witness, str) else None
-            if not found or not (
-                repository / "src/sources/works" / found.group(1) / found.group(2)
-                / "editions" / found.group(3) / "edition.toml"
-            ).is_file():
+            if not _edition_exists(repository, witness):
                 out.append(f"{where}.witnesses names no source-library edition: {witness!r}")
         recension = row.get("recension")
         if recension is not None:
@@ -277,6 +343,33 @@ def problems(repository: Path, *, required: bool = False) -> list[str]:
                 if short in shorts:
                     out.append(f"{where}: short form {short!r} repeats {shorts[short]!r}")
                 shorts[short] = str(key)
+
+    leads = document.get("leads", [])
+    if not isinstance(leads, list):
+        out.append(f"{path}: leads must be a list")
+        leads = []
+    for index, row in enumerate(leads):
+        where = f"{path}: leads[{index}]"
+        if not isinstance(row, dict) or set(row) != LEAD_FIELDS:
+            out.append(f"{where} must hold exactly {sorted(LEAD_FIELDS)}")
+            continue
+        key = row["key"]
+        if not isinstance(key, str) or not KEY.fullmatch(key) or key in keys:
+            out.append(f"{where}.key is not a fresh kebab-case key: {key!r}")
+        else:
+            keys.add(key)
+        if row["status"] not in LEAD_STATUSES:
+            out.append(f"{where}.status has unknown value {row['status']!r}")
+        for field in ("subject", "reason"):
+            if not isinstance(row[field], str) or not row[field].strip():
+                out.append(f"{where}.{field} must be a non-empty string")
+        if not isinstance(row["sources"], list) or not row["sources"]:
+            out.append(f"{where}.sources must be a non-empty list")
+        else:
+            for position, reference in enumerate(row["sources"]):
+                problem = _reference(repository, reference, f"{where}.sources[{position}]")
+                if problem:
+                    out.append(problem)
 
     for identifier, target in sorted(catalog.items()):
         if target.get("kind", "book-state") == "book-state" and identifier not in recensions:

@@ -3459,6 +3459,24 @@ refuses both. Their review records under
 evidence and were not applied. No stable ID, URL key or stored preference
 changed, so no compatibility alias is needed.
 
+**Follow-up on the maintainer's defaults (2026-11-14).** Thirteen order,
+archdiocesan and diocesan-use editions now have designators. Each one's
+authority statement is read on a copy the corpus holds or registers, and its
+qualification names the locus:
+
+- Dominican 1553;
+- Cistercian 1487, 1606 and 1657;
+- Premonstratensian 1936;
+- Ambrosian 1640 and 1712;
+- the diocesan uses of Besançon 1485, Bremen 1511, Tarazona 1500, Paris 1738,
+  Toul 1750 and Beauvais 1756.
+
+Eighteen reported or unestablished editions are kept in the registry's
+`leads` table, among them Ambrosian 1609 and 1751, whose copies are not held.
+The Ambrosian Italian editions stay folded into their reform-state rows. The
+prototype reader shell and the public-alpha shelf labels now read the
+registry's names.
+
 **Reader inclusion (2026-11-14).** The Propers manifest offers a missal only
 where `mass-propers.contributed_bodies` counts at least one published Latin or
 English Proper body of its own, from canonical coverage. A recension's inherited
@@ -3472,17 +3490,15 @@ calendar qualifies through its three Bonn-collated Pentecost prayers.
   - the browser-product descriptor (`calendar`, `rubrics`, `propers` and
     `ordinary` families; the registry is now a declared `calendar` and
     `rubrics` input);
-  - the tracked discovery under `src/index/`.
+  - the tracked discovery under `src/index/`;
+  - the release bindings, because the site-source set now includes
+    `scripts/_missal_designators.py` and the registry.
 
   Until then, tracked generated metadata still carries the old labels, and
   descriptor-, index- and published-data-dependent checks cannot pass. Those
   checks are CLI parity, Lectern indexed reading and the browser harnesses.
 - Re-capture the `tools/lectern` day snapshot example, which still quotes
   "1962 Missal", once the index is refreshed.
-- The prototype reader shell's hard-coded "1962 Missal" and "Postconciliar
-  Missal" labels.
-- The library shelf label "Postconciliar Missal".
-- The maintainer's class decisions listed in `guidance/missals.md` §10.
 
 ## Encyclical completion and English coverage, 2026-10-29
 

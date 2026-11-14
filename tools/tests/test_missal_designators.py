@@ -79,6 +79,16 @@ class RegistryTests(unittest.TestCase):
             with self.subTest(key=row["key"]):
                 self.assertIsNone(_missal_designators.RELATIVE.search(row["designator"]))
 
+    def test_unestablished_editions_are_leads_and_never_designated(self) -> None:
+        document = _missal_designators.load(ROOT)
+        leads = {row["key"]: row for row in document["leads"]}
+        keys = {row["key"] for row in document["missals"]}
+        self.assertFalse(set(leads) & keys)
+        for key in ("roman-1884", "praedicatorum-1933-1939-1965", "ambrosianum-1609", "bracarense-1538"):
+            self.assertIn(key, leads)
+        for key in ("praedicatorum-1553", "cisterciense-1657", "bellovacense-1756", "ambrosianum-1712"):
+            self.assertIn(key, keys)
+
     def test_witnesses_never_receive_a_designator(self) -> None:
         witnesses = {
             witness for row in _missal_designators.rows(ROOT) for witness in row.get("witnesses", [])
@@ -121,7 +131,7 @@ rite = "roman"
 language = "la"
 year = 1920
 calendar = "demo"
-qualification = "A stated limit."
+qualification = "A stated limit. No separate act row is recorded."
 sources = ["src/sources/inventories/evidence.toml#id=demo-book"]
 '''
 
@@ -130,6 +140,25 @@ sources = ["src/sources/inventories/evidence.toml#id=demo-book"]
         self.assertEqual(_missal_designators.problems(held, required=True), [])
         root = held / "src/sources/calendars"
         self.assertEqual(_calendars.index_header(root, "demo", "edition_short"), "1920 typical edition")
+
+    def test_a_missal_without_an_act_row_must_say_so(self) -> None:
+        held = self.repository(
+            self.ROW.format(designator="Roman Missal, 1920 typical edition").replace(
+                " No separate act row is recorded.", ""
+            )
+        )
+        problems = _missal_designators.problems(held, required=True)
+        self.assertTrue(any("no act row must say" in row for row in problems), problems)
+
+    def test_a_lead_needs_a_known_status_and_resolving_sources(self) -> None:
+        held = self.repository(
+            self.ROW.format(designator="Roman Missal, 1920 typical edition")
+            + '\n[[leads]]\nkey = "demo-lead"\nsubject = "A named edition"\nstatus = "probable"\n'
+            'reason = "Reported only."\nsources = ["src/sources/inventories/evidence.toml#id=absent"]\n'
+        )
+        problems = _missal_designators.problems(held, required=True)
+        self.assertTrue(any("status has unknown value 'probable'" in row for row in problems), problems)
+        self.assertTrue(any("absent record id 'absent'" in row for row in problems), problems)
 
     def test_a_relative_designator_is_refused(self) -> None:
         held = self.repository(self.ROW.format(designator="Roman Missal, pre-1955 1920 edition"))

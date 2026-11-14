@@ -724,10 +724,33 @@ official record:
 
 - a declared typical edition;
 - an officially issued emended reprint;
-- a rite's or use's edition issued by its competent authority, with a row in
-  `latin-missal-acts-v1.toml` or this audit's `[[acts]]`, or a checked decree
-  in the timeline or stage records;
+- a rite's or use's edition issued by its competent authority. The authority
+  may rest on a row in `latin-missal-acts-v1.toml` or this audit's
+  `[[acts]]`, or on a checked decree in the timeline or stage records. It may
+  also rest on the book's own title-page or front-matter statement, read on a
+  copy the corpus holds or registers;
 - an approved translation or adaptation.
+
+**The printed-authority test (maintainer's default, 2026-11-14).** An order's
+or an archdiocese's edition receives a designator when two things hold. Its
+authority statement must be readable on a copy the corpus holds or registers:
+a source-library edition, or a copy recorded by hash. Its qualification must
+name that statement's locus, never the liturgical text, and say "No separate
+act row is recorded." The validator refuses a row without an act that omits
+the sentence.
+
+A diocesan printing must pass a further test: the records must identify it as
+the missal of a distinct use. Besançon 1485, Bremen 1511, Tarazona 1500,
+Paris 1738, Toul 1750 and Beauvais 1756 pass. A Roman text with a local proper
+or local substitutions does not, so the 1866 *Missale romano-lugdunense* and
+the 1718 *Missale Romano Tullense* stay witnesses. Neither does a printing
+that states no authority, such as Paris 1481, Tournai 1498 and Liège 1499.
+
+**Leads.** An edition the records name but do not establish goes in the
+registry's `leads` table, never in its missals. This covers editions that are
+reported but unverified, held without a located authority statement, or
+authorised but with no copy held or registered. Each lead has a closed status
+and resolving sources, so it stays visible until a record admits it.
 
 Everything else is a witness. Witnesses include conformed and commercial
 printings (Pustet 1862 and 1894, Desclée 1889, Mame 1922, Benziger 1942 and
@@ -771,26 +794,18 @@ not a book. Historical review records keep the labels they quote.
 | Candidate | Why it has no designator |
 | --- | --- |
 | The 1956–1960 interval | `roman-transition-1956-1960` is an interval gap. No whole-book state is recorded, and the 1956 Holy Week Ordo, typical or not, is a partial book. |
-| An 1884 typical edition | Act `editio-typica-1884` is "NOT ESTABLISHED HERE". The 1889 and 1894 printings attest a Leonine authority, not its edition. |
-| An alleged 1924 Roman typical edition | It is an unresolved lead in the timeline record, which says not to create a station from it. |
 | The December 1962 Canon insertion | It is a decreed variation within the 1962 typical edition, and is that row's qualification. |
 | Sarum, and the York, Aquileia and pre-Tridentine curial printings | No typical edition or promulgating act is recorded. The critical editions (Dickinson, Legg, Henderson, Lippe) are witnesses. |
-| Eastern Catholic books | They are deferred by §9. The stage records note a Chaldean 2020 and a Syro-Malabar 2003 typical edition for that separate track. |
+| Eastern Catholic books | They are deferred by §9. The stage records note a Chaldean 2020 and a Syro-Malabar 2003 typical edition, and the source library holds Chaldean, Syriac, Coptic and Ethiopian missal editions, for that separate track. |
+| Roman texts with local substitutions | The 1866 Lyon and 1718 Toul books are Roman missals with local parts, not the missal of a distinct use. |
 
-**Left for the maintainer.** Each of the following is a class decision. The
-records identify an authority statement but no act row, or their evidence
-conflicts. None has a designator until a record admits it:
-
-- order and archdiocesan editions with title-page or front-matter authority
-  only: Dominican 1553, Cistercian 1487, 1606 and 1657, Premonstratensian
-  1936, Ambrosian 1609, 1640, 1712 and 1751;
-- reported but unverified editions: Dominican 1933, 1939 and 1965,
-  Carmelite 1935/1937, Carthusian 1603, 1981 and 2021, Lyon 1866, 1904 and
-  1956, Braga 1538 and 1558, Mozarabic 1500 and 1804, Slavonic 1741;
-- the Ambrosian Latin *editio altera* of 2026, whose front matter is
-  unexamined;
-- the diocesan printings issued under an ordinary's mandate. The timeline
-  census holds dozens; it calls them witnesses and records no act row for them.
+**Kept as leads, 2026-11-14.** These are the 1884 and alleged 1924 Roman
+typical editions, the reported editions of the orders, Lyon, Braga, the
+Mozarabic rite and the Slavonic 1741 book, and the authorised but
+unregistered copies (Ambrosian 1609 and 1751, Cassinese 1580, Amiens, Couserans
+and Toulouse). Each carries its status and reason in the registry. The
+Ambrosian Latin *editio altera* of 2026 is part of the "2024 second edition"
+row, as the maintainer accepted for the Ambrosian Italian editions.
 
 The survey also found conflicts that the registry neither resolves nor hides:
 
