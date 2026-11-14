@@ -14,7 +14,9 @@ const dataPath = process.env.TRIPTYCH_ORDINARY_DATA || repositoryPath(ROOT,
 const ordinary = JSON.parse(fs.readFileSync(dataPath, 'utf8'));
 const elements = ordinary.sections.flatMap(section => section.elements);
 const invitation = elements.find(element => element.key === 'ritus-communionis/ecce-agnus-dei');
-const unavailable = elements.find(element => element.key === 'ritus-communionis/perceptio-corporis-et-sanguinis');
+// 2026-11-14: Perceptio now holds study English, so the wholly absent quiet
+// prayer is the commixtio, whose Latin is new target wording.
+const unavailable = elements.find(element => element.key === 'praeparatio-donorum/commixtio');
 const reading = elements.find(element => element.key === 'liturgia-verbi/lectio-prima');
 assert.ok(invitation && unavailable && reading);
 const dom = require(path.join(ROOT, 'scripts/lectern/dom.js'));
@@ -49,7 +51,7 @@ for (const lang of ['en', 'la']) for (const display of ['selected', 'latin-and-s
     const node = render(unavailable, ordinary, lang, display);
     assert.equal(node.querySelectorAll('.notice').length, 2);
     assert.ok(node.textContent.includes('No exact exemplar of this quiet prayer is held here'));
-    assert.ok(node.textContent.includes('The older witness differs at the target words'));
+    assert.ok(node.textContent.includes('New target wording has no publication basis here'));
     assert.ok(node.textContent.includes(unavailable.latin_incipit));
   });
   check('actual language-specific rights gap ' + state, () => {

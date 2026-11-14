@@ -586,7 +586,9 @@ class OrdinaryAppointments(unittest.TestCase):
             cwd=ROOT, capture_output=True, text=True, check=False,
         )
         self.assertEqual(finished.returncode, 0, finished.stderr[-2000:])
-        self.assertIn("On TRINITY-SUNDAY", finished.stdout)
+        # 2026-11-14: the 1962 Missal's own Preface heading (study English of
+        # the qualified Latin) replaces the 1861 lay missal's.
+        self.assertIn("THE PREFACE OF THE MOST HOLY TRINITY", finished.stdout)
         self.assertNotIn("appointment not established", finished.stdout)
         finished = subprocess.run(
             ["python3", "tools/mass-today", "--date", "2026-01-15", "--calendar",

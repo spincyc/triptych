@@ -196,19 +196,23 @@ class PostconciliarOrdinaryDivergenceRecoveryTests(unittest.TestCase):
         # spiritu humilitatis moves to collated Pustet 1862 Latin
         # (ordinary-in-spiritu-2008-source-admission-2026-11-12.json).
         self.assertEqual(sum(len(section["elements"]) for section in structure["sections"]), 72)
+        # 2026-11-14 (public-domain witness campaign; installed Lava me
+        # package): the paschal dismissal's collated Pustet 1862 Latin and
+        # 1946 Lasance English, Lava me's collated Wroclaw Latin and study
+        # English, and the Fraction and Perceptio study Englishes.
         self.assertEqual(
             structure["language_coverage"],
             [
-                {"absent": 36, "elements": 72, "held": 36, "lang": "en", "missing": 36},
-                {"absent": 39, "elements": 72, "held": 33, "lang": "la", "missing": 39},
+                {"absent": 32, "elements": 72, "held": 40, "lang": "en", "missing": 32},
+                {"absent": 37, "elements": 72, "held": 35, "lang": "la", "missing": 37},
             ],
         )
         self.assertEqual(
             structure["relation_coverage"],
             [
-                {"collation": "uncollated", "count": 27, "lang": "en", "relation": "antecedent"},
-                {"collation": "not-applicable", "count": 9, "lang": "en", "relation": "own"},
-                {"collation": "collated", "count": 6, "lang": "la", "relation": "antecedent"},
+                {"collation": "uncollated", "count": 28, "lang": "en", "relation": "antecedent"},
+                {"collation": "not-applicable", "count": 12, "lang": "en", "relation": "own"},
+                {"collation": "collated", "count": 8, "lang": "la", "relation": "antecedent"},
                 {"collation": "uncollated", "count": 27, "lang": "la", "relation": "antecedent"},
             ],
         )
