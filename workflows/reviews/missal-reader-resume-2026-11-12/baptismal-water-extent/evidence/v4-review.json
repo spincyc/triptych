@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "reviewer": "independent source reviewer /root/roman_sources/six_source_review",
+  "reviewed_on": "2026-11-13",
+  "verdict": "PASS exact two-period metadata delta only; no source adoption or application approval.",
+  "predecessor_review": {
+    "path": ".scratch/roman-sources/baptismal-water-independent-review/review.json",
+    "sha256": "0abbcd83ca64cd2b861026bf76cbbb0b06a333fcaf2ba269749e41a95d0377fc"
+  },
+  "input_pins": [
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v4/candidate-manifest.json",
+      "sha256": "4947e2157c96afbf472656fa596b3f98b315c7470be41469dc2b6cff16c613a0",
+      "byte_size": 21324
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v4/positive-transition-proposal.json",
+      "sha256": "c52ddea9de06155e426b2e4992ce0f14dff2e54ab0c1fbed4ed65dcaf06022c5",
+      "byte_size": 55071
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v4/punctuation-successor.json",
+      "sha256": "695a7c86b79166cb7b7d0061547b471a0518da632cebfb6a67f93d5650437ac0",
+      "byte_size": 23183
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v4/guarded-install.py",
+      "sha256": "60504d6ce1914e346ef7cb8dea89adb201d109cb03ed47398538ff80e04653ff",
+      "byte_size": 15765
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v4/driver-successor-proof.json",
+      "sha256": "52a304d4f507c9a1832b2cef1be583cc5370a04ef1cbe8310b08ad0591f00594",
+      "byte_size": 838
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/candidate-manifest.json",
+      "sha256": "bfa7f1ec097176d9f30e4a26888b22496e7eb878cc3bb3592a3a26bb1578e87c",
+      "byte_size": 20638
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/positive-transition-proposal.json",
+      "sha256": "99582a6a287a593a2606dd1174f5e78d6b3d2d4a8144b2be00e1a484c9c7ee37",
+      "byte_size": 55037
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/review.json",
+      "sha256": "0abbcd83ca64cd2b861026bf76cbbb0b06a333fcaf2ba269749e41a95d0377fc",
+      "byte_size": 45676
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/fixed-input/.scratch/final-dry-run/read-map.json",
+      "sha256": "e9ceed6d0f946e930990683aeef658de31b2c25321660ab09da22b254bfe5805",
+      "byte_size": 56412
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v4/fixed-input/.scratch/dry-run/read-map.json",
+      "sha256": "3ce8b3a4110e6354f2087149a572dbab96a30792d8d9063e7bc3e86f0e9201a8",
+      "byte_size": 56413
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v4/successor-validation.json",
+      "sha256": "310e8baa4851456d6e60047f70a14ccf8861a47e70b173b4475b1fe4e9c79204",
+      "byte_size": 4031
+    }
+  ],
+  "verification": {
+    "path": ".scratch/roman-sources/baptismal-water-independent-review/v4-delta/verification.json",
+    "sha256": "16848a6f967293a64f604fd99990178d9b2217dd6e07ba73cc9af9a64cacfc34",
+    "byte_size": 22316
+  },
+  "audit_script": {
+    "path": ".scratch/roman-sources/baptismal-water-independent-review/v4-delta/audit.py",
+    "sha256": "f1c290eadba0ef7757a3fc6be550af0df4eafd277803b7adf4d047b80ad3427d",
+    "byte_size": 10168
+  },
+  "checks_passed": 113,
+  "failures": 0,
+  "findings": [
+    "Both fields change exactly Mame 1922 The selected to Mame 1922. The selected, once each: the receiving English witness_note and the existing verification-passage notes. Reversing each string reconstructs the exact prior dictionary hash; reversing the passage raw bytes reconstructs the exact v3 file hash. No other source metadata field changes.",
+    "The exhaustive manifest/transition differences contain only those two prose edits, resulting hash/size pins, version/status and immutable predecessor references. All proper, Latin raw/default-resolved proof and frame objects, literal English translations, six new source files, source IDs, grades, rights and locators remain exact.",
+    "The driver differs only in MANIFEST_SHA, TRANSITION_SHA and the read-map schema v3 to v4. Replacing those three values backwards reconstructs every byte of the predecessor driver. ROOT_ADOPTION_SHA256=None remains present and unchanged. This audit does not activate or newly approve the driver.",
+    "The fresh dry-run map has the same ten fixed-input targets and preimage hashes as v3. Eight postimages are byte-identical. The English owner and verification passage each differ by one added period only; inversions reproduce their full v3 bytes and parsed objects. Map, driver, manifest and transition joins rehash exactly.",
+    "The prior missing-period caveat is resolved. All substantive source/English extent qualifications in the original independent receipt remain controlling."
+  ],
+  "unchanged_body_pins": {
+    "Latin": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+    "English": "942ea5bc30d9f063bc1e92dc8b0d4b921bbea9f2cda5624613462d9e9958ebea"
+  },
+  "new_English_binding_sha256": "86b687df4e6422c43c364be9ae3643de7d05f0b8ec6d749e8a6d39643e5288a2",
+  "new_verification_passage_raw_sha256": "437e746040481c25ea879dce4df782234aa85307f71a288c08e0bc92313c176f",
+  "blockers": [],
+  "limits": [
+    "No source images or English bodies were recollated; exact unchanged bytes bind to the prior complete review.",
+    "Dry-run outputs were independently compared against the prior fixed-input outputs. This does not establish that either fixture represents the current shared canonical owner files.",
+    "No CLI driver preparation or --apply was run by this reviewer. Author successor-validation records the no-Root-pin refusal; this audit independently proves driver logic unchanged by exact byte inversion.",
+    "No canonical/source-candidate mutation, authority adoption, helper activation, hardlink, commit or push. Prior receipts remain immutable."
+  ]
+}

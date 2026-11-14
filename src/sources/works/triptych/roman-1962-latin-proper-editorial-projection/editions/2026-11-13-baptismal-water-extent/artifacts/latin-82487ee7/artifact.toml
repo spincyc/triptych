@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.baptismal-water-extent-2026-11-13.latin-82487ee7"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.baptismal-water-extent-2026-11-13"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "Triptych offers its bounded transcription, normalization, line wrapping and source-comparison contribution under CC BY 4.0. The complete underlying Latin wording is separately witnessed in the identified Mame book published in 1922 and is public domain in the United States; Triptych claims no exclusive right in those words. The target comparison contributes mechanical punctuation, capitalization, orthography and prayer-text marks, not a new lexical petition or modern page image, rubric or layout. This finite proposal requires Root admission before activation."
+rights_jurisdiction = "United States"
+provenance = "Prepared on 2026-11-13 after freshly hashing the already held complete Mame 1922 and CMAA 1962 PDFs and actually reading Mame artifact pages 368–378 and CMAA pages 281–288 at 200/400 dpi. Pustet 1862 pages 287–293 were separately image-checked as corroboration. All 15 appended blocks and the retained opening are compared separately; OCR is a finding aid only."
+retrieved = "2026-11-13"
+sha256 = "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864"
+byte_size = 4383
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt"
+projected_from = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a", "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"]
+transformation = "Preserve the existing 379-character n. 992 calendar body byte for byte. Append the complete printed n. 993 dialogue, long blessing and conclusion, and nn. 994–996 formulas, once. Join printed line wraps and syllabic chant spacing; omit chant notation, rubrics, headings, marginal numbers and page layout. Remove stress accents, expand ae/oe ligatures, and use the calendar’s existing consonantal j orthography. Use target punctuation, capitalization, Scripture quotation marks and cross positions; represent crosses by + and dialogue signs by V./R. Render Mame foecundet (twice) and foecundetur as target fecundet and fecundetur; Pustet independently supports those spellings. Keep Descendat once as printed; do not expand its two source-directed repetitions. Do not import old ceremonial order or cross positions into the 1962 frame."
+indexable = true
+encoding = "utf-8"
+notes = "The source quotation is one printing of the prayer words, not a complete performed rite. Initial greeting/Oremus, minister assignment, gestures, repetitions, font/location branches, Baptism and the separately modeled following tract/font prayer remain outside this body. Historical English is unchanged. The previous projection and all witness artifacts remain immutable."

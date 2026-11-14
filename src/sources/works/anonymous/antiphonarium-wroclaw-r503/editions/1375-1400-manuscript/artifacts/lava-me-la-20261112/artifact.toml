@@ -1,0 +1,20 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript.lava-me-la-20261112"
+edition_id = "edition.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "The complete expression is independently visible as one uninterrupted anonymous medieval antiphon in manuscript R 503, dated 1375–1400 and identified as Public Domain Mark 1.0 by its holding institution. No modern word, translation, critical reading or expressive arrangement is copied. This faithful direct transcription of the entire old antiphon supplies all twelve prayer words in their received sequence; the modern quotation establishes target correspondence only."
+provenance = "Direct visual transcription on 2026-11-12 from the complete native opening image registered as artifact.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript.opening-048v-049r-40fd09e4, folio 49r, first antiphon after the Lauds rubric. The first text line begins at the blue L and ends et; the second ends munda me, before the Euouae cadence vowels and the next antiphon. The donor has domine, not an abbreviation. Neither the modern Cantus database transcription nor the official 2022 quotation supplies the body."
+retrieved = "2026-11-12"
+sha256 = "daf49c661169b7853c2235772d05c6893b1940536892127162057b02ea606ba0"
+byte_size = 301
+path = "src/sources/works/anonymous/antiphonarium-wroclaw-r503/editions/1375-1400-manuscript/artifacts/lava-me-la-20261112/text.tsv"
+derived_from = "artifact.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript.opening-048v-049r-40fd09e4"
+transformation = "Render the medieval letterforms as plain Latin type; normalize consonantal manuscript u to v in Lava; join the one physical line wrap and separate the written words. Preserve the complete word sequence and lower-case domine. Supply no punctuation, Amen, new words, prayer conclusion or Psalm verse prefix. Exclude the following Euouae cadence vowels, music, rubric and next antiphon."
+indexable = true
+encoding = "utf-8"
+notes = "One header and one data row. This is the complete historical antiphon wording, used as an independently sourced verbal witness; it does not import its chant, historical office appointment or manuscript rubrics into the Missal."

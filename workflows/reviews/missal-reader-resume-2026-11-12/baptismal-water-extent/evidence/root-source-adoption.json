@@ -1,0 +1,156 @@
+{
+  "schema": "triptych-root-baptismal-water-source-adoption/v1",
+  "status": "accepted",
+  "decision": "Adopt exact bounded printed Latin extent nn992–996 and source/provenance/extent-note successors, for next cohort",
+  "target": [
+    "easter-vigil",
+    "main",
+    "Blessing of the Baptismal Water",
+    "all",
+    1
+  ],
+  "latin_key": [
+    "easter-vigil",
+    "",
+    "Blessing of the Baptismal Water",
+    "",
+    "",
+    1
+  ],
+  "manifest": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/v5/candidate-manifest.json",
+    "sha256": "0b67bd8d762597780057f9c3b568ddf89d052f4186601dfa97191007b989e9f0"
+  },
+  "transition": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/v5/positive-transition-proposal.json",
+    "sha256": "52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2",
+    "bytes": 55229
+  },
+  "independent_reviews": [
+    {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/review.json",
+      "sha256": "0abbcd83ca64cd2b861026bf76cbbb0b06a333fcaf2ba269749e41a95d0377fc"
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/v4-delta/review.json",
+      "sha256": "1889c1b391ea9337e7cf8b1634bff8d911c213a48d241a44ac1e7d7aaac6d527"
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/v5-delta/review.json",
+      "sha256": "3910848d967e765856dded9d8d5e243324ae2ea6a308f3ded5f5a55fe2e6de3e"
+    }
+  ],
+  "source_files": [
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "prepared_path": "prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+      "byte_size": 4383
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "prepared_path": "prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "sha256": "6922a40f5fdd2b670114eebdcfc1ef3b1d48e2ec61f44aaf09453896e8cf3eb6",
+      "byte_size": 877
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "prepared_path": "prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "sha256": "6903fd813f56a15aab429f435580a45af8a2df573d5885836ea4a879b9438cad",
+      "byte_size": 3166
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "prepared_path": "prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "sha256": "e62aab8e1aac89968eafc2e490152290f88a0fb031d938ba059ab9db23178a65",
+      "byte_size": 1511
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "prepared_path": "prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "sha256": "764b4c8a3bf50357778f674a2efebe8989f8dbb34666cde6e5eb4940259ec3bc",
+      "byte_size": 1376
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "prepared_path": "prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "sha256": "ed338c41af82e199a27f857a3af0b4874b8f7c0a8dce5405c22c4b65fd59e35c",
+      "byte_size": 1282
+    }
+  ],
+  "owner_splices": [
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Baptismal Water",
+        "all",
+        1
+      ],
+      "before_sha256": "95a1e215adc9b790024643088b971614418ea3d7b578b73d8616043c64d836fa",
+      "after_sha256": "32d0b83f76a3dca487fbd1bc473952438d6a6be10a7e31d576e0c35c659bec35",
+      "changed_fields": [
+        "text",
+        "notes"
+      ]
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "identity": [
+        "easter-vigil",
+        "",
+        "Blessing of the Baptismal Water",
+        "",
+        "",
+        1
+      ],
+      "before_sha256": "00bb1e4017882c4ae5e4d70c0567dc7091612603274ad347fc47c86cb4b26eca",
+      "after_sha256": "c44ac8eae0884dd523eba0d5c529d39a4c0581f666375a0d9b53276c15b0463f",
+      "changed_fields": [
+        "text_sha256",
+        "source_id",
+        "source_date",
+        "locator",
+        "verification_source_id",
+        "verification_locator",
+        "transformations",
+        "provenance_evidence",
+        "publication_source_ids",
+        "publication_locator",
+        "publication_evidence"
+      ]
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Baptismal Water",
+        "all",
+        1
+      ],
+      "before_sha256": "32855b857e415a840423ec734cda7b338b19d767ebe46d0af747a78f3702d1b0",
+      "after_sha256": "86b687df4e6422c43c364be9ae3643de7d05f0b8ec6d749e8a6d39643e5288a2",
+      "changed_fields": [
+        "witness_note"
+      ]
+    }
+  ],
+  "existing_source_note": {
+    "path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+    "before_sha256": "b8ce7d0a845b00ada0201bc42bbd734852d7409d3ec1aa7fa08cdeff2656804f",
+    "after_sha256": "437e746040481c25ea879dce4df782234aa85307f71a288c08e0bc92313c176f"
+  },
+  "root_review": "Read complete4383-byte Latin target projection,4386-byte continuous old Mame comparison and4804-byte existing English, all declared lexical/pointing/cross differences, complete new Latin proof and final notes, plus independent whole-unit findings and both exact metadata successors. Rehashed six new source files and their dependencies, parsed source TOMLs, verified current exact proper/Latinproof/Englishbinding preimages,379-byte preserved prefix, unchanged English and frame. Source-page image collation is attributed to the independent reviewer; Root did not newly rasterize/view these source pages.",
+  "whole_expression_publication_judgment": "Accept the exact underlying Latin prayer words from continuous Mame1922 unit AP368–378/printed254–264 under its registered United States public-domain textual basis. Every lexical word is independently old; target pointing/case/sign placements and foecund-to-fecund spelling are declared non-expressive editorial transformations. This is a bounded historical-source projection, not a blanket1962 or restored-Holy-Week grant and not a collection of scattered phrases.",
+  "metadata_disposition": "Correct the predecessor Pustet Adesto/Respice ending misattribution and false English full-coverage language. V4 adds only two missing periods. V5 distinguishes actual separately stored n997/998 entries from complete ritual assembly; source existence is not performance completeness. All earlier source artifacts and frozen receipts remain intact.",
+  "limits": [
+    "Printed prayer text once only; Descendat repetitions, initial greeting/Oremus, rubrics/gestures/ministers, font branches and later units are not supplied by this body.",
+    "Historical English remains an unchanged incomplete excerpt with omitted dialogue, abbreviated conclusions and literal word by fire. Full clean English execution remains separately required.",
+    "No finite Latin authority expansion or existing f79/b26 ending rebind is implied; explicit positive-source epoch transition and current semantic merge are required.",
+    "Guarded driver separately reviewed before preparation/integration. Root-exclusive canonical install uses exact fresh preimages; no stale full-owner replacement.",
+    "Final actual source/consumer/public-surface gates required; no whole Vigil completion claim."
+  ],
+  "canonical_writes": false
+}

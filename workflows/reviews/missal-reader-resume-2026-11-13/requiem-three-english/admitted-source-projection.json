@@ -1,0 +1,357 @@
+{
+  "schema": "triptych-requiem-three-admitted-source-projection/v1",
+  "projection": {
+    "original_path": ".scratch/roman-sources/requiem-english-fidelity/correction-packet.json",
+    "original_sha256": "8c3b514f872c7aab6a64124559aab5a83927e224badcba129457ae8666b98878",
+    "selected_case_pointers": [
+      "/rows/0",
+      "/rows/1",
+      "/rows/2"
+    ],
+    "selected_row_fields": [
+      "identity",
+      "new_entry",
+      "old_entry_sha256",
+      "new_entry_sha256",
+      "new_English_sha256",
+      "proper_sha256",
+      "target_Latin_sha256",
+      "Latin_proof_sha256",
+      "source_appointment",
+      "source_range",
+      "source_date_basis",
+      "strongest_date_contrary",
+      "fidelity_qualification",
+      "literal_conclusion_relation",
+      "source_records"
+    ],
+    "selected_source_fields": [
+      "repository_path",
+      "sha256"
+    ],
+    "omitted": [
+      "whole owner snapshots",
+      "old source quotations",
+      "PDF and raster bytes",
+      "execution logs and local fixture trees",
+      "unrelated f79 record payloads"
+    ],
+    "status": "Explicit field projection; not a byte-exact copy or replacement original receipt."
+  },
+  "root_adoption": {
+    "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/root-source-adoption.json",
+    "sha256": "4b77a8613f8245ba57a83b80b89241f351eb4d7e215535433f2e8dfeb9deaab4"
+  },
+  "independent_source_English_review": {
+    "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/independent-source-English-review.json",
+    "sha256": "83fbca7042225e8cfe7c4bfe24631d4f880ccd5a41649754f1ae95f04ecbb8fe"
+  },
+  "prior_prepare_driver_review": {
+    "repository_path": "workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english/independent-prepare-driver-v1-review.json",
+    "sha256": "f1efd2f5f1b5f0c3d5f5ae63790c90276b22da79cb51d44ab8b12d30cec8e0f8"
+  },
+  "source_files": [
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/artifacts/requiem-english-fidelity-three-20261113-ea9fe7c8/artifact.toml",
+      "sha256": "d89cb62327b9029bbaa348cb2cfe32777247cce0fa861fb3d862664a734b428a"
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/artifacts/requiem-english-fidelity-three-20261113-ea9fe7c8/english.tsv",
+      "sha256": "ea9fe7c8a4b8f716e4046af0dd943d9bf27a25c7ab43315ecf41ff053a9c16ec"
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-second-collect-english.toml",
+      "sha256": "2071dae9d349dd5613dc9f834173c897b0a223678a23a993b88704628c104612"
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-second-collect-source.toml",
+      "sha256": "4a5f9a724f62774ade404fd23fb33c4ea32a63fcfe8cdb8c1fb0fa9fecee3e3c"
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-second-postcommunion-english.toml",
+      "sha256": "bed24edb01cb328689dabd8068bd0dc9ed35aa7e5ab8c471092211162212246f"
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-second-postcommunion-source.toml",
+      "sha256": "29f54d83404135c0079a4c17fc1b333e37ad2cfa3cdda605940739413e2e0d3c"
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-third-collect-english.toml",
+      "sha256": "e2b0444cd836df4751d4aaba6a4e35352123373d641eb60d2bcd0f0ef2f3c321"
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-fidelity-20261113-third-collect-source.toml",
+      "sha256": "639dcbb897e1ddee5f08b3486a82d453233e8f0ed4722687e80be6d2c7a24fbc"
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/passages/requiem-three-early-printing-control-20261113.toml",
+      "sha256": "93548460b8d6be2aa5e3a50bfb7daa13ec006d12f625dc2a45efed8877dd45fc"
+    }
+  ],
+  "rows": [
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Collect",
+        "all",
+        1
+      ],
+      "new_entry": {
+        "mass": "commemoratione-omnium-fidelium-defunctorum",
+        "form_id": "second",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "witness": "lefebvre-1925",
+        "printed_page": "1738",
+        "ia_leaf": 1777,
+        "ia_leaf_range": [
+          1777,
+          1777
+        ],
+        "artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+        "passage_id": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-second-collect-source",
+        "collated": "Complete own bilingual prayer and actual printed short cue, page images200/400dpi,2026-11-13",
+        "collation_result": "confirmed",
+        "publication_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-english-fidelity-three-20261113-ea9fe7c8",
+        "publication_artifact_sha256": "ea9fe7c8a4b8f716e4046af0dd943d9bf27a25c7ab43315ecf41ff053a9c16ec",
+        "publication_passage_id": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-second-collect-english",
+        "witness_note": "Own Second-Mass Collect under the explicit following Collects override of the Anniversary referral. All petition Latin words agree after accent/ligature/case/pointing/line-wrap normalization. Source actual cue Per Dominum.; target actual cue Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. English actual cue Through our Lord. All are preserved at their own printed extents; no literal entire-ending equality is asserted when those extents differ, and no performed full conclusion is supplied. The historical translator renders quietis beatitudinem freely as rest and happiness and luminis claritatem as the glory of Thy light. The added possessive makes the divine source explicit; no anniversary or new class of departed is introduced. This is a historical rendering for independent fidelity review, not a word-for-word gloss. Earlier Lasance quotation remains accurate as a quotation but is superseded for this target because its English adds an anniversary clause or narrows the departed to brethren absent from its facing Latin. Original quotation/dictionary/TSV and source proofs remain immutable. The exact registered whole PDF28c9046c was rehashed. AP1 visibly identifies Daily Missal with Vespers, Dom Gaspar Lefebvre, St Andrews Abbey/Lohmann; it has no publication year. AP2 prints approvals dated21March1924 and13May1925. AP3 prints the13May1925 letter and a physical JAN20'27 library accession stamp. Selected ordinary pages1738–1739/AP1778–1779 follow ordinary1737/AP1777 and finish beforeNovember3 on1739, without superscript, separate pagination or later-insert notice at these settings. This supports a bounded pre-1931 early-expression inference for these exact three prayer settings; it is not a fresh exact1925 colophon claim or authentication of every page in the2007-page composite.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+            "text": "O God, the Lord of mercies, grant to the souls of Thy servants and handmaids a place of refreshment, rest and happiness, and the glory of Thy light. Through our Lord."
+          }
+        ]
+      },
+      "old_entry_sha256": "d0cf453d2e3bd5f9d25462d089c471c14bcbe4f8f3ecf1020bc64dfb0d4e4cef",
+      "new_entry_sha256": "ee0a91b9217e566479d401df48d6356fa395be2d09aeaad78fd5426481a39e3b",
+      "new_English_sha256": "8e35d5c578ac9897993695392913ba59f0cdbe567482409227883a68db57e919",
+      "proper_sha256": "8a9c346f8b2558a4e6bc6669792a1b9f1c81a1fbe58591135604f73468454f8c",
+      "target_Latin_sha256": "30e48e208401dc42d128140be8a04c58f12f20d89d9a5c9bcfb90bddfb53f054",
+      "Latin_proof_sha256": "24819b8cd3ef64cf7d449edd2ba572f94b0578ed8a8bbfaadbb411de91da45c7",
+      "source_appointment": "Own Second-Mass Collect under the explicit following Collects override of the Anniversary referral.",
+      "source_range": [
+        1778,
+        1778
+      ],
+      "source_date_basis": "The exact registered whole PDF28c9046c was rehashed. AP1 visibly identifies Daily Missal with Vespers, Dom Gaspar Lefebvre, St Andrews Abbey/Lohmann; it has no publication year. AP2 prints approvals dated21March1924 and13May1925. AP3 prints the13May1925 letter and a physical JAN20'27 library accession stamp. Selected ordinary pages1738–1739/AP1778–1779 follow ordinary1737/AP1777 and finish beforeNovember3 on1739, without superscript, separate pagination or later-insert notice at these settings. This supports a bounded pre-1931 early-expression inference for these exact three prayer settings; it is not a fresh exact1925 colophon claim or authentication of every page in the2007-page composite.",
+      "strongest_date_contrary": "The title itself is undated; approval dates alone do not date publication, and an early front-leaf accession stamp cannot by itself exclude every later inserted or replaced leaf. Nearby other source settings elsewhere include lettered pagination. For these prayers the visible continuous ordinary folios, common setting and shared physical page with the already registered Third-Mass Postcommunion support the bounded early-setting inference. The exact Google/CCWatershed PDF/layout/OCR/wrappers remain unresolved and are neither copied into this proposal nor cleared by the textual assessment.",
+      "fidelity_qualification": "The historical translator renders quietis beatitudinem freely as rest and happiness and luminis claritatem as the glory of Thy light. The added possessive makes the divine source explicit; no anniversary or new class of departed is introduced. This is a historical rendering for independent fidelity review, not a word-for-word gloss.",
+      "literal_conclusion_relation": "All petition Latin words agree after accent/ligature/case/pointing/line-wrap normalization. Source actual cue Per Dominum.; target actual cue Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate. English actual cue Through our Lord. All are preserved at their own printed extents; no literal entire-ending equality is asserted when those extents differ, and no performed full conclusion is supplied.",
+      "source_records": [
+        "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-english-fidelity-three-20261113-ea9fe7c8",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-second-collect-source",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-second-collect-english",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-three-early-printing-control-20261113"
+      ]
+    },
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "new_entry": {
+        "mass": "commemoratione-omnium-fidelium-defunctorum",
+        "form_id": "second",
+        "proper": "Postcommunion",
+        "cycle": "all",
+        "occurrence": 1,
+        "witness": "lefebvre-1925",
+        "printed_page": "1738",
+        "ia_leaf": 1777,
+        "ia_leaf_range": [
+          1777,
+          1777
+        ],
+        "artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+        "passage_id": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-second-postcommunion-source",
+        "collated": "Complete own bilingual prayer and actual printed short cue, page images200/400dpi,2026-11-13",
+        "collation_result": "confirmed",
+        "publication_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-english-fidelity-three-20261113-ea9fe7c8",
+        "publication_artifact_sha256": "ea9fe7c8a4b8f716e4046af0dd943d9bf27a25c7ab43315ecf41ff053a9c16ec",
+        "publication_passage_id": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-second-postcommunion-english",
+        "witness_note": "Own Second-Mass Postcommunion under the explicit following Collects override of the Anniversary referral. All petition Latin words agree after accent/ligature/case/pointing/line-wrap normalization. Source actual cue Per Dominum.; target actual cue Per Dominum. English actual cue Through our Lord. All are preserved at their own printed extents; no literal entire-ending equality is asserted when those extents differ, and no performed full conclusion is supplied. The historical English renders plural his sacrificiis as this sacrifice and does not separately lexicalize pariter; the coordinated pardon and everlasting rest are both preserved. The singular is contextual Mass English, not a transcription correction; independent fidelity review must assess it. Earlier Lasance quotation remains accurate as a quotation but is superseded for this target because its English adds an anniversary clause or narrows the departed to brethren absent from its facing Latin. Original quotation/dictionary/TSV and source proofs remain immutable. The exact registered whole PDF28c9046c was rehashed. AP1 visibly identifies Daily Missal with Vespers, Dom Gaspar Lefebvre, St Andrews Abbey/Lohmann; it has no publication year. AP2 prints approvals dated21March1924 and13May1925. AP3 prints the13May1925 letter and a physical JAN20'27 library accession stamp. Selected ordinary pages1738–1739/AP1778–1779 follow ordinary1737/AP1777 and finish beforeNovember3 on1739, without superscript, separate pagination or later-insert notice at these settings. This supports a bounded pre-1931 early-expression inference for these exact three prayer settings; it is not a fresh exact1925 colophon claim or authentication of every page in the2007-page composite.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+            "text": "Grant, we beseech Thee, O Lord, that the souls of Thy servants and handmaids, purified by this sacrifice, may obtain pardon and everlasting rest. Through our Lord."
+          }
+        ]
+      },
+      "old_entry_sha256": "f1e576a0a29d2c933aa817e866fcf1f665a47b30e2aa15ff82e880b969661ea8",
+      "new_entry_sha256": "b732d0fb1cccd0eb16f958c87047d1aa1f45a10e4421c1b0e750a897d7ebd7a5",
+      "new_English_sha256": "eff5a89a3176b79a710d705e81dc0136cb963a11035aa9ee65cd79ecc5c7a872",
+      "proper_sha256": "5e329c2d31740d050b248172f39f861a449264ecfc378e8e26e224fe22e9f53c",
+      "target_Latin_sha256": "ba2b69434a3457a9642232323225ec0964e364632e5e138728912d7bf6efc600",
+      "Latin_proof_sha256": "ed02f32db183151b2e189c7146d53012870956a67679d027db789029d9893cf2",
+      "source_appointment": "Own Second-Mass Postcommunion under the explicit following Collects override of the Anniversary referral.",
+      "source_range": [
+        1778,
+        1778
+      ],
+      "source_date_basis": "The exact registered whole PDF28c9046c was rehashed. AP1 visibly identifies Daily Missal with Vespers, Dom Gaspar Lefebvre, St Andrews Abbey/Lohmann; it has no publication year. AP2 prints approvals dated21March1924 and13May1925. AP3 prints the13May1925 letter and a physical JAN20'27 library accession stamp. Selected ordinary pages1738–1739/AP1778–1779 follow ordinary1737/AP1777 and finish beforeNovember3 on1739, without superscript, separate pagination or later-insert notice at these settings. This supports a bounded pre-1931 early-expression inference for these exact three prayer settings; it is not a fresh exact1925 colophon claim or authentication of every page in the2007-page composite.",
+      "strongest_date_contrary": "The title itself is undated; approval dates alone do not date publication, and an early front-leaf accession stamp cannot by itself exclude every later inserted or replaced leaf. Nearby other source settings elsewhere include lettered pagination. For these prayers the visible continuous ordinary folios, common setting and shared physical page with the already registered Third-Mass Postcommunion support the bounded early-setting inference. The exact Google/CCWatershed PDF/layout/OCR/wrappers remain unresolved and are neither copied into this proposal nor cleared by the textual assessment.",
+      "fidelity_qualification": "The historical English renders plural his sacrificiis as this sacrifice and does not separately lexicalize pariter; the coordinated pardon and everlasting rest are both preserved. The singular is contextual Mass English, not a transcription correction; independent fidelity review must assess it.",
+      "literal_conclusion_relation": "All petition Latin words agree after accent/ligature/case/pointing/line-wrap normalization. Source actual cue Per Dominum.; target actual cue Per Dominum. English actual cue Through our Lord. All are preserved at their own printed extents; no literal entire-ending equality is asserted when those extents differ, and no performed full conclusion is supplied.",
+      "source_records": [
+        "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-english-fidelity-three-20261113-ea9fe7c8",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-second-postcommunion-source",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-second-postcommunion-english",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-three-early-printing-control-20261113"
+      ]
+    },
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "third",
+        "Collect",
+        "all",
+        1
+      ],
+      "new_entry": {
+        "mass": "commemoratione-omnium-fidelium-defunctorum",
+        "form_id": "third",
+        "proper": "Collect",
+        "cycle": "all",
+        "occurrence": 1,
+        "witness": "lefebvre-1925",
+        "printed_page": "1738-1739",
+        "ia_leaf": 1777,
+        "ia_leaf_range": [
+          1777,
+          1778
+        ],
+        "artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf",
+        "passage_id": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-third-collect-source",
+        "collated": "Complete own bilingual prayer and actual printed short cue, page images200/400dpi,2026-11-13",
+        "collation_result": "confirmed",
+        "publication_artifact_id": "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-english-fidelity-three-20261113-ea9fe7c8",
+        "publication_artifact_sha256": "ea9fe7c8a4b8f716e4046af0dd943d9bf27a25c7ab43315ecf41ff053a9c16ec",
+        "publication_passage_id": "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-third-collect-english",
+        "witness_note": "Own Third-Mass Collect begins at the bottom ofAP1778/1738 in English-left/Latin-right and continues at the top ofAP1779/1739 with Latin-left/English-right, ending before the Secret. The following Collects override the daily-Requiem referral. All petition Latin words agree after accent/ligature/case/pointing/line-wrap normalization. Source actual cue Per Dominum.; target actual cue Per Dominum nostrum. English actual cue Through our Lord. All are preserved at their own printed extents; no literal entire-ending equality is asserted when those extents differ, and no performed full conclusion is supplied. The historical English names Thy servants and handmaids who have passed out of this life rather than explicitly repeating souls of; the full intended departed group remains, with Mary and all saints interceding and the petition for everlasting bliss. It does not restrict them to brethren. This free historical rendering is retained verbatim for independent review. Earlier Lasance quotation remains accurate as a quotation but is superseded for this target because its English adds an anniversary clause or narrows the departed to brethren absent from its facing Latin. Original quotation/dictionary/TSV and source proofs remain immutable. The exact registered whole PDF28c9046c was rehashed. AP1 visibly identifies Daily Missal with Vespers, Dom Gaspar Lefebvre, St Andrews Abbey/Lohmann; it has no publication year. AP2 prints approvals dated21March1924 and13May1925. AP3 prints the13May1925 letter and a physical JAN20'27 library accession stamp. Selected ordinary pages1738–1739/AP1778–1779 follow ordinary1737/AP1777 and finish beforeNovember3 on1739, without superscript, separate pagination or later-insert notice at these settings. This supports a bounded pre-1931 early-expression inference for these exact three prayer settings; it is not a fresh exact1925 colophon claim or authentication of every page in the2007-page composite.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925",
+            "text": "O God, Who grantest forgiveness and desirest the salvation of mankind : we beseech Thee in Thy mercy to grant that Thy servants and handmaids who have passed out of this life, by the intercession of blessed Mary ever a Virgin and of all Thy saints, may partake of everlasting bliss. Through our Lord."
+          }
+        ]
+      },
+      "old_entry_sha256": "6807c2f10b01c26993331f767869f464c5c4c0004966cde07079f91b3103afb4",
+      "new_entry_sha256": "01396a8b7dad6218a1cc00a42bc3053ea2bef08255f51158219da54b67e25fd6",
+      "new_English_sha256": "b563f8d4de778f9b25c4bad2c20696fa6380e89e5c6fd141db09fc560d1bd2ba",
+      "proper_sha256": "b89b3a635acd457a578b74c1be132f1d469e5ceff91d10afb56a1e6b2194e664",
+      "target_Latin_sha256": "86a4fd1f06fb14467594949b6255fab3dba90108de16013c464ebef4c4f3d16b",
+      "Latin_proof_sha256": "414255044083aaba73d5995fca4c5445fd93574a30ffa77c1ac18166036fcc0b",
+      "source_appointment": "Own Third-Mass Collect begins at the bottom ofAP1778/1738 in English-left/Latin-right and continues at the top ofAP1779/1739 with Latin-left/English-right, ending before the Secret. The following Collects override the daily-Requiem referral.",
+      "source_range": [
+        1778,
+        1779
+      ],
+      "source_date_basis": "The exact registered whole PDF28c9046c was rehashed. AP1 visibly identifies Daily Missal with Vespers, Dom Gaspar Lefebvre, St Andrews Abbey/Lohmann; it has no publication year. AP2 prints approvals dated21March1924 and13May1925. AP3 prints the13May1925 letter and a physical JAN20'27 library accession stamp. Selected ordinary pages1738–1739/AP1778–1779 follow ordinary1737/AP1777 and finish beforeNovember3 on1739, without superscript, separate pagination or later-insert notice at these settings. This supports a bounded pre-1931 early-expression inference for these exact three prayer settings; it is not a fresh exact1925 colophon claim or authentication of every page in the2007-page composite.",
+      "strongest_date_contrary": "The title itself is undated; approval dates alone do not date publication, and an early front-leaf accession stamp cannot by itself exclude every later inserted or replaced leaf. Nearby other source settings elsewhere include lettered pagination. For these prayers the visible continuous ordinary folios, common setting and shared physical page with the already registered Third-Mass Postcommunion support the bounded early-setting inference. The exact Google/CCWatershed PDF/layout/OCR/wrappers remain unresolved and are neither copied into this proposal nor cleared by the textual assessment.",
+      "fidelity_qualification": "The historical English names Thy servants and handmaids who have passed out of this life rather than explicitly repeating souls of; the full intended departed group remains, with Mary and all saints interceding and the petition for everlasting bliss. It does not restrict them to brethren. This free historical rendering is retained verbatim for independent review.",
+      "literal_conclusion_relation": "All petition Latin words agree after accent/ligature/case/pointing/line-wrap normalization. Source actual cue Per Dominum.; target actual cue Per Dominum nostrum. English actual cue Through our Lord. All are preserved at their own printed extents; no literal entire-ending equality is asserted when those extents differ, and no performed full conclusion is supplied.",
+      "source_records": [
+        "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-english-fidelity-three-20261113-ea9fe7c8",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-third-collect-source",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-fidelity-20261113-third-collect-english",
+        "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.requiem-three-early-printing-control-20261113"
+      ]
+    }
+  ],
+  "rights_boundary": "Only the exact three historical English settings are admitted on the registered United States pre-1931 textual basis, with moderate confidence in the early-setting inference. No exact 1925 colophon, whole-composite authentication, full PDF/image/layout/OCR permission or approved 1962 English is asserted.",
+  "execution_boundary": "Literal short source cues are preserved. No performed conclusion, response, Ordinary or whole Requiem execution is admitted here.",
+  "immutable_source_payloads": [
+    {
+      "path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/all-souls-sixteen-bodies-871dadab/all-souls-sixteen-bodies.txt",
+      "sha256": "871dadab9079a7a876f653a57f16f12d05b9d5bb61ceed68ecf3c6c41a110182",
+      "declared_sha256": "871dadab9079a7a876f653a57f16f12d05b9d5bb61ceed68ecf3c6c41a110182",
+      "byte_size": 5707
+    },
+    {
+      "path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-souls-twelve-bodies-la-checked-4a41c7e8/all-souls-twelve-bodies-la.txt",
+      "sha256": "4a41c7e84507299a829be1359dd51d5bf19447277e1aace8714d08740979349c",
+      "declared_sha256": "4a41c7e84507299a829be1359dd51d5bf19447277e1aace8714d08740979349c",
+      "byte_size": 4359
+    },
+    {
+      "path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-core193-2026-10-23-0736f65f/english.tsv",
+      "sha256": "0736f65f6412cfeae00ff5c90dce7240fc8656e6aa21dad2be75f82b07ddb9c5",
+      "declared_sha256": "0736f65f6412cfeae00ff5c90dce7240fc8656e6aa21dad2be75f82b07ddb9c5",
+      "byte_size": 51660
+    }
+  ],
+  "protected_f79_record_hashes": [
+    {
+      "target": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "first",
+        "Collect",
+        "all",
+        1
+      ],
+      "record_sha256": "ca4404969d4aaf27084ab9aceddadc99bf00b6bd5e82fef44dfd6e08e87a5b9a"
+    },
+    {
+      "target": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "first",
+        "Secret",
+        "all",
+        1
+      ],
+      "record_sha256": "ce788e5be4506f18d150ee13c4102f2244362af6459432f1289a934c51c4db70"
+    },
+    {
+      "target": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "first",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "record_sha256": "46f6c27c61e69dba7786488f058b699b17ee634d76cbbeca13aa6d0a91128abf"
+    },
+    {
+      "target": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Secret",
+        "all",
+        1
+      ],
+      "record_sha256": "d266e6e9b33c3febe3ace16d9c5afc10cec05d01e515817ad9eddef7ce450fc1"
+    },
+    {
+      "target": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "third",
+        "Secret",
+        "all",
+        1
+      ],
+      "record_sha256": "1b87e23bd5961c11c86c8914faba17c7492e25cbb439451c2f5285a1d653ba2f"
+    },
+    {
+      "target": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "third",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "record_sha256": "4f54e9d9b85d61eba734b406dd967e0bc6e1ded12d23318c71be5327aef0e2e6"
+    }
+  ]
+}

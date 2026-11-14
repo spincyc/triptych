@@ -1,0 +1,62 @@
+{
+  "schema": "triptych-independent-water-v5-metadata-review/v1",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "status": "PASS: bounded metadata successor only",
+  "checks_count": 95,
+  "blockers": [],
+  "verification": {
+    "path": ".scratch/roman-sources/baptismal-water-independent-review/v5-delta/verification.json",
+    "sha256": "00b43c7e0f9612eabdc7f7d2222c2a8bfb671feb22057913dacd53abd0247398",
+    "byte_size": 16918
+  },
+  "inputs": [
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v5/candidate-manifest.json",
+      "sha256": "0b67bd8d762597780057f9c3b568ddf89d052f4186601dfa97191007b989e9f0",
+      "byte_size": 22017
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v5/positive-transition-proposal.json",
+      "sha256": "52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2",
+      "byte_size": 55229
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v5/proper-note-successor.json",
+      "sha256": "4aab67731e340915ebf8b653e18adffede5e63c9e8a351cab90196827d0b3e09",
+      "byte_size": 14279
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v5/guarded-install.py",
+      "sha256": "1669f57dc53085e50864327c95762ace9648c2e8dbbfa669ec070e46b8f6d70e",
+      "byte_size": 15765
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v5/fixed-input/.scratch/dry-run/read-map.json",
+      "sha256": "7b76f899799500f4d521db15e6cd58eeb0ea4663f60047f73092df1f3131379d",
+      "byte_size": 56542
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v5/successor-validation.json",
+      "sha256": "709c7a831651eab90a941b7e88d6033c0a928d43cff3a1a00bad900cb181b5b6",
+      "byte_size": 3801
+    },
+    {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/v4-delta/review.json",
+      "sha256": "1889c1b391ea9337e7cf8b1634bff8d911c213a48d241a44ac1e7d7aaac6d527",
+      "byte_size": 5945
+    }
+  ],
+  "final_proper_sha256": "32d0b83f76a3dca487fbd1bc473952438d6a6be10a7e31d576e0c35c659bec35",
+  "note_replacement": {
+    "before": "The following procession tract n. 997 and font prayer n. 998 remain separate existing nodes.",
+    "after": "The procession tract n. 997 and font prayer n. 998 are outside this selected body; their separate source entries do not by themselves establish complete ritual assembly, which requires their own source controls and frame.",
+    "count": 1
+  },
+  "unchanged": [
+    "Latin body 82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+    "English body 942ea5bc30d9f063bc1e92dc8b0d4b921bbea9f2cda5624613462d9e9958ebea",
+    "Six new source files; existing verification passage; Latin proof and English binding; all source IDs, rights, grades, locators, frame data and neighbors."
+  ],
+  "qualification": "The pinned calendar has distinct Tract at the Procession to the Font and Prayer at the Font records. Prior missing-continuation finding concerned nn. 993–996, not absence of n. 997/998. The qualified sentence accurately separates stored entries from complete ritual assembly.",
+  "limits": "No image reread, preparation or apply execution, source admission, authority change, or canonical write. Driver logic remains the reviewed predecessor with exactly two digest constants and schema version repinned; actual Root pin remains None. Author refusal proof is pinned, not rerun."
+}

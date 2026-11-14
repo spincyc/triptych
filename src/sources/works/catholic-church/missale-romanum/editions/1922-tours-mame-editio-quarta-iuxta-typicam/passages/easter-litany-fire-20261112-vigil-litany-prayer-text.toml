@@ -1,0 +1,14 @@
+schema = 2
+record_type = "passage"
+id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer-text"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer"
+artifact_sha256 = "f672b20c5da0383b3c1d4866fb483059b57036d9ef74cd48fcbfecab9b9ac02c"
+locus = "vigil-litany-prayer/complete-old-prayer"
+physical_line_ranges = [[1, 1]]
+text = "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis; et ad recreandos novos populos, quos tibi fons baptismatis parturit, spiritum adoptionis emitte; ut, quod nostrae humilitatis gerendum est ministerio, virtutis tuae impleatur effectu. Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: Per omnia saecula saeculorum. R. Amen."
+transcription_segments = [{line = 1, text = "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis; et ad recreandos novos populos, quos tibi fons baptismatis parturit, spiritum adoptionis emitte; ut, quod nostrae humilitatis gerendum est ministerio, virtutis tuae impleatur effectu. Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: Per omnia saecula saeculorum. R. Amen."}]
+states = ["cataloged", "acquired", "inspected", "verified"]
+context = "Complete independently old prayer, including its actually printed ending/cue. Normalize accents/ligatures and join line wraps; retain old words, order, spelling and conclusion. Exclude apparatus and rubric markers. No target words are substituted into this historical payload."
+verified_on = "2026-11-12"
+notes = "Old full scalarSHA256 19de2829bbdbbbdb9b260309ae3d3af85da3e74e4d17d4845d14fa2b5931e6f4. Controlling complete page passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.easter-litany-fire-20261112-vigil-litany-prayer-page. One complete independently old font-introduction prayer supplies the entire invocation and ordered new-peoples/font/adoption/humble-ministry/divine-effect petition. The only prayer-body deletion relative to the official2014comparison is the repeated mysteriis, adesto phrase; the independently old short conclusion is a separately controlled formula. The old full unit is retained without deletion; no independently old exact shortened whole Latin unit is claimed."
