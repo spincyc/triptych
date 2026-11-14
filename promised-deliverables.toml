@@ -4,7 +4,7 @@ schema_version = 1
 id = "indexed-corpus-performance-2026-11-12"
 owner = "guidance/web-data.md"
 promise = "Use a shared tracked metadata index over the existing corpus to accelerate fresh-checkout reading, terminal and Pages readers, and repeated builds without tracking duplicate complete reading bodies or requiring generated-product archives."
-state = "candidate"
+state = "complete"
 
   [[deliverables.requirements]]
   id = "thin-index-integrity"
@@ -44,7 +44,7 @@ state = "candidate"
   [[deliverables.requirements]]
   id = "main-integration-and-deployment"
   criterion = "Requested 2026-11-13: the work is rebased onto current main without rewriting published history, the deployment gates pass at the rebased tip, origin/main is fast-forwarded to it, and the resulting Pages deployment and affected reader routes are verified live."
-  status = "open"
+  status = "pass"
   evidence = ["PROJECT-WORK.md"]
   check = "path_exists"
 

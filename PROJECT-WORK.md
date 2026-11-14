@@ -11,10 +11,9 @@ Last reconciled: 2026-11-13.
 
 <!-- promised-deliverable: indexed-corpus-performance-2026-11-12 -->
 
-**Candidate: rebased onto `main`, validated, and pushed to `main` with this
-record; the Pages deployment is verified separately.** The maintainer authorized
-a shared, Git-tracked thin index over
-the existing canonical corpus, without copied complete reading bodies, to improve
+**Complete: pushed to `main`, deployed and verified live.** The maintainer
+authorized a shared, Git-tracked thin index over the existing canonical corpus,
+without copied complete reading bodies, to improve
 fresh-checkout preparation, Lectern, the GitHub Pages readers and repeated
 build work. The index is lookup metadata, not a second authoring source or a
 published cache archive. Ordinary reading verifies the selected canonical
@@ -118,6 +117,47 @@ implementation request authorized neither deployment nor history rewriting. On
 rebased onto `main` and pushed to `main`. The rebase rewrote only the
 unpublished workspace branch; `main` advances by fast-forward, and that push
 authorizes the Pages deployment it triggers.
+
+`origin/main` was fast-forwarded from `edecdbc2e1` to `5255b4028b`. Pages run
+[43521421694](https://github.com/spincyc/triptych/actions/runs/43521421694)
+ran build, print-compile and deploy, and all three succeeded; repository
+hygiene run 43521421710 succeeded. On 2026-11-13 the live `SHA256SUMS` and
+`PUBLICATION-MANIFEST.json` were fetched from `https://mystago.gy/` and
+compared with `build/public-alpha/site/`, rebuilt from the same commit by
+`make pages-site` in 7 minutes 53 seconds. The manifests are byte-identical,
+and 45,193 of the 45,196 listed paths match. The other three are web-figure SVGs, whose
+bytes depend on the TeX toolchain: Pages compiles them in the pinned image and a
+local build uses the host's TeX. They differ by one clip-path coordinate. Each
+affected reader route below was fetched and is byte-identical to the local
+build and to its live checksum entry:
+
+| Route | HTTP | SHA-256 | Match |
+| --- | ---: | --- | --- |
+| `liturgy/day-reader.html` | 200 | `ecc9ced015aeba73…` | byte-identical |
+| `liturgy/day-reader.js` | 200 | `d94286a8029b6727…` | byte-identical |
+| `liturgy/day-read-payload.js` | 200 | `e49e27fbece28ca3…` | byte-identical |
+| `liturgy/propers-reader.html` | 200 | `5b1c382a1f7d38af…` | byte-identical |
+| `liturgy/propers-reader.js` | 200 | `6696fbb5955f1155…` | byte-identical |
+| `liturgy/propers-read-payload.js` | 200 | `5a4ffda019de937a…` | byte-identical |
+| `liturgy/reader-proper-payload.js` | 200 | `b1124ec28bb9c9aa…` | byte-identical |
+| `browse/structure/propers/reader/roman-1962.json` | 200 | `38f7d89560d4c061…` | byte-identical |
+| `browse/structure/propers/reader/postconciliar.json` | 200 | `fc8122c7206474de…` | byte-identical |
+| `browse/structure/propers/reader/roman-pre-1955.json` | 200 | `466cf39128e14b24…` | byte-identical |
+| `browse/structure/propers/mass/roman-1962/epiphany-6.json` | 200 | `b8800e5c6ea87163…` | byte-identical |
+| `sources/index.html` | 200 | `3f9fe79f9deac589…` | byte-identical |
+| `sources/sources.js` | 200 | `5d83621b90d85834…` | byte-identical |
+| `sources/reader-model.js` | 200 | `d7a22e2457694e9d…` | byte-identical |
+| `browse/structure/sources/index.json` | 200 | `9440ae8bddb6a263…` | byte-identical |
+| `browse/structure/sources/catalogue/0000.json` | 200 | `86b40dadbff25090…` | byte-identical |
+| `history/index.html` | 200 | `7784e354a802a45d…` | byte-identical |
+| `history/history.js` | 200 | `5859fd6086ab24cd…` | byte-identical |
+| `browse/structure/act-history/catalogue.json` | 200 | `6a749cd9c962b682…` | byte-identical |
+| `browse/structure/act-history/index.json` | 200 | `c296412caa1471f2…` | byte-identical |
+
+Headless Chromium rendered the live Sources, Day, Propers and History readers
+at 1,280 pixels. Sources listed its library, Day settled on the Mass of
+S. Didaci for Friday 13 November 2026 with its canonical texts, and Propers and
+History offered their selections. None reported a load failure.
 
 ## Claude 1962 resumed Sixth Sunday after the Epiphany, 2026-11-15
 
