@@ -187,8 +187,10 @@ class OrdinaryStructure(unittest.TestCase):
         self.assertEqual({(row["source_id"], row["lang"]): row["held"]
                           for row in file["translations"]}, expected_witnesses)
         expected_absences = {
+            # 2026-11-14: the fraction formula moved here from the retired
+            # no-antecedent-witness key (its Pustet 1862 collation is made).
             "antecedent-diverges-at-named-words": (
-                3, "rights-restricted", "rights-withheld"
+                4, "rights-restricted", "rights-withheld"
             ),
             "antecedent-held-not-carried": (1, "unavailable", "witness-gap"),
             # 2026-10-19 (C2 G5): the appointed Pentecost Preface and paschal
@@ -205,7 +207,6 @@ class OrdinaryStructure(unittest.TestCase):
             ),
             "element-spans-mixed-availability": (3, "unavailable", "model-gap"),
             "element-spans-mixed-matter": (5, "unavailable", "model-gap"),
-            "no-antecedent-witness": (1, "unavailable", "witness-gap"),
             "no-fixed-text": (3, "unavailable", "not-applicable"),
             # The n. 131 parent is now a text-free structural anchor in both
             # languages; its old quiet-prayer and divergence reasons move to
