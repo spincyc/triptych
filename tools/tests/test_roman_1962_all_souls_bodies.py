@@ -27,8 +27,14 @@ UNCHANGED_HASH = '9cc0c574f099c34eb7e10ee201bb06a587d827ea2c99ac10edb0b56459fe26
 ORDERS = {'first': ['Introit', 'Collect', 'Epistle', 'Gradual', 'Tract', 'Sequence', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'second': ['Introit', 'Collect', 'Lesson', 'Gradual', 'Tract', 'Sequence', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion'], 'third': ['Introit', 'Collect', 'Lesson', 'Gradual', 'Tract', 'Sequence', 'Gospel', 'Offertory', 'Secret', 'Communion', 'Postcommunion']}
 # Was 7086db8b... (4 entries, 12 absences). The twelve absences were later closed by
 # accepted rows of the English recovery ledger (eeab39fef Lasance, 8d7e3b301 Lefebvre);
-# the four earlier entries are unchanged.
-ENGLISH_OWNERS_HASH = 'c6a0d97b03f4d8cbac812158911d1420bc64bdd79ecf63d859e82be5101d1442'
+# the four earlier entries are unchanged. Then c6a0d97b... over all sixteen. Three
+# of them (Second Mass Collect and Postcommunion, Third Mass Collect) were later
+# corrected to the adopted Lefebvre 1925 settings (see accepted_requiem_english);
+# this pins the other thirteen, unchanged, and holds those three to the adopted rows.
+ENGLISH_OWNERS_HASH = 'd888d2370cb0fe94d1265aed79eadcd12f8e7740d016354afeda7b5983876af3'
+REQUIEM_REVIEW = ROOT / 'workflows/reviews/missal-reader-resume-2026-11-13/requiem-three-english'
+REQUIEM_PROJECTION_SHA = '933532b36fd1e8cef575b8fed866b7fe8e4b69e281196b924726c79ff71864bb'
+REQUIEM_ADOPTION_SHA = '4b77a8613f8245ba57a83b80b89241f351eb4d7e215535433f2e8dfeb9deaab4'
 ENGLISH_RECOVERY = ROOT / 'src/sources/inventories/roman-1962-english-recovery-2026-10-23.toml'
 HISTORICAL_ARTIFACT = 'artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.all-souls-twelve-bodies-la-checked-4a41c7e8'
 PROJECTION_ARTIFACT = 'artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-10-20.all-souls-sixteen-bodies-871dadab'
@@ -40,6 +46,24 @@ SOURCE_SPANS = {'first-collect': [1, 3], 'shared-tract': [5, 7], 'shared-sequenc
 def digest(value):
     return hashlib.sha256(json.dumps(value, ensure_ascii=False, sort_keys=True,
                                      separators=(',', ':')).encode()).hexdigest()
+
+
+def accepted_requiem_english():
+    """The three adopted Lefebvre English owners by (form_id, proper, cycle, occurrence)."""
+    raw = (REQUIEM_REVIEW / 'admitted-source-projection.json').read_bytes()
+    adoption_raw = (REQUIEM_REVIEW / 'root-source-adoption.json').read_bytes()
+    if (hashlib.sha256(raw).hexdigest() != REQUIEM_PROJECTION_SHA
+            or hashlib.sha256(adoption_raw).hexdigest() != REQUIEM_ADOPTION_SHA):
+        raise AssertionError('requiem English projection or its root adoption changed')
+    projection, adoption = json.loads(raw), json.loads(adoption_raw)
+    fields = ('identity', 'old_entry_sha256', 'new_entry_sha256', 'new_English_sha256',
+              'target_Latin_sha256')
+    if not (adoption['status'] == 'accepted'
+            and adoption['accepted_rows'] == [{k: r[k] for k in fields} for r in projection['rows']]
+            and all(r['identity'][0] == MASS and digest(r['new_entry']) == r['new_entry_sha256']
+                    for r in projection['rows'])):
+        raise AssertionError('requiem English rows are not the accepted three')
+    return {tuple(r['identity'][1:]): r for r in projection['rows']}
 
 
 def unmodified(mass):
@@ -192,16 +216,24 @@ class AllSoulsBodyTests(unittest.TestCase):
         owners = {kind: [r for r in ledger[kind] if r['mass'] == MASS]
                   for kind in ('entries', 'untranslated')}
         self.assertEqual((len(owners['entries']), len(owners['untranslated'])), (16, 0))
-        self.assertEqual(digest(owners), ENGLISH_OWNERS_HASH)
+        corrected = accepted_requiem_english()
+        entries = {(row['form_id'], row['proper'], row['cycle'], row['occurrence']): row
+                   for row in owners['entries']}
+        self.assertLessEqual(set(corrected), set(entries))
+        uncorrected = {'entries': [row for key, row in entries.items() if key not in corrected],
+                       'untranslated': owners['untranslated']}
+        self.assertEqual(digest(uncorrected), ENGLISH_OWNERS_HASH)
+        for key, row in corrected.items():
+            self.assertEqual(entries[key], row['new_entry'], key)
         recovered = {tuple(row['target'][1:]): row['english_sha256']
                      for row in tomllib.loads(ENGLISH_RECOVERY.read_text())['accepted']
                      if row['target'][0] == MASS}
-        entries = {(row['form_id'], row['proper'], row['cycle'], row['occurrence']): row
-                   for row in owners['entries']}
         self.assertEqual(set(entries) - set(recovered),
                          {('first', name, 'all', 1) for name in ('Sequence', 'Collect', 'Secret', 'Postcommunion')})
         self.assertEqual(len(recovered), 12)
         for key, english in recovered.items():
+            if key in corrected:
+                english = corrected[key]['new_English_sha256']
             self.assertEqual(text_sha256(entries[key]['translations'][0]['text']), english, key)
         for row in owners['untranslated']:
             self.assertEqual(row['availability'], 'unavailable')

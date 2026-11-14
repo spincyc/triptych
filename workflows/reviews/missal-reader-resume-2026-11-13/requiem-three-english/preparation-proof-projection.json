@@ -1,0 +1,374 @@
+{
+  "schema": "triptych-requiem-three-preparation-proof-projection/v1",
+  "projection": {
+    "original_path": ".scratch/roman-sources/requiem-english-activation/fresh/operation-proof.json",
+    "original_sha256": "5cc8bef51e48280429e66dd471b44b448146d5465ad05fce9a5ae3b1be70f68f",
+    "selected_fields": [
+      "state",
+      "packet_sha256",
+      "independent_review_sha256",
+      "driver_sha256",
+      "owner_path",
+      "owner_preimage_sha256",
+      "owner_postimage_sha256",
+      "operations",
+      "unchanged_raw_segments",
+      "semantic_controls",
+      "all_other_raw_bytes_unchanged",
+      "all_other_parsed_objects_unchanged",
+      "proper_and_Latin_owners_written",
+      "source_closure_record_count",
+      "limits"
+    ],
+    "omitted": [
+      "host input_root",
+      "absolute input paths",
+      "local frozen read-map path"
+    ],
+    "status": "Explicit field projection of the local preparation proof; not an application receipt."
+  },
+  "input_file_pins": [
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-souls-twelve-bodies-la-checked-4a41c7e8/artifact.toml",
+      "sha256": "895aad5212fc8785fba290c6615a82994fb824de640201d84d3197e1636033b2",
+      "byte_size": 3647,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/ia-scan-pdf-9873693a/artifact.toml",
+      "sha256": "ca4b224874d452a269befb56edcb56b1ffd06e62b9a6c067b718054e7e8ba116",
+      "byte_size": 2782,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/artifacts/cmaa-facsimile-pdf/artifact.toml",
+      "sha256": "9e2440cfcf8fd3a0bc86dfc57bd9871992b9bca4fd5baced4ce07c7c06c48fbf",
+      "byte_size": 5430,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/internet-archive-facsimile-pdf-6cf3c3d0/artifact.toml",
+      "sha256": "268c53acbfcfe0d272929d70c64f7343f171116bcb5e2595b645bed42527dbdd",
+      "byte_size": 3690,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-core193-2026-10-23-0736f65f/artifact.toml",
+      "sha256": "908fa3651156b73b37f6ecf46b94494bf97f0cf87f55e725f74f9f66ccfa984e",
+      "byte_size": 2782,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/artifacts/ccwatershed-scan-pdf/artifact.toml",
+      "sha256": "5c89dcc1deaa03c2d64b8e7444d8aacfdb58ee6533af8030c7d7d541706a1ea8",
+      "byte_size": 2113,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/all-souls-sixteen-bodies-871dadab/artifact.toml",
+      "sha256": "64d26ea5fd39046c8fd78a78245f9bb2e3045d1160b698c697c869e4ccbd3568",
+      "byte_size": 4484,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/edition.toml",
+      "sha256": "c5570791955722356a338b95201c30372b26a9fa44e82882e504daa7a23b7b89",
+      "byte_size": 1931,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/edition.toml",
+      "sha256": "2d629ce174b247c8d624b41f9061efe8c7bdf9ea29fcee0a2aec18db2d78bd10",
+      "byte_size": 642,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/edition.toml",
+      "sha256": "061025437feaa2dda34bf03c55921d6389e399c3a58d73f2457e3990f41f4eb7",
+      "byte_size": 2512,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/editions/saint-andre-lohmann-1925/edition.toml",
+      "sha256": "6a060b831ad5f083821bb5f97c66497ebd565dc90aa0ce4f993e871fe9374694",
+      "byte_size": 1012,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/edition.toml",
+      "sha256": "51579f6182902ccbf038bf43fd3cba68d72a24079f56333b59c1392407b2a58d",
+      "byte_size": 3950,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/all-souls-sixteen-own-bodies-word-collation-2026-10-20.toml",
+      "sha256": "7c8cf4e6156383881063c70ecbea14e5b659b03e247cbc6f38ffc555684330c3",
+      "byte_size": 1837,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-core193-2026-10-23-publish-commemoratione-omnium-fidelium-defunctorum--second--collect--all--1.toml",
+      "sha256": "038c5ef048a5a3e66195a6a994b256e7ea04b4b4dd4021c2604b86e4dc974b16",
+      "byte_size": 1702,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-core193-2026-10-23-publish-commemoratione-omnium-fidelium-defunctorum--second--postcommunion--all--1.toml",
+      "sha256": "49613cfdf3d9043f58fa33f9a4ff57ac596e572b1bc969368c5801a8a03be441",
+      "byte_size": 1696,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-core193-2026-10-23-publish-commemoratione-omnium-fidelium-defunctorum--third--collect--all--1.toml",
+      "sha256": "949f5987f5037600e918c2075ea7d02a79a5c5877271a4524e1d51d22b74819d",
+      "byte_size": 1710,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-core193-2026-10-23-verify-commemoratione-omnium-fidelium-defunctorum--second--collect--all--1.toml",
+      "sha256": "e41ce1ef92210172e39b404491f92da0c6fc71ee9c6cbaa8d9f321efd19c5315",
+      "byte_size": 3003,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-core193-2026-10-23-verify-commemoratione-omnium-fidelium-defunctorum--second--postcommunion--all--1.toml",
+      "sha256": "e7393ea86a923ec8adf40694bc043728eec7a22103a78e853f2f1907330641b5",
+      "byte_size": 2533,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/passages/resume-orations-core193-2026-10-23-verify-commemoratione-omnium-fidelium-defunctorum--third--collect--all--1.toml",
+      "sha256": "ef44ff8ccff5e756bf6b5f9cccc7759d74102ce267be4a22d69e13b6eae3cac2",
+      "byte_size": 3165,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/passages/all-souls-second-collect.toml",
+      "sha256": "d2042bb8a76fe4299e0badc05d7dd6d2e5d63efbf6a5a790ed3759f7659016f3",
+      "byte_size": 1585,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/passages/all-souls-second-postcommunion.toml",
+      "sha256": "5aaaae30f9716a58da6034494c7cf3eb44596b46346317f72d94dac56cfd26ee",
+      "byte_size": 1462,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/passages/all-souls-third-collect.toml",
+      "sha256": "5a44240abcde9045c39bdb5e16feb7ab86a4603b30a01590ac7ce6f037b081a3",
+      "byte_size": 1529,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/work.toml",
+      "sha256": "ae029277a68493ed903cd608cd7abdb91797aaff614ab5646f7c6a2dbeaa2ffd",
+      "byte_size": 521,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/work.toml",
+      "sha256": "c40e462e77cb754586a920072d53280e7a39f4c9090d12e8a92de31fa33d5a05",
+      "byte_size": 1447,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/gaspar-lefebvre/daily-missal-with-vespers/work.toml",
+      "sha256": "b98329725812e3ca2fb8b6178ae956a80a3255a1adbf11a101a243809f0e98b3",
+      "byte_size": 1007,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/work.toml",
+      "sha256": "ec158d3a6a6b806eae829bf0ee477f401ef7bcf848cb831e3a286d2e96e291a5",
+      "byte_size": 1017,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-10-20-editorial-projection/artifacts/all-souls-sixteen-bodies-871dadab/all-souls-sixteen-bodies.txt",
+      "sha256": "871dadab9079a7a876f653a57f16f12d05b9d5bb61ceed68ecf3c6c41a110182",
+      "byte_size": 5707,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/all-souls-twelve-bodies-la-checked-4a41c7e8/all-souls-twelve-bodies-la.txt",
+      "sha256": "4a41c7e84507299a829be1359dd51d5bf19447277e1aace8714d08740979349c",
+      "byte_size": 4359,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-core193-2026-10-23-0736f65f/english.tsv",
+      "sha256": "0736f65f6412cfeae00ff5c90dce7240fc8656e6aa21dad2be75f82b07ddb9c5",
+      "byte_size": 51660,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/calendars/roman-1962/propers.yaml",
+      "sha256": "15a23560249aa94e41f0cc35810fad7cf082edda0efd8b3a1ad862738c9739dc",
+      "byte_size": 2688341,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "sha256": "3c878613f4127fc7bb2aaa8880d1b8e5b232a8495798e543e76cc6ef1970fdc1",
+      "byte_size": 5531288,
+      "from_frozen_read_map": false
+    },
+    {
+      "repository_path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "sha256": "dcc0e3f17b51c5f9f85b53ce1e70f127d1f18e17c400bb1c0ef6f6c643b424dc",
+      "byte_size": 3588334,
+      "from_frozen_read_map": false
+    }
+  ],
+  "actual_root_source_adoption_sha256": "4b77a8613f8245ba57a83b80b89241f351eb4d7e215535433f2e8dfeb9deaab4",
+  "state": "prepared-only-with-actual-Root-source-adoption",
+  "packet_sha256": "8c3b514f872c7aab6a64124559aab5a83927e224badcba129457ae8666b98878",
+  "independent_review_sha256": "83fbca7042225e8cfe7c4bfe24631d4f880ccd5a41649754f1ae95f04ecbb8fe",
+  "driver_sha256": "5986312618aa407d8348190707d76231dcda2e86d46f053c8850a1a42fb05f2b",
+  "owner_path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+  "owner_preimage_sha256": "dcc0e3f17b51c5f9f85b53ce1e70f127d1f18e17c400bb1c0ef6f6c643b424dc",
+  "owner_postimage_sha256": "099412b1b7256773bf69f9ab0e80d36f7bd4293996d640e59233779de7deb1f4",
+  "operations": [
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Collect",
+        "all",
+        1
+      ],
+      "before_start": 1466928,
+      "before_end": 1469480,
+      "after_start": 1466928,
+      "after_end": 1470132,
+      "old_raw_sha256": "d1c938911275e2a5f97b2223deead89bf06ae951b73ab913aedc532d08f461b8",
+      "new_raw_sha256": "8f2cf785bc1ce06a0954670e5746a06222fbc9feb77b8ce0fce070e273fb654c",
+      "old_entry_sha256": "d0cf453d2e3bd5f9d25462d089c471c14bcbe4f8f3ecf1020bc64dfb0d4e4cef",
+      "new_entry_sha256": "ee0a91b9217e566479d401df48d6356fa395be2d09aeaad78fd5426481a39e3b"
+    },
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "before_start": 1471992,
+      "before_end": 1474159,
+      "after_start": 1472644,
+      "after_end": 1475757,
+      "old_raw_sha256": "d59820b7c295e07c2f2447b0c2a3fbd8f9c3bfa0fb8b962177a36eb24f531d06",
+      "new_raw_sha256": "d1f8b0ebc80391fdfe4c07f5e71bcc8d73184c72dc7dbb99da013d45ce18a8e2",
+      "old_entry_sha256": "f1e576a0a29d2c933aa817e866fcf1f665a47b30e2aa15ff82e880b969661ea8",
+      "new_entry_sha256": "b732d0fb1cccd0eb16f958c87047d1aa1f45a10e4421c1b0e750a897d7ebd7a5"
+    },
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "third",
+        "Collect",
+        "all",
+        1
+      ],
+      "before_start": 1476289,
+      "before_end": 1478890,
+      "after_start": 1477887,
+      "after_end": 1481334,
+      "old_raw_sha256": "2ec2fed4411081923ac6d403e298312bbf3c44e91355fb228f25cc538d80f883",
+      "new_raw_sha256": "1d8c158a9fae19304eb4500eee0fba498c56d65f5ae1552d1a44a32fc5831002",
+      "old_entry_sha256": "6807c2f10b01c26993331f767869f464c5c4c0004966cde07079f91b3103afb4",
+      "new_entry_sha256": "01396a8b7dad6218a1cc00a42bc3053ea2bef08255f51158219da54b67e25fd6"
+    }
+  ],
+  "unchanged_raw_segments": [
+    {
+      "before_start": 0,
+      "after_start": 0,
+      "byte_size": 1466928,
+      "sha256": "bc1884d743b1d839c5687fda0371af7aa67a3121a1ce6f5705bd3d0286ae0ce5"
+    },
+    {
+      "before_start": 1469480,
+      "after_start": 1470132,
+      "byte_size": 2512,
+      "sha256": "d94a7eb016607b06fee091a93dea2bf19bf3565b6ecf09a99089d2008e88b39a"
+    },
+    {
+      "before_start": 1474159,
+      "after_start": 1475757,
+      "byte_size": 2130,
+      "sha256": "7ce69407fc96f697da76639bc4c8c6e8a2e74b59f244f63409dcf0fadafd3379"
+    },
+    {
+      "before_start": 1478890,
+      "after_start": 1481334,
+      "byte_size": 2109444,
+      "sha256": "74181871018a75c54ac8d76aecb1ec61bc2976db885e0babfb9e135bc98b3eb0"
+    }
+  ],
+  "semantic_controls": [
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Collect",
+        "all",
+        1
+      ],
+      "entry_index_at_preparation": 609,
+      "proper_sha256": "8a9c346f8b2558a4e6bc6669792a1b9f1c81a1fbe58591135604f73468454f8c",
+      "target_Latin_sha256": "30e48e208401dc42d128140be8a04c58f12f20d89d9a5c9bcfb90bddfb53f054",
+      "Latin_proof_sha256": "24819b8cd3ef64cf7d449edd2ba572f94b0578ed8a8bbfaadbb411de91da45c7",
+      "old_entry_sha256": "d0cf453d2e3bd5f9d25462d089c471c14bcbe4f8f3ecf1020bc64dfb0d4e4cef",
+      "new_entry_sha256": "ee0a91b9217e566479d401df48d6356fa395be2d09aeaad78fd5426481a39e3b",
+      "old_English_sha256": "3beea228bb2b5c1016c0c6fb4b9295120ede2a18719b6d06ece592531385adf7",
+      "new_English_sha256": "8e35d5c578ac9897993695392913ba59f0cdbe567482409227883a68db57e919"
+    },
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "second",
+        "Postcommunion",
+        "all",
+        1
+      ],
+      "entry_index_at_preparation": 611,
+      "proper_sha256": "5e329c2d31740d050b248172f39f861a449264ecfc378e8e26e224fe22e9f53c",
+      "target_Latin_sha256": "ba2b69434a3457a9642232323225ec0964e364632e5e138728912d7bf6efc600",
+      "Latin_proof_sha256": "ed02f32db183151b2e189c7146d53012870956a67679d027db789029d9893cf2",
+      "old_entry_sha256": "f1e576a0a29d2c933aa817e866fcf1f665a47b30e2aa15ff82e880b969661ea8",
+      "new_entry_sha256": "b732d0fb1cccd0eb16f958c87047d1aa1f45a10e4421c1b0e750a897d7ebd7a5",
+      "old_English_sha256": "1bd48e9d339c6b6ba0ecda8387a7a550ae84eb6167df8d60dedbaf23525f772a",
+      "new_English_sha256": "eff5a89a3176b79a710d705e81dc0136cb963a11035aa9ee65cd79ecc5c7a872"
+    },
+    {
+      "identity": [
+        "commemoratione-omnium-fidelium-defunctorum",
+        "third",
+        "Collect",
+        "all",
+        1
+      ],
+      "entry_index_at_preparation": 613,
+      "proper_sha256": "b89b3a635acd457a578b74c1be132f1d469e5ceff91d10afb56a1e6b2194e664",
+      "target_Latin_sha256": "86a4fd1f06fb14467594949b6255fab3dba90108de16013c464ebef4c4f3d16b",
+      "Latin_proof_sha256": "414255044083aaba73d5995fca4c5445fd93574a30ffa77c1ac18166036fcc0b",
+      "old_entry_sha256": "6807c2f10b01c26993331f767869f464c5c4c0004966cde07079f91b3103afb4",
+      "new_entry_sha256": "01396a8b7dad6218a1cc00a42bc3053ea2bef08255f51158219da54b67e25fd6",
+      "old_English_sha256": "d6a24731dceb23b4ecced1b38e33c033f38c4ca0ddc63f791bcc6637d3195b91",
+      "new_English_sha256": "b563f8d4de778f9b25c4bad2c20696fa6380e89e5c6fd141db09fc560d1bd2ba"
+    }
+  ],
+  "all_other_raw_bytes_unchanged": true,
+  "all_other_parsed_objects_unchanged": true,
+  "proper_and_Latin_owners_written": false,
+  "source_closure_record_count": 34,
+  "limits": [
+    "Preparation only; no application code or canonical write.",
+    "No new source selection, rights judgment, translation review or full producer execution.",
+    "Current owner changes require a fresh semantic merge; frozen author whole-owner postimages are not replayed.",
+    "Performed conclusion descriptors and six existing f79 records are unchanged."
+  ]
+}
