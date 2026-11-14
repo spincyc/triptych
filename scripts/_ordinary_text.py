@@ -155,6 +155,17 @@ def applicable_translation(
     return None, "inapplicable"
 
 
+def heading_and_rubric(text: object) -> tuple[str, str]:
+    """A head's title line, and any rubric the book prints beneath it.
+
+    A heading's words are one line unless the witness sets a rubric under the
+    title (the 1962 Missal's Preface titles and their "Sequens praefatio
+    dicitur" rubrics); the browser makes the same split in `day.js`.
+    """
+    title, _, rubric = str(text or "").strip().partition("\n")
+    return title.strip(), rubric.strip()
+
+
 def element_lines(
     element: dict,
     lang: str,
@@ -197,7 +208,13 @@ def element_lines(
         if selected is None:
             return [indent + style.note(f"[held source text; applicability {applicability} for this formulary context]")]
         lines.append("")
-        lines.extend(indent + one for one in style.heading(str(selected["text"]).strip(), rule="-"))
+        title, rubric = heading_and_rubric(selected["text"])
+        lines.extend(indent + one for one in style.heading(title, rule="-"))
+        if rubric and show_rubrics:
+            # The 1962 Preface titles carry the rubric printed under them; it is
+            # set as a rubric, never ruled as part of the head.
+            for line in wrap(f"[ {' '.join(rubric.split())} ]", indent + "  "):
+                lines.append(style.note(line))
         lines.extend(source_note_lines(selected, style, indent, why=why))
         lines.extend(notice_lines(selected, notices, style, indent))
         if why and element.get("locus"):

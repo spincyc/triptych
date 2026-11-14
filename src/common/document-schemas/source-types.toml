@@ -78,7 +78,11 @@ id = "calendar-masses"
 schema_ids = ["triptych-calendar-masses/v1"]
 owner = "tools/check-calendar-masses"
 paths = ["src/sources/calendars/*/propers.yaml"]
-required_fields = ["schema", "calendar", "edition", "sections"]
+# The book a calendar transcribes is named once, by its row in
+# src/sources/inventories/missal-designators-v1.toml (whose check, run by
+# `tools/check-calendar-masses`, requires a row for every calendar here), never
+# restated as an `edition` field.
+required_fields = ["schema", "calendar", "sections"]
 minimum_members = 1
 cardinality = "Each declared calendar's ordered masses, inherited formularies and typed absences; no generic recurrence rules are invented here."
 validator = ["tools/check-calendar-masses"]

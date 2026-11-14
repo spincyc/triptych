@@ -227,7 +227,7 @@ class PentecostExemplarTests(unittest.TestCase):
         self.assertEqual(entries[0]["passage_id"],
                          "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945.whitsunday-alleluia")
         self.assertEqual(entries[0]["printed_page"], "599")
-        self.assertFalse([row for row in self.overlay["untranslated"]
+        self.assertFalse([row for row in self.overlay.get("untranslated", [])
                           if row.get("mass") == "pentecost" and row.get("proper") == "Alleluia"])
 
     def test_the_reading_view_sets_the_same_stanzas(self) -> None:

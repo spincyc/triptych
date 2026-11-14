@@ -1322,8 +1322,22 @@
       // every element of an Ordinary, so saying it 195 times said nothing 194
       // of those times; what distinguishes a rubric from a prayer here is how
       // it is set, which is what distinguishes them in the book.
-      const body = T.ordinaryText(element, held, !heading ? element.locus : null);
+      // A head is one line unless the book prints a rubric under its title
+      // (the 1962 Preface titles): the title stays the head and the rubric is
+      // set as a rubric, never in the head's capitals and spacing.
+      const headBreak = element.kind === 'heading' && typeof held.text === 'string'
+        ? held.text.trim().indexOf('\n') : -1;
+      const shown = headBreak > 0
+        ? Object.assign({}, held, { text: held.text.trim().slice(0, headBreak).trim() })
+        : held;
+      const body = T.ordinaryText(element, shown, !heading ? element.locus : null);
       section.appendChild(body);
+      if (headBreak > 0) {
+        const rubric = T.el('p', 'composed ordinary-head-rubric',
+          held.text.trim().slice(headBreak + 1).trim());
+        rubric.lang = held.lang;
+        section.appendChild(rubric);
+      }
       markConditionalWords(section, body, held);
 
       const witness = witnessNote(file, held.source_id, held.lang);

@@ -338,7 +338,8 @@ body:has(.reader-instrument) > .site-footer,
 .reader-instrument .reader-document .ordinary-frame > .annotated .annotated-text > .proper { margin: 0; }
 .reader-instrument .reader-document .ordinary-frame > .annotated .proper-name { margin-left: 0; padding-left: 0; }
 .reader-instrument .reader-document .ordinary-head { margin: 2rem 0 0.65rem; color: var(--instrument-accent); font: 600 0.8rem/1.4 var(--instrument-sans); letter-spacing: 0.04em; text-align: left; }
-.reader-instrument .reader-document .ordinary-element.is-rubric .composed {
+.reader-instrument .reader-document .ordinary-element.is-rubric .composed,
+.reader-instrument .reader-document .ordinary-element .ordinary-head-rubric {
   grid-column: 2;
   max-width: 60ch;
   margin-block: 0.55rem;
@@ -515,6 +516,7 @@ body:has(.reader-instrument) > .site-footer,
 
 /* The state is owned by day.js; this final presentation sheet owns display. */
 .hides-rubrics .reader-instrument .reader-document .ordinary-frame > .ordinary-element.is-rubric,
+.hides-rubrics .reader-instrument .reader-document .ordinary-frame .ordinary-head-rubric,
 .hides-rubrics .reader-instrument .reader-document .ordinary-turn.is-action[data-action="true"] {
   display: none;
 }

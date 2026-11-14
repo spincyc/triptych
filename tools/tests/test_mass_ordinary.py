@@ -83,7 +83,9 @@ ELLC_SOURCE_ID = (
     "edition.english-language-liturgical-consultation.praying-together.1998"
 )
 
-PUBLISHABLE = {"public-domain", "project-created"}
+# `qualified-public-domain` (publication policy priority 6) is publishable only
+# beside its record's verbatim notice; `tools/mass-ordinary` enforces that.
+PUBLISHABLE = {"public-domain", "project-created", "qualified-public-domain"}
 
 
 def load(name: str) -> dict:
@@ -119,6 +121,9 @@ class OrdinaryStructure(unittest.TestCase):
         for name, file in self.files.items():
             for witness in file["translations"]:
                 self.assertIn(witness["rights"], PUBLISHABLE, name)
+                if witness["rights"] == "qualified-public-domain":
+                    self.assertTrue(witness.get("acknowledgement"),
+                                    f"{name}: a qualified witness must carry its notice")
             for element in elements(file):
                 for translation in element["translations"] or []:
                     self.assertIn(translation["rights"], PUBLISHABLE,

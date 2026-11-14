@@ -518,7 +518,8 @@
    says so by setting it in italic. Following that is not decoration: it is what
    lets a reader tell at a glance whether the words in front of them are to be
    said or to be done. */
-.ordinary-element.is-rubric .composed {
+.ordinary-element.is-rubric .composed,
+.ordinary-element .ordinary-head-rubric {
   font-size: 0.98rem;
   font-style: italic;
   line-height: 1.62;
@@ -574,6 +575,7 @@
    script, which is the opposite of what a missal does. */
 
 .hides-rubrics .ordinary-frame > .ordinary-element.is-rubric { display: none; }
+.hides-rubrics .ordinary-frame .ordinary-head-rubric { display: none; }
 
 /* ---- The day's own text, inside the frame -------------------------------
    The rule belongs here and nowhere else on the page. Everything around it is

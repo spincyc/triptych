@@ -193,6 +193,24 @@ class TerminalNotice(unittest.TestCase):
             {"lang": "la", "source_id": "edition.synthetic.plain", "text": "Deinde."}]}
         self.assertNotIn("Notice:", "\n".join(element_lines(plain, "la", style, notices=notices)))
 
+    def test_a_head_printed_with_its_rubric_rules_only_the_title(self):
+        """The 1962 Preface titles carry their rubric on a second line."""
+        from _ordinary_text import element_lines
+        from _tooling import Style
+        style = Style("plain")
+        element = {"key": "praefatio/h", "kind": "heading", "translations": [
+            {"lang": "la", "source_id": "edition.synthetic.missal",
+             "text": "PRAEFATIO COMMUNIS\nSequens praefatio dicitur in Missis."}]}
+        lines = element_lines(element, "la", style)
+        title = lines.index("  PRAEFATIO COMMUNIS")
+        self.assertEqual("  " + "-" * len("PRAEFATIO COMMUNIS"), lines[title + 1])
+        self.assertEqual("    [ Sequens praefatio dicitur in Missis. ]", lines[title + 2])
+        hidden = element_lines(element, "la", style, show_rubrics=False)
+        self.assertIn("  PRAEFATIO COMMUNIS", hidden)
+        self.assertFalse(any("Sequens" in line for line in hidden))
+        browser = (ROOT / "src/web/browser/liturgy/day.js").read_text(encoding="utf-8")
+        self.assertIn("'composed ordinary-head-rubric'", browser)
+
 
 class InstalledOrdinary(unittest.TestCase):
     """The installed inventories keep each claim at its element."""

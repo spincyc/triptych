@@ -580,7 +580,8 @@ body:where(:has(> .day-reader-candidate, > .visual-reset-page)) > .site-header n
   color: var(--missal-rubric);
 }
 
-.page-browser .ordinary-element.is-rubric .composed {
+.page-browser .ordinary-element.is-rubric .composed,
+.page-browser .ordinary-element .ordinary-head-rubric {
   color: color-mix(in srgb, var(--missal-rubric) 52%, var(--ink-soft));
   font-size: 0.94rem;
   font-style: italic;

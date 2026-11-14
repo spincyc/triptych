@@ -97,7 +97,8 @@ body.propers-reader-candidate,
 }
 .propers-reader-candidate [data-reader-mode="missal"] .ordinary-division:first-child { margin-top: 0.5rem; }
 .propers-reader-candidate [data-reader-mode="missal"] .ordinary-element .composed { margin-top: 0.15rem; }
-.propers-reader-candidate [data-reader-mode="missal"] .ordinary-element.is-rubric .composed {
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-element.is-rubric .composed,
+.propers-reader-candidate [data-reader-mode="missal"] .ordinary-element .ordinary-head-rubric {
   color: var(--ink-soft);
   font-size: 0.98rem;
   font-style: italic;

@@ -169,6 +169,11 @@ class ResolveProper(unittest.TestCase):
             "s-antonii-mariae-claret-episcopi-confessoris":
                 "commune-confessoris-pontificis-2",
         }
+        closed = {
+            "s-laurentii-brundusio-confessoris-ecclesiae-doctoris",
+            "s-gregorii-barbadici-episcopi-confessoris",
+            "s-antonii-mariae-claret-episcopi-confessoris",
+        }
         root = ROOT / "src/sources/calendars"
         for calendar_name in ("roman-1962", "roman-pre-1955"):
             calendar = _calendars.load_document(root, calendar_name)
@@ -197,9 +202,16 @@ class ResolveProper(unittest.TestCase):
                         if proper["name"] == "Collect"
                     )
                     self.assertEqual(collect, (own_collect, None))
-                    self.assertEqual(own_collect["text_status"]["state"], "unavailable")
-                    self.assertEqual(own_collect["text_status"]["scope"], "proper-body")
-                    self.assertNotIn("text", own_collect)
+                    if key in closed:
+                        # A recovered own Collect (St Lawrence, 2026-10-29; the
+                        # other two, the 2026-11-14 public-domain witness
+                        # campaign) still displaces only the Common's.
+                        self.assertNotIn("text_status", own_collect)
+                        self.assertTrue(own_collect["text"].strip())
+                    else:
+                        self.assertEqual(own_collect["text_status"]["state"], "unavailable")
+                        self.assertEqual(own_collect["text_status"]["scope"], "proper-body")
+                        self.assertNotIn("text", own_collect)
                     self.assertIn("Secret", names(resolved))
                     self.assertIn("Postcommunion", names(resolved))
                     self.assertEqual(

@@ -42,7 +42,8 @@ def current_english_owners():
     ledger = tomllib.loads((ROOT / "src/sources/inventories/roman-1962-proper-translations-v1.toml").read_text())
     partitions = []
     for table in ("entries", "untranslated"):
-        rows = ledger[table]
+        # A complete ledger has no unavailable owners and so no such table.
+        rows = ledger.get(table, [])
         mapped = {propers.translation_record_identity(row, document): row for row in rows}
         if len(mapped) != len(rows):
             raise AssertionError("duplicate English source owner")

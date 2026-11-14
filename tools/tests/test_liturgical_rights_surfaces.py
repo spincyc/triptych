@@ -44,6 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from _scanning import markers_for, present  # noqa: E402
 from _tooling import code_fingerprint, prune_cache  # noqa: E402
+import _qualified_public_domain  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from _product_data import browser_data_root
@@ -538,8 +539,14 @@ PROTECTED_SNIPPET_FINGERPRINTS = {
 # redistribution licence (for example CC BY-SA), but never an unresolved or
 # surface-limited permission record.
 UNSAFE_LITURGY_RIGHTS = {"licensed", "permission", "unresolved"}
-PUBLIC_LITURGY_RIGHTS = {"project-created", "public-domain"}
-SOURCE_DISTRIBUTABLE_RIGHTS = {"licensed", "project-created", "public-domain"}
+# `qualified-public-domain` is the publication policy's priority-6 basis
+# (src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml): public on
+# every liturgy surface, but only beside that record's verbatim notice, which
+# `tools/public-alpha` and the generators enforce wherever it carries words.
+PUBLIC_LITURGY_RIGHTS = {"project-created", "public-domain", _qualified_public_domain.BASIS}
+SOURCE_DISTRIBUTABLE_RIGHTS = {
+    "licensed", "project-created", "public-domain", _qualified_public_domain.BASIS
+}
 IDENTITY_FIELDS = {
     "artifact",
     "artifact_id",
@@ -642,13 +649,12 @@ PUBLIC_LITURGY_ROOTS = (
 )
 RUBRICS_SOURCE_ROOT = ROOT / "src" / "sources" / "calendars"
 RUBRICS_PUBLIC_ROOT = STRUCTURE_ROOT / "rubrics"
-PROPER_LATIN_INVENTORY = (
-    ROOT
-    / "src"
-    / "sources"
-    / "inventories"
-    / "roman-1962-proper-latin-provenance-v1.toml"
-)
+# Every missal's Latin publication inventory: once the 1962 Latin was fully
+# admitted, the postconciliar inventory's removed bodies became the live
+# fail-closed hashes, so the scan reads all of them.
+PROPER_LATIN_INVENTORIES = tuple(sorted(
+    (ROOT / "src" / "sources" / "inventories").glob("*-proper-latin-provenance-v1.toml")
+))
 RUBRICS_ALLOWED_LATIN_PATHS = {
     "postconciliar": frozenset(),
     "roman-1962": frozenset(),
@@ -1038,9 +1044,16 @@ def postconciliar_quarantine_hashes(
 
 
 def unresolved_latin_body_hashes(
-    inventory: Path = PROPER_LATIN_INVENTORY,
+    inventories: tuple[Path, ...] = PROPER_LATIN_INVENTORIES,
 ) -> frozenset[str]:
     """Exact hashes of bodies whose current publication decision is fail-closed."""
+    hashes = set()
+    for inventory in inventories:
+        hashes |= _unresolved_latin_body_hashes(inventory)
+    return frozenset(hashes)
+
+
+def _unresolved_latin_body_hashes(inventory: Path) -> set[str]:
     document = tomllib.loads(inventory.read_text(encoding="utf-8"))
     defaults = document.get("defaults") or {}
     hashes = set()
@@ -1058,7 +1071,7 @@ def unresolved_latin_body_hashes(
         digest = str(row.get("text_sha256") or "")
         if re.fullmatch(r"[0-9a-f]{64}", digest):
             hashes.add(digest)
-    return frozenset(hashes)
+    return hashes
 
 
 def protected_text_findings(
@@ -2850,7 +2863,7 @@ class PublicDataBoundary(unittest.TestCase):
         unresolved_body_hashes = unresolved_latin_body_hashes()
         self.assertTrue(
             unresolved_body_hashes,
-            "the Roman publication inventory yielded no fail-closed body hashes",
+            "the Latin publication inventories yielded no fail-closed body hashes",
         )
         failures = []
         textual = 0
@@ -3370,7 +3383,12 @@ class CliBoundary(unittest.TestCase):
         )
 
     def test_latin_unresolved_witnesses_are_text_free_public_capabilities(self) -> None:
-        """Gaps stay text-free; Vianney alone now has an accepted Latin Collect."""
+        """Gaps stay text-free; Vianney alone now has an accepted Latin Collect.
+
+        St Albert's three orations are published for the 1962 reader on the
+        qualified (priority-6) basis, so the withheld exemplar is the 1920
+        reader's St Albert, whose provenance admits no qualified row.
+        """
         from tools.tests.test_roman_1962_octnov_commemoration_source_repair import phase5_owner
         from _proper_latin import (LatinKey, SURFACES, decision_for,
                                    publication_records, sanitize_proper)
@@ -3396,7 +3414,7 @@ class CliBoundary(unittest.TestCase):
                     "mass-propers",
                     "show",
                     "--calendar",
-                    "roman-1962",
+                    "roman-pre-1955",
                     "--mass",
                     "s-alberti-magni-episcopi-confessoris-ecclesiae",
                     "--lang",
@@ -3415,7 +3433,7 @@ class CliBoundary(unittest.TestCase):
                     "--date",
                     "2027-11-15",
                     "--calendar",
-                    "roman-1962",
+                    "roman-pre-1955",
                     "--lang",
                     "la",
                     "--format",
@@ -3518,6 +3536,22 @@ class CliBoundary(unittest.TestCase):
                 self.assertEqual({"Secret", "Postcommunion"}, {r["name"] for r in inherited})
                 self.assertTrue(all(r["taken_from"]["mass"] ==
                                     "commune-confessoris-non-pontificis-1" for r in inherited))
+        # The 1962 reader's St Albert carries the qualified words with the
+        # adopted record's notice, never as plain public domain.
+        run = self.run_tool("mass-propers", "show", "--calendar", "roman-1962",
+                            "--mass", "s-alberti-magni-episcopi-confessoris-ecclesiae",
+                            "--lang", "la", "--format", "json")
+        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
+        qualified = {p["name"]: p for p in json.loads(run.stdout)["mass"]["propers"]
+                     if p.get("name") in {"Collect", "Secret", "Postcommunion"}}
+        self.assertEqual({"Collect", "Secret", "Postcommunion"}, set(qualified))
+        for name, proper in qualified.items():
+            self.assertTrue(proper.get("text"), name)
+            latin = proper["latin"]
+            self.assertIs(False, latin["withheld"], name)
+            self.assertEqual(("permitted", "qualified-public-domain"),
+                             (latin["publication"]["status"], latin["publication"]["basis"]),
+                             name)
 
     def test_mass_ordinary_machine_surface_contains_only_public_states(self) -> None:
         run = self.run_tool(
@@ -3667,7 +3701,7 @@ class EllcAssemblyBoundary(unittest.TestCase):
         unresolved_body_hashes = unresolved_latin_body_hashes()
         self.assertTrue(
             unresolved_body_hashes,
-            "the Roman publication inventory yielded no fail-closed body hashes",
+            "the Latin publication inventories yielded no fail-closed body hashes",
         )
         failures: list[str] = []
         for path in pdfs:

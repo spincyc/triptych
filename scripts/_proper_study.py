@@ -74,6 +74,8 @@ CHRONOLOGY_COMPUTATION_INPUTS = (
     "scripts/_loci.py", "scripts/_calendars.py", "scripts/_tooling.py",
     "scripts/_psalms.py", "scripts/_deuterocanon.py", "scripts/_projection.py",
     "scripts/_psalter.py", "scripts/_bible_artifacts.py", "scripts/_bible_editions.py",
+    # The calendar's book name now comes from the missal designator registry.
+    "scripts/_missal_designators.py",
     "tools/proper-chronology", "requirements-tools.txt",
 )
 POSTCONCILIAR_CHRONOLOGY_INPUTS = (
