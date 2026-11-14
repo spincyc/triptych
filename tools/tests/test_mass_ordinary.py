@@ -3007,9 +3007,13 @@ process.stdout.write(JSON.stringify({
             # 4b0d33fb baseline reproduces the old pin; only event 26's
             # citation bounds change. All 178 event positions, body words,
             # translation fields and the postconciliar stream stay identical.
+            # Re-pinned 2026-11-14: only row 97 changes. The Trinity Preface
+            # heading is now the 1962 Missal's own (study English of the
+            # qualified Latin), its rubric set beneath the title, with its
+            # source note and the qualified notice; all 178 positions hold.
             "pentecost_10_text": (
                 178,
-                "2ed48bbc9c4aa4e141c6feeac2b89f46604764272e83e496acabc0f22d1d19b8",
+                "1ddb51e1538c140b1a22dcbaa939e935adbbdd63d31d1e0b80bc46ca52af85f9",
             ),
             # Re-pinned 2026-10-19 (C4 step 2), diffed against HEAD 1107fdc1a:
             # the sequence is unchanged and only the Preface dialogue and the
@@ -3826,10 +3830,14 @@ class FormularyPage(unittest.TestCase):
                 10,
                 "e648631d469125047af4a9a53b89f3204b41f6ba69ea1cbb4ad505b49e30885b",
             ),
+            # Re-pinned 2026-11-14: the public-domain witness campaign admits
+            # the Latin of OT XVIII's Prayer over the Offerings and Prayer
+            # after Communion (postconciliar Latin provenance, permitted);
+            # their English and every other row are unchanged.
             "postconciliar": (
                 "ot-18",
                 11,
-                "1eaa0e2dc8107f90201b48dcd556838de6b4adec9ef4e0fac3ddda65c9c4d76f",
+                "fec36be08b254095edde0c1200486cddf531d84eb73a8e487f0270998ae5e836",
             ),
         }
         keys = (

@@ -222,7 +222,10 @@ class ScopedOrdinaryTranslations(unittest.TestCase):
         rows = self.pair()
         for ordered in (rows, rows[::-1]):
             shown = self.render(ordered, self.MAY, kind="heading")
-            self.assertIn(rows[1]["text"].strip(), shown)
+            # A head's second line is set beneath its title (the 1962 Preface
+            # titles carry their rubric that way), so each line is shown.
+            for line in rows[1]["text"].strip().split("\n"):
+                self.assertIn(line, shown)
             self.assertIn("Study source qualification.", shown)
             self.assertNotIn("Historical", shown)
 

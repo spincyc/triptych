@@ -930,7 +930,7 @@ def load_fixtures() -> list[dict]:
     return [json.loads(path.read_text(encoding="utf-8")) for path in sorted(FIXTURES.glob("*.json"))]
 
 
-WITHHELD_COLLECT_OWNER = "s-alberti-magni-episcopi-confessoris-ecclesiae"
+WITHHELD_COLLECT_OWNER = "exaltatione-s-crucis"
 
 
 def fixture_named(name: str) -> dict:
@@ -3361,9 +3361,10 @@ class ParityTests(unittest.TestCase):
         request = copy.deepcopy(fixture["requested"])
         # The 1962 reader's Latin is now complete (Vianney's, then Claret's and
         # St Albert's Collects were recovered), so the unavailable-body control
-        # is the 1920 reader's St Albert, whose own Collect stays withheld.
+        # is the 1920 reader's Exaltation of the Cross, whose Collect stays
+        # withheld and whose day expands without a foreign-source condition.
         request["edition"]["id"] = request["calendar"]["id"] = "roman-pre-1955"
-        request["civilDate"] = "2027-11-15"
+        request["civilDate"] = "2026-09-14"
         request["selectedReadableFormulary"] = {
             "id": WITHHELD_COLLECT_OWNER
         }
@@ -3385,7 +3386,10 @@ class ParityTests(unittest.TestCase):
         changed["days"][0]["why"]["lectionary"] = {"sunday": "X", "weekday": "Y"}
         mutations.append((changed, "lectionary result disagrees"))
         changed = copy.deepcopy(payload)
-        scripture = next(one for one in changed["days"][0]["masses"][0]["propers"] if one["verses"])
+        # A pure Scripture proper: a mixed chant's verses are checked earlier,
+        # as a component of its composed body.
+        scripture = next(one for one in changed["days"][0]["masses"][0]["propers"]
+                         if one["verses"] and one.get("source") == "scripture")
         scripture["verses"][0]["ref"] = "invented drift"
         mutations.append((changed, "scripture references disagree"))
         changed = copy.deepcopy(payload)
