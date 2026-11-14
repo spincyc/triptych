@@ -293,7 +293,11 @@ the churn was worth it:
 - **URAA restoration**, 17 U.S.C. §104A, effective 1 January 1996 for Berne
   members, running generally 95 years from publication [sourced]. This is the
   mechanism that actually protects twentieth-century Holy See printings in the
-  US.
+  US. **Narrowed 2026-11-14:** it does not reach a Holy See publication first
+  issued in Vatican City in 1931–1975 that lapsed in the US for want of a
+  formality, whose twenty-year Vatican term had expired before 1996 — a
+  priority-6 basis owned by `src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml`. It still protects
+  1976 and later printings.
 
 A rights position resting on a book's own claim is better evidence than one
 resting on a treaty date nobody could cite.
@@ -372,6 +376,12 @@ Three rights positions were left explicitly open rather than resolved:
   §104A(h)(6)(B) excludes only works whose *term expired*. So `unresolved` still
   stands, and its meaning has changed: not "nobody looked" but "we looked, and the
   likely answer is copyright".
+  **Superseded in part 2026-11-14** by `src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml`: the
+  2057 figure assumed a seventy-year Vatican term that did not exist before 2011,
+  and l. 633/1941 reached Vatican City by Law XII of 1960, not the 1929 law. The
+  edition's own 1931–1975 Holy See matter is now published, one text at a time,
+  on the `qualified-public-domain` token; the artifact's `unresolved` stands for
+  the scan.
 
   *What saves the project is §103(b), not a clearance.* A new typical edition's
   copyright reaches only its own contribution and gives no exclusive right in the

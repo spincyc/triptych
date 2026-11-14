@@ -34,6 +34,7 @@ recorded_on = "2026-08-01"
 jurisdiction = "United States"
 closes_open_question = "the-1962-contradiction, src/sources/inventories/lt-hist-rights-audit-v1.toml"
 governs_artifact = "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+superseded_in_part_by = "src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml (2026-11-14): the United States status of the 1962 edition's own matter first published by the Holy See in 1931-1975; see [[corrections]] id holy-see-twenty-year-term-2026-11-14"
 
 holding = """
 THE SCAN'S CC BY-NC-ND CONFERS NOTHING, AND THAT IS NOT THE GOOD NEWS IT LOOKS
@@ -51,6 +52,18 @@ does not find it public domain and the evidence does not support finding it so.
 `unresolved` on the artifact therefore stands, and the reason it stands has
 moved: it is no longer "nobody has looked" but "we looked, and the likely answer
 is that it is in copyright."
+
+SUPERSEDED IN PART, 2026-11-14, BY src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml.
+The paragraph above rested on a seventy-year Vatican term on 1 January 1996.
+None existed before 2011: the law then in force in Vatican City was l. 633/1941,
+received by Vatican Law XII of 1960, whose arts. 11 and 29 give a work published
+under a public body's name and at its expense twenty years from first
+publication. On the maintainer's decision of 2026-11-14, a Holy See text first
+published in Vatican City in 1931-1975 and in the United States public domain by
+a formality is treated as NOT RESTORED -- a policy priority-6 basis, confidence
+medium-low, published only on the visible token `qualified-public-domain` within
+that record's limits. That record owns the holding; nothing here restates it.
+The artifact's `unresolved` status, which is about the scan, is unchanged.
 
 WHAT SAVES THE PROJECT IS NOT A CLEARANCE BUT 17 U.S.C. 103(b). A new typical
 edition's copyright "extends only to the material contributed by the author of
@@ -229,7 +242,7 @@ not our constraint" without saying why would be hiding the near miss.
 
 [the_underlying_edition]
 question = "Independently of any scan, is the 1962 Vatican editio typica of the Missale Romanum in copyright in the United States?"
-answer = "PROBABLY YES, TO THE END OF 2057, by restoration under 17 U.S.C. 104A. This record finds no public-domain basis and does not manufacture one."
+answer = "PROBABLY YES, TO THE END OF 2057, by restoration under 17 U.S.C. 104A. This record finds no public-domain basis and does not manufacture one. SUPERSEDED IN PART 2026-11-14: for the edition's own matter first published by the Holy See in 1931-1975, src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml finds (policy priority 6, confidence medium-low) that the Vatican term had expired before 1 January 1996, so restoration did not reach it."
 the_book = "Missale Romanum ex decreto SS. Concilii Tridentini restitutum, Summorum Pontificum cura recognitum, editio typica, declared typical by decree of the Sacred Congregation of Rites of 23 June 1962 [recorded, guidance/missals.md:44-66, read at the facsimile's own p. 2], published at Vatican City by Typis Polyglottis Vaticanis."
 
 [the_underlying_edition.us_formalities]
@@ -264,8 +277,8 @@ note = "Worked through element by element, because the conclusion runs against t
 eligible_country = "The Holy See acceded to the Berne Convention on 12 September 1935 [sourced, Wikimedia Commons Copyright rules by territory/Vatican City, fetched 2026-08-01; also recorded at guidance/missals.md]. An eligible country under 104A(h)(3)."
 author_nationality = "104A(h)(6)(D) requires an author who was, when the work was created, a national or domiciliary of an eligible country. The Sacred Congregation of Rites is an organ of the Holy See. Satisfied."
 first_publication = "104A(h)(6)(D) also requires first publication in an eligible country and no United States publication within the following thirty days. The typical edition was published at Vatican City. Benziger's New York printings iuxta typicam are SEPARATE EDITIONS under separate United States registrations, not simultaneous publication of this one. THIS IS AN INFERENCE FROM THE EDITION STRUCTURE AND WAS NOT VERIFIED AGAINST A PHYSICAL COPY."
-not_expired_in_source_country = "104A(h)(6)(B) excludes works in the public domain in the source country through expiration of term. On 1 January 1996 a 1962 Vatican publication was thirty-four years old against a seventy-year term. Not expired."
-term_if_restored = "104A(a)(1)(B) gives the remainder of the term the work would have had. For a work published in 1962 that is ninety-five years from publication: 31 DECEMBER 2057."
+not_expired_in_source_country = "104A(h)(6)(B) excludes works in the public domain in the source country through expiration of term. On 1 January 1996 a 1962 Vatican publication was thirty-four years old against a seventy-year term. Not expired. CORRECTED 2026-11-14: there was no seventy-year Vatican term before Law N. CXXXII of 2011. On 1 January 1996 the received l. 633/1941 gave twenty years from first publication to works published under a public body's name and at its expense (arts. 11, 29), fifty years from first publication to anonymous and collective works, and life plus fifty otherwise. Whether art. 11 reached the Holy See is the inference src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml adopts at priority 6; if it did, a 1962 publication expired at home at the end of 1982."
+term_if_restored = "104A(a)(1)(B) gives the remainder of the term the work would have had. For a work published in 1962 that is ninety-five years from publication: 31 DECEMBER 2057. SUPERSEDED IN PART 2026-11-14: this applies only if the work was restored, which src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml denies, within its limits, for the 1962 edition's own 1931-1975 Holy See matter."
 
 [the_underlying_edition.the_official_acts_argument]
 what_it_is = """
@@ -276,7 +289,17 @@ Vatican Law N. CXCVII is of 2017 and cannot govern what was protected in 1996.
 What governed in 1996 was the Italian Copyright Act, l. 633 of 22 April 1941,
 applied in Vatican City on a supplementary basis by virtue of the 1929 Law on
 Sources of Law [sourced, Wikimedia Commons Copyright rules by territory/Vatican
-City, fetched 2026-08-01]. Article 5 of that Act provides that "the provisions of
+City, fetched 2026-08-01].
+
+CORRECTED 2026-11-14: l. 633/1941 did not come in by the 1929 Law on Sources,
+whose art. 20 c) n. 2 received the Italian copyright law in force in 1929 --
+R.D.L. 7 November 1925 n. 1950. It came in by Vatican Law N. XII of 12 January
+1960, art. 1, which also repealed that 1929 provision (art. 3) and, by its art. 2,
+applied copyright protection to "i testi delle leggi e degli atti ufficiali
+pubblicati dalla Santa Sede e dallo Stato della Città del Vaticano". Law XII
+art. 2 therefore closes the art. 5 route below independently of the reasons
+given for refusing it. Page images and hashes:
+src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml [reception]. Article 5 of that Act provides that "the provisions of
 this Law shall not apply to the texts of official acts of the State or of public
 administrations, whether Italian or foreign" [sourced, WIPO Lex and cyberlaws.it,
 fetched 2026-08-01].
@@ -418,6 +441,15 @@ project must not publish from this scan:
      marginal numbering 1013-1139 over the Ordinary. NUMBERS AND PAGE LOCATIONS
      ARE FACTS AND MAY BE CITED FREELY; what 103(b) would protect is the
      selection and arrangement, not the citation of it.
+
+SUPERSEDED IN PART 2026-11-14. "Must not publish" above was the consequence of
+the 2057 finding. Under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml
+the matter in this list that the Holy See first published in Vatican City in
+1931-1975 -- the 1955 Holy Week's composed prayers, the 1960 rubrics, the
+1931-1962 sanctoral formularies, the Decretum of 1962 -- may be published, one
+text at a time, on the `qualified-public-domain` token within that record's
+limits, never as `public-domain`. Matter a pre-1931 witness carries still goes by
+103(b) and that witness; page images are still not published (`[the_three_acts]`).
 """
 
 [the_underlying_edition.routes_examined_and_refused]
@@ -429,6 +461,12 @@ of `[the_underlying_edition.us_formalities]` a failure to renew is precisely wha
 104A(h)(6)(C)(i) restores. A clean negative would prove nothing this record could
 use. Recorded so that a later reader does not spend the effort believing it is
 the missing piece.
+
+SUPERSEDED 2026-11-14: once restoration is excluded for a 1931-1975 Holy See
+work, its United States status turns on notice and renewal again, so the search
+matters. It was run (four renewal corpora, zero Holy See claimants or titles)
+and is recorded at src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml
+[us_english_witnesses].holy_see_latin_in_the_us.
 """
 copyright_office_online_catalog = "Not relied on, for the reasons set out at lasance-new-roman-missal-rights-v1.toml `[the_online_catalog_is_not_relied_on]`: the Catalog of Copyright Entries is 0 per cent searchable in CPRS [recorded]."
 notice_of_intent_to_enforce = """
@@ -451,6 +489,14 @@ sharper than it was. It is not a placeholder for an unasked question. It records
 that the question was asked, that the likely answer is copyright to the end of
 2057, and that nothing found supports a public-domain finding for the 1962
 edition as such.
+
+SUPERSEDED IN PART 2026-11-14: "the likely answer is copyright to the end of
+2057" no longer holds for the edition's own 1931-1975 Holy See matter, which
+src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml treats as not
+restored (priority 6, medium-low). The status stays `unresolved` because it
+describes this scan, and no public-domain finding is made for the edition as
+such: admitted texts reach the public only through per-text carriers marked
+`qualified-public-domain`.
 
 TRACKABLE_RIGHTS excludes `unresolved` [recorded, tools/source-library:145-151],
 so the guard that matters stays on: the payload may not be installed, and the
@@ -825,6 +871,10 @@ items = """
       Both are needed; either alone does nothing. This is the strongest route to
       a public-domain finding and it is set out at
       `[the_underlying_edition.the_official_acts_argument]` at full strength.
+      CORRECTED 2026-11-14: it was not the strongest route. Vatican Law XII
+      art. 2 (1960) closes art. 5 for Holy See official texts; the route the
+      maintainer adopted is the twenty-year term of arts. 11 and 29, recorded at
+      src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml.
 
   3.  EVIDENCE OF SIMULTANEOUS UNITED STATES PUBLICATION within thirty days of
       the Vatican publication, which would defeat restoration under
@@ -834,7 +884,10 @@ items = """
   4.  THE PASSAGE OF TIME, WHICH RUNS THE OTHER WAY FOR ONCE. The Vatican term
       expires at the end of 2032 (seventy years from 1962 under Law N. CXCVII
       art. 5); the restored United States term at the end of 2057. Neither is
-      near, and the second is what governs here.
+      near, and the second is what governs here. CORRECTED 2026-11-14: the
+      seventy-year term is 2011 and 2017 law and is not the term 104A tested;
+      on 1 January 1996 the received term for the edition's own Holy See
+      matter was twenty years (src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml).
 
   5.  A CHANGE IN THE PROJECT'S ACTS. If this repository ever publishes a page
       image from this facsimile, or transcribes the 1955 Holy Week or the 1960
@@ -915,6 +968,33 @@ id = "sanctoral-record-calls-the-facsimile-tracked"
 claim = "`roman-1962-sanctoral-commons-v1.toml`:26 refers to \"the tracked CMAA facsimile\"."
 finding = "The artifact is `storage = \"remote\"` and has never been tracked; no payload exists under its manifest [recorded]."
 effect = "Wording only, and no byte moved as a result. Recorded because `tracked` is a load-bearing term in guidance/sources.md and using it loosely in a rights-adjacent inventory is how a later reader concludes the payload may be installed. Out of this lane's ownership."
+
+[[corrections]]
+id = "holy-see-twenty-year-term-2026-11-14"
+claim = "On 1 January 1996 a 1962 Vatican publication stood against a seventy-year term, l. 633/1941 having applied in Vatican City by virtue of the 1929 Law on Sources; the 1962 typical edition is therefore probably protected in the United States to the end of 2057."
+finding = """
+TWO FACTUAL ERRORS AND ONE CHANGED CONCLUSION. (1) The 1929 Law on Sources
+received the Italian copyright law of 1929 -- R.D.L. 1950/1925 -- not l. 633/1941,
+which reached Vatican City by Law N. XII of 12 January 1960. (2) No Vatican term
+of seventy years existed before Law N. CXXXII of 2011; the received l. 633/1941
+gave twenty years from first publication to works published under a public
+body's name and at its expense (arts. 11, 29). (3) Law XII art. 2 applies
+copyright protection to the Holy See's laws and official acts, which closes the
+art. 5 route on its own. On those statutes the research lane of 2026-11-14 found
+that the Vatican term of the edition's own 1931-1975 Holy See matter had expired
+before 1 January 1996, so 104A did not restore it -- defensible, not adjudicated,
+confidence medium-low -- and the maintainer decided the same day: "if the
+italian copyright holds, apply it".
+"""
+effect = """
+The holding now lives in src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml,
+which owns it; the superseded sentences above are kept, with dated notes, so the
+route to the error stays visible. What does not change: the CC tag analysis, the
+103(b) route for preexisting material (still preferred, and still the only basis
+where a pre-1931 witness carries the words), the refusal to publish page images,
+the Joseph clause, and the artifact's `unresolved` status, which describes the
+scan.
+"""
 
 # --- Counts -------------------------------------------------------------------
 
