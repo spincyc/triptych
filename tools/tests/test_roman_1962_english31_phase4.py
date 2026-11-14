@@ -990,7 +990,7 @@ def accepted_baptismal_water_note():
 # (rights record limit L6) over Latin admitted on the Holy See basis, re-witnessed in the 1946 printing.
 # Only witness/locator metadata and the translation's rights, source_id and notice change; the words do not.
 ALBERT_RELABEL=ROOT/"workflows/reviews/gap-campaign-2026-11-14/roman-1962/albert-the-great-qualified-relabel.json"
-ALBERT_RELABEL_SHA="f8f778bca0ffeeba25ad499a1083228910816e0daf33c4a61cda4e6a1519d01c"
+ALBERT_RELABEL_SHA="cec167d563f078951b9595cbc5c177400176c3fdeaeb5ba780df6bafaafcbd14"
 ALBERT_FIELDS={"artifact_id","collated","ia_leaf","ia_leaf_range","passage_id","translations","witness","witness_note"}
 def accepted_albert_relabel():
  raw=ALBERT_RELABEL.read_bytes()
