@@ -265,7 +265,7 @@ async function runAssertions(cdp, base) {
     })`);
     assert.equal(value.hidden, true);
     assert.equal(/bound M1|explicitly selected|No blocking notices|contract/i.test(value.meta), false);
-    assert.match(value.meta, /1962 Roman Missal · Universal · Douay–Rheims · Latin orations/);
+    assert.match(value.meta, /Roman Missal, 1962 typical edition · Universal · Douay–Rheims · Latin orations/);
 
     // The postconciliar Advent I Day still withholds its three orations' Latin,
     // so it is the rights-limited Read whose notice must stay subordinate.
@@ -279,7 +279,7 @@ async function runAssertions(cdp, base) {
     assert.equal(value.hidden, false);
     assert.match(value.text, /partial or unavailable/i);
     assert.equal(/bound M1|explicitly selected|No blocking notices|contract/i.test(value.meta), false);
-    assert.match(value.meta, /Postconciliar Roman Missal · Universal · Douay–Rheims · Latin orations/);
+    assert.match(value.meta, /Roman Missal, 2002 third typical edition, 2008 emended reprint · Universal · Douay–Rheims · Latin orations/);
     assert.ok(value.firstTop < 340, `first content remains at ${value.firstTop}px`);
 
     await navigate(cdp, url(base, 'unavailable', 'persistent'));
@@ -729,7 +729,7 @@ async function runAssertions(cdp, base) {
     assert.equal(value.actions, 'none');
     assert.equal(value.flag, 'none');
     assert.notEqual(value.title, 'none');
-    assert.match(value.meta, /1962 Roman Missal/);
+    assert.match(value.meta, /Roman Missal, 1962 typical edition/);
     assert.ok(value.content >= 8);
     await cdp.send('Emulation.setEmulatedMedia', { media: 'screen' });
   });

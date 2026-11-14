@@ -335,6 +335,10 @@ FIXED_ARTIFACT_INPUT_PATHS = {
     "tools/public-alpha",
     "tools/mass-propers",
     "scripts/_calendars.py",
+    # `_calendars` names each calendar's book from the designator registry,
+    # and the shelf labels below read the same registry.
+    "scripts/_missal_designators.py",
+    "src/sources/inventories/missal-designators-v1.toml",
     "scripts/_proper_components.py",
     "scripts/_markdown_render.py",
     "scripts/_document_schema.py",
@@ -4891,13 +4895,27 @@ def navigation_state(source_relative: str) -> tuple[str, str, str]:
     return ("", "", "")
 
 
+def missal_designator(calendar: str) -> str:
+    """The registry's designator for a reader calendar's book; no copy lives here."""
+    import _missal_designators
+
+    identity = _missal_designators.calendar_identity(ROOT, calendar)
+    if identity is None:
+        raise ReleaseError(f"the missal designator registry names no book for {calendar}")
+    return identity["edition"]
+
+
 def reader_shelf(source_relative: str) -> tuple[str, str] | None:
     """Resolve a web edition to the reader-facing shelf that owns its subject."""
     if not source_relative.startswith("web/"):
         return None
+    # A missal's shelf is named by the book's designator, resolved only for
+    # a page that sits on it.
+    missal_shelves = (
+        ("/liturgy/roman-rite/1962/", "roman-1962", "library/traditional-latin-mass.html"),
+        ("/liturgy/roman-rite/postconciliar/", "postconciliar", "library/novus-ordo-liturgy.html"),
+    )
     routes = (
-        ("/liturgy/roman-rite/1962/", "1962 Missal", "library/traditional-latin-mass.html"),
-        ("/liturgy/roman-rite/postconciliar/", "Postconciliar Missal", "library/novus-ordo-liturgy.html"),
         ("/liturgy/roman-rite/comparative/", "Liturgy", "library/liturgy.html"),
         ("/history/catholic-exorcism/", "Catholic Exorcism", "library/catholic-exorcism.html"),
         ("/curriculums/ecclesiastical-latin/", "Ecclesiastical Latin", "library/ecclesiastical-latin.html"),
@@ -4912,6 +4930,9 @@ def reader_shelf(source_relative: str) -> tuple[str, str] | None:
         ("/articles/", "Faith", "library/faith.html"),
     )
     normalized = "/" + source_relative.removeprefix("web/").split("/", 1)[-1] + "/"
+    for marker, calendar, destination in missal_shelves:
+        if marker in normalized:
+            return missal_designator(calendar), destination
     for marker, label, destination in routes:
         if marker in normalized:
             return label, destination

@@ -122,7 +122,9 @@ class ReaderShellPrototypeTest(unittest.TestCase):
         self.assertIn("coverage.textContent = ''", self.js)
         self.assertNotIn("No blocking notices", self.js)
         self.assertNotIn("bound M1 state", self.js)
-        self.assertIn("1962 Roman Missal", self.js)
+        # The missals' names come from the Propers manifest, never the shell.
+        self.assertIn("structure/propers/index.json", self.js)
+        self.assertNotRegex(self.js, r"1962 (Roman )?Missal|Postconciliar (Roman )?Missal")
         self.assertIn("Coverage is partial or unavailable", self.js)
         self.assertNotIn("JSON.stringify", self.js)
         self.assertIn("calendarOutcome", self.js)
