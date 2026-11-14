@@ -65,6 +65,7 @@ from _tooling import (
     with_examples,
 )
 from _latin_body_damage import body_damage
+import _qualified_public_domain
 from _lasance_publication import (
     LASANCE_1945_EDITION,
     LASANCE_1945_RIGHTS_ARTIFACT,
@@ -114,9 +115,14 @@ SCHEMA = "triptych-calendar-masses/v1"
 # permission is needed at all. All three name a source_id; the two that rest on
 # somebody's grant must also carry the acknowledgment that grant is conditioned
 # on, because publishing without it is publishing outside the permission.
-TRANSLATION_RIGHTS = {"public-domain", "licensed", "project-created", "permission"}
+# `qualified-public-domain` is the policy priority-6 basis: English carried from
+# a United States book whose own copyright lapsed, translating Latin admitted on
+# an adopted qualified rights record. It is published only with that record's
+# verbatim notice beside the words; `_qualified_public_domain` owns the contract.
+TRANSLATION_RIGHTS = {"public-domain", "licensed", "project-created", "permission",
+                      _qualified_public_domain.BASIS}
 # The bases whose grant is conditioned on a notice travelling with the words.
-RIGHTS_NEEDING_NOTICE = ("licensed", "permission")
+RIGHTS_NEEDING_NOTICE = ("licensed", "permission", _qualified_public_domain.BASIS)
 # These are Lectionary slots even where their source is composed rather than a
 # biblical citation. ICEL's historical Lectionary acknowledgement is not ruled
 # out here; the narrower error is attaching a Roman Missal music witness to a
@@ -1269,8 +1275,13 @@ def check_translation_list(
                 f"{label}: rights must be one of {sorted(TRANSLATION_RIGHTS)}, got {rights!r}"
             )
         source_id = entry.get("source_id")
-        if rights in {"licensed", "public-domain", "permission"} and not source_id:
+        if (rights in {"licensed", "public-domain", "permission", _qualified_public_domain.BASIS}
+                and not source_id):
             problems.append(f"{label}: {rights} translation must name its source_id")
+        problems.extend(
+            f"{label}: {one}" for one in _qualified_public_domain.translation_problems(entry)
+            if "source_id" not in one
+        )
         if rights in RIGHTS_NEEDING_NOTICE and not entry.get("notice"):
             problems.append(
                 f"{label}: {rights} translation must carry its required notice; "
@@ -3773,6 +3784,13 @@ def overlay_problems(paths: list[Path]) -> tuple[list[str], list[dict]]:
                 problems.append(
                     f"{sidecar}: {named}.rights must be one of "
                     f"{sorted(TRANSLATION_RIGHTS)}, got {row['rights']!r}"
+                )
+            if (row.get("rights") == _qualified_public_domain.BASIS
+                    and _qualified_public_domain.RECORD not in str(row.get("rights_basis") or "")):
+                problems.append(
+                    f"{sidecar}: {named}.rights_basis must cite "
+                    f"{_qualified_public_domain.RECORD} for its "
+                    f"{_qualified_public_domain.BASIS} translation source"
                 )
             problems.extend(
                 source_attestation_problems(f"{sidecar}: {named}", row, history)

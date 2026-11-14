@@ -347,6 +347,15 @@ seasonal orations**. A new edition's copyright "extends only to the material
 contributed by the author of such work" and gives no exclusive right in the
 preexisting material.
 
+Since 2026-11-14 the "probably protected to the end of 2057" bullet is
+superseded for the edition's own 1931–1975 Holy See matter:
+`src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml` owns that holding (policy priority 6,
+confidence medium-low), and `scripts/_qualified_public_domain.py` the per-text
+contract. Such matter in the list below may be published, one text at a time,
+on the `qualified-public-domain` token with its notice, never as
+`public-domain`; the 103(b) route stays first wherever a pre-1931 witness
+carries the words.
+
 What it does not free, and what must not be published from the facsimile:
 
 - the restored Holy Week of 1955, as a body of new composition and arrangement;

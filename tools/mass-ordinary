@@ -208,6 +208,7 @@ from _browser_products import ProductError, assert_working_output, committed_dat
 
 import _calendars  # noqa: E402
 import _missal_coverage  # noqa: E402
+import _qualified_public_domain  # noqa: E402
 from _ordinary_text import element_lines  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
@@ -378,8 +379,10 @@ INVENTORY_SUFFIX = "-ordo-missae-v1.toml"
 
 # A witness this tool will carry into the published artifact. Surface-limited
 # licences and permissions remain source-study metadata; this public corpus
-# carries only the two rights states below.
-PUBLISHABLE_RIGHTS = ("public-domain", "project-created")
+# carries only the rights states below. `qualified-public-domain` (policy
+# priority 6) is carried only with its adopted record's verbatim notice as the
+# witness acknowledgement, printed beside every element it supplies.
+PUBLISHABLE_RIGHTS = ("public-domain", "project-created", _qualified_public_domain.BASIS)
 
 # What the source library's own record must say for a witness the inventory
 # declares. Two vocabularies meet here and neither is authoritative over the
@@ -387,6 +390,7 @@ PUBLISHABLE_RIGHTS = ("public-domain", "project-created")
 LIBRARY_RIGHTS = {
     "public-domain": {"public-domain"},
     "project-created": {"project-created"},
+    _qualified_public_domain.BASIS: {_qualified_public_domain.BASIS},
 }
 
 # A restricted witness is provenance the source inventory retains without
@@ -844,6 +848,9 @@ def witness_table(source: dict, library: dict[str, dict], name: str) -> dict[str
                 f"{name}: witness {identifier} declares rights {rights!r}; "
                 f"this tool publishes only {', '.join(PUBLISHABLE_RIGHTS)}"
             )
+        qualified = _qualified_public_domain.ordinary_witness_problems(entry)
+        if qualified:
+            raise SourceError(f"{name}: witness {identifier}: " + "; ".join(qualified))
         for artifact_id in entry.get("artifacts") or []:
             record = library.get(artifact_id)
             if record is None:

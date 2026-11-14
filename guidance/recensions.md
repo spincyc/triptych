@@ -588,6 +588,9 @@ afflatu*, at AAS 3 (1911) 641–642 — fetched from vatican.va and read here
 [verified, sha256 `590a78b6…`]. That is a stronger position than the calendar
 beside it holds: the 1962 rubrics rest on the 1960 code, which is
 `holy-see-post-1929` and cite-only, and this one is pre-1931 and publishable.
+(Narrowed 2026-11-14: the 1960 code is a 1931–1975 Holy See publication,
+publishable text by text on the `qualified-public-domain` basis of
+`src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml`; the 1911 rule needs no such qualification.)
 
 **And it is not a table.** It is five criteria, taken in order until one
 separates two days:

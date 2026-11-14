@@ -598,6 +598,9 @@ times and the reasons had been kept nowhere. A rights record is not
 legal advice and states its jurisdiction; it is the project's own reading, held
 to the same standard as any other claim, and citable so that the next reader
 inherits the reasoning instead of the conclusion.
+`holy-see-twenty-year-term-rights-v1.toml` settles the United States status of
+Holy See publications first issued in Vatican City in 1931–1975, and owns the
+`qualified-public-domain` artifact `rights_status` its texts carry.
 
 Segments have no independent storage disposition or rights declaration. They
 inherit both from their one controlling artifact, and a segment cannot make

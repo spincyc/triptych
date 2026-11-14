@@ -43,9 +43,10 @@ def external_source_identity(root: Path, relative: str, *, metadata: dict | None
             raise ValueError(f"external delivery does not match artifact {field}: {relative}")
     rights = metadata.get("rights_status")
     if (not isinstance(rights, str)
-            or rights not in {"public-domain", "licensed", "permission", "legal-exception", "project-created"}
+            or rights not in {"public-domain", "qualified-public-domain", "licensed", "permission",
+                               "legal-exception", "project-created"}
             or not isinstance(metadata.get("rights_basis"), str) or not metadata["rights_basis"].strip()
-            or (rights in {"public-domain", "legal-exception"}
+            or (rights in {"public-domain", "qualified-public-domain", "legal-exception"}
                 and (not isinstance(metadata.get("rights_jurisdiction"), str)
                      or not metadata["rights_jurisdiction"].strip()))):
         raise ValueError(f"external source artifact lacks affirmative distribution rights: {relative}")

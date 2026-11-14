@@ -28,6 +28,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
 from _tooling import prune_cache, tree_fingerprint  # noqa: E402
 import _artifact_store  # noqa: E402
+import _qualified_public_domain  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     examples_live_on_the_verbs,
@@ -137,8 +138,13 @@ SCHEMA_RECORD_TYPES = {
     2: {"artifact", "segment", "passage"},
 }
 STORAGE_DISPOSITIONS = {"tracked", "remote", "restricted", "unavailable"}
+# `qualified-public-domain` is the policy priority-6 state: distributable, but
+# only with its adopted rights record cited and its verbatim notice carried in
+# `rights_basis` (`_qualified_public_domain.artifact_problems`). It is never a
+# softer spelling of `public-domain`.
 RIGHTS_STATUSES = {
     "public-domain",
+    "qualified-public-domain",
     "licensed",
     "permission",
     "legal-exception",
@@ -148,6 +154,7 @@ RIGHTS_STATUSES = {
 }
 TRACKABLE_RIGHTS = {
     "public-domain",
+    "qualified-public-domain",
     "licensed",
     "permission",
     "legal-exception",
@@ -1620,6 +1627,8 @@ def _validate_artifacts(library: Library) -> None:
             library.error(record.path, "source_url must be a public http(s) URL without credentials")
         if _is_string(rights) and rights in {"public-domain", "legal-exception"} and not _is_string(data.get("rights_jurisdiction")):
             library.error(record.path, f"{rights} artifact requires rights_jurisdiction")
+        for problem in _qualified_public_domain.artifact_problems(data):
+            library.error(record.path, problem)
         if _is_string(data.get("derived_from")) and not _is_string(data.get("transformation")):
             library.error(record.path, "derived artifact requires transformation provenance")
         # A projection is made by a stated rule over its witnesses, so it

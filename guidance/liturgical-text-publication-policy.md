@@ -66,6 +66,14 @@ Apply these bases in order, and record which one a text stands on:
 7. **affirmative restriction, or no defensible basis** → do not locally
    republish; keep the metadata and expose a typed unavailable state.
 
+**Marking a priority-6 basis.** Two scoped tokens exist. `qualified-nonoriginal-adaptation`
+is a finite, hash-pinned set of adapted orations. `qualified-public-domain` is
+general within the limits of the adopted rights record it cites — at present
+`src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml`, for Holy See publications first issued
+in Vatican City in 1931–1975 — and `scripts/_qualified_public_domain.py`
+enforces its contract on every surface. A text on either token carries its
+notice beside the words; neither is ever written `public-domain`.
+
 The burden is on a restriction to be specific enough to defeat an otherwise
 defensible basis. This is not a licence to ignore copyright. It is an
 instruction to analyse the actual work, the actual rightsholder, the actual use
@@ -1040,6 +1048,9 @@ the coordinator, and each needs its own owning lane.
 - **`guidance/missals.md` §5's Latin rights findings** — the pre-1931 line, the
   1935 Berne date, the altar book's own APSA claim, Vatican Law N. CXCVII, and
   URAA restoration. §8.1 adds PSP above them; it displaces none of them.
+  URAA restoration is narrowed for Holy See publications first issued in
+  Vatican City in 1931–1975 by `src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml`
+  (maintainer decision 2026-11-14); it stands for later printings.
 
 ---
 
