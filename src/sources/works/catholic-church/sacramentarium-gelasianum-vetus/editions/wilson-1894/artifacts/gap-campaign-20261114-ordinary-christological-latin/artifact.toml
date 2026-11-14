@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.gap-campaign-20261114-ordinary-christological-latin"
+edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful transcriptions of complete Latin units printed in the identified 1894 historical book, public domain in the United States by publication date before 1931. Mechanical transcription with declared accent/ligature/line-wrap normalization adds no authorship. The basis reaches only these historical words, not any modern edition, layout or apparatus."
+derived_from = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+transformation = "Read on page images by the integrate lane on 2026-11-14. Join physical wraps and division hyphens; remove stress accents; expand ae/oe ligatures; keep historical spelling, abbreviations and pointing as printed. Rubric labels, versicle glyphs and following psalm verses outside each unit are excluded unless printed inside it."
+retrieved = "2026-11-14"
+notes = "Gap campaign 2026-11-14 batch p4-ordinary-christological. One row per complete Latin unit; each row is selected by its own passage. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p4-ordinary-christological-admission.json."
+sha256 = "b812d54b5d2f5e2ad390e99a851ce8b4085d298c01e8c8bc1dbeada19adec27b"
+byte_size = 363
+path = "src/sources/works/catholic-church/sacramentarium-gelasianum-vetus/editions/wilson-1894/artifacts/gap-campaign-20261114-ordinary-christological-latin/text.tsv"
+encoding = "utf-8"
+indexable = true

@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-ordinary-christological-conclusions"
+edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful transcriptions of complete conclusion formulas printed in the identified 1922 historical book, public domain in the United States by publication date before 1931. Mechanical transcription with declared accent/ligature normalization adds no authorship."
+derived_from = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+transformation = "Read on page images by the integrate lane on 2026-11-14. Remove stress accents; expand ae/oe ligatures; keep words and pointing as printed; the following response R. Amen. is outside each formula."
+retrieved = "2026-11-14"
+notes = "Gap campaign 2026-11-14 batch p4-ordinary-christological: separately witnessed conclusion formulas for the Corpus Christi Collect and Prayer after Communion. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p4-ordinary-christological-admission.json."
+sha256 = "bf77830dcd874e9225457483c896f7262150d5cb7f2fd01fb68812dce35426d2"
+byte_size = 213
+path = "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/artifacts/gap-campaign-20261114-ordinary-christological-conclusions/text.tsv"
+encoding = "utf-8"
+indexable = true

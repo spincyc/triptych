@@ -1167,6 +1167,22 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
         for key in withdrawn:
             self.assertNotIn(key, positives)
             self.assertNotIn(key, gaps)
+        # Gap campaign 2026-11-14 (DECISIONS 11f): these slots' identities were corrected to the
+        # 2002 prayers; the Cummiskey English rendered the 1862 prayers and was withdrawn. Holy Name
+        # has no exemplar of the 2002 prayers; the epiphany-lord Prayer after Communion now carries
+        # project study English of its admitted Caelesti lumine Latin.
+        identity_corrected = {("most-holy-name-jesus", proper) for proper in
+                              ("Collect", "Prayer over the Offerings", "Prayer after Communion")}
+        study_replaced = {("epiphany-lord", "Prayer after Communion")}
+        for key in identity_corrected:
+            self.assertNotIn(key, positives)
+            self.assertIn(key, gaps)
+            self.assertEqual(gaps[key]["reason"]["kind"], "no-exemplar")
+        for key in study_replaced:
+            self.assertIn(key, positives)
+            self.assertEqual([(t["lang"], t["rights"]) for t in positives[key]["translations"]],
+                             [("en", "project-created")])
+        withdrawn = withdrawn | identity_corrected | study_replaced
         for key in ((self.BOUND - self.UNBOUND) | set(self.RECOVERED)) - withdrawn:
             self.assertIn(key, positives)
             self.assertNotIn(key, gaps)

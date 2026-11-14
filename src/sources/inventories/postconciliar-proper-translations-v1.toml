@@ -3263,6 +3263,10 @@ sha256 = "de69125a123aa7c189ee99bf0a717af932b0aabf6183d3be205c6ee37a9eebcd"
 path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p1-advent-christmas-admission.json"
 sha256 = "1dbded8c8b0b60ccb5c341621fdb461b3692d606ac144e4395a08f81050f7ffb"
 
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p4-ordinary-christological-admission.json"
+sha256 = "47cb1d5a7ad515b562becf70ab9006d00e349b2162bc19328fc4b347336bcaa2"
+
 [[sources]]
 id = "lasance-1945-printing-1946"
 source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
@@ -5648,123 +5652,6 @@ Grant, we beseech thee, O Lord, that what hath been offered in the presence of t
 """
 
 [[entries]]
-mass = "most-holy-name-jesus"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Collect"
-incipit = "Deus, qui Unigenitum"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-91"
-ia_leaf = 105
-ia_leaf_range = [105, 105]
-printed_page = "95"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-91"
-route = "overlay-reuse"
-antecedent_calendar = "roman-1962"
-antecedent_mass = "most-holy-name-of-jesus"
-antecedent_proper = "Collect"
-antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass most-holy-name-of-jesus, proper Collect; printed p. 95 = leaf n105, collated page-image 2026-08-20)"
-relation = "identical"
-latin_diff = """
-none: the two texts are identical word for word and point for point.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/most-holy-name-of-jesus/Collect, which the roman-1862 Pustet printing gives this day and whose Latin stands beside the formerly recorded postconciliar Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 95 = leaf n105, collated page-image 2026-08-20; this proposal copies its translation rows BYTE-EXACT and adds no new reading. The 1861 keeps this feast on the SECOND SUNDAY AFTER EPIPHANY, not on 3 January: leaf n104, printed p. 94, heads it `II. SUNDAY after EPIPHANY. The FEAST of the HOLY NAME JESUS.` The postconciliar calendar keeps it on 3 January as an Optional memorial. The day is not the same day; the prayer is.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-O God, who didst appoint thy only begotten Son the Saviour of mankind, and commandest that his name should be called JESUS: mercifully grant, that we who venerate his holy name on earth, may also enjoy his sight in heaven. Thro'.
-"""
-
-[[entries]]
-mass = "most-holy-name-jesus"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer over the Offerings"
-incipit = "Benedictio tua"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-92"
-ia_leaf = 106
-ia_leaf_range = [106, 106]
-printed_page = "96"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-92"
-route = "overlay-reuse"
-antecedent_calendar = "roman-1962"
-antecedent_mass = "most-holy-name-of-jesus"
-antecedent_proper = "Secret"
-antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass most-holy-name-of-jesus, proper Secret; printed p. 96 = leaf n106, collated page-image 2026-08-20)"
-relation = "identical"
-latin_diff = """
-none: the two texts are identical word for word and point for point.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/most-holy-name-of-jesus/Secret, which the roman-1862 Pustet printing gives this day and whose Latin stands beside the formerly recorded postconciliar Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 96 = leaf n106, collated page-image 2026-08-20; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same feast and same caution as the Collect above. The 1962 row records that the page sets no Latin cue before this Secret and sets a second `SECRET of the Sunday` after it; the text carried here is the first, the Mass's own.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-May thy blessing, O most merciful God, by which every creature is enlivened and subsists, sanctify this our sacrifice, which we offer thee in honour of the name of thy Son, our Lord Jesus Christ: that it may be acceptable to the praise of thy majesty, and available to our salvation. Thro' the same.
-"""
-
-[[entries]]
-mass = "most-holy-name-jesus"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer after Communion"
-incipit = "Omnipotens aeterne Deus"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-93"
-ia_leaf = 106
-ia_leaf_range = [106, 107]
-printed_page = "96-97"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-93"
-route = "overlay-reuse"
-antecedent_calendar = "roman-1962"
-antecedent_mass = "most-holy-name-of-jesus"
-antecedent_proper = "Postcommunion"
-antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass most-holy-name-of-jesus, proper Postcommunion; printed pp. 96-97 = leaves n106-n107, collated page-image 2026-08-20)"
-relation = "identical"
-latin_diff = """
-none: the two texts are identical word for word and point for point.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/most-holy-name-of-jesus/Postcommunion, which the roman-1862 Pustet printing gives this day and whose Latin stands beside the formerly recorded postconciliar Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed pp. 96-97 = leaves n106-n107, collated page-image 2026-08-20; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same feast and same caution as the Collect above. The 1962 row records that the page spells `honor` here and `honour` in the Secret; both are left as printed.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-O almighty and eternal God, who didst both create and redeem us, mercifully hear our prayers, and vouchsafe, with a pleasing and kind countenance, to receive the sacrifice of this victim of our salvation, which we have offered to thy divine majesty, in honor of the name of thy Son, our Lord Jesus Christ; that thy grace being poured on us, thro' the glorious name of Jesus, as a pledge of our eternal predestination, we may rejoice that our names are written in heaven. Thro' the same.
-"""
-
-[[entries]]
 mass = "saint-wenceslaus-martyr"
 form = ""
 form_id = "main"
@@ -5959,46 +5846,6 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 Mercifully look down, O Lord, we beseech thee, on the offerings of thy church: among which gold, frankincense, and myrrh are no longer offered; but what was signified by those offerings is sacrificed and received, Jesus Christ, thy Son our Lord. Who liveth.
-"""
-
-[[entries]]
-mass = "epiphany-lord"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer after Communion"
-incipit = "Praesta, quaesumus omnipotens Deus"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-112"
-ia_leaf = 102
-ia_leaf_range = [102, 102]
-printed_page = "92"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-112"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 102
-verified_printed_page = "92"
-verified_heading = "I. SUNDAY AFTER EPIPHANY. (running head; see the Prayer over the Offerings above)"
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n102_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page image; the page sets the cue `P. COMM. Praesta, quaesumus.` NOT THE 2002 PRAYER. The seasonal `epiphany` mass's `Mass during the Day` Prayer after Communion in this file reads `Caelesti lumine, quaesumus, Domine, semper et ubique nos praeveni`, which is a different oration; the reform changed this slot, and this English answers only the antecedent Latin the christological entry carries.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: Praesta, quaesumus.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `epiphania-domini`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Grant, we beseech thee, O Almighty God, that our minds may be so purified, as to understand what we celebrate on this great solemnity. Thro'.
 """
 
 [[entries]]
@@ -9157,28 +9004,6 @@ note = "An exact approved-English exemplar and locator were recorded, but the ap
 
 [[untranslated]]
 mass = "nativity"
-form_id = "dawn"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-antiphonary-2010"
-source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_on_page = "2026-08-21"
-verified_artifact_page = 20
-verified_printed_page = "12"
-verified_heading = "CHRISTMAS TIME / THE NATIVITY OF THE LORD / At the Mass at Dawn"
-verified_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf"
-quarantined_text_sha256 = ["1720f3de4b17e808446cb2ce065c3f193c8fed733644d1d6a1a5133a56e3f170"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "nativity"
 form_id = "night"
 proper = "Entrance Antiphon (alternative)"
 cycle = "all"
@@ -9427,21 +9252,6 @@ quarantined_text_sha256 = ["223a2aa477e78da568560fd666ea3c904946e85bceeac7b23c1d
 note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 
-
-
-[[untranslated]]
-mass = "nativity"
-form_id = "vigil"
-proper = "Gospel Acclamation"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["b28bd6ca37e6237891bc4c8ee03e3f68795f003045668063236ed9c19c77841c"]
-note = "The official ICEL Antiphonary contains no Gospel Acclamations, so its permission cannot clear this slot. Two liturgies.net rows, one truncated and both filed under a form the Nativity does not have, are rejected source candidates. This is instead a Lectionary / Confraternity of Christian Doctrine candidate; neither liturgies.net nor the USCCB comparison establishes an authoritative redistributable exemplar. No English wording is retained."
 
 
 [[untranslated]]
@@ -11463,6 +11273,42 @@ extent = "body"
 availability = "unavailable"
 reason = {"kind" = "no-exemplar"}
 note = "The official 2019 bulletin supplies the Latin own Collect, complete as printed with its abbreviated conclusion cue. It supplies no English prayer witness. No acquired qualified English witness or independently prepared study translation is established here, so English remains no-exemplar. The prior historical Holy House refusal dictionaries and fingerprints remain verbatim in the superseded receipt. No complete spoken Latin ending is reconstructed."
+
+[[untranslated]]
+mass = "most-holy-name-jesus"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "Dated 2026-11-14 (gap campaign, integrate lane; DECISIONS 11f): the slot is the 2002 prayer, not the 1862 prayer the former Cummiskey 1861 English rendered; no public-domain antecedent or exemplar of the 2002 prayer is held, so no English is published. The withdrawn entry is preserved in workflows/reviews/gap-campaign-2026-11-14/postconciliar/p4-ordinary-christological-admission.json. No English wording of the 2002 prayer is retained."
+
+[[untranslated]]
+mass = "most-holy-name-jesus"
+form_id = "main"
+proper = "Prayer over the Offerings"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "Dated 2026-11-14 (gap campaign, integrate lane; DECISIONS 11f): the slot is the 2002 prayer, not the 1862 prayer the former Cummiskey 1861 English rendered; no public-domain antecedent or exemplar of the 2002 prayer is held, so no English is published. The withdrawn entry is preserved in workflows/reviews/gap-campaign-2026-11-14/postconciliar/p4-ordinary-christological-admission.json. No English wording of the 2002 prayer is retained."
+
+[[untranslated]]
+mass = "most-holy-name-jesus"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+lang = "en"
+extent = "body"
+availability = "unavailable"
+reason = { kind = "no-exemplar" }
+note = "Dated 2026-11-14 (gap campaign, integrate lane; DECISIONS 11f): the slot is the 2002 prayer, not the 1862 prayer the former Cummiskey 1861 English rendered; no public-domain antecedent or exemplar of the 2002 prayer is held, so no English is published. The withdrawn entry is preserved in workflows/reviews/gap-campaign-2026-11-14/postconciliar/p4-ordinary-christological-admission.json. No English wording of the 2002 prayer is retained."
 
 [[entries]]
 mass = "good-friday"
@@ -15487,3 +15333,66 @@ ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon
 lang = "en"
 rights = "project-created"
 text = "Behold, now the fullness of time has come, in which God sent his Son to earth."
+
+# Gap campaign 2026-11-14, batch p4-ordinary-christological; see workflows/reviews/gap-campaign-2026-11-14/postconciliar/p4-ordinary-christological-admission.json.
+[[entries]]
+mass = "nativity"
+form_id = "vigil"
+proper = "Gospel Acclamation"
+cycle = "all"
+occurrence = 1
+witness = "lefebvre-1925"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "380"
+ia_leaf = 413
+ia_leaf_range = [413, 413]
+artifact_id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf"
+passage_id = "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-ordinary-christological-nativity-vigil-gospel-acclamation-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-ordinary-christological-english"
+publication_artifact_sha256 = "c0a6b0564f18435013ebaa78a148287cc70b36dc0a8f99f98ed219c87390faf3"
+publication_passage_id = "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-ordinary-christological-nativity-vigil-gospel-acclamation-publication"
+witness_note = "Historical human English for study, printed p. 380, PDF page [414], IA leaf [413], read on the page image by the integrate lane on 2026-11-14: the Alleluia verse of the Vigil of Christmas (said only when the Vigil falls on a Sunday), verse alone: the versicle sign, the preceding Alleluia, alleluia. and the closing Alleluia. are outside the unit; the first letter of earth is damaged in the scan and read from the word. Its facing Latin verse, Crastina die delebitur iniquitas terrae: et regnabit super nos Salvator mundi (Lefebvre 1925 p. 380; Pustet 1862 p. 15), agrees word for word with the OLM 1981 verse under accents, ligatures and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+text = "To-morrow shall the iniquity of the earth be abolished: and the Saviour of the world shall reign over us."
+
+[[entries]]
+mass = "nativity"
+form_id = "dawn"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Exulta filia Sion, lauda filia Jerusalem: ecce Rex tuus venit sanctus, et salvator mundi."
+divergence = "Target (secondary 2002 artifact page 106) reads veniet for venit (one inflection changed: one change unit, one new word-form); Exulta/Exsulta and Jerusalem/Ierusalem are orthographic and the pointing differs; DECISIONS 5. The English follows the Missal (will come). The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862; printed p. 19"
+witness_edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+ancient_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-ordinary-christological-nativity-dawn-communion-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Exult, daughter of Sion; give praise, daughter of Jerusalem: behold, your King will come, holy, and the Saviour of the world."
+
+[[entries]]
+mass = "epiphany-lord"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Coelesti lumine, quaesumus Domine, semper et ubique nos praeveni: ut mysterium, cujus nos participes esse voluisti, et puro cernamus intuitu, et digno percipiamus affectu. Per Dominum."
+divergence = "Target (secondary 2002 artifact page 114) agrees word for word with the Pustet 1862 Postcommunion of the Octave of the Epiphany (p. 37) under orthography and pointing; the witness cue Per Dominum. is not the target's Per Christum. (conclusion formula). DECISIONS 11f: this slot's identity is corrected from the old Epiphany Postcommunion (Praesta, quaesumus) to Caelesti lumine; the Cummiskey 1861 English of the old prayer is withdrawn. The study English is the project's existing study English of the identical body in the seasonal epiphany Mass during the Day, re-checked against this target. The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862; printed p. 37"
+witness_edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+ancient_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-ordinary-christological-epiphany-lord-main-prayer-after-communion-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Go before us always and everywhere, O Lord, we beseech you, with heavenly light, that the mystery in which you have willed us to share we may both discern with a clear gaze and receive with a worthy love. Through Christ our Lord."
