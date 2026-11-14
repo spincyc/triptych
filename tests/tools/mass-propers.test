@@ -18,7 +18,7 @@ cd "$sandbox"
 
 # The reading view names the mass, its edition, and every proper slot.
 out="$(run_tool --calendar roman-1962 --mass advent-1)"
-for want in "First Sunday of Advent" "Missale Romanum" "Introit" "Collect"; do
+for want in "First Sunday of Advent" "Roman Missal, 1962 typical edition" "Introit" "Collect"; do
 	case "$out" in
 	*"$want"*) ;;
 	*) echo "reading view is missing $want" >&2; exit 1 ;;

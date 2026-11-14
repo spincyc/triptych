@@ -111,12 +111,17 @@ module.exports = function liturgy(realm) {
     const rubrics = data('structure/rubrics/index.json');
     const calendar = data('structure/calendar/index.json');
     const propers = data('structure/propers/index.json');
+    // Offered missals are the Propers manifest's: it lists only a missal that
+    // contributes text of its own, as the page's Day control does.
+    const offered = new Map((propers.missals || []).map((one) => [one.id, one]));
     return {
-      calendars: (rubrics.calendars || []).map((one) => ({
+      calendars: (rubrics.calendars || []).filter((one) => offered.has(one.id || one.calendar)).map((one) => ({
         id: one.id || one.calendar, edition: one.edition, short: one.edition_short, code: one.code,
+        qualification: offered.get(one.id || one.calendar).edition_qualification || null,
       })),
       propersCalendars: (propers.missals || []).map((one) => ({
         id: one.id, edition: one.edition, short: one.edition_short,
+        qualification: one.edition_qualification || null,
       })),
       advisory: rubrics.advisory || null,
       calendarAdvisory: calendar.advisory || null,
@@ -887,8 +892,10 @@ module.exports = function liturgy(realm) {
       'liturgy/day-compare.js'].forEach(realm.script);
     const D = globalThis.TriptychDayCompare;
     const bible = bibleFor(state.bible);
-    const missals = (data('structure/rubrics/index.json').calendars || []).map((one) =>
-      ({ id: one.id || one.calendar, edition: one.edition, label: one.edition_short }));
+    const offered = new Set((data('structure/propers/index.json').missals || []).map((one) => one.id));
+    const missals = (data('structure/rubrics/index.json').calendars || [])
+      .filter((one) => offered.has(one.id || one.calendar))
+      .map((one) => ({ id: one.id || one.calendar, edition: one.edition, label: one.edition_short }));
     const derived = derive(primary, iso);
     const peerDerived = derive(peer, iso);
     const territories = D.territoryCodes(derived, peerDerived);

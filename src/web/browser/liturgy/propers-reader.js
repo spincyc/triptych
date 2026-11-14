@@ -139,11 +139,14 @@
   }
 
   function described(entry) {
-    if (typeof entry === 'string') return { id: entry, label: T.titleCase(entry), edition: null };
+    if (typeof entry === 'string') {
+      return { id: entry, label: T.titleCase(entry), edition: null, qualification: null };
+    }
     return {
       id: entry.id,
       label: entry.edition_short || entry.label || entry.edition || T.titleCase(entry.id),
-      edition: entry.edition || null
+      edition: entry.edition || null,
+      qualification: entry.edition_qualification || null
     };
   }
 
@@ -1289,6 +1292,7 @@
     selection.appendChild(T.el('h3', null, 'Selection'));
     selection.appendChild(definitionList([
       ['Missal', missal && (missal.edition || missal.label) || state.edition.id],
+      ['Missal qualification', missal && missal.qualification],
       ['Formulary type', state.formulary && (groupRow(state.formulary.type) || {}).label],
       ['Formulary', runtime.mass && (runtime.mass.name || runtime.mass.key)],
       ['Form', selectedForm && (selectedForm.name || selectedForm.id) ||

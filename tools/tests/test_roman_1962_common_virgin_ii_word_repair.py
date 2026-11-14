@@ -132,6 +132,29 @@ UNOWNED_LEDGER_BYTES = "654728b0769082f1046384746d7c654054d9ff9e83a59821d3f696ff
 
 NOTE_HASHES = {'comm-s-nicomedis-martyris': '75987dd97ce97f95ab9ed31be055a9f82e6137b82a3fc780ed53af4a29689556', 'comm-s-sabinae-martyris': 'dddbb5f273b1a6b2fe71ea38b9fd70ded14651d996c35b7ff787c490ec602709', 'comm-ss-felicis-simplicii-faustini-beatricis': '0ebb181cd2a2a5db9c5ae346fa36f032d9386279b4f275a3ec1b51ba2bcdbc1d', 's-annae-matris-beatae-mariae-virginis': 'a1f24574d5326fbb84e423731e94fd86c1fa24cfb90fb5affcf3269d3ddb9949', 'comm-ss-euphemiae-virginis-luciae-geminiani': '4bbb527fabcf595b80e6ab3b545de17ef9c97053816925267f6f19145a0329d0', 's-brunonis-confessoris': 'ae203f26e6ada51158ed29b2b72a48498bd3bc417837f5b3538c1f1a3cd292c1', 's-callisti-i-papae-martyris': 'ae203f26e6ada51158ed29b2b72a48498bd3bc417837f5b3538c1f1a3cd292c1', 's-francisci-borgiae-confessoris': 'ae203f26e6ada51158ed29b2b72a48498bd3bc417837f5b3538c1f1a3cd292c1', 's-hieronymi-presbyteri-confessoris-ecclesiae-doctoris': 'ae203f26e6ada51158ed29b2b72a48498bd3bc417837f5b3538c1f1a3cd292c1', 's-hilarii-episcopi-confessoris-ecclesiae-doctoris': '07b24be9340e6e367c60b4b766c9a0a54dd4719eaee1bfd59b37d6b942fd5e03', 's-venantii-martyris': 'da14ce8930befa3c78f4ef9d29ccc9909b2886fd1ed974e34df1d68b7c2b6c43'}
 
+# 2026-11-14: the missal designator registry took over the book's name, and the
+# pre-1955 index's two restated name lines became a two-line pointer to it
+# (guidance/missals.md section 10). Undoing exactly that header change must
+# restore the guarded bytes; any other change still fails.
+DESIGNATOR_POINTER = (
+    b"# The book this calendar transcribes is named by its row in\n"
+    b"# src/sources/inventories/missal-designators-v1.toml; do not restate it here.\n"
+)
+DESIGNATOR_PREDECESSORS = {
+    "src/sources/calendars/roman-pre-1955/propers.yaml": (
+        b"edition: Missale Romanum, editio typica Vaticana 1920\n"
+        b"edition_short: Pre-1955 Missal\n"
+    ),
+}
+
+
+def designator_inverse(path, data):
+    before = DESIGNATOR_PREDECESSORS.get(path)
+    if before is None or data.count(DESIGNATOR_POINTER) != 1:
+        return data
+    return data.replace(DESIGNATOR_POINTER, before, 1)
+
+
 class CommonVirginIIWordRepairTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -188,7 +211,7 @@ class CommonVirginIIWordRepairTests(unittest.TestCase):
         self.assertEqual({NOTE_DIGEST_GUARDED}, set(successors))
         for p,h in IMMUTABLE_GUARDS.items():
             if p not in successors:
-                self.assertEqual(h,digest((ROOT/p).read_bytes()),p)
+                self.assertEqual(h,digest(designator_inverse(p,(ROOT/p).read_bytes())),p)
                 continue
             change = successors[p]
             self.assertEqual((h, digest((ROOT/p).read_bytes())), (change["before_file_sha256"], change["after_file_sha256"]), p)

@@ -2769,6 +2769,10 @@ def validate_propers_read_payload_sources(
                 fail("reader index requires a read_payload binding")
             continue
         fields = {"id", "edition", "edition_short", "read_payload"}
+        if "edition_qualification" in row:
+            if not isinstance(row["edition_qualification"], str) or not row["edition_qualification"].strip():
+                fail(f"{calendar} index row has an empty edition qualification")
+            fields.add("edition_qualification")
         if "reader_index" in row or "reader_file" in row:
             fields.update({"reader_index", "reader_file"})
         if set(row) != fields:
@@ -2793,7 +2797,7 @@ def _validate_proper_read_calendar(data_root: Path, row: dict, read, fail) -> tu
     optional_structure_fields = {
         "roman-1962": {"proper_appointment_facts", "execution_source_coverage", "name_execution_source_coverage"},
         "roman-pre-1955": {"advisory", "recension_coverage", "stands_before"},
-    }.get(calendar, set())
+    }.get(calendar, set()) | {"edition_qualification"}
     monolith_path = proper_root / f"{calendar}.json"
     monolith, monolith_raw = read(monolith_path)
     # Source-owned appointment facts are optional generator output. The exact

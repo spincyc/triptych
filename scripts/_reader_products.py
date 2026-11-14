@@ -109,8 +109,12 @@ def build_reader_indexes(root: Path, index=None) -> dict[str, bytes]:
             structure = propers.calendar_structure(calendars, name, tokens)
             files[f"src/index/propers/{name}.json"] = _json(_skeleton(structure))
             files[f"src/index/propers/search/{name}.json"] = _json(propers.search_structure(structure))
+            if propers.contributed_bodies(structure) <= 0:
+                continue  # placeholder or inherited-only: data, never an offered missal
             offers.append({"id": name, "edition": structure["edition"],
                            "edition_short": structure.get("edition_short"),
+                           **({"edition_qualification": structure["edition_qualification"]}
+                              if structure.get("edition_qualification") else {}),
                            "reader_index": True,
                            "reader_file": f"structure/propers/reader/{name}.json",
                            "read_payload": {"catalog": f"structure/propers/catalog/{name}.json",

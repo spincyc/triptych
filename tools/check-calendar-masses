@@ -36,6 +36,7 @@ from _calendars import (
     TAKES_FROM,
     common_set_families_locally_overridden,
     common_set_local_override_families,
+    designated_identity,
     load_document,
     mass_index,
     partition,
@@ -2683,7 +2684,12 @@ def check_file(path: Path, problems: list[str]) -> dict[str, int]:
     if not isinstance(document, dict):
         problems.append(f"{path}: top level must be a mapping")
         return {"masses": 0, "propers": 0}
+    # The book's name comes from the missal designator registry where the
+    # repository holds one; only a synthetic calendar root states its own.
+    designated = designated_identity(path.parent.parent, path.parent.name) is not None
     for field in REQUIRED_HEADER:
+        if field == "edition" and designated:
+            continue
         if field not in document:
             problems.append(f"{path}: missing header field {field}")
     numbering = document.get("psalm_numbering")

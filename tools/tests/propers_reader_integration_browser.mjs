@@ -889,7 +889,7 @@ async function assertions(cdp, base) {
       href: document.querySelector('.proper-search-results a').href,
       loads: propersReaderDebug.loads['structure/propers/search/roman-1962.json']
     }))()`);
-    assert.match(found.status, /1962 Missal/);
+    assert.match(found.status, /1962 typical edition/);
     assert.match(found.first, /Spiritus Domini/);
     assert.match(found.first, /Represented non-Scripture Proper units only/);
     assert.match(found.href, /missal=roman-1962/);

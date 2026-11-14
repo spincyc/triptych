@@ -61,6 +61,7 @@
   const Seating = window.OrdinarySeating;
 
   const RUBRICS_INDEX = 'structure/rubrics/index.json';
+  const PROPERS_INDEX = 'structure/propers/index.json';
   const ORDINARY_INDEX = 'structure/ordinary/index.json';
 
   function rubricsPath(id) { return 'structure/rubrics/' + id + '.json'; }
@@ -243,9 +244,13 @@
 
   async function discoverMissals() {
     const file = await T.loadJSON(RUBRICS_INDEX);
-    const rows = (file && file.calendars) || [];
+    // Offered only where the Propers manifest lists the missal, which it does
+    // only for a missal contributing text of its own.
+    const propers = await T.loadJSON(PROPERS_INDEX);
+    const offered = new Set(((propers && propers.missals) || []).map((row) => row.id));
+    const rows = ((file && file.calendars) || []).filter((row) => offered.has(row.calendar));
     // The short name for the control and the edition for the hover, the same
-    // two names the propers page shows and out of the same calendar source.
+    // two names the propers page shows and out of the same designator registry.
     return rows.map((row) => ({
       id: row.calendar,
       label: row.edition_short || row.edition || T.titleCase(row.calendar),
@@ -874,7 +879,7 @@
    * A recension is held as its DEPARTURES from another calendar and never as a
    * second copy of it, so on all but a handful of days the text below was read
    * out of the BASE's printing and out of no other. The heading names this
-   * recension's own edition — "Missale Romanum, editio typica Vaticana 1920" —
+   * recension's own edition — "Roman Missal, 1920 typical edition" —
    * and that name standing alone over a page every word of which came from a
    * 1962 printing is a claim about provenance that nobody made. So the mass
    * carries its own stamp, and the stamp is printed here beside the Mass it

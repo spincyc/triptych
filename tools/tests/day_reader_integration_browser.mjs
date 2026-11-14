@@ -1529,7 +1529,7 @@ async function runAssertions(cdp, base) {
     assert.equal(new URLSearchParams(value.hash.slice(1)).get('mode'), 'read');
     assert.equal(new URLSearchParams(value.hash.slice(1)).has('ordinary'), false);
     assert.equal(value.title, 'Tenth Sunday after Pentecost');
-    assert.match(value.meta, /Missale Romanum, editio typica 1962/);
+    assert.match(value.meta, /Roman Missal, 1962 typical edition/);
     assert.doesNotMatch(value.meta, /explicit|bound M1|fixture|contract/i);
     // Availability does not establish exact target wording or liturgical
     // Scripture fragments; C1 keeps that qualification visible.
@@ -2808,7 +2808,7 @@ async function runAssertions(cdp, base) {
     assert.ok(value.notice.startsWith('This edition surface is a ' + value.coverage.status + ' finding aid'),
       value.notice);
     assert.match(value.notice, new RegExp('Proper wording coverage is ' + value.coverage.domains.propers.state + '\\.'));
-    assert.match(value.notice, new RegExp('Inherited material from Missale Romanum, editio typica 1962 remains ' +
+    assert.match(value.notice, new RegExp('Inherited material from Roman Missal, 1962 typical edition remains ' +
       value.coverage.inheritance.status + '\\.'));
     assert.ok(value.notes.length > 0);
     assert.ok(value.notes.every(row => row.text !== 'Latin text unavailable'), JSON.stringify(value.notes));
@@ -2824,7 +2824,7 @@ async function runAssertions(cdp, base) {
     }
     const details = await detailsText(cdp);
     assert.match(details, /RECENSION COVERAGE|Recension coverage/);
-    assert.match(details, /Proper text source[\s\S]*Missale Romanum, editio typica 1962 · inherited/i);
+    assert.match(details, /Proper text source[\s\S]*Roman Missal, 1962 typical edition · inherited/i);
     assert.match(details, /Inheritance basis/i);
     assert.match(details, /remains uncollated|remains inherited/);
   });

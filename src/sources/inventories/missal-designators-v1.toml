@@ -1,0 +1,415 @@
+# One affirmative designator for every coherent missal the corpus identifies.
+#
+# The owner of the display name. Every reader, CLI, generated metadata and
+# prose use takes the name from here: `scripts/_missal_designators.py`
+# validates it and derives the short form (the final comma-separated segment);
+# `_calendars.index_header` and `_calendars.load_document` hand it to every
+# calendar consumer, and `tools/tpt check-calendar-masses` refuses a calendar
+# index that restates it. guidance/missals.md section 10 records the decision.
+#
+# A row is a coherent missal: a whole altar book whose normative identity the
+# records establish through a recorded instrument or official record -- a
+# declared typical edition, an emended reprint, a use's edition issued by its
+# competent authority, or an approved translation or adaptation. A printing,
+# lay missal, facsimile, critical edition, manuscript or partial book is a
+# WITNESS: it keeps its bibliographic identity in the source library, appears
+# here only under `witnesses`, and receives no designator.
+#
+# `designator` names what the book IS. Limits, cut-off dates, witnesses and
+# inherited material belong in `qualification`. `key` is a stable opaque id
+# (the recension catalog id where one exists); `calendar` is the reader's
+# opaque calendar key, which is not a name and is never displayed as one.
+
+schema = "triptych-missal-designators/v1"
+as_of = "2026-11-14"
+
+# --- Roman Missal: typical editions and emended reprints --------------------
+
+[[missals]]
+key = "roman-1570"
+designator = "Roman Missal, 1570 typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 1570
+act = "quo-primum-1570"
+qualification = "Promulgated by Pius V's constitution Quo primum (14 July 1570). A Rome 1570 printing by the Faletti heirs, Variscus and associates and the consortium's Venice 1570 issue are held; whether the Rome copy is the first printing itself is not established."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1570-rome",
+  "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=roman-modern-001",
+]
+witnesses = [
+  "edition.catholic-church.missale-romanum.rome-faletti-varisco-1570",
+  "edition.catholic-church.missale-romanum.venice-1570",
+]
+
+[[missals]]
+key = "roman-1604"
+designator = "Roman Missal, 1604 typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 1604
+act = "cum-sanctissimum-1604"
+qualification = "Clement VIII's emended edition, issued under the constitution Cum sanctissimum (7 July 1604) from the Vatican press."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1604-vatican",
+  "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=roman-modern-003",
+]
+witnesses = ["edition.catholic-church.missale-romanum.vatican-typica-1604"]
+
+[[missals]]
+key = "roman-1634"
+designator = "Roman Missal, 1634 typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 1634
+act = "si-quid-est-1634"
+qualification = "Urban VIII's emended edition under the brief Si quid est (2 September 1634). No 1634-dated imprint is held; the inspected witness is a Vatican printing of 1635."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1634",
+  "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=roman-modern-004",
+]
+witnesses = ["edition.catholic-church.missale-romanum.vatican-urbanian-1635"]
+
+[[missals]]
+key = "roman-1900"
+designator = "Roman Missal, 1900 typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 1900
+act = "editio-typica-1900"
+qualification = "Known from the 1920 decree, which drew the new edition 'ex altera typica anni 1900'; its own instrument and date are unrecorded and no copy is held."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1900-typica",
+  "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=roman-1900",
+]
+
+[[missals]]
+key = "roman-1920"
+designator = "Roman Missal, 1920 typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 1920
+act = "editio-typica-1920"
+recension = "roman-1920"
+calendar = "roman-pre-1955"
+qualification = "The reader holds this edition as it stood before the 1955 simplification of the rubrics and the restored Holy Week, as witnessed by the Bonn 2004 reprint of the 28th edition conformed to the Vatican typical edition (a printing of about 1954); no authenticated Vatican 1920 impression is held. Only three Pentecost prayers are collated to that witness; its Holy Week departures and two sanctoral absences are established, other Proper wording is inherited uncollated from the 1962 typical edition, the Ordinary comes from an 1861 lay missal, and precedence is a linearized finding aid."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1920-typica",
+  "src/sources/calendars/recensions.json#id=roman-1920",
+  "src/sources/calendars/roman-pre-1955/propers.yaml#recension_coverage",
+]
+witnesses = [
+  "edition.catholic-church.missale-romanum.2004-bonn-palmarum-reimpressio-editio-28-iuxta-typicam-1920",
+  "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam",
+  "edition.catholic-church.missale-romanum.unidentified-pre-1955-witness-ia-1947",
+]
+
+[[missals]]
+key = "roman-1962"
+designator = "Roman Missal, 1962 typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 1962
+act = "novo-rubricarum-corpore-1962"
+recension = "roman-1962"
+calendar = "roman-1962"
+qualification = "Declared typical on 23 June 1962 (Novo rubricarum corpore). The reader's Canon includes Saint Joseph's name, inserted by the decree of 13 November 1962 (in force 8 December 1962; AAS 54 [1962] 873), a variation within the same edition. Coverage is partial: each body keeps its own witness and rights evidence, and finding-aid, OCR-only and placeholder regions remain."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1962-typica",
+  "src/sources/calendars/recensions.json#id=roman-1962",
+  "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/canon-communicantes.toml",
+]
+witnesses = [
+  "edition.catholic-church.missale-romanum.vatican-typica-1962",
+  "edition.catholic-church.missale-romanum.benziger-iuxta-typicam-1962",
+]
+
+[[missals]]
+key = "roman-1970"
+designator = "Roman Missal, 1970 typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 1970
+act = "celebrationis-eucharisticae-1970"
+recension = "roman-1970"
+qualification = "Declared typical by the decree Celebrationis eucharisticae (26 March 1970) under Paul VI's constitution Missale Romanum (3 April 1969). A whole copy is registered as a reading witness; its text is not published here."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1970-typica",
+  "src/sources/calendars/recensions.json#id=roman-1970",
+]
+witnesses = ["edition.catholic-church.missale-romanum.vatican-typica-1970"]
+
+[[missals]]
+key = "roman-1971-reimpressio-emendata"
+designator = "Roman Missal, 1970 typical edition, 1971 emended reprint"
+kind = "emended-reprint"
+rite = "roman"
+language = "la"
+year = 1971
+act = "reimpressio-emendata-1971"
+recension = "roman-1971-reimpressio-emendata"
+qualification = "Known from the printing history of the 2002 edition; its instrument is unrecorded and no copy is held."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1971-reimpressio",
+  "src/sources/calendars/recensions.json#id=roman-1971-reimpressio-emendata",
+]
+
+[[missals]]
+key = "roman-1975-editio-typica-altera"
+designator = "Roman Missal, 1975 second typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 1975
+act = "de-editione-typica-altera-1975"
+recension = "roman-1975-editio-typica-altera"
+qualification = "Declared typical by the decree of 27 March 1975 (Prot. 1970/74). Only an Ordo Missae fragment is located; no whole copy is held."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-1975-typica-altera",
+  "src/sources/calendars/recensions.json#id=roman-1975-editio-typica-altera",
+]
+
+[[missals]]
+key = "roman-2002-editio-typica-tertia"
+designator = "Roman Missal, 2002 third typical edition"
+kind = "typical-edition"
+rite = "roman"
+language = "la"
+year = 2002
+act = "de-editione-typica-tertia-2000"
+recension = "roman-2002-editio-typica-tertia"
+qualification = "Approved on 10 April 2000 and declared typical by the decree of 20 April 2000 (Prot. 143/00/L); published in 2002. A restricted secondary digital reproduction is registered, not an authenticated printed copy."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2002-typica-tertia",
+  "src/sources/calendars/recensions.json#id=roman-2002-editio-typica-tertia",
+]
+witnesses = ["edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"]
+
+[[missals]]
+key = "roman-2008-reimpressio-emendata"
+designator = "Roman Missal, 2002 third typical edition, 2008 emended reprint"
+kind = "emended-reprint"
+rite = "roman"
+language = "la"
+year = 2008
+act = "reimpressio-emendata-2008"
+recension = "roman-2008-reimpressio-emendata"
+calendar = "postconciliar"
+qualification = "The 2008 corrected reprint of the third typical edition, expressly not a new typical edition (Prot. 652/08/L). The reader's calendar also carries later decreed inscriptions recorded in the source, such as Mary, Mother of the Church (2018). No copy of the 2008 altar book is held: Latin bodies come from identified sources and only some are attested to the target, and English is historical or project-study translation, not the approved 2011 text."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-2008-reimpressio",
+  "src/sources/calendars/recensions.json#id=roman-2008-reimpressio-emendata",
+  "src/sources/inventories/latin-missal-acts-v1.toml#id=reimpressio-emendata-2008",
+]
+witnesses = [
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008",
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+]
+
+# --- Roman Missal: approved translations and adaptations --------------------
+
+[[missals]]
+key = "roman-missal-en-us-2011"
+designator = "Roman Missal in English for the United States, 2011 edition"
+kind = "approved-translation"
+rite = "roman"
+language = "en-US"
+year = 2011
+recension = "roman-missal-en-us-2011"
+qualification = "English translation according to the third typical edition, approved by the United States bishops and confirmed by the Apostolic See. Only a publisher preview and an unidentified digital printing are registered; its text is not published here."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=roman-missal-english-2011",
+  "src/sources/calendars/recensions.json#id=roman-missal-en-us-2011",
+]
+witnesses = [
+  "edition.catholic-church.missale-romanum.2011-english-us-catholic-book-publishing",
+  "edition.catholic-church.missale-romanum.2011-english-us-unidentified-digital-printing",
+]
+
+[[missals]]
+key = "roman-slavonic-1631"
+designator = "Roman Missal in Church Slavonic, 1631 edition"
+kind = "approved-translation"
+rite = "roman"
+language = "cu"
+year = 1631
+qualification = "Levaković's revision, prescribed by Urban VIII's brief Ecclesia catholica (29 April 1631) for the Slavonic books of Dalmatia. Known from a reproduced source; no copy is held."
+sources = ["src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=slavonic-roman-1631"]
+
+[[missals]]
+key = "roman-slavonic-1893"
+designator = "Roman Missal in Church Slavonic, 1893 edition"
+kind = "approved-translation"
+rite = "roman"
+language = "cu"
+year = 1893
+qualification = "Parčić's edition in Glagolitic type, Rome 1893, approved on 25 January 1893; a celebrant's book in another language, not an independent Latin typical edition. The act history records it only as a printed station."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-romanum-slavonico-idiomate",
+  "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=slavonic-roman-1893",
+]
+witnesses = ["edition.catholic-church.missale-romanum.1893-rome-slavonic-parcic"]
+
+[[missals]]
+key = "roman-poland-1986"
+designator = "Roman Missal for the Dioceses of Poland, 1986 edition"
+kind = "approved-translation"
+rite = "roman"
+language = "pl"
+year = 1986
+qualification = "First complete Polish edition, with its regional calendar and proper texts; approved in 1983 and confirmed in 1984. Known from a contemporary official account; the book is not held or inspected."
+sources = ["src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=polish-diocesan-missal-1986"]
+
+[[missals]]
+key = "roman-zaire-1988"
+designator = "Roman Missal for the Dioceses of Zaire, 1988 edition"
+kind = "approved-adaptation"
+rite = "roman"
+language = "fr"
+year = 1988
+qualification = "Approved by the Congregation for Divine Worship on 30 April 1988 (Prot. 1520/85): the adapted Order of Mass with introduction, calendar and proper Masses. The printed book's identity and later revisions are unestablished; no copy is held."
+sources = ["src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=roman-zaire-1988"]
+
+[[missals]]
+key = "divine-worship-2015"
+designator = "Divine Worship: The Missal, 2015 edition"
+kind = "approved-adaptation"
+rite = "roman"
+language = "en"
+year = 2015
+qualification = "The Roman Missal adapted for the Personal Ordinariates with Anglican liturgical patrimony, approved on 27 May 2015 and in use from 29 November 2015. Known from official notices; no copy is held."
+sources = ["src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=divine-worship-2015"]
+
+# --- Other Latin rites and uses ----------------------------------------------
+
+[[missals]]
+key = "ambrosianum-1902"
+designator = "Ambrosian Missal, 1902 typical edition"
+kind = "typical-edition"
+rite = "ambrosian"
+language = "la"
+year = 1902
+qualification = "Milan, Agnelli, 1902, under Cardinal Ferrari; known from later conformed printings (Schuster's 1954 decree reports a censor's certificate of conformity to it) and the 1913 Ratti-Magistretti collation. Its instrument is unrecorded and the book itself is not held."
+sources = [
+  "src/sources/inventories/eucharistic-stages/ambrosian.json#id=ambrosian-1902",
+  "src/sources/inventories/eucharistic-stages/ambrosian.json#id=ambrosian-1954",
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-ambrosianum",
+]
+
+[[missals]]
+key = "ambrosianum-1976"
+designator = "Ambrosian Missal, 1976 edition"
+kind = "use-edition"
+rite = "ambrosian"
+language = "la"
+year = 1976
+qualification = "First edition reformed after the Second Vatican Council: reformed Latin texts confirmed by the Sacred Congregation for Divine Worship on 30 November 1974 (Prot. 2347/74) and promulgated by Cardinal Colombo on 11 April 1976, obligatory from 14 November 1976; first printed in Italian. Its Latin book of 1981 adds changes promulgated by Cardinal Martini on 8 September 1981; whether that is a distinct state is unestablished. No copy is registered."
+sources = [
+  "src/sources/inventories/eucharistic-stages/ambrosian.json#id=ambrosian-1974-approved",
+  "src/sources/inventories/eucharistic-stages/ambrosian.json#id=ambrosian-1976-promulgated",
+  "src/sources/inventories/eucharistic-stages/ambrosian.json#id=ambrosian-1981-latin",
+  "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=ambrosian-1974-latin-reform",
+]
+
+[[missals]]
+key = "ambrosianum-2024"
+designator = "Ambrosian Missal, 2024 second edition"
+kind = "use-edition"
+rite = "ambrosian"
+language = "la"
+year = 2024
+qualification = "Second Latin typical text and its Italian translation, approved together by the Dicastery for Divine Worship on 7 December 2023, promulgated by Archbishop Delpini and in force from 17 November 2024; the Latin book followed in 2026. Only the Italian front matter is registered, and the publisher reserves republication."
+sources = [
+  "src/sources/inventories/eucharistic-stages/ambrosian.json#id=ambrosian-2024-second",
+  "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=ambrosian-2024",
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-ambrosianum",
+]
+witnesses = ["edition.archdiocese-of-milan.missale-ambrosianum.milan-itl-2024"]
+
+[[missals]]
+key = "hispano-mozarabicum-1991"
+designator = "Hispano-Mozarabic Missal, 1991 edition"
+kind = "use-edition"
+rite = "hispano-mozarabic"
+language = "la"
+year = 1991
+qualification = "The reformed Missale Hispano-Mozarabicum in two complementary volumes, 1991 and 1994. The Congregation for Divine Worship approved its introduction, Order and Temporal ad interim in 1988; the later confirmation is recorded only in outline. No copy is held."
+sources = [
+  "src/sources/inventories/western-eucharistic-books-timeline-v1.toml#id=hispano-mozarabic-1991-1994",
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-mozarabicum",
+]
+
+[[missals]]
+key = "bracarense-1924"
+designator = "Braga Missal, 1924 typical edition"
+kind = "typical-edition"
+rite = "braga"
+language = "la"
+year = 1924
+act = "decretum-missalis-bracarensis-1924"
+qualification = "Approved by Pius XI's bull Inter multiplices gravesque curas (8 December 1924) and declared typical by the Sacred Congregation of Rites on 9 December 1924; printed at the Vatican Polyglot Press. The held copy has supplements bound in to 1961."
+sources = [
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-bracarense",
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=inter-multiplices-gravesque-curas-1924",
+]
+witnesses = ["edition.archdiocese-of-braga.missale-bracarense.vatican-typica-1924"]
+
+[[missals]]
+key = "praedicatorum-1604"
+designator = "Dominican Missal, 1604 edition"
+kind = "use-edition"
+rite = "dominican"
+language = "la"
+year = 1604
+act = "praedicatorum-xavierre-1604"
+qualification = "Revised under Master General Jeronimo Xavierre and approved by apostolic authority. A 1603 setting is also held, and the records disagree whether it is a separate stage."
+sources = ["src/sources/inventories/latin-missal-acts-v1.toml#id=praedicatorum-xavierre-1604"]
+witnesses = [
+  "edition.order-of-preachers.missale.1604-rome-xavierre",
+  "edition.order-of-preachers.missale.1603-rome-ciacconi",
+]
+
+[[missals]]
+key = "carmelitarum-1621"
+designator = "Carmelite Missal, 1621 edition"
+kind = "use-edition"
+rite = "carmelite"
+language = "la"
+year = 1621
+act = "carmelitarum-capitulum-1621"
+qualification = "Issued by decree of the General Chapter at the order of Prior General Sebastiano Fantoni; printed at Venice by the Giunta."
+sources = ["src/sources/inventories/latin-missal-acts-v1.toml#id=carmelitarum-capitulum-1621"]
+witnesses = ["edition.carmelite-order.missale.1621-venice-giunta"]
+
+[[missals]]
+key = "cartusiense-1627"
+designator = "Carthusian Missal, 1627 edition"
+kind = "use-edition"
+rite = "carthusian"
+language = "la"
+year = 1627
+act = "cartusiense-1620"
+qualification = "Issued under the ordinance of the General Chapter of 1622 (Bruno d'Haffringues) and printed at Lyon in 1627; the act's identifier keeps the scan's 1620 label."
+sources = ["src/sources/inventories/latin-missal-acts-v1.toml#id=cartusiense-1620"]
+witnesses = ["edition.carthusian-order.missale-cartusiense.1627-lyon-pillehotte"]
+
+[[missals]]
+key = "cartusiense-1679"
+designator = "Carthusian Missal, 1679 edition"
+kind = "use-edition"
+rite = "carthusian"
+language = "la"
+year = 1679
+act = "cartusiense-capitulum-1679"
+qualification = "Issued by ordinance of the General Chapter of 1677 under Innocent Le Masson. The located copy is not registered here."
+sources = [
+  "src/sources/inventories/latin-missal-acts-v1.toml#id=cartusiense-capitulum-1679",
+  "src/sources/inventories/missal-acquisition-audit-v1.toml#id=missale-cartusiense",
+]

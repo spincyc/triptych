@@ -1,6 +1,6 @@
 schema: triptych-calendar-masses/v1
-edition: Missale Romanum, editio typica 1962
-edition_short: 1962 Missal
+# The book this calendar transcribes is named by its row in
+# src/sources/inventories/missal-designators-v1.toml; do not restate it here.
 calendar: roman-1962
 series: deterministic fixed-date feast masses
 ordering: sections in christological, common, marian, sanctoral, seasonal order;

@@ -222,10 +222,12 @@ import pathlib, sys
 
 path = pathlib.Path(sys.argv[1])
 source = path.read_text(encoding="utf-8")
-before = "edition: Missale Romanum, editio typica 1962"
-assert before in source
+# The repository names its books in the designator registry; a custom root
+# with no registry names its own, which is what this fixture states.
+before = "schema: triptych-calendar-masses/v1\n"
+assert source.startswith(before)
 path.write_text(
-    source.replace(before, "edition: Fixture Missal", 1), encoding="utf-8"
+    source.replace(before, before + "edition: Fixture Missal\n", 1), encoding="utf-8"
 )
 PY
 custom_out="$sandbox/custom-out"
