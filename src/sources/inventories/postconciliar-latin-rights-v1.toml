@@ -66,6 +66,7 @@ does_not_open_the_gate = [
 [scope_partition]
 modern_new_or_changed_matter = "Withheld unless an affirmative distribution basis is recorded."
 public_domain_antecedent = "May be assessed from its own earlier witness and rights basis; this audit does not transfer a modern edition's restriction backward onto pre-existing wording."
+holy_see_1931_1975_antecedent = "Unchanged wording first published by the Holy See in Vatican City in 1931-1975 is assessed under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml (qualified-public-domain, from the earlier publication, added 2026-11-14); the withholding of new or changed matter above is unaffected."
 mixed_matter = "Partition inherited and modern contributions at an evidenced boundary. If the boundary or target identity is unresolved, withhold the combined span."
 edition_identity_only = "Titles, dates, promulgating acts, loci, hashes, and text-free change metadata may be recorded without reproducing liturgical wording."
 

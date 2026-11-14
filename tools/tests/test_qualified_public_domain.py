@@ -37,6 +37,11 @@ def load_tool(name: str):
 
 
 CARRIER = "artifact.fixture.holy-see.qualified-carrier"
+AAS_EDITION = "edition.fixture.holy-see.aas-47-1955"
+AAS_SCAN = "artifact.fixture.holy-see.aas-47-1955.scan"
+EDITION_2002 = "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002"
+TARGET_2002 = "artifact.catholic-church.missale-romanum.vatican-typica-tertia-2002.secondary-digital-pdf-0b458944"
+TARGET_PASSAGE = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.fixture-comparison"
 PASSAGE = "passage.fixture.holy-see.aas-1955.collect"
 BODY = "Oratio anni millesimi nongentesimi quinquagesimi quinti.\n"
 
@@ -88,7 +93,8 @@ class AdoptedRecordTests(unittest.TestCase):
         self.assertEqual("if the italian copyright holds, apply it",
                          record["decision"]["instruction"])
         self.assertEqual([1931, 1975], record["admission"]["first_publication_years"])
-        self.assertIn("postconciliar", record["admission"]["refused_calendars"])
+        self.assertIn("postconciliar", record["admission"]["later_editions"]["target_calendars"])
+        self.assertIn(EDITION_2002, record["admission"]["later_editions"]["target_editions"])
         self.assertFalse(record["payload_guard"]["contains_liturgical_payload"])
         for kind in Q.NOTICE_KINDS:
             text = Q.notice(kind)
@@ -164,18 +170,18 @@ class LatinProvenanceTests(unittest.TestCase):
         self.assertTrue(any("only a qualified-public-domain row declares" in one
                             for one in problems), problems)
 
-    def test_sidecar_refuses_the_postconciliar_calendar_and_admits_1962(self):
+    def test_sidecar_admits_1962_and_names_the_comparison_in_a_later_edition_calendar(self):
         with tempfile.TemporaryDirectory() as room:
-            for calendar, refused in (("postconciliar", True), ("roman-1962", False)):
+            for calendar, row in (("roman-1962", latin_row()),
+                                  ("postconciliar", latin_row(verification_source_id=TARGET_PASSAGE))):
                 with self.subTest(calendar=calendar):
                     path = Path(room) / f"{calendar}{L.SIDECAR_SUFFIX}"
-                    path.write_text(ledger(calendar, latin_row()), encoding="utf-8")
+                    path.write_text(ledger(calendar, row), encoding="utf-8")
                     records, problems = L.read_sidecar(path)
-                    self.assertEqual(refused, any("refused in the postconciliar" in one
-                                                  for one in problems), problems)
-                    self.assertEqual(not refused, bool(records))
-                    if not refused:
-                        self.assertEqual([], problems)
+                    self.assertEqual([], problems)
+                    self.assertEqual(1, len(records))
+        self.assertTrue(any("text-free comparison passage" in one for one in Q.calendar_problems(
+            {k: v for k, v in latin_row().items() if k != "verification_source_id"}, "postconciliar")))
 
     def test_publication_sources_must_be_public_and_carry_the_token(self):
         def sources(rights):
@@ -192,9 +198,73 @@ class LatinProvenanceTests(unittest.TestCase):
                     "row", row, sources(rights), authority_root=ROOT,
                     effective_calendar="roman-1962")
                 self.assertTrue(any(message in one for one in problems), problems)
+
+    def later_edition_graph(self):
+        return copy.deepcopy({
+            PASSAGE: {"record_type": "passage", "artifact_id": AAS_SCAN, "edition_id": AAS_EDITION},
+            AAS_SCAN: {"record_type": "artifact", "rights_status": "restricted", "edition_id": AAS_EDITION},
+            CARRIER: {"record_type": "artifact", "rights_status": Q.BASIS,
+                      "edition_id": "edition.fixture.qualified-carrier", "projected_from": [AAS_SCAN]},
+            TARGET_PASSAGE: {"record_type": "passage", "artifact_id": TARGET_2002, "edition_id": EDITION_2002},
+            TARGET_2002: {"record_type": "artifact", "rights_status": "restricted", "edition_id": EDITION_2002},
+        })
+
+    def postconciliar_problems(self, row, sources):
+        return (L._row_problems("row", row)
+                + L._source_record_problems("row", row, sources, authority_root=ROOT,
+                                            effective_calendar="postconciliar"))
+
+    def test_postconciliar_slot_admits_unchanged_1955_wording_from_the_earlier_publication(self):
+        row = latin_row(verification_source_id=TARGET_PASSAGE,
+                        verification_locator="2002 p. 512, text-free comparison")
+        self.assertEqual([], self.postconciliar_problems(row, self.later_edition_graph()))
+        decision = L.decision_for(L.LatinKey("day", "", "Collect"), BODY,
+                                  {L.LatinKey.from_mapping(row): row})
+        self.assertTrue(decision.permits(L.SURFACES))
+        self.assertEqual(1955, decision.projection(L.SURFACES)["publication"]["first_publication_year"])
+
+    def test_postconciliar_refuses_later_missals_later_carriers_and_missing_comparison(self):
+        base = latin_row(verification_source_id=TARGET_PASSAGE,
+                         verification_locator="2002 p. 512, text-free comparison")
+        cases = []
+        cases.append(("1970 Missal first publication",
+                      dict(base, first_publication="Missale Romanum, editio typica (1970)",
+                           first_publication_year=1970, first_publication_imprint="Typis Polyglottis Vaticanis"),
+                      None, "1970-or-later Missal edition"))
+        cases.append(("1970 Missal named under a 1955 year",
+                      dict(base, first_publication="Missale Romanum (Typis Polyglottis Vaticanis, 1970)"),
+                      None, "1970-or-later Missal edition"))
+        cases.append(("1965 printing with US notice",
+                      dict(base, first_publication_year=1965, us_formality="us-notice-unrenewed"),
+                      None, "renewed automatically"))
+        graph = self.later_edition_graph()
+        graph[TARGET_2002]["rights_status"] = Q.BASIS
+        cases.append(("carrier is the 2002 artifact",
+                      dict(base, publication_source_ids=[TARGET_2002]), graph,
+                      "is or derives from a later typical edition"))
+        graph = self.later_edition_graph()
+        graph[CARRIER]["projected_from"] = [TARGET_2002]
+        cases.append(("carrier projected from the 2002 artifact", base, graph,
+                      "is or derives from a later typical edition"))
+        cases.append(("source witness is the 2002 edition",
+                      dict(base, source_id=TARGET_PASSAGE), None, "must witness the earlier"))
+        cases.append(("comparison not on a target edition",
+                      dict(base, verification_source_id=PASSAGE), None,
+                      "comparison passage on its later typical edition"))
+        graph = self.later_edition_graph()
+        graph[TARGET_PASSAGE]["text"] = "verba"
+        cases.append(("comparison carries words", base, graph, "text-free"))
+        for label, row, graph, message in cases:
+            with self.subTest(label=label):
+                problems = self.postconciliar_problems(row, graph or self.later_edition_graph())
+                self.assertTrue(any(message in one for one in problems), problems)
+        # The edition rules bind in every calendar, not only the postconciliar one.
+        graph = self.later_edition_graph()
+        graph[TARGET_2002]["rights_status"] = Q.BASIS
         problems = L._source_record_problems(
-            "row", row, sources(Q.BASIS), authority_root=ROOT, effective_calendar="postconciliar")
-        self.assertTrue(any("refused in the postconciliar" in one for one in problems), problems)
+            "row", dict(base, publication_source_ids=[TARGET_2002]), graph,
+            authority_root=ROOT, effective_calendar="roman-1962")
+        self.assertTrue(any("later typical edition" in one for one in problems), problems)
 
 
 class TranslationTests(unittest.TestCase):

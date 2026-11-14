@@ -13,7 +13,11 @@ repository this code belongs to -- never from a caller-selected tree, so a
 sandbox or a stray copy cannot widen it -- and applies it to:
 
 * Latin provenance ledger rows (`latin_row_problems`, `calendar_problems`,
-  `publication_source_problems`), called by `_proper_latin`;
+  `source_problems`), called by `_proper_latin`. A later typical edition
+  (1970 and after) adds no right in unchanged preexisting wording, so a target
+  slot of such an edition may carry the token where its wording equals the
+  earlier Holy See publication -- but that edition is only ever the text-free
+  comparison target, never the source or the carrier;
 * English translation ledger entries (`translation_problems`) and project study
   English over admitted Latin (`study_translation_problems`), called by
   `check-calendar-masses` and `mass-propers`;
@@ -29,7 +33,8 @@ from __future__ import annotations
 
 from functools import lru_cache
 from pathlib import Path
-from typing import Iterable, Mapping
+from typing import Callable, Iterable, Mapping
+import re
 import tomllib
 
 BASIS = "qualified-public-domain"
@@ -93,11 +98,15 @@ def admission(record: str = RECORD) -> Mapping[str, object]:
     years = table.get("first_publication_years")
     formalities = table.get("us_formalities")
     notices = table.get("notices")
+    later = table.get("later_editions")
     if (not isinstance(years, list) or len(years) != 2 or not all(map(_year, years))
             or years[0] > years[1]
             or not _strings(table.get("imprints")) or not _strings(table.get("bodies"))
-            or not isinstance(table.get("refused_calendars"), list)
-            or not all(isinstance(one, str) for one in table["refused_calendars"])
+            or not isinstance(later, dict)
+            or not _strings(later.get("target_calendars"))
+            or not _strings(later.get("target_editions"))
+            or not _strings(later.get("excluded_first_publication_terms"))
+            or not _year(later.get("excluded_first_publication_from"))
             or not isinstance(formalities, dict) or not formalities
             or not all(_year(one) for one in formalities.values())
             or not isinstance(notices, dict)
@@ -109,7 +118,10 @@ def admission(record: str = RECORD) -> Mapping[str, object]:
         "years": (years[0], years[1]),
         "imprints": frozenset(table["imprints"]),
         "bodies": frozenset(table["bodies"]),
-        "refused_calendars": frozenset(table["refused_calendars"]),
+        "target_calendars": frozenset(later["target_calendars"]),
+        "target_editions": frozenset(later["target_editions"]),
+        "excluded_terms": tuple(one.casefold() for one in later["excluded_first_publication_terms"]),
+        "excluded_from": later["excluded_first_publication_from"],
         "us_formalities": dict(formalities),
         "notices": dict(notices),
     }
@@ -163,6 +175,15 @@ def latin_row_problems(row: Mapping[str, object]) -> list[str]:
         problems.append(f"{BASIS} refuses a first publication of {year}: a work "
                         f"published after {last} had not exhausted its source term by "
                         "1 January 1996 (postconciliar 1976+ editions are outside it)")
+    if isinstance(citation, str) and any(term in citation.casefold()
+                                         for term in contract["excluded_terms"]):
+        cited_years = [int(one) for one in re.findall(r"(?<!\d)(1[89]\d\d|20\d\d)(?!\d)", citation)]
+        if ((_year(year) and year >= contract["excluded_from"])
+                or any(one >= contract["excluded_from"] for one in cited_years)):
+            problems.append(f"{BASIS} refuses a first publication in a "
+                            f"{contract['excluded_from']}-or-later Missal edition: those "
+                            "editions are only ever comparison targets, and their own "
+                            "status is held by postconciliar-latin-rights-v1.toml")
     if row.get("first_publication_imprint") not in contract["imprints"]:
         problems.append(f"{BASIS} first_publication_imprint must be one of "
                         f"{sorted(contract['imprints'])}: first publication in "
@@ -189,32 +210,93 @@ def latin_row_problems(row: Mapping[str, object]) -> list[str]:
 
 
 def calendar_problems(row: Mapping[str, object], calendar: str) -> list[str]:
-    """Refuse the token in a calendar whose target editions the record excludes."""
+    """Static per-calendar requirements (no source graph needed).
+
+    A row in a calendar whose target is a later typical edition must name the
+    text-free comparison against that target; `source_problems` checks what it
+    names.
+    """
     if row.get("publication_basis") != BASIS:
         return []
     contract, problems = _contract(row.get("publication_authority"))
     if contract is None:
         return problems
-    if calendar in contract["refused_calendars"]:
-        return [f"{BASIS} is refused in the {calendar} calendar: its target "
-                "editions are outside the record's limits"]
+    verification = row.get("verification_source_id")
+    if (calendar in contract["target_calendars"]
+            and (not isinstance(verification, str) or not verification.strip())):
+        return [f"{BASIS} in the {calendar} calendar requires verification_source_id: "
+                "the text-free comparison passage on its later typical edition"]
     return []
 
 
-def publication_source_problems(rights: Mapping[str, str]) -> list[str]:
-    """`rights` maps each publication_source_id to its backing artifact rights.
+def _editions(source_id: str, sources: Mapping[str, Mapping[str, object]],
+              backing: Callable) -> set[str]:
+    """Every edition a source record is, or is backed or projected from."""
+    record = sources.get(source_id) or {}
+    editions = {record.get("edition_id")}
+    artifact = backing(source_id, sources)
+    if artifact is not None:
+        editions.add(artifact.get("edition_id"))
+        parents = list(artifact.get("projected_from") or [])
+        if isinstance(artifact.get("derived_from"), str):
+            parents.append(artifact["derived_from"])
+        for parent in parents:
+            editions.add((sources.get(str(parent)) or {}).get("edition_id"))
+            parent_artifact = backing(str(parent), sources)
+            if parent_artifact is not None:
+                editions.add(parent_artifact.get("edition_id"))
+    return {one for one in editions if isinstance(one, str) and one}
 
-    Every public publication source must itself be distributable here, and at
-    least one must carry the qualified token: the words' own carrier is never
-    silently promoted to `public-domain`.
+
+def source_problems(row: Mapping[str, object], sources: Mapping[str, Mapping[str, object]],
+                    backing: Callable, *, calendar: str = "") -> list[str]:
+    """Source-graph contract of a permitted row on the token.
+
+    `backing(source_id, sources)` returns the artifact behind an exact witness.
+    Every public publication source must itself be distributable here and at
+    least one must carry the token, so the words' own carrier is never silently
+    promoted to `public-domain`. No source, carrier or carrier parent may be a
+    later typical edition: the words come from the earlier Holy See publication.
+    In a later-edition calendar the row must name a text-free comparison passage
+    on that edition as its verification witness.
     """
-    problems = [f"{BASIS} publication source {source_id!r} has rights_status "
-                f"{status!r}; only {sorted(PUBLIC_SOURCE_RIGHTS)} may be cited"
-                for source_id, status in sorted(rights.items())
-                if status not in PUBLIC_SOURCE_RIGHTS]
+    if row.get("publication_basis") != BASIS:
+        return []
+    contract, problems = _contract(row.get("publication_authority"))
+    if contract is None:
+        return problems
+    targets = contract["target_editions"]
+    rights: dict[str, str] = {}
+    for source_id in row.get("publication_source_ids") or []:
+        source_id = str(source_id)
+        artifact = backing(source_id, sources)
+        if artifact is not None:
+            rights[source_id] = str(artifact.get("rights_status") or "")
+        if _editions(source_id, sources, backing) & targets:
+            problems.append(f"{BASIS} publication source {source_id!r} is or derives from "
+                            "a later typical edition; the carrier must be the earlier Holy "
+                            "See publication or a transcription of it")
+    problems.extend(f"{BASIS} publication source {source_id!r} has rights_status "
+                    f"{status!r}; only {sorted(PUBLIC_SOURCE_RIGHTS)} may be cited"
+                    for source_id, status in sorted(rights.items())
+                    if status not in PUBLIC_SOURCE_RIGHTS)
     if BASIS not in rights.values():
         problems.append(f"{BASIS} publication requires a publication_source_ids "
                         f"artifact with rights_status {BASIS!r}")
+    witness = row.get("source_id")
+    if isinstance(witness, str) and _editions(witness, sources, backing) & targets:
+        problems.append(f"{BASIS} provenance source_id must witness the earlier Holy See "
+                        "publication, never a later typical edition")
+    if calendar in contract["target_calendars"]:
+        verification = str(row.get("verification_source_id") or "")
+        record = sources.get(verification) or {}
+        if (record.get("record_type") != "passage"
+                or not _editions(verification, sources, backing) & targets):
+            problems.append(f"{BASIS} in the {calendar} calendar requires "
+                            "verification_source_id to be a comparison passage on its "
+                            "later typical edition")
+        elif "text" in record:
+            problems.append(f"{BASIS} target comparison passage must be text-free")
     return problems
 
 

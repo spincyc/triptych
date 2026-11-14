@@ -986,14 +986,10 @@ def _source_record_problems(
             f"{where}: {one}"
             for one in _qualified_public_domain.calendar_problems(row, effective_calendar)
         )
-        backing_rights: dict[str, str] = {}
-        for source_id in rights_source_ids:
-            artifact = _backing_artifact(str(source_id), sources)
-            if artifact is not None:
-                backing_rights[str(source_id)] = str(artifact.get("rights_status") or "")
         problems.extend(
             f"{where}: {one}"
-            for one in _qualified_public_domain.publication_source_problems(backing_rights)
+            for one in _qualified_public_domain.source_problems(
+                row, sources, _backing_artifact, calendar=effective_calendar)
         )
     return problems
 

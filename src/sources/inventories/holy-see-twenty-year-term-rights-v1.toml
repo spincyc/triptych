@@ -138,8 +138,27 @@ token = "qualified-public-domain"
 first_publication_years = [1931, 1975]
 imprints = ["Typis Polyglottis Vaticanis", "Acta Apostolicae Sedis", "Libreria Editrice Vaticana"]
 bodies = ["Roman Pontiff", "Sacred Congregation of Rites", "Sacred Congregation for Divine Worship", "Secretariat of State", "State of Vatican City"]
-refused_calendars = ["postconciliar"]
-refused_calendars_reason = "The postconciliar calendar's target editions are the 2002 typical edition and the 2008 Variationes (1976 and later, L1), and its 1970 and 1975 typical editions are excluded until L3 is evidenced for the printing (see [scope].excludes)."
+
+[admission.later_editions]
+# A later typical edition adds no right in unchanged preexisting wording
+# (17 U.S.C. 103(b)); see [later_typical_editions]. In a target calendar the
+# row is admitted from the EARLIER Holy See publication, and the later edition
+# is only the text-free comparison named by verification_source_id.
+target_calendars = ["postconciliar"]
+target_editions = [
+  "edition.catholic-church.missale-romanum.vatican-typica-1970",
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-2002",
+  "edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008",
+  "edition.holy-see.variationes-et-additiones-missalis-romani-2008.latin-notitiae-503-504",
+  "edition.holy-see.notitiae.volume-44-numbers-503-504-2008",
+  "edition.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981",
+  "edition.catholic-church.ordo-lectionum-missae.latin-notitiae-additions-2015",
+]
+# A first_publication citing a Missal edition of this year or later is refused
+# in every calendar: the 1970 and 1975 editions are excluded until L3 is
+# evidenced for the printing, and later ones are outside L1.
+excluded_first_publication_terms = ["Missale Romanum", "Ordo Missae", "Missal"]
+excluded_first_publication_from = 1970
 
 [admission.us_formalities]
 # The United States route by which the work is independently public domain
@@ -157,10 +176,29 @@ english_study = "Original study translation by Triptych of a Holy See text publi
 [how_to_admit]
 note = "What each consumer requires of a text admitted on this record; scripts/_qualified_public_domain.py enforces it and tools/tests/test_qualified_public_domain.py holds it. Admission is per text, after the ordinary exact-witness collation; the token never substitutes for it."
 carrier_artifact = "A tracked source-library artifact carrying the admitted words: rights_status = \"qualified-public-domain\", rights_jurisdiction = \"United States\", and a rights_basis that contains this record's path and its verbatim [admission.notices].latin (or .english_carried for English)."
-latin_provenance_row = "In <calendar>-proper-latin-provenance-v1.toml (never the postconciliar calendar): provenance_status = \"collated\" with an exact relationship (exact-transcription, collated-exact or editorial-projection-exact-to-target) and the usual witness fields; publication_status = \"permitted\"; publication_basis = \"qualified-public-domain\"; all six surfaces; publication_authority = this record's path; notice = [admission.notices].latin verbatim; publication_source_ids naming at least one carrier artifact above and nothing that is not public-domain or qualified-public-domain; publication_locator and publication_evidence; first_publication (the Holy See publication that first printed the words), first_publication_year (1931-1975), first_publication_imprint and first_publication_body (from [admission]), us_formality (from [admission.us_formalities], within its year)."
+latin_provenance_row = "In <calendar>-proper-latin-provenance-v1.toml: provenance_status = \"collated\" with an exact relationship (exact-transcription, collated-exact or editorial-projection-exact-to-target) and the usual witness fields; publication_status = \"permitted\"; publication_basis = \"qualified-public-domain\"; all six surfaces; publication_authority = this record's path; notice = [admission.notices].latin verbatim; publication_source_ids naming at least one carrier artifact above and nothing that is not public-domain or qualified-public-domain; publication_locator and publication_evidence; first_publication (the Holy See publication that first printed the words), first_publication_year (1931-1975), first_publication_imprint and first_publication_body (from [admission]), us_formality (from [admission.us_formalities], within its year)."
+postconciliar_row = "The same row, in postconciliar-proper-latin-provenance-v1.toml, where the 2002/2008 (or OLM 1981) wording equals the earlier Holy See text word for word: every first_publication field describes the EARLIER publication (never a 1970-or-later Missal, never a 1964-1977 printing with notice); source_id witnesses that earlier publication; verification_source_id is a text-free comparison passage on a target edition listed in [admission.later_editions], with verification_locator; and no publication source, carrier or carrier parent (projected_from, derived_from) belongs to a target edition."
 english_carried = "A translation entry with lang = \"en\", rights = \"qualified-public-domain\", source_id naming the registered United States book, notice = [admission.notices].english_carried verbatim; its [[sources]] row carries rights = \"qualified-public-domain\" and a rights_basis citing this record and the book's unrenewed registration, confirmed on the copyright leaf."
 english_study = "A project study translation over Latin admitted here stays rights = \"project-created\" and carries notice = [admission.notices].english_study verbatim."
 ordinary_witness = "An Ordinary inventory [[witnesses]] row with rights = \"qualified-public-domain\", acknowledgement = [admission.notices].latin (lang la) or .english_carried (lang en) verbatim, and artifacts whose source-library rights_status is qualified-public-domain."
+
+[later_typical_editions]
+ruled_on = "2026-11-14"
+ruled_by = "the gap-campaign coordinator, applying the maintainer's instruction of the same day"
+rule = """
+The qualified basis also reaches a target slot of a later typical edition --
+the 2002 editio typica tertia, the 2008 reprint and Variationes, and the 1981
+Ordo lectionum Missae -- whose wording equals, word for word, a Holy See text
+first published in 1931-1975 that meets L1-L5. A later edition's copyright
+"extends only to the material contributed by the author of such work" and
+"does not imply any exclusive right in the preexisting material" (17 U.S.C.
+103(b), recorded at missale-romanum-1962-facsimile-rights-v1.toml), so it adds
+no right in unchanged preexisting wording. The words are admitted from the
+earlier Holy See publication; the later edition, which stays restricted under
+postconciliar-latin-rights-v1.toml, is only the text-free comparison that
+shows the identity, and is never a source, carrier or carrier parent.
+"""
+does_not_reach = "New or changed matter of a later edition (postconciliar-latin-rights-v1.toml [scope_partition].modern_new_or_changed_matter); wording first published in a 1970-or-later Missal edition; any 1964-1977 printing with a United States notice."
 
 # ==============================================================================
 # SCOPE AND LIMITS
@@ -307,7 +345,7 @@ items = [
   "src/sources/calendars/roman-pre-1955/propers.yaml: its Holy Week coverage note repeats the audit's holy-see-post-1929 label for the 1956 Ordo Hebdomadae Sanctae. Left unedited -- calendar data is owned by the lanes that admit texts, and the note's cited source (the audit row) now carries the pointer; the next edit of that note should cite this record.",
 ]
 not_superseded = [
-  "src/sources/inventories/postconciliar-latin-rights-v1.toml: its 1970 and 1975 states stay withheld until L3 is evidenced for the printing; 2002 and 2008 are outside the years.",
+  "src/sources/inventories/postconciliar-latin-rights-v1.toml: its withholding of new or changed postconciliar matter, and of the 1970 and 1975 states until L3 is evidenced for the printing, stands; 2002 and 2008 are outside the years. Its [scope_partition] now points here for unchanged 1931-1975 Holy See wording ([later_typical_editions]).",
   "The 17 U.S.C. 103(b) plus public-domain-witness route for preexisting material (missale-romanum-1962-facsimile-rights-v1.toml): it remains the priority-1 basis and is always preferred where a pre-1931 witness carries the words.",
   "Published 1962 propers scope prose that restates 'to the end of 2057' (src/claude/liturgy/roman-rite/1962/propers/temporal/48-55*/ and the ordinary research note of 2026-07-27): those are dated publication records of their own lanes, true of the record they cite when written; they are corrected when those publications are next revised, not here.",
 ]
