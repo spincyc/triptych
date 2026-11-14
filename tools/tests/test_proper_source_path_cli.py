@@ -34,7 +34,10 @@ if os.environ.get('TRIPTYCH_SOURCE_PATH_CLI_BASELINE'):
     OLD.SEATING_MODEL = TODAY.SEATING_MODEL
 
 BASIS = 'Technical correlated-source fixture; no historical permission or words are asserted.'
-ORDINARY = {'sections': [{'key': 'section', 'name': 'Technical frame', 'elements': [{'key': 'frame', 'kind': 'prayer', 'name': 'Technical prayer', 'translations': [{'lang': 'en', 'text': 'Technical frame body.'}]}]}], 'slots': [{'id': 'first-reading', 'anchor': 'frame', 'where': 'before', 'propers': ['First Reading']}, {'id': 'gospel', 'anchor': 'frame', 'where': 'before', 'propers': ['Gospel']}]}
+# Like a produced Ordinary, the frame names its calendar and keys its slots;
+# the shared seating model refuses a frame from another edition than the
+# appointed Mass, and a seat without a key is not a usable semantic seat.
+ORDINARY = {'calendar': 'postconciliar', 'sections': [{'key': 'section', 'name': 'Technical frame', 'elements': [{'key': 'frame', 'kind': 'prayer', 'name': 'Technical prayer', 'translations': [{'lang': 'en', 'text': 'Technical frame body.'}]}]}], 'slots': [{'key': 'first-reading', 'anchor': 'frame', 'where': 'before', 'propers': ['First Reading']}, {'key': 'gospel', 'anchor': 'frame', 'where': 'before', 'propers': ['Gospel']}]}
 
 
 def coordinate(name, occurrence=1):

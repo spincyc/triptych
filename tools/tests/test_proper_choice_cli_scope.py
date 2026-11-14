@@ -26,7 +26,10 @@ loader.exec_module(TODAY)
 TODAY.SEATING_MODEL = Path(os.environ.get("TRIPTYCH_APPOINTMENT_SEATING", ROOT / "src/web/browser/liturgy/ordinary-seating.js"))
 
 CHOICE = "proper-choice/roman-1962/fixture-selected/main/gospel=principal"
-ORDINARY = {"sections": [{"key": "fixture-section", "name": "Technical Ordinary fixture", "elements": [{"key": "fixture-element", "kind": "prayer", "name": "Technical frame", "translations": [{"lang": "la", "text": "Technical frame body."}]}]}], "slots": [{"id": "fixture-gospel", "anchor": "fixture-element", "where": "before", "propers": ["Gospel", "Gospel (vel)"]}]}
+# Like a produced Ordinary, the frame names its calendar and keys its slots;
+# the shared seating model refuses a frame from another edition than the
+# appointed Mass, and a seat without a key is not a usable semantic seat.
+ORDINARY = {"calendar": "roman-1962", "sections": [{"key": "fixture-section", "name": "Technical Ordinary fixture", "elements": [{"key": "fixture-element", "kind": "prayer", "name": "Technical frame", "translations": [{"lang": "la", "text": "Technical frame body."}]}]}], "slots": [{"key": "fixture-gospel", "anchor": "fixture-element", "where": "before", "propers": ["Gospel", "Gospel (vel)"]}]}
 
 
 def formulary(key):
@@ -78,7 +81,11 @@ class ProperChoiceCliScopeTests(unittest.TestCase):
                 mass["ordinary_frame"] = {"applicability": "none", "basis": "Technical source frame suppression fixture"}
             return mass
 
-        with patch.object(TODAY, "invoke", side_effect=invoke), patch.object(TODAY, "invoke_propers", return_value={}), patch.object(TODAY, "propers_of", side_effect=propers), patch.object(TODAY, "indexed_bible", return_value={"id": "fixture-bible", "language": "la"}):
+        # Dated conclusion projection re-derives the selected Mass from the
+        # verified roman-1962 products and refuses any other Mass; a technical
+        # formulary has no product identity. test_mass_today_source_execution
+        # exercises that projection on actual dates.
+        with patch.object(TODAY, "invoke", side_effect=invoke), patch.object(TODAY, "invoke_propers", return_value={}), patch.object(TODAY, "propers_of", side_effect=propers), patch.object(TODAY, "indexed_bible", return_value={"id": "fixture-bible", "language": "la"}), patch.object(TODAY, "project_dated_conclusions", return_value=None):
             return TODAY.run_show(args)
 
     def test_expanded_text_and_machine_scope_only_the_enacted_mass(self):

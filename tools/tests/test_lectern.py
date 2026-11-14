@@ -174,7 +174,9 @@ class LiturgyAdapterTests(unittest.TestCase):
         self.assertTrue(row["unresolvedChoices"])
         self.assertEqual(row["events"], [])
         self.assertIsNone(row["mass"])
-        self.assertEqual(view["title"], "No day is settled here")
+        # The page titles an open formulary choice so (day-reader.js
+        # unresolvedChoiceDocument) and keeps its coverage notice.
+        self.assertEqual(view["title"], "Choose a formulary")
         self.assertIn("has not selected one silently", row["notice"])
 
     def test_the_choice_once_made_is_read(self) -> None:

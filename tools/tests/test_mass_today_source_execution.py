@@ -80,7 +80,10 @@ class NativeSourceExecutionTests(unittest.TestCase):
                     self.assertIn(normalize(row["execution"]["member"]["source_text"]), normalize(text.stdout))
                 if language == "en":
                     self.assertIn("Source-derived English for study; not an approved liturgical translation.", text.stdout)
-                negative = self.data("2026-01-19", language)["days"][0]
+                # The final commemoration, St Barbara, has no reviewed conclusion
+                # in either language. (On 2026-01-19 St Canute gained a reviewed
+                # Latin-only conclusion in authority-v4's latin-only-263 cohort.)
+                negative = self.data("2026-12-04", language)["days"][0]
                 negative = next(row for row in negative["masses"] if row["selected"])["derived_execution"]
                 group = next(row["execution"] for row in negative["groups"] if row["slot"] == "Postcommunion" and row["conclusion_group"] == 2)
                 self.assertEqual(group["state"], "unresolved")

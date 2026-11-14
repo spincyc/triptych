@@ -224,10 +224,13 @@ class ForeignApplicabilityTest(unittest.TestCase):
         source = fixture()
         merged = inherited(source)
         mass = C.mass_index(merged)[COMMON]
+        # The finite conclusion loader validates the complete catalogue; it is
+        # outside both one-Mass projections.
         with patch.object(MP, 'load_calendar', return_value=merged), patch.object(MP, 'masses_of', return_value=[('common', mass)]), \
              patch.object(MP, 'translation_overlay', return_value=({}, {}, [], {})), patch.object(MP, 'publication_records', return_value=({}, [])), \
              patch.object(MP._oration_execution, 'load_sources', return_value={}), \
-             patch.object(MP._name_execution, 'load_name_sources', return_value={}):
+             patch.object(MP._name_execution, 'load_name_sources', return_value={}), \
+             patch.object(MP._oration_endings, 'load_sources', return_value={}):
             structure = MP.calendar_structure(H.ROOT / 'src/sources/calendars', TARGET, MP.book_tokens())
         row = structure['masses'][0]['propers'][0]
         self.assertEqual(row['appointment_applicability'], MARKER)
@@ -235,7 +238,8 @@ class ForeignApplicabilityTest(unittest.TestCase):
         with patch.object(MP, 'load_calendar', return_value=source), patch.object(MP, 'masses_of', return_value=[('common', original_mass)]), \
              patch.object(MP, 'translation_overlay', return_value=({}, {}, [], {})), patch.object(MP, 'publication_records', return_value=({}, [])), \
              patch.object(MP._oration_execution, 'load_sources', return_value={}), \
-             patch.object(MP._name_execution, 'load_name_sources', return_value={}):
+             patch.object(MP._name_execution, 'load_name_sources', return_value={}), \
+             patch.object(MP._oration_endings, 'load_sources', return_value={}):
             original = MP.calendar_structure(H.ROOT / 'src/sources/calendars', SOURCE, MP.book_tokens())['masses'][0]['propers'][0]
         self.assertEqual(row['text'], original['text'])
         self.assertEqual(row.get('text_status'), original.get('text_status'))

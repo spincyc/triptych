@@ -90,7 +90,9 @@ class SourceMassAppointmentContextTests(unittest.TestCase):
         common = C.mass_index(source)[COMMON]
         facts = copy.deepcopy(source[C.PROPER_APPOINTMENT_FACTS])
         self.assertEqual(C.validate_proper_appointment_facts(facts, "roman-1962", document=source), facts)
-        with patch.object(MP, "load_calendar", return_value=source), patch.object(MP, "masses_of", return_value=[("common", common)]), patch.object(MP._oration_execution, "load_sources", return_value={}), patch.object(MP._name_execution, "load_name_sources", return_value={}), patch.object(C, "validate_proper_appointment_facts", wraps=C.validate_proper_appointment_facts) as validate:
+        # The finite conclusion loader validates the complete catalogue; it is
+        # outside this one-Mass appointment-transport projection.
+        with patch.object(MP, "load_calendar", return_value=source), patch.object(MP, "masses_of", return_value=[("common", common)]), patch.object(MP._oration_execution, "load_sources", return_value={}), patch.object(MP._name_execution, "load_name_sources", return_value={}), patch.object(MP._oration_endings, "load_sources", return_value={}), patch.object(C, "validate_proper_appointment_facts", wraps=C.validate_proper_appointment_facts) as validate:
             structure = MP.calendar_structure(ROOT / "src/sources/calendars", "roman-1962", MP.book_tokens())
             self.assertTrue(validate.called)
         self.assertEqual(structure[C.PROPER_APPOINTMENT_FACTS], facts)

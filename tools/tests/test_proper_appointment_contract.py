@@ -186,8 +186,10 @@ class ProducerAndCliTests(unittest.TestCase):
         selected = copy.deepcopy(source)
         selected["sections"] = {"common": {"kind": "common", "masses": [mass]}}
         # Keep reference owners available to the resolver, but do not emit their
-        # whole production catalogue in this focused producer fixture.
-        with patch.object(MP, "load_calendar", return_value=source), patch.object(MP, "masses_of", return_value=[("common", mass)]), patch.object(MP, "translation_overlay", return_value=({}, {}, [], {})), patch.object(MP, "publication_records", return_value=({}, [])), patch.object(MP._oration_execution, "load_sources", return_value={}), patch.object(MP._name_execution, "load_name_sources", return_value={}):
+        # whole production catalogue in this focused producer fixture. The
+        # finite conclusion loader validates the complete catalogue; it is
+        # outside this appointment-transport projection.
+        with patch.object(MP, "load_calendar", return_value=source), patch.object(MP, "masses_of", return_value=[("common", mass)]), patch.object(MP, "translation_overlay", return_value=({}, {}, [], {})), patch.object(MP, "publication_records", return_value=({}, [])), patch.object(MP._oration_execution, "load_sources", return_value={}), patch.object(MP._name_execution, "load_name_sources", return_value={}), patch.object(MP._oration_endings, "load_sources", return_value={}):
             structure = MP.calendar_structure(ROOT / "src/sources/calendars", "roman-1962", MP.book_tokens())
         self.assertEqual(structure["proper_appointment_facts"], source["proper_appointment_facts"])
         rows = structure["masses"][0]["propers"]

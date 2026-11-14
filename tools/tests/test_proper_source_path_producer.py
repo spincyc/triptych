@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import contextlib
 import copy
 import importlib.machinery
 import importlib.util
@@ -49,18 +50,35 @@ def fixture():
     return source, mass
 
 
+def complete_translation_overlay(mod):
+    """The overlay validates bound study translations against every Mass."""
+    load_calendar, overlay = mod.load_calendar, mod.translation_overlay
+
+    def complete(*args, **kwargs):
+        with patch.object(mod, "load_calendar", load_calendar):
+            return overlay(*args, **kwargs)
+    return patch.object(mod, "translation_overlay", side_effect=complete)
+
+
 def structure(source, mod=MP):
-    with patch.object(mod, "load_calendar", return_value=source):
+    # Finite conclusion and actor-sequence owners validate the complete
+    # catalogue; they own nothing in this one-Mass projection.
+    with contextlib.ExitStack() as stack:
+        stack.enter_context(complete_translation_overlay(mod))
+        stack.enter_context(patch.object(mod, "load_calendar", return_value=source))
+        for name in ("_oration_endings", "_source_local_actor_sequences"):
+            if hasattr(mod, name):
+                stack.enter_context(patch.object(getattr(mod, name), "load_sources", return_value={}))
         return mod.calendar_structure(ROOT / "src/sources/calendars", source["calendar"], mod.book_tokens())
 
 
 def show(source, mass, mod=MP, foreign=False):
     args = argparse.Namespace(root=str(ROOT / "src/sources/calendars"), calendar=source["calendar"], mass=mass["key"],
                               lang="la", witness=None, bible=None, bible_root=str(ROOT / "src/sources/bibles"), form=None)
-    with patch.object(mod, "load_calendar", return_value=source):
-        if foreign:
-            with patch.object(mod, "translation_overlay", return_value=({}, {}, [], {})), patch.object(mod, "publication_records", return_value=({}, [])):
-                return mod.run_show_one(args)
+    if foreign:
+        with patch.object(mod, "load_calendar", return_value=source), patch.object(mod, "translation_overlay", return_value=({}, {}, [], {})), patch.object(mod, "publication_records", return_value=({}, [])):
+            return mod.run_show_one(args)
+    with complete_translation_overlay(mod), patch.object(mod, "load_calendar", return_value=source):
         return mod.run_show_one(args)
 
 
