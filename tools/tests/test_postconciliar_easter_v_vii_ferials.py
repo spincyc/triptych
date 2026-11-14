@@ -22,6 +22,13 @@ KEYS = tuple(f"easter-{week}-{day}" for week in (5, 6, 7) for day in DAYS)
 PRESERVED = {"easter-6-wednesday": "John 14:16", "easter-6-saturday": "John 16:28",
              "easter-7-tuesday": "John 14:16"}
 HELD = set(KEYS) - PRESERVED.keys()
+# Gap campaign 2026-11-14 (integrate lane, batch p3-easter-pentecost): project study English admitted for some
+# held acclamations from public-domain Vulgate or Missal antecedents; their Latin bodies stay held. Derived
+# from the ledger so the remaining held units are still checked exactly.
+ADMITTED_20261114 = {e["mass"] for e in tomllib.loads((Path(__file__).resolve().parents[2]
+    / "src/sources/inventories/postconciliar-proper-translations-v1.toml").read_text())["entries"]
+    if e["mass"] in HELD and e["proper"] == "Gospel Acclamation" and "integrate lane" in (e.get("divergence") or "")}
+NEGATIVE_KEY = "easter-5-friday"
 PASSAGE = ROOT / ("src/sources/works/catholic-church/ordo-lectionum-missae/editions/"
                  "latin-editio-typica-altera-1981/passages/easter-ferial-courses-285-302.toml")
 # Independently collated appointment coordinates, not OLM body/rubric wording.
@@ -95,8 +102,8 @@ class EasterVViiFerialTests(unittest.TestCase):
     def test_all18_whole_unit_classifications_and_exact_negative_owners(self):
         rows = tomllib.loads((INVENTORIES / "postconciliar-proper-translations-v1.toml").read_text())["untranslated"]
         rows = [r for r in rows if r["mass"] in KEYS and r["proper"] == "Gospel Acclamation"]
-        self.assertEqual(len(rows), 15)
-        self.assertEqual({r["mass"] for r in rows}, HELD)
+        self.assertEqual(len(rows), 15 - len(ADMITTED_20261114))
+        self.assertEqual({r["mass"] for r in rows}, HELD - ADMITTED_20261114)
         raw = (CALENDARS / "postconciliar/propers.yaml").read_text()
         for key in KEYS:
             proper, = [p for p in self.masses[key]["propers"] if p["name"] == "Gospel Acclamation"]
@@ -111,6 +118,9 @@ class EasterVViiFerialTests(unittest.TestCase):
             for field in ("text", "incipit", "translations", "verses", "takes_from", "cycles", "weekday_cycles"):
                 self.assertNotIn(field, proper)
             self.assertIn('name: "Gospel Acclamation"', raw.split("    - key: " + key + "\n", 1)[1].split("    - key:", 1)[0])
+            if key in ADMITTED_20261114:
+                self.assertFalse([r for r in rows if r["mass"] == key])
+                continue
             row, = [r for r in rows if r["mass"] == key]
             self.assertEqual({k: row[k] for k in ("form_id", "cycle", "occurrence", "extent", "lang", "reason")},
                 {"form_id": "main", "cycle": "all", "occurrence": 1, "extent": "body", "lang": "en",
@@ -136,6 +146,10 @@ class EasterVViiFerialTests(unittest.TestCase):
             self.assertFalse(proper["citations"])
             self.assertFalse(proper.get("text"))
             self.assertFalse(proper["latin"].get("text"))
+            if key in ADMITTED_20261114:
+                self.assertEqual({r["lang"]: r["status"] for r in proper["languages"]},
+                                 {"en": "full-text", "la": "unavailable"})
+                continue
             self.assertEqual({r["lang"]: r["status"] for r in proper["languages"]},
                              {"en": "unavailable", "la": "unavailable"})
             self.assertTrue(all(not r["available"] and not r["held"] for r in proper["languages"]))
@@ -215,7 +229,7 @@ class EasterVViiFerialTests(unittest.TestCase):
         check = tool("check-calendar-masses")
         chunks = (INVENTORIES / "postconciliar-proper-translations-v1.toml").read_text().split("\n[[untranslated]]")
         target = next(i for i, chunk in enumerate(chunks[1:], 1)
-            if (r := tomllib.loads("[[untranslated]]" + chunk)["untranslated"][0])["mass"] == "easter-5-monday"
+            if (r := tomllib.loads("[[untranslated]]" + chunk)["untranslated"][0])["mass"] == NEGATIVE_KEY
             and r["proper"] == "Gospel Acclamation")
         with tempfile.TemporaryDirectory(dir=ROOT / ".scratch", prefix="easter-v-vii-negative-") as folder:
             temp = Path(folder)
@@ -242,17 +256,17 @@ class EasterVViiFerialTests(unittest.TestCase):
             with patch.object(self.mp, "inventory_root", return_value=inv):
                 self.assertEqual(self.mp.english_coverage(CALENDARS, "postconciliar")["unaccounted"], 1)
             changed_doc = copy.deepcopy(self.doc)
-            proper = next(p for p in C.mass_index(changed_doc)["easter-5-monday"]["propers"] if p["name"] == "Gospel Acclamation")
+            proper = next(p for p in C.mass_index(changed_doc)[NEGATIVE_KEY]["propers"] if p["name"] == "Gospel Acclamation")
             proper["source"] = "scripture"
             proper.pop("text_status")
-            proper["verses"] = [self.canon.parse_citation("John 14:26")]
+            proper["verses"] = [self.canon.parse_citation("John 15:15")]
             source.write_text(yaml.safe_dump(changed_doc, sort_keys=False))
             (inv / "postconciliar-proper-translations-v1.toml").write_text("\n[[untranslated]]".join(chunks))
             with patch.object(check, "OVERLAY_DIR", inv):
                 errors, _ = check.overlay_problems([source])
             self.assertIn("exact English rights-withheld body witness", "\n".join(errors))
             changed_doc = copy.deepcopy(self.doc)
-            proper = next(p for p in C.mass_index(changed_doc)["easter-5-monday"]["propers"] if p["name"] == "Gospel Acclamation")
+            proper = next(p for p in C.mass_index(changed_doc)[NEGATIVE_KEY]["propers"] if p["name"] == "Gospel Acclamation")
             proper["text_status"].pop("body_status")
             source.write_text(yaml.safe_dump(changed_doc, sort_keys=False))
             (inv / "postconciliar-proper-latin-provenance-v1.toml").write_bytes(
