@@ -178,6 +178,19 @@ class StudyTranslationBindingTests(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     self.validate()
 
+    def test_study_over_qualified_public_domain_latin_carries_its_notice(self):
+        qualified = self.tool._qualified_public_domain
+        row = next(iter(self.records.values()))
+        row["publication_basis"] = qualified.BASIS
+        row["notice"] = qualified.notice("latin")
+        with self.assertRaisesRegex(ValueError, "english_study"):
+            self.validate()
+        self.entry["translations"][0]["notice"] = qualified.notice("english_study")
+        self.validate()
+        self.entry["translations"][0]["notice"] = qualified.notice("english_carried")
+        with self.assertRaisesRegex(ValueError, "english_study"):
+            self.validate()
+
     def test_arbitrary_qualified_basis_cannot_invent_an_adopted_method(self):
         next(iter(self.records.values()))["publication_basis"] = "qualified-nonoriginal-adaptation"
         with self.assertRaisesRegex(ValueError, "qualified Latin authority"):

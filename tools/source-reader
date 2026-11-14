@@ -138,14 +138,16 @@ def source_library():
 # An affirmative recorded distribution basis. `restricted` is lawful project
 # access that does not include redistribution, and `unresolved` is a rights
 # question nobody has answered; neither is a basis for publishing anything.
-DISTRIBUTABLE_RIGHTS = ("public-domain", "licensed", "project-created")
+DISTRIBUTABLE_RIGHTS = ("public-domain", "licensed", "project-created", "qualified-public-domain")
 
 # A licence is a permission with conditions attached, and the condition this
 # corpus carries is attribution: the CC-BY and CC-BY-SA artifacts name the
 # person whose work is being reused. So a licensed text renders its
 # `rights_basis` BESIDE the words, at the point of use, and never once in a page
 # footer — a reader who copies a passage out has to carry the condition with it.
-ATTRIBUTION_REQUIRED = ("licensed", "permission")
+# A `qualified-public-domain` artifact (policy priority 6) carries its record's
+# verbatim notice in `rights_basis`, which must likewise travel beside the words.
+ATTRIBUTION_REQUIRED = ("licensed", "permission", "qualified-public-domain")
 
 # What may be set as prose. See the module docstring: a TSV row is a structured
 # record and a JPEG is a photograph, and neither becomes a reading by being

@@ -29,6 +29,9 @@ RUN_STYLES = (
     ("proper-form", "italic"),
     ("composed-label", "italic $text-muted"),
     ("unit-absence", "italic $warning"),
+    # A priority-6 qualified-public-domain notice is a rights marking, not a
+    # muted aside: it is set where a warning would be.
+    ("latin-rights-qualification", "italic $warning"),
     ("composed-note", "italic $text-muted"),
     ("unit-claim", "italic $text-muted"),
     ("notice", "italic $warning"),

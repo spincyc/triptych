@@ -34,6 +34,7 @@ from _corpus import (  # noqa: E402
     eligible_document_ids as corpus_eligible_document_ids,
 )
 from _scanning import markers_for, present  # noqa: E402
+import _qualified_public_domain  # noqa: E402
 from _browser_products import MANIFEST_RELATIVE as BROWSER_PRODUCTS_MANIFEST_RELATIVE  # noqa: E402
 from _markdown_render import (  # noqa: E402
     MARKDOWN_EXTENSIONS, MarkdownRenderError, render_markdown,
@@ -195,7 +196,12 @@ POSTCONCILIAR_QUARANTINE_SOURCE_FIELDS = frozenset((
 # structure families and the offered Bible fragments; a hand-maintained family
 # allowlist made served browser data invisible to the authorization record.
 LITURGICAL_RIGHTS_STRUCTURE_KINDS = ("calendar", "ordinary", "propers", "rubrics")
-PUBLIC_LITURGICAL_TEXT_RIGHTS = frozenset(("public-domain", "project-created"))
+# `qualified-public-domain` is the policy priority-6 state: authorized on every
+# public liturgy surface, but only beside its adopted record's verbatim notice,
+# which `visit` below requires wherever the token is carried with words.
+PUBLIC_LITURGICAL_TEXT_RIGHTS = frozenset(
+    ("public-domain", "project-created", _qualified_public_domain.BASIS)
+)
 ICEL_SOURCE_MARKERS = (
     "international-commission-on-english-in-the-liturgy",
     "icel-antiphonary",
@@ -2536,6 +2542,20 @@ def validate_liturgical_public_data(
             raise ReleaseError(
                 f"{label} {location}: rights {rights!r} and rights_status "
                 f"{rights_status!r} do not name the same public authorization"
+            )
+        # A priority-6 text is never public without its marking: a Latin
+        # publication decision or a translation carrying words on the qualified
+        # token must carry the adopted record's verbatim notice beside them.
+        qualified_words = (
+            (value.get("basis") == _qualified_public_domain.BASIS
+             and value.get("status") == "permitted")
+            or (rights == _qualified_public_domain.BASIS and "text" in value
+                and parts[1] == "propers")
+        )
+        if qualified_words and value.get("notice") not in _qualified_public_domain.notices():
+            raise ReleaseError(
+                f"{label} {location}: {_qualified_public_domain.BASIS} words lack "
+                "their adopted record's verbatim notice"
             )
 
         state = value.get("state")

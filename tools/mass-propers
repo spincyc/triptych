@@ -31,6 +31,7 @@ import _name_execution  # noqa: E402
 import _oration_endings  # noqa: E402
 import _source_local_actor_sequences  # noqa: E402
 import _proper_qualified_latin  # noqa: E402
+import _qualified_public_domain  # noqa: E402
 from _psalms import (  # noqa: E402
     PSALMS,
     SYSTEMS,
@@ -457,7 +458,9 @@ def find_mass(root: Path, calendar: str, key: str) -> dict:
 # A grant for one surface is not permission for the generated JSON, its public
 # Git history, a downloadable artifact, or CLI output.  Those surfaces need a
 # separately recorded distribution basis; an acknowledgement cannot widen one.
-PUBLISHABLE_RIGHTS = ("public-domain", "project-created")
+# `qualified-public-domain` (policy priority 6) is published only with its
+# record's verbatim notice beside the words; `_qualified_public_domain` owns it.
+PUBLISHABLE_RIGHTS = ("public-domain", "project-created", _qualified_public_domain.BASIS)
 GOSPEL_PROPER_NAMES = frozenset(
     {"Gospel Acclamation", "Verse before the Gospel", "Verse Before the Gospel"}
 )
@@ -473,6 +476,8 @@ def translation_is_publishable(proper: dict, translation: dict) -> bool:
     """
 
     if translation.get("rights") not in PUBLISHABLE_RIGHTS:
+        return False
+    if _qualified_public_domain.translation_problems(translation):
         return False
     return not (
         proper.get("name") in GOSPEL_PROPER_NAMES
@@ -575,6 +580,10 @@ def public_latin_state(latin: dict, target: str) -> dict:
 
     if not latin.get("withheld") and latin.get("state") != "unavailable":
         publication = latin.get("publication") or {}
+        if (publication.get("basis") == _qualified_public_domain.BASIS
+                and publication.get("notice") != _qualified_public_domain.notice("latin")):
+            # A priority-6 text never reaches a public surface unmarked.
+            raise ValueError("qualified-public-domain Latin lacks its record's verbatim notice")
         if publication.get("basis") != "qualified-nonoriginal-adaptation":
             return public_latin_source_metadata(latin)
         # The full comparison proof remains source-owned. An assembled prayer
@@ -1621,7 +1630,8 @@ TRANSLATION_ABSENCE_SURFACES = frozenset(
     {"site-display", "corpus-data", "public-git", "command-line", "download"}
 )
 LEDGER_TRANSLATION_RIGHTS = frozenset(
-    {"public-domain", "licensed", "project-created", "permission"}
+    {"public-domain", "licensed", "project-created", "permission",
+     _qualified_public_domain.BASIS}
 )
 LEDGER_TRANSLATION_FIELDS = frozenset(
     {"lang", "text", "rights", "source_id", "notice", "text_structure"}
@@ -1702,8 +1712,12 @@ def validate_translation_payload(
             not isinstance(source_id, str) or not source_id.strip()
         ):
             raise ValueError(f"{where} source_id must be a nonempty string")
-        if rights in {"public-domain", "licensed", "permission"} and not source_id:
+        if (rights in {"public-domain", "licensed", "permission", _qualified_public_domain.BASIS}
+                and not source_id):
             raise ValueError(f"{where} {rights} translation requires source_id")
+        qualified = _qualified_public_domain.translation_problems(translation)
+        if qualified:
+            raise ValueError(f"{where} " + "; ".join(qualified))
         witness_key = str(source_id) if isinstance(source_id, str) else ""
         witness = (witnesses or {}).get(witness_key)
         if rights != "project-created" and witnesses is not None and witness is None:
@@ -1838,8 +1852,15 @@ def validate_study_translation_binding(
     publication = latin.get("publication") or {}
     basis = publication.get("basis")
     if (provenance.get("status") != "collated"
-            or basis not in {"public-domain", _proper_qualified_latin.BASIS}):
+            or basis not in {"public-domain", _proper_qualified_latin.BASIS,
+                             _qualified_public_domain.BASIS}):
         raise ValueError(f"{path}: bound study translation requires collated public-domain or independently qualified Latin")
+    if basis == _qualified_public_domain.BASIS:
+        # Study English over priority-6 Latin is a derivative of it and is
+        # published on the same qualified basis, visibly.
+        trouble = _qualified_public_domain.study_translation_problems(studies)
+        if trouble:
+            raise ValueError(f"{path}: " + "; ".join(trouble))
     if (provenance.get("source_id") != passage_id
             or (sources.get(passage_id) or {}).get("record_type") != "passage"):
         raise ValueError(f"{path}: study translation Latin passage differs from its exact source provenance")

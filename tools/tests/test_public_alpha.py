@@ -2252,6 +2252,30 @@ class PublicAlphaTest(unittest.TestCase):
             errors,
         )
 
+    def test_qualified_public_domain_words_are_public_only_with_their_notice(self) -> None:
+        qualified = self.tool._qualified_public_domain
+        envelope = self.root / "src/web/data/structure/propers/mass/roman-1962/pentecost-sunday.json"
+        cases = (
+            ("translation", {"rights": qualified.BASIS},
+             {"notice": qualified.notice("english_carried")}),
+            ("latin", {"latin": {"withheld": False, "publication": {
+                "status": "permitted", "basis": qualified.BASIS}}},
+             {"latin": {"withheld": False, "publication": {
+                 "status": "permitted", "basis": qualified.BASIS,
+                 "notice": qualified.notice("latin")}}}),
+        )
+        for label, unmarked, marked in cases:
+            for changes, refused in ((unmarked, True), (dict(unmarked, **marked), False)):
+                with self.subTest(label=label, refused=refused):
+                    structure = self.make_propers_read_fixture()["structure"]
+                    structure["masses"][0]["propers"][0].update(changes)
+                    self.add_propers_reader_fixture(structure)
+                    if refused:
+                        with self.assertRaisesRegex(self.tool.ReleaseError, "verbatim notice"):
+                            self.tool.validate_liturgical_public_data(envelope)
+                    else:
+                        self.tool.validate_liturgical_public_data(envelope)
+
     def test_1962_read_split_is_copied_only_when_exact_and_public_safe(self) -> None:
         self.make_propers_read_fixture()
         self.write_json("src/web/data/bibles.json", {
