@@ -17,9 +17,9 @@ import _oration_conclusion_supplement as supplement
 
 METHOD_ID = "roman-1962-rg115-conclusion-execution-20261112"
 PUBLIC_SCHEMA = "triptych-oration-conclusion-source/v1"
-AUTHORITY_PATH = "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v4.json"
+AUTHORITY_PATH = "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v5.json"
 # This exact authority is activated by its adjacent root-adoption record.
-AUTHORITY_SHA256 = "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744"
+AUTHORITY_SHA256 = "e531d4070207cf28bb168ac35c7d604b129e6908b43711e8b686477362b6ffaa"
 SOURCE_ID = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945"
 TABLE_PATH = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/benziger-revised-1945/artifacts/resume-orations-conclusion-table-2026-10-23-7dbb4a25/conclusions.json"
 TABLE_SHA256 = "7dbb4a258065ce0ba7d6d203be9e2593637b1e98dd2c123ffac10355e1bbb934"

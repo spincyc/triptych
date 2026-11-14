@@ -1,0 +1,876 @@
+{
+  "schema": "triptych-oration-conclusion-authority-successor-receipt/v1",
+  "recorded_on": "2026-11-14",
+  "authorization": "Gap-campaign coordinator, 2026-11-14: oration-conclusion authority v5 successor plus installation of the held items, after batches 3-5 and the integrate-1962 lane merged.",
+  "text_free": "Hashes, identities and reasons only; no prayer wording.",
+  "predecessor": {
+    "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v4.json",
+    "sha256": "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744"
+  },
+  "successor": {
+    "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v5.json",
+    "sha256": "e531d4070207cf28bb168ac35c7d604b129e6908b43711e8b686477362b6ffaa"
+  },
+  "editorial_display_successor": {
+    "predecessor": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/authority-v2.json",
+      "sha256": "231c2cfa81cc193060d5d00ab85882b0b1ae2c4b3b22a9380df524931c1de1d3"
+    },
+    "successor": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/authority-v3.json",
+      "sha256": "ad5dec69a0a3cf74b728c0cd56a8ece57c3a87cc07821b758d7eb80c0394f13c"
+    },
+    "review": {
+      "path": "workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/gap-campaign-v5-ending-successor-review.json",
+      "sha256": "fe5cc76e3cb10d641f9f5a3aa789e0f078951adb98e90771ae5d0e573db36f39"
+    }
+  },
+  "builder": {
+    "path": "workflows/reviews/gap-campaign-2026-11-14/oration-conclusions/build_authority_v5.py",
+    "sha256": "db56277d4055a4befd32e9e76ca2312281dd6556586f0a19e4be02217cc41c70",
+    "recompute": "python3 workflows/reviews/gap-campaign-2026-11-14/oration-conclusions/build_authority_v5.py",
+    "check": "python3 workflows/reviews/gap-campaign-2026-11-14/oration-conclusions/build_authority_v5.py --check"
+  },
+  "unchanged": {
+    "records": 753,
+    "supplemental_records": 321,
+    "formula_catalog": 27
+  },
+  "changed_records": [
+    {
+      "calendar": "roman-1962",
+      "section": "records",
+      "target": [
+        "low-sunday",
+        "main",
+        "Secret",
+        "all",
+        1
+      ],
+      "justification": "Latin proof row re-sourced from Pustet 1862 (prints qui) to Mame 1922 p. 373 (cui), DECISIONS 7f; body bytes unchanged; receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json",
+      "changes": [
+        {
+          "field": "latin_proof_sha256",
+          "old": "901f16db19db0f7c60d3079d2883370440e1237773896f9a6445fd2331530ea1",
+          "new": "1bd80cb917f9098f70439be0a33c93c3de146883788dd19a922cf0113d2fe3a4"
+        },
+        {
+          "field": "public_sha256",
+          "old": "118d54c9544903252ce4092e30fabdc6c505dcf9721420b444d9d5d44625d2aa",
+          "new": "95229339e0d33404bf446b39b601b3d7a04388fb0ced2c1820010daa8826240f"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ascension",
+        "day",
+        "Collect",
+        "all",
+        2
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p3#24)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "c37b6a1eaa918f57b2ca23296560facdeed93b4a7c53d1588971eeca56c08d0c",
+          "new": "52a3c3ad8e967d71321290da4748b78fc29a689568234e8e8d895338d2dd7839"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "c37b6a1eaa918f57b2ca23296560facdeed93b4a7c53d1588971eeca56c08d0c",
+          "new": "52a3c3ad8e967d71321290da4748b78fc29a689568234e8e8d895338d2dd7839"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "02f45b23158e883ecece70ce15a51e82eec798184feb4c2a26386caf78acb083",
+          "new": "43cf181ef42b61a8fc90d15ff77523013b9acb82cc1d89e9e4f4031e562b65df"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "epiphany",
+        "day",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p1#55)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "cbd3b3fd401f388fa953c83630c70bee536d07e53c30f083594489a3692583b2",
+          "new": "8aa72eb050cad099cfc38ccb4683625fe56136093db378f10de12807cb777d21"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "cbd3b3fd401f388fa953c83630c70bee536d07e53c30f083594489a3692583b2",
+          "new": "8aa72eb050cad099cfc38ccb4683625fe56136093db378f10de12807cb777d21"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "8f93fa9ec05bc66c58654a7d678ee80834b6abe55d5bfcf42602165e13615823",
+          "new": "cd6095aed477d03dafc6c6f40bfb80fab737aaec1f5b4e6da324cdc866079500"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-12",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#51)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "4c9012c10b4a1928b8a56e9b35b92b2d981cdf9e021a608124c8acbf383ceb80",
+          "new": "10f275d77166a6a37d34637110b0bc2df7a896a8948aa61047e1e76cfdbdffc8"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "4c9012c10b4a1928b8a56e9b35b92b2d981cdf9e021a608124c8acbf383ceb80",
+          "new": "10f275d77166a6a37d34637110b0bc2df7a896a8948aa61047e1e76cfdbdffc8"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "a2f0dcf64e828d52310d1ea87151314b36b27f3bd26c37fb02d0f3c30968b50a",
+          "new": "d94ddbd0cd9f2291c80aab57bd7b9d56b901e7938cf7fb4c9b3e88e387e3a7e4"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-2",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#26)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "454858df321be14a7cafc65d8db9f50a7626e0bb5ad46db7de66b7961076f1f7",
+          "new": "8348ebc1547432ec5267bb6f65780af1da9378d08f5810d02262b62735f4c061"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "454858df321be14a7cafc65d8db9f50a7626e0bb5ad46db7de66b7961076f1f7",
+          "new": "8348ebc1547432ec5267bb6f65780af1da9378d08f5810d02262b62735f4c061"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "465651ebc9d4d328e3b40052d829db1a53858db5c0a43149a82269fc029aa757",
+          "new": "9b60ee881cf0355293b1b37f546c24894fb6d91fffe06f1c8ba702febcec6d6a"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-20",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#70)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "c9bcf785e81eb541a2c2f3744abfa2823e6f828a628a00f3b8e2020f49769762",
+          "new": "45156ef52773f0f759ae66311f2a1f2474c209abfcde4b1290d3e94281e6f8b7"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "c9bcf785e81eb541a2c2f3744abfa2823e6f828a628a00f3b8e2020f49769762",
+          "new": "45156ef52773f0f759ae66311f2a1f2474c209abfcde4b1290d3e94281e6f8b7"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "1015374e37b9a99e199d22467d83cfa236f34a052a157d4562c2590d09275abc",
+          "new": "805137fc5550aa20539cb48ccc4ba521ec78d8f7c1f4397be0910add79d8638b"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-21",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#71)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "80d2d25a873c2986b0819cb16e8fd72c41ee74e8a48c4b08df2b9a32cdc719e1",
+          "new": "4bca1a5943f71a9c87318a4cc6bdd6eda7b7ffc298d22489a70860c8ac0c0248"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "80d2d25a873c2986b0819cb16e8fd72c41ee74e8a48c4b08df2b9a32cdc719e1",
+          "new": "4bca1a5943f71a9c87318a4cc6bdd6eda7b7ffc298d22489a70860c8ac0c0248"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "f26204579a58ca34ef9ab9f0fd60c50778bec21cc11c7170b09d0b0de3985a96",
+          "new": "c615d842123ee0dcc2f805f017b7eb28c83d92b97051d3beca601677aa7373ae"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-24",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#79)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "dce0dd7dfe0d812ce872d7f7ccf2731079511d719014154a5fb06156ff602df2",
+          "new": "d4f9af5091a63539ebed0ec8f49d4574dad45869827365941c83748e4da8a358"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "dce0dd7dfe0d812ce872d7f7ccf2731079511d719014154a5fb06156ff602df2",
+          "new": "d4f9af5091a63539ebed0ec8f49d4574dad45869827365941c83748e4da8a358"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "5ee6990f694a8b920f1bddaab6c8f53a641c8aeb1df13a9beeea9df7bc128c7a",
+          "new": "9d8c091971ef5bc465a64ef73260f4527ed4c8b58e123ac99c81c7de98d5cf39"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-26",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#86)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "50db0cf9132c3d8486d9db4aefcb5a393b18de1882f34a2388d0aa6bbc6a822f",
+          "new": "186d3b3f6d079019bb6bca5b724d6d9ff78b562e7d74ee0847f43903f2ea492e"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "50db0cf9132c3d8486d9db4aefcb5a393b18de1882f34a2388d0aa6bbc6a822f",
+          "new": "186d3b3f6d079019bb6bca5b724d6d9ff78b562e7d74ee0847f43903f2ea492e"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "fa58a6092d027fcf1a8b0d37054f6a9fa314d38eea0034b7cfce6c4eef6b9f39",
+          "new": "c8a7354de6d5bd27306b650a691c4067ac8bc812265b474d5edde6673976ebf5"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-27",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#89)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "c652e49d2db19e6b2e15b3748823eec87453effa4d196fa00f1f79fc1d0a8727",
+          "new": "2bc0a6f61095c54c34dca5873064b4bda6163d8464689514457edfbabf8fea83"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "c652e49d2db19e6b2e15b3748823eec87453effa4d196fa00f1f79fc1d0a8727",
+          "new": "2bc0a6f61095c54c34dca5873064b4bda6163d8464689514457edfbabf8fea83"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "5f898829d922faafc306223ca773e96c3e4c743b255e10aeb03ad7496bf84348",
+          "new": "edc34e86507efe41b15e7a815a3198a4ece614edf78b98ad29c26cab8c023f5a"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-28",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#92)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "78e5e3ed2509cd40fa9aaa36cb96433e804f87c21d024b705e1936a83f40b5ef",
+          "new": "349ad93901d75f02c3d2251a9620b13afab18b9035fe077ecf22ff67179e49d8"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "78e5e3ed2509cd40fa9aaa36cb96433e804f87c21d024b705e1936a83f40b5ef",
+          "new": "349ad93901d75f02c3d2251a9620b13afab18b9035fe077ecf22ff67179e49d8"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "49b72c94b51826ce4f7d5346fe2467e38d01ef327351e72f503309e982a6f297",
+          "new": "b86c4b75ccfb47f5ef7b09ba764a5bc08fbd29688366633e4aec665d33fb770a"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-29",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#95)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "971c6aa3333e5463f5938ef7c8c7c1e8df9fe64ba6fbb503c9fa2d17b4665d48",
+          "new": "f6f67c7998db387e1bf04410969098b4aee24c447ebb07183ddbd71aeab833a4"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "971c6aa3333e5463f5938ef7c8c7c1e8df9fe64ba6fbb503c9fa2d17b4665d48",
+          "new": "f6f67c7998db387e1bf04410969098b4aee24c447ebb07183ddbd71aeab833a4"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "a73a206d5ad24c63d1b48d1e09fe3a8d6751572477934f083dedf7fa04908760",
+          "new": "ab66c0abc980629818a6ee2572a6d74f51e6962e4a3d80c6597625c5d467a2c3"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-3",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#29)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "454858df321be14a7cafc65d8db9f50a7626e0bb5ad46db7de66b7961076f1f7",
+          "new": "91e5e662f88a9f75ebbde0f9a54a0364656dd34e73487f4413863687b3dcd4df"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "454858df321be14a7cafc65d8db9f50a7626e0bb5ad46db7de66b7961076f1f7",
+          "new": "91e5e662f88a9f75ebbde0f9a54a0364656dd34e73487f4413863687b3dcd4df"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "479a8b00b6d4fe78f8d9756cdfb3319dc71196ae1508ed49e8c046af8dcf2a86",
+          "new": "8854e9d44cd831cba5861814faa99725fd1b4e3ad72a18dab432b3a57816e2ee"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-30",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#97)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "454858df321be14a7cafc65d8db9f50a7626e0bb5ad46db7de66b7961076f1f7",
+          "new": "b92eadd8e37dd0d140d4fcf01dc02f283d3ba6ccbaa7ce0821d62ac6efcb316b"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "454858df321be14a7cafc65d8db9f50a7626e0bb5ad46db7de66b7961076f1f7",
+          "new": "b92eadd8e37dd0d140d4fcf01dc02f283d3ba6ccbaa7ce0821d62ac6efcb316b"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "5ffbaeef41d5450b82babb3034ff7f49124aa2915f5852e7cef713e3dcb30d0a",
+          "new": "2547c99f861b320e3378ebc9827ec578a165db6d98d74bff9b8aa238e4dc8ba4"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-31",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#100)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "4645b8c448ed97c25ca51971243471d7e432bb0286f3b015b1b6c5ee3e475d32",
+          "new": "f63ea878ad0a8872d6cf34fa984a47c43ff24c7d377769593cdcdf2b1505216e"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "4645b8c448ed97c25ca51971243471d7e432bb0286f3b015b1b6c5ee3e475d32",
+          "new": "f63ea878ad0a8872d6cf34fa984a47c43ff24c7d377769593cdcdf2b1505216e"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "d719277f8387c2c9571bebffe4f4a5bf6a36234f22ac0f3005306db8e8449fbb",
+          "new": "d3923a1fbb7999b3fdfc454f7713bf3bbb834e3058ebfaa478913a2e73778d71"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-32",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#103)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "4645b8c448ed97c25ca51971243471d7e432bb0286f3b015b1b6c5ee3e475d32",
+          "new": "925a55bbad726b97cce6e2a9301b751a62e69ad72b39a6df0fa12aa50b8a088c"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "4645b8c448ed97c25ca51971243471d7e432bb0286f3b015b1b6c5ee3e475d32",
+          "new": "925a55bbad726b97cce6e2a9301b751a62e69ad72b39a6df0fa12aa50b8a088c"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "4742496645547b948c369d594401e7613b08788f4724cb82a0503271db8685b4",
+          "new": "20b4aa8357c4c000fc542ec3f5c7aeebc3aa778c22feae0829e854870cfbee65"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-33",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#104)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "293b315e6ebc5c22e29417cdbb148183f7612e7d21d0e6315142a7bf1a0e5bdc",
+          "new": "50c1e0062426480c23a3510f22ec778060d9eae2961c5294846621e2eac5c1ab"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "293b315e6ebc5c22e29417cdbb148183f7612e7d21d0e6315142a7bf1a0e5bdc",
+          "new": "50c1e0062426480c23a3510f22ec778060d9eae2961c5294846621e2eac5c1ab"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "1cf1912c64ee257a949c65944b433946ccc41613ad38de193cc0b6c47e8ba13a",
+          "new": "4493395529fd102b3c878d3554a895293b1899fd14e88d1c60583e2ac09dd0b0"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-7",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#39)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "aa1986d3516f85390c26d489042c45fa3b1653801fce2240b9a711741b4172ac",
+          "new": "b69f56a63452aec4736d89e08ca08c67d1728fc462c27804e1985924d5521774"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "aa1986d3516f85390c26d489042c45fa3b1653801fce2240b9a711741b4172ac",
+          "new": "b69f56a63452aec4736d89e08ca08c67d1728fc462c27804e1985924d5521774"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "4083b2ae41114f896994d0449d5a2b20f58b4859fc6c22895cf2f5e937843eed",
+          "new": "a57c21b2e3e8f4082c3a44ce010288ee3182f0e4e905ff27cc0a2e216b708ab1"
+        }
+      ]
+    },
+    {
+      "calendar": "postconciliar",
+      "section": "supplemental_records",
+      "target": [
+        "ot-9",
+        "main",
+        "Collect",
+        "all",
+        1
+      ],
+      "justification": "Latin body admitted (gap campaign 2026-11-14, held-v5 installation, coordinator authorization); receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/held-v5-admission.json (lane index p4#44)",
+      "changes": [
+        {
+          "field": "languages.en.proper_sha256",
+          "old": "b57c29536c23cac091644aa93de9b4acd74d0d87d87f5ced8cbfc2db76749f2d",
+          "new": "38ad15ec8983d0fd93b15d656d8be11f9ee66c26bd52b80603ac65bb0e372add"
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_latin_body_available",
+          "old": false,
+          "new": true
+        },
+        {
+          "field": "public.body_fidelity.en.canonical_proper_sha256",
+          "old": "b57c29536c23cac091644aa93de9b4acd74d0d87d87f5ced8cbfc2db76749f2d",
+          "new": "38ad15ec8983d0fd93b15d656d8be11f9ee66c26bd52b80603ac65bb0e372add"
+        },
+        {
+          "field": "public.body_fidelity.en.latin_execution_verdict",
+          "old": "not-supported-no-held-body",
+          "new": "not-in-this-english-only-record"
+        },
+        {
+          "field": "public.body_fidelity.en.successor_2026_11_14",
+          "old": null,
+          "new": "added (successor annotation, text-free)"
+        },
+        {
+          "field": "public_sha256",
+          "old": "7d08f945f3ce27e969227e77667caba7cb5381d77accbc1b1552499cbb9156db",
+          "new": "b6bf92671564f55cb2b00e94c30443b006cd5a60947f205fae372a63b29a1638"
+        }
+      ]
+    }
+  ],
+  "code_pins": {
+    "scripts/_oration_endings.py": [
+      "AUTHORITY_PATH",
+      "AUTHORITY_SHA256"
+    ],
+    "src/web/browser/liturgy/oration-conclusions.js": [
+      "ACTIVE_AUTHORITY_SHA256",
+      "GENERATED CONCLUSION PINS section",
+      "ACTIVE_DISPLAY_AUTHORITY_SHA256",
+      "GENERATED_DISPLAY_AUTHORITY_SHA256",
+      "DISPLAY_ENDING_AUTHORITY_SHA256"
+    ],
+    "scripts/_browser_product_recipes.py": [
+      "authority path list: v5 added after v4"
+    ],
+    "scripts/_corpus_index.py": [
+      "authority path list: v5 added after v4"
+    ]
+  }
+}

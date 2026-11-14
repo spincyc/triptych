@@ -1,0 +1,33 @@
+{
+  "schema": "triptych-oration-conclusion-successor-activation/v1",
+  "date": "2026-11-14",
+  "authorization": "Gap-campaign coordinator authorized this successor and the installation of the held items (2026-11-14). Built by the integrate lane with the reproducible builder named below; this record is the activation record adjacent to the authority, as v2-v4 were.",
+  "independent_review": "An independent fidelity review was running when this successor was built. If it corrects a pinned record, re-run the builder; no record outside the declared set may change.",
+  "authority": {
+    "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v5.json",
+    "sha256": "e531d4070207cf28bb168ac35c7d604b129e6908b43711e8b686477362b6ffaa",
+    "predecessor": {
+      "path": "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v4.json",
+      "sha256": "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744"
+    }
+  },
+  "editorial_display_authority": {
+    "path": "workflows/reviews/missal-reader-resume-2026-11-12/english-editorial-readings/authority-v3.json",
+    "sha256": "ad5dec69a0a3cf74b728c0cd56a8ece57c3a87cc07821b758d7eb80c0394f13c"
+  },
+  "receipt": {
+    "path": "workflows/reviews/gap-campaign-2026-11-14/oration-conclusions/v5-successor-receipt.json",
+    "sha256": "51ecf89e1eeed1e9acc0dbed1ed463ca535c7b896947ea5105b9fc853cd29d5e"
+  },
+  "postimages": {
+    "scripts/_oration_endings.py": "89b887b85dd8fbff9a7d185115cbbe6910067773458c2cdf7bc5e4030ca0f887",
+    "src/web/browser/liturgy/oration-conclusions.js": "1b6b13a18984f3cef64be4eca2d5c87e030e2abc935cfe3d09ac561cff9ae525",
+    "scripts/_browser_product_recipes.py": "6c63b40facadbfc8c470a857ab7e4c6e63e8a0231ab26b61c53c6bda89f91719",
+    "scripts/_corpus_index.py": "545afa1e41e0bd46b1595448e7966285c1113163674276289775c254742d51df"
+  },
+  "limits": [
+    "No record outside the declared set changes; v4's scope, formulas and execution rules are unchanged.",
+    "The 18 postconciliar records remain English-only conclusion records; the admitted Latin bodies print their own target cues and are not executed by them.",
+    "Browser products, release bindings and the corpus index are refreshed separately by the coordinator."
+  ]
+}

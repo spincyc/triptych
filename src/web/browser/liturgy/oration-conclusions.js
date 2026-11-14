@@ -10,9 +10,9 @@
   const V2_METHOD_ID = 'missal-finite-oration-conclusion-execution-20261112-v2';
   const GROUP_RULE = 'RGMR 436-437; 442-443; 480; 505';
   // This exact authority is activated by its adjacent root-adoption record.
-  const ACTIVE_AUTHORITY_SHA256 = 'b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744';
+  const ACTIVE_AUTHORITY_SHA256 = 'e531d4070207cf28bb168ac35c7d604b129e6908b43711e8b686477362b6ffaa';
   // BEGIN GENERATED CONCLUSION PINS — derived from the single finite authority.
-  const GENERATED_AUTHORITY_SHA256 = "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744";
+  const GENERATED_AUTHORITY_SHA256 = "e531d4070207cf28bb168ac35c7d604b129e6908b43711e8b686477362b6ffaa";
   const PUBLIC_PINS = Object.freeze({
   "[\"advent-1\",\"main\",\"Postcommunion\",\"all\",1]": "9d8c3de90fe2ba0f9f24b5009e1754535dd0db659e711964ef462341c4110171",
   "[\"advent-2\",\"main\",\"Postcommunion\",\"all\",1]": "df5f2fab381f6162b102734c5a7a9d846bd7137c6c1cc21bc3539b9eb043fe60",
@@ -338,7 +338,7 @@
   "[\"litania-maior\",\"main\",\"Secret\",\"all\",1]": "686c6eb83e2087912bad899f697e570c65a3e53c5ed7b3598629e0a6a49fe379",
   "[\"low-sunday\",\"main\",\"Collect\",\"all\",1]": "f0d4ac95efd27c98a13eafa16a395939ad3dbd555059f1277d18101113070079",
   "[\"low-sunday\",\"main\",\"Postcommunion\",\"all\",1]": "9fa0555678c416038d7d7456c3e6cc0c1b108dc3ef95b1984080451ae9799159",
-  "[\"low-sunday\",\"main\",\"Secret\",\"all\",1]": "118d54c9544903252ce4092e30fabdc6c505dcf9721420b444d9d5d44625d2aa",
+  "[\"low-sunday\",\"main\",\"Secret\",\"all\",1]": "95229339e0d33404bf446b39b601b3d7a04388fb0ced2c1820010daa8826240f",
   "[\"mass-of-the-first-sunday-after-epiphany\",\"main\",\"Collect\",\"all\",1]": "647e35846aae6184bbeb61c817838f4cb63a28a043a19be60290f5e97e57ece7",
   "[\"mass-of-the-first-sunday-after-epiphany\",\"main\",\"Postcommunion\",\"all\",1]": "59ce3acf73f07377ae3509cec9dca7567b062c127abe06361e8ce6d48a0c50c0",
   "[\"mass-of-the-first-sunday-after-epiphany\",\"main\",\"Secret\",\"all\",1]": "fa71e5d56c22c447e419f9cfdd3ba9d8fd1c0d47fc8982788b4a133596a638c0",
@@ -444,31 +444,31 @@
   "[\"pentecost-ember-friday\",\"main\",\"Postcommunion\",\"all\",1]": "7127cfea67520a7f46ebce659aae70eefd0f48a8611cb9486bcb6763b8382284",
   "[\"pentecost-ember-wednesday\",\"main\",\"Postcommunion\",\"all\",1]": "39d36c0ec4883ded94042377a632c0d988d1f09e8ea4e281a8e950c9e62c23f2",
   "[\"pentecost-ember-wednesday\",\"main\",\"Secret\",\"all\",1]": "f019b8cd49d9bf768a1dad3e168a66ca5ca341a2c1ac31a47b7154be8032de4e",
-  "[\"postconciliar\",\"ascension\",\"day\",\"Collect\",\"all\",2]": "02f45b23158e883ecece70ce15a51e82eec798184feb4c2a26386caf78acb083",
-  "[\"postconciliar\",\"epiphany\",\"day\",\"Collect\",\"all\",1]": "8f93fa9ec05bc66c58654a7d678ee80834b6abe55d5bfcf42602165e13615823",
+  "[\"postconciliar\",\"ascension\",\"day\",\"Collect\",\"all\",2]": "43cf181ef42b61a8fc90d15ff77523013b9acb82cc1d89e9e4f4031e562b65df",
+  "[\"postconciliar\",\"epiphany\",\"day\",\"Collect\",\"all\",1]": "cd6095aed477d03dafc6c6f40bfb80fab737aaec1f5b4e6da324cdc866079500",
   "[\"postconciliar\",\"nativity\",\"dawn\",\"Collect\",\"all\",1]": "fb0f722746e209e52e18767c383fee5be4b4220bf3e7a53d347d822fb0b40541",
   "[\"postconciliar\",\"nativity\",\"day\",\"Collect\",\"all\",1]": "effe0c5a658a0695fb484cacab2a858d5f635133cb2ab66c58f331187da70217",
   "[\"postconciliar\",\"ot-10\",\"main\",\"Collect\",\"all\",1]": "b9dd05fef36167105627d39fc2946d21fe9b5cca60fe066377ff096c4ff9048a",
-  "[\"postconciliar\",\"ot-12\",\"main\",\"Collect\",\"all\",1]": "a2f0dcf64e828d52310d1ea87151314b36b27f3bd26c37fb02d0f3c30968b50a",
+  "[\"postconciliar\",\"ot-12\",\"main\",\"Collect\",\"all\",1]": "d94ddbd0cd9f2291c80aab57bd7b9d56b901e7938cf7fb4c9b3e88e387e3a7e4",
   "[\"postconciliar\",\"ot-15\",\"main\",\"Collect\",\"all\",1]": "3ec42cafbb28896435d4a3077e951bffab8acb0817847ff53f013c7857b2cd01",
-  "[\"postconciliar\",\"ot-2\",\"main\",\"Collect\",\"all\",1]": "465651ebc9d4d328e3b40052d829db1a53858db5c0a43149a82269fc029aa757",
-  "[\"postconciliar\",\"ot-20\",\"main\",\"Collect\",\"all\",1]": "1015374e37b9a99e199d22467d83cfa236f34a052a157d4562c2590d09275abc",
-  "[\"postconciliar\",\"ot-21\",\"main\",\"Collect\",\"all\",1]": "f26204579a58ca34ef9ab9f0fd60c50778bec21cc11c7170b09d0b0de3985a96",
+  "[\"postconciliar\",\"ot-2\",\"main\",\"Collect\",\"all\",1]": "9b60ee881cf0355293b1b37f546c24894fb6d91fffe06f1c8ba702febcec6d6a",
+  "[\"postconciliar\",\"ot-20\",\"main\",\"Collect\",\"all\",1]": "805137fc5550aa20539cb48ccc4ba521ec78d8f7c1f4397be0910add79d8638b",
+  "[\"postconciliar\",\"ot-21\",\"main\",\"Collect\",\"all\",1]": "c615d842123ee0dcc2f805f017b7eb28c83d92b97051d3beca601677aa7373ae",
   "[\"postconciliar\",\"ot-22\",\"main\",\"Collect\",\"all\",1]": "69dc03857b308a4b077e978dc7c6ec4674e003873f9f973ca66f843c81bd1978",
-  "[\"postconciliar\",\"ot-24\",\"main\",\"Collect\",\"all\",1]": "5ee6990f694a8b920f1bddaab6c8f53a641c8aeb1df13a9beeea9df7bc128c7a",
-  "[\"postconciliar\",\"ot-26\",\"main\",\"Collect\",\"all\",1]": "fa58a6092d027fcf1a8b0d37054f6a9fa314d38eea0034b7cfce6c4eef6b9f39",
-  "[\"postconciliar\",\"ot-27\",\"main\",\"Collect\",\"all\",1]": "5f898829d922faafc306223ca773e96c3e4c743b255e10aeb03ad7496bf84348",
-  "[\"postconciliar\",\"ot-28\",\"main\",\"Collect\",\"all\",1]": "49b72c94b51826ce4f7d5346fe2467e38d01ef327351e72f503309e982a6f297",
-  "[\"postconciliar\",\"ot-29\",\"main\",\"Collect\",\"all\",1]": "a73a206d5ad24c63d1b48d1e09fe3a8d6751572477934f083dedf7fa04908760",
-  "[\"postconciliar\",\"ot-3\",\"main\",\"Collect\",\"all\",1]": "479a8b00b6d4fe78f8d9756cdfb3319dc71196ae1508ed49e8c046af8dcf2a86",
-  "[\"postconciliar\",\"ot-30\",\"main\",\"Collect\",\"all\",1]": "5ffbaeef41d5450b82babb3034ff7f49124aa2915f5852e7cef713e3dcb30d0a",
-  "[\"postconciliar\",\"ot-31\",\"main\",\"Collect\",\"all\",1]": "d719277f8387c2c9571bebffe4f4a5bf6a36234f22ac0f3005306db8e8449fbb",
-  "[\"postconciliar\",\"ot-32\",\"main\",\"Collect\",\"all\",1]": "4742496645547b948c369d594401e7613b08788f4724cb82a0503271db8685b4",
-  "[\"postconciliar\",\"ot-33\",\"main\",\"Collect\",\"all\",1]": "1cf1912c64ee257a949c65944b433946ccc41613ad38de193cc0b6c47e8ba13a",
+  "[\"postconciliar\",\"ot-24\",\"main\",\"Collect\",\"all\",1]": "9d8c091971ef5bc465a64ef73260f4527ed4c8b58e123ac99c81c7de98d5cf39",
+  "[\"postconciliar\",\"ot-26\",\"main\",\"Collect\",\"all\",1]": "c8a7354de6d5bd27306b650a691c4067ac8bc812265b474d5edde6673976ebf5",
+  "[\"postconciliar\",\"ot-27\",\"main\",\"Collect\",\"all\",1]": "edc34e86507efe41b15e7a815a3198a4ece614edf78b98ad29c26cab8c023f5a",
+  "[\"postconciliar\",\"ot-28\",\"main\",\"Collect\",\"all\",1]": "b86c4b75ccfb47f5ef7b09ba764a5bc08fbd29688366633e4aec665d33fb770a",
+  "[\"postconciliar\",\"ot-29\",\"main\",\"Collect\",\"all\",1]": "ab66c0abc980629818a6ee2572a6d74f51e6962e4a3d80c6597625c5d467a2c3",
+  "[\"postconciliar\",\"ot-3\",\"main\",\"Collect\",\"all\",1]": "8854e9d44cd831cba5861814faa99725fd1b4e3ad72a18dab432b3a57816e2ee",
+  "[\"postconciliar\",\"ot-30\",\"main\",\"Collect\",\"all\",1]": "2547c99f861b320e3378ebc9827ec578a165db6d98d74bff9b8aa238e4dc8ba4",
+  "[\"postconciliar\",\"ot-31\",\"main\",\"Collect\",\"all\",1]": "d3923a1fbb7999b3fdfc454f7713bf3bbb834e3058ebfaa478913a2e73778d71",
+  "[\"postconciliar\",\"ot-32\",\"main\",\"Collect\",\"all\",1]": "20b4aa8357c4c000fc542ec3f5c7aeebc3aa778c22feae0829e854870cfbee65",
+  "[\"postconciliar\",\"ot-33\",\"main\",\"Collect\",\"all\",1]": "4493395529fd102b3c878d3554a895293b1899fd14e88d1c60583e2ac09dd0b0",
   "[\"postconciliar\",\"ot-4\",\"main\",\"Collect\",\"all\",1]": "a2351de0505bf0a5e71970eb2f4ccd4c697efe3a9f77158b5d0c2a82240cba77",
-  "[\"postconciliar\",\"ot-7\",\"main\",\"Collect\",\"all\",1]": "4083b2ae41114f896994d0449d5a2b20f58b4859fc6c22895cf2f5e937843eed",
+  "[\"postconciliar\",\"ot-7\",\"main\",\"Collect\",\"all\",1]": "a57c21b2e3e8f4082c3a44ce010288ee3182f0e4e905ff27cc0a2e216b708ab1",
   "[\"postconciliar\",\"ot-8\",\"main\",\"Collect\",\"all\",1]": "a641f826bfcce863c20b0bd1a6250f1c04d6b21df76f4e08dca08051b0bd4184",
-  "[\"postconciliar\",\"ot-9\",\"main\",\"Collect\",\"all\",1]": "7d08f945f3ce27e969227e77667caba7cb5381d77accbc1b1552499cbb9156db",
+  "[\"postconciliar\",\"ot-9\",\"main\",\"Collect\",\"all\",1]": "b6bf92671564f55cb2b00e94c30443b006cd5a60947f205fae372a63b29a1638",
   "[\"postconciliar\",\"pentecost\",\"day\",\"Collect\",\"all\",1]": "af5b5549c57482073f816c557bcb91e92494862f2ec7d85033228dc3f7a6491f",
   "[\"pretiosissimi-sanguinis-domini-nostri-iesu-christi\",\"main\",\"Postcommunion\",\"all\",1]": "1ec65b2ee4a77fdf934dd686c12e37f7071a477eaef3087c0c499b8d9f6aec24",
   "[\"pretiosissimi-sanguinis-domini-nostri-iesu-christi\",\"main\",\"Secret\",\"all\",1]": "17f6a12901a2cd9b2deb914466dd6e790a7075d85de3de7fd9ab8e1df79da12f",
@@ -1111,9 +1111,9 @@
   // END GENERATED CONCLUSION PINS
   // Separate finite editorial authority. Activation requires exact Root adoption;
   // an ending-authority successor requires a newly reviewed editorial authority.
-  const ACTIVE_DISPLAY_AUTHORITY_SHA256 = '231c2cfa81cc193060d5d00ab85882b0b1ae2c4b3b22a9380df524931c1de1d3';
-  const GENERATED_DISPLAY_AUTHORITY_SHA256 = "231c2cfa81cc193060d5d00ab85882b0b1ae2c4b3b22a9380df524931c1de1d3";
-  const DISPLAY_ENDING_AUTHORITY_SHA256 = "b26fe7863979e300ea47ad925e22d77d783dd76a418672b516eba73cac166744";
+  const ACTIVE_DISPLAY_AUTHORITY_SHA256 = 'ad5dec69a0a3cf74b728c0cd56a8ece57c3a87cc07821b758d7eb80c0394f13c';
+  const GENERATED_DISPLAY_AUTHORITY_SHA256 = "ad5dec69a0a3cf74b728c0cd56a8ece57c3a87cc07821b758d7eb80c0394f13c";
+  const DISPLAY_ENDING_AUTHORITY_SHA256 = "e531d4070207cf28bb168ac35c7d604b129e6908b43711e8b686477362b6ffaa";
   const DISPLAY_METHOD_ID = "roman-1962-finite-english-editorial-readings-20261112";
   const DISPLAY_SOURCE_REVIEW_SHA256 = "5afefdfd76d2a96c61448f4d7c733a3205a06eba457325acbe5419438f2bfa40";
   const DISPLAY_PINS = Object.freeze({

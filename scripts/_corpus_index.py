@@ -44,6 +44,7 @@ AUTHORITIES = (
     'workflows/reviews/missal-reader-completion-2026-10-26/gregem-damasus-qualified-rights-adoption.json',
     'workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v2.json',
     'workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v4.json',
+    'workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v5.json',
     'workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/next-cohort/1946-formula-metadata-successor-review.json',
     'workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/next-cohort/data-source-review.json',
     'workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/next-cohort/final-authority-successor-delta.json',

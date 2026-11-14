@@ -75,6 +75,7 @@ _EXECUTION_AUTHORITIES = [
     "workflows/reviews/reader-completion-2026-10-26/oration-execution-six-authority.json",
     "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v2.json",
     "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v4.json",
+    "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/authority-v5.json",
     "workflows/reviews/missal-english-completion-2026-11-12/postconciliar/lent-two-orations/actor-authority-v1.json",
     "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/next-cohort/1946-formula-metadata-successor-review.json",
     "workflows/reviews/missal-reader-completion-2026-11-12/oration-conclusions/next-cohort/data-source-review.json",
