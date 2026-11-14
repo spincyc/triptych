@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only the original historical 1937/1945 human English on ordinary numbered pages of the actual 1946 printing, under the registration-level United States nonrenewal finding in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Faithful transcription adds no authorship; this English is excluded from the project CC BY 4.0 offer. No scan, lettered insert, modern rubric or modern liturgical wording is retained."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Each row quotes one complete historical English antiphon from its ordinary page, bounded before the following psalm verse; ornamental initials and small capitals rendered as ordinary sentence case; words and punctuation as printed."
+retrieved = "2026-11-14"
+notes = "Ten exact historical human-English recipient rows, gap campaign 2026-11-14. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p2-lent-holyweek-admission.json."
+sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+byte_size = 1965
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/gap-campaign-20261114-lent-holyweek-english/text.tsv"
+encoding = "utf-8"
+indexable = true

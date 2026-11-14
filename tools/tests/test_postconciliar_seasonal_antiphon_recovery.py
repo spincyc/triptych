@@ -13,6 +13,10 @@ EVIDENCE=ROOT/'src/sources/inventories/postconciliar-seasonal-collation-v1.toml'
 ENGLISH=ROOT/'src/sources/inventories/postconciliar-proper-translations-v1.toml'
 ART='artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf'
 TARGET='edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008'
+# Gap campaign 2026-11-14 admissions, read from their owning ledgers rather than retyped here.
+_PROV=tomllib.loads((ROOT/'src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml').read_text())['entries']
+GAP_LATIN={(r['mass'],r['proper']) for r in _PROV if 'gap-campaign-20261114' in str(r.get('source_id',''))}
+GAP_ENGLISH={(e['mass'],e['proper'],e.get('occurrence',1)) for e in tomllib.loads(ENGLISH.read_text())['entries'] if 'integrate lane' in str(e.get('witness_note',''))+str(e.get('divergence',''))}
 def tool(name):
  loader=SourceFileLoader('_seasonal_recovery_test_'+name.replace('-','_'),str(ROOT/'tools'/name));m=module_from_spec(spec_from_loader(loader.name,loader));sys.modules[loader.name]=m;loader.exec_module(m);return m
 class SeasonalAntiphonRecoveryTests(unittest.TestCase):
@@ -27,14 +31,19 @@ class SeasonalAntiphonRecoveryTests(unittest.TestCase):
     mass=self.masses[f['mass']];rows=[p for p in mass['propers'] if p['name']==f['proper']];p=rows[f['occurrence']-1]
     self.assertEqual(self.owner.source_slot_identity(self.document,mass,'',p,None),(f['mass'],'main',f['proper'],f['occurrence']))
     self.assertIn(f"artifact page {f['artifact_page']} / printed page {f['printed_page']}",p['notes'])
-    self.assertNotIn('text',p);self.assertNotIn('incipit',p);self.assertNotIn('translations',p)
+    self.assertNotIn('incipit',p);self.assertNotIn('translations',p)
+    key=(f['mass'],f['proper']);latin=key in GAP_LATIN;english=(*key,f['occurrence']) in GAP_ENGLISH
+    if latin:self.assertIsInstance(p['text'],str);self.assertNotIn('text_status',p)
+    else:self.assertNotIn('text',p)
     cue=f['source_citation_cue']
     if cue=='!uncited':
      self.assertEqual(p['source'],'composed');self.assertNotIn('verses',p)
-     self.assertEqual(p['text_status'],{'state':'unavailable','scope':'proper-body','reasons':[{'kind':'witness-gap','source_id':TARGET}]})
+     if not latin:self.assertEqual(p['text_status'],{'state':'unavailable','scope':'proper-body','reasons':[{'kind':'witness-gap','source_id':TARGET}]})
     else:
      expected=[self.canon.parse_citation(c.strip()) for c in cue.removeprefix('Cf. ').split(';;')]
-     self.assertEqual(p['source'],'scripture');self.assertEqual(p['verses'],expected)
+     # A gap-campaign admission gives the adapted antiphon its own body beside the retained citation.
+     self.assertEqual(p['source'],'mixed' if (latin or english) else 'scripture');self.assertEqual(p['verses'],expected)
+     if english and not latin:self.assertEqual(p['text_status'],{'state':'unavailable','scope':'proper-body','reasons':[{'kind':'witness-gap','source_id':TARGET}]})
      if any(e['book']=='Psalms' for e in expected):self.assertEqual(p['psalm_numbering'],'vulgate')
  def test_the_two_unconditional_alternative_groups_have_no_default(self):
   for key,role,group in [('easter-monday','Entrance Antiphon','entrance-antiphon'),('most-sacred-heart-jesus','Communion Antiphon','communion-antiphon')]:

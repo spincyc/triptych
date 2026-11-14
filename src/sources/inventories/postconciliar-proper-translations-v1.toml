@@ -3244,6 +3244,10 @@ sha256 = "797aed3dba317738ab1c52f27b57314c85c60fa9f83648e3ca4b7e406c2c150b"
 path = "workflows/reviews/missal-english-completion-2026-10-29/postconciliar/2026-11-12-pentecost-latin-admission.json"
 sha256 = "44ef8380662dbc72ec152a13741f405111119b1c5b527e612b1493fcc24145c8"
 
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p2-lent-holyweek-admission.json"
+sha256 = "c5300043a7682c2b3929552d8a70909ae3f28cc5bfb71a40f209605b97bb4dac"
+
 [[sources]]
 id = "lasance-1945-printing-1946"
 source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
@@ -3689,6 +3693,21 @@ rights_jurisdiction = "United States"
 rights_basis = "The identified English book was published by William Blackwood and Sons in 1908. Its 1908 printed contents have no remaining United States copyright term in 2026: a 95-year maximum term ended before 2026, and any URAA restoration supplies only the remainder of the otherwise applicable United States term. Faithful mechanical scans and project transcription of those public-domain English words add no human authorship. The stated basis is publication date and mechanical reproduction, not Internet Archive availability or a host label. This covers the historical human translation, not approved modern English or any modern editorial addition."
 role = "Exact historical English of one complete ancient antiphon, used as study antecedent English for two source-local OLM1981 referrals."
 caution = "Historical human English for study; not approved contemporary English and not an authenticated2008 collation."
+
+[[sources]]
+id = "lefebvre-1925"
+source_id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+artifact_id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf"
+label = "Daily Missal with Vespers for Sundays & Feasts (Dom Gaspar Lefebvre O.S.B.; Saint Andre/Lohmann early expression, catalogue-supported 1925; English prayer translator unnamed)"
+attests = "editio-typica-1920"
+attests_kind = "date-bound"
+attests_basis = "The early expression is bounded before 1931 by its catalogue identity, ecclesiastical approvals and January 1927 physical accession; its Preface describes a 1920 Latin/rubric base. This identifies an antecedent state after 1920 and before 1955, not an attestation of the 1962 recension. Exact individual target prayer transfer remains separately checked."
+witness_relation = "antecedent"
+witness_relation_basis = "Historical pre 1955 human English is carried only through independently reviewed whole-prayer Latin identity and its actual source conclusion. This book-level antecedent label is not target-edition attestation or a permission to transfer other prayers."
+rights = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Separately manifested hand-transcribed historical Latin and human English prayer wording of the early Daily Missal with Vespers expression, catalogue-supported 1925 and independently bounded before 1931 by January 1927 physical library accession. The maximum United States historical publication term has expired. This affirmative basis covers only the separately checked underlying wording at independently reviewed settings; it does not clear the exact Google/CCWatershed PDF, image/layout/text-layer payloads, modern wrappers, commentary, illustrations or unreviewed/later inserts. Root bounded source-alias decision SHA 256 fefb 839 a 58513 a 2 eee 48166 e 4 a 48000914294949503 a 3 e 5 b 97 e 043 b 1 f 6395252 and independent identity/basis receipt SHA 25697 f 641 d 9 b 85 d 294 b 12 f 8 f 97298 c 46 c 177 a 668563560 db 20836 bfd 4 b 3 a 84 d 4314. No foreign-jurisdiction or official 1962 English claim is made."
+caution = "Historical human translation, not official English of the 1962 Missal or a modern postconciliar translation.1925 is catalogue-supported, not a year printed in the title/colophon; the January 1927 accession independently supports the pre 1931 expression bound. The prayer translator is unnamed; William Busch is a censor, not established as translator. Exact remote PDF/images/whole OCR remain unresolved and unadmitted. Each passage needs its own inspected setting, complete text and conclusion review. Raphael 1711²belongs to an integrated superscript gathering only on the specifically reviewed expression-identity inference; this is no clearance of all inserted leaves."
 
 [[entries]]
 mass = "advent-2"
@@ -8489,24 +8508,6 @@ note = "no publishable English as yet: the approved translation is ICEL's, subje
 [[untranslated]]
 mass = "easter-vigil"
 form_id = "main"
-proper = "Prayer after the Litany"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["ef6884bfa688dab95cc9ffc773b377938ac896a62509d7f51f3f48168176ed87"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-
-
-
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
 proper = "Renewal of Baptismal Promises"
 cycle = "all"
 occurrence = 1
@@ -8544,20 +8545,6 @@ availability = "unavailable"
 reason = { kind = "no-exemplar" }
 rejected_detectors = ["liturgies-net-2026-08-22"]
 quarantined_text_sha256 = ["83fe5cd870c1928dcd1eb3f78838ae043773532c4babff4e152a834dcb67b89a"]
-note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "good-friday"
-form_id = "main"
-proper = "Improperia"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["1d288501bc66d9c61c7882f9dbcefdc273fad3073d9bc68d617bd05a551d3766"]
 note = "no publishable English as yet: the approved translation is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
@@ -8798,21 +8785,6 @@ reason = { kind = "no-exemplar" }
 rejected_detectors = ["liturgies-net-2026-08-22"]
 quarantined_text_sha256 = ["d40a6c4226f231143f4f8d4505f8e29a245b0bba2f19fef7490af4c5c7621e58"]
 note = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "mass-of-the-lords-supper"
-form_id = "main"
-proper = "Prayer after Communion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-rejected_detectors = ["liturgies-net-2026-08-22"]
-quarantined_text_sha256 = ["95c79d59c1089f49fd9b92391ef492ba1c381ca2bea3b2fbfc38af27c00e0b71"]
-note = "no ancient ancestor was found for this prayer within corpus.catholic-church.ancient-sacramentaries-2026-08-01, so its Latin cannot be shown to be out of copyright. The approved English is ICEL's, subject to ICEL's surface-limited standing web permission (icel-web-permission-rights-v1.toml), but no authoritative source exemplar has been acquired for this text and no English wording is retained in this tracked corpus. Absence within a declared boundary is not proof of absence from the tradition. The later unofficial-web rows were rejected as authoritative exemplars; their wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
 
 [[untranslated]]
 mass = "ot-10"
@@ -9330,49 +9302,6 @@ note = "An exact approved-English exemplar and locator were recorded, but the ap
 [[untranslated]]
 mass = "easter-vigil"
 form_id = "main"
-proper = "Antiphon at the Sprinkling"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-antiphonary-2010"
-source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_on_page = "2026-08-21"
-verified_artifact_page = 57
-verified_printed_page = "49"
-verified_heading = "EASTER TIME / EASTER SUNDAY OF THE RESURRECTION OF THE LORD / THE EASTER VIGIL IN THE HOLY NIGHT / THIRD PART: BAPTISMAL LITURGY / The Renewal of Baptismal Promises"
-verified_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf"
-quarantined_text_sha256 = ["5d340fb0affb0decbac104e93716e2e9648a15f805fb855a8d709df1acaf6812"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
-proper = "Blessing of the Fire"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-music-2010"
-source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
-witness_artifact_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.lucernarium"
-verified_on_page = "2026-08-22"
-verified_artifact_page = 1
-verified_heading = "THE EASTER VIGIL / First Part: The Solemn Beginning of the Vigil or Lucernarium / The Blessing of the Fire and Preparation of the Candle"
-verified_url = "https://www.icelweb.org/musicfolder/Lucernarium.pdf"
-quarantined_text_sha256 = ["5a27634c4aa73604aead01ee4c09c9ae97ac01c21ebbce0118a07b354657df1a"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "easter-vigil"
-form_id = "main"
 proper = "Easter Proclamation (Exsultet)"
 cycle = "all"
 occurrence = 1
@@ -9435,48 +9364,6 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "The candidate artifact does not match this source-owned Latin slot exactly (gloriae in the candidate, gloriose here), so it establishes neither this target's exact English nor a slot-specific publication basis. No English wording is retained."
-
-[[untranslated]]
-mass = "good-friday"
-form_id = "main"
-proper = "Solemn Intercession I: For Holy Church"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-music-2010"
-source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
-witness_artifact_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-1"
-verified_on_page = "2026-08-22"
-verified_artifact_page = 1
-verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / I. For Holy Church"
-verified_url = "https://www.icelweb.org/musicfolder/GoodFriday1.pdf"
-quarantined_text_sha256 = ["cd51cf48aee67da70d338efbe104c95ce0f36f4f4669db05f061d746ab67454e"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "good-friday"
-form_id = "main"
-proper = "Solemn Intercession II: For the Pope"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-music-2010"
-source_id = "edition.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21"
-witness_artifact_id = "artifact.international-commission-on-english-in-the-liturgy.music-for-the-roman-missal.2010-chants-web-2026-08-21.good-friday-2"
-verified_on_page = "2026-08-22"
-verified_artifact_page = 1
-verified_heading = "FRIDAY OF THE PASSION OF THE LORD / The Solemn Intercessions / II. For the Pope"
-verified_url = "https://www.icelweb.org/musicfolder/GoodFriday2.pdf"
-quarantined_text_sha256 = ["99768c386f9ba5295dc0aacd909636973c26dd57565c1fc7019abe9d62a320b0"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
 mass = "good-friday"
@@ -9751,28 +9638,6 @@ verified_printed_page = "14"
 verified_heading = "1 January / SOLEMNITY OF MARY, THE HOLY MOTHER OF GOD"
 verified_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf"
 quarantined_text_sha256 = ["384d54cb0b2ed002663ae3efd081c4c141529caf7af9d0778e0c2638c33d0697"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "mass-of-the-lords-supper"
-form_id = "main"
-proper = "Antiphon at the Presentation of the Gifts"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-antiphonary-2010"
-source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_on_page = "2026-08-21"
-verified_artifact_page = 48
-verified_printed_page = "40"
-verified_heading = "THE SACRED PASCHAL TRIDUUM (running head) / The Liturgy of the Eucharist / [rubric] At the beginning of the Liturgy of the Eucharist, there may be a procession of the faithful in which gifts for the poor may be presented with the bread and wine. Meanwhile the following, or another appropriate chant, is sung."
-verified_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf"
-quarantined_text_sha256 = ["43b34dbfb1fc8dc8e5f5dffa7498a466cc95d95a39bcc80726654a9774bbef22"]
 note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
@@ -10294,19 +10159,6 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "No authoritative English exemplar for this target-edition Collect is held. No English wording is retained or published."
-
-
-[[untranslated]]
-mass = "lent-2"
-form_id = "main"
-proper = "Verse Before the Gospel"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The Latin unit is source-established by Ordo lectionum Missae 1981 artifact internet-archive-scan-pdf-ed4bc14e, artifact page 74 / printed page 20, nn. 25-27. No exact authoritative approved-English exemplar is held for this acclamation. The source's Latin page does not establish English wording or an English publication grant. The former Matthew 17:5 Bible reconstruction was an inferred relationship, not the book's appointed reference; no English wording is stored or newly cleared."
 
 
 [[untranslated]]
@@ -11489,46 +11341,6 @@ source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphon
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
 
 [[untranslated]]
-mass = "ash-wednesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-ash-wednesday-entrance-1-english-body"
-verified_artifact_page = 27
-verified_printed_page = 19
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 27, printed page 19. The source replaces the cited closing statement about divine ownership and love of the living with a communal confession of divine lordship. This actual body clause is an adaptation, independently of the unresolved Vulgate addressing seam. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saturday-after-ash-wednesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-saturday-after-ash-wednesday-entrance-1-english-body"
-verified_artifact_page = 28
-verified_printed_page = 20
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 28, printed page 20. The source changes the Psalm's singular first-person petitions into communal plural petitions. The full adapted English carrier is not reconstructed by retaining its Scripture assignment. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
 mass = "saturday-after-ash-wednesday"
 form_id = "main"
 proper = "Communion Antiphon"
@@ -11563,26 +11375,6 @@ verified_artifact_page = 29
 verified_printed_page = 21
 verified_on_page = "2026-10-21"
 note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 29, printed page 21. The body inserts a divine speech-attribution formula between the two cited Matthean selections; the formula is not in either cited verse. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "lent-1-wednesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-lent-1-wednesday-entrance-1-english-body"
-verified_artifact_page = 30
-verified_printed_page = 22
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 30, printed page 22. The source changes individual Psalm petitions and enemies into communal plural language, including a communal redemption request. This is an actual English adaptation beyond the stated Psalm constituents. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -11629,46 +11421,6 @@ source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphon
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
 
 [[untranslated]]
-mass = "lent-2-saturday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-lent-2-saturday-communion-1-english-body"
-verified_artifact_page = 32
-verified_printed_page = 24
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 32, printed page 24. The source adds the father's direct filial address to the sentence cited from Luke15:32; that address belongs outside this exact single-verse carrier. No additional citation is inferred. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "lent-3-wednesday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-lent-3-wednesday-communion-1-english-body"
-verified_artifact_page = 34
-verified_printed_page = 26
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 34, printed page 26. The source appends an explicit divine vocative that is absent from the cited Psalm single-verse carrier. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
 mass = "lent-4-monday"
 form_id = "main"
 proper = "Communion Antiphon"
@@ -11683,46 +11435,6 @@ verified_artifact_page = 35
 verified_printed_page = 27
 verified_on_page = "2026-10-21"
 note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 35, printed page 27. The source appends a divine speech-attribution formula absent from Ezekiel36:27 itself. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "lent-4-tuesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-lent-4-tuesday-entrance-1-english-body"
-verified_artifact_page = 35
-verified_printed_page = 27
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 35, printed page 27. The source inserts a divine speech-attribution formula and a joyful drinking qualification outside the exact Isaiah55:1 carrier. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "lent-4-saturday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-lent-4-saturday-communion-1-english-body"
-verified_artifact_page = 37
-verified_printed_page = 29
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 37, printed page 29. The source changes the cited Petrine second-person redemption statement into a communal first-person statement. Retaining the Scripture assignment does not reconstruct the full adapted English body. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -11843,46 +11555,6 @@ verified_artifact_page = 39
 verified_printed_page = 31
 verified_on_page = "2026-10-21"
 note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 39, printed page 31. The source supplies an opening statement of Christ being handed over before its gathering clause. The cited John11:52 carrier does not supply that added opening statement. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "holy-tuesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-holy-tuesday-entrance-1-english-body"
-verified_artifact_page = 45
-verified_printed_page = 37
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 45, printed page 37. The source inserts an explicit divine vocative absent from the single cited Psalm verse. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "chrism-mass"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-chrism-mass-entrance-1-english-body"
-verified_artifact_page = 46
-verified_printed_page = 38
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 46, printed page 38. The source identifies Jesus Christ explicitly at the head of the body; the exact Revelation1:6 carrier continues from the preceding verse with a conjunction/relative/pronoun and lacks that explicit personal identification. No preceding verse is newly appointed. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -13428,26 +13100,6 @@ source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphon
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
 
 [[untranslated]]
-mass = "lent-1-tuesday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-lent-1-tuesday-communion-1-english-body"
-verified_artifact_page = 29
-verified_printed_page = 21
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 29, printed page 21. The source inserts a divine vocative in the closing mercy/hearing petition. All three admitted exact English carriers have that petition without an explicit divine vocative there; their opening reference to the God of justice is third-person narration, not an existing vocative moved from another clause. Implicit second-person divine prayer is already present and is not claimed as new theology. This is an exact source-body addition under the accepted boundary. Three other English Psalm4 carriers are typed-refused, so no word-absence or full-six comparison is claimed for them. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version; typed refused world-english-bible-catholic, king-james-version, revised-version-1895. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
 mass = "lent-1-wednesday"
 form_id = "main"
 proper = "Communion Antiphon"
@@ -13462,26 +13114,6 @@ verified_artifact_page = 30
 verified_printed_page = 22
 verified_on_page = "2026-10-21"
 note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 30, printed page 22. The source inserts an explicit divine vocative in the refuge/rejoicing sentence. All six exact English carriers use second-person pronouns there without a named divine address anywhere in the selected verse. The addressee is already implicitly divine. The finding is the actual added source-body address, not a new theological proposition, a synonym or a replacement/moved pre-existing divine title. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "lent-1-friday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-lent-1-friday-entrance-1-english-body"
-verified_artifact_page = 30
-verified_printed_page = 22
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 30, printed page 22. The source inserts an explicit divine vocative in the first deliverance petition. None of the six exact English carriers names a divine addressee within either selected verse. All carriers already petition the same implicit divine subject. A generic exclamatory particle in some carriers is not a named divine title. Omitted distress clauses and ordinary translation variation are excluded as positive grounds. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -13506,90 +13138,6 @@ note = "Exact English source-body finding accepted by the independent 2026-10-21
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "lent-4-friday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-lent-4-friday-communion-1-english-body"
-verified_artifact_page = 36
-verified_printed_page = 28
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 36, printed page 28. The source explicitly names the Christological referent in the opening redemption clause. All six exact English Ephesians1:7 carriers instead begin with a relative or pronoun, without that explicit name in the selected verse. The name is intelligible from Biblical context, but is absent from each selected carrier. Ordinary remission/forgiveness wording and punctuation differences are not positive grounds. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "holy-tuesday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-holy-tuesday-communion-1-english-body"
-verified_artifact_page = 45
-verified_printed_page = 37
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 45, printed page 37. The source explicitly names the divine subject of the giving-up action. All six exact English Romans8:32 carriers instead use a pronoun or relative clause, without the explicit divine subject name in the selected verse. The subject is inferable from context. The source omits the subsequent gift question, but that omission is extent-only and is not used to establish the new body gap. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "holy-wednesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-holy-wednesday-entrance-1-english-body"
-verified_artifact_page = 45
-verified_printed_page = 37
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 45, printed page 37. The source makes the lordship conclusion a direct causal assertion after the obedience/death material. All six exact ordered English carriers instead retain a universal-tongue confession clause. This is a recomposed relation and speech structure, not mere excerpt clipping. Divine and Christological names and the underlying lordship proposition already occur in the exact carriers; those names are not claimed as additions here. Only the recomposed causal assertion is the positive basis. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "holy-monday"
-form_id = "main"
-proper = "Gospel Acclamation"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The 2026-10-22 held-image check of OLM 1981 artifact page 194 / printed page 140, n. 257, establishes an uncited pre-Gospel role, not an English exemplar. No exact English body is held or published for this terminal source-owned slot. Wednesday's n. 259 referral to nn. 257-258 resolves to this same owner for its Monday option, not to a separately owned Wednesday body. This exact English absence supplies no inferred Bible citation, Latin wording or classification, target-2008 correspondence, quarantine fingerprint, or publication permission."
-
-[[untranslated]]
-mass = "holy-tuesday"
-form_id = "main"
-proper = "Gospel Acclamation"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The 2026-10-22 held-image check of OLM 1981 artifact page 194 / printed page 140, n. 258, establishes an uncited pre-Gospel role, not an English exemplar. No exact English body is held or published for this terminal source-owned slot. Wednesday's n. 259 referral to nn. 257-258 resolves to this same owner for its Tuesday option, not to a separately owned Wednesday body. This exact English absence supplies no inferred Bible citation, Latin wording or classification, target-2008 correspondence, quarantine fingerprint, or publication permission."
 
 [[untranslated]]
 mass = "lent-3-monday"
@@ -13744,85 +13292,6 @@ extent = "body"
 lang = "en"
 availability = "unavailable"
 note = "OLM 1981 n.243, AP190/p136: John 8:12. Divine speech attribution and selective adaptation; absence of a Cf. prefix is not exact whole-Bible-body evidence. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made."
-[untranslated.reason]
-kind = "no-exemplar"
-
-[[untranslated]]
-mass = "lent-5-monday"
-form_id = "main"
-proper = "Verse Before the Gospel"
-cycle = "all"
-occurrence = 2
-extent = "body"
-lang = "en"
-availability = "unavailable"
-note = "OLM 1981 n.250, AP192/p138: John 11:25a,26. Divine speech attribution and selective adaptation; citation facts are not a literal whole-body carrier. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made."
-[untranslated.reason]
-kind = "no-exemplar"
-
-
-[[untranslated]]
-mass = "lent-5-tuesday"
-form_id = "main"
-proper = "Verse Before the Gospel"
-cycle = "all"
-occurrence = 2
-extent = "body"
-lang = "en"
-availability = "unavailable"
-note = "OLM 1981 n.250, AP192/p138: John 11:25a,26. Divine speech attribution and selective adaptation; citation facts are not a literal whole-body carrier. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made."
-[untranslated.reason]
-kind = "no-exemplar"
-
-[[untranslated]]
-mass = "lent-5-wednesday"
-form_id = "main"
-proper = "Verse Before the Gospel"
-cycle = "all"
-occurrence = 2
-extent = "body"
-lang = "en"
-availability = "unavailable"
-note = "OLM 1981 n.250, AP192/p138: John 11:25a,26. Divine speech attribution and selective adaptation; citation facts are not a literal whole-body carrier. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made."
-[untranslated.reason]
-kind = "no-exemplar"
-
-[[untranslated]]
-mass = "lent-5-thursday"
-form_id = "main"
-proper = "Verse Before the Gospel"
-cycle = "all"
-occurrence = 2
-extent = "body"
-lang = "en"
-availability = "unavailable"
-note = "OLM 1981 n.250, AP192/p138: John 11:25a,26. Divine speech attribution and selective adaptation; citation facts are not a literal whole-body carrier. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made."
-[untranslated.reason]
-kind = "no-exemplar"
-
-[[untranslated]]
-mass = "lent-5-friday"
-form_id = "main"
-proper = "Verse Before the Gospel"
-cycle = "all"
-occurrence = 2
-extent = "body"
-lang = "en"
-availability = "unavailable"
-note = "OLM 1981 n.250, AP192/p138: John 11:25a,26. Divine speech attribution and selective adaptation; citation facts are not a literal whole-body carrier. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made."
-[untranslated.reason]
-kind = "no-exemplar"
-
-[[untranslated]]
-mass = "lent-5-saturday"
-form_id = "main"
-proper = "Verse Before the Gospel"
-cycle = "all"
-occurrence = 2
-extent = "body"
-lang = "en"
-availability = "unavailable"
-note = "OLM 1981 n.250, AP192/p138: John 11:25a,26. Divine speech attribution and selective adaptation; citation facts are not a literal whole-body carrier. Appointment evidence: passage.catholic-church.ordo-lectionum-missae.latin-editio-typica-altera-1981.ferial-optional-reading-courses-236-243-250-252. Exact retained Latin image, no Unicode body or incipit; no exact English exemplar is held. No exact English body exemplar is held for this target. The Latin image is not an English witness; no English rights-withheld claim is made."
 [untranslated.reason]
 kind = "no-exemplar"
 
@@ -15496,3 +14965,657 @@ divergence = "Local transcription typography: printed long-s normalized to s; ph
 witness_note = "Adapted project study English from the complete Pentecost prayer in the Ambrosian Missal (Milan, 1712), printed pp. 202–203 / whole-source pages 240–241, checked in fresh images. The receiving comparison is the secondary digital reproduction labelled 2002, page 266; fidelity to the printed 2002 book and complete authentic 2008 correspondence remain unestablished. The source prayer and receiving comparison both address the Father. The comparison omits the conventional apposition Domini nostri Iesu Christi after Filii tui and the first et of the old et…et coordination; the Son, Holy Spirit, sacrifice, mystery, truth and request remain the same. Source long-s and æ/Æ are normalized, lines joined, and i/j and u/v correspondences declared locally; & is retained in the historical body and compared as et. The actual source cue Per eundem Dominum nostrum &c. in vnitate eiusdem Spiritus Sancti is preserved without expansion. The project ending uses the separately complete old formula Per Christum Dominum nostrum from Pustet 1862, printed p. 180, under the Father-directed short-conclusion rule in primary 1970 IGMR 32 and secondary 2002 IGMR 77. No same-Son or same-Spirit wording is silently imported. Independent review accepts this finite whole-prayer adaptation and English fidelity for source preparation; exact source registration, conclusion binding and runtime presentation remain integration gates. This is project study English, with no claim to approved modern English or unchanged historical human English. The full old body and actual source cue remain separately recoverable. The prior no-exemplar record is preserved as dated history. The study draft was sealed before any consultation of the separate official 2014 English exemplar."
 translations = [{"lang" = "en", "rights" = "project-created", "text" = "Grant, we beseech you, O Lord, that, according to the promise of your Son, the Holy Spirit may disclose to us more abundantly the mystery of this sacrifice and graciously open all truth to us. Through Christ our Lord."}]
 
+# Gap campaign 2026-11-14, batch p2-lent-holyweek: twelve historical antecedent English uses and nineteen project study translations; see workflows/reviews/gap-campaign-2026-11-14/postconciliar/p2-lent-holyweek-admission.json.
+[[entries]]
+mass = "ash-wednesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "219"
+ia_leaf = 228
+ia_leaf_range = [228, 228]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-ash-wednesday-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-ash-wednesday-entrance-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 219, PDF page [229], IA leaf [228], read on the page image by the integrate lane on 2026-11-14: the Ash Wednesday Introit antiphon Misereris omnium, bounded before Ps. 56, 2. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Thou hast mercy upon all, O Lord, and hatest none of the things which Thou hast made, winking at the sins of men for the sake of repentance, and sparing them: for Thou art the Lord our God."
+
+[[entries]]
+mass = "saturday-after-ash-wednesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "215"
+ia_leaf = 224
+ia_leaf_range = [224, 224]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-saturday-after-ash-wednesday-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-saturday-after-ash-wednesday-entrance-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 215, PDF page [225], IA leaf [224], read on the page image by the integrate lane on 2026-11-14: the old blessing-of-ashes antiphon Exaudi nos, bounded before Ps. 68, 2. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Hear us, O Lord, for Thy mercy is kind: according to the multitude of Thy mercies have regard to us, O Lord."
+
+[[entries]]
+mass = "lent-1-tuesday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "244"
+ia_leaf = 253
+ia_leaf_range = [253, 253]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-1-tuesday-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-1-tuesday-communion-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 244, PDF page [254], IA leaf [253], read on the page image by the integrate lane on 2026-11-14: the old Communion Cum invocarem of the same weekday. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "When I called upon Thee, Thou didst hear me, O God of my justice: when I was in distress, Thou hast enlarged me: have mercy on me, O Lord, and hear my prayer."
+
+[[entries]]
+mass = "lent-1-wednesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "245"
+ia_leaf = 254
+ia_leaf_range = [254, 254]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-1-wednesday-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-1-wednesday-entrance-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 245, PDF page [255], IA leaf [254], read on the page image by the integrate lane on 2026-11-14: the old Ember Wednesday Introit antiphon Reminiscere, bounded before Ps. 24, 1-2. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Remember, O Lord, Thy bowels of compassion, and Thy mercies that are from the beginning of the world; lest at any time our enemies rule over us: deliver us, O God of Israel, from all our tribulations."
+
+[[entries]]
+mass = "lent-1-friday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "254"
+ia_leaf = 263
+ia_leaf_range = [263, 263]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-1-friday-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-1-friday-entrance-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 254, PDF page [264], IA leaf [263], read on the page image by the integrate lane on 2026-11-14: the old Ember Friday Introit antiphon De necessitatibus, bounded before Ps. 24, 1, 2. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Deliver me from my necessities O Lord: see my abjection and my labor, and forgive me all my sins."
+
+[[entries]]
+mass = "lent-2-saturday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "293"
+ia_leaf = 302
+ia_leaf_range = [302, 302]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-2-saturday-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-2-saturday-communion-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 293, PDF page [303], IA leaf [302], read on the page image by the integrate lane on 2026-11-14: the old Communion Oportet te of the same day. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Thou oughtest to rejoice, my son, because thy brother was dead, and is come to life again: he was lost, and is found."
+
+[[entries]]
+mass = "lent-3-wednesday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "310"
+ia_leaf = 319
+ia_leaf_range = [319, 319]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-3-wednesday-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-3-wednesday-communion-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 310, PDF page [320], IA leaf [319], read on the page image by the integrate lane on 2026-11-14: the old Communion Notas mihi of the same day. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Thou hast made known to me the ways of life: Thou shalt fill me with joy with Thy countenance, O Lord."
+
+[[entries]]
+mass = "lent-4-tuesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "355"
+ia_leaf = 364
+ia_leaf_range = [364, 364]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-4-tuesday-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-lent-4-tuesday-entrance-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 355, PDF page [365], IA leaf [364], read on the page image by the integrate lane on 2026-11-14: the old Introit antiphon Sitientes of the Saturday before Passion Sunday, bounded before Ps. 77, 1. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "You that thirst come to the waters, saith the Lord; and you that have no money, come and drink with joy."
+
+[[entries]]
+mass = "holy-tuesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "387"
+ia_leaf = 396
+ia_leaf_range = [396, 396]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-holy-tuesday-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-holy-tuesday-entrance-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 387, PDF page [397], IA leaf [396], read on the page image by the integrate lane on 2026-11-14: the old Communion Ne tradideris of Saturday in Passion week. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "O Lord, deliver me not over to the souls of them that persecute me: for unjust witnesses have risen up against me, and iniquity hath lied to itself."
+
+[[entries]]
+mass = "holy-wednesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "431"
+ia_leaf = 440
+ia_leaf_range = [440, 440]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-holy-wednesday-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "ea842e156b986fd65324e31377499fd98a5f9d174422aaac22d56987d34703be"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-lent-holyweek-holy-wednesday-entrance-antiphon-publication"
+witness_note = "Historical human English for study from the actual 1946 Lasance and Walsh printing, printed p. 431, PDF page [441], IA leaf [440], read on the page image by the integrate lane on 2026-11-14: the old Holy Wednesday Introit antiphon In nomine Iesu, bounded before Ps. 101, 2. Its facing historical Latin and the Mame 1922 unit installed as this slot's Latin body agree word for word with the secondary 2002 target under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word or punctuation change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded rights-withheld record for the approved English is preserved in the dated admission receipt; that restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "In the name of Jesus let every knee bow, of things in heaven, on earth, and under the earth: for the Lord became obedient unto death, even the death of the cross: therefore the Lord Jesus Christ is in the glory of God the Father."
+
+[[entries]]
+mass = "holy-monday"
+form_id = "main"
+proper = "Gospel Acclamation"
+cycle = "all"
+occurrence = 1
+witness = "lefebvre-1925"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "1817"
+ia_leaf = 1868
+ia_leaf_range = [1868, 1868]
+artifact_id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf"
+passage_id = "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-lent-holyweek-holy-monday-gospel-acclamation-source"
+collated = "page-image, complete historical unit, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "4c73e9396da3e0acad9fc22f749ebd754996932f09568e785f08fbbff5256f1b"
+publication_passage_id = "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-lent-holyweek-holy-monday-gospel-acclamation-publication"
+witness_note = "Historical human English for study from Lefebvre's Daily Missal with Vespers (Saint-Andre/Lohmann, 1925), printed p. 1817, PDF page [1869], read on the page image by the integrate lane on 2026-11-14: the first clause of the Paschaltide Alleluia verse of the Votive Mass of the Passion; the English clause ends at the semicolon that answers the Latin colon after errores, and maps one-to-one onto the selected Latin clause (DECISIONS 4e); the following clause, the Alleluia wrapper and the closing Alleluia are excluded. The facing Latin is word-identical with the target Latin installed for this slot. The English is the antecedent's own, quoted without word change, never the Missal's approved English or the Lectionary's; no ICEL or USCCB wording is consulted or reproduced. The superseded unavailable record is preserved in the dated admission receipt."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+text = "Hail Thou our King: Thou alone hast had compassion on our errors"
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Antiphon at the Sprinkling"
+cycle = "all"
+occurrence = 1
+witness = "lefebvre-1925"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "28"
+ia_leaf = 61
+ia_leaf_range = [61, 61]
+artifact_id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.ccwatershed-scan-pdf"
+passage_id = "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-lent-holyweek-easter-vigil-antiphon-at-the-sprinkling-source"
+collated = "page-image, complete historical unit, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-lent-holyweek-english"
+publication_artifact_sha256 = "4c73e9396da3e0acad9fc22f749ebd754996932f09568e785f08fbbff5256f1b"
+publication_passage_id = "passage.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925.gap-campaign-20261114-lent-holyweek-easter-vigil-antiphon-at-the-sprinkling-publication"
+witness_note = "Historical human English for study from Lefebvre's Daily Missal with Vespers (Saint-Andre/Lohmann, 1925), printed p. 28, PDF page [62], read on the page image by the integrate lane on 2026-11-14: the Paschaltide Asperges antiphon Vidi aquam; the italic label Ant. and the following psalm verse are excluded. The facing Latin is word-identical with the target Latin installed for this slot. The English is the antecedent's own, quoted without word change, never the Missal's approved English or the Lectionary's; no ICEL or USCCB wording is consulted or reproduced. The superseded unavailable record is preserved in the dated admission receipt."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-lohmann-1925"
+text = "I saw water flowing from the right side of the temple, alleluia; and all to whom that water came were saved, and they shall say: Alleluia, alleluia."
+
+[[entries]]
+mass = "lent-2"
+form_id = "main"
+proper = "Verse Before the Gospel"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "In splendenti nube Spiritus sanctus visus est, Paterna vox audita est: * Hic est Filius meus dilectus, in quo mihi bene complacui, ipsum audite."
+divergence = "Target OLM 1981 n. 25 (artifact page 74, printed page 20) omits Spiritus sanctus visus est after nube and in quo mihi bene complacui after dilectus; it adds, substitutes and reorders nothing (Transfiguration Matins responsory, 6 August). Responsory asterisk and following versicle are outside the unit. The English renders only the target's words. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888; printed p. 474"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.ia-scan-pdf-13b6e8ce"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.gap-campaign-20261114-lent-holyweek-lent-2-verse-before-the-gospel-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "In the resplendent cloud the Father's voice was heard: This is my beloved Son; hear him."
+
+[[entries]]
+mass = "lent-4-friday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "In quo habemus redemptionem per sanguinem eius, remissionem peccatorum secundum divitias gratiae eius,"
+divergence = "Against Ephesians 1:7 in the Hetzenauer 1914 Vulgate, the target substitutes Christo for quo (one word; DECISIONS 5: one change unit, one new word-form); every other word agrees in order. The English follows the Missal's In Christo. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.vulgata-clementina.hetzenauer-1914; printed p. 1137"
+witness_edition_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
+witness_artifact_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-1137-f56fc9f8"
+ancient_passage_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.gap-campaign-20261114-lent-holyweek-lent-4-friday-communion-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "In Christ we have redemption through his blood, the remission of sins, according to the riches of his grace."
+
+[[entries]]
+mass = "lent-4-saturday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Scientes quod non corruptibilibus auro, vel argento redempti estis de vana vestra conversatione paternae traditionis: sed pretioso sanguine quasi agni immaculati Christi, et incontaminati:"
+divergence = "Against 1 Peter 1:18-19 in the Hetzenauer 1914 Vulgate, the target drops Scientes ... traditionis and sed, reorders Christi after incontaminati and moves redempti to the end, and changes the inflection estis to sumus (one change unit, one new word-form). No word is added. Admitted under DECISIONS 4b and 5. The English follows the Missal's first-person sumus. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.vulgata-clementina.hetzenauer-1914; printed p. 1178"
+witness_edition_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
+witness_artifact_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-1178-8180e606"
+ancient_passage_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.gap-campaign-20261114-lent-holyweek-lent-4-saturday-communion-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "With the precious blood of Christ, as of a Lamb unblemished and spotless, we have been redeemed."
+
+[[entries]]
+mass = "chrism-mass"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "et fecit nos regnum, et sacerdotes Deo et Patri suo: ipsi gloria, et imperium in saecula saeculorum: Amen."
+divergence = "Against Apocalypse 1:6 in the Hetzenauer 1914 Vulgate, the target replaces the opening et with the two-word name Iesus Christus (one change unit, two new word-forms; DECISIONS 4e and 5); every other word agrees in order. The English follows the Missal. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.vulgata-clementina.hetzenauer-1914; printed p. 1192"
+witness_edition_id = "edition.catholic-church.vulgata-clementina.hetzenauer-1914"
+witness_artifact_id = "artifact.catholic-church.vulgata-clementina.hetzenauer-1914.sacredbible-scan-1192-b32cd252"
+ancient_passage_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914.gap-campaign-20261114-lent-holyweek-chrism-mass-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Jesus Christ has made us a kingdom and priests to God and his Father: to him be glory and dominion for ever and ever. Amen."
+
+[[entries]]
+mass = "holy-tuesday"
+form_id = "main"
+proper = "Gospel Acclamation"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Ave Rex noster: tu solus nostros es miseratus errores: Patri obediens, ductus es ad crucifigendum, ut agnus mansuetus ad occisionem."
+divergence = "Target OLM 1981 n. 258 (artifact page 194, printed page 140) omits the middle clause tu solus nostros es miseratus errores of the Paschaltide Alleluia verse of the votive Mass de Passione Domini (Pustet 1862 appendix p. [50]); nothing is added, substituted or reordered (obediens/oboediens is spelling). The English renders only the target's words. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862; printed p. [50]"
+witness_edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+ancient_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-holy-tuesday-gospel-acclamation-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Hail, our King, obedient to the Father: you were led to be crucified, as a gentle lamb to the slaughter."
+
+[[entries]]
+mass = "holy-tuesday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "V. Proprio Filio suo non pepercit Deus. R. Sed pro nobis omnibus tradidit illum."
+divergence = "The target joins the 1888 Breviary versicle and response into one sentence with no added word (DECISIONS 4d); its Latin body is published from that witness in the same increment. The English is project study English of that Latin. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888; printed p. [267]"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.ia-scan-pdf-0fb25ed4"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-verna-1888.gap-campaign-20261114-lent-holyweek-holy-tuesday-communion-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "God did not spare his own Son, but delivered him up for us all."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Antiphon at the Presentation of the Gifts"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Ubi caritas, et amor, Deus ibi est. V. Congregavit nos in unum Christi amor. V. Exsultemus, et in ipso jucundemur. V. Timeamus, et amemus Deum vivum. V. Et ex corde diligamus nos sincero. Ubi caritas, et amor, Deus ibi est. V. Simul ergo cum in unum congregamur: V. Ne nos mente dividamur, caveamus. V. Cessent jurgia maligna, cessent lites. V. Et in medio nostri sit Christus Deus. Ubi caritas, et amor, Deus ibi est. V. Simul quoque cum beatis videamus, V. Glorianter vultum tuum, Christe Deus: V. Gaudium, quod est immensum atque probum. V. Saecula per infinita saeculorum. Amen."
+divergence = "Every versicle agrees word for word with the Holy Thursday Mandatum antiphon of Mame 1922 pp. 206-207, in the same three-strophe order with the same final Amen. The refrain reads est vera where the witness reads et amor, the same two-word substitution repeated three times (DECISIONS 4e and 5: repetition of one identical substitution discounted; two new word-forms). The witness's rubric Et repetitur Antiphona answers the target's Ant. marks. The English follows the Missal. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 206-207"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-lent-holyweek-mass-of-the-lords-supper-antiphon-at-the-presentation-of-the-gifts-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Ant. Where charity is true, God is there.\nV. The love of Christ has gathered us into one.\nV. Let us exult and be glad in him.\nV. Let us fear and love the living God.\nV. And from a sincere heart let us love one another.\nAnt. Where charity is true, God is there.\nV. Therefore, when we are gathered together into one,\nV. let us take care that we be not divided in mind.\nV. Let malicious quarrels cease, let strife cease.\nV. And let Christ God be in our midst.\nAnt. Where charity is true, God is there.\nV. Together also with the blessed may we see\nV. your face in glory, O Christ God:\nV. a joy that is boundless and good,\nV. through endless ages of ages. Amen."
+
+[[entries]]
+mass = "mass-of-the-lords-supper"
+form_id = "main"
+proper = "Prayer after Communion"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Concede nobis, omnipotens Deus: ut sicut temporali Coena tuae Passionis reficimur; ita satiari mereamur aeterna."
+divergence = "Against the Missale Gothicum Post Communionem in Mabillon 1729 p. 238, the target replaces Passionis with Filii and inflects tuae to tui (two change units, two new word-forms) and moves temporali after reficimur (order discounted); nothing else changes (Coena/Cena spelling). Admitted under DECISIONS 4e and 5. The witness prints no conclusion; the target cue Per Christum. is rendered literally as the prefix of the separately witnessed public-domain formula Per Christum Dominum nostrum (Pustet 1862 p. 180). The English follows the Missal. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729; printed p. 238"
+witness_edition_id = "edition.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729"
+witness_artifact_id = "artifact.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.ia-whole-pdf-616a58b8"
+ancient_passage_id = "passage.jean-mabillon.de-liturgia-gallicana.paris-montalant-1729.gap-campaign-20261114-lent-holyweek-mass-of-the-lords-supper-prayer-after-communion-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Grant us, almighty God, that, just as we are refreshed by the temporal Supper of your Son, so we may merit to be filled with the eternal. Through Christ."
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+proper = "Solemn Intercession I: For Holy Church"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Oremus, dilectissimi nobis, pro Ecclesia sancta Dei: ut eam Deus et Dominus noster, pacificare, adunare, et custodire dignetur toto orbe terrarum: subjiciens ei principatus, et potestates: detque nobis quietam et tranquillam vitam degentibus, glorificare Deum Patrem omnipotentem. ... Omnipotens sempiterne Deus, qui gloriam tuam omnibus in Christo gentibus revelasti: custodi opera misericordiae tuae; ut Ecclesia tua toto orbe diffusa, stabili fide in confessione tui nominis perseveret. Per eumdem Dominum nostrum etc. R. Amen."
+divergence = "Invitation: the target drops subiciens ei principatus et potestates and adds nothing. Prayer: word-exact. Conclusion: the target's Per Christum Dominum nostrum. R. Amen. is the separately witnessed complete formula of Pustet 1862 p. 180, not the witness's Per eumdem cue. The modern rubric between invitation and prayer (prayer in silence) is not translated; the English carries invitation and prayer separated by a blank line, as the Intercession IV precedent does. Every part of the slot therefore has a basis (DECISIONS 4c). The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862; printed p. 170-171"
+witness_edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+ancient_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-good-friday-solemn-intercession-i-for-holy-church-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Let us pray, dearly beloved, for the holy Church of God, that our God and Lord may be pleased to grant her peace, to unite her and to guard her throughout the whole world, and may grant to us, as we lead a quiet and tranquil life, to glorify God the Father almighty.\n\nAlmighty and everlasting God, who in Christ have revealed your glory to all the nations, guard the works of your mercy, so that your Church, spread throughout the whole world, may persevere with steadfast faith in the confession of your name. Through Christ our Lord. R. Amen."
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+proper = "Solemn Intercession II: For the Pope"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Oremus et pro beatissimo Papa nostro N. ut Deus, et Dominus noster, qui elegit eum in ordine Episcopatus, salvum, atque incolumem custodiat Ecclesiae suae sanctae, ad regendum populum sanctum Dei. ... Omnipotens sempiterne Deus, cujus judicio universa fundantur: respice propitius ad preces nostras, et electum nobis Antistitem tua pietate conserva: ut Christiana plebs, quae te gubernatur auctore, sub tanto Pontifice, credulitatis suae meritis augeatur. Per Dominum nostrum etc. R. Amen."
+divergence = "Invitation word-exact. Prayer: the target reads ipso for tanto and fidei for credulitatis (two change units, two new word-forms; DECISIONS 5); every other word agrees in order. Conclusion supplied from the separately witnessed complete formula of Pustet 1862 p. 180. The modern rubric between invitation and prayer is not translated. The English follows the Missal. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862; printed p. 171"
+witness_edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+ancient_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-good-friday-solemn-intercession-ii-for-the-pope-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Let us pray also for our most blessed Pope N., that our God and Lord, who chose him for the order of bishops, may keep him safe and unharmed for his holy Church, to rule the holy people of God.\n\nAlmighty and everlasting God, by whose decree all things are established, look graciously upon our prayers, and by your loving-kindness preserve the Bishop chosen for us, so that the Christian people, who are governed by you as their author, may increase in the merits of their faith under that same Pontiff. Through Christ our Lord. R. Amen."
+
+[[entries]]
+mass = "good-friday"
+form_id = "main"
+proper = "Improperia"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Popule meus, quid feci tibi? aut in quo contristavi te? responde mihi. Quia eduxi te de terra Aegypti: parasti crucem Salvatori tuo. Agios o Theos. Sanctus Deus. Agios ischyros. Sanctus fortis. Agios athanatos eleison imas. Sanctus immortalis miserere nobis. Quia eduxi te per desertum quadraginta annis: et manna cibavi te, et introduxi te in terram satis bonam, parasti crucem Salvatori tuo. ... Quid ultra debui facere tibi, et non feci? Ego quidem plantavi te vineam meam speciosissimam: et tu facta es mihi nimis amara: aceto namque sitim meam potasti: et lancea perforasti latus Salvatori tuo. ... Ego propter te flagellavi Aegyptum ... Ego te exaltavi magna virtute: et tu me suspendisti in patibulo crucis. Popule meus."
+divergence = "Every refrain, verse and Trisagion line agrees word for word with Pustet 1862 pp. 174-175 (caecidisti/cecidisti and Greek transliteration are spelling), in the same order. The single divergence is the added word electam in vineam electam meam speciosissimam (one change unit, one new word-form), admitted as a variant by DECISIONS 5. Section numerals I and II are layout and are not carried; choir sigla and the performer labels of the second part are carried as functional designations. The English follows the Missal at electam. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862; printed p. 174-175"
+witness_edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+ancient_passage_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-lent-holyweek-good-friday-improperia-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "1 and 2: My people, what have I done to you? Or in what have I grieved you? Answer me!\n1: Because I brought you out of the land of Egypt, you have made ready a Cross for your Saviour.\n1: Hagios o Theos.\n2: Holy God.\n1: Hagios Ischyros.\n2: Holy and Strong.\n1: Hagios Athanatos, eleison himas.\n2: Holy and Immortal, have mercy on us.\n1 and 2: Because I led you through the desert for forty years, and fed you with manna, and brought you into a land exceedingly good, you have made ready a Cross for your Saviour.\n1: Hagios o Theos.\n2: Holy God.\n1: Hagios Ischyros.\n2: Holy and Strong.\n1: Hagios Athanatos, eleison himas.\n2: Holy and Immortal, have mercy on us.\n1 and 2: What more ought I to have done for you, and did not do? I indeed planted you as my chosen and most beautiful vineyard, and you have become exceedingly bitter to me: for you gave me vinegar to drink in my thirst, and with a lance you pierced the side of your Saviour.\n1: Hagios o Theos.\n2: Holy God.\n1: Hagios Ischyros.\n2: Holy and Strong.\n1: Hagios Athanatos, eleison himas.\n2: Holy and Immortal, have mercy on us.\n\nCantors: For your sake I scourged Egypt with its first-born, and you handed me over to be scourged.\n1 and 2 repeat: My people, what have I done to you? Or in what have I grieved you? Answer me!\nCantors: I led you out of Egypt, having drowned Pharaoh in the Red Sea, and you handed me over to the chief priests.\n1 and 2 repeat: My people ...\nCantors: I opened the sea before you, and you opened my side with a lance.\n1 and 2 repeat: My people ...\nCantors: I went before you in a pillar of cloud, and you led me to the praetorium of Pilate.\n1 and 2 repeat: My people ...\nCantors: I fed you with manna in the desert, and you struck me with blows and scourges.\n1 and 2 repeat: My people ...\nCantors: I gave you the water of salvation to drink from the rock, and you gave me gall and vinegar to drink.\n1 and 2 repeat: My people ...\nCantors: For your sake I struck the kings of the Canaanites, and you struck my head with a reed.\n1 and 2 repeat: My people ...\nCantors: I gave you a royal sceptre, and you gave my head a crown of thorns.\n1 and 2 repeat: My people ...\nCantors: I exalted you with great power, and you hanged me on the gibbet of the Cross.\n1 and 2 repeat: My people ..."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Blessing of the Fire"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Deus, qui per Filium tuum, angularem scilicet lapidem, claritatis tuae ignem fidelibus contulisti: productum e silice, nostris profuturum usibus, novum hunc ignem sancti+fica: et concede nobis, ita per haec festa paschalia caelestibus desideriis inflammari; ut ad perpetuae claritatis, puris mentibus, valeamus festa pertingere. Per eumdem Christum Dominum nostrum. R. Amen."
+divergence = "The target omits angularem scilicet lapidem and productum e silice, nostris profuturum usibus, and the eumdem of the conclusion; nothing is added, substituted or reordered. The preceding invitation Oremus is outside the prayer body. The sign of the cross printed in sanctifica is kept as +. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 226"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-lent-holyweek-easter-vigil-blessing-of-the-fire-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "O God, who through your Son have conferred upon the faithful the fire of your brightness, sanctify + this new fire, and grant us, through these paschal feasts, to be so kindled with heavenly desires that with pure minds we may be able to reach the feasts of perpetual brightness. Through Christ our Lord. R. Amen."
+
+[[entries]]
+mass = "easter-vigil"
+form_id = "main"
+proper = "Prayer after the Litany"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis: et ad recreandos novos populos, quos tibi fons baptismatis parturit, spiritum adoptionis emitte; ut, quod nostrae humilitatis gerendum est ministerio, virtutis tuae impleatur effectu. Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: Per omnia saecula saeculorum. R. Amen."
+divergence = "The target, the 2002 text corrected by the official 2008 Variationes (Notitiae 44, p. 371: at Missal p. 363 ministerio for mysterio; DECISIONS 6b), omits mysteriis, adesto and adds nothing. Its conclusion Per Christum Dominum nostrum. R. Amen. is the separately witnessed complete formula printed on Mame 1922 p. 226 and Pustet 1862 p. 180, not the witness's long conclusion. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 254"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-lent-holyweek-easter-vigil-prayer-after-the-litany-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Almighty and everlasting God, be present at the sacraments of your great loving-kindness, and send forth the spirit of adoption to re-create the new peoples whom the font of baptism brings forth for you, so that what must be performed by the ministry of our lowliness may be accomplished by the effect of your power. Through Christ our Lord. R. Amen."
+
+[[entries]]
+mass = "lent-5-monday"
+form_id = "main"
+proper = "Verse Before the Gospel"
+cycle = "all"
+occurrence = 2
+relation = "abridged"
+ancient_reading = "Ego sum resurrectio, & vita. Qui credit in me, etiam si mortuus fuerit, vivet: & omnis, qui vivit, & credit in me, non morietur in aeternum: dicit Dominus."
+divergence = "Target OLM 1981 n. 250 (artifact page 192, printed page 138), the optional fifth-week course: against the Ambrosian 1712 transitorium the target omits etiam si mortuus fuerit, vivet: et omnis, qui vivit, et credit in me and moves dicit Dominus from the end to after vita; it adds and substitutes nothing (DECISIONS 4b: abridgment with reordering of the same words). The English renders only the target's words. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712; printed p. 64 (Missae pro Defunctis)"
+witness_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+witness_artifact_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+ancient_passage_id = "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.gap-campaign-20261114-lent-holyweek-lent-5-monday-verse-before-the-gospel-2-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "I am the resurrection and the life, says the Lord; whoever believes in me shall not die for ever."
+
+[[entries]]
+mass = "lent-5-tuesday"
+form_id = "main"
+proper = "Verse Before the Gospel"
+cycle = "all"
+occurrence = 2
+relation = "abridged"
+ancient_reading = "Ego sum resurrectio, & vita. Qui credit in me, etiam si mortuus fuerit, vivet: & omnis, qui vivit, & credit in me, non morietur in aeternum: dicit Dominus."
+divergence = "Target OLM 1981 n. 250 (artifact page 192, printed page 138), the optional fifth-week course: against the Ambrosian 1712 transitorium the target omits etiam si mortuus fuerit, vivet: et omnis, qui vivit, et credit in me and moves dicit Dominus from the end to after vita; it adds and substitutes nothing (DECISIONS 4b: abridgment with reordering of the same words). The English renders only the target's words. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712; printed p. 64 (Missae pro Defunctis)"
+witness_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+witness_artifact_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+ancient_passage_id = "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.gap-campaign-20261114-lent-holyweek-lent-5-tuesday-verse-before-the-gospel-2-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "I am the resurrection and the life, says the Lord; whoever believes in me shall not die for ever."
+
+[[entries]]
+mass = "lent-5-wednesday"
+form_id = "main"
+proper = "Verse Before the Gospel"
+cycle = "all"
+occurrence = 2
+relation = "abridged"
+ancient_reading = "Ego sum resurrectio, & vita. Qui credit in me, etiam si mortuus fuerit, vivet: & omnis, qui vivit, & credit in me, non morietur in aeternum: dicit Dominus."
+divergence = "Target OLM 1981 n. 250 (artifact page 192, printed page 138), the optional fifth-week course: against the Ambrosian 1712 transitorium the target omits etiam si mortuus fuerit, vivet: et omnis, qui vivit, et credit in me and moves dicit Dominus from the end to after vita; it adds and substitutes nothing (DECISIONS 4b: abridgment with reordering of the same words). The English renders only the target's words. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712; printed p. 64 (Missae pro Defunctis)"
+witness_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+witness_artifact_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+ancient_passage_id = "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.gap-campaign-20261114-lent-holyweek-lent-5-wednesday-verse-before-the-gospel-2-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "I am the resurrection and the life, says the Lord; whoever believes in me shall not die for ever."
+
+[[entries]]
+mass = "lent-5-thursday"
+form_id = "main"
+proper = "Verse Before the Gospel"
+cycle = "all"
+occurrence = 2
+relation = "abridged"
+ancient_reading = "Ego sum resurrectio, & vita. Qui credit in me, etiam si mortuus fuerit, vivet: & omnis, qui vivit, & credit in me, non morietur in aeternum: dicit Dominus."
+divergence = "Target OLM 1981 n. 250 (artifact page 192, printed page 138), the optional fifth-week course: against the Ambrosian 1712 transitorium the target omits etiam si mortuus fuerit, vivet: et omnis, qui vivit, et credit in me and moves dicit Dominus from the end to after vita; it adds and substitutes nothing (DECISIONS 4b: abridgment with reordering of the same words). The English renders only the target's words. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712; printed p. 64 (Missae pro Defunctis)"
+witness_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+witness_artifact_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+ancient_passage_id = "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.gap-campaign-20261114-lent-holyweek-lent-5-thursday-verse-before-the-gospel-2-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "I am the resurrection and the life, says the Lord; whoever believes in me shall not die for ever."
+
+[[entries]]
+mass = "lent-5-friday"
+form_id = "main"
+proper = "Verse Before the Gospel"
+cycle = "all"
+occurrence = 2
+relation = "abridged"
+ancient_reading = "Ego sum resurrectio, & vita. Qui credit in me, etiam si mortuus fuerit, vivet: & omnis, qui vivit, & credit in me, non morietur in aeternum: dicit Dominus."
+divergence = "Target OLM 1981 n. 250 (artifact page 192, printed page 138), the optional fifth-week course: against the Ambrosian 1712 transitorium the target omits etiam si mortuus fuerit, vivet: et omnis, qui vivit, et credit in me and moves dicit Dominus from the end to after vita; it adds and substitutes nothing (DECISIONS 4b: abridgment with reordering of the same words). The English renders only the target's words. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712; printed p. 64 (Missae pro Defunctis)"
+witness_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+witness_artifact_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+ancient_passage_id = "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.gap-campaign-20261114-lent-holyweek-lent-5-friday-verse-before-the-gospel-2-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "I am the resurrection and the life, says the Lord; whoever believes in me shall not die for ever."
+
+[[entries]]
+mass = "lent-5-saturday"
+form_id = "main"
+proper = "Verse Before the Gospel"
+cycle = "all"
+occurrence = 2
+relation = "abridged"
+ancient_reading = "Ego sum resurrectio, & vita. Qui credit in me, etiam si mortuus fuerit, vivet: & omnis, qui vivit, & credit in me, non morietur in aeternum: dicit Dominus."
+divergence = "Target OLM 1981 n. 250 (artifact page 192, printed page 138), the optional fifth-week course: against the Ambrosian 1712 transitorium the target omits etiam si mortuus fuerit, vivet: et omnis, qui vivit, et credit in me and moves dicit Dominus from the end to after vita; it adds and substitutes nothing (DECISIONS 4b: abridgment with reordering of the same words). The English renders only the target's words. The comparison is bounded to the inspected target page (secondary digitally typeset 2002 reproduction, OLM 1981 scan or Notitiae 2008); printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft revised for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712; printed p. 64 (Missae pro Defunctis)"
+witness_edition_id = "edition.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712"
+witness_artifact_id = "artifact.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.ia-text-pdf-180769e3"
+ancient_passage_id = "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-sirturis-1712.gap-campaign-20261114-lent-holyweek-lent-5-saturday-verse-before-the-gospel-2-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "I am the resurrection and the life, says the Lord; whoever believes in me shall not die for ever."

@@ -164,8 +164,14 @@ class PostconciliarOlmPointerRecoveryTest(unittest.TestCase):
                     {"kind": "alternative", "group": "holy-week-acclamation", "option": option},
                 )
                 terminal = self.proper(owner, "Gospel Acclamation")
-                self.assertEqual(terminal["text_status"]["state"], "unavailable")
-                for field in ("text", "verses", "incipit", "translations"):
+                # Gap campaign 2026-11-14: n. 257's exact public-domain Latin is
+                # admitted on the Monday terminal; n. 258 stays unavailable.
+                if owner == "holy-monday":
+                    self.assertIsInstance(terminal["text"], str)
+                else:
+                    self.assertEqual(terminal["text_status"]["state"], "unavailable")
+                    self.assertNotIn("text", terminal)
+                for field in ("verses", "incipit", "translations"):
                     self.assertNotIn(field, terminal)
         self.assertEqual(
             alternatives[0]["ordinary_disposition"]["basis"],

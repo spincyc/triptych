@@ -140,9 +140,20 @@ class LentenFerialCourseTests(unittest.TestCase):
         # Eighteen optional-course verses remain typed and untranscribed. The
         # nineteenth owner, the native n.252 lent-5-tuesday verse, is now the
         # exact reviewed admission (see SEMEN_* above), never a silent removal.
-        expected = {(key, 2) for key in KEYS}
+        # Gap campaign 2026-11-14: the six fifth-week n.250 verses (an abridgment of
+        # the Ambrosian 1712 transitorium) carry project study English; their Latin
+        # stays a held, untranscribed body. Twelve typed English absences remain.
+        studied = {key for key in KEYS if key.startswith("lent-5-")}
+        expected = {(key, 2) for key in KEYS if key not in studied}
         self.assertEqual({(r["mass"], r["occurrence"]) for r in self.negative_rows}, expected)
-        self.assertEqual(len(self.negative_rows), 18)
+        self.assertEqual(len(self.negative_rows), 12)
+        entries = [r for r in tomllib.loads(self.english_text)["entries"]
+                   if r["mass"] in studied and r["proper"] == "Verse Before the Gospel"
+                   and r.get("occurrence") == 2]
+        self.assertEqual({r["mass"] for r in entries}, studied)
+        self.assertTrue(all(r["relation"] == "abridged"
+                            and [t["rights"] for t in r["translations"]] == ["project-created"]
+                            for r in entries))
         native = [p for p in self.masses["lent-5-tuesday"]["propers"]
                   if p["name"] == "Verse Before the Gospel"][0]
         self.assertEqual((native["source"], hashlib.sha256(native["text"].encode()).hexdigest()),

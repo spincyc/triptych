@@ -71,27 +71,36 @@ class HolyWeekAcclamationReferralTests(unittest.TestCase):
         ]
 
     def test_two_printed_roles_have_no_inferred_citation_or_words(self):
+        # Gap campaign 2026-11-14: n. 257 (Monday) is an exact contiguous selection
+        # of a public-domain Pustet 1862 verse and now carries its Latin body; n. 258
+        # (Tuesday) is an abridgment and keeps its unavailable Latin body.
         for key, number in zip(KEYS[:2], (257, 258)):
             with self.subTest(mass=key):
                 proper, = self.acclamations(key)
                 self.assertEqual(proper["source"], "composed")
-                self.assertEqual(proper["text_status"], {
-                    "state": "unavailable", "scope": "proper-body",
-                    "reasons": [{"kind": "witness-gap", "source_id": TARGET}],
-                })
+                if key == "holy-monday":
+                    self.assertIsInstance(proper["text"], str)
+                    self.assertNotIn("text_status", proper)
+                else:
+                    self.assertEqual(proper["text_status"], {
+                        "state": "unavailable", "scope": "proper-body",
+                        "reasons": [{"kind": "witness-gap", "source_id": TARGET}],
+                    })
+                    self.assertNotIn("text", proper)
                 self.assertIn(f"n. {number}", proper["notes"])
                 self.assertIn("artifact page 194 / printed page 140", proper["notes"])
                 self.assertIn("target-2008 correspondence remains unestablished", proper["notes"])
                 self.assertFalse({
-                    "text", "verses", "incipit", "translations", "cycles",
+                    "verses", "incipit", "translations", "cycles",
                     "weekday_cycles", "body_status", "takes_from",
                 } & set(proper))
         owners = [
-            identity for identity, _, _ in body_owners(self.document)
+            (identity.mass, status) for identity, _, status in body_owners(self.document)
             if identity.mass in KEYS
             and identity.proper.startswith("Gospel Acclamation")
         ]
-        self.assertEqual(owners, [], "unheld wording has no fabricated quarantine hash")
+        self.assertEqual(owners, [("holy-monday", "present")],
+                         "only the admitted Monday body is a Latin owner")
 
     def test_wednesday_preserves_exact_terminal_owners_and_one_choice(self):
         rows = self.acclamations("holy-wednesday")
@@ -127,9 +136,12 @@ class HolyWeekAcclamationReferralTests(unittest.TestCase):
             self.assertEqual(self.owner.source_slot_identity(
                 self.document, self.masses["holy-wednesday"], "", proper, taken
             ), (owner, "main", "Gospel Acclamation", 1))
-            self.assertEqual(proper["text_status"]["state"], "unavailable")
             self.assertNotIn("verses", proper)
-            self.assertNotIn("text", proper)
+            if owner == "holy-monday":
+                self.assertIsInstance(proper["text"], str)
+            else:
+                self.assertEqual(proper["text_status"]["state"], "unavailable")
+                self.assertNotIn("text", proper)
 
     def test_repaired_seats_preserve_existing_readings_and_order(self):
         expected = {
@@ -160,20 +172,31 @@ class HolyWeekAcclamationReferralTests(unittest.TestCase):
 
     def test_projection_retains_partial_masses_and_unavailable_bodies(self):
         public = self.public_masses()
-        for key in KEYS:
+        for key, owners in (
+            ("holy-monday", ("holy-monday",)),
+            ("holy-tuesday", ("holy-tuesday",)),
+            ("holy-wednesday", KEYS[:2]),
+        ):
             with self.subTest(mass=key):
                 mass = public[key]
                 self.assertEqual(mass["text_status"], {
                     "state": "partial", "scope": "missal-formulary",
                 })
-                for row in mass["propers"]:
-                    if not row["name"].startswith("Gospel Acclamation"):
-                        continue
-                    self.assertEqual(row["text_status"], {
-                        "state": "unavailable", "scope": "proper-body",
-                    })
-                    for field in ("latin", "text", "citations", "incipit", "cycles"):
+                rows = [row for row in mass["propers"]
+                        if row["name"].startswith("Gospel Acclamation")]
+                self.assertEqual(len(rows), len(owners))
+                for row, owner in zip(rows, owners):
+                    for field in ("citations", "incipit", "cycles"):
                         self.assertFalse(row.get(field), (key, field))
+                    if owner == "holy-monday":
+                        self.assertEqual(row["latin"]["provenance"]["relationship"],
+                                         "editorial-projection-exact-to-target")
+                        self.assertFalse(row.get("text_status"))
+                    else:
+                        self.assertEqual(row["text_status"], {
+                            "state": "unavailable", "scope": "proper-body",
+                        })
+                        self.assertFalse(row.get("latin"))
 
     @unittest.skipUnless(shutil.which("node"), "node is required for shared seating")
     def test_shared_owner_requires_one_option_and_never_selects_by_order(self):
@@ -218,47 +241,32 @@ process.stdout.write(JSON.stringify(out));
         self.assertTrue(out.get("invalid"))
 
     def test_english_absences_are_exact_terminal_rows_not_recipient_duplicates(self):
+        # Gap campaign 2026-11-14 replaced both no-exemplar rows: Monday carries
+        # Lefebvre 1925 antecedent English of its exact Latin clause, Tuesday a
+        # project study translation of the abridged verse.
         ledger = tomllib.loads(LEDGER.read_text())
         records = [
             row for row in ledger["untranslated"]
             if row["mass"] in KEYS
             and row["proper"].startswith("Gospel Acclamation")
         ]
-        self.assertEqual(len(records), 2)
-        self.assertEqual({row["mass"] for row in records}, set(KEYS[:2]))
-        for row in records:
-            with self.subTest(mass=row["mass"]):
-                self.assertEqual(self.owner.untranslated_record_identity(row), (
-                    row["mass"], "main", "Gospel Acclamation", "all", 1,
-                ))
-                self.assertEqual(
-                    {key: row[key] for key in (
-                        "lang", "extent", "availability", "reason",
-                    )},
-                    {"lang": "en", "extent": "body", "availability": "unavailable",
-                     "reason": {"kind": "no-exemplar"}},
-                )
-                for field in (
-                    "text", "translations", "verses", "incipit", "source_id",
-                    "witness_artifact_id", "witness_passage_id",
-                    "quarantined_text_sha256",
-                ):
-                    self.assertNotIn(field, row)
-                proper, = self.acclamations(row["mass"])
-                self.assertEqual(self.owner.matching_untranslated_records(
-                    proper, [row], 1, cycle="all", extent="body",
-                ), [row])
-                self.assertEqual(self.owner.matching_untranslated_records(
-                    proper, [row], 2, cycle="all", extent="body",
-                ), [])
-                self.assertEqual(self.owner.matching_untranslated_records(
-                    proper, [row], 1, cycle="A", extent="body",
-                ), [])
-                self.assertEqual(self.owner.matching_untranslated_records(
-                    proper, [row], 1, cycle="all", extent="incipit",
-                ), [])
+        self.assertEqual(records, [])
+        entries = {
+            row["mass"]: row for row in ledger["entries"]
+            if row["mass"] in KEYS and row["proper"].startswith("Gospel Acclamation")
+        }
+        self.assertEqual(set(entries), set(KEYS[:2]))
+        self.assertEqual(entries["holy-monday"]["witness"], "lefebvre-1925")
+        self.assertEqual(entries["holy-monday"]["translations"][0]["rights"], "public-domain")
+        self.assertEqual(entries["holy-tuesday"]["relation"], "abridged")
+        self.assertEqual(entries["holy-tuesday"]["translations"][0]["rights"], "project-created")
+        for row in entries.values():
+            self.assertEqual(
+                (row["form_id"], row["proper"], row["cycle"], row["occurrence"]),
+                ("main", "Gospel Acclamation", "all", 1),
+            )
 
-    def test_public_english_absence_follows_both_terminal_referrals(self):
+    def test_public_english_follows_both_terminal_referrals(self):
         public = self.public_masses()
         for key, owners in (
             ("holy-monday", ("holy-monday",)),
@@ -272,26 +280,14 @@ process.stdout.write(JSON.stringify(out));
                 ]
                 self.assertEqual(len(rows), len(owners))
                 for row, owner in zip(rows, owners):
-                    self.assertEqual(row["untranslated"], [{
-                        "target": {
-                            "mass": owner, "form_id": "main",
-                            "proper": "Gospel Acclamation", "cycle": "all",
-                            "occurrence": 1, "extent": "body",
-                        },
-                        "lang": "en", "state": "unavailable",
-                    }])
+                    self.assertFalse(row.get("untranslated"))
                     states = {
                         state["lang"]: state
                         for state in self.owner.proper_language_capabilities(row)
                     }
-                    for lang in ("la", "en"):
-                        self.assertEqual(states[lang]["status"], "unavailable")
-                        self.assertFalse(states[lang]["held"])
-                        self.assertFalse(states[lang]["available"])
-                    self.assertEqual(row["text_status"], {
-                        "state": "unavailable", "scope": "proper-body",
-                    })
-                    self.assertFalse(row.get("translations"))
+                    self.assertTrue(states["en"]["available"])
+                    self.assertEqual(states["la"]["available"], owner == "holy-monday")
+                    self.assertEqual(len(row["translations"]), 1)
 
     def test_passage_keeps_fresh_inspection_and_prior_artifact_provenance_distinct(self):
         path = (

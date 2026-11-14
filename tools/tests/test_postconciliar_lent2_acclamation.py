@@ -54,12 +54,16 @@ class PostconciliarLentTwoAcclamationTest(unittest.TestCase):
 
     def test_english_absence_is_exact_and_latin_quarantine_is_not_fabricated(self):
         en = tomllib.loads((INVENTORIES / "postconciliar-proper-translations-v1.toml").read_text())
+        # Gap campaign 2026-11-14 replaced the no-exemplar row with project study English
+        # of the verse, an abridgment of the 1888 Transfiguration responsory.
         rows = [r for r in en["untranslated"] if r.get("mass")=="lent-2" and r.get("proper")=="Verse Before the Gospel"]
-        self.assertEqual(len(rows), 1)
-        row = rows[0]
-        self.assertEqual({k:row[k] for k in ("form_id","cycle","occurrence","lang","extent","availability","reason")}, {"form_id":"main","cycle":"all","occurrence":1,"lang":"en","extent":"body","availability":"unavailable","reason":{"kind":"no-exemplar"}})
-        for field in ("text","translation","translations","source_id","witness_artifact_id","quarantined_text_sha256"):
-            self.assertNotIn(field,row)
+        self.assertEqual(rows, [])
+        entries = [r for r in en["entries"] if r.get("mass")=="lent-2" and r.get("proper")=="Verse Before the Gospel"]
+        self.assertEqual(len(entries), 1)
+        row = entries[0]
+        self.assertEqual({k:row[k] for k in ("form_id","cycle","occurrence","relation")}, {"form_id":"main","cycle":"all","occurrence":1,"relation":"abridged"})
+        self.assertEqual([t["rights"] for t in row["translations"]], ["project-created"])
+        self.assertNotIn("source_id", row["translations"][0])
         latin = tomllib.loads((INVENTORIES / "postconciliar-proper-latin-provenance-v1.toml").read_text())
         self.assertFalse(any(r.get("mass")=="lent-2" and r.get("proper")=="Verse Before the Gospel" for r in latin.get("entries",[])))
 
@@ -73,8 +77,8 @@ class PostconciliarLentTwoAcclamationTest(unittest.TestCase):
         self.assertIsNone(unit.get("latin"))
         self.assertIsNone(unit.get("text"))
         self.assertEqual(unit["text_status"],{"state":"unavailable","scope":"proper-body"})
-        self.assertEqual({r["lang"]:r["status"] for r in unit["languages"]},{"la":"unavailable","en":"unavailable"})
-        self.assertEqual(len(unit["untranslated"]),1)
+        self.assertEqual({r["lang"]:r["status"] for r in unit["languages"]},{"la":"unavailable","en":"full-text"})
+        self.assertFalse(unit.get("untranslated"))
 
     def test_english_accounting_has_no_silent_or_stale_units(self):
         coverage = self.owner.english_coverage(CALENDARS,"postconciliar")

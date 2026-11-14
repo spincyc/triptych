@@ -6866,12 +6866,8 @@ sections:
       - name: Collect
         incipit: Concede nobis, omnipotens Deus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Concede nobis, omnipotens Deus, ut, per annua quadragesimalis exercitia sacramenti, et ad intellegendum Christi proficiamus arcanum, et effectus eius digna conversatione sectemur. Per Dominum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Gerbert 1777 Pars I unit at printed p. 37; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         cycles:
@@ -7031,12 +7027,8 @@ sections:
       - name: Prayer over the Offerings
         incipit: Fac nos, quaesumus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Fac nos, quaesumus, Domine, his muneribus offerendis convenienter aptari, quibus ipsius venerabilis sacramenti celebramus exordium. Per Christum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Pustet 1862 unit at printed p. 55; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Communion Antiphon
         ordinary_disposition:
           kind: alternative
@@ -9234,7 +9226,7 @@ sections:
       season: lent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Wisdom
           ranges:
@@ -9257,10 +9249,8 @@ sections:
               chapter: 11
               verse: 26
           ref: Wisdom 11:23, 24, 26
-        notes: Source appointment antiphonary:ash-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 27 / printed page 19, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        text: "Misereris omnium, Domine, et nihil odisti eorum quae fecisti, dissimulans peccata hominum propter paenitentiam et parcens illis, quia tu es Dominus Deus noster."
+        notes: "Source appointment antiphonary:ash-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 27 / printed page 19, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 71. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -9543,7 +9533,8 @@ sections:
       season: lent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Exaudi nos, Domine, quoniam benigna est misericordia tua; secundum multitudinem miserationum tuarum respice nos, Domine."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -9555,11 +9546,7 @@ sections:
               chapter: 68
               verse: 17
           ref: Psalm 68:17
-        notes: Source appointment antiphonary:saturday-after-ash-wednesday|main|E|1 was checked in the held registered
-          ICEL 2010 Antiphonary, artifact page 28 / printed page 20, in the 2026-10-20/21 image audit. The printed citation
-          cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:saturday-after-ash-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 28 / printed page 20, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 69. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -9787,7 +9774,8 @@ sections:
             end: {chapter: 6, verse: 15}
           ref: Matthew 6:7-15
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Cum invocarem te, exaudisti me, Deus iustitiae meae, in tribulatione dilatasti me; miserere mihi, Domine, et exaudi orationem meam."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -9799,11 +9787,7 @@ sections:
               chapter: 4
               verse: 2
           ref: Psalm 4:2
-        notes: Source appointment antiphonary:lent-1-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 29 / printed page 21, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:lent-1-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 29 / printed page 21, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 86. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 184 (printed page
         130), marginal n. 225. The heading verified on that image identifies the day as Tuesday of the First Week of Lent,
@@ -9824,7 +9808,8 @@ sections:
       season: lent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Reminiscere miserationum tuarum, Domine, et misericordiae tuae, quae a saeculo sunt. Ne umquam dominentur nobis inimici nostri; libera nos, Deus Israel, ex omnibus angustiis nostris."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -9848,11 +9833,7 @@ sections:
               chapter: 24
               verse: 22
           ref: Psalm 24:6, 2, 22
-        notes: Source appointment antiphonary:lent-1-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 30 / printed page 22, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:lent-1-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 30 / printed page 22, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 86-87. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -10029,7 +10010,8 @@ sections:
       season: lent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "De necessitatibus meis eripe me, Domine. Vide humilitatem meam et laborem meum, et dimitte omnia peccata mea."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -10041,11 +10023,7 @@ sections:
               chapter: 24
               verse: 18
           ref: Psalm 24:17-18
-        notes: Source appointment antiphonary:lent-1-friday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 30 / printed page 22, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:lent-1-friday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 30 / printed page 22, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 91. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -10740,7 +10718,7 @@ sections:
             end: {chapter: 15, verse: 32}
           ref: Luke 15:1-3, 11-32
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Luke
           ranges:
@@ -10751,10 +10729,8 @@ sections:
               chapter: 15
               verse: 32
           ref: Luke 15:32
-        notes: Source appointment antiphonary:lent-2-saturday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        text: "Oportet te, fili, gaudere, quia frater tuus mortuus fuerat, et revixit; perierat, et inventus est."
+        notes: "Source appointment antiphonary:lent-2-saturday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 32 / printed page 24, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 114. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 187 (printed page
         133), marginal n. 235. The heading verified on that image identifies the day as Saturday of the Second Week of
@@ -11814,7 +11790,8 @@ sections:
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Notas mihi fecisti vias vitae, adimplebis me laetitia cum vultu tuo, Domine."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -11826,11 +11803,7 @@ sections:
               chapter: 15
               verse: 11
           ref: Psalm 15:11
-        notes: Source appointment antiphonary:lent-3-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:lent-3-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 122. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 189 (printed page
         135), marginal n. 239. The heading verified on that image identifies the day as Wednesday of the Third Week of
@@ -11952,16 +11925,8 @@ sections:
       propers:
       - name: Entrance Antiphon
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
-        notes: Source appointment antiphonary:lent-3-thursday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        text: "Salus populi ego sum, dicit Dominus. De quacumque tribulatione clamaverint ad me, exaudiam eos, et ero illorum Dominus in perpetuum."
+        notes: "Source appointment antiphonary:lent-3-thursday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 34 / printed page 26, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 123. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -13253,7 +13218,7 @@ sections:
               cycle: 'all'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Isaiah
           ranges:
@@ -13264,11 +13229,8 @@ sections:
               chapter: 55
               verse: 1
           ref: Isaiah 55:1
-        notes: Source appointment antiphonary:lent-4-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 35 / printed page 27, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        text: "Sitientes, venite ad aquas, dicit Dominus; et qui non habetis pretium, venite, et bibite cum laetitia."
+        notes: "Source appointment antiphonary:lent-4-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 35 / printed page 27, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 148. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -14494,7 +14456,7 @@ sections:
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Ephesians
           ranges:
@@ -14505,10 +14467,13 @@ sections:
               chapter: 1
               verse: 7
           ref: Ephesians 1:7
-        notes: Source appointment antiphonary:lent-4-friday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 36 / printed page 28, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: "Source appointment antiphonary:lent-4-friday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 36 / printed page 28, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 (gap campaign p2-lent-holyweek): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 191 (printed page
         137), marginal n. 248. The heading verified on that image identifies the day as Friday of the Fourth Week of Lent,
@@ -14836,7 +14801,7 @@ sections:
             No whole-Missal, oration, antiphon, Sunday Second Reading, shorter Gospel, target-2008 wording or publication
             permission is inferred.'
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: 1 Peter
           ranges:
@@ -14847,11 +14812,13 @@ sections:
               chapter: 1
               verse: 19
           ref: 1 Peter 1:18-19
-        notes: Source appointment antiphonary:lent-4-saturday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 37 / printed page 29, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: "Source appointment antiphonary:lent-4-saturday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 37 / printed page 29, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p2-lent-holyweek): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: Read at 200 dpi from the page images of
         the Ordo lectionum Missae, editio typica altera 1981, held in triptych-private, artifact page 191 (printed page
         137), marginal n. 249. The heading verified on that image identifies the day as Saturday of the Fourth Week of
@@ -17522,41 +17489,23 @@ sections:
       - name: Procession Antiphon 1
         incipit: Pueri Hebraeorum, portantes ramos olivarum
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-        notes: Sung with Psalm 24, the antiphon repeated between the strophes.
+        text: "Pueri Hebraeorum, portantes ramos olivarum, obviaverunt Domino, clamantes et dicentes: Hosanna in excelsis."
+        notes: "Sung with Psalm 24, the antiphon repeated between the strophes. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 173. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Procession Antiphon 2
         incipit: Pueri Hebraeorum vestimenta prosternebant
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-        notes: Sung with Psalm 47, the antiphon repeated between the strophes.
+        text: "Pueri Hebraeorum vestimenta prosternebant in via, et clamabant dicentes: Hosanna filio David; benedictus, qui venit in nomine Domini."
+        notes: "Sung with Psalm 47, the antiphon repeated between the strophes. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 173. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Hymn to Christ the King
         incipit: Gloria, laus et honor
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Gloria, laus et honor tibi sit, rex Christe redemptor,\ncui puerile decus prompsit Hosanna pium.\nR. Gloria, laus.\n\nIsrael es tu rex, Davidis et inclita proles,\nnomine qui in Domini, rex benedicte, venis.\nR. Gloria, laus.\n\nCoetus in excelsis te laudat caelicus omnis,\net mortalis homo, et cuncta creata simul.\nR. Gloria, laus.\n\nPlebs Hebraea tibi cum palmis obvia venit;\ncum prece, voto, hymnis, adsumus ecce tibi.\nR. Gloria, laus.\n\nHi tibi passuro solvebant munia laudis;\nnos tibi regnanti pangimus ecce melos.\nR. Gloria, laus.\n\nHi placuere tibi, placeat devotio nostra:\nrex bone, rex clemens, cui bona cuncta placent.\nR. Gloria, laus."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 175. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Responsory at the Entrance into the Church
         incipit: Ingrediente Domino in sanctam civitatem
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "R. Ingrediente Domino in sanctam civitatem, Hebraeorum pueri, resurrectionem vitae pronuntiantes, * Cum ramis palmarum: Hosanna, clamabant, in excelsis. V. Cum audisset populus, quod Iesus veniret Hierosolymam, exierunt obviam ei. * Cum ramis."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 175. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Entrance Antiphon
         incipit: Ante sex dies sollemnis Paschae
         source: mixed
@@ -17583,12 +17532,8 @@ sections:
       - name: Collect
         incipit: Omnipotens sempiterne Deus, qui humano generi
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Omnipotens sempiterne Deus, qui humano generi, ad imitandum humilitatis exemplum, Salvatorem nostrum carnem sumere, et crucem subire fecisti, concede propitius, ut et patientiae ipsius habere documenta et resurrectionis consortia mereamur. Qui tecum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 176; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -17729,13 +17674,8 @@ sections:
       - name: Prayer over the People
         incipit: Respice, quaesumus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-        notes: Given for this day and used at the Priest's discretion.
+        text: "Respice, quaesumus, Domine, super hanc familiam tuam, pro qua Dominus noster Iesus Christus non dubitavit manibus tradi nocentium, et crucis subire tormentum. Qui vivit et regnat in saecula saeculorum."
+        notes: "Given for this day and used at the Priest's discretion. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 200; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
     - key: chrism-mass
       name: Chrism Mass
       registry: pc-T-chrism-mass
@@ -17758,7 +17698,7 @@ sections:
         provisions are recovered; prior reading/oration and unknown source-form boundaries are unchanged.'
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Revelation
           ranges:
@@ -17769,10 +17709,13 @@ sections:
               chapter: 1
               verse: 6
           ref: Revelation 1:6
-        notes: Source appointment antiphonary:chrism-mass|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 46 / printed page 38, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: "Source appointment antiphonary:chrism-mass|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 46 / printed page 38, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 (gap campaign p2-lent-holyweek): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       - name: First Reading
         source: scripture
         verses:
@@ -17897,13 +17840,8 @@ sections:
           ref: Psalm 27:1, 2, 3, 13-14
       - name: "Gospel Acclamation"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
-        notes: "OLM 1981 artifact page 194 / printed page 140, n. 257, appoints a verse before the Gospel without a printed scriptural citation. The page-image referral review of 2026-10-22 restores this role only; its wording is not adopted, no Bible citation is inferred, and exact target-2008 correspondence remains unestablished."
+        text: "Ave, Rex noster: tu solus nostros es miseratus errores."
+        notes: "OLM 1981 artifact page 194 / printed page 140, n. 257, appoints a verse before the Gospel without a printed scriptural citation. The page-image referral review of 2026-10-22 restores this role only; its wording is not adopted, no Bible citation is inferred, and exact target-2008 correspondence remains unestablished. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Pustet 1862 unit at printed p. [50]. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Gospel
         source: scripture
         verses:
@@ -17954,7 +17892,8 @@ sections:
           source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Ne tradideris me, Domine, in animas persequentium me: quoniam insurrexerunt in me testes iniqui, et mentita est iniquitas sibi."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -17966,11 +17905,7 @@ sections:
               chapter: 26
               verse: 12
           ref: Psalm 26:12
-        notes: Source appointment antiphonary:holy-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:holy-tuesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 163. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -18015,7 +17950,7 @@ sections:
             end: {chapter: 13, verse: 38}
           ref: John 13:21-33, 36-38
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Romans
           ranges:
@@ -18026,10 +17961,8 @@ sections:
               chapter: 8
               verse: 32
           ref: Romans 8:32
-        notes: Source appointment antiphonary:holy-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied.
+        text: "Proprio Filio suo non pepercit Deus, sed pro nobis omnibus tradidit illum."
+        notes: "Source appointment antiphonary:holy-tuesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars verna unit at printed p. [267]. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 194, printed page 140, n. 258. The Ordo prints its responsorial psalms and psalm acclamations
@@ -18054,7 +17987,7 @@ sections:
           source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Philippians
           ranges:
@@ -18077,11 +18010,8 @@ sections:
               chapter: 2
               verse: 11
           ref: Philippians 2:10, 8, 11
-        notes: Source appointment antiphonary:holy-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison
-          cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        text: "In nomine Iesu omne genu flectatur, caelestium, terrestrium et infernorum: quia Dominus factus est oboediens usque ad mortem, mortem autem crucis: ideo Dominus Iesus Christus in gloria est Dei Patris."
+        notes: "Source appointment antiphonary:holy-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 45 / printed page 37, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 192. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -18196,12 +18126,8 @@ sections:
           - begin: {chapter: 6, verse: 14}
             end: {chapter: 6, verse: 14}
           ref: Galatians 6:14
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Nos autem gloriari oportet in cruce Domini nostri Iesu Christi, in quo est salus, vita et resurrectio nostra, per quem salvati et liberati sumus."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 201. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Collect
         incipit: Sacratissimam, Deus, frequentantibus Cenam
         source: composed
@@ -18338,12 +18264,8 @@ sections:
       - name: Prayer over the Offerings
         incipit: Concede nobis, quaesumus, Domine
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Concede nobis, quaesumus, Domine, haec digne frequentare mysteria, quia, quoties huius hostiae commemoratio celebratur, opus nostrae redemptionis exercetur. Per Christum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 437; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Communion Antiphon
         incipit: Hoc Corpus, quod pro vobis tradetur
         source: scripture
@@ -18607,13 +18529,8 @@ sections:
       - name: Showing of the Holy Cross
         incipit: Ecce lignum Crucis
         source: composed
-        notes: Sung three times, at the successive unveilings or in the procession.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Ecce lignum Crucis, in quo salus mundi pependit. R. Venite, adoremus."
+        notes: "Sung three times, at the successive unveilings or in the procession. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Pustet 1862 unit at printed p. 173. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Antiphon at the Adoration of the Holy Cross
         incipit: Crucem tuam adoramus, Domine
         source: mixed
@@ -18623,12 +18540,8 @@ sections:
           - begin: {chapter: 67, verse: 2}
             end: {chapter: 67, verse: 2}
           ref: Psalm 67:2
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Crucem tuam adoramus, Domine, et sanctam resurrectionem tuam laudamus et glorificamus: ecce enim propter lignum venit gaudium in universo mundo."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Pustet 1862 unit at printed p. 175. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Improperia
         incipit: Popule meus, quid feci tibi?
         source: mixed
@@ -18759,14 +18672,8 @@ sections:
       - name: Acclamation in the Procession
         incipit: Lumen Christi
         source: composed
-        notes: Sung three times, at the church door, in the middle of the church, and before the
-          altar.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Lumen Christi. R. Deo gratias."
+        notes: "Sung three times, at the church door, in the middle of the church, and before the altar. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 228. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Easter Proclamation (Exsultet)
         incipit: Exsultet iam angelica turba caelorum
         source: composed
@@ -18910,13 +18817,8 @@ sections:
           basis: "Two alternative first-reading prayers are printed in the bounded secondary 2002 witness at AP 213: Omnipotens sempiterne Deus, qui es precedes Vel, De creatione hominis, which introduces Deus, qui mirabiliter creasti hominem. Both remain mutually exclusive options; the latter heading does not describe the first prayer. Exact 2008 correspondence remains unestablished."
         incipit: Deus, qui mirabiliter creasti hominem
         source: composed
-        notes: Alternative prayer, De creatione hominis.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Deus, qui mirabiliter creasti hominem et mirabilius redemisti, da nobis, quaesumus, contra oblectamenta peccati mentis ratione persistere, ut mereamur ad aeterna gaudia pervenire. Per Christum Dominum nostrum. R. Amen."
+        notes: "Alternative prayer, De creatione hominis. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 240; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Second Reading
         ordinary_disposition:
           kind: alternative
@@ -19102,12 +19004,8 @@ sections:
       - name: Prayer after the Fifth Reading
         incipit: Omnipotens sempiterne Deus, spes unica mundi
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Omnipotens sempiterne Deus, spes unica mundi, qui prophetarum tuorum praeconio praesentium temporum declarasti mysteria, auge populi tui vota placatus, quia in nullo fidelium nisi ex tua inspiratione proveniunt quarumlibet incrementa virtutum. Per Christum Dominum nostrum. R. Amen."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 253; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Sixth Reading
         source: scripture
         verses:
@@ -19135,12 +19033,8 @@ sections:
       - name: Prayer after the Sixth Reading
         incipit: Deus, qui Ecclesiam tuam semper gentium vocatione multiplicas
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Deus, qui Ecclesiam tuam semper gentium vocatione multiplicas, concede propitius, ut, quos aqua baptismatis abluis, continua protectione tuearis. Per Christum Dominum nostrum. R. Amen."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 247; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Seventh Reading
         source: scripture
         verses:
@@ -19190,13 +19084,8 @@ sections:
           basis: "Either of the two prayers may be used."
         incipit: Deus, qui nos ad celebrandum paschale sacramentum
         source: composed
-        notes: Either of the two prayers may be used.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Deus, qui nos ad celebrandum paschale sacramentum utriusque Testamenti paginis instruis, da nobis intellegere misericordiam tuam, ut ex perceptione praesentium munerum firma sit exspectatio futurorum. Per Christum Dominum nostrum. R. Amen."
+        notes: "Either of the two prayers may be used. Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 248; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Collect
         incipit: Deus, qui hanc sacratissimam noctem
         source: composed
@@ -19320,21 +19209,13 @@ sections:
           - begin: {chapter: 47, verse: 9}
             end: {chapter: 47, verse: 9}
           ref: Ezekiel 47:1-2, 9
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Vidi aquam egredientem de templo, a latere dextro, alleluia; et omnes, ad quos pervenit aqua ista, salvi facti sunt et dicent: Alleluia, alleluia."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Lefebvre Daily Missal 1925 unit at printed p. 28. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Prayer over the Offerings
         incipit: Suscipe, quaesumus, Domine, preces populi tui
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Suscipe, quaesumus, Domine, preces populi tui cum oblationibus hostiarum, ut, paschalibus initiata mysteriis, ad aeternitatis nobis medelam, te operante, proficiant. Per Christum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 269; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Communion Antiphon
         incipit: Pascha nostrum immolatus est Christus
         source: scripture
@@ -19348,12 +19229,8 @@ sections:
       - name: Prayer after Communion
         incipit: Spiritum nobis, Domine, tuae caritatis infunde
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Spiritum nobis, Domine, tuae caritatis infunde, ut, quos sacramentis paschalibus satiasti, tua facias pietate concordes. Per Christum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p2-lent-holyweek), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 270; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Solemn Blessing
         incipit: Benedicat vos omnipotens Deus
         source: composed
