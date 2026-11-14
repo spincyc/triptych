@@ -3866,6 +3866,10 @@ SHARED_CACHES = frozenset((
     "_chronology._strict_loader", "_chronology.load", "_chronology.scripture_systems",
     "_chronology.verse_counts",
     "_deuterocanon._index", "_deuterocanon._printed", "_deuterocanon._rows",
+    # Filled by `_proper_chronology._calendar_document`, which now names each
+    # calendar from the missal designator registry; keyed by registry path,
+    # mtime and size, never by a leaf.
+    "_missal_designators._parsed",
     "_proper_chronology._calendar_document", "_proper_chronology._short_book_names",
     "_proper_chronology._tokens",
     "_proper_chronology_page._bible_titles", "_proper_chronology_page._book_short_names",
