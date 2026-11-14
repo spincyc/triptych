@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-english"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Only the original historical 1937/1945 human English on ordinary numbered pages of the actual 1946 printing, under the registration-level United States nonrenewal finding in src/sources/inventories/lasance-new-roman-missal-rights-v1.toml. Faithful transcription adds no authorship; this English is excluded from the project CC BY 4.0 offer."
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Each row quotes one complete historical English antiphon from its ordinary page; ornamental initials rendered as sentence case; words and punctuation as printed; following psalm verses excluded."
+retrieved = "2026-11-14"
+notes = "Gap campaign 2026-11-14 batch p1-advent-christmas. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p1-advent-christmas-admission.json."
+sha256 = "5017ad39ab74309ffaf43ce6040a69ebb9317284779419e82bb012e122a33aca"
+byte_size = 997
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/gap-campaign-20261114-advent-christmas-english/text.tsv"
+encoding = "utf-8"
+indexable = true

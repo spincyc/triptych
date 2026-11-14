@@ -3259,6 +3259,10 @@ sha256 = "4dc965db3c60a9f3b6bfbe0dc5e78e43629c0863cc659889ea1f688ebbe77240"
 path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/integrate-1962-admission.json"
 sha256 = "de69125a123aa7c189ee99bf0a717af932b0aabf6183d3be205c6ee37a9eebcd"
 
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p1-advent-christmas-admission.json"
+sha256 = "1dbded8c8b0b60ccb5c341621fdb461b3692d606ac144e4395a08f81050f7ffb"
+
 [[sources]]
 id = "lasance-1945-printing-1946"
 source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
@@ -8706,27 +8710,6 @@ quarantined_text_sha256 = ["94c51575ce56e99a84056449ac3bdd83beb0b38739d277e125ee
 note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
-mass = "advent-2"
-form_id = "main"
-proper = "Collect"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "fdlc-mystagogy-2012"
-source_id = "edition.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects"
-witness_artifact_id = "artifact.federation-of-diocesan-liturgical-commissions.mystagogical-reflections.2012-2013-collects.collect-mystogogy-advent"
-verified_on_page = "2026-08-26"
-verified_artifact_page = 4
-verified_heading = "SECOND SUNDAY OF ADVENT / December 9, 2012 / COLLECT"
-verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.advent.pdf"
-quarantined_text_sha256 = ["3a3cc9a31c3a563602aba53d3c3dc2dea7a3521c53eca7ee0d8829185680b598"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
 mass = "advent-3"
 form_id = "main"
 proper = "Collect"
@@ -9148,28 +9131,6 @@ verified_artifact_page = 6
 verified_heading = "FIFTH SUNDAY OF LENT / March 17, 2013 / COLLECT"
 verified_url = "https://www.evdio.org/uploads/2/6/3/0/26308718/collect_mystogogy.lent.pdf"
 quarantined_text_sha256 = ["cb61a5efab9b95b1c0f4484e7987b7c2f55ffcfc99e98fce8325623077c2216b"]
-note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
-
-[[untranslated]]
-mass = "mary-mother-of-god"
-form_id = "main"
-proper = "Entrance Antiphon (alternative)"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "rights-withheld", source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary", surfaces = ["corpus-data", "public-git", "command-line", "download"] }
-rights = "permission"
-witness = "icel-antiphonary-2010"
-source_id = "edition.catholic-church.missale-romanum.2010-english-icel-antiphonary"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_on_page = "2026-08-21"
-verified_artifact_page = 22
-verified_printed_page = "14"
-verified_heading = "1 January / SOLEMNITY OF MARY, THE HOLY MOTHER OF GOD"
-verified_url = "https://www.liturgyoffice.org.uk/Missal/Music/Antiphonary.pdf"
-quarantined_text_sha256 = ["384d54cb0b2ed002663ae3efd081c4c141529caf7af9d0778e0c2638c33d0697"]
 note = "An exact approved-English exemplar and locator were recorded, but the applicable permission is limited to a free non-commercial Internet display. It does not authorize retention of the wording in this tracked corpus or its generated and downloadable artifacts. The wording was quarantined and is represented only by the SHA-256 fingerprint above."
 
 [[untranslated]]
@@ -9974,46 +9935,6 @@ source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphon
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
 
 [[untranslated]]
-mass = "advent-december-17"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-december-17-entrance-1-english-body"
-verified_artifact_page = 17
-verified_printed_page = 9
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 17, printed page 9. The source recasts the prophetic consolation as a future arrival of the Lord to show mercy. The arrival clause is an Advent adaptation beyond the cited Isaiah carrier. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-december-19"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-december-19-entrance-1-english-body"
-verified_artifact_page = 17
-verified_printed_page = 9
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 17, printed page 9. The English body adds removal of fear within the land and a savior identification to the short cited Hebrews promise. Neither added clause is carried by that cited single verse. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
 mass = "advent-december-20"
 form_id = "main"
 proper = "Communion Antiphon"
@@ -10048,346 +9969,6 @@ verified_artifact_page = 18
 verified_printed_page = 10
 verified_on_page = "2026-10-21"
 note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 18, printed page 10. The source supplies an opening announcement of imminent royal divine arrival. The two cited Isaiah verses concern the child's name and divine presence and do not carry that added opening announcement. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-december-24"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-december-24-entrance-1-english-body"
-verified_artifact_page = 19
-verified_printed_page = 11
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 19, printed page 11. The body supplies a destination into the world for the sending of the Son, while the cited Galatians verse instead continues with birth and law clauses. The full source body is an adaptation, not the whole selected Bible carrier. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "christmas-december-30"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-christmas-december-30-entrance-1-english-body"
-verified_artifact_page = 22
-verified_printed_page = 14
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 22, printed page 14. The source adds an explicit divine vocative within the Wisdom18:14-15 narrative carrier. No extra Biblical verse or full Latin body classification is inferred. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "christmas-december-31"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-christmas-december-31-entrance-1-english-body"
-verified_artifact_page = 22
-verified_printed_page = 14
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 22, printed page 14. The source uses a messenger-of-counsel title reflecting a distinct textual form, rather than the series of royal names carried by the offered Hebrew/Vulgate Bible witnesses at the resolved Isaiah verse. The full approved English antiphon is not provided by those selected carriers. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-1-monday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-1-monday-communion-1-english-body"
-verified_artifact_page = 11
-verified_printed_page = 3
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 11, printed page 3. The source turns the cited remembrance/walking texts into a communal Advent petition that includes a peaceful visitation request. That added petition is not the full text of the cited Psalm/Isaiah carriers. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-1-wednesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-1-wednesday-entrance-1-english-body"
-verified_artifact_page = 11
-verified_printed_page = 3
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 11, printed page 3. The body adds a clause about divine self-revelation to all nations. The cited Habakkuk vision and Pauline disclosure-of-hidden-things carriers do not supply that complete added clause. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-1-wednesday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-1-wednesday-communion-1-english-body"
-verified_artifact_page = 12
-verified_printed_page = 4
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 12, printed page 4. The source changes the cited healing of blind eyes into illumination of the Lord's servants. The changed recipient and predicate make this an adapted whole English antiphon, beyond its cited constituents. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-1-thursday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-1-thursday-entrance-1-english-body"
-verified_artifact_page = 12
-verified_printed_page = 4
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 12, printed page 4. The source predicates eternity of the addressed Lord. The cited Psalm predicates enduring establishment of the testimonies; a selected Bible carrier does not supply the source's full adapted predicate. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-1-saturday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-1-saturday-communion-1-english-body"
-verified_artifact_page = 12
-verified_printed_page = 4
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 12, printed page 4. The source body adds a divine speech-attribution formula within the Revelation quotation. That attribution is not in the cited single verse; its presence is a whole-English-body addition, not a new appointed Bible verse. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-2-monday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-2-monday-communion-1-english-body"
-verified_artifact_page = 13
-verified_printed_page = 5
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 13, printed page 5. The source turns the cited remembrance/walking texts into a communal Advent petition that includes a peaceful visitation request. That added petition is not the full text of the cited Psalm/Isaiah carriers. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-2-wednesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-2-wednesday-entrance-1-english-body"
-verified_artifact_page = 13
-verified_printed_page = 5
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 13, printed page 5. The body adds a clause about divine self-revelation to all nations. The cited Habakkuk vision and Pauline disclosure-of-hidden-things carriers do not supply that complete added clause. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-2-wednesday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-2-wednesday-communion-1-english-body"
-verified_artifact_page = 14
-verified_printed_page = 6
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 14, printed page 6. The source changes the cited healing of blind eyes into illumination of the Lord's servants. The changed recipient and predicate make this an adapted whole English antiphon, beyond its cited constituents. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-2-thursday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-2-thursday-entrance-1-english-body"
-verified_artifact_page = 14
-verified_printed_page = 6
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 14, printed page 6. The source predicates eternity of the addressed Lord. The cited Psalm predicates enduring establishment of the testimonies; a selected Bible carrier does not supply the source's full adapted predicate. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-2-saturday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-2-saturday-communion-1-english-body"
-verified_artifact_page = 14
-verified_printed_page = 6
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 14, printed page 6. The source body adds a divine speech-attribution formula within the Revelation quotation. That attribution is not in the cited single verse; its presence is a whole-English-body addition, not a new appointed Bible verse. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-3-monday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-3-monday-communion-1-english-body"
-verified_artifact_page = 15
-verified_printed_page = 7
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 15, printed page 7. The source turns the cited remembrance/walking texts into a communal Advent petition that includes a peaceful visitation request. That added petition is not the full text of the cited Psalm/Isaiah carriers. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-3-wednesday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-3-wednesday-entrance-1-english-body"
-verified_artifact_page = 16
-verified_printed_page = 8
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 16, printed page 8. The body adds a clause about divine self-revelation to all nations. The cited Habakkuk vision and Pauline disclosure-of-hidden-things carriers do not supply that complete added clause. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-3-wednesday"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-3-wednesday-communion-1-english-body"
-verified_artifact_page = 16
-verified_printed_page = 8
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 16, printed page 8. The source changes the cited healing of blind eyes into illumination of the Lord's servants. The changed recipient and predicate make this an adapted whole English antiphon, beyond its cited constituents. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-3-thursday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-3-thursday-entrance-1-english-body"
-verified_artifact_page = 16
-verified_printed_page = 8
-verified_on_page = "2026-10-21"
-note = "Exact whole-English-body adaptation/addition positively inspected in the held registered ICEL2010 image, artifact page 16, printed page 8. The source predicates eternity of the addressed Lord. The cited Psalm predicates enduring establishment of the testimonies; a selected Bible carrier does not supply the source's full adapted predicate. The exact English exemplar is held under the registered restricted artifact; no unconditional publication basis for this clonable/downloadable route is established. Only this exact English target is accounted for. No protected wording, removed-body hash, Latin body classification/permission, inferred appended word or extra Scripture appointment is supplied."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -10987,86 +10568,6 @@ verified_artifact_page = 15
 verified_printed_page = 7
 verified_on_page = "2026-10-21"
 note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 15, printed page 7. The source independently repeats the explicit first-person-plural possessive saviour application. Every admitted exact English composite instead addresses a second-person recipient and presents the divine act of saving that recipient. The printed pre-17December weekday condition remains attached. Arrival/salvation concepts already present in the carriers and omitted clauses are not counted as additions. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-1-saturday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-1-saturday-entrance-1-english-body"
-verified_artifact_page = 12
-verified_printed_page = 4
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 12, printed page 4. The source commands divine approach. Exact English Psalm carriers instead request conversion/restoration of the people, divine attention and manifestation. The approach predicate changes the actor/object relation and is absent from every admitted exact English carrier. All exact carriers already address God directly. The source title, petition mood, word order, and omitted flock-leading material do not establish this positive finding; it rests only on the distinct approach predicate. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-2-saturday"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-2-saturday-entrance-1-english-body"
-verified_artifact_page = 14
-verified_printed_page = 6
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 14, printed page 6. The separately printed source appointment repeats the divine-approach command. Exact English Psalm carriers request conversion/restoration of the people, divine attention and manifestation, without that approach predicate. The existing direct divine address is preserved as counterevidence to any title-only claim. No positive finding rests on changing a divine title, moving a vocative or omitting carrier clauses. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-december-17"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-december-17-communion-1-english-body"
-verified_artifact_page = 17
-verified_printed_page = 9
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 17, printed page 9. The source turns first-person divine house-filling speech into passive third-person narration, with the house expressly attributed to the Lord. All six English carriers admitted under the existing approved map retain the first-person divine filling clause. All six mapped English carriers also carry the nations-moving/shaking clause. A sibling regex tested a literal shake word only and cannot prove semantic absence. Omission of that clause and the speech attribution is extent evidence only. Four current-root Vulgate refusals are preserved; the additional seven-map replay is dependency-qualified. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Approved-map qualification from the review: Only Haggai2:7 uses a separately approved existing candidate as an additional comparison; current-root refusals retained; no new map or integration claim. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "advent-december-20"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.seasonal-advent-december-20-entrance-1-english-body"
-verified_artifact_page = 18
-verified_printed_page = 10
-verified_on_page = "2026-10-21"
-note = "Exact English source-body finding accepted by the independent 2026-10-21 held-image review at artifact page 18, printed page 10. The source assigns a whole-earth-filling predicate to divine glory. All six exact English composites instead predicate revelation of glory and visibility/salvation to all flesh, without this filling predicate. The composites already contain the glory subject and universal visibility. Missing plant-growth parallelism and divine-speech clauses establish only excerpt extent, not this new-positive basis. English carrier scope: admitted douay-rheims, douay-rheims-american-1899, catholic-public-domain-version, world-english-bible-catholic, king-james-version, revised-version-1895; typed refused none. Typed refusals remain refused; no carrier-content absence claim is made about them. Only this exact English body target is accounted for under the registered restricted artifact and existing per-surface rights record. No protected wording, removed-body hash, extra Scripture appointment, exact Latin2008 body, Latin mixed classification, or new publication permission is supplied."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -15439,3 +14940,550 @@ ancient_passage_id = "passage.catholic-church.vulgata-clementina.hetzenauer-1914
 lang = "en"
 rights = "project-created"
 text = "You redeemed us, O Lord, by your blood, out of every tribe and tongue and people and nation, and you made us a kingdom and priests for our God, alleluia."
+
+# Gap campaign 2026-11-14, batch p1-advent-christmas; see workflows/reviews/gap-campaign-2026-11-14/postconciliar/p1-advent-christmas-admission.json.
+[[entries]]
+mass = "advent-1-monday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "226"
+ia_leaf = 309
+ia_leaf_range = [309, 309]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-1-monday-main-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "24b0bd3c6335f5055f59ba0600214557870878e8558f56eda0d7ca2622e65153"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-1-monday-main-communion-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 226, PDF page [310], IA leaf [309], read on the page image by the integrate lane on 2026-11-14: the Magnificat antiphon at Saturday Vespers of the First Week in Advent; the printed chant asterisk is omitted. Bute translates the Magnificat antiphon Veni Domine of Saturday Vespers before the Second Sunday of Advent, whose Latin (Breviarium 1888 pars hiemalis p. 143) agrees word for word with the target under accents, ligatures and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "Come, O Lord, visit us in peace, that we may rejoice before Thee with all our heart."
+
+[[entries]]
+mass = "advent-2-monday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "226"
+ia_leaf = 309
+ia_leaf_range = [309, 309]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-2-monday-main-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "24b0bd3c6335f5055f59ba0600214557870878e8558f56eda0d7ca2622e65153"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-2-monday-main-communion-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 226, PDF page [310], IA leaf [309], read on the page image by the integrate lane on 2026-11-14: the Magnificat antiphon at Saturday Vespers of the First Week in Advent; the printed chant asterisk is omitted. Bute translates the Magnificat antiphon Veni Domine of Saturday Vespers before the Second Sunday of Advent, whose Latin (Breviarium 1888 pars hiemalis p. 143) agrees word for word with the target under accents, ligatures and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "Come, O Lord, visit us in peace, that we may rejoice before Thee with all our heart."
+
+[[entries]]
+mass = "advent-3-monday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "226"
+ia_leaf = 309
+ia_leaf_range = [309, 309]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-3-monday-main-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "24b0bd3c6335f5055f59ba0600214557870878e8558f56eda0d7ca2622e65153"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-3-monday-main-communion-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 226, PDF page [310], IA leaf [309], read on the page image by the integrate lane on 2026-11-14: the Magnificat antiphon at Saturday Vespers of the First Week in Advent; the printed chant asterisk is omitted. Bute translates the Magnificat antiphon Veni Domine of Saturday Vespers before the Second Sunday of Advent, whose Latin (Breviarium 1888 pars hiemalis p. 143) agrees word for word with the target under accents, ligatures and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "Come, O Lord, visit us in peace, that we may rejoice before Thee with all our heart."
+
+[[entries]]
+mass = "advent-1-saturday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "15"
+ia_leaf = 98
+ia_leaf_range = [98, 98]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-1-saturday-main-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "24b0bd3c6335f5055f59ba0600214557870878e8558f56eda0d7ca2622e65153"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-1-saturday-main-communion-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 15, PDF page [99], IA leaf [98], read on the page image by the integrate lane on 2026-11-14: the Advent antiphon of Sunday Mattins in the Psalter; the footnote figure before Behold is apparatus. Bute translates the Advent antiphon Ecce venio cito of Sunday Mattins (Breviarium 1888 pars hiemalis p. 12, the same place after Psalm 17), whose Latin agrees word for word with the target. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "Behold, I come quickly, saith the Lord, and My reward is with Me, to give every man according as his work shall be."
+
+[[entries]]
+mass = "advent-2-saturday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "15"
+ia_leaf = 98
+ia_leaf_range = [98, 98]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-2-saturday-main-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "24b0bd3c6335f5055f59ba0600214557870878e8558f56eda0d7ca2622e65153"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-2-saturday-main-communion-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 15, PDF page [99], IA leaf [98], read on the page image by the integrate lane on 2026-11-14: the Advent antiphon of Sunday Mattins in the Psalter; the footnote figure before Behold is apparatus. Bute translates the Advent antiphon Ecce venio cito of Sunday Mattins (Breviarium 1888 pars hiemalis p. 12, the same place after Psalm 17), whose Latin agrees word for word with the target. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "Behold, I come quickly, saith the Lord, and My reward is with Me, to give every man according as his work shall be."
+
+[[entries]]
+mass = "advent-december-19"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "240"
+ia_leaf = 323
+ia_leaf_range = [323, 323]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-december-19-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "24b0bd3c6335f5055f59ba0600214557870878e8558f56eda0d7ca2622e65153"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-december-19-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 240, PDF page [324], IA leaf [323], read on the page image by the integrate lane on 2026-11-14: the Third Responsory of the Third Sunday in Advent, complete respond before its Verse (Bute p. 247 appoints it again for the Monday); the footnote figure is apparatus. Bute translates the respond Qui venturus est, whose Latin (Breviarium 1888 pars hiemalis p. 153, reprinted p. 159) agrees word for word with the target. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "He That shall come, will come, and will not tarry; and there shall no more be fear in our borders. For He is our Saviour."
+
+[[entries]]
+mass = "advent-december-20"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "247"
+ia_leaf = 330
+ia_leaf_range = [330, 330]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-december-20-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "24b0bd3c6335f5055f59ba0600214557870878e8558f56eda0d7ca2622e65153"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-advent-december-20-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 247, PDF page [331], IA leaf [330], read on the page image by the integrate lane on 2026-11-14: the Benedictus antiphon of Monday in the Third Week of Advent; the printed chant asterisk is omitted. Bute translates the antiphon Egredietur, whose Latin (Breviarium 1888 pars hiemalis p. 159) agrees word for word with the target. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "There shall come forth a rod out of the stem of Jesse, and the whole earth shall be filled with the glory of the Lord, and all flesh shall see the salvation of God."
+
+[[entries]]
+mass = "advent-1-saturday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "120"
+ia_leaf = 129
+ia_leaf_range = [129, 129]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-advent-1-saturday-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "5017ad39ab74309ffaf43ce6040a69ebb9317284779419e82bb012e122a33aca"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-advent-1-saturday-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 120, PDF page [130], IA leaf [129], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon Veni et ostende of Saturday in Ember-Week of Advent, bounded before Ps. 79, 2. The Latin it translates (Mame 1922 p. 11; Lasance's own facing column, legible except letters lost at the scan edge) agrees word for word with the target under accents, ligatures and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Come, O Lord, and show Thy face to us, Thou that sittest upon the cherubim: and we shall be saved."
+
+[[entries]]
+mass = "advent-2-saturday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "120"
+ia_leaf = 129
+ia_leaf_range = [129, 129]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-advent-2-saturday-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "5017ad39ab74309ffaf43ce6040a69ebb9317284779419e82bb012e122a33aca"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-advent-2-saturday-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 120, PDF page [130], IA leaf [129], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon Veni et ostende of Saturday in Ember-Week of Advent, bounded before Ps. 79, 2. The Latin it translates (Mame 1922 p. 11; Lasance's own facing column, legible except letters lost at the scan edge) agrees word for word with the target under accents, ligatures and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Come, O Lord, and show Thy face to us, Thou that sittest upon the cherubim: and we shall be saved."
+
+[[entries]]
+mass = "mary-mother-of-god"
+form_id = "main"
+proper = "Entrance Antiphon (alternative)"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "140"
+ia_leaf = 149
+ia_leaf_range = [149, 149]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-mary-mother-of-god-main-entrance-antiphon-alternative-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "5017ad39ab74309ffaf43ce6040a69ebb9317284779419e82bb012e122a33aca"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-mary-mother-of-god-main-entrance-antiphon-alternative-publication"
+witness_note = "Historical human English for study, printed p. 140, PDF page [150], IA leaf [149], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon Lux fulgebit of the Second (Day-Break) Mass of Christmas, bounded before Ps. 92, 1. The Latin it translates (Lasance's facing column; Mame 1922 p. 21) agrees word for word with the target under accents, ligatures, j/i and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "A light shall shine upon us this day: for Our Lord is born to us; and He shall be called wonderful, God, the prince of peace, the Father of the world to come; of Whose reign there shall be no end."
+
+[[entries]]
+mass = "christmas-december-30"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "160"
+ia_leaf = 169
+ia_leaf_range = [169, 169]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-christmas-december-30-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "5017ad39ab74309ffaf43ce6040a69ebb9317284779419e82bb012e122a33aca"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-christmas-december-30-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 160, PDF page [170], IA leaf [169], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon Dum medium silentium of the Sunday within the Octave of Christmas, bounded before Ps. 92, 1. The Latin it translates (Mame 1922 p. 32; Lasance's facing column, legible except letters lost at the scan edge) agrees word for word with the target under accents, ligatures and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "While all things were in quiet silence, and the night was in the midst of her course, Thy almighty word, O Lord, came from heaven, from Thy royal throne."
+
+[[entries]]
+mass = "christmas-december-31"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "144"
+ia_leaf = 153
+ia_leaf_range = [153, 153]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-christmas-december-31-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-english"
+publication_artifact_sha256 = "5017ad39ab74309ffaf43ce6040a69ebb9317284779419e82bb012e122a33aca"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-advent-christmas-christmas-december-31-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 144, PDF page [154], IA leaf [153], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon Puer natus est of the Third Mass of Christmas, bounded before Ps. 97, 1. The Latin it translates (Lasance's facing column, legible except letters lost at the scan edge; the same Introit at Mame 1922 p. 40) agrees word for word with the target under accents, ligatures, j/i and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "A child is born to us, and a Son is given to us; Whose government is upon His shoulder; and His name shall be called the angel of great counsel."
+
+[[entries]]
+mass = "advent-2"
+form_id = "main"
+proper = "Collect"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Festinantes, omnipotens Deus, in occursum Filii tui Domini nostri nulla impediant opera actus terreni; sed caelestis sapientiae eruditio faciat nos eius esse consortes. Per Dominum."
+divergence = "Target (secondary 2002 artifact page 87) adds et misericors (two inserted words: two change units, two new word-forms), omits Domini nostri and reorders (both discounted), and closes with the cue Qui tecum. where the Gelasian has Per Dominum. (conclusion formula, not body); DECISIONS 5, 9f. Wilson's apparatus (n. 20, p. 220) gives nulli impediant actus terreni for S. and Gerbert; the main text (V.) is the antecedent. The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894; printed p. 219"
+witness_edition_id = "edition.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894"
+witness_artifact_id = "artifact.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.internet-archive-pdf-006a38a3"
+ancient_passage_id = "passage.catholic-church.sacramentarium-gelasianum-vetus.wilson-1894.gap-campaign-20261114-advent-christmas-advent-2-main-collect-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Almighty and merciful God, may no works of earthly activity hinder those hastening to meet your Son, but may the instruction of heavenly wisdom make us his companions. Who with you."
+
+[[entries]]
+mass = "advent-1-wednesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Veniet Dominus, * et non tardabit, et illuminabit abscondita tenebrarum, et manifestabit se ad omnes gentes, alleluja."
+divergence = "Target (secondary 2002 artifact page 84) omits the closing alleluja; nothing is added, substituted or reordered. Its Latin, the contiguous span before alleluja (DECISIONS 9b), is published from that witness in the same increment. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 155"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-1-wednesday-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The Lord will come and will not delay, and he will illumine the hidden things of darkness, and he will show himself to all the nations."
+
+[[entries]]
+mass = "advent-2-wednesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Veniet Dominus, * et non tardabit, et illuminabit abscondita tenebrarum, et manifestabit se ad omnes gentes, alleluja."
+divergence = "Target (secondary 2002 artifact page 89) omits the closing alleluja; nothing is added, substituted or reordered. Its Latin, the contiguous span before alleluja (DECISIONS 9b), is published from that witness in the same increment. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 155"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-2-wednesday-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The Lord will come and will not delay, and he will illumine the hidden things of darkness, and he will show himself to all the nations."
+
+[[entries]]
+mass = "advent-3-wednesday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Veniet Dominus, * et non tardabit, et illuminabit abscondita tenebrarum, et manifestabit se ad omnes gentes, alleluja."
+divergence = "Target (secondary 2002 artifact page 94) omits the closing alleluja; nothing is added, substituted or reordered. Its Latin, the contiguous span before alleluja (DECISIONS 9b), is published from that witness in the same increment. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 155"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-3-wednesday-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The Lord will come and will not delay, and he will illumine the hidden things of darkness, and he will show himself to all the nations."
+
+[[entries]]
+mass = "advent-1-wednesday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Ecce Dominus * noster cum virtute veniet, et illuminabit oculos servorum suorum, alleluja."
+divergence = "Target (secondary 2002 artifact page 85) reads ut illuminet for et illuminabit (one word substituted and one inflection changed: two change units, two new word-forms) and omits the closing alleluja (discounted); DECISIONS 5, 9b, 9c. The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 146"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-1-wednesday-main-communion-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Behold, our Lord will come with power, that he may enlighten the eyes of his servants."
+
+[[entries]]
+mass = "advent-2-wednesday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Ecce Dominus * noster cum virtute veniet, et illuminabit oculos servorum suorum, alleluja."
+divergence = "Target (secondary 2002 artifact page 90) reads ut illuminet for et illuminabit (one word substituted and one inflection changed: two change units, two new word-forms) and omits the closing alleluja (discounted); DECISIONS 5, 9b, 9c. The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 146"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-2-wednesday-main-communion-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Behold, our Lord will come with power, that he may enlighten the eyes of his servants."
+
+[[entries]]
+mass = "advent-3-wednesday"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Ecce Dominus * noster cum virtute veniet, et illuminabit oculos servorum suorum, alleluja."
+divergence = "Target (secondary 2002 artifact page 95) reads ut illuminet for et illuminabit (one word substituted and one inflection changed: two change units, two new word-forms) and omits the closing alleluja (discounted); DECISIONS 5, 9b, 9c. The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 146"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-3-wednesday-main-communion-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Behold, our Lord will come with power, that he may enlighten the eyes of his servants."
+
+[[entries]]
+mass = "advent-1-thursday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Prope es tu, Domine, et omnes viae tuae veritas: initio cognovi de testimoniis tuis, quia in aeternum tu es."
+divergence = "Target: secondary 2002 artifact page 85. Word-identical with the Missal Introit of Ember Friday of Advent (Mame 1922 p. 10); its Latin is published from that witness in the same increment. The Lasance 1945 English of this Introit (p. 117) is not carried: its facing Latin omits tuis, and although its English renders tuis (Thy), it renders quia as 'and', so it does not render the target words exactly clause by clause (DECISIONS 9d). The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 10"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-advent-christmas-advent-1-thursday-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "You are near, O Lord, and all your ways are truth; from the beginning I have known from your testimonies that you are for ever."
+
+[[entries]]
+mass = "advent-2-thursday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Prope es tu, Domine, et omnes viae tuae veritas: initio cognovi de testimoniis tuis, quia in aeternum tu es."
+divergence = "Target: secondary 2002 artifact page 90. Word-identical with the Missal Introit of Ember Friday of Advent (Mame 1922 p. 10); its Latin is published from that witness in the same increment. The Lasance 1945 English of this Introit (p. 117) is not carried: its facing Latin omits tuis, and although its English renders tuis (Thy), it renders quia as 'and', so it does not render the target words exactly clause by clause (DECISIONS 9d). The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 10"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-advent-christmas-advent-2-thursday-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "You are near, O Lord, and all your ways are truth; from the beginning I have known from your testimonies that you are for ever."
+
+[[entries]]
+mass = "advent-3-thursday"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Prope es tu, Domine, et omnes viae tuae veritas: initio cognovi de testimoniis tuis, quia in aeternum tu es."
+divergence = "Target: secondary 2002 artifact page 95. Word-identical with the Missal Introit of Ember Friday of Advent (Mame 1922 p. 10); its Latin is published from that witness in the same increment. The Lasance 1945 English of this Introit (p. 117) is not carried: its facing Latin omits tuis, and although its English renders tuis (Thy), it renders quia as 'and', so it does not render the target words exactly clause by clause (DECISIONS 9d). The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 10"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-advent-christmas-advent-3-thursday-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "You are near, O Lord, and all your ways are truth; from the beginning I have known from your testimonies that you are for ever."
+
+[[entries]]
+mass = "advent-december-17"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Laetentur coeli, et exsultet terra, jubilate montes laudem: quia Dominus noster veniet, * Et pauperum suorum miserebitur."
+divergence = "Target (secondary 2002 artifact page 97) omits jubilate montes laudem from the Matins respond (Infra Hebdomadam I Adventus, Feria II); nothing is added, substituted or reordered. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 138"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-december-17-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Let the heavens rejoice and the earth exult, for our Lord will come, and he will have mercy on his poor."
+
+[[entries]]
+mass = "advent-december-17"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Ecce veniet * desideratus cunctis Gentibus: et replebitur gloria domus Domini, alleluja."
+divergence = "Target (secondary 2002 artifact page 98; Notitiae 2008 changes only its citation) omits the closing alleluja; nothing is added, substituted or reordered. Its Latin, the contiguous span before alleluja (DECISIONS 9b), is published from that witness in the same increment. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 168"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-december-17-main-communion-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Behold, the one desired by all the nations will come, and the house of the Lord will be filled with glory."
+
+[[entries]]
+mass = "advent-december-24"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Ecce jam venit * plenitudo temporis, in quo misit Deus Filium suum in terras."
+divergence = "Target (secondary 2002 artifact page 102) reads in terram for in terras (one inflection changed: one change unit); DECISIONS 5. The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 157"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-advent-december-24-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Behold, now the fullness of time has come, in which God sent his Son to earth."

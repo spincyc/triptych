@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-advent-christmas-latin"
+edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful transcriptions of complete Latin units printed in the identified 1888 historical book, public domain in the United States by publication date before 1931. Mechanical transcription with declared accent/ligature/line-wrap normalization adds no authorship. The basis reaches only these historical words, not any modern edition, layout or apparatus."
+derived_from = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+transformation = "Read on page images by the integrate lane on 2026-11-14. Join physical wraps and division hyphens; remove stress accents; expand ae/oe ligatures; keep historical spelling, abbreviations and pointing as printed. Rubric labels, versicle glyphs and following psalm verses outside each unit are excluded unless printed inside it."
+retrieved = "2026-11-14"
+notes = "Gap campaign 2026-11-14 batch p1-advent-christmas. One row per complete Latin unit; each row is selected by its own passage. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p1-advent-christmas-admission.json."
+sha256 = "c8ab210c480dd842961707fdffda4a45deb5f4c888b3c0ad1acd70f7836763b3"
+byte_size = 1636
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1888-pustet-ratisbon-pars-hiemalis/artifacts/gap-campaign-20261114-advent-christmas-latin/text.tsv"
+encoding = "utf-8"
+indexable = true

@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-advent-christmas-english"
+edition_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Historical human English of the Marquess of Bute's Roman Breviary, volume I, Edinburgh and London: Blackwood, 1908; public domain in the United States by publication date before 1931. Faithful transcription adds no authorship."
+derived_from = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+transformation = "Each row quotes one complete historical English antiphon or respond; chant asterisks and footnote figures omitted; words and punctuation otherwise as printed."
+retrieved = "2026-11-14"
+notes = "Gap campaign 2026-11-14 batch p1-advent-christmas. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p1-advent-christmas-admission.json."
+sha256 = "24b0bd3c6335f5055f59ba0600214557870878e8558f56eda0d7ca2622e65153"
+byte_size = 1149
+path = "src/sources/works/catholic-church/breviarium-romanum/editions/1908-blackwood-bute-winter/artifacts/gap-campaign-20261114-advent-christmas-english/text.tsv"
+encoding = "utf-8"
+indexable = true

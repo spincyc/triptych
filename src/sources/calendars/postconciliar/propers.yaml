@@ -1321,12 +1321,8 @@ sections:
       - name: Prayer over the Offerings
         incipit: Devotionis nostrae
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Devotionis nostrae tibi, Domine, quaesumus, hostia iugiter immoletur, quae et sacri peragat instituta mysterii et salutare tuum nobis potenter operetur. Per Christum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Feltoe 1896 Sacramentarium Leonianum (Veronense) unit at printed p. 112; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Communion Antiphon
         incipit: 'Dicite: Pusillanimes'
         source: scripture
@@ -1371,12 +1367,8 @@ sections:
       - name: Collect
         incipit: Gratiam tuam
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Gratiam tuam, quaesumus, Domine, mentibus nostris infunde, ut qui, Angelo nuntiante, Christi Filii tui incarnationem cognovimus, per passionem eius et crucem ad resurrectionis gloriam perducamur. Per Dominum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 4; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         cycles:
@@ -1812,7 +1804,8 @@ sections:
             end: {chapter: 8, verse: 11}
           ref: Matthew 8:5-11
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Veni, Domine, visitare nos in pace, ut laetemur coram te corde perfecto."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -1833,12 +1826,7 @@ sections:
               chapter: 38
               verse: 3
           ref: Isaiah 38:3
-        notes: Source appointment antiphonary:advent-1-monday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 11 / printed page 3, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday
-          formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:advent-1-monday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 11 / printed page 3, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 143. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 157, printed page 103, n. 175. The Ordo prints its responsorial psalms and psalm acclamations
@@ -1943,7 +1931,7 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Habakkuk
           ranges:
@@ -1963,13 +1951,8 @@ sections:
               chapter: 4
               verse: 5
           ref: 1 Corinthians 4:5
-        notes: Source appointment antiphonary:advent-1-wednesday|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 11 / printed page 3, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        text: "Veniet Dominus et non tardabit, et illuminabit abscondita tenebrarum, et manifestabit se ad omnes gentes."
+        notes: "Source appointment antiphonary:advent-1-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 11 / printed page 3, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 155. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -2001,7 +1984,7 @@ sections:
             end: {chapter: 15, verse: 37}
           ref: Matthew 15:29-37
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Isaiah
           ranges:
@@ -2018,13 +2001,13 @@ sections:
               chapter: 35
               verse: 5
           ref: Isaiah 40:10; 35:5
-        notes: Source appointment antiphonary:advent-1-wednesday|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 12 / printed page 4, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: "Source appointment antiphonary:advent-1-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 12 / printed page 4, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p1-advent-christmas): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 157, printed page 103, n. 177. The Ordo prints its responsorial psalms and psalm acclamations
@@ -2042,7 +2025,8 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Prope es tu, Domine, et omnes viae tuae veritas; initio cognovi de testimoniis tuis, quia in aeternum tu es."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -2054,13 +2038,7 @@ sections:
               chapter: 118
               verse: 152
           ref: Psalm 118:151-152
-        notes: Source appointment antiphonary:advent-1-thursday|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 12 / printed page 4, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        notes: "Source appointment antiphonary:advent-1-thursday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 12 / printed page 4, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 10. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -2209,7 +2187,8 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Veni, et ostende nobis faciem tuam, Domine, qui sedes super Cherubim, et salvi erimus."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -2227,13 +2206,7 @@ sections:
               chapter: 79
               verse: 2
           ref: Psalm 79:4, 2
-        notes: Source appointment antiphonary:advent-1-saturday|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 12 / printed page 4, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        notes: "Source appointment antiphonary:advent-1-saturday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 12 / printed page 4, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 11. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -2275,7 +2248,7 @@ sections:
             end: {chapter: 10, verse: 8}
           ref: Matthew 9:35-10:1; 10:6-8
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Revelation
           ranges:
@@ -2286,13 +2259,8 @@ sections:
               chapter: 22
               verse: 12
           ref: Revelation 22:12
-        notes: Source appointment antiphonary:advent-1-saturday|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 12 / printed page 4, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        text: "Ecce venio cito et merces mea mecum est, dicit Dominus, dare unicuique secundum opera sua."
+        notes: "Source appointment antiphonary:advent-1-saturday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 12 / printed page 4, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 12. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 158, printed page 104, n. 180. The Ordo prints its responsorial psalms and psalm acclamations
@@ -2364,7 +2332,8 @@ sections:
             end: {chapter: 5, verse: 26}
           ref: Luke 5:17-26
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Veni, Domine, visitare nos in pace, ut laetemur coram te corde perfecto."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -2385,12 +2354,7 @@ sections:
               chapter: 38
               verse: 3
           ref: Isaiah 38:3
-        notes: Source appointment antiphonary:advent-2-monday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 13 / printed page 5, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday
-          formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:advent-2-monday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 13 / printed page 5, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 143. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 159, printed page 105, n. 181. The Ordo prints its responsorial psalms and psalm acclamations
@@ -2498,7 +2462,7 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Habakkuk
           ranges:
@@ -2518,13 +2482,8 @@ sections:
               chapter: 4
               verse: 5
           ref: 1 Corinthians 4:5
-        notes: Source appointment antiphonary:advent-2-wednesday|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 13 / printed page 5, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        text: "Veniet Dominus et non tardabit, et illuminabit abscondita tenebrarum, et manifestabit se ad omnes gentes."
+        notes: "Source appointment antiphonary:advent-2-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 13 / printed page 5, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 155. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -2556,7 +2515,7 @@ sections:
             end: {chapter: 11, verse: 30}
           ref: Matthew 11:28-30
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Isaiah
           ranges:
@@ -2573,13 +2532,13 @@ sections:
               chapter: 35
               verse: 5
           ref: Isaiah 40:10; 35:5
-        notes: Source appointment antiphonary:advent-2-wednesday|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: "Source appointment antiphonary:advent-2-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p1-advent-christmas): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 159, printed page 105, n. 183. The Ordo prints its responsorial psalms and psalm acclamations
@@ -2597,7 +2556,8 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Prope es tu, Domine, et omnes viae tuae veritas; initio cognovi de testimoniis tuis, quia in aeternum tu es."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -2609,13 +2569,7 @@ sections:
               chapter: 118
               verse: 152
           ref: Psalm 118:151-152
-        notes: Source appointment antiphonary:advent-2-thursday|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        notes: "Source appointment antiphonary:advent-2-thursday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 10. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -2765,7 +2719,8 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Veni, et ostende nobis faciem tuam, Domine, qui sedes super Cherubim, et salvi erimus."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -2783,13 +2738,7 @@ sections:
               chapter: 79
               verse: 2
           ref: Psalm 79:4, 2
-        notes: Source appointment antiphonary:advent-2-saturday|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        notes: "Source appointment antiphonary:advent-2-saturday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 11. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -2833,7 +2782,7 @@ sections:
             end: {chapter: 17, verse: 13}
           ref: Matthew 17:10-13
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Revelation
           ranges:
@@ -2844,13 +2793,8 @@ sections:
               chapter: 22
               verse: 12
           ref: Revelation 22:12
-        notes: Source appointment antiphonary:advent-2-saturday|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        text: "Ecce venio cito et merces mea mecum est, dicit Dominus, dare unicuique secundum opera sua."
+        notes: "Source appointment antiphonary:advent-2-saturday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 14 / printed page 6, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 12. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 160, printed page 106, n. 186. The Ordo prints its responsorial psalms and psalm acclamations
@@ -2932,7 +2876,8 @@ sections:
             end: {chapter: 21, verse: 27}
           ref: Matthew 21:23-27
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
+        text: "Veni, Domine, visitare nos in pace, ut laetemur coram te corde perfecto."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -2953,12 +2898,7 @@ sections:
               chapter: 38
               verse: 3
           ref: Isaiah 38:3
-        notes: Source appointment antiphonary:advent-3-monday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary,
-          artifact page 15 / printed page 7, in the 2026-10-20/21 image audit. The printed citation cue is retained as
-          structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved
-          English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday
-          formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        notes: "Source appointment antiphonary:advent-3-monday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 15 / printed page 7, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 143. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 161, printed page 107, n. 187. The Ordo prints its responsorial psalms and psalm acclamations
@@ -3073,7 +3013,7 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Habakkuk
           ranges:
@@ -3093,13 +3033,8 @@ sections:
               chapter: 4
               verse: 5
           ref: 1 Corinthians 4:5
-        notes: Source appointment antiphonary:advent-3-wednesday|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 16 / printed page 8, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        text: "Veniet Dominus et non tardabit, et illuminabit abscondita tenebrarum, et manifestabit se ad omnes gentes."
+        notes: "Source appointment antiphonary:advent-3-wednesday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 16 / printed page 8, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 155. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -3141,7 +3076,7 @@ sections:
             end: {chapter: 7, verse: 23}
           ref: Luke 7:19-23
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Isaiah
           ranges:
@@ -3158,13 +3093,13 @@ sections:
               chapter: 35
               verse: 5
           ref: Isaiah 40:10; 35:5
-        notes: Source appointment antiphonary:advent-3-wednesday|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 16 / printed page 8, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: "Source appointment antiphonary:advent-3-wednesday|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 16 / printed page 8, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p1-advent-christmas): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 161, printed page 107, n. 189. The Ordo prints its responsorial psalms and psalm acclamations
@@ -3183,7 +3118,8 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
+        text: "Prope es tu, Domine, et omnes viae tuae veritas; initio cognovi de testimoniis tuis, quia in aeternum tu es."
         psalm_numbering: vulgate
         verses:
         - book: Psalms
@@ -3195,13 +3131,7 @@ sections:
               chapter: 118
               verse: 152
           ref: Psalm 118:151-152
-        notes: Source appointment antiphonary:advent-3-thursday|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 16 / printed page 8, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies.
-          The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete
-          approved antiphon.
+        notes: "Source appointment antiphonary:advent-3-thursday|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 16 / printed page 8, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the Advent weekday formulary before 17 December; the 17-24 December appointments belong to separate date formularies. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 10. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -3325,7 +3255,7 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Isaiah
           ranges:
@@ -3336,11 +3266,13 @@ sections:
               chapter: 49
               verse: 13
           ref: Isaiah 49:13
-        notes: Source appointment antiphonary:advent-december-17|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: "Source appointment antiphonary:advent-december-17|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p1-advent-christmas): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       - name: First Reading
         source: scripture
         verses:
@@ -3374,7 +3306,7 @@ sections:
             end: {chapter: 1, verse: 17}
           ref: Matthew 1:1-17
       - name: Communion Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Haggai
           ranges:
@@ -3385,11 +3317,8 @@ sections:
               chapter: 2
               verse: 7
           ref: Haggai 2:7
-        notes: Source appointment antiphonary:advent-december-17|main|C|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        text: "Ecce veniet desideratus cunctis gentibus, et replebitur gloria domus Domini."
+        notes: "Source appointment antiphonary:advent-december-17|main|C|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 168. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       notes: 'Prior OLM-only review, before the 2026-10-21 antiphon recovery: The Lectionary citations were read at 200
         dpi in a page image of the Ordo lectionum Missae, editio typica altera 1981, artifact internet-archive-scan-pdf-ed4bc14e,
         at artifact page 164, printed page 110, n. 193. The Ordo prints its responsorial psalms and psalm acclamations
@@ -3408,16 +3337,8 @@ sections:
       propers:
       - name: Entrance Antiphon
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
-        notes: Source appointment antiphonary:advent-december-18|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied.
+        text: "Rex noster adveniet Christus, quem Ioannes praedicavit Agnum esse venturum."
+        notes: "Source appointment antiphonary:advent-december-18|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 140. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -3480,7 +3401,7 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Hebrews
           ranges:
@@ -3491,11 +3412,8 @@ sections:
               chapter: 10
               verse: 37
           ref: Hebrews 10:37
-        notes: Source appointment antiphonary:advent-december-19|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is
-          retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        text: "Qui venturus est veniet et non tardabit, et iam non erit timor in finibus nostris, quoniam ipse est Salvator noster."
+        notes: "Source appointment antiphonary:advent-december-19|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 17 / printed page 9, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 153. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -3559,7 +3477,7 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Isaiah
           ranges:
@@ -3585,11 +3503,8 @@ sections:
               chapter: 3
               verse: 6
           ref: Luke 3:6
-        notes: Source appointment antiphonary:advent-december-20|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 18 / printed page 10, in the 2026-10-20/21 image audit. The printed citation cue
-          is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed
-          Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        text: "Egredietur virga de radice Iesse, et replebitur omnis terra gloria Domini, et videbit omnis caro salutare Dei."
+        notes: "Source appointment antiphonary:advent-december-20|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 18 / printed page 10, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Breviarium Romanum Pustet 1888 pars hiemalis unit at printed p. 159. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -3949,7 +3864,7 @@ sections:
       season: advent
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Galatians
           ranges:
@@ -3960,12 +3875,13 @@ sections:
               chapter: 4
               verse: 4
           ref: Galatians 4:4
-        notes: Source appointment antiphonary:advent-december-24|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 19 / printed page 11, in the 2026-10-20/21 image audit. The printed citation cue
-          is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the
-          morning Mass of 24 December; the Nativity Vigil is a separate formulary. The printed Cf. is a comparison cue;
-          this row does not prove that a selected Bible reconstructs the complete approved antiphon.
+        text_status:
+          state: unavailable
+          scope: proper-body
+          reasons:
+          - kind: witness-gap
+            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008
+        notes: "Source appointment antiphonary:advent-december-24|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 19 / printed page 11, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. This is the morning Mass of 24 December; the Nativity Vigil is a separate formulary. The printed Cf. is a comparison cue; this row does not prove that a selected Bible reconstructs the complete approved antiphon. Dated 2026-11-14 (gap campaign p1-advent-christmas): the Missal's adapted antiphon is its own body beside the retained Scripture citation; no public-domain witness prints it word for word, so its Latin stays an explicit witness gap. Project study English of the adapted body is recorded in the translation overlay."
       - name: First Reading
         source: scripture
         verses:
@@ -5058,12 +4974,8 @@ sections:
           basis: "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon."
         incipit: Salve, sancta Parens
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Salve, sancta Parens, enixa puerpera Regem, qui caelum terramque regit in saecula saeculorum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 49*. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Entrance Antiphon (alternative)
         ordinary_disposition:
           kind: alternative
@@ -5088,22 +5000,13 @@ sections:
           - begin: {chapter: 1, verse: 33}
             end: {chapter: 1, verse: 33}
           ref: Luke 1:33
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-        notes: The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon.
+        text: "Lux fulgebit hodie super nos, quia natus est nobis Dominus; et vocabitur admirabilis, Deus, Princeps pacis, Pater futuri saeculi: cuius regni non erit finis."
+        notes: "The Missal appoints this antiphon as an alternative (Vel) to the entrance antiphon. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 21. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: Collect
         incipit: Deus, qui salutis aeternae
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+        text: "Deus, qui salutis aeternae, beatae Mariae virginitate fecunda, humano generi praemia praestitisti, tribue, quaesumus, ut ipsam pro nobis intercedere sentiamus, per quam meruimus auctorem vitae suscipere, Dominum nostrum Iesum Christum, Filium tuum. Qui tecum."
+        notes: "Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Pustet 1862 unit at printed p. 30. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -5507,12 +5410,8 @@ sections:
         - name: Prayer over the Offerings
           incipit: Ecclesiae tuae, quaesumus, Domine
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-            - kind: rights-withheld
-              source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+          text: "Ecclesiae tuae, quaesumus, Domine, dona propitius intuere, quibus non iam aurum, thus et myrrha profertur, sed quod eisdem muneribus declaratur, immolatur et sumitur, Iesus Christus. Qui vivit et regnat in saecula saeculorum."
+          notes: "Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 48-49; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
         - name: Communion Antiphon
           incipit: Vidimus stellam eius in Oriente
           source: scripture
@@ -5525,12 +5424,8 @@ sections:
         - name: Prayer after Communion
           incipit: Caelesti lumine, quaesumus, Domine
           source: composed
-          text_status:
-            state: unavailable
-            scope: proper-body
-            reasons:
-            - kind: rights-withheld
-              source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
+          text: "Caelesti lumine, quaesumus, Domine, semper et ubique nos praeveni, ut mysterium, cuius nos participes esse voluisti, et puro cernamus intuitu, et digno percipiamus affectu. Per Christum."
+          notes: "Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 52; its conclusion is supplied from a separately witnessed public-domain formula. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
     - key: baptism-of-the-lord
       name: The Baptism of the Lord
       registry: pc-s10
@@ -5703,13 +5598,8 @@ sections:
           basis: "The Missal prints this under Vel as an alternative to the preceding Collect."
         incipit: Deus, cuius Unigenitus in substantia nostrae carnis apparuit
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-tertia-2002
-        notes: The Missal prints this under Vel as an alternative to the preceding Collect.
+        text: "Deus, cuius Unigenitus in substantia nostrae carnis apparuit, praesta, quaesumus, ut, per eum, quem similem nobis foris agnovimus, intus reformari mereamur. Qui tecum."
+        notes: "The Missal prints this under Vel as an alternative to the preceding Collect. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 51. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         cycles:
@@ -6678,7 +6568,7 @@ sections:
       season: christmas
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Wisdom
           ranges:
@@ -6689,11 +6579,8 @@ sections:
               chapter: 18
               verse: 15
           ref: Wisdom 18:14-15
-        notes: Source appointment antiphonary:christmas-december-30|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 22 / printed page 14, in the 2026-10-20/21 image audit. The printed citation cue
-          is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied. The source
-          prints this weekday pair separately from the Holy Family fallback; no fallback reuse is supplied.
+        text: "Dum medium silentium tenerent omnia, et nox in suo cursu medium iter haberet, omnipotens sermo tuus, Domine, de caelis a regalibus sedibus venit."
+        notes: "Source appointment antiphonary:christmas-december-30|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 22 / printed page 14, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. The source prints this weekday pair separately from the Holy Family fallback; no fallback reuse is supplied. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 32. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
@@ -6756,7 +6643,7 @@ sections:
       season: christmas
       propers:
       - name: Entrance Antiphon
-        source: scripture
+        source: mixed
         verses:
         - book: Isaiah
           ranges:
@@ -6767,10 +6654,8 @@ sections:
               chapter: 9
               verse: 5
           ref: Isaiah 9:5
-        notes: Source appointment antiphonary:christmas-december-31|main|E|1 was checked in the held registered ICEL 2010
-          Antiphonary, artifact page 22 / printed page 14, in the 2026-10-20/21 image audit. The printed citation cue
-          is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording,
-          full approved English body, exact target-2008 Latin body, or publication permission is supplied.
+        text: "Puer natus est nobis, et filius datus est nobis, cuius imperium super humerum eius, et vocabitur nomen eius magni consilii Angelus."
+        notes: "Source appointment antiphonary:christmas-december-31|main|E|1 was checked in the held registered ICEL 2010 Antiphonary, artifact page 22 / printed page 14, in the 2026-10-20/21 image audit. The printed citation cue is retained as structural appointment metadata; compiler Graduale suggestions are excluded. No source wording, full approved English body, exact target-2008 Latin body, or publication permission is supplied. Dated 2026-11-14 Latin admission (gap campaign p1-advent-christmas), superseding any statement above that no exact target Latin body is supplied: the complete body is word-identical with the public-domain Mame 1922 unit at printed p. 40. Published in the calendar orthography with the target's pointing. Authentication of the complete 2008 altar Missal is not asserted."
       - name: First Reading
         source: scripture
         verses:
