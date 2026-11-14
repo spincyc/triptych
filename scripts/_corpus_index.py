@@ -207,9 +207,34 @@ def _git(root, *arguments):
     return result.stdout
 
 
+def _git_together(root, *commands):
+    """Run independent read-only Git queries concurrently; fail as ``_git`` does."""
+    env = {**os.environ, 'GIT_OPTIONAL_LOCKS': '0', 'GIT_NO_LAZY_FETCH': '1'}
+    processes = []
+    try:
+        for arguments in commands:
+            processes.append(subprocess.Popen(['git', '-C', str(root), *arguments],
+                                              stdout=subprocess.PIPE, stderr=subprocess.PIPE, env=env))
+        results = [process.communicate() for process in processes]
+    finally:
+        for process in processes:
+            if process.poll() is None:
+                process.kill()
+                process.wait()
+    for process, (_, stderr) in zip(processes, results):
+        if process.returncode:
+            raise CorpusIndexError('corpus index requires a Git checkout: ' + stderr.decode(errors='replace').strip())
+    return [stdout for stdout, _ in results]
+
+
 def _git_state(root):
+    # The untracked walk dominates; the modified-file stat pass and the staged
+    # listing run beside it. Their union is the single combined query's result.
+    staged, changed, untracked = _git_together(
+        root, ('ls-files', '--stage', '-z'), ('ls-files', '--modified', '--deleted', '-z'),
+        ('ls-files', '--others', '--exclude-standard', '-z'))
     entries = {}
-    for item in _git(root, 'ls-files', '--stage', '-z').split(b'\0'):
+    for item in staged.split(b'\0'):
         if not item:
             continue
         header, raw_path = item.split(b'\t', 1)
@@ -221,9 +246,8 @@ def _git_state(root):
         if stage != '0' or mode not in ('100644', '100755'):
             raise CorpusIndexError(f'unmerged or non-regular corpus input: {path}')
         entries[path] = (mode, oid)
-    dirty = {_relative(item.decode('utf-8')) for item in _git(
-        root, 'ls-files', '--modified', '--deleted', '--others', '--exclude-standard', '-z'
-    ).split(b'\0') if item and _covered(item.decode('utf-8'))}
+    dirty = {_relative(item.decode('utf-8')) for item in (changed + b'\0' + untracked).split(b'\0')
+             if item and _covered(item.decode('utf-8'))}
     return entries, dirty
 
 

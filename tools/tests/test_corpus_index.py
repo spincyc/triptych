@@ -141,6 +141,13 @@ class CorpusIndexTests(unittest.TestCase):
                 corpus.refresh(self.root)
                 corpus.CorpusIndex(self.root)
 
+    def test_concurrent_git_queries_still_refuse_a_tree_without_git(self):
+        (self.root / '.git').rename(self.root / 'not-git')
+        # The fixture lives inside this checkout; stop Git from finding it.
+        with (patch.dict(os.environ, {'GIT_CEILING_DIRECTORIES': str(self.root.parent)}),
+              self.assertRaisesRegex(corpus.CorpusIndexError, 'requires a Git checkout')):
+            corpus.CorpusIndex(self.root)
+
     def test_each_read_checks_same_size_body_even_restored_mtime(self):
         index = corpus.CorpusIndex(self.root)
         path = self.root / self.payload

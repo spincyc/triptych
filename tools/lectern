@@ -201,16 +201,13 @@ def _prepare_runtime() -> None:
             raise ReaderRefused(f"the local .scratch/lectern-venv Python could not start: {error}") from error
 
 
-def _prepare_products(*, announce: bool = True) -> None:
+def _prepare_products(*, announce: bool = True):
     """Check the committed lookup index; selected records load when requested."""
-    from _corpus_index import CorpusIndex, CorpusIndexError
+    from lectern.preparation import check_index
 
     if announce:
         print("lectern: checking the corpus index", file=sys.stderr)
-    try:
-        CorpusIndex(ROOT)
-    except (CorpusIndexError, OSError) as error:
-        raise ReaderRefused(f"indexed reading data is unavailable: {error}") from error
+    return check_index()
 
 
 def open_reader(arguments: argparse.Namespace) -> int:
@@ -244,7 +241,8 @@ def snapshot(arguments: argparse.Namespace) -> str:
     plain = bool(style and style.plain)
     if plain and arguments.format == "svg":
         raise InputRefused("an SVG drawing is not plain text; drop --plain or ask for --format text")
-    _prepare_products()
+    checked = _prepare_products()
+    bridge.BRIDGE_PROCESS.adopt(checked)
     try:
         return render(
             surface=arguments.surface,

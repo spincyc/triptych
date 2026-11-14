@@ -14,9 +14,11 @@ adopts changed hashes or starts a full site build. The complete contract is in
 
 Interactive startup paints a loading screen while the index check and initial
 chained loads finish. The screen reports preparation errors; `q` or `ctrl+c`
-closes it. Cancelling preparation stops and reaps its process group. Snapshots
-check synchronously before their settling timer, report progress to stderr,
-and emit only the completed drawing on stdout.
+closes it. The check runs once, in a worker thread, and the first reading
+session opens on that same checked membership; a restarted bridge checks
+afresh. The check starts no producers, so cancelling simply discards it.
+Snapshots check synchronously before their settling timer, report progress to
+stderr, and emit only the completed drawing on stdout.
 
 Install the pinned dependencies once with `python3 -m venv
 .scratch/lectern-venv` and `.scratch/lectern-venv/bin/python -m pip install -r

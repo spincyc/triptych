@@ -88,6 +88,13 @@ class IndexedDataTests(unittest.TestCase):
         with self.assertRaises(corpus.CorpusIndexError):
             reader.read("structure/another.json")
 
+    def test_a_checked_index_is_adopted_without_scanning_again(self):
+        index = corpus.CorpusIndex(self.root)
+        with patch.object(corpus, "_git_state", side_effect=AssertionError("scanned again")):
+            reader = ReaderData(self.root, index)
+            self.assertIs(reader.index, index)
+            self.assertEqual(json.loads(reader.read("structure/one.json"))["text"], "Original whole source\n")
+
     def test_absence_and_traversal_do_not_generate_other_products(self):
         reader = ReaderData(self.root)
         self.assertIsNone(reader.read("structure/missing.json"))
@@ -117,8 +124,11 @@ class IndexedBridgeTests(unittest.TestCase):
                     raise value
                 return json.dumps(value, ensure_ascii=False).encode()
 
+        self.adopted = []
+
         @contextmanager
-        def products(root):
+        def products(root, index=None):
+            self.adopted.append(index)
             yield Reader()
 
         self.enterContext(patch.object(bridge, "indexed_products", products))
@@ -145,6 +155,18 @@ class IndexedBridgeTests(unittest.TestCase):
         self.bodies["structure/rubrics/index.json"] = corpus.CorpusIndexError("changed canonical source")
         with self.assertRaisesRegex(Refused, "changed canonical source"):
             self.client.call("liturgy", "opening")
+
+    def test_startup_check_opens_only_the_next_session(self):
+        checked = object()
+        self.client.adopt(checked)
+        self.client.call("liturgy", "opening")
+        self.client.close()
+        self.client.call("liturgy", "opening")
+        self.assertEqual(self.adopted, [checked, None])
+        self.client.adopt(checked)
+        self.client.close()
+        self.client.call("liturgy", "opening")
+        self.assertEqual(self.adopted, [checked, None, None])
 
 
 if __name__ == "__main__":

@@ -39,6 +39,15 @@ class Bridge:
         self._products: dict[subprocess.Popen[str], tuple[Any, Any]] = {}
         self._readers: dict[subprocess.Popen[str], Any] = {}
         self._data_pipes: dict[subprocess.Popen[str], int] = {}
+        self._checked: Any = None
+
+    def adopt(self, index: Any) -> None:
+        """Open the next reading session on an index startup has just checked.
+
+        Only that next session uses it; a restarted bridge checks afresh.
+        """
+        with self._state:
+            self._checked = index
 
     def _start(self) -> subprocess.Popen[str]:
         node = shutil.which("node")
@@ -50,8 +59,10 @@ class Bridge:
         # A fresh context must not borrow an outer operation's snapshot: that
         # operation could finish while this interactive child is still alive.
         context = Context()
+        # Callers hold self._state here.
+        checked, self._checked = self._checked, None
         try:
-            manager = indexed_products(ROOT)
+            manager = indexed_products(ROOT, checked)
             products = context.run(manager.__enter__)
         except (ProductError, OSError) as error:
             raise Refused(f"indexed reading data is unavailable: {error}") from error
@@ -227,6 +238,7 @@ class Bridge:
         with self._state:
             self._closing = True
             self._generation += 1
+            self._checked = None
             generation = self._generation
             process = self.process
             reader = self._readers.get(process)
