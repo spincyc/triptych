@@ -15,7 +15,8 @@ ART='artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.anti
 TARGET='edition.catholic-church.missale-romanum.vatican-typica-tertia-reimpressio-emendata-2008'
 # Gap campaign 2026-11-14 admissions, read from their owning ledgers rather than retyped here.
 _PROV=tomllib.loads((ROOT/'src/sources/inventories/postconciliar-proper-latin-provenance-v1.toml').read_text())['entries']
-GAP_LATIN={(r['mass'],r['proper']) for r in _PROV if 'gap-campaign-20261114' in str(r.get('source_id',''))}
+# Every later admission the Latin ledger permits (the 2026-11-14 Easter Thursday Communio projection and the gap campaign) holds a body.
+GAP_LATIN={(r['mass'],r['proper']) for r in _PROV if r.get('publication_status')=='permitted'}
 GAP_ENGLISH={(e['mass'],e['proper'],e.get('occurrence',1)) for e in tomllib.loads(ENGLISH.read_text())['entries'] if 'integrate lane' in str(e.get('witness_note',''))+str(e.get('divergence',''))}
 def tool(name):
  loader=SourceFileLoader('_seasonal_recovery_test_'+name.replace('-','_'),str(ROOT/'tools'/name));m=module_from_spec(spec_from_loader(loader.name,loader));sys.modules[loader.name]=m;loader.exec_module(m);return m

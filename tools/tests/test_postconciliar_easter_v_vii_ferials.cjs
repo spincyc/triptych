@@ -11,7 +11,7 @@ const source=JSON.parse(fs.readFileSync(0,'utf8'));
 const ordinary=JSON.parse(fs.readFileSync(repositoryPath(root, 'src/web/data/structure/ordinary/postconciliar.json')));
 const before=JSON.stringify(source),preserved=new Set(['easter-6-wednesday','easter-6-saturday','easter-7-tuesday']);
 const days=['monday','tuesday','wednesday','thursday','friday','saturday'];
-let staticForms=0,adapterExecutions=0,heldAcclamationChecks=0,cliCases=0;
+let staticForms=0,adapterExecutions=0,heldAcclamationChecks=0,englishAcclamationChecks=0,cliCases=0;
 function properEvents(result){
  return result.events.flatMap(event=>event.kind==='proper'?[event]:
   event.kind==='proper-choice'?event.options.filter(o=>o.id===event.selection.option).flatMap(o=>o.events):[]);
@@ -46,11 +46,18 @@ for(const week of [5,6,7])for(const day of days){
   if(!preserved.has(mass.key)){
    heldAcclamationChecks++;
    assert.equal(acclamation.sourceKind,'composed');
-   assert.equal(acclamation.selected.availability,'unavailable');
-   assert(!acclamation.selected.text);
    const raw=mass.propers.find(p=>p.name==='Gospel Acclamation');
    assert.equal(raw.citations.length,0);assert(!raw.text);
    assert.equal(raw.text_status.state,'unavailable');
+   // The 2026-11-14 public-domain witness campaign holds English for some of
+   // these acclamations; their Latin body stays unavailable either way.
+   if((raw.translations||[]).some(t=>t.lang==='en')){
+    assert.equal(acclamation.selected.availability,'held');
+    assert(acclamation.selected.text);englishAcclamationChecks++;
+   }else{
+    assert.equal(acclamation.selected.availability,'unavailable');
+    assert(!acclamation.selected.text);
+   }
   }else assert.equal(acclamation.sourceKind,'scripture');
  }
 }
@@ -82,4 +89,4 @@ if(process.env.TRIPTYCH_EASTER_V_VII_CLI_MANIFEST){
  }
 }
 assert.equal(JSON.stringify(source),before);
-console.log(JSON.stringify({status:'pass',staticForms,adapterExecutions,heldAcclamationChecks,cliCases}));
+console.log(JSON.stringify({status:'pass',staticForms,adapterExecutions,heldAcclamationChecks,englishAcclamationChecks,cliCases}));

@@ -930,6 +930,9 @@ def load_fixtures() -> list[dict]:
     return [json.loads(path.read_text(encoding="utf-8")) for path in sorted(FIXTURES.glob("*.json"))]
 
 
+WITHHELD_COLLECT_OWNER = "s-alberti-magni-episcopi-confessoris-ecclesiae"
+
+
 def fixture_named(name: str) -> dict:
     return json.loads((FIXTURES / (name + ".json")).read_text(encoding="utf-8"))
 
@@ -3356,12 +3359,13 @@ class ParityTests(unittest.TestCase):
     def test_cli_parity_rejects_bible_lectionary_reference_and_text_drift(self) -> None:
         fixture = fixture_named("day-roman-1962-2026-08-02")
         request = copy.deepcopy(fixture["requested"])
-        # Claret's own Collect is explicitly unavailable in this source
-        # projection. Vianney's Collect is now held and is no longer a valid
-        # unavailable-body control; select this exact source owner instead.
-        request["civilDate"] = "2026-10-23"
+        # The 1962 reader's Latin is now complete (Vianney's, then Claret's and
+        # St Albert's Collects were recovered), so the unavailable-body control
+        # is the 1920 reader's St Albert, whose own Collect stays withheld.
+        request["edition"]["id"] = request["calendar"]["id"] = "roman-pre-1955"
+        request["civilDate"] = "2027-11-15"
         request["selectedReadableFormulary"] = {
-            "id": "s-antonii-mariae-claret-episcopi-confessoris"
+            "id": WITHHELD_COLLECT_OWNER
         }
         request["requestedMode"] = "missal"
         request["options"]["ordinary"] = True
@@ -3388,7 +3392,7 @@ class ParityTests(unittest.TestCase):
         withheld, = (
             one
             for mass in changed["days"][0]["masses"]
-            if mass["key"] == "s-antonii-mariae-claret-episcopi-confessoris"
+            if mass["key"] == WITHHELD_COLLECT_OWNER
             for one in mass["propers"]
             if one["form_id"] == "main" and one["name"] == "Collect"
         )

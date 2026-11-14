@@ -283,6 +283,8 @@ class EasterVViiFerialTests(unittest.TestCase):
         self.assertEqual(report["staticForms"], 18)
         self.assertEqual(report["adapterExecutions"], 216)
         self.assertEqual(report["heldAcclamationChecks"], 180)
+        # Eleven ferials hold English acclamations (12 adapter runs each).
+        self.assertEqual(report["englishAcclamationChecks"], 132)
 
 
 if __name__ == "__main__":

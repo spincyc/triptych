@@ -184,10 +184,13 @@ class SourceRepairTests(unittest.TestCase):
         self.assertIn("anselm-schott", accepted["historical_passage_id"])
         # Anthony's Collect later replaced its removed row under the accepted
         # latin-seven adoption (workflows/reviews/missal-reader-completion-2026-10-26/
-        # latin-seven-rights-adoption.json; ledger text_sha256); Silvester's stays a gap.
+        # latin-seven-rights-adoption.json; ledger text_sha256). Silvester's was
+        # later filled by the 2026-10-29 sanctoral editorial projection under its
+        # own ledger row, not by either removed Postcommunion.
         anthony = prayer(self.index,dict(mass="s-antonii-padua-confessoris-ecclesiae-doctoris",proper="Collect"))
         self.assertEqual("477fc3ccb5b28d6c984eb149d9150b2beac0f0c263bbf7fce39682f2e0ae505e",digest(anthony["text"]))
-        self.assertNotIn("text",prayer(self.index,dict(mass="comm-s-silvestri-i-papae-confessoris",proper="Collect")))
+        silvester = prayer(self.index,dict(mass="comm-s-silvestri-i-papae-confessoris",proper="Collect"))
+        self.assertEqual("61fa6b8ea693b00660f9d11521ac5f6330018be9982109845a252f53cd056f53",digest(silvester["text"]))
 
 if __name__ == "__main__":
     unittest.main()

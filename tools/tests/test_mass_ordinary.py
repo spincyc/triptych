@@ -173,9 +173,16 @@ class OrdinaryStructure(unittest.TestCase):
         # (missal-english-completion-2026-10-29/postconciliar/
         # 2026-11-12-ordinary-preparation-admission.json and
         # ordinary-in-spiritu-2008-source-admission-2026-11-12.json).
+        # 2026-11-14 (public-domain witness campaign and the installed Lava me
+        # package): the Pustet 1862 paschal dismissal, the Wroclaw antiphonary
+        # Lava me, the 1946 Lasance printing and three new study Englishes.
         expected_witnesses = {
             (cummiskey, "en"): 24, (cummiskey, "la"): 24,
-            ("edition.catholic-church.missale-romanum.pustet-ratisbon-1862", "la"): 1,
+            ("edition.catholic-church.missale-romanum.pustet-ratisbon-1862", "la"): 2,
+            ("edition.anonymous.antiphonarium-wroclaw-r503.1375-1400-manuscript", "la"): 1,
+            ("edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946", "en"): 1,
+            ("edition.triptych.postconciliar-ordinary-fraction-perceptio-study-english-20261114.study-english-20261114", "en"): 2,
+            ("edition.triptych.postconciliar-ordinary-lava-me-study-english-20261112.study-english-20261112", "en"): 1,
             ("edition.triptych.postconciliar-ordinary-ancient-frames-study-english-20261030.study-english-20261030", "en"): 5,
             ("edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908", "en"): 1,
             ("edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945", "en"): 1,
@@ -200,15 +207,18 @@ class OrdinaryStructure(unittest.TestCase):
             "antecedent-held-not-carried": (1, "unavailable", "witness-gap"),
             # 2026-10-19 (C2 G5): the appointed Pentecost Preface and paschal
             # dismissal stand-ins add two English rights absences and two
-            # Latin publication-unresolved absences.
+            # Latin publication-unresolved absences. 2026-11-14: the paschal
+            # dismissal now holds the Pustet 1862 Latin and the 1946 Lasance
+            # English, so one of each remains.
             "appointed-text-printed-with-formulary": (
-                2, "unresolved", "rights-unresolved"
+                1, "unresolved", "rights-unresolved"
             ),
             "approved-english-publication-restriction": (
-                11, "rights-restricted", "rights-withheld"
+                10, "rights-restricted", "rights-withheld"
             ),
+            # 2026-11-14: Lava me holds the Wroclaw antiphonary Latin.
             "editio-typica-new-matter": (
-                12, "rights-restricted", "rights-withheld"
+                11, "rights-restricted", "rights-withheld"
             ),
             "element-spans-mixed-availability": (3, "unavailable", "model-gap"),
             "element-spans-mixed-matter": (5, "unavailable", "model-gap"),
@@ -218,7 +228,9 @@ class OrdinaryStructure(unittest.TestCase):
             # the unavailable second alternative, so those counts hold.
             "not-a-text": (19, "unavailable", "not-applicable"),
             "official-exemplar-not-carried": (5, "unavailable", "witness-gap"),
-            "priest-prayer-said-quietly": (4, "unavailable", "no-exemplar"),
+            # 2026-11-14: Lava me and the two Fraction/Perceptio prayers hold
+            # study English.
+            "priest-prayer-said-quietly": (1, "unavailable", "no-exemplar"),
             "proper-text-outside-ordinary": (6, "unavailable", "outside-layer"),
         }
         self.assertEqual(
@@ -245,7 +257,8 @@ class OrdinaryStructure(unittest.TestCase):
         ]
         # Independent old-source joins do not publish the approved English;
         # the remaining restricted nodes retain text-free typed absences.
-        self.assertEqual(len(affected), 11)
+        # 2026-11-14: the paschal dismissal's 1946 Lasance English leaves ten.
+        self.assertEqual(len(affected), 10)
         for element in affected:
             self.assertFalse(
                 any(row["lang"] == "en" for row in (element["translations"] or [])),
@@ -257,16 +270,18 @@ class OrdinaryStructure(unittest.TestCase):
         # refine three preserved structural parents (eight plus bishop), and
         # the 2026-11-12 n. 131 admission adds two alternatives under the
         # preserved private-preparation parent, the first held in both
-        # languages and the second wholly absent.
+        # languages and the second wholly absent. 2026-11-14: the paschal
+        # dismissal and Lava me gain both languages, Fraction and Perceptio
+        # English (public-domain witness campaign; installed Lava me package).
         self.assertEqual((languages["en"]["held"], languages["en"]["elements"]),
-                         (36, 72))
+                         (40, 72))
         self.assertEqual((languages["la"]["held"], languages["la"]["elements"]),
-                         (33, 72))
-        self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 36)
-        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 39)
+                         (35, 72))
+        self.assertEqual(languages["en"]["elements"] - languages["en"]["held"], 32)
+        self.assertEqual(languages["la"]["elements"] - languages["la"]["held"], 37)
         held_elements = [one for one in elements(file) if one["translations"]]
         wholly_absent = [one for one in elements(file) if not one["translations"]]
-        self.assertEqual((len(held_elements), len(wholly_absent)), (36, 36))
+        self.assertEqual((len(held_elements), len(wholly_absent)), (40, 32))
 
         self.assertEqual({row["lang"] for row in source["witnesses"]}, {"la", "en"})
         self.assertEqual(len({(row["id"], row["lang"]) for row in source["witnesses"]}),
@@ -286,8 +301,11 @@ class OrdinaryStructure(unittest.TestCase):
         english_keys = {row["key"] for row in source_elements if "english" in row}
         latin_keys = {row["key"] for row in source_elements if "latin" in row}
         self.assertLessEqual(latin_keys, english_keys)
+        # 2026-11-14: the Fraction and Perceptio study Englishes join the
+        # English-only study renderings.
         self.assertEqual(english_keys - latin_keys,
-                         {"kyrie", "communicantes", "domine-iesu-christe-qui-dixisti"})
+                         {"kyrie", "communicantes", "domine-iesu-christe-qui-dixisti",
+                          "fractio", "perceptio-corporis-et-sanguinis"})
 
     def test_postconciliar_english_remains_literal_historical_source(self) -> None:
         source = tomllib.loads(POST_INVENTORY.read_text())
@@ -488,7 +506,12 @@ class OrdinaryStructure(unittest.TestCase):
                         "ritus-communionis/domine-non-sum-dignus") for lang in ("en", "la")
         } | {("postconciliar", key, "en") for key in
              ("ritus-initiales/kyrie", "ritus-communionis/agnus-dei",
-              "ritus-communionis/domine-iesu-christe-qui-dixisti")}
+              "ritus-communionis/domine-iesu-christe-qui-dixisti")} | {
+            # 2026-11-14: the paschal dismissal's held Pustet 1862 Latin and
+            # 1946 Lasance English each carry the dismissal and its response.
+            ("postconciliar", "ritus-conclusionis/dimissio-appointed", lang)
+            for lang in ("en", "la")
+        }
         # C26 joins are independently checked single-actor Latin bodies;
         # Cummiskey's source-owned English has no new turn partition here.
         expected |= {
@@ -507,6 +530,13 @@ class OrdinaryStructure(unittest.TestCase):
             for section in inventory["sections"]
             for row in section.get("english_replacements", [])
         ]
+        # 2026-11-14: the eleven 1962 Preface headings take a study English of
+        # the Missal's own heading and rubric; a head is not spoken and has no
+        # turn partition, so it is counted apart from the Lasance prayers.
+        headings = [(section, row) for section, row in replacements
+                    if section == "praefatio" and row["element"].endswith("-heading")]
+        self.assertEqual(len(headings), 11)
+        replacements = [one for one in replacements if one not in headings]
         self.assertEqual(len(replacements), 110)
         replacement_keys = {("roman-1962", section + "/" + row["element"], "en")
                             for section, row in replacements}
@@ -713,15 +743,21 @@ class OrdinaryStructure(unittest.TestCase):
                 # resume-2026-11-12/ordinary-latin/admission.json): Mame 1922
                 # supplies the final blessing's Latin and Herder 1929 or Mame
                 # 1922 the four complete Prefaces, so both 1962 gaps close.
-                "no-facing-latin": 3,
+                # 2026-11-14 (public-domain witness campaign, Ordinary lane):
+                # the 1962 Missal's own rubrics and Preface headings, on the
+                # qualified basis, give Latin to the 1861 rubric rows and the
+                # three remaining no-facing-Latin rows; the lay missal's own
+                # apparatus has no Missal counterpart and is classified so.
+                "lay-apparatus-no-missal-counterpart": 13,
+                "no-facing-latin": 0,
                 "not-in-the-1962-ordo": 0,
                 "preface-not-in-witness": 0,
                 "proper-canon-form-not-held": 0,
                 "proper-communicantes-english-variant": 0,
-                "witness-own-english": 63,
+                "witness-own-english": 1,
             },
         )
-        self.assertEqual(sum(row["count"] for row in roman["absences"]), 72)
+        self.assertEqual(sum(row["count"] for row in roman["absences"]), 20)
         by_key = {element["key"]: element for element in elements(roman)}
         self.assertEqual(
             by_key["oblatio/accendat-in-nobis"]["absent"]["latin"],
@@ -733,7 +769,7 @@ class OrdinaryStructure(unittest.TestCase):
         self.assertNotIn("conclusio/et-famulos", by_key)
         self.assertEqual(
             by_key["praefatio/rubrica-nota-asterisci"]["absent"]["latin"],
-            "witness-own-english",
+            "lay-apparatus-no-missal-counterpart",
         )
 
         pre = self.files["roman-pre-1955"]
@@ -1519,10 +1555,13 @@ process.stdin.on('end', () => {
             counts.update(overrides.get(key, section["absent_latin"]) for key in missing)
         self.assertEqual(
             counts,
+            # 2026-11-14: thirteen of the 1861 witness's own-English rows are
+            # its lay apparatus, which no Missal prints (the total stays 83).
             Counter({
+                "lay-apparatus-no-missal-counterpart": 13,
                 "no-facing-latin": 8,
                 "not-in-the-1962-ordo": 4,
-                "witness-own-english": 71,
+                "witness-own-english": 58,
             }),
         )
 
@@ -1624,7 +1663,10 @@ process.stdin.on('end', () => {
             # 2026-11-12: the prayer-over-the-people cue element is held in
             # both languages, and four Prefaces plus the final blessing gain
             # their admitted historical Latin (ordinary-latin/admission.json).
-            [("en", 198, 3), ("la", 132, 69)],
+            # 2026-11-14: the 1962 Missal's own rubrics and Preface headings
+            # (qualified basis) give 52 more elements Latin; 13 of the 17 left
+            # are the lay missal's apparatus, which no Missal prints.
+            [("en", 198, 3), ("la", 184, 17)],
         )
         self.assertEqual(
             [one["key"] for one in roman["exclusions"]],
@@ -3115,7 +3157,7 @@ process.stdout.write(JSON.stringify({
     def test_partial_language_coverage_keeps_source_qualification_and_gaps(self) -> None:
         """Partial language coverage stays visible and never becomes fallback.
 
-        The accepted72-element checkpoint holds36 English and33 Latin sides;
+        The accepted72-element checkpoint holds40 English and35 Latin sides;
         all remaining sides keep their typed source limits. Its older Our Father preserves its
         source-only extent. Neither frame silently falls back to another side.
         """
@@ -3125,20 +3167,23 @@ process.stdout.write(JSON.stringify({
         # 2026-11-12 private-preparation admission: n. 131 splits into a
         # text-free parent and two alternatives, and only the first carries
         # historical Latin and English (one more held side in each language).
+        # 2026-11-14: the paschal dismissal, Lava me, Fraction and Perceptio.
         self.assertEqual(
-            [one["held"] for one in report["languages"]["postconciliar"]], [36, 33])
+            [one["held"] for one in report["languages"]["postconciliar"]], [40, 35])
         # 2026-11-12 Roman Ordinary admissions: the source-appointed prayer
         # over the people adds one cue element held in both languages, and
         # four complete historical Prefaces plus the final blessing gain
         # Latin (missal-reader-resume-2026-11-12/ordinary-latin/admission.json).
+        # 2026-11-14: the 1962 Missal's own rubrics and Preface headings
+        # (qualified basis) give 52 more elements Latin.
         self.assertEqual(
-            [one["held"] for one in report["languages"]["roman-1962"]], [198, 132])
+            [one["held"] for one in report["languages"]["roman-1962"]], [198, 184])
         self.assertEqual([one["elements"] for one in
                           report["languages"]["postconciliar"]], [72, 72])
         # Chrism supplies one newly held side in each language. The two scoped
         # Joseph English offers occupy one counted element, not two elements.
         elements = report["languages"]["roman-1962"][1]["elements"]
-        self.assertEqual(elements - 132, 69)
+        self.assertEqual(elements - 184, 17)
 
         pater = report["kyrie_in_each"]
         self.assertIn("Our Father, who art in heaven", pater["en"])
@@ -3197,13 +3242,18 @@ process.stdout.write(JSON.stringify({
         admission.json) the four Preface gaps and the final blessing's English-
         only block hold Latin, and the frame's 201st element is the
         source-appointed prayer-over-the-people cue, held in both languages.
+        Since 2026-11-14 the 1962 Missal's own rubrics and Preface headings
+        (qualified basis) give Latin to the three English-only blocks and all
+        but one own-English row; thirteen rows are the lay missal's apparatus.
         """
         report = self.run_harness()
         preamble = report["preamble_1962"]
-        self.assertIn("The 1861 witness prints this block only in English — 3 of 201 elements", preamble)
+        self.assertIn("The 1861 witness prints this block only in English — 0 of 201 elements", preamble)
         self.assertIn("This older oration is outside the 1962 Ordinary — 0 of 201 elements", preamble)
-        self.assertIn("The 1861 lay witness supplies its own English heading or rubric — 63 of 201 elements",
+        self.assertIn("The 1861 lay witness supplies its own English heading or rubric — 1 of 201 elements",
                       preamble)
+        self.assertIn("The 1861 lay missal's own apparatus; the Missal prints no Latin here — "
+                      "13 of 201 elements", preamble)
         self.assertIn("This day’s Ordinary appointment is not established — 6 of 201 elements", preamble)
         self.assertIn("The appointed proper Canon form is not held here — 0 of 201 elements", preamble)
         self.assertIn("Held English differs from this proper Communicantes — 0 of 201 elements", preamble)

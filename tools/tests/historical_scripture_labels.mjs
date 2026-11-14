@@ -9,16 +9,16 @@ const {browserDataRoot}=require(path.join(root,'tools/tests/_product_data.cjs'))
 const data=process.argv[3] || browserDataRoot(root);
 const core=process.argv[4] || path.join(root,'src/web/browser/shared/browser-core.js');
 const canonical=JSON.parse(fs.readFileSync(path.join(data,'structure/propers/postconciliar.json'))).masses
- .filter(m=>['christmas-december-30','christmas-december-31'].includes(m.key))
+ .filter(m=>['advent-december-21','lent-5-thursday'].includes(m.key))
  .map(m=>({mass:m.key,proper:m.propers.find(p=>p.name==='Entrance Antiphon'&&p.form_id==='main')}));
 assert.equal(canonical.length,2);
-// 2026-11-13: the historical Lasance English for these two antiphons stayed in a
-// private validation snapshot only; the reviewed canonical rows remain
-// rights-withheld (workflows/reviews/modern-source-completion-2026-11-12/
-// next-cohort-six/shared/qualification-addendum.json, "temporal" group,
-// unrelated_experimental_rows_restored_only_in_private_snapshot). No held
-// scripture-sourced English body exists, so the presentation and grade controls
-// run on explicitly synthetic, never-published words over the real carriers.
+// 2026-11-14: the Christmas December 30 and 31 antiphons this harness first
+// carried now hold their exact Latin and the historical Lasance English (the
+// public-domain witness campaign), so they are no longer scripture-only
+// carriers. These two remain rights-withheld in English with no held Latin
+// body. No held scripture-sourced English body exists, so the presentation and
+// grade controls run on explicitly synthetic, never-published words over the
+// real carriers.
 const SYNTHETIC='synthetic.test-only.historical-scripture-witness';
 function historicalSynthetic({mass,proper}){
  const held=structuredClone(proper),label='Synthetic historical English witness (test only, not published)';

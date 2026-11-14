@@ -19,7 +19,10 @@
       row.form_name, row.form_id]
       .concat((row.incipits || []).map(function (item) { return item.text; }))
       .concat((row.citations || []).map(function (item) { return item.ref; }))
-      .concat((row.witnesses || []).flatMap(function (item) { return [item.label, item.id]; }))
+      // Public witness labels only, as the status line promises: a witness's
+      // machine id can carry a date (an artifact made 2026-11-14), and a
+      // civil-date query must never match a mass through it.
+      .concat((row.witnesses || []).map(function (item) { return item.label; }))
       .map(normalized).join(' ');
   }
 
