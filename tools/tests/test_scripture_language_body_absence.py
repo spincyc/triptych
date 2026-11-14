@@ -17,9 +17,10 @@ class ScriptureLanguageBodyTests(unittest.TestCase):
   ledger=tomllib.loads((ROOT/'src/sources/inventories/postconciliar-proper-translations-v1.toml').read_text())
   expected={'saints-basil-great-gregory-nazianzen-bishops','saint-athanasius-bishop-doctor-church','saints-joachim-anne-parents-blessed-virgin','saint-dominic-priest','saint-augustine-bishop-doctor-church','saint-leo-great-pope-doctor-church','saint-ambrose-bishop-doctor-church'}
   cls.rows=[r for r in ledger['untranslated'] if r.get('mass') in expected and r.get('witness_passage_id') and str((cls.records.get(r['witness_passage_id']) or {}).get('locus') or '').startswith('proper-body:')]
-  assert len(cls.rows)==7
+  # Gap campaign 2026-11-14 admitted English for six of these antiphons; one absence remains.
+  assert len(cls.rows)==1
  def test_registered_english_body_bindings_are_exact(self):
-  self.assertGreaterEqual(len(self.rows),7)
+  self.assertGreaterEqual(len(self.rows),1)
   for row in self.rows:
    with self.subTest(mass=row['mass']):self.assertEqual(M.scripture_body_absence_problems(row,'postconciliar',self.records),[])
  def test_wrong_target_language_witness_page_or_hash_cannot_own_body(self):
@@ -63,5 +64,5 @@ class ScriptureLanguageBodyTests(unittest.TestCase):
   payload={'structure':structure,'cases':cases,'expectedCoverage':{mass['key']:V.summarize(V.proper_units(mass),'selection') for mass in (c['mass'] for c in cases)},'input':{'bibles':json.loads((browser_data_root(ROOT) / 'bibles.json').read_text())}}
   result=subprocess.run(['node',str(ROOT/'tools/tests/scripture_language_body_read.mjs')],input=json.dumps(payload),text=True,capture_output=True,cwd=ROOT)
   self.assertEqual(result.returncode,0,result.stderr)
-  proof=json.loads(result.stdout);self.assertEqual(proof['actualCases'],7);self.assertEqual(proof['actualCarrierRenders'],49)
+  proof=json.loads(result.stdout);self.assertEqual(proof['actualCases'],1);self.assertEqual(proof['actualCarrierRenders'],7)
 if __name__=='__main__':unittest.main()

@@ -3248,6 +3248,10 @@ sha256 = "44ef8380662dbc72ec152a13741f405111119b1c5b527e612b1493fcc24145c8"
 path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p2-lent-holyweek-admission.json"
 sha256 = "c5300043a7682c2b3929552d8a70909ae3f28cc5bfb71a40f209605b97bb4dac"
 
+[[english_quarantine.admission_receipts]]
+path = "workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json"
+sha256 = "c329b580d0432a032ca1b96115d148a178cac5e1a4f7c3ace5171e2683f24f91"
+
 [[sources]]
 id = "lasance-1945-printing-1946"
 source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
@@ -5750,53 +5754,6 @@ O almighty and eternal God, who didst both create and redeem us, mercifully hear
 """
 
 [[entries]]
-mass = "saints-sixtus-ii-pope-companions-martyrs"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer over the Offerings"
-incipit = "Munera tibi, Domine"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-103"
-ia_leaf = 482
-ia_leaf_range = [482, 482]
-printed_page = "474"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-103"
-route = "overlay-reuse"
-antecedent_calendar = "roman-1962"
-antecedent_mass = "commune-plurimorum-martyrum-2"
-antecedent_proper = "Secret"
-antecedent_overlay = "src/sources/inventories/roman-1962-proper-translations-v1.toml (mass commune-plurimorum-martyrum-2, proper Secret; printed p. 479 = leaf n487, detector second-printing-agrees)"
-relation = "identical"
-latin_diff = """
-none: the two texts are identical word for word and point for point.
-"""
-verified_on_page = "2026-08-20"
-verified_leaf = 482
-verified_printed_page = "474"
-verified_heading = "MASS VI. SANCTI TUI, &c."
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n482_w1400.jpg"
-verified_note = """
-FIRST PAGE READING THIS TEXT HAS HAD. The 1962 row for commune-plurimorum-martyrum-2/Secret rests on `detector = second-printing-agrees` and names printed p. 479. This lane read the OTHER printing, the one the day's own pointer names: leaf n482, printed p. 474, `SECRET. Of Martyrs not Bishops.--We bring thee, O Lord, the offerings of our devotion ; and may they be acceptable to thee in honour of thy saints, and available to our salvation. Thro'.` That is the 1962 row's text character for character, spaced semicolon included. Two printings of one oration in one book now agree on the page.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English of the antecedent oration roman-1962/commune-plurimorum-martyrum-2/Secret, which the roman-1862 Pustet printing gives this day and whose Latin stands beside the formerly recorded postconciliar Latin in `latin_diff` above, mechanically diffed and not summarised. The 1962 row was read at printed p. 479 = leaf n487, detector second-printing-agrees; this proposal copies its translation rows BYTE-EXACT and adds no new reading. Same commemoration as the Collect above. This oration names no saint, in either book, so the English answers this calendar's Latin entire.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-We bring thee, O Lord, the offerings of our devotion ; and may they be acceptable to thee in honour of thy saints, and, by thy mercy, available to our salvation. Thro'.
-"""
-
-[[entries]]
 mass = "saint-wenceslaus-martyr"
 form = ""
 form_id = "main"
@@ -6034,86 +5991,6 @@ Grant, we beseech thee, O Almighty God, that our minds may be so purified, as to
 """
 
 [[entries]]
-mass = "saint-george-martyr"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer over the Offerings"
-incipit = "Munera, Domine, oblata sanctifica"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-114"
-ia_leaf = 578
-ia_leaf_range = [578, 578]
-printed_page = "570"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-114"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 578
-verified_printed_page = "570"
-verified_heading = "23d APRIL. / XXIII. S. GEORGE, m. Patron of England."
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n578_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page image, four lines below the Collect, with no Latin cue set before it.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `comm-s-georgii-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Sanctify, O Lord, the offerings we have made; and, through the intercession of blessed George, thy Martyr, by them cleanse us from the stains of our sins. Thro'.
-"""
-
-[[entries]]
-mass = "saint-george-martyr"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer after Communion"
-incipit = "Supplices te rogamus"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-115"
-ia_leaf = 579
-ia_leaf_range = [579, 579]
-printed_page = "571"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-115"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 579
-verified_printed_page = "571"
-verified_heading = "24th AND 25th APRIL. (running head; the George Mass closes at the top of this page)"
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n579_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page image and the doubtful words again at 400: the page prints `beseeeh` for `beseech`, a damaged sort, recorded here as `beseech`; and it prints `by a life`, not `hy a life` as the item's optical text layer has it. The running head is the following days'; the Mass itself is headed on leaf n578.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: Supplices.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `comm-s-georgii-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-We humbly beseech thee, O Almighty God, that those whom thou hast refreshed with thy sacraments, may, by the intercession of blessed George, thy Martyr, by a life well-pleasing to thee, worthily serve thee. Thro'.
-"""
-
-[[entries]]
 mass = "saint-jerome-emiliani"
 form = ""
 form_id = "main"
@@ -6156,166 +6033,6 @@ O God, the Father of mercies: grant, by the merits and intercession of blessed J
 """
 
 [[entries]]
-mass = "saint-jerome-emiliani"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer over the Offerings"
-incipit = "Clementissime Deus"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-117"
-ia_leaf = 630
-ia_leaf_range = [630, 630]
-printed_page = "622"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-117"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 630
-verified_printed_page = "622"
-verified_heading = "20th JULY. (running head, printed `90th JULY` in a damaged sort)"
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n630_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page image, below the Offertory of the same Mass, with no Latin cue set before it.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-hieronymi-aemiliani-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Most merciful God, who destroying the old man, didst vouchsafe to form a new one in blessed Jerome: grant, by his merits, that we also, putting on the new man, may offer thee this sacrifice of propitiation as a most sweet odour. Thro'.
-"""
-
-[[entries]]
-mass = "saint-jerome-emiliani"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer after Communion"
-incipit = "Angelorum pane refecti"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-118"
-ia_leaf = 630
-ia_leaf_range = [630, 631]
-printed_page = "622-623"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-118"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 630
-verified_printed_page = "622-623"
-verified_heading = "20th JULY. (the oration runs over the leaf and ends on leaf n631, printed p. 623, running head `21st AND 22d JULY.`)"
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n630_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page images of both leaves, and the last line again at 400 dpi: the page prints `heaven` and then `Thro'.` with no point between them. The page also prints `beseeeh`, a damaged sort, recorded here as `beseech`. This calendar's Latin reads `amplissimum in regno tuo praemium`, `an ample reward in thy kingdom`; the witness renders it `an ample reward in heaven`.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: Angelorum.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-hieronymi-aemiliani-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Being refreshed with the bread of angels, we humbly beseech thee, O Lord, that we who rejoice on the solemnity of blessed Jerome, thy Confessor, may also follow his example, and thereby obtain an ample reward in heaven Thro'.
-"""
-
-[[entries]]
-mass = "saint-apollinaris-bishop-martyr"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer over the Offerings"
-incipit = "Respice, Domine, propitius"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-120"
-ia_leaf = 634
-ia_leaf_range = [634, 634]
-printed_page = "626"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-120"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 634
-verified_printed_page = "626"
-verified_heading = "24th JULY. (running head; the Apolinaris Mass closes on this page)"
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n634_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page image. This calendar's Latin reads `beati Sacerdotis et Martyris tui Apollinaris`; the witness renders it `blessed Apolinaris thy bishop and martyr`, so `Sacerdotis` is rendered `bishop` here as in the Collect. The running head is the following day's; the Mass is headed on leaf n632.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-apollinaris-episcopi-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Look favourably, O Lord, on these gifts which we offer in commemoration of blessed Apolinaris thy bishop and martyr, and for the expiation of our offences. Thro'.
-"""
-
-[[entries]]
-mass = "saint-apollinaris-bishop-martyr"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer after Communion"
-incipit = "Tua sancta sumentes"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-121"
-ia_leaf = 634
-ia_leaf_range = [634, 634]
-printed_page = "626"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-121"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 634
-verified_printed_page = "626"
-verified_heading = "24th JULY. (running head; see the Prayer over the Offerings above)"
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n634_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page image; the page sets the cue `P. COMM, Tua Sancta.`, with a comma for the point after `COMM`.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: Tua sancta.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-apollinaris-episcopi-martyris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Having received thy holy mysteries, we beseech thee, O Lord, that we may enjoy the continual protection of blessed Apolinaris, because thou never ceasest propitiously to regard those to whom thou hast granted the favour of such protection. Thro'.
-"""
-
-[[entries]]
 mass = "saint-louis"
 form = ""
 form_id = "main"
@@ -6353,86 +6070,6 @@ rights = "public-domain"
 source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
 text = """
 O God, who removedst blessed Lewis thy confessor, from an earthly kingdom to the glory of an heavenly crown: grant, we beseech thee, by his virtues and prayers, that we may be received into the company of the King of kings, Jesus Christ thy only Son. Who.
-"""
-
-[[entries]]
-mass = "saint-louis"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer over the Offerings"
-incipit = "Praesta, quaesumus omnipotens Deus"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-123"
-ia_leaf = 659
-ia_leaf_range = [659, 659]
-printed_page = "651"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-123"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 659
-verified_printed_page = "651"
-verified_heading = "26th AND 27th AUGUST. (running head; the Lewis Mass closes at the top of this page)"
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n659_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page image. The running head is the following days'; the Mass is headed on leaf n657.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: (none printed). No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-ludovici-regis-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-Grant, we beseech thee, O Almighty God, that as thy Confessor, blessed Lewis, despising all the delights of the world, studied only to please Christ his King; so also his prayers may render us acceptable to thee. Thro'.
-"""
-
-[[entries]]
-mass = "saint-louis"
-form = ""
-form_id = "main"
-cycle = "all"
-occurrence = 1
-proper = "Prayer after Communion"
-incipit = "Deus, qui beatum Confessorem tuum"
-witness = "cummiskey-1861"
-witness_relation = "antecedent"
-artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf"
-passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-postconciliar-antecedent-pc-124"
-ia_leaf = 659
-ia_leaf_range = [659, 659]
-printed_page = "651"
-publication_artifact_id = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.postconciliar-antecedent-orations-en"
-publication_artifact_sha256 = "ed16c0dad5fac745a642791ba850295b14304f2f7e831c7c38be99c413b42148"
-publication_passage_id = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-postconciliar-antecedent-pc-124"
-route = "page-harvest"
-relation = "antecedent-printing"
-verified_on_page = "2026-08-20"
-verified_leaf = 659
-verified_printed_page = "651"
-verified_heading = "26th AND 27th AUGUST. (running head; see the Prayer over the Offerings above)"
-verified_url = "https://archive.org/download/romanmissaltran00churgoog/page/n659_w1400.jpg"
-verified_note = """
-Read at 200 dpi on the page image, immediately below the Secret.
-"""
-witness_note = """
-The MR2002 text is not held here; this is the English this 1861 printing made for the antecedent oration, read on its page by this lane and carried because the formerly recorded postconciliar Latin at this slot is that oration. Latin cue on the page: Deus, qui.. No 1962 overlay row answers this slot and none was reused: the roman-1962 index's entry for this day, `s-ludovici-regis-confessoris`, records only its scripture-bearing propers and carries no oration at all, so the overlay has nothing filed against it. Nothing here is copied from another entry.
-"""
-
-[[entries.translations]]
-lang = "en"
-rights = "public-domain"
-source_id = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861"
-text = """
-O God, who didst render blessed Lewis, thy Confessor, illustrious on earth, and now glorious in heaven: appoint him, we beseech thee, the defender of thy church. Thro'.
 """
 
 [[entries]]
@@ -8225,44 +7862,6 @@ extent = "body"
 availability = "unavailable"
 reason = { kind = "no-exemplar" }
 note = "The witness supplies a generic abbot Common with a placeholder and a light textual relation, not this exact target body. No English wording is retained."
-
-
-[[untranslated]]
-mass = "saint-paulinus-nola-bishop"
-form_id = "main"
-proper = "Prayer over the Offerings"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The witness supplies a generic confessor-bishop Common and a light textual relation, not this exact target body. No English wording is retained."
-
-[[untranslated]]
-mass = "saint-paulinus-nola-bishop"
-form_id = "main"
-proper = "Prayer after Communion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The witness supplies a generic confessor-bishop Common with a placeholder and a light textual relation, not this exact target body. No English wording is retained."
-
-
-[[untranslated]]
-mass = "saints-sixtus-ii-pope-companions-martyrs"
-form_id = "main"
-proper = "Prayer after Communion"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = { kind = "no-exemplar" }
-note = "The historical plural-martyrs Postcommunion is a light variant rather than the exact target body. No English wording is retained."
 
 
 [[untranslated]]
@@ -10297,46 +9896,6 @@ source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphon
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
 
 [[untranslated]]
-mass = "saints-cyril-monk-methodius-bishop"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 103
-verified_printed_page = 95
-verified_heading = "Saints Cyril, Monk, and Methodius, Bishop"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 103, printed page 95. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saints-perpetua-felicity-martyrs"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 105
-verified_printed_page = 97
-verified_heading = "Saints Perpetua and Felicity, Martyrs"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 105, printed page 97. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
 mass = "saint-catherine-siena-virgin-doctor-church"
 form_id = "main"
 proper = "Entrance Antiphon"
@@ -10357,66 +9916,6 @@ source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphon
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
 
 [[untranslated]]
-mass = "saints-philip-james-apostles"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 110
-verified_printed_page = 102
-verified_heading = "SAINTS PHILIP AND JAMES, APOSTLES"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 110, printed page 102. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saints-peter-paul-apostles"
-form_id = "vigil"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 118
-verified_printed_page = 110
-verified_heading = "SAINTS PETER AND PAUL, APOSTLES"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 118, printed page 110. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saints-peter-paul-apostles"
-form_id = "day"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 118
-verified_printed_page = 110
-verified_heading = "SAINTS PETER AND PAUL, APOSTLES"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 118, printed page 110. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
 mass = "saint-benedict-abbot"
 form_id = "main"
 proper = "Entrance Antiphon"
@@ -10431,26 +9930,6 @@ verified_printed_page = 112
 verified_heading = "Saint Benedict, Abbot"
 verified_on_page = "2026-10-20"
 note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 120, printed page 112. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saint-james-apostle"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 122
-verified_printed_page = 114
-verified_heading = "SAINT JAMES, APOSTLE"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 122, printed page 114. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -10517,26 +9996,6 @@ source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphon
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
 
 [[untranslated]]
-mass = "saints-andrew-kim-tae-gon-priest"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 134
-verified_printed_page = 126
-verified_heading = "Saints Andrew Kim Tae-g ǒ n, Priest, and Paul Ch ǒ ng Ha-sang, and Companions, Martyrs"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 134, printed page 126. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
 mass = "saint-francis-assisi"
 form_id = "main"
 proper = "Entrance Antiphon"
@@ -10551,147 +10010,6 @@ verified_printed_page = 129
 verified_heading = "Saint Francis of Assisi"
 verified_on_page = "2026-10-20"
 note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 137, printed page 129. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saint-ignatius-antioch-bishop-martyr"
-form_id = "main"
-proper = "Communion Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 139
-verified_printed_page = 131
-verified_heading = "Saint Ignatius of Antioch, Bishop and Martyr"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 139, printed page 131. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saints-simon-jude-apostles"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 141
-verified_printed_page = 133
-verified_heading = "SAINTS SIMON AND JUDE, APOSTLES"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 141, printed page 133. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-
-[[untranslated]]
-mass = "saint-josaphat-bishop-martyr"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 145
-verified_printed_page = 137
-verified_heading = "Saint Josaphat, Bishop and Martyr"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 145, printed page 137. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saint-stephen-first-martyr"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 150
-verified_printed_page = 142
-verified_heading = "SAINT STEPHEN, THE FIRST MARTYR"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 150, printed page 142. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "holy-innocents-martyrs"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 151
-verified_printed_page = 143
-verified_heading = "THE HOLY INNOCENTS, MARTYRS"
-verified_on_page = "2026-10-20"
-note = "Exact 2010 ICEL English exemplar held and directly read on artifact page 151, printed page 143. The printed appointment is uncited. The artifact is restricted and no unconditional permission for these publication surfaces has been established. No English wording was copied or formerly published from this proposal; no removed-body hash exists. This does not establish exact 2008 Latin wording."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saints-basil-great-gregory-nazianzen-bishops"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.saints-basil-great-gregory-nazianzen-bishops-entrance-english-body"
-verified_artifact_page = 97
-verified_printed_page = 89
-verified_on_page = "2026-10-21"
-note = "Exact adapted English antiphon body held in registered ICEL2010 witness at artifact page 97, printed 89; restricted for these surfaces. The literal Cf citation remains a Bible component, not this whole English body. No wording or removed-body hash is claimed. This English witness does not establish Latin2008 body wording, mixed classification, or rights."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saint-athanasius-bishop-doctor-church"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.saint-athanasius-bishop-doctor-church-entrance-english-body"
-verified_artifact_page = 110
-verified_printed_page = 102
-verified_on_page = "2026-10-21"
-note = "Exact adapted English antiphon body held in registered ICEL2010 witness at artifact page 110, printed 102; restricted for these surfaces. The literal Cf citation remains a Bible component, not this whole English body. No wording or removed-body hash is claimed. This English witness does not establish Latin2008 body wording, mixed classification, or rights."
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -10718,106 +10036,6 @@ source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphon
 surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
 
 [[untranslated]]
-mass = "saint-dominic-priest"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.saint-dominic-priest-entrance-english-body"
-verified_artifact_page = 125
-verified_printed_page = 117
-verified_on_page = "2026-10-21"
-note = "Exact adapted English antiphon body held in registered ICEL2010 witness at artifact page 125, printed 117; restricted for these surfaces. The literal Cf citation remains a Bible component, not this whole English body. No wording or removed-body hash is claimed. This English witness does not establish Latin2008 body wording, mixed classification, or rights."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saint-augustine-bishop-doctor-church"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.saint-augustine-bishop-doctor-church-entrance-english-body"
-verified_artifact_page = 130
-verified_printed_page = 122
-verified_on_page = "2026-10-21"
-note = "Exact adapted English antiphon body held in registered ICEL2010 witness at artifact page 130, printed 122; restricted for these surfaces. The literal Cf citation remains a Bible component, not this whole English body. No wording or removed-body hash is claimed. This English witness does not establish Latin2008 body wording, mixed classification, or rights."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saint-leo-great-pope-doctor-church"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.saint-leo-great-pope-doctor-church-entrance-english-body"
-verified_artifact_page = 144
-verified_printed_page = 136
-verified_on_page = "2026-10-21"
-note = "Exact adapted English antiphon body held in registered ICEL2010 witness at artifact page 144, printed 136; restricted for these surfaces. The literal Cf citation remains a Bible component, not this whole English body. No wording or removed-body hash is claimed. This English witness does not establish Latin2008 body wording, mixed classification, or rights."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saint-ambrose-bishop-doctor-church"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.saint-ambrose-bishop-doctor-church-entrance-english-body"
-verified_artifact_page = 148
-verified_printed_page = 140
-verified_on_page = "2026-10-21"
-note = "Exact adapted English antiphon body held in registered ICEL2010 witness at artifact page 148, printed 140; restricted for these surfaces. The literal Cf citation remains a Bible component, not this whole English body. No wording or removed-body hash is claimed. This English witness does not establish Latin2008 body wording, mixed classification, or rights."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "assumption-blessed-virgin-mary"
-form_id = "day"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 2
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-verified_artifact_page = 127
-verified_printed_page = 119
-verified_heading = "THE ASSUMPTION OF THE BLESSED VIRGIN MARY"
-verified_on_page = "2026-10-21"
-note = "Exact 2010 ICEL English exemplar held and directly rechecked on artifact page 127, printed page 119; this source-order Entrance occurrence 2 is uncited. The registered artifact is restricted and no unconditional permission for these publication surfaces is established. No English wording is copied or formerly published from this candidate, so no removed-body hash exists. This establishes neither exact 2008 Latin wording nor a new English publication grant."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
 mass = "saint-john-apostle-evangelist"
 form_id = "main"
 proper = "Entrance Antiphon"
@@ -10832,27 +10050,6 @@ verified_printed_page = 143
 verified_heading = "SAINT JOHN, APOSTLE AND EVANGELIST"
 verified_on_page = "2026-10-21"
 note = "Exact 2010 ICEL English exemplar held and directly rechecked on artifact page 151, printed page 143; this source-order Entrance occurrence 1 is uncited. The registered artifact is restricted and no unconditional permission for these publication surfaces is established. No English wording is copied or formerly published from this candidate, so no removed-body hash exists. This establishes neither exact 2008 Latin wording nor a new English publication grant."
-[untranslated.reason]
-kind = "rights-withheld"
-source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-surfaces = ["site-display", "corpus-data", "public-git", "command-line", "download"]
-
-[[untranslated]]
-mass = "saint-john-apostle-evangelist"
-form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 2
-lang = "en"
-extent = "body"
-availability = "unavailable"
-witness_artifact_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
-witness_passage_id = "passage.catholic-church.missale-romanum.2010-english-icel-antiphonary.saint-john-apostle-evangelist-entrance-alternative-english-body"
-verified_artifact_page = 151
-verified_printed_page = 143
-verified_on_page = "2026-10-21"
-note = "Exact adapted English source-second Entrance Antiphon body held/restricted in registered ICEL2010 AP151, printed143, directly re-viewed2026-10-21. The literal Cf Sir15:5 names a Vulgate whole-verse component; the English body adapts its grammatical person and tense. This source occurrence2 remains an unselected same-seat alternative unless explicitly chosen. No English wording, Latin2008 body classification, Bible offset/part cut, or publication rights are supplied."
-verified_heading = "SAINT JOHN, APOSTLE AND EVANGELIST"
 [untranslated.reason]
 kind = "rights-withheld"
 source_id = "artifact.catholic-church.missale-romanum.2010-english-icel-antiphonary.antiphonary-pdf"
@@ -14178,25 +13375,6 @@ translations = [{"lang" = "en", "rights" = "project-created", "text" = "Lord, at
 [[untranslated]]
 mass = "saints-martha-mary-lazarus"
 form_id = "main"
-proper = "Entrance Antiphon"
-cycle = "all"
-occurrence = 1
-lang = "en"
-extent = "body"
-availability = "unavailable"
-reason = {"kind" = "rights-withheld", "source_id" = "artifact.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.official-final-texts-pdf-ae553ebc", "surfaces" = ["corpus-data", "public-git", "command-line", "download"]}
-witness_artifact_id = "artifact.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.official-final-texts-pdf-ae553ebc"
-witness_passage_id = "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2024-confirmed-us-english-formulary.entrance-witness"
-verified_on_page = "2026-11-12"
-verified_artifact_page = 1
-verified_printed_page = "unnumbered"
-verified_heading = "July 29 / Saints Martha, Mary, and Lazarus / Memorial / Entrance Antiphon"
-verified_url = "https://www.usccb.org/resources/sts-martha-mary-lazarus-final-texts-english.pdf"
-note = "The complete exact U.S. English Entrance Antiphon is held in the official final formulary and was inspected on its complete page. The footer identifies U.S. confirmation on 30 September 2024, Prot. n. 431/24, and ICEL ownership under 2010/2023 notices; no per-slot notice-year allocation is inferred. This is a held English exemplar, not no-exemplar and not an inference from the Latin hold. Its wording remains outside this bundled corpus, public Git, command-line output and downloads under the existing ICEL surface boundary. This metadata does not activate any English body or admit permission for a future display route; effective/promulgation date and such a route remain unestablished. The complete Entrance Antiphon and its printed comparison citation Cf. Lk 10:38 are present."
-
-[[untranslated]]
-mass = "saints-martha-mary-lazarus"
-form_id = "main"
 proper = "Collect"
 cycle = "all"
 occurrence = 1
@@ -15619,3 +14797,486 @@ ancient_passage_id = "passage.archdiocese-of-milan.missale-ambrosianum.milan-de-
 lang = "en"
 rights = "project-created"
 text = "I am the resurrection and the life, says the Lord; whoever believes in me shall not die for ever."
+
+# Gap campaign 2026-11-14, batch p5-sanctoral-marian; see workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json.
+[[entries]]
+mass = "saints-basil-great-gregory-nazianzen-bishops"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "1321"
+ia_leaf = 1342
+ia_leaf_range = [1342, 1342]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "a144a784adf80d59c9681d1732d44c98c953a47531824c4c9f7a841122c70560"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 1321, PDF page [1343], IA leaf [1342], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon Sapientiam of the Common of Several Martyrs, bounded before Ecclus. 44, 32. The Latin it translates agrees word for word with the target Latin under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "Let the people show forth the wisdom of the saints, and the church declare their praise; and their names shall live unto generation and generation."
+
+[[entries]]
+mass = "saint-dominic-priest"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "1047"
+ia_leaf = 1056
+ia_leaf_range = [1056, 1056]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-dominic-priest-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "a144a784adf80d59c9681d1732d44c98c953a47531824c4c9f7a841122c70560"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-dominic-priest-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 1047, PDF page [1057], IA leaf [1056], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon In medio Ecclesiae of St Basil (14 June), bounded before Ps. 91, 2. The Latin it translates agrees word for word with the target Latin under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "In the midst of the Church the Lord opened his mouth; and filled him with the spirit of wisdom and understanding: He clothed him with a robe of glory."
+
+[[entries]]
+mass = "saint-augustine-bishop-doctor-church"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "1047"
+ia_leaf = 1056
+ia_leaf_range = [1056, 1056]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-augustine-bishop-doctor-church-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "a144a784adf80d59c9681d1732d44c98c953a47531824c4c9f7a841122c70560"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-augustine-bishop-doctor-church-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 1047, PDF page [1057], IA leaf [1056], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon In medio Ecclesiae of St Basil (14 June), bounded before Ps. 91, 2. The Latin it translates agrees word for word with the target Latin under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "In the midst of the Church the Lord opened his mouth; and filled him with the spirit of wisdom and understanding: He clothed him with a robe of glory."
+
+[[entries]]
+mass = "saint-ambrose-bishop-doctor-church"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "1047"
+ia_leaf = 1056
+ia_leaf_range = [1056, 1056]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-ambrose-bishop-doctor-church-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "a144a784adf80d59c9681d1732d44c98c953a47531824c4c9f7a841122c70560"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-ambrose-bishop-doctor-church-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 1047, PDF page [1057], IA leaf [1056], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon In medio Ecclesiae of St Basil (14 June), bounded before Ps. 91, 2. The Latin it translates agrees word for word with the target Latin under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "In the midst of the Church the Lord opened his mouth; and filled him with the spirit of wisdom and understanding: He clothed him with a robe of glory."
+
+[[entries]]
+mass = "saint-john-apostle-evangelist"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 2
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "1047"
+ia_leaf = 1056
+ia_leaf_range = [1056, 1056]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-john-apostle-evangelist-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "a144a784adf80d59c9681d1732d44c98c953a47531824c4c9f7a841122c70560"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-john-apostle-evangelist-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 1047, PDF page [1057], IA leaf [1056], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon In medio Ecclesiae of St Basil (14 June), bounded before Ps. 91, 2. The Latin it translates agrees word for word with the target Latin under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "In the midst of the Church the Lord opened his mouth; and filled him with the spirit of wisdom and understanding: He clothed him with a robe of glory."
+
+[[entries]]
+mass = "saint-ignatius-antioch-bishop-martyr"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "899"
+ia_leaf = 908
+ia_leaf_range = [908, 908]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-ignatius-antioch-bishop-martyr-main-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "a144a784adf80d59c9681d1732d44c98c953a47531824c4c9f7a841122c70560"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-ignatius-antioch-bishop-martyr-main-communion-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 899, PDF page [909], IA leaf [908], read on the page image by the integrate lane on 2026-11-14: the Communion Frumentum Christi sum of St Ignatius. The Latin it translates agrees word for word with the target Latin under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "I am Christ's corn; let me be ground by the teeth of beasts, that I may be made into clean bread."
+
+[[entries]]
+mass = "saint-leo-great-pope-doctor-church"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "lasance-1945-printing-1946"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "1337"
+ia_leaf = 1358
+ia_leaf_range = [1358, 1358]
+artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-leo-great-pope-doctor-church-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "a144a784adf80d59c9681d1732d44c98c953a47531824c4c9f7a841122c70560"
+publication_passage_id = "passage.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-sanctoral-marian-saint-leo-great-pope-doctor-church-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 1337, PDF page [1359], IA leaf [1358], read on the page image by the integrate lane on 2026-11-14: the Introit antiphon Statuit of the Common of a Confessor-Bishop, without the parenthetical paschal Alleluia. The Latin it translates agrees word for word with the target Latin under accents, ligatures, i/j and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+text = "The Lord made to him a covenant of peace, and made him a prince; that the dignity of priesthood should be to him forever."
+
+[[entries]]
+mass = "saints-perpetua-felicity-martyrs"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "510"
+ia_leaf = 593
+ia_leaf_range = [593, 593]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saints-perpetua-felicity-martyrs-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "7d1575369bb07258cae82390835524b3cd20668a4f6cced8896962327ace43c9"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saints-perpetua-felicity-martyrs-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 510, PDF page [594], IA leaf [593], read on the page image by the integrate lane on 2026-11-14: the Magnificat antiphon of First Vespers of the Common of Several Martyrs; the printed chant asterisk is omitted. Bute translates the Breviary antiphon Gaudent in caelis, whose Latin (Breviarium 1888 pars hiemalis p. 435) agrees word for word with the target under spelling, accents and pointing only. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "In heaven do rejoice the souls of the Saints who have followed the steps of Christ; and because they shed their blood for the love of Christ, therefore shall they be made glad for ever with Christ."
+
+[[entries]]
+mass = "saints-peter-paul-apostles"
+form_id = "vigil"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "181"
+ia_leaf = 264
+ia_leaf_range = [264, 264]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saints-peter-paul-apostles-vigil-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "7d1575369bb07258cae82390835524b3cd20668a4f6cced8896962327ace43c9"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saints-peter-paul-apostles-vigil-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 181, PDF page [265], IA leaf [264], read on the page image by the integrate lane on 2026-11-14: the Vespers antiphon of the commemoration of the Apostles. Bute translates the antiphon Petrus Apostolus, whose Latin (Breviarium 1888 pars hiemalis p. 126) agrees word for word with the target. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "Peter the Apostle, and Paul the Teacher of the Gentiles, have taught us Thy law, O Lord."
+
+[[entries]]
+mass = "saints-peter-paul-apostles"
+form_id = "day"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "472"
+ia_leaf = 555
+ia_leaf_range = [555, 555]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saints-peter-paul-apostles-day-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "7d1575369bb07258cae82390835524b3cd20668a4f6cced8896962327ace43c9"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saints-peter-paul-apostles-day-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 472, PDF page [556], IA leaf [555], read on the page image by the integrate lane on 2026-11-14: the Seventh Responsory of the Common of Apostles, complete respond before its Verse; the footnote figure before 'they' is apparatus. Bute translates the respond Isti sunt qui viventes in carne, whose Latin (Breviarium 1888 pars hiemalis p. 410) agrees word for word with the target. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "These are they who while yet they lived in the flesh, planted the Church in their own blood; they drank of the Lord's cup, and became the friends of God."
+
+[[entries]]
+mass = "saint-james-apostle"
+form_id = "main"
+proper = "Communion Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "472"
+ia_leaf = 555
+ia_leaf_range = [555, 555]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saint-james-apostle-main-communion-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "7d1575369bb07258cae82390835524b3cd20668a4f6cced8896962327ace43c9"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saint-james-apostle-main-communion-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 472, PDF page [556], IA leaf [555], read on the page image by the integrate lane on 2026-11-14: the repeated Answer of the Seventh Responsory of the Common of Apostles. Bute's Answer translates exactly the repetendum Calicem Domini biberunt, et amici Dei facti sunt, the target's words. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "They drank of the Lord's cup, and became the friends of God."
+
+[[entries]]
+mass = "saints-simon-jude-apostles"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "472"
+ia_leaf = 555
+ia_leaf_range = [555, 555]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saints-simon-jude-apostles-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "7d1575369bb07258cae82390835524b3cd20668a4f6cced8896962327ace43c9"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saints-simon-jude-apostles-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 472, PDF page [556], IA leaf [555], read on the page image by the integrate lane on 2026-11-14: the Eighth Responsory of the Common of Apostles, first clause before its repetendum. Bute's clause maps one-to-one onto the Latin span Isti sunt viri sancti, quos elegit Dominus in caritate non ficta, et dedit illis gloriam sempiternam (DECISIONS 4e). The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "These men are saints, whom the Lord hath chosen in love unfeigned, and hath given them glory everlasting."
+
+[[entries]]
+mass = "saint-josaphat-bishop-martyr"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+witness = "bute-1908-breviary"
+witness_relation = "antecedent"
+relation = "antecedent-printing"
+printed_page = "506"
+ia_leaf = 589
+ia_leaf_range = [589, 589]
+artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.english-completion-20261029-postconciliar-bute1908-pdf"
+passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saint-josaphat-bishop-martyr-main-entrance-antiphon-source"
+collated = "page-image, complete historical body, 2026-11-14"
+collation_result = "confirmed"
+publication_artifact_id = "artifact.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-english"
+publication_artifact_sha256 = "7d1575369bb07258cae82390835524b3cd20668a4f6cced8896962327ace43c9"
+publication_passage_id = "passage.catholic-church.breviarium-romanum.blackwood-bute-winter-1908.gap-campaign-20261114-sanctoral-marian-saint-josaphat-bishop-martyr-main-entrance-antiphon-publication"
+witness_note = "Historical human English for study, printed p. 506, PDF page [590], IA leaf [589], read on the page image by the integrate lane on 2026-11-14: the Seventh Responsory of the Common of Several Martyrs, complete respond before its Verse. Bute translates the respond Propter testamentum Domini, whose Latin (Breviarium 1888 pars hiemalis p. [43]) agrees word for word with the target. The English is the antecedent's own, quoted without word change, never the Missal's approved English; ICEL wording is not consulted or reproduced. Printed-2002 fidelity and authenticated 2008 correspondence remain unestablished. The superseded unavailable record is preserved in the dated admission receipt; any approved-English restriction is unchanged."
+[[entries.translations]]
+lang = "en"
+rights = "public-domain"
+source_id = "edition.catholic-church.breviarium-romanum.blackwood-bute-winter-1908"
+text = "Because of the covenant of the Lord, and the laws of their fathers, the Saints of God abode in brotherly love, for one spirit and one faith was ever in them."
+
+[[entries]]
+mass = "assumption-blessed-virgin-mary"
+form_id = "day"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 2
+relation = "abridged"
+ancient_reading = "Gaudeamus omnes in Domino, diem festum celebrantes sub honore beatae Mariae Virginis: de cujus Assumptione gaudent Angeli, et collaudant Filium Dei."
+divergence = "Target (secondary 2002 artifact page 481, second Entrance Antiphon of the Mass during the Day) omits beatae before Mariae Virginis; nothing is added, substituted or reordered. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. [unnumbered]"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-assumption-blessed-virgin-mary-day-entrance-antiphon-2-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Let us all rejoice in the Lord, keeping festival in honour of the Virgin Mary, at whose Assumption the Angels rejoice and together praise the Son of God."
+
+[[entries]]
+mass = "saints-cyril-monk-methodius-bishop"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Isti sunt viri sancti, facti amici Dei, divinae veritatis praeconio gloriosi: linguae eorum claves coeli factae sunt."
+divergence = "Target (secondary 2002 artifact page 428) omits the final clause linguae eorum claves coeli factae sunt of the Magnificat antiphon; nothing is added, substituted or reordered. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888; printed p. 408"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.ia-scan-pdf-13b6e8ce"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.gap-campaign-20261114-sanctoral-marian-saints-cyril-monk-methodius-bishop-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "These are holy men, made friends of God, glorious in the proclaiming of divine truth."
+
+[[entries]]
+mass = "saint-athanasius-bishop-doctor-church"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "In medio Ecclesiae aperuit os ejus: et implevit eum Dominus spiritu sapientiae et intellectus: stolam gloriae induit eum, alleluja, alleluja."
+divergence = "Target (secondary 2002 artifact page 443) prints alleluia once where the witness prints it twice; nothing is added or substituted. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam; printed p. 584"
+witness_edition_id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+witness_artifact_id = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+ancient_passage_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-saint-athanasius-bishop-doctor-church-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "In the midst of the Church the Lord opened his mouth and filled him with the spirit of wisdom and understanding; he clothed him with a robe of glory, alleluia."
+
+[[entries]]
+mass = "saints-philip-james-apostles"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Isti sunt viri sancti, quos elegit Dominus in caritate non ficta, et dedit illis gloriam sempiternam: * Quorum doctrina fulget Ecclesia, ut sole luna."
+divergence = "Target (secondary 2002 artifact page 444) is the respond's opening span ending at the witness's printed asterisk, with the paschal alleluia appended: one inserted word (one change unit; DECISIONS 5 and 7b). The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 411"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-saints-philip-james-apostles-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "These are holy men, whom the Lord chose in unfeigned charity, and he gave them everlasting glory, alleluia."
+
+[[entries]]
+mass = "saints-martha-mary-lazarus"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "In illo tempore: Intravit Jesus in quoddam castellum: et mulier quaedam, Martha nomine, excepit illum in domum suam. Et reliqua."
+divergence = "The target (2021 official annex) is the Gospel incipit printed between In illo tempore: and Et reliqua.; its Latin is published from that witness in the same increment. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888; printed p. 451"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.ia-scan-pdf-13b6e8ce"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.gap-campaign-20261114-sanctoral-marian-saints-martha-mary-lazarus-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "Jesus entered into a certain village, and a certain woman named Martha received him into her house."
+
+[[entries]]
+mass = "saints-andrew-kim-tae-gon-priest"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "verbatim"
+ancient_reading = "Sanguis sanctorum martyrum pro Christo effusus est in terris, ideo adepti sunt praemia sempiterna."
+divergence = "Word-identical with the antiphon printed in Migne PL 78 (1895 printing); its Latin is published from that witness in the same increment. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78; printed p. col. 824"
+witness_edition_id = "edition.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78"
+witness_artifact_id = "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.whole-pdf-20261112-21c082e9"
+ancient_passage_id = "passage.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.gap-campaign-20261114-sanctoral-marian-saints-andrew-kim-tae-gon-priest-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The blood of the holy martyrs was poured out on earth for Christ; therefore they have obtained everlasting rewards."
+
+[[entries]]
+mass = "saint-stephen-first-martyr"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "variant"
+ancient_reading = "Patefactae sunt januae coeli Christi Martyri beato Stephano, qui in numero Martyrum inventus est primus: * Et ideo triumphat in coelis coronatus."
+divergence = "Target (secondary 2002 artifact page 532) reads Apertae for Patefactae (one substitution) and omits Christi Martyri; nothing else changes (DECISIONS 5). The English follows the Missal. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 196"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-saint-stephen-first-martyr-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The gates of heaven were opened to blessed Stephen, who was found to be the first in the number of the Martyrs, and therefore he triumphs in heaven, crowned."
+
+[[entries]]
+mass = "holy-innocents-martyrs"
+form_id = "main"
+proper = "Entrance Antiphon"
+cycle = "all"
+occurrence = 1
+relation = "abridged"
+ancient_reading = "Innocentes pro Christo infantes occisi sunt, ab iniquo rege lactentes interfecti sunt: ipsum sequuntur Agnum sine macula, et dicunt semper: Gloria tibi Domine."
+divergence = "Target (secondary 2002 artifact page 534) omits ab iniquo rege lactentes interfecti sunt from the Magnificat antiphon; nothing is added, substituted or reordered. The comparison is bounded to the inspected target page; printed-2002 fidelity and the authenticated 2008 whole remain unresolved. Original unapproved project study English, translated only from the target Latin by the integrate lane (gap campaign 2026-11-14) from a research-lane draft reviewed for literal fidelity; no ICEL, USCCB or other approved English was consulted. Not a text for recitation."
+ancient_witness = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888; printed p. 209"
+witness_edition_id = "edition.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888"
+witness_artifact_id = "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"
+ancient_passage_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-holy-innocents-martyrs-main-entrance-antiphon-1-study-source"
+[[entries.translations]]
+lang = "en"
+rights = "project-created"
+text = "The innocent infants were slain for Christ; they follow the spotless Lamb himself, and they say for ever: Glory to you, O Lord."

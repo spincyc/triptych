@@ -1,0 +1,19 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-sanctoral-marian-latin"
+edition_id = "edition.catholic-church.missale-romanum.pustet-ratisbon-1862"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Faithful transcriptions of complete Latin units printed in the identified 1862 historical book, public domain in the United States by publication date before 1931. Mechanical transcription with declared accent/ligature/line-wrap normalization adds no authorship. The basis reaches only these historical words, not any modern edition, layout or apparatus."
+derived_from = "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"
+transformation = "Read on page images by the integrate lane on 2026-11-14. Join physical wraps and division hyphens; remove stress accents; expand ae/oe ligatures; keep historical spelling, abbreviations and pointing as printed. Rubric labels, versicle glyphs and following psalm verses outside each unit are excluded unless printed inside it."
+retrieved = "2026-11-14"
+notes = "Gap campaign 2026-11-14 batch p5-sanctoral-marian. One row per complete Latin unit; each row is selected by its own passage. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+sha256 = "16eef587387993e150a069b40fbc0d078f973a5fe0a04e6da7dda3a78373389d"
+byte_size = 325
+path = "src/sources/works/catholic-church/missale-romanum/editions/pustet-ratisbon-1862/artifacts/gap-campaign-20261114-sanctoral-marian-latin/text.tsv"
+encoding = "utf-8"
+indexable = true

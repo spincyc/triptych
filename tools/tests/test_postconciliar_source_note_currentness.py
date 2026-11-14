@@ -49,8 +49,10 @@ class PostconciliarSourceNoteCurrentnessTests(unittest.TestCase):
         entrance = next(p for p in mass['propers'] if p['name'] == 'Entrance Antiphon')
         self.assertEqual(entrance['source'], 'composed')
         self.assertNotIn('verses', entrance)
-        self.assertNotIn('text', entrance)
-        self.assertEqual(entrance['text_status']['reasons'][0]['kind'], 'witness-gap')
+        # Gap campaign 2026-11-14: the uncited antiphon is word-identical with an antiphon
+        # printed in Migne PL 78 (1895 printing) and now carries its Latin body.
+        self.assertIsInstance(entrance['text'], str)
+        self.assertNotIn('text_status', entrance)
         self.assertIn('2026-08-21 inspection initially carried only the Communion citation', mass['notes'])
         self.assertIn('absence of a citation does not classify its complete body as non-scriptural', mass['notes'])
         self.assertNotIn('THE ENTRANCE ANTIPHON IS PROPER AND NON-SCRIPTURAL', mass['notes'])

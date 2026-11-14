@@ -339,6 +339,34 @@ body_status = "removed"
 text_sha256 = "ed1feaf165e733a96e3ce72a6302723051f3645898454fe0d86ce3a5ece22d61"
 
 [[entries]]
+mass = "dedication-basilica-saint-mary-major"
+form = ""
+proper = "Collect"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "e3108ec871285f76b0b2951bc9bcb60c1540c2134593d4863aaa13333ae0b77e"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-dedication-basilica-saint-mary-major-main-collect"
+source_date = "1922"
+locator = "Mame 1922 printed p. [unnumbered opening page of the Assumption] / artifact page 805; gap-campaign-20261114-sanctoral-marian-latin TSV line 3"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-dedication-basilica-saint-mary-major-main-collect-comparison"
+verification_locator = "secondary-2002 with Notitiae 2008 variation artifact page 474; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Target is the 2002 Collect with the official 2008 replacement (de actibus nostris non valemus, Genetricis Filii tui Domini nostri intercessione salvemur. Qui tecum) applied.", "Received spelling Genitricis/Genetricis.", "Conclusion at the length the target prints it: Qui tecum. is the opening of the witness's own cue Qui tecum vivit."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Witness: Mame 1922 Collect of the Assumption (pre-1950 formulary). Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin line 3"
+publication_evidence = "The entire Latin body is read in the identified 1922 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 46). New body owner."
+
+[[entries]]
 mass = "easter-2"
 form = ""
 proper = "Collect"
@@ -1921,8 +1949,26 @@ proper = "Collect"
 course = ""
 cycle = ""
 occurrence = 1
-body_status = "removed"
-text_sha256 = "ca98ee3be5696fecf9899c3e1695c22bd9ede55fee1d8129341bb39438c711f2"
+text_sha256 = "a7ef5c7c728239e086e3ca42552819d8e79369f28f4961c151a2111d0d13fd4e"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-sanctoral-marian-mary-holy-mother-god-main-collect"
+source_date = "1862"
+locator = "Pustet 1862 printed p. 30 / artifact page 116; gap-campaign-20261114-sanctoral-marian-latin TSV line 2"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-mary-holy-mother-god-main-collect-comparison"
+verification_locator = "secondary-2002 with Notitiae 2008 variation artifact page 110; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Target is the 2002 Collect with the official 2008 replacement (per quam meruimus auctorem vitae suscipere, Dominum nostrum Iesum Christum, Filium tuum) applied.", "Conclusion at the length the target prints it: Qui tecum. is the opening of the witness's own Qui tecum vivit et regnat.", "j/i: Jesum/Iesum."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Witness: Pustet 1862 Collect of the Circumcision (In Circumcisione Domini), printed p. 30. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.ia-facsimile-pdf-363d6fc3"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.gap-campaign-20261114-sanctoral-marian-latin line 2"
+publication_evidence = "The entire Latin body is read in the identified 1862 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 0). Replaces the former removed-body quarantine row."
 
 [[entries]]
 mass = "mary-mother-of-god"
@@ -4066,6 +4112,34 @@ body_status = "removed"
 text_sha256 = "3d81f72648c6c6f1ad7a6ba40179b66c7f88da3d3823a4c9f53142074599556d"
 
 [[entries]]
+mass = "saint-ambrose-bishop-doctor-church"
+form = ""
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "c5f8639da74de70a8f6ed12156770179f1db09bfdaaeafcaa003d1116d859b85"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-saint-ambrose-bishop-doctor-church-main-entrance-antiphon"
+source_date = "1922"
+locator = "Mame 1922 printed p. 702 / artifact page 816; gap-campaign-20261114-sanctoral-marian-latin TSV line 6"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saint-ambrose-bishop-doctor-church-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 528; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "j/i: ejus/eius, Jesus/Iesus as applicable.", "Witness: Introit of St Augustine (28 August); following Psalm 91 verse excluded."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin line 6"
+publication_evidence = "The entire Latin body is read in the identified 1922 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 77). New body owner."
+
+[[entries]]
 mass = "saint-anthony-abbot"
 form = ""
 proper = "Collect"
@@ -4106,24 +4180,60 @@ body_status = "removed"
 text_sha256 = "9a5caf5eb7a3d1ba3876a8044ad5a0fd166cccdccac3e9121f7fd557f2093536"
 
 [[entries]]
-mass = "saint-apollinaris-bishop-martyr"
+mass = "saint-augustine-bishop-doctor-church"
 form = ""
-proper = "Prayer after Communion"
+proper = "Entrance Antiphon"
 course = ""
 cycle = ""
 occurrence = 1
-body_status = "removed"
-text_sha256 = "744d627e6cce84259b427701196c1d3070cdfd27c51e541ec39c7bc13c617c38"
+text_sha256 = "b674b4a4d5e38ae8f37e0190d889fde73a6a8b92f8adf50f6a66b90b148a6a9a"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-saint-augustine-bishop-doctor-church-main-entrance-antiphon"
+source_date = "1922"
+locator = "Mame 1922 printed p. 702 / artifact page 816; gap-campaign-20261114-sanctoral-marian-latin TSV line 5"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saint-augustine-bishop-doctor-church-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 487; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "j/i: ejus/eius, Jesus/Iesus as applicable.", "Witness: Introit of St Augustine (28 August); following Psalm 91 verse excluded."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin line 5"
+publication_evidence = "The entire Latin body is read in the identified 1922 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 57). New body owner."
 
 [[entries]]
-mass = "saint-apollinaris-bishop-martyr"
+mass = "saint-dominic-priest"
 form = ""
-proper = "Prayer over the Offerings"
+proper = "Entrance Antiphon"
 course = ""
 cycle = ""
 occurrence = 1
-body_status = "removed"
-text_sha256 = "582012044cc4c75d5a477cea0e184d1ff18552cc50d8f362d72db96a8330cef2"
+text_sha256 = "d5145022501fd86f7de5c7887bcbdbebc0e6f4f351c352ac78682e39674b4084"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-saint-dominic-priest-main-entrance-antiphon"
+source_date = "1922"
+locator = "Mame 1922 printed p. 702 / artifact page 816; gap-campaign-20261114-sanctoral-marian-latin TSV line 4"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saint-dominic-priest-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 476; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "j/i: ejus/eius, Jesus/Iesus as applicable.", "Witness: Introit of St Augustine (28 August); following Psalm 91 verse excluded."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin line 4"
+publication_evidence = "The entire Latin body is read in the identified 1922 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 50). New body owner."
 
 [[entries]]
 mass = "saint-george-martyr"
@@ -4134,26 +4244,6 @@ cycle = ""
 occurrence = 1
 body_status = "removed"
 text_sha256 = "63e4b9e5b7689a6d94a88207ac8eeb2efcdab1011ff9e18a2608f42b57dd9ab5"
-
-[[entries]]
-mass = "saint-george-martyr"
-form = ""
-proper = "Prayer after Communion"
-course = ""
-cycle = ""
-occurrence = 1
-body_status = "removed"
-text_sha256 = "7b178f0e04f7177b070ef7bed248e4295877ba059adbf85f780814c79094886d"
-
-[[entries]]
-mass = "saint-george-martyr"
-form = ""
-proper = "Prayer over the Offerings"
-course = ""
-cycle = ""
-occurrence = 1
-body_status = "removed"
-text_sha256 = "5171d9d8109f9f700881a3c7567b43c27d08035809af27c52c766dba490967a7"
 
 [[entries]]
 mass = "saint-hedwig-religious"
@@ -4176,6 +4266,62 @@ body_status = "removed"
 text_sha256 = "095288d211db1444020c4ca81c6c194d464f27d332b63961c37ce0248131faee"
 
 [[entries]]
+mass = "saint-ignatius-antioch-bishop-martyr"
+form = ""
+proper = "Communion Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "4c47606e11f3f769d468aedd63a7c04a3e7916f7dc2ec57554d25d6d46f9f41c"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-saint-ignatius-antioch-bishop-martyr-main-communion-antiphon"
+source_date = "1922"
+locator = "Mame 1922 printed p. 522 / artifact page 636; gap-campaign-20261114-sanctoral-marian-latin TSV line 8"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saint-ignatius-antioch-bishop-martyr-main-communion-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 508; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Witness: Communion of St Ignatius (1 February)."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin line 8"
+publication_evidence = "The entire Latin body is read in the identified 1922 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 71). New body owner."
+
+[[entries]]
+mass = "saint-james-apostle"
+form = ""
+proper = "Communion Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "629ac4d7a6dcbd55186a657295dca61e475ccff8b00aa6163d91c677e2f42329"
+provenance_status = "collated"
+source_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-saint-james-apostle-main-communion-antiphon"
+source_date = "1888"
+locator = "Breviarium Romanum Pustet 1888 pars hiemalis printed p. 410 / artifact page 464; gap-campaign-20261114-sanctoral-marian-latin TSV line 5"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saint-james-apostle-main-communion-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 469; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Contiguous span of the respond Isti sunt qui viventes in carne beginning at the witness's own printed asterisk (repetendum) and ending before its versicle (DECISIONS 6c)."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin line 5"
+publication_evidence = "The entire Latin body is read in the identified 1888 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 39). New body owner."
+
+[[entries]]
 mass = "saint-jerome-emiliani"
 form = ""
 proper = "Collect"
@@ -4186,24 +4332,88 @@ body_status = "removed"
 text_sha256 = "feb5f3892ce0217deb4ff534fe5947e01b2b513b87f0460859f9e4b6ce86502d"
 
 [[entries]]
-mass = "saint-jerome-emiliani"
+mass = "saint-john-apostle-evangelist"
 form = ""
-proper = "Prayer after Communion"
+proper = "Entrance Antiphon"
 course = ""
 cycle = ""
 occurrence = 1
-body_status = "removed"
-text_sha256 = "a35cd99029cce1597a8f9f4aa7612e55d457cdb773ae48dabe81f8c7c1adc898"
+text_sha256 = "c5f8639da74de70a8f6ed12156770179f1db09bfdaaeafcaa003d1116d859b85"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-saint-john-apostle-evangelist-main-entrance-antiphon"
+source_date = "1922"
+locator = "Mame 1922 printed p. 702 / artifact page 816; gap-campaign-20261114-sanctoral-marian-latin TSV line 7"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saint-john-apostle-evangelist-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 533; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "j/i: ejus/eius, Jesus/Iesus as applicable.", "Witness: Introit of St Augustine (28 August); following Psalm 91 verse excluded. Second printed Entrance Antiphon of the day (the first remains an unavailable body)."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin line 7"
+publication_evidence = "The entire Latin body is read in the identified 1922 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 82). New body owner."
 
 [[entries]]
-mass = "saint-jerome-emiliani"
+mass = "saint-josaphat-bishop-martyr"
 form = ""
-proper = "Prayer over the Offerings"
+proper = "Entrance Antiphon"
 course = ""
 cycle = ""
 occurrence = 1
-body_status = "removed"
-text_sha256 = "dd1883e050f26feeb81d49a9be587ac6788c6678ba61fa5e360b2f6be1c3f7f0"
+text_sha256 = "09571f1e6486e60acc58a69ee4e3025a1431c900d600de85a87c20ed04940eae"
+provenance_status = "collated"
+source_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-saint-josaphat-bishop-martyr-main-entrance-antiphon"
+source_date = "1888"
+locator = "Breviarium Romanum Pustet 1888 pars hiemalis printed p. [43] / artifact page 605; gap-campaign-20261114-sanctoral-marian-latin TSV line 7"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saint-josaphat-bishop-martyr-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 521; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Complete respond before its versicle (DECISIONS 6c); respond mark and repetendum asterisk omitted; capitalization follows the target."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin line 7"
+publication_evidence = "The entire Latin body is read in the identified 1888 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 74). New body owner."
+
+[[entries]]
+mass = "saint-leo-great-pope-doctor-church"
+form = ""
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "c4de84ea9cb776cac92913801e1b1c8082c9b8990b1eb79f8fba1b808e6f4b41"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-saint-leo-great-pope-doctor-church-main-entrance-antiphon"
+source_date = "1922"
+locator = "Mame 1922 printed p. 21* / artifact page 899; gap-campaign-20261114-sanctoral-marian-latin TSV line 9"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saint-leo-great-pope-doctor-church-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 519; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Witness: Introit of the Common of a Confessor Bishop I; the parenthetical paschal addition (T. P. alleluja, alleluja) and the following Psalm 131 verse are outside the unit."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin line 9"
+publication_evidence = "The entire Latin body is read in the identified 1922 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 73). New body owner."
 
 [[entries]]
 mass = "saint-louis"
@@ -4214,26 +4424,6 @@ cycle = ""
 occurrence = 1
 body_status = "removed"
 text_sha256 = "c5a8b3a99aafe80e6139be09ae7d0030adc50e77a4591f0e83df7327dc943fb5"
-
-[[entries]]
-mass = "saint-louis"
-form = ""
-proper = "Prayer after Communion"
-course = ""
-cycle = ""
-occurrence = 1
-body_status = "removed"
-text_sha256 = "07a6b9db0f24ea30929d00de5b9930c19112d33179ae033ab38619573cae1115"
-
-[[entries]]
-mass = "saint-louis"
-form = ""
-proper = "Prayer over the Offerings"
-course = ""
-cycle = ""
-occurrence = 1
-body_status = "removed"
-text_sha256 = "b0ceaf24800ea1021494ee9db00bc2d1baaf2e02ae3176e0cffa071c01be9fb0"
 
 [[entries]]
 mass = "saint-margaret-scotland"
@@ -4254,26 +4444,6 @@ cycle = ""
 occurrence = 1
 body_status = "removed"
 text_sha256 = "90501c9fd7c73e762d9f6823ed82d01b2040756c6539af8b376259b72042e17e"
-
-[[entries]]
-mass = "saint-paulinus-nola-bishop"
-form = ""
-proper = "Prayer after Communion"
-course = ""
-cycle = ""
-occurrence = 1
-body_status = "removed"
-text_sha256 = "9419770e98499897cc700689cd3dfa6db1a2584d2250c4737cb9af21439c7362"
-
-[[entries]]
-mass = "saint-paulinus-nola-bishop"
-form = ""
-proper = "Prayer over the Offerings"
-course = ""
-cycle = ""
-occurrence = 1
-body_status = "removed"
-text_sha256 = "ca869dea8958677c36e1e98f69bce6df5bcc26865aa2cb6bd4e9ed9fa1f8f8bf"
 
 [[entries]]
 mass = "saint-peter-claver-priest"
@@ -4306,6 +4476,202 @@ body_status = "removed"
 text_sha256 = "14fdc996fee66693cd39b5571aa0603bca2d9fb21fe3928387bd92c61ace9bf7"
 
 [[entries]]
+mass = "saints-andrew-kim-tae-gon-priest"
+form = ""
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "020848712f23aff3ffe93571bca09284fc3a9d12f365919cc5f0146ed7c136e0"
+provenance_status = "collated"
+source_id = "passage.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.gap-campaign-20261114-sanctoral-marian-saints-andrew-kim-tae-gon-priest-main-entrance-antiphon"
+source_date = "1895"
+locator = "Migne PL 78 (Paris: Garnier, 1895 printing) printed p. col. 824 / artifact page 416; gap-campaign-20261114-sanctoral-marian-latin TSV line 2"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saints-andrew-kim-tae-gon-priest-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 496; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Witness: antiphon of the Gregorian antiphonary printed in Migne PL 78, Paris: Garnier, 1895 printing (title page, artifact page 7; DECISIONS 6d); label Ant. omitted."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.gap-campaign-20261114-sanctoral-marian-latin", "artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.whole-pdf-20261112-21c082e9"]
+publication_locator = "Tracked checked transcription artifact.jacques-paul-migne.patrologia-latina-volume-78.latin-migne-pl-78.gap-campaign-20261114-sanctoral-marian-latin line 2"
+publication_evidence = "The entire Latin body is read in the identified 1895 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 65). New body owner."
+
+[[entries]]
+mass = "saints-basil-great-gregory-nazianzen-bishops"
+form = ""
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "c46d2ff9b96c740e82f6e82ba74d4a7103823a1afe94d55826e38d3c9da981b5"
+provenance_status = "collated"
+source_id = "passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon"
+source_date = "1922"
+locator = "Mame 1922 printed p. 612 / artifact page 726; gap-campaign-20261114-sanctoral-marian-latin TSV line 2"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saints-basil-great-gregory-nazianzen-bishops-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 415; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Witness: Introit of Ss. Primus and Felician; following Psalm 32 verse excluded."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.gap-campaign-20261114-sanctoral-marian-latin line 2"
+publication_evidence = "The entire Latin body is read in the identified 1922 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 9). New body owner."
+
+[[entries]]
+mass = "saints-martha-mary-lazarus"
+form = ""
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "ffa4e6f19dc83fb937c764abdb9b256818737ea5addcb1919ec36e0bc648855b"
+provenance_status = "collated"
+source_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.gap-campaign-20261114-sanctoral-marian-saints-martha-mary-lazarus-main-entrance-antiphon"
+source_date = "1888"
+locator = "Breviarium Romanum Pustet 1888 pars aestiva printed p. 451 / artifact page 481; gap-campaign-20261114-sanctoral-marian-latin TSV line 2"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.roman-calendar-martha-mary-lazarus-additions-2021.2021-official-latin-decree-and-annex.entrance-appointment"
+verification_locator = "2021 CDDS annex (Prot. N. 35/21) artifact page 1; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Contiguous span of the Gospel lesson incipit printed between the liturgical formula In illo tempore: and the cue Et reliqua. (pericope opening; DECISIONS 6c).", "j/i: ejus/eius, Jesus/Iesus as applicable.", "Target is the 2021 official annex (read on its page image, artifact page 1), which prints the same antiphon as the secondary 2002 reproduction (artifact page 470)."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.ia-scan-pdf-13b6e8ce"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-aestiva-1888.gap-campaign-20261114-sanctoral-marian-latin line 2"
+publication_evidence = "The entire Latin body is read in the identified 1888 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 41). New body owner."
+
+[[entries]]
+mass = "saints-perpetua-felicity-martyrs"
+form = ""
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "244dd4e147456eb43a9da7fb0e53745316ca07fbf4c3ef4b46ea188ced68a60d"
+provenance_status = "collated"
+source_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-saints-perpetua-felicity-martyrs-main-entrance-antiphon"
+source_date = "1888"
+locator = "Breviarium Romanum Pustet 1888 pars hiemalis printed p. 435 / artifact page 489; gap-campaign-20261114-sanctoral-marian-latin TSV line 2"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saints-perpetua-felicity-martyrs-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 431; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Received spelling coelis/caelis; j/i: ejus/eius, Jesus/Iesus as applicable.", "Witness: commemoration antiphon (Ant.) of several martyrs; label omitted."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin line 2"
+publication_evidence = "The entire Latin body is read in the identified 1888 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 20). New body owner."
+
+[[entries]]
+mass = "saints-peter-paul-apostles"
+form = "Mass during the Day"
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "ea9fcef213681ffed3b3369a59d861f5339c4a3810550841147cafdf7bc3273b"
+provenance_status = "collated"
+source_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-saints-peter-paul-apostles-day-entrance-antiphon"
+source_date = "1888"
+locator = "Breviarium Romanum Pustet 1888 pars hiemalis printed p. 410 / artifact page 464; gap-campaign-20261114-sanctoral-marian-latin TSV line 4"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saints-peter-paul-apostles-day-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 461; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Complete respond before its versicle (DECISIONS 6c); respond mark and repetendum asterisk omitted."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin line 4"
+publication_evidence = "The entire Latin body is read in the identified 1888 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 33). New body owner."
+
+[[entries]]
+mass = "saints-peter-paul-apostles"
+form = "Vigil Mass"
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "26393ab3c5a195ce49227a60a1c863bf32a08d792f3672a1981e7da3bcf20c6f"
+provenance_status = "collated"
+source_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-saints-peter-paul-apostles-vigil-entrance-antiphon"
+source_date = "1888"
+locator = "Breviarium Romanum Pustet 1888 pars hiemalis printed p. 126 / artifact page 180; gap-campaign-20261114-sanctoral-marian-latin TSV line 3"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saints-peter-paul-apostles-vigil-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 460; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Witness: Vespers antiphon of the common commemoration De Apostolis; label omitted; capitalization follows the target."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin line 3"
+publication_evidence = "The entire Latin body is read in the identified 1888 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 32). New body owner."
+
+[[entries]]
+mass = "saints-simon-jude-apostles"
+form = ""
+proper = "Entrance Antiphon"
+course = ""
+cycle = ""
+occurrence = 1
+text_sha256 = "513d14f1ad202a82f055413780b84dfef8c764e766b7769a8a67fff33edf1bc4"
+provenance_status = "collated"
+source_id = "passage.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-saints-simon-jude-apostles-main-entrance-antiphon"
+source_date = "1888"
+locator = "Breviarium Romanum Pustet 1888 pars hiemalis printed p. 411 / artifact page 465; gap-campaign-20261114-sanctoral-marian-latin TSV line 6"
+relationship = "editorial-projection-exact-to-target"
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-tertia-2002.gap-campaign-20261114-sanctoral-marian-saints-simon-jude-apostles-main-entrance-antiphon-comparison"
+verification_locator = "secondary-2002 artifact page 511; text-free comparison"
+transformations = ["Remove stress accents, expand ligatures, join printed line wraps; follow the target's capitalization and pointing (calendar orthography: i for j, ae/oe digraphs, no accents).", "Contiguous span of the respond ending at the witness's own printed asterisk (DECISIONS 6c); respond mark omitted."]
+provenance_evidence = "Every target body word agrees in order with the complete historical unit read on its page image by the integrate lane on 2026-11-14; the declared orthography, pointing and display transformations account for the complete difference. Review receipt workflows/reviews/gap-campaign-2026-11-14/postconciliar/p5-sanctoral-marian-admission.json."
+provenance_authority = "Target wording from the controlling modern text named in the verification locator, independently sourced from a complete public-domain historical witness; no whole-2008 altar Missal authentication"
+provenance_confidence = "high"
+publication_status = "permitted"
+publication_basis = "public-domain"
+surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
+publication_source_ids = ["artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin", "artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.english-completion-20261029-postconciliar-latin1888-pdf"]
+publication_locator = "Tracked checked transcription artifact.catholic-church.breviarium-romanum.pustet-ratisbon-pars-hiemalis-1888.gap-campaign-20261114-sanctoral-marian-latin line 6"
+publication_evidence = "The entire Latin body is read in the identified 1888 historical book, public domain in the United States by publication date before 1931, and every target word stands in it; the published text adds no word the public-domain witnesses do not print. No restricted modern edition supplies any word."
+notice = "Latin wording independently sourced from an identified public-domain historical witness and compared word for word with the controlling modern text. Not an authenticated 2008 Missal transcription."
+note = "Gap campaign 2026-11-14 (p5-sanctoral-marian target 72). New body owner."
+
+[[entries]]
 mass = "saints-sixtus-ii-pope-companions-martyrs"
 form = ""
 proper = "Collect"
@@ -4314,26 +4680,6 @@ cycle = ""
 occurrence = 1
 body_status = "removed"
 text_sha256 = "4e56ca1461a85d7d611ec936e120269bf1d6bb092c575542df05e21b883bf3a9"
-
-[[entries]]
-mass = "saints-sixtus-ii-pope-companions-martyrs"
-form = ""
-proper = "Prayer after Communion"
-course = ""
-cycle = ""
-occurrence = 1
-body_status = "removed"
-text_sha256 = "828282265f6e2813a9c40b209f7cd4636ff2730211abd0a9a9c4a0df9eff50ad"
-
-[[entries]]
-mass = "saints-sixtus-ii-pope-companions-martyrs"
-form = ""
-proper = "Prayer over the Offerings"
-course = ""
-cycle = ""
-occurrence = 1
-body_status = "removed"
-text_sha256 = "5daee08e050f66e47c561431a724624200d8da610ebaadd38a21f9a59ee961ae"
 
 [[entries]]
 mass = "saturday-after-ash-wednesday"

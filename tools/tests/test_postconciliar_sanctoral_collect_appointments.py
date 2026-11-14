@@ -78,11 +78,18 @@ class PostconciliarSanctoralCollectAppointmentTests(unittest.TestCase):
             with self.subTest(mass=key):
                 proper = self.by_key[key]["propers"][0]
                 self.assertEqual(proper["source"], "composed")
-                self.assertEqual(proper["text_status"], {
-                    "state": "unavailable", "scope": "proper-body",
-                    "reasons": [{"kind": "witness-gap", "source_id": SEGMENT}],
-                })
-                for field in ("text", "incipit", "translations", "publication_basis",
+                if key == "dedication-basilica-saint-mary-major":
+                    # Gap campaign 2026-11-14: the 2008 Collect is word-identical with the
+                    # public-domain Mame 1922 Assumption Collect and now carries its body.
+                    self.assertIsInstance(proper["text"], str)
+                    self.assertNotIn("text_status", proper)
+                else:
+                    self.assertEqual(proper["text_status"], {
+                        "state": "unavailable", "scope": "proper-body",
+                        "reasons": [{"kind": "witness-gap", "source_id": SEGMENT}],
+                    })
+                    self.assertNotIn("text", proper)
+                for field in ("incipit", "translations", "publication_basis",
                               "body_sha256", "takes_from", "text_from"):
                     self.assertNotIn(field, proper)
                 for locator in (date, str(ap), str(printed), target_id(date), "2008"):

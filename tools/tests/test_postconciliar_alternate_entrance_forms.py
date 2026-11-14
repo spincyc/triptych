@@ -30,6 +30,13 @@ def tool(name):
     return module
 
 
+import tomllib as _tomllib
+GAP_ENGLISH_20261114 = {(e['mass'], e.get('form_id', 'main'), e.get('occurrence', 1))
+                        for e in _tomllib.loads((Path(__file__).resolve().parents[2] / 'src/sources/inventories/postconciliar-proper-translations-v1.toml').read_text())['entries']
+                        if 'integrate lane' in str(e.get('witness_note', '')) + str(e.get('divergence', ''))
+                        and e['proper'] == 'Entrance Antiphon'}
+
+
 class AlternateEntranceFormsTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -55,10 +62,12 @@ class AlternateEntranceFormsTests(unittest.TestCase):
                 self.assertEqual(rows[-1]['name'], 'Communion Antiphon')
                 for row, reference in zip([*rows[:2], rows[-1]], (first, second, communion)):
                     self.assertIn(f'artifact page {ap} / printed page {pp}', row['notes'])
-                    self.assertNotIn('text', row)
                     self.assertNotIn('incipit', row)
+                    admitted = isinstance(row.get('text'), str)  # gap campaign 2026-11-14 Latin admission
+                    if not admitted:
+                        self.assertNotIn('text', row)
                     if reference:
-                        self.assertEqual(row['source'], 'scripture')
+                        self.assertEqual(row['source'], 'mixed' if admitted else 'scripture')
                         self.assertEqual(row['verses'], [self.canon.parse_citation(reference)])
                     else:
                         self.assertEqual(row['source'], 'composed')
@@ -97,6 +106,13 @@ class AlternateEntranceFormsTests(unittest.TestCase):
         for (key, form), (ap, pp, first, second, _) in CASES.items():
             occurrence = 1 if first is None else 2
             proper = self.holder(key, form)['propers'][occurrence - 1]
+            if (key, form, occurrence) in GAP_ENGLISH_20261114:
+                # Gap campaign 2026-11-14 replaced this absence with project study English.
+                self.assertFalse(self.absences.get((key, form, 'Entrance Antiphon'), []) and
+                                 self.propers.matching_untranslated_records(
+                                     proper, self.absences.get((key, form, 'Entrance Antiphon'), []),
+                                     occurrence, cycle='all', extent='body'))
+                continue
             records = self.propers.matching_untranslated_records(
                 proper, self.absences.get((key, form, 'Entrance Antiphon'), []), occurrence, cycle='all', extent='body')
             self.assertEqual(len(records), 1)
@@ -122,10 +138,13 @@ class AlternateEntranceFormsTests(unittest.TestCase):
     def test_cited_john_component_does_not_claim_a_complete_adapted_english_body(self):
         alternative = self.holder('saint-john-apostle-evangelist', 'main')['propers'][1]
         self.assertEqual(alternative['verses'][0]['ref'], 'Sirach 15:5')
-        self.assertEqual(alternative['source'], 'scripture')
+        # Gap campaign 2026-11-14: the In medio Ecclesiae body is exact to Mame 1922 and now
+        # carries its Latin beside the retained Sirach citation; its English is historical
+        # antecedent English recorded in the overlay, never in the calendar file.
+        self.assertEqual(alternative['source'], 'mixed')
+        self.assertIsInstance(alternative.get('text'), str)
         self.assertIn('not proof of the full adapted English antiphon body', alternative['notes'])
         self.assertIn('separate Sirach English body-scope companion', alternative['notes'])
-        self.assertFalse(alternative.get('text'))
         self.assertFalse(alternative.get('translations'))
 
 

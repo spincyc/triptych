@@ -363,6 +363,13 @@ def _martha_ordo_row(calendar: dict, evidence: dict) -> dict:
     _require_correction(len(propers) == 10 and [proper.get("name") for proper in held]
                         == [name for name, _ in slots], "Martha five held Missal roles")
     for proper, (name, suffix) in zip(held, slots):
+        if name == "Entrance Antiphon" and isinstance(proper.get("text"), str):
+            # Gap campaign 2026-11-14: the annex Entrance Antiphon is an exact span of the
+            # public-domain 1888 Breviary Gospel incipit and now carries its Latin body.
+            _require_correction(proper.get("source") == "composed"
+                                and not (proper.keys() - {"name", "source", "text", "notes"}),
+                                "Martha admitted Entrance Antiphon body")
+            continue
         _require_correction(proper.get("source") == "composed"
                             and not (proper.keys() - {"name", "source", "text_status", "notes"})
                             and proper.get("text_status") == {

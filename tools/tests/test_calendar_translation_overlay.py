@@ -1157,7 +1157,17 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
                 hashlib.sha256(row["translations"][0]["text"].encode()).hexdigest(),
                 english_sha256,
             )
-        for key in (self.BOUND - self.UNBOUND) | set(self.RECOVERED):
+        # Gap campaign 2026-11-14 (DECISIONS 6a): the 2002 Missal prints only a Collect
+        # and a Common direction for these days, so their Prayer over the Offerings and
+        # Prayer after Communion rows were withdrawn with any attached English.
+        withdrawn = {(mass, proper) for mass in (
+            "saint-jerome-emiliani", "saint-george-martyr", "saint-paulinus-nola-bishop",
+            "saint-apollinaris-bishop-martyr", "saints-sixtus-ii-pope-companions-martyrs",
+            "saint-louis") for proper in ("Prayer over the Offerings", "Prayer after Communion")}
+        for key in withdrawn:
+            self.assertNotIn(key, positives)
+            self.assertNotIn(key, gaps)
+        for key in ((self.BOUND - self.UNBOUND) | set(self.RECOVERED)) - withdrawn:
             self.assertIn(key, positives)
             self.assertNotIn(key, gaps)
             row = positives[key]
@@ -1175,7 +1185,7 @@ class RecoveredCummiskeyAntecedentProductionTests(unittest.TestCase):
                 self.assertTrue(row.get(field), (key, field))
         for key in (((self.QUARANTINED - set(self.RECOVERED)
                       - set(self.STUDY_SUCCESSORS)) | self.UNBOUND)
-                    - set(self.ELEVEN_STUDY_SUCCESSORS)):
+                    - set(self.ELEVEN_STUDY_SUCCESSORS) - withdrawn):
             self.assertNotIn(key, positives)
             self.assertIn(key, gaps)
             self.assertEqual(gaps[key]["availability"], "unavailable")

@@ -11,7 +11,7 @@ class LanguageBodyCliSelectionTests(unittest.TestCase):
  @classmethod
  def setUpClass(cls):
   ledger=tomllib.loads((ROOT/'src/sources/inventories/postconciliar-proper-translations-v1.toml').read_text())
-  row=next(r for r in ledger['untranslated'] if r.get('mass')=='saints-basil-great-gregory-nazianzen-bishops' and r.get('proper')=='Entrance Antiphon' and r.get('extent')=='body')
+  row=next(r for r in ledger['untranslated'] if r.get('mass')=='saints-joachim-anne-parents-blessed-virgin' and r.get('proper')=='Entrance Antiphon' and r.get('extent')=='body')
   cls.absence=MASS.public_untranslated_record(row)
  def proper(self):
   return {'name':'Entrance Antiphon','source':'scripture','verses':[{'ref':'Sirach 15:5','text':'Synthetic Bible component.'}],'untranslated':[copy.deepcopy(self.absence)],'unavailable_translations':[copy.deepcopy(self.absence)]}
