@@ -154,14 +154,20 @@ class OrationConclusions(unittest.TestCase):
         payload = {"calendar": "roman-1962", "masses": [{"key": "advent-2", "propers": [proper]}]}
         virtual = ROOT / "src/web/data/structure/propers/conclusion-execution-test.json"
         read_text = Path.read_text
+        read_bytes = Path.read_bytes
 
         def check(data):
             def read(path, *args, **kwargs):
                 return json.dumps(data, ensure_ascii=False) if path == virtual else read_text(path, *args, **kwargs)
+
+            def read_raw(path):
+                # The gate reads raw bytes so that it can bind reader metadata.
+                return json.dumps(data, ensure_ascii=False).encode("utf-8") if path == virtual else read_bytes(path)
             # This unit exercises only the new finite descriptor gate using
             # checked historical text. The existing quarantine/release suite
             # independently checks the full current source-epoch receipt.
-            with patch.object(Path, "read_text", read), patch.object(gate, "postconciliar_quarantined_text_hashes", return_value=frozenset()):
+            with patch.object(Path, "read_text", read), patch.object(Path, "read_bytes", read_raw), \
+                    patch.object(gate, "postconciliar_quarantined_text_hashes", return_value=frozenset()):
                 gate.validate_liturgical_public_data(virtual)
 
         check(payload)

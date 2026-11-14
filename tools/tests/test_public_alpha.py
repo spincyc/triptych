@@ -262,10 +262,14 @@ class PublicAlphaTest(unittest.TestCase):
             self.add_propers_reader_fixture(dict(structure, calendar=calendar))
         data_root = self.root / "src/web/data"
         validated = {}
-        for path in data_root.rglob("*.json"):
-            relative = path.relative_to(data_root).as_posix()
-            if "/reader/" not in relative:
-                validated[relative] = self.tool.validate_liturgical_public_data(path)
+        # The synthetic "postconciliar" structure is a relabelled 1962 fixture;
+        # the real calendar's finite actor descriptors are not part of it.
+        import _source_local_actor_sequences
+        with mock.patch.object(_source_local_actor_sequences, "load_sources", return_value={}):
+            for path in data_root.rglob("*.json"):
+                relative = path.relative_to(data_root).as_posix()
+                if "/reader/" not in relative:
+                    validated[relative] = self.tool.validate_liturgical_public_data(path)
         proofs = self.tool.validate_propers_read_payload_sources(data_root, validated_sources=validated)
         self.assertEqual(len(proofs), 3)
         for relative, proof in proofs.items():
