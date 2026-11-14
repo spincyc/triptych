@@ -88,12 +88,12 @@ class LasanceAdventIIIVPhase1Tests(unittest.TestCase):
                 self.assertIn('Former Cummiskey1861 lead remains unbound', row['witness_note'])
                 self.assertIn('no cross-appointment reuse', row['witness_note'])
                 self.assertFalse({'speaker', 'actor', 'text_structure'} & row.keys())
-        self.assertFalse([r for r in self.document['untranslated']
+        self.assertFalse([r for r in self.document.get("untranslated", [])
                           if (r['mass'], r['proper']) in ACTIVE])
 
     def test_source_discrepancies_are_retained_not_silently_corrected(self):
         self.assertNotIn(('advent-2', 'Collect'), self.entries)
-        self.assertFalse([r for r in self.document['untranslated']
+        self.assertFalse([r for r in self.document.get("untranslated", [])
                           if (r['mass'], r['proper']) == ('advent-2', 'Collect')])
         received = [r for r in self.document['entries']
                     if (r['mass'], r['proper']) == ('advent-2', 'Collect')]

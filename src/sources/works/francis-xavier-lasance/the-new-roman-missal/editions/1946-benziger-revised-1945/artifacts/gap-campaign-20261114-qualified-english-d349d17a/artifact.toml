@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.gap-campaign-20261114-qualified-english-d349d17a"
+edition_id = "edition.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946"
+artifact_type = "verified-transcription"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "qualified-public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Carried under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml ([how_to_admit].english_carried; limit L6): English of the 1945 Lasance/Walsh expression translating Holy See Latin first published in 1932 and admitted on that basis; registrations A 110108 (1937) and A 192159 (1945) were not renewed (src/sources/inventories/lasance-new-roman-missal-rights-v1.toml), and this printing's copyright leaf (PDF p. 10) reads Copyright, 1937, 1945, by Benziger Brothers, Inc. Published on a qualified basis (publication policy priority 6; confidence medium-low): English from a United States book whose own copyright was not renewed, translating a Holy See text first published in Vatican City in 1931-1975 whose Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+sha256 = "d349d17acd5d898c518a0b53548d7c3b0ab8d158308bf64cd4c9fc356fb7da10"
+byte_size = 741
+path = "src/sources/works/francis-xavier-lasance/the-new-roman-missal/editions/1946-benziger-revised-1945/artifacts/gap-campaign-20261114-qualified-english-d349d17a/text.tsv"
+retrieved = "2026-11-14"
+derived_from = "artifact.francis-xavier-lasance.the-new-roman-missal.benziger-revised-1945-printing-1946.ia-google-facsimile-pdf-4573991d"
+transformation = "Transcribe each selected English prayer from the 1946 printing's page image, joining line wraps and line-end hyphenation and keeping the printing's words, capitals, spelling and pointing; one prayer per TSV row."
+provenance = "Read on the page images of PDF pp. 1029-1030 (printed pp. 1019-1020) of the exact 1946 printing on 2026-11-14; the OCR layer was not used as authority."
+encoding = "utf-8"
+indexable = true

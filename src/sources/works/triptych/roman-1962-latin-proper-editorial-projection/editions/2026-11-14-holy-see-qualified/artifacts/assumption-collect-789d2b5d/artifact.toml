@@ -1,0 +1,19 @@
+schema = 1
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified.assumption-collect-789d2b5d"
+edition_id = "edition.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-11-14-holy-see-qualified"
+artifact_type = "editorial-projection"
+media_type = "text/plain; charset=utf-8"
+storage = "tracked"
+rights_status = "qualified-public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "Admitted under src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml: Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission. First Holy See publication: Acta Apostolicae Sedis 42 (1950), p. 793: Sacred Congregation of Rites, Mass of the Assumption of the Blessed Virgin Mary (Signum magnum). The bytes are a project transcription of the 1962 typical-edition page images; neither the facsimile nor any Vatican delivery is redistributed."
+sha256 = "789d2b5d328b3332995b838f5f3473f04efb406b0b616ebcf429c60d4cba5292"
+byte_size = 245
+path = "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-14-holy-see-qualified/artifacts/assumption-collect-789d2b5d/latin.txt"
+retrieved = "2026-11-14"
+encoding = "utf-8"
+indexable = true
+projected_from = ["artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf", "artifact.acta-papal-archives.aas.042.vatican-pdf-0e49e17e"]
+provenance = "Transcribed on 2026-11-14 from the CMAA facsimile page images of the 1962 typical edition (1962 Vatican typical edition printed p. [627], artifact p. 708, no. 3379, left column foot (printed number suppressed on the illustrated leaf)); first-publication witness compared as recorded on the Latin provenance row."
+transformation = "read on the 1962 typical-edition page images at 250 dpi; join printed line wraps and chant syllables; remove stress accents; expand printed ae/oe ligatures to ae/oe; normalise consonantal i to the calendar's declared j orthography; retain the target printing's pointing, capitals and conclusion at its printed length."

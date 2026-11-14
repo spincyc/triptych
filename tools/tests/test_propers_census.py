@@ -824,7 +824,7 @@ class EnglishCoverageTests(unittest.TestCase):
         # roman-1962-english-recovery-2026-10-23.toml).
         angela = {
             row["proper"]: row["reason"]["kind"]
-            for row in document["untranslated"]
+            for row in document.get("untranslated", [])
             if row["mass"] == "s-angelae-mericiae-virginis"
         }
         self.assertEqual({}, angela)

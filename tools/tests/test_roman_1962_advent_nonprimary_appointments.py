@@ -99,7 +99,7 @@ class AdventNonprimaryAppointmentsTest(unittest.TestCase):
     def test_each_new_literal_has_one_exact_english_whole_body_disposition(self):
         for mass, proper in NEW_BODIES:
             with self.subTest(mass=mass, proper=proper):
-                rows = [r for r in self.english['untranslated']
+                rows = [r for r in self.english.get("untranslated", [])
                         if (r['mass'], r.get('form_id', 'main'), r['proper'],
                             r.get('cycle', 'all'), r.get('occurrence', 1),
                             r['lang'], r.get('extent', 'body'))

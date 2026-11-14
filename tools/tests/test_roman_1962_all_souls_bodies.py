@@ -189,9 +189,9 @@ class AllSoulsBodyTests(unittest.TestCase):
 
     def test_existing_english_positive_and_absence_owners_remain_exact(self):
         ledger = tomllib.loads((ROOT / 'src/sources/inventories/roman-1962-proper-translations-v1.toml').read_text())
-        owners = {kind: [r for r in ledger[kind] if r['mass'] == MASS]
+        owners = {kind: [r for r in ledger.get(kind, []) if r['mass'] == MASS]
                   for kind in ('entries', 'untranslated')}
-        self.assertEqual((len(owners['entries']), len(owners['untranslated'])), (16, 0))
+        self.assertEqual((len(owners['entries']), len(owners.get("untranslated", []))), (16, 0))
         self.assertEqual(digest(owners), ENGLISH_OWNERS_HASH)
         recovered = {tuple(row['target'][1:]): row['english_sha256']
                      for row in tomllib.loads(ENGLISH_RECOVERY.read_text())['accepted']
@@ -203,7 +203,7 @@ class AllSoulsBodyTests(unittest.TestCase):
         self.assertEqual(len(recovered), 12)
         for key, english in recovered.items():
             self.assertEqual(text_sha256(entries[key]['translations'][0]['text']), english, key)
-        for row in owners['untranslated']:
+        for row in owners.get("untranslated", []):
             self.assertEqual(row['availability'], 'unavailable')
             self.assertNotIn('text', row)
         loader = importlib.machinery.SourceFileLoader('all_souls_mass_propers', str(ROOT / 'tools/mass-propers'))

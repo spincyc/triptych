@@ -9217,14 +9217,15 @@ sections:
           basis: The source places this unit in the contiguous palm rite before the Mass Introit.
         incipit: Domine Jesu Christe, Rex ac Redemptor noster
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: After this oration the red vestments are laid aside and violet is assumed for the
-          Mass.
+        text: "Domine Jesu Christe, Rex ac Redemptor noster, in cujus honorem, hos ramos gestantes, solemnes laudes decantavimus: concede propitius; ut, quocumque hi rami deportati fuerint, ibi tuae benedictionis gratia descendat, et, quavis daemonum iniquitate vel illusione profligata, dextera tua protegat, quos redemit: Qui vivis et regnas in saecula saeculorum. Omnes R. Amen.\n"
+        text_structure:
+          text_sha256: "45e33842a6cdc657100f959e67f044a04865f3d63752c5d9e9f3e3626bf18c1f"
+          checked: "CMAA 1962 facsimile artifact p. 216 (printed 135) read on the page images on 2026-11-14 (integrate-1962 lane); role labels and response markers are nonspoken rubrics."
+          actions:
+          - kind: rubric
+            offset: 352
+            text: "Omnes R."
+        notes: "Printed p. 135, artifact p. 216, no. 843. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1956 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml). After this oration the red vestments are laid aside and violet is assumed for the Mass."
       - name: Introit
         incipit: Domine, ne longe facias
         source: scripture
@@ -10173,14 +10174,45 @@ sections:
       - name: Solemn Intercessions
         incipit: Oremus, dilectissimi nobis, pro Ecclesia sancta Dei
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: Each of the nine intercessions has its own invitation, then Oremus, Flectamus genua
-          and Levate, and then the oration.
+        text: "Oremus, dilectissimi nobis, pro Ecclesia sancta Dei: ut eam Deus et Dominus noster pacificare, adunare et custodire dignetur toto orbe terrarum: subjiciens ei principatus et potestates: detque nobis, quietam et tranquillam vitam degentibus, glorificare Deum Patrem omnipotentem. Oremus. V. Flectamus genua. R. Levate.\n\nOmnipotens sempiterne Deus, qui gloriam tuam omnibus in Christo gentibus revelasti: custodi opera misericordiae tuae; ut Ecclesia tua, toto orbe diffusa, stabili fide in confessione tui nominis perseveret. Per eundem Dominum nostrum. Omnes R. Amen.\n\nOremus et pro beatissimo Papa nostro N....: ut Deus et Dominus noster, qui elegit eum in ordine episcopatus, salvum atque incolumem custodiat Ecclesiae suae sanctae, ad regendum populum sanctum Dei. Oremus. Flectamus genua. Levate.\n\nOmnipotens sempiterne Deus, cujus judicio universa fundantur: respice propitius ad preces nostras, et electum nobis Antistitem tua pietate conserva; ut christiana plebs, quae te gubernatur auctore, sub tanto Pontifice, credulitatis suae meritis augeatur. Per Dominum. Omnes R. Amen.\n\nOremus et pro omnibus episcopis, presbyteris, diaconibus, subdiaconibus, acolythis, exorcistis, lectoribus, ostiariis, confessoribus, virginibus, viduis: et pro omni populo sancto Dei. Oremus. Flectamus genua. Levate.\n\nOmnipotens sempiterne Deus, cujus Spiritu totum corpus Ecclesiae sanctificatur et regitur: exaudi nos pro universis ordinibus supplicantes; ut gratiae tuae munere ab omnibus tibi gradibus fideliter serviatur. Per Dominum... in unitate ejusdem. Omnes R. Amen.\n\nOremus et pro omnibus res publicas moderantibus, eorumque ministeriis et potestatibus: ut Deus et Dominus noster mentes et corda eorum secundum voluntatem suam dirigat ad nostram perpetuam pacem. Oremus. Flectamus genua. Levate.\n\nOmnipotens sempiterne Deus, in cujus manu sunt omnium potestates et omnium jura populorum: respice benignus ad eos, qui nos in potestate regunt; ut ubique terrarum, dextera tua protegente, et religionis integritas, et patriae securitas indesinenter consistat. Per Dominum. Omnes R. Amen.\n\nOremus et pro catechumenis nostris: ut Deus et Dominus noster adaperiat aures praecordiorum ipsorum januamque misericordiae; ut, per lavacrum regenerationis accepta remissione omnium peccatorum, et ipsi inveniantur in Christo Jesu Domino nostro. Oremus. Flectamus genua. Levate.\n\nOmnipotens sempiterne Deus, qui Ecclesiam tuam nova semper prole fecundas: auge fidem et intellectum catechumenis nostris; ut, renati fonte baptismatis, adoptionis tuae filiis aggregentur. Per Dominum. Omnes R. Amen.\n\nOremus, dilectissimi nobis, Deum Patrem omnipotentem, ut cunctis mundum purget erroribus: morbos auferat: famem depellat: aperiat carceres: vincula dissolvat: peregrinantibus reditum: infirmantibus sanitatem: navigantibus portum salutis indulgeat. Oremus. Flectamus genua. Levate.\n\nOmnipotens sempiterne Deus, maestorum consolatio, laborantium fortitudo: perveniant ad te preces de quacumque tribulatione clamantium; ut omnes sibi in necessitatibus suis misericordiam tuam gaudeant affuisse. Per Dominum nostrum. Omnes R. Amen.\n\nOremus et pro haereticis et schismaticis: ut Deus et Dominus noster eruat eos ab erroribus universis; et ad sanctam matrem Ecclesiam catholicam atque apostolicam revocare dignetur. Oremus. Flectamus genua. Levate.\n\nOmnipotens sempiterne Deus, qui salvas omnes, et neminem vis perire: respice ad animas diabolica fraude deceptas; ut, omni haeretica pravitate deposita, errantium corda resipiscant, et ad veritatis tuae redeant unitatem. Per Dominum. Omnes R. Amen.\n\nOremus et pro Judaeis: ut Deus et Dominus noster auferat velamen de cordibus eorum; ut et ipsi agnoscant Jesum Christum Dominum nostrum. Oremus. Flectamus genua. Levate.\n\nOmnipotens sempiterne Deus, qui Judaeos etiam a tua misericordia non repellis: exaudi preces nostras, quas pro illius populi obcaecatione deferimus; ut, agnita veritatis tuae luce, quae Christus est, a suis tenebris eruantur. Per eundem Dominum. Omnes R. Amen.\n\nOremus et pro paganis: ut Deus omnipotens auferat iniquitatem a cordibus eorum; ut, relictis idolis suis, convertantur ad Deum vivum et verum, et unicum Filium ejus Jesum Christum, Deum et Dominum nostrum. Oremus. Flectamus genua. Levate.\n\nOmnipotens sempiterne Deus, qui non mortem peccatorum, sed vitam semper inquiris: suscipe propitius orationem nostram, et libera eos ab idolorum cultura; et aggrega Ecclesiae tuae sanctae, ad laudem et gloriam nominis tui. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti, Deus, per omnia saecula saeculorum. Omnes R. Amen.\n"
+        text_structure:
+          text_sha256: "e0c78396ad6ee6189a103c8e01a6a1b41d62bc84ba69374856ddd26ea7c3d1cb"
+          checked: "CMAA 1962 facsimile artifact p. 248-256 (printed 167-175) read on the page images on 2026-11-14 (integrate-1962 lane); role labels and response markers are nonspoken rubrics."
+          actions:
+          - kind: rubric
+            offset: 287
+            text: "V."
+          - kind: rubric
+            offset: 307
+            text: "R."
+          - kind: rubric
+            offset: 553
+            text: "Omnes R."
+          - kind: rubric
+            offset: 1070
+            text: "Omnes R."
+          - kind: rubric
+            offset: 1549
+            text: "Omnes R."
+          - kind: rubric
+            offset: 2068
+            text: "Omnes R."
+          - kind: rubric
+            offset: 2566
+            text: "Omnes R."
+          - kind: rubric
+            offset: 3095
+            text: "Omnes R."
+          - kind: rubric
+            offset: 3560
+            text: "Omnes R."
+          - kind: rubric
+            offset: 3993
+            text: "Omnes R."
+          - kind: rubric
+            offset: 4611
+            text: "Omnes R."
+        notes: "Printed p. 167-175, artifact p. 248-256, no. 933-950. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1962 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml). Each of the nine intercessions has its own invitation, then Oremus, Flectamus genua and Levate, and then the oration."
       - name: Showing of the Cross
         incipit: Ecce lignum Crucis
         source: composed
@@ -10528,15 +10560,8 @@ sections:
       - name: Blessing of the Paschal Candle
         incipit: Christus heri et hodie
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: The three formulas accompany the incising of the cross, Alpha and Omega and the
-          current year, the fixing of the five grains of incense, and the lighting of the candle
-          from the new fire.
+        text: "Christus heri et hodie, Principium et Finis, Alpha et Omega; Ipsius sunt tempora et saecula; Ipsi gloria et imperium per universa aeternitatis saecula. Amen.\n\nPer sua sancta vulnera gloriosa custodiat et conservet nos Christus Dominus. Amen.\n\nLumen Christi gloriose resurgentis Dissipet tenebras cordis et mentis.\n"
+        notes: "Printed p. 183, artifact p. 264, no. 972-974. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1951 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml). The three formulas accompany the incising of the cross, Alpha and Omega and the current year, the fixing of the five grains of incense, and the lighting of the candle from the new fire."
       - "name": "Blessing of the Lighted Candle"
         "source": "composed"
         "incipit": "Veniat, quaesumus, omnipotens Deus"
@@ -10556,14 +10581,38 @@ sections:
         text: |
           Lumen Christi. R. Deo gratias.
       - name: Exsultet (Praeconium paschale)
-        incipit: Exsultet jam Angelica turba coelorum
+        incipit: "Exsultet jam Angelica turba caelorum"
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: witness-gap
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
+        text: "Exsultet jam Angelica turba caelorum: exsultent divina mysteria: et pro tanti Regis victoria tuba insonet salutaris. Gaudeat et tellus tantis irradiata fulgoribus: et aeterni Regis splendore illustrata, totius orbis se sentiat amisisse caliginem. Laetetur et mater Ecclesia, tanti luminis adornata fulgoribus: et magnis populorum vocibus haec aula resultet. Quapropter adstantes vos, fratres carissimi, ad tam miram hujus sancti luminis claritatem, una mecum, quaeso, Dei omnipotentis misericordiam invocate. Ut, qui me non meis meritis intra Levitarum numerum dignatus est aggregare, luminis sui claritatem infundens, cerei hujus laudem implere perficiat. Per Dominum nostrum Jesum Christum, Filium suum: Qui cum eo vivit et regnat in unitate Spiritus Sancti Deus.\n\nPer omnia saecula saeculorum. R. Amen. V. Dominus vobiscum. R. Et cum spiritu tuo. V. Sursum corda. R. Habemus ad Dominum. V. Gratias agamus Domino Deo nostro. R. Dignum et justum est.\n\nVere dignum et justum est, invisibilem Deum Patrem omnipotentem Filiumque ejus unigenitum, Dominum nostrum Jesum Christum, toto cordis ac mentis affectu et vocis ministerio personare. Qui pro nobis aeterno Patri Adae debitum solvit: et veteris piaculi cautionem pio cruore detersit. Haec sunt enim festa paschalia, in quibus verus ille Agnus occiditur, cujus sanguine postes fidelium consecrantur. Haec nox est, in qua primum patres nostros, filios Israel eductos de Aegypto, Mare Rubrum sicco vestigio transire fecisti. Haec igitur nox est, quae peccatorum tenebras columnae illuminatione purgavit. Haec nox est, quae hodie per universum mundum in Christo credentes, a vitiis saeculi et caligine peccatorum segregatos, reddit gratiae, sociat sanctitati. Haec nox est, in qua, destructis vinculis mortis, Christus ab inferis victor ascendit. Nihil enim nobis nasci profuit, nisi redimi profuisset. O mira circa nos tuae pietatis dignatio! O inaestimabilis dilectio caritatis: ut servum redimeres, Filium tradidisti! O certe necessarium Adae peccatum, quod Christi morte deletum est! O felix culpa, quae talem ac tantum meruit habere Redemptorem! O vere beata nox, quae sola meruit scire tempus et horam, in qua Christus ab inferis resurrexit! Haec nox est, de qua scriptum est: Et nox sicut dies illuminabitur: et nox illuminatio mea in deliciis meis. Hujus igitur sanctificatio noctis fugat scelera, culpas lavat: et reddit innocentiam lapsis, et maestis laetitiam. Fugat odia, concordiam parat, et curvat imperia.\n\nIn hujus igitur noctis gratia, suscipe, sancte Pater, incensi hujus sacrificium vespertinum: quod tibi in hac cerei oblatione solemni, per ministrorum manus de operibus apum, sacrosancta reddit Ecclesia. Sed jam columnae hujus praeconia novimus, quam in honorem Dei rutilans ignis accendit. Qui licet sit divisus in partes, mutuati tamen luminis detrimenta non novit. Alitur enim liquantibus ceris, quas in substantiam pretiosae hujus lampadis apis mater eduxit. O vere beata nox, quae exspoliavit Aegyptios, ditavit Hebraeos! Nox, in qua terrenis caelestia, humanis divina junguntur.\n\nOramus ergo te, Domine: ut cereus iste in honorem tui nominis consecratus, ad noctis hujus caliginem destruendam, indeficiens perseveret. Et in odorem suavitatis acceptus, supernis luminaribus misceatur. Flammas ejus lucifer matutinus inveniat. Ille, inquam, lucifer, qui nescit occasum. Ille, qui regressus ab inferis humano generi serenus illuxit. Precamur ergo te, Domine: ut nos famulos tuos, omnemque clerum, et devotissimum populum: una cum beatissimo Papa nostro N. et Antistite nostro N., quiete temporum concessa, in his paschalibus gaudiis, assidua protectione regere, gubernare et conservare digneris. Respice etiam ad eos, qui nos in potestate regunt, et, ineffabili pietatis et misericordiae tuae munere, dirige cogitationes eorum ad justitiam et pacem, ut de terrena operositate ad caelestem patriam perveniant cum omni populo tuo. Per eundem Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus: per omnia saecula saeculorum. R. Amen.\n"
+        text_structure:
+          text_sha256: "a6d014d2da011fd012f03007574048df7ceaf10e9b8a8fac6ee3063cd6194973"
+          checked: "CMAA 1962 facsimile artifact p. 266-275 (printed 185-194) read on the page images on 2026-11-14 (integrate-1962 lane); role labels and response markers are nonspoken rubrics."
+          actions:
+          - kind: rubric
+            offset: 797
+            text: "R."
+          - kind: rubric
+            offset: 806
+            text: "V."
+          - kind: rubric
+            offset: 827
+            text: "R."
+          - kind: rubric
+            offset: 850
+            text: "V."
+          - kind: rubric
+            offset: 867
+            text: "R."
+          - kind: rubric
+            offset: 890
+            text: "V."
+          - kind: rubric
+            offset: 927
+            text: "R."
+          - kind: rubric
+            offset: 4047
+            text: "R."
+        notes: "Printed p. 185-194, artifact p. 266-275, no. 979. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1951 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: First Prophecy
         source: scripture
         verses:
@@ -10767,14 +10816,60 @@ sections:
       - name: Renewal of Baptismal Promises
         incipit: Hac sacratissima nocte, fratres carissimi
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: The address and the renewal may be made in the vernacular, in a version approved
-          by the local Ordinary.
+        text: "Hac sacratissima nocte, fratres carissimi, sancta Mater Ecclesia, recolens Domini nostri Jesu Christi mortem et sepulturam, eum redamando vigilat; et, celebrans ejusdem gloriosam resurrectionem, laetabunda gaudet.\n\nQuoniam vero, ut docet Apostolus, consepulti sumus cum Christo per baptismum in mortem, quomodo Christus resurrexit a mortuis, ita et nos in novitate vitae oportet ambulare; scientes, veterem hominem nostrum simul cum Christo crucifixum esse, ut ultra non serviamus peccato. Existimemus ergo nos mortuos quidem esse peccato, viventes autem Deo in Christo Jesu Domino nostro.\n\nQuapropter, fratres carissimi, quadragesimali exercitatione absoluta, sancti Baptismatis promissiones renovemus, quibus olim satanae et operibus ejus, sicut et mundo, qui inimicus est Dei, abrenuntiavimus, et Deo in sancta Ecclesia catholica fideliter servire promisimus.\n\nItaque:\nCelebrans: Abrenuntiatis satanae?\nOmnes: Abrenuntiamus.\nCelebrans: Et omnibus operibus ejus?\nOmnes: Abrenuntiamus.\nCelebrans: Et omnibus pompis ejus?\nOmnes: Abrenuntiamus.\nCelebrans: Creditis in Deum, Patrem omnipotentem, Creatorem caeli et terrae?\nOmnes: Credimus.\nCelebrans: Creditis in Jesum Christum, Filium ejus unicum, Dominum nostrum, natum, et passum?\nOmnes: Credimus.\nCelebrans: Creditis et in Spiritum Sanctum, sanctam Ecclesiam catholicam, Sanctorum communionem, remissionem peccatorum, carnis resurrectionem, et vitam aeternam?\nOmnes: Credimus.\nCelebrans: Nunc autem una simul Deum precemur, sicut Dominus noster Jesus Christus orare nos docuit:\nOmnes: Pater noster...\nCelebrans: Et Deus omnipotens, Pater Domini nostri Jesu Christi, qui nos regeneravit ex aqua et Spiritu Sancto, quique nobis dedit remissionem peccatorum, ipse nos custodiat gratia sua in eodem Christo Jesu Domino nostro, in vitam aeternam.\nOmnes: Amen.\n"
+        text_structure:
+          text_sha256: "1aa9de20d8abdce79ab00d0ae8adb3729bccb1b59ca5eb0d960dce4d15bcd803"
+          checked: "CMAA 1962 facsimile artifact p. 290 (printed 209) read on the page images on 2026-11-14 (integrate-1962 lane); role labels and response markers are nonspoken rubrics."
+          actions:
+          - kind: rubric
+            offset: 872
+            text: "Celebrans:"
+          - kind: rubric
+            offset: 906
+            text: "Omnes:"
+          - kind: rubric
+            offset: 928
+            text: "Celebrans:"
+          - kind: rubric
+            offset: 965
+            text: "Omnes:"
+          - kind: rubric
+            offset: 987
+            text: "Celebrans:"
+          - kind: rubric
+            offset: 1022
+            text: "Omnes:"
+          - kind: rubric
+            offset: 1044
+            text: "Celebrans:"
+          - kind: rubric
+            offset: 1121
+            text: "Omnes:"
+          - kind: rubric
+            offset: 1138
+            text: "Celebrans:"
+          - kind: rubric
+            offset: 1232
+            text: "Omnes:"
+          - kind: rubric
+            offset: 1249
+            text: "Celebrans:"
+          - kind: rubric
+            offset: 1412
+            text: "Omnes:"
+          - kind: rubric
+            offset: 1429
+            text: "Celebrans:"
+          - kind: rubric
+            offset: 1530
+            text: "Omnes:"
+          - kind: rubric
+            offset: 1553
+            text: "Celebrans:"
+          - kind: rubric
+            offset: 1794
+            text: "Omnes:"
+        notes: "Printed p. 209, artifact p. 290, no. 999. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1956 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml). The address and the renewal may be made in the vernacular, in a version approved by the local Ordinary."
       - name: Litany of the Saints, second part
         incipit: Propitius esto
         source: composed
@@ -26719,16 +26814,8 @@ sections:
             "text": "(T. P. Alleluia, alleluia.)"
       - name: "Collect"
         source: "composed"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact621/printed540, unit2683; appointment read on the page
-          images on 2026-10-23. No complete earlier-witness word collation or
-          independent publication basis is established here; no body is supplied.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+        text: "Concede nobis, quaesumus, Domine: ut, qui solemnitatem (commemorationem) beatae Mariae Virginis Reginae nostrae celebramus; ejus muniti praesidio, pacem in praesenti et gloriam in futuro consequi mereamur. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum.\n"
+        notes: "Printed p. 540, artifact p. 621, no. 2683. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1962 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Lesson
         source: scripture
         verses:
@@ -26761,16 +26848,8 @@ sections:
           ref: Sirach 24:5,7,9-11,30-31
       - name: "Alleluia (Tempore paschali)"
         source: "composed"
-        notes: >-
-          Registered 1962 CMAA facsimile, artifact621/printed540, unit2686; appointment read on the page
-          images on 2026-10-23. No complete earlier-witness word collation or
-          independent publication basis is established here; no body is supplied.
-        text_status:
-          state: "unavailable"
-          scope: "proper-body"
-          reasons:
-          - kind: "witness-gap"
-            source_id: "artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf"
+        text: "Alleluia, alleluia. V. Beata es, Virgo Maria, quae sub Cruce Domini sustinuisti. Alleluia. V. Nunc cum eo regnas in aeternum. Alleluia.\n"
+        notes: "Printed p. 540, artifact p. 621, no. 2686. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1955 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
         ordinary_disposition:
           kind: "alternative"
           group: "queenship-post-epistle"
@@ -27257,12 +27336,8 @@ sections:
           ref: Psalms 97:1
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Omnipotens sempiterne Deus, qui immaculatam Virginem Mariam, Filii tui Genetricem, corpore et anima ad caelestem gloriam assumpsisti: concede, quaesumus; ut, ad superna semper intenti, ipsius gloriae mereamur esse consortes. Per eundem Dominum.\n"
+        notes: "Printed p. [627], artifact p. 708, no. 3379. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1950 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Lesson
         source: scripture
         verses:
@@ -27329,12 +27404,8 @@ sections:
           ref: Genesis 3:15
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Ascendat ad te, Domine, nostrae devotionis oblatio, et, beatissima Virgine Maria in caelum assumpta intercedente, corda nostra, caritatis igne succensa, ad te jugiter adspirent. Per Dominum nostrum.\n"
+        notes: "Printed p. 628, artifact p. 709, no. 3385. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1950 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Communion
         source: scripture
         verses:
@@ -38200,12 +38271,8 @@ sections:
           ref: Psalms 126:1
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Rerum conditor Deus, qui legem laboris humano generi statuisti: concede propitius; ut, sancti Joseph exemplo et patrocinio, opera perficiamus quae praecipis, et praemia consequamur quae promittis. Per Dominum.\n"
+        notes: "Printed p. 516, artifact p. 597, no. 2483. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1956 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Epistle
         source: scripture
         verses:
@@ -38268,12 +38335,8 @@ sections:
           ref: Psalms 89:17
       - name: Secret
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Quas tibi, Domine, de operibus manuum nostrarum offerimus hostias, sancti Joseph interposito suffragio, pignus facias nobis unitatis et pacis. Per Dominum.\n"
+        notes: "Printed p. 517, artifact p. 598, no. 2491. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1956 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Communion
         source: scripture
         verses:
@@ -38294,12 +38357,8 @@ sections:
           ref: Matthew 13:54, 55
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Haec sancta quae sumpsimus, Domine: per intercessionem beati Joseph; et operationem nostram compleant, et praemia confirment. Per Dominum nostrum.\n"
+        notes: "Printed p. 517, artifact p. 598, no. 2493. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1956 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
     - key: s-athanasii-episcopi-confessoris-ecclesiae-doctoris
       name: S. Athanasii Episcopi, Confessoris et Ecclesiae Doctoris
       registry: '1962-05-02'
@@ -39928,12 +39987,8 @@ sections:
           ref: Psalms 91:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Deus, qui ad errorum insidias repellendas et Apostolicae Sedis jura propugnanda beatum Robertum, Pontificem tuum atque Doctorem, mira eruditione et virtute decorasti: ejus meritis et intercessione concede; ut nos in veritatis amore crescamus et errantium corda ad Ecclesiae tuae redeant unitatem. Per Dominum.\n"
+        notes: "Printed p. 529, artifact p. 610, no. 2587. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1932 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Lesson
         source: scripture
         verses:
@@ -40036,12 +40091,8 @@ sections:
           ref: Matthew 5:14, 16
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Sacramenta, quae sumpsimus, Domine Deus noster, in nobis foveant caritatis ardorem: quo beatus Robertus vehementer accensus, pro Ecclesia tua se jugiter impendebat. Per Dominum nostrum.\n"
+        notes: "Printed p. 530, artifact p. 611, no. 2597. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1932 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
     - key: comm-s-bonifatii-martyris
       name: Comm. S. Bonifatii Martyris
       registry: '1962-05-14'
@@ -42874,15 +42925,8 @@ sections:
       propers:
       - name: Collect
         source: composed
-        notes: Printed p. 554 / artifact p. 635, marginal no. 2799, marked P; this is the saint's own Collect. Its existing
-          unavailable-wording and rights disposition is retained here, without substituting the Common Collect.
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Deus, qui beatum Gregorium, Confessorem tuum atque Pontificem, pastorali sollicitudine et pauperum miseratione clarescere voluisti: concede propitius; ut, cujus merita celebramus, caritatis imitemur exempla. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\n"
+        notes: "Printed p. 554, artifact p. 635, no. 2799. Latin read on the 1962 page images on 2026-11-14; published on the plain public-domain basis from the 1859 Trieste-Capodistria Proprium Missarum (see the Latin provenance ledger)."
     - key: s-ephraem-syri-diaconi-confessoris-ecclesiae
       name: S. Ephraem Syri Diaconi, Confessoris et Ecclesiae Doctoris
       registry: '1962-06-18'
@@ -51584,12 +51628,8 @@ sections:
           ref: Psalms 88:2
       - name: Collect
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Deus, qui, ad tuendam catholicam fidem et universa in Christo instauranda, sanctum Pium Summum Pontificem caelesti sapientia et apostolica fortitudine replevisti: concede propitius; ut, ejus instituta et exempla sectantes, praemia consequamur aeterna. Per eundem Dominum.\n"
+        notes: "Printed p. 648, artifact p. 729, no. 3556. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1955 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Epistle
         source: scripture
         verses:
@@ -51671,12 +51711,8 @@ sections:
           ref: John 6:56-57
       - name: Postcommunion
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-            - kind: witness-gap
-              source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
+        text: "Mensae caelestis virtute refecti, quaesumus, Domine Deus noster: ut, interveniente sancto Pio Summo Pontifice; fortes efficiamur in fide, et in tua simus caritate concordes. Per Dominum nostrum.\n"
+        notes: "Printed p. 649, artifact p. 730, no. 3566. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1955 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
     - key: s-laurentii-iustiniani-episcopi-confessoris
       name: S. Laurentii Iustiniani Episcopi et Confessoris
       registry: '1962-09-05'
@@ -55329,16 +55365,9 @@ sections:
       propers:
       - name: Collect
         source: composed
+        text: "Deus, qui beatum Antonium Mariam Confessorem tuum atque Pontificem, apostolicis virtutibus sublimasti, et per eum novas in Ecclesia clericorum ac virginum familias collegisti: concede, quaesumus; ut, ejus dirigentibus monitis ac suffragantibus meritis, animarum salutem quaerere jugiter studeamus. Per Dominum.\n"
+        notes: "Printed p. 694, artifact p. 775, no. 3923. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1960 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
         incipit: Deus, qui beatum
-        notes: 'The controlling 1962 Missal prints this proper oration under the day, marked P: artifact p. 775, printed
-          p. 694, no. 3923. Its exact wording has not been supplied here.'
-        text_status:
-          state: unavailable
-          scope: proper-body
-          body_status: held-unpublished
-          reasons:
-          - kind: rights-withheld
-            source_id: artifact.catholic-church.missale-romanum.vatican-typica-1962.cmaa-facsimile-pdf
     - key: s-raphaelis-archangeli
       name: S. Raphaelis Archangeli
       registry: '1962-10-24'
@@ -57763,33 +57792,18 @@ sections:
       - name: Collect
         incipit: Deus, qui beatum Albertum
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: Printed p. 719, no. 4106, marked P. The Latin body is withheld pending publication review.
+        text: "Deus, qui beatum Albertum, Pontificem tuum atque Doctorem, in humana sapientia divinae fidei subjicienda magnum effecisti: da nobis, quaesumus; ita ejus magisterii inhaerere vestigiis, ut luce perfecta fruamur in caelis. Per Dominum nostrum Jesum Christum, Filium tuum: Qui tecum vivit et regnat in unitate.\n"
+        notes: "Printed p. 719, artifact p. 800, no. 4106. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1932 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Secret
         incipit: Sacrificiis praesentibus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: Printed p. 719, no. 4107, marked P. The Latin body is withheld pending publication review.
+        text: "Sacrificiis praesentibus, Domine, quaesumus, intende placatus: ut quod Passionis Filii tui Domini nostri mysterio gerimus, beati Alberti intercessione et exemplo, pio consequamur affectu. Per eundem Dominum.\n"
+        notes: "Printed p. 719, artifact p. 800, no. 4107. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1932 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       - name: Postcommunion
         incipit: Per haec sancta quae sumpsimus
         source: composed
-        text_status:
-          state: unavailable
-          scope: proper-body
-          reasons:
-          - kind: rights-withheld
-            source_id: edition.catholic-church.missale-romanum.vatican-typica-1962
-        notes: Printed p. 719, no. 4108, marked P. The Latin body is withheld pending publication review.
+        text: "Per haec sancta quae sumpsimus, ab hostium nos, Domine, impugnatione defende: et, intercedente beato Alberto Confessore tuo atque Pontifice, perpetua pace respirare concede. Per Dominum nostrum.\n"
+        notes: "Printed p. 719, artifact p. 800, no. 4108. Latin read on the 1962 page images on 2026-11-14; published on the qualified-public-domain basis as a Holy See text first published in Vatican City in 1932 (see the Latin provenance ledger and src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml)."
       notes: 'The controlling Missal appoints Missa In medio from the Common of
         Doctors with three proper orations at nos. 4106-4108. Their bodies are intentionally
         absent under per-Proper rights-withheld status; source and collation evidence
