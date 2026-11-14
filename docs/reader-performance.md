@@ -259,3 +259,34 @@ in `test_oration_execution_source.py`, and
 in `test_web_edition_conversion.py`. The former expect a Collect that is already
 translated to remain absent; the latter expects older chronology wording.
 These are recorded baseline failures, not silently counted as passing tests.
+
+### Selected Mass reuse and one startup check, 14 November 2026
+
+Each selected Mass used to repeat calendar-wide work: the oration-conclusion
+sources, the Scripture translation targets and the validated Latin sidecar,
+with the two large 1962 ledgers parsed three times. A Day with a feast and the
+Commons it borrows from opened eight such projections. A Lectern session now
+derives these once and re-verifies their inputs on each reuse
+([Web data](../guidance/web-data.md#tracked-discovery-and-ordinary-indexed-reading),
+item 5). Startup checks the index once and hands that check to the first
+reading session; the preparation subprocess and the bridge's second Git scan
+are gone.
+
+Measured on one machine against `main` at `ecfb714790`, interleaved, with a
+fresh index and installed dependencies. Snapshots are 120×40 and settled.
+"Cold" means an empty `.scratch/reader-data`. Every commit changes that
+cache's identity, so the first open after a pull is the cold case.
+
+| Operation | Before | After |
+| --- | ---: | ---: |
+| Eight cold 1962 Mass projections of 2 December, one process | 15.8 s | 3.4 s |
+| First / each later Mass projection in a session | 2.5 s / 1.8–2.1 s | 1.6 s / 0.2–0.3 s |
+| Day 14 November, cold / warm | 7.5–7.9 s / 3.3 s | 4.8 s / 1.4 s |
+| Day 2 December, cold / warm | over the 20 s settle limit / 3.8 s | 7.5 s / 1.6 s |
+| Six next-day steps from 14 November, cold / warm | 36.5–40.5 s / 5.4 s | 10.4 s / 3.2–3.4 s |
+| Interactive open, 14 November, warm, until the Introit shows | 3.2 s | 1.2 s |
+| Index checks per start, Git scan each | 2, 0.80 s | 1, 0.65 s |
+
+All 1,599 selected Masses resolved in one session matched the complete
+producer's Mass objects, and the rendered snapshots were byte-identical to
+`main`'s.
