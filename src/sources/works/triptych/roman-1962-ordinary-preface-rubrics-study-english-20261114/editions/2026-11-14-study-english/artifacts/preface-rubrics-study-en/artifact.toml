@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+edition_id = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact_type = "project-study-translation"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "project-created"
+rights_basis = "New Triptych-authored study English under CC BY 4.0, translated only from the 1962 Latin held in artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114, itself published on the qualified basis of src/sources/inventories/holy-see-twenty-year-term-rights-v1.toml. The translation is a derivative of that Latin and stays project-created; the English carries the record's english_study notice wherever it is shown. Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+rights_jurisdiction = "United States"
+provenance = "Drafted on 2026-11-14 directly from the page-checked 1962 Latin rows; each English row renders exactly one Latin row and adds no content. Formal, literal register; Latin cue words quoted by the rubric (Et te in ..., in hac potissimum ..., hodierna die) are left in Latin. No human review or liturgical approval is claimed."
+retrieved = "2026-11-14"
+sha256 = "838a4cb4fb54d66d327f758c2a9139b90cf7f60b253cce2befdd7d70b5d486b9"
+byte_size = 12355
+path = "src/sources/works/triptych/roman-1962-ordinary-preface-rubrics-study-english-20261114/editions/2026-11-14-study-english/artifacts/preface-rubrics-study-en/text.tsv"
+projected_from = ["artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"]
+transformation = "Translate each selected Latin title and rubric row freshly into English for study; keep one English row per Latin row; supply no word, date or discipline the Latin does not state; leave quoted Latin cue words in Latin."
+indexable = true
+encoding = "utf-8"
+notes = "One header and one row per Latin row; element_key matches the qualified carrier. Readers must label this project study English, show its notice, and not offer it for recitation."

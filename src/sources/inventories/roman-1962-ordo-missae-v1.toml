@@ -33,7 +33,15 @@ the proper Hanc igitur of Easter and Pentecost and the continuation the 1962 Can
 Communicantes come from a project editorial projection over public-domain \
 printings, and the Hanc igitur's English from the Lasance hand missal. Three Gospel-adjacent \
 Latin prayers absent from Cummiskey's facing column are supplied separately from \
-the 1922 Tours Mame; each retains its own witness, extent and actor qualification.
+the 1922 Tours Mame; each retains its own witness, extent and actor qualification. \
+Since 14 November 2026 the 1861 book's English-only headings and rubrics carry \
+the Missal's own Latin at their places: the word-exact 1922 Mame where the 1962 \
+book prints the same words, and the 1962 typical edition's own 1960-1962 wording, \
+published on a qualified basis with its notice, where it does not. Where the 1861 \
+English beside such a rubric is the lay book's paraphrase, the element says the \
+Latin is not its source. The eleven Preface headings, whose 1861 English states \
+the discipline before 1955, show a Triptych study translation of the 1962 \
+heading instead; the lay book's own apparatus takes no Latin.
 """
 
 derived_from = """
@@ -65,7 +73,12 @@ Oblatio, Canon, Communion and conclusion, \
 binding the old projected body by exact witness, artifact and text hash; \
 the original 1861 artifacts, target Latin, frame order and conditions remain intact. \
 The Oblatio Gloria Patri retains its complete earlier English rather than the \
-Lasance source's local abbreviation; unsupported English remains absent.
+Lasance source's local abbreviation; unsupported English remains absent. \
+The headings and rubrics joined on 2026-11-14 add Latin sides only, by \
+additional_texts, from a Mame 1922 artifact and a qualified-basis Triptych \
+transcription of the 1962 typical edition; the Preface headings' English is \
+replaced, by exact hash, with a Triptych study translation of that 1962 Latin, \
+and the replaced 1861 rows stay in their artifact.
 """
 
 slots_derived_from = """
@@ -191,10 +204,10 @@ artifacts = ["artifact.anselm-schott.das-vollstandige-romische-messbuch.herder-s
 [[witnesses]]
 id = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
 lang = "la"
-label = "Missale Romanum, editio quarta juxta typicam (Tours: Alfred Mame, 1922), Gospel-adjacent prayers, proper Canon, historical Joseph and Dead Prefaces and final blessing Latin"
+label = "Missale Romanum, editio quarta juxta typicam (Tours: Alfred Mame, 1922), Gospel-adjacent prayers, proper Canon, historical Joseph and Dead Prefaces, final blessing Latin, and the Missal's own headings and rubrics of the Ordo Missae and Canon"
 rights = "public-domain"
-caution = "Checked Gospel-adjacent prayer bodies and Accendat from a 1922 altar missal, retained in that printing's own spelling and pointing. This is an antecedent witness, not the 1962 typical edition, and the reader is never a book to celebrate from. The Munda cor meum priest cue is limited to the source's express reuse at Mass without deacon and subdeacon; its fully printed solemn-Mass occurrence belongs to the deacon. Cummiskey's English source and actor assignments remain separate. The complete historical Joseph body retains unselected alternatives under March 19 applicability only; the final blessing retains its own priest formula and unassigned response cue."
-artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112"]
+caution = "Checked Gospel-adjacent prayer bodies and Accendat from a 1922 altar missal, retained in that printing's own spelling and pointing. This is an antecedent witness, not the 1962 typical edition, and the reader is never a book to celebrate from. Its Ordo Missae and Canon headings and rubrics are the Missal's own words at the places this frame names, each word-exact with the 1962 typical edition; where the 1861 English beside one is the lay book's paraphrase, the element says that the Latin is not its source. The Munda cor meum priest cue is limited to the source's express reuse at Mass without deacon and subdeacon; its fully printed solemn-Mass occurrence belongs to the deacon. Cummiskey's English source and actor assignments remain separate. The complete historical Joseph body retains unselected alternatives under March 19 applicability only; the final blessing retains its own priest formula and unassigned response cue."
+artifacts = ["artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.oratio-super-populum-cues-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordo-gospel-preparation-la-checked-03c65abd", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-proper-canon-la-20261026-34961eae", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-joseph-historical-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-final-blessing-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-dead-preface-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-eight-exact-latin-20261112", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"]
 
 [[witnesses]]
 id = "edition.triptych.english-completion-20261029-ordinary-joseph.study-english-20261029"
@@ -229,6 +242,24 @@ rights = "project-created"
 caution = "New AI-authored study English from the complete independently identified 1922 Mame Latin foundation plus the exact separately adopted May 1 functional-word basis. This is not historical English, approved liturgical English or a text for recitation. No human review is claimed. Applies only to the named Roman 1962 May 1 formulary; no selected modern Latin body or target image is published."
 artifacts = ["artifact.triptych.english-completion-20261029-ordinary-joseph-preface-may1.study-english-20261030.joseph-preface-may1-study-en-240fd178"]
 
+[[witnesses]]
+id = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+lang = "la"
+label = "Missale Romanum, editio typica 1962 (Typis Polyglottis Vaticanis): Ordo Missae rubrics of the 1960-1962 revision and the Preface headings, transcribed by Triptych and published on a qualified basis"
+rights = "qualified-public-domain"
+acknowledgement = "Published on a qualified basis (publication policy priority 6; confidence medium-low): a Holy See text first published in Vatican City in 1931-1975 that lapsed into the U.S. public domain for want of a formality, and whose twenty-year Vatican term under Italian Law 633/1941 arts. 11 and 29, as applied by Vatican Law XII of 1960, had on this project's reading expired before the 1 January 1996 U.S. restoration date (17 U.S.C. 104A). Not adjudicated; U.S. copyright only; implies no ecclesiastical approval or permission."
+caution = "Published on a qualified basis, never as plain public domain: the notice printed with these words says why. Transcribed from page images of the 1962 typical edition (the registered CMAA facsimile, whose scan bytes remain rights-unresolved and are not reproduced). Rubrics and headings only: the 1962 book's own directions at the places named, never a text for recitation. Where the facing English is the 1861 lay missal's, it is not a translation of these words, and the element says so."
+artifacts = ["artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"]
+
+[[witnesses]]
+id = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+lang = "en"
+label = "Triptych study English of the 1962 Preface headings and rubrics (14 November 2026)"
+rights = "project-created"
+acknowledgement = "Original study translation by Triptych of a Holy See text published here on a qualified basis (publication policy priority 6; confidence medium-low): its Vatican term had, on this project's reading, expired before the 1996 U.S. restoration date. Not adjudicated; U.S. copyright only; not an approved liturgical translation."
+caution = "New AI-authored study translation of the 1962 typical edition's Preface headings and their rubrics, whose Latin is published on a qualified basis. Not historical or approved liturgical English and not for recitation; no human review is claimed. Latin cue words the rubric quotes from a Preface are left in Latin."
+artifacts = ["artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"]
+
 # ---------------------------------------------------------------- absences
 
 [[witnesses]]
@@ -243,7 +274,13 @@ artifacts = ["artifact.gaspar-lefebvre.daily-missal-with-vespers.saint-andre-loh
 key = "no-facing-latin"
 label = "The 1861 witness prints this block only in English"
 kind = "witness-gap"
-what = "Eight blocks in the 1861 book contain a prayer or form of the 1962 Ordo Missae but are set across the full measure in English only, with no facing Latin text: rubrica-benedictio-incensi-et-introitus, munda-cor-meum, dominus-sit-in-corde-meo, per-evangelica-dicta, accendat-in-nobis, rubrica-commixtio, rubrica-agnus-dei-in-missis-defunctorum, and benedicat-vos-omnipotens-deus. The absence is this witness's, not a claim that the rite lacks the text. This classification supplies no Latin wording and the Cummiskey facing-column absence remains true. Since 2026-10-20 a separately identified Mame 1922 witness supplies the three Gospel-adjacent prayer bodies in this frame; no wording or actor is attributed back to Cummiskey. The other missing and mixed prayer-and-rubric extents remain unresolved."
+what = "Eight blocks in the 1861 book contain a prayer or form of the 1962 Ordo Missae but are set across the full measure in English only, with no facing Latin text: rubrica-benedictio-incensi-et-introitus, munda-cor-meum, dominus-sit-in-corde-meo, per-evangelica-dicta, accendat-in-nobis, rubrica-commixtio, rubrica-agnus-dei-in-missis-defunctorum, and benedicat-vos-omnipotens-deus. The absence is this witness's, not a claim that the rite lacks the text. This classification supplies no Latin wording and the Cummiskey facing-column absence remains true. Since 2026-10-20 a separately identified Mame 1922 witness supplies the three Gospel-adjacent prayer bodies in this frame; no wording or actor is attributed back to Cummiskey. Since 2026-11-14 the immission rubric with Haec commixtio and the Requiem Agnus Dei rubric take their word-exact 1922 Mame Latin, and the incense-and-Introit rubric the 1962 typical edition's own wording on the qualified basis (its blessing formula is the pre-1931 words, its rubric 1960-1962 wording); no wording is attributed back to Cummiskey."
+
+[[absences]]
+key = "lay-apparatus-no-missal-counterpart"
+label = "The 1861 lay missal's own apparatus; the Missal prints no Latin here"
+kind = "not-applicable"
+what = "Thirteen 1861 English blocks are the lay book's own apparatus, read on 2026-11-14 against the 1962 Ordo Missae page images: headings the Missal does not print (the Nicene Creed, Oblation of the Host, Oblation of the Chalice, The Preface, the prayer Munda cor meum), cross-references to texts in their proper places (the Gospel, the Offertory, the Communion), its typographic notes on the asterisk, the dagger and the Marian festival name, and two directions describing practice the 1962 book does not prescribe: the second and third Collects of the pre-1960 oration regime, and the assistants saying Per evangelica dicta with the priest. No Latin applies to them, and none is inferred from the nearest Missal rubric."
 
 [[absences]]
 key = "not-in-the-1962-ordo"
@@ -255,13 +292,13 @@ what = "Four English-only orations belong to the pre-1955 second-oration regime 
 key = "witness-own-english"
 label = "The 1861 lay witness supplies its own English heading or rubric"
 kind = "witness-gap"
-what = "Seventy-one English-only blocks are the 1861 printer's own headings or rubrics for a lay reader, not untranslated Latin text: 50 rubrics and 21 headings. Eight are excluded from this target frame, leaving 63 emitted elements in this class. No Latin counterpart or prayer/rubric extent is inferred."
+what = "Seventy-one English-only blocks are the 1861 printer's own headings or rubrics for a lay reader, not untranslated Latin text: 50 rubrics and 21 headings. Eight are excluded from this target frame, leaving 63 emitted elements. Since 2026-11-14 each of the 63 is classified against the 1962 Ordo Missae on its page images: 34 take the Missal's own Latin heading or rubric at that place from the word-exact 1922 Mame, 15 take the 1962 typical edition's own 1960-1962 wording on the qualified basis, 13 are the lay book's apparatus with no Missal counterpart (lay-apparatus-no-missal-counterpart), and one, the note that the following prayer is omitted in Masses for the dead, stays here: the 1962 rubric that says so stands after that prayer and calls it the preceding one, so it is not the rubric at this place. No Latin counterpart or prayer/rubric extent is inferred."
 
 [[absences]]
 key = "appointment-not-established"
 label = "This day’s Ordinary appointment is not established"
 kind = "model-gap"
-what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the 1962 book covers the date, and no sourced default applies. For the Preface this is now only a date the declared spans cannot be evaluated on (no civil date or year anchors reach the frame); RGMR 482's three steps are otherwise all declared: the formulary's printed direction, the de Tempore spans of RGMR 484-493 and the common default of RGMR 482 and 498. The stand-in replaces printing every Preface the witness holds, which claimed all of them were said."
+what = "Nothing in this repository yet establishes which text the day appoints here: no reading of the celebrated formulary's own direction is recorded, no dated span stated by the 1962 book covers the date, and no sourced default applies. For the Preface this is now only a date the declared spans cannot be evaluated on (no civil date or year anchors reach the frame); for the Communicantes and Hanc igitur likewise, since the Chrism Mass's own rubric 12 appoints their common forms (2026-11-14) and the Mass of the Lord's Supper has no generic frame; RGMR 482's three steps are otherwise all declared: the formulary's printed direction, the de Tempore spans of RGMR 484-493 and the common default of RGMR 482 and 498. The stand-in replaces printing every Preface the witness holds, which claimed all of them were said."
 
 [[absences]]
 key = "preface-not-in-witness"
@@ -418,7 +455,7 @@ withheld = true
 anchor = "easter"
 from = -3
 to = -3
-locus = "The Mass of the Lord's Supper prints its own Communicantes and Hanc igitur (artifact PDF p. 239, printed p. 158, nn. 916-917, located by missal-expected-targets-v1 rows roman-1962-hw-cena-mass-communicantes and -hanc-igitur, not re-read here); whether the Chrism Mass of the same day takes them is not established, so the day is left unappointed rather than given the common form."
+locus = "Maundy Thursday has two Masses. The Chrism Mass's own rubric 12 ('Communicantes, et quae sequuntur usque ad Consecrationem, dicuntur ut in Canone Missae, nihil addendo vel immutando', printed p. 153, artifact PDF p. 234, read on the page image on 2026-11-14) appoints the common forms through that formulary's ordinary_appointments in src/sources/calendars/roman-1962/propers.yaml, which a formulary's own direction does before any span. The Mass of the Lord's Supper prints its own Communicantes and Hanc igitur (artifact PDF p. 239, printed p. 158, nn. 916-917) and its generic frame is withheld. This span therefore leaves only a Maundy Thursday Mass with no direction of its own unappointed, rather than giving it the common form."
 
 [[appointments]]
 variable = "hanc_igitur"
@@ -450,7 +487,7 @@ withheld = true
 anchor = "easter"
 from = -3
 to = -3
-locus = "The Mass of the Lord's Supper prints its own Communicantes and Hanc igitur (artifact PDF p. 239, printed p. 158, nn. 916-917, located by missal-expected-targets-v1 rows roman-1962-hw-cena-mass-communicantes and -hanc-igitur, not re-read here); whether the Chrism Mass of the same day takes them is not established, so the day is left unappointed rather than given the common form."
+locus = "Maundy Thursday has two Masses. The Chrism Mass's own rubric 12 ('Communicantes, et quae sequuntur usque ad Consecrationem, dicuntur ut in Canone Missae, nihil addendo vel immutando', printed p. 153, artifact PDF p. 234, read on the page image on 2026-11-14) appoints the common forms through that formulary's ordinary_appointments in src/sources/calendars/roman-1962/propers.yaml, which a formulary's own direction does before any span. The Mass of the Lord's Supper prints its own Communicantes and Hanc igitur (artifact PDF p. 239, printed p. 158, nn. 916-917) and its generic frame is withheld. This span therefore leaves only a Maundy Thursday Mass with no direction of its own unappointed, rather than giving it the common form."
 
 # ---------------------------------------------------------------- sections
 
@@ -1417,6 +1454,102 @@ collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 272, original PDF 386, right column, after priest absolution rubric and before Deus tu conversus; checked word by word against the complete 1962 target at n. 1020, printed 217/PDF 298 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints onmipotens; Mame prints omnipotens. The new response actor remains unassigned. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
 
+
+[[sections.additional_texts]]
+element = "ordinarium-missae-heading"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "praeparatio-ordinarium-missae-heading"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; 1962 printed p. 216, artifact PDF p. 297, Ordo Missae title; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-praeparatio-ordinarium-missae-heading"
+target_wording = "word-exact"
+reading_note = "The Missal's own Latin at this place (1922 Mame, word for word as in the 1962 typical edition)."
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The Missal's own heading or rubric at this place, from the 1922 Tours Mame, printed p. 271, original PDF p. 385, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 216, artifact PDF p. 297, Ordo Missae title. The 1861 English of this element renders it. Differences are the declared capitalization, j/i, ligature, accent and pointing transformations only. The 1861 Cummiskey prints no Latin here; that absence remains its own, and no word is attributed to it."
+
+[[sections.additional_texts]]
+element = "psalmus-xlii-heading"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "praeparatio-psalmus-xlii-heading"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; 1962 printed p. 216, artifact PDF p. 297, heading before n. 1015; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-praeparatio-psalmus-xlii-heading"
+target_wording = "word-exact"
+reading_note = "The Missal's own Latin at this place (1922 Mame, word for word as in the 1962 typical edition)."
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The Missal's own heading or rubric at this place, from the 1922 Tours Mame, printed p. 271, original PDF p. 385, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 216, artifact PDF p. 297, heading before n. 1015. The 1861 English of this element renders it. Differences are the declared capitalization, j/i, ligature, accent and pointing transformations only. The 1861 Cummiskey prints no Latin here; that absence remains its own, and no word is attributed to it. Only the printed psalm heading is carried. The preceding rubric line 'Postea alternatim cum Ministris dicit sequentem' (word-exact in both books) has no element in this frame and is not attached to the 1861 heading it does not translate."
+
+[[sections.additional_texts]]
+element = "rubrica-ascensus-ad-altare"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "praeparatio-rubrica-ascensus-ad-altare"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; 1962 printed p. 217, artifact PDF p. 298, rubric before n. 1022; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-praeparatio-rubrica-ascensus-ad-altare"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 272, original PDF p. 386, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 217, artifact PDF p. 298, rubric before n. 1022: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-inclinatus-ante-altare"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "praeparatio-rubrica-inclinatus-ante-altare"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-ad-gradum; 1962 printed p. 217, artifact PDF p. 298, rubric before n. 1023; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-praeparatio-rubrica-inclinatus-ante-altare"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 273, original PDF p. 387, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 217, artifact PDF p. 298, rubric before n. 1023: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-conversus-ad-populum"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "praeparatio-rubrica-conversus-ad-populum"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-kyrie-gloria; 1962 printed p. 219, artifact PDF p. 300, rubric after n. 1025; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-praeparatio-rubrica-conversus-ad-populum"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 274, original PDF p. 388, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 219, artifact PDF p. 300, rubric after n. 1025: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-sacerdos-ad-pedes-altaris"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praeparatio-rubrica-sacerdos-ad-pedes-altaris"
+column = "latin"
+relation = "own"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the 1962 Missal's own rubric at this place (1960-1962 wording), published on a qualified basis. The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+
+[[sections.additional_texts]]
+element = "rubrica-benedictio-incensi-et-introitus"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praeparatio-rubrica-benedictio-incensi-et-introitus"
+column = "latin"
+relation = "own"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the 1962 Missal's own rubric at this place (1960-1962 wording), published on a qualified basis. The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+
 [[sections]]
 key = "oblatio"
 name = "The Lessons and the Offertory"
@@ -1480,6 +1613,15 @@ collation = "uncollated"
 note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1962 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
 
 [sections.absent_latin_by_element]
+rubrica-post-collectam = "lay-apparatus-no-missal-counterpart"
+rubrica-munda-cor-meum = "lay-apparatus-no-missal-counterpart"
+rubrica-evangelium-proprium = "lay-apparatus-no-missal-counterpart"
+rubrica-cum-sacerdote = "lay-apparatus-no-missal-counterpart"
+credo-heading = "lay-apparatus-no-missal-counterpart"
+rubrica-offertorium = "lay-apparatus-no-missal-counterpart"
+oblatio-hostiae-heading = "lay-apparatus-no-missal-counterpart"
+oblatio-calicis-heading = "lay-apparatus-no-missal-counterpart"
+praefatio-heading = "lay-apparatus-no-missal-counterpart"
 a-cunctis = "not-in-the-1962-ordo"
 munda-cor-meum = "no-facing-latin"
 dominus-sit-in-corde-meo = "no-facing-latin"
@@ -2391,6 +2533,195 @@ collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 278, original PDF 392, left column, complete Ne perdas Psalm verse, before In quorum manibus; checked word by word against the complete 1962 target at n. 1039, printed 221/PDF 302 on actual 200 and 400 dpi page images. The selected Cummiskey Latin omits Deus; Mame prints it. The verse ends with the source colon and is not expanded to the whole Psalm. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
 
+
+[[sections.additional_texts]]
+element = "rubrica-epistola"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-epistola"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-kyrie-gloria; 1962 printed p. 219, artifact PDF p. 300, rubric after n. 1025; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-epistola"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 274, original PDF p. 388, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 219, artifact PDF p. 300, rubric after n. 1025: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own. The speck before 'vel' on the Mame page is not a letter (checked at 400 dpi)."
+
+[[sections.additional_texts]]
+element = "rubrica-post-evangelium"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-post-evangelium"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-credo; 1962 printed p. 219, artifact PDF p. 300, rubric after n. 1028; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-post-evangelium"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 275, original PDF p. 389, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 219, artifact PDF p. 300, rubric after n. 1028: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-inclinatus-ante-altare"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-inclinatus-ante-altare"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; 1962 printed p. 221, artifact PDF p. 302, rubric before n. 1033; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-inclinatus-ante-altare"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 277, original PDF p. 391, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 221, artifact PDF p. 302, rubric before n. 1033: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-benedictio-panis-et-vini"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-benedictio-panis-et-vini"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; 1962 printed p. 221, artifact PDF p. 302, rubric before n. 1034; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-benedictio-panis-et-vini"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 277, original PDF p. 391, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 221, artifact PDF p. 302, rubric before n. 1034: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-benedictio-incensi"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-benedictio-incensi"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; 1962 printed p. 221, artifact PDF p. 302, rubric before n. 1035; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-benedictio-incensi"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 277, original PDF p. 391, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 221, artifact PDF p. 302, rubric before n. 1035: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-incensatio-altaris"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-incensatio-altaris"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; 1962 printed p. 221, artifact PDF p. 302, rubric and heading before n. 1037; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-incensatio-altaris"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 277, original PDF p. 391, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 221, artifact PDF p. 302, rubric and heading before n. 1037: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-thuribulum-diacono"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-thuribulum-diacono"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; 1962 printed p. 221, artifact PDF p. 302, rubric before n. 1038; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-thuribulum-diacono"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 277, original PDF p. 391, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 221, artifact PDF p. 302, rubric before n. 1038: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-lavabo"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-lavabo"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; 1962 printed p. 221, artifact PDF p. 302, rubric and heading before n. 1039; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-lavabo"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 277, original PDF p. 391, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 221, artifact PDF p. 302, rubric and heading before n. 1039: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-inclinatus-ante-medium-altaris"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-inclinatus-ante-medium-altaris"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; 1962 printed p. 222, artifact PDF p. 303, rubric before n. 1040; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-inclinatus-ante-medium-altaris"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 278, original PDF p. 392, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 222, artifact PDF p. 303, rubric before n. 1040: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-conversus-ad-populum"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "oblatio-rubrica-conversus-ad-populum"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-offertorium; 1962 printed p. 222, artifact PDF p. 303, rubric before n. 1041; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-oblatio-rubrica-conversus-ad-populum"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 278, original PDF p. 392, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 222, artifact PDF p. 303, rubric before n. 1041: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-vinum-et-aqua"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "oblatio-rubrica-vinum-et-aqua"
+column = "latin"
+relation = "own"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the 1962 Missal's own rubric at this place (1960-1962 wording), published on a qualified basis. The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+
+[[sections.additional_texts]]
+element = "rubrica-incensatio-oblatorum"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "oblatio-rubrica-incensatio-oblatorum"
+column = "latin"
+relation = "own"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the 1962 Missal's own rubric at this place (1960-1962 wording), published on a qualified basis. The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+
+[[sections.element_provenance]]
+element = "rubrica-post-collectam"
+lang = "en"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical 1861 direction, not the 1962 discipline: it describes the second and third Collects of the oration regime the 1960 Code of Rubrics abolished. The 1962 Missal prints no counterpart here."
+note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1962 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted. Read against the 1962 Ordo Missae page images on 2026-11-14: the direction states practice the 1962 book does not prescribe, so it carries a caution at the element and no Latin."
+
+[[sections.element_provenance]]
+element = "rubrica-cum-sacerdote"
+lang = "en"
+relation = "antecedent"
+collation = "uncollated"
+reading_note = "Historical 1861 direction, not the 1962 discipline: the 1962 Missal gives Per evangelica dicta to the priest alone as he kisses the book, and prints no direction for the assistants here."
+note = "ANTECEDENT, NOT THE TARGET EDITION. This English is the anonymous translation printed by the 1861 Cummiskey lay hand missal, not an approved translation of the 1962 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted. Read against the 1962 Ordo Missae page images on 2026-11-14: the direction states practice the 1962 book does not prescribe, so it carries a caution at the element and no Latin."
+
 [[sections]]
 key = "praefatio"
 name = "The Prefaces"
@@ -3012,6 +3343,243 @@ relation = "antecedent"
 collation = "uncollated"
 note = "HISTORICAL HUMAN ENGLISH. Complete Lasance 1945 source body with its own opening and conclusion through the colon before its separately printed Sanctus. No source-foreign opening or conclusion is supplied. Source wording, capitals, punctuation and historical variants remain. No approved target-English or exact-target claim. Complete historical source body before Sanctus. Preserve exact source theological rendering and punctuation. No target-English exactness or full execution claim. The source comma in its pastors under Thee, And therefore is retained before capital And."
 reading_note = "Historical English from the Lasance/Walsh hand missal. Its source wording and alternatives are retained."
+
+
+[[sections.english_replacements]]
+element = "praefatio-communis-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "83d6b74da19bc03d462fcfc28e7575d0f101fd8553f85cf7be3e8dee0de629b8" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-communis-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-ss-trinitate-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "909253759ee7e76a6f2f1c58a60a363b1d82ebd30296bf752aff2072b3c41cfb" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-ss-trinitate-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-nativitate-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "bac7089386396ef60646ed45daec0308b3adfe0864a7e63f97eec978b3e979d6" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-nativitate-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-epiphania-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "80dad7f0a457cf26ac1c4a30c7c4d7c12f749cf4b68c511d838cf864735d005a" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-epiphania-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-quadragesima-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "3339bd16de75519532a96e7567497e0c170f68331ab8f8f886505a08e8e37154" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-quadragesima-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-sancta-cruce-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "28ed3a4e895e7c8dd34151727b502b3d3e2583309d8fbe534325938ad66ff9df" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-sancta-cruce-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-paschalis-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "0924f731c2dce102fd937a87e811f8498de00c917d6b6a291041eef3405a0bf2" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-paschalis-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-ascensione-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "37d70f96c62c2bec5ab10c71f57b5a66e3f7fef7b1c22f777cafd68c270e4293" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-ascensione-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-spiritu-sancto-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "995c2c54cb591c60a5a02f2dc64d4019745101918bf3fc4e985ec831d1b003c7" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-spiritu-sancto-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-beata-maria-virgine-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "91168e156b140fe98fc6db23e68a6634728e0fc57b0dbc68966d11828ebf3879" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-beata-maria-virgine-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.english_replacements]]
+element = "praefatio-de-apostolis-heading"
+replaces = { witness = "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861", artifact = "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.praefationes-en", text_sha256 = "df003c805add57f2e130636f75f32479cf25cfe192fc622bb942f98304bbe89c" }
+[sections.english_replacements.english]
+witness = "edition.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114"
+artifact = "artifact.triptych.roman-1962-ordinary-preface-rubrics-study-english-20261114.study-english-20261114.preface-rubrics-study-en"
+element = "praefatio-praefatio-de-apostolis-heading"
+column = "english"
+relation = "own"
+reading_note = "Triptych study translation of the 1962 Missal's heading and rubric for this Preface; not for recitation. The 1861 lay missal's heading at this place, which states the discipline before the 1955 and 1960 reforms, is not shown here and remains in its source."
+
+[[sections.additional_texts]]
+element = "praefatio-communis-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-communis-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-ss-trinitate-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-ss-trinitate-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-nativitate-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-nativitate-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-epiphania-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-epiphania-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-quadragesima-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-quadragesima-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-sancta-cruce-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-sancta-cruce-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-paschalis-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-paschalis-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-ascensione-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-ascensione-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-spiritu-sancto-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-spiritu-sancto-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-beata-maria-virgine-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-beata-maria-virgine-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[[sections.additional_texts]]
+element = "praefatio-de-apostolis-heading"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "praefatio-praefatio-de-apostolis-heading"
+column = "latin"
+relation = "own"
+reading_note = "Latin: the 1962 Missal's own heading and rubric for this Preface (1960-1962 wording), published on a qualified basis."
+
+[sections.absent_latin_by_element]
+rubrica-nota-asterisci = "lay-apparatus-no-missal-counterpart"
+rubrica-nota-obeli = "lay-apparatus-no-missal-counterpart"
+rubrica-nota-nominis = "lay-apparatus-no-missal-counterpart"
 
 [[sections]]
 key = "canon"
@@ -3786,6 +4354,139 @@ collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 345, original PDF 459, upper left, complete Per quem before the Discooperit rubric; checked word by word against the complete 1962 target at n. 1111, printed 311/PDF 392 on actual 200 and 400 dpi page images. The selected Cummiskey Latin prints ereas; Mame prints creas. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
 
+
+[[sections.additional_texts]]
+element = "canon-heading"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-canon-heading"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur; 1962 printed p. 299, artifact PDF p. 380, Canon Missae title; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-canon-heading"
+target_wording = "word-exact"
+reading_note = "The Missal's own Latin at this place (1922 Mame, word for word as in the 1962 typical edition)."
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The Missal's own heading or rubric at this place, from the 1922 Tours Mame, printed p. 340, original PDF p. 454, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 299, artifact PDF p. 380, Canon Missae title. The 1861 English of this element renders it. Differences are the declared capitalization, j/i, ligature, accent and pointing transformations only. The 1861 Cummiskey prints no Latin here; that absence remains its own, and no word is attributed to it."
+
+[[sections.additional_texts]]
+element = "commemoratio-vivorum-heading"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-commemoratio-vivorum-heading"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur; 1962 printed p. 301, artifact PDF p. 382, heading before n. 1089; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-commemoratio-vivorum-heading"
+target_wording = "word-exact"
+reading_note = "The Missal's own Latin at this place (1922 Mame, word for word as in the 1962 typical edition)."
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The Missal's own heading or rubric at this place, from the 1922 Tours Mame, printed p. 340, original PDF p. 454, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 301, artifact PDF p. 382, heading before n. 1089. The 1861 English of this element renders it. Differences are the declared capitalization, j/i, ligature, accent and pointing transformations only. The 1861 Cummiskey prints no Latin here; that absence remains its own, and no word is attributed to it."
+
+[[sections.additional_texts]]
+element = "rubrica-oratio-silens"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-rubrica-oratio-silens"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-te-igitur; 1962 printed p. 301-302, artifact PDF p. 382-383, inline rubric within n. 1089; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-rubrica-oratio-silens"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 341, original PDF p. 455, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 301-302, artifact PDF p. 382-383, inline rubric within n. 1089: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-manus-expansae"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-rubrica-manus-expansae"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-communicantes; 1962 printed p. 303, artifact PDF p. 384, rubric before n. 1091; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-rubrica-manus-expansae"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 341, original PDF p. 455, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 303, artifact PDF p. 384, rubric before n. 1091: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-elevatio-hostiae"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-rubrica-elevatio-hostiae"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-consecratio; 1962 printed p. 306, artifact PDF p. 387, rubric after n. 1102; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-rubrica-elevatio-hostiae"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 342, original PDF p. 456, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 306, artifact PDF p. 387, rubric after n. 1102: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-elevatio-calicis"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-rubrica-elevatio-calicis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; 1962 printed p. 308, artifact PDF p. 389, rubric after n. 1105; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-rubrica-elevatio-calicis"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 343, original PDF p. 457, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 308, artifact PDF p. 389, rubric after n. 1105: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own. Contiguous selection cut at the printed period: the 1962 book continues the sentence after Haec quotiescumque, and Mame begins it with a capital; the preceding 1962 clause 'deponit calicem super corporale, et dicens' is not carried (Mame adds 'secrete')."
+
+[[sections.additional_texts]]
+element = "commemoratio-defunctorum-heading"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-commemoratio-defunctorum-heading"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; 1962 printed p. 309, artifact PDF p. 390, heading before n. 1109; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-commemoratio-defunctorum-heading"
+target_wording = "word-exact"
+reading_note = "The Missal's own Latin at this place (1922 Mame, word for word as in the 1962 typical edition)."
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The Missal's own heading or rubric at this place, from the 1922 Tours Mame, printed p. 344, original PDF p. 458, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 309, artifact PDF p. 390, heading before n. 1109. The 1861 English of this element renders it. Differences are the declared capitalization, j/i, ligature, accent and pointing transformations only. The 1861 Cummiskey prints no Latin here; that absence remains its own, and no word is attributed to it."
+
+[[sections.additional_texts]]
+element = "rubrica-mentio-defunctorum"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-rubrica-mentio-defunctorum"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; 1962 printed p. 310, artifact PDF p. 391, inline rubric within n. 1109; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-rubrica-mentio-defunctorum"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 344, original PDF p. 458, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 310, artifact PDF p. 391, inline rubric within n. 1109: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-percussio-pectoris"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "canon-rubrica-percussio-pectoris"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.canon-anamnesis; 1962 printed p. 310, artifact PDF p. 391, rubric before n. 1110; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-canon-rubrica-percussio-pectoris"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 344, original PDF p. 458, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 310, artifact PDF p. 391, rubric before n. 1110: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
 [[sections]]
 key = "communio"
 name = "The Communion"
@@ -4244,6 +4945,140 @@ collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962
 target_wording = "word-exact"
 note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. Complete Mame 1922 Latin, printed 350, original PDF 464, upper left, all three complete invocations before the Requiem rubric; checked word by word against the complete 1962 target at n. 1120, printed 318/PDF 399 on actual 200 and 400 dpi page images. The selected Cummiskey Latin abbreviates the repeated invocations with reference marks; Mame prints all three in full. Differences otherwise are the declared ligature, accent, j/i, capitalization, punctuation and cross/cue transformations only. This selects a separate historical witness; the Cummiskey artifact and its prior finding remain immutable. Current English is retained with its own existing qualification."
 
+
+[[sections.additional_texts]]
+element = "rubrica-commixtio"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-commixtio"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 317, artifact PDF p. 398, rubric and n. 1119; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-commixtio"
+target_wording = "word-exact"
+reading_note = "The Missal's own Latin at this place (1922 Mame, word for word as in the 1962 typical edition)."
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The Missal's own heading or rubric at this place, from the 1922 Tours Mame, printed p. 349, original PDF p. 463, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 317, artifact PDF p. 398, rubric and n. 1119. The 1861 English of this element renders it. Differences are the declared capitalization, j/i, ligature, accent and pointing transformations only. The 1861 Cummiskey prints no Latin here; that absence remains its own, and no word is attributed to it. Rubric and formula both carried; the 1962 book prints a comma after Christi that Mame lacks (pointing only). The 1861 English joins the earlier fraction rubric to this immission and renders the formula itself."
+
+[[sections.additional_texts]]
+element = "rubrica-agnus-dei"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-agnus-dei"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 317, artifact PDF p. 398, rubric before n. 1120; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-agnus-dei"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 349-350, original PDF p. 463-464, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 317, artifact PDF p. 398, rubric before n. 1120: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own. Runs from printed p. 349 to p. 350. Mame 'intelligibili', 1962 'intellegibili': one word in two received spellings."
+
+[[sections.additional_texts]]
+element = "rubrica-agnus-dei-in-missis-defunctorum"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-agnus-dei-in-missis-defunctorum"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 318, artifact PDF p. 399, rubric after n. 1120; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-agnus-dei-in-missis-defunctorum"
+target_wording = "word-exact"
+reading_note = "The Missal's own Latin at this place (1922 Mame, word for word as in the 1962 typical edition)."
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The Missal's own heading or rubric at this place, from the 1922 Tours Mame, printed p. 350, original PDF p. 464, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 318, artifact PDF p. 399, rubric after n. 1120. The 1861 English of this element renders it. Differences are the declared capitalization, j/i, ligature, accent and pointing transformations only. The 1861 Cummiskey prints no Latin here; that absence remains its own, and no word is attributed to it."
+
+[[sections.additional_texts]]
+element = "rubrica-panem-coelestem"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-panem-coelestem"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 319, artifact PDF p. 400, rubric before n. 1125; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-panem-coelestem"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 351, original PDF p. 465, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 319, artifact PDF p. 400, rubric before n. 1125: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-domine-non-sum-dignus"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-domine-non-sum-dignus"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 320, artifact PDF p. 401, rubric before n. 1126; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-domine-non-sum-dignus"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 351, original PDF p. 465, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 320, artifact PDF p. 401, rubric before n. 1126: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own. Mame 'eumdem', 1962 'eundem': one word in two received spellings (precedent: the 2026-10-19 Canon projection)."
+
+[[sections.additional_texts]]
+element = "rubrica-sumptio-corporis"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-sumptio-corporis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 320, artifact PDF p. 401, rubric before n. 1127; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-sumptio-corporis"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 351, original PDF p. 465, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 320, artifact PDF p. 401, rubric before n. 1127: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-sumptio-calicis"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-sumptio-calicis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 321, artifact PDF p. 402, rubric before n. 1128; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-sumptio-calicis"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 351, original PDF p. 465, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 321, artifact PDF p. 402, rubric before n. 1128: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own. Contiguous selection beginning at the printed sentence 'Deinde discooperit'; in Mame it continues the paragraph that opens 'Et se inclinans', which this frame has no element for."
+
+[[sections.additional_texts]]
+element = "rubrica-sumptio-sanguinis"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-sumptio-sanguinis"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 321, artifact PDF p. 402, rubric before n. 1129; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-sumptio-sanguinis"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 351, original PDF p. 465, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 321, artifact PDF p. 402, rubric before n. 1129: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-ablutio-prima"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "communio-rubrica-ablutio-prima"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 321, artifact PDF p. 402, rubric before n. 1130; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-communio-rubrica-ablutio-prima"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 351, original PDF p. 465, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 321, artifact PDF p. 402, rubric before n. 1130: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
 [[sections]]
 key = "conclusio"
 name = "The Ablutions and the Last Gospel"
@@ -4327,6 +5162,7 @@ collation = "uncollated"
 note = "ANTECEDENT, NOT THE TARGET EDITION. This Latin is the facing column printed by the 1861 Cummiskey lay hand missal, not the text of the 1962 typical edition. UNCOLLATED: no element-by-element collation against the target edition is asserted."
 
 [sections.absent_latin_by_element]
+rubrica-communio = "lay-apparatus-no-missal-counterpart"
 benedicat-vos-omnipotens-deus = "no-facing-latin"
 postcommunio-mundet = "not-in-the-1962-ordo"
 et-famulos = "not-in-the-1962-ordo"
@@ -4542,6 +5378,62 @@ collation = "collated"
 collation_finding = "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.oratio-super-populum-cues-english-20261112; passage.catholic-church.missale-romanum.vatican-typica-1962.oratio-super-populum-placement-actors-20261112"
 note = "Historical Cummiskey 1861 English from printed 119/PDF 130/IA n129, independently checked against the complete Latin cue. It renders the complete invitation and command, without an additional clause; it is not an approved 1962 English text. The historical source prints no P/R letters or responding actor here."
 reading_note = "Historical English for study. The priest says Oremus. At Solemn Mass the deacon says Humiliate; otherwise the celebrant says it under the general rite (1962 Ritus XI.2-3)."
+
+
+[[sections.additional_texts]]
+element = "rubrica-ablutio-secunda"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "conclusio-rubrica-ablutio-secunda"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-communio; 1962 printed p. 322, artifact PDF p. 403, rubric before n. 1131; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-conclusio-rubrica-ablutio-secunda"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 352, original PDF p. 466, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 322, artifact PDF p. 403, rubric before n. 1131: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own."
+
+[[sections.additional_texts]]
+element = "rubrica-in-missis-defunctorum"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "conclusio-rubrica-in-missis-defunctorum"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; 1962 printed p. 323, artifact PDF p. 404, rubric before n. 1133; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-conclusio-rubrica-in-missis-defunctorum"
+target_wording = "word-exact"
+reading_note = "The Missal's own Latin at this place (1922 Mame, word for word as in the 1962 typical edition)."
+note = "ANTECEDENT WORDING, COLLATED WORD-EXACT. The Missal's own heading or rubric at this place, from the 1922 Tours Mame, printed p. 352, original PDF p. 466, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 323, artifact PDF p. 404, rubric before n. 1133. The 1861 English of this element renders it. Differences are the declared capitalization, j/i, ligature, accent and pointing transformations only. The 1861 Cummiskey prints no Latin here; that absence remains its own, and no word is attributed to it. Selection cut at the printed colon before the versicle; Requiescant in pace is held on its own element."
+
+[[sections.additional_texts]]
+element = "rubrica-benedictio"
+[sections.additional_texts.latin]
+witness = "edition.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam"
+artifact = "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114"
+element = "conclusio-rubrica-benedictio"
+column = "latin"
+relation = "antecedent"
+collation = "collated"
+collation_finding = "passage.catholic-church.missale-romanum.vatican-typica-1962.ordo-missae-conclusio; 1962 printed p. 326, artifact PDF p. 407, rubric opening n. 1138; passage.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ordinary-headings-rubrics-latin-20261114-conclusio-rubrica-benedictio"
+target_wording = "word-exact"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the Missal's own rubric at this place (1922 Mame, word for word as in the 1962 typical edition). The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
+note = "THE MISSAL'S RUBRIC AT THIS PLACE, NOT THE SOURCE OF THE ENGLISH. The complete rubric the Missal prints here, from the 1922 Tours Mame, printed p. 355, original PDF p. 469, compared word for word on page images on 2026-11-14 (200 dpi, doubtful letters at 400 dpi) with the 1962 typical edition, printed p. 326, artifact PDF p. 407, rubric opening n. 1138: the words agree under the declared capitalization, j/i, ligature, accent and pointing transformations. The English beside it is the 1861 Cummiskey lay missal's own paraphrase of the direction at this place, not a translation of this Latin, and this Latin is not its source. The 1861 book prints no Latin here; that absence remains its own. First rubric span only, cut at the colon before Benedicat vos omnipotens Deus. The second span ('Et versus ad populum, semel tantum benedicens, etiam in Missis solemnibus, prosequitur:', 1962 printed p. 326) is NOT carried: Mame's printing of its first word reads 'emel' on the page image at 200 and 400 dpi, the 1862 Pustet leaf for printed p. 267 is missing from the registered scan (PDF p. 353 is a 14 x 23 pt stub), and no word is supplied from memory. The blessing formula is held on the following element."
+
+[[sections.additional_texts]]
+element = "rubrica-inclinatus-ante-altare"
+[sections.additional_texts.latin]
+witness = "edition.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14"
+artifact = "artifact.triptych.roman-1962-ordinary-editorial-projection.qualified-transcription-2026-11-14.ordinary-1962-rubrics-latin-20261114"
+element = "conclusio-rubrica-inclinatus-ante-altare"
+column = "latin"
+relation = "own"
+counterpart = "rubric-at-place"
+reading_note = "Latin: the 1962 Missal's own rubric at this place (1960-1962 wording), published on a qualified basis. The English beside it is the 1861 lay missal's paraphrase, not a translation of this Latin."
 
 [[slots]]
 key = "introitus"

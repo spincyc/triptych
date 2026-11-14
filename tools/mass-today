@@ -59,7 +59,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import _calendars  # noqa: E402
 from _browser_products import ProductError, verified_products  # noqa: E402
-from _ordinary_text import element_lines, wrap as wrap_lines  # noqa: E402
+from _ordinary_text import element_lines, witness_notices, wrap as wrap_lines  # noqa: E402
 from _tooling import (  # noqa: E402
     Example,
     Style,
@@ -2057,7 +2057,7 @@ def render_ordinary(
         elif event.get("kind") == "ordinary_element":
             for line in element_lines(
                 event["element"], lang, style, indent="    ",
-                show_rubrics=show_rubrics,
+                show_rubrics=show_rubrics, notices=witness_notices(one),
             ):
                 print(line)
     for unresolved in resolved["unresolved"]:
@@ -2943,6 +2943,7 @@ def render_expanded_mass(
                 event["element"], requested_language(arguments), style,
                 indent=indent, show_rubrics=arguments.rubrics, why=arguments.why,
                 context={"calendar": str(calendar or arguments.calendar or ""), "formulary": str(mass.get("key") or "")},
+                notices=witness_notices(ordinary),
             ):
                 print(line)
         elif kind == "proper_choice":

@@ -1,0 +1,20 @@
+schema = 2
+record_type = "artifact"
+id = "artifact.archdiocese-of-mainz.missale-moguntinum.wurzburg-reyser-1482.fol-122v-perceptio-la-20261114"
+edition_id = "edition.archdiocese-of-mainz.missale-moguntinum.wurzburg-reyser-1482"
+artifact_type = "normalized-text"
+media_type = "text/tab-separated-values; charset=utf-8"
+storage = "tracked"
+rights_status = "public-domain"
+rights_jurisdiction = "United States"
+rights_basis = "A faithful transcription, with declared abbreviation expansion, of one prayer printed in 1482; the words are in the United States public domain by date of publication and the transcription adds no exclusive right."
+provenance = "Read on 2026-11-14 on the page image of the registered canvas (sha256 52b3d2916bfe55525893283f3f05ca2f29a5548cd48a29ec9c2a3a7e2f339eac), fol. 122v, left column; lane crops of the full-size canvas at native resolution."
+retrieved = "2026-11-14"
+sha256 = "8cfa1b0b9c0fd5a5466addd6d179ced38b6f8c8d88783223c84d5ef38309993c"
+byte_size = 694
+path = "src/sources/works/archdiocese-of-mainz/missale-moguntinum/editions/wurzburg-reyser-1482/artifacts/fol-122v-perceptio-la-20261114/text.tsv"
+derived_from = "artifact.archdiocese-of-mainz.missale-moguntinum.wurzburg-reyser-1482.bsb00032958-canvas-270-52b3d291"
+transformation = "Transcribe the complete prayer with its conclusion; expand the printed abbreviations (listed in the row notes); keep source spelling (ihesu, michi, u for v), word order and pointing; write red initials as capitals."
+indexable = true
+encoding = "utf-8"
+notes = "Header and one row. Older form of the 2002 Missal's n. 131 second alternative; not an exact Latin witness of that target."
