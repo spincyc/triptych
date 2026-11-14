@@ -1132,7 +1132,7 @@ def emergency_reap():
         process.wait(timeout=5)
 atexit.register(emergency_reap)
 @contextmanager
-def products(root):
+def products(root, index=None):
     temporary=tempfile.TemporaryDirectory(dir=work,prefix="private-")
     private=Path(temporary.name)
     payload=private/"control.json"
@@ -1203,7 +1203,7 @@ for attempt in range(int(sys.argv[3])):
         events = []
 
         @contextmanager
-        def products(root):
+        def products(root, index=None):
             self.assertEqual(root, ROOT)
             self.assertEqual(outer.get(), "independent")
             token = marker.set(True)
@@ -1258,7 +1258,7 @@ for attempt in range(int(sys.argv[3])):
         client = bridge.Bridge()
         events = []
         @contextmanager
-        def products(root):
+        def products(root, index=None):
             events.append("enter")
             try:
                 yield SimpleNamespace(data_root=ROOT / ".scratch/next-product-consumers/private-data")
@@ -1275,7 +1275,7 @@ for attempt in range(int(sys.argv[3])):
         client = bridge.Bridge()
         child = _pipe_child("import sys; sys.stdin.read()")
         @contextmanager
-        def products(root):
+        def products(root, index=None):
             yield SimpleNamespace(data_root=ROOT / ".scratch/next-product-consumers/private-data")
             raise bridge.ProductError("rights inputs changed")
         try:
