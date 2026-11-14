@@ -965,6 +965,36 @@ def accepted_holy_name_locator():
   raise AssertionError("Holy Name locator correction changes more than its three locator fields")
  return before,after
 
+BAPTISMAL_WATER=("easter-vigil","main","Blessing of the Baptismal Water","all",1)
+BAPTISMAL_WATER_REVIEW=ROOT/"workflows/reviews/missal-reader-resume-2026-11-12/baptismal-water-extent"
+BAPTISMAL_WATER_TRANSITION_SHA="52e55bb4479f1fe74f85a3ea9fc2a16366725fa44cb0456505d1cd5fc03214a2"
+BAPTISMAL_WATER_ADOPTION_SHA="e5247c34f6f5ef9aa200533b3e106aa0f7617723885f7a259fb6c8215b93a087"
+
+def accepted_baptismal_water_note():
+ """The exact adopted before/after baptismal-water English rows, or AssertionError."""
+ raw=(BAPTISMAL_WATER_REVIEW/"positive-transition-proposal.json").read_bytes()
+ adoption_raw=(BAPTISMAL_WATER_REVIEW/"evidence/root-source-adoption.json").read_bytes()
+ if sha(raw)!=BAPTISMAL_WATER_TRANSITION_SHA or sha(adoption_raw)!=BAPTISMAL_WATER_ADOPTION_SHA:
+  raise AssertionError("baptismal-water transition or its root adoption changed")
+ transition,adoption=json.loads(raw),json.loads(adoption_raw)
+ if not (adoption["status"]=="accepted" and adoption["transition"]["sha256"]==BAPTISMAL_WATER_TRANSITION_SHA
+         and transition["target"]==adoption["target"]==list(BAPTISMAL_WATER)):
+  raise AssertionError("baptismal-water English note is not the accepted transition")
+ before=transition["before"]["english_binding"]["dictionary"];after=transition["after"]["english_binding"]["dictionary"]
+ if not ({k for k in set(before)|set(after) if before.get(k)!=after.get(k)}=={"witness_note"}
+         and before["translations"]==after["translations"]):
+  raise AssertionError("baptismal-water transition changes more than its English witness_note")
+ return before,after
+
+def prior_english_row(entries,key):
+ """A frozen prior row, with each accepted metadata successor replaced by its exact predecessor."""
+ for target,accepted in ((HOLY_NAME,accepted_holy_name_locator),(BAPTISMAL_WATER,accepted_baptismal_water_note)):
+  if key==target:
+   before,after=accepted()
+   if entries[key]!=after:raise AssertionError("accepted successor is not installed exactly: "+repr(key))
+   return before
+ return entries[key]
+
 COVERAGE = {'roman-1962': (1427, 219, 1208), 'roman-pre-1955': (1378, 206, 1172)}
 
 ARTIFACT_ORACLES = {'artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.phase4-nativity-marian-reuse-en-ed897177': ('ed89717779d0b40259dee17372a269085854d3747c9aab34252df73c0a148f88',
@@ -1105,7 +1135,8 @@ class English31SourceTests(unittest.TestCase):
   self.assertIn(HOLY_NAME,OLD_KEYS)
   before,after=accepted_holy_name_locator()
   self.assertEqual(self.entries[HOLY_NAME],after)
-  prior_rows=[before if k==HOLY_NAME else self.entries[k] for k in OLD_KEYS]
+  self.assertIn(BAPTISMAL_WATER,OLD_KEYS)
+  prior_rows=[prior_english_row(self.entries,k) for k in OLD_KEYS]
   self.assertEqual(sha(json.dumps(prior_rows,sort_keys=True,ensure_ascii=False)),OLD_ENTRY_SHA)
 
  def test_authorized_common_two_and_original_advent_hold(self):

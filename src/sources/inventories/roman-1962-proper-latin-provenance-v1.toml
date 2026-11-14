@@ -5844,25 +5844,24 @@ proper = "Blessing of the Baptismal Water"
 course = ""
 cycle = ""
 occurrence = 1
-text_sha256 = "7d0b92da77830536605070fff500cde9e657c80dfc6709422dfecd372a9ce80a"
+text_sha256 = "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864"
 provenance_status = "collated"
-source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-blessing-of-the-baptismal-water"
-source_date = "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862"
-locator = "editorial-projection artifact physical lines 77-82; antecedent printed p. 201-202 (folio marker 201 at line 35748); text-layer lines 35794-35802"
+source_id = "passage.triptych.roman-1962-latin-proper-editorial-projection.baptismal-water-extent-2026-11-13.easter-vigil-blessing-of-the-baptismal-water"
+source_date = "2026-11-13 project editorial projection; complete antecedent Mame Tours 1922"
+locator = "projected text physical lines 1–83; Mame printed pp. 254–264, artifact PDF pp. 368–378"
 relationship = "editorial-projection-exact-to-target"
-verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-easter-vigil-orations"
-verification_locator = "printed p. 200, no. 992; artifact PDF p. 281"
-transformations = ["join printed line wraps", "remove stress accents", "expand printed ae/oe ligatures to ae/oe", "normalise consonantal i to the calendar's j orthography", "apply the target printing's punctuation", "carry the target's conclusion at its printed length"]
-provenance_evidence = "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1862 layer fuses the ornamental O of Omnipotens into the following word (SYmnf sempi / sempit rne deus); 1862 layer damage only: magnse piet tis, recre ndos, p pulos, adopti nis, nostrse, tuse implemur eff ctu; 1862 prints the short cue Per Dominum. where the 1962 writes the conclusion out to Qui tecum vivit et regnat in unitate Spiritus Sancti Deus:. Corroboration: 1922 Tours/Mame, Missale Romanum editio quarta iuxta typicam Vaticanam, public-domain, READ FROM THE 300 dpi PAGE IMAGE (pdftoppm), not from its text layer -- its Holy Saturday text layer is chant-damaged and unusable. Page mapping pdf = printed + 114, verified on the running-head folio of the five pages I rendered (pdf 354/printed 240, 359/245, 363/249, 365/251, 368/254). Printed p. 254, right column (artifact PDF p. 368). Word for word the 1962 reading AND, decisively, it prints the conclusion written out exactly as the 1962 does: Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus:."
+verification_source_id = "passage.catholic-church.missale-romanum.vatican-typica-1962.easter-vigil-baptismal-water-complete-20261113"
+verification_locator = "printed pp. 200–207, nn. 992–996; artifact PDF pp. 281–288"
+transformations = ["Preserve the existing 379-character n. 992 calendar body byte for byte.", "Append the complete printed n. 993 dialogue, long blessing and conclusion, and nn. 994–996 formulas, once.", "Join printed line wraps and syllabic chant spacing; omit chant notation, rubrics, headings, marginal numbers and page layout.", "Remove stress accents, expand ae/oe ligatures, and use the calendar’s existing consonantal j orthography.", "Use target punctuation, capitalization, Scripture quotation marks and cross positions; represent crosses by + and dialogue signs by V./R.", "Render Mame foecundet (twice) and foecundetur as target fecundet and fecundetur; Pustet independently supports those spellings.", "Keep Descendat once as printed; do not expand its two source-directed repetitions.", "Do not import old ceremonial order or cross positions into the 1962 frame."]
+provenance_evidence = "The complete Mame 1922 blessing was image-collated against the complete 1962 target. The old body n. 992 is preserved byte for byte; all fifteen omitted text blocks of nn. 993–996 are quoted and compared separately. No lexical word is supplied solely by the later target. Mechanical spelling, punctuation, case and cross-position differences are explicit. Correction to the predecessor evidence: Pustet AP 287 right-column Adesto prints a full conclusion with ejusdem Spiritus sancti; the short Per Dominum. is in neighboring Respice. Mame AP 368 has the full target-length conclusion without ejusdem. The predecessor projection remains unchanged; it never covered the added units."
 provenance_authority = "Triptych editorial projection verified by page-image collation against the 1962 target edition"
 provenance_confidence = "high"
 publication_status = "permitted"
 publication_basis = "public-domain"
 surfaces = ["web", "download", "print", "cli", "corpus-data", "public-git"]
-publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98", "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"]
-publication_locator = "Pustet Ratisbon 1862, printed p. 201-202 (folio marker 201 at line 35748); text-layer lines 35794-35802; artifact rights_status public-domain on a book first published in 1862"
-publication_evidence = "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
-
+publication_source_ids = ["artifact.triptych.roman-1962-latin-proper-editorial-projection.baptismal-water-extent-2026-11-13.latin-82487ee7", "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"]
+publication_locator = "Mame Tours 1922, printed pp. 254–264, artifact PDF pp. 368–378; exact whole SHA-256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005"
+publication_evidence = "The complete underlying prayer wording is witnessed in the registered 1922 Mame publication, whose identified whole manifest records its United States public-domain basis. The new project artifact owns only the bounded editorial transformations and cites a separate target comparison. The modern witness is not used as a blanket publication grant. Root must admit this finite body transition and source package before the proposed permission-bearing row becomes active."
 
 [[entries]]
 mass = "easter-vigil"

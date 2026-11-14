@@ -1,0 +1,947 @@
+{
+  "schema": "triptych-independent-baptismal-water-source-extent-review/v1",
+  "reviewed_on": "2026-11-13",
+  "reviewer": "/root/roman_sources/six_source_review",
+  "independent": true,
+  "verdict": "PASS: factual whole-unit/source/extent comparison and exact frozen v3 metadata bindings, subject to explicit limits. No source admission, positive-transition activation, full-rite approval or installation authority is granted.",
+  "target": [
+    "easter-vigil",
+    "main",
+    "Blessing of the Baptismal Water",
+    "all",
+    1
+  ],
+  "latin_key": [
+    "easter-vigil",
+    "",
+    "Blessing of the Baptismal Water",
+    "",
+    "",
+    1
+  ],
+  "frozen_inputs": {
+    "source_proposal": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/proposal.json",
+      "sha256": "35da239e0f2533242ecfc54ac09846f412d1d5138be2e2ac918a54ba2d505d6b",
+      "bytes": 11863
+    },
+    "source_manifest": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/manifest.json",
+      "sha256": "3523c96d5a207e5fcae60bc9cef2adac09123b1282270d979187c07339d53f78",
+      "bytes": 28939
+    },
+    "v1_additive_sources": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/additive-source-candidate/manifest.json",
+      "sha256": "ca72d690f090f89d472e5e7f08ca75e540cc7762213be0c8847dd25315f3912d",
+      "bytes": 6483
+    },
+    "final_candidate": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/candidate-manifest.json",
+      "sha256": "bfa7f1ec097176d9f30e4a26888b22496e7eb878cc3bb3592a3a26bb1578e87c",
+      "bytes": 20638
+    },
+    "final_metadata_successor": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/metadata-successor.json",
+      "sha256": "d28afe18caf6f57a534846648578a4ce27be0d6dd1a630bb16e32adbb9dc1c0e",
+      "bytes": 23434
+    },
+    "final_transition": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/positive-transition-proposal.json",
+      "sha256": "99582a6a287a593a2606dd1174f5e78d6b3d2d4a8144b2be00e1a484c9c7ee37",
+      "bytes": 55037
+    },
+    "complete_comparison": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/additive-source-candidate/complete-source-comparison.json",
+      "sha256": "fe51c9a7e24d27c92809fce3d70dd04de66dae947b69b00a360ac33ce684aba8",
+      "bytes": 1939
+    },
+    "fifteen_units": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/omitted-units.json",
+      "sha256": "b364ae9d576a2638dcf6afccecbda7ed29bcad497558550ef934dc019a371ac9",
+      "bytes": 29037
+    }
+  },
+  "bodies": {
+    "latin": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/bodies/latin-after-proposed.txt",
+      "sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+      "bytes": 4383
+    },
+    "unchanged_english": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/bodies/english-existing-unchanged.txt",
+      "sha256": "942ea5bc30d9f063bc1e92dc8b0d4b921bbea9f2cda5624613462d9e9958ebea",
+      "bytes": 4804
+    },
+    "historical_whole_comparandum": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/additive-source-candidate/mame-complete-n992-n996.txt",
+      "sha256": "9911e03a232c5973b2baaeb6102ef82929c1bc64bcc26e3d96c9bc5d5a351016",
+      "bytes": 4386
+    },
+    "preserved_prefix_sha256": "7d0b92da77830536605070fff500cde9e657c80dfc6709422dfecd372a9ce80a",
+    "preserved_prefix_characters": 379,
+    "latin_physical_lines": 83,
+    "english_characters": 4804
+  },
+  "exact_postimage_hashes": {
+    "proper": "a23b2a43f98c7452b415d9102b305ee49ba310272d2901e49a46d41a6ad7194a",
+    "latin_proof_raw": "c44ac8eae0884dd523eba0d5c529d39a4c0581f666375a0d9b53276c15b0463f",
+    "latin_proof_default_resolved": "c44ac8eae0884dd523eba0d5c529d39a4c0581f666375a0d9b53276c15b0463f",
+    "english_binding": "d24221dece8b4de13e9153d4354af7ef8696cb3ae0c2d982ca2a62dc51a85885",
+    "ordinary_frame": "96bd761e0bcfbedbbcfee0aa29c99df1d09aa738f1f234ce812a4d8d99a4b64a"
+  },
+  "new_source_files": [
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+      "bytes": 4383
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "sha256": "6922a40f5fdd2b670114eebdcfc1ef3b1d48e2ec61f44aaf09453896e8cf3eb6",
+      "bytes": 877
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "sha256": "6903fd813f56a15aab429f435580a45af8a2df573d5885836ea4a879b9438cad",
+      "bytes": 3166
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "sha256": "e62aab8e1aac89968eafc2e490152290f88a0fb031d938ba059ab9db23178a65",
+      "bytes": 1511
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "sha256": "764b4c8a3bf50357778f674a2efebe8989f8dbb34666cde6e5eb4940259ec3bc",
+      "bytes": 1376
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "path": ".scratch/roman-sources/baptismal-water-extent/v3/prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "sha256": "ed338c41af82e199a27f857a3af0b4874b8f7c0a8dce5405c22c4b65fd59e35c",
+      "bytes": 1282
+    }
+  ],
+  "existing_source_note_postimage": {
+    "canonical_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+    "preimage_sha256": "b8ce7d0a845b00ada0201bc42bbd734852d7409d3ec1aa7fa08cdeff2656804f",
+    "path": ".scratch/roman-sources/baptismal-water-extent/v3/prepared/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+    "sha256": "90a2e866751d87967f3e0cd552b36c527340dd34abaa5bf81b112d6743400960",
+    "bytes": 2135
+  },
+  "whole_source_inputs": [
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/cmaa-1962.pdf",
+      "sha256": "648fdb8fe830ed65a08aa4a95de6f94424c533ddf2398c8fc26b18735fd3518a",
+      "bytes": 82815941
+    },
+    {
+      "path": ".scratch/roman-sources/queenship-pair/acquired/mame1922.pdf",
+      "sha256": "9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+      "bytes": 51720493
+    },
+    {
+      "path": ".scratch/roman-sources/gf-pair/acquired/pustet-1862.pdf",
+      "sha256": "363d6fc3f556bf596f3b56d4efcb7be849b7e9904304ba886b7977c39e8f7474",
+      "bytes": 102880787
+    },
+    {
+      "path": ".scratch/modern-ordinary-candidates/cummiskey-1861.pdf",
+      "sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "bytes": 24767551
+    }
+  ],
+  "images_independently_read": [
+    {
+      "source": "cmaa",
+      "artifact_page": 281,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-281-200.png",
+        "sha256": "71a5f51bb84110d8efbbfa122cc9d85e40ce646fb71bc6649b252930c2d2131e",
+        "bytes": 154838
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 281,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-281-400.png",
+        "sha256": "7d3e26b357e093f4b99fb4e434a5e64dd709e883f77e7c65b9447a5e9524f758",
+        "bytes": 167207
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 282,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-282-200.png",
+        "sha256": "0deb76310354e9b1de65007f590bf52674ede62bfb8e41404ca79f9a1b4286a3",
+        "bytes": 105834
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 282,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-282-400.png",
+        "sha256": "17e30841343f7515aff43bcac2e27a101655b1b4f0056d8322ed058352892400",
+        "bytes": 105746
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 283,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-283-200.png",
+        "sha256": "c0937423ab558f3078c6cd1fa82ee2c38f53743807f56eb46d22fd5d282546d9",
+        "bytes": 107594
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 283,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-283-400.png",
+        "sha256": "b68b02e56134e61f3e6eec97f26cec6be917e3661b164aeed169bebec36dbf1c",
+        "bytes": 109469
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 284,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-284-200.png",
+        "sha256": "c0b1d6daf60cff515fce0bcb440ecb08fa7376e2a70de3508ac3be411d01fe8b",
+        "bytes": 119802
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 284,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-284-400.png",
+        "sha256": "bebc91a46e22f949a5ddf77a9dd93d5330e6a6c78340fba053aa6d3850e559e5",
+        "bytes": 123703
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 285,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-285-200.png",
+        "sha256": "c5740ab85f554e787ca1c59486e0b347c185489e7535277bd293ae90e6a67313",
+        "bytes": 109218
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 285,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-285-400.png",
+        "sha256": "00bb9ebcc32ead19191ed382838740ff3e26b5c4bebf557777debac7e9998b68",
+        "bytes": 113260
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 286,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-286-200.png",
+        "sha256": "713ec79e6db61ebf423135bad452ecc22a1decbfa35e7ec0161040c2abf2bd21",
+        "bytes": 114548
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 286,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-286-400.png",
+        "sha256": "2695814d23958eda0bb4e6c21ce10afcc366e60b9bbafde2421e4f4d590943c8",
+        "bytes": 115484
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 287,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-287-200.png",
+        "sha256": "33f811c2576626c5a47bc04c06b579b947c5043cfcc3bc00c64e5883ac7a0dc0",
+        "bytes": 142903
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 287,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-287-400.png",
+        "sha256": "82176281341b2bbe4d4e6a06994ca5db432edc993f05f083bfbcf73f9c853ee4",
+        "bytes": 156709
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 288,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-288-200.png",
+        "sha256": "333a488ac66d2afd216d72720ced7a5353b863663bf195b1381ba88c15f683d2",
+        "bytes": 160463
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 288,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cmaa-288-400.png",
+        "sha256": "59703f3ab561023546a76647a7b641c9055f617a671edc2bccb1f4e8429efce4",
+        "bytes": 177611
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 368,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-368-200.png",
+        "sha256": "027020774d7243f20393e58ebdd686600b9b4a9c9f819c1fa403050be405b630",
+        "bytes": 474428
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 368,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-368-400.png",
+        "sha256": "3cbbc84bdecf0afc4ddf90b9d134ac49882f4d9d4f2db719169db7e368ceaa53",
+        "bytes": 1184327
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 369,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-369-200.png",
+        "sha256": "1e215c269e7fd68f1233da4abc5f5a184fd9c37dc93cc36f59b51d212a9113be",
+        "bytes": 286362
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 369,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-369-400.png",
+        "sha256": "6b5556ca6af51353b27ef16dfe5a0701980be11543d63394937a660a736e71f7",
+        "bytes": 664148
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 370,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-370-200.png",
+        "sha256": "f62341780d06bd6b9cfd100f447785ca60c763948949b38091defcab592f49e7",
+        "bytes": 307045
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 370,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-370-400.png",
+        "sha256": "927367178c28163a7aea9214c1d070f9683740560510a47f23246a7e9e04bb33",
+        "bytes": 701996
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 371,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-371-200.png",
+        "sha256": "6ba389b9dc49dbe33afa4bc5d6e68f5eb02fe0b17babad42003f3a8384b61758",
+        "bytes": 274116
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 371,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-371-400.png",
+        "sha256": "e13672395b40c85e0ae181585b29e393c14352220a927cbbd613cf3e9ca2a027",
+        "bytes": 629932
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 372,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-372-200.png",
+        "sha256": "19ddc8adbd6e8211156147c8c65a7a03a60b51ec13d09c8f37c7e613deb91146",
+        "bytes": 287943
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 372,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-372-400.png",
+        "sha256": "487281af6a295b95547cd35dcf081bf5db2a61e29607d690299301c0dde75f46",
+        "bytes": 693979
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 373,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-373-200.png",
+        "sha256": "278390893b91329d7e25859d307869779589d3d8c422498ec5c134bb24a40002",
+        "bytes": 268952
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 373,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-373-400.png",
+        "sha256": "abe8dce4d7d77cf8fe31bc3fed099a312a2cd55153e9e9ebaf3cb4c29bfe7b52",
+        "bytes": 630987
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 374,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-374-200.png",
+        "sha256": "fa29c0be1e783dd01e8b280482b999362686a6ef0fa4965be634310f8157c077",
+        "bytes": 283535
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 374,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-374-400.png",
+        "sha256": "2d9ac82a6e7978cfe2a2b66647142c87359ea82c66a45b9e27152eb2a9546fc9",
+        "bytes": 649083
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 375,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-375-200.png",
+        "sha256": "29476e193f1eeccbd1b3dc6d0ec90a5105fc2992e7a42d9d5e228fa26c6cefb7",
+        "bytes": 254832
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 375,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-375-400.png",
+        "sha256": "2018b5ac0347a9a0bc8d0936481db6cd21ad21a50fd23c4cbd3cb6de3c3fe1f9",
+        "bytes": 621250
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 376,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-376-200.png",
+        "sha256": "0fb6bd0bf86940d222f44fdfd49aec120c34234a02ea7ba65e71f3885b59ff0e",
+        "bytes": 333807
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 376,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-376-400.png",
+        "sha256": "a2c8ec830fec86a5b69e650c534a1f93e9c45cff75287ff25a8e8ade87d0778d",
+        "bytes": 794994
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 377,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-377-200.png",
+        "sha256": "26760eadeb7f966a94a38f8d2a635d8f669c8f55db79bdbb216e23df5aa2138b",
+        "bytes": 260393
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 377,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-377-400.png",
+        "sha256": "a7bf71901904d956eb2897122463a04f2d4b6c78eb87e425ba14efe321345231",
+        "bytes": 613108
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 378,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-378-200.png",
+        "sha256": "a96bcfea5e974fc6cc5272343ee53d51d4ad203aab4dd9a09b57a3d6b29c58ab",
+        "bytes": 492894
+      }
+    },
+    {
+      "source": "mame",
+      "artifact_page": 378,
+      "dpi": 400,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/mame-378-400.png",
+        "sha256": "9c3c99ba5bb8c2fe104203cc4852202b401d054235097800c0619c162839090d",
+        "bytes": 1238044
+      }
+    },
+    {
+      "source": "cummiskey",
+      "artifact_page": 332,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cummiskey-332-200.png",
+        "sha256": "14e12e6c2aca0f364e2e309f611439a3536d4fa157ba0bc0467c578f58fdc5f1",
+        "bytes": 124067
+      }
+    },
+    {
+      "source": "cummiskey",
+      "artifact_page": 333,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cummiskey-333-200.png",
+        "sha256": "fdfdd1530ed3826e67e1847b8c4e255d6d844a084233a3cbeb2c6f531116b5f0",
+        "bytes": 135697
+      }
+    },
+    {
+      "source": "cummiskey",
+      "artifact_page": 334,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cummiskey-334-200.png",
+        "sha256": "11ff8819121211256604ee1ad799be6d738b1a1f0ddd84c481bdfac044f7823d",
+        "bytes": 129370
+      }
+    },
+    {
+      "source": "cummiskey",
+      "artifact_page": 335,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cummiskey-335-200.png",
+        "sha256": "69219e56c4610978a46038940e30ea95c67ca18dae60feed991868ac4ecd6cc6",
+        "bytes": 127487
+      }
+    },
+    {
+      "source": "cummiskey",
+      "artifact_page": 336,
+      "dpi": 200,
+      "scope": "Complete page, all bounded prayer words and neighboring context independently visually read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cummiskey-336-200.png",
+        "sha256": "4fa3e89b006827d9a2806afa7b8a1d7f55be64a28880e0716df5346b3f2d3f8d",
+        "bytes": 131241
+      }
+    },
+    {
+      "source": "cummiskey",
+      "artifact_page": 332,
+      "dpi": 400,
+      "scope": "Complete page; dialogue, abbreviated conclusions and printed word by fire independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cummiskey-332-400.png",
+        "sha256": "72cea9f2a98f1dcf0038bc147a8f400a76720520a4bdaebb3367bac214732cc5",
+        "bytes": 183348
+      }
+    },
+    {
+      "source": "cummiskey",
+      "artifact_page": 333,
+      "dpi": 400,
+      "scope": "Complete page; dialogue, abbreviated conclusions and printed word by fire independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cummiskey-333-400.png",
+        "sha256": "6b31307a548d6650198ee71a477e06ba759c71ea627b02167b4eb5391ac444b1",
+        "bytes": 201375
+      }
+    },
+    {
+      "source": "cummiskey",
+      "artifact_page": 335,
+      "dpi": 400,
+      "scope": "Complete page; dialogue, abbreviated conclusions and printed word by fire independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/cummiskey-335-400.png",
+        "sha256": "096e70a16a95096fc964936709b9d5f4e193166189bd9c3e89e78f7fee8af5cb",
+        "bytes": 192391
+      }
+    },
+    {
+      "source": "pustet",
+      "artifact_page": 287,
+      "render": "explicit scale-to 2200; no native dpi claim",
+      "scope": "Complete page; whole Adesto, continuation, conclusion and three oil/chrism formulas independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/pustet-287-scale2200.png",
+        "sha256": "bd7961cf7d8ce0a3ac9b64bec098c6980a229171ac50d84ff39824930ac94286",
+        "bytes": 1232238
+      }
+    },
+    {
+      "source": "pustet",
+      "artifact_page": 288,
+      "render": "explicit scale-to 2200; no native dpi claim",
+      "scope": "Complete page; whole Adesto, continuation, conclusion and three oil/chrism formulas independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/pustet-288-scale2200.png",
+        "sha256": "04d0640ff5e7f276aa557f933aef4267d3c628378823371cc3ff06f8fa90a492",
+        "bytes": 1122970
+      }
+    },
+    {
+      "source": "pustet",
+      "artifact_page": 289,
+      "render": "explicit scale-to 2200; no native dpi claim",
+      "scope": "Complete page; whole Adesto, continuation, conclusion and three oil/chrism formulas independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/pustet-289-scale2200.png",
+        "sha256": "8a4f78aa452f57b848049c013cd904af04bb5117ec6b35c210de4a56b4420fbf",
+        "bytes": 1087577
+      }
+    },
+    {
+      "source": "pustet",
+      "artifact_page": 290,
+      "render": "explicit scale-to 2200; no native dpi claim",
+      "scope": "Complete page; whole Adesto, continuation, conclusion and three oil/chrism formulas independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/pustet-290-scale2200.png",
+        "sha256": "35a5f5e09c45df4841ec6266a9e6c6a206d8cfbd217b5e03baf87dbc57041e2b",
+        "bytes": 1086661
+      }
+    },
+    {
+      "source": "pustet",
+      "artifact_page": 291,
+      "render": "explicit scale-to 2200; no native dpi claim",
+      "scope": "Complete page; whole Adesto, continuation, conclusion and three oil/chrism formulas independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/pustet-291-scale2200.png",
+        "sha256": "592820dbfa83335e3972ff875a8a922c197d33fd9c9201184575628e6d406ea2",
+        "bytes": 1029656
+      }
+    },
+    {
+      "source": "pustet",
+      "artifact_page": 292,
+      "render": "explicit scale-to 2200; no native dpi claim",
+      "scope": "Complete page; whole Adesto, continuation, conclusion and three oil/chrism formulas independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/pustet-292-scale2200.png",
+        "sha256": "b01d2a1118cfe72eb455b5c057bdde6bc874b426b9be80e6a702b0dc95249689",
+        "bytes": 1020397
+      }
+    },
+    {
+      "source": "pustet",
+      "artifact_page": 293,
+      "render": "explicit scale-to 2200; no native dpi claim",
+      "scope": "Complete page; whole Adesto, continuation, conclusion and three oil/chrism formulas independently read",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-extent/images/pustet-293-scale2200.png",
+        "sha256": "8b7d6ce4cc93c19007a1afe54043434dfe233eb8669ce137f20d86c8fc905d47",
+        "bytes": 1248367
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 279,
+      "dpi": 200,
+      "scope": "Independently rendered/read full boundary page: font-presence branch; tract/font prayer and renewal remain outside selected blessing",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-independent-review/images/cmaa-279-200.png",
+        "sha256": "0c43f08b5bb7a9ad9dc0df70cad11dd7d59a199b8f7264490ae04de117e3f3a8",
+        "bytes": 197940
+      }
+    },
+    {
+      "source": "cmaa",
+      "artifact_page": 289,
+      "dpi": 200,
+      "scope": "Independently rendered/read full boundary page: font-presence branch; tract/font prayer and renewal remain outside selected blessing",
+      "image": {
+        "path": ".scratch/roman-sources/baptismal-water-independent-review/images/cmaa-289-200.png",
+        "sha256": "72772a3acecf55854b8b4b0f36898b69728ad1a10f97596325711946b911caae",
+        "bytes": 257911
+      }
+    }
+  ],
+  "prior_independently_reviewed_identity_reused": {
+    "receipt": {
+      "path": ".scratch/roman-sources/ordinary-source-review/review.json",
+      "sha256": "9d19fa9dff378eb569776ed91b962a469be952aaeec5338e74ef6e39835cd090",
+      "bytes": 47886
+    },
+    "scope": "Mame artifact pages 13 and 15 title/approval images, previously personally read; reused solely for identified 1922 printing and 17 May 1922 approval, not for water-prayer text. Same complete PDF hash independently rechecked in this review.",
+    "image_pins": [
+      {
+        "source": "mame",
+        "pdf_page": 13,
+        "read_scope": "identity/title/approval",
+        "images": [
+          {
+            "path": ".scratch/roman-sources/ordinary-source-review/mame-13-200.png",
+            "sha256": "eda0251d536b6b545d6573c0008b081f02a7d6a248a5c0262d510ba5275f9340",
+            "byte_size": 235482,
+            "dpi": 200
+          }
+        ]
+      },
+      {
+        "source": "mame",
+        "pdf_page": 15,
+        "read_scope": "identity/title/approval",
+        "images": [
+          {
+            "path": ".scratch/roman-sources/ordinary-source-review/mame-15-200.png",
+            "sha256": "bb6f5cad3820f32c767274369f2935710cfa7770880844b6c54cdf09ff202b24",
+            "byte_size": 331227,
+            "dpi": 200
+          }
+        ]
+      }
+    ]
+  },
+  "source_unit_findings": [
+    {
+      "id": "n993-dialogue",
+      "target_body_sha256": "aae8af56a5f2d58c4937dc4bc3ba7e9a6cd3f2797bbb40ef422022e3071be0e0",
+      "historical_body_sha256": "aae8af56a5f2d58c4937dc4bc3ba7e9a6cd3f2797bbb40ef422022e3071be0e0",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-preface",
+      "target_body_sha256": "91f74f666df33d3adbe7bf495404b7508b8d275c64f62b4aacd5efea39565c11",
+      "historical_body_sha256": "fe5971ea58e249456aa7b8b85eafe6d6173fbaa5b901a38b9dee763b82e43bde",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-qui-hanc",
+      "target_body_sha256": "3f0eafa26fcb3fc4ae11541e75c19a5a4138a87ebbe8ae91d9c1e5565b2b049c",
+      "historical_body_sha256": "2927ae824f45826945f2b0593968a638e0bd823a16572661267e0df6940243bc",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-sit-haec",
+      "target_body_sha256": "3a20658325549cc915485d46703c79c48491152cdf1ba462e9b5695a430b0dab",
+      "historical_body_sha256": "0368f1e8b8128201d847748d0c2cdc7ae5b91cdd0847f0f75e3f0434e4e33009",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-unde",
+      "target_body_sha256": "4fd1d6627dce7f66e8f2cee6bc6bfa83c33e28535d5ae57b1a713a431f311c8a",
+      "historical_body_sha256": "d2f0abaf86cbe81e5574e7c4da11c97655f1ea6f2b801f2bcb495e2a22c9f4a4",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-qui-te",
+      "target_body_sha256": "dc7d1ed88ef34196300487b219f6502c98d220a10cd66cb0eb8cb6a83a93a241",
+      "historical_body_sha256": "22ddf13e03d3e0e1450758336c83fe710ee7dcd407aef17788864232afcc5d75",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-haec-nobis",
+      "target_body_sha256": "190e912793609ca0f76dbfea50c4ee3ae7d026babea1df80171bedfb1b804d9b",
+      "historical_body_sha256": "0b04ccf2a96fe0924d73ad7988a506f2abc76483662a34350f649b5c161ff183",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-tu-has",
+      "target_body_sha256": "a28c1c6fa25652af6e9279452064bc6df06877cde6c92defe6b5e56f896c244a",
+      "historical_body_sha256": "a28c1c6fa25652af6e9279452064bc6df06877cde6c92defe6b5e56f896c244a",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-descendat",
+      "target_body_sha256": "8b73fee48a71061dd6c4267adffcedcc1588d018dc8f35d545759115b96d2474",
+      "historical_body_sha256": "a45294fc37ba1e7096f2d47bc1098d73598ec6cab147eb88b977a04369dbafc2",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-totamque",
+      "target_body_sha256": "7dfe1f73316eb4de11bb43aecb9baa7301007142dd9fbef462c0372f2eeed4a0",
+      "historical_body_sha256": "93f572a9b1370f752df7eea00239b10b7adc32c496c9215b31b35ef89955313d",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-hic-omnium",
+      "target_body_sha256": "ce7eaf6e331aa40522846e822a234766e37f14e9dd5a5fa45524259c8394515a",
+      "historical_body_sha256": "44093214df0b71366e762336ece0db27055eb5f66e6ea67c4a128f215dfd3305",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n993-conclusion",
+      "target_body_sha256": "9ad5ab84de7c7af5c2aadfc876b352e1fafb32d138ad431a9658c8933f68d63a",
+      "historical_body_sha256": "ec492e0ee2b763c5c9e1bfe5f21e01ef84ef99b65d20249543693a16cd87d6e4",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n994-oil",
+      "target_body_sha256": "a8867ec94a5a1a6ff810f4bbd47f58679477e61597916b7df3ef1e69fcaf5a78",
+      "historical_body_sha256": "5f0c9d0f1e6ceac535ce5104102b7f216ddf3b18f5b04f45e3b5ef1c2753845b",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n995-chrism",
+      "target_body_sha256": "51bc7f497edfbaa9e3eb596987921118cefbea7059456855c09473c8fc8bde23",
+      "historical_body_sha256": "cd76fa6f7513db81fc0020561944b0cc37ba7815a7e59e0c9ef0b074b9987505",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    },
+    {
+      "id": "n996-mixture",
+      "target_body_sha256": "4e065bfb911fd6cc3db7714277634e0385f0d4ac38f8ccbd19f7f7b26a2aed98",
+      "historical_body_sha256": "c77dc1b5e35ca02daf26b1618dbef3da6f475f4abbd29b4bba0961a8520c49c2",
+      "verdict": "factual whole-unit comparison supported by actual page reads"
+    }
+  ],
+  "findings": [
+    "Complete CMAA AP 281–288 / printed 200–207 supports exactly n. 992 opening plus all fifteen proposed n. 993–996 blocks. Target signs, punctuation, capitalization and quote marks are represented under the declared calendar j/ligature/accent normalization; no new lexical prayer word lacked the complete Mame comparandum.",
+    "Complete Mame AP 368–378 / printed 254–264 supplies the opening, preface dialogue, long blessing and all three oil/chrism formulas. This is a continuous complete old sequence, not an inference from scattered old ingredients. Its regular pagination and surrounding rite were read; no later insert is used.",
+    "Actual Mame foecundet twice and foecundetur differ from target fecundet/fecundetur; old Pustet independently has fecund-. Mame/Pustet Unde has three crosses at per Deum, whereas target has one in bene + dico; Be + nedico/Bene + dico, added target oil/chrism signs, reduced mixture signs and punctuation/capitalization differences remain explicit. These are real target differences, not an assertion of exact historical typography or ritual identity.",
+    "Mame and target print full Adesto conclusions without ejusdem. Pustet AP 287 right-column Adesto also prints its full conclusion, but with ejusdem Spiritus sancti. The short Per Dominum cue is in the neighboring Respice. The successor Latin proof corrects that specific predecessor error while preserving old source artifacts.",
+    "Descendat is printed in full once in each compared prayer sequence; the rubrics direct its second and third performance. The proposed body deliberately carries the main printed formula once. It must not be labeled a complete performed-text transcript.",
+    "The selected extent ends with the Amen of Commixtio n. 996. Initial greeting/Oremus, all rubrics/gestures, Baptism, separate n. 997 tract/n. 998 font prayer, renewal and Litany remain outside the body. Independently read CMAA AP 279 §19 and AP 289 §§22–24 confirm the no-font and separate-baptistery branches. No complete continuation unit is separately modeled in the selected current Easter Vigil propers; the neighboring nodes and ordinary frame match the pinned controls.",
+    "Complete Cummiskey AP 332–336 / printed 323–327 confirms the selected historical English wording and its limits: actual source dialogue spans AP 332–333 but is omitted by this project excerpt; initial greeting is also absent from the excerpt; conclusions remain abbreviated; historical cross positions differ from the target. AP 335 visibly prints word by fire. English is unchanged normalized transcription, not diplomatic punctuation or an exact full 1962 rendering. Existing normalization includes the project period after first Thro' and semicolon after washed out; these are not newly copied source punctuation.",
+    "Final v3 changes exactly two existing prose fields: English witness_note and its verification passage notes. It explicitly removes false complete-coverage and word-for-word Pustet assertions, acknowledges italic/some-bracketed rubrics and normalized punctuation, and treats Thro’—who as an abbreviated cue plus dash rather than confidently assigning a second printer error. All 4804 English characters, rights, IDs, locators and publication payload remain exact.",
+    "The six new source files identify a separate project projection, exact payload/83-line passage, complete Mame historical passage and target-control passage. The complete held Mame artifact is the historical owner; CMAA is a separate target comparison. Existing whole artifacts and earlier projection are not silently broadened. Proposed public-domain permission remains explicitly conditional on actual Root admission of this finite transition."
+  ],
+  "verification": {
+    "passing_checks": 540,
+    "failed_checks": 0,
+    "common": {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/common-verification.json",
+      "sha256": "766ff95017a1c659b5c5b57c3de85d7ba3b1dda9785282b8d71f2e719cb376ed",
+      "bytes": 109141
+    },
+    "v3_bindings": {
+      "path": ".scratch/roman-sources/baptismal-water-independent-review/v3-verification.json",
+      "sha256": "4e8b998fe6043f871764240220963dccacbc8e10a5e1185d61cfef59f3aa36f5",
+      "bytes": 35720
+    },
+    "audit_scripts": [
+      {
+        "path": ".scratch/roman-sources/baptismal-water-independent-review/audit-common.py",
+        "sha256": "120f3dee5ade20b10bdf3ddd5a512fa03768e39b74a24218f15869fd3c7dee35",
+        "bytes": 7479
+      },
+      {
+        "path": ".scratch/roman-sources/baptismal-water-independent-review/audit-v3.py",
+        "sha256": "ca2cd6f30d92a8dbf364627da226533155232fb902e0101d01ca632aab7b59fe",
+        "bytes": 7308
+      }
+    ],
+    "scope": "Independent whole-file/image pins; seven sampled raster recipes reproduced byte-exactly; narrow source schema/relationship/locator/date/license closure; all payload and proof joins; fifteen whole-unit token checks subordinate to actual page reads; original prefix and English/frame preservation; exact current semantic preimages and neighbors; actual existing English payload and recipient publication consumer functions accept. No full source-library/producer or driver/application gate is claimed.",
+    "source_closure_records": 12,
+    "source_errors": [],
+    "sample_raster_reproduction_count": 7
+  },
+  "blocking_errors": [],
+  "nonblocking_caveats": [
+    "Both final note strings contain the prose blemish Mame 1922 The selected (missing sentence-ending period). This does not affect factual meaning, IDs, bodies or locators; frozen v3 remains the reviewed input.",
+    "Early source-inputs.json has a Mame text_range ending at AP 377; the actual complete review, final historical passage and body comparison explicitly include AP 378, which carries the conclusion and oil/chrism formulas. The early locator is not the extent authority.",
+    "The proposed permission-bearing row and positive existing-body transition still require Root’s actual separate judgment and applicable activation guards. The source evidence supports only the bounded words and declared transformations, not whole-book or restored-Holy-Week rights, approved English, execution completeness or any other held prayer."
+  ],
+  "limits": [
+    "No fresh legal research, publication-authority adoption, canonical edits, candidate edits, installation, --apply, commits, pushes or hardlinks. All reviewer writes are under the exclusive baptismal-water-independent-review scratch directory.",
+    "All 55 listed pages/renditions were personally viewed. Seven supplied raster recipes were independently reproduced; no claim that every supplied raster was independently re-rendered. Prior Mame identity-page reading is explicitly identified separately.",
+    "No whole-rite, musical notation, gesture, minister assignment, repetition expansion, sacramental execution or complete English-coverage review is granted.",
+    "The guarded installer, durable-evidence mapping, source_epoch transition and eventual full producer checks are outside this receipt. Shared owner files may change through authorized concurrent lanes; the reviewed selected dictionaries and hashes, not historical full-owner postimages, control this binding."
+  ]
+}

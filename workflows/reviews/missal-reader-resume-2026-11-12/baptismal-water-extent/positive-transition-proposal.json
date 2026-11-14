@@ -1,0 +1,528 @@
+{
+  "schema": "triptych-baptismal-water-existing-positive-transition-proposal/v5",
+  "status": "Frozen v5: one proper-note sentence qualifies the independent representation/assembly requirement; no Root adoption or activation.",
+  "target": [
+    "easter-vigil",
+    "main",
+    "Blessing of the Baptismal Water",
+    "all",
+    1
+  ],
+  "latin_key": [
+    "easter-vigil",
+    "",
+    "Blessing of the Baptismal Water",
+    "",
+    "",
+    1
+  ],
+  "baseline_commit": "d401cb4c9e0536c149e0c199dcf40f274035422f",
+  "source_assessment": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/proposal.json",
+    "sha256": "35da239e0f2533242ecfc54ac09846f412d1d5138be2e2ac918a54ba2d505d6b",
+    "bytes": 11863
+  },
+  "source_assessment_manifest": {
+    "path": ".scratch/roman-sources/baptismal-water-extent/manifest.json",
+    "sha256": "3523c96d5a207e5fcae60bc9cef2adac09123b1282270d979187c07339d53f78",
+    "bytes": 28939
+  },
+  "before": {
+    "proper": {
+      "dictionary": {
+        "name": "Blessing of the Baptismal Water",
+        "incipit": "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis",
+        "source": "composed",
+        "notes": "Printed locus printed p. 200, no. 992; artifact PDF p. 281. Preexisting material under 17 U.S.C. 103(b), corroborated in the tracked public-domain Pustet Ratisbon 1862 at printed p. 201-202 (folio marker 201 at line 35748); text-layer lines 35794-35802. Where the church has no baptismal font this blessing is omitted and the rite passes from the first part of the Litany to the renewal of baptismal promises.",
+        "text": "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto\nsacramentis: et ad recreandos novos populos, quos tibi fons baptismatis\nparturit, spiritum adoptionis emitte; ut, quod nostrae humilitatis gerendum\nest ministerio, virtutis tuae impleatur effectu. Per Dominum nostrum Jesum\nChristum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti\nDeus:\n"
+      },
+      "canonical_json_sha256": "95a1e215adc9b790024643088b971614418ea3d7b578b73d8616043c64d836fa"
+    },
+    "latin_proof_raw": {
+      "dictionary": {
+        "mass": "easter-vigil",
+        "form": "",
+        "proper": "Blessing of the Baptismal Water",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "7d0b92da77830536605070fff500cde9e657c80dfc6709422dfecd372a9ce80a",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-blessing-of-the-baptismal-water",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 77-82; antecedent printed p. 201-202 (folio marker 201 at line 35748); text-layer lines 35794-35802",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-easter-vigil-orations",
+        "verification_locator": "printed p. 200, no. 992; artifact PDF p. 281",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1862 layer fuses the ornamental O of Omnipotens into the following word (SYmnf sempi / sempit rne deus); 1862 layer damage only: magnse piet tis, recre ndos, p pulos, adopti nis, nostrse, tuse implemur eff ctu; 1862 prints the short cue Per Dominum. where the 1962 writes the conclusion out to Qui tecum vivit et regnat in unitate Spiritus Sancti Deus:. Corroboration: 1922 Tours/Mame, Missale Romanum editio quarta iuxta typicam Vaticanam, public-domain, READ FROM THE 300 dpi PAGE IMAGE (pdftoppm), not from its text layer -- its Holy Saturday text layer is chant-damaged and unusable. Page mapping pdf = printed + 114, verified on the running-head folio of the five pages I rendered (pdf 354/printed 240, 359/245, 363/249, 365/251, 368/254). Printed p. 254, right column (artifact PDF p. 368). Word for word the 1962 reading AND, decisively, it prints the conclusion written out exactly as the 1962 does: Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus:.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, printed p. 201-202 (folio marker 201 at line 35748); text-layer lines 35794-35802; artifact rights_status public-domain on a book first published in 1862",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "canonical_json_sha256": "00bb1e4017882c4ae5e4d70c0567dc7091612603274ad347fc47c86cb4b26eca"
+    },
+    "latin_proof_default_resolved": {
+      "dictionary": {
+        "provenance_status": "collated",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "mass": "easter-vigil",
+        "form": "",
+        "proper": "Blessing of the Baptismal Water",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "7d0b92da77830536605070fff500cde9e657c80dfc6709422dfecd372a9ce80a",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.easter-vigil-blessing-of-the-baptismal-water",
+        "source_date": "2026-09-03 project editorial projection; antecedent Pustet Ratisbon 1862",
+        "locator": "editorial-projection artifact physical lines 77-82; antecedent printed p. 201-202 (folio marker 201 at line 35748); text-layer lines 35794-35802",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.temporal-easter-vigil-orations",
+        "verification_locator": "printed p. 200, no. 992; artifact PDF p. 281",
+        "transformations": [
+          "join printed line wraps",
+          "remove stress accents",
+          "expand printed ae/oe ligatures to ae/oe",
+          "normalise consonantal i to the calendar's j orthography",
+          "apply the target printing's punctuation",
+          "carry the target's conclusion at its printed length"
+        ],
+        "provenance_evidence": "The project-owned projection passage reproduces the retained calendar body hash exactly. Its artifact manifest records the bounded public-domain 1862 Pustet antecedent, the separate 1962 target, and every editorial transformation; neither witness is represented as owning the projected bytes. The 1962 reading was established on that edition's page images rather than its text layer, cross-read against the Benziger conformed printing. Differences from the antecedent: 1862 layer fuses the ornamental O of Omnipotens into the following word (SYmnf sempi / sempit rne deus); 1862 layer damage only: magnse piet tis, recre ndos, p pulos, adopti nis, nostrse, tuse implemur eff ctu; 1862 prints the short cue Per Dominum. where the 1962 writes the conclusion out to Qui tecum vivit et regnat in unitate Spiritus Sancti Deus:. Corroboration: 1922 Tours/Mame, Missale Romanum editio quarta iuxta typicam Vaticanam, public-domain, READ FROM THE 300 dpi PAGE IMAGE (pdftoppm), not from its text layer -- its Holy Saturday text layer is chant-damaged and unusable. Page mapping pdf = printed + 114, verified on the running-head folio of the five pages I rendered (pdf 354/printed 240, 359/245, 363/249, 365/251, 368/254). Printed p. 254, right column (artifact PDF p. 368). Word for word the 1962 reading AND, decisively, it prints the conclusion written out exactly as the 1962 does: Per Dominum nostrum Jesum Christum Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti Deus:.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.editorial-projection-2026-09-03.triduum-orations-21aa7a98",
+          "artifact.catholic-church.missale-romanum.pustet-ratisbon-1862.missale-romanum-1862-text-f34bc7cf"
+        ],
+        "publication_locator": "Pustet Ratisbon 1862, printed p. 201-202 (folio marker 201 at line 35748); text-layer lines 35794-35802; artifact rights_status public-domain on a book first published in 1862",
+        "publication_evidence": "The wording is preexisting material of the 1962 typical edition under 17 U.S.C. 103(b), which gives a revised edition no exclusive right in material it did not contribute. The independent registered public-domain witness is the tracked 1862 Pustet text artifact. The position is settled for the repository at src/sources/inventories/missale-romanum-1962-facsimile-rights-v1.toml, which names the seasonal orations as preexisting material and requires exactly this pairing of 103(b) with a public-domain witness."
+      },
+      "canonical_json_sha256": "00bb1e4017882c4ae5e4d70c0567dc7091612603274ad347fc47c86cb4b26eca"
+    },
+    "english_binding": {
+      "dictionary": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Blessing of the Baptismal Water",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis",
+        "witness": "cummiskey-1861",
+        "printed_page": "323-327",
+        "ia_leaf": 331,
+        "ia_leaf_range": [
+          331,
+          335
+        ],
+        "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+        "passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-easter-vigil--main--blessing-of-the-baptismal-water--all--1",
+        "publication_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-recovered-en",
+        "publication_artifact_sha256": "c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a",
+        "publication_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-easter-vigil--main--blessing-of-the-baptismal-water--all--1",
+        "collated": "page-image and tracked transcription, 2026-08-27",
+        "collation_result": "confirmed",
+        "witness_note": "The longest of the fourteen and the one that took five leaves to read: n331 (p. 323), n332 (p. 324), n333 (p. 325), n334 (p. 326), n335 (p. 327). The 1862 at p. 201 prints the opening prayer `Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis ...` under the heading Benedictio Fontis, word for word as the 1962 index carries it, and continues into the preface `Vere dignum et justum est ...` The 1861's English runs from that prayer through the preface, the exorcism, the blessing of the creature of water, the sinking of the paschal candle and the three oil-and-chrism formulas, in the 1962 index's order and with no clause of the index unanswered. The book's ceremonial rubrics are given in square brackets so they can be stripped; they are the book's own italic directions and not part of the prayer. TWO PRINTER'S ERRORS ARE REPRODUCED, NOT MENDED: `the word by fire` for `et saeculum per ignem` (the type reads `word`, the sense is `world`), and the run-on `Thro'--who is to come`. Page-image collation confirms that this historical English body answers the complete target Latin identity; publication is limited to the 1861 wording and does not claim that Cummiskey appoints the 1962 celebration.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "O Almighty and eternal God, be present at these mysteries, be present at these sacraments of thy great goodness: and send forth the spirit of thy adoption to regenerate the new people, whom the font of baptism bringeth forth: that what is to be done by the ministry of us thy servants, may be accomplished by the effect of thy power. Thro'. R. Amen. It is truly meet and just, right and available to salvation, to give thee thanks always, and in all places, O holy Lord, almighty Father, and eternal God: who, by thy invisible power, dost wonderfully produce the effects of thy sacraments: and, though we are unworthy to administer such great mysteries, yet, as thou dost not abandon the gifts of thy grace, so thou inclinest the ears of thy goodness even to our prayers. O God, whose spirit in the very beginning of the world moved upon the waters; that even then the nature of water might receive the virtue of sanctification: O God, who by water didst wash away the crimes of a guilty world, and by the overflowing of the deluge didst give us a figure of regeneration; that one and the same element might, in a mystery, be the end of vice, and the origin of virtue: look down, O Lord, on thy Church, and multiply in her thy regenerations, who by the streams of thy abundant grace, fillest thy city with joy, and openest the fonts of baptism all over the world for the renewal of the Gentiles; that by the command of thy majesty it may receive the grace of thy Son from the Holy Ghost. Who, by a secret mixture of his divine virtue, may render this water fruitful for the regeneration of men: to the end that those, who are to be sanctified in the immaculate womb of this divine font, and are to be born again new creatures, may come forth a heavenly offspring; and that all, however, distinguished by age in time, or sex in body, may be brought forth to the same infancy by grace, their spiritual mother. Therefore may all unclean spirits, by thy command, O Lord, depart from hence; may all the malice of diabolical wiles be entirely banished; may no power of the enemy prevail here; let him not fly about to lay his snares: let him not creep in by his secret artifices; let him not corrupt with his infection. May this holy and innocent creature be free from all assaults of the enemy, and purified by the destruction of all his malice. May it become a living fountain, a regenerating water, a purifying stream: that all those, that are to be washed in this saving bath, may obtain, by the efficacy of the Holy Ghost, the grace of a perfect purification. Wherefore I bless thee, O creature of water, by the living + God, by the true + God, by the holy + God; by that God, who in the beginning separated thee by his word from the dry land, and whose spirit moved upon thee. Who made thee flow from the fountain of paradise, and commanded thee to water the whole earth with thy four rivers. Who changing thy bitterness in the desert into sweetness, made thee fit to drink; and produced thee out of a rock to quench the thirst of the people. I + bless thee also by our Lord Jesus Christ, his only Son: who, in Cana of Galilee, changed thee into wine, by a wonderful miracle of his power. Who walked upon thee dry-foot, and was baptized in thee by John in the Jordan. Who made thee flow out of his side, together with his blood, and commanded his disciples that such as believed should be baptized in thee, saying: Go, teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost. Do thou, O Almighty God, mercifully assist us who observe this commandment: do thou graciously inspire us. Do thou with thy mouth bless these clear waters; that besides their natural virtue of cleansing the body, they may also prove effectual for purifying the soul. May the virtue of the Holy Ghost descend into all the water of this font. And make the whole substance of this water fruitful, and capable of bringing to a new life. Here may the stains of all sin be washed out; here may human nature, created to thy image, and reformed to the honour of its author, be cleansed from the filth of the old man: that all who receive this sacrament of regeneration, may be born again new children of true innocence. Thro'--who is to come to judge the living and the dead, and the word by fire. R. Amen. May this font be sanctified and made fruitful by the oil of salvation for such as are to be born anew in it, unto life everlasting. R. Amen. May this infusion of the chrism of our Lord Jesus Christ, and of the Holy Ghost the Comforter, be performed in the name of the Holy Trinity. R. Amen. May this mixture of the chrism of sanctification, and of the oil of salvation, and of the water of baptism, be performed in the name of the Father, and of the Son, and of the Holy Ghost. R. Amen."
+          }
+        ]
+      },
+      "canonical_json_sha256": "32855b857e415a840423ec734cda7b338b19d767ebe46d0af747a78f3702d1b0"
+    },
+    "latin_body": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/bodies/latin-before.txt",
+      "sha256": "7d0b92da77830536605070fff500cde9e657c80dfc6709422dfecd372a9ce80a",
+      "bytes": 379,
+      "body_sha256": "7d0b92da77830536605070fff500cde9e657c80dfc6709422dfecd372a9ce80a",
+      "characters": 379
+    },
+    "english_body": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/bodies/english-existing-unchanged.txt",
+      "sha256": "942ea5bc30d9f063bc1e92dc8b0d4b921bbea9f2cda5624613462d9e9958ebea",
+      "bytes": 4804,
+      "body_sha256": "942ea5bc30d9f063bc1e92dc8b0d4b921bbea9f2cda5624613462d9e9958ebea",
+      "characters": 4804
+    },
+    "ordinary_frame": {
+      "dictionary": {
+        "applicability": "unavailable",
+        "basis": "This entry bundles the pre-Mass Vigil, a Mass whose Kyrie continues the divided Litany and whose Ordinary therefore cannot be supplied by the generic full frame, and the Lauds that follow Communion. The specialized Mass boundary and frame have not yet been modeled; the established unit structure is recorded in roman-holy-week-acts-v1.toml under `sabbato.*`."
+      },
+      "canonical_json_sha256": "96bd761e0bcfbedbbcfee0aa29c99df1d09aa738f1f234ce812a4d8d99a4b64a"
+    }
+  },
+  "after": {
+    "proper": {
+      "dictionary": {
+        "name": "Blessing of the Baptismal Water",
+        "incipit": "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis",
+        "source": "composed",
+        "notes": "Printed prayer-text extent: nn. 992–996, printed pp. 200–207; artifact PDF pp. 281–288. The existing n. 992 body is preserved byte for byte and followed by n. 993 (including its printed doxology, dialogue, long blessing and conclusion) and the three oil/chrism formulas nn. 994–996. The complete older Latin comparison is Mame 1922, printed pp. 254–264, artifact PDF pp. 368–378; Pustet 1862, printed pp. 201–207, artifact PDF pp. 287–293 corroborates with separately recorded differences. This is the printed prayer text once, not a complete performed-rite transcript: the initial greeting/Oremus, rubrics, minister assignment, gestures and source-directed repetitions require a separate frame. The procession tract n. 997 and font prayer n. 998 are outside this selected body; their separate source entries do not by themselves establish complete ritual assembly, which requires their own source controls and frame. Where the church has no baptismal font this blessing is omitted and the rite passes from the first part of the Litany to the renewal of baptismal promises. Historical English remains an unchanged selected Cummiskey 1861 quotation, with abbreviated cues, its printed word by fire, old sign positions, and a project-omitted preface dialogue; it is not an exact performed-text rendering of 1962.",
+        "text": "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto\nsacramentis: et ad recreandos novos populos, quos tibi fons baptismatis\nparturit, spiritum adoptionis emitte; ut, quod nostrae humilitatis gerendum\nest ministerio, virtutis tuae impleatur effectu. Per Dominum nostrum Jesum\nChristum, Filium tuum: Qui tecum vivit et regnat in unitate Spiritus Sancti\nDeus:\n\nPer omnia saecula saeculorum. R. Amen. V. Dominus vobiscum. R. Et cum\nspiritu tuo. V. Sursum corda. R. Habemus ad Dominum. V. Gratias agamus\nDomino Deo nostro. R. Dignum et justum est.\n\nVere dignum et justum est, aequum et salutare, nos tibi semper et ubique\ngratias agere: Domine, sancte Pater, omnipotens aeterne Deus: Qui\ninvisibili potentia sacramentorum tuorum mirabiliter operaris effectum: et\nlicet nos tantis mysteriis exsequendis simus indigni: tu tamen gratiae\ntuae dona non deserens, etiam ad nostras preces aures tuae pietatis\ninclinas. Deus, cujus Spiritus super aquas inter ipsa mundi primordia\nferebatur: ut jam tunc virtutem sanctificationis aquarum natura\nconciperet. Deus, qui nocentis mundi crimina per aquas abluens,\nregenerationis speciem in ipsa diluvii effusione signasti: ut, unius\nejusdemque elementi mysterio, et finis esset vitiis, et origo virtutibus.\nRespice, Domine, in faciem Ecclesiae tuae, et multiplica in ea\nregenerationes tuas, qui gratiae tuae affluentis impetu laetificas\ncivitatem tuam: fontemque baptismatis aperis toto orbe terrarum gentibus\ninnovandis: ut, tuae majestatis imperio, sumat Unigeniti tui gratiam de\nSpiritu Sancto.\n\nQui hanc aquam, regenerandis hominibus praeparatam, arcana sui numinis\nadmixtione fecundet: ut, sanctificatione concepta, ab immaculato divini\nfontis utero, in novam renata creaturam, progenies caelestis emergat: et\nquos aut sexus in corpore aut aetas discernit in tempore, omnes in unam\npariat gratia mater infantiam. Procul ergo hinc, jubente te, Domine, omnis\nspiritus immundus abscedat: procul tota nequitia diabolicae fraudis\nabsistat. Nihil hic loci habeat contrariae virtutis admixtio: non\ninsidiando circumvolet: non latendo subrepat: non inficiendo corrumpat.\n\nSit haec sancta et innocens creatura, libera ab omni impugnatoris incursu,\net totius nequitiae purgata discessu. Sit fons vivus, aqua regenerans,\nunda purificans: ut omnes hoc lavacro salutifero diluendi, operante in eis\nSpiritu Sancto, perfectae purgationis indulgentiam consequantur.\n\nUnde bene + dico te, creatura aquae, per Deum vivum, per Deum verum, per\nDeum sanctum: per Deum, qui te in principio verbo separavit ab arida:\ncujus Spiritus super te ferebatur.\n\nQui te de paradisi fonte manare fecit, et in quatuor fluminibus totam\nterram rigare praecepit. Qui te in deserto amaram, suavitate indita, fecit\nesse potabilem, et sitienti populo de petra produxit. Bene + dico te et\nper Jesum Christum Filium ejus unicum, Dominum nostrum: qui te in Cana\nGalilaeae signo admirabili sua potentia convertit in vinum. Qui pedibus\nsuper te ambulavit: et a Joanne in Jordane in te baptizatus est. Qui te\nuna cum sanguine de latere suo produxit: et discipulis suis jussit, ut\ncredentes baptizarentur in te, dicens: «Ite, docete omnes gentes,\nbaptizantes eos in nomine Patris, et Filii, et Spiritus Sancti».\n\nHaec nobis praecepta servantibus, tu, Deus omnipotens, clemens adesto: tu\nbenignus aspira.\n\nTu has simplices aquas tuo ore benedicito: ut praeter naturalem\nemundationem, quam lavandis possunt adhibere corporibus, sint etiam\npurificandis mentibus efficaces.\n\nDescendat in hanc plenitudinem fontis virtus Spiritus Sancti.\n\nTotamque hujus aquae substantiam regenerandi fecundet effectu.\n\nHic omnium peccatorum maculae deleantur: hic natura ad imaginem tuam\ncondita, et ad honorem sui reformata principii, cunctis vetustatis\nsqualoribus emundetur: ut omnis homo, sacramentum hoc regenerationis\ningressus, in verae innocentiae novam infantiam renascatur.\n\nPer Dominum nostrum Jesum Christum, Filium tuum: Qui venturus est judicare\nvivos et mortuos, et saeculum per ignem. R. Amen.\n\nSanctificetur +, et fecundetur fons iste oleo salutis renascentibus ex eo,\nin vitam aeternam. R. Amen.\n\nInfusio chrismatis Domini nostri Jesu Christi +, et Spiritus Sancti\nParacliti, fiat in nomine sanctae Trinitatis. R. Amen.\n\nCommixtio chrismatis sanctificationis, et olei unctionis, et aquae\nbaptismatis, pariter fiat in nomine Patris, et Fi + lii, et Spiritus\nSancti. R. Amen.\n"
+      },
+      "canonical_json_sha256": "32d0b83f76a3dca487fbd1bc473952438d6a6be10a7e31d576e0c35c659bec35"
+    },
+    "latin_proof_raw": {
+      "dictionary": {
+        "mass": "easter-vigil",
+        "form": "",
+        "proper": "Blessing of the Baptismal Water",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.baptismal-water-extent-2026-11-13.easter-vigil-blessing-of-the-baptismal-water",
+        "source_date": "2026-11-13 project editorial projection; complete antecedent Mame Tours 1922",
+        "locator": "projected text physical lines 1–83; Mame printed pp. 254–264, artifact PDF pp. 368–378",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.easter-vigil-baptismal-water-complete-20261113",
+        "verification_locator": "printed pp. 200–207, nn. 992–996; artifact PDF pp. 281–288",
+        "transformations": [
+          "Preserve the existing 379-character n. 992 calendar body byte for byte.",
+          "Append the complete printed n. 993 dialogue, long blessing and conclusion, and nn. 994–996 formulas, once.",
+          "Join printed line wraps and syllabic chant spacing; omit chant notation, rubrics, headings, marginal numbers and page layout.",
+          "Remove stress accents, expand ae/oe ligatures, and use the calendar’s existing consonantal j orthography.",
+          "Use target punctuation, capitalization, Scripture quotation marks and cross positions; represent crosses by + and dialogue signs by V./R.",
+          "Render Mame foecundet (twice) and foecundetur as target fecundet and fecundetur; Pustet independently supports those spellings.",
+          "Keep Descendat once as printed; do not expand its two source-directed repetitions.",
+          "Do not import old ceremonial order or cross positions into the 1962 frame."
+        ],
+        "provenance_evidence": "The complete Mame 1922 blessing was image-collated against the complete 1962 target. The old body n. 992 is preserved byte for byte; all fifteen omitted text blocks of nn. 993–996 are quoted and compared separately. No lexical word is supplied solely by the later target. Mechanical spelling, punctuation, case and cross-position differences are explicit. Correction to the predecessor evidence: Pustet AP 287 right-column Adesto prints a full conclusion with ejusdem Spiritus sancti; the short Per Dominum. is in neighboring Respice. Mame AP 368 has the full target-length conclusion without ejusdem. The predecessor projection remains unchanged; it never covered the added units.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.baptismal-water-extent-2026-11-13.latin-82487ee7",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+        ],
+        "publication_locator": "Mame Tours 1922, printed pp. 254–264, artifact PDF pp. 368–378; exact whole SHA-256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+        "publication_evidence": "The complete underlying prayer wording is witnessed in the registered 1922 Mame publication, whose identified whole manifest records its United States public-domain basis. The new project artifact owns only the bounded editorial transformations and cites a separate target comparison. The modern witness is not used as a blanket publication grant. Root must admit this finite body transition and source package before the proposed permission-bearing row becomes active."
+      },
+      "canonical_json_sha256": "c44ac8eae0884dd523eba0d5c529d39a4c0581f666375a0d9b53276c15b0463f"
+    },
+    "latin_proof_default_resolved": {
+      "dictionary": {
+        "mass": "easter-vigil",
+        "form": "",
+        "proper": "Blessing of the Baptismal Water",
+        "course": "",
+        "cycle": "",
+        "occurrence": 1,
+        "text_sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+        "provenance_status": "collated",
+        "source_id": "passage.triptych.roman-1962-latin-proper-editorial-projection.baptismal-water-extent-2026-11-13.easter-vigil-blessing-of-the-baptismal-water",
+        "source_date": "2026-11-13 project editorial projection; complete antecedent Mame Tours 1922",
+        "locator": "projected text physical lines 1–83; Mame printed pp. 254–264, artifact PDF pp. 368–378",
+        "relationship": "editorial-projection-exact-to-target",
+        "verification_source_id": "passage.catholic-church.missale-romanum.vatican-typica-1962.easter-vigil-baptismal-water-complete-20261113",
+        "verification_locator": "printed pp. 200–207, nn. 992–996; artifact PDF pp. 281–288",
+        "transformations": [
+          "Preserve the existing 379-character n. 992 calendar body byte for byte.",
+          "Append the complete printed n. 993 dialogue, long blessing and conclusion, and nn. 994–996 formulas, once.",
+          "Join printed line wraps and syllabic chant spacing; omit chant notation, rubrics, headings, marginal numbers and page layout.",
+          "Remove stress accents, expand ae/oe ligatures, and use the calendar’s existing consonantal j orthography.",
+          "Use target punctuation, capitalization, Scripture quotation marks and cross positions; represent crosses by + and dialogue signs by V./R.",
+          "Render Mame foecundet (twice) and foecundetur as target fecundet and fecundetur; Pustet independently supports those spellings.",
+          "Keep Descendat once as printed; do not expand its two source-directed repetitions.",
+          "Do not import old ceremonial order or cross positions into the 1962 frame."
+        ],
+        "provenance_evidence": "The complete Mame 1922 blessing was image-collated against the complete 1962 target. The old body n. 992 is preserved byte for byte; all fifteen omitted text blocks of nn. 993–996 are quoted and compared separately. No lexical word is supplied solely by the later target. Mechanical spelling, punctuation, case and cross-position differences are explicit. Correction to the predecessor evidence: Pustet AP 287 right-column Adesto prints a full conclusion with ejusdem Spiritus sancti; the short Per Dominum. is in neighboring Respice. Mame AP 368 has the full target-length conclusion without ejusdem. The predecessor projection remains unchanged; it never covered the added units.",
+        "provenance_authority": "Triptych editorial projection verified by page-image collation against the 1962 target edition",
+        "provenance_confidence": "high",
+        "publication_status": "permitted",
+        "publication_basis": "public-domain",
+        "surfaces": [
+          "web",
+          "download",
+          "print",
+          "cli",
+          "corpus-data",
+          "public-git"
+        ],
+        "publication_source_ids": [
+          "artifact.triptych.roman-1962-latin-proper-editorial-projection.baptismal-water-extent-2026-11-13.latin-82487ee7",
+          "artifact.catholic-church.missale-romanum.1922-tours-mame-editio-quarta-iuxta-typicam.ia-scan-pdf-9873693a"
+        ],
+        "publication_locator": "Mame Tours 1922, printed pp. 254–264, artifact PDF pp. 368–378; exact whole SHA-256 9873693a2937c6a573ed050351b30c545b7464b87b06390785e504fb0aac7005",
+        "publication_evidence": "The complete underlying prayer wording is witnessed in the registered 1922 Mame publication, whose identified whole manifest records its United States public-domain basis. The new project artifact owns only the bounded editorial transformations and cites a separate target comparison. The modern witness is not used as a blanket publication grant. Root must admit this finite body transition and source package before the proposed permission-bearing row becomes active."
+      },
+      "canonical_json_sha256": "c44ac8eae0884dd523eba0d5c529d39a4c0581f666375a0d9b53276c15b0463f"
+    },
+    "english_binding": {
+      "dictionary": {
+        "mass": "easter-vigil",
+        "form_id": "main",
+        "proper": "Blessing of the Baptismal Water",
+        "cycle": "all",
+        "occurrence": 1,
+        "incipit": "Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis",
+        "witness": "cummiskey-1861",
+        "printed_page": "323-327",
+        "ia_leaf": 331,
+        "ia_leaf_range": [
+          331,
+          335
+        ],
+        "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+        "passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-easter-vigil--main--blessing-of-the-baptismal-water--all--1",
+        "publication_artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.roman-1962-recovered-en",
+        "publication_artifact_sha256": "c61752839c8b04282bac27592749d63a4f0227d3fa051e62418f609c562eb54a",
+        "publication_passage_id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.publish-roman-1962-easter-vigil--main--blessing-of-the-baptismal-water--all--1",
+        "collated": "page-image and tracked transcription, 2026-08-27",
+        "collation_result": "confirmed",
+        "witness_note": "The longest of the fourteen and the one that took five leaves to read: n331 (p. 323), n332 (p. 324), n333 (p. 325), n334 (p. 326), n335 (p. 327). The 1862 at p. 201 prints the opening prayer `Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis ...` under the heading Benedictio Fontis, and continues into the preface `Vere dignum et justum est ...`; its full opening conclusion includes `ejusdem` before `Spiritus sancti`, absent from the target and Mame 1922. The selected historical English excerpt spans the opening prayer, long blessing and three oil-and-chrism formulas. It omits the preface dialogue printed in Cummiskey at artifact PDF pp. 332–333 (printed pp. 323–324), as well as the initial greeting, and retains the source's abbreviated conclusion cues and historical cross positions. It is not a complete or exact performed-text rendering of the 1962 nn. 992–996; the printed `word by fire` remains unchanged. The book's ceremonial rubrics include italic directions and some bracketed text; this project selection omits them. The selected English is a normalized transcription, not diplomatic punctuation. The printed `the word by fire` is retained without correction. The closing `Thro’—who is to come` is the source's abbreviated conclusion cue followed by a dash; it is not expanded here. Page-image collation confirms these selected 1861 readings, subject to the stated omissions and historical qualifications; publication is limited to the 1861 wording and does not claim that Cummiskey appoints the 1962 celebration.",
+        "translations": [
+          {
+            "lang": "en",
+            "rights": "public-domain",
+            "source_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+            "text": "O Almighty and eternal God, be present at these mysteries, be present at these sacraments of thy great goodness: and send forth the spirit of thy adoption to regenerate the new people, whom the font of baptism bringeth forth: that what is to be done by the ministry of us thy servants, may be accomplished by the effect of thy power. Thro'. R. Amen. It is truly meet and just, right and available to salvation, to give thee thanks always, and in all places, O holy Lord, almighty Father, and eternal God: who, by thy invisible power, dost wonderfully produce the effects of thy sacraments: and, though we are unworthy to administer such great mysteries, yet, as thou dost not abandon the gifts of thy grace, so thou inclinest the ears of thy goodness even to our prayers. O God, whose spirit in the very beginning of the world moved upon the waters; that even then the nature of water might receive the virtue of sanctification: O God, who by water didst wash away the crimes of a guilty world, and by the overflowing of the deluge didst give us a figure of regeneration; that one and the same element might, in a mystery, be the end of vice, and the origin of virtue: look down, O Lord, on thy Church, and multiply in her thy regenerations, who by the streams of thy abundant grace, fillest thy city with joy, and openest the fonts of baptism all over the world for the renewal of the Gentiles; that by the command of thy majesty it may receive the grace of thy Son from the Holy Ghost. Who, by a secret mixture of his divine virtue, may render this water fruitful for the regeneration of men: to the end that those, who are to be sanctified in the immaculate womb of this divine font, and are to be born again new creatures, may come forth a heavenly offspring; and that all, however, distinguished by age in time, or sex in body, may be brought forth to the same infancy by grace, their spiritual mother. Therefore may all unclean spirits, by thy command, O Lord, depart from hence; may all the malice of diabolical wiles be entirely banished; may no power of the enemy prevail here; let him not fly about to lay his snares: let him not creep in by his secret artifices; let him not corrupt with his infection. May this holy and innocent creature be free from all assaults of the enemy, and purified by the destruction of all his malice. May it become a living fountain, a regenerating water, a purifying stream: that all those, that are to be washed in this saving bath, may obtain, by the efficacy of the Holy Ghost, the grace of a perfect purification. Wherefore I bless thee, O creature of water, by the living + God, by the true + God, by the holy + God; by that God, who in the beginning separated thee by his word from the dry land, and whose spirit moved upon thee. Who made thee flow from the fountain of paradise, and commanded thee to water the whole earth with thy four rivers. Who changing thy bitterness in the desert into sweetness, made thee fit to drink; and produced thee out of a rock to quench the thirst of the people. I + bless thee also by our Lord Jesus Christ, his only Son: who, in Cana of Galilee, changed thee into wine, by a wonderful miracle of his power. Who walked upon thee dry-foot, and was baptized in thee by John in the Jordan. Who made thee flow out of his side, together with his blood, and commanded his disciples that such as believed should be baptized in thee, saying: Go, teach all nations, baptizing them in the name of the Father, and of the Son, and of the Holy Ghost. Do thou, O Almighty God, mercifully assist us who observe this commandment: do thou graciously inspire us. Do thou with thy mouth bless these clear waters; that besides their natural virtue of cleansing the body, they may also prove effectual for purifying the soul. May the virtue of the Holy Ghost descend into all the water of this font. And make the whole substance of this water fruitful, and capable of bringing to a new life. Here may the stains of all sin be washed out; here may human nature, created to thy image, and reformed to the honour of its author, be cleansed from the filth of the old man: that all who receive this sacrament of regeneration, may be born again new children of true innocence. Thro'--who is to come to judge the living and the dead, and the word by fire. R. Amen. May this font be sanctified and made fruitful by the oil of salvation for such as are to be born anew in it, unto life everlasting. R. Amen. May this infusion of the chrism of our Lord Jesus Christ, and of the Holy Ghost the Comforter, be performed in the name of the Holy Trinity. R. Amen. May this mixture of the chrism of sanctification, and of the oil of salvation, and of the water of baptism, be performed in the name of the Father, and of the Son, and of the Holy Ghost. R. Amen."
+          }
+        ]
+      },
+      "canonical_json_sha256": "86b687df4e6422c43c364be9ae3643de7d05f0b8ec6d749e8a6d39643e5288a2"
+    },
+    "english_body": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/bodies/english-existing-unchanged.txt",
+      "sha256": "942ea5bc30d9f063bc1e92dc8b0d4b921bbea9f2cda5624613462d9e9958ebea",
+      "bytes": 4804,
+      "body_sha256": "942ea5bc30d9f063bc1e92dc8b0d4b921bbea9f2cda5624613462d9e9958ebea",
+      "characters": 4804
+    },
+    "ordinary_frame": {
+      "dictionary": {
+        "applicability": "unavailable",
+        "basis": "This entry bundles the pre-Mass Vigil, a Mass whose Kyrie continues the divided Litany and whose Ordinary therefore cannot be supplied by the generic full frame, and the Lauds that follow Communion. The specialized Mass boundary and frame have not yet been modeled; the established unit structure is recorded in roman-holy-week-acts-v1.toml under `sabbato.*`."
+      },
+      "canonical_json_sha256": "96bd761e0bcfbedbbcfee0aa29c99df1d09aa738f1f234ce812a4d8d99a4b64a"
+    }
+  },
+  "source_files": [
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "prepared_path": "prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/text.txt",
+      "sha256": "82487ee719c8b1b7dbcf33dcf7f855373edf43ddbc79fd1d4345dddd377d2864",
+      "byte_size": 4383
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "prepared_path": "prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/edition.toml",
+      "sha256": "6922a40f5fdd2b670114eebdcfc1ef3b1d48e2ec61f44aaf09453896e8cf3eb6",
+      "byte_size": 877
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "prepared_path": "prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/artifacts/latin-82487ee7/artifact.toml",
+      "sha256": "6903fd813f56a15aab429f435580a45af8a2df573d5885836ea4a879b9438cad",
+      "byte_size": 3166
+    },
+    {
+      "canonical_path": "src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "prepared_path": "prepared/src/sources/works/triptych/roman-1962-latin-proper-editorial-projection/editions/2026-11-13-baptismal-water-extent/passages/easter-vigil-blessing-of-the-baptismal-water.toml",
+      "sha256": "e62aab8e1aac89968eafc2e490152290f88a0fb031d938ba059ab9db23178a65",
+      "byte_size": 1511
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "prepared_path": "prepared/src/sources/works/catholic-church/missale-romanum/editions/1922-tours-mame-editio-quarta-iuxta-typicam/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "sha256": "764b4c8a3bf50357778f674a2efebe8989f8dbb34666cde6e5eb4940259ec3bc",
+      "byte_size": 1376
+    },
+    {
+      "canonical_path": "src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "prepared_path": "prepared/src/sources/works/catholic-church/missale-romanum/editions/vatican-typica-1962/passages/easter-vigil-baptismal-water-complete-20261113.toml",
+      "sha256": "ed338c41af82e199a27f857a3af0b4874b8f7c0a8dce5405c22c4b65fd59e35c",
+      "byte_size": 1282
+    }
+  ],
+  "source_mutation": "Six new files plus notes only in the existing English verification passage. Existing payloads, source parent manifests and other passages remain unchanged.",
+  "owner_splices": [
+    {
+      "path": "src/sources/calendars/roman-1962/propers.yaml",
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Baptismal Water",
+        "all",
+        1
+      ],
+      "before_sha256": "95a1e215adc9b790024643088b971614418ea3d7b578b73d8616043c64d836fa",
+      "after_sha256": "32d0b83f76a3dca487fbd1bc473952438d6a6be10a7e31d576e0c35c659bec35",
+      "changed_fields": [
+        "text",
+        "notes"
+      ]
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-latin-provenance-v1.toml",
+      "identity": [
+        "easter-vigil",
+        "",
+        "Blessing of the Baptismal Water",
+        "",
+        "",
+        1
+      ],
+      "before_sha256": "00bb1e4017882c4ae5e4d70c0567dc7091612603274ad347fc47c86cb4b26eca",
+      "after_sha256": "c44ac8eae0884dd523eba0d5c529d39a4c0581f666375a0d9b53276c15b0463f",
+      "changed_fields": [
+        "text_sha256",
+        "source_id",
+        "source_date",
+        "locator",
+        "verification_source_id",
+        "verification_locator",
+        "transformations",
+        "provenance_evidence",
+        "publication_source_ids",
+        "publication_locator",
+        "publication_evidence"
+      ]
+    },
+    {
+      "path": "src/sources/inventories/roman-1962-proper-translations-v1.toml",
+      "identity": [
+        "easter-vigil",
+        "main",
+        "Blessing of the Baptismal Water",
+        "all",
+        1
+      ],
+      "before_sha256": "32855b857e415a840423ec734cda7b338b19d767ebe46d0af747a78f3702d1b0",
+      "after_sha256": "86b687df4e6422c43c364be9ae3643de7d05f0b8ec6d749e8a6d39643e5288a2",
+      "changed_fields": [
+        "witness_note"
+      ]
+    }
+  ],
+  "guard": "Find a unique exact semantic identity, require the entire old dictionary and body hash, splice only that node/row, verify every unrelated dictionary and byte range preserved. Array indexes are informational, never identity. No whole-owner replacement.",
+  "preserved": [
+    "English body, translation descriptors, payload, rights, and locators; witness_note alone qualified",
+    "Existing n. 992 Latin prefix",
+    "All Ordinary/frame values and neighboring proper nodes",
+    "Publication statuses, basis and surfaces",
+    "All prior witness/projection payload bytes and raw v1 receipts"
+  ],
+  "limitations": [
+    "No frame completion or full-Mass acceptance.",
+    "No change to any other Holy Week hold.",
+    "No expansion or correction of historical English from Latin.",
+    "No blanket grant for new or post-1955 Holy Week material.",
+    "No use of array index alone to install; exact five-/six-part identities and full preimage dictionaries are controlling.",
+    "No source-library whole-graph or producer execution claim; these remain integration gates."
+  ],
+  "supersedes": {
+    "v4": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v4/positive-transition-proposal.json",
+      "sha256": "c52ddea9de06155e426b2e4992ce0f14dff2e54ab0c1fbed4ed65dcaf06022c5",
+      "bytes": 55071
+    },
+    "proper_note_successor": {
+      "path": ".scratch/roman-sources/baptismal-water-extent/v5/proper-note-successor.json",
+      "sha256": "4aab67731e340915ebf8b653e18adffede5e63c9e8a351cab90196827d0b3e09",
+      "bytes": 14279
+    }
+  },
+  "existing_source_metadata_change": {
+    "canonical_path": "src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+    "before_raw_sha256": "b8ce7d0a845b00ada0201bc42bbd734852d7409d3ec1aa7fa08cdeff2656804f",
+    "after_raw_sha256": "437e746040481c25ea879dce4df782234aa85307f71a288c08e0bc92313c176f",
+    "prepared_path": "prepared/src/sources/works/eugene-cummiskey/roman-missal-english-laity/editions/philadelphia-1861/passages/verify--roman-1962--easter-vigil--main--blessing-of-the-baptismal-water--all--1.toml",
+    "changed_fields": [
+      "notes"
+    ],
+    "before_dictionary": {
+      "schema": 2,
+      "record_type": "passage",
+      "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-easter-vigil--main--blessing-of-the-baptismal-water--all--1",
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "artifact_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "locus": "easter-vigil",
+      "artifact_page_ranges": [
+        [
+          332,
+          336
+        ]
+      ],
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "context": "printed pp. 323-327 historical English body for easter-vigil / Blessing of the Baptismal Water.",
+      "verified_on": "2026-08-19",
+      "notes": "The longest of the fourteen and the one that took five leaves to read: n331 (p. 323), n332 (p. 324), n333 (p. 325), n334 (p. 326), n335 (p. 327). The 1862 at p. 201 prints the opening prayer `Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis ...` under the heading Benedictio Fontis, word for word as the 1962 index carries it, and continues into the preface `Vere dignum et justum est ...` The 1861's English runs from that prayer through the preface, the exorcism, the blessing of the creature of water, the sinking of the paschal candle and the three oil-and-chrism formulas, in the 1962 index's order and with no clause of the index unanswered. The book's ceremonial rubrics are given in square brackets so they can be stripped; they are the book's own italic directions and not part of the prayer. TWO PRINTER'S ERRORS ARE REPRODUCED, NOT MENDED: `the word by fire` for `et saeculum per ignem` (the type reads `word`, the sense is `world`), and the run-on `Thro'--who is to come`. Alignment status in the normalized evidence artifact: candidate."
+    },
+    "after_dictionary": {
+      "schema": 2,
+      "record_type": "passage",
+      "id": "passage.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.verify-roman-1962-easter-vigil--main--blessing-of-the-baptismal-water--all--1",
+      "edition_id": "edition.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861",
+      "artifact_id": "artifact.eugene-cummiskey.roman-missal-english-laity.philadelphia-1861.ia-scan-pdf",
+      "artifact_sha256": "85034c90d5cbfe891f4359fb2faff907d217dbd11a30458b55e4c48eae028898",
+      "locus": "easter-vigil",
+      "artifact_page_ranges": [
+        [
+          332,
+          336
+        ]
+      ],
+      "states": [
+        "cataloged",
+        "acquired",
+        "inspected",
+        "verified"
+      ],
+      "context": "printed pp. 323-327 historical English body for easter-vigil / Blessing of the Baptismal Water.",
+      "verified_on": "2026-08-19",
+      "notes": "The longest of the fourteen and the one that took five leaves to read: n331 (p. 323), n332 (p. 324), n333 (p. 325), n334 (p. 326), n335 (p. 327). The 1862 at p. 201 prints the opening prayer `Omnipotens sempiterne Deus, adesto magnae pietatis tuae mysteriis, adesto sacramentis ...` under the heading Benedictio Fontis, and continues into the preface `Vere dignum et justum est ...`; its full opening conclusion includes `ejusdem` before `Spiritus sancti`, absent from the target and Mame 1922. The selected historical English excerpt spans the opening prayer, long blessing and three oil-and-chrism formulas. It omits the preface dialogue printed in Cummiskey at artifact PDF pp. 332–333 (printed pp. 323–324), as well as the initial greeting, and retains the source's abbreviated conclusion cues and historical cross positions. It is not a complete or exact performed-text rendering of the 1962 nn. 992–996; the printed `word by fire` remains unchanged. The book's ceremonial rubrics include italic directions and some bracketed text; this project selection omits them. The selected English is a normalized transcription, not diplomatic punctuation. The printed `the word by fire` is retained without correction. The closing `Thro’—who is to come` is the source's abbreviated conclusion cue followed by a dash; it is not expanded here. Alignment status in the normalized evidence artifact: candidate."
+    }
+  }
+}

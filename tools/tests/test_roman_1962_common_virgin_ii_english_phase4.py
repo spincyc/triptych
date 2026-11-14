@@ -286,13 +286,13 @@ class CommonVirginIIEnglishTests(unittest.TestCase):
     def test_all173_and_all31_previous_entry_and_binding_dictionaries_preserved(self):
         keys=sorted(set(prior.OLD_KEYS)|set(prior.TARGET_ORACLES)|{prior.REUSE_TARGET})
         self.assertEqual(len(keys),204)
-        # The one reviewed successor among them is the accepted Holy Name
-        # locator erratum (see prior.accepted_holy_name_locator); every other
-        # previous dictionary stays byte-exact under OLD204_SHA.
+        # The reviewed successors among them are the accepted Holy Name
+        # locator erratum and the baptismal-water English note (see
+        # prior.prior_english_row); every other previous dictionary stays
+        # byte-exact under OLD204_SHA.
         self.assertIn(prior.HOLY_NAME,keys)
-        before,after=prior.accepted_holy_name_locator()
-        self.assertEqual(self.entries[prior.HOLY_NAME],after)
-        self.assertEqual(digest([before if k==prior.HOLY_NAME else self.entries[k] for k in keys]),OLD204_SHA)
+        self.assertIn(prior.BAPTISMAL_WATER,keys)
+        self.assertEqual(digest([prior.prior_english_row(self.entries,k) for k in keys]),OLD204_SHA)
 
     def test_all76_sealed31_source_files_are_byte_immutable(self):
         self.assertEqual(len(OLD31_FILES),76)
